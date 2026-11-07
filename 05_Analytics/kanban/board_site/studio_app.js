@@ -956,9 +956,92 @@
     return {
       id:j.id, title:j.title||j.remaining_action||'', status:j.status||'open',
       stage:j.stage||'', progress:j.progress||null, when:j.when,
-      why:j.why, waitKind:j.waitKind, after:j.after, awaits_ben:j.awaits_ben,
+      why:j.why, waitKind:j.waitKind, after:j.after, afterChain:j.afterChain,
+      recheck_of:j.recheck_of, ref:j.ref, awaits_ben:j.awaits_ben,
       needs:j.needs, hold:j.hold, kind:j.kind,
     };
+  }
+  function p24NormJobId(id) {
+    const m=/\b(J\d{3,5})\b/i.exec(String(id||''));
+    return m?m[1].toUpperCase():'';
+  }
+  // Jobs that must finish before this one (appear above it): after / afterChain / "will run after JX".
+  function p24JobDependsOn(j) {
+    const out=[];
+    const add=id=>{ const n=p24NormJobId(id); if(n&&!out.includes(n)) out.push(n); };
+    const after=j&&j.after;
+    if(Array.isArray(after)) after.forEach(add);
+    else if(after) add(after);
+    for(const p of (j&&j.afterChain)||[]){
+      if(p&&typeof p==='object') add(p.id);
+      else add(p);
+    }
+    const blob=[j&&j.why, j&&j.title].filter(Boolean).join(' ');
+    // "Will run automatically after J2089 (…)" / "after J2141 and J2142"
+    const chunk=/\bafter\s+([^.;\n]+)/i.exec(blob);
+    if(chunk) for(const m of chunk[1].matchAll(/\b(J\d{3,5})\b/gi)) add(m[1]);
+    return out;
+  }
+  // Jobs this one unblocks (this job appears above them): recheck_of / "Verify condition for JX".
+  function p24JobPrecedesTargets(j) {
+    const out=[];
+    const add=id=>{ const n=p24NormJobId(id); if(n&&!out.includes(n)) out.push(n); };
+    if(j&&j.recheck_of) add(j.recheck_of);
+    const title=String((j&&j.title)||'');
+    const m=/Verify(?:\s+the)?\s+condition\s+for\s+(J\d{3,5})/i.exec(title);
+    if(m) add(m[1]);
+    if(j&&j.kind==='review'&&/^J\d{3,5}$/i.test(String(j.ref||''))) add(j.ref);
+    return out;
+  }
+  function p24ItemRank(j) {
+    const cls=p24JobMark(j).cls;
+    if(cls==='is-progress') return 0;
+    if(cls==='is-open') return 1;
+    if(cls==='is-waiting') return 2;
+    if(cls==='is-done') return 3;
+    if(cls==='is-done-yesterday') return 4;
+    return 2;
+  }
+  // Top-to-bottom = run / hierarchy order, not raw job-id order (Ben, 6–7 Nov 2026).
+  // A before B; "Verify condition for JX" above JX; waiting-after jobs stay visible below their named earlier jobs.
+  function p24SortFilmItems(items) {
+    const list=(items||[]).filter(Boolean);
+    const stages=list.filter(j=>j.kind==='stage'||!j.id);
+    const nodes=list.filter(j=>j.id&&j.kind!=='stage');
+    const byId=new Map(nodes.map(j=>[String(j.id).toUpperCase(), j]));
+    const ids=[...byId.keys()];
+    const succ=new Map(ids.map(i=>[i, []]));
+    const indeg=new Map(ids.map(i=>[i, 0]));
+    const addEdge=(a,b)=>{
+      a=String(a).toUpperCase(); b=String(b).toUpperCase();
+      if(!byId.has(a)||!byId.has(b)||a===b) return;
+      if((succ.get(a)||[]).includes(b)) return;
+      succ.get(a).push(b);
+      indeg.set(b,(indeg.get(b)||0)+1);
+    };
+    for(const j of nodes){
+      const id=String(j.id).toUpperCase();
+      for(const dep of p24JobDependsOn(j)) addEdge(dep, id);
+      for(const tgt of p24JobPrecedesTargets(j)) addEdge(id, tgt);
+    }
+    const indexOf=new Map(nodes.map((j,i)=>[String(j.id).toUpperCase(), i]));
+    const cmp=(a,b)=>p24ItemRank(byId.get(a))-p24ItemRank(byId.get(b))||indexOf.get(a)-indexOf.get(b);
+    const ready=ids.filter(i=>(indeg.get(i)||0)===0).sort(cmp);
+    const out=[], seen=new Set();
+    while(ready.length){
+      const i=ready.shift();
+      if(seen.has(i)) continue;
+      seen.add(i);
+      out.push(byId.get(i));
+      for(const s of succ.get(i)||[]){
+        indeg.set(s,(indeg.get(s)||0)-1);
+        if(indeg.get(s)===0){ ready.push(s); ready.sort(cmp); }
+      }
+    }
+    for(const j of nodes){
+      if(!seen.has(String(j.id).toUpperCase())) out.push(j);
+    }
+    return out.concat(stages);
   }
   // When progress24h items are empty on a pulsing film, fill from tracker + claimed owb jobs (Ben, 6 Nov ~23:33).
   function p24HydrateFilmItems(f, b) {
@@ -972,17 +1055,19 @@
       else if(j.status==='claimed'&&cur.status!=='claimed') byId.set(id, {...cur, ...j, status:'claimed'});
     };
     for(const j of (f&&f.items)||[]) add(j);
-    if(!b||!filmKey) return [...byId.values()];
-    for(const v of uniqueVideos((((b.tracker)||{}).videos)||[])){
-      if(v.key!==filmKey) continue;
-      for(const j of v.jobs||[]) add(p24JobFromTracker(j));
+    if(b&&filmKey){
+      for(const v of uniqueVideos((((b.tracker)||{}).videos)||[])){
+        if(v.key!==filmKey) continue;
+        for(const j of v.jobs||[]) add(p24JobFromTracker(j));
+      }
+      for(const j of (((b.owb)||{}).jobs)||[]){
+        if(!j||j.status!=='claimed') continue;
+        if(!p24FilmMatchesJob(filmKey, b, j)) continue;
+        add({id:j.id, title:j.title||j.remaining_action||'', status:'claimed', stage:j.stage||'',
+          progress:j.progress||null, recheck_of:j.recheck_of, ref:j.ref, after:j.after, kind:j.kind});
+      }
     }
-    for(const j of (((b.owb)||{}).jobs)||[]){
-      if(!j||j.status!=='claimed') continue;
-      if(!p24FilmMatchesJob(filmKey, b, j)) continue;
-      add({id:j.id, title:j.title||j.remaining_action||'', status:'claimed', stage:j.stage||'', progress:j.progress||null});
-    }
-    return [...byId.values()];
+    return p24SortFilmItems([...byId.values()]);
   }
   function p24BlockedWhy(f) {
     if(f.blockedWhy) return f.blockedWhy;
