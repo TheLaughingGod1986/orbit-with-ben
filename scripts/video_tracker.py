@@ -1180,6 +1180,19 @@ def build_videos(
     from uat_outlook import attach
     attach(videos, hos, owb, alljobs or jobs, now)
 
+    # Listing package status for Passed / Scheduled cards (Ben, 7 Nov 2026): what's missing, Ready to upload,
+    # or a real Scheduled-for line — never invent a publishAt or YouTube id.
+    try:
+        import listing_package as listing_package
+        for video in videos:
+            yt = video.get("youtube") or {}
+            public = yt.get("privacy") == "public" or yt.get("state") == "live"
+            scheduled = (not public) and yt.get("state") == "scheduled" and bool(yt.get("publishAt") or yt.get("publishAtLondon"))
+            if video.get("lane") == "approved" or scheduled:
+                video["listing"] = listing_package.for_video(video, ROOT)
+    except Exception:  # noqa: BLE001 — listing is display-only; never block the board
+        pass
+
     videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
                                (v.get("approved") or {}).get("airs") or v.get("air") or "9999", v["key"]))
     counts = {lane: sum(1 for v in videos if v["lane"] == lane and not v.get("collapsed")) for lane in LANES}
