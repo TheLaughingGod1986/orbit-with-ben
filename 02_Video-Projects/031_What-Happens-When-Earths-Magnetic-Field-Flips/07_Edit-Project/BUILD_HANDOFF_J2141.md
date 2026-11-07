@@ -1,3 +1,54 @@
+## MacBook continuation — 7 Nov, three ESA/DTU candidates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**. Three candidates for the Swarm map and the constellation still.
+None is admitted. No KEEP, PASS or stage approval. Spend £0. Assigned
+uses stay at 0. The pool now has 18 assets.
+
+The shot list says `CC BY-SA 3.0 IGO`. The live ESA pages do not.
+
+- **esa_june_2014_magnetic_field** (rows 23 and 24, uses still 0):
+  Commons copy of the June 2014 Swarm snapshot, credit ESA/DTU Space.
+  6000×4800. SHA-256
+  `11ea832b865a0abbc0006f049b0791a17d7257a1d9d0cd4fa419353a2705debc`.
+  Grey mean luma 74.4, p95 214, fraction under luma 16 is 0.441.
+  Scale to 1920 is 0.32×. Visual check: oval map, blue dent over South
+  America and the South Atlantic, red poles, coastlines, dotted grid,
+  colour bar 20000–60000 nT, black surround. A labelled sourced map and
+  a still. Commons uses the old ESA public-domain template. The live
+  ESA page says "No ESA licences available". Not CC BY-SA 3.0 IGO.
+- **esa_swarm_constellation_over_earth** (row 24): not downloaded.
+  Live page credits ESA/AOES Medialab and says "ESA Standard Licence and
+  Additional permission may be required". A still, not the moving
+  constellation. Third-party Medialab credit. No image hash.
+- **commons_saa_2020** (row 23 candidate): CHAOS-7 paper figure, 2020,
+  CC BY-SA 4.0. 700×430. SHA-256
+  `38499b3b7cea59cf15a76fbee12622b7bb72f196cce08fc46d94ea3f47b9a0f4`.
+  Grey mean luma 194.0, p95 255. Scale to 1920 is 2.743×, over the
+  2.35× cap. Visual check: white oval, contour lines on a dark-blue
+  minimum over South America, colour bar 22000–62000 nT. Sourced
+  labelled figure. Credit is the paper's authors, not "ESA/DTU Space".
+
+A sister page, Magnetic field changes, was read for its licence line
+only (same "No ESA licences available", credit ESA/DTU Space). Its
+image was not downloaded and it is not a fourth picture exam.
+
+Media and contact sheet: `/Users/ben/_desk/J2141-harvest-v05/`.
+Contact sheet SHA-256
+`edf7244d8133c664339ae7ec55c2f5f379cac499014a3f32ed9b02fd39dfda7d`.
+Reproduce only into an empty directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_esa_swarm_v05.py --media-root <empty-dir>
+```
+
+No paid generation, no YouTube change, no NAS delete. Do not re-download
+these three. Chief reconciles the licence conflict and the sourced-map
+gate. A moving Swarm clip still needs its own bounded search. Still
+unfinished: NOAA seafloor and sediment stills, the moving NASA/SVS
+clips, Commons kauri and cave art (open on PR #572), the progressive
+timeline on PR #571, composites and the picture gates.
+
 ## MacBook continuation — 7 Nov, three agency still candidates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
@@ -36,10 +87,11 @@ three ids:
 /usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_agency_stills_v04.py --media-root <empty-dir>
 ```
 
-No paid generation, no YouTube change, no NAS delete. Still unfinished:
-ESA/DTU Swarm and SAA, NOAA seafloor and sediment stills, the moving
-NASA/SVS clips, Commons kauri and cave art (open on PR #572), the
-progressive timeline on PR #571, composites and the picture gates.
+No paid generation, no YouTube change, no NAS delete. The ESA/DTU pass
+is the section above this one. Still unfinished after that pass: NOAA
+seafloor and sediment stills, the moving NASA/SVS clips, Commons kauri
+and cave art (open on PR #572), the progressive timeline on PR #571,
+composites and the picture gates.
 
 ## MacBook continuation — 7 Nov, three NASA still candidates
 
