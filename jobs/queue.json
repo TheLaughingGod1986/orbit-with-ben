@@ -1,5 +1,5 @@
 {
-  "next_id": 2363,
+  "next_id": 2364,
   "jobs": [
     {
       "id": "J0001",
@@ -200722,6 +200722,38 @@
       "remaining_action": "Review the corrected Pluto shot plan and release only approved picture work",
       "kind": "chief",
       "plain": "Check the repaired Pluto plan before allowing picture and graphics production."
+    },
+    {
+      "id": "J2363",
+      "title": "032 R16: review Cassini counter composite draft in motion",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2089 follow-through, GBP0. Review local commit b3c2915961 on worker/J2089-rights in /private/tmp/J2089-rights. Read 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/J2089_R16_REVIEW_REQUEST_v01.md. Actual media /Users/benjaminoats/_desk/cache/J2089/r16_composite_preview_v01/032_r16_cassini_counter_draft_v01.mp4 and four frame PNGs. Demonstrate moving_video_input before motion review. Technical:108 decoded frames,1920x1080,30fps,3.6s,polish PASS. Source still pan only, not Huygens descent/native motion. Check animation, cloud detail/noise, line support, typography and credits; proposed R16/R28 reuse cap. KEEP/FIX exact changes; no rights/frame0/film approval. Record review and update parent J2089; parent must remain independent because other harvest is doable.",
+      "ref": "b3c2915961",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T11:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T11:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the Cassini cloud counter draft and return exact picture fixes",
+      "kind": "qa",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "plain": "Check whether the Titan descent counter is clear and honest over Cassini cloud imagery."
     }
   ],
   "focus": [
