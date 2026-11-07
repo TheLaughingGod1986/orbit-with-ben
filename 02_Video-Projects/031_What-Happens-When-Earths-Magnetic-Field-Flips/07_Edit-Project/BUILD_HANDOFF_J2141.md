@@ -2,6 +2,39 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R45 marine-fossil plate (7 Nov UTC, Cursor)
+
+Preserve **1/3**. Based on PR #575 at `31e36efec3`. Spend **£0**.
+Three candidates examined. One plate admitted.
+
+`plate_031_r45_fossil_v01.mp4` covers 462.40–469.00 s (165 frames, 25 fps),
+the whole of row 45, so the existing alpha `extinction_check` (still starting
+at 462.40 s) can sit on it. It is a 16:9 crop of an NPS photograph, with the
+accession label, ruler and colour chart removed, then a linear 6% push.
+Maximum scale against the 3200 px crop is 0.636. Silent. Credit
+`Frank Ruggles / NPS`. Component polish **PASS, 0 failures, 0 warnings**.
+Hash `8d977fc6c248d84370365b072d94957a2307b8577e780f248e367b76e2b494eb`.
+Media: `/Users/benjaminoats/_desk/J2141-fossil-v01/`.
+
+The photograph is one ammonite, *Pachydiscus kamishakensis*, about 24 cm wide,
+from the Kaguyak Formation at Katmai. Commons records `{{PD-USGov-NPS}}` and
+photographer Frank Ruggles. It is a real extinct marine mollusc. It is not a
+sediment core and not a USGS or Smithsonian drawer photograph. Stills
+inspected. No motion or audio review. No KEEP.
+
+Two Yellowstone NPS photographs of Smithsonian USNM trilobites were not used.
+Ehmania walcotti (USNM 90667) and Blountia polita (USNM 96488) are both
+`PD-USGov-NPS`, but each frame is mostly a ruler and colour card, and the
+Blountia fossil does not read. `si.edu` returned 403, so no separate
+Smithsonian file was downloaded. Do not restart these three files.
+`HARVEST_R45_FOSSIL_SEARCH_v01.json` and
+`HARVEST_R45_FOSSIL_TECHNICAL_CHECK_v01.json` hold the evidence.
+Reproduce with `harvest_marine_fossil.py` only into a fresh plate path; the
+script refuses an existing plate.
+
+**Next:** the wildlife cuts (R49 birds, whale, turtle) are different inputs.
+Composites, source/gate conflicts and full picture QA remain. No live render.
+
 ## R33 sediment-core plate (7 Nov UTC, Cursor)
 
 Preserve **1/3**. Based on PR #575 at `a9bf593485`. Spend **£0**.

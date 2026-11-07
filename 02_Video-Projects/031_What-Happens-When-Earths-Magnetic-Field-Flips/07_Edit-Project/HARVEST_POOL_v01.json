@@ -677,6 +677,35 @@
       "wikitext_sha256": "948c5ad515432ca319b6958367522539631655b4aab0173cd581ea7340613f14",
       "generation_authorized": false,
       "review_note": "Slide mount cropped off. Centre 16:9, then a linear 6% push. Maximum scale against the crop is 1.29. Stills inspected. No motion review. On-screen credit is Lisa Levin / NOAA. Changes: crop, grade, push."
+    },
+    {
+      "asset_id": "nps_katm_pachydiscus_ammonite",
+      "title": "Pachydiscus kamishakensis, Kaguyak Formation, Katmai",
+      "description": "NPS photograph of one ammonite, Pachydiscus kamishakensis, about 24 cm wide, from the Kaguyak Formation. It is a real extinct marine mollusc. It is not a sediment core, not a USGS core, and not a Smithsonian drawer specimen. The accession label, ruler and colour chart are cropped off.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:File-Photograph_of_the_ammonite_Pachydiscus-kamishakensis_from_the_Kaguyak_Formation._This-specimen_is_approximately_24_cm_wide_(0197c09f-9653-4f8c-83b2-69f55bb2c1de).jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/44/File-Photograph_of_the_ammonite_Pachydiscus-kamishakensis_from_the_Kaguyak_Formation._This-specimen_is_approximately_24_cm_wide_%280197c09f-9653-4f8c-83b2-69f55bb2c1de%29.jpg",
+      "nps_unit": "KATM",
+      "accession": "KATM00165",
+      "credit": "Frank Ruggles / NPS",
+      "local_path": "/Users/benjaminoats/_desk/J2141-fossil-v01/ammonite.jpg",
+      "sha256": "c506b78501e0c1cb3c551253d17fc6e94d48aa73653511e15b8374f95f92a6bf",
+      "bytes": 957078,
+      "width": 4256,
+      "height": 2832,
+      "rows": [
+        45
+      ],
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "download_status": "downloaded",
+      "review_status": "static_candidate_not_KEEP",
+      "licence": "PD-USGov-NPS",
+      "licence_status": "Commons file page uses {{PD-USGov-NPS}}; photographer Frank Ruggles; NPGallery credit",
+      "attribution_required": false,
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-fossil-v01/ammonite.wikitext",
+      "source_evidence_sha256": "3e5278e4a25b36e73aaab5a0f0f34b6b4b2f757e4ab874ba3b268775a59f1aa5",
+      "generation_authorized": false,
+      "review_note": "Crop (40, 300, 3240, 2100) drops the accession label, ruler and colour chart. Centre 6% push. Maximum scale against the 3200 px crop is 0.636. Stills inspected. No motion review. On-screen credit is Frank Ruggles / NPS."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -921,6 +950,46 @@
           "width": 1920,
           "height": 2560,
           "result": "Split large-diameter seep core. Credit Jeff Beeson only. Clearer core, no licence statement. Not used."
+        }
+      ]
+    },
+    {
+      "input": "R45 USGS/Smithsonian marine fossil plate",
+      "date": "2026-11-07",
+      "candidates_examined": 3,
+      "active_minutes": 16,
+      "budget_status": "three-candidate limit reached; do not restart these three files",
+      "outcome": "One licensed plate: NPS Pachydiscus kamishakensis, PD-USGov-NPS, Frank Ruggles, Katmai. It is one ammonite, not a fossil core. Two Yellowstone NPS photographs of Smithsonian USNM trilobites were not used: each frame is mostly a ruler and colour card, and the Blountia fossil does not read. si.edu blocked a direct Smithsonian download. Wildlife cuts are a different input.",
+      "contact_sheet": "/Users/benjaminoats/_desk/J2141-fossil-v01/CONTACT_rejected_v01.jpg",
+      "contact_sheet_sha256": "46f30028889cfa2f590e6cc776ac12e8e0945b56cb98410acc36de7fef6f1d60",
+      "admitted": "nps_katm_pachydiscus_ammonite",
+      "candidates": [
+        {
+          "file": "ammonite.jpg",
+          "sha256": "c506b78501e0c1cb3c551253d17fc6e94d48aa73653511e15b8374f95f92a6bf",
+          "source": "https://commons.wikimedia.org/wiki/File:File-Photograph_of_the_ammonite_Pachydiscus-kamishakensis_from_the_Kaguyak_Formation._This-specimen_is_approximately_24_cm_wide_(0197c09f-9653-4f8c-83b2-69f55bb2c1de).jpg",
+          "licence": "PD-USGov-NPS",
+          "width": 4256,
+          "height": 2832,
+          "result": "Used. Real marine ammonite. Label, ruler and colour chart cropped off."
+        },
+        {
+          "file": "ehmania.jpg",
+          "sha256": "cd6cdcbc8101dd0c2963f4ba662bc9e68fca002662c622901833a7f1e826ea53",
+          "source": "https://commons.wikimedia.org/wiki/File:USNM_90667_Ehmania_walcotti_trilobite_(30513613841).jpg",
+          "licence": "PD-USGov-NPS",
+          "width": 4065,
+          "height": 2340,
+          "result": "Smithsonian USNM 90667, Yellowstone NPS photo. Partial trilobite beside a ruler and checker. Not used."
+        },
+        {
+          "file": "blountia.jpg",
+          "sha256": "c39188e6cb977d280b29f02b983d80df684750527b83d92af64b9a47ee3f60eb",
+          "source": "https://commons.wikimedia.org/wiki/File:USNM_96488_Blountia_polita_trilobite_(30513613421).jpg",
+          "licence": "PD-USGov-NPS",
+          "width": 3688,
+          "height": 2811,
+          "result": "Smithsonian USNM 96488. The fossil is a small bump and does not read. Not used."
         }
       ]
     }
@@ -1784,5 +1853,36 @@
     "status": "technical_candidate_pending_motion_review"
   },
   "r33_contact_sheet": "/Users/benjaminoats/_desk/J2141-sediment-v01/CONTACT_v01.jpg",
-  "r33_contact_sheet_sha256": "5ba093fa1f22668e9b726e572ebd15c0a75afcc3a93de79ff04b5a3a58ecec6f"
+  "r33_contact_sheet_sha256": "5ba093fa1f22668e9b726e572ebd15c0a75afcc3a93de79ff04b5a3a58ecec6f",
+  "r45_fossil_plate_v01": {
+    "file": "plate_031_r45_fossil_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-fossil-v01/plate_031_r45_fossil_v01.mp4",
+    "sha256": "8d977fc6c248d84370365b072d94957a2307b8577e780f248e367b76e2b494eb",
+    "bytes": 4419636,
+    "film_start_s": 462.4,
+    "film_end_s": 469.0,
+    "row_end_s": 468.98,
+    "frames": 165,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xyxy": [
+      40,
+      300,
+      3240,
+      2100
+    ],
+    "push": "linear 1.00 to 1.06, centre",
+    "max_scale_vs_crop_width": 0.636,
+    "credit": "Frank Ruggles / NPS",
+    "licence": "PD-USGov-NPS",
+    "no_loop": true,
+    "no_interpolation": true,
+    "hands_to": "existing alpha extinction_check, which still starts at 462.40 s; compositor places this plate under it",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "r45_contact_sheet": "/Users/benjaminoats/_desk/J2141-fossil-v01/CONTACT_v01.jpg",
+  "r45_contact_sheet_sha256": "2e194e95c773031e080d652e2cf8fcf5e87d545169b0e15d471f7267786e041f"
 }
