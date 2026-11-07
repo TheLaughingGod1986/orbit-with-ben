@@ -201586,6 +201586,11 @@
           "at": "2026-11-07T14:22Z",
           "by": "macbook",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-07T16:22:36Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-07T14:24Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 2312 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362",
@@ -201598,7 +201603,16 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2368",
