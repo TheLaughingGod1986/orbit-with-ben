@@ -77706,6 +77706,11 @@
           "at": "2026-11-07T02:18Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: Short PASS. HOS 008 Short A v04 sha 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d, 23.300s, five gates PASS. Desk #180 6700907911. Branch cursor/j0912-short-a-v04 fd440eb4. No upload."
+        },
+        {
+          "at": "2026-11-07T03:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T10:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -77714,7 +77719,7 @@
         "HOS:008"
       ],
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Parked for Chief review of Short A v04",
+      "remaining_action": "Complete J2339 audio/motion QA, then elected Chief decides Short PASS and private watch handoff",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
         "step": 4,
@@ -77722,6 +77727,19 @@
         "at": "2026-11-07T02:18Z",
         "by": "cursor",
         "note": "v04 sha 76d801a3. All five gates PASS. Desk 6700907911. Branch cursor/j0912-short-a-v04 commit fd440eb4. No upload."
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Acting-Chief technical repair accepted: v04 76d801a3 matches Mini/NAS; five gate logs PASS; all eight midpoint stills reviewed. Full Short PASS awaits J2339 hash-specific perceptual QA with demonstrated audio_input and moving_video_input. Codex tools inspected: text/shell/stills only; Gemini relay probe has audio but failed moving-video, Cursor records neither. No generation/upload/schedule; preserve worker 4/4 and h47 locks. Recheck capability availability and J2339 evidence, not unchanged media.",
+        "check_at": "2026-11-07T10:00:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
       }
     },
     {
