@@ -102,6 +102,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2354 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2319 |  |
 | J2355 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
 | J2356 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2320 |  |
+| J2357 | any | open | – | – | review · Verify condition for J0912 |  |
+| J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 
 Recently finished:
 
