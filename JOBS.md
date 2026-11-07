@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2377 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2171 |  |
-| J2378 | mini | open (after J2089) | – | – | 032 picture · for gemini · chief · `gemini-argon` · 032 picture: Chief review of J2089 £0 picture package & queue 032 edit | c0bbf33088 |
+| J2378 | mini | claimed | gemini | 2026-11-07T21:55Z | 032 picture · for gemini · chief · `gemini-argon` · 032 picture: Chief review of J2089 £0 picture package & queue 032 edit | c0bbf33088 |
 
 Recently finished:
 
