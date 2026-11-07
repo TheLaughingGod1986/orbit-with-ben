@@ -498,6 +498,36 @@ Shipped and archived films already live under `/Volumes/data/mac-mini-archive/` 
 - **The 06:40 job can't read the NAS (26 Oct 2026).** macOS privacy blocks launchd jobs from `/Volumes` ("Operation not permitted"). After you move or upload a scheduled Short whose export or VO stem is on the NAS, run `python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot <today's owb snapshot> --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root ~/YouTube/orbit-with-ben --out /dev/null --stage` from your session. It copies those files to `~/_desk/cache/gate-media/` (a cache, safe to clear), and the 06:40 check reads the copy. Without it the Short reads NOT CHECKED, not FAIL.
 - Any job that moves files claims first (`studio.py claim … --git`) and runs in detached tmux. On STOP, its last act is to post the STOP line or set its stage to `blocked`.
 
+## How films get worked on
+
+**Standing process (Ben thumbs-up ~12:55 London 7 Nov 2026).** This is how production actually runs. Read with **Videos tab** (chip meanings) and **Film folders on the NAS** (where media lives). A nearby go-live date does **not** itself move a Videos chip into To do or In progress — Chief does **not** pick films into those lanes by date.
+
+### Two layers decide what gets worked on
+
+1. **Production cap and waiting lines (`jobs/WIP.json`).** At most **nine** films in production at once (**5 Orbit + 4 History of Science**), from topic through Ben's watch. Inside that cap, about **three** films may be visibly moving at once when progress is clear and agents stay busy — filling idle agents with ready claimable work is intended. Do **not** start new production beyond the cap. When a film reaches Ben's watch (UAT), it leaves `active` and the first film in **that same channel's** waiting line enters through one **rule-E** topic review (`next` for OWB, `next_hos` for HOS); only then is its production work queued. **Date-gated launch / publish work** (upload, schedule, Buffer, Studio finish on an already-Passed or upcoming slot) can still run even if that film is not in the current three-film focus.
+2. **Job picker (`scripts/jobs.py next`).** Idle agents claim recorded **deadlines** first, then **urgent** work, then **production on active WIP films**, then older waiting jobs. The locked calendar is **why** work is queued and why a **Passed** cut is scheduled into a locked slot. Fill calendar gaps only with ready **Passed** cuts, not placeholders.
+
+### Locked weekly targets (Ben 7 Nov ~01:04; confirmed again 7 Nov)
+
+Do **not** use 10 Orbit Shorts or 7 HOS Shorts as the locked target.
+
+| Channel | Longs | Shorts |
+|---|---|---|
+| **Orbit** | **2**/week — Sunday and Wednesday **18:00 London**, normal publish, **no Premiere** | **4**/week — Monday, Wednesday, Friday, Saturday **11:30 London**; **two** Shorts per **new** long; older films keep their existing Shorts (including films that still carry three) |
+| **History of Science** | **1**/week — Thursday **18:00 London** | **4**/week — Saturday, Friday, Sunday, Tuesday **11:30 London** |
+
+Never two Shorts on the same day.
+
+### Machine split (restated; full paths under Film folders)
+
+- **Mini-only:** YouTube Studio uploads / `youtube:package`, Buffer, playlists / end screens, Flow/Chrome. The MacBook does not need a Studio sign-in.
+- **MacBook may take** harvests, assemblies, and watch/listen jobs when that film's folder exists on `/Volumes/data/studio-live/…/02_Video-Projects/`. If the files are **not** there, the job stays on the Mini.
+- Machines are **workers against NAS files**; they are **not yet diskless**. Mini local copies under `/Users/benjaminoats/YouTube/…` stay until jobs finish writing those folders.
+
+### Ben vs agents
+
+**Ben only does UAT** (Pass → Passed; notes / Request changes → In progress). Every other Videos lane is agent-run. Chip movement and who queues what: **Videos tab → How work actually moves**.
+
 ## Stop and ask Ben
 
 **Chief owns the studio (Ben's handover to Chief, 9 Oct 2026; Ben, 10 Oct 2026: *"I should not need to give permission all the time"*).** Wherever this file says Claude decides, OKs, gives the final OK or makes an exception, Chief (Grok Bot) now holds that call in place of Claude. A Chief OK is a plain "[Chief]" post on #99 or HOS #180, or a job added `--by chief`; a job brief saying "Ben approved (relayed by Chief)" counts as Ben's word. Workers act on either and never ask Ben to re-post an OK on #99. Ben is asked only for real money (past £0) and what truly can't be undone; deleting a video stays on the Never list.
@@ -564,14 +594,13 @@ This is measurement only. It changes no spend rule.
 | Live | — | Public, with **no** leftover live / launch jobs on the card. |
 | Post-live | Agents | Public **and** still has open after-launch work (Related links, pins, thumb tests, etc.). |
 
-**How work actually moves (not a manual swim-lane board):**
-1. Agents (and the job queue / WIP rules) decide what to produce next. A nearby go-live date is why they **queue** the next production job and why a **Passed** cut is **scheduled** into a locked calendar slot — dates do **not** themselves flip a chip into To do or In progress.
+**How work actually moves (not a manual swim-lane board):** full standing rules under **How films get worked on**. Short form:
+1. WIP cap + waiting lines and `jobs.py next` decide what to produce (not Chief dragging by date). A nearby go-live date is why agents **queue** the next production job and why a **Passed** cut is **scheduled** into a locked calendar slot — dates do **not** themselves flip a chip into To do or In progress.
 2. When a production job is added and becomes live on the card, the chip moves To do → In progress (or straight into In progress / QA when that job is a review).
 3. When the cut is ready for Ben, `jobs.py awaits` + a Playable file put it in **UAT**. Only Ben acts there.
 4. After Ben Passes, agents package and upload on the **Mini**, then set a real YouTube `publishAt` in a locked slot → **Scheduled** → **Live**, with leftover follow-ups → **Post-live**.
 
 **Do not invent** a “Chief picks some cards into To do by date, then picks some into In progress” workflow — that is the misconception Ben asked about while looking at the 3×3 chips. Chief's job on Videos is to read the computed state, keep agents clearing agent lanes, and never park non-watch work on Ben.
-
 **Locked publish slots (cadence; unchanged):** weekly targets **2 Orbit longs + 4 Orbit Shorts**, **1 HOS long + 4 HOS Shorts**. Fill calendar gaps only with ready approved cuts, not placeholders. Never two Shorts on the same day.
 - **Orbit longs:** Sunday and Wednesday **18:00 London**, normal publish, **no Premiere**.
 - **Orbit Shorts:** Monday, Wednesday, Friday and Saturday **11:30 London** (each **new** long gets **two** Shorts; older films whose Shorts already exist keep them — including films that still carry three).
