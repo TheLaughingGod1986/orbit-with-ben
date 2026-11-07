@@ -199841,10 +199841,10 @@
       "stage": "shots",
       "after": "J2352",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T09:01Z",
+      "eta": "2026-11-07T11:01Z",
       "created_by": "codex",
       "created_at": "2026-11-07T08:19Z",
       "result": "",
@@ -199863,6 +199863,11 @@
           "at": "2026-11-07T08:28Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-07T09:01Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Plan and review Pluto pictures against the approved narration",
@@ -199876,7 +199881,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T09:01Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2354",
