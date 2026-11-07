@@ -201732,13 +201732,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T14:25Z",
-      "eta": "2026-11-07T16:25Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T14:12Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-07T14:12Z",
@@ -201809,6 +201809,11 @@
           "at": "2026-11-07T15:15Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Pushed commit e96c984324 to branch j2353-pluto-shot-list (PR #626); all 4 J2362 items repaired and verified with clip_check 74 rows PASS"
+        },
+        {
+          "at": "2026-11-07T15:15Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Completed J2367 repairs on PR #626 (e96c984324); ready for dependent Chief re-review",
