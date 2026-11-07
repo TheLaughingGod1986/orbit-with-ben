@@ -200079,10 +200079,10 @@
       "stage": "",
       "after": "J2324",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "chief",
+      "since": "2026-11-07T13:17Z",
+      "eta": "2026-11-07T15:17Z",
       "created_by": "codex",
       "created_at": "2026-11-07T07:34Z",
       "result": "",
@@ -200091,10 +200091,23 @@
           "at": "2026-11-07T07:34Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T13:17Z",
+          "by": "chief",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review PR450 corrected head and decide merge plus controlled watcher refresh",
-      "kind": "chief"
+      "kind": "chief",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T13:17Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2351",
