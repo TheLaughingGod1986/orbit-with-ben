@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2361 | mini | claimed | gemini | 2026-11-07T13:49Z | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair shot-list source, reuse and finishing defects from J2359 | jobs/reviews/J2359/REVIEW.md |
 | J2362 | any | open (after J2361) | – | – | 034 shots · chief · 034 Pluto: Chief re-review corrected J2361 shot plan and decide production release | jobs/reviews/J2359/REVIEW.md |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
+| J2365 | any | open | – | – | review · Verify condition for J2299 |  |
 
 Recently finished:
 
