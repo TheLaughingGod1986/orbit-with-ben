@@ -202372,9 +202372,14 @@
           "at": "2026-11-07T16:31Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
+        },
+        {
+          "at": "2026-11-07T16:35Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 banned IDs, <=2 uses, native-motion separators in all 7 CODE->CODE gaps)"
         }
       ],
-      "remaining_action": "Verify J2370 harvest + J2371 graphics/chapter cards on disk against PR #626 plan and J2368 review",
+      "remaining_action": "Render/stage J2371 19 graphics onto studio-live NAS and verify frames, labels, timings, alpha and luma",
       "kind": "chief",
       "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
       "rerouted_from": {
@@ -202387,11 +202392,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T16:31Z",
+        "at": "2026-11-07T16:35Z",
         "by": "gemini",
-        "note": "Claimed J2372; checking J2370 and J2371 completion and reading J2368 review + 034 shot list"
+        "note": "Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 "
       },
       "taskKeys": [
         "OWB:034"
