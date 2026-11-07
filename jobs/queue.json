@@ -1,5 +1,5 @@
 {
-  "next_id": 2359,
+  "next_id": 2360,
   "jobs": [
     {
       "id": "J0001",
@@ -200314,6 +200314,35 @@
       ],
       "due": "2026-11-07T11:20:09+00:00",
       "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2359",
+      "title": "034 Pluto: Chief review of J2353 shot list (SHOT_LIST_v01.md + clip_check PASS on PR #626), OMNI R28/R52 price pass vs £0 fallback, and release 034 picture harvest + code graphics",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Review OWB 034 shot_list_v01.csv, SHOT_LIST_v01.md, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and jobs/reviews/J2353/REVIEW.md on PR #626 (50fa44c23e). Verify clip_check PASS (68 rows, 0 errors, 0 warnings across 1,183 v03 Scribe words), 46 visually verified unannotated source plates (<=2 appearances, Frame 0 PIA20291 distinct from Short gmzaCfJF1gA), Teach-on-screen coverage (5 DATA/SCALE, 3 WHO, 12 WHEN, 4 FACT, 14 CODE rows with 0 adjacent CODE), and approve OMNI R28/R52 price pass vs £0 fallback, merge PR #626, mark 034 shots done, and release 034 picture harvest + code graphics.",
+      "ref": "jobs/reviews/J2353/REVIEW.md",
+      "film": "034",
+      "stage": "shots",
+      "after": "J2353",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T10:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T10:45Z",
+          "by": "gemini",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "034 Pluto: Chief review of J2353 shot list (SHOT_LIST_v01.md + clip_check PASS on PR #626), OMNI R28/R52 price pass vs £0 fallback, and release 034 picture harvest + code graphics",
+      "for": "codex",
+      "kind": "chief"
     }
   ],
   "focus": [
