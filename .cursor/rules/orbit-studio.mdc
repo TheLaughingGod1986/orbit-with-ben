@@ -207,9 +207,19 @@ Working film folders live on the NAS both machines share, mirroring the Mini You
 | Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
 | History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
 
-Both machines read and write those same remote folders. **Known on studio-live as of ~11:14 London 7 Nov 2026:** **OWB 030–034** (Apophis, Magnetic Field, Titan, Uranus, Pluto) and **HOS 008, 009, 010, 013** (Lightning, Gravity, Dinosaurs, Evolution).
+Both machines read and write those same remote folders. Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
 
-**Expand studio-live policy (Ben thumbs-up ~12:40 London 7 Nov 2026; optimal workflow ask ~12:41):** keep copying leftover **working / upcoming** film folders that still live only on the Mini onto studio-live. Skip films that are **already fully shipped** under `mac-mini-archive` unless they still have active or upcoming work. If unsure whether a folder is working or shipped, **copy it**. Do **not** recopy shipped archive films as working films. A copy of leftover working folders may be in progress; do **not** invent which extra folders have landed — record the actual list in a follow-up once known. Mini local copies stay until jobs finish writing those folders.
+**studio-live inventory (verified COMPLETE ~13:36 London 7 Nov 2026).** Leftover working/upcoming copy finished (all final copy exits **0**). Do **not** invent further folders.
+
+| Set | Folders |
+|---|---|
+| **Original nine** (already on studio-live; **not** blindly resynced — MacBook may have written newer files) | OWB **030–034** (Apophis, Magnetic Field, Titan, Uranus, Pluto); HOS **008, 009, 010, 013** (Lightning, Gravity, Dinosaurs, Evolution) |
+| **Newly copied** (MacBook-listed; final exits 0) | OWB **025** Mars; OWB **026** Nearest Star; OWB **027, 028, 029**; OWB **035–061** editorial stubs; OWB **J01** Journey; **HOS000** Explorer Test (conservative); **HOS002** Periodic Table (copied conservatively — production records were ambiguous); **HOS005** Harvey; **HOS006** Trees; **HOS007** Vaccine; **HOS099** Compilation (conservative) |
+| **Skipped** | **HOS004 How-Did-We-Discover-The-Atom** — empty stub (zero files) |
+
+**Editorial stubs do not authorise starting production** on those films. Mini originals were left in place (no deletes). Uploads, Buffer, playlists, Flow, and YouTube Studio stay on the Mini; MacBook may take harvests / assemblies / watches when that film's folder exists on studio-live.
+
+**Expand studio-live policy (Ben thumbs-up ~12:40 London 7 Nov 2026):** when new working/upcoming folders appear only on the Mini, copy them onto studio-live. Skip films that are **already fully shipped** under `mac-mini-archive` unless they still have active or upcoming work. If unsure whether a folder is working or shipped, **copy it**. Do **not** recopy shipped archive films as working films. Mini local copies stay until jobs finish writing those folders.
 
 **Who may run media jobs:**
 - **MacBook** may take portable text/review jobs always, and harvest / assembly / watch-listen when that film's studio-live folder is reachable on this machine (or when the job already names another path that exists here). If the files are **not** on studio-live, leave the media job for the Mini (`jobs.macbook_portable`).

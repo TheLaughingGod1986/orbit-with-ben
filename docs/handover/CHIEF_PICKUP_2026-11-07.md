@@ -1,4 +1,4 @@
-# Chief pickup — 7 Nov 2026 ~13:00 London
+# Chief pickup — 7 Nov 2026 (desk snapshot)
 
 **This note will go stale.** It is a dated desk snapshot so a new Chief can continue without chat history. Live state always wins:
 
@@ -26,22 +26,19 @@ Standing rules (not dated): `AGENTS.md` → **Film folders on the NAS**, **How f
 
 ---
 
-## studio-live media (dated ~13:00 London 7 Nov 2026)
+## studio-live media (verified COMPLETE ~13:36 London 7 Nov 2026)
 
-**First studio-live copy COMPLETE for only these nine:** OWB **030–034** and HOS **008, 009, 010, 013**. Do **not** invent any other folder as already complete on studio-live.
+Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` (Mini + MacBook). Live working films: `/Volumes/data/studio-live/`. Shipped archive: `/Volumes/data/mac-mini-archive/`. File Sharing `shared` is **not** the film library. Standing rules: `AGENTS.md` → **Film folders on the NAS**.
 
-**Leftover working/upcoming copy → studio-live: INCOMPLETE** as of ~**12:53 London** and was resumed. Do **not** claim it finished.
+**Leftover working/upcoming copy → studio-live: COMPLETE** (all final copy exits **0**). Mini originals left in place; no deletes. Original nine were **not** blindly resynced (MacBook may have written newer files). Editorial copies do **not** authorise starting production.
 
-**Technique (standing):** `nice -n 15 rsync -a --partial --update` (never `--delete`); exclude `.git` / `node_modules` / `__pycache__`; never kill studio processes; never delete Mini originals; never overwrite newer NAS files with older Mini copies; do not recopy shipped archive films. Full rules: `AGENTS.md` → **Film folders on the NAS**.
-
-| Status (dated) | Films / notes |
+| Set | Folders |
 |---|---|
-| **Partial** | **OWB025** Mars (airs Sun **8 Nov 18:00 London**) — last rsync exit **1**; Mini ~**79272** KiB vs studio-live ~**47206** KiB |
-| **Started / unverified** | **OWB026** — Mini ~**98284** vs studio-live ~**98933** (size alone is **not** completeness) |
-| **Still pending** (when last reported) | OWB027; OWB028 (largest, ~**2.5 GiB**); OWB029; **HOS005** Harvey (remaining November Shorts); **HOS006** Trees (recent launch); **HOS007** Vaccine (upcoming launch); small future editorial **OWB035–061** (copying them does **not** authorise production); OWB **J01** Journey; **HOS000** Explorer Test and **HOS099** Compilation (tiny/uncertain); **HOS002** Periodic Table (ambiguous records — copy conservatively). Skip empty stub **HOS004 How-Did-We-Discover-The-Atom** if still **0 KiB** |
-| **Skipped shipped** (do not recopy) | OWB001–024 except the leftover **025+** working set; **HOS001** Germs; **HOS003** X-Rays; **HOS004** Whats-Really-Inside-An-Atom |
+| **Original nine** (already on studio-live; not blindly resynced) | OWB **030–034**; HOS **008, 009, 010, 013** |
+| **Newly copied** (MacBook-listed; exits 0) | OWB **025** Mars; OWB **026** Nearest Star; OWB **027, 028, 029**; OWB **035–061** editorial stubs; OWB **J01** Journey; **HOS000** Explorer Test (conservative); **HOS002** Periodic Table (conservative — ambiguous production records); **HOS005** Harvey; **HOS006** Trees; **HOS007** Vaccine; **HOS099** Compilation (conservative) |
+| **Skipped** | **HOS004 How-Did-We-Discover-The-Atom** — empty stub (zero files) |
 
-**Existing-nine** were not overwritten during the leftover attempt. A few Mini-newer `status.json` files exist (**031**, **032**, **034**); HOS008 has some NAS-newer AppleDouble metadata. MacBook may have written newer harvest files (e.g. Magnetic Field **J2141**).
+Uploads, Buffer, playlists, Flow, and YouTube Studio stay on the Mini. MacBook may take harvests / assemblies / watches when that film's folder exists on studio-live.
 
 ---
 
