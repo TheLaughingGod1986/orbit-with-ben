@@ -203278,18 +203278,23 @@
           "at": "2026-11-07T20:59Z",
           "by": "gemini",
           "what": "step 1 of 5 done: shot_list_v08.csv passes clip_check.py (52 rows — PASS); 46/127 cuts cached on NAS; resuming _assemble_032_full_master_v01.py"
+        },
+        {
+          "at": "2026-11-07T21:04Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Rendered all 127/127 cuts (17,563 frames), mixed VO+SFX+score to -14.5 LUFS (-1.0 dBTP), muxed 032_what_would_happen_if_you_landed_on_titan_master_v01.mp4; running 5 gates"
         }
       ],
-      "remaining_action": "Finish rendering 127 cuts and mux 032 Titan master v01",
+      "remaining_action": "Run and verify 5 gates (clip_check, picture_qa, music_gate, sfx_kit level, delivery)",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-07T20:59Z",
+        "at": "2026-11-07T21:04Z",
         "by": "gemini",
-        "note": "shot_list_v08.csv passes clip_check.py (52 rows — PASS); 46/127 cuts cached on NAS; resuming _assemble_032_full_master_v"
+        "note": "Rendered all 127/127 cuts (17,563 frames), mixed VO+SFX+score to -14.5 LUFS (-1.0 dBTP), muxed 032_what_would_happen_if_"
       },
       "taskKeys": [
         "OWB:032"
