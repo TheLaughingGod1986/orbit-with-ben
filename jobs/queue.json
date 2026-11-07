@@ -190019,6 +190019,11 @@
           "at": "2026-11-07T05:20Z",
           "by": "cursor",
           "what": "step 5 of 5 done: Both cuts and phone copies are in OWB UAT. v12 and v13 masters were left in place. No upload."
+        },
+        {
+          "at": "2026-11-07T05:20Z",
+          "by": "cursor",
+          "what": "waits on Ben: Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky. (by 2026-11-09 18:00 London)"
         }
       ],
       "remaining_action": "Waiting on Ben's watch of AR2 v13 and AR3 v14",
@@ -190032,7 +190037,17 @@
       },
       "taskKeys": [
         "OWB:030"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky.",
+        "file": "OWB UAT/owb_ar2_iss_2030_deorbit_v13/owb_ar2_iss_2030_deorbit_v13_PHONE.mp4",
+        "version": "v13",
+        "due": "2026-11-09T18:00Z",
+        "ifNot": "AR2 stays unscheduled. Nothing airs.",
+        "title": "AR2 v13 Where Will the ISS Crash?",
+        "number": "030",
+        "type": "short"
+      }
     },
     {
       "id": "J2230",
