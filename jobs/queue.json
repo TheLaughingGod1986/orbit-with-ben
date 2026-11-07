@@ -203251,13 +203251,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T20:30Z",
-      "eta": "2026-11-07T22:30Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T20:12Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-07T20:12Z",
@@ -203318,6 +203318,11 @@
           "at": "2026-11-07T21:35Z",
           "by": "gemini",
           "what": "step 5 of 5 done: All 5 gates PASS (clip_check 52 rows PASS, picture_qa 0/127 fails, music_gate PASS, sfx_kit level PASS, -14.5 LUFS / -1.0 dBTP / 0 black frames); sidecars committed in 83fbdcd349"
+        },
+        {
+          "at": "2026-11-07T21:36Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Ready for Chief/Claude edit review",
