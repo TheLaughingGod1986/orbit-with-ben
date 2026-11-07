@@ -197745,13 +197745,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-07T02:59Z",
-      "eta": "2026-11-07T04:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T02:33Z",
-      "result": "",
+      "result": "parked for Chief: Chapter 5 sentence take pluto_ch05_looked_back_v02 failed its ending (last 50 ms windows -29.30, -28.60, -25.20 dBFS; last sample -2365). Scribe has looked back; raw back? versus the locked em dash. Chapter 6 not taken. 77 credits, one ledger line. No v02 master. v01 hashes unchanged. Records PR 611. PR 604 envelope correction is 535ba3c502. Ruling is J2336. J2157 stays unfinished.",
       "history": [
         {
           "at": "2026-11-07T02:33Z",
@@ -197777,6 +197777,11 @@
           "at": "2026-11-07T03:07Z",
           "by": "cursor",
           "what": "step 4 of 5 done: Ch5 take failed its tail (-29.30, -28.60, -25.20 dBFS). Ch6 not taken. 77 credits. Records PR 611. PR 604 envelope correction 535ba3c502. Chief ruling J2336. v01 hashes unchanged."
+        },
+        {
+          "at": "2026-11-07T03:07Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: Chapter 5 sentence take pluto_ch05_looked_back_v02 failed its ending (last 50 ms windows -29.30, -28.60, -25.20 dBFS; last sample -2365). Scribe has looked back; raw back? versus the locked em dash. Chapter 6 not taken. 77 credits, one ledger line. No v02 master. v01 hashes unchanged. Records PR 611. PR 604 envelope correction is 535ba3c502. Ruling is J2336. J2157 stays unfinished."
         }
       ],
       "remaining_action": "Park the failed Chapter 5 take for the elected Chief",
