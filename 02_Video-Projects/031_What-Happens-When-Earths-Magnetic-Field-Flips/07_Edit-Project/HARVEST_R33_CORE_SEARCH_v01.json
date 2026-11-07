@@ -1,0 +1,40 @@
+{
+  "input": "R33 NOAA/IODP deep-ocean sediment core photo",
+  "date": "2026-11-07",
+  "candidates_examined": 3,
+  "active_minutes": 18,
+  "budget_status": "three-candidate limit reached; do not restart these three files",
+  "outcome": "One licensed plate: NOAA Photo Library expl2290, CC BY 2.0, Lisa Levin. It is an 8 cm microbial-mat tube core, not a long paleomagnetic section. Two sharper NOAA Ocean Exploration cores were not used: the pages name Art Howard and Jeff Beeson and do not state a licence. Chief needs a new source before another R33 pass. The marine fossil plate and wildlife are different inputs.",
+  "contact_sheet": "/Users/benjaminoats/_desk/J2141-sediment-v01/CONTACT_rejected_v01.jpg",
+  "contact_sheet_sha256": "5176824ec86d8f31da3c17495e7e3ec211075a6322a7665842d15af16b19b5ff",
+  "admitted": "noaa_expl2290_tube_core",
+  "candidates": [
+    {
+      "file": "expl2290_commons.jpg",
+      "sha256": "b438fecc32a3cebe0b8a27e8cd34d4844c1105e597b15a3c7dec28f05b986f98",
+      "source": "https://www.flickr.com/photos/noaaphotolib/5277866198/",
+      "licence": "CC BY 2.0",
+      "width": 1578,
+      "height": 1171,
+      "result": "Used. Real ocean sediment in a tube. Soft, scratched, slide-mounted. Microbial mat on top."
+    },
+    {
+      "file": "aleutian_cores.jpg",
+      "sha256": "b9d6ed360c626f12656b8c68eebf1e8b88e34eaf9d3f5afd01e3d972df212d64",
+      "source": "https://oceanexplorer.noaa.gov/multimedia/sediment-cores/",
+      "licence": "not stated on the saved page",
+      "width": 3000,
+      "height": 2015,
+      "result": "Push cores on deck after Alvin. Photographer Art Howard. Identifiable people. Not used."
+    },
+    {
+      "file": "chile_seep_core.jpg",
+      "sha256": "bceb68364d809edd3b33bad0d4895889282cf2eaa84263be071242fde8b81339",
+      "source": "https://oceanexplorer.noaa.gov/multimedia/explorations-25chile-seeps-cores/",
+      "licence": "not stated on the saved page",
+      "width": 1920,
+      "height": 2560,
+      "result": "Split large-diameter seep core. Credit Jeff Beeson only. Clearer core, no licence statement. Not used."
+    }
+  ]
+}

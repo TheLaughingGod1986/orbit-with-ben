@@ -2,6 +2,38 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R33 sediment-core plate (7 Nov UTC, Cursor)
+
+Preserve **1/3**. Based on PR #575 at `a9bf593485`. Spend **£0**.
+Three candidates examined. One plate admitted.
+
+`plate_031_r33_core_v01.mp4` covers 336.92–341.36 s (111 frames, 25 fps),
+the gap before the locked "41,000" cue at 341.38 s. It is a centre 16:9 crop
+of NOAA Photo Library expl2290 with the slide mount removed, then a linear
+6% push. Maximum scale against the 1578 px width is 1.29. Silent. Credit
+`Lisa Levin / NOAA`. Component polish **PASS, 0 failures, 0 warnings**.
+Hash `e11b96dd030b988a71df5830b732de1c1e29d63c9dc7ff7e4395a032e1ac0e69`.
+Media: `/Users/benjaminoats/_desk/J2141-sediment-v01/`.
+
+The photograph is an 8 cm tube core from a Thioploca mat on the Chile margin,
+CC BY 2.0 on the Flickr page (`5277866198`). Commons also carries
+`PD-USGov-NOAA`; the Flickr licence is the one recorded. It is a real ocean
+sediment core. It is not an IODP paleomagnetic section and it does not depict
+the 100,000-year magnetic record. The white layer is the bacterial mat.
+Stills inspected. No motion or audio review. No KEEP.
+
+Two sharper NOAA Ocean Exploration cores were not used. The Aleutian deck
+photo credits Art Howard, and the Chile seep split-core credits Jeff Beeson.
+Neither saved page states a licence. Do not restart these three files.
+`HARVEST_R33_CORE_SEARCH_v01.json` and
+`HARVEST_R33_CORE_TECHNICAL_CHECK_v01.json` hold the evidence.
+Reproduce with `harvest_sediment_core.py` only into a fresh plate path; the
+script refuses an existing plate.
+
+**Next:** the marine fossil plate (R45) and the wildlife cuts (R49 birds,
+whale, turtle) are different inputs. Composites, source/gate conflicts and
+full picture QA remain. No live render.
+
 ## R7 crust plate and closed R9 search (7 Nov UTC, Cursor)
 
 Preserve **1/3**, PR **#575**, starting at `1bd6d4d2ce`. Spend **£0**.

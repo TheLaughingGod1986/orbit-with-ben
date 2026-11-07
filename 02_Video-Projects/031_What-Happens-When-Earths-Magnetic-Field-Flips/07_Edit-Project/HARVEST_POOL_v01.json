@@ -645,6 +645,38 @@
       "licence_evidence_sha256": "c1bf55b660fd8b51fa84e43483107f6ac199abdd58c5e1a68c216e7a2a12a9d0",
       "generation_authorized": false,
       "review_note": "Illustrative basalt specimen, not Brunhes actual sample, not laboratory footage. Wide specimen v01 and v02 failed polish; retain failures. v03 has poor credit contrast, use v04. v04 is a detail crop of real specimen, no bench in view; actual motion and editorial fit require review."
+    },
+    {
+      "asset_id": "noaa_expl2290_tube_core",
+      "title": "expl2290 tube core, Peru-Chile oxygen-minimum zone",
+      "description": "NOAA Photo Library expl2290: an 8 cm tube core from a Thioploca bacterial mat on the Chile margin. It is a real ocean sediment core. It is not an IODP paleomagnetic section and it does not show the 100,000-year magnetic record. The white layer is the bacterial mat.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Expl2290_-_Flickr_-_NOAA_Photo_Library.jpg",
+      "flickr_page": "https://www.flickr.com/photos/noaaphotolib/5277866198/",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Expl2290_-_Flickr_-_NOAA_Photo_Library.jpg",
+      "credit": "Lisa Levin / NOAA Photo Library",
+      "local_path": "/Users/benjaminoats/_desk/J2141-sediment-v01/expl2290_commons.jpg",
+      "sha256": "b438fecc32a3cebe0b8a27e8cd34d4844c1105e597b15a3c7dec28f05b986f98",
+      "source_sha1": "fc7b11dbc4dbb0db4a33791d22416f7694a22beb",
+      "bytes": 432262,
+      "width": 1578,
+      "height": 1171,
+      "rows": [
+        33
+      ],
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "download_status": "downloaded",
+      "review_status": "static_candidate_not_KEEP",
+      "licence": "CC BY 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+      "licence_status": "Flickr_page_states_CC_BY_2.0; Commons also carries a PD-USGov-NOAA template, which is not the licence used",
+      "attribution_required": true,
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-sediment-v01/flickr_expl2290.html",
+      "source_evidence_sha256": "b596ec214bb105352180a77f25a935d915ad8bcfff061d3ec00b3f43d3667e7e",
+      "wikitext_path": "/Users/benjaminoats/_desk/J2141-sediment-v01/expl2290.wikitext",
+      "wikitext_sha256": "948c5ad515432ca319b6958367522539631655b4aab0173cd581ea7340613f14",
+      "generation_authorized": false,
+      "review_note": "Slide mount cropped off. Centre 16:9, then a linear 6% push. Maximum scale against the crop is 1.29. Stills inspected. No motion review. On-screen credit is Lisa Levin / NOAA. Changes: crop, grade, push."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -849,6 +881,46 @@
         {
           "source": "https://commons.wikimedia.org/wiki/File:Pahoehoe_toe.jpg",
           "result": "800\u00d7500. Advancing toe, public domain. Full-frame scale would exceed 2.35\u00d7. Not downloaded."
+        }
+      ]
+    },
+    {
+      "input": "R33 NOAA/IODP deep-ocean sediment core photo",
+      "date": "2026-11-07",
+      "candidates_examined": 3,
+      "active_minutes": 18,
+      "budget_status": "three-candidate limit reached; do not restart these three files",
+      "outcome": "One licensed plate: NOAA Photo Library expl2290, CC BY 2.0, Lisa Levin. It is an 8 cm microbial-mat tube core, not a long paleomagnetic section. Two sharper NOAA Ocean Exploration cores were not used: the pages name Art Howard and Jeff Beeson and do not state a licence. Chief needs a new source before another R33 pass. The marine fossil plate and wildlife are different inputs.",
+      "contact_sheet": "/Users/benjaminoats/_desk/J2141-sediment-v01/CONTACT_rejected_v01.jpg",
+      "contact_sheet_sha256": "5176824ec86d8f31da3c17495e7e3ec211075a6322a7665842d15af16b19b5ff",
+      "admitted": "noaa_expl2290_tube_core",
+      "candidates": [
+        {
+          "file": "expl2290_commons.jpg",
+          "sha256": "b438fecc32a3cebe0b8a27e8cd34d4844c1105e597b15a3c7dec28f05b986f98",
+          "source": "https://www.flickr.com/photos/noaaphotolib/5277866198/",
+          "licence": "CC BY 2.0",
+          "width": 1578,
+          "height": 1171,
+          "result": "Used. Real ocean sediment in a tube. Soft, scratched, slide-mounted. Microbial mat on top."
+        },
+        {
+          "file": "aleutian_cores.jpg",
+          "sha256": "b9d6ed360c626f12656b8c68eebf1e8b88e34eaf9d3f5afd01e3d972df212d64",
+          "source": "https://oceanexplorer.noaa.gov/multimedia/sediment-cores/",
+          "licence": "not stated on the saved page",
+          "width": 3000,
+          "height": 2015,
+          "result": "Push cores on deck after Alvin. Photographer Art Howard. Identifiable people. Not used."
+        },
+        {
+          "file": "chile_seep_core.jpg",
+          "sha256": "bceb68364d809edd3b33bad0d4895889282cf2eaa84263be071242fde8b81339",
+          "source": "https://oceanexplorer.noaa.gov/multimedia/explorations-25chile-seeps-cores/",
+          "licence": "not stated on the saved page",
+          "width": 1920,
+          "height": 2560,
+          "result": "Split large-diameter seep core. Credit Jeff Beeson only. Clearer core, no licence statement. Not used."
         }
       ]
     }
@@ -1681,5 +1753,36 @@
     "source_page": "https://www.usgs.gov/media/images/vesicular-basalt-side-view",
     "outcome": "downloaded specimen and detail pan; no historical identification claimed",
     "do_not_repeat": "same USGS original; preserve failed v01/v02, superseded v03 and current v04"
-  }
+  },
+  "r33_core_plate_v01": {
+    "file": "plate_031_r33_core_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-sediment-v01/plate_031_r33_core_v01.mp4",
+    "sha256": "e11b96dd030b988a71df5830b732de1c1e29d63c9dc7ff7e4395a032e1ac0e69",
+    "bytes": 3279157,
+    "film_start_s": 336.92,
+    "film_end_s": 341.36,
+    "row_end_s": 349.16,
+    "frames": 111,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      0,
+      150,
+      1578,
+      1038
+    ],
+    "push": "linear 1.00 to 1.06, centre",
+    "max_scale_vs_native_width": 1.29,
+    "credit": "Lisa Levin / NOAA",
+    "licence": "CC BY 2.0",
+    "no_loop": true,
+    "no_interpolation": true,
+    "hands_to": "CODE paleo at the 41,000 cue, 341.38 s",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "r33_contact_sheet": "/Users/benjaminoats/_desk/J2141-sediment-v01/CONTACT_v01.jpg",
+  "r33_contact_sheet_sha256": "5ba093fa1f22668e9b726e572ebd15c0a75afcc3a93de79ff04b5a3a58ecec6f"
 }
