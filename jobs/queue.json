@@ -1,5 +1,5 @@
 {
-  "next_id": 2381,
+  "next_id": 2382,
   "jobs": [
     {
       "id": "J0001",
@@ -203485,6 +203485,35 @@
       "taskKeys": [
         "OWB:033"
       ]
+    },
+    {
+      "id": "J2381",
+      "title": "031 Magnetic Field Flip: assemble 54-row long master v01 (568.28 s) from SHOT_LIST_v02 + £0 score bed/SFX + gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v01` (`568.28 s` VO + `2.50 s` post-VO hold on R54 = `570.78 s` picture/music) from the locked 54-row shot list (`SHOT_LIST_v02.md`, ref `55d4dad1c2`) and the completed £0 J2141 picture package (`ae085e857c`).\n\n### Inputs & Locations\n- **Shot list & handoff:**\n  - `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/SHOT_LIST_v02.md` (`55d4dad1c2`)\n  - `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/BUILD_HANDOFF_J2141.md` (`ae085e857c`)\n  - `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/HARVEST_POOL_v01.json` (`42` pool assets, all stills `<= 2` appearances, acting-Chief gate resolutions recorded)\n  - `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/MEDIA_AVAILABILITY_MACBOOK_2026-11-07.json` (`133` verified 1080p25 `.mp4` plates, `code_graphics` and full-row composites across all 54 rows)\n- **Voiceover (locked):**\n  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/02_Voiceover/magnetic_field_flip_vo_v02a.wav` (`568.28 s`, `SHA-256: 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6`)\n  - Word timings: `02_Voiceover/stt/magnetic_field_flip_vo_v02a/stt_raw.json` (copied from `v02`, J1295/J1752)\n- **Picture & Code Graphics on `studio-live` NAS (`/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/`):**\n  - `j2141_remaining_v01/plates/` (20 verified 1080p25 plates & full-row composites for `R05`, `R09`, `R10`, `R18`, `R19`, `R23`, `R24`, `R34`, `R35`, `R37`, `R44`, `R49`, `R54`)\n  - `code_cards_v01/` & `harvest_v01/` + deterministic build scripts (`build_code_graphics_v01.py`, `build_harvest_plates_v01.py`, `build_composites_batch1_v01.py`, `build_composites_batch2_v01.py`, `build_composites_batch3_v01.py`, `build_composites_r20_r25_v01.py`, `build_composites_r43_r54_v01.py`, `harvest_remaining_plates_v01.py`)\n- **SFX & Music (£0):**\n  - House SFX kit (`python3 scripts/sfx_kit.py make --out-dir /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/06_Sound-Effects/kit_v01`)\n  - Score bed per `SHOT_LIST_v02.md` Music Brief (`Pace: 66-74 BPM`, `05_Music/`)\n\n### Required Gates Before Handoff\n1. `python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> --words <stt_raw.json>` -> `PASS`\n2. `python3 scripts/picture_qa.py <cut.mp4> --cuts <cuts.json> --pool 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/HARVEST_POOL_v01.json --out-dir <pack>` -> `PASS`\n3. `python3 scripts/music_gate.py 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips --bed <bed> --video <cut.mp4>` -> `PASS`\n4. `python3 scripts/sfx_kit.py level --vo <vo_stem> --sfx <sfx_stem> --bed <music_stem> --minutes 9.5` -> `PASS`\n5. Integrated loudness `~-14 LUFS`, `1920x1080`, `25 fps` CFR, `yuv420p`, `0.5-0.8 s` breath before part cards, `2.50 s` hold after the last spoken word (`\"begins.\"` at `568.28 s`) before fade.\n",
+      "ref": "ae085e857c",
+      "film": "031",
+      "stage": "edit",
+      "after": "J2141",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T22:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T22:55Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 54-row long master v01 and run clip_check, picture_qa, music_gate, and sfx_kit level",
+      "kind": "assembly",
+      "plain": "Assemble the 9.5-minute Magnetic Field Flip video (031) from all 54 picture rows, voiceover, music, and sound effects"
     }
   ],
   "focus": [
