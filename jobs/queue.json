@@ -199673,13 +199673,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T08:15Z",
-      "eta": "2026-11-07T10:15Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T08:05Z",
-      "result": "",
+      "result": "Full Pluto v03 VO PASS. PR619 and PR623 merged with green CI; J2157 resolved done. J2353 queued for zero-spend shot list from approved v03 timings. No credits or YouTube changes.",
       "history": [
         {
           "at": "2026-11-07T08:05Z",
@@ -199710,6 +199710,11 @@
           "at": "2026-11-07T08:20Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR619 and PR623 merged; J2157 resolved done, 034 VO PASS recorded, J2353 shot list queued after this review."
+        },
+        {
+          "at": "2026-11-07T08:20Z",
+          "by": "codex",
+          "what": "done: Full Pluto v03 VO PASS. PR619 and PR623 merged with green CI; J2157 resolved done. J2353 queued for zero-spend shot list from approved v03 timings. No credits or YouTube changes."
         }
       ],
       "remaining_action": "Close the completed VO review and report the shot-list handoff",
@@ -199724,7 +199729,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2352/REVIEW.md"
     },
     {
       "id": "J2353",
