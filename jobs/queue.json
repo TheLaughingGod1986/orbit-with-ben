@@ -202340,10 +202340,10 @@
       "stage": "picture",
       "after": "J2371",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T16:30Z",
+      "eta": "2026-11-07T18:00Z",
       "created_by": "chief",
       "created_at": "2026-11-07T15:32Z",
       "result": "",
@@ -202357,6 +202357,11 @@
           "at": "2026-11-07T16:29Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-07T16:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "PASS or FIX the J2370/J2371 picture package against SHOT_LIST_v01; release assembly only on PASS",
@@ -202370,7 +202375,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T16:30Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2373",
