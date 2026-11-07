@@ -202340,13 +202340,13 @@
       "stage": "picture",
       "after": "J2371",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T16:30Z",
-      "eta": "2026-11-07T18:00Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T15:32Z",
-      "result": "",
+      "result": "PASS: 034 Pluto on-disk picture + graphics package verified on studio-live NAS (67/67 harvest_v01 plates SHA-256 matched, 9 native clips decoded, 0 banned IDs, <=2 uses, 7/7 CODE->CODE gaps separated by native motion, 0 Orbit/Omni, 19/19 graphics_v03 + Short 2 opener + £0 pluto_score_bed_v01.mp3 + kit_v01); PR #643 and PR #644 merged; 034 picture marked done; 034 long assembly queued; J2319 and J2320 reopened.",
       "history": [
         {
           "at": "2026-11-07T15:32Z",
@@ -202387,6 +202387,11 @@
           "at": "2026-11-07T16:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Marked 034 picture done, queued 034 long assembly, and reopened J2319 and J2320"
+        },
+        {
+          "at": "2026-11-07T16:50Z",
+          "by": "gemini",
+          "what": "done: PASS: 034 Pluto on-disk picture + graphics package verified on studio-live NAS (67/67 harvest_v01 plates SHA-256 matched, 9 native clips decoded, 0 banned IDs, <=2 uses, 7/7 CODE->CODE gaps separated by native motion, 0 Orbit/Omni, 19/19 graphics_v03 + Short 2 opener + £0 pluto_score_bed_v01.mp3 + kit_v01); PR #643 and PR #644 merged; 034 picture marked done; 034 long assembly queued; J2319 and J2320 reopened."
         }
       ],
       "remaining_action": "Complete J2372 and report on OWB thread",
@@ -202410,7 +202415,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "7268178178"
     },
     {
       "id": "J2373",
