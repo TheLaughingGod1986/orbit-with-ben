@@ -197908,17 +197908,22 @@
           "at": "2026-11-07T03:15Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed J2337. NAS offload had nothing old enough (7876 MB free). No audio perception in this session."
+        },
+        {
+          "at": "2026-11-07T03:19Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Original API MP3 DndWsQKDtVqeMQ8IY0rq decodes to the same 5.040 s PCM as the failed WAV (corr 1.0, last sample -2365). No recovery without a new take. Requests are 257 and 432 characters, 689 total."
         }
       ],
-      "remaining_action": "Locate the original J2335 API MP3 and compare its ending to the failed WAV before any spend",
+      "remaining_action": "Take one context-backed Chapter 5 sentence, then crop it only if the pause is safe",
       "kind": "vo",
       "plain": "Repair the two Pluto narration lines while preserving their complete endings.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T03:15Z",
+        "at": "2026-11-07T03:19Z",
         "by": "cursor",
-        "note": "Claimed J2337. NAS offload had nothing old enough (7876 MB free). No audio perception in this session."
+        "note": "Original API MP3 DndWsQKDtVqeMQ8IY0rq decodes to the same 5.040 s PCM as the failed WAV (corr 1.0, last sample -2365). N"
       },
       "taskKeys": [
         "OWB:034"
