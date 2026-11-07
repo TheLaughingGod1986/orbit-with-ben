@@ -1,3 +1,42 @@
+## MacBook continuation — 7 Nov, R29 SAA strength plate
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py saa` / `saa_graphics.py` and one full-frame 1920×1080 /
+25 fps plate in `CODE_SAA_v01.json`:
+
+- R29, 301.20–306.32 s (128 frames, 5.12 s), on "Since", through the gap
+  after "lobes." One schematic blob widens, drifts west and splits into two
+  lobes. A zoomed 20,000–26,000 nT bar falls from 24,000 to 22,000 and leaves
+  a white mark at the start. Labels: 24,000 nT, WEAK SPOT, WIDENED, WESTWARD,
+  ≈ 20 KM/YR, 22,000 nT, 2 LOBES. Each label is on screen under four seconds.
+  SOURCES row 12. Not an ESA/DTU contour and not a coastline.
+- The 24,000 nT, 22,000 nT and about 20 km/yr figures are named by
+  SHOT_LIST_v02 and quoted in SOURCES row 12. They are not spoken on this
+  line. WEAK SPOT, WIDENED and 2 LOBES follow the locked words. Score the
+  WORDS gate before any KEEP.
+- The upper right stays empty. The existing alpha stamp
+  `code_graphic_031_r29_saa1970_v01` (301.44–305.04 s, label "1970") still
+  owns that corner.
+
+Navy-grid samples sit around mean luma 44–47. Grain is the encoder's
+`noise=alls=2`. No new archive search, no paid generation, £0. Static
+contact sheet inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-saa-v01/` (one mp4, preview,
+`CONTACT_v01.jpg`). `CODE_SAA_TECHNICAL_CHECK_v01.json` records the SHA-256
+match, 1920×1080, 25 fps, yuv420p, 128 frames and a full error-free decode.
+Reproduce into a fresh directory (existing files are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py saa --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the aurora, the progressive timeline, the R41 atmosphere fallback as a
+finished plate, composites and the picture gates. Existing asset-ID and
+sourced-simulation conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R10 sample map and R48 pole pins
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
