@@ -1,5 +1,5 @@
 {
-  "next_id": 2365,
+  "next_id": 2367,
   "jobs": [
     {
       "id": "J0001",
@@ -182426,8 +182426,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T13:24Z",
-      "eta": "2026-11-07T15:24Z",
+      "since": "2026-11-07T13:30Z",
+      "eta": "2026-11-07T15:30Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183401,16 +183401,31 @@
           "at": "2026-11-07T13:27Z",
           "by": "macbook",
           "what": "step 1 of 3 done: R27 hubble_saa still missing; earlier components stay on macbook/J2141"
+        },
+        {
+          "at": "2026-11-07T13:29Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: R27 hubble_saa rendered; PR 633; build still partial"
+        },
+        {
+          "at": "2026-11-07T13:29Z",
+          "by": "macbook",
+          "what": "released: Partial checkpoint on PR 633 (44d0e0a4): R27 Hubble SAA tally, 280.42-285.06 s, SOURCES row 11, £0, technical decode only. Still unfinished: wider harvest, dynamo, matuyama map, SAA strength graphic, poles map, aurora, progressive timeline, R41 fallback, composites and picture gates. No KEEP."
+        },
+        {
+          "at": "2026-11-07T13:30Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
-      "remaining_action": "Build the missing R27 Hubble SAA overlay from SOURCES row 11",
+      "remaining_action": "Wider harvest, dynamo, matuyama map, SAA strength, poles map, aurora, timeline, R41 fallback and composites still unfinished",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T13:27Z",
+        "at": "2026-11-07T13:29Z",
         "by": "macbook",
-        "note": "R27 hubble_saa still missing; earlier components stay on macbook/J2141"
+        "note": "R27 hubble_saa rendered; PR 633; build still partial"
       },
       "taskKeys": [
         "OWB:031"
@@ -196436,6 +196451,11 @@
           "at": "2026-11-07T07:52Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T13:15:00Z"
+        },
+        {
+          "at": "2026-11-07T13:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J2365"
         }
       ],
       "remaining_action": "Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
@@ -196454,10 +196474,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2349 acting-Chief ruling: CONDITION UNMET. J2332 delivery is complete; ledger confirms three takes and 30 existing Flow credits (14890 to 14860), no new spend authorised. Gemini REVIEW.md records the three canonical hashes; this session read that evidence, not a fresh media or motion review. J2333 remains open for Gemini QA with required moving_video_input, but current registry has no demonstrated video-capable worker (Gemini video probe failed; Codex none). Relay must establish a passing video probe before J2333 watches the exact R01/R55 files; J2334 then records elected-Chief hash-specific acceptance. Keep J2299 at 0/5 until J2334 accepts. R01 accepted timing remains 0-4.35s, R55 moving cloud plate after R54 chart. All source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved. No assembly release. Recheck capability/QA/acceptance at 13:15Z; begin QA immediately if capability becomes available sooner.",
-        "check_at": "2026-11-07T13:15:00Z",
+        "check_at": "2026-11-07T14:36:11+00:00",
         "last_recheck": "J2349",
         "checked_at": "2026-11-07T07:52:36+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2365"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
@@ -201196,6 +201217,80 @@
         "note": "Evidence loaded from PR632 head 5442fff3; CI green; MERGEABLE"
       },
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/632"
+    },
+    {
+      "id": "J2365",
+      "title": "Verify condition for J2299",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2299: J2349 acting-Chief ruling: CONDITION UNMET. J2332 delivery is complete; ledger confirms three takes and 30 existing Flow credits (14890 to 14860), no new spend authorised. Gemini REVIEW.md records the three canonical hashes; this session read that evidence, not a fresh media or motion review. J2333 remains open for Gemini QA with required moving_video_input, but current registry has no demonstrated video-capable worker (Gemini video probe failed; Codex none). Relay must establish a passing video probe before J2333 watches the exact R01/R55 files; J2334 then records elected-Chief hash-specific acceptance. Keep J2299 at 0/5 until J2334 accepts. R01 accepted timing remains 0-4.35s, R55 moving cloud plate after R54 chart. All source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved. No assembly release. Recheck capability/QA/acceptance at 13:15Z; begin QA immediately if capability becomes available sooner.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2299 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-07T13:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T13:36Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-07T13:36Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 2264 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
+      "kind": "review",
+      "recheck_of": "J2299",
+      "due": "2026-11-07T14:36:11+00:00",
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
+    },
+    {
+      "id": "J2366",
+      "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-07T13:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T13:36Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review Orbit performance and identify improvements",
+      "kind": "review",
+      "backlog": "owb-weekly-audit"
     }
   ],
   "focus": [
@@ -201213,7 +201308,7 @@
     "hos-thumb-b": "2026-10-21T12:32Z",
     "owb-teach-overlays": "2026-10-21T12:35Z",
     "owb-live-listing-fixes": "2026-11-03T08:24Z",
-    "owb-weekly-audit": "2026-10-26T16:25Z",
+    "owb-weekly-audit": "2026-11-07T13:36Z",
     "hos-weekly-audit": "2026-10-28T15:02Z",
     "owb-ideas": "2026-10-21T09:44Z",
     "hos-ideas": "2026-10-21T10:09Z",
