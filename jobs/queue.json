@@ -202164,17 +202164,22 @@
           "at": "2026-11-07T15:46Z",
           "by": "cursor",
           "what": "step 1 of 4 done: 52 of 67 plates hash-matched on studio-live, including every NASA still and the four KSC launch clips. The other 15 are Commons files that returned HTTP 429. Retrying those one at a time."
+        },
+        {
+          "at": "2026-11-07T15:53Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Commons retry is past the stills. Pluto-system and Arrokoth webms matched. Two KSC cleanroom stills missed on the first try. Two flyby webms are still downloading."
         }
       ],
-      "remaining_action": "Finish the 15 Wikimedia plates Wikimedia rate-limited, then write the harvest pool",
+      "remaining_action": "Finish the last Wikimedia flyby clips, then write the harvest pool",
       "kind": "assembly",
       "plain": "Download and provenance every £0 NASA/Commons still and native-motion clip named in the locked 034 shot list",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-07T15:46Z",
+        "at": "2026-11-07T15:53Z",
         "by": "cursor",
-        "note": "52 of 67 plates hash-matched on studio-live, including every NASA still and the four KSC launch clips. The other 15 are "
+        "note": "Commons retry is past the stills. Pluto-system and Arrokoth webms matched. Two KSC cleanroom stills missed on the first "
       },
       "taskKeys": [
         "OWB:034"
