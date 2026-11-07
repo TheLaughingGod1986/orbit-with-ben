@@ -182434,8 +182434,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T13:08Z",
-      "eta": "2026-11-07T15:08Z",
+      "since": "2026-11-07T13:12Z",
+      "eta": "2026-11-07T15:12Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183374,15 +183374,31 @@
           "at": "2026-11-07T13:09Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T13:12Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-07T13:12Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T13:15Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done: brief read; cards, mechanisms, evidence, scales, dates and comparisons already landed"
         }
       ],
-      "remaining_action": "Build R25 sourced altitude comparison overlay; remaining harvest and physical mechanisms unfinished",
+      "remaining_action": "Build the missing opening code graphics: poledrift, flip and layers.",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-07T13:09Z",
-        "by": "macbook"
+        "at": "2026-11-07T13:15Z",
+        "by": "macbook",
+        "note": "brief read; cards, mechanisms, evidence, scales, dates and comparisons already landed"
       },
       "taskKeys": [
         "OWB:031"
@@ -200998,6 +201014,11 @@
           "at": "2026-11-07T12:53Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Full-size visual inspection and hash/dimension/licence manifest completed for all clean NASA and Wikimedia stills; deduplicated exposure identities and verified <=2 raw and separated appearances per asset"
+        },
+        {
+          "at": "2026-11-07T13:13Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Resumed J2361 at step 3/5; checking prior session manifest and writing repaired PR #626 deliverables"
         }
       ],
       "remaining_action": "Generate repaired shot_list_v01.csv, SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 review packet",
@@ -201015,9 +201036,9 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T12:53Z",
+        "at": "2026-11-07T13:13Z",
         "by": "gemini",
-        "note": "Full-size visual inspection and hash/dimension/licence manifest completed for all clean NASA and Wikimedia stills; dedup"
+        "note": "Resumed J2361 at step 3/5; checking prior session manifest and writing repaired PR #626 deliverables"
       },
       "taskKeys": [
         "OWB:034"
