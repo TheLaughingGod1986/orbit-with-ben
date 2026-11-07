@@ -11,10 +11,11 @@
 | Subscribe beat | Line 9 of `templates/SUBSCRIBE_BEAT_LINES.md` (14 words at 42% of spoken words: *"If you'd like more questions like this one, subscribing really helps a small channel."* — not used in `030`–`033`) |
 | Sources | **DONE (`J2149`, 4 Nov 2026)** — `01_Script/SOURCES.md` (15/15 rows `VERIFIED` against live NASA Science, NSSDCA, and LOC pages) + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS, 0 FLAG) |
 | Gate | **PASS — VO / Gemini Veo allowed** (`npm run review:script` + `npm run gate:episode` pasted below) |
-| VO | Queued (`kind: vo`, `--film 034 --stage vo`) |
+| VO | Queued (`J2157`, `kind: vo`, `--film 034 --stage vo`) |
 | CG | Pending (NASA `PIA20291` / `PIA19952` / `PIA19873` / `PIA19968` / `PIA19948` + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (~1,291 spoken narration words, ~8.8 min est.) |
-| Shorts | Paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Giant Ice Heart Have Zero Craters?*, scheduled Private for `2026-11-14T11:30:00Z`) + 2 episode Shorts (including Test A opening Short) |
+| Long air slot | **Sun 13 Dec 2026 18:00 Europe/London (`2026-12-13T18:00:00Z`)** (`J2023` / `J2223`) |
+| Shorts | **`10_Shorts/SHORTS_PLAN_v01.md` LOCKED (`J2223` · 2 Active Shorts queued in `J2319` & `J2320`):** **Short #1 (Test A Opening Short, `J2319`):** *What Did New Horizons Discover Inside Pluto's Frozen Heart?* — **Mon 21 Dec 2026 11:30 London** [Path A Default] / **Sat 19 Dec 11:30 London** [Path B]; **Short #2 (Keeper Question Short, `J2320`):** *Why Does Pluto's Giant Moon Charon Never Rise or Set?* — **Wed 23 Dec 2026 11:30 London** [Path A Default] / **Mon 21 Dec 11:30 London** [Path B]; Reserve Short #3 (*Why Are Pluto's 3-Kilometre Mountains Made of Water Ice?*) held under 4 Nov 2-Short cap; paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Frozen Heart Have Zero Craters?*) |
 
 ## Marker counts (`pluto_frozen_heart_script_master_v02.md`)
 

@@ -17,7 +17,8 @@
 | Picture / Stills lock | **STILLS LOCK + OMNI R29/R55 PRICE-PASS BRIEF DRAFTED (`J2256` — parked for Chief)** (`07_Edit-Project/STILLS_LOCK_v01.md`, `07_Edit-Project/STILLS_POOL_STATUS_v01.json`, `07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`, `jobs/reviews/J2256/REVIEW.md`: 5/43 pool assets + 2 aux verified on disk/NAS with SHA-256; 38 missing IDs + `PIA00271` listed for £0 harvest; every still locked to `≤ 2` appearances; Frame 0 locked to `PIA01283` + `PIA01280`; £0 spend) |
 | CG | pending Chief price pass (`07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`: 2 `[ORBIT ACTS]` rows `R29` & `R55` flagged `OMNI (flag)` with complete £0 `CODE`/`NASA` fallbacks; no Veo/Omni minted) |
 | Runtime target | `10:29.4` (`611.40 s` locked VO + `18.00 s` moving end-screen hold `611.40–629.40 s`) |
-| Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; two new Shorts (incl. Test A opening Short) after master |
+| Long air slot | **Wed 9 Dec 2026 18:00 Europe/London (`2026-12-09T18:00:00Z`)** (`J2023` / `J2223`) |
+| Shorts | **`10_Shorts/SHORTS_PLAN_v01.md` LOCKED (`J2223` · 2 Active Shorts queued in `J2317` & `J2318`):** **Short #1 (Test A Opening Short, `J2317`):** *Why Does Knocked-Sideways Uranus Have 21-Year Winters?* — **Fri 18 Dec 2026 11:30 London** [Path A Default] / **Sat 12 Dec 11:30 London** [Path B]; **Short #2 (Keeper Question Short, `J2318`):** *What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?* — **Sat 19 Dec 2026 11:30 London** [Path A Default] / **Fri 18 Dec 11:30 London** [Path B]; Reserve Short #3 (*Why Would a Rock Take 10 Minutes to Fall Off a Cliff on Uranus's Moon Miranda?*) held under 4 Nov 2-Short cap; standalone Short `ZpEA8stoSPA` public 3 Nov 2026 (461 views day 1) |
 
 ## Blockers
 
@@ -27,7 +28,8 @@
 - [x] VO take (`vo_take.py` from `uranus_21_year_winter_script_master_v02.md` — `uranus_vo_v01.wav`, `611.40 s`, accepted in `J2164` / `jobs/reviews/J2164/REVIEW.md`)
 - [x] Timed shot list + music brief + SFX plan (`J2165` / Chief `h94` PASS in `J2238`: `07_Edit-Project/SHOT_LIST_v01.md`, `05_Music/MUSIC_BRIEF_v01.md`, `06_Sound-Effects/SFX_PLAN_v01.md`)
 - [x] Stills-lock & picture-plan note + OMNI `R29`/`R55` price-pass brief (`J2256`: `07_Edit-Project/STILLS_LOCK_v01.md`, `07_Edit-Project/STILLS_POOL_STATUS_v01.json`, `07_Edit-Project/OMNI_PRICE_PASS_BRIEF_v01.md`, `jobs/reviews/J2256/REVIEW.md` — 5/43 pool assets + 2 aux verified with SHA-256, 38 missing IDs listed for £0 harvest, all stills locked `≤ 2` appearances, £0 spend)
-- [ ] Chief price-pass decision on `R29`/`R55` (and £0 harvest of 38 missing IDs + 10 bespoke `CODE` renders)
+- [x] Shorts slots & two-Short build plan locked (`J2223`: `10_Shorts/SHORTS_PLAN_v01.md`; Path A Default `Fri 18 Dec` & `Sat 19 Dec 11:30 London` / Path B `Sat 12 Dec` & `Fri 18 Dec 11:30 London`; build jobs `J2317` & `J2318` queued after `J2300`)
+- [ ] Chief price-pass decision on `R29`/`R55` (`J2299` / `J2300`), long assembly, and Shorts builds (`J2317` & `J2318`)
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
 

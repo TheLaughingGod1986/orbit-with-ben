@@ -982,28 +982,96 @@
       "youWhen": ""
     },
     "OWB:033": {
-      "steps": [],
+      "steps": [
+        {
+          "who": "Mac mini",
+          "what": "picture: verify source map, native opener, and render graphics",
+          "job": "J2299",
+          "kind": "assembly"
+        },
+        {
+          "who": "Reviewer",
+          "what": "review corrected source map, native opener and graphics",
+          "job": "J2300",
+          "kind": "review"
+        },
+        {
+          "who": "MacBook",
+          "what": "plan 033/034 Shorts slots around Wed 9 Dec and Sun 13 Dec longs",
+          "job": "J2223",
+          "kind": "listing",
+          "done": true,
+          "doneText": "done · Sat 7 Nov (MacBook): Path A Fri 18 Dec & Sat 19 Dec 11:30Z; Path B Sat 12 Dec & Fri 18 Dec 11:30Z"
+        },
+        {
+          "who": "Mac mini",
+          "what": "build 033 Short 1 (Test A opening, Fri 18 Dec 11:30 London)",
+          "job": "J2317",
+          "kind": "assembly",
+          "when": "2026-12-18",
+          "whenText": "slot Fri 18 Dec 11:30"
+        },
+        {
+          "who": "Mac mini",
+          "what": "build 033 Short 2 (Keeper question, Sat 19 Dec 11:30 London)",
+          "job": "J2318",
+          "kind": "assembly",
+          "when": "2026-12-19",
+          "whenText": "slot Sat 19 Dec 11:30"
+        }
+      ],
       "mood": "good",
-      "done": "",
-      "holdup": "",
+      "done": "Script v02 (95.2), 15/15 sources, voice (locked v01, 611.4 s), shot list v01 (Chief PASS J2238), stills lock (J2256/J2290), and Shorts slot plan (J2223).",
+      "holdup": "Nothing is stuck. Picture opener and code graphics are being verified (J2299 -> J2300), then Shorts builds (J2317, J2318).",
       "you": "",
       "youShort": "",
       "youWhen": "",
-      "timing": "Airs Wed 9 Dec 18:00 London (Wednesday slot). Two Shorts on Mon/Wed/Fri/Sat 11:30 around it (J-shorts slots job).",
-      "updated": "2026-11-05T14:15:00Z",
-      "line": "In production; air date set by the Chief on 5 Nov (second weekly long slot)."
+      "timing": "Airs Wed 9 Dec 18:00 London (Wednesday slot). Shorts: Fri 18 Dec & Sat 19 Dec 11:30 London (Path A default, zero reschedule of 028/029) or Sat 12 Dec & Fri 18 Dec 11:30 London (Path B in-week swap).",
+      "updated": "2026-11-07T00:11:00Z",
+      "line": "Voice, shot list and stills harvest done; picture verification in J2299/J2300. Shorts plan (J2223): because 028/029 and 031 occupy all Mon/Wed/Fri/Sat 11:30Z slots through Wed 16 Dec, Path A slots 033 Short 1 (Test A opening, J2317) on Fri 18 Dec 11:30Z and 033 Short 2 (ice-giant surface question, J2318) on Sat 19 Dec 11:30Z (Path B uses Sat 12 Dec & Fri 18 Dec 11:30Z if 031 shifts to Path B)."
     },
     "OWB:034": {
-      "steps": [],
+      "steps": [
+        {
+          "who": "Mac mini",
+          "what": "voice-over from locked script v02",
+          "job": "J2157",
+          "kind": "vo"
+        },
+        {
+          "who": "MacBook",
+          "what": "plan 033/034 Shorts slots around Wed 9 Dec and Sun 13 Dec longs",
+          "job": "J2223",
+          "kind": "listing",
+          "done": true,
+          "doneText": "done · Sat 7 Nov (MacBook): Path A Mon 21 Dec & Wed 23 Dec 11:30Z; Path B Sat 19 Dec & Mon 21 Dec 11:30Z"
+        },
+        {
+          "who": "Mac mini",
+          "what": "build 034 Short 1 (Test A opening, Mon 21 Dec 11:30 London)",
+          "job": "J2319",
+          "kind": "assembly",
+          "when": "2026-12-21",
+          "whenText": "slot Mon 21 Dec 11:30"
+        },
+        {
+          "who": "Mac mini",
+          "what": "build 034 Short 2 (Keeper question, Wed 23 Dec 11:30 London)",
+          "job": "J2320",
+          "kind": "assembly",
+          "when": "2026-12-23",
+          "whenText": "slot Wed 23 Dec 11:30"
+        }
+      ],
       "mood": "good",
-      "done": "",
-      "holdup": "",
+      "done": "Topic lock (12 neighbours >=1M), script v02 (95.8), 15/15 sources + Claude quote check (J2149 GO), and Shorts slot plan (J2223).",
+      "holdup": "Long voice-over (J2157), then shot list, picture and Shorts builds (J2319, J2320).",
       "you": "",
       "youShort": "",
       "youWhen": "",
-      "timing": "Airs Sun 13 Dec 18:00 London. Two Shorts on Mon/Wed/Fri/Sat 11:30 around it (J-shorts slots job).",
-      "updated": "2026-11-05T14:15:00Z",
-      "line": "In production; air date set by the Chief on 5 Nov (second weekly long slot)."
+      "timing": "Airs Sun 13 Dec 18:00 London. Shorts: Mon 21 Dec & Wed 23 Dec 11:30 London (Path A default, zero reschedule of 028/029) or Sat 19 Dec & Mon 21 Dec 11:30 London (Path B swap).",
+      "updated": "2026-11-07T00:11:00Z",
+      "line": "Script v02 and 15/15 sources locked (J2149 GO); voice-over queued (J2157). Shorts plan (J2223): Path A slots 034 Short 1 (Test A opening, J2319) on Mon 21 Dec 11:30Z and 034 Short 2 (Charon tidal-lock question, J2320) on Wed 23 Dec 11:30Z with zero 028/029/031/033 collision (Path B uses Sat 19 Dec & Mon 21 Dec 11:30Z if 033 uses Path B)."
     },
     "HOS:013": {
       "updated": "2026-11-05T19:15:00Z",
