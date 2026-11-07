@@ -1,5 +1,5 @@
 {
-  "next_id": 2348,
+  "next_id": 2349,
   "jobs": [
     {
       "id": "J0001",
@@ -198964,6 +198964,34 @@
         "OWB:034"
       ],
       "done_ref": "6c79d48b83"
+    },
+    {
+      "id": "J2348",
+      "title": "034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2157 completed the zero-synthesis v03 master reconciliation for Pluto (OWB 034) ordered by J2347 (6c79d48b83), on PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/619 (commit 0a378694ae; Studio core check green).\n\nSummary of verified v03 master (pluto_frozen_heart_vo_v03) on the shared Mini checkout:\n- WAV: 02_Voiceover/pluto_frozen_heart_vo_v03.wav — SHA-256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685 (29,575,680 stereo frames, 48 kHz pcm_s16le, 616.160 s, ffmpeg decode exit 0)\n- MP3: 02_Voiceover/pluto_frozen_heart_vo_v03.mp3 — SHA-256 86cfc44247d0c8e7aee535c2fe50edb5038351041008e3f304e82fd84f124456 (616.160 s, ffmpeg decode exit 0)\n- Spliced parts: ch05.wav SHA-256 2a5c6e02fbf89f7de66bafeeb0b24d83c1508f261daae676b262414393530382 (82.360 s); ch06.wav SHA-256 eb82d85dc1012bbfd1d24ceed8d58873d49d637da09d27ccf97a7b802621964e (81.200 s)\n- Preserved originals verified untouched before and after: v01 master WAV 86483fb4919c3fd097a84d3c0d43f52a89521f87b2ff6f1976dea1506d2c8618, v01 MP3 b7fdd348819c9e2dd98a01fc8ca272f1a135c6ff033302ad98022d8eb7bcaf85, Ch5 crop 4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de, Ch6 v05 WAV 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23, Ch6 v05 MP3 a42c50355893f0b24a3e4d9280dfa329a79501f4dde7a39eddf690ddf7bfad88, plus prior v04/v03/v02 takes. Historical restricted commit bf751c1e3f was not cherry-picked or pushed.\n- Sample-exact null & splice identity: 0.000-528.060 s (ch00-ch04 + ch05[0:76.160]) is bit-identical to v01 (0 difference across 25,346,880 frames); 528.060-534.260 s is exact pluto_ch05_looked_back_v03.wav (297,600 frames); 534.260-534.960 s is digital-zero gap.wav (33,600 frames); 534.960-597.040 s (ch06[0:62.080]) is bit-identical to v01 533.480-595.560 s (0 difference across 2,979,840 frames); 597.040-616.160 s is exact full pluto_ch06_real_worlds_v05_request.wav (917,760 frames, 0.000-19.120 s with initial consonant and final decay preserved).\n- Levels: integrated -19.9 LUFS, LRA 4.3 LU, mean -23.0 dB (within -19 to -28 dB), true peak -3.7 dBTP (<= -1 dBTP).\n- Transcript & local ASR: Reconciled Scribe (stt/pluto_frozen_heart_vo_v03/) against script master v03 has 0 lexical mismatches (all 66 mismatch runs are digits, UK/US spelling, or spoken date ordinals). Independent local faster-whisper medium.en on spliced ch05.wav and ch06.wav confirms 'looked back?' (p=0.9564/0.9978) and 'Next in our series, Real Worlds,' + 'geysers' (p=0.9891).\n- Native-audio listening: Demonstrated audio_input via default_api:read_file (audio/mpeg part_0) on ch05.mp3, ch06.mp3, and full pluto_frozen_heart_vo_v03.mp3 (616.160 s) verified seamless splices at 528.060 s and 597.040 s, complete word order against v03, and clean unclipped endings across all 7 chapter tails.\n\nElected Chief to review PR #619 (jobs/reviews/J2157_v03/REVIEW.md and measurements.json), merge, issue final full-VO PASS on J2157, and release the 034 shot-list job. Zero credits spent; nothing on Ben.\n",
+      "ref": "0a378694ae",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T06:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T06:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "034 Pluto: elected Chief rules on J2157 v03 master reconciliation and full VO PASS",
+      "kind": "chief"
     }
   ],
   "focus": [
