@@ -179481,10 +179481,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T00:06Z",
+      "eta": "2026-11-07T02:06Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180118,6 +180118,11 @@
           "at": "2026-11-06T22:30Z",
           "by": "codex",
           "what": "released: Clean local checkpoint c4e5258931 in /private/tmp/codex-J2089, worker/J2089-r18-ruler. Original 1/4 retained. J2304 R23 landing record exported to ~/_desk/cache/J2089/landing_record_renders_v01; 108 exact decoded frames, preview/source/render hashes, 3 approval guards verified. 61 prior MOV hashes unchanged; 62 total. SHOT_LIST_v06 and pool record R19/R23 PIA14909 allocation; all 52 timing/duration/cut signatures unchanged. Remaining licensed harvest, frame0/Huygens/APL decisions and composites exceed run; holds retained. No background job, GBP0, no publishing or film PASS. Existing automatic-review public-push rejection respected; local integration only."
+        },
+        {
+          "at": "2026-11-07T00:06Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish licensed Titan harvest, composites and final gates",
