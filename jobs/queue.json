@@ -190497,13 +190497,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T07:24Z",
-      "eta": "2026-11-07T09:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:45Z",
-      "result": "",
+      "result": "FIX per phase. PR #621 (04b4aad6b1): validate channel identity/schema; test third-channel worker and board end to end; preserve one authoritative queue with explicit cutover/rollback. 48 existing tests pass. No implementation or service migration. Disk prerequisite continues detached: J2233-scratch-offload; _desk/logs/J2233-scratch-offload.log and .done.",
       "history": [
         {
           "at": "2026-11-05T17:45Z",
@@ -190534,6 +190534,11 @@
           "at": "2026-11-07T07:28Z",
           "by": "codex",
           "what": "step 3 of 3 done: Review committed as 04b4aad6b1, PR #621; all four phase verdicts and questions covered. Required disk offload continues separately in tmux J2233-scratch-offload with _desk/logs/J2233-scratch-offload.log and .done."
+        },
+        {
+          "at": "2026-11-07T07:28Z",
+          "by": "codex",
+          "what": "done: FIX per phase. PR #621 (04b4aad6b1): validate channel identity/schema; test third-channel worker and board end to end; preserve one authoritative queue with explicit cutover/rollback. 48 existing tests pass. No implementation or service migration. Disk prerequisite continues detached: J2233-scratch-offload; _desk/logs/J2233-scratch-offload.log and .done."
         }
       ],
       "remaining_action": "Review delivered; plan owner to revise before migration",
