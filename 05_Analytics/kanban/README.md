@@ -4,7 +4,7 @@
 
 **Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
 
-Ben only acts in **UAT** (Approve → **Passed**, ready to schedule; Request changes / notes → **In progress** for the agents). Every other lane is agent-run. Planned Shorts on **Backlog** are board-only placeholders (HOS 4 / Orbit 2 per upcoming long, including undated Orbit backlog longs) with no invented YouTube ids or air dates; parents that already have uploaded/live Shorts do not get extras. Full routing rules: `AGENTS.md` → **Videos tab** and **Film folders on the NAS**.
+Ben only acts in **UAT** (Approve → **Passed**, ready to schedule; Request changes / notes → **In progress** for the agents). Every other lane is agent-run. Planned Shorts on **Backlog** are board-only placeholders (HOS 4 / Orbit 2 per upcoming long, including undated Orbit backlog longs) with no invented YouTube ids or air dates; parents that already have uploaded/live Shorts do not get extras. Full routing rules: `AGENTS.md` → **Videos tab** and **Film folders on the NAS** (working media on `/Volumes/data/studio-live`; uploads stay Mini-only; MacBook harvest/assembly only when that film's studio-live folder exists).
 
 Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video, with play links and the existing approval controls. Live data comes from `board.json` (`tracker` section from `scripts/video_tracker.py`; the UI remaps tracker lanes to the nine Videos lanes in `board_site/studio_app.js`).
 

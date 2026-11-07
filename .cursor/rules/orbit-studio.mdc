@@ -186,6 +186,61 @@ A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut
 - **No rework:** 021 (live), 022 (scheduled), 023 (v05e approved) and 024 (v05 in review).
 <!-- /SYNC -->
 
+## Film folders on the NAS (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
+
+<!-- SYNC: AGENTS.md#Film folders on the NAS (studio-live + archive) -->
+**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini (`ben-mac-mini`) and the MacBook Pro (`bens-macbook-pro`) already mount the same Synology NFS export `192.168.1.119:/volume1/data` at `/Volumes/data` (Tailscale account `benoats@`; phone host `iphone-14-pro-max` is not a film worker). The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
+
+| Role | Where |
+|---|---|
+| **Working films** (harvest / assembly / watch source of truth) | `/Volumes/data/studio-live/…/02_Video-Projects/` |
+| **Shipped / archived films** | `/Volumes/data/mac-mini-archive/` |
+| **Mini local originals** (still in use while jobs write) | `/Users/benjaminoats/YouTube/…` (OWB and HOS checkouts) |
+| **Not the film library** | Mini File Sharing folder `shared` → `/Users/benjaminoats/_desk/shared` on the Mini, `/Volumes/shared` on the MacBook when mounted (empty; occasional file drop only) |
+
+### Working films — `studio-live` (live)
+
+Working film folders live on the NAS both machines share, mirroring the Mini YouTube layout:
+
+| Channel | Path |
+|---|---|
+| Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
+| History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
+
+Both machines read and write those same remote folders. **Known on studio-live as of ~11:14 London 7 Nov 2026:** **OWB 030–034** (Apophis, Magnetic Field, Titan, Uranus, Pluto) and **HOS 008, 009, 010, 013** (Lightning, Gravity, Dinosaurs, Evolution).
+
+**Expand studio-live policy (Ben thumbs-up ~12:40 London 7 Nov 2026; optimal workflow ask ~12:41):** keep copying leftover **working / upcoming** film folders that still live only on the Mini onto studio-live. Skip films that are **already fully shipped** under `mac-mini-archive` unless they still have active or upcoming work. If unsure whether a folder is working or shipped, **copy it**. Do **not** recopy shipped archive films as working films. A copy of leftover working folders may be in progress; do **not** invent which extra folders have landed — record the actual list in a follow-up once known. Mini local copies stay until jobs finish writing those folders.
+
+**Who may run media jobs:**
+- **MacBook** may take portable text/review jobs always, and harvest / assembly / watch-listen when that film's studio-live folder is reachable on this machine (or when the job already names another path that exists here). If the files are **not** on studio-live, leave the media job for the Mini (`jobs.macbook_portable`).
+- **Mini-only (Studio login lives on the Mini; the MacBook does not need a YouTube Studio sign-in):** YouTube Studio upload / `youtube:package`, Buffer, playlists, end screens, Flow/Chrome generation, and the HOS desk.
+- Big renders over the network can be slower than Mini local disk; that is an **accepted tradeoff** for one shared working copy.
+
+**Mini locals:** originals under `/Users/benjaminoats/YouTube/…` stay put while any job may still be writing that folder. Do **not** delete or move Mini locals during active writes. After ship, a Mini local may be removed only when no job is still writing that folder — do **not** delete Mini locals "now" as part of the studio-live rollout.
+
+**New working film:** create the project folder on **studio-live first** so both machines can use it; keep git status/template under the repo checkout as usual. **After ship:** use the existing archive process into `mac-mini-archive` (below).
+
+**Copy technique when adding folders to studio-live** (Mini → NAS working store):
+- `nice -n 15 rsync -a --partial --update …` (no `--delete`)
+- Never kill studio processes to free the disk for a copy
+- Never overwrite **newer** NAS files with **older** Mini copies (the MacBook may already have written to studio-live)
+- Do not invent a different rsync flag set or a destructive sync
+
+### Archive — `mac-mini-archive`
+
+Shipped and archived films already live under `/Volumes/data/mac-mini-archive/` (including `YouTube/` and `youtube-staging/` for finished videos waiting to go out). That share often holds the **only** copy: the 3 Oct and 5 Oct moves deleted the Mini copies after checking them. **Do not recopy those archive films into studio-live** unless they still have active or upcoming work.
+- **Never delete anything on the NAS.** "Looks like a partial duplicate" is not proof. On 5 Oct the HOS 003 folder held 1,090 files that existed nowhere else.
+- **Bulk moves to the NAS run 01:00-06:00 only (Ben, 5 Nov 2026: get it "nice, clean" so the NAS "spins down when it needs to").** The NAS hard drives sleep outside that window, and daytime moves (scratch offloads, disk clear-outs) kept them awake from 22 Oct to 4 Nov. `scripts/nas_offload.py --apply` waits for the window by itself. Any other move or clear-out of more than a handful of files waits for it too. The only daytime exceptions are a master's safety copy (the master rule under Render scratch) and a Mini under 8 GB free.
+- **Moving files to the archive (ship / offload):**
+  1. rsync, then SHA-256 manifests on both sides;
+  2. delete the Mini copy only on a full match **and** only when no job is still writing that folder;
+  3. leave a `MOVED_TO_NAS.txt` in the Mini folder.
+- **Restoring:** git-tracked files are never overwritten from the NAS; the git copy wins.
+- **YouTube staging folder (Ben, 15 Oct 2026).** `/Volumes/data/mac-mini-archive/youtube-staging/<film-id>/` holds finished, scheduled-or-ready videos waiting to go out, so the Mini disk stays free. Use it when the Mini is under 20 GB free or holds more than ~3 films ready to go out. Its `README_YOUTUBE_STAGING.txt` says what it is. Rules: (1) copy with rsync, check the sha256 manifest, and leave `MOVED_TO_NAS.txt` in the Mini folder; (2) the upload always reads the file back from the NAS path and the manifest records that path; (3) a staged file is deleted only when the video is **live on YouTube** (read back by the Studio check, status Public) **and** no Test & Compare, re-upload or Shorts cut still needs it, and then only that film's folder inside `youtube-staging/`. This is the one exception to "never delete anything on the NAS"; nothing outside `youtube-staging/` is ever deleted. (4) A film's final cut stays in the film's NAS archive folder too if it is the only copy of the master. (5) If the share is hung or unmounted, stage nothing and keep the Mini copy; never write into an unmounted `/Volumes/data` path (it lands on the Mini disk).
+- **The 06:40 job can't read the NAS (26 Oct 2026).** macOS privacy blocks launchd jobs from `/Volumes` ("Operation not permitted"). After you move or upload a scheduled Short whose export or VO stem is on the NAS, run `python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot <today's owb snapshot> --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root ~/YouTube/orbit-with-ben --out /dev/null --stage` from your session. It copies those files to `~/_desk/cache/gate-media/` (a cache, safe to clear), and the 06:40 check reads the copy. Without it the Short reads NOT CHECKED, not FAIL.
+- Any job that moves files claims first (`studio.py claim … --git`) and runs in detached tmux. On STOP, its last act is to post the STOP line or set its stage to `blocked`.
+<!-- /SYNC -->
+
 ## Stop and ask (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
 
 <!-- SYNC: AGENTS.md#Stop and ask Ben -->
