@@ -197373,9 +197373,14 @@
           "at": "2026-11-07T01:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T01:54Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Plan: 1) read R18 review request & inspect 4 full-size stills; 2) verify 108-frame decode, polish_gate and 62 prior export hashes; 3) write REVIEW.md and record KEEP/FIX."
         }
       ],
-      "remaining_action": "Review Titan pebble composite stills and return KEEP or exact fixes",
+      "remaining_action": "Read R18 review request, inspect four full-size composite stills, verify metrics/hashes and write REVIEW.md",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
       "plain": "Review the pebble measurement preview before it enters the Titan edit.",
@@ -197393,9 +197398,11 @@
         "of": 3,
         "at": "2026-11-07T01:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: 1) read R18 review request & inspect 4 full-size stills; 2) verify 108-frame decode, polish_gate and 62 prior expo"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [
