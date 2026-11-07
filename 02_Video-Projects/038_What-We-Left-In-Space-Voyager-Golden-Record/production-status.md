@@ -92,3 +92,13 @@ Script score: **95.4/100** · PASS
 ## Chief ruling — 4 November 2026 (J1904)
 
 DEFER topic advancement; FIX script. No Short-first waiver or production approval. J1981 owns neighbours, completed topic audit and matching Short-first evidence (`kKN8Ale42sE`, *How Far From Earth Is Voyager 1 Right Now?*, verified live 4 Nov as private with 0 views, scheduled 17 Nov 2026 11:30Z); J1982 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, and topic evidence passes. Reconcile incoming 037 (`J1980`) and outgoing 039 (`J1905`) handoffs before script lock. Historical notes above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1904/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.
+
+
+## Topic go/no-go package prepared — 7 November 2026 (J2327)
+
+- **Scope:** Plans and pre-build evidence only (`£0` / `0` credits; `038` remains in `next` #4 behind the 5-film `active` cap `030`–`034`; `v00`/`v01` and `SOURCES.md` untouched).
+- **Files prepared in `11_Upload-Package/`:**
+  - `TOPIC_OPPORTUNITY_SCORE.md` (**97 / 100 — GO**)
+  - `PRE_BUILD_VIDIQ_AUDIT.md` (filled with `2026-11-07` signed-out YouTube GB data; Section 7 left **UNSIGNED** until `038` enters `active`, `17–18 Nov` Voyager Short stats are read, and `v02` rewrite + `facts` pass complete per `J1904`)
+  - `TOPIC_GO_NO_GO_SHEET.md` (one-page decision summary + entry checklist)
+- **Key evidence (`2026-11-07 01:44 UTC`):** `14` verified education/space neighbours `≥1M` views (`1.62M–28.22M`, including Vsauce `GDrBIKOR01c` **28.22M**, Vox Golden Record `NAN1kt4SG9E` **15.72M**, Destiny `fSbm5LCJspk` **10.90M**, Astrum `UyzBoUvN3PM` **8.28M**, Business Insider `OVe72eMY_pk` **7.57M**, Verge Science `RRuovINxpPc` **6.43M**) + `12,600/mo` search volume on `voyager golden record`; 2 Voyager 1 distance Shorts (`kKN8Ale42sE` airing `2026-11-17` and `cwU_0WWeNZ4` airing `2026-11-18`) will have 3–4 weeks of public analytics before `038` reaches the front of `next` in mid-December; 0-collision `≤50`-char source-backed titles locked (`What NASA Put on the Voyager Golden Record`, 42 chars [Rule 15] / `Inside the Golden Record Aboard NASA's Voyager 1`, 48 chars [Rule 18], replacing 59-char `v01` H1 per `J1904`); real NASA/JPL Golden Record cover `PIA14113` thumbnail concept (no Orbit, Rule 19). Consolidated report: `jobs/reviews/J2327/REVIEW.md`.
