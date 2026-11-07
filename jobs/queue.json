@@ -193555,9 +193555,14 @@
           "at": "2026-11-07T02:55Z",
           "by": "codex",
           "what": "step 1 of 3 done: Reviewed all six J2200 findings against PR439 in isolated branch; four areas patched, live UI verification and shared accounting still open. Production submit now explicitly refuses partial repair."
+        },
+        {
+          "at": "2026-11-07T02:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 84a4f0cc pushed on HOS codex/J2275: 34 runner tests PASS and check_all ALL CHECKS PASS. Partial safety repairs only; production submit explicitly disabled. docs/jobs/J2275/CHECKPOINT.md gives exact remaining work."
         }
       ],
-      "remaining_action": "Finish runner safety repair and add zero-submit regressions",
+      "remaining_action": "Complete live Create proof, shared accounting and start-still verification",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -193565,9 +193570,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T02:55Z",
+        "at": "2026-11-07T02:57Z",
         "by": "codex",
-        "note": "Reviewed all six J2200 findings against PR439 in isolated branch; four areas patched, live UI verification and shared ac"
+        "note": "Checkpoint 84a4f0cc pushed on HOS codex/J2275: 34 runner tests PASS and check_all ALL CHECKS PASS. Partial safety repair"
       },
       "taskKeys": [
         "HOS:009"
