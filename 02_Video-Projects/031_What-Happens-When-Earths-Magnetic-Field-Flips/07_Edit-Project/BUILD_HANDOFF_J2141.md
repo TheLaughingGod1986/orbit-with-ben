@@ -561,6 +561,43 @@ No Ben action, publishing change, KEEP or film-stage approval.
 Disk policy checked: NAS offload deferred by its own 01:00–06:00 window,
 with more than 8 GB free. This checkpoint adds text/code only.
 
+## Continuation checkpoint (7 Nov, Codex R8 specimen)
+
+Preserve queue **1/3**. Based on integrated PR575 at 88b8b5fa9f.
+Added one USGS public-domain vesicular-basalt original (5472×3648) with
+per-file official-page licence evidence, original hash and contact sheet.
+Original and evidence: `/Users/benjaminoats/_desk/J2141-hand-sample-v01/`.
+Direct USGS HTML requests returned empty/403; the saved rights JSON explicitly
+transcribes the official page returned by the web tool, not a raw-page capture.
+S3 original download succeeded. One candidate examined; do not re-download it.
+
+R8 `plate_031_r08_specimen_v04.mp4` is a **detail pan of a still specimen**,
+not laboratory footage or Brunhes's own sample. It covers 66.34–73.28 s with
+174 frames at 25 fps (6.96 s; final frame rounding +0.02 s). Native crop
+1400×788, maximum upscale 1.371×, full-frame and silent, white USGS credit
+with dark stroke. A reframe at 69.22 s follows the pause after “lab”.
+Original wide/framed v01 and v02 FAILed gutter/jitter checks and are retained;
+v03 passed polish but its dark credit had low contrast, so use v04.
+
+`HARVEST_R08_TECHNICAL_CHECK_v01.json` records hashes, original provenance,
+recipe, probe, full error-free decode and polish output. v04 component polish
+**PASS, zero failures, one relative edge-density warning**. Stills and contact
+sheet viewed; actual playback, editorial fit and all-film QA remain unreviewed.
+The specimen texture does not fully meet the original bench-shot composition;
+review that choice with the actual composite. No KEEP or film-stage approval.
+
+Detached v01/v02 batches completed exit 0; corrective v03/v04 encodes also
+finished, no live render/download. Logs/completion for detached batches:
+`/Users/benjaminoats/_desk/logs/J2141-hand-sample-v01.log` / `.done` and
+`J2141-hand-sample-v02.log` / `.done`. Command JSONs remain with media;
+v04 exact command is copied into the pool and technical record. No media in git.
+
+NAS offload was attempted first at ~4.9 GB free: existing copier holds the
+lock, so no duplicate started. End headroom ~4.3 GB. Wider harvest (cores,
+wildlife, missing outcrops), composites, source/gate conflicts and full QA
+remain. Next worker continues those, preserving closed search budgets.
+Spend £0; no YouTube change. Nothing needs Ben for this checkpoint.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
