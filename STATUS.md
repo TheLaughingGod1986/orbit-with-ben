@@ -61,6 +61,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
 | 034 | edit | codex | 2026-11-07T08:51Z | 2026-11-07T10:50Z | J2320 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) |
-| 034 | shots | macbook | 2026-11-07T14:22Z | 2026-11-07T16:21Z | J2367 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
