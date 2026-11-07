@@ -202382,9 +202382,14 @@
           "at": "2026-11-07T16:35Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 banned IDs, <=2 uses, native-motion separators in all 7 CODE->CODE gaps)"
+        },
+        {
+          "at": "2026-11-07T16:39Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4: Rendered, decoded and visually inspected all 19/19 J2371 graphics (8 CODE MP4s, 5 ARGB overlays, 6 2.50s chapter cards) + £0 SFX kit onto studio-live NAS; all labels/timings/alpha/luma verified"
         }
       ],
-      "remaining_action": "Render/stage J2371 19 graphics onto studio-live NAS and verify frames, labels, timings, alpha and luma",
+      "remaining_action": "Merge PRs #643 and #644, mark 034 picture done, and release 034 assembly + Shorts J2319-J2320",
       "kind": "chief",
       "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
       "rerouted_from": {
@@ -202397,11 +202402,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-07T16:35Z",
+        "at": "2026-11-07T16:39Z",
         "by": "gemini",
-        "note": "Step 1/4: Verified all 67/67 harvested assets on studio-live NAS (SHA-256 match, 9 native video clips ffmpeg-decoded, 0 "
+        "note": "Step 2/4: Rendered, decoded and visually inspected all 19/19 J2371 graphics (8 CODE MP4s, 5 ARGB overlays, 6 2.50s chapt"
       },
       "taskKeys": [
         "OWB:034"
