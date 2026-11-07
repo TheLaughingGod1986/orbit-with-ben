@@ -2,6 +2,58 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R7 crust plate and closed R9 search (7 Nov UTC, Cursor)
+
+Preserve **1/3**, PR **#575**, starting at `1bd6d4d2ce`. Spend **£0**.
+Added `harvest_usgs_crust.py`, `HARVEST_R07_CRUST_TECHNICAL_CHECK_v01.json`
+and `HARVEST_R09_COLUMNAR_SEARCH_v01.json`. No media in git.
+
+**R9 columnar hillside is closed.** Three Commons USGS stills were examined.
+None is a sharp full-frame columnar basalt hillside. Do not restart these
+three files. Chief needs a larger columnar source before another R9 pass.
+
+- Craters of the Moon, 1925, `PD-USGov-USGS`, 4725×2562. A wide basalt flow
+  with an empty sky. Not columnar joints.
+- Little Devils Postpile, N.K. Huber, `PD-USGov-USGS`, 700×454. The subject
+  matches. A full frame would be 2.74×, over the cap. The USGS library URL
+  returns 404. Not rendered.
+- Uvalde columns, `PD-USGS`, 307×230. Nephelinite, not basalt, and far too
+  small.
+
+**R7 cooling crust is a candidate plate.** `plate_031_r07_crust_v01.mp4` is
+131 frames / 5.24 s, 1920×1080, 25 fps, silent, full decode. It follows
+`code_graphic_031_r07_grains_v02`, which ends at film **59.92 s**. The plate
+runs **59.92–65.16 s**. Shot-list row 7 ends at 65.14 s; the extra 0.02 s
+stays before row 8 at 66.34 s. Source is the USGS Flickr original *The
+Skylight* (Puʻu ʻŌʻō, Kīlauea, 2 June 2016, episode 61g), 5184×3456,
+`PD-USGov-USGS`, Commons SHA-1 matched. Centre crop `[0,270,5184,2916]`,
+then a linear centre push from 1.00 to 1.08. The tightest view is **0.40×**
+the crop, a downscale. Credit `USGS` sits bottom-left, off the skylight.
+This is a still photograph with our push. It does not show lava moving.
+Component polish on this one plate: **PASS, 0 failures, 0 warnings**. That
+is not a film PASS, KEEP, or motion review.
+
+A smaller Pixabay reupload of the same picture was opened first and is not
+the plate source. Ropy pahoehoe (500×800) and an advancing toe (800×500)
+were identified and not downloaded. Media and both contact sheets:
+`/Users/benjaminoats/_desk/J2141-basalt-v01/`. Reproduce into that directory
+only when the plate is absent:
+
+```sh
+/usr/bin/python3 <film>/07_Edit-Project/harvest_usgs_crust.py \
+  --media-root /Users/benjaminoats/_desk/J2141-basalt-v01 \
+  --manifest <pool.json> --render
+```
+
+An existing plate is verified and refused for overwrite. NAS offload was
+already running at session start; about 7.6 GB free. This batch is one
+10 MB still and a short plate. No paid action.
+
+**Next:** a USGS volcanic hand sample, then cores and wildlife, plus the
+remaining composites and full picture/polish QA. R9 waits on a new columnar
+source. Source-ID and sourced-simulation gate conflicts below stay with the
+Chief. Nothing needs Ben.
+
 ## R6 tight-edge search (7 Nov UTC, Cursor)
 
 Preserve **1/3**, PR **#575**, starting at `95f4f3e1f6`. Spend **£0**.

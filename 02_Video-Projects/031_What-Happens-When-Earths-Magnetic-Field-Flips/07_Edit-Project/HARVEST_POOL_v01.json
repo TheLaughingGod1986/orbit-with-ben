@@ -589,6 +589,36 @@
       "end_card_still": "/Users/benjaminoats/_desk/J2141-lava-v01/sample_30s.jpg",
       "generation_authorized": false,
       "review_note": "Wide aerial flow only. Source title card and end card are outside 6.00\u201312.68 s. The tight glowing-edge beat is not in this interval. Source audio excluded. R7 must use a different stretch."
+    },
+    {
+      "asset_id": "commons_usgs_kilauea_skylight",
+      "title": "The Skylight, Pu\u02bbu \u02bb\u014c\u02bb\u014d, K\u012blauea, 2 June 2016",
+      "description": "USGS Flickr original: a skylight about 6 m across in solidified pahoehoe at Pu\u02bbu \u02bb\u014c\u02bb\u014d, eruption episode 61g. The lava stream travels toward the upper right. This is the cooling-crust close-up, not a columnar hillside.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Skylight_(27889592710).jpg",
+      "flickr_page": "https://www.flickr.com/photos/usgeologicalsurvey/27889592710/",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/The_Skylight_%2827889592710%29.jpg",
+      "credit": "U.S. Geological Survey",
+      "local_path": "/Users/benjaminoats/_desk/J2141-basalt-v01/skylight_usgs_flickr.jpg",
+      "sha256": "418b953d6d490d0537912d5f4f0b7860bdf75fa6835bae1518312a8e635f4d49",
+      "source_sha1": "cc53ecc474c7eda5032d6150b3849a923953d867",
+      "bytes": 10171454,
+      "width": 5184,
+      "height": 3456,
+      "rows": [
+        7
+      ],
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "download_status": "downloaded",
+      "review_status": "static_candidate_not_KEEP",
+      "licence": "Public domain",
+      "licence_status": "Commons_PD-USGov-USGS_template_on_this_file",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-lava-v01/PD-USGov-USGS-en.wikitext",
+      "licence_evidence_sha256": "2a4713530ae11993c8cf2fda388cae9354731d89fa4e93774e3acc02bc919f0d",
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-basalt-v01/skylight_flickr.wikitext",
+      "source_evidence_sha256": "6810ea5ba479d7d2baad9b6d78a5db919f8e5d2d617a2fd4512ebcbf1311e63f",
+      "generation_authorized": false,
+      "review_note": "Centre 16:9 crop, then a linear 8% push. Maximum scale against the crop is 0.40, a downscale. Stills inspected. No motion review."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -736,6 +766,63 @@
         {
           "source": "https://commons.wikimedia.org/wiki/File:Spattering_and_lava_flow_at_fissure_20_in_K%C4%ABlauea_Volcano%27s_Lower_East_Rift_Z....webm",
           "result": "Commons describes lava fountaining at about 3:45 AM HST on 19 May 2018. 29.6 MB, public domain, USGS. Not downloaded. Same night-fountain class, not a new approach."
+        }
+      ]
+    },
+    {
+      "input": "R9 USGS columnar basalt hillside",
+      "date": "2026-11-07",
+      "candidates_examined": 3,
+      "active_minutes": 16,
+      "budget_status": "three-candidate limit reached; do not restart these three files",
+      "outcome": "No examined USGS still is a sharp full-frame columnar basalt hillside. Chief needs a larger columnar source before another R9 pass. Cooling crust, a hand sample, cores and wildlife are different inputs.",
+      "contact_sheet": "/Users/benjaminoats/_desk/J2141-basalt-v01/CONTACT_r09.jpg",
+      "contact_sheet_sha256": "b00c26475447be8bd1a7cd751aeaa244d7cb3bc4bb893721c5828f488c546126",
+      "candidates": [
+        {
+          "file": "craters_of_the_moon.jpg",
+          "sha256": "8f4bb9de6d874dccb4b28eba1aa526b5515a217f11080561e45d9e583859c0ba",
+          "source": "https://commons.wikimedia.org/wiki/File:Basalt_flow_on_craters_of_the_moon_idaho.jpg",
+          "licence": "PD-USGov-USGS",
+          "width": 4725,
+          "height": 2562,
+          "result": "1925 G.R. Mansfield photograph of a recent basalt flow at Craters of the Moon. Public domain. It is a wide flow with an empty sky, not columnar joints. Rejected for R9."
+        },
+        {
+          "file": "little_devils_postpile.jpg",
+          "sha256": "ef8338c27eb5f6c89adde08485c9945db798bc310a6423959814365b3980b166",
+          "source": "https://commons.wikimedia.org/wiki/File:Little-Devils-Postpile.jpg",
+          "licence": "PD-USGov-USGS",
+          "width": 700,
+          "height": 454,
+          "result": "N.K. Huber, USGS Bulletin 1595, columnar joints in a basalt plug, Little Devils Postpile. The subject matches. Full frame would be 2.74\u00d7. The library original URL returns 404. Not rendered."
+        },
+        {
+          "file": "uvalde_columns.jpg",
+          "sha256": "29333354e7fa429a695ce76639347fe68e407cf2c30dde0e312693ea30e1cd8a",
+          "source": "https://commons.wikimedia.org/wiki/File:Uvalde_columns.jpg",
+          "licence": "PD-USGS",
+          "width": 307,
+          "height": 230,
+          "result": "Columnar jointing in melilite-olivine nephelinite, Uvalde County, extracted from a banner. Wrong rock and 307 px wide. Rejected for R9."
+        }
+      ]
+    },
+    {
+      "input": "R7 USGS cooling basalt crust close-up",
+      "date": "2026-11-07",
+      "candidates_examined": 1,
+      "active_minutes": 12,
+      "budget_status": "Stopped when the USGS Flickr original of this skylight was suitable.",
+      "outcome": "Admitted The Skylight, 5184\u00d73456, PD-USGov-USGS. A smaller Pixabay reupload of the same picture was opened first and is not the plate source. Two other Commons pahoehoe titles were identified and not downloaded.",
+      "identified_not_examined": [
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Ropy_pahoehoe.jpg",
+          "result": "500\u00d7800. Close ropy pahoehoe, public domain. Too small for a full frame. Not downloaded."
+        },
+        {
+          "source": "https://commons.wikimedia.org/wiki/File:Pahoehoe_toe.jpg",
+          "result": "800\u00d7500. Advancing toe, public domain. Full-frame scale would exceed 2.35\u00d7. Not downloaded."
         }
       ]
     }
@@ -1471,5 +1558,35 @@
     "status": "technical_candidate_pending_motion_review"
   },
   "r06_contact_sheet": "/Users/benjaminoats/_desk/J2141-lava-v01/CONTACT_v01.jpg",
-  "r06_contact_sheet_sha256": "8fa1610b54b19eb8f85a4a3d646d7859f93b5eb549e1b0988c59260fe1ced2c0"
+  "r06_contact_sheet_sha256": "8fa1610b54b19eb8f85a4a3d646d7859f93b5eb549e1b0988c59260fe1ced2c0",
+  "r07_crust_plate_v01": {
+    "file": "plate_031_r07_crust_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-basalt-v01/plate_031_r07_crust_v01.mp4",
+    "sha256": "4fe4125dc3424887a55839cf9fdcc3867e691cec22e8137497d6e05b813af1a2",
+    "bytes": 11615191,
+    "film_start_s": 59.92,
+    "film_end_s": 65.16,
+    "row_end_s": 65.14,
+    "frames": 131,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      0,
+      270,
+      5184,
+      2916
+    ],
+    "push": "linear 1.00 to 1.08, centre",
+    "max_scale_vs_crop": 0.4,
+    "credit": "USGS",
+    "no_loop": true,
+    "no_interpolation": true,
+    "follows": "code_graphic_031_r07_grains_v02 ends 59.92",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "r07_contact_sheet": "/Users/benjaminoats/_desk/J2141-basalt-v01/CONTACT_v01.jpg",
+  "r07_contact_sheet_sha256": "3245cf56593b38d534b5650cf15f5e7f92d412839cf231d0ffcde30bec44a3f2"
 }
