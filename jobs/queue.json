@@ -199215,7 +199215,7 @@
     {
       "id": "J2349",
       "title": "Verify condition for J2299",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2299: J2306 Chief ruling recorded in merged PR610 / daa2f24bd92e: R01 revised to disclosed Flow world illustration (accepted 0-4.35s, not 6.22s); R55 moving cloud plate after R54 chart. Generation authorised ONLY in J2332, three takes/300 existing Flow credits maximum, no monetary spend. Await J2332 delivery -> J2333 demonstrated moving-video QA -> J2334 elected-Chief asset acceptance. J2334 must accept exact hashes before this parent reopens. Existing 0/5 plan, all source/graphics corrections and gates retained; J2300 remains dependent on J2299. This is a concrete asset dependency, no longer an undecided Chief fallback. No assembly release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2299 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -199235,13 +199235,27 @@
           "at": "2026-11-07T07:05Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T07:05Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor run failed (exit 1); next in its chain: gemini"
         }
       ],
       "remaining_action": "Verify readiness: Await reviewed replacement assets via J2332/J2333/J2334, then finish source corrections and graphics at 0/5",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-07T08:05:04+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
