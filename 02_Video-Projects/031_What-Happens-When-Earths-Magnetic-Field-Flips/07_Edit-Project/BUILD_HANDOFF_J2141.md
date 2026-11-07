@@ -1,3 +1,48 @@
+## MacBook slot 2 continuation — 7 Nov, Commons harvest recovery
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full multi-agency harvest, remaining graphics/composites and film
+gates exceed this run's 25-minute limit. Release for continuation, not done.
+
+Integrated the two candidate records, original harvester, technical report
+and cumulative search checkpoints from open PR #572, commit
+`cb3ecfa51c8373badff8dbd1b8c64d1ab9cd8f3f`. PR #572 remains open and untouched;
+no merge to main, KEEP, Chief PASS or film-stage approval is implied.
+Existing pool candidates and their provenance were preserved. Added current
+MacBook recovery metadata separately, leaving original Mini evidence intact.
+
+Re-downloaded the exact previously selected Commons originals and current
+API/file-page/licence evidence into `/Users/ben/_desk/J2141-commons-macbook-v01/`.
+No new candidate search or reset of a missing-input budget. Both original
+SHA-256 values match PR #572; Commons SHA-1, native dimensions, unchanged
+per-file licence assertions, attribution obligations, evidence hashes and
+planned reuse (one each, maximum two) verified. Report:
+`HARVEST_COMMONS_MACBOOK_TECHNICAL_CHECK_v01.json`. Contact sheet viewed
+statically; tree trunk and hand stencils are recognisable. No moving
+composite, crop clearance, playback/audio or full-film QA claimed.
+
+- R34a: Tāne Mahuta, 3264×4896, Public domain, Pseudopanax. Living-kauri
+  establishing picture only; not the ancient Laschamp research specimen.
+- R37b: Cueva de las Manos, 4161×2774, CC BY-SA 3.0, Fjturban. Illustrative
+  hand-stencil example only, not evidence of Laschamp contemporaneity.
+  Credit/source/licence, changes notice and adaptation share-alike obligations
+  must reach delivery credits. Editor/reviewer must check truthful context.
+
+`verify_commons_macbook.py` reproduces exact-original and evidence checks.
+Use `--pool <pool> --recovery /Users/ben/_desk/J2141-commons-recovery-pool.json
+--report <fresh report>` with `/usr/bin/python3`. It refuses report overwrite.
+The unchanged harvester can verify its existing recovery manifest without
+re-downloading. Media and evidence stay outside git; no NAS writes/deletions.
+
+Next bounded action: finish admissible row composites/remaining moving
+harvest using the cumulative logs. R37a horse already reached its three-
+candidate limit in PR #572: Chief must name a new source/approach or accurate
+alternative; do not repeat that search. R34b slab has one rejected furniture
+candidate recorded. Existing Titan identity, sourced-map/simulation and
+other picture-gate conflicts remain unresolved. No publishing, social,
+generation, sign-in or spend. All download/verification processes finished.
+Only this checkout touched; return it to main after pushing this checkpoint.
+
 ## MacBook slot 2 continuation — 7 Nov, progressive timeline recovery
 
 Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
