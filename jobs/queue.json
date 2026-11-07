@@ -201764,17 +201764,22 @@
           "at": "2026-11-07T14:59Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified nh_extreme_closeup.ogv is a pan over annotated mosaic with yellow labels and 10-mile scale bar; confirmed 5 new native-motion clips and 5 folded NASA overlays cover all CODE->CODE intervals and R30 second source"
+        },
+        {
+          "at": "2026-11-07T15:05Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEARCH_LOG_v01.json; clip_check 74 rows PASS"
         }
       ],
-      "remaining_action": "Fix range timestamp shift in shot_list_v01.csv and write NATIVE_MOTION_SEARCH_LOG_v01.json and updated SOURCE_EVIDENCE_v01.json",
+      "remaining_action": "Retime MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md with cumulative card offsets and J2367 repairs",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-07T14:59Z",
+        "at": "2026-11-07T15:05Z",
         "by": "gemini",
-        "note": "Verified nh_extreme_closeup.ogv is a pan over annotated mosaic with yellow labels and 10-mile scale bar; confirmed 5 new"
+        "note": "Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEAR"
       },
       "rerouted_from": {
         "needs": "mini",
