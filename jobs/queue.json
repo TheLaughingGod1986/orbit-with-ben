@@ -179605,10 +179605,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T11:30Z",
-      "eta": "2026-11-07T13:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180397,6 +180397,11 @@
           "at": "2026-11-07T11:36Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local b3c2915961: R16 Cassini counter draft decoded at108 frames,1920x1080,30fps; polish PASS zero warnings/failures.61 manifest-referenced prior export hashes unchanged.J2363 queued with moving_video_input requirement.Harvest incomplete; original1/4 preserved."
+        },
+        {
+          "at": "2026-11-07T11:36Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint b3c2915961 in /private/tmp/J2089-rights, worker/J2089-rights. Original1/4 retained. New R16 silent composite using J2177 PIA21610 alternative:108 frames full decode,1920x1080/30fps/3.6s,polish PASS zero failures/warnings; full-size still inspected;61 manifest-referenced prior exports hash-match. J2363 owns actual motion/composite review with moving_video_input requirement. Rights/frame0/Huygens/APL/final reuse and gates remain; full remainder exceeds bounded run. GBP0,no publishing or film PASS. NAS offload J2089-offload-1138 exited0,nothing old enough,4714MB free; log/done under ~/_desk/logs/J2089-offload-1138.*. No process left running. Local only under inherited public-push restriction."
         }
       ],
       "remaining_action": "Complete licensed Titan harvest and remaining composites; J2363 reviews R16 draft",
