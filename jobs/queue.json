@@ -202600,18 +202600,23 @@
           "at": "2026-11-07T17:16Z",
           "by": "cursor",
           "what": "step 3 of 5 done: First picture gate failed 99 jitter rows. Stills are being re-rendered static, and dark clips are lifted. tmux j2376-assemble."
+        },
+        {
+          "at": "2026-11-07T17:21Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Static re-render reached mix. 131 cuts logged. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. No .done file yet."
         }
       ],
-      "remaining_action": "Re-render the 034 stills so the picture gate's jitter check can pass",
+      "remaining_action": "Finish the Pluto mix, mux the master, and run the picture, music and sound gates",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T17:16Z",
+        "at": "2026-11-07T17:21Z",
         "by": "cursor",
-        "note": "First picture gate failed 99 jitter rows. Stills are being re-rendered static, and dark clips are lifted. tmux j2376-ass"
+        "note": "Static re-render reached mix. 131 cuts logged. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. No .done file y"
       },
       "taskKeys": [
         "OWB:034"
