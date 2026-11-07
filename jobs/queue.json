@@ -179647,13 +179647,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T19:16Z",
-      "eta": "2026-11-07T21:16Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
-      "result": "",
+      "result": "4/4 complete (c0bbf33088 in /private/tmp/J2089-rights & studio-live NAS, £0): 39 harvested stills + 4 SVS 20311 clips + 62 alpha MOVs + 62 moving-plate 1080p30 composites + 6 chapter cards verified (0 polish_gate failures, 0 Short overlap); Chief review queued",
       "history": [
         {
           "at": "2026-11-04T18:23Z",
@@ -180549,6 +180549,11 @@
           "at": "2026-11-07T19:52Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 done (c0bbf33088): 62 1080p30 composites + 6 chapter cards + 39 stills + 4 SVS clips verified on NAS (0 errors)"
+        },
+        {
+          "at": "2026-11-07T19:52Z",
+          "by": "gemini",
+          "what": "done: 4/4 complete (c0bbf33088 in /private/tmp/J2089-rights & studio-live NAS, £0): 39 harvested stills + 4 SVS 20311 clips + 62 alpha MOVs + 62 moving-plate 1080p30 composites + 6 chapter cards verified (0 polish_gate failures, 0 Short overlap); Chief review queued"
         }
       ],
       "remaining_action": "Queue Chief picture review & edit handoff for 032 and close J2089",
@@ -180573,7 +180578,8 @@
         "at": "2026-11-07T19:52Z",
         "by": "gemini",
         "note": "Step 4/4 done (c0bbf33088): 62 1080p30 composites + 6 chapter cards + 39 stills + 4 SVS clips verified on NAS (0 errors)"
-      }
+      },
+      "done_ref": "c0bbf33088"
     },
     {
       "id": "J2090",
