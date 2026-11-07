@@ -199945,9 +199945,14 @@
           "at": "2026-11-07T10:28Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Reviewed J2352 VO PASS, v03 script, SOURCES.md, and 4 contact sheets (excluding PIA20200, PIA20656, PIA20477, PIA21861, PIA19967, PIA19847, PIA07934, PIA20336)"
+        },
+        {
+          "at": "2026-11-07T10:33Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Visually verified all 8 contact sheets of NASA & Wikimedia candidate stills; excluded all scale-bar/annotated plates (PIA20200, PIA19841, PIA09234, PIA09265, PIA20199, PIA20536, PIA22188, PIA20152, PIA20201, PIA20213, PIA09359, PIA21860)"
         }
       ],
-      "remaining_action": "Visually verifying remaining Pluto/Charon/Triton NASA & Wikimedia candidate stills to ensure zero scale bars or embedded labels",
+      "remaining_action": "Building 68-row shot_list_v01.csv and SHOT_LIST_v01.md using only visually verified unannotated NASA/Wikimedia assets and running clip_check.py",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199960,11 +199965,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-07T10:28Z",
+        "at": "2026-11-07T10:33Z",
         "by": "gemini",
-        "note": "Reviewed J2352 VO PASS, v03 script, SOURCES.md, and 4 contact sheets (excluding PIA20200, PIA20656, PIA20477, PIA21861, "
+        "note": "Visually verified all 8 contact sheets of NASA & Wikimedia candidate stills; excluded all scale-bar/annotated plates (PI"
       },
       "taskKeys": [
         "OWB:034"
