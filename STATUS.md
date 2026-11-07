@@ -61,6 +61,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
 | 031 | picture | macbook | 2026-11-07T19:00Z | 2026-11-07T20:59Z | J2141 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
+| 032 | picture | gemini | 2026-11-07T19:16Z | 2026-11-07T21:15Z | J2089 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 | 034 | edit | macbook-2 | 2026-11-07T18:28Z | 2026-11-07T20:27Z | J2319 034 Pluto Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Mon 21 Dec 11:30 London; no upload) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

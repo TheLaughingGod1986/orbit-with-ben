@@ -179647,10 +179647,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T19:16Z",
+      "eta": "2026-11-07T21:16Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180524,6 +180524,11 @@
           "at": "2026-11-07T18:12Z",
           "by": "gemini",
           "what": "released: Step 2/4 locked at commit 853a4fc128 in /private/tmp/J2089-rights (branch worker/J2089-rights). All £0 NASA/SVS 20311 Dragonfly clips and stills + PIA20021_right_panel_1440x1144.jpg + PIA01050/PIA22766/SSC20210116_GR8438 downloaded, hashed, and visually verified on NAS (/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/). HARVEST_POOL_v01.json, SHOT_LIST_v08.md, and HARVEST_INVENTORY_v23.json locked (39 images, 62 exports, 0 errors, all stills <=2 uses). Next worker: resume at step 3/4 from /private/tmp/J2089-rights (853a4fc128) to render moving-plate composites to NAS and run step 4/4 QA."
+        },
+        {
+          "at": "2026-11-07T19:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build 1080p30 moving-plate composites for Rows 1-52 on NAS (step 3/4) and run final QA (step 4/4) from locked HARVEST_POOL_v01.json + SHOT_LIST_v08.md",
