@@ -203038,11 +203038,25 @@
           "at": "2026-11-07T19:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T19:54Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Review J2089 picture package (c0bbf33088 on worker/J2089-rights + studio-live NAS), rule KEEP/PASS or FIX, and queue 032 edit",
       "due": "2026-11-09T18:00:00Z",
-      "kind": "chief"
+      "kind": "chief",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
