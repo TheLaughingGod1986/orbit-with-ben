@@ -203198,10 +203198,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-07T20:30Z",
+      "eta": "2026-11-07T22:30Z",
       "created_by": "gemini",
       "created_at": "2026-11-07T20:12Z",
       "result": "",
@@ -203210,12 +203210,25 @@
           "at": "2026-11-07T20:12Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T20:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble 52-row 032 Titan long master v01 (582.44 s) on studio-live NAS and pass all 5 gates (clip_check, picture_qa, music_gate, sfx_level, loudness/CFR/blackdetect)",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
-      "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects"
+      "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T20:30Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2380",
