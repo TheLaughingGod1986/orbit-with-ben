@@ -190237,13 +190237,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-07T00:17Z",
-      "eta": "2026-11-07T02:17Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T18:12Z",
-      "result": "",
+      "result": "HOS PR #451 (macbook/J2236 -> jobs/reviews/J2236/AUDIT.md). Top 5 findings: (1) [P0] Archive retired Next.js/Prisma/direct-social-adapter web app in 07_Content-Ops/ (119 files, 15,835L) & drop DATABASE_URL from src/lib/env.ts so full npx vitest run passes (tests/autopublish.test.ts currently fails with exit 1; hos-contract.yml only ran 1 of 18 test files); (2) [P0] Fix 3 bugs in 00_Brand/Channel-Setup/tools/: hos_desk.py L50-51 omits 'gemini' from PARTIES/WRITERS (breaking Chief failover), hos_build_rule_v02.py L578-595 crashes with FileNotFoundError on --check/--test-negatives when gitignored _work_s04_photosynthesis_v01/timeline.json is absent + hardcodes /Users/benjaminoats paths, and vo_check_py312.sh L4-6 hardcodes main checkout path; (3) [P0] Archive 4 zero-reference Never-list-violating tools in 04_Audio/tools/ (orbit_gemini_omni.py, orbit_gemini_veo.py, fix_published_playback_lag.py, vidiq_title_score_sheet.py = 840L), remove start_studio_chrome_cdp.sh from CORE_FILES.json (hijacks Flow CDP :9222), and delete ~250L of dead Orbit-robot branches from orbit_flow_veo_ui.py; (4) [P1] Extract 3 shared helpers (hos_media.py, hos_cards.py, hos_short_builder.py) to replace ~85% copy-paste across 754 per-film scripts (261,112L) for films 011+, and archive 518 unreferenced/superseded draft scripts (159,038L) + 19 retired atempo_known_over_cap.json entries while keeping all 236 receipt-backed provenance scripts; (5) [P1] Add 25 skipped Python unit tests & 16 passing Vitest suites to check_all.sh/CI and wire el_guard.py into ai_spend_hook.py.",
       "history": [
         {
           "at": "2026-11-05T18:12Z",
@@ -190274,6 +190274,11 @@
           "at": "2026-11-07T00:30Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-07T00:36Z",
+          "by": "macbook",
+          "what": "done: HOS PR #451 (macbook/J2236 -> jobs/reviews/J2236/AUDIT.md). Top 5 findings: (1) [P0] Archive retired Next.js/Prisma/direct-social-adapter web app in 07_Content-Ops/ (119 files, 15,835L) & drop DATABASE_URL from src/lib/env.ts so full npx vitest run passes (tests/autopublish.test.ts currently fails with exit 1; hos-contract.yml only ran 1 of 18 test files); (2) [P0] Fix 3 bugs in 00_Brand/Channel-Setup/tools/: hos_desk.py L50-51 omits 'gemini' from PARTIES/WRITERS (breaking Chief failover), hos_build_rule_v02.py L578-595 crashes with FileNotFoundError on --check/--test-negatives when gitignored _work_s04_photosynthesis_v01/timeline.json is absent + hardcodes /Users/benjaminoats paths, and vo_check_py312.sh L4-6 hardcodes main checkout path; (3) [P0] Archive 4 zero-reference Never-list-violating tools in 04_Audio/tools/ (orbit_gemini_omni.py, orbit_gemini_veo.py, fix_published_playback_lag.py, vidiq_title_score_sheet.py = 840L), remove start_studio_chrome_cdp.sh from CORE_FILES.json (hijacks Flow CDP :9222), and delete ~250L of dead Orbit-robot branches from orbit_flow_veo_ui.py; (4) [P1] Extract 3 shared helpers (hos_media.py, hos_cards.py, hos_short_builder.py) to replace ~85% copy-paste across 754 per-film scripts (261,112L) for films 011+, and archive 518 unreferenced/superseded draft scripts (159,038L) + 19 retired atempo_known_over_cap.json entries while keeping all 236 receipt-backed provenance scripts; (5) [P1] Add 25 skipped Python unit tests & 16 passing Vitest suites to check_all.sh/CI and wire el_guard.py into ai_spend_hook.py."
         }
       ],
       "remaining_action": "Write jobs/reviews/J2236/AUDIT.md, open PR on macbook/J2236, and return checkout to main",
