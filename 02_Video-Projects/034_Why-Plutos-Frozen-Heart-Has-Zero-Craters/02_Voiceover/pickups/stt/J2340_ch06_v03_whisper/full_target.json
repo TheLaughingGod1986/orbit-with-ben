@@ -1,0 +1,454 @@
+{
+  "label": "full_target",
+  "engine": "faster-whisper",
+  "engine_version": "1.2.1",
+  "model": "Systran/faster-whisper-medium.en",
+  "device": "cpu",
+  "compute_type": "int8",
+  "decode": "ffmpeg f32le 16kHz mono; av.open metadata_errors workaround",
+  "language": "en",
+  "language_probability": 1.0,
+  "duration": 31.6,
+  "initial_prompt": null,
+  "vad_filter": false,
+  "temperature": 0.0,
+  "beam_size": 5,
+  "condition_on_previous_text": false,
+  "input": "02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/pluto_ch06_real_worlds_v03_request.wav",
+  "input_sha256": "e46b491f565b1dd1114213fd33fcf19eacf81c50cc1f5fd9f737070f68d74a5d",
+  "elapsed_s": 9.45,
+  "text": "Next in our Real World series we travel inward to Neptune's largest moon Triton, a captured Kuiper Belt cousin of Pluto that orbits backwards and erupts active geysers on a frozen nitrogen crust at minus 235 degrees Celsius. Looking back from 200,000 kilometers away on the 14th of July 2015, New Horizons captured its farewell colour portrait of Pluto's receding crescent and blue atmospheric haze.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.14,
+      "text": " Next in our Real World series we travel inward to Neptune's largest moon Triton,",
+      "words": [
+        {
+          "word": " Next",
+          "start": 0.0,
+          "end": 0.44,
+          "probability": 0.9351
+        },
+        {
+          "word": " in",
+          "start": 0.44,
+          "end": 0.62,
+          "probability": 0.8748
+        },
+        {
+          "word": " our",
+          "start": 0.62,
+          "end": 0.78,
+          "probability": 0.9725
+        },
+        {
+          "word": " Real",
+          "start": 0.78,
+          "end": 0.98,
+          "probability": 0.6249
+        },
+        {
+          "word": " World",
+          "start": 0.98,
+          "end": 1.26,
+          "probability": 0.8275
+        },
+        {
+          "word": " series",
+          "start": 1.26,
+          "end": 1.74,
+          "probability": 0.675
+        },
+        {
+          "word": " we",
+          "start": 1.74,
+          "end": 2.12,
+          "probability": 0.4835
+        },
+        {
+          "word": " travel",
+          "start": 2.12,
+          "end": 2.38,
+          "probability": 0.9908
+        },
+        {
+          "word": " inward",
+          "start": 2.38,
+          "end": 2.78,
+          "probability": 0.9179
+        },
+        {
+          "word": " to",
+          "start": 2.78,
+          "end": 3.06,
+          "probability": 0.9885
+        },
+        {
+          "word": " Neptune's",
+          "start": 3.06,
+          "end": 3.72,
+          "probability": 0.9649
+        },
+        {
+          "word": " largest",
+          "start": 3.72,
+          "end": 4.02,
+          "probability": 0.9953
+        },
+        {
+          "word": " moon",
+          "start": 4.02,
+          "end": 4.38,
+          "probability": 0.9581
+        },
+        {
+          "word": " Triton,",
+          "start": 4.38,
+          "end": 5.14,
+          "probability": 0.956
+        }
+      ]
+    },
+    {
+      "start": 5.6,
+      "end": 10.58,
+      "text": " a captured Kuiper Belt cousin of Pluto that orbits backwards and erupts active",
+      "words": [
+        {
+          "word": " a",
+          "start": 5.6,
+          "end": 5.76,
+          "probability": 0.9831
+        },
+        {
+          "word": " captured",
+          "start": 5.76,
+          "end": 6.14,
+          "probability": 0.9936
+        },
+        {
+          "word": " Kuiper",
+          "start": 6.14,
+          "end": 6.6,
+          "probability": 0.9954
+        },
+        {
+          "word": " Belt",
+          "start": 6.6,
+          "end": 6.8,
+          "probability": 0.6326
+        },
+        {
+          "word": " cousin",
+          "start": 6.8,
+          "end": 7.18,
+          "probability": 0.566
+        },
+        {
+          "word": " of",
+          "start": 7.18,
+          "end": 7.46,
+          "probability": 0.9892
+        },
+        {
+          "word": " Pluto",
+          "start": 7.46,
+          "end": 7.84,
+          "probability": 0.9934
+        },
+        {
+          "word": " that",
+          "start": 7.84,
+          "end": 8.46,
+          "probability": 0.9281
+        },
+        {
+          "word": " orbits",
+          "start": 8.46,
+          "end": 8.74,
+          "probability": 0.9828
+        },
+        {
+          "word": " backwards",
+          "start": 8.74,
+          "end": 9.26,
+          "probability": 0.953
+        },
+        {
+          "word": " and",
+          "start": 9.26,
+          "end": 9.62,
+          "probability": 0.9827
+        },
+        {
+          "word": " erupts",
+          "start": 9.62,
+          "end": 10.16,
+          "probability": 0.9972
+        },
+        {
+          "word": " active",
+          "start": 10.16,
+          "end": 10.58,
+          "probability": 0.9846
+        }
+      ]
+    },
+    {
+      "start": 10.58,
+      "end": 16.82,
+      "text": " geysers on a frozen nitrogen crust at minus 235 degrees Celsius.",
+      "words": [
+        {
+          "word": " geysers",
+          "start": 10.58,
+          "end": 11.24,
+          "probability": 0.9862
+        },
+        {
+          "word": " on",
+          "start": 11.24,
+          "end": 11.46,
+          "probability": 0.9898
+        },
+        {
+          "word": " a",
+          "start": 11.46,
+          "end": 11.7,
+          "probability": 0.9915
+        },
+        {
+          "word": " frozen",
+          "start": 11.7,
+          "end": 12.06,
+          "probability": 0.9945
+        },
+        {
+          "word": " nitrogen",
+          "start": 12.06,
+          "end": 12.58,
+          "probability": 0.9779
+        },
+        {
+          "word": " crust",
+          "start": 12.58,
+          "end": 13.1,
+          "probability": 0.9964
+        },
+        {
+          "word": " at",
+          "start": 13.1,
+          "end": 13.72,
+          "probability": 0.9442
+        },
+        {
+          "word": " minus",
+          "start": 13.72,
+          "end": 14.18,
+          "probability": 0.4044
+        },
+        {
+          "word": " 235",
+          "start": 14.18,
+          "end": 15.38,
+          "probability": 0.9371
+        },
+        {
+          "word": " degrees",
+          "start": 15.38,
+          "end": 16.12,
+          "probability": 0.7103
+        },
+        {
+          "word": " Celsius.",
+          "start": 16.12,
+          "end": 16.82,
+          "probability": 0.7173
+        }
+      ]
+    },
+    {
+      "start": 18.18,
+      "end": 25.2,
+      "text": " Looking back from 200,000 kilometers away on the 14th of July 2015, New Horizons captured",
+      "words": [
+        {
+          "word": " Looking",
+          "start": 18.18,
+          "end": 18.56,
+          "probability": 0.9672
+        },
+        {
+          "word": " back",
+          "start": 18.56,
+          "end": 18.82,
+          "probability": 0.9939
+        },
+        {
+          "word": " from",
+          "start": 18.82,
+          "end": 19.1,
+          "probability": 0.9659
+        },
+        {
+          "word": " 200",
+          "start": 19.1,
+          "end": 19.6,
+          "probability": 0.97
+        },
+        {
+          "word": ",000",
+          "start": 19.6,
+          "end": 20.24,
+          "probability": 0.9296
+        },
+        {
+          "word": " kilometers",
+          "start": 20.24,
+          "end": 20.56,
+          "probability": 0.324
+        },
+        {
+          "word": " away",
+          "start": 20.56,
+          "end": 21.06,
+          "probability": 0.9949
+        },
+        {
+          "word": " on",
+          "start": 21.06,
+          "end": 21.32,
+          "probability": 0.9416
+        },
+        {
+          "word": " the",
+          "start": 21.32,
+          "end": 21.5,
+          "probability": 0.6872
+        },
+        {
+          "word": " 14th",
+          "start": 21.5,
+          "end": 22.0,
+          "probability": 0.9637
+        },
+        {
+          "word": " of",
+          "start": 22.0,
+          "end": 22.0,
+          "probability": 0.701
+        },
+        {
+          "word": " July",
+          "start": 22.0,
+          "end": 22.32,
+          "probability": 0.9907
+        },
+        {
+          "word": " 2015,",
+          "start": 22.32,
+          "end": 23.38,
+          "probability": 0.9238
+        },
+        {
+          "word": " New",
+          "start": 24.08,
+          "end": 24.16,
+          "probability": 0.99
+        },
+        {
+          "word": " Horizons",
+          "start": 24.16,
+          "end": 24.64,
+          "probability": 0.996
+        },
+        {
+          "word": " captured",
+          "start": 24.64,
+          "end": 25.2,
+          "probability": 0.9853
+        }
+      ]
+    },
+    {
+      "start": 25.2,
+      "end": 31.3,
+      "text": " its farewell colour portrait of Pluto's receding crescent and blue atmospheric haze.",
+      "words": [
+        {
+          "word": " its",
+          "start": 25.2,
+          "end": 25.38,
+          "probability": 0.9677
+        },
+        {
+          "word": " farewell",
+          "start": 25.38,
+          "end": 25.96,
+          "probability": 0.9588
+        },
+        {
+          "word": " colour",
+          "start": 25.96,
+          "end": 26.32,
+          "probability": 0.8554
+        },
+        {
+          "word": " portrait",
+          "start": 26.32,
+          "end": 26.96,
+          "probability": 0.8455
+        },
+        {
+          "word": " of",
+          "start": 26.96,
+          "end": 27.4,
+          "probability": 0.9883
+        },
+        {
+          "word": " Pluto's",
+          "start": 27.4,
+          "end": 28.0,
+          "probability": 0.9307
+        },
+        {
+          "word": " receding",
+          "start": 28.0,
+          "end": 28.52,
+          "probability": 0.9991
+        },
+        {
+          "word": " crescent",
+          "start": 28.52,
+          "end": 29.08,
+          "probability": 0.9771
+        },
+        {
+          "word": " and",
+          "start": 29.08,
+          "end": 29.66,
+          "probability": 0.9031
+        },
+        {
+          "word": " blue",
+          "start": 29.66,
+          "end": 30.06,
+          "probability": 0.9732
+        },
+        {
+          "word": " atmospheric",
+          "start": 30.06,
+          "end": 30.84,
+          "probability": 0.8707
+        },
+        {
+          "word": " haze.",
+          "start": 30.84,
+          "end": 31.3,
+          "probability": 0.9985
+        }
+      ]
+    }
+  ]
+}

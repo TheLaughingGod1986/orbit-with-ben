@@ -1,0 +1,77 @@
+{
+  "label": "phrase_in_context",
+  "engine": "faster-whisper",
+  "engine_version": "1.2.1",
+  "model": "Systran/faster-whisper-medium.en",
+  "device": "cpu",
+  "compute_type": "int8",
+  "decode": "ffmpeg f32le 16kHz mono; av.open metadata_errors workaround",
+  "language": "en",
+  "language_probability": 1.0,
+  "duration": 1.98,
+  "initial_prompt": null,
+  "vad_filter": false,
+  "temperature": 0.0,
+  "beam_size": 5,
+  "condition_on_previous_text": false,
+  "input": "02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/pluto_ch06_real_worlds_v03_request.wav",
+  "input_sha256": "e46b491f565b1dd1114213fd33fcf19eacf81c50cc1f5fd9f737070f68d74a5d",
+  "elapsed_s": 3.12,
+  "text": "in our Real World Series, we travel...",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.96,
+      "text": " in our Real World Series, we travel...",
+      "words": [
+        {
+          "word": " in",
+          "start": 0.0,
+          "end": 0.28,
+          "probability": 0.4137
+        },
+        {
+          "word": " our",
+          "start": 0.28,
+          "end": 0.44,
+          "probability": 0.982
+        },
+        {
+          "word": " Real",
+          "start": 0.44,
+          "end": 0.64,
+          "probability": 0.429
+        },
+        {
+          "word": " World",
+          "start": 0.64,
+          "end": 0.94,
+          "probability": 0.9273
+        },
+        {
+          "word": " Series,",
+          "start": 0.94,
+          "end": 1.52,
+          "probability": 0.6205
+        },
+        {
+          "word": " we",
+          "start": 1.76,
+          "end": 1.82,
+          "probability": 0.9243
+        },
+        {
+          "word": " travel...",
+          "start": 1.82,
+          "end": 1.96,
+          "probability": 0.531
+        }
+      ]
+    }
+  ],
+  "phrase_note": "window words 1-6: in  our  Real  World  series  we",
+  "phrase_start_s": 0.32,
+  "phrase_end_s": 2.3,
+  "phrase_wav": "02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/stt/J2340_ch06_v03_whisper/phrase_in_context.wav",
+  "phrase_sha256": "9bc2cb9d73a5693287f21684765cc18e15b46c861575188166edcfdc26941d15"
+}
