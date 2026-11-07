@@ -1,3 +1,43 @@
+## MacBook continuation — 7 Nov, R2 and R12 flip plates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py flip` / `flip_graphics.py` and two full-frame 1920×1080 /
+25 fps plates in `CODE_FLIP_v01.json`:
+
+- R2, 12.54–17.10 s (114 frames, 4.56 s), on the locked word "Will". A real
+  Blue Marble disc (harvested `GSFC_20171208_Archive_e001788`, eastern
+  hemisphere, scaled down) with a schematic bar magnet turning a half turn,
+  red N from the top of the frame to the bottom. Three blue air rings stay
+  outside the disc for the whole shot. Labels "OUR AIR" then "INTO SPACE"
+  sit upper left, inside the spoken question, and each holds under a second.
+- R12, 112.98–116.30 s (83 frames, 3.32 s), on the locked word "turned",
+  ending in the gap before "If". Same magnet and air rings, tighter disc.
+  "UPSIDE DOWN" appears while that phrase is spoken. This is not the later
+  core dive.
+
+The disc is the existing harvest photograph, not a flat colour circle and not
+a pole-path map. The magnet and rings are our drawing. No new archive search,
+no paid generation, £0. The R1 pole-speed overlay is unchanged and still has
+no geographic route. These plates still need a motion-capable review and a
+real moving separator against neighbouring code graphics. No KEEP, PASS,
+watch/listen or film-stage completion.
+
+Media and contact sheet: `/Users/ben/_desk/J2141-flip-v01/` (mp4, png stills,
+`CONTACT_v01.jpg`). `CODE_FLIP_TECHNICAL_CHECK_v01.json` records both SHA-256
+matches, 1920×1080, 25 fps, 114 and 83 frames, yuv420p, full error-free
+decode, and three static samples each with mean luma above 28. Static samples
+were inspected. Reproduce into a fresh directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py flip --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. The wider licensed harvest, dynamo, Hubble/SAA,
+multipole, poles map, aurora, the progressive timeline and the R41 atmosphere
+fallback are still unfinished, as are composites and the picture gates.
+Existing asset-ID and sourced-simulation conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R25 altitude comparison
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays

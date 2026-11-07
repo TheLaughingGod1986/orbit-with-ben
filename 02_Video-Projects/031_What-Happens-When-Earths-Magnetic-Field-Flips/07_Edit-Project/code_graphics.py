@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='flip':
+  from flip_graphics import main as flip
+  return flip(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='belts':
   from belt_graphics import main as belts
   return belts(sys.argv[2:])
