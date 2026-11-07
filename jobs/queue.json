@@ -197886,10 +197886,10 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-07T03:15Z",
+      "eta": "2026-11-07T05:15Z",
       "created_by": "codex",
       "created_at": "2026-11-07T03:11Z",
       "result": "",
@@ -197898,11 +197898,24 @@
           "at": "2026-11-07T03:11Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T03:15Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Recover the original ending if possible, otherwise record and verify two bounded pickups",
       "kind": "vo",
-      "plain": "Repair the two Pluto narration lines while preserving their complete endings."
+      "plain": "Repair the two Pluto narration lines while preserving their complete endings.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-07T03:15Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
