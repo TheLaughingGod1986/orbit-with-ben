@@ -198085,13 +198085,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T03:57Z",
-      "eta": "2026-11-07T05:57Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-07T03:25Z",
-      "result": "",
+      "result": "FIX ruling complete: Ch5 crop hash and PCM tail verified; Ch6 Worlds unresolved. PR613 evidence and PR614 ruling merged, CI passed. J2340 owns bounded independent-ASR/repair follow-up; J2157 remains blocked, no VO approval or shot-list release. No spend/publishing.",
       "history": [
         {
           "at": "2026-11-07T03:25Z",
@@ -198122,6 +198122,11 @@
           "at": "2026-11-07T04:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling PR614 and evidence PR613 merged; CI passed; J2157 blocked and J2340 open. No spend or publishing in this review."
+        },
+        {
+          "at": "2026-11-07T04:01Z",
+          "by": "codex",
+          "what": "done: FIX ruling complete: Ch5 crop hash and PCM tail verified; Ch6 Worlds unresolved. PR613 evidence and PR614 ruling merged, CI passed. J2340 owns bounded independent-ASR/repair follow-up; J2157 remains blocked, no VO approval or shot-list release. No spend/publishing."
         }
       ],
       "remaining_action": "Ruling complete; J2340 owns the remaining voice repair",
@@ -198136,7 +198141,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/614"
     },
     {
       "id": "J2339",
