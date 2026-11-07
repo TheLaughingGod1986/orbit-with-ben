@@ -2,6 +2,34 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook R20/R29 dates)
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Preserve **1/3**.
+Added `code_graphics.py recent_dates` / `recent_date_graphics.py`: two distinct
+3.6-second 1920×1080 / 25 fps alpha call-outs. R20 “1830s” starts at 209.10 s;
+R29 “1970” starts at 301.44 s, both checked against locked Scribe word starts.
+Labels use existing SOURCES rows 8 and 12; no new spoken facts or VO changes.
+These are WHEN components, not the complete progressive timeline. The accent
+line carries no quantitative time scale. Existing renders remain untouched.
+
+Media: `/Users/ben/_desk/J2141-recent-dates-v01/`. Reproduce into a fresh directory
+with `/usr/bin/python3 .../code_graphics.py recent_dates --out <dir> --manifest <json>`.
+`CODE_RECENT_DATES_v01.json` records hashes, paths, timings and source rows.
+`CODE_RECENT_DATES_TECHNICAL_CHECK_v01.json` records matching SHA-256, dimensions,
+25 fps, argb alpha, 90 frames, 3.6-second duration and error-free full decode
+for both files. Five static samples per file and contact sheet inspected.
+First frame transparent; sampled visible bounds stay inside frame. Navy is
+preview only. Composite over graded moving real footage, clear of the subject
+and existing WHO/strength/SAA elements. Actual playback, composite and full
+QA remain unreviewed; no KEEP, PASS or stage approval. No media committed.
+
+No new archive search: preserved R41's existing two-candidate investigation
+and remaining budget. No NAS changes, paid generation, publishing or social
+changes; spend £0. No render remains running. Main was merged into the existing
+job branch without discarding previous checkpoints. Full harvest, remaining
+mechanisms, progressive timeline, R41 fallback, composites and gates exceed
+this bounded run; release J2141 for continuation on PR #633.
+
 ## Continuation checkpoint (7 Nov, MacBook R52 generation scale)
 
 Worker `macbook`, same branch `macbook/J2141`, PR #633. Preserve **1/3**.
