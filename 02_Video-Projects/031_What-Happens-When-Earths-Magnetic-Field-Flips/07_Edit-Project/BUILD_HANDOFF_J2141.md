@@ -1,3 +1,39 @@
+## MacBook continuation — 7 Nov, R7/R8 corrected grain candidates v04
+
+Worker `macbook`, same branch `macbook/J2141` and PR #633. Queue remains
+**1/3**; full harvest/graphics/composites/gates exceed this run. Spend £0.
+Resumed the existing branch (54 commits ahead of main), merging current main;
+no prior worker commits or media discarded. PR #495 is already merged.
+
+Added `code_graphics.py grains-revised`, `grain_revision_graphics.py`, and
+`CODE_GRAINS_v04.json`. R7 (54.20–59.92 s) now locks the north-seeking red
+needle tips screen-south, beginning on the locked word “lock” at 58.88 s.
+R8 (73.28–79.24 s) compares a modern north-pointing desk compass at left
+with south-pointing recorded grain needles at right. The grains are generic
+schematics sourced to SOURCES row 3, not measured specimen geometry. Sparse
+outlines are alpha overlays for moving graded rock plates, replacing the old
+flat rock panel. Captions fade in/out and none holds four seconds. The late
+“opposite way” caption was omitted: its cue leaves only 0.76 s in this row.
+The physical direction comparison remains visible. No narration changed.
+
+Media: `/Users/ben/_desk/J2141-grains-v04/`. Technical checks in
+`CODE_GRAINS_TECHNICAL_CHECK_v04.json`: both hashes, 1920×1080, 25 fps,
+argb alpha, duration within half a frame, video-only streams, complete
+error-free ffmpeg decode, and differing decoded sample frames.
+`verify_grains_v04.py` also asserts all final R7 needle angles are exactly
+south. Reproduce in a fresh output directory; existing renders are refused.
+The initial v03 trial remains outside git in `/Users/ben/_desk/J2141-grains-v03/`;
+it is superseded by v04, which removes the too-short caption.
+
+Static contact sheet inspected; preview navy is not a finished composite.
+No KEEP, PASS, stage approval, actual playback or composite acceptance claimed.
+Moving real plates, subject clearance, final caption readability (especially
+R7's short “LOCK INTO LINE”), film pacing and complete picture gates remain.
+Old v02 candidates and all existing paths/manifests are preserved. No archive
+search, paid generation, YouTube action, NAS write or deletion in this run.
+All render/verification processes finished. Resume this same branch/PR;
+remaining harvest and rights/gate conflicts are recorded below.
+
 ## MacBook continuation — 7 Nov, six reachable v02 mechanism renders
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
