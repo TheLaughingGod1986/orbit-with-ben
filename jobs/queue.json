@@ -1,5 +1,5 @@
 {
-  "next_id": 2353,
+  "next_id": 2354,
   "jobs": [
     {
       "id": "J0001",
@@ -199714,6 +199714,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2353",
+      "title": "034 Pluto: shot list from approved v03 VO",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J2352 elected-Chief full VO PASS (jobs/reviews/J2352/REVIEW.md, PR623); J2157 evidence merged in PR619. Create and review the OWB 034 shot list from locked 01_Script/pluto_frozen_heart_script_master_v03.md and accepted 02_Voiceover/pluto_frozen_heart_vo_v03.wav (SHA256 2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685, 616.160 s). Use reconciled v03 stt word timestamps, never planned script times or old v01 timings. Preserve accepted pickups in full and no VO rewrites. Read docs in force. Deliver shot-list rows, source/rights/identity checks, visual-must coverage (DATA/SCALE, WHO, WHEN, FACT), per-row animation and real-body explainer plan, music brief with chapter awe/explain moods plus Pace and NOT earlier beds, SFX plan and end hold. Align rows to sentence endings and run clip_check with the v03 words. Zero-spend planning only; no generation or assembly until the shot list is reviewed. Commit evidence via own worktree/PR and queue the next review or production handoff immediately with applicable gates and budget. This job is the next stage after VO acceptance, not Ben UAT or publishing approval.",
+      "ref": "jobs/reviews/J2352/REVIEW.md",
+      "film": "034",
+      "stage": "shots",
+      "after": "J2352",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T08:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T08:19Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Plan and review Pluto pictures against the approved narration",
+      "kind": "review",
+      "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration."
     }
   ],
   "focus": [

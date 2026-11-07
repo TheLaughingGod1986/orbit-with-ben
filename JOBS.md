@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2350 | mini | open (after J2324) | – | – | chief · Review corrected HOS desk PR450 after J2324 repair | J1809 |
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
 | J2352 | any | claimed | codex | 2026-11-07T10:15Z | 034 vo · chief · 034 Pluto: elected Chief rules on reconciled J2157 v03 evidence (PR #619) and full VO PASS | 66dbaeec6a |
+| J2353 | any | open (after J2352) | – | – | 034 shots · review · 034 Pluto: shot list from approved v03 VO | jobs/reviews/J2352/REVIEW.md |
 
 Recently finished:
 
