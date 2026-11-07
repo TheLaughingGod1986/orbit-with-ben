@@ -1,5 +1,5 @@
 {
-  "next_id": 2342,
+  "next_id": 2343,
   "jobs": [
     {
       "id": "J0001",
@@ -198296,6 +198296,38 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J2342",
+      "title": "034 Pluto: listen to the existing Worlds repair before more synthesis",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2341 Chief scope: one no-spend diagnostic review, maximum 15 active minutes.\nThis is an audio-input task, not another ASR or generation job.\n\nRead jobs/reviews/J2341/REVIEW.md and jobs/reviews/J2340/EVIDENCE.md. Demonstrate\naudio_input with actual tool evidence before claiming to hear anything;\nffmpeg, ASR, a player window and model identity are not proof. If unavailable,\nuse jobs.py wait with type capability and requires audio_input, recording\nthe actual failed/unavailable input route. Never send this intermediate check\nto Ben. No generic six-hour retry.\n\nMedia is in the shared Mini checkout under\n02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/.\nPrimary input: pluto_ch06_real_worlds_v04_request.wav,\nsha256 9fd9f90f8f936176c52f4003d8ce18d6fa5b17d20ba78d6634ef7b93b0c95f8d.\nVerify hash, then listen to the final target sentence in context; raw Scribe\nplaces Real at 13.30–13.52 s and World at 13.60–13.94 s. Preserve the original.\nCompare against locked script c2082a4884 line 110, which says Real Worlds.\nReport plural / singular / indeterminate, exact listening interval, actual\ninput tool, and confidence/reason. Do not force a binary answer or treat\nexpectation-biased listening as certainty. At most two listens of that target;\nv03 may be compared once if useful, with its hash and interval recorded.\n\nDo not regenerate, recrop, splice, change the script or settings, resubmit\nunchanged ASR, spend credits, or approve the master. Preserve Chapter 5 crop\n4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de.\nIf singular/indeterminate, propose one specifically different repair approach\nand why it addresses the failure, for Chief to scope before spending.\nIf plural is audible, record the ASR disagreement for Chief adjudication;\nall remaining crop/master checks still apply. Queue one dependent elected-\nChief ruling immediately, linked to J2157 and this diagnostic. Deliver a\nreview note through the existing repo route. No shot-list release.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/615",
+      "film": "034",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T04:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T04:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Use demonstrated audio input to diagnose the Worlds discrepancy and return evidence to Chief",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Listen to the uncertain word in Pluto narration before deciding how to fix it."
     }
   ],
   "focus": [
