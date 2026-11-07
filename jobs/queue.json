@@ -195820,13 +195820,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-07T00:17Z",
-      "eta": "2026-11-07T02:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:20Z",
-      "result": "",
+      "result": "Waiting for: J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render.",
       "history": [
         {
           "at": "2026-11-06T22:20Z",
@@ -195872,9 +195872,19 @@
           "at": "2026-11-07T00:21Z",
           "by": "codex",
           "what": "step 1 of 4 done: Fresh supported predecessor-excluded gate PASS; E1/first-question/word-count conflicts remain. J2321 queued with audio/video requirements; local evidence7d221d0dbb, push rejected."
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render."
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T01:30:00Z"
         }
       ],
-      "remaining_action": "J2321 must resolve failed E1 requirements and perceive existing v05 before repair continues",
+      "remaining_action": "Await capable J2321 review, then repair and verify v05 failures",
       "due": "2026-12-08T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
@@ -195887,6 +195897,19 @@
       },
       "taskKeys": [
         "OWB:029"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render.",
+        "check_at": "2026-11-07T01:30:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
       ]
     },
     {
