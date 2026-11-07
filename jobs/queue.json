@@ -197492,18 +197492,23 @@
           "at": "2026-11-07T08:25Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. Checking VO, shot list, plates, graphic and music before any cut."
+        },
+        {
+          "at": "2026-11-07T08:26Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: No plates, plan, music, SFX or long master. J2353 still open. VO v03 hash matches. No cut started."
         }
       ],
-      "remaining_action": "Check whether the Pluto Short can be cut from footage already on disk",
+      "remaining_action": "Wait for the reviewed Pluto shot list, cold-open plates, graphic and music, then cut Short 1 from the locked v03 voice-over",
       "due": "2026-12-21T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Pluto Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T08:25Z",
+        "at": "2026-11-07T08:26Z",
         "by": "cursor",
-        "note": "Claimed. Checking VO, shot list, plates, graphic and music before any cut."
+        "note": "No plates, plan, music, SFX or long master. J2353 still open. VO v03 hash matches. No cut started."
       },
       "taskKeys": [
         "OWB:034"
