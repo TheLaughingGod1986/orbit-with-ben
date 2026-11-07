@@ -200092,9 +200092,14 @@
           "at": "2026-11-07T08:55Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2356; starting verification of J2320 waiting condition for OWB 034 Short 2"
+        },
+        {
+          "at": "2026-11-07T08:57Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 034 on disk: J2353 open, SHORTS_PLAN_v01.md/03_Picture/05_Music/06_Sound-Effects absent; VO v03 matches 2be8030b6c"
         }
       ],
-      "remaining_action": "Inspect J2320, J2353, and 034 on-disk inputs to verify waiting condition",
+      "remaining_action": "Write and commit jobs/reviews/J2356/REVIEW.md documenting J2320 unmet dependencies and v03 STT lift options",
       "kind": "review",
       "recheck_of": "J2320",
       "due": "2026-11-07T09:53:21+00:00",
@@ -200109,11 +200114,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T08:55Z",
+        "at": "2026-11-07T08:57Z",
         "by": "gemini",
-        "note": "Claimed J2356; starting verification of J2320 waiting condition for OWB 034 Short 2"
+        "note": "Verified 034 on disk: J2353 open, SHORTS_PLAN_v01.md/03_Picture/05_Music/06_Sound-Effects absent; VO v03 matches 2be8030"
       },
       "taskKeys": [
         "OWB:034"
