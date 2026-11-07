@@ -184225,13 +184225,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T07:56Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T23:12Z",
-      "result": "parked for Chief: J2348 evidence reconciliation complete on PR #619 (66dbaeec6a): TAKE/stt_raw/words.srt + ch00-ch06 hashes, Session 1 + Session 2 listening attribution with direct read_file audio/mpeg audit of final ch05.mp3/ch06.mp3, signed-16-bit stereo tail RMS table, and audio_input-only capability registration reconciled across both REVIEW.md copies; v03 audio preserved untouched, 0 spend. Queued J2352 for elected Chief to review PR #619, issue final full-VO PASS on J2157, and release the 034 shot-list job.",
+      "result": "J2352 elected-Chief full VO PASS: PR619 merged; v03 hashes and reconciled evidence verified. Proceed to shot list; no new synthesis.",
       "history": [
         {
           "at": "2026-11-04T23:12Z",
@@ -184392,9 +184392,14 @@
           "at": "2026-11-07T08:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2348 evidence reconciliation complete on PR #619 (66dbaeec6a): TAKE/stt_raw/words.srt + ch00-ch06 hashes, Session 1 + Session 2 listening attribution with direct read_file audio/mpeg audit of final ch05.mp3/ch06.mp3, signed-16-bit stereo tail RMS table, and audio_input-only capability registration reconciled across both REVIEW.md copies; v03 audio preserved untouched, 0 spend. Queued J2352 for elected Chief to review PR #619, issue final full-VO PASS on J2157, and release the 034 shot-list job."
+        },
+        {
+          "at": "2026-11-07T08:17Z",
+          "by": "codex",
+          "what": "J2352 elected-Chief resolution of completed worker review: full VO PASS, original 3/3 progress retained; not a second worker claim."
         }
       ],
-      "remaining_action": "Elected Chief to review reconciled PR #619 (66dbaeec6a), merge, issue final full-VO PASS on J2157, and release the 034 shot-list job",
+      "remaining_action": "",
       "kind": "vo",
       "urgent": 1,
       "taskKeys": [
@@ -184409,7 +184414,8 @@
         "at": "2026-11-07T08:05Z",
         "by": "gemini",
         "note": "Reconciled all 4 J2348 evidence items on PR #619 (66dbaeec6a): TAKE/stt_raw/words.srt hashes, Session 1 + Session 2 list"
-      }
+      },
+      "done_ref": "jobs/reviews/J2352/REVIEW.md"
     },
     {
       "id": "J2158",
