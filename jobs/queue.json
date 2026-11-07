@@ -180487,6 +180487,11 @@
           "at": "2026-11-07T17:52Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Chief scope deb4f16a36 / 2c754c10ce recorded; 62 exports + R16/R23 composites KEEP; ready for step 2/4 (£0 harvest lock & moving-plate composites)"
+        },
+        {
+          "at": "2026-11-07T17:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex is unavailable or lacks required input; next in its chain: gemini on its default"
         }
       ],
       "remaining_action": "Resume /private/tmp/J2089-rights (2c754c10ce) under J2089_CHIEF_SCOPE_v31.md: lock £0 harvest pool (step 2/4), build moving-plate composites (step 3/4), and run final QA (step 4/4)",
@@ -180502,8 +180507,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6.1-sol",
+      "for": "gemini",
+      "model": "gemini-agy",
       "urgent": 3,
       "progress": {
         "step": 1,
