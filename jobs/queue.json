@@ -198297,17 +198297,22 @@
           "at": "2026-11-07T04:15Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR615 records FIX with no further spend; J2342 queued requiring audio_input. J2157 typed capability hold updated at its existing noon check time; no VO or shot-list approval."
+        },
+        {
+          "at": "2026-11-07T04:16Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR615 merged after CI PASS; v04 and Ch5 hashes independently match, raw target token confirmed, audio_input successor and typed parent hold verified. No spend or media changes."
         }
       ],
-      "remaining_action": "Verify the ruling PR and queue handoff, then report the FIX decision",
+      "remaining_action": "Decision complete; J2342 owns audio diagnosis and J2157 remains unapproved",
       "kind": "chief",
       "plain": "Decide what happens after Pluto's narration still does not say Worlds.",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-07T04:15Z",
+        "at": "2026-11-07T04:16Z",
         "by": "codex",
-        "note": "PR615 records FIX with no further spend; J2342 queued requiring audio_input. J2157 typed capability hold updated at its "
+        "note": "PR615 merged after CI PASS; v04 and Ch5 hashes independently match, raw target token confirmed, audio_input successor an"
       },
       "taskKeys": [
         "OWB:034"
