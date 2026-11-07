@@ -835,6 +835,18 @@ console.log('Queue forecast checks OK');
   assert(/prefers-reduced-motion:\s*reduce[\s\S]*aj-icon::before[\s\S]*animation:\s*none/.test(css)
     && /prefers-reduced-motion:\s*reduce[\s\S]*p24-job-spinner[\s\S]*animation:\s*none/.test(css),
     'prefers-reduced-motion keeps Active jobs and checklist spinners static');
+  // Tab bar is a flex footer on the viewport, not position:fixed mid-document (Ben, 6 Nov ~23:55).
+  assert(/html\s*\{[^}]*height:\s*100dvh/.test(css) && /body\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*column/.test(css),
+    'html/body use a 100dvh flex column app shell');
+  assert(/body\s*\{[^}]*overflow:\s*hidden/.test(css), 'body does not scroll — main#view does');
+  assert(/main#view\s*\{[^}]*overflow-y:\s*auto/.test(css) && /main#view\s*\{[^}]*min-height:\s*0/.test(css),
+    'main#view is the scrolling pane above the tab bar');
+  assert(/nav#nav\s*\{[^}]*flex:\s*0\s+0\s+auto/.test(css), 'tab bar is a non-shrinking flex footer');
+  assert(!/nav#nav\s*\{[^}]*position:\s*fixed/.test(css),
+    'tab bar is not position:fixed (iOS left it between Working and Studio totals)');
+  assert(/safe-area-inset-bottom/.test(css), 'tab bar padding includes iPhone safe-area');
+  assert(source.includes('scrollAppTop') && source.includes('pane.scrollTo'),
+    'hash changes scroll the app-shell main pane, not window');
 
   // Tonight's Needs attention shape (Ben, 6 Nov ~23:20): after + parked-for-Chief + Chief: leftover → hide banner.
   const tonightBoard = {

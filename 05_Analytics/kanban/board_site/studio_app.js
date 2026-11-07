@@ -1696,9 +1696,16 @@
   }
 
   // STUDIO_APP_TEST_HOOK
+  // Scroll the app-shell main pane (Ben, 6 Nov ~23:55: tab bar is a flex footer, not position:fixed).
+  function scrollAppTop() {
+    const pane=document.getElementById("view");
+    if(pane&&typeof pane.scrollTo==="function") pane.scrollTo(0,0);
+    else if(pane) pane.scrollTop=0;
+    else window.scrollTo(0,0);
+  }
   window.addEventListener("hashchange", () => {
     if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";}
-    render(); window.scrollTo(0, 0);
+    render(); scrollAppTop();
   });
   render();
   poll();
