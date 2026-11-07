@@ -1,3 +1,187 @@
+## MacBook slot 2 continuation — 7 Nov, Commons harvest recovery
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full multi-agency harvest, remaining graphics/composites and film
+gates exceed this run's 25-minute limit. Release for continuation, not done.
+
+Integrated the two candidate records, original harvester, technical report
+and cumulative search checkpoints from open PR #572, commit
+`cb3ecfa51c8373badff8dbd1b8c64d1ab9cd8f3f`. PR #572 remains open and untouched;
+no merge to main, KEEP, Chief PASS or film-stage approval is implied.
+Existing pool candidates and their provenance were preserved. Added current
+MacBook recovery metadata separately, leaving original Mini evidence intact.
+
+Re-downloaded the exact previously selected Commons originals and current
+API/file-page/licence evidence into `/Users/ben/_desk/J2141-commons-macbook-v01/`.
+No new candidate search or reset of a missing-input budget. Both original
+SHA-256 values match PR #572; Commons SHA-1, native dimensions, unchanged
+per-file licence assertions, attribution obligations, evidence hashes and
+planned reuse (one each, maximum two) verified. Report:
+`HARVEST_COMMONS_MACBOOK_TECHNICAL_CHECK_v01.json`. Contact sheet viewed
+statically; tree trunk and hand stencils are recognisable. No moving
+composite, crop clearance, playback/audio or full-film QA claimed.
+
+- R34a: Tāne Mahuta, 3264×4896, Public domain, Pseudopanax. Living-kauri
+  establishing picture only; not the ancient Laschamp research specimen.
+- R37b: Cueva de las Manos, 4161×2774, CC BY-SA 3.0, Fjturban. Illustrative
+  hand-stencil example only, not evidence of Laschamp contemporaneity.
+  Credit/source/licence, changes notice and adaptation share-alike obligations
+  must reach delivery credits. Editor/reviewer must check truthful context.
+
+`verify_commons_macbook.py` reproduces exact-original and evidence checks.
+Use `--pool <pool> --recovery /Users/ben/_desk/J2141-commons-recovery-pool.json
+--report <fresh report>` with `/usr/bin/python3`. It refuses report overwrite.
+The unchanged harvester can verify its existing recovery manifest without
+re-downloading. Media and evidence stay outside git; no NAS writes/deletions.
+
+Next bounded action: finish admissible row composites/remaining moving
+harvest using the cumulative logs. R37a horse already reached its three-
+candidate limit in PR #572: Chief must name a new source/approach or accurate
+alternative; do not repeat that search. R34b slab has one rejected furniture
+candidate recorded. Existing Titan identity, sourced-map/simulation and
+other picture-gate conflicts remain unresolved. No publishing, social,
+generation, sign-in or spend. All download/verification processes finished.
+Only this checkout touched; return it to main after pushing this checkpoint.
+
+## MacBook slot 2 continuation — 7 Nov, progressive timeline recovery
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress stays **1/3**.
+£0 spent. Full harvest, remaining graphics/composites and film gates exceed
+this run's 25-minute limit; release for continuation, not completion.
+
+Integrated the unchanged `timeline_graphics.py` renderer from existing open
+PR #571, head `8ae3c85e09237709f87eedd74f0d2971968263df`, into this handoff
+branch. Added `code_graphics.py timeline` without removing existing modes.
+PR #571 remains open and untouched; no merge to main or approval is implied.
+Its original Mini media paths were not available here, so reproduced all five
+3.6-second alpha candidates locally rather than claiming those originals checked.
+
+`CODE_TIMELINE_MACBOOK_v01.json` records R5, R10, R20, R24 and R29, their
+locked v02a starts (36.14, 89.94, 209.10, 234.58 and 301.44 s), source rows,
+file paths and SHA-256. Dates accumulate in narrative order and occupy
+chronological positions, explicitly NOT TO SCALE. These historical dates do
+not replace separate geological-age graphics or add unsaid words to the VO.
+
+Media: `/Users/ben/_desk/J2141-timeline-macbook-v01/` (outside git).
+`verify_timeline_macbook.py` regenerated the technical report and contact sheet:
+all five hashes, 1920×1080 / 25 fps / argb, 3.6 s durations, exact locked date
+cues, full error-free decode, transparent initial frames and five static alpha
+bounds/sample checks passed. The static contact sheet was viewed. Preview
+navy is a viewing background only, not a finished plate. No playback/audio
+perception, KEEP, stage PASS, UAT readiness or full film QA is claimed.
+
+Compositor must replace overlapping standalone WHEN stamps in these windows,
+use graded moving real plates, and check subject clearance and legibility.
+Existing WHO/FACT cards stay separate. Historical timeline recovery does not
+resolve sourced-map/simulation gate conflicts or the wider harvest. Next
+bounded step: integrate/verify the other open J2141 harvest batches (including
+PR #572) without duplicating searches, then assign admissible moving plates
+and review row composites. Consult cumulative candidate/search logs first.
+
+No new archive search or budget reset, generation, NAS write/deletion, sign-in,
+YouTube or social change. All render/decode processes finished. Existing media
+and earlier branch work preserved; only this checkout was changed.
+
+## MacBook slot 2 continuation — 7 Nov, R14 timestamp-free crop
+
+Worker `macbook-2`; same branch `macbook/J2141`, PR #633. Progress stays
+**1/3**; remaining harvest/composites/full QA exceed one 25-minute run. £0.
+
+Added `cut_r14_sdo.py` and `HARVEST_R14_SDO_CROP_TECHNICAL_CHECK_v03.json`.
+The existing verified NASA SVS4323 AIA304 original was hash-checked, then
+source 2.00–4.40 s cropped at x=520, y=350, 960×540 and scaled exactly 2×.
+This removes the burned-in timestamp while retaining solar surface and the
+right limb. Modest gamma 1.15 / saturation 1.05 grade; silent 1920×1080,
+25 fps, 60 frames. Intended placement 138.70–141.10 s starts on locked “about”
+and leaves 0.02 s inside R14; compositor owns the final row join. This is
+false-colour extreme-UV time-lapse observation, not visible-light colour.
+
+Media `/Users/ben/_desk/J2141-r14-sdo-crop-v03/`. Hash, format, duration,
+video-only stream and complete error-free decode verified. Five distinct
+decoded samples and contact sheet inspected statically. Measured luma and
+near-black fractions are recorded; they do not establish a film polish PASS.
+The default R14 FACT card crosses solar surface: editor must resolve label
+placement/subject clearance, add NASA/SDO corner credit and check the actual
+composite before admission. No KEEP, stage PASS, playback/audio review or
+UAT readiness claimed. Pool assignment remains zero; original preserved.
+
+Trial v01 exceeded the row by 0.02 s; v02's last sample requested the exact
+EOF. Both trial directories remain untouched as evidence, not assembly inputs.
+v03 shortens the cut to 2.40 s and samples the last frame at 2.36 s. Script
+refuses source hash mismatch, existing output directory or report overwrite.
+Reproduce with `/usr/bin/python3 cut_r14_sdo.py --source <verified original>
+--out <fresh directory> --report <new report>` from this edit folder.
+
+No new archive search, search-budget reset, generation, NAS write/deletion,
+sign-in or publishing change. No processes left running. Next bounded action:
+resolve the R14 FACT placement and review the credited composite; wider
+harvest, progressive timeline, source/gate conflicts and full film gates remain.
+Release J2141 for continuation on the same PR; do not mark done.
+
+## MacBook slot 2 continuation — 7 Nov, R14 SDO moving candidate
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress remains
+**1/3**, £0 spent. The full picture package exceeds the 25-minute run.
+Resumed the existing branch and merged current main, preserving prior work.
+
+Added `harvest_sdo_motion_v01.py` and one pool candidate, `SVS4323_SDO_AIA304_motion`,
+from https://svs.gsfc.nasa.gov/4323/. This is SDO AIA 304 angstrom imagery,
+time-compressed and false-colour, not a computer simulation or visible-light
+measurement. The SVS public-domain policy and item-specific NASA SVS credit
+were checked and saved beside the original; no item rights exception found.
+Original, API, source page, both usage policies and their hashes are recorded.
+No source text or locked narration changed.
+
+Media: `/Users/ben/_desk/J2141-sdo-motion-v01/`. Original 1920×1080,
+30 fps, 47.966667 s. `HARVEST_SDO_MOTION_TECHNICAL_CHECK_v01.json` records
+full error-free video decode, probe, hash and five distinct decoded samples
+at source 2–6 s. Contact sheet viewed. The Sun and right-limb structures are
+visible, with a burned-in timestamp bottom-left. Mean luma 11.74–12.45,
+p95 53–54; these are source samples, not a film polish PASS. The proposed
+four-second interval is only a candidate; assigned uses remain zero.
+
+Next action: editor/reviewer selects a timestamp-free crop that retains the
+solar limb, respects the 2.35× upscale limit and leaves room for the R14 FACT
+card, then checks the graded composite. Full-frame recipe is **not approved**.
+No KEEP, stage PASS, actual playback/audio review or UAT readiness is claimed.
+Source motion is documented by observation metadata and changing samples;
+no claim to perceiving moving playback. Silent picture only in assembly.
+
+Investigation: one new moving candidate examined; the prior PIA22661 still
+was already unsuitable. This run does not reset any cumulative search budget.
+No further SDO search is needed until a concrete failure is recorded.
+Reproduce into a fresh directory with `/usr/bin/python3 harvest_sdo_motion_v01.py
+--out <fresh-dir>` from this edit folder, using a pool copy without this asset
+for a reproduction; the script refuses duplicate registration/output reuse.
+
+All download/decode processes finished. No NAS writes/deletions, paid
+generation, sign-in, publishing or social changes. Wider licensed moving
+harvest, existing rights/gate conflicts, progressive timeline (PR #571),
+remaining graphics/composites and full gates remain unfinished. Release
+J2141 for continuation at this clean checkpoint; resume this same PR.
+
+## MacBook slot 2 checkpoint — 7 Nov 2026
+
+Worker `macbook-2`; PR #633; progress remains 1/3. Released under the
+explicit 25-minute worker limit: the remaining multi-agency moving harvest,
+graphics repairs/builds, composites and full QA cannot finish in one run.
+No new media, archive investigation, generation or spend in this checkpoint.
+
+Verified directory access to the shared working film:
+`/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/`.
+Its `07_Edit-Project` contains the earlier manifests, `harvest_v01` and
+`code_cards_v01`; directory presence does not establish hash validity or KEEP.
+The six earlier MacBook mechanism files and contact sheet are also present at
+`/Users/ben/_desk/J2141-mechanisms-macbook-v02/`; not re-decoded this run.
+
+Continue from this PR's existing checkpoint, not the Mini-only absolute media
+paths in older sections. Preserve existing outputs. The branch already contains R7/R8 v04 corrections from slot 1 (see below);
+do not repeat the superseded v02 repair task. Next bounded production step:
+select one remaining unimplemented graphic from the shot list, verify its
+source/cue, and build/check its row-specific candidate in a fresh directory. Wider harvest and composite gates remain open;
+consult the earlier candidate/search records rather than resetting budgets.
+No film approval, UAT readiness or completion is claimed.
+
 ## MacBook continuation — 7 Nov, R7/R8 corrected grain candidates v04
 
 Worker `macbook`, same branch `macbook/J2141` and PR #633. Queue remains
