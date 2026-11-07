@@ -12,7 +12,7 @@
 | Sources | **DONE (`J2149`, 4 Nov 2026)** — `01_Script/SOURCES.md` (15/15 rows `VERIFIED` against live NASA Science, NSSDCA, and LOC pages) + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS, 0 FLAG) |
 | Gate | **PASS — VO / Gemini Veo allowed** (`npm run review:script` + `npm run gate:episode` pasted below) |
 | VO | **DONE (`J2352` elected-Chief full VO PASS, 7 Nov 2026, PR #623)** — `02_Voiceover/pluto_frozen_heart_vo_v03.wav` (SHA-256 `2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685`, `616.160 s`, `-19.9 LUFS` integrated, `-23.0 dB` mean, `-3.7 dBTP` true peak) + reconciled `02_Voiceover/stt/pluto_frozen_heart_vo_v03/stt_raw.json` |
-| Shots | **IN REVIEW (`J2353`, 7 Nov 2026)** — `07_Edit-Project/SHOT_LIST_v01.md` + `07_Edit-Project/shot_list_v01.csv` (`68` rows, `0.00–634.16 s`, `136` cuts at `4.66 s/cut` mean, `0/1,183` split words, `clip_check.py` **PASS** with 0 errors and 0 warnings; 46 visually verified unannotated NASA/Wikimedia assets all `≤ 2` raw appearances; `05_Music/MUSIC_BRIEF_v01.md` + `06_Sound-Effects/SFX_PLAN_v01.md`; £0 spent) |
+| Shots | **IN REVIEW (`J2361` repair of `J2359` FIX on PR #626, 7 Nov 2026)** — `07_Edit-Project/SHOT_LIST_v01.md` + `07_Edit-Project/shot_list_v01.csv` + `07_Edit-Project/SOURCE_EVIDENCE_v01.json` (`74` rows: `67` spoken + `6` explicit `source=CARD` rows with `0.60 s` breath + `1` `18.00 s` End Hold; `142` cuts at `4.47 s/cut` mean, `0/1,183` split words, `clip_check.py` **PASS** with 0 errors and 0 warnings; `64` visually verified clean NASA/Wikimedia assets all `<= 2` raw and separated appearances including `CODE` backgrounds/cutouts; `05_Music/MUSIC_BRIEF_v01.md` with `2.5 s` hold + `10.0 s` fade + `06_Sound-Effects/SFX_PLAN_v01.md`; £0 spent) |
 | CG | Pending Chief shot-list review (`J2353` successor) before £0 harvest & code-graphics build |
 | Runtime target | 7–9 min (~1,291 spoken narration words, ~8.8 min est.) |
 | Shorts | Paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Giant Ice Heart Have Zero Craters?*, scheduled Private for `2026-11-14T11:30:00Z`) + 2 episode Shorts (including Test A opening Short) |
@@ -85,10 +85,10 @@ Pass threshold: 90
 Script score: **95.8/100** · PASS
 ```
 
-## Pasted `clip_check.py` output (`shot_list_v01.csv` vs `pluto_frozen_heart_vo_v03`, `J2353`, 7 Nov 2026)
+## Pasted `clip_check.py` output (`shot_list_v01.csv` vs `pluto_frozen_heart_vo_v03`, `J2361`, 7 Nov 2026)
 
 ```text
 $ python3 00_Brand/Channel-Setup/tools/clip_check.py 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/shot_list_v01.csv --words 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/stt/pluto_frozen_heart_vo_v03/stt_raw.json --vo-end 616.16
-clip_check: 68 rows — PASS
+clip_check: 74 rows — PASS
 OK: sentence/card boundaries and end-after-VO checks clear.
 ```
