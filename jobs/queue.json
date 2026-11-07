@@ -196653,7 +196653,7 @@
     {
       "id": "J2323",
       "title": "Verify condition for J2172",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2172: Acting-Chief Codex J2284 ruling: CONDITION UNMET. Readiness PR438 is merged, but J2275 repair is open, J2200 requires renewed system PASS, J2033 remains blocked, J2268 adapter and J2269 live-guard authorization incomplete, J2270 unauthorized, J2271 independent plate acceptance incomplete. Reviewed jobs/reviews/J2284/REVIEW.md and current queue histories; origin/main twelve-plate scope still SCOPED_NOT_AUTHORIZED. Retain J2172 at1/3 afterJ2271, accepted A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch. Concrete next action remains J2275 Codex runner repair, followed by existing production/review chain; no new generation approval.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2172 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -196673,13 +196673,27 @@
           "at": "2026-11-07T00:21Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1468 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-07T01:21:31+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
