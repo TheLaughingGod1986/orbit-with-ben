@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2324 | mini | open | – | – | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
 | J2325 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
 | J2327 | any | claimed | macbook-2 | 2026-11-07T03:36Z | review · Topic go/no-go prep for the next four Orbit films after the current five (do not start them) |  |
+| J2330 | any | open | – | – | review · Verify condition for J2309 |  |
 
 Recently finished:
 
