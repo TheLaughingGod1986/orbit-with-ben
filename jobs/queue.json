@@ -193940,10 +193940,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T11:11Z",
-      "eta": "2026-11-07T13:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -194197,6 +194197,11 @@
           "at": "2026-11-07T11:17Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checkpoint 68680265 pushed: 41 zero-submit tests OK, check_all ALL CHECKS PASS. Shared-state primitives and still inventory added; live integration incomplete and production submit disabled."
+        },
+        {
+          "at": "2026-11-07T11:18Z",
+          "by": "codex",
+          "what": "released: Checkpoint 68680265, draft HOS PR457 https://github.com/TheLaughingGod1986/history-of-science/pull/457. Resume 1/3 in /private/tmp/codex-j2275 on codex/j2275-accounting-checkpoint. 41 tests OK; check_all ALL CHECKS PASS. Shared accounting and inventory primitives added. Live adapter/accounting/spend integration incomplete; production remains disabled; J2200 FIX and J2033 hold preserved. HOS desk report 6706127842. Remaining integration exceeds bounded run."
         }
       ],
       "remaining_action": "Integrate live pre-Create guards and shared accounting, then obtain independent system review",
