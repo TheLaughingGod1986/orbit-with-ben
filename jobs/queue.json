@@ -200490,10 +200490,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-07T11:12Z",
-      "eta": "2026-11-07T13:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T11:07Z",
       "result": "",
@@ -200512,6 +200512,11 @@
           "at": "2026-11-07T11:12Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T11:12Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-07T13:12:56Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Verify exact recorded sentences and deliver the second Pluto Short plan for Chief approval",
