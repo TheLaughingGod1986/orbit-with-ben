@@ -197843,17 +197843,22 @@
           "at": "2026-11-07T03:10Z",
           "by": "codex",
           "what": "step 1 of 3 done: Independently matched pickup SHA256 and PCM: -29.3023,-28.5975,-25.1976 dBFS; final stereo sample -2365. PR604 correction reviewed; no listening claim."
+        },
+        {
+          "at": "2026-11-07T03:12Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: FIX committed at 352b168bac; J2337 queued immediately; J2157 dependency hold retained; J2335 superseded, not passed."
         }
       ],
-      "remaining_action": "Record FIX ruling and queue a bounded context-backed pickup repair",
+      "remaining_action": "Verify queue handoff and report the completed ruling",
       "kind": "chief",
       "plain": "Decide what to do after the Pluto Chapter 5 voice line was cut off at the end.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-07T03:10Z",
+        "at": "2026-11-07T03:12Z",
         "by": "codex",
-        "note": "Independently matched pickup SHA256 and PCM: -29.3023,-28.5975,-25.1976 dBFS; final stereo sample -2365. PR604 correctio"
+        "note": "FIX committed at 352b168bac; J2337 queued immediately; J2157 dependency hold retained; J2335 superseded, not passed."
       },
       "taskKeys": [
         "OWB:034"
