@@ -184130,13 +184130,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-06T12:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T23:12Z",
-      "result": "Verification FIX: targeted Scribe repeats looked/looks back and Real Worlds/Real World; exact-script pickups or conclusive verification plus chapter-tail checks required. Existing take preserved; do not regenerate full VO. Evidence local commit bf751c1e3f at /private/tmp/codex-J2157; automatic review rejected evidence-branch push (internal transcript/spend payload destination not established trusted); explicit approval required for that push. No shot-list release.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T23:12Z",
@@ -184237,26 +184237,19 @@
           "at": "2026-11-07T04:35Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T12:00:00Z"
+        },
+        {
+          "at": "2026-11-07T06:00Z",
+          "by": "codex",
+          "what": "reopened: J2347 ruling 6c79d48b83 accepts v05 from J2345 native-audio review; PR617 merged, eight asset hashes verified. Resume zero-synthesis new-version master reconciliation against locked v03 with retained Ch5 crop. Restore prior 2/3 progress; full transcript, levels, boundaries and chapter tails still required. No VO PASS or shot-list release."
         }
       ],
       "remaining_action": "Await J2344 pickup and audio review, then reconcile repaired VO against v03",
       "kind": "vo",
       "urgent": 1,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-06T12:20Z",
-        "by": "codex",
-        "note": "Local evidence bf751c1e3f in /private/tmp/codex-J2157: levels PASS; targeted Scribe repeats looked/looks and Worlds/Worl"
-      },
       "taskKeys": [
         "OWB:034"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2343 FIX retained; J2344 owns one 252-character v05 pickup against amended script v03, then demonstrated audio-input review and elected-Chief ruling. Complete verified crop/master, transcript, levels and tails only after that ruling. Existing v01-v04 and Chapter 5 crop preserved. No VO approval or shot-list release.",
-        "check_at": "2026-11-07T12:00:00Z"
-      },
       "required_capabilities": [
         "audio_input"
       ]
