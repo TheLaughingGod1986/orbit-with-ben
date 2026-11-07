@@ -6,13 +6,14 @@
 | Series (LEARNINGS rule 20) | `Real Worlds` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-16_J0370.md` (scored 25/30, #1 of 5) |
 | Topic lock | **DONE (`J2149` Rule-E GO, 4 Nov 2026)** — 12 verified education/space neighbours at 1.03M–21.20M views (`TOPIC_OPPORTUNITY_SCORE.md`); zero OWB/HOS duplicates |
-| Script master | **DONE (`J2149` Rule-E GO, 4 Nov 2026)** — `01_Script/pluto_frozen_heart_script_master_v02.md` (1,291 spoken words, 1,324 reviewer words, ~8.8 min, 6 chapters; `v00.md` and `v01.md` preserved byte-identical) |
+| Script master | **DONE (`J2149` Rule-E GO, 4 Nov 2026; `v03` locked in `J2343`, 7 Nov 2026)** — `01_Script/pluto_frozen_heart_script_master_v03.md` (1,291 spoken words, 1,324 reviewer words, ~8.8 min, 6 chapters; `v00.md`–`v02.md` preserved byte-identical) |
 | Script review | **PASS — 95.8 / 100** (1,324 reviewer words, ~8.8 min, 6 chapters, 8/8 structure gates, 0 warnings) |
 | Subscribe beat | Line 9 of `templates/SUBSCRIBE_BEAT_LINES.md` (14 words at 42% of spoken words: *"If you'd like more questions like this one, subscribing really helps a small channel."* — not used in `030`–`033`) |
 | Sources | **DONE (`J2149`, 4 Nov 2026)** — `01_Script/SOURCES.md` (15/15 rows `VERIFIED` against live NASA Science, NSSDCA, and LOC pages) + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` (15/15 PASS, 0 FLAG) |
 | Gate | **PASS — VO / Gemini Veo allowed** (`npm run review:script` + `npm run gate:episode` pasted below) |
-| VO | Queued (`kind: vo`, `--film 034 --stage vo`) |
-| CG | Pending (NASA `PIA20291` / `PIA19952` / `PIA19873` / `PIA19968` / `PIA19948` + code graphics + Omni Orbit) |
+| VO | **DONE (`J2352` elected-Chief full VO PASS, 7 Nov 2026, PR #623)** — `02_Voiceover/pluto_frozen_heart_vo_v03.wav` (SHA-256 `2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685`, `616.160 s`, `-19.9 LUFS` integrated, `-23.0 dB` mean, `-3.7 dBTP` true peak) + reconciled `02_Voiceover/stt/pluto_frozen_heart_vo_v03/stt_raw.json` |
+| Shots | **IN REVIEW (`J2353`, 7 Nov 2026)** — `07_Edit-Project/SHOT_LIST_v01.md` + `07_Edit-Project/shot_list_v01.csv` (`68` rows, `0.00–634.16 s`, `136` cuts at `4.66 s/cut` mean, `0/1,183` split words, `clip_check.py` **PASS** with 0 errors and 0 warnings; 46 visually verified unannotated NASA/Wikimedia assets all `≤ 2` raw appearances; `05_Music/MUSIC_BRIEF_v01.md` + `06_Sound-Effects/SFX_PLAN_v01.md`; £0 spent) |
+| CG | Pending Chief shot-list review (`J2353` successor) before £0 harvest & code-graphics build |
 | Runtime target | 7–9 min (~1,291 spoken narration words, ~8.8 min est.) |
 | Shorts | Paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Giant Ice Heart Have Zero Craters?*, scheduled Private for `2026-11-14T11:30:00Z`) + 2 episode Shorts (including Test A opening Short) |
 
@@ -82,4 +83,12 @@ Pass threshold: 90
 | production_checklist | OK | Checklist present: 11_Upload-Package/PRODUCTION_CHECKLIST_V2.md |
 
 Script score: **95.8/100** · PASS
+```
+
+## Pasted `clip_check.py` output (`shot_list_v01.csv` vs `pluto_frozen_heart_vo_v03`, `J2353`, 7 Nov 2026)
+
+```text
+$ python3 00_Brand/Channel-Setup/tools/clip_check.py 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/shot_list_v01.csv --words 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/stt/pluto_frozen_heart_vo_v03/stt_raw.json --vo-end 616.16
+clip_check: 68 rows — PASS
+OK: sentence/card boundaries and end-after-VO checks clear.
 ```
