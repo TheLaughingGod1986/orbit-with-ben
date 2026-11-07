@@ -196608,7 +196608,7 @@
     {
       "id": "J2322",
       "title": "Verify condition for J2033",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2033: J2292 elected-Chief codex ruling: CONDITION UNMET. Independently verified HOS draft PR445 remains at 47adfead and PR439 at 1772cd52; checkpoint and cmd_submit explicitly confirm production disabled. J2275 stays open for codex now: repair live per-Create UI evidence (finding 2), shared cross-channel accounting/lock (3), and atomic detached launch/arguments (6), then zero-submit integration tests and renewed J2200 elected-Chief system PASS. Resume PR445 branch codex/J2275-runner-safety in a fresh isolated worktree: old /private/tmp/codex-j2275 no longer exists. J2026 scope/caps and PR408 approval retained; no generation authorized. Historical 14840 balance is not a fresh spend authorization. Never run tranche1 runner.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -196628,13 +196628,27 @@
           "at": "2026-11-07T00:21Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1468 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Finish J2275 safeguards on PR445, then obtain J2200 system PASS before generating 20 rows",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-07T01:21:31+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2323",
