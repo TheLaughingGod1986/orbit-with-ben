@@ -61,6 +61,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
 | 032 | edit | gemini | 2026-11-07T20:30Z | 2026-11-07T22:29Z | J2379 032 Titan: assemble 52-row long master v01 (582.44 s) from SHOT_LIST_v08 + £0 score bed/SFX + gates |
-| 034 | edit | macbook | 2026-11-07T20:54Z | 2026-11-07T22:53Z | J2320 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) (took over stalled claim by macbook-2, ETA 2026-11-07T20:27Z) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

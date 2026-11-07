@@ -198740,10 +198740,10 @@
       "stage": "edit",
       "after": "J2157",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-07T20:54Z",
-      "eta": "2026-11-07T22:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
       "result": "",
@@ -198797,6 +198797,11 @@
           "at": "2026-11-07T20:54Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T20:55Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on codex ended (exit 1) with the job still open; picked up again next run; codex paused on the MacBook until 2026-11-07T22:55:07Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Await J2360 exact-lift plan approval, J2359 shot-list release and delivered picture/music before building Short 2",
