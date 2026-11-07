@@ -262,8 +262,11 @@
     if (needsBenWatch(v)) return "uat";
     // Ben's Request changes / notes return the film to In progress before QA.
     if (pendingChanges(v) || v.lane === "changes") return "progress";
+    // Claimed work wins over QA: a sibling open/blocked review/QA/Chief must not hide a film
+    // that has an agent claimed on it, and a claimed review itself is Working now (Ben, 7 Nov 2026).
+    if (isWorking(v)) return "progress";
     if (isQa(v)) return "qa";
-    if (isWorking(v) || (v.jobs || []).some(LIVE)) return "progress";
+    if ((v.jobs || []).some(LIVE)) return "progress";
     if (v.lane === "upcoming") return "backlog";
     if (["progress", "ready", "changes", "approved"].includes(v.lane)) return "todo";
     if (v.lane === "done") return "todo";

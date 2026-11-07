@@ -153,6 +153,65 @@ assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-worki
 assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
 t.setSeg('all');
 
+// Claimed work must not be parked in QA by a sibling review/QA/Chief job (Ben, 7 Nov 2026 ~13:30).
+const claimedPlusBlockedChief = v({
+  key: 'OWB:031', channel: 'OWB', number: '031', title: 'What Happens When Earths Magnetic Field Flips',
+  jobs: [
+    {id: 'J2141', status: 'claimed', by: 'macbook', kind: 'assembly', title: '031 assembly'},
+    {id: 'J1754', status: 'blocked', waitKind: 'blocker', kind: 'chief', title: 'Chief: review workflow handoff'},
+  ],
+});
+const claimedReviewOnly = v({
+  key: 'OWB:034', channel: 'OWB', number: '034', title: 'Why Plutos Frozen Heart Has Zero Craters',
+  jobs: [{id: 'J2361', status: 'claimed', by: 'gemini', kind: 'review', title: '034 shot-list KEEP'}],
+});
+const openQaNoClaim = v({
+  key: 'OWB:qa-only', channel: 'OWB', number: '099', title: 'QA only film',
+  jobs: [{id: 'Jqa', status: 'open', kind: 'review', title: 'Frame review'}],
+});
+const blockedChiefNoClaim = v({
+  key: 'OWB:chief-only', channel: 'OWB', number: '098', title: 'Blocked chief only',
+  jobs: [{id: 'Jchief', status: 'blocked', kind: 'chief', title: 'Chief PASS'}],
+});
+assert.equal(t.videoLane(claimedPlusBlockedChief), 'progress',
+  'claimed assembly + blocked chief sibling → In progress, not QA');
+assert.equal(t.videoLane(claimedReviewOnly), 'progress',
+  'claimed review itself → In progress / Working now');
+assert.equal(t.videoLane(openQaNoClaim), 'qa',
+  'open QA with no claim stays QA');
+assert.equal(t.videoLane(blockedChiefNoClaim), 'qa',
+  'blocked Chief with no claim stays QA');
+assert(t.videoHasActiveWork(claimedPlusBlockedChief) && t.videoHasActiveWork(claimedReviewOnly),
+  'both claimed shapes count as Working now');
+assert(!t.videoHasActiveWork(openQaNoClaim) && !t.videoHasActiveWork(blockedChiefNoClaim),
+  'unclaimed QA/Chief do not get the Working now pulse');
+assert.equal(t.videoLane(waitingCut), 'progress', 'waiting In progress cards stay in progress');
+assert(!t.videoHasActiveWork(waitingCut), 'waiting cut still has no claimed pulse');
+t.setSeg('progress');
+const claimedQaBoard = {
+  tracker: {videos: [waitingCut, claimedPlusBlockedChief, claimedReviewOnly, openQaNoClaim, blockedChiefNoClaim]},
+};
+const claimedQaHtml = t.renderTab('videos', claimedQaBoard, NOW);
+assert(claimedQaHtml.includes('class="lane-sub">Working now'),
+  'Working now heading appears when claimed films are in In progress');
+assert(claimedQaHtml.indexOf('Magnetic Field') >= 0 && claimedQaHtml.indexOf('Pluto') >= 0,
+  'claimed Magnetic Field and Pluto render under In progress');
+assert(!claimedQaHtml.includes('QA only film') && !claimedQaHtml.includes('Blocked chief only'),
+  'unclaimed QA/Chief films stay out of the In progress render');
+const claimedAssemblyRow = t.videoProductionRow(claimedPlusBlockedChief, NOW, claimedQaBoard);
+const claimedReviewRow = t.videoProductionRow(claimedReviewOnly, NOW, claimedQaBoard);
+assert(claimedAssemblyRow.includes('p24-working-dot') && claimedAssemblyRow.includes('is-working'),
+  'claimed + blocked chief still shows green pulse');
+assert(claimedReviewRow.includes('p24-working-dot') && claimedReviewRow.includes('is-working'),
+  'claimed review shows green pulse as Working now');
+t.setSeg('qa');
+const qaOnlyHtml = t.renderTab('videos', claimedQaBoard, NOW);
+assert(qaOnlyHtml.includes('QA only film') && qaOnlyHtml.includes('Blocked chief only'),
+  'unclaimed QA/Chief still surface in the QA lane');
+assert(!qaOnlyHtml.includes('Magnetic Field') && !qaOnlyHtml.includes('Why Plutos Frozen Heart'),
+  'claimed films are not dumped into QA');
+t.setSeg('all');
+
 // Smarter Videos landing + Overview → Videos jump (Ben, 7 Nov 2026 follow-up).
 assert.equal(t.videosJumpHref('OWB:034'), '#videos&lane=progress&focus=OWB%3A034');
 assert.equal(t.videosJumpHref(''), '#videos&lane=progress');
