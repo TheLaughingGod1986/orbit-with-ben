@@ -201485,6 +201485,11 @@
           "at": "2026-11-07T14:23Z",
           "by": "chief",
           "what": "reopened: Chief taking parked CONDITION UNMET handoff after wait --recheck J2365 recorded on J2299"
+        },
+        {
+          "at": "2026-11-07T14:25Z",
+          "by": "chief",
+          "what": "readdressed for='gemini' -> chief so elected Chief can close CONDITION UNMET after wait --recheck recorded on J2299"
         }
       ],
       "remaining_action": "Elected Chief (chief): record wait --recheck J2365 on J2299 and close J2365",
@@ -201499,7 +201504,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "chief",
       "model": "gemini-argon",
       "taskKeys": [
         "OWB:033"
