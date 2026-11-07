@@ -1,3 +1,45 @@
+## MacBook slot 2 continuation — 7 Nov, R14 SDO moving candidate
+
+Worker `macbook-2`; branch `macbook/J2141`, PR #633. Progress remains
+**1/3**, £0 spent. The full picture package exceeds the 25-minute run.
+Resumed the existing branch and merged current main, preserving prior work.
+
+Added `harvest_sdo_motion_v01.py` and one pool candidate, `SVS4323_SDO_AIA304_motion`,
+from https://svs.gsfc.nasa.gov/4323/. This is SDO AIA 304 angstrom imagery,
+time-compressed and false-colour, not a computer simulation or visible-light
+measurement. The SVS public-domain policy and item-specific NASA SVS credit
+were checked and saved beside the original; no item rights exception found.
+Original, API, source page, both usage policies and their hashes are recorded.
+No source text or locked narration changed.
+
+Media: `/Users/ben/_desk/J2141-sdo-motion-v01/`. Original 1920×1080,
+30 fps, 47.966667 s. `HARVEST_SDO_MOTION_TECHNICAL_CHECK_v01.json` records
+full error-free video decode, probe, hash and five distinct decoded samples
+at source 2–6 s. Contact sheet viewed. The Sun and right-limb structures are
+visible, with a burned-in timestamp bottom-left. Mean luma 11.74–12.45,
+p95 53–54; these are source samples, not a film polish PASS. The proposed
+four-second interval is only a candidate; assigned uses remain zero.
+
+Next action: editor/reviewer selects a timestamp-free crop that retains the
+solar limb, respects the 2.35× upscale limit and leaves room for the R14 FACT
+card, then checks the graded composite. Full-frame recipe is **not approved**.
+No KEEP, stage PASS, actual playback/audio review or UAT readiness is claimed.
+Source motion is documented by observation metadata and changing samples;
+no claim to perceiving moving playback. Silent picture only in assembly.
+
+Investigation: one new moving candidate examined; the prior PIA22661 still
+was already unsuitable. This run does not reset any cumulative search budget.
+No further SDO search is needed until a concrete failure is recorded.
+Reproduce into a fresh directory with `/usr/bin/python3 harvest_sdo_motion_v01.py
+--out <fresh-dir>` from this edit folder, using a pool copy without this asset
+for a reproduction; the script refuses duplicate registration/output reuse.
+
+All download/decode processes finished. No NAS writes/deletions, paid
+generation, sign-in, publishing or social changes. Wider licensed moving
+harvest, existing rights/gate conflicts, progressive timeline (PR #571),
+remaining graphics/composites and full gates remain unfinished. Release
+J2141 for continuation at this clean checkpoint; resume this same PR.
+
 ## MacBook slot 2 checkpoint — 7 Nov 2026
 
 Worker `macbook-2`; PR #633; progress remains 1/3. Released under the

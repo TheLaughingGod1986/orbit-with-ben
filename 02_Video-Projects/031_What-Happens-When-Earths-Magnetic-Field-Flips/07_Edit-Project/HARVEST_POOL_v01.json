@@ -659,6 +659,64 @@
       "source_evidence_sha256": "67f09ae2bf2af79bbc37bfef2eb27a0715f0db1e794c270a9746f79ac440dd6d",
       "generation_authorized": false,
       "rights_review": "CC BY-SA 4.0 allows use with attribution and share-alike. That does not clear the upscale cap or the sourced-map gate."
+    },
+    {
+      "asset_id": "SVS4323_SDO_AIA304_motion",
+      "title": "Summer Sun from SDO: Eruption and Coronal Loops on the Solar Limb",
+      "source_page": "https://svs.gsfc.nasa.gov/4323/",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a004300/a004323/June2015LimbLoops_304A_1080p.mp4",
+      "local_path": "/Users/ben/_desk/J2141-sdo-motion-v01/June2015LimbLoops_304A_1080p.mp4",
+      "sha256": "242b625e1082b23b52a2fb4b1b6aca7655772fdef85c75bae73e2225f24b8a48",
+      "bytes": 36346782,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "duration_s": 47.966667,
+      "rows": [
+        14
+      ],
+      "assigned_uses": 0,
+      "max_uses": 2,
+      "native_motion": true,
+      "observation": "SDO AIA 304 angstrom EUV observation, time-compressed and false-colour; not a visible-light temperature comparison or a computer simulation.",
+      "credit": "NASA's Scientific Visualization Studio / SDO",
+      "licence": "Public domain subject to NASA media conditions",
+      "licence_status": "SVS_public_domain_default_no_item_exception_found_worker_check",
+      "rights_review": "SVS help permits use unless otherwise noted. Item page requests NASA SVS credit; no separate rights exception or licensed music found. Preserve named contractor credits in source/API evidence. No endorsement; use video silently.",
+      "source_evidence": [
+        {
+          "url": "https://svs.gsfc.nasa.gov/4323/",
+          "path": "/Users/ben/_desk/J2141-sdo-motion-v01/svs4323.html",
+          "sha256": "9d23489f5a6ffab99babbfadf65d620a76c7234b83f32d43f6202a476388a751"
+        },
+        {
+          "url": "https://svs.gsfc.nasa.gov/api/4323/",
+          "path": "/Users/ben/_desk/J2141-sdo-motion-v01/svs4323.json",
+          "sha256": "db664c026ae8a23442b9765f2f2725cf76ee7856ad627e8de67af8f09a00616e"
+        },
+        {
+          "url": "https://svs.gsfc.nasa.gov/help/",
+          "path": "/Users/ben/_desk/J2141-sdo-motion-v01/svs_usage.html",
+          "sha256": "dc95ab0266328772de8c7370e980c859a67ea56017210650fae830a6f40d6b03"
+        },
+        {
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "path": "/Users/ben/_desk/J2141-sdo-motion-v01/nasa_media_policy.html",
+          "sha256": "e46611bbf6c2292b1a8f3b2bb47f31adddc895124f335147424750f2c20d9a5b"
+        }
+      ],
+      "download_status": "downloaded",
+      "generation_authorized": false,
+      "candidate_interval": {
+        "source_in_s": 2,
+        "source_out_s": 6,
+        "duration_s": 4,
+        "speed": 1,
+        "crop": "full 1920x1080; no stretch or upscale",
+        "film_placement": "R14 after core graphic; compositor to fit locked line and FACT overlay"
+      },
+      "review_status": "static_samples_inspected_not_admitted_pending_grade_composite_and_reviewer_decision",
+      "review_note": "Candidate only. No KEEP, playback review, film gate or claim of temperature from false colour. Add corner NASA credit; check full composite for near-black, grain and FACT clearance. Five static samples inspected: red false-colour full Sun, small right-limb structures and burned-in bottom-left timestamp. Timestamp must be excluded by a verified crop/composite; current full-frame recipe is not approved. Low average luma 11.74\u201312.45, p95 53\u201354: no full-frame polish PASS inferred."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -719,5 +777,16 @@
     "shot_list_licence_claim": "CC BY-SA 3.0 IGO",
     "found_instead": "ESA pages say no licence, or ESA Standard Licence plus extra permission. Neither downloaded file carries CC BY-SA 3.0 IGO.",
     "next_action": "Chief reconciles the licence conflict and the sourced-map gate before any of these enters a cut. Do not re-download these three. A moving Swarm clip still needs its own bounded search."
+  },
+  "sdo_r14_motion_investigation": {
+    "date": "2026-11-07",
+    "candidates_examined": 1,
+    "interval_examined_s": [
+      2,
+      6
+    ],
+    "status": "one_candidate_downloaded_and_sampled_not_admitted",
+    "budget_note": "One new moving candidate; prior PIA22661 still was already unsuitable. Do not reset cumulative 20-minute/three-candidate budget.",
+    "next_action": "Editor/reviewer selects a timestamp-free crop retaining the limb and checks subject size, 2.35x cap, FACT clearance and final grade; candidate remains unadmitted."
   }
 }
