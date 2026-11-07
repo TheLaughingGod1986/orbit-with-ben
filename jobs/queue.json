@@ -184094,9 +184094,14 @@
           "at": "2026-11-07T00:59Z",
           "by": "relay",
           "what": "condition verification queued: J2325"
+        },
+        {
+          "at": "2026-11-07T02:34Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T07:05:00Z"
         }
       ],
-      "remaining_action": "On Mac mini: push /private/tmp/codex-J2157 (bf751c1e3f) and complete Ch 5/Ch 6 pickups (looked back, Real Worlds) + chapter-tail checks on pluto_frozen_heart_vo_v01.mp3",
+      "remaining_action": "Await J2335 sentence repairs and corrected evidence, then Chief VO ruling before releasing the shot list",
       "kind": "vo",
       "urgent": 1,
       "progress": {
@@ -184110,13 +184115,12 @@
         "OWB:034"
       ],
       "hold": {
-        "type": "input",
-        "condition": "Verification FIX on Mac mini (/Users/benjaminoats/_desk/logs/J2157-vo.log, pluto_frozen_heart_vo_v01.mp3): local commit bf751c1e3f in /private/tmp/codex-J2157 and /private/tmp/J2157-codex-wt (jobs/reviews/J2157/REVIEW.md, pluto_frozen_heart_vo_v01_TAKE.json, 3801-credit ElevenLabs spend ledger rows) is still unpushed to origin, and targeted Scribe discrepancies in Ch 5 line 94 (\"looked back\" vs \"looks back\") and Ch 6 line 110 (\"Real Worlds\" vs \"Real World\") plus chapter-tail decay checks require exact-script pickups or conclusive verification on the Mac mini while preserving existing v01 take. No shot-list release.",
-        "check_at": "2026-11-07T01:59:03+00:00",
-        "last_recheck": "J2295",
-        "checked_at": "2026-11-06T18:55:07+00:00",
-        "checked_by": "macbook",
-        "recheck_task": "J2325"
+        "type": "dependency",
+        "condition": "J2325 Chief ruling FIX: original hashes verified and bf751c1e3f exists remotely, but VO remains unapproved. Await J2335 bounded Ch5/Ch6 exact-script sentence pickups, corrected PR604 evidence, then its linked elected-Chief final VO ruling. PR604 tail-envelope numbers contradict original PCM; claimed direct listening is not accepted as conclusive. Preserve v01; no shot-list release. J2335 is eligible immediately; this timestamp is only a dependency verification checkpoint.",
+        "check_at": "2026-11-07T07:05:00Z",
+        "last_recheck": "J2325",
+        "checked_at": "2026-11-07T02:34:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
