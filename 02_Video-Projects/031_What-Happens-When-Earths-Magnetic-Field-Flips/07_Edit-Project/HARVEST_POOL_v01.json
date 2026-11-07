@@ -556,7 +556,7 @@
       "rights_obligations": "Acknowledge NASA; no endorsement or promotional NASA marks; source audio excluded. Recheck any separately credited third-party component before using another interval.",
       "review_status": "static_candidate_not_KEEP",
       "planned_appearances": 1,
-      "planned_source_stretches": 2,
+      "planned_source_stretches": 4,
       "max_appearances": 5,
       "review_note": "Real approach/release servicing footage, not Hubble animation or IMAX feature. Two adjacent cuts form one film window. Retain all of 4:3 image with feathered blur fill; no looping or speed change. Source has archival softness, to review at full size. Source audio is not used."
     }
@@ -653,6 +653,14 @@
       "active_minutes": 12,
       "outcome": "One NASA archival reel; inspected approach/release stills. Excluded separate simulated deployment result; no repeated exhausted search.",
       "budget_status": "Stopped with candidate; moving review required"
+    },
+    {
+      "input": "R27 remaining overlay plates",
+      "date": "2026-11-07",
+      "candidates_examined": 1,
+      "active_minutes": 8,
+      "outcome": "Existing NASA reel: excluded 664.48\u2013673.08 uninterrupted proposal because sampled cabin cut; selected 116.00\u2013120.32 and 668.80\u2013673.08, static checks only.",
+      "budget_status": "Stopped with candidates; no new archive search"
     }
   ],
   "body_source_search_v01": {
@@ -1126,5 +1134,231 @@
     "credit": "NASA",
     "identity": "Sunset over China, not sunrise",
     "status": "technical_candidate_not_KEEP"
-  }
+  },
+  "hubble_composites_v01": [
+    {
+      "key": "orbits",
+      "source_start": 116.0,
+      "film_start": 280.42,
+      "duration": 4.32,
+      "frames": 108,
+      "overlay_manifest": "CODE_SAA_v01.json",
+      "collection": "graphics",
+      "overlay_mode": "hubble_saa",
+      "overlay_delay": 0.0,
+      "fg_x": 0,
+      "fg_y": 135,
+      "fg_w": 1080,
+      "fg_h": 810,
+      "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/composite_031_r27_orbits_v02.mp4",
+      "sha256": "5d1f0a2f82986fe5601a8e688a0417330c15c71354a8ff2e4e2fa758c13b6e23",
+      "bytes": 10322147,
+      "source_asset_id": "svs-13160-sts125-sm4-highlights",
+      "source_sha256": "d5ad8d7bb622f15287463f883720e542dc1eb2606a974d16080f5e923fb8f2da",
+      "overlay": {
+        "row": 27,
+        "mode": "hubble_saa",
+        "start_s": 280.42,
+        "duration_s": 4.32,
+        "cue": "seven",
+        "source_rows": [
+          11
+        ],
+        "alpha": true,
+        "id": "code_graphic_031_r27_hubble_saa_v01",
+        "locked_start_words": "seven to nine orbits",
+        "path": "/Users/benjaminoats/_desk/J2141-saa-v01/code_graphic_031_r27_hubble_saa_v01.mov",
+        "sha256": "83a1ad93791e86dfe70c07ce37b83ea566d530e2ce38d32b340f6a6e760eeaa2",
+        "bytes": 1875596,
+        "preview": "/Users/benjaminoats/_desk/J2141-saa-v01/code_graphic_031_r27_hubble_saa_v01.png",
+        "width": 1920,
+        "height": 1080,
+        "fps": 25,
+        "schematic": true,
+        "review_status": "pending_composite_motion_and_Chief_review"
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-n",
+        "-ss",
+        "116.0",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-hubble-v01/hubble_sm4_highlights.webm",
+        "-loop",
+        "1",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/feather_orbits.png",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-saa-v01/code_graphic_031_r27_hubble_saa_v01.mov",
+        "-loop",
+        "1",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/credit_orbits.png",
+        "-filter_complex",
+        "[0:v]setpts=PTS-STARTPTS,crop=928:696:176:12,fps=25,split=2[fg][bg];[bg]scale=1920:1440:flags=lanczos,crop=1920:1080,boxblur=40:2[b];[fg]scale=1080:810:flags=lanczos,setsar=1[f];[1:v]format=gray[m];[f][m]alphamerge[fa];[b][fa]overlay=0:135:shortest=1,eq=brightness=0.015:saturation=1.02,noise=alls=4:allf=t[p];[2:v]setpts=PTS-STARTPTS+0.0/TB[o];[p][o]overlay=0:0:eof_action=pass[q];[q][3:v]overlay=0:0:shortest=1[out]",
+        "-map",
+        "[out]",
+        "-an",
+        "-frames:v",
+        "108",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-preset",
+        "fast",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/composite_031_r27_orbits_v02.mp4"
+      ],
+      "full_decode": true,
+      "source_crop_xywh": [
+        176,
+        12,
+        928,
+        696
+      ],
+      "max_upscale": 2.0689655172413794,
+      "samples": [
+        {
+          "time_s": 0.2,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_orbits_0.png",
+          "sha256": "207ccf60cb597a6280778f294a4e219d253401cf36d1b82d2da64583e1cc5046"
+        },
+        {
+          "time_s": 2.16,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_orbits_1.png",
+          "sha256": "ef792ea62981812ba2d4716831620bc9a97c0859b769ebaafcb2365753e82634"
+        },
+        {
+          "time_s": 4.12,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_orbits_2.png",
+          "sha256": "2a2de21b3c4c67db7b0bc1846302a2ec99cdc1860413a7daa2bac803bbb6948e"
+        }
+      ],
+      "polish": {
+        "exit_code": 0,
+        "stdout": "  27     2.2s /Users/benjaminoats/_desk/J2 ok\npolish gate PASS: 0 of 1 rows failed, 0 to look at -> /Users/benjaminoats/_desk/J2141-r27-composite-v02/polish_orbits.json\n",
+        "report": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/polish_orbits.json",
+        "sha256": "2a8352ec927b1059aa38805da4d01d0305187cd39b06430f03f1842485981ffa"
+      },
+      "status": "technical_candidate_not_KEEP"
+    },
+    {
+      "key": "pause",
+      "source_start": 668.8,
+      "film_start": 284.74,
+      "duration": 4.28,
+      "frames": 107,
+      "overlay_manifest": "CODE_CARDS_v01.json",
+      "collection": "cards",
+      "overlay_mode": "FACT",
+      "overlay_delay": 0.02,
+      "fg_x": 840,
+      "fg_y": 0,
+      "fg_w": 1080,
+      "fg_h": 810,
+      "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/composite_031_r27_pause_v02.mp4",
+      "sha256": "af504c980928847c0978f9449437cf42d01e152a6dab187f9d9310064e48487b",
+      "bytes": 10355742,
+      "source_asset_id": "svs-13160-sts125-sm4-highlights",
+      "source_sha256": "d5ad8d7bb622f15287463f883720e542dc1eb2606a974d16080f5e923fb8f2da",
+      "overlay": {
+        "id": "code_graphic_031_r27_fact_v01",
+        "row": 27,
+        "kind": "FACT",
+        "labels": [
+          "HUBBLE STOPS OBSERVING"
+        ],
+        "source_rows": [
+          11
+        ],
+        "start_s": 284.76,
+        "duration_s": 3.6,
+        "cue": "stops observing",
+        "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_cards_v01/code_graphic_031_r27_fact_v01.mov",
+        "sha256": "ef6905539631d7567c1e6f4f646d9a6b0ceb9368d30910825039da8eb6f00d2d",
+        "bytes": 2138203,
+        "fps": 25,
+        "width": 1920,
+        "height": 1080,
+        "alpha": true,
+        "review_status": "pending_composite_and_Chief_review"
+      },
+      "command": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-n",
+        "-ss",
+        "668.8",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-hubble-v01/hubble_sm4_highlights.webm",
+        "-loop",
+        "1",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/feather_pause.png",
+        "-i",
+        "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_cards_v01/code_graphic_031_r27_fact_v01.mov",
+        "-loop",
+        "1",
+        "-i",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/credit_pause.png",
+        "-filter_complex",
+        "[0:v]setpts=PTS-STARTPTS,crop=928:696:176:12,fps=25,split=2[fg][bg];[bg]scale=1920:1440:flags=lanczos,crop=1920:1080,boxblur=40:2[b];[fg]scale=1080:810:flags=lanczos,setsar=1[f];[1:v]format=gray[m];[f][m]alphamerge[fa];[b][fa]overlay=840:0:shortest=1,eq=brightness=0.015:saturation=1.02,noise=alls=4:allf=t[p];[2:v]setpts=PTS-STARTPTS+0.02/TB[o];[p][o]overlay=0:0:eof_action=pass[q];[q][3:v]overlay=0:0:shortest=1[out]",
+        "-map",
+        "[out]",
+        "-an",
+        "-frames:v",
+        "107",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-preset",
+        "fast",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "/Users/benjaminoats/_desk/J2141-r27-composite-v02/composite_031_r27_pause_v02.mp4"
+      ],
+      "full_decode": true,
+      "source_crop_xywh": [
+        176,
+        12,
+        928,
+        696
+      ],
+      "max_upscale": 2.0689655172413794,
+      "samples": [
+        {
+          "time_s": 0.2,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_pause_0.png",
+          "sha256": "5bd205d05779ddadff927b117024211105d701771f35fe7717413014652fa006"
+        },
+        {
+          "time_s": 2.14,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_pause_1.png",
+          "sha256": "d895750072ddc2678203511ccff74950b6984c7cec8c38de23ffbc36078e74aa"
+        },
+        {
+          "time_s": 4.08,
+          "path": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/sample_pause_2.png",
+          "sha256": "a4b62e0a28d8d153ee1b64f7a201f5569f5c15d8e94a9a043e9faba71b1bfcda"
+        }
+      ],
+      "polish": {
+        "exit_code": 0,
+        "stdout": "  27     2.1s /Users/benjaminoats/_desk/J2 ok\npolish gate PASS: 0 of 1 rows failed, 0 to look at -> /Users/benjaminoats/_desk/J2141-r27-composite-v02/polish_pause.json\n",
+        "report": "/Users/benjaminoats/_desk/J2141-r27-composite-v02/polish_pause.json",
+        "sha256": "00140669302c50178d22ee8c1385ef08be2a3c035a4cdb5e7a45df3af07dd1ed"
+      },
+      "status": "technical_candidate_not_KEEP"
+    }
+  ]
 }

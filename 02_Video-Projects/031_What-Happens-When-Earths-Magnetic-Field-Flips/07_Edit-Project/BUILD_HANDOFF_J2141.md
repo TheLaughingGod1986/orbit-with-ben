@@ -2,6 +2,51 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R27 remaining composites checkpoint (7 Nov UTC, Codex)
+
+Preserve **1/3**, PR **#575**, starting at `1bf020f12d`. Spend **£0**.
+Added `composite_hubble.py` and `COMPOSITE_HUBBLE_TECHNICAL_CHECK_v01.json`.
+Two unique 1920×1080 / 25 fps silent source-linked composites:
+
+- Film **280.42–284.74 s**: existing `hubble_saa` alpha overlay on NASA
+  STS-125 original **116.00–120.32 s**, 108 frames / 4.32 s. Sharp telescope
+  left, existing schematic right. This orbit loop is illustrative, not a
+  measured track/map; its explanatory geometry/readability still needs review.
+- Film **284.74–289.02 s**: NASA STS-125 **668.80–673.08 s**, 107 frames /
+  4.28 s; existing FACT starts 0.02 s later at **284.76 s** and lasts 3.6 s.
+  Sharp telescope sits upper right, clear of the lower-left caption. NASA
+  archival servicing footage illustrates Hubble, not an actual SAA shutdown.
+
+Media, six inspected sample stills and CONTACT_v01.jpg:
+`/Users/benjaminoats/_desk/J2141-r27-composite-v02/`. Both outputs use `_v02`
+filenames. Earlier v01 outputs remain in their own folder: the FACT card
+intersected the subject in sampled stills, so do not assemble v01. Full-size
+midpoints and the current sheet inspected as static images only. Source
+interval 664.48–673.08 was rejected as an uninterrupted proposal because
+samples reveal an internal cabin-view cut. No new archive search or reset of
+any exhausted budget. New intervals do not overlap the earlier approach and
+release plates: this reel now has four assigned source stretches, below five.
+
+Original/catalog/terms and both overlay SHA-256 verified before rendering.
+Each new output fully decodes, has exact frame count/duration, no audio,
+1920×1080 yuv420p at 25 fps. Both component polish checks **PASS, 0 failures,
+0 warnings**; their reports/hashes are in the technical record. The crop is
+928×696 at (176,12); blurred fill is 2.07×, sharp inset 1.16×. Four-sided
+feather, light grade, fine grain and NASA credit applied. Source audio excluded;
+no loops, interpolation, slowdown, VO changes or source overwrites.
+
+Reproduce into a fresh output directory with `/usr/bin/python3
+<film>/07_Edit-Project/composite_hubble.py --out <fresh-directory>`.
+Detached **J2141-r27-composite-v02 finished exit 0**. Log and completion:
+`/Users/benjaminoats/_desk/logs/J2141-r27-composite-v02.log` and `.done`.
+No active render/download. NAS offload was invoked first; it deferred to the
+01:00–06:00 window with 10.9 GB free. No NAS deletion or paid action.
+
+This is a technical component checkpoint, no KEEP, whole-film PASS, audio or
+motion perception. Remaining wider harvest, other composites, coverage/reuse
+accounting, existing source/gate conflicts and full picture/polish QA remain.
+Nothing needs Ben at this checkpoint.
+
 ## R41 finished plate checkpoint (7 Nov UTC, Codex)
 
 Preserve queue **1/3**, PR **#575**. Starts from `7d089900d8`. Spend **£0**.
