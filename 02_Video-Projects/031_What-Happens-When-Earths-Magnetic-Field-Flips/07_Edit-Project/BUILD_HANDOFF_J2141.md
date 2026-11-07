@@ -1,3 +1,47 @@
+## MacBook continuation — 7 Nov, three NASA still candidates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**. Three NASA Images stills were examined in depth and downloaded.
+None is admitted. No KEEP, PASS or stage approval. Spend £0.
+
+- **PIA22661** (row 14 candidate): SDO extreme-ultraviolet still, two
+  prominences, 30–31 July 2018. 1687×1684. SHA-256
+  `292a5107a6b186ebe2a17d74d816549d17aeee868631d592870176f690f44dd9`.
+  The Sun and a prominence are visible. A timestamp is burned in
+  (`2018-07-30T06:06:17`). Grey mean luma 27.3, p95 70. This is one
+  frame, not the moving prominence clip, and the colour is the
+  instrument wavelength.
+- **GSFC_20171208_Archive_e000678** (row 3 candidate): first full sunlit
+  Earth from DSCOVR EPIC. 2048×2048. SHA-256
+  `cd6a5198c2a10dcca8e704a67e1f8dae065631d644637ac605567eacf954a102`.
+  Americas face the camera. Grey mean luma 58.1, p95 181. One frame,
+  not the rotating sequence, and not a replacement for the VIIRS Blue
+  Marble already in the pool.
+- **sts061-57-021** (row 27 candidate): STS-61 photograph of Hubble in
+  orbit with the Moon, December 1993. 2400×1558. SHA-256
+  `88556047aa4b6015eb02dedc418be6da53a8dd94c0e0cf422eeb6b33ab8a4b6b`.
+  Hubble is a small shape beside the Moon. Grey mean luma 22.8, p95 34,
+  so a full-frame hold would fail near-black. A tight crop on Hubble
+  would exceed the 2.35× cap. Not servicing-mission motion.
+
+A fourth id, `iss058e005282`, was read at metadata only and not
+downloaded. The caption places that aurora over Ukraine and Russia, not
+an Arctic limb, and it is a still. The pool records that rejection.
+Assigned uses on the three new stills are 0. Maximum stays 2.
+`HARVEST_POOL_v01.json` now has 12 assets. Rights stay on the NASA media
+guidelines; this run does not clear them. Media and contact sheet:
+`/Users/ben/_desk/J2141-harvest-v03/`. Reproduce only into an empty
+directory:
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_stills_v03.py --media-root <empty-dir>
+```
+
+No paid generation, no YouTube change, no NAS delete. Still unfinished:
+the rest of the licensed harvest (NOAA, USGS, USFWS, ESA/DTU, Commons
+kauri and cave art, and the moving NASA/SVS clips), the progressive
+timeline on PR #571, composites and the picture gates.
+
 ## MacBook continuation — 7 Nov, R41 HDEV daylight limb
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
