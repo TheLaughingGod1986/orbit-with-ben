@@ -50,7 +50,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2141 | mini | open | – | – | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
-| J2193 | mini | claimed | cursor | 2026-11-07T16:50Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2199 | mini | blocked | cursor | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
 | J2200 | mini | blocked | cursor | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
