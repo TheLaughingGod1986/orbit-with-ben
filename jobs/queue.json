@@ -191595,6 +191595,11 @@
           "at": "2026-11-07T00:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-07T06:39Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch 024 muons Short v03 ('Muons Shouldn't Reach the Ground. They Do.') before any Private upload or schedule (Mon 9 Nov 11:30 is occupied by iyvWYFP_ETA; provisional slot Sat 21 Nov 11:30) (by 2026-11-21 10:30 London)"
         }
       ],
       "remaining_action": "J2302 reviews verified private v03 evidence now; then repairs or Ben final watch. External code push not required; no scheduling clearance.",
@@ -191615,7 +191620,18 @@
         "condition": "Chief ruling 6 Nov: HOLD pending J2302 KEEP/FIX on v03 be63a3d8; all 22 private UAT hashes verified. J2302 uses local c34a0429d6/UAT evidence now; rejected external code push is not a review prerequisite and must not be retried. On FIX return exact repairs; on KEEP set awaits for required Ben final watch. No upload/schedule; Mon9 occupied, Nov21 provisional. Act on completed review immediately; morning check is status only.",
         "check_at": "2026-11-07T09:00:00Z"
       },
-      "escalated_at": "2026-11-07T00:04Z"
+      "escalated_at": "2026-11-07T00:04Z",
+      "awaits_ben": {
+        "what": "Watch 024 muons Short v03 ('Muons Shouldn't Reach the Ground. They Do.') before any Private upload or schedule (Mon 9 Nov 11:30 is occupied by iyvWYFP_ETA; provisional slot Sat 21 Nov 11:30)",
+        "file": "OWB UAT/024_fri06_muons_ground_v03/fri06_muons_ground_v03.mp4",
+        "version": "v03",
+        "due": "2026-11-21T10:30Z",
+        "airs": "2026-11-21T11:30Z",
+        "ifNot": "do not upload or schedule",
+        "title": "Muons Shouldn't Reach the Ground. They Do.",
+        "number": "024",
+        "type": "short"
+      }
     },
     {
       "id": "J2249",
