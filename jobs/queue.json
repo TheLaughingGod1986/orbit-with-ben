@@ -179544,10 +179544,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T05:24Z",
-      "eta": "2026-11-07T07:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
       "result": "",
@@ -180266,6 +180266,11 @@
           "at": "2026-11-07T05:28Z",
           "by": "codex",
           "what": "step 1 of 4 done: Local 9a7e183aa8: R23 fixed connector draft full-decodes at 108 frames; unchanged polish PASS, jitter 0.001px versus 19.015px. 61 prior export hashes preserved. Changed animation awaits review; no film PASS."
+        },
+        {
+          "at": "2026-11-07T05:29Z",
+          "by": "codex",
+          "what": "released: Clean local checkpoint 9a7e183aa8, worker/J2089-r23-fade in /private/tmp/J2089-r23-fade. Original 1/4 retained. R23 changed connector-fade draft: full decode 108 frames, 1920x1080/30fps/3.6s; unchanged polish PASS, jitter 0.001px versus v01 FAIL 19.015px; full-size still inspected; 61 prior export hashes unchanged. J2346 owns actual motion/new-animation review. Remaining licensed harvest, real plate, frame0/Huygens/APL and final composites/gates exceed run. Local integration only under inherited public-push restriction; no push, spend, publishing, film PASS or merge. Scratch offload resumed detached after safely interrupting foreground copy, preserving local and NAS partial: tmux J2089-offload, log /Users/benjaminoats/_desk/logs/J2089-offload-20261107.log, completion /Users/benjaminoats/_desk/logs/J2089-offload-20261107.done. Check completion before another offload; missing means running."
         }
       ],
       "remaining_action": "Complete licensed harvest and final composites; review R23 fade draft",
