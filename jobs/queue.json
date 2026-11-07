@@ -197363,12 +197363,26 @@
           "at": "2026-11-07T01:52Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T01:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1560 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review Titan pebble composite stills and return KEEP or exact fixes",
       "due": "2026-11-09T18:00:00Z",
       "kind": "review",
-      "plain": "Review the pebble measurement preview before it enters the Titan edit."
+      "plain": "Review the pebble measurement preview before it enters the Titan edit.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
