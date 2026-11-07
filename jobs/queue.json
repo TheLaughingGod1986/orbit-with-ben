@@ -196721,13 +196721,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-07T00:31Z",
-      "eta": "2026-11-07T02:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T00:21Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2172 verified UNMET in jobs/reviews/J2323/REVIEW.md (c8f747d06d): HOS PR #438 remains merged on origin/main (d88c9235), 7/7 board/plan hashes and 63/63 INVENTORY.json file hashes match on disk, 0 duplicates in 6 Nov HOS snapshot; J2275 advanced on HOS draft PR #445 to 25635b4d (step 1/3; Finding 6 launch guard and SharedFlowAccounting added, 51 zero-submit tests + check_all PASS; Findings 2/3 integration still open, cmd_submit interlocked), and required chain J2275->J2200->J2268->J2269(also J2033 DONE)->J2270->J2271 remains unmet with 0/12 moving plates on local/NAS disk and 0 HOS:010 Flow spend. Only elected Chief (codex) may run jobs.py wait J2172 --recheck J2323 (next check 2026-11-07T06:40:00Z) and close J2323.",
       "history": [
         {
           "at": "2026-11-07T00:21Z",
@@ -196763,6 +196763,11 @@
           "at": "2026-11-07T00:38Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete in jobs/reviews/J2323/REVIEW.md (c8f747d06d); parking at protected elected-Chief wait --recheck J2323 call"
+        },
+        {
+          "at": "2026-11-07T00:38Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: condition for J2172 verified UNMET in jobs/reviews/J2323/REVIEW.md (c8f747d06d): HOS PR #438 remains merged on origin/main (d88c9235), 7/7 board/plan hashes and 63/63 INVENTORY.json file hashes match on disk, 0 duplicates in 6 Nov HOS snapshot; J2275 advanced on HOS draft PR #445 to 25635b4d (step 1/3; Finding 6 launch guard and SharedFlowAccounting added, 51 zero-submit tests + check_all PASS; Findings 2/3 integration still open, cmd_submit interlocked), and required chain J2275->J2200->J2268->J2269(also J2033 DONE)->J2270->J2271 remains unmet with 0/12 moving plates on local/NAS disk and 0 HOS:010 Flow spend. Only elected Chief (codex) may run jobs.py wait J2172 --recheck J2323 (next check 2026-11-07T06:40:00Z) and close J2323."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2323 on J2172 and closes J2323",
