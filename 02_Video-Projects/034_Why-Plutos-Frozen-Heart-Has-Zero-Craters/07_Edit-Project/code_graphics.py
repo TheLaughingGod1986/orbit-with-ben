@@ -2,8 +2,8 @@
 """034 locked chapter cards and folded transparent gauges, J2371, £0.
 
 Pillow + ffmpeg; no API calls, no implicit downloads, no source mutation.
-Full-frame CODE mechanisms are deliberately unsupported until their real-image
-layouts are built and checked. Output is review material, never implicit KEEP.
+Six full-frame CODE drafts live in full_frame_graphics.py; R15/R48 remain
+unsupported pending the source/layout corrections in the handoff. Output is review material, never implicit KEEP.
 """
 import argparse, csv, hashlib, json, math, subprocess
 from functools import lru_cache
@@ -61,7 +61,7 @@ def card_frame(row,t):
 def overlay_frame(row,t):
  im=Image.new('RGBA',(W,H));d=ImageDraw.Draw(im)
  start,end,labels,kind=next(p for p in PHASES[row['row']] if p[0]<=t<p[1])
- local=t-start;dur=end-start;u=ease(local/max(.4,dur-.5));fade=min(1,local/.4,(dur-local)/.4)
+ local=t-start;dur=end-start;u=ease(local/max(.4,dur-.5));fade=min(1,local/.4,(min(dur,4.6)-local)/.4)
  # Teaching graphics occupy lower third; no slab. Plate placement stays assembly-owned.
  x0,x1,y=160,1760,935
  if kind in ('distance','download'):
@@ -109,6 +109,10 @@ def overlay_frame(row,t):
    d.line((x,960,x-30,880,x+12,810,x-8,740),fill=(135,200,230,180),width=4)
    if kind=='rise':arrow(d,(x-4,955),(x-4,955-195*u),BLUE,6)
  for i,lab in enumerate(labels):text(d,(160,745+i*78),lab,58 if len(lab)<25 else 48,GOLD if i==0 else WHITE)
+ if row['row']=='R43' and .43<=t<4.03:
+  date_layer=Image.new('RGBA',(W,H));dd=ImageDraw.Draw(date_layer)
+  text(dd,(160,635),'25 OCTOBER 2016',50,WHITE)
+  da=min(1,(t-.43)/.4,(4.03-t)/.4);date_layer.putalpha(date_layer.getchannel('A').point(lambda v:round(v*da)));im.alpha_composite(date_layer)
  # Phase fade prevents static labels staying up for >4 seconds.
  im.putalpha(im.getchannel('A').point(lambda v:round(v*max(0,fade))))
  return im
