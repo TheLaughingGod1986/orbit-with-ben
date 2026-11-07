@@ -103,7 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2368 | any | open (after J2367) | – | – | 034 shots · chief · 034 Pluto: Chief re-review J2367 corrected shot plan and decide production release | jobs/reviews/J2362/REVIEW.md |
-| J2369 | mini | open | – | – | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
+| J2369 | mini | claimed | macbook | 2026-11-07T17:17Z | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 
 Recently finished:
 
