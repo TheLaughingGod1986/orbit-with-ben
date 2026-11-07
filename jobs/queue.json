@@ -189261,13 +189261,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-06T23:53Z",
-      "eta": "2026-11-07T01:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T14:08Z",
-      "result": "",
+      "result": "PR #600 (commit 1625f0c4): Audited UPLOADS.json, BUFFER_POSTS.json, snapshots/2026-11-06.json, and J2147 (031/032) for Dec 2026 Mon/Wed/Fri/Sat 11:30 London Short slots (all Mon/Wed/Fri 11:30Z slots 30 Nov-16 Dec taken by 028/029; Sat 5 & 12 Dec assigned to 031 Path A). Locked two-path Short slots & SHORTS_PLAN_v01.md + film_briefs.json timing for 033 Uranus (Long Wed 9 Dec 18:00 London; Path A Shorts Fri 18 Dec & Sat 19 Dec 11:30 London / Path B Sat 12 Dec & Fri 18 Dec 11:30 London) and 034 Pluto (Long Sun 13 Dec 18:00 London; Path A Shorts Mon 21 Dec & Wed 23 Dec 11:30 London / Path B Sat 19 Dec & Mon 21 Dec 11:30 London). Queued all 4 missing Short build jobs: J2317 (033 Short 1 Test A, after J2300), J2318 (033 Short 2 Keeper question, after J2300), J2319 (034 Short 1 Test A, after J2157), J2320 (034 Short 2 Keeper question, after J2157). £0 spent, no uploads.",
       "history": [
         {
           "at": "2026-11-05T14:08Z",
@@ -189298,6 +189298,11 @@
           "at": "2026-11-07T00:13Z",
           "by": "macbook",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-07T00:13Z",
+          "by": "macbook",
+          "what": "done: PR #600 (commit 1625f0c4): Audited UPLOADS.json, BUFFER_POSTS.json, snapshots/2026-11-06.json, and J2147 (031/032) for Dec 2026 Mon/Wed/Fri/Sat 11:30 London Short slots (all Mon/Wed/Fri 11:30Z slots 30 Nov-16 Dec taken by 028/029; Sat 5 & 12 Dec assigned to 031 Path A). Locked two-path Short slots & SHORTS_PLAN_v01.md + film_briefs.json timing for 033 Uranus (Long Wed 9 Dec 18:00 London; Path A Shorts Fri 18 Dec & Sat 19 Dec 11:30 London / Path B Sat 12 Dec & Fri 18 Dec 11:30 London) and 034 Pluto (Long Sun 13 Dec 18:00 London; Path A Shorts Mon 21 Dec & Wed 23 Dec 11:30 London / Path B Sat 19 Dec & Mon 21 Dec 11:30 London). Queued all 4 missing Short build jobs: J2317 (033 Short 1 Test A, after J2300), J2318 (033 Short 2 Keeper question, after J2300), J2319 (034 Short 1 Test A, after J2157), J2320 (034 Short 2 Keeper question, after J2157). £0 spent, no uploads."
         }
       ],
       "remaining_action": "Complete J2223 and post thread report",
@@ -189320,7 +189325,8 @@
       "taskKeys": [
         "OWB:033",
         "OWB:034"
-      ]
+      ],
+      "done_ref": "1625f0c4"
     },
     {
       "id": "J2224",
