@@ -196227,9 +196227,14 @@
           "at": "2026-11-06T23:58Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified SHA256 across Local/NAS/iCloud UAT, ffprobe/ffmpeg decode (661f, 22.04s, rc=0), all 6 QA gates PASS, and 029 VO corpus for the 4 recorded-word conflicts"
+        },
+        {
+          "at": "2026-11-07T00:02Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed and pushed jobs/reviews/J2311/REVIEW.md and jobs/reviews/J2316/REVIEW.md (commit 61e7a07a3b): KEEP (EXCEPTION)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2311/REVIEW.md with KEEP (EXCEPTION) decision and full E1/gate verification",
+      "remaining_action": "Finalise J2316 completion and post thread report",
       "kind": "review",
       "plain": "Review the local replacement cut for the 14 December Betelgeuse Short",
       "rerouted_from": {
@@ -196242,11 +196247,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-06T23:58Z",
+        "at": "2026-11-07T00:02Z",
         "by": "gemini",
-        "note": "Verified SHA256 across Local/NAS/iCloud UAT, ffprobe/ffmpeg decode (661f, 22.04s, rc=0), all 6 QA gates PASS, and 029 VO"
+        "note": "Committed and pushed jobs/reviews/J2311/REVIEW.md and jobs/reviews/J2316/REVIEW.md (commit 61e7a07a3b): KEEP (EXCEPTION)"
       },
       "taskKeys": [
         "OWB:029"
