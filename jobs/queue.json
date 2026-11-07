@@ -200079,13 +200079,13 @@
       "stage": "",
       "after": "J2324",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-07T13:17Z",
-      "eta": "2026-11-07T15:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T07:34Z",
-      "result": "",
+      "result": "PASS h281: merged HOS PR450 head 476f35d1 (squash). Independent review vs J1809 FIX — 20/20 unittest, compile OK; refresh discovers PID+locks+LOADED_SHA256 confirm; historical fence+recover-id only; handback/pending until trusted ack; Cursor never Chief. J1809 reopened for classified inventory + separately authorised idle refresh with PID/hash evidence only. Desk PR180 untouched. Ruling jobs/reviews/J2350/CHIEF_RULING.md. £0.",
       "history": [
         {
           "at": "2026-11-07T07:34Z",
@@ -200101,6 +200101,11 @@
           "at": "2026-11-07T13:17Z",
           "by": "chief",
           "what": "step 1 of 3 done: Independent review: 20/20 unittest PASS; FIX 1-3 addressed; Cursor excluded; MERGEABLE+green"
+        },
+        {
+          "at": "2026-11-07T13:17Z",
+          "by": "chief",
+          "what": "done: PASS h281: merged HOS PR450 head 476f35d1 (squash). Independent review vs J1809 FIX — 20/20 unittest, compile OK; refresh discovers PID+locks+LOADED_SHA256 confirm; historical fence+recover-id only; handback/pending until trusted ack; Cursor never Chief. J1809 reopened for classified inventory + separately authorised idle refresh with PID/hash evidence only. Desk PR180 untouched. Ruling jobs/reviews/J2350/CHIEF_RULING.md. £0."
         }
       ],
       "remaining_action": "Write PASS ruling and merge HOS PR450",
@@ -200111,7 +200116,8 @@
         "at": "2026-11-07T13:17Z",
         "by": "chief",
         "note": "Independent review: 20/20 unittest PASS; FIX 1-3 addressed; Cursor excluded; MERGEABLE+green"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/450"
     },
     {
       "id": "J2351",
