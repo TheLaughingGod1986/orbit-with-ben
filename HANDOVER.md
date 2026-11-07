@@ -40,9 +40,10 @@ Ben approved the bounded archive/stock → generated illustration or revised sho
 4. From the 9 Oct handover: use a long's own opening as one of its Shorts; HOS fewer feed-style / more search-titled Shorts (Test B partly covers it); handing the HOS write lane back from Cursor (HOS #234).
 
 ## Where current state lives (read these, not chat)
-- OWB: `python3 scripts/studio.py board`, `STATUS.md`, `JOBS.md` / `jobs/queue.json`, each film's `status.json`, thread PR #99 (`scripts/owb_thread.py read`).
+- OWB: `python3 scripts/studio.py board`, `STATUS.md`, `JOBS.md` / `jobs/queue.json`, `jobs/WIP.json`, each film's `status.json`, thread PR #99 (`scripts/owb_thread.py read`).
 - HOS: `STATUS.md`, desk thread HOS #180, `AGENTS.md` → "The desk".
-- **Film folders + Videos lanes (live, dual-machine NAS lock 7 Nov 2026; Videos workflow 7 Nov ~12:46):** `AGENTS.md` → **Film folders on the NAS** and **Videos tab** (inside Stop and ask Ben). Both Mini (`ben-mac-mini`) and MacBook (`bens-macbook-pro`) mount NFS `192.168.1.119:/volume1/data` at `/Volumes/data`. Working films: `/Volumes/data/studio-live/…/02_Video-Projects/`; shipped: `mac-mini-archive`. File Sharing `shared` is not the film library. **Videos chips are computed** (tracker/jobs/YouTube) — Chief does not drag cards into To do / In progress by date. Ben only acts in **UAT** (Pass → Passed; notes → In progress). Locked slots: Orbit longs Sun/Wed 18:00; Orbit Shorts Mon/Wed/Fri/Sat 11:30; HOS long Thu 18:00; HOS Shorts Sat/Fri/Sun/Tue 11:30. Mirrored in `STUDIO_PLAYBOOK.md` §13–§14 and `.cursor/rules/orbit-studio.mdc`.
+- **Film folders + How films get worked on + Videos (live):** `AGENTS.md` → **Film folders on the NAS**, **How films get worked on**, and **Videos tab**. Both Mini (`ben-mac-mini`) and MacBook (`bens-macbook-pro`) mount NFS `192.168.1.119:/volume1/data` at `/Volumes/data`. Working films: `/Volumes/data/studio-live/…/02_Video-Projects/`; shipped: `mac-mini-archive`. File Sharing `shared` is not the film library. WIP cap + `jobs.py next` decide production; **Videos chips are computed** — Chief does not drag cards into To do / In progress by date. Ben only acts in **UAT**. Locked slots: Orbit longs Sun/Wed 18:00; Orbit Shorts Mon/Wed/Fri/Sat 11:30; HOS long Thu 18:00; HOS Shorts Sat/Fri/Sun/Tue 11:30. Mirrored in `STUDIO_PLAYBOOK.md` §13–§15 and `.cursor/rules/orbit-studio.mdc`.
+- **Dated Chief pickup (7 Nov 2026 ~13:00 London; will go stale):** `docs/handover/CHIEF_PICKUP_2026-11-07.md` — current WIP focus, incomplete leftover studio-live copy, calendar flags, open Chief reviews. Live board/queue/WIP/studio-live win over that note.
 - 9 Oct handover snapshot (now historical, board wins): `docs/handover/STUDIO_HANDOVER_2026-10-09.md` in orbit-with-ben.
 - Open PRs 12 Oct: OWB #143 (024 SOURCES rows + relay plist env), #139 (024 J0143 covers), #107, #105 (drafts). HOS #286, #285, #284, #274, #272, #271, #270.
 
@@ -58,8 +59,9 @@ Full rules, release state and the Auditor param compatibility are in each Oppti 
 - **Chief memory:** Ben's preferences are now written into these HANDOVER files; anything not here was not decided.
 
 ## How to resume (any agent)
-1. Read this file, then the repo's `AGENTS.md` (docs-in-force order, Never list).
-2. Studio: `python3 scripts/studio.py board` and `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. Read PR #99 / HOS #180 for decisions only.
-3. Oppti: read `oppti-website-auditor/HANDOVER.md`, then `gh pr list` in the four Oppti repos.
-4. Recreate the server-side routines listed above as your own scheduled tasks; ask Ben for the logins you need. Ordinary workers park protected calls; Claude, Codex or Gemini elected by the Chief chain holds the Chief role under Ben's 26 Oct order.
-5. Keep this file current: when a standing rule changes, update `AGENTS.md` and this file in the same PR.
+1. Read this file, then the repo's `AGENTS.md` (docs-in-force order, Never list, **Film folders on the NAS**, **How films get worked on**, **Videos tab**).
+2. Read the dated pickup note if present (`docs/handover/CHIEF_PICKUP_2026-11-07.md`); treat it as stale until checked against live state.
+3. Studio: `python3 scripts/studio.py board` and `python3 scripts/jobs.py next --agent <you> --can <yours> --git`. Read PR #99 / HOS #180 for decisions only. Check `jobs/WIP.json`.
+4. Before assuming a film is shared for MacBook harvest/assembly/watch, confirm its folder under `/Volumes/data/studio-live`. Continue any incomplete leftover copy with `nice -n 15 rsync -a --partial --update` (never `--delete`; never kill studio processes; never delete Mini originals; never overwrite newer NAS with older Mini) — do not start a destructive recopy.
+5. Oppti: read `oppti-website-auditor/HANDOVER.md`, then `gh pr list` in the four Oppti repos. Recreate server-side routines listed above as your own scheduled tasks; ask Ben for logins you need. Ordinary workers park protected calls; Claude, Codex or Gemini elected by the Chief chain holds the Chief role under Ben's 26 Oct order.
+6. Keep this file and `AGENTS.md` current in the **same PR** when a standing rule changes.
