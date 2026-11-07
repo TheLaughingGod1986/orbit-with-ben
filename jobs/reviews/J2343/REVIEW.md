@@ -69,3 +69,6 @@ Startup NAS offload found no eligible scratch; available disk remains about 6.7 
 Exact inverse substitution reproduces v02 byte for byte; pickup is 252 text
 characters. review:script PASS 95.8/100, six chapters (tool counts 1,324 words
 including its non-spoken text handling). No new scientific claim was introduced.
+Episode gate with explicit --script v03 also PASSes; its default auto-selection
+reads v00, so only the explicit-v03 run supports this amendment. These are
+script gates, not picture-spend release or a VO approval.
