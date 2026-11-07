@@ -2,8 +2,8 @@
 """034 locked chapter cards and folded transparent gauges, J2371, £0.
 
 Pillow + ffmpeg; no API calls, no implicit downloads, no source mutation.
-Six full-frame CODE drafts live in full_frame_graphics.py; R15/R48 remain
-unsupported pending the source/layout corrections in the handoff. Output is review material, never implicit KEEP.
+Full-frame CODE rows (R02/R15/R24/R29/R35/R48/R56/R69) live in full_frame_graphics.py.
+Output is review material, never implicit KEEP.
 """
 import argparse, csv, hashlib, json, math, subprocess
 from functools import lru_cache
@@ -85,8 +85,8 @@ def overlay_frame(row,t):
   # Discrete milestones, explicitly not proportional chronology.
   d.line((200,940,1720,940),fill=BLUE,width=3)
   for i,lab in enumerate(labels):
-   if u>=i/3:
-    x=260+i*680;d.line((x,920,x,960),fill=GOLD,width=6);text(d,(x,865),lab,42,GOLD,'mm')
+   if u>=i*.22:
+    x=340+i*620;d.line((x,920,x,960),fill=GOLD,width=6);text(d,(x,865),lab,42,GOLD,'mm')
   labels=[]
  elif kind=='radio':
   for i in range(6):
@@ -142,10 +142,11 @@ def render(row,out):
  return dict(row=row['row'],file=str(dest),sha256=sha(dest),bytes=dest.stat().st_size,requested_duration=duration,encoded_duration=actual,frames=frames,fps=FPS,alpha=not card,decode='PASS',phases=PHASES.get(row['row']),status='RENDERED_PENDING_COMPOSITE_REVIEW')
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--out',required=True,type=Path);ap.add_argument('--manifest',required=True,type=Path);ap.add_argument('--preview',action='store_true');args=ap.parse_args()
- rows=list(csv.DictReader((HERE/'shot_list_v01.csv').open()));selected=[r for r in rows if r['source']=='CARD' or r['row'] in PHASES]
+ ap=argparse.ArgumentParser();ap.add_argument('--out',required=True,type=Path);ap.add_argument('--manifest',required=True,type=Path);ap.add_argument('--preview',action='store_true');ap.add_argument('--rows',nargs='*');args=ap.parse_args()
+ rows=list(csv.DictReader((HERE/'shot_list_v01.csv').open()))
+ selected=[r for r in rows if (r['source']=='CARD' or r['row'] in PHASES) and (not args.rows or r['row'] in args.rows)]
  args.out.mkdir(parents=True,exist_ok=True)
- manifest=dict(job='J2371',status='PARTIAL_11_OF_19',spend_gbp=0,shot_list_sha256=sha(HERE/'shot_list_v01.csv'),font=FONT,canvas_artifact_sha256=sha(HERE/'LIFTED_NAVY_LUMA_ARTIFACT_v01.json'),remaining=[r['row'] for r in rows if r['source']=='CODE'],assets=[])
+ manifest=dict(job='J2371',status='CARDS_AND_OVERLAYS_11_OF_11',spend_gbp=0,shot_list_sha256=sha(HERE/'shot_list_v01.csv'),font=FONT,canvas_artifact_sha256=sha(HERE/'LIFTED_NAVY_LUMA_ARTIFACT_v01.json'),full_frame_companion='full_frame_graphics.py',assets=[])
  for row in selected:
   times=[1.25] if row['source']=='CARD' else [(a+b)/2 for a,b,_,_ in PHASES[row['row']]]
   for j,t in enumerate(times):
