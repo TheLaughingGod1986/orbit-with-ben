@@ -997,6 +997,45 @@ timeline, composites and full gates remain unfinished. Full scope exceeds a
 single 25-minute worker run; release at this clean checkpoint. Spend £0; no
 NAS writes/deletions, publishing change or background process started.
 
+## MacBook checkpoint — 7 Nov 2026
+
+Worker `macbook`, branch `macbook/J2141`, current PR #633. **Partial only;
+no KEEP, film-stage approval or final gate pass.** Added `historical-dates`
+to `code_graphics.py`, backed by `historical_date_graphics.py`:
+
+- R5: 1905 / PONTFAREIN, FRANCE, starts 36.14 s (SOURCES row 3).
+- R10: 1929, starts 89.94 s (SOURCES row 4).
+- R20: 1830s, starts 209.10 s (SOURCES row 8).
+
+Each is a unique 3.6 s, 1920×1080 / 25 fps alpha overlay with animated
+entrance/exit, using the existing date renderer. These are WHEN stamps,
+**not** the unfinished progressive timeline. Place over graded moving plates,
+clear of the subject and existing WHO/FACT/strength graphics. No locked VO,
+source rows, existing media or channel rules changed.
+
+`CODE_HISTORICAL_DATES_v01.json` records hashes, timings and source rows.
+`CODE_HISTORICAL_DATES_TECHNICAL_CHECK_v01.json` records matching hashes,
+locked-word start matches, dimensions, frame rate, argb alpha, durations and
+complete error-free decode. Five static samples per render and the contact
+sheet were inspected. Actual composites and final gates remain unfinished.
+Media and verification script remain outside git, under:
+`/Users/ben/_desk/J2141-historical-dates-20261107/`.
+Contact sheet: `CONTACT_v01.jpg` there; its hash is in the technical report.
+
+Reproduce into a fresh directory (Pillow and ffmpeg required):
+
+```sh
+python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py historical-dates --out <fresh-directory> --manifest <new-manifest.json>
+```
+
+All encoders have exited; nothing left running. Spend £0. No new archive
+search, so earlier missing-footage budgets are unchanged. No publishing,
+sign-in or NAS change. This complete job exceeds the 25-minute worker limit:
+release at this clean checkpoint for continuation. Next worker should resume
+the wider licensed harvest and missing mechanisms/timeline, then plate
+composites and full QA; the historical blockers below are not waived. Existing
+PR #633 is reused; earlier #495 references below describe prior runs.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and
