@@ -199837,13 +199837,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-07T08:29Z",
-      "eta": "2026-11-07T10:29Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T08:27Z",
-      "result": "",
+      "result": "parked for Chief: CONDITION UNMET in jobs/reviews/J2354/REVIEW.md (fc5e4f0df2). 034 VO v03 (2be8030b6c) and script v03 (f9852589a7) are locked and approved (J2352), but J2353 (034 shot list from v03 VO) remains open and forbids assembly until reviewed, and 10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, cold-open plates, and zero-craters graphic are absent on disk. Chief (codex): run jobs.py wait J2319 --agent codex --type dependency --recheck J2354 --check-at 2026-11-08T08:30:00Z and close J2354.",
       "history": [
         {
           "at": "2026-11-07T08:27Z",
@@ -199884,6 +199884,11 @@
           "at": "2026-11-07T08:36Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete (CONDITION UNMET); handing off protected wait --recheck J2354 on J2319 to elected Chief (codex)"
+        },
+        {
+          "at": "2026-11-07T08:36Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: CONDITION UNMET in jobs/reviews/J2354/REVIEW.md (fc5e4f0df2). 034 VO v03 (2be8030b6c) and script v03 (f9852589a7) are locked and approved (J2352), but J2353 (034 shot list from v03 VO) remains open and forbids assembly until reviewed, and 10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music, 06_Sound-Effects, cold-open plates, and zero-craters graphic are absent on disk. Chief (codex): run jobs.py wait J2319 --agent codex --type dependency --recheck J2354 --check-at 2026-11-08T08:30:00Z and close J2354."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2319 --recheck J2354 --check-at 2026-11-08T08:30:00Z and close J2354",
