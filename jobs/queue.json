@@ -189935,16 +189935,21 @@
           "at": "2026-11-07T04:51Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Shorts gate PASS (duration warn 19.4s on the approved replication cut). Dry-run schedules private at 2026-11-27T11:30:00Z. Starting the live upload."
+        },
+        {
+          "at": "2026-11-07T04:55Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Uploaded 93JL_IK57EM private, publishAt 2026-11-27T11:30:00Z. Hash 3e6803ba. Record 72c558c1d0. Buffer deferred to the daily check. Studio Related still pending."
         }
       ],
-      "remaining_action": "Upload the approved Short as private and schedule Friday 27 Nov 11:30 London",
+      "remaining_action": "Report the private upload and close the job",
       "kind": "studio",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-07T04:51Z",
+        "at": "2026-11-07T04:55Z",
         "by": "cursor",
-        "note": "Shorts gate PASS (duration warn 19.4s on the approved replication cut). Dry-run schedules private at 2026-11-27T11:30:00"
+        "note": "Uploaded 93JL_IK57EM private, publishAt 2026-11-27T11:30:00Z. Hash 3e6803ba. Record 72c558c1d0. Buffer deferred to the d"
       },
       "taskKeys": [
         "OWB:030"
