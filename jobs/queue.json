@@ -1,5 +1,5 @@
 {
-  "next_id": 2322,
+  "next_id": 2324,
   "jobs": [
     {
       "id": "J0001",
@@ -176870,6 +176870,11 @@
           "at": "2026-11-06T18:41Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T00:20:00Z"
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "condition verification queued: J2322"
         }
       ],
       "remaining_action": "Finish J2275 safeguards on PR445, then obtain J2200 system PASS before generating 20 rows",
@@ -176897,10 +176902,11 @@
       "hold": {
         "type": "input",
         "condition": "J2292 elected-Chief codex ruling: CONDITION UNMET. Independently verified HOS draft PR445 remains at 47adfead and PR439 at 1772cd52; checkpoint and cmd_submit explicitly confirm production disabled. J2275 stays open for codex now: repair live per-Create UI evidence (finding 2), shared cross-channel accounting/lock (3), and atomic detached launch/arguments (6), then zero-submit integration tests and renewed J2200 elected-Chief system PASS. Resume PR445 branch codex/J2275-runner-safety in a fresh isolated worktree: old /private/tmp/codex-j2275 no longer exists. J2026 scope/caps and PR408 approval retained; no generation authorized. Historical 14840 balance is not a fresh spend authorization. Never run tranche1 runner.",
-        "check_at": "2026-11-07T00:20:00Z",
+        "check_at": "2026-11-07T01:21:31+00:00",
         "last_recheck": "J2292",
         "checked_at": "2026-11-06T18:41:05+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2322"
       }
     },
     {
@@ -185538,6 +185544,11 @@
           "at": "2026-11-06T16:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-06T20:25:00Z"
+        },
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "condition verification queued: J2323"
         }
       ],
       "remaining_action": "Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
@@ -185556,10 +185567,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Acting-Chief Codex J2284 ruling: CONDITION UNMET. Readiness PR438 is merged, but J2275 repair is open, J2200 requires renewed system PASS, J2033 remains blocked, J2268 adapter and J2269 live-guard authorization incomplete, J2270 unauthorized, J2271 independent plate acceptance incomplete. Reviewed jobs/reviews/J2284/REVIEW.md and current queue histories; origin/main twelve-plate scope still SCOPED_NOT_AUTHORIZED. Retain J2172 at1/3 afterJ2271, accepted A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch. Concrete next action remains J2275 Codex runner repair, followed by existing production/review chain; no new generation approval.",
-        "check_at": "2026-11-06T20:25:00Z",
+        "check_at": "2026-11-07T01:21:31+00:00",
         "last_recheck": "J2284",
         "checked_at": "2026-11-06T16:16:59+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2323"
       }
     },
     {
@@ -196592,6 +196604,68 @@
         "moving_video_input"
       ],
       "plain": "Check the Betelgeuse Short and resolve its opening, wording and length conflicts."
+    },
+    {
+      "id": "J2322",
+      "title": "Verify condition for J2033",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2033: J2292 elected-Chief codex ruling: CONDITION UNMET. Independently verified HOS draft PR445 remains at 47adfead and PR439 at 1772cd52; checkpoint and cmd_submit explicitly confirm production disabled. J2275 stays open for codex now: repair live per-Create UI evidence (finding 2), shared cross-channel accounting/lock (3), and atomic detached launch/arguments (6), then zero-submit integration tests and renewed J2200 elected-Chief system PASS. Resume PR445 branch codex/J2275-runner-safety in a fresh isolated worktree: old /private/tmp/codex-j2275 no longer exists. J2026 scope/caps and PR408 approval retained; no generation authorized. Historical 14840 balance is not a fresh spend authorization. Never run tranche1 runner.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-07T00:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Finish J2275 safeguards on PR445, then obtain J2200 system PASS before generating 20 rows",
+      "kind": "review",
+      "recheck_of": "J2033",
+      "due": "2026-11-07T01:21:31+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2323",
+      "title": "Verify condition for J2172",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2172: Acting-Chief Codex J2284 ruling: CONDITION UNMET. Readiness PR438 is merged, but J2275 repair is open, J2200 requires renewed system PASS, J2033 remains blocked, J2268 adapter and J2269 live-guard authorization incomplete, J2270 unauthorized, J2271 independent plate acceptance incomplete. Reviewed jobs/reviews/J2284/REVIEW.md and current queue histories; origin/main twelve-plate scope still SCOPED_NOT_AUTHORIZED. Retain J2172 at1/3 afterJ2271, accepted A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch. Concrete next action remains J2275 Codex runner repair, followed by existing production/review chain; no new generation approval.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2172 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-07T00:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T00:21Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
+      "kind": "review",
+      "recheck_of": "J2172",
+      "due": "2026-11-07T01:21:31+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
