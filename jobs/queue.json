@@ -196904,7 +196904,7 @@
     {
       "id": "J2325",
       "title": "Verify condition for J2157",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2157: Verification FIX on Mac mini (/Users/benjaminoats/_desk/logs/J2157-vo.log, pluto_frozen_heart_vo_v01.mp3): local commit bf751c1e3f in /private/tmp/codex-J2157 and /private/tmp/J2157-codex-wt (jobs/reviews/J2157/REVIEW.md, pluto_frozen_heart_vo_v01_TAKE.json, 3801-credit ElevenLabs spend ledger rows) is still unpushed to origin, and targeted Scribe discrepancies in Ch 5 line 94 (\"looked back\" vs \"looks back\") and Ch 6 line 110 (\"Real Worlds\" vs \"Real World\") plus chapter-tail decay checks require exact-script pickups or conclusive verification on the Mac mini while preserving existing v01 take. No shot-list release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2157 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -196924,13 +196924,27 @@
           "at": "2026-11-07T00:59Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T00:59Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 1503 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Verify readiness: On Mac mini: push /private/tmp/codex-J2157 (bf751c1e3f) and complete Ch 5/Ch 6 pickups (looked back, Real Worlds) + chapter-tail checks on pluto_frozen_heart_vo_v",
       "kind": "review",
       "recheck_of": "J2157",
       "due": "2026-11-07T01:59:03+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [
