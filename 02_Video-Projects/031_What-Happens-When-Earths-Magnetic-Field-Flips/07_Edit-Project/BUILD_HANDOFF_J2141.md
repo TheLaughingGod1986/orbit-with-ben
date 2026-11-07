@@ -1,3 +1,42 @@
+## MacBook continuation — 7 Nov, R51 aurora plate
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py aurora` / `aurora_graphics.py` and one full-frame
+1920×1080 / 25 fps plate in `CODE_AURORA_v01.json`:
+
+- R51, 522.62–532.94 s (258 frames, 10.32 s), on "Curtains", through the
+  gap after "nights." The disc is the harvested eastern-hemisphere Blue
+  Marble (`GSFC_20171208_Archive_e001788`), darkened so the shot reads as
+  night. It is the real photograph, not a flat disc. Green and crimson
+  bands travel from this plate's northern limb to the middle and keep
+  shimmering. Labels, one at a time and each under four seconds: GREEN AND
+  CRIMSON, FUNNEL DOWN, THE MIDDLE, LONDON, CAIRO, MUMBAI, SYDNEY. They
+  follow the locked words. SOURCES row 18 is the aurora-during-a-reversal
+  source. The city names are the spoken examples, not a surveyed catalogue.
+- Cairo's pin sits on the Nile delta. London, Mumbai and Sydney are not on
+  this hemisphere, so those pins stay in the margin with a ribbon to the
+  limb. No invented coordinate on Africa for a city this plate does not show.
+
+Navy-grid samples sit around mean luma 43–44. Grain is the encoder's
+`noise=alls=2`. No new archive search, no paid generation, £0. Static
+contact sheet inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-aurora-v01/` (one mp4, preview,
+`CONTACT_v01.jpg`). `CODE_AURORA_TECHNICAL_CHECK_v01.json` records the
+SHA-256 match, 1920×1080, 25 fps, yuv420p, 258 frames and a full
+error-free decode. Reproduce into a fresh directory (existing files are
+refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py aurora --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the progressive timeline, the R41 atmosphere fallback as a finished plate,
+composites and the picture gates. Existing asset-ID and sourced-simulation
+conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R29 SAA strength plate
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays

@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='aurora':
+  from aurora_graphics import main as aurora
+  return aurora(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='saa':
   from saa_graphics import main as saa
   return saa(sys.argv[2:])
