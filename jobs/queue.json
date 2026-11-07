@@ -202274,13 +202274,13 @@
       "stage": "picture",
       "after": "J2368",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-07T15:58Z",
-      "eta": "2026-11-07T18:58Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T15:31Z",
-      "result": "",
+      "result": "PR #644 (macbook/J2371). Rendered and verified all 19/19 £0 graphics assets for 034 Pluto from locked SHOT_LIST_v01.md / shot_list_v01.csv: 8 full-frame source=CODE MP4s (R02, R15, R24, R29, R35, R48, R56, R69 via full_frame_graphics.py using real harvested NASA/JHUAPL/SwRI/KSC/Commons plates), 5 transparent QTRLE/ARGB overlay gauges (R17, R38, R43, R52, R61 via code_graphics.py), and 6 chapter cards (R08/R20/R33/R45/R54/R64, 2.50s / 1.70s legible hold after 0.40s xfade on lifted #162238-#1F3150 starry navy canvas). Verified 19/19 decoded frames, hashes, alpha, and luma in jobs/reviews/J2371/VERIFICATION_v03.json and GRAPHICS_MANIFEST_v03.json; media in /Users/ben/_desk/renders/J2371/. Spend £0; 0 Orbit beats; pending J2372 Chief/perceptual review.",
       "history": [
         {
           "at": "2026-11-07T15:31Z",
@@ -202306,6 +202306,11 @@
           "at": "2026-11-07T16:17Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-07T16:27Z",
+          "by": "macbook",
+          "what": "done: PR #644 (macbook/J2371). Rendered and verified all 19/19 £0 graphics assets for 034 Pluto from locked SHOT_LIST_v01.md / shot_list_v01.csv: 8 full-frame source=CODE MP4s (R02, R15, R24, R29, R35, R48, R56, R69 via full_frame_graphics.py using real harvested NASA/JHUAPL/SwRI/KSC/Commons plates), 5 transparent QTRLE/ARGB overlay gauges (R17, R38, R43, R52, R61 via code_graphics.py), and 6 chapter cards (R08/R20/R33/R45/R54/R64, 2.50s / 1.70s legible hold after 0.40s xfade on lifted #162238-#1F3150 starry navy canvas). Verified 19/19 decoded frames, hashes, alpha, and luma in jobs/reviews/J2371/VERIFICATION_v03.json and GRAPHICS_MANIFEST_v03.json; media in /Users/ben/_desk/renders/J2371/. Spend £0; 0 Orbit beats; pending J2372 Chief/perceptual review."
         }
       ],
       "remaining_action": "Implement R15/R48 full-frame graphics, refine R02/R24/R29/R35/R56/R69, render and verify all 19 assets",
@@ -202316,7 +202321,8 @@
         "of": 3,
         "at": "2026-11-07T16:17Z",
         "by": "macbook"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/644"
     },
     {
       "id": "J2372",
