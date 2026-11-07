@@ -208,6 +208,93 @@ class RealYouTubeState(unittest.TestCase):
         self.assertEqual(vt.short_title_from_path({"file": "x/10_Shorts/wednesday_neutron_cover/a.mp4"}), "Neutron")
 
 
+class PlannedShortsBacklog(unittest.TestCase):
+    """Dated upcoming longs get cadence Short cards on Videos → Backlog (Ben, 7 Nov 2026)."""
+    NOW = datetime(2026, 11, 7, 10, 0, tzinfo=timezone.utc)
+
+    def build(self, **kw):
+        args = dict(
+            hos={"films": [
+                {"id": "012", "title": "Why Alchemy Never Found Gold", "air": "2026-12-24"},
+                {"id": "014", "title": "How We Measured the Speed of Light", "air": "2026-12-31"},
+                {"id": "015", "title": "Who Invented the Telescope?", "air": "2027-01-07"},
+                {"id": "018", "title": "Why Did Phlogiston Fail?", "air": "2027-01-14"},
+                {"id": "009", "title": "Why Doesn't the Moon Fall to Earth?", "air": "2026-11-26"},
+            ]},
+            owb=[
+                {"film": "033", "title": "Why Knocked-Sideways Uranus Has 21-Year Winters", "air": "2026-12-09"},
+                {"film": "040", "title": "Wrong Kind Of Aliens", "air": ""},
+                {"film": "050", "title": "Why Saturn's Moon Iapetus Is Half Black and White", "air": ""},
+            ],
+            briefs={}, jobs=[], checks={}, uploads={}, public={}, now=self.NOW,
+        )
+        args.update(kw)
+        return vt.build_videos(**args)
+
+    def test_hos_upcoming_longs_get_four_planned_shorts_each(self):
+        # 009 is in production (jobs → progress); the four dated backlog longs stay upcoming.
+        out = self.build(
+            jobs=[{"id": "J1", "status": "open", "title": "HOS 009 script", "taskKeys": ["HOS:009"]}],
+            overrides={"jobFilms": {"J1": ["HOS:009"]}},
+        )
+        shorts = [v for v in out["videos"] if v["type"] == "short" and v["channel"] == "HOS" and v["lane"] == "upcoming"]
+        by_parent = {}
+        for v in shorts:
+            by_parent.setdefault(v["parent"], []).append(v)
+        for key in ("HOS:012", "HOS:014", "HOS:015", "HOS:018"):
+            self.assertEqual(len(by_parent.get(key) or []), 4, msg=key)
+            for i, card in enumerate(sorted(by_parent[key], key=lambda c: c["key"]), 1):
+                self.assertEqual(card["key"], f"{key}:S:planned-{i}")
+                self.assertEqual(card["parent"], key)
+                self.assertEqual(card["channel"], "HOS")
+                self.assertFalse((card.get("youtube") or {}).get("videoId"))
+                self.assertEqual(card.get("shortId") or "", "")
+                self.assertTrue(card["title"].startswith(f"Short {i} · "))
+        self.assertEqual(sum(len(v) for k, v in by_parent.items() if k.startswith("HOS:")), 16)
+        self.assertNotIn("HOS:009", by_parent)
+
+    def test_orbit_dated_upcoming_gets_two_undated_gets_none(self):
+        out = self.build()
+        owb_shorts = [v for v in out["videos"] if v["type"] == "short" and v["channel"] == "OWB"]
+        parents = {v["parent"] for v in owb_shorts}
+        self.assertEqual(parents, {"OWB:033"})
+        cards = [v for v in owb_shorts if v["parent"] == "OWB:033"]
+        self.assertEqual(len(cards), 2)
+        self.assertEqual({c["key"] for c in cards}, {"OWB:033:S:planned-1", "OWB:033:S:planned-2"})
+        self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in cards))
+        self.assertTrue(all(not (c.get("shortId") or "") for c in cards))
+        self.assertFalse(any(v["parent"] in ("OWB:040", "OWB:050") for v in owb_shorts))
+
+    def test_in_production_long_gets_no_planned_shorts(self):
+        out = self.build(
+            jobs=[{"id": "J1", "status": "open", "title": "HOS 009 script", "taskKeys": ["HOS:009"]}],
+            overrides={"jobFilms": {"J1": ["HOS:009"]}},
+        )
+        by = {v["key"]: v for v in out["videos"]}
+        self.assertEqual(by["HOS:009"]["lane"], "progress")
+        self.assertFalse(any(v.get("parent") == "HOS:009" for v in out["videos"]))
+
+    def test_uploaded_shorts_suppress_planned_placeholders(self):
+        out = self.build(
+            uploads={"OWB:033:S:AbCdEfGhIjK": [{
+                "videoId": "AbCdEfGhIjK", "kind": "short", "film": "033", "channel": "OWB",
+                "file": "x/10_Shorts/wed_uranus/a.mp4", "privacyStatus": "private",
+                "publishAt": "2026-12-10T11:30:00Z", "supersededBy": "",
+            }]},
+        )
+        planned = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:033"]
+        self.assertEqual(planned, [])
+        real = [v for v in out["videos"] if v.get("key") == "OWB:033:S:AbCdEfGhIjK"]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]["shortId"], "AbCdEfGhIjK")
+
+    def test_script_title_wins_when_provided(self):
+        # Direct helper: build path only uses generic titles unless titles_by_parent is wired later.
+        self.assertEqual(vt.planned_short_title(1, "Titan", "Could You Strike a Match on Titan?"),
+                         "Could You Strike a Match on Titan?")
+        self.assertEqual(vt.planned_short_title(2, "Titan", ""), "Short 2 · Titan")
+
+
 class LiveMapping(unittest.TestCase):
     """Real queue + checks as of the 24 Oct rebuild brief."""
 
