@@ -193418,10 +193418,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T02:51Z",
+      "eta": "2026-11-07T04:51Z",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -193535,6 +193535,11 @@
           "at": "2026-11-07T00:54Z",
           "by": "codex",
           "what": "released: Tested checkpoint c4ebd9d3 pushed to HOS PR445. 57 zero-submit tests and check_all ALL CHECKS PASS. New strict DOM reader and guarded Create adapter persist evidence/intent before an atomic reread/click; UI drift makes zero submits and disconnects preserve pending liabilities. Still step 1/3: exact production click-boundary wiring, read-only live DOM validation, all-channel writer/accounting adoption, idempotent ai_spend and parent inventory remain. Full integration exceeds bounded run. cmd_submit interlock retained; J2200 FIX/J2033 held; no spend or real browser submits. Resume /private/tmp/codex-j2275-live, branch codex/J2275-runner-safety; jobs/reviews/J2275/CHECKPOINT.md gives exact continuation. Nothing on Ben."
+        },
+        {
+          "at": "2026-11-07T02:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wire guarded Create into production and adopt shared accounting across Flow writers",
