@@ -201789,17 +201789,22 @@
           "at": "2026-11-07T15:05Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEARCH_LOG_v01.json; clip_check 74 rows PASS"
+        },
+        {
+          "at": "2026-11-07T15:12Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Retimed MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md; verified clip_check 74 rows PASS against stt_timeline_offset_v01.json"
         }
       ],
-      "remaining_action": "Retime MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md with cumulative card offsets and J2367 repairs",
+      "remaining_action": "Write J2367 review/repair note and CHECKS.json, commit and push to PR #626, and mark J2367 done",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-07T15:05Z",
+        "at": "2026-11-07T15:12Z",
         "by": "gemini",
-        "note": "Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEAR"
+        "note": "Retimed MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md; verified clip_check 74 rows PASS against stt_timeline"
       },
       "rerouted_from": {
         "needs": "mini",
