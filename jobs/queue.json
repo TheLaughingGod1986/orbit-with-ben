@@ -1,5 +1,5 @@
 {
-  "next_id": 2368,
+  "next_id": 2369,
   "jobs": [
     {
       "id": "J0001",
@@ -201500,6 +201500,35 @@
       "remaining_action": "034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics"
+    },
+    {
+      "id": "J2368",
+      "title": "034 Pluto: Chief re-review J2367 corrected shot plan and decide production release",
+      "needs": "any",
+      "repo": "owb",
+      "body": "After J2367 repairs PR #626, re-review the exact PR626 head against jobs/reviews/J2362/REVIEW.md (and inherited J2359 items). (Note: J2367's body says 'J2363-style review note'; that means a review note like jobs/reviews/J2361/REVIEW.md, not job J2363.) Verify: every CARD holds >=1.5 s legible after 0.5-0.8 s breath and 0.4 s xfade with the VO audio unedited (offset table + derived words file + clip_check pasted); native real motion in every CODE->CODE gap (R15-R17, R17-R24, R38-R43, R43-R48, R52-R56, R56-R61, plus R48-R52 if the Extreme Close-Up ogv is a mosaic pan); [ORBIT ACTS]/omni references removed per the J2362 Orbit exception; R30 has a second distinct source; corrected WHEN/upscale/luma claims; <=2 appearances, banned IDs absent, music envelope intact. Only if all pass: merge PR626, mark 034 shots done and queue the named picture-harvest and code-graphics workers with exact deliverables and downstream perceptual review. If FIX, record defects and a concrete repair. Recheck chief_relay status before merging. No spend, no Orbit generation, no upload; no Ben request.\n",
+      "ref": "jobs/reviews/J2362/REVIEW.md",
+      "film": "034",
+      "stage": "shots",
+      "after": "J2367",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-07T14:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T14:12Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "034 Pluto: Chief re-review J2367 corrected shot plan and decide production release",
+      "kind": "chief",
+      "plain": "Check the fixed Pluto shot plan and, if it passes, merge it and start picture and graphics work"
     }
   ],
   "focus": [

@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2365 | mini | claimed | gemini | 2026-11-07T16:09Z | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2367 | mini | open | – | – | 034 shots · review · 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 | jobs/reviews/J2362/REVIEW.md |
+| J2368 | any | open (after J2367) | – | – | 034 shots · chief · 034 Pluto: Chief re-review J2367 corrected shot plan and decide production release | jobs/reviews/J2362/REVIEW.md |
 
 Recently finished:
 
