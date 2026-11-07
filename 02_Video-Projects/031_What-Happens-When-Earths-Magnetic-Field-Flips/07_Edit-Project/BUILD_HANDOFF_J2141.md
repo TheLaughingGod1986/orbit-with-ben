@@ -1,3 +1,42 @@
+## MacBook continuation — 7 Nov, R10 sample map and R48 pole pins
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py places` / `place_graphics.py` and two full-frame
+1920×1080 / 25 fps plates in `CODE_PLACES_v01.json`:
+
+- R10, 94.92–98.24 s (83 frames, 3.32 s), on "tests", through the gap after
+  "Manchuria." Schematic west shape and an island chain. Dots light on
+  "Japan" and "Manchuria". Labels are those spoken words, plus
+  "VOLCANIC ROCKS" while that phrase is said. Not a traced coastline and
+  not Matuyama's site list. The lower third stays empty for the existing
+  WHO card, which still runs until 96.80 s. SOURCES row 4.
+- R48, 493.66–499.30 s (141 frames, 5.64 s), on "You", through the gap after
+  "Pacific." Real eastern-hemisphere Blue Marble
+  (`GSFC_20171208_Archive_e001788`). A pin drops on southern Africa. Tahiti
+  is not on this plate, so its pin sits in the margin and a ribbon runs to
+  the limb. Labels follow the locked words: SOUTH POLE, AFRICA, NORTH POLE,
+  TAHITI, PACIFIC. Each label is on screen under four seconds. SOURCES row 18.
+  Not a surveyed pole coordinate.
+
+Navy-grid samples sit around mean luma 39 and 53. Grain is the encoder's
+`noise=alls=2`. No new archive search, no paid generation, £0. Static
+contact sheet inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-places-v01/` (two mp4s, previews,
+`CONTACT_v01.jpg`). `CODE_PLACES_TECHNICAL_CHECK_v01.json` records SHA-256
+matches, 1920×1080, 25 fps, yuv420p, 83/141 frames and full error-free
+decodes. Reproduce into a fresh directory (existing files are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py places --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the SAA strength graphic, the aurora, the progressive timeline, the R41
+atmosphere fallback, composites and the picture gates. Existing asset-ID
+and sourced-simulation conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R16 / R17 / R52 dynamo plates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays

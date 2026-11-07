@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='places':
+  from place_graphics import main as places
+  return places(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='dynamo':
   from dynamo_graphics import main as dynamo
   return dynamo(sys.argv[2:])
