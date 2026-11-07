@@ -9,9 +9,11 @@ Derived from jobs/queue.json, UPLOADS.json / PACKAGE_UPLOAD_RESULT, film_briefs,
 OWB status.json, and Ben's board checks (`[Ben] OK/changes` via /api/checks). Optional overrides
 in 05_Analytics/kanban/video_overrides.json.
 
-Planned Shorts (Ben, 7 Nov 2026): dated upcoming longs with no uploaded Shorts yet get board-only
-Short cards on Videos → Backlog (HOS 4, Orbit 2 per cadence). Keys use `:S:planned-N` — never a
-YouTube id — and never start production, WIP, uploads or jobs.
+Planned Shorts (Ben, 7 Nov 2026; undated Orbit, 7 Nov 2026): upcoming longs with no uploaded
+Shorts yet get board-only Short cards on Videos → Backlog (HOS 4, Orbit 2 per cadence). An air
+date is copied when the parent has one; undated Orbit backlog longs still get the pair with no
+invented date. Keys use `:S:planned-N` — never a YouTube id — and never start production, WIP,
+uploads or jobs.
 """
 from __future__ import annotations
 
@@ -43,8 +45,9 @@ LANE_LABELS = {
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
 DONE_PUBLIC_DAYS = 14
-# Planned Shorts on Videos → Backlog for dated upcoming longs with no uploads yet
-# (Ben, 7 Nov 2026 cadence: Orbit 2 per new long; HOS 4 per long/week). Never invent YouTube ids.
+# Planned Shorts on Videos → Backlog for upcoming longs with no uploads yet
+# (Ben, 7 Nov 2026 cadence: Orbit 2 per new long; HOS 4 per long/week). Never invent YouTube ids
+# or air dates — undated parents keep empty air on their planned Shorts.
 PLANNED_SHORTS_PER_LONG = {"HOS": 4, "OWB": 2}
 PLANNED_SHORT_TOKEN = "planned"
 
@@ -884,7 +887,7 @@ def watch_format(watch):
 
 
 def planned_shorts_count(channel: str) -> int:
-    """How many planned Short cards a dated upcoming long gets on Videos → Backlog."""
+    """How many planned Short cards an upcoming long gets on Videos → Backlog."""
     return int(PLANNED_SHORTS_PER_LONG.get(str(channel or "").upper(), 0))
 
 
@@ -938,10 +941,12 @@ def add_planned_shorts(
     held: frozenset | set = frozenset(),
     titles_by_parent: dict | None = None,
 ) -> None:
-    """Append planned Short cards for dated upcoming longs with no uploaded Shorts yet.
+    """Append planned Short cards for upcoming longs with no uploaded Shorts yet.
 
     Board-only: no YouTube ids, no UPLOADS rows, no production jobs. Counts follow the
-    locked weekly cadence (HOS 4, Orbit 2). Far-future Orbit rows without an air date stay long-only.
+    locked weekly cadence (HOS 4, Orbit 2). Copy the parent's air date when it has one;
+    undated parents (Orbit far-future backlog) get undated planned Shorts — never invent
+    Sundays/Wednesdays or 11:30 slots.
     """
     titles_by_parent = titles_by_parent or {}
     have = {v.get("key") for v in videos}
@@ -950,7 +955,8 @@ def add_planned_shorts(
         if parent.get("lane") != "upcoming":
             continue
         air = str(parent.get("air") or "").strip()
-        if not re.match(r"^\d{4}-\d{2}-\d{2}", air):
+        # Keep a real YYYY-MM-DD when present; empty air is allowed (do not invent dates).
+        if air and not re.match(r"^\d{4}-\d{2}-\d{2}", air):
             continue
         channel = str(parent.get("channel") or "")
         count = planned_shorts_count(channel)
@@ -1118,8 +1124,8 @@ def build_videos(
             short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
         ))
 
-    # --- Planned Shorts for dated upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---
-    # HOS: 4 per long; Orbit: 2 per new dated upcoming long. No YouTube ids, no production start.
+    # --- Planned Shorts for upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---
+    # HOS: 4 per long; Orbit: 2 per new upcoming long (dated or not). No YouTube ids, no production start.
     add_planned_shorts(
         videos, uploads=uploads, film_lanes=film_lanes, now=now,
         public=public, public_at=public_at, held=held,

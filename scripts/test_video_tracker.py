@@ -209,7 +209,7 @@ class RealYouTubeState(unittest.TestCase):
 
 
 class PlannedShortsBacklog(unittest.TestCase):
-    """Dated upcoming longs get cadence Short cards on Videos → Backlog (Ben, 7 Nov 2026)."""
+    """Upcoming longs get cadence Short cards on Videos → Backlog (Ben, 7 Nov 2026)."""
     NOW = datetime(2026, 11, 7, 10, 0, tzinfo=timezone.utc)
 
     def build(self, **kw):
@@ -253,17 +253,29 @@ class PlannedShortsBacklog(unittest.TestCase):
         self.assertEqual(sum(len(v) for k, v in by_parent.items() if k.startswith("HOS:")), 16)
         self.assertNotIn("HOS:009", by_parent)
 
-    def test_orbit_dated_upcoming_gets_two_undated_gets_none(self):
+    def test_orbit_dated_and_undated_upcoming_each_get_two(self):
+        # Regression: undated Orbit backlog longs must not drop back to long-only (Ben, 7 Nov 2026).
         out = self.build()
         owb_shorts = [v for v in out["videos"] if v["type"] == "short" and v["channel"] == "OWB"]
-        parents = {v["parent"] for v in owb_shorts}
-        self.assertEqual(parents, {"OWB:033"})
-        cards = [v for v in owb_shorts if v["parent"] == "OWB:033"]
-        self.assertEqual(len(cards), 2)
-        self.assertEqual({c["key"] for c in cards}, {"OWB:033:S:planned-1", "OWB:033:S:planned-2"})
-        self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in cards))
-        self.assertTrue(all(not (c.get("shortId") or "") for c in cards))
-        self.assertFalse(any(v["parent"] in ("OWB:040", "OWB:050") for v in owb_shorts))
+        by_parent = {}
+        for v in owb_shorts:
+            by_parent.setdefault(v["parent"], []).append(v)
+        self.assertEqual(set(by_parent), {"OWB:033", "OWB:040", "OWB:050"})
+
+        dated = by_parent["OWB:033"]
+        self.assertEqual(len(dated), 2)
+        self.assertEqual({c["key"] for c in dated}, {"OWB:033:S:planned-1", "OWB:033:S:planned-2"})
+        self.assertTrue(all(c.get("air", "").startswith("2026-12-09") for c in dated))
+        self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in dated))
+        self.assertTrue(all(not (c.get("shortId") or "") for c in dated))
+
+        for parent in ("OWB:040", "OWB:050"):
+            cards = by_parent[parent]
+            self.assertEqual(len(cards), 2, msg=parent)
+            self.assertEqual({c["key"] for c in cards}, {f"{parent}:S:planned-1", f"{parent}:S:planned-2"})
+            self.assertTrue(all((c.get("air") or "") == "" for c in cards), msg=parent)
+            self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in cards))
+            self.assertTrue(all(not (c.get("shortId") or "") for c in cards))
 
     def test_in_production_long_gets_no_planned_shorts(self):
         out = self.build(
@@ -287,6 +299,41 @@ class PlannedShortsBacklog(unittest.TestCase):
         real = [v for v in out["videos"] if v.get("key") == "OWB:033:S:AbCdEfGhIjK"]
         self.assertEqual(len(real), 1)
         self.assertEqual(real[0]["shortId"], "AbCdEfGhIjK")
+
+    def test_undated_long_with_live_shorts_gets_no_planned_placeholders(self):
+        # Older shipped films (e.g. 005 Last Star, 019 Andromeda) stay long-only for planned cards.
+        out = self.build(
+            owb=[
+                {"film": "005", "title": "The Last Star In The Universe", "air": ""},
+                {"film": "040", "title": "Wrong Kind Of Aliens", "air": ""},
+            ],
+            uploads={"OWB:005:S:LiveShort001": [{
+                "videoId": "LiveShort001", "kind": "short", "film": "005", "channel": "OWB",
+                "file": "x/10_Shorts/last_star/a.mp4", "privacyStatus": "public",
+                "publishAt": "", "supersededBy": "",
+            }]},
+            public={"LiveShort001": {
+                "title": "Last Star Short", "channel": "OWB", "format": "short",
+                "publishedAt": "2026-01-15T12:00:00Z",
+            }},
+        )
+        planned_005 = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:005"]
+        planned_040 = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:040"]
+        self.assertEqual(planned_005, [])
+        self.assertEqual({c["key"] for c in planned_040}, {"OWB:040:S:planned-1", "OWB:040:S:planned-2"})
+        self.assertTrue(all((c.get("air") or "") == "" for c in planned_040))
+
+    def test_youtube_id_on_long_suppresses_planned_shorts(self):
+        # Guard is independent of lane: even an upcoming-shaped parent with a YouTube id
+        # must not sprout planned Short placeholders (older shipped films).
+        videos = [{
+            "key": "OWB:019", "channel": "OWB", "number": "019", "title": "Andromeda",
+            "type": "long", "lane": "upcoming", "air": "",
+            "youtube": {"videoId": "ojk-dfOpAmw", "state": "live"},
+        }]
+        vt.add_planned_shorts(videos, uploads={}, film_lanes={}, now=self.NOW)
+        planned = [v for v in videos if vt.is_planned_short_key(v.get("key") or "")]
+        self.assertEqual(planned, [])
 
     def test_script_title_wins_when_provided(self):
         # Direct helper: build path only uses generic titles unless titles_by_parent is wired later.
