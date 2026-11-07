@@ -201957,13 +201957,13 @@
       "stage": "shots",
       "after": "J2367",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-07T15:31Z",
-      "eta": "2026-11-07T17:31Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T14:12Z",
-      "result": "",
+      "result": "PASS at PR626 squash 3c0ebf132b (jobs/reviews/J2368, ruling 59b4d68d4a). Cleared J2362 card-hold, native-motion separators, Orbit retype, evidence claims. Merged; 034 shots done; queued J2370 harvest + J2371 graphics. J2319/J2320 stay blocked until picture lands. £0.",
       "history": [
         {
           "at": "2026-11-07T14:12Z",
@@ -201984,6 +201984,11 @@
           "at": "2026-11-07T15:32Z",
           "by": "chief",
           "what": "step 2 of 3 done: Merged PR #626 squash 3c0ebf132b; shots done; J2370 harvest + J2371 graphics queued"
+        },
+        {
+          "at": "2026-11-07T15:32Z",
+          "by": "chief",
+          "what": "done: PASS at PR626 squash 3c0ebf132b (jobs/reviews/J2368, ruling 59b4d68d4a). Cleared J2362 card-hold, native-motion separators, Orbit retype, evidence claims. Merged; 034 shots done; queued J2370 harvest + J2371 graphics. J2319/J2320 stay blocked until picture lands. £0."
         }
       ],
       "remaining_action": "034 Pluto: Chief re-review J2367 corrected shot plan and decide production release",
@@ -201998,7 +202003,8 @@
         "at": "2026-11-07T15:32Z",
         "by": "chief",
         "note": "Merged PR #626 squash 3c0ebf132b; shots done; J2370 harvest + J2371 graphics queued"
-      }
+      },
+      "done_ref": "jobs/reviews/J2368/REVIEW.md"
     },
     {
       "id": "J2369",
