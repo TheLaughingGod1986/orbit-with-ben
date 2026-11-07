@@ -1600,13 +1600,18 @@
 
   function review(b) {
     const vs = uniqueVideos(((b.tracker || {}).videos) || []);
-    const need = forBen(vs).map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}
+    const needList = forBen(vs);
+    const need = needList.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}
       <a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("");
     const checked = vs.map(v => (sent[v.checkId] || {}).key === v.key ? Object.assign({}, v, { check: sent[v.checkId] }) : v);
-    const done = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at)).slice(0, 8)
+    const reviewed = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at));
+    const done = reviewed.slice(0, 8)
       .map(v => row(v, `<span class="tag ${v.check.verdict === "ok" ? "green" : "amber"}">${v.check.verdict === "ok" ? "You OK'd" : "You asked for changes"} ${esc(v.check.version || "")}</span>`)).join("");
+    // Two equal summary chips (Videos count-chip language). Not filters — both lists stay visible below.
+    const chips = `<div class="seg two" aria-label="Review counts"><div><b>${needList.length}</b><span>Needs your review</span></div><div><b>${reviewed.length}</b><span>Reviewed</span></div></div>`;
     return `<header class="top"><h1>Review</h1></header><p class="meta">Finished videos only. Everything else is the agents' job.</p>
-      ${section("Needs your review", forBen(vs).length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
+      ${chips}
+      ${section("Needs your review", needList.length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
       ${section("Reviewed", null, done || empty("No reviews yet."))}`;
   }
 

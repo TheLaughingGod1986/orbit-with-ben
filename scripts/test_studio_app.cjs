@@ -49,6 +49,9 @@ for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
 }
 const review = t.renderTab('review', board, NOW);
 assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review v06') || review.includes('Watch & review v06'), 'a review card opens the UAT screen');
+assert(review.includes('class="seg two"') && review.includes('<span>Needs your review</span>') && review.includes('<span>Reviewed</span>'), 'Review shows two matching count chips');
+assert(/seg two[\s\S]*Needs your review[\s\S]*Reviewed[\s\S]*<section>[\s\S]*Needs your review[\s\S]*<section>[\s\S]*Reviewed/.test(review), 'Review chips sit above both list sections; neither list is filtered away');
+assert(!review.includes('data-seg='), 'Review chips are not lane filters');
 assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
