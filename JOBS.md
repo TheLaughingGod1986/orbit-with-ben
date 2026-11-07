@@ -97,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2324 | mini | open | – | – | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
-| J2325 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2157 |  |
+| J2325 | mini | claimed | codex | 2026-11-07T04:32Z | for codex · review · `gpt-6-astra` · Verify condition for J2157 |  |
 | J2330 | any | open | – | – | review · Verify condition for J2309 |  |
 | J2332 | mini | open | – | – | 033 picture · video · 033: generate bounded R01 and R55 world-shot fallback | J2306; PR610; 6103783d76 |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · qa · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
