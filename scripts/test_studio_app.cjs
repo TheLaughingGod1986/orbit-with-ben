@@ -103,6 +103,10 @@ assert.equal(t.videoLane(v({key: 'pass-up', lane: 'approved', jobs: [{status: 'c
 const videosHtml = t.renderTab('videos', {tracker: {videos: [passedCut, uatCut, notesCut]}}, NOW);
 assert(videosHtml.includes('Only UAT needs you') && videosHtml.includes('Passed') && videosHtml.includes('ready to schedule'), 'Videos copy names the UAT → Passed loop');
 assert(videosHtml.includes('Needs your review') && videosHtml.includes('Watch &amp; review') || videosHtml.includes('Watch & review'), 'UAT lane cards feel like they need Ben');
+// Nine lane chips in locked 3×3 order (count above label); no wrapping "All" tile.
+const laneChipOrder = [...videosHtml.matchAll(/data-seg="([^"]+)"/g)].map(m => m[1]);
+assert.deepEqual(laneChipOrder, ['backlog', 'todo', 'progress', 'qa', 'uat', 'passed', 'scheduled', 'live', 'postlive'], 'Videos lane chips stay in locked 3×3 order');
+assert(videosHtml.includes('<b>') && videosHtml.includes('<span>Backlog</span>'), 'lane chips keep big counts above labels');
 assert(!/To do[\s\S]*Needs your review/.test(videosHtml) || videosHtml.includes('UAT'), 'Ben review CTA sits in UAT');
 
 // Schedule: a warning only when readiness can't be verified.
@@ -160,7 +164,7 @@ assert.equal((vt.match(/class="doing"/g) || []).length, 0, 'task percentages are
 assert(vt.includes('027') && vt.includes('028') && vt.includes('milestones complete'));
 // Videos counts a running studio job too, so it matches Overview's Agents working now.
 const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
-assert(vsj.includes('Studio job · not one video') && vsj.includes('In progress <small>1</small>'), 'Videos shows and counts the studio job under In progress');
+assert(vsj.includes('Studio job · not one video') && vsj.includes('data-seg="progress"') && vsj.includes('<b>1</b><span>In progress</span>'), 'Videos shows and counts the studio job under In progress');
 // A public video is published, whatever follow-up jobs it has; private ones never ask YouTube for a thumbnail.
 const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', privacy: 'public', state: 'live'}, jobs: [{id: 'J9', status: 'open'}]});
 const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}});

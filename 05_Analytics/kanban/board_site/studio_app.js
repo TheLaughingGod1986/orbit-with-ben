@@ -1518,10 +1518,11 @@
     // Studio-only jobs (no video card) still count under In progress, matching Overview.
     const studio = routeView()!=='producing' && filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
     g.progress.extra = studio.length;
-    const segs = [["all", "All"], ...VIDEO_LANE_CHIPS]
+    // Nine equal count chips in locked order (3×3). No "All" tile — tap the active lane again to clear.
+    const segs = VIDEO_LANE_CHIPS
       .map(([id, label]) => {
-        const n = id === "all" ? 0 : (g[id].length + (g[id].extra || 0));
-        return `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${n}</small>`}</button>`;
+        const n = g[id].length + (g[id].extra || 0);
+        return `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}" aria-pressed="${seg === id ? "true" : "false"}"><b>${n}</b><span>${esc(label)}</span></button>`;
       }).join("");
     const chs = channelList();
     const chips = [["ch", "all", chs.length === 2 ? "Both" : "All"], ...chs.map(c => ["ch", c.label, c.short || c.label]),
@@ -1829,7 +1830,10 @@
       if (!expandedStages.has(key)) expandedStages.set(key,new Set([...document.querySelectorAll('details[data-stage][open]')].map(x=>x.dataset.stage)));
       const saved=expandedStages.get(key); if(el.open) saved.add(el.dataset.stage); else saved.delete(el.dataset.stage);
     }));
-    document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => { seg = btn.dataset.seg; render(); });
+    document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => {
+      seg = seg === btn.dataset.seg ? "all" : btn.dataset.seg;
+      render();
+    });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
       if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
