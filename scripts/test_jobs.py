@@ -457,3 +457,89 @@ class MacBookTakesTextJobs(unittest.TestCase):
         d["jobs"][0]["body"] = "Read the plan and write REVIEW.md. Text only; no Flow or Chrome."
         self.assertFalse(jobs.macbook_portable(d["jobs"][0], d))
         self.assertFalse(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"))
+
+    def _studio_live(self, tmp, owb_films=("032_Titan",), hos_films=()):
+        owb = pathlib.Path(tmp) / "orbit-with-ben" / "02_Video-Projects"
+        hos = pathlib.Path(tmp) / "History Of Science" / "02_Video-Projects"
+        for name in owb_films:
+            (owb / name).mkdir(parents=True)
+        for name in hos_films:
+            (hos / name).mkdir(parents=True)
+        return {"owb": owb, "hos": hos}
+
+    def test_harvest_assembly_watch_allowed_when_studio_live_media_exists(self):
+        # Ben, 7 Nov 2026: MacBook takes shared-media jobs when /Volumes/data/studio-live has the film.
+        with tempfile.TemporaryDirectory() as tmp:
+            roots = self._studio_live(tmp, owb_films=("032_Titan",), hos_films=("008_Lightning-Franklin",))
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+                cases = [
+                    ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"},
+                     "Write pool JSON under the studio-live 032 folder; ffmpeg ok."),
+                    ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"},
+                     "Lay the cut from stems in 02_Video-Projects/032_Titan/07_Edit-Project/."),
+                    ("Watch and listen review of 032 master", {"kind": "review", "film": "032", "stage": "edit"},
+                     "Full watch and listen of 032_Titan_v01.mp4 before Ben's card."),
+                    ("HOS 008: harvest stills for Franklin",
+                     {"kind": "assembly", "film": "008", "stage": "picture", "repo": "hos"},
+                     "Harvest plates into the HOS 008 working folder on studio-live."),
+                ]
+                for title, kw, body in cases:
+                    d = queue(("mini", title, kw))
+                    d["jobs"][0]["body"] = body
+                    self.assertTrue(jobs.macbook_portable(d["jobs"][0], d), title)
+                    self.assertTrue(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"), title)
+
+    def test_harvest_assembly_watch_stay_mini_when_media_absent(self):
+        missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
+                   "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
+        with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+            for title, kw in (
+                ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
+                ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"}),
+                ("Watch and listen review of 032 master", {"kind": "review", "film": "032", "stage": "edit"}),
+            ):
+                d = queue(("mini", title, kw))
+                d["jobs"][0]["body"] = "Media should be on studio-live; if missing leave for the Mini."
+                self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+
+    def test_studio_buffer_playlist_package_stay_mini_hard_even_with_studio_live(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            roots = self._studio_live(tmp, owb_films=("032_Titan",))
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+                cases = [
+                    ("032 Studio finish before air", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Open YouTube Studio and set the end screen plus Related video."),
+                    ("032 upload package and schedule", {"kind": "assembly", "film": "032", "stage": "upload"},
+                     "Run youtube:package then upload to YouTube; mirror Buffer at publishAt."),
+                    ("OWB series playlists + end screens", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Add the long to playlists and set end screens in Studio."),
+                    ("032 Buffer mirror after hand upload", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Register the hand upload and create Buffer posts for Instagram."),
+                ]
+                for title, kw, body in cases:
+                    d = queue(("mini", title, kw))
+                    d["jobs"][0]["body"] = body
+                    self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+
+    def test_existing_local_path_in_job_also_unlocks_shared_media(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cut = pathlib.Path(tmp) / "032_Titan_v01.mp4"
+            cut.write_bytes(b"x")
+            missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
+                       "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+                d = queue(("mini", "Watch and listen review of the master",
+                           {"kind": "review", "film": "032", "stage": "edit"}))
+                d["jobs"][0]["body"] = f"Full watch and listen of {cut} before Ben's card."
+                self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+
+    def test_nas_flow_buffer_mentions_still_do_not_block_portable_text(self):
+        # Regression guard for PR #597: soft service names inside prohibition notes stay portable.
+        d = queue(("mini", "Review multi-channel plan: code and phases",
+                   {"kind": "review", "for_agent": "gemini"}))
+        d["jobs"][0]["body"] = (
+            "Never touch the NAS working films or Buffer posts. "
+            "channels plug in with their own rules and flow. "
+            "Do not change Buffer or playlists. Text review only.")
+        self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+        self.assertFalse(jobs.mini_only_hit(d["jobs"][0]["title"] + " " + d["jobs"][0]["body"]))
