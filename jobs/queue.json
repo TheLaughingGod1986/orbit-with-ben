@@ -190164,13 +190164,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-07T00:05Z",
-      "eta": "2026-11-07T02:05Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T18:12Z",
-      "result": "",
+      "result": "PR #601 (jobs/reviews/J2235/AUDIT.md). Top 5 findings: (1) scripts/ bugs & duplicate find_bin: chief_relay.py:317/macbook_worker.py:185 ignore explicit missing CODEX_BIN env override (failing test_chief_succession.py:61), AutomaticChiefDuties(ChiefSuccession) at test_chief_succession.py:172 runs 11 tests twice, test_macbook_worker.py:251 fails under MACBOOK_SLOT=2, plus unclosed file ResourceWarnings in routing.py:168 & macbook_worker.py:523,535; (2) ~405 KB dead kanban/board code & broken tests: retired /classic pipeline in build.py (import-time status.json scan, build_classic, studio_kanban.html 261 KB, shim.js, live.js, test_kanban_page.py 59 KB), 15 dead functions (~215 lines) in studio_app.js, failing unwired test_studio_video_dispatch.cjs + 11 Linux-hardcoded test_studio_*_browser.cjs (59 KB); (3) rule-violating legacy scripts: scripts/apply_melodysheep_long_thumbs_v01.py & apply_yellow_white_v04_thumbs.py (hardcode wrong CDP port 9222 + ctx.new_page()), 04_Audio/tools/fix_published_playback_lag.py (Studio Replace) & vidiq_title_score_sheet.py (series suffix); (4) 02_Video-Projects & jobs/reviews duplication (615 .py files, 8.85 MB + 50 .py files, 548 KB): 37 byte-identical copies of _generate_veo_from_beats.py (113 KB), 183 pre-playbook v01-v29 scripts (1.65 MB) in unshipped 001/002/007, 349 shipped film scripts mapped to 112 upload/status receipts, and 405 KB of build/verify_j0936_prep_v03..v07.py in jobs/reviews/; (5) CI blind spots & 07_Content-Ops/00_Brand duplicates: rules-check.yml skips test_gate_stayed.py & test_orbit_cfr_delivery.py, desk-lock.test.py:75,91 fails without local node_modules, 15 one-off build_*_jNNNN.py thumbnail scripts (168 KB), 5 YouTube snippet CLI scripts duplicating fetch/put boilerplate, and 98 KB paused affiliate /go/ tree.",
       "history": [
         {
           "at": "2026-11-05T18:12Z",
@@ -190201,6 +190201,11 @@
           "at": "2026-11-07T00:18Z",
           "by": "macbook-2",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-07T00:22Z",
+          "by": "macbook-2",
+          "what": "done: PR #601 (jobs/reviews/J2235/AUDIT.md). Top 5 findings: (1) scripts/ bugs & duplicate find_bin: chief_relay.py:317/macbook_worker.py:185 ignore explicit missing CODEX_BIN env override (failing test_chief_succession.py:61), AutomaticChiefDuties(ChiefSuccession) at test_chief_succession.py:172 runs 11 tests twice, test_macbook_worker.py:251 fails under MACBOOK_SLOT=2, plus unclosed file ResourceWarnings in routing.py:168 & macbook_worker.py:523,535; (2) ~405 KB dead kanban/board code & broken tests: retired /classic pipeline in build.py (import-time status.json scan, build_classic, studio_kanban.html 261 KB, shim.js, live.js, test_kanban_page.py 59 KB), 15 dead functions (~215 lines) in studio_app.js, failing unwired test_studio_video_dispatch.cjs + 11 Linux-hardcoded test_studio_*_browser.cjs (59 KB); (3) rule-violating legacy scripts: scripts/apply_melodysheep_long_thumbs_v01.py & apply_yellow_white_v04_thumbs.py (hardcode wrong CDP port 9222 + ctx.new_page()), 04_Audio/tools/fix_published_playback_lag.py (Studio Replace) & vidiq_title_score_sheet.py (series suffix); (4) 02_Video-Projects & jobs/reviews duplication (615 .py files, 8.85 MB + 50 .py files, 548 KB): 37 byte-identical copies of _generate_veo_from_beats.py (113 KB), 183 pre-playbook v01-v29 scripts (1.65 MB) in unshipped 001/002/007, 349 shipped film scripts mapped to 112 upload/status receipts, and 405 KB of build/verify_j0936_prep_v03..v07.py in jobs/reviews/; (5) CI blind spots & 07_Content-Ops/00_Brand duplicates: rules-check.yml skips test_gate_stayed.py & test_orbit_cfr_delivery.py, desk-lock.test.py:75,91 fails without local node_modules, 15 one-off build_*_jNNNN.py thumbnail scripts (168 KB), 5 YouTube snippet CLI scripts duplicating fetch/put boilerplate, and 98 KB paused affiliate /go/ tree."
         }
       ],
       "remaining_action": "Write jobs/reviews/J2235/AUDIT.md with ranked findings, evidence, and proposed actions",
