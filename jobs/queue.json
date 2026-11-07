@@ -201155,9 +201155,14 @@
           "at": "2026-11-07T13:57Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Heartbeat: shot_list_v01.csv (74 rows, 6 explicit CARD rows) passed clip_check.py with 0 errors and 0 warnings; generating SOURCE_EVIDENCE_v01.json and markdown plans"
+        },
+        {
+          "at": "2026-11-07T14:00Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Generated repaired shot_list_v01.csv (74 rows, 6 explicit CARD rows, clip_check PASS), SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json (64 clean assets, <=2 raw/separated appearances), MUSIC_BRIEF_v01.md (2.5s hold + 10.0s fade + verified NOT list), SFX_PLAN_v01.md, production-status.md and J2361 REVIEW.md"
         }
       ],
-      "remaining_action": "Generate repaired shot_list_v01.csv, SHOT_LIST_v01.md, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 review packet",
+      "remaining_action": "Commit and push repaired PR #626 deliverables, queue dependent Chief re-review job, and mark J2361 done",
       "kind": "review",
       "plain": "Fix unsuitable source images, repeated plates and ending timings in the Pluto picture plan.",
       "rerouted_from": {
@@ -201170,11 +201175,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-07T13:57Z",
+        "at": "2026-11-07T14:00Z",
         "by": "gemini",
-        "note": "Heartbeat: shot_list_v01.csv (74 rows, 6 explicit CARD rows) passed clip_check.py with 0 errors and 0 warnings; generati"
+        "note": "Generated repaired shot_list_v01.csv (74 rows, 6 explicit CARD rows, clip_check PASS), SHOT_LIST_v01.md, SOURCE_EVIDENCE"
       },
       "taskKeys": [
         "OWB:034"
