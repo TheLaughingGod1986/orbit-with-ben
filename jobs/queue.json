@@ -193650,19 +193650,24 @@
           "at": "2026-11-07T03:46Z",
           "by": "codex",
           "what": "step 0 of 4 done: Claimed targeted repair; zero browser submits or generation permitted."
+        },
+        {
+          "at": "2026-11-07T03:47Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Resumed PR445 original three-step plan; generation interlock remains."
         }
       ],
-      "remaining_action": "Inspect the runner and reproduce the six safety defects",
+      "remaining_action": "Connect the live Create guard at the configured helper boundary",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the video generator safeguards and test them without spending credits.",
       "progress": {
         "step": 0,
-        "of": 4,
-        "at": "2026-11-07T03:46Z",
+        "of": 3,
+        "at": "2026-11-07T03:47Z",
         "by": "codex",
-        "note": "Claimed targeted repair; zero browser submits or generation permitted."
+        "note": "Resumed PR445 original three-step plan; generation interlock remains."
       },
       "taskKeys": [
         "HOS:009"
