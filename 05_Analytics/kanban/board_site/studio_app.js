@@ -14,6 +14,8 @@
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
+  // Videos lane: smart default once per visit unless Ben taps a chip or the hash names a lane (Ben, 7 Nov 2026).
+  let videosLaneChosen = false, videosLandingApplied = false;
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
   let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
@@ -209,6 +211,47 @@
       || p24InFocus(v.key, new Set([x.film])) || p24InFocus(filmKey, new Set([x.film])));
     return f ? p24FilmPct(f) : null;
   }
+  // Hash params after the tab id: #videos&lane=progress&focus=OWB:034
+  function videosHashParams() {
+    const raw = (location.hash || "").replace(/^#/, "");
+    if (!raw || raw === "videos") return new URLSearchParams();
+    if (raw.startsWith("videos")) return new URLSearchParams(raw.slice("videos".length).replace(/^\?/, "").replace(/^&/, ""));
+    return new URLSearchParams();
+  }
+  function videosLaneFromHash() {
+    const lane = String(videosHashParams().get("lane") || "").toLowerCase();
+    return VIDEO_LANE_ORDER.includes(lane) ? lane : "";
+  }
+  function videosFocusFromHash() {
+    return String(videosHashParams().get("focus") || videosHashParams().get("film") || "").trim();
+  }
+  function videosJumpHref(filmKey) {
+    const key = String(filmKey || "").trim();
+    if (!key) return "#videos&lane=progress";
+    return `#videos&lane=progress&focus=${encodeURIComponent(key)}`;
+  }
+  function defaultVideosLane(b) {
+    const vs = uniqueVideos((((b || {}).tracker || {}).videos) || []);
+    if (vs.some(needsBenWatch)) return "uat";
+    return "progress";
+  }
+  // Apply once when Ben opens Videos with no lane in the hash and has not picked a chip this visit.
+  function ensureVideosLanding(b) {
+    if (current() !== "videos" || videoKey()) return;
+    if (routeView() === "producing") return;
+    const hashLane = videosLaneFromHash();
+    if (hashLane) {
+      seg = hashLane;
+      videosLaneChosen = true;
+      return;
+    }
+    if (videosLaneChosen || videosLandingApplied) return;
+    const tab = (location.hash || "").replace(/^#/, "").split("&")[0];
+    // Bare #videos, empty hash while on Videos, or #videos&… without lane.
+    if (tab && tab !== "videos") return;
+    seg = defaultVideosLane(b);
+    videosLandingApplied = true;
+  }
   function videoLane(v) {
     if (v.collapsed && isLive(v)) return null;
     if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
@@ -351,10 +394,14 @@
 
   function row(v, extra, href, opts) {
     const working = !!(opts && opts.working);
+    const focusKey = videosFocusFromHash();
+    const filmKey = videoFilmKey(v);
+    const focused = !!(focusKey && (v.key === focusKey || filmKey === focusKey
+      || String(v.key || "").startsWith(focusKey + ":") || p24InFocus(v.key, new Set([focusKey]))));
     const dot = working
       ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress on this cut"></span>`
       : "";
-    return `<a class="row${working ? " is-working" : ""}" href="${href || detailLink(v)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
+    return `<a class="row${working ? " is-working" : ""}${focused ? " is-focus" : ""}" href="${href || detailLink(v)}" data-video-key="${esc(v.key)}" data-film-key="${esc(filmKey)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
   const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
@@ -1238,6 +1285,10 @@
     const n=items.length||(f.last?1:0)||(active&&jobs?1:0);
     const cls=`ov-card p24-film-card${active?' is-working':''}${pctInfo.grew?' is-grew':''}${!pctInfo.grew?' is-flat':''}`;
     const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
+    // Explicit Videos jump — separate from expand/collapse (Ben, 7 Nov 2026).
+    // Parent film key only (OWB:029), never a Short's YouTube id suffix.
+    const jumpFilm = videoFilmKey({ key: f.film }) || f.film;
+    const jump=`<a class="p24-videos-jump" href="${esc(videosJumpHref(jumpFilm))}" data-videos-jump="${esc(jumpFilm)}">See on Videos <span aria-hidden="true">›</span></a>`;
     // Compact resting row (id, title, %, bar, one-line meta). Tap/expand opens the jobs checklist (Ben, 6 Nov ~23:07).
     const compact=`${dot}
       <div class="p24-film-top">
@@ -1246,7 +1297,8 @@
           <div class="p24-film-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pctInfo.bar}" aria-label="Film stage progress ${pctInfo.bar}%"><i style="width:${pctInfo.bar}%"></i></div>
         </div>
       </div>
-      <p class="p24-film-meta">${esc(meta)}</p>`;
+      <p class="p24-film-meta">${esc(meta)}</p>
+      ${jump}`;
     // Pulsing rows must always expand — never a bare article while work is in progress (Ben, 6 Nov ~23:33).
     if(!jobs && !active) return `<article class="${cls}">${compact}</article>`;
     const list=jobs||`<li class="p24-job is-progress" data-job-state="progress" aria-label="In progress"><span class="p24-job-spinner" role="img" aria-label="In progress"></span><span class="p24-job-main"><span class="p24-title wrap">Job in progress</span></span></li>`;
@@ -1852,6 +1904,7 @@
     const focused = document.activeElement;
     const focusStage = focused && focused.tagName === 'SUMMARY' && focused.parentElement.dataset.stage;
     const focusId = focused && focused.id;
+    if (board) ensureVideosLanding(board);
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
@@ -1906,6 +1959,7 @@
       const saved=expandedStages.get(key); if(el.open) saved.add(el.dataset.stage); else saved.delete(el.dataset.stage);
     }));
     document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => {
+      videosLaneChosen = true;
       seg = seg === btn.dataset.seg ? "all" : btn.dataset.seg;
       render();
     });
@@ -1914,6 +1968,23 @@
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
       render();
     });
+    // Jump links sit inside <summary>; stopPropagation so expand/collapse stays on the chevron/row tap.
+    document.querySelectorAll("a.p24-videos-jump").forEach(a => {
+      a.addEventListener("click", e => { e.stopPropagation(); });
+    });
+    const focusFilm = videosFocusFromHash();
+    if (tab === "videos" && focusFilm && !vk) {
+      const target = [...document.querySelectorAll("a.row[data-film-key], a.row[data-video-key]")].find(el => {
+        const film = el.getAttribute("data-film-key") || "";
+        const video = el.getAttribute("data-video-key") || "";
+        return film === focusFilm || video === focusFilm || video.startsWith(focusFilm + ":")
+          || p24InFocus(video, new Set([focusFilm])) || p24InFocus(film, new Set([focusFilm]));
+      });
+      if (target) requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+        target.classList.add("is-focus");
+      });
+    }
   }
 
   async function poll() {
@@ -1953,7 +2024,9 @@
     else window.scrollTo(0,0);
   }
   window.addEventListener("hashchange", () => {
-    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";}
+    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";videosLaneChosen=true;}
+    // Explicit lane in the hash counts as a chosen deep link for this visit.
+    if (videosLaneFromHash()) videosLaneChosen = true;
     render(); scrollAppTop();
   });
   render();
