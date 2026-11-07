@@ -202590,18 +202590,23 @@
           "at": "2026-11-07T17:04Z",
           "by": "cursor",
           "what": "step 1 of 5 done: tmux j2376-assemble rendering. About 50 of 131 cuts done. Log ~/_desk/logs/j2376-assemble.log"
+        },
+        {
+          "at": "2026-11-07T17:11Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Picture and mix are done. Master is about -14.5 LUFS and -1.0 dBTP before the gate pass. tmux j2376-assemble is in the gates."
         }
       ],
-      "remaining_action": "Render the 131-cut 034 picture on the NAS",
+      "remaining_action": "Run picture, music, loudness and sound-effect gates on the 034 master",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-07T17:04Z",
+        "at": "2026-11-07T17:11Z",
         "by": "cursor",
-        "note": "tmux j2376-assemble rendering. About 50 of 131 cuts done. Log ~/_desk/logs/j2376-assemble.log"
+        "note": "Picture and mix are done. Master is about -14.5 LUFS and -1.0 dBTP before the gate pass. tmux j2376-assemble is in the g"
       },
       "taskKeys": [
         "OWB:034"
