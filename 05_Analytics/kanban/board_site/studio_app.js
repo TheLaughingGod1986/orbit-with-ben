@@ -324,8 +324,7 @@
     return `<a class="row" href="${href || detailLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
-  const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
-      <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs waiting</span></div></div>`;
+  const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
 
@@ -1491,7 +1490,7 @@
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
-      <div class="overview-stats" aria-label="Studio video counts"><a class="ov-stat" href="#review"><b>${s.ready.length}</b><span>To review</span></a><a class="ov-stat" href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a class="ov-stat" href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${needsAttentionBanner(b)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
@@ -1547,7 +1546,9 @@
       if (id === "progress") body = (jobList(items) + studio.map(jobCard).join("")) || empty("No agent is working this minute.");
       else if (id === "uat") body = (items.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}<a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("")) || empty("Nothing waiting for your watch.");
       else body = list(items, limitFor(id)) || empty(id === "backlog" ? "Backlog is empty." : "Nothing here.");
-      return section(`${copy.title}`, count, blurb + body);
+      // Collapsible lane sections (open when selected or when viewing all).
+      const open = seg === "all" || seg === id ? " open" : "";
+      return `<details class="lane-fold"${open}><summary>${esc(copy.title)} <span class="n">${count}</span></summary>${blurb}${body}</details>`;
     };
     return `<header class="top"><h1>Videos</h1></header>
       <p class="meta">Only UAT needs you. Pass a cut → Passed (ready to schedule). Leave notes → In progress for the agents.</p>
@@ -1607,12 +1608,12 @@
     const reviewed = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at));
     const done = reviewed.slice(0, 8)
       .map(v => row(v, `<span class="tag ${v.check.verdict === "ok" ? "green" : "amber"}">${v.check.verdict === "ok" ? "You OK'd" : "You asked for changes"} ${esc(v.check.version || "")}</span>`)).join("");
-    // Two equal summary chips (Videos count-chip language). Not filters — both lists stay visible below.
+    // Two equal summary chips. Not filters — pending stays above; reviewed can collapse but starts open.
     const chips = `<div class="seg two" aria-label="Review counts"><div><b>${needList.length}</b><span>Needs your review</span></div><div><b>${reviewed.length}</b><span>Reviewed</span></div></div>`;
     return `<header class="top"><h1>Review</h1></header><p class="meta">Finished videos only. Everything else is the agents' job.</p>
       ${chips}
       ${section("Needs your review", needList.length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
-      ${section("Reviewed", null, done || empty("No reviews yet."))}`;
+      <details class="reviewed-fold" open><summary>Reviewed <span class="n">${reviewed.length}</span></summary>${done || empty("No reviews yet.")}</details>`;
   }
 
   // UAT screen (Ben, 28 Oct): the cut in a player, notes stamped with the playback time, Approve or Request changes.
@@ -1665,16 +1666,20 @@
   function agents(b, now) {
     const m = b.models || {}, jobs = ((b.owb || {}).jobs) || [], c = m.chief || {}, s = summary(b, now);
     const status = Object.fromEntries((m.models || []).map(x => [x.id, x]));
-    const team = Object.entries(AGENTS).map(([id, name]) => {
+    // Working first, then idle, then unavailable (red). Content of each row is unchanged.
+    const rank = { green: 0, amber: 1, red: 2 };
+    const teamRows = Object.entries(AGENTS).map(([id, name]) => {
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
       let why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
-      return `<div class="row agent"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
-        <span class="meta">${esc(clip(why, 110))}</span></div></div>`;
-    }).join("");
+      const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
+      return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
+        <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };
+    }).sort((a, b) => (rank[a.st] ?? 9) - (rank[b.st] ?? 9));
+    const team = teamRows.map(r => r.html).join("");
     const pools = (b.credits || {}).pools || {};
     // Every model gets a bar where a real reading exists (Ben, 29 Oct: "accurate progress for all the models").
     // Grok Bot has no meter of its own: it runs on the same weekly pool as Cursor (the Mini reads it from
@@ -1693,10 +1698,11 @@
       ["Grok", "cursor", "chief"], ["Claude", "claude", "claude"], ["Gemini", "gemini", "gemini"]]
       .filter(([, id, alias]) => pools[id] || alias).map(([name, id, alias]) => tile(name, id, alias)).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
-      <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div><b>Chief: ${esc(c.name || "nobody")}</b>
-        <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
+      <p class="meta">AI agents, their status, and usage credits.</p>
       ${jobTiles(s.jobs)}
-      ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
+      <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div class="body"><b>Chief: ${esc(c.name || "nobody")} <span class="tag ${c.agent ? "green" : "red"}">${c.agent ? "Coordinating" : "Down"}</span></b>
+        <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
+      ${section("Agent team", Object.keys(AGENTS).length, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
       ${agentQueue(b,now)}
       ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
@@ -1757,7 +1763,11 @@
     const planned=rows.filter(r=>!r.scheduled && londonDay(r.at)>=bounds.start && londonDay(r.at)<bounds.end);
     const next=rows.filter(r=>londonDay(r.at)>=bounds.end && londonDay(r.at)<bounds.nextEnd);
     const later=rows.filter(r=>londonDay(r.at)>=bounds.nextEnd);
+    // Confirmed YouTube schedules only for the Scheduled chip — planned dates stay labelled in the list.
+    const confirmed = rows.filter(r => r.scheduled).length;
+    const chips = `<div class="seg" aria-label="Schedule counts"><div><b>${actualWeek.length}</b><span>This week</span></div><div><b>${next.length}</b><span>Next week</span></div><div><b>${confirmed}</b><span>Scheduled</span></div></div>`;
     return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
+      ${chips}
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
       ${routeView()==='week'?'<a class="more" href="#schedule">Full schedule</a>':`${planned.length?section("This week · planned",planned.length,byDay(planned)):''}${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`}`;
   }
