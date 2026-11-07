@@ -277,6 +277,56 @@
         "near_black_fraction_y_lt_20": 0.845
       },
       "metadata_note": "API date_created differs from description: preserve both; do not use as a spoken date."
+    },
+    {
+      "asset_id": "hdev_earth_views_iss_2019",
+      "title": "Earth Views from the International Space Station",
+      "description": "NASA HQ compilation of High Definition Earth Viewing (HDEV) external-camera views from the Columbus module. The cut used here is the daylight limb at source 49.00\u201353.36 s: moving cloud field, blue atmospheric dome, black space above, and a corner of station hardware. It is not a sunrise and the sun is not in frame. The reel's NASA end card is outside this interval.",
+      "source_page": "https://images.nasa.gov/",
+      "source_api": "https://images-api.nasa.gov/search?q=Earth%20Views%20from%20the%20International%20Space%20Station&media_type=video",
+      "source_url": "https://images-assets.nasa.gov/video/Earth%20Views%20from%20the%20International%20Space%20Station/Earth%20Views%20from%20the%20International%20Space%20Station~orig.mp4",
+      "nasa_id": "Earth Views from the International Space Station",
+      "credit": "NASA",
+      "local_path": "/Users/ben/_desk/J2141-atmosphere-v02/hdev_earth_views_orig.mp4",
+      "sha256": "184b9ebaf6624b219455b0d4a72967e05d3e6cebc034ac8036fcc0198a17a8ef",
+      "bytes": 234140076,
+      "width": 1280,
+      "height": 720,
+      "rows": [
+        41
+      ],
+      "download_status": "downloaded",
+      "licence_status": "NASA_HQ_HDEV_editorial_use_subject_to_NASA_media_conditions",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "licence_evidence_path": "/Users/ben/_desk/J2141-atmosphere-v01/NASA_MEDIA_POLICY.html",
+      "licence_evidence_sha256": "489bce16d6cd12682526f1f21ab1d46f573a34f5b47e10ee922af4f023fccfe4",
+      "source_evidence_path": "/Users/ben/_desk/J2141-atmosphere-v02/metadata.json",
+      "source_evidence_sha256": "749c95db8a639b9a873421da650dd5526bcfe4b24191341721334722ac412e70",
+      "rights_review": "NASA images record credits the HDEV experiment and names no third-party copyright holder. Credit NASA. Editorial use only, no endorsement. The reel was assembled in Premiere at NASA HQ and ends on a NASA logo outside this cut.",
+      "generation_authorized": false,
+      "native_motion": true,
+      "assigned_uses": 0,
+      "max_uses": 2,
+      "review_status": "candidate_plate_not_admitted",
+      "review_note": "Third and final in-depth R41 candidate. Daylight moving limb, not a sunrise. Mean luma about 125\u2013131 and p95 about 228\u2013239, so the bright-Earth test passes; about 30% of the frame is black space above the limb. Station hardware sits in the upper right. 1.5\u00d7 scale from 1280\u00d7720. Silent 1920\u00d71080 / 25 fps / 109 frames / 4.36 s. Not KEEP, not a polish pass, not a sunrise substitution.",
+      "plate": {
+        "path": "/Users/ben/_desk/J2141-atmosphere-v02/r41_hdev_daylight_limb_v01.mp4",
+        "sha256": "3aaed5339f18ce790b2e1cc855e2150594c79f8ace6c2b26bd862fa9f2fdb8d3",
+        "source_start_s": 49.0,
+        "duration_s": 4.36,
+        "frames": 109,
+        "fps": 25,
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "audio": false,
+        "scale_factor": 1.5,
+        "stretch": false
+      },
+      "preview_path": "/Users/ben/_desk/J2141-atmosphere-v02/hdev_earth_views_preview.mp4",
+      "preview_sha256": "aa3ce01c86b326aaa08279db5863f24a9aa3a3b2ea4ab73533f2ac203cac626b",
+      "contact_sheet": "/Users/ben/_desk/J2141-atmosphere-v02/CONTACT_R41_HDEV_v01.jpg",
+      "contact_sheet_sha256": "802b98ee6469138aae6b51b854b82170ac707dcd8c25406f8f5977f6a01b24aa"
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -287,9 +337,18 @@
   },
   "r41_investigation": {
     "date": "2026-11-07",
-    "candidates_examined": 2,
-    "status": "two_stills_inspected_not_admitted",
-    "next_action": "Chief/editor chooses bounded bright moving ISS limb source or a reviewed two-plate still treatment; do not recheck these unchanged originals as new candidates.",
-    "remaining_budget": "At most one further in-depth candidate in this R41 investigation; do not reset the 20-minute budget."
+    "candidates_examined": 3,
+    "status": "third_candidate_daylight_limb_cut_not_admitted",
+    "examined": [
+      "iss059e027932",
+      "iss069e025345",
+      "hdev_earth_views_iss_2019"
+    ],
+    "next_action": "Archive search for R41 is closed. Chief decides whether this daylight HDEV limb is the row-41 fallback or scopes a separate sunrise treatment. Do not recheck these three originals.",
+    "remaining_budget": "Exhausted. Three candidates examined in depth. Do not reset the 20-minute budget."
+  },
+  "r41_hdev_contact_sheet": {
+    "path": "/Users/ben/_desk/J2141-atmosphere-v02/CONTACT_R41_HDEV_v01.jpg",
+    "sha256": "802b98ee6469138aae6b51b854b82170ac707dcd8c25406f8f5977f6a01b24aa"
   }
 }

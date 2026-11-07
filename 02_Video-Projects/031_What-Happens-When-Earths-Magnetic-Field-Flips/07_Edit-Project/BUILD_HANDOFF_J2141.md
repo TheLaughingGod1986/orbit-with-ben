@@ -1,3 +1,38 @@
+## MacBook continuation — 7 Nov, R41 HDEV daylight limb
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**. This uses the one remaining in-depth R41 candidate. The archive
+search for that row is now closed. No KEEP, PASS or stage approval.
+
+The two earlier stills stay unadmitted (too dark, no motion). The new
+candidate is the NASA HQ HDEV reel *Earth Views from the International
+Space Station*. Source interval 49.00–53.36 s is a bright moving limb:
+clouds travel, the blue atmospheric dome is visible, and a corner of
+station hardware stays in the upper right. It is daylight. The sun is
+not in frame, so this is not a sunrise. The reel's NASA end card is
+outside the cut.
+
+Silent plate, outside git:
+`/Users/ben/_desk/J2141-atmosphere-v02/r41_hdev_daylight_limb_v01.mp4`
+(1920×1080, 25 fps, 109 frames, 4.36 s, yuv420p, no audio, 1.5× from
+1280×720). SHA-256
+`3aaed5339f18ce790b2e1cc855e2150594c79f8ace6c2b26bd862fa9f2fdb8d3`.
+Full decode is error-free. Sample mean luma is about 125–131 and p95
+about 228–239. About 30% of the frame is black space above the limb.
+`HARVEST_R41_HDEV_TECHNICAL_CHECK_v01.json` records those checks.
+`HARVEST_POOL_v01.json` now has nine assets. Assigned uses stay at 0.
+
+Reproduce into a fresh path (existing files are refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/cut_r41_hdev.py --source /Users/ben/_desk/J2141-atmosphere-v02/hdev_earth_views_orig.mp4 --out <fresh.mp4>
+```
+
+£0. No paid generation, no YouTube change, no NAS delete. Chief decides
+whether this daylight limb is the row-41 fallback. Do not recheck the
+three originals. Still unfinished: the wider licensed harvest, the
+progressive timeline (PR #571), composites and the picture gates.
+
 ## MacBook continuation — 7 Nov, R40 and R47 multipole plates
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
