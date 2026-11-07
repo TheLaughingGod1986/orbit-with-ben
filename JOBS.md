@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2089 | mini | blocked | codex | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
-| J2141 | mini | claimed | macbook-2 | 2026-11-07T17:21Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
+| J2141 | mini | claimed | macbook-2 | 2026-11-07T17:27Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
-| J2275 | mini | claimed | codex | 2026-11-07T17:23Z | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
+| J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2287 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2245 |  |
