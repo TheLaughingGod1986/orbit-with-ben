@@ -124,12 +124,12 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 3 d | 16 | 62.5% | too few to judge | - | no read |
-| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 5 d | 127 | 35.6% | MISS | 115.3% | LOOP |
-| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 6 d | 86 | 32.1% | too few to judge | 84.0% | too few to judge |
-| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 7 d | 78 | 25.9% | too few to judge | 53.6% | too few to judge |
-| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 9 d | 269 | 21.7% | MISS | 78.6% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 10 d | 93 | 73.1% | too few to judge | 64.4% | too few to judge |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 11 d | 231 | 29.6% | MISS | 65.7% | WATCH |
+| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 4 d | 35 | 55.6% | too few to judge | 191.7% | too few to judge |
+| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 6 d | 130 | 35.2% | MISS | 112.0% | LOOP |
+| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 7 d | 89 | 32.9% | too few to judge | 77.3% | too few to judge |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 8 d | 76 | 26.6% | too few to judge | 52.0% | too few to judge |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 10 d | 270 | 21.7% | MISS | 77.3% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 11 d | 112 | 75.8% | PASS | 68.4% | WATCH |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 12 d | 231 | 29.6% | MISS | 65.2% | WATCH |
 
-Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 2 of 3 at 70%+.
+Stayed to watch: 1 of 4 judged Shorts at 60%+. Average viewed: 2 of 4 at 70%+.
