@@ -190024,6 +190024,11 @@
           "at": "2026-11-07T05:20Z",
           "by": "cursor",
           "what": "waits on Ben: Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky. (by 2026-11-09 18:00 London)"
+        },
+        {
+          "at": "2026-11-07T05:20Z",
+          "by": "cursor",
+          "what": "waits on Ben: Watch AR3 v14, the 2027 eclipse Short. The black band is gone and it ends on up. (by 2026-11-09 18:00 London)"
         }
       ],
       "remaining_action": "Waiting on Ben's watch of AR2 v13 and AR3 v14",
@@ -190038,16 +190043,28 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "awaits_ben": {
-        "what": "Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky.",
-        "file": "OWB UAT/owb_ar2_iss_2030_deorbit_v13/owb_ar2_iss_2030_deorbit_v13_PHONE.mp4",
-        "version": "v13",
-        "due": "2026-11-09T18:00Z",
-        "ifNot": "AR2 stays unscheduled. Nothing airs.",
-        "title": "AR2 v13 Where Will the ISS Crash?",
-        "number": "030",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky.",
+          "file": "OWB UAT/owb_ar2_iss_2030_deorbit_v13/owb_ar2_iss_2030_deorbit_v13_PHONE.mp4",
+          "version": "v13",
+          "due": "2026-11-09T18:00Z",
+          "ifNot": "AR2 stays unscheduled. Nothing airs.",
+          "title": "AR2 v13 Where Will the ISS Crash?",
+          "number": "030",
+          "type": "short"
+        },
+        {
+          "what": "Watch AR3 v14, the 2027 eclipse Short. The black band is gone and it ends on up.",
+          "file": "OWB UAT/owb_ar3_2027_eclipse_v14/owb_ar3_2027_eclipse_v14_PHONE.mp4",
+          "version": "v14",
+          "due": "2026-11-09T18:00Z",
+          "ifNot": "AR3 stays unscheduled. Nothing airs.",
+          "title": "AR3 v14 2027 eclipse",
+          "number": "030",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J2230",
