@@ -201389,13 +201389,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-07T14:09Z",
-      "eta": "2026-11-07T16:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T13:36Z",
-      "result": "",
+      "result": "parked for Chief: CONDITION UNMET in jobs/reviews/J2365/REVIEW.md (ea8213d71d). J2332 bounded Flow Veo fallback is done and freshly re-hashed on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) remain verified on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 13:39Z probe passed audio_input 0.86, failed video). Under J2306 (PR610 / daa2f24bd92e) and J2349, J2334 must accept exact hashes before J2299 reopens. Elected Chief (chief): run jobs.py wait J2299 --agent chief --type dependency --recheck J2365 --check-at 2026-11-07T20:15:00Z and close J2365.",
       "history": [
         {
           "at": "2026-11-07T13:36Z",
@@ -201436,6 +201436,11 @@
           "at": "2026-11-07T14:16Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: Verification complete (CONDITION UNMET: J2332 done, J2333/J2334 still open, no passing moving_video_input probe); parking J2365 for Chief"
+        },
+        {
+          "at": "2026-11-07T14:16Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: CONDITION UNMET in jobs/reviews/J2365/REVIEW.md (ea8213d71d). J2332 bounded Flow Veo fallback is done and freshly re-hashed on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) remain verified on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 13:39Z probe passed audio_input 0.86, failed video). Under J2306 (PR610 / daa2f24bd92e) and J2349, J2334 must accept exact hashes before J2299 reopens. Elected Chief (chief): run jobs.py wait J2299 --agent chief --type dependency --recheck J2365 --check-at 2026-11-07T20:15:00Z and close J2365."
         }
       ],
       "remaining_action": "Elected Chief (chief): record wait --recheck J2365 on J2299 and close J2365",
