@@ -201804,17 +201804,22 @@
           "at": "2026-11-07T15:12Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Retimed MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md; verified clip_check 74 rows PASS against stt_timeline_offset_v01.json"
+        },
+        {
+          "at": "2026-11-07T15:15Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Pushed commit e96c984324 to branch j2353-pluto-shot-list (PR #626); all 4 J2362 items repaired and verified with clip_check 74 rows PASS"
         }
       ],
-      "remaining_action": "Write J2367 review/repair note and CHECKS.json, commit and push to PR #626, and mark J2367 done",
+      "remaining_action": "Completed J2367 repairs on PR #626 (e96c984324); ready for dependent Chief re-review",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-07T15:12Z",
+        "at": "2026-11-07T15:15Z",
         "by": "gemini",
-        "note": "Retimed MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md; verified clip_check 74 rows PASS against stt_timeline"
+        "note": "Pushed commit e96c984324 to branch j2353-pluto-shot-list (PR #626); all 4 J2362 items repaired and verified with clip_ch"
       },
       "rerouted_from": {
         "needs": "mini",
