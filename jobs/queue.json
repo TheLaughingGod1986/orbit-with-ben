@@ -202605,18 +202605,23 @@
           "at": "2026-11-07T17:21Z",
           "by": "cursor",
           "what": "step 3 of 5 done: Static re-render reached mix. 131 cuts logged. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. No .done file yet."
+        },
+        {
+          "at": "2026-11-07T17:24Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Master muxed at 226 MB. picture_qa is running on the static re-render. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log."
         }
       ],
-      "remaining_action": "Finish the Pluto mix, mux the master, and run the picture, music and sound gates",
+      "remaining_action": "Wait for the picture gate on the new static master, then fix whatever it still fails",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T17:21Z",
+        "at": "2026-11-07T17:24Z",
         "by": "cursor",
-        "note": "Static re-render reached mix. 131 cuts logged. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. No .done file y"
+        "note": "Master muxed at 226 MB. picture_qa is running on the static re-render. tmux j2376-assemble. Log ~/_desk/logs/j2376-assem"
       },
       "taskKeys": [
         "OWB:034"
