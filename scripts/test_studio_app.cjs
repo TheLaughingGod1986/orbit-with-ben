@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, setBoard: b => { board = b; }, setSeg: s => { seg = s; }};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -111,6 +111,47 @@ const laneChipOrder = [...videosHtml.matchAll(/data-seg="([^"]+)"/g)].map(m => m
 assert.deepEqual(laneChipOrder, ['backlog', 'todo', 'progress', 'qa', 'uat', 'passed', 'scheduled', 'live', 'postlive'], 'Videos lane chips stay in locked 3×3 order');
 assert(videosHtml.includes('<b>') && videosHtml.includes('<span>Backlog</span>'), 'lane chips keep big counts above labels');
 assert(!/To do[\s\S]*Needs your review/.test(videosHtml) || videosHtml.includes('UAT'), 'Ben review CTA sits in UAT');
+assert(!videosHtml.includes('An agent is on it'), 'In progress blurb no longer claims every card has an agent on it');
+assert(t.VIDEO_LANE_COPY.progress.blurb.includes('Working now first'), 'In progress helper names Working now first');
+
+// Videos → In progress: claimed work first + Overview green pulse; waiting stays in-lane below (Ben, 7 Nov 2026).
+const waitingCut = v({key: 'HOS:011', channel: 'HOS', number: '011', title: 'Anesthesia: The Day Surgery Stopped Hurting',
+  jobs: [{id: 'Jwait', status: 'open', title: 'Voice'}],
+  production: {milestones: [{id:'topic',state:'done'},{id:'script',state:'done'},{id:'sources',state:'done'},{id:'vo',state:'open'},{id:'shots',state:'todo'},{id:'picture',state:'todo'},{id:'edit',state:'todo'},{id:'thumbs',state:'todo'},{id:'qa',state:'todo'}],
+    eta: {state:'estimated', lowerMinutes: 4000, upperMinutes: 5000, confidence: 'medium'}}});
+const workingCut = v({key: 'OWB:034', channel: 'OWB', number: '034', title: 'What Would Happen If You Landed On Pluto',
+  jobs: [{id: 'Jlive', status: 'claimed', by: 'codex', title: '034 picture harvest', remaining_action: 'harvest plates'}],
+  production: {milestones: [{id:'topic',state:'done'},{id:'script',state:'done'},{id:'sources',state:'done'},{id:'vo',state:'done'},{id:'shots',state:'done'},{id:'picture',state:'open'},{id:'edit',state:'todo'},{id:'thumbs',state:'todo'},{id:'qa',state:'todo'}],
+    eta: {state:'estimated', lowerMinutes: 9000, upperMinutes: 11000, confidence: 'medium'}}});
+assert.equal(t.videoLane(waitingCut), 'progress');
+assert.equal(t.videoLane(workingCut), 'progress');
+assert(t.videoHasActiveWork(workingCut) && !t.videoHasActiveWork(waitingCut), 'active-work signal is claimed only');
+assert.deepEqual(t.partitionProgressVideos([waitingCut, workingCut]).working.map(x => x.key), ['OWB:034']);
+assert.deepEqual(t.partitionProgressVideos([waitingCut, workingCut]).waiting.map(x => x.key), ['HOS:011']);
+t.setSeg('progress');
+const progressBoard = {
+  tracker: {videos: [waitingCut, workingCut]},
+  progress24h: {hours: 24, films: [{film: 'OWB:034', title: 'Pluto', from: 33, to: 44, items: [{id: 'Jlive', status: 'claimed'}]}], moved: []},
+  owb: {jobs: [{id: 'Jlive', status: 'claimed', by: 'codex', film: '034', repo: 'owb', title: '034 picture harvest'}]},
+};
+const progressHtml = t.renderTab('videos', progressBoard, NOW);
+const workingHead = progressHtml.indexOf('class="lane-sub">Working now');
+const waitingHead = progressHtml.indexOf('class="lane-sub">Waiting');
+assert(workingHead >= 0 && waitingHead >= 0, 'In progress splits Working now and Waiting subheads');
+assert(workingHead < waitingHead, 'Working now section precedes Waiting');
+assert(progressHtml.indexOf('Pluto') < progressHtml.indexOf('Anesthesia'),
+  'claimed cut renders before waiting cut even when waiting has nearer UAT');
+assert(/data-seg="progress"[^>]*>\s*<b>2<\/b>/.test(progressHtml), 'In progress chip count still includes waiting items');
+const workingRow = t.videoProductionRow(workingCut, NOW, progressBoard);
+const waitingRow = t.videoProductionRow(waitingCut, NOW, progressBoard);
+assert(workingRow.includes('p24-working-dot') && workingRow.includes('is-working') && workingRow.includes('Working now'),
+  'claimed cut reuses Overview working-now visual');
+assert(workingRow.includes('33% → 44%') && workingRow.includes('p24-delta'),
+  'claimed cut can show live film progress delta from progress24h');
+assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-working'),
+  'waiting cut does not impersonate live work');
+assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
+t.setSeg('all');
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
