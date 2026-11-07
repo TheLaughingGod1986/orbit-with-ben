@@ -198265,13 +198265,13 @@
       "stage": "vo",
       "after": "J2340",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T04:13Z",
-      "eta": "2026-11-07T04:58Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-07T04:10Z",
-      "result": "",
+      "result": "FIX ruling complete, PR615 merged with CI PASS. No VO approval, no shot-list release and no further spend authorised. J2342 owns bounded demonstrated-audio diagnosis; J2157 remains on typed audio_input hold, original noon check retained. v04 request and Ch5 crop hashes verified; original media preserved. Nothing on Ben.",
       "history": [
         {
           "at": "2026-11-07T04:10Z",
@@ -198302,6 +198302,11 @@
           "at": "2026-11-07T04:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR615 merged after CI PASS; v04 and Ch5 hashes independently match, raw target token confirmed, audio_input successor and typed parent hold verified. No spend or media changes."
+        },
+        {
+          "at": "2026-11-07T04:16Z",
+          "by": "codex",
+          "what": "done: FIX ruling complete, PR615 merged with CI PASS. No VO approval, no shot-list release and no further spend authorised. J2342 owns bounded demonstrated-audio diagnosis; J2157 remains on typed audio_input hold, original noon check retained. v04 request and Ch5 crop hashes verified; original media preserved. Nothing on Ben."
         }
       ],
       "remaining_action": "Decision complete; J2342 owns audio diagnosis and J2157 remains unapproved",
@@ -198316,7 +198321,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/615"
     },
     {
       "id": "J2342",
