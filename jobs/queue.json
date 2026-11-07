@@ -198550,9 +198550,14 @@
           "at": "2026-11-07T06:55Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Ran capability_probe.py gemini --record (audio_input PASS 0.94, moving_video_input FAIL); verified v04 and v03 hashes on Mini and NAS"
+        },
+        {
+          "at": "2026-11-07T07:03Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Audio/provenance/1-Hz frame QA PASS recorded in HOS PR #455 (72608f30) and Desk #180 6703687627; parking on moving_video_input capability hold"
         }
       ],
-      "remaining_action": "Complete audio_input and provenance/frame audit of HOS 008 Short A v04 and record hash-specific QA note",
+      "remaining_action": "Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
       "due": "2026-11-18T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -198570,11 +198575,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-07T06:55Z",
+        "at": "2026-11-07T07:03Z",
         "by": "gemini",
-        "note": "Ran capability_probe.py gemini --record (audio_input PASS 0.94, moving_video_input FAIL); verified v04 and v03 hashes on"
+        "note": "Audio/provenance/1-Hz frame QA PASS recorded in HOS PR #455 (72608f30) and Desk #180 6703687627; parking on moving_video"
       },
       "taskKeys": [
         "HOS:008"
