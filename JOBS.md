@@ -18,7 +18,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0862 | mini | blocked | codex | – | 009 vo · vo · HOS 009 + 010: Shorts voiceover (2 Shorts each) from the v02 Shorts scripts, vo_check, park for Chief |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
-| J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
+| J0912 | mini | open | – | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0958 | mini | blocked | codex | – | 006 thumbs · studio · HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare | 6398691247 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
@@ -59,7 +59,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2220 | mini | blocked | cursor | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
-| J2224 | mini | claimed | gemini | 2026-11-07T03:12Z | for gemini · review · `gemini-argon` · Review J0912: Short A v03 picture_qa key-ribbon FIX decision |  |
 | J2228 | mini | open | – | – | studio · AR1 v06 (2024 YR4 Moon) Short: Ben OK'd 5 Nov 16:32. Upload private and schedule Fri 27 Nov 11:30 London |  |
 | J2229 | mini | open | – | – | assembly · AR2 v12 + AR3 v13 Shorts: Ben's fixes (top of frame cut off; endings stop mid-sentence) -> AR2 v13, AR3 v14 |  |
 | J2230 | mini | blocked | codex | – | assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |

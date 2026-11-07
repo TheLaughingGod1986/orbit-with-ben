@@ -77509,13 +77509,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-05T15:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "waiting for review J2224 (rule H): Short A v03 built, not a PASS. picture_qa FAIL: key-ribbon at 0:18 is the same stretch as 0:07 (8s plate cannot start 10s later). Open, polish, music and sfx level PASS. Master sha f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6 on the Mini and NAS. Desk #180 comment 6661680750. No ",
+      "result": "Reopened by J2224 (jobs/reviews/J2224/REVIEW.md) under Rule H FIX: build hos_008_short_A_v04.mp4 (£0, existing approved HOS 008 KEEP plates only) by replacing row s06 (15.76-19.52s, currently duplicate 13_key_ribbon_t1.mp4 offset 4.10s that fails picture_qa.py) with approved Part 4 storm-shed key/ribbon plate 04_Generated-Clips/part04/raw/v01/09_charge_string_c1_t1.mp4 (sha256 611e2633, in_s 0.60s; or 09_charge_string_t1.mp4 sha256 e2045b36, in_s 0.60s), keeping all other 7 rows, timings, locked VO 40ed4c4e, NEVER HIT IT hook, PHILADELPHIA · 1752 overlay (2.7-6.2s), 9-14s title, bed, SFX, and -14.0±0.5 LUFS mix unchanged; run all 5 gates (gate_shorts_open, polish_gate, picture_qa, music_gate, sfx_kit level -> all PASS), stage v04 on Mini+NAS, post on HOS Desk #180, and block 'parked for Chief: Short PASS' (no upload).",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -77676,6 +77676,11 @@
           "at": "2026-11-05T15:25Z",
           "by": "chief",
           "what": "rule H: decision moved from the Chief to review J2224"
+        },
+        {
+          "at": "2026-11-07T01:46Z",
+          "by": "gemini",
+          "what": "review J2224 FIX: reopened to build hos_008_short_A_v04.mp4 (£0) replacing row s06 (15.76-19.52s duplicate 13_key_ribbon_t1.mp4) with approved Part 4 storm-shed key/ribbon plate 04_Generated-Clips/part04/raw/v01/09_charge_string_c1_t1.mp4 (sha256 611e2633, in_s 0.60s; or 09_charge_string_t1.mp4 sha256 e2045b36), pass all 5 gates (gate_shorts_open, polish_gate, picture_qa, music_gate, sfx_kit level), stage on Mini+NAS, and post on Desk #180 (see jobs/reviews/J2224/REVIEW.md)"
         }
       ],
       "kind": "assembly",
@@ -77683,17 +77688,9 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "escalated_at": "2026-11-05T08:34Z",
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Waiting for review J2224 (Rule H KEEP/FIX of Short A v03 picture_qa key-ribbon)",
-      "due": "2026-11-18T18:00:00Z",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-05T15:17Z",
-        "by": "cursor",
-        "note": "Short A v03 sha f88315e0, 23.3s, 952x1692. Open/polish/music/sfx PASS. picture_qa FAIL key-ribbon return at 0:18. Desk 6"
-      }
+      "remaining_action": "Build hos_008_short_A_v04.mp4 (£0) replacing S06 (15.76-19.52s) with 09_charge_string_c1_t1.mp4 (in_s 0.60s), pass all 5 gates incl. picture_qa, stage on Mini+NAS, post on Desk #180, and block for review",
+      "due": "2026-11-18T18:00:00Z"
     },
     {
       "id": "J0913",
@@ -189377,13 +189374,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T01:12Z",
-      "eta": "2026-11-07T03:12Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T15:25Z",
-      "result": "",
+      "result": "FIX (jobs/reviews/J2224/REVIEW.md): audited hos_008_short_A_v03.mp4 (sha256 f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6, 23.24s, 952x1692), commit 830f6b35, Desk #180 6661680750, and 1 Hz frames. Open, polish, music, and sfx level gates PASS, and Chief h47 recipe (locked VO 40ed4c4e, NEVER HIT IT hook, single PHILADELPHIA · 1752 overlay at 2.7-6.2s, 9-14s title, <=1.0s loop tail, -14.3 LUFS / -1.9 dBTP) is satisfied, but picture_qa FAILs on row s06 (15.76-19.52s) because 8.0s 13_key_ribbon_t1.mp4 is reused at offsets 0.60s and 4.10s (3.50s < 10.0s rule) and cuts back to the indoor sunlit table during the storm sequence. Verified approved HOS 008 KEEP Part 4 storm-shed key/ribbon plates on Mini+NAS: 04_Generated-Clips/part04/raw/v01/09_charge_string_c1_t1.mp4 (sha256 611e2633, in_s 0.60s; polish_gate PASS 0 warns, picture_qa PASS 0 fails) and 09_charge_string_t1.mp4 (sha256 e2045b36, in_s 0.60s). Reopened J0912 in one commit to build hos_008_short_A_v04.mp4 (£0, no upload) with S06 replaced and all 5 gates PASS.",
       "history": [
         {
           "at": "2026-11-05T15:25Z",
@@ -189419,9 +189416,19 @@
           "at": "2026-11-07T01:46Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified hos_008_short_A_v03.mp4 (f88315e0) 1 Hz frames/gates and approved HOS 008 KEEP replacement plates 09_charge_string_c1_t1.mp4 (611e2633) and 09_charge_string_t1.mp4 (e2045b36); prepared jobs/reviews/J2224/REVIEW.md"
+        },
+        {
+          "at": "2026-11-07T01:46Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Applied Rule H FIX: wrote jobs/reviews/J2224/REVIEW.md and reopened J0912 with £0 S06 storm-key plate replacement recipe for v04"
+        },
+        {
+          "at": "2026-11-07T01:46Z",
+          "by": "gemini",
+          "what": "done: FIX (jobs/reviews/J2224/REVIEW.md): audited hos_008_short_A_v03.mp4 (sha256 f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6, 23.24s, 952x1692), commit 830f6b35, Desk #180 6661680750, and 1 Hz frames. Open, polish, music, and sfx level gates PASS, and Chief h47 recipe (locked VO 40ed4c4e, NEVER HIT IT hook, single PHILADELPHIA · 1752 overlay at 2.7-6.2s, 9-14s title, <=1.0s loop tail, -14.3 LUFS / -1.9 dBTP) is satisfied, but picture_qa FAILs on row s06 (15.76-19.52s) because 8.0s 13_key_ribbon_t1.mp4 is reused at offsets 0.60s and 4.10s (3.50s < 10.0s rule) and cuts back to the indoor sunlit table during the storm sequence. Verified approved HOS 008 KEEP Part 4 storm-shed key/ribbon plates on Mini+NAS: 04_Generated-Clips/part04/raw/v01/09_charge_string_c1_t1.mp4 (sha256 611e2633, in_s 0.60s; polish_gate PASS 0 warns, picture_qa PASS 0 fails) and 09_charge_string_t1.mp4 (sha256 e2045b36, in_s 0.60s). Reopened J0912 in one commit to build hos_008_short_A_v04.mp4 (£0, no upload) with S06 replaced and all 5 gates PASS."
         }
       ],
-      "remaining_action": "Apply Rule H FIX via jobs.with_git: commit jobs/reviews/J2224/REVIEW.md, reopen J0912 with S06 replacement recipe, and close J2224",
+      "remaining_action": "Done: J2224 FIX review applied; J0912 reopened for v04 S06 plate replacement",
       "kind": "review",
       "review_of": "J0912",
       "rerouted_from": {
@@ -189434,15 +189441,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
         "at": "2026-11-07T01:46Z",
         "by": "gemini",
-        "note": "Verified hos_008_short_A_v03.mp4 (f88315e0) 1 Hz frames/gates and approved HOS 008 KEEP replacement plates 09_charge_str"
+        "note": "Applied Rule H FIX: wrote jobs/reviews/J2224/REVIEW.md and reopened J0912 with £0 S06 storm-key plate replacement recipe"
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2224/REVIEW.md"
     },
     {
       "id": "J2225",
