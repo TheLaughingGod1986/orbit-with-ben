@@ -160266,7 +160266,7 @@
       "ref": "J1754",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J2324",
       "eta_min": 120,
       "status": "blocked",
       "by": "cursor",
@@ -160274,7 +160274,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:51Z",
-      "result": "parked for Chief: review and merge history-of-science PR 450, then at an idle boundary run hos_desk.py refresh --apply. Watcher PID 8834 was left running because the installed file does not contain j1809-role-routing. No watermark reset and no historical recovery.",
+      "result": "Chief FIX by codex: HOS PR450 head 5f3feb7753 fails safe idle refresh, historical literal replay fence and visible role handback. 12 tests pass; three isolated probes reproduce defects. Evidence OWB PR603 and HOS PR450 comment 6699972191. Held on repair J2324; no merge/restart. Corrected head requires elected-Chief review, then controlled PID/version delivery+ack validation.",
       "history": [
         {
           "at": "2026-11-03T10:51Z",
@@ -160315,9 +160315,14 @@
           "at": "2026-11-07T00:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-07T00:58Z",
+          "by": "codex",
+          "what": "Chief FIX recorded; dependency J2324; evidence OWB PR603 / HOS PR450 comment 6699972191; watcher unchanged"
         }
       ],
-      "remaining_action": "Chief reviews and merges HOS PR 450, then refreshes the desk watcher",
+      "remaining_action": "J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
       "kind": "assembly",
       "progress": {
         "step": 5,
