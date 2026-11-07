@@ -182446,8 +182446,8 @@
       "eta_min": 120,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-07T14:27Z",
-      "eta": "2026-11-07T16:27Z",
+      "since": "2026-11-07T14:35Z",
+      "eta": "2026-11-07T16:35Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183536,14 +183536,39 @@
           "at": "2026-11-07T14:27Z",
           "by": "macbook",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-07T14:34Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: R41 HDEV daylight limb cut on PR 633"
+        },
+        {
+          "at": "2026-11-07T14:34Z",
+          "by": "macbook",
+          "what": "released: Partial. PR 633 (c71a2222): R41 HDEV daylight limb, source 49.00-53.36s, silent 1920x1080 plate, mean luma about 125-131. Not a sunrise, station hardware in the upper right, not admitted. R41 archive search closed after three candidates. £0. Still open: wider harvest, progressive timeline (PR 571), composites and picture gates. No KEEP."
+        },
+        {
+          "at": "2026-11-07T14:35Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T14:35Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-07T14:38Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Read brief, shot list, and existing 031 picture files",
+      "remaining_action": "Harvest three licensed NASA stills into the 031 pool",
       "kind": "assembly",
       "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-07T14:27Z",
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-07T14:38Z",
         "by": "macbook"
       },
       "taskKeys": [
@@ -201634,17 +201659,22 @@
           "at": "2026-11-07T14:26Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2367; starting step 1: inspect J2362 review and checkout worktree for j2353-pluto-shot-list"
+        },
+        {
+          "at": "2026-11-07T14:28Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 complete: inspected J2362 REVIEW.md/CHECKS.json and checked out clean worktree /tmp/j2367-pluto-shot-list on branch j2353-pluto-shot-list"
         }
       ],
-      "remaining_action": "Inspect J2362 review and PR #626 branch j2353-pluto-shot-list, then repair chapter-card holds, moving separators, Orbit retype and claims",
+      "remaining_action": "Repair chapter-card hold (item 1), real moving separators (item 2), Orbit-row retype (item 3) and claims (item 4) on j2353-pluto-shot-list",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-07T14:26Z",
+        "at": "2026-11-07T14:28Z",
         "by": "gemini",
-        "note": "Claimed J2367; starting step 1: inspect J2362 review and checkout worktree for j2353-pluto-shot-list"
+        "note": "Step 1 complete: inspected J2362 REVIEW.md/CHECKS.json and checked out clean worktree /tmp/j2367-pluto-shot-list on bran"
       },
       "rerouted_from": {
         "needs": "mini",
