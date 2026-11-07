@@ -1,5 +1,5 @@
 {
-  "next_id": 2346,
+  "next_id": 2347,
   "jobs": [
     {
       "id": "J0001",
@@ -198727,6 +198727,38 @@
         "audio_input"
       ],
       "plain": "Listen to the new Pluto closing sentence and say whether Worlds is clearly plural."
+    },
+    {
+      "id": "J2346",
+      "title": "032 R23: review fixed connector fade draft",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# R23 changed-connector draft review request\n\nParent J2089, original 1/4; GBP0. Inspect the local checkpoint in\n/private/tmp/J2089-r23-fade, branch worker/J2089-r23-fade. Inherited\npublic-push restriction remains: local integration only, do not bypass.\n\nNew silent draft: /Users/benjaminoats/_desk/cache/J2089/r23_composite_preview_v02/032_r23_composite_preview_v02.mp4\nFour full-size stills frame_012/054/072/095.png are beside it. Media and still\nhashes: R23_COMPOSITE_PREVIEW_v02.json. Measurements and prior export hashes:\nR23_COMPOSITE_VERIFICATION_v02.json. Recipe: composite_r23_fade_draft.py and\nlanding_record_fade_draft.py. J2304 approved export remains unchanged.\n\nThe connector now fades at fixed endpoints instead of moving its arrowhead.\nThe new animation is a proposal requiring review, not covered by J2304.\nNative 408x408 Titan inset, labels, qualitative claim and no-scale disclaimer\nare retained. Full-size frame 072 was inspected: readable, no overlap.\n\n108 frames, 1920x1080, 30fps, 3.6s, video only, full decode exit0.\nUnchanged polish gate PASS: zero failures/warnings; centre-patch off-trend\n0.001px versus v01 19.015px. All 61 recorded prior export hashes match.\nThis is measurement evidence, not perceived motion or a film-stage PASS.\n\nReviewer must have demonstrated moving_video_input, inspect actual animation\nand stills, and decide KEEP/FIX for this draft only. Do not approve the film.\nA blurred still pan remains decoration, not native footage; planned PIA08733\nbackground substitution is not approved. Rights, final plate, VO timing,\nreuse limits, neighbouring real imagery and final film gates remain open.\nNo sound review is requested for this deliberately silent layout preview.\n",
+      "ref": "9a7e183aa8",
+      "film": "032",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-07T05:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T05:28Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review R23 connector animation and rule on the draft",
+      "kind": "qa",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "plain": "Check the revised Titan landing graphic animation before it is used."
     }
   ],
   "focus": [
