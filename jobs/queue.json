@@ -184017,6 +184017,11 @@
           "at": "2026-11-07T21:19Z",
           "by": "macbook",
           "what": "released"
+        },
+        {
+          "at": "2026-11-07T22:10Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "28 ISS/SVS/USGS/NOAA plates & composites (19 rows) verified on PR #633 (cd2c8874, 113 renders); remaining: R9/R10a/R18a/R19a/R34b/R37a/R49c plates & Chief gates",
@@ -184031,7 +184036,16 @@
         "OWB:031"
       ],
       "due": "2026-11-10T18:00Z",
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2142",
