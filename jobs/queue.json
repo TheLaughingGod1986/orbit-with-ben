@@ -1,5 +1,5 @@
 {
-  "next_id": 2379,
+  "next_id": 2380,
   "jobs": [
     {
       "id": "J0001",
@@ -203112,6 +203112,36 @@
       "taskKeys": [
         "OWB:032"
       ]
+    },
+    {
+      "id": "J2379",
+      "title": "032 Titan: assemble 52-row long master v01 (582.44 s) from SHOT_LIST_v08 + £0 score bed/SFX + gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble the 52-row 032 Titan long master v01 (582.44 s / 585.44 s with post-word hold, 1920x1080 30 fps CFR) from `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/`:\n- **Locked shot list:** `07_Edit-Project/SHOT_LIST_v08.md` (`sha256: efba940f89b8dc3ce5c2c41e461519e14b8af082b6473480b5787d1dc6129c9c`, J2089/J2378 PASS, commit `7920d0f777`)\n- **Harvested NASA/ESA/STScI/Commons stills (39) + NASA SVS 20311 Dragonfly 1080p MP4 clips (4):** `03_Reference-Material/harvest_J2089_v01/` (`HARVEST_POOL_v01.json`, `HARVEST_INVENTORY_v23.json`, `SHORT_SOURCE_EXCLUSION_v28.json` — 0 overlap with Short `RLSJm59OSzI`/`ffYKoNVPoqg`, all stills <=2 uses, SVS clips <=3 stretches >10s apart)\n- **ProRes 4444 alpha overlay exports (62):** `04_Generated-Clips/graphics_exports_v01/` (`CURRENT_EXPORT_INVENTORY_v31.json`)\n- **Moving-plate 1080p30 composite clips (62) + chapter cards (6):** `07_Edit-Project/composites_v01/` (`COMPOSITES_MANIFEST_v01.json`, `COMPOSITES_POLISH_VERIFICATION_v01.json` — 0 `polish_gate` hard failures)\n- **Locked VO master:** `02_Voiceover/titan_landing_vo_v02b.wav` (`582.440 s`, `-20.0 LUFS`, `sha256: 55232eebb76b68639eee0681316a9e90443e36bf42892ba99c9a98735301abc5`) + `02_Voiceover/stt/titan_landing_vo_v02b/stt_raw.json` (last spoken word ends at `582.380 s`)\n- **£0 Chapter-shaped score bed:** `05_Music/titan_score_bed_v01.mp3` (`585.44 s`, `70.6 BPM`, `music_gate.py` PASS, `sha256: 02c7d95865f8b39de4f9d3dfda8aa85084ecea04fc56dbd6776268279dab8f9e`; `_build_titan_score_bed_v01.py` accepts `--duration` if chapter-card holds extend the timeline)\n- **£0 House SFX kit:** `06_Sound-Effects/kit_v01/` (`sfx_owb_rumble_low_v01.wav`, `sfx_owb_whoosh_soft_v01.wav`, `sfx_owb_tick_ui_v01.wav`)\n\nRun and pass all 5 gates on the assembled master (`09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v01.mp4`) before review:\n1. `python3 00_Brand/Channel-Setup/tools/clip_check.py`\n2. `python3 scripts/picture_qa.py`\n3. `python3 scripts/music_gate.py`\n4. `python3 scripts/sfx_kit.py level`\n5. Integrated loudness `~-14 LUFS`, true peak `<= -1.0 dBTP`, `30 fps` CFR, `0` black frames. Spend £0.\n",
+      "ref": "jobs/reviews/J2378/REVIEW.md",
+      "film": "032",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-07T20:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T20:12Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 52-row 032 Titan long master v01 (582.44 s) on studio-live NAS and pass all 5 gates (clip_check, picture_qa, music_gate, sfx_level, loudness/CFR/blackdetect)",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects"
     }
   ],
   "focus": [

@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2377 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Verify condition for J2171 |  |
 | J2378 | mini | claimed | gemini | 2026-11-07T21:55Z | 032 picture · for gemini · chief · `gemini-argon` · 032 picture: Chief review of J2089 £0 picture package & queue 032 edit | c0bbf33088 |
+| J2379 | mini | open | – | – | 032 edit · assembly · 032 Titan: assemble 52-row long master v01 (582.44 s) from SHOT_LIST_v08 + £0 score bed/SFX + gates | jobs/reviews/J2378/REVIEW.md |
 
 Recently finished:
 
