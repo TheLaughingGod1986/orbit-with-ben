@@ -193882,10 +193882,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T08:08Z",
-      "eta": "2026-11-07T10:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -194114,6 +194114,11 @@
           "at": "2026-11-07T08:12Z",
           "by": "codex",
           "what": "step 0 of 3 done: Shared report-writer lock and replay chronology repaired in isolated OWB branch. 26 report tests, 77 HOS zero-submit tests and actual exporter/CLI temporary-ledger integration pass. Full implementation remains unfinished; generation interlock retained."
+        },
+        {
+          "at": "2026-11-07T08:13Z",
+          "by": "codex",
+          "what": "released: Tested checkpoint pushed: OWB PR622 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/622 commit7197269164 repairs report lock adoption and recovery chronology; HOS PR445 checkpoint888d1308 records continuation. 26 OWB and77 HOS tests, real temporary exporter/CLI integration, check_all PASS. Original plan0/3 preserved: remaining active generation-writer adoption, canonical destination wiring, configured live UI, parent inventory and full launch exceed this bounded run. Resume existing PR445 plus PR622; cmd_submit remains disabled, J2200 FIX, J2033 held. No actual credits/submits/media/public changes; nothing on Ben. Disk offload already owned by another run; log/done ~/_desk/logs/J2275-disk.*."
         }
       ],
       "remaining_action": "Finish cross-channel Flow writer adoption, live UI and inventory validation",
