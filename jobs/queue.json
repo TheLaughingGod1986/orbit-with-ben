@@ -1,5 +1,5 @@
 {
-  "next_id": 2318,
+  "next_id": 2319,
   "jobs": [
     {
       "id": "J0001",
@@ -196353,6 +196353,36 @@
       "due": "2026-12-18T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Uranus Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks"
+    },
+    {
+      "id": "J2318",
+      "title": "033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "# 033 Uranus Short 2 (Keeper Question Short) — Build & Gate Brief\n\n- **Parent film:** `033_Why-This-Planet-Has-21-Year-Winters` (*Why Knocked-Sideways Uranus Has 21-Year Winters*, airs **Wed 9 Dec 2026 18:00 London**)\n- **Spec doc:** `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/SHORTS_PLAN_v01.md` (§4 `033_short02_ice_giant_surface` & §5 Miranda cliff reserve)\n- **Format:** Keeper-Score Question Short (`22–27 s`, `55–65 words`, one question in title and Line 1, single Teach overlay inside 16:9 band)\n- **Spend:** **£0** (reuses locked `02_Voiceover/uranus_vo_v01.wav`, `033` house music bed, house SFX kit, and `033` plates/code graphics from `J2300`; zero new paid generation)\n- **Upload rule:** **No upload in this build job.** Build, run all tool gates, and hand to `kind: review` (then `jobs.py awaits` for Ben's phone watch).\n\n## Target Air Slot\n- **Path A (Default · zero reschedule of existing `UPLOADS.json` IDs):** **Sat 19 Dec 2026 11:30 Europe/London (`2026-12-19T11:30:00Z`)**\n- **Path B (Chief Swap Option):** **Fri 18 Dec 2026 11:30 London** (or **Sat 12 Dec 2026 11:30 London**)\n\n## Locked Spec (Primary Ch 5 Lift — Literal Spoken Question in Line 1)\n- **On-screen (`9.0–13.5 s`) & listing title:** **What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?**\n- **Frame-0 hook caption (`0.00–2.00 s`):** `NO **SURFACE**` (yellow word `SURFACE`)\n- **Frame-0 picture (`0.00 s`):** Native moving dive into Uranus's cyan-teal cloud deck (`PIA00142` / `stsci-h-p1906c-f-514x514.a` from `R49`/`R51`, zero overlap with `033` Short 1 or standalone Short `ZpEA8stoSPA`). No Orbit at frame 0, cover, or end frame.\n- **Spoken VO lift (`02_Voiceover/uranus_vo_v01.wav`, Scribe-aligned):**\n  - `R49` (`438.584–443.944 s`, `5.36 s`): *\"What happens if a spacecraft dives beneath those clouds to land on the ice below?\"* (Line 1 question)\n  - `R51` (`459.704–463.164 s`, `3.46 s`): *\"As an ice giant, Uranus has no true surface.\"*\n  - `R52` (`463.844–476.984 s`, `13.14 s`): *\"Beneath the hydrogen and helium clouds, 80% or more of the planet's mass is a hot, dense fluid of water, methane, and ammonia above a small rocky core.\"*\n  - `R53` (`477.824–486.904 s`, optional pause-trimmed payoff): *\"Near that core, Uranus heats up to 9,000 degrees Fahrenheit, 4,982 degrees Celsius.\"*\n  - Total runtime with `~0.8 s` loop tail: **`24.5–26.5 s`** (`51–64 words`, inside the `22–27 s` Keeper window).\n- **Single Teach overlay (`15.0–18.8 s`, inside 16:9 centre band, `11–12%` height, clear of `0–2 s` and `9–14 s` title):** `DATA: ≥ 80% HOT DENSE FLUID` (`code_graphic_033_r52_interior_mantle.mp4`).\n- **Alternate Ch 6 Miranda Lift (documented in `SHORTS_PLAN_v01.md` §5):** *Why Would a Rock Take 10 Minutes to Fall Off a Cliff on Uranus's Moon Miranda?* (`R56` question + `R60`–`R62` `541.624–569.344 s`, `25.5 s`, `DATA: 10-MINUTE CLIFF DROP`).\n- **`OWB-2026-11-E1` Pacing Locks:** `Cut 1 <= 2.8 s`, `Cut 2 <= 4.8 s`, moving frame 0, visual surprise `<= 1.5 s`, zero spoken CTA / meta-promise, loop tail `< 1.2 s`.\n\n## Required Tool Gates (Must PASS + Paste Output)\n1. `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short2.mp4> --air-date 2026-12-19`\n2. `python3 scripts/picture_qa.py <short2.mp4> --cuts <cuts.json> --pool <pool.json> --out-dir <qa_dir>`\n3. `python3 scripts/polish_gate.py <short2.mp4>`\n4. `python3 scripts/sfx_kit.py level --vo <vo_stem> --sfx <sfx_stem> --bed <bed_stem> --minutes 0.45`\n5. `python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <cover.jpg> --out <preview.jpg>`\n",
+      "ref": "J2223",
+      "film": "033",
+      "stage": "edit",
+      "after": "J2300",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-07T00:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T00:07Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 033 Uranus Short 2 (22-27s Keeper question lift from locked VO + J2300 plates/graphics) and run all Shorts gates",
+      "due": "2026-12-19T10:30:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Uranus Short (22-27s question Short from the locked VO and graphics) and run the Shorts quality checks"
     }
   ],
   "focus": [
