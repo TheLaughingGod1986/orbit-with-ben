@@ -198499,13 +198499,13 @@
       "stage": "vo",
       "after": "J2343",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-07T04:37Z",
-      "eta": "2026-11-07T06:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T04:35Z",
-      "result": "",
+      "result": "One v05 pickup, 252 characters, WAV 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23. Scribe 42/42 is not a VO PASS. Listen is J2345. PR 617.",
       "history": [
         {
           "at": "2026-11-07T04:35Z",
@@ -198541,6 +198541,11 @@
           "at": "2026-11-07T04:45Z",
           "by": "cursor",
           "what": "step 3 of 4 done: PR 617 has the hashes, transcript and 252-character spend. J2345 will listen to the hashed v05 request."
+        },
+        {
+          "at": "2026-11-07T04:45Z",
+          "by": "cursor",
+          "what": "done: One v05 pickup, 252 characters, WAV 10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23. Scribe 42/42 is not a VO PASS. Listen is J2345. PR 617."
         }
       ],
       "remaining_action": "Close J2344. The listen is queued.",
@@ -198555,7 +198560,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/617"
     },
     {
       "id": "J2345",
