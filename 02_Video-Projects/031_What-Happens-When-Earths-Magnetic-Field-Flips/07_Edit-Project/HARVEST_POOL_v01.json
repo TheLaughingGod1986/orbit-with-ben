@@ -559,6 +559,36 @@
       "planned_source_stretches": 4,
       "max_appearances": 5,
       "review_note": "Real approach/release servicing footage, not Hubble animation or IMAX feature. Two adjacent cuts form one film window. Retain all of 4:3 image with feathered blur fill; no looping or speed change. Source has archival softness, to review at full size. Source audio is not used."
+    },
+    {
+      "asset_id": "commons_usgs_fissure20_overflight",
+      "title": "Helicopter overflight of a fast-moving lava flow, Fissure 20, 19 May 2018",
+      "description": "End card, read from the original: Helicopter overflight of a fast-moving lava flow emerging from Fissure 20 on May 19, at 7:52 AM HST. The flow is advancing to the southeast. Lava fountaining is visible in the background. USGS Hawaiian Volcano Observatory. Commons description text is truncated by the uploader.",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Helicopter_overflight_of_a_fast-moving_lava_flow_emerging_from_fissure_20_on_....webm",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Helicopter_overflight_of_a_fast-moving_lava_flow_emerging_from_fissure_20_on_....webm",
+      "credit": "U.S. Geological Survey, Hawaiian Volcano Observatory",
+      "local_path": "/Users/benjaminoats/_desk/J2141-lava-v01/fissure20_overflight.webm",
+      "sha256": "7b4e5b15413f4468b1a71cc5321e1faefd78810c661952b17a8b7ed940795dc7",
+      "bytes": 14593989,
+      "width": 1920,
+      "height": 1080,
+      "duration_s": 33.539,
+      "rows": [
+        6
+      ],
+      "planned_appearances": 1,
+      "max_appearances": 2,
+      "download_status": "downloaded",
+      "review_status": "static_candidate_not_KEEP",
+      "licence": "Public domain",
+      "licence_status": "Commons_PD-USGov-USGS_template_on_this_file",
+      "licence_evidence_path": "/Users/benjaminoats/_desk/J2141-lava-v01/PD-USGov-USGS-en.wikitext",
+      "licence_evidence_sha256": "2a4713530ae11993c8cf2fda388cae9354731d89fa4e93774e3acc02bc919f0d",
+      "source_evidence_path": "/Users/benjaminoats/_desk/J2141-lava-v01/commons_filepage.html",
+      "source_evidence_sha256": "21240a575e603a0c6f6797c4dd677195fa2e36a0df2ab02f009dda56fe2a8a75",
+      "end_card_still": "/Users/benjaminoats/_desk/J2141-lava-v01/sample_30s.jpg",
+      "generation_authorized": false,
+      "review_note": "Wide aerial flow only. Source title card and end card are outside 6.00\u201312.68 s. The tight glowing-edge beat is not in this interval. Source audio excluded. R7 must use a different stretch."
     }
   ],
   "contact_sheet": "/Users/benjaminoats/_desk/J2141-portraits/contact_sheet_portraits_v02.jpg",
@@ -661,6 +691,14 @@
       "active_minutes": 8,
       "outcome": "Existing NASA reel: excluded 664.48\u2013673.08 uninterrupted proposal because sampled cabin cut; selected 116.00\u2013120.32 and 668.80\u2013673.08, static checks only.",
       "budget_status": "Stopped with candidates; no new archive search"
+    },
+    {
+      "input": "R6 USGS HVO Kilauea lava flow",
+      "date": "2026-11-07",
+      "candidates_examined": 1,
+      "active_minutes": 12,
+      "outcome": "Downloaded and statically inspected one PD-USGS fissure-20 overflight. Two other Commons USGS fissure-20 titles were identified and not downloaded. Search stopped with a candidate.",
+      "budget_status": "Stopped when a suitable wide-flow candidate was found."
     }
   ],
   "body_source_search_v01": {
@@ -1360,5 +1398,39 @@
       },
       "status": "technical_candidate_not_KEEP"
     }
-  ]
+  ],
+  "r06_lava_plate_v01": {
+    "file": "plate_031_r06_lava_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-lava-v01/plate_031_r06_lava_v01.mp4",
+    "sha256": "131d30b6d0f3397076f61b757e1b383039ec1a917cfa77acbdaa7250d7d045d6",
+    "bytes": 17555163,
+    "film_start_s": 46.64,
+    "film_end_s": 53.32,
+    "source_interval_s": [
+      6.0,
+      12.68
+    ],
+    "frames": 167,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      6,
+      0,
+      1908,
+      900
+    ],
+    "scale": 1.2,
+    "credit": "USGS",
+    "fact_card": "code_graphic_031_r06_fact_v01",
+    "fact_card_sha256": "aba986c5eb692f377580df14e24e35855665ad2272e23ebb240d9a8ef2c16eab",
+    "fact_delay_s": 4.2,
+    "no_loop": true,
+    "no_interpolation": true,
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "r06_contact_sheet": "/Users/benjaminoats/_desk/J2141-lava-v01/CONTACT_v01.jpg",
+  "r06_contact_sheet_sha256": "8fa1610b54b19eb8f85a4a3d646d7859f93b5eb549e1b0988c59260fe1ced2c0"
 }

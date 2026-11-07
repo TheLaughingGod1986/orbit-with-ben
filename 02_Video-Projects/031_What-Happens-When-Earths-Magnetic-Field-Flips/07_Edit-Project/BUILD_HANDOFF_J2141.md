@@ -2,6 +2,54 @@
 
 Worker: cursor. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## R6 USGS lava checkpoint (7 Nov UTC, Cursor)
+
+Preserve **1/3**, PR **#575**, starting at `d58877f18c`. Spend **£0**.
+Added `harvest_usgs_lava.py` and `HARVEST_USGS_LAVA_TECHNICAL_CHECK_v01.json`.
+Pool now has the fissure-20 overflight as asset
+`commons_usgs_fissure20_overflight`. No media in git.
+
+One Commons file, category **PD USGS**, template `PD-USGov-USGS`.
+The saved English template says the file is public domain in the United
+States because it contains only U.S. Geological Survey material. The original
+end card, kept as `sample_30s.jpg`, identifies it as a Hawaiian Volcano
+Observatory helicopter overflight of a fast-moving lava flow from Fissure 20
+at 7:52 AM HST on 19 May 2018. Credit on the plate is **USGS**. Source audio
+is the helicopter and is excluded. Commons' own description line is truncated
+by the uploader; the end card is the fuller identification.
+
+Plate `plate_031_r06_lava_v01.mp4` is 167 frames / 6.68 s, 1920×1080, 25 fps,
+silent, full decode, no loop and no interpolation. It uses source
+**6.00–12.68 s**, after the opening USGS card and the yellow date caption,
+and before the end card near 26.5 s. Black side bars are cropped (6 px each
+side) and the burned-in USGS bug is cropped with the bottom 180 px, then the
+picture is scaled uniformly **1.20×** and centre-cut. The existing R6 FACT
+overlay `code_graphic_031_r06_fact_v01` (hash unchanged) starts **4.20 s**
+into the plate, which is film **50.84 s**, the locked cue "baking the mud".
+Film window remains **46.64–53.32 s**. This is the wide flow only. The shot
+list's tight glowing-edge beat is not in this interval and is still open.
+Do not reuse 6.00–12.68 s for row 7.
+
+Media and `CONTACT_v01.jpg`: `/Users/benjaminoats/_desk/J2141-lava-v01/`.
+Four encoded stills were inspected as stills. Component polish on this one
+plate: **PASS, 0 failures, 0 warnings**. That is not a film PASS, KEEP, or
+motion review. Reproduce into a fresh directory with `--render`; an existing
+plate is verified and refused for overwrite:
+
+```sh
+/usr/bin/python3 <film>/07_Edit-Project/harvest_usgs_lava.py \
+  --media-root <dir> --manifest <pool.json> --fact-card <r06 fact mov> --render
+```
+
+One archive candidate was examined. Two other Commons USGS fissure-20 titles
+were identified and not downloaded. No exhausted search was restarted. NAS
+offload at session start found nothing old enough to move; about 9.4 GB free.
+No NAS deletion and no paid action.
+
+**Next:** the tight lava edge, then basalt, cores and wildlife, plus the
+remaining composites and full picture/polish QA. Source-ID and
+sourced-simulation gate conflicts below stay with the Chief. Nothing needs Ben.
+
 ## R27 remaining composites checkpoint (7 Nov UTC, Codex)
 
 Preserve **1/3**, PR **#575**, starting at `1bf020f12d`. Spend **£0**.
