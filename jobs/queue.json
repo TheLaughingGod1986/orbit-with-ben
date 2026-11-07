@@ -202332,7 +202332,7 @@
     {
       "id": "J2372",
       "title": "034 Pluto: Chief/perceptual review of J2370 harvest + J2371 graphics before assembly",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "After BOTH J2370 (£0 harvest) and J2371 (£0 code_graphics + chapter cards) finish, re-check the on-disk picture package against the locked PR #626 plan (Chief J2368 PASS, jobs/reviews/J2368/REVIEW.md). Queue dependency is after J2371; do not start until J2370 is also done.\n\n- Every CSV asset present with matching SHA-256; banned/annotated IDs absent; <=2 uses.\n- All 8 CODE renders + 5 overlays + 6 chapter cards exist and match labels/timings.\n- Native-motion separators still present between CODE rows; 0 Orbit / no omni mint.\n- Only on PASS: mark 034 picture done and allow assembly / Shorts J2319–J2320 unblocks that depend on picture+graphics. On FIX: concrete repair job, no assembly release.\n\nSpend £0. No upload. No Ben unless money/irreversible.",
       "ref": "",
@@ -202352,11 +202352,25 @@
           "at": "2026-11-07T15:32Z",
           "by": "chief",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T16:29Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "PASS or FIX the J2370/J2371 picture package against SHOT_LIST_v01; release assembly only on PASS",
       "kind": "chief",
-      "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly"
+      "plain": "Check the harvested plates and rendered graphics against the locked shot list before any assembly",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2373",

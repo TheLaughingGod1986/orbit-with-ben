@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2369 | mini | blocked | macbook | – | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
-| J2372 | any | open (after J2371) | – | – | 034 picture · chief · 034 Pluto: Chief/perceptual review of J2370 harvest + J2371 graphics before assembly |  |
+| J2372 | mini | open (after J2371) | – | – | 034 picture · for gemini · chief · `gemini-argon` · 034 Pluto: Chief/perceptual review of J2370 harvest + J2371 graphics before assembly |  |
 | J2373 | any | claimed | macbook-2 | 2026-11-07T18:07Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
