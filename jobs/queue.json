@@ -199245,9 +199245,14 @@
           "at": "2026-11-07T07:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T07:08Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2349; starting verification of J2299 waiting condition (J2332 -> J2333 -> J2334 chain)"
         }
       ],
-      "remaining_action": "Verify readiness: Await reviewed replacement assets via J2332/J2333/J2334, then finish source corrections and graphics at 0/5",
+      "remaining_action": "Read J2299, J2306, J2332, J2333, and J2334 state and evidence",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-07T08:05:04+00:00",
@@ -199264,11 +199269,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-07T07:06Z",
+        "at": "2026-11-07T07:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2349; starting verification of J2299 waiting condition (J2332 -> J2333 -> J2334 chain)"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     }
   ],
   "focus": [
