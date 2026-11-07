@@ -160442,6 +160442,11 @@
           "at": "2026-11-07T15:30Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J1809 after J2350 PASS. PR450 is merged. No recover yet. Disk 6.2 GB; NAS offload already running."
+        },
+        {
+          "at": "2026-11-07T15:32Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Watcher still PID 8834 on the old file. Inventory file is gone. 88 pending IDs in state; classifying them before any recover-id."
         }
       ],
       "remaining_action": "Classify historical desk IDs, then refresh the watcher only if it is idle",
@@ -160450,9 +160455,9 @@
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-07T15:30Z",
+        "at": "2026-11-07T15:32Z",
         "by": "cursor",
-        "note": "Claimed J1809 after J2350 PASS. PR450 is merged. No recover yet. Disk 6.2 GB; NAS offload already running."
+        "note": "Watcher still PID 8834 on the old file. Inventory file is gone. 88 pending IDs in state; classifying them before any rec"
       }
     },
     {
