@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2324 | mini | open | – | – | assembly · `gpt-6.1-sol` · Repair HOS desk PR450 restart, replay and handback defects | J1809 |
-| J2325 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
+| J2325 | mini | claimed | gemini | 2026-11-07T03:00Z | for gemini · review · `gemini-argon` · Verify condition for J2157 |  |
 
 Recently finished:
 
