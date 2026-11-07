@@ -198545,9 +198545,14 @@
           "at": "2026-11-07T06:45Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2339; probing read_file on hos_008_short_A_v04.mp4"
+        },
+        {
+          "at": "2026-11-07T06:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Ran capability_probe.py gemini --record (audio_input PASS 0.94, moving_video_input FAIL); verified v04 and v03 hashes on Mini and NAS"
         }
       ],
-      "remaining_action": "Probe actual media input capability on HOS 008 Short A v04 and review J0912/J2224 context",
+      "remaining_action": "Complete audio_input and provenance/frame audit of HOS 008 Short A v04 and record hash-specific QA note",
       "due": "2026-11-18T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -198565,11 +198570,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-07T06:45Z",
+        "at": "2026-11-07T06:55Z",
         "by": "gemini",
-        "note": "Claimed J2339; probing read_file on hos_008_short_A_v04.mp4"
+        "note": "Ran capability_probe.py gemini --record (audio_input PASS 0.94, moving_video_input FAIL); verified v04 and v03 hashes on"
       },
       "taskKeys": [
         "HOS:008"
