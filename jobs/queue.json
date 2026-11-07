@@ -201729,17 +201729,22 @@
           "at": "2026-11-07T14:57Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Reviewed J2362 REVIEW.md and CHECKS.json; inspected worktree /private/tmp/j2367-pluto-shot-list and caught double-shift regex bug in motion_notes/markers range end timestamps"
+        },
+        {
+          "at": "2026-11-07T14:59Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified nh_extreme_closeup.ogv is a pan over annotated mosaic with yellow labels and 10-mile scale bar; confirmed 5 new native-motion clips and 5 folded NASA overlays cover all CODE->CODE intervals and R30 second source"
         }
       ],
-      "remaining_action": "Verify R05/R50 ogv motion and native-motion separators across CODE->CODE gaps, plus R30/R57 Orbit-row retype",
+      "remaining_action": "Fix range timestamp shift in shot_list_v01.csv and write NATIVE_MOTION_SEARCH_LOG_v01.json and updated SOURCE_EVIDENCE_v01.json",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-07T14:57Z",
+        "at": "2026-11-07T14:59Z",
         "by": "gemini",
-        "note": "Reviewed J2362 REVIEW.md and CHECKS.json; inspected worktree /private/tmp/j2367-pluto-shot-list and caught double-shift "
+        "note": "Verified nh_extreme_closeup.ogv is a pan over annotated mosaic with yellow labels and 10-mile scale bar; confirmed 5 new"
       },
       "rerouted_from": {
         "needs": "mini",
