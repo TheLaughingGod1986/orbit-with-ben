@@ -199950,9 +199950,14 @@
           "at": "2026-11-07T10:33Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Visually verified all 8 contact sheets of NASA & Wikimedia candidate stills; excluded all scale-bar/annotated plates (PIA20200, PIA19841, PIA09234, PIA09265, PIA20199, PIA20536, PIA22188, PIA20152, PIA20201, PIA20213, PIA09359, PIA21860)"
+        },
+        {
+          "at": "2026-11-07T10:38Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Built 68-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings; all 44 source assets visually verified unannotated with <=2 raw appearances"
         }
       ],
-      "remaining_action": "Building 68-row shot_list_v01.csv and SHOT_LIST_v01.md using only visually verified unannotated NASA/Wikimedia assets and running clip_check.py",
+      "remaining_action": "Writing SHOT_LIST_v01.md, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and updating production-status.md in clean worktree",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199965,11 +199970,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-07T10:33Z",
+        "at": "2026-11-07T10:38Z",
         "by": "gemini",
-        "note": "Visually verified all 8 contact sheets of NASA & Wikimedia candidate stills; excluded all scale-bar/annotated plates (PI"
+        "note": "Built 68-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings; all 44 "
       },
       "taskKeys": [
         "OWB:034"
