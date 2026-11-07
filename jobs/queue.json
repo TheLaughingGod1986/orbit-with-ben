@@ -200057,7 +200057,7 @@
     {
       "id": "J2356",
       "title": "Verify condition for J2320",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2320: J2353 shot list must be reviewed before assembly (its explicit restriction). Referenced 034/10_Shorts/SHORTS_PLAN_v01.md, 03_Picture, 05_Music and 06_Sound-Effects are absent on disk at 2026-11-07T08:55Z; no reusable Charon motion or house music delivered. Brief quoted Charon lift is not verbatim approved v03 STT: actual text includes In mutual tidal locking ... Charon neither rises nor sets at 236.10-244.70s. Resume from approved v03 only once reviewed Short wording/lift and actual picture/music inputs exist; preserve 22-27s, question-first and all gates. No upload or new paid generation authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2320 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -200077,13 +200077,27 @@
           "at": "2026-11-07T08:53Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-07T08:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1980 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await reviewed shot list, valid v03 Short lift and delivered Charon picture/music before build",
       "kind": "review",
       "recheck_of": "J2320",
       "due": "2026-11-07T09:53:21+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
