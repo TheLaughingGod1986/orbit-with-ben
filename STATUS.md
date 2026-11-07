@@ -60,7 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 031 | picture | macbook | 2026-11-07T16:47Z | 2026-11-07T18:46Z | J2141 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 | 034 | edit | cursor | 2026-11-07T16:54Z | 2026-11-07T18:53Z | J2376 034 Pluto: assemble 74-row long master v01 from locked SHOT_LIST_v01 + £0 score bed/SFX + gates (took over stalled claim by codex, ETA 2026-11-07T10:50Z) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
