@@ -1,5 +1,5 @@
 {
-  "next_id": 2329,
+  "next_id": 2330,
   "jobs": [
     {
       "id": "J0001",
@@ -197105,6 +197105,35 @@
       "remaining_action": "Prepare go/no-go sheets for History of Science 012 and 014 without starting those films.",
       "kind": "review",
       "plain": "Prepare topic yes-or-no sheets for the next History of Science films so they can start when a production place frees."
+    },
+    {
+      "id": "J2329",
+      "title": "Weekly cadence calendar-gap readback for both channels",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Read-only calendar-gap check against the locked weekly cadence (Ben, 7 Nov 2026). £0. Do not publish, set public dates, or move already-scheduled Shorts. Do not invent video IDs or change UPLOADS.json.\n\nLocked week:\n- Orbit: 2 longs Sunday and Wednesday 18:00 London; 4 Shorts Monday, Wednesday, Friday and Saturday 11:30 (two per new long; never two Shorts the same day).\n- History of Science: 1 long Thursday 18:00 London; 4 Shorts Saturday, Friday, Sunday and Tuesday 11:30. Saturday is the extra Short day because Thursday 11:30 would go out before that day's long (never a Short before its own long is public).\n\nWrite a week-by-week gap list from now through about 10 January. Flag:\n- Empty cadence slots (do not propose placeholder publishes).\n- Already-scheduled Shorts that sit on off-pattern days (leave them where they are; just list them).\n- J2248 (024 muons Short) must not take Monday 9 November 11:30 — iyvWYFP_ETA is already reported there. Propose a different free pattern day if J2248 still needs a slot.\n- J2147 planned a Titan (032) Short at Wednesday 25 November 11:30, which is before the Titan long at 18:00 — flag that against the never-before-the-long rule (J2147 also allowed Saturday 28 November if AR2 holds 25 November). J2147 also planned three Shorts per film; the locked cap for new longs is two.\n- Do not duplicate J2230 (History of Science Shorts gap 18 November–6 December; still blocked). Note remaining gaps after 6 December.\n\nThis is a readback, not a publish pass.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-07T01:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-07T01:16Z",
+          "by": "chief",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write a read-only week-by-week gap list against the locked cadence.",
+      "kind": "review",
+      "plain": "Read the live calendars against the new weekly pattern and list empty slots and clashes, without moving anything already scheduled."
     }
   ],
   "focus": [
