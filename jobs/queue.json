@@ -195448,9 +195448,14 @@
           "at": "2026-11-07T00:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-07T02:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-07T06:45:00Z"
         }
       ],
-      "remaining_action": "Chief opener/shot decision, then corrected graphic renders and complete picture QA pack",
+      "remaining_action": "Await reviewed replacement assets via J2332/J2333/J2334, then finish source corrections and graphics at 0/5",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review.",
       "progress": {
@@ -195464,10 +195469,12 @@
         "OWB:033"
       ],
       "hold": {
-        "type": "input",
-        "condition": "parked for Chief: approve a specific R01 fallback or genuinely new bounded source approach, and resolve R54/R55 graphic separation, using PR584 / 06ae7792d7. Three new candidates exhausted; do not repeat their search. Existing PIA opener files are stills. No paid generation authorised. Then finish source rights/crops, PDF rasters, 14 corrected renders and final gates under same 0/5 plan; J2300 moving-video QA remains dependent.",
-        "check_at": "2026-11-06T23:16:56+00:00",
-        "recheck_task": "J2306"
+        "type": "dependency",
+        "condition": "J2306 Chief ruling recorded in merged PR610 / daa2f24bd92e: R01 revised to disclosed Flow world illustration (accepted 0-4.35s, not 6.22s); R55 moving cloud plate after R54 chart. Generation authorised ONLY in J2332, three takes/300 existing Flow credits maximum, no monetary spend. Await J2332 delivery -> J2333 demonstrated moving-video QA -> J2334 elected-Chief asset acceptance. J2334 must accept exact hashes before this parent reopens. Existing 0/5 plan, all source/graphics corrections and gates retained; J2300 remains dependent on J2299. This is a concrete asset dependency, no longer an undecided Chief fallback. No assembly release.",
+        "check_at": "2026-11-07T06:45:00Z",
+        "last_recheck": "J2306",
+        "checked_at": "2026-11-07T02:27:32+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
