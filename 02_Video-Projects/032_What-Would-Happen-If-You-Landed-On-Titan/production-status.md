@@ -77,3 +77,15 @@ Picture: **PASS (`KEEP`)** by elected acting Chief (`gemini`, `J2378` reviewing 
 - **Overlay Exports (`04_Generated-Clips/graphics_exports_v01/`):** `62/62` ProRes 4444 alpha `.mov` exports (`CURRENT_EXPORT_INVENTORY_v31.json`) SHA-256 verified on NAS.
 - **Moving-Plate Composites & Chapter Cards (`07_Edit-Project/composites_v01/`):** `62/62` `1920x1080` `30 fps` moving-plate composites (`3.60 s` / `108` frames each) + `6/6` chapter cards (`2.50 s` / `75` frames each) SHA-256 verified on NAS; `COMPOSITES_POLISH_VERIFICATION_v01.json` `0` hard failures; `composites_contact_sheet_v01.jpg` passes Teach on Screen (`DATA`, `WHO`, `WHEN`, `FACT`, `STYLE`, `MOTION`) and per-chapter `NUMBER`+`WORDS` gates.
 - **Audio Staged for Edit (`05_Music/` & `06_Sound-Effects/kit_v01/`):** £0 chapter-shaped score bed `titan_score_bed_v01.mp3` (`585.44 s`, `70.6 BPM`, `music_gate.py` PASS, SHA-256 `02c7d95865f8b39de4f9d3dfda8aa85084ecea04fc56dbd6776268279dab8f9e`) and £0 house SFX kit (`rumble_low`, `whoosh_soft`, `tick_ui`) staged on `studio-live` NAS. [Review](../../jobs/reviews/J2378/REVIEW.md).
+
+
+## J2379 Long Master v01 Assembly & 5-Gate Technical Verification — 7 November 2026
+
+Assembled `09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v01.mp4` (`585.440 s`, `17,563` frames at `30/1` fps CFR, `1920x1080`, `yuv420p`, `208,717,641` bytes, `sha256: 452ea3d7b5b2e7a02141072a3634163ce9f86e844f0d3e2637a64511c664d7a0`, `£0` spend) on `studio-live` NAS via `07_Edit-Project/_assemble_032_full_master_v01.py`. All 5 required gates print PASS:
+1. `clip_check.py`: `clip_check: 52 rows — PASS (OK: sentence/card boundaries and end-after-VO checks clear.)`
+2. `picture_qa.py`: `picture QA PASS: 0 of 127 cuts fail, 7 to look at -> 07_Edit-Project/full_master_v01_pack/PICTURE_QA.md`
+3. `music_gate.py`: `music gate PASS: titan_score_bed_v01.mp3, 585.4 s, about 70.6 BPM, brief Pace: 68-78 BPM`
+4. `sfx_kit.py level`: `SFX level PASS: VO -20.0 LUFS, SFX -46.2 LUFS, 13 hits`
+5. Delivery: Integrated loudness `-14.5 LUFS`, true peak `-1.0 dBTP`, `1920x1080` `30/1` fps CFR, `0` black frames.
+
+Ready for Chief / Claude review (`07_Edit-Project/full_master_v01_pack/ASSEMBLY_REPORT_v01.md`).
