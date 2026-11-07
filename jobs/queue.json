@@ -180544,9 +180544,14 @@
           "at": "2026-11-07T19:44Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Resumed from 853a4fc128 + uncommitted step 3/4 composite outputs in /private/tmp/J2089-rights"
+        },
+        {
+          "at": "2026-11-07T19:52Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4/4 done (c0bbf33088): 62 1080p30 composites + 6 chapter cards + 39 stills + 4 SVS clips verified on NAS (0 errors)"
         }
       ],
-      "remaining_action": "Run step 4/4 verification (reconcile_export_inventory_032.py, verify_short_sources_032.py, contact sheet & QA checks), commit to worker/J2089-rights, and sync to studio-live",
+      "remaining_action": "Queue Chief picture review & edit handoff for 032 and close J2089",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -180563,11 +180568,11 @@
       "model": "gemini-agy",
       "urgent": 3,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-07T19:44Z",
+        "at": "2026-11-07T19:52Z",
         "by": "gemini",
-        "note": "Resumed from 853a4fc128 + uncommitted step 3/4 composite outputs in /private/tmp/J2089-rights"
+        "note": "Step 4/4 done (c0bbf33088): 62 1080p30 composites + 6 chapter cards + 39 stills + 4 SVS clips verified on NAS (0 errors)"
       }
     },
     {
