@@ -60,7 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 031 | picture | macbook | 2026-11-07T17:32Z | 2026-11-07T19:31Z | J2141 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 | 032 | picture | gemini | 2026-11-07T17:56Z | 2026-11-07T19:55Z | J2089 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
