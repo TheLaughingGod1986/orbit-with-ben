@@ -60,7 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 029 | edit | codex | 2026-11-07T00:17Z | 2026-11-07T02:16Z | J2309 OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy |
-| 031 | picture | macbook | 2026-11-07T12:15Z | 2026-11-07T14:14Z | J2141 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) |
 | 034 | edit | codex | 2026-11-07T08:51Z | 2026-11-07T10:50Z | J2320 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) |
 | 034 | shots | gemini | 2026-11-07T11:49Z | 2026-11-07T13:48Z | J2361 034 Pluto: repair shot-list source, reuse and finishing defects from J2359 |
 
