@@ -1,3 +1,29 @@
+## Continuation checkpoint (7 Nov, MacBook media availability audit)
+
+Worker `macbook`; existing branch `macbook/J2141`, PR #633. Queue stays
+**1/3**. Before restarting any existing render, consult
+`MEDIA_AVAILABILITY_MACBOOK_2026-11-07.json`: a read-only audit of all 48
+render entries across the versioned CODE manifests found **22 hash matches,
+zero mismatches, and 26 unavailable files** on this MacBook. Entries include
+superseded versions; these counts are not distinct completed shot counts.
+Resolution checks the recorded path, its studio-live equivalent for project
+media, and the MacBook `_desk` equivalent for earlier Mini scratch media.
+Unavailable means absent at those paths, not deleted or absent on the Mini.
+
+The NAS film folder is reachable. Existing NAS card renders can be located
+without rewriting their original provenance manifests; matched local MacBook
+components also remain usable pending the recorded composite/reviewer checks.
+Mini-only scratch paths must be recovered/copied through the existing workflow
+or reproduced into new directories before assembling on this machine. This
+audit changes no media and performs no decode, motion, rights or visual review.
+
+The full licensed harvest, outstanding physical mechanisms/progressive timeline,
+composites and full QA exceed this run's 25-minute limit. Release at this clean
+checkpoint; do not mark the job done. Preserve the earlier source-ID and sourced
+simulation/map conflicts for Chief reconciliation. No archive investigation
+budget consumed, paid generation, YouTube/social change, NAS write or background
+process. Spend £0. The continuation remains the same job and PR.
+
 # J2141 resumable picture build — 4 Nov 2026
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
