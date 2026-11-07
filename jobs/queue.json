@@ -160310,6 +160310,11 @@
           "at": "2026-11-06T21:47Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: review and merge history-of-science PR 450, then at an idle boundary run hos_desk.py refresh --apply. Watcher PID 8834 was left running because the installed file does not contain j1809-role-routing. No watermark reset and no historical recovery."
+        },
+        {
+          "at": "2026-11-07T00:04Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief reviews and merges HOS PR 450, then refreshes the desk watcher",
@@ -160320,7 +160325,8 @@
         "at": "2026-11-06T21:47Z",
         "by": "cursor",
         "note": "Reported on OWB #478 comment 6696594103 and HOS desk comment 6696595370. Parked for Chief review of PR 450."
-      }
+      },
+      "escalated_at": "2026-11-07T00:04Z"
     },
     {
       "id": "J1810",
@@ -187571,6 +187577,11 @@
           "at": "2026-11-06T21:27Z",
           "by": "relay",
           "what": "condition verification queued: J2303"
+        },
+        {
+          "at": "2026-11-07T00:04Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Park the residual Studio readback for the Chief",
@@ -187590,7 +187601,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-06T22:27:36+00:00",
         "recheck_task": "J2303"
-      }
+      },
+      "escalated_at": "2026-11-07T00:04Z"
     },
     {
       "id": "J2200",
@@ -191016,6 +191028,11 @@
           "at": "2026-11-06T21:18Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-07T09:00:00Z"
+        },
+        {
+          "at": "2026-11-07T00:04Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "J2302 reviews verified private v03 evidence now; then repairs or Ben final watch. External code push not required; no scheduling clearance.",
@@ -191035,7 +191052,8 @@
         "type": "dependency",
         "condition": "Chief ruling 6 Nov: HOLD pending J2302 KEEP/FIX on v03 be63a3d8; all 22 private UAT hashes verified. J2302 uses local c34a0429d6/UAT evidence now; rejected external code push is not a review prerequisite and must not be retried. On FIX return exact repairs; on KEEP set awaits for required Ben final watch. No upload/schedule; Mon9 occupied, Nov21 provisional. Act on completed review immediately; morning check is status only.",
         "check_at": "2026-11-07T09:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-07T00:04Z"
     },
     {
       "id": "J2249",
@@ -195128,6 +195146,11 @@
           "at": "2026-11-06T22:16Z",
           "by": "relay",
           "what": "condition verification queued: J2306"
+        },
+        {
+          "at": "2026-11-07T00:04Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief opener/shot decision, then corrected graphic renders and complete picture QA pack",
@@ -195148,7 +195171,8 @@
         "condition": "parked for Chief: approve a specific R01 fallback or genuinely new bounded source approach, and resolve R54/R55 graphic separation, using PR584 / 06ae7792d7. Three new candidates exhausted; do not repeat their search. Existing PIA opener files are stills. No paid generation authorised. Then finish source rights/crops, PDF rasters, 14 corrected renders and final gates under same 0/5 plan; J2300 moving-video QA remains dependent.",
         "check_at": "2026-11-06T23:16:56+00:00",
         "recheck_task": "J2306"
-      }
+      },
+      "escalated_at": "2026-11-07T00:04Z"
     },
     {
       "id": "J2300",
