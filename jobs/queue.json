@@ -201058,13 +201058,13 @@
       "stage": "shots",
       "after": "J2359",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T11:49Z",
-      "eta": "2026-11-07T15:47Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T11:23Z",
-      "result": "",
+      "result": "Repaired 034 Pluto shot list on PR #626 at d89fa79b30 (74 rows incl. 6 explicit source=CARD rows at 0.60s breath, clip_check 74 rows PASS, 64 visually verified clean NASA/Wikimedia assets all <=2 raw/separated uses, 2.5s hold + 10.0s music fade + verified NOT list, #162238-#1F3150 lifted navy luma proof, £0 R30/R57 archive/overlay routes); ready for J2362 Chief re-review",
       "history": [
         {
           "at": "2026-11-07T11:23Z",
@@ -201165,6 +201165,11 @@
           "at": "2026-11-07T14:01Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Pushed repaired 74-row shot list, SOURCE_EVIDENCE_v01.json, MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, production-status.md and J2361 REVIEW.md to PR #626 (commit d89fa79b30)"
+        },
+        {
+          "at": "2026-11-07T14:01Z",
+          "by": "gemini",
+          "what": "done: Repaired 034 Pluto shot list on PR #626 at d89fa79b30 (74 rows incl. 6 explicit source=CARD rows at 0.60s breath, clip_check 74 rows PASS, 64 visually verified clean NASA/Wikimedia assets all <=2 raw/separated uses, 2.5s hold + 10.0s music fade + verified NOT list, #162238-#1F3150 lifted navy luma proof, £0 R30/R57 archive/overlay routes); ready for J2362 Chief re-review"
         }
       ],
       "remaining_action": "Completed J2361 shot-list repair on PR #626 (d89fa79b30); ready for J2362 Chief re-review",
@@ -201188,7 +201193,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "d89fa79b30"
     },
     {
       "id": "J2362",
