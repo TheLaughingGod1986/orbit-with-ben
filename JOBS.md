@@ -47,8 +47,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for gemini · qa · `gemini-argon` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
-| J2089 | mini | open | – | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
-| J2141 | mini | claimed | macbook | 2026-11-07T17:09Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
+| J2089 | mini | blocked | codex | – | 032 picture · for codex · assembly · `gpt-6.1-sol` · 032 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 7b45d14ba1 |
+| J2141 | mini | claimed | macbook-2 | 2026-11-07T17:21Z | 031 picture · assembly · 031 picture: £0 harvest + code_graphics builds from SHOT_LIST_v02 (WIP film) | 55d4dad1c2 |
 | J2171 | mini | open (after J0862) | – | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2193 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
-| J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
+| J2275 | mini | claimed | codex | 2026-11-07T17:23Z | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2280 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2281 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J0862 |  |
 | J2287 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2245 |  |
@@ -102,12 +102,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2358 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2363 | mini | open | – | – | 032 picture · qa · 032 R16: review Cassini counter composite draft in motion | b3c2915961 |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J2367 | mini | claimed | gemini | 2026-11-07T16:25Z | 034 shots · for gemini · review · `gemini-argon` · 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 | jobs/reviews/J2362/REVIEW.md |
 | J2368 | any | open (after J2367) | – | – | 034 shots · chief · 034 Pluto: Chief re-review J2367 corrected shot plan and decide production release | jobs/reviews/J2362/REVIEW.md |
-| J2369 | mini | open | – | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
+| J2369 | mini | claimed | macbook | 2026-11-07T17:17Z | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 
 Recently finished:
 
+- J2367 done: 034 Pluto: repair chapter-card hold, moving separators and Orbit-row retype from J2362 (done)
 - J2365 done: Verify condition for J2299 (HOLD / CONDITION UNMET (jobs/reviews/J2365/REVIEW.md): J2332 NAS takes freshly re-hashed (r01 65776fa656, r55a 51b26b122e, r55b 1e71287f9a; 30 Flow credits 14890->14860, £0 spend), 43/43 pool files and locked VO (3d73576e0c) verified intact, but J2333 (moving_video_input QA) and J2334 (elected-Chief acceptance) remain open with no passing moving_video_input probe in capabilities.json. J2299 kept blocked at 0/5 (--recheck J2365, next check 2026-11-07T20:15:00Z).)
 - J2364 done: 034 Pluto Shorts Plan (J2360 / PR #632): Chief decision on Short 2 exact v03 lift (2A vs 2B vs 2C) and £0 native-moving opener route (PASS h281: Short2=2A Water-Ice Mountains; Short1=1A continuous S01-S03; opener=M1-A PIA11709 (M1-B backup). Merged PR #632 5442fff3@13:16:38Z. J2319/J2320 stay blocked until J2361→J2362. Ruling jobs/reviews/J2364/CHIEF_RULING.md. £0.)
 - J2362 done: 034 Pluto: Chief re-review corrected J2361 shot plan and decide production release (FIX at PR626 d89fa79b30 (jobs/reviews/J2362, commit 56ddfbff12). Cleared: clip_check 74 PASS, banned DEM/annotated IDs gone, <=2 uses, explicit CARD onsets 0.60 s, music 10 s fade/2 s picture fade, 13 CODE 0 adjacent, frame-0 distinct. Remaining: CARD holds only 0.26-0.80 s (< 0.4 s xfade); 6 CODE gaps have no native motion; claim corrections. Ruled £0 archive route for R30/R57 and explicit 0-Orbit-beat exception. Not merged; shots not done. Repair J2367, re-review J2368 after it. £0.)
@@ -117,4 +117,3 @@ Recently finished:
 - J2356 done: Verify condition for J2320 (Elected-Chief HOLD upheld. J2320 rechecked with --recheck J2356; next verification 2026-11-08T08:30:00Z. Verified approved WAV 2be8030b6c, script f9852589a7, STT af85f3b6f. J2353 now delivered PR626 but J2359 approval remains open; Short plan/picture/music/SFX absent. J2360 queued now for exact-v03 question/title/lift repair and demonstrated 22-27s/55-65-word plan, then Chief acceptance. Proposed Charon 27.10s before tail and water-ice 51 words/28.58s are NOT approved. J2359 owns shot-list/picture handoff; actual media delivery required. No spend, media PASS, upload or schedule changes; nothing on Ben.)
 - J2354 done: Verify condition for J2319 (Chief ruling: CONDITION UNMET. Reviewed current inputs and hashes; J2353 is now draft PR626, J2359 owns review/release. J2319 remains held at 1/3 with last_recheck J2354 and original retry 2026-11-08T08:30:00Z. Missing production inputs and obsolete v03 Test A opening/timing must be resolved before assembly. Evidence CHIEF_RULING.md merged PR627, check PASS. No spend, publishing or Ben decision.)
 - J2353 done: 034 Pluto: shot list from approved v03 VO (Delivered 68-row SHOT_LIST_v01.md + shot_list_v01.csv (clip_check PASS: 0 errors, 0 warnings across 1,183 v03 Scribe words; 46 visually verified unannotated assets <=2 appearances; Frame 0 PIA20291 distinct from Short gmzaCfJF1gA), MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and jobs/reviews/J2353/REVIEW.md on PR #626 (50fa44c23e); queued successor Chief review/picture-release job. £0 spent.)
-- J2352 done: 034 Pluto: elected Chief rules on reconciled J2157 v03 evidence (PR #619) and full VO PASS (Full Pluto v03 VO PASS. PR619 and PR623 merged with green CI; J2157 resolved done. J2353 queued for zero-spend shot list from approved v03 timings. No credits or YouTube changes.)

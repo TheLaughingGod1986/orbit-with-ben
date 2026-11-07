@@ -179597,13 +179597,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "codex",
+      "since": "2026-11-07T15:18Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
-      "result": "",
+      "result": "parked for Chief: v31 checkpoint 07f8a639a2 names frame0 native-motion fallback, Huygens quality/crop and Dragonfly/APL permission-or-alternative decisions. Prior investigation spans multiple runs; worker cannot reset its budget or choose protected fallback. 62 current exports hash-verified; original 1/4 preserved. Resume /private/tmp/J2089-rights after bounded Chief scope. J2346/J2363 actual-motion reviews remain open. GBP0. Offload detached J2089-offload-1518; log/done /Users/benjaminoats/_desk/logs/J2089-offload-1518.{log,done}.",
       "history": [
         {
           "at": "2026-11-04T18:23Z",
@@ -180414,9 +180414,29 @@
           "at": "2026-11-07T14:07Z",
           "by": "codex",
           "what": "released: Local checkpoint 7aabea0c3a in /private/tmp/J2089-rights, worker/J2089-rights; resume here. Original 1/4 retained. R39 NASA Apollo17 Blue Marble harvested at1881x1881 with source/policy/image hashes and inspected still;62 prior export hashes unchanged. Final crop/grade/reuse and rights review remain. Frame0,Huygens,APL and other harvest/composites/final gates exceed bounded run; preserve J2346/J2363. GBP0,no publishing,film PASS,merge or push; inherited public-push restriction retained. No background process."
+        },
+        {
+          "at": "2026-11-07T15:18Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:18Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Resumed original four-step plan from 7aabea0c3a; preserving existing exports and review holds."
+        },
+        {
+          "at": "2026-11-07T15:21Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Local 07f8a639a2: reconciled 12 manifests; 62 current and 62 historical render-file hashes match. Legacy coverage corrected. Protected source decisions named in checkpoint v31; no stage approval."
+        },
+        {
+          "at": "2026-11-07T15:21Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: v31 checkpoint 07f8a639a2 names frame0 native-motion fallback, Huygens quality/crop and Dragonfly/APL permission-or-alternative decisions. Prior investigation spans multiple runs; worker cannot reset its budget or choose protected fallback. 62 current exports hash-verified; original 1/4 preserved. Resume /private/tmp/J2089-rights after bounded Chief scope. J2346/J2363 actual-motion reviews remain open. GBP0. Offload detached J2089-offload-1518; log/done /Users/benjaminoats/_desk/logs/J2089-offload-1518.{log,done}."
         }
       ],
-      "remaining_action": "Finish licensed Titan harvest, remaining composites and final gates",
+      "remaining_action": "Chief to scope frame-0/Huygens/Dragonfly source resolution; then finish licensed harvest and composites",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -180435,9 +180455,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-07T14:07Z",
+        "at": "2026-11-07T15:21Z",
         "by": "codex",
-        "note": "R39 NASA Blue Marble downloaded at1881x1881; source/policy/image hashes verified, still inspected,62 prior export hashes"
+        "note": "Local 07f8a639a2: reconciled 12 manifests; 62 current and 62 historical render-file hashes match. Legacy coverage correc"
       }
     },
     {
@@ -182445,9 +182465,9 @@
       "after": "",
       "eta_min": 120,
       "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-07T15:09Z",
-      "eta": "2026-11-07T17:09Z",
+      "by": "macbook-2",
+      "since": "2026-11-07T15:21Z",
+      "eta": "2026-11-07T17:21Z",
       "created_by": "gemini",
       "created_at": "2026-11-04T19:35Z",
       "result": "",
@@ -183661,15 +183681,50 @@
           "at": "2026-11-07T15:10Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T15:14Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T15:14Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-07T15:17Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:19Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-07T15:21Z",
+          "by": "macbook-2",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-07T15:21Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:23Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Continue partial picture build with one bounded no-spend graphics batch; harvest/composites/full QA remain",
+      "remaining_action": "Continue unfinished picture graphics; verify new renders and publish a resumable checkpoint",
       "kind": "assembly",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-07T15:10Z",
-        "by": "macbook"
+        "at": "2026-11-07T15:23Z",
+        "by": "macbook-2"
       },
       "taskKeys": [
         "OWB:031"
@@ -194501,10 +194556,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-07T15:23Z",
+      "eta": "2026-11-07T17:23Z",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -194788,6 +194843,11 @@
           "at": "2026-11-07T14:23Z",
           "by": "codex",
           "what": "released: Tested checkpoint fc1b6a35 pushed to existing HOS PR445, branch codex/J2275-runner-safety, clean worktree /private/tmp/j2275-integrate. Use this continuation, not divergent PR457; inventory safeguard ported into shared batch. 81 zero-submit tests and check_all pass. Still 1/3: cross-channel writer/account protocol adoption, canonical report wiring plus PR622, configured live UI validation, actual inventory verification and full launch integration remain; exceeds bounded run. Detailed jobs/reviews/J2275/CHECKPOINT.md. cmd_submit remains disabled; J2200 FIX/J2033 held. No actual credits/browser submits/media/publishing. Safe disk offload finished exit0, nothing old enough; logs J2275-disk-1419.log/.done under ~/_desk/logs. Nothing on Ben."
+        },
+        {
+          "at": "2026-11-07T15:23Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete cross-channel writer adoption, live UI validation and production launch integration",
@@ -201722,13 +201782,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T14:25Z",
-      "eta": "2026-11-07T16:25Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-07T14:12Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-07T14:12Z",
@@ -201789,17 +201849,32 @@
           "at": "2026-11-07T15:05Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEARCH_LOG_v01.json; clip_check 74 rows PASS"
+        },
+        {
+          "at": "2026-11-07T15:12Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Retimed MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md; verified clip_check 74 rows PASS against stt_timeline_offset_v01.json"
+        },
+        {
+          "at": "2026-11-07T15:15Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Pushed commit e96c984324 to branch j2353-pluto-shot-list (PR #626); all 4 J2362 items repaired and verified with clip_check 74 rows PASS"
+        },
+        {
+          "at": "2026-11-07T15:15Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
-      "remaining_action": "Retime MUSIC_BRIEF_v01.md, SFX_PLAN_v01.md, and SHOT_LIST_v01.md with cumulative card offsets and J2367 repairs",
+      "remaining_action": "Completed J2367 repairs on PR #626 (e96c984324); ready for dependent Chief re-review",
       "kind": "review",
       "plain": "Fix the Pluto shot plan so chapter cards are readable and real footage sits between every pair of graphics",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-07T15:05Z",
+        "at": "2026-11-07T15:15Z",
         "by": "gemini",
-        "note": "Updated shot_list_v01.csv, SOURCE_EVIDENCE_v01.json (67 assets, max 2 uses, real SHA-256 hashes), and NATIVE_MOTION_SEAR"
+        "note": "Pushed commit e96c984324 to branch j2353-pluto-shot-list (PR #626); all 4 J2362 items repaired and verified with clip_ch"
       },
       "rerouted_from": {
         "needs": "mini",
@@ -201854,10 +201929,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-07T15:17Z",
+      "eta": "2026-11-07T17:17Z",
       "created_by": "refill",
       "created_at": "2026-11-07T14:52Z",
       "result": "",
@@ -201876,19 +201951,41 @@
           "at": "2026-11-07T15:00Z",
           "by": "macbook",
           "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-07T17:00:37Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-07T15:16Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 2363 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-07T15:17Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T15:19Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Draft this week's dated-event Short script and slot for the Chief",
+      "remaining_action": "Checked UPLOADS.json, AR cohort J1356, film_briefs.json and schedule; picking 10-21d dated space event and verifying NASA/ESA/IAU UTC facts",
       "kind": "script",
       "backlog": "owb-dated-short",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-07T15:00Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-07T15:19Z",
+        "by": "macbook"
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     }
   ],
   "focus": [
