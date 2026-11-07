@@ -194566,10 +194566,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T15:23Z",
-      "eta": "2026-11-07T17:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -194873,6 +194873,11 @@
           "at": "2026-11-07T15:27Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR445 checkpoint 950babff: canonical production accounting/spend destinations and full locked inventory enforced before archive/browser. 84 zero-submit tests OK; check_all ALL CHECKS PASS. Production remains disabled; job incomplete."
+        },
+        {
+          "at": "2026-11-07T15:27Z",
+          "by": "codex",
+          "what": "released: Tested checkpoint 950babff pushed to existing HOS PR445. Production shared batch now mandates canonical account/report destinations and exact full locked inventory; 84 zero-submit regressions OK and check_all ALL CHECKS PASS. Still 1/3: remaining cross-channel writer protocol adoption, PR622 report-lock review/merge, configured live UI and actual inventory validation, complete launch integration require further bounded continuation. Resume PR445 latest head in /private/tmp/j2275-1525; jobs/reviews/J2275/CHECKPOINT.md records details. Do not resume divergent PR457. cmd_submit remains disabled; J2200 FIX/J2033 held. No credits/submits/media/publishing. Nothing on Ben."
         }
       ],
       "remaining_action": "Adopt shared protocol in remaining Flow writers; validate live UI and full launch",
