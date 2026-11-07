@@ -2,6 +2,53 @@
 
 Worker: codex. Spend: £0. **Partial work, no KEEP, no Chief PASS, no film stage approval.**
 
+## Continuation checkpoint (7 Nov, MacBook)
+
+Worker `macbook`, branch `macbook/J2141`. Spend £0. Partial work only;
+queue stays **1/3**, no KEEP, PASS or picture-stage completion. Full harvest
+and remaining graphics exceed a single 25-minute run; release at this checkpoint.
+
+Added `code_graphics.py depth` / `depth_graphics.py`: a unique R13 transparent
+1920×1080 / 25 fps local depth ruler, 125.90–129.50 s, entering on locked
+“3,000”. Surface zero and an approximately 3,000 km endpoint use a linear
+scale. No planet geometry or layer-thickness model is implied. SOURCES row 6
+supports the number; its BGS reversal page was rechecked live on 7 Nov.
+This is a component of `layers`, not the whole R13/R14 scene. It requires a
+graded moving plate and clearance review; do not assemble over a flat navy slab.
+The overlay starts before the shot-list's second cut so the number appears
+with the spoken cue; retain moving imagery beneath it and resolve cut placement
+in the assembly recipe. No VO or locked source was changed.
+
+`CODE_DEPTH_v01.json` records timings, source row, locked-words hash and media
+hash. `CODE_DEPTH_TECHNICAL_CHECK_v01.json` records hash, 1920×1080, argb alpha,
+25 fps, 3.60 s, error-free full decode and refusal to overwrite existing media.
+Five static samples and the contact sheet were inspected. Navy is preview-only;
+no actual-motion/composite/audio review or Chief approval is claimed.
+Media: `/Users/ben/_desk/J2141-depth-v01/`; no media in git. Reproduce into a
+fresh directory with `/usr/bin/python3 code_graphics.py depth --out <fresh-dir>
+--manifest <new-json>` from this edit folder. The system Python has Pillow;
+the Homebrew default Python currently does not. No install was performed.
+
+R41 bounded investigation: NASA Images API search for ISS sunrise returned no
+items; broader sunrise hits did not identify an ISS sunrise shot. One candidate
+was examined at metadata level: `GSFC_20180124_m12825_ISS_Airglow` (GOLD
+Resources: ISS Airglow). Its NASA description establishes red/green airglow,
+not the blue sunrise limb required by R41. Not downloaded, admitted or KEEP.
+The NASA crew-video index identifies “Southern Hemisphere Aurora and Sunrise -
+Apr. 2018” (ISS055-E-27892–30801), but local HTTPS access stalled and was
+interrupted. No media was inspected and no licence was cleared. Approximately
+five active minutes were spent on this input, one candidate examined at metadata
+level; this note does not reset any previous search budget. Next harvest worker
+should check existing shared-film assets and that specific sequence within the
+remaining cumulative budget, then obtain a scoped Chief fallback if needed.
+R41 remains open; no substitute illustration was silently created.
+
+Remaining: the broader licensed harvest and contact sheets, remaining physical
+mechanisms, progressive timeline, R41 sunrise fallback, moving composites and
+full QA. Prior source-ID and sourced-simulation/map conflicts below still need
+Chief reconciliation. No NAS writes/deletions, paid generation or publishing.
+No background process remains from this run. HOS checkout untouched.
+
 ## Continuation checkpoint (5 Nov, seventh run)
 
 Preserve **1/3**, same PR #495. Added `code_graphics.py comparisons` and

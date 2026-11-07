@@ -48,6 +48,9 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='depth':
+  from depth_graphics import main as depth
+  return depth(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='comparisons':
   from comparison_graphics import main as comparisons
   return comparisons(sys.argv[2:])
