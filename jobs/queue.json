@@ -180534,9 +180534,14 @@
           "at": "2026-11-07T19:17Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Resumed from 853a4fc128 in /private/tmp/J2089-rights (step 2/4 locked)"
+        },
+        {
+          "at": "2026-11-07T19:39Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3/4 done: rendered and verified all 62 moving-plate 1080p30 composites + 6 chapter cards on studio-live NAS (0 hard polish_gate failures)"
         }
       ],
-      "remaining_action": "Render moving-plate composites to NAS from SHOT_LIST_v08.md and run step 4/4 QA",
+      "remaining_action": "Run step 4/4 verification (reconcile_export_inventory_032.py, verify_short_sources_032.py, picture_qa.py source checks) and sync to studio-live & git",
       "kind": "assembly",
       "taskKeys": [
         "OWB:032"
@@ -180553,11 +180558,11 @@
       "model": "gemini-agy",
       "urgent": 3,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-07T19:17Z",
+        "at": "2026-11-07T19:39Z",
         "by": "gemini",
-        "note": "Resumed from 853a4fc128 in /private/tmp/J2089-rights (step 2/4 locked)"
+        "note": "Step 3/4 done: rendered and verified all 62 moving-plate 1080p30 composites + 6 chapter cards on studio-live NAS (0 hard"
       }
     },
     {
