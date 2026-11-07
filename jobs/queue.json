@@ -199903,9 +199903,14 @@
           "at": "2026-11-07T09:45Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Built 66-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings across all 1,225 Scribe words"
+        },
+        {
+          "at": "2026-11-07T09:51Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Verified 68-row shot_list_v01.csv against all 1,183 Scribe word tokens; clip_check.py PASS with 0 errors and 0 warnings; max raw/dedup asset appearances <= 2"
         }
       ],
-      "remaining_action": "Generate full SHOT_LIST_v01.md with provenance, Teach-on-Screen matrix, music brief, and SFX plan",
+      "remaining_action": "Writing comprehensive SHOT_LIST_v01.md and updating production-status.md in clean worktree",
       "kind": "review",
       "plain": "Plan each Pluto scene, educational overlay, music cue and sound effect to match the approved narration.",
       "rerouted_from": {
@@ -199918,11 +199923,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-07T09:45Z",
+        "at": "2026-11-07T09:51Z",
         "by": "gemini",
-        "note": "Built 66-row shot_list_v01.csv from v03 Scribe word timestamps; clip_check.py PASS with 0 errors and 0 warnings across a"
+        "note": "Verified 68-row shot_list_v01.csv against all 1,183 Scribe word tokens; clip_check.py PASS with 0 errors and 0 warnings;"
       },
       "taskKeys": [
         "OWB:034"
