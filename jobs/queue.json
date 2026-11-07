@@ -179640,13 +179640,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-07T15:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-04T18:23Z",
-      "result": "parked for Chief: v31 checkpoint 07f8a639a2 names frame0 native-motion fallback, Huygens quality/crop and Dragonfly/APL permission-or-alternative decisions. Prior investigation spans multiple runs; worker cannot reset its budget or choose protected fallback. 62 current exports hash-verified; original 1/4 preserved. Resume /private/tmp/J2089-rights after bounded Chief scope. J2346/J2363 actual-motion reviews remain open. GBP0. Offload detached J2089-offload-1518; log/done /Users/benjaminoats/_desk/logs/J2089-offload-1518.{log,done}.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T18:23Z",
@@ -180477,6 +180477,11 @@
           "at": "2026-11-07T15:21Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v31 checkpoint 07f8a639a2 names frame0 native-motion fallback, Huygens quality/crop and Dragonfly/APL permission-or-alternative decisions. Prior investigation spans multiple runs; worker cannot reset its budget or choose protected fallback. 62 current exports hash-verified; original 1/4 preserved. Resume /private/tmp/J2089-rights after bounded Chief scope. J2346/J2363 actual-motion reviews remain open. GBP0. Offload detached J2089-offload-1518; log/done /Users/benjaminoats/_desk/logs/J2089-offload-1518.{log,done}."
+        },
+        {
+          "at": "2026-11-07T17:52Z",
+          "by": "gemini",
+          "what": "reopened: Chief bounded £0 scope recorded (deb4f16a36, jobs/reviews/J2089/CHIEF_SCOPE_v31.md; 2c754c10ce in /private/tmp/J2089-rights): (1) R1 Frame0 uses £0 J2177 Option 1 locked-script Cassini open (PIA08167 Use 1/2 -> PIA20016 Use 1/2; drop huygens_descent.wmv); (2) Drop PIA07870/PIA07871 seams/voids; R16 (PIA21610 Use 1/2 + r16_descent_147m) KEEP (--review-ref J2089); R51 uses PIA20016 Use 2/2 -> PIA21434 Use 2/2; (3) Drop PIA10008 grid/wedges; R31-R32 use PIA17031 Use 1/2 + PIA20021 clean right-panel radar crop Use 1-2/2; remaining NASA/JPL/SSI/ASI/Cornell/UArizona PIA + Blue Marble + weic2310a + huygens_portrait_1671 cleared with full caption credits; (4) R23 connector fade v02 KEEP (--review-ref J2089) after PIA08733 Use 2/2; (5) Drop dragonfly.jhuapl.edu MP4; use £0 NASA-hosted SVS 20311 / science.nasa.gov Dragonfly assets + approved CODE graphics + PIA09182 crops (<=2 uses each). All 62 current exports preserved."
         }
       ],
       "remaining_action": "Chief to scope frame-0/Huygens/Dragonfly source resolution; then finish licensed harvest and composites",
@@ -180494,14 +180499,7 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "urgent": 3,
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-07T15:21Z",
-        "by": "codex",
-        "note": "Local 07f8a639a2: reconciled 12 manifests; 62 current and 62 historical render-file hashes match. Legacy coverage correc"
-      }
+      "urgent": 3
     },
     {
       "id": "J2090",
