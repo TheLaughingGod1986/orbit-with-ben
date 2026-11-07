@@ -202625,18 +202625,23 @@
           "at": "2026-11-07T17:32Z",
           "by": "cursor",
           "what": "step 3 of 5 done: Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in tmux j2376-assemble."
+        },
+        {
+          "at": "2026-11-07T17:34Z",
+          "by": "cursor",
+          "what": "step 3 of 5 done: Fix cuts are rendered. Concat is running, then a quieter bed and the gates. tmux j2376-assemble. Log ~/_desk/logs/j2376-assemble.log. Done file ~/_desk/logs/j2376-assemble.done is not written yet."
         }
       ],
-      "remaining_action": "Re-render the 15 picture-gate failures, then mix quieter and run the gates again",
+      "remaining_action": "Let the detached mix and picture, music and sound gates finish",
       "due": "2026-12-13T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 034 Pluto long video from the approved plates, graphics, voiceover, music and sound effects",
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-07T17:32Z",
+        "at": "2026-11-07T17:34Z",
         "by": "cursor",
-        "note": "Static pass cut picture fails from 111 to 15. Jitter and black frames are gone. A fix pass is re-rendering those cuts in"
+        "note": "Fix cuts are rendered. Concat is running, then a quieter bed and the gates. tmux j2376-assemble. Log ~/_desk/logs/j2376-"
       },
       "taskKeys": [
         "OWB:034"
