@@ -1,3 +1,45 @@
+## MacBook continuation — 7 Nov, R40 and R47 multipole plates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py multipole` / `multipole_graphics.py` and two full-frame
+1920×1080 / 25 fps plates in `CODE_MULTIPOLE_v01.json`:
+
+- R40, 405.52–417.92 s (310 frames, 12.40 s), on "First", through the gap
+  after "it." Real eastern-hemisphere Blue Marble. The main dipole shrinks
+  to a short stub and never disappears. Four schematic needles then sit
+  outside the limb. Labels, one at a time: NEVER VANISHES, MAIN MAGNET,
+  ABOUT A TENTH, TEMPORARY POLES. They follow the locked words. SOURCES
+  row 15. No city is named. N and S letters show only while they sit off
+  the disc.
+- R47, 488.14–492.86 s (118 frames, 4.72 s), on "tangling", through the gap
+  after "places." Five schematic needles sit outside the limb, with ribbons
+  crossing the same Blue Marble. Labels: SEVERAL POLES, then UNEXPECTED
+  PLACES. SOURCES row 18. Africa and Tahiti stay on the later R48 plate.
+  The NASA SVS clip still owns 480.80–488.14 s.
+
+Do not stack the older `dipole_strength` bar on R40. That bar was the
+strength stand-in. This plate is the geometry.
+
+Navy-grid samples sit around mean luma 55. Grain is the encoder's
+`noise=alls=2`. No new archive search, no paid generation, £0. Static
+contact sheet inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-multipole-v01/` (two mp4s, previews,
+`CONTACT_v01.jpg`). `CODE_MULTIPOLE_TECHNICAL_CHECK_v01.json` records both
+SHA-256 matches, 1920×1080, 25 fps, yuv420p, 310 and 118 frames, and full
+error-free decodes. Reproduce into a fresh directory (existing files are
+refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py multipole --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the progressive timeline (open on PR #571, not on this branch), the R41
+atmosphere fallback as a finished plate, composites and the picture gates.
+Existing asset-ID and sourced-simulation conflicts stay with Chief.
+
 ## MacBook continuation — 7 Nov, R51 aurora plate
 
 Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
@@ -340,6 +382,48 @@ checkpoint; do not mark the job done. Preserve the earlier source-ID and sourced
 simulation/map conflicts for Chief reconciliation. No archive investigation
 budget consumed, paid generation, YouTube/social change, NAS write or background
 process. Spend £0. The continuation remains the same job and PR.
+
+## MacBook continuation — 7 Nov, R40 and R47 multipole plates
+
+Worker `macbook`, branch `macbook/J2141`, existing PR #633. Queue stays
+**1/3**: build partial, complete package verification not started. Added
+`code_graphics.py multipole` / `multipole_graphics.py` and two full-frame
+1920×1080 / 25 fps plates in `CODE_MULTIPOLE_v01.json`:
+
+- R40, 405.52–417.92 s (310 frames, 12.40 s), on "First", through the gap
+  after "it." Real eastern-hemisphere Blue Marble. The main dipole shrinks
+  to a short stub and never disappears. Four schematic needles then sit
+  outside the limb. Labels, one at a time: NEVER VANISHES, MAIN MAGNET,
+  ABOUT A TENTH, TEMPORARY POLES. They follow the locked words. SOURCES
+  row 15. No city is named. N and S letters show only while they sit off
+  the disc.
+- R47, 488.14–492.86 s (118 frames, 4.72 s), on "tangling", through the gap
+  after "places." Five schematic needles sit outside the limb, with ribbons
+  crossing the same Blue Marble. Labels: SEVERAL POLES, then UNEXPECTED
+  PLACES. SOURCES row 18. Africa and Tahiti stay on the later R48 plate.
+  The NASA SVS clip still owns 480.80–488.14 s.
+
+Do not stack the older `dipole_strength` bar on R40. That bar was the
+strength stand-in. This plate is the geometry.
+
+Navy-grid samples sit around mean luma 55. Grain is the encoder's
+`noise=alls=2`. No new archive search, no paid generation, £0. Static
+contact sheet inspected. No motion, composite, KEEP, PASS or stage approval.
+
+Media: `/Users/ben/_desk/J2141-multipole-v01/` (two mp4s, previews,
+`CONTACT_v01.jpg`). `CODE_MULTIPOLE_TECHNICAL_CHECK_v01.json` records both
+SHA-256 matches, 1920×1080, 25 fps, yuv420p, 310 and 118 frames, and full
+error-free decodes. Reproduce into a fresh directory (existing files are
+refused):
+
+```sh
+/usr/bin/python3 02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/code_graphics.py multipole --out <fresh-dir> --manifest <new-json>
+```
+
+No render remains running. Still unfinished: the wider licensed harvest,
+the progressive timeline (open on PR #571, not on this branch), the R41
+atmosphere fallback as a finished plate, composites and the picture gates.
+Existing asset-ID and sourced-simulation conflicts stay with Chief.
 
 # J2141 resumable picture build — 4 Nov 2026
 
