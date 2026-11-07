@@ -193660,9 +193660,14 @@
           "at": "2026-11-07T03:49Z",
           "by": "codex",
           "what": "step 0 of 3 done: Create callback now reaches the configured click boundary; guarded calls bypass spend confirmations, retries and resubmits. Production interlock retained; full shared-writer integration remains."
+        },
+        {
+          "at": "2026-11-07T03:52Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read-only live Flow DOM probe fails closed on missing controls/price/balance; no click. Added shared-account batch execution, pending-charge and failed-output regressions. Remaining cross-channel writer/ai_spend integration keeps production disabled."
         }
       ],
-      "remaining_action": "Verify guarded helper integration with zero-submit regression tests",
+      "remaining_action": "Verify shared-account batch integration and preserve a tested continuation",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -193670,9 +193675,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-07T03:49Z",
+        "at": "2026-11-07T03:52Z",
         "by": "codex",
-        "note": "Create callback now reaches the configured click boundary; guarded calls bypass spend confirmations, retries and resubmi"
+        "note": "Read-only live Flow DOM probe fails closed on missing controls/price/balance; no click. Added shared-account batch execu"
       },
       "taskKeys": [
         "HOS:009"
