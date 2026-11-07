@@ -203225,18 +203225,23 @@
           "at": "2026-11-07T20:38Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected all 52 rows of SHOT_LIST_v08.md, 62 composites, 39 stills, 4 SVS clips, VO v02b (582.44s), and score bed v01 (585.44s)"
+        },
+        {
+          "at": "2026-11-07T20:48Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Mapped all 52 rows (585.44 s / 17,563 frames) and 62 pre-rendered composites + 39 stills + 4 SVS 20311 clips with zero reuse or stretch conflicts"
         }
       ],
-      "remaining_action": "Build 52-row cut plan and shot_list_v08.csv, verify clip_check.py and picture_qa.py source rules",
+      "remaining_action": "Write _assemble_032_full_master_v01.py and shot_list_v08.csv on NAS and verify --plan",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble the full 032 Titan long video from the approved plates, composites, voiceover, music and sound effects",
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-07T20:38Z",
+        "at": "2026-11-07T20:48Z",
         "by": "gemini",
-        "note": "Inspected all 52 rows of SHOT_LIST_v08.md, 62 composites, 39 stills, 4 SVS clips, VO v02b (582.44s), and score bed v01 ("
+        "note": "Mapped all 52 rows (585.44 s / 17,563 frames) and 62 pre-rendered composites + 39 stills + 4 SVS 20311 clips with zero r"
       },
       "taskKeys": [
         "OWB:032"
