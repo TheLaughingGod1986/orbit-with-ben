@@ -77691,6 +77691,11 @@
           "at": "2026-11-07T02:14Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Replaced default plan. J2224 FIX: swap s06 13_key_ribbon for 09_charge_string_c1_t1, keep locked VO and the one date card."
+        },
+        {
+          "at": "2026-11-07T02:15Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Plate 09_charge_string_c1_t1 sha256 611e2633 matches Mini and NAS. Locked VO sha256 40ed4c4e. Render started in /private/tmp/j0912-short-a-v04."
         }
       ],
       "kind": "assembly",
@@ -77699,14 +77704,14 @@
         "HOS:008"
       ],
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6424215754",
-      "remaining_action": "Confirm the v03 cut and the replacement plate, then rebuild Short A v04",
+      "remaining_action": "Render Short A v04 with the storm-shed plate in place of the repeated key ribbon",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-07T02:14Z",
+        "at": "2026-11-07T02:15Z",
         "by": "cursor",
-        "note": "Replaced default plan. J2224 FIX: swap s06 13_key_ribbon for 09_charge_string_c1_t1, keep locked VO and the one date car"
+        "note": "Plate 09_charge_string_c1_t1 sha256 611e2633 matches Mini and NAS. Locked VO sha256 40ed4c4e. Render started in /private"
       }
     },
     {
