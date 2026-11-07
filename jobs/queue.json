@@ -201252,13 +201252,13 @@
       "stage": "shots",
       "after": "J2361",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-07T14:13Z",
-      "eta": "2026-11-07T14:33Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T11:24Z",
-      "result": "",
+      "result": "FIX at PR626 d89fa79b30 (jobs/reviews/J2362, commit 56ddfbff12). Cleared: clip_check 74 PASS, banned DEM/annotated IDs gone, <=2 uses, explicit CARD onsets 0.60 s, music 10 s fade/2 s picture fade, 13 CODE 0 adjacent, frame-0 distinct. Remaining: CARD holds only 0.26-0.80 s (< 0.4 s xfade); 6 CODE gaps have no native motion; claim corrections. Ruled £0 archive route for R30/R57 and explicit 0-Orbit-beat exception. Not merged; shots not done. Repair J2367, re-review J2368 after it. £0.",
       "history": [
         {
           "at": "2026-11-07T11:24Z",
@@ -201269,6 +201269,11 @@
           "at": "2026-11-07T14:13Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-07T14:13Z",
+          "by": "chief",
+          "what": "done: FIX at PR626 d89fa79b30 (jobs/reviews/J2362, commit 56ddfbff12). Cleared: clip_check 74 PASS, banned DEM/annotated IDs gone, <=2 uses, explicit CARD onsets 0.60 s, music 10 s fade/2 s picture fade, 13 CODE 0 adjacent, frame-0 distinct. Remaining: CARD holds only 0.26-0.80 s (< 0.4 s xfade); 6 CODE gaps have no native motion; claim corrections. Ruled £0 archive route for R30/R57 and explicit 0-Orbit-beat exception. Not merged; shots not done. Repair J2367, re-review J2368 after it. £0."
         }
       ],
       "remaining_action": "Review the corrected Pluto shot plan and release only approved picture work",
@@ -201281,7 +201286,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "56ddfbff12"
     },
     {
       "id": "J2363",
