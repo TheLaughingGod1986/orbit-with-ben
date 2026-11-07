@@ -193679,10 +193679,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-07T05:42Z",
-      "eta": "2026-11-07T07:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -193886,6 +193886,11 @@
           "at": "2026-11-07T05:46Z",
           "by": "codex",
           "what": "step 0 of 3 done: Pushed HOS PR445 checkpoint 2660c8b4: replay-safe spend receipts and batch download-failure recovery; 77 zero-submit tests and check_all PASS. Full implementation remains unfinished; generation disabled."
+        },
+        {
+          "at": "2026-11-07T05:46Z",
+          "by": "codex",
+          "what": "released: Tested bounded-run checkpoint 2660c8b4 pushed to HOS PR445, branch codex/J2275-runner-safety, isolated worktree /private/tmp/J2275-cont. 77 zero-submit regressions and check_all ALL CHECKS PASS. Confirmed spend receipts replay idempotently with collision/crash guards and batch failure recovery. Still 0/3: cross-channel writer adoption, canonical report destination/lock adoption, configured live UI validation, parent inventory and full production launch integration remain; see jobs/reviews/J2275/CHECKPOINT.md. cmd_submit interlock retained, J2200 FIX/J2033 held. No actual credits/browser submits/media/public changes. Ready for continuation now; nothing on Ben."
         }
       ],
       "remaining_action": "Complete shared-writer adoption, canonical spend destination and live input validation",
