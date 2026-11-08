@@ -198925,6 +198925,11 @@
           "at": "2026-11-07T20:55Z",
           "by": "macbook",
           "what": "released: MacBook worker run on codex ended (exit 1) with the job still open; picked up again next run; codex paused on the MacBook until 2026-11-07T22:55:07Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-08T03:25Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Await J2360 exact-lift plan approval, J2359 shot-list release and delivered picture/music before building Short 2",
@@ -198941,7 +198946,16 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2321",
