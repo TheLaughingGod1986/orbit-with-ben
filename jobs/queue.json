@@ -206304,18 +206304,23 @@
           "at": "2026-11-08T19:51Z",
           "by": "gemini",
           "what": "step 4 of 6 done: All 144 cuts rendered, master_v01.mp4 muxed (SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 629.42 s, -14.5 LUFS, -1.5 dBTP, 24/1 CFR, 0 black frames), and all 5 gates passed"
+        },
+        {
+          "at": "2026-11-08T19:57Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Copied 033_why_this_planet_has_21_year_winters_master_v01.mp4 and full_master_v01_pack to NAS OWB UAT and iCloud OWB UAT with verified SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552"
         }
       ],
-      "remaining_action": "Copy master_v01.mp4 and review pack to NAS OWB UAT and iCloud OWB UAT, verify SHA-256, and record J2403 handoff",
+      "remaining_action": "Commit assembly script, shot_list_v02.csv, full_master_v01_pack reports, and ASSEMBLY_HANDOFF_J2403_v01.md, then mark J2403 done",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-08T19:51Z",
+        "at": "2026-11-08T19:57Z",
         "by": "gemini",
-        "note": "All 144 cuts rendered, master_v01.mp4 muxed (SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 6"
+        "note": "Copied 033_why_this_planet_has_21_year_winters_master_v01.mp4 and full_master_v01_pack to NAS OWB UAT and iCloud OWB UAT"
       },
       "taskKeys": [
         "OWB:033"
