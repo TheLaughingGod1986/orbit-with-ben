@@ -206133,18 +206133,23 @@
           "at": "2026-11-08T17:43Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Verified 0 missing sources across 144 cuts (43 video cuts, 101 still cuts) and 6 inter-chapter 0.70 s breath holds; inspecting still resolutions and overlay timings"
+        },
+        {
+          "at": "2026-11-08T17:47Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: shot_list_v02.csv generated and clip_check.py PASS (67 rows); mapping all WHO/WHEN/FACT/DATA/SCALE overlays and SFX stems"
         }
       ],
-      "remaining_action": "Verify locked inputs and build 144-cut video/audio assembly pipeline + SFX stem",
+      "remaining_action": "Write _assemble_033_full_master_v01.py and build audio stems (VO, SFX, score bed)",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-08T17:43Z",
+        "at": "2026-11-08T17:47Z",
         "by": "gemini",
-        "note": "Verified 0 missing sources across 144 cuts (43 video cuts, 101 still cuts) and 6 inter-chapter 0.70 s breath holds; insp"
+        "note": "shot_list_v02.csv generated and clip_check.py PASS (67 rows); mapping all WHO/WHEN/FACT/DATA/SCALE overlays and SFX stem"
       },
       "taskKeys": [
         "OWB:033"
