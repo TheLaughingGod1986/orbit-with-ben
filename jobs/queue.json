@@ -1,5 +1,5 @@
 {
-  "next_id": 2419,
+  "next_id": 2420,
   "jobs": [
     {
       "id": "J0001",
@@ -207302,6 +207302,35 @@
       "remaining_action": "031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch",
       "kind": "assembly",
       "plain": "Fix the second 031 Short after Ben's comment about its shape, then send it back for his watch."
+    },
+    {
+      "id": "J2419",
+      "title": "024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's board tick 7 Nov 2026 09:17Z on J2248 (OWB UAT/024_fri06_muons_ground_v03, sha256 be63a3d8...): CHANGE, his words: \"0:19 under light speed has a code\". This tick was not acted on (hourly Chief runs were down 6-8 Nov). At 0:19 a code-like string (likely a file/plate id, label or debug text) shows under the 'light speed' caption/graphic. 1) Grab frames 0:18-0:21 and find the text and its source layer (caption track, graphic plate or burned-in overlay). 2) Remove it at source; change nothing else (locked VO, timing, loop). 3) Rebuild v04, run all 5 Shorts gates plus an OCR pass over every frame for stray ids/codes. 4) Put v04 on Ben's watch (awaits_ben on J2248), provisional slot Sat 21 Nov 11:30. No upload or schedule. £0.",
+      "ref": "",
+      "film": "OWB:024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-08T22:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch",
+      "kind": "assembly",
+      "plain": "Remove the stray code text Ben spotted at 0:19 in the muons Short, then send it back for his watch."
     }
   ],
   "focus": [
