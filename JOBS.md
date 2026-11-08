@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2402 | mini | blocked | gemini | – | 031 upload · studio · 031 Magnetic Field Flip: Private upload Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after J2401 & Ben UAT watch (J2395) | 51c91c6184 |
-| J2403 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble 67-row long master v01 (629.40 s) from SHOT_LIST_v02 / cuts_033_j2299_v01.json + £0 score bed/SFX + gates | J2398 f8c59c0344; J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
+| J2403 | mini | open | – | – | 033 edit · for gemini · assembly · `gemini-agy` · 033 Uranus: assemble 67-row long master v01 (629.40 s) from SHOT_LIST_v02 / cuts_033_j2299_v01.json + £0 score bed/SFX + gates | J2398 f8c59c0344; J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
 | J2404 | mini | open (after J2403) | – | – | 033 edit · review · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2406 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
