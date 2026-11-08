@@ -320,3 +320,18 @@ PASS  031_short_sat12_solar_wind_air_v02.mp4  dur=24.48s  audio=-16.9dB  motion=
   }
 }
 ```
+
+## J2402 Private Upload (`G5uMANXHtNU` Long `v02` + `C8lPx5N2DwM` Short 1 `v01`) & Studio Finish — 8 November 2026
+
+Following Ben's UAT sign-off on `031` Long `v02` (`J2395.1` OK) and Active Short 1 `v01` (`J2395.2` OK) (8 Nov 2026 10:45Z; hold lifted by acting Chief `claude`), uploaded Long `v02` and Short 1 `v01` Private and completed Studio finish at £0 spend. Active Short 2 `v02` (`J2395.3` marked `CHANGE` by Ben: "The video is a short but vertical") was NOT uploaded and waits for its fix job and fresh Ben watch.
+
+- **Long Master `v02` (`G5uMANXHtNU`, `https://youtu.be/G5uMANXHtNU`):**
+  - `privacyStatus: "private"`, `publishAt: "2026-12-02T18:00:00Z"` (Wed 2 Dec 2026 18:00 London), `duration: "PT9M31S"`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`.
+  - `en-GB` captions serving (`Captions/magnetic_field_flip_long_v02_en-GB.srt`, track ID `AUieDaYnyR-dB-0fNEg5cAOWoPdHLUfMy6wL6UyeD6cMZruz`, `trackKind: "standard"`, `status: "serving"`, `isDraft: false`).
+  - Thumbnail Test & Compare (`T021` in `05_Analytics/tests/THUMB_LEDGER.json`) armed Thumbnail-only in Studio: Slot 1 `031_A_compass_v03.jpg` (`e1d396eb`), Slot 2 `031_B_real_v04.jpg` (`742c404d`), Slot 3 `031_C_bright_v03.jpg` (`a4ee140a`).
+  - End Screen saved in Studio (`1 video, 1 subscribe` template): `Subscribe: Orbit With Ben` + `Video: Best for viewer` (`9:10:18–9:30:18`).
+- **Active Short 1 `v01` (`C8lPx5N2DwM`, `https://youtu.be/C8lPx5N2DwM`):**
+  - `privacyStatus: "private"`, `publishAt: "2026-12-05T11:30:00Z"` (Sat 5 Dec 2026 11:30 London), `duration: "PT34S"`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`, custom cover `031_short_testA_opening_flip_v01_cover.jpg` (`8f5be5cd`) set.
+  - Registered in `00_Brand/Channel-Setup/social/UPLOADS.json` (`long: "G5uMANXHtNU"`) and `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (`status: "scheduled"`, `date: "2026-12-05"`).
+- **Full Read-Back & Report:** `11_Upload-Package/PACKAGE_UPLOAD_RESULT.md`.
+
