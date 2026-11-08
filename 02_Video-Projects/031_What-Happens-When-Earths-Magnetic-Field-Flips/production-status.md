@@ -72,3 +72,48 @@ Final approval remains pending: codex could measure the files but had no audio l
 ## J1810 capability validation — 4 November 2026
 
 Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1752 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
+
+## J2381 Long Master `v01` Assembly & Gates — 8 November 2026
+
+Assembled `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v01` (`570.80 s` / `14,270` frames at `25 fps` CFR, `1920x1080`, `yuv420p`, `-14.6 LUFS`, `-1.0 dBTP`) from the 54-row shot list (`SHOT_LIST_v02.md`), completed £0 J2141 picture package, £0 chapter-shaped score bed (`magnetic_field_flip_score_bed_v01.mp3`), and £0 house SFX kit (`06_Sound-Effects/kit_v01`).
+
+- **Master MP4 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v01.mp4` (`SHA-256: 1b90d78270d4f06b436b42e1a31d700171850511cb7790e43a546da2e20bc69b`)
+- **Score Bed MP3 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01.mp3` (`SHA-256: 9fe2f87876f9b0bbf1a80fb58d14f2ded4fddf4437efc3a83dfa4e321d0ec71f`)
+- **Handoff & Pack:** `07_Edit-Project/ASSEMBLY_HANDOFF_J2381_v01.md` and `07_Edit-Project/full_master_v01_pack/`
+
+```
+clip_check: 54 rows — PASS
+OK: sentence/card boundaries and end-after-VO checks clear.
+
+picture QA PASS: 0 of 115 cuts fail, 11 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg
+
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+
+SFX level PASS: VO -19.9 LUFS, SFX -45.3 LUFS, 15 hits
+```
+
+## J2387 Long Master `v02` Repair & Gates (J2382 FIX) — 8 November 2026
+
+Repaired `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (`570.80 s` / `14,270` frames at `25 fps` CFR, `1920x1080`, `yuv420p`, `-14.6 LUFS`, `-1.0 dBTP`, `0` black frames) addressing all 5 `J2382` review defects while preserving `master_v01.mp4` untouched (`SHA-256: 1b90d78270d4f06b436b42e1a31d700171850511cb7790e43a546da2e20bc69b`):
+
+1. Removed `cosmic_wave_ov.png` concentric bullseye/grid overlay from `R01 c1`, `R15 c2`, `R25 c1..c4`, and `R50 c1`.
+2. Capped `nasa_svs_3822_magfield_left.mp4` to `4` stretches (`<= 5` limit across all sources in `cuts_v02.json`: `hdev_earth_views_iss_2019.mp4: 5`, `nasa_svs_3822_magfield_left.mp4: 4`, `nasa_svs_12312_dscovr_epic_earth.mp4: 4`, `nasa_svs_12296_earth_interior_cutaway.mp4: 4`, `iss030e078095_aurora_timelapse.mp4: 3`, `nasa_svs_20297_magnetosphere_earth_only.mp4: 3`) with honest source attribution in `cuts_v02.json`.
+3. Rebuilt `R32 c2` (`5:29`, `code_graphic_031_r32_paleo_v02.mp4`) with animated paleointensity comparison bars (`TODAY` `2.0x` vs `MILLION-YEAR AVERAGE` `1.0x`, `TWICE ITS AVERAGE`) on the right (`x=1080..1700`) over the rotating Earth interior cutaway (`nasa_svs_12296_earth_interior_cutaway.mp4`) shifted left (`0` overlap), and rebuilt `R33 c3` (`code_graphic_031_r33c_paleo_dip_v02.mp4`, `LASCHAMP DIP`) over a softly blurred moving core plate (`gblur=sigma=32`) with zero split-panel seam.
+4. Cropped `PIA20016.jpg` (`R54 c2`, `9:27`) to `(0, 40, 1277, 758)` (`upscale 1.504x <= 2.35x`) above its burned-in source caption (`...iv. of Idaho (PIA20016)`) with clean house corner credit (`NASA/JPL-Caltech/Univ. of Idaho`).
+5. Updated `R22` subscribe card (`3:27`) to `"NEW SPACE MYSTERIES EVERY WEEK"`.
+
+- **Master `v02` MP4 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4` (`SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`)
+- **Handoff & Pack:** `07_Edit-Project/ASSEMBLY_HANDOFF_J2387_v02.md` and `07_Edit-Project/full_master_v02_pack/`
+
+```
+clip_check: 54 rows — PASS
+OK: sentence/card boundaries and end-after-VO checks clear.
+
+picture QA PASS: 0 of 115 cuts fail, 8 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v02_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v02_pack/picture_qa_review.jpg
+
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+
+SFX level PASS: VO -19.9 LUFS, SFX -45.3 LUFS, 15 hits
+```
+
+
