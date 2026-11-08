@@ -204602,9 +204602,14 @@
           "at": "2026-11-08T08:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T08:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2392; starting verification of J0912 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J2339 continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3), then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "Inspect J0912/J2339 state, verify HOS 008 Short A v04 media and capability probe",
       "kind": "review",
       "recheck_of": "J0912",
       "required_capabilities": [
@@ -204626,9 +204631,11 @@
         "of": 3,
         "at": "2026-11-08T08:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2392; starting verification of J0912 waiting condition"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2393",
