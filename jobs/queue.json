@@ -1,5 +1,5 @@
 {
-  "next_id": 2403,
+  "next_id": 2404,
   "jobs": [
     {
       "id": "J0001",
@@ -206083,6 +206083,36 @@
         "condition": "Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z",
         "check_at": "2026-12-01T18:00:00Z"
       }
+    },
+    {
+      "id": "J2403",
+      "title": "033 Uranus: assemble 67-row long master v01 (629.40 s) from SHOT_LIST_v02 / cuts_033_j2299_v01.json + £0 score bed/SFX + gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble the 67-row / 144-cut `033_Why-This-Planet-Has-21-Year-Winters` (*Why Knocked-Sideways Uranus Has 21-Year Winters*) long master `v01` (`629.40 s`: `611.40 s` locked VO + `18.00 s` moving end-screen hold `611.40–629.40 s`, `1920x1080` `24 fps` CFR `yuv420p`) from `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/`:\n\n### Locked Inputs & Locations (`J2398` PASS, `jobs/reviews/J2398/REVIEW.md`, commit `f8c59c0344`)\n- **Shot list & cut plan:** `07_Edit-Project/SHOT_LIST_v02.md`, `07_Edit-Project/STILLS_LOCK_v02.md`, `07_Edit-Project/cuts_033_j2299_v01.json` (`144` cuts across `67` rows, `0.00–629.40 s`, max cut `6.00 s`, max upscale `1.92x`, max still appearances `2`, `0` adjacent `CODE` rows, `0` split words), and `07_Edit-Project/pool_033_j2299_v01.json`.\n- **Harvested stills & clean crops (`73/73` SHA-256 verified):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/` (`SHA256SUMS.txt`).\n- **Native moving opener `R01` (`0.00–4.35 s`) & `R55` 3-cut cloud passage (`493.01–505.35 s`) (`J2386` / `J2300` KEEP):**\n  - `04_Generated-Clips/J2334_fix/r01_sourced_composite_v01_silent.mp4` (`SHA-256: aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d`, active `0.40–4.75 s`)\n  - `04_Generated-Clips/J2334_fix/r55_passage_v01_silent.mp4` (`SHA-256: 4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f`; Cuts 1–3 `df6d92d597...`, `75adc0df00...`, `3b606e6edf...`)\n- **24fps Code Graphics (`20/20` SHA-256 verified: `19` active + `1` `R26` alias):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/` (`CODE_GRAPHICS_J2299_v02.json`, `SHA256SUMS.txt`).\n- **Locked VO master (`J2155` / `J2164` KEEP):** `02_Voiceover/uranus_vo_v01.wav` (`611.40 s`, `-20.22 LUFS`, `SHA-256: 3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460`) + `02_Voiceover/stt/uranus_vo_v01/stt_raw.json`.\n- **£0 Chapter-shaped score bed:** `05_Music/uranus_score_bed_v01.mp3` (`629.40 s`, `70.6 BPM`, `SHA-256: 47f68d66c4ef7b0287c4939b14e7d906582309ca2a3354c3c262daa7e21309f0`, `music_gate.py` PASS).\n- **£0 House SFX kit:** `06_Sound-Effects/kit_v01/` (`sfx_owb_rumble_low_v01.wav`, `sfx_owb_whoosh_soft_v01.wav`, `sfx_owb_tick_ui_v01.wav`) + `06_Sound-Effects/SFX_PLAN_v01.md`.\n\n### Required Outputs & Gates Before Review\nWrite `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/09_Final-Export/033_why_this_planet_has_21_year_winters_master_v01.mp4` and review pack `07_Edit-Project/full_master_v01_pack/`, copy to NAS `OWB UAT` and iCloud `OWB UAT` with verified SHA-256, and run + paste PASS outputs for all 5 gates:\n1. `python3 00_Brand/Channel-Setup/tools/clip_check.py <shot_list.csv> --words 02_Voiceover/stt/uranus_vo_v01/stt_raw.json`\n2. `python3 scripts/picture_qa.py <master_v01.mp4> --cuts 02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/07_Edit-Project/cuts_033_j2299_v01.json --pool 02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/07_Edit-Project/pool_033_j2299_v01.json --out-dir <pack>`\n3. `python3 scripts/polish_gate.py <master_v01.mp4>`\n4. `python3 scripts/music_gate.py 02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters --bed /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/05_Music/uranus_score_bed_v01.mp3 --video <master_v01.mp4>`\n5. `python3 scripts/sfx_kit.py level --vo <vo_stem> --sfx <sfx_stem> --bed <bed_stem> --minutes 10.5`\n6. Integrated loudness `~-14 LUFS`, true peak `<= -1.0 dBTP`, `24 fps` CFR, `0` black frames. Spend `£0`.\n",
+      "ref": "J2398 f8c59c0344; J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532",
+      "film": "033",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T17:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T17:32Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 67-row 033 Uranus long master v01 (629.40 s) on studio-live NAS, run all 5 tool gates, and stage in OWB UAT",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates"
     }
   ],
   "focus": [
