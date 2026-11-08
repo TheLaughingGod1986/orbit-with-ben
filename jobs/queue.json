@@ -205732,10 +205732,10 @@
       "stage": "picture",
       "after": "J2300",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T17:22Z",
+      "eta": "2026-11-08T19:22Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T13:53Z",
       "result": "",
@@ -205744,11 +205744,24 @@
           "at": "2026-11-08T13:53Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T17:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review J2300 moving-video QA PASS (jobs/reviews/J2300/REVIEW.md, commit d0ef5372ac), mark 033 picture done, and queue 033 Uranus long master v01 assembly",
       "kind": "chief",
-      "plain": "Chief signs off 033 Uranus picture stage after J2300 moving-video QA PASS and queues long master assembly"
+      "plain": "Chief signs off 033 Uranus picture stage after J2300 moving-video QA PASS and queues long master assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T17:22Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2399",

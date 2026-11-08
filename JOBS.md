@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
-| J2398 | mini | open (after J2300) | – | – | 033 picture · chief · 033 picture: Chief stage sign-off after J2300 moving-video QA PASS and long assembly release | J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
+| J2398 | mini | claimed | gemini | 2026-11-08T19:22Z | 033 picture · chief · 033 picture: Chief stage sign-off after J2300 moving-video QA PASS and long assembly release | J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2402 | mini | blocked | gemini | – | 031 upload · studio · 031 Magnetic Field Flip: Private upload Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after J2401 & Ben UAT watch (J2395) | 51c91c6184 |
 
