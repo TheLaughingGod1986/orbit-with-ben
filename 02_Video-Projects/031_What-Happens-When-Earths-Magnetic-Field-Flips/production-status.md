@@ -139,3 +139,10 @@ picture QA PASS: 0 of 9 cuts fail, 1 to look at
 
 
 
+## J2390 Edit Review (`master_v02` + Shorts 1 & 2) — 8 November 2026
+
+Reviewed `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (`J2387`) and Active Short #2 `v01` (`J2389`). Full report in `jobs/reviews/J2390/REVIEW.md`.
+
+- **Long Master `v02` (`J2387`):** **KEEP** (`031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4`, `SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`, `570.80 s`, `14,270` frames at `25 fps` CFR, `-14.6 LUFS`, `-1.0 dBTP`, `0` black frames). All 5 `J2382` FIX items resolved (`0` bullseye overlays, `<= 5` stretches across all sources with honest `cuts_v02.json`, animated paleointensity bars on `R32`/`R33c`, cropped `PIA20016` caption on `R54 c2`, `"NEW SPACE MYSTERIES EVERY WEEK"` on `R22`) and all 5 automated gates `PASS`. Staged to NAS `OWB UAT` and iCloud `OWB UAT`.
+- **Active Short #2 `v01` (`J2389`, `031_short_sat12_solar_wind_air_v01.mp4`):** **FIX** — rebuild as `v02` (`031_short_sat12_solar_wind_air_v02.mp4`, preserving `v01` untouched) removing: (1) `get_nebula_wave()` diagonal sine-wave plaid and `make_cosmic_backdrop()` painted circle dots across the 9:16 top/bottom backdrop; (2) crude yellow/cyan `od.arc()` cartoon curves, `plasma_wave` sine ripple, and dark-ringed Earth cutout on `R39a` (`0.00–2.36 s`), `frame0.jpg`, `cover.jpg`, and `R39_loop`; (3) `R39b` (`2.36–3.32 s`) ghost double-exposed Blue Marble Earth over `svs_3822_magfield_left.mp4`; (4) `R42a` (`9.32–12.68 s`) `1 KILOGRAM` / `1 cm²` graphic text colliding beneath the `9.00–14.00 s` parent-title banner.
+- **Active Short #1 (`J2388`):** Still `open` (not yet built when `J2390` was dispatched). Updated `J2388` deadline to `2026-12-02 18:00` and strictly chained `J2388 -> Short 2 v02 repair -> Shorts 1 & 2 review + UAT handoff`.
