@@ -195439,12 +195439,17 @@
           "at": "2026-11-07T15:27Z",
           "by": "codex",
           "what": "released: Tested checkpoint 950babff pushed to existing HOS PR445. Production shared batch now mandates canonical account/report destinations and exact full locked inventory; 84 zero-submit regressions OK and check_all ALL CHECKS PASS. Still 1/3: remaining cross-channel writer protocol adoption, PR622 report-lock review/merge, configured live UI and actual inventory validation, complete launch integration require further bounded continuation. Resume PR445 latest head in /private/tmp/j2275-1525; jobs/reviews/J2275/CHECKPOINT.md records details. Do not resume divergent PR457. cmd_submit remains disabled; J2200 FIX/J2033 held. No credits/submits/media/publishing. Nothing on Ben."
+        },
+        {
+          "at": "2026-11-08T18:28Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Adopt shared protocol in remaining Flow writers; validate live UI and full launch",
-      "for": "codex",
+      "for": "gemini",
       "kind": "assembly",
-      "model": "gpt-6.1-sol",
+      "model": "gemini-agy",
       "plain": "Fix the video generator safeguards and test them without spending credits.",
       "progress": {
         "step": 1,
@@ -195455,7 +195460,14 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "gpt-6.1-sol",
+        "status": "open",
+        "by": ""
+      }
     },
     {
       "id": "J2276",
