@@ -207436,16 +207436,22 @@
           "at": "2026-11-08T22:47Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-08T22:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected frames 18.0-21.0s of fri06_muons_ground_v03.mp4 and _assemble_fri06_muons_ground_v03.py: found stray YouTube video ID 'rVqgtkBV3jc' rendered as line 4 of endcard.png (16.90-21.05s) directly beneath 'Light Speed?'"
         }
       ],
-      "remaining_action": "Inspecting frames 0:18-0:21 of 024_fri06_muons_ground_v03 and locating the stray code at 0:19 under 'light speed' and its build script",
+      "remaining_action": "Creating _assemble_fri06_muons_ground_v04.py without LONG_ID on endcard.png and building v04",
       "kind": "assembly",
       "plain": "Remove the stray code text Ben spotted at 0:19 in the muons Short, then send it back for his watch.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T22:47Z",
-        "by": "gemini"
+        "at": "2026-11-08T22:51Z",
+        "by": "gemini",
+        "note": "Inspected frames 18.0-21.0s of fri06_muons_ground_v03.mp4 and _assemble_fri06_muons_ground_v03.py: found stray YouTube v"
       },
       "taskKeys": [
         "OWB:024"
