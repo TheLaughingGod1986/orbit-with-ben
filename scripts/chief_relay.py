@@ -539,12 +539,13 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     capabilities = worker_capabilities()
     leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
     from workflow_board import load_tracker
-    nearest = workflow.near_watch(load_tracker())
+    tracker = load_tracker()
+    nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
                    and not workflow.capability_problem(j, leader, at, capabilities)
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
-                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
+                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
 
 def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:

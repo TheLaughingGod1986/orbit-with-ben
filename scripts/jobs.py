@@ -408,8 +408,9 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
     due = workflow.deadlines(data["jobs"])
     from workflow_board import load_tracker
-    nearest = workflow.near_watch(load_tracker())
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
+    tracker = load_tracker()
+    nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
