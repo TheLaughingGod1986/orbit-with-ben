@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2427 | any | open | – | – | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
 | J2428 | any | open | – | – | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
 | J2429 | any | open | – | – | review · Orbit Shorts: break the ~1k ceiling — fix the swipe-away in the first second (stayed-to-watch 30-50%) |  |
+| J2430 | any | open | – | – | review · Rule-E topic go/no-go review: two new HOS backlog films from J2411 (HOS PR #460) |  |
 
 Recently finished:
 
