@@ -207446,17 +207446,22 @@
           "at": "2026-11-08T22:51Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected frames 18.0-21.0s of fri06_muons_ground_v03.mp4 and _assemble_fri06_muons_ground_v03.py: found stray YouTube video ID 'rVqgtkBV3jc' rendered as line 4 of endcard.png (16.90-21.05s) directly beneath 'Light Speed?'"
+        },
+        {
+          "at": "2026-11-08T22:58Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Completed 666-frame Vision OCR pass on fri06_muons_ground_v04.mp4 (0 stray codes/IDs flagged; only intended hook, captions, title and 3-line endcard detected) and staged 24 verified v04 deliverables to OWB UAT/024_fri06_muons_ground_v04"
         }
       ],
-      "remaining_action": "Creating _assemble_fri06_muons_ground_v04.py without LONG_ID on endcard.png and building v04",
+      "remaining_action": "Writing BUILD_v04.md, committing evidence branch, setting awaits_ben on J2248 for v04, and completing J2419",
       "kind": "assembly",
       "plain": "Remove the stray code text Ben spotted at 0:19 in the muons Short, then send it back for his watch.",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-08T22:51Z",
+        "at": "2026-11-08T22:58Z",
         "by": "gemini",
-        "note": "Inspected frames 18.0-21.0s of fri06_muons_ground_v03.mp4 and _assemble_fri06_muons_ground_v03.py: found stray YouTube v"
+        "note": "Completed 666-frame Vision OCR pass on fri06_muons_ground_v04.mp4 (0 stray codes/IDs flagged; only intended hook, captio"
       },
       "taskKeys": [
         "OWB:024"
