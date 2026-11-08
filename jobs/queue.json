@@ -201790,9 +201790,14 @@
           "at": "2026-11-08T02:20Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2358/REVIEW.md (753741c71c) and ran live capability_probe.py gemini --record (audio_input PASS 0.88, moving_video_input FAIL)"
+        },
+        {
+          "at": "2026-11-08T02:20Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Updated J2339 typed capability hold (--recheck J2358, next check 2026-11-08T08:00:00Z); completing J2358"
         }
       ],
-      "remaining_action": "Update J2339 typed capability hold with --recheck J2358 and close J2358",
+      "remaining_action": "Finish J2358 and post report",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -201810,11 +201815,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-08T02:20Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2358/REVIEW.md (753741c71c) and ran live capability_probe.py gemini --record (audio_input PASS 0"
+        "note": "Updated J2339 typed capability hold (--recheck J2358, next check 2026-11-08T08:00:00Z); completing J2358"
       },
       "taskKeys": [
         "HOS:008"
