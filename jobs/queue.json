@@ -207457,10 +207457,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-08T22:45Z",
+      "eta": "2026-11-09T00:45Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -207469,11 +207469,24 @@
           "at": "2026-11-08T22:30Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T22:45Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
       "kind": "qa",
-      "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2."
+      "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T22:45Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2422",
