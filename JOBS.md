@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2275 | mini | open | – | – | 009 picture · for codex · assembly · `gpt-6.1-sol` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2280 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2220 |  |
 | J2287 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2245 |  |
-| J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
+| J2289 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2300 | mini | claimed | gemini | 2026-11-08T14:13Z | 033 picture · for gemini · qa · `gemini-argon` · 033 picture: review corrected source map, native opener and graphics | J2297 |
