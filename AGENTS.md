@@ -117,6 +117,7 @@ Ben, 11 Oct 2026 21:45, for every future video on both channels: *"add more grap
 - **WHEN: every date or era that's said.** Add `· WHEN: <year or era>` for a date call-out. A story with 3 or more dates gets one timeline that builds as each date is said, and it counts as one DATA moment. Later dates drop onto that timeline.
 - **FACT: 2–4 per long.** Each is one surprising, sourced fact, said in a line and shown as a card: `· FACT: <card text, 4 words or fewer>`. Make it a "huh, I didn't know that" beat, never a list. It's quote-checked like every number.
 - **Shorts (22–27 s): at most one overlay** (a fact card, a date call-out or a one-number scale bar), and only where it helps the line being said. It adds no words and no seconds, so the Short stays at 22–27 s and 55–65 words. It never appears in the first 2 s (frame 0 has the hook caption only) or over the 9–14 s title, and it stays inside the 16:9 centre band.
+- **Shorts fill the frame (Ben, 8 Nov 2026):** every Short shot is reframed to fill 1080x1920 full-bleed; no blur pad, no bars. A 16:9 plate on a blurred copy of itself reads as a landscape video on a phone. `gate_shorts_open.py` FAILs a Short padded on more than 10% of its 1 s samples (J2421).
 
 **Picture.**
 - Every DATA, WHO, WHEN and FACT item is our own code graphic or edit overlay, rendered for its own row (`code_graphic_<film>_<row>…`) and listed in the cut list. A chart, graph, diagram or labelled image taken from a source still FAILs `picture_qa.py`. Never pull one in to meet the count.

@@ -29,6 +29,9 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
   8. integrated loudness outside −14.0 ±0.5 LUFS, or   (26 Oct 2026, Chief c61 — ebur128 peak=true
      true peak above −1.6 dBTP                          on the AAC; loudnorm's −1.5 target was
                                                         landing at −1.4 dBTP)
+  9. 16:9 picture with blur pad or bars above/below    (8 Nov 2026, Ben on 031 Short 2 v02: "like a
+     on more than 10% of the 1 s samples                rectangle and blurry above and below"; J2421.
+                                                        Every Short shot fills 1080x1920 full-bleed)
 
 Warnings:
 
@@ -349,6 +352,120 @@ def first_cut_verdict(cut_s: float | None, dur: float) -> list[str]:
     if cut_s > FIRST_CUT_MAX_S:
         return [f"first cut at {cut_s:.2f}s > {FIRST_CUT_MAX_S:.1f}s (scene-change detect)"]
     return []
+
+
+# ----------------------------------------------------------------------------- blur pad / bars (J2421)
+# A 16:9 plate centred in 1080x1920 leaves ~34% of the height above and below it. Per-film assemble scripts
+# filled that with a boxblur/gblur copy of the plate (blur pad) or flat bars; on a phone it reads as a landscape
+# video, not a Short (Ben, 8 Nov 2026). Sample one frame a second; a frame is padded when its top and bottom
+# ~20% bands are flat bars, or are far softer than the centre AND look like a blurred copy of the plate.
+PAD_W, PAD_H = 216, 384
+PAD_BAND = 0.20            # top/bottom band height, share of frame
+PAD_CENTRE = (0.40, 0.60)  # rows certainly inside a centred 16:9 plate
+PAD_SHARP_RATIO = 0.30     # band sharpness / centre sharpness below this = soft band
+PAD_CENTRE_MIN = 2.0       # centre sharpness below this: nothing to compare (dark/soft frame)
+PAD_MATCH_MAD = 18.0       # coarse band vs blurred plate region, mean abs grey difference
+PAD_FLAT_STD = 1.5         # band grey std below this = flat bar
+PAD_FAIL_SHARE = 0.10      # FAIL when more than 10% of samples are padded
+
+
+def _sharpness(g: bytes, w: int, y0: int, y1: int) -> float:
+    """Mean |4-neighbour Laplacian| over rows y0..y1 (exclusive), skipping the image border."""
+    tot = n = 0
+    for y in range(max(1, y0), min(y1, len(g) // w - 1)):
+        r = y * w
+        for x in range(1, w - 1):
+            i = r + x
+            tot += abs(4 * g[i] - g[i - 1] - g[i + 1] - g[i - w] - g[i + w])
+            n += 1
+    return tot / n if n else 0.0
+
+
+def _std(g: bytes, w: int, y0: int, y1: int) -> float:
+    px = g[y0 * w:y1 * w]
+    if not px:
+        return 0.0
+    m = sum(px) / len(px)
+    return (sum((p - m) ** 2 for p in px) / len(px)) ** 0.5
+
+
+def _coarse(g: bytes, w: int, x0: int, x1: int, y0: int, y1: int, gw: int = 6, gh: int = 4) -> list[float]:
+    """Block means of the region on a gw x gh grid (a heavy blur)."""
+    out = []
+    for by in range(gh):
+        ya, yb = y0 + (y1 - y0) * by // gh, y0 + (y1 - y0) * (by + 1) // gh
+        for bx in range(gw):
+            xa, xb = x0 + (x1 - x0) * bx // gw, x0 + (x1 - x0) * (bx + 1) // gw
+            s = n = 0
+            for y in range(ya, max(yb, ya + 1)):
+                r = y * w
+                for x in range(xa, max(xb, xa + 1)):
+                    s += g[r + x]
+                    n += 1
+            out.append(s / n if n else 0.0)
+    return out
+
+
+def _mad(a: list[float], b: list[float]) -> float:
+    return sum(abs(x - y) for x, y in zip(a, b)) / max(1, len(a))
+
+
+def pad_frame(g: bytes, w: int = PAD_W, h: int = PAD_H) -> dict:
+    """Classify one grey frame: {'kind': 'blur'|'bars'|None, ...metrics}."""
+    band = int(h * PAD_BAND)
+    c0, c1 = int(h * PAD_CENTRE[0]), int(h * PAD_CENTRE[1])
+    top_std, bot_std = _std(g, w, 0, band), _std(g, w, h - band, h)
+    centre_std = _std(g, w, c0, c1)
+    res = {"kind": None, "top_std": round(top_std, 2), "bot_std": round(bot_std, 2)}
+    if top_std < PAD_FLAT_STD and bot_std < PAD_FLAT_STD and centre_std > 4 * PAD_FLAT_STD:
+        res["kind"] = "bars"
+        return res
+    cs = _sharpness(g, w, c0, c1)
+    ts, bs = _sharpness(g, w, 0, band), _sharpness(g, w, h - band, h)
+    res.update(centre_sharp=round(cs, 2), top_sharp=round(ts, 2), bot_sharp=round(bs, 2))
+    if cs < PAD_CENTRE_MIN or max(ts, bs) >= PAD_SHARP_RATIO * cs:
+        return res
+    # The pad is the source scaled to fill 1920 high, so each band is a blurred, enlarged copy of the plate's
+    # matching edge (plate = rows ~34-66%, its middle third of columns). Compare direct and mirrored.
+    p0, p1 = int(h * (0.5 - 0.5 * 9 / 16 * 9 / 16)), int(h * (0.5 + 0.5 * 9 / 16 * 9 / 16))
+    ph = p1 - p0
+    xa, xb = int(w * 0.34), int(w * 0.66)
+    top_b = _coarse(g, w, 0, w, 0, band)
+    bot_b = _coarse(g, w, 0, w, h - band, h)
+    plate_top = _coarse(g, w, xa, xb, p0, p0 + int(ph * 0.3))
+    plate_bot = _coarse(g, w, xa, xb, p1 - int(ph * 0.3), p1)
+    flip = lambda v, gw=6: [x for r in range(len(v) // gw - 1, -1, -1) for x in v[r * gw:(r + 1) * gw]]  # noqa: E731
+    mt = min(_mad(top_b, plate_top), _mad(top_b, flip(plate_top)), _mad(top_b, flip(plate_bot)))
+    mb = min(_mad(bot_b, plate_bot), _mad(bot_b, flip(plate_bot)), _mad(bot_b, flip(plate_top)))
+    res.update(top_match=round(mt, 1), bot_match=round(mb, 1))
+    if mt <= PAD_MATCH_MAD and mb <= PAD_MATCH_MAD:
+        res["kind"] = "blur"
+    return res
+
+
+def pad_frames(path: Path, every_s: float = 1.0) -> list[bytes]:
+    data = run(["ffmpeg", "-v", "error", "-i", str(path), "-vf", f"fps=1/{every_s:g},scale={PAD_W}:{PAD_H}:flags=area",
+                "-f", "rawvideo", "-pix_fmt", "gray", "-"]).stdout
+    n = PAD_W * PAD_H
+    return [data[i:i + n] for i in range(0, len(data) - n + 1, n)]
+
+
+def pad_scan(path: Path) -> dict:
+    frames = pad_frames(path)
+    kinds = [pad_frame(f)["kind"] for f in frames]
+    padded = [i for i, k in enumerate(kinds) if k]
+    return {"samples": len(frames), "padded": len(padded), "blur": kinds.count("blur"), "bars": kinds.count("bars"),
+            "share": round(len(padded) / len(frames), 3) if frames else 0.0, "at_s": padded}
+
+
+def pad_verdict(scan: dict) -> list[str]:
+    """FAIL when more than 10% of the 1 s samples are a 16:9 plate on a blur pad or bars."""
+    if not scan.get("samples") or scan["share"] <= PAD_FAIL_SHARE:
+        return []
+    where = ", ".join(f"{s}s" for s in scan["at_s"][:8]) + ("…" if len(scan["at_s"]) > 8 else "")
+    return [f"16:9 picture with blur pad/bars above and below on {scan['padded']}/{scan['samples']} samples "
+            f"({scan['share']:.0%} > {PAD_FAIL_SHARE:.0%}; blur {scan['blur']}, bars {scan['bars']}; at {where}) — "
+            "reframe every shot to fill 1080x1920 full-bleed"]
 
 
 def meta_promise_verdict(text: str) -> list[str]:
@@ -753,6 +870,10 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             f"picture barely changes in the first second (motion {motion:.1f} < {MOTION_WARN:.0f}) — "
             "trim the clip's ease-in so frame 0 is already mid-action"
         )
+
+    pad = pad_scan(path)
+    res["pad"] = pad
+    res["fails"] += pad_verdict(pad)
 
     f0_diff = frame0_diff_0_1_5s(path, dur)
     res["frame0_diff_0_1_5s"] = f0_diff
