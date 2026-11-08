@@ -197535,9 +197535,14 @@
           "at": "2026-11-08T13:30Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2300; starting full-size still and moving-video QA review of 033 picture package"
+        },
+        {
+          "at": "2026-11-08T13:34Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 1 complete: verified 73/73 harvest SHA256SUMS, 20/20 code graphics SHA256SUMS, 0 split words across 67 row boundaries, 32 identity mismatches and 17 exclusions enforced in STILLS_POOL_STATUS_v03.json"
         }
       ],
-      "remaining_action": "Inspect J2299 PR #584 deliverables, row/source map, and hash manifest",
+      "remaining_action": "Inspect full-size source sheets, graphics frame sheet, and flagged picture_qa frames against locked VO lines",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -197553,11 +197558,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-08T13:30Z",
+        "at": "2026-11-08T13:34Z",
         "by": "gemini",
-        "note": "Claimed J2300; starting full-size still and moving-video QA review of 033 picture package"
+        "note": "Step 1 complete: verified 73/73 harvest SHA256SUMS, 20/20 code graphics SHA256SUMS, 0 split words across 67 row boundari"
       },
       "taskKeys": [
         "OWB:033"
