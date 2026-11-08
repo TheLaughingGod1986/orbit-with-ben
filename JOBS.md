@@ -76,15 +76,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2300 | mini | open (after J2299) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033 picture: review corrected source map, native opener and graphics | J2297 |
 | J2303 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
-| J2309 | mini | blocked | codex | – | 029 edit · assembly · OWB 029: E1 local re-cut for SWDCZfWZVao; preserve scheduled copy | J2207 / h47 |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2317 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Fri 18 Dec 11:30 London; no upload) | J2223 |
 | J2318 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload) | J2223 |
 | J2320 | mini | open (after J2157) | – | – | 034 edit · assembly · 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) | J2223 |
-| J2321 | mini | claimed | gemini | 2026-11-08T05:04Z | 029 edit · for gemini · review · `gemini-argon` · OWB 029: resolve J2309 v05 E1 failures using actual media | J2309 |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2330 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2309 |  |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
 | J2334 | any | open (after J2333) | – | – | 033 picture · chief · 033: accept or reject J2306 fallback assets before J2299 resumes | J2306; J2299; PR610 |
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |

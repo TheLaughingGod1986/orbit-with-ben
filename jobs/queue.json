@@ -198031,13 +198031,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-07T00:17Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T22:20Z",
-      "result": "Waiting for: J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render.",
+      "result": "NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2321/REVIEW.md; not pushed per brief): perceived v05.mp4 (14c742138d..., 22.27s, 668f @ 30fps) and stem_vo.wav/mix_cal.wav with demonstrated audio_input + moving_video_input and audited all 029 VO/harvest assets. (1) Keeper line-1 question + <=1.50s surprise conflict: preserved title question ('Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?') is absent across the 029 VO corpus; all recorded Chapter 2 questions (126.16-126.84s 'Was this it?' anaphoric; 127.54-129.38s 'Was Betelgeuse about to explode?' 1.84s raw / 1.70s @1.08x wrong question; 148.04-149.26s 'Why did it fool everyone?' anaphoric) fail star naming and/or <=1.50s surprise, and v05's declarative splice ('Betelgeuse, began to fade.') fails Keeper question and ends 'fade.' at 1.73s > 1.50s; (2) Word count (72 > 65 ceiling) vs >=22.00s floor + <1.20s loop tail mathematical conflict: without v04's 2.00s end card, 5 sentences end at 16.17-20.41s (max legal duration 17.36-21.60s < 22.00s), while adding sentence 6 to reach 21.47s forces 72 words (>65 cap); (3) Frame-0 native motion vs >=60% resolved subject conflict: all resolved Betelgeuse assets in 029/07_Edit-Project/harvest_v01 (sphere_jan/dec, visir_flames, betelgeuse_surface) are ESO stills and all native videos (orion_rise_vlt, alma_orion_set, etc.) are wide-field pinpoint-star timelapses; (4) Existing v05 also fails on Frame-0 subject coverage (13.6% < 60%), 6.64s back-to-back dust_impression.jpg still hold (s08_dust_a + s09_dust_b, 15.33-21.97s > 4.0s), and hard-cut loop seam at 21.97s missing hook caption (loop_diff=10.15) and fading bed. Concrete 4-point £0 fallback repair recipe recorded in local REVIEW.md §4 if Chief later grants an EXCEPTION waiver. Closed J2309 at retained 1/4 progress (and closed J2330); scheduled v04 SWDCZfWZVao (e0459b01...) for 9 Dec 2026 11:30Z preserved untouched. GBP0.",
       "history": [
         {
           "at": "2026-11-06T22:20Z",
@@ -198098,9 +198098,14 @@
           "at": "2026-11-07T01:48Z",
           "by": "relay",
           "what": "condition verification queued: J2330"
+        },
+        {
+          "at": "2026-11-08T03:23Z",
+          "by": "gemini",
+          "what": "review J2321 explicit E1 conflict/no-go (with §4 EXCEPTION fallback recipe): closed at 1/4 progress, scheduled v04 SWDCZfWZVao preserved"
         }
       ],
-      "remaining_action": "Await capable J2321 review, then repair and verify v05 failures",
+      "remaining_action": "Closed (J2321 E1 conflict/no-go): retain scheduled v04 SWDCZfWZVao untouched; 1/4 local-evidence progress retained",
       "due": "2026-12-08T20:00:00Z",
       "kind": "assembly",
       "plain": "Tighten the opening cuts and loop using existing footage and voice.",
@@ -198114,16 +198119,6 @@
       "taskKeys": [
         "OWB:029"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J2321 capability-qualified repair review must perceive existing v05 audio/motion and resolve recorded E1 failures. Current session tested available tools and viewed a static frame only; no audio or moving-video perception demonstrated. Local evidence7d221d0dbb; no approval. No duplicate render.",
-        "check_at": "2026-11-07T02:48:13+00:00",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ],
-        "recheck_task": "J2330"
-      },
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
@@ -198959,13 +198954,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T03:04Z",
-      "eta": "2026-11-08T05:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T00:20Z",
-      "result": "",
+      "result": "NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2321/REVIEW.md; not pushed per brief): perceived v05.mp4 (14c742138d..., 22.27s, 668f @ 30fps) and stem_vo.wav/mix_cal.wav with demonstrated audio_input + moving_video_input and audited all 029 VO/harvest assets. (1) Keeper line-1 question + <=1.50s surprise conflict: preserved title question ('Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?') is absent across the 029 VO corpus; all recorded Chapter 2 questions (126.16-126.84s 'Was this it?' anaphoric; 127.54-129.38s 'Was Betelgeuse about to explode?' 1.84s raw / 1.70s @1.08x wrong question; 148.04-149.26s 'Why did it fool everyone?' anaphoric) fail star naming and/or <=1.50s surprise, and v05's declarative splice ('Betelgeuse, began to fade.') fails Keeper question and ends 'fade.' at 1.73s > 1.50s; (2) Word count (72 > 65 ceiling) vs >=22.00s floor + <1.20s loop tail mathematical conflict: without v04's 2.00s end card, 5 sentences end at 16.17-20.41s (max legal duration 17.36-21.60s < 22.00s), while adding sentence 6 to reach 21.47s forces 72 words (>65 cap); (3) Frame-0 native motion vs >=60% resolved subject conflict: all resolved Betelgeuse assets in 029/07_Edit-Project/harvest_v01 (sphere_jan/dec, visir_flames, betelgeuse_surface) are ESO stills and all native videos (orion_rise_vlt, alma_orion_set, etc.) are wide-field pinpoint-star timelapses; (4) Existing v05 also fails on Frame-0 subject coverage (13.6% < 60%), 6.64s back-to-back dust_impression.jpg still hold (s08_dust_a + s09_dust_b, 15.33-21.97s > 4.0s), and hard-cut loop seam at 21.97s missing hook caption (loop_diff=10.15) and fading bed. Concrete 4-point £0 fallback repair recipe recorded in local REVIEW.md §4 if Chief later grants an EXCEPTION waiver. Closed J2309 at retained 1/4 progress (and closed J2330); scheduled v04 SWDCZfWZVao (e0459b01...) for 9 Dec 2026 11:30Z preserved untouched. GBP0.",
       "history": [
         {
           "at": "2026-11-07T00:20Z",
@@ -199006,9 +199001,14 @@
           "at": "2026-11-08T03:23Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Verified E1 input conflicts, v05 defects, and fallback repair recipe ready to return to J2309"
+        },
+        {
+          "at": "2026-11-08T03:23Z",
+          "by": "gemini",
+          "what": "done: NO-GO / NO E1 RECUT (local review /Users/benjaminoats/_desk/jobs/J2321/REVIEW.md; not pushed per brief): perceived v05.mp4 (14c742138d..., 22.27s, 668f @ 30fps) and stem_vo.wav/mix_cal.wav with demonstrated audio_input + moving_video_input and audited all 029 VO/harvest assets. (1) Keeper line-1 question + <=1.50s surprise conflict: preserved title question ('Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?') is absent across the 029 VO corpus; all recorded Chapter 2 questions (126.16-126.84s 'Was this it?' anaphoric; 127.54-129.38s 'Was Betelgeuse about to explode?' 1.84s raw / 1.70s @1.08x wrong question; 148.04-149.26s 'Why did it fool everyone?' anaphoric) fail star naming and/or <=1.50s surprise, and v05's declarative splice ('Betelgeuse, began to fade.') fails Keeper question and ends 'fade.' at 1.73s > 1.50s; (2) Word count (72 > 65 ceiling) vs >=22.00s floor + <1.20s loop tail mathematical conflict: without v04's 2.00s end card, 5 sentences end at 16.17-20.41s (max legal duration 17.36-21.60s < 22.00s), while adding sentence 6 to reach 21.47s forces 72 words (>65 cap); (3) Frame-0 native motion vs >=60% resolved subject conflict: all resolved Betelgeuse assets in 029/07_Edit-Project/harvest_v01 (sphere_jan/dec, visir_flames, betelgeuse_surface) are ESO stills and all native videos (orion_rise_vlt, alma_orion_set, etc.) are wide-field pinpoint-star timelapses; (4) Existing v05 also fails on Frame-0 subject coverage (13.6% < 60%), 6.64s back-to-back dust_impression.jpg still hold (s08_dust_a + s09_dust_b, 15.33-21.97s > 4.0s), and hard-cut loop seam at 21.97s missing hook caption (loop_diff=10.15) and fading bed. Concrete 4-point £0 fallback repair recipe recorded in local REVIEW.md §4 if Chief later grants an EXCEPTION waiver. Closed J2309 at retained 1/4 progress (and closed J2330); scheduled v04 SWDCZfWZVao (e0459b01...) for 9 Dec 2026 11:30Z preserved untouched. GBP0."
         }
       ],
-      "remaining_action": "Close J2321 and return E1 conflict/no-go decision to J2309",
+      "remaining_action": "Closed: explicit E1 conflict/no-go and fallback repair recipe returned to J2309; scheduled v04 SWDCZfWZVao preserved",
       "due": "2026-12-08T20:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -199668,13 +199668,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "gemini",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T01:48Z",
-      "result": "",
+      "result": "Parent J2309 resolved and closed by capability-qualified review J2321 (explicit E1 £0 input conflict / no-go; scheduled v04 SWDCZfWZVao preserved untouched).",
       "history": [
         {
           "at": "2026-11-07T01:48Z",
@@ -199685,9 +199685,14 @@
           "at": "2026-11-07T06:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1846 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T03:23Z",
+          "by": "gemini",
+          "what": "done: Parent J2309 resolved and closed by capability-qualified review J2321"
         }
       ],
-      "remaining_action": "Verify readiness: Await capable J2321 review, then repair and verify v05 failures",
+      "remaining_action": "Closed: J2321 completed and resolved J2309",
       "kind": "review",
       "recheck_of": "J2309",
       "required_capabilities": [
