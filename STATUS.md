@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | picture | gemini | 2026-11-08T05:04Z | 2026-11-08T07:03Z | J2384 033: build £0 R01 97.77-deg sourced composite and R55 r55b+PIA01488 cloud passage |
+| 033 | picture | gemini | 2026-11-08T05:06Z | 2026-11-08T06:06Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
