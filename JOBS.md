@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2386 | mini | open (after J2385) | – | – | 033 picture · chief · 033: accept J2334 £0 R01/R55 fallback assets and reopen J2299 at 0/5 | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384; J2385; J2299 |
 | J2391 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
-| J2393 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
+| J2393 | mini | claimed | gemini | 2026-11-08T11:47Z | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
 | J2394 | mini | open (after J2388) | – | – | 031 edit · assembly · 031 Magnetic Field Flip Short 2 v02: repair 4 J2390 FIX items (clean 9:16 backdrop, R39a/R39b/R42a) + gates | 1f42136dce |
 | J2395 | mini | open (after J2394) | – | – | 031 edit · for gemini · review · `gemini-argon` · 031 Magnetic Field Flip: review Shorts 1 & 2 (J2388 + J2394 v02) & complete UAT handoff | 1f42136dce |
 

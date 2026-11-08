@@ -204792,10 +204792,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T09:47Z",
+      "eta": "2026-11-08T11:47Z",
       "created_by": "relay",
       "created_at": "2026-11-08T08:13Z",
       "result": "",
@@ -204809,6 +204809,11 @@
           "at": "2026-11-08T08:13Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3381 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T09:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
@@ -204827,7 +204832,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T09:47Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2394",
