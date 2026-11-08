@@ -1,5 +1,5 @@
 {
-  "next_id": 2391,
+  "next_id": 2392,
   "jobs": [
     {
       "id": "J0001",
@@ -197319,6 +197319,11 @@
           "at": "2026-11-08T05:01Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-08T11:00:00Z"
+        },
+        {
+          "at": "2026-11-08T07:24Z",
+          "by": "relay",
+          "what": "condition verification queued: J2391"
         }
       ],
       "remaining_action": "Await J2384 £0 R01/R55 build, J2385 moving_video_input QA and J2386 hash acceptance; then resume source and graphics corrections at 0/5 (R01 0.00-4.35s)",
@@ -197337,7 +197342,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J2334 elected-Chief ruling (jobs/reviews/J2334/CHIEF_RULING.md, 4ddd1058a0): J2332 spend/cap verified (3/3 takes, 30/300 Flow credits, £0 cash) and J2333 moving_video_input QA (81c6a062ac) directly confirmed. Accepted r55b_flow_t1_silent.mp4 (1e71287f9a) for R55; rejected r01_flow_t1_silent.mp4 (65776fa656), r01_tile_flow_t1_silent.mp4 (942a8ab255), and r55a_flow_t1_silent.mp4 (51b26b122e) as FIX. Queued £0 / 0-credit / 0-take bounded correction chain J2384 (build R01 0.00-4.35s 97.77-deg sideways Uranus composite r01_sourced_composite_v01_silent.mp4 + R55 493.01-505.35s 3-cut cloud passage using r55b 0-3.958s 1.00x, r55b 3.958-7.917s 1.28x crop, and PIA01488 9c49e13d8d 500.927-505.350s) -> J2385 (moving_video_input QA) -> J2386 (elected-Chief hash acceptance). Keep J2299 at 0/5 with R01 timing prose corrected to accepted 0.00-4.35s (R02 4.35-8.18s) and J2300 dependency preserved until J2386 accepts the corrected R01/R55 hashes.",
-        "check_at": "2026-11-08T11:00:00Z"
+        "check_at": "2026-11-08T08:24:14+00:00",
+        "recheck_task": "J2391"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
@@ -204426,6 +204432,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2391",
+      "title": "Verify condition for J2299",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2299: J2334 elected-Chief ruling (jobs/reviews/J2334/CHIEF_RULING.md, 4ddd1058a0): J2332 spend/cap verified (3/3 takes, 30/300 Flow credits, £0 cash) and J2333 moving_video_input QA (81c6a062ac) directly confirmed. Accepted r55b_flow_t1_silent.mp4 (1e71287f9a) for R55; rejected r01_flow_t1_silent.mp4 (65776fa656), r01_tile_flow_t1_silent.mp4 (942a8ab255), and r55a_flow_t1_silent.mp4 (51b26b122e) as FIX. Queued £0 / 0-credit / 0-take bounded correction chain J2384 (build R01 0.00-4.35s 97.77-deg sideways Uranus composite r01_sourced_composite_v01_silent.mp4 + R55 493.01-505.35s 3-cut cloud passage using r55b 0-3.958s 1.00x, r55b 3.958-7.917s 1.28x crop, and PIA01488 9c49e13d8d 500.927-505.350s) -> J2385 (moving_video_input QA) -> J2386 (elected-Chief hash acceptance). Keep J2299 at 0/5 with R01 timing prose corrected to accepted 0.00-4.35s (R02 4.35-8.18s) and J2300 dependency preserved until J2386 accepts the corrected R01/R55 hashes.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2299 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-08T07:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T07:24Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await J2384 £0 R01/R55 build, J2385 moving_video_input QA and J2386 hash acceptance; then resume source and graphics corrections at 0/5 (R01 0.00-4.35s)",
+      "kind": "review",
+      "recheck_of": "J2299",
+      "due": "2026-11-08T08:24:14+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

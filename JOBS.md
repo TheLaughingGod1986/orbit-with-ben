@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2388 | mini | open (after J2387) | – | – | 031 edit · assembly · 031 Magnetic Field Flip Short 1 (Test A opening): build 9:16 cold-open cut from v02 + gates (no upload) | 2fa58588f8 |
 | J2389 | mini | open (after J2387) | – | – | 031 edit · assembly · 031 Magnetic Field Flip Short 2 (Keeper question): build 24-25s solar-wind/atmosphere cut + gates (no upload) | 2fa58588f8 |
 | J2390 | mini | open (after J2389) | – | – | 031 edit · for gemini · review · `gemini-argon` · 031 Magnetic Field Flip: review long master v02 + Shorts 1 & 2 (J2387, J2388, J2389) | 2fa58588f8 |
+| J2391 | any | open | – | – | review · Verify condition for J2299 |  |
 
 Recently finished:
 
