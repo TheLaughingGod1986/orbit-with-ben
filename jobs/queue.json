@@ -199043,9 +199043,14 @@
           "at": "2026-11-08T15:26Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Locked 11-shot 25fps cut plan (0 split words, Cut 1=1.88s, Cut 2=3.80s, max shot=3.92s) and 62-word Scribe-aligned VO splice (25.24s VO, 26.28s total)"
+        },
+        {
+          "at": "2026-11-08T15:34Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: All 7 gates PASS: gate_shorts_open (dur=26.28s, audio=-16.6dB, motion=14.37, f0diff=3.43, cut1=1.88s, vo_onset=0.09s, tail_gap=1.04s, visor=0.0), picture_qa (0/11 fail), polish_gate (0/11 fail), sfx_kit level (VO -16.8 LUFS, SFX -41.7 LUFS), music_gate (uranus_score_bed_v01.mp3 70.6 BPM), thumb_preview frame0 (sat=116.7, nb=1%) & cover (sat=148.7, nb=1%)."
         }
       ],
-      "remaining_action": "Write _assemble_033_short2_v01.py and render 033_short02_ice_giant_surface_v01.mp4 (26.28s, 62 words, 11 shots)",
+      "remaining_action": "Write SHORT02_KEEPER_BUILD_REPORT_v01.md, update production-status.md, and queue review job",
       "due": "2026-12-19T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Uranus Short (22-27s question Short from the locked VO and graphics) and run the Shorts quality checks",
@@ -199059,11 +199064,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-08T15:26Z",
+        "at": "2026-11-08T15:34Z",
         "by": "gemini",
-        "note": "Locked 11-shot 25fps cut plan (0 split words, Cut 1=1.88s, Cut 2=3.80s, max shot=3.92s) and 62-word Scribe-aligned VO sp"
+        "note": "All 7 gates PASS: gate_shorts_open (dur=26.28s, audio=-16.6dB, motion=14.37, f0diff=3.43, cut1=1.88s, vo_onset=0.09s, ta"
       },
       "taskKeys": [
         "OWB:033"
