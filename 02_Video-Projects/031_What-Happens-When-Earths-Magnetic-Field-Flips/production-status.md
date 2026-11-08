@@ -116,4 +116,26 @@ music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM
 SFX level PASS: VO -19.9 LUFS, SFX -45.3 LUFS, 15 hits
 ```
 
+## J2389 Active Short #2 (`031_short_sat12_solar_wind_air_v01`) Assembly & Gates — 8 November 2026
+
+Built `031` Active Short #2 (*What If the Solar Wind Blew Earth's Atmosphere Into Space?*, `24.48 s` / `612` frames at `25 fps` CFR, `1080x1920`, `yuv420p`, `-14.0 LUFS`, `-2.2 dBTP`, £0 spend, no YouTube upload) lifting verbatim sentences `s65, s67, s70, s74` (`398.42–461.62 s`, `64` words) from locked VO `magnetic_field_flip_vo_v02a.wav` (`SHA-256: 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6`), `magnetic_field_flip_score_bed_v01.mp3`, house SFX `kit_v01`, and `R39–R44` plates free of any synthetic bullseye overlay.
+
+- **Short 2 MP4 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v01.mp4` (`SHA-256: 2f0f7e82e7d4c36d484d3bbf1ba7516118b3d1cdf61b788119996dc5ca85547c`)
+- **Frame 0 (`1080x1920`):** `.../031_short_sat12_solar_wind_air_v01_frame0.jpg` (`SHA-256: 525885ee2c836f8fb5114532de207a83c5a5409d0b200bad83b5d961fd09762d`)
+- **Custom Cover (`1080x1920`):** `.../031_short_sat12_solar_wind_air_v01_cover.jpg` (`SHA-256: b3f860ab6b94133c0bd637cdbba2ab6724f669876f61b5b9dee2c622c26a69d5`)
+- **Handoff & Assembler:** `10_Shorts/SHORT2_SOLAR_WIND_AIR_HANDOFF_J2389_v01.md` and `10_Shorts/_assemble_031_short2_v01.py`
+
+```
+PASS  031_short_sat12_solar_wind_air_v01.mp4  dur=24.48s  audio=-16.9dB  motion=37.63  f0diff=11.21  cut1=2.36s  vo_onset=0.09s  tail_gap=1.46s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v01_vo.wav  dhash=a917d9dbeb9d99db  visor=0.0
+
+PASS  031_short_sat12_solar_wind_air_v01_frame0.jpg  1080x1920  223KB  sharp=303  bright=117
+PASS  031_short_sat12_solar_wind_air_v01_cover.jpg  1080x1920  458KB  sharp=767  bright=124
+
+SFX level PASS: VO -16.5 LUFS, SFX -38.5 LUFS, 5 hits
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+polish gate PASS: 0 of 9 rows failed, 1 to look at
+picture QA PASS: 0 of 9 cuts fail, 1 to look at
+```
+
+
 
