@@ -200023,13 +200023,13 @@
       "stage": "picture",
       "after": "J2333",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T04:48Z",
-      "eta": "2026-11-08T06:48Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T02:27Z",
-      "result": "",
+      "result": "Elected-Chief ruling recorded (4ddd1058a0, jobs/reviews/J2334/CHIEF_RULING.md): confirmed elected Chief authority (gemini), J2306/J2332 scope/take/credit compliance (3/3 takes, 30/300 Flow credits 14890->14860, £0 cash), and J2333 moving_video_input QA (81c6a062ac, directly verified via read_file video/mp4). Accepted r55b_flow_t1_silent.mp4 (1e71287f9a) for R55 (493.01-505.35s); rejected r01_flow_t1_silent.mp4 (65776fa656), r01_tile_flow_t1_silent.mp4 (942a8ab255), and r55a_flow_t1_silent.mp4 (51b26b122e) as FIX. Retained J2299 parent hold at 0/5 with R01 timing prose corrected to accepted 0.00-4.35s (R02 4.35-8.18s) and J2300 dependency preserved. Queued £0 / 0-credit / 0-take bounded correction chain: J2384 (build R01 0-4.35s 97.77-deg sideways Uranus 24fps sourced composite r01_sourced_composite_v01_silent.mp4 + R55 493.01-505.35s 3-cut passage using r55b 1.00x + r55b 1.28x crop + PIA01488 9c49e13d8d) -> J2385 (moving_video_input QA) -> J2386 (elected-Chief hash acceptance). No money, publishing, script/VO changes, generation expansion or gate waiver.",
       "history": [
         {
           "at": "2026-11-07T02:27Z",
@@ -200065,6 +200065,11 @@
           "at": "2026-11-08T05:01Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: Queued £0 bounded correction chain J2384 -> J2385 -> J2386 and updated J2299 dependency hold at 0/5 with R01 0.00-4.35s timing prose"
+        },
+        {
+          "at": "2026-11-08T05:01Z",
+          "by": "gemini",
+          "what": "done: Elected-Chief ruling recorded (4ddd1058a0, jobs/reviews/J2334/CHIEF_RULING.md): confirmed elected Chief authority (gemini), J2306/J2332 scope/take/credit compliance (3/3 takes, 30/300 Flow credits 14890->14860, £0 cash), and J2333 moving_video_input QA (81c6a062ac, directly verified via read_file video/mp4). Accepted r55b_flow_t1_silent.mp4 (1e71287f9a) for R55 (493.01-505.35s); rejected r01_flow_t1_silent.mp4 (65776fa656), r01_tile_flow_t1_silent.mp4 (942a8ab255), and r55a_flow_t1_silent.mp4 (51b26b122e) as FIX. Retained J2299 parent hold at 0/5 with R01 timing prose corrected to accepted 0.00-4.35s (R02 4.35-8.18s) and J2300 dependency preserved. Queued £0 / 0-credit / 0-take bounded correction chain: J2384 (build R01 0-4.35s 97.77-deg sideways Uranus 24fps sourced composite r01_sourced_composite_v01_silent.mp4 + R55 493.01-505.35s 3-cut passage using r55b 1.00x + r55b 1.28x crop + PIA01488 9c49e13d8d) -> J2385 (moving_video_input QA) -> J2386 (elected-Chief hash acceptance). No money, publishing, script/VO changes, generation expansion or gate waiver."
         }
       ],
       "remaining_action": "Complete J2334 and post thread report",
@@ -200088,7 +200093,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "4ddd1058a0 jobs/reviews/J2334/CHIEF_RULING.md; J2333 81c6a062ac; J2384; J2385; J2386"
     },
     {
       "id": "J2335",
