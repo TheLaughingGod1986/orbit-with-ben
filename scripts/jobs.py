@@ -886,7 +886,7 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: str = "", version: str = "", due: str = "",
               airs: str = "", if_not: str = "", card: str = "", title: str = "", number: str = "", vtype: str = "",
-              add: bool = False, clear: bool = False) -> None:
+              add: bool = False, clear: bool = False, prev: list | None = None, fixed: list | None = None) -> None:
     """Mark a job as waiting on Ben (Ben, 25 Oct 2026: every cut he has to OK shows on the board, with Play and its
     deadline). `awaits_ben` is the one signal the Studio Kanban builds Ready for OK cards from (video_tracker.py
     ask_entries); scripts/board_check.py checks every entry reached the published board. --add appends another cut to
@@ -904,6 +904,12 @@ def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: s
                  ("ifNot", if_not), ("card", card), ("title", title), ("number", number), ("type", vtype)):
         if v:
             entry[k] = v
+    # A re-sent cut names Ben's earlier tick(s) it answers and what was changed, so the watch page lists the past
+    # problems under the player (Ben, 8 Nov 2026).
+    if prev:
+        entry["prev"] = [p for p in prev if p]
+    if fixed:
+        entry["fixed"] = [f for f in fixed if f]
     cur = job.get("awaits_ben")
     cur = cur if isinstance(cur, list) else ([cur] if isinstance(cur, dict) else [])
     job["awaits_ben"] = (cur + [entry]) if add else [entry]
@@ -1193,6 +1199,9 @@ def main(argv=None) -> int:
     aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
+    aw.add_argument("--prev", action="append", default=[], help="a re-sent cut: the board check id of Ben's earlier change "
+                    "tick it answers, e.g. OWB-J2395.3 (repeatable); his old notes show under the new cut")
+    aw.add_argument("--fixed", action="append", default=[], help="a re-sent cut: one line on what was changed (repeatable)")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "
                     "the default when the job is still open/claimed/blocked")
@@ -1333,7 +1342,7 @@ def main(argv=None) -> int:
             elif args.cmd == "awaits":
                 do_awaits(job, args.agent or "chief", at, what=args.what, file=args.file, version=args.version, due=args.due,
                           airs=args.airs, if_not=args.if_not, card=args.card, title=args.title, number=args.number,
-                          vtype=args.vtype, add=args.add, clear=args.clear)
+                          vtype=args.vtype, add=args.add, clear=args.clear, prev=args.prev, fixed=args.fixed)
             elif args.cmd == "approved":
                 src = find(data, args.from_job) if args.from_job else job
                 if not src:
