@@ -197540,9 +197540,14 @@
           "at": "2026-11-08T13:34Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 1 complete: verified 73/73 harvest SHA256SUMS, 20/20 code graphics SHA256SUMS, 0 split words across 67 row boundaries, 32 identity mismatches and 17 exclusions enforced in STILLS_POOL_STATUS_v03.json"
+        },
+        {
+          "at": "2026-11-08T13:35Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2 complete: inspected all 42 active stills, borderless/single-globe crops, PDF raster, graphics frame sheet, and both picture_qa WARN frames full size against locked VO lines"
         }
       ],
-      "remaining_action": "Inspect full-size source sheets, graphics frame sheet, and flagged picture_qa frames against locked VO lines",
+      "remaining_action": "Directly view native R01 opener, R55 3-cut cloud passage, and first batch of 24fps code graphics (R03-R26) with moving_video_input",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -197558,11 +197563,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-08T13:34Z",
+        "at": "2026-11-08T13:35Z",
         "by": "gemini",
-        "note": "Step 1 complete: verified 73/73 harvest SHA256SUMS, 20/20 code graphics SHA256SUMS, 0 split words across 67 row boundari"
+        "note": "Step 2 complete: inspected all 42 active stills, borderless/single-globe crops, PDF raster, graphics frame sheet, and bo"
       },
       "taskKeys": [
         "OWB:033"
