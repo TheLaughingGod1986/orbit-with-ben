@@ -197232,13 +197232,13 @@
       "stage": "picture",
       "after": "J2290",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T10:56Z",
-      "eta": "2026-11-08T12:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T19:43Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-06T19:43Z",
@@ -197399,6 +197399,11 @@
           "at": "2026-11-08T12:10Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: committed 4736dc0160 on PR #584 (codex/J2299-source-reconciliation) and synced all manifests/reports to NAS; handing off to J2300"
+        },
+        {
+          "at": "2026-11-08T12:11Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J2299 and hand off to J2300 moving-video QA",
@@ -197414,7 +197419,8 @@
         "at": "2026-11-08T12:10Z",
         "by": "gemini",
         "note": "Step 5 done: committed 4736dc0160 on PR #584 (codex/J2299-source-reconciliation) and synced all manifests/reports to NAS"
-      }
+      },
+      "done_ref": "4736dc0160"
     },
     {
       "id": "J2300",
