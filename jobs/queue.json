@@ -198880,10 +198880,10 @@
       "stage": "edit",
       "after": "J2300",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T14:07Z",
+      "eta": "2026-11-08T16:07Z",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
       "result": "",
@@ -198902,6 +198902,11 @@
           "at": "2026-11-08T13:55Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-08T14:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble 033 Uranus Short 1 (Test A opening lift 0.00-35s from locked VO + J2300 plates/graphics) and run all Shorts gates",
@@ -198916,7 +198921,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T14:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2318",
