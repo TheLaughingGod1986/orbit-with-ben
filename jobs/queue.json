@@ -199956,9 +199956,14 @@
           "at": "2026-11-08T04:29Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T04:29Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2333; inspecting J2306 ruling and J2332 delivery"
         }
       ],
-      "remaining_action": "Watch the generated replacement intervals and report hash-specific findings",
+      "remaining_action": "Read J2306 ruling and J2332 delivery, test moving_video_input on R01/R55 clips, and record QA findings",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -199978,9 +199983,11 @@
         "of": 3,
         "at": "2026-11-08T04:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2333; inspecting J2306 ruling and J2332 delivery"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2334",
