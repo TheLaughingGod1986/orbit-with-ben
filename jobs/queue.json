@@ -204702,9 +204702,14 @@
           "at": "2026-11-08T10:42Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed jobs/reviews/J2391/REVIEW.md (afc91170a3); ready to record wait --recheck J2391 on J2299"
+        },
+        {
+          "at": "2026-11-08T10:43Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded wait --recheck J2391 on J2299; J2386 (kind: chief) is #1 in queue to accept hashes and reopen J2299"
         }
       ],
-      "remaining_action": "Record wait --recheck J2391 on J2299 and close J2391",
+      "remaining_action": "Complete J2391 and post thread report",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-08T08:24:14+00:00",
@@ -204719,11 +204724,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-08T10:42Z",
+        "at": "2026-11-08T10:43Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2391/REVIEW.md (afc91170a3); ready to record wait --recheck J2391 on J2299"
+        "note": "Recorded wait --recheck J2391 on J2299; J2386 (kind: chief) is #1 in queue to accept hashes and reopen J2299"
       },
       "taskKeys": [
         "OWB:033"
