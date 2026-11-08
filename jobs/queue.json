@@ -199028,9 +199028,14 @@
           "at": "2026-11-08T15:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T15:15Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2318; starting 5-step plan for 033 Short 2 build and gates"
         }
       ],
-      "remaining_action": "Assemble 033 Uranus Short 2 (22-27s Keeper question lift from locked VO + J2300 plates/graphics) and run all Shorts gates",
+      "remaining_action": "Read 033 Short 2 spec and inspect existing Short 1 / J2300 assets on studio-live",
       "due": "2026-12-19T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Uranus Short (22-27s question Short from the locked VO and graphics) and run the Shorts quality checks",
@@ -199045,12 +199050,14 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-08T15:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2318; starting 5-step plan for 033 Short 2 build and gates"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2319",
