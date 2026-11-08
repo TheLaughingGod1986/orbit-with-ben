@@ -1,5 +1,5 @@
 {
-  "next_id": 2426,
+  "next_id": 2427,
   "jobs": [
     {
       "id": "J0001",
@@ -207690,6 +207690,35 @@
       "due": "2026-11-09T09:00:00Z",
       "kind": "studio",
       "plain": "Start a title test on tonight's Mars robot video, comparing two new story-style titles against the current one."
+    },
+    {
+      "id": "J2426",
+      "title": "AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's board ticks 7 Nov 2026 09:18-09:20Z: OK on J2229.1 AR2 v13 (sha 74aa3546, 'Where Will the ISS Crash?') and OK on J2229.2 AR3 v14 (sha 64e148d4, 2027 eclipse). No upload job was ever queued (hourly Chief runs were down 6-8 Nov), so both sit in the board's Passed column. 1) Package each (title, description, tags, cover) from the existing AR package files; run the Shorts gates incl. the new blur-pad check if merged (J2421). 2) Upload Private with publishAt in the first free Orbit Short slots (Mon/Wed/Fri/Sat 11:30 London, never two Shorts a day; read UPCOMING_SHORTS_GATE.md and UPLOADS.json first; AR1 is Fri 27 Nov). 3) Read back API state, record in UPLOADS.json, and mark the awaits_ben entries on J2229 cleared so they leave Passed. 4) Also check J1100's 028 night-sky v07 (Ben OK) actually replaced the file on X768qs8sNQs or its swap slot (7 Dec); if not, do the swap the same way J2259 did for Titan. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-08T22:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap",
+      "kind": "studio",
+      "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through."
     }
   ],
   "focus": [
