@@ -205002,9 +205002,14 @@
           "at": "2026-11-08T10:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T10:18Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2395; starting Short 1 & Short 2 v02 verification"
         }
       ],
-      "remaining_action": "Review 031 Short 1 (J2388) and Short 2 v02 (J2394), stage both to OWB UAT alongside KEEP master_v02, set awaits_ben, and advance WIP.json",
+      "remaining_action": "Verify Short 1 (J2388) and Short 2 v02 (J2394) gates and contact sheets",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the completed 031 Shorts 1 and 2 (v02) and hand off 031 to Ben's UAT watch",
@@ -205019,12 +205024,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T10:17Z",
+        "of": 4,
+        "at": "2026-11-08T10:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2395; starting Short 1 & Short 2 v02 verification"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     }
   ],
   "focus": [
