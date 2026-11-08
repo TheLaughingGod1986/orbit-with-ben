@@ -1,5 +1,5 @@
 {
-  "next_id": 2386,
+  "next_id": 2387,
   "jobs": [
     {
       "id": "J0001",
@@ -204072,6 +204072,35 @@
         "moving_video_input"
       ],
       "plain": "Watch the corrected Uranus opening composite and cloud cuts for visual and scientific accuracy."
+    },
+    {
+      "id": "J2386",
+      "title": "033: accept J2334 £0 R01/R55 fallback assets and reopen J2299 at 0/5",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J2385 moving-video QA of J2384, read jobs/reviews/J2334/CHIEF_RULING.md (4ddd1058a0) and J2385 REVIEW.md. Confirm elected Chief authority, £0/0-credit/0-take compliance and hash-specific QA. If R01 (r01_sourced_composite_v01_silent.mp4, 0.00-4.35s) and R55 (r55b 1e71287f9a Cut 1 1.00x + Cut 2 1.28x crop + PIA01488 9c49e13d8d Cut 3, 493.01-505.35s) pass every required check, record protected asset acceptance and reopen J2299 with evidence, preserving its existing 0/5 plan and correcting R01 prose to accepted 0.00-4.35s (R02 4.35-8.18s). This only releases source/graphics correction work; J2300 still depends on completed J2299 for full picture QA. If FIX or absent capability, retain parent hold and queue a concrete bounded correction or typed capability dependency. No money, publishing, script/VO changes, generation expansion or gate waiver.",
+      "ref": "J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384; J2385; J2299",
+      "film": "033",
+      "stage": "picture",
+      "after": "J2385",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T05:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T05:00Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Confirm elected authority and hash-specific moving_video_input QA on J2384/J2385 R01/R55 assets; if PASS, accept hashes and reopen J2299 at 0/5 with R01 0-4.35s",
+      "kind": "chief",
+      "plain": "Decide whether the corrected zero-cost Uranus opening and cloud cuts are ready for picture corrections to resume."
     }
   ],
   "focus": [
