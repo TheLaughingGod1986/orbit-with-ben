@@ -1,5 +1,5 @@
 {
-  "next_id": 2389,
+  "next_id": 2390,
   "jobs": [
     {
       "id": "J0001",
@@ -204286,6 +204286,36 @@
       "due": "2026-12-05T11:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks"
+    },
+    {
+      "id": "J2389",
+      "title": "031 Magnetic Field Flip Short 2 (Keeper question): build 24-25s solar-wind/atmosphere cut + gates (no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build `031` Active Short #2 (Keeper-Score Question Short: *What If the Solar Wind Blew Earth's Atmosphere Into Space?*) from `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/SHORTS_PLAN_v01.md` (`J2147`) and the verified `031` `v02` plates/graphics. £0 spend, no YouTube upload.\n\n### Requirements\n- **Spoken Lift:** `s65, s67, s70, s74` (`398.42–461.62 s`, `64` words, `24.48 s` runtime; or `+ s77` question option `25.00 s`, `69` words) from locked VO `magnetic_field_flip_vo_v02a.wav` (`SHA-256: 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6`).\n- **Visuals (`1080x1920`, `25 fps` CFR, `22–27 s`):** Follow the 6-shot vertical table in `SHORTS_PLAN_v01.md` (`R39–R44` solar wind / Mars atmosphere loss / Earth ozone shield plates, free of any synthetic bullseye overlay), moving named subject at frame 0 (not reused from the last 10 Shorts, no Orbit at frame 0), yellow-hook-word opening caption (`0.00–2.40 s`), `9–14 s` title card (*What If the Solar Wind Blew Earth's Atmosphere Into Space?*), single teaching overlay (`1% OF EARTH'S` at `6.20–9.00 s` inside the 16:9 centre band), end card naming the exact long listing title (`What Happens When Earth's Magnetic Field Flips?`), and seamless loop preroll.\n- **Audio:** Full-length music bed (`magnetic_field_flip_score_bed_v01.mp3`) + house SFX (`kit_v01` passing `sfx_kit.py level`), integrated loudness `~-14 LUFS`, true peak `<= -1.0 dBTP`.\n- **Gates:** Must PASS `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short2_v01.mp4> --air-date 2026-12-12` and `python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <frame0.jpg> --out <sheet.jpg>`. Save outputs on `studio-live` NAS under `10_Shorts/` and commit non-media report/hashes from a clean worktree.\n",
+      "ref": "2fa58588f8",
+      "film": "031",
+      "stage": "edit",
+      "after": "J2387",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T06:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T06:06Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 031 Short 2 (Keeper question Short from SHORTS_PLAN_v01) and pass gate_shorts_open.py",
+      "due": "2026-12-12T11:30:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Magnetic Field Flip Short (24-25s question Short on solar wind and Earth's atmosphere) and run Shorts checks"
     }
   ],
   "focus": [
