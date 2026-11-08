@@ -61,5 +61,21 @@
 
 - **Worker**: `gemini` (specialist worker; no Chief approval or merge authority claimed).
 - **Action Applied**:
-  - Updated `J2339`'s typed capability hold (`--type capability --requires moving_video_input --recheck J2393`) with next check `2026-11-08T15:50:00Z` (6 hours).
+  - Committed verification evidence in `jobs/reviews/J2393/REVIEW.md` (`4b8a552185`) and parked `J2393` for the elected Chief because `jobs.py wait J2339 --recheck J2393` requires elected-Chief authority.
   - Preserved `J2339` progress (`2/3`), parent `J0912` progress (`4/4`, `J2392`), Chief `h47` locks, HOS PR #455 (`72608f30`), and both `v03`/`v04` masters on Mini and NAS. Zero spend (`£0.00`), no generation, no upload, and no schedule.
+
+---
+
+## 4. Elected Acting-Chief Ruling (`2026-11-08T14:04Z`)
+
+- **Acting Chief**: `gemini` (`Gemini 4 Argon (High)` / `gemini-argon`, elected acting Chief under Ben's 26 Oct 2026 succession chain; verified via `python3 scripts/chief_relay.py status` at `2026-11-08T14:03:50Z`: `chief` down with no post in last 3 h and last `jobs.py` run 22 h ago, `claude` down for 3,732 min, `codex` down on usage limit until `14:55:24Z`).
+- **Fresh Chief Re-Verification (`2026-11-08T14:01Z–14:04Z`)**:
+  - Re-verified SHA-256 hashes on Mini, `studio-live` NAS, and `mac-mini-archive` NAS (`hos_008_short_A_v04.mp4` `76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d`, preserved `v03` `f88315e04718366aa8446ce9aec6ea947b9ebfb7da566698132e8344d3bceab6`, locked VO `40ed4c4e2a1f2e58608cfe690bb8afd6e1d64c80eafb0a75f37d47648a7ba28e`, and `s06` storm-shed plate `611e2633f2ea7f4417272b91af41b857bb6733d416363918a17a111be56f9c80`), plus HOS PR #455 (`72608f30099fcabaaa947b66b04a9e4240291ead`, `OPEN`, `CLEAN`, 4/4 active CI checks `SUCCESS`).
+  - Re-verified `audio_input` and 23-frame 1-Hz sequence (`00:00..00:22`) directly in session `d68545b2-7366-4113-9651-a09be1ed9831` via `default_api:read_file` on `hos_008_short_A_v02.mp3` and `hos_008_short_A_v04.mp4`; recorded `available: ["audio_input"]` in `~/_desk/state/chief/capabilities.json` (clearing an unverified `13:28:23Z` `"moving_video_input"` entry whose own probe had `video FAIL`).
+  - Confirmed that `J2339` step `3/3` (continuous 30fps `moving_video_input` QA) remains blocked because `default_api:read_file` on `video/mp4` returns 23 static 1-Hz sampled frames (`00:00..00:22`) rather than continuous 30fps moving video, and no online worker has demonstrated `moving_video_input`.
+- **Ruling**: **HOLD / CONDITION UNMET (`--type capability --requires moving_video_input --recheck J2393`, next check `2026-11-08T20:05:00Z`)**.
+- **Follow-Up Recorded on Queue**:
+  - Updated `J2339`'s typed capability hold (`jobs.py wait J2339 --agent gemini --type capability --requires moving_video_input --recheck J2393 --check-at 2026-11-08T20:05:00Z --git`), preserving `J2339` step `2/3` progress and parent `J0912` step `4/4` progress (`J2392`).
+  - Closed `J2393` (`jobs.py done J2393 --agent gemini --git`) after recording independent Chief review milestones (`step 1` through `step 3`) via `chief_relay.py review-progress`.
+  - Preserved `v03` and `v04`, Chief `h47` locks, zero spend (`£0.00`), no generation, no upload, and no schedule.
+
