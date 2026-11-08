@@ -200208,6 +200208,11 @@
           "at": "2026-11-07T10:20Z",
           "by": "relay",
           "what": "condition verification queued: J2358"
+        },
+        {
+          "at": "2026-11-08T02:20Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-08T08:00:00Z"
         }
       ],
       "remaining_action": "Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
@@ -200239,12 +200244,14 @@
       ],
       "hold": {
         "type": "capability",
-        "condition": "Audio/speech/cadence/SFX/score-provenance QA (audio_input PASS 0.94 in capability_probe.py) and 23-frame 1-Hz sequence/caption/s06 continuity audit on hos_008_short_A_v04.mp4 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d) completed with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 comment 6703687627. Continuous 30fps moving_video_input remains unavailable in this session: capability_probe.py gemini --record failed video (truth left_to_right yellow>blue>red; answer left_to_right green>red>blue) and default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22) rather than 30fps continuous motion. Parent J0912 stays held.",
-        "check_at": "2026-11-07T11:20:09+00:00",
+        "condition": "J2358 condition check (jobs/reviews/J2358/REVIEW.md, 753741c71c): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; step 2/3 audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA completed with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). Step 3/3 continuous 30fps moving_video_input QA remains blocked: live capability_probe.py gemini --record at 2026-11-08T02:18Z passed audio_input (0.88) and failed moving_video_input (truth right_to_left green>blue>yellow; answer none), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Parent J0912 stays held at 4/4 (J2357).",
+        "check_at": "2026-11-08T08:00:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "recheck_task": "J2358"
+        "last_recheck": "J2358",
+        "checked_at": "2026-11-08T02:20:32+00:00",
+        "checked_by": "gemini"
       }
     },
     {
