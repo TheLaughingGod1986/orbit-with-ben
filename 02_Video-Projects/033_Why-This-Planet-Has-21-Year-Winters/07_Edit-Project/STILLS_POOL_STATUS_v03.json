@@ -1,14 +1,26 @@
 {
   "film": "OWB:033",
   "job": "J2299",
-  "status": "DRAFT_INCOMPLETE_NOT_KEEP",
+  "status": "RECONCILED_DELIVERED_FOR_J2300_QA_NOT_KEEP",
   "summary": {
     "total_pool_assets": 43,
     "pool_files_present": 43,
     "pool_exact_hash_verified_images": 41,
-    "pool_original_pdf_raster_pending": 2,
-    "keep_assigned": 0,
-    "missing_graphic_renders": 14
+    "pool_original_pdf_raster_pending": 0,
+    "pool_pdf_rasters_verified": 2,
+    "harvest_directory_nas": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01",
+    "harvest_files_synced_with_sha256sums": 72,
+    "identity_mismatches_vs_lock_caption_reconciled": 32,
+    "do_not_treat_as_lock_subject_enforced": 17,
+    "active_stills_in_cuts_v01": 42,
+    "max_standalone_appearances_per_still": 2,
+    "r01_opener_accepted_j2386_sha256": "aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d",
+    "r55_passage_accepted_j2386_sha256": "4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f",
+    "code_graphics_24fps_delivered": 19,
+    "code_graphics_aliases_delivered": 1,
+    "code_graphics_retired_r55": 1,
+    "missing_graphic_renders": 0,
+    "keep_assigned": 0
   },
   "pool": [
     {
@@ -2627,5 +2639,39 @@
     "size_bytes": 2517679,
     "sha256": "f964c7f1dd92c5626135f9915ba5d532a3114284cf24115fd393a9756249fb3e",
     "rule": "Strictly excluded from Film 033 so Frame 0 and all 67 rows remain distinct from standalone Short ZpEA8stoSPA"
+  },
+  "pdf_rasters_delivered": [
+    {
+      "canonical_id": "File:Herschel_Account_of_a_Comet_1781_Phil_Trans.jpg",
+      "pdf_nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_Account_of_a_Comet_1781_Phil_Trans.jpg.pdf",
+      "page1_jpg_nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_Account_of_a_Comet_1781_Phil_Trans.jpg_page1.jpg",
+      "page1_sha256": "9744042cee7c413e43d9f05901d6f7d248bfd5e49033a6b5f864faac7caa4ceb",
+      "dimensions": [
+        1219,
+        1890
+      ],
+      "used_in_rows": [
+        "R11"
+      ]
+    },
+    {
+      "canonical_id": "File:Herschel_1783_Georgium_Sidus_letter_Phil_Trans.jpg",
+      "pdf_nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_1783_Georgium_Sidus_letter_Phil_Trans.jpg.pdf",
+      "page1_jpg_nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_1783_Georgium_Sidus_letter_Phil_Trans.jpg_page1.jpg",
+      "page1_sha256": "cfc80ca52ac9204ed0c4a0d1caa9058c836bcdb59de231c88eea33019aa2e4a9",
+      "dimensions": [
+        1187,
+        1775
+      ],
+      "used_in_rows": [],
+      "note": "Actual paper is 'On the Diameter and Magnitude of the Georgium Sidus' (1783), not the Banks naming letter; excluded from R13."
+    }
+  ],
+  "code_graphics_v02_summary": {
+    "manifest_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/CODE_GRAPHICS_J2299_v02.json",
+    "sha256sums_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/SHA256SUMS.txt",
+    "clips_count": 20,
+    "all_24fps": true,
+    "total_frozen_pairs": 0
   }
 }

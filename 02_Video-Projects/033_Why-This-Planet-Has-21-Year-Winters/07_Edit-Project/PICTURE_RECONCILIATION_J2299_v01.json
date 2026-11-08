@@ -1,6 +1,6 @@
 {
   "job": "J2299",
-  "status": "INCOMPLETE_NOT_APPROVED",
+  "status": "RECONCILED_DELIVERED_FOR_J2300_QA_NOT_KEEP",
   "locked_vo_sha256": "3d73576e0c20be9030546db7bc71ea0107602d5e5fbdde37cba28c7d5b43f460",
   "timing_source": "SHOT_LIST_v01.md accepted VO-derived table; never STILLS_LOCK_v01 erroneous later row timings",
   "rows": [
@@ -11,7 +11,20 @@
       "source_kind": "`NASA / ESA / STScI` (native motion)",
       "source_assignment_from_accepted_shot_list": "`PIA01283` (Hubble Uranus rotation time-lapse sequence) + `PIA01280` (graded on `#050814` navy space)",
       "locked_spoken_line": "At the North Pole of Uranus, the seventh planet in orbit around our sun, (`0.100\u20134.059 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 0.0,
+          "timeline_out": 4.35,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2334_fix/r01_sourced_composite_v01_silent.mp4",
+          "upscale": 1.2,
+          "video": true,
+          "framing": {
+            "offset": 0.4,
+            "note": "J2386 accepted 24fps 97.77-deg sideways Uranus sourced composite (PIA18182 + weic2310a)"
+          }
+        }
+      ]
     },
     {
       "row": "R02",
@@ -20,7 +33,19 @@
       "source_kind": "`NASA / JPL` (+ optional `VEO (flag)`)",
       "source_assignment_from_accepted_shot_list": "`PIA01391` (Voyager 2 Uranus crescent sliver, 1st app.) *or flagged optional `veo_033_r02_polar_sunset.mp4`*",
       "locked_spoken_line": "what would you see when the sun sinks below the horizon? (`4.640\u20137.780 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 4.35,
+          "timeline_out": 8.18,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01391.jpg",
+          "upscale": 1.5,
+          "video": false,
+          "framing": {
+            "inset": "1500x1500 on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R03",
@@ -29,7 +54,19 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r03_winter_counter.mp4` (over graded `PIA01282` dark-hemisphere backdrop)",
       "locked_spoken_line": "A single winter night that lasts twenty-one Earth years. (`8.580\u201312.760 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 8.18,
+          "timeline_out": 13.37,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r03_winter_counter.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        }
+      ]
     },
     {
       "row": "R04",
@@ -38,7 +75,19 @@
       "source_kind": "`NASA`",
       "source_assignment_from_accepted_shot_list": "`PIA18033` (Earth Blue Marble globe, 1st app.)",
       "locked_spoken_line": "While Earth spins at a twenty-three point four four degree tilt, (`13.980\u201317.700 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 13.37,
+          "timeline_out": 17.97,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18033.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "full globe on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R05",
@@ -47,7 +96,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r05_tilt_gauge.mp4` (real `PIA18033` Earth + real `PIA18182` Uranus globes)",
       "locked_spoken_line": "Uranus is tipped at ninety-seven point seven seven degrees, more than four times Earth's tilt, (`18.240\u201324.800 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 17.97,
+          "timeline_out": 22.42,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r05_tilt_gauge.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 22.42,
+          "timeline_out": 25.03,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r05_tilt_gauge.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.45
+          }
+        }
+      ]
     },
     {
       "row": "R06",
@@ -56,7 +127,29 @@
       "source_kind": "`NASA / ESA / CSA / STScI`",
       "source_assignment_from_accepted_shot_list": "`weic2310a` (`STScI-01GWQDPJTF1MY8ZGN4WBMWMACJ`, JWST NIRCam Uranus, 1st app., `25.03\u201328.01 s`) \u2192 `weic2332a` (JWST wide-field Uranus, 1st app., `28.01\u201331.55 s`)",
       "locked_spoken_line": "and nearly at a right angle to its orbit, rolling around the sun on its side like a ball. (`25.260\u201330.980 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 25.03,
+          "timeline_out": 28.01,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2310a_unannotated.png",
+          "upscale": 1.08,
+          "video": false,
+          "framing": {
+            "crop": "wide ring view"
+          }
+        },
+        {
+          "timeline_in": 28.01,
+          "timeline_out": 31.55,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2310a_unannotated.png",
+          "upscale": 1.25,
+          "video": false,
+          "framing": {
+            "crop": "polar cap & vertical rings push"
+          }
+        }
+      ]
     },
     {
       "row": "R07",
@@ -65,7 +158,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA00346` (Voyager 2 colour crescent, 1st app., `31.55\u201334.39 s`) \u2192 `PIA00143` (Voyager 2 final crescent, 1st app., `34.39\u201338.67 s`)",
       "locked_spoken_line": "That extreme sideways roll plunges half the planet into twenty-one years of darkness, (`32.119\u201338.440 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 31.55,
+          "timeline_out": 34.39,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00346.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "972x1440 on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 34.39,
+          "timeline_out": 38.67,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00143.jpg",
+          "upscale": 1.6,
+          "video": false,
+          "framing": {
+            "inset": "1270x1536 on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R08",
@@ -74,7 +189,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r08_hook_temp_drop.mp4` (real `PIA18182` Uranus & `PIA01492` Neptune globes)",
       "locked_spoken_line": "and helps its atmosphere drop to minus two hundred and twenty-four point two degrees Celsius, even colder than farther-out Neptune. (`38.900\u201348.100 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 38.67,
+          "timeline_out": 43.69,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r08_hook_temp_drop.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 43.69,
+          "timeline_out": 48.71,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r08_hook_temp_drop.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 5.02
+          }
+        }
+      ]
     },
     {
       "row": "R09",
@@ -83,7 +220,29 @@
       "source_kind": "`NASA / ESA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA02963` (Hubble Uranus rings & clouds, 1st app., `48.71\u201353.74 s`) \u2192 `PIA18182` (Voyager 2 full disc, 1st app., `53.74\u201357.36 s`)",
       "locked_spoken_line": "How did an entire giant planet get knocked onto its side? And what did our only spacecraft to visit Uranus find there? (`49.320\u201357.320 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 48.71,
+          "timeline_out": 53.74,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA02963_borderless.jpg",
+          "upscale": 1.1,
+          "video": false,
+          "framing": {
+            "crop": "2160x2160 borderless HST Uranus rings & moons"
+          }
+        },
+        {
+          "timeline_in": 53.74,
+          "timeline_out": 57.36,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18182.jpg",
+          "upscale": 1.1,
+          "video": false,
+          "framing": {
+            "crop": "1720x1720 natural-colour globe"
+          }
+        }
+      ]
     },
     {
       "row": "R10",
@@ -92,7 +251,39 @@
       "source_kind": "`Wikimedia Commons`",
       "source_assignment_from_accepted_shot_list": "`File:Herschel's 7 foot telescope.jpg` (`PD`, 1st app., `58.06\u201360.61 s`) \u2192 `File:William Herschel01 hires.jpg` (`2400\u00d72870`, `PD-Art`, 1st app., `60.61\u201369.73 s`)",
       "locked_spoken_line": "13 March 1781, British astronomer William Herschel searches the night sky for faint stars through a telescope and spots a pale light that moves. (`58.120\u201369.300 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 58.06,
+          "timeline_out": 60.61,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_40_foot_telescope.jpg.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "inset": "1196x1313 on warm parchment canvas"
+          }
+        },
+        {
+          "timeline_in": 60.61,
+          "timeline_out": 65.17,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/William_Herschel01_hires.jpg.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "wide portrait"
+          }
+        },
+        {
+          "timeline_in": 65.17,
+          "timeline_out": 69.73,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/William_Herschel01_hires.jpg.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "closer portrait push"
+          }
+        }
+      ]
     },
     {
       "row": "R11",
@@ -101,7 +292,39 @@
       "source_kind": "`NASA / Wikimedia`",
       "source_assignment_from_accepted_shot_list": "`PIA01282` (Hubble Uranus full disc on starfield, 1st app., `69.73\u201376.55 s`) \u2192 `File:Philosophical Transactions Volume 71 frontispiece.jpg` (`PD-old`, 1st app., `76.55\u201380.86 s`)",
       "locked_spoken_line": "It was the first planet found with a telescope and the first new planet discovered since ancient times. Though, at first, Herschel thought it was a comet or a star. (`70.160\u201380.240 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 69.73,
+          "timeline_out": 73.14,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00032_left_globe.jpg",
+          "upscale": 1.6,
+          "video": false,
+          "framing": {
+            "crop": "1000x1000 single natural-colour Uranus globe on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 73.14,
+          "timeline_out": 76.55,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00032_left_globe.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "crop": "1000x1000 single natural-colour Uranus globe push"
+          }
+        },
+        {
+          "timeline_in": 76.55,
+          "timeline_out": 80.86,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Herschel_Account_of_a_Comet_1781_Phil_Trans.jpg_page1.jpg",
+          "upscale": 1.35,
+          "video": false,
+          "framing": {
+            "inset": "1219x1890 page-1 raster on warm parchment"
+          }
+        }
+      ]
     },
     {
       "row": "R12",
@@ -110,7 +333,39 @@
       "source_kind": "`NASA / Wikimedia`",
       "source_assignment_from_accepted_shot_list": "`PIA01984` (Voyager 2 Uranus starfield, 1st app., `80.86\u201384.03 s` & `84.03\u201387.82 s`) \u2192 `File:Portret van Johann Elert Bode, RP-P-1913-254.jpg` (`1772\u00d72722`, `CC0`, 1st app., `87.82\u201393.58 s`)",
       "locked_spoken_line": "Two years later, in 1783, astronomers accepted this unknown object as a new planet, in part because of observations by German astronomer Johann Elert Bode. (`81.480\u201393.060 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 80.86,
+          "timeline_out": 84.03,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01984.jpg",
+          "upscale": 1.2,
+          "video": false,
+          "framing": {
+            "crop": "wide starfield"
+          }
+        },
+        {
+          "timeline_in": 84.03,
+          "timeline_out": 87.82,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01984.jpg",
+          "upscale": 1.35,
+          "video": false,
+          "framing": {
+            "crop": "orbital track push"
+          }
+        },
+        {
+          "timeline_in": 87.82,
+          "timeline_out": 93.58,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/Portret_van_Johann_Elert_Bode__RP-P-1913-254.jpg.jpg",
+          "upscale": 1.08,
+          "video": false,
+          "framing": {
+            "crop": "portrait inset"
+          }
+        }
+      ]
     },
     {
       "row": "R13",
@@ -119,7 +374,49 @@
       "source_kind": "`Wikimedia / NASA`",
       "source_assignment_from_accepted_shot_list": "`File:William Herschel01 hires.jpg` (`PD-Art`, 2nd app., `93.58\u201399.84 s`) \u2192 `File:Portret van Johann Elert Bode, RP-P-1913-254.jpg` (`CC0`, 2nd app., `99.84\u2013103.50 s`) \u2192 `PIA18182` (Voyager 2 Uranus, 2nd app., `103.50\u2013107.13 s`)",
       "locked_spoken_line": "Herschel tried to name his discovery Georgium Sidus after the British monarch. Instead, it was named for Uranus, the Greek god of the sky, as suggested by Johann Bode. (`94.100\u2013106.480 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 93.58,
+          "timeline_out": 96.71,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/William_Herschel01_hires.jpg.jpg",
+          "upscale": 1.1,
+          "video": false,
+          "framing": {
+            "crop": "portrait medium"
+          }
+        },
+        {
+          "timeline_in": 96.71,
+          "timeline_out": 99.84,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/William_Herschel01_hires.jpg.jpg",
+          "upscale": 1.25,
+          "video": false,
+          "framing": {
+            "crop": "portrait close"
+          }
+        },
+        {
+          "timeline_in": 99.84,
+          "timeline_out": 103.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/Portret_van_Johann_Elert_Bode__RP-P-1913-254.jpg.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "Bode portrait push"
+          }
+        },
+        {
+          "timeline_in": 103.5,
+          "timeline_out": 107.13,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18182.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "Uranus full globe"
+          }
+        }
+      ]
     },
     {
       "row": "R14",
@@ -128,7 +425,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r14_diameter_scale.mp4` (real `PIA18182` Uranus & `PIA18033` Earth globes)",
       "locked_spoken_line": "With an equatorial diameter of fifty-one thousand, one hundred and eighteen kilometers, Uranus is four times wider than Earth. (`107.780\u2013117.080 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 107.13,
+          "timeline_out": 112.33,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r14_diameter_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 112.33,
+          "timeline_out": 117.52,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r14_diameter_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 5.2
+          }
+        }
+      ]
     },
     {
       "row": "R15",
@@ -137,7 +456,19 @@
       "source_kind": "`NASA / ESA / CSA / STScI`",
       "source_assignment_from_accepted_shot_list": "`weic2332a` (JWST NIRCam wide-field Uranus & moons, `CC BY 4.0`, 2nd app.)",
       "locked_spoken_line": "If Earth were a nickel, Uranus would be about as big as a softball. (`117.960\u2013122.020 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 117.52,
+          "timeline_out": 122.67,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2332a_hires.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "2048x1536 native JWST NIRCam Uranus & moons"
+          }
+        }
+      ]
     },
     {
       "row": "R16",
@@ -146,7 +477,29 @@
       "source_kind": "`NASA / ESA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01280` (Hubble Uranus atmosphere, 2nd app., `122.67\u2013127.12 s`) \u2192 `PIA01984` (Voyager 2 Uranus in deep space, 2nd app., `127.12\u2013133.16 s`)",
       "locked_spoken_line": "From an average distance of two point nine billion kilometers, about 19 astronomical units, or 19 times Earth's distance from the sun, (`123.320\u2013132.800 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 122.67,
+          "timeline_out": 127.12,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01280.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "810x527 sharp inset on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 127.12,
+          "timeline_out": 133.16,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01984.jpg",
+          "upscale": 1.25,
+          "video": false,
+          "framing": {
+            "crop": "Voyager 2 Uranus starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R17",
@@ -155,7 +508,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r17_distance_orbit_bar.mp4`",
       "locked_spoken_line": "sunlight takes two hours and 40 minutes to reach Uranus, and one orbit takes about 84 Earth years. (`133.520\u2013141.440 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 133.16,
+          "timeline_out": 137.61,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r17_distance_orbit_bar.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 137.61,
+          "timeline_out": 142.05,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r17_distance_orbit_bar.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.45
+          }
+        }
+      ]
     },
     {
       "row": "R18",
@@ -164,7 +539,39 @@
       "source_kind": "`NASA / JPL / Ames`",
       "source_assignment_from_accepted_shot_list": "`PIA00143` (Voyager 2 dark crescent, 2nd app., `142.05\u2013147.92 s`) \u2192 `ARC-1973-AC73-4189-89` (NASA Ames Kuiper Airborne Observatory C-141 in flight, `2457\u00d71884`, PD, 1st app., `147.92\u2013151.40 s` wide & `151.40\u2013154.38 s` telescope door detail)",
       "locked_spoken_line": "Yet, for nearly two centuries, a deeper secret hid in the dark around it. Why did it take an airplane flying at night to reveal that Uranus was tipped onto its side? (`142.660\u2013154.360 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 142.05,
+          "timeline_out": 147.92,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00143.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "inset": "1310x1584 on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 147.92,
+          "timeline_out": 151.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/ARC-1973-AC73-4189-89_borderless.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "2580x1860 borderless KAO in flight"
+          }
+        },
+        {
+          "timeline_in": 151.4,
+          "timeline_out": 154.38,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/ARC-1973-AC73-4189-89_borderless.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "2580x1860 telescope port detail"
+          }
+        }
+      ]
     },
     {
       "row": "R19",
@@ -173,7 +580,29 @@
       "source_kind": "`NASA Ames`",
       "source_assignment_from_accepted_shot_list": "`ARC-1973-AC73-4189-89` (KAO aircraft in flight, PD, cont./2nd app., `155.08\u2013157.39 s`) \u2192 `File:36 Inch Airborne Infrared Telescope (6996884880).jpg` (`1995\u00d71600`, NASA Ames PD, 1st app., `157.39\u2013163.33 s`)",
       "locked_spoken_line": "10th March 1977, aboard NASA's Kuiper Airborne Observatory and at the Perth Observatory in Australia, (`155.160\u2013163.060 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 155.08,
+          "timeline_out": 157.39,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/ARC-1973-AC73-4189-89_borderless.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "2580x1860 KAO in flight"
+          }
+        },
+        {
+          "timeline_in": 157.39,
+          "timeline_out": 163.33,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/KAO_airborne_915_in_flight.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1734x1309 on graded night-sky canvas"
+          }
+        }
+      ]
     },
     {
       "row": "R20",
@@ -182,7 +611,39 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r20_occultation_trace.mp4` (using real Uranus disc `PIA01282`)",
       "locked_spoken_line": "scientists watch Uranus pass in front of a distant star, SAO one five eight six eight seven. Before and after the planet crosses the star, the starlight blinks off and on. (`163.600\u2013176.320 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 163.33,
+          "timeline_out": 167.8,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r20_occultation_trace.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 167.8,
+          "timeline_out": 172.26,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r20_occultation_trace.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.47
+          }
+        },
+        {
+          "timeline_in": 172.26,
+          "timeline_out": 176.72,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r20_occultation_trace.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 8.93
+          }
+        }
+      ]
     },
     {
       "row": "R21",
@@ -191,7 +652,39 @@
       "source_kind": "`JWST / NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`weic2310a` (JWST NIRCam upright rings of Uranus, `CC BY 4.0`, 2nd app., `176.72\u2013183.37 s`) \u2192 `PIA01985` (Voyager 2 false-colour rings, PD, 1st app., `183.37\u2013186.48 s`)",
       "locked_spoken_line": "Uranus, like Saturn, has rings standing nearly upright around a sideways world. Uranus has 13 faint rings, (`177.120\u2013186.180 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 176.72,
+          "timeline_out": 180.05,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2310a_unannotated.png",
+          "upscale": 1.08,
+          "video": false,
+          "framing": {
+            "crop": "upright rings wide"
+          }
+        },
+        {
+          "timeline_in": 180.05,
+          "timeline_out": 183.37,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2310a_unannotated.png",
+          "upscale": 1.25,
+          "video": false,
+          "framing": {
+            "crop": "upright rings close"
+          }
+        },
+        {
+          "timeline_in": 183.37,
+          "timeline_out": 186.48,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01985.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "1294x695 on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R22",
@@ -200,7 +693,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r22_inner_rings.mp4` (over graded Voyager 2 ring backdrop `PIA01487`)",
       "locked_spoken_line": "nine narrow dark gray inner rings, two more inner rings found in 1986, (`186.780\u2013192.740 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 186.48,
+          "timeline_out": 189.74,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r22_inner_rings.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 189.74,
+          "timeline_out": 192.99,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r22_inner_rings.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 3.26
+          }
+        }
+      ]
     },
     {
       "row": "R23",
@@ -209,7 +724,29 @@
       "source_kind": "`NASA / ESA / STScI`",
       "source_assignment_from_accepted_shot_list": "`PIA01281` (Hubble Moons & Outer Rings of Uranus, PD, 1st app., `192.99\u2013197.80 s`) \u2192 `PIA02963` (Hubble Uranus rings & clouds, PD, 2nd app., `197.80\u2013202.39 s`)",
       "locked_spoken_line": "and two outer rings discovered by Hubble on 22nd December 2005 and imaged in color in 2006. (`193.240\u2013202.060 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 192.99,
+          "timeline_out": 197.8,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA02963_borderless.jpg",
+          "upscale": 1.1,
+          "video": false,
+          "framing": {
+            "crop": "2160x2160 outer ring discovery field"
+          }
+        },
+        {
+          "timeline_in": 197.8,
+          "timeline_out": 202.39,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA02963_borderless.jpg",
+          "upscale": 1.25,
+          "video": false,
+          "framing": {
+            "crop": "2160x2160 inner/outer ring colour push"
+          }
+        }
+      ]
     },
     {
       "row": "R24",
@@ -218,7 +755,19 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r24_outer_ring_colors.mp4`",
       "locked_spoken_line": "The inner one reddish and the outer one blue, like Saturn's E ring. (`202.720\u2013207.260 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 202.39,
+          "timeline_out": 207.85,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r24_outer_ring_colors.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        }
+      ]
     },
     {
       "row": "R25",
@@ -227,7 +776,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01361` (Voyager 2 Montage of Uranus Five Largest Satellites, PD, 1st app., `207.85\u2013212.56 s` full montage & `212.56\u2013217.95 s` pan across Miranda, Ariel, Umbriel, Titania, Oberon)",
       "locked_spoken_line": "Orbiting in that tilted plane are 28 known moons, unique in being named for characters from classic English plays and poems. (`208.440\u2013217.340 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 207.85,
+          "timeline_out": 212.56,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01534.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "1330x1508 Voyager 2 Uranian moon Ariel on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 212.56,
+          "timeline_out": 217.95,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00037.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "inset": "1320x1320 Voyager 2 Ariel closest approach on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R26",
@@ -236,7 +807,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r26_retrograde_tilt.mp4` (real `PIA01280` Uranus & `PIA00271` Venus globes)",
       "locked_spoken_line": "Why does Uranus spin at a ninety-seven point seven seven-degree tilt, rotating backwards like Venus, (`218.560\u2013226.020 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 217.95,
+          "timeline_out": 222.1,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r26_retrograde_tilt.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 222.1,
+          "timeline_out": 226.25,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r26_retrograde_tilt.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.15
+          }
+        }
+      ]
     },
     {
       "row": "R27",
@@ -245,7 +838,29 @@
       "source_kind": "`NASA / ESA`",
       "source_assignment_from_accepted_shot_list": "`PIA01283` (Hubble Uranus cloud-rotation time-lapse, PD, 2nd app., `226.25\u2013229.42 s`) \u2192 `PIA18033` (Earth Blue Marble, PD, 2nd app., `229.42\u2013233.33 s`)",
       "locked_spoken_line": "with one day taking about 17 hours, seven hours shorter than Earth's 24-hour day? (`226.480\u2013232.860 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 226.25,
+          "timeline_out": 229.42,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01488.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "2118x2618 Voyager 2 Uranus globe"
+          }
+        },
+        {
+          "timeline_in": 229.42,
+          "timeline_out": 233.33,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18033.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "Earth Blue Marble globe"
+          }
+        }
+      ]
     },
     {
       "row": "R28",
@@ -254,7 +869,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01977` (Voyager 2 tilted eccentric rings of Uranus, PD, 1st app., `233.33\u2013236.50 s` wide & `236.50\u2013239.86 s` push)",
       "locked_spoken_line": "Scientists think this mystery may come from a collision with an Earth-sized object long ago. (`233.800\u2013239.280 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 233.33,
+          "timeline_out": 236.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01977.jpg",
+          "upscale": 1.7,
+          "video": false,
+          "framing": {
+            "inset": "1282x1250 tilted rings wide on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 236.5,
+          "timeline_out": 239.86,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01977.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "1395x1360 tilted rings push on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R29",
@@ -263,7 +900,39 @@
       "source_kind": "`OMNI (flag)` *(\u00a30 fallback: `CODE`)*",
       "source_assignment_from_accepted_shot_list": "`omni_033_r29_orbit_21yr_night.mp4` *(flagged for Chief price pass; \u00a30 fallback: `code_graphic_033_r29_seasonal_dial.mp4`)*",
       "locked_spoken_line": "For nearly a quarter of each 84-year Uranian orbit, the sun shines over one pole, plunging the other half into a 21-year dark winter. (`240.440\u2013251.680 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 239.86,
+          "timeline_out": 244.01,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r29_seasonal_dial.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 244.01,
+          "timeline_out": 248.15,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r29_seasonal_dial.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.15
+          }
+        },
+        {
+          "timeline_in": 248.15,
+          "timeline_out": 252.3,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r29_seasonal_dial.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 8.29
+          }
+        }
+      ]
     },
     {
       "row": "R30",
@@ -272,7 +941,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01487` (Voyager 2 ring back-scattered view, PD, 1st app., `252.30\u2013255.70 s`) \u2192 `PIA00346` (Voyager 2 outbound crescent, PD, 2nd app., `255.70\u2013259.17 s`)",
       "locked_spoken_line": "What did our only spacecraft to visit Uranus find when it flew into that world? (`252.920\u2013258.480 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 252.3,
+          "timeline_out": 255.7,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01487.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "1760x2450 Voyager 2 ring system"
+          }
+        },
+        {
+          "timeline_in": 255.7,
+          "timeline_out": 259.17,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00346.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "972x1440 outbound crescent on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R31",
@@ -281,7 +972,29 @@
       "source_kind": "`NASA / ESA / STScI`",
       "source_assignment_from_accepted_shot_list": "`PIA01282` (Hubble Uranus full disc on starfield, PD, 2nd app., `259.17\u2013262.30 s` & `262.30\u2013265.24 s`)",
       "locked_spoken_line": "If you've enjoyed the ride so far, subscribing is the best way to help Orbit keep going. (`259.860\u2013265.220 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 259.17,
+          "timeline_out": 262.3,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00032_left_globe.jpg",
+          "upscale": 1.6,
+          "video": false,
+          "framing": {
+            "crop": "1000x1000 single natural-colour Uranus globe"
+          }
+        },
+        {
+          "timeline_in": 262.3,
+          "timeline_out": 265.24,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00032_left_globe.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "crop": "1000x1000 single natural-colour Uranus globe drift"
+          }
+        }
+      ]
     },
     {
       "row": "R32",
@@ -290,7 +1003,49 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01975` (Voyager 2 Uranus Family Portrait, PD, 1st app., `265.94\u2013269.05 s` & `269.05\u2013273.19 s`) \u2192 `PIA01391` (Voyager 2 Uranus approach crescent, PD, 2nd app., `273.19\u2013279.61 s`)",
       "locked_spoken_line": "24th January 1986, after traveling more than three billion kilometers in nine years, NASA's Voyager 2 makes the first, and so far the only, visit to Uranus. (`266.200\u2013279.180 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 265.94,
+          "timeline_out": 269.56,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01534.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "Voyager 2 arrival at Uranian moon system"
+          }
+        },
+        {
+          "timeline_in": 269.56,
+          "timeline_out": 273.19,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01534.jpg",
+          "upscale": 1.2,
+          "video": false,
+          "framing": {
+            "crop": "Voyager 2 Uranian moon push"
+          }
+        },
+        {
+          "timeline_in": 273.19,
+          "timeline_out": 276.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01391.jpg",
+          "upscale": 1.5,
+          "video": false,
+          "framing": {
+            "inset": "1500x1500 crescent approach"
+          }
+        },
+        {
+          "timeline_in": 276.4,
+          "timeline_out": 279.61,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01391.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "inset": "1650x1650 crescent push"
+          }
+        }
+      ]
     },
     {
       "row": "R33",
@@ -299,7 +1054,39 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01976` (Voyager 2 shepherd moons Cordelia & Ophelia, PD, 1st app., `279.61\u2013284.39 s`) \u2192 `PIA01350` (Voyager 2 forward-scattered rings, PD, 1st app., `284.39\u2013288.90 s`) \u2192 `PIA00142` (Voyager 2 ring lanes, PD, 1st app., `288.90\u2013293.78 s`)",
       "locked_spoken_line": "Coming within eighty-one thousand, five hundred kilometers of the cloud tops, Voyager 2 gathers much of its critical information in just six hours, discovering 10 new moons and two new rings. (`280.040\u2013293.280 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 279.61,
+          "timeline_out": 284.39,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01356.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "922x922 Voyager 2 Uranian moon flyby on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 284.39,
+          "timeline_out": 288.9,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01350.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "740x370 forward-scattered rings on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 288.9,
+          "timeline_out": 293.78,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00142.jpg",
+          "upscale": 1.7,
+          "video": false,
+          "framing": {
+            "inset": "1329x1297 ring lanes on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R34",
@@ -308,7 +1095,29 @@
       "source_kind": "`NASA / ESA / STScI`",
       "source_assignment_from_accepted_shot_list": "`PIA01280` (Hubble Detailed Image of Uranus Atmosphere, PD, cont./2nd app., `293.78\u2013296.76 s` wide & `296.76\u2013304.09 s` limb push)",
       "locked_spoken_line": "What gives Uranus its blue-green color? Its atmosphere is about eighty-two point five percent hydrogen and fifteen point two percent helium, (`294.280\u2013303.840 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 293.78,
+          "timeline_out": 298.94,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01280.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "788x513 Hubble Uranus atmosphere on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 298.94,
+          "timeline_out": 304.09,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01280.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "832x542 Hubble Uranus cloud layers push"
+          }
+        }
+      ]
     },
     {
       "row": "R35",
@@ -317,7 +1126,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r35_methane_spectrum.mp4` (over graded `PIA01280` cloud limb)",
       "locked_spoken_line": "with two point three percent methane gas that absorbs red sunlight and reflects blue-green light back out. (`304.340\u2013311.660 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 304.09,
+          "timeline_out": 308.17,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r35_methane_spectrum.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 308.17,
+          "timeline_out": 312.25,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r35_methane_spectrum.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.08
+          }
+        }
+      ]
     },
     {
       "row": "R36",
@@ -326,7 +1157,39 @@
       "source_kind": "`NASA / ESA / JPL`",
       "source_assignment_from_accepted_shot_list": "`stsci-h-p1906a-f-1028x543` (Hubble WFC3 Uranus & Neptune atmospheres, PD, 1st app., `312.25\u2013315.61 s` & `315.61\u2013320.78 s`) \u2192 `PIA01492` (Voyager 2 Neptune full disk, PD, 1st app., `320.78\u2013325.68 s`)",
       "locked_spoken_line": "Inside that atmosphere lies a paradox. Uranus' atmosphere drops to a minimum temperature of 49 Kelvin, minus two hundred and twenty-four point two degrees Celsius. (`312.840\u2013325.320 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 312.25,
+          "timeline_out": 316.51,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906a-f_uranus_globe.png",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "crop": "505x543 single Uranus globe on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 316.51,
+          "timeline_out": 320.78,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906a-f_uranus_globe.png",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "crop": "505x543 single Uranus globe push"
+          }
+        },
+        {
+          "timeline_in": 320.78,
+          "timeline_out": 325.68,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01492.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "2188x2185 Voyager 2 Neptune full disk"
+          }
+        }
+      ]
     },
     {
       "row": "R37",
@@ -335,7 +1198,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01492` (Voyager 2 Neptune full disk, PD, 2nd app., `325.68\u2013329.00 s` wide & `329.00\u2013332.39 s` push)",
       "locked_spoken_line": "Why is that a shock? Because it makes Uranus even colder than Neptune in some places, (`326.040\u2013332.100 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 325.68,
+          "timeline_out": 329.0,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01492.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "Neptune full disk medium"
+          }
+        },
+        {
+          "timeline_in": 329.0,
+          "timeline_out": 332.39,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01492.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "Neptune full disk push"
+          }
+        }
+      ]
     },
     {
       "row": "R38",
@@ -344,7 +1229,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r38_cold_paradox_bar.mp4` (real `PIA18182` Uranus & `PIA01492` Neptune globes)",
       "locked_spoken_line": "even though Neptune orbits more than 30 times as far from the Sun as Earth, while Uranus orbits at 19 times Earth's distance. (`332.680\u2013342.020 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 332.39,
+          "timeline_out": 337.52,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r38_cold_paradox_bar.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 337.52,
+          "timeline_out": 342.65,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r38_cold_paradox_bar.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 5.13
+          }
+        }
+      ]
     },
     {
       "row": "R39",
@@ -353,7 +1260,39 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA00369` (Voyager 2 1986 Uranus Cloud Movement sequence, PD, 1st app., `342.65\u2013349.30 s`) \u2192 `PIA01975` (Voyager 2 Uranus Family Portrait, PD, 2nd app., `349.30\u2013350.91 s` & `350.91\u2013355.94 s`)",
       "locked_spoken_line": "In 1986, Voyager 2 saw only a few discrete clouds on a calm globe. Case closed? Is Uranus just a sleepy, frozen world where nothing ever changes? (`343.280\u2013355.820 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 342.65,
+          "timeline_out": 347.08,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00037.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "inset": "1320x1320 Voyager 2 1986 Uranian system on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 347.08,
+          "timeline_out": 351.51,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00037.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "1440x1440 Voyager 2 1986 push"
+          }
+        },
+        {
+          "timeline_in": 351.51,
+          "timeline_out": 355.94,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01356.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "922x922 Voyager 2 1986 icy moon surface"
+          }
+        }
+      ]
     },
     {
       "row": "R40",
@@ -362,7 +1301,29 @@
       "source_kind": "`NASA / JPL / ESA`",
       "source_assignment_from_accepted_shot_list": "`PIA00369` (Voyager 2 1986 south-pole-on view, PD, 2nd app., `356.64\u2013361.54 s`) \u2192 `PIA01281` (Hubble edge-on ring/equinox view, PD, 2nd app., `361.54\u2013367.00 s`)",
       "locked_spoken_line": "Wrong. Voyager 2 arrived when one pole stared into the sun. 21 years later, as Uranus reached its December 2007 equinox, (`356.760\u2013366.764 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 356.64,
+          "timeline_out": 361.54,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906a-f_uranus_globe.png",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "crop": "505x543 single Uranus globe solstice-to-equinox"
+          }
+        },
+        {
+          "timeline_in": 361.54,
+          "timeline_out": 367.0,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906a-f_uranus_globe.png",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "crop": "505x543 single Uranus globe equinox push"
+          }
+        }
+      ]
     },
     {
       "row": "R41",
@@ -371,7 +1332,29 @@
       "source_kind": "`NASA / ESA / STScI`",
       "source_assignment_from_accepted_shot_list": "`stsci-h-p1906a-f-1028x543` (Hubble WFC3 active atmosphere of Uranus, PD, 2nd app., `367.00\u2013370.40 s` & `370.40\u2013373.90 s`)",
       "locked_spoken_line": "when the sun passes over its equator and illuminates the whole planet, the giant woke up. (`367.244\u2013373.404 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 367.0,
+          "timeline_out": 370.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906c-f-514x514.a.png",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "900x900 Hubble WFC3 Uranus bright storm hood on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 370.4,
+          "timeline_out": 373.9,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906c-f-514x514.a.png",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "950x950 Hubble WFC3 Uranus storm hood push"
+          }
+        }
+      ]
     },
     {
       "row": "R42",
@@ -380,7 +1363,29 @@
       "source_kind": "`NASA / JPL / Keck`",
       "source_assignment_from_accepted_shot_list": "`PIA17306` (Keck Telescope infrared hemispheres of Uranus with bright convective storm clouds, PD, 1st app., `373.90\u2013378.00 s` dual globes & `378.00\u2013382.18 s` storm cluster zoom)",
       "locked_spoken_line": "Through Hubble and ground-based telescopes, astronomers saw dynamic clouds and bright storms erupt across Uranus. (`374.404\u2013381.864 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 373.9,
+          "timeline_out": 378.0,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01279_left_globe.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "crop": "480x480 single visible-light Uranus globe on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 378.0,
+          "timeline_out": 382.18,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01279_right_globe.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "crop": "480x480 single near-IR Uranus cloud-band globe on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R43",
@@ -389,7 +1394,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r43_wind_gauge.mp4` (over real Hubble Uranus globe `PIA01280`)",
       "locked_spoken_line": "Wind speeds on Uranus reach up to 900 kilometers an hour, 560 miles an hour, (`382.504\u2013388.884 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 382.18,
+          "timeline_out": 385.66,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r43_wind_gauge.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 385.66,
+          "timeline_out": 389.14,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r43_wind_gauge.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 3.48
+          }
+        }
+      ]
     },
     {
       "row": "R44",
@@ -398,7 +1425,29 @@
       "source_kind": "`NASA / Keck / STScI`",
       "source_assignment_from_accepted_shot_list": "`PIA17306` (Keck infrared Uranus storms, PD, 2nd app., `389.14\u2013394.50 s`) \u2192 `stsci-h-p1906c-f-514x514.a` (Hubble WFC3 Uranus polar cloud cap, PD, 1st app., `394.50\u2013399.72 s`)",
       "locked_spoken_line": "more than twice as fast as Earth's strongest 400-kilometer-an-hour winds, blowing backwards at the equator, then shifting forward closer to the poles. (`389.404\u2013399.224 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 389.14,
+          "timeline_out": 394.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01279_right_globe.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "crop": "480x480 single near-IR Uranus cloud bands on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 394.5,
+          "timeline_out": 399.72,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906c-f-514x514.a.png",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "925x925 Hubble WFC3 Uranus polar hood on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R45",
@@ -407,7 +1456,29 @@
       "source_kind": "`NASA / ESA / JPL`",
       "source_assignment_from_accepted_shot_list": "`GSFC_20171208_Archive_e000100` (Hubble & Voyager 2 composite of alien auroras on Uranus, PD, 1st app., `399.72\u2013404.20 s`) \u2192 `PIA01976` (Voyager 2 Uranus ring/moon plane, PD, 2nd app., `404.20\u2013408.26 s`)",
       "locked_spoken_line": "Stranger still is the magnetic field Voyager 2 discovered, stronger than Saturn's, yet completely lopsided. (`400.224\u2013407.884 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 399.72,
+          "timeline_out": 404.2,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/GSFC_20171208_Archive_e000100_right_globe.jpg",
+          "upscale": 1.5,
+          "video": false,
+          "framing": {
+            "crop": "610x1000 single Hubble UV aurora Uranus globe on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 404.2,
+          "timeline_out": 408.26,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/GSFC_20171208_Archive_e000100_right_globe.jpg",
+          "upscale": 1.65,
+          "video": false,
+          "framing": {
+            "crop": "610x1000 single Hubble UV aurora Uranus globe push"
+          }
+        }
+      ]
     },
     {
       "row": "R46",
@@ -416,7 +1487,39 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r46_corkscrew_magnet.mp4` (using real Uranus globe `PIA01282`)",
       "locked_spoken_line": "Magnetic fields normally align with a planet's rotation, but Uranus' magnetic axis is tilted nearly 60 degrees from its spin axis, an offset from the planet's center by one-third of its radius. (`408.644\u2013422.044 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 408.26,
+          "timeline_out": 412.97,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r46_corkscrew_magnet.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 412.97,
+          "timeline_out": 417.67,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r46_corkscrew_magnet.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.71
+          }
+        },
+        {
+          "timeline_in": 417.67,
+          "timeline_out": 422.38,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r46_corkscrew_magnet.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 9.41
+          }
+        }
+      ]
     },
     {
       "row": "R47",
@@ -425,7 +1528,19 @@
       "source_kind": "`NASA / ESA / Hubble`",
       "source_assignment_from_accepted_shot_list": "`GSFC_20171208_Archive_e000100` (Hubble aurora composite on Uranus, PD, 2nd app.)",
       "locked_spoken_line": "Because that lopsided magnet spins sideways every 17 hours, (`422.724\u2013427.124 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 422.38,
+          "timeline_out": 427.37,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/GSFC_20171208_Archive_e000100_right_globe.jpg",
+          "upscale": 1.6,
+          "video": false,
+          "framing": {
+            "crop": "610x1000 single Hubble UV aurora Uranus globe"
+          }
+        }
+      ]
     },
     {
       "row": "R48",
@@ -434,7 +1549,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01350` (Voyager 2 deep-space ring & magnetosphere environment, PD, 2nd app., `427.37\u2013432.60 s` & `432.60\u2013438.19 s` with animated helical field-line overlay)",
       "locked_spoken_line": "Uranus' auroras miss the poles, and the magnetosphere tail extending millions of miles behind Uranus twists into a long corkscrew shape. (`427.624\u2013437.804 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 427.37,
+          "timeline_out": 432.6,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01350.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "720x360 deep-space ring environment on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 432.6,
+          "timeline_out": 438.19,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01350.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "740x370 deep-space magnetotail overlay frame"
+          }
+        }
+      ]
     },
     {
       "row": "R49",
@@ -443,7 +1580,19 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA00142` (Voyager 2 ring and cloud-top close-up, PD, 2nd app.)",
       "locked_spoken_line": "What happens if a spacecraft dives beneath those clouds to land on the ice below? (`438.584\u2013443.944 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 438.19,
+          "timeline_out": 444.0,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00142.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1368x1335 ring & cloud-top close-up on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R50",
@@ -452,7 +1601,39 @@
       "source_kind": "`JWST / NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`weic2332a` (JWST NIRCam Uranus & moons, `CC BY 4.0`, cont./2nd app., `444.70\u2013448.33 s` & `448.33\u2013453.80 s`) \u2192 `PIA01977` (Voyager 2 Uranus limb, PD, 2nd app., `453.80\u2013459.24 s`)",
       "locked_spoken_line": "That brings us to the biggest misconception about Uranus. People hear it is called an ice giant with a minus 224-degree sky and imagine a spacecraft could land on frozen ground. (`444.824\u2013458.784 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 444.7,
+          "timeline_out": 448.33,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2332a_hires.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "JWST NIRCam wide-field Uranus"
+          }
+        },
+        {
+          "timeline_in": 448.33,
+          "timeline_out": 453.8,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2332a_hires.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "JWST NIRCam Uranus icy cloud deck push"
+          }
+        },
+        {
+          "timeline_in": 453.8,
+          "timeline_out": 459.24,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01977.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1319x1286 Voyager 2 Uranus limb & rings on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R51",
@@ -461,7 +1642,19 @@
       "source_kind": "`NASA / ESA / STScI` (+ optional `VEO (flag)`)",
       "source_assignment_from_accepted_shot_list": "`stsci-h-p1906c-f-514x514.a` (Hubble WFC3 Uranus cloud bands, PD, 2nd app.) *or flagged optional `veo_033_r51_cloud_dive.mp4`*",
       "locked_spoken_line": "As an ice giant, Uranus has no true surface. (`459.704\u2013463.164 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 459.24,
+          "timeline_out": 463.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01977.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "1395x1360 Voyager 2 Uranus cloud deck & rings close drift"
+          }
+        }
+      ]
     },
     {
       "row": "R52",
@@ -470,7 +1663,39 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r52_interior_mantle.mp4` (built inside real Uranus globe silhouette `PIA18182`)",
       "locked_spoken_line": "Beneath the hydrogen and helium clouds, 80% or more of the planet's mass is a hot, dense fluid of water, methane, and ammonia above a small rocky core. (`463.844\u2013476.984 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 463.5,
+          "timeline_out": 468.13,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r52_interior_mantle.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 468.13,
+          "timeline_out": 472.77,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r52_interior_mantle.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.63
+          }
+        },
+        {
+          "timeline_in": 472.77,
+          "timeline_out": 477.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r52_interior_mantle.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 9.27
+          }
+        }
+      ]
     },
     {
       "row": "R53",
@@ -479,7 +1704,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01985` (Voyager 2 false-colour thermal/spectral Uranus ring & limb plate, PD, 2nd app., `477.40\u2013482.30 s` wide & `482.30\u2013487.24 s` core-glow push)",
       "locked_spoken_line": "Near that core, Uranus heats up to 9,000 degrees Fahrenheit, 4,982 degrees Celsius, (`477.824\u2013486.904 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 477.4,
+          "timeline_out": 482.3,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01985.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1258x675 Voyager 2 spectral ring & limb plate on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 482.3,
+          "timeline_out": 487.24,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01985.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "1330x714 Voyager 2 core-glow push"
+          }
+        }
+      ]
     },
     {
       "row": "R54",
@@ -488,7 +1735,19 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r54_core_vs_cloud_temp.mp4`",
       "locked_spoken_line": "more than 5,000 degrees hotter than its freezing cloud tops. (`487.584\u2013492.624 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 487.24,
+          "timeline_out": 493.01,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r54_core_vs_cloud_temp.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        }
+      ]
     },
     {
       "row": "R55",
@@ -497,7 +1756,42 @@
       "source_kind": "`OMNI (flag)` *(\u00a30 fallback: `NASA + overlay`)*",
       "source_assignment_from_accepted_shot_list": "`omni_033_r55_orbit_ice_skates.mp4` *(flagged for Chief price pass; \u00a30 fallback: graded `PIA01361` / `PIA01354` approach plate + animated pressure gauge overlay)*",
       "locked_spoken_line": "While a spacecraft has nowhere to land on Uranus, it could not fly through its atmosphere unscathed either. Extreme pressures and temperatures would destroy a metal spacecraft. (`493.404\u2013504.884 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 493.01,
+          "timeline_out": 496.968,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2334_fix/r55_cut1_r55b_100x_silent.mp4",
+          "upscale": 1.5,
+          "video": true,
+          "framing": {
+            "offset": 0.0,
+            "note": "J2386 Cut 1 from r55b 1.00x"
+          }
+        },
+        {
+          "timeline_in": 496.968,
+          "timeline_out": 500.927,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2334_fix/r55_cut2_r55b_128x_vortex_silent.mp4",
+          "upscale": 1.92,
+          "video": true,
+          "framing": {
+            "offset": 0.0,
+            "note": "J2386 Cut 2 from r55b 1.28x vortex crop"
+          }
+        },
+        {
+          "timeline_in": 500.927,
+          "timeline_out": 505.35,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2334_fix/r55_cut3_pia01488_pushin_silent.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0,
+            "note": "J2386 Cut 3 from PIA01488 1.00x push-in"
+          }
+        }
+      ]
     },
     {
       "row": "R56",
@@ -506,7 +1800,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01361` (Voyager 2 Uranus Five Largest Moons montage, PD, 2nd app., `505.35\u2013509.60 s`) \u2192 `PIA01354` (Voyager 2 full icy face of Miranda, PD, 1st app., `509.60\u2013513.90 s`)",
       "locked_spoken_line": "If you cannot land on Uranus, where in this sideways system could you stand on solid ice and look up at those vertical rings? (`505.824\u2013513.864 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 505.35,
+          "timeline_out": 509.6,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00141.jpg",
+          "upscale": 1.7,
+          "video": false,
+          "framing": {
+            "inset": "1316x1338 Voyager 2 Miranda icy terrain on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 509.6,
+          "timeline_out": 513.9,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01354.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1400x822 Voyager 2 Miranda close-up on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R57",
@@ -515,7 +1831,29 @@
       "source_kind": "`Wikimedia Commons`",
       "source_assignment_from_accepted_shot_list": "`File:McDonald Observatory, near Fort Davis, part of University of Texas at Austin 04.JPG` (`3456\u00d75184`, `CC BY-SA 3.0`, 1st app., `514.60\u2013517.70 s` wide & `517.70\u2013520.83 s` dome push)",
       "locked_spoken_line": "16th February 1948. At the McDonald Observatory in Western Texas, (`514.664\u2013520.604 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 514.6,
+          "timeline_out": 517.7,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_McDonald_Observatory_near_Fort_Davis_part_of_University_of_Texas_at_Austin_04.JPG",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "wide observatory domes"
+          }
+        },
+        {
+          "timeline_in": 517.7,
+          "timeline_out": 520.83,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_McDonald_Observatory_near_Fort_Davis_part_of_University_of_Texas_at_Austin_04.JPG",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "dome push"
+          }
+        }
+      ]
     },
     {
       "row": "R58",
@@ -524,7 +1862,29 @@
       "source_kind": "`Wikimedia / NASA`",
       "source_assignment_from_accepted_shot_list": "`File:Gerard Kuiper 1964.jpg` (`1138\u00d71396`, `CC BY-SA 3.0 nl`, 1st app., `520.83\u2013525.50 s`) \u2192 `PIA01354` (Voyager 2 Miranda full disc, PD, 2nd app., `525.50\u2013529.86 s`)",
       "locked_spoken_line": "astronomer Gerard Kuiper discovers Miranda in telescopic photos, the last moon of Uranus found before Voyager 2. (`521.064\u2013529.284 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 520.83,
+          "timeline_out": 525.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/File_Gerard_Kuiper_1964.jpg",
+          "upscale": 1.4,
+          "video": false,
+          "framing": {
+            "inset": "1593x1954 portrait inset on graded dark backdrop"
+          }
+        },
+        {
+          "timeline_in": 525.5,
+          "timeline_out": 529.86,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01354.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "1440x846 Voyager 2 Miranda full icy face"
+          }
+        }
+      ]
     },
     {
       "row": "R59",
@@ -533,7 +1893,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r59_miranda_size_scale.mp4` (real `PIA18185` Miranda & `PIA00405` Earth Moon globes)",
       "locked_spoken_line": "At about 500 kilometers in diameter, Miranda is only one-seventh as large as Earth's moon, a size unlikely to support much tectonic activity. (`530.444\u2013540.704 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 529.86,
+          "timeline_out": 535.51,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r59_miranda_size_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 535.51,
+          "timeline_out": 541.16,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r59_miranda_size_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 5.65
+          }
+        }
+      ]
     },
     {
       "row": "R60",
@@ -542,7 +1924,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA01490` (Voyager 2 South Polar View of Miranda 9-image mosaic, PD, 1st app., `541.16\u2013546.50 s`) \u2192 `PIA00042` (Voyager 2 Miranda Highest Resolution Color Picture, PD, 1st app., `546.50\u2013552.01 s`)",
       "locked_spoken_line": "Yet when Voyager 2 flew past in January 1986, Miranda looked like Frankenstein's monster pieced together from parts that did not merge properly. (`541.624\u2013551.524 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 541.16,
+          "timeline_out": 546.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01490.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "1581x1600 Miranda south polar view on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 546.5,
+          "timeline_out": 552.01,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00042.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "826x1080 Miranda colour view on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R61",
@@ -551,7 +1955,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r61_canyon_depth_scale.mp4` (over graded Voyager 2 Miranda fault plate `PIA00141`)",
       "locked_spoken_line": "Carving across its surface are giant fault canyons as much as 12 times as deep as Earth's Grand Canyon. (`552.504\u2013559.864 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 552.01,
+          "timeline_out": 556.2,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r61_canyon_depth_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 556.2,
+          "timeline_out": 560.38,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r61_canyon_depth_scale.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.19
+          }
+        }
+      ]
     },
     {
       "row": "R62",
@@ -560,7 +1986,29 @@
       "source_kind": "`NASA / JPL` (+ optional `VEO (flag)`)",
       "source_assignment_from_accepted_shot_list": "`PIA00044` (Voyager 2 Miranda High Resolution of Large Fault / Verona Rupes limb, PD, 1st app., `560.38\u2013565.10 s`) \u2192 `PIA00141` (Voyager 2 Miranda fault canyons & ridges, PD, 1st app., `565.10\u2013569.97 s`) *or flagged optional `veo_033_r62_miranda_cliff_drop.mp4`*",
       "locked_spoken_line": "Because of Miranda's low gravity and towering cliffs, a rock dropped off the highest cliff would take 10 minutes to reach the foot of the cliff. (`560.904\u2013569.344 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 560.38,
+          "timeline_out": 565.1,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00044.jpg",
+          "upscale": 1.4,
+          "video": false,
+          "framing": {
+            "inset": "1422x1402 Verona Rupes fault cliff on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 565.1,
+          "timeline_out": 569.97,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00141.jpg",
+          "upscale": 1.75,
+          "video": false,
+          "framing": {
+            "inset": "1354x1377 Miranda fault canyons & ridges on #050814 starfield"
+          }
+        }
+      ]
     },
     {
       "row": "R63",
@@ -569,7 +2017,39 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA18185` (Voyager 2 Miranda Icy Face mosaic, PD, 1st app., `569.97\u2013576.50 s`) \u2192 `PIA01487` (Voyager 2 Uranus ring system, PD, 2nd app., `576.50\u2013579.80 s` & `579.80\u2013583.14 s`)",
       "locked_spoken_line": "On 19th of April 2022, the Planetary Science Decadal Survey for 2023 to 2032 outlined a new Uranus mission as a highest priority objective, (`570.604\u2013582.864 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 569.97,
+          "timeline_out": 576.5,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18185.jpg",
+          "upscale": 1.8,
+          "video": false,
+          "framing": {
+            "inset": "1028x1033 Miranda icy face on #050814 starfield"
+          }
+        },
+        {
+          "timeline_in": 576.5,
+          "timeline_out": 579.8,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01487.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "Voyager 2 Uranus ring system wide"
+          }
+        },
+        {
+          "timeline_in": 579.8,
+          "timeline_out": 583.14,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01487.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "Voyager 2 Uranus ring system push"
+          }
+        }
+      ]
     },
     {
       "row": "R64",
@@ -578,7 +2058,29 @@
       "source_kind": "`CODE`",
       "source_assignment_from_accepted_shot_list": "`code_graphic_033_r64_dual_viewpoint_2024.mp4` (using real Uranus globe `PIA01280`)",
       "locked_spoken_line": "and in October 2024, Hubble and New Horizons simultaneously observed Uranus from two viewpoints. (`583.424\u2013590.984 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 583.14,
+          "timeline_out": 587.31,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r64_dual_viewpoint_2024.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 0.0
+          }
+        },
+        {
+          "timeline_in": 587.31,
+          "timeline_out": 591.48,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/04_Generated-Clips/J2299_code_graphics_v01/code_graphic_033_r64_dual_viewpoint_2024.mp4",
+          "upscale": 1.0,
+          "video": true,
+          "framing": {
+            "offset": 4.17
+          }
+        }
+      ]
     },
     {
       "row": "R65",
@@ -587,7 +2089,29 @@
       "source_kind": "`NASA / JPL`",
       "source_assignment_from_accepted_shot_list": "`PIA00044` (Voyager 2 Miranda fault cliff, PD, 2nd app., `591.48\u2013595.70 s`) \u2192 `PIA00042` (Voyager 2 Miranda colour mosaic, PD, 2nd app., `595.70\u2013600.00 s`)",
       "locked_spoken_line": "Uranus is a sideways giant of 21-year winters, corkscrew magnetism, and 10-minute cliffs. (`591.984\u2013599.444 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 591.48,
+          "timeline_out": 595.7,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00044.jpg",
+          "upscale": 1.5,
+          "video": false,
+          "framing": {
+            "inset": "1524x1503 Verona Rupes cliff synthesis"
+          }
+        },
+        {
+          "timeline_in": 595.7,
+          "timeline_out": 600.0,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00042.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "849x1110 Miranda colour view synthesis"
+          }
+        }
+      ]
     },
     {
       "row": "R66",
@@ -596,7 +2120,29 @@
       "source_kind": "`NASA / JHUAPL / SwRI`",
       "source_assignment_from_accepted_shot_list": "`PIA19857` (New Horizons Pluto in True Color, PD, 1st app., `600.00\u2013605.80 s`) \u2192 `PIA19952` (New Horizons Rich Color Variations of Pluto / Sputnik Planitia nitrogen-ice heart, PD, 1st app., `605.80\u2013611.40 s`)",
       "locked_spoken_line": "Next in our Real World series, we follow New Horizons beyond Uranus to Pluto, where a giant heart of nitrogen ice hides without a single crater. (`600.544\u2013611.324 s`)",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 600.0,
+          "timeline_out": 605.8,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA19857.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "1920x1080 New Horizons Pluto in true colour"
+          }
+        },
+        {
+          "timeline_in": 605.8,
+          "timeline_out": 611.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA19952.jpg",
+          "upscale": 1.0,
+          "video": false,
+          "framing": {
+            "crop": "5000x5000 Pluto Tombaugh Regio nitrogen-ice heart"
+          }
+        }
+      ]
     },
     {
       "row": "R67",
@@ -605,7 +2151,39 @@
       "source_kind": "`NASA / JHUAPL / JWST`",
       "source_assignment_from_accepted_shot_list": "`PIA19952` (Pluto nitrogen-ice heart slow drift, PD, cont., `611.40\u2013617.40 s`) \u2192 `PIA18185` (Voyager 2 Miranda Icy Face drift, PD, 2nd app., `617.40\u2013623.40 s`) \u2192 `weic2310a` (JWST NIRCam Uranus rings slow drift, `CC BY 4.0`, `623.40\u2013629.40 s`)",
       "locked_spoken_line": "*(Music bed continues full runtime; holds 2.5 s past last word at 611.324 s, then fades cleanly by 629.40 s)*",
-      "status": "DRAFT_RECONCILIATION_NOT_CUTS"
+      "status": "RECONCILED_IN_CUTS_V01_READY_FOR_J2300",
+      "reconciled_cuts_v01": [
+        {
+          "timeline_in": 611.4,
+          "timeline_out": 617.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA19952.jpg",
+          "upscale": 1.05,
+          "video": false,
+          "framing": {
+            "crop": "Pluto heart slow drift"
+          }
+        },
+        {
+          "timeline_in": 617.4,
+          "timeline_out": 623.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA18185.jpg",
+          "upscale": 1.85,
+          "video": false,
+          "framing": {
+            "inset": "1056x1062 Miranda icy face drift"
+          }
+        },
+        {
+          "timeline_in": 623.4,
+          "timeline_out": 629.4,
+          "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01490.jpg",
+          "upscale": 1.15,
+          "video": false,
+          "framing": {
+            "crop": "Miranda south polar view end-screen drift"
+          }
+        }
+      ]
     }
   ],
   "graphic_reconciliation": [
@@ -1909,11 +3487,15 @@
   ],
   "summary": {
     "accepted_rows_preserved": 67,
+    "reconciled_cuts_total": 144,
     "prior_caption_differences_reconciled": 32,
     "prior_exclusions_retained": 17,
     "draft_graphic_files_audited": 14,
     "draft_graphic_duration_matches": 14,
-    "mini_graphics_delivered": 0,
+    "mini_graphics_24fps_delivered": 19,
+    "mini_graphics_aliases_delivered": 1,
+    "r01_opener_j2386_accepted": "r01_sourced_composite_v01_silent.mp4 (aab9aa2af9)",
+    "r55_passage_j2386_accepted": "r55_passage_v01_silent.mp4 (4aa82d0e72)",
     "keep_assigned": 0
   },
   "r26": "Use R26 retrograde_tilt name at accepted times, aliases never extra cuts. Not an Earth-size graphic.",
