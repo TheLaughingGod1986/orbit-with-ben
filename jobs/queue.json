@@ -204124,13 +204124,13 @@
       "stage": "picture",
       "after": "J2384",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T05:46Z",
-      "eta": "2026-11-08T07:46Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T05:00Z",
-      "result": "",
+      "result": "PASS",
       "history": [
         {
           "at": "2026-11-08T05:00Z",
@@ -204146,6 +204146,11 @@
           "at": "2026-11-08T05:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T05:49Z",
+          "by": "gemini",
+          "what": "done: PASS"
         }
       ],
       "remaining_action": "Watch the rebuilt £0 R01 (0-4.35s) composite and R55 (493.01-505.35s) cloud cuts with moving_video_input and record hashes and PASS/FIX",
@@ -204170,7 +204175,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2385/REVIEW.md"
     },
     {
       "id": "J2386",
