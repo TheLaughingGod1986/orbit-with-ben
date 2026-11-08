@@ -197460,9 +197460,14 @@
           "at": "2026-11-08T12:13Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-08T12:16Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified SHA-256 sums on NAS for all 73 harvest entries, 20 24fps code graphics, and J2334_fix R01/R55 clips; verified STILLS_POOL_STATUS_v03 summary"
         }
       ],
-      "remaining_action": "Inspect J2297/J2299 artefacts, probe moving_video_input capability, and locate 033 picture assets",
+      "remaining_action": "Directly watch R01 opener, R55 passage, and all 20 code graphics via moving_video_input against locked VO",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -197478,10 +197483,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-08T12:13Z",
-        "by": "gemini"
+        "at": "2026-11-08T12:16Z",
+        "by": "gemini",
+        "note": "Verified SHA-256 sums on NAS for all 73 harvest entries, 20 24fps code graphics, and J2334_fix R01/R55 clips; verified S"
       },
       "taskKeys": [
         "OWB:033"
