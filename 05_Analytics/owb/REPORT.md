@@ -1,32 +1,33 @@
 # Orbit With Ben: channel tracker
 
-Generated from the 2026-11-07 snapshot by `npm run analytics:report`. Don't edit by hand.
+Generated from the 2026-11-08 snapshot by `npm run analytics:report`. Don't edit by hand.
 
-**17 subscribers · 14,085 views · 94 videos**
+**17 subscribers · 14,086 views · 95 videos**
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | +3 | 0 |
-| Last 7 days | +2,187 | +1 |
-| Last 30 days | +7,395 | +5 |
+| Last 24 hours | +1,239 | 0 |
+| Last 7 days | +2,312 | +1 |
+| Last 30 days | +8,585 | +5 |
 
 ## Top videos, last 24 hours
 
-Public view-count change, snapshot 2026-11-06 to 2026-11-07.
+Public view-count change, snapshot 2026-11-07 to 2026-11-08.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [Why Does Uranus Have 21-Year Winters?](https://www.youtube.com/shorts/ZpEA8stoSPA) | short | +1 | 33.3% |
-| [How Big Is Venus Compared to Earth?](https://www.youtube.com/shorts/hZH0C7fpCk4) | short | +1 | 33.3% |
-| [Why You Can't Stand on a Neutron Star](https://www.youtube.com/shorts/_8L9jYbDVmQ) | short | +1 | 33.3% |
+| [What Are Shooting Stars Really Made Of?](https://www.youtube.com/shorts/T9fVlG3CCzU) | short | +1,234 | 99.6% |
+| [Could a Robot Survive Touching the Sun?](https://www.youtube.com/shorts/n_4XskX0yZk) | short | +3 | 0.2% |
+| [How Big Is Venus Compared to Earth?](https://www.youtube.com/shorts/hZH0C7fpCk4) | short | +1 | 0.1% |
+| [One Second Near a Neutron Star Is Enough](https://www.youtube.com/shorts/BX-z1EkgANg) | short | +1 | 0.1% |
 | Other videos (91) | | 0 | 0.0% |
-| **Channel total, last 24 hours** | | **+3** | **100.0%** |
+| **Channel total, last 24 hours** | | **+1,239** | **100.0%** |
 
 ## Week on week (weeks start Monday)
 
 | Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-11-02 (so far, to 11-04) | 1,063 | -47% | 3.6 | -34% | +1 | 2 |
+| 2026-11-02 (so far, to 11-05) | 1,059 | -56% | 3.6 | -51% | +1 | 3 |
 | 2026-10-26 | 3,759 | +82% | 9.3 | +137% | +1 | 7 |
 | 2026-10-19 | 2,063 | +370% | 3.9 | +333% | +2 | 8 |
 | 2026-10-12 | 439 | +180% | 0.9 | – | +1 | 5 |
@@ -43,7 +44,7 @@ Public view-count change, snapshot 2026-11-06 to 2026-11-07.
 
 | Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-11 (so far, to 11-04) | 1,079 | +158% | 3.6 | +74% | +1 | 3 |
+| 2026-11 (so far, to 11-05) | 1,075 | +153% | 3.6 | +72% | +1 | 4 |
 | 2026-10 | 6,821 | +22% | 16.4 | +44% | +5 | 25 |
 | 2026-09 | 5,589 | +134% | 11.4 | +22% | +7 | 37 |
 | 2026-08 | 2,386 | – | 9.3 | – | +4 | 28 |
@@ -53,7 +54,7 @@ A period still running is compared with the same number of days at the start of 
 
 ## Where views come from (last 28 days)
 
-- **Shorts:** Shorts feed 92% · YouTube search 7% · Other YouTube pages 1% · Direct / unknown 0% (6,875 views)
+- **Shorts:** Shorts feed 92% · YouTube search 7% · Other YouTube pages 1% · Direct / unknown 0% (6,861 views)
 - **Longs:** Browse features 87% · YouTube search 4% · Suggested 4% · Direct / unknown 3% (473 views)
 
 ## Where viewers leave (longs, lifetime)
@@ -82,75 +83,76 @@ A period still running is compared with the same number of days at the start of 
 
 | Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-11-03 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | short | 481 | +1 | +481 | +481 | 120.3 | 309% | 94% | Shorts feed |
-| 2026-11-02 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | short | 564 | +1 | +564 | +564 | 112.8 | 66% | 93% | Shorts feed |
-| 2026-11-01 | [What Happens If You Travel Near Light Speed?](https://youtu.be/rVqgtkBV3jc) | long | 0 | 0 | 0 | 0 | 0 | 0% | – | – |
-| 2026-10-31 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | short | 1,090 | 0 | +1,090 | +1,090 | 155.7 | 67% | 96% | Shorts feed |
-| 2026-10-30 | [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | short | 45 | 0 | +1 | +45 | 5.6 | 67% | 93% | Shorts feed |
-| 2026-10-29 | [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | short | 519 | 0 | +23 | +519 | 57.7 | 92% | 95% | Shorts feed |
-| 2026-10-28 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | short | 460 | 0 | +3 | +460 | 46 | 232% | 87% | Shorts feed |
-| 2026-10-27 | [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | short | 494 | 0 | +3 | +494 | 44.9 | 75% | 94% | Shorts feed |
-| 2026-10-26 | [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | short | 892 | 0 | +1 | +892 | 74.3 | 76% | 98% | Shorts feed |
-| 2026-10-25 | [What Happened to Venus?](https://youtu.be/VBaYRPp85Sw) | long | 229 | 0 | +2 | +229 | 17.6 | 25% | – | Browse features |
-| 2026-10-24 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | short | 851 | 0 | 0 | +851 | 60.8 | 76% | 95% | Shorts feed |
-| 2026-10-23 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | short | 83 | 0 | +2 | +83 | 5.5 | 58% | 66% | Shorts feed |
-| 2026-10-22 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | short | 90 | 0 | 0 | +90 | 5.6 | 53% | 98% | Shorts feed |
-| 2026-10-21 | [How Long Will Anything in Space Last?](https://youtu.be/m09jUdwC5hk) | long | 6 | 0 | 0 | +6 | 0.4 | 34% | – | Direct / unknown |
-| 2026-10-21 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | short | 888 | 0 | +1 | +888 | 52.2 | 62% | 95% | Shorts feed |
-| 2026-10-20 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | short | 12 | 0 | 0 | +12 | 0.7 | 31% | 56% | Shorts feed |
-| 2026-10-19 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | short | 109 | 0 | 0 | +109 | 5.7 | 79% | 26% | YouTube search |
-| 2026-10-18 | [Is the Sun Getting Brighter?](https://youtu.be/h8HGfyShEHI) | long | 9 | 0 | 0 | +9 | 0.5 | 22% | – | YouTube search |
+| 2026-11-07 | [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | short | 1,234 | +1,234 | +1,234 | +1,234 | 1234 | – | – | – |
+| 2026-11-03 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | short | 481 | 0 | +481 | +481 | 96.2 | 307% | 94% | Shorts feed |
+| 2026-11-02 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | short | 565 | +1 | +565 | +565 | 94.2 | 66% | 93% | Shorts feed |
+| 2026-11-01 | [What Happens If You Travel Near Light Speed?](https://youtu.be/rVqgtkBV3jc) | long | 0 | 0 | 0 | 0 | 0 | – | – | – |
+| 2026-10-31 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | short | 1,090 | 0 | +8 | +1,090 | 136.3 | 67% | 96% | Shorts feed |
+| 2026-10-30 | [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | short | 45 | 0 | +1 | +45 | 5 | 67% | 93% | Shorts feed |
+| 2026-10-29 | [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | short | 519 | 0 | -1 | +519 | 51.9 | 92% | 95% | Shorts feed |
+| 2026-10-28 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | short | 460 | 0 | +3 | +460 | 41.8 | 231% | 87% | Shorts feed |
+| 2026-10-27 | [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | short | 494 | 0 | +2 | +494 | 41.2 | 75% | 94% | Shorts feed |
+| 2026-10-26 | [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | short | 892 | 0 | +1 | +892 | 68.6 | 76% | 98% | Shorts feed |
+| 2026-10-25 | [What Happened to Venus?](https://youtu.be/VBaYRPp85Sw) | long | 229 | 0 | +1 | +229 | 16.4 | 25% | – | Browse features |
+| 2026-10-24 | [Why Does a Day on Mercury Last Two of Its Years?](https://youtu.be/vlkj8RQKmH8) | short | 851 | 0 | 0 | +851 | 56.7 | 76% | 95% | Shorts feed |
+| 2026-10-23 | [Why Didn't Earth Freeze Under a Dimmer Young Sun?](https://youtu.be/2e-giqFmfy8) | short | 83 | 0 | +1 | +83 | 5.2 | 58% | 66% | Shorts feed |
+| 2026-10-22 | [Are Saturn's Rings Younger Than Saturn?](https://youtu.be/82Ao0v5XiQI) | short | 90 | 0 | 0 | +90 | 5.3 | 53% | 98% | Shorts feed |
+| 2026-10-21 | [How Long Will Anything in Space Last?](https://youtu.be/m09jUdwC5hk) | long | 6 | 0 | 0 | +6 | 0.3 | 34% | – | Direct / unknown |
+| 2026-10-21 | [Could a Robot Survive Touching the Sun?](https://youtu.be/n_4XskX0yZk) | short | 891 | +3 | +4 | +891 | 49.5 | 62% | 95% | Shorts feed |
+| 2026-10-20 | [Saturn's Rings Are on a Clock](https://youtu.be/lbW2iQ9YvqA) | short | 12 | 0 | 0 | +12 | 0.6 | 31% | 56% | Shorts feed |
+| 2026-10-19 | [Why Is the Sun Getting Brighter as It Runs Out of Fuel?](https://youtu.be/y-SPHQ0-VjQ) | short | 109 | 0 | 0 | +109 | 5.5 | 79% | 26% | YouTube search |
+| 2026-10-18 | [Is the Sun Getting Brighter?](https://youtu.be/h8HGfyShEHI) | long | 9 | 0 | 0 | +9 | 0.4 | 22% | – | YouTube search |
 | 2026-10-17 | [Jupiter Has No Ground](https://youtu.be/23KZK7OjsEE) | short | 8 | 0 | 0 | +8 | 0.4 | 34% | 43% | YouTube search |
-| 2026-10-16 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | short | 161 | 0 | 0 | +161 | 7.3 | 61% | 89% | Shorts feed |
+| 2026-10-16 | [Why No Black Dwarf Exists Yet](https://youtu.be/1NeQFVnzO2Q) | short | 161 | 0 | 0 | +161 | 7 | 61% | 89% | Shorts feed |
 | 2026-10-14 | [Could a Robot Survive Falling Into Jupiter?](https://youtu.be/buaOI3QGm7U) | short | 19 | 0 | +1 | +19 | 0.8 | 67% | 0% | YouTube search |
 | 2026-10-12 | [Saturn's Rings Are Already Falling](https://youtu.be/Cka7_TVVOUQ) | short | 53 | 0 | 0 | +53 | 2 | 110% | 81% | Shorts feed |
-| 2026-10-11 | [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | long | 217 | 0 | 0 | +216 | 8 | 13% | – | Browse features |
-| 2026-10-07 | [This Star Is 20 km Wide and Heavier Than the Sun](https://youtu.be/pL339HhjDwo) | short | 126 | 0 | 0 | +56 | 4.1 | 186% | 87% | YouTube search |
+| 2026-10-11 | [How Long Do Saturn's Rings Have Left?](https://youtu.be/55AEQwvs36g) | long | 217 | 0 | 0 | +216 | 7.8 | 13% | – | Browse features |
+| 2026-10-07 | [This Star Is 20 km Wide and Heavier Than the Sun](https://youtu.be/pL339HhjDwo) | short | 126 | 0 | 0 | +11 | 3.9 | 20% | 87% | YouTube search |
 | 2026-10-05 | [Did You Know the Moon Is Leaving?](https://youtu.be/dQlOgsDGmtA) | short | 3 | 0 | 0 | 0 | 0.1 | 0% | 0% | – |
 | 2026-10-04 | [Why You Can't Stand On Jupiter](https://youtu.be/-jmMROGoZCM) | long | 5 | 0 | 0 | +3 | 0.1 | 11% | – | Suggested |
-| 2026-10-02 | [The Last Stars Will Shine for 10 Trillion Years](https://youtu.be/Ih2zhZTbIR0) | short | 136 | 0 | 0 | +1 | 3.8 | 32% | 76% | YouTube search |
-| 2026-10-01 | [What Happens When Galaxies Actually Collide?](https://youtu.be/CtllH6VOhEI) | short | 89 | 0 | 0 | +1 | 2.4 | 0% | 86% | – |
-| 2026-09-30 | [How Long Until Andromeda Hits Us?](https://youtu.be/e-7hzJv4c80) | short | 149 | 0 | 0 | +4 | 3.9 | 0% | 87% | Direct / unknown |
-| 2026-09-28 | [Why Stars Don't Crash When Galaxies Meet](https://youtu.be/xQlV9G9lqLI) | short | 254 | 0 | +4 | +5 | 6.4 | 83% | 92% | YouTube search |
+| 2026-10-02 | [The Last Stars Will Shine for 10 Trillion Years](https://youtu.be/Ih2zhZTbIR0) | short | 136 | 0 | 0 | +1 | 3.7 | 0% | 76% | – |
+| 2026-10-01 | [What Happens When Galaxies Actually Collide?](https://youtu.be/CtllH6VOhEI) | short | 89 | 0 | 0 | 0 | 2.3 | 0% | 86% | – |
+| 2026-09-30 | [How Long Until Andromeda Hits Us?](https://youtu.be/e-7hzJv4c80) | short | 149 | 0 | 0 | +1 | 3.8 | 0% | 87% | Direct / unknown |
+| 2026-09-28 | [Why Stars Don't Crash When Galaxies Meet](https://youtu.be/xQlV9G9lqLI) | short | 254 | 0 | +4 | +5 | 6.2 | 83% | 92% | YouTube search |
 | 2026-09-27 | [Will Earth Survive the Galaxy Crash?](https://youtu.be/17zpT_u7XsY) | short | 37 | 0 | 0 | +4 | 0.9 | 30% | 25% | YouTube search |
-| 2026-09-26 | [Will Andromeda Fill the Entire Sky?](https://youtu.be/U5Baf_CjhKc) | short | 58 | 0 | 0 | 0 | 1.4 | 0% | 42% | – |
-| 2026-09-25 | [Is Andromeda Coming to Destroy Us?](https://youtu.be/P9Jiw-MwUEU) | short | 90 | 0 | 0 | +1 | 2.1 | 0% | 77% | Direct / unknown |
+| 2026-09-26 | [Will Andromeda Fill the Entire Sky?](https://youtu.be/U5Baf_CjhKc) | short | 58 | 0 | 0 | 0 | 1.3 | 0% | 42% | – |
+| 2026-09-25 | [Is Andromeda Coming to Destroy Us?](https://youtu.be/P9Jiw-MwUEU) | short | 90 | 0 | 0 | +1 | 2 | 0% | 77% | Direct / unknown |
 | 2026-09-24 | [What Happens During the Milky Way Andromeda Collision?](https://youtu.be/ojk-dfOpAmw) | long | 4 | 0 | 0 | 0 | 0.1 | – | – | – |
 | 2026-09-24 | [Why the Moon Is Slowly Leaving Us](https://youtu.be/G8DiaNjD2WE) | short | 10 | 0 | 0 | 0 | 0.2 | – | 0% | – |
 | 2026-09-24 | [What's Dragging the Moon Away From Earth?](https://youtu.be/i6KGk9Z3pIE) | short | 15 | 0 | 0 | 0 | 0.3 | – | 0% | – |
 | 2026-09-24 | [How Do Fossils Prove Earth Spun Faster?](https://youtu.be/4P9v_2jx7Yo) | short | 5 | 0 | 0 | 0 | 0.1 | – | 0% | – |
 | 2026-09-24 | [Why Won't Perfect Total Eclipses Last Forever?](https://youtu.be/_WQLVnLETYA) | short | 23 | 0 | 0 | 0 | 0.5 | – | 5% | – |
-| 2026-09-21 | [Is the Moon Leaving Us?](https://youtu.be/eSFhBf2rcZk) | short | 292 | 0 | 0 | +1 | 6.2 | 1% | 97% | Direct / unknown |
+| 2026-09-21 | [Is the Moon Leaving Us?](https://youtu.be/eSFhBf2rcZk) | short | 292 | 0 | 0 | +1 | 6.1 | 1% | 97% | Direct / unknown |
 | 2026-09-21 | [A Day on Young Earth Lasted Just a Few Hours](https://youtu.be/cmeBDZLzPHs) | short | 104 | 0 | 0 | +1 | 2.2 | 0% | 98% | Direct / unknown |
-| 2026-09-21 | [The Moon Gets 3.8 cm Farther Away Every Year](https://youtu.be/rFzqmi8RWCY) | short | 256 | 0 | 0 | +1 | 5.4 | 0% | 86% | YouTube search |
+| 2026-09-21 | [The Moon Gets 3.8 cm Farther Away Every Year](https://youtu.be/rFzqmi8RWCY) | short | 256 | 0 | 0 | +1 | 5.3 | 0% | 86% | YouTube search |
 | 2026-09-17 | [Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone](https://youtu.be/2fsQcea-voM) | long | 5 | 0 | 0 | 0 | 0.1 | – | – | – |
-| 2026-09-17 | [One Second Near a Neutron Star Is Enough](https://youtu.be/BX-z1EkgANg) | short | 20 | 0 | 0 | 0 | 0.4 | – | 32% | – |
-| 2026-09-16 | [Why You Can't Stand on a Neutron Star](https://youtu.be/_8L9jYbDVmQ) | short | 423 | +1 | +1 | +4 | 8.1 | 95% | 90% | YouTube search |
+| 2026-09-17 | [One Second Near a Neutron Star Is Enough](https://youtu.be/BX-z1EkgANg) | short | 21 | +1 | +1 | +1 | 0.4 | – | 32% | – |
+| 2026-09-16 | [Why You Can't Stand on a Neutron Star](https://youtu.be/_8L9jYbDVmQ) | short | 423 | 0 | +1 | +4 | 8 | 95% | 90% | YouTube search |
 | 2026-09-16 | [Could a Probe Get Closer to a Neutron Star?](https://youtu.be/to-b2baeoWQ) | short | 67 | 0 | 0 | 0 | 1.3 | – | 86% | – |
-| 2026-09-14 | [What Happens If You Touch a Neutron Star?](https://youtu.be/Rp_8J6_6IIk) | short | 63 | 0 | 0 | +1 | 1.2 | 0% | 69% | YouTube search |
+| 2026-09-14 | [What Happens If You Touch a Neutron Star?](https://youtu.be/Rp_8J6_6IIk) | short | 63 | 0 | 0 | +1 | 1.1 | 0% | 69% | YouTube search |
 | 2026-09-13 | [Your Last Clear Image Near a Neutron Star](https://youtu.be/o7ykyTDZKiE) | short | 54 | 0 | +1 | +4 | 1 | 102% | 65% | YouTube search |
 | 2026-09-12 | [The Sky Would Lean Near a Neutron Star](https://youtu.be/va5ATScn3rs) | short | 20 | 0 | 0 | +1 | 0.4 | 14% | 74% | Shorts feed |
 | 2026-09-11 | [How Heavy Is a Teaspoon of Neutron Star?](https://youtu.be/vCxXTYXSSqY) | short | 30 | 0 | 0 | 0 | 0.5 | – | 72% | – |
 | 2026-09-10 | [What Happens If You Get Near a Neutron Star or Pulsar?](https://youtu.be/Yk1tLh23rko) | long | 15 | 0 | 0 | 0 | 0.3 | – | – | – |
 | 2026-09-10 | [Your Atoms Near a Neutron Star Do Not Survive](https://youtu.be/fhJP6eMoU0Q) | short | 51 | 0 | 0 | 0 | 0.9 | – | 45% | – |
 | 2026-09-09 | [If Life Starts Under Ice, It's Everywhere](https://youtu.be/TE_HDKAnqms) | short | 2 | 0 | 0 | 0 | 0 | – | 0% | – |
-| 2026-09-08 | [We Could Kill the Life We're Looking For](https://youtu.be/eVp9a7f4rWg) | short | 93 | 0 | 0 | 0 | 1.6 | – | 92% | – |
+| 2026-09-08 | [We Could Kill the Life We're Looking For](https://youtu.be/eVp9a7f4rWg) | short | 93 | 0 | 0 | 0 | 1.5 | – | 92% | – |
 | 2026-09-07 | [Europa Sprays Its Ocean Into Space](https://youtu.be/VE0f186WQZo) | short | 91 | 0 | 0 | 0 | 1.5 | – | 93% | – |
-| 2026-09-06 | [How Life Could Feed Under Europa With No Sun](https://youtu.be/Xza_jSHD4qw) | short | 96 | 0 | 0 | 0 | 1.5 | – | 88% | – |
-| 2026-09-05 | [Why Europa Is Hiding a Massive Ocean](https://youtu.be/pII09FbRYGc) | short | 291 | 0 | 0 | – | 4.6 | – | – | – |
+| 2026-09-06 | [How Life Could Feed Under Europa With No Sun](https://youtu.be/Xza_jSHD4qw) | short | 96 | 0 | 0 | 0 | 1.5 | – | – | – |
+| 2026-09-05 | [Why Europa Is Hiding a Massive Ocean](https://youtu.be/pII09FbRYGc) | short | 291 | 0 | 0 | – | 4.5 | – | – | – |
 | 2026-09-05 | [What Would Life Eat Under Europa?](https://youtu.be/1glQuYFSaYQ) | short | 127 | 0 | 0 | 0 | 2 | 0% | – | – |
 | 2026-09-04 | [Why Europa's Ocean Shouldn't Exist](https://youtu.be/8Bym-yrYhGc) | short | 26 | 0 | 0 | 0 | 0.4 | – | – | – |
-| 2026-09-03 | [Those Ice Scars Are How You Find It](https://youtu.be/keXe1GNxWSU) | short | 206 | 0 | 0 | 0 | 3.2 | – | – | – |
+| 2026-09-03 | [Those Ice Scars Are How You Find It](https://youtu.be/keXe1GNxWSU) | short | 206 | 0 | 0 | 0 | 3.1 | – | – | – |
 | 2026-09-03 | [There's an Ocean Under That Ice](https://youtu.be/QNTeou-w-gY) | short | 66 | 0 | 0 | +1 | 1 | 0% | – | YouTube search |
 | 2026-09-03 | [Could Life Exist Under The Ice Of Europa?](https://youtu.be/NbW5G1BpPY0) | long | 15 | 0 | 0 | 0 | 0.2 | – | – | – |
 | 2026-09-02 | [Star Recycling Isn't Perfect](https://youtu.be/n2WbOfJhOwc) | short | 213 | 0 | 0 | 0 | 3.2 | – | – | – |
-| 2026-09-01 | [What Remains After the Last Star Dies?](https://youtu.be/9lLZMy8rBJo) | short | 623 | 0 | 0 | +1 | 9.3 | 0% | – | YouTube search |
+| 2026-09-01 | [What Remains After the Last Star Dies?](https://youtu.be/9lLZMy8rBJo) | short | 623 | 0 | 0 | +1 | 9.2 | 0% | – | YouTube search |
 | 2026-09-01 | [What Happens When the Last Star Furnace Goes Cold](https://youtu.be/KX-XU_AODoI) | short | 75 | 0 | 0 | 0 | 1.1 | – | – | – |
-| 2026-09-01 | [The Sky Is Already Running Out of Light](https://youtu.be/CkSECfUfH2Y) | short | 292 | 0 | 0 | 0 | 4.4 | – | – | – |
+| 2026-09-01 | [The Sky Is Already Running Out of Light](https://youtu.be/CkSECfUfH2Y) | short | 292 | 0 | 0 | 0 | 4.3 | – | – | – |
 | 2026-08-30 | [It Rains Glass Sideways on This Alien World](https://youtu.be/GjcZB8826J8) | short | 9 | 0 | 0 | 0 | 0.1 | – | – | – |
-| 2026-08-29 | [What's Left When the Last Star Goes Out?](https://youtu.be/xRxhb3vSru4) | short | 414 | 0 | +1 | +2 | 5.9 | 0% | – | Direct / unknown |
+| 2026-08-29 | [What's Left When the Last Star Goes Out?](https://youtu.be/xRxhb3vSru4) | short | 414 | 0 | +1 | +2 | 5.8 | 0% | – | Direct / unknown |
 | 2026-08-28 | [The Day the Last Star Goes Out](https://youtu.be/IVbO9XkkDps) | short | 94 | 0 | 0 | 0 | 1.3 | – | – | – |
-| 2026-08-27 | [Why the Night Sky Is Getting Darker](https://youtu.be/SdNXS1PD_Yk) | short | 257 | 0 | +1 | +1 | 3.6 | 31% | – | YouTube search |
+| 2026-08-27 | [Why the Night Sky Is Getting Darker](https://youtu.be/SdNXS1PD_Yk) | short | 257 | 0 | +1 | +1 | 3.5 | 31% | – | YouTube search |
 | 2026-08-27 | [The Last Star: What Happens When a Red Dwarf Dies?](https://youtu.be/REXYxuLOBoI) | long | 46 | 0 | +1 | +4 | 0.6 | 1% | – | YouTube search |
 | 2026-08-27 | [The Last Star Will Be a Red Dwarf](https://youtu.be/wIh3armF7_k) | short | 57 | 0 | 0 | +1 | 0.8 | 3% | – | YouTube search |
 | 2026-08-26 | [The Universe Is Running Out of New Stars](https://youtu.be/DN4L1DkerMM) | short | 229 | 0 | 0 | 0 | 3.1 | – | – | – |
@@ -164,16 +166,16 @@ A period still running is compared with the same number of days at the start of 
 | 2026-08-20 | [Most of the Universe Gives Off No Light](https://youtu.be/PV50PX-bE4g) | short | 129 | 0 | 0 | 0 | 1.6 | – | – | – |
 | 2026-08-19 | [What If They're Leaving Us Alone On Purpose](https://youtu.be/03v4f1hlvtQ) | short | 57 | 0 | 0 | +2 | 0.7 | 20% | – | Direct / unknown |
 | 2026-08-18 | [We Could Smell Alien Life in a Spectrum](https://youtu.be/QRi6Dxq0hz0) | short | 32 | 0 | 0 | 0 | 0.4 | 0% | – | – |
-| 2026-08-17 | [Why This Alien World Looks Like a Giant Eye](https://youtu.be/OlwENQcY-jg) | short | 71 | 0 | 0 | +2 | 0.9 | 5% | – | Direct / unknown |
+| 2026-08-17 | [Why This Alien World Looks Like a Giant Eye](https://youtu.be/OlwENQcY-jg) | short | 71 | 0 | 0 | +2 | 0.9 | 0% | – | Direct / unknown |
 | 2026-08-16 | [This Planet's Night Never Cools Down](https://youtu.be/tEOHYQbcgOw) | short | 18 | 0 | 0 | +2 | 0.2 | 0% | – | Direct / unknown |
 | 2026-08-15 | [Three Suns in the Sky — Real Alien Worlds](https://youtu.be/MDvAKtmKauw) | short | 149 | 0 | 0 | – | 1.8 | 28% | – | YouTube search |
 | 2026-08-14 | [We Found Planets Made of Diamond](https://youtu.be/M-VN84HCNls) | short | 66 | 0 | 0 | +2 | 0.8 | 39% | – | Direct / unknown |
 | 2026-08-13 | [This Planet's Rain Is Molten Glass](https://youtu.be/SC2WGTl_V5Q) | short | 25 | 0 | 0 | 0 | 0.3 | – | – | – |
-| 2026-08-13 | [Alien Worlds: The Strangest Planets We've Ever Found](https://youtu.be/b8-X_FyJnHM) | long | 13 | 0 | 0 | 0 | 0.2 | – | – | – |
+| 2026-08-13 | [Alien Worlds: The Strangest Planets We've Ever Found](https://youtu.be/b8-X_FyJnHM) | long | 13 | 0 | 0 | 0 | 0.1 | – | – | – |
 | 2026-08-13 | [A Reply From the Stars Takes Generations](https://youtu.be/iQUbmlaj4vk) | short | 17 | 0 | 0 | 0 | 0.2 | – | – | – |
 | 2026-08-12 | [Is Alien Life Already Hiding in Our Data?](https://youtu.be/ykmoxRJ6BOI) | short | 10 | 0 | 0 | 0 | 0.1 | – | – | – |
 | 2026-08-12 | [Billions of Planets, Zero Signals](https://youtu.be/f8V6wCjWwHA) | short | 16 | 0 | 0 | 0 | 0.2 | – | – | – |
-| 2026-08-12 | [What You Would See Falling Into a Black Hole](https://youtu.be/B2STcIAF1lY) | short | 57 | 0 | 0 | +1 | 0.7 | 0% | – | Direct / unknown |
+| 2026-08-12 | [What You Would See Falling Into a Black Hole](https://youtu.be/B2STcIAF1lY) | short | 57 | 0 | 0 | +1 | 0.6 | 0% | – | Direct / unknown |
 | 2026-08-05 | [What Happens If You Fall Into a Black Hole?](https://youtu.be/3xrxdmaOwJI) | long | 5 | 0 | 0 | +1 | 0.1 | 3% | – | Direct / unknown |
 | 2026-07-30 | [Why Haven't We Found Aliens Yet? The Fermi Paradox Explained](https://youtu.be/Mo93x0fxB1Q) | long | 13 | 0 | 0 | +1 | 0.1 | 0% | – | YouTube search |
 
