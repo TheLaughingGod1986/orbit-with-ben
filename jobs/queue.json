@@ -199001,13 +199001,13 @@
       "stage": "edit",
       "after": "J2300",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T15:15Z",
-      "eta": "2026-11-08T17:15Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "",
+      "result": "Built 033_short02_ice_giant_surface_v01.mp4 (26.28s, 62 words, 11 shots, 0 split words, SHA-256 c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2); all tool gates PASS (gate_shorts_open dur=26.28s audio=-16.6dB motion=14.37 f0diff=3.43 cut1=1.88s vo_onset=0.09s tail_gap=1.04s dhash=ffc1d46040c77eb1 visor=0.0; picture_qa 0/11 fail; polish_gate 0/11 fail; sfx_kit VO -16.8 LUFS SFX -41.7 LUFS; music_gate 70.6 BPM; thumb_preview frame0 sat=116.7 nb=1%, cover sat=148.7 nb=1%); committed 77933c3fce and queued J2400 review.",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -199063,6 +199063,11 @@
           "at": "2026-11-08T16:22Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Re-verified 033_short02_ice_giant_surface_v01.mp4 (SHA-256 c2404d5a05ad..., 26.28s, 62w, 0 split words) via moving_video_input + audio_input and all 5 tool gates PASS; reports on origin/main (77933c3fce) and J2400 review job open."
+        },
+        {
+          "at": "2026-11-08T16:22Z",
+          "by": "gemini",
+          "what": "done: Built 033_short02_ice_giant_surface_v01.mp4 (26.28s, 62 words, 11 shots, 0 split words, SHA-256 c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2); all tool gates PASS (gate_shorts_open dur=26.28s audio=-16.6dB motion=14.37 f0diff=3.43 cut1=1.88s vo_onset=0.09s tail_gap=1.04s dhash=ffc1d46040c77eb1 visor=0.0; picture_qa 0/11 fail; polish_gate 0/11 fail; sfx_kit VO -16.8 LUFS SFX -41.7 LUFS; music_gate 70.6 BPM; thumb_preview frame0 sat=116.7 nb=1%, cover sat=148.7 nb=1%); committed 77933c3fce and queued J2400 review."
         }
       ],
       "remaining_action": "Mark J2318 done and post thread report",
