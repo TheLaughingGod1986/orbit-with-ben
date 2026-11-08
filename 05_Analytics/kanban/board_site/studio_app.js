@@ -1750,7 +1750,20 @@
       : `<p class="line">This Short is reviewed with its long film: your OK or changes there cover it.</p>`;
     return `<header class="top"><a class="more back" href="#review">‹ Review</a></header>
       <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""} · your watch</p>
-      <div class="player">${player}</div>${actions}`;
+      <div class="player">${player}</div>${actions}${pastNotesHtml(v)}`;
+  }
+
+  // Ben, 8 Nov 2026: a cut he sent back shows, under the player, what he flagged last time (and what the agents say
+  // they changed), so he can check each fix as he watches.
+  function pastNotesHtml(v) {
+    const rounds = (v.pastNotes || []).filter(r => (r.notes || []).length);
+    const fixed = (v.fixedNotes || []).filter(Boolean);
+    if (!rounds.length && !fixed.length) return "";
+    const when = iso => { const t = Date.parse(iso || ""); return isNaN(t) ? "" : new Date(t).toLocaleDateString("en-GB", {day: "numeric", month: "short", timeZone: "Europe/London"}); };
+    const list = rounds.map(r => `<p class="meta">On ${esc(r.version || "the last cut")}${when(r.at) ? " (" + esc(when(r.at)) + ")" : ""} you asked for:</p>
+      <ul class="past-notes">${r.notes.map(n => `<li>${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("")}</ul>`).join("");
+    const did = fixed.length ? `<p class="meta">What the agents changed:</p><ul class="past-notes">${fixed.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : "";
+    return `<section class="past-problems" aria-label="What you flagged last time"><h2>What you flagged last time</h2>${list}${did}</section>`;
   }
 
   // Green only for real work (a claimed job, or the Chief coordinating on a fresh relay check); amber for online but

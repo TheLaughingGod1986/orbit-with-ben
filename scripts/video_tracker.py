@@ -106,6 +106,25 @@ def parse_change_notes(text: str) -> list[dict]:
     return out
 
 
+def past_notes(*checks_and_versions) -> list[dict]:
+    """Ben's earlier change requests to show under a re-sent cut (Ben, 8 Nov 2026: "when the fixes are in place and it's
+    UAT again, can we get a list of the problems below"). Each arg is (check doc, current version); a change tick on an
+    older version than the cut now on show counts. [{version, at, notes: [{t, text}]}], oldest first, no repeats."""
+    out, seen = [], set()
+    for doc, current in checks_and_versions:
+        if not doc or doc.get("verdict") != "change":
+            continue
+        old = str(doc.get("version") or "")
+        if current and old and old == str(current):
+            continue  # the change request is on this very cut: it's still being fixed, not a past problem
+        notes = [{"t": n["t"], "text": n["text"]} for n in notes_from_check(doc)]
+        key = (old, doc.get("at"))
+        if notes and key not in seen:
+            seen.add(key)
+            out.append({"version": old, "at": str(doc.get("at") or ""), "notes": notes})
+    return sorted(out, key=lambda x: x["at"])
+
+
 def notes_from_check(doc: dict | None) -> list[dict]:
     if not doc or doc.get("verdict") != "change":
         return []
@@ -552,6 +571,9 @@ def ask_entries(alljobs: list[dict]) -> list[dict]:
         items = [x for x in items if isinstance(x, dict) and not x.get("cleared")]
         for n, x in enumerate(items, 1):
             e = {k: str(x.get(k) or "") for k in AWAITS_FIELDS}
+            for k in ("prev", "fixed"):  # lists: earlier check ids this cut replaces, and what the agents changed
+                if x.get(k):
+                    e[k] = x[k]
             e["id"] = j["id"] + (f".{n}" if len(items) > 1 else "")
             e["job"] = j["id"]
             e["jobStatus"] = j.get("status") or ""
@@ -596,6 +618,16 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
     count against the new cut."""
     cid = ask_check_id(e)
     c = checks.get(cid)
+    # An entry may name the cards it replaces (`prev`: check ids, e.g. a fix job that re-sends J2395.3 under its own
+    # id) and what the agents changed (`fixed`: lines), so Ben sees what he flagged before under the new cut.
+    prev = e.get("prev") or []
+    prev = [prev] if isinstance(prev, str) else [p for p in prev if isinstance(p, str)]
+    history = past_notes((c, e.get("version")), *[(checks.get(p), e.get("version")) for p in prev])
+    fixed = [str(x)[:200] for x in (e.get("fixed") or []) if str(x).strip()] if isinstance(e.get("fixed"), list) else []
+    if history:
+        card["pastNotes"] = history
+    if fixed:
+        card["fixedNotes"] = fixed
     if c and e.get("version") and c.get("version") and str(c["version"]) != e["version"]:
         c = None
     unhandled = bool(c) and not c.get("handled")
@@ -1338,6 +1370,7 @@ def _card(
         "waitingOn": who,
         "readyFor": ready_for,
         "notes": notes,
+        **({"pastNotes": history} if (history := past_notes((check, (watch or {}).get("version") or version))) else {}),
         "flags": flags,
         "okNote": ok_note,
         "youtube": youtube,

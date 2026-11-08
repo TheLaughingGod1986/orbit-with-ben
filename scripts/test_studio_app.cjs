@@ -1285,3 +1285,19 @@ console.log('Working checklist hierarchy order OK');
   assert.equal(t.summary({...sb, owb: {jobs: [{id: 'J2165', status: 'claimed'}]}}, NOW).jobs.working, 2);
 }
 console.log('Jobs running count checks OK');
+
+// Ben, 8 Nov 2026: a re-sent cut shows what he flagged last time under the player.
+{
+  const b = {tracker: {videos: [{key: 'OWB:ASK:J2418', channel: 'OWB', number: '031', title: 'Solar wind Short', type: 'short', lane: 'ready',
+    readyFor: 'Ben', version: 'v03', ask: {id: 'J2418'}, watch: {url: 'https://x/api/watch?v=a', version: 'v03'},
+    pastNotes: [{version: 'v02', at: '2026-11-08T10:42:51Z', notes: [{t: '', text: 'like a rectangle and blurry above and below'}]}],
+    fixedNotes: ['Rebuilt full-screen 1080x1920, no blurred bands']}]}};
+  const page = t.uat(b, 'OWB:ASK:J2418');
+  assert(page.includes('What you flagged last time') && page.includes('On v02') && page.includes('blurry above and below'),
+    'the watch page lists the earlier change notes');
+  assert(page.includes('What the agents changed') && page.includes('no blurred bands'), 'and what the agents changed');
+  const fresh = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: [], fixedNotes: []})]}}, 'OWB:ASK:J2418');
+  assert(!fresh.includes('What you flagged last time'), 'a first-time cut has no past-problems box');
+  console.log('UAT past problems OK');
+}
+
