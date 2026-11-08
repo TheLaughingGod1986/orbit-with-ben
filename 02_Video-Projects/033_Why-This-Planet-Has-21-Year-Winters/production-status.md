@@ -18,7 +18,7 @@
 | CG | **20 × 24fps renders MOVING-VIDEO QA PASS (`J2300`, `19` active + `1` `R26` alias, `0` frozen pairs, £0 Option B)** (`04_Generated-Clips/J2299_code_graphics_v01/` + `07_Edit-Project/CODE_GRAPHICS_J2299_v02.json`: all 20 files directly viewed with `moving_video_input` in `J2300`; `polish_gate` PASS 0 fail; `code_graphic_033_r55_pressure_gauge.mp4` retired per `J2386`; awaiting protected Chief stage release) |
 | Runtime target | `10:29.4` (`611.40 s` locked VO + `18.00 s` moving end-screen hold `611.40–629.40 s`) |
 | Music & SFX | **DONE (`J2317`, £0 house synthesis)** (`05_Music/uranus_score_bed_v01.mp3` SHA-256 `47f68d66c4ef7b0287c4939b14e7d906582309ca2a3354c3c262daa7e21309f0`, `629.40 s`, `70.6 BPM`, `music_gate` PASS; `06_Sound-Effects/kit_v01` house SFX kit `sfx_kit.py make`) |
-| Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; **Active Short #1 (`033_short01_testA_opening_v01.mp4`, SHA-256 `7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7`, `36.48 s` Test A opening cut, slot Fri 18 Dec 11:30Z) BUILT & ALL 7 GATES PASS (`J2317`, `10_Shorts/SHORT01_TESTA_BUILD_REPORT_v01.md`)**; Active Short #2 (`J2318`) queued |
+| Shorts | Standalone Short `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*) public 3 Nov 2026 — **461 views, 6 likes on day 1**; **Active Short #1 (`033_short01_testA_opening_v01.mp4`, SHA-256 `7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7`, `36.48 s` Test A opening cut, slot Fri 18 Dec 11:30Z) BUILT & ALL 7 GATES PASS (`J2317`, `10_Shorts/SHORT01_TESTA_BUILD_REPORT_v01.md`)**; **Active Short #2 (`033_short02_ice_giant_surface_v01.mp4`, SHA-256 `c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2`, `26.28 s` Keeper question cut, slot Sat 19 Dec 11:30Z) BUILT & ALL 7 GATES PASS (`J2318`, `10_Shorts/SHORT02_KEEPER_BUILD_REPORT_v01.md`)**; handed to review + Ben phone watch |
 
 ## Blockers
 
@@ -32,7 +32,8 @@
 - [x] `J2299` source-identity reconciliation (`43` pool IDs + aux, `32` caption mismatches, `17` false-subject exclusions), `72`-file NAS harvest (`03_Reference-Material/harvest_J2299_v01`), `20` × `24 fps` code graphics (`04_Generated-Clips/J2299_code_graphics_v01`), `SHOT_LIST_v02.md`, `STILLS_LOCK_v02.md`, `cuts_033_j2299_v01.json` (`picture_qa` PASS `0` fail / `0` warn), and opener+graphics review reel (`polish_gate` PASS `0` fail)
 - [x] `J2300` moving-video QA of opener and graphics + full-size stills inspection (`PASS`, `jobs/reviews/J2300/REVIEW.md`: all 21 moving clips directly viewed with `moving_video_input`, all 42 active stills inspected full size, `144/144` cuts `≤ 6.00 s`, `0` split words)
 - [x] `J2317` Active Short #1 (`033_short01_testA_opening_v01.mp4`, `36.48 s` Test A opening cut, SHA-256 `7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7`) built & passed all 7 tool gates (`gate_shorts_open`, `picture_qa`, `polish_gate`, `sfx_kit level`, `music_gate`, `thumb_preview` frame 0 & cover)
-- [ ] `J2318` Active Short #2 (`033_short02_ice_giant_surface`, `22–27 s` Keeper question cut) build + Shorts review & Ben phone watch
+- [x] `J2318` Active Short #2 (`033_short02_ice_giant_surface_v01.mp4`, `26.28 s` Keeper question cut, SHA-256 `c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2`) built & passed all 7 tool gates (`gate_shorts_open`, `picture_qa`, `polish_gate`, `sfx_kit level`, `music_gate`, `thumb_preview` frame 0 & cover)
+- [ ] `033` Active Shorts 1 & 2 moving-video review + Ben phone watch (`OWB UAT/033_shorts_v01/`)
 - [ ] Protected Chief picture stage sign-off & long master assembly release (`J2398`, `after: J2300`)
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
