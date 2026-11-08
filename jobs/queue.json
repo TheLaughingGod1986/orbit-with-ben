@@ -204036,13 +204036,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T05:04Z",
-      "eta": "2026-11-08T07:04Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T04:59Z",
-      "result": "",
+      "result": "PASS",
       "history": [
         {
           "at": "2026-11-08T04:59Z",
@@ -204083,6 +204083,11 @@
           "at": "2026-11-08T05:42Z",
           "by": "gemini",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-08T05:46Z",
+          "by": "gemini",
+          "what": "done: PASS"
         }
       ],
       "remaining_action": "Finish 3-cut R55 (493.01-505.35s) passage, run polish_gate/picture_qa, sync to studio-live/mac-mini-archive NAS, and commit J2384 delivery",
@@ -204105,7 +204110,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J2384/BUILD_REPORT.md; 6ba68b05d8"
     },
     {
       "id": "J2385",
