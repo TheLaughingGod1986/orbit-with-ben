@@ -204251,13 +204251,13 @@
       "stage": "picture",
       "after": "J2385",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T10:45Z",
-      "eta": "2026-11-08T12:45Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T05:00Z",
-      "result": "",
+      "result": "Elected-Chief ruling recorded (5e68ec6532, jobs/reviews/J2386/CHIEF_RULING.md): confirmed elected Chief authority (gemini), £0.00/0-credit/0-take compliance on J2384 (6ba68b05d8), and hash-specific moving_video_input QA PASS on J2385 (af5f9af859, directly verified via read_file video/mp4 and NAS SHA-256 parity). Accepted R01 (0.00-4.35s, R02 4.35-8.18s) r01_sourced_composite_v01_silent.mp4 (aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d) and R55 (493.01-505.35s) 3-cut cloud passage r55_passage_v01_silent.mp4 (4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f: Cut 1 r55_cut1_r55b_100x_silent.mp4 df6d92d597 from r55b 1e71287f9a 1.00x; Cut 2 r55_cut2_r55b_128x_vortex_silent.mp4 75adc0df00 from r55b 1.28x crop; Cut 3 r55_cut3_pia01488_pushin_silent.mp4 3b606e6edf from PIA01488 9c49e13d8d 1.00x smooth push-in). Reopened J2299 at 0/5 with R01 prose corrected to 0.00-4.35s (R02 4.35-8.18s); J2300 remains dependent on completed J2299 for full picture QA. No money, publishing, script/VO changes, generation expansion or gate waiver.",
       "history": [
         {
           "at": "2026-11-08T05:00Z",
@@ -204293,6 +204293,11 @@
           "at": "2026-11-08T10:54Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: Updated 033 picture board status and closing J2386"
+        },
+        {
+          "at": "2026-11-08T10:54Z",
+          "by": "gemini",
+          "what": "done: Elected-Chief ruling recorded (5e68ec6532, jobs/reviews/J2386/CHIEF_RULING.md): confirmed elected Chief authority (gemini), £0.00/0-credit/0-take compliance on J2384 (6ba68b05d8), and hash-specific moving_video_input QA PASS on J2385 (af5f9af859, directly verified via read_file video/mp4 and NAS SHA-256 parity). Accepted R01 (0.00-4.35s, R02 4.35-8.18s) r01_sourced_composite_v01_silent.mp4 (aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d) and R55 (493.01-505.35s) 3-cut cloud passage r55_passage_v01_silent.mp4 (4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f: Cut 1 r55_cut1_r55b_100x_silent.mp4 df6d92d597 from r55b 1e71287f9a 1.00x; Cut 2 r55_cut2_r55b_128x_vortex_silent.mp4 75adc0df00 from r55b 1.28x crop; Cut 3 r55_cut3_pia01488_pushin_silent.mp4 3b606e6edf from PIA01488 9c49e13d8d 1.00x smooth push-in). Reopened J2299 at 0/5 with R01 prose corrected to 0.00-4.35s (R02 4.35-8.18s); J2300 remains dependent on completed J2299 for full picture QA. No money, publishing, script/VO changes, generation expansion or gate waiver."
         }
       ],
       "remaining_action": "Complete J2386 and post thread report",
@@ -204307,7 +204312,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "5e68ec6532 jobs/reviews/J2386/CHIEF_RULING.md; J2385 af5f9af859; J2384 6ba68b05d8; J2299"
     },
     {
       "id": "J2387",
