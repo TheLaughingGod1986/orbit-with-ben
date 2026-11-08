@@ -1,5 +1,5 @@
 {
-  "next_id": 2404,
+  "next_id": 2405,
   "jobs": [
     {
       "id": "J0001",
@@ -206113,6 +206113,40 @@
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates"
+    },
+    {
+      "id": "J2404",
+      "title": "033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review 033 Uranus long master v01 (`033_why_this_planet_has_21_year_winters_master_v01.mp4`, `629.40 s`, `1920x1080` `24 fps` CFR) assembled in `J2403` on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/`: (1) watch & listen with `moving_video_input` and `audio_input`, verify Teach-on-screen & Polish-pass gates, and inspect `picture_qa_review.jpg` and contact sheets; (2) verify all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`, plus `~-14 LUFS` / `<= -1.0 dBTP` / `0` black frames) PASS; (3) write `jobs/reviews/<this-job-id>/REVIEW.md` (`KEEP` or `FIX`), verify SHA-256 in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's UAT watch (`Wed 09 Dec 2026 18:00 London` slot), and advance `WIP.json` per `AGENTS.md` §How films get worked on.",
+      "ref": "J2403; J2398 f8c59c0344",
+      "film": "033",
+      "stage": "edit",
+      "after": "J2403",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T17:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T17:32Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review 033 Uranus long master v01 (629.40 s) with moving_video_input and audio_input, verify all 5 tool gates, and call jobs.py awaits for Ben's UAT watch",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Review 033 Uranus long master v01 (629.40 s) after J2403 assembly and hand to Ben's UAT watch"
     }
   ],
   "focus": [
