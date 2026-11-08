@@ -169,3 +169,28 @@ polish gate PASS: 0 of 13 rows failed, 1 to look at
 picture QA PASS: 0 of 13 cuts fail, 1 to look at
 ```
 
+
+## J2394 Active Short #2 `v02` (`031_short_sat12_solar_wind_air_v02`) Repair & Gates — 8 November 2026
+
+Rebuilt `031` Active Short #2 (*What If the Solar Wind Blew Earth's Atmosphere Into Space?*, `24.48 s` / `612` frames at `25 fps` CFR, `1080x1920`, `yuv420p`, `-14.0 LUFS`, `-2.2 dBTP`, £0 spend, no YouTube upload) as `031_short_sat12_solar_wind_air_v02.mp4` leaving `v01` untouched on NAS (`2f0f7e82e7d4c36d484d3bbf1ba7516118b3d1cdf61b788119996dc5ca85547c`), resolving all 4 `J2390` FIX items:
+1. Removed `get_nebula_wave()` and `make_cosmic_backdrop()` completely; every shot uses full `9:16` reframing (`<= 2.35x` upscale) or `composite_band_on_natural_blur()` with a 96-px cosine feather over a clean, natural Gaussian-blurred vertical fill from real moving NASA pixels.
+2. Removed `od.arc()` cartoon curves, `plasma_wave` sine ripple, and dark-ringed Earth cutout on `R39a` (`0.00–2.36 s`), `frame0.jpg`, `cover.jpg`, and `R39_loop` (`23.16–24.48 s`), rendering directly from clean graded 4K NASA SVS 20297 footage (`svs_20297_van_allen_earth_only.mp4` @ `6.4 s`, `upscale=0.95x`).
+3. Removed the ghost double-exposed Blue Marble Earth on `R39b` (`2.36–3.32 s`), rendering directly from a single clean moving NASA SVS 3822 geomagnetic field lines plate (`svs_3822_magfield_left.mp4` @ `28.0 s`, full `9:16` reframe `upscale=1.40x`).
+4. Eliminated the `9.00–14.00 s` parent-title banner text collision on `R42a` (`9.32–12.68 s`) by rendering a clean text-free moving NASA ISS sunlit orbital pass (`hdev_earth_views_iss_2019.mp4` @ `128.0 s`, `upscale=1.25x`) followed by DSCOVR EPIC (`nasa_svs_12312_dscovr_epic_earth.mp4` @ `16.0 s` on `R42b`).
+
+- **Short 2 `v02` MP4 (NAS & iCloud UAT):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v02.mp4` (also mirrored with matching SHA-256 to `10_Shorts/031_short_sat12_solar_wind_air_v02.mp4`, NAS `OWB UAT/031_shorts_v02/031_short_sat12_solar_wind_air_v02.mp4`, and iCloud `OWB UAT/031_shorts_v02/031_short_sat12_solar_wind_air_v02.mp4` — `SHA-256: 4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450`)
+- **Frame 0 (`1080x1920`):** `.../031_short_sat12_solar_wind_air_v02_frame0.jpg` (`SHA-256: f6b31eba43715fa776345296cbc51a1a6ef454865b3600b377e305535bd1a843`)
+- **Custom Cover (`1080x1920`):** `.../031_short_sat12_solar_wind_air_v02_cover.jpg` (`SHA-256: 63c43e387c209af75bea5d73c43b6c1556b8bbcbe7a69d90c31d2fc362d94e1f`)
+- **Handoff & Assembler:** `10_Shorts/SHORT2_SOLAR_WIND_AIR_HANDOFF_J2394_v02.md` and `10_Shorts/_assemble_031_short2_v02.py`
+
+```
+PASS  031_short_sat12_solar_wind_air_v02.mp4  dur=24.48s  audio=-16.9dB  motion=22.1  f0diff=3.63  cut1=2.36s  vo_onset=0.09s  tail_gap=1.46s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v02_vo.wav  dhash=bc17cffffe9fccd8  visor=0.0
+
+PASS  031_short_sat12_solar_wind_air_v02_frame0.jpg  saturation=101.5  near_black=0%
+PASS  031_short_sat12_solar_wind_air_v02_cover.jpg  saturation=111.2  near_black=0%
+
+SFX level PASS: VO -16.5 LUFS, SFX -38.5 LUFS, 5 hits
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+polish gate PASS: 0 of 9 rows failed, 1 to look at
+picture QA PASS: 0 of 9 cuts fail, 1 to look at
+```
