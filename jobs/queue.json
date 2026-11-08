@@ -204387,6 +204387,11 @@
           "at": "2026-11-08T07:24Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-08T07:25Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Build 031 Short 2 (Keeper question Short from SHORTS_PLAN_v01) and pass gate_shorts_open.py",
@@ -204400,8 +204405,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6.1-sol"
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J2390",
