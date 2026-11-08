@@ -204413,9 +204413,14 @@
           "at": "2026-11-08T09:16Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected v01 outputs: audio/SFX/music/thumb_preview PASS; fixing scdet at 2.32s and R04b gutter at 26.5s"
+        },
+        {
+          "at": "2026-11-08T09:28Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: gate_shorts_open, thumb_preview, sfx_kit, music_gate, and R04b PASS; restoring R01b svs_3822 backdrop so polish_gate and picture_qa PASS 13/13"
         }
       ],
-      "remaining_action": "Fix R01a->R01a2 scdet cut contrast at 2.32s and R04b horizontal gutter at 26.5s",
+      "remaining_action": "Re-render R01b piece_02 with clean svs_3822 backdrop and verify all 7 gates PASS",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks",
@@ -204429,11 +204434,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T09:16Z",
+        "at": "2026-11-08T09:28Z",
         "by": "gemini",
-        "note": "Inspected v01 outputs: audio/SFX/music/thumb_preview PASS; fixing scdet at 2.32s and R04b gutter at 26.5s"
+        "note": "gate_shorts_open, thumb_preview, sfx_kit, music_gate, and R04b PASS; restoring R01b svs_3822 backdrop so polish_gate and"
       },
       "taskKeys": [
         "OWB:031"
