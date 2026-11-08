@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2418 | mini | open | – | – | 031 edit · assembly · 031 Short 2: rebuild as true full-screen vertical (remove the blurred bands above and below), back to Ben's watch |  |
 | J2419 | mini | claimed | gemini | 2026-11-09T00:47Z | 024 edit · assembly · 024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch |  |
 | J2420 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
-| J2421 | any | claimed | macbook | 2026-11-09T00:45Z | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
+| J2421 | any | open | – | – | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2422 | mini | open | – | – | studio · Read 'When your viewers are on YouTube' + top countries in Studio for both channels; recommend publish times |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
