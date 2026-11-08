@@ -207595,10 +207595,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-08T23:41Z",
+      "eta": "2026-11-09T01:41Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-08T22:25Z",
       "result": "",
@@ -207627,6 +207627,11 @@
           "at": "2026-11-08T23:20Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-08T23:41Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review TOPIC.md for the two new Orbit backlog films (062 and 063) in PR #650 under AGENTS.md Rule E",
