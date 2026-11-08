@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
-| J2300 | mini | open (after J2299) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033 picture: review corrected source map, native opener and graphics | J2297 |
+| J2300 | mini | claimed | gemini | 2026-11-08T14:13Z | 033 picture · for gemini · qa · `gemini-argon` · 033 picture: review corrected source map, native opener and graphics | J2297 |
 | J2303 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
