@@ -74,5 +74,26 @@ class WriterTests(unittest.TestCase):
             self.assertEqual(len(target.read_text().splitlines()), 1)
             self.assertFalse(alias.with_name(alias.name+'.lock').exists())
 
+    def test_owb_flow_helper_requires_create_guard_and_single_attempt(self):
+        import ast
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        source = Path(ai_spend.__file__).resolve().parents[1] / '04_Audio/tools/orbit_flow_veo_ui.py'
+        tree = ast.parse(source.read_text())
+        nodes = [n for n in tree.body if isinstance(n, ast.FunctionDef)
+                 and n.name in {'submit_create', 'generate_clip'}]
+        env = dict(Path=Path, DEFAULT_MODEL='Veo 3.1 - Quality',
+                   time=SimpleNamespace(time=lambda: 0, monotonic=lambda: 0))
+        exec(compile(ast.Module(body=nodes, type_ignores=[]), str(source), 'exec'), env)
+        page = Mock()
+        with self.assertRaises(RuntimeError):
+            env['submit_create'](page)
+        with self.assertRaises(ValueError):
+            env['generate_clip'](page, 'prompt', Path('out.mp4'), attempts=1)
+        for attempts in (0, 2, 3):
+            with self.assertRaises(ValueError):
+                env['generate_clip'](page, 'prompt', Path('out.mp4'), attempts=attempts, create_guard=Mock())
+        self.assertEqual(page.mock_calls, [])
+
 
 if __name__ == '__main__': unittest.main()
