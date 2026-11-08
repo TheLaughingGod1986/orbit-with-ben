@@ -197314,9 +197314,14 @@
           "at": "2026-11-07T23:03Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-08T05:00:00Z"
+        },
+        {
+          "at": "2026-11-08T05:01Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-08T11:00:00Z"
         }
       ],
-      "remaining_action": "Await video-capable J2333 QA and J2334 hash acceptance; then resume source and graphics corrections at 0/5",
+      "remaining_action": "Await J2384 £0 R01/R55 build, J2385 moving_video_input QA and J2386 hash acceptance; then resume source and graphics corrections at 0/5 (R01 0.00-4.35s)",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review.",
       "progress": {
@@ -197331,11 +197336,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2380 condition check (jobs/reviews/J2380/REVIEW.md, 38a8c9d577): J2332 delivery freshly re-verified on NAS (r01_flow_t1_silent.mp4 65776fa656, r55a_flow_t1_silent.mp4 51b26b122e, r55b_flow_t1_silent.mp4 1e71287f9a; 30 Flow credits 14890->14860, £0 spend, no new spend), and 43/43 pool files + locked VO (3d73576e0c) verified intact on Mini and studio-live, but J2333 (moving_video_input QA) and J2334 (elected-Chief asset acceptance) remain open with no demonstrated moving_video_input worker in capabilities.json (Gemini 22:03Z probe passed audio_input 0.86, failed video). Keep J2299 at 0/5 until J2333/J2334 complete (R01 0-4.35s, R55 moving cloud plate after R54 chart, source corrections, 14 graphics, gates, locked VO and J2300 dependency preserved; no assembly release).",
-        "check_at": "2026-11-08T05:00:00Z",
-        "last_recheck": "J2380",
-        "checked_at": "2026-11-07T23:03:49+00:00",
-        "checked_by": "gemini"
+        "condition": "J2334 elected-Chief ruling (jobs/reviews/J2334/CHIEF_RULING.md, 4ddd1058a0): J2332 spend/cap verified (3/3 takes, 30/300 Flow credits, £0 cash) and J2333 moving_video_input QA (81c6a062ac) directly confirmed. Accepted r55b_flow_t1_silent.mp4 (1e71287f9a) for R55; rejected r01_flow_t1_silent.mp4 (65776fa656), r01_tile_flow_t1_silent.mp4 (942a8ab255), and r55a_flow_t1_silent.mp4 (51b26b122e) as FIX. Queued £0 / 0-credit / 0-take bounded correction chain J2384 (build R01 0.00-4.35s 97.77-deg sideways Uranus composite r01_sourced_composite_v01_silent.mp4 + R55 493.01-505.35s 3-cut cloud passage using r55b 0-3.958s 1.00x, r55b 3.958-7.917s 1.28x crop, and PIA01488 9c49e13d8d 500.927-505.350s) -> J2385 (moving_video_input QA) -> J2386 (elected-Chief hash acceptance). Keep J2299 at 0/5 with R01 timing prose corrected to accepted 0.00-4.35s (R02 4.35-8.18s) and J2300 dependency preserved until J2386 accepts the corrected R01/R55 hashes.",
+        "check_at": "2026-11-08T11:00:00Z"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
