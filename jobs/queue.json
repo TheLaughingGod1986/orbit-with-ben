@@ -204249,10 +204249,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T06:09Z",
+      "eta": "2026-11-08T08:09Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T06:05Z",
       "result": "",
@@ -204266,6 +204266,11 @@
           "at": "2026-11-08T06:08Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-08T06:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair 031 long master v02 per J2382 FIX (remove bullseye overlay, fix R03/R53 labels, R32 bars, R54 crop, R22 card) and pass all 5 gates",
@@ -204280,7 +204285,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T06:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2388",
