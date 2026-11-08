@@ -201753,13 +201753,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T02:15Z",
-      "eta": "2026-11-08T04:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T10:20Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2358/REVIEW.md, 753741c71c): HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633) and HOS PR #455 (72608f30) audio/provenance/1-Hz QA PASS verified; continuous 30fps moving_video_input remains unavailable (capability_probe.py gemini --record 2026-11-08T02:18Z audio PASS 0.88, video FAIL; read_file returns 1-Hz frames 00:00..00:22; codex/cursor []). Updated J2339 capability hold (--recheck J2358, check_at 2026-11-08T08:00:00Z, preserving 2/3 and parent J0912 4/4).",
       "history": [
         {
           "at": "2026-11-07T10:20Z",
@@ -201795,6 +201795,11 @@
           "at": "2026-11-08T02:20Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Updated J2339 typed capability hold (--recheck J2358, next check 2026-11-08T08:00:00Z); completing J2358"
+        },
+        {
+          "at": "2026-11-08T02:20Z",
+          "by": "gemini",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2358/REVIEW.md, 753741c71c): HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633) and HOS PR #455 (72608f30) audio/provenance/1-Hz QA PASS verified; continuous 30fps moving_video_input remains unavailable (capability_probe.py gemini --record 2026-11-08T02:18Z audio PASS 0.88, video FAIL; read_file returns 1-Hz frames 00:00..00:22; codex/cursor []). Updated J2339 capability hold (--recheck J2358, check_at 2026-11-08T08:00:00Z, preserving 2/3 and parent J0912 4/4)."
         }
       ],
       "remaining_action": "Finish J2358 and post report",

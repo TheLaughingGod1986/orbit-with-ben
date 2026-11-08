@@ -91,7 +91,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2351 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1809 |  |
 | J2355 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
-| J2358 | mini | claimed | gemini | 2026-11-08T04:15Z | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
 | J2366 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2369 | mini | blocked | macbook | – | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2373 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
