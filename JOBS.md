@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2417 | any | claimed | macbook | 2026-11-09T01:18Z | 026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
 | J2418 | mini | open | – | – | 031 edit · assembly · 031 Short 2: rebuild as true full-screen vertical (remove the blurred bands above and below), back to Ben's watch |  |
 | J2420 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
-| J2421 | any | open | – | – | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
+| J2421 | any | claimed | macbook-2 | 2026-11-09T01:20Z | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2422 | mini | open | – | – | studio · Read 'When your viewers are on YouTube' + top countries in Studio for both channels; recommend publish times |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
