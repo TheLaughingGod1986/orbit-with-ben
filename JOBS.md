@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2425 | mini | open | – | – | 025 upload · studio · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2426 | mini | open | – | – | studio · AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap |  |
+| J2427 | any | open | – | – | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
 
 Recently finished:
 
