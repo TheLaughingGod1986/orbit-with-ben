@@ -203517,13 +203517,13 @@
       "stage": "edit",
       "after": "J2141",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-07T23:08Z",
-      "eta": "2026-11-08T01:08Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-07T22:55Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-07T22:55Z",
@@ -203574,6 +203574,11 @@
           "at": "2026-11-08T00:45Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Committed and pushed gemini/J2381-master-v01 (33d08fea40); all 5 gates PASS on 031 master v01"
+        },
+        {
+          "at": "2026-11-08T00:45Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Done",
@@ -203588,7 +203593,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "33d08fea40"
     }
   ],
   "focus": [
