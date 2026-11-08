@@ -1068,6 +1068,9 @@
     const why=String(j.why||'');
     const blob=[title, why, j.result, hold.condition, j.remaining_action].filter(Boolean).join(' ');
     if(j.awaits_ben || j.needs==='ben' || holdType==='ben') return true;
+    // An open job with no hold and no wait is studio work that can run now, even when its title says it will
+    // stage something "for Ben UAT watch" (8 Nov 2026: J2404 showed as "1 job can't run yet").
+    if(j.status!=='blocked' && !holdType && !j.waitKind) return false;
     if(/\bNeeds Ben\b/i.test(why) || /\bNeeds Ben\b/i.test(blob)) return true;
     if(/\bwaiting for (?:ben|you)(?:\s+to)?\b|\bben to (?:watch|uat|review|ok|approve)\b|\bfor (?:your|ben(?:'s)?) (?:watch|uat|review|approval)\b|\bready for (?:your )?(?:uat|watch|review)\b/i.test(blob)) return true;
     if(/\b(?:top-?ups?|buy credits|real money|enable (?:paid )?overage|charge (?:the )?card|spend(?:ing)? money)\b/i.test(blob)) return true;
@@ -1079,7 +1082,9 @@
   }
   function p24IsCantRunItem(j) {
     if(!j || j.kind==='stage' || j.status==='done') return false;
-    return !!(j.waitKind || j.status==='blocked' || (j.after&&j.status!=='done')
+    // `after` alone is not a wait: the server sets waitKind while the predecessor is still open (8 Nov 2026:
+    // J2404 counted as can't-run although J2403 was done).
+    return !!(j.waitKind || j.status==='blocked'
       || j.awaits_ben || j.needs==='ben' || ((j.hold||{}).type&&String(j.hold.type).toLowerCase()==='ben'));
   }
   function p24FilmCounts(f, items) {
