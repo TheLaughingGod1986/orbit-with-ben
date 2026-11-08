@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2390 | mini | claimed | gemini | 2026-11-08T10:25Z | 031 edit · for gemini · review · `gemini-argon` · 031 Magnetic Field Flip: review long master v02 + Shorts 1 & 2 (J2387, J2388, J2389) | 2fa58588f8 |
 | J2391 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 | J2393 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
+| J2394 | mini | open (after J2388) | – | – | 031 edit · assembly · 031 Magnetic Field Flip Short 2 v02: repair 4 J2390 FIX items (clean 9:16 backdrop, R39a/R39b/R42a) + gates | 1f42136dce |
 
 Recently finished:
 
