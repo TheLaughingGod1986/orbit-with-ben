@@ -201768,9 +201768,14 @@
           "at": "2026-11-08T02:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T02:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2358; reading J2339 record, HOS PR #455 QA_v04.md, and testing moving_video_input capability"
         }
       ],
-      "remaining_action": "Verify readiness: Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
+      "remaining_action": "Read J2339 and HOS 008 Short A v04 QA evidence, probe moving_video_input capability, and resolve or re-hold J2339",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -201792,9 +201797,11 @@
         "of": 3,
         "at": "2026-11-08T02:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2358; reading J2339 record, HOS PR #455 QA_v04.md, and testing moving_video_input capability"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2359",
