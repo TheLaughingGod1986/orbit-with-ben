@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1881 | mini | blocked | gemini | – | 008 edit · for gemini · review · `gemini-argon` · review Franklin eight-item correction recipe (+ film-wide captions) and scope production | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J0978 |  |
 | J1892 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J1834 |  |
-| J1895 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1130 |  |
+| J1895 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J1130 |  |
 | J1919 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1752 |  |
 | J1925 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1753 |  |
 | J1932 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J0979 |  |
