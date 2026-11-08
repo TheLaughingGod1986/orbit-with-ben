@@ -206213,7 +206213,7 @@
     {
       "id": "J2405",
       "title": "Verify condition for J2171",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2171: J2377 condition check (jobs/reviews/J2377/REVIEW.md): CONDITION UNMET. HOS PR #459 (GBP0 SHA-256 inventory, SHORTS_PICTURE_PLAN_v03.json, READINESS_REPORT.md) verified (all 4 code-graphic 64-char SHA-256 strings reconciled at 02d51354; check_all + CI green) and squash-merged onto HOS main (68df899f), but J2033 remains blocked on J2275 (step 1/3 at checkpoint 950babff on HOS draft PR #445) + J2200 PASS with 0/20 Tranche 2 rows minted (Short A S03 P03:07_ball_to_moon absent), J2034 (complete HOS 009 picture acceptance & Short B S06 P04:04_dots_square moving-plate composite review) remains open awaiting J2033, and J2035 (HOS 009 05_Music/ score bed) remains open awaiting J2034.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -206233,13 +206233,27 @@
           "at": "2026-11-08T18:00Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T18:00Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3968 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-08T19:00:04+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
