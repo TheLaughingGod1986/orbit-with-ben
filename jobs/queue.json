@@ -204402,9 +204402,14 @@
           "at": "2026-11-08T07:27Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2389; starting step 1 of 4 (inspect plan and assets)"
+        },
+        {
+          "at": "2026-11-08T07:31Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: verified SHORTS_PLAN_v01.md, stt_raw.json word timings (s65, s67, s70, s74), locked VO sha256, score bed, and clean v02 R39-R44 plates on NAS"
         }
       ],
-      "remaining_action": "Inspect SHORTS_PLAN_v01.md, VO, plates, and existing Short 1 build script for 031 Short 2",
+      "remaining_action": "Design 9:16 vertical cuts, overlays, VO stem, and SFX/music mix for 031 Short 2",
       "due": "2026-12-12T11:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Magnetic Field Flip Short (24-25s question Short on solar wind and Earth's atmosphere) and run Shorts checks",
@@ -204418,11 +204423,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T07:27Z",
+        "at": "2026-11-08T07:31Z",
         "by": "gemini",
-        "note": "Claimed J2389; starting step 1 of 4 (inspect plan and assets)"
+        "note": "Step 1 complete: verified SHORTS_PLAN_v01.md, stt_raw.json word timings (s65, s67, s70, s74), locked VO sha256, score be"
       },
       "taskKeys": [
         "OWB:031"
