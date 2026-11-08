@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | picture | gemini | 2026-11-08T12:13Z | 2026-11-08T14:12Z | J2300 033 picture: review corrected source map, native opener and graphics |
+| 033 | picture | gemini | 2026-11-08T12:14Z | 2026-11-08T13:14Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
