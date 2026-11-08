@@ -206209,10 +206209,10 @@
       "stage": "upload",
       "after": "J2401",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "2026-11-08T17:12Z",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T22:22Z",
+      "eta": "2026-11-09T00:22Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T16:44Z",
       "result": "Waiting for: Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z",
@@ -206251,6 +206251,11 @@
           "at": "2026-11-08T22:20:04Z",
           "by": "claude",
           "what": "hold lifted: Ben OK on Long v02 + Short 1; Short 2 change"
+        },
+        {
+          "at": "2026-11-08T22:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Private upload 031 Long v02 (Wed 2 Dec 18:00) + Short 1 v01 (Sat 5 Dec 11:30); Short 2 waits for its fix job",
