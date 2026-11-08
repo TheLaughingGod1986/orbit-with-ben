@@ -146,3 +146,26 @@ Reviewed `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (
 - **Long Master `v02` (`J2387`):** **KEEP** (`031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4`, `SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`, `570.80 s`, `14,270` frames at `25 fps` CFR, `-14.6 LUFS`, `-1.0 dBTP`, `0` black frames). All 5 `J2382` FIX items resolved (`0` bullseye overlays, `<= 5` stretches across all sources with honest `cuts_v02.json`, animated paleointensity bars on `R32`/`R33c`, cropped `PIA20016` caption on `R54 c2`, `"NEW SPACE MYSTERIES EVERY WEEK"` on `R22`) and all 5 automated gates `PASS`. Staged to NAS `OWB UAT` and iCloud `OWB UAT`.
 - **Active Short #2 `v01` (`J2389`, `031_short_sat12_solar_wind_air_v01.mp4`):** **FIX** — rebuild as `v02` (`031_short_sat12_solar_wind_air_v02.mp4`, preserving `v01` untouched) removing: (1) `get_nebula_wave()` diagonal sine-wave plaid and `make_cosmic_backdrop()` painted circle dots across the 9:16 top/bottom backdrop; (2) crude yellow/cyan `od.arc()` cartoon curves, `plasma_wave` sine ripple, and dark-ringed Earth cutout on `R39a` (`0.00–2.36 s`), `frame0.jpg`, `cover.jpg`, and `R39_loop`; (3) `R39b` (`2.36–3.32 s`) ghost double-exposed Blue Marble Earth over `svs_3822_magfield_left.mp4`; (4) `R42a` (`9.32–12.68 s`) `1 KILOGRAM` / `1 cm²` graphic text colliding beneath the `9.00–14.00 s` parent-title banner.
 - **Active Short #1 (`J2388`):** Still `open` (not yet built when `J2390` was dispatched). Updated `J2388` deadline to `2026-12-02 18:00` and strictly chained `J2388 -> Short 2 v02 repair -> Shorts 1 & 2 review + UAT handoff`.
+
+## J2388 Active Short #1 (`031_short_testA_opening_flip_v01`) Assembly & Gates — 8 November 2026
+
+Built `031` Active Short #1 (Test A Opening Short: *What Happens When Earth's Magnetic Field Flips?*, `33.00 s` / `825` frames at `25 fps` CFR, `1080x1920`, `yuv420p`, `-14.1 LUFS`, `-2.1 dBTP`, £0 spend, no YouTube upload) lifting verbatim sentences `s00–s08` (`0.14–35.32 s`, `96` words, ending cleanly on the three concrete questions `031` answers per `LEARNINGS 17`) from locked VO `magnetic_field_flip_vo_v02a.wav` (`SHA-256: 3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6`), `magnetic_field_flip_score_bed_v01.mp3`, house SFX `kit_v01`, and repaired `v02` opening cuts (`R01–R04`) reframed to `9:16` over natural Gaussian-blurred NASA moving plates (free of any synthetic bullseye overlay, sine-wave plaid, painted dots, or cartoon arcs, and with honest `R03` DSCOVR EPIC pixels and zero text collision under the `9.0–14.0 s` parent-title banner).
+
+- **Short 1 MP4 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01.mp4` (`SHA-256: ebe11bb730ccfab8681d564d3588d17011a28629c7b6f926eba952bfc98c4bcd`)
+- **Frame 0 (`1080x1920`):** `.../031_short_testA_opening_flip_v01_frame0.jpg` (`SHA-256: aa0763c2f1e553ac373e6596c684c1145b115242afcac0c9fa15d8eaf0030ada`)
+- **Custom Cover (`1080x1920`):** `.../031_short_testA_opening_flip_v01_cover.jpg` (`SHA-256: 8f5be5cd1e41b0b5df695d6fbbe6e69682965f010ddc70f2e70b9bb053caee5d`)
+- **Handoff & Assembler:** `10_Shorts/SHORT1_TESTA_OPENING_FLIP_HANDOFF_J2388_v01.md` and `10_Shorts/_assemble_031_short1_v01.py`
+
+```
+PASS  031_short_testA_opening_flip_v01.mp4  dur=33.0s  audio=-16.7dB  motion=27.25  f0diff=9.28  cut1=2.32s  vo_onset=0.08s  tail_gap=1.46s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01_vo.wav  dhash=982b074783078b06  visor=0.0
+   warn  duration 33.0s outside 22–27s band
+
+PASS  031_short_testA_opening_flip_v01_frame0.jpg  saturation=105.4  near_black=1%
+PASS  031_short_testA_opening_flip_v01_cover.jpg  saturation=138.1  near_black=2%
+
+SFX level PASS: VO -16.3 LUFS, SFX -40.2 LUFS, 6 hits
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+polish gate PASS: 0 of 13 rows failed, 1 to look at
+picture QA PASS: 0 of 13 cuts fail, 1 to look at
+```
+
