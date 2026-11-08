@@ -206222,13 +206222,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T19:21Z",
-      "eta": "2026-11-08T21:21Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T17:32Z",
-      "result": "",
+      "result": "Assembled 67-row / 144-cut 033 Uranus long master v01 on NAS (033_why_this_planet_has_21_year_winters_master_v01.mp4, SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 1920x1080, 24/1 CFR, 15,106 frames / 629.42 s, -14.5 LUFS, -1.5 dBTP, 0 black frames, £0 spend), mirrored with verified SHA-256 to NAS OWB UAT and iCloud OWB UAT, and passed all 5 gates (clip_check 67 rows PASS, picture_qa 0/144 fail 8 warn PASS, polish_gate 0/144 fail PASS, music_gate 629.4 s 70.6 BPM PASS, sfx_kit level VO -20.2 / SFX -47.2 LUFS 21 hits PASS; handoff 2f27b57df6).",
       "history": [
         {
           "at": "2026-11-08T17:32Z",
@@ -206314,6 +206314,11 @@
           "at": "2026-11-08T19:58Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Committed _assemble_033_full_master_v01.py, shot_list_v02.csv, full_master_v01_pack reports, and ASSEMBLY_HANDOFF_J2403_v01.md at 2f27b57df6"
+        },
+        {
+          "at": "2026-11-08T19:58Z",
+          "by": "gemini",
+          "what": "done: Assembled 67-row / 144-cut 033 Uranus long master v01 on NAS (033_why_this_planet_has_21_year_winters_master_v01.mp4, SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 1920x1080, 24/1 CFR, 15,106 frames / 629.42 s, -14.5 LUFS, -1.5 dBTP, 0 black frames, £0 spend), mirrored with verified SHA-256 to NAS OWB UAT and iCloud OWB UAT, and passed all 5 gates (clip_check 67 rows PASS, picture_qa 0/144 fail 8 warn PASS, polish_gate 0/144 fail PASS, music_gate 629.4 s 70.6 BPM PASS, sfx_kit level VO -20.2 / SFX -47.2 LUFS 21 hits PASS; handoff 2f27b57df6)."
         }
       ],
       "remaining_action": "Mark J2403 done and hand off to J2404 review",
@@ -206338,7 +206343,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "done_ref": "2f27b57df6"
     },
     {
       "id": "J2404",
