@@ -198950,9 +198950,14 @@
           "at": "2026-11-08T03:32Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Preflight & capabilities verified: J2364 PASS locks Selection 2A (S46+S47+S48+S50); J2372 PASS assets verified on studio-live; audio_input & moving_video_input demonstrated"
+        },
+        {
+          "at": "2026-11-08T03:47Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Rendered 034_short02_water_ice_mountains_v01.mp4 (25.80s, 774f @ 30fps CFR, -14.3 LUFS / -2.2 dBTP), stems, cover, and metadata onto studio-live"
         }
       ],
-      "remaining_action": "Build 034 Short 2 (Selection 2A Water-Ice Mountains) VO/SFX/bed stems, 9:16 video cut, and cover on studio-live NAS",
+      "remaining_action": "Run gate_shorts_open.py, picture_qa.py, polish_gate.py, sfx_kit.py level, thumb_preview.py short, and perceptual media review",
       "due": "2026-12-23T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Pluto Short (22-27s question Short on Charon's locked sky or Pluto's water-ice mountains) and run the Shorts quality checks",
@@ -198960,11 +198965,11 @@
         "OWB:034"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T03:32Z",
+        "at": "2026-11-08T03:47Z",
         "by": "gemini",
-        "note": "Preflight & capabilities verified: J2364 PASS locks Selection 2A (S46+S47+S48+S50); J2372 PASS assets verified on studio"
+        "note": "Rendered 034_short02_water_ice_mountains_v01.mp4 (25.80s, 774f @ 30fps CFR, -14.3 LUFS / -2.2 dBTP), stems, cover, and m"
       },
       "rerouted_from": {
         "needs": "mini",
