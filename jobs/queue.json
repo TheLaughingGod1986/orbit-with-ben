@@ -199038,9 +199038,14 @@
           "at": "2026-11-08T15:18Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Reviewed SHORTS_PLAN_v01.md §4, SHOT_LIST_v02.md R49-R55, Scribe word timings, and Short 1 assembler template"
+        },
+        {
+          "at": "2026-11-08T15:26Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Locked 11-shot 25fps cut plan (0 split words, Cut 1=1.88s, Cut 2=3.80s, max shot=3.92s) and 62-word Scribe-aligned VO splice (25.24s VO, 26.28s total)"
         }
       ],
-      "remaining_action": "Design 25fps cut plan and Scribe-aligned VO splice for 033 Short 2 (R49+R51+R52+R53)",
+      "remaining_action": "Write _assemble_033_short2_v01.py and render 033_short02_ice_giant_surface_v01.mp4 (26.28s, 62 words, 11 shots)",
       "due": "2026-12-19T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Uranus Short (22-27s question Short from the locked VO and graphics) and run the Shorts quality checks",
@@ -199054,11 +199059,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-08T15:18Z",
+        "at": "2026-11-08T15:26Z",
         "by": "gemini",
-        "note": "Reviewed SHORTS_PLAN_v01.md §4, SHOT_LIST_v02.md R49-R55, Scribe word timings, and Short 1 assembler template"
+        "note": "Locked 11-shot 25fps cut plan (0 split words, Cut 1=1.88s, Cut 2=3.80s, max shot=3.92s) and 62-word Scribe-aligned VO sp"
       },
       "taskKeys": [
         "OWB:033"
