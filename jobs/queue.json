@@ -197232,13 +197232,13 @@
       "stage": "picture",
       "after": "J2290",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-06T21:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T19:43Z",
-      "result": "parked for Chief: PR584 / 06ae7792d7 documents three exhausted new R01 candidates, none establishing a compliant opener. Choose/scop e a revised opener under missing-footage rule and resolve R54 CODE -> R55 graphic adjacency; no generation authorised. Partial source recovery and reconciliation delivered, 14 corrected renders and gates still outstanding. Resume same 0/5 plan; J2300 remains dependent, no assembly release.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-06T19:43Z",
@@ -197339,29 +197339,19 @@
           "at": "2026-11-08T10:43Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-08T16:45:00Z"
+        },
+        {
+          "at": "2026-11-08T10:53Z",
+          "by": "gemini",
+          "what": "reopened: Elected-Chief ruling J2386 (5e68ec6532, jobs/reviews/J2386/CHIEF_RULING.md) after J2385 moving_video_input QA PASS (af5f9af859) and J2384 £0/0-credit/0-take build (6ba68b05d8): accepted R01 (0.00-4.35s, R02 4.35-8.18s) r01_sourced_composite_v01_silent.mp4 (aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d) and R55 (493.01-505.35s) 3-cut passage r55_passage_v01_silent.mp4 (4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f: Cut 1 r55_cut1_r55b_100x_silent.mp4 df6d92d597, Cut 2 r55_cut2_r55b_128x_vortex_silent.mp4 75adc0df00, Cut 3 r55_cut3_pia01488_pushin_silent.mp4 3b606e6edf). Reopened at 0/5 for source/graphics corrections only; J2300 dependency preserved."
         }
       ],
       "remaining_action": "Await J2386 elected-Chief hash acceptance of J2384/J2385 R01 (aab9aa2af9) and R55 (4aa82d0e72) assets; then resume source and graphics corrections at 0/5 (R01 0.00-4.35s)",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review.",
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-06T21:14Z",
-        "by": "codex",
-        "note": "Partial evidence committed as 06ae7792d7, draft PR584. All 43 pool files present: 41 exact-hash images and two original "
-      },
       "taskKeys": [
         "OWB:033"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2334 elected-Chief ruling (4ddd1058a0) correction chain status verified by J2391 (afc91170a3): J2384 £0 R01 97.77-deg sideways Uranus composite (r01_sourced_composite_v01_silent.mp4, aab9aa2af9dd8cd50195a0b91efe495abaf9f06be2daf72bd893014b56503e6d) and R55 3-cut cloud passage (r55_passage_v01_silent.mp4, 4aa82d0e721988513eba44c38332b5537a9d6f41f9f406ab5d9623b04642483f; Cuts 1-3 df6d92d597, 75adc0df00, 3b606e6edf) are COMPLETE (6ba68b05d8) and J2385 moving_video_input QA is COMPLETE (PASS, jobs/reviews/J2385/REVIEW.md). Awaiting open elected-Chief job J2386 to formally accept the corrected R01/R55 hashes and reopen J2299 at 0/5 (with R01 timing prose 0.00-4.35s and J2300 dependency preserved).",
-        "check_at": "2026-11-08T16:45:00Z",
-        "last_recheck": "J2391",
-        "checked_at": "2026-11-08T10:43:19+00:00",
-        "checked_by": "gemini"
-      },
       "escalated_at": "2026-11-07T00:04Z"
     },
     {
