@@ -198886,13 +198886,13 @@
       "stage": "edit",
       "after": "J2300",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T14:07Z",
-      "eta": "2026-11-08T16:07Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "",
+      "result": "Built 033 Uranus Active Short #1 v01 (Test A opening cut: 033_short01_testA_opening_v01.mp4, SHA-256 7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7, 36.48s, 90 words from locked uranus_vo_v01.wav, 14 shots, 0 split words, £0 spend, no upload) and passed all 7 gates: gate_shorts_open PASS (motion=13.11, f0diff=4.64, cut1=2.36s, tail_gap=1.10s, visor=0.0), picture_qa PASS (0/14 fail), polish_gate PASS (0/14 fail), sfx_kit level PASS (VO -16.3 LUFS, SFX -38.3 LUFS, 6 hits), music_gate PASS (uranus_score_bed_v01.mp3 629.4s, 70.6 BPM), thumb_preview frame0 PASS (sat=98.4, near_black=1%) & cover PASS (sat=128.1, near_black=2%). Staged on studio-live NAS and OWB UAT (576cc79518, jobs/reviews/J2317/BUILD_REPORT.md).",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -198958,6 +198958,11 @@
           "at": "2026-11-08T15:10Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed _assemble_033_short1_v01.py, SHORT01_TESTA_BUILD_REPORT_v01.md, and production-status.md (576cc79518)"
+        },
+        {
+          "at": "2026-11-08T15:10Z",
+          "by": "gemini",
+          "what": "done: Built 033 Uranus Active Short #1 v01 (Test A opening cut: 033_short01_testA_opening_v01.mp4, SHA-256 7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7, 36.48s, 90 words from locked uranus_vo_v01.wav, 14 shots, 0 split words, £0 spend, no upload) and passed all 7 gates: gate_shorts_open PASS (motion=13.11, f0diff=4.64, cut1=2.36s, tail_gap=1.10s, visor=0.0), picture_qa PASS (0/14 fail), polish_gate PASS (0/14 fail), sfx_kit level PASS (VO -16.3 LUFS, SFX -38.3 LUFS, 6 hits), music_gate PASS (uranus_score_bed_v01.mp3 629.4s, 70.6 BPM), thumb_preview frame0 PASS (sat=98.4, near_black=1%) & cover PASS (sat=128.1, near_black=2%). Staged on studio-live NAS and OWB UAT (576cc79518, jobs/reviews/J2317/BUILD_REPORT.md)."
         }
       ],
       "remaining_action": "Finish J2317",
@@ -198982,7 +198987,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "576cc79518"
     },
     {
       "id": "J2318",
