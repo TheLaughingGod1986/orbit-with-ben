@@ -204373,12 +204373,26 @@
           "at": "2026-11-08T08:40Z",
           "by": "gemini",
           "what": "deadline: 2026-12-02T18:00:00Z"
+        },
+        {
+          "at": "2026-11-08T08:43Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Build 031 Short 1 (Test A opening lift from v02 master) and pass gate_shorts_open.py --test-a",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
-      "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks"
+      "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2389",
