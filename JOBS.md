@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2303 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2313 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2040 |  |
-| J2318 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload) | J2223 |
+| J2318 | mini | open (after J2300) | – | – | 033 edit · for codex · assembly · `gpt-6.1-sol` · 033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload) | J2223 |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
