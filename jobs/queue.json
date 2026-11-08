@@ -206007,20 +206007,27 @@
           "at": "2026-11-08T17:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T17:13Z",
+          "by": "gemini",
+          "what": "step 0 of 2 done: Claimed J2402; checking J2401 and J2395 gate status"
         }
       ],
-      "remaining_action": "Wait for J2401 package dry-run and Ben's UAT watch OK on J2395 (or 2026-12-01 18:00Z 24h fallback), then upload Private and read back",
+      "remaining_action": "Check J2401 completion and Ben UAT watch status on J2395 before Private upload",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
       "plain": "Upload 031 Magnetic Field Flip long video and Shorts 1 & 2 as Private scheduled after package dry-run and Ben's UAT watch",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T17:12Z",
+        "of": 2,
+        "at": "2026-11-08T17:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2402; checking J2401 and J2395 gate status"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     }
   ],
   "focus": [
