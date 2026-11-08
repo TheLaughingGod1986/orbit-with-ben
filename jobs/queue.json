@@ -6625,13 +6625,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-11T00:58Z",
-      "result": "waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T00:58Z",
@@ -6657,15 +6657,14 @@
           "at": "2026-11-08T18:09Z",
           "by": "relay",
           "what": "condition verification queued: J2406"
+        },
+        {
+          "at": "2026-11-08T23:38Z",
+          "by": "macbook-2",
+          "what": "reopened: J2406 verified Mars long Js6EQJ8qDi8 is Public (live since 2026-11-08T18:00:15Z via YouTube watch page ytInitialPlayerResponse playabilityStatus=OK/isPrivate=False/isUnlisted=False, channel Atom feed, oEmbed HTTP 200, and J2412 ef4041a14b; OWB PR #656, jobs/reviews/J2406/REVIEW.md, 451f39820); original v03f gates and Ben 9 Oct approval (6077231242) remain valid."
         }
       ],
-      "remaining_action": "Verify that the Mars long video is public",
-      "hold": {
-        "type": "public",
-        "condition": "Mars long Js6EQJ8qDi8 must read back Public",
-        "check_at": "2026-11-08T19:09:59+00:00",
-        "recheck_task": "J2406"
-      }
+      "remaining_action": "Mark J0123 done now that Mars long Js6EQJ8qDi8 is verified Public (live since 2026-11-08T18:00:15Z) so dependent jobs J0124 and J0135 can proceed"
     },
     {
       "id": "J0124",
