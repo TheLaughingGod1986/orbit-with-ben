@@ -206856,9 +206856,14 @@
           "at": "2026-11-08T20:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T20:55Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting read-only listing check on the last 10 live OWB videos"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Audit the last 10 live OWB videos against cuts, descriptions, end screens and Related links",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "rerouted_from": {
@@ -206873,11 +206878,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-08T20:53Z",
+        "at": "2026-11-08T20:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting read-only listing check on the last 10 live OWB videos"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:027",
+        "OWB:030"
+      ]
     },
     {
       "id": "J2413",
