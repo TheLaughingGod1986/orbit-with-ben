@@ -206299,18 +206299,23 @@
           "at": "2026-11-08T19:38Z",
           "by": "gemini",
           "what": "step 3 of 6 done: 29 cuts rendered; 143/144 passed picture_qa/polish_gate; re-rendering remaining cut 89 and setting exact 24/1 CFR"
+        },
+        {
+          "at": "2026-11-08T19:51Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: All 144 cuts rendered, master_v01.mp4 muxed (SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 629.42 s, -14.5 LUFS, -1.5 dBTP, 24/1 CFR, 0 black frames), and all 5 gates passed"
         }
       ],
-      "remaining_action": "Re-render cuts 88-89 (row 41), enforce exact 24/1 CFR timestamps on concat, and re-run all 5 gates",
+      "remaining_action": "Copy master_v01.mp4 and review pack to NAS OWB UAT and iCloud OWB UAT, verify SHA-256, and record J2403 handoff",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-08T19:38Z",
+        "at": "2026-11-08T19:51Z",
         "by": "gemini",
-        "note": "29 cuts rendered; 143/144 passed picture_qa/polish_gate; re-rendering remaining cut 89 and setting exact 24/1 CFR"
+        "note": "All 144 cuts rendered, master_v01.mp4 muxed (SHA-256 9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552, 6"
       },
       "taskKeys": [
         "OWB:033"
