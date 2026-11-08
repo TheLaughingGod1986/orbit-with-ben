@@ -204907,9 +204907,14 @@
           "at": "2026-11-08T09:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T09:58Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2394 and 031 edit; starting v02 repair of 031 Short 2"
         }
       ],
-      "remaining_action": "Rebuild 031 Short 2 as v02 fixing all 4 J2390 visual defects and pass all 7 Shorts gates",
+      "remaining_action": "Inspect J2390 review and 031 Short 2 v01 builder script",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the second Magnetic Field Flip Short (v02) without synthetic backdrop/arc overlays or title collision",
@@ -204924,12 +204929,14 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-08T09:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2394 and 031 edit; starting v02 repair of 031 Short 2"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2395",
