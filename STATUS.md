@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 031 | edit | gemini | 2026-11-08T09:58Z | 2026-11-08T11:57Z | J2394 031 Magnetic Field Flip Short 2 v02: repair 4 J2390 FIX items (clean 9:16 backdrop, R39a/R39b/R42a) + gates |
+| 031 | edit | gemini | 2026-11-08T09:58Z | 2026-11-08T10:58Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
