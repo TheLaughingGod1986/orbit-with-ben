@@ -206123,20 +206123,27 @@
           "at": "2026-11-08T17:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T17:37Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2403 and 033 edit; inspecting cuts_033_j2299_v01.json, SFX_PLAN_v01.md, and existing assembly scripts"
         }
       ],
-      "remaining_action": "Assemble 67-row 033 Uranus long master v01 (629.40 s) on studio-live NAS, run all 5 tool gates, and stage in OWB UAT",
+      "remaining_action": "Verify locked inputs and build 144-cut video/audio assembly pipeline + SFX stem",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T17:36Z",
+        "of": 4,
+        "at": "2026-11-08T17:37Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2403 and 033 edit; inspecting cuts_033_j2299_v01.json, SFX_PLAN_v01.md, and existing assembly scripts"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2404",
