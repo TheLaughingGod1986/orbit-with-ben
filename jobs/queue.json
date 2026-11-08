@@ -207464,10 +207464,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-08T23:41Z",
+      "eta": "2026-11-09T01:41Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:20Z",
       "result": "",
@@ -207496,6 +207496,11 @@
           "at": "2026-11-08T23:19Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on codex ended (exit 1) with the job still open; picked up again next run; codex paused on the MacBook until 2026-11-09T01:19:02Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-08T23:41Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch",
