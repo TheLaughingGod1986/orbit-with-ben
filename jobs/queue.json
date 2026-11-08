@@ -204685,9 +204685,14 @@
           "at": "2026-11-08T10:36Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2391; starting verification of J2299 waiting condition on OWB 033"
+        },
+        {
+          "at": "2026-11-08T10:41Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2384 (6ba68b05d8) & J2385 (PASS) completed with matching NAS SHA-256 hashes; J2386 (kind: chief) is still open and ready"
         }
       ],
-      "remaining_action": "Inspect J2299 waiting condition and J2384/J2385/J2386 correction chain status",
+      "remaining_action": "Write jobs/reviews/J2391/REVIEW.md and update J2299 hold with --recheck J2391 so J2386 runs next",
       "kind": "review",
       "recheck_of": "J2299",
       "due": "2026-11-08T08:24:14+00:00",
@@ -204702,11 +204707,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-08T10:36Z",
+        "at": "2026-11-08T10:41Z",
         "by": "gemini",
-        "note": "Claimed J2391; starting verification of J2299 waiting condition on OWB 033"
+        "note": "Verified J2384 (6ba68b05d8) & J2385 (PASS) completed with matching NAS SHA-256 hashes; J2386 (kind: chief) is still open"
       },
       "taskKeys": [
         "OWB:033"
