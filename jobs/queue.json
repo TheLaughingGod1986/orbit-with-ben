@@ -206284,18 +206284,23 @@
           "at": "2026-11-08T19:21Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2403 and 033 edit; starting input verification and assembly script preparation"
+        },
+        {
+          "at": "2026-11-08T19:24Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified SHA-256 of locked VO, score bed, R01/R55 clips; inspected j2403-render log and diagnosed 5 gutter cuts and 9 video frame-count cuts"
         }
       ],
-      "remaining_action": "Inspect locked inputs, existing assembly scripts/logs, and verify SHA-256 of stills, clips, VO, score bed, and SFX",
+      "remaining_action": "Fix 5 split-panel gutter cuts (17, 43, 64, 127, 139) and 9 1-frame-short video cuts in _assemble_033_full_master_v01.py",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-08T19:21Z",
+        "at": "2026-11-08T19:24Z",
         "by": "gemini",
-        "note": "Claimed J2403 and 033 edit; starting input verification and assembly script preparation"
+        "note": "Verified SHA-256 of locked VO, score bed, R01/R55 clips; inspected j2403-render log and diagnosed 5 gutter cuts and 9 vi"
       },
       "taskKeys": [
         "OWB:033"
