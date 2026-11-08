@@ -189,7 +189,7 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 31 h (early) | 1248 | 49.6% | WATCH | 61.9% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 32 h (early) | 1248 | 49.6% | WATCH | 61.9% | WATCH |
 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 5 d | 481 | 26.9% | MISS | 306.8% | LOOP |
 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 6 d | 565 | 31.4% | MISS | 66.4% | WATCH |
 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 8 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
