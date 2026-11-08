@@ -204612,9 +204612,14 @@
           "at": "2026-11-08T08:16Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1/3: Re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), VO (40ed4c4e), s06 plate (611e2633) across Mini and NAS, and re-verified audio_input + 23-frame 1-Hz sequence via read_file"
+        },
+        {
+          "at": "2026-11-08T08:22Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2/3: Committed jobs/reviews/J2392/REVIEW.md at 6010ec7699 and recorded live capability_probe.py gemini --record (audio_input PASS 0.94, moving_video_input FAIL)"
         }
       ],
-      "remaining_action": "Run live capability_probe.py gemini --record and verify HOS PR #455 and chief_relay.py status",
+      "remaining_action": "Record J0912 typed capability hold recheck J2392 and complete J2392",
       "kind": "review",
       "recheck_of": "J0912",
       "required_capabilities": [
@@ -204632,11 +204637,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-08T08:16Z",
+        "at": "2026-11-08T08:22Z",
         "by": "gemini",
-        "note": "Step 1/3: Re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), VO (40ed4c4e), s06 plate (611e2633) acro"
+        "note": "Step 2/3: Committed jobs/reviews/J2392/REVIEW.md at 6010ec7699 and recorded live capability_probe.py gemini --record (au"
       },
       "taskKeys": [
         "HOS:008"
