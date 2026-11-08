@@ -141,6 +141,34 @@ class BackToMain(unittest.TestCase):
             self.assertEqual(run("branch", "--show-current"), "main")
             self.assertIn("macbook-worker autostash macbook/j1194-work", run("stash", "list"))  # kept, not lost
 
+    def test_its_own_clone_left_dirty_on_main_stashes_so_the_next_claim_works(self):
+        # 8 Nov 2026: a job left the slot's main dirty and `jobs.py next --git` refused every later claim.
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
+                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            (r / "half_done.md").write_text("unfinished\n")
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+                self.assertEqual(mw.pull_main(), "")
+            run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
+            self.assertEqual(run("status", "--porcelain"), "")
+            self.assertIn("macbook-worker autostash main", run("stash", "list"))  # kept, not lost
+
+    def test_bens_dirty_checkout_is_never_stashed(self):
+        with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            (r / "bens_work.md").write_text("mine\n")
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+                mw.pull_main()
+            self.assertTrue((r / "bens_work.md").exists())
+            self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
+
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
                 mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
