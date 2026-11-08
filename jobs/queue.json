@@ -198955,9 +198955,14 @@
           "at": "2026-11-08T03:47Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Rendered 034_short02_water_ice_mountains_v01.mp4 (25.80s, 774f @ 30fps CFR, -14.3 LUFS / -2.2 dBTP), stems, cover, and metadata onto studio-live"
+        },
+        {
+          "at": "2026-11-08T04:13Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: All 5 gates PASS on 034_short02_water_ice_mountains_v01.mp4 (f9798f17e5e3...): gate_shorts_open PASS (motion=13.09, f0diff=3.09, cut1=2.5s), picture_qa PASS (0/10 fail), polish_gate PASS (0/10 fail), sfx_kit level PASS, thumb_preview PASS"
         }
       ],
-      "remaining_action": "Run gate_shorts_open.py, picture_qa.py, polish_gate.py, sfx_kit.py level, thumb_preview.py short, and perceptual media review",
+      "remaining_action": "Write GATE_REPORT_v01.md, commit non-media artifacts on clean worktree branch, and complete J2320",
       "due": "2026-12-23T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Pluto Short (22-27s question Short on Charon's locked sky or Pluto's water-ice mountains) and run the Shorts quality checks",
@@ -198965,11 +198970,11 @@
         "OWB:034"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-08T03:47Z",
+        "at": "2026-11-08T04:13Z",
         "by": "gemini",
-        "note": "Rendered 034_short02_water_ice_mountains_v01.mp4 (25.80s, 774f @ 30fps CFR, -14.3 LUFS / -2.2 dBTP), stems, cover, and m"
+        "note": "All 5 gates PASS on 034_short02_water_ice_mountains_v01.mp4 (f9798f17e5e3...): gate_shorts_open PASS (motion=13.09, f0di"
       },
       "rerouted_from": {
         "needs": "mini",
