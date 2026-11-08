@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · review · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2406 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
-| J2408 | any | open | – | – | review · Verify condition for J0135 |  |
+| J2408 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
 
 Recently finished:
 
