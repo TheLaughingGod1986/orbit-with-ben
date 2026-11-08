@@ -1,5 +1,5 @@
 {
-  "next_id": 2422,
+  "next_id": 2423,
   "jobs": [
     {
       "id": "J0001",
@@ -207414,6 +207414,35 @@
       "remaining_action": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
       "kind": "qa",
       "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2."
+    },
+    {
+      "id": "J2422",
+      "title": "Read 'When your viewers are on YouTube' + top countries in Studio for both channels; recommend publish times",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 8 Nov 2026: are 18:00 (longs) and 11:30 (Shorts) London the best times? Read-only Studio pass on Orbit With Ben and History of Science: Analytics > Audience > 'When your viewers are on YouTube' (screenshot the heatmap, note the darkest hours, in UK time) and Audience > Geography top countries (last 90 days, % of views), plus the same for longs vs Shorts if Studio splits them. Write 05_Analytics/PUBLISH_TIME_READ_2026-11.md: the peak hours per channel in London time, and a recommendation (keep, or move longs/Shorts to about 1-2 h before the peak). No setting changes, no schedule moves: the Chief decides after the read. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-08T22:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:34Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read 'When your viewers are on YouTube' + top countries in Studio for both channels; recommend publish times",
+      "kind": "studio",
+      "plain": "Look up in YouTube Studio when our viewers are actually online, so we can pick the best upload times."
     }
   ],
   "focus": [
