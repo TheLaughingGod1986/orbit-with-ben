@@ -204522,9 +204522,14 @@
           "at": "2026-11-08T08:32Z",
           "by": "gemini",
           "what": "step 1 of 4 done: 031 long master v02 (570.80s, SHA-256 680598ae3420...) verified KEEP: all 5 J2382 FIX items resolved and all 5 gates PASS"
+        },
+        {
+          "at": "2026-11-08T08:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Audited 031 Short 2 v01 (J2389): found 4 visual defects (get_nebula_wave plaid + painted star dots in 9:16 backdrop, od.arc cartoon arcs on R39a/frame0/cover/loop, R39b ghost double-exposure, R42a 9-14s title collision with 1 KILOGRAM text); Short 1 (J2388) still open. Copying KEEP Long Master v02 to OWB UAT."
         }
       ],
-      "remaining_action": "Audit 031 Short 2 (J2389) and Short 1 (J2388) status and visual quality",
+      "remaining_action": "Write jobs/reviews/J2390/REVIEW.md (Long Master v02 KEEP, Short 2 v01 FIX, Short 1 J2388 pending) and queue chained Short 2 v02 repair + Shorts review",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch",
@@ -204538,11 +204543,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T08:32Z",
+        "at": "2026-11-08T08:36Z",
         "by": "gemini",
-        "note": "031 long master v02 (570.80s, SHA-256 680598ae3420...) verified KEEP: all 5 J2382 FIX items resolved and all 5 gates PAS"
+        "note": "Audited 031 Short 2 v01 (J2389): found 4 visual defects (get_nebula_wave plaid + painted star dots in 9:16 backdrop, od."
       },
       "taskKeys": [
         "OWB:031"
