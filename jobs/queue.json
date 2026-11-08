@@ -204356,13 +204356,13 @@
       "stage": "edit",
       "after": "J2387",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T08:45Z",
-      "eta": "2026-11-08T10:45Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T06:05Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-08T06:05Z",
@@ -204418,6 +204418,11 @@
           "at": "2026-11-08T09:28Z",
           "by": "gemini",
           "what": "step 2 of 4 done: gate_shorts_open, thumb_preview, sfx_kit, music_gate, and R04b PASS; restoring R01b svs_3822 backdrop so polish_gate and picture_qa PASS 13/13"
+        },
+        {
+          "at": "2026-11-08T09:46Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Re-render R01b piece_02 with clean svs_3822 backdrop and verify all 7 gates PASS",
