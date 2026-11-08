@@ -169,6 +169,13 @@ class BackToMain(unittest.TestCase):
             self.assertTrue((r / "bens_work.md").exists())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
 
+    def test_it_pulls_origin_main_by_name(self):
+        # 8 Nov 2026: slot 2's clone had two branch.main.merge entries and a bare `git pull` failed with
+        # "Cannot fast-forward to multiple branches"; every pull names origin main.
+        src = pathlib.Path(mw.__file__).read_text()
+        self.assertNotIn('"pull", "-q", "--ff-only"]', src)
+        self.assertIn('"pull", "-q", "--ff-only", "origin", "main"]', src)
+
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
                 mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
