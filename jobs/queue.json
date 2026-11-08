@@ -201656,13 +201656,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T01:56Z",
-      "eta": "2026-11-08T03:56Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-07T10:20Z",
-      "result": "",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2357/REVIEW.md, fef29a744e): Elected acting-Chief ruling by gemini. Freshly re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) across Mini and NAS. J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS (HOS PR #455 72608f30, Desk #180 6703687627; re-verified audibly via read_file), but J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input (live capability_probe.py gemini --record passed audio_input 0.92, failed video; codex/cursor report []). J0912 kept blocked at 4/4 (--type capability --requires moving_video_input --recheck J2357, next check 2026-11-08T08:00:00Z).",
       "history": [
         {
           "at": "2026-11-07T10:20Z",
@@ -201698,6 +201698,11 @@
           "at": "2026-11-08T02:03Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded J0912 capability hold recheck J2357 (next check 2026-11-08T08:00:00Z); closing J2357"
+        },
+        {
+          "at": "2026-11-08T02:03Z",
+          "by": "gemini",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2357/REVIEW.md, fef29a744e): Elected acting-Chief ruling by gemini. Freshly re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) across Mini and NAS. J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS (HOS PR #455 72608f30, Desk #180 6703687627; re-verified audibly via read_file), but J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input (live capability_probe.py gemini --record passed audio_input 0.92, failed video; codex/cursor report []). J0912 kept blocked at 4/4 (--type capability --requires moving_video_input --recheck J2357, next check 2026-11-08T08:00:00Z)."
         }
       ],
       "remaining_action": "Complete J2357 condition verification",
@@ -201727,7 +201732,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "fef29a744e"
     },
     {
       "id": "J2358",
