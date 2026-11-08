@@ -204407,9 +204407,14 @@
           "at": "2026-11-08T07:31Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: verified SHORTS_PLAN_v01.md, stt_raw.json word timings (s65, s67, s70, s74), locked VO sha256, score bed, and clean v02 R39-R44 plates on NAS"
+        },
+        {
+          "at": "2026-11-08T07:41Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: created clean worktree /Users/benjaminoats/_desk/worktrees/J2389-short2-v01 and designed 9-shot vertical cut plan (612 frames, 24.48s) with zero word-clip cuts, zero corner credits, and zero bullseye overlays"
         }
       ],
-      "remaining_action": "Design 9:16 vertical cuts, overlays, VO stem, and SFX/music mix for 031 Short 2",
+      "remaining_action": "Write and run _assemble_031_short2_v01.py to render 031 Short 2 (24.48s, 1080x1920, 25fps CFR) and run all gates",
       "due": "2026-12-12T11:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Magnetic Field Flip Short (24-25s question Short on solar wind and Earth's atmosphere) and run Shorts checks",
@@ -204423,11 +204428,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T07:31Z",
+        "at": "2026-11-08T07:41Z",
         "by": "gemini",
-        "note": "Step 1 complete: verified SHORTS_PLAN_v01.md, stt_raw.json word timings (s65, s67, s70, s74), locked VO sha256, score be"
+        "note": "Step 2 complete: created clean worktree /Users/benjaminoats/_desk/worktrees/J2389-short2-v01 and designed 9-shot vertica"
       },
       "taskKeys": [
         "OWB:031"
