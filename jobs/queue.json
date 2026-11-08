@@ -206569,18 +206569,23 @@
           "at": "2026-11-08T18:57Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified CDP 9223 (OWB) and 9460 (HOS) analytics tabs; starting Studio lifetime read"
+        },
+        {
+          "at": "2026-11-08T19:03Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Read 95 OWB videos (15 longs, 80 Shorts) and 33 HOS videos (6 longs, 27 Shorts) with 0 skipped"
         }
       ],
-      "remaining_action": "Run Studio lifetime read for OWB (CDP 9223) and HOS (CDP 9460)",
+      "remaining_action": "Write studio_ctr.json for OWB and HOS, rebuild analytics report and publish board",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T18:57Z",
+        "at": "2026-11-08T19:03Z",
         "by": "gemini",
-        "note": "Verified CDP 9223 (OWB) and 9460 (HOS) analytics tabs; starting Studio lifetime read"
+        "note": "Read 95 OWB videos (15 longs, 80 Shorts) and 33 HOS videos (6 longs, 27 Shorts) with 0 skipped"
       }
     }
   ],
