@@ -205617,6 +205617,11 @@
           "at": "2026-11-08T10:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T16:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Chief resolves 031 pipeline handoff and records the next owner/action",
@@ -205626,7 +205631,16 @@
         "stage": "pipeline",
         "kind": "missing-next-step",
         "signature": "15b72f9119326ab7f2d6"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2397",
