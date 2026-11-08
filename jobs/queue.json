@@ -205938,9 +205938,14 @@
           "at": "2026-11-08T17:05Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Built and verified 608x1080 25fps vertical trailer magnetic_field_flip_trailer_v01.mp4 (-14.7 LUFS, 38.00s)"
+        },
+        {
+          "at": "2026-11-08T17:06Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote PACKAGE_MANIFEST.json for Long v02 and Active Shorts 1 & 2 and synced to NAS"
         }
       ],
-      "remaining_action": "Write PACKAGE_MANIFEST.json for long v02 and Shorts 1 & 2",
+      "remaining_action": "Run gate:episode and youtube:package --dry-run for long and Shorts 1 & 2, then commit and close J2401",
       "due": "2026-12-02T18:00:00Z",
       "kind": "listing",
       "plain": "Build the 031 Magnetic Field Flip upload package (chapters, credits, captions, vertical trailer, Shorts manifests) and run dry-run checks",
@@ -205954,11 +205959,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-08T17:05Z",
+        "at": "2026-11-08T17:06Z",
         "by": "gemini",
-        "note": "Built and verified 608x1080 25fps vertical trailer magnetic_field_flip_trailer_v01.mp4 (-14.7 LUFS, 38.00s)"
+        "note": "Wrote PACKAGE_MANIFEST.json for Long v02 and Active Shorts 1 & 2 and synced to NAS"
       },
       "taskKeys": [
         "OWB:031"
