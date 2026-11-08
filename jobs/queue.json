@@ -1,5 +1,5 @@
 {
-  "next_id": 2390,
+  "next_id": 2391,
   "jobs": [
     {
       "id": "J0001",
@@ -204316,6 +204316,36 @@
       "due": "2026-12-12T11:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Magnetic Field Flip Short (24-25s question Short on solar wind and Earth's atmosphere) and run Shorts checks"
+    },
+    {
+      "id": "J2390",
+      "title": "031 Magnetic Field Flip: review long master v02 + Shorts 1 & 2 (J2387, J2388, J2389)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review the repaired `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (`570.80 s`) and active Shorts 1 & 2 on the `studio-live` NAS after the `J2382` FIX repair and Shorts builds complete.\n\n### Checklist\n1. **Long Master `v02` Verification:**\n   - Verify all 5 `J2382` FIX items are resolved in `031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4` and `full_master_v02_pack/picture_qa_review.jpg`: (a) zero `cosmic_wave_ov.png` concentric bullseye/grid overlays on any cut; (b) `cuts_v02.json` source labels match actual pixels and `nasa_svs_3822_magfield_left.mp4` is `<= 5` stretches; (c) `R32` (`5:29`) renders real animated paleointensity ratio bars over a graded moving plate; (d) `R54 c2` (`9:27`) `PIA20016.jpg` crops out the truncated source caption; (e) `R22` subscribe card (`3:27`) reads `\"NEW SPACE MYSTERIES EVERY WEEK\"`.\n   - Confirm all 5 automated gates (`clip_check.py`, `picture_qa.py`, `music_gate.py`, `sfx_kit.py level`, loudness/CFR/blackdetect) PASS on `master_v02.mp4`.\n2. **Shorts 1 & 2 Verification:**\n   - Confirm `gate_shorts_open.py check` (`--test-a` on Short 1, standard 22–27 s on Short 2), `sfx_kit.py level`, and `thumb_preview.py short` PASS for both active Shorts.\n3. **Decision & UAT Handoff:**\n   - Write `jobs/reviews/<this-job-id>/REVIEW.md` (`KEEP` or `FIX`).\n   - On `KEEP`, copy `master_v02.mp4` and Shorts 1 & 2 to iCloud `OWB UAT` (and verify SHA-256), set `jobs.py awaits` for Ben's final watch (`Wed 02 Dec 2026 18:00` London slot), and advance `WIP.json` per `AGENTS.md` §How films get worked on.\n",
+      "ref": "2fa58588f8",
+      "film": "031",
+      "stage": "edit",
+      "after": "J2389",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T06:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T06:06Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review 031 long master v02 and Shorts 1 & 2 on studio-live NAS and prepare UAT handoff for Ben's watch",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "review",
+      "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch"
     }
   ],
   "focus": [
