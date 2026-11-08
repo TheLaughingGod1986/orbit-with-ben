@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | gemini | 2026-11-08T17:36Z | 2026-11-08T19:35Z | J2403 033 Uranus: assemble 67-row long master v01 (629.40 s) from SHOT_LIST_v02 / cuts_033_j2299_v01.json + £0 score bed/SFX + gates |
+| 033 | edit | gemini | 2026-11-08T17:37Z | 2026-11-08T18:37Z | J2403: assembling 67-row 033 Uranus long master v01 (629.40 s) + 5 gates |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
