@@ -205732,13 +205732,13 @@
       "stage": "picture",
       "after": "J2300",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T17:22Z",
-      "eta": "2026-11-08T19:22Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T13:53Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-08T13:53Z",
@@ -205774,6 +205774,11 @@
           "at": "2026-11-08T17:33Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: Queued 033 long master v01 assembly (J2403) and downstream review (J2404); closing J2398 and marking 033 picture done"
+        },
+        {
+          "at": "2026-11-08T17:33Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J2398 Chief stage sign-off and release 033 picture to done",
@@ -205788,7 +205793,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "f8c59c0344 jobs/reviews/J2398/REVIEW.md; J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532"
     },
     {
       "id": "J2399",
