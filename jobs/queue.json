@@ -77728,6 +77728,11 @@
           "at": "2026-11-07T10:20Z",
           "by": "relay",
           "what": "condition verification queued: J2357"
+        },
+        {
+          "at": "2026-11-08T02:03Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-08T08:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -77736,7 +77741,7 @@
         "HOS:008"
       ],
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6701818953",
-      "remaining_action": "Complete J2339 audio/motion QA, then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "Complete J2339 continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3), then elected Chief decides Short PASS and private watch handoff",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
         "step": 4,
@@ -77751,13 +77756,14 @@
       ],
       "hold": {
         "type": "capability",
-        "condition": "Acting-Chief technical repair accepted: v04 76d801a3 matches Mini/NAS; five gate logs PASS; all eight midpoint stills reviewed. Full Short PASS awaits J2339 hash-specific perceptual QA with demonstrated audio_input and moving_video_input. Codex tools inspected: text/shell/stills only; Gemini relay probe has audio but failed moving-video, Cursor records neither. No generation/upload/schedule; preserve worker 4/4 and h47 locks. Recheck capability availability and J2339 evidence, not unchanged media.",
-        "check_at": "2026-11-07T11:20:09+00:00",
+        "condition": "J2357 condition check (jobs/reviews/J2357/REVIEW.md, fef29a744e): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). However, J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input: live capability_probe.py gemini --record at 2026-11-08T01:59Z passed audio_input (0.92) and failed moving_video_input (truth left_to_right red>yellow>blue; answer right_to_left red>green>blue), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Preserve worker 4/4 and h47 locks; no generation/spend/upload/schedule.",
+        "check_at": "2026-11-08T08:00:00Z",
         "requires": [
-          "audio_input",
           "moving_video_input"
         ],
-        "recheck_task": "J2357"
+        "last_recheck": "J2357",
+        "checked_at": "2026-11-08T02:03:18+00:00",
+        "checked_by": "gemini"
       }
     },
     {
