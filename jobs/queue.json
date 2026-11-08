@@ -204388,9 +204388,14 @@
           "at": "2026-11-08T08:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T08:46Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2388; starting inspection of 031 v02 long assets and SHORTS_PLAN_v01.md"
         }
       ],
-      "remaining_action": "Build 031 Short 1 (Test A opening lift from v02 master) and pass gate_shorts_open.py --test-a",
+      "remaining_action": "Inspect 031 SHORTS_PLAN_v01.md, v02 long assembly scripts, and studio-live NAS assets",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks",
@@ -204405,12 +204410,14 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T08:45Z",
+        "of": 5,
+        "at": "2026-11-08T08:46Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2388; starting inspection of 031 v02 long assets and SHORTS_PLAN_v01.md"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2389",
