@@ -195826,6 +195826,11 @@
           "at": "2026-11-06T14:15Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T12:27Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6-astra: Gemini is unavailable or lacks required input; next in its chain: codex on gpt-6-astra"
         }
       ],
       "remaining_action": "Verify readiness: Record the 8 J01 linking VO takes after J01 enters the active WIP list",
@@ -195840,8 +195845,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J2281",
