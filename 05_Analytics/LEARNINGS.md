@@ -11,6 +11,19 @@ The weekly audits (`owb-weekly-audit`, `hos-weekly-audit` in `jobs/backlog.json`
 - **Average % viewed**: **70% or more**; over 100% means people rewatch. (Note: average view duration / % viewed is a mean across views and does not locate a specific viewer exit second.)
 - Both decide whether the Short is shown to the next, larger pool of viewers.
 
+## OWB-2026-11-E1 — approved timing experiment (6 Nov 2026, J2207 / Chief h47)
+
+Applies to eligible **unswapped scheduled-private 026–029 Shorts and new 030+ cuts**. This is an approved experiment, not a demonstrated retention improvement. Within this scope, the E1 cut, tail and CTA limits supersede the older timing/outro wording below; outside it the existing rules remain. Readout: **3 Dec 2026**; December 9–14 cuts contribute only to a later follow-up, never to that readout before airing.
+
+- Cut 1 at **≤2.8 s**, Cut 2 at **≤4.8 s**, measured from output time zero (Cut 2 is the second picture transition, not a 4.8 s shot allowance). Later plates stay **≤4.0 s**.
+- Frame 0: moving, full-bleed payoff subject, ≥60% subject and ≤30% black/empty sky; no Orbit. A slow still push fails. First word **≤0.15 s**; spoken surprise **≤1.5 s**; no internal sentence-1 pause >0.15 s.
+- Bridge sentence 1 straight into the next concrete mechanism/number on moving picture: VO breath **<0.25 s**. Eliminate the **3.5–5.5 s post-sentence-1 pause/hold**; no static crop-zoom in 4–8 s.
+- **Zero meta-promise, spoken CTA or end card**. Last spoken word to loop point **<1.2 s**; matched opening framing, music through the seam, crossfade ≤0.3 s. A visual loop-difference score is not loop-tail seconds.
+- Keep Keeper length/question rules, payoff ≥70%, the one teaching overlay, Related/description link, SFX and all existing ship gates. Existing Test A exemptions and explicit per-cut waivers remain in force: record conflicts for review rather than silently changing the test arm or calling an exception a full E1 PASS.
+- **£0 existing media and recorded words only**: no TTS or image/video generation. Preserve uploaded bytes, hashes and manifests; write a new version beside them. No re-upload of a public idea. Inventory replacement IDs and existing jobs before queuing work; never duplicate a delivered swap.
+- Record frame-0 source, onset, surprise time, **both** cut timestamps, sentence-1 breath, last-word and loop-point timestamps, computed tail, max hold, payoff time, meta/CTA presence, source hashes and gate reports. Existing automatic gate PASS does not prove these tighter E1 limits; check them explicitly.
+- Re-cut jobs deliver local/UAT/NAS evidence for review and Ben's final watch. Upload/schedule/privacy changes need their own authorized job; that job updates Buffer and UPLOADS together. Existing scheduled copies and slots stay in place meanwhile.
+
 ## Learnings
 
 | # | Rule or test | Evidence | Status |

@@ -1,0 +1,30 @@
+{
+  "job": "J2141",
+  "date": "2026-11-07",
+  "asset_id": "hdev_earth_views_iss_2019",
+  "plate": "/Users/ben/_desk/J2141-atmosphere-v02/r41_hdev_daylight_limb_v01.mp4",
+  "plate_sha256": "3aaed5339f18ce790b2e1cc855e2150594c79f8ace6c2b26bd862fa9f2fdb8d3",
+  "source_sha256": "184b9ebaf6624b219455b0d4a72967e05d3e6cebc034ac8036fcc0198a17a8ef",
+  "checks": {
+    "hash_match": "PASS",
+    "width_height": "1920x1080",
+    "fps": 25,
+    "pix_fmt": "yuv420p",
+    "frames": 109,
+    "duration_s": 4.36,
+    "audio_streams": 0,
+    "full_decode": "PASS",
+    "scale_factor_from_1280": 1.5,
+    "sample_mean_luma": [124.64, 130.86, 131.35],
+    "sample_p95_luma": [228, 239, 239],
+    "sample_near_black_fraction": [0.2995, 0.2987, 0.2988]
+  },
+  "spend_gbp": 0,
+  "admitted": false,
+  "limitations": [
+    "Daylight limb, not a sunrise. The sun is not in frame.",
+    "Station hardware remains in the upper right.",
+    "About 30 percent of the frame is black space above the limb. Mean luma is about 125 to 131.",
+    "Technical decode only. No polish gate, composite, KEEP or Chief acceptance."
+  ]
+}

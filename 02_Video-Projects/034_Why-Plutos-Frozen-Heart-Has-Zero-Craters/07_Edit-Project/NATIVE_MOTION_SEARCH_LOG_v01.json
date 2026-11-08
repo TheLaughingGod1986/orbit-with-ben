@@ -1,0 +1,136 @@
+{
+  "job": "J2367",
+  "bounded_search_window_minutes": 18,
+  "nh_extreme_closeup_ogv_audit": {
+    "asset": "File:New Horizons Extreme Close-Up Of Pluto Surface (No Audio).ogv",
+    "sha256": "4ae583a8dccd13e94d1b6755f56ccacaf33e331ce1a0c6e7566b6381fa7504b3",
+    "dimensions": "1280x720",
+    "verdict": "REJECTED_PAN_AND_ANNOTATED",
+    "evidence": "Visual frame inspection (nh_extreme_closeup.ogv_f0/f1/f2.jpg via read_file) confirmed it is a synthetic pan across the static PIA20155 LORRI mosaic strip AND contains baked-in yellow text labels (Washboard terrain, Mountainous shoreline, Cellular plains) plus an orange 10 miles scale bar in the lower right. Removed from R05 and R50 and added to banned_and_deduplicated_ids."
+  },
+  "candidates_evaluated": [
+    {
+      "id": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "source": "Wikimedia Commons / NASA / JHUAPL / SwRI / Andrea Luck (CC BY 2.0)",
+      "dimensions": "1920x1080",
+      "sha256": "993979846dcbf0246a34de47af1bc5e7ed96fd10322e235681af8c8df82269ca",
+      "verdict": "ADMITTED (R05, R50)",
+      "notes": "Real 27-frame raw New Horizons LORRI flyby exposure sequence (nh-lorri-lor_0299178877..0299178929); native 1920x1080 (1.00x), zero text/scale bars, real spacecraft motion across cratered highlands and Sputnik Planitia convection cells."
+    },
+    {
+      "id": "File:Video - Pluto and its moon Charon orbiting each other - Nasa-s New Horizons (51712771431).webm",
+      "source": "Wikimedia Commons / NASA / JHUAPL / SwRI / Andrea Luck (CC BY 2.0)",
+      "dimensions": "1028x1024 (clean upper crop 1028x840)",
+      "sha256": "89f4eb6318a6311195bdd19ba9f748a323d2064a7bc65d97f2dd7ac6edc5b5d4",
+      "verdict": "ADMITTED (R19, R30)",
+      "notes": "Real 7-frame New Horizons LORRI barycentric orbit sequence (lor_0296747757..0297296997); upper 1028x840 crop excludes bottom telemetry text (1.29x upscale on lifted starry canvas). Provides native motion in R19 (R15->R24) and R30 (R29->R35 + second distinct real source inside R30)."
+    },
+    {
+      "id": "ksc_011906_nh_launch",
+      "source": "NASA Images API (Public Domain, KSC)",
+      "dimensions": "800x450",
+      "sha256": "df0c050d9030a264bb43a152e53e46ad13391779b310095a91d5166d4f229a91",
+      "verdict": "ADMITTED (R37)",
+      "notes": "Real optical tracking camera video of Atlas V ascent carrying New Horizons on 19 Jan 2006 (framed at 1600x900 2.00x inset <= 2.35x on lifted starry canvas)."
+    },
+    {
+      "id": "ksc_011906_nh_srbjett",
+      "source": "NASA Images API (Public Domain, KSC)",
+      "dimensions": "800x450",
+      "sha256": "d57e64dfcf9e815edbaec52a6786686cf263aed9490dfea708d298b6250a9ac9",
+      "verdict": "ADMITTED (R40)",
+      "notes": "Real long-range optical tracking video of Atlas V solid rocket booster separation during New Horizons outbound ascent (framed at 1600x900 2.00x inset <= 2.35x on lifted starry canvas)."
+    },
+    {
+      "id": "File:VIDEO - Arrokoth Flyby - Kuiper Belt - NASA's New Horizons 2019 (52829322492).webm",
+      "source": "Wikimedia Commons / NASA / JHUAPL / SwRI / Roman Tkachenko / Andrea Luck (CC BY 2.0)",
+      "dimensions": "1920x1080",
+      "sha256": "49963c0e035753d000a9c6c48b01eb394e31c0b54fe4b8d02ab1b7807b6c8b7f",
+      "verdict": "ADMITTED (R67)",
+      "notes": "Real 9-frame New Horizons LORRI close flyby exposure sequence of Arrokoth (lor_0408626328..0408626336, 1920x1080 native 1.00x, zero text)."
+    },
+    {
+      "id": "File:Flying Past Pluto.webm",
+      "source": "Wikimedia Commons / NASA / JHUAPL / SwRI / Stuart Robbins",
+      "dimensions": "1920x1080",
+      "sha256": "77ab36ea327e32125c3f5267132a0a694c000691d2c88e7b4a9fc2ca5a68b97e",
+      "verdict": "REJECTED_SIMULATION_TRAJECTORY",
+      "notes": "3D rendered trajectory simulation with orbital path lines; rejected under picture_qa.py no-simulation rule."
+    },
+    {
+      "id": "GSFC_20150713_Dennis_Reuter_m11950_Horizons",
+      "source": "NASA GSFC",
+      "dimensions": "1280x720",
+      "sha256": "b6d0573cd448b6e00283d9be765f3238c7b8aca1f091aad080a9c51068e20fb5",
+      "verdict": "REJECTED_TALKING_HEAD_AND_CGI",
+      "notes": "Interview talking-head segments mixed with CGI spacecraft animations and lower-third banners."
+    }
+  ],
+  "graphic_restructure_for_100pct_native_separation": {
+    "kept_full_frame_code_rows": [
+      "R02",
+      "R15",
+      "R24",
+      "R29",
+      "R35",
+      "R48",
+      "R56",
+      "R69"
+    ],
+    "folded_to_nasa_with_edit_overlay": [
+      "R17",
+      "R38",
+      "R43",
+      "R52",
+      "R61"
+    ],
+    "verified_intervals": [
+      {
+        "interval": "R02 -> R15",
+        "native_motion_rows": [
+          "R03",
+          "R05"
+        ]
+      },
+      {
+        "interval": "R15 -> R24",
+        "native_motion_rows": [
+          "R19"
+        ]
+      },
+      {
+        "interval": "R24 -> R29",
+        "native_motion_rows": [
+          "R25"
+        ]
+      },
+      {
+        "interval": "R29 -> R35",
+        "native_motion_rows": [
+          "R30",
+          "R34"
+        ]
+      },
+      {
+        "interval": "R35 -> R48",
+        "native_motion_rows": [
+          "R36",
+          "R37",
+          "R40"
+        ]
+      },
+      {
+        "interval": "R48 -> R56",
+        "native_motion_rows": [
+          "R50"
+        ]
+      },
+      {
+        "interval": "R56 -> R69",
+        "native_motion_rows": [
+          "R67"
+        ]
+      }
+    ]
+  }
+}

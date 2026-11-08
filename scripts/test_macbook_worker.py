@@ -334,5 +334,13 @@ class TwoSlots(unittest.TestCase):
         self.assertTrue(jobs.claimable({"jobs": [j]}, j, {"macbook", "any"}, T0, "macbook-2"))
 
 
+class LaunchAgent(unittest.TestCase):
+    def test_worker_looks_every_three_minutes(self):
+        # 6 Nov 2026: 900 s left a free MacBook idle while portable reviews waited.
+        plist = (pathlib.Path(__file__).resolve().parent / "macbook" / "com.owb.macbook-worker.plist").read_text()
+        self.assertIn("<key>StartInterval</key>\n  <integer>180</integer>", plist)
+        self.assertNotIn("<integer>900</integer>", plist)
+
+
 if __name__ == "__main__":
     unittest.main()

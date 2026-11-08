@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
-"""Per-video Studio tracker (Ben, 24 Oct 2026): five lanes, one card per long/Short.
+"""Per-video Studio tracker (Ben, 24 Oct 2026): one card per long/Short.
 
-Lanes (left → right):
-  upcoming → progress → changes → ready → approved → done
-  ("approved" = "Approved, on its way", Ben 25 Oct 14:13: what he OK'd, still in the pipeline until YouTube has it)
+Internal lane ids (payload): upcoming → progress → changes → ready → approved → done.
+The Videos tab UI remaps these to nine swim lanes (Ben, 7 Nov 2026):
+  Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live
+  (`board_site/studio_app.js` `videoLane`). Ben only acts in UAT; Approve → Passed (ready to
+  schedule); notes/fixes → In progress. "approved" here is Passed on the board.
 
 Derived from jobs/queue.json, UPLOADS.json / PACKAGE_UPLOAD_RESULT, film_briefs, HOS PIPELINE,
 OWB status.json, and Ben's board checks (`[Ben] OK/changes` via /api/checks). Optional overrides
 in 05_Analytics/kanban/video_overrides.json.
+
+Planned Shorts (Ben, 7 Nov 2026; undated Orbit, 7 Nov 2026): upcoming longs with no uploaded
+Shorts yet get board-only Short cards on Videos → Backlog (HOS 4, Orbit 2 per cadence). An air
+date is copied when the parent has one; undated Orbit backlog longs still get the pair with no
+invented date. Keys use `:S:planned-N` — never a YouTube id — and never start production, WIP,
+uploads or jobs. Parents that already have uploaded/live Shorts do not get extra placeholders.
 """
 from __future__ import annotations
 
@@ -39,6 +47,11 @@ LANE_LABELS = {
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
 DONE_PUBLIC_DAYS = 14
+# Planned Shorts on Videos → Backlog for upcoming longs with no uploads yet
+# (Ben, 7 Nov 2026 cadence: Orbit 2 per new long; HOS 4 per long/week). Never invent YouTube ids
+# or air dates — undated parents keep empty air on their planned Shorts.
+PLANNED_SHORTS_PER_LONG = {"HOS": 4, "OWB": 2}
+PLANNED_SHORT_TOKEN = "planned"
 
 BEN_CHANGES_RE = re.compile(
     r"Ben'?s?\s+(\d+)\s+changes|\bchanges?\s+on\s+master\b|\bchange tick\b",
@@ -875,6 +888,107 @@ def watch_format(watch):
     return 'short' if re.search(r'(?:^|/)10_Shorts/|(?:^|/)[^/]*_short(?:_v\d+[a-z0-9-]*)?(?:_PHONE)?\.mp4$', file, re.I) else ''
 
 
+def planned_shorts_count(channel: str) -> int:
+    """How many planned Short cards an upcoming long gets on Videos → Backlog."""
+    return int(PLANNED_SHORTS_PER_LONG.get(str(channel or "").upper(), 0))
+
+
+def planned_short_key(parent_key: str, index: int) -> str:
+    """Stable key with no YouTube id: HOS:012:S:planned-1."""
+    return f"{parent_key}:S:{PLANNED_SHORT_TOKEN}-{index}"
+
+
+def is_planned_short_key(key: str) -> bool:
+    return bool(re.search(rf":S:{re.escape(PLANNED_SHORT_TOKEN)}-\d+$", str(key or "")))
+
+
+def parent_has_uploaded_shorts(parent_key: str, *, videos: list[dict], uploads: dict) -> bool:
+    """True when the long already has a real Short upload / YouTube id (not a planned placeholder)."""
+    prefix = f"{parent_key}:S:"
+    for key, rows in (uploads or {}).items():
+        if not str(key).startswith(prefix) or is_planned_short_key(key):
+            continue
+        for row in rows or []:
+            if row.get("videoId") and not row.get("supersededBy"):
+                return True
+    for v in videos:
+        if v.get("parent") != parent_key or v.get("type") != "short":
+            continue
+        if is_planned_short_key(v.get("key") or ""):
+            continue
+        yt = ((v.get("youtube") or {}).get("videoId") or "").strip()
+        sid = str(v.get("shortId") or "").strip()
+        if yt or sid:
+            return True
+    return False
+
+
+def planned_short_title(index: int, film_title: str, script_title: str = "") -> str:
+    """Prefer an existing script title; otherwise 'Short N · {film title}'."""
+    name = (script_title or "").strip()
+    if name:
+        return name
+    film = (film_title or "").strip() or "film"
+    return f"Short {index} · {film}"
+
+
+def add_planned_shorts(
+    videos: list[dict],
+    *,
+    uploads: dict,
+    film_lanes: dict,
+    now: datetime,
+    public: dict | None = None,
+    public_at: str = "",
+    held: frozenset | set = frozenset(),
+    titles_by_parent: dict | None = None,
+) -> None:
+    """Append planned Short cards for upcoming longs with no uploaded Shorts yet.
+
+    Board-only: no YouTube ids, no UPLOADS rows, no production jobs. Counts follow the
+    locked weekly cadence (HOS 4, Orbit 2). Copy the parent's air date when it has one;
+    undated parents (Orbit far-future backlog) get undated planned Shorts — never invent
+    Sundays/Wednesdays or 11:30 slots.
+    """
+    titles_by_parent = titles_by_parent or {}
+    have = {v.get("key") for v in videos}
+    parents = [v for v in list(videos) if v.get("type") == "long"]
+    for parent in parents:
+        if parent.get("lane") != "upcoming":
+            continue
+        air = str(parent.get("air") or "").strip()
+        # Keep a real YYYY-MM-DD when present; empty air is allowed (do not invent dates).
+        if air and not re.match(r"^\d{4}-\d{2}-\d{2}", air):
+            continue
+        channel = str(parent.get("channel") or "")
+        count = planned_shorts_count(channel)
+        if count < 1:
+            continue
+        parent_key = str(parent.get("key") or "")
+        if not parent_key or parent_has_uploaded_shorts(parent_key, videos=videos, uploads=uploads):
+            continue
+        # A YouTube id on the long itself means it is past backlog planning for Shorts.
+        if ((parent.get("youtube") or {}).get("videoId") or "").strip():
+            continue
+        num = str(parent.get("number") or "")
+        film_title = str(parent.get("title") or "")
+        script_titles = titles_by_parent.get(parent_key) or []
+        for i in range(1, count + 1):
+            skey = planned_short_key(parent_key, i)
+            if skey in have:
+                continue
+            title = planned_short_title(i, film_title, script_titles[i - 1] if i - 1 < len(script_titles) else "")
+            videos.append(_card(
+                key=skey, channel=channel, number=num, title=title,
+                vtype="short", air=air, brief={},
+                release=None, upload_rows=[],
+                jobs=[], check=None, watch=None,
+                override_lane=film_lanes.get(skey), now=now,
+                short_id="", parent=parent_key, public=public or {}, public_at=public_at, held=held,
+            ))
+            have.add(skey)
+
+
 def build_videos(
     *,
     hos: dict,
@@ -1012,6 +1126,13 @@ def build_videos(
             short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
         ))
 
+    # --- Planned Shorts for upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---
+    # HOS: 4 per long; Orbit: 2 per new upcoming long (dated or not). No YouTube ids, no production start.
+    add_planned_shorts(
+        videos, uploads=uploads, film_lanes=film_lanes, now=now,
+        public=public, public_at=public_at, held=held,
+    )
+
     # --- Standalone / extraWatch Shorts (HOS S1…) ---
     # Forced long ids (overrides.youtube) for films with no pipeline/status row, e.g. HOS 001–003 (aired before PIPELINE).
     have = {v["key"] for v in videos}
@@ -1066,6 +1187,19 @@ def build_videos(
 
     from uat_outlook import attach
     attach(videos, hos, owb, alljobs or jobs, now)
+
+    # Listing package status for Passed / Scheduled cards (Ben, 7 Nov 2026): what's missing, Ready to upload,
+    # or a real Scheduled-for line — never invent a publishAt or YouTube id.
+    try:
+        import listing_package as listing_package
+        for video in videos:
+            yt = video.get("youtube") or {}
+            public = yt.get("privacy") == "public" or yt.get("state") == "live"
+            scheduled = (not public) and yt.get("state") == "scheduled" and bool(yt.get("publishAt") or yt.get("publishAtLondon"))
+            if video.get("lane") == "approved" or scheduled:
+                video["listing"] = listing_package.for_video(video, ROOT)
+    except Exception:  # noqa: BLE001 — listing is display-only; never block the board
+        pass
 
     videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
                                (v.get("approved") or {}).get("airs") or v.get("air") or "9999", v["key"]))
