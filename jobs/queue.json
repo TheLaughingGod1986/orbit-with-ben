@@ -203757,18 +203757,23 @@
           "at": "2026-11-08T18:20Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Completed HOS Studio lifetime read (33/33 videos: 6 longs, 27 Shorts) on CDP 9460; OWB Studio read at 33/95"
+        },
+        {
+          "at": "2026-11-08T18:24Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Completed OWB (95/95: 15 longs, 80 Shorts, 0 skipped) and HOS (33/33: 6 longs, 27 Shorts, 0 skipped) lifetime Studio reads"
         }
       ],
-      "remaining_action": "Complete OWB Studio lifetime read (95 videos) on CDP 9223",
+      "remaining_action": "Write studio_ctr.json for OWB and HOS, rebuild analytics-report.ts and board_publish.py",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T18:20Z",
+        "at": "2026-11-08T18:24Z",
         "by": "gemini",
-        "note": "Completed HOS Studio lifetime read (33/33 videos: 6 longs, 27 Shorts) on CDP 9460; OWB Studio read at 33/95"
+        "note": "Completed OWB (95/95: 15 longs, 80 Shorts, 0 skipped) and HOS (33/33: 6 longs, 27 Shorts, 0 skipped) lifetime Studio rea"
       }
     },
     {
