@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2414 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2415 | mini | claimed | gemini | 2026-11-08T23:09Z | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
+| J2417 | any | open | – | – | OWB:026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
 
 Recently finished:
 
