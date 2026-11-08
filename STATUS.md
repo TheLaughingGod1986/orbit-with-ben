@@ -59,7 +59,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 031 | upload | gemini | 2026-11-08T22:22Z | 2026-11-09T00:21Z | J2402 031 Magnetic Field Flip: Private upload Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after J2401 & Ben UAT watch (J2395) |
+| 031 | upload | gemini | 2026-11-08T22:26Z | 2026-11-08T23:26Z | J2402 Private upload Long v02 + Short 1 v01 |
 | 033 | edit | gemini | 2026-11-08T20:01Z | 2026-11-08T22:00Z | J2404 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
