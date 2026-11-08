@@ -775,6 +775,12 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
+  // 8 Nov 2026: an open studio job after a finished one, titled "... stage for Ben UAT watch", is not Needs attention.
+  const ovStage = t.overview({tracker: {videos: []}, machines: {machines: []}, progress24h: {hours: 24, films: [
+    {film: 'OWB:033', title: 'Uranus', jobs: 1, items: [{id: 'J2404', title: '033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch',
+      status: 'open', stage: 'edit', after: 'J2403', progress: {step: 2, of: 4}}]}], focus: ['OWB:033'],
+    glance: {doneToday: 0, left: 1, blocked: 0, blockedJobs: []}}}, Date.parse('2026-11-08T22:41:00Z'));
+  assert(!ovStage.includes('Needs attention'), 'an open job that will stage a watch for Ben is not a can\'t-run job');
   assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'), 'Machines sit above Active jobs');
   assert(ov.includes('Active jobs'), 'Active jobs section uses the cleaner label');
   assert(!ov.includes('overview-agents') && !ov.includes('Agents</h2>'), 'Overview home does not repeat the Agents tab');
