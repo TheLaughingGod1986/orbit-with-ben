@@ -207078,9 +207078,14 @@
           "at": "2026-11-08T21:13Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2415; starting QA sweep inventory of newest OWB and HOS packs"
+        },
+        {
+          "at": "2026-11-08T21:21Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inventory complete: 169 J1467 entries verified (29 offloaded paths resolved to NAS 2026-11-05) and 33 post-J1467 OWB/HOS exports mapped"
         }
       ],
-      "remaining_action": "Scan newest OWB and HOS packs for missing or stale picture_qa, polish_gate, and music_gate outputs",
+      "remaining_action": "Run or sync missing/stale picture_qa, polish_gate, and music_gate sidecars on the 33 post-J1467 OWB and HOS exports",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -207093,12 +207098,24 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T21:13Z",
+        "at": "2026-11-08T21:21Z",
         "by": "gemini",
-        "note": "Claimed J2415; starting QA sweep inventory of newest OWB and HOS packs"
-      }
+        "note": "Inventory complete: 169 J1467 entries verified (29 offloaded paths resolved to NAS 2026-11-05) and 33 post-J1467 OWB/HOS"
+      },
+      "taskKeys": [
+        "OWB:024",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032",
+        "OWB:033",
+        "OWB:034",
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
