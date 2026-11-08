@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2369 | mini | blocked | macbook | – | for cursor · script · `cursor-claude-opus-5-5` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2373 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
-| J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2375 | mini | claimed | gemini | 2026-11-08T18:56Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
