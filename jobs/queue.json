@@ -204975,10 +204975,10 @@
       "stage": "edit",
       "after": "J2394",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T10:17Z",
+      "eta": "2026-11-08T12:17Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T08:41Z",
       "result": "",
@@ -204997,6 +204997,11 @@
           "at": "2026-11-08T08:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T10:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review 031 Short 1 (J2388) and Short 2 v02 (J2394), stage both to OWB UAT alongside KEEP master_v02, set awaits_ben, and advance WIP.json",
@@ -205011,7 +205016,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T10:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
