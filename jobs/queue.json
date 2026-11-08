@@ -205990,13 +205990,13 @@
       "stage": "upload",
       "after": "J2401",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-08T17:12Z",
-      "eta": "2026-11-08T19:12Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T16:44Z",
-      "result": "",
+      "result": "Waiting for: Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z",
       "history": [
         {
           "at": "2026-11-08T16:44Z",
@@ -206017,6 +206017,16 @@
           "at": "2026-11-08T17:18Z",
           "by": "gemini",
           "what": "step 1 of 2 done: Verified J2401 upload packages & NAS SHA-256 hashes (680598ae34, ebe11bb730, 4f25b1cd9d, 5e383e859b); J2395.1-J2395.3 awaiting Ben UAT watch before 2026-12-01T18:00:00Z"
+        },
+        {
+          "at": "2026-11-08T17:18Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z"
+        },
+        {
+          "at": "2026-11-08T17:18Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-01T18:00:00Z"
         }
       ],
       "remaining_action": "Private upload 031 Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after Ben UAT watch OK on J2395 or 24h pre-air fallback",
@@ -206032,7 +206042,12 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z",
+        "check_at": "2026-12-01T18:00:00Z"
+      }
     }
   ],
   "focus": [
