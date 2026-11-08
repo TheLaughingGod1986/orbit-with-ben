@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2289 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
-| J2299 | mini | open (after J2290) | – | – | 033 picture · assembly · 033 picture: correct source identities and deliver reviewable opener and graphics | J2297; PR578 adab48f716e066f57e2e1c9f56c3de789dda854e; J2386 5e68ec6532; J2385 af5f9af859; J2384 6ba68b05d8 |
+| J2299 | mini | claimed | gemini | 2026-11-08T12:56Z | 033 picture · assembly · 033 picture: correct source identities and deliver reviewable opener and graphics | J2297; PR578 adab48f716e066f57e2e1c9f56c3de789dda854e; J2386 5e68ec6532; J2385 af5f9af859; J2384 6ba68b05d8 |
 | J2300 | mini | open (after J2299) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033 picture: review corrected source map, native opener and graphics | J2297 |
 | J2303 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
