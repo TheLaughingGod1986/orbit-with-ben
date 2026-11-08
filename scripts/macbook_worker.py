@@ -407,9 +407,11 @@ def pull_main() -> str:
                     branch = "main"
             if branch != "main":
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+            # Name origin main: a clone whose branch.main.merge holds more than one entry fails a bare pull with
+            # "Cannot fast-forward to multiple branches" (8 Nov 2026, slot 2).
+            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode and own and rescue_diverged(repo):
-                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode:
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
     return ""
@@ -486,7 +488,7 @@ def run_ordinary() -> str:
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
-    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
+    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
     paused = ""
     if code not in (0, 124):  # 124 = hit the cap: slow, not broken
         paused = mark_down(agent)
