@@ -192509,6 +192509,11 @@
           "at": "2026-11-05T18:54Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 121 min (heartbeat 2026-11-05T16:52:20Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T12:27Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6-astra: Gemini is unavailable or lacks required input; next in its chain: codex on gpt-6-astra"
         }
       ],
       "remaining_action": "Verify readiness: Block J2215 with SMB unmount error (PR #532)",
@@ -192523,8 +192528,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J2245",
