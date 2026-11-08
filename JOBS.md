@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2373 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2382 | mini | open | – | – | chief · Chief: resolve 031 edit orphan-review |  |
+| J2382 | mini | claimed | gemini | 2026-11-08T06:19Z | chief · Chief: resolve 031 edit orphan-review |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 
 Recently finished:
