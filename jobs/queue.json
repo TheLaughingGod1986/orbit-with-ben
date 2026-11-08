@@ -204527,9 +204527,14 @@
           "at": "2026-11-08T08:36Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Audited 031 Short 2 v01 (J2389): found 4 visual defects (get_nebula_wave plaid + painted star dots in 9:16 backdrop, od.arc cartoon arcs on R39a/frame0/cover/loop, R39b ghost double-exposure, R42a 9-14s title collision with 1 KILOGRAM text); Short 1 (J2388) still open. Copying KEEP Long Master v02 to OWB UAT."
+        },
+        {
+          "at": "2026-11-08T08:40Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed jobs/reviews/J2390/REVIEW.md (1f42136dce) and verified SHA-256 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43 of KEEP Long Master v02 in NAS OWB UAT and iCloud OWB UAT"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2390/REVIEW.md (Long Master v02 KEEP, Short 2 v01 FIX, Short 1 J2388 pending) and queue chained Short 2 v02 repair + Shorts review",
+      "remaining_action": "Queue chained Short 2 v02 repair + Shorts 1 & 2 review after J2388, then close J2390",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch",
@@ -204543,11 +204548,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-08T08:36Z",
+        "at": "2026-11-08T08:40Z",
         "by": "gemini",
-        "note": "Audited 031 Short 2 v01 (J2389): found 4 visual defects (get_nebula_wave plaid + painted star dots in 9:16 backdrop, od."
+        "note": "Committed jobs/reviews/J2390/REVIEW.md (1f42136dce) and verified SHA-256 680598ae3420afa9fd40efc954cf06cefcfff234044a62e"
       },
       "taskKeys": [
         "OWB:031"
