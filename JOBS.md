@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2417 | any | open | – | – | OWB:026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
 | J2418 | mini | open | – | – | OWB:031 edit · assembly · 031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch |  |
 | J2419 | mini | open | – | – | OWB:024 edit · assembly · 024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch |  |
+| J2420 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 
 Recently finished:
 

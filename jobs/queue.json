@@ -1,5 +1,5 @@
 {
-  "next_id": 2420,
+  "next_id": 2421,
   "jobs": [
     {
       "id": "J0001",
@@ -207341,6 +207341,35 @@
       "remaining_action": "024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch",
       "kind": "assembly",
       "plain": "Remove the stray code text Ben spotted at 0:19 in the muons Short, then send it back for his watch."
+    },
+    {
+      "id": "J2420",
+      "title": "Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2410 (PR #650, branch macbook/J2410):\n1. OWB:062 (02_Video-Projects/062_Why-Is-Marss-Moon-Phobos-Spiralling-In-To-Crash/TOPIC.md): Why Is Mars's Moon Phobos Spiralling In to Crash? (Rule 18 real-imagery variant: What NASA's Closest Photos of Phobos Revealed; Series 1 & 2; 7 verified neighbours including Kurzgesagt 22.62M & 4.50M, Why Files 6.29M, Astrum 2.01M & 1.43M; 2 Short angles).\n2. OWB:063 (02_Video-Projects/063_Why-Does-Saturn-Have-A-Giant-Six-Sided-Storm/TOPIC.md): Why Does Saturn Have a Giant Six-Sided Storm? (Rule 18 real-imagery variant: What Cassini Saw Inside Saturn's Hexagon Storm; Series 2; 8 verified neighbours including Astrum 9.28M & 1.04M, NASA JPL 5.81M, Secrets of the Universe 3.85M, The Space Race 2.36M, What If 1.24M; 2 Short angles).\nCheck TOPIC.md in both folders against AGENTS.md Rule E, STUDIO_PLAYBOOK.md §2, and LEARNINGS.md rules 1-22 + OWB-2026-11-E1. Both films remain in jobs/WIP.json next under Rule G until an active slot frees up.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-08T22:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:25Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review TOPIC.md for the two new Orbit backlog films (062 and 063) in PR #650 under AGENTS.md Rule E",
+      "kind": "review",
+      "plain": "Review the two new Orbit backlog topics (Phobos crash and Saturn Hexagon storm) from PR #650 against the data and neighbour rules."
     }
   ],
   "focus": [
