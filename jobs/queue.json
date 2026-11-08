@@ -203569,17 +203569,22 @@
           "at": "2026-11-08T00:42Z",
           "by": "gemini",
           "what": "step 5 of 6 done: All 5 gates PASS on 031 master v01 (570.80 s, 115 cuts, 0 picture_qa fails, -14.6 LUFS, -1.0 dBTP, 0 black frames)"
+        },
+        {
+          "at": "2026-11-08T00:45Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Committed and pushed gemini/J2381-master-v01 (33d08fea40); all 5 gates PASS on 031 master v01"
         }
       ],
-      "remaining_action": "Copying assembly script, QA reports, and sidecars into worktree, committing branch, and closing J2381",
+      "remaining_action": "Done",
       "kind": "assembly",
       "plain": "Assemble the 9.5-minute Magnetic Field Flip video (031) from all 54 picture rows, voiceover, music, and sound effects",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-08T00:42Z",
+        "at": "2026-11-08T00:45Z",
         "by": "gemini",
-        "note": "All 5 gates PASS on 031 master v01 (570.80 s, 115 cuts, 0 picture_qa fails, -14.6 LUFS, -1.0 dBTP, 0 black frames)"
+        "note": "Committed and pushed gemini/J2381-master-v01 (33d08fea40); all 5 gates PASS on 031 master v01"
       },
       "taskKeys": [
         "OWB:031"
