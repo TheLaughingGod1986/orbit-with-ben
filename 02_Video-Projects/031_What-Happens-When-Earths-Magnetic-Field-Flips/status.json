@@ -59,8 +59,8 @@
       "short2_v02_sha256": "4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450"
     },
     "upload": {
-      "state": "doing",
-      "ref": "J2401 (release package + dry-run PASS; J2402 Private upload held on Ben's UAT watch J2395.1-J2395.3)",
+      "state": "blocked",
+      "ref": "J2401 PASS (4932b76bb7); J2402 held on Ben UAT watch J2395 (2026-12-01T18:00:00Z)",
       "package_manifest": "11_Upload-Package/PACKAGE_MANIFEST.json",
       "short1_manifest": "10_Shorts/testA_opening_flip/07_Upload-Package/PACKAGE_MANIFEST.json",
       "short2_manifest": "10_Shorts/sat12_solar_wind_air/07_Upload-Package/PACKAGE_MANIFEST.json",
@@ -68,14 +68,6 @@
       "note": "Release upload packages built & dry-run verified PASS (J2401: gate:episode PASS, Long v02 + Active Shorts 1 & 2 v02 youtube:package --dry-run PASS); Private YouTube upload (J2402: Wed 2 Dec 18:00 London long + Sat 5 / Sat 12 Dec 11:30 London Shorts) held on Ben's UAT watch (J2395.1-J2395.3, due 2026-12-01T18:00Z)"
     }
   },
-  "claims": [
-    {
-      "stage": "upload",
-      "by": "gemini",
-      "at": "2026-11-08T17:12Z",
-      "eta": "2026-11-08T19:11Z",
-      "note": "J2402 031 Magnetic Field Flip: Private upload Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after J2401 & Ben UAT watch (J2395)"
-    }
-  ],
+  "claims": [],
   "next": "Ready for Ben's UAT watch (J2395): Long master v02 (owb-031-v02, airs Wed 2 Dec 18:00 London), Short 1 v01 (owb-j2395-2-v01, Sat 5 Dec 11:30), Short 2 v02 (owb-j2395-3-v02, Sat 12 Dec 11:30); upload packages & dry-runs PASS (J2401); Private YouTube upload queued on UAT sign-off (J2402)"
 }
