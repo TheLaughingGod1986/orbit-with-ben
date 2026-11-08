@@ -207415,19 +207415,25 @@
           "at": "2026-11-08T22:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T22:47Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch",
+      "remaining_action": "Inspecting frames 0:18-0:21 of 024_fri06_muons_ground_v03 and locating the stray code at 0:19 under 'light speed' and its build script",
       "kind": "assembly",
       "plain": "Remove the stray code text Ben spotted at 0:19 in the muons Short, then send it back for his watch.",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-08T22:47Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     },
     {
       "id": "J2420",
