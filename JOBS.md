@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2386 | mini | open (after J2385) | – | – | 033 picture · chief · 033: accept J2334 £0 R01/R55 fallback assets and reopen J2299 at 0/5 | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384; J2385; J2299 |
 | J2388 | mini | open (after J2387) | – | – | 031 edit · assembly · 031 Magnetic Field Flip Short 1 (Test A opening): build 9:16 cold-open cut from v02 + gates (no upload) | 2fa58588f8 |
-| J2389 | mini | open (after J2387) | – | – | 031 edit · for gemini · assembly · `gemini-agy` · 031 Magnetic Field Flip Short 2 (Keeper question): build 24-25s solar-wind/atmosphere cut + gates (no upload) | 2fa58588f8 |
+| J2389 | mini | claimed | gemini | 2026-11-08T09:27Z | 031 edit · for gemini · assembly · `gemini-agy` · 031 Magnetic Field Flip Short 2 (Keeper question): build 24-25s solar-wind/atmosphere cut + gates (no upload) | 2fa58588f8 |
 | J2390 | mini | open (after J2389) | – | – | 031 edit · for gemini · review · `gemini-argon` · 031 Magnetic Field Flip: review long master v02 + Shorts 1 & 2 (J2387, J2388, J2389) | 2fa58588f8 |
 | J2391 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2299 |  |
 
