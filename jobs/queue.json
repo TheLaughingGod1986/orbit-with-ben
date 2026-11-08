@@ -195127,10 +195127,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T18:29Z",
+      "eta": "2026-11-08T20:29Z",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -195444,6 +195444,11 @@
           "at": "2026-11-08T18:28Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-08T18:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Adopt shared protocol in remaining Flow writers; validate live UI and full launch",
