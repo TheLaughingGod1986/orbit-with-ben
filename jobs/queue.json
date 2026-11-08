@@ -1,5 +1,5 @@
 {
-  "next_id": 2388,
+  "next_id": 2389,
   "jobs": [
     {
       "id": "J0001",
@@ -204256,6 +204256,36 @@
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the 9.5-minute Magnetic Field Flip master v02 fixing the five visual and source-label defects from Chief review"
+    },
+    {
+      "id": "J2388",
+      "title": "031 Magnetic Field Flip Short 1 (Test A opening): build 9:16 cold-open cut from v02 + gates (no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build `031` Active Short #1 (Test A Opening Short: *What Happens When Earth's Magnetic Field Flips?*) from the repaired `031` long master `v02` and `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/SHORTS_PLAN_v01.md` (`J2147`). £0 spend, no YouTube upload.\n\n### Requirements\n- **Spoken Lift:** `s00–s08` (`0.14–35.32 s`, `96` words from locked VO `magnetic_field_flip_vo_v02a.wav`, ending cleanly on the three questions `031` answers per `LEARNINGS 17`, `33.00–37.14 s` runtime).\n- **Visuals (`1080x1920`, `25 fps` CFR):** Reframe the clean `v02` opening cuts (`R01–R04`, free of any synthetic bullseye overlay and with honest `R03` pixels) to `9:16` with full-frame moving subject at frame 0 (no Orbit at frame 0), yellow-hook-word opening caption (`0.00–2.40 s`), `9–14 s` title card (*What Happens When Earth's Magnetic Field Flips?*), at most one teaching overlay inside the 16:9 centre band (`11–12%` height, clear of `0–2 s` and `9–14 s`), and end card naming the exact long listing title (`What Happens When Earth's Magnetic Field Flips?`) + seamless loop preroll.\n- **Audio:** Full-length music bed (`magnetic_field_flip_score_bed_v01.mp3`) + house SFX (`kit_v01`passing `sfx_kit.py level`), integrated loudness `~-14 LUFS`, true peak `<= -1.0 dBTP`.\n- **Gates:** Must PASS `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <short1_v01.mp4> --air-date 2026-12-05 --test-a` and `python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <frame0.jpg> --out <sheet.jpg>`. Save outputs on `studio-live` NAS under `10_Shorts/` and commit non-media report/hashes from a clean worktree.\n",
+      "ref": "2fa58588f8",
+      "film": "031",
+      "stage": "edit",
+      "after": "J2387",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T06:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T06:05Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 031 Short 1 (Test A opening lift from v02 master) and pass gate_shorts_open.py --test-a",
+      "due": "2026-12-05T11:30:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Magnetic Field Flip Short (Test A opening lift from the repaired v02 master) and run Shorts checks"
     }
   ],
   "focus": [
