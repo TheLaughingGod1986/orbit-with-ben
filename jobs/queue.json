@@ -201672,9 +201672,14 @@
           "at": "2026-11-08T01:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T01:56Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2357; checking J0912/J2339 evidence and capabilities"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J2339 audio/motion QA, then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "Inspect J0912 and J2339 evidence, standing watch-and-listen rule, and capability state",
       "kind": "review",
       "recheck_of": "J0912",
       "required_capabilities": [
@@ -201697,9 +201702,11 @@
         "of": 3,
         "at": "2026-11-08T01:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2357; checking J0912/J2339 evidence and capabilities"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2358",
