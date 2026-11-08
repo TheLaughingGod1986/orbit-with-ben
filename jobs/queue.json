@@ -77748,6 +77748,11 @@
           "at": "2026-11-08T14:32Z",
           "by": "relay",
           "what": "condition verification queued: J2399"
+        },
+        {
+          "at": "2026-11-08T16:29Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-08T22:28:00Z"
         }
       ],
       "kind": "assembly",
@@ -77771,15 +77776,14 @@
       ],
       "hold": {
         "type": "capability",
-        "condition": "J2392 condition check (jobs/reviews/J2392/REVIEW.md, 6010ec7699): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). However, J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input: live capability_probe.py gemini --record at 2026-11-08T08:17:13Z passed audio_input (0.94) and failed moving_video_input (truth left_to_right red>green>yellow; answer none), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Preserve worker 4/4 and h47 locks; no generation/spend/upload/schedule.",
-        "check_at": "2026-11-08T15:32:00+00:00",
+        "condition": "J2399 condition check (jobs/reviews/J2399/REVIEW.md, 7e3e179229): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). However, J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input: live capability_probe.py gemini --record at 2026-11-08T16:26:45Z passed audio_input (0.93) and failed moving_video_input (truth left_to_right green>blue>yellow; answer none), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Preserve worker 4/4 and h47 locks; no generation/spend/upload/schedule.",
+        "check_at": "2026-11-08T22:28:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "last_recheck": "J2392",
-        "checked_at": "2026-11-08T08:22:44+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2399"
+        "last_recheck": "J2399",
+        "checked_at": "2026-11-08T16:29:16+00:00",
+        "checked_by": "gemini"
       }
     },
     {
