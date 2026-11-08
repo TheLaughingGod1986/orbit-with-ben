@@ -204814,9 +204814,14 @@
           "at": "2026-11-08T09:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T09:48Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2393 condition verification for J2339 (HOS 008 Short A v04)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
+      "remaining_action": "Inspect J2339, J2358 review, and HOS 008 Short A v04 media/hashes on Mini and NAS",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -204836,11 +204841,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-08T09:47Z",
+        "at": "2026-11-08T09:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2393 condition verification for J2339 (HOS 008 Short A v04)"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2394",
