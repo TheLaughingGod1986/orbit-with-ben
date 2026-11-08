@@ -1,5 +1,5 @@
 {
-  "next_id": 2385,
+  "next_id": 2386,
   "jobs": [
     {
       "id": "J0001",
@@ -204040,6 +204040,38 @@
       "remaining_action": "Build £0 R01 (0-4.35s) 97.77-deg sideways Uranus composite and R55 (493.01-505.35s) r55b+PIA01488 passage, run polish_gate and record hashes",
       "kind": "assembly",
       "plain": "Build the zero-cost sideways Uranus opening composite and cloud passage from verified imagery."
+    },
+    {
+      "id": "J2385",
+      "title": "033: watch £0 R01 composite and R55 cloud passage against J2334 scope",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read jobs/reviews/J2334/CHIEF_RULING.md (4ddd1058a0) and J2384 delivery. Actually watch all selected R01 (0.00-4.35s) and R55 (493.01-505.35s) cuts with demonstrated moving_video_input. Record exact SHA-256 hashes, 24fps continuous motion, Uranus 97.77-deg sideways axial tilt and narrow upright rings in R01 (r01_sourced_composite_v01_silent.mp4), cloud continuity and no solid surface in R55 (r55b Cut 1 1.00x + r55b Cut 2 1.28x vortex crop + PIA01488 Cut 3 smooth push-in), R54 chart-to-moving-world separation, <=2.35x upscale, 4-6s picture changes, no static hold >4s, grain, disclosure readiness, and applicable polish_gate/picture_qa checks. Zero spend, zero AI generation. If moving_video_input capability is absent, use a typed capability hold. Commit REVIEW.md under jobs/reviews/ and hand off to the dependent elected-Chief acceptance job before J2299 resumes.",
+      "ref": "J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384",
+      "film": "033",
+      "stage": "picture",
+      "after": "J2384",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T05:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T05:00Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch the rebuilt £0 R01 (0-4.35s) composite and R55 (493.01-505.35s) cloud cuts with moving_video_input and record hashes and PASS/FIX",
+      "kind": "qa",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "plain": "Watch the corrected Uranus opening composite and cloud cuts for visual and scientific accuracy."
     }
   ],
   "focus": [
