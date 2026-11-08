@@ -206949,9 +206949,14 @@
           "at": "2026-11-08T21:03Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Planned 4 steps: 1) read live/scheduled HOS state, 2) audit chapters/sources/end screens/Related, 3) write & commit HOS listing report/fix list, 4) verify & close/park J2413"
+        },
+        {
+          "at": "2026-11-08T21:06Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: lint:package and channel:audit PASS (64 videos, 0 errors: 34 public [6 longs + 28 Shorts], 8 scheduled [2 longs + 6 Shorts], 22 unscheduled private)"
         }
       ],
-      "remaining_action": "Run read-only HOS channel audit and inspect live/scheduled HOS video listings",
+      "remaining_action": "Verify live watch/Shorts pages, end screens, Related links, pinned comments and Studio readbacks for all 34 public and 8 scheduled HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -206964,12 +206969,22 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T21:03Z",
+        "at": "2026-11-08T21:06Z",
         "by": "gemini",
-        "note": "Planned 4 steps: 1) read live/scheduled HOS state, 2) audit chapters/sources/end screens/Related, 3) write & commit HOS "
-      }
+        "note": "Step 1 done: lint:package and channel:audit PASS (64 videos, 0 errors: 34 public [6 longs + 28 Shorts], 8 scheduled [2 l"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     },
     {
       "id": "J2414",
