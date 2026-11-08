@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2382 | mini | open | – | – | chief · Chief: resolve 031 edit orphan-review |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
+| J2384 | mini | open | – | – | 033 picture · assembly · 033: build £0 R01 97.77-deg sourced composite and R55 r55b+PIA01488 cloud passage | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2333 81c6a062ac |
 
 Recently finished:
 
