@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
-| J2275 | mini | open | – | – | 009 picture · for gemini · assembly · `gemini-agy` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
+| J2275 | mini | claimed | gemini | 2026-11-08T22:31Z | 009 picture · for gemini · assembly · `gemini-agy` · HOS 009: fix PR439 tranche-2 runner safety and launch defects | J2200 / HOS PR439 head 1772cd52e63e4060e36d3e2f0dfb321c16d37f12 |
 | J2280 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2220 |  |
 | J2287 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2245 |  |
 | J2289 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2255 |  |
@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2402 | mini | blocked | gemini | – | 031 upload · studio · 031 Magnetic Field Flip: Private upload Long v02 (Wed 2 Dec 18:00) + Shorts 1 & 2 (Sat 5 & 12 Dec 11:30) after J2401 & Ben UAT watch (J2395) | 51c91c6184 |
-| J2404 | mini | claimed | gemini | 2026-11-08T22:01Z | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
+| J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2406 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
 | J2408 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |

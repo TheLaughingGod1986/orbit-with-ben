@@ -195127,10 +195127,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T20:31Z",
+      "eta": "2026-11-08T22:31Z",
       "created_by": "codex",
       "created_at": "2026-11-06T10:39Z",
       "result": "",
@@ -195474,6 +195474,11 @@
           "at": "2026-11-08T18:51Z",
           "by": "gemini",
           "what": "released: Bounded checkpoint 825ad027 pushed to HOS PR #445 (codex/J2275-runner-safety): create_guard enforced in orbit_flow_veo_ui.py, all 14 tranche-1 parent clips verified on local media root, 2 independent parent stills (P02:10_how_high, P03:07_ball_to_moon) confirmed absent in refs/v05_flow_stills and refused by verify_still_inventory; 91 unit tests + check_all.sh PASS. Next run: merge OWB PR #622, verify/mint 2 zero-price parent stills, wire cmd_submit, and re-review J2200."
+        },
+        {
+          "at": "2026-11-08T20:31Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete OWB PR #622 merge, zero-credit parent start stills P02:10_how_high and P03:07_ball_to_moon, cmd_submit wiring, and J2200 re-review",
@@ -206363,10 +206368,10 @@
       "stage": "edit",
       "after": "J2403",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-08T20:01Z",
-      "eta": "2026-11-08T22:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T17:32Z",
       "result": "",
@@ -206395,6 +206400,11 @@
           "at": "2026-11-08T20:16Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Completed moving_video_input and audio_input review across 033 long master v01 (629.42s, 144 cuts), verified all 5 automated gates PASS and all 8 picture_qa WARN frames"
+        },
+        {
+          "at": "2026-11-08T20:31Z",
+          "by": "gemini",
+          "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
         }
       ],
       "remaining_action": "Build 720p UAT watch proxy, verify SHA-256 across NAS and iCloud OWB UAT, write jobs/reviews/J2404/REVIEW.md, and stage for Ben UAT watch",
