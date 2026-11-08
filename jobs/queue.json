@@ -204356,10 +204356,10 @@
       "stage": "edit",
       "after": "J2387",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T08:45Z",
+      "eta": "2026-11-08T10:45Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T06:05Z",
       "result": "",
@@ -204383,6 +204383,11 @@
           "at": "2026-11-08T08:44Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-08T08:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build 031 Short 1 (Test A opening lift from v02 master) and pass gate_shorts_open.py --test-a",
@@ -204397,7 +204402,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T08:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2389",
