@@ -72,3 +72,23 @@ Final approval remains pending: codex could measure the files but had no audio l
 ## J1810 capability validation — 4 November 2026
 
 Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1752 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
+
+## J2381 Long Master `v01` Assembly & Gates — 8 November 2026
+
+Assembled `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v01` (`570.80 s` / `14,270` frames at `25 fps` CFR, `1920x1080`, `yuv420p`, `-14.6 LUFS`, `-1.0 dBTP`) from the 54-row shot list (`SHOT_LIST_v02.md`), completed £0 J2141 picture package, £0 chapter-shaped score bed (`magnetic_field_flip_score_bed_v01.mp3`), and £0 house SFX kit (`06_Sound-Effects/kit_v01`).
+
+- **Master MP4 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v01.mp4` (`SHA-256: 1b90d78270d4f06b436b42e1a31d700171850511cb7790e43a546da2e20bc69b`)
+- **Score Bed MP3 (NAS):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01.mp3` (`SHA-256: 9fe2f87876f9b0bbf1a80fb58d14f2ded4fddf4437efc3a83dfa4e321d0ec71f`)
+- **Handoff & Pack:** `07_Edit-Project/ASSEMBLY_HANDOFF_J2381_v01.md` and `07_Edit-Project/full_master_v01_pack/`
+
+```
+clip_check: 54 rows — PASS
+OK: sentence/card boundaries and end-after-VO checks clear.
+
+picture QA PASS: 0 of 115 cuts fail, 11 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg
+
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+
+SFX level PASS: VO -19.9 LUFS, SFX -45.3 LUFS, 15 hits
+```
+
