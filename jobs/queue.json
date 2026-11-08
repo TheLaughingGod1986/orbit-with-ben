@@ -201773,9 +201773,14 @@
           "at": "2026-11-08T02:15Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2358; reading J2339 record, HOS PR #455 QA_v04.md, and testing moving_video_input capability"
+        },
+        {
+          "at": "2026-11-08T02:17Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified HOS 008 Short A v04 (76d801a3) across Mini/studio-live/NAS, preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633), and HOS PR #455 (72608f30) audio/provenance/1-Hz QA PASS"
         }
       ],
-      "remaining_action": "Read J2339 and HOS 008 Short A v04 QA evidence, probe moving_video_input capability, and resolve or re-hold J2339",
+      "remaining_action": "Complete live capability probe for moving_video_input, write jobs/reviews/J2358/REVIEW.md, and update J2339 hold with --recheck J2358",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -201793,11 +201798,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-08T02:15Z",
+        "at": "2026-11-08T02:17Z",
         "by": "gemini",
-        "note": "Claimed J2358; reading J2339 record, HOS PR #455 QA_v04.md, and testing moving_video_input capability"
+        "note": "Verified HOS 008 Short A v04 (76d801a3) across Mini/studio-live/NAS, preserved v03 (f88315e0), locked VO (40ed4c4e), s06"
       },
       "taskKeys": [
         "HOS:008"
