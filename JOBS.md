@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2406 | mini | claimed | macbook-2 | 2026-11-09T01:24Z | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
-| J2408 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
+| J2408 | mini | claimed | macbook | 2026-11-09T01:25Z | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
 | J2414 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
