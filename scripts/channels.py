@@ -12,7 +12,8 @@ of naming a channel:
   channels.film_keys(text)          {'OWB:033', 'HOS:013'} named in a title or result
   channels.repo_path("hos")         the checkout ($HOS_REPO, else the first ~/YouTube folder that exists)
 
-  python3 scripts/channels.py       list them
+  python3 scripts/channels.py       list them, and which file each came from
+  python3 scripts/channels.py sync  refresh the cached copies from the channels' own checkouts
 """
 from __future__ import annotations
 
@@ -28,19 +29,70 @@ DIR = ROOT / "channels"
 REQUIRED = ("slug", "label", "name", "repo", "title_match", "wip")
 
 
+def _checkout(entry: dict, home_dir: pathlib.Path | None = None) -> pathlib.Path | None:
+    """Where a registry entry's own repo is checked out on this machine, or None."""
+    if entry.get("home"):
+        return ROOT
+    env = os.environ.get(entry.get("env") or "")
+    cands = [pathlib.Path(env)] if env else []
+    names = entry.get("checkouts") or [entry["slug"]]
+    cands += [(home_dir or pathlib.Path.home()) / "YouTube" / n for n in names]
+    cands += [ROOT.parent / n for n in names]
+    return next((c for c in cands if (c / "studio" / "channel.json").is_file()), None)
+
+
+def _check(c: dict, where) -> dict:
+    missing = [k for k in REQUIRED if k not in c]
+    if missing:
+        raise ValueError(f"{where}: bad channel file (missing {missing})")
+    return c
+
+
 @functools.lru_cache(maxsize=None)
 def _load(directory: str = str(DIR)) -> tuple:
+    """Every channel, in order. With a registry (channels/channels.json) each channel's settings come from its own
+    repo's studio/channel.json, or the cached channels/<slug>/channel.json when that repo isn't here. Without one
+    (tests), every channels/*/channel.json."""
+    base = pathlib.Path(directory)
+    reg = base / "channels.json"
     out = []
-    for p in sorted(pathlib.Path(directory).glob("*/channel.json")):
-        c = json.loads(p.read_text())
-        missing = [k for k in REQUIRED if k not in c]
-        if missing or c["slug"] != p.parent.name:
-            raise ValueError(f"{p}: bad channel file (missing {missing} or slug != folder)")
-        out.append(c)
+    if reg.is_file():
+        for entry in json.loads(reg.read_text())["channels"]:
+            co = _checkout(entry) if base == DIR else None
+            src = (co / "studio" / "channel.json") if co else base / entry["slug"] / "channel.json"
+            if entry.get("home") and not co:
+                src = ROOT / "studio" / "channel.json"
+            c = _check(json.loads(src.read_text()), src)
+            if c["slug"] != entry["slug"]:
+                raise ValueError(f"{src}: slug {c['slug']!r} but the registry says {entry['slug']!r}")
+            out.append(dict(c, _source=str(src)))
+    else:
+        for p in sorted(base.glob("*/channel.json")):
+            c = _check(json.loads(p.read_text()), p)
+            if c["slug"] != p.parent.name:
+                raise ValueError(f"{p}: slug != folder")
+            out.append(c)
     out.sort(key=lambda c: (c.get("order", 99), c["slug"]))
     if sum(1 for c in out if c.get("home")) != 1:
         raise ValueError(f"{directory}: exactly one channel must be home")
     return tuple(out)
+
+
+def sync() -> list[str]:
+    """Copy each non-home channel's studio/channel.json from its checkout into the cached channels/<slug>/channel.json."""
+    reg = json.loads((DIR / "channels.json").read_text())["channels"]
+    done = []
+    for entry in reg:
+        co = None if entry.get("home") else _checkout(entry)
+        if co:
+            dest = DIR / entry["slug"] / "channel.json"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            text = (co / "studio" / "channel.json").read_text()
+            if not dest.is_file() or dest.read_text() != text:
+                dest.write_text(text)
+                done.append(entry["slug"])
+    _load.cache_clear()
+    return done
 
 
 def all_channels() -> list[dict]:
@@ -125,9 +177,13 @@ def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
 
 
 def main() -> int:
+    if sys.argv[1:] == ["sync"]:
+        changed = sync()
+        print("cached copies refreshed: " + (", ".join(changed) or "none changed"))
+        return 0
     for c in _load():
         print(f"{c['slug']:<5} {c['label']:<4} {c['name']:<22} {'home ' if c.get('home') else ''}"
-              f"wip {c['wip'].get('limit')} line {c['wip'].get('line')}")
+              f"wip {c['wip'].get('limit')} line {c['wip'].get('line')}  ({c.get('_source', '')})")
     return 0
 
 
