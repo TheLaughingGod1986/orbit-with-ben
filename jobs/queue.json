@@ -198727,13 +198727,13 @@
       "stage": "edit",
       "after": "J2157",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T02:31Z",
-      "eta": "2026-11-08T04:31Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-07T00:07Z",
-      "result": "",
+      "result": "Built 034 Pluto Short 1 Test A opening cut (034_short01_testA_opening_v01.mp4, 37.0 s, 1080x1920 30 fps CFR, sha256 d70031ea19943c70be46bf0084fd71fd4736aebdc730a199b0e83ff1fda402ac) on studio-live NAS per J2364 Option 1A (S01+S02+S03). All 5 gates PASS: gate_shorts_open PASS (-14.0 LUFS / -3.9 dBTP, motion=26.93, f0diff=6.84, cut1=2.4s, vo_onset=0.03s, tail_gap=0.62s), picture_qa PASS (0/12 fails), polish_gate PASS (0/12 fails), sfx_kit level PASS (VO -19.5 LUFS, SFX -38.8 LUFS), thumb_preview PASS + multimodal audio_input/moving_video_input verified. Spend £0; no upload. PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/647",
       "history": [
         {
           "at": "2026-11-07T00:07Z",
@@ -198834,6 +198834,11 @@
           "at": "2026-11-08T03:02Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed non-media build script & 5-gate PASS report on gemini/J2319-short1-v01 (b47cadc037, PR #647); verified audio_input and moving_video_input on 034_short01_testA_opening_v01.mp4"
+        },
+        {
+          "at": "2026-11-08T03:02Z",
+          "by": "gemini",
+          "what": "done: Built 034 Pluto Short 1 Test A opening cut (034_short01_testA_opening_v01.mp4, 37.0 s, 1080x1920 30 fps CFR, sha256 d70031ea19943c70be46bf0084fd71fd4736aebdc730a199b0e83ff1fda402ac) on studio-live NAS per J2364 Option 1A (S01+S02+S03). All 5 gates PASS: gate_shorts_open PASS (-14.0 LUFS / -3.9 dBTP, motion=26.93, f0diff=6.84, cut1=2.4s, vo_onset=0.03s, tail_gap=0.62s), picture_qa PASS (0/12 fails), polish_gate PASS (0/12 fails), sfx_kit level PASS (VO -19.5 LUFS, SFX -38.8 LUFS), thumb_preview PASS + multimodal audio_input/moving_video_input verified. Spend £0; no upload. PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/647"
         }
       ],
       "remaining_action": "Complete J2319 and hand off for review",
@@ -198849,7 +198854,8 @@
         "at": "2026-11-08T03:02Z",
         "by": "gemini",
         "note": "Committed non-media build script & 5-gate PASS report on gemini/J2319-short1-v01 (b47cadc037, PR #647); verified audio_i"
-      }
+      },
+      "done_ref": "b47cadc037"
     },
     {
       "id": "J2320",
