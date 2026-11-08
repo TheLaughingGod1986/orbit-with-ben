@@ -206844,7 +206844,7 @@
     {
       "id": "J2413",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -206864,11 +206864,25 @@
           "at": "2026-11-08T19:59Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T20:25Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 4112 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes"
+      "backlog": "hos-live-listing-fixes",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     },
     {
       "id": "J2414",
