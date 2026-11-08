@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2425 | mini | open | – | – | 025 upload · studio · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2426 | mini | open | – | – | studio · AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap |  |
 | J2427 | any | open | – | – | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
-| J2428 | any | claimed | macbook-2 | 2026-11-09T01:22Z | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
+| J2428 | any | open | – | – | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
 | J2429 | any | claimed | macbook | 2026-11-09T01:23Z | review · Orbit Shorts: break the ~1k ceiling — fix the swipe-away in the first second (stayed-to-watch 30-50%) |  |
 | J2430 | mini | open | – | – | 026 thumbs · chart · OWB 026/027/032: build the J2417 A/B thumbnails (one big object + 2-4 word text) | J2417 |
 
