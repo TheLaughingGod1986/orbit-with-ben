@@ -137,8 +137,6 @@ polish gate PASS: 0 of 9 rows failed, 1 to look at
 picture QA PASS: 0 of 9 cuts fail, 1 to look at
 ```
 
-
-
 ## J2390 Edit Review (`master_v02` + Shorts 1 & 2) — 8 November 2026
 
 Reviewed `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (`J2387`) and Active Short #2 `v01` (`J2389`). Full report in `jobs/reviews/J2390/REVIEW.md`.
@@ -194,3 +192,12 @@ music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM
 polish gate PASS: 0 of 9 rows failed, 1 to look at
 picture QA PASS: 0 of 9 cuts fail, 1 to look at
 ```
+
+
+## J2395 Review of Shorts 1 & 2 (`J2388` + `J2394` `v02`) & UAT Handoff — 8 November 2026
+
+Reviewed `031` Active Short #1 (`J2388`, `031_short_testA_opening_flip_v01.mp4`) and repaired Active Short #2 `v02` (`J2394`, `031_short_sat12_solar_wind_air_v02.mp4`) alongside Long Master `v02` (`J2390` **KEEP**, `SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`):
+- **Short 1 (`J2388`):** **KEEP** (`SHA-256: ebe11bb730ccfab8681d564d3588d17011a28629c7b6f926eba952bfc98c4bcd`, `33.00 s` @ `25 fps` CFR; all 7 gates `PASS`; 13-shot contact sheet verified clean).
+- **Short 2 `v02` (`J2394`):** **KEEP** (`SHA-256: 4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450`, `24.48 s` @ `25 fps` CFR; all 7 gates `PASS`; 9-shot contact sheet verified clean of all 4 `J2390` items; `v01` preserved untouched on NAS).
+- **UAT & R2 Watch Streams:** Built 720p proxy `031_what_happens_when_earths_magnetic_field_flips_master_v02_PHONE.mp4` (`SHA-256: a8c748f68cf2215f224f0d616b145ec45ffe04db4b0bfd305a9541bbc9931c9d`), verified SHA-256 across NAS `studio-live`, NAS `OWB UAT`, and iCloud `OWB UAT`, uploaded Long `v02` (`owb-031-v02`) and Shorts 1 (`owb-j2395-2-v01`) & 2 `v02` (`owb-j2395-3-v02`) to R2, set `jobs.py awaits J2395` for Ben's final watch (`Wed 02 Dec 2026 18:00` London), and advanced `jobs/WIP.json` (`OWB:031` -> UAT; `OWB:J01` enters `active`). Full review: `jobs/reviews/J2395/REVIEW.md`.
+
