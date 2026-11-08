@@ -205896,13 +205896,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T16:47Z",
-      "eta": "2026-11-08T18:47Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T16:43Z",
-      "result": "",
+      "result": "Built 031 Long v02 + Active Shorts 1 & 2 v02 upload packages (PACKAGE_MANIFEST.json, chapters 0:00..8:00, agency/Commons credits, 158-cue en-GB SRT, 608x1080 vertical trailer SHA-256 5e383e859b, PRE_BUILD_VIDIQ_AUDIT sign-off) and verified gate:episode PASS + youtube:package --dry-run PASS (4932b76bb7)",
       "history": [
         {
           "at": "2026-11-08T16:43Z",
@@ -205948,6 +205948,11 @@
           "at": "2026-11-08T17:10Z",
           "by": "gemini",
           "what": "step 4 of 4 done: gate:episode PASS and youtube:package --dry-run PASS on 031 Long v02 + Active Shorts 1 & 2 v02; committed 4932b76bb7"
+        },
+        {
+          "at": "2026-11-08T17:10Z",
+          "by": "gemini",
+          "what": "done: Built 031 Long v02 + Active Shorts 1 & 2 v02 upload packages (PACKAGE_MANIFEST.json, chapters 0:00..8:00, agency/Commons credits, 158-cue en-GB SRT, 608x1080 vertical trailer SHA-256 5e383e859b, PRE_BUILD_VIDIQ_AUDIT sign-off) and verified gate:episode PASS + youtube:package --dry-run PASS (4932b76bb7)"
         }
       ],
       "remaining_action": "Complete J2401",
