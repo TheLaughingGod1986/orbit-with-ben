@@ -205101,6 +205101,11 @@
           "at": "2026-11-08T09:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Condition verification evidence committed in jobs/reviews/J2393/REVIEW.md (4b8a552185). HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633), and HOS PR #455 (72608f30 CLEAN 4/4 CI) verified intact on Mini and NAS; step 2/3 audio_input + 1-Hz sequence QA PASS re-verified via read_file. Step 3/3 continuous 30fps moving_video_input remains unmet (live capability_probe.py gemini --record at 2026-11-08T09:50:53Z passed audio_input 0.88 and failed moving_video_input; corrected capabilities.json). jobs.py wait J2339 --recheck J2393 requires elected Chief (Codex)."
+        },
+        {
+          "at": "2026-11-08T12:48Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Awaiting elected Chief Codex to record --recheck J2393 condition check on J2339 and close J2393",
@@ -205129,7 +205134,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "escalated_at": "2026-11-08T12:48Z"
     },
     {
       "id": "J2394",
