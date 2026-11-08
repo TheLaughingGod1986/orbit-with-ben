@@ -195,6 +195,20 @@ def recently_released(j, at):
     return bool(last and str(last[0].get("what", "")).startswith("released") and stamp
                 and at - stamp < dt.timedelta(minutes=30))
 
+def air_dates(tracker):
+    """{channel key: air timestamp} for every unfinished long with an air date (Ben, 8 Nov 2026, option B: keep the
+    WIP limit, but agents finish the oldest film's work before touching a newer one; oldest = airs first)."""
+    out = {}
+    videos = tracker.get("videos", []) if isinstance(tracker, dict) else []
+    for video in videos if isinstance(videos, list) else []:
+        if not isinstance(video, dict) or video.get("type") != "long" or video.get("lane") in {"done", "live"}:
+            continue
+        key, air = video.get("key", ""), timestamp(((video.get("youtube") or {}).get("publishAt")) or video.get("air"))
+        if isinstance(key, str) and channels.strict_key_re().fullmatch(key) and air:
+            out[key] = min(out.get(key, air), air)
+    return out
+
+
 def near_watch(tracker):
     """Three unfinished longs with the most completed production milestones.
 
@@ -219,7 +233,7 @@ def near_watch(tracker):
     return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
 
 
-def order(j, due, focus=(), at=None, nearest=()):
+def order(j, due, focus=(), at=None, nearest=(), air=None):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
@@ -240,11 +254,15 @@ def order(j, due, focus=(), at=None, nearest=()):
     verification = j.get("recheck_of") if j.get("due_kind") == "condition-verification" else ""
     background = bool(verification and verification not in due)
     deadline = due.get(verification) if verification else due.get(j["id"])
+    backlog = bool(j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I))
+    # Oldest film first: the film that airs soonest gets every free agent before a newer film's work (Ben, 8 Nov 2026).
+    airs = [air[k] for k in production_keys if air and k in air] if not backlog else []
     return (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
+            min(airs).timestamp() if airs else inf,
             0 if production_keys.intersection(nearest) else 1,
             0 if urgent else 1, rank if urgent else 0,
-            1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
+            1 if backlog else 0,
             0 if production_keys.intersection(focus) else 1,
             0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
@@ -366,7 +384,7 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
                     worker = None
             if not worker or not claimable(j, rows, at, worker, chief, execution=execution, capabilities=capabilities):
                 continue
-        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker"))), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
+        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker")), air_dates(data.get("tracker"))), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
 def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False, capabilities=None):
