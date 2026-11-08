@@ -197545,9 +197545,14 @@
           "at": "2026-11-08T13:35Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Step 2 complete: inspected all 42 active stills, borderless/single-globe crops, PDF raster, graphics frame sheet, and both picture_qa WARN frames full size against locked VO lines"
+        },
+        {
+          "at": "2026-11-08T13:37Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3: viewed R01 composite opener, R55 3-cut passage, R03 winter counter, and R05 tilt gauge with moving_video_input (all PASS)"
         }
       ],
-      "remaining_action": "Directly view native R01 opener, R55 3-cut cloud passage, and first batch of 24fps code graphics (R03-R26) with moving_video_input",
+      "remaining_action": "Directly view 24fps code graphics R08, R14, R17, R20, R22, R24, R26, R29 with moving_video_input",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -197563,11 +197568,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-08T13:35Z",
+        "at": "2026-11-08T13:37Z",
         "by": "gemini",
-        "note": "Step 2 complete: inspected all 42 active stills, borderless/single-globe crops, PDF raster, graphics frame sheet, and bo"
+        "note": "Step 3: viewed R01 composite opener, R55 3-cut passage, R03 winter counter, and R05 tilt gauge with moving_video_input ("
       },
       "taskKeys": [
         "OWB:033"
