@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2398 | mini | open (after J2300) | – | – | 033 picture · chief · 033 picture: Chief stage sign-off after J2300 moving-video QA PASS and long assembly release | J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
+| J2401 | mini | open | – | – | 031 upload · listing · 031 Magnetic Field Flip: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer, Shorts manifests) + dry-run | 51c91c6184 |
 
 Recently finished:
 

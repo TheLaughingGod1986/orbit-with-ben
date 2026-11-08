@@ -1,5 +1,5 @@
 {
-  "next_id": 2401,
+  "next_id": 2402,
   "jobs": [
     {
       "id": "J0001",
@@ -205868,6 +205868,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2401",
+      "title": "031 Magnetic Field Flip: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer, Shorts manifests) + dry-run",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build and verify the release upload packages for `031_What-Happens-When-Earths-Magnetic-Field-Flips` Long Master `v02` (`J2390` KEEP, `SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`), Active Short #1 (`J2388`/`J2395` KEEP, `SHA-256: ebe11bb730ccfab8681d564d3588d17011a28629c7b6f926eba952bfc98c4bcd`), and Active Short #2 `v02` (`J2394`/`J2395` KEEP, `SHA-256: 4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450`). £0 spend, no YouTube upload, no visibility change.\n\n### Deliverables\n1. **Resolve `11_Upload-Package/metadata_DRAFT_v01.json` pre-upload holds:**\n   - Write `11_Upload-Package/Chapters/magnetic_field_flip_chapters_v02.txt` and `11_Upload-Package/Descriptions/magnetic_field_flip_long_description_v01.txt` replacing all `?:??` placeholders with the exact `master_v02` chapter timestamps from `cuts_v02.json`: `0:00 The Racing Pole`, `0:36 The Backwards Lava`, `2:05 The Ocean of Liquid Iron`, `3:46 The Dent Over South America`, `5:19 The Tree That Remembered`, `6:33 Why Our Air Stays Put`, `8:00 Poles All Over the Sky`.\n   - Include the 5-source `Sources:` block, exact image/agency credits from `cuts_v02.json` and `07_Edit-Project/HARVEST_POOL_v01.json`, and a truthful making-of line.\n2. **Captions, Pinned Comment, Tags, Titles & Vertical Trailer:**\n   - Generate `11_Upload-Package/Captions/magnetic_field_flip_long_v02_en-GB.srt` (`en-GB`, `<= 42` chars x `2` lines, zero overlaps) from `02_Voiceover/stt/magnetic_field_flip_vo_v02a/stt_raw.json`.\n   - Write `11_Upload-Package/Pinned-Comments/magnetic_field_flip_pinned_v01.txt`, `Tags/magnetic_field_flip_long_tags_v01.txt`, and `Titles/magnetic_field_flip_titles_v01.txt`.\n   - Build `11_Upload-Package/Trailer/magnetic_field_flip_trailer_v01.mp4` (`608x1080`, `25 fps` CFR, `~-14 LUFS`) from `master_v02.mp4` cold open per `STUDIO_PLAYBOOK.md` §12.\n3. **Manifests & Dry-Run Gates (No Upload):**\n   - Write `11_Upload-Package/PACKAGE_MANIFEST.json` pointing to `master_v02.mp4` (`SHA-256: 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43`), approved `J2143`/`J2166` thumbnails A/B/C (`/Users/benjaminoats/_desk/j2143/final/031_A_compass_v03.jpg`, `031_B_real_v04.jpg`, `031_C_bright_v03.jpg`), and schedule `2026-12-02T18:00:00.000Z` (`Wed 2 Dec 2026 18:00` London).\n   - Write upload manifests for Active Short #1 (`10_Shorts/testA_opening_flip/07_Upload-Package/PACKAGE_MANIFEST.json`, `2026-12-05T11:30:00.000Z`) and Active Short #2 `v02` (`10_Shorts/sat12_solar_wind_air/07_Upload-Package/PACKAGE_MANIFEST.json`, `2026-12-12T11:30:00.000Z`).\n   - Run and paste PASS outputs for `cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips` and `cd 07_Content-Ops && npm run youtube:package -- --package ../02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/11_Upload-Package --video /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4 --dry-run` (plus Shorts dry-runs). Do NOT upload to YouTube.",
+      "ref": "51c91c6184",
+      "film": "031",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T16:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T16:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 031 11_Upload-Package + Shorts 1 & 2 upload manifests and run gate:episode + youtube:package --dry-run (no upload)",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "listing",
+      "plain": "Build the 031 Magnetic Field Flip upload package (chapters, credits, captions, vertical trailer, Shorts manifests) and run dry-run checks"
     }
   ],
   "focus": [
