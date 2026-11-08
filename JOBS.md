@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2396 | mini | open | – | – | chief · Chief: resolve 031 pipeline missing-next-step |  |
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2398 | mini | open (after J2300) | – | – | 033 picture · chief · 033 picture: Chief stage sign-off after J2300 moving-video QA PASS and long assembly release | J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
+| J2399 | any | open | – | – | review · Verify condition for J0912 |  |
 
 Recently finished:
 
