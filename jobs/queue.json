@@ -198907,9 +198907,14 @@
           "at": "2026-11-08T14:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T14:08Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2317 (033 Uranus Short 1 Test A opening cut)"
         }
       ],
-      "remaining_action": "Assemble 033 Uranus Short 1 (Test A opening lift 0.00-35s from locked VO + J2300 plates/graphics) and run all Shorts gates",
+      "remaining_action": "Inspect 033 cold-open assets, VO timestamps, and SHORTS_PLAN_v01.md spec",
       "due": "2026-12-18T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Uranus Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
@@ -198924,12 +198929,14 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T14:07Z",
+        "of": 5,
+        "at": "2026-11-08T14:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2317 (033 Uranus Short 1 Test A opening cut)"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2318",
