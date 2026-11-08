@@ -204124,10 +204124,10 @@
       "stage": "picture",
       "after": "J2384",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T05:46Z",
+      "eta": "2026-11-08T07:46Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T05:00Z",
       "result": "",
@@ -204141,6 +204141,11 @@
           "at": "2026-11-08T05:29Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3217 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T05:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Watch the rebuilt £0 R01 (0-4.35s) composite and R55 (493.01-505.35s) cloud cuts with moving_video_input and record hashes and PASS/FIX",
@@ -204157,7 +204162,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T05:46Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2386",
