@@ -204475,6 +204475,11 @@
           "at": "2026-11-08T07:24Z",
           "by": "relay",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (no Claude run for 3332 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-08T07:24Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await J2384 £0 R01/R55 build, J2385 moving_video_input QA and J2386 hash acceptance; then resume source and graphics corrections at 0/5 (R01 0.00-4.35s)",
@@ -204489,8 +204494,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "cursor",
-      "model": "cursor-claude-opus-5-5"
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
