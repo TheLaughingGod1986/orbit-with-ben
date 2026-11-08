@@ -203930,13 +203930,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T05:53Z",
-      "eta": "2026-11-08T07:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T00:45Z",
-      "result": "",
+      "result": "FIX on J2381 v01 (jobs/reviews/J2381/REVIEW.md, 2fa58588f8): removed orphan-review by setting 031 edit to doing and queuing J2387 (master v02 repair), J2388 (Short 1 Test A), J2389 (Short 2 Keeper), and J2390 (031 edit review)",
       "history": [
         {
           "at": "2026-11-08T00:45Z",
@@ -203982,6 +203982,11 @@
           "at": "2026-11-08T06:06Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Queued J2387 (master v02 repair), J2388 (Short 1), J2389 (Short 2), and J2390 (031 edit review); closing J2382 done"
+        },
+        {
+          "at": "2026-11-08T06:06Z",
+          "by": "gemini",
+          "what": "done: FIX on J2381 v01 (jobs/reviews/J2381/REVIEW.md, 2fa58588f8): removed orphan-review by setting 031 edit to doing and queuing J2387 (master v02 repair), J2388 (Short 1 Test A), J2389 (Short 2 Keeper), and J2390 (031 edit review)"
         }
       ],
       "remaining_action": "Complete J2382 after queuing J2387-J2390",
@@ -204001,7 +204006,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "2fa58588f8"
     },
     {
       "id": "J2383",
