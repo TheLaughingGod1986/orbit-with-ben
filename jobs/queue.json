@@ -206895,10 +206895,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-08T22:50Z",
+      "eta": "2026-11-09T00:20Z",
       "created_by": "refill",
       "created_at": "2026-11-08T19:46Z",
       "result": "",
@@ -206912,6 +206912,11 @@
           "at": "2026-11-08T19:47Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 4076 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T22:50Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
@@ -206925,7 +206930,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T22:50Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2412",
