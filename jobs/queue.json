@@ -206564,18 +206564,23 @@
           "at": "2026-11-08T18:55Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2409; checking existing Studio CTR reader tools and CDP browsers"
+        },
+        {
+          "at": "2026-11-08T18:57Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified CDP 9223 (OWB) and 9460 (HOS) analytics tabs; starting Studio lifetime read"
         }
       ],
-      "remaining_action": "Check existing Studio CTR reader script and read OWB & HOS Studio metrics",
+      "remaining_action": "Run Studio lifetime read for OWB (CDP 9223) and HOS (CDP 9460)",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T18:55Z",
+        "at": "2026-11-08T18:57Z",
         "by": "gemini",
-        "note": "Claimed J2409; checking existing Studio CTR reader tools and CDP browsers"
+        "note": "Verified CDP 9223 (OWB) and 9460 (HOS) analytics tabs; starting Studio lifetime read"
       }
     }
   ],
