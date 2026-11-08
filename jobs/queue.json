@@ -204495,13 +204495,13 @@
       "stage": "edit",
       "after": "J2389",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T08:25Z",
-      "eta": "2026-11-08T10:25Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T06:06Z",
-      "result": "",
+      "result": "Reviewed 031 edit package (jobs/reviews/J2390/REVIEW.md, ref 1f42136dce): Long Master v02 (031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4, SHA-256 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43, 570.80 s) is KEEP (all 5 J2382 FIX items resolved, all 5 gates PASS, staged & SHA-256 verified in NAS OWB UAT and iCloud OWB UAT); Short 2 v01 (J2389) is FIX (4 visual defects: synthetic get_nebula_wave/make_cosmic_backdrop 9:16 backdrop, od.arc cartoon curves on R39a/frame0/cover/loop, R39b ghost double-exposure, R42a 9-14s title collision); Short 1 (J2388) due aligned to 2026-12-02 18:00 and chained -> J2394 (Short 2 v02 repair) -> J2395 (Shorts 1 & 2 review + UAT handoff).",
       "history": [
         {
           "at": "2026-11-08T06:06Z",
@@ -204542,6 +204542,11 @@
           "at": "2026-11-08T08:41Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Long Master v02 KEEP (staged in OWB UAT, SHA-256 680598ae3420...); Short 2 v01 FIX (J2394 queued after J2388); chained final Shorts review + UAT handoff queued"
+        },
+        {
+          "at": "2026-11-08T08:41Z",
+          "by": "gemini",
+          "what": "done: Reviewed 031 edit package (jobs/reviews/J2390/REVIEW.md, ref 1f42136dce): Long Master v02 (031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4, SHA-256 680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43, 570.80 s) is KEEP (all 5 J2382 FIX items resolved, all 5 gates PASS, staged & SHA-256 verified in NAS OWB UAT and iCloud OWB UAT); Short 2 v01 (J2389) is FIX (4 visual defects: synthetic get_nebula_wave/make_cosmic_backdrop 9:16 backdrop, od.arc cartoon curves on R39a/frame0/cover/loop, R39b ghost double-exposure, R42a 9-14s title collision); Short 1 (J2388) due aligned to 2026-12-02 18:00 and chained -> J2394 (Short 2 v02 repair) -> J2395 (Shorts 1 & 2 review + UAT handoff)."
         }
       ],
       "remaining_action": "Complete J2390 review",
