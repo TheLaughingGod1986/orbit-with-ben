@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
 | J2417 | any | open | – | – | OWB:026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
+| J2418 | mini | open | – | – | OWB:031 edit · assembly · 031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch |  |
 
 Recently finished:
 

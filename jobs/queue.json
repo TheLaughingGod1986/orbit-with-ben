@@ -1,5 +1,5 @@
 {
-  "next_id": 2418,
+  "next_id": 2419,
   "jobs": [
     {
       "id": "J0001",
@@ -207273,6 +207273,35 @@
       "remaining_action": "OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test)",
       "kind": "listing",
       "plain": "Rewrite the titles and thumbnail words for the next three Orbit long videos so more people click."
+    },
+    {
+      "id": "J2418",
+      "title": "031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben's board tick 8 Nov 2026 10:42Z on J2395.3 (031_short_sat12_solar_wind_air_v02.mp4, SHA-256 4f25b1cd...): CHANGE, his words: \"The video is a short but vertical\". Most likely reading: the Short does not play as a proper full-frame 9:16 vertical (e.g. a 16:9 picture letterboxed or pillarboxed inside the 1080x1920 frame, or the wrong aspect flag). 1) ffprobe the file (width, height, SAR/DAR, rotation) and look at the contact sheet for letterbox/pillarbox bars. 2) Rebuild v03 as true 1080x1920 full-bleed vertical: reframe each shot to fill 9:16 (crop/punch-in, no bars), keep the locked VO, captions and loop. 3) Run all Shorts gates. 4) Put v03 on Ben's watch (awaits_ben) for Sat 12 Dec 11:30. If ffprobe shows it already is clean full-frame 1080x1920, park for Chief with the probe output so Claude can ask Ben what he meant. Do not upload; J2402 uploads only the Long and Short 1. £0.",
+      "ref": "",
+      "film": "OWB:031",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-08T22:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "031 Short 2 v02 (solar wind): fix Ben's change — check 9:16 vertical framing, rebuild v03, back to Ben's watch",
+      "kind": "assembly",
+      "plain": "Fix the second 031 Short after Ben's comment about its shape, then send it back for his watch."
     }
   ],
   "focus": [
