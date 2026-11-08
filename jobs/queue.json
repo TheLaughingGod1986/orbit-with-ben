@@ -206209,13 +206209,13 @@
       "stage": "upload",
       "after": "J2401",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T22:22Z",
-      "eta": "2026-11-09T00:22Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T16:44Z",
-      "result": "Waiting for: Wait for Ben UAT watch OK on 031 Long v02 (J2395.1) and Shorts 1 & 2 (J2395.2, J2395.3), or 24h pre-air fallback at 2026-12-01T18:00:00Z",
+      "result": "Uploaded 031 Long v02 Private as G5uMANXHtNU (publishAt 2026-12-02T18:00:00Z; en-GB captions AUieDaYnyR-dB-0fNEg5cAOWoPdHLUfMy6wL6UyeD6cMZruz serving; Studio T021 A/B/C test armed; End screen Subscribe + Best for viewer 9:10:18-9:30:18 saved) and Short 1 v01 Private as C8lPx5N2DwM (publishAt 2026-12-05T11:30:00Z; custom cover set; gate PASS). Short 2 v02 NOT uploaded per Ben CHANGE on J2395.3. Recorded in 893698ad8f.",
       "history": [
         {
           "at": "2026-11-08T16:44Z",
@@ -206281,6 +206281,11 @@
           "at": "2026-11-08T22:45Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Recorded PACKAGE_UPLOAD_RESULT.md, UPLOADS.json, THUMB_LEDGER.json (T021), and library.json in commit 893698ad8f"
+        },
+        {
+          "at": "2026-11-08T22:46Z",
+          "by": "gemini",
+          "what": "done: Uploaded 031 Long v02 Private as G5uMANXHtNU (publishAt 2026-12-02T18:00:00Z; en-GB captions AUieDaYnyR-dB-0fNEg5cAOWoPdHLUfMy6wL6UyeD6cMZruz serving; Studio T021 A/B/C test armed; End screen Subscribe + Best for viewer 9:10:18-9:30:18 saved) and Short 1 v01 Private as C8lPx5N2DwM (publishAt 2026-12-05T11:30:00Z; custom cover set; gate PASS). Short 2 v02 NOT uploaded per Ben CHANGE on J2395.3. Recorded in 893698ad8f."
         }
       ],
       "remaining_action": "Release 031 upload claim, mark J2402 done, and post thread report",
@@ -206296,7 +206301,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "893698ad8f"
     },
     {
       "id": "J2403",
