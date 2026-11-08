@@ -1,5 +1,5 @@
 {
-  "next_id": 2421,
+  "next_id": 2422,
   "jobs": [
     {
       "id": "J0001",
@@ -207385,6 +207385,35 @@
       "remaining_action": "Review TOPIC.md for the two new Orbit backlog films (062 and 063) in PR #650 under AGENTS.md Rule E",
       "kind": "review",
       "plain": "Review the two new Orbit backlog topics (Phobos crash and Saturn Hexagon storm) from PR #650 against the data and neighbour rules."
+    },
+    {
+      "id": "J2421",
+      "title": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 8 Nov 2026, on 031 Short 2 v02: 'like a rectangle and blurry above and below'. Per-film assemble scripts (e.g. 024 fri06 muons, 031 v02 fixes, J1199 s6) use a boxblur/gblur fill behind a centred 16:9 plate. On a phone that reads as a landscape video, not a Short. 1) Add a check to the Shorts export gates (the shared gate in studio-core, synced by core_sync to HOS too): sample frames every 1 s; in each, compare the top and bottom ~20% bands against the centre (low Laplacian sharpness plus a matching mirrored/blurred copy of the centre = blur-pad) and also catch flat letterbox bars; FAIL if it shows on more than 10% of frames. Unit tests with a synthetic blur-padded clip and a true full-bleed clip. 2) Add one line to the Shorts build rules (AGENTS.md + the rule file sync_rules manages): every Short shot is reframed to fill 1080x1920 full-bleed; no blur pad, no bars. 3) Run the new check over every Short currently scheduled or on Ben's watch (UPCOMING_SHORTS_GATE.md list) and list any that fail. PR, merge when green. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-08T22:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T22:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
+      "kind": "qa",
+      "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2."
     }
   ],
   "focus": [
