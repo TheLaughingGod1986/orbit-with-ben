@@ -206256,18 +206256,23 @@
           "at": "2026-11-08T22:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T22:22Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2402; starting verification of 031 Long v02 and Short 1 v01"
         }
       ],
-      "remaining_action": "Private upload 031 Long v02 (Wed 2 Dec 18:00) + Short 1 v01 (Sat 5 Dec 11:30); Short 2 waits for its fix job",
+      "remaining_action": "Verify SHA-256 and upload package manifests for 031 Long v02 and Short 1 v01",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
       "plain": "Upload 031 Magnetic Field Flip long video and Shorts 1 & 2 as Private scheduled after package dry-run and Ben's UAT watch",
       "progress": {
-        "step": 1,
-        "of": 2,
-        "at": "2026-11-08T17:18Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-08T22:22Z",
         "by": "gemini",
-        "note": "Verified J2401 upload packages & NAS SHA-256 hashes (680598ae34, ebe11bb730, 4f25b1cd9d, 5e383e859b); J2395.1-J2395.3 aw"
+        "note": "Claimed J2402; starting verification of 031 Long v02 and Short 1 v01"
       },
       "taskKeys": [
         "OWB:031"
