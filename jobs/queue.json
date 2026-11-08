@@ -204397,9 +204397,14 @@
           "at": "2026-11-08T07:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T07:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2389; starting step 1 of 4 (inspect plan and assets)"
         }
       ],
-      "remaining_action": "Build 031 Short 2 (Keeper question Short from SHORTS_PLAN_v01) and pass gate_shorts_open.py",
+      "remaining_action": "Inspect SHORTS_PLAN_v01.md, VO, plates, and existing Short 1 build script for 031 Short 2",
       "due": "2026-12-12T11:30:00Z",
       "kind": "assembly",
       "plain": "Build the second Magnetic Field Flip Short (24-25s question Short on solar wind and Earth's atmosphere) and run Shorts checks",
@@ -204414,12 +204419,14 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-08T07:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2389; starting step 1 of 4 (inspect plan and assets)"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2390",
