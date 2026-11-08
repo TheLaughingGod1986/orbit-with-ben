@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2406 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
 | J2408 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
-| J2410 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
+| J2410 | mini | claimed | macbook-2 | 2026-11-08T23:36Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J2411 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS: learn from our data, add two new films to the backlog |  |
 | J2414 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2415 | mini | claimed | gemini | 2026-11-08T22:13Z | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
