@@ -205923,9 +205923,14 @@
           "at": "2026-11-08T16:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T16:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2401; starting 031 upload package build"
         }
       ],
-      "remaining_action": "Build 031 11_Upload-Package + Shorts 1 & 2 upload manifests and run gate:episode + youtube:package --dry-run (no upload)",
+      "remaining_action": "Write 031 chapters, description, credits, SRT captions, tags, titles, pinned comment",
       "due": "2026-12-02T18:00:00Z",
       "kind": "listing",
       "plain": "Build the 031 Magnetic Field Flip upload package (chapters, credits, captions, vertical trailer, Shorts manifests) and run dry-run checks",
@@ -205940,12 +205945,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T16:47Z",
+        "of": 4,
+        "at": "2026-11-08T16:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2401; starting 031 upload package build"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2402",
