@@ -205928,9 +205928,14 @@
           "at": "2026-11-08T16:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2401; starting 031 upload package build"
+        },
+        {
+          "at": "2026-11-08T17:03Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Wrote chapters, description, credits, 158-cue en-GB SRT, tags, titles, pinned comment, and signed PRE_BUILD_VIDIQ_AUDIT"
         }
       ],
-      "remaining_action": "Write 031 chapters, description, credits, SRT captions, tags, titles, pinned comment",
+      "remaining_action": "Build 608x1080 vertical trailer from master_v02 cold open",
       "due": "2026-12-02T18:00:00Z",
       "kind": "listing",
       "plain": "Build the 031 Magnetic Field Flip upload package (chapters, credits, captions, vertical trailer, Shorts manifests) and run dry-run checks",
@@ -205944,11 +205949,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-08T16:48Z",
+        "at": "2026-11-08T17:03Z",
         "by": "gemini",
-        "note": "Claimed J2401; starting 031 upload package build"
+        "note": "Wrote chapters, description, credits, 158-cue en-GB SRT, tags, titles, pinned comment, and signed PRE_BUILD_VIDIQ_AUDIT"
       },
       "taskKeys": [
         "OWB:031"
