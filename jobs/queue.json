@@ -201499,6 +201499,11 @@
           "at": "2026-11-07T07:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1905 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-08T12:28Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6-astra: Gemini is unavailable or lacks required input; next in its chain: codex on gpt-6-astra"
         }
       ],
       "remaining_action": "Verify readiness: J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
@@ -201513,8 +201518,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J2352",
