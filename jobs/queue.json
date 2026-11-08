@@ -205990,10 +205990,10 @@
       "stage": "upload",
       "after": "J2401",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-08T17:12Z",
+      "eta": "2026-11-08T19:12Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T16:44Z",
       "result": "",
@@ -206002,12 +206002,25 @@
           "at": "2026-11-08T16:44Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T17:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J2401 package dry-run and Ben's UAT watch OK on J2395 (or 2026-12-01 18:00Z 24h fallback), then upload Private and read back",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
-      "plain": "Upload 031 Magnetic Field Flip long video and Shorts 1 & 2 as Private scheduled after package dry-run and Ben's UAT watch"
+      "plain": "Upload 031 Magnetic Field Flip long video and Shorts 1 & 2 as Private scheduled after package dry-run and Ben's UAT watch",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T17:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
