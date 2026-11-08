@@ -207846,10 +207846,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-08T23:22Z",
+      "eta": "2026-11-09T01:22Z",
       "created_by": "claude",
       "created_at": "2026-11-08T23:00Z",
       "result": "",
@@ -207858,11 +207858,24 @@
           "at": "2026-11-08T23:00Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T23:22Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30)",
       "kind": "review",
-      "plain": "Make the first 30 seconds of upcoming Orbit videos grab people, because we lose about half the viewers before then."
+      "plain": "Make the first 30 seconds of upcoming Orbit videos grab people, because we lose about half the viewers before then.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-08T23:22Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2429",
