@@ -204975,13 +204975,13 @@
       "stage": "edit",
       "after": "J2394",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T10:17Z",
-      "eta": "2026-11-08T12:17Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T08:41Z",
-      "result": "",
+      "result": "KEEP (aa9ca3d244, jobs/reviews/J2395/REVIEW.md): Verified 031 Short 1 v01 (J2388, ebe11bb730, 33.00s Test A opening) and Short 2 v02 (J2394, 4f25b1cd9d, 24.48s Keeper question) across all 7 automated gates and contact sheets (0 synthetic bullseye/plaid/dot patterns, 0 cartoon arcs, 0 ghost double-exposures, 0 9-14s title collisions). Verified NAS & iCloud OWB UAT SHA-256s alongside Long Master v02 (680598ae34; 720p proxy a8c748f68c), uploaded all 3 cuts to R2 watch store (owb-031-v02, owb-j2395-2-v01, owb-j2395-3-v02), set jobs.py awaits J2395 for Ben's final watch (Wed 2 Dec 18:00 London), and advanced jobs/WIP.json (OWB:031 -> UAT; OWB:J01 enters active).",
       "history": [
         {
           "at": "2026-11-08T08:41Z",
@@ -205042,6 +205042,11 @@
           "at": "2026-11-08T10:31Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Set jobs.py awaits J2395 for Long v02 + Shorts 1 & 2 v02"
+        },
+        {
+          "at": "2026-11-08T10:31Z",
+          "by": "gemini",
+          "what": "done: KEEP (aa9ca3d244, jobs/reviews/J2395/REVIEW.md): Verified 031 Short 1 v01 (J2388, ebe11bb730, 33.00s Test A opening) and Short 2 v02 (J2394, 4f25b1cd9d, 24.48s Keeper question) across all 7 automated gates and contact sheets (0 synthetic bullseye/plaid/dot patterns, 0 cartoon arcs, 0 ghost double-exposures, 0 9-14s title collisions). Verified NAS & iCloud OWB UAT SHA-256s alongside Long Master v02 (680598ae34; 720p proxy a8c748f68c), uploaded all 3 cuts to R2 watch store (owb-031-v02, owb-j2395-2-v01, owb-j2395-3-v02), set jobs.py awaits J2395 for Ben's final watch (Wed 2 Dec 18:00 London), and advanced jobs/WIP.json (OWB:031 -> UAT; OWB:J01 enters active)."
         }
       ],
       "remaining_action": "Complete J2395 and verify live board UAT cards",
@@ -205100,7 +205105,8 @@
           "number": "031",
           "type": "short"
         }
-      ]
+      ],
+      "done_ref": "aa9ca3d244"
     }
   ],
   "focus": [
