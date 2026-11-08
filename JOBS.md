@@ -79,7 +79,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2313 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2317 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Fri 18 Dec 11:30 London; no upload) | J2223 |
 | J2318 | mini | open (after J2300) | – | – | 033 edit · assembly · 033 Uranus Short 2 (Keeper question): build 22-27s Ch 5/6 cut + gates (slot Sat 19 Dec 11:30 London; no upload) | J2223 |
-| J2320 | mini | claimed | gemini | 2026-11-08T05:27Z | 034 edit · for gemini · assembly · `gemini-agy` · 034 Pluto Short 2 (Keeper question): build 22-27s Charon/water-ice cut + gates (slot Wed 23 Dec 11:30 London; no upload) | J2223 |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2333 | mini | open (after J2332) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033: watch R01 and R55 fallback motion against J2306 scope | J2306; PR610 |
