@@ -204824,9 +204824,14 @@
           "at": "2026-11-08T09:49Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified SHA-256 hashes (v04 76d801a3, v03 f88315e0, VO 40ed4c4e, s06 611e2633) across Mini and NAS, J2358/J2392 reviews, and HOS PR #455 (72608f30 CLEAN 4/4 CI)"
+        },
+        {
+          "at": "2026-11-08T09:51Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Re-verified audio/1-Hz sequence on hos_008_short_A_v04.mp4 via read_file; live capability_probe.py gemini --record at 09:50:53Z passed audio_input (0.88) and failed moving_video_input (truth right_to_left blue>yellow>red; answer none)"
         }
       ],
-      "remaining_action": "Run live capability_probe.py gemini --record and inspect default_api:read_file on hos_008_short_A_v04.mp4",
+      "remaining_action": "Write jobs/reviews/J2393/REVIEW.md in an isolated worktree, update J2339 hold (--recheck J2393), finish J2393, and post reports",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -204844,11 +204849,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-08T09:49Z",
+        "at": "2026-11-08T09:51Z",
         "by": "gemini",
-        "note": "Verified SHA-256 hashes (v04 76d801a3, v03 f88315e0, VO 40ed4c4e, s06 611e2633) across Mini and NAS, J2358/J2392 reviews"
+        "note": "Re-verified audio/1-Hz sequence on hos_008_short_A_v04.mp4 via read_file; live capability_probe.py gemini --record at 09"
       },
       "taskKeys": [
         "HOS:008"
