@@ -197535,9 +197535,34 @@
           "at": "2026-11-08T13:30Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2300; starting full-size still and moving-video QA review of 033 picture package"
+        },
+        {
+          "at": "2026-11-08T13:34Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 1 complete: verified 73/73 harvest SHA256SUMS, 20/20 code graphics SHA256SUMS, 0 split words across 67 row boundaries, 32 identity mismatches and 17 exclusions enforced in STILLS_POOL_STATUS_v03.json"
+        },
+        {
+          "at": "2026-11-08T13:35Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2 complete: inspected all 42 active stills, borderless/single-globe crops, PDF raster, graphics frame sheet, and both picture_qa WARN frames full size against locked VO lines"
+        },
+        {
+          "at": "2026-11-08T13:37Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3: viewed R01 composite opener, R55 3-cut passage, R03 winter counter, and R05 tilt gauge with moving_video_input (all PASS)"
+        },
+        {
+          "at": "2026-11-08T13:38Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Step 4: viewed R08, R14, R17, R20, R22, R24, R26, R29 at 24fps with moving_video_input (all PASS)"
+        },
+        {
+          "at": "2026-11-08T13:44Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 5: all 21 moving video clips and 42 active stills verified PASS; Chief relay shows Codex UP so handing protected picture stage sign-off to Chief"
         }
       ],
-      "remaining_action": "Inspect J2299 PR #584 deliverables, row/source map, and hash manifest",
+      "remaining_action": "Write jobs/reviews/J2300/REVIEW.md, update manifests, push J2299/J2300 reconciliation and hand protected stage sign-off to Chief",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -197553,11 +197578,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-08T13:30Z",
+        "at": "2026-11-08T13:44Z",
         "by": "gemini",
-        "note": "Claimed J2300; starting full-size still and moving-video QA review of 033 picture package"
+        "note": "Step 5: all 21 moving video clips and 42 active stills verified PASS; Chief relay shows Codex UP so handing protected pi"
       },
       "taskKeys": [
         "OWB:033"
