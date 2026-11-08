@@ -201778,9 +201778,14 @@
           "at": "2026-11-08T02:17Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified HOS 008 Short A v04 (76d801a3) across Mini/studio-live/NAS, preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633), and HOS PR #455 (72608f30) audio/provenance/1-Hz QA PASS"
+        },
+        {
+          "at": "2026-11-08T02:20Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2358/REVIEW.md (753741c71c) and ran live capability_probe.py gemini --record (audio_input PASS 0.88, moving_video_input FAIL)"
         }
       ],
-      "remaining_action": "Complete live capability probe for moving_video_input, write jobs/reviews/J2358/REVIEW.md, and update J2339 hold with --recheck J2358",
+      "remaining_action": "Update J2339 typed capability hold with --recheck J2358 and close J2358",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -201798,11 +201803,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-08T02:17Z",
+        "at": "2026-11-08T02:20Z",
         "by": "gemini",
-        "note": "Verified HOS 008 Short A v04 (76d801a3) across Mini/studio-live/NAS, preserved v03 (f88315e0), locked VO (40ed4c4e), s06"
+        "note": "Committed jobs/reviews/J2358/REVIEW.md (753741c71c) and ran live capability_probe.py gemini --record (audio_input PASS 0"
       },
       "taskKeys": [
         "HOS:008"
