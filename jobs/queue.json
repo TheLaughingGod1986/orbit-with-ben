@@ -205037,9 +205037,14 @@
           "at": "2026-11-08T10:30Z",
           "by": "gemini",
           "what": "waits on Ben: Watch 031 Short 2 v02 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s) (by 2026-12-01 18:00 London)"
+        },
+        {
+          "at": "2026-11-08T10:31Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Set jobs.py awaits J2395 for Long v02 + Shorts 1 & 2 v02"
         }
       ],
-      "remaining_action": "Set jobs.py awaits J2395 for Long v02 + Shorts 1 & 2 v02 and close J2395 done",
+      "remaining_action": "Complete J2395 and verify live board UAT cards",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the completed 031 Shorts 1 and 2 (v02) and hand off 031 to Ben's UAT watch",
@@ -205053,11 +205058,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-08T10:30Z",
+        "at": "2026-11-08T10:31Z",
         "by": "gemini",
-        "note": "Committed jobs/reviews/J2395/REVIEW.md, watch_uploads.json, production-status.md, and WIP.json (aa9ca3d244)"
+        "note": "Set jobs.py awaits J2395 for Long v02 + Shorts 1 & 2 v02"
       },
       "taskKeys": [
         "OWB:031"
