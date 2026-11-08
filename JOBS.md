@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2382 | mini | open | – | – | chief · Chief: resolve 031 edit orphan-review |  |
+| J2383 | mini | open (after J2320) | – | – | 034 edit · review · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 
 Recently finished:
 
