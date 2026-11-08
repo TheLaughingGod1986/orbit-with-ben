@@ -59,6 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | gemini | 2026-11-08T14:07Z | 2026-11-08T16:06Z | J2317 033 Uranus Short 1 (Test A opening): build 9:16 cold-open cut + gates (slot Fri 18 Dec 11:30 London; no upload) |
+| 033 | edit | gemini | 2026-11-08T14:09Z | 2026-11-08T15:09Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
