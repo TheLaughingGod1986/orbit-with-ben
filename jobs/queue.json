@@ -203977,9 +203977,14 @@
           "at": "2026-11-08T06:04Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Pushed Chief FIX review on J2381 (2fa58588f8); queuing linked 031 edit v02 repair + Shorts 1 & 2 jobs"
+        },
+        {
+          "at": "2026-11-08T06:06Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Queued J2387 (master v02 repair), J2388 (Short 1), J2389 (Short 2), and J2390 (031 edit review); closing J2382 done"
         }
       ],
-      "remaining_action": "Queue linked 031 edit v02 repair, Shorts 1 & 2 builds, and 031 edit review jobs",
+      "remaining_action": "Complete J2382 after queuing J2387-J2390",
       "kind": "chief",
       "handoff": {
         "film": "031",
@@ -203988,11 +203993,11 @@
         "signature": "fb44c3a552be9ce65617"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-08T06:04Z",
+        "at": "2026-11-08T06:06Z",
         "by": "gemini",
-        "note": "Pushed Chief FIX review on J2381 (2fa58588f8); queuing linked 031 edit v02 repair + Shorts 1 & 2 jobs"
+        "note": "Queued J2387 (master v02 repair), J2388 (Short 1), J2389 (Short 2), and J2390 (031 edit review); closing J2382 done"
       },
       "taskKeys": [
         "OWB:031"
