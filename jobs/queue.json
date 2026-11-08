@@ -198953,9 +198953,14 @@
           "at": "2026-11-08T15:10Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All 7 gates PASS on 033_short01_testA_opening_v01.mp4 (7eca952585); mirrored to NAS 10_Shorts and OWB UAT (NAS & iCloud)"
+        },
+        {
+          "at": "2026-11-08T15:10Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Committed _assemble_033_short1_v01.py, SHORT01_TESTA_BUILD_REPORT_v01.md, and production-status.md (576cc79518)"
         }
       ],
-      "remaining_action": "Commit and push J2317 build report and mark done",
+      "remaining_action": "Finish J2317",
       "due": "2026-12-18T10:30:00Z",
       "kind": "assembly",
       "plain": "Build the first Uranus Short (Test A opening lift from the long film's cold open) and run the Shorts quality checks",
@@ -198969,11 +198974,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
         "at": "2026-11-08T15:10Z",
         "by": "gemini",
-        "note": "All 7 gates PASS on 033_short01_testA_opening_v01.mp4 (7eca952585); mirrored to NAS 10_Shorts and OWB UAT (NAS & iCloud)"
+        "note": "Committed _assemble_033_short1_v01.py, SHORT01_TESTA_BUILD_REPORT_v01.md, and production-status.md (576cc79518)"
       },
       "taskKeys": [
         "OWB:033"
