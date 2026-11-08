@@ -120,12 +120,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 4 d | 35 | 55.6% | too few to judge | 191.7% | too few to judge |
-| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 6 d | 130 | 35.2% | MISS | 112.0% | LOOP |
-| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 7 d | 89 | 32.9% | too few to judge | 77.3% | too few to judge |
-| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 8 d | 76 | 26.6% | too few to judge | 52.0% | too few to judge |
-| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 10 d | 270 | 21.7% | MISS | 77.3% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 11 d | 112 | 75.8% | PASS | 68.4% | WATCH |
-| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 12 d | 231 | 29.6% | MISS | 65.2% | WATCH |
+| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 3 d | 36 | 15.6% | too few to judge | 39.1% | too few to judge |
+| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 5 d | 35 | 55.6% | too few to judge | 192.6% | too few to judge |
+| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 7 d | 130 | 35.2% | MISS | 115.3% | LOOP |
+| [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 8 d | 89 | 32.9% | too few to judge | 81.7% | too few to judge |
+| [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 9 d | 78 | 26.6% | too few to judge | 53.6% | too few to judge |
+| [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 11 d | 270 | 21.7% | MISS | 78.6% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 12 d | 114 | 75.0% | PASS | 69.9% | WATCH |
+| [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | 13 d | 231 | 29.6% | MISS | 65.7% | WATCH |
 
 Stayed to watch: 1 of 4 judged Shorts at 60%+. Average viewed: 2 of 4 at 70%+.
