@@ -206294,18 +206294,23 @@
           "at": "2026-11-08T19:27Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Updated _assemble_033_full_master_v01.py with non-negative 2D wave and exact video frame count"
+        },
+        {
+          "at": "2026-11-08T19:38Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: 29 cuts rendered; 143/144 passed picture_qa/polish_gate; re-rendering remaining cut 89 and setting exact 24/1 CFR"
         }
       ],
-      "remaining_action": "Re-render fixed still/video cuts, concat picture_v01.mp4, mux master_v01.mp4, and run all 5 QA gates",
+      "remaining_action": "Re-render cuts 88-89 (row 41), enforce exact 24/1 CFR timestamps on concat, and re-run all 5 gates",
       "due": "2026-12-09T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble 67-row / 144-cut 033 Uranus long master v01 (629.40 s) from verified J2299/J2300/J2398 picture package, locked VO, £0 score bed and house SFX, and pass all 5 gates",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-08T19:27Z",
+        "at": "2026-11-08T19:38Z",
         "by": "gemini",
-        "note": "Updated _assemble_033_full_master_v01.py with non-negative 2D wave and exact video frame count"
+        "note": "29 cuts rendered; 143/144 passed picture_qa/polish_gate; re-rendering remaining cut 89 and setting exact 24/1 CFR"
       },
       "taskKeys": [
         "OWB:033"
