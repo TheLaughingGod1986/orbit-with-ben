@@ -197369,9 +197369,14 @@
           "at": "2026-11-08T11:28Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Resumed J2299 at step 1/5 after step 1 source audit and harvest_J2299_v01 sync"
+        },
+        {
+          "at": "2026-11-08T11:32Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: 72 verified stills/crops synced to harvest_J2299_v01 with SHA256SUMS.txt; 144-cut cuts_033_j2299_v01.json passes picture_qa source check (0 fail, 0 warn)"
         }
       ],
-      "remaining_action": "Reconcile row mappings in SHOT_LIST_v02/STILLS_LOCK_v02 and render 24fps code graphics",
+      "remaining_action": "Render 20 corrected 24fps code graphics (19 active + R26 alias) to NAS and verify",
       "kind": "assembly",
       "plain": "Fix mismatched Uranus pictures and provide the opening footage and graphics for review.",
       "taskKeys": [
@@ -197379,11 +197384,11 @@
       ],
       "escalated_at": "2026-11-07T00:04Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-08T11:28Z",
+        "at": "2026-11-08T11:32Z",
         "by": "gemini",
-        "note": "Resumed J2299 at step 1/5 after step 1 source audit and harvest_J2299_v01 sync"
+        "note": "Step 2 done: 72 verified stills/crops synced to harvest_J2299_v01 with SHA256SUMS.txt; 144-cut cuts_033_j2299_v01.json p"
       }
     },
     {
