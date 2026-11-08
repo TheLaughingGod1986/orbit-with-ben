@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2382 | mini | open | – | – | chief · Chief: resolve 031 edit orphan-review |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2384 | mini | claimed | gemini | 2026-11-08T07:04Z | 033 picture · for gemini · assembly · `gemini-agy` · 033: build £0 R01 97.77-deg sourced composite and R55 r55b+PIA01488 cloud passage | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2333 81c6a062ac |
-| J2385 | mini | open (after J2384) | – | – | 033 picture · qa · 033: watch £0 R01 composite and R55 cloud passage against J2334 scope | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384 |
+| J2385 | mini | open (after J2384) | – | – | 033 picture · for gemini · qa · `gemini-argon` · 033: watch £0 R01 composite and R55 cloud passage against J2334 scope | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384 |
 | J2386 | mini | open (after J2385) | – | – | 033 picture · chief · 033: accept J2334 £0 R01/R55 fallback assets and reopen J2299 at 0/5 | J2334; 4ddd1058a0; jobs/reviews/J2334/CHIEF_RULING.md; J2384; J2385; J2299 |
 
 Recently finished:

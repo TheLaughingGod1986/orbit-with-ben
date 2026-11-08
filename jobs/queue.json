@@ -204121,6 +204121,11 @@
           "at": "2026-11-08T05:00Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T05:29Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3217 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Watch the rebuilt £0 R01 (0-4.35s) composite and R55 (493.01-505.35s) cloud cuts with moving_video_input and record hashes and PASS/FIX",
@@ -204128,7 +204133,16 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "plain": "Watch the corrected Uranus opening composite and cloud cuts for visual and scientific accuracy."
+      "plain": "Watch the corrected Uranus opening composite and cloud cuts for visual and scientific accuracy.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2386",
