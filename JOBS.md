@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2375 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
-| J2393 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
+| J2393 | mini | claimed | gemini | 2026-11-08T16:05Z | for gemini · review · `gemini-argon` · Verify condition for J2339 |  |
 | J2396 | mini | open | – | – | chief · Chief: resolve 031 pipeline missing-next-step |  |
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2398 | mini | open (after J2300) | – | – | 033 picture · chief · 033 picture: Chief stage sign-off after J2300 moving-video QA PASS and long assembly release | J2300 d0ef5372ac; J2299 4736dc0160; J2386 5e68ec6532 |
