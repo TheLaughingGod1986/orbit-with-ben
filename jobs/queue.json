@@ -1,5 +1,5 @@
 {
-  "next_id": 2396,
+  "next_id": 2397,
   "jobs": [
     {
       "id": "J0001",
@@ -205107,6 +205107,40 @@
         }
       ],
       "done_ref": "aa9ca3d244"
+    },
+    {
+      "id": "J2396",
+      "title": "Chief: resolve 031 pipeline missing-next-step",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"031\", \"stage\": \"pipeline\", \"kind\": \"missing-next-step\", \"signature\": \"15b72f9119326ab7f2d6\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-08T10:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T10:33Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 031 pipeline handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "031",
+        "stage": "pipeline",
+        "kind": "missing-next-step",
+        "signature": "15b72f9119326ab7f2d6"
+      }
     }
   ],
   "focus": [
