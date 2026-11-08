@@ -201,3 +201,10 @@ Reviewed `031` Active Short #1 (`J2388`, `031_short_testA_opening_flip_v01.mp4`)
 - **Short 2 `v02` (`J2394`):** **KEEP** (`SHA-256: 4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450`, `24.48 s` @ `25 fps` CFR; all 7 gates `PASS`; 9-shot contact sheet verified clean of all 4 `J2390` items; `v01` preserved untouched on NAS).
 - **UAT & R2 Watch Streams:** Built 720p proxy `031_what_happens_when_earths_magnetic_field_flips_master_v02_PHONE.mp4` (`SHA-256: a8c748f68cf2215f224f0d616b145ec45ffe04db4b0bfd305a9541bbc9931c9d`), verified SHA-256 across NAS `studio-live`, NAS `OWB UAT`, and iCloud `OWB UAT`, uploaded Long `v02` (`owb-031-v02`) and Shorts 1 (`owb-j2395-2-v01`) & 2 `v02` (`owb-j2395-3-v02`) to R2, set `jobs.py awaits J2395` for Ben's final watch (`Wed 02 Dec 2026 18:00` London), and advanced `jobs/WIP.json` (`OWB:031` -> UAT; `OWB:J01` enters `active`). Full review: `jobs/reviews/J2395/REVIEW.md`.
 
+## J2396 Chief Pipeline Resolution (`missing-next-step`) — 8 November 2026
+
+Resolved `{"film": "031", "stage": "pipeline", "kind": "missing-next-step", "signature": "15b72f9119326ab7f2d6"}` (`jobs/reviews/J2396/REVIEW.md`):
+- Reconciled `status.json` `stages.edit` to record the `J2390` (`1f42136dce`) and `J2395` (`aa9ca3d244`) `KEEP` rulings and SHA-256 hashes, and initialized `stages.upload` (`state: "todo"`).
+- Queued the `031` `stage: upload` release-package & dry-run job (`11_Upload-Package/PACKAGE_MANIFEST.json`, chapter times `0:00`, `0:36`, `2:05`, `3:46`, `5:19`, `6:33`, `8:00`, agency credits from `cuts_v02.json`, `en-GB` SRT captions, `608x1080` vertical trailer, Active Shorts 1 & 2 upload manifests, `gate:episode`, and `youtube:package --dry-run` at £0, no YouTube upload) chained to the held Private YouTube upload + Studio finish job (`Wed 2 Dec 2026 18:00` London long + `Sat 5 Dec` & `Sat 12 Dec 11:30` London Shorts, held on Ben's UAT watch `J2395.1`–`J2395.3` until `2026-12-01T18:00:00Z`).
+
+

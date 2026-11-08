@@ -49,12 +49,21 @@
     "edit": {
       "state": "done",
       "ref": "aa9ca3d244",
-      "ruling": "FIX (J2382 acting-Chief review of J2381 v01: remove cosmic_wave_ov bullseye overlay, fix R03/R53 source labels & <=5 stretches cap, render R32 paleo bars, crop R54 PIA20016 bottom caption, update R22 subscribe card, and build Shorts 1 & 2)",
+      "ruling": "KEEP (J2390 1f42136dce on Long Master v02 680598ae34 + J2395 aa9ca3d244 on Short 1 v01 ebe11bb730 & Short 2 v02 4f25b1cd9d; staged in NAS/iCloud OWB UAT and R2 watch store; J2395.1-J2395.3 awaiting Ben's UAT watch)",
       "reviewer": "gemini",
-      "review_job": "J2382",
-      "review_evidence": "jobs/reviews/J2381/REVIEW.md"
+      "review_job": "J2395",
+      "review_evidence": "jobs/reviews/J2395/REVIEW.md",
+      "master_v02_sha256": "680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43",
+      "master_v02_phone_sha256": "a8c748f68cf2215f224f0d616b145ec45ffe04db4b0bfd305a9541bbc9931c9d",
+      "short1_v01_sha256": "ebe11bb730ccfab8681d564d3588d17011a28629c7b6f926eba952bfc98c4bcd",
+      "short2_v02_sha256": "4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450"
+    },
+    "upload": {
+      "state": "todo",
+      "ref": "J2396 (jobs/reviews/J2396/REVIEW.md)",
+      "note": "Release upload package + dry-run queued; Private YouTube upload (Wed 2 Dec 18:00 London long + Sat 5 / Sat 12 Dec 11:30 London Shorts) held on Ben's UAT watch (J2395.1-J2395.3, due 2026-12-01T18:00Z)"
     }
   },
   "claims": [],
-  "next": "Ready for Ben's UAT watch (J2395): Long master v02 (owb-031-v02, airs Wed 2 Dec 18:00 London), Short 1 v01 (owb-j2395-2-v01, Sat 5 Dec 11:30), Short 2 v02 (owb-j2395-3-v02, Sat 12 Dec 11:30)"
+  "next": "Ready for Ben's UAT watch (J2395): Long master v02 (owb-031-v02, airs Wed 2 Dec 18:00 London), Short 1 v01 (owb-j2395-2-v01, Sat 5 Dec 11:30), Short 2 v02 (owb-j2395-3-v02, Sat 12 Dec 11:30); 031 upload package & held Private upload queued (J2396)"
 }
