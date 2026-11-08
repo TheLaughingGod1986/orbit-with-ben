@@ -197493,13 +197493,13 @@
       "stage": "picture",
       "after": "J2299",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T12:13Z",
-      "eta": "2026-11-08T14:13Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T19:43Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-06T19:43Z",
@@ -197560,6 +197560,11 @@
           "at": "2026-11-08T13:44Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Step 5: all 21 moving video clips and 42 active stills verified PASS; Chief relay shows Codex UP so handing protected picture stage sign-off to Chief"
+        },
+        {
+          "at": "2026-11-08T13:53Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Write jobs/reviews/J2300/REVIEW.md, update manifests, push J2299/J2300 reconciliation and hand protected stage sign-off to Chief",
