@@ -203849,9 +203849,14 @@
           "at": "2026-11-08T04:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T04:19Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2382; starting inspection of 031 edit orphan-review"
         }
       ],
-      "remaining_action": "Chief resolves 031 edit handoff and records the next owner/action",
+      "remaining_action": "Inspect 031 edit stage state, related queue jobs, and assembly/review evidence",
       "kind": "chief",
       "handoff": {
         "film": "031",
@@ -203864,9 +203869,11 @@
         "of": 3,
         "at": "2026-11-08T04:19Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2382; starting inspection of 031 edit orphan-review"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2383",
