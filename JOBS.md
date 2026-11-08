@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2414 | any | open | – | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
-| J2417 | any | claimed | macbook-2 | 2026-11-09T00:43Z | 026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
+| J2417 | any | open | – | – | 026 thumbs · listing · OWB 026/027/032: retitle + new thumbnail text in the 'lost/hidden thing, still out there' shape (Orbitra test) |  |
 | J2418 | mini | open | – | – | 031 edit · assembly · 031 Short 2: rebuild as true full-screen vertical (remove the blurred bands above and below), back to Ben's watch |  |
 | J2419 | mini | open | – | – | 024 edit · assembly · 024 muons Short v03: fix Ben's change at 0:19 (stray code under 'light speed'), build v04, back to Ben's watch |  |
 | J2420 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
