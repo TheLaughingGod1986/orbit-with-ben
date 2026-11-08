@@ -1,5 +1,5 @@
 {
-  "next_id": 2387,
+  "next_id": 2388,
   "jobs": [
     {
       "id": "J0001",
@@ -204226,6 +204226,36 @@
       "remaining_action": "Confirm elected authority and hash-specific moving_video_input QA on J2384/J2385 R01/R55 assets; if PASS, accept hashes and reopen J2299 at 0/5 with R01 0-4.35s",
       "kind": "chief",
       "plain": "Decide whether the corrected zero-cost Uranus opening and cloud cuts are ready for picture corrections to resume."
+    },
+    {
+      "id": "J2387",
+      "title": "031 Magnetic Field Flip: repair long master v02 (J2382 FIX on J2381 v01) + all 5 gates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Repair and assemble `031_What-Happens-When-Earths-Magnetic-Field-Flips` long master `v02` (`570.80 s`, `14,270` frames at `25 fps` CFR) per the acting-Chief `FIX` ruling in `jobs/reviews/J2381/REVIEW.md` (`2fa58588f8`). Leave `master_v01.mp4` (`1b90d78270d4...`) and `full_master_v01_pack/` untouched on the `studio-live` NAS.\n\n### Required Fixes for `master_v02`\n1. **Remove `ensure_wave_overlay()` and `cosmic_wave_ov.png` completely (`AGENTS.md` §Reference lessons 1 & §Standing lessons 7):**\n   - Never overlay a synthetic concentric sine-wave bullseye or grid onto dark/low-detail cuts (`R01 c1`, `R03 c2`, `R15 c2`, `R25 c1`, `R25 c3`, `R32 c1`, `R39 c2`, `R50 c1`, `R53 c1`, or any other cut).\n   - Render all cuts cleanly into `full_master_v02_work/cuts/` using real graded space/Earth imagery (`eq`, gamma, crop, or compositing over real approved pool plates).\n2. **Honest `cuts_v02.json` source labels & `<= 5` stretches cap (`AGENTS.md` §Standing lessons 7):**\n   - `R03 c2` (`0:22`) and `R53 c2` (`9:16`) used `svs_3822_magfield_left.mp4` while mislabelling it `nasa_svs_12312_dscovr_epic_earth.mp4` in `ROW_PLAN` (`7` total stretches of `svs_3822_magfield_left.mp4`, exceeding the `max_stretches = 5` limit).\n   - Keep `nasa_svs_3822_magfield_left.mp4` to at most **5 stretches** across the film and replace surplus stretches (e.g. `R03 c2` and `R50 c2` / `R53`) with honest approved pool assets (`nasa_svs_12312_dscovr_epic_earth.mp4`, `nasa_svs_20297_magnetosphere_earth_only.mp4`, `iss030e078095_aurora_timelapse.mp4`, or `eol-aurora_iss_20110911.mp4` within their `<= 5` stretch caps). Every entry in `cuts_v02.json` must match the true pixels of that cut.\n3. **Render real paleointensity comparison bars on `R32` (`5:29`, `AGENTS.md` §Teach on screen):**\n   - Replace the empty white L-axis under `TODAY'S FIELD` on `R32 c1` (`5:29`) with the animated comparison bars from `07_Edit-Project/paleo_comparison_graphics.py` (`TODAY` vs `MILLION-YEAR AVERAGE`, `100,000 YEARS`, `TWICE ITS AVERAGE` synced to `334.02 s`) composited over a graded moving Earth/core background plate.\n4. **Crop out truncated burned-in caption on `R54 c2` (`9:27`, `PIA20016.jpg`):**\n   - Crop or mask `PIA20016.jpg` above its burned-in bottom-left text (`...iv. of Idaho (PIA20016)`) before framing the 16:9 Titan handoff composite, and render the clean house corner credit (`NASA/JPL-Caltech/Univ. of Idaho`).\n5. **Update `R22` subscribe card (`3:27`) for the 2-longs/week cadence (`AGENTS.md` §Locked weekly targets):**\n   - Change line 1 of the `R22` subscribe card from `\"NEW SPACE MYSTERIES EVERY SUNDAY\"` to `\"NEW SPACE MYSTERIES EVERY WEEK\"`.\n\n### Outputs & Gates Required\n- Write `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4` and review pack `07_Edit-Project/full_master_v02_pack/`.\n- Run and paste PASS outputs for all 5 gates (`clip_check.py`, `picture_qa.py`, `music_gate.py`, `sfx_kit.py level`, and delivery loudness `~-14 LUFS` / `-1.0 dBTP` / `0` black frames) and inspect `picture_qa_review.jpg` to verify zero synthetic bullseye/grid overlays and zero truncated source captions.\n",
+      "ref": "2fa58588f8",
+      "film": "031",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-08T06:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-08T06:05Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair 031 long master v02 per J2382 FIX (remove bullseye overlay, fix R03/R53 labels, R32 bars, R54 crop, R22 card) and pass all 5 gates",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Rebuild the 9.5-minute Magnetic Field Flip master v02 fixing the five visual and source-label defects from Chief review"
     }
   ],
   "focus": [
