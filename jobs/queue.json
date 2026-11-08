@@ -203878,6 +203878,11 @@
           "at": "2026-11-08T04:17Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T04:18Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3145 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320)",
@@ -203886,7 +203891,16 @@
         "audio_input",
         "moving_video_input"
       ],
-      "plain": "Review 034 Pluto long master v01 and Shorts 1 and 2 on studio-live NAS before Ben watch."
+      "plain": "Review 034 Pluto long master v01 and Shorts 1 and 2 on studio-live NAS before Ben watch.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
