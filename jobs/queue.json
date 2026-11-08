@@ -205112,13 +205112,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-08T14:05Z",
-      "eta": "2026-11-08T16:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T08:13Z",
-      "result": "parked for Chief: Condition verification evidence committed in jobs/reviews/J2393/REVIEW.md (4b8a552185). HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633), and HOS PR #455 (72608f30 CLEAN 4/4 CI) verified intact on Mini and NAS; step 2/3 audio_input + 1-Hz sequence QA PASS re-verified via read_file. Step 3/3 continuous 30fps moving_video_input remains unmet (live capability_probe.py gemini --record at 2026-11-08T09:50:53Z passed audio_input 0.88 and failed moving_video_input; corrected capabilities.json). jobs.py wait J2339 --recheck J2393 requires elected Chief (Codex).",
+      "result": "HOLD / CONDITION UNMET (jobs/reviews/J2393/REVIEW.md, 68376aeaf2): Elected acting-Chief ruling by gemini. Freshly re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 storm-shed plate (611e2633), and HOS PR #455 (72608f30 CLEAN 4/4 CI) across Mini and NAS. J2339 step 2/3 audio_input + 23-frame 1-Hz sequence/caption/s06 continuity QA PASS re-verified audibly via read_file (capabilities.json recorded audio_input), while step 3/3 continuous 30fps moving_video_input QA remains blocked (read_file on video/mp4 returns 1-Hz sampled frames 00:00..00:22; capability_probe.py video failed; no online worker has moving_video_input). Updated J2339 typed capability hold (--recheck J2393, next check 2026-11-08T20:05:00Z, preserving 2/3 and parent J0912 4/4). Independent Chief review progress recorded via review-progress.",
       "history": [
         {
           "at": "2026-11-08T08:13Z",
@@ -205174,6 +205174,11 @@
           "at": "2026-11-08T14:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T14:05Z",
+          "by": "gemini",
+          "what": "done: HOLD / CONDITION UNMET (jobs/reviews/J2393/REVIEW.md, 68376aeaf2): Elected acting-Chief ruling by gemini. Freshly re-verified HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 storm-shed plate (611e2633), and HOS PR #455 (72608f30 CLEAN 4/4 CI) across Mini and NAS. J2339 step 2/3 audio_input + 23-frame 1-Hz sequence/caption/s06 continuity QA PASS re-verified audibly via read_file (capabilities.json recorded audio_input), while step 3/3 continuous 30fps moving_video_input QA remains blocked (read_file on video/mp4 returns 1-Hz sampled frames 00:00..00:22; capability_probe.py video failed; no online worker has moving_video_input). Updated J2339 typed capability hold (--recheck J2393, next check 2026-11-08T20:05:00Z, preserving 2/3 and parent J0912 4/4). Independent Chief review progress recorded via review-progress."
         }
       ],
       "remaining_action": "Awaiting elected Chief Codex to record --recheck J2393 condition check on J2339 and close J2393",
@@ -205201,7 +205206,8 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "escalated_at": "2026-11-08T12:48Z"
+      "escalated_at": "2026-11-08T12:48Z",
+      "done_ref": "68376aeaf2"
     },
     {
       "id": "J2394",
