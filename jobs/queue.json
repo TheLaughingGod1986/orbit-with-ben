@@ -204819,9 +204819,14 @@
           "at": "2026-11-08T09:48Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2393 condition verification for J2339 (HOS 008 Short A v04)"
+        },
+        {
+          "at": "2026-11-08T09:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified SHA-256 hashes (v04 76d801a3, v03 f88315e0, VO 40ed4c4e, s06 611e2633) across Mini and NAS, J2358/J2392 reviews, and HOS PR #455 (72608f30 CLEAN 4/4 CI)"
         }
       ],
-      "remaining_action": "Inspect J2339, J2358 review, and HOS 008 Short A v04 media/hashes on Mini and NAS",
+      "remaining_action": "Run live capability_probe.py gemini --record and inspect default_api:read_file on hos_008_short_A_v04.mp4",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -204839,11 +204844,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-08T09:48Z",
+        "at": "2026-11-08T09:49Z",
         "by": "gemini",
-        "note": "Claimed J2393 condition verification for J2339 (HOS 008 Short A v04)"
+        "note": "Verified SHA-256 hashes (v04 76d801a3, v03 f88315e0, VO 40ed4c4e, s06 611e2633) across Mini and NAS, J2358/J2392 reviews"
       },
       "taskKeys": [
         "HOS:008"
