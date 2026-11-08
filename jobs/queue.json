@@ -205012,9 +205012,14 @@
           "at": "2026-11-08T10:23Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Short 1 (J2388) and Short 2 v02 (J2394) passed all 7 gates and visual contact-sheet review (KEEP)"
+        },
+        {
+          "at": "2026-11-08T10:27Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Built 031 master_v02_PHONE.mp4 (a8c748f68c), verified NAS & iCloud UAT SHA-256s, and uploaded Long v02 + Shorts 1 & 2 to R2 watch store"
         }
       ],
-      "remaining_action": "Build 031 master_v02 PHONE proxy, upload Long v02 + Shorts 1 & 2 to R2 watch store, and verify UAT copies",
+      "remaining_action": "Write jobs/reviews/J2395/REVIEW.md, commit watch_uploads.json and WIP.json, and set jobs.py awaits on J2395",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the completed 031 Shorts 1 and 2 (v02) and hand off 031 to Ben's UAT watch",
@@ -205028,11 +205033,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-08T10:23Z",
+        "at": "2026-11-08T10:27Z",
         "by": "gemini",
-        "note": "Short 1 (J2388) and Short 2 v02 (J2394) passed all 7 gates and visual contact-sheet review (KEEP)"
+        "note": "Built 031 master_v02_PHONE.mp4 (a8c748f68c), verified NAS & iCloud UAT SHA-256s, and uploaded Long v02 + Shorts 1 & 2 to"
       },
       "taskKeys": [
         "OWB:031"
