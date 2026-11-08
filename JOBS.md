@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2406 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0123 |  |
 | J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
 | J2408 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
+| J2410 | any | open | – | – | script · OWB: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
