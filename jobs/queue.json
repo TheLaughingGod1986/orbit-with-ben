@@ -206623,13 +206623,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-08T23:24Z",
-      "eta": "2026-11-09T01:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T18:09Z",
-      "result": "",
+      "result": "CONDITION SATISFIED / REOPENED J0123 (OWB PR #656, jobs/reviews/J2406/REVIEW.md, 451f39820): Verified Mars long Js6EQJ8qDi8 ('Could a Robot Survive on Mars?') reads back Public (live since 2026-11-08T18:00:15Z) via live YouTube watch page ytInitialPlayerResponse (playabilityStatus=OK, isPrivate=False, isUnlisted=False, lengthSeconds=490), public channel Atom feed, public oEmbed HTTP 200, and J2412 live audit (ef4041a14b). Original v03f master gates (SHA-256 cce6268c) and Ben's 9 Oct UAT approval (ref 6077231242) remain valid. Reopened J0123 with evidence note and updated remaining_action so dependent jobs J0124 and J0135 can proceed once J0123 closes. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-08T18:09Z",
@@ -206660,6 +206660,11 @@
           "at": "2026-11-08T23:38Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done: Step 3/3 complete: reopened J0123 with live Public verification evidence and opened OWB PR #656 (451f39820)"
+        },
+        {
+          "at": "2026-11-08T23:38Z",
+          "by": "macbook-2",
+          "what": "done: CONDITION SATISFIED / REOPENED J0123 (OWB PR #656, jobs/reviews/J2406/REVIEW.md, 451f39820): Verified Mars long Js6EQJ8qDi8 ('Could a Robot Survive on Mars?') reads back Public (live since 2026-11-08T18:00:15Z) via live YouTube watch page ytInitialPlayerResponse (playabilityStatus=OK, isPrivate=False, isUnlisted=False, lengthSeconds=490), public channel Atom feed, public oEmbed HTTP 200, and J2412 live audit (ef4041a14b). Original v03f master gates (SHA-256 cce6268c) and Ben's 9 Oct UAT approval (ref 6077231242) remain valid. Reopened J0123 with evidence note and updated remaining_action so dependent jobs J0124 and J0135 can proceed once J0123 closes. £0 / 0 credits."
         }
       ],
       "remaining_action": "Done: reopened J0123 after verifying Mars long Js6EQJ8qDi8 is Public (PR #656)",
@@ -206682,7 +206687,8 @@
         "at": "2026-11-08T23:38Z",
         "by": "macbook-2",
         "note": "Step 3/3 complete: reopened J0123 with live Public verification evidence and opened OWB PR #656 (451f39820)"
-      }
+      },
+      "done_ref": "451f39820"
     },
     {
       "id": "J2407",
