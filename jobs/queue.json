@@ -204512,9 +204512,14 @@
           "at": "2026-11-08T08:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-08T08:26Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2390; inspecting J2382/J2387/J2388/J2389 and 031 studio-live assets"
         }
       ],
-      "remaining_action": "Review 031 long master v02 and Shorts 1 & 2 on studio-live NAS and prepare UAT handoff for Ben's watch",
+      "remaining_action": "Verify 031 long master v02 against J2382 FIX items and automated gates",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
       "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch",
@@ -204529,12 +204534,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-08T08:25Z",
+        "of": 4,
+        "at": "2026-11-08T08:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2390; inspecting J2382/J2387/J2388/J2389 and 031 studio-live assets"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2391",
