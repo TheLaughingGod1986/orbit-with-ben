@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2422 | mini | open | – | – | studio · Read 'When your viewers are on YouTube' + top countries in Studio for both channels; recommend publish times |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
+| J2425 | mini | open | – | – | 025 upload · studio · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 
 Recently finished:
 
