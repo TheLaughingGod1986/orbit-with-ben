@@ -204365,12 +204365,26 @@
           "at": "2026-11-08T06:06Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-08T06:08Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3257 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review 031 long master v02 and Shorts 1 & 2 on studio-live NAS and prepare UAT handoff for Ben's watch",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
-      "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch"
+      "plain": "Review the repaired 031 Magnetic Field Flip long master v02 and Shorts 1 and 2 before Ben's UAT watch",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
