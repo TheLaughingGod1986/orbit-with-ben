@@ -211592,13 +211592,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-09T22:11Z",
-      "eta": "2026-11-09T23:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:28Z",
-      "result": "",
+      "result": "PR #680: Read-only Studio playlist audit across OWB (CDP 9223, 8 playlists, all 0 lifetime playlist views) and HOS (CDP 9222, 1 playlist, 0 lifetime playlist views) written to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Proposes removing 6 zero-view duplicate/single-episode OWB playlists (PLEs4-0r_LBVQ has 4 Private Shorts; PLH6Vkm2g0-q0 has 3 misfiled Fermi Shorts; PLbTzVnzsyGm4 & PLOgdBQBnJE2o are 1 long + repeat Shorts; PLQLwG0axcZis & PLI1AApUz3qz8 duplicate the 6 Nov playlists), keeping/renaming/reordering the 2 active OWB long playlists (PLdoEpeiktw_Y -> 'Solar System, Moons & Alien Planets Explained' led by Venus & Saturn's Rings + Mars; PLOw2VKzGCOWU -> 'What Happens If You Fall Into Black Holes, Neutron Stars & Extreme Space?' led by Last Star & Neutron Star + Mars), and keeping/renaming/reordering the HOS playlist (PLEbpfUzWzcXU -> 'How We Discovered Atoms, the Periodic Table, Germs & X-Rays | History of Science' led by Periodic Table & Atom + adding Willow Tree VbPubYd6Fbs). Nothing changed in Studio; ready for Ben's OK (removing a playlist never touches its videos). £0.",
       "history": [
         {
           "at": "2026-11-09T21:28Z",
@@ -211629,6 +211629,11 @@
           "at": "2026-11-09T22:19Z",
           "by": "macbook",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-09T22:25Z",
+          "by": "macbook",
+          "what": "done: PR #680: Read-only Studio playlist audit across OWB (CDP 9223, 8 playlists, all 0 lifetime playlist views) and HOS (CDP 9222, 1 playlist, 0 lifetime playlist views) written to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Proposes removing 6 zero-view duplicate/single-episode OWB playlists (PLEs4-0r_LBVQ has 4 Private Shorts; PLH6Vkm2g0-q0 has 3 misfiled Fermi Shorts; PLbTzVnzsyGm4 & PLOgdBQBnJE2o are 1 long + repeat Shorts; PLQLwG0axcZis & PLI1AApUz3qz8 duplicate the 6 Nov playlists), keeping/renaming/reordering the 2 active OWB long playlists (PLdoEpeiktw_Y -> 'Solar System, Moons & Alien Planets Explained' led by Venus & Saturn's Rings + Mars; PLOw2VKzGCOWU -> 'What Happens If You Fall Into Black Holes, Neutron Stars & Extreme Space?' led by Last Star & Neutron Star + Mars), and keeping/renaming/reordering the HOS playlist (PLEbpfUzWzcXU -> 'How We Discovered Atoms, the Periodic Table, Germs & X-Rays | History of Science' led by Periodic Table & Atom + adding Willow Tree VbPubYd6Fbs). Nothing changed in Studio; ready for Ben's OK (removing a playlist never touches its videos). £0."
         }
       ],
       "remaining_action": "Collecting per-playlist video lists and lifetime analytics, then writing 05_Analytics/PLAYLIST_AUDIT_2026-11.md",
