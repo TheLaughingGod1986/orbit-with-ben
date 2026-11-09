@@ -286,6 +286,24 @@ Where a lesson below meets one of them, the rule wins.
 
 **Applies to:** scripts locked from 12 Oct (030 on) for structure and people. Shot lists and cuts from 12 Oct get the picture and sound items, within each film's VO lock. Packaging applies to every new upload package. Nothing that's live, scheduled or approved is reworked.
 
+## First 30 seconds (J2428, 9 Nov 2026)
+
+Ben, 8 Nov 2026: *"Do we need to improve our hook and thumbnails?"* `05_Analytics/owb/REPORT.md` (*Where viewers leave*): still watching at 0:30 = Venus 51%, Saturn rings 33%, Red dwarf 42%, JWST 66%, Alien worlds 48%, Fermi 39%. YouTube rates every one "lower" than similar videos. We lose about half the audience before 0:30. What the openings share (evidence: `00_Brand/Channel-Setup/audits/HOOK_FIRST30_2026-11-09/AUDIT.md`):
+- **A series or channel intro** in the first 20 s: "Today, Orbit is going on a tour… This is exoplanets explained the Orbit way" (Alien worlds), "This is JWST Discoveries the Orbit Way" (JWST), "I'm Orbit — and today we're asking…" (Fermi).
+- **An agenda instead of an answer:** "In this film, I will show you how…" (Venus, about 0:25).
+- **Scene-setting before the question:** Saturn opens on "Look along the sheet" and ring physics, and parks the title's question ("how long do they have left?") for later: "the question we are saving for the rain".
+- **A late payoff image:** the most striking real picture of the subject arrives after the explaining starts, not at frame 0.
+
+**The rule, for every long whose opening isn't yet locked in picture (both channels' houses, where HOS's proof-first rule doesn't already say more):**
+1. **Frame 0** is the single most striking real image of the topic: the thing the title names, moving or pushed, sourced, never a logo, starfield, title card or Orbit.
+2. **Line 1 states the stakes or the mystery in under 8 s**, and it is the title's promise in other words (title *How Long Do Saturn's Rings Have Left?* → line 1 says they are disappearing). Still never "Imagine…".
+3. **No intro of any kind:** no "Today, Orbit…", no "I'm Orbit", no "In this film / in this video I will show you", no series name, no "the Orbit way", no agenda list. Orbit may appear, but never introduces himself or the film.
+4. **Proof first (HOS's rule):** a concrete payoff hint (a number, a real image or a first piece of the answer) lands by 0:20; the first concrete answer to the title still lands before 0:30.
+5. **Cut every 4 s or less in the first 30 s** (seven or more picture changes by 0:30). Lesson 7's first-30-seconds rules still apply (one code graphic in a row at most, real moving imagery between).
+6. **Check:** Chief scores FIRST30 PASS or FAIL in the pack's review note, with the frame-0 still, the line-1 time and the 0:20 payoff time. Any FAIL goes back before OWB UAT.
+
+**Applies to:** 032 Titan, 033 Uranus and 034 Pluto before their picture locks (re-use the locked VO where it meets the rule by trimming or reordering; a re-voiced first sentence is allowed only with the usual VO checks), and every long after them. Uploaded but unaired films (026, 027, 031) may take a re-cut opening only if it moves no slot; see the audit note. Nothing live is reworked.
+
 ## Packaging (Astrum ref, 11 Oct 2026)
 
 **Reference channels (Ben, 4 Nov 2026: melodysheep, SEA, Astrum).** Goal: Shorts to tens of thousands of views, longs to thousands. From these channels we take: sell the real picture (LEARNINGS 18), one clean real-image thumbnail concept (19), named series with playlists and end screens (20, a rule), a monthly 40-60 min journey film made from our longs (21), and one tentpole film a month (22, November is 032). The score already follows the chapters (*Polish pass* 2); a tentpole's bed also lifts at its reveals. The monthly report scores each test against the goal.
