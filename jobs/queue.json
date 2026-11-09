@@ -208650,9 +208650,14 @@
           "at": "2026-11-09T03:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T03:17Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2423; starting 3-step condition verification for J0912 (HOS 008 Short A v04)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J2339 continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3), then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "Verify HOS 008 Short A v04 assets on Mini/NAS, check J2339 and capabilities, and update J0912 wait",
       "kind": "review",
       "recheck_of": "J0912",
       "required_capabilities": [
@@ -208663,11 +208668,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-09T03:16Z",
+        "at": "2026-11-09T03:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2423; starting 3-step condition verification for J0912 (HOS 008 Short A v04)"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2424",
