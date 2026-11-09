@@ -208993,17 +208993,22 @@
           "at": "2026-11-09T04:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and Passed ask/OK card resolution"
+        },
+        {
+          "at": "2026-11-09T04:14Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected video_tracker.py, studio_app.js, board_check.py, UPLOADS.json, and all target jobs; created worktree gemini/J2427"
         }
       ],
-      "remaining_action": "Inspect scripts/video_tracker.py, scripts/kanban_snapshot.py, UPLOADS.json and job records for Passed ask/OK cards",
+      "remaining_action": "Implement upload resolution and merging for passed ask/OK cards in scripts/video_tracker.py",
       "kind": "qa",
       "plain": "Fix the Videos page so cuts Ben passed that are already uploaded stop showing as 'Passed, needs scheduling'.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-09T04:07Z",
+        "at": "2026-11-09T04:14Z",
         "by": "gemini",
-        "note": "Claimed J2427; starting inspection of video_tracker.py and Passed ask/OK card resolution"
+        "note": "Inspected video_tracker.py, studio_app.js, board_check.py, UPLOADS.json, and all target jobs; created worktree gemini/J2"
       }
     },
     {
