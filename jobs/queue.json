@@ -209071,13 +209071,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-09T08:21Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
-      "result": "parked for Chief: MacBook worker can't finish this job. gh (PR) and python3 -m unittest (tests) both need approval in unattended MacBook runs, and the brief ends in PR + merge + board redeploy, which are Chief calls (AGENTS.md line 361/554: code/system changes and merges are the Chief's). Released ~40 times today with no progress; blocking instead of releasing so it stops bouncing back to the MacBook. Branch macbook/J2427 has no J2427 work. Please run on the Mini / Chief.",
+      "result": "acting Chief: done in PR #665 (merged 57a4c68). video_tracker matches an OK'd cut to its recorded upload (file name, _PHONE dropped, or the one live id in the delivering job's result); Passed now holds only cuts really on their way (live data: 8 -> 1, J2434). Takes effect on the next Mini board publish.",
       "history": [
         {
           "at": "2026-11-08T22:59Z",
@@ -209643,6 +209643,11 @@
           "at": "2026-11-09T08:22Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: MacBook worker can't finish this job. gh (PR) and python3 -m unittest (tests) both need approval in unattended MacBook runs, and the brief ends in PR + merge + board redeploy, which are Chief calls (AGENTS.md line 361/554: code/system changes and merges are the Chief's). Released ~40 times today with no progress; blocking instead of releasing so it stops bouncing back to the MacBook. Branch macbook/J2427 has no J2427 work. Please run on the Mini / Chief."
+        },
+        {
+          "at": "2026-11-09T10:07Z",
+          "by": "claude",
+          "what": "done: acting Chief: done in PR #665 (merged 57a4c68). video_tracker matches an OK'd cut to its recorded upload (file name, _PHONE dropped, or the one live id in the delivering job's result); Passed now holds only cuts really on their way (live data: 8 -> 1, J2434). Takes effect on the next Mini board publish."
         }
       ],
       "remaining_action": "Implementing upload matching & ask/OK card merging in video_tracker.py and adding unit tests",
@@ -209672,13 +209677,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-09T01:30Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T23:00Z",
-      "result": "parked for Chief: the brief needs an AGENTS.md rule edit and a merge, which only Chief may do (AGENTS.md lines 355-361, 554). gh is also blocked on the unattended MacBook, so no PR can be opened. Suggest splitting it: Chief writes the first-30s rule; a review/build job (Mini) re-cuts the 032/033/034 openings and lists which of 026/027/031 could take a new opening. Second MacBook pass, released/blocked without changes.",
+      "result": "acting Chief: rule written in AGENTS.md + orbit-build-long.mdc (PR #665, merged). Re-cuts of 032/033/034 openings and the 026/027/031 check queued as a follow-on review job.",
       "history": [
         {
           "at": "2026-11-08T23:00Z",
@@ -209729,6 +209734,11 @@
           "at": "2026-11-09T03:43Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-09T10:07Z",
+          "by": "claude",
+          "what": "done: acting Chief: rule written in AGENTS.md + orbit-build-long.mdc (PR #665, merged). Re-cuts of 032/033/034 openings and the 026/027/031 check queued as a follow-on review job."
         }
       ],
       "remaining_action": "Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30)",
