@@ -208988,16 +208988,22 @@
           "at": "2026-11-09T04:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:07Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and Passed ask/OK card resolution"
         }
       ],
-      "remaining_action": "Inspecting video_tracker.py, UPLOADS.json, and queue.json for exact ask/OK cases",
+      "remaining_action": "Inspect scripts/video_tracker.py, scripts/kanban_snapshot.py, UPLOADS.json and job records for Passed ask/OK cards",
       "kind": "qa",
       "plain": "Fix the Videos page so cuts Ben passed that are already uploaded stop showing as 'Passed, needs scheduling'.",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-09T02:51Z",
-        "by": "macbook"
+        "at": "2026-11-09T04:07Z",
+        "by": "gemini",
+        "note": "Claimed J2427; starting inspection of video_tracker.py and Passed ask/OK card resolution"
       }
     },
     {
