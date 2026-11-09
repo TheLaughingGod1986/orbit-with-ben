@@ -258,8 +258,11 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
-    if job.get("for") in have:  # a job addressed to one agent (a Mini job the MacBook took over): that agent's CLI
-        return job["for"], routing.model_for(job, job["for"])
+    # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
+    # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
+    addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
+    if addressed in have:
+        return addressed, routing.model_for(job, addressed)
     for a, m in routing.job_chain(job):
         if a in have and routing.lane_ok(a, m):
             return a, (m if routing.RUNS_ON.get(m) == a else "")

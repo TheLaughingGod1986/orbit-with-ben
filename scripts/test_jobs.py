@@ -396,6 +396,11 @@ class MacBookTakesTextJobs(unittest.TestCase):
         d["jobs"][5]["body"] = "files in /Users/benjaminoats/_desk/cache/J1/"
         self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, True, False, False, False, False])
 
+    def test_a_text_job_rerouted_to_the_minis_claude_code_is_still_portable(self):
+        # 9 Nov 2026: the relay hands Claude jobs to `claudecode` when Codex/Cursor are out; the MacBook has Claude Code.
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "claudecode"}))
+        self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+
     def test_the_macbook_claims_a_portable_mini_job_and_the_mini_still_can(self):
         d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}))
         j = d["jobs"][0]

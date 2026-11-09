@@ -186,7 +186,7 @@ def film_named(title: str) -> bool:
 # playlists) and Flow/Chrome generation stay Mini-hard.
 # Codex stays off the MacBook when addressed (`for=codex`): one shared Codex account with the Mini (Ben, 6 Nov 2026).
 MACBOOK_KINDS = {"review", "script", "facts", "listing"}
-MACBOOK_CLIS = {"gemini", "claude", "cursor"}
+MACBOOK_CLIS = {"gemini", "claude", "cursor", "claudecode"}  # claudecode: a Mini Claude Code job runs on the MacBook's Claude Code (9 Nov 2026)
 CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
 # Hard Mini signs: local paths, media files, Studio/browser/tooling. Always block, even inside "do not …" notes.
 MINI_HARD = re.compile(
