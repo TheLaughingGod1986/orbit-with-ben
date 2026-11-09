@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2280 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2220 |  |
 | J2287 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2245 |  |
-| J2289 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2255 |  |
+| J2289 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2303 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2199 |  |
