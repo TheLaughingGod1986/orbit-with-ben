@@ -1,0 +1,138 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/_desk/cache/J2384_work/j2384_r01_r55_reel_silent.mp4",
+  "edge_floor": 0.0358,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": 55,
+      "cut": 3,
+      "t": 14.48,
+      "source": "PIA01488.jpg",
+      "why": [
+        "low detail: edge density 0.0343 < film p5 0.0358"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": 1,
+      "source": "r01_sourced_composite_v01_silent.mp4",
+      "t": 2.17,
+      "std": 30.29,
+      "mean": 43.46,
+      "p95": 100.0,
+      "edge": 0.0446,
+      "hf": 6.09,
+      "lf": 29.27,
+      "std8": 29.55,
+      "edge8": 0.0407,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": 55,
+      "source": "r55b_flow_t1_silent.mp4",
+      "t": 6.33,
+      "std": 56.17,
+      "mean": 118.78,
+      "p95": 201.0,
+      "edge": 0.0743,
+      "hf": 7.43,
+      "lf": 52.36,
+      "std8": 54.16,
+      "edge8": 0.4269,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": 55,
+      "source": "r55b_flow_t1_silent.mp4",
+      "t": 10.29,
+      "std": 52.36,
+      "mean": 124.62,
+      "p95": 206.0,
+      "edge": 0.0579,
+      "hf": 6.24,
+      "lf": 48.19,
+      "std8": 50.13,
+      "edge8": 0.4725,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": 55,
+      "source": "PIA01488.jpg",
+      "t": 14.48,
+      "std": 43.52,
+      "mean": 45.17,
+      "p95": 159.0,
+      "edge": 0.0343,
+      "hf": 5.96,
+      "lf": 42.72,
+      "std8": 42.19,
+      "edge8": 0.0667,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.158,
+        "trend_y": 0.714,
+        "max_off_trend_px": 0.112,
+        "reversals": 0,
+        "frames": 84,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0343 < film p5 0.0358"
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 (Ben, 28 Oct 2026: "The external storage we can use our NAS for now").
 
 This runs the AGENTS.md "Render scratch" / "NAS archive" rule that agents used to do by hand:
-  1. pick folders in /private/tmp nobody has touched for --min-age-h hours (default 48: macOS purges /private/tmp
+  1. pick folders in /private/tmp nobody has touched for --min-age-h hours (default 24 since 9 Nov 2026, was 48: macOS purges /private/tmp
      after about 3 days unused, so anything older is at risk there anyway), biggest benefit first, oldest first;
   2. rsync each one to /Volumes/data/mac-mini-archive/mini-tmp-scratch/<date>/<name>/;
   3. SHA-256 every file on both sides and write SHA256SUMS.txt next to the NAS copy;
@@ -12,7 +12,7 @@ It stops once the disk is back over --target-gb free or --max-gb has moved this 
 
 Copies run only in the NAS's 01:00-06:00 window (Ben, 4 Nov 2026): the NAS hard drives sleep outside it, and the
 all-day offloads kept them awake. Outside the window --apply waits, unless the Mini is under NAS_OFFLOAD_DAY_MIN_GB
-(default 8) free. One offload at a time (a lock file); a second one waits.
+(default 20; Ben, 9 Nov 2026: was 8, and the disk reached 3 GB) free. One offload at a time (a lock file); a second one waits.
 
 A retry updates its own earlier copy: a folder whose copy failed its check goes back into that same unverified NAS
 folder instead of a new <name>__N (one folder had reached 13 copies). rsync runs --inplace and is retried (its temp
@@ -49,7 +49,7 @@ MARKER = "MOVED_TO_NAS.txt"
 SUMS = "SHA256SUMS.txt"
 # The NAS's disk window (local time, [start, end) hours): its hard drives sleep outside it (Ben, 4 Nov 2026).
 WINDOW = (1, 6)
-DAY_MIN_GB = float(os.environ.get("NAS_OFFLOAD_DAY_MIN_GB", "8"))  # under this free, a copy may run in the day too
+DAY_MIN_GB = float(os.environ.get("NAS_OFFLOAD_DAY_MIN_GB", "20"))  # under this free, a copy may run in the day too
 LOCK = pathlib.Path(os.environ.get("NAS_OFFLOAD_LOCK", str(HOME / ".nas_offload.lock")))
 RSYNC_TRIES = 3
 # System and tool folders in /private/tmp that are never render scratch.
@@ -272,7 +272,7 @@ def in_window(t: dt.datetime) -> bool:
     return WINDOW[0] <= t.hour < WINDOW[1]
 
 
-def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: float = 48, min_mb: int = 200,
+def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: float = 24, min_mb: int = 200,
             root: pathlib.Path = SCRATCH_ROOT, nas: pathlib.Path = NAS_MOUNT, check_mount: bool = True,
             free=free_mb, clock=dt.datetime.now, lock: pathlib.Path = LOCK) -> dict:
     now = dt.datetime.now(dt.timezone.utc)
@@ -352,7 +352,7 @@ def main(argv=None) -> int:
     ap.add_argument("--apply", action="store_true", help="move (default: dry run)")
     ap.add_argument("--target-gb", type=float, default=20, help="stop once this much is free (default 20)")
     ap.add_argument("--max-gb", type=float, default=60, help="move at most this much per run (default 60)")
-    ap.add_argument("--min-age-h", type=float, default=48, help="only folders untouched this long (default 48)")
+    ap.add_argument("--min-age-h", type=float, default=24, help="only folders untouched this long (default 24)")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     rep = offload(a.apply, a.target_gb, a.max_gb, a.min_age_h)

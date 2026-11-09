@@ -1,0 +1,66 @@
+{
+  "job": "J2089",
+  "threshold_note": "Below 32 catches lifted mosaic voids; not proof of plate quality",
+  "checks": [
+    {
+      "asset_id": "PIA07870",
+      "hashes": "MATCH",
+      "native_dimensions": [
+        2400,
+        2400
+      ],
+      "origins_tested": 3032877,
+      "crop_size": [
+        832,
+        468
+      ],
+      "upscale": 2.3076923076923075,
+      "minimum_below_32_fraction": 0.00013611522024983564,
+      "minimum_dark_crop": [
+        453,
+        1541,
+        1285,
+        2009
+      ],
+      "preview": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07870_minimum_dark_crop.jpg",
+      "preview_sha256": "2f75932af427ebbb74d736607ec611311ec5865a9db52536af3f0fe90826b3aa",
+      "verdict": "MEASUREMENTS_ONLY_REQUIRES_STILL_REVIEW",
+      "not_verified": [
+        "Mosaic seams and actual subject detail",
+        "Rights",
+        "Short exclusion",
+        "Native motion (both are stills)"
+      ]
+    },
+    {
+      "asset_id": "PIA07871",
+      "hashes": "MATCH",
+      "native_dimensions": [
+        1563,
+        1497
+      ],
+      "origins_tested": 753960,
+      "crop_size": [
+        832,
+        468
+      ],
+      "upscale": 2.3076923076923075,
+      "minimum_below_32_fraction": 0.1167046761998685,
+      "minimum_dark_crop": [
+        2,
+        700,
+        834,
+        1168
+      ],
+      "preview": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07871_minimum_dark_crop.jpg",
+      "preview_sha256": "96b80a18128cae49e757f9d1c142e4f170aa7797f9dbc2c6cef7c6bf8b321f1d",
+      "verdict": "MEASUREMENTS_ONLY_REQUIRES_STILL_REVIEW",
+      "not_verified": [
+        "Mosaic seams and actual subject detail",
+        "Rights",
+        "Short exclusion",
+        "Native motion (both are stills)"
+      ]
+    }
+  ]
+}

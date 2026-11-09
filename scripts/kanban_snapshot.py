@@ -604,6 +604,8 @@ def routed_who(kind: str = "", model: str = "") -> str:
     r = _routing()
     if model and model in r.RUNS_ON and not kind:
         return worker_name(r.RUNS_ON[model], model)
+    if kind == "chief" and not model:
+        return "Chief"  # a Chief job goes to whoever is elected (Claude first since 9 Nov 2026), so name the role
     ch = r.job_chain({"kind": kind, "model": model})
     if not ch:
         return ""

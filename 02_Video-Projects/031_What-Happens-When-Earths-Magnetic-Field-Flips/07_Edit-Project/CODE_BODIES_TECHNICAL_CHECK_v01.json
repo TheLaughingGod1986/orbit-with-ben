@@ -1,0 +1,81 @@
+{
+  "job": "J2141",
+  "scope": "R44 body-gravity component only",
+  "technical_result": "PASS",
+  "media": "/Users/benjaminoats/_desk/J2141-bodies-render-v01/code_graphic_031_r44_gravity_bodies_v01.mp4",
+  "sha256": "bdd3d8c837f75ec90760ccb02e424320a556defcb5e4cdf2c0ab1c37c03aa3b0",
+  "bytes": 179943,
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "25/1",
+    "pixel_format": "yuv420p",
+    "frames": "57",
+    "duration_s": 2.28
+  },
+  "full_decode": "PASS",
+  "locked_cue": [
+    {
+      "text": "with",
+      "start": 449.92,
+      "end": 450.08,
+      "type": "word",
+      "logprob": -1.0728830375228426e-06
+    }
+  ],
+  "input_checks": [
+    {
+      "asset_id": "as17-148-22727",
+      "path": "/Users/benjaminoats/_desk/J2141-bodies-v01/as17-148-22727.jpg",
+      "sha256": "cb4c3d2da98ee72130ebfd2ea472fc84ede6726002c2a8c9cabd86e4deea9f0f",
+      "source_evidence_sha256": "7001750c0109607364f50fa0dfcf3c3a3d67e52d9ee9f9116d195a5db224d65f",
+      "planned_appearances": 1,
+      "maximum": 2
+    },
+    {
+      "asset_id": "PIA00407",
+      "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/harvest_v01/PIA00407.jpg",
+      "sha256": "076d0be8f7cf603f05e8b7281709400d9d39f21c6f615e8e385b8dfffc9bafdd",
+      "source_evidence_sha256": "8ff2faa27372889724d4ce239d1154b44739a389f9233bb9fddfcd03cfcfe380",
+      "planned_appearances": 2,
+      "maximum": 2
+    }
+  ],
+  "encoded_frame_samples": [
+    {
+      "time_s": 0,
+      "mean_luma": 39.71418788580247,
+      "decoded_rgb_sha256": "bdee5992b982216a726c4d80e66a2f0a34634177403c38428c033f204005b42c"
+    },
+    {
+      "time_s": 0.4,
+      "mean_luma": 44.18230179398148,
+      "decoded_rgb_sha256": "58e0997a5543272906685af4921233dc455fa2f070ab8b18070248d72a6ca840"
+    },
+    {
+      "time_s": 0.96,
+      "mean_luma": 45.670119116512346,
+      "decoded_rgb_sha256": "677e3cea9a68f4cb360078cfa798aea558fd7c1ffa08bd5bad3f4b8f0e238b24"
+    },
+    {
+      "time_s": 1.44,
+      "mean_luma": 46.017368827160496,
+      "decoded_rgb_sha256": "f7ecc88d312e58c7e2318dad35e354a0246c2553fce9cccf3bf3db9ca1088242"
+    },
+    {
+      "time_s": 2.2,
+      "mean_luma": 40.79556520061728,
+      "decoded_rgb_sha256": "0a81422a912a580212a9c713f6334fdaede706a063d3d98a74d3ae9a67970063"
+    }
+  ],
+  "contact_sheet": "/Users/benjaminoats/_desk/J2141-bodies-render-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "5f61477cbeb98b47660894305994057dd118f70000fb1d35c41f72851b85a05e",
+  "limitations": [
+    "No audio or actual moving-video perception demonstrated",
+    "Static frame inspection and decode checks do not approve motion, pacing or whole-film QA",
+    "Use instead of original alpha gravity component; no duplicate adjacent graphic",
+    "Final assembly must keep PIA00407 within two appearances and real moving footage between diagrams",
+    "Equal-diameter icons identify bodies, not relative planet sizes"
+  ],
+  "spend_gbp": 0
+}

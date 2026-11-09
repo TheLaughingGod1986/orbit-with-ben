@@ -49,6 +49,20 @@ STALE = [
     (r"Claude\*\* \| Cloud sessions \| .*Can't reach the Mini", "Claude Code is on the Mini; routing by job kind (11 Oct 2026)"),
     (r"Standing order \(Ben, 2–3 Oct 2026\): ask Claude first", "ask Chief first; Chief holds Claude's old role (9 Oct 2026)"),
     (r"Otherwise code jobs when Ben starts it", "Codex is a routed worker (gpt-6-astra for charts), 11 Oct 2026"),
+    (r"Three Shorts \(22–27 s\) on Mon, Wed and Fri", "4 Orbit Shorts a week Mon/Wed/Fri/Sat (Ben cadence lock, 7 Nov 2026)"),
+    (r"\*\*Two OWB longs a week \(Ben, 4 Nov 2026\)\.\*\*", "Weekly publish cadence locked 7 Nov 2026 (Orbit + HOS)"),
+    (r"four columns: \*\*To do · In progress · Scheduled · Live\*\*",
+     "Videos tab uses nine lanes Backlog→…→UAT→Passed→…→Post-live (Ben, 7 Nov 2026)"),
+    (r"cut's card in \*\*Ready for OK\*\*",
+     "Ben's watch lane is Videos → UAT (Ben, 7 Nov 2026)"),
+    (r"Media on the Mini or the NAS reaches it only through the shared folder",
+     "Working films live on studio-live; File Sharing shared is not the film library (7 Nov 2026)"),
+    (r"The shared folder `~/_desk/shared` \(Mini\) = `/Volumes/shared` \(MacBook\) passes files between them",
+     "File Sharing shared is empty / not the film library; use studio-live (7 Nov 2026)"),
+    (r"## NAS archive \(5 Oct 2026\)",
+     "Heading is Film folders on the NAS (studio-live + archive) (7 Nov 2026)"),
+    (r"invent a Tailscale or SMB share|new Tailscale file share|/Volumes/shared` as the film",
+     "Do not invent a third share; studio-live + mac-mini-archive only (7 Nov 2026)"),
 ]
 BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
