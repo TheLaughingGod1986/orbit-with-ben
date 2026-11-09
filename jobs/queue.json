@@ -207855,10 +207855,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T02:17Z",
+      "eta": "2026-11-09T04:17Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -208477,6 +208477,11 @@
           "at": "2026-11-09T02:18Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-09T04:18:10Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-09T02:17Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "reading shared shorts gate; then add blur-pad check, tests, rule line, scan",
