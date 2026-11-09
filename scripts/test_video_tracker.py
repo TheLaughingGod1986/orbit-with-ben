@@ -389,3 +389,28 @@ class LiveMapping(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PastNotes(unittest.TestCase):
+    """Ben, 8 Nov 2026: a re-sent cut lists what he flagged last time."""
+    NOW = datetime(2026, 11, 9, tzinfo=timezone.utc)
+
+    def test_a_change_on_an_older_version_shows_under_the_new_cut(self):
+        old = {"verdict": "change", "version": "v02", "at": "2026-11-08T10:42:51Z",
+               "fixes": [{"t": "", "text": "like a rectangle and blurry above and below"}]}
+        self.assertEqual(vt.past_notes((old, "v03")),
+                         [{"version": "v02", "at": "2026-11-08T10:42:51Z",
+                           "notes": [{"t": "", "text": "like a rectangle and blurry above and below"}]}])
+        self.assertEqual(vt.past_notes((old, "v02")), [], "the cut still being fixed isn't a past problem")
+        self.assertEqual(vt.past_notes(({"verdict": "ok", "version": "v01"}, "v03")), [])
+
+    def test_a_fix_job_under_its_own_id_carries_the_old_notes_via_prev(self):
+        checks = {"OWB-J2395.3": {"verdict": "change", "version": "v02", "at": "2026-11-08T10:42:51Z",
+                                  "fixes": [{"t": "", "text": "blurry above and below"}]}}
+        card = vt.apply_ask({"key": "OWB:ASK:J2418", "title": "Short 2"},
+                            {"id": "J2418", "job": "J2418", "jobStatus": "blocked", "what": "Watch 031 Short 2 v03",
+                             "file": "OWB UAT/x.mp4", "version": "v03", "channel": "OWB", "prev": ["OWB-J2395.3"],
+                             "fixed": ["Rebuilt full-screen 1080x1920"]}, checks, self.NOW)
+        self.assertEqual(card["pastNotes"][0]["notes"][0]["text"], "blurry above and below")
+        self.assertEqual(card["fixedNotes"], ["Rebuilt full-screen 1080x1920"])
+

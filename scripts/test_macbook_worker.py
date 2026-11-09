@@ -39,7 +39,7 @@ class Guards(unittest.TestCase):
     def test_round_the_clock_by_default(self):
         self.assertTrue(mw.in_hours(dt.datetime.fromisoformat("2026-10-29T14:00:00+00:00")))  # Thu afternoon
         self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=T0), [])  # Wed noon
-        self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=T0)))  # Ben at the keys
+        self.assertEqual(mw.guards(AC, IDLE_1, free_gb=100, now=T0), [])  # Ben at the keys: slot 1 runs in the background
 
     def test_hours_are_weeknights_and_weekends_london(self):
         os.environ["MACBOOK_HOURS"] = "night"
@@ -64,8 +64,16 @@ class Guards(unittest.TestCase):
     def test_battery_in_use_and_low_disk_each_stop_it(self):
         why = mw.guards(BATT, IDLE_1, free_gb=3, now=WED_NIGHT)
         self.assertTrue(any("battery" in w for w in why))
-        self.assertTrue(any("in use" in w for w in why))
         self.assertTrue(any("disk low" in w for w in why))
+        with mock.patch.dict(os.environ, {"MACBOOK_BUSY_OK": "0"}):  # the old rule: nothing while Ben is at the keys
+            self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=WED_NIGHT)))
+        with mock.patch.object(mw, "SLOT", 2), mock.patch.object(mw.os, "cpu_count", return_value=10):
+            self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=WED_NIGHT, load=1.0)))
+
+    def test_a_job_while_ben_is_at_the_keys_runs_at_background_priority(self):
+        with mock.patch.object(mw.shutil, "which", return_value="/usr/sbin/taskpolicy"):
+            self.assertEqual(mw.busy_cmd(["codex", "exec"], idle_min=1)[:2], ["taskpolicy", "-b"])
+            self.assertEqual(mw.busy_cmd(["codex", "exec"], idle_min=30), ["codex", "exec"])
 
     def test_pause_file_stops_it(self):
         (mw.STATE / "macbook-worker.pause").write_text("")
@@ -141,6 +149,63 @@ class BackToMain(unittest.TestCase):
             self.assertEqual(run("branch", "--show-current"), "main")
             self.assertIn("macbook-worker autostash macbook/j1194-work", run("stash", "list"))  # kept, not lost
 
+    def test_its_own_clone_left_dirty_on_main_stashes_so_the_next_claim_works(self):
+        # 8 Nov 2026: a job left the slot's main dirty and `jobs.py next --git` refused every later claim.
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
+                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            (r / "half_done.md").write_text("unfinished\n")
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+                self.assertEqual(mw.pull_main(), "")
+            run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
+            self.assertEqual(run("status", "--porcelain"), "")
+            self.assertIn("macbook-worker autostash main", run("stash", "list"))  # kept, not lost
+
+    def test_bens_dirty_checkout_is_never_stashed(self):
+        with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            (r / "bens_work.md").write_text("mine\n")
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+                mw.pull_main()
+            self.assertTrue((r / "bens_work.md").exists())
+            self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
+
+    def test_it_pulls_origin_main_by_name(self):
+        # 8 Nov 2026: slot 2's clone had two branch.main.merge entries and a bare `git pull` failed with
+        # "Cannot fast-forward to multiple branches"; every pull names origin main.
+        src = pathlib.Path(mw.__file__).read_text()
+        self.assertNotIn('"pull", "-q", "--ff-only"]', src)
+        self.assertIn('"pull", "-q", "--ff-only", "origin", "main"]', src)
+
+    def test_a_quick_clean_exit_with_the_job_still_open_pauses_the_agent(self):
+        # 9 Nov 2026: claude (out of usage) exited 0 in about a minute, and J2421 was claimed and released every minute.
+        self.assertTrue(mw.failed_run(0, 45, True))
+        self.assertFalse(mw.failed_run(0, 45, False), "finished the job quickly: fine")
+        self.assertFalse(mw.failed_run(0, 900, True), "worked a while and left it open: picked up again, not paused")
+        self.assertFalse(mw.failed_run(124, 1500, True), "hit the cap: slow, not broken")
+        self.assertTrue(mw.failed_run(1, 900, True))
+
+    def test_its_own_clone_ahead_of_github_after_a_good_pull_is_rescued(self):
+        # 9 Nov 2026: the pull succeeded but main kept an unpublished queue commit, and every claim refused.
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
+                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            calls = []
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), \
+                    mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
+                self.assertEqual(mw.pull_main(), "")
+            self.assertEqual(calls, [r])
+
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
                 mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
@@ -205,6 +270,12 @@ class AllAgents(unittest.TestCase):
     def test_a_kind_with_no_installed_lane_falls_back_to_any_installed_cli(self):
         self.assertEqual(mw.pick_agent({"kind": "vo"}, ["claude"]), ("claude", ""))
 
+    def test_a_job_for_the_minis_claude_code_runs_on_the_macbooks_claude(self):
+        self.assertEqual(mw.pick_agent({"kind": "review", "for": "claudecode"}, ["codex", "claude"])[0], "claude")
+
+    def test_a_studio_job_uses_claude_when_the_chain_reaches_the_minis_claude_code(self):
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"])[0], "claude")
+
     def test_pin_keeps_the_old_single_agent_setting(self):
         with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
             self.assertEqual(mw.pick_agent({"kind": "review"}, ["codex", "claude"])[0], "codex")
@@ -221,6 +292,16 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(c[:3], ["/bin/claude", "-p", "P"])  # prompt before the variadic --add-dir lists
             self.assertNotEqual(c[-1], "P")
             self.assertIsNone(mw.agent_cmd("grok", "P"))
+
+    def test_unattended_claude_may_run_tests_and_open_a_pr_but_not_merge(self):
+        # J2427 bounced ~40 times on 9 Nov: unittest and gh pr create needed approval with nobody at the Mac.
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+        allowed = c[c.index("--allowedTools") + 1].split(",")
+        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)"):
+            self.assertIn(rule, allowed)
+        self.assertFalse(any("merge" in r for r in allowed))
+        self.assertLess(c.index("--allowedTools"), c.index("--add-dir"))
 
     def test_a_failed_cli_is_paused_and_skipped(self):
         import tempfile

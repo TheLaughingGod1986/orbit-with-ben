@@ -775,6 +775,12 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
+  // 8 Nov 2026: an open studio job after a finished one, titled "... stage for Ben UAT watch", is not Needs attention.
+  const ovStage = t.overview({tracker: {videos: []}, machines: {machines: []}, progress24h: {hours: 24, films: [
+    {film: 'OWB:033', title: 'Uranus', jobs: 1, items: [{id: 'J2404', title: '033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch',
+      status: 'open', stage: 'edit', after: 'J2403', progress: {step: 2, of: 4}}]}], focus: ['OWB:033'],
+    glance: {doneToday: 0, left: 1, blocked: 0, blockedJobs: []}}}, Date.parse('2026-11-08T22:41:00Z'));
+  assert(!ovStage.includes('Needs attention'), 'an open job that will stage a watch for Ben is not a can\'t-run job');
   assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'), 'Machines sit above Active jobs');
   assert(ov.includes('Active jobs'), 'Active jobs section uses the cleaner label');
   assert(!ov.includes('overview-agents') && !ov.includes('Agents</h2>'), 'Overview home does not repeat the Agents tab');
@@ -1279,3 +1285,19 @@ console.log('Working checklist hierarchy order OK');
   assert.equal(t.summary({...sb, owb: {jobs: [{id: 'J2165', status: 'claimed'}]}}, NOW).jobs.working, 2);
 }
 console.log('Jobs running count checks OK');
+
+// Ben, 8 Nov 2026: a re-sent cut shows what he flagged last time under the player.
+{
+  const b = {tracker: {videos: [{key: 'OWB:ASK:J2418', channel: 'OWB', number: '031', title: 'Solar wind Short', type: 'short', lane: 'ready',
+    readyFor: 'Ben', version: 'v03', ask: {id: 'J2418'}, watch: {url: 'https://x/api/watch?v=a', version: 'v03'},
+    pastNotes: [{version: 'v02', at: '2026-11-08T10:42:51Z', notes: [{t: '', text: 'like a rectangle and blurry above and below'}]}],
+    fixedNotes: ['Rebuilt full-screen 1080x1920, no blurred bands']}]}};
+  const page = t.uat(b, 'OWB:ASK:J2418');
+  assert(page.includes('What you flagged last time') && page.includes('On v02') && page.includes('blurry above and below'),
+    'the watch page lists the earlier change notes');
+  assert(page.includes('What the agents changed') && page.includes('no blurred bands'), 'and what the agents changed');
+  const fresh = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: [], fixedNotes: []})]}}, 'OWB:ASK:J2418');
+  assert(!fresh.includes('What you flagged last time'), 'a first-time cut has no past-problems box');
+  console.log('UAT past problems OK');
+}
+

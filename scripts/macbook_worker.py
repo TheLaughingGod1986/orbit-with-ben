@@ -10,7 +10,8 @@ Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
     MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
   - no pause file (~/_desk/state/macbook-worker.pause), and no other run of this script in progress;
   - the MacBook is on mains power (never drains the battery);
-  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10);
+  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10) for slot 2; slot 1 also
+    runs while Ben is using the Mac, at background priority (Ben, 9 Nov 2026; MACBOOK_BUSY_OK=0 turns that off);
   - at least MACBOOK_MIN_FREE_GB free on the disk (default 15).
 Then it pulls both checkouts, claims the oldest `macbook` job with
   jobs.py next --agent macbook --can macbook --git
@@ -163,7 +164,11 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None, load=None) ->
         why.append("on battery")
     need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
     idle = idle_minutes(ioreg_out)
-    if idle < need:
+    # Ben, 9 Nov 2026: "I want the MacBook Pro to be picking up as many jobs as the Mac Mini". On mains, slot 1 also works
+    # while he is using the Mac, at background priority (taskpolicy -b, see busy_cmd); slot 2 still waits for idle.
+    # MACBOOK_BUSY_OK=0 brings back the old rule (no job at all while he is at the keys).
+    busy_ok = SLOT == 1 and os.environ.get("MACBOOK_BUSY_OK", "1") != "0"
+    if idle < need and not busy_ok:
         why.append(f"in use ({idle:.0f} min idle, needs {need:.0f})")
     free = free_gb if free_gb is not None else shutil.disk_usage(str(HOME)).free / 1024 ** 3
     floor = float(os.environ.get("MACBOOK_MIN_FREE_GB", "15"))
@@ -231,6 +236,15 @@ def mark_down(agent: str, now: dt.datetime | None = None) -> str:
     return until
 
 
+def failed_run(code: int, seconds: float, still_open: bool) -> bool:
+    """Pause the CLI after this run? A non-zero exit (not the 124 cap), or a clean exit inside 2 minutes that left
+    its job open: an agent out of usage prints a notice and exits 0 (9 Nov 2026: claude claimed and released J2421
+    every minute for an hour)."""
+    if code not in (0, 124):
+        return True
+    return code == 0 and still_open and seconds < float(os.environ.get("MACBOOK_QUICK_EXIT_S", "120"))
+
+
 def usable(have: list, now: dt.datetime | None = None) -> list:
     down = down_agents(now)
     return [a for a in have if a not in down]
@@ -244,12 +258,35 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
-    if job.get("for") in have:  # a job addressed to one agent (a Mini job the MacBook took over): that agent's CLI
-        return job["for"], routing.model_for(job, job["for"])
+    # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
+    # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
+    addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
+    if addressed in have:
+        return addressed, routing.model_for(job, addressed)
     for a, m in routing.job_chain(job):
+        if a == "claudecode":  # the Mini's Claude Code lane = this MacBook's Claude Code
+            a, m = "claude", ("claude-opus-5-5" if m == "mini-claude-opus-5-5" else m)
         if a in have and routing.lane_ok(a, m):
             return a, (m if routing.RUNS_ON.get(m) == a else "")
     return (have[0], "") if have else ("", "")
+
+
+# Commands an unattended Claude run may use without a prompt (Ben, 9 Nov 2026: "Yes please"). J2427 was released about 40
+# times on 9 Nov because `python3 -m unittest` and `gh pr create` asked for approval with nobody there. Tests, the repo's
+# own checks and opening a PR only; merges stay with the Chief (no `gh pr merge` here).
+CLAUDE_ALLOWED_TOOLS = (
+    "Bash(python3 -m unittest:*)",
+    "Bash(python3 scripts/test_kanban_page.py:*)",
+    "Bash(python3 scripts/test_kanban_snapshot.py:*)",
+    "Bash(node scripts/test_studio_app.cjs:*)",
+    "Bash(python3 scripts/core_sync.py check:*)",
+    "Bash(python3 scripts/sync_rules.py:*)",
+    "Bash(git push:*)",
+    "Bash(gh pr create:*)",
+    "Bash(gh pr view:*)",
+    "Bash(gh pr checks:*)",
+    "Bash(gh pr list:*)",
+)
 
 
 def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
@@ -264,7 +301,8 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     if agent == "claude":
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
         # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
-        return [b, "-p", prompt, "--permission-mode", "acceptEdits", *dirs]
+        return [b, "-p", prompt, "--permission-mode", "acceptEdits", "--allowedTools", ",".join(CLAUDE_ALLOWED_TOOLS),
+                *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)
@@ -280,6 +318,16 @@ def job_record(job_id: str) -> dict:
                      if j.get("id") == job_id), {})
     except (OSError, ValueError):
         return {}
+
+
+def busy_cmd(cmd: list, idle_min: float | None = None) -> list:
+    """While Ben is using the Mac, run the job at macOS background priority (taskpolicy -b: lowest CPU, disk and
+    network priority), so his apps always come first. Idle: unchanged."""
+    need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
+    idle = idle_minutes() if idle_min is None else idle_min
+    if idle < need and shutil.which("taskpolicy"):
+        return ["taskpolicy", "-b", *cmd]
+    return cmd
 
 
 def run_capped(cmd: list, cwd, cap_s: int) -> int:
@@ -392,9 +440,10 @@ def pull_main() -> str:
             # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then
             # refused every later job). Its own clone goes back to main by itself when clean; Ben's checkouts never.
             own = repo.resolve().is_relative_to(WORKER_DIR.resolve())
-            if branch != "main" and own and sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
-                # Left dirty on a job branch (5 Nov 2026: J2165 left macbook/J2165 dirty and every later run errored).
-                # Its own clone only: keep the work in a named stash on that branch, never discard it.
+            if own and sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
+                # Left dirty on a job branch (5 Nov 2026: J2165 left macbook/J2165 dirty and every later run errored),
+                # or dirty on main itself (8 Nov 2026: `jobs.py next --git` needs a clean tree, so both slots errored
+                # on every claim). Its own clone only: keep the work in a named stash, never discard it.
                 stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
                 if sh(["git", "-C", str(repo), "stash", "push", "-u", "-q", "-m",
                        f"macbook-worker autostash {branch} {stamp}"]).returncode == 0:
@@ -406,11 +455,18 @@ def pull_main() -> str:
                     branch = "main"
             if branch != "main":
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+            # Name origin main: a clone whose branch.main.merge holds more than one entry fails a bare pull with
+            # "Cannot fast-forward to multiple branches" (8 Nov 2026, slot 2).
+            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode and own and rescue_diverged(repo):
-                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode:
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
+            if own:
+                # A pull can succeed while main is still ahead of GitHub (a queue write whose push lost a race keeps
+                # its local commit). Every --git claim then refuses "main has unpublished/diverged commits" (9 Nov
+                # 2026, slot 1). Keep those commits on a rescue branch and put main back on origin/main.
+                rescue_diverged(repo)
     return ""
 
 
@@ -452,9 +508,28 @@ def run_one() -> str:
     return run_ordinary()
 
 
+CDP_PORTS = ("9223", "9222")  # Orbit Studio, HOS Studio/Flow: the Mini's ports and profiles (start_cdp_browsers.sh)
+
+
+def cdp_ports_up(ports=CDP_PORTS) -> list:
+    """The CDP ports whose Chrome answers here (Ben, 9 Nov 2026: signed into Studio on the MacBook). jobs.py offers a
+    Studio job to the MacBook only while its channel's browser is up."""
+    import urllib.request
+    up = []
+    for p in ports:
+        try:
+            with urllib.request.urlopen(f"http://127.0.0.1:{p}/json/version", timeout=2) as r:
+                if r.status == 200:
+                    up.append(p)
+        except Exception:
+            pass
+    return up
+
+
 def run_ordinary() -> str:
     """Claim the next MacBook job and run it on the first installed agent in its chain."""
     args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
+    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up())  # read by jobs.macbook_studio_ok in the claim below
     r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
@@ -484,12 +559,15 @@ def run_ordinary() -> str:
         log(f"no CLI for {job} (installed: {have}): released")
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
-    code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
-    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
+    started = time.monotonic()
+    code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
+    seconds = time.monotonic() - started
+    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
     paused = ""
-    if code not in (0, 124):  # 124 = hit the cap: slow, not broken
+    open_now = still_mine(job)
+    if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
         paused = mark_down(agent)
-    if still_mine(job):
+    if open_now:
         note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
         if paused:
             note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"

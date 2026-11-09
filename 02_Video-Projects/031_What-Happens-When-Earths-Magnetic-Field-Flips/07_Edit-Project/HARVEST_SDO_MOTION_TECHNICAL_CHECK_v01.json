@@ -1,0 +1,133 @@
+{
+  "job": "J2141",
+  "asset_id": "SVS4323_SDO_AIA304_motion",
+  "spend_gbp": 0,
+  "full_decode": "PASS",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 41,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/30",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 1439,
+        "duration": "47.966667",
+        "bit_rate": "6058877",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1439",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "creation_time": "2015-06-26T15:53:52.000000Z",
+          "language": "und",
+          "handler_name": "GPAC ISO Video Handler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2141-sdo-motion-v01/June2015LimbLoops_304A_1080p.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "47.966667",
+      "size": "36346782",
+      "bit_rate": "6062006",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "avc1",
+        "minor_version": "0",
+        "compatible_brands": "isomavc1",
+        "creation_time": "2015-06-26T15:53:52.000000Z"
+      }
+    }
+  },
+  "original_sha256": "242b625e1082b23b52a2fb4b1b6aca7655772fdef85c75bae73e2225f24b8a48",
+  "decoded_samples": [
+    {
+      "time_s": 2,
+      "path": "/Users/ben/_desk/J2141-sdo-motion-v01/sample_02s.png",
+      "sha256": "9affc1aff2c29332301b1110b24c9bc147973a7284468d050ee89d907f82495e",
+      "mean_luma": 11.74,
+      "p95_luma": 53
+    },
+    {
+      "time_s": 3,
+      "path": "/Users/ben/_desk/J2141-sdo-motion-v01/sample_03s.png",
+      "sha256": "c9c5f89a88746f910a22927af2b4843c36fabb1471884f4eb700d65d78dbdfa7",
+      "mean_luma": 12.45,
+      "p95_luma": 54
+    },
+    {
+      "time_s": 4,
+      "path": "/Users/ben/_desk/J2141-sdo-motion-v01/sample_04s.png",
+      "sha256": "bac48524b98674d6c181ee609a0c2ff73fec6a71a75324af923ff0504b26990d",
+      "mean_luma": 12.4,
+      "p95_luma": 54
+    },
+    {
+      "time_s": 5,
+      "path": "/Users/ben/_desk/J2141-sdo-motion-v01/sample_05s.png",
+      "sha256": "3fa1b4f1f21b3a04c2103a40597c76846da7c72a45040d264913979975dc78de",
+      "mean_luma": 12.36,
+      "p95_luma": 54
+    },
+    {
+      "time_s": 6,
+      "path": "/Users/ben/_desk/J2141-sdo-motion-v01/sample_06s.png",
+      "sha256": "cd0b8377091f62d120963311ed31ec047e3dcc41b80dd507dbfb525170df65ce",
+      "mean_luma": 12.38,
+      "p95_luma": 54
+    }
+  ],
+  "distinct_sample_hashes": true,
+  "contact_sheet": {
+    "path": "/Users/ben/_desk/J2141-sdo-motion-v01/CONTACT_SDO_MOTION_v01.jpg",
+    "sha256": "6a0492fd8d1570d49b0304963c5e04085aa719cb673be6cccd1d049bc0802fad"
+  },
+  "limitations": "Changing sample pixels do not prove motion quality; no audio or actual playback review. Full film/composite gates remain open."
+}
