@@ -209061,10 +209061,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T07:36Z",
+      "eta": "2026-11-09T09:36Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
       "result": "",
@@ -209373,6 +209373,11 @@
           "at": "2026-11-09T07:36Z",
           "by": "macbook",
           "what": "released: gh still needs approval on the MacBook (can't open PR) and python tests are blocked; job needs tests+PR+merge+redeploy. Sixteenth release: please pin J2427 to the Mini."
+        },
+        {
+          "at": "2026-11-09T07:36Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implementing upload matching & ask/OK card merging in video_tracker.py and adding unit tests",
