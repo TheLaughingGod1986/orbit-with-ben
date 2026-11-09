@@ -1,5 +1,5 @@
 {
-  "next_id": 2460,
+  "next_id": 2461,
   "jobs": [
     {
       "id": "J0001",
@@ -212026,6 +212026,36 @@
       "due": "2026-11-10T18:00:00Z",
       "kind": "studio",
       "plain": "Swap the Mars film's running thumbnail test for one that tests three title-and-thumbnail pairs, including a search-led title."
+    },
+    {
+      "id": "J2460",
+      "title": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026, his own yes: remove the 6 zero-view Orbit With Ben playlists listed in 05_Analytics/PLAYLIST_AUDIT_2026-11.md section 3. Removing a playlist never removes a video. Never press anything that deletes or edits a video itself.\n\nWhere: Orbit Studio (CDP 9223) and History of Science Studio (CDP 9222). Check the channel name in each window first.\n\nStep 1, find what points at the six. At least one is in use: \"Start Here\" (PLI1AApUz3qz8...) is an end-screen element on Saturn 55AEQwvs36g (05_Analytics/live_fixes/2026-10-15.md). For each of the six playlists, check: (a) every public and scheduled long's end screen and cards, (b) the channel Home tab sections (Customisation > Home), (c) video descriptions and pinned comments that link to it. Write the full list to jobs/reviews/<this job id>/PLAYLIST_REFS.md, with the full playlist ids as Studio shows them (the audit shortens them).\n\nStep 2, repoint. Where an end screen, card, Home section or link uses one of the six, swap it for the kept series playlist that holds that film (Real Worlds, or What Would Happen If…). Read each swap back.\n\nStep 3, remove. For each of the six: confirm the title matches the audit, write its video ids into PLAYLIST_REFS.md (so it could be rebuilt), confirm nothing points at it any more, then remove the playlist. If anything still points at it, or the title does not match, keep that playlist and say why.\n\nStep 4, the three kept playlists (Chief's call, all reversible): add the missing films and reorder as the audit lists. Keep each series name (LEARNINGS rule 20) and add the search phrase after it:\n   \"Real Worlds: Solar System, Moons and Alien Planets Explained\"\n   \"What Would Happen If…: Black Holes, Neutron Stars and Extreme Space\"\n   History of Science: \"How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science\"\n\nStep 5, read back both channels' playlist lists and add an \"Applied\" section to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Commit on a branch, open a PR.\n\nDo not change any video's title, thumbnail, privacy or schedule. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T23:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "studio",
+      "plain": "Remove six unused Orbit playlists after moving anything that links to them, and tidy the three playlists we keep."
     }
   ],
   "focus": [
