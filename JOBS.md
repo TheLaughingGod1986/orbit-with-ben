@@ -89,7 +89,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
-| J2425 | mini | claimed | claudecode | 2026-11-09T19:49Z | 025 upload · for claudecode · studio · `mini-claude-opus-5-5` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |

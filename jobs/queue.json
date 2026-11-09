@@ -209106,13 +209106,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-09T17:49Z",
-      "eta": "2026-11-09T19:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:56Z",
-      "result": "",
+      "result": "A Thumbnail-only Test & Compare was already running on Js6EQJ8qDi8 (13 days left), and a title test would have deleted it, so I used the brief's fallback: the title is now 'The Mars Robot Meant to Die in 90 Days (It Lasted 14 Years)', changed 2026-11-09T17:51:36Z. Read back: the title shows, still Public, thumbnail test still running. Records: 025 11_Upload-Package/TITLE_TEST_2026-11-08.md and LEARNINGS #25.",
       "history": [
         {
           "at": "2026-11-08T22:56Z",
@@ -209148,6 +209148,11 @@
           "at": "2026-11-09T17:53Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: records committed a1d0455a29"
+        },
+        {
+          "at": "2026-11-09T17:53Z",
+          "by": "claudecode",
+          "what": "done: A Thumbnail-only Test & Compare was already running on Js6EQJ8qDi8 (13 days left), and a title test would have deleted it, so I used the brief's fallback: the title is now 'The Mars Robot Meant to Die in 90 Days (It Lasted 14 Years)', changed 2026-11-09T17:51:36Z. Read back: the title shows, still Public, thumbnail test still running. Records: 025 11_Upload-Package/TITLE_TEST_2026-11-08.md and LEARNINGS #25."
         }
       ],
       "remaining_action": "none",
@@ -209172,7 +209177,8 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "a1d0455a29"
     },
     {
       "id": "J2426",
