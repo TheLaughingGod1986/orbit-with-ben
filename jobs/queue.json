@@ -192866,13 +192866,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-06T20:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "parked for review: J2302 reviews v03 be63a3d85cadfb4d0fd0387f62dd36dcf9200e5b51942fd91873f1cc677c902c in OWB UAT/024_fri06_muons_ground_v03. All five tool checks pass; one relative detail WARN at16s. Local repair commit c34a0429d6 on codex/J2248-v03; automatic approval review rejected external code/evidence push, parked for Chief authorization. No Ben watch/upload/schedule yet; Mon9 occupied.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -193033,6 +193033,11 @@
           "at": "2026-11-09T02:10Z",
           "by": "gemini",
           "what": "approved by Ben: Watch 024 muons Short v04 ('Muons Shouldn't Reach the Ground. They Do.') — fixed 0:19 stray code under 'Light Speed?' — before any Private upload or schedule (provisional slot Sat 21 Nov 11:30) v04"
+        },
+        {
+          "at": "2026-11-09T02:10Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-agy: Ben OK'd v04 (8 Nov 23:41Z); closing J2248 with rvug71d7Dqk per J2431"
         }
       ],
       "remaining_action": "J2302 reviews verified private v03 evidence now; then repairs or Ben final watch. External code push not required; no scheduling clearance.",
@@ -193076,7 +193081,16 @@
         "title": "Muons Shouldn't Reach the Ground. They Do.",
         "number": "024",
         "type": "short"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "blocked",
+        "by": "codex"
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J2249",
