@@ -1,0 +1,58 @@
+[
+  {
+    "T": 544,
+    "metric": 1.47,
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "4",
+      "-i",
+      "/Users/benjaminoats/_desk/cache/J1834/crew2_540_600.mp4",
+      "-t",
+      "2.4",
+      "-filter_complex",
+      "[0:v]split=2[b][f];[b]crop=720:720:280:0,scale=1080:1080,pad=1080:1920:0:420,fillborders=top=420:bottom=420:mode=reflect,boxblur=30:3[bg];[f]crop=460:460:450:180,scale=1080:1080,format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,min(Y,H-1-Y)/48)'[fg];[bg][fg]overlay=0:420,setsar=1[v]",
+      "-map",
+      "[v]",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "fast",
+      "-crf",
+      "18",
+      "-y",
+      "/Users/benjaminoats/_desk/cache/J1834/feather_candidate_T544.mp4"
+    ]
+  },
+  {
+    "T": 545,
+    "metric": 1.54,
+    "command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "5",
+      "-i",
+      "/Users/benjaminoats/_desk/cache/J1834/crew2_540_600.mp4",
+      "-t",
+      "2.4",
+      "-filter_complex",
+      "[0:v]split=2[b][f];[b]crop=720:720:280:0,scale=1080:1080,pad=1080:1920:0:420,fillborders=top=420:bottom=420:mode=reflect,boxblur=30:3[bg];[f]crop=460:460:450:180,scale=1080:1080,format=rgba,geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='255*min(1,min(Y,H-1-Y)/48)'[fg];[bg][fg]overlay=0:420,setsar=1[v]",
+      "-map",
+      "[v]",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "fast",
+      "-crf",
+      "18",
+      "-y",
+      "/Users/benjaminoats/_desk/cache/J1834/feather_candidate_T545.mp4"
+    ]
+  }
+]

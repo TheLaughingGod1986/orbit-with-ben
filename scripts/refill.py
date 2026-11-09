@@ -41,6 +41,10 @@ ESCALATE_EVERY_H = 24
 # The never-empty fallback skips items on a weekly-ish cadence: it picked the key added longest ago, which was always a
 # weekly audit, so the "weekly" OWB/HOS audits ran every 1-2 days (40+ HOS copies 15-28 Oct, J1099 two days after J0984).
 STRICT_EVERY_H = 72
+# ...and it still waits a little after a key's last copy: with only a few free keys it re-added the same listing check
+# every few minutes once each was done (8 copies of "Backlog OWB: listing check" in 2 h, 31 Oct-1 Nov), each one a
+# worker's time and credits spent re-checking nothing new. The floor is min(FALLBACK_MIN_H, every_h / 4).
+FALLBACK_MIN_H = 6.0
 LIVE = ("open", "claimed", "blocked")
 
 
@@ -80,10 +84,31 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         added.append(j["id"])
         have += 1
 
+    # Calendar reviews are due even when production already fills the ready queue.
+    # Queue once per London month; a missed first-day tick catches up on recovery.
+    for it in items:
+        if not it.get("monthly_on"):
+            continue
+        ln = at.astimezone(jobs.LONDON)
+        hh, mm = (int(x) for x in it.get("monthly_at", "09:00").split(":"))
+        due = ln.replace(day=int(it["monthly_on"]), hour=hh, minute=mm, second=0, microsecond=0)
+        prev = last.get(it["key"])
+        if ln < due or ln.strftime("%Y-%m") < it.get("start_month", "0000-00"):
+            continue
+        period = (ln.replace(day=1) - dt.timedelta(days=1)).strftime("%Y-%m")
+        if prev and studio.parse(prev).astimezone(jobs.LONDON).strftime("%Y-%m") == ln.strftime("%Y-%m"):
+            continue
+        if any(j.get("backlog") == it["key"] and j.get("report_month") == period for j in data["jobs"]):
+            continue
+        monthly = {**it, "title": it["title"] + " — " + period,
+                   "body": "Report month: " + period + ". " + it["body"]}
+        add(monthly)
+        data["jobs"][-1].update(report_month=period, due=studio.iso(due + dt.timedelta(days=2)), due_kind="monthly-audit")
+
     # Daily items (Ben, 12 Oct 22:19): an item with "daily_at": "HH:MM" (London) is added once per London day as soon
     # as that time has passed, whatever the ready count, and put first in line (urgent), so it runs before 09:00.
     for it in items:
-        if not it.get("daily_at") or busy(it["key"]):
+        if it.get("monthly_on") or not it.get("daily_at") or busy(it["key"]):
             continue
         ln = at.astimezone(jobs.LONDON)
         hh, mm = (int(x) for x in it["daily_at"].split(":"))
@@ -93,7 +118,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         add(it)
         data["jobs"][-1]["urgent"] = 0
     for it in items:
-        if it.get("daily_at"):
+        if it.get("daily_at") or it.get("monthly_on"):
             continue
         if have >= min_ready:
             break
@@ -104,8 +129,12 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             continue
         add(it)
     if have == 0:
-        free = [it for it in items if not busy(it["key"]) and not it.get("daily_at")
-                and it.get("every_h", 24) < STRICT_EVERY_H]
+        def rested(it):
+            prev = last.get(it["key"])
+            floor = min(FALLBACK_MIN_H, it.get("every_h", 24) / 4)
+            return not prev or at - studio.parse(prev) >= dt.timedelta(hours=floor)
+        free = [it for it in items if not busy(it["key"]) and not it.get("daily_at") and not it.get("monthly_on")
+                and it.get("every_h", 24) < STRICT_EVERY_H and rested(it)]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
     return added

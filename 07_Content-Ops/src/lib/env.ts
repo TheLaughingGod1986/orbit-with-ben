@@ -16,8 +16,6 @@ export const envSchema = z.object({
   YOUTUBE_REFRESH_TOKEN: optionalString,
   /** Buffer API key (Buffer → Settings → API) for the social mirror. */
   BUFFER_API_KEY: optionalString,
-  /** Public Vercel Blob store token, for the mirror's media URLs. */
-  BLOB_READ_WRITE_TOKEN: optionalString,
   /** "true" makes youtube:package a dry run. */
   PUBLISHING_DRY_RUN: optionalString,
   /** Base for affiliate /go/ links in generated descriptions (the app that served /go is retired). */

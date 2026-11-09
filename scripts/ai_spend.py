@@ -14,14 +14,17 @@ AI Ultra credits refill on Mon 12 Oct. Every agent that reads a balance or spend
 
 Pools and units: cursor (% of Cursor's own Cursor Models pool left, of 100, from its spending page; it shows no $ since
 12 Oct), flow (Flow credits), vertex (GBP of
-Google Cloud credit), elevenlabs (credits), claude (notes only, e.g. "hit the 5-hour limit"), codex and codex-macbook (% of the Codex
-weekly limit left on the Mini's and the MacBook's accounts, from the CLI's own logs). Each pool counts from its
+Google Cloud credit), elevenlabs (credits), claude (% of the Claude weekly limit left, from claude.ai/settings/usage, or limit notes),
+codex and codex-macbook (% of the Codex weekly limit left on the Mini's and the MacBook's accounts, from the CLI's own logs),
+gemini (% of the Gemini weekly limit left, from agy /usage). Each pool counts from its
 plan's reset date (plans.json poolStarts): Cursor from 8 Oct, Flow from 12 Oct. `record` is a balance reading; `spend` is one use. Add --git to
 commit the ledger line and push to main. Subscriptions and their prices live in 05_Analytics/ai_spend/plans.json.
 """
 from __future__ import annotations
 
 import argparse
+import fcntl
+import os
 import json
 import subprocess
 import sys
@@ -33,8 +36,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIR = ROOT / "05_Analytics" / "ai_spend"
 LEDGER = DIR / "ledger.jsonl"
 PLANS = DIR / "plans.json"
-POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "note",
-         "codex": "%", "codex-macbook": "%"}
+POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "%",
+         "codex": "%", "codex-macbook": "%", "gemini": "%"}
 
 
 def now() -> str:
@@ -48,9 +51,32 @@ def load() -> list[dict]:
 
 
 def append(row: dict, git: bool) -> None:
-    DIR.mkdir(parents=True, exist_ok=True)
-    with LEDGER.open("a") as f:
-        f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    # Same destination lock as SharedFlowAccounting.export_ai_spend. Resolve
+    # aliases before choosing the lock so symlinks cannot create two writers.
+    target = LEDGER.resolve()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with target.with_name(target.name + ".lock").open("a+") as lock:
+        fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        data = target.read_bytes() if target.exists() else b""
+        if data and not data.endswith(b"\n"):
+            raise ValueError("torn ai_spend ledger; reconcile before append")
+        existing = [json.loads(line) for line in data.splitlines() if line.strip()]
+        if any(not isinstance(item, dict) for item in existing):
+            raise ValueError("ai_spend ledger contains a non-object row")
+        ids = [item["id"] for item in existing if "id" in item]
+        if len(ids) != len(set(ids)):
+            raise ValueError("duplicate ai_spend receipt identity")
+        if "id" in row and row["id"] in ids:
+            raise ValueError("ai_spend receipt identity already exists")
+        with target.open("ab") as handle:
+            handle.write((json.dumps(row, ensure_ascii=False) + "\n").encode())
+            handle.flush()
+            os.fsync(handle.fileno())
+        directory = os.open(target.parent, os.O_RDONLY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
     print(json.dumps(row, ensure_ascii=False))
     if git:
         msg = f"ai_spend: {row['kind']} {row['pool']} by {row.get('by') or '?'}"
@@ -76,16 +102,19 @@ def build_doc(rows: list[dict]) -> dict:
         if row.get("kind") == "spend":
             entry["logged"] = round(entry["logged"] + float(row.get("amount") or 0), 2)
             entry["entries"] += 1
-        elif row.get("kind") == "record":
+        elif row.get("kind") == "record" and row.get("left") is not None:
             entry["latest"] = {k: row.get(k) for k in ("at", "left", "total")}
-    rows = [r for r in rows if r.get("at", "") >= starts.get(r.get("pool"), start)]
+    # Recovered receipts can be appended later than newer balance readings.
+    rows = sorted((r for r in rows if r.get("at", "") >= starts.get(r.get("pool"), start)),
+                  key=lambda r: r.get("at", ""))
     pools = {}
     for pool, unit in POOLS.items():
         reads = [r for r in rows if r["pool"] == pool and r["kind"] == "record"]
         spends = [r for r in rows if r["pool"] == pool and r["kind"] == "spend"]
         if not reads and not spends:
             continue
-        first, last = (reads[0], reads[-1]) if reads else (None, None)
+        bal = [r for r in reads if r.get("left") is not None]
+        first, last = (bal[0], bal[-1]) if bal else (None, None)
         pools[pool] = {
             "unit": unit,
             "latest": last and {k: last.get(k) for k in ("left", "total", "at", "by", "note")},

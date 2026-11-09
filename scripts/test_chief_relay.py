@@ -1,5 +1,6 @@
 """chief_relay.py: the first agent in the chain that is up acts as Chief; out of credit falls through; Grok takes back."""
-import datetime as dt, os, pathlib, stat, sys, tempfile, unittest
+import datetime as dt, os, pathlib, stat, sys, tempfile, time, unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay as cr  # noqa: E402
@@ -29,6 +30,8 @@ class Relay(unittest.TestCase):
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
         # Always a fake agy: on the Mini the real one is on PATH, and a test must never wake it.
         os.environ["AGY_BIN"] = str(self.fake("agy", 'echo "gemini did it"'))
+        # And a fake Claude Code: the `claudecode` Mini worker (9 Nov 2026) would find the real `claude` on PATH.
+        os.environ["CLAUDE_BIN"] = str(self.fake("claude", 'echo "claudecode did it"'))
 
     def tearDown(self):
         cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
@@ -47,6 +50,62 @@ class Relay(unittest.TestCase):
 
     def chief(self, at=T0):
         return cr.acting(at)[1]
+
+    def test_a_free_relay_wakes_the_queued_worker(self):
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))
+
+    def test_woken_agents_get_the_ssd_scratch_when_it_is_mounted(self):
+        sd = self.tmp / "MiniWork" / "scratch"
+        sd.mkdir(parents=True)
+        body = f"echo \"$TMPDIR|$STUDIO_SCRATCH\" > {self.tmp}/env.txt"
+        self.fake("envcli", body)
+        with mock.patch.object(cr, "cli_spec", return_value=(str(self.tmp / "envcli"), [])):
+            with mock.patch.object(cr, "scratch_dir", return_value=sd):
+                cr.run_cli("cursor", "P", 30)
+            self.assertEqual((self.tmp / "env.txt").read_text().strip(), f"{sd}/|{sd}")
+            with mock.patch.object(cr, "scratch_dir", return_value=None):  # unplugged: back to /private/tmp
+                cr.run_cli("cursor", "P", 30)
+            self.assertTrue((self.tmp / "env.txt").read_text().strip().endswith("|/private/tmp"))
+
+    def test_a_miniwork_folder_on_the_internal_disk_is_not_the_ssd(self):
+        (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp):
+            self.assertIsNone(cr.scratch_dir())  # same device as HOME: an unplugged drive's leftover folder
+
+    def test_a_blocked_ssd_cannot_hang_the_relay(self):
+        """9 Nov 2026: macOS held the relay on a permission dialog for the SSD and it went silent for hours. The check
+        now runs in a child with a timeout, and the answer is kept so the wait isn't paid on every wake."""
+        (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp), \
+                mock.patch.object(cr, "_SSD_PROBE", "import time; time.sleep(60)"), \
+                mock.patch.object(cr, "SSD_PROBE_S", 1):
+            t0 = time.monotonic()
+            self.assertIsNone(cr.scratch_dir())
+            self.assertLess(time.monotonic() - t0, 10)
+            with mock.patch.object(cr.subprocess, "run", side_effect=AssertionError("asked again")):
+                self.assertIsNone(cr.scratch_dir())  # kept answer: no second wait
+
+    def test_the_ssd_is_used_when_the_child_reports_another_device(self):
+        sd = self.tmp / "MiniWork" / "scratch"
+        sd.mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp), \
+                mock.patch.object(cr, "_ssd_dev", return_value=os.stat(self.tmp).st_dev + 1):
+            self.assertEqual(cr.scratch_dir(), sd)
+
+    def test_claude_code_on_the_mini_runs_unattended_with_the_prompt_last(self):
+        b, args = cr.cli_spec("claudecode")
+        self.assertTrue(b.endswith("/claude"))
+        self.assertIn("--dangerously-skip-permissions", args)
+        self.assertEqual(args[-1], "-p")  # run_cli appends the prompt straight after -p
+
+    def test_with_codex_cursor_and_gemini_out_the_job_goes_to_claude_code(self):
+        q = self.routed_queue('{"next_id": 2, "jobs": [{"id": "J0901", "kind": "assembly", "status": "open", "needs": "mini", "history": []}]}')
+        for a in ("cursor", "codex", "gemini"):
+            cr.mark_down(a, "out of credit", T0 + 60 * MIN, T0)
+        with mock.patch.object(cr, "run_cli", return_value=(0, "done")) as run:
+            cr.cmd_run(T0)
+        self.assertIn("claudecode", [c.args[0] for c in run.call_args_list])
 
     def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
         cr.seen("chief", T0 - 30 * MIN)
@@ -185,6 +244,17 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.chief(T0 + 12 * MIN), "cursor")
         cr.seen("chief", T0 + 15 * MIN)  # Grok actually ran jobs.py: it's back
         self.assertEqual(self.chief(T0 + 16 * MIN), "chief")
+
+    def test_hourly_cloud_claude_gets_a_full_run_to_take_its_inbox(self):
+        # 5 Nov 2026: a 30-min window benched Claude (runs hourly at :50) every hour, up to 12 h.
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": []}')
+        for agent in ("claude", "chief"):
+            cr.write_json(cr.d("inbox.json"), {"agent": agent, "notified_at": cr.iso(T0),
+                                               "waiting": {"J1": {"since": cr.iso(T0)}}})
+            self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 45 * MIN), agent == "chief")
+            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + 76 * MIN))
 
     def test_repeat_stalls_keep_grok_down_longer(self):
         windows = [cr.stall_window("chief", T0 + i * MIN) for i in range(6)]
@@ -334,6 +404,23 @@ class Relay(unittest.TestCase):
         finally:
             cr.OWB, cr.queue_has_work = old_owb, old_q
 
+    def test_a_model_at_capacity_flags_only_that_model(self):
+        old_owb, old_q = cr.OWB, cr.queue_has_work
+        cr.OWB = self.tmp / "owb"
+        (cr.OWB / "jobs").mkdir(parents=True)
+        (cr.OWB / "jobs" / "queue.json").write_text(
+            '{"jobs": [{"id": "J0072", "for": "codex", "model": "gpt-6.1-sol", "status": "open", "needs": "any"}]}')
+        self.fake("codex", 'echo "ERROR: Selected model is at capacity. Please try a different model."; exit 1')
+        cr.queue_has_work = lambda agent: True
+        try:
+            cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            self.assertTrue(cr.d("down_models", "gpt-6.1-sol.json").exists())  # the named model: flagged
+            self.assertTrue(cr.state_of("codex", cr.now() + 16 * MIN)[0])  # its default too: a 15-min pause, not 1 h
+            self.assertNotIn("run failed", self.posts.read_text() if self.posts.exists() else "")
+        finally:
+            cr.OWB, cr.queue_has_work = old_owb, old_q
+
     def test_a_failed_addressed_run_is_not_retried_every_tick(self):
         old_owb, old_q = cr.OWB, cr.queue_has_work
         cr.OWB = self.tmp / "owb"
@@ -465,7 +552,7 @@ class Relay(unittest.TestCase):
         import json
         import jobs
         self.routed_queue(jobs_json)
-        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        self.cursor = self.fake("cursor", f'echo "$@" >> {self.tmp}/cursor.args; echo "cursor did it"')
         self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         self.old_reroute, self.old_q = cr.reroute, cr.queue_has_work
         q = cr.OWB / "jobs" / "queue.json"
@@ -506,14 +593,19 @@ class Relay(unittest.TestCase):
                               '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '
                               '{"id": "J0302", "kind": "assembly", "status": "open", "needs": "mini"}, '
                               '{"id": "J0303", "kind": "chief", "status": "open", "needs": "cloud"}, '
-                              '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}]}')
+                              '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}, '
+                              '{"id": "J0305", "kind": "listing", "status": "open", "needs": "macbook"}]}')
         cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
-        for jid in ("J0302", "J0303", "J0304"):
+        for jid in ("J0302", "J0303", "J0304", "J0305"):  # J0305: a MacBook job stays on the MacBook
             self.assertNotIn("rerouted_from", self.job(q, jid), jid)
         self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
+        # The released/open review no longer stops unrelated assembly work in
+        # this run. Keep all invocations rather than inspecting only the last.
+        self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())
+        self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "cursor.args").read_text())
 
     def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
@@ -597,6 +689,13 @@ class Relay(unittest.TestCase):
         self.assertTrue(cr.UNKNOWN_MODEL_RE.search("Error: Unknown model 'grok-4.7'. Run agent --list-models"))
         self.assertTrue(cr.UNKNOWN_MODEL_RE.search("The model gemini-argon does not exist or you lack access"))
         self.assertFalse(cr.UNKNOWN_MODEL_RE.search("Traceback: KeyError 'model'"))
+
+    def test_provider_capacity_is_a_model_blip_not_a_worker_outage(self):
+        # Codex, 5 Nov 2026 09:10Z: one "model is at capacity" reply marked Codex down for an hour.
+        self.assertTrue(cr.CAPACITY_RE.search("ERROR: Selected model is at capacity. Please try a different model."))
+        self.assertTrue(cr.CAPACITY_RE.search('{"type": "overloaded_error", "message": "Overloaded"}'))
+        self.assertFalse(cr.CAPACITY_RE.search("Disk at capacity: 97% used"))
+        self.assertFalse(cr.CAPACITY_RE.search("Traceback: ValueError: capacity must be positive"))
 
     def test_cursor_gets_the_claude_model_flag_only_for_claude_work(self):
         _, args = cr.cli_spec("cursor", "cursor-claude-opus-5-5")
@@ -741,7 +840,7 @@ class Relay(unittest.TestCase):
 
     def test_the_default_chain_puts_claude_second(self):
         del os.environ["CHIEF_CHAIN"]
-        self.assertEqual(cr.chain(), ["chief", "claude", "codex", "gemini"])
+        self.assertEqual(cr.chain(), ["claude", "chief", "codex", "gemini"])
 
     def test_claude_is_chief_after_grok_while_its_heartbeat_is_fresh_and_hands_on_and_back(self):
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
@@ -866,18 +965,49 @@ class Relay(unittest.TestCase):
             "    return {'before_mb': 7000, 'after_mb': 31000, 'target_mb': 20480, 'nas': 'ok', 'would': [], 'kept': [],\n"
             "            'moved': [{'path': '/private/tmp/r', 'nas': '/Volumes/data/x', 'ok': True, 'mb': 24000, 'files': 9}]}\n"
             "def summary(rep):\n"
-            "    return 'NAS offload: moved 1 scratch folder(s), 24,000 MB, to the NAS (sha256 checked). 7,000 -> 31,000 MB free.'\n")
+            "    return 'NAS offload: moved 1 scratch folder(s), 24,000 MB, to the NAS (sha256 checked). 7,000 -> 31,000 MB free.'\n"
+            "if __name__ == '__main__':\n"
+            "    import json\n"
+            "    print(json.dumps(offload(True)))\n")
         os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
         os.environ["CHIEF_OFFLOAD_GB"] = str(10 ** 9)  # the disk counts as under target
         try:
-            cr.offload_scratch(T0)
-            cr.offload_scratch(T0 + 30 * MIN)  # throttled: once per 3 h
+            cr.offload_scratch(T0)  # starts it in the background and returns at once (9 Nov 2026: it held the relay 6 h)
+            st = json.loads((cr.STATE / "chief" / "offload.json").read_text())
+            self.assertTrue(st["running"])
+            import time
+            for _ in range(200):
+                if not cr._pid_alive(st["pid"]):
+                    break
+                try:
+                    os.waitpid(st["pid"], os.WNOHANG)
+                except ChildProcessError:
+                    pass
+                time.sleep(0.05)
+            cr.offload_scratch(T0 + 30 * MIN)  # reports the finished run; throttled: no second start within 3 h
         finally:
             os.environ.pop("CHIEF_OFFLOAD_ANY_OS")
             os.environ.pop("CHIEF_OFFLOAD_GB")
         self.assertEqual(calls.read_text(), "x")
         self.assertIn("moved 1 scratch folder(s)", self.posts.read_text())
         self.assertEqual(json.loads((cr.STATE / "chief" / "offload.json").read_text())["moved"], 1)
+
+    def test_weekly_cache_clean_starts_in_the_background_once_a_week(self):
+        import json
+        os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
+        started = []
+        class P:
+            pid = 4242
+        try:
+            with mock.patch.object(cr.subprocess, "Popen", side_effect=lambda cmd, **kw: started.append(cmd) or P()):
+                cr.weekly_caches(T0)
+                cr.weekly_caches(T0 + 3 * 24 * 60 * MIN)  # 3 days later: not yet
+                cr.weekly_caches(T0 + 8 * 24 * 60 * MIN)  # 8 days later: again
+        finally:
+            os.environ.pop("CHIEF_OFFLOAD_ANY_OS")
+        self.assertEqual(len(started), 2)
+        self.assertIn("--caches-only", started[0])
+        self.assertEqual(json.loads((cr.STATE / "chief" / "caches.json").read_text())["pid"], 4242)
 
     def test_a_disk_still_full_after_repair_wakes_nobody(self):
         self.routed_queue('{"jobs": [{"id": "J0404", "kind": "assembly", "status": "open", "needs": "mini"}]}')

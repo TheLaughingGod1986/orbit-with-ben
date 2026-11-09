@@ -25,11 +25,12 @@ main() {
     cd 07_Content-Ops || exit 1
     unset DATABASE_URL GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN BUFFER_API_KEY BLOB_READ_WRITE_TOKEN \
       BUFFER_HOS_API_KEY YT_ANALYTICS_REFRESH_TOKEN_HOS
-    bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check
+    # CLI owns the whole-operation lock; an outer npx lock self-deadlocks.
+    npx tsx --env-file=.env scripts/buffer-mirror.ts check
     owb=$?
     (( owb == 75 )) && exit 75
     echo "--- History of Science"
-    bash scripts/desk-lock.sh youtube-buffer -- npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos
+    npx tsx --env-file=.env scripts/buffer-mirror.ts check --channel hos
     hos=$?
     (( owb != 0 )) && exit $owb
     exit $hos
