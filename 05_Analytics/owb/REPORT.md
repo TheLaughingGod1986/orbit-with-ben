@@ -194,14 +194,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 43 h (early) | 1248 | 49.6% | WATCH | 61.9% | WATCH |
-| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 5 d | 481 | 26.9% | MISS | 306.8% | LOOP |
-| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 6 d | 565 | 31.4% | MISS | 66.4% | WATCH |
-| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 8 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
-| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 9 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
-| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 10 d | 519 | 32.8% | MISS | 91.7% | PASS |
-| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 11 d | 460 | 34.5% | MISS | 231.0% | LOOP |
-| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 12 d | 494 | 42.6% | MISS | 75.0% | PASS |
-| [What If Earth Stopped Spinning?](https://youtu.be/OVLv9dxTcpE) | 13 d | 892 | 30.7% | MISS | 75.9% | PASS |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 2 d | 1266 | 49.6% | WATCH | 66.5% | WATCH |
+| [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 6 d | 481 | 26.9% | MISS | 306.8% | LOOP |
+| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 7 d | 565 | 31.4% | MISS | 66.4% | WATCH |
+| [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 9 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
+| [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 10 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
+| [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 11 d | 519 | 32.8% | MISS | 91.7% | PASS |
+| [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 12 d | 461 | 34.5% | MISS | 231.0% | LOOP |
+| [Why Are the Winds on Neptune Faster Than Sound?](https://youtu.be/1OCNzhkiBuc) | 13 d | 494 | 42.6% | MISS | 75.0% | PASS |
 
-Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 5 of 8 at 70%+.
+Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 4 of 7 at 70%+.
