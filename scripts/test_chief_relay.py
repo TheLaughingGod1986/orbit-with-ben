@@ -53,6 +53,24 @@ class Relay(unittest.TestCase):
         cr.cmd_run(T0)
         self.assertTrue(self.ran("cursor"))
 
+    def test_woken_agents_get_the_ssd_scratch_when_it_is_mounted(self):
+        sd = self.tmp / "MiniWork" / "scratch"
+        sd.mkdir(parents=True)
+        body = f"echo \"$TMPDIR|$STUDIO_SCRATCH\" > {self.tmp}/env.txt"
+        self.fake("envcli", body)
+        with mock.patch.object(cr, "cli_spec", return_value=(str(self.tmp / "envcli"), [])):
+            with mock.patch.object(cr, "scratch_dir", return_value=sd):
+                cr.run_cli("cursor", "P", 30)
+            self.assertEqual((self.tmp / "env.txt").read_text().strip(), f"{sd}/|{sd}")
+            with mock.patch.object(cr, "scratch_dir", return_value=None):  # unplugged: back to /private/tmp
+                cr.run_cli("cursor", "P", 30)
+            self.assertTrue((self.tmp / "env.txt").read_text().strip().endswith("|/private/tmp"))
+
+    def test_a_miniwork_folder_on_the_internal_disk_is_not_the_ssd(self):
+        (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp):
+            self.assertIsNone(cr.scratch_dir())  # same device as HOME: an unplugged drive's leftover folder
+
     def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
         cr.seen("chief", T0 - 30 * MIN)
         self.assertEqual(self.chief(), "chief")
