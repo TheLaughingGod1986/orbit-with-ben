@@ -409,7 +409,9 @@ def fetch_comments(since: dt.datetime) -> list:
     """Studio-thread comments updated since `since`, via owb_thread.py's own auth (GH_TOKEN or `gh auth token`)."""
     sys.path.insert(0, str(OWB / "scripts"))
     import owb_thread  # noqa: E402
-    return owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+    # Only the repo's own accounts count (owb_thread.trusted): the repo is public, so anyone can comment on the thread.
+    return [c for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+            if owb_thread.trusted(c)]
 
 
 def note_grok_posts(at: dt.datetime) -> None:
