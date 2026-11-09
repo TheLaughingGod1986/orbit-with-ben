@@ -1334,13 +1334,64 @@ def self_heal(at: dt.datetime) -> bool:
     return True
 
 
+def _pid_alive(pid) -> bool:
+    try:
+        os.kill(int(pid), 0)
+        return True
+    except (OSError, ValueError, TypeError):
+        return False
+
+
+def _offload_finished(at: dt.datetime) -> bool:
+    """Report a background offload that has ended (its JSON report is in offload.out). True while one still runs."""
+    st = read_json(d("offload.json")) or {}
+    if not st.get("running"):
+        return False
+    if _pid_alive(st.get("pid")):
+        return True
+    try:
+        txt = d("offload.out").read_text()
+        rep = json.loads(txt[txt.index("{"):])
+        no = _load_offload()
+        line = no.summary(rep)
+    except Exception as e:  # no report (killed, crashed): record it and let the next pass start again
+        log(f"offload ended without a report: {e.__class__.__name__}: {str(e)[:200]}")
+        write_json(d("offload.json"), {"at": st.get("at") or iso(at), "error": "ended without a report"})
+        return False
+    write_json(d("offload.json"), {"at": st.get("at") or iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
+                                   "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
+    log(line)
+    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
+        notify(f"Chief relay: {line}")
+    return False
+
+
+def _offload_path() -> pathlib.Path:
+    path = OWB / "scripts" / "nas_offload.py"
+    return path if path.exists() else pathlib.Path(__file__).with_name("nas_offload.py")
+
+
+def _load_offload():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("nas_offload", _offload_path())
+    no = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(no)
+    return no
+
+
 def offload_scratch(at: dt.datetime) -> None:
     """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 20),
     move render scratch untouched for 48 h from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
     both sides, the Mini copy goes only on a full match, never deletes on the NAS), at most every CHIEF_OFFLOAD_H
-    hours, and say what moved on the thread. Never stops the relay."""
+    hours, and say what moved on the thread. Never stops the relay.
+
+    It runs as its own background process (Ben, 9 Nov 2026): run inside the relay, one slow copy to the NAS held the
+    whole relay from 05:52 to past noon with no log line and no job started. The relay starts it, carries on, and a
+    later pass reports it once it has ended. nas_offload.py's own lock keeps it to one at a time."""
     if sys.platform != "darwin" and not os.environ.get("CHIEF_OFFLOAD_ANY_OS"):
         return  # the Mini's /private/tmp and /Volumes/data only exist on macOS
+    if _offload_finished(at):
+        return  # still copying in the background
     target = float(os.environ.get("CHIEF_OFFLOAD_GB", "20"))
     try:
         free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
@@ -1352,24 +1403,17 @@ def offload_scratch(at: dt.datetime) -> None:
     if last.get("at") and at - parse(last["at"]) < dt.timedelta(hours=float(os.environ.get("CHIEF_OFFLOAD_H", "3"))):
         return
     try:
-        import importlib.util
-        path = OWB / "scripts" / "nas_offload.py"
-        if not path.exists():
-            path = pathlib.Path(__file__).with_name("nas_offload.py")
-        spec = importlib.util.spec_from_file_location("nas_offload", path)
-        no = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(no)
-        rep = no.offload(apply=True, target_gb=target)
-        line = no.summary(rep)
+        d().mkdir(parents=True, exist_ok=True)
+        with open(d("offload.out"), "w") as out:
+            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", "--target-gb", str(target)],
+                                    stdout=out, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                                    start_new_session=True, cwd=str(HOME))
     except Exception as e:  # never let the offload stop the relay
         log(f"offload failed: {e.__class__.__name__}: {e}")
         write_json(d("offload.json"), {"at": iso(at), "error": str(e)[:300]})
         return
-    write_json(d("offload.json"), {"at": iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
-                                   "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
-    log(line)
-    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
-        notify(f"Chief relay: {line}")
+    write_json(d("offload.json"), {"at": iso(at), "running": True, "pid": proc.pid})
+    log(f"offload: started in the background (pid {proc.pid}, {free:,} MB free)")
 
 
 def yield_monthly_for_dispatch(selection):
