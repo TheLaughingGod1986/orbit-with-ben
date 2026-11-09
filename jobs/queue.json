@@ -210491,19 +210491,26 @@
           "at": "2026-11-09T16:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T16:57Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2436; inspecting FIRST30_PLAN.md and NAS assembly script"
         }
       ],
-      "remaining_action": "Apply 032 FIRST30_PLAN.md (PR #667): smooth BICUBIC push on stills from Frame 0, R03/R04/R05/R06 cuts <=3.60s, 1.47 bar payoff at 16.53s; render master_v02.mp4 + gates",
+      "remaining_action": "Read FIRST30_PLAN.md and inspect _assemble_032_full_master_v01.py on NAS",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 032 Titan to the new hook rule (FIRST30_PLAN.md) and assemble master v02",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-09T16:57Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2436; inspecting FIRST30_PLAN.md and NAS assembly script"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J2437",
