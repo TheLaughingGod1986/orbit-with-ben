@@ -1,5 +1,5 @@
 {
-  "next_id": 2447,
+  "next_id": 2448,
   "jobs": [
     {
       "id": "J0001",
@@ -211405,6 +211405,35 @@
       "remaining_action": "HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge",
       "due": "2026-11-10T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J2447",
+      "title": "Old Orbit longs repackage: 2 new title + thumbnail packages each for the 11 weak longs (rule 23)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: 'Is it worth going through old videos that have not done well and updating titles and thumbnails with the new rule?' -> yes, as Test & Compare, 'maybe new thumbnails too'. Films (lifetime views 0-15, REPORT.md 'Where viewers leave'): Black Hole 3xrxdmaOwJI (002), Jupiter -jmMROGoZCM (020), Andromeda ojk-dfOpAmw (019), Light Speed rVqgtkBV3jc (024), Moon Leaving 2fsQcea-voM (013), How Long Will Anything Last m09jUdwC5hk, Sun Brighter h8HGfyShEHI (022), Europa NbW5G1BpPY0 (006), Neutron Star Yk1tLh23rko (007), Alien Worlds b8-X_FyJnHM (003), Fermi Paradox Mo93x0fxB1Q (001). NOT Venus VBaYRPp85Sw or Saturn 55AEQwvs36g (their gap is retention, not clicks) and NOT 025 Js6EQJ8qDi8 (test running). For each film write TWO packages that differ in angle (not wording tweaks): title per LEARNINGS rule 23 (story + stakes, lost/hidden/missing thing + why it matters in a bracketed tail, max 70 chars, every word paid off by the locked script, no fear/hedge words) and a matching thumbnail concept per 00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md (2-4 word hook, real NASA/ESA image named with its source, readable at 168 px, nothing under the duration badge). Read each film's locked script first so nothing over-promises. Note the 3 biggest-neighbour topics first (Black Hole, Jupiter, Andromeda) as batch 1, then batches of 3-4. Output 05_Analytics/owb/REPACKAGE_2026-11.md (one table row per film: current title, package A title + thumb concept + source image, package B the same, why). Commit, PR, done. Text only, no Studio change, £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T21:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T21:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Old Orbit longs repackage: 2 new title + thumbnail packages each for the 11 weak longs (rule 23)",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "listing"
     }
   ],
   "focus": [

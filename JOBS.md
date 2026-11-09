@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2445 | mini | claimed | gemini | 2026-11-09T21:27Z | for gemini · qa · `gemini-argon` · Free ~70 GB on the Mini: stale Chrome code_sign_clone copies (~60 GB) + 23 finished, clean worktrees (~11 GB) |  |
 | J2446 | mini | open | – | – | 008 edit · assembly · HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge |  |
+| J2447 | any | open | – | – | listing · Old Orbit longs repackage: 2 new title + thumbnail packages each for the 11 weak longs (rule 23) |  |
 
 Recently finished:
 
