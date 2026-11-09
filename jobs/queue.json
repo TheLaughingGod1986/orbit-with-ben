@@ -211158,17 +211158,21 @@
           "at": "2026-11-09T17:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T17:55Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Rsync, verify checksums & file counts, and symlink ~/_desk/worktrees onto /Volumes/MiniWork/desk/worktrees",
+      "remaining_action": "Check /Volumes/MiniWork mount, pause relay, and verify no other agent CLI is running before moving ~/_desk folders",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 3,
-        "of": 6,
-        "at": "2026-11-09T16:54Z",
-        "by": "gemini",
-        "note": "Moved & verified ~/_desk/renders (3858 entries) onto /Volumes/MiniWork/desk/renders"
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-09T17:55Z",
+        "by": "gemini"
       },
       "rerouted_from": {
         "needs": "mini",
