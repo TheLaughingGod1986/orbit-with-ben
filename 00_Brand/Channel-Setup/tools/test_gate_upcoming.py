@@ -154,6 +154,11 @@ class NasStage(unittest.TestCase):
         self.assertEqual(g.nas_refs({"a": ["/Volumes/data/x.wav", "rel.wav"], "b": {"c": "/Volumes/data/y"}}),
                          ["/Volumes/data/x.wav", "/Volumes/data/y"])
 
+    def test_export_path_collapses_parent_segments_to_nas(self):
+        p = g.export_path(Path("/Users/ben/YouTube/orbit-with-ben"), "../../../../Volumes/data/s_v01.mp4")
+        self.assertEqual(str(p), "/Volumes/data/s_v01.mp4")
+        self.assertTrue(str(p).startswith(g.NAS))
+
 
 if __name__ == "__main__":
     unittest.main()

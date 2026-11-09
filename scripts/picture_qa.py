@@ -3,7 +3,7 @@
 "let's clean up the QA on image quality", after a dated computer model at 2:54 of 025 v03c got through).
 
   python3 scripts/picture_qa.py <video.mp4> --cuts <cuts.json> --pool <pool.json> [--pool <more.json>] --out-dir <pack>
-                                [--reviewed-ok <json>] [--no-jitter]
+                                [--reviewed-ok <json>] [--no-jitter] [--terminal-loop <contract.json>]
   python3 scripts/picture_qa.py --cuts <cuts.json> --pool <pool.json> --out-dir <dir>      # source checks only, no video
 
 Every cut is judged and reported at its film time (m:ss), the way Ben reports a problem.
@@ -27,7 +27,7 @@ How it looks (needs the video; scripts/polish_gate.py's checks): low detail, spl
 noise with no picture under it, and a wobbly still push.
 
 A source Claude has ruled on (--reviewed-ok {source: {"note", "kinds": ["kind of picture", "low detail", ...]}}) passes
-on the kinds named for it and is listed as reviewed. A key "source@offset" rules on that one stretch of footage only.
+on the kinds named for it and is listed as reviewed. In terminal-loop mode reuse/contract failures cannot be waived. A key "source@offset" rules on that one stretch of footage only.
 
 Writes <out-dir>/picture_qa.json, PICTURE_QA.md (FAIL first, then the WARN list Claude looks at full size) and, with a
 video, picture_qa_review.jpg (every FAIL and WARN frame at 960 px, labelled m:ss). Exit 1 if any cut fails."""
@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import subprocess as sp
 import sys
@@ -91,11 +92,12 @@ def offset(c: dict):
     return (c.get("framing") or {}).get("offset")
 
 
-def reuse_checks(cuts: list) -> dict:
+def reuse_checks(cuts: list, intentional_return: int | None = None, identities=None) -> dict:
     """{cut index: (fails, warns)} for reuse, counted in appearances (see the docstring)."""
     out = {k: ([], []) for k in range(len(cuts))}
     runs = []                                         # [source, [cut indices]]
     for k, c in enumerate(cuts):
+        c = dict(c, source=(identities or {}).get(k, c["source"]))
         if runs and runs[-1][0] == c["source"]:
             runs[-1][1].append(k)
         else:
@@ -106,7 +108,9 @@ def reuse_checks(cuts: list) -> dict:
         span = cuts[ks[-1]]["timeline_out"] - cuts[ks[0]]["timeline_in"]
         if span > LONG_RUN:
             out[ks[0]][1].append(f"reuse: on screen {span:.1f}s in a row (look at it: {LONG_RUN:.0f}s is a lot for one picture)")
-        footage = all(offset(cuts[k]) is not None for k in ks)
+        # Opt-in metadata errors must not turn a mixed footage run into stills.
+        footage = (any(cuts[k].get("video") is True or offset(cuts[k]) is not None for k in ks)
+                   if identities is not None else all(offset(cuts[k]) is not None for k in ks))
         count[src] += 1
         if not footage:
             if count[src] > MAX_REUSE:
@@ -118,11 +122,14 @@ def reuse_checks(cuts: list) -> dict:
         for k in ks:
             c = cuts[k]
             a = offset(c)
+            if isinstance(a, bool) or not isinstance(a, (int, float)) or not math.isfinite(a) or a < 0:
+                out[k][0].append("reuse: invalid source offset (finite nonnegative seconds required)")
+                continue
             b = a + c["timeline_out"] - c["timeline_in"]
             if any(a < e - SLACK and s < b - SLACK for s, e, _ in mine):
                 out[k][0].append("reuse: replays frames this run has just shown")
             same = [t for s, e, t in shown if abs(a - s) < SAME_STRETCH or (a < e - SLACK and s < b - SLACK)]
-            if same:
+            if same and k != intentional_return:
                 out[k][0].append(f"reuse: same stretch as {mmss(same[0])} (give it a new stretch, or a new render)")
             mine.append((a, b, (c["timeline_in"] + c["timeline_out"]) / 2))
         shown += mine
@@ -137,14 +144,36 @@ def reuse_checks(cuts: list) -> dict:
     return out
 
 
-def source_checks(cuts: list, pool: dict) -> list:
-    reuse = reuse_checks(cuts)
+def source_checks(cuts: list, pool: dict, loop_result=None) -> list:
+    identities = None
+    if loop_result is not None:
+        # Opt-in cannot use a spelling, symlink or byte-copy as new footage.
+        from terminal_loop import digest
+        identities = {}
+        identity_errors = {}
+        for k, c in enumerate(cuts):
+            try:
+                p = Path(c['source']).resolve(strict=True)
+                if not p.is_file():
+                    raise OSError("source is not a regular file")
+                identities[k] = digest(p)
+            except (OSError, RuntimeError) as exc:
+                # No pathname is evidence of a verified source identity.
+                identities[k] = ("unverified", k)
+                identity_errors[k] = f'terminal loop: cannot verify reuse identity: {exc}'
+    reuse = reuse_checks(cuts, (loop_result or {}).get("eligible_cut"), identities)
     rows = []
     for k, c in enumerate(cuts):
         mid = (c["timeline_in"] + c["timeline_out"]) / 2
         title = pool.get(stem(c["source"]))
         flag = FLAGS.get(stem(c["source"]))
         fail, warn = [], []
+        if identities is not None and k in identity_errors:
+            fail.append(identity_errors[k])
+        if identities is not None and (c.get("video") is True or offset(c) is not None):
+            off = offset(c)
+            if isinstance(off, bool) or not isinstance(off, (int, float)) or not math.isfinite(off) or off < 0:
+                fail.append("terminal loop: footage requires a finite nonnegative source offset")
         if flag:
             fail.append(f"kind of picture: {flag}")
         if title is None and OWN.search(c["source"]):
@@ -169,13 +198,14 @@ def source_checks(cuts: list, pool: dict) -> list:
     return rows
 
 
-def apply_reviewed(rows: list, reviewed: dict) -> None:
+def apply_reviewed(rows: list, reviewed: dict, protect_reuse=False) -> None:
     for r in rows:
-        key = f"{r['source']}@{r['offset']:g}" if r.get("offset") is not None else None
+        off = r.get("offset")
+        key = f"{r['source']}@{off:g}" if isinstance(off, (int, float)) and math.isfinite(off) else None
         ok = (key and reviewed.get(key)) or reviewed.get(r["source"])
         if not ok:
             continue
-        passed = [w for w in r["fail"] + r["warn"] if any(w.startswith(kind) for kind in ok.get("kinds", []))]
+        passed = [w for w in r["fail"] + r["warn"] if not (protect_reuse and w.startswith(("reuse:", "terminal loop:"))) and any(w.startswith(kind) for kind in ok.get("kinds", []))]
         if passed:
             r["fail"] = [w for w in r["fail"] if w not in passed]
             r["warn"] = [w for w in r["warn"] if w not in passed]
@@ -206,6 +236,10 @@ def report_md(rows: list, verdict: str, video: str) -> str:
         L += ["## Fix before anyone watches", ""] + [line(r, r["fail"]) for r in fails] + [""]
     if warns:
         L += ["## Claude looks at these full size", ""] + [line(r, r["warn"]) for r in warns] + [""]
+    loops = [r for r in rows if r.get("terminal_loop")]
+    for r in loops:
+        L += ["## Prescribed terminal return (not a seamless-motion ruling)", "",
+              "```json", json.dumps(r["terminal_loop"], indent=2), "```", ""]
     oks = [r for r in rows if r.get("reviewed_ok")]
     if oks:
         L += ["## Passed on Claude's ruling", ""] + [line(r, [r["reviewed_ok"]["note"] or "reviewed"]) for r in oks] + [""]
@@ -240,20 +274,35 @@ def main(argv=None) -> int:
     ap.add_argument("--pool", action="append", default=[])
     ap.add_argument("--out-dir", required=True)
     ap.add_argument("--reviewed-ok")
+    ap.add_argument("--terminal-loop", help="evidence contract JSON; source-only is provisional, exit 2")
     ap.add_argument("--no-jitter", action="store_true")
     a = ap.parse_args(argv)
     cuts = json.loads(Path(a.cuts).read_text())
     reviewed = json.loads(Path(a.reviewed_ok).read_text()) if a.reviewed_ok else {}
     out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
-    rows = source_checks(cuts, load_pool(a.pool))
-    apply_reviewed(rows, reviewed)
+    loop = None
+    if a.terminal_loop:
+        from terminal_loop import validate
+        try:
+            loop = validate(cuts, json.loads(Path(a.terminal_loop).read_text()), a.video)
+        except (OSError, ValueError) as exc:
+            loop = dict(status='invalid', eligible_cut=None, errors=[str(exc)], evidence={}, pending=[])
+    rows = source_checks(cuts, load_pool(a.pool), loop)
+    if loop:
+        if loop['errors']:
+            rows[-1]['fail'] += ['terminal loop: ' + e for e in loop['errors']]
+        else:
+            rows[loop['eligible_cut']]['terminal_loop'] = loop
+            rows[loop['eligible_cut']]['warn'].append(
+                'terminal loop: prescribed return classified; ' + '; '.join(loop['pending']))
+    apply_reviewed(rows, reviewed, protect_reuse=bool(a.terminal_loop))
     polish = None
     if a.video:
         import polish_gate
         polish = polish_gate.judge(a.video, cuts, reviewed, not a.no_jitter, log=lambda m: None)
         merge_polish(rows, polish)
-    verdict = "FAIL" if any(r["fail"] for r in rows) else "PASS"
-    res = dict(verdict=verdict, video=a.video or "", rules=dict(
+    verdict = "FAIL" if any(r["fail"] for r in rows) else ("PREFLIGHT" if loop and not a.video else "PASS")
+    res = dict(verdict=verdict, terminal_loop=loop, video=a.video or "", rules=dict(
         kind_fail=KIND_FAIL.pattern, kind_warn=KIND_WARN.pattern, upscale_fail=UPSCALE_FAIL, upscale_warn=UPSCALE_WARN,
         max_reuse=MAX_REUSE, max_stretches=MAX_STRETCHES, same_stretch=SAME_STRETCH, pixels="scripts/polish_gate.py" if a.video else "not run (no video)"),
         failed=[r for r in rows if r["fail"]], warn=[r for r in rows if r["warn"] and not r["fail"]], rows=rows,
@@ -267,7 +316,7 @@ def main(argv=None) -> int:
         print(f"WARN {r['at']:>6} row {r['row']} {r['source']}: {'; '.join(r['warn'])}")
     print(f"picture QA {verdict}: {len(res['failed'])} of {len(rows)} cuts fail, {len(res['warn'])} to look at"
           f" -> {out / 'PICTURE_QA.md'}" + (f", {sheet}" if sheet else ""))
-    return 1 if res["failed"] else 0
+    return 1 if res["failed"] else (2 if verdict == "PREFLIGHT" else 0)
 
 
 if __name__ == "__main__":

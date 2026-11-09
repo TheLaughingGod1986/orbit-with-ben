@@ -1,0 +1,12 @@
+desk-lock: HELD  /Users/benjaminoats/_desk/locks/youtube-buffer.lock
+desk-lock: owner:
+  pid=90255
+  ppid=81803
+  user=benjaminoats
+  host=Benjamins-Mac-mini
+  started_at=2026-11-03T18:25:08+0000
+  cwd=/Users/benjaminoats/YouTube/orbit-with-ben/07_Content-Ops
+  cmd=npx tsx --env-file=.env scripts/buffer-mirror.ts check --dry-run
+desk-lock: stop. Wait for the holder to finish, or if the pid is dead: desk-lock release youtube-buffer
+
+Exit code: 75

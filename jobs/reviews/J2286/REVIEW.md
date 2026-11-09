@@ -1,0 +1,9 @@
+# J2286 Specialist Voice Review — HOS 011 Anesthesia (`hos_011_vo_v01`)
+
+See the canonical review file written for parent job `J2245` at [`jobs/reviews/J2245/REVIEW.md`](../J2245/REVIEW.md).
+
+- **Verdict:** **KEEP** (`0` sentence pickups, `0` re-recordings, `£0.00` / `0` ElevenLabs credits; advisory specialist review with demonstrated `audio_input` for the elected Chief `Grok Bot` to record the formal VO lock).
+- **Summary:**
+  1. Direct audio audition (`audio_input` via `read_file` on `ch00.mp3`–`ch04.mp3`) confirmed all `1,230` spoken words (`6,941` characters) of `hos_011_vo_v01` (`WAV` SHA-256 `d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2`, `MP3` SHA-256 `9fdd84d50ac2f85bcdf8aea0d5ceefd261cae5458dafa1e6865adf2a3053f496`, `532.72 s`, `-19.6 LUFS`, `-23.1 dB` mean, `-3.6 dB` peak) are delivered cleanly in British English with zero stumbles, restarts, or dropped/repeated clauses.
+  2. All 12 `faster-whisper small.en` sounds-alike warnings (`Humphry Davy`, `Wells's`, `the Ether Dome`, `ether`/`aether`, `Letheon`, `anaesthesia`, `His patient slept`, `gentlemen`, `anaesthetic`, `an anaesthetist`, `just asleep enough`, `turned surgery`) and all 20 Scribe `scribe_v2` differences (`96.93%`, numerals and UK/US spelling only) were verified by ear as clean pronunciations.
+  3. The two `ch04.wav` (*Across the Ocean*) pauses (`1.52 s` at `0:27.87` / full `6:34.83`, and `1.55 s` at `0:33.47` / full `6:40.43`) are pure `-83` to `-92 dBFS` room-floor silences exceeding the `1.50 s` `vo_check.py` part threshold by `0.02 s` and `0.05 s`. Excising `0.900 s` (`43,200` frames at `48 kHz`) from each (`frames 1353600:1396800` and `1622400:1665600`) plus `qsin` chapter-end fades (`ch00` `60 ms`, `ch01` `80 ms`, `ch02` `40 ms`, `ch03` `80 ms`, `ch04` `60 ms`) was tested with `vo_check_py312.sh --part 1` and passes with **`0 fails`** (`2:43.96`, mean `-23.0 dB`, peak `-4.0 dB`).

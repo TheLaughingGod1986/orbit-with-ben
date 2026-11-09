@@ -1,0 +1,73 @@
+{
+  "job": "J2141",
+  "scope": "R30 twist card only",
+  "technical_result": "PASS",
+  "media": "/Users/benjaminoats/_desk/J2141-twist-v01/code_graphic_031_r30_twist_v01.mov",
+  "sha256": "cc2f4e6db321a8883ffa8a31ba19c46d97df65eefcced59b3a2e8416eed7b2fa",
+  "bytes": 1529406,
+  "format": {
+    "codec_name": "qtrle",
+    "width": 1920,
+    "height": 1080,
+    "pix_fmt": "argb",
+    "avg_frame_rate": "25/1",
+    "duration": "3.960000",
+    "nb_frames": "99"
+  },
+  "full_decode": "PASS",
+  "locked_cue_start_s": 313.82,
+  "duration_s": 3.96,
+  "frames": 99,
+  "labels": [
+    "CASE CLOSED?",
+    "ARE WE OVERDUE?"
+  ],
+  "encoded_frame_samples": [
+    {
+      "time_s": 0.0,
+      "opaque_pixels": 0,
+      "mean_luma_opaque": 0,
+      "max_alpha": 0,
+      "decoded_rgba_sha256": "be09810e64a7e768ea5b46c57ee4492e86d31f372512e64d98057f781aa7bbc4"
+    },
+    {
+      "time_s": 0.8,
+      "opaque_pixels": 16946,
+      "mean_luma_opaque": 203.311,
+      "max_alpha": 255,
+      "decoded_rgba_sha256": "8785e9a0b443526e5e688b7f8004caa06c16195f26dbe38660e5ed5e1d99d168"
+    },
+    {
+      "time_s": 1.5,
+      "opaque_pixels": 16806,
+      "mean_luma_opaque": 203.311,
+      "max_alpha": 255,
+      "decoded_rgba_sha256": "dbcbdd9fb690e3349384f1ad74747efe7ebe51db6c090ae90a37a64b70a2ca8a"
+    },
+    {
+      "time_s": 2.4,
+      "opaque_pixels": 18696,
+      "mean_luma_opaque": 203.311,
+      "max_alpha": 255,
+      "decoded_rgba_sha256": "f1fa36e4fcfc35da06e26aad8751db4a7e6a1353dc5b92b20ac2179a73dfacfa"
+    },
+    {
+      "time_s": 3.7,
+      "opaque_pixels": 18487,
+      "mean_luma_opaque": 203.311,
+      "max_alpha": 153,
+      "decoded_rgba_sha256": "d4aa734f17d6c1e14140cd8d96b68e525d2019783442784cc11776baaea4f221"
+    }
+  ],
+  "distinct_sample_frames": 5,
+  "contact_sheet": "/Users/benjaminoats/_desk/J2141-twist-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "b6cda36a0069b00c0ee09a09c786c59e4881ca3b61fb6bfc7ded686a631fa9da",
+  "limitations": [
+    "No audio or actual moving-video perception demonstrated",
+    "Static samples and a full decode do not approve motion, composite clearance or whole-film QA",
+    "Alpha overlay; preview navy on the contact sheet is not the plate",
+    "The 0.3 s hard cut to black stays an assembly cut and is not in this file",
+    "Does not replace code_graphic_031_r30_recap_v01; place the ISS plate between R29 and these overlays"
+  ],
+  "spend_gbp": 0
+}
