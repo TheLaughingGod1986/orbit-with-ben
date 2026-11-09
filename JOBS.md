@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2408 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
 | J2414 | any | blocked | gemini | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J2416 | mini | open | – | – | for cursor · review · `cursor-claude-opus-5-5` · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
+| J2416 | mini | claimed | macbook-2 | 2026-11-09T07:02Z | for cursor · review · `cursor-claude-opus-5-5` · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
 | J2420 | any | blocked | macbook | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 | J2421 | mini | open | – | – | for cursor · qa · `cursor-claude-opus-5-5` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
