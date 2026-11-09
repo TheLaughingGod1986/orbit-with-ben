@@ -208459,10 +208459,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-09T01:02Z",
-      "eta": "2026-11-09T03:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-09T01:01Z",
       "result": "",
@@ -208476,6 +208476,11 @@
           "at": "2026-11-09T01:02Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T01:04Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
