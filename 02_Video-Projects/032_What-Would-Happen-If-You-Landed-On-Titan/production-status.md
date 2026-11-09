@@ -89,3 +89,17 @@ Assembled `09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v
 5. Delivery: Integrated loudness `-14.5 LUFS`, true peak `-1.0 dBTP`, `1920x1080` `30/1` fps CFR, `0` black frames.
 
 Ready for Chief / Claude review (`07_Edit-Project/full_master_v01_pack/ASSEMBLY_REPORT_v01.md`).
+
+## J2436 Long Master v02 Assembly (First-30s Re-Cut `FIRST30_PLAN.md` / `J2435`) & 5-Gate Technical Verification — 9 November 2026
+
+Assembled `09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4` (`585.440 s`, `17,563` frames at `30/1` fps CFR, `1920x1080`, `yuv420p`, `389,705,443` bytes, `sha256: 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, `£0` spend) on `studio-live` NAS (`07_Edit-Project/_assemble_032_full_master_v02.py`) and mirrored to NAS `OWB UAT` (`/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`) and iCloud `OWB UAT` (`/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`):
+- **First-30s Hook Re-Cut (`07_Edit-Project/FIRST30_PLAN.md`):** Upgraded `render_still_cut()` to symmetric sub-pixel `PIL.Image.Transform.EXTENT(..., Image.Resampling.BICUBIC)` zoom (`1.000 -> 1.045`) so Frame 0 (`PIA20016.jpg`) moves continuously from frame 0 (`polish_gate.py` `0` frozen pairs across all `131` cuts); re-cut `R03` (`9.73–22.93 s`) into 4 cuts `<= 3.60 s` (`3.40 s` `PIA22766`, `3.40 s` `PIA21902`, `3.60 s` `r03_pressure` at `16.53–20.13 s` before `0:20`, `2.80 s` `PIA21890` `u1`), `R04` (`22.93–32.17 s`) into 3 cuts `<= 3.60 s` (`2.83 s` `PIA08167` `u2`, `2.80 s` `PIA21890` `u2`, `3.60 s` `r04_cold`), `R05` (`32.17–45.10 s`) into 4 cuts `<= 3.60 s` (`3.50 s` `PIA07231`, `3.60 s` `r05_rain_preview`, `2.90 s` `PIA12621`, `2.93 s` `NASA_Dragonfly_BannerFactSheet_2024`), and `R06` (`45.10–50.87 s`) into 2 cuts `<= 3.60 s` (`2.90 s` `PIA14922`, `2.87 s` `PIA17177`).
+- **All 5 Required Gates Print PASS:**
+  1. `clip_check.py`: `clip_check: 52 rows — PASS (OK: sentence/card boundaries and end-after-VO checks clear.)`
+  2. `picture_qa.py`: `picture QA PASS: 0 of 131 cuts fail, 7 to look at -> 07_Edit-Project/full_master_v02_pack/PICTURE_QA.md`
+  3. `polish_gate.py`: `polish gate PASS: 0 of 131 rows failed, 7 to look at -> 07_Edit-Project/full_master_v02_pack/polish_gate_v02.json`
+  4. `music_gate.py`: `music gate PASS: titan_score_bed_v01.mp3, 585.4 s, about 70.6 BPM, brief Pace: 68-78 BPM`
+  5. `sfx_kit.py level`: `SFX level PASS: VO -20.0 LUFS, SFX -46.2 LUFS, 13 hits`
+  6. Delivery: Integrated loudness `-14.5 LUFS`, true peak `-1.0 dBTP`, `1920x1080` `30/1` fps CFR, `0` black frames.
+
+Ready for Chief / Claude review (`07_Edit-Project/full_master_v02_pack/ASSEMBLY_REPORT_v02.md`).
