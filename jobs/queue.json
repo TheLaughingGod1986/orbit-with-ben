@@ -1,5 +1,5 @@
 {
-  "next_id": 2449,
+  "next_id": 2450,
   "jobs": [
     {
       "id": "J0001",
@@ -211463,6 +211463,35 @@
       "remaining_action": "Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each)",
       "due": "2026-11-13T18:00:00Z",
       "kind": "thumb"
+    },
+    {
+      "id": "J2449",
+      "title": "Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J2448. In Orbit Studio (CDP 9223, check the channel first), for each of 3xrxdmaOwJI, -jmMROGoZCM, ojk-dfOpAmw: if a Test & Compare is already running, do NOT replace it: release with a note. Otherwise start a 3-arm title + thumbnail test: current title/thumb, package A, package B (J2447 text, J2448 images). Read back that the test shows Running with 3 arms. Never change privacy, schedule, description or the video. Record the test start time per video in jobs.py done --result. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2448",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T21:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T21:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [

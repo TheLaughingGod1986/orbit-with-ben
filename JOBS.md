@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2446 | mini | open | – | – | 008 edit · assembly · HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge |  |
 | J2447 | any | open | – | – | listing · Old Orbit longs repackage: 2 new title + thumbnail packages each for the 11 weak longs (rule 23) |  |
 | J2448 | mini | open (after J2447) | – | – | thumb · Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each) |  |
+| J2449 | mini | open (after J2448) | – | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 
 Recently finished:
 
