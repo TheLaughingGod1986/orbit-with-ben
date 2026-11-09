@@ -38,6 +38,7 @@ Applies to eligible **unswapped scheduled-private 026–029 Shorts and new 030+ 
 
 - Cut 1 at **≤2.8 s**, Cut 2 at **≤4.8 s**, measured from output time zero (Cut 2 is the second picture transition, not a 4.8 s shot allowance). Later plates stay **≤4.0 s**.
 - Frame 0: moving, full-bleed payoff subject, ≥60% subject and ≤30% black/empty sky; no Orbit. A slow still push fails. First word **≤0.15 s**; spoken surprise **≤1.5 s**; no internal sentence-1 pause >0.15 s.
+- **Full-bleed every shot (Ben, 8 Nov 2026, J2421):** reframe every Short shot to fill 1080x1920; no blur pad (16:9 plate over a boxblur/gblur copy), no bars. `gate_shorts_open.py check` FAILs it on more than 10% of frames.
 - Bridge sentence 1 straight into the next concrete mechanism/number on moving picture: VO breath **<0.25 s**. Eliminate the **3.5–5.5 s post-sentence-1 pause/hold**; no static crop-zoom in 4–8 s.
 - **Zero meta-promise, spoken CTA or end card**. Last spoken word to loop point **<1.2 s**; matched opening framing, music through the seam, crossfade ≤0.3 s. A visual loop-difference score is not loop-tail seconds.
 - Keep Keeper length/question rules, payoff ≥70%, the one teaching overlay, Related/description link, SFX and all existing ship gates. Existing Test A exemptions and explicit per-cut waivers remain in force: record conflicts for review rather than silently changing the test arm or calling an exception a full E1 PASS.

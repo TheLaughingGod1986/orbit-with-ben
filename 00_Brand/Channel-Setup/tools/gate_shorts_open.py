@@ -140,6 +140,23 @@ META_PROMISES = (
     "did you know",
     "wait for it",
 )
+# (g) Blur-pad / letterbox (Ben, 8 Nov 2026, J2421, on 031 Short 2 v02: "like a rectangle and blurry above and below").
+#     A centred 16:9 plate over a blurred copy of itself (boxblur/gblur fill) or flat bars reads as a landscape video on
+#     a phone. One frame a second at PAD_W x PAD_H grey; per frame the top and bottom PAD_BAND bands are compared with
+#     the centre band. "blur-pad" = both bands far softer than the centre (Laplacian) AND either a straight horizontal
+#     seam on both sides of the centre or the bands correlate with a blurred, scaled (or mirrored) copy of the plate.
+#     "bars" = both bands flat AND a seam on both sides. FAIL when more than PAD_FAIL_SHARE of frames show either.
+#     Thresholds are first-pass (synthetic clips only); recalibrate on real exports before tightening.
+PAD_W, PAD_H = 108, 192
+PAD_BAND = 0.20
+PAD_CENTRE = (0.38, 0.62)
+PAD_SHARP_RATIO = 0.35   # band Laplacian below this share of the centre's = soft
+PAD_SHARP_FLOOR = 4.0    # centre must carry real detail, or the frame proves nothing (dark space, fades)
+PAD_MATCH_CORR = 0.55
+PAD_BAR_STD = 2.0
+PAD_SEAM_DIFF = 12
+PAD_SEAM_COLS = 0.70     # a seam spans at least this share of the width (a planet limb or horizon on one side doesn't)
+PAD_FAIL_SHARE = 0.10
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -704,6 +721,126 @@ def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], 
     return [], []
 
 
+# ----------------------------------------------------------------------------- blur-pad / letterbox (J2421)
+def pad_frames(path: Path) -> list[bytes]:
+    """One grey PAD_W x PAD_H frame per second of the clip."""
+    data = run(["ffmpeg", "-v", "error", "-i", str(path), "-vf", f"fps=1,scale={PAD_W}:{PAD_H}:flags=area",
+                "-f", "rawvideo", "-pix_fmt", "gray", "-"]).stdout
+    n = PAD_W * PAD_H
+    return [data[i:i + n] for i in range(0, len(data) - n + 1, n)]
+
+
+def _lap(g: bytes, y0: int, y1: int) -> float:
+    """Mean absolute 4-neighbour Laplacian over rows y0..y1."""
+    W = PAD_W
+    tot = n = 0
+    for y in range(max(1, y0), min(PAD_H - 1, y1)):
+        r = y * W
+        for x in range(1, W - 1):
+            i = r + x
+            tot += abs(4 * g[i] - g[i - 1] - g[i + 1] - g[i - W] - g[i + W])
+            n += 1
+    return tot / n if n else 0.0
+
+
+def _std(g: bytes, y0: int, y1: int) -> float:
+    v = g[y0 * PAD_W:y1 * PAD_W]
+    if not v:
+        return 0.0
+    m = sum(v) / len(v)
+    return (sum((p - m) ** 2 for p in v) / len(v)) ** 0.5
+
+
+def _seam(g: bytes, lo: int, hi: int) -> float:
+    """Best share of columns with a step across one row in lo..hi (rows y-2 vs y+1, so a soft 1 px edge counts)."""
+    best = 0.0
+    for y in range(max(2, lo), min(PAD_H - 1, hi)):
+        a, b = (y - 2) * PAD_W, (y + 1) * PAD_W
+        hits = sum(1 for x in range(PAD_W) if abs(g[a + x] - g[b + x]) >= PAD_SEAM_DIFF)
+        best = max(best, hits / PAD_W)
+    return best
+
+
+def _corr(xs: list[float], ys: list[float]) -> float:
+    n = len(xs)
+    if n < 2:
+        return 0.0
+    mx, my = sum(xs) / n, sum(ys) / n
+    vx = sum((v - mx) ** 2 for v in xs)
+    vy = sum((v - my) ** 2 for v in ys)
+    if vx <= 0 or vy <= 0:
+        return 0.0
+    return sum((xs[i] - mx) * (ys[i] - my) for i in range(n)) / (vx * vy) ** 0.5
+
+
+def _pad_match(g: bytes) -> float:
+    """How well the top/bottom bands match a blurred copy of the centred 16:9 plate: scaled to cover the frame
+    (the usual boxblur/gblur recipe), flipped, or mirrored out from the plate edge. Best Pearson r of the three."""
+    W, H = PAD_W, PAD_H
+    ph = W * 9 / 16
+    py0 = (H - ph) / 2
+    k = H / ph
+    rad = 2
+    top, bot0 = int(H * PAD_BAND), int(H * (1 - PAD_BAND))
+    rows = list(range(0, top, 2)) + list(range(bot0, H, 2))
+    best = -1.0
+    for mode in ("cover", "flip", "mirror"):
+        xs: list[float] = []
+        ys: list[float] = []
+        for y in rows:
+            for x in range(0, W, 2):
+                if mode == "mirror":
+                    sx = x
+                    sy = (py0 - y) if y < py0 else ph - (y - (py0 + ph))
+                else:
+                    sx = (x - W / 2) / k + W / 2
+                    sy = (y - H / 2) / k + ph / 2
+                    if mode == "flip":
+                        sy = ph - 1 - sy
+                cx, cy = int(sx), int(py0 + sy)
+                acc = c = 0
+                for dy in range(-rad, rad + 1):
+                    yy = min(max(cy + dy, int(py0) + 1), int(py0 + ph) - 1)
+                    for dx in range(-rad, rad + 1):
+                        xx = min(max(cx + dx, 0), W - 1)
+                        acc += g[yy * W + xx]
+                        c += 1
+                xs.append(g[y * W + x])
+                ys.append(acc / c)
+        best = max(best, _corr(xs, ys))
+    return best
+
+
+def pad_frame_kind(g: bytes) -> str | None:
+    """'bars', 'blur-pad' or None for one PAD_W x PAD_H grey frame."""
+    H = PAD_H
+    b = int(H * PAD_BAND)
+    c0, c1 = int(H * PAD_CENTRE[0]), int(H * PAD_CENTRE[1])
+    seams = min(_seam(g, b, int(H * 0.45)), _seam(g, int(H * 0.55), H - b))
+    if (_std(g, 0, b) <= PAD_BAR_STD and _std(g, H - b, H) <= PAD_BAR_STD
+            and _std(g, c0, c1) > PAD_BAR_STD * 4 and seams >= PAD_SEAM_COLS):
+        return "bars"
+    sc = _lap(g, c0, c1)
+    if sc >= PAD_SHARP_FLOOR and _lap(g, 0, b) < PAD_SHARP_RATIO * sc and _lap(g, H - b, H) < PAD_SHARP_RATIO * sc:
+        if seams >= PAD_SEAM_COLS or _pad_match(g) >= PAD_MATCH_CORR:
+            return "blur-pad"
+    return None
+
+
+def blur_pad_verdict(kinds: list[str | None]) -> tuple[list[str], dict]:
+    """(g) FAIL when more than PAD_FAIL_SHARE of the sampled frames are blur-padded or letterboxed."""
+    n = len(kinds)
+    bad = [i for i, k in enumerate(kinds) if k]
+    share = len(bad) / n if n else 0.0
+    info = {"frames": n, "padded": len(bad), "share": round(share, 3),
+            "kinds": sorted({k for k in kinds if k}), "at_s": bad[:12]}
+    if n and share > PAD_FAIL_SHARE:
+        what = " / ".join(info["kinds"])
+        return [f"16:9 picture with {what} above and below on {len(bad)}/{n} frames ({share:.0%} > "
+                f"{PAD_FAIL_SHARE:.0%}, first at {bad[0]} s) — reframe every shot to fill 1080x1920 full-bleed"], info
+    return [], info
+
+
 def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, self_id: str | None = None,
           last: int = LOOKBACK_LAST, length_test: bool = False, report_only: bool = False,
           meta_path: Path | None = None, script_path: Path | None = None, vo_path: Path | None = None,
@@ -761,6 +898,9 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             f"pushed still at frame 0 (mean 0–1.5 s frame diff {f0_diff:.2f} < {FRAME0_DIFF_FAIL:.2f}) — "
             "use moving footage"
         )
+
+    pad_fails, res["blur_pad"] = blur_pad_verdict([pad_frame_kind(g) for g in pad_frames(path)])
+    res["fails"] += pad_fails
 
     cut1 = first_cut_s(path, dur)
     res["first_cut_s"] = cut1
