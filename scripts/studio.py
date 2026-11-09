@@ -22,6 +22,7 @@ Stages, in order: topic script sources vo shots picture edit thumbs upload.
 States: todo, doing, review, done, skip, blocked.
 """
 import argparse, datetime as dt, json, pathlib, subprocess, sys
+import fcntl
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FILMS = ROOT / "02_Video-Projects"
@@ -40,10 +41,16 @@ def iso(t):
 
 
 def parse(s):
-    return dt.datetime.strptime(s, "%Y-%m-%dT%H:%MZ").replace(tzinfo=dt.timezone.utc)
+    # All producers use ISO timestamps, including seconds, fractions and UTC offsets.
+    value = dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=dt.timezone.utc)
+    return value.astimezone(dt.timezone.utc)
 
 
 def film_dir(films, key):
+    # A job may name its film as "OWB:026" as well as "026" (8 Nov 2026: three such jobs stopped every MacBook claim).
+    key = str(key).split(":")[-1]
     hits = [d for d in sorted(films.iterdir()) if d.is_dir() and d.name.split("_")[0] == key]
     if len(hits) != 1:
         sys.exit(f"studio: no single film folder for '{key}' under {films}")
@@ -178,27 +185,86 @@ def git(*args):
     return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
 
 
+def git_transaction(write, message, tries=3):
+    """Fail closed outside clean main; push only the verified metadata commit.
+
+    No rebase, autostash or worker-branch switch. A push that loses a race drops
+    only its own verified metadata commit (`reset --keep` to the base it was made
+    on), fast-forwards to the new main and re-applies the change, up to `tries`
+    times; the last loss leaves the commit for explicit reconciliation. Other
+    unpublished commits are never replayed or dropped.
+    """
+    common = git("rev-parse", "--git-common-dir")
+    if common.returncode:
+        return None, "not a Git checkout"
+    lock = pathlib.Path(common.stdout.strip())
+    if not lock.is_absolute():
+        lock = ROOT / lock
+    with (lock / "studio-metadata.lock").open("a") as handle:
+        fcntl.flock(handle, fcntl.LOCK_EX)
+        branch = git("symbolic-ref", "--quiet", "--short", "HEAD")
+        if branch.returncode or branch.stdout.strip() != "main":
+            return None, "metadata --git requires clean main; worker branch unchanged"
+        # A second worktree forced onto main (`git worktree add --force <dir> main`, Codex J2210, 5 Nov 2026) moves
+        # main under the shared checkout, whose stale index then reads as a staged reverse of every newer commit
+        # (PR #520) and blocks every later metadata write. Refuse in both until the extra worktree is removed.
+        branches = [l[7:] for l in git("worktree", "list", "--porcelain").stdout.splitlines() if l.startswith("branch ")]
+        if branches.count("refs/heads/main") > 1:
+            return None, ("metadata --git refused: main is checked out in more than one worktree; remove the extra one "
+                          "(git worktree list) and use `git worktree add --detach <dir> origin/main` instead")
+        state = git("status", "--porcelain")
+        if state.returncode or state.stdout.strip():
+            return None, "metadata --git requires a clean working tree and index"
+        for attempt in range(max(1, tries)):
+            result, retry = _metadata_attempt(write, message)
+            if not retry or attempt == max(1, tries) - 1:
+                return result
+            # Another machine pushed first (5 Nov 2026: the Mini and the MacBook both write the queue). Our own
+            # verified commit, and nothing else, goes; the change is re-applied on the new main. Never replayed.
+            if git("reset", "-q", "--keep", retry).returncode:
+                return None, "metadata push rejected; local commit preserved; reconcile main before retry"
+        return result
+
+
+def _metadata_attempt(write, message):
+    """((out, err), base to return to when the push lost a race, else None)."""
+    if git("fetch", "-q", "origin", "refs/heads/main").returncode:
+        return (None, "metadata fetch failed; no changes applied"), None
+    base = git("rev-parse", "FETCH_HEAD").stdout.strip()
+    head = git("rev-parse", "HEAD").stdout.strip()
+    if git("merge-base", "--is-ancestor", head, base).returncode:
+        return (None, "main has unpublished/diverged commits; no changes applied"), None
+    if git("merge", "-q", "--ff-only", base).returncode:
+        return (None, "main fast-forward failed; no changes applied"), None
+    out, err, paths = write()
+    if err or not paths:
+        return (out, err), None
+    paths = [str(pathlib.Path(p).resolve().relative_to(ROOT.resolve())) for p in paths]
+    if git("add", "--", *paths).returncode:
+        return (None, "metadata git add failed; changes preserved"), None
+    if git("commit", "-q", "-m", message, "--", *paths).returncode:
+        return (None, "metadata git commit failed; changes preserved"), None
+    commit = git("rev-parse", "HEAD").stdout.strip()
+    parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
+    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
+    if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
+        return (None, "metadata commit verification failed; not pushed, changes preserved"), None
+    if git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
+        return (None, "metadata push rejected; local commit preserved; reconcile main before retry"), base
+    return (out, None), None
+
+
 def with_git(path, change, message, films, tries=3):
-    """Pull, apply the change, commit only status.json and STATUS.md, and push. If the push races another agent,
-    start again from the new main. Other uncommitted work in the tree is autostashed by the pull and never committed."""
-    for _ in range(tries):
-        if git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
-            return "git pull failed; resolve the working tree first"
+    """Commit studio metadata only, from clean main. A lost push race re-applies on the new main."""
+    def write():
         data = load(path)
         err = change(data)
         if err:
-            return err
+            return None, err, []
         save(path, data)
         write_status(films)
-        paths = [str(path), str(status_path(films))]
-        git("add", *paths)
-        if git("commit", "-q", "-m", message, "--", *paths).returncode != 0:
-            return "git commit failed"
-        if git("push", "-q", "origin", "HEAD:main").returncode == 0:
-            return None
-        git("reset", "-q", "HEAD~1")  # drop only our status commit; other work in the tree is untouched
-        git("checkout", "-q", "--", *paths)
-    return "push kept racing; try again"
+        return None, None, [path, status_path(films)]
+    return git_transaction(write, message, tries)[1]
 
 
 def main(argv=None):

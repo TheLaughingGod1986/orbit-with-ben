@@ -904,13 +904,13 @@ def set_prompt(page, prompt: str) -> None:
     page.wait_for_timeout(250)
 
 
-def submit_create(page) -> None:
-    if not click_visible(page, "arrow_forward"):
-        # Last Create in prompt bar
-        creates = page.locator('button:has-text("Create")')
-        if creates.count() == 0:
-            raise RuntimeError("Flow Create / arrow_forward not found")
-        creates.last.click(timeout=8000)
+def submit_create(page, *, create_guard=None) -> None:
+    if create_guard is None:
+        raise RuntimeError(
+            "Flow Create requires an explicit create_guard owning the shared Flow accounting lock (~/_desk/state/flow/shared)"
+        )
+    create_guard(page)
+    return
 
 
 def dismiss_soft_prompts(page) -> None:
@@ -965,6 +965,29 @@ def download_media(page, name_or_url: str, dest: Path) -> int:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(data)
     return len(data)
+
+
+def wait_and_download_passive(page, dest: Path, *, before_ids: set[str],
+                              timeout_s: int) -> str:
+    """Guarded takes only: observe/download, never confirm, retry or resubmit."""
+    deadline = time.monotonic() + timeout_s
+    while time.monotonic() < deadline:
+        for media_id in sorted(collect_media_ids(page) - before_ids):
+            response = page.request.get(absolute_media_url(media_id), timeout=60_000)
+            data = response.body()
+            content_type = (response.headers.get("content-type") or "").lower()
+            if not response.ok or ("video" not in content_type and b"ftyp" not in data[:32]):
+                continue
+            if len(data) < 200_000:
+                continue
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            with dest.open("xb") as handle:
+                handle.write(data)
+                handle.flush()
+                os.fsync(handle.fileno())
+            return media_id
+        page.wait_for_timeout(4000)
+    raise TimeoutError(f"Flow video not ready after {timeout_s}s")
 
 
 def wait_and_download(
@@ -1142,8 +1165,11 @@ def _generate_clip_once(
     timeout_s: int = 900,
     reuse_project: bool = False,
     scenery_only: bool = False,
+    create_guard=None,
 ) -> dict:
     """One attempt: generate a silent Veo clip via Google Flow Ultra UI."""
+    if dest.exists():
+        raise FileExistsError(f"Guarded Flow output already exists: {dest}")
     t0 = time.time()
     ref = None
     if not scenery_only:
@@ -1188,9 +1214,10 @@ def _generate_clip_once(
         except Exception:
             pass
         print("  submitting Create…", flush=True)
-        submit_create(page)
+        submit_create(page, create_guard=create_guard)
         print("  submitted Create (scenery-only, no Orbit ref)", flush=True)
-        _record_flow_spend(dest, model)
+        if create_guard is None:
+            _record_flow_spend(dest, model)
     else:
         print("  ensuring Orbit agent instruction…", flush=True)
         ensure_orbit_agent_instruction(page)
@@ -1206,10 +1233,11 @@ def _generate_clip_once(
         if _prompt_attachment_count(page) < 1:
             raise RuntimeError("Orbit prompt chip missing after attach — aborting")
         print("  submitting Create…", flush=True)
-        submit_create(page)
+        submit_create(page, create_guard=create_guard)
         print("  submitted Create (identity-locked, Orbit ref attached)", flush=True)
-        _record_flow_spend(dest, model)
-    media_id = wait_and_download(
+        if create_guard is None:
+            _record_flow_spend(dest, model)
+    media_id = wait_and_download_passive(
         page, dest, before_ids=before, timeout_s=timeout_s
     )
     if not veo.already_done(dest):
@@ -1241,9 +1269,16 @@ def generate_clip(
     timeout_s: int = 900,
     reuse_project: bool = False,
     scenery_only: bool = False,
+    create_guard=None,
     attempts: int = 3,
 ) -> dict:
     """Generate one silent Veo clip via Google Flow Ultra UI (with soft retries)."""
+    if create_guard is None:
+        raise ValueError(
+            "Flow generation requires an explicit create_guard owning the shared Flow accounting lock (~/_desk/state/flow/shared)"
+        )
+    if attempts != 1:
+        raise ValueError("Guarded Flow calls require attempts=1; no automatic retries")
     last: BaseException | None = None
     use_reuse = reuse_project
     for attempt in range(1, attempts + 1):
@@ -1257,6 +1292,7 @@ def generate_clip(
                 timeout_s=timeout_s,
                 reuse_project=use_reuse,
                 scenery_only=scenery_only,
+                create_guard=create_guard,
             )
         except Exception as e:
             last = e

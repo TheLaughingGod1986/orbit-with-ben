@@ -3,6 +3,10 @@
 // as the classic board (OWB → issue #264, HOS → #180).
 (function () {
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
+  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
+  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+    .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const API = "/api/checks";
@@ -358,8 +362,13 @@
   function supportingJob(j) {
     return /\bBacklog\b|Weekly .*audit|Daily Studio read|QA sweep|listing check.*(?:live videos|last \d+)/i.test(j.title || "");
   }
+  // Mirror of scripts/video_tracker.py job_is_channel_wide: a job tagging 4+ videos is studio-wide, not one card's work.
+  function channelWide(j) {
+    const keys = j.taskKeys || [];
+    return keys.length >= 4 || (/^Backlog\b/i.test(j.title || "") && keys.length > 1);
+  }
   function matchesVideo(j, v) {
-    if (supportingJob(j)) return false;
+    if (supportingJob(j) || channelWide(j)) return false;
     if (j.recheck_of) {
       const original = (board?.owb?.jobs || []).find(x=>x.id===j.recheck_of && !x.recheck_of);
       return original ? matchesVideo(original,v) : false;
@@ -501,8 +510,11 @@
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
       // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
       const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
-      bar = pr.pct === null ? `<div class="bar indeterminate" role="progressbar" aria-label="Job in progress; completion not yet reported"><i></i></div>` : `<div class="bar ${band}" role="progressbar" aria-label="Confirmed job steps" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-      note = pr.pct === null ? "In progress · awaiting a step update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      const pct = pr.pct ?? 0;
+      bar = `<div class="bar ${band}" role="progressbar" aria-label="${pr.pct === null ? "Recorded completion; no steps reported yet" : "Confirmed job steps"}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>`;
+      note = pr.pct === null ? "0% recorded · waiting for the first update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      const updated = tsOf(p.at), last = isNaN(updated) ? pr.start : updated;
+      if (!isNaN(last) && Date.now() - last >= 5 * MIN) note += ` · No progress update for ${dur(Date.now() - last)}`;
       if (p.note) note += `<details class="job-detail"><summary>Latest update${p.at ? ` · ${hm(tsOf(p.at))}` : ""}</summary>${esc(String(p.note).slice(0, 240))}</details>`;
     } else {
       note = j.due ? `Due ${esc(new Date(j.due).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}))} London` : "";
@@ -646,11 +658,25 @@
     } catch (e) {}
   }
 
+  // The studio app's Review button links here as /board#v=<video key>: bring that card into view once and mark it.
+  let focusDone = false;
+  function focusFromHash() {
+    const m = location.hash.match(/(?:^#|&)v=([^&]+)/);
+    if (focusDone || !m || !document.querySelector) return;
+    const key = decodeURIComponent(m[1]);
+    const card = [...document.querySelectorAll("article.card")].find(c => c.dataset.key === key);
+    if (!card) return;
+    focusDone = true;
+    card.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+    card.style.outline = "2px solid #3b82f6";
+    card.style.outlineOffset = "2px";
+  }
+
   async function pollData() {
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
-        const g = await fetch(DATA_REF, { cache: "no-cache" });
+        const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return;
@@ -674,6 +700,7 @@
         board = Object.assign({}, j, { tracker: board.tracker });
       }
       render();
+      focusFromHash();
     } catch (e) {
       document.getElementById("asof").textContent = "Could not load board data";
     }

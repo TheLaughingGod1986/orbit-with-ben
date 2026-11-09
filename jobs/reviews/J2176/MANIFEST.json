@@ -1,0 +1,79 @@
+{
+  "job": "J2176",
+  "film": "OWB:032",
+  "status": "PARTIAL_C_REPAIRED_A_REJECTED",
+  "cost_gbp": 0,
+  "assets": [
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_A_real_this_is_titan_v02.jpg",
+      "sha256": "fed289201b524b5bfecb223a048b7ba8d65c7cfed03ef0b21aff7831fb528af5",
+      "bytes": 188736,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_A_real_this_is_titan_v02.jpg",
+        "saturation": 122.0,
+        "near_black": 0.391,
+        "fails": [
+          "near-black 39% > 30%"
+        ]
+      },
+      "status": "REJECTED_GATE_FAIL"
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_B_bright_methane_shore_v02.jpg",
+      "sha256": "4e4faf3155fba42aa7120a1682ba2d1eb46a95a0cc9a48fe5ac37a7bbfab02a0",
+      "bytes": 432510,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_B_bright_methane_shore_v02.jpg",
+        "saturation": 164.3,
+        "near_black": 0.037,
+        "fails": []
+      },
+      "status": "worker_delivery_pending_panel"
+    },
+    {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_C_scale_ice_is_rock_v03.jpg",
+      "sha256": "a0a67a7e1f192d09aabeaa991c9f3f4ef064a2e81234f3a5b66c75de1be1c7af",
+      "bytes": 570715,
+      "size": [
+        1280,
+        720
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/032_C_scale_ice_is_rock_v03.jpg",
+        "saturation": 209.2,
+        "near_black": 0.033,
+        "fails": []
+      },
+      "status": "worker_delivery_pending_panel"
+    }
+  ],
+  "phone_preview": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/PHONE_PREVIEW.jpg",
+  "sources": {
+    "A": {
+      "id": "PIA14909",
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v02/PIA14909.jpg",
+      "sha256": "b72f5371622b0197f91a70a62b729e1e854dd91c511639f8055cf3d93f70ce74",
+      "page": "https://www.jpl.nasa.gov/images/pia14909-titan-up-front/",
+      "download": "https://images-assets.nasa.gov/image/PIA14909/PIA14909~orig.jpg",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+      "rights": "Caption inspected: no separate third-party restriction. Policy allows use subject to credit and stated exceptions. No logo, person or endorsement.",
+      "recipe": "Single real published RGB composite, crop (180,270,992,727), Lanczos to 1280x720 (1.576x); saturation 2.0, brightness 1.25. Text only; no image compositing. Rejected: near-black 39%. Not approved for use."
+    },
+    "C": {
+      "plate": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Thumbnails/J2144_v01/C_plate.png",
+      "sha256": "1b28eaa6c88ccdcdb32f1f95df19d6830871c839e27aa069250b2d9b7387e634",
+      "recipe": "Unchanged text-free plate resized to 1280x720; Arial Black 112 px, ICE IS at (650,45), ROCK at (650,155); yellow ROCK, 5px outline. Generic hypothetical lander, not real mission hardware."
+    }
+  },
+  "typography": "C cap height 82 px; A THIS IS horizontally fitted to 400 px, unchanged cap height. A rejected.",
+  "boundary": "No final PASS, no publishing, no panel release. B byte-identical. C worker check only. Originals untouched."
+}

@@ -1,0 +1,225 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/_desk/renders/J1032-finish12/S2_027_emwQsPxnRGM/S2_027_emwQsPxnRGM_v04.mp4",
+  "edge_floor": 0.0532,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s04_gerst_iss_airliner",
+      "cut": 3,
+      "t": 10.35,
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "why": [
+        "low detail: edge density 0.0446 < film p5 0.0532"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "s05_blue_marble_equator",
+      "cut": 4,
+      "t": 13.75,
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+      "why": [
+        "split panel: horizontal seam at 0.8"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_iss_sunrise_limb",
+      "source": "ISS_sunrise_to_sunset.ogv",
+      "t": 1.15,
+      "std": 66.09,
+      "mean": 147.59,
+      "p95": 223.0,
+      "edge": 0.1079,
+      "hf": 16.52,
+      "lf": 57.63,
+      "std8": 60.74,
+      "edge8": 0.3308,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_noaa_earth",
+      "source": "NOAA_sat_eclipse_2024_notext.webm",
+      "t": 3.8,
+      "std": 68.5,
+      "mean": 76.97,
+      "p95": 204.0,
+      "edge": 0.2363,
+      "hf": 19.54,
+      "lf": 57.75,
+      "std8": 61.16,
+      "edge8": 0.508,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_eso_lasilla_east",
+      "source": "ESO_timelapse_La_Silla.webm",
+      "t": 6.95,
+      "std": 53.09,
+      "mean": 103.8,
+      "p95": 208.0,
+      "edge": 0.0944,
+      "hf": 12.7,
+      "lf": 48.16,
+      "std8": 49.62,
+      "edge8": 0.1868,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_gerst_iss_airliner",
+      "source": "Gerst_Earth_timelapses_2017.webm",
+      "t": 10.35,
+      "std": 38.5,
+      "mean": 51.72,
+      "p95": 99.0,
+      "edge": 0.0446,
+      "hf": 13.54,
+      "lf": 30.18,
+      "std8": 32.97,
+      "edge8": 0.1799,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0446 < film p5 0.0532"
+      ]
+    },
+    {
+      "cut": 4,
+      "row": "s05_blue_marble_equator",
+      "source": "GSFC_20171208_Archive_e002130.jpg",
+      "t": 13.75,
+      "std": 54.59,
+      "mean": 102.28,
+      "p95": 195.0,
+      "edge": 0.2998,
+      "hf": 21.48,
+      "lf": 41.51,
+      "std8": 45.65,
+      "edge8": 0.5658,
+      "seams": [
+        {
+          "kind": "horizontal seam",
+          "at": 0.8,
+          "step": 71.0
+        }
+      ],
+      "video": true,
+      "reviewed_ok": {
+        "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+        "why": [
+          "split panel: horizontal seam at 0.8"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_paranal_earth_spin",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 16.9,
+      "std": 32.67,
+      "mean": 48.4,
+      "p95": 96.0,
+      "edge": 0.0908,
+      "hf": 13.26,
+      "lf": 25.09,
+      "std8": 27.22,
+      "edge8": 0.1118,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_epic_spin",
+      "source": "epic_spin_v01.mp4",
+      "t": 19.78,
+      "std": 52.61,
+      "mean": 91.62,
+      "p95": 181.0,
+      "edge": 0.0777,
+      "hf": 10.82,
+      "lf": 46.83,
+      "std8": 48.72,
+      "edge8": 0.4206,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_ISS_sunrise_to_sunset.ogv",
+      "t": 21.67,
+      "std": 63.74,
+      "mean": 136.4,
+      "p95": 221.0,
+      "edge": 0.0692,
+      "hf": 15.35,
+      "lf": 55.87,
+      "std8": 58.91,
+      "edge8": 0.2325,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

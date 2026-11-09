@@ -36,6 +36,9 @@ const paused={key:'OWB:032',type:'long',lane:'progress',jobs:[{id:'J4',status:'b
 assert(t.cardHeadline(paused).startsWith('Work is paused'));
 assert.equal(t.cardWaiting(paused),'credit reset');
 assert(!t.matchesVideo({id:'AUDIT',title:'Weekly OWB audit',taskKeys:['OWB:032']},paused));
+const wide={id:'J1079',title:'J1075 FIX: correct CFR18 hash and qualify inaccessible QA media evidence',status:'claimed',taskKeys:['OWB:026','OWB:028','HOS:007','HOS:008']};
+assert(!t.matchesVideo(wide,{key:'HOS:008',type:'long',jobs:[]}),'a studio-wide job (4+ videos) is not shown as one card\'s work');
+assert(t.matchesVideo({id:'PAIR',title:'HOS 009 + 010 Shorts VO',taskKeys:['HOS:009','HOS:010']},{key:'HOS:010',type:'long',jobs:[]}),'a two-video job still shows on both cards');
 console.log('Tracker activity regression checks passed');
 
 const chiefReview={job:'J0956',title:'Neptune <review>',agent:'codex',startedAt:new Date().toISOString(),expiresAt:new Date(Date.now()+60000).toISOString()};
@@ -61,7 +64,10 @@ html=t.cardHtml(activeVideo);assert(html.includes('live-dot')&&html.includes('Wo
 t.setBoard({owb:{jobs:[{...liveJob,status:'blocked',result:'waiting for inputs'}]}});
 assert(!t.cardHtml(activeVideo).includes('live-dot'),'blocked cards must not pulse');
 assert(t.jobHtml(liveJob,'now').includes('aria-valuenow="25"'),'keep confirmed-step progress');
-assert(!t.jobHtml({...liveJob,progress:null},'now').includes('aria-valuenow='),'unknown progress must never imply a percentage');
+assert(t.jobHtml({...liveJob,progress:null},'now').includes('0% recorded · waiting for the first update'));
+assert(t.jobHtml({...liveJob,progress:null},'now').includes('aria-valuenow="0"'));
+assert(t.jobHtml({...liveJob,progress:{step:1,of:4,at:new Date(Date.now()-6*60000).toISOString()}},'now').includes('No progress update for 6 min'));
+assert(!t.jobHtml({...liveJob,progress:{step:1,of:4,at:new Date().toISOString()}},'now').includes('No progress update'));
 
 const reviewProgress={...chiefReview,progress:{step:2,of:3,note:'Evidence checked'}};
 t.setBoard({owb:{jobs:[]},models:{chief:{name:'Codex'},models:[],chiefWork:{active:reviewProgress,next:[]}}});

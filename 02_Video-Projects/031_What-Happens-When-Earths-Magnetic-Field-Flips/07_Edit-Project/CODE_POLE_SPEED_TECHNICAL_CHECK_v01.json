@@ -1,0 +1,122 @@
+{
+  "job": "J2141",
+  "checks": {
+    "sha256": true,
+    "dimensions": true,
+    "alpha": true,
+    "fps": true,
+    "frames": true,
+    "duration": true,
+    "full_decode": true,
+    "first_frame_transparent": true
+  },
+  "probe": {
+    "index": 0,
+    "codec_name": "qtrle",
+    "codec_long_name": "QuickTime Animation (RLE) video",
+    "codec_type": "video",
+    "codec_tag_string": "rle ",
+    "codec_tag": "0x20656c72",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1080,
+    "has_b_frames": 0,
+    "pix_fmt": "argb",
+    "level": -99,
+    "field_order": "progressive",
+    "refs": 1,
+    "id": "0x1",
+    "r_frame_rate": "25/1",
+    "avg_frame_rate": "25/1",
+    "time_base": "1/12800",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 48640,
+    "duration": "3.800000",
+    "bit_rate": "3058145",
+    "nb_frames": "95",
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "handler_name": "VideoHandler",
+      "vendor_id": "FFMP",
+      "encoder": "Lavc62.11.100 qtrle"
+    }
+  },
+  "path": "/Users/ben/_desk/J2141-pole-speed-v01/code_graphic_031_r01_pole_speed_v01.mov",
+  "sha256": "bc8528e095c607ed99bca04a5ddf00edf1bb73f97c8fbfd49ad7cb5978878e9a",
+  "samples": [
+    {
+      "t": 0,
+      "bbox": null
+    },
+    {
+      "t": 0.4,
+      "bbox": [
+        1100,
+        418,
+        1678,
+        537
+      ]
+    },
+    {
+      "t": 1,
+      "bbox": [
+        1100,
+        418,
+        1701,
+        537
+      ]
+    },
+    {
+      "t": 1.8,
+      "bbox": [
+        1100,
+        418,
+        1701,
+        660
+      ]
+    },
+    {
+      "t": 2.6,
+      "bbox": [
+        1100,
+        418,
+        1701,
+        660
+      ]
+    },
+    {
+      "t": 3.4,
+      "bbox": [
+        1100,
+        418,
+        1701,
+        660
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-pole-speed-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "c91b48be29828256edd15d95e9c59216a0900f701dff1985cdb55752211a9336",
+  "scope": "Technical and static samples only; no composite/playback/KEEP/PASS"
+}

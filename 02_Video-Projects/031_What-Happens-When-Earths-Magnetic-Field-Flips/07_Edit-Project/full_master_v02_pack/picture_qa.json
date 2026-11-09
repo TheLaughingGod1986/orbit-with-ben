@@ -1,0 +1,1436 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/09_Final-Export/031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 30,
+      "row": "R14",
+      "source": "code_graphic_031_r14b_sdo_hot_sun_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 140.84,
+      "at": "2:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0059 < film p5 0.0095"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 85,
+      "row": "R41",
+      "source": "iss042e267617.jpg",
+      "title": "Sunset and Glowing Atmospheric Limb from the ISS",
+      "t": 421.42,
+      "at": "7:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0048 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "R44",
+      "source": "PIA00407.jpg",
+      "title": "Global Color Views of Mars (Viking Orbiter)",
+      "t": 448.26,
+      "at": "7:28",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.39 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "R44",
+      "source": "code_graphic_031_r44b_gravity_bodies_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 453.36,
+      "at": "7:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.89 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 95,
+      "row": "R46",
+      "source": "svs_10929_x17_solar_flare.mp4",
+      "title": "September 2017 X8.2 Solar Flare in SDO 171/304 Angstrom",
+      "t": 471.44,
+      "at": "7:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0071 < film p5 0.0095"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 102,
+      "row": "R49",
+      "source": "commons_usfws_tundra_swans.jpg",
+      "title": "Migrating Tundra Swans in Flight (USFWS)",
+      "t": 506.92,
+      "at": "8:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 113,
+      "row": "R54",
+      "source": "PIA14909.jpg",
+      "title": "Titan Up Front (Cassini ISS)",
+      "t": 561.0,
+      "at": "9:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0091 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 114,
+      "row": "R54",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini VIMS)",
+      "t": 567.12,
+      "at": "9:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0043 < film p5 0.0095"
+      ],
+      "offset": null
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "nasa_svs_3822_magfield_left.mp4",
+      "title": "Geomagnetic Field Lines in Space (NASA SVS 3822)",
+      "t": 2.3,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 22.0
+    },
+    {
+      "cut": 1,
+      "row": "R01",
+      "source": "code_graphic_031_r01b_poledrift_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 6.82,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 2,
+      "row": "R02",
+      "source": "iss030e078095_aurora_timelapse.mp4",
+      "title": "Aurora Borealis over Europe from the ISS",
+      "t": 10.98,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 3,
+      "row": "R02",
+      "source": "code_graphic_031_r02b_flip_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 15.52,
+      "at": "0:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 4,
+      "row": "R03",
+      "source": "nasa_svs_12312_dscovr_epic_earth.mp4",
+      "title": "One Year in the Life of Earth (NASA DSCOVR EPIC 12312)",
+      "t": 19.54,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 16.0
+    },
+    {
+      "cut": 5,
+      "row": "R03",
+      "source": "nasa_svs_12312_dscovr_epic_earth.mp4",
+      "title": "One Year in the Life of Earth (NASA DSCOVR EPIC 12312)",
+      "t": 22.38,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 22.0
+    },
+    {
+      "cut": 6,
+      "row": "R04",
+      "source": "hdev_earth_views_iss_2019.mp4",
+      "title": "Earth Views from the International Space Station (NASA HDEV)",
+      "t": 26.28,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": 78.0
+    },
+    {
+      "cut": 7,
+      "row": "R04",
+      "source": "code_graphic_031_r04b_compass_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.6,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 8,
+      "row": "R04",
+      "source": "iss030e078095_aurora_timelapse.mp4",
+      "title": "Aurora Borealis over Europe from the ISS",
+      "t": 34.3,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 9,
+      "row": "R05",
+      "source": "code_graphic_031_r05a_when1905_basalt_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 38.58,
+      "at": "0:39",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 10,
+      "row": "R05",
+      "source": "code_graphic_031_r05b_brunhes_who_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 43.82,
+      "at": "0:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 11,
+      "row": "R06",
+      "source": "commons_usgs_fissure20_overflight.mp4",
+      "title": "Helicopter Overflight of Fast-Moving Lava Flow, Kilauea Fissure 20 (USGS)",
+      "t": 48.52,
+      "at": "0:49",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 12,
+      "row": "R06",
+      "source": "code_graphic_031_r06b_lava_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 52.3,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 13,
+      "row": "R07",
+      "source": "code_graphic_031_r07a_grains_south_v04.mp4",
+      "title": "our own clip or graphic",
+      "t": 57.34,
+      "at": "0:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 14,
+      "row": "R07",
+      "source": "commons_usgs_kilauea_skylight.mp4",
+      "title": "Cooling Basalt Crust and Lava Skylight, Kilauea (USGS)",
+      "t": 63.4,
+      "at": "1:03",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 15,
+      "row": "R08",
+      "source": "usgs_vesicular_basalt_side.jpg",
+      "title": "Vesicular Basalt Hand Sample Side View (USGS)",
+      "t": 68.66,
+      "at": "1:09",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 16,
+      "row": "R08",
+      "source": "usgs_vesicular_basalt_side.jpg",
+      "title": "Vesicular Basalt Hand Sample Side View (USGS)",
+      "t": 72.5,
+      "at": "1:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 17,
+      "row": "R08",
+      "source": "code_graphic_031_r08b_grains_comparison_v04.mp4",
+      "title": "our own clip or graphic",
+      "t": 77.08,
+      "at": "1:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 18,
+      "row": "R09",
+      "source": "commons_yosemite_columnar_basalt.jpg",
+      "title": "Columnar Joints in a Basalt Plug, Yosemite National Park",
+      "t": 82.24,
+      "at": "1:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "R09",
+      "source": "commons_devils_postpile_4000.jpg",
+      "title": "Columnar Basalt at Devils Postpile, California",
+      "t": 86.36,
+      "at": "1:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "R10",
+      "source": "code_graphic_031_r10a_matuyama_who_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 91.86,
+      "at": "1:32",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 21,
+      "row": "R10",
+      "source": "code_graphic_031_r10b_matuyama_map_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 97.22,
+      "at": "1:37",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 22,
+      "row": "R11",
+      "source": "code_graphic_031_r11a_strata_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 102.22,
+      "at": "1:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 23,
+      "row": "R11",
+      "source": "code_graphic_031_r11b_strata_scale_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 108.58,
+      "at": "1:49",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 24,
+      "row": "R12",
+      "source": "nasa_svs_12312_dscovr_epic_earth.mp4",
+      "title": "One Year in the Life of Earth (NASA DSCOVR EPIC 12312)",
+      "t": 113.84,
+      "at": "1:54",
+      "fail": [],
+      "warn": [],
+      "offset": 110.0
+    },
+    {
+      "cut": 25,
+      "row": "R12",
+      "source": "code_graphic_031_r12b_flip_tight_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 118.2,
+      "at": "1:58",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 26,
+      "row": "R12",
+      "source": "code_graphic_031_r12c_core_dive_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 122.92,
+      "at": "2:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 27,
+      "row": "R13",
+      "source": "nasa_svs_12296_earth_interior_cutaway.mp4",
+      "title": "Earth Interior Cutaway Rotation (NASA SVS 12296)",
+      "t": 127.02,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 28,
+      "row": "R13",
+      "source": "code_graphic_031_r13b_layers_depth_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 130.72,
+      "at": "2:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 29,
+      "row": "R14",
+      "source": "code_graphic_031_r14a_layers_core_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 135.98,
+      "at": "2:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 30,
+      "row": "R14",
+      "source": "code_graphic_031_r14b_sdo_hot_sun_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 140.84,
+      "at": "2:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0059 < film p5 0.0095"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 31,
+      "row": "R15",
+      "source": "nasa_svs_12296_earth_interior_cutaway.mp4",
+      "title": "Earth Interior Cutaway Rotation (NASA SVS 12296)",
+      "t": 145.22,
+      "at": "2:25",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 32,
+      "row": "R15",
+      "source": "nasa_svs_3822_magfield_left.mp4",
+      "title": "Geomagnetic Field Lines in Space (NASA SVS 3822)",
+      "t": 150.86,
+      "at": "2:31",
+      "fail": [],
+      "warn": [],
+      "offset": 35.0
+    },
+    {
+      "cut": 33,
+      "row": "R15",
+      "source": "nasa_svs_3822_magfield_left.mp4",
+      "title": "Geomagnetic Field Lines in Space (NASA SVS 3822)",
+      "t": 156.5,
+      "at": "2:36",
+      "fail": [],
+      "warn": [],
+      "offset": 41.0
+    },
+    {
+      "cut": 34,
+      "row": "R16",
+      "source": "code_graphic_031_r16a_dynamo_loops_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 161.52,
+      "at": "2:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "R16",
+      "source": "code_graphic_031_r16b_dynamo_dipole_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 165.92,
+      "at": "2:46",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 36,
+      "row": "R16",
+      "source": "nasa_svs_12296_earth_interior_cutaway.mp4",
+      "title": "Earth Interior Cutaway Rotation (NASA SVS 12296)",
+      "t": 170.4,
+      "at": "2:50",
+      "fail": [],
+      "warn": [],
+      "offset": 21.0
+    },
+    {
+      "cut": 37,
+      "row": "R17",
+      "source": "code_graphic_031_r17a_dynamo_eddies_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 175.3,
+      "at": "2:55",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "R17",
+      "source": "code_graphic_031_r17b_dynamo_wobble_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 180.54,
+      "at": "3:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 39,
+      "row": "R17",
+      "source": "code_graphic_031_r17c_dynamo_tip_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 185.76,
+      "at": "3:06",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 40,
+      "row": "R18",
+      "source": "noaa_galapagos_rift_pillow_6414.jpg",
+      "title": "Mid-Ocean Ridge Pillow Lava in Galapagos Rift (NOAA Okeanos Explorer)",
+      "t": 190.16,
+      "at": "3:10",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 41,
+      "row": "R18",
+      "source": "code_graphic_031_r18b_barcode_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 194.02,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 42,
+      "row": "R19",
+      "source": "noaa_galapagos_rift_pillow_6454.jpg",
+      "title": "Underwater Pillow Lava Formation in Galapagos Rift (NOAA Okeanos Explorer)",
+      "t": 197.92,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 43,
+      "row": "R19",
+      "source": "code_graphic_031_r19b_flip_tally_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 201.64,
+      "at": "3:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 44,
+      "row": "R20",
+      "source": "code_graphic_031_r20a_gauss_who_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 206.6,
+      "at": "3:27",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 45,
+      "row": "R20",
+      "source": "code_graphic_031_r20b_strength_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 211.92,
+      "at": "3:32",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 46,
+      "row": "R21",
+      "source": "code_graphic_031_r21_compass_limb_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 217.68,
+      "at": "3:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 47,
+      "row": "R22",
+      "source": "subscribe_card_031_r22_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 223.72,
+      "at": "3:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 48,
+      "row": "R23",
+      "source": "code_graphic_031_r23a_saa_wide_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 228.24,
+      "at": "3:48",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 49,
+      "row": "R23",
+      "source": "code_graphic_031_r23b_saa_dent_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 232.24,
+      "at": "3:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 50,
+      "row": "R24",
+      "source": "code_graphic_031_r24a_swarm_constellation_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 236.7,
+      "at": "3:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 51,
+      "row": "R24",
+      "source": "code_graphic_031_r24b_saa_anomaly_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 241.62,
+      "at": "4:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 52,
+      "row": "R25",
+      "source": "code_graphic_031_r25a_belts_600km_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 246.82,
+      "at": "4:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 53,
+      "row": "R25",
+      "source": "hdev_earth_views_iss_2019.mp4",
+      "title": "Earth Views from the International Space Station (NASA HDEV)",
+      "t": 252.3,
+      "at": "4:12",
+      "fail": [],
+      "warn": [],
+      "offset": 128.0
+    },
+    {
+      "cut": 54,
+      "row": "R25",
+      "source": "nasa_svs_20297_magnetosphere_earth_only.mp4",
+      "title": "Earth Magnetosphere and Solar Wind Stream (NASA SVS 20297)",
+      "t": 257.62,
+      "at": "4:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 55,
+      "row": "R25",
+      "source": "code_graphic_031_r25d_belts_200km_scale_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 263.1,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 56,
+      "row": "R26",
+      "source": "hdev_earth_views_iss_2019.mp4",
+      "title": "Earth Views from the International Space Station (NASA HDEV)",
+      "t": 269.48,
+      "at": "4:29",
+      "fail": [],
+      "warn": [],
+      "offset": 31.0
+    },
+    {
+      "cut": 57,
+      "row": "R27",
+      "source": "sts109_fr20_hubble_approach.mp4",
+      "title": "Hubble Space Telescope in Orbit Approach (NASA STS-125)",
+      "t": 275.18,
+      "at": "4:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 58,
+      "row": "R27",
+      "source": "code_graphic_031_r27b_hubble_orbits_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 280.62,
+      "at": "4:41",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 59,
+      "row": "R27",
+      "source": "code_graphic_031_r27c_hubble_stops_fact_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 287.04,
+      "at": "4:47",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 60,
+      "row": "R28",
+      "source": "hdev_earth_views_iss_2019.mp4",
+      "title": "Earth Views from the International Space Station (NASA HDEV)",
+      "t": 293.08,
+      "at": "4:53",
+      "fail": [],
+      "warn": [],
+      "offset": 155.0
+    },
+    {
+      "cut": 61,
+      "row": "R28",
+      "source": "code_graphic_031_r28b_sat_safe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 298.56,
+      "at": "4:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 62,
+      "row": "R29",
+      "source": "code_graphic_031_r29_saa_when_v03.mp4",
+      "title": "our own clip or graphic",
+      "t": 304.16,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 63,
+      "row": "R30",
+      "source": "eol-aurora_iss_20110911.mp4",
+      "title": "Aurora Australis South of Australia from the ISS",
+      "t": 309.12,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 64,
+      "row": "R30",
+      "source": "code_graphic_031_r30b_recap_triptych_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 313.12,
+      "at": "5:13",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 65,
+      "row": "R30",
+      "source": "code_graphic_031_r30c_twist_overdue_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 317.12,
+      "at": "5:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 66,
+      "row": "R31",
+      "source": "nasa_svs_12312_dscovr_epic_earth.mp4",
+      "title": "One Year in the Life of Earth (NASA DSCOVR EPIC 12312)",
+      "t": 322.72,
+      "at": "5:23",
+      "fail": [],
+      "warn": [],
+      "offset": 48.0
+    },
+    {
+      "cut": 67,
+      "row": "R32",
+      "source": "code_graphic_031_r32a_paleo_high_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 328.96,
+      "at": "5:29",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 68,
+      "row": "R32",
+      "source": "code_graphic_031_r32b_paleo_scale_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 334.26,
+      "at": "5:34",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 69,
+      "row": "R33",
+      "source": "noaa_oer_sediment_core_layers.jpg",
+      "title": "Deep-Ocean Tube Core Layers, Peru-Chile Margin (NOAA)",
+      "t": 339.26,
+      "at": "5:39",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 70,
+      "row": "R33",
+      "source": "code_graphic_031_r33b_laschamp_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 343.6,
+      "at": "5:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 71,
+      "row": "R33",
+      "source": "code_graphic_031_r33c_paleo_dip_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 347.8,
+      "at": "5:48",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 72,
+      "row": "R34",
+      "source": "commons_tane_mahuta.jpg",
+      "title": "Tane Mahuta Giant Kauri Tree, Waipoua Forest",
+      "t": 353.02,
+      "at": "5:53",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 73,
+      "row": "R34",
+      "source": "commons_kauri_museum_slab_1.jpg",
+      "title": "Preserved Ancient Kauri Trunk Cross-Section, Kauri Museum",
+      "t": 359.06,
+      "at": "5:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "R35",
+      "source": "code_graphic_031_r35a_rings_6pct_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 365.02,
+      "at": "6:05",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 75,
+      "row": "R35",
+      "source": "code_graphic_031_r35b_rings_diary_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 370.9,
+      "at": "6:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 76,
+      "row": "R36",
+      "source": "code_graphic_031_r36_durations_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 376.68,
+      "at": "6:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 77,
+      "row": "R37",
+      "source": "commons_lascaux_015.jpg",
+      "title": "Prehistoric Cave Horse Painting, Lascaux",
+      "t": 381.68,
+      "at": "6:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 78,
+      "row": "R37",
+      "source": "commons_hand_stencils.jpg",
+      "title": "Ancient Hand Stencils, Cueva de las Manos",
+      "t": 386.04,
+      "at": "6:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 79,
+      "row": "R38",
+      "source": "PIA00407.jpg",
+      "title": "Global Color Views of Mars (Viking Orbiter)",
+      "t": 391.04,
+      "at": "6:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 80,
+      "row": "R39",
+      "source": "nasa_svs_20297_magnetosphere_earth_only.mp4",
+      "title": "Earth Magnetosphere and Solar Wind Stream (NASA SVS 20297)",
+      "t": 396.76,
+      "at": "6:37",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 81,
+      "row": "R39",
+      "source": "nasa_svs_20297_magnetosphere_earth_only.mp4",
+      "title": "Earth Magnetosphere and Solar Wind Stream (NASA SVS 20297)",
+      "t": 402.6,
+      "at": "6:43",
+      "fail": [],
+      "warn": [],
+      "offset": 17.0
+    },
+    {
+      "cut": 82,
+      "row": "R40",
+      "source": "code_graphic_031_r40a_never_vanishes_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 407.74,
+      "at": "6:48",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 83,
+      "row": "R40",
+      "source": "code_graphic_031_r40b_tenth_strength_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 412.18,
+      "at": "6:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 84,
+      "row": "R40",
+      "source": "code_graphic_031_r40c_temp_poles_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 416.64,
+      "at": "6:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 85,
+      "row": "R41",
+      "source": "iss042e267617.jpg",
+      "title": "Sunset and Glowing Atmospheric Limb from the ISS",
+      "t": 421.42,
+      "at": "7:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0048 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "R42",
+      "source": "nasa_svs_12312_dscovr_epic_earth.mp4",
+      "title": "One Year in the Life of Earth (NASA DSCOVR EPIC 12312)",
+      "t": 425.76,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": 138.0
+    },
+    {
+      "cut": 87,
+      "row": "R42",
+      "source": "code_graphic_031_r42b_column_mass_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 431.04,
+      "at": "7:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 88,
+      "row": "R43",
+      "source": "hdev_earth_views_iss_2019.mp4",
+      "title": "Earth Views from the International Space Station (NASA HDEV)",
+      "t": 437.42,
+      "at": "7:17",
+      "fail": [],
+      "warn": [],
+      "offset": 18.0
+    },
+    {
+      "cut": 89,
+      "row": "R43",
+      "source": "code_graphic_031_r43b_column_stop_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 443.24,
+      "at": "7:23",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 90,
+      "row": "R44",
+      "source": "PIA00407.jpg",
+      "title": "Global Color Views of Mars (Viking Orbiter)",
+      "t": 448.26,
+      "at": "7:28",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.39 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "R44",
+      "source": "code_graphic_031_r44b_gravity_bodies_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 453.36,
+      "at": "7:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.89 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 92,
+      "row": "R44",
+      "source": "code_graphic_031_r44c_duration_comparison_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 459.38,
+      "at": "7:39",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 93,
+      "row": "R45",
+      "source": "nps_fobu_baculites_ammonite.jpg",
+      "title": "Marine Fossil Specimen, Kaguyak Formation (NPS)",
+      "t": 464.26,
+      "at": "7:44",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 94,
+      "row": "R45",
+      "source": "code_graphic_031_r45b_extinction_check_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 468.0,
+      "at": "7:48",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 95,
+      "row": "R46",
+      "source": "svs_10929_x17_solar_flare.mp4",
+      "title": "September 2017 X8.2 Solar Flare in SDO 171/304 Angstrom",
+      "t": 471.44,
+      "at": "7:51",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0071 < film p5 0.0095"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 96,
+      "row": "R46",
+      "source": "code_graphic_031_r46b_grid_shield_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 476.9,
+      "at": "7:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 97,
+      "row": "R47",
+      "source": "nasa_svs_12296_earth_interior_cutaway.mp4",
+      "title": "Earth Interior Cutaway Rotation (NASA SVS 12296)",
+      "t": 482.84,
+      "at": "8:03",
+      "fail": [],
+      "warn": [],
+      "offset": 32.0
+    },
+    {
+      "cut": 98,
+      "row": "R47",
+      "source": "nasa_svs_3822_magfield_left.mp4",
+      "title": "Geomagnetic Field Lines in Space (NASA SVS 3822)",
+      "t": 486.92,
+      "at": "8:07",
+      "fail": [],
+      "warn": [],
+      "offset": 56.0
+    },
+    {
+      "cut": 99,
+      "row": "R47",
+      "source": "code_graphic_031_r47c_multipole_tangle_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 491.32,
+      "at": "8:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 100,
+      "row": "R48",
+      "source": "code_graphic_031_r48_poles_map_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 496.96,
+      "at": "8:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 101,
+      "row": "R49",
+      "source": "code_graphic_031_r49a_compass_v02.mp4",
+      "title": "our own clip or graphic",
+      "t": 502.32,
+      "at": "8:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 102,
+      "row": "R49",
+      "source": "commons_usfws_tundra_swans.jpg",
+      "title": "Migrating Tundra Swans in Flight (USFWS)",
+      "t": 506.92,
+      "at": "8:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 103,
+      "row": "R49",
+      "source": "noaa_humpback_underwater.jpg",
+      "title": "Humpback Whale Underwater (NOAA)",
+      "t": 511.7,
+      "at": "8:32",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 104,
+      "row": "R50",
+      "source": "nasa_svs_20297_magnetosphere_earth_only.mp4",
+      "title": "Earth Magnetosphere and Solar Wind Stream (NASA SVS 20297)",
+      "t": 516.12,
+      "at": "8:36",
+      "fail": [],
+      "warn": [],
+      "offset": 35.0
+    },
+    {
+      "cut": 105,
+      "row": "R50",
+      "source": "eol-aurora_iss_20110911.mp4",
+      "title": "Aurora Australis South of Australia from the ISS",
+      "t": 520.46,
+      "at": "8:40",
+      "fail": [],
+      "warn": [],
+      "offset": 24.0
+    },
+    {
+      "cut": 106,
+      "row": "R51",
+      "source": "code_graphic_031_r51a_aurora_london_cairo_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 525.6,
+      "at": "8:46",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 107,
+      "row": "R51",
+      "source": "code_graphic_031_r51b_aurora_mumbai_sydney_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 531.52,
+      "at": "8:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 108,
+      "row": "R52",
+      "source": "code_graphic_031_r52a_generations_scale_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 536.88,
+      "at": "8:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 109,
+      "row": "R52",
+      "source": "iss052e007857_aurora_timelapse.mp4",
+      "title": "Aurora Borealis across Northern United States from the ISS",
+      "t": 541.68,
+      "at": "9:02",
+      "fail": [],
+      "warn": [],
+      "offset": 45.0
+    },
+    {
+      "cut": 110,
+      "row": "R52",
+      "source": "code_graphic_031_r52c_dynamo_settle_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 545.9,
+      "at": "9:06",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 111,
+      "row": "R53",
+      "source": "nasa_svs_3822_magfield_left.mp4",
+      "title": "Geomagnetic Field Lines in Space (NASA SVS 3822)",
+      "t": 550.42,
+      "at": "9:10",
+      "fail": [],
+      "warn": [],
+      "offset": 66.5
+    },
+    {
+      "cut": 112,
+      "row": "R53",
+      "source": "iss030e078095_aurora_timelapse.mp4",
+      "title": "Aurora Borealis over Europe from the ISS",
+      "t": 555.84,
+      "at": "9:16",
+      "fail": [],
+      "warn": [],
+      "offset": 28.0
+    },
+    {
+      "cut": 113,
+      "row": "R54",
+      "source": "PIA14909.jpg",
+      "title": "Titan Up Front (Cassini ISS)",
+      "t": 561.0,
+      "at": "9:21",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0091 < film p5 0.0095"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 114,
+      "row": "R54",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini VIMS)",
+      "t": 567.12,
+      "at": "9:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0043 < film p5 0.0095"
+      ],
+      "offset": null
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0095,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}
