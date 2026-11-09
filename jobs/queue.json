@@ -208822,17 +208822,22 @@
           "at": "2026-11-09T04:00Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 3/5: Uploaded Private xdurJQcoiGM (AR2 v13, publishAt 2026-11-25T11:30:00Z, cover set) and MScK2CK2ZFg (AR3 v14, publishAt 2026-11-28T11:30:00Z, cover set); Buffer plans deferred"
+        },
+        {
+          "at": "2026-11-09T04:04Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Step 4/5: Committed & pushed API readbacks (jobs/readbacks/J2426.json), UPLOADS.json, buffer-plans, and shorts_open_library in c84060abb8"
         }
       ],
-      "remaining_action": "Read back API state, update UPLOADS.json and shorts_open_library, and clear awaits_ben on J2229",
+      "remaining_action": "Clear awaits_ben on J2229, update studio.py 030/028 status, and close J2426",
       "kind": "studio",
       "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through.",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-09T04:00Z",
+        "at": "2026-11-09T04:04Z",
         "by": "gemini",
-        "note": "Step 3/5: Uploaded Private xdurJQcoiGM (AR2 v13, publishAt 2026-11-25T11:30:00Z, cover set) and MScK2CK2ZFg (AR3 v14, pu"
+        "note": "Step 4/5: Committed & pushed API readbacks (jobs/readbacks/J2426.json), UPLOADS.json, buffer-plans, and shorts_open_libr"
       },
       "taskKeys": [
         "OWB:030",
