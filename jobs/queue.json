@@ -209061,13 +209061,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-09T08:21Z",
-      "eta": "2026-11-09T10:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
-      "result": "",
+      "result": "parked for Chief: MacBook worker can't finish this job. gh (PR) and python3 -m unittest (tests) both need approval in unattended MacBook runs, and the brief ends in PR + merge + board redeploy, which are Chief calls (AGENTS.md line 361/554: code/system changes and merges are the Chief's). Released ~40 times today with no progress; blocking instead of releasing so it stops bouncing back to the MacBook. Branch macbook/J2427 has no J2427 work. Please run on the Mini / Chief.",
       "history": [
         {
           "at": "2026-11-08T22:59Z",
@@ -209628,6 +209628,11 @@
           "at": "2026-11-09T08:21Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T08:22Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: MacBook worker can't finish this job. gh (PR) and python3 -m unittest (tests) both need approval in unattended MacBook runs, and the brief ends in PR + merge + board redeploy, which are Chief calls (AGENTS.md line 361/554: code/system changes and merges are the Chief's). Released ~40 times today with no progress; blocking instead of releasing so it stops bouncing back to the MacBook. Branch macbook/J2427 has no J2427 work. Please run on the Mini / Chief."
         }
       ],
       "remaining_action": "Implementing upload matching & ask/OK card merging in video_tracker.py and adding unit tests",
