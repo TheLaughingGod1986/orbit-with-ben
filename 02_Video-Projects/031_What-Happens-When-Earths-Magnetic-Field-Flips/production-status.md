@@ -373,4 +373,16 @@ WARN   0:24 row R39_loop frame0_hold_sat12_solar_wind_air_v03.png: low detail: e
 picture QA PASS: 0 of 9 cuts fail, 1 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_picture_qa/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_picture_qa/picture_qa_review.jpg
 ```
 
+## J2434 Private Upload (`QEoYKIVvKBA` Active Short 2 `v03`) — 9 November 2026
+
+Following Ben's UAT sign-off on `031` Active Short 2 `v03` (`OWB-J2418` OK, 9 Nov 2026 08:09Z), verified matching SHA-256 (`a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3`) on NAS `studio-live` (`10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03.mp4` and `10_Shorts/031_short_sat12_solar_wind_air_v03.mp4`) and NAS `OWB UAT/031_shorts_v03/`, and uploaded Private via YouTube Data API v3 at £0 spend:
+
+- **Active Short 2 `v03` (`QEoYKIVvKBA`, `https://youtu.be/QEoYKIVvKBA`):**
+  - Title: `What If the Solar Wind Blew Earth's Atmosphere Into Space?`
+  - `privacyStatus: "private"`, `publishAt: "2026-12-12T11:30:00Z"` (Sat 12 Dec 2026 11:30 London), `duration: "PT25S"`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`, custom cover `031_short_sat12_solar_wind_air_v03_cover.jpg` (`02851f73`) set.
+  - Registered in `00_Brand/Channel-Setup/social/UPLOADS.json` (`long: "G5uMANXHtNU"`, `relatedStatus: "pending_studio"`; Buffer mirror deferred until the 7-day window) and `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (`status: "scheduled"`, `date: "2026-12-12"`).
+  - Studio Related video (`G5uMANXHtNU`) and Long pinned comment wait until `G5uMANXHtNU` goes public on `2026-12-02T18:05:00Z`.
+- **Full Read-Back & Report:** `11_Upload-Package/PACKAGE_UPLOAD_RESULT.md` and `10_Shorts/sat12_solar_wind_air/07_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-11-09T12-37-57-955Z.json`.
+
+
 

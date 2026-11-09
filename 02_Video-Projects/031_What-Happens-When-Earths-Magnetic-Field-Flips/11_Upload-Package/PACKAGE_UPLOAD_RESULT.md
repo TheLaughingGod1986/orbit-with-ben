@@ -41,7 +41,24 @@
 - **Registered in `00_Brand/Channel-Setup/social/UPLOADS.json`:** Yes (`C8lPx5N2DwM`, `long: "G5uMANXHtNU"`, `2026-11-08T22:29:49.474Z`)
 - **Buffer Mirror (`buffer` block):** Deferred (`goes public 2026-12-05T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time`)
 
-## 3. YouTube Data API v3 Read-Back (`videos?part=snippet,status,contentDetails&id=G5uMANXHtNU,C8lPx5N2DwM`)
+## 2b. Active Short 2 `v03` (`sat12_solar_wind_air`, J2434) — Upload & Schedule Summary
+
+- **Date:** 2026-11-09T12:37:57Z (`J2434`, following Ben's UAT sign-off `OWB-J2418` OK on `2026-11-09T08:09Z`)
+- **Short 2 Result JSON:** `../10_Shorts/sat12_solar_wind_air/07_Upload-Package/PACKAGE_UPLOAD_RESULT_2026-11-09T12-37-57-955Z.json`
+- **Video ID:** `QEoYKIVvKBA` (`https://youtu.be/QEoYKIVvKBA`)
+- **Studio Edit URL:** `https://studio.youtube.com/video/QEoYKIVvKBA/edit`
+- **Master File:** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03.mp4`
+- **Master SHA-256:** `a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3`
+- **Title:** `What If the Solar Wind Blew Earth's Atmosphere Into Space?`
+- **Privacy Status:** `private`
+- **Scheduled Publish Time (`publishAt`):** `2026-12-12T11:30:00Z` (Sat 12 Dec 2026 11:30 London)
+- **Language (`defaultLanguage` / `defaultAudioLanguage`):** `en-GB` / `en-GB`
+- **Custom Cover (`thumbnails.set`):** **Set** (`031_short_sat12_solar_wind_air_v03_cover.jpg`, `SHA-256: 02851f7344b95867afaf346e515b57aa83f1d28b996d75356b330e241d4ccf86`)
+- **Shorts Open Gate (`gate_shorts_open.py`):** `PASS` (`dhash=fff7ffff7effffff`, `visor=0.0`); registered in `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (`status: "scheduled"`, `date: "2026-12-12"`).
+- **Registered in `00_Brand/Channel-Setup/social/UPLOADS.json`:** Yes (`QEoYKIVvKBA`, `long: "G5uMANXHtNU"`, `2026-11-09T12:37:57.824Z`)
+- **Buffer Mirror (`buffer` block):** Deferred (`goes public 2026-12-12T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time`)
+
+## 3. YouTube Data API v3 Read-Back (`videos?part=snippet,status,contentDetails&id=G5uMANXHtNU,C8lPx5N2DwM,QEoYKIVvKBA`)
 
 ```json
 [
@@ -91,12 +108,35 @@
     "duration": "PT34S",
     "hasCustomThumbnail": true,
     "caption": "false"
+  },
+  {
+    "id": "QEoYKIVvKBA",
+    "title": "What If the Solar Wind Blew Earth's Atmosphere Into Space?",
+    "categoryId": "28",
+    "defaultLanguage": "en-GB",
+    "defaultAudioLanguage": "en-GB",
+    "tagsCount": 7,
+    "thumbnails": [
+      "default",
+      "medium",
+      "high",
+      "standard",
+      "maxres",
+      "qhd"
+    ],
+    "maxresThumbUrl": "https://i9.ytimg.com/vi/QEoYKIVvKBA/maxresdefault.jpg?sqp=CPT7xtcG&rs=AOn4CLAelZZG5MxxWXugqUK1AiQsz_C9aw",
+    "privacyStatus": "private",
+    "publishAt": "2026-12-12T11:30:00Z",
+    "madeForKids": false,
+    "selfDeclaredMadeForKids": false,
+    "duration": "PT25S",
+    "hasCustomThumbnail": true,
+    "caption": "false"
   }
 ]
 ```
 
-## 4. Remaining Post-Go-Public & Short 2 Steps
+## 4. Remaining Post-Go-Public Steps
 
 1. **Long `G5uMANXHtNU` Pinned Comment (after go-public `2026-12-02T18:05:00Z`):** Data API `commentThreads.insert` returned 403 (`forbidden` on private scheduled video). Post and pin `Pinned-Comments/magnetic_field_flip_pinned_v01.txt` once `G5uMANXHtNU` is Public.
-2. **Short 1 `C8lPx5N2DwM` Studio Related Video (after Long go-public `2026-12-02T18:05:00Z`):** Set Related Video on `C8lPx5N2DwM` to `G5uMANXHtNU` in Studio once `G5uMANXHtNU` is Public (Studio's Related Video picker only lists Public/Unlisted videos).
-3. **Short 2 `v02` (`J2395.3`):** Not uploaded per Ben's `CHANGE` tick ("The video is a short but vertical"); waits for its fix job and a fresh Ben watch.
+2. **Short 1 `C8lPx5N2DwM` & Short 2 `QEoYKIVvKBA` Studio Related Video (after Long go-public `2026-12-02T18:05:00Z`):** Set Related Video on `C8lPx5N2DwM` and `QEoYKIVvKBA` to `G5uMANXHtNU` in Studio once `G5uMANXHtNU` is Public (Studio's Related Video picker only lists Public/Unlisted videos).
