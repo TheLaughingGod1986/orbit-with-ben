@@ -208643,10 +208643,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-09T03:16Z",
-      "eta": "2026-11-09T05:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T22:46Z",
       "result": "",
@@ -208665,6 +208665,11 @@
           "at": "2026-11-09T03:17Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2423; starting 3-step condition verification for J0912 (HOS 008 Short A v04)"
+        },
+        {
+          "at": "2026-11-09T03:45Z",
+          "by": "gemini",
+          "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
         }
       ],
       "remaining_action": "Verify HOS 008 Short A v04 assets on Mini/NAS, check J2339 and capabilities, and update J0912 wait",
@@ -208775,10 +208780,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T03:45Z",
+      "eta": "2026-11-09T05:45Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
       "result": "",
@@ -208787,11 +208792,24 @@
           "at": "2026-11-08T22:59Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T03:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap",
       "kind": "studio",
-      "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through."
+      "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T03:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2427",

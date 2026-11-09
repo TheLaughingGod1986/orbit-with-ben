@@ -93,10 +93,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
 | J2420 | any | blocked | macbook | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 | J2421 | any | claimed | macbook | 2026-11-09T05:19Z | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
-| J2423 | any | claimed | gemini | 2026-11-09T05:16Z | review · Verify condition for J0912 |  |
+| J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
-| J2426 | mini | open | – | – | studio · AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap |  |
+| J2426 | mini | claimed | gemini | 2026-11-09T05:45Z | studio · AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap |  |
 | J2427 | any | open | – | – | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
 | J2428 | any | blocked | macbook | – | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
 | J2429 | any | claimed | macbook-2 | 2026-11-09T04:50Z | review · Orbit Shorts: break the ~1k ceiling — fix the swipe-away in the first second (stayed-to-watch 30-50%) |  |
