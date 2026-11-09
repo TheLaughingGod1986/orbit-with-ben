@@ -279,6 +279,16 @@ class AllAgents(unittest.TestCase):
             self.assertNotEqual(c[-1], "P")
             self.assertIsNone(mw.agent_cmd("grok", "P"))
 
+    def test_unattended_claude_may_run_tests_and_open_a_pr_but_not_merge(self):
+        # J2427 bounced ~40 times on 9 Nov: unittest and gh pr create needed approval with nobody at the Mac.
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+        allowed = c[c.index("--allowedTools") + 1].split(",")
+        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)"):
+            self.assertIn(rule, allowed)
+        self.assertFalse(any("merge" in r for r in allowed))
+        self.assertLess(c.index("--allowedTools"), c.index("--add-dir"))
+
     def test_a_failed_cli_is_paused_and_skipped(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
