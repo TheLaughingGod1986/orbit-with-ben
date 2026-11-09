@@ -208086,10 +208086,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T00:56Z",
+      "eta": "2026-11-09T02:56Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
       "result": "",
@@ -208133,6 +208133,11 @@
           "at": "2026-11-09T00:43Z",
           "by": "macbook",
           "what": "released: Diagnosis for the next worker: all four ids are in 00_Brand/Channel-Setup/social/UPLOADS.json with privacyStatus private and a publishAt (ffYKoNVPoqg 2026-11-10T11:30Z, file owb_sa_s6_titan_v11.mp4; 93JL_IK57EM 2026-11-27T11:30Z, file owb_ar1_2024_yr4_moon_v06.mp4, note names J2228 and the ask J1356.1; G5uMANXHtNU 2026-12-02T18:00Z, 031 master_v02; C8lPx5N2DwM, 031 testA_opening_flip_v01, long G5uMANXHtNU). The cause is in scripts/video_tracker.py apply_ask(): when Ben's check verdict is ok, it always calls mark_approved(..., waiting=True), which puts the card in lane approved (Passed). It never checks whether the cut is already uploaded. The ASK/OK card keys (OWB:ASK:Jxxxx.n from ask_card, OWB:OK:Jxxxx from approved_card) never match the UPLOADS Short/long card, so read_back() finds no youtube state. Suggested fix: in add_asks/add_approved, before marking it approved, match the ask entry's file basename (or a job id in the UPLOADS note, or the follow-up job's result naming an 11-char videoId) against uploads_index. If it matches, merge the ask into that video's card (or drop the ASK card) and set youtube scheduled/live, so studio_app.js videoLane() puts it in Scheduled. Cover those four, plus Apophis v13 (J0974) and nearest-star v04 (J1101), in scripts/test_video_tracker.py. AR2/AR3 (J2426) must stay in Passed."
+        },
+        {
+          "at": "2026-11-09T00:56Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "reading video_tracker",
