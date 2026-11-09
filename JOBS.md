@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
-| J2427 | any | open | – | – | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
+| J2427 | any | claimed | macbook | 2026-11-09T09:35Z | qa · Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled |  |
 | J2428 | any | blocked | macbook | – | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
