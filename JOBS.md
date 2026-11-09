@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2458 | any | claimed | macbook | 2026-11-10T00:56Z | review · PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes) |  |
 | J2459 | mini | open | – | – | 025 upload · studio · 025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception) |  |
 | J2460 | mini | open | – | – | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
+| J2461 | mini | open | – | – | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
 
 Recently finished:
 
