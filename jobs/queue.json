@@ -84468,19 +84468,19 @@
       "title": "HOS 006 Trees Studio finish on VbPubYd6Fbs: end screen, pinned comment, Test & Compare",
       "needs": "mini",
       "repo": "hos",
-      "body": "HOS 006 Trees Studio finish on the new Private long VbPubYd6Fbs. Master v06 is already uploaded (J0945). Do this in Studio. Never Replace, never delete, never make it Public, never change publishAt.\n\nVideo: VbPubYd6Fbs\nChannel: @HistoryOfScienceYT only\nPrivacy now: private\npublishAt: Thu 5 Nov 2026 18:00 London (2026-11-05T18:00:00Z). Leave that schedule.\n\nDo:\n1. End screen: Subscribe, plus the best next video 004 Atom GHZDsiH7L7A. That is the package relatedVideoId, and it matches the spoken hand-off (\"So what is an atom actually made of?\"). Cards as Studio allows. No Premiere.\n2. Pinned comment: the film's open question, \"So where does a tree's weight really come from?\" Post it with update-pinned-comment.ts --create, then pin it in Studio. No /go/ link. No subscriber count.\n3. Thumbnail Test & Compare. A is already the cover (WOOD / FROM / SKY?, sha 904d2f58, file 08_Thumbnail/Selected/hos_006_thumb_A_wood_from_sky_v01.jpg). B is DO PLANTS / EAT / SOIL? (sha ee5f2605, hos_006_thumb_B_do_plants_eat_soil_v01.jpg). Title Test & Compare: \"The Willow Tree That Was Made of Air\" vs \"Where Does a Tree's Weight Come From?\". If Studio says a test is already running, Cancel and leave it.\n4. Read back end screen, pinned comment, and that the test is running. Record it on the desk and in UPLOADS.json. Buffer stays deferred: long films are not cross-posted.\n\nGBP 0. No new upload.\n",
+      "body": "HOS 006 Trees Studio finish on the new Private long VbPubYd6Fbs. Master v06 is already uploaded (J0945). Do this in Studio. Never Replace, never delete, never make it Public, never change publishAt.\n\nVideo: VbPubYd6Fbs\nChannel: @HistoryOfScienceYT only\nPrivacy now: private\npublishAt: Thu 5 Nov 2026 18:00 London (2026-11-05T18:00:00Z). Leave that schedule.\n\nDo:\n1. End screen: Subscribe, plus the best next video 004 Atom GHZDsiH7L7A. That is the package relatedVideoId, and it matches the spoken hand-off (\"So what is an atom actually made of?\"). Cards as Studio allows. No Premiere.\n2. Pinned comment: the film's open question, \"So where does a tree's weight really come from?\" Post it with update-pinned-comment.ts --create, then pin it in Studio. No /go/ link. No subscriber count.\n3. Thumbnail Test & Compare. A is already the cover (WOOD / FROM / SKY?, sha 904d2f58, file 08_Thumbnail/Selected/hos_006_thumb_A_wood_from_sky_v01.jpg). B is DO PLANTS / EAT / SOIL? (sha ee5f2605, hos_006_thumb_B_do_plants_eat_soil_v01.jpg). Title Test & Compare: \"The Willow Tree That Was Made of Air\" vs \"Where Does a Tree's Weight Come From?\". If Studio says a test is already running, Cancel and leave it.\n4. Read back end screen, pinned comment, and that the test is running. Record it on the desk and in UPLOADS.json. Buffer stays deferred: long films are not cross-posted.\n\nGBP 0. No new upload.\n\n\n9 Nov 2026, acting Chief (Claude): only the pin is left. The comment UgyN-6wKr4EfDkXI1h54AaABAg exists; do not post it again. The Mini's HOS window asked for a password re-entry on the pin. The MacBook's HOS Studio window (CDP 9222) was signed in fresh on 9 Nov: try the pin there once. If it pins, read it back (Pinned by badge) and finish. If it asks to authenticate again, press nothing more and block for Ben with what it showed. End screen and Test and Compare from the original brief: read back their current state only.",
       "ref": "6398691247",
       "film": "006",
       "stage": "thumbs",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-07T08:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "Needs Ben own login: HOS Studio CDP 9460 pin save on VbPubYd6Fbs still returns HTTP 200 CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult (youtubei/v1/comment/perform_comment_action PerformPin); also GetWebReauthUrl/GetReauthSessionToken. Fresh reload still offers Pin, no Pinned-by badge. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg present and visible; not recreated. Still required after Fri 6 Nov ~09:09 London sign-in. No spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84621,6 +84621,11 @@
           "at": "2026-11-07T08:08Z",
           "by": "cursor",
           "what": "blocked: Needs Ben own login: HOS Studio CDP 9460 pin save on VbPubYd6Fbs still returns HTTP 200 CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult (youtubei/v1/comment/perform_comment_action PerformPin); also GetWebReauthUrl/GetReauthSessionToken. Fresh reload still offers Pin, no Pinned-by badge. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg present and visible; not recreated. Still required after Fri 6 Nov ~09:09 London sign-in. No spend."
+        },
+        {
+          "at": "2026-11-09T23:29Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: try the pin once on the MacBook's freshly signed-in HOS window (CDP 9222) before asking Ben"
         }
       ],
       "kind": "studio",
@@ -84628,13 +84633,6 @@
         "HOS:006"
       ],
       "remaining_action": "Reauthenticate HOS Studio, then pin existing comment and verify after reload",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-06T06:32Z",
-        "by": "codex",
-        "note": "Pin save HTTP 200 contains CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult. Fresh reload has no badge and still "
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -84642,13 +84640,8 @@
         "status": "blocked",
         "by": "codex"
       },
-      "for": "cursor",
-      "model": "cursor-auto",
-      "hold": {
-        "type": "ben",
-        "condition": "Needs Ben own login: HOS Studio CDP 9460 pin save on VbPubYd6Fbs still returns HTTP 200 CHALLENGE_PROMPT_TYPE_AUTHENTICATE with no actionResult (youtubei/v1/comment/perform_comment_action PerformPin); also GetWebReauthUrl/GetReauthSessionToken. Fresh reload still offers Pin, no Pinned-by badge. Existing comment UgyN-6wKr4EfDkXI1h54AaABAg present and visible; not recreated. Still required after Fri 6 Nov ~09:09 London sign-in. No spend.",
-        "check_at": "2026-11-07T14:08:15+00:00"
-      }
+      "for": "",
+      "model": ""
     },
     {
       "id": "J0959",
