@@ -173,7 +173,8 @@ HOS = channels.repo_path("hos", HOME)
 # not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Ben, 9 Nov 2026 (Claude now the
 # bigger plan): Claude -> Grok -> Codex -> Gemini. Cursor stays a worker.
 DEFAULT_CHAIN = "claude,chief,codex,gemini"
-NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
+NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude",
+         "claudecode": "Claude Code"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
 # so a job that merely talks about a YouTube quota doesn't count.
@@ -377,6 +378,14 @@ def cli_spec(agent: str, model: str = ""):
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "gemini" else ""
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
+        flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
+    elif agent == "claudecode":
+        # Claude Code as an ordinary Mini worker (Ben, 9 Nov 2026: Codex and Cursor out of credit; his Claude plan is
+        # Max 20x). Unattended like agy (--dangerously-skip-permissions); -p last, straight before the prompt, because
+        # --add-dir takes a list and would read a prompt after it as one more folder (macbook_worker, 5 Nov 2026).
+        b = find_bin("CLAUDE_BIN", "claude")
+        flags = os.environ.get("CLAUDE_CODE_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
+                                                   f"--add-dir {shlex.quote(str(STATE.parent))}")
         flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
     else:
         return None
