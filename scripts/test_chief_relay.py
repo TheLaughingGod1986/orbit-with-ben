@@ -1,5 +1,6 @@
 """chief_relay.py: the first agent in the chain that is up acts as Chief; out of credit falls through; Grok takes back."""
 import datetime as dt, os, pathlib, stat, sys, tempfile, unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import chief_relay as cr  # noqa: E402
@@ -936,6 +937,23 @@ class Relay(unittest.TestCase):
         self.assertEqual(calls.read_text(), "x")
         self.assertIn("moved 1 scratch folder(s)", self.posts.read_text())
         self.assertEqual(json.loads((cr.STATE / "chief" / "offload.json").read_text())["moved"], 1)
+
+    def test_weekly_cache_clean_starts_in_the_background_once_a_week(self):
+        import json
+        os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
+        started = []
+        class P:
+            pid = 4242
+        try:
+            with mock.patch.object(cr.subprocess, "Popen", side_effect=lambda cmd, **kw: started.append(cmd) or P()):
+                cr.weekly_caches(T0)
+                cr.weekly_caches(T0 + 3 * 24 * 60 * MIN)  # 3 days later: not yet
+                cr.weekly_caches(T0 + 8 * 24 * 60 * MIN)  # 8 days later: again
+        finally:
+            os.environ.pop("CHIEF_OFFLOAD_ANY_OS")
+        self.assertEqual(len(started), 2)
+        self.assertIn("--caches-only", started[0])
+        self.assertEqual(json.loads((cr.STATE / "chief" / "caches.json").read_text())["pid"], 4242)
 
     def test_a_disk_still_full_after_repair_wakes_nobody(self):
         self.routed_queue('{"jobs": [{"id": "J0404", "kind": "assembly", "status": "open", "needs": "mini"}]}')
