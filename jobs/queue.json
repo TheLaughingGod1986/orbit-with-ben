@@ -210527,13 +210527,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-09T12:46Z",
-      "eta": "2026-11-09T13:06Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T12:39Z",
-      "result": "",
+      "result": "Free space: 5.9Gi avail / 196Gi used / 228Gi total (98% capacity). Top 10 by size: (1) ~/YouTube/orbit-with-ben 16G, (2) ~/_desk/worktrees 13G, (3) ~/YouTube/History Of Science 8.9G, (4) ~/_desk/renders 4.6G, (5) ~/_desk/scratch 4.0G, (6) ~/_desk/cache 2.3G, (7) ~/YouTube/hos-008-lightning 1.5G, (8) ~/Downloads 1.2G, (9) ~/_desk/state 891M, (10) /private/tmp/gemini-J1100-wt 569M (plus 12 other /private/tmp worktrees ~530-550M each). Film folders >1 GB on studio-live: OWB 028 (2.4G: yes, all 918 non-.pyc files match), HOS 008 (2.0G: yes, all 749 content files match 100%), OWB 029 (1.1G: yes, all 1057 non-.pyc files match), OWB 032 (976M/1.02GB: yes, 2.9G superset on NAS); standalone worktree ~/YouTube/hos-008-lightning/02_Video-Projects/008_Lightning-Franklin (1.5G) is partial (506 local files not on studio-live). Full report: jobs/reviews/J2439/DISK_REPORT.md (f085d3e9aa).",
       "history": [
         {
           "at": "2026-11-09T12:39Z",
@@ -210564,6 +210564,11 @@
           "at": "2026-11-09T12:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J2439/DISK_REPORT.md to main (f085d3e9aa)"
+        },
+        {
+          "at": "2026-11-09T12:56Z",
+          "by": "gemini",
+          "what": "done: Free space: 5.9Gi avail / 196Gi used / 228Gi total (98% capacity). Top 10 by size: (1) ~/YouTube/orbit-with-ben 16G, (2) ~/_desk/worktrees 13G, (3) ~/YouTube/History Of Science 8.9G, (4) ~/_desk/renders 4.6G, (5) ~/_desk/scratch 4.0G, (6) ~/_desk/cache 2.3G, (7) ~/YouTube/hos-008-lightning 1.5G, (8) ~/Downloads 1.2G, (9) ~/_desk/state 891M, (10) /private/tmp/gemini-J1100-wt 569M (plus 12 other /private/tmp worktrees ~530-550M each). Film folders >1 GB on studio-live: OWB 028 (2.4G: yes, all 918 non-.pyc files match), HOS 008 (2.0G: yes, all 749 content files match 100%), OWB 029 (1.1G: yes, all 1057 non-.pyc files match), OWB 032 (976M/1.02GB: yes, 2.9G superset on NAS); standalone worktree ~/YouTube/hos-008-lightning/02_Video-Projects/008_Lightning-Franklin (1.5G) is partial (506 local files not on studio-live). Full report: jobs/reviews/J2439/DISK_REPORT.md (f085d3e9aa)."
         }
       ],
       "remaining_action": "Complete J2439 with summary of free space and top 10 by size",
@@ -210581,7 +210586,8 @@
         "OWB:029",
         "OWB:032",
         "HOS:008"
-      ]
+      ],
+      "done_ref": "f085d3e9aa"
     },
     {
       "id": "J2440",
