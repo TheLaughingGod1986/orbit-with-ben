@@ -208702,17 +208702,22 @@
           "at": "2026-11-09T01:33Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Resuming at step 4/6: all 6 J2417 thumbnails (026/027/032 A & B) verified on NAS under 08_Thumbnail/j2417_v01 with thumb_preview.py --score PASS"
+        },
+        {
+          "at": "2026-11-09T01:44Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Applied Title & Thumbnail Test & Compare A vs B in YouTube Studio (CDP 9223) on 026 (c5AdqQsnnys) and 027 (6bbbvfCx6zY); both saved with saveDisabled=true and Scheduled privacy unchanged"
         }
       ],
-      "remaining_action": "Inspect Studio Test & Compare on 026 (c5AdqQsnnys) and 027 (6bbbvfCx6zY) via CDP 9223 and apply if not already set",
+      "remaining_action": "Read back YouTube API state for c5AdqQsnnys and 6bbbvfCx6zY, update TITLE_TEST_J2417.md, THUMB_LEDGER.json, and commit/push",
       "due": "2026-11-14T12:00:00Z",
       "kind": "chart",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-09T01:33Z",
+        "at": "2026-11-09T01:44Z",
         "by": "gemini",
-        "note": "Resuming at step 4/6: all 6 J2417 thumbnails (026/027/032 A & B) verified on NAS under 08_Thumbnail/j2417_v01 with thumb"
+        "note": "Applied Title & Thumbnail Test & Compare A vs B in YouTube Studio (CDP 9223) on 026 (c5AdqQsnnys) and 027 (6bbbvfCx6zY);"
       },
       "taskKeys": [
         "OWB:026",
