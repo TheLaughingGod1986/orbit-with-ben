@@ -59,7 +59,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 030 | upload | gemini | 2026-11-09T03:50Z | 2026-11-09T04:50Z | J2426: AR2 v13 + AR3 v14 private upload & 028 S6 v07 swap verification |
 | 033 | edit | gemini | 2026-11-08T20:01Z | 2026-11-08T22:00Z | J2404 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
