@@ -335,3 +335,42 @@ Following Ben's UAT sign-off on `031` Long `v02` (`J2395.1` OK) and Active Short
   - Registered in `00_Brand/Channel-Setup/social/UPLOADS.json` (`long: "G5uMANXHtNU"`) and `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (`status: "scheduled"`, `date: "2026-12-05"`).
 - **Full Read-Back & Report:** `11_Upload-Package/PACKAGE_UPLOAD_RESULT.md`.
 
+## J2418 Active Short #2 (`sat12_solar_wind_air`) `v03` True Full-Bleed Vertical Rebuild & Gates — 9 November 2026
+
+Rebuilt `031` Active Short #2 (`sat12_solar_wind_air`) as `v03` (`031_short_sat12_solar_wind_air_v03.mp4`, `SHA-256: a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3`, `1080x1920`, `25 fps` CFR, `24.48 s`, `612` frames) per Ben's `J2395.3` / `J2418` note (*"Short 2 plays as a rectangle (16:9 picture) in the middle with a BLURRED copy filling above and below. That is the blur-pad layout, not a real vertical"*), leaving `v01` (`2f0f7e82...`) and `v02` (`4f25b1cd...`) untouched on the NAS, at £0 spend and with no YouTube upload:
+
+1. **`ffprobe` & Builder Root Cause Identified (`_assemble_031_short2_v02.py` lines 334–384):**
+   - `ffprobe` on both `v02` and `v03` reports `width=1080, height=1920, sample_aspect_ratio=1:1, display_aspect_ratio=9:16, r_frame_rate=25/1, avg_frame_rate=25/1, duration=24.480000, nb_frames=612`.
+   - The blur-pad layout in `v02` came from `make_natural_blur_bg()` (lines 334–348, stretching a `16:9` frame vertically to `1080x1920` with `ImageFilter.GaussianBlur(radius=42)`) and `composite_band_on_natural_blur()` (lines 351–384, pasting the `16:9` shot into the `1080x608` central band `BAND_Y0 = 656` to `BAND_Y1 = 1264` with a 96-px feather over the blurred bands above `y=0..656` and below `y=1264..1920`), which was called on 8 of the 9 shots (`R39a`, `R40`, `R41`, `R42a`, `R42b`, `R44a`, `R44b`, `R39_loop`).
+   - `_assemble_031_short2_v03.py` removes `make_natural_blur_bg()` and `composite_band_on_natural_blur()` completely and reframes all 9 shots via `crop_affine_9x16()` to fill the full `1080x1920` (`9:16`) canvas edge-to-edge (`upscale <= 1.96x <= 2.35x`, zero blurred bands, zero bars).
+2. **Staged for Ben's UAT Watch (`Sat 12 Dec 2026 11:30Z` slot):**
+   - Verified matching SHA-256 (`a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3`) across NAS `studio-live` (`10_Shorts/sat12_solar_wind_air/06_Final-Exports/` and `10_Shorts/`), NAS `OWB UAT/031_shorts_v03/`, and iCloud `OWB UAT/031_shorts_v03/`.
+   - Full handoff: `10_Shorts/SHORT2_SOLAR_WIND_AIR_HANDOFF_J2418_v03.md`.
+
+### Pasted Gate Verdicts (`v03` — All 7 Gates `PASS`)
+```
+PASS  031_short_sat12_solar_wind_air_v03.mp4  dur=24.48s  audio=-16.9dB  motion=22.13  f0diff=5.01  cut1=2.36s  vo_onset=0.09s  tail_gap=1.46s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_vo.wav  dhash=fff7ffff7effffff  visor=0.0
+   sheet /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_open_sheet.jpg
+
+PASS  031_short_sat12_solar_wind_air_v03_frame0.jpg  saturation=136.7  near_black=0%
+PASS  031_short_sat12_solar_wind_air_v03_cover.jpg  saturation=145.7  near_black=0%
+
+SFX level PASS: VO -16.5 LUFS, SFX -38.5 LUFS, 5 hits
+music gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM
+
+R39a     1.2s nasa_svs_20297_magnetosphere ok
+R39b     2.8s nasa_svs_3822_magfield_left. ok
+ R40     5.0s code_graphic_031_r40a_never_ ok
+ R41     8.0s hdev_earth_views_iss_2019.mp ok
+R42a    11.0s hdev_earth_views_iss_2019.mp ok
+R42b    14.7s nasa_svs_12312_dscovr_epic_e ok
+R44a    18.3s PIA00407.jpg                 ok
+R44b    21.5s code_graphic_031_r44c_durati ok
+R39_loop    23.8s frame0_hold_sat12_solar_wind WARN low detail: edge density 0.0325 < film p5 0.0355
+polish gate PASS: 0 of 9 rows failed, 1 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_polish_gate.json
+
+WARN   0:24 row R39_loop frame0_hold_sat12_solar_wind_air_v03.png: low detail: edge density 0.0325 < film p5 0.0355
+picture QA PASS: 0 of 9 cuts fail, 1 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_picture_qa/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_picture_qa/picture_qa_review.jpg
+```
+
+
