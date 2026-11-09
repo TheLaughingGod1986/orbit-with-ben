@@ -39,7 +39,7 @@ class Guards(unittest.TestCase):
     def test_round_the_clock_by_default(self):
         self.assertTrue(mw.in_hours(dt.datetime.fromisoformat("2026-10-29T14:00:00+00:00")))  # Thu afternoon
         self.assertEqual(mw.guards(AC, IDLE_20, free_gb=100, now=T0), [])  # Wed noon
-        self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=T0)))  # Ben at the keys
+        self.assertEqual(mw.guards(AC, IDLE_1, free_gb=100, now=T0), [])  # Ben at the keys: slot 1 runs in the background
 
     def test_hours_are_weeknights_and_weekends_london(self):
         os.environ["MACBOOK_HOURS"] = "night"
@@ -64,8 +64,16 @@ class Guards(unittest.TestCase):
     def test_battery_in_use_and_low_disk_each_stop_it(self):
         why = mw.guards(BATT, IDLE_1, free_gb=3, now=WED_NIGHT)
         self.assertTrue(any("battery" in w for w in why))
-        self.assertTrue(any("in use" in w for w in why))
         self.assertTrue(any("disk low" in w for w in why))
+        with mock.patch.dict(os.environ, {"MACBOOK_BUSY_OK": "0"}):  # the old rule: nothing while Ben is at the keys
+            self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=WED_NIGHT)))
+        with mock.patch.object(mw, "SLOT", 2), mock.patch.object(mw.os, "cpu_count", return_value=10):
+            self.assertTrue(any("in use" in w for w in mw.guards(AC, IDLE_1, free_gb=100, now=WED_NIGHT, load=1.0)))
+
+    def test_a_job_while_ben_is_at_the_keys_runs_at_background_priority(self):
+        with mock.patch.object(mw.shutil, "which", return_value="/usr/sbin/taskpolicy"):
+            self.assertEqual(mw.busy_cmd(["codex", "exec"], idle_min=1)[:2], ["taskpolicy", "-b"])
+            self.assertEqual(mw.busy_cmd(["codex", "exec"], idle_min=30), ["codex", "exec"])
 
     def test_pause_file_stops_it(self):
         (mw.STATE / "macbook-worker.pause").write_text("")
