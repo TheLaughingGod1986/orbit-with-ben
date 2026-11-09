@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2289 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2255 |  |
 | J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
-| J2303 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2199 |  |
+| J2303 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2313 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2040 |  |
 | J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
