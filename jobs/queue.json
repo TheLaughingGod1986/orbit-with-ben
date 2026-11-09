@@ -189281,13 +189281,13 @@
       "stage": "upload",
       "after": "J2285",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-06T21:20Z",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T09:19Z",
-      "result": "parked for Chief: HOS 099 uAomPaOBrM8 residual checklist already set after reload. Places off, chapters and concepts on, moderation Basic, caption never aired on US television, paid promotion No. No Save. API private, not made for kids, publishAt 2026-12-10T18:00:00Z. Cards, Level and timezone not touched. Evidence /Users/benjaminoats/_desk/jobs/J2199/evidence-residual. Records PR https://github.com/TheLaughingGod1986/history-of-science/pull/449. Not a film PASS.",
+      "result": "Accepted by acting Chief (Claude) 9 Nov: HOS 099 uAomPaOBrM8 Studio checklist read back as already set (places off, chapters and concepts on, moderation Basic, paid promotion No; private, publishAt 10 Dec 18:00Z). Nothing left to apply. Records are in HOS PR #449. This is a checklist close, not a film PASS.",
       "history": [
         {
           "at": "2026-11-05T09:19Z",
@@ -189368,6 +189368,11 @@
           "at": "2026-11-07T00:04Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-09T23:14Z",
+          "by": "claude",
+          "what": "done: Accepted by acting Chief (Claude) 9 Nov: HOS 099 uAomPaOBrM8 Studio checklist read back as already set (places off, chapters and concepts on, moderation Basic, paid promotion No; private, publishAt 10 Dec 18:00Z). Nothing left to apply. Records are in HOS PR #449. This is a checklist close, not a film PASS."
         }
       ],
       "remaining_action": "Park the residual Studio readback for the Chief",
@@ -189381,12 +189386,6 @@
         "at": "2026-11-06T21:27Z",
         "by": "cursor",
         "note": "No Studio save. Places off, moderation Basic, caption never aired, paid promotion No. Private, publishAt 2026-12-10T18:0"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-06T22:27:36+00:00",
-        "recheck_task": "J2303"
       },
       "escalated_at": "2026-11-07T00:04Z"
     },
@@ -207619,13 +207618,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-08T21:13Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-08T20:25Z",
-      "result": "parked for Chief: J2415 QA sweep complete across OWB (a9e9d3eef3) and HOS (23c9bc81) with byte-identical J2415_QA_SWEEP_INVENTORY_2026-11-08.json (sha256 c9349e54aa71e00fa78d0a7b74fe680e804fc264b882187bce0981a754f5caf5) and J2415_QA_SWEEP_REPORT_2026-11-08.md (sha256 aa782b694a76261f9fec5a1be5d7668547d5ef1dfcb09b531d8b71b8bd7553d2). 209 entries inventoried (129 OWB + 80 HOS; 330 enumerated media files = 288 directly hashed unwrapped + 41 NAS tar + 1 manifest-backed iCloud stub; 29 offloaded 2026-11-05 paths reconciled to NAS; 40 post-J1467 exports added and gated). All 607/607 applicable picture_qa/polish_gate/music_gate sidecars present and fresh vs media; 0 unaddressed current_newest FAILs across all 148 newest candidates (all 6 gate_failure_indicators belong strictly to 5 historical_superseded cuts whose current_newest replacements pass all 3 gates with 0 FAIL); 0 new repair jobs required. Separate J2309/J2316/J2321 gate_shorts_open hold on 029_short_mon14_half_moon_daylight_v05 (v04 active on heiGCnGKTkE) and all existing Chief/Ben/date/credit holds preserved.",
+      "result": "Accepted by acting Chief (Claude) 9 Nov: QA sweep of 209 packs on both channels (607 of 607 gate sidecars present and fresh, 0 unaddressed FAILs on the newest cuts, 0 repair jobs needed). The 029 half-moon v05 opening hold and all other holds stay as they are. Reports: OWB a9e9d3eef3, HOS 23c9bc81.",
       "history": [
         {
           "at": "2026-11-08T20:25Z",
@@ -207696,6 +207695,11 @@
           "at": "2026-11-09T00:59Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-09T23:14Z",
+          "by": "claude",
+          "what": "done: Accepted by acting Chief (Claude) 9 Nov: QA sweep of 209 packs on both channels (607 of 607 gate sidecars present and fresh, 0 unaddressed FAILs on the newest cuts, 0 repair jobs needed). The 029 half-moon v05 opening hold and all other holds stay as they are. Reports: OWB a9e9d3eef3, HOS 23c9bc81."
         }
       ],
       "remaining_action": "Await Chief review of J2415 QA sweep inventory and report",
