@@ -207893,10 +207893,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T04:56Z",
+      "eta": "2026-11-09T06:56Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -208655,6 +208655,11 @@
           "at": "2026-11-09T04:56Z",
           "by": "macbook",
           "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:56Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
