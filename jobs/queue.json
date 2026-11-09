@@ -208392,19 +208392,28 @@
           "at": "2026-11-09T01:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T01:06Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J2430; inspecting branch macbook/J2417-titles and disk scratch"
         }
       ],
-      "remaining_action": "OWB 026/027/032: build the J2417 A/B thumbnails (one big object + 2-4 word text)",
+      "remaining_action": "Read TITLE_TEST_J2417.md specs for 026, 027, 032 and check disk/render scratch",
       "due": "2026-11-14T12:00:00Z",
       "kind": "chart",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-09T01:06Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2430; inspecting branch macbook/J2417-titles and disk scratch"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:027",
+        "OWB:032"
+      ]
     },
     {
       "id": "J2431",
