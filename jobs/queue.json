@@ -1,5 +1,5 @@
 {
-  "next_id": 2450,
+  "next_id": 2451,
   "jobs": [
     {
       "id": "J0001",
@@ -211491,6 +211491,35 @@
       ],
       "remaining_action": "Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda",
       "due": "2026-11-14T18:00:00Z",
+      "kind": "studio"
+    },
+    {
+      "id": "J2450",
+      "title": "Playlist audit, both channels (read-only): views, video count, last update; propose merge/rename/reorder/remove",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: 'cleaning up our playlist that get no views'. READ-ONLY in Studio: Orbit With Ben (CDP 9223) and History of Science (CDP 9222; check the channel first in each). For every playlist: title, visibility, number of videos, lifetime views (Studio > Content > Playlists, or Analytics > Content > Playlists), last updated. Write 05_Analytics/PLAYLIST_AUDIT_2026-11.md with a table per channel and a proposal: keep (with any rename to a searchable phrase and a better order), merge into X, or remove (only empty or near-empty ones with ~0 views). Note that removing a playlist never touches its videos. Change NOTHING in Studio: Ben OKs the removals first (it goes in his Ready-for-OK). Commit, PR, done. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T21:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T21:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Playlist audit, both channels (read-only): views, video count, last update; propose merge/rename/reorder/remove",
+      "due": "2026-11-12T18:00:00Z",
       "kind": "studio"
     }
   ],
