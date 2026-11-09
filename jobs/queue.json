@@ -191480,6 +191480,11 @@
           "at": "2026-11-07T05:20Z",
           "by": "cursor",
           "what": "done: AR2 v13 (74aa3546) and AR3 v14 (64e148d4) rebuilt. Picture, polish, shorts, music and sfx gates pass. Duration warns 18.4s and 17.1s are the test exception. Both are on the board for Ben's watch. v12 and the old v13 were left in place. No upload. £0."
+        },
+        {
+          "at": "2026-11-09T04:04Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben"
         }
       ],
       "remaining_action": "Waiting on Ben's watch of AR2 v13 and AR3 v14",
@@ -191494,7 +191499,7 @@
       "taskKeys": [
         "OWB:030"
       ],
-      "awaits_ben": [
+      "awaits_was": [
         {
           "what": "Watch AR2 v13, Where Will the ISS Crash? The Earth fills the frame and it ends on the sky.",
           "file": "OWB UAT/owb_ar2_iss_2030_deorbit_v13/owb_ar2_iss_2030_deorbit_v13_PHONE.mp4",
@@ -207323,6 +207328,11 @@
           "at": "2026-11-09T02:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2414 condition check complete in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0). HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633) and HOS PR #455 (72608f30 OPEN/SUCCESS) re-verified on Mini/NAS; J2339 step 2/3 audio_input + 23-frame 1-Hz QA PASS re-verified via read_file. Step 3/3 continuous 30fps moving_video_input remains unmet (capability_probe.py gemini --record at 02:18Z passed audio 0.91 and failed video; read_file on video/mp4 returns 23 static 1-Hz frames 00:00..00:22; capabilities.json corrected to ['audio_input']). Elected Chief: run jobs.py wait J2339 --type capability --requires moving_video_input --recheck J2414 --check-at 2026-11-09T08:20:00Z and close J2414; keep J0912 held at 4/4."
+        },
+        {
+          "at": "2026-11-09T04:32Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2414 on J2339 (moving_video_input hold) and closes J2414",
@@ -207342,7 +207352,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "escalated_at": "2026-11-09T04:32Z"
     },
     {
       "id": "J2415",
@@ -207472,7 +207483,7 @@
     {
       "id": "J2416",
       "title": "Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 8 Nov 2026: Orbitra's views come largely from co-publishing with The First Dawn (20.4k subs) via YouTube's collaboration feature, which shows a shared video to both channels' subscribers. Build a shortlist of 10 English space/astronomy channels, 5k-100k subs, uploading in the last 30 days, long-form, audience overlap with Orbit, no AI-slop or conspiracy channels. For each: handle, subs, upload rate, median views of last 10 longs, contact route (About page business email), and one specific collab idea that fits an Orbit film already in the line (035-061). Draft one short outreach email in Ben's voice (it goes out under his name, so Ben sends it, not an agent). Output 05_Analytics/owb/COLLAB_SHORTLIST.md. Read-only research, £0, no contact made.",
       "ref": "",
@@ -207480,23 +207491,83 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "macbook-2",
+      "since": "2026-11-09T05:03Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:14Z",
-      "result": "",
+      "result": "Built 05_Analytics/owb/COLLAB_SHORTLIST.md with 10 verified English long-form space/astronomy partner channels (5k-100k subs, active in last 30d, About page business email verified + 5 direct emails, no AI-slop/conspiracy) plus benchmark @the_firstdawn and 2 reserves, each mapped to a specific Orbit film in 035-061, and drafted outreach email in Ben's voice (PR #664, commit 2260affb8; £0, no contact made).",
       "history": [
         {
           "at": "2026-11-08T22:14Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T04:58Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-09T05:01Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T05:02Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-09T07:02:29Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-09T05:02Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T05:03Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-09T07:03:29Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-09T05:03Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T05:05Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-09T05:22Z",
+          "by": "macbook-2",
+          "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-09T05:25Z",
+          "by": "macbook-2",
+          "what": "done: Built 05_Analytics/owb/COLLAB_SHORTLIST.md with 10 verified English long-form space/astronomy partner channels (5k-100k subs, active in last 30d, About page business email verified + 5 direct emails, no AI-slop/conspiracy) plus benchmark @the_firstdawn and 2 reserves, each mapped to a specific Orbit film in 035-061, and drafted outreach email in Ben's voice (PR #664, commit 2260affb8; £0, no contact made)."
         }
       ],
-      "remaining_action": "Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs",
+      "remaining_action": "Writing 05_Analytics/owb/COLLAB_SHORTLIST.md with 10 verified space channels, metrics, collab ideas (035-061), and outreach email in Ben's voice",
       "kind": "review",
-      "plain": "Find ten space channels of a similar size that could co-publish a video with Orbit, and draft the message Ben would send."
+      "plain": "Find ten space channels of a similar size that could co-publish a video with Orbit, and draft the message Ben would send.",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5",
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-09T05:22Z",
+        "by": "macbook-2"
+      }
     },
     {
       "id": "J2417",
@@ -207874,7 +207945,7 @@
     {
       "id": "J2421",
       "title": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 8 Nov 2026, on 031 Short 2 v02: 'like a rectangle and blurry above and below'. Per-film assemble scripts (e.g. 024 fri06 muons, 031 v02 fixes, J1199 s6) use a boxblur/gblur fill behind a centred 16:9 plate. On a phone that reads as a landscape video, not a Short. 1) Add a check to the Shorts export gates (the shared gate in studio-core, synced by core_sync to HOS too): sample frames every 1 s; in each, compare the top and bottom ~20% bands against the centre (low Laplacian sharpness plus a matching mirrored/blurred copy of the centre = blur-pad) and also catch flat letterbox bars; FAIL if it shows on more than 10% of frames. Unit tests with a synthetic blur-padded clip and a true full-bleed clip. 2) Add one line to the Shorts build rules (AGENTS.md + the rule file sync_rules manages): every Short shot is reframed to fill 1080x1920 full-bleed; no blur pad, no bars. 3) Run the new check over every Short currently scheduled or on Ben's watch (UPCOMING_SHORTS_GATE.md list) and list any that fail. PR, merge when green. £0.",
       "ref": "",
@@ -207882,10 +207953,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-09T03:19Z",
-      "eta": "2026-11-09T05:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -208544,17 +208615,141 @@
           "at": "2026-11-09T03:48Z",
           "by": "macbook",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-09T04:17Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-09T04:40Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-09T04:43Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:44Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:45Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:45Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:46Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:46Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:47Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:47Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:48Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:48Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:49Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:49Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:50Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:50Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:54Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:55Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:55Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:56Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:56Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:57Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:58Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: cursor on claude-opus-5-5"
         }
       ],
-      "remaining_action": "Add blur-pad/letterbox check + unit tests to gate_shorts_open.py, update Shorts rules, audit UPCOMING_SHORTS_GATE.md",
+      "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
       "kind": "qa",
       "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2.",
       "progress": {
         "step": 0,
-        "of": 4,
-        "at": "2026-11-09T03:48Z",
+        "of": 3,
+        "at": "2026-11-09T04:17Z",
         "by": "macbook"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     },
     {
       "id": "J2422",
@@ -208785,13 +208980,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-09T03:45Z",
-      "eta": "2026-11-09T05:45Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
-      "result": "",
+      "result": "Uploaded AR2 v13 ('Where Will the International Space Station Crash?', sha 74aa3546) Private as xdurJQcoiGM (publishAt Wed 25 Nov 2026 11:30 London, 2026-11-25T11:30:00Z) and AR3 v14 ('Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?', sha 64e148d4) Private as MScK2CK2ZFg (publishAt Sat 28 Nov 2026 11:30 London, 2026-11-28T11:30:00Z) into the first free OWB Short slots around AR1 (93JL_IK57EM, Fri 27 Nov 11:30Z). Frame-0 covers set via thumbnails.set; gate_shorts_open.py + J2421 blur-pad check PASS. Verified J1100 028 night-sky v07 swap live on YouTube (old X768qs8sNQs private/publishAt:null -> new lsOCcIYCud0 private/publishAt:2026-12-07T11:30:00Z, ok:true in jobs/readbacks/J2426.json). Recorded in UPLOADS.json, buffer-plans, and shorts_open_library (c84060abb8); cleared awaits_ben on J2229. £0.",
       "history": [
         {
           "at": "2026-11-08T22:59Z",
@@ -208807,22 +209002,53 @@
           "at": "2026-11-09T03:45Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2426; starting inspection of AR2 v13, AR3 v14, 028 S6 v07, and schedule slots"
+        },
+        {
+          "at": "2026-11-09T03:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1/5: Verified 028 S6 v07 swap live (X768qs8sNQs private/unscheduled -> lsOCcIYCud0 private/2026-12-07T11:30:00Z, ok:true in J2426.json); identified first two free Mon/Wed/Fri/Sat 11:30Z Short slots: Wed 2026-11-25T11:30:00Z (AR2 v13) and Sat 2026-11-28T11:30:00Z (AR3 v14)"
+        },
+        {
+          "at": "2026-11-09T03:58Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2/5: Packaged AR2 v13 (sha 74aa3546) and AR3 v14 (sha 64e148d4) with frame-0 covers; gate_shorts_open.py, J2421 blur-pad check, thumb_preview.py, and youtube:package --dry-run all PASS"
+        },
+        {
+          "at": "2026-11-09T04:00Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3/5: Uploaded Private xdurJQcoiGM (AR2 v13, publishAt 2026-11-25T11:30:00Z, cover set) and MScK2CK2ZFg (AR3 v14, publishAt 2026-11-28T11:30:00Z, cover set); Buffer plans deferred"
+        },
+        {
+          "at": "2026-11-09T04:04Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Step 4/5: Committed & pushed API readbacks (jobs/readbacks/J2426.json), UPLOADS.json, buffer-plans, and shorts_open_library in c84060abb8"
+        },
+        {
+          "at": "2026-11-09T04:04Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Step 5/5: Cleared awaits_ben on J2229, updated 030/028 studio board state, and released 030 upload claim"
+        },
+        {
+          "at": "2026-11-09T04:04Z",
+          "by": "gemini",
+          "what": "done: Uploaded AR2 v13 ('Where Will the International Space Station Crash?', sha 74aa3546) Private as xdurJQcoiGM (publishAt Wed 25 Nov 2026 11:30 London, 2026-11-25T11:30:00Z) and AR3 v14 ('Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?', sha 64e148d4) Private as MScK2CK2ZFg (publishAt Sat 28 Nov 2026 11:30 London, 2026-11-28T11:30:00Z) into the first free OWB Short slots around AR1 (93JL_IK57EM, Fri 27 Nov 11:30Z). Frame-0 covers set via thumbnails.set; gate_shorts_open.py + J2421 blur-pad check PASS. Verified J1100 028 night-sky v07 swap live on YouTube (old X768qs8sNQs private/publishAt:null -> new lsOCcIYCud0 private/publishAt:2026-12-07T11:30:00Z, ok:true in jobs/readbacks/J2426.json). Recorded in UPLOADS.json, buffer-plans, and shorts_open_library (c84060abb8); cleared awaits_ben on J2229. £0."
         }
       ],
-      "remaining_action": "Inspect AR2 v13, AR3 v14, 028 night-sky v07, and free Short slots",
+      "remaining_action": "All steps complete",
       "kind": "studio",
       "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through.",
       "progress": {
-        "step": 0,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-09T03:45Z",
+        "at": "2026-11-09T04:04Z",
         "by": "gemini",
-        "note": "Claimed J2426; starting inspection of AR2 v13, AR3 v14, 028 S6 v07, and schedule slots"
+        "note": "Step 5/5: Cleared awaits_ben on J2229, updated 030/028 studio board state, and released 030 upload claim"
       },
       "taskKeys": [
         "OWB:030",
         "OWB:028"
-      ]
+      ],
+      "done_ref": "c84060abb8"
     },
     {
       "id": "J2427",
@@ -208947,17 +209173,323 @@
           "at": "2026-11-09T03:16Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-09T04:06Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T04:07Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and Passed ask/OK card resolution"
+        },
+        {
+          "at": "2026-11-09T04:14Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected video_tracker.py, studio_app.js, board_check.py, UPLOADS.json, and all target jobs; created worktree gemini/J2427"
+        },
+        {
+          "at": "2026-11-09T04:34Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
+        },
+        {
+          "at": "2026-11-09T04:39Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected video_tracker.py, kanban_snapshot.py, board_check.py, studio_app.js, queue.json, and UPLOADS.json for all Passed ask/OK cuts"
+        },
+        {
+          "at": "2026-11-09T05:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-09T05:07Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Traced all Passed ask/OK cards (J1199/J2259, J1356.1/J2228, J2395.1-2/J2402, J0974, J1100, J1101) and standalone UPLOADS.json rows"
+        },
+        {
+          "at": "2026-11-09T05:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
+        },
+        {
+          "at": "2026-11-09T05:33Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected video_tracker.py, kanban_snapshot.py, board_check.py, and all Passed ask/OK card cases"
+        },
+        {
+          "at": "2026-11-09T06:51Z",
+          "by": "macbook",
+          "what": "claimed (took over a stalled claim by gemini)"
+        },
+        {
+          "at": "2026-11-09T06:52Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-09T07:00Z",
+          "by": "macbook",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-09T07:12Z",
+          "by": "macbook",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-09T07:17Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-09T07:20Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:21Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:21Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:22Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:22Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:23Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:23Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:24Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:24Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:25Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:25Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:26Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:26Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:27Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:30Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:31Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:31Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:32Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:32Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:33Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:33Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:34Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:34Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:35Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:35Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:36Z",
+          "by": "macbook",
+          "what": "released: gh still needs approval on the MacBook (can't open PR) and python tests are blocked; job needs tests+PR+merge+redeploy. Sixteenth release: please pin J2427 to the Mini."
+        },
+        {
+          "at": "2026-11-09T07:36Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:37Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:37Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:38Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:38Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:39Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:39Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:40Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:40Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:41Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:41Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:42Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:42Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:43Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:47Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:48Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:51Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:52Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-09T07:52Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T07:53Z",
+          "by": "macbook",
+          "what": "released"
         }
       ],
-      "remaining_action": "Inspecting video_tracker.py, UPLOADS.json, and queue.json for exact ask/OK cases",
+      "remaining_action": "Implementing upload matching & ask/OK card merging in video_tracker.py and adding unit tests",
       "kind": "qa",
       "plain": "Fix the Videos page so cuts Ben passed that are already uploaded stop showing as 'Passed, needs scheduling'.",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-09T02:51Z",
+        "at": "2026-11-09T07:12Z",
         "by": "macbook"
-      }
+      },
+      "taskKeys": [
+        "OWB:031",
+        "OWB:028",
+        "OWB:030",
+        "OWB:026"
+      ]
     },
     {
       "id": "J2428",
@@ -209053,13 +209585,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-09T02:50Z",
-      "eta": "2026-11-09T04:50Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T23:04Z",
-      "result": "",
+      "result": "Completed first-second swipe audit of all 80 OWB Shorts (00_Brand/Channel-Setup/audits/SHORTS_FIRST_SECOND_AUDIT_2026-11-09.md, jobs/reviews/J2429/REVIEW.md); locked first-second rule in .cursor/rules/orbit-build-shorts.mdc + 05_Analytics/LEARNINGS.md (#24); added frame-0 slow-fade-in + on-screen hook text checks and tests to gate_shorts_open.py (35/35 pass, synced to studio-core); updated unlocked 026/027/032 Shorts plans and listed 5 next-14-day scheduled Shorts eligible for in-slot opening re-cut/swap (iyvWYFP_ETA, gmzaCfJF1gA, HZGTovJu_TQ [v03 ready], kKN8Ale42sE, cwU_0WWeNZ4 [v04 ready]). Opened OWB PR #662 and HOS studio-core sync PR #461 (£0).",
       "history": [
         {
           "at": "2026-11-08T23:04Z",
@@ -209170,15 +209702,25 @@
           "at": "2026-11-09T03:52Z",
           "by": "macbook-2",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-09T04:02Z",
+          "by": "macbook-2",
+          "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-09T04:02Z",
+          "by": "macbook-2",
+          "what": "done: Completed first-second swipe audit of all 80 OWB Shorts (00_Brand/Channel-Setup/audits/SHORTS_FIRST_SECOND_AUDIT_2026-11-09.md, jobs/reviews/J2429/REVIEW.md); locked first-second rule in .cursor/rules/orbit-build-shorts.mdc + 05_Analytics/LEARNINGS.md (#24); added frame-0 slow-fade-in + on-screen hook text checks and tests to gate_shorts_open.py (35/35 pass, synced to studio-core); updated unlocked 026/027/032 Shorts plans and listed 5 next-14-day scheduled Shorts eligible for in-slot opening re-cut/swap (iyvWYFP_ETA, gmzaCfJF1gA, HZGTovJu_TQ [v03 ready], kKN8Ale42sE, cwU_0WWeNZ4 [v04 ready]). Opened OWB PR #662 and HOS studio-core sync PR #461 (£0)."
         }
       ],
-      "remaining_action": "Step 3/4: Add gate check for frame-0 motion + on-screen text and unit tests",
+      "remaining_action": "Done: PR #662 (OWB) and PR #461 (HOS) opened",
       "kind": "review",
       "plain": "Work out why most people swipe past our Shorts in the first second, and change how Shorts open so YouTube pushes them further.",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-09T03:52Z",
+        "at": "2026-11-09T04:02Z",
         "by": "macbook-2"
       }
     },
