@@ -211218,17 +211218,22 @@
           "at": "2026-11-09T20:11Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2444; checking existing symlinks and partial stats on /Volumes/MiniWork/desk"
+        },
+        {
+          "at": "2026-11-09T20:26Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: All 4 folders (worktrees, renders, scratch, cache) moved to /Volumes/MiniWork/desk/, checksum & file-count verified, symlinked, git worktrees verified, chief-relay.pause removed, and jobs/reviews/J2444/DESK_MOVE.md committed (3b40091473; +30.1 GiB free on ~, 26 GiB used on /Volumes/MiniWork)"
         }
       ],
-      "remaining_action": "Inspect current state of ~/_desk, /Volumes/MiniWork/desk, pause file, and running agent processes",
+      "remaining_action": "Complete J2444",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 0,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-09T20:11Z",
+        "at": "2026-11-09T20:26Z",
         "by": "gemini",
-        "note": "Claimed J2444; checking existing symlinks and partial stats on /Volumes/MiniWork/desk"
+        "note": "All 4 folders (worktrees, renders, scratch, cache) moved to /Volumes/MiniWork/desk/, checksum & file-count verified, sym"
       },
       "rerouted_from": {
         "needs": "mini",
