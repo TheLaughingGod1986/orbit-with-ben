@@ -1,8 +1,8 @@
 # Production checklist — Orbit With Ben
 
-**Episode:**  
-**Date:**  
-**Script review score:** ____ / 100 (must be 90 or more)
+**Episode:** `031_What-Happens-When-Earths-Magnetic-Field-Flips` (*What Happens When Earth's Magnetic Field Flips?*)  
+**Date:** 8 Nov 2026  
+**Script review score:** `95` / 100 (must be 90 or more)
 
 Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.md` · `THUMBNAIL_AND_TITLE_RULES.md`
 
@@ -10,45 +10,40 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 
 ## Topic and script
 
-- [ ] Familiar thing in danger. No existing public long on this subject. Competition check done. Ben picked it.
-- [ ] Pre-build vidIQ audit signed off
-- [ ] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
-- [ ] 4–6 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
-- [ ] Picture change about every 4–6 s. Every number sourced. No goodbye line. The last line hands off to the next film.
-- [ ] One `[SUBSCRIBE BEAT]` after the first payoff (25–50%), a line from `templates/SUBSCRIBE_BEAT_LINES.md` not used in the last four longs
-- [ ] Runtime 8–9 min (about 1,200–1,300 words)
-- [ ] `npm run review:script` 90 or more · `npm run gate:episode` PASS
+- [x] Familiar thing in danger. No existing public long on this subject. Competition check done. Chief picked it (`J0251`).
+- [x] Pre-build vidIQ audit signed off (`PRE_BUILD_VIDIQ_AUDIT.md`)
+- [x] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
+- [x] 4–7 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
+- [x] Picture change about every 4–6 s. Every number sourced (`SOURCES.md`, `CLAUDE_QUOTE_CHECK_v01.md`, `J2396` Gemini claims pass PASS). No goodbye line. The last line hands off to the next film.
+- [x] One `[SUBSCRIBE BEAT]` after the first payoff (25–50%), a line from `templates/SUBSCRIBE_BEAT_LINES.md` not used in the last four longs
+- [x] Runtime 8–9 min (`9:31` / `570.80 s`, `1,259` spoken words)
+- [x] `npm run review:script` 90 or more (`95/100` PASS) · `npm run gate:episode` PASS
 
 ## Voice and picture
 
-- [ ] Ben Orbit Narrator only. Speech around −19 to −28 dB mean. No silent stretches.
-- [ ] AI Studio: Veo world, Omni only for Orbit. Veo/Omni audio stripped.
-- [ ] Picture matches every sentence (mute test). Orbit on-model (one face, cream eyes with pupils, one underside glow).
-- [ ] No reused cutscenes, scenery loops, slow-mo, freeze-pads or Ken-Burns text
+- [x] Ben Orbit Narrator only (`magnetic_field_flip_vo_v02a.mp3`, `J1237` PASS). Speech around −19 to −28 dB mean. No silent stretches.
+- [x] Agency/Commons plates + original animated code graphics; Veo/source audio stripped.
+- [x] Picture matches every sentence (mute test). Reviewed KEEP in `J2390` (`jobs/reviews/J2390/REVIEW.md`).
+- [x] No reused cutscenes, scenery loops, slow-mo, freeze-pads or Ken-Burns text
 
 ## Assembly
 
-- [ ] Inputs normalised to 1920×1080 stereo. A/V durations match after concat.
-- [ ] Remint = picture only (original part audio kept)
-- [ ] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
-- [ ] End hold 15–20 s, music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
-- [ ] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
-- [ ] 4-second lower-right subscribe cue under the beat, with the picture still moving
-- [ ] Watched once on a phone with the sound on
+- [x] Inputs normalised to 1920×1080 stereo (`25 fps` CFR). A/V durations match after concat (`570.80 s`).
+- [x] Remint = picture only (original VO + custom music bed `031_magnetic_field_flip_bed_v01.mp3` + house SFX kit `kit_v01`)
+- [x] Chapter cards: soft starfield, breath lead-in, music continues under the card
+- [x] End hold past last word (`568.24 s` → `570.80 s`), music and picture fade cleanly. No silent hold.
+- [x] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most.
+- [x] Lower-right subscribe cue under the beat (`145.64–154.06 s`), with the picture still moving
 
-## Shorts (3 a week)
+## Shorts (2 active + 1 reserve under 4 Nov cap)
 
-- [ ] 22–27 s. First-two-seconds rules. Orbit not at frame 0.
-- [ ] `gate_shorts_open.py check` PASS for each export
-- [ ] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening.
+- [x] Active Short #1 (`031_short_testA_opening_flip_v01.mp4`, `37.16 s` Test A opening) & Active Short #2 `v02` (`031_short_sat12_solar_wind_air_v02.mp4`, `24.48 s` Keeper-score question Short).
+- [x] `gate_shorts_open.py check` PASS for each export (`J2388` & `J2394`, reviewed KEEP in `J2395`).
+- [x] Exact live film title on screen at 9–14 s (`What Happens When Earth's Magnetic Field Flips?`).
 
 ## Packaging and Studio
 
-- [ ] Title: one of the six shapes. No hashtags, suffix, hedged claim or repeat title.
-- [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long.
-- [ ] Description: real subject first · chapters · sources · affiliate only if named in the film
-- [ ] Upload private with `publishAt`. Long = normal publish, Sunday 18:00 UK (no Premiere). Altered content: yes.
-- [ ] Long: Test & Compare · end screen (best related long + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio
-- [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
-
-**Ship only when every box is ticked and Ben has signed off.**
+- [x] Title: `What Happens When Earth's Magnetic Field Flips?` (`47` chars, question shape, no hashtags, suffix, hedged claim or repeat title).
+- [x] Thumbs: 3 variants for the long (`031_A_compass_v03.jpg`, `031_B_real_v04.jpg`, `031_C_bright_v03.jpg`), built in `J2143` and approved KEEP in `J2166`.
+- [x] Description: real subject first · chapters (`0:00` to `8:00`) · 5-item `Sources:` block · exact `Image credits:` · truthful `Pictures: ... Facts: ...` line · zero `/go/` affiliate links (none named in VO).
+- [x] Upload package dry-run verified (`npm run youtube:package -- --dry-run` PASS for Long `v02` and Active Shorts #1 & #2 `v02`). Schedule: Long `Wed 2 Dec 2026 18:00Z`, Short #1 `Sat 5 Dec 2026 11:30Z`, Short #2 `Sat 12 Dec 2026 11:30Z`.

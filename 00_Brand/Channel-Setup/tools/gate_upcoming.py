@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -110,6 +111,11 @@ def readable(p: Path) -> bool:
         return True
     except OSError:
         return False
+
+
+def export_path(media_root: Path, rel: str | None) -> Path | None:
+    """Resolve `rel` under `media_root` and collapse `..` so `../../../../Volumes/...` starts with `/Volumes/`."""
+    return Path(os.path.abspath((media_root / rel).expanduser())) if rel else None
 
 
 def sidecar(export: Path) -> Path | None:
@@ -219,7 +225,7 @@ def main(argv: list[str] | None = None) -> int:
     rows = upcoming(json.loads(a.snapshot.read_text()), uploads, now, a.days)
     if a.stage:
         for r in rows:
-            f = (a.media_root / r["file"]).expanduser() if r["file"] else None
+            f = export_path(a.media_root, r["file"])
             if not f or not readable(f):
                 print(f"{r['id']}: export not readable here, not staged")
                 continue
@@ -240,7 +246,7 @@ def main(argv: list[str] | None = None) -> int:
         if missing:   # a tool problem on this machine, not a fault in any Short: say so instead of FAIL (8 Oct 2026)
             details.append(f"### Not checked: {', '.join(missing)} not on PATH\n\nFix the job's PATH and re-run; no Short was judged.\n")
         for r in rows:
-            f = (a.media_root / r["file"]).expanduser() if r["file"] else None
+            f = export_path(a.media_root, r["file"])
             lib = in_library(r["id"])
             want = uploads.get("videos", {}).get(r["id"], {}).get("sha256")
             hit = staged(r["id"], f, a.cache, want) if f else None

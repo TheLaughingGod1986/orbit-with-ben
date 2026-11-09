@@ -60,18 +60,17 @@ def read_elevenlabs() -> dict:
 def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None) -> str:
     """Body text of `url` in the CDP Chrome. `then(page, text)` may click and return new text."""
     from playwright.sync_api import sync_playwright
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from cdp_tabs import reuse_page, site  # noqa: E402
     with sync_playwright() as p:
         br = p.chromium.connect_over_cdp(CDP)
-        page = br.contexts[0].new_page()
-        try:
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            if wait_text:
-                page.get_by_text(wait_text).first.wait_for(timeout=45000)
-            page.wait_for_timeout(settle_ms)
-            text = page.inner_text("body")
-            return then(page, text) if then else text
-        finally:
-            page.close()
+        page = reuse_page(br.contexts[0], site(url))
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        if wait_text:
+            page.get_by_text(wait_text).first.wait_for(timeout=45000)
+        page.wait_for_timeout(settle_ms)
+        text = page.inner_text("body")
+        return then(page, text) if then else text
 
 
 FLOW_ACCOUNT = "benoats@googlemail.com"
@@ -308,11 +307,11 @@ def read_codex(home: Path | None = None) -> dict:
 
 
 def _claude_block(text: str, start_re: str, stop_re: str) -> tuple[int, str] | None:
-    m = re.search(start_re, text, re.I)
+    m = re.search(start_re, text, re.I | re.M)
     if not m:
         return None
     tail = text[m.end():]
-    end = re.search(stop_re, tail, re.I)
+    end = re.search(stop_re, tail, re.I | re.M)
     chunk = tail[:end.start()] if end else tail[:600]
     m_pct = re.search(r"(\d{1,3})%\s*used", chunk, re.I)
     if not m_pct:
@@ -324,15 +323,18 @@ def _claude_block(text: str, start_re: str, stop_re: str) -> tuple[int, str] | N
 
 def parse_claude(text: str) -> dict:
     """The claude.ai/settings/usage page: % used of the current session and the weekly limit, and their reset times."""
+    m_sess = re.search(r"^\s*Current\s+session\b", text, re.I | re.M)
+    if not m_sess:
+        raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")
     sess = _claude_block(
-        text,
-        r"\bCurrent\s+session\b",
-        r"\b(?:Current\s+week|Weekly\s+limits?|All\s+models|Sonnet\s+only|Extra\s+usage|Spend\s+limit)\b",
+        text[m_sess.start():],
+        r"^\s*Current\s+session\b",
+        r"^\s*(?:This\s+week|Current\s+week|Weekly\s+limits?|All\s+models|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit)\b",
     )
     wk = _claude_block(
-        text,
-        r"\b(?:Current\s+week\s*(?:\(all\s+models\))?|All\s+models|Weekly\s+limits?)\b",
-        r"\b(?:Current\s+week\s*\(Sonnet|Sonnet\s+only|Claude\s+Code|Extra\s+usage|Spend\s+limit|On-demand)\b",
+        text[m_sess.end():],
+        r"^\s*(?:This\s+week\s*(?:\(all\s+models\))?|Current\s+week\s*(?:\(all\s+models\))?|All\s+models|Weekly\s+limits?)\b",
+        r"^\s*(?:This\s+week\s*\(Sonnet|Current\s+week\s*\(Sonnet|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Claude\s+Code|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit|On-demand)\b",
     )
     if not sess or not wk:
         raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")

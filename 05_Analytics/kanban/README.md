@@ -1,11 +1,12 @@
 # Studio Kanban
 
-**Studio videos (Ben, 26 Oct 2026):** https://studio-kanban.vercel.app uses the per-video column design:
-Upcoming, In progress, Changes requested, Ready for OK, Approved on its way, and Done on YouTube.
-Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video,
-with play links and the existing approval controls. Restored at Ben's request from the screenshots of this layout.
-The page lives in `board_site/tracker_app.js` and `video_tracker.html`; live data still comes from `board.json`.
-The earlier swim-lane board remains at `/classic`.
+**Videos tab (live, Ben 7 Nov 2026):** https://studio-kanban.vercel.app → **Videos** shows nine exclusive swim lanes:
+
+**Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
+
+The 3×3 chips are **computed** from tracker / job / YouTube state (`scripts/video_tracker.py` + `board_site/studio_app.js` `videoLane`) — not Chief dragging cards by hand or by air date. Ben only acts in **UAT** (Approve → **Passed**, ready to schedule; Request changes / notes → **In progress** for the agents). Every other lane is agent-run. Planned Shorts on **Backlog** are board-only placeholders (HOS 4 / Orbit 2 per upcoming long, including undated Orbit backlog longs) with no invented YouTube ids or air dates; parents that already have uploaded/live Shorts do not get extras. What gets produced (WIP cap, job picker, cadence): `AGENTS.md` → **How films get worked on**. Chip meanings, locked slots, and live dashboard behaviours (claimed-over-QA, In progress Working now / Waiting, smart `#videos` landing, Overview **See on Videos ›**): `AGENTS.md` → **Videos tab**. Media paths: `AGENTS.md` → **Film folders on the NAS** (working media on `/Volumes/data/studio-live`; uploads stay Mini-only; MacBook harvest/assembly only when that film's studio-live folder exists). Dated desk snapshot: `docs/handover/CHIEF_PICKUP_2026-11-07.md` (goes stale).
+
+Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video, with play links and the existing approval controls. Live data comes from `board.json` (`tracker` section from `scripts/video_tracker.py`; the UI remaps tracker lanes to the nine Videos lanes in `board_site/studio_app.js`).
 
 Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
 
@@ -24,14 +25,15 @@ concrete `--note` after each step.
 Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` → `board-data` branch (`board.json` now
 includes a `tracker` section). Page deploys are separate (Chief after review).
 
-## Ready for OK = jobs waiting on Ben (25 Oct 2026)
+## UAT = jobs waiting on Ben (25 Oct 2026; lane name live 7 Nov 2026)
 
-A card is in **Ready for OK** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
+A card sits in Videos → **UAT** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
 "<OWB UAT/...mp4>" --version vNN --due "YYYY-MM-DD HH:MM" [--card HOS:007] [--add] --agent chief --git`). Shorts that aren't
 uploaded get their own card; `--card` moves an existing long's card. Each card has a signed Play link and its deadline.
-Approve posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180. `scripts/board_check.py` runs
-every 5 min, started by board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`)
-and `~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
+**Approve** moves the film to **Passed** and posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180.
+**Request changes** / notes send it back to **In progress**. `scripts/board_check.py` runs every 5 min, started by
+board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`) and
+`~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
 `[Chief] board-check` note on #264.
 
 ## Deploying the page (studio-kanban has no Git link)
@@ -178,3 +180,52 @@ No source stage/job records, approvals, publishing dates, media visibility or ge
 modified. Older board payloads still render using their recorded stage evidence. Full V2 metadata
 requires the normal Mini publisher after an approved merge, independently of the page deployment.
 Screenshots and the validation record are in `docs/review/studio-v2/QA.md`.
+
+## Studio V3 Overview
+
+Overview uses `overviewModel`, `producingVideos`, `scheduledThisWeek` and `featureVideo` in the
+existing app. The three statistics open `#review`, `#videos&view=producing`, and
+`#schedule&view=week`. Existing tab/video/UAT routes continue to work. Scope links reset stale
+Videos filters; user-selected filters still work within the producing scope.
+
+Producing excludes Backlog, published/scheduled work, done cards and cuts ready for Ben. A shared
+job cannot increase the video count; stable keys and explicit YouTube IDs deduplicate aliases.
+The schedule statistic counts recorded schedules in the London Monday–Sunday calendar week,
+not a rolling seven days or planned air dates. Schedule labels these definitions explicitly.
+
+One featured card uses existing milestone counts and UAT forecasts, with deterministic readiness,
+blocker, focus/priority and meaningful-progress fallbacks. Unknown timing stays pending. Agent
+names require fresh job timestamps; status combines real work, freshness and availability rather
+than Chief presence. All operational details remain under Agents, including the expandable queue.
+
+Unchanged render output retains the existing DOM. The existing poll cadence and same-SHA network
+shortcut remain; transient refresh errors retain loaded content and an initial failure shows an
+automatic-retry message. V2 technical disclosures and UAT notes remain protected.
+
+See `docs/review/studio-v3/QA.md` for definitions, before/after captures and executed tests.
+
+### Overview active job card
+
+Studio activity shows one deduplicated `claimed` job from the existing board, prioritising recorded
+urgency and otherwise preserving publisher order. It includes the recorded agent, ID, current
+action (or title), valid integer step counts and the existing task ETA estimate when its inputs
+are available. Percentages are task steps only; missing/invalid counts produce no bar. Completed
+reported steps do not leave a countdown. Long actions are shortened on the card and remain intact
+in Agents. Additional active jobs are counted, and queued/on-hold totals remain in the footer.
+
+`#agents&job=<encoded-id>` opens the queue, highlights the corresponding row and scrolls/focuses it
+once on entry. Subsequent refreshes update the card without forcing repeated scrolling. The normal
+board polling and all UAT/publishing behaviour are unchanged. Tests: `test_studio_app.cjs` and
+`test_studio_activity_browser.cjs` cover active, idle, multiple, missing/invalid progress, supported
+ETA, queue linking and refresh transitions; the existing tab/UAT and failure suites also pass.
+
+### Blocker guidance
+
+Current-stage and expanded milestone cards show source-backed reasons, recorded unblock actions,
+job owner/reviewer, follow-up/overdue check time, last check and dependency status. Exact stage job
+mappings take precedence over matching recorded references; otherwise video-level holds are clearly
+labelled as having an unconfirmed stage link. Missing details stay explicit. A check time is not a
+release ETA. Job links open the existing highlighted Agents record; no hold is released by the UI.
+Original conditions/actions/notes remain available, and other video holds can be expanded. No
+production record or ownership is rewritten. See `docs/review/studio-blockers/QA.md` for the real
+OWB030 example and tests, including `scripts/test_studio_blockers_browser.cjs`.

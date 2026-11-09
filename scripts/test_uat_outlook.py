@@ -157,9 +157,101 @@ class OutlookTests(unittest.TestCase):
         self.assertEqual(video['production']['completed'], 0)
         self.assertEqual(video['production']['eta']['state'], 'unavailable')
 
+    def test_mixed_cut_keeps_project_history_without_borrowing_completion_or_eta(self):
+        import copy
+        from unittest.mock import patch
+        stages={k:dict(state='done' if k not in ('edit','qa') else 'blocked' if k=='edit' else 'unknown') for k in PLAN}
+        stages['edit']['note']='AR cohort: replacement input remains blocked; original cut is separate'
+        original=copy.deepcopy(stages)
+        for corrected in [False,True]:
+            video=dict(self.video,cutFormatCorrected=corrected,type='short' if corrected else 'long',watch={'file':'original.mp4'})
+            with patch('uat_outlook.history_samples',return_value={}):
+                attach([video],{},[dict(film='999',stages=stages)],[],NOW)
+            p=video['production']
+            self.assertEqual(p['scope'],'unconfirmed_cut')
+            self.assertEqual(p['projectHistory']['completed'],7)
+            self.assertEqual(p['completed'],0)
+            self.assertEqual(p['eta']['state'],'unavailable')
+            self.assertNotIn('lowerMinutes',p['eta'])
+            self.assertEqual(stages,original)
+
+    def test_unambiguous_long_retains_milestone_completion(self):
+        from unittest.mock import patch
+        video=dict(self.video)
+        with patch('uat_outlook.history_samples',return_value={}):
+            attach([video],{},[dict(film='999',stages=self.stages)],[],NOW)
+        self.assertNotIn('scope',video['production'])
+        self.assertEqual(video['production']['completed'],9)
+
+    def test_exact_cut_mapping_can_restore_short_progress_but_wrong_version_cannot(self):
+        from unittest.mock import patch
+        for version, expected in [('v13a',9),('v12',0)]:
+            video=dict(self.video,type='short',version='v13a',cutFormatCorrected=True)
+            source=dict(film='999',stages=self.stages,milestoneScope=dict(type='cut',format='short',version=version))
+            with patch('uat_outlook.history_samples',return_value={}):
+                attach([video],{},[source],[],NOW)
+            self.assertEqual(video['production']['completed'],expected)
+            self.assertEqual(video['production']['scope'],'cut' if expected else 'unconfirmed_cut')
+
     def test_same_worker_parallel_capacity_unavailable(self):
         jobs = [dict(id=k, stage=k, status='claimed', by='cursor') for k in ('picture', 'vo')]
         self.assertIn('Shared worker', ' '.join(self.run_forecast(jobs)['eta']['reasons']))
+
+
+class RecordedHosSchemaTests(unittest.TestCase):
+    def test_hos_records_map_without_completing_unrecorded_stages(self):
+        import copy
+        stages = {'topic': {'status': 'done'}, 'script': {'status': 'done'},
+                  'facts': {'status': 'done'}, 'vo': {'status': 'done'},
+                  'picture': {'status': 'doing', 'steps': [70, 90], 'steps_unit': 'board rows rendered'},
+                  'thumbnails': {'status': 'todo'}, 'package': {'status': 'done'}}
+        before = copy.deepcopy(stages)
+        video = dict(key='HOS:009', channel='HOS', type='long', lane='progress')
+        result = forecast(video, stages, [], {}, NOW)
+        rows = {r['id']: r for r in result['milestones']}
+        self.assertEqual(result['completed'], 4)
+        self.assertEqual(rows['thumbs']['state'], 'todo')
+        self.assertEqual(rows['shots']['state'], 'unknown')
+        self.assertEqual(rows['qa']['state'], 'unknown')
+        self.assertEqual(rows['picture']['summary'], '70/90 picture rows recorded')
+        self.assertEqual(rows['picture']['displayState'], 'doing')
+        self.assertEqual(stages, before)
+
+    def test_canonical_unknown_and_pending_approval_win_over_alias_done(self):
+        from uat_outlook import milestone_rows
+        for canonical in ({'state': 'unknown'}, {}, {'state': 'done', 'approval': {'status': 'pending'}}):
+            with self.subTest(canonical=canonical):
+                rows = milestone_rows({'sources': canonical, 'facts': {'status': 'done'}}, [])
+                source = next(r for r in rows if r['id'] == 'sources')
+                self.assertNotIn(source['displayState'], ('done', 'passed', 'skip'))
+
+    def test_approval_pending_on_hos_fact_record_remains_incomplete(self):
+        from uat_outlook import milestone_rows
+        rows = milestone_rows({'facts': {'status': 'done', 'approval': {'status': 'pending'}}}, [])
+        source = next(r for r in rows if r['id'] == 'sources')
+        self.assertEqual(source['displayState'], 'review')
+
+    def test_alias_stage_job_preserves_approval_hold(self):
+        from uat_outlook import milestone_rows
+        rows = milestone_rows({'facts': {'status': 'done'}},
+                              [{'id': 'Jfacts', 'stage': 'facts', 'status': 'blocked', 'hold': {'type': 'chief'}}])
+        source = next(r for r in rows if r['id'] == 'sources')
+        self.assertEqual(source['displayState'], 'review')
+        self.assertEqual(source['jobs'][0]['id'], 'Jfacts')
+
+    def test_invalid_or_non_row_step_counts_do_not_become_picture_counts(self):
+        from uat_outlook import milestone_rows
+        for steps, unit in [([91, 90], 'rows'), ([-1, 90], 'rows'), ([True, 90], 'rows'),
+                            ([70, 0], 'rows'), (['70', 90], 'rows'), ([2, 3], 'agent tasks'), ([70], 'rows')]:
+            with self.subTest(steps=steps, unit=unit):
+                rows = milestone_rows({'picture': {'status': 'doing', 'steps': steps, 'steps_unit': unit}}, [])
+                self.assertEqual(next(r for r in rows if r['id'] == 'picture')['summary'], '')
+
+    def test_hos_fact_timing_uses_same_recorded_alias(self):
+        history = [(NOW + timedelta(minutes=i), {'HOS:001': {'facts': {'status': state}}})
+                   for i, state in [(0, 'todo'), (10, 'doing'), (30, 'done')]]
+        samples = learn_documents(history, 'HOS')
+        self.assertEqual(samples[('HOS', 'long', 'sources')], [(20, 'HOS:001')])
 
 
 if __name__ == '__main__':

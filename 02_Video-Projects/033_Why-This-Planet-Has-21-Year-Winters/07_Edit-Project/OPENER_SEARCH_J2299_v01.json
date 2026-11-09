@@ -1,0 +1,81 @@
+{
+  "job": "J2299",
+  "input": "R01 0.00\u20136.22 s native moving Uranus; sharp recognisable body/sideways rings; no labels/montage, max2.35x, no svs20390 reuse",
+  "prior_evidence": "PIA01283 is 737x256 still montage, PIA01280 450x293 still. Neither native motion. No new search budget on retry.",
+  "new_deep_candidates_used": 3,
+  "new_deep_candidate_limit": 3,
+  "search_closed_utc": "2026-11-06T21:11:32Z",
+  "candidates": [
+    {
+      "local_path": "/Users/benjaminoats/_desk/cache/J2299/weic2602c.mp4",
+      "source_page": "https://esawebb.org/videos/weic2602c/",
+      "sha256": "deca60d4dbf82e19243104ccbd4c3406428198e242c9632b0ecca3eb83920de2",
+      "bytes": 39955036,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1920,
+            "height": 1080,
+            "r_frame_rate": "25/1"
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      },
+      "status": "NOT_ACCEPTED_FROM_STATIC_SOURCE_EVIDENCE",
+      "reason": "Inspected 3 s still: visibly diffuse spectroscopy image, no clear sideways rings; cannot establish sharp frame-0 answer. Not a motion review."
+    },
+    {
+      "local_path": "/Users/benjaminoats/_desk/cache/J2299/hubble_seasonal_1999.mp4",
+      "source_page": "https://science.nasa.gov/asset/hubble/seasonal-changes-on-uranus/",
+      "sha256": "54696e5bf1467fa4fb412fb45e8d7660c50789b4fee2b1eac6152520a2cb4d10",
+      "bytes": 2875033,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 176,
+            "height": 272,
+            "r_frame_rate": "30/1"
+          }
+        ],
+        "format": {
+          "duration": "133.333333"
+        }
+      },
+      "status": "NOT_ACCEPTED_FROM_STATIC_SOURCE_EVIDENCE",
+      "reason": "176x272 encoded source with baked date/title/credit text and tiny planetary subject. At 2.35x cap image is at most 414x639, subject much smaller; insufficient clean opener."
+    },
+    {
+      "local_path": "/Users/benjaminoats/_desk/cache/J2299/eso_uranus.mov",
+      "source_page": "https://www.eso.org/public/videos/uranus/",
+      "sha256": "4aba1a3c57850de6929b414d085535451a7c0bfab817c11f934c23ed52962acd",
+      "bytes": 7590913,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 680,
+            "height": 280,
+            "r_frame_rate": "12/1"
+          }
+        ],
+        "format": {
+          "duration": "8.000000"
+        }
+      },
+      "status": "NOT_ACCEPTED_FROM_STATIC_SOURCE_EVIDENCE",
+      "reason": "680x280 at12fps; 3 s still is visibly noisy/soft with no recognisable vertical ring answer; source page acknowledges changing seeing. Not a motion review."
+    }
+  ],
+  "moving_video_review_performed": false,
+  "spend_gbp": 0,
+  "next_decision": "Chief must choose and explicitly scope a revised opener/illustration under missing-footage rule, or authorise a genuinely new bounded source approach with reason. No suitable native opener established; do not repeat these sources.",
+  "proposed_fallback_for_chief": "Consider a clearly disclosed generated Uranus world shot supporting the locked sideways-planet line, separately scoped to the approved Flow/Veo route with bounded takes and credit cap; no Omni, no change to script. This is a proposal, not authorisation.",
+  "timing_note": "Active search duration was not measured; the hard cap used was three new deep candidates. No remaining candidate slots on restart."
+}

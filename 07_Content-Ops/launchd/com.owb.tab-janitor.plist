@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Tab janitor for the Mini's CDP Chrome browsers (Ben, 4 Nov 2026: many YouTube Studio tabs were crashing the Mini).
+  Every 5 min, scripts/cdp_tabs.py tidy (stdlib only, Chrome's /json endpoints on 9223 Orbit Studio and 9222 HOS Flow)
+  keeps the newest tab per site, closes older duplicates idle 20+ min (3 h while a studio job is claimed), caps each
+  browser at 6 tabs, and never closes a Google sign-in page or the last tab. It never quits Chrome.
+  Log: ~/Library/Logs/owb-tab-janitor.log
+  Install (or reinstall after a change to this file):
+    launchctl bootout gui/$(id -u)/com.owb.tab-janitor 2>/dev/null
+    cp 07_Content-Ops/launchd/com.owb.tab-janitor.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.tab-janitor.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.tab-janitor</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd /Users/benjaminoats/YouTube/orbit-with-ben &amp;&amp; python3 scripts/cdp_tabs.py tidy</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>300</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-tab-janitor.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-tab-janitor.log</string>
+</dict>
+</plist>
