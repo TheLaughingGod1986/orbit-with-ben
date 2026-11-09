@@ -84474,13 +84474,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-09T23:29Z",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "",
+      "result": "Waiting for: J2461 (one pin try on the MacBook's HOS Studio window). If that asks for a password, this goes to Ben.",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84626,6 +84626,11 @@
           "at": "2026-11-09T23:29Z",
           "by": "claude",
           "what": "reopened by acting Chief: try the pin once on the MacBook's freshly signed-in HOS window (CDP 9222) before asking Ben"
+        },
+        {
+          "at": "2026-11-09T23:29Z",
+          "by": "claude",
+          "what": "held on J2461: the pin is tried once on the MacBook window first"
         }
       ],
       "kind": "studio",
@@ -84641,7 +84646,12 @@
         "by": "codex"
       },
       "for": "",
-      "model": ""
+      "model": "",
+      "hold": {
+        "type": "dependency",
+        "condition": "J2461 done or blocked for Ben",
+        "check_at": "2026-11-11T18:00:00+00:00"
+      }
     },
     {
       "id": "J0959",
