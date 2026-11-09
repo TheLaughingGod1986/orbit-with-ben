@@ -211527,10 +211527,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-09T21:32Z",
+      "eta": "2026-11-09T22:32Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:28Z",
       "result": "",
@@ -211539,11 +211539,24 @@
           "at": "2026-11-09T21:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T21:32Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Playlist audit, both channels (read-only): views, video count, last update; propose merge/rename/reorder/remove",
       "due": "2026-11-12T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T21:32Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
