@@ -87,7 +87,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2414 | any | blocked | gemini | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J2420 | mini | claimed | macbook | 2026-11-09T18:34Z | for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 | J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
