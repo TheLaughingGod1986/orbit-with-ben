@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2449 | mini | open (after J2448) | – | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2450 | mini | open | – | – | studio · Playlist audit, both channels (read-only): views, video count, last update; propose merge/rename/reorder/remove |  |
 | J2451 | any | open | – | – | review · Sleep video test: plan a ~2-hour 'Fall asleep to the solar system' compilation from finished Orbit longs |  |
+| J2452 | mini | open (after J2451) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 
 Recently finished:
 
