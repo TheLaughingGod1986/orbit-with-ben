@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2416 | cloud | open | – | – | review · Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs |  |
 | J2420 | any | blocked | macbook | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 | J2421 | any | open | – | – | qa · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
-| J2423 | any | open | – | – | review · Verify condition for J0912 |  |
+| J2423 | any | claimed | gemini | 2026-11-09T05:16Z | review · Verify condition for J0912 |  |
 | J2424 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2426 | mini | open | – | – | studio · AR2 v13 (ISS crash) + AR3 v14 (2027 eclipse): Ben OK'd 7 Nov — upload Private into the first free Orbit Short slots; verify 028 night-sky v07 swap |  |
