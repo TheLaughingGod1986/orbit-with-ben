@@ -1,0 +1,105 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "checks": [
+    {
+      "id": "code_graphic_031_r18_barcode_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 3.56,
+      "frames": 89,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        1.78,
+        3.36
+      ]
+    },
+    {
+      "id": "code_graphic_031_r19_flip_tally_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 3.28,
+      "frames": 82,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        1.64,
+        3.0799999999999996
+      ]
+    },
+    {
+      "id": "code_graphic_031_r35_rings_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 10.96,
+      "frames": 274,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        5.48,
+        10.760000000000002
+      ]
+    },
+    {
+      "id": "code_graphic_031_r42_column_mass_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 6.56,
+      "frames": 164,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        3.28,
+        6.359999999999999
+      ]
+    },
+    {
+      "id": "code_graphic_031_r43_column_stop_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 4.24,
+      "frames": 106,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        2.11,
+        4.02
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-evidence-macbook-v01/CONTACT_MACBOOK_v01.jpg",
+  "contact_sheet_sha256": "e452d8589e5b37648bddcf9803695271724fc060e5ffed93cbfdc0805eedac53"
+}

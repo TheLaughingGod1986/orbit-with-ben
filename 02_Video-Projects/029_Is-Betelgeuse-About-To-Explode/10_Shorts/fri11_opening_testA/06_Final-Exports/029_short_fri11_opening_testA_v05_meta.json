@@ -1,0 +1,82 @@
+{
+  "job": "J2310",
+  "label": "EXCEPTION",
+  "e1_label": "EXCEPTION. Test A opening, spoken lines and the J0991 spoken-meta waiver are unchanged. This is a local tail candidate, not a full E1 PASS and not a swap.",
+  "slug": "fri11_opening_testA",
+  "stem": "029_short_fri11_opening_testA_v05",
+  "day": "Fri 11 Dec (Test A)",
+  "air_date": "2026-12-11",
+  "title": "Is Betelgeuse Really About to Explode?",
+  "youtube_id_preserved": "k2kEaA7ICjc",
+  "source_v04_sha256": "ff4194857a027cfc5f93551ef398125276e6bcfb9cd3ce2fd18d8ee1134e2405",
+  "long": {
+    "id": "vP1BbqZ_dnM",
+    "title": "Is Betelgeuse About to Explode?"
+  },
+  "spoken": "Look at Orion this winter at the orange star on its shoulder. That star is dying. So is Betelgeuse about to explode? And what would you see if it did? It is called Betelgeuse. One day it will blow itself apart, and for a few weeks it will shine so brightly that you could see it in the daytime sky. In this film, I will show you what kind of star it is, why it scared astronomers in 2019, how a giant star actually dies, what the night it goes would look like from your garden, and the honest answer to when.",
+  "last_word_end_s": 31.58,
+  "duration_s": 32.667,
+  "tail_s": 1.087,
+  "loop_crossfade_s": 0.3,
+  "loop_diff_mean_abs": 1.543,
+  "end_card": null,
+  "sha256": "d1c208d76aa4a675e6c07d091a6dba9fe29646cdf85b808b7814c659f1570f01",
+  "phone_sha256": "e6613b6eeb23cf35663836ab5848566e4b4c1c059bacd1a5065f4bd8cdd3b930",
+  "phone_bytes": 7398264,
+  "words_count": 102,
+  "words_file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v05_words.json",
+  "meta_promise_lint": "waived: Test A arm (SHORTS_TESTS.md). The long's own opening says 'In this film, I will show you'.",
+  "audio": {
+    "vo_lufs": -16.6,
+    "bed_lufs": -34.8,
+    "sfx_lufs": -38.6,
+    "mix_lufs": -14.1,
+    "aac_lufs": -14.1,
+    "aac_tp_dbtp": -2.2
+  },
+  "max_hold_s": 3.84,
+  "max_hold_row": "s03_paranal",
+  "spend": "\u00a30",
+  "aac_measured": {
+    "lufs": -14.1,
+    "true_peak_dbtp": -2.2
+  },
+  "bed_end_fade_s": 0.12,
+  "gates": {
+    "gate_shorts_open": "PASS",
+    "gate_shorts_open_warns": [
+      "duration 32.7s outside 22\u201327s band"
+    ],
+    "gate_shorts_open_fails": [],
+    "motion_0_1s": 13.2,
+    "frame0_diff_0_1_5s": 5.94,
+    "first_cut_s": 2.23,
+    "vo_onset_s": 0.08,
+    "tail_gap_s": 1.09,
+    "sfx_kit_level": "PASS",
+    "music_gate": "PASS",
+    "polish_gate": "PASS",
+    "picture_qa": "PASS",
+    "cover_score": "PASS",
+    "tail_ocr": "VISIBLE IN DAYLIGHT on frame 0 and at 31.85/32.20/32.50; no end-card line"
+  },
+  "e1": {
+    "label": "EXCEPTION",
+    "cut1_s": 2.23,
+    "cut2_s": 4.72,
+    "onset_s": 0.08,
+    "surprise_explode_s": 6.7,
+    "sentence1_breath_s": 0.2,
+    "sentence1_internal_pause_s": 0.2,
+    "sentence1_internal_pause_words": "winter -> at",
+    "post_sentence1_hold": "no 3.5-5.5s hold; s02 is 2.49s and the breath is 0.20s",
+    "tail_s": 1.087,
+    "loop_crossfade_s": 0.3,
+    "max_later_hold_s": 3.84,
+    "max_later_hold_row": "s03_paranal",
+    "end_card": false,
+    "spoken_meta_waiver": "J0991 Test A: In this film, I will show you",
+    "payoff_garden_s": 28.82,
+    "payoff_threshold_s": 22.87
+  }
+}

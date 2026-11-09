@@ -6,9 +6,9 @@
 | Gate | not run (topic not locked; parked for Chief in J0294) |
 | Script review | PASS 92.4 / 100 (`titan_landing_script_master_v00.md`, 6 chapters, J0294) |
 | VO | locked `titan_landing_vo_v02b` (Chief h31, J1294, 31 Oct 2026). `v02a` is an unlocked failed-spec attempt |
-| CG | pending (Vertex Veo / Omni Orbit-only) |
+| Picture | PASS (`J2378` / `J2089` £0 picture package on `studio-live` NAS: 39 harvested stills + 4 NASA SVS 20311 1080p MP4s, 62 ProRes 4444 alpha `.mov` exports, 62 moving-plate 1080p30 composite `.mp4` clips + 6 chapter cards, `0` `polish_gate` failures, `0` Short overlap) |
 | Runtime target | 7–9 min |
-| Shorts | 3 a week (Mon · Wed · Fri; standalone Short `RLSJm59OSzI` already scheduled for 10 Nov 2026) |
+| Shorts | 2 active + 1 reserve (`10_Shorts/SHORTS_PLAN_v01.md`, J2147/J2173, 5 Nov 2026): **Wed 25 Nov 11:30Z** go-public day Short (*Strike a Match on Titan?*, `23.64 s`, or Sat 28 Nov if `AR2` holds 25 Nov) & **Fri 27 Nov 11:30Z** Test A opening (`32.80 s` / `30.00 s`), reserve **Sat 28 Nov / Fri 18 Dec 11:30Z** (*28x Easier to Fly?*, `26.50 s`); standalone Short `RLSJm59OSzI` scheduled Tue 10 Nov 2026 |
 
 ## VO lock (Chief h31, J1294, 31 Oct 2026)
 
@@ -69,3 +69,37 @@ Sources: **PASS retained from Chief J0301**, approved commit `97b7af4ee9`. The g
 ## J1810 capability validation — 4 November 2026
 
 Fresh native Gemini audio fixture test failed: the first claimed perception contradicted the fixture, and independent recheck explicitly reported no reliable audio perception. J1753 retains technical PASS at 1/3; no VO was heard or approved. J1810 owns demonstrating a reliable native listening route before any specialist handoff. [Evidence](../../jobs/reviews/J1810/REPORT.md). No Ben production-review action.
+
+## J2378 Chief picture review (`J2089` £0 picture package) — 7 November 2026
+
+Picture: **PASS (`KEEP`)** by elected acting Chief (`gemini`, `J2378` reviewing `J2089` commit `c0bbf33088` and `studio-live` NAS `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/`):
+- **Harvest (`03_Reference-Material/harvest_J2089_v01/`):** `39` NASA/ESA/STScI/Commons source stills (`36` active in `SHOT_LIST_v08.md`, all `<= 2` appearances) + `4` NASA SVS `20311` Dragonfly 1080p MP4 clips (`<= 3` stretches separated by `> 10 s`); `inventory_harvest_032.py` `0` errors; `verify_short_sources_032.py` `0` overlap with Short `RLSJm59OSzI`/`ffYKoNVPoqg`.
+- **Overlay Exports (`04_Generated-Clips/graphics_exports_v01/`):** `62/62` ProRes 4444 alpha `.mov` exports (`CURRENT_EXPORT_INVENTORY_v31.json`) SHA-256 verified on NAS.
+- **Moving-Plate Composites & Chapter Cards (`07_Edit-Project/composites_v01/`):** `62/62` `1920x1080` `30 fps` moving-plate composites (`3.60 s` / `108` frames each) + `6/6` chapter cards (`2.50 s` / `75` frames each) SHA-256 verified on NAS; `COMPOSITES_POLISH_VERIFICATION_v01.json` `0` hard failures; `composites_contact_sheet_v01.jpg` passes Teach on Screen (`DATA`, `WHO`, `WHEN`, `FACT`, `STYLE`, `MOTION`) and per-chapter `NUMBER`+`WORDS` gates.
+- **Audio Staged for Edit (`05_Music/` & `06_Sound-Effects/kit_v01/`):** £0 chapter-shaped score bed `titan_score_bed_v01.mp3` (`585.44 s`, `70.6 BPM`, `music_gate.py` PASS, SHA-256 `02c7d95865f8b39de4f9d3dfda8aa85084ecea04fc56dbd6776268279dab8f9e`) and £0 house SFX kit (`rumble_low`, `whoosh_soft`, `tick_ui`) staged on `studio-live` NAS. [Review](../../jobs/reviews/J2378/REVIEW.md).
+
+
+## J2379 Long Master v01 Assembly & 5-Gate Technical Verification — 7 November 2026
+
+Assembled `09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v01.mp4` (`585.440 s`, `17,563` frames at `30/1` fps CFR, `1920x1080`, `yuv420p`, `208,717,641` bytes, `sha256: 452ea3d7b5b2e7a02141072a3634163ce9f86e844f0d3e2637a64511c664d7a0`, `£0` spend) on `studio-live` NAS via `07_Edit-Project/_assemble_032_full_master_v01.py`. All 5 required gates print PASS:
+1. `clip_check.py`: `clip_check: 52 rows — PASS (OK: sentence/card boundaries and end-after-VO checks clear.)`
+2. `picture_qa.py`: `picture QA PASS: 0 of 127 cuts fail, 7 to look at -> 07_Edit-Project/full_master_v01_pack/PICTURE_QA.md`
+3. `music_gate.py`: `music gate PASS: titan_score_bed_v01.mp3, 585.4 s, about 70.6 BPM, brief Pace: 68-78 BPM`
+4. `sfx_kit.py level`: `SFX level PASS: VO -20.0 LUFS, SFX -46.2 LUFS, 13 hits`
+5. Delivery: Integrated loudness `-14.5 LUFS`, true peak `-1.0 dBTP`, `1920x1080` `30/1` fps CFR, `0` black frames.
+
+Ready for Chief / Claude review (`07_Edit-Project/full_master_v01_pack/ASSEMBLY_REPORT_v01.md`).
+
+## J2436 Long Master v02 Assembly (First-30s Re-Cut `FIRST30_PLAN.md` / `J2435`) & 5-Gate Technical Verification — 9 November 2026
+
+Assembled `09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4` (`585.440 s`, `17,563` frames at `30/1` fps CFR, `1920x1080`, `yuv420p`, `389,705,443` bytes, `sha256: 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, `£0` spend) on `studio-live` NAS (`07_Edit-Project/_assemble_032_full_master_v02.py`) and mirrored to NAS `OWB UAT` (`/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`) and iCloud `OWB UAT` (`/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`):
+- **First-30s Hook Re-Cut (`07_Edit-Project/FIRST30_PLAN.md`):** Upgraded `render_still_cut()` to symmetric sub-pixel `PIL.Image.Transform.EXTENT(..., Image.Resampling.BICUBIC)` zoom (`1.000 -> 1.045`) so Frame 0 (`PIA20016.jpg`) moves continuously from frame 0 (`polish_gate.py` `0` frozen pairs across all `131` cuts); re-cut `R03` (`9.73–22.93 s`) into 4 cuts `<= 3.60 s` (`3.40 s` `PIA22766`, `3.40 s` `PIA21902`, `3.60 s` `r03_pressure` at `16.53–20.13 s` before `0:20`, `2.80 s` `PIA21890` `u1`), `R04` (`22.93–32.17 s`) into 3 cuts `<= 3.60 s` (`2.83 s` `PIA08167` `u2`, `2.80 s` `PIA21890` `u2`, `3.60 s` `r04_cold`), `R05` (`32.17–45.10 s`) into 4 cuts `<= 3.60 s` (`3.50 s` `PIA07231`, `3.60 s` `r05_rain_preview`, `2.90 s` `PIA12621`, `2.93 s` `NASA_Dragonfly_BannerFactSheet_2024`), and `R06` (`45.10–50.87 s`) into 2 cuts `<= 3.60 s` (`2.90 s` `PIA14922`, `2.87 s` `PIA17177`).
+- **All 5 Required Gates Print PASS:**
+  1. `clip_check.py`: `clip_check: 52 rows — PASS (OK: sentence/card boundaries and end-after-VO checks clear.)`
+  2. `picture_qa.py`: `picture QA PASS: 0 of 131 cuts fail, 7 to look at -> 07_Edit-Project/full_master_v02_pack/PICTURE_QA.md`
+  3. `polish_gate.py`: `polish gate PASS: 0 of 131 rows failed, 7 to look at -> 07_Edit-Project/full_master_v02_pack/polish_gate_v02.json`
+  4. `music_gate.py`: `music gate PASS: titan_score_bed_v01.mp3, 585.4 s, about 70.6 BPM, brief Pace: 68-78 BPM`
+  5. `sfx_kit.py level`: `SFX level PASS: VO -20.0 LUFS, SFX -46.2 LUFS, 13 hits`
+  6. Delivery: Integrated loudness `-14.5 LUFS`, true peak `-1.0 dBTP`, `1920x1080` `30/1` fps CFR, `0` black frames.
+
+Ready for Chief / Claude review (`07_Edit-Project/full_master_v02_pack/ASSEMBLY_REPORT_v02.md`).

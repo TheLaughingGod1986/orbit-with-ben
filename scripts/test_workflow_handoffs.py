@@ -25,6 +25,15 @@ class Handoffs(unittest.TestCase):
         self.assertEqual(h.reconcile(self.data,self.films,AT,jobs.do_add),[])
         self.assertIsNone(w.select_dispatch(self.data,AT,None,{'cursor'},lambda j,ws:'cursor'))
         self.assertEqual(w.select_dispatch(self.data,AT,'codex',{'codex'},lambda j,ws:'codex')['job']['id'],ids[0])
+    def test_films_waiting_under_wip_limit_are_not_orphans(self):
+        self.assertEqual(h.findings(self.data,self.films,AT,waiting={'031'}),[])
+        self.assertEqual(len(h.findings(self.data,self.films,AT,waiting=set())),1)
+    def test_waiting_films_reads_owb_ids_from_wip_file(self):
+        import tempfile,json
+        with tempfile.TemporaryDirectory() as d:
+            f=pathlib.Path(d)/'WIP.json'; f.write_text(json.dumps({'next':['OWB:033','HOS:011']}))
+            self.assertEqual(h.waiting_films(f),{'033'})
+            self.assertEqual(h.waiting_films(pathlib.Path(d)/'missing.json'),set())
     def test_existing_review_correction_or_hold_is_not_duplicated(self):
         for state in ['open','claimed','blocked']:
             self.data['jobs']=[{'id':'J9','film':'031','stage':'vo','status':state}]

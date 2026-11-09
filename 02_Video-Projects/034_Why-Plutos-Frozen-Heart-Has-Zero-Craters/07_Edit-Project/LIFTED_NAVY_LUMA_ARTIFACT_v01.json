@@ -1,0 +1,31 @@
+{
+  "resolution": "1920x1080",
+  "centre_hex": "#1F3150",
+  "centre_rgb": [
+    31,
+    49,
+    80
+  ],
+  "centre_bt601_luma": 47.15,
+  "edge_hex": "#162238",
+  "edge_rgb": [
+    22,
+    34,
+    56
+  ],
+  "edge_bt601_luma": 32.92,
+  "canvas_only_stats": {
+    "mean_luma": 39.78,
+    "p50_luma": 39.68,
+    "p95_luma": 44.99,
+    "min_luma": 32.94,
+    "max_luma": 74.83
+  },
+  "r01_pia20291_composite_target": {
+    "asset": "PIA20291 (1024x1024 native at 1.05x = 1080x1080 over 1920x1080 lifted starry canvas)",
+    "expected_mean_luma_range": "52.0-62.0 (bright Tombaugh Regio nitrogen heart in centre + lifted #162238-#1F3150 side wings)",
+    "expected_p95_luma_range": "175.0-210.0",
+    "polish_gate_rule": "mean_luma > 18.0 or p95_luma >= 40.0 (verified on rendered cut at assembly via picture_qa.py / polish_gate.py)",
+    "status": "PASS_CANVAS_MODEL_AND_ASSEMBLY_GATE_TARGET"
+  }
+}

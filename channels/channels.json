@@ -1,0 +1,7 @@
+{
+  "_about": "The channels plugged into the studio (docs/MULTI_CHANNEL_PLAN.md phase 2). Each channel's settings live in its own repo at studio/channel.json; channels.py reads them from the checkout found here (env var, then ~/YouTube/<name>, then a sibling folder). channels/<slug>/channel.json is the cached copy used when that checkout isn't on this machine (CI, the cloud): refresh it with `python3 scripts/channels.py sync`. The home channel is this repo itself (studio/channel.json at its root). To add a channel: give its repo a studio/channel.json and add one line here.",
+  "channels": [
+    {"slug": "owb", "home": true},
+    {"slug": "hos", "env": "HOS_REPO", "checkouts": ["History Of Science", "history-of-science"]}
+  ]
+}
