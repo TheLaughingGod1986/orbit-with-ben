@@ -1,0 +1,382 @@
+{
+  "S2_027_emwQsPxnRGM": {
+    "shorts": {
+      "exit_code": 0
+    },
+    "picture": {
+      "exit_code": 0
+    },
+    "polish": {
+      "exit_code": 0
+    },
+    "sfx": {
+      "exit_code": 0
+    },
+    "music": {
+      "exit_code": 0
+    },
+    "dark_pass": true,
+    "ocr_pass": true,
+    "h43_loop": {
+      "gate": "h43-LOOP",
+      "verdict": "PASS",
+      "final_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S2_027_emwQsPxnRGM/S2_027_emwQsPxnRGM_v07.mp4",
+      "final_sha256": "7d07deafbd4e242384aa35ffc8bf10d670c5e1f961c1f0c2ecc2b2159ea9c649",
+      "base_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S2_027_emwQsPxnRGM/S2_027_emwQsPxnRGM_v07_base.mp4",
+      "base_sha256": "55c3f4ace6f4c2d488183e86f89f113a47c1997f18b9c1a87ef2a0d92774a687",
+      "frames": 689,
+      "tail_frames_checked": 30,
+      "step1_provenance": {
+        "pass": true,
+        "filtergraph_diff": [
+          "--- base_filtergraph",
+          "+++ final_filtergraph",
+          "@@ -1,2 +1,2 @@",
+          " [0:v]noise=alls=4:allf=t:all_seed=1032[basev]",
+          "-[basev][1:v]overlay=0:0:enable='0',format=yuv420p[v]",
+          "+[basev][1:v]overlay=0:0:enable='1',format=yuv420p[v]"
+        ]
+      },
+      "step2_base_loop": {
+        "pass": true,
+        "base_f0_vs_last_180x320": 0.5669,
+        "base_f0_vs_last_270x480": 0.7975,
+        "c37_base": {
+          "whole": 0.5,
+          "masked": 0.57
+        },
+        "c37_final_masked": 0.57
+      },
+      "step3_final_vs_base": {
+        "pass": true,
+        "final_last_vs_base_last_180x320": 0.0,
+        "final_last_vs_base_last_270x480": 0.0,
+        "final_f0_vs_base_f0_outside_text_bboxes_pad8": 0.64,
+        "f0_text_alpha_bboxes_pad8": [
+          [
+            157,
+            115,
+            926,
+            218
+          ],
+          [
+            71,
+            239,
+            1009,
+            346
+          ]
+        ]
+      },
+      "step4_ocr_and_captions": {
+        "pass": true,
+        "f0_hook_ocr": "0.5% LIGHTER AT THE EQUATOR:",
+        "tail_nonempty_hits": [],
+        "caption_groups": [
+          "WHY DO YOU",
+          "WEIGH LESS AT",
+          "EARTH'S EQUATOR?",
+          "YOU WEIGH ABOUT",
+          "HALF A PERCENT",
+          "LESS THERE.",
+          "THE GROUND UNDER",
+          "YOU IS CARRYING",
+          "YOU EAST AT",
+          "ABOUT ONE AND",
+          "A HALF THOUSAND",
+          "KILOMETERS AN HOUR.",
+          "IT IS FASTER",
+          "THAN A JET",
+          "AIRLINER.",
+          "EARTH IS ABOUT",
+          "FORTY-THREE KILOMETERS WIDER",
+          "ACROSS THE EQUATOR.",
+          "BECAUSE THE GROUND",
+          "AT THE EQUATOR",
+          "SWINGS ROUND SO",
+          "FAST,",
+          "THE WHOLE PLANET",
+          "BULGES."
+        ],
+        "s5_caption_check": true
+      },
+      "step5_diagnostic_final_whole": {
+        "final_f0_vs_last_180x320": 6.4114,
+        "final_f0_vs_last_270x480": 6.7691,
+        "c37_final_whole": 7.15
+      }
+    },
+    "audio_and_loop": {
+      "status": "UNREVIEWED v07; caption-free tail; h43-LOOP and final gates",
+      "I_LUFS": -14.4,
+      "TP_dBTP": -2.0,
+      "audio_pass": true,
+      "loop": {
+        "whole": 7.15,
+        "masked": 0.57
+      },
+      "base_loop": {
+        "whole": 0.5,
+        "masked": 0.57
+      },
+      "loop_pass": true,
+      "files": {
+        "S2_027_emwQsPxnRGM_v07_base.mp4": "55c3f4ace6f4c2d488183e86f89f113a47c1997f18b9c1a87ef2a0d92774a687",
+        "S2_027_emwQsPxnRGM_v07.mp4": "7d07deafbd4e242384aa35ffc8bf10d670c5e1f961c1f0c2ecc2b2159ea9c649",
+        "S2_027_emwQsPxnRGM_v07_PHONE.mp4": "0a81bbf362961cad0572bfeef666f76e3fecbd34fccddea043fc8befe8d88981"
+      }
+    }
+  },
+  "S5_028_jJ5LkFGyzLI": {
+    "shorts": {
+      "exit_code": 0
+    },
+    "picture": {
+      "exit_code": 0
+    },
+    "polish": {
+      "exit_code": 0
+    },
+    "sfx": {
+      "exit_code": 0
+    },
+    "music": {
+      "exit_code": 0
+    },
+    "dark_pass": true,
+    "ocr_pass": true,
+    "h43_loop": {
+      "gate": "h43-LOOP",
+      "verdict": "PASS",
+      "final_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S5_028_jJ5LkFGyzLI/S5_028_jJ5LkFGyzLI_v07.mp4",
+      "final_sha256": "d5589ad4fa328ecf08ef737c272a32a3eef4bb4ddf28b420f8fb25cc1dfa626d",
+      "base_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S5_028_jJ5LkFGyzLI/S5_028_jJ5LkFGyzLI_v07_base.mp4",
+      "base_sha256": "8364ad6b21f6135304996b4a21425ae5ddc8ab556b9dd2a49ad96f22c38698ea",
+      "frames": 693,
+      "tail_frames_checked": 30,
+      "step1_provenance": {
+        "pass": true,
+        "filtergraph_diff": [
+          "--- base_filtergraph",
+          "+++ final_filtergraph",
+          "@@ -1,2 +1,2 @@",
+          " [0:v]eq=gamma=1.25:brightness=0.015:enable='gte(t,13.6)*lt(t,16.6)',noise=alls=4:allf=t:all_seed=1032[basev]",
+          "-[basev][1:v]overlay=0:0:enable='0',format=yuv420p[v]",
+          "+[basev][1:v]overlay=0:0:enable='1',format=yuv420p[v]"
+        ]
+      },
+      "step2_base_loop": {
+        "pass": true,
+        "base_f0_vs_last_180x320": 0.6279,
+        "base_f0_vs_last_270x480": 0.8687,
+        "c37_base": {
+          "whole": 0.59,
+          "masked": 0.62
+        },
+        "c37_final_masked": 0.62
+      },
+      "step3_final_vs_base": {
+        "pass": true,
+        "final_last_vs_base_last_180x320": 0.0,
+        "final_last_vs_base_last_270x480": 0.0,
+        "final_f0_vs_base_f0_outside_text_bboxes_pad8": 0.7112,
+        "f0_text_alpha_bboxes_pad8": [
+          [
+            147,
+            124,
+            935,
+            240
+          ],
+          [
+            97,
+            270,
+            982,
+            386
+          ]
+        ]
+      },
+      "step4_ocr_and_captions": {
+        "pass": true,
+        "f0_hook_ocr": "HOW CLOSE TO THE SUN?",
+        "tail_nonempty_hits": [],
+        "caption_groups": [
+          "HOW CLOSE WILL",
+          "GLIESE 710 COME",
+          "TO THE SUN?",
+          "THE STAR WILL",
+          "NOT COME ANYWHERE",
+          "NEAR THE PLANETS.",
+          "MAKE THE GAP",
+          "BETWEEN THE SUN",
+          "AND EARTH ONE",
+          "CENTIMETER.",
+          "NEPTUNE,",
+          "OUR OUTERMOST PLANET,",
+          "IS THEN 30",
+          "CENTIMETERS AWAY.",
+          "AND GLIESE 710",
+          "PASSES MORE THAN",
+          "100 METERS AWAY,",
+          "THE LENGTH OF",
+          "A FOOTBALL PITCH.",
+          "THAT IS ABOUT",
+          "A FIFTH OF",
+          "A LIGHT-YEAR."
+        ],
+        "s5_caption_check": true
+      },
+      "step5_diagnostic_final_whole": {
+        "final_f0_vs_last_180x320": 6.9088,
+        "final_f0_vs_last_270x480": 7.4478,
+        "c37_final_whole": 8.13
+      }
+    },
+    "audio_and_loop": {
+      "status": "UNREVIEWED v07; caption-free tail; h43-LOOP and final gates",
+      "I_LUFS": -14.4,
+      "TP_dBTP": -1.7,
+      "audio_pass": true,
+      "loop": {
+        "whole": 8.13,
+        "masked": 0.62
+      },
+      "base_loop": {
+        "whole": 0.59,
+        "masked": 0.62
+      },
+      "loop_pass": true,
+      "files": {
+        "S5_028_jJ5LkFGyzLI_v07_base.mp4": "8364ad6b21f6135304996b4a21425ae5ddc8ab556b9dd2a49ad96f22c38698ea",
+        "S5_028_jJ5LkFGyzLI_v07.mp4": "d5589ad4fa328ecf08ef737c272a32a3eef4bb4ddf28b420f8fb25cc1dfa626d",
+        "S5_028_jJ5LkFGyzLI_v07_PHONE.mp4": "096580ca7820018274a86d7e0cb43a8295e626a63b9cfe090c98e0c29f3677b8"
+      }
+    }
+  },
+  "S6_028_X768qs8sNQs": {
+    "shorts": {
+      "exit_code": 0
+    },
+    "picture": {
+      "exit_code": 0
+    },
+    "polish": {
+      "exit_code": 0
+    },
+    "sfx": {
+      "exit_code": 0
+    },
+    "music": {
+      "exit_code": 0
+    },
+    "s6_aac_packet_sha256": "SHA256=e9de2a1a33fc292c8abfa7047eeab3ddfdaf0ca10ed951dc14a6e4d97047968a",
+    "dark_pass": true,
+    "ocr_pass": true,
+    "h43_loop": {
+      "gate": "h43-LOOP",
+      "verdict": "PASS",
+      "final_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S6_028_X768qs8sNQs/S6_028_X768qs8sNQs_v07.mp4",
+      "final_sha256": "2f399f3127bf4ba9a96fedabe0927a7aa9362a412c5a5d93d8c10473b6f83db3",
+      "base_mp4": "/Users/benjaminoats/_desk/renders/J1100-v07/S6_028_X768qs8sNQs/S6_028_X768qs8sNQs_v07_base.mp4",
+      "base_sha256": "d891c063855db748b06a15d1321aad56baacfc46a691748b27522fa762b1a0bc",
+      "frames": 693,
+      "tail_frames_checked": 30,
+      "step1_provenance": {
+        "pass": true,
+        "filtergraph_diff": [
+          "--- base_filtergraph",
+          "+++ final_filtergraph",
+          "@@ -1,2 +1,2 @@",
+          " [0:v]eq=brightness=0.03:enable='between(n,60,73)',eq=gamma=1.25:brightness=0.015:enable='gte(t,2.5)*lt(t,6.833333333333333)',noise=alls=4:allf=t:all_seed=1032[basev]",
+          "-[basev][1:v]overlay=0:0:enable='0',format=yuv420p[v]",
+          "+[basev][1:v]overlay=0:0:enable='1',format=yuv420p[v]"
+        ]
+      },
+      "step2_base_loop": {
+        "pass": true,
+        "base_f0_vs_last_180x320": 0.7214,
+        "base_f0_vs_last_270x480": 0.9884,
+        "c37_base": {
+          "whole": 0.65,
+          "masked": 0.65
+        },
+        "c37_final_masked": 0.64
+      },
+      "step3_final_vs_base": {
+        "pass": true,
+        "final_last_vs_base_last_180x320": 0.0,
+        "final_last_vs_base_last_270x480": 0.0,
+        "final_f0_vs_base_f0_outside_text_bboxes_pad8": 0.6446,
+        "f0_text_alpha_bboxes_pad8": [
+          [
+            97,
+            124,
+            987,
+            240
+          ],
+          [
+            104,
+            270,
+            973,
+            386
+          ]
+        ]
+      },
+      "step4_ocr_and_captions": {
+        "pass": true,
+        "f0_hook_ocr": "3x BRIGHTER THAN SIRIUS",
+        "tail_nonempty_hits": [],
+        "caption_groups": [
+          "WHAT WILL THE",
+          "NIGHT SKY LOOK",
+          "LIKE WHEN GLIESE",
+          "710 ARRIVES?",
+          "RIGHT NOW,",
+          "GLIESE 710 IN",
+          "THE CONSTELLATION OF",
+          "SERPENS,",
+          "THE SERPENT.",
+          "IS FAR TOO",
+          "FAINT FOR YOUR",
+          "EYES ON EVEN",
+          "THE DARKEST NIGHT.",
+          "YOU WOULD NEED",
+          "BINOCULARS JUST TO",
+          "FIND IT.",
+          "IMAGINE THE NIGHT",
+          "OF THE CLOSEST",
+          "PASS.",
+          "IT IS THE",
+          "BRIGHTEST STAR THREE",
+          "TIMES BRIGHTER THAN",
+          "SIRIUS AND IT",
+          "GLOWS ORANGE."
+        ],
+        "s5_caption_check": true
+      },
+      "step5_diagnostic_final_whole": {
+        "final_f0_vs_last_180x320": 7.9213,
+        "final_f0_vs_last_270x480": 8.49,
+        "c37_final_whole": 9.01
+      }
+    },
+    "audio_and_loop": {
+      "status": "UNREVIEWED v07; caption-free tail; h43-LOOP and final gates",
+      "I_LUFS": -14.4,
+      "TP_dBTP": -1.7,
+      "audio_pass": true,
+      "loop": {
+        "whole": 9.01,
+        "masked": 0.64
+      },
+      "base_loop": {
+        "whole": 0.65,
+        "masked": 0.65
+      },
+      "loop_pass": true,
+      "files": {
+        "S6_028_X768qs8sNQs_v07_base.mp4": "d891c063855db748b06a15d1321aad56baacfc46a691748b27522fa762b1a0bc",
+        "S6_028_X768qs8sNQs_v07.mp4": "2f399f3127bf4ba9a96fedabe0927a7aa9362a412c5a5d93d8c10473b6f83db3",
+        "S6_028_X768qs8sNQs_v07_PHONE.mp4": "4259ba791312ac5a48e1d706d2c64c1584244cc0cfba3e1cd88f35cce6b3662b"
+      }
+    }
+  }
+}

@@ -130,6 +130,29 @@ describe("buffer mirror: plan", () => {
     expect(ig?.action === "create_post" && ig.input.metadata).toEqual({
       instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: true },
     });
+    const fb = creates.find((a) => a.channel === "facebook");
+    expect(fb?.action === "create_post" && fb.input.assets).toEqual([
+      { video: { url: MEDIA, metadata: { title: "Why You Can't Stand on a Neutron Star" } } },
+    ]);
+    expect(fb?.action === "create_post" && fb.input.metadata).toEqual({
+      facebook: { type: "reel" },
+    });
+  });
+
+  it("falls back to social.hook for the Facebook Reel video title when YouTube title is blank", () => {
+    const plan = planBufferMirror({
+      video: video({ title: "   " }),
+      channelIds: CHANNELS,
+      ledger: EMPTY,
+      now: NOW,
+      mediaUrl: MEDIA,
+      parentLong: LONG_PUBLIC,
+      social: { hook: "One teaspoon weighs a mountain.", question: "Would you lift it?" },
+    });
+    const fb = plan.actions.find((a) => a.channel === "facebook");
+    expect(fb?.action === "create_post" && fb.input.assets).toEqual([
+      { video: { url: MEDIA, metadata: { title: "One teaspoon weighs a mountain." } } },
+    ]);
   });
 
   it("never plans a Short before its long is public", () => {
@@ -197,7 +220,7 @@ describe("buffer mirror: plan", () => {
     });
     expect(byChannel.facebook).toMatchObject({
       input: {
-        assets: [{ video: { url: TRAILER } }],
+        assets: [{ video: { url: TRAILER, metadata: { title: "Why You Can't Stand on a Neutron Star" } } }],
         metadata: { facebook: { type: "reel" } },
       },
     });

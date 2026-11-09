@@ -1,0 +1,72 @@
+{
+  "about": "Ben's WIP limit (G, 4 Nov 2026: 'yes to E, F, G'; raised to 8 the same evening for two OWB longs a week). At most `limit` films are in production (topic to Ben's watch) at once. A film leaves `active` when it reaches Ben's watch (UAT); the first film in `next` then enters through one topic go/no-go review (AGENTS.md rule E) and its work is queued. Shorts and Studio finishing on uploaded films don't count. Per channel (5 Nov 2026, Ben: 'we've almost run out of history of science'): OWB 5 and HOS 4 places; a film that leaves is replaced from its own channel's line (`next` for OWB, `next_hos` for HOS). Before this, `next` held only OWB films, so every HOS place that freed up went to OWB.",
+  "limit": 9,
+  "active": [
+    "HOS:008",
+    "HOS:009",
+    "HOS:010",
+    "OWB:030",
+    "OWB:032",
+    "OWB:033",
+    "OWB:034",
+    "HOS:013",
+    "OWB:J01"
+  ],
+  "next": [
+    "OWB:035",
+    "OWB:036",
+    "OWB:037",
+    "OWB:038",
+    "OWB:039",
+    "OWB:040",
+    "OWB:041",
+    "OWB:042",
+    "OWB:043",
+    "OWB:044",
+    "OWB:045",
+    "OWB:046",
+    "OWB:047",
+    "OWB:048",
+    "OWB:049",
+    "OWB:050",
+    "OWB:051",
+    "OWB:052",
+    "OWB:053",
+    "OWB:054",
+    "OWB:055",
+    "OWB:056",
+    "OWB:057",
+    "OWB:058",
+    "OWB:059",
+    "OWB:060",
+    "OWB:061",
+    "OWB:062",
+    "OWB:063"
+  ],
+  "updated": "2026-11-08T22:22:00Z",
+  "by": "macbook-2",
+  "entered": {
+    "HOS:008": "2026-11-04",
+    "HOS:009": "2026-11-04",
+    "HOS:010": "2026-11-04",
+    "OWB:030": "2026-11-04",
+    "OWB:031": "2026-11-04",
+    "OWB:032": "2026-11-04",
+    "OWB:033": "2026-11-04",
+    "OWB:034": "2026-11-04",
+    "HOS:013": "2026-11-05",
+    "OWB:J01": "2026-11-08"
+  },
+  "entered_note": "Date each film entered active, for the days-to-Ben's-watch speed tile (target 14). The first six are counted from the WIP start, 4 Nov 2026.",
+  "limits": {
+    "OWB": 5,
+    "HOS": 4
+  },
+  "next_hos": [
+    "HOS:011",
+    "HOS:012",
+    "HOS:014",
+    "HOS:015",
+    "HOS:018"
+  ]
+}

@@ -213,6 +213,58 @@ describe("HOS daily check", () => {
     const ids = (d.client!.createPost as ReturnType<typeof vi.fn>).mock.calls.map((c) => (c[0] as { channelId: string }).channelId);
     expect(ids.sort()).toEqual(Object.values(HOS.channelIds).sort());
   });
+
+  it("J1202: a registered Short that went public without a schedule is mirrored; an unregistered one is reported", async () => {
+    const publicShort = video({
+      id: "PubShort0001",
+      privacyStatus: "public",
+      publishAt: null,
+      publishedAt: "2026-10-26T06:00:00Z",
+    });
+    const publicLong = video({
+      id: "wwcjcFfC-5M",
+      title: "How Harvey Proved Blood Circulates",
+      durationSeconds: 540,
+      privacyStatus: "public",
+      publishAt: null,
+      publishedAt: "2026-10-20T18:00:00Z",
+    });
+    const byId = new Map([
+      [publicShort.id, publicShort],
+      [publicLong.id, publicLong],
+    ]);
+    const registered = hosDeps({
+      listScheduled: async () => [],
+      listRecentlyPublic: async () => [publicShort],
+      fetchVideos: async (_t, ids) => new Map(ids.filter((id) => byId.has(id)).map((id) => [id, byId.get(id)!])),
+      findMedia: (id) =>
+        id === "PubShort0001"
+          ? {
+              videoId: id,
+              mediaPath: "/uat/pub.mp4",
+              thumbPath: null,
+              longId: "wwcjcFfC-5M",
+              standalone: false,
+              social: SOCIAL,
+              source: "social/hos/UPLOADS.json",
+              registered: true,
+            }
+          : null,
+    });
+    const ok = await runBufferCheck(registered);
+    expect(ok.autoMirrored.map((m) => m.videoId)).toEqual(["PubShort0001"]);
+    expect(ok.unmirrored).toEqual([]);
+
+    const missing = hosDeps({
+      listScheduled: async () => [],
+      listRecentlyPublic: async () => [publicShort],
+      fetchVideos: async () => new Map(),
+      findMedia: () => null,
+    });
+    const bad = await runBufferCheck(missing);
+    expect(bad.autoMirrored).toEqual([]);
+    expect(bad.unmirrored[0]?.reason).toMatch(/isn't in social\/UPLOADS\.json/);
+  });
 });
 
 describe("hosted media stays with its profile", () => {
