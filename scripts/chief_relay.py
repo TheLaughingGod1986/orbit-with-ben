@@ -745,6 +745,22 @@ def notify(text: str) -> bool:
     return True
 
 
+MINIWORK = pathlib.Path(os.environ.get("MINIWORK", "/Volumes/MiniWork"))
+
+
+def scratch_dir() -> pathlib.Path | None:
+    """The Mini's working SSD (Ben, 9 Nov 2026: a 250 GB SanDisk, APFS "MiniWork") when it is mounted and writable.
+    It must be its own volume: a /Volumes/MiniWork folder left on the internal disk after an unplug would fill the very
+    disk this is meant to keep free."""
+    s = MINIWORK / "scratch"
+    try:
+        if s.is_dir() and os.access(s, os.W_OK) and os.stat(MINIWORK).st_dev != os.stat(HOME).st_dev:
+            return s
+    except OSError:
+        pass
+    return None
+
+
 def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
@@ -756,6 +772,10 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
     extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
     env = dict(os.environ, OWB_AGENT=agent, PATH=os.pathsep.join(extra + [os.environ.get("PATH", "/usr/bin:/bin")]))
+    # Render scratch on the SSD when it is there (TMPDIR is what Python's tempfile, ffmpeg helpers and most CLIs use;
+    # STUDIO_SCRATCH is the folder AGENTS.md tells agents to put worktrees, frames and part renders in).
+    sd = scratch_dir()
+    env.update(TMPDIR=f"{sd}/", STUDIO_SCRATCH=str(sd)) if sd else env.update(STUDIO_SCRATCH="/private/tmp")
     p = subprocess.Popen([b] + args + [prompt], cwd=str(OWB) if OWB.is_dir() else None, stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT, text=True, start_new_session=True, env=env)
     try:
