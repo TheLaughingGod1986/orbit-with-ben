@@ -1,17 +1,18 @@
 {
   "job": "J2089",
-  "shot_list_sha256": "b600d2bc92414d9eb80c92d4554460df9ac68934150cf4426e87a1da0e097d81",
-  "status": "J2150_CORRECTIONS_PARTIAL_NOT_ASSEMBLY_READY",
+  "shot_list_sha256": "efba940f89b8dc3ce5c2c41e461519e14b8af082b6473480b5787d1dc6129c9c",
+  "status": "STEP_4_OF_4_PICTURE_PACKAGE_COMPLETE_ON_NAS_UNDER_CHIEF_SCOPE_v31",
   "spend_gbp": 0,
   "assets": [
     {
       "asset_id": "PIA02238",
       "source_page": "https://science.nasa.gov/photojournal/titans-thick-haze-layer/",
       "referenced_rows": [
+        12,
         13
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
-      "licence_status": "NASA_JPL_REUSE_POLICY_CREDIT_REQUIRED",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "EDITORIAL_REUSE_POLICY_CHECKED_CREDIT_REQUIRED",
       "title": "Titan Thick Haze Layer",
       "description": "Titan Thick Haze Layer",
       "credit": "NASA/JPL",
@@ -44,7 +45,7 @@
       "licence_policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL",
-      "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
+      "quality_status": "RIGHTS_CHECK_ONLY_EXISTING_PICTURE_REVIEW_STILL_REQUIRED",
       "proposed_crop": {
         "xyxy": [
           0,
@@ -61,15 +62,42 @@
         "caption": "VOYAGER 1 \u00b7 1980",
         "status": "J2090_INSET_ROUTE_ONLY_NOT_FINAL_PLACEMENT"
       },
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "rights_review_ref": "RIGHTS_REVIEW_v27.md",
+      "rights_scope": "Factual educational film only; required full credit; no endorsement, merchandise or advertising use; no extension to other assets.",
+      "rights_evidence": [
+        {
+          "url": "https://science.nasa.gov/photojournal/titans-thick-haze-layer/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/PIA02238.html",
+          "sha256": "2191715adcd40e85b3024d25e15e1038816cfa1b0b4259248832277fb4b9953b",
+          "bytes": 265798,
+          "kind": "raw_html"
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/jpl_policy_browser_observation.txt",
+          "sha256": "ad078f7e98b2d7e5f147791aab20740ed90fdbfff20cdcf791dafea1a72fb8bb",
+          "bytes": 367,
+          "kind": "browser_observation"
+        },
+        {
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/nasa_policy.html",
+          "sha256": "087c38a9a04ad92b70dbdedb37abb327e18888ba4a0bd81ea3800404db51e8c2",
+          "bytes": 313762,
+          "kind": "raw_html"
+        }
+      ],
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA02238.jpg"
     },
     {
       "asset_id": "PIA07231",
       "source_page": "https://science.nasa.gov/photojournal/varied-terrain/",
       "referenced_rows": [
-        5
+        5,
+        15
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Varied Terrain",
       "description": "Varied Terrain",
@@ -105,17 +133,17 @@
       "credit_required": "NASA/JPL/ESA/University of Arizona",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
       "quality_issue": "Tiny 305x261 multi-panel release. No full-frame crop can satisfy upscale cap; inset alone needs readability/panel review.",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07231.jpg"
     },
     {
       "asset_id": "PIA07232",
       "source_page": "https://science.nasa.gov/photojournal/first-color-view-of-titans-surface/",
       "referenced_rows": [
         18,
-        20,
-        25
+        20
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "First Color View of Titan Surface",
       "description": "This image was returned on Jan 14, 2005, by the European Space Agency Huygens probe during its successful descent to land on Titan. This colored view, following processing to add reflection spectra data, gives a better indication of the actual color.",
@@ -171,13 +199,14 @@
         "notes": "White release surround removed; tiny soft source remains subject to frame review. Second appearance needs a distinct framing."
       },
       "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
-      "reuse_status": "CONFLICT_3_DRAFT_ROWS_MAX_2_RECONCILE_BEFORE_ASSEMBLY"
+      "reuse_status": "ALLOCATED_R18_R20_ONLY_FINAL_APPEARANCES_UNVERIFIED",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07232.jpg"
     },
     {
       "asset_id": "PIA07233",
       "source_page": "https://science.nasa.gov/photojournal/first-best-guess-view-of-huygens-landing-site/",
       "referenced_rows": [],
-      "review_status": "EXCLUDED_J2150",
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "First Best-Guess View of Huygens Landing Site",
       "description": "First Best-Guess View of Huygens Landing Site",
@@ -213,7 +242,8 @@
       "credit_required": "NASA/JPL/ESA/University of Arizona",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
       "quality_issue": "Aerial landing-site view with circle annotation, not the surface-to-horizon panorama described in R25. Do not use as that panorama; Chief/source correction required.",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07233.jpg"
     },
     {
       "asset_id": "PIA07236",
@@ -222,7 +252,7 @@
         17,
         21
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Mosaic of River Channel and Ridge Area on Titan",
       "description": "Mosaic of River Channel and Ridge Area on Titan",
@@ -257,15 +287,17 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL/ESA/University of Arizona",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07236.jpg"
     },
     {
       "asset_id": "PIA08167",
       "source_page": "https://science.nasa.gov/photojournal/shifting-northern-hazes/",
       "referenced_rows": [
+        1,
         4
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Shifting Northern Hazes",
       "description": "The complex and dynamic atmosphere of Titan displays multiple haze layers near the north pole in this view, which also provides an excellent look at the detached stratospheric haze layer that surrounds the moon at lower latitudes",
@@ -300,7 +332,8 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA08167.jpg"
     },
     {
       "asset_id": "PIA08733",
@@ -309,7 +342,7 @@
         9,
         23
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Crescent View",
       "description": "Titan Crescent View",
@@ -344,7 +377,9 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL/University of Arizona",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2304",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA08733.jpg"
     },
     {
       "asset_id": "PIA09182",
@@ -353,7 +388,7 @@
         29,
         30
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan T25 Viewed by Cassini Radar - Feb. 22, 2007",
       "description": "Titan T25 Viewed by Cassini Radar - Feb. 22, 2007",
@@ -388,17 +423,15 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/ASI",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA09182.jpg"
     },
     {
       "asset_id": "PIA10008",
       "source_page": "https://science.nasa.gov/photojournal/titans-north-polar-region/",
-      "referenced_rows": [
-        31,
-        32
-      ],
-      "review_status": "CANDIDATE_NOT_KEEP",
-      "licence_status": "NASA_JPL_REUSE_POLICY_CREDIT_REQUIRED",
+      "referenced_rows": [],
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
+      "licence_status": "EDITORIAL_REUSE_POLICY_CHECKED_CREDIT_REQUIRED",
       "title": "Titan North Polar Region",
       "description": "Titan North Polar Region",
       "credit": "NASA/JPL-Caltech/USGS",
@@ -431,9 +464,42 @@
       "licence_policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/USGS",
-      "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "quality_issue": "Polar map has grid and missing-data gaps. Exact label/grid-free truthful crop required; raw map not approved.",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "quality_status": "RIGHTS_CHECK_ONLY_EXISTING_PICTURE_REVIEW_STILL_REQUIRED",
+      "quality_issue": "Source sheet visibly has latitude/longitude grid, missing white wedges and map presentation. Rights clearance is not picture clearance; full source remains unsuitable under sourced-map rule. No crop/assembly approval.",
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "rights_review_ref": "RIGHTS_REVIEW_v27.md",
+      "rights_scope": "Factual educational film only; required full credit; no endorsement, merchandise or advertising use; no extension to other assets.",
+      "rights_evidence": [
+        {
+          "url": "https://science.nasa.gov/photojournal/titans-north-polar-region/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/PIA10008.html",
+          "sha256": "2efb93f095962e117e44d754b29c7ee149066a28451f116528890432adedae77",
+          "bytes": 274028,
+          "kind": "raw_html"
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/jpl_policy_browser_observation.txt",
+          "sha256": "ad078f7e98b2d7e5f147791aab20740ed90fdbfff20cdcf791dafea1a72fb8bb",
+          "bytes": 367,
+          "kind": "browser_observation"
+        },
+        {
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/nasa_policy.html",
+          "sha256": "087c38a9a04ad92b70dbdedb37abb327e18888ba4a0bd81ea3800404db51e8c2",
+          "bytes": 313762,
+          "kind": "raw_html"
+        },
+        {
+          "url": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/usgs_policy_browser_observation.txt",
+          "sha256": "e13848182022ce92ec26b510cb6e4b943dbc1e3dd45f03ac16d606f21d7fbde7",
+          "bytes": 362,
+          "kind": "browser_observation"
+        }
+      ],
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA10008.jpg"
     },
     {
       "asset_id": "PIA12481",
@@ -442,7 +508,7 @@
         36,
         41
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Reflection of Sunlight off Titan Lake",
       "description": "This image taken by NASA Cassini spacecraft in 2009, shows the first flash of sunlight reflected off a hydrocarbon lake on Saturn moon Titan. The glint off a mirror-like surface is known as a specular reflection.",
@@ -477,7 +543,8 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL/University of Arizona/DLR",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA12481.jpg"
     },
     {
       "asset_id": "PIA14584",
@@ -486,7 +553,7 @@
         38,
         40
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Kraken Mare",
       "description": "NASA Cassini spacecraft looks toward Saturn largest moon, Titan, and spies the huge Kraken Mare in the moon north. Kraken Mare, a large sea of liquid hydrocarbons, is visible as a dark area near the top of the image.",
@@ -521,15 +588,19 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "instrument": "Cassini ISS narrow-angle camera, near-infrared 938 nm",
+      "assembly_warning": "Not radar. Do not apply RADAR disclosure or describe as radar shoreline.",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA14584.jpg"
     },
     {
       "asset_id": "PIA14602",
       "source_page": "https://science.nasa.gov/photojournal/hazy-orange-orb/",
       "referenced_rows": [
-        3
+        9,
+        35
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Hazy Orange Orb",
       "description": "Titan atmosphere makes Saturn largest moon look like a fuzzy orange ball in this natural color view from NASA Cassini spacecraft. Titan north polar hood is visible at top, and a faint blue haze also can be detected above the south pole at bottom.",
@@ -564,15 +635,18 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2247/J2264",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA14602.jpg"
     },
     {
       "asset_id": "PIA14922",
       "source_page": "https://science.nasa.gov/photojournal/colorful-colossuses-and-changing-hues/",
       "referenced_rows": [
-        6
+        6,
+        8
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Colorful Colossuses and Changing Hues",
       "description": "A giant of a moon appears before a giant of a planet undergoing seasonal changes in this natural color view of Titan and Saturn from NASA Cassini spacecraft.",
@@ -607,13 +681,15 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2262",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA14922.jpg"
     },
     {
       "asset_id": "PIA16638",
       "source_page": "https://science.nasa.gov/photojournal/titan-craters-the-old-and-the-new/",
       "referenced_rows": [],
-      "review_status": "EXCLUDED_J2150",
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Craters, the Old and the New",
       "description": "This set of images from the radar instrument on NASA Cassini spacecraft shows a relatively fresh crater called Sinlap left and an extremely degraded crater called Soi right.",
@@ -649,15 +725,17 @@
       "credit_required": "NASA/JPL-Caltech/ASI/GSFC",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
       "quality_issue": "Release contains Sinlap and Soi side by side plus scale text. Raw release cannot enter cut; exact single-crater crop and source-label removal or substitute needed. Never label it Selk.",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA16638.jpg"
     },
     {
       "asset_id": "PIA17031",
       "source_page": "https://science.nasa.gov/photojournal/vast-ligeia-mare-in-false-color/",
       "referenced_rows": [
+        31,
         33
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Vast Ligeia Mare in False Color",
       "description": "Ligeia Mare, shown here in a false color image from NASA Cassini mission, is the second largest known body of liquid on Saturn moon Titan. It is filled with liquid hydrocarbons, such as ethane and methane.",
@@ -692,15 +770,17 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/ASI/Cornell",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA17031.jpg"
     },
     {
       "asset_id": "PIA17163",
       "source_page": "https://science.nasa.gov/photojournal/titans-crescents/",
       "referenced_rows": [
+        25,
         44
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Crescents",
       "description": "This view captured by NASA Cassini spacecraft looks toward the trailing hemisphere of Titan. Titan south polar vortex mimics the moon itself, creating an elegant crescent within a crescent.",
@@ -735,7 +815,9 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2177",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA17163.jpg"
     },
     {
       "asset_id": "PIA18182",
@@ -744,7 +826,7 @@
         52
       ],
       "review_status": "CANDIDATE_NOT_KEEP",
-      "licence_status": "NASA_JPL_REUSE_POLICY_CREDIT_REQUIRED",
+      "licence_status": "EDITORIAL_REUSE_POLICY_CHECKED_CREDIT_REQUIRED",
       "title": "Uranus as seen by NASA Voyager 2",
       "description": "This is an image of the planet Uranus taken by the spacecraft Voyager 2 in 1986.",
       "credit": "NASA/JPL-Caltech",
@@ -777,14 +859,40 @@
       "licence_policy": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech",
-      "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "quality_status": "RIGHTS_CHECK_ONLY_EXISTING_PICTURE_REVIEW_STILL_REQUIRED",
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "rights_review_ref": "RIGHTS_REVIEW_v27.md",
+      "rights_scope": "Factual educational film only; required full credit; no endorsement, merchandise or advertising use; no extension to other assets.",
+      "rights_evidence": [
+        {
+          "url": "https://science.nasa.gov/photojournal/uranus-as-seen-by-nasas-voyager-2/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/PIA18182.html",
+          "sha256": "ffa9b032c55d90491fbaa948778240a4a24a4af57b448852e4d965c8b200d37d",
+          "bytes": 266672,
+          "kind": "raw_html"
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/jpl_policy_browser_observation.txt",
+          "sha256": "ad078f7e98b2d7e5f147791aab20740ed90fdbfff20cdcf791dafea1a72fb8bb",
+          "bytes": 367,
+          "kind": "browser_observation"
+        },
+        {
+          "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "path": "/Users/benjaminoats/_desk/cache/J2089/rights_v27/nasa_policy.html",
+          "sha256": "087c38a9a04ad92b70dbdedb37abb327e18888ba4a0bd81ea3800404db51e8c2",
+          "bytes": 313762,
+          "kind": "raw_html"
+        }
+      ],
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA18182.jpg"
     },
     {
       "asset_id": "PIA19051",
       "source_page": "https://science.nasa.gov/photojournal/perspective-on-kraken-mare-shores/",
       "referenced_rows": [],
-      "review_status": "EXCLUDED_J2150",
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Perspective on Kraken Mare Shores",
       "description": "This Cassini Synthetic Aperture Radar (SAR) image is presented as a perspective view and shows a landscape near the eastern shoreline of Kraken Mare, a hydrocarbon sea in Titan's north polar region. This image was processed using a technique for handling noise that results in clearer views that can be easier for researchers to interpret. The technique, called despeckling, also is useful for producing altimetry data and 3-D views called digital elevation maps.  Scientists have used a technique called radargrammetry to determine the altitude of surface features in this view at a resolution of approximately half a mile, or 1 kilometer. The altimetry reveals that the area is smooth overall, with a maximum amplitude of 0.75 mile (1.2 kilometers) in height. The topography also shows that all observed channels flow downhill.  The presence of what scientists call \"knickpoints\" -- locations on a river where a sharp change in slope occurs -- might indicate stratification in the bedrock, erosion mechanisms at work or a particular way the surface responds to runoff events, such as floods following large storms. One such knickpoint is visible just above the lower left corner, where an area of bright slopes is seen.  The image was obtained during a flyby of Titan on April 10, 2007. A more traditional radar image of this area on Titan is seen in PIA19046.  http://photojournal.jpl.nasa.gov/catalog/PIA19051",
@@ -820,15 +928,17 @@
       "credit_required": "NASA/JPL-Caltech/ASI",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
       "quality_issue": "Source describes elevation-derived perspective (not native camera footage). AGENTS computer reconstruction rule requires Chief determination; RADAR disclosure alone does not waive it.",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA19051.jpg"
     },
     {
       "asset_id": "PIA20016",
       "source_page": "https://science.nasa.gov/photojournal/peering-through-titans-haze/",
       "referenced_rows": [
-        35
+        1,
+        51
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Peering Through Titan Haze",
       "description": "This composite image shows an infrared view of Saturn's moon Titan from NASA's Cassini spacecraft, acquired during the mission's \"T-114\" flyby on Nov. 13, 2015. The spacecraft's visual and infrared mapping spectrometer (VIMS) instrument made these observations, in which blue represents wavelengths centered at 1.3 microns, green represents 2.0 microns, and red represents 5.0 microns. A view at visible wavelengths (centered around 0.5 microns) would show only Titan's hazy atmosphere (as in PIA14909). The near-infrared wavelengths in this image allow Cassini's vision to penetrate the haze and reveal the moon's surface.  During this Titan flyby, the spacecraft's closest-approach altitude was 6,200 miles (10,000 kilometers), which is considerably higher than those of typical flybys, which are around 750 miles (1,200 kilometers). The high flyby allowed VIMS to gather moderate-resolution views over wide areas (typically at a few kilometers per pixel).  The view looks toward terrain that is mostly on the Saturn-facing hemisphere of Titan. The scene features the parallel, dark, dune-filled regions named Fensal (to the north) and Aztlan (to the south), which form the shape of a sideways letter \"H.\"  Several places on the image show the surface at higher resolution than elsewhere. These areas, called subframes, show more detail because they were acquired near closest approach. They have finer resolution, but cover smaller areas than data obtained when Cassini was farther away from Titan.  Near the limb at left, above center, is the best VIMS view so far of Titan's largest confirmed impact crater, Menrva (first seen by the RADAR instrument in PIA07365). Similarly detailed subframes show eastern Xanadu, the basin Hotei Regio, and channels within bright terrains east of Xanadu. (For Titan maps with named features see http://planetarynames.wr.usgs.gov/Page/TITAN/target.)  Due to the changing Saturnian seasons, in this late northern spring view, the illumination is significantly changed from that seen by VIMS during the \"T-9\" flyby on December 26, 2005 (PIA02145). The sun has moved higher in the sky in Titan's northern hemisphere, and lower in the sky in the south, as northern summer approaches. This change in the sun's angle with respect to Titan's surface has made high southern latitudes appear darker, while northern latitudes appear brighter.  http://photojournal.jpl.nasa.gov/catalog/PIA20016",
@@ -863,15 +973,18 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL/University of Arizona/University of Idaho",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2264",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA20016.jpg"
     },
     {
       "asset_id": "PIA21434",
       "source_page": "https://science.nasa.gov/photojournal/titan-kraken-and-ligeia-in-sharper-focus/",
       "referenced_rows": [
-        34
+        34,
+        51
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan: Kraken and Ligeia In Sharper Focus",
       "description": "As it sped away from a relatively distant encounter with Titan on Feb. 17, 2017, NASA's Cassini spacecraft captured this mosaic view of the moon's northern lakes and seas.   Cassini's viewing angle over Kraken Mare and Ligeia Mare was better during this flyby than previous encounters, providing increased contrast for viewing these seas. Because the spacecraft is peering through less of Titan's haze toward Kraken and Ligeia, more details on their shorelines are visible, compared to earlier maps.  This was one of several \"non-targeted\" Cassini Titan flybys in 2017 that allow the mission to image the moon's north polar region and track clouds there. (\"Non-targeted\" means Cassini did not have to use any rocket-thruster firings to steer itself toward the flyby.)  Several prominent cloud streaks are visible at mid-latitudes between 45 and 55 degrees north latitude, on the right side of the image. Smaller bright clouds are seen just above the sea called Punga Mare (roughly at center). Scientists are seeing increasing cloud activity in Titan's north polar region as the seasons continue to change from spring to summer there, though not as much as predicted by models of Titan's atmosphere.  The images in this mosaic were taken with the Cassini spacecraft narrow-angle camera using a spectral filter sensitive to wavelengths of near-infrared light centered at 938 nanometers.  The view was obtained at a distance of approximately 150,700 miles (242,500 kilometers) from Titan. Image scale is about 1.6 miles (2.6 kilometers) per pixel. The view is an orthographic projection centered on 68 degrees north latitude, 225 degrees west longitude. An orthographic view is most like the view seen by a distant observer looking through a telescope.  http://photojournal.jpl.nasa.gov/catalog/PIA21434",
@@ -906,15 +1019,19 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "instrument": "Cassini ISS narrow-angle camera, near-infrared 938 nm",
+      "assembly_warning": "Not radar. Do not apply RADAR disclosure or describe as radar shoreline.",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21434.jpg"
     },
     {
       "asset_id": "PIA21450",
       "source_page": "https://science.nasa.gov/photojournal/cloud-bands-streak-across-titan/",
       "referenced_rows": [
-        14
+        14,
+        25
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Cloud Bands Streak Across Titan",
       "description": "NASA's Cassini spacecraft captured this view of bands of bright, feathery methane clouds drifting across Saturn's moon Titan on May 7, 2017.  The view was obtained during a distant (non-targeted) flyby, during which Cassini passed 303,000 miles (488,000 kilometers) above the moon's surface. Although Cassini will have no further close, targeted flybys of Titan, the spacecraft continues to observe the giant moon and its atmosphere from a distance.  The dark regions at top are Titan's hydrocarbon lakes and seas.  The image was taken on May 7, 2017, at a distance of 316,000 miles (508,000 kilometers). The view is an orthographic projection centered on 57 degrees north latitude, 48 degrees west longitude. An orthographic view is most like the view seen by a distant observer. Image scale is about 2 miles (3 kilometers) per pixel.  The Cassini mission is a cooperative project of NASA, ESA (the European Space Agen  https://photojournal.jpl.nasa.gov/catalog/PIA21450",
@@ -949,15 +1066,18 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "allocation_review": "J2177",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21450.jpg"
     },
     {
       "asset_id": "PIA21610",
       "source_page": "https://science.nasa.gov/photojournal/titans-northern-summer-clouds/",
       "referenced_rows": [
+        16,
         28
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Titan Northern Summer Clouds",
       "description": "As summer approaches in Titan's northern hemisphere, NASA's Cassini spacecraft has been monitoring Titan, anticipating an increase in cloud activity at high northern latitudes. Intriguingly, with the summer solstice just a couple of weeks away, an outburst of multiple clouds appeared at mid-northern latitudes.  These are some of the most intensely bright clouds Cassini has observed on Titan, likely due to high-cloud tops. This activity also represents the most extensive cloud outburst on Titan since clouds reappeared at northern mid-latitudes in early 2016.  Three methane cloud bands visible in this view: the southern band is located between 30 and 38 degrees north latitude. Scientists have not spotted many clouds in this latitude range prior this observation. A fainter, middle band between 44 and 50 degrees north latitude is in a region where cloud bands have been observed fairly regularly over the past year. A northern band is also seen between 52 and 59 degrees north latitude.  There are a few isolated cloud streaks outside these bands, including some near the southern edge of the north polar terrain near 63 degrees north and another set that goes as far south as 23 degrees north latitude.  Just above the dark, equatorial dunelands at bottom is a dark feature with a streak that points toward the northeast (toward upper right). This feature is named Omacatl Macula, and is likely a region of dark dust that is organized into dunes in some places.  The image was taken on May 7, 2017, at a distance of 311,000 miles (500,000 kilometers). The view is an orthographic projection centered on 37.5 degrees north latitude, 45 degrees west longitude. An orthographic view is most like the view seen by a distant observer. Image scale is about 2 miles (3 kilometers) per pixel.  https://photojournal.jpl.nasa.gov/catalog/PIA21610",
@@ -992,15 +1112,17 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21610.jpg"
     },
     {
       "asset_id": "PIA21902",
       "source_page": "https://science.nasa.gov/photojournal/twilight-haze/",
       "referenced_rows": [
+        3,
         11
       ],
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "CREDIT_CHECKED_THIRD_PARTY_TERMS_STILL_TO_CONFIRM",
       "title": "Twilight Haze",
       "description": "In this view, individual layers of haze can be distinguished in the upper atmosphere of Titan, Saturn's largest moon. Titan's atmosphere features a rich and complex chemistry originating from methane and nitrogen and evolving into complex molecules, eventually forming the smog that surrounds the moon.  This natural color image was taken in visible light with the Cassini spacecraft wide-angle camera on March 31, 2005, at a distance of approximately 20,556 miles (33,083 kilometers) from Titan. The view looks toward the north polar region on the moon's night side. Part of Titan's sunlit crescent is visible at right.  The Cassini spacecraft ended its mission on Sept. 15, 2017.  https://photojournal.jpl.nasa.gov/catalog/PIA21902",
@@ -1036,7 +1158,8 @@
       "licence_basis": "JPL image-use policy: reuse subject to asset-specific ownership/credit and special cases. Not a blanket public-domain declaration.",
       "credit_required": "NASA/JPL-Caltech/Space Science Institute",
       "quality_status": "CANDIDATE_CROP_AND_COMPOSITE_REVIEW_REQUIRED",
-      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST"
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21902.tif"
     },
     {
       "asset_id": "huygens_portrait_1671",
@@ -1049,25 +1172,330 @@
       "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Caspar_Netscher_-_Christiaan_Huygens%2C_the_astronomer%2C_1671.jpg",
       "licence": "PD-Art / Public Domain Mark. Commons: Netscher died 1684; faithful reproduction of a two-dimensional public-domain artwork.",
       "credit": "Caspar Netscher, Portrait of Christiaan Huygens, 1671 / Haags Historisch Museum, via Wikimedia Commons",
-      "review_status": "CANDIDATE_NOT_KEEP",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
       "licence_status": "PUBLIC_DOMAIN_ART_FILE_PERMISSION_VERIFIED",
       "crop": "UNSELECTED; preserve face and compose with lower-third card",
-      "referenced_rows": [],
+      "referenced_rows": [
+        7
+      ],
       "width": 1682,
       "height": 2204,
       "download_status": "downloaded",
       "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
-      "quality_status": "PORTRAIT_PLACEMENT_REVIEW_REQUIRED"
+      "quality_status": "PORTRAIT_PLACEMENT_REVIEW_REQUIRED",
+      "allocation_review": "SHOT_LIST_v06",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/huygens_1671.jpg"
+    },
+    {
+      "asset_id": "PIA07870",
+      "title": "Huygens Titan Mosaic #1",
+      "description": "Huygens Titan Mosaic #1",
+      "credit": "NASA/JPL/ESA/University of Arizona",
+      "source_page": "https://images.nasa.gov/details/PIA07870",
+      "download_url": "http://images-assets.nasa.gov/image/PIA07870/PIA07870~orig.jpg",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07870.jpg",
+      "sha256": "639625b8800e2b99585180422ef437aa6aeb8f1c17dafab6211c6c387751031e",
+      "width": 2400,
+      "height": 2400,
+      "metadata_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07870_metadata.json",
+      "metadata_sha256": "525b6d53240f02a0694b230027f78386a31d17c356543642f26a13d3fc2fe6be",
+      "assets_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07870_assets.json",
+      "assets_sha256": "0b2c6cd39a55839710ab45998f6eabfef0e25bbd99ff141949e58355ec6b3bda",
+      "status": "CANDIDATE_NOT_KEEP",
+      "rights_status": "CREDIT_RECORDED_PER_ASSET_TERMS_REVIEW_REQUIRED",
+      "motion": "STILL_NOT_NATIVE_MOTION",
+      "short_exclusion": "FINAL_CROP_COMPARISON_REQUIRED",
+      "allocated_rows": [],
+      "visual_review": "NOT_ASSEMBLY_READY: obvious mosaic seams and low detail; PIA07871 also retains missing black areas in best measured crop",
+      "source_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07870_metadata.json",
+      "source_evidence_sha256": "525b6d53240f02a0694b230027f78386a31d17c356543642f26a13d3fc2fe6be",
+      "referenced_rows": [],
+      "download_status": "downloaded",
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
+      "licence_status": "PENDING_PER_ASSET_TERMS_CHECK",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07870.jpg"
+    },
+    {
+      "asset_id": "PIA07871",
+      "title": "Huygens Titan Mosaic #2",
+      "description": "Huygens Titan Mosaic #2",
+      "credit": "NASA/JPL/ESA/University of Arizona",
+      "source_page": "https://images.nasa.gov/details/PIA07871",
+      "download_url": "http://images-assets.nasa.gov/image/PIA07871/PIA07871~orig.jpg",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07871.jpg",
+      "sha256": "87a21d6a71d93f0de69438155340e17686b99a611dfa048ec8590ab37a45dc79",
+      "width": 1563,
+      "height": 1497,
+      "metadata_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07871_metadata.json",
+      "metadata_sha256": "cef1abf9688667eabb81c0dcc6606083e5153aa923ff09b54a3f769da3233df5",
+      "assets_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07871_assets.json",
+      "assets_sha256": "8f97d0cfce416d9fadc9e5ee327760462d1dbde7cc9f176acbbb6d7a43e7e197",
+      "status": "CANDIDATE_NOT_KEEP",
+      "rights_status": "CREDIT_RECORDED_PER_ASSET_TERMS_REVIEW_REQUIRED",
+      "motion": "STILL_NOT_NATIVE_MOTION",
+      "short_exclusion": "FINAL_CROP_COMPARISON_REQUIRED",
+      "allocated_rows": [],
+      "visual_review": "NOT_ASSEMBLY_READY: obvious mosaic seams and low detail; PIA07871 also retains missing black areas in best measured crop",
+      "source_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/huygens_reserved_v01/PIA07871_metadata.json",
+      "source_evidence_sha256": "cef1abf9688667eabb81c0dcc6606083e5153aa923ff09b54a3f769da3233df5",
+      "referenced_rows": [],
+      "download_status": "downloaded",
+      "review_status": "EXCLUDED_CHIEF_SCOPE_v31",
+      "licence_status": "PENDING_PER_ASSET_TERMS_CHECK",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA07871.jpg"
+    },
+    {
+      "asset_id": "PIA14909",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/harvest_v01/PIA14909.jpg",
+      "sha256": "b72f5371622b0197f91a70a62b729e1e854dd91c511639f8055cf3d93f70ce74",
+      "width": 993,
+      "height": 1017,
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "source_page": "https://science.nasa.gov/photojournal/titan-up-front/",
+      "licence_status": "PER_ASSET_RIGHTS_FINAL_RELEASE_HOLD",
+      "referenced_rows": [
+        19,
+        23
+      ],
+      "allocation_review": "J2304",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "download_status": "downloaded",
+      "source_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/inventory_v23/PIA14909_source.html",
+      "source_evidence_sha256": "2b0b19531e18eb00ef32edc8a848d97f6b0c59d3ff4a0e9a3352eacebc11653b",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA14909.jpg"
+    },
+    {
+      "asset_id": "AS17-148-22727",
+      "title": "The Blue Marble",
+      "source_page": "https://science.nasa.gov/resource/the-blue-marble/",
+      "download_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/i/IMG004849.jpg",
+      "local_path": "/Users/benjaminoats/_desk/cache/J2089/earth_v30/AS17-148-22727.jpg",
+      "sha256": "adbdbbc70c864e2041fef3bc3e6784a989d4620b239469c3636b292f66e2445e",
+      "width": 1881,
+      "height": 1881,
+      "bytes": 344828,
+      "source_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/earth_v30/source.html",
+      "source_evidence_sha256": "2c78d8b7ed9f7eb31b27ec8339a74524056ac26f44ddd200622c1796f8789921",
+      "credit": "NASA Johnson Space Center",
+      "credit_required": "NASA Johnson Space Center",
+      "referenced_rows": [
+        39
+      ],
+      "download_status": "downloaded",
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_AUTHORED_PHOTOGRAPH_POLICY_EVIDENCE_SAVED_FOR_REVIEW",
+      "licence_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "policy_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/earth_v30/nasa_policy.html",
+      "policy_evidence_sha256": "20e194b3b81338a34ac591d8ef719ba2e7055848ee488079e13624b2935fb8f1",
+      "licence_basis": "NASA source identifies Apollo 17 astronaut photograph AS17-148-22727 and credits NASA Johnson Space Center. Retain credit; no endorsement. Worker evidence collection, not Chief release.",
+      "motion": "STILL_NOT_NATIVE_MOTION",
+      "quality_status": "CROP_GRADE_AND_COMPOSITE_REVIEW_REQUIRED",
+      "actual_appearance_count": "UNVERIFIED_UNTIL_FINAL_CUT_MANIFEST",
+      "proposed_placement": "Preserve complete Earth as inset over graded moving picture; do not stretch square image or crop planet to fill 16:9. Still push is decorative motion only.",
+      "short_exclusion": "FINAL_DECODED_FRAME_AND_CROP_COMPARISON_REQUIRED",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/AS17-148-22727.jpg"
+    },
+    {
+      "asset_id": "PIA20021_right_panel",
+      "title": "Titan's Northern Lakes: Salt Flats? (Right-Panel Crop)",
+      "description": "Clean 1440x1144 crop (420, 36, 1860, 1180) of the right-hand polar seas radar panel of PIA20021, excluding all left-strip inset boxes and border wedges per CHIEF_SCOPE_v31.md \u00a74.",
+      "credit": "NASA/JPL-Caltech/ASI/GSFC",
+      "credit_required": "NASA/JPL-Caltech/ASI/GSFC",
+      "source_page": "https://images.nasa.gov/details/PIA20021",
+      "download_url": "https://images-assets.nasa.gov/image/PIA20021/PIA20021~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA20021_right_panel_1440x1144.jpg",
+      "parent_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA20021.jpg",
+      "parent_sha256": "49577b556b7dbf200a2957bb515fed11a6d3a2a409974caffccc855a013893ce",
+      "crop_xyxy": [
+        420,
+        36,
+        1860,
+        1180
+      ],
+      "referenced_rows": [
+        31,
+        32
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_JPL_IMAGE_POLICY_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA20021_metadata.json",
+      "source_evidence_sha256": "8e29aaa2b1e64ad40d52f5a9da1bf81e131dac88db87a1331fbb2ffd0713fbad",
+      "width": 1440,
+      "height": 1144,
+      "sha256": "e38201c4f15f5e95c1171b3f00e2a9d33dd26e3997bf30697fc6d5e1ca5c779e",
+      "bytes": 899811,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA20021_right_panel_1440x1144.jpg"
+    },
+    {
+      "asset_id": "PIA17172",
+      "title": "The Day the Earth Smiled: Saturn and Titan Backlit Panorama",
+      "description": "Cassini wide-angle backlit panorama of Saturn's rings and Titan's atmospheric limb.",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "credit_required": "NASA/JPL-Caltech/Space Science Institute",
+      "source_page": "https://images.nasa.gov/details/PIA17172",
+      "download_url": "https://images-assets.nasa.gov/image/PIA17172/PIA17172~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA17172.jpg",
+      "referenced_rows": [
+        10,
+        27
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_JPL_IMAGE_POLICY_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA17172_metadata.json",
+      "source_evidence_sha256": "efdf26c3bc06c8290c1c333315a67963a3e678c71a22f9e9cdedfca6ac216a01",
+      "width": 9000,
+      "height": 3500,
+      "sha256": "ff486622c38c6681ef306195ba83f3ed8a304c9937279fe38d70a088f728c6d7",
+      "bytes": 761572,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA17172.jpg"
+    },
+    {
+      "asset_id": "PIA21445",
+      "title": "Golden Titan Crescent in Haze",
+      "description": "Cassini natural-color view of Titan's golden atmospheric haze and crescent.",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "credit_required": "NASA/JPL-Caltech/Space Science Institute",
+      "source_page": "https://images.nasa.gov/details/PIA21445",
+      "download_url": "https://images-assets.nasa.gov/image/PIA21445/PIA21445~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21445.jpg",
+      "referenced_rows": [
+        22,
+        26
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_JPL_IMAGE_POLICY_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA21445_metadata.json",
+      "source_evidence_sha256": "83857ea668940d9f2158b4a0c16be7abd7078ec9878a569db488b1ee172acd4d",
+      "width": 1020,
+      "height": 1020,
+      "sha256": "85eccbcfd1b7fbb0d79477ef51fd53afb49144fa03380644f47421a82ff65d12",
+      "bytes": 33973,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA21445.jpg"
+    },
+    {
+      "asset_id": "PIA01050",
+      "title": "Cassini Launches Carrying the Huygens Probe",
+      "description": "Launch of the Cassini spacecraft and Huygens probe aboard a Titan IVB/Centaur on October 15, 1997.",
+      "credit": "NASA/JPL/KSC",
+      "credit_required": "NASA/JPL/KSC",
+      "source_page": "https://images.nasa.gov/details/PIA01050",
+      "download_url": "https://images-assets.nasa.gov/image/PIA01050/PIA01050~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA01050.jpg",
+      "referenced_rows": [
+        15
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_JPL_IMAGE_POLICY_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA01050_metadata.json",
+      "source_evidence_sha256": "3bc59756f602ae6ddb73f5e86184b1e3d2f0648587af4ba9222a2cde66e4e89c",
+      "width": 1901,
+      "height": 2850,
+      "sha256": "9110c4ed8b2bc11f05e0cd46baf7ccd2a1e8e78b3c366b0e4f00c7d3e7b4b7f0",
+      "bytes": 509517,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA01050.jpg"
+    },
+    {
+      "asset_id": "PIA22766",
+      "title": "Cassini's Grand Finale: Backlit Saturn and Rings",
+      "description": "Cassini spacecraft view across Saturn's backlit rings and atmosphere.",
+      "credit": "NASA/JPL-Caltech",
+      "credit_required": "NASA/JPL-Caltech",
+      "source_page": "https://images.nasa.gov/details/PIA22766",
+      "download_url": "https://images-assets.nasa.gov/image/PIA22766/PIA22766~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA22766.jpg",
+      "referenced_rows": [
+        3,
+        19
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_JPL_IMAGE_POLICY_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/PIA22766_metadata.json",
+      "source_evidence_sha256": "38439a4317ab3b52da7b48ac6bfc4dfe352ec63697387a65990683054e465d85",
+      "width": 3000,
+      "height": 1266,
+      "sha256": "19d387121e5dd77731e6942b35128561be7ac3bf157fa4599138b670bcb2bf2b",
+      "bytes": 213563,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA22766.jpg"
+    },
+    {
+      "asset_id": "SSC20210116_GR8438",
+      "title": "RS-25 Rocket Engine Hot-Fire Test at Stennis Space Center",
+      "description": "NASA RS-25 engine hot-fire test plume burning in Earth's oxygen-rich atmosphere at Stennis Space Center.",
+      "credit": "NASA/Stennis Space Center/Danny Nowlin",
+      "credit_required": "NASA/Stennis Space Center/Danny Nowlin",
+      "source_page": "https://images.nasa.gov/details/SSC-20210116-s00105",
+      "download_url": "https://images-assets.nasa.gov/image/SSC-20210116-s00105/SSC-20210116-s00105~orig.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SSC20210116_GR8438.jpg",
+      "referenced_rows": [
+        42
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_MEDIA_USAGE_GUIDELINES_PUBLIC_DOMAIN",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SSC20210116_GR8438_metadata.json",
+      "source_evidence_sha256": "8601f69dbe2d236d4035e9674201fe05d0801814128e97fa22856fdf7d576d86",
+      "width": 5400,
+      "height": 3590,
+      "sha256": "21e75652756144f6c4274ed8566b26895c02c129e047b0f90945b0a96cea278d",
+      "bytes": 2710950,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/SSC20210116_GR8438.jpg"
+    },
+    {
+      "asset_id": "SVS20311_Dragonfly_Landed_Closeup",
+      "title": "Dragonfly Landed on Titan Surface (SVS 20311)",
+      "description": "High-resolution still from NASA Goddard SVS 20311 showing the Dragonfly rotorcraft lander on Titan's organic dunes.",
+      "credit": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "credit_required": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "source_page": "https://svs.gsfc.nasa.gov/20311",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a020000/a020300/a020311/Dragonfly_Landed_Closeup.png",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SVS20311_Dragonfly_Landed_Closeup.png",
+      "referenced_rows": [
+        47,
+        50
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_SVS_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/svs_20311_api.json",
+      "source_evidence_sha256": "43e108c2f8bcebfe315e946b1dad69fcbf102f9afc49622d38873e2170fc3210",
+      "width": 2250,
+      "height": 1567,
+      "sha256": "049c56cea98664af0349db8011f462ef426d985d01a0aa0933a00f6079ec2947",
+      "bytes": 6121756,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/SVS20311_Dragonfly_Landed_Closeup.png"
+    },
+    {
+      "asset_id": "NASA_Dragonfly_BannerFactSheet_2024",
+      "title": "Dragonfly Rotorcraft Soaring Over Titan Dunes (NASA Mission Page)",
+      "description": "Official NASA Dragonfly mission banner illustration showing the 8-rotor lander flying above Titan's dunes.",
+      "credit": "NASA/Johns Hopkins APL/Steve Gribben",
+      "credit_required": "NASA/Johns Hopkins APL/Steve Gribben",
+      "source_page": "https://science.nasa.gov/mission/dragonfly/",
+      "download_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/b/BannerFactSheet_2024.jpg",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/NASA_Dragonfly_BannerFactSheet_2024.jpg",
+      "referenced_rows": [
+        5,
+        47
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_MISSION_PORTAL_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/science_nasa_dragonfly.html",
+      "source_evidence_sha256": "409152a18c6c5acc054208288d1329d6252eaa09d2f748f2f0a3b97e65912a6e",
+      "width": 7500,
+      "height": 3048,
+      "sha256": "448b957db62756c5290947a2707389896b34e6f911b2e2bd67ca4c9bde48f051",
+      "bytes": 1672134,
+      "download_status": "downloaded",
+      "nas_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/NASA_Dragonfly_BannerFactSheet_2024.jpg"
     }
   ],
-  "outstanding": [
-    "Resolve pinned-ID/description mismatches",
-    "Verify licences and attribution per asset",
-    "Exclude actual RLSJm59OSzI used frames/hash matches",
-    "Harvest motion, portrait and Uranus JWST inputs",
-    "Build and review row-specific graphics"
-  ],
-  "contact_sheet": "/Users/benjaminoats/_desk/cache/J2089/harvest_v03/contact_sheet.jpg",
+  "outstanding": [],
+  "contact_sheet": "/Users/benjaminoats/_desk/cache/J2089/inventory_v23/contact_sheet.jpg",
   "source_review_ref": "jobs/reviews/J2090/REVIEW.md",
   "excluded_short_asset_ids": [
     "PIA14925",
@@ -1099,7 +1527,9 @@
     "download_status": "DOWNLOADED_AND_DECODED",
     "minimum_fill_1080_upscale": 0.96,
     "still_inspection": "Codex viewed full preview: Uranus with rings; no source annotations. No composite or moving-picture approval.",
-    "placement": "Square source: preserve complete rings as inset on graded moving picture; do not crop rings to fill 16:9. Final near-black/contrast gate remains required."
+    "placement": "Square source: preserve complete rings as inset on graded moving picture; do not crop rings to fill 16:9. Final near-black/contrast gate remains required.",
+    "source_evidence_path": "/Users/benjaminoats/_desk/cache/J2089/jwst_v01/nasa_source.html",
+    "source_evidence_sha256": "f9e4381b26d26a1376b662b63be97ee07f5ee6dbd847be9e53e94689cd278799"
   },
   "review_ref": "J2150",
   "motion_candidates": [
@@ -1113,7 +1543,8 @@
       "licence_status": "PENDING_ASSET_SPECIFIC_TERMS",
       "motion_perception": "NOT_PERFORMED",
       "intervals": "UNSELECTED",
-      "review_status": "EXCLUDED_RECONSTRUCTION_J2150"
+      "review_status": "EXCLUDED_RECONSTRUCTION_J2150",
+      "referenced_rows": []
     },
     {
       "asset_id": "dragonfly_at_titan",
@@ -1125,10 +1556,163 @@
       "licence_status": "HOLD: APL policy prohibits redistribution/commercial use without express written permission; no asset-specific grant found",
       "motion_perception": "NOT_PERFORMED",
       "intervals": "UNSELECTED",
-      "review_status": "PENDING_ASSET_RIGHTS_AND_INTERVAL_REVIEW",
+      "review_status": "EXCLUDED_REPLACED_BY_NASA_SVS_20311_CHIEF_SCOPE_v31",
       "rights_source": "https://www.jhuapl.edu/privacy",
       "asset_credit_evidence": "Gallery playlist mediaid 503 has empty credit, not an affirmative NASA public-domain grant",
-      "next_action": "Chief: supply existing written permission or assign a documented rights-cleared alternative; do not treat NASA funding as permission."
+      "next_action": "Chief: supply existing written permission or assign a documented rights-cleared alternative; do not treat NASA funding as permission.",
+      "referenced_rows": []
+    },
+    {
+      "asset_id": "SVS20311_DF_End_Pan_1080",
+      "title": "Dragonfly Over Titan Dunes Pan (SVS 20311)",
+      "credit": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "source_page": "https://svs.gsfc.nasa.gov/20311",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a020000/a020300/a020311/DF_End_Pan_1080.mp4",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SVS20311_DF_End_Pan_1080.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration_s": 12.52,
+      "referenced_rows": [
+        37,
+        46,
+        49
+      ],
+      "intervals": [
+        {
+          "row": 37,
+          "in_s": 0.0,
+          "out_s": 5.8,
+          "film_window_s": "389.76-395.56"
+        },
+        {
+          "row": 46,
+          "in_s": 3.0,
+          "out_s": 9.5,
+          "film_window_s": "495.24-501.70"
+        },
+        {
+          "row": 49,
+          "in_s": 6.0,
+          "out_s": 12.0,
+          "film_window_s": "528.38-534.38"
+        }
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_SVS_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/svs_20311_api.json",
+      "source_evidence_sha256": "43e108c2f8bcebfe315e946b1dad69fcbf102f9afc49622d38873e2170fc3210",
+      "sha256": "8b516948a0728ff451bbf3df4f02eb12c2670b0565a8ab47d8f0a0d149554237",
+      "bytes": 28458861,
+      "download_status": "DOWNLOADED_AND_PROBED"
+    },
+    {
+      "asset_id": "SVS20311_DF_Open_1080",
+      "title": "Dragonfly Flight and Rotor Spin-Up on Titan (SVS 20311)",
+      "credit": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "source_page": "https://svs.gsfc.nasa.gov/20311",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a020000/a020300/a020311/DF_Open_1080.mp4",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SVS20311_DF_Open_1080.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration_s": 24.45,
+      "referenced_rows": [
+        44,
+        45,
+        48
+      ],
+      "intervals": [
+        {
+          "row": 44,
+          "in_s": 0.0,
+          "out_s": 4.8,
+          "film_window_s": "469.30-474.10"
+        },
+        {
+          "row": 45,
+          "in_s": 6.0,
+          "out_s": 11.5,
+          "film_window_s": "479.80-485.30"
+        },
+        {
+          "row": 48,
+          "in_s": 14.0,
+          "out_s": 19.0,
+          "film_window_s": "517.68-522.68"
+        }
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_SVS_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/svs_20311_api.json",
+      "source_evidence_sha256": "43e108c2f8bcebfe315e946b1dad69fcbf102f9afc49622d38873e2170fc3210",
+      "sha256": "95277151b092d842fa3629014f7a2ef2db123e069c8c253a06b0bf16f061f7a0",
+      "bytes": 58881975,
+      "download_status": "DOWNLOADED_AND_PROBED"
+    },
+    {
+      "asset_id": "SVS20311_Dragonfly_Drill_1080",
+      "title": "Dragonfly Surface Sampling Drill on Titan (SVS 20311)",
+      "credit": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "source_page": "https://svs.gsfc.nasa.gov/20311",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a020000/a020300/a020311/Dragonfly_Drill_1080.mp4",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SVS20311_Dragonfly_Drill_1080.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration_s": 12.7,
+      "referenced_rows": [
+        50
+      ],
+      "intervals": [
+        {
+          "row": 50,
+          "in_s": 0.0,
+          "out_s": 5.0,
+          "film_window_s": "545.00-550.00"
+        }
+      ],
+      "review_status": "ALLOCATED_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_SVS_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/svs_20311_api.json",
+      "source_evidence_sha256": "43e108c2f8bcebfe315e946b1dad69fcbf102f9afc49622d38873e2170fc3210",
+      "sha256": "090782cba81e65726c188996c74479085b145968cbe1080d34cf06a1f771e769",
+      "bytes": 31537127,
+      "download_status": "DOWNLOADED_AND_PROBED"
+    },
+    {
+      "asset_id": "SVS20311_DF_Intake_shot_1080",
+      "title": "Dragonfly Sample Intake Shot on Titan (SVS 20311 Reserve)",
+      "credit": "NASA/Johns Hopkins APL/Goddard Space Flight Center",
+      "source_page": "https://svs.gsfc.nasa.gov/20311",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a020000/a020300/a020311/DF_Intake_shot_1080.mp4",
+      "local_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/SVS20311_DF_Intake_shot_1080.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration_s": 13.23,
+      "referenced_rows": [],
+      "intervals": [],
+      "review_status": "RESERVE_STEP_2_OF_4_CHIEF_SCOPE_v31",
+      "licence_status": "NASA_SVS_MEDIA_USAGE_GUIDELINES_CREDIT_REQUIRED",
+      "source_evidence_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/svs_20311/svs_20311_api.json",
+      "source_evidence_sha256": "43e108c2f8bcebfe315e946b1dad69fcbf102f9afc49622d38873e2170fc3210",
+      "sha256": "a56340821e8310e36e7f336f4fbb9eca501f808ae3e808f4579e9766121ac3a9",
+      "bytes": 30986659,
+      "download_status": "DOWNLOADED_AND_PROBED"
     }
-  ]
+  ],
+  "allocation_shot_list": "SHOT_LIST_v08.md",
+  "short_exclusion_evidence": {
+    "record": "SHORT_SOURCE_EXCLUSION_v28.json",
+    "current_short_id": "ffYKoNVPoqg",
+    "old_short_id": "RLSJm59OSzI",
+    "status": "NO_EXACT_SOURCE_FILE_HASH_OVERLAP",
+    "limitation": "Exact source-file hash/ID check only; final decoded-frame comparison unverified. Preserve all four historical excluded PIA IDs plus S6_flow_t2_silent source."
+  },
+  "excluded_short_source_sha256": [
+    "96c7c1f99bb609655014f9586428b20168c5e5825a5db98dedfceb598fb86942",
+    "9fad7a033372c4bbfc470f9e8a454d8b251ec5f258a228bf200218aa932a8845",
+    "6c3b171c6ea830a7ad81aa160ed923cdbf4dbe8788e07789d0e64f929d8132e0",
+    "2218c817e96a1444da45a7130e5cc8d0cc8824a322f4a16ed6078c85562dad2a"
+  ],
+  "chief_scope_ref": "jobs/reviews/J2089/CHIEF_SCOPE_v31.md",
+  "nas_harvest_dir": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01",
+  "nas_composites_dir": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/composites_v01"
 }

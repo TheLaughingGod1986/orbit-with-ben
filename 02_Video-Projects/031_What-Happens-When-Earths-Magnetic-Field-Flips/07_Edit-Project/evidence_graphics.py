@@ -165,7 +165,7 @@ def main(argv=None, specs=None, render_frame=None):
     render_frame = render_frame or frame
     for spec0 in (SPECS if specs is None else specs):
         spec=dict(spec0)
-        spec['id']=f"code_graphic_031_r{spec['row']:02d}_{spec['mode']}_v01"
+        spec['id']=f"code_graphic_031_r{spec['row']:02d}_{spec['mode']}_{spec.get('version', 'v01')}"
         if not any(abs(w['start']-spec['start_s'])<.001 for w in words):
             raise ValueError(f'Not a locked cue: {spec}')
         end=spec['start_s']+spec['duration_s']

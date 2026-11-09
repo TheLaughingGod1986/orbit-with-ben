@@ -11,7 +11,7 @@
 #   2. installs Ollama with Homebrew and starts it ON THIS MAC ONLY (127.0.0.1:11434). It checks nothing else on the
 #      network or Tailscale can reach it, and stops it if something can;
 #   3. downloads the local text model (default qwen3:14b, about 9 GB; OLLAMA_MODEL=... to change, SKIP_MODEL=1 to skip);
-#   4. installs the launchd worker (every 15 min; only on mains power, only when you've been away 10 min).
+#   4. installs the launchd worker (every 3 min; only on mains power, only when you've been away 10 min).
 #   It never changes sleep, firewall, Tailscale or security settings, never signs in to anything for you, never
 #   prints keys, and spends nothing. Re-running it is safe.
 set -euo pipefail
@@ -100,7 +100,7 @@ launchctl bootstrap "gui/$(id -u)" "$PLIST"
 python3 "$OWB/scripts/macbook_worker.py" check || true
 
 print
-say "Done. The worker checks every 15 min and only takes 'macbook' jobs."
+say "Done. The worker checks every 3 min and only takes 'macbook' jobs (plus portable Mini text/code)."
 if (( ${#MISSING} )); then
   say "For you: install and sign in to these agent CLIs on this Mac, the same way as on the Mini: ${MISSING[*]}"
   say "   (codex = Codex, agy = Gemini/Antigravity, claude = Claude Code, agent = Cursor). The worker uses whichever are there."
