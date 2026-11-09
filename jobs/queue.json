@@ -1,5 +1,5 @@
 {
-  "next_id": 2434,
+  "next_id": 2435,
   "jobs": [
     {
       "id": "J0001",
@@ -207708,6 +207708,11 @@
           "at": "2026-11-09T00:22Z",
           "by": "macbook",
           "what": "done: PR #658 (branch macbook/J2418): Rebuilt 031 Short 2 v03 (031_short_sat12_solar_wind_air_v03.mp4, SHA-256 a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3, 1080x1920, 25 fps CFR, 24.48 s) as true full-screen 9:16 vertical. Root cause of v02 blur-pad layout: make_natural_blur_bg() + composite_band_on_natural_blur() in _assemble_031_short2_v02.py (lines 334-384) placed a 1080x608 16:9 strip (BAND_Y0=656..BAND_Y1=1264) over a GaussianBlur(radius=42) stretched copy on 8 of 9 shots. Fix in _assemble_031_short2_v03.py: removed composite_band_on_natural_blur() completely and reframed all 9 shots via crop_affine_9x16() to fill 100% of 1080x1920 edge-to-edge (all upscales <= 1.96x <= 2.35x, zero blurred bands, zero bars). All 7 Shorts gates PASS (gate_shorts_open.py, thumb_preview.py --score frame0 & cover, sfx_kit.py level, music_gate.py, polish_gate.py, picture_qa.py). Mirrored to NAS studio-live, NAS OWB UAT/031_shorts_v03/, and iCloud OWB UAT/031_shorts_v03/, and set awaits_ben on J2418 (--prev OWB-J2395.3) for Sat 12 Dec 11:30Z. £0 spend, no YouTube upload."
+        },
+        {
+          "at": "2026-11-09T08:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2434"
         }
       ],
       "remaining_action": "Done: rebuilt 031 Short 2 v03 as full-bleed 1080x1920 vertical, passed all 7 gates, opened PR #658, and staged for Ben's watch",
@@ -207719,7 +207724,7 @@
         "at": "2026-11-09T00:22Z",
         "by": "macbook"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical)",
         "file": "OWB UAT/031_shorts_v03/031_short_sat12_solar_wind_air_v03.mp4",
         "version": "v03",
@@ -210201,6 +210206,51 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "escalated_at": "2026-11-09T03:43Z"
+    },
+    {
+      "id": "J2434",
+      "title": "031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben approved 031 Short 2 v03 on the board (tick OWB-J2418 ok, 2026-11-09T08:09Z). File: 031_short_sat12_solar_wind_air_v03.mp4 (SHA-256 a385834d7e81cc68b9f423922fbe3a7eed222585be7aec75f4efaf961dcfcab3, 1080x1920, 24.48 s), on NAS studio-live 031 10_Shorts and iCloud OWB UAT/031_shorts_v03/. Check the SHA matches before upload. Upload to OWB as a Short, scheduled Sat 12 Dec 2026 11:30 Europe/London (11:30Z), Related video = the 031 long G5uMANXHtNU (airs Wed 2 Dec 18:00). Title/description per the 031 Shorts plan (J2147, J2418 PR #658). Register in 00_Brand/Channel-Setup/social/UPLOADS.json and let buffer-mirror pick it up. No visibility change to anything else. Then jobs.py done with the video id.",
+      "ref": "",
+      "film": "031",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T08:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T08:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-09T08:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical) v03 (asked in J2418)"
+        }
+      ],
+      "remaining_action": "031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical)",
+        "file": "OWB UAT/031_shorts_v03/031_short_sat12_solar_wind_air_v03.mp4",
+        "version": "v03",
+        "airs": "2026-12-12T11:30Z",
+        "title": "What If the Solar Wind Blew Earth's Atmosphere Into Space?",
+        "number": "031",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2418",
+        "okAt": "2026-11-09T08:52Z"
+      }
     }
   ],
   "focus": [

@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2428 | any | blocked | macbook | – | review · Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30) |  |
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
+| J2434 | mini | open | – | – | 031 upload · studio · 031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU |  |
 
 Recently finished:
 
