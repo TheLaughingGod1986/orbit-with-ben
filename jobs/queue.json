@@ -207307,9 +207307,14 @@
           "at": "2026-11-09T02:21Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3 complete: ran live capability_probe.py gemini --record (audio_input PASS 0.91, moving_video_input FAIL) correcting capabilities.json to ['audio_input'] and committed jobs/reviews/J2414/REVIEW.md (fd8a46d1c0)"
+        },
+        {
+          "at": "2026-11-09T02:21Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3 complete: condition verification artifact committed in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0); parking J2414 for elected Chief to record wait --recheck J2414 on J2339 and close J2414"
         }
       ],
-      "remaining_action": "Park J2414 for elected Chief to record wait --recheck J2414 on J2339 and close J2414",
+      "remaining_action": "Elected Chief records wait --recheck J2414 on J2339 (moving_video_input hold) and closes J2414",
       "kind": "review",
       "recheck_of": "J2339",
       "required_capabilities": [
@@ -207318,11 +207323,11 @@
       "due": "2026-11-08T21:25:21+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-09T02:21Z",
         "by": "gemini",
-        "note": "Step 2/3 complete: ran live capability_probe.py gemini --record (audio_input PASS 0.91, moving_video_input FAIL) correct"
+        "note": "Step 3/3 complete: condition verification artifact committed in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0); parking J2414"
       },
       "taskKeys": [
         "HOS:008"
