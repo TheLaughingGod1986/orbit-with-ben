@@ -209208,23 +209208,26 @@
           "at": "2026-11-09T05:07Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Traced all Passed ask/OK cards (J1199/J2259, J1356.1/J2228, J2395.1-2/J2402, J0974, J1100, J1101) and standalone UPLOADS.json rows"
+        },
+        {
+          "at": "2026-11-09T05:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
         }
       ],
-      "remaining_action": "Implement upload linking and ask/OK card merging in scripts/video_tracker.py and tests",
+      "remaining_action": "Inspect scripts/video_tracker.py and kanban_snapshot.py for Passed ask/OK card upload resolution",
       "kind": "qa",
       "plain": "Fix the Videos page so cuts Ben passed that are already uploaded stop showing as 'Passed, needs scheduling'.",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-09T05:07Z",
+        "at": "2026-11-09T05:28Z",
         "by": "gemini",
-        "note": "Traced all Passed ask/OK cards (J1199/J2259, J1356.1/J2228, J2395.1-2/J2402, J0974, J1100, J1101) and standalone UPLOADS"
+        "note": "Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
       },
       "taskKeys": [
         "OWB:031",
-        "OWB:030",
-        "OWB:028",
-        "OWB:026"
+        "OWB:028"
       ]
     },
     {
