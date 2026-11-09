@@ -210678,13 +210678,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
-      "by": "gemini",
+      "status": "blocked",
+      "by": "",
       "since": "2026-11-09T13:00Z",
       "eta": "2026-11-09T13:15Z",
       "created_by": "claude",
       "created_at": "2026-11-09T12:47Z",
-      "result": "",
+      "result": "needs Ben: the erase stalls after the guard on every run (5+ tries since 13:30, each to the 25-min cap), most likely a macOS removable-volume permission prompt nobody can click unattended. Ben runs in Terminal on the Mac mini: diskutil list external (confirm disk5 = 250 GB Extreme SSD), then: diskutil eraseDisk APFS MiniWork disk5 && mkdir -p /Volumes/MiniWork/scratch /Volumes/MiniWork/films. Parked so it stops holding the Mini queue (J2425, J0124, J0135, J2443 waiting behind it).",
       "history": [
         {
           "at": "2026-11-09T12:47Z",
@@ -210755,6 +210755,11 @@
           "at": "2026-11-09T15:45Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Guard passed: 1 external physical disk /dev/disk5, 250.1 GB, Device Location: External, Device / Media Name: Extreme SSD"
+        },
+        {
+          "at": "2026-11-09T15:53Z",
+          "by": "claude",
+          "what": "blocked: needs Ben: the erase stalls after the guard on every run (5+ tries since 13:30, each to the 25-min cap), most likely a macOS removable-volume permission prompt nobody can click unattended. Ben runs in Terminal on the Mac mini: diskutil list external (confirm disk5 = 250 GB Extreme SSD), then: diskutil eraseDisk APFS MiniWork disk5 && mkdir -p /Volumes/MiniWork/scratch /Volumes/MiniWork/films. Parked so it stops holding the Mini queue (J2425, J0124, J0135, J2443 waiting behind it)."
         }
       ],
       "remaining_action": "Run diskutil eraseDisk APFS MiniWork /dev/disk5",
