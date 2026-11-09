@@ -210911,17 +210911,22 @@
           "at": "2026-11-09T16:36Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Verified /Volumes/MiniWork device 16777242 != ~ device 16777234 (7.3Gi free on ~, 233Gi free on MiniWork)"
+        },
+        {
+          "at": "2026-11-09T16:37Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Step 0-1 complete: /Volumes/MiniWork mounted (device 16777242 != 16777234), chief-relay.pause touched, no other agent CLI job running"
         }
       ],
-      "remaining_action": "Verify MiniWork SSD mount, pause chief-relay, and check running agent CLIs before moving ~/_desk folders",
+      "remaining_action": "Rsync, verify checksums & file counts, and symlink ~/_desk/cache and ~/_desk/scratch onto /Volumes/MiniWork/desk/",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-09T16:36Z",
+        "at": "2026-11-09T16:37Z",
         "by": "gemini",
-        "note": "Verified /Volumes/MiniWork device 16777242 != ~ device 16777234 (7.3Gi free on ~, 233Gi free on MiniWork)"
+        "note": "Step 0-1 complete: /Volumes/MiniWork mounted (device 16777242 != 16777234), chief-relay.pause touched, no other agent CL"
       }
     }
   ],
