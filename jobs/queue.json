@@ -207899,7 +207899,7 @@
     {
       "id": "J2421",
       "title": "Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 8 Nov 2026, on 031 Short 2 v02: 'like a rectangle and blurry above and below'. Per-film assemble scripts (e.g. 024 fri06 muons, 031 v02 fixes, J1199 s6) use a boxblur/gblur fill behind a centred 16:9 plate. On a phone that reads as a landscape video, not a Short. 1) Add a check to the Shorts export gates (the shared gate in studio-core, synced by core_sync to HOS too): sample frames every 1 s; in each, compare the top and bottom ~20% bands against the centre (low Laplacian sharpness plus a matching mirrored/blurred copy of the centre = blur-pad) and also catch flat letterbox bars; FAIL if it shows on more than 10% of frames. Unit tests with a synthetic blur-padded clip and a true full-bleed clip. 2) Add one line to the Shorts build rules (AGENTS.md + the rule file sync_rules manages): every Short shot is reframed to fill 1080x1920 full-bleed; no blur pad, no bars. 3) Run the new check over every Short currently scheduled or on Ben's watch (UPCOMING_SHORTS_GATE.md list) and list any that fail. PR, merge when green. £0.",
       "ref": "",
@@ -208679,6 +208679,11 @@
           "at": "2026-11-09T04:57Z",
           "by": "macbook",
           "what": "released"
+        },
+        {
+          "at": "2026-11-09T04:58Z",
+          "by": "relay",
+          "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: cursor on claude-opus-5-5"
         }
       ],
       "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
@@ -208689,7 +208694,16 @@
         "of": 3,
         "at": "2026-11-09T04:17Z",
         "by": "macbook"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-claude-opus-5-5"
     },
     {
       "id": "J2422",
