@@ -1,0 +1,918 @@
+{
+  "job": "J0954",
+  "version": "v13",
+  "c60": "v11 peanut size and a real waist, v12 solid alpha; straight-run is logged only. Wide scale 0.95\u21921.02 and date 0.92\u21921.00 so every placed frame is at least 250 px. Yaw stays near broadside so the waist is on screen.",
+  "c58": "solid smooth peanut replaces the holed rock_v11b and the stale sawtooth master; v11 audio, cuts and loop unchanged",
+  "c45": "whole code-rendered two-lobe Apophis replaces the chopped Veo matte; v10 audio, cuts and loop unchanged",
+  "rock_gate": {
+    "margin_px": 70,
+    "area_ratio": 0.9998,
+    "straight_run_px": 56,
+    "holes": 0.00037,
+    "perim_over_smooth": 1.0034,
+    "perim_over_hull": 1.0721,
+    "width_px": 266,
+    "width_vs_v11": 0.982,
+    "margin_t": 17.833,
+    "area_t": 12.633,
+    "straight_t": 18.8,
+    "holes_t": 11.4,
+    "serration_t": 18.333,
+    "width_t": 4.1,
+    "frames_checked": 466,
+    "pass": true,
+    "straight_run_gate": "logged only; not a fail",
+    "source": "code-rendered two-lobe Apophis, alpha, no matte",
+    "freshness": {
+      "renderer": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/_render_apophis_rock_v13.py",
+      "renderer_commit": "40c63e129eedb994617a1834bd4311514d8db9dc",
+      "renderer_commit_unix": 1792997699,
+      "rock_dir": "/private/tmp/j0954/rock_v13",
+      "done_unix": 1792997911.18,
+      "done_text": "n=192 half=178 shift=78 px=215.409 aa=1.5 solid=1",
+      "source_worst": {
+        "holes": 0.00017,
+        "perim_over_smooth": 1.002,
+        "perim_over_hull": 1.0726,
+        "frames": 32
+      },
+      "source_waist": {
+        "frames": 192,
+        "share_at_or_under_0.97": 1.0,
+        "min_area_over_hull": 0.9419,
+        "max_area_over_hull": 0.9686
+      }
+    }
+  },
+  "splice_check": [
+    {
+      "a": 6.12,
+      "b": 6.8,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 6.09,
+          "db": -60.2
+        },
+        {
+          "t": 6.1,
+          "db": -51.0
+        },
+        {
+          "t": 6.11,
+          "db": -47.0
+        }
+      ],
+      "pre_max_db": -47.0,
+      "at_db": -24.8,
+      "rule_pass": false,
+      "c42_keep": true,
+      "ok": true
+    },
+    {
+      "a": 0.79,
+      "b": 3.34,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 0.76,
+          "db": -45.8
+        },
+        {
+          "t": 0.77,
+          "db": -37.0
+        },
+        {
+          "t": 0.78,
+          "db": -41.9
+        }
+      ],
+      "pre_max_db": -37.0,
+      "at_db": -42.9,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 0.07,
+      "b": 0.78,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 0.04,
+          "db": -65.4
+        },
+        {
+          "t": 0.05,
+          "db": -63.9
+        },
+        {
+          "t": 0.06,
+          "db": -70.4
+        }
+      ],
+      "pre_max_db": -63.9,
+      "at_db": -60.1,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 6.98,
+      "b": 8.84,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 6.95,
+          "db": -77.1
+        },
+        {
+          "t": 6.96,
+          "db": -79.1
+        },
+        {
+          "t": 6.97,
+          "db": -82.5
+        }
+      ],
+      "pre_max_db": -77.1,
+      "at_db": -75.7,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 11.97,
+      "b": 14.52,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 11.94,
+          "db": -77.8
+        },
+        {
+          "t": 11.95,
+          "db": -83.9
+        },
+        {
+          "t": 11.96,
+          "db": -77.9
+        }
+      ],
+      "pre_max_db": -77.8,
+      "at_db": -61.8,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 14.86,
+      "b": 17.72,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 14.83,
+          "db": -94.3
+        },
+        {
+          "t": 14.84,
+          "db": -93.0
+        },
+        {
+          "t": 14.85,
+          "db": -88.5
+        }
+      ],
+      "pre_max_db": -88.5,
+      "at_db": -73.1,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 18.04,
+      "b": 18.78,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 18.01,
+          "db": -80.3
+        },
+        {
+          "t": 18.02,
+          "db": -77.6
+        },
+        {
+          "t": 18.03,
+          "db": -85.3
+        }
+      ],
+      "pre_max_db": -77.6,
+      "at_db": -78.2,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 9.24,
+      "b": 9.66,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 9.21,
+          "db": -50.2
+        },
+        {
+          "t": 9.22,
+          "db": -45.4
+        },
+        {
+          "t": 9.23,
+          "db": -45.7
+        }
+      ],
+      "pre_max_db": -45.4,
+      "at_db": -47.1,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 9.66,
+      "b": 11.66,
+      "contiguous": true,
+      "pre_30ms": [
+        {
+          "t": 9.63,
+          "db": -52.3
+        },
+        {
+          "t": 9.64,
+          "db": -54.9
+        },
+        {
+          "t": 9.65,
+          "db": -57.2
+        }
+      ],
+      "pre_max_db": -52.3,
+      "at_db": -58.7,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    },
+    {
+      "a": 19.18,
+      "b": 20.52,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 19.15,
+          "db": -43.2
+        },
+        {
+          "t": 19.16,
+          "db": -40.2
+        },
+        {
+          "t": 19.17,
+          "db": -37.9
+        }
+      ],
+      "pre_max_db": -37.9,
+      "at_db": -39.4,
+      "rule_pass": false,
+      "c42_keep": true,
+      "ok": true
+    },
+    {
+      "a": 20.85,
+      "b": 21.56,
+      "contiguous": false,
+      "pre_30ms": [
+        {
+          "t": 20.82,
+          "db": -53.3
+        },
+        {
+          "t": 20.83,
+          "db": -50.2
+        },
+        {
+          "t": 20.84,
+          "db": -41.2
+        }
+      ],
+      "pre_max_db": -41.2,
+      "at_db": -46.7,
+      "rule_pass": true,
+      "c42_keep": false,
+      "ok": true
+    }
+  ],
+  "asr": [
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        15.0
+      ],
+      "text": "miss passes 32,000 kilometers",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        14.0
+      ],
+      "text": "miss. Passes 30- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        13.6,
+        15.0
+      ],
+      "text": "32,000 kilometres.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        16.0
+      ],
+      "text": "It will miss. Passes 32,000 km up. Passes 32,000 km up.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        13.2
+      ],
+      "text": "It will miss.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        12.8,
+        14.4
+      ],
+      "text": "Passes 32 fouls.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        14.0,
+        15.6
+      ],
+      "text": "2,000 km up.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        15.2,
+        16.0
+      ],
+      "text": "half",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        15.0
+      ],
+      "text": "miss passes 32,000 kilometers",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        12.4,
+        14.0
+      ],
+      "text": "miss.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        12.4,
+        15.0
+      ],
+      "slice": [
+        13.6,
+        15.0
+      ],
+      "text": "32,000 kilometers.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        16.0
+      ],
+      "text": "it will miss, passes 32,000km up.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        11.6,
+        13.2
+      ],
+      "text": "It will miss.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        12.8,
+        14.4
+      ],
+      "text": "Passes 32,000...",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        14.0,
+        15.6
+      ],
+      "text": "2,000 km up.",
+      "ok": false,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "window": [
+        11.6,
+        16.0
+      ],
+      "slice": [
+        15.2,
+        16.0
+      ],
+      "text": "up.",
+      "ok": false,
+      "wrong": false
+    }
+  ],
+  "asr_340": [
+    {
+      "model": "small.en",
+      "label": "340-tight",
+      "window": [
+        4.37,
+        5.82
+      ],
+      "text": "340 meters.",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "small.en",
+      "label": "340-phrase",
+      "window": [
+        3.57,
+        6.66
+      ],
+      "text": "an asteroid 340 meters wide on",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "label": "340-tight",
+      "window": [
+        4.37,
+        5.82
+      ],
+      "text": "340 meters",
+      "ok": true,
+      "wrong": false
+    },
+    {
+      "model": "medium.en",
+      "label": "340-phrase",
+      "window": [
+        3.57,
+        6.66
+      ],
+      "text": "an asteroid 340m wide on 5.",
+      "ok": true,
+      "wrong": false
+    }
+  ],
+  "replaces_for_review": "scheduled v05 BbsyFrV8kCY stays untouched",
+  "air_date": "2026-10-28",
+  "youtube_id": "BbsyFrV8kCY",
+  "title_on_screen": "An Asteroid Will Skim Past Earth on Friday the 13th",
+  "file": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13.mp4",
+  "sha256": "2b276eb295dffbf4df0e81d874bce98295cfc8a3b94b4e6da945b162b5898abd",
+  "duration_s": 18.83,
+  "spoken": "Apophis, will fly closer than some of our satellites. An asteroid 340 metres wide, on Friday the 13th, 2029. Many satellites orbit at 36,000. It will miss. passes 32,000 kilometres up Half the world can look up and watch",
+  "words": [
+    {
+      "word": "Apophis,",
+      "start": 0.08,
+      "end": 0.76
+    },
+    {
+      "word": "will",
+      "start": 0.89,
+      "end": 1.03
+    },
+    {
+      "word": "fly",
+      "start": 1.07,
+      "end": 1.29
+    },
+    {
+      "word": "closer",
+      "start": 1.33,
+      "end": 1.87
+    },
+    {
+      "word": "than",
+      "start": 1.97,
+      "end": 2.15
+    },
+    {
+      "word": "some",
+      "start": 2.21,
+      "end": 2.35
+    },
+    {
+      "word": "of",
+      "start": 2.39,
+      "end": 2.47
+    },
+    {
+      "word": "our",
+      "start": 2.51,
+      "end": 2.59
+    },
+    {
+      "word": "satellites.",
+      "start": 2.69,
+      "end": 3.43
+    },
+    {
+      "word": "An",
+      "start": 3.59,
+      "end": 3.7
+    },
+    {
+      "word": "asteroid",
+      "start": 3.78,
+      "end": 4.28
+    },
+    {
+      "word": "340",
+      "start": 4.44,
+      "end": 5.46
+    },
+    {
+      "word": "metres",
+      "start": 5.5,
+      "end": 5.8
+    },
+    {
+      "word": "wide,",
+      "start": 5.9,
+      "end": 6.28
+    },
+    {
+      "word": "on",
+      "start": 6.45,
+      "end": 6.61
+    },
+    {
+      "word": "Friday",
+      "start": 6.67,
+      "end": 7.03
+    },
+    {
+      "word": "the",
+      "start": 7.07,
+      "end": 7.17
+    },
+    {
+      "word": "13th,",
+      "start": 7.19,
+      "end": 7.79
+    },
+    {
+      "word": "2029.",
+      "start": 8.01,
+      "end": 8.99
+    },
+    {
+      "word": "Many",
+      "start": 9.17,
+      "end": 9.39
+    },
+    {
+      "word": "satellites",
+      "start": 9.47,
+      "end": 10.05
+    },
+    {
+      "word": "orbit",
+      "start": 10.19,
+      "end": 10.45
+    },
+    {
+      "word": "at",
+      "start": 10.47,
+      "end": 10.61
+    },
+    {
+      "word": "36,000.",
+      "start": 10.65,
+      "end": 12.01
+    },
+    {
+      "word": "It",
+      "start": 12.2,
+      "end": 12.33
+    },
+    {
+      "word": "will",
+      "start": 12.35,
+      "end": 12.45
+    },
+    {
+      "word": "miss.",
+      "start": 12.51,
+      "end": 12.91
+    },
+    {
+      "word": "passes",
+      "start": 13.03,
+      "end": 13.45
+    },
+    {
+      "word": "32,000",
+      "start": 13.57,
+      "end": 14.65
+    },
+    {
+      "word": "kilometres",
+      "start": 14.73,
+      "end": 15.21
+    },
+    {
+      "word": "up",
+      "start": 15.35,
+      "end": 15.55
+    },
+    {
+      "word": "Half",
+      "start": 15.67,
+      "end": 15.93
+    },
+    {
+      "word": "the",
+      "start": 15.97,
+      "end": 16.03
+    },
+    {
+      "word": "world",
+      "start": 16.07,
+      "end": 16.29
+    },
+    {
+      "word": "can",
+      "start": 16.35,
+      "end": 16.49
+    },
+    {
+      "word": "look",
+      "start": 16.53,
+      "end": 16.69
+    },
+    {
+      "word": "up",
+      "start": 16.79,
+      "end": 17.01
+    },
+    {
+      "word": "and",
+      "start": 17.13,
+      "end": 17.28
+    },
+    {
+      "word": "watch",
+      "start": 17.4,
+      "end": 17.82
+    }
+  ],
+  "spend": "none",
+  "frame_0_plate": "iss023e058455 aurora limb + code-rendered whole Apophis, not the dusk plate",
+  "brief": {
+    "frame_0": "moving code-rendered Apophis on NASA iss023e058455 aurora limb, full-bleed, no Orbit",
+    "first_word_s": 0.08,
+    "surprise_s": 1.33,
+    "first_cut_s": 2.4,
+    "last_word_to_loop_s": 1.0,
+    "meta_promise": false,
+    "payoff_number_s": 13.57,
+    "payoff_vs_70pct": 13.17,
+    "loop_diff": 5.91,
+    "loop_diff_masked": 5.91,
+    "open_median_step": 6.76,
+    "head_matches": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "loop": "forward into frame 0, rock src ends one frame before frame 0",
+    "true_peak_db": -1.4,
+    "lufs": -14.7,
+    "frame0_black_pct": 1.6,
+    "title_window_s": [
+      9.37,
+      13.0
+    ],
+    "scale_window_s": [
+      13.42,
+      17.02
+    ]
+  },
+  "audio": {
+    "stems": {
+      "vo": "02_Video-Projects/030_Apophis-Closer-Than-Our-Satellites/10_Shorts/standalone_apophis/06_Final-Exports/030_apophis_short_v13_stems/stem_vo.wav"
+    },
+    "bed": "owb-standalone-shorts_score_bed_v01.mp3",
+    "mix": "two-pass loudnorm -14 LUFS"
+  },
+  "cuts": [
+    {
+      "row": "aurora_rock_open",
+      "timeline_in": 0.0,
+      "timeline_out": 2.4,
+      "source": "aurora_rock_open.mp4",
+      "upscale": 1.78,
+      "video": true,
+      "framing": {
+        "offset": 1.5
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "day_rock_wide",
+      "timeline_in": 2.4,
+      "timeline_out": 5.91,
+      "source": "day_rock_wide.mp4",
+      "upscale": 1.12,
+      "video": true,
+      "framing": {
+        "offset": 2.5
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "aurora_rock_date",
+      "timeline_in": 5.91,
+      "timeline_out": 9.37,
+      "source": "aurora_rock_date.mp4",
+      "upscale": 1.69,
+      "video": true,
+      "framing": {
+        "offset": 4.4
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "day_rock_title",
+      "timeline_in": 9.37,
+      "timeline_out": 12.85,
+      "source": "day_rock_title.mp4",
+      "upscale": 1.14,
+      "video": true,
+      "framing": {
+        "offset": 6.2
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "day_scale",
+      "timeline_in": 12.85,
+      "timeline_out": 16.15,
+      "source": "day_scale.mp4",
+      "upscale": 1.14,
+      "video": true,
+      "framing": {
+        "offset": 0.0
+      },
+      "plate": "iss034e048455"
+    },
+    {
+      "row": "aurora_rock_watch",
+      "timeline_in": 16.15,
+      "timeline_out": 17.82,
+      "source": "aurora_rock_watch.mp4",
+      "upscale": 1.72,
+      "video": true,
+      "framing": {
+        "offset": 6.8
+      },
+      "plate": "iss023e058455"
+    },
+    {
+      "row": "aurora_rock_loop",
+      "timeline_in": 17.82,
+      "timeline_out": 18.82,
+      "source": "aurora_rock_loop.mp4",
+      "upscale": 1.59,
+      "video": true,
+      "framing": {
+        "offset": 0.5191666666666662
+      },
+      "plate": "iss023e058455"
+    }
+  ],
+  "loop_sentence": "\u2026and watch. Apophis will fly closer than some of our satellites."
+}

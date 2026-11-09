@@ -5,7 +5,9 @@
 #   2. Snapshots both channels (read only) with the shared checkout's .env and node_modules.
 #   3. Gates every Short scheduled in the next 14 days (gate_upcoming.py: report only, and adds any
 #      missing one to the open-gate library), rebuilds 05_Analytics/<channel>/REPORT.md and the
-#      dashboard, commits only 05_Analytics/ and library.json, and pushes to main. A failed channel still lets the other one through, then notifies.
+#      dashboard, commits only 05_Analytics/ and library.json, and pushes to main.
+#      launchd can't read the NAS (macOS privacy): a Short whose files are there is checked from the copy an agent
+#      staged with `gate_upcoming.py --stage` (~/_desk/cache/gate-media), else it reads NOT CHECKED (26 Oct 2026). A failed channel still lets the other one through, then notifies.
 #   4. Runs scripts/board_publish.py once, so the tracker web app (studio-kanban.vercel.app/tracker) shows the new data.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {

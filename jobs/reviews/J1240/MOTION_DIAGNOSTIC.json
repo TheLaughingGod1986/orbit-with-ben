@@ -1,0 +1,81 @@
+{
+  "v06": {
+    "label": "v06",
+    "sha256": "f0b4e0a0318f99ecbe38cdcb0525c8f869fba609d55194da75de45cb579b3ee5",
+    "method": "sub-pixel phase correlation (2\u00d7 upsample) on subject ROI x180:900 y776:1144 at full 1080x1920; flicker = MAD after motion compensation",
+    "mean": [
+      0.0,
+      -3.3625
+    ],
+    "std": [
+      0.0,
+      1.459826616417169
+    ],
+    "acceleration_rms": [
+      0.0,
+      0.6935507611039354
+    ],
+    "step_change_max": [
+      0.0,
+      4.0
+    ],
+    "step_max_abs": [
+      0.0,
+      6.0
+    ],
+    "flicker_mad": 3.197769767045975
+  },
+  "v08": {
+    "label": "v08",
+    "sha256": "9888a2398282c2384290a09eb59a418f36c9960cf6d80036f2cad1cfb634bcf7",
+    "method": "sub-pixel phase correlation (2\u00d7 upsample) on subject ROI x180:900 y776:1144 at full 1080x1920; flicker = MAD after motion compensation",
+    "mean": [
+      -0.025,
+      -3.225
+    ],
+    "std": [
+      0.22220486043288945,
+      1.6276900810658022
+    ],
+    "acceleration_rms": [
+      0.31822291367029204,
+      1.0673521004472302
+    ],
+    "step_change_max": [
+      2.0,
+      6.0
+    ],
+    "step_max_abs": [
+      2.0,
+      5.0
+    ],
+    "flicker_mad": 3.112805376946926
+  },
+  "v09": {
+    "label": "v09",
+    "sha256": "458b1f67d08c567166b49e416fa3e8fefaec7c1a6cce8c3303305b853f8a3535",
+    "method": "sub-pixel phase correlation (2\u00d7 upsample) on subject ROI x180:900 y776:1144 at full 1080x1920; flicker = MAD after motion compensation",
+    "mean": [
+      0.0,
+      -0.1625
+    ],
+    "std": [
+      0.0,
+      0.5797359312652618
+    ],
+    "acceleration_rms": [
+      0.0,
+      0.656033342777212
+    ],
+    "step_change_max": [
+      0.0,
+      3.0
+    ],
+    "step_max_abs": [
+      0.0,
+      3.0
+    ],
+    "flicker_mad": 2.759156012535095
+  },
+  "note": "Sub-pixel phase correlation at full 1080x1920 on subject ROI; flicker = mean abs frame diff after motion compensation on ring ROI. v09 must beat v06 on step_change_max and flicker."
+}

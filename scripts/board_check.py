@@ -94,6 +94,19 @@ def file_on_mini(rel: str) -> bool:
     return False
 
 
+def duplicate_slots(vids: list[dict]) -> list[str]:
+    """Problems for two Short cards of one film scheduled for the same publishAt (OK/ask cards don't count)."""
+    slots: dict = {}
+    for v in vids:
+        yt = v.get("youtube") or {}
+        if v.get("type") != "short" or ":S:" not in str(v.get("key") or "") or yt.get("state") != "scheduled":
+            continue
+        slot = (str(v.get("parent") or v.get("key")).split(":S:")[0], str(yt.get("publishAt") or "")[:16])
+        slots.setdefault(slot, []).append(yt.get("videoId") or v.get("key"))
+    return [f"{film}: {len(ids)} Shorts scheduled for {at}Z ({', '.join(ids)}); a swap's old copy must be unscheduled"
+            for (film, at), ids in sorted(slots.items()) if len(ids) > 1]
+
+
 def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
     checks = board.get("checks") or {}
     expected = [e for e in vt.ask_entries(queue_jobs) if vt.ask_live(e, checks)]
@@ -146,9 +159,19 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
         st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
         key = f"HOS:{f.get('id')}"
         v = by_key.get(key)
-        if st == "done" and v and v.get("lane") not in ("done", "approved"):
+        working = v and v.get("lane") == "progress" and (v.get("youtube") or {}).get("videoId") and any(j.get("status") in vt.ACTIVE_STATUSES for j in v.get("jobs") or [])
+        if st == "done" and v and v.get("lane") not in ("done", "approved") and not working:
             problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
                             "no YouTube read-back (add the long to HOS UPLOADS.json)")
+    # A film on YouTube with a job claimed or open shows in In progress, not Done (Ben, 26 Oct 2026 00:15: "Can't see
+    # these jobs in the in progress lane"); blocked jobs don't count.
+    for v in vids:
+        live = [j.get("id") for j in v.get("jobs") or [] if j.get("status") == "claimed"]
+        if v.get("lane") == "done" and live:
+            problems.append(f"{v.get('key')}: {', '.join(live)} claimed but the card is in Done, not In progress")
+    # One scheduled copy per Short slot: a swap's old copy must read back unscheduled (26 Oct 2026: Earth
+    # dM1OgGPAYvw and its swap OVLv9dxTcpE both showed "Private, scheduled Mon 26 Oct 11:30").
+    problems.extend(duplicate_slots(vids))
     code = site_status(SITE + "/", follow=True)
     if code != 200:
         problems.append(f"live site {SITE}/ answers {code or 'no response'}, not 200")

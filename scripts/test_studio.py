@@ -11,6 +11,22 @@ def blank():
     return {"film": "027", "title": "", "air": "", "stages": {}, "claims": [], "next": ""}
 
 
+class Parse(unittest.TestCase):
+    def test_minute_and_second_stamps(self):
+        self.assertEqual(studio.parse("2026-10-26T08:47Z"), dt.datetime(2026, 10, 26, 8, 47, tzinfo=dt.timezone.utc))
+        self.assertEqual(studio.parse("2026-10-26T08:47:15Z"), dt.datetime(2026, 10, 26, 8, 47, 15, tzinfo=dt.timezone.utc))
+
+
+class FilmDir(unittest.TestCase):
+    def test_a_channel_prefixed_film_id_finds_the_same_folder(self):
+        # 8 Nov 2026: jobs naming "OWB:026" stopped every MacBook claim ("no single film folder").
+        with tempfile.TemporaryDirectory() as t:
+            films = pathlib.Path(t)
+            (films / "026_How-Far-Is-The-Nearest-Star").mkdir()
+            self.assertEqual(studio.film_dir(films, "OWB:026").name, "026_How-Far-Is-The-Nearest-Star")
+            self.assertEqual(studio.film_dir(films, "026").name, "026_How-Far-Is-The-Nearest-Star")
+
+
 class Claims(unittest.TestCase):
     def test_claim_marks_doing(self):
         d = blank()

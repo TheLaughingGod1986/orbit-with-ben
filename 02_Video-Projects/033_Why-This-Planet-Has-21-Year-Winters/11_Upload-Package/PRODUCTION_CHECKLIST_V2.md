@@ -1,8 +1,8 @@
 # Production checklist — Orbit With Ben
 
-**Episode:** `033` — *Why Uranus Has 21-Year Winters After Being Knocked Sideways*  
-**Date:**  
-**Script review score:** ____ / 100 (must be 90 or more)
+**Episode:** `033` — *Why Knocked-Sideways Uranus Has 21-Year Winters*  
+**Date:** 2026-11-04  
+**Script review score:** 95.2 / 100 (must be 90 or more)
 
 Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.md` · `THUMBNAIL_AND_TITLE_RULES.md`
 
@@ -10,14 +10,14 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 
 ## Topic and script
 
-- [ ] Familiar thing in danger. No existing public long on this subject. Competition check done. Ben picked it.
-- [ ] Pre-build vidIQ audit signed off
-- [ ] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
-- [ ] 4–6 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
-- [ ] Picture change about every 4–6 s. Every number sourced. No goodbye line. The last line hands off to the next film.
-- [ ] One `[SUBSCRIBE BEAT]` after the first payoff (25–50%), a line from `templates/SUBSCRIBE_BEAT_LINES.md` not used in the last four longs
-- [ ] Runtime 8–9 min (about 1,200–1,300 words)
-- [ ] `npm run review:script` 90 or more · `npm run gate:episode` PASS
+- [x] Familiar thing in danger. No existing public long on this subject. Competition check done (10 neighbours ≥1.24M views; Short `ZpEA8stoSPA` 461 views d1). Rule-E GO (`J2148`).
+- [x] Pre-build vidIQ audit signed off
+- [x] First 3 s of picture = the danger. Sentence one = the promise. Payoff named by 30 s.
+- [x] 4–6 acts told as cause and effect. The world does the science. Orbit in 1–2 beats only.
+- [x] Picture change about every 4–6 s. Every number sourced. No goodbye line. The last line hands off to the next film.
+- [x] One `[SUBSCRIBE BEAT]` after the first payoff (25–50%), a line from `templates/SUBSCRIBE_BEAT_LINES.md` not used in the last four longs
+- [x] Runtime 8–9 min (about 1,200–1,300 words: 1,290 spoken words in `v02`)
+- [x] `npm run review:script` 90 or more (95.2/100) · `npm run gate:episode` PASS
 
 ## Voice and picture
 
@@ -36,19 +36,19 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] 4-second lower-right subscribe cue under the beat, with the picture still moving
 - [ ] Watched once on a phone with the sound on
 
-## Shorts (3 a week)
+## Shorts (2 per new OWB long, Ben 4 Nov 2026)
 
-- [ ] 22–27 s. First-two-seconds rules. Orbit not at frame 0.
+- [ ] 22–27 s (Test A opening Short excepted). First-two-seconds rules. Orbit not at frame 0.
 - [ ] `gate_shorts_open.py check` PASS for each export
 - [ ] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening.
 
 ## Packaging and Studio
 
-- [ ] Title: one of the six shapes. No hashtags, suffix, hedged claim or repeat title.
-- [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long.
-- [ ] Description: real subject first · chapters · sources · affiliate only if named in the film
-- [ ] Upload private with `publishAt`. Long = normal publish, Sunday 18:00 UK (no Premiere). Altered content: yes.
-- [ ] Long: Test & Compare · end screen (best related long + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio
+- [ ] Title: one of the six shapes + Rule 15 (≤50 chars) + Rule 18 real-imagery variant. No hashtags, suffix, hedged claim or repeat title.
+- [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long (including Rule 19 single real spacecraft frame + Rule 14 bright test).
+- [ ] Description: real subject first · chapters · Next in the series (`Real Worlds`, Rule 20) · sources · image credits · making-of line
+- [ ] Upload private with `publishAt`. Long = normal publish, Sunday or Wednesday 18:00 UK (no Premiere). Altered content: yes.
+- [ ] Long: Test & Compare · end screen (`Real Worlds` series playlist + next film in series + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio
 - [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
 
 **Ship only when every box is ticked and Ben has signed off.**

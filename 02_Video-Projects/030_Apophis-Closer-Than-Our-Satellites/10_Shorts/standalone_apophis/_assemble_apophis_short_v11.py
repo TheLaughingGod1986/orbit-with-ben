@@ -34,7 +34,7 @@ from short_c37 import finish_scan, limiter, loop_metrics, true_peak  # noqa: E40
 
 VO_WAV = HERE / "02_Voiceover/trim/030_apophis_short_vo_v01_trim.wav"
 WORDS_JSON = HERE / "02_Voiceover/trim/030_apophis_short_vo_v01_trim_words.json"
-ROCK_DIR = Path("/private/tmp/j0954/rock_v11")
+ROCK_DIR = Path("/private/tmp/j0954/rock_v11b")
 OVERLAY = HERE / "code_graphics_v01/code_graphic_030short_r05_scale_v01.mov"
 BED_SRC = SA / "05_Music/owb-standalone-shorts_score_bed_v01.mp3"
 BED_PLAN = SA / "05_Music/owb-standalone-shorts_score_bed_v01_plan.json"

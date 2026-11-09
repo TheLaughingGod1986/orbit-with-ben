@@ -1,4 +1,25 @@
-# Shorts brief — 028 `lift_oort_marbles` (`028_short_lift_oort_marbles_v01`)
+# Shorts brief — 028 `lift_oort_marbles`
+
+## v03 (`J0964` c52, fix of v02)
+
+v01 and v02 are untouched. Same VO, 22.37 s, hook, banner, end card, loop and Wed 16 Dec 2026 11:30 London slot.
+
+- **s05 La Silla:** floor clamp removed. Gamma 0.74, brightness 0.04, contrast 1.20. Crop slid onto the Milky Way so the dome stays dark (p5 2.3, p95 109.7 outside the banner and caption).
+- **s04 NEOWISE:** comet punched into the top third, city horizon kept below the title. No low-detail look-at.
+- **Call-out:** `GLIESE 710` / `in about 1.3 million years` on the Gaia shot, 7.10–8.95 s, out before the banner.
+- **Level:** AAC −14.48 LUFS, true peak −1.89 dBTP.
+- **Spend:** £0.
+
+## v02 (`J0964`, fix of v01)
+
+v01 is untouched. v02 keeps the same VO, 22.37 s timing, hook and payoff.
+
+- **End card:** long title plus yellow row `Full film on the channel`. No YouTube id on any frame.
+- **Air date:** Wed 16 Dec 2026, 11:30 London. Mon 7 Dec is held by `X768qs8sNQs`. J0961 holds Wed 9, Fri 11 and Mon 14 Dec. Wed 16 Dec is the first free OWB Short weekday after that.
+- **Picture:** s04 NEOWISE is a higher crop (comet and dusk horizon) with a modest exposure lift, so the phone is brighter and polish_gate has no gutter. s05 La Silla is exposure-lifted. The loop tail is the opening SDO clip reversed so the last frame is frame 0 (source time 34.00 s).
+- **Spend:** £0.
+
+## v01 (`028_short_lift_oort_marbles_v01`)
 
 - **Job:** `J0911` (`Backlog OWB: next Short cut from a locked long (existing VO + picture only)`)
 - **Parent long:** `028_A-Star-Is-Coming-Toward-Us` — *"What Happens When a Star Passes Through Our Solar System?"* (`F-jImX5h7ws`)

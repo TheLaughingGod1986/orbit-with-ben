@@ -3,6 +3,10 @@
 // as the classic board (OWB → issue #264, HOS → #180).
 (function () {
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
+  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
+  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+    .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const API = "/api/checks";
@@ -12,7 +16,7 @@
     ["changes", "Changes requested"],
     ["ready", "Ready for OK"],
     ["approved", "Approved, on its way"],   // Ben, 25 Oct 14:13: what he OK'd, until YouTube has it (video_tracker.py)
-    ["done", "Done on YouTube"],
+    ["done", "On YouTube"],
   ];
 
   let key = null;
@@ -38,6 +42,8 @@
 
   // Mirror of scripts/video_tracker.py derive_lane (keep in sync for instant taps).
   function deriveLane(v, check) {
+    // Keep the server's decision when an uploaded video has actionable work.
+    if (v.working && v.lane === "progress") return "progress";
     if ((v.youtube && v.youtube.videoId) || v.lane === "done") return "done";
     const jobs = v.jobs || [];
     const unhandled = check && !check.handled;
@@ -232,25 +238,45 @@
   }
 
   // "Approved, on its way": what Ben OK'd, the job carrying it, and that job's live state.
+  function approvalSummary(a) {
+    const status = String(a.status || "").replace(/\s+/g, " ").trim();
+    const dependency = /^Waiting for (J\d+):/.exec(status);
+    if (dependency) {
+      const task = (board?.owb?.jobs || []).find(j => j.id === dependency[1]);
+      return task ? `Waiting for: ${plainTask(task)}.` : "Waiting for a required task to finish.";
+    }
+    if (status.length <= 150) return status;
+    return status.slice(0, 147).replace(/\s+\S*$/, "") + "…";
+  }
   function approvedHtml(a) {
-    const label = { waiting: "Waiting on Chief", queued: "Queued", working: "Working", blocked: "Blocked", uploaded: "Uploaded", cancelled: "Cancelled" }[a.state] || a.state || "";
-    const pct = a.state === "working" && a.of ? Math.max(5, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
+    const label = { waiting: "Waiting on Chief", queued: "Queued", working: "Working", blocked: "On hold", uploaded: "Uploaded", cancelled: "Cancelled" }[a.state] || a.state || "";
+    const pct = a.state === "working" && a.of ? Math.max(0, Math.min(100, Math.round(100 * (a.step || 0) / a.of))) : 0;
+    const summary = approvalSummary(a);
+    const extraWarning = a.warn && a.warn !== a.status ? a.warn : "";
+    const details = summary !== (a.status || "") || extraWarning;
     return `<div class="appr ${esc(a.state || "")}${a.warn ? " warn" : ""}">
-      <div class="appr-top"><span class="appr-state">${esc(label)}</span>${a.job ? `<span class="mono">${esc(a.job)}</span>` : ""}${a.version ? `<span>· OK'd ${esc(a.version)}</span>` : ""}</div>
-      <div class="appr-line">${esc(a.status || "")}</div>
-      ${pct ? `<div class="appr-bar"><span style="width:${pct}%"></span></div>` : ""}
+      <div class="appr-top"><span class="appr-state">${esc(label)}</span>${a.version ? `<span>· OK'd ${esc(a.version)}</span>` : ""}</div>
+      <div class="appr-line">${esc(summary)}</div>
+      ${details ? `<details id="approval-${esc(a.job || a.askJob || "details")}"><summary>Decision & details</summary><p class="decision-text">${a.job ? `<span class="mono">${esc(a.job)}</span> · ` : ""}${esc(a.status || "")}</p>${extraWarning ? `<p class="decision-text">${esc(extraWarning)}</p>` : ""}</details>` : ""}
+      ${a.state === "working" && a.of ? `<div class="appr-bar" role="progressbar" aria-label="Approval task progress" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div><span class="meta">${pct}%</span>` : ""}
       ${a.airsText ? `<div class="appr-line">Airs ${esc(a.airsText)} London</div>` : ""}
     </div>`;
   }
 
   function cardHtml(v) {
     const flagged = (v.flags || []).length;
+    const activeJob = cardWork(v).live.find(j => jobState(j) === "running");
+    const chiefReview = board?.models?.chiefWork?.active;
+    const reviewJob = chiefReview && tsOf(chiefReview.expiresAt) > Date.now()
+      ? (board?.owb?.jobs || []).find(j => j.id === chiefReview.job && matchesVideo(j, v)) : null;
+    const active = activeJob || reviewJob;
+    const activeLabel = active ? `${activeJob && !activeJob._chiefReview ? "Working now" : "Chief reviewing"}` : "";
     const chClass = v.channel === "HOS" ? "hos" : "orbit";
     const chLabel = v.channel === "HOS" ? "HOS" : "Orbit";
     const notes = (v.notes || []).map(n =>
       `<li class="${n.done ? "done" : ""}"><span class="box" aria-hidden="true"></span><span>${n.t ? `<span class="t">${esc(n.t)}</span>` : ""}${esc(n.text)}</span></li>`
     ).join("");
-    const flagHtml = (v.flags || []).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
+    const flagHtml = (v.flags || []).filter(f => !(v.lane === "approved" && v.approved && f.kind === "approved")).map(f => `<div class="flag">${esc(f.text)}</div>`).join("");
     const showActions = v.lane === "ready" && v.readyFor === "Ben" && (v.type === "long" || !!v.ask);
     // Big Play button for UAT (Ben, 25 Oct 00:03): the exact cut under review via the board's /api/watch link (plays in
     // the browser), YouTube for Done. Review lanes without a link say so instead of hiding the button.
@@ -263,16 +289,19 @@
       : "";
     return `<article class="card${flagged ? " flagged" : ""}" data-key="${esc(v.key)}">
       <div class="top">
+        ${active ? `<span class="active-task" title="${esc(taskOf(active))}"><span class="live-dot" aria-hidden="true"></span>${esc(activeLabel)}</span>` : ""}
         <span class="badge ${chClass}">${chLabel}</span>
         <span class="badge type">${esc(v.type === "short" ? "Short" : "Long")}</span>
+        ${v.youtube?.videoId ? `<span class="badge publication">${esc(v.youtube.state === "live" && v.youtube.privacy === "public" ? "Live" : v.youtube.state === "scheduled" ? "Scheduled" : "Private")}</span>` : ""}
         ${v.version ? `<span class="badge ver">${esc(v.version)}</span>` : ""}
         ${v.lane === "ready" && v.readyFor ? `<span class="ready-tag">Waits on ${esc(v.readyFor)}</span>` : ""}
       </div>
       <h3 class="title"><span class="num">${esc(v.number)}</span>${esc(v.title)}</h3>
-      ${v.airText ? `<p class="meta">${v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
-      <p class="line">${esc(v.line)}</p>
+      ${v.airText ? `<p class="meta">${v.youtube?.state === "live" && v.youtube.privacy === "public" ? "Published " + esc(v.airText) : v.lane === "done" ? esc(v.airText) : "Airs " + esc(v.airText)}</p>` : ""}
+      <p class="line">${esc(v.lane === "approved" && v.approved ? `You OK'd ${v.approved.version || v.version || "it"}${v.approved.okAtText ? ` on ${v.approved.okAtText}` : ""}.` : reviewJob && !activeJob ? `Chief reviewing ${reviewJob.id}: ${taskOf(reviewJob)}` : cardHeadline(v))}</p>
+      ${cardWorkHtml(v)}
       ${v.ask && v.ask.dueText && v.lane === "ready" && v.readyFor === "Ben" ? `<p class="meta"><b>OK by ${esc(v.ask.dueText)} London</b> · ${esc(v.ask.job)}</p>` : ""}
-      <p class="meta">Waiting on: ${esc(v.waitingOn || "—")}</p>
+      ${(v.lane === "approved" && v.approved) || cardWork(v).live.length ? "" : `<p class="meta">Waiting on: ${esc(cardWaiting(v))}</p>`}
       ${flagHtml ? `<div class="flags">${flagHtml}</div>` : ""}
       ${v.okNote ? `<div class="okline">✓ ${esc(v.okNote)}</div>` : ""}
       ${v.lane === "approved" && v.approved ? approvedHtml(v.approved) : ""}
@@ -294,24 +323,160 @@
   const dur = ms => { const m = Math.max(0, Math.round(ms / MIN)); return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? ` ${m % 60} min` : ""}`; };
   const agentName = by => {
     const b = String(by || "").toLowerCase(), last = b.split("/").pop();
+    if (last === "codex-dashboard") return "Codex";
     if (last === "gemini" || last === "agy") return "Gemini";
     if (b === "chief" || b.startsWith("chief/")) return "Grok";
     return last ? last[0].toUpperCase() + last.slice(1) : "";
   };
-  // Same maths as the classic board's progressOf: step k of n done at a time → pace per step; never 100% until done.
-  // Ben, 24 Oct 23:57: one filled bar with a number, e.g. "26% · ~57 min left". Completed-step pace when a step is
-  // done; otherwise time since work started over the job's usual length. Capped at 95% until the job is done; past the
-  // usual length it reads "95% · running over". % and time left come from the same total, so they always agree.
+  // Percent is confirmed steps, never elapsed time presented as completed work.
   function jobProgress(j) {
-    const p = j.progress || {}, s = tsOf(j.workStart || j.claimedAt), at = tsOf(p.at), now = Date.now();
+    const activity = (board?.workflow?.active || []).find(a => a.id === j.id && a.mode === "review");
+    const p = activity?.progress || j.progress || {}, s = tsOf(activity?.startedAt || j.workStart || j.claimedAt);
     const est = (+j.estMin || +j.typMin || 25) * MIN;
-    if (isNaN(s)) return { pct: 0, left: est, over: false, start: s, total: est };
-    const elapsed = Math.max(0, now - s);
-    let total = est;  // expected total working time
-    if (p.of >= 1 && p.step >= 1 && p.step <= p.of && !isNaN(at) && at > s) total = (at - s) / p.step * p.of;
-    const frac = elapsed / total, over = frac >= 0.95;
-    const pct = Math.max(1, Math.min(95, Math.round(frac * 100)));
-    return { pct, left: Math.max(0, total - elapsed), over, start: s, total };
+    const elapsed = isNaN(s) ? 0 : Math.max(0, Date.now() - s);
+    const reported = Number.isInteger(p.step) && Number.isInteger(p.of) && p.of > 0 && p.step >= 0 && p.step <= p.of;
+    return { pct: reported ? Math.round(100 * p.step / p.of) : null,
+      left: Math.max(0, est - elapsed), over: elapsed > est, start: s, total: est };
+  }
+  function jobState(j) {
+    const status = board?.workflow?.states?.[j.id]?.state;
+    if (status) return status;
+    if (j.status === "claimed") {
+      const last = Math.max(tsOf(j.eta) || 0,tsOf(j.progress?.at) || 0);
+      return last && last < Date.now() - 45 * MIN ? "stalled" : "running";
+    }
+    if (j.status === "blocked" && /reset|renewal|waits? (?:for |until ).*public|date gate|test.*(?:running|ends?)/i.test(j.result || "")) return "waiting";
+    if (j.status === "blocked") return /parked for (?:the )?chief|chief (?:review|pass|ruling)/i.test(j.result || "") ? "review" : "waiting";
+    const states = ((board || {}).owb || {}).jobStates || {};
+    if (tsOf(j.notBefore) > Date.now() || (j.after && states[j.after]?.status !== "done")) return "waiting";
+    return "queued";
+  }
+  function blockReason(j) {
+    const reason = board?.workflow?.states?.[j.id]?.reason;
+    if (reason) return reason;
+    if (j.status === "blocked") return j.result || j.last?.what || "No blocker reason recorded.";
+    if (j.after) return `Waiting for ${j.after}.`;
+    if (j.notBefore) return `Starts after ${new Date(j.notBefore).toLocaleString("en-GB", { timeZone: "Europe/London" })} London.`;
+    return "Claim is overdue; waiting for the relay to check or reassign it.";
+  }
+  function supportingJob(j) {
+    return /\bBacklog\b|Weekly .*audit|Daily Studio read|QA sweep|listing check.*(?:live videos|last \d+)/i.test(j.title || "");
+  }
+  // Mirror of scripts/video_tracker.py job_is_channel_wide: a job tagging 4+ videos is studio-wide, not one card's work.
+  function channelWide(j) {
+    const keys = j.taskKeys || [];
+    return keys.length >= 4 || (/^Backlog\b/i.test(j.title || "") && keys.length > 1);
+  }
+  function matchesVideo(j, v) {
+    if (supportingJob(j) || channelWide(j)) return false;
+    if (j.recheck_of) {
+      const original = (board?.owb?.jobs || []).find(x=>x.id===j.recheck_of && !x.recheck_of);
+      return original ? matchesVideo(original,v) : false;
+    }
+    if ((v.jobs || []).some(x => x.id === j.id)) return true;
+    const vid = v.shortId || v.youtube?.videoId;
+    if (vid && String(j.title || "").includes(vid)) return true;
+    // Parent-film completions are not completions of every Short.
+    if (v.type === "short") return false;
+    if ((j.taskKeys || []).includes(v.key) || j.film === v.key) return true;
+    const f = filmOf(j);
+    return f.key === v.key;
+  }
+  function activityJob(j) {
+    const activity = (board?.workflow?.active || []).find(a => a.id === j.id && a.mode === "review");
+    return activity ? {...j, status:"claimed", by:activity.worker, claimedAt:activity.startedAt,
+      progress:activity.progress || {step:0,of:3}, _chiefReview:true} : j;
+  }
+  function cardWork(v) {
+    const owb = (board || {}).owb || {};
+    const live = (owb.jobs || []).filter(j => matchesVideo(j, v));
+    // Baked data still supplies live ids before the full queue arrives.
+    for (const j of v.jobs || []) if (!supportingJob(j) && !live.some(x => x.id === j.id)) live.push(j);
+    const done = (owb.done || []).filter(j => matchesVideo(j, v)).sort((a,b) => tsOf(b.at)-tsOf(a.at));
+    return { live:live.map(activityJob), done };
+  }
+  function cardWaiting(v) {
+    if (!["progress","changes"].includes(v.lane)) return v.waitingOn || "—";
+    const live=cardWork(v).live;
+    const running=live.find(j=>jobState(j)==="running");
+    if(running) return agentName(running.by);
+    if(live.some(j=>jobState(j)==="queued")) return "next available worker";
+    if(live.length) return [...new Set(live.map(j=>jobState(j)==="review"?"Chief review":/ElevenLabs|Flow.*credit|credit.*renew/i.test(j.result||"")?"credit reset":"input / date"))].join(" · ");
+    return v.waitingOn || "—";
+  }
+  // Plain task labels are display-only; queue titles, dependencies and decisions remain in Job details.
+  function plainTask(j, v) {
+    if (j._chiefReview) return "Review the finished work";
+    return j.remaining_action ? String(j.remaining_action) : "Remaining action needs an update";
+  }
+  function plainStatus(j, v) {
+    const state = jobState(j), reason = blockReason(j);
+    if (state === "running") return "Working now";
+    if (j.needs === "ben" || j.awaits_ben || j.hold?.type === "ben") return "Waiting for your approval";
+    if (state === "review") return "Waiting for Chief approval";
+    if (state === "stalled") return "Needs a worker to resume it";
+    if (state === "queued") return "Ready to start";
+    const dep = (board?.owb?.jobs || []).find(x => x.id === j.after);
+    if (dep && jobState(dep) !== "done") {
+      if (/audition|pronunciation/i.test(dep.title || "")) return "After the sound check";
+      if (/audio-only.*correction|loudness|AAC levels/i.test(dep.title || "")) return "After the audio fix";
+      return `After: ${plainTask(dep,v).replace(/^./,c=>c.toLowerCase())}`;
+    }
+    if (j.hold) {
+      const until = tsOf(j.hold.check_at), date = !isNaN(until) ? new Date(until).toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"Europe/London"}) : "";
+      const held = {public:"After the video is public",credits:"After credits have renewed",test:"After the current test finishes",dependency:"After the required check",date:"Waiting for the recorded date"}[j.hold.type] || j.hold.condition;
+      return `${held}${date ? ` · ${until <= Date.now() ? "recheck due" : "check"} ${date}` : ""}`;
+    }
+    if (/test.*(?:running|ends?)|T&C.*running/i.test(reason)) return "After the current title test finishes";
+    if (/credit|reset|renewal|ElevenLabs/i.test(reason)) return "Waiting for credits to reset";
+    if (j.notBefore && tsOf(j.notBefore) > Date.now()) return `Waiting until ${new Date(j.notBefore).toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"Europe/London"})}`;
+    if (j.dependency_problem) return "Needs a Chief decision to unblock it";
+    return "Waiting for a required check or input";
+  }
+  function cardHeadline(v) {
+    if (!["progress", "changes"].includes(v.lane)) return v.line;
+    if (v.youtube?.state === "live" && v.youtube.privacy === "public") return "Live on YouTube · follow-up work below.";
+    const live=cardWork(v).live;
+    if (live.some(j=>jobState(j)==="running")) return "Work is underway.";
+    if (live.some(j=>jobState(j)==="queued")) return "Work is ready to start.";
+    if (live.length) return "Work is paused · see what's needed below.";
+    return v.line;
+  }
+  function cardWorkHtml(v) {
+    const w = cardWork(v);
+    if (!w.live.length && !w.done.length) return "";
+    const rank = {running:0,queued:1,review:2,stalled:3,waiting:4};
+    const remaining = w.live.slice().sort((a,b)=>(rank[jobState(a)]??5)-(rank[jobState(b)]??5));
+    return `<div class="card-work">
+      ${w.live.length ? `<b>What's left</b><ul class="remaining-list">${remaining.map(j=>`<li>${jobState(j)==="running" ? jobHtml(j,"now",v) : `<span class="task-action">${esc(plainTask(j,v))}</span><span class="task-status">${esc(plainStatus(j,v))}</span>`}</li>`).join("")}</ul>
+      <details id="remaining-${esc(v.key)}"><summary>Job details</summary>${w.live.map(waitingJobHtml).join("")}</details>` : ""}
+      ${w.done.length?`<details id="completed-${esc(v.key)}"><summary>Work history</summary>${w.done.slice(0,8).map(doneJobHtml).join("")}</details>`:""}
+    </div>`;
+  }
+  function waitingJobHtml(j) {
+    const state=jobState(j), labels={queued:"Queued",waiting:"Waiting on input/date",review:"Awaiting Chief review",stalled:"Stalled claim",running:"Running"};
+    return `<div class="task-row"><b>${esc(j.id)} · ${labels[state]}</b><div>${esc(taskOf(j))}</div>
+      ${state!=="queued"?`<p class="block-reason">${esc(blockReason(j))}</p>`:""}
+      ${j.progress?.of?`<div class="meta">${j.progress.step} of ${j.progress.of} steps recorded complete${j.progress.note?` · ${esc(j.progress.note)}`:""}</div>`:""}
+      ${j.last?.at?`<div class="meta">Updated ${esc(new Date(j.last.at).toLocaleString("en-GB",{timeZone:"Europe/London"}))} London · ${esc(agentName(j.last.by || j.by))}</div>`:""}</div>`;
+  }
+  function doneJobHtml(j) {
+    return `<div class="task-row"><b>✓ ${esc(j.id)} · ${esc(agentName(j.by))} · ${esc(new Date(j.at).toLocaleString("en-GB",{timeZone:"Europe/London"}))} London</b><div>${esc(taskOf(j))}</div>${j.result?`<p class="meta">${esc(j.result)}</p>`:""}</div>`;
+  }
+  function renderActivity() {
+    const el=document.getElementById("activity"), owb=(board||{}).owb;
+    if (!el || !owb) return;
+    const opened=[...el.querySelectorAll("details[open]")].map(x=>x.id);
+    const jobs=owb.jobs||[], counts=board?.workflow?.counts || jobs.reduce((a,j)=>{const k=jobState(j);a[k]=(a[k]||0)+1;return a;},{});
+    const today=new Date().toLocaleDateString("en-CA",{timeZone:"Europe/London"});
+    const done=(owb.done||[]).filter(j=>new Date(j.at).toLocaleDateString("en-CA",{timeZone:"Europe/London"})===today).sort((a,b)=>tsOf(b.at)-tsOf(a.at));
+    const waiting=jobs.filter(j=>["waiting","review","stalled"].includes(jobState(j)));
+    el.innerHTML=`<h2>Studio job activity <span class="meta">Both channels · all jobs</span></h2>
+      <div class="activity-counts"><span><b>${counts.running||0}</b> running</span><span><b>${counts.queued||0}</b> queued</span><span><b>${waiting.length}</b> waiting / review</span><span><b>${owb.day?.doneToday ?? done.length}</b> completed today</span></div>
+      <p class="meta">Lane numbers count videos. These numbers count jobs; one video can need several jobs.</p>
+      <details id="activity-done"><summary>Completed today · ${owb.day?.doneToday ?? done.length}</summary>${done.map(doneJobHtml).join("")||'<p class="meta">No completion records available yet.</p>'}</details>
+      <details id="activity-waiting"><summary>Waiting and blockers · ${waiting.length}</summary>${waiting.map(waitingJobHtml).join("")}</details>`;
+    opened.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
   }
   function filmOf(j) {
     const t = String(j.title || "").replace(/^URGENT:?\s*/i, "");
@@ -330,7 +495,8 @@
     t = t.replace(/\s*->\s*/g, " → ").replace(/,?\s*park(ed)? for Chief\.?$/i, "").trim();
     return t.length > 150 ? t.slice(0, 148) + "…" : t;
   }
-  function jobHtml(j, kind) {
+  function jobHtml(j, kind, video) {
+    j = activityJob(j);
     const f = filmOf(j);
     let who = j.status === "claimed" ? agentName(j.by) : (j.routedTo || agentName(j.by) || (j.needs === "mini" ? "Mac mini worker" : j.needs || ""));
     // The queue's planned worker may be out of usage: say the relay will fall back rather than show a red worker as next.
@@ -339,29 +505,35 @@
     const model = j.model ? ` · ${esc(j.model)}` : "";
     let bar = "", note = "";
     if (kind === "now") {
-      const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `Step ${Math.min((p.step || 0) + 1, p.of)} of ${p.of}` : (j.stage ? `Stage: ${j.stage}` : "");
+      const pr = jobProgress(j), p = j.progress || {}, step = p.of ? `${p.step || 0} of ${p.of} steps complete` : (j.stage ? `Stage: ${j.stage}` : "");
       const since = isNaN(pr.start) ? "" : `started ${hm(pr.start)} · ${dur(Date.now() - pr.start)} so far`;
       const tail = pr.over ? "running over" : `~${dur(pr.left)} left`;
       // Colour moves with progress (Ben, 25 Oct 00:03): red-orange < 34, amber 34-66, green > 66; running over is purple.
       const band = pr.over ? "over" : pr.pct < 34 ? "low" : pr.pct <= 66 ? "mid" : "high";
-      bar = `<div class="bar ${band}" role="progressbar" aria-valuenow="${pr.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pr.pct}%"></i></div>`;
-      note = `<b style="color:var(--ink)">${pr.pct}% · ${tail}</b> · ${[step, since, `usually ~${dur(pr.total)}`].filter(Boolean).join(" · ")}`;
-      if (p.note) note += `<br>Last step: ${esc(String(p.note).slice(0, 140))}`;
+      const pct = pr.pct ?? 0;
+      bar = `<div class="bar ${band}" role="progressbar" aria-label="${pr.pct === null ? "Recorded completion; no steps reported yet" : "Confirmed job steps"}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>`;
+      note = pr.pct === null ? "0% recorded · waiting for the first update" : `${pr.pct}% · ${step}${!isNaN(pr.start) ? ` · ${dur(Date.now() - pr.start)}` : ""}`;
+      const updated = tsOf(p.at), last = isNaN(updated) ? pr.start : updated;
+      if (!isNaN(last) && Date.now() - last >= 5 * MIN) note += ` · No progress update for ${dur(Date.now() - last)}`;
+      if (p.note) note += `<details class="job-detail"><summary>Latest update${p.at ? ` · ${hm(tsOf(p.at))}` : ""}</summary>${esc(String(p.note).slice(0, 240))}</details>`;
     } else {
-      note = j.urgent ? "Urgent — goes first" : (j.after ? `after ${esc(j.after)}` : "");
+      note = j.due ? `Due ${esc(new Date(j.due).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/London"}))} London` : "";
     }
+    const prefix = String(j.title || "").split(":")[0].replace(/\bJ\d+\b/g, "").trim();
+    const subject = f.title || (prefix.length < 55 && !/^(?:HC|Chief|Backlog)$/i.test(prefix) && String(j.title || "").includes(":") ? prefix : "");
     return `<div class="job ${kind}">
-      <div class="jtop"><span class="jid">${esc(j.id)}</span>${j.urgent ? '<span class="badge type" style="color:var(--flag)">URGENT</span>' : ""}<span>${esc(who)}${model}</span></div>
-      ${f.label ? `<div class="jfilm"><span class="num">${esc(f.label)}</span> ${esc(f.title)}</div>` : ""}
-      <div class="jtask">${esc(taskOf(j))}</div>
+      <div class="jtop"><span>${esc(who)}</span></div>
+      <div class="jtask">${esc(!video && subject ? `${plainTask(j)} · ${subject}` : plainTask(j,video))}</div>
       ${bar}${note ? `<div class="jnote">${note}</div>` : ""}
+      ${!video ? `<details class="job-detail"><summary>Job details</summary><span class="jid">${esc(j.id)}</span>${model}<div>${esc(j.title || "")}</div></details>` : ""}
     </div>`;
   }
+
   function nextJobs(owb) {
     const jobs = owb.jobs || [], byId = Object.fromEntries(jobs.map(j => [j.id, j])), now = Date.now();
     const order = ((owb.runOrder || {}).mini) || jobs.filter(j => (j.line || j.needs) === "mini" && j.status === "open")
       .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || (a.pos ?? 9e9) - (b.pos ?? 9e9)).map(j => j.id);
-    return order.map(id => byId[id]).filter(j => j && j.status === "open" && !(tsOf(j.notBefore) > now)).slice(0, 2);
+    return order.map(id => byId[id]).filter(j => j && j.status === "open" && jobState(j) === "queued").slice(0, 2);
   }
   function renderStrip() {
     const el = document.getElementById("strip");
@@ -380,34 +552,46 @@
       const chief = ch.name ? `Chief: <b>${esc(ch.name)}${ch.acting ? " (acting)" : ""}</b>` : `<b style="color:var(--flag)">No Chief</b>`;
       const why = (M.models || []).filter(m => m.status !== "green").map(m =>
         `<li><b>${esc(m.name)}</b>: ${esc(String(m.why).slice(0, 140))}${m.until ? ` (back ${esc(new Date(m.until).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/London" }))})` : ""}</li>`).join("");
-      models = `<div class="row"><h2>Models</h2><div class="models">${chips}</div>
+      models = `<details class="services"><summary>${chief} <span>Agents & services</span></summary><div class="models">${chips}</div>
         <div class="mmeta">${chief} · ${stale ? '<b style="color:var(--ready)">stale</b> — ' : ""}checked ${isNaN(chk) ? "—" : hm(chk) + " London"}</div>
-        ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</div>`;
+        ${why ? `<details class="mmeta"><summary>Why</summary><ul style="margin:4px 0 0;padding-left:18px">${why}</ul></details>` : ""}</details>`;
     }
     let jobsHtml = "";
     if (owb) {
-      const now = (owb.jobs || []).filter(j => j.status === "claimed" && !(j.eta && tsOf(j.eta) < Date.now() - 45 * MIN))
+      const now = (owb.jobs || []).filter(j => jobState(j) === "running")
         .sort((a, b) => (b.urgent ? 1 : 0) - (a.urgent ? 1 : 0) || tsOf(a.claimedAt) - tsOf(b.claimedAt));
-      const next = nextJobs(owb);
+      const selected = board?.workflow?.next;
+      const next = board?.workflow ? (selected ? [{...selected, by:selected.worker, routedTo:agentName(selected.worker)}] : []) : nextJobs(owb);
+      const chiefWork = M?.chiefWork || {}, review = chiefWork.active;
+      const reviewLive = review && tsOf(review.expiresAt) > Date.now();
+      const reviewHtml = reviewLive ? jobHtml({id:review.job,title:review.title,by:review.agent,status:"claimed",claimedAt:review.startedAt,progress:review.progress || {step:0,of:3,note:"No review steps completed yet"}}, "now") : "";
+      const chiefNext = board?.workflow ? [] : (chiefWork.next || []).filter(j => !reviewLive || j.id !== review.job);
+      const chiefNextHtml = chiefNext.slice(0, 1).map(j => jobHtml({id:j.id,title:j.title,by:M?.chief?.agent,status:"open"}, "next")).join("");
       jobsHtml = `<div class="row jobs">
-        <div class="row"><h2>Now working</h2>${now.length ? now.map(j => jobHtml(j, "now")).join("") : '<p class="mmeta">Nothing claimed right now — the Mac mini picks the next job within a few minutes.</p>'}</div>
-        <div class="row"><h2>Next</h2><div class="nextlist">${next.length ? next.map(j => jobHtml(j, "next")).join("") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
+        <div class="row"><h2>Now working</h2>${now.length ? jobHtml({...now[0], progress:(board?.workflow?.active || []).find(a=>a.id===now[0].id && a.mode==="review")?.progress || now[0].progress}, "now") : reviewLive ? reviewHtml : '<p class="mmeta">No job is currently claimed. See queued work and waiting reasons below.</p>'}</div>
+        <div class="row"><h2>Up next</h2><div class="nextlist">${chiefNext.length ? chiefNextHtml : next.length ? jobHtml(next[0], "next") : '<p class="mmeta">Nothing else queued.</p>'}</div></div>
       </div>`;
     }
-    el.innerHTML = models + jobsHtml;
+    el.innerHTML = jobsHtml + models;
   }
 
+  function updateAsOf() {
+    const asof = document.getElementById("asof");
+    if (!asof) return;
+    const when = window.__boardData?.publishedAt || board?.publishedAt || board?.tracker?.updatedAt;
+    const stale = when && Date.now() - tsOf(when) > 3 * MIN;
+    asof.textContent = when ? `${stale ? "Stale data · last update" : "Updated"} ${new Date(when).toLocaleString("en-GB", {timeZone:"Europe/London"})} London` : "Live";
+  }
   function render() {
     renderStrip();
+    renderActivity();
     const root = board && board.tracker;
     if (!root || !Array.isArray(root.videos)) {
       document.getElementById("board").innerHTML = `<p class="empty">No tracker data yet. The Mini publishes it on the next board-data push.</p>`;
       return;
     }
     const videos = applyChecks(root.videos).filter(passFilter);
-    const asof = document.getElementById("asof");
-    const when = (window.__boardData && window.__boardData.dataChangedAt) || root.updatedAt || "";
-    asof.textContent = when ? `Updated ${new Date(when).toLocaleString("en-GB", { timeZone: "Europe/London" })} London` : "Live";
+    updateAsOf();
 
     const fil = document.getElementById("filters");
     const chips = [
@@ -425,6 +609,7 @@
     });
 
     const boardEl = document.getElementById("board");
+    const opened=[...boardEl.querySelectorAll("details[open]")].map(x=>x.id);
     boardEl.innerHTML = LANES.map(([id, label]) => {
       const all = videos.filter(v => v.lane === id);
       const shown = id === "done" && !showOldDone ? all.filter(v => !v.collapsed) : all;
@@ -434,9 +619,12 @@
         ? `<button type="button" class="collapsed-toggle" data-old="1">Show ${hidden} older public</button>`
         : (id === "done" && showOldDone
           ? `<button type="button" class="collapsed-toggle" data-old="0">Hide older public</button>` : "");
-      return `<section class="lane" data-lane="${id}"><h2>${label}<span class="n">${shown.length}</span></h2><div class="cards">${body}${more}</div></section>`;
+      const running=all.filter(v=>cardWork(v).live.some(j=>jobState(j)==="running")).length;
+      const sub=id==="progress"?`<p class="lane-summary">${running} being worked on · ${all.length-running} queued / waiting</p>`:"";
+      return `<section class="lane" data-lane="${id}"><h2>${label}<span class="n">${shown.length} videos</span></h2>${sub}<div class="cards">${body}${more}</div></section>`;
     }).join("");
 
+    opened.forEach(id=>{const d=document.getElementById(id);if(d)d.open=true;});
     boardEl.querySelectorAll("[data-ok]").forEach(b => b.onclick = () => {
       const v = videos.find(x => x.key === b.dataset.ok);
       if (v) approve(v);
@@ -470,11 +658,25 @@
     } catch (e) {}
   }
 
+  // The studio app's Review button links here as /board#v=<video key>: bring that card into view once and mark it.
+  let focusDone = false;
+  function focusFromHash() {
+    const m = location.hash.match(/(?:^#|&)v=([^&]+)/);
+    if (focusDone || !m || !document.querySelector) return;
+    const key = decodeURIComponent(m[1]);
+    const card = [...document.querySelectorAll("article.card")].find(c => c.dataset.key === key);
+    if (!card) return;
+    focusDone = true;
+    card.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+    card.style.outline = "2px solid #3b82f6";
+    card.style.outlineOffset = "2px";
+  }
+
   async function pollData() {
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
-        const g = await fetch(DATA_REF, { cache: "no-cache" });
+        const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return;
@@ -498,6 +700,7 @@
         board = Object.assign({}, j, { tracker: board.tracker });
       }
       render();
+      focusFromHash();
     } catch (e) {
       document.getElementById("asof").textContent = "Could not load board data";
     }
@@ -515,6 +718,6 @@
   pollData();
   pollChecks();
   setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);
-  setInterval(renderStrip, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
+  setInterval(() => { renderStrip(); renderActivity(); updateAsOf(); }, 30 * 1000);  // progress bar and 'so far' times move between data refreshes
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { pollData(); pollChecks(); } });
 })();

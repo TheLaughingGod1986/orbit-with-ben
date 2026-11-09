@@ -1,0 +1,80 @@
+{
+  "stem": "apophis_ar3_vo_v02",
+  "voice": "Ben Orbit Narrator",
+  "model_id": "eleven_v3",
+  "orders": [
+    "6c7d0f83b",
+    "J1279",
+    "C7"
+  ],
+  "built_from": "C7 trim 3 spliced onto apophis_ar3_vo_v01. No other words changed.",
+  "spoken_chars": 322,
+  "words": 47,
+  "duration_s": 26.16,
+  "loudness": {
+    "lufs_integrated": -21.4,
+    "mean_volume_db": -24.6,
+    "max_volume_db": -4.3
+  },
+  "sha256_wav": "03d0e06380a3237257058b8d4a84a31e760af048ef1dc616a0031ea738e1ea2a",
+  "sha256_mp3": "d2ce1e160507d60fb5a9c0476aca31e0b018807fca8c15ed762d4e00f1c376e3",
+  "scribe": {
+    "transcript": "The 2027 solar eclipse turns midday into night for over six minutes. Its shadow spans 258 kilometers. That nearly triples 2026's two-minute eclipse. Totality crosses Spain and North Africa, peaking over Egypt at six minutes, 23 seconds. Millions can look up as",
+    "script_words": 52,
+    "scribe_words": 43,
+    "match_rate_pct": 73.08,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "twenty",
+          "seven"
+        ],
+        "scribe": [
+          "2027"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "two",
+          "hundred",
+          "and",
+          "fifty",
+          "eight",
+          "kilometres"
+        ],
+        "scribe": [
+          "258",
+          "kilometers"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "twenty",
+          "six's"
+        ],
+        "scribe": [
+          "2026's"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "three"
+        ],
+        "scribe": [
+          "23"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "text": "The twenty twenty-seven solar eclipse turns midday into night for over six minutes. Its shadow spans two hundred and fifty-eight kilometres. That nearly triples twenty twenty-six's two-minute eclipse. Totality crosses Spain and North Africa, peaking over Egypt at six minutes twenty-three seconds. Millions can look up as…",
+  "made_at": "2026-10-31T04:13:06+0000"
+}

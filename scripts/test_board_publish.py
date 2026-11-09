@@ -93,19 +93,18 @@ class SiteBuild(unittest.TestCase):
         spec.loader.exec_module(mod)
         with tempfile.TemporaryDirectory() as d:
             mod.build(Path(d) / "dist")
-            simple = (Path(d) / "dist" / "index.html").read_text()
-            classic = (Path(d) / "dist" / "classic.html").read_text()
-            # Home page is the five-lane per-video tracker (Ben, 24 Oct 2026)
+            simple = (Path(d) / "dist" / "board.html").read_text()
+            home = (Path(d) / "dist" / "index.html").read_text()
+            # Home page is the studio app (Ben, 28 Oct 2026); the per-video column board moved to /board
+            self.assertIn("STUDIO_APP_TEST_HOOK", home)
+            self.assertIn('location.replace("/board" + location.hash)', home)  # Ben's /#k= links still reach his board
             self.assertIn("Studio videos", simple)
             self.assertIn("Changes requested", simple)
             self.assertIn("board-data/board.json", simple)
-            self.assertIn("/classic", simple)
-            # Classic board kept at /classic
-            self.assertIn("window.claude = { use:", classic)
-            self.assertIn("dbApi = db.canWrite===false ? null : db;", classic)
-            self.assertIn("board-data/board.json", classic)
+            # The October swim-lane board (/classic) is retired (Ben, 28 Oct 2026): not built, not linked
+            self.assertFalse((Path(d) / "dist" / "classic.html").exists())
+            self.assertNotIn('href="/classic"', simple + home)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
-            self.assertIn('href="/tracker"', classic)
             version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
             self.assertIn(f'<meta name="studio-version" content="{version}">', simple)
             self.assertIn('src="/updater.js"', simple)
@@ -134,7 +133,7 @@ class SiteBuild(unittest.TestCase):
             self.assertTrue((dist / "static/tracker-180.png").exists())
         vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
         self.assertIn({"source": "/tracker", "destination": "/tracker.html"}, vercel["rewrites"])
-        self.assertIn({"source": "/classic", "destination": "/classic.html"}, vercel["rewrites"])
+        self.assertIn({"source": "/classic", "destination": "/", "permanent": False}, vercel["redirects"])
 
     def test_daily_data_changes_do_not_trigger_code_update_loops(self):
         spec=importlib.util.spec_from_file_location("board_version_build",HERE.parent/"05_Analytics/kanban/board_site/build.py")
@@ -298,11 +297,11 @@ class QuickNoOp(unittest.TestCase):
     """Every-minute runs (Ben, 11 Oct 22:09) stop early when nothing moved."""
 
     def test_same_refs_recent_build_and_no_ticks_skip(self):
-        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S - 1))}
         self.assertTrue(bp.skip_quick(prev, "k1", T0, False))
 
     def test_a_moved_ref_a_tap_an_old_build_or_no_key_rebuild(self):
-        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(minutes=2))}
+        prev = {"key": "k1", "built": bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S - 1))}
         self.assertFalse(bp.skip_quick(prev, "k2", T0, False))
         self.assertFalse(bp.skip_quick(prev, "k1", T0, True))
         self.assertFalse(bp.skip_quick(dict(prev, built=bp.iso(T0 - dt.timedelta(seconds=bp.FULL_EVERY_S))), "k1", T0, False))
@@ -326,6 +325,17 @@ class QuickNoOp(unittest.TestCase):
                 self.assertIsNone(bp.quick_key(broken))
             finally:
                 bp.STATE = old
+
+    def test_quick_key_changes_when_valid_execution_ends_without_a_queue_commit(self):
+        import chief_relay as relay
+        from unittest.mock import patch
+        remote = lambda repo, *refs: "unchanged-ref"
+        lease = {"job":"J1", "worker":"codex", "expiresAt":"2026-11-03T16:00:00Z"}
+        with patch.object(relay, "current_execution", return_value=lease):
+            launched = bp.quick_key(remote)
+        with patch.object(relay, "current_execution", return_value=None):
+            stopped = bp.quick_key(remote)
+        self.assertNotEqual(launched, stopped)
 
     def test_launchd_runs_every_minute(self):
         plist = (HERE / "mini" / "com.owb.board-publish.plist").read_text()

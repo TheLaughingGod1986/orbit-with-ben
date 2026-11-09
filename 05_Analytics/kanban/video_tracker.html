@@ -42,7 +42,8 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
   padding-bottom: 8px; -webkit-overflow-scrolling: touch;
 }
 .lane {
-  flex: 0 0 min(86vw, 320px); scroll-snap-align: start;
+  flex: 0 0 min(86vw, 320px); min-width: 0; scroll-snap-align: start;
+  overflow: hidden;
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
   display: flex; flex-direction: column; max-height: calc(100vh - 160px);
 }
@@ -61,13 +62,18 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .appr .appr-line { margin-top: 4px; color: var(--ink); }
 .appr .appr-bar { margin-top: 6px; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .appr .appr-bar span { display: block; height: 100%; background: var(--approved); }
+.appr details { margin-top: 8px; }
+.appr summary { cursor: pointer; color: var(--hos); }
+.appr .decision-text { margin: 8px 0 0; line-height: 1.4; }
 .appr .mono { font-family: ui-monospace, Menlo, monospace; }
 .appr.warn { background: rgba(255,107,107,0.10); border-color: var(--flag); }
 .appr.warn .appr-state { color: var(--flag); }
 .lane[data-lane="done"] h2 { color: var(--ok); }
-.cards { padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.lane-summary { font-size: .8rem; color: var(--muted); margin: 0; padding: 8px 14px; border-bottom: 1px solid var(--line); }
+.cards { min-width: 0; padding: 10px; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 10px; }
 .card {
   background: var(--panel2); border: 1px solid var(--line); border-radius: 12px;
+  min-width: 0; overflow-wrap: anywhere;
   padding: 12px; display: flex; flex-direction: column; gap: 8px;
 }
 .card.flagged { border-color: var(--flag); box-shadow: inset 0 0 0 1px rgba(255,107,107,0.25); }
@@ -151,6 +157,28 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 @media (min-width: 900px) {
   .strip .row.jobs { flex-direction: row; } .strip .row.jobs > * { flex: 1 1 0; min-width: 0; }
 }
+.activity { margin-bottom: 14px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.activity h2 { margin: 0 0 10px; font-size: 1rem; }
+.activity-counts { display: flex; flex-wrap: wrap; gap: 8px; }
+.activity-counts span { background: var(--panel2); border-radius: 8px; padding: 8px 12px; font-size: .85rem; }
+.activity-counts b { font-size: 1.1rem; }
+.activity details, .card-work details { margin-top: 10px; }
+.activity summary, .card-work summary { cursor: pointer; color: var(--hos); font-size: .85rem; padding: 7px 0; }
+.activity details[open] { max-height: 420px; overflow: auto; }
+.task-row { padding: 10px 0; border-top: 1px solid var(--line); font-size: .85rem; line-height: 1.4; overflow-wrap: anywhere; }
+.task-row b { display: block; margin-bottom: 4px; }
+.block-reason { margin: 6px 0; color: #f5d8a2; }
+.card-work { border-top: 1px solid var(--line); padding-top: 10px; font-size: .85rem; }
+.remaining-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.remaining-list li { padding-left: 13px; border-left: 2px solid var(--line); }
+.task-action { display: block; line-height: 1.35; }
+.task-status { display: block; margin-top: 3px; color: var(--muted); font-size: .78rem; line-height: 1.35; }
+.remaining-list .job { padding: 0; border: 0; background: transparent; }
+.card-work > .job { margin: 8px 0; }
+.last-result { margin-top: 8px; color: #bff0d8; font-size: .8rem; }
+.tabs { display: flex; gap: 8px; margin: 10px 0 2px; }
+.tabs a { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-size: 0.9rem; text-decoration: none; }
+.tabs a.on { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 600; }
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
 footer a { color: inherit; }
 .modal-bg {
@@ -168,21 +196,42 @@ footer a { color: inherit; }
 }
 .modal .row { display: flex; gap: 8px; margin-top: 10px; }
 @media (min-width: 900px) {
-  .board { display: grid; grid-template-columns: repeat(6, 1fr); overflow: visible; }
+  .board { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); overflow: visible; }
   .lane { flex: none; max-height: calc(100vh - 140px); min-width: 0; }
 }
+/* Compact activity header; expand services and detailed updates only when needed. */
+.strip .row.jobs { gap: 12px; }
+.strip .job { background: transparent; border: 0; padding: 0; gap: 7px; }
+.strip .job .jfilm { display: none; }
+.strip .job .jtask { font-size: .9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.strip .bar { height: 6px; }
+.strip .jnote { font-size: .75rem; }
+.services { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; font-size: .75rem; color: var(--muted); }
+.services > summary { cursor: pointer; }
+.services > summary span { margin-left: 8px; }
+.services .models { margin-top: 10px; }
+.job-detail { margin-top: 5px; line-height: 1.4; }
+.job-detail summary { cursor: pointer; color: var(--muted); }
+.live-dot { display: inline-block; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: var(--ok); animation: live-pulse 1.8s ease-in-out infinite; }
+.active-task { display: inline-flex; align-items: center; gap: 6px; color: var(--ok); font-size: .72rem; width: 100%; }
+.bar.indeterminate > i { width: 28%; animation: progress-sweep 1.8s ease-in-out infinite; }
+@keyframes live-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(62,207,142,.3); opacity: 1; } 50% { box-shadow: 0 0 0 5px rgba(62,207,142,0); opacity: .55; } }
+@keyframes progress-sweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(460%); } }
+@media (prefers-reduced-motion: reduce) { .live-dot, .bar.indeterminate > i { animation: none; } }
 </style>
 </head>
 <body>
 <header>
   <h1>Studio videos</h1>
   <div class="sub" id="asof">Loading…</div>
+  <nav class="tabs"><a href="/">Studio</a><a class="on" href="/board">Videos</a><a href="/ai">AI & credits</a></nav>
   <div class="filters" id="filters"></div>
 </header>
 <section class="strip" id="strip" aria-label="Now working"></section>
+<section class="activity" id="activity" aria-label="Studio job activity"></section>
 <div class="board" id="board"></div>
 <footer>
-  One card per video. Classic board: <a href="/classic">/classic</a> ·
+  One card per video. <a href="/">Studio</a> ·
   <a href="/tracker">Channel Tracker</a>
 </footer>
 <script>

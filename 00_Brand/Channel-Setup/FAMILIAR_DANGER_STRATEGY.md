@@ -23,7 +23,7 @@ Week one (23 Sep) is archived at `_archive/00_Brand/Channel-Setup/WEEK_PLAN_3_SH
 
 Same two-line shape every time. New words for each film. No greeting. No buildup.
 
-Line 1 is 5 to 7 words. The familiar thing in danger. Spoken in the first second. **The danger fills the frame and is already moving at 0 seconds. Orbit is not in the 0-second frame.** (Changed 24 Sep 2026, per `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`. The two Orbit-first opens measured so far got 0% Shorts-feed traffic. `gate_shorts_open.py` fails Orbit at 0 s.)
+Line 1 is the title's one question (Keeper score, 26 Oct 2026: *Could a Robot Survive Touching the Sun?* 883 views, *Why Does a Day on Mercury Last Two of Its Years?* 849; statement titles like *Saturn's Rings Are on a Clock* got 12). The familiar thing in danger. Spoken in the first second. **The danger fills the frame and is already moving at 0 seconds. Orbit is not in the 0-second frame.** (Changed 24 Sep 2026, per `audits/CHANNEL_AUDIT_2026-09-24/AUDIT.md`. The two Orbit-first opens measured so far got 0% Shorts-feed traffic. `gate_shorts_open.py` fails Orbit at 0 s.)
 
 Line 2 is the stay line. What they get if they stay. Orbit arrives from about 1.5 seconds, caught up in the danger (pulled, tipping, freezing), and reacts while it is said. Orbit caught in the danger is the reason to stay. Orbit looking at the camera over a still frame reads as a channel ident.
 
@@ -35,7 +35,7 @@ Stayed-to-watch is decided in the first second of the feed, not at the end. On 1
 
 1. **Start mid-action.** Veo and other generated clips ease in: the camera starts slow and the event builds. Trim the first 0.5–1 s of every generated clip so frame 0 is already at the peak. The gate warns when the picture barely changes in the first second.
 2. **The thing the title names is on screen at frame 0, moving.** "Can't stand on a neutron star" opens on the star with something being crushed or pulled, not a slow drift over a planet.
-3. **The first words are the claim, not a setup.** "You could never stand on this star." Never "Imagine a place…".
+3. **The first words are the title's question or claim, not a setup.** "Could a robot survive touching the Sun?" "You could never stand on this star." Never "Imagine a place…".
 4. **Something visibly changes by about 1 s:** a hit, a crack, a zoom, a flash. Put a short sound effect (whoosh or impact) on frame 0. A quiet start reads as a slow video.
 5. **The text on frame 0 is the hook, big and centred, 3–5 words** ("IT'S LEAVING US"). Never a caption that describes the picture ("Europa's icy surface").
 6. **Orbit comes in about a second later, caught up in the danger** (pulled, tipping, freezing). Never Orbit looking at the camera over a still frame.

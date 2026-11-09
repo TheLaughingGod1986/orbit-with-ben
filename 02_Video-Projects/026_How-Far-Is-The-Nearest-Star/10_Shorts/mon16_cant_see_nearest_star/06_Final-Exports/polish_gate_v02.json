@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v02.mp4",
+  "edge_floor": 0.025,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02",
+      "cut": 2,
+      "t": 7.42,
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "why": [
+        "low detail: edge density 0.0193 < film p5 0.0250"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "uhd_bt_paranal_07.mp4",
+      "t": 1.27,
+      "std": 41.59,
+      "mean": 51.85,
+      "p95": 111.0,
+      "edge": 0.0938,
+      "hf": 13.76,
+      "lf": 32.02,
+      "std8": 34.98,
+      "edge8": 0.1532,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "vltfromvistatimelapse.mp4",
+      "t": 4.17,
+      "std": 30.5,
+      "mean": 99.12,
+      "p95": 161.0,
+      "edge": 0.0382,
+      "hf": 8.69,
+      "lf": 26.45,
+      "std8": 27.56,
+      "edge8": 0.0713,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "GSFC_20160426_SDO_m12224_SolarFlare.mp4",
+      "t": 7.42,
+      "std": 30.21,
+      "mean": 43.34,
+      "p95": 92.0,
+      "edge": 0.0193,
+      "hf": 8.36,
+      "lf": 24.45,
+      "std8": 26.28,
+      "edge8": 0.1914,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0193 < film p5 0.0250"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "bt_lasilla_crux.mp4",
+      "t": 10.66,
+      "std": 37.21,
+      "mean": 64.5,
+      "p95": 120.0,
+      "edge": 0.1003,
+      "hf": 17.01,
+      "lf": 21.79,
+      "std8": 27.21,
+      "edge8": 0.1915,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "uhd_bt_paranal_startrails",
+      "t": 13.91,
+      "std": 39.81,
+      "mean": 76.78,
+      "p95": 158.0,
+      "edge": 0.3331,
+      "hf": 18.98,
+      "lf": 24.41,
+      "std8": 27.83,
+      "edge8": 0.488,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "lasilla_night.mp4",
+      "t": 17.15,
+      "std": 56.65,
+      "mean": 98.63,
+      "p95": 205.0,
+      "edge": 0.0563,
+      "hf": 11.26,
+      "lf": 52.33,
+      "std8": 53.5,
+      "edge8": 0.16,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s_loop",
+      "source": "loop_uhd_bt_paranal_07.mp4",
+      "t": 19.28,
+      "std": 27.42,
+      "mean": 48.06,
+      "p95": 92.0,
+      "edge": 0.0801,
+      "hf": 10.25,
+      "lf": 23.73,
+      "std8": 24.15,
+      "edge8": 0.08,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

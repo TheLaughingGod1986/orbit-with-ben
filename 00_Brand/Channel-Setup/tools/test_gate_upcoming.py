@@ -53,6 +53,22 @@ class Upcoming(unittest.TestCase):
             self.assertIn("NO FILE", text)
             self.assertIn("missing.mp4", text)
 
+    def test_a_ruled_missing_export_reads_known_not_no_file(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "snap.json").write_text(json.dumps({"videos": [vid("x", at="2099-01-01T10:30:00Z"), vid("y", at="2099-01-02T10:30:00Z")]}))
+            (d / "up.json").write_text(json.dumps({"videos": {"x": {"file": "gone.mp4", "knownNoFile": "uploaded bytes not kept locally (J1320)"},
+                                                              "y": {"file": "missing.mp4"}}}))
+            g.datetime = type("D", (datetime,), {"now": staticmethod(lambda tz=None: datetime(2098, 12, 25, tzinfo=timezone.utc))})
+            try:
+                g.main(["--snapshot", str(d / "snap.json"), "--uploads", str(d / "up.json"), "--media-root", str(d), "--out", str(d / "out.md")])
+            finally:
+                g.datetime = datetime
+            text = (d / "out.md").read_text()
+            self.assertIn("`x` | yes | KNOWN |".replace("yes", "**no**"), text)
+            self.assertIn("J1320", text)
+            self.assertIn("### y: NO FILE", text)  # an unruled missing export still raises the alarm
+
     def test_a_missing_ffprobe_reads_not_checked_not_fail(self):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
@@ -106,6 +122,42 @@ class Waivers(unittest.TestCase):
             self.assertIsNone(g.waived(f, [fail.replace("0.0048", "0.0061")]))  # a new cut: the old waiver no longer counts
             self.assertIsNone(g.waived(f, [fail, "Short runs 41 s"]))           # every FAIL must be covered
             self.assertIsNone(g.waived(Path(d) / "other.mp4", [fail]))            # no sidecar, no waiver
+
+
+
+class NasStage(unittest.TestCase):
+    """NAS files the 06:40 launchd job can't read (macOS privacy, 26 Oct 2026)."""
+
+    def test_stage_copies_nas_export_and_rewrites_meta_refs(self):
+        with tempfile.TemporaryDirectory() as t:
+            t = Path(t)
+            nas = t / "nas"; nas.mkdir()
+            export = nas / "s_v01.mp4"; export.write_bytes(b"video")
+            vo = nas / "stem_vo.wav"; vo.write_bytes(b"vo")
+            (nas / "s_v01_meta.json").write_text(json.dumps({"audio": {"stems": {"vo": str(vo)}}}))
+            old = g.NAS
+            g.NAS = str(nas) + "/"
+            try:
+                print(g.stage_one("abc", export, t / "cache"))
+                hit = g.staged("abc", export, t / "cache", g.sha256(export))
+                self.assertIsNotNone(hit)
+                self.assertEqual(hit[0].read_bytes(), b"video")
+                meta = json.loads(hit[1].read_text())
+                self.assertTrue(meta["audio"]["stems"]["vo"].startswith(str(t / "cache")))
+                # a stage of another cut never counts
+                self.assertIsNone(g.staged("abc", export, t / "cache", "0" * 64))
+                self.assertIsNone(g.staged("abc", nas / "other.mp4", t / "cache", None))
+            finally:
+                g.NAS = old
+
+    def test_nas_refs_finds_nested_paths_only(self):
+        self.assertEqual(g.nas_refs({"a": ["/Volumes/data/x.wav", "rel.wav"], "b": {"c": "/Volumes/data/y"}}),
+                         ["/Volumes/data/x.wav", "/Volumes/data/y"])
+
+    def test_export_path_collapses_parent_segments_to_nas(self):
+        p = g.export_path(Path("/Users/ben/YouTube/orbit-with-ben"), "../../../../Volumes/data/s_v01.mp4")
+        self.assertEqual(str(p), "/Volumes/data/s_v01.mp4")
+        self.assertTrue(str(p).startswith(g.NAS))
 
 
 if __name__ == "__main__":

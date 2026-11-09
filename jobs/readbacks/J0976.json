@@ -1,0 +1,116 @@
+{
+  "job": "J0976",
+  "at": "2026-10-26T10:21:00Z",
+  "mode": "read_only",
+  "cdp_9223": {
+    "profile_dir": "/Users/benjaminoats/.orbit-chrome-youtube-studio",
+    "active_channel": {
+      "title": "Orbit With Ben",
+      "handle": "@OrbitWithBen",
+      "channelId": "UC_esArsDKd3GJvOkeO0DUog"
+    },
+    "google_account_switcher": {
+      "owner": "Benjamin Oats",
+      "email": "benoats86@gmail.com",
+      "channels_listed_in_order": [
+        {
+          "title": "OpptiAI",
+          "handle": "@OpptiAI",
+          "channelId": "UCXRVwrCxXpN_o9gvuHPKAPQ",
+          "subscribers": "3 subscribers",
+          "selected": false
+        },
+        {
+          "title": "Orbit With Ben",
+          "handle": "@OrbitWithBen",
+          "channelId": "UC_esArsDKd3GJvOkeO0DUog",
+          "subscribers": "15 subscribers",
+          "selected": true
+        },
+        {
+          "title": "History of Science",
+          "handle": "@HistoryOfScienceYT",
+          "channelId": "UCXp7HkBIl1LgaznXuZHJyRg",
+          "subscribers": "3 subscribers",
+          "selected": false
+        }
+      ]
+    },
+    "videos": {
+      "m09jUdwC5hk": {
+        "title": "How Long Will Anything in Space Last?",
+        "creatorChannelData_channelId": "UC_esArsDKd3GJvOkeO0DUog",
+        "creatorChannelData_title": "Orbit With Ben",
+        "overview_cards": {
+          "views": "4",
+          "watch_time_hours": "0.0",
+          "subscribers_label": "Subscribers",
+          "subscribers_value": "—",
+          "subscribers_tooltip": "Total change in subscriber count from people viewing this video since it was published."
+        },
+        "audience_cards": {
+          "unique_viewers": "1",
+          "subscribers_label": "Subscribers",
+          "subscribers_value": "—"
+        },
+        "oppti_in_dom_or_shadow_or_js": false,
+        "screenshots": [
+          "jobs/readbacks/J0976_m09jUdwC5hk_compilation.png",
+          "jobs/readbacks/J0976_m09jUdwC5hk_subscribers_hover.png",
+          "jobs/readbacks/J0976_m09jUdwC5hk_audience.png"
+        ]
+      },
+      "VBaYRPp85Sw": {
+        "title": "What Happened to Venus?",
+        "creatorChannelData_channelId": "UC_esArsDKd3GJvOkeO0DUog",
+        "creatorChannelData_title": "Orbit With Ben",
+        "overview_cards": {
+          "views": "2",
+          "watch_time_hours": "0.3",
+          "subscribers_label": "Subscribers",
+          "subscribers_value": "—",
+          "subscribers_tooltip": "Total change in subscriber count from people viewing this video since it was published."
+        },
+        "oppti_in_dom_or_shadow_or_js": false,
+        "screenshots": [
+          "jobs/readbacks/J0976_VBaYRPp85Sw_venus_023.png",
+          "jobs/readbacks/J0976_VBaYRPp85Sw_subscribers_tab_selected.png",
+          "jobs/readbacks/J0976_VBaYRPp85Sw_reach.png",
+          "jobs/readbacks/J0976_VBaYRPp85Sw_engagement.png",
+          "jobs/readbacks/J0976_VBaYRPp85Sw_audience.png"
+        ]
+      },
+      "n_4XskX0yZk": {
+        "title": "Could a Robot Survive Touching the Sun?",
+        "creatorChannelData_channelId": "UC_esArsDKd3GJvOkeO0DUog",
+        "creatorChannelData_title": "Orbit With Ben",
+        "overview_cards": {
+          "views": "883",
+          "subscribers_label": "Subscribers",
+          "subscribers_value": "+1",
+          "subscribers_tooltip": "Total change in subscriber count from people viewing this video since it was published."
+        },
+        "oppti_in_dom_or_shadow_or_js": false,
+        "screenshots": [
+          "jobs/readbacks/J0976_n_4XskX0yZk_known_good.png"
+        ]
+      }
+    },
+    "account_switcher_screenshots": [
+      "jobs/readbacks/J0976_account_menu_9223.png",
+      "jobs/readbacks/J0976_switch_account_list_readonly.png"
+    ]
+  },
+  "cdp_9222_comparison": {
+    "profile_dir": "/tmp/chrome-oppti-profile",
+    "open_studio_tab_channelId": "UCXRVwrCxXpN_o9gvuHPKAPQ",
+    "open_studio_tab_entityName": "OpptiAI",
+    "vba_on_9222_result": "Oops, something went wrong.",
+    "screenshot": "jobs/readbacks/J0976_9222_VBaYRPp85Sw_comparison.png"
+  },
+  "findings": {
+    "card_label_is_plain_subscribers": true,
+    "why_dash_is_shown": "YouTube Studio renders net subscriber change = 0 (0 gained, 0 lost; 4 views on m09jUdwC5hk and 2 views on VBaYRPp85Sw) as an em-dash ('—') on the Overview/Audience key-metric card, whereas n_4XskX0yZk has +1 subscriber so it renders '+1'. The DOM structure (#SUBSCRIBERS_NET_CHANGE-tab -> #metric-label 'Subscribers') is identical across all three videos.",
+    "where_opptiai_comes_from": "The string 'Oppti' does not exist anywhere in the Studio Analytics DOM, shadow DOM, tooltips, vidIQ toolbar, or YouTube Studio JS bundles on CDP 9223. 'OpptiAI' (@OpptiAI, UCXRVwrCxXpN_o9gvuHPKAPQ, 3 subscribers) is the first Brand/YouTube channel listed under Benjamin Oats (benoats86@gmail.com) in the top-right Studio Account Switcher ('Switch account' popup, which visually overlays the right side of the Subscribers card when open: 'Sub[scribers] | OpptiAI @OpptiAI 3 subscribers'), and is also the active Studio channel on CDP 9222 (/tmp/chrome-oppti-profile). Both m09jUdwC5hk and VBaYRPp85Sw resolve CreatorChannelData to UC_esArsDKd3GJvOkeO0DUog ('Orbit With Ben')."
+  }
+}

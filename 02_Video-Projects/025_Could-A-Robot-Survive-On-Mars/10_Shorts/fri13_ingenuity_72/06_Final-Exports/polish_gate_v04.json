@@ -1,0 +1,226 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v04.mp4",
+  "edge_floor": 0.0162,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s_loop",
+      "cut": 7,
+      "t": 19.45,
+      "source": "end_card_loop_PIA24644.gif",
+      "why": [
+        "low detail: edge density 0.0053 < film p5 0.0162"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "PIA24644.gif",
+      "t": 1.25,
+      "std": 54.72,
+      "mean": 136.23,
+      "p95": 209.0,
+      "edge": 0.0428,
+      "hf": 15.8,
+      "lf": 46.83,
+      "std8": 49.2,
+      "edge8": 0.1912,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "PIA24593.jpg",
+      "t": 3.88,
+      "std": 22.03,
+      "mean": 117.43,
+      "p95": 148.0,
+      "edge": 0.169,
+      "hf": 11.81,
+      "lf": 14.05,
+      "std8": 15.76,
+      "edge8": 0.0761,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.0,
+        "reversals": 0,
+        "frames": 56,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "JPL-20210419-TECHf-0001.mp4",
+      "t": 6.65,
+      "std": 20.8,
+      "mean": 162.04,
+      "p95": 187.0,
+      "edge": 0.0739,
+      "hf": 11.47,
+      "lf": 13.57,
+      "std8": 14.8,
+      "edge8": 0.0479,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "PIA24584.jpg",
+      "t": 9.42,
+      "std": 37.13,
+      "mean": 125.6,
+      "p95": 170.0,
+      "edge": 0.0363,
+      "hf": 15.09,
+      "lf": 27.43,
+      "std8": 30.24,
+      "edge8": 0.1245,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 56,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "JPL-20210425-TECHf-0001.mp4",
+      "t": 12.17,
+      "std": 28.06,
+      "mean": 164.6,
+      "p95": 206.0,
+      "edge": 0.0474,
+      "hf": 16.41,
+      "lf": 13.53,
+      "std8": 17.01,
+      "edge8": 0.0966,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "PIA26244.gif",
+      "t": 14.9,
+      "std": 66.69,
+      "mean": 149.53,
+      "p95": 238.0,
+      "edge": 0.0664,
+      "hf": 9.23,
+      "lf": 64.41,
+      "std8": 65.27,
+      "edge8": 0.1749,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s06",
+      "source": "PIA26243.jpg",
+      "t": 17.63,
+      "std": 50.4,
+      "mean": 92.55,
+      "p95": 150.0,
+      "edge": 0.1996,
+      "hf": 12.94,
+      "lf": 46.37,
+      "std8": 47.12,
+      "edge8": 0.0596,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.0,
+        "reversals": 0,
+        "frames": 55,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "end_card_loop_PIA24644.gif",
+      "t": 19.45,
+      "std": 45.24,
+      "mean": 126.21,
+      "p95": 194.0,
+      "edge": 0.0053,
+      "hf": 2.82,
+      "lf": 44.64,
+      "std8": 44.93,
+      "edge8": 0.0494,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0053 < film p5 0.0162"
+      ]
+    }
+  ]
+}

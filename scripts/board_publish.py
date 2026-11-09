@@ -44,6 +44,9 @@ import fcntl
 import hashlib
 import json
 import os
+import workflow_state as workflow
+import channels
+import re
 import pathlib
 import subprocess
 import sys
@@ -51,7 +54,7 @@ import urllib.request
 
 HOME = pathlib.Path.home()
 OWB = pathlib.Path(os.environ.get("OWB_REPO", str(HOME / "YouTube" / "orbit-with-ben")))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", str(HOME / "YouTube" / "History Of Science")))
+HOS = channels.repo_path("hos", HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
@@ -59,17 +62,17 @@ SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstr
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
-FULL_EVERY_S = 5 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
+FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
-OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
+OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
+HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
-NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude"}
+NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
 CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
 # The board's Models row (Ben, 24 Oct 2026 23:40): a traffic light per worker plus voice and picture services.
 MODEL_ROWS = (("claude", "Claude"), ("codex", "Codex"), ("cursor", "Cursor"), ("gemini", "Gemini"),
@@ -115,6 +118,49 @@ def _when(s) -> dt.datetime | None:
         return dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
     except (TypeError, ValueError):
         return None
+
+
+def chief_work(at: dt.datetime, state: pathlib.Path, agent: str, jobs: list) -> dict:
+    active = _read_json(state / "active.json") or {}
+    expires = _when(active.get("expiresAt"))
+    live = bool(active and active.get("agent") == agent and expires and expires > at)
+    if live:
+        try:
+            os.kill(int(active.get("pid", 0)), 0)
+            live = int(active.get("pid", 0)) > 0
+        except (ValueError, TypeError, ProcessLookupError, PermissionError):
+            live = False
+    active = active if live else None
+    inbox = _read_json(state / "inbox.json") or {}
+    # A relay started before the visibility upgrade cannot write active.json yet.
+    # Observe its actual CLI prompt until that run exits; never infer work from a heartbeat.
+    if not active and agent in ("codex", "gemini") and inbox.get("agent") == agent:
+        try:
+            processes = subprocess.check_output(["ps", "-axo", "pid=,etime=,command="], text=True, timeout=5)
+            for line in processes.splitlines():
+                fields = line.strip().split(None, 2)
+                if len(fields) != 3 or not any(cli in fields[2] for cli in ("codex exec ", "/agy ")):
+                    continue
+                match = re.search(r"CHIEF REVIEW PRIORITY: before taking an ordinary job, review (J[0-9]+):", fields[2])
+                if not match or not any(j.get("id") == match[1] for j in inbox.get("jobs", [])):
+                    continue
+                elapsed = fields[1].split("-")
+                seconds = sum(int(n) * 60**i for i, n in enumerate(reversed(elapsed[-1].split(":"))))
+                seconds += int(elapsed[0]) * 86400 if len(elapsed) == 2 else 0
+                if seconds > 26 * 60:
+                    continue
+                title = next(j.get("title", "") for j in inbox["jobs"] if j.get("id") == match[1])
+                started = at - dt.timedelta(seconds=seconds)
+                active = {"job": match[1], "title": title, "agent": agent, "pid": int(fields[0]),
+                          "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(minutes=26)),
+                          "kind": "chief-review"}
+                break
+        except (OSError, ValueError, subprocess.SubprocessError):
+            pass
+    queued = {j.get("id"): j for j in jobs}
+    pending = [j for j in inbox.get("jobs", []) if j.get("id") != (active or {}).get("job")
+               and queued.get(j.get("id"), {}).get("status") in ("blocked", "open")]
+    return {"active": active, "next": pending, "checkedAt": iso(at)}
 
 
 def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path | None = None,
@@ -165,10 +211,12 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
             row.update(status="red", why=down.get("reason") or "marked down", until=iso(down_until) if down_until else "")
         elif key in rows and not rows[key].get("up"):
             row.update(status="red" if fresh else "amber", why=str(rows[key].get("why") or "down"))
+        elif key in rows and rows[key].get("up") and fresh:
+            row.update(status="green", why=str(rows[key].get("why") or "ready"))
         elif last.get("out_of_usage") and last_at and at - last_at < dt.timedelta(hours=12):
             row.update(status="red", why=f"last run out of usage ({last.get('job', '')})")
         elif key in rows and rows[key].get("up"):
-            row.update(status="green" if fresh else "amber", why=str(rows[key].get("why") or "ready"))
+            row.update(status="amber", why=str(rows[key].get("why") or "ready"))
         elif last_at and at - last_at < dt.timedelta(hours=24) and last.get("exit") == 0:
             row.update(status="green", why=f"ran {last.get('job', '')} on {last.get('model') or key}")
         elif seen and at - seen < dt.timedelta(hours=6):
@@ -192,7 +240,13 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
     agent = cur.get("agent") or ""
     chief = {"agent": agent, "name": NAMES.get(agent, agent.capitalize() if agent else ""), "acting": bool(agent and agent != "chief"),
              "since": cur.get("since") or ""}
-    return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out}
+    return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out,
+            "chiefWork": chief_work(at, state, agent, jobs or []),
+            "runner": _read_json(state / "runner.json") or {},
+            "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
+                            "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120],
+                            "until": (flags.get(r.get("agent")) or {}).get("until", "")}
+                           for r in chain.get("rows") or [] if isinstance(r, dict)]}
 
 
 def stable(section: str, doc: dict) -> dict:
@@ -375,12 +429,46 @@ def ls_remote(repo: pathlib.Path, *refs: str) -> str:
     return git(repo, "ls-remote", "origin", *refs, timeout=30)
 
 
+MACBOOK_SLOT_REFS = ("macbook-heartbeat", "macbook-heartbeat-2")  # one per MacBook slot (two jobs at once, 5 Nov 2026)
+
+
+def merge_macbook(slots: list) -> dict | None:
+    """One MacBook heartbeat for the readers that know one: slot 1's (or the newest), plus `slots` (every slot's own
+    report, fresh or not) and `jobs` (what each working slot is on)."""
+    have = [s for s in slots if isinstance(s, dict)]
+    if not have:
+        return None
+    first = next((s for s in have if s.get("slot", 1) == 1), None) or max(have, key=lambda s: str(s.get("at") or ""))
+    out = dict(first)
+    out["slots"] = have
+    out["jobs"] = [str(s["job"]) for s in have if s.get("job")]
+    if any(s.get("state") == "working" for s in have):
+        out["state"] = "working"
+        out["job"] = first.get("job") or out["jobs"][0]
+    return out
+
+
+def heartbeats(repo: pathlib.Path | None = None) -> tuple:
+    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card). The
+    MacBook one merges every slot's branch (merge_macbook)."""
+    repo = repo or OWB
+    out = {}
+    for branch in ("mini-heartbeat", *MACBOOK_SLOT_REFS):
+        try:
+            git(repo, "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}", timeout=30)
+            out[branch] = json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15))
+        except Exception:  # noqa: BLE001
+            out[branch] = None
+    return out["mini-heartbeat"], merge_macbook([out[b] for b in MACBOOK_SLOT_REFS])
+
+
 def quick_key(remote=ls_remote) -> str | None:
     """A cheap fingerprint of everything a rebuild reads that can move between runs: main and mini-heartbeat of
     orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
     None if a remote can't be read; the caller then does the full rebuild."""
     try:
-        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat"), remote(HOS, "refs/heads/main")]
+        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
+                 remote(HOS, "refs/heads/main")]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])
         return None
@@ -388,6 +476,17 @@ def quick_key(remote=ls_remote) -> str | None:
         parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
     except OSError:
         parts.append("")
+    for name in ("active.json", "inbox.json", "execution.json", "runner.json", "capabilities.json"):
+        try:
+            parts.append((CHIEF_STATE / name).read_text())
+        except OSError:
+            parts.append("")
+    # Process liveness and lease expiry can change without a queue commit.
+    parts.append(chief_work(now(), CHIEF_STATE, (_read_json(CHIEF_STATE / "current.json") or {}).get("agent", ""), [])["active"])
+    import chief_relay as relay
+    parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
+    parts.append({a: r for a,r in relay.worker_capabilities().items()
+                  if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > now()})
     return digest(parts)
 
 
@@ -395,6 +494,27 @@ def skip_quick(prev: dict, key: str | None, at: dt.datetime, checks_wanted: bool
     """True when this run can stop before the rebuild: no ref moved since the last full build, that build is under
     FULL_EVERY_S old, and Ben's ticks don't need a re-read."""
     return bool(key) and key == prev.get("key") and _age(prev.get("built") or "", at) < FULL_EVERY_S and not checks_wanted
+
+
+def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | None = None) -> dict:
+    """The same pure selector used by the relay; publish a projection of the exact queue revision."""
+    import chief_relay as relay
+    import routing
+    path = queue_path or WT / "owb" / "jobs" / "queue.json"
+    data = _read_json(path) or {"jobs": (board.get("owb") or {}).get("jobs") or []}
+    rows = (board.get("models") or {}).get("chiefChain") or []
+    up = {r.get("agent") for r in rows if r.get("up") and r.get("agent") in routing.MINI_WORKERS}
+    # Cursor is a specialist, not in the Chief chain.
+    model_rows = (board.get("models") or {}).get("models") or []
+    up.update(m.get("id") for m in model_rows if m.get("status") == "green" and m.get("id") in routing.MINI_WORKERS)
+    chief = ((board.get("models") or {}).get("chief") or {}).get("agent") or ""
+    pending = [j for j in data.get("jobs", []) if workflow.is_review(j)]
+    due = relay.due_chief_reviews(pending, chief, at)
+    active = ((board.get("models") or {}).get("chiefWork") or {}).get("active")
+    chooser = lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), "")
+    data = {**data, "tracker": board.get("tracker") or {}}
+    return workflow.snapshot(data, at, chief, up, chooser, active, {j["id"] for j in due}, execution=relay.current_execution(at),
+                             include_chief=any(r.get("agent") == chief and r.get("up") for r in rows), capabilities=relay.worker_capabilities())
 
 
 def run_once(a) -> int:
@@ -418,6 +538,31 @@ def run_once(a) -> int:
         board["models"] = models_status(at, (docs.get("owb") or {}).get("jobs") or [])
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
+    board["workflow"] = dispatch_snapshot(board, at)
+    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
+        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
+                             for c in channels.all_channels()]
+    except Exception as e:  # noqa: BLE001
+        log(f"channels not read: {e}")
+    try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
+        import machines
+        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        import chief_relay as relay
+        ex = relay.current_execution(at)
+        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
+    except Exception as e:  # noqa: BLE001
+        log(f"machines not built: {e}")
+    try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)
+        import queue_eta
+        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        board["queueForecast"] = queue_eta.section(queue, *heartbeats(), at)
+    except Exception as e:  # noqa: BLE001
+        log(f"queue forecast not built: {e}")
+    try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
+        import progress24
+        board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
+    except Exception as e:  # noqa: BLE001
+        log(f"progress24h not built: {e}")
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
@@ -449,6 +594,7 @@ def run_once(a) -> int:
 
 
 BOARD_CHECK_EVERY_S = 5 * 60
+APPROVED_DELIVER_EVERY_S = 5 * 60
 
 
 def kick_board_check(at: dt.datetime | None = None) -> bool:
@@ -468,6 +614,31 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
         return True
     except OSError as e:
         log(f"board check not started: {e}")
+        return False
+
+
+def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
+    """Enqueue/unblock Studio upload (or Buffer social) for Passed films whose listing package is complete.
+
+    Ben, 7 Nov 2026: after UAT OK the cut sits in Passed; once title/thumbnail/description/tags are set, create or
+    unblock the upload job (Private + publishAt). Rate-limited like board_check. Never uploads from this process —
+    only queue mutations via approved_deliver.py --apply --git. Idempotent; skips swaps and banned reuse ids.
+    """
+    at = at or now()
+    script = WT / "owb" / "scripts" / "approved_deliver.py"
+    stamp = STATE / "approved_deliver.json"
+    try:
+        if stamp.exists() and at.timestamp() - stamp.stat().st_mtime < APPROVED_DELIVER_EVERY_S:
+            return False
+        if not script.exists():
+            return False
+        stamp.write_text(json.dumps({"kickedAt": iso(at)}, indent=1))
+        subprocess.Popen([sys.executable, str(script), "--apply", "--git", "--agent", "relay"],
+                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         start_new_session=True, cwd=str(WT / "owb"))
+        return True
+    except OSError as e:
+        log(f"approved_deliver not started: {e}")
         return False
 
 
@@ -497,6 +668,7 @@ def main(argv: list[str] | None = None) -> int:
                 break
     if not a.dry_run:
         kick_board_check()
+        kick_approved_deliver()
     return 0
 
 

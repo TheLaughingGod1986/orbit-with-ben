@@ -38,6 +38,23 @@ def live_fixture():
 
 
 class ParseNotes(unittest.TestCase):
+    def test_recorded_watch_format_is_not_guessed_from_opaque_url_or_title(self):
+        self.assertEqual(vt.watch_format({'file':'OWB UAT/030_apophis_short_v13a/030_apophis_short_v13a_PHONE.mp4'}),'short')
+        self.assertEqual(vt.watch_format({'file':'project/10_Shorts/one/master.mp4'}),'short')
+        self.assertEqual(vt.watch_format({'url':'https://example.test/short.mp4','title':'A Short'}),'')
+        self.assertEqual(vt.watch_format({'file':'long_with_shorts_bumper.mp4'}),'')
+
+    def test_project_watch_short_is_corrected_without_changing_deep_link_or_review(self):
+        args=dict(key='OWB:030',channel='OWB',number='030',title='Apophis',vtype='long',air='',brief={},release=None,
+                  upload_rows=[],jobs=[],check=None,watch={'file':'030_apophis_short_v13a_PHONE.mp4','version':'v13a','url':'https://example.test/watch'},
+                  override_lane=None,now=datetime.now(timezone.utc))
+        card=vt._card(**args)
+        self.assertEqual((card['key'],card['checkId'],card['type']),('OWB:030','OWB-030','short'))
+        self.assertTrue(card['cutFormatCorrected'])
+        self.assertEqual(card['watch'],args['watch'])
+        args.update(release={'videoId':'realLong000','state':'live'})
+        self.assertEqual(vt._card(**args)['type'],'long','an unrelated watch link cannot relabel a known published video')
+
     def test_timecoded_list(self):
         notes = vt.parse_change_notes(
             "HOS 007 Vaccine: Ben's 3 changes\n"
@@ -104,6 +121,22 @@ class LaneRules(unittest.TestCase):
             self.assertNotIn("your OK", f["text"])
 
 
+class CurrentApprovalBlocker(unittest.TestCase):
+    def test_current_ruling_and_correction_replace_historical_failure(self):
+        source={'id':'J0956','status':'blocked','after':'J0988',
+                'approved_from':{'version':'v07','card':'OWB:S:Neptune'},
+                'result':'Chief ruled: preserve v07 approval; correction queued as J0988.',
+                'history':[{'at':'2026-10-26T18:00Z','what':'blocked: parked for Chief: old audio failure'}]}
+        entry=vt.approved_entries([source])[0]
+        self.assertNotIn('old audio failure',entry['blockedWhy'])
+        state,line,warn=vt.approved_state(entry,{'J0988':{'id':'J0988','status':'open','title':'Neptune technical correction'}},datetime(2026,10,26,tzinfo=timezone.utc))
+        self.assertEqual(state,'blocked')
+        self.assertIn('J0988: Neptune technical correction',line)
+        self.assertIn('Chief ruled',line)
+        self.assertNotIn('old audio failure',warn)
+        self.assertEqual(source['approved_from']['version'],'v07')
+
+
 class RealYouTubeState(unittest.TestCase):
     """Board must match YouTube (Ben, 24 Oct 23:23): public read wins, old films and Shorts get real titles."""
     NOW = datetime(2026, 10, 24, 22, 0, tzinfo=timezone.utc)
@@ -131,6 +164,11 @@ class RealYouTubeState(unittest.TestCase):
         v = self.build()["OWB:022"]
         self.assertEqual((v["lane"], v["youtube"]["state"]), ("done", "live"))
         self.assertTrue(v["line"].startswith("Public on YouTube since"))
+
+    def test_past_schedule_without_public_read_is_still_scheduled(self):
+        v=self.build(public={})["OWB:022"]
+        self.assertEqual((v["youtube"]["state"],v["youtube"]["privacy"]),("scheduled","private"))
+        self.assertNotIn("bySchedule",v["youtube"])
 
     def test_title_match_moves_aired_hos_long_to_done(self):
         v = self.build()["HOS:004"]
@@ -168,6 +206,140 @@ class RealYouTubeState(unittest.TestCase):
         self.assertEqual(vt.clean_short_slug("friday_2026-10-16_last_star"), "Last star")
         self.assertEqual(vt.clean_short_slug("mon30_comets"), "Comets")
         self.assertEqual(vt.short_title_from_path({"file": "x/10_Shorts/wednesday_neutron_cover/a.mp4"}), "Neutron")
+
+
+class PlannedShortsBacklog(unittest.TestCase):
+    """Upcoming longs get cadence Short cards on Videos → Backlog (Ben, 7 Nov 2026)."""
+    NOW = datetime(2026, 11, 7, 10, 0, tzinfo=timezone.utc)
+
+    def build(self, **kw):
+        args = dict(
+            hos={"films": [
+                {"id": "012", "title": "Why Alchemy Never Found Gold", "air": "2026-12-24"},
+                {"id": "014", "title": "How We Measured the Speed of Light", "air": "2026-12-31"},
+                {"id": "015", "title": "Who Invented the Telescope?", "air": "2027-01-07"},
+                {"id": "018", "title": "Why Did Phlogiston Fail?", "air": "2027-01-14"},
+                {"id": "009", "title": "Why Doesn't the Moon Fall to Earth?", "air": "2026-11-26"},
+            ]},
+            owb=[
+                {"film": "033", "title": "Why Knocked-Sideways Uranus Has 21-Year Winters", "air": "2026-12-09"},
+                {"film": "040", "title": "Wrong Kind Of Aliens", "air": ""},
+                {"film": "050", "title": "Why Saturn's Moon Iapetus Is Half Black and White", "air": ""},
+            ],
+            briefs={}, jobs=[], checks={}, uploads={}, public={}, now=self.NOW,
+        )
+        args.update(kw)
+        return vt.build_videos(**args)
+
+    def test_hos_upcoming_longs_get_four_planned_shorts_each(self):
+        # 009 is in production (jobs → progress); the four dated backlog longs stay upcoming.
+        out = self.build(
+            jobs=[{"id": "J1", "status": "open", "title": "HOS 009 script", "taskKeys": ["HOS:009"]}],
+            overrides={"jobFilms": {"J1": ["HOS:009"]}},
+        )
+        shorts = [v for v in out["videos"] if v["type"] == "short" and v["channel"] == "HOS" and v["lane"] == "upcoming"]
+        by_parent = {}
+        for v in shorts:
+            by_parent.setdefault(v["parent"], []).append(v)
+        for key in ("HOS:012", "HOS:014", "HOS:015", "HOS:018"):
+            self.assertEqual(len(by_parent.get(key) or []), 4, msg=key)
+            for i, card in enumerate(sorted(by_parent[key], key=lambda c: c["key"]), 1):
+                self.assertEqual(card["key"], f"{key}:S:planned-{i}")
+                self.assertEqual(card["parent"], key)
+                self.assertEqual(card["channel"], "HOS")
+                self.assertFalse((card.get("youtube") or {}).get("videoId"))
+                self.assertEqual(card.get("shortId") or "", "")
+                self.assertTrue(card["title"].startswith(f"Short {i} · "))
+        self.assertEqual(sum(len(v) for k, v in by_parent.items() if k.startswith("HOS:")), 16)
+        self.assertNotIn("HOS:009", by_parent)
+
+    def test_orbit_dated_and_undated_upcoming_each_get_two(self):
+        # Regression: undated Orbit backlog longs must not drop back to long-only (Ben, 7 Nov 2026).
+        out = self.build()
+        owb_shorts = [v for v in out["videos"] if v["type"] == "short" and v["channel"] == "OWB"]
+        by_parent = {}
+        for v in owb_shorts:
+            by_parent.setdefault(v["parent"], []).append(v)
+        self.assertEqual(set(by_parent), {"OWB:033", "OWB:040", "OWB:050"})
+
+        dated = by_parent["OWB:033"]
+        self.assertEqual(len(dated), 2)
+        self.assertEqual({c["key"] for c in dated}, {"OWB:033:S:planned-1", "OWB:033:S:planned-2"})
+        self.assertTrue(all(c.get("air", "").startswith("2026-12-09") for c in dated))
+        self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in dated))
+        self.assertTrue(all(not (c.get("shortId") or "") for c in dated))
+
+        for parent in ("OWB:040", "OWB:050"):
+            cards = by_parent[parent]
+            self.assertEqual(len(cards), 2, msg=parent)
+            self.assertEqual({c["key"] for c in cards}, {f"{parent}:S:planned-1", f"{parent}:S:planned-2"})
+            self.assertTrue(all((c.get("air") or "") == "" for c in cards), msg=parent)
+            self.assertTrue(all(not (c.get("youtube") or {}).get("videoId") for c in cards))
+            self.assertTrue(all(not (c.get("shortId") or "") for c in cards))
+
+    def test_in_production_long_gets_no_planned_shorts(self):
+        out = self.build(
+            jobs=[{"id": "J1", "status": "open", "title": "HOS 009 script", "taskKeys": ["HOS:009"]}],
+            overrides={"jobFilms": {"J1": ["HOS:009"]}},
+        )
+        by = {v["key"]: v for v in out["videos"]}
+        self.assertEqual(by["HOS:009"]["lane"], "progress")
+        self.assertFalse(any(v.get("parent") == "HOS:009" for v in out["videos"]))
+
+    def test_uploaded_shorts_suppress_planned_placeholders(self):
+        out = self.build(
+            uploads={"OWB:033:S:AbCdEfGhIjK": [{
+                "videoId": "AbCdEfGhIjK", "kind": "short", "film": "033", "channel": "OWB",
+                "file": "x/10_Shorts/wed_uranus/a.mp4", "privacyStatus": "private",
+                "publishAt": "2026-12-10T11:30:00Z", "supersededBy": "",
+            }]},
+        )
+        planned = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:033"]
+        self.assertEqual(planned, [])
+        real = [v for v in out["videos"] if v.get("key") == "OWB:033:S:AbCdEfGhIjK"]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]["shortId"], "AbCdEfGhIjK")
+
+    def test_undated_long_with_live_shorts_gets_no_planned_placeholders(self):
+        # Older shipped films (e.g. 005 Last Star, 019 Andromeda) stay long-only for planned cards.
+        out = self.build(
+            owb=[
+                {"film": "005", "title": "The Last Star In The Universe", "air": ""},
+                {"film": "040", "title": "Wrong Kind Of Aliens", "air": ""},
+            ],
+            uploads={"OWB:005:S:LiveShort001": [{
+                "videoId": "LiveShort001", "kind": "short", "film": "005", "channel": "OWB",
+                "file": "x/10_Shorts/last_star/a.mp4", "privacyStatus": "public",
+                "publishAt": "", "supersededBy": "",
+            }]},
+            public={"LiveShort001": {
+                "title": "Last Star Short", "channel": "OWB", "format": "short",
+                "publishedAt": "2026-01-15T12:00:00Z",
+            }},
+        )
+        planned_005 = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:005"]
+        planned_040 = [v for v in out["videos"] if vt.is_planned_short_key(v["key"]) and v.get("parent") == "OWB:040"]
+        self.assertEqual(planned_005, [])
+        self.assertEqual({c["key"] for c in planned_040}, {"OWB:040:S:planned-1", "OWB:040:S:planned-2"})
+        self.assertTrue(all((c.get("air") or "") == "" for c in planned_040))
+
+    def test_youtube_id_on_long_suppresses_planned_shorts(self):
+        # Guard is independent of lane: even an upcoming-shaped parent with a YouTube id
+        # must not sprout planned Short placeholders (older shipped films).
+        videos = [{
+            "key": "OWB:019", "channel": "OWB", "number": "019", "title": "Andromeda",
+            "type": "long", "lane": "upcoming", "air": "",
+            "youtube": {"videoId": "ojk-dfOpAmw", "state": "live"},
+        }]
+        vt.add_planned_shorts(videos, uploads={}, film_lanes={}, now=self.NOW)
+        planned = [v for v in videos if vt.is_planned_short_key(v.get("key") or "")]
+        self.assertEqual(planned, [])
+
+    def test_script_title_wins_when_provided(self):
+        # Direct helper: build path only uses generic titles unless titles_by_parent is wired later.
+        self.assertEqual(vt.planned_short_title(1, "Titan", "Could You Strike a Match on Titan?"),
+                         "Could You Strike a Match on Titan?")
+        self.assertEqual(vt.planned_short_title(2, "Titan", ""), "Short 2 · Titan")
 
 
 class LiveMapping(unittest.TestCase):
@@ -217,3 +389,28 @@ class LiveMapping(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PastNotes(unittest.TestCase):
+    """Ben, 8 Nov 2026: a re-sent cut lists what he flagged last time."""
+    NOW = datetime(2026, 11, 9, tzinfo=timezone.utc)
+
+    def test_a_change_on_an_older_version_shows_under_the_new_cut(self):
+        old = {"verdict": "change", "version": "v02", "at": "2026-11-08T10:42:51Z",
+               "fixes": [{"t": "", "text": "like a rectangle and blurry above and below"}]}
+        self.assertEqual(vt.past_notes((old, "v03")),
+                         [{"version": "v02", "at": "2026-11-08T10:42:51Z",
+                           "notes": [{"t": "", "text": "like a rectangle and blurry above and below"}]}])
+        self.assertEqual(vt.past_notes((old, "v02")), [], "the cut still being fixed isn't a past problem")
+        self.assertEqual(vt.past_notes(({"verdict": "ok", "version": "v01"}, "v03")), [])
+
+    def test_a_fix_job_under_its_own_id_carries_the_old_notes_via_prev(self):
+        checks = {"OWB-J2395.3": {"verdict": "change", "version": "v02", "at": "2026-11-08T10:42:51Z",
+                                  "fixes": [{"t": "", "text": "blurry above and below"}]}}
+        card = vt.apply_ask({"key": "OWB:ASK:J2418", "title": "Short 2"},
+                            {"id": "J2418", "job": "J2418", "jobStatus": "blocked", "what": "Watch 031 Short 2 v03",
+                             "file": "OWB UAT/x.mp4", "version": "v03", "channel": "OWB", "prev": ["OWB-J2395.3"],
+                             "fixed": ["Rebuilt full-screen 1080x1920"]}, checks, self.NOW)
+        self.assertEqual(card["pastNotes"][0]["notes"][0]["text"], "blurry above and below")
+        self.assertEqual(card["fixedNotes"], ["Rebuilt full-screen 1080x1920"])
+

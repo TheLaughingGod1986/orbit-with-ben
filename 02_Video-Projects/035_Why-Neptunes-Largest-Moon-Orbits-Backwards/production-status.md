@@ -1,5 +1,9 @@
 # Production status — 035 Why Neptune's Largest Moon Orbits Backwards
 
+## Handoff repair — 3 November 2026 (J1776)
+
+Workflow FIX only. J1898 owns the Chief topic/editorial decision, after J1776. The topic and script remain unlocked: the historical 95.8 PASS below is an automated score, not production approval. Original handoffs J0387/J0395 were cancelled against 061-only reviews; J0804 deferred 035–061 topic locks. Complete neighbour/pre-build evidence, Short-first evidence or waiver, formal Gemini facts, direct quote checks and explicit Chief script lock before VO. See `../../jobs/reviews/J1776/CHIEF_HANDOFF_2026-11-03.md`. Existing drafts and all production gates remain unchanged.
+
 | Field | Value |
 |-------|-------|
 | Slug | `035_Why-Neptunes-Largest-Moon-Orbits-Backwards` |

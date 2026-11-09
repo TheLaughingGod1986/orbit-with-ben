@@ -1,0 +1,1599 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini ISS)",
+      "t": 1.55,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0052 < film p5 0.0103"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "R05",
+      "source": "code_graphic_032_r05_rain_preview_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 37.47,
+      "at": "0:37",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0077 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 48,
+      "row": "R20",
+      "source": "code_graphic_032_r20_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 204.43,
+      "at": "3:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0082 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 89,
+      "row": "R37",
+      "source": "code_graphic_032_r37_spark_question_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 399.93,
+      "at": "6:40",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.69 < 18.0",
+        "low detail: edge density 0.0068 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 98,
+      "row": "R41",
+      "source": "code_graphic_032_r41_no_flame_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 435.2,
+      "at": "7:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0103 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 100,
+      "row": "R41",
+      "source": "code_graphic_032_r41_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 445.5,
+      "at": "7:26",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0057 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 127,
+      "row": "R51",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini ISS)",
+      "t": 564.48,
+      "at": "9:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.005 < film p5 0.0103"
+      ],
+      "offset": null
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini ISS)",
+      "t": 1.55,
+      "at": "0:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0052 < film p5 0.0103"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "R01",
+      "source": "PIA08167.jpg",
+      "title": "Shifting Northern Hazes on Titan (Cassini ISS)",
+      "t": 4.65,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 2,
+      "row": "R02",
+      "source": "code_graphic_032_r02_survive_check_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 7.97,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 3,
+      "row": "R03",
+      "source": "PIA22766.jpg",
+      "title": "Cassini Grand Finale: Backlit Saturn and Rings",
+      "t": 11.43,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 4,
+      "row": "R03",
+      "source": "PIA21902.tif",
+      "title": "Twilight Haze Layers on Titan (Cassini ISS)",
+      "t": 14.83,
+      "at": "0:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 5,
+      "row": "R03",
+      "source": "code_graphic_032_r03_pressure_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 18.33,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 6,
+      "row": "R03",
+      "source": "PIA21890.jpg",
+      "title": "A Last Look at Titan (Cassini ISS)",
+      "t": 21.53,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 7,
+      "row": "R04",
+      "source": "PIA08167.jpg",
+      "title": "Shifting Northern Hazes on Titan (Cassini ISS)",
+      "t": 24.35,
+      "at": "0:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "R04",
+      "source": "PIA21890.jpg",
+      "title": "A Last Look at Titan (Cassini ISS)",
+      "t": 27.17,
+      "at": "0:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "R04",
+      "source": "code_graphic_032_r04_cold_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.37,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 10,
+      "row": "R05",
+      "source": "PIA07231.jpg",
+      "title": "Varied Terrain Seen by Huygens DISR During Descent",
+      "t": 33.92,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "R05",
+      "source": "code_graphic_032_r05_rain_preview_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 37.47,
+      "at": "0:37",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0077 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 12,
+      "row": "R05",
+      "source": "PIA12621.jpg",
+      "title": "West of the Probe: Titan Adiri Region (Cassini ISS)",
+      "t": 40.72,
+      "at": "0:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 13,
+      "row": "R05",
+      "source": "NASA_Dragonfly_BannerFactSheet_2024.jpg",
+      "title": "Dragonfly Rotorcraft Soaring Over Titan Dunes (NASA Mission Page)",
+      "t": 43.63,
+      "at": "0:44",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "R06",
+      "source": "PIA14922.jpg",
+      "title": "Colorful Colossuses: Titan Beside Ringed Saturn",
+      "t": 46.55,
+      "at": "0:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 15,
+      "row": "R06",
+      "source": "PIA17177.jpg",
+      "title": "Dusk in the South: Titan Atmosphere and Vortex (Cassini ISS)",
+      "t": 49.43,
+      "at": "0:49",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 16,
+      "row": "R07",
+      "source": "huygens_1671.jpg",
+      "title": "Portrait of Christiaan Huygens (1671)",
+      "t": 52.4,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 17,
+      "row": "R07",
+      "source": "code_graphic_032_r07_who_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 55.73,
+      "at": "0:56",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 18,
+      "row": "R07",
+      "source": "code_graphic_032_r07_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 59.33,
+      "at": "0:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 19,
+      "row": "R08",
+      "source": "PIA14922.jpg",
+      "title": "Colorful Colossuses: Titan Beside Ringed Saturn",
+      "t": 63.03,
+      "at": "1:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "R08",
+      "source": "code_graphic_032_r08_orbit_period_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 66.73,
+      "at": "1:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 21,
+      "row": "R09",
+      "source": "PIA08733.jpg",
+      "title": "Titan Crescent View (Cassini ISS)",
+      "t": 70.88,
+      "at": "1:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "R09",
+      "source": "PIA14602.jpg",
+      "title": "Hazy Orange Orb of Titan (Cassini ISS)",
+      "t": 75.03,
+      "at": "1:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "R09",
+      "source": "code_graphic_032_r09_sizes_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 78.63,
+      "at": "1:19",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 24,
+      "row": "R10",
+      "source": "PIA17172.jpg",
+      "title": "The Day the Earth Smiled: Saturn and Titan Backlit Panorama",
+      "t": 81.97,
+      "at": "1:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 25,
+      "row": "R10",
+      "source": "code_graphic_032_r10_who_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 85.3,
+      "at": "1:25",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 26,
+      "row": "R10",
+      "source": "code_graphic_032_r10_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 88.9,
+      "at": "1:29",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 27,
+      "row": "R10",
+      "source": "code_graphic_032_r10_spectrum_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 92.5,
+      "at": "1:32",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 28,
+      "row": "R11",
+      "source": "PIA21902.tif",
+      "title": "Twilight Haze Layers on Titan (Cassini ISS)",
+      "t": 97.42,
+      "at": "1:37",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 29,
+      "row": "R12",
+      "source": "PIA02238.jpg",
+      "title": "Titan Thick Haze Layer Seen by Voyager 1",
+      "t": 104.65,
+      "at": "1:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 30,
+      "row": "R12",
+      "source": "code_graphic_032_r12_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 110.57,
+      "at": "1:51",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 31,
+      "row": "R13",
+      "source": "PIA02238.jpg",
+      "title": "Titan Thick Haze Layer Seen by Voyager 1",
+      "t": 117.08,
+      "at": "1:57",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 32,
+      "row": "R13",
+      "source": "code_graphic_032_r13_photolysis_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 123.6,
+      "at": "2:04",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 33,
+      "row": "R14",
+      "source": "PIA21450.jpg",
+      "title": "Cloud Bands Streak Across Titan (Cassini)",
+      "t": 129.47,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 34,
+      "row": "R14",
+      "source": "code_graphic_032_r14_methane_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 135.33,
+      "at": "2:15",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "R15",
+      "source": "PIA01050.jpg",
+      "title": "Cassini-Huygens Titan IV-B/Centaur Launch",
+      "t": 140.08,
+      "at": "2:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 36,
+      "row": "R15",
+      "source": "PIA07231.jpg",
+      "title": "Varied Terrain Seen by Huygens DISR During Descent",
+      "t": 145.98,
+      "at": "2:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 37,
+      "row": "R15",
+      "source": "code_graphic_032_r15_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 150.73,
+      "at": "2:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "R16",
+      "source": "PIA21610.jpg",
+      "title": "Titan Northern Summer Clouds (Cassini)",
+      "t": 154.0,
+      "at": "2:34",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 39,
+      "row": "R16",
+      "source": "code_graphic_032_r16_descent_147m_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 157.27,
+      "at": "2:37",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 40,
+      "row": "R17",
+      "source": "PIA07236.jpg",
+      "title": "River Channel and Ridge Area on Titan (Huygens DISR)",
+      "t": 165.37,
+      "at": "2:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 41,
+      "row": "R18",
+      "source": "PIA07232.jpg",
+      "title": "First Color View of Titan Surface Pebbles (Huygens DISR)",
+      "t": 176.07,
+      "at": "2:56",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 42,
+      "row": "R18",
+      "source": "code_graphic_032_r18_ruler_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 182.27,
+      "at": "3:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 43,
+      "row": "R19",
+      "source": "PIA14909.jpg",
+      "title": "Titan and Saturn Crescent View (Cassini ISS)",
+      "t": 185.43,
+      "at": "3:05",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "R19",
+      "source": "code_graphic_032_r19_distance_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 188.6,
+      "at": "3:09",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 45,
+      "row": "R19",
+      "source": "PIA22766.jpg",
+      "title": "Cassini Grand Finale: Backlit Saturn and Rings",
+      "t": 192.2,
+      "at": "3:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 46,
+      "row": "R19",
+      "source": "code_graphic_032_r19_temp_scale_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 195.8,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 47,
+      "row": "R20",
+      "source": "PIA07232.jpg",
+      "title": "First Color View of Titan Surface Pebbles (Huygens DISR)",
+      "t": 200.12,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "R20",
+      "source": "code_graphic_032_r20_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 204.43,
+      "at": "3:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0082 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 49,
+      "row": "R21",
+      "source": "code_graphic_032_r21_cycle_clouds_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 208.03,
+      "at": "3:28",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 50,
+      "row": "R21",
+      "source": "PIA07236.jpg",
+      "title": "River Channel and Ridge Area on Titan (Huygens DISR)",
+      "t": 213.1,
+      "at": "3:33",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 51,
+      "row": "R21",
+      "source": "code_graphic_032_r21_cycle_lakes_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 218.17,
+      "at": "3:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 52,
+      "row": "R22",
+      "source": "PIA21445.jpg",
+      "title": "Golden Titan Crescent in Haze (Cassini ISS)",
+      "t": 222.82,
+      "at": "3:43",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 53,
+      "row": "R22",
+      "source": "code_graphic_032_r22_surface_72m_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 227.47,
+      "at": "3:47",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 54,
+      "row": "R23",
+      "source": "PIA08733.jpg",
+      "title": "Titan Crescent View (Cassini ISS)",
+      "t": 231.12,
+      "at": "3:51",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 55,
+      "row": "R23",
+      "source": "code_graphic_032_r23_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 234.77,
+      "at": "3:55",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 56,
+      "row": "R23",
+      "source": "code_graphic_032_r23_landing_record_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 238.37,
+      "at": "3:58",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "R24",
+      "source": "subscribe_card_032_r24_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 242.85,
+      "at": "4:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 58,
+      "row": "R25",
+      "source": "PIA17163.jpg",
+      "title": "Titan Crescents in Golden Haze (Cassini)",
+      "t": 246.78,
+      "at": "4:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 59,
+      "row": "R25",
+      "source": "code_graphic_032_r25_heated_suit_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 249.83,
+      "at": "4:10",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 60,
+      "row": "R25",
+      "source": "PIA21450.jpg",
+      "title": "Cloud Bands Streak Across Titan (Cassini)",
+      "t": 253.43,
+      "at": "4:13",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "R25",
+      "source": "code_graphic_032_r25_pressure_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 257.03,
+      "at": "4:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 62,
+      "row": "R26",
+      "source": "PIA21445.jpg",
+      "title": "Golden Titan Crescent in Haze (Cassini ISS)",
+      "t": 261.9,
+      "at": "4:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 63,
+      "row": "R26",
+      "source": "code_graphic_032_r26_airmix_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 266.77,
+      "at": "4:27",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 64,
+      "row": "R27",
+      "source": "PIA17172.jpg",
+      "title": "The Day the Earth Smiled: Saturn and Titan Backlit Panorama",
+      "t": 270.85,
+      "at": "4:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 65,
+      "row": "R27",
+      "source": "code_graphic_032_r27_airmix_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 274.93,
+      "at": "4:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 66,
+      "row": "R27",
+      "source": "code_graphic_032_r27_density_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 278.53,
+      "at": "4:39",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 67,
+      "row": "R27",
+      "source": "code_graphic_032_r27_gravity_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 282.13,
+      "at": "4:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 68,
+      "row": "R27",
+      "source": "code_graphic_032_r27_no_oxygen_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 285.73,
+      "at": "4:46",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 69,
+      "row": "R28",
+      "source": "PIA21610.jpg",
+      "title": "Titan Northern Summer Clouds (Cassini)",
+      "t": 291.27,
+      "at": "4:51",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 70,
+      "row": "R28",
+      "source": "code_graphic_032_r28_rain_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 296.8,
+      "at": "4:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 71,
+      "row": "R29",
+      "source": "code_graphic_032_r29_rain_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 300.4,
+      "at": "5:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 72,
+      "row": "R29",
+      "source": "PIA09182.jpg",
+      "title": "Titan Equatorial Belet Dunes Viewed by Cassini Radar",
+      "t": 306.5,
+      "at": "5:06",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 73,
+      "row": "R29",
+      "source": "code_graphic_032_r29_rain_comparison_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 312.6,
+      "at": "5:13",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 74,
+      "row": "R30",
+      "source": "PIA09182.jpg",
+      "title": "Titan Equatorial Belet Dunes Viewed by Cassini Radar",
+      "t": 317.83,
+      "at": "5:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "R30",
+      "source": "code_graphic_032_r30_dunes_label_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 323.07,
+      "at": "5:23",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 76,
+      "row": "R31",
+      "source": "PIA20021_right_panel_1440x1144.jpg",
+      "title": "Titan Northern Lakes and Seas (Cassini Radar Right-Panel Crop)",
+      "t": 328.23,
+      "at": "5:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "R31",
+      "source": "PIA17031.jpg",
+      "title": "Vast Ligeia Mare Coastline in False Color (Cassini Radar)",
+      "t": 334.98,
+      "at": "5:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 78,
+      "row": "R32",
+      "source": "PIA20021_right_panel_1440x1144.jpg",
+      "title": "Titan Northern Lakes and Seas (Cassini Radar Right-Panel Crop)",
+      "t": 344.72,
+      "at": "5:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 79,
+      "row": "R32",
+      "source": "code_graphic_032_r32_scalemap_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 352.87,
+      "at": "5:53",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 80,
+      "row": "R33",
+      "source": "PIA17031.jpg",
+      "title": "Vast Ligeia Mare Coastline in False Color (Cassini Radar)",
+      "t": 357.43,
+      "at": "5:57",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 81,
+      "row": "R33",
+      "source": "code_graphic_032_r33_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 362.0,
+      "at": "6:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 82,
+      "row": "R33",
+      "source": "code_graphic_032_r33_depth_ligeia_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 365.6,
+      "at": "6:06",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 83,
+      "row": "R34",
+      "source": "PIA21434.jpg",
+      "title": "Titan Kraken and Ligeia Seas in Sharper Focus (Cassini VIMS)",
+      "t": 368.28,
+      "at": "6:08",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 84,
+      "row": "R34",
+      "source": "code_graphic_032_r34_depth_kraken_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 370.97,
+      "at": "6:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 85,
+      "row": "R35",
+      "source": "PIA14602.jpg",
+      "title": "Hazy Orange Orb of Titan (Cassini ISS)",
+      "t": 377.37,
+      "at": "6:17",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "R35",
+      "source": "code_graphic_032_r35_ocean_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 383.77,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 87,
+      "row": "R36",
+      "source": "PIA12481.jpg",
+      "title": "Specular Reflection of Sunlight off Titan Lake (Cassini VIMS)",
+      "t": 387.45,
+      "at": "6:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 88,
+      "row": "R37",
+      "source": "SVS20311_DF_End_Pan_1080.mp4",
+      "title": "Dragonfly Over Titan Dunes Flight Pan (SVS 20311)",
+      "t": 393.73,
+      "at": "6:34",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 89,
+      "row": "R37",
+      "source": "code_graphic_032_r37_spark_question_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 399.93,
+      "at": "6:40",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.69 < 18.0",
+        "low detail: edge density 0.0068 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 90,
+      "row": "R38",
+      "source": "PIA14584.jpg",
+      "title": "Titan Kraken Mare Near-Infrared View (Cassini ISS)",
+      "t": 405.13,
+      "at": "6:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "R38",
+      "source": "code_graphic_032_r38_reserves_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 410.33,
+      "at": "6:50",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 92,
+      "row": "R39",
+      "source": "AS17-148-22727.jpg",
+      "title": "The Blue Marble Earth from Apollo 17",
+      "t": 415.12,
+      "at": "6:55",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "R39",
+      "source": "code_graphic_032_r39_fire_partners_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 419.9,
+      "at": "7:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 94,
+      "row": "R39",
+      "source": "code_graphic_032_r39_oxygen_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 423.5,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 95,
+      "row": "R40",
+      "source": "PIA14584.jpg",
+      "title": "Titan Kraken Mare Near-Infrared View (Cassini ISS)",
+      "t": 426.35,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 96,
+      "row": "R40",
+      "source": "code_graphic_032_r40_airmix_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 428.9,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 97,
+      "row": "R40",
+      "source": "code_graphic_032_r40_fire_missing_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 431.9,
+      "at": "7:12",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 98,
+      "row": "R41",
+      "source": "code_graphic_032_r41_no_flame_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 435.2,
+      "at": "7:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0103 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 99,
+      "row": "R41",
+      "source": "PIA12481.jpg",
+      "title": "Specular Reflection of Sunlight off Titan Lake (Cassini VIMS)",
+      "t": 440.35,
+      "at": "7:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 100,
+      "row": "R41",
+      "source": "code_graphic_032_r41_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 445.5,
+      "at": "7:26",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0057 < film p5 0.0103"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 101,
+      "row": "R42",
+      "source": "SSC20210116_GR8438.jpg",
+      "title": "RS-25 Rocket Engine Hot-Fire Test at Stennis Space Center",
+      "t": 449.78,
+      "at": "7:30",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 102,
+      "row": "R42",
+      "source": "code_graphic_032_r42_flipfire_earth_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 454.07,
+      "at": "7:34",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 103,
+      "row": "R43",
+      "source": "PIA14909.jpg",
+      "title": "Titan and Saturn Crescent View (Cassini ISS)",
+      "t": 456.97,
+      "at": "7:37",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 104,
+      "row": "R43",
+      "source": "SSC20210116_GR8438.jpg",
+      "title": "RS-25 Rocket Engine Hot-Fire Test at Stennis Space Center",
+      "t": 459.17,
+      "at": "7:39",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 105,
+      "row": "R43",
+      "source": "code_graphic_032_r43_flipfire_titan_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 462.07,
+      "at": "7:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 106,
+      "row": "R44",
+      "source": "PIA17163.jpg",
+      "title": "Titan Crescents in Golden Haze (Cassini)",
+      "t": 466.8,
+      "at": "7:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 107,
+      "row": "R44",
+      "source": "SVS20311_DF_Open_1080.mp4",
+      "title": "Dragonfly Flight and Rotor Spin-Up on Titan (SVS 20311)",
+      "t": 472.13,
+      "at": "7:52",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 108,
+      "row": "R45",
+      "source": "code_graphic_032_r45_density_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 476.33,
+      "at": "7:56",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 109,
+      "row": "R45",
+      "source": "SVS20311_DF_Open_1080.mp4",
+      "title": "Dragonfly Flight and Rotor Spin-Up on Titan (SVS 20311)",
+      "t": 482.9,
+      "at": "8:03",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 110,
+      "row": "R45",
+      "source": "code_graphic_032_r45_gravity_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 489.47,
+      "at": "8:09",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 111,
+      "row": "R45",
+      "source": "code_graphic_032_r45_lift_mechanism_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 493.07,
+      "at": "8:13",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 112,
+      "row": "R46",
+      "source": "SVS20311_DF_Intake_shot_1080.mp4",
+      "title": "Dragonfly Flight and Surface Approach on Titan (SVS 20311)",
+      "t": 496.48,
+      "at": "8:16",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 113,
+      "row": "R46",
+      "source": "code_graphic_032_r46_lift_28x_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 499.9,
+      "at": "8:20",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 114,
+      "row": "R47",
+      "source": "NASA_Dragonfly_BannerFactSheet_2024.jpg",
+      "title": "Dragonfly Rotorcraft Soaring Over Titan Dunes (NASA Mission Page)",
+      "t": 504.68,
+      "at": "8:25",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 115,
+      "row": "R47",
+      "source": "SVS20311_Dragonfly_Landed_Closeup.png",
+      "title": "Dragonfly Rotorcraft Landed on Titan Surface (SVS 20311)",
+      "t": 510.67,
+      "at": "8:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 116,
+      "row": "R47",
+      "source": "code_graphic_032_r47_fact_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 515.47,
+      "at": "8:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 117,
+      "row": "R48",
+      "source": "SVS20311_DF_Open_1080.mp4",
+      "title": "Dragonfly Flight and Rotor Spin-Up on Titan (SVS 20311)",
+      "t": 518.95,
+      "at": "8:39",
+      "fail": [],
+      "warn": [],
+      "offset": 20.0
+    },
+    {
+      "cut": 118,
+      "row": "R48",
+      "source": "code_graphic_032_r48_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 522.43,
+      "at": "8:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 119,
+      "row": "R48",
+      "source": "code_graphic_032_r48_eight_rotors_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 526.03,
+      "at": "8:46",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 120,
+      "row": "R49",
+      "source": "SVS20311_DF_Intake_shot_1080.mp4",
+      "title": "Dragonfly Flight and Surface Approach on Titan (SVS 20311)",
+      "t": 530.92,
+      "at": "8:51",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 121,
+      "row": "R49",
+      "source": "code_graphic_032_r49_when_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 535.8,
+      "at": "8:56",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 122,
+      "row": "R49",
+      "source": "code_graphic_032_r49_daynight_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 539.4,
+      "at": "8:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 123,
+      "row": "R50",
+      "source": "SVS20311_Dragonfly_Landed_Closeup.png",
+      "title": "Dragonfly Rotorcraft Landed on Titan Surface (SVS 20311)",
+      "t": 544.17,
+      "at": "9:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 124,
+      "row": "R50",
+      "source": "SVS20311_Dragonfly_Drill_1080.mp4",
+      "title": "Dragonfly Surface Sampling Drill on Titan (SVS 20311)",
+      "t": 550.12,
+      "at": "9:10",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 125,
+      "row": "R50",
+      "source": "code_graphic_032_r50_selk_soup_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 554.9,
+      "at": "9:15",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 126,
+      "row": "R51",
+      "source": "PIA21434.jpg",
+      "title": "Titan Kraken and Ligeia Seas in Sharper Focus (Cassini VIMS)",
+      "t": 559.3,
+      "at": "9:19",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 127,
+      "row": "R51",
+      "source": "PIA20016.jpg",
+      "title": "Peering Through Titan Haze (Cassini ISS)",
+      "t": 564.48,
+      "at": "9:24",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.005 < film p5 0.0103"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 128,
+      "row": "R52",
+      "source": "weic2310a.png",
+      "title": "Uranus and Rings in Infrared (JWST NIRCam weic2310a)",
+      "t": 570.75,
+      "at": "9:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 129,
+      "row": "R52",
+      "source": "code_graphic_032_r52_uranus_21y_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 576.23,
+      "at": "9:36",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 130,
+      "row": "R52",
+      "source": "PIA18182.jpg",
+      "title": "Uranus as Seen by NASA Voyager 2",
+      "t": 581.73,
+      "at": "9:42",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0103,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

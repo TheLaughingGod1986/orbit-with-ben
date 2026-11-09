@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * Make listed Orbit video ids Private. Never deletes.
+ * Make listed Orbit video ids Private and unscheduled (clears publishAt). Never deletes.
  * Sends part=status only, copying the writable status fields already on the
  * video (kids flag, embed, license, synthetic media) so only privacy changes.
  * Refuses any id that isn't on the Orbit channel.
@@ -100,7 +100,9 @@ async function main() {
       results.push({ id, error: "not_orbit_channel", before });
       continue;
     }
-    if (before.privacyStatus === "private") {
+    // Already private AND unscheduled = done. Private with a publishAt is still scheduled to go public: send
+    // private status without publishAt to clear it (a swap's old copy, 26 Oct 2026).
+    if (before.privacyStatus === "private" && !before.publishAt) {
       results.push({ id, action: "already_private", before });
       continue;
     }
@@ -115,7 +117,15 @@ async function main() {
     });
     const afterItem = await get(id);
     const after = afterItem ? snapshot(afterItem) : null;
-    results.push({ id, action: "set_private", sent, before, after, titleUnchanged: after?.title === before.title });
+    results.push({
+      id,
+      action: before.privacyStatus === "private" ? "unscheduled" : "set_private",
+      sent,
+      before,
+      after,
+      unscheduled: !after?.publishAt,
+      titleUnchanged: after?.title === before.title,
+    });
   }
 
   const report = { dry, finishedAt: new Date().toISOString(), results };

@@ -1,0 +1,368 @@
+{
+  "status": "FAIL; no approval",
+  "worktree": "/Users/benjaminoats/_desk/worktrees/j1032-assembly",
+  "outputs": "/Users/benjaminoats/_desk/renders/J1032-finish08",
+  "measurements": {
+    "S1_026_A6TW_6CXhcs": {
+      "gates": {
+        "shorts": {
+          "exit_code": 1
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s06_lasilla_mw",
+          "cut": 6,
+          "t": 17.8,
+          "source": "ESO_timelapse_La_Silla.webm",
+          "why": [
+            "split panel: horizontal seam at 0.572"
+          ]
+        },
+        {
+          "row": "s07_paranal_mw",
+          "cut": 7,
+          "t": 20.85,
+          "source": "uhd_yb_paranal_01.mp4",
+          "why": [
+            "split panel: horizontal gutter at 0.687"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "f44d3c1d79758a2a898984b0c4c27762e16aefd597ba3f29e3c45ac8612c1efe",
+        "I_LUFS": -14.4,
+        "TP_dBTP": -2.0,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.49,
+          "masked": 0.49
+        },
+        "actual_seam_diff": 0.5417708333333333,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S1_026_A6TW_6CXhcs_v04_PHONE.mp4": "7f9b64460450bae019d28f346c0645d830b16616c9aa4132ebe5209dd3b2c153",
+          "S1_026_A6TW_6CXhcs_v04.mp4": "cfeba95a65548eb30a0fbff0cba5ebddf0e5f66a341811d207f7513b62dad86d"
+        }
+      }
+    },
+    "S2_027_emwQsPxnRGM": {
+      "gates": {
+        "shorts": {
+          "exit_code": 0
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s05_blue_marble_equator",
+          "cut": 4,
+          "t": 13.75,
+          "source": "GSFC_20171208_Archive_e002130.jpg",
+          "why": [
+            "split panel: horizontal seam at 0.8"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "023bcfd6861b162c52811043fe105c50a8f34496556707e618c86709e5b25db5",
+        "I_LUFS": -14.2,
+        "TP_dBTP": -2.0,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.41,
+          "masked": 0.47
+        },
+        "actual_seam_diff": 0.43732638888888886,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S2_027_emwQsPxnRGM_v04.mp4": "d35efd737ed081f8fbecb11abd16df66df21f1988e65d00d52dda27e6406e451",
+          "S2_027_emwQsPxnRGM_v04_PHONE.mp4": "a4ea99cdde3f2133617b6f833ad86553866b39d78bb0c9802678160c10faae27"
+        }
+      }
+    },
+    "S3_028_bizlhspnVvY": {
+      "gates": {
+        "shorts": {
+          "exit_code": 0
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s03_orion_paranal",
+          "cut": 2,
+          "t": 7.47,
+          "source": "orion_over_paranal.mp4",
+          "why": [
+            "near-black: mean 23.17, p95 33.0"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "5ec1c5f288fe6ad21ef6c5aec900cb4c0d7f58c0d43af68bd4aa211c11edf167",
+        "I_LUFS": -14.4,
+        "TP_dBTP": -1.8,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.68,
+          "masked": 0.7
+        },
+        "actual_seam_diff": 0.6973611111111111,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S3_028_bizlhspnVvY_v04.mp4": "b570eefe1d9d9a27d454677e3bd12e8f54bef86f0bdaeba98f43b750e5d8c934",
+          "S3_028_bizlhspnVvY_v04_PHONE.mp4": "648b7449e49dfb505cf37eaa05bf36663753634efd1affeebbeaf04a8dfa82cf"
+        }
+      }
+    },
+    "S4_028_DETI0HV2jlI": {
+      "gates": {
+        "shorts": {
+          "exit_code": 0
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s04_night_road",
+          "cut": 3,
+          "t": 11.08,
+          "source": "night_road_veo_v01.mp4",
+          "why": [
+            "split panel: horizontal seam at 0.535"
+          ]
+        },
+        {
+          "row": "s05_orion_paranal",
+          "cut": 4,
+          "t": 14.63,
+          "source": "orion_over_paranal.mp4",
+          "why": [
+            "near-black: mean 23.87, p95 34.0"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "5c652c0b47c880b1e8439075cab59772cf1b45d5efdec5079f057d8a93cb05f6",
+        "I_LUFS": -14.4,
+        "TP_dBTP": -1.9,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.57,
+          "masked": 0.56
+        },
+        "actual_seam_diff": 0.6393055555555556,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S4_028_DETI0HV2jlI_v04_PHONE.mp4": "05024340e5366527987982b990479cd74865fbda820e397526b6c1d3a0329050",
+          "S4_028_DETI0HV2jlI_v04.mp4": "7513d419f10053cbc19e53be9bcfc1c9ef27d171f4e6a4484ce101dbedce514e"
+        }
+      }
+    },
+    "S5_028_jJ5LkFGyzLI": {
+      "gates": {
+        "shorts": {
+          "exit_code": 0
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s05_orion_paranal",
+          "cut": 4,
+          "t": 14.13,
+          "source": "orion_over_paranal.mp4",
+          "why": [
+            "near-black: mean 23.7, p95 34.0"
+          ]
+        },
+        {
+          "row": "s06_football_pitch",
+          "cut": 5,
+          "t": 17.33,
+          "source": "football_pitch_veo_v01.mp4",
+          "why": [
+            "split panel: horizontal seam at 0.283, horizontal seam at 0.287, horizontal seam at 0.361"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "3320a70704db0087c3af4e4f773c4471a3119bb2bac9c6e9e256c168494f9a4b",
+        "I_LUFS": -14.4,
+        "TP_dBTP": -2.0,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.58,
+          "masked": 0.63
+        },
+        "actual_seam_diff": 0.5860763888888889,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S5_028_jJ5LkFGyzLI_v04_PHONE.mp4": "d1e22222a38dd19f6c224afef489c9aa744e232da95e0ac67fa400280e64e536",
+          "S5_028_jJ5LkFGyzLI_v04.mp4": "19be35a958231c923c1d3228aea239401e78cb8ade1efe5ac6a8979d389673a0"
+        }
+      }
+    },
+    "S6_028_X768qs8sNQs": {
+      "gates": {
+        "shorts": {
+          "exit_code": 0
+        },
+        "picture": {
+          "exit_code": 1
+        },
+        "polish": {
+          "exit_code": 1
+        },
+        "sfx": {
+          "exit_code": 0
+        },
+        "music": {
+          "exit_code": 0
+        },
+        "dark_pass": true,
+        "ocr_pass": true,
+        "status": "UNREVIEWED; music gate, visual flags, finished audio listening and verified delivery still required"
+      },
+      "visual_failures": [
+        {
+          "row": "s02_orion_paranal",
+          "cut": 1,
+          "t": 4.18,
+          "source": "orion_over_paranal.mp4",
+          "why": [
+            "near-black: mean 23.08, p95 34.0"
+          ]
+        },
+        {
+          "row": "s07_twilight",
+          "cut": 6,
+          "t": 20.08,
+          "source": "conjunction.tif",
+          "why": [
+            "split panel: horizontal gutter at 0.828"
+          ]
+        }
+      ],
+      "audio_loop": {
+        "status": "UNREVIEWED; final gates and listening outstanding",
+        "input_sha256": "3763317ef29411b1ec79e64054cad38b631022bacaed98b22cf715b521015501",
+        "I_LUFS": -14.4,
+        "TP_dBTP": -2.0,
+        "audio_pass": true,
+        "loop": {
+          "whole": 0.69,
+          "masked": 0.69
+        },
+        "actual_seam_diff": 0.7068402777777778,
+        "loop_pass": true,
+        "grain": "noise alls=4 allf=t seed=1032 before loop split",
+        "endpoint": "last 5 frames are opening frames 2, 2, 2, 2, 0; each segment PTS reset by frame index",
+        "files": {
+          "S6_028_X768qs8sNQs_v04.mp4": "ccf4e321f178424dfdf8d8967e1c8697f6e60f4ce1e5f9a4e9b241bf20635bf0",
+          "S6_028_X768qs8sNQs_v04_PHONE.mp4": "b84c579fe8249e92f5e7c4267d886e4e9d974f73a50446ecaa7257a1372f06c5"
+        }
+      }
+    }
+  },
+  "flagged_frame_sha256": {
+    "flagged.jpg": "74cec8cb53203420edcbcb6ea0a7972858e577b55aca16fe5e88c079556af9ee",
+    "S1_026_A6TW_6CXhcs_1.png": "aba2431e18d6cda7a0546b59c25b9b31c3c4e311575c8cda80780b94db123d26",
+    "S1_026_A6TW_6CXhcs_0.png": "da8dba332281e5e98e260e175d6b4d5b6b8e75107aaf3f0af1992265814e097b",
+    "S2_027_emwQsPxnRGM_0.png": "8c8b54421e6bed60143872b73188737898f475639d79905f2615ca188e92a795",
+    "S3_028_bizlhspnVvY_0.png": "f0f0f33c29d445bd07eb7747e101692f600de562a07987c54771836bed09f0fc",
+    "S5_028_jJ5LkFGyzLI_0.png": "1eb42f32022b8e820d38d52d814981764eb8bee2e5dea0186f292d4864bf6c8a",
+    "S5_028_jJ5LkFGyzLI_1.png": "0abf1f71c6ddf148d64b271a02edaacffc1407fcbf8e78c7d7c5070334f65d53",
+    "S6_028_X768qs8sNQs_0.png": "cd1f4695d8d1b07c74f4ca409a75619b95d939a7804d9d10a2ca979e130cfba7",
+    "S6_028_X768qs8sNQs_1.png": "7eb6fdf02f2c72a64c082737c936fd74e8889dad5d01d21d0ec1c6020fba42bb",
+    "S4_028_DETI0HV2jlI_0.png": "099402f0d047a1da6b5d5ed6ac7f02fa33636f454d4775340ca170df5b82f71f",
+    "S4_028_DETI0HV2jlI_1.png": "60d03512b729ef07f5d6320ab6f33f4af797dcc20d36087247bbce1a322e82b8"
+  }
+}

@@ -29,6 +29,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -54,6 +57,15 @@ EST = [(("reading", "readings"), 15), (("assemble", "rough", "full rough", "fina
 
 
 LEARNED: dict = {}  # kind -> median minutes from history (set by learn_estimates)
+
+
+def _plain(j: dict) -> str:
+    """The job's one plain-English line for the board (jobs.plain_summary); never fails the snapshot."""
+    try:
+        import jobs
+        return jobs.plain_summary(j)
+    except Exception:  # noqa: BLE001
+        return ""
 
 
 def kind_of(j: dict) -> int:
@@ -112,18 +124,18 @@ def completed_jobs(alljobs: list[dict], at=None) -> list[dict]:
         keys = set(j["taskKeys"] or [])
         if not keys:
             keys.update(m[0].upper() + ":" + m[1] for m in
-                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["title"], re.I))
+                        channels.key_re().findall(j["title"]))
             film = str(j["film"])
-            if re.fullmatch(r"(HOS|OWB):\d{3}", film):
+            if channels.strict_key_re().fullmatch(film):
                 keys.add(film)
             elif not keys:
                 no = film if re.fullmatch(r"\d{3}", film) else (re.match(r"^\s*(\d{3})\b", j["title"]) or [""])[0].strip()
                 if no:
-                    ch = "HOS" if j["repo"] == "hos" or re.search(r"\bHOS\b|history of science", j["title"], re.I) else "OWB"
+                    ch = channels.label_of_job(j)
                     keys.add(ch + ":" + no)
             keys.update(m[0].upper() + ":" + m[1] for m in
-                        re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j["result"], re.I))
-        targets = {(key, j["stage"]) for key in keys if re.fullmatch(r"(HOS|OWB):\d{3}", key)}
+                        channels.key_re().findall(j["result"]))
+        targets = {(key, j["stage"]) for key in keys if channels.strict_key_re().fullmatch(key)}
         if i < 60 or _t(j["at"]) >= at - timedelta(days=1) or targets - seen:
             kept.append(j)
         seen.update(targets)
@@ -398,7 +410,7 @@ def load_briefs() -> dict:
     if not BRIEFS.exists():
         return {}
     films = json.loads(BRIEFS.read_text()).get("films", {})
-    bad = [k for k in films if not re.fullmatch(r"(HOS|OWB):\d{3}", k)]
+    bad = [k for k in films if not channels.strict_key_re().fullmatch(k)]
     urls = [u for u in [json.loads(BRIEFS.read_text()).get("uatFolderUrl", "")] + [b.get("uatUrl", "") for b in films.values()] if u]
     if any(not u.startswith("https://www.icloud.com/") for u in urls):
         raise SystemExit("film_briefs.json: UAT links must be https://www.icloud.com/ share links")
@@ -592,6 +604,8 @@ def routed_who(kind: str = "", model: str = "") -> str:
     r = _routing()
     if model and model in r.RUNS_ON and not kind:
         return worker_name(r.RUNS_ON[model], model)
+    if kind == "chief" and not model:
+        return "Chief"  # a Chief job goes to whoever is elected (Claude first since 9 Nov 2026), so name the role
     ch = r.job_chain({"kind": kind, "model": model})
     if not ch:
         return ""
@@ -769,11 +783,12 @@ def newest_uat(ch: str, film: str) -> dict | None:
 
 
 # Streamed watch links (Ben, 15 Oct: "Clicking watch does not play the film"). Safari can't play a Files-app link, so a
-# cut is uploaded once to the Studio Kanban's Blob store and the button opens /api/watch?v=<id> (plays in the browser;
+# cut is uploaded once to the Cloudflare R2 bucket (the Vercel Blob store until 23 Oct; no Blob fallback since 29 Oct)
+# and the button opens /api/watch?v=<id> (plays in the browser;
 # needs Ben's board code, never public in board.json). The register maps the cut's iCloud path (relative to CloudDocs) to
 # its id: WATCH_REGISTER in the repo (committed by whoever uploads by hand) plus WATCH_LOCAL_REGISTER on the Mini (written
-# by the auto-upload below). Auto-upload runs only when env WATCH_UPLOAD_KEY is set and the file is at most
-# WATCH_AUTO_MAX bytes (the Hobby Blob allowance is 1 GB in total; bigger cuts need a phone proxy first, e.g. 720p
+# by the auto-upload below). Auto-upload runs only when the four R2 keys are set (r2_ready) and the file is at most
+# WATCH_AUTO_MAX bytes (bigger cuts need a phone proxy first, e.g. 720p
 # ~1.3 Mbit/s, uploaded with scripts/watch_upload.mjs and added to the register). Otherwise the Files link stays.
 SITE_URL = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
 WATCH_REGISTER = ROOT / "05_Analytics" / "kanban" / "watch_uploads.json"
@@ -849,9 +864,9 @@ def r2_ready(env_file: Path | None = None) -> bool:
 
 
 def auto_upload(wid: str, path: Path, rel: str) -> bool:
-    key = os.environ.get("WATCH_UPLOAD_KEY", "")
+    # R2 only (29 Oct 2026): WATCH_UPLOAD_KEY no longer enables an upload, because the Vercel Blob fallback is gone.
     try:
-        if not (key or r2_ready()) or path.stat().st_size > WATCH_AUTO_MAX:
+        if not r2_ready() or path.stat().st_size > WATCH_AUTO_MAX:
             return False
     except OSError:
         return False
@@ -1118,7 +1133,7 @@ def main(argv: list[str] | None = None) -> int:
         ro = run_order(alljobs, focus)
         gate = gates(alljobs)
         typ = typical_minutes(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model")},
+        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model", "due", "created_at", "backlog", "awaits_ben", "approved_from", "dependency_problem", "hold", "remaining_action", "recheck_of")},
                      taskKeys=j.get("taskKeys", []),
                      line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
                      waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
@@ -1128,7 +1143,8 @@ def main(argv: list[str] | None = None) -> int:
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
                      workStart=work_start(j), progress=job_progress(j),
                      estMin=est_minutes(j), typMin=typ.get(kind_key(j), typ["_default"]), kindKey=kind_key(j),
-                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""))
+                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""),
+                     plain=_plain(j))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
         lanes = lanes_info(alljobs)
         hb = mini_heartbeat()

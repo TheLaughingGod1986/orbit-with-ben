@@ -1,0 +1,20 @@
+............
+----------------------------------------------------------------------
+Ran 12 tests in 2.081s
+
+OK
+WARN   0:01 row open /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is
+WARN   0:12 row body /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/other.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 21.0s in a row (look at it: 15s is a lot for one picture)
+WARN   0:24 row tail /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is; terminal loop: prescribed return classified; rendered pixel/loop checks; human moving/phone and audio review
+picture QA PREFLIGHT: 0 of 3 cuts fail, 3 to look at -> /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/report/PICTURE_QA.md
+FAIL   0:24 row tail /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/source.mp4: reuse: same stretch as 0:01 (give it a new stretch, or a new render); terminal loop: missing or unexpected terminal-loop declaration fields
+WARN   0:01 row open /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/source.mp4: kind of picture: no title in the pool, so nobody can tell what it is
+WARN   0:12 row body /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/other.mp4: kind of picture: no title in the pool, so nobody can tell what it is; reuse: on screen 21.0s in a row (look at it: 15s is a lot for one picture)
+picture QA FAIL: 1 of 3 cuts fail, 2 to look at -> /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp6y_sy1cq/report/PICTURE_QA.md
+............
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK
+FAIL   2:53 row 1 PIA12337.jpg: kind of picture: 'Computer Reconstruction of Spirit Predicament' is a computer reconstruction, which looks dated or like a textbook
+picture QA FAIL: 1 of 2 cuts fail, 0 to look at -> /var/folders/pc/rhxy40v51873y2nhdjswd8240000gn/T/tmp3qcq0b5e/out/PICTURE_QA.md

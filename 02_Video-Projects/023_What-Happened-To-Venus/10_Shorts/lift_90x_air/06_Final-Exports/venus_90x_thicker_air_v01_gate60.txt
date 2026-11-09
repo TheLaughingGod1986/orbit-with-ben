@@ -1,0 +1,33 @@
+FAIL  venus_90x_thicker_air_v01.mp4  dur=26.27s  audio=-19.1dB  motion=18.13  f0diff=0.35  cut1=5.6s  vo_onset=0.12s  tail_gap=2.82s  vo_src=mix  dhash=83c3e0e4f4dfdfff  visor=0.0
+   FAIL  integrated loudness -15.5 LUFS outside -14.5..-13.5 (target -14.0)
+   FAIL  true peak -1.4 dBTP above -1.6
+   FAIL  pushed still at frame 0 (mean 0–1.5 s frame diff 0.35 < 1.50) — use moving footage
+   FAIL  first cut at 5.60s > 3.0s (scene-change detect)
+   warn  gap from last word to end is 2.82s > 1.5s (last word 23.45s, duration 26.27s)
+   sheet /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/venus_90x_thicker_air_v01_open_sheet.jpg
+
+=== 60% Stayed-to-Watch & 26 Oct Keeper-Score Check (J0977, 26 Oct 2026) ===
+Overall verdict: FAIL (not ready for Ben's Ready for OK board)
+Source file checked: /Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbshorts.tar :: 02_Video-Projects/023_What-Happened-To-Venus/10_Shorts/lift_90x_air/06_Final-Exports/venus_90x_thicker_air_v01.mp4 (sha256 169cf739ac30c958e57627f825bef5461ea489cf4e4e8c5a822a837d5e85886d)
+Provisional air-date checked: 2026-11-04 (Venus-week candidate)
+
+1. gate_shorts_open.py (including 60% stayed-to-watch & level checks): FAIL
+   - PASS: VO onset 0.12s <= 0.15s; no meta-promise; no Orbit at frame 0 (visor=0.0); open plate unique vs ±14d and last 10 Shorts
+   - FAIL: pushed still at frame 0 (Magellan radar still PIA00215.jpg with slow push; mean 0-1.5s frame diff 0.35 < 1.50) — needs real moving video at frame 0
+   - FAIL: first cut at 5.60s > 3.0s max (span 0 holds 0.00-5.60s)
+   - FAIL: integrated loudness -15.5 LUFS outside -14.5..-13.5 LUFS target
+   - FAIL: true peak -1.4 dBTP above -1.6 dBTP ceiling
+   - WARN: tail gap from last word to end is 2.82s > 1.5s max (23.45s -> 26.27s end card hold)
+
+2. Keeper Score Rules (.cursor/rules/orbit-build-shorts.mdc > Keeper score, 26 Oct 2026): FAIL
+   - Title: FAIL — no one-question title locked yet (assembly header is statement "96% CO2 & 90x Thicker Air on Venus"; needs a one-question title such as "Why Is Venus's Air 90 Times Thicker Than Earth's?")
+   - Line 1 VO ("The air of Venus is ninety-six percent carbon dioxide, and there is a great deal of it."): FAIL — mid-film narrative statement, not a one-question opener asking the title question (and not a Test A opening Short).
+   - Duration (26.27s): PASS (>= 22s floor, within 22-27s band)
+   - Related video & description link to VBaYRPp85Sw: PARTIAL — _meta.json and end card reference VBaYRPp85Sw ("What Happened to Venus?"), but 11_Upload-Package/PACKAGE_MANIFEST.json is not yet created with relatedVideo=VBaYRPp85Sw and description link.
+
+Fixes required for v02:
+1. Replace frame-0 pushed still (PIA00215.jpg, f0diff=0.35) with real moving Venus footage (f0diff >= 1.50).
+2. Cut span 0 by <= 3.0s (currently 5.60s) and keep all subsequent plate holds <= 4.0s.
+3. Trim post-VO tail / loop seam from 2.82s to <= 1.5s.
+4. Re-normalize audio mix from -15.5 LUFS / -1.4 dBTP to -14.0 +- 0.5 LUFS and true peak <= -1.6 dBTP.
+5. Set a one-question Keeper title (e.g. "Why Is Venus's Air 90 Times Thicker Than Earth's?"), record/prepend a matching one-question line-1 VO opener after the 30 Oct ElevenLabs reset, and create 11_Upload-Package linking VBaYRPp85Sw in Related video and description.

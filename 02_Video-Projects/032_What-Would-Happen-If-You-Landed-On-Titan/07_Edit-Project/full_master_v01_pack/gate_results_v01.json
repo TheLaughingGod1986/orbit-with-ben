@@ -1,0 +1,26 @@
+{
+  "clip_check": {
+    "code": 0,
+    "out": "clip_check: 52 rows \u2014 PASS\nOK: sentence/card boundaries and end-after-VO checks clear.\n"
+  },
+  "picture_qa": {
+    "code": 0,
+    "out": "WARN   0:02 row R01 PIA20016.jpg: low detail: edge density 0.0076 < film p5 0.0079\nWARN   0:39 row R05 code_graphic_032_r05_rain_preview_v01.mp4: low detail: edge density 0.0077 < film p5 0.0079\nWARN   2:09 row R14 PIA21450.jpg: low detail: edge density 0.0074 < film p5 0.0079\nWARN   4:13 row R25 PIA21450.jpg: low detail: edge density 0.0076 < film p5 0.0079\nWARN   6:40 row R37 code_graphic_032_r37_spark_question_v01.mp4: low detail: luma std 16.69 < 18.0; low detail: edge density 0.0068 < film p5 0.0079\nWARN   7:26 row R41 code_graphic_032_r41_fact_v01.mp4: low detail: edge density 0.0057 < film p5 0.0079\nWARN   9:24 row R51 PIA20016.jpg: low detail: edge density 0.0078 < film p5 0.0079\npicture QA PASS: 0 of 127 cuts fail, 7 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg\n"
+  },
+  "music_gate": {
+    "code": 0,
+    "out": "oad it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others\nmusic gate PASS: titan_score_bed_v01.mp3, 585.4 s, about 70.6 BPM, brief Pace: 68-78 BPM\n"
+  },
+  "sfx_level": {
+    "code": 0,
+    "out": "SFX level PASS: VO -20.0 LUFS, SFX -46.2 LUFS, 13 hits\n"
+  },
+  "delivery": {
+    "integrated_lufs": -14.5,
+    "true_peak_dbtp": -1.0,
+    "width": 1920,
+    "height": 1080,
+    "duration": 585.44,
+    "black_frames": []
+  }
+}

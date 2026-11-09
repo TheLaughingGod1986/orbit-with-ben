@@ -1,0 +1,94 @@
+{
+  "stem": "apophis_ar2_vo_v01",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "6c7d0f83b",
+    "J1279"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 269,
+      "duration_s": 18.4
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 269,
+  "words": 47,
+  "duration_s": 18.4,
+  "loudness": {
+    "lufs_integrated": -19.7,
+    "mean_volume_db": -22.8,
+    "max_volume_db": -4.3
+  },
+  "sha256_mp3": "165aba3c97679a9c83757bc445efd21f3c4484289bf2b04b67033481d83aba2d",
+  "scribe": {
+    "transcript": "NASA plans to crash the space station into the ocean around 2031. It spans 109 meters, like a football field. Most hardware vaporizes. A deorbit craft steers the rest into the empty South Pacific. Look up and watch it cross the sky because",
+    "script_words": 48,
+    "scribe_words": 43,
+    "match_rate_pct": 81.25,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "thirty",
+          "one"
+        ],
+        "scribe": [
+          "2031"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "a",
+          "hundred",
+          "and",
+          "nine",
+          "metres"
+        ],
+        "scribe": [
+          "109",
+          "meters"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "vaporises"
+        ],
+        "scribe": [
+          "vaporizes"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 19537,
+      "limit": 121114,
+      "remaining": 101577
+    },
+    "after": {
+      "used": 19537,
+      "limit": 121114,
+      "remaining": 101577
+    },
+    "counter_delta": 0
+  },
+  "text": "NASA plans to crash the Space Station into the ocean around twenty thirty-one. It spans a hundred and nine metres, like a football field. Most hardware vaporises. A deorbit craft steers the rest into the empty South Pacific. Look up and watch it cross the sky, because…",
+  "made_at": "2026-10-31T04:09:06+0000"
+}

@@ -26,6 +26,14 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
   7. spoken text contains a meta-promise               (24 Oct 2026 — "stay, and i'll show you",
                                                         "stay and i'll show you", "did you know",
                                                         "wait for it")
+  8. integrated loudness outside −14.0 ±0.5 LUFS, or   (26 Oct 2026, Chief c61 — ebur128 peak=true
+     true peak above −1.6 dBTP                          on the AAC; loudnorm's −1.5 target was
+                                                        landing at −1.4 dBTP)
+  9. slow fade-in from black at frame 0, or missing /  (9 Nov 2026, J2429 — first-second rule:
+     late on-screen hook text at frame 0 (0.0 s)        KX-XU_AODoI faded from luma 2.2→58.6 and
+                                                        got 20.6 % stayed; winners stamp the 2–4
+                                                        word hook caption at t=0.0 s on full-bleed
+                                                        moving video)
 
 Warnings:
 
@@ -126,12 +134,27 @@ VO_ONSET_WARN_S = 0.15
 # (d) WARN when the gap from the last word to the end is over 1.5 s.
 VO_TAIL_WARN_S = 1.5
 # (e) Text lint: FAIL if the script or meta "spoken" field contains a meta-promise.
+# (f) Level (Chief c61, 26 Oct 2026): ebur128 peak=true on the AAC. Integrated −14.0 ±0.5 LUFS,
+#     true peak ≤ −1.6 dBTP. The old loudnorm TP=−1.5 target was measuring about −1.4 on the file.
+LUFS_TARGET = -14.0
+LUFS_TOL = 0.5
+TP_FAIL_DBTP = -1.6
 META_PROMISES = (
     "stay, and i'll show you",
     "stay and i'll show you",
     "did you know",
     "wait for it",
 )
+# First-second gate (9 Nov 2026, J2429):
+# (g) FAIL when frame 0 (0.0 s) fades in from black/dark (e.g. KX-XU_AODoI luma 2.2 at 0.0 s -> 58.6 at 0.5 s, 20.6% stayed).
+FRAME0_FADE_LUMA_MAX = 12.0
+FRAME0_FADE_MIN_TARGET_LUMA = 20.0
+FRAME0_FADE_RATIO_FAIL = 2.25
+# (h) FAIL when on-screen hook caption is missing or starts after 0.05 s at frame 0 (calibrated on OWB frame-0 captures:
+#     captioned frame 0 scores 0.0231..0.0715 in the 0.08..0.48 H hook band; uncaptioned plate scores 0.0000).
+FRAME0_HOOK_EDGE_MIN = 0.005
+FRAME0_HOOK_MAX_START_S = 0.05
+FRAME0_HOOK_MIN_DIMS = (540, 960)
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -351,6 +374,116 @@ def meta_promise_verdict(text: str) -> list[str]:
     for phrase in META_PROMISES:
         if phrase in norm:
             return [f"spoken text contains meta-promise ({phrase!r})"]
+    return []
+
+
+def video_dims(path: Path) -> tuple[int, int]:
+    """Return (width, height) of the primary video stream, or (0, 0) if unreadable."""
+    try:
+        out = run([
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x", str(path),
+        ]).stdout.decode().strip().splitlines()
+        if out and "x" in out[0]:
+            w, h = out[0].split("x", 1)
+            return int(w), int(h)
+    except Exception:
+        pass
+    return 0, 0
+
+
+def frame0_luma_and_kick(path: Path, dur: float | None = None) -> tuple[float, float, float]:
+    """Return (luma_0s, luma_0_5s, kick_0_0_5s) across 0.0–0.5 s for slow fade-in and immediate-kick checks."""
+    W, H = 72, 128
+    if dur is None:
+        dur = duration_s(path)
+    f0 = raw_frame(path, W, H, 0.0, "gray")
+    t05 = min(0.5, max(0.0, dur - 0.05))
+    f05 = raw_frame(path, W, H, t05, "gray") if t05 > 0.0 else f0
+    l0 = round(sum(f0) / (W * H), 2)
+    l05 = round(sum(f05) / (W * H), 2)
+    y0, y1 = int(H * 0.28), int(H * 0.72)
+    bh = y1 - y0
+    t025 = min(0.25, max(0.0, dur - 0.05))
+    f025 = raw_frame(path, W, H, t025, "gray") if t025 > 0.0 else f0
+    b0, b025, b05 = f0[y0 * W:y1 * W], f025[y0 * W:y1 * W], f05[y0 * W:y1 * W]
+    s1 = sum(abs(x - y) for x, y in zip(b0, b025)) / (W * bh) / 255 * 100
+    s2 = sum(abs(x - y) for x, y in zip(b025, b05)) / (W * bh) / 255 * 100
+    kick = round((s1 + s2) / 2, 2)
+    return l0, l05, kick
+
+
+def frame0_fade_in_verdict(luma_0s: float, luma_0_5s: float) -> list[str]:
+    """(g) FAIL when frame 0 fades in from black/dark (e.g. KX-XU_AODoI luma 2.2 -> 58.6, 20.6% stayed)."""
+    ratio = luma_0_5s / max(luma_0s, 1.0)
+    if luma_0s <= FRAME0_FADE_LUMA_MAX and luma_0_5s >= FRAME0_FADE_MIN_TARGET_LUMA and ratio >= FRAME0_FADE_RATIO_FAIL:
+        return [
+            f"slow fade-in from black at frame 0 (luma {luma_0s:.1f} at 0.0s → {luma_0_5s:.1f} at 0.5s) — "
+            "start at full brightness"
+        ]
+    return []
+
+
+def frame0_hook_text_score(path: Path, t: float | None = 0.0) -> float:
+    """Share of pixels in the upper-middle hook band (0.08..0.48 H, 0.08..0.92 W) that match high-contrast
+    stroked white or #FFE000 yellow hook caption glyphs at frame 0 (t=0.0 s)."""
+    W, H = 108, 192
+    d = raw_frame(path, W, H, t, "rgb24")
+    y0, y1 = int(H * 0.08), int(H * 0.48)
+    x0, x1 = int(W * 0.08), int(W * 0.92)
+    hits = 0
+    total = max(1, (y1 - y0) * (x1 - x0))
+    for y in range(y0, y1):
+        for x in range(x0, x1):
+            i = (y * W + x) * 3
+            r, g, b = d[i], d[i + 1], d[i + 2]
+            bright = (r >= 200 and g >= 200 and b >= 200) or (r >= 210 and g >= 175 and b <= 100)
+            if not bright:
+                continue
+            dark_nb = False
+            for dy in (-2, -1, 0, 1, 2):
+                yy = y + dy
+                if not 0 <= yy < H:
+                    continue
+                for dx in (-2, -1, 0, 1, 2):
+                    xx = x + dx
+                    if not 0 <= xx < W:
+                        continue
+                    j = (yy * W + xx) * 3
+                    if d[j] <= 65 and d[j + 1] <= 65 and d[j + 2] <= 65:
+                        dark_nb = True
+                        break
+                if dark_nb:
+                    break
+            if dark_nb:
+                hits += 1
+    return round(hits / total, 4)
+
+
+def frame0_hook_text_verdict(hook_edge_0s: float, meta: dict, dims: tuple[int, int] = (1080, 1920)) -> list[str]:
+    """(h) FAIL when on-screen hook text is missing or starts after 0.05 s at frame 0."""
+    has_meta_key = any(k in meta for k in ("hook_caption", "hook_text", "on_screen_hook"))
+    if has_meta_key:
+        raw = next((meta[k] for k in ("hook_caption", "hook_text", "on_screen_hook") if k in meta), None)
+        if raw is None or (isinstance(raw, str) and not raw.strip()):
+            return ["missing on-screen hook text at frame 0 (meta hook_caption/hook_text is empty) — stamp 2–4 word hook at 0.0s"]
+        if isinstance(raw, dict):
+            txt = str(raw.get("text") or raw.get("caption") or "").strip()
+            start = raw.get("start_s", raw.get("start", raw.get("t_start", 0.0)))
+            if not txt:
+                return ["missing on-screen hook text at frame 0 (meta hook text is empty) — stamp 2–4 word hook at 0.0s"]
+            if isinstance(start, (int, float)) and float(start) > FRAME0_HOOK_MAX_START_S:
+                return [
+                    f"late on-screen hook text at frame 0 (starts at {float(start):.2f}s > {FRAME0_HOOK_MAX_START_S:.2f}s) — "
+                    "stamp 2–4 word hook at 0.0s"
+                ]
+    w, h = dims
+    enforce_pixels = has_meta_key or (w >= FRAME0_HOOK_MIN_DIMS[0] and h >= FRAME0_HOOK_MIN_DIMS[1])
+    if enforce_pixels and hook_edge_0s < FRAME0_HOOK_EDGE_MIN:
+        return [
+            f"missing on-screen hook text at frame 0 (hook_edge {hook_edge_0s:.4f} < {FRAME0_HOOK_EDGE_MIN:.3f}) — "
+            "stamp 2–4 word hook caption at 0.0s"
+        ]
     return []
 
 
@@ -654,6 +787,38 @@ def contact_sheet(path: Path, out: Path) -> None:
         run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", f"hstack=inputs={len(tiles)}", str(out)])
 
 
+def aac_loudness(path: Path) -> tuple[float | None, float | None]:
+    """Integrated LUFS and true peak (dBTP) via ebur128=peak=true. None if ffmpeg cannot read them."""
+    p = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", str(path), "-af", "ebur128=peak=true", "-f", "null", "-"],
+        capture_output=True, text=True)
+    integrated = peak = None
+    for ln in p.stderr.splitlines():
+        if "I:" in ln and "LUFS" in ln:
+            integrated = float(ln.split("I:")[1].split("LUFS")[0].strip())
+        if "Peak:" in ln and "dBFS" in ln:
+            peak = float(ln.split("Peak:")[1].split("dBFS")[0].strip())
+    return integrated, peak
+
+
+def level_verdict(path: Path) -> tuple[list[str], dict]:
+    integrated, peak = aac_loudness(path)
+    info = {"lufs": integrated, "true_peak_dbtp": peak}
+    fails: list[str] = []
+    if integrated is None or peak is None:
+        fails.append("could not read integrated loudness / true peak (ebur128 peak=true)")
+        return fails, info
+    lo, hi = LUFS_TARGET - LUFS_TOL, LUFS_TARGET + LUFS_TOL
+    if not (lo <= integrated <= hi):
+        fails.append(
+            f"integrated loudness {integrated:.1f} LUFS outside {lo:.1f}..{hi:.1f} "
+            "(target -14.0)"
+        )
+    if peak > TP_FAIL_DBTP:
+        fails.append(f"true peak {peak:.1f} dBTP above {TP_FAIL_DBTP:.1f}")
+    return fails, info
+
+
 def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], list[str]]:
     """(fails, warns) for the duration. length_test: the one Chief-OK'd 50–60 s test Short (11 Oct 2026)."""
     fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
@@ -699,6 +864,12 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             res["last_word_end_s"] = last_end_s
             res["tail_gap_s"] = tail_gap_s
             res["warns"] += vo_warns
+            # Level is a ship fail (Chief c61). report_only keeps it out of fails so the
+            # upcoming-shorts report and the stayed-gate tests still separate hard fails.
+            if not report_only:
+                lvl_fails, lvl = level_verdict(path)
+                res["level"] = lvl
+                res["fails"] += lvl_fails
 
     motion = motion_first_second(path)
     res["motion_0_1s"] = motion
@@ -715,6 +886,17 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
             f"pushed still at frame 0 (mean 0–1.5 s frame diff {f0_diff:.2f} < {FRAME0_DIFF_FAIL:.2f}) — "
             "use moving footage"
         )
+
+    luma_0s, luma_0_5s, kick_0_0_5s = frame0_luma_and_kick(path, dur)
+    res["frame0_luma_0s"] = luma_0s
+    res["frame0_luma_0_5s"] = luma_0_5s
+    res["frame0_kick_0_0_5s"] = kick_0_0_5s
+    res["stayed_fails"] += frame0_fade_in_verdict(luma_0s, luma_0_5s)
+
+    hook_edge_0s = frame0_hook_text_score(path, 0.0)
+    res["frame0_hook_edge_0s"] = hook_edge_0s
+    dims = video_dims(path)
+    res["stayed_fails"] += frame0_hook_text_verdict(hook_edge_0s, meta, dims)
 
     cut1 = first_cut_s(path, dur)
     res["first_cut_s"] = cut1

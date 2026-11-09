@@ -1,0 +1,37 @@
+{
+  "job": "J2141",
+  "scope": "Encoding and static luma samples only; no motion, composite or Chief approval",
+  "spend_gbp": 0,
+  "results": [
+    {
+      "id": "code_graphic_031_r02_flip_v01",
+      "checks": {
+        "hash_matches": true,
+        "dimensions": true,
+        "duration_matches": true,
+        "fps": true,
+        "frames": true,
+        "pixel_format": true,
+        "full_decode": true,
+        "sample_mean_luma_at_least_28": true
+      },
+      "encoding_checks_ok": true,
+      "stderr": ""
+    },
+    {
+      "id": "code_graphic_031_r12_flip_v01",
+      "checks": {
+        "hash_matches": true,
+        "dimensions": true,
+        "duration_matches": true,
+        "fps": true,
+        "frames": true,
+        "pixel_format": true,
+        "full_decode": true,
+        "sample_mean_luma_at_least_28": true
+      },
+      "encoding_checks_ok": true,
+      "stderr": ""
+    }
+  ]
+}
