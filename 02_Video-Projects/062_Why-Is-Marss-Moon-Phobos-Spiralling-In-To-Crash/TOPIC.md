@@ -1,9 +1,9 @@
 # TOPIC.md — 062 Why Is Mars's Moon Phobos Spiralling In to Crash?
 
-> **Created:** 2026-11-08 · **Job:** `J2410` (`macbook-2`) · **Stage:** Topic (`review` — queued for Rule-E topic go/no-go review)
-> **Spend:** £0 (local analytics + signed-out YouTube public search only; no paid APIs, TTS, or picture generation).
+> **Created:** 2026-11-08 · **Job:** `J2410` (`macbook-2`) · **Rule-E Review:** `J2420` (`macbook`, 2026-11-09) · **Stage:** Topic (`approved / GO` — pre-cleared in `jobs/WIP.json` `next`)
+> **Spend:** £0 (local analytics + signed-out YouTube public search + NASA primary-source verification only; no paid APIs, TTS, or picture generation).
 
-## 1. Learn From Our Data First (`2026-11-08` Snapshot · `studio_ctr.json` · `channel_daily.json` · `REPORT.md` · `LEARNINGS.md` Rules 1–22)
+## 1. Learn From Our Data First (`2026-11-08` Snapshot · `studio_ctr.json` · `channel_daily.json` · `REPORT.md` · `LEARNINGS.md` Rules 1–24 + `OWB-2026-11-E1`)
 
 ### 1.1 Channel Baseline (`05_Analytics/owb/snapshots/2026-11-08.json` & `channel_daily.json`)
 - **Channel totals (`2026-11-08T06:40:10Z`):** `17` subscribers (`+0` 24h, `+2` 7d, `+11` 30d), `14,086` public views across `95` public videos (`15` longs + `80` Shorts; `+1,239` views in 24h, `+2,312` in 7d, `+8,585` in 30d).
@@ -96,13 +96,15 @@
 
 ## 2. New Film `OWB:062` — Topic Brief
 
-### 2.1 Working Title, Real-Imagery Variant, Series & Packaging (`LEARNINGS.md` Rules 1, 11, 12, 14, 15, 18, 19, 20)
-- **Working Title (Primary — Positive Question + Countdown/Danger, 49 chars):**
+### 2.1 Working Title, Real-Imagery Variant, Series & Packaging (`LEARNINGS.md` Rules 1, 11, 12, 14, 15, 18, 19, 20, 23)
+- **Working Title (Primary — Positive Question + Countdown/Danger, 49 chars, 0 YouTube exact collisions):**
   **`Why Is Mars's Moon Phobos Spiralling In to Crash?`**
-- **Shortened / Scenario Title Variant (45 chars):**
+- **Shortened / Scenario Title Variant (45 chars, 0 YouTube exact collisions):**
   **`What Happens When Mars's Moon Phobos Crashes?`**
-- **Real-Imagery Title Variant (`LEARNINGS.md` Rule 18 — NASA Spacecraft Frame Angle, 45 chars):**
+- **Real-Imagery Title Variant (`LEARNINGS.md` Rule 18 — NASA Spacecraft Frame Angle, 45 chars, 0 YouTube exact collisions):**
   **`What NASA's Closest Photos of Phobos Revealed`**
+- **Story+Stakes Parenthetical Variant (`LEARNINGS.md` Rule 23 — `J2417`, 70 chars, 0 YouTube exact collisions):**
+  **`Mars's Largest Moon Is Spiralling Down (And Gravity Will Rip It Apart)`**
 - **Recurring Series Assignment (`LEARNINGS.md` Rule 20):**
   **Series 1 (*What Would Happen If…* — single-variable Solar System catastrophe)** & **Series 2 (*Real Worlds* — one Solar System body using real Viking / MRO HiRISE / Mars Express imagery)**.
 - **3-Way Thumbnail Test & Compare Concepts (`LEARNINGS.md` Rules 11, 12, 14, 18, 19 — no Orbit, ≤3 words):**
@@ -110,17 +112,22 @@
   2. **Thumb B (Rule 14 High-Contrast Bright-Background Variant):** Bright sun-lit Martian day sky with giant grooved Phobos looming huge overhead and glowing tidal stress cracks · Text (`2 words`): **`DOOMED MOON`**.
   3. **Thumb C (Rule 18/19 Graded Real NASA Spacecraft Frame):** Colour-graded real NASA Mars Reconnaissance Orbiter **HiRISE (`PIA10368`)** frame of Phobos showing giant **Stickney Crater** and parallel tidal stretch grooves · Text (`3 words`): **`6,000 KM UP`**.
 
-### 2.2 One-Line Hook (Spoken in `0:00–0:08`, Zero Agenda Line)
-> *"Six thousand kilometres above Mars, a battered seventeen-mile moon called Phobos whips across the sky twice a day — and because it orbits faster than Mars spins, Martian gravity is pulling it down by two centimetres a year until it tears apart into a ring of rock."*
+### 2.2 One-Line Hook (Spoken in `0:00–0:08`, Zero Agenda Line, `AGENTS.md` Lesson 7 `J2428` Proof-First Open)
+> *"Six thousand kilometres above Mars, a battered seventeen-mile moon called Phobos whips across the sky twice a day — and because it orbits faster than Mars spins, Martian gravity is pulling it down by nearly two centimetres a year until it tears apart into a ring of rock."*
+- **Primary-Source Precision Notes (`J2420` Audit — Verified against NASA Photojournal `PIA10368` & `science.nasa.gov/mars/moons/phobos/`):**
+  - **Dimensions:** Phobos's tri-axial dimensions are **`27 × 22 × 18 km` (`17 × 14 × 11 miles`)**, mean diameter **`22.2 km` (`13.8 miles`)**; NASA `PIA10368` notes the illuminated portion in the 23 March 2008 HiRISE frame (`6,800 km` range) is about **`21 km` (`13 miles`)** across, with **`9-km` (`5.6-mile`) Stickney Crater** and surface gravity **`< 1/1,000` of Earth's**. Calling Phobos a `"seventeen-mile moon"` matches its `27 km` (`17 mile`) longest axis; in the DATA graphic, state **`27 × 22 × 18 km (22.2 km mean)`**.
+  - **Altitude vs Semi-Major Axis & Roche Limit Reference Frame:** Phobos orbits **`6,000 km` (`3,700 miles`) above the Martian surface**, which equals a semi-major axis of **`9,376 km` from Mars's centre** (Mars mean radius `3,389.5 km`). The rubble-pile **Roche limit** where Martian tides pull Phobos apart (`~5,400–6,800 km`, Black & Mittal 2015) is measured **from Mars's centre** (`~2,000–3,400 km` above the Martian surface). Always specify `"from Mars's centre"` vs `"above Mars's surface"` in the script and `SOURCES.md` so the numbers never appear contradictory (`6,000 km` surface altitude > `5,400 km` centre-referenced Roche radius only because of the `3,390 km` planetary radius offset).
+  - **Inward Spiral Rate:** **`1.8 cm per year`** (`1.8 metres` / `6 feet` per century, NASA Science).
+  - **Groove Attribution:** Parallel grooves (`100–200 m` wide, `10–20 m` deep) were originally hypothesized after Viking (1976–1978) to be fractures or secondary boulder chains from the Stickney impact; in **November 2015 / 2016**, NASA Goddard (**Terry Hurford** et al., *JGR Planets*) and Brown University proved the grooves align with **tidal stress fractures** in a porous rubble-pile interior held together by a **`~100-metre` cohesive regolith layer**.
 
 ### 2.3 Why It Should Work (Past Winners Resembled + `LEARNINGS.md` Rules Applied)
 - **Direct Structural & Subject Match to Our #1 and #2 Longs + Top Shorts:**
   1. **Matches `#2` Long `55AEQwvs36g` (*How Long Do Saturn's Rings Have Left?*, `217` views, `7.75 vpd`, `1,266` impressions, `2.1%` CTR):** `021` asked how long until a planet *loses* its rings to gravity; `062` is the exact physical inverse on Mars — how long until Mars's gravity *tears its moon Phobos apart at the Roche limit to give Mars a brand-new set of rings* in 30–50 million years.
-  2. **Matches `#1` Long `VBaYRPp85Sw` (*What Happened to Venus?*, `229` views, `16.36 vpd`, `1,281` impressions, `84%` retention at `0:15`, `25.2%` Studio / `30.6%` 7d YTA avg viewed):** Named inner-Solar-System world (`Mars` + `Phobos`), dramatic physical transformation, rich real NASA imagery (**Viking 1 Orbiter**, **Mars Global Surveyor**, **Mars Reconnaissance Orbiter HiRISE `PIA10368`/`PIA10369`**, **ESA Mars Express**, and **Perseverance Mastcam-Z solar eclipse transits**), opening immediately on concrete numbers (`6,000 km` altitude, `7 hours 39 minutes` orbital period vs Mars's `24 hour 37 minute` day, `1.8 cm/year` inward spiral) with zero agenda intro (Rule 10).
+  2. **Matches `#1` Long `VBaYRPp85Sw` (*What Happened to Venus?*, `229` views, `16.36 vpd`, `1,281` impressions, `84%` retention at `0:15`, `25.2%` Studio / `30.6%` 7d YTA avg viewed):** Named inner-Solar-System world (`Mars` + `Phobos`), dramatic physical transformation, rich real NASA imagery (**Viking 1 Orbiter**, **Mars Global Surveyor**, **Mars Reconnaissance Orbiter HiRISE `PIA10368`/`PIA10369`**, **ESA Mars Express**, and **Perseverance Mastcam-Z solar eclipse transits**), opening immediately on concrete numbers (`6,000 km` altitude / `9,376 km` orbital radius, `7 hours 39 minutes` orbital period vs Mars's `24 hour 37 minute` day, `1.8 cm/year` inward spiral) with zero agenda intro (Rule 10 + `J2428`).
   3. **Matches Top Orbital-Paradox Shorts `VfDm3E2bUgU` (*Why Do Astronauts See 16 Sunrises a Day?*, `1,090` views, `136.25 vpd`) and `vlkj8RQKmH8` (*Why Does a Day on Mercury Last Two of Its Years?*, `851` views, `56.73 vpd`, `76.1%` avg viewed):** Phobos orbits Mars in `7 hours 39 minutes` — faster than Mars rotates (`24h 37m`) — so from the Martian surface, **Phobos rises in the west and sets in the east twice every single Martian day**, which is the exact counter-intuitive orbital hook that drove `VfDm3E2bUgU` (`1,090` views) and `vlkj8RQKmH8` (`851` views).
 - **`LEARNINGS.md` Rules Followed:**
-  - **Rules 1 & 15:** Positive question title (`≤50` chars) naming `Mars's Moon Phobos` + concrete physical fate (`Spiralling In to Crash`), zero negative/statement phrasing.
-  - **Rule 10:** Opens in `0:00–0:15` on physical facts (`6,000 km` altitude, `7h 39m` orbit, `1.8 cm/yr` decay, `9-km` Stickney Crater) with no agenda line.
+  - **Rules 1, 15, 18, 23:** Positive question title (`≤50` chars) naming `Mars's Moon Phobos` + concrete physical fate (`Spiralling In to Crash`), plus Rule 18 real-imagery variant and Rule 23 Story+Stakes variant.
+  - **Rule 10 & `J2428`:** Opens in `0:00–0:15` on physical facts (`6,000 km` altitude, `7h 39m` orbit, `1.8 cm/yr` decay, `9-km` Stickney Crater) with no agenda line, no Orbit before `0:30`, and no chapter card before `0:45`.
   - **Rules 11, 12, 14, 18, 19:** Rich real NASA HiRISE (`PIA10368`) and Perseverance eclipse footage + 3-way Thumbnail Test & Compare including a bright high-contrast Martian sky variant and a real HiRISE frame.
   - **Rule 20:** Sits directly in Series 1 (*What Would Happen If…*) and Series 2 (*Real Worlds*).
 
@@ -129,30 +136,44 @@
 
 ### 2.5 Neighbour Pass (`≥3` Big Space/Education Videos `≥1M` Views + Signed-Out Competition Check)
 
-| # | Video ID | Title | Channel | Verified Views (`2026-11-08`) | Length | Shared Subject Words (for Title / Description / Tags — Never Channel Names) |
+| # | Video ID | Title | Channel | Verified Views (`2026-11-09` `J2420`) | Length | Shared Subject Words (for Title / Description / Tags — Never Channel Names) |
 |---:|---|---|---|---:|---:|---|
-| 1 | `lheapd7bgLA` | *What Happens if the Moon Crashes into Earth?* | Kurzgesagt – In a Nutshell | **22,619,654** | 10:28 | `moon crashes`, `roche limit`, `tidal forces`, `spiralling in`, `planetary rings`, `gravity tears moon apart` |
-| 2 | `DJuxIDyHZCw` | *Martian Mysteries \| The Phobos Incident, Monoliths, and Ancient Ruins* | The Why Files | **6,290,974** | 35:09 | `mars moon phobos`, `phobos`, `stickney crater`, `phobos grooves`, `moons of mars` |
-| 3 | `Pw0IZg7_4mo` | *The Moons of Mars Explained -- Phobos & Deimos MM#2* | Kurzgesagt – In a Nutshell | **4,497,068** | 1:55 | `moons of mars`, `phobos and deimos`, `phobos crashing into mars`, `mars rings`, `captured asteroid` |
-| 4 | `PaMgAJ859oY` | *The Weirdest Moons in the Solar System* | Astrum Extra | **2,011,097** | 1:51:29 | `phobos`, `mars moons`, `doomed moon`, `tidal deceleration`, `stickney crater` |
-| 5 | `wFTGP7-n3J8` | *What They Didn't Teach You in School About Mars \| Our Solar System's Planets 4K* | Astrum | **1,434,146** | 18:32 | `mars`, `phobos`, `deimos`, `martian moons`, `roche limit` |
-| 6 | `X5olimwnAX0` | *Standing on Martian Moons Phobos and Deimos* | Dreksler Astral | **740,967** | 6:45 | `phobos`, `deimos`, `mars horizon`, `6000 km orbit`, `stickney crater` |
-| 7 | `qNRBiIYcpmM` | *Would Saving Phobos Be Easier Than We Think?* | Astrum | **196,219** | 4:09 | `phobos`, `mars moon`, `orbital decay`, `crashing into mars` |
+| 1 | `lheapd7bgLA` | *What Happens if the Moon Crashes into Earth?* | Kurzgesagt – In a Nutshell | **22,621,045** | 10:27 | `moon crashes`, `roche limit`, `tidal forces`, `spiralling in`, `planetary rings`, `gravity tears moon apart` |
+| 2 | `DJuxIDyHZCw` | *Martian Mysteries \| The Phobos Incident, Monoliths, and Ancient Ruins* | The Why Files | **6,294,108** | 35:09 | `mars moon phobos`, `phobos`, `stickney crater`, `phobos grooves`, `moons of mars` |
+| 3 | `Pw0IZg7_4mo` | *The Moons of Mars Explained -- Phobos & Deimos MM#2* | Kurzgesagt – In a Nutshell | **4,497,105** | 1:54 | `moons of mars`, `phobos and deimos`, `phobos crashing into mars`, `mars rings`, `captured asteroid` |
+| 4 | `PaMgAJ859oY` | *The Weirdest Moons in the Solar System* | Astrum Extra | **2,013,265** | 1:51:29 | `phobos`, `mars moons`, `doomed moon`, `tidal deceleration`, `stickney crater` |
+| 5 | `wFTGP7-n3J8` | *What They Didn't Teach You in School About Mars \| Our Solar System's Planets 4K* | Astrum | **1,435,276** | 18:31 | `mars`, `phobos`, `deimos`, `martian moons`, `roche limit` |
+| 6 | `X5olimwnAX0` | *Standing on Martian Moons Phobos and Deimos* | Dreksler Astral | **741,022** | 6:45 | `phobos`, `deimos`, `mars horizon`, `6000 km orbit`, `stickney crater` |
+| 7 | `qNRBiIYcpmM` | *Would Saving Phobos Be Easier Than We Think?* | Astrum | **196,226** | 4:08 | `phobos`, `mars moon`, `orbital decay`, `crashing into mars` |
 
-- **Signed-Out YouTube Competition Check (`public_search.py`, 2026-11-08):**
+- **Signed-Out YouTube Competition Check (`public_search.py` + `J2420` Exact Collision Check, 2026-11-09):**
   - Autocomplete hits confirmed on `phobos mars moon` and `mars moons phobos and deimos`.
-  - Exact query `"what happens when phobos crashes into mars"` / `"why is mars moon phobos spiralling in to crash"` has **zero** recent `8–9 min` big-channel hits (top exact results are a 7-year-old `3:17` Cosmic Theory clip with `3,625` views, a 7-year-old `4:09` Astrum clip with `196,219` views, and small channels under `200` views), while the broader neighbour cluster (`Kurzgesagt` `22.6M` & `4.5M`, `Astrum` `2.0M` & `1.4M`, `Dreksler Astral` `741K`) proves massive Suggested-video demand!
+  - **0 exact-title collisions** across all 4 Long title candidates and both Short title candidates.
+  - Exact query `"what happens when phobos crashes into mars"` / `"why is mars moon phobos spiralling in to crash"` has **zero** recent `8–9 min` big-channel hits (top exact results are a 7-year-old `3:17` Cosmic Theory clip with `3,625` views, a 7-year-old `4:08` Astrum clip with `196,226` views, and small channels under `200` views), while the broader neighbour cluster (`Kurzgesagt` `22.6M` & `4.5M`, `Astrum` `2.0M` & `1.4M`, `Dreksler Astral` `741K`) proves massive Suggested-video demand!
 - **Draft Subject-Only Tags (7 tags, zero channel names):**
   `phobos, mars moon phobos, what happens when phobos crashes into mars, moons of mars phobos and deimos, roche limit mars rings, stickney crater phobos, nasa hirise phobos`
 
-### 2.6 Two Short Angles (Built to `LEARNINGS.md` Rules 1–8, 15, 22 + `OWB-2026-11-E1`)
+### 2.6 Two Short Angles (Built to `LEARNINGS.md` Rules 1–8, 15, 22, 24 + `OWB-2026-11-E1`)
 
-1. **Short Angle 1 (`S01` — Keeper / `OWB-2026-11-E1` Orbital Paradox Question Cut, `23 s`, `~58 words`):**
-   - **Title (`48 chars`, positive question):** *Why Does Mars's Moon Phobos Rise in the West?* (or *Why Is Mars's Moon Phobos Crashing Into Mars?*, `45 chars`)
-   - **Frame 0 (`0.0–2.6 s`):** Full-bleed moving NASA HiRISE/Mars Express footage of grooved **Phobos (`PIA10368`)** sweeping fast across the rust-red Martian limb (`≥60%` subject, `0%` Orbit, `≤30%` black sky). Top-centre hook caption (`3 words`): **`DOOMED MARS MOON`**.
-   - **Sentence 1 (`0.0–1.5 s` surprise + `<0.25 s` breath into Sentence 2):** *"Mars's largest moon Phobos rises in the west and sets in the east twice every single Martian day."* → (`<0.25 s` breath, Cut 1 at `2.6 s` `≤2.8 s`, Cut 2 at `4.5 s` `≤4.8 s`) → *"That's because Phobos skims just six thousand kilometres above Mars, completing an orbit in seven hours and thirty-nine minutes — three times faster than Mars spins beneath it."*
-   - **Mid-Short Teaching Overlay (`10–14 s`, inside 16:9 band):** `1.8 CM CLOSER EVERY YEAR` (animated altitude gauge showing tidal bulges on Mars pulling back on Phobos).
-   - **Payoff (`≥70%` runtime, `16.5–22.2 s`) + Loop Tail (`<1.2 s`):** In `30 to 50 million years`, Phobos crosses Mars's **Roche limit** (`~5,400 km`): instead of hitting the ground in one piece, Martian gravity rips the porous moon apart into a bright rocky ring around Mars. Ends on spoken word at `22.2 s`, cutting back to Frame 0 in `0.8 s` (`<1.2 s` E1 loop tail, zero spoken CTA).
+1. **Short Angle 1 (`S01` — Keeper / `OWB-2026-11-E1` + Rule 24 Orbital Paradox Question Cut, `23 s`, `~58 words`):**
+   - **Title (`48 chars`, positive question, 0 exact collisions):** *Why Does Mars's Moon Phobos Rise in the West?* (or *Why Is Mars's Moon Phobos Crashing Into Mars?*, `45 chars`)
+   - **Frame 0 (`0.0–2.5 s`, Rule 24 `J2429` + `J2421`):** Full-bleed `9:16` `mode: "cover"` (`0%` blur-pad bars) moving NASA HiRISE/Mars Express footage of grooved **Phobos (`PIA10368`)** sweeping fast across the rust-red Martian limb (`≥60%` subject, `0%` Orbit, `≤30%` black sky, no fade-in). Top-centre hook caption (`3 words`, rendered from `t = 0.0 s` with one `#FFE000` yellow keyword): **`DOOMED MARS MOON`** (`DOOMED` in `#FFE000`).
+   - **Sentence 1 (`0.0–1.4 s` surprise `≤1.5 s` per Rule 24 + `<0.25 s` breath into Sentence 2):** *"Mars's moon Phobos is falling."* (`5 words`, `vo_onset_s ≤ 0.15 s`, completes by `~1.35 s`) → (`<0.20 s` breath) → *"It skims just six thousand kilometres above Mars, orbiting three times faster than Mars spins — so it rises in the west and sets in the east twice a day."* (Cut 1 at `2.5 s` `≤2.8 s`, Cut 2 at `4.5 s` `≤4.8 s`).
+   - **Mid-Short Teaching Overlay (`5.5–8.5 s`, clear of `0–2 s` hook and `9–14 s` promoted-title window, inside 16:9 band, `≤4 words`):** **`1.8 CM A YEAR`** (animated altitude gauge showing Martian tidal bulges pulling back on Phobos).
+   - **Payoff (`≥70%` runtime, `16.5–22.2 s`) + Loop Tail (`<1.2 s`):** In `30 to 50 million years`, Phobos crosses Mars's **Roche limit** (`~5,400 km` from Mars's centre, or `~2,000 km` above the ground): instead of crashing in one piece, Martian gravity rips the porous moon apart into a bright rocky ring around Mars. Ends on spoken word at `22.2 s`, cutting back to Frame 0 in `0.8 s` (`<1.2 s` E1 loop tail, zero spoken CTA).
 2. **Short Angle 2 (`S02` — Test A Opening Cut / Giant Crater & Stretch Grooves Question Cut, `24 s` / `32 s` Test A):**
-   - **Title (`49 chars`, positive question):** *Why Is Mars's Moon Phobos Covered in Giant Cracks?*
-   - **Hook & Visuals:** Opens on the `9-kilometre-wide` **Stickney Crater** covering nearly half of Phobos's `22-kilometre` body (`PIA10368`) and the mysterious parallel grooves radiating across the moon. Reveals how a `2015–2016` NASA Goddard / Brown University discovery proved those grooves aren't just impact ejecta — they are **tidal stretch marks** (`stress fractures` in a rubble-pile interior held together by a `100-metre` powdery regolith shell) as Mars's gravity already begins pulling Phobos apart from the inside out.
+   - **Title (`49 chars`, positive question, 0 exact collisions):** *Why Is Mars's Moon Phobos Covered in Giant Cracks?*
+   - **Frame 0 (`0.0–2.5 s`, Rule 24 `J2429` + `J2421`):** Full-bleed `9:16` `mode: "cover"` close-up of the `9-kilometre-wide` **Stickney Crater (`PIA10368`)** and parallel grooves across Phobos (`≥60%` subject, `0%` Orbit, `≤30%` black sky). Top-centre hook caption (`t = 0.0 s`, `3 words`): **`STRETCHED BY MARS`** (`STRETCHED` in `#FFE000`).
+   - **Sentence 1 (`0.0–1.5 s` for standalone `24 s` cut):** *"Mars's moon Phobos is cracking apart."* (`6 words`, `≤1.5 s`) → (`<0.20 s` breath) → Reveals how a `2015–2016` NASA Goddard (**Terry Hurford** et al.) / Brown University discovery proved those parallel grooves aren't just impact ejecta from Stickney Crater — they are **tidal stretch marks** (`stress fractures` in a rubble-pile interior held together by a `100-metre` powdery regolith shell) as Mars's gravity already begins pulling Phobos apart from the inside out.
+
+---
+
+## 3. Rule-E Topic Go/No-Go Review (`J2420`, `2026-11-09`, Agent: `macbook`)
+
+- **Verdict:** **GO (Pre-cleared in `jobs/WIP.json` `next`; `93 / 100` Opportunity Score)**
+- **Review Record:** [`jobs/reviews/J2420/REVIEW.md`](../../jobs/reviews/J2420/REVIEW.md)
+- **Package Artefacts Written (`J2420`):**
+  - [`11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`](11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md) (`93 / 100` PASS)
+  - [`11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`](11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md) (§1–§6 complete; §7 left unsigned until script & `SOURCES.md` gates pass upon active WIP entry)
+  - [`11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`](11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md)
+- **Rule G WIP Status:** Kept in `jobs/WIP.json` `next` (active OWB WIP has `5` films: `028`, `029`, `030`, `031`, `032` = at the `5`-film Rule G limit). Ready to enter active Script stage immediately when an active OWB slot finishes.

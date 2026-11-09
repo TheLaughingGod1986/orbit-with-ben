@@ -1,9 +1,9 @@
 # TOPIC.md — 063 Why Does Saturn Have a Giant Six-Sided Storm?
 
-> **Created:** 2026-11-08 · **Job:** `J2410` (`macbook-2`) · **Stage:** Topic (`review` — queued for Rule-E topic go/no-go review)
-> **Spend:** £0 (local analytics + signed-out YouTube public search only; no paid APIs, TTS, or picture generation).
+> **Created:** 2026-11-08 · **Job:** `J2410` (`macbook-2`) · **Rule-E Review:** `J2420` (`macbook`, 2026-11-09) · **Stage:** Topic (`approved / GO` — pre-cleared in `jobs/WIP.json` `next`)
+> **Spend:** £0 (local analytics + signed-out YouTube public search + NASA primary-source verification only; no paid APIs, TTS, or picture generation).
 
-## 1. Learn From Our Data First (`2026-11-08` Snapshot · `studio_ctr.json` · `channel_daily.json` · `REPORT.md` · `LEARNINGS.md` Rules 1–22)
+## 1. Learn From Our Data First (`2026-11-08` Snapshot · `studio_ctr.json` · `channel_daily.json` · `REPORT.md` · `LEARNINGS.md` Rules 1–24 + `OWB-2026-11-E1`)
 
 ### 1.1 Channel Baseline (`05_Analytics/owb/snapshots/2026-11-08.json` & `channel_daily.json`)
 - **Channel totals (`2026-11-08T06:40:10Z`):** `17` subscribers (`+0` 24h, `+2` 7d, `+11` 30d), `14,086` public views across `95` public videos (`15` longs + `80` Shorts; `+1,239` views in 24h, `+2,312` in 7d, `+8,585` in 30d).
@@ -96,13 +96,15 @@
 
 ## 2. New Film `OWB:063` — Topic Brief
 
-### 2.1 Working Title, Real-Imagery Variant, Series & Packaging (`LEARNINGS.md` Rules 1, 11, 12, 14, 15, 18, 19, 20)
-- **Working Title (Primary — Positive Question + Concrete Physical Anomaly, 45 chars):**
+### 2.1 Working Title, Real-Imagery Variant, Series & Packaging (`LEARNINGS.md` Rules 1, 11, 12, 14, 15, 18, 19, 20, 23)
+- **Working Title (Primary — Positive Question + Concrete Physical Anomaly, 45 chars, 0 YouTube exact collisions):**
   **`Why Does Saturn Have a Giant Six-Sided Storm?`**
-- **Number-First Question Variant (46 chars):**
+- **Number-First Question Variant (43 chars, 0 YouTube exact collisions):**
   **`Why Does Saturn Have a 20,000-Mile Hexagon?`**
-- **Real-Imagery Title Variant (`LEARNINGS.md` Rule 18 — NASA Cassini Frame Angle, 46 chars):**
+- **Real-Imagery Title Variant (`LEARNINGS.md` Rule 18 — NASA Cassini Frame Angle, 46 chars, 0 YouTube exact collisions):**
   **`What Cassini Saw Inside Saturn's Hexagon Storm`**
+- **Story+Stakes Parenthetical Variant (`LEARNINGS.md` Rule 23 — `J2417`, 67 chars, 0 YouTube exact collisions):**
+  **`Saturn's North Pole Hides a Six-Sided Storm (And It Changed Colour)`**
 - **Recurring Series Assignment (`LEARNINGS.md` Rule 20):**
   **Series 2 (*Real Worlds* — one Solar System phenomenon built around real NASA/JPL-Caltech/SSI Cassini imagery)**.
 - **3-Way Thumbnail Test & Compare Concepts (`LEARNINGS.md` Rules 11, 12, 14, 18, 19 — no Orbit, ≤3 words):**
@@ -110,17 +112,24 @@
   2. **Thumb B (Rule 14 High-Contrast Bright-Background Variant):** Bright sun-lit golden-blue colour-change split of Saturn's north pole (`2012 blue` vs `2016 bright gold` summer haze) with crisp hexagonal jet-stream edges · Text (`2 words`): **`320 KM/H JET`**.
   3. **Thumb C (Rule 18/19 Graded Real NASA Spacecraft Frame):** Colour-graded real NASA **Cassini (`PIA14945` / `PIA21327` / `PIA14946`)** high-resolution polar frame looking straight into the swirling `2,000-km` central hurricane eye inside the six-sided polygon · Text (`2 words`): **`REAL PHOTO`**.
 
-### 2.2 One-Line Hook (Spoken in `0:00–0:08`, Zero Agenda Line)
+### 2.2 One-Line Hook (Spoken in `0:00–0:08`, Zero Agenda Line, `AGENTS.md` Lesson 7 `J2428` Proof-First Open)
 > *"At the top of Saturn sits a storm wider than two Earths with six razor-straight sides — a twenty-thousand-mile hexagon of three-hundred-and-twenty-kilometre-per-hour winds that has spun without breaking for at least forty years."*
+- **Primary-Source Precision Notes (`J2420` Audit — Verified against NASA Photojournal `PIA09185`, `PIA14944`, `PIA14945`, `PIA14946`, `PIA14947`, `PIA17652`, `PIA21049`, `PIA21327`):**
+  - **Hexagon Diameter & Side Length (`~77° N`):** About **`30,000 km` (`20,000 miles`)** across (`PIA17652`; `PIA09185` notes *"nearly 25,000 kilometers / 15,000 miles across — nearly four Earths could fit inside"* by area); each of the 6 straight sides is **`~14,500 km` (`9,000 miles`)** long (wider than Earth's `12,742 km` diameter).
+  - **Jet Stream Speed vs Inner Eyewall Wind Speed:** The hexagonal jet stream (`~77° N`) races at **`~322 km/h` (`200 mph` / `100 m/s`, `PIA17652`)**, whereas the clouds at the outer edge of the **`2,000-km` (`1,250-mile`) central hurricane eye** (`89°–90° N`) spin at **`530 km/h` (`330 mph` / `150 m/s`, `PIA14944`)** — more than twice the wind speed of a Category 5 hurricane on Earth, with an eye **`50 times wider`** than an average terrestrial hurricane eye (`PIA17652`).
+  - **Voyager (1980–1981) vs Cassini (2012) Attribution (`PIA09185` vs `PIA14944`):**
+    - The **`30,000-km` six-sided hexagon (`~77° N`)** was first imaged during the **Voyager 1 and 2 flybys in `1980–1981`** (and identified in composite polar maps by **David A. Godfrey in 1988**, *Icarus* 76, 335–356), proving the hexagon is a long-lived standing wave (`40+ years`).
+    - However, `PIA14944` explicitly notes that **Voyager's viewing geometry could not look straight down into `89°–90° N`**: the **`2,000-km` central hurricane eye** was first observed in thermal infrared by Cassini VIMS (`2006–2008`) and revealed in sunlit visible-light high-resolution views by **Cassini ISS on 27 November 2012** (`PIA14944` / `PIA14946` / `PIA14947`) after northern spring equinox (`August 2009`) brought sunlight back to the pole. Always attribute the `30,000-km` hexagon's `1980–1981` first sighting to Voyager 1 & 2, and the `2,000-km` central hurricane eye's sunlit discovery to Cassini (`2012`).
+  - **Seasonal Colour Change (`PIA21049`):** Between **November 2012 (deep azure blue)** and **September 2016 (bright golden-yellow)**, increasing northern-spring sunlight (`August 2009` equinox → `May 2017` summer solstice) drove photochemical aerosol haze production inside the hexagon while the `320 km/h` hexagonal jet acted as a dynamical barrier trapping the golden smog inside the polar hood.
 
 ### 2.3 Why It Should Work (Past Winners Resembled + `LEARNINGS.md` Rules Applied)
 - **Direct Structural & Subject Match to Our Top Longs + Top Planetary-Weather Shorts:**
   1. **Matches `#2` Long `55AEQwvs36g` (*How Long Do Saturn's Rings Have Left?*, `217` views, `7.75 vpd`, `1,266` impressions, `2.1%` CTR) & `#1` Long `VBaYRPp85Sw` (*What Happened to Venus?*, `229` views, `16.36 vpd`, `1,281` impressions, `84%` retention at `0:15`):** Saturn and Venus are OWB's `#1` and `#2` long-form impression and view drivers (`1,281` and `1,266` impressions — **8× higher than the channel median**). While `021` covered Saturn's ring-rain lifetime, it never mentioned Saturn's north-pole hexagon storm (`0` matches in `021/01_Script/`), and `063` pairs Saturn's proven Browse/Search pull with the same planetary-weather mechanism that powers `047` (*Why Jupiter's Great Red Spot Is Shrinking After 300 Years*).
-  2. **Matches Top Planetary-Weather Shorts `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*, `481` views in 5d, `96.20 vpd`, `306.8%` avg viewed LOOP) and `1OCNzhkiBuc` (*Why Are the Winds on Neptune Faster Than Sound?*, `494` views, `41.17 vpd`, `42.6%` stayed `#3 ≥100v`, `75.0%` avg viewed):** Our audience demonstrably clicks, stays (`42.6%`), and loops (`306.8%`) on outer-planet atmospheric extremes with counter-intuitive numbers (`30,000 km` / `20,000 miles` across, `320 km/h` / `200 mph` jet stream, `10h 39m 24s` rotation tied to Saturn's radio interior, `2,000-km` central eyewall `50×` wider than an Earth hurricane, and a seasonal colour flip from **deep blue in 2012 to golden-yellow by 2016** as sunlight triggered photochemical smog haze during Saturn's `7-year` northern spring).
-  3. **Built Around Iconic Real NASA Cassini Footage (`LEARNINGS.md` Rule 18):** Cassini captured real moving time-lapse movies and high-resolution colour mosaics (`PIA14945`, `PIA14946`, `PIA17652`, `PIA20502`, `PIA21327`, `PIA09185`) of the hexagon and its central vortex, giving us authentic spacecraft plates for Frame 0, Thumbnail C, and every chapter.
+  2. **Matches Top Planetary-Weather Shorts `ZpEA8stoSPA` (*Why Does Uranus Have 21-Year Winters?*, `481` views in 5d, `96.20 vpd`, `306.8%` avg viewed LOOP) and `1OCNzhkiBuc` (*Why Are the Winds on Neptune Faster Than Sound?*, `494` views, `41.17 vpd`, `42.6%` stayed `#3 ≥100v`, `75.0%` avg viewed):** Our audience demonstrably clicks, stays (`42.6%`), and loops (`306.8%`) on outer-planet atmospheric extremes with counter-intuitive numbers (`30,000 km` / `20,000 miles` across, `320 km/h` / `200 mph` jet stream, `10h 39m 24s` rotation tied to Saturn's radio interior, `2,000-km` central eyewall `50×` wider than an Earth hurricane with `530 km/h` winds, and a seasonal colour flip from **deep blue in 2012 to golden-yellow by 2016** as sunlight triggered photochemical smog haze during Saturn's `7-year` northern spring).
+  3. **Built Around Iconic Real NASA Cassini Footage (`LEARNINGS.md` Rule 18):** Cassini captured real moving time-lapse movies and high-resolution colour mosaics (`PIA14945`, `PIA14946`, `PIA17652`, `PIA21049`, `PIA21327`, `PIA09185`) of the hexagon and its central vortex, giving us authentic spacecraft plates for Frame 0, Thumbnail C, and every chapter.
 - **`LEARNINGS.md` Rules Followed:**
-  - **Rules 1 & 15:** Positive `Why Does…` question title (`45 chars`) naming `Saturn` + the exact visual anomaly (`Giant Six-Sided Storm`).
-  - **Rule 10:** Opens in `0:00–0:15` on the real Cassini polar mosaic and concrete measurements (`30,000 km` wide, `6` straight sides `14,500 km` long, `320 km/h` winds) with zero agenda intro.
+  - **Rules 1, 15, 18, 23:** Positive `Why Does…` question title (`45 chars`) naming `Saturn` + the exact visual anomaly (`Giant Six-Sided Storm`), plus Rule 18 real-imagery variant and Rule 23 Story+Stakes variant.
+  - **Rule 10 & `J2428`:** Opens in `0:00–0:15` on the real Cassini polar mosaic and concrete measurements (`30,000 km` wide, `6` straight sides `14,500 km` long, `320 km/h` winds) with zero agenda intro, no Orbit before `0:30`, and no chapter card before `0:45`.
   - **Rules 11, 12, 14, 18, 19:** 3-way Thumbnail Test & Compare with a 2-Earths scale comparison (Thumb A), a bright golden/blue seasonal contrast variant (Thumb B, rule 14), and a real Cassini polar photograph (Thumb C, rules 18 & 19).
   - **Rule 20:** Anchors Series 2 (*Real Worlds*) alongside `047` (Jupiter's Great Red Spot).
 
@@ -129,31 +138,45 @@
 
 ### 2.5 Neighbour Pass (`≥3` Big Space/Education Videos `≥1M` Views + Signed-Out Competition Check)
 
-| # | Video ID | Title | Channel | Verified Views (`2026-11-08`) | Length | Shared Subject Words (for Title / Description / Tags — Never Channel Names) |
+| # | Video ID | Title | Channel | Verified Views (`2026-11-09` `J2420`) | Length | Shared Subject Words (for Title / Description / Tags — Never Channel Names) |
 |---:|---|---|---|---:|---:|---|
-| 1 | `tyMbktsAScE` | *NASA Cassini's Final Images of Saturn Stunned Me* | Astrum | **9,279,198** | 10:23 | `saturn`, `cassini`, `saturn hexagon storm`, `saturn north pole`, `real images of saturn` |
-| 2 | `xrGAQCq9BMU` | *NASA at Saturn: Cassini's Grand Finale* | NASA Jet Propulsion Laboratory | **5,807,141** | 3:40 | `saturn`, `cassini`, `saturn north pole hexagon`, `giant storm`, `jpl` |
-| 3 | `qaRBmeYyHoc` | *Real Images From Saturn: What Cassini Actually Saw There* | The Secrets of the Universe | **3,846,555** | 11:28 | `real images from saturn`, `what cassini saw`, `saturn hexagon`, `polar vortex`, `hurricane` |
-| 4 | `PMFE_I6xseA` | *Saturn Is The Scariest Planet In Our Solar System* | The Space Race | **2,364,291** | 13:23 | `saturn`, `saturn hexagon storm`, `30000 km storm`, `200 mph winds`, `north pole vortex` |
-| 5 | `seopOXWUW3Q` | *Saturn Has a Hexagon Storm and No Surface to Land On* | What If | **1,244,593** | 18:20 | `saturn hexagon storm`, `six sided storm`, `saturn atmosphere`, `jet stream` |
-| 6 | `U75blaWkIrQ` | *Saturn Is Not Behaving How It Should, and Scientists Are Stumped \| NASA's CASSINI* | Astrum | **1,036,863** | 15:21 | `saturn hexagon`, `cassini`, `saturn colour change`, `north pole storm` |
-| 7 | `LcmNMWG9vqA` | *The Huge Hexagon-Shaped Storm on Saturn \| Out There* | The New York Times | **625,258** | 2:53 | `hexagon shaped storm on saturn`, `cassini`, `jet stream`, `fluid dynamics` |
-| 8 | `PCpis-SiZ0c` | *How did Saturn's Hexagonal Polar Vortex form?! \| Space is Weird* | Dr. Becky | **186,519** | 14:48 | `saturn hexagonal polar vortex`, `rossby wave`, `barotropic instability`, `oxford lab experiment` |
+| 1 | `tyMbktsAScE` | *NASA Cassini's Final Images of Saturn Stunned Me* | Astrum | **9,279,757** | 10:23 | `saturn`, `cassini`, `saturn hexagon storm`, `saturn north pole`, `real images of saturn` |
+| 2 | `xrGAQCq9BMU` | *NASA at Saturn: Cassini's Grand Finale* | NASA Jet Propulsion Laboratory | **5,807,331** | 3:40 | `saturn`, `cassini`, `saturn north pole hexagon`, `giant storm`, `jpl` |
+| 3 | `qaRBmeYyHoc` | *Real Images From Saturn: What Cassini Actually Saw There* | The Secrets of the Universe | **3,846,744** | 11:28 | `real images from saturn`, `what cassini saw`, `saturn hexagon`, `polar vortex`, `hurricane` |
+| 4 | `PMFE_I6xseA` | *Saturn Is The Scariest Planet In Our Solar System* | The Space Race | **2,373,804** | 13:23 | `saturn`, `saturn hexagon storm`, `30000 km storm`, `200 mph winds`, `north pole vortex` |
+| 5 | `seopOXWUW3Q` | *Saturn Has a Hexagon Storm and No Surface to Land On* | What If | **1,245,541** | 18:19 | `saturn hexagon storm`, `six sided storm`, `saturn atmosphere`, `jet stream` |
+| 6 | `U75blaWkIrQ` | *Saturn Is Not Behaving How It Should, and Scientists Are Stumped \| NASA's CASSINI* | Astrum | **1,036,922** | 15:21 | `saturn hexagon`, `cassini`, `saturn colour change`, `north pole storm` |
+| 7 | `LcmNMWG9vqA` | *The Huge Hexagon-Shaped Storm on Saturn \| Out There* | The New York Times | **625,287** | 2:53 | `hexagon shaped storm on saturn`, `cassini`, `jet stream`, `fluid dynamics` |
+| 8 | `PCpis-SiZ0c` | *How did Saturn's Hexagonal Polar Vortex form?! \| Space is Weird* | Dr. Becky | **186,533** | 14:48 | `saturn hexagonal polar vortex`, `rossby wave`, `barotropic instability`, `oxford lab experiment` |
 
-- **Signed-Out YouTube Competition Check (`public_search.py`, 2026-11-08):**
+- **Signed-Out YouTube Competition Check (`public_search.py` + `J2420` Exact Collision Check, 2026-11-09):**
   - **Direct YouTube autocomplete hits confirmed** on `"saturn hexagon storm"`, `"why does saturn have a hexagon"`, `"saturn north pole hexagon"`, and `"saturn hexagon explained"`.
-  - While multi-topic Saturn videos (`Astrum` `9.28M`, `Secrets of the Universe` `3.85M`, `The Space Race` `2.36M`, `What If` `1.24M`) get millions of views featuring the hexagon on the cover or in chapters, dedicated `8–10 min` explainers on `"why does saturn have a hexagon"` are either short 2-minute clips (`Cosmoknowledge` `100K`, `NYT` `625K`, `Harvard` `88K`), a 7-year-old `Dr. Becky` vlog (`186K`), or esoteric "black cube myth" videos — leaving a wide-open lane for a pure physics-and-Cassini `8.5 min` Orbit film!
+  - **0 exact-title collisions** across all 4 Long title candidates and both Short title candidates.
+  - While multi-topic Saturn videos (`Astrum` `9.28M`, `Secrets of the Universe` `3.85M`, `The Space Race` `2.37M`, `What If` `1.25M`) get millions of views featuring the hexagon on the cover or in chapters, dedicated `8–10 min` explainers on `"why does saturn have a hexagon"` are either short 2-minute clips (`Cosmoknowledge` `100K`, `NYT` `625K`, `Harvard` `88K`), a 7-year-old `Dr. Becky` vlog (`186K`), or esoteric "black cube myth" videos — leaving a wide-open lane for a pure physics-and-Cassini `8.5 min` Orbit film!
 - **Draft Subject-Only Tags (7 tags, zero channel names):**
   `saturn hexagon storm, why does saturn have a hexagon, saturn north pole hexagon, cassini saturn hexagon, six sided storm on saturn, saturn polar vortex, saturn colour change hexagon`
 
-### 2.6 Two Short Angles (Built to `LEARNINGS.md` Rules 1–8, 15, 22 + `OWB-2026-11-E1`)
+### 2.6 Two Short Angles (Built to `LEARNINGS.md` Rules 1–8, 15, 22, 24 + `OWB-2026-11-E1`)
 
-1. **Short Angle 1 (`S01` — Keeper / `OWB-2026-11-E1` Physics Question Cut, `23 s`, `~59 words`):**
-   - **Title (`45 chars`, positive question):** *Why Does Saturn Have a Giant Six-Sided Storm?*
-   - **Frame 0 (`0.0–2.5 s`):** Full-bleed moving NASA Cassini polar animation (`PIA17652` / `PIA14945`) of Saturn's swirling six-sided north-pole vortex (`≥60%` subject, `0%` Orbit, `≤30%` black sky). Top-centre hook caption (`3 words`): **`2 EARTHS WIDE`**.
-   - **Sentence 1 (`0.0–1.5 s` surprise + `<0.25 s` breath into Sentence 2):** *"Saturn's north pole has a storm wider than two Earths with six razor-straight sides."* → (`<0.25 s` breath, Cut 1 at `2.5 s` `≤2.8 s`, Cut 2 at `4.6 s` `≤4.8 s`) → *"Each side is fourteen thousand five hundred kilometres long, steered by a three-hundred-and-twenty-kilometre-per-hour jet stream."*
-   - **Mid-Short Teaching Overlay (`10–14 s`, inside 16:9 band):** `6 SMALL VORTICES PINCH THE JET` (animated fluid-dynamics diagram showing smaller counter-rotating eddies flanking the jet stream and pinching a circular wave into a six-sided standing Rossby wave, proven in Oxford and Harvard rotating-tank experiments).
-   - **Payoff (`≥70%` runtime, `16.5–22.2 s`) + Loop Tail (`<1.2 s`):** At the very centre sits a `2,000-kilometre` hurricane eye — fifty times wider than an Earth hurricane — that has spun without breaking since **Voyager 1 and 2** first spotted it in `1980–1981`. Ends on spoken word at `22.2 s`, cutting back to Frame 0 in `0.8 s` (`<1.2 s` E1 loop tail, zero spoken CTA).
+1. **Short Angle 1 (`S01` — Keeper / `OWB-2026-11-E1` + Rule 24 Physics Question Cut, `23 s`, `~59 words`):**
+   - **Title (`45 chars`, positive question, 0 exact collisions):** *Why Does Saturn Have a Giant Six-Sided Storm?*
+   - **Frame 0 (`0.0–2.5 s`, Rule 24 `J2429` + `J2421`):** Full-bleed `9:16` `mode: "cover"` (`0%` blur-pad bars) moving NASA Cassini polar animation (`PIA17652` / `PIA14945`) of Saturn's swirling six-sided north-pole vortex (`≥60%` subject, `0%` Orbit, `≤30%` black sky, no fade-in). Top-centre hook caption (`3 words`, rendered from `t = 0.0 s` with one `#FFE000` yellow keyword): **`2 EARTHS WIDE`** (`2 EARTHS` in `#FFE000`).
+   - **Sentence 1 (`0.0–1.4 s` surprise `≤1.5 s` per Rule 24 + `<0.25 s` breath into Sentence 2):** *"Saturn has a six-sided storm."* (`5 words`, `vo_onset_s ≤ 0.15 s`, completes by `~1.35 s`) → (`<0.20 s` breath) → *"It's wider than two Earths, with six razor-straight walls each fourteen thousand five hundred kilometres long, steered by a three-hundred-and-twenty-kilometre-per-hour jet stream."* (Cut 1 at `2.5 s` `≤2.8 s`, Cut 2 at `4.6 s` `≤4.8 s`).
+   - **Mid-Short Teaching Overlay (`5.5–8.5 s`, clear of `0–2 s` hook and `9–14 s` promoted-title window, inside 16:9 band, `≤4 words`):** **`14,500 KM PER SIDE`** (accompanied by animated fluid-dynamics plate showing flanking vortices pinching the jet stream into a 6-sided standing Rossby wave, proven in Oxford rotating-tank experiments).
+   - **Payoff (`≥70%` runtime, `16.5–22.2 s`) + Loop Tail (`<1.2 s`):** First spotted by **Voyager 1 and 2** in `1980–1981`, the hexagon hides a `2,000-kilometre` central hurricane eye revealed by **Cassini** in `2012` — fifty times wider than an Earth hurricane eye, with `530 km/h` winds. Ends on spoken word at `22.2 s`, cutting back to Frame 0 in `0.8 s` (`<1.2 s` E1 loop tail, zero spoken CTA).
 2. **Short Angle 2 (`S02` — Test A Opening Cut / Colour-Change Mystery Question Cut, `24 s` / `32 s` Test A):**
-   - **Title (`49 chars`, positive question):** *Why Did Saturn's Giant Hexagon Turn From Blue to Gold?*
-   - **Hook & Visuals:** Opens on a side-by-side real **Cassini (`PIA21049`)** comparison of Saturn's north-pole hexagon in **November 2012 (deep azure blue)** vs **September 2016 (bright golden yellow)**. Explains how Saturn's `29.4-year` orbit gives each pole a **7-year winter in total darkness** (when ultraviolet-free air stays clear blue) followed by **7 years of summer sunlight** flooding the `30,000-km` hexagonal wall and cooking methane into golden photochemical smog trapped inside the six-sided jet stream.
+   - **Title (`49 chars`, positive question, 0 exact collisions):** *Why Did Saturn's Giant Hexagon Turn From Blue to Gold?*
+   - **Frame 0 (`0.0–2.5 s`, Rule 24 `J2429` + `J2421`):** Full-bleed `9:16` `mode: "cover"` real **Cassini (`PIA21049`)** split comparison of Saturn's north-pole hexagon in **November 2012 (deep azure blue)** vs **September 2016 (bright golden yellow)** (`≥60%` subject, `0%` Orbit, `≤30%` black sky). Top-centre hook caption (`t = 0.0 s`, `3 words`): **`BLUE TO GOLD`** (`GOLD` in `#FFE000`).
+   - **Sentence 1 (`0.0–1.5 s` for standalone `24 s` cut):** *"Saturn's hexagon storm changed colour."* (`5 words`, `≤1.5 s`) → (`<0.20 s` breath) → Explains how Saturn's `29.4-year` orbit gives each pole a **7-year winter in total darkness** (when ultraviolet-free air stays clear blue) followed by **7 years of spring and summer sunlight** flooding the `30,000-km` hexagonal wall and cooking methane into golden photochemical smog trapped inside the six-sided jet stream.
+
+---
+
+## 3. Rule-E Topic Go/No-Go Review (`J2420`, `2026-11-09`, Agent: `macbook`)
+
+- **Verdict:** **GO (Pre-cleared in `jobs/WIP.json` `next`; `95 / 100` Opportunity Score)**
+- **Review Record:** [`jobs/reviews/J2420/REVIEW.md`](../../jobs/reviews/J2420/REVIEW.md)
+- **Package Artefacts Written (`J2420`):**
+  - [`11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`](11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md) (`95 / 100` PASS)
+  - [`11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`](11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md) (§1–§6 complete; §7 left unsigned until script & `SOURCES.md` gates pass upon active WIP entry)
+  - [`11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`](11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md)
+- **Rule G WIP Status:** Kept in `jobs/WIP.json` `next` (active OWB WIP has `5` films: `028`, `029`, `030`, `031`, `032` = at the `5`-film Rule G limit). Ready to enter active Script stage immediately when an active OWB slot finishes.
