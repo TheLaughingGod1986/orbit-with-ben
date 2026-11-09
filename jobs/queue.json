@@ -1,5 +1,5 @@
 {
-  "next_id": 2466,
+  "next_id": 2467,
   "jobs": [
     {
       "id": "J0001",
@@ -212325,6 +212325,36 @@
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Update the code libraries our upload and analytics tools depend on, where a known security problem has a safe fix."
+    },
+    {
+      "id": "J2466",
+      "title": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: \"clean up the repo\". orbit-with-ben had 396 remote branches on 9 Nov; history-of-science has many too. GitHub now deletes a branch when its pull request merges (Ben turned that on 9 Nov), so this is a one-off for the old ones.\n\nIn each repo:\n1. git fetch --prune origin. List remote branches.\n2. A branch may be removed only if ALL of these hold: its tip is already contained in origin/main (git branch -r --merged origin/main), it has no open pull request (gh pr list --state open --head <branch>), and it is not one of the working branches: main, mini-heartbeat, macbook-heartbeat, macbook-heartbeat-2, board-data, the History of Science desk branch (the head of desk PR 180), any branch named in scripts/thread.json, studio-core, or a branch a launchd plist or workflow names.\n3. Write the full list to jobs/reviews/<this job id>/BRANCHES.md first: branch, tip sha, last commit date, and the reason it qualifies. That file is the way back: any branch can be recreated from its sha.\n4. Remove the qualifying branches with git push origin --delete, in batches of 50. Stop at the first error and report it.\n5. Report: how many removed, how many kept and why (not merged, open PR, working branch).\n\nBranches that are not fully in main are NOT removed in this job, whatever their age: list them separately with their PR state for the Chief. Commit BRANCHES.md on a branch, open a PR, park for Chief. No Studio, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T23:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back."
     }
   ],
   "focus": [
