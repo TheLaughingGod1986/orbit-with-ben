@@ -209213,21 +209213,28 @@
           "at": "2026-11-09T05:28Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
+        },
+        {
+          "at": "2026-11-09T05:33Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected video_tracker.py, kanban_snapshot.py, board_check.py, and all Passed ask/OK card cases"
         }
       ],
-      "remaining_action": "Inspect scripts/video_tracker.py and kanban_snapshot.py for Passed ask/OK card upload resolution",
+      "remaining_action": "Implement upload resolution for Passed ask/OK cards in scripts/video_tracker.py and add tests",
       "kind": "qa",
       "plain": "Fix the Videos page so cuts Ben passed that are already uploaded stop showing as 'Passed, needs scheduling'.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-09T05:28Z",
+        "at": "2026-11-09T05:33Z",
         "by": "gemini",
-        "note": "Claimed J2427; starting inspection of video_tracker.py and kanban_snapshot.py"
+        "note": "Inspected video_tracker.py, kanban_snapshot.py, board_check.py, and all Passed ask/OK card cases"
       },
       "taskKeys": [
         "OWB:031",
-        "OWB:028"
+        "OWB:028",
+        "OWB:030",
+        "OWB:026"
       ]
     },
     {
