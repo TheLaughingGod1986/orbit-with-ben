@@ -210686,15 +210686,20 @@
           "at": "2026-11-09T13:00Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-09T13:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify external physical disk guard (single 200-300 GB SanDisk/Extreme external disk)",
+      "remaining_action": "Run diskutil list external physical and verify SanDisk Extreme ~250 GB guard",
       "due": "2026-11-09T13:30:00Z",
       "kind": "qa",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-09T13:00Z",
+        "at": "2026-11-09T13:28Z",
         "by": "gemini"
       }
     },
