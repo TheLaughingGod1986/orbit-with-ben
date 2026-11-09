@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2414 | any | blocked | gemini | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2420 | any | blocked | macbook | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
-| J2421 | mini | open | – | – | for cursor · qa · `cursor-claude-opus-5-5` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
+| J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
