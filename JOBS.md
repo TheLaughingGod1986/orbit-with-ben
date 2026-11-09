@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2436 | mini | open | – | – | 032 edit · assembly · 032 Titan: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
+| J2439 | mini | open | – | – | qa · Mini disk report (read-only): what is using the disk, and which film folders already have a full copy on studio-live |  |
 
 Recently finished:
 

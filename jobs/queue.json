@@ -1,5 +1,5 @@
 {
-  "next_id": 2439,
+  "next_id": 2440,
   "jobs": [
     {
       "id": "J0001",
@@ -210481,6 +210481,35 @@
       "remaining_action": "Apply 034 FIRST30_PLAN.md (PR #667): splice 2.00-4.80s from Sentence 1 (<8s), BICUBIC push from Frame 0, R01-R04 in 11 cuts <=3.57s; render master_v02.mp4 + gates",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02"
+    },
+    {
+      "id": "J2439",
+      "title": "Mini disk report (read-only): what is using the disk, and which film folders already have a full copy on studio-live",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: the Mini disk is at 98% (about 4.8 GB free) and he wants all film media to live on the NAS. READ-ONLY job: change, move or delete nothing. On the Mac mini run and record: (1) df -h ~ ; (2) du -sh ~/YouTube/* /private/tmp/* ~/_desk/* ~/Library/Caches ~/Library/Developer ~/.cache ~/.npm ~/Downloads 2>/dev/null | sort -h | tail -40 ; (3) for each film folder under ~/YouTube/orbit-with-ben/02_Video-Projects and the History Of Science checkout's film folders that is over 1 GB: its size, and whether the same folder exists on /Volumes/data/studio-live/<repo>/02_Video-Projects with the same file count and total bytes (a quick count/size compare, no hashing). Write it all to jobs/reviews/<this job id>/DISK_REPORT.md as a table: path, size, on studio-live (yes/partial/no), commit it to main, then jobs.py done --result giving free space and the top 10 by size. No spend, no Studio, no NAS writes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T12:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T12:39Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mini disk report (read-only): what is using the disk, and which film folders already have a full copy on studio-live",
+      "due": "2026-11-09T14:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [
