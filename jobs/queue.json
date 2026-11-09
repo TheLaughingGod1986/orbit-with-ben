@@ -210831,9 +210831,14 @@
           "at": "2026-11-09T16:16Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Completed worktree inspection (~/_desk/worktrees/* and /private/tmp/*-wt / codex-*) against jobs/queue.json; du -sh scan running"
+        },
+        {
+          "at": "2026-11-09T16:24Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Completed all read-only du -sh scans (1)-(6) and worktree audit; found 111G in ~/ + 55G real/975G APFS-cloned in /private/var/folders/1z/.../X"
         }
       ],
-      "remaining_action": "Complete read-only disk usage scans (1)-(6) and write jobs/reviews/J2443/DISK_REPORT_2.md",
+      "remaining_action": "Write jobs/reviews/J2443/DISK_REPORT_2.md with top 25 by size and worktree list, commit to main, and finish J2443",
       "due": "2026-11-09T15:00:00Z",
       "kind": "qa",
       "rerouted_from": {
@@ -210846,11 +210851,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-09T16:16Z",
+        "at": "2026-11-09T16:24Z",
         "by": "gemini",
-        "note": "Completed worktree inspection (~/_desk/worktrees/* and /private/tmp/*-wt / codex-*) against jobs/queue.json; du -sh scan"
+        "note": "Completed all read-only du -sh scans (1)-(6) and worktree audit; found 111G in ~/ + 55G real/975G APFS-cloned in /privat"
       }
     },
     {
