@@ -210506,17 +210506,22 @@
           "at": "2026-11-09T16:57Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2436; inspecting FIRST30_PLAN.md and NAS assembly script"
+        },
+        {
+          "at": "2026-11-09T17:11Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified FIRST30_PLAN.md and HARVEST_POOL_v01.json (39/39 image/source hashes verified via verify_picture_inputs_032.py; corrected unverified PIA21889/PIA21440 typos to verified Cassini Titan plates PIA21890, PIA17177, PIA12621)"
         }
       ],
-      "remaining_action": "Read FIRST30_PLAN.md and inspect _assemble_032_full_master_v01.py on NAS",
+      "remaining_action": "Write _assemble_032_full_master_v02.py with BICUBIC EXTENT zoom and re-cut R01-R06",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 032 Titan to the new hook rule (FIRST30_PLAN.md) and assemble master v02",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-09T16:57Z",
+        "at": "2026-11-09T17:11Z",
         "by": "gemini",
-        "note": "Claimed J2436; inspecting FIRST30_PLAN.md and NAS assembly script"
+        "note": "Verified FIRST30_PLAN.md and HARVEST_POOL_v01.json (39/39 image/source hashes verified via verify_picture_inputs_032.py;"
       },
       "taskKeys": [
         "OWB:032"
