@@ -184,6 +184,20 @@ class BackToMain(unittest.TestCase):
         self.assertFalse(mw.failed_run(124, 1500, True), "hit the cap: slow, not broken")
         self.assertTrue(mw.failed_run(1, 900, True))
 
+    def test_its_own_clone_ahead_of_github_after_a_good_pull_is_rescued(self):
+        # 9 Nov 2026: the pull succeeded but main kept an unpublished queue commit, and every claim refused.
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
+                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+            r = self.repo(t, "orbit-with-ben")
+            subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
+            calls = []
+            real = mw.sh
+            fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), \
+                    mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
+                self.assertEqual(mw.pull_main(), "")
+            self.assertEqual(calls, [r])
+
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
                 mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):

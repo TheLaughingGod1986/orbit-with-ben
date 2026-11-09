@@ -423,6 +423,11 @@ def pull_main() -> str:
                 r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode:
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
+            if own:
+                # A pull can succeed while main is still ahead of GitHub (a queue write whose push lost a race keeps
+                # its local commit). Every --git claim then refuses "main has unpublished/diverged commits" (9 Nov
+                # 2026, slot 1). Keep those commits on a rescue branch and put main back on origin/main.
+                rescue_diverged(repo)
     return ""
 
 
