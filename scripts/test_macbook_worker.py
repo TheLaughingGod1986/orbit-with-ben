@@ -176,6 +176,14 @@ class BackToMain(unittest.TestCase):
         self.assertNotIn('"pull", "-q", "--ff-only"]', src)
         self.assertIn('"pull", "-q", "--ff-only", "origin", "main"]', src)
 
+    def test_a_quick_clean_exit_with_the_job_still_open_pauses_the_agent(self):
+        # 9 Nov 2026: claude (out of usage) exited 0 in about a minute, and J2421 was claimed and released every minute.
+        self.assertTrue(mw.failed_run(0, 45, True))
+        self.assertFalse(mw.failed_run(0, 45, False), "finished the job quickly: fine")
+        self.assertFalse(mw.failed_run(0, 900, True), "worked a while and left it open: picked up again, not paused")
+        self.assertFalse(mw.failed_run(124, 1500, True), "hit the cap: slow, not broken")
+        self.assertTrue(mw.failed_run(1, 900, True))
+
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
                 mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
