@@ -208507,16 +208507,21 @@
           "at": "2026-11-09T02:21Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T02:23Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "reading shared shorts gate; then add blur-pad check, tests, rule line, scan",
+      "remaining_action": "implement blur-pad and letterbox check in gate_shorts_open.py + unit tests, update Shorts build rules, and scan upcoming Shorts",
       "kind": "qa",
       "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2.",
       "progress": {
         "step": 1,
-        "of": 5,
-        "at": "2026-11-09T00:44Z",
-        "by": "macbook"
+        "of": 4,
+        "at": "2026-11-09T02:23Z",
+        "by": "macbook-2"
       }
     },
     {
