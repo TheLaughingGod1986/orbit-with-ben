@@ -1,0 +1,65 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical decode and three static samples; no motion, audio, composite or approval claim",
+  "manifest_sha256": "0ed7dbbb12834634b0f615721d8e4d093c9814302604aeadd719bd7d646359dd",
+  "contact_sheet": "/Users/ben/_desk/J2141-grains-v04/CONTACT_TECHNICAL_v04.jpg",
+  "contact_sheet_sha256": "4163c8b4739651fe3d024b28db76957e3e25599bd1ce682d5fb594eeb6af6d36",
+  "checks": [
+    {
+      "id": "code_graphic_031_r07_grains_south_v04",
+      "path": "/Users/ben/_desk/J2141-grains-v04/code_graphic_031_r07_grains_south_v04.mov",
+      "sha256": "3014ac8eaacb75b10f703a3d6b292739114a3323a3563331460c6d98a962eb4e",
+      "hash_match": true,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "pix_fmt": "argb",
+      "duration_s": 5.72,
+      "full_decode": "PASS",
+      "three_sample_frames_differ": true,
+      "samples": [
+        {
+          "time_s": 0.858,
+          "decoded_rgba_sha256": "003bbee6d6c9cc80943e37f077a5d545a4e703ba8251fc07ca673af2e526f1ad"
+        },
+        {
+          "time_s": 2.86,
+          "decoded_rgba_sha256": "2758abdf4e5800b19d46b03a89a7d60b049a3be9dea78f146b2e437a9ae13ff0"
+        },
+        {
+          "time_s": 4.862,
+          "decoded_rgba_sha256": "7d72474a1df238af918e0cfbc345082331f00a476028f0fe4079fc913d537a0e"
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r08_grains_comparison_v04",
+      "path": "/Users/ben/_desk/J2141-grains-v04/code_graphic_031_r08_grains_comparison_v04.mov",
+      "sha256": "b2dd7e06f015bae4d1bc9378a95fb5ebd71bbeda0aa9074cc0f555e2fa27fbd4",
+      "hash_match": true,
+      "width": 1920,
+      "height": 1080,
+      "fps": "25/1",
+      "pix_fmt": "argb",
+      "duration_s": 5.96,
+      "full_decode": "PASS",
+      "three_sample_frames_differ": true,
+      "samples": [
+        {
+          "time_s": 0.894,
+          "decoded_rgba_sha256": "a256dbd2c7674ce3860782b0cf364a722a7ca700bd2874bd2991178964c64d41"
+        },
+        {
+          "time_s": 2.98,
+          "decoded_rgba_sha256": "9a5ad578ab36240e973ab68bfac03883db51f857e20a9147108b04d426dc246c"
+        },
+        {
+          "time_s": 5.066,
+          "decoded_rgba_sha256": "03f6f1f770b9dd73f627e3c6d8eafb7645084af87aea82f5c130f1c1c0b238ea"
+        }
+      ]
+    }
+  ]
+}

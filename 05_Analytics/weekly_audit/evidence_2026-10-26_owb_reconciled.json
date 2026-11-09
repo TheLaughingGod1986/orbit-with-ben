@@ -133,7 +133,7 @@
         "end_pct": 72.1,
         "passes_70pct_on_answer_start": false
       },
-      "retention_curve_note": "No 100-point YTA retention curve available yet; biggest drop is unavailable. Studio 16s AVD is an average duration across views (and precedes the 17.44-20.44s silent tail), not a measured viewer exit timestamp."
+      "retention_curve_note": "Through 2026-10-23 (original 26 Oct audit), no 100-point YTA retention curve was available (marked Unavailable; Studio 16s AVD is a mean duration across views preceding the 17.44-20.44s silent tail, not an exit timestamp). In J1003 (settled through 2026-10-28, 851 YTA views, duration_s=20.44s), both saved 100-bucket curves reproduce tied steepest single-bucket drops of -5.59pp at 0.20->0.21 (4.0880-4.2924s [4.09-4.29s]: 126.22%->120.63%) and 0.24->0.25 (4.9056-5.1100s [4.91-5.11s]: 110.14%->104.55%), falling -28.67pp across 0.20->0.27 (4.0880-5.5188s [4.09-5.52s]: 126.22%->97.55%) and -56.64pp across 0.20->0.40 (4.0880-8.1760s [4.09-8.18s]: 126.22%->69.58%) coinciding with the 3.60-5.16s meta-promise (\"Stay, and I'll show you how.\") over s1_mercury/PIA11351.jpg (0.0-5.5s) and the 5.50s cut to s1_mercury/PIA14083.jpg (5.5-9.7s)."
     },
     "y-SPHQ0-VjQ": {
       "title": "Why Is the Sun Getting Brighter as It Runs Out of Fuel?",
@@ -1113,7 +1113,7 @@
           0
         ],
         [
-          "\u30d5\u30a7\u30cb\u30c3\u30af\u30b9a",
+          "フェニックスa",
           1,
           0
         ]
@@ -2656,7 +2656,7 @@
           0
         ],
         [
-          "\u30d5\u30a7\u30cb\u30c3\u30af\u30b9a",
+          "フェニックスa",
           1,
           0
         ]
@@ -6498,7 +6498,7 @@
           0
         ],
         [
-          "andr\u00f4meda",
+          "andrômeda",
           1,
           0
         ]
@@ -9673,7 +9673,7 @@
           0
         ],
         [
-          "andr\u00f4meda",
+          "andrômeda",
           1,
           0
         ],
@@ -10734,7 +10734,7 @@
           0
         ],
         [
-          "\u4e2d\u5b50\u661f",
+          "中子星",
           2,
           0
         ],
@@ -11643,7 +11643,7 @@
           0
         ],
         [
-          "andr\u00f4meda",
+          "andrômeda",
           1,
           0
         ],
@@ -12772,7 +12772,7 @@
           0
         ],
         [
-          "\u4e2d\u5b50\u661f",
+          "中子星",
           2,
           0
         ],
@@ -13380,6 +13380,8 @@
         "steepest_single_bucket_drop": {
           "ratio_from": 0.2,
           "ratio_to": 0.21,
+          "sec_from_exact": 4.088,
+          "sec_to_exact": 4.2924,
           "sec_from_meta": 4.09,
           "sec_to_meta": 4.29,
           "watch_pct_from": 126.22,
@@ -13887,7 +13889,74 @@
             0.42310000000000003,
             0.87765
           ]
-        ]
+        ],
+        "tied_steepest_single_bucket_drops": [
+          {
+            "ratio_from": 0.2,
+            "ratio_to": 0.21,
+            "sec_from_exact": 4.088,
+            "sec_to_exact": 4.2924,
+            "sec_from_meta": 4.09,
+            "sec_to_meta": 4.29,
+            "watch_pct_from": 126.22,
+            "watch_pct_to": 120.63,
+            "delta_pp": -5.59
+          },
+          {
+            "ratio_from": 0.24,
+            "ratio_to": 0.25,
+            "sec_from_exact": 4.9056,
+            "sec_to_exact": 5.11,
+            "sec_from_meta": 4.91,
+            "sec_to_meta": 5.11,
+            "watch_pct_from": 110.14,
+            "watch_pct_to": 104.55,
+            "delta_pp": -5.59
+          }
+        ],
+        "cut_vo_reconciliation": {
+          "duration_s": 20.44,
+          "meta_file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01_meta.json",
+          "row_1_plate": "s1_mercury/PIA11351.jpg (0.0-5.5s, zoom 1.00->1.04; orbit_slot at 1.0s unrendered open)",
+          "row_2_plate": "s1_mercury/PIA14083.jpg (5.5-9.7s, zoom 1.05->1.15)",
+          "vo_meta_promise_window_s": [
+            3.6,
+            5.16
+          ],
+          "vo_meta_promise_text": "Stay, and I'll show you how.",
+          "multi_bucket_drop_0_20_to_0_27": {
+            "ratio_from": 0.2,
+            "ratio_to": 0.27,
+            "sec_from_exact": 4.088,
+            "sec_to_exact": 5.5188,
+            "sec_from_meta": 4.09,
+            "sec_to_meta": 5.52,
+            "watch_pct_from": 126.22,
+            "watch_pct_to": 97.55,
+            "delta_pp": -28.67
+          },
+          "multi_bucket_drop_0_20_to_0_40": {
+            "ratio_from": 0.2,
+            "ratio_to": 0.4,
+            "sec_from_exact": 4.088,
+            "sec_to_exact": 8.176,
+            "sec_from_meta": 4.09,
+            "sec_to_meta": 8.18,
+            "watch_pct_from": 126.22,
+            "watch_pct_to": 69.58,
+            "delta_pp": -56.64
+          },
+          "bucket_0_18_to_0_19_check": {
+            "ratio_from": 0.18,
+            "ratio_to": 0.19,
+            "sec_from_exact": 3.6792,
+            "sec_to_exact": 3.8836,
+            "watch_pct_from": 126.92,
+            "watch_pct_to": 126.57,
+            "delta_pp": -0.35,
+            "note": "Supersedes stale draft string (0.18->0.19, 3.68-3.88s, -5.76pp, s01->s02_orbit) previously in OWB_2026-10-26_CHIEF_REVIEW.md line 67 and J1003 queue result."
+          }
+        }
       }
     },
     "2e-giqFmfy8": {
@@ -27685,7 +27754,7 @@
         },
         {
           "videoId": "MGQcrX7DMYw",
-          "title": "Could Neptune\u2019s Moon Triton Be Habitable?",
+          "title": "Could Neptune’s Moon Triton Be Habitable?",
           "publishedAt": "2026-10-07T16:00:35Z",
           "duration": "PT24M52S",
           "viewCount": 823579,
@@ -27797,7 +27866,7 @@
     },
     "Kurzgesagt": {
       "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
-      "channelTitle": "Kurzgesagt \u2013 In a Nutshell",
+      "channelTitle": "Kurzgesagt – In a Nutshell",
       "subscriberCount": 25800000,
       "videoCount": 396,
       "viewCount": 3976131751,
@@ -27850,7 +27919,7 @@
         },
         {
           "videoId": "_y9JuojAIg0",
-          "title": "We Finally Know More About Humanity\u2019s First Civilization",
+          "title": "We Finally Know More About Humanity’s First Civilization",
           "publishedAt": "2026-10-08T14:07:00Z",
           "duration": "PT17M31S",
           "viewCount": 11126547,
@@ -27962,7 +28031,7 @@
       {
         "videoId": "RQprZZJIb6Y",
         "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
-        "channelTitle": "Kurzgesagt \u2013 In a Nutshell",
+        "channelTitle": "Kurzgesagt – In a Nutshell",
         "title": "Your Skeleton Is Electric",
         "publishedAt": "2026-09-24T17:30:19Z",
         "in_last_30d_from_26oct": false,
@@ -28002,7 +28071,7 @@
         "videoId": "QTQVZuBV9oA",
         "channelId": "UCR9sFzaG9Ia_kXJhfxtFMBA",
         "channelTitle": "melodysheep",
-        "title": "TIMELAPSE OF THE UNIVERSE:  13 Billion Years in 10 Minutes \u2022 Updated and Remastered",
+        "title": "TIMELAPSE OF THE UNIVERSE:  13 Billion Years in 10 Minutes • Updated and Remastered",
         "publishedAt": "2026-06-16T17:02:35Z",
         "in_last_30d_from_26oct": false,
         "duration": "PT11M38S",
@@ -29042,6 +29111,8 @@
           "steepest_single_bucket_drop": {
             "ratio_from": 0.2,
             "ratio_to": 0.21,
+            "sec_from_exact": 4.088,
+            "sec_to_exact": 4.2924,
             "sec_from_meta": 4.09,
             "sec_to_meta": 4.29,
             "watch_pct_from": 126.22,
@@ -29549,7 +29620,74 @@
               0.42310000000000003,
               0.87765
             ]
-          ]
+          ],
+          "tied_steepest_single_bucket_drops": [
+            {
+              "ratio_from": 0.2,
+              "ratio_to": 0.21,
+              "sec_from_exact": 4.088,
+              "sec_to_exact": 4.2924,
+              "sec_from_meta": 4.09,
+              "sec_to_meta": 4.29,
+              "watch_pct_from": 126.22,
+              "watch_pct_to": 120.63,
+              "delta_pp": -5.59
+            },
+            {
+              "ratio_from": 0.24,
+              "ratio_to": 0.25,
+              "sec_from_exact": 4.9056,
+              "sec_to_exact": 5.11,
+              "sec_from_meta": 4.91,
+              "sec_to_meta": 5.11,
+              "watch_pct_from": 110.14,
+              "watch_pct_to": 104.55,
+              "delta_pp": -5.59
+            }
+          ],
+          "cut_vo_reconciliation": {
+            "duration_s": 20.44,
+            "meta_file": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s1_mercury_v01_meta.json",
+            "row_1_plate": "s1_mercury/PIA11351.jpg (0.0-5.5s, zoom 1.00->1.04; orbit_slot at 1.0s unrendered open)",
+            "row_2_plate": "s1_mercury/PIA14083.jpg (5.5-9.7s, zoom 1.05->1.15)",
+            "vo_meta_promise_window_s": [
+              3.6,
+              5.16
+            ],
+            "vo_meta_promise_text": "Stay, and I'll show you how.",
+            "multi_bucket_drop_0_20_to_0_27": {
+              "ratio_from": 0.2,
+              "ratio_to": 0.27,
+              "sec_from_exact": 4.088,
+              "sec_to_exact": 5.5188,
+              "sec_from_meta": 4.09,
+              "sec_to_meta": 5.52,
+              "watch_pct_from": 126.22,
+              "watch_pct_to": 97.55,
+              "delta_pp": -28.67
+            },
+            "multi_bucket_drop_0_20_to_0_40": {
+              "ratio_from": 0.2,
+              "ratio_to": 0.4,
+              "sec_from_exact": 4.088,
+              "sec_to_exact": 8.176,
+              "sec_from_meta": 4.09,
+              "sec_to_meta": 8.18,
+              "watch_pct_from": 126.22,
+              "watch_pct_to": 69.58,
+              "delta_pp": -56.64
+            },
+            "bucket_0_18_to_0_19_check": {
+              "ratio_from": 0.18,
+              "ratio_to": 0.19,
+              "sec_from_exact": 3.6792,
+              "sec_to_exact": 3.8836,
+              "watch_pct_from": 126.92,
+              "watch_pct_to": 126.57,
+              "delta_pp": -0.35,
+              "note": "Supersedes stale draft string (0.18->0.19, 3.68-3.88s, -5.76pp, s01->s02_orbit) previously in OWB_2026-10-26_CHIEF_REVIEW.md line 67 and J1003 queue result."
+            }
+          }
         }
       },
       "y-SPHQ0-VjQ": {
