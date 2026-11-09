@@ -1,0 +1,48 @@
+{
+  "job": "J2367",
+  "repaired_from": "J2362 FIX on PR #626 (d89fa79b30477b07d21e868f876cd52056b83fd6)",
+  "worker": "gemini (specialist worker; not Chief)",
+  "pr": 626,
+  "branch": "j2353-pluto-shot-list",
+  "shot_list_csv_sha256": "68a5949c670f6e2926b28f2060f1944f38fab7c48011436ce606db26ec61fa25",
+  "shot_list_md_sha256": "e235ed55cddabfc3de9d202b6cf5429ea9d64e6688c238a82266520ee2e17cea",
+  "source_evidence_json_sha256": "71099ee66b7b36b43e95dca63ac2ae595bd039f5b6ce6c5e0d2647dc72d6c195",
+  "native_motion_search_log_sha256": "2f7491ece7ca2d7b18a25f9d74c09eb3d4a7ab6d7bc8b14edbd02222bac3f6fb",
+  "lifted_navy_luma_artifact_sha256": "248990cd4bd7e9b3e8b438e5a4aee28eb9b8914fbd3f9c29a4d1076d99d1f6d1",
+  "stt_timeline_offset_v01_sha256": "922e5ba1c79c41b812361ba7456bb9d3ed2563cd3e382b10ba9c64f18440114c",
+  "stt_raw_untouched_sha256": "af85f3b6fbcb4c0f549f19f0c526fed18f9454bdb9cfa27958ff5a2770d75df7",
+  "clip_check": "74 rows PASS (stt_timeline_offset_v01.json, --vo-end 628.94)",
+  "rows": {
+    "total": 74,
+    "NASA": 60,
+    "CODE": 8,
+    "CARD": 6,
+    "folded_nasa_overlays": ["R17", "R38", "R43", "R52", "R61"]
+  },
+  "card_onscreen_s": {
+    "R08": {"span": "65.76-68.26", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 2.22},
+    "R20": {"span": "161.44-163.94", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 4.46},
+    "R33": {"span": "265.60-268.10", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 6.68},
+    "R45": {"span": "374.90-377.40", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 8.88},
+    "R54": {"span": "460.54-463.04", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 11.08},
+    "R64": {"span": "545.34-547.84", "total_s": 2.50, "legible_hold_s": 1.70, "breath_s": 0.60, "cum_offset_after_s": 12.78}
+  },
+  "code_rows": ["R02", "R15", "R24", "R29", "R35", "R48", "R56", "R69"],
+  "native_motion_rows": ["R03", "R05", "R19", "R25", "R30", "R34", "R36", "R37", "R40", "R50", "R67"],
+  "code_gaps_without_native_motion": {},
+  "nh_extreme_closeup_ogv_verdict": "REJECTED_PAN_AND_ANNOTATED (pan over PIA20155 mosaic strip + baked-in yellow labels and 10-mile scale bar; replaced by File:Video - Nasa’s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm in R05 and R50)",
+  "orbit_ruling_applied": {
+    "orbit_beats": 0,
+    "orbit_acts_tags_remaining": 0,
+    "omni_references_remaining": 0,
+    "r30_distinct_real_sources": [
+      "File:Video - Pluto and its moon Charon orbiting each other - Nasa-s New Horizons (51712771431).webm",
+      "PIA19968"
+    ]
+  },
+  "when_labels_distinct": 14,
+  "max_still_upscale": "1.95x (PIA21965)",
+  "max_video_inset_upscale": "2.00x (800x450 -> 1600x900 KSC launch clips on lifted starry canvas)",
+  "assets_over_two_rows": [],
+  "spend_gbp": 0
+}
