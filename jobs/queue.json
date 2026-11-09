@@ -207491,10 +207491,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-09T05:01Z",
+      "eta": "2026-11-09T07:01Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:14Z",
       "result": "",
@@ -207508,6 +207508,11 @@
           "at": "2026-11-09T04:58Z",
           "by": "relay",
           "what": "rerouted to cursor on cursor-claude-opus-5-5: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: cursor on claude-opus-5-5"
+        },
+        {
+          "at": "2026-11-09T05:01Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Partner-channel shortlist for YouTube Collaborations (Orbit): 10 space channels 5k-100k subs",
@@ -207521,7 +207526,15 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-claude-opus-5-5"
+      "model": "cursor-claude-opus-5-5",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T05:01Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2417",
