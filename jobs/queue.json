@@ -208807,17 +208807,22 @@
           "at": "2026-11-09T03:45Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2426; starting inspection of AR2 v13, AR3 v14, 028 S6 v07, and schedule slots"
+        },
+        {
+          "at": "2026-11-09T03:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1/5: Verified 028 S6 v07 swap live (X768qs8sNQs private/unscheduled -> lsOCcIYCud0 private/2026-12-07T11:30:00Z, ok:true in J2426.json); identified first two free Mon/Wed/Fri/Sat 11:30Z Short slots: Wed 2026-11-25T11:30:00Z (AR2 v13) and Sat 2026-11-28T11:30:00Z (AR3 v14)"
         }
       ],
-      "remaining_action": "Inspect AR2 v13, AR3 v14, 028 night-sky v07, and free Short slots",
+      "remaining_action": "Run Shorts gates (incl. blur-pad check) and build upload packages for AR2 v13 and AR3 v14",
       "kind": "studio",
       "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-09T03:45Z",
+        "at": "2026-11-09T03:54Z",
         "by": "gemini",
-        "note": "Claimed J2426; starting inspection of AR2 v13, AR3 v14, 028 S6 v07, and schedule slots"
+        "note": "Step 1/5: Verified 028 S6 v07 swap live (X768qs8sNQs private/unscheduled -> lsOCcIYCud0 private/2026-12-07T11:30:00Z, ok"
       },
       "taskKeys": [
         "OWB:030",
