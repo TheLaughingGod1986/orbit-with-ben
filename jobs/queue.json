@@ -211531,19 +211531,26 @@
           "at": "2026-11-09T23:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T23:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2446; starting step 1: inspect PR #411 and #428 in HOS"
         }
       ],
-      "remaining_action": "HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge",
+      "remaining_action": "Inspect PR #411 and #428 branches in a clean HOS worktree",
       "due": "2026-11-10T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-09T23:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2446; starting step 1: inspect PR #411 and #428 in HOS"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2447",
