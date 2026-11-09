@@ -210906,18 +210906,22 @@
           "at": "2026-11-09T16:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T16:36Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Verified /Volumes/MiniWork device 16777242 != ~ device 16777234 (7.3Gi free on ~, 233Gi free on MiniWork)"
         }
       ],
-      "remaining_action": "Move the heavy ~/_desk folders (worktrees, renders, scratch, cache) onto the MiniWork SSD, verified, with links left in place",
+      "remaining_action": "Verify MiniWork SSD mount, pause chief-relay, and check running agent CLIs before moving ~/_desk folders",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-09T16:35Z",
+        "of": 6,
+        "at": "2026-11-09T16:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Verified /Volumes/MiniWork device 16777242 != ~ device 16777234 (7.3Gi free on ~, 233Gi free on MiniWork)"
       }
     }
   ],
