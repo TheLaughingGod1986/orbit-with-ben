@@ -60,6 +60,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 032 | edit | gemini | 2026-11-09T16:58Z | 2026-11-09T17:58Z | - |
-| 033 | edit | gemini | 2026-11-08T20:01Z | 2026-11-08T22:00Z | J2404 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch |
+| 033 | edit | claudecode | 2026-11-09T17:02Z | 2026-11-09T19:01Z | J2437 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) (took over stalled claim by gemini, ETA 2026-11-08T22:00Z) |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

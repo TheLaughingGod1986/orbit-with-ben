@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2436 | mini | claimed | gemini | 2026-11-09T18:57Z | 032 edit · assembly · 032 Titan: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
-| J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
+| J2437 | mini | claimed | claudecode | 2026-11-09T19:02Z | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
