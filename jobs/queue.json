@@ -1,5 +1,5 @@
 {
-  "next_id": 2436,
+  "next_id": 2437,
   "jobs": [
     {
       "id": "J0001",
@@ -210335,6 +210335,35 @@
         "at": "2026-11-09T10:27Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2436",
+      "title": "032 Titan: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-on from J2435 (PR #667) / J2428 (PR #665). Execute 02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/07_Edit-Project/FIRST30_PLAN.md (also mirrored on studio-live NAS): (1) upgrade render_still_cut in _assemble_032_full_master_v01.py from static loop to symmetric sub-pixel PIL Image.Transform.EXTENT BICUBIC zoom (1.000->1.045) so Frame 0 (PIA20016.jpg) is already moving; (2) split R03 (9.73-22.93s) into 4 cuts <=3.60s (3.40s PIA22766, 3.40s PIA21902, 3.60s r03_pressure at 16.53-20.13s before 0:20, 2.80s PIA21889) and split R04 (22.93-32.17s) into 3 cuts <=3.60s (2.83s PIA08167 u2, 2.80s PIA21889 u2, 3.60s r04_cold) plus R05/R06 <=3.60s; (3) render master_v02.mp4 on studio-live NAS + UAT mirrors and pass clip_check, picture_qa, polish_gate, music_gate, and sfx_kit level. £0.",
+      "ref": "J2435",
+      "film": "032",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-09T10:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T10:36Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply 032 FIRST30_PLAN.md (PR #667): smooth BICUBIC push on stills from Frame 0, R03/R04/R05/R06 cuts <=3.60s, 1.47 bar payoff at 16.53s; render master_v02.mp4 + gates",
+      "kind": "assembly",
+      "plain": "Re-cut the first 30 seconds of 032 Titan to the new hook rule (FIRST30_PLAN.md) and assemble master v02"
     }
   ],
   "focus": [
