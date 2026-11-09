@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2439 | mini | open | – | – | qa · Mini disk report (read-only): what is using the disk, and which film folders already have a full copy on studio-live |  |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
+| J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
