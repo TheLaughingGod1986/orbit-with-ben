@@ -210278,10 +210278,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-09T10:08Z",
-      "eta": "2026-11-09T12:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T10:07Z",
       "result": "",
@@ -210305,6 +210305,11 @@
           "at": "2026-11-09T10:08Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T10:09Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-09T12:09:17Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Re-cut the first 30 s of 032 Titan, 033 Uranus, 034 Pluto to the new rule; list which of 026/027/031 can take a new opening before air",
