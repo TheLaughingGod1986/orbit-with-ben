@@ -104,6 +104,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2429 | any | open | – | – | review · Orbit Shorts: break the ~1k ceiling — fix the swipe-away in the first second (stayed-to-watch 30-50%) |  |
 | J2430 | mini | open | – | – | 026 thumbs · chart · OWB 026/027/032: build the J2417 A/B thumbnails (one big object + 2-4 word text) | J2417 |
 | J2431 | mini | open | – | – | 024 upload · studio · 024 muons Short v04: Ben OK'd 8 Nov 23:41 — upload Private for Sat 21 Nov 11:30 (or first free Orbit Short slot) |  |
+| J2432 | any | open | – | – | review · Verify condition for J1198 |  |
+| J2433 | any | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 
