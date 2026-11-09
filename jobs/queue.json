@@ -210273,9 +210273,14 @@
           "at": "2026-11-09T12:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T12:31Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2434; unblocked stale ledger.jsonl.lock"
         }
       ],
-      "remaining_action": "031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU",
+      "remaining_action": "Verify 031 Short 2 v03 SHA-256 and upload package",
       "kind": "studio",
       "approved_from": {
         "what": "Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical)",
@@ -210291,12 +210296,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-09T12:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2434; unblocked stale ledger.jsonl.lock"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2435",
