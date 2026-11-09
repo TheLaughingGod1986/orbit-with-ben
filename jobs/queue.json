@@ -212028,10 +212028,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-09T23:38Z",
+      "eta": "2026-11-10T00:38Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
       "result": "",
@@ -212045,6 +212045,11 @@
           "at": "2026-11-09T23:37Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex out of usage; next in its chain: claudecode"
+        },
+        {
+          "at": "2026-11-09T23:38Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception)",
@@ -212059,7 +212064,15 @@
         "by": ""
       },
       "for": "claudecode",
-      "model": "mini-claude-opus-5-5"
+      "model": "mini-claude-opus-5-5",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T23:38Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2460",
