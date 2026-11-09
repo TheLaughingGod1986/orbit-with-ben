@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2034, J2037, J2040, J1881, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -28,7 +28,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1754 | mini | blocked | codex | – | chief · Chief: review workflow handoff fixes and validate actual Mini rollout |  |
-| J1881 | mini | blocked | gemini | – | 008 edit · for gemini · review · `gemini-argon` · review Franklin eight-item correction recipe (+ film-wide captions) and scope production | J1868 / HOS-008:v03:2026-11-03T16:08:33.439Z |
 | J1888 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0978 |  |
 | J1892 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J1834 |  |
 | J1895 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J1130 |  |
