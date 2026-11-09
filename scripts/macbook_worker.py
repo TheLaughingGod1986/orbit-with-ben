@@ -94,7 +94,8 @@ The job is already claimed for you: {job}
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
-   with gh; say the PR number in the result. Then switch every checkout you touched back to main
+   with gh; say the PR number in the result. Never merge, approve or close a PR, and never push to main: merges are
+   Chief calls (AGENTS.md), so a brief that says "merge" stops at the open PR and says so. Then switch every checkout you touched back to main
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
    History of Science folder must always be left on main.
 4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
@@ -261,19 +262,138 @@ def pick_agent(job: dict, have: list) -> tuple:
     return (have[0], "") if have else ("", "")
 
 
+# What an unattended run may do without a person there to approve it (9 Nov 2026: J2427 was released about 40 times
+# because `python3 -m unittest ...` and `gh pr create` waited for an approval nobody could give, so no code job ending
+# in tests + PR could finish). A narrow list, not a blanket bypass: the repo's own test commands, the git steps of
+# PROMPT step 3 on a macbook/<job> branch, and opening/reading its PR. Merges, approvals, closing, force pushes, pushes
+# to main and `gh api` stay out and are denied outright: merges are Chief calls (AGENTS.md).
+CLAUDE_ALLOW = (
+    # the repo's own tests and checks
+    "Bash(python3 -m unittest:*)",
+    "Bash(python3 scripts/test_*)",
+    "Bash(node scripts/test_*)",
+    "Bash(python3 scripts/core_sync.py check)",
+    # PROMPT step 2 and 4-5 (jobs.py and owb_thread.py are also in the repo's .claude/settings.json)
+    "Bash(python3 scripts/jobs.py:*)",
+    "Bash(python3 scripts/owb_thread.py:*)",
+    # PROMPT step 3: work on macbook/<job>, push it, go back to main
+    "Bash(git status:*)",
+    "Bash(git diff:*)",
+    "Bash(git log:*)",
+    "Bash(git add:*)",
+    "Bash(git commit:*)",
+    "Bash(git checkout -b macbook/*)",
+    "Bash(git checkout main)",
+    "Bash(git switch -c macbook/*)",
+    "Bash(git switch main)",
+    "Bash(git push -u origin macbook/*)",
+    "Bash(git push origin macbook/*)",
+    # PROMPT step 3: open the PR and read it back (never merge it)
+    "Bash(gh pr create:*)",
+    "Bash(gh pr view:*)",
+    "Bash(gh pr checks:*)",
+    "Bash(gh pr list:*)",
+)
+CLAUDE_DENY = (
+    "Bash(gh pr merge:*)",
+    "Bash(gh pr review:*)",
+    "Bash(gh pr close:*)",
+    "Bash(gh pr ready:*)",
+    "Bash(gh api:*)",
+    "Bash(git push --force:*)",
+    "Bash(git push -f:*)",
+    "Bash(git push origin main:*)",
+    "Bash(git push -u origin main:*)",
+)
+
+
+def claude_settings() -> dict:
+    """The worker-only Claude Code settings, passed with --settings on each run (never written into the repo, so
+    Ben's and the Mini's sessions keep their own permissions)."""
+    return {"permissions": {"allow": list(CLAUDE_ALLOW), "deny": list(CLAUDE_DENY)}}
+
+
+def claude_settings_file() -> pathlib.Path:
+    """Write claude_settings() under ~/_desk/state, one file per slot, and return its path."""
+    path = STATE / f"{slot_name(SLOT, 'macbook-claude-settings')}.json"
+    body = json.dumps(claude_settings(), indent=2) + "\n"
+    try:
+        STATE.mkdir(parents=True, exist_ok=True)
+        if not path.exists() or path.read_text() != body:
+            path.write_text(body)
+    except OSError as e:
+        log(f"claude settings not written: {e}")
+    return path
+
+
+# Codex exec policy (rules files in ~/.codex/rules, Starlark prefix_rule): the same narrow list for `codex exec`, so a
+# matching command runs without waiting on an approval; merges and the rest of CLAUDE_DENY are forbidden. One file the
+# worker owns and rewrites; nothing else in ~/.codex is touched.
+CODEX_ALLOW = (
+    ["python3", "-m", "unittest"],
+    ["python3", "scripts/core_sync.py", "check"],
+    ["python3", "scripts/jobs.py"],
+    ["python3", "scripts/owb_thread.py"],
+    ["git", "add"],
+    ["git", "commit"],
+    ["gh", "pr", "create"],
+    ["gh", "pr", "view"],
+    ["gh", "pr", "checks"],
+    ["gh", "pr", "list"],
+)
+CODEX_FORBID = (
+    ["gh", "pr", "merge"],
+    ["gh", "pr", "review"],
+    ["gh", "pr", "close"],
+    ["gh", "pr", "ready"],
+    ["gh", "api"],
+    ["git", "push", ["--force", "-f"]],
+    ["git", "push", "origin", "main"],
+    ["git", "push", "-u", "origin", "main"],
+)
+CODEX_RULES = HOME / ".codex" / "rules" / "owb-macbook-worker.rules"
+
+
+def codex_rules() -> str:
+    """The rules file text. Test scripts (scripts/test_*.py, scripts/test_*.cjs) are listed one by one from the
+    checkout, since a prefix rule matches whole words, not a file-name glob."""
+    scripts = OWB / "scripts" if (OWB / "scripts").is_dir() else pathlib.Path(__file__).resolve().parent
+    tests = sorted(p.name for p in scripts.glob("test_*") if p.suffix in (".py", ".cjs", ".js"))
+    allow = list(CODEX_ALLOW) + [["node" if t.endswith((".cjs", ".js")) else "python3", f"scripts/{t}"] for t in tests]
+    lines = ["# Written by scripts/macbook_worker.py (orbit-with-ben) on every run; edits are overwritten.",
+             "# Unattended MacBook runs may test and open their PR; merges are Chief calls (AGENTS.md)."]
+    lines += [f"prefix_rule(pattern={json.dumps(p)}, decision=\"allow\")" for p in allow]
+    lines += [f"prefix_rule(pattern={json.dumps(p)}, decision=\"forbidden\")" for p in CODEX_FORBID]
+    return "\n".join(lines) + "\n"
+
+
+def install_codex_rules() -> None:
+    try:
+        CODEX_RULES.parent.mkdir(parents=True, exist_ok=True)
+        body = codex_rules()
+        if not CODEX_RULES.exists() or CODEX_RULES.read_text() != body:
+            CODEX_RULES.write_text(body)
+    except OSError as e:
+        log(f"codex rules not written: {e}")
+
+
 def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
-    """The agent CLI's one-shot form, as the Mini runs it (scripts/chief_relay.py cli_spec)."""
+    """The agent CLI's one-shot form, as the Mini runs it (scripts/chief_relay.py cli_spec), plus the worker's narrow
+    unattended allowlist (CLAUDE_ALLOW / CODEX_ALLOW). Gemini `agy` and Cursor `agent` already run unattended with
+    their own flags (--dangerously-skip-permissions, --force), so tests and gh work there; for them the no-merge rule
+    is in PROMPT."""
     b = find_bin(agent) if agent in BINS else None
     if not b:
         return None
     dirs = ["--add-dir", str(HOS), "--add-dir", str(HOME / "_desk")]
     if agent == "codex":
+        install_codex_rules()
         m = ["-m", model] if model.startswith("gpt-") else []
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
         # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
-        return [b, "-p", prompt, "--permission-mode", "acceptEdits", *dirs]
+        return [b, "-p", prompt, "--permission-mode", "acceptEdits", "--settings", str(claude_settings_file()), *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)

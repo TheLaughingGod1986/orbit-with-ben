@@ -279,6 +279,41 @@ class AllAgents(unittest.TestCase):
             self.assertNotEqual(c[-1], "P")
             self.assertIsNone(mw.agent_cmd("grok", "P"))
 
+    def test_unattended_runs_may_test_and_open_their_pr_but_never_merge(self):
+        """9 Nov 2026: J2427 was released ~40 times because `python3 -m unittest` and `gh pr create` needed approval."""
+        import json
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "STATE", pathlib.Path(d)), \
+                mock.patch.object(mw, "CODEX_RULES", pathlib.Path(d) / "rules" / "owb-macbook-worker.rules"), \
+                mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+            self.assertIn("--settings", c)
+            settings = json.loads(pathlib.Path(c[c.index("--settings") + 1]).read_text())
+            allow, deny = settings["permissions"]["allow"], settings["permissions"]["deny"]
+            for entry in ("Bash(python3 -m unittest:*)", "Bash(python3 scripts/test_*)", "Bash(node scripts/test_*)",
+                          "Bash(gh pr create:*)", "Bash(gh pr view:*)", "Bash(git push -u origin macbook/*)"):
+                self.assertIn(entry, allow)
+            for entry in allow:  # narrow: no merge, no blanket Bash, nothing pushed to main
+                self.assertNotIn("merge", entry)
+                self.assertNotIn("main:", entry)
+                self.assertNotIn(entry, ("Bash", "Bash(*)", "Bash(gh:*)", "Bash(git:*)", "Bash(git push:*)"))
+            self.assertIn("Bash(gh pr merge:*)", deny)
+            self.assertIn("Bash(git push origin main:*)", deny)
+            self.assertNotIn("--dangerously-skip-permissions", c)
+            self.assertEqual(c[c.index("--permission-mode") + 1], "acceptEdits")
+
+            x = mw.agent_cmd("codex", "P", "gpt-6-astra")
+            self.assertNotIn("--dangerously-bypass-approvals-and-sandbox", x)
+            rules = mw.CODEX_RULES.read_text()
+            for line in ('prefix_rule(pattern=["python3", "-m", "unittest"], decision="allow")',
+                         'prefix_rule(pattern=["gh", "pr", "create"], decision="allow")',
+                         'prefix_rule(pattern=["gh", "pr", "view"], decision="allow")',
+                         'prefix_rule(pattern=["python3", "scripts/test_macbook_worker.py"], decision="allow")',
+                         'prefix_rule(pattern=["node", "scripts/test_studio_app.cjs"], decision="allow")',
+                         'prefix_rule(pattern=["gh", "pr", "merge"], decision="forbidden")'):
+                self.assertIn(line, rules)
+            self.assertNotIn('"merge"], decision="allow"', rules)
+        self.assertIn("Never merge", mw.PROMPT)
+
     def test_a_failed_cli_is_paused_and_skipped(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
