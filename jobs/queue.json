@@ -208991,6 +208991,11 @@
           "at": "2026-11-09T01:31Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: the brief needs an AGENTS.md rule edit and a merge, which only Chief may do (AGENTS.md lines 355-361, 554). gh is also blocked on the unattended MacBook, so no PR can be opened. Suggest splitting it: Chief writes the first-30s rule; a review/build job (Mini) re-cuts the 032/033/034 openings and lists which of 026/027/031 could take a new opening. Second MacBook pass, released/blocked without changes."
+        },
+        {
+          "at": "2026-11-09T03:43Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30)",
@@ -209003,7 +209008,8 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-09T03:43Z"
     },
     {
       "id": "J2429",
@@ -209431,6 +209437,11 @@
           "at": "2026-11-09T01:07Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2171 condition check done, CONDITION UNMET. jobs.py refused 'wait J2171 --agent macbook' (only the holder or elected Chief may update the hold), so the Chief needs to record it. Evidence (9 Nov 01:06Z): J0862 VO PASS and HOS PR #459 inventory stand. J2275 is now done (6 runner fixes on HOS PR #445 05c929c6; OWB #622 merged), but J2200 is still blocked awaiting the elected-Chief runner re-review (no jobs/reviews/J2200). So J2033 is still blocked (0/20 Tranche 2 rows; Short A S03 P03:07_ball_to_moon absent), and J2034 (picture acceptance + S06 P04:04_dots_square review) and J2035 (score bed) are still open. Suggested: wait J2171 --type dependency --recheck J2433 --check-at 2026-11-09T07:10Z --condition 'J2200 Chief re-review PASS -> J2033 20 rows -> J2034 picture acceptance -> J2035'. Next real action: Chief re-reviews HOS PR #445 for J2200. No files changed, nothing spent."
+        },
+        {
+          "at": "2026-11-09T03:43Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -209445,7 +209456,8 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-09T03:43Z"
     }
   ],
   "focus": [
