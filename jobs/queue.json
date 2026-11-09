@@ -205890,6 +205890,11 @@
           "at": "2026-11-08T10:31Z",
           "by": "gemini",
           "what": "done: KEEP (aa9ca3d244, jobs/reviews/J2395/REVIEW.md): Verified 031 Short 1 v01 (J2388, ebe11bb730, 33.00s Test A opening) and Short 2 v02 (J2394, 4f25b1cd9d, 24.48s Keeper question) across all 7 automated gates and contact sheets (0 synthetic bullseye/plaid/dot patterns, 0 cartoon arcs, 0 ghost double-exposures, 0 9-14s title collisions). Verified NAS & iCloud OWB UAT SHA-256s alongside Long Master v02 (680598ae34; 720p proxy a8c748f68c), uploaded all 3 cuts to R2 watch store (owb-031-v02, owb-j2395-2-v01, owb-j2395-3-v02), set jobs.py awaits J2395 for Ben's final watch (Wed 2 Dec 18:00 London), and advanced jobs/WIP.json (OWB:031 -> UAT; OWB:J01 enters active)."
+        },
+        {
+          "at": "2026-11-09T20:21Z",
+          "by": "chief",
+          "what": "no longer waits on Ben"
         }
       ],
       "remaining_action": "Complete J2395 and verify live board UAT cards",
@@ -205915,7 +205920,8 @@
       "taskKeys": [
         "OWB:031"
       ],
-      "awaits_ben": [
+      "done_ref": "aa9ca3d244",
+      "awaits_was": [
         {
           "what": "Watch 031 Magnetic Field Flip long master v02 ('What Happens When Earth's Magnetic Field Flips?', 9m 31s, Wed 2 Dec 18:00 London)",
           "file": "OWB UAT/031_what_happens_when_earths_magnetic_field_flips_master_v02_PHONE.mp4",
@@ -205948,8 +205954,7 @@
           "number": "031",
           "type": "short"
         }
-      ],
-      "done_ref": "aa9ca3d244"
+      ]
     },
     {
       "id": "J2396",
