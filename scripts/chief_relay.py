@@ -1380,8 +1380,8 @@ def _load_offload():
 
 
 def offload_scratch(at: dt.datetime) -> None:
-    """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 20),
-    move render scratch untouched for 48 h from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
+    """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 40),
+    move render scratch untouched for CHIEF_OFFLOAD_AGE_H (default 24 h) from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
     both sides, the Mini copy goes only on a full match, never deletes on the NAS), at most every CHIEF_OFFLOAD_H
     hours, and say what moved on the thread. Never stops the relay.
 
@@ -1392,7 +1392,9 @@ def offload_scratch(at: dt.datetime) -> None:
         return  # the Mini's /private/tmp and /Volumes/data only exist on macOS
     if _offload_finished(at):
         return  # still copying in the background
-    target = float(os.environ.get("CHIEF_OFFLOAD_GB", "20"))
+    # Ben, 9 Nov 2026 (disk at 3 GB): start at 40 GB free, not 20, and move scratch untouched for 24 h, not 48.
+    target = float(os.environ.get("CHIEF_OFFLOAD_GB", "40"))
+    age_h = os.environ.get("CHIEF_OFFLOAD_AGE_H", "24")
     try:
         free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
     except OSError:
@@ -1405,7 +1407,8 @@ def offload_scratch(at: dt.datetime) -> None:
     try:
         d().mkdir(parents=True, exist_ok=True)
         with open(d("offload.out"), "w") as out:
-            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", "--target-gb", str(target)],
+            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", "--target-gb", str(target),
+                                     "--min-age-h", age_h],
                                     stdout=out, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
                                     start_new_session=True, cwd=str(HOME))
     except Exception as e:  # never let the offload stop the relay
@@ -1414,6 +1417,32 @@ def offload_scratch(at: dt.datetime) -> None:
         return
     write_json(d("offload.json"), {"at": iso(at), "running": True, "pid": proc.pid})
     log(f"offload: started in the background (pid {proc.pid}, {free:,} MB free)")
+
+
+def weekly_caches(at: dt.datetime) -> None:
+    """Ben, 9 Nov 2026 (disk at 3 GB): clear the caches that rebuild themselves (Homebrew, npm, pip, uv) once every
+    CHIEF_CACHE_DAYS days (default 7), not only when the disk is nearly full. It runs as its own background process,
+    like the NAS offload, so a slow `brew cleanup` never holds the relay. Checkouts and media are untouched."""
+    if sys.platform != "darwin" and not os.environ.get("CHIEF_OFFLOAD_ANY_OS"):
+        return
+    last = read_json(d("caches.json")) or {}
+    if last.get("at") and at - parse(last["at"]) < dt.timedelta(days=float(os.environ.get("CHIEF_CACHE_DAYS", "7"))):
+        return
+    path = OWB / "scripts" / "mini_repair.py"
+    if not path.exists():
+        path = pathlib.Path(__file__).with_name("mini_repair.py")
+    try:
+        d().mkdir(parents=True, exist_ok=True)
+        with open(d("caches.out"), "w") as out:
+            proc = subprocess.Popen([sys.executable, str(path), "--apply", "--caches-only", "--json"], stdout=out,
+                                    stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True,
+                                    cwd=str(HOME))
+    except Exception as e:  # never let it stop the relay
+        log(f"weekly cache clean failed to start: {e.__class__.__name__}: {e}")
+        write_json(d("caches.json"), {"at": iso(at), "error": str(e)[:300]})
+        return
+    write_json(d("caches.json"), {"at": iso(at), "pid": proc.pid})
+    log(f"weekly cache clean: started in the background (pid {proc.pid})")
 
 
 def yield_monthly_for_dispatch(selection):
@@ -1467,6 +1496,7 @@ def run_locked(at: dt.datetime) -> int:
         log("out of credit: " + "; ".join(f"{k} ({v})" for k, v in sorted(flags.items())))
     healthy = self_heal(at)
     offload_scratch(at)  # also when the disk is too full to wake anyone: that is when the NAS helps most
+    weekly_caches(at)
     if not healthy:
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
