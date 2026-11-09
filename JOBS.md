@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
-| J2434 | mini | open | – | – | 031 upload · studio · 031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU |  |
+| J2434 | mini | claimed | gemini | 2026-11-09T13:31Z | 031 upload · studio · 031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU |  |
 | J2436 | mini | open | – | – | 032 edit · assembly · 032 Titan: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |

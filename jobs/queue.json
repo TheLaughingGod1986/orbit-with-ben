@@ -210251,10 +210251,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T12:31Z",
+      "eta": "2026-11-09T13:31Z",
       "created_by": "claude",
       "created_at": "2026-11-09T08:52Z",
       "result": "",
@@ -210268,6 +210268,11 @@
           "at": "2026-11-09T08:52Z",
           "by": "claude",
           "what": "approved by Ben: Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical) v03 (asked in J2418)"
+        },
+        {
+          "at": "2026-11-09T12:31Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU",
@@ -210283,6 +210288,14 @@
         "channel": "OWB",
         "job": "J2418",
         "okAt": "2026-11-09T08:52Z"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T12:31Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
