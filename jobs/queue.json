@@ -212050,9 +212050,14 @@
           "at": "2026-11-09T23:38Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T23:38Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception)",
+      "remaining_action": "Record the old 025 test, start the title-and-thumbnail test, read back, write records, open PR",
       "due": "2026-11-10T18:00:00Z",
       "kind": "studio",
       "plain": "Swap the Mars film's running thumbnail test for one that tests three title-and-thumbnail pairs, including a search-led title.",
@@ -212067,12 +212072,13 @@
       "model": "mini-claude-opus-5-5",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-09T23:38Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "claudecode"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     },
     {
       "id": "J2460",
