@@ -210921,17 +210921,22 @@
           "at": "2026-11-09T16:37Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 0-1 complete: /Volumes/MiniWork mounted (device 16777242 != 16777234), chief-relay.pause touched, no other agent CLI job running"
+        },
+        {
+          "at": "2026-11-09T16:49Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Moved & verified ~/_desk/cache (942 entries) and ~/_desk/scratch (89549 entries) onto /Volumes/MiniWork/desk/"
         }
       ],
-      "remaining_action": "Rsync, verify checksums & file counts, and symlink ~/_desk/cache and ~/_desk/scratch onto /Volumes/MiniWork/desk/",
+      "remaining_action": "Rsync, verify checksums & file counts, and symlink ~/_desk/renders onto /Volumes/MiniWork/desk/renders",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-09T16:37Z",
+        "at": "2026-11-09T16:49Z",
         "by": "gemini",
-        "note": "Step 0-1 complete: /Volumes/MiniWork mounted (device 16777242 != 16777234), chief-relay.pause touched, no other agent CL"
+        "note": "Moved & verified ~/_desk/cache (942 entries) and ~/_desk/scratch (89549 entries) onto /Volumes/MiniWork/desk/"
       }
     }
   ],
