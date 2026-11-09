@@ -10,7 +10,8 @@ Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
     MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
   - no pause file (~/_desk/state/macbook-worker.pause), and no other run of this script in progress;
   - the MacBook is on mains power (never drains the battery);
-  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10);
+  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10) for slot 2; slot 1 also
+    runs while Ben is using the Mac, at background priority (Ben, 9 Nov 2026; MACBOOK_BUSY_OK=0 turns that off);
   - at least MACBOOK_MIN_FREE_GB free on the disk (default 15).
 Then it pulls both checkouts, claims the oldest `macbook` job with
   jobs.py next --agent macbook --can macbook --git
@@ -163,7 +164,11 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None, load=None) ->
         why.append("on battery")
     need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
     idle = idle_minutes(ioreg_out)
-    if idle < need:
+    # Ben, 9 Nov 2026: "I want the MacBook Pro to be picking up as many jobs as the Mac Mini". On mains, slot 1 also works
+    # while he is using the Mac, at background priority (taskpolicy -b, see busy_cmd); slot 2 still waits for idle.
+    # MACBOOK_BUSY_OK=0 brings back the old rule (no job at all while he is at the keys).
+    busy_ok = SLOT == 1 and os.environ.get("MACBOOK_BUSY_OK", "1") != "0"
+    if idle < need and not busy_ok:
         why.append(f"in use ({idle:.0f} min idle, needs {need:.0f})")
     free = free_gb if free_gb is not None else shutil.disk_usage(str(HOME)).free / 1024 ** 3
     floor = float(os.environ.get("MACBOOK_MIN_FREE_GB", "15"))
@@ -308,6 +313,16 @@ def job_record(job_id: str) -> dict:
                      if j.get("id") == job_id), {})
     except (OSError, ValueError):
         return {}
+
+
+def busy_cmd(cmd: list, idle_min: float | None = None) -> list:
+    """While Ben is using the Mac, run the job at macOS background priority (taskpolicy -b: lowest CPU, disk and
+    network priority), so his apps always come first. Idle: unchanged."""
+    need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
+    idle = idle_minutes() if idle_min is None else idle_min
+    if idle < need and shutil.which("taskpolicy"):
+        return ["taskpolicy", "-b", *cmd]
+    return cmd
 
 
 def run_capped(cmd: list, cwd, cap_s: int) -> int:
@@ -521,7 +536,7 @@ def run_ordinary() -> str:
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     started = time.monotonic()
-    code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
+    code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
     seconds = time.monotonic() - started
     sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
     paused = ""
