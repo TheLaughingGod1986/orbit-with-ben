@@ -5,7 +5,8 @@
 #   9222  History of Science      ~/.hos-chrome-cdp
 # Chrome refuses remote debugging on your everyday profile, so each port gets its own profile folder. The first run
 # copies your everyday Chrome profile into each, so your Google sign-in comes with it (switch each window to the right
-# channel once: Studio > your avatar > Switch account). Later runs just start them if they aren't running.
+# channel once: Studio > your avatar > Switch account). If macOS refuses the copy, the window starts on a fresh profile
+# and you sign in to Google there once. Later runs just start them if they aren't running.
 #
 #   bash scripts/macbook/start_cdp_browsers.sh            # start both (copy the profile first time)
 #   bash scripts/macbook/start_cdp_browsers.sh --install  # also start them at every login (LaunchAgent)
@@ -24,10 +25,16 @@ start() {  # port profile-dir url
   if [[ ! -d "$dst/Default" ]]; then
     echo "First run: copying your Chrome profile to $dst (sign-ins come with it)"
     mkdir -p "$dst"
-    rsync -a --exclude 'Singleton*' --exclude 'BrowserMetrics*' --exclude 'Crashpad' \
+    if ! rsync -a --exclude 'Singleton*' --exclude 'BrowserMetrics*' --exclude 'Crashpad' \
       --exclude 'ShaderCache' --exclude 'GrShaderCache' --exclude 'GraphiteDawnCache' \
       --exclude 'component_crx_cache' --exclude 'extensions_crx_cache' --exclude 'Safe Browsing' \
-      "$SRC/" "$dst/"
+      "$SRC/" "$dst/" 2>"/tmp/owb-cdp-rsync-${port}.log"; then
+      # macOS can refuse the copy ("Operation not permitted", 9 Nov 2026). Keep what was copied to one side and
+      # start a fresh profile instead: the window opens signed out, so sign in to Google there once.
+      echo "Couldn't copy your Chrome profile (macOS blocked it). Starting a fresh one: sign in to Google in the new window."
+      mv "$dst" "${dst}.partial.$(date +%s)"
+      mkdir -p "$dst"
+    fi
   fi
   rm -f "$dst/SingletonLock" "$dst/SingletonSocket" "$dst/SingletonCookie"
   nohup "$CHROME" --remote-debugging-port="${port}" --remote-allow-origins='*' --user-data-dir="$dst" \
