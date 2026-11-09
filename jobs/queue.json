@@ -1,5 +1,5 @@
 {
-  "next_id": 2446,
+  "next_id": 2447,
   "jobs": [
     {
       "id": "J0001",
@@ -211257,6 +211257,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2446",
+      "title": "HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude), 9 Nov 2026: J1881's KEEP is accepted — both PRs are planning tools only (no render, spend or upload) and all five FIX items are verified on b78dbe19. Before they can merge: #428 (base codex/J2163-repair) and #411 (base main) are 34 commits behind HOS main, and a test merge conflicts in STATUS.md, 00_Brand/Channel-Setup/PIPELINE.json, 00_Brand/Channel-Setup/kanban/index.html and 02_Video-Projects/008_Lightning-Franklin/production-status.md (generated status files: regenerate them with the HOS repo's own tooling, never hand-edit), and test_j2163_recipe errors on the merged tree (it needs the real 008 master on the Mini/studio-live). Steps: merge HOS origin/main into cursor/J2217-eight-item (merge commit, no rebase/force-push), regenerate the status files, run python3 -m unittest test_j2163_recipe (in 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project) and 00_Brand/Channel-Setup/tools/check_all.sh, push, then merge #428 into codex/J2163-repair and bring #411 up to date the same way. Do NOT merge either into main: record both PR heads + test output in jobs.py done --result and the Chief merges. No render, no Flow, no spend.",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T19:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T19:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge",
+      "due": "2026-11-10T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [
