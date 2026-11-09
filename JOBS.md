@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2454 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2455 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2456 | cloud | open (after J2455) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
+| J2457 | mini | open | – | – | studio · Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom) |  |
 
 Recently finished:
 
