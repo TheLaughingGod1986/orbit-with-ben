@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2442 | mini | claimed | gemini | 2026-11-09T13:15Z | qa · Format the new SanDisk SSD on the Mac mini as APFS 'MiniWork' (Ben's go, 9 Nov) and create scratch/ and films/ |  |
+| J2443 | mini | open | – | – | qa · Mini disk report part 2 (read-only): find the ~135 GB that J2439 didn't cover (Library, dot-folders, models, snapshots) |  |
 
 Recently finished:
 

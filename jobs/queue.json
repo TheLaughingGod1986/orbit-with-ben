@@ -1,5 +1,5 @@
 {
-  "next_id": 2443,
+  "next_id": 2444,
   "jobs": [
     {
       "id": "J0001",
@@ -210697,6 +210697,35 @@
         "at": "2026-11-09T13:00Z",
         "by": "gemini"
       }
+    },
+    {
+      "id": "J2443",
+      "title": "Mini disk report part 2 (read-only): find the ~135 GB that J2439 didn't cover (Library, dot-folders, models, snapshots)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-on to J2439 (jobs/reviews/J2439/DISK_REPORT.md): the disk shows 196 GiB used of 228, but the folders J2439 measured add up to only about 60 GB. Find the rest. READ-ONLY: change, move or delete nothing. On the Mac mini run and record: (1) du -sh ~/* ~/.[!.]* 2>/dev/null | sort -h | tail -30 ; (2) du -sh ~/Library/* 2>/dev/null | sort -h | tail -20 ; (3) du -sh ~/Library/Application\\ Support/* ~/Library/Containers/* ~/Library/Group\\ Containers/* 2>/dev/null | sort -h | tail -25 ; (4) du -sh ~/.ollama ~/.cache/* ~/.codex ~/.cursor ~/.gemini ~/.claude ~/Movies ~/Pictures ~/Music 2>/dev/null ; (5) tmutil listlocalsnapshots / ; (6) sudo is NOT allowed: if a path needs it, note it and move on. Also say which of ~/_desk/worktrees/* and /private/tmp/*-wt / codex-* worktrees belong to jobs that are done or cancelled in jobs/queue.json (job id in the folder name) and are clean (git status empty, nothing unpushed). Write jobs/reviews/<this job id>/DISK_REPORT_2.md with the top 25 by size and that worktree list, commit to main, then jobs.py done --result with the top 10. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T13:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T13:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mini disk report part 2 (read-only): find the ~135 GB that J2439 didn't cover (Library, dot-folders, models, snapshots)",
+      "due": "2026-11-09T15:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [
