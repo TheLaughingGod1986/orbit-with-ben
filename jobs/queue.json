@@ -208052,10 +208052,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T00:27Z",
+      "eta": "2026-11-09T02:27Z",
       "created_by": "claude",
       "created_at": "2026-11-08T23:04Z",
       "result": "",
@@ -208079,6 +208079,11 @@
           "at": "2026-11-08T23:25Z",
           "by": "macbook",
           "what": "released: MacBook slot 1 could not run it: this unattended session's permission sandbox refuses python3 (even 00_Brand/Channel-Setup/tools/gate_shorts_open.py --help) and ffmpeg, so the frame-0/1.5 s pull (step 1) and any tested gate change (step 3) are impossible here. Nothing committed. Notes for the next taker: gate_shorts_open.py already FAILs a pushed still in 0-1.5 s (FRAME0_DIFF_FAIL 1.50, J0918), FAILs a first cut after 3.0 s, WARNs VO onset >0.15 s and only WARNs on MOTION_WARN. What's missing for this brief is a frame-0 on-screen-text check and a fade-in/dark-frame-0 check (luma at t=0 vs t=0.5). studio_ctr.json has stayedToWatch per id; join it to UPLOADS.json for the local files. Best run on the Mini, or on a MacBook session that's allowed to run python/ffmpeg."
+        },
+        {
+          "at": "2026-11-09T00:27Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "analyse first second of top/bottom 10 Shorts, write rule, gate check, apply to 026/027/032, list re-cuts",
