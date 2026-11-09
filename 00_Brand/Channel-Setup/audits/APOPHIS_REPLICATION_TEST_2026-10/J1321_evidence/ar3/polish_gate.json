@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/private/tmp/J1321-render-v03/ar3/owb_apophis_ar3_v03.mp4",
+  "edge_floor": 0.0405,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar3_04_NHQ201708210116_s4",
+      "cut": 4,
+      "t": 13.08,
+      "source": "NHQ201708210116",
+      "why": [
+        "low detail: edge density 0.0354 < film p5 0.0405"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar3_00_NOAA_sat_eclipse_2024_notext_s0",
+      "source": "NOAA_sat_eclipse_2024_notext",
+      "t": 1.2,
+      "std": 70.25,
+      "mean": 108.08,
+      "p95": 216.0,
+      "edge": 0.3345,
+      "hf": 21.21,
+      "lf": 56.93,
+      "std8": 61.27,
+      "edge8": 0.6031,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar3_01_GSFC_20171208_Archive_e002130_s1",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 4.3,
+      "std": 43.98,
+      "mean": 77.02,
+      "p95": 162.0,
+      "edge": 0.1308,
+      "hf": 13.56,
+      "lf": 35.16,
+      "std8": 38.38,
+      "edge8": 0.3388,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "ar3_02_GSFC_20171208_Archive_e002130_s2",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 6.63,
+      "std": 37.66,
+      "mean": 71.44,
+      "p95": 140.0,
+      "edge": 0.1009,
+      "hf": 10.97,
+      "lf": 31.45,
+      "std8": 33.59,
+      "edge8": 0.2974,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "ar3_03_Gerst_Earth_timelapses_2017_s3",
+      "source": "Gerst_Earth_timelapses_2017",
+      "t": 9.32,
+      "std": 91.06,
+      "mean": 100.21,
+      "p95": 234.0,
+      "edge": 0.0524,
+      "hf": 11.6,
+      "lf": 88.85,
+      "std8": 89.4,
+      "edge8": 0.2092,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar3_04_NHQ201708210116_s4",
+      "source": "NHQ201708210116",
+      "t": 13.08,
+      "std": 72.18,
+      "mean": 63.0,
+      "p95": 242.0,
+      "edge": 0.0354,
+      "hf": 15.23,
+      "lf": 63.42,
+      "std8": 66.91,
+      "edge8": 0.2656,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0354 < film p5 0.0405"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "ar3_05_NOAA_sat_eclipse_2024_notext_s5",
+      "source": "NOAA_sat_eclipse_2024_notext",
+      "t": 15.83,
+      "std": 70.52,
+      "mean": 104.4,
+      "p95": 215.0,
+      "edge": 0.3398,
+      "hf": 20.82,
+      "lf": 60.45,
+      "std8": 63.34,
+      "edge8": 0.5881,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "ar3_06_NOAA_sat_eclipse_2024_notext_loop",
+      "source": "NOAA_sat_eclipse_2024_notext_loop_preroll",
+      "t": 17.56,
+      "std": 67.62,
+      "mean": 99.12,
+      "p95": 208.0,
+      "edge": 0.3212,
+      "hf": 16.65,
+      "lf": 59.52,
+      "std8": 62.23,
+      "edge8": 0.554,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

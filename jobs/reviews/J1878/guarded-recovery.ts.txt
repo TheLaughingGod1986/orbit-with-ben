@@ -1,0 +1,41 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {ensureDeskLock} from './with-desk-lock';
+import {createMirrorDeps,REPO_ROOT} from '../src/lib/publishing/buffer-deps';
+import {getProfile,profileFiles} from '../src/lib/publishing/buffer-profile';
+import {mirrorVideo} from '../src/lib/publishing/buffer-runner';
+ensureDeskLock();
+const out=REPO_ROOT+'/jobs/reviews/J1878';
+const plans=JSON.parse(fs.readFileSync(REPO_ROOT+'/jobs/reviews/J1870/prepared-plans.json','utf8'));
+const fields='id channelId channelService status dueAt sentAt text externalLink assets { source mimeType type ... on VideoAsset { video { width height durationMs isVideoProcessing isTranscodingRequired } } }';
+async function query(key:string,q:string,variables:any={}) {const r=await fetch('https://api.buffer.com',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${key}`},body:JSON.stringify({query:q,variables}),signal:AbortSignal.timeout(30000)});const b=await r.json();assert(r.ok&&!b.errors,JSON.stringify(b.errors));return b.data;}
+async function live(p:any){const key=process.env[p.keyEnv]!;assert(key);const ch=(await query(key,'query($input:ChannelsInput!){channels(input:$input){id organizationId name service isDisconnected isLocked isQueuePaused}}',{input:{organizationId:p.organizationId}})).channels;
+ const cfg=JSON.parse(fs.readFileSync(profileFiles(p,REPO_ROOT).channels,'utf8'));
+ for(const [network,c]of Object.entries(cfg.channels) as any){const x=ch.find((x:any)=>x.id===c.id);assert(x&&x.organizationId===cfg.organizationId&&x.service===network&&!x.isDisconnected&&!x.isLocked&&!x.isQueuePaused,'profile mismatch');}
+ let posts:any[]=[];let after=null;for(let n=0;n<20;n++){const d=(await query(key,`query($input:PostsInput!,$after:String){posts(input:$input,first:100,after:$after){edges{node{${fields}}}pageInfo{endCursor hasNextPage}}}`,{input:{organizationId:cfg.organizationId,filter:{channelIds:Object.values(cfg.channels).map((x:any)=>x.id)}},after})).posts;posts.push(...d.edges.map((e:any)=>e.node));if(!d.pageInfo.hasNextPage)return {channels:ch,posts};after=d.pageInfo.endCursor;}throw Error('incomplete enumeration');}
+function normalize(input:any){const c=structuredClone(input);for(const a of c.assets??[])for(const k of ['video','image'])if(a[k]?.url)a[k].url='<approved-media>';return c;}
+async function main(){
+for(const [profile,id,due] of [['owb','Js6EQJ8qDi8','2026-11-08T18:00:00.000Z'],['hos','PFj6172YU4Q','2026-11-08T11:30:00.000Z']]){
+ const approved=plans.find((p:any)=>p.id===id);assert(approved);const p=getProfile(profile);const deps=createMirrorDeps({profile:p});
+ // This scope permits no removal, including automatic hosted-object cleanup.
+ deps.deleteMedia=undefined;const originalClient=deps.client!;assert(originalClient&&deps.host);
+ const req:any={videoId:id,kind:approved.outcome.plan.kind,longId:approved.hint.longId,standalone:approved.hint.standalone,social:approved.hint.social,mediaPath:approved.hint.mediaPath,thumbPath:approved.hint.thumbPath,trailerPath:approved.hint.trailerPath};
+ for(const h of JSON.parse(fs.readFileSync(out+'/hash-checks.json','utf8'))){if([req.mediaPath,req.thumbPath,req.trailerPath].includes(h.path))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(h.path)).digest('hex'),h.sha256);}
+ const verifyVideo=async()=>{const t=await deps.youtubeToken();const m=await deps.fetchVideos(t,[id]);const v=m.get(id)!;assert(v);const raw=await fetch('https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+id,{headers:{Authorization:'Bearer '+t}}).then(r=>r.json());assert.equal(raw.items[0].snippet.channelId,profile==='owb'?'UC_esArsDKd3GJvOkeO0DUog':'UCXp7HkBIl1LgaznXuZHJyRg');assert.equal(new Date(v.publishAt!).toISOString(),due);assert.equal(v.privacyStatus,'private');return v;};
+ await verifyVideo();const initial=await live(p);fs.writeFileSync(out+'/'+profile+'-before.json',JSON.stringify(initial,null,2));
+ deps.client={...originalClient,editPost:async()=>{throw Error('edit prohibited')},deletePost:async()=>{throw Error('delete prohibited')},createPost:async(input:any)=>{
+  await verifyVideo();const state=await live(p);const want=approved.outcome.plan.actions.find((a:any)=>a.input.channelId===input.channelId);assert(want);assert.deepEqual(normalize(input),normalize(want.input));
+  const ledger=await deps.store.load();assert(!ledger.videos[id]?.channels[want.channel]?.postId,'existing ledger');
+  const matches=state.posts.filter((x:any)=>x.channelId===input.channelId&&(x.text===input.text||x.externalLink?.includes(id)||x.text?.includes(id)||x.assets?.some((a:any)=>a.source?.includes(id))));assert.equal(matches.length,0,'matching remote post exists: '+matches.map((x:any)=>x.id));
+  assert(state.posts.filter((x:any)=>x.channelId===input.channelId&&['scheduled','sending','needs_approval'].includes(x.status)).length<10,'capacity');assert(Date.parse(due)-Date.now()<7*86400000);assert(!JSON.stringify(input).includes('dry-run.invalid'));
+  const post=await originalClient.createPost(input);fs.appendFileSync(out+'/created.jsonl',JSON.stringify({at:new Date().toISOString(),profile,videoId:id,network:want.channel,post})+'\n');return post;
+ }};
+ const originalCheck=deps.checkUrl;deps.checkUrl=async(url,want)=>{const r=await fetch(url,{headers:{Range:'bytes=0-1023'},signal:AbortSignal.timeout(30000)});const evidence={url,status:r.status,mime:r.headers.get('content-type'),range:r.headers.get('content-range'),bytes:(await r.arrayBuffer()).byteLength};fs.appendFileSync(out+'/range-checks.jsonl',JSON.stringify(evidence)+'\n');assert.equal(r.status,206);assert(evidence.mime?.startsWith(want+'/'));assert(evidence.range?.startsWith('bytes 0-1023/'));return originalCheck(url,want);};
+ const dry=await mirrorVideo({...req,dryRun:true},deps);assert.deepEqual(dry.plan.errors,[]);assert.equal(dry.plan.timing.dueAt,due);for(const a of dry.plan.actions){assert.equal(a.action,'create_post');const b=approved.outcome.plan.actions.find((b:any)=>b.channel===a.channel);assert.deepEqual(normalize(a.input),normalize(b.input));}
+ fs.writeFileSync(out+'/'+profile+'-plan.json',JSON.stringify(dry,null,2));
+ if(!process.argv.includes('--apply')){console.log(profile,'preflight PASS');continue;}
+ const result=await mirrorVideo(req,deps);fs.writeFileSync(out+'/'+profile+'-result.json',JSON.stringify(result,null,2));console.log(profile,JSON.stringify(result.results));
+ fs.writeFileSync(out+'/'+profile+'-after.json',JSON.stringify(await live(p),null,2));assert(result.results.every(x=>x.ok));
+}}
+main().catch(e=>{console.error(e.stack);process.exitCode=1});

@@ -1,0 +1,33 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "source_row": 12,
+  "quote": "From 1970 to 2020, the minimum field strength in this area has dropped from around 24 000 nanoteslas to 22 000 ... moved westward at a pace of around 20 km per year ... split up into two separate cells.",
+  "words_flag": "24,000 nT, 22,000 nT and about 20 km/yr are not spoken on this line. WEAK SPOT, WIDENED and 2 LOBES follow the locked words. Score WORDS before any KEEP.",
+  "checks": [
+    {
+      "id": "code_graphic_031_r29_saa_v01",
+      "sha256": "6b000c6fd9598622dd2dcf8299dc8a9279c98dfcbad03ad3789f60a3ae1d234d",
+      "sha256_match": true,
+      "dimensions": [1920, 1080],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 5.12,
+      "frames": 128,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "Since 1970,",
+      "start_s": 301.2,
+      "end_s": 306.32,
+      "ends_after_lobes_word_s": 306.3,
+      "next_word_s": 307.12,
+      "static_sample_times_s": [1.2, 2.3, 3.2, 4.7],
+      "mean_luma": [43.8, 44.1, 45.3, 47.3],
+      "samples_inspected": "1.20 s shows 24,000 nT on one blob at the start mark. 2.30 s adds WEAK SPOT under that number. 3.20 s shows WIDENED, a west arrow, WESTWARD and about 20 km/yr, with the bar already shorter than the start mark. 4.70 s shows 2 LOBES and 22,000 nT on two blobs, arrow gone. Upper right stays empty for the existing 1970 stamp."
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-saa-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "10a0422d7e1a482053ffa184c55cadc6955b6b757d1c5b4e113a0444098c88b7"
+}

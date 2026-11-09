@@ -40,6 +40,7 @@ export type MirrorDeps = {
   /** null without the R2_* keys: a local file can't be hosted. */
   host: HostFile | null;
   checkUrl: (url: string, want: "video" | "image") => Promise<string | null>;
+  validateSource?: (videoId: string, mediaPath: string | null, kind: "short" | "long") => string | null;
   channelIds: ChannelIds;
   now: () => Date;
   /** Local file for an upload made outside youtube:package (media-finder). Absent: report only. */
@@ -197,6 +198,8 @@ export async function mirrorVideo(req: MirrorRequest, deps: MirrorDeps): Promise
   const standIn = (f: (typeof files)[number]) => `${DRY_HOST}/${video.id}-${f.role}${path.extname(f.localPath ?? "").toLowerCase()}`;
   for (const f of files) urls.set(f.role, f.url ?? (f.localPath ? standIn(f) : undefined));
   let plan = planWith();
+  const sourceError = plan.actions.some(a=>a.action === "create_post") ? deps.validateSource?.(video.id,req.mediaPath ?? null,kind) : null;
+  if (sourceError) plan = {...plan,errors:[...plan.errors,sourceError],actions:[]};
   const hosted: string[] = [];
   if (plan.timing.mode === "customScheduled" && Date.parse(plan.timing.dueAt) - now.getTime() > BUFFER_WINDOW_MS && !plan.errors.length) {
     const deferred = `goes public ${plan.timing.dueAt}, beyond Buffer's 7-day window: the daily check schedules it nearer the time`;
@@ -363,8 +366,9 @@ async function takeDownBrokenMedia(deps: MirrorDeps, now: Date, send: boolean): 
       const problem = await deps.checkUrl(url, /\.(mp4|mov)$/i.test(new URL(url).pathname) ? "video" : "image");
       if (!problem) continue;
       const row = { videoId: id, title: entry.title, url, problem };
-      if (!deps.findMedia?.(id)) {
-        out.push({ ...row, removed: false, error: "no local file recorded, so its posts are left in place" });
+      const hint = deps.findMedia?.(id);
+      if (!hint || hint.sourceError) {
+        out.push({ ...row, removed: false, error: hint?.sourceError || "no local file recorded, so its posts are left in place" });
       } else if (!send) {
         out.push({ ...row, removed: false });
       } else {
@@ -415,6 +419,10 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
   const deferred: CheckOutcome["deferred"] = [];
   const mirrorFound = async (v: YouTubeVideo, needsRegistry: boolean) => {
     const miss = (reason: string) => unmirrored.push({ videoId: v.id, title: v.title, publishAt: v.publishAt, reason });
+    if (v.privacyStatus === "private" && v.publishAt && Date.parse(v.publishAt)-now.getTime() > BUFFER_WINDOW_MS) {
+      deferred.push({videoId:v.id,title:v.title,publishAt:v.publishAt});
+      return;
+    }
     const hint = deps.findMedia?.(v.id) ?? null;
     if (!hint || (needsRegistry && !hint.registered)) {
       miss(
@@ -424,6 +432,7 @@ export async function runBufferCheck(deps: MirrorDeps, opts: { dryRun?: boolean 
       );
       return;
     }
+    if (hint.sourceError) { miss(hint.sourceError); return; }
     try {
       const outcome = await mirrorVideo(
         {

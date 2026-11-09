@@ -840,7 +840,7 @@ function stateOf(st){
     if(st.underway===false) return ["wait","Waiting",st.waiting||""];
     return ["q","In progress",""];
   }
-  if(st.status==="blocked") return ["block","Blocked",st.waiting||""];
+  if(st.status==="blocked") return ["block","Waiting",st.waiting||""];
   if(st.status==="todo") return ["q","Queued",st.waiting||""];
   return ["q",WORD[st.status]||st.status,""];
 }
@@ -964,7 +964,7 @@ function statusOf(b, rows){
   if(w.kind==="part") return {cls:"now", short:`Part done · ${etaOf(w.done)}`, title:"Part done, carrying on",
     lines:[`<b>${esc(w.by||x.who)}</b> stopped at a safe point on: ${what}. It picks up again within 10 minutes.`, `Done about <b>${clock(w.done)}</b> (${rel(w.done)}).`]};
   if(w.kind==="review") return {cls:"review", short:"Waiting for Chief review", title:"Waiting for Chief review", lines:[`${who}: ${what}.`, "The work is done and parked for the Chief to check. Nothing is blocking it."]};
-  if(w.kind==="blocked") return {cls:"bad", short:"Blocked", title:"Blocked", lines:[`${who}: ${what}.`, `What's blocking it: ${esc(w.reason||"not given")}`]};
+  if(w.kind==="blocked") return {cls:"bad", short:"Waiting", title:"Waiting", lines:[`${who}: ${what}.`, `What it's waiting for: ${esc(w.reason||"not given")}`]};
   if(w.kind==="queue") return {cls:"queue", short:`${w.ord} in the queue · ${etaOf(w.done)}`, title:`Not started yet: ${w.ord} in the Mac mini's queue`,
     lines:[`Next job: <b>${who}</b>, ${what}.`,
       `Why not now: the Mac mini does one job at a time${(w.ahead||[]).length?`, and ${w.ahead.length===1?"this goes":"these go"} first: ${esc(w.ahead.join("; "))}`:""}.${busy.length?` It's working on ${esc((busy[0].film?busy[0].film+" ":"")+shortTitle(busy[0].title).replace(/^\d{3}\s*/,"").split(/[:(]/)[0].trim())} right now.`:""}`,
@@ -1209,7 +1209,7 @@ function jobQueueInfo(j,P){
   if(j.status==="done") return {state:"done",label:"Done",lane};
   if(runningJob(j)){ const pr=progressOf(j,P); return {state:"now",label:"Working now",lane,start:p.start,done:pr.done,pct:pr.pct}; }
   if(j.status==="claimed") return {state:"stalled",label:"Claim overdue; worker not confirmed",lane};
-  if(j.status==="blocked") return {state:isChiefPark(j)?"review":"blocked",label:isChiefPark(j)?"Waiting for Chief review":"Blocked",reason:shortReason(blockWhy(j)),lane};
+  if(j.status==="blocked") return {state:isChiefPark(j)?"review":"blocked",label:isChiefPark(j)?"Waiting for Chief review":"Waiting",reason:shortReason(blockWhy(j)),lane};
   const dependency=dep && ((fromDb.jobs||[]).find(x=>x.id===dep)||(fromDb.jobStates||{})[dep]);
   if(dep && (!dependency || dependency.status==="cancelled" || dependency.status==="blocked" || (dependency.status!=="done" && !(P[dep]||{}).done)))
     return {state:"dependency",label:`Waiting for ${dep}`,lane,reason:dependency?`dependency ${dependency.status}`:"dependency status not recorded"};
@@ -1225,7 +1225,7 @@ function jobPriority(j,P){
   const q=jobQueueInfo(j,P), lane=j.line||j.needs||"any";
   if(q.state==="now") return {text:"Working now",kind:"now",title:`${j.id} · ${q.lane} · currently running`};
   if(q.state==="done") return {text:"Done",kind:"done",title:`${j.id} · completed`};
-  if(q.state!=="queued") return {text:q.state==="review"?"Review":q.state==="gated"?"Date gated":q.state==="blocked"?"Blocked":"Waiting",kind:"waiting",title:`${j.id} · ${q.label}${q.reason?" · "+q.reason:""}`};
+  if(q.state!=="queued") return {text:q.state==="review"?"Review":q.state==="gated"?"Date gated":q.state==="blocked"?"Waiting":"Waiting",kind:"waiting",title:`${j.id} · ${q.label}${q.reason?" · "+q.reason:""}`};
   const same=(fromDb.jobs||[]).filter(x=>(x.line||x.needs||"any")===lane);
   const waiting=same.map(x=>({j:x,q:jobQueueInfo(x,P)})).filter(x=>x.q.state==="queued").sort((a,b)=>a.q.start-b.q.start||(a.q.pos||Infinity)-(b.q.pos||Infinity)||a.j.id.localeCompare(b.j.id));
   const index=waiting.findIndex(x=>x.j.id===j.id), active=same.filter(runningJob).length;
@@ -1294,7 +1294,7 @@ function channelWorkRows(videoKeys,P){
   }));
 }
 function jobTaskHtml(j, scope, position){
-  const state=runningJob(j)?"Running":j.status==="done"?"✓ Done":isChiefPark(j)?"Review":j.status==="blocked"?"Blocked":"Queued";
+  const state=runningJob(j)?"Running":j.status==="done"?"✓ Done":isChiefPark(j)?"Review":j.status==="blocked"?"Waiting":"Queued";
   const P=plan(), qi=jobQueueInfo(j,P), priority=jobPriority(j,P), queueLabel=priority.kind==="queued"?`${priority.text} · ${qi.lane}`:qi.label, queueLine=qi.state==="now"?`${workLane(j)} · ${finishIn(qi.done)} (estimate)`:qi.done?`${queueLabel} · start ${scheduleAt(qi.start)} · ready ${scheduleAt(qi.done)} (estimate)`:`${qi.label}${qi.reason?" · "+qi.reason:""} · start/finish unknown`;
   const p=j.progress, jp=jobPlan(j,P), id=`subtask-${scope}-${j.id}`;
   return `<div class="jobtask" data-jobtask-id="${esc(j.id)}" data-jobtask-keys="${esc(taskKeysFor(j).join(" "))}"><details class="progress-fold" id="${esc(id)}"><summary><b>${position?`Video job ${position.index} of ${position.total} · `:""}${esc(state)} · ${esc(j.id)}</b> ${priorityBadgeHtml(jobPriority(j,P))} ${esc(plainTitle(j,130))}${p&&p.of?`<span class="context"> · ${p.step}/${p.of} recorded steps complete</span>`:""}</summary><div class="impact"><p><b>Worker:</b> ${esc(WORKER[j.by]||j.by||j.routedTo||"Unassigned")}</p><ol class="substeps">${jp.rows.map(x=>`<li><b>${esc(x.label)}</b> · ${esc(x.when||"not timed")}${x.note?" · "+esc(x.note):""}</li>`).join("")}</ol>${jobImpact(j)}</div></details><p class="job-queue">${esc(queueLine)}</p>${runningJob(j)?`<div class="job-live" data-job-id="${esc(j.id)}"></div>`:""}</div>`;
@@ -1428,7 +1428,7 @@ function renderVideoProgress(){
   box.querySelectorAll("[data-progress-period]").forEach(b=>b.onclick=()=>{progressPeriod=b.dataset.progressPeriod;render();});
 }
 function resultNote(j){ return j.result || (j.progress||{}).note || jobOutcome(j); }
-function resultState(j){ return j.status==="done"?"Finished":isChiefPark(j)?"Ready for review":"Blocked"; }
+function resultState(j){ return j.status==="done"?"Finished":isChiefPark(j)?"Ready for review":"Waiting"; }
 function videoResultHtml(r){
   if(r.jobRow) return "";
   const j=progressUpdates().find(j=>taskKeysFor(j).includes(r.f.key) && !supportingJob(j));
@@ -1781,7 +1781,7 @@ function releaseBlockers(r){
       : /no .*video id|no youtube|upload job|waiting on .*upload/i.test(blockWhy(j))?"Complete the approved upload first, then attach its video ID and reopen this job."
       : /public|go.public|date gate/i.test(blockWhy(j))?"Verify whether the long is uploaded and scheduled; link that evidence. Keep work that needs it public until release."
       : "Resolve the recorded requirement, attach the result and reopen the job; Chief must assign a concrete fix if none is recorded.";
-    add(blockWhy(j)||"Blocked with no reason recorded.",owner,action,j.id);
+    add(blockWhy(j)||"Waiting, with no reason recorded.",owner,action,j.id);
   }
   // Include stage holds that are absent from the queue, instead of treating 100% as release evidence.
   for(const sg of r.f._stages||[]){
@@ -1835,7 +1835,7 @@ function renderVideos(rows, rankOf){
     const status = lane==="live" ? "" : lane==="sched" ? "" : short(r.extra ? r.mk[1] : strip(r.mk[1]).replace(/^[A-Z][^:]{0,40}:\s*/,""));
     const ck = (fromDb.checks||{})[String(r.f.key).replace(":","-")], recent = ck && ck.verdict==="ok" && Date.now()-Date.parse(ck.at||0) < 2*DAY;
     const badge = recent ? `<span class="vok" title="You approved this ${esc(fw(ck.at))}">✓ Approved</span>` : "";
-    const bad = r.mk[0]==="bad" ? `<i class="vbad" title="Blocked"></i>` : "";
+    const bad = r.mk[0]==="bad" ? `<i class="vbad" title="Waiting"></i>` : "";
     // airIn() gives a ticking <span data-until> under a day out, so `when` stays HTML; the note texts are plain.
     const when = r.live ? `Live since ${esc(fd(r.air))}` : r.air ? `Airs ${esc(fd(r.air))} · ${airIn(r.air)}` : r.airText ? `Airs ${esc(r.airText)}` : "No air date yet";
     const date = lane==="you" ? (r.you ? short(r.you) : "") : (!r.live && !r.isSched && r.ready) ? `Ready for you ${short(r.ready)}` : r.air ? `${r.live?"Live":"Airs"} ${esc(fd(r.air))}` : r.airText ? `Airs ${esc(r.airText)}` : "";
@@ -1861,7 +1861,7 @@ function renderVideos(rows, rankOf){
 // Next, 3rd, 4th ..., each with who does it and when; the tasks already done fold into one line.
 function videoDrop(r, when){
   const stages=r.f._stages||[], w=videoWorkPlan(r,plan());
-  const recorded=stages.map(s=>{const st=stOf(r.f,s), label=st.status==="done"?"✓ Done":st.status==="skip"?"Skipped":st.review?"Review":st.status==="blocked"?"Blocked":st.status==="doing"?"In progress":"To do";
+  const recorded=stages.map(s=>{const st=stOf(r.f,s), label=st.status==="done"?"✓ Done":st.status==="skip"?"Skipped":st.review?"Review":st.status==="blocked"?"Waiting":st.status==="doing"?"In progress":"To do";
     return `<li><span class="o">${esc(label)}</span><span class="t">${esc(s.label)}${st.note?`<span class="w">${esc(st.note)}</span>`:""}</span></li>`;}).join("");
   return `<div class="vd">${videoWorkDetail(r,plan())}${videoChangesHtml(r)}${filmJobsHtml(r.f.key,r)}${r.jobRow?`<p class="context">This is a channel/backlog task. No individual video row is linked, so its progress and ready time are shown here.</p>`:`<details id="release-${esc(r.f.key)}" class="progress-fold"><summary>Release status and ${r.blockers.length} holds</summary>${releaseDetailsHtml(r)}<p class="context">${when}</p></details>`}${stages.length?`<details id="stages-${esc(r.f.key)}" class="progress-fold"><summary>Recorded film stages · ${stages.filter(s=>["done","skip"].includes(stOf(r.f,s).status)).length} of ${stages.length} complete</summary><ol>${recorded}</ol>${r.oldPlanAt?`<p class="context">Older brief from ${esc(fw(r.oldPlanAt))}; queue dates above come from current jobs.</p>`:""}</details>`:""}</div>`;
 }
@@ -1919,7 +1919,7 @@ function renderTracker(films){
       : fj.p.pos===1 ? `<span class="pill you">Up next · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : fj.p.pos ? `<span class="pill">#${fj.p.pos} · about ${clock(fj.p.start)}${eta(fj.p)}</span>`
       : isChiefPark(fj.j) ? '<span class="pill review">Waiting for Chief review</span>'
-      : fj.j.status==="blocked" ? '<span class="pill held">Blocked</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
+      : fj.j.status==="blocked" ? '<span class="pill held">Waiting</span>' : `<span class="pill">After ${esc(fj.j.waitsFor||fj.j.after||"")}</span>`;
     // Ben, 11 Oct 18:52: "a marker to say in the in progress lane what's worked on and the eta". One coloured line at
     // the top of every card that isn't live or scheduled: Now / Next / Waiting / Blocked, from the same plan() as the
     // Mac mini box; else the film note's next step; else the stage in hand; never blank.
@@ -1940,18 +1940,18 @@ function renderTracker(films){
     else if(partDone) mk = ["now", `Now: ${esc(AGENT(fj.j.last.by))}, ${jn(fj.j)} · part done, carries on within 10 min${fj.p.done?` · ${etaOf(fj.p.done)}`:""}`];
     else if(fj && fj.p.start) mk = ["next", `Next${fj.p.pos?` (#${fj.p.pos} in line)`:""}: ${lineWho(fj.j)}, ${jn(fj.j)} · starts ${fj.p.state==="gated"?"":"about "}${clock(fj.p.start)}${fj.p.state==="gated"?" (date gate)":""} · ${etaOf(fj.p.done)}`];
     else if(fj && isChiefPark(fj.j)) mk = ["review", `Waiting for Chief review: ${jn(fj.j)}`];
-    else if(fj && fj.j.status==="blocked") mk = ["bad", `Blocked: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
+    else if(fj && fj.j.status==="blocked") mk = ["bad", `Waiting: ${jn(fj.j)} · ${esc(String(fj.j.result||"no reason given").slice(0,90))}`];
     else if(fj) mk = ["wait", `Waiting: ${jn(fj.j)} · no estimate: needs ${esc(fj.j.waitsFor||fj.j.after||"another job")} first`];
     else if(firstOpen){ const {x,w} = firstOpen, who = x.who==="Ready for you"||x.who==="Ben" ? "you" : x.who, what = esc(x.what);
       mk = w.kind==="now" ? ["now", `Now: ${esc(w.by||who)}, ${what} · ${etaOf(w.done)}`]
         : w.kind==="part" ? ["now", `Now: ${esc(w.by||who)}, ${what} · part done${w.done?` · ${etaOf(w.done)}`:""}`]
         : w.kind==="review" ? ["review", `Waiting for Chief review: ${esc(who)}, ${what}`]
-        : w.kind==="blocked" ? ["bad", `Blocked: ${esc(who)}, ${what} · ${esc(String(w.reason||"").slice(0,90))}`]
+        : w.kind==="blocked" ? ["bad", `Waiting: ${esc(who)}, ${what} · ${esc(String(w.reason||"").slice(0,90))}`]
         : (w.kind==="queue"||w.kind==="after") && w.at ? ["next", `Next: ${esc(who)}, ${what} · ${w.start?`starts about ${clock(w.start)} · `:""}${etaOf(w.at)}`]
         : w.text && !/no date yet/.test(w.text) ? ["wait", `Waiting: ${esc(who)}, ${what} · ${w.text}${!w.at && who!=="you" && !x.job && !/\d/.test(w.text) ? " · no estimate: not in the job queue yet" : ""}${who==="you"?"":sinceTxt(doingSt&&doingSt[1].since || b.updated)}`]
         : ["wait", `Waiting: ${esc(who)}, ${what} · no estimate: no date in the film note${sinceTxt(b.updated)}`]; }
     else if(doingSt){ const [sg,x] = doingSt, due = x.eta || x.due, who = esc(x.owner || whoOf(f,sg));
-      mk = [x.status==="blocked"?"bad":"wait", `${x.status==="blocked"?"Blocked":"Stage recorded in progress; no live job"}: ${who}, ${esc(sg.label)}${sinceTxt(x.since)}`]; }
+      mk = [x.status==="blocked"?"bad":"wait", `${x.status==="blocked"?"Waiting":"Stage recorded in progress; no live job"}: ${who}, ${esc(sg.label)}${sinceTxt(x.since)}`]; }
     else mk = ["wait", `Waiting: nothing queued for it · no estimate: no next step in the film note`];
     const ranked = col==="todo"||col==="doing";
     // Ben, 14 Oct: "a very simple, clean, quick" view: one row per video with its progress, what's happening and when
@@ -2087,7 +2087,7 @@ function cardHtml(f, s, st){
     <div class="hd"><span class="stage">${esc(s.label)}</span><span class="fid">${chb(f)}${esc(f.id)}</span></div>
     ${filter?"":`<div class="note" style="margin-top:2px">${esc(f.title)}</div>`}
     <div class="who-row"><span class="who">${ownerOf(s,st)==="—"?"Not claimed yet":`${av(ownerOf(s,st))}With <b>${esc(ownerOf(s,st))}</b>`}${st.since?` since ${fw(st.since)}`:""}</span>${stateChip(st)}</div>
-    ${why?`<div class="why">${({Queued:"Starts ",Waiting:"Waiting for: ",Blocked:"Blocked by: "})[label]||""}${md(why)}</div>`:""}
+    ${why?`<div class="why">${({Queued:"Starts ",Waiting:"Waiting for: ",Blocked:"Waiting for: "})[label]||""}${md(why)}</div>`:""}
     ${prog}
     ${st.note?`<div class="note">${md(st.note)}</div>`:""}
     ${bits.length?`<div class="row">${bits.map(b=>`<span>${b}</span>`).join("")}</div>`:""}
@@ -2106,7 +2106,7 @@ function renderBoard(films){
   cols.todo.sort((a,b)=>(a.st.due||air(a)).localeCompare(b.st.due||air(b)) || a.f.key.localeCompare(b.f.key) || a.i-b.i);
   cols.doing.sort((a,b)=>String(a.st.eta||a.st.due||"9999").localeCompare(String(b.st.eta||b.st.due||"9999")));
   const defs = [
-    ...(cols.blocked.length?[["blocked","Blocked","var(--blocked)"]]:[]),
+    ...(cols.blocked.length?[["blocked","Waiting","var(--blocked)"]]:[]),
     ["doing","In progress","var(--doing)"],["todo","To do","var(--todo)"],["done","Done","var(--done)"]
   ];
   $("board").style.setProperty("--cols", defs.length);
@@ -2327,7 +2327,7 @@ function miniLine(q){
 }
 function jobWhy(j, P){
   const p = P[j.id] || {};
-  if(j.status==="blocked") return {chip:'<span class="state block">Blocked</span>', why: j.result ? `Blocked by: ${md(j.result)}` : "Blocked."};
+  if(j.status==="blocked") return {chip:'<span class="state block">Waiting</span>', why: j.result ? `Waiting for: ${md(j.result)}` : "Waiting."};
   if(j.needs==="ben") return {chip:'<span class="state wait">Needs you</span>', why:"Only you can do this one."};
   if(p.state==="now") return {chip:'<span class="state on">Underway</span>',
     why:`${av(AGENT(j.by))}<b>${esc(AGENT(j.by))}</b> on it since ${clock(p.start)} · usually about ${j.estMin} min · <b>${etaOf(p.done)}</b>`};
@@ -2372,7 +2372,7 @@ function renderGlance(films){
     ${!watch&&!hosNext&&!upcoming?`<div class="line">Nothing for you yet.</div>`:""}</div>`);
   // 3. Needs you (and anything blocked)
   const ben = (jobs||[]).filter(j=>j.needs==="ben"&&j.status!=="blocked").map(j=>`<div class="line">${tag(j)}${esc(shortTitle(j.title))}</div>`);
-  const blocked = (jobs||[]).filter(j=>j.status==="blocked").map(j=>`<div class="line"><b class="late">Blocked</b> ${tag(j)}${esc(shortTitle(j.title))}</div>`);
+  const blocked = (jobs||[]).filter(j=>j.status==="blocked").map(j=>`<div class="line"><b class="late">Waiting</b> ${tag(j)}${esc(shortTitle(j.title))}</div>`);
   cards.push(`<div class="gl"><h3>Needs you</h3>${ben.length||blocked.length?[...ben,...blocked].join(""):`<div class="line">Nothing.</div>`}</div>`);
   box.innerHTML = cards.join("");
   const ra = $("ready");

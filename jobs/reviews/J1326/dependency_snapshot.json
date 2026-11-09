@@ -1,0 +1,152 @@
+[
+  {
+    "id": "J1100",
+    "status": "blocked",
+    "result": "parked for Chief: live df 8.3 GiB is below Chief h43 restart minimum 10 GiB. Required nas_offload.py --apply found no eligible scratch (8506 MB unchanged). Preserve 2/3, OWB:027/028 links, accepted pickups and h43-LOOP ruling; restore headroom before restarting v07 repairs. No media edits/spend/upload this run.",
+    "remaining_action": "Restore bounded disk headroom, then verify >=10 GiB before v07 repairs",
+    "taskKeys": [
+      "OWB:027",
+      "OWB:028"
+    ],
+    "progress": {
+      "step": 2,
+      "of": 3,
+      "at": "2026-10-31T06:01Z",
+      "by": "codex",
+      "note": "Preserved prior 2/3 plan and completed S2/S5 pickups. Live df 8.3 GiB; required nas_offload --apply found nothing eligib"
+    },
+    "hold": {
+      "type": "input",
+      "condition": "J1322 bounded recovery and elected-Chief live verification >=10 GiB under h43 remain unmet: 2026-10-31T08:44:31Z free 4482519040 bytes (4.174671 GiB), below 6 GiB park threshold; nas_offload found no eligible scratch. Preserve worker 2/3, OWB:027/028, accepted pickups, h43-LOOP and every repair gate; only J1322 bounded scope approved.",
+      "check_at": "2026-10-31T14:45:00Z",
+      "last_recheck": "J1325",
+      "checked_at": "2026-10-31T08:44:48+00:00",
+      "checked_by": "codex"
+    },
+    "body": "# J0936 batch C: Ben's changes on S2, S5, S6 v04 -> v05\n\nBen's board ticks, 28 Oct 2026 11:31-11:35 (J0936 entries 2, 5, 6):\n- **S2** `earth_equator_weight_v04` (emwQsPxnRGM, 027): \"00:01 vo makes no sense\". The opening VO runs two lines\n  together: \"Why do you weigh less at Earth's equator, you weigh about half a percent less there the ground under\n  you...\". Fix: the question as its own sentence with a natural pause, then \"You weigh about half a percent less\n  there.\" as a separate sentence. Cut only on sentence ends; if the accepted WAVs can't give it cleanly, record only\n  the missing line with `vo_take.py --text` (same voice/settings) after the ElevenLabs reset (30 Oct), inside the plan.\n- **S5** `028_short_fri04_scale_v04` (jJ5LkFGyzLI): \"00:02 bottom text dose not match the VO\". The VO says\n  \"How close will Gliese 710 come to the Sun?\" but the captions read \"HOW CLOSE WILL\" then \"TO THE SUN.\" (they drop\n  \"GLIESE 710 COME\"). Fix: captions word-for-word with the VO for the whole Short; check every caption against the\n  final audio's transcript, not the script.\n- **S6** `028_short_lift_night_sky_35yr_v04` (X768qs8sNQs): \"00:01 vo speed is a bit strange\". The opening question\n  sounds sped up/squeezed. Fix: play the opening at its natural recorded speed (no atempo on the question; keep any\n  slot-fit speed-up <= 1.03x and only in the body), re-time the cuts and the 9-14 s banner around it.\nEverything else in J1032's lock stands (cards, plates, 22-27 s, I -14.0 +/-0.5 LUFS, TP <= -1.6 dBTP, loop < 2.0,\nOCR every third frame, all gates). Listen to the finished AAC yourself at 0-5 s on all three. v01-v04 untouched.\nDeliver master/_PHONE/sheets to repo/UAT/NAS with sha256 and park for Chief replacement review. The Chief then puts\nthe three v05s on the board for Ben. Deadlines: S2 by Sun 22 Nov 20:00, S5 by Thu 3 Dec 20:00, S6 by Sun 6 Dec 20:00\nLondon; aim to park by Wed 4 Nov. No upload, swap or spend beyond the plan. If a fix misses its deadline, the\nscheduled v01 airs as is.\n\n\nacting Chief (Claude) ruling 29 Oct on 12364118e (Gemini AAC review + Codex bed ASR). FIX, not PASS:\n1. All three: rebuild the 1s loop tail from caption-free frames (as 025 v07 did), so no caption or hook text shows over the silent tail. Spoken captions stay word-for-word.\n2. S2 bed: earth-spin_score_take2_straight_v01j.wav is a mixed track with the long's narration in it (26s, not the 452s plan). Do not use it. Use a 027 score file that is instrumental only (prove it: base.en ASR on the bed alone returns no words, and listen to it), else an instrumental bed already in the house music folder. No new music spend.\n3. S2 VO: the 7-source question and the 'at'/'but' splice are not acceptable. After the ElevenLabs reset (30 Oct), record one pickup with vo_take.py --text, same voice and settings: 'Why do you weigh less at Earth's equator? You weigh about half a percent less there.' Use a continuous source phrase for 'because the ground at the equator', or add it to the same pickup if none exists. That is the pickup the job already allows, widened to these lines; nothing else re-recorded.\n4. S5: captions 'GLIESE 710 COME' (no comma) and 'TO THE SUN?'. Same pickup session: 'How close will Gliese 710 come to the Sun?' as one take, replacing the 5-source question. If 'So' still reads as 'Though' to ASR, cut from 'The star will not come...' instead.\n5. S6: audio accepted (natural 'look like when', no atempo). Orion softness and the ALMA low-detail warning are accepted under the existing rulings. Only the loop tail changes.\nThen gates, Gemini direct listening again on all three, deliver v06 with hashes, park for Chief. Deadlines unchanged (S2 22 Nov, S5 3 Dec, S6 6 Dec 20:00 London). No upload, swap or other spend.\n\nActing Chief Codex ruling, 30 Oct 2026: FIX; no PASS.\nReviewed full body/history/result, PR333 0a7fcb6ad v06 measurements and checkpoint, completed Gemini S6 v06 direct AAC/caption review, S2/S5 advisory evidence, and J1253 subscription verification. S6 caption-free silent tail is confirmed, but whole-frame loop 9.26 fails the locked <2.0 threshold; masked 0.95 is not a substitute. Retain only the existing S6 audio/timing/softness exceptions. S2/S5 continuous pickups, S2 instrumental-only bed proof (ASR and listening), caption repairs and final gates are still outstanding. No new listening or media PASS is claimed by this review.\nRequired nas_offload.py --apply found no eligible scratch: 8545 -> 8543 MB free; 8094 MB after review worktree. Earlier recovery jobs including J1268 are completed and do not establish current headroom. Follow-up J1270 is now queued for safe recovery to >=20 GB, target 30 GB, and investigation of renewed growth, due 31 Oct 12:00 London. Original J1100 remains held, now explicitly dependent on J1270 and live >=20 GB verification; scheduled condition check 31 Oct 03:00 UTC.\nAfter recovery, elected Chief verifies live space and reopens repairs only. Preserve worker 2/3 and OWB:027/028 links. Resume the 29 Oct repair ruling. Resolve the loop with a compliant edit before final render; if caption-free tail and frame-0 hook reveal a defect in the metric, supply reproducible decoded-frame evidence and a proposed gate correction for Chief review, rather than silently masking text or waiving failure. Keep accepted S6 audio unchanged. Finish the authorised S2/S5 pickups with a fresh locked balance check, no music generation; recheck all gates and Gemini listening, deliver durable masters/phone copies and hashes, then return for Chief replacement review before Ben watch.\nPreserve all deadlines and scheduled-v01 fallback. No upload, swap, schedule/privacy change, watch card or expansion of spend is authorised by this ruling."
+  },
+  {
+    "id": "J1213",
+    "status": "blocked",
+    "result": "parked for Chief: HOS 008 rough v01 delivered (557.8s, sha256 6704aa3434634b9d\u2026). PR #374 already MERGED. episode_gate PASS. music_gate SKIPPED_NO_BED (no bed without Chief OK). picture_qa+polish_gate FAIL on 3 split-panel rows: 09_window_storm @2:30, overlay_06_same_thing @6:01, overlay_10_metal_easy @7:58 (+6 low-detail WARNs). Pack: desk/_desk/008/rough_v01, HOS UAT/008_Lightning-Franklin_rough_v01, NAS .../rough_v01/. J1193 code-graphic review still open. Ben watch only after Chief PASS.",
+    "remaining_action": "Held for J1218 v03 repairs and Chief graphics/composite approval; J1193 ruled FIX; music/SFX unfinished",
+    "taskKeys": [
+      "HOS:008"
+    ],
+    "progress": {
+      "step": 4,
+      "of": 5,
+      "at": "2026-10-29T19:12Z",
+      "by": "cursor",
+      "note": "sha verified on 4 copies; episode_gate PASS; picture_qa+polish FAIL x3 split-panel; music SKIPPED_NO_BED; J1193 still op"
+    },
+    "hold": {
+      "type": "dependency",
+      "condition": "FIX / NOT APPROVED: J1218 must deliver separate compliant v03; v01/v02 remain held. J1193 findings exist in PR378 and must be incorporated; formal graphics approval is still required. Music/SFX unfinished; no Ben watch.",
+      "check_at": "2026-10-30T15:00:00Z"
+    },
+    "body": "J1193 ruling clarification (30 Oct, codex): review complete with FIX, not picture approval. Repaired graphics/composite approval must come with J1218 v03. Existing hold and check date unchanged. See jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md.\n\nAfter J1191 PASS (29 Oct). 1) Merge HOS PR #374 (picture records) once its checks are green. 2) Assemble 02_Video-Projects/008_Lightning-Franklin from the locked VO and the 112 KEEP rows per PICTURE_PLAN_v03 / the v03 boards (the 5 overlay rows composite their alpha graphics on the minted moving plates; apply J1193's code-graphic review if it has landed, else note it). 3) No music bed without the Chief's OK. 4) picture_qa, polish_gate, music_gate (VO only), episode gate; full-runtime contact sheet. 5) Deliver rough v01 to repo/UAT/NAS with sha256 and park for Chief. Ben's watch only after Chief PASS. GBP0."
+  },
+  {
+    "id": "J1218",
+    "status": "done",
+    "result": "Acting Chief (Claude) review 30 Oct: rough v03 delivered (sha 0da87a82). Graphics: FIX P2:15, P3:03, P3:04, P3:15; PASS P2:14, P4:06, P4:08, P5:08, P5:09, P5:11; P5:10 and all overlay composites + 6 WARN plates need full-size composite frames. Ruling jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md. Follow-up J1241 (graphics v03 + rough v04). No finished-film PASS, no Ben watch.",
+    "remaining_action": "Parked for elected-Chief graphics/composite review of rough v03",
+    "taskKeys": [
+      "HOS:008"
+    ],
+    "progress": {
+      "step": 5,
+      "of": 6,
+      "at": "2026-10-30T03:29Z",
+      "by": "cursor",
+      "note": "v03 delivered sha 0da87a82; NAS+UAT+desk; picture/polish/episode PASS; music SKIPPED_NO_BED; PR379"
+    },
+    "hold": null,
+    "body": "J1193 FORMAL RULING (30 Oct, codex): FIX / NOT APPROVED. Read jobs/reviews/J1193/CHIEF_REVIEW_2026-10-30.md FIRST alongside the J1218 rulings. J1193 review is complete, not graphics PASS. Ten repair rows; P5:11 standalone KEEP plus assembly label FIX. You own the versioned graphics repair and diagnostic v03, per-row motion/VO/phone evidence, and correction of unsupported Bellin sourcing claims in the review/production-status. Obtain direct primary-source evidence before implementing geographic coordinates or a historical route; specialist coordinates are proposals. PR378 stays unmerged until corrected, but its report is available now and does not block repairs. Return repaired graphics/composites for elected-Chief decision under THIS job; never wait on the now-complete J1193 as though it approved the assets. No new job, no new spend; all original holds/gates remain.\n\nLATEST ACTING CHIEF RULING (30 Oct, codex): FIX / NOT APPROVED. Deliver separate diagnostic v03, NOT v02. REQUIRED FIRST READ: jobs/reviews/J1218/CHIEF_REVIEW_2026-10-30.md and CHIEF_REVIEW_2026-10-29.md in OWB. Prior v02 assembler and cuts are unchanged after the previous FIX. Remove unsafe NAS cleanup, repair P5 back-to-back full-frame graphics, correct sample times, and incorporate now-delivered J1193 findings from HOS PR378 (210b64d1). J1193 report exists; formal graphics approval remains pending. Preserve old versions. GBP0. No Ben watch/upload. The ruling files govern the work below wherever the original brief is stale.\n\nORIGINAL BRIEF / HISTORICAL CONTEXT:\nActing Chief Codex ruling on J1213: FIX / NOT APPROVED. Original rough v01 stays held from Ben watch; no upload, scheduling or publication. Preserve v01 and its manifest. PR374 is already merged (9c2427a12f2abee11f4d9b1489adb56abcdf7afd). Verified local rough SHA256 6704aa3434634b9d2b1d7446488175130a9aeeb7ab877c782d97364ffd45d7f7. Evidence in HOS 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_desk/008/rough_v01.\n\nDeliver a separate rough v02 using locked VO and existing KEEP plates, GBP0, no new generation or music credit. No rule or gate overrides.\n1. Replace the real split-screen composite at 6:01 (P4 06_same_thing; assembler explicitly joins left/right plates) with sequential full-frame moving shots or one appropriate moving plate; retime the alpha explanation to those shots, keep it off Franklin and the hero object, and ensure phone legibility. The source assembler is currently untracked in the shared HOS checkout: preserve it and commit a versioned v02 assembler from a clean worktree.\n2. Recompose 7:58 P5 10_metal_easy: white linework currently covers the worker/ladder and the label disappears against brick. Keep the rod/path explanation legible and away from the subject. The apparent detector seam may be architectural; do not label it a confirmed split without checking in motion.\n3. Inspect 2:30 P2 09_window_storm in motion: the sampled sheet appears to show a natural window edge, not a pasted panel. Try an honest subject-preserving reframe within upscale limits using existing moving footage, then rerun unchanged gates. If a genuine detector defect remains, document it for a separate gate-fix review; never suppress or weaken the check to pass this cut.\n4. Review all six low-detail WARN rows full size and in motion: 1:22 bells, 2:53 likeness pairs, 4:38 wet/dry, 5:02 kite climb, 7:15 wire bells, 7:53 wood/metal. The contact sheet alone does not clear motion, scientific meaning or phone legibility. Check the recorded freeze_lines in parts 2-5 (6/13/6/10), distinguish actual freezes from detector events, and remove any real freeze without VO changes.\n5. Apply J1193 per-row graphics findings when available; it remains a required input to final graphics approval. Repairs can start now. If it has not landed by delivery, record a dependency on J1193 rather than another generic Chief hold. Check all Teach on screen and Polish items for this film, not just automated image gates.\n6. Run picture_qa, polish_gate and episode gate; produce full-runtime contact sheets and each flagged frame. Music is still absent: SKIPPED_NO_BED is NOT PASS. This is a VO-only diagnostic rough, not a finished cut. Do not generate a bed under this job. Report SFX/music finishing still outstanding explicitly.\n7. Copy v02 to durable NAS/desk review storage with SHA256, and commit text evidence, reproducible assembler, production-status and HOS PIPELINE/status-board updates from a clean worktree in a PR. No Ben Ready-for-OK card. Park for Chief review only with specific evidence and remaining blockers. Original J1213 stays held pending this repair and J1193.\n\nDisk: mandated nas_offload --apply found no eligible old scratch, about 12 GB free. Check disk before render, use mounted NAS scratch if needed, never write into an unmounted share or delete NAS files. Detach any long render with session/log/done paths and never start duplicate processes. Deadline inherited from J1213: 12 Nov 20:00Z.\n\n\nChief addendum (Grok, 29 Oct 19:2x London, HOS #180 re 6506056490 + 6506101174; J1218 is the ONLY 008 v02 job, no second job queued):\n8. Runtime must land at 9:00 or under. v01 is 557.8 s, so trim at least 18 s, using pauses and holds only (polish_gate pause-trim notes at 0:15-0:45 and 1:00-2:30). VO wording stays locked; no lines cut.\n9. If any row can only be fixed with a new Flow mint, park that row and state the Flow credit cost. Do not spend; spend goes to Ben.\n10. J1193 (code-graphic motion review) remains a prerequisite for the 008 picture PASS; if it is not already running, run it alongside so both land together."
+  },
+  {
+    "id": "J1320",
+    "status": "blocked",
+    "result": "parked for Chief: all 4 NAS files are 17 Oct J0432 seam-fix overwrites (commit 7a5608724) and none match the Oct 10-13 UPLOADS.json / PACKAGE_UPLOAD_RESULT sha256s: (1) ZpEA8stoSPA owb_sa_s4_uranus_v01.mp4 moved by J1296 today has sha 0aec6e86525d... vs uploaded c4d1262afa79... (swap to v06 held in J1212); (2) bSjWiCbB7pY fri13_ingenuity_72_v02.mp4 entered the 14-day window today (archived 24 Oct in owbshorts.tar) with sha 50ba8955c20b... vs uploaded 45683cdf147e...; (3) iyvWYFP_ETA mon09_night_cold_v01.mp4 in owbshorts.tar has sha 0195a5fb957c... vs uploaded 48466c33946e... (J1181 ruling); (4) N42gKBbD7tE thu12_length_test_dust_v01.mp4 in owbshorts.tar has sha b6dd4a232fa3... vs uploaded 7c399d5c3d75.... Per J1181 ruling and brief sha256 match rule, did not copy mismatched renders back over scheduled paths. Added all 4 paths + UPLOADS.json scheduled-Short guard to scripts/nas_offload.py and _desk/logs/J1296_move.py, and refreshed UPCOMING_SHORTS_GATE.md (commit 049badd8a). GBP0.",
+    "remaining_action": "Parked for Chief: all 4 NAS exports are 17 Oct J0432 overwrites (mismatched vs UPLOADS.json sha256)",
+    "taskKeys": [
+      "OWB:025"
+    ],
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T07:55Z",
+      "by": "gemini",
+      "note": "Committed 049badd8a (scheduled-Short keep-list in scripts/nas_offload.py + _desk/logs/J1296_move.py + refreshed UPCOMING"
+    },
+    "hold": null,
+    "body": "05_Analytics/owb/UPCOMING_SHORTS_GATE.md (31 Oct) shows NO FILE for 4 scheduled Shorts. ZpEA8stoSPA (airs Tue 3 Nov) passed on 30 Oct, so J1296's 'superseded standalone Short versions' move seems to have taken still-scheduled exports to the NAS. The files to bring back (copy NAS -> repo path, verify sha256, never remove the NAS copy):\n- 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4\n- 02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4\n- plus mon09_night_cold_v01.mp4 and thu12_length_test_dust_v01.mp4 only if their exact uploaded bytes exist on the NAS (J1181: iyvWYFP_ETA's local master was overwritten, so a NO FILE there may stay; say so).\nMatch each against the uploaded sha256 in UPLOADS.json / the package results where recorded. Then run the gate (gate_upcoming) and commit the refreshed UPCOMING_SHORTS_GATE.md. Also add these scheduled-Short paths to the offload keep-list, so a 'superseded' sweep never takes the file of a Short that hasn't aired. No YouTube change, no re-render. GBP0."
+  },
+  {
+    "id": "J1321",
+    "status": "blocked",
+    "result": "parked for Chief: corrected AR2 v05 and AR3 v09 need elected-Chief picture review; automated picture, polish, loop and SFX gates pass. Delivery 994571421, branch worker/J1321-picture-fixes. Cohort held from UAT/upload; no Ben action.",
+    "remaining_action": "Await J1324 AR2 composite correction and elected-Chief picture acceptance; cohort held from UAT/upload",
+    "taskKeys": [
+      "OWB:030"
+    ],
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T08:28Z",
+      "by": "codex",
+      "note": "Delivery commit 994571421: both cuts pass unmodified picture/polish/loop/SFX; audio payloads identical to v02; old maste"
+    },
+    "hold": {
+      "type": "input",
+      "condition": "J1324 delivers a corrected AR2 station composite with passing unmodified gates and elected-Chief picture acceptance; AR3 v09 and AR1 v01 preserved",
+      "check_at": "2026-10-31T09:29:13Z",
+      "last_recheck": "J1323",
+      "checked_at": "2026-10-31T08:42:22+00:00",
+      "checked_by": "codex"
+    },
+    "body": "Acting Chief Codex ruling on J1317 (31 Oct 2026): AR1 v01 picture PASS; AR2 v02 and AR3 v02 FIX. Read CHIEF_J1317_PICTURE_REVIEW.md in 00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/ (PR #361) and all J1308 binding h37/h40/h42 instructions.\n\n1. Preserve AR1 v01 exactly. Preserve old AR2/AR3 files, manifests and hashes; write new versions.\n2. AR2: replace assembly draw_iss flat station in frame 0, loop tail and other non-DATA shots with verified real ISS fly-around footage (Crew-2) or a faithful render from the NASA 3D Resources model, as h37 C4 specified. Do not alter the already-approved 109 m DATA graphic. Verify source identity and visible in-points; no Discovery, Bahamas or KSC press video substitutes.\n3. AR3: at 9-11 s move the path graphic off the eclipse disc/corona by using an appropriate moving Earth/ocean background for the path interval. Retain the approved graphic and its VO timing; show the eclipse unobscured in the adjacent interval. Keep the 2017 stamp and NASA/Aubrey Gemignani attribution on those plates.\n4. No script/VO, facts, title, music or duration changes. No mint, credit spend, upload or schedule. GBP0.\n5. Run applicable unmodified picture_qa, polish, loop and SFX gates on the new real composites. Export new full-size frame 0 and 0.5 s sheets. Record source provenance, master paths/hashes and raw gate outputs in a new report. Park for elected-Chief picture review; cohort remains held from UAT/upload until then.\n\nClaim as normal assembly work, report films OWB:030 for existing cohort linkage. Check disk before render; current ~9 GB, nas_offload found no eligible old scratch. Follow scratch policy and detach any long render with tmux/log/.done, release with exact paths; never start duplicate renders or delete anything on NAS. Use a clean worktree and a PR. No Ben action required.\n"
+  },
+  {
+    "id": "J1322",
+    "status": "blocked",
+    "result": "parked for Chief: recovery verified at 10.689 GiB free, 20 GiB target unmet; exact retained candidate disposition in local commit c0f876ffa (/private/tmp/J1322-records). Five files recovered 2712698880 allocated bytes; J1100 remains held pending elected-Chief threshold verification. Evidence branch push rejected by automatic approval review as unverified egress; commit remains local.",
+    "remaining_action": "Await J1326 candidate proofs and disk-growth reconciliation, then Chief recovery ruling",
+    "taskKeys": [
+      "OWB:027",
+      "OWB:028"
+    ],
+    "progress": {
+      "step": 3,
+      "of": 4,
+      "at": "2026-10-31T08:06Z",
+      "by": "codex",
+      "note": "NAS readback verified; live df 10.689 GiB exceeds 10 GiB restart threshold but misses 20 GiB. J1100 stays blocked; exact"
+    },
+    "hold": {
+      "type": "dependency",
+      "condition": "Acting Chief Codex ruling 31 Oct: FIX, not recovery completion. All five archived files freshly rehashed successfully; 2712698880 allocated bytes recovered historically. Live 5.15 GiB is below J1100 restart 10 GiB and recovery target 20 GiB. Retain all uncertain files; no broadening approved. Await J1326 growth reconciliation and exact current/previous/reference proofs, then elected-Chief allowlist/headroom ruling. Preserve worker 3/4 and J1100 2/3/h43-LOOP; no film PASS or restart.",
+      "check_at": "2026-10-31T09:45:00Z"
+    },
+    "body": "Acting Chief Codex ruling on J1318, 31 Oct 2026: FIX to blanket move plan; conditional move-plan OK only for the bounded recovery below. Inventory d48161fdf is a candidate list, not a deletion manifest. Its 21.48 GiB forecast is not verified: T1-D says 1.71 GiB versus 1.30 in the inventory, grouped paths omit full hashes, and highest version is not proof of which file is live or needed.\n\nClaim this queue job before work; film links OWB:027,OWB:028. Claim a relevant studio stage before any move; do not take a stage already held. Run moves detached in tmux with log and completion file, release at a checkpoint, never duplicate a running session. GBP0; no publishing, media rewrite, NAS deletion or NAS overwrite.\n\n1. Produce an exact absolute-path allowlist from J1318 T1-A/T1-B/T1-E and T2-A first: old HOS008 rough/precheck/code-graphic duplicates, repo-root OWB UAT duplicates, completed HOS005/006/007 and standalone Shorts _work_ scratch. These are candidates only. Check current queue, processes/open files, cut lists, upload/Buffer manifests and watch references; exclude every active input, active or previous render version, live/scheduled export, current watch file, tracked file, symlink and source asset needed for rebuilding. Preserve current AND previous scratch per house rules. Do not infer inactivity from version number or modification time alone. If eligible candidates cannot reach 20 GiB free, expand only to T2-C obsolete unlocked VO takes with current lock proof and T2-E superseded Apophis scratch with current J1321 dependencies checked. Anything uncertain stays local and is listed for a specific further decision.\n2. EXCLUDE all gate-media cache (daily launchd cannot read NAS), all iCloud/CloudDocs, Desktop, Downloads, application/browser/agent state, rescue folders, retired launch items, git worktrees, all J1100 scratch/inputs/pickups, OWB027/028 source pools, all current/previous masters, VO and plates. T2-B highest-version export sweep and T2-G broad home sweep are NOT approved. Do not remove J1320 inputs. These exclusions override J1318's proposal.\n3. Verify real NAS mount and capacity first. Use rsync to a new unique archive directory, preserving relative paths; never overwrite an existing NAS file. For an existing duplicate, re-hash it in place. Record full SHA-256, byte size and allocated local bytes for EVERY source/destination in a durable manifest; hash/read back both sides and recheck source unchanged immediately before unlink. Only fully matching, stable files may be removed locally. Leave MOVED_TO_NAS.txt pointers; no recursive blanket deletion. Retain git metadata/records. Stop on any mismatch or disappearing mount. No NAS deletions.\n4. Aim for >=20 GiB live free, preferably 25 GiB; stop when met, do not chase the report's estimated 21.48 GiB recovery. Report actual df before/after, unique allocated bytes removed, manifests, pointer samples, exclusions and remaining blockers. If a shortfall remains, provide exact additional candidates; no automatic broadening. If NAS unavailable, keep every source and use jobs.py wait with observable mount condition and retry within one hour.\n5. J1100 remains blocked. On recovery, report the measured >=10 GiB restart condition to elected Chief for verification/reopen under h43 (park below 6 GiB); preserve worker 2/3, h43-LOOP, accepted pickups and all remaining gates. Do not reopen J1100 yourself as an ordinary worker or relax unrelated date/credit/Ben holds.\n"
+  },
+  {
+    "id": "J1324",
+    "status": "blocked",
+    "result": "parked for Chief: AR2 v08 picture acceptance, including native late-shot low-detail WARN; PR365 14d7d1c4c. Worker delivery 4/4; all four gates PASS, AAC identical, master and review images NAS SHA verified. J1321 remains held; no UAT/upload/schedule.",
+    "remaining_action": "Chief picture acceptance of AR2 v08 and late-shot WARN",
+    "taskKeys": [
+      "OWB:030"
+    ],
+    "progress": {
+      "step": 4,
+      "of": 4,
+      "at": "2026-10-31T08:58Z",
+      "by": "codex",
+      "note": "Delivery committed 14d7d1c4c, PR365. Master and full-size review images SHA-verified on NAS. Four unmodified gates PASS;"
+    },
+    "hold": null,
+    "body": "Elected-Chief Codex ruling in J1323, 31 Oct 2026. Continue only the AR2 correction from PR363 (994571421, worker/J1321-picture-fixes), J1321_CORRECTION_REPORT.md and its binding h37/h40/h42 instructions. J1321 stays held until this delivery and Chief picture acceptance. AR3 v09 has picture PASS in J1323; AR1 v01 retains J1317 PASS. Preserve both exactly, all old masters, manifests and hashes.\n\nAR2 v05 FIX: frame 0/0\u20132 s, late station shots around 15.5\u201316.6 s, and loop return show a conspicuous black rectangular inset feathered over unrelated Earth footage. The late station is small and dark. Real Crew-2 source identity is accepted; visual finish is not. Recompose only these non-DATA shots using source-native station footage with coherent fill/blur and clear station detail. No stronger-feather-only fix, no destructive luma key that removes dark station parts. Keep source geometry/detail. Export and inspect frame 0 and one late-shot still before full render. Retain the approved 109 m DATA graphic and its original composite, South Pacific map and all VO/graphics clocks. No changes to script, facts, titles, audio or duration.\n\nWrite a new version, run unmodified picture_qa/polish/loop/SFX gates on real composites, provide full-size frame 0, late-shot still, 0.5 s sheet, raw outputs and durable NAS master/hash. Report the actual changed intervals and exact audio identity. Return for elected-Chief picture review; no UAT or publishing.\n\nGBP0, no mint/spend/upload/schedule. Claim this job only when dispatched; OWB:030 linkage. Check disk first (~4.3 GB at J1323); nas_offload found no eligible old scratch. Obey current/previous scratch preservation and any J1322 recovery decisions; no NAS deletes/overwrites. Clean worktree and PR, detach long renders with log/.done, never duplicate running render. No Ben action.\n"
+  }
+]

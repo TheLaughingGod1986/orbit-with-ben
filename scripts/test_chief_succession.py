@@ -1,4 +1,4 @@
-"""Ben, 26 Oct: Grok -> Claude -> Codex -> Gemini, with real role authority and recovery."""
+"""Ben, 26 Oct (reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini, with real role authority and recovery."""
 import contextlib
 import datetime as dt
 import io
@@ -35,15 +35,15 @@ class ChiefSuccession(unittest.TestCase):
         self.routed_queue(json.dumps({'next_id': 100, 'jobs': rows}))
 
     def test_default_order_and_each_successor(self):
-        self.assertEqual(cr.chain(), ['chief', 'claude', 'codex', 'gemini'])
+        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])  # Ben, 9 Nov 2026: Claude first
         self.assertEqual(self.chief(), 'codex')
-        self.beat(T0 - 5 * MIN)
-        self.assertEqual(self.chief(), 'claude')
         cr.seen('chief', T0)
         self.assertEqual(self.chief(), 'chief')
-        cr.mark_down('chief', 'credit exhausted', None, T0)
+        self.beat(T0 - 5 * MIN)
         self.assertEqual(self.chief(), 'claude')
         self.beat(T0 - 100 * MIN)
+        self.assertEqual(self.chief(), 'chief')
+        cr.mark_down('chief', 'credit exhausted', None, T0)
         self.assertEqual(self.chief(), 'codex')
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
@@ -53,10 +53,10 @@ class ChiefSuccession(unittest.TestCase):
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
         self.assertEqual(self.chief(T0 + 61 * MIN), 'codex')
-        self.beat(T0 + 60 * MIN)
-        self.assertEqual(self.chief(T0 + 62 * MIN), 'claude')
-        cr.seen('chief', T0 + 63 * MIN)
-        self.assertEqual(self.chief(T0 + 64 * MIN), 'chief')
+        cr.seen('chief', T0 + 60 * MIN)
+        self.assertEqual(self.chief(T0 + 62 * MIN), 'chief')
+        self.beat(T0 + 63 * MIN)
+        self.assertEqual(self.chief(T0 + 64 * MIN), 'claude')
 
     def test_a_new_claude_heartbeat_clears_its_old_down_mark_before_election(self):
         cr.mark_down('claude','usage limit',T0+120*MIN,T0-10*MIN)

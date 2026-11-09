@@ -16,3 +16,11 @@ Next due: `BW_CFAX-mxc` *Is the Heart a Pump?* (31 Oct 11:30Z). Its Related was 
 ## Fixes
 
 None. 28 public videos, all passing.
+
+## 31 Oct update (J1378, Claude, ~15:55Z)
+
+New public since then: `BW_CFAX-mxc` *Is the Heart a Pump?* (live 31 Oct 11:30Z), checked on the public Shorts page:
+- **Related pill:** `wwcjcFfC-5M`, the 005 long.
+- **Description:** a hook, then "Full film:", the long's title and https://youtu.be/wwcjcFfC-5M, then hashtags.
+
+Passes. 29/29 public HOS videos pass, 0 fixes.
