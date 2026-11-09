@@ -211178,17 +211178,22 @@
           "at": "2026-11-09T18:23Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2444; starting step 0 check of /Volumes/MiniWork and ~/_desk"
+        },
+        {
+          "at": "2026-11-09T18:51Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2444; starting step 0 checks"
         }
       ],
-      "remaining_action": "Check /Volumes/MiniWork mount and record initial df -h",
+      "remaining_action": "Check /Volumes/MiniWork mount, pause chief-relay, and verify no other agent CLI is running",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
         "step": 0,
-        "of": 6,
-        "at": "2026-11-09T18:23Z",
+        "of": 5,
+        "at": "2026-11-09T18:51Z",
         "by": "gemini",
-        "note": "Claimed J2444; starting step 0 check of /Volumes/MiniWork and ~/_desk"
+        "note": "Claimed J2444; starting step 0 checks"
       },
       "rerouted_from": {
         "needs": "mini",
