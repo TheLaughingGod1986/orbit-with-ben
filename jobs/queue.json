@@ -208539,15 +208539,20 @@
           "at": "2026-11-09T03:22Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-09T03:48Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "verify blur-pad gate + unit tests, sync studio-core to HOS, and scan upcoming/UAT Shorts",
+      "remaining_action": "Add blur-pad/letterbox check + unit tests to gate_shorts_open.py, update Shorts rules, audit UPCOMING_SHORTS_GATE.md",
       "kind": "qa",
       "plain": "Add an automatic check so no Short goes out as a small rectangle with blurry bands, which Ben flagged on 031 Short 2.",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-09T03:22Z",
+        "at": "2026-11-09T03:48Z",
         "by": "macbook"
       }
     },
