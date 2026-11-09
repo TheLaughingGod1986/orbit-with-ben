@@ -1,0 +1,330 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v01.mp4",
+  "edge_floor": 0.0144,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "R04c",
+      "cut": 11,
+      "t": 35.9,
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "why": [
+        "low detail: edge density 0.0135 < film p5 0.0144"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01a",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 1.2,
+      "std": 31.01,
+      "mean": 142.26,
+      "p95": 183.0,
+      "edge": 0.0349,
+      "hf": 13.5,
+      "lf": 19.58,
+      "std8": 22.85,
+      "edge8": 0.3113,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "R01b",
+      "source": "PIA20007.jpg",
+      "t": 3.5,
+      "std": 53.09,
+      "mean": 126.26,
+      "p95": 233.0,
+      "edge": 0.0893,
+      "hf": 11.14,
+      "lf": 49.56,
+      "std8": 50.66,
+      "edge8": 0.1487,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.043,
+        "reversals": 0,
+        "frames": 38,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "R01c",
+      "source": "PIA19944.jpg",
+      "t": 6.4,
+      "std": 33.4,
+      "mean": 139.84,
+      "p95": 197.0,
+      "edge": 0.1132,
+      "hf": 15.16,
+      "lf": 26.46,
+      "std8": 27.4,
+      "edge8": 0.122,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 1.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.052,
+        "reversals": 0,
+        "frames": 80,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "R02a",
+      "source": "PIA20726.jpg",
+      "t": 9.9,
+      "std": 45.71,
+      "mean": 128.64,
+      "p95": 200.0,
+      "edge": 0.1088,
+      "hf": 16.2,
+      "lf": 36.58,
+      "std8": 39.59,
+      "edge8": 0.2172,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.039,
+        "reversals": 0,
+        "frames": 74,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "R02b",
+      "source": "code_graphic_034_r02_sputnik_scale.mp4",
+      "t": 13.3,
+      "std": 34.73,
+      "mean": 93.54,
+      "p95": 176.0,
+      "edge": 0.0729,
+      "hf": 12.74,
+      "lf": 27.23,
+      "std8": 29.8,
+      "edge8": 0.1884,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "R02c",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 16.8,
+      "std": 22.49,
+      "mean": 165.74,
+      "p95": 178.0,
+      "edge": 0.0313,
+      "hf": 13.95,
+      "lf": 10.62,
+      "std8": 13.29,
+      "edge8": 0.0812,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "R03a",
+      "source": "File_The_Pluto_System_As_Seen_By_New_Horizons_Spacecraft.webm.webm",
+      "t": 20.4,
+      "std": 28.97,
+      "mean": 102.92,
+      "p95": 138.0,
+      "edge": 0.0151,
+      "hf": 6.06,
+      "lf": 26.93,
+      "std8": 27.67,
+      "edge8": 0.0483,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "R03b",
+      "source": "PIA20534.jpg",
+      "t": 23.9,
+      "std": 28.91,
+      "mean": 109.12,
+      "p95": 174.0,
+      "edge": 0.1453,
+      "hf": 13.6,
+      "lf": 21.06,
+      "std8": 23.03,
+      "edge8": 0.1583,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.03,
+        "reversals": 0,
+        "frames": 74,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "R03c",
+      "source": "PIA20198.jpg",
+      "t": 27.1,
+      "std": 29.73,
+      "mean": 131.39,
+      "p95": 193.0,
+      "edge": 0.1573,
+      "hf": 14.22,
+      "lf": 21.17,
+      "std8": 23.11,
+      "edge8": 0.1967,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 1.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.023,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "R04a",
+      "source": "PIA20473.jpg",
+      "t": 30.2,
+      "std": 50.23,
+      "mean": 125.83,
+      "p95": 215.0,
+      "edge": 0.0323,
+      "hf": 8.91,
+      "lf": 47.86,
+      "std8": 48.82,
+      "edge8": 0.0723,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.053,
+        "reversals": 0,
+        "frames": 68,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "R04b",
+      "source": "PIA20286.jpg",
+      "t": 33.3,
+      "std": 47.87,
+      "mean": 119.73,
+      "p95": 209.0,
+      "edge": 0.0765,
+      "hf": 11.15,
+      "lf": 43.8,
+      "std8": 45.28,
+      "edge8": 0.1613,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 1.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.04,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "R04c",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 35.9,
+      "std": 21.31,
+      "mean": 224.75,
+      "p95": 238.0,
+      "edge": 0.0135,
+      "hf": 11.97,
+      "lf": 12.61,
+      "std8": 14.35,
+      "edge8": 0.0485,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0135 < film p5 0.0144"
+      ]
+    }
+  ]
+}

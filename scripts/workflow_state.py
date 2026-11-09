@@ -4,6 +4,8 @@ import datetime as dt
 import re
 from zoneinfo import ZoneInfo
 
+import channels
+
 LIVE = {"open", "claimed", "blocked"}
 MINI = {"mini", "gemini", "any"}
 STALL_GRACE = dt.timedelta(minutes=45)
@@ -193,16 +195,56 @@ def recently_released(j, at):
     return bool(last and str(last[0].get("what", "")).startswith("released") and stamp
                 and at - stamp < dt.timedelta(minutes=30))
 
-def order(j, due, focus=(), at=None):
+def air_dates(tracker):
+    """{channel key: air timestamp} for every unfinished long with an air date (Ben, 8 Nov 2026, option B: keep the
+    WIP limit, but agents finish the oldest film's work before touching a newer one; oldest = airs first)."""
+    out = {}
+    videos = tracker.get("videos", []) if isinstance(tracker, dict) else []
+    for video in videos if isinstance(videos, list) else []:
+        if not isinstance(video, dict) or video.get("type") != "long" or video.get("lane") in {"done", "live"}:
+            continue
+        key, air = video.get("key", ""), timestamp(((video.get("youtube") or {}).get("publishAt")) or video.get("air"))
+        if isinstance(key, str) and channels.strict_key_re().fullmatch(key) and air:
+            out[key] = min(out.get(key, air), air)
+    return out
+
+
+def near_watch(tracker):
+    """Three unfinished longs with the most completed production milestones.
+
+    Channel-qualified keys prevent HOS/OWB number collisions. UAT and later
+    lanes already have their handoff and must not absorb production priority.
+    """
+    candidates = {}
+    videos = tracker.get("videos", []) if isinstance(tracker, dict) else []
+    for video in videos if isinstance(videos, list) else []:
+        if not isinstance(video, dict) or video.get("type") != "long" or video.get("lane") not in {"upcoming", "progress", "changes"}:
+            continue
+        key = video.get("key", "")
+        if not isinstance(key, str) or not channels.strict_key_re().fullmatch(key):
+            continue
+        production = video.get("production")
+        milestones = production.get("milestones") if isinstance(production, dict) else []
+        if not isinstance(milestones, list):
+            continue
+        completed = sum(m.get("state") == "done" for m in milestones if isinstance(m, dict))
+        if completed:
+            candidates[key] = max(candidates.get(key, 0), completed)
+    return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
+
+
+def order(j, due, focus=(), at=None, nearest=(), air=None):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
     # claim. They still represent production work (e.g. J1471); do not rank
     # them as unlinked administration behind every single-film draft.
     keys = j.get("taskKeys")
-    production_keys = {key for key in keys if isinstance(key, str) and re.fullmatch(r"(?:HOS|OWB):\d{3}", key)} if isinstance(keys, list) else set()
+    production_keys = {key for key in keys if isinstance(key, str) and channels.strict_key_re().fullmatch(key)} if isinstance(keys, list) else set()
     if isinstance(film, str) and film.strip():
         production_keys.add(film)
+        if re.fullmatch(r"\d{3}", film):
+            production_keys.add(channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home()) + ":" + film)
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
@@ -212,16 +254,40 @@ def order(j, due, focus=(), at=None):
     verification = j.get("recheck_of") if j.get("due_kind") == "condition-verification" else ""
     background = bool(verification and verification not in due)
     deadline = due.get(verification) if verification else due.get(j["id"])
+    backlog = bool(j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I))
+    # Oldest film first: the film that airs soonest gets every free agent before a newer film's work (Ben, 8 Nov 2026).
+    airs = [air[k] for k in production_keys if air and k in air] if not backlog else []
     return (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
+            min(airs).timestamp() if airs else inf,
+            0 if production_keys.intersection(nearest) else 1,
             0 if urgent else 1, rank if urgent else 0,
-            1 if j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I) else 0,
+            1 if backlog else 0,
             0 if production_keys.intersection(focus) else 1,
             0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
 
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):
     if not str(agent or "").strip():
+        return False
+    # Capacity reservations precede launch. Ordinary `next` cannot consume one:
+    # the future launcher must verify its token/host/inputs inside the same queue
+    # transaction before handing it to the existing claim and stage machinery.
+    def reserved(row):
+        value = row.get("dispatch_reservation") or {}
+        start, end = timestamp(value.get("at")), timestamp(value.get("expiresAt"))
+        if value.get("phase") == "serial":
+            return True  # occupied until explicit observed-exit reconciliation
+        if row.get("status") == "claimed" and value.get("phase") == "claimed":
+            return True  # remote capacity requires explicit canonical reconciliation
+        return bool(start and end and start <= at < end)
+    if reserved(j) and not ((j.get("dispatch_reservation") or {}).get("phase") == "serial"
+            and j["dispatch_reservation"].get("claimant") == agent):
+        return False
+    stage = (j.get("repo", "owb"), j.get("film"), j.get("stage"))
+    if stage[1] and stage[2] and any(
+            r.get("id") != j.get("id") and reserved(r)
+            and (r.get("repo", "owb"), r.get("film"), r.get("stage")) == stage for r in rows):
         return False
     by_id = {r["id"]: r for r in rows}
     if external_hold(j, at) or dependency_problem(j, by_id) or capability_problem(j, agent, at, capabilities):
@@ -318,7 +384,7 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
                     worker = None
             if not worker or not claimable(j, rows, at, worker, chief, execution=execution, capabilities=capabilities):
                 continue
-        candidates.append((order(j, due, data.get("focus") or (), at), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
+        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker")), air_dates(data.get("tracker"))), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
 def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False, capabilities=None):

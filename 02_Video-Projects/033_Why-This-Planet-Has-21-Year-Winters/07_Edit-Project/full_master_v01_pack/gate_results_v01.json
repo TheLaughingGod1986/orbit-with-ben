@@ -1,0 +1,34 @@
+{
+  "clip_check": {
+    "code": 0,
+    "out": "clip_check: 67 rows \u2014 PASS\n - WARN: row R04: may clip mid-sentence before next row ('wenty-three point four four degree tilt,' \u2192 'Uranus is tipped at ninety-seven point s')\n - WARN: row R47: may clip mid-sentence before next row ('ed magnet spins sideways every 17 hours,' \u2192 \"Uranus' auroras miss the poles, and the \")\nOK: sentence/card boundaries and end-after-VO checks clear."
+  },
+  "picture_qa": {
+    "code": 0,
+    "out": "WARN   1:15 row 11 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00032_left_globe.jpg: low detail: edge density 0.0288 < film p5 0.0307\nWARN   1:22 row 12 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01984.jpg: low detail: edge density 0.0202 < film p5 0.0307\nWARN   1:26 row 12 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01984.jpg: low detail: edge density 0.0284 < film p5 0.0307\nWARN   2:00 row 15 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2332a_hires.jpg: low detail: edge density 0.0279 < film p5 0.0307\nWARN   3:05 row 21 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01985.jpg: low detail: edge density 0.0306 < film p5 0.0307\nWARN   4:35 row 32 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA01391.jpg: low detail: edge density 0.0307 < film p5 0.0307\nWARN   5:14 row 36 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/stsci-h-p1906a-f_uranus_globe.png: low detail: edge density 0.0289 < film p5 0.0307\nWARN   7:31 row 50 /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/weic2332a_hires.jpg: low detail: edge density 0.0293 < film p5 0.0307\npicture QA PASS: 0 of 144 cuts fail, 8 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg"
+  },
+  "polish_gate": {
+    "code": 0,
+    "out": "  55   498.9s /Volumes/data/studio-live/or ok\n  55   503.1s /Volumes/data/studio-live/or ok\n  56   507.5s /Volumes/data/studio-live/or ok\n  56   511.8s /Volumes/data/studio-live/or ok\n  57   516.1s /Volumes/data/studio-live/or ok\n  57   519.3s /Volumes/data/studio-live/or ok\n  58   523.2s /Volumes/data/studio-live/or ok\n  58   527.7s /Volumes/data/studio-live/or ok\n  59   532.7s /Volumes/data/studio-live/or ok\n  59   538.3s /Volumes/data/studio-live/or ok\n  60   543.8s /Volumes/data/studio-live/or ok\n  60   549.2s /Volumes/data/studio-live/or ok\n  61   554.1s /Volumes/data/studio-live/or ok\n  61   558.3s /Volumes/data/studio-live/or ok\n  62   562.7s /Volumes/data/studio-live/or ok\n  62   567.5s /Volumes/data/studio-live/or ok\n  63   573.2s /Volumes/data/studio-live/or ok\n  63   578.1s /Volumes/data/studio-live/or ok\n  63   581.5s /Volumes/data/studio-live/or ok\n  64   585.2s /Volumes/data/studio-live/or ok\n  64   589.4s /Volumes/data/studio-live/or ok\n  65   593.6s /Volumes/data/studio-live/or ok\n  65   597.9s /Volumes/data/studio-live/or ok\n  66   602.9s /Volumes/data/studio-live/or ok\n  66   608.6s /Volumes/data/studio-live/or ok\n  67   614.4s /Volumes/data/studio-live/or ok\n  67   620.4s /Volumes/data/studio-live/or ok\n  67   626.4s /Volumes/data/studio-live/or ok\npolish gate PASS: 0 of 144 rows failed, 8 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/07_Edit-Project/full_master_v01_pack/polish_gate_v01.json"
+  },
+  "music_gate": {
+    "code": 0,
+    "out": "WARN reused: couldn't read saturn_long_vo_v02_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read jupiter-vo.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read jupiter-music.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read friday_black_dwarf_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v02_LISTEN.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others\nmusic gate PASS: uranus_score_bed_v01.mp3, 629.4 s, about 70.6 BPM, brief Pace: 66-76 BPM"
+  },
+  "sfx_level": {
+    "code": 0,
+    "out": "SFX level PASS: VO -20.2 LUFS, SFX -47.2 LUFS, 21 hits"
+  },
+  "delivery": {
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/09_Final-Export/033_why_this_planet_has_21_year_winters_master_v01.mp4",
+    "sha256": "9e9712781a99ad07e6bc753728e716cbf5ef1dc4e4ad9b80ea45c1a55f785552",
+    "integrated_lufs": -14.5,
+    "true_peak_dbtp": -1.5,
+    "width": 1920,
+    "height": 1080,
+    "avg_frame_rate": "24/1",
+    "nb_frames": 15106,
+    "duration": 629.416667,
+    "black_frames": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "job": "J2141",
+  "date": "2026-11-07",
+  "checks": [
+    {
+      "asset_id": "iss059e027932",
+      "files": [
+        "iss059e027932.jpg",
+        "NASA_MEDIA_POLICY.html",
+        "iss059e027932_api.json",
+        "iss059e027932_source.html"
+      ],
+      "hash_dimensions_decode": "PASS",
+      "crop_metrics": {
+        "mean_luma": 4.12,
+        "near_black_fraction_y_lt_20": 0.9595
+      },
+      "admitted": false
+    },
+    {
+      "asset_id": "iss069e025345",
+      "files": [
+        "iss069e025345.jpg",
+        "NASA_MEDIA_POLICY.html",
+        "iss069e025345_api.json",
+        "iss069e025345_source.html"
+      ],
+      "hash_dimensions_decode": "PASS",
+      "crop_metrics": {
+        "mean_luma": 14.59,
+        "near_black_fraction_y_lt_20": 0.845
+      },
+      "admitted": false
+    }
+  ],
+  "spend_gbp": 0,
+  "limitations": [
+    "Static candidates only; both dark crops, not admitted.",
+    "No motion, final grade, polish or Chief acceptance claimed."
+  ]
+}

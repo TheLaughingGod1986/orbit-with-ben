@@ -36,9 +36,12 @@ import shutil
 import subprocess
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 HOME = pathlib.Path.home()
 OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", HOME / "YouTube" / "History Of Science"))
+HOS = channels.repo_path("hos", HOME)
 TMP_ROOTS = ("/tmp/", "/private/tmp/")
 
 
@@ -220,7 +223,8 @@ def repair(apply: bool, repos=None, do_caches: bool = True, scan: bool = True) -
                 report["caches"].append(f"{name}: {'ok' if r.returncode == 0 else 'failed'} (+{free_mb() - before} MB)")
             else:
                 report["caches"].append(f"{name}: would run {' '.join(cmd)}")
-    for repo in repos or (OWB, HOS):
+    repos = (OWB, HOS) if repos is None else repos  # [] = caches only (the weekly clean, Ben 9 Nov 2026)
+    for repo in repos:
         if not (repo / ".git").exists():
             continue
         if apply:
@@ -231,7 +235,7 @@ def repair(apply: bool, repos=None, do_caches: bool = True, scan: bool = True) -
                 r = git(repo, "worktree", "remove", "--force", wt["path"])
                 why = why if r.returncode == 0 else "remove failed"
             report["worktrees"].append(f"{wt['path']}: {'remove' if ok else 'keep'} ({why})")
-    for repo in repos or (OWB, HOS):
+    for repo in repos:
         if (repo / ".git").exists():
             report["checkouts"].append(unblock(repo, apply, today))
     if scan:
@@ -244,8 +248,10 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true", help="do it (default: dry run)")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--caches-only", action="store_true",
+                    help="only clear caches that rebuild themselves (the relay's weekly clean); checkouts untouched")
     a = ap.parse_args(argv)
-    rep = repair(a.apply)
+    rep = repair(a.apply, repos=[], scan=False) if a.caches_only else repair(a.apply)
     if a.json:
         print(json.dumps(rep, indent=1))
         return 0

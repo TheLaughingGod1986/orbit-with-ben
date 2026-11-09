@@ -38,6 +38,32 @@ Current week (Sonnet only)
 Resets Mon 02 Nov 09:00
 """
 
+CLAUDE_LIVE_PRO_PAGE = """Settings
+Usage
+Your usage
+Pro
+27% of your weekly limit used.
+Current session
+Resets at 8:50 PM
+96% used
+This week
+Resets Wednesday 10:00 AM
+27% used
+Limit resets
+No resets right now
+When you get one, it shows up here with its expiry date.
+Usage credits
+Available for any task. Promotional credits are used before purchased credits.
+£0
+Monthly spend limit
+£0.00 of £75 this month · Auto-reload off
+This week’s usage by product
+Claude Code
+100%
+Chats
+0%
+"""
+
 CLAUDE_LOGIN_PAGE = """Sign in - Claude
 Question what’s next
 Your thinking partner for big ambitions
@@ -76,6 +102,12 @@ class ClaudeUsageParser(unittest.TestCase):
         self.assertEqual((r["left"], r["total"]), (40, 100))
         self.assertEqual(r["used"], {"session": 25, "weekly": 60})
         self.assertEqual(r["note"], "25% used (resets in 4 hr 10 min) session; weekly 60% used, resets Mon 02 Nov 09:00")
+
+    def test_live_pro_this_week_layout(self):
+        r = ai_spend_daily.parse_claude(CLAUDE_LIVE_PRO_PAGE)
+        self.assertEqual((r["left"], r["total"]), (73, 100))
+        self.assertEqual(r["used"], {"session": 96, "weekly": 27})
+        self.assertEqual(r["note"], "96% used (resets 8:50 PM) session; weekly 27% used, resets Wednesday 10:00 AM")
 
     def test_signed_out_or_changed_page_fails_loudly(self):
         with self.assertRaises(RuntimeError):
