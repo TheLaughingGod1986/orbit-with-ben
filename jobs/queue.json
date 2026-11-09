@@ -211077,11 +211077,25 @@
           "at": "2026-11-09T16:51Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T17:46Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Free ~70 GB on the Mini: stale Chrome code_sign_clone copies (~60 GB) + 23 finished, clean worktrees (~11 GB)",
       "due": "2026-11-10T06:00:00Z",
-      "kind": "qa"
+      "kind": "qa",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
