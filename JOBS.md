@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
-| J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2441 | mini | claimed | macbook-2 | 2026-11-09T22:56Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2445 | mini | claimed | gemini | 2026-11-09T21:27Z | for gemini · qa · `gemini-argon` · Free ~70 GB on the Mini: stale Chrome code_sign_clone copies (~60 GB) + 23 finished, clean worktrees (~11 GB) |  |
 | J2446 | mini | open | – | – | 008 edit · assembly · HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge |  |
 | J2448 | mini | open (after J2447) | – | – | thumb · Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each) |  |
