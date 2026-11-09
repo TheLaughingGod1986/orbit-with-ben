@@ -208001,10 +208001,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T00:40Z",
+      "eta": "2026-11-09T02:40Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
       "result": "",
@@ -208033,6 +208033,11 @@
           "at": "2026-11-09T00:15Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-09T00:40Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Board: 'Passed' keeps cuts that are already uploaded and scheduled — move them to Scheduled",
