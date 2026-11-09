@@ -109,7 +109,12 @@ do_acquire() {
     if mkdir "$dir.reclaim" 2>/dev/null; then
       local pid modified now
       pid="$(read_owner_pid "$dir" || true)"
-      modified="$(stat -f %m "$dir/owner.txt" 2>/dev/null || stat -c %Y "$dir/owner.txt" 2>/dev/null || echo 0)"
+      if modified="$(stat -f %m "$dir/owner.txt" 2>/dev/null)"; then
+        : # BSD/macOS stat
+      else
+        # GNU stat may emit stdout even on failure: replace it instead of concatenating.
+        modified="$(stat -c %Y "$dir/owner.txt" 2>/dev/null || echo 0)"
+      fi
       now="$(date +%s)"
       if [[ "$pid" =~ ^[1-9][0-9]*$ ]] && ! pid_alive "$pid" &&
           [[ "$modified" =~ ^[0-9]+$ ]] && (( modified > 0 && now - modified > 300 )); then

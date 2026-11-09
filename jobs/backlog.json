@@ -1,6 +1,30 @@
 {
-  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct).",
+  "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct). 5 Nov 2026: owb-ideas and hos-ideas unpaused (paused 'pipeline full' since 21 Oct, so no new topics for two weeks) and made daily, data-led, two films each (Ben).",
   "items": [
+    {
+      "key": "monthly-improvement-hos",
+      "repo": "hos",
+      "needs": "mini",
+      "kind": "review",
+      "eta": 90,
+      "monthly_on": 1,
+      "monthly_at": "09:00",
+      "start_month": "2026-11",
+      "title": "Monthly channel improvement review: History of Science",
+      "body": "Monthly improvement review for History of Science, requested by Ben 3 Nov 2026. Read docs/MONTHLY_CHANNEL_REVIEW.md in the Orbit With Ben checkout (shared scheduling owner, including for HOS reports) and all available recorded data for this channel. Analyze the specified complete calendar month, compare with the preceding month and age/format-matched video cohorts, and assess previous experiment outcomes. Produce an evidence-linked report and ranked practical changes to improve retention, impressions CTR, views per video and total watch time. Separate Shorts and longs. This is an analytical review, not just a snapshot or totals report. Use existing daily snapshots, channel_daily.json, Studio reads and actual retention/traffic-source data where available. Identify missing or stale data and permission/capability gaps explicitly; never substitute lifetime CTR for monthly CTR. Write private analytics-derived material only to the approved local analytics handoff area unless publication is explicitly permitted; existing publication-rejection holds remain binding. Deliver report location and status via the normal Chief handoff, with one linked Chief review job and measurable next-month experiments. Keep analytics-derived findings in the approved private report unless their publication is explicitly authorized. Recommend/prepare no-spend follow-up jobs with owners and dates; do not apply changes to live videos, publishing, tests, production policies or paid services without the existing required review. Preserve ongoing experiments and all Ben/Chief gates. Report collection failures with a linked recovery action; never claim completion without a readable report."
+    },
+    {
+      "key": "monthly-improvement-owb",
+      "repo": "owb",
+      "needs": "mini",
+      "kind": "review",
+      "eta": 90,
+      "monthly_on": 1,
+      "monthly_at": "09:00",
+      "start_month": "2026-11",
+      "title": "Monthly channel improvement review: Orbit With Ben",
+      "body": "Monthly improvement review for Orbit With Ben, requested by Ben 3 Nov 2026. Read docs/MONTHLY_CHANNEL_REVIEW.md in the Orbit With Ben checkout (shared scheduling owner, including for HOS reports) and all available recorded data for this channel. Analyze the specified complete calendar month, compare with the preceding month and age/format-matched video cohorts, and assess previous experiment outcomes. Produce an evidence-linked report and ranked practical changes to improve retention, impressions CTR, views per video and total watch time. Separate Shorts and longs. This is an analytical review, not just a snapshot or totals report. Use existing daily snapshots, channel_daily.json, Studio reads and actual retention/traffic-source data where available. Identify missing or stale data and permission/capability gaps explicitly; never substitute lifetime CTR for monthly CTR. Write private analytics-derived material only to the approved local analytics handoff area unless publication is explicitly permitted; existing publication-rejection holds remain binding. Deliver report location and status via the normal Chief handoff, with one linked Chief review job and measurable next-month experiments. Keep analytics-derived findings in the approved private report unless their publication is explicitly authorized. Recommend/prepare no-spend follow-up jobs with owners and dates; do not apply changes to live videos, publishing, tests, production policies or paid services without the existing required review. Preserve ongoing experiments and all Ben/Chief gates. Report collection failures with a linked recovery action; never claim completion without a readable report."
+    },
     {
       "key": "studio-ctr-daily",
       "repo": "owb",
@@ -22,6 +46,17 @@
       "title": "Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements",
       "body": "Weekly growth audit for Orbit With Ben (aim: numbers up month on month). 1) Pull last 28 days and last 7 days from YouTube Analytics with the read-only tracker sign-in (YT_ANALYTICS_REFRESH_TOKEN_OWB; 05_Analytics tools): views, impressions CTR, AVD/retention curves, subs per video, Shorts vs longs, traffic sources, search terms. 2) What's working and what isn't: top/bottom 3 by CTR and retention, with the frame or title that explains it. 3) Competitors: 5 reference channels (Astrum, History of the Universe, SEA, Kurzgesagt, melodysheep) last 30 days via public pages/yt-dlp metadata only: titles, thumbs, lengths, view velocity, topics trending. 4) Write 05_Analytics/weekly_audit/OWB_<YYYY-MM-DD>.md: findings, then 3-5 concrete changes for the next films in production (title/thumb/opening/length/topic), each tied to a film id, plus 3 new video ideas ranked by evidence. Compare with last week's file and say what moved. 4b) Shorts lab (Ben, 21 Oct 2026, from Gemini's read of the HOS gold Short: 44% viewed on 25 s, the feed stopped after the first pool): for every Short public 48 h or more and not yet in the table, add one row to the Shorts lab table in 05_Analytics/LEARNINGS.md: id, title, length (s), views, stayed-to-watch % (Studio's Viewed vs swiped away; from the daily Studio read, studio_ctr.json), average % viewed, the second where the retention curve (Analytics API audienceWatchRatio by elapsedVideoTimeRatio) falls most, and what is on screen and said at that second (from the Short's cut list and VO words). Targets: stayed-to-watch 60%+ (Ben's floor, 24 Oct; 70%+ stretch), average viewed 70%+ (Ben's second floor, 24 Oct 20:03; aim 100%+ = rewatches via loop endings). 4d) Two-target check (Ben, 24 Oct 2026; orbit-build-shorts.mdc → '60% stayed-to-watch' and '70% average viewed'): also grade average viewed LOOP ≥100 / PASS ≥70 / WATCH 50–69.9 / MISS <50 with runtime, longest plate hold, payoff time and whether the last line loops into line 1; for every Short with a 48 h+ Studio read in the last 14 days, list stayed-to-watch % against the 60% target as PASS (≥60), WATCH (45–59.9), MISS (<45) or too few (<100 Studio views), plus the frame-0 source (video, or a still and its zoom), the first-word onset, the first cut (s) and whether a meta-promise is present. Say which of the six 60% rules the misses break, and propose re-cuts only for Shorts not yet public (local renders only; any swap goes to Ben). 4c) Learnings: turn this week's evidence into at most 3 rules or tests in the Learnings table of LEARNINGS.md (rule, evidence with ids and numbers, status: test/proven/dropped). A rule proven on 3+ Shorts is proposed to the Chief for the Shorts brief and the playbook; a test names the next 2-4 Shorts it runs on. Keep the audit itself to one page: what moved, the lab rows, the rules. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
       "remaining_action": "Review Orbit performance and identify improvements"
+    },
+    {
+      "key": "owb-dated-short",
+      "repo": "owb",
+      "needs": "mini",
+      "kind": "script",
+      "eta": 120,
+      "every_h": 168,
+      "title": "Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief",
+      "body": "Weekly dated-event Short test (Ben's go, 4 Nov 2026; LEARNINGS rule 16; evidence 05_Analytics/owb/FACEBOOK_APOPHIS_2026-10-30.md). Pick ONE real dated sky or space event 10-21 days ahead (flyby, eclipse, meteor shower peak, launch, conjunction, notable anniversary) that is not already covered by an open, scheduled or live Short (check UPLOADS.json, film_briefs.json and the AR cohort J1356). Facts first from NASA/ESA/IAU or an official source, with the exact date and time in UTC. Write one 17-20 s, 44-52 word script in the Apophis mould: subject named + surprise claim inside 1 s (rule 8: moving subject at frame 0, no meta-promise), one everyday scale comparison, the answer by about 13 s, a 'you can see it / look up / will it hit us' payoff whose last line runs back into line 1. Title as a plain question naming the subject and the date hook. Picture plan from existing or free-licensed footage only. Target publish 3-7 days before the event; say the slot. Record the pick, sources and slot in 02_Video-Projects/_dated_shorts/<YYYY-MM-DD>_<slug>.md. Spend nothing: no TTS, no picture generation, no Studio or publish change in this job. End with jobs.py block <id> --reason \"parked for Chief: dated-event Short script + slot\" --git.",
+      "remaining_action": "Draft this week's dated-event Short script and slot for the Chief"
     },
     {
       "key": "hos-weekly-audit",
@@ -60,11 +95,10 @@
       "needs": "any",
       "kind": "script",
       "eta": 90,
-      "every_h": 48,
-      "title": "OWB ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 Orbit With Ben long ideas from the latest weekly audit and VIDEO_BACKLOG.json (search demand, competitor gaps, our best retention topics), score each, then draft the top one's script v00 per the playbook (house opening, FACT beats, SOURCES.md started). Save under 00_Brand/Channel-Setup/ideas/ and the next free 02_Video-Projects slot from the template. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: OWB scripts drafted to 042, VO held until the 30 Oct ElevenLabs reset (Claude, 21 Oct)",
-      "remaining_action": "Prepare the next Orbit video idea and script draft"
+      "every_h": 24,
+      "title": "OWB: learn from our data, add two new films to the backlog",
+      "body": "Orbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
+      "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line"
     },
     {
       "key": "hos-ideas",
@@ -72,11 +106,10 @@
       "needs": "any",
       "kind": "script",
       "eta": 90,
-      "every_h": 48,
-      "title": "HOS ideas + script draft: next film beyond the pipeline",
-      "body": "Brainstorm 5 History of Science long ideas (discovery stories with a person, a date and a twist) from the weekly audit and search demand, score each, then draft the top one's opening and outline with SOURCES. Save in the HOS ideas folder. No topic lock without Chief. Spend nothing: existing subscriptions and free tools only, no paid API, no TTS or picture generation in these growth jobs (credits are for pipeline VO and picture; floors are 0, Ben 12 Oct 14:46), no Studio or publish change. End with jobs.py block <id> --reason \"parked for Chief: <what to decide>\" --git.",
-      "paused": "pipeline full: HOS scripts drafted to 038 (Claude, 21 Oct)",
-      "remaining_action": "Prepare the next HOS video idea and script draft"
+      "every_h": 24,
+      "title": "HOS: learn from our data, add two new films to the backlog",
+      "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
+      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line"
     },
     {
       "key": "owb-short-from-locked",
@@ -200,7 +233,7 @@
       "needs": "mini",
       "kind": "qa",
       "eta": 60,
-      "every_h": 8,
+      "every_h": 72,
       "title": "Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate)",
       "body": "Run picture_qa / polish_gate / music_gate on the newest OWB and HOS packs that have no gate output newer than their last render. Post the results; for each FAIL add a fix job (jobs.py add, no spend). Read-only otherwise.",
       "remaining_action": "Check the newest video packs and record any missing checks"

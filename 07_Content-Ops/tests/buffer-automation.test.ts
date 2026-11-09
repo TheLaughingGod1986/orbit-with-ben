@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { createBufferApiClient, type BufferClient } from "../src/lib/publishing/buffer-api";
 import fs from "fs";
 import os from "os";
@@ -8,6 +8,17 @@ import { executeActions, mirrorVideo, runBufferCheck, videoIdFromBlobPath, type 
 import type { Ledger, Plan, YouTubeVideo, BufferChannel } from "../src/lib/publishing/buffer-mirror";
 
 const NOW = new Date("2026-10-01T09:00:00Z");
+// The mirror's media lives only in the R2 bucket (no Vercel Blob fallback since 29 Oct 2026); clean-up deletes only its files.
+const R2_PUB = "https://pub-test.r2.dev";
+let savedR2: string | undefined;
+beforeAll(() => {
+  savedR2 = process.env.R2_PUBLIC_URL;
+  process.env.R2_PUBLIC_URL = R2_PUB;
+});
+afterAll(() => {
+  if (savedR2 === undefined) delete process.env.R2_PUBLIC_URL;
+  else process.env.R2_PUBLIC_URL = savedR2;
+});
 const CHANNELS = { instagram: "ig1", facebook: "fb1", threads: "th1" };
 
 function video(over: Partial<YouTubeVideo> = {}): YouTubeVideo {
@@ -84,7 +95,7 @@ function deps(over: Partial<MirrorDeps> & { videos?: YouTubeVideo[]; scheduled?:
     listScheduled: async () => over.scheduled ?? [],
     client: fakeClient(),
     store: memoryStore().store,
-    host: vi.fn(async (_p: string, pathname: string) => `https://abc.public.blob.vercel-storage.com/${pathname}`),
+    host: vi.fn(async (_p: string, pathname: string) => `https://pub-test.r2.dev/${pathname}`),
     checkUrl: vi.fn(async () => null),
     channelIds: CHANNELS,
     now: () => NOW,
@@ -144,7 +155,7 @@ describe("mirrorVideo (after an upload)", () => {
     const out = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, d);
     expect(out.plan.errors).toEqual([]);
     expect(d.host).toHaveBeenCalledWith("/tmp/short.mp4", "social/short0000001.mp4");
-    expect(d.checkUrl).toHaveBeenCalledWith("https://abc.public.blob.vercel-storage.com/social/short0000001.mp4", "video");
+    expect(d.checkUrl).toHaveBeenCalledWith("https://pub-test.r2.dev/social/short0000001.mp4", "video");
     expect(out.sent).toBe(true);
     expect(out.results.map((r) => `${r.channel}:${r.ok}`)).toEqual(["instagram:true", "facebook:true", "threads:true"]);
     expect(Object.keys(mem.get().videos.short0000001.channels)).toEqual(["instagram", "facebook", "threads"]);
@@ -167,12 +178,13 @@ describe("mirrorVideo (after an upload)", () => {
     expect((d.client as unknown as ReturnType<typeof fakeClient>).createPost).not.toHaveBeenCalled();
   });
 
-  it("plans only without a Buffer key, and stops without a Blob token", async () => {
+  it("plans only without a Buffer key, and stops without the R2 keys", async () => {
     const noKey = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ client: null }));
     expect(noKey.sent).toBe(false);
     expect(noKey.plan.errors).toEqual([]);
-    const noBlob = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ host: null }));
-    expect(noBlob.plan.errors.join()).toMatch(/BLOB_READ_WRITE_TOKEN/);
+    const noR2 = await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaPath: "/tmp/short.mp4" }, deps({ host: null }));
+    expect(noR2.plan.errors.join()).toMatch(/R2_ACCOUNT_ID/);
+    expect(noR2.plan.errors.join()).not.toMatch(/BLOB/);
   });
 
   it("keeps going when one channel fails, and records the others", async () => {
@@ -203,8 +215,8 @@ describe("mirrorVideo (after an upload)", () => {
     const social = { hook: "There's no ground on Jupiter.", question: "Would you go in?" };
     const out = await mirrorVideo({ videoId: "long0000002", thumbPath: "/tmp/thumb.jpg", trailerPath: "/tmp/trailer.mp4", social }, d);
     expect(out.plan.errors).toEqual([]);
-    const thumb = "https://abc.public.blob.vercel-storage.com/social/long0000002-thumb.jpg";
-    const trailer = "https://abc.public.blob.vercel-storage.com/social/long0000002-trailer.mp4";
+    const thumb = "https://pub-test.r2.dev/social/long0000002-thumb.jpg";
+    const trailer = "https://pub-test.r2.dev/social/long0000002-trailer.mp4";
     expect(out.hosted).toEqual([thumb, trailer]);
     expect(d.checkUrl).toHaveBeenCalledWith(trailer, "video");
     expect(d.checkUrl).toHaveBeenCalledWith(thumb, "image");
@@ -366,8 +378,8 @@ describe("runBufferCheck auto-mirrors uploads made outside youtube:package", () 
   });
 });
 
-describe("Blob clean-up", () => {
-  const BLOB = "https://abc.public.blob.vercel-storage.com/social/short0000001.mp4";
+describe("Media clean-up (R2)", () => {
+  const BLOB = "https://pub-test.r2.dev/social/short0000001.mp4";
   // After the Short (5 Oct 10:30) and the long (4 Oct 17:00) are due; within the 14 days.
   const AFTER = new Date("2026-10-06T09:00:00Z");
 
@@ -441,8 +453,8 @@ describe("Blob clean-up", () => {
     const mem = memoryStore();
     const plan = { videoId: "xQlV9G9lqLI", kind: "long" as const, title: "T", timing: { mode: "customScheduled" as const, dueAt: "2026-10-05T10:30:00.000Z" } };
     for (const [c, id] of [["instagram", "p1"], ["facebook", "p2"], ["threads", "p3"]] as const) await mem.store.record(plan, c, id);
-    const thumb = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-thumb-a1.jpg";
-    const trailer = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-trailer-b2.mp4";
+    const thumb = "https://pub-test.r2.dev/social/xQlV9G9lqLI-thumb-a1.jpg";
+    const trailer = "https://pub-test.r2.dev/social/xQlV9G9lqLI-trailer-b2.mp4";
     await mem.store.setMedia("xQlV9G9lqLI", [thumb]);
     const listMedia = vi.fn(async () => [
       { url: thumb, pathname: "social/xQlV9G9lqLI-thumb-a1.jpg", uploadedAt: new Date("2026-09-20T09:00:00Z") },
@@ -496,12 +508,12 @@ describe("Blob clean-up", () => {
     const mem = memoryStore();
     const plan = { videoId: "xQlV9G9lqLI", kind: "short" as const, title: "T", timing: { mode: "customScheduled" as const, dueAt: "2026-10-05T10:30:00.000Z" } };
     for (const [c, id] of [["instagram", "p1"], ["facebook", "p2"], ["threads", "p3"]] as const) await mem.store.record(plan, c, id);
-    const adopted = "https://abc.public.blob.vercel-storage.com/social/xQlV9G9lqLI-a1B2c3.mp4";
+    const adopted = "https://pub-test.r2.dev/social/xQlV9G9lqLI-a1B2c3.mp4";
     const deleteMedia = vi.fn(async () => undefined);
     const listMedia = vi.fn(async () => [
       { url: adopted, pathname: "social/xQlV9G9lqLI-a1B2c3.mp4", uploadedAt: new Date("2026-09-28T09:00:00Z") },
-      { url: "https://abc.public.blob.vercel-storage.com/social/gone0000001-x.mp4", pathname: "social/gone0000001-x.mp4", uploadedAt: new Date("2026-09-20T09:00:00Z") },
-      { url: "https://abc.public.blob.vercel-storage.com/social/newx0000001-y.mp4", pathname: "social/newx0000001-y.mp4", uploadedAt: new Date("2026-10-01T08:30:00Z") },
+      { url: "https://pub-test.r2.dev/social/gone0000001-x.mp4", pathname: "social/gone0000001-x.mp4", uploadedAt: new Date("2026-09-20T09:00:00Z") },
+      { url: "https://pub-test.r2.dev/social/newx0000001-y.mp4", pathname: "social/newx0000001-y.mp4", uploadedAt: new Date("2026-10-01T08:30:00Z") },
     ]);
     const out = await runBufferCheck(
       deps({ store: mem.store, client: fakeClient(), deleteMedia, listMedia, videos: [video({ id: "xQlV9G9lqLI" })] }),
@@ -549,7 +561,7 @@ describe("Buffer's 10-post queue and dead media (21 Oct 2026)", () => {
   });
 
   it("takes down waiting posts whose media no longer loads and re-creates them on the current host", async () => {
-    const OLD = "https://abc.public.blob.vercel-storage.com/social/short0000001-x.mp4";
+    const OLD = "https://pub-test.r2.dev/social/short0000001-x.mp4";
     const mem = memoryStore();
     await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaUrl: OLD }, deps({ store: mem.store }));
     await mem.store.setMedia("short0000001", [OLD]);
@@ -565,7 +577,7 @@ describe("Buffer's 10-post queue and dead media (21 Oct 2026)", () => {
   });
 
   it("leaves a broken post in place when its local file isn't known, and does nothing when dry", async () => {
-    const OLD = "https://abc.public.blob.vercel-storage.com/social/short0000001-x.mp4";
+    const OLD = "https://pub-test.r2.dev/social/short0000001-x.mp4";
     const mem = memoryStore();
     await mirrorVideo({ videoId: "short0000001", longId: "long0000001", mediaUrl: OLD }, deps({ store: mem.store }));
     await mem.store.setMedia("short0000001", [OLD]);

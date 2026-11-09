@@ -25,30 +25,11 @@ from pathlib import Path
 
 TARGET = 4
 REPO = Path(__file__).resolve().parent.parent
-NAMES = {"owb": "Orbit With Ben", "hos": "History of Science"}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
+import channel_films  # noqa: E402
 
-
-def owb_films(repo: Path = REPO) -> list[dict]:
-    out = []
-    for p in sorted((repo / "02_Video-Projects").glob("[0-9][0-9][0-9]_*/status.json")):
-        d = json.loads(p.read_text())
-        st = d.get("stages") or {}
-        if not d.get("air"):
-            continue
-        out.append(dict(id=str(d.get("film") or p.parent.name[:3]), title=d.get("title", ""), air=d["air"][:10],
-                        complete=(st.get("edit") or {}).get("state") == "done"))
-    return out
-
-
-def hos_films(hos: Path) -> list[dict]:
-    d = json.loads((hos / "00_Brand/Channel-Setup/PIPELINE.json").read_text())
-    out = []
-    for f in d.get("films", []):
-        if not f.get("air"):
-            continue
-        out.append(dict(id=str(f["id"]), title=f.get("title", ""), air=f["air"][:10],
-                        complete=(f.get("stages", {}).get("edit") or {}).get("status") == "done"))
-    return out
+NAMES = {c["slug"]: c["name"] for c in channels.all_channels()}
 
 
 def months_from(today: dt.date, n: int) -> list[str]:
@@ -73,9 +54,20 @@ def tally(films: list[dict], months: list[str]) -> dict:
     return res
 
 
+def films_for(slug: str, root: Path | None = None) -> list[dict]:
+    """Aired-dated films of any channel, in the shape tally() reads (via channel_films)."""
+    return [dict(id=f["id"], title=f["title"], air=f["air"], complete=f["stages"].get("edit") == "done")
+            for f in channel_films.films(slug, root) if f["air"]]
+
+
 def priority(owb: list[dict], hos: list[dict], today: dt.date, n: int = 3) -> dict:
+    """The two-channel form the tests and older callers use."""
+    return priority_all({"owb": owb, "hos": hos}, today, n)
+
+
+def priority_all(by_channel: dict, today: dt.date, n: int = 3) -> dict:
     months = months_from(today, n)
-    t = {"owb": tally(owb, months), "hos": tally(hos, months)}
+    t = {ch: tally(fs, months) for ch, fs in by_channel.items()}
 
     def key(ch: str, films: list[dict]):
         first = next((i for i, mo in enumerate(months) if t[ch][mo]["short"] > 0), len(months))
@@ -83,34 +75,34 @@ def priority(owb: list[dict], hos: list[dict], today: dt.date, n: int = 3) -> di
         nxt = min((f["air"] for f in films if not f["complete"] and f["air"] >= today.isoformat()), default="9999")
         return (first, -short, nxt)
 
-    k = {"owb": key("owb", owb), "hos": key("hos", hos)}
+    k = {ch: key(ch, fs) for ch, fs in by_channel.items()}
     first = min(k, key=lambda c: k[c])
-    other = "hos" if first == "owb" else "owb"
+    other = min((c for c in k if c != first), key=lambda c: k[c], default=first)
     why_month = months[k[first][0]] if k[first][0] < len(months) else None
     if why_month:
         a, b = t[first][why_month], t[other][why_month]
         why = (f"{NAMES[first]} has {a['complete']} of {TARGET} complete for {why_month}"
                f" ({a['planned']} planned); {NAMES[other]} has {b['complete']} of {TARGET} ({b['planned']} planned).")
     else:
-        why = f"Both channels have {TARGET} complete for every month checked."
+        why = f"{'Both channels have' if len(k) == 2 else 'Every channel has'} {TARGET} complete for every month checked."
     return dict(today=today.isoformat(), target=TARGET, months=months, first=first, first_name=NAMES[first],
                 why=why, channels=t)
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--hos", type=Path, required=True)
+    ap.add_argument("--hos", type=Path, default=None, help="History of Science checkout (default: channels.repo_path)")
     ap.add_argument("--today", default=None)
     ap.add_argument("--months", type=int, default=3)
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     today = dt.date.fromisoformat(a.today) if a.today else dt.date.today()
-    res = priority(owb_films(), hos_films(a.hos), today, a.months)
+    res = priority_all({c: films_for(c, a.hos if c == "hos" else None) for c in channels.slugs()}, today, a.months)
     if a.json:
         print(json.dumps(res, indent=2))
         return 0
     print(f"First: {res['first_name']}. {res['why']}")
-    for ch in ("owb", "hos"):
+    for ch in channels.slugs():
         row = "  ".join(f"{mo}: {v['complete']}/{TARGET} complete, {v['planned']} planned [{' '.join(v['films'])}]"
                         for mo, v in res["channels"][ch].items())
         print(f"  {NAMES[ch]:<20} {row}")

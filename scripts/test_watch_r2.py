@@ -75,6 +75,27 @@ class AutoUpload(unittest.TestCase):
         self.assertTrue(ok)
         self.assertEqual(json.loads(self.reg.read_text())["files"], {"HOS UAT/007/hos_007_master_v02_PHONE.mp4": "hos-007-v02"})
 
+    def test_no_r2_means_no_upload_even_with_the_old_blob_key(self):
+        # 29 Oct 2026: the Vercel Blob fallback is gone, so WATCH_UPLOAD_KEY alone never starts an upload.
+        with mock.patch.object(ks, "WATCH_LOCAL_REGISTER", self.reg), mock.patch.object(ks, "r2_ready", return_value=False), \
+                mock.patch.dict(os.environ, {"WATCH_UPLOAD_KEY": "old"}, clear=True), mock.patch("subprocess.run") as run:
+            self.assertFalse(ks.auto_upload("hos-007-v02", self.film, "HOS UAT/007/hos_007_master_v02_PHONE.mp4"))
+        run.assert_not_called()
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_watch_upload_fails_loudly_without_r2(self):
+        script = pathlib.Path(__file__).resolve().parent / "watch_upload.mjs"
+        home = self.tmp / "home"
+        home.mkdir()
+        r = subprocess.run(["node", str(script), "hos-007-v02", str(self.film)], capture_output=True, text=True,
+                           env={"PATH": os.environ.get("PATH", ""), "HOME": str(home), "ORBIT_REPO": str(self.tmp)},
+                           cwd=str(self.tmp))
+        if "no R2 keys" not in r.stderr and (script.parent.parent / "07_Content-Ops" / ".env").exists():
+            self.skipTest("this checkout has a real 07_Content-Ops/.env with R2 keys")
+        self.assertEqual(r.returncode, 2)
+        self.assertIn("no R2 keys", r.stderr)
+        self.assertIn("no Vercel Blob fallback", r.stderr)
+
     def test_a_failed_upload_is_not_retried_for_six_hours(self):
         self.assertEqual(self.run_upload(1), (False, 1))
         self.assertEqual(self.run_upload(0), (False, 0))   # backing off: no second upload

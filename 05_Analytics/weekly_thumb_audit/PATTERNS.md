@@ -1,19 +1,16 @@
-# Weekly thumbnail pattern trials
+# Weekly thumbnail pattern register
 
-## HOS — 28 October 2026, J1107 (worker checkpoint)
+Started 28 October 2026, J1106. Evidence: [OWB competitor study](OWB/2026-10-28_COMPETITORS.md), [HOS 28 Oct audit](HOS/2026-10-28.md), [HOS 9 Nov audit](HOS/2026-11-09.md). Hypotheses only; no Chief rule changes.
 
-No trial was started in this checkpoint. Reference evidence: HOS PR371, `00_Brand/Channel-Setup/audits/WEEKLY_THUMB_2026-10-28/competitors/FINDINGS.md`. The five-channel sample has 122 coded thumbnails; six search-neighbour channels now add 79 coded images. Views/day is a screening proxy, not CTR or proof of a thumbnail effect.
+| Pattern | Proposed application | Test / result | Wins | Losses | State |
+|---|---|---|---:|---:|---|
+| Whole subject with one unmistakable scale reference | OWB Last Star and Andromeda B concepts | Draft Bs built; not armed | 0 | 0 | Hypothesis; extension complete, panel pending |
+| Clear environmental composition rather than an isolated ambiguous glow | OWB Distinguish compilation from Last Star | Draft Bs built; not armed | 0 | 0 | Hypothesis; check film promise before design |
+| Large restrained text adding one story beat, kept off the subject | OWB proposed Bs (`T003`, `T011`, `T013`, `T019`) + HOS 3-word complement Bs (`T001`, `T009`, `T023`) | `T001` (HOS 003 `INSIDE HER HAND`) ended 28 Oct inconclusive draw (41 impr); `T009` (HOS 001 `INVISIBLE LIFE?`) `Results ready` 9 Nov (44 impr); `T023` (HOS 002 `THE MISSING ELEMENT`, armed 29 Oct) running, 28d CTR `3.44% -> 5.28%` | 0 | 0 | In flight (`T023` positive directional lift on 246 28d impr; awaiting Studio winner verdict ~12 Nov) |
+| Mechanism / physical-experiment specificity in title (one variable at a time, thumb fixed) | HOS `004` (`Why Did Particles Bounce Back Off Gold Foil?`) & `003` (`X-rays: The Accident That Revealed Our Bones`) per Chief `J1126` | Approved by Chief in `J1126` (`DECISION.md`); ready to arm on `GHZDsiH7L7A` and `frP_YrNShsU` now that prior tests finished | 0 | 0 | Ready to arm (one variable per test) |
 
-| Candidate pattern | Evidence and limitation | HOS trial | Wins / losses | Next step |
-|---|---|---|---|---|
-| One concrete physical puzzle, with words complementing the title | Several fast SciShow examples and Veritasium history examples; concrete subjects also occur in slow group | Not started | 0 / 0 | Use existing Chief-approved B pool first; J0777 holds further builds |
-| Shorter/question titles | Mixed: SciShow long questions 6/10 in both tails; faster titles longer. Big Think Short questions 5/10 fast vs 6/10 slow, Kings and Generals 6/10 vs 2/10 | Not started | 0 / 0 | Do not adopt as a general performance rule |
-| Repeated branded type/layout | Visible in both fast and slow Big Think and Kings and Generals samples | Not started | 0 / 0 | Preserve HOS house identity; test the story idea within it |
+Only actual ledger results count. Two wins justify a proposal to Chief, not an automatic rules edit; two losses retire the pattern. Public competitor views per day are not thumbnail test results. T001, T012, T014 and T015 were inconclusive (`draw`) and count as neither wins nor losses.
 
-A competitor observation is not a trial win. Update results only from the corresponding Studio ledger entry. Two wins/losses require two decided HOS trials, not two competitor examples. Chief owns any resulting change to the rules.
+28 Oct follow-up: 206 search-neighbour thumbs added. Repeated layout treatments occur in both fast and slow groups; no universal colour/text/face effect established. Draft applications: RED DWARFS WIN, STARS MISS STARS, SATURN TO STARLIGHT. No test result or win/loss count has changed.
 
-## Neighbour continuation
-
-Crash Course fast longs are concentrated in recent US government topics; clear large lettering occurs in both tails. TED-Ed direct viewer problems occur in the fast tail but also the slow tail. Human Progress history-scene Shorts lead interview clips in this small sample, with strong topic confounding. Candidate scene-led hypothesis: untried, 0 wins / 0 losses. Four neighbour long channels have identical fast/slow samples, so they establish no between-group pattern. See HOS `competitors/FINDINGS.md`.
-
-Existing Periodic Table historical paired test T015 is inconclusive (no watch-time shares). It contributes no pattern win. Atom T014 is still running and jointly varies title/thumbnail; do not attribute an eventual outcome to one variable.
+9 Nov HOS update (`J2397`): `T001` (`frP_YrNShsU` X-rays `INSIDE HER HAND`) recorded as `done` (`draw`, inconclusive on 41 lifetime impressions). `T009` (`_C92tIJCk8A` Germs `INVISIBLE LIFE?`) reached `Results ready` in Studio after its 14-day run. `T023` (`AL_-qlWko_g` Periodic Table `THE MISSING ELEMENT` v02, armed 29 Oct by `J1129`) is running and lifted 28-day CTR from `3.44%` to `5.28%` (`+1.84 pp`). Respecting `J0777` and `J1126`, no new HOS long thumbnail Bs are built; next queued tests are the `J1126`-approved title-only Bs on `GHZDsiH7L7A` (004 Atom) and `frP_YrNShsU` (003 X-rays) plus the existing approved `001` pool after `T009` modal readback.

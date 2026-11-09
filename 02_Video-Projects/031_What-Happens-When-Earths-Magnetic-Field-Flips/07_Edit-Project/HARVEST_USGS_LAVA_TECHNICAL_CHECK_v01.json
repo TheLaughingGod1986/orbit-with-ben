@@ -1,0 +1,50 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "asset_id": "commons_usgs_fissure20_overflight",
+  "original_sha256": "7b4e5b15413f4468b1a71cc5321e1faefd78810c661952b17a8b7ed940795dc7",
+  "plate": {
+    "file": "plate_031_r06_lava_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-lava-v01/plate_031_r06_lava_v01.mp4",
+    "sha256": "131d30b6d0f3397076f61b757e1b383039ec1a917cfa77acbdaa7250d7d045d6",
+    "bytes": 17555163,
+    "film_start_s": 46.64,
+    "film_end_s": 53.32,
+    "source_interval_s": [
+      6.0,
+      12.68
+    ],
+    "frames": 167,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      6,
+      0,
+      1908,
+      900
+    ],
+    "scale": 1.2,
+    "credit": "USGS",
+    "fact_card": "code_graphic_031_r06_fact_v01",
+    "fact_card_sha256": "aba986c5eb692f377580df14e24e35855665ad2272e23ebb240d9a8ef2c16eab",
+    "fact_delay_s": 4.2,
+    "no_loop": true,
+    "no_interpolation": true,
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "contact_sheet_sha256": "8fa1610b54b19eb8f85a4a3d646d7859f93b5eb549e1b0988c59260fe1ced2c0",
+  "motion_perception": false,
+  "audio_perception": false,
+  "status": "technical_checks_only_not_film_PASS",
+  "component_polish": {
+    "verdict": "PASS",
+    "failed": 0,
+    "warnings": 0,
+    "report_sha256": "0e747edbb43c15849f1d080d6b33a2b6beac82504e4715dc1cd9ffc20821f83e",
+    "report_path": "/Users/benjaminoats/_desk/J2141-lava-v01/polish_r06.json",
+    "note": "One-row component check. Not a film PASS."
+  }
+}

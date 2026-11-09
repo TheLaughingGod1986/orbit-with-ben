@@ -3,6 +3,10 @@
 // as the classic board (OWB → issue #264, HOS → #180).
 (function () {
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
+  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
+  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
+  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+    .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const API = "/api/checks";
@@ -654,11 +658,25 @@
     } catch (e) {}
   }
 
+  // The studio app's Review button links here as /board#v=<video key>: bring that card into view once and mark it.
+  let focusDone = false;
+  function focusFromHash() {
+    const m = location.hash.match(/(?:^#|&)v=([^&]+)/);
+    if (focusDone || !m || !document.querySelector) return;
+    const key = decodeURIComponent(m[1]);
+    const card = [...document.querySelectorAll("article.card")].find(c => c.dataset.key === key);
+    if (!card) return;
+    focusDone = true;
+    card.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+    card.style.outline = "2px solid #3b82f6";
+    card.style.outlineOffset = "2px";
+  }
+
   async function pollData() {
     try {
       let url = DATA + "?t=" + Date.now(), sha = "";
       try {
-        const g = await fetch(DATA_REF, { cache: "no-cache" });
+        const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return;
@@ -682,6 +700,7 @@
         board = Object.assign({}, j, { tracker: board.tracker });
       }
       render();
+      focusFromHash();
     } catch (e) {
       document.getElementById("asof").textContent = "Could not load board data";
     }

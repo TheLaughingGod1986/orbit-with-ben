@@ -343,13 +343,20 @@ function createInput(opts: {
   if (reel) {
     const coverMs = social?.coverMs ?? DEFAULT_COVER_MS;
     const cover = channel === "instagram" || channel === "tiktok";
-    input.assets = [{ video: { url: reel, ...(cover ? { metadata: { thumbnailOffset: coverMs } } : {}) } }];
+    const reelTitle = video.title.trim() || social?.hook?.trim();
+    const videoMeta = cover
+      ? { thumbnailOffset: coverMs }
+      : channel === "facebook" && reelTitle
+        ? { title: reelTitle }
+        : undefined;
+    input.assets = [{ video: { url: reel, ...(videoMeta ? { metadata: videoMeta } : {}) } }];
     if (channel === "instagram") {
       input.metadata = { instagram: { type: "reel", shouldShareToFeed: true, isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "tiktok") {
       input.metadata = { tiktok: { isAiGenerated: video.containsSyntheticMedia } };
     } else if (channel === "facebook") {
       // No first comment: Buffer's free plan rejects it. The film link is in the text.
+      // FacebookPostMetadataInput has no title field; the Reel title goes on assets[0].video.metadata.title.
       input.metadata = { facebook: { type: "reel" } };
     }
     return input;
