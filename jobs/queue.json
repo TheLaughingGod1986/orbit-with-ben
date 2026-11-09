@@ -208786,10 +208786,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T01:50Z",
+      "eta": "2026-11-09T03:50Z",
       "created_by": "claude",
       "created_at": "2026-11-08T23:42Z",
       "result": "",
@@ -208798,11 +208798,24 @@
           "at": "2026-11-08T23:42Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T01:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "024 muons Short v04: Ben OK'd 8 Nov 23:41 — upload Private for Sat 21 Nov 11:30 (or first free Orbit Short slot)",
       "kind": "studio",
-      "plain": "Upload and schedule the muons Short Ben just passed."
+      "plain": "Upload and schedule the muons Short Ben just passed.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T01:50Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2432",
