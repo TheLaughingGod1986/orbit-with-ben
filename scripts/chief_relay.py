@@ -52,7 +52,7 @@ Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.j
 branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,claude,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "claude,chief,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -170,8 +170,9 @@ def refresh_probes(at):
 HOS = channels.repo_path("hos", HOME)
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
-# not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Cursor stays a worker.
-DEFAULT_CHAIN = "chief,claude,codex,gemini"
+# not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Ben, 9 Nov 2026 (Claude now the
+# bigger plan): Claude -> Grok -> Codex -> Gemini. Cursor stays a worker.
+DEFAULT_CHAIN = "claude,chief,codex,gemini"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
@@ -636,7 +637,7 @@ WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PA
 or the Never list. Park protected calls with jobs.py block <id> --agent {agent} --reason "parked for Chief: ..." --git.
 A model or task fallback does not grant Chief authority. Real money and Ben's watch of a finished cut stay with Ben; everything
 else you can't decide goes to the Chief, never to Ben (AGENTS.md, 5 Nov 2026)."""
-CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's 26 Oct 2026 order: Grok -> Claude -> Codex -> Gemini.
+CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's order (26 Oct 2026, reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini.
 You may make the ordinary Chief decisions (reviews, PASS, merges and final OKs) within the existing channel rules.
 Do not park a decision merely because Grok or Claude is unavailable. Check chief_relay.py status again before a
 protected call; if a higher-priority Chief has returned, hand the decision back. Use your own agent id, never chief.

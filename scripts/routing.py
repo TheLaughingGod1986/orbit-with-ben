@@ -136,8 +136,8 @@ CHAINS = {
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
     "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL],
                  "OWB Studio CDP 9223, HOS Flow 9222; never Replace, never delete"),
-    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("chief", "grok"), ("claude", "claude-opus-5-5"), ASTRA, ARGON],
-                 "only the elected Chief may claim; Grok -> Claude -> Codex -> Gemini; money and the irreversible stay with Ben"),
+    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ("chief", "grok"), ASTRA, ARGON],
+                 "only the elected Chief may claim; Claude -> Grok -> Codex -> Gemini (Ben, 9 Nov 2026); money and the irreversible stay with Ben"),
 }
 
 # Older view kept for callers: kind -> (job type, primary, first fallback or None, how).

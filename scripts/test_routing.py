@@ -101,7 +101,7 @@ class Routing(unittest.TestCase):
             jobs.do_reroute(c, "relay", "cursor", "", "", T0)
 
     def test_chief_kind_follows_the_elected_succession_chain(self):
-        self.assertEqual([a for a, _ in routing.chain("chief")], ["chief", "claude", "codex", "gemini"])
+        self.assertEqual([a for a, _ in routing.chain("chief")], ["claude", "chief", "codex", "gemini"])
 
     def test_jobs_add_carries_kind_and_model_and_refuses_invented_ones(self):
         d = {"next_id": 1, "jobs": []}

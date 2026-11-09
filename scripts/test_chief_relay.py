@@ -785,7 +785,7 @@ class Relay(unittest.TestCase):
 
     def test_the_default_chain_puts_claude_second(self):
         del os.environ["CHIEF_CHAIN"]
-        self.assertEqual(cr.chain(), ["chief", "claude", "codex", "gemini"])
+        self.assertEqual(cr.chain(), ["claude", "chief", "codex", "gemini"])
 
     def test_claude_is_chief_after_grok_while_its_heartbeat_is_fresh_and_hands_on_and_back(self):
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"

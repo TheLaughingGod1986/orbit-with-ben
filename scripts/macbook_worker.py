@@ -261,6 +261,24 @@ def pick_agent(job: dict, have: list) -> tuple:
     return (have[0], "") if have else ("", "")
 
 
+# Commands an unattended Claude run may use without a prompt (Ben, 9 Nov 2026: "Yes please"). J2427 was released about 40
+# times on 9 Nov because `python3 -m unittest` and `gh pr create` asked for approval with nobody there. Tests, the repo's
+# own checks and opening a PR only; merges stay with the Chief (no `gh pr merge` here).
+CLAUDE_ALLOWED_TOOLS = (
+    "Bash(python3 -m unittest:*)",
+    "Bash(python3 scripts/test_kanban_page.py:*)",
+    "Bash(python3 scripts/test_kanban_snapshot.py:*)",
+    "Bash(node scripts/test_studio_app.cjs:*)",
+    "Bash(python3 scripts/core_sync.py check:*)",
+    "Bash(python3 scripts/sync_rules.py:*)",
+    "Bash(git push:*)",
+    "Bash(gh pr create:*)",
+    "Bash(gh pr view:*)",
+    "Bash(gh pr checks:*)",
+    "Bash(gh pr list:*)",
+)
+
+
 def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     """The agent CLI's one-shot form, as the Mini runs it (scripts/chief_relay.py cli_spec)."""
     b = find_bin(agent) if agent in BINS else None
@@ -273,7 +291,8 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     if agent == "claude":
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
         # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
-        return [b, "-p", prompt, "--permission-mode", "acceptEdits", *dirs]
+        return [b, "-p", prompt, "--permission-mode", "acceptEdits", "--allowedTools", ",".join(CLAUDE_ALLOWED_TOOLS),
+                *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)
