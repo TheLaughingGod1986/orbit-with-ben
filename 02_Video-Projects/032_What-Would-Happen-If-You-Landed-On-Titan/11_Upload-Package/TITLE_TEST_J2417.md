@@ -31,6 +31,10 @@ Notes:
 - Candidate 3 dropped: the 350 is a derived sum and the shape is weaker.
 - No fear framing (the "spark" fear is answered in the film, not used in the title), no hedge, no hashtag.
 
-## After
+## After (thumbnails built 2026-11-09T01:24Z, J2430; ready for upload)
 
-**Not applied yet.** The film is not uploaded. The uploading job should use arm A as the upload title and set A/B as the Test & Compare (title + thumbnail) once the thumbnails exist. MacBook workers may not change anything on YouTube.
+- **Built thumbnails (`08_Thumbnail/j2417_v01`, `abc_*` / `J2144_v01` untouched):**
+  - **Arm A (upload primary + Slot 1):** `032_j2417_A_water_deep_below_v01.jpg` (`SHA-256: e8c86bd181fb7196ab62bf95ec19b9ce6f1096f27e06ac13fd2ff97d640eb534`, **WATER DEEP BELOW**, Titan cut-away sphere with orange haze shell and bright blue subsurface water layer centred, no Orbit) — `thumb_preview.py --score`: `PASS  032_j2417_A_water_deep_below_v01.jpg  saturation=143.5  near_black=4%`
+  - **Arm B (Slot 2):** `032_j2417_B_72_minutes_v01.jpg` (`SHA-256: 68d8d57187bee9284c0b276f817cf90256bece8e62c829f5ea6d3ddb18b55390`, **72 MINUTES**, real Huygens surface frame `PIA07232` with rounded ice pebbles on orange ground graded hot, full bleed, no Orbit) — `thumb_preview.py --score`: `PASS  032_j2417_B_72_minutes_v01.jpg  saturation=208.3  near_black=2%`
+  - **168×94 preview sheet:** `032_j2417_preview_sheet_v01.jpg` (`SHA-256: 67905e722808a94d307339566cf9398485a16800db03c292ca6d4bace656a902`)
+- **Upload configuration (`metadata_DRAFT_v01.json`):** Updated `title_options` to lead with Arm A (`Titan Hides an Ocean Under Its Ice (And Seas of Natural Gas on Top)`) and Arm B (`We Landed on Titan Once (And It's Still Our Most Distant Landing)`), and added `j2417_test` pointing to `08_Thumbnail/j2417_v01/032_j2417_A_water_deep_below_v01.jpg` (Arm A upload primary) and `032_j2417_B_72_minutes_v01.jpg` (Arm B Test & Compare challenger).
