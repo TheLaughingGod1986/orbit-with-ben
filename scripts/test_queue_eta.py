@@ -45,9 +45,9 @@ class Forecast(unittest.TestCase):
         d = queue(("mini", "running", {}), ("mini", "next", {}))
         j = d["jobs"][0]
         j.update(status="claimed", by="codex", since="2026-11-05T09:30Z", eta="2026-11-05T11:30Z")
-        lanes = {a["agent"]: a for a in run(d, mini={"chain": [{"agent": "codex", "up": True}]})["agents"]}
+        lanes = {a["agent"]: a for a in run(d, mini={"chain": [{"agent": "codex", "up": True}, {"agent": "cursor", "up": False, "why": "out"}]})["agents"]}
         self.assertEqual((lanes["codex"]["now"], lanes["codex"]["freeAt"]), ("J0001", "2026-11-05T10:15Z"))
-        self.assertEqual(run(d, mini={"chain": [{"agent": "codex", "up": True}]})["jobs"]["J0002"]["startAt"],
+        self.assertEqual(run(d, mini={"chain": [{"agent": "codex", "up": True}, {"agent": "cursor", "up": False, "why": "out"}]})["jobs"]["J0002"]["startAt"],
                          "2026-11-05T10:15Z")
 
     def test_down_agents_say_why_and_jobs_for_them_say_who_they_wait_for(self):
@@ -57,6 +57,15 @@ class Forecast(unittest.TestCase):
         self.assertFalse(lanes["cursor"]["up"])
         self.assertIn("out of usage", lanes["cursor"]["why"])
         self.assertIn("waiting for cursor", s["noAgent"]["J0001"])
+
+    def test_a_worker_outside_the_chief_chain_is_up_unless_flagged(self):
+        d = queue(("mini", "x", {"for_agent": "cursor"}))
+        mini = {"chain": [{"agent": "codex", "up": True}, {"agent": "gemini", "up": True}]}
+        lanes = {a["agent"]: a for a in run(d, mini=mini)["agents"]}
+        self.assertTrue(lanes["cursor"]["up"])
+        with patch.object(q, "_flags", return_value={"cursor": {"out_until": "2026-11-06T00:00:00Z", "reason": "weekly"}}):
+            lanes = {a["agent"]: a for a in q.section(d, mini, BOOK, AT)["agents"]}
+        self.assertFalse(lanes["cursor"]["up"])
 
     def test_macbook_and_cloud_lanes(self):
         d = queue(("macbook", "book job", {}), ("cloud", "cloud job", {}))
@@ -78,6 +87,18 @@ class Forecast(unittest.TestCase):
         self.assertFalse(lanes["claude"]["up"])
         self.assertEqual(s["jobs"]["J0001"]["agent"], "codex")  # Gemini is busy, Codex is free
         self.assertNotIn("J0002", s["jobs"])
+
+    def test_two_macbook_slots_take_two_jobs_at_once(self):
+        import board_publish
+        d = queue(("macbook", "a", {}), ("macbook", "b", {}), ("macbook", "c", {}))
+        hb = board_publish.merge_macbook([{"at": "2026-11-05T09:55:00Z", "slot": 1, "agent": "macbook", "state": "idle"},
+                                          {"at": "2026-11-05T09:56:00Z", "slot": 2, "agent": "macbook-2", "state": "idle"}])
+        f = run(d, book=hb)["jobs"]
+        self.assertEqual({f["J0001"]["agent"], f["J0002"]["agent"]}, {"macbook", "macbook-2"})
+        self.assertEqual((f["J0001"]["startAt"], f["J0002"]["startAt"]), ("2026-11-05T10:00Z", "2026-11-05T10:00Z"))
+        lanes = {a["agent"]: a for a in run(d)["agents"]}  # an old single heartbeat: slot 2 not reporting yet
+        self.assertTrue(lanes["macbook"]["up"])
+        self.assertIn("slot 2", lanes["macbook-2"]["why"])
 
     def test_pace_comes_from_jobs_finished_in_the_last_day(self):
         d = {"jobs": [{"status": "done", "history": [{"at": f"2026-11-05T0{i}:00Z", "by": "gemini", "what": "done: ok"}]}

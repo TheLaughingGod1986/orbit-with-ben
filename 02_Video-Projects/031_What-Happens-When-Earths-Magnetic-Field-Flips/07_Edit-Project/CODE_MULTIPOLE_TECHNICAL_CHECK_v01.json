@@ -1,0 +1,77 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "source_rows": [
+    15,
+    18
+  ],
+  "words_flag": "Labels are the locked spoken words. Temporary poles are schematic and name no city. Do not stack the dipole_strength bar on R40.",
+  "checks": [
+    {
+      "id": "code_graphic_031_r40_multipole_v01",
+      "sha256": "a96dab4adf5bbf1d9f2a01739ddf099700503459314aaf51a5ffd8eb5a2d3eb8",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 12.4,
+      "frames": 310,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "First, Earth's magnetic",
+      "start_s": 405.52,
+      "end_s": 417.92,
+      "static_sample_times_s": [
+        1.8,
+        2.6,
+        5.2,
+        8.2,
+        11.6
+      ],
+      "mean_luma": [
+        54.9,
+        55.5,
+        55.5,
+        55.2,
+        55.7
+      ],
+      "samples_inspected": "1.80 s is the full dipole before the label. 2.60 s shows NEVER VANISHES with N above the disc and S below it. 5.20 s shows MAIN MAGNET on the same full dipole. 8.20 s shows ABOUT A TENTH: a short red-and-white stub remains on the disc and the N/S letters are gone. 11.60 s shows TEMPORARY POLES: four needles sit outside the limb and the stub is still there."
+    },
+    {
+      "id": "code_graphic_031_r47_multipole_tangle_v01",
+      "sha256": "283c0370a296ad8af613cdb10a66bb22ba48bcd0c5c77fd847c890ebda13364d",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 4.72,
+      "frames": 118,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "tangling into several",
+      "start_s": 488.14,
+      "end_s": 492.86,
+      "static_sample_times_s": [
+        1.4,
+        3.4,
+        3.8
+      ],
+      "mean_luma": [
+        55.9,
+        55.3,
+        55.9
+      ],
+      "samples_inspected": "1.40 s shows SEVERAL POLES, five needles outside the limb with ribbons crossing the real Earth. 3.40 s is just before UNEXPECTED PLACES. 3.80 s shows UNEXPECTED PLACES while the ribbons have drifted. No city name. No centre N/S pair."
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-multipole-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "45ef8ccfb888a81e301e79d40129e5c6b1ef64272e0338f1ce80bcc41ccca840"
+}

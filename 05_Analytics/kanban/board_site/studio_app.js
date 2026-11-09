@@ -11,9 +11,11 @@
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
-  const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook" };
+  const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
   let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
+  // Videos lane: smart default once per visit unless Ben taps a chip or the hash names a lane (Ben, 7 Nov 2026).
+  let videosLaneChosen = false, videosLandingApplied = false;
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
   let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
@@ -23,7 +25,16 @@
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
-  const ch = v => v.channel === "HOS" ? "HOS" : "Orbit";
+  // Channels come from board.channels (channels/*/channel.json via board_publish); these two are the fallback for an
+  // older board.json. A third channel shows up here, in the filters and on its tiles with no page change.
+  const DEFAULT_CHANNELS = [{ slug: "owb", label: "OWB", name: "Orbit With Ben", short: "Orbit", home: true },
+                            { slug: "hos", label: "HOS", name: "History of Science", short: "HOS" }];
+  const channelList = () => ((board || {}).channels || []).length ? board.channels : DEFAULT_CHANNELS;
+  const homeChannel = () => channelList().find(c => c.home) || channelList()[0];
+  const chInfo = label => channelList().find(c => c.label === String(label || "").toUpperCase()) || homeChannel();
+  const repoLabel = repo => (channelList().find(c => c.slug === repo) || homeChannel()).label;
+  const chName = label => chInfo(label).name;
+  const ch = v => chInfo(v.channel).short || chInfo(v.channel).label;
   function watchFormat(v) {
     const w=v.watch||{};
     if(['long','short'].includes(w.type)) return w.type;
@@ -47,7 +58,7 @@
   function thumb(v) {
     // YouTube has no thumbnail for a private or scheduled video (404): ask only for public ones.
     const id = isLive(v) && v.youtube.videoId;
-    const fallback = `<span class="tile ${v.channel === "HOS" ? "hos" : "owb"}">${esc(v.number || "")}</span>`;
+    const fallback = `<span class="tile ${esc(chInfo(v.channel).slug)}">${esc(v.number || "")}</span>`;
     return `<div class="thumb">${id ? `<img loading="lazy" alt="" src="https://i.ytimg.com/vi/${esc(id)}/mqdefault.jpg" onerror="this.remove()" onload="if(this.naturalWidth<=120)this.remove()">` : ""}${fallback}</div>`;
   }
 
@@ -94,7 +105,11 @@
   }
   function jobGroups(vs) {
     const groups = new Map();
-    for (const v of vs) { const id = activeJob(v).id || v.key; groups.set(id, (groups.get(id) || []).concat([v])); }
+    for (const v of vs) {
+      const j = activeJob(v);
+      const id = (j && j.id) || v.key;
+      groups.set(id, (groups.get(id) || []).concat([v]));
+    }
     return [...groups.values()];
   }
   const alsoOn = rest => !rest.length ? "" : `<span class="meta">Same job also covers ${rest.length} more: ${esc(rest.map(v =>
@@ -106,8 +121,10 @@
   }
   function jobCard(j) {
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
-    return `<a class="row" href="#agents"><div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
-      <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
+    const working = j && j.status === "claimed";
+    const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
+    return `<a class="row${working ? " is-working" : ""}" href="#agents">${dot}<div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
+      <span class="meta">${esc(j.plain || "Studio job · not one video")}</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
       ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
@@ -117,21 +134,167 @@
     const local=sent[v.checkId], c=local && local.key===v.key ? local : v.type==='long' ? v.check : null;
     return !!c && c.verdict==='change' && c.handled!==true && !!c.version && c.version===v.version;
   }
+  // Passed / Scheduled status in plain words (Ben, 7 Nov 2026). Never invent a publishAt or YouTube id.
+  function listingLine(v) {
+    const L = v.listing || {}, yt = v.youtube || {};
+    if (L.status) return L.status;
+    if (yt.state === "scheduled" && (yt.publishAtLondon || yt.publishAt)) {
+      const raw = String(yt.publishAtLondon || yt.publishAt).replace(/\s*(GMT|BST|UTC)\s*$/i, "").trim();
+      return /London/i.test(raw) ? `Scheduled for ${raw}` : `Scheduled for ${raw} London`;
+    }
+    if (Array.isArray(L.missing) && L.missing.length) return "Needs " + L.missing.join(", ");
+    if (L.complete) return L.destination === "social" ? "Ready to post" : "Ready to upload";
+    return "";
+  }
+  // Scheduled on YouTube with a real publishAt only — never invent a slot (Ben, 7 Nov 2026).
+  const isScheduledNotPublic = v => {
+    const yt = v.youtube || {};
+    return !isLive(v) && yt.state === "scheduled" && !!(yt.publishAt || yt.publishAtLondon);
+  };
+  // Specialist / Chief review — agent-owned QA, never a Ben blocker (Ben, 7 Nov 2026).
+  function isQa(v) {
+    if (v.lane === "ready" && v.readyFor && v.readyFor !== "Ben") return true;
+    return (v.jobs || []).some(j => {
+      if (!LIVE(j)) return false;
+      const kind = String(j.kind || "").toLowerCase();
+      if (kind === "review" || kind === "qa" || kind === "chief") return true;
+      return !kind && /\b(review|KEEP|shot list|Chief QA|frame review)\b/i.test(j.title || "");
+    });
+  }
+  // Waiting on Ben's watch only (same gate as Review / forBen, without the uniqueVideos pass).
+  function needsBenWatch(v) {
+    return !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
+      && !!(v.watch || {}).url;
+  }
+  // Nine exclusive Videos swim lanes. Later stages win. Only UAT is Ben's; everything else is agent-run
+  // (Ben, 7 Nov 2026). UAT OK → Passed; UAT notes/fixes → In progress (pendingChanges / changes).
+  const VIDEO_LANE_ORDER = ["backlog", "todo", "progress", "qa", "uat", "passed", "scheduled", "live", "postlive"];
+  const VIDEO_LANE_CHIPS = [
+    ["backlog", "Backlog"], ["todo", "To do"], ["progress", "In progress"], ["qa", "QA"], ["uat", "UAT"],
+    ["passed", "Passed"], ["scheduled", "Scheduled"], ["live", "Live"], ["postlive", "Post-live"],
+  ];
+  const VIDEO_LANE_COPY = {
+    backlog: { title: "Backlog", blurb: "Planned, not started yet." },
+    todo: { title: "To do", blurb: "In the work mix · waiting for its next step. Agents own this — nothing for Ben." },
+    // Working-now vs waiting: claimed jobs surface first; open/blocked/queued stay in this lane (Ben, 7 Nov 2026).
+    progress: { title: "In progress", blurb: "Working now first (green pulse = a claimed job). Waiting and queued cuts stay below. UAT notes land here too — not a Ben blocker." },
+    qa: { title: "QA", blurb: "Specialist review · not for Ben." },
+    uat: { title: "UAT", blurb: "Ready for your watch. Pass → Passed (ready to schedule). Notes → In progress for the agents." },
+    passed: { title: "Passed", blurb: "You passed it · ready to schedule. Agents finish the listing package and upload handoff." },
+    scheduled: { title: "Scheduled", blurb: "On YouTube · waiting to go public. Agents own the schedule — nothing for Ben." },
+    live: { title: "Live", blurb: "Public." },
+    postlive: { title: "Post-live", blurb: "Public · improvements still open (pins, Related, thumb tests). Agents own these." },
+  };
+  // Same signal Overview uses for the green pulse: a claimed job on this cut (not open/blocked/waiting).
+  const videoHasActiveWork = v => isWorking(v);
+  function partitionProgressVideos(items) {
+    const working = [], waiting = [];
+    for (const v of items || []) {
+      if (videoHasActiveWork(v)) working.push(v);
+      else waiting.push(v);
+    }
+    return { working, waiting };
+  }
+  // Parent film key for progress24h lookup (Shorts share the long's film progress; never invent a %).
+  function videoFilmKey(v) {
+    const key = String((v && v.key) || "");
+    const m = /^([A-Z]+:\d{3})/.exec(key);
+    return m ? m[1] : key;
+  }
+  function videoProgressDelta(v, b) {
+    const p = b && b.progress24h;
+    if (!p) return null;
+    const filmKey = videoFilmKey(v);
+    if (!filmKey) return null;
+    const films = p24MergeFilms(p.films || [], p.moved || []);
+    const f = films.find(x => x.film === filmKey || x.film === v.key
+      || p24InFocus(v.key, new Set([x.film])) || p24InFocus(filmKey, new Set([x.film])));
+    return f ? p24FilmPct(f) : null;
+  }
+  // Hash params after the tab id: #videos&lane=progress&focus=OWB:034
+  function videosHashParams() {
+    const raw = (location.hash || "").replace(/^#/, "");
+    if (!raw || raw === "videos") return new URLSearchParams();
+    if (raw.startsWith("videos")) return new URLSearchParams(raw.slice("videos".length).replace(/^\?/, "").replace(/^&/, ""));
+    return new URLSearchParams();
+  }
+  function videosLaneFromHash() {
+    const lane = String(videosHashParams().get("lane") || "").toLowerCase();
+    return VIDEO_LANE_ORDER.includes(lane) ? lane : "";
+  }
+  function videosFocusFromHash() {
+    return String(videosHashParams().get("focus") || videosHashParams().get("film") || "").trim();
+  }
+  function videosJumpHref(filmKey) {
+    const key = String(filmKey || "").trim();
+    if (!key) return "#videos&lane=progress";
+    return `#videos&lane=progress&focus=${encodeURIComponent(key)}`;
+  }
+  function defaultVideosLane(b) {
+    const vs = uniqueVideos((((b || {}).tracker || {}).videos) || []);
+    if (vs.some(needsBenWatch)) return "uat";
+    return "progress";
+  }
+  // Apply once when Ben opens Videos with no lane in the hash and has not picked a chip this visit.
+  function ensureVideosLanding(b) {
+    if (current() !== "videos" || videoKey()) return;
+    if (routeView() === "producing") return;
+    const hashLane = videosLaneFromHash();
+    if (hashLane) {
+      seg = hashLane;
+      videosLaneChosen = true;
+      return;
+    }
+    if (videosLaneChosen || videosLandingApplied) return;
+    const tab = (location.hash || "").replace(/^#/, "").split("&")[0];
+    // Bare #videos, empty hash while on Videos, or #videos&… without lane.
+    if (tab && tab !== "videos") return;
+    seg = defaultVideosLane(b);
+    videosLandingApplied = true;
+  }
+  function videoLane(v) {
+    if (v.collapsed && isLive(v)) return null;
+    if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
+    if (isLive(v)) return "live";
+    if (isScheduledNotPublic(v)) return "scheduled";
+    // Passed stays Passed even while an upload/social job runs — it is ready to schedule, not a Ben hold.
+    if (v.lane === "approved") return "passed";
+    if (needsBenWatch(v)) return "uat";
+    // Ben's Request changes / notes return the film to In progress before QA.
+    if (pendingChanges(v) || v.lane === "changes") return "progress";
+    // Claimed work wins over QA: a sibling open/blocked review/QA/Chief must not hide a film
+    // that has an agent claimed on it, and a claimed review itself is Working now (Ben, 7 Nov 2026).
+    if (isWorking(v)) return "progress";
+    if (isQa(v)) return "qa";
+    if ((v.jobs || []).some(LIVE)) return "progress";
+    if (v.lane === "upcoming") return "backlog";
+    if (["progress", "ready", "changes", "approved"].includes(v.lane)) return "todo";
+    if (v.lane === "done") return "todo";
+    return "todo";
+  }
   function stage(v) {
-    if (isLive(v)) return "Published";
-    if (pendingChanges(v)) return "Fixing your changes";
-    if ((v.youtube || {}).state === "scheduled") return "Scheduled";
+    const lane = videoLane(v);
+    if (lane === "live" || isLive(v)) return "Published";
+    if (lane === "postlive") return "Post-live improvements";
+    if (lane === "scheduled") return listingLine(v) || "Scheduled";
+    if (lane === "passed") return listingLine(v) || "Ready to schedule";
+    if (lane === "uat") return "Ready for you";
+    if (lane === "qa") return "In review";
+    if (pendingChanges(v) || v.lane === "changes") return "Fixing your changes";
+    if ((v.youtube || {}).state === "scheduled") return listingLine(v) || "Scheduled";
     if (v.lane === "ready") return v.readyFor === "Ben" ? "Ready for you" : `Waiting on ${v.readyFor || "a check"}`;
-    if (v.lane === "changes") return "Fixing your changes";
-    if (v.lane === "approved") return "Approved, on its way";
-    if (v.lane === "done") return v.youtube && v.youtube.state === "scheduled" ? "Scheduled" : "On YouTube";
+    if (v.lane === "approved") return listingLine(v) || "Ready to schedule";
+    if (v.lane === "done") return v.youtube && v.youtube.state === "scheduled" ? (listingLine(v) || "Scheduled") : "On YouTube";
     const live = (v.jobs || []).find(j => j.status === "claimed");
     if (live) return "Working now";
     if ((v.jobs || []).some(j => j.status === "blocked")) return "Waiting";
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
-  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v));
+  // Only with its video attached (Ben, 5 Nov 2026: three Shorts showed at 12:49:43 and their links came 40 s later, so
+  // Watch & review opened an empty page).
+  const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
+    && !!(v.watch || {}).url);
   // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
   const canTick = v => v.type === "long" || !!v.ask;
 
@@ -191,7 +354,8 @@
   // Public on YouTube is published, whatever follow-up jobs it still carries (29 Oct audit: Venus, the Earth and
   // Apophis Shorts sat in "in production" because of a title test or a Related-video step).
   const isLive = v => !!v.youtube && (v.youtube.privacy === "public" || v.youtube.state === "live");
-  const inProgress = vs => vs.filter(v => ["progress", "changes", "ready", "approved"].includes(v.lane) && !isLive(v) && !forBen([v]).length);
+  // Overview "in production": agent lanes only — never UAT / Passed / Scheduled / Live / Post-live (Ben, 7 Nov 2026).
+  const inProgress = vs => vs.filter(v => ["todo", "progress", "qa"].includes(videoLane(v)));
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
   function schedule(vs, now) {
@@ -212,7 +376,12 @@
   }
 
   function summary(b, now) {
-    const vs = ((b.tracker || {}).videos) || [], m = b.models || {}, jobs = ((b.owb || {}).jobs) || [];
+    const vs = ((b.tracker || {}).videos) || [], m = b.models || {};
+    // Every job once: the general list plus the jobs carried on video cards (5 Nov 2026: the Mini's J2176 lives on the
+    // 032 card, so "Jobs running" said 1 while the Mini and the MacBook both worked).
+    const byId = new Map();
+    for (const j of [...(((b.owb || {}).jobs) || []), ...vs.flatMap(v => v.jobs || [])]) if (j && j.id && !byId.has(j.id)) byId.set(j.id, j);
+    const jobs = [...byId.values()];
     const quietMin = (now - Date.parse(m.checkedAt || "")) / 6e4;
     const health = !m.checkedAt || isNaN(quietMin) ? ["amber", "No news yet"]
       : quietMin > QUIET_MIN ? ["red", `Mac mini quiet ${Math.round(quietMin / 60)} h`]
@@ -226,12 +395,19 @@
     };
   }
 
-  function row(v, extra, href) {
-    return `<a class="row" href="${href || detailLink(v)}">${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
+  function row(v, extra, href, opts) {
+    const working = !!(opts && opts.working);
+    const focusKey = videosFocusFromHash();
+    const filmKey = videoFilmKey(v);
+    const focused = !!(focusKey && (v.key === focusKey || filmKey === focusKey
+      || String(v.key || "").startsWith(focusKey + ":") || p24InFocus(v.key, new Set([focusKey]))));
+    const dot = working
+      ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress on this cut"></span>`
+      : "";
+    return `<a class="row${working ? " is-working" : ""}${focused ? " is-focus" : ""}" href="${href || detailLink(v)}" data-video-key="${esc(v.key)}" data-film-key="${esc(filmKey)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
       <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
-  const jobTiles = j => `<div class="tiles three"><div class="tile-stat"><b class="blue">${j.working}</b><span>Jobs running</span></div>
-      <div class="tile-stat"><b>${j.queued}</b><span>Jobs queued</span></div><div class="tile-stat"><b>${j.held}</b><span>Jobs waiting</span></div></div>`;
+  const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
 
@@ -544,11 +720,17 @@
       return Number(bf.credible)-Number(af.credible) || (af.credible && bf.credible ? af.minutes-bf.minutes : 0);
     });
   }
-  function videoProductionRow(v, now) {
+  function videoProductionRow(v, now, b) {
     if (isLive(v)) return row(v, "");
     const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
     const scoped=unconfirmedCut(v), current=historyOnly?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
-    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}</span>${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`);
+    const working = videoHasActiveWork(v);
+    // Film-level live delta from Overview's progress24h when this cut's parent film moved; never invent cut %s.
+    const pct = working ? videoProgressDelta(v, b || board) : null;
+    const delta = pct && pct.label && pct.from != null && pct.to != null && pct.from !== pct.to
+      ? `<span class="video-live-delta p24-delta${pct.down ? " down" : (pct.grew ? "" : " flat")}">${esc(pct.label)}</span>`
+      : "";
+    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`, null, { working });
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
   function uniqueVideos(vs) {
@@ -563,9 +745,8 @@
     return [...selected.values()];
   }
   function producingVideos(vs) {
-    return uniqueVideos(vs).filter(v=>!isLive(v) && (v.youtube||{}).state!=='scheduled' && v.lane!=='done'
-      && !forBen([v]).length
-      && ['progress','changes','ready','approved'].includes(v.lane));
+    // Agent production only: To do / In progress / QA / Passed. UAT is Ben's; Backlog and YouTube lanes stay out.
+    return uniqueVideos(vs).filter(v => ["todo", "progress", "qa", "passed"].includes(videoLane(v)));
   }
   function londonDay(at) {
     const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(at).map(x=>[x.type,x.value]));
@@ -614,7 +795,7 @@
     });
     const activeRunning=fresh?running:freshRunning, operationalFresh=fresh || freshRunning.length>0;
     const degraded=!fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
-    const agents=(models.models||[]).filter(m=>AGENTS[m.id] && m.id!=='macbook');
+    const agents=(models.models||[]).filter(m=>AGENTS[m.id] && !String(m.id).startsWith('macbook'));
     const noCapacity=queued.length>0 && agents.length>0 && agents.every(m=>m.status==='red');
     const startupUnconfirmed=all.some(j=>j.phase==='starting'&&jobState(j)==='stalled');
     const status=!operationalFresh || startupUnconfirmed ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:activeRunning.every(j=>j.phase==='starting')?'Starting':degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
@@ -622,7 +803,7 @@
     return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status,startupUnconfirmed};
   }
   function featureVideo(b, now) {
-    const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):'OWB:'+x);
+    const s=overviewModel(b,now), focus=(((b.owb||{}).focus)||[]).map(x=>String(x).includes(':')?String(x):homeChannel().label+':'+x);
     const rank=v=>{
       const ready=forBen([v]).length>0, blocked=blockedVideo(v), f=forecastView(v,now), p=progressStats(v), active=currentProduction(v);
       const scoped=unconfirmedCut(v), finalQA=!scoped&&(active.some(m=>m.id==='qa') || p.rows.filter(m=>m.id!=='qa').every(completeStage));
@@ -631,7 +812,7 @@
       return [ready?0:1,blocked?1:0,f.credible?0:1,f.credible?f.minutes:Infinity,finalQA?0:1,unresolved,
         focus.includes(v.key)?0:1,Number.isFinite(priority)?priority:Infinity,-videoUpdated(v),v.key];
     };
-    const candidates=uniqueVideos([...s.ready,...s.producing.filter(v=>v.lane!=='approved')]);
+    const candidates=uniqueVideos([...s.ready,...s.producing.filter(v=>videoLane(v)!=='passed')]);
     return candidates.sort((a,b)=>{
       const ar=rank(a),br=rank(b);for(let i=0;i<ar.length;i++){if(ar[i]<br[i])return -1;if(ar[i]>br[i])return 1;}return 0;
     })[0]||null;
@@ -650,7 +831,7 @@
     const stageLabel=ready?'Ready for your UAT':changes?'Requested corrections':m ? m.label+(stageView(m).text==='Awaiting approval'?' approval':'') : 'Unconfirmed';
     const action=ready?((v.watch||{}).url?'Use Watch & review below to open this cut.':'Review delivery incomplete: no watch link is recorded.') : changes?'Your notes need correction and fresh QA. Open the video for linked work and responsibility.':m ? stageView(m).tone==='held'?blockerModel(v,m).action:nextAction(m) : 'The next production step has not been confirmed.';
     return `<a class="featured-video" href="${detailLink(v)}" aria-label="Open ${esc(v.title||'video')} production details">
-      <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
+      <div class="featured-heading">${thumb(v)}<div><h3>${esc(v.title||'Untitled video')}</h3><p>${esc(chName(v.channel))} · ${kind(v)}</p></div><span class="chev" aria-hidden="true">›</span></div>
       ${ready?'<p class="featured-count">Finished cut awaiting your review</p>':changes?'<p class="featured-count">Changes requested · revision progress not recorded</p>':scoped?'<div class="featured-progress-heading"><span>Cut progress</span><b>Unconfirmed</b></div><p class="featured-count">Related project milestones do not measure this cut’s completion.</p>':`<div class="featured-progress-heading"><span>Milestones completed</span><b>${p.percent}%</b></div>
       <div class="hero-track" role="progressbar" aria-label="Milestones completed, not production time" aria-valuenow="${p.done}" aria-valuemin="0" aria-valuemax="9"><i style="width:${p.percent}%"></i></div>
       <p class="featured-count">${p.done} of 9 milestones complete${p.unknown?` · ${p.unknown} unconfirmed`:''}</p>`}
@@ -668,7 +849,7 @@
     const videos=uniqueVideos(((b.tracker||{}).videos)||[]), keys=new Set();
     const add=job=>{
       for(const key of Array.isArray(job.taskKeys)?job.taskKeys:[]) if(typeof key==='string'&&/^(OWB|HOS):/.test(key)) keys.add(key);
-      if(/^\d+$/.test(String(job.film||''))) keys.add((job.repo==='hos'?'HOS':'OWB')+':'+String(job.film).padStart(3,'0'));
+      if(/^\d+$/.test(String(job.film||''))) keys.add(repoLabel(job.repo)+':'+String(job.film).padStart(3,'0'));
       for(const v of videos) if(v.key&&(v.jobs||[]).some(x=>x.id===job.id)) keys.add(v.key);
     };
     add(j);
@@ -679,7 +860,7 @@
     }
     const rows=[...keys].map(key=>({key,video:videos.find(v=>v.key===key)}));
     const label=row=>{
-      const channel=row.key.startsWith('HOS:')?'History of Science':'Orbit With Ben';
+      const channel=chName(row.key.split(':')[0]);
       return row.video?`${row.video.title||row.key} · ${channel} · ${kind(row.video)}`:`${channel} · ${row.key.split(':')[1]} · title not recorded`;
     };
     return rows.length?{label:rows.slice(0,2).map(label).join(' / ')+(rows.length>2?` · +${rows.length-2} more videos`:''),count:rows.length,keys:rows.map(r=>r.key)}
@@ -688,7 +869,7 @@
   function activityCategory(b,j) {
     const text=String(j.title||'')+' '+String(j.remaining_action||'');
     if(/\b(?:dispatcher|frontend|schema|kanban|deployment|rollout|capacity|software|implementation|code patch|checker fix|worker repair|workflow (?:handoff )?(?:fixes?|repair|code))\b/i.test(text)) return {id:'engineering',label:'Engineering'};
-    if(/\b(?:analytics|analytical|impressions|CTR|retention|watch time|daily Studio read|collect(?:ed|ing)? metrics|rebuild the tracker|monthly (?:channel )?(?:improvement )?(?:report|review)|weekly .*audit)\b/i.test(text)) return {id:'analytics',label:'Analytics'};
+    if(/\b(?:analytics|analytical|impressions|reach|CTR|retention|watch time|daily Studio read|collect(?:ed|ing)? metrics|rebuild the tracker|monthly (?:channel )?(?:improvement )?(?:report|review)|weekly .*audit)\b/i.test(text)) return {id:'analytics',label:'Analytics'};
     if(j.recheck_of || /\b(?:verify (?:the )?condition for|orphan-(?:review|blocked))\b/i.test(text)) return {id:'coordination',label:'Coordination'};
     if(activityVideoContext(b,j).count) return {id:'production',label:'Video production'};
     return {id:'operations',label:'Studio operations'};
@@ -750,51 +931,571 @@
     if(!p) return '';
     return `<aside class="video-next-work" aria-label="Next work on ${esc(v.title||'this video')}"><a href="${p.job?jobRoute(p.job.id):detailLink(v)}" aria-label="${esc(p.status)}. ${p.job?'Open job '+esc(p.job.id)+' in Agents':'Open video details'}"><div><span>Next work on this video</span><b>${esc(p.status)}</b><small>${esc(p.responsibility)}${p.job?' · '+esc(p.job.id):''}</small></div><span class="chev" aria-hidden="true">›</span></a><p class="video-next-timing">${esc(p.timing)}</p>${p.context?`<p>${esc(p.context)}</p>`:''}${p.dispatchNote?`<p>${esc(p.dispatchNote)}</p>`:''}</aside>`;
   }
+  function activityVideoLine(ctx) {
+    // One film: show its title. Many films: keep it compact — the job title/action is the headline (Ben, 6 Nov).
+    if(!ctx||!ctx.count) return {compact:true, text:(ctx&&ctx.label)||'Studio task · no video linked in the job record'};
+    if(ctx.count===1) return {compact:false, text:ctx.label};
+    return {compact:true, text:`${ctx.count} videos linked`};
+  }
+  // Film id + title for Active jobs (Ben, 6 Nov ~23:21) — never hide behind "Video production".
+  function activityJobVideoLabel(b,j) {
+    const ctx=activityVideoContext(b,j);
+    if(!ctx||!ctx.count) return '';
+    const videos=uniqueVideos(((b.tracker||{}).videos)||[]);
+    const key=ctx.keys[0], video=videos.find(v=>v.key===key);
+    const long=(/^([A-Z]+:\d{3})/.exec(key)||[])[1];
+    const idLabel=(long||key||'').replace(/:/g,' ');
+    if(video&&video.title) return `${idLabel} · ${video.title}`;
+    if(ctx.count===1&&ctx.label&&!/title not recorded/i.test(ctx.label)) {
+      const title=String(ctx.label).split(' · ')[0];
+      return title?`${idLabel} · ${title}`:idLabel;
+    }
+    return idLabel||ctx.label||'';
+  }
+  function activityJobCard(b,j,now) {
+    const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
+    const e=taskEstimate(j,now);
+    const eta=starting?'Claim pending':e? (e.over?'Over ETA':`~${durationText(e.min)} ETA`) : '';
+    const agent=AGENTS[j.by]||j.by||'Unassigned';
+    const steps=p?`${p.step} / ${p.of} steps (${pct(p)}%)`:(starting?'Starting…':'Progress n/a');
+    const videoLabel=activityJobVideoLabel(b,j);
+    const sub=videoLabel?`${j.id} · ${videoLabel}`:`${j.id} · ${category.label}`;
+    // Compact Active jobs row (Ben, 6 Nov ~23:05/23:21) — agent, id · video, steps/ETA, spinning icon, thin bar.
+    return `<a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${esc(videoLabel||category.label)}">
+      <span class="aj-icon" aria-hidden="true"></span>
+      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub">${esc(sub)}</span></div>
+      <div class="aj-right"><span class="aj-steps">${esc(steps)}</span>${eta?`<span class="aj-eta">${esc(eta)}</span>`:''}</div>
+      ${p?`<div class="aj-bar" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div>`:''}
+    </a>`;
+  }
   function activityCard(b,now) {
     const s=overviewModel(b,now), jobs=s.running.slice().sort((a,b)=>Number(!!b.urgent)-Number(!!a.urgent));
-    // Otherwise retain the publisher's active-job order; a shared job has already been deduplicated.
-    const j=jobs[0], footer=`<p class="activity-footer">${s.queued.length} queued · ${s.held.length} waiting</p>`;
-    if(!j) return `<section class="overview-activity"><h2>Studio activity</h2><a href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span>${footer}</a></section>`;
-    const videoContext=activityVideoContext(b,j);
-    const starting=j.phase==='starting', p=starting?null:recordedTaskProgress(j), category=activityCategory(b,j);
-    // Reuse the existing task estimator only with a valid recorded start and valid inputs.
-    const e=taskEstimate(j,now);
-    const eta=starting?'Worker launched; task claim pending':e ? e.over?'Task estimate exceeded':`Task ETA: ~${durationText(e.min)} remaining (estimate)` : 'Task ETA unavailable';
-    return `<section class="overview-activity"><h2>Studio activity</h2><a class="active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${category.label}">
-      <span class="activity-category" data-category="${category.id}">${category.label}</span>
-      <div><b>${esc(AGENTS[j.by]||j.by||'Unassigned agent')} is ${starting?'starting':'working'}</b><span class="activity-job-id">${esc(j.id)}${jobs.length>1?` · +${jobs.length-1} other active job${jobs.length>2?'s':''}`:''}</span></div><span class="chev" aria-hidden="true">›</span>
-      ${videoContext.count?`<p class="activity-video"><span>${videoContext.count>1?'Videos':'Video'}</span>${esc(videoContext.label)}</p>`:`<p class="activity-video activity-scope-compact">${esc(videoContext.label)}</p>`}
-      <p class="activity-action">${esc(clip(j.remaining_action||j.title||'Current action not recorded',160))}</p>
-      ${p?`<div class="activity-progress"><div class="hero-track" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div><span>${p.step} of ${p.of} steps · ${pct(p)}%</span></div>`:`<p class="activity-progress-missing">${starting?'Preparing to claim the selected job':'Task progress not recorded'}</p>`}
-      <p class="activity-eta">${esc(eta)}</p>${footer}</a></section>`;
+    const head=`<div class="ov-section-head"><h2>Active jobs${jobs.length?` (${jobs.length})`:''}</h2>${jobs.length?`<span class="ov-live"><i aria-hidden="true"></i>Running now</span>`:''}</div>`;
+    if(!jobs.length) return `<section class="overview-activity" aria-label="Active jobs">${head}<a class="ov-card aj-empty" href="#agents"><div><b>${s.startupUnconfirmed?'Worker startup could not be confirmed':s.queued.length?'Ready work waiting for dispatch':s.held.length?'No job running · work is waiting':'Studio waiting for next job'}</b>${!s.fresh?'<span>Activity report is stale or missing</span>':''}</div><span class="chev" aria-hidden="true">›</span></a></section>`;
+    // One compact card per running agent/job — never a single featured job + "+N others".
+    return `<section class="overview-activity" aria-label="Active jobs">${head}<div class="ov-stack activity-stack">${jobs.map(j=>activityJobCard(b,j,now)).join('')}</div></section>`;
   }
-  // Last 24 hours (Ben, 4 Nov 2026): jobs finished, which films moved and by how much. From board.progress24h.
-  function progressCard(b) {
-    const p=b.progress24h;
-    if(!p) return '';
-    const agents=Object.entries(p.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-    const name=k=>(k||'').replace(':',' ');
-    const moved=(p.moved||[]).map(m=>`<li><span class="p24-film">${esc(name(m.key))}</span> <span class="p24-title">${esc(m.title)}</span><span class="p24-delta${m.milestones<0?' down':''}">${m.milestones<0?'↺ reopened · ':''}${m.from}% → ${m.to}%</span></li>`).join('');
-    // A drop means a stage reopened for more work (e.g. a Short fixed after its long was done), not lost work.
-    const reopened=(p.moved||[]).some(m=>m.milestones<0)?'<p class="muted p24-note">↺ reopened: a finished stage has new work on it again (a fix or a Short being redone), so it counts as in progress until that work is done. Nothing was lost.</p>':'';
-    const films=(p.films||[]).map(f=>`<li><span class="p24-film">${esc(name(f.film))}</span> <span class="p24-title">${esc(f.title)}</span><span class="p24-count">${f.jobs} job${f.jobs===1?'':'s'}</span><span class="p24-last">${esc(f.last)}</span></li>`).join('');
-    const partial=p.hours && p.hours<23 ? `<p class="muted p24-note">Film progress covers the last ${Math.round(p.hours)} h so far; it fills to 24 h on its own.</p>`:'';
-    return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
-      <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>${p.videoJobs!=null?'video jobs finished':'jobs finished'}</span></div><div><b>${p.milestones||0}</b><span>milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>videos moved forward</span></div></div>
+  // Last 24 hours (Ben, 4 Nov 2026; film cards 6 Nov 2026): headline counts, then one quiet card per film.
+  // Checklist (Ben, 6 Nov 2026): remaining-to-go-live + today green / yesterday gray; display-only. Review owns real ticks.
+  // Glance strip (Ben, 6 Nov evening): done today, left, can't run, next four going live — checklist behind a disclosure.
+  function p24JobLive(j) {
+    const status=j&&j.status, wait=j&&j.waitKind;
+    if(wait==='after') return 'after earlier work';
+    if(wait==='blocker'||status==='blocked') return 'needs something';
+    if(!status||status==='done'||status==='todo') return '';
+    if(status==='claimed') return 'in progress';
+    return status;
+  }
+  function p24JobMark(j) {
+    const status=j&&j.status, when=j&&j.when, wait=j&&j.waitKind;
+    if(status==='done'&&when==='yesterday') return {cls:'is-done-yesterday', label:'Done yesterday'};
+    if(!status||status==='done') return {cls:'is-done', label:'Done today'};
+    if(status==='claimed'&&wait!=='after') return {cls:'is-progress', label:'In progress'};
+    if(wait==='after') return {cls:'is-waiting', label:'Waiting on earlier work'};
+    if(wait==='blocker'||status==='blocked') return {cls:'is-waiting', label:'Needs something first'};
+    return {cls:'is-open', label:'Open'};
+  }
+  function p24JobLine(j) {
+    const mark=p24JobMark(j);
+    const stage=j.stage&&j.kind!=='stage'?`<span class="p24-job-stage">${esc(j.stage)}</span>`:'';
+    const prog=j.progress&&j.progress.of?`<span class="p24-job-prog">${j.progress.step||0} of ${j.progress.of}</span>`:'';
+    const liveLabel=p24JobLive(j);
+    const live=liveLabel?`<span class="p24-job-live">${esc(liveLabel)}</span>`:'';
+    const why=j.why?`<span class="p24-job-why wrap">${esc(j.why)}</span>`:'';
+    const id=j.id?`<b>${esc(j.id)}</b> `:'';
+    const aria=`${mark.label}: ${[j.id,j.title,j.why].filter(Boolean).join(' ')}`.trim();
+    // In-progress rows get a spinner so the expanded checklist names the live job (Ben, 6 Nov ~23:21).
+    const markEl=mark.cls==='is-progress'
+      ?`<span class="p24-job-spinner" role="img" aria-label="In progress"></span>`
+      :`<span class="p24-check" aria-hidden="true"></span>`;
+    return `<li class="p24-job ${mark.cls}${j.kind==='stage'?' is-stage':''}${j.waitKind?' is-'+esc(j.waitKind):''}" data-job-state="${esc(mark.cls.replace(/^is-/,''))}" aria-label="${esc(aria)}">
+      ${markEl}
+      <span class="p24-job-main">${id}<span class="p24-title wrap">${esc(j.title||'')}</span>${why}</span>${stage}${prog}${live}
+    </li>`;
+  }
+  function p24MovedStatus(m) {
+    if(m.milestones<0) return `↺ reopened · ${m.from}% → ${m.to}%`;
+    return `${m.from}% → ${m.to}%`;
+  }
+  // Live boards may still have the older films[] shape (count + last, no items/status). Always merge moved[].
+  function p24MergeFilms(films, moved) {
+    const by=new Map();
+    for(const f of films||[]){
+      const key=f.film||f.key; if(!key) continue;
+      by.set(key,{...f,film:key});
+    }
+    for(const m of moved||[]){
+      if(!m.key) continue;
+      const status=p24MovedStatus(m), closed=m.milestones>0;
+      const cur=by.get(m.key);
+      if(cur){
+        by.set(m.key,{...cur,from:m.from,to:m.to,milestones:m.milestones,closed,status,title:cur.title||m.title});
+      }else{
+        by.set(m.key,{film:m.key,title:m.title,from:m.from,to:m.to,milestones:m.milestones,closed,status,items:[],jobs:0,last:''});
+      }
+    }
+    return [...by.values()];
+  }
+  // Overview film cards follow studio focus (queue → board.owb.focus). Empty focus = no filter.
+  function p24FocusSet(b) {
+    const raw=((b&&b.owb)||{}).focus||[];
+    const home=(typeof homeChannel==='function'&&homeChannel().label)||'OWB';
+    const set=new Set();
+    for(const x of raw){
+      const s=String(x||'').trim(); if(!s) continue;
+      set.add(s);
+      if(/^\d{3}$/.test(s)) set.add(home+':'+s);
+      const m=/^([A-Za-z]+):(\d{3})$/.exec(s);
+      if(m){ set.add(m[1].toUpperCase()+':'+m[2]); set.add(m[2]); }
+    }
+    return set;
+  }
+  function p24InFocus(film, focus) {
+    if(!focus||!focus.size) return true;
+    const key=String(film||'');
+    if(focus.has(key)) return true;
+    const m=/^([A-Z]+):(\d{3})$/.exec(key);
+    return !!(m&&(focus.has(m[2])||focus.has(m[1]+':'+m[2])));
+  }
+  // Can't-run that Ben himself must clear (UAT/watch, money, login/device). Pipeline "after" waits,
+  // parked-for-Chief, and Chief: leftovers are studio work — not Needs attention (Ben, 6 Nov ~23:20).
+  function p24NeedsBenAttention(j) {
+    if(!j || j.kind==='stage' || j.status==='done' || j.status==='todo') return false;
+    if(j.waitKind==='after') return false;
+    const title=String(j.title||'');
+    const hold=j.hold||{};
+    const holdType=String(hold.type||'').toLowerCase();
+    const why=String(j.why||'');
+    const blob=[title, why, j.result, hold.condition, j.remaining_action].filter(Boolean).join(' ');
+    if(j.awaits_ben || j.needs==='ben' || holdType==='ben') return true;
+    // An open job with no hold and no wait is studio work that can run now, even when its title says it will
+    // stage something "for Ben UAT watch" (8 Nov 2026: J2404 showed as "1 job can't run yet").
+    if(j.status!=='blocked' && !holdType && !j.waitKind) return false;
+    if(/\bNeeds Ben\b/i.test(why) || /\bNeeds Ben\b/i.test(blob)) return true;
+    if(/\bwaiting for (?:ben|you)(?:\s+to)?\b|\bben to (?:watch|uat|review|ok|approve)\b|\bfor (?:your|ben(?:'s)?) (?:watch|uat|review|approval)\b|\bready for (?:your )?(?:uat|watch|review)\b/i.test(blob)) return true;
+    if(/\b(?:top-?ups?|buy credits|real money|enable (?:paid )?overage|charge (?:the )?card|spend(?:ing)? money)\b/i.test(blob)) return true;
+    if(/\b(?:google )?password\b|\b2fa\b|\bsign[- ]?in\b|\bhis (?:voice|device|phone|login)\b|\bonly ben can\b/i.test(blob)) return true;
+    if(String(j.kind||'').toLowerCase()==='chief' || /^Chief:/i.test(title)) return false;
+    if(/parked for Chief/i.test(blob)) return false;
+    if(/\bWill run automatically after\b/i.test(why||blob)) return false;
+    return false;
+  }
+  function p24IsCantRunItem(j) {
+    if(!j || j.kind==='stage' || j.status==='done') return false;
+    // `after` alone is not a wait: the server sets waitKind while the predecessor is still open (8 Nov 2026:
+    // J2404 counted as can't-run although J2403 was done).
+    return !!(j.waitKind || j.status==='blocked'
+      || j.awaits_ben || j.needs==='ben' || ((j.hold||{}).type&&String(j.hold.type).toLowerCase()==='ben'));
+  }
+  function p24FilmCounts(f, items) {
+    const list=items!==undefined?items:(f.items||[]);
+    const useItems=items!==undefined||!!(f.items&&f.items.length);
+    const doneToday=useItems
+      ? list.filter(j=>j&&j.status==='done'&&j.when==='today').length
+      : (f.doneToday!=null?f.doneToday:0);
+    const left=useItems
+      ? list.filter(j=>j&&j.status!=='done').length
+      : (f.left!=null?f.left:0);
+    // Ben-facing can't-run only — server `blocked` still includes after/Chief waits.
+    const blocked=list.filter(j=>p24IsCantRunItem(j)&&p24NeedsBenAttention(j)).length;
+    return {doneToday, left, blocked};
+  }
+  function p24FilmLabel(film) {
+    const key=String(film||'');
+    const short=/^([A-Z]+):(\d{3}):S:/i.exec(key);
+    if(short) return `${short[1].toUpperCase()} ${short[2]} Short`;
+    const long=/^([A-Z]+):(\d{3})$/i.exec(key);
+    if(long) return `${long[1].toUpperCase()} ${long[2]}`;
+    return key.replace(/:/g,' ');
+  }
+  function p24FilmMatchesJob(filmKey, b, j) {
+    if(!j||!filmKey) return false;
+    const keys=(activityVideoContext(b,j).keys)||[];
+    if(keys.includes(filmKey)) return true;
+    const focus=new Set([filmKey]);
+    if(keys.some(k=>k===filmKey||p24InFocus(k, focus))) return true;
+    if(/^\d+$/.test(String(j.film||''))){
+      const home=(typeof repoLabel==='function'?repoLabel(j.repo):'OWB')+':'+String(j.film).padStart(3,'0');
+      if(home===filmKey||String(filmKey).startsWith(home+':')||String(filmKey)===home) return true;
+    }
+    return false;
+  }
+  function p24JobFromTracker(j) {
+    if(!j) return null;
+    return {
+      id:j.id, title:j.title||j.remaining_action||'', status:j.status||'open',
+      stage:j.stage||'', progress:j.progress||null, when:j.when,
+      why:j.why, waitKind:j.waitKind, after:j.after, afterChain:j.afterChain,
+      recheck_of:j.recheck_of, ref:j.ref, awaits_ben:j.awaits_ben,
+      needs:j.needs, hold:j.hold, kind:j.kind,
+    };
+  }
+  function p24NormJobId(id) {
+    const m=/\b(J\d{3,5})\b/i.exec(String(id||''));
+    return m?m[1].toUpperCase():'';
+  }
+  // Jobs that must finish before this one (appear above it): after / afterChain / "will run after JX".
+  function p24JobDependsOn(j) {
+    const out=[];
+    const add=id=>{ const n=p24NormJobId(id); if(n&&!out.includes(n)) out.push(n); };
+    const after=j&&j.after;
+    if(Array.isArray(after)) after.forEach(add);
+    else if(after) add(after);
+    for(const p of (j&&j.afterChain)||[]){
+      if(p&&typeof p==='object') add(p.id);
+      else add(p);
+    }
+    const blob=[j&&j.why, j&&j.title].filter(Boolean).join(' ');
+    // "Will run automatically after J2089 (…)" / "after J2141 and J2142"
+    const chunk=/\bafter\s+([^.;\n]+)/i.exec(blob);
+    if(chunk) for(const m of chunk[1].matchAll(/\b(J\d{3,5})\b/gi)) add(m[1]);
+    return out;
+  }
+  // Jobs this one unblocks (this job appears above them): recheck_of / "Verify condition for JX".
+  function p24JobPrecedesTargets(j) {
+    const out=[];
+    const add=id=>{ const n=p24NormJobId(id); if(n&&!out.includes(n)) out.push(n); };
+    if(j&&j.recheck_of) add(j.recheck_of);
+    const title=String((j&&j.title)||'');
+    const m=/Verify(?:\s+the)?\s+condition\s+for\s+(J\d{3,5})/i.exec(title);
+    if(m) add(m[1]);
+    if(j&&j.kind==='review'&&/^J\d{3,5}$/i.test(String(j.ref||''))) add(j.ref);
+    return out;
+  }
+  function p24ItemRank(j) {
+    const cls=p24JobMark(j).cls;
+    if(cls==='is-progress') return 0;
+    if(cls==='is-open') return 1;
+    if(cls==='is-waiting') return 2;
+    if(cls==='is-done') return 3;
+    if(cls==='is-done-yesterday') return 4;
+    return 2;
+  }
+  // Top-to-bottom = run / hierarchy order, not raw job-id order (Ben, 6–7 Nov 2026).
+  // A before B; "Verify condition for JX" above JX; waiting-after jobs stay visible below their named earlier jobs.
+  function p24SortFilmItems(items) {
+    const list=(items||[]).filter(Boolean);
+    const stages=list.filter(j=>j.kind==='stage'||!j.id);
+    const nodes=list.filter(j=>j.id&&j.kind!=='stage');
+    const byId=new Map(nodes.map(j=>[String(j.id).toUpperCase(), j]));
+    const ids=[...byId.keys()];
+    const succ=new Map(ids.map(i=>[i, []]));
+    const indeg=new Map(ids.map(i=>[i, 0]));
+    const addEdge=(a,b)=>{
+      a=String(a).toUpperCase(); b=String(b).toUpperCase();
+      if(!byId.has(a)||!byId.has(b)||a===b) return;
+      if((succ.get(a)||[]).includes(b)) return;
+      succ.get(a).push(b);
+      indeg.set(b,(indeg.get(b)||0)+1);
+    };
+    for(const j of nodes){
+      const id=String(j.id).toUpperCase();
+      for(const dep of p24JobDependsOn(j)) addEdge(dep, id);
+      for(const tgt of p24JobPrecedesTargets(j)) addEdge(id, tgt);
+    }
+    const indexOf=new Map(nodes.map((j,i)=>[String(j.id).toUpperCase(), i]));
+    const cmp=(a,b)=>p24ItemRank(byId.get(a))-p24ItemRank(byId.get(b))||indexOf.get(a)-indexOf.get(b);
+    const ready=ids.filter(i=>(indeg.get(i)||0)===0).sort(cmp);
+    const out=[], seen=new Set();
+    while(ready.length){
+      const i=ready.shift();
+      if(seen.has(i)) continue;
+      seen.add(i);
+      out.push(byId.get(i));
+      for(const s of succ.get(i)||[]){
+        indeg.set(s,(indeg.get(s)||0)-1);
+        if(indeg.get(s)===0){ ready.push(s); ready.sort(cmp); }
+      }
+    }
+    for(const j of nodes){
+      if(!seen.has(String(j.id).toUpperCase())) out.push(j);
+    }
+    return out.concat(stages);
+  }
+  // When progress24h items are empty on a pulsing film, fill from tracker + claimed owb jobs (Ben, 6 Nov ~23:33).
+  function p24HydrateFilmItems(f, b) {
+    const filmKey=String((f&&f.film)||'');
+    const byId=new Map();
+    const add=j=>{
+      if(!j) return;
+      const id=j.id?String(j.id):`__anon_${byId.size}`;
+      const cur=byId.get(id);
+      if(!cur) byId.set(id, j);
+      else if(j.status==='claimed'&&cur.status!=='claimed') byId.set(id, {...cur, ...j, status:'claimed'});
+    };
+    for(const j of (f&&f.items)||[]) add(j);
+    if(b&&filmKey){
+      for(const v of uniqueVideos((((b.tracker)||{}).videos)||[])){
+        if(v.key!==filmKey) continue;
+        for(const j of v.jobs||[]) add(p24JobFromTracker(j));
+      }
+      for(const j of (((b.owb)||{}).jobs)||[]){
+        if(!j||j.status!=='claimed') continue;
+        if(!p24FilmMatchesJob(filmKey, b, j)) continue;
+        add({id:j.id, title:j.title||j.remaining_action||'', status:'claimed', stage:j.stage||'',
+          progress:j.progress||null, recheck_of:j.recheck_of, ref:j.ref, after:j.after, kind:j.kind});
+      }
+    }
+    return p24SortFilmItems([...byId.values()]);
+  }
+  function p24BlockedWhy(f) {
+    if(f.blockedWhy) return f.blockedWhy;
+    const items=f.items||[];
+    const wait=items.find(j=>j.waitKind==='after')||items.find(j=>j.waitKind||j.status==='blocked'||(j.after&&j.status!=='done'));
+    return (wait&&wait.why)||'';
+  }
+  // True only when a job for this film is claimed / in progress (Ben, 6 Nov ~22:58).
+  // Open, waiting, and "will run after …" do not count.
+  function p24FilmHasActiveWork(f, b) {
+    const items=f.items||[];
+    if(items.some(j=>j&&j.kind!=='stage'&&p24JobMark(j).cls==='is-progress')) return true;
+    if(!b) return false;
+    const filmKey=String(f.film||'');
+    if(!filmKey) return false;
+    const focus=new Set([filmKey]);
+    for(const v of ((b.tracker||{}).videos)||[]){
+      if(!(v.key===filmKey||p24InFocus(v.key, focus))) continue;
+      if((v.jobs||[]).some(j=>j&&j.status==='claimed')) return true;
+    }
+    for(const j of (((b.owb)||{}).jobs)||[]){
+      if(!j||j.status!=='claimed') continue;
+      const keys=(activityVideoContext(b,j).keys)||[];
+      if(keys.some(k=>k===filmKey||p24InFocus(k, focus))) return true;
+    }
+    return false;
+  }
+  function p24FilmPct(f) {
+    const from=f.from!=null?+f.from:null, to=f.to!=null?+f.to:(f.pct!=null?+f.pct:null);
+    const grew=from!=null&&to!=null&&to>from;
+    const down=from!=null&&to!=null&&to<from;
+    let label='';
+    if(from!=null&&to!=null&&from!==to) label=`${from}% → ${to}%`;
+    else if(to!=null) label=`${to}%`;
+    else if(f.status&&/\d+%/.test(f.status)&&!/worked on, no stage closed/i.test(f.status)) label=String(f.status).replace(/^↺ reopened · /,'');
+    const bar=to!=null?Math.max(0,Math.min(100,to)):(from!=null?Math.max(0,Math.min(100,from)):0);
+    return {from, to, grew, down, label, bar};
+  }
+  function p24FilmCard(f, b) {
+    const items=p24HydrateFilmItems(f, b);
+    const name=p24FilmLabel(f.film);
+    const closed=f.closed||(f.milestones!=null&&f.milestones>0);
+    const active=p24FilmHasActiveWork({...f, items}, b);
+    const counts=p24FilmCounts(f, items);
+    const pctInfo=p24FilmPct(f);
+    const stages=((f.pctReason||'').split('·')[0]||'').trim()
+      ||(f.doneCount!=null?`${f.doneCount} of ${f.total||9} stages`:'');
+    const meta=[stages, `Done ${counts.doneToday}`, `Left ${counts.left}`, `Can't run ${counts.blocked}`].filter(Boolean).join(' · ');
+    const deltaCls=pctInfo.down?' down':(pctInfo.grew?'':' flat');
+    const delta=pctInfo.label||(closed?'':'—');
+    const jobs=items.map(p24JobLine).join('')
+      ||(f.last?`<li class="p24-job is-open" data-job-state="open" aria-label="Open: ${esc(f.last)}"><span class="p24-check" aria-hidden="true"></span><span class="p24-job-main"><span class="p24-title wrap">${esc(f.last)}</span></span></li>`:'');
+    const earlier=f.earlierDone>0?`<p class="muted p24-earlier">${f.earlierDone} earlier job${f.earlierDone===1?'':'s'} already done</p>`:'';
+    const n=items.length||(f.last?1:0)||(active&&jobs?1:0);
+    const cls=`ov-card p24-film-card${active?' is-working':''}${pctInfo.grew?' is-grew':''}${!pctInfo.grew?' is-flat':''}`;
+    const dot=active?`<span class="p24-working-dot" role="img" aria-label="A job is in progress on this film"></span>`:'';
+    // Explicit Videos jump — separate from expand/collapse (Ben, 7 Nov 2026).
+    // Parent film key only (OWB:029), never a Short's YouTube id suffix.
+    const jumpFilm = videoFilmKey({ key: f.film }) || f.film;
+    const jump=`<a class="p24-videos-jump" href="${esc(videosJumpHref(jumpFilm))}" data-videos-jump="${esc(jumpFilm)}">See on Videos <span aria-hidden="true">›</span></a>`;
+    // Compact resting row (id, title, %, bar, one-line meta). Tap/expand opens the jobs checklist (Ben, 6 Nov ~23:07).
+    const compact=`${dot}
+      <div class="p24-film-top">
+        <div class="p24-film-left"><b class="p24-film">${esc(name)}</b><p class="p24-film-title">${esc(f.title||'')}</p></div>
+        <div class="p24-film-right"><span class="p24-delta${deltaCls}">${esc(delta)}</span>
+          <div class="p24-film-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pctInfo.bar}" aria-label="Film stage progress ${pctInfo.bar}%"><i style="width:${pctInfo.bar}%"></i></div>
+        </div>
+      </div>
+      <p class="p24-film-meta">${esc(meta)}</p>
+      ${jump}`;
+    // Pulsing rows must always expand — never a bare article while work is in progress (Ben, 6 Nov ~23:33).
+    if(!jobs && !active) return `<article class="${cls}">${compact}</article>`;
+    const list=jobs||`<li class="p24-job is-progress" data-job-state="progress" aria-label="In progress"><span class="p24-job-spinner" role="img" aria-label="In progress"></span><span class="p24-job-main"><span class="p24-title wrap">Job in progress</span></span></li>`;
+    return `<details class="${cls} p24-check-fold" aria-label="Jobs checklist (${n||1})">
+      <summary class="p24-film-summary">${compact}<span class="p24-film-expand" aria-hidden="true">›</span></summary>
+      <ul class="p24-job-list" role="list">${list}</ul>${earlier}
+    </details>`;
+  }
+  function p24FocusFilms(b) {
+    const p=b&&b.progress24h; if(!p) return [];
+    return p24MergeFilms(p.films,p.moved).filter(f=>p24InFocus(f.film, p24FocusSet(b)));
+  }
+  // Keys for films that currently have claimed / in-progress work (live board + checklist).
+  function p24ActiveFilmKeys(b) {
+    const keys=new Set();
+    const add=k=>{
+      if(!k) return;
+      keys.add(k);
+      const m=/^([A-Z]+:\d{3})/.exec(String(k));
+      if(m) keys.add(m[1]);
+    };
+    const p=b&&b.progress24h;
+    for(const f of p24MergeFilms((p&&p.films)||[],(p&&p.moved)||[])){
+      if(p24FilmHasActiveWork(f, b)) add(f.film);
+    }
+    for(const j of (((b&&b.owb)||{}).jobs)||[]){
+      if(!j||j.status!=='claimed') continue;
+      for(const k of (activityVideoContext(b,j).keys)||[]) add(k);
+    }
+    for(const v of (((b&&b.tracker)||{}).videos)||[]){
+      if((v.jobs||[]).some(j=>j&&j.status==='claimed')) add(v.key);
+    }
+    return keys;
+  }
+  // Focus films first, then any film with claimed work even outside focus (Ben, 6 Nov ~23:21).
+  // Does not dump every film that merely had recent work.
+  function p24WorkingFilms(b) {
+    const p=b&&b.progress24h; if(!p) return [];
+    const focus=p24FocusSet(b);
+    const merged=p24MergeFilms(p.films,p.moved);
+    const by=new Map(merged.map(f=>[f.film,f]));
+    const out=[], seen=new Set();
+    for(const f of merged){
+      if(focus.size&&!p24InFocus(f.film, focus)) continue;
+      out.push(f); seen.add(f.film);
+    }
+    const videos=uniqueVideos((((b.tracker)||{}).videos)||[]);
+    for(const key of p24ActiveFilmKeys(b)){
+      if(seen.has(key)) continue;
+      // Keep both the long and the Short when both are active — do not drop one (Ben, 6 Nov ~23:33).
+      if(by.has(key)){ out.push(by.get(key)); seen.add(key); continue; }
+      const video=videos.find(v=>v.key===key);
+      if(!video) continue;
+      const claimed=(video.jobs||[]).filter(j=>j&&j.status==='claimed').map(j=>({
+        id:j.id, title:j.title||j.remaining_action||'', status:'claimed', stage:j.stage||'',
+        progress:j.progress||null,
+      }));
+      out.push({film:key, title:video.title||'', items:claimed, doneToday:0, left:claimed.length, blocked:0, jobs:claimed.length});
+      seen.add(key);
+    }
+    return out;
+  }
+  function p24BenBlockedJobs(p, films) {
+    const g=(p&&p.glance)||{};
+    const list=films||[];
+    const filmKeys=new Set(list.map(f=>f.film).filter(Boolean));
+    const fromGlance=(g.blockedJobs||[])
+      .filter(j=>!filmKeys.size||filmKeys.has(j.film)||p24InFocus(j.film, filmKeys))
+      .filter(p24NeedsBenAttention);
+    if(fromGlance.length) return fromGlance;
+    const out=[];
+    for(const f of list){
+      for(const j of f.items||[]){
+        if(!(p24IsCantRunItem(j)&&p24NeedsBenAttention(j))) continue;
+        out.push({id:j.id||'', film:f.film, title:j.title||'', status:j.status||'blocked', waitKind:j.waitKind, why:j.why||''});
+      }
+    }
+    return out;
+  }
+  function p24GlanceCounts(p, films) {
+    const list=films||p.films||[];
+    // Prefer counts from the cards on screen so focus filtering never leaves glance inflated.
+    const doneToday=list.reduce((n,f)=>n+(p24FilmCounts(f).doneToday||0),0);
+    const left=list.reduce((n,f)=>n+(p24FilmCounts(f).left||0),0);
+    const blockedJobs=p24BenBlockedJobs(p, list);
+    const blockedFromFilms=list.reduce((n,f)=>n+(p24FilmCounts(f).blocked||0),0);
+    const blocked=blockedFromFilms||blockedJobs.length;
+    return {doneToday, left, blocked, blockedJobs};
+  }
+  // Last 24h headlines only — can't-run detail lives in Needs attention (Ben, 6 Nov ~23:05).
+  function p24Glance(p, films) {
+    const {doneToday, left, blocked}=p24GlanceCounts(p, films);
+    return `<div class="ov-card p24-glance" aria-label="Studio glance">
+      <div class="p24-glance-stats"><div><b>${doneToday}</b><span>Done today</span></div><div><b>${left}</b><span>Left to go live</span></div><div><b>${blocked}</b><span>Can't run yet</span></div></div>
+    </div>`;
+  }
+  function needsAttentionBanner(b) {
+    const p=b&&b.progress24h; if(!p) return '';
+    const films=p24WorkingFilms(b);
+    const {blockedJobs}=p24GlanceCounts(p, films);
+    if(!blockedJobs.length) return '';
+    const n=blockedJobs.length;
+    const list=blockedJobs.map(j=>{
+      const line=j.why||j.title||'';
+      return `<li><b>${esc(j.id||'')}</b> <span class="p24-title wrap">${esc(line)}</span></li>`;
+    }).join('');
+    return `<details class="overview-attention" aria-label="Needs attention">
+      <summary><span class="att-icon" aria-hidden="true"></span><span class="att-copy"><b>Needs attention</b><span>${n} job${n===1?'':'s'} can't run yet</span></span><span class="att-chev" aria-hidden="true">›</span></summary>
+      <ul class="p24-glance-list att-list">${list}</ul>
+    </details>`;
+  }
+  // Next publishes helper kept for tests / Schedule; not shown on Overview home.
+  function p24NextLive(p) {
+    const next=((p&&p.glance)||{}).nextLive||[];
+    const rows=next.slice(0,4);
+    if(!rows.length) return '';
+    return `<section class="overview-next-live" aria-label="Next to go live"><h2>Next to go live</h2><div class="ov-card p24-next"><ol class="p24-next-list">${rows.map(v=>{
+      const when=v.atLondon||v.at||'';
+      return `<li><span class="p24-next-when">${esc(when)}</span><span class="p24-title wrap">${esc(v.title||'')}</span></li>`;
+    }).join('')}</ol></div></section>`;
+  }
+  function workingOnNowBody(b) {
+    const p=b.progress24h; if(!p) return '';
+    const focus=p24FocusSet(b);
+    const films=p24WorkingFilms(b);
+    const filmCards=films.map(f=>p24FilmCard(f, b)).join('');
+    const base=focus.size?'Working on now':'Videos that had work';
+    const filmsH=films.length?`${base} (${films.length})`:base;
+    if(!filmCards) return {h:filmsH, n:0, html:`<p class="muted p24-note">No video work in this window${p.hours?'':' yet (first reading)'}.</p>`};
+    return {h:filmsH, n:films.length, html:`<div class="ov-stack p24-films">${filmCards}</div>`};
+  }
+  function workingOnNow(b) {
+    const body=workingOnNowBody(b); if(!body) return '';
+    return `<section class="overview-p24 overview-working" aria-label="Working on now"><div class="ov-section-head"><h2>${body.h}</h2></div>${body.html}</section>`;
+  }
+  function p24TotalsBody(b) {
+    const p=b.progress24h; if(!p) return '';
+    const studio=(p.studio||[]).map(p24JobLine).join('');
+    const studioN=p.otherJobs!=null?p.otherJobs:(p.studio||[]).length;
+    return `<div class="ov-card p24-head">
+      <div class="p24-stats"><div><b>${p.videoJobs!=null?p.videoJobs:(p.jobsDone||0)}</b><span>Video jobs finished</span></div><div><b>${p.milestones||0}</b><span>Milestones done</span></div><div><b>${(p.moved||[]).filter(m=>m.milestones>0).length}</b><span>Videos moved forward</span></div></div>
       ${p.videoJobs!=null?`<p class="muted p24-agents${p.jobsDone&&p.videoJobs/p.jobsDone<0.3?' p24-warn':''}">${p.videoJobs} of ${p.jobsDone||0} jobs were on videos (${p.jobsDone?Math.round(p.videoJobs/p.jobsDone*100):0}%); the rest kept the studio running.</p>`:''}
-      ${agents?`<p class="muted p24-agents">By ${agents}</p>`:''}
-      ${moved?`<h3>Videos that moved</h3><ul class="p24-list">${moved}</ul>${reopened}`:`<p class="muted p24-note">No video changed milestone ${p.hours?'in this window':'yet (first reading)'}.</p>`}
-      ${partial}
-      ${films?`<details class="p24-more"><summary>Where the work went (${p.jobsDone||0} jobs${p.otherJobs?`, ${p.otherJobs} studio-wide`:''})</summary><ul class="p24-list">${films}</ul></details>`:''}
+      </div>
+      ${studio||studioN?`<details class="p24-more p24-studio"><summary>Studio-wide (${studioN||(p.studio||[]).length} job${(studioN||(p.studio||[]).length)===1?'':'s'})</summary><ul class="p24-job-list" role="list">${studio||`<li class="muted">No job titles recorded.</li>`}</ul></details>`:''}`;
+  }
+  function p24Totals(b) {
+    const body=p24TotalsBody(b); if(!body) return '';
+    return `<section class="overview-p24 overview-p24-stats" aria-label="Studio totals"><div class="ov-section-head"><h2>Studio totals</h2></div>${body}</section>`;
+  }
+  // Composed for tests; Overview home restacks the pieces itself (Ben, 6 Nov ~23:05).
+  function progressCard(b) {
+    const p=b.progress24h; if(!p) return '';
+    const films=p24WorkingFilms(b);
+    const work=workingOnNowBody(b);
+    return `<section class="overview-p24" aria-label="Progress in the last 24 hours"><h2>Last 24 hours</h2>
+      ${p24Glance(p, films)}
+      ${work?`<h3 class="p24-films-h">${work.h}</h3>${work.html}`:''}
+      ${p24TotalsBody(b)}
     </section>`;
   }
   // Machines (Ben, 4 Nov 2026): what the Mini and the MacBook are on now, and jobs each finished in 24 h.
   // Queue forecast (Ben, 5 Nov 2026: "waiting for this particular agent to be free, number 4 in the queue ... a time").
+  // Overview tidy (Ben, 6 Nov 2026): drop per-machine By splits / Agents here / min-per-job / idle empty agent rows;
+  // show last-seen only when stale (~30+ min); wrap queue clear times; plain-English unavailable reasons.
+  const SEEN_STALE_MIN = 30;
   function qWhen(t) {
     const d=Date.parse(t); if(!d) return '';
-    const day=x=>new Date(x).toLocaleDateString('en-GB',{timeZone:'Europe/London',weekday:'short'});
+    const day=x=>new Date(x).toLocaleDateString('en-GB',{timeZone:'Europe/London',weekday:'long'});
     const hm=new Date(d).toLocaleTimeString('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'});
     return (day(d)===day(Date.now())?'':day(d)+' ')+hm;
+  }
+  function plainWhy(why) {
+    const s=String(why||'').trim();
+    if(!s) return 'down';
+    let m=s.match(/no Claude run for (\d+)\s*min/i);
+    if(m){
+      const min=+m[1];
+      if(min<60) return `last run about ${min} min ago`;
+      const h=Math.round(min/60);
+      return `last run about ${h} hour${h===1?'':'s'} ago`;
+    }
+    m=s.match(/no heartbeat from MacBook slot (\d+) in (\d+)\s*min/i);
+    if(m) return `MacBook ${m[1]} hasn't checked in for about ${m[2]} min`;
+    m=s.match(/no MacBook heartbeat in (\d+)\s*min/i);
+    if(m) return `MacBook hasn't checked in for about ${m[1]} min`;
+    m=s.match(/no heartbeat yet/i);
+    if(m) return 'no check-in yet';
+    // Strip heartbeat internals; keep the human meaning.
+    return s.replace(/\s*\([^)]*heartbeat[^)]*\)/gi,'').replace(/\bheartbeat\b/gi,'check-in').replace(/\s{2,}/g,' ').trim()||'down';
   }
   function forecastLine(b, j) {
     const q=(b&&b.queueForecast)||{}, f=j&&(q.jobs||{})[j.id];
@@ -802,61 +1503,109 @@
     const why=j&&(q.noAgent||{})[j.id];
     return why?why.charAt(0).toUpperCase()+why.slice(1):'';
   }
+  // Compact agent rows (still used by tests / detail views). Overview home no longer lists Agents (Agents tab).
   function agentLines(b) {
     const q=(b&&b.queueForecast)||{};
-    const rows=(q.agents||[]).map(a=>{
+    // Busy, queued, or unavailable only — hide idle agents with nothing waiting.
+    const rows=(q.agents||[]).filter(a=>!a.up||a.now||a.queued).map(a=>{
       const name=AGENTS[a.agent]||a.agent;
-      if(!a.up) return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title muted">Not available · ${esc(a.why||'down')}</span></li>`;
+      if(!a.up) return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title wrap muted">Not available · ${esc(plainWhy(a.why))}</span></li>`;
       const on=a.now?`on ${esc(a.now)} · free about ${esc(qWhen(a.freeAt))}`:'free now';
       const line=a.queued?` · ${a.queued} in line, clear about ${esc(qWhen(a.clearAt))}`:'';
-      return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title">${on}${line}</span><span class="p24-count">~${a.minutesPerJob} min/job</span></li>`;
+      return `<li><span class="p24-film">${esc(name)}</span> <span class="p24-title wrap">${on}${line}</span></li>`;
     }).join('');
-    return rows?`<div class="mc-machine"><div class="mc-head"><b>Agents and their lines</b></div><ul class="p24-list">${rows}</ul><p class="muted p24-note">${esc(q.note||'')}</p></div>`:'';
+    return rows?`<section class="overview-agents" aria-label="Agents and their lines"><h2>Agents and their lines</h2><div class="ov-card mc-agents"><ul class="p24-list mc-agent-list">${rows}</ul>${q.note?`<p class="muted p24-note">${esc(q.note)}</p>`:''}</div></section>`:'';
   }
+  // Traffic light: green = working, amber = waiting/available, red = idle / down / blocked (Ben, 6 Nov ~22:14).
+  function machineTraffic(r) {
+    const n=(r.now||[]).length;
+    const st=String(r.state||'').toLowerCase();
+    if(n>0||st==='running'||st==='working') return {light:'green', word:'Working', count:n||1};
+    if(st==='error'||st==='down') return {light:'red', word:'Down', count:0};
+    if(st==='busy'||st==='waiting') return {light:'amber', word:'Waiting', count:0};
+    // Up with nothing on it → idle (red). Available-with-queue is rare on machines; keep amber for explicit waiting.
+    return {light:'red', word:'Idle', count:0};
+  }
+  function agentTraffic(a, modelStatus) {
+    const ms=(modelStatus&&modelStatus[a.agent])||{};
+    if(!a.up||ms.status==='red') return {light:'red', word:'Down'};
+    if(a.now) return {light:'green', word:'Working'};
+    if((a.queued||0)>0) return {light:'amber', word:'Waiting'};
+    return {light:'red', word:'Idle'};
+  }
+  const MACHINE_ORDER=[
+    {id:'mini', short:'Mini', name:'Mac mini'},
+    {id:'macbook', short:'MacBook', name:'MacBook Pro'},
+    {id:'cloud', short:'Claude', name:'Claude (cloud)'},
+    {id:'grok', short:'Grok', name:'Grok box'},
+  ];
+  function liveMachineRow(r, now) {
+    if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
+    const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
+    const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
+    return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
+  }
+  // Four compact traffic-light chips: "1 on · 41 done" / "Idle · 0 done" (Ben, 6 Nov ~23:05).
   function machinesCard(b, now) {
     const m=b.machines;
-    if(!m||!(m.machines||[]).length) return '';
-    const ago=t=>{const d=Date.parse(t);if(!d)return'';const min=Math.round((now-d)/60000);return min<1?'just now':min<60?`${min} min ago`:`${Math.round(min/60)} h ago`;};
-    const live=r=>{  // the MacBook's own report is fetched every minute, fresher than the 5-min board publish
-      if(r.id!=='macbook'||!macbook||!(Date.parse(macbook.at)>Date.parse(r.seen||0))) return r;
-      const why=Array.isArray(macbook.why)?macbook.why.join('; '):(macbook.why||'');
-      const now2=(r.now||[]).length||!macbook.job?r.now:[{id:macbook.job,title:'',agent:'macbook'}];
-      return {...r,state:macbook.state||r.state,why,seen:macbook.at,agents:macbook.agents||r.agents,now:now2};
-    };
-    const rows=m.machines.map(live).map(r=>{
-      const jobs=(r.now||[]).map(n=>`<li><span class="p24-film">${esc(n.id)}</span> <span class="p24-title">${esc(n.title)}</span><span class="p24-count">${esc(n.agent||'')}</span></li>`).join('');
-      const agents=Object.entries(r.byAgent||{}).map(([a,n])=>`${esc(a)} ${n}`).join(' · ');
-      const idle=!jobs?`<p class="muted p24-note">${r.why?esc(r.why):'No job right now.'}${r.seen?` · seen ${ago(r.seen)}`:''}</p>`:'';
-      const clis=(r.agents||[]).length?`<p class="muted p24-note">Agents here: ${(r.agents||[]).map(esc).join(', ')}</p>`:'';
-      return `<div class="mc-machine"><div class="mc-head"><b>${esc(r.name)}</b><span class="mc-done"><b>${r.done24||0}</b> done in 24 h</span></div>
-        ${jobs?`<ul class="p24-list">${jobs}</ul>`:idle}${agents?`<p class="muted p24-note">By ${agents}</p>`:''}${clis}</div>`;
+    const byId=Object.fromEntries(((m&&m.machines)||[]).map(r=>[r.id, liveMachineRow(r, now)]));
+    const chips=MACHINE_ORDER.map(meta=>{
+      const r=byId[meta.id]||{id:meta.id, name:meta.name, now:[], done24:0, state:''};
+      const t=machineTraffic(r);
+      const working=t.count>0?`${t.count} on`:`${t.word}`;
+      const caption=`${working} · ${r.done24||0} done`;
+      return `<a class="ov-card mc-chip light-${t.light}" href="#agents" aria-label="${esc(meta.name)}: ${t.word}">
+        <i class="mc-light" aria-hidden="true"></i>
+        <b class="mc-short">${esc(meta.short)}</b>
+        <span class="mc-chip-state">${esc(caption)}</span>
+      </a>`;
     }).join('');
-    return `<section class="overview-p24 overview-machines" aria-label="Machines"><h2>Machines</h2>${rows}${agentLines(b)}</section>`;
+    return `<section class="overview-machines" aria-label="Machines"><div class="ov-section-head"><h2>Machines</h2><span class="ov-count">${MACHINE_ORDER.length} total</span></div><div class="mc-row">${chips}</div></section>`;
   }
+  // Kept for tests / reuse; Overview home no longer renders Agents (Agents tab owns that).
+  function agentsCards(b) {
+    const q=(b&&b.queueForecast)||{};
+    const modelStatus=Object.fromEntries((((b.models)||{}).models||[]).map(x=>[x.id,x]));
+    const rows=q.agents||[];
+    if(!rows.length) return '';
+    const chips=rows.map(a=>{
+      const name=AGENTS[a.agent]||a.agent;
+      const t=agentTraffic(a, modelStatus);
+      const detail=a.now?esc(a.now):(a.queued?`${a.queued} waiting`:t.word);
+      return `<div class="ov-card mc-chip ag-chip light-${t.light}" aria-label="${esc(name)}: ${t.word}">
+        <i class="mc-light" aria-hidden="true"></i>
+        <b class="mc-short">${esc(name)}</b>
+        <span class="mc-chip-state">${detail}</span>
+      </div>`;
+    }).join('');
+    return `<section class="overview-agents" aria-label="Agents"><h2>Agents</h2><div class="mc-row mc-row-wrap">${chips}</div></section>`;
+  }
+  function last24Section(b) {
+    const p=b.progress24h; if(!p) return '';
+    return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><div class="ov-section-head"><h2>Last 24 hours</h2></div>${p24Glance(p, p24WorkingFilms(b))}</section>`;
+  }
+  // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
+  // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
   function overview(b, now) {
-    const s=overviewModel(b,now), candidate=featureVideo(b,now);
+    const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
-      <div class="overview-stats" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
-      <section class="overview-feature"><h2>${s.ready.length?'Ready for your review':'Next in production'}</h2>${!s.ready.length?'<p class="muted">Nothing is ready for your review yet.</p>':''}${featuredCard(candidate,now,s.producing.length)}${nextVideoWorkCard(b,candidate,now)}</section>
+      <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      ${needsAttentionBanner(b)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
-      ${progressCard(b)}</div>`;
+      ${workingOnNow(b)}
+      ${last24Section(b)}
+      ${p24Totals(b)}</div>`;
   }
 
-  // Working / Queued / Backlog (Ben, 28 Oct): active work is one tap away; All keeps everything with On YouTube.
-  // Post-live (Ben, 5 Nov 2026: "a new swim lane as post live checks so I can see what videos are being built to go live
-  // and what is post live improvements"): on YouTube (live, scheduled or uploaded) with work still open on it.
-  const onYouTube = v => !!v.youtube && ["live", "scheduled", "uploaded"].includes(v.youtube.state);
-  const postLive = v => onYouTube(v) && (v.jobs || []).some(LIVE);
+  // Nine exclusive Videos swim lanes (Ben, 7 Nov 2026). Only UAT needs Ben; UAT OK → Passed, notes → In progress.
   function videoGroups(vs) {
-    const active = ["progress", "changes", "ready", "approved"];
-    return {
-      working: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && isWorking(v)),
-      queued: vs.filter(v => active.includes(v.lane) && !isLive(v) && !postLive(v) && !isWorking(v)),
-      backlog: vs.filter(v => v.lane === "upcoming" && !isLive(v)),
-      postlive: vs.filter(v => postLive(v) && !v.collapsed),
-      done: vs.filter(v => (v.lane === "done" || isLive(v)) && !v.collapsed && !postLive(v)),
-    };
+    const g = Object.fromEntries(VIDEO_LANE_ORDER.map(id => [id, []]));
+    for (const v of vs) {
+      const lane = videoLane(v);
+      if (lane && g[lane]) g[lane].push(v);
+    }
+    return g;
   }
 
   function videos(b) {
@@ -864,28 +1613,65 @@
       (filterCh === "all" || v.channel === filterCh) && (filterType === "all" || v.type === filterType));
     const g = videoGroups(vs);
     for (const key of Object.keys(g)) g[key] = sortVideos(g[key], videoSort, Date.now());
-    // Ben, 29 Oct: "Home page saying working on 1, the video page says 0": studio jobs count here too.
+    // Studio-only jobs (no video card) still count under In progress, matching Overview.
     const studio = routeView()!=='producing' && filterType === "all" ? studioJobs(b).filter(j => filterCh === "all" || (j.repo || "owb") === filterCh.toLowerCase()) : [];
-    g.working.extra = studio.length;
-    const segs = [["all", "All"], ["working", "Working"], ["queued", "Waiting"], ["postlive", "Post-live"], ["backlog", "Backlog"]]
-      .map(([id, label]) => `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}">${label}${id === "all" ? "" : ` <small>${g[id].length + (g[id].extra || 0)}</small>`}</button>`).join("");
-    const chips = [["ch", "all", "Both"], ["ch", "OWB", "Orbit"], ["ch", "HOS", "HOS"], ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
+    g.progress.extra = studio.length;
+    // Nine equal count chips in locked order (3×3). No "All" tile — tap the active lane again to clear.
+    const segs = VIDEO_LANE_CHIPS
+      .map(([id, label]) => {
+        const n = g[id].length + (g[id].extra || 0);
+        return `<button type="button" data-seg="${id}" class="${seg === id ? "on" : ""}" aria-pressed="${seg === id ? "true" : "false"}"><b>${n}</b><span>${esc(label)}</span></button>`;
+      }).join("");
+    const chs = channelList();
+    const chips = [["ch", "all", chs.length === 2 ? "Both" : "All"], ...chs.map(c => ["ch", c.label, c.short || c.label]),
+                   ["ty", "long", "Longs"], ["ty", "short", "Shorts"]]
       .map(([k, val, label]) => `<button type="button" data-f="${k}" data-v="${val}" class="${(k === "ch" ? filterCh : filterType) === val ? "on" : ""}">${label}</button>`).join("");
-    const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now())).join("")
+    const list = (items, limit) => items.slice(0, limit).map(v => videoProductionRow(v, Date.now(), b)).join("")
       + (items.length > limit ? `<p class="meta">${items.length - limit} more: pick Orbit or HOS, Longs or Shorts to narrow the list.</p>` : "");
     // A batch job on several videos: the first card carries the job, the others say whose job they share.
-    const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now())
-      + rest.map(v => videoProductionRow(v, Date.now())).join('')).join('');
+    const jobList = items => jobGroups(items).map(([first, ...rest]) => videoProductionRow(first, Date.now(), b)
+      + rest.map(v => videoProductionRow(v, Date.now(), b)).join('')).join('');
+    // In progress: claimed/working-now first, then waiting — never bury live work under UAT sort (Ben, 7 Nov 2026).
+    const progressBody = (items) => {
+      const { working, waiting } = partitionProgressVideos(items);
+      const workingN = working.length + studio.length;
+      const parts = [];
+      if (workingN) {
+        parts.push(`<h3 class="lane-sub">Working now <span class="n">${workingN}</span></h3>`);
+        parts.push(jobList(working));
+        parts.push(studio.map(jobCard).join(""));
+      }
+      if (waiting.length) {
+        parts.push(`<h3 class="lane-sub">Waiting <span class="n">${waiting.length}</span></h3>`);
+        parts.push(`<p class="meta lane-sub-blurb">Queued, blocked, or waiting for a step — still In progress, not live work.</p>`);
+        parts.push(jobList(waiting));
+      }
+      return parts.join("") || empty("Nothing in progress.");
+    };
     const show = id => routeView()==='producing' || seg === "all" || seg === id;
+    const limitFor = id => (seg === id ? 60 : (id === "todo" || id === "progress" || id === "qa" || id === "uat" || id === "passed" ? 30 : 10));
+    const laneSection = (id) => {
+      if (!show(id)) return "";
+      // Producing view hides YouTube / backlog noise.
+      if (routeView() === "producing" && ["backlog", "scheduled", "live", "postlive", "uat"].includes(id)) return "";
+      const copy = VIDEO_LANE_COPY[id] || { title: id, blurb: "" };
+      const items = g[id] || [];
+      const count = items.length + (items.extra || 0);
+      const blurb = items.length || (id === "progress" && studio.length) ? `<p class="meta">${esc(copy.blurb)}</p>` : "";
+      let body = "";
+      if (id === "progress") body = progressBody(items);
+      else if (id === "uat") body = (items.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}<a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("")) || empty("Nothing waiting for your watch.");
+      else body = list(items, limitFor(id)) || empty(id === "backlog" ? "Backlog is empty." : "Nothing here.");
+      // Collapsible lane sections (open when selected or when viewing all).
+      const open = seg === "all" || seg === id ? " open" : "";
+      return `<details class="lane-fold"${open}><summary>${esc(copy.title)} <span class="n">${count}</span></summary>${blurb}${body}</details>`;
+    };
     return `<header class="top"><h1>Videos</h1></header>
+      <p class="meta">Only UAT needs you. Pass a cut → Passed (ready to schedule). Leave notes → In progress for the agents.</p>
       ${routeView()==='producing'?`<p class="list-scope">Producing · ${vs.length} unique videos <a href="#videos">Show all</a></p>`:''}
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
       <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Waiting first</option></select></label>
-      ${show("working") ? section("An agent is on it now", g.working.length + studio.length, (jobList(g.working) + studio.map(jobCard).join("")) || empty("No agent is working this minute.")) : ""}
-      ${show("queued") ? section("In production, waiting for its next step", g.queued.length, list(g.queued, 30) || empty("Nothing waiting.")) : ""}
-      ${routeView()!=='producing' && (seg === "all" || seg === "postlive") ? section("Post-live: checks and improvements", g.postlive.length, (g.postlive.length ? '<p class="meta">Already on YouTube or scheduled. These are the jobs after launch: pinned comments, Related links, thumbnail and title tests, fixes.</p>' : '') + (list(g.postlive, seg === "postlive" ? 60 : 10) || empty("No post-live work right now."))) : ""}
-      ${show("backlog") ? section("Backlog", g.backlog.length, list(g.backlog, seg === "backlog" ? 60 : 10) || empty("Backlog is empty.")) : ""}
-      ${seg === "all" ? section("On YouTube", g.done.length, list(g.done, 10)) : ""}`;
+      ${VIDEO_LANE_ORDER.map(laneSection).join("")}`;
   }
 
   // One video, in the hub: where it is, who is on it, what is left, your notes, and its links.
@@ -921,7 +1707,7 @@
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
     const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
     return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
-      <p class="meta">${v.channel==='HOS'?'History of Science':'Orbit With Ben'} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
+      <p class="meta">${esc(chName(v.channel))} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
       </div></div>
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
       ${productionDetail(v, Date.now())}
@@ -931,14 +1717,19 @@
 
   function review(b) {
     const vs = uniqueVideos(((b.tracker || {}).videos) || []);
-    const need = forBen(vs).map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}
+    const needList = forBen(vs);
+    const need = needList.map(v => `<div class="rcard">${row(v, `<span class="tag amber">Needs your review</span>`, uatLink(v))}
       <a class="btn watch" href="${uatLink(v)}">▶ Watch & review ${esc((v.watch || {}).version || v.version || "")}</a></div>`).join("");
     const checked = vs.map(v => (sent[v.checkId] || {}).key === v.key ? Object.assign({}, v, { check: sent[v.checkId] }) : v);
-    const done = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at)).slice(0, 8)
+    const reviewed = checked.filter(v => v.check && v.check.at).sort((a, b) => Date.parse(b.check.at) - Date.parse(a.check.at));
+    const done = reviewed.slice(0, 8)
       .map(v => row(v, `<span class="tag ${v.check.verdict === "ok" ? "green" : "amber"}">${v.check.verdict === "ok" ? "You OK'd" : "You asked for changes"} ${esc(v.check.version || "")}</span>`)).join("");
+    // Two equal summary chips. Not filters — pending stays above; reviewed can collapse but starts open.
+    const chips = `<div class="seg two" aria-label="Review counts"><div><b>${needList.length}</b><span>Needs your review</span></div><div><b>${reviewed.length}</b><span>Reviewed</span></div></div>`;
     return `<header class="top"><h1>Review</h1></header><p class="meta">Finished videos only. Everything else is the agents' job.</p>
-      ${section("Needs your review", forBen(vs).length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
-      ${section("Reviewed", null, done || empty("No reviews yet."))}`;
+      ${chips}
+      ${section("Needs your review", needList.length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
+      <details class="reviewed-fold" open><summary>Reviewed <span class="n">${reviewed.length}</span></summary>${done || empty("No reviews yet.")}</details>`;
   }
 
   // UAT screen (Ben, 28 Oct): the cut in a player, notes stamped with the playback time, Approve or Request changes.
@@ -955,11 +1746,24 @@
         ${inPage ? '<div class="btns one"><button type="button" class="btn" data-stamp>+ Note at the current time</button></div>' : ""}
         <div class="btns"><button type="button" class="btn ok" data-ok="${esc(v.key)}">✓ Approve</button>
         <button type="button" class="btn chg" data-chg="${esc(v.key)}">Request changes</button></div>
-        <p class="meta">Approve sends your OK; Request changes sends the notes above. The agents make the next version and it comes back here.</p>`
+        <p class="meta">Approve moves it to Passed (ready to schedule). Request changes sends your notes to In progress — agents pick them up; it does not stay in UAT.</p>`
       : `<p class="line">This Short is reviewed with its long film: your OK or changes there cover it.</p>`;
     return `<header class="top"><a class="more back" href="#review">‹ Review</a></header>
-      <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""}</p>
-      <div class="player">${player}</div>${actions}`;
+      <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""} · your watch</p>
+      <div class="player">${player}</div>${actions}${pastNotesHtml(v)}`;
+  }
+
+  // Ben, 8 Nov 2026: a cut he sent back shows, under the player, what he flagged last time (and what the agents say
+  // they changed), so he can check each fix as he watches.
+  function pastNotesHtml(v) {
+    const rounds = (v.pastNotes || []).filter(r => (r.notes || []).length);
+    const fixed = (v.fixedNotes || []).filter(Boolean);
+    if (!rounds.length && !fixed.length) return "";
+    const when = iso => { const t = Date.parse(iso || ""); return isNaN(t) ? "" : new Date(t).toLocaleDateString("en-GB", {day: "numeric", month: "short", timeZone: "Europe/London"}); };
+    const list = rounds.map(r => `<p class="meta">On ${esc(r.version || "the last cut")}${when(r.at) ? " (" + esc(when(r.at)) + ")" : ""} you asked for:</p>
+      <ul class="past-notes">${r.notes.map(n => `<li>${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("")}</ul>`).join("");
+    const did = fixed.length ? `<p class="meta">What the agents changed:</p><ul class="past-notes">${fixed.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : "";
+    return `<section class="past-problems" aria-label="What you flagged last time"><h2>What you flagged last time</h2>${list}${did}</section>`;
   }
 
   // Green only for real work (a claimed job, or the Chief coordinating on a fresh relay check); amber for online but
@@ -991,16 +1795,20 @@
   function agents(b, now) {
     const m = b.models || {}, jobs = ((b.owb || {}).jobs) || [], c = m.chief || {}, s = summary(b, now);
     const status = Object.fromEntries((m.models || []).map(x => [x.id, x]));
-    const team = Object.entries(AGENTS).map(([id, name]) => {
+    // Working first, then idle, then unavailable (red). Content of each row is unchanged.
+    const rank = { green: 0, amber: 1, red: 2 };
+    const teamRows = Object.entries(AGENTS).map(([id, name]) => {
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
       let why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
-      return `<div class="row agent"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
-        <span class="meta">${esc(clip(why, 110))}</span></div></div>`;
-    }).join("");
+      const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
+      return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
+        <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };
+    }).sort((a, b) => (rank[a.st] ?? 9) - (rank[b.st] ?? 9));
+    const team = teamRows.map(r => r.html).join("");
     const pools = (b.credits || {}).pools || {};
     // Every model gets a bar where a real reading exists (Ben, 29 Oct: "accurate progress for all the models").
     // Grok Bot has no meter of its own: it runs on the same weekly pool as Cursor (the Mini reads it from
@@ -1019,10 +1827,11 @@
       ["Grok", "cursor", "chief"], ["Claude", "claude", "claude"], ["Gemini", "gemini", "gemini"]]
       .filter(([, id, alias]) => pools[id] || alias).map(([name, id, alias]) => tile(name, id, alias)).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
-      <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div><b>Chief: ${esc(c.name || "nobody")}</b>
-        <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
+      <p class="meta">AI agents, their status, and usage credits.</p>
       ${jobTiles(s.jobs)}
-      ${section("Agent team", null, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
+      <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div class="body"><b>Chief: ${esc(c.name || "nobody")} <span class="tag ${c.agent ? "green" : "red"}">${c.agent ? "Coordinating" : "Down"}</span></b>
+        <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
+      ${section("Agent team", Object.keys(AGENTS).length, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
       ${agentQueue(b,now)}
       ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
@@ -1083,9 +1892,17 @@
     const planned=rows.filter(r=>!r.scheduled && londonDay(r.at)>=bounds.start && londonDay(r.at)<bounds.end);
     const next=rows.filter(r=>londonDay(r.at)>=bounds.end && londonDay(r.at)<bounds.nextEnd);
     const later=rows.filter(r=>londonDay(r.at)>=bounds.nextEnd);
+    // Three matching summary chips (Videos/Review/Agents language). Not filters — week lists stay stacked below.
+    // "Scheduled" = confirmed YouTube publishAt only; planned dates stay labelled in the list.
+    const confirmed = rows.filter(r => r.scheduled).length;
+    const chips = `<div class="seg" aria-label="Schedule counts"><div><b>${actualWeek.length}</b><span>This week</span></div><div><b>${next.length}</b><span>Next week</span></div><div><b>${confirmed}</b><span>Scheduled</span></div></div>`;
+    // Always show This week then Next week (and Later). view=week is a deep-link only — never hides a week list.
     return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
+      ${chips}
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
-      ${routeView()==='week'?'<a class="more" href="#schedule">Full schedule</a>':`${planned.length?section("This week · planned",planned.length,byDay(planned)):''}${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`}`;
+      ${planned.length?section("This week · planned",planned.length,byDay(planned)):''}
+      ${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}
+      ${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`;
   }
 
   function renderTab(tab, b, now) {
@@ -1108,6 +1925,7 @@
     const focused = document.activeElement;
     const focusStage = focused && focused.tagName === 'SUMMARY' && focused.parentElement.dataset.stage;
     const focusId = focused && focused.id;
+    if (board) ensureVideosLanding(board);
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
@@ -1161,12 +1979,33 @@
       if (!expandedStages.has(key)) expandedStages.set(key,new Set([...document.querySelectorAll('details[data-stage][open]')].map(x=>x.dataset.stage)));
       const saved=expandedStages.get(key); if(el.open) saved.add(el.dataset.stage); else saved.delete(el.dataset.stage);
     }));
-    document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => { seg = btn.dataset.seg; render(); });
+    document.querySelectorAll("[data-seg]").forEach(btn => btn.onclick = () => {
+      videosLaneChosen = true;
+      seg = seg === btn.dataset.seg ? "all" : btn.dataset.seg;
+      render();
+    });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
       if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
       render();
     });
+    // Jump links sit inside <summary>; stopPropagation so expand/collapse stays on the chevron/row tap.
+    document.querySelectorAll("a.p24-videos-jump").forEach(a => {
+      a.addEventListener("click", e => { e.stopPropagation(); });
+    });
+    const focusFilm = videosFocusFromHash();
+    if (tab === "videos" && focusFilm && !vk) {
+      const target = [...document.querySelectorAll("a.row[data-film-key], a.row[data-video-key]")].find(el => {
+        const film = el.getAttribute("data-film-key") || "";
+        const video = el.getAttribute("data-video-key") || "";
+        return film === focusFilm || video === focusFilm || video.startsWith(focusFilm + ":")
+          || p24InFocus(video, new Set([focusFilm])) || p24InFocus(film, new Set([focusFilm]));
+      });
+      if (target) requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+        target.classList.add("is-focus");
+      });
+    }
   }
 
   async function poll() {
@@ -1198,9 +2037,18 @@
   }
 
   // STUDIO_APP_TEST_HOOK
+  // Scroll the app-shell main pane (Ben, 6 Nov ~23:55: tab bar is a flex footer, not position:fixed).
+  function scrollAppTop() {
+    const pane=document.getElementById("view");
+    if(pane&&typeof pane.scrollTo==="function") pane.scrollTo(0,0);
+    else if(pane) pane.scrollTop=0;
+    else window.scrollTo(0,0);
+  }
   window.addEventListener("hashchange", () => {
-    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";}
-    render(); window.scrollTo(0, 0);
+    if(location.hash==="#videos&view=producing") {filterCh="all";filterType="all";seg="all";videosLaneChosen=true;}
+    // Explicit lane in the hash counts as a chosen deep link for this visit.
+    if (videosLaneFromHash()) videosLaneChosen = true;
+    render(); scrollAppTop();
   });
   render();
   poll();

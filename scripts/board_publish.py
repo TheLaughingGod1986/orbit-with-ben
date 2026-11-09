@@ -45,6 +45,7 @@ import hashlib
 import json
 import os
 import workflow_state as workflow
+import channels
 import re
 import pathlib
 import subprocess
@@ -53,7 +54,7 @@ import urllib.request
 
 HOME = pathlib.Path.home()
 OWB = pathlib.Path(os.environ.get("OWB_REPO", str(HOME / "YouTube" / "orbit-with-ben")))
-HOS = pathlib.Path(os.environ.get("HOS_REPO", str(HOME / "YouTube" / "History Of Science")))
+HOS = channels.repo_path("hos", HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
@@ -63,12 +64,12 @@ CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minu
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
-OWB_SPARSE = ["/scripts/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
+OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
+HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
@@ -428,17 +429,37 @@ def ls_remote(repo: pathlib.Path, *refs: str) -> str:
     return git(repo, "ls-remote", "origin", *refs, timeout=30)
 
 
+MACBOOK_SLOT_REFS = ("macbook-heartbeat", "macbook-heartbeat-2")  # one per MacBook slot (two jobs at once, 5 Nov 2026)
+
+
+def merge_macbook(slots: list) -> dict | None:
+    """One MacBook heartbeat for the readers that know one: slot 1's (or the newest), plus `slots` (every slot's own
+    report, fresh or not) and `jobs` (what each working slot is on)."""
+    have = [s for s in slots if isinstance(s, dict)]
+    if not have:
+        return None
+    first = next((s for s in have if s.get("slot", 1) == 1), None) or max(have, key=lambda s: str(s.get("at") or ""))
+    out = dict(first)
+    out["slots"] = have
+    out["jobs"] = [str(s["job"]) for s in have if s.get("job")]
+    if any(s.get("state") == "working" for s in have):
+        out["state"] = "working"
+        out["job"] = first.get("job") or out["jobs"][0]
+    return out
+
+
 def heartbeats(repo: pathlib.Path | None = None) -> tuple:
-    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card)."""
+    """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card). The
+    MacBook one merges every slot's branch (merge_macbook)."""
     repo = repo or OWB
-    out = []
-    for branch in ("mini-heartbeat", "macbook-heartbeat"):
+    out = {}
+    for branch in ("mini-heartbeat", *MACBOOK_SLOT_REFS):
         try:
             git(repo, "fetch", "-q", "origin", f"+refs/heads/{branch}:refs/remotes/origin/{branch}", timeout=30)
-            out.append(json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15)))
+            out[branch] = json.loads(git(repo, "show", f"origin/{branch}:heartbeat.json", timeout=15))
         except Exception:  # noqa: BLE001
-            out.append(None)
-    return tuple(out)
+            out[branch] = None
+    return out["mini-heartbeat"], merge_macbook([out[b] for b in MACBOOK_SLOT_REFS])
 
 
 def quick_key(remote=ls_remote) -> str | None:
@@ -446,7 +467,7 @@ def quick_key(remote=ls_remote) -> str | None:
     orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
     None if a remote can't be read; the caller then does the full rebuild."""
     try:
-        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat"),
+        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
                  remote(HOS, "refs/heads/main")]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])
@@ -518,6 +539,11 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
+    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
+        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
+                             for c in channels.all_channels()]
+    except Exception as e:  # noqa: BLE001
+        log(f"channels not read: {e}")
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
         queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
@@ -568,6 +594,7 @@ def run_once(a) -> int:
 
 
 BOARD_CHECK_EVERY_S = 5 * 60
+APPROVED_DELIVER_EVERY_S = 5 * 60
 
 
 def kick_board_check(at: dt.datetime | None = None) -> bool:
@@ -587,6 +614,31 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
         return True
     except OSError as e:
         log(f"board check not started: {e}")
+        return False
+
+
+def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
+    """Enqueue/unblock Studio upload (or Buffer social) for Passed films whose listing package is complete.
+
+    Ben, 7 Nov 2026: after UAT OK the cut sits in Passed; once title/thumbnail/description/tags are set, create or
+    unblock the upload job (Private + publishAt). Rate-limited like board_check. Never uploads from this process —
+    only queue mutations via approved_deliver.py --apply --git. Idempotent; skips swaps and banned reuse ids.
+    """
+    at = at or now()
+    script = WT / "owb" / "scripts" / "approved_deliver.py"
+    stamp = STATE / "approved_deliver.json"
+    try:
+        if stamp.exists() and at.timestamp() - stamp.stat().st_mtime < APPROVED_DELIVER_EVERY_S:
+            return False
+        if not script.exists():
+            return False
+        stamp.write_text(json.dumps({"kickedAt": iso(at)}, indent=1))
+        subprocess.Popen([sys.executable, str(script), "--apply", "--git", "--agent", "relay"],
+                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         start_new_session=True, cwd=str(WT / "owb"))
+        return True
+    except OSError as e:
+        log(f"approved_deliver not started: {e}")
         return False
 
 
@@ -616,6 +668,7 @@ def main(argv: list[str] | None = None) -> int:
                 break
     if not a.dry_run:
         kick_board_check()
+        kick_approved_deliver()
     return 0
 
 

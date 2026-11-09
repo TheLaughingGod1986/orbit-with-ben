@@ -1,0 +1,143 @@
+{
+  "status": "MEASUREMENTS_ONLY",
+  "prior_export_hashes_matched": 62,
+  "probe": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "mime_codec_string": "avc1.640028",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/15360",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 55296,
+      "duration": "3.600000",
+      "bit_rate": "1472568",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "108",
+      "nb_read_frames": "108",
+      "extradata_size": 47,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "encoder": "Lavc63.1.101 libx264"
+      }
+    }
+  ],
+  "source_and_overlay_hashes_match": true,
+  "full_decode_exit": 0,
+  "frame_luma_min": 75.91,
+  "p95_min": 80.85,
+  "polish": {
+    "rule": {
+      "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+      "split_panel": "full-height/width seam or gutter",
+      "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+      "near_black": "mean < 28.0 or p95 < 50.0",
+      "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+      "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+    },
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    },
+    "video": "/Users/benjaminoats/_desk/cache/J2089/r18_composite_preview_v01/032_r18_composite_preview_v01.mp4",
+    "edge_floor": 0.0227,
+    "verdict": "PASS",
+    "failed": [],
+    "warn": [],
+    "reviewed_ok": [],
+    "rows": [
+      {
+        "cut": 0,
+        "row": 18,
+        "source": "PIA07232 + J2296 alpha",
+        "t": 1.8,
+        "std": 36.14,
+        "mean": 93.8,
+        "p95": 174.0,
+        "edge": 0.0227,
+        "hf": 9.43,
+        "lf": 32.6,
+        "std8": 33.54,
+        "edge8": 0.0842,
+        "seams": [],
+        "video": false,
+        "jitter": {
+          "trend_x": -0.0,
+          "trend_y": 0.0,
+          "max_off_trend_px": 0.0,
+          "reversals": 0,
+          "frames": 80,
+          "fail": false
+        },
+        "fail": [],
+        "warn": []
+      }
+    ]
+  }
+}

@@ -167,14 +167,14 @@ class Offload(unittest.TestCase):
     def test_daytime_waits_for_the_nas_window_without_touching_the_nas(self):
         old = self.scratch / "old"
         make(old, {"a.mov": MB}, age_h=100)
-        self.free_mb = 15 * 1024  # under the 20 GB target, over the 8 GB day floor
+        self.free_mb = 25 * 1024  # under the relay's 40 GB target, over the 20 GB day floor (9 Nov 2026)
         (self.nas / no.NAS_ARCHIVE).rmdir()  # any NAS check would now report it missing
-        rep = self.run_offload(hour=14)
+        rep = self.run_offload(hour=14, target_gb=40)
         self.assertIn("window", rep["wait"])
         self.assertEqual((rep["moved"], rep["kept"], rep["nas"]), ([], [], "ok"))
         self.assertTrue((old / "a.mov").exists())
         self.assertIn("01:00-06:00", no.summary(rep))
-        self.assertEqual(len(self.run_offload(apply=False, hour=14)["would"]), 1)  # a dry run still lists
+        self.assertEqual(len(self.run_offload(apply=False, hour=14, target_gb=40)["would"]), 1)  # a dry run still lists
 
     def test_daytime_runs_when_the_mini_is_nearly_full(self):
         make(self.scratch / "old", {"a.mov": MB}, age_h=100)

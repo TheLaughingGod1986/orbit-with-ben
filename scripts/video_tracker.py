@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
-"""Per-video Studio tracker (Ben, 24 Oct 2026): five lanes, one card per long/Short.
+"""Per-video Studio tracker (Ben, 24 Oct 2026): one card per long/Short.
 
-Lanes (left → right):
-  upcoming → progress → changes → ready → approved → done
-  ("approved" = "Approved, on its way", Ben 25 Oct 14:13: what he OK'd, still in the pipeline until YouTube has it)
+Internal lane ids (payload): upcoming → progress → changes → ready → approved → done.
+The Videos tab UI remaps these to nine swim lanes (Ben, 7 Nov 2026):
+  Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live
+  (`board_site/studio_app.js` `videoLane`). Ben only acts in UAT; Approve → Passed (ready to
+  schedule); notes/fixes → In progress. "approved" here is Passed on the board.
 
 Derived from jobs/queue.json, UPLOADS.json / PACKAGE_UPLOAD_RESULT, film_briefs, HOS PIPELINE,
 OWB status.json, and Ben's board checks (`[Ben] OK/changes` via /api/checks). Optional overrides
 in 05_Analytics/kanban/video_overrides.json.
+
+Planned Shorts (Ben, 7 Nov 2026; undated Orbit, 7 Nov 2026): upcoming longs with no uploaded
+Shorts yet get board-only Short cards on Videos → Backlog (HOS 4, Orbit 2 per cadence). An air
+date is copied when the parent has one; undated Orbit backlog longs still get the pair with no
+invented date. Keys use `:S:planned-N` — never a YouTube id — and never start production, WIP,
+uploads or jobs. Parents that already have uploaded/live Shorts do not get extra placeholders.
 """
 from __future__ import annotations
 
@@ -18,6 +26,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from video_progress import job_targets
+import channels
+import channel_films
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = ROOT / "05_Analytics" / "kanban" / "video_overrides.json"
@@ -37,6 +47,11 @@ LANE_LABELS = {
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
 DONE_PUBLIC_DAYS = 14
+# Planned Shorts on Videos → Backlog for upcoming longs with no uploads yet
+# (Ben, 7 Nov 2026 cadence: Orbit 2 per new long; HOS 4 per long/week). Never invent YouTube ids
+# or air dates — undated parents keep empty air on their planned Shorts.
+PLANNED_SHORTS_PER_LONG = {"HOS": 4, "OWB": 2}
+PLANNED_SHORT_TOKEN = "planned"
 
 BEN_CHANGES_RE = re.compile(
     r"Ben'?s?\s+(\d+)\s+changes|\bchanges?\s+on\s+master\b|\bchange tick\b",
@@ -89,6 +104,25 @@ def parse_change_notes(text: str) -> list[dict]:
         seen.add(key)
         out.append({"t": t, "text": body[:200], "done": False})
     return out
+
+
+def past_notes(*checks_and_versions) -> list[dict]:
+    """Ben's earlier change requests to show under a re-sent cut (Ben, 8 Nov 2026: "when the fixes are in place and it's
+    UAT again, can we get a list of the problems below"). Each arg is (check doc, current version); a change tick on an
+    older version than the cut now on show counts. [{version, at, notes: [{t, text}]}], oldest first, no repeats."""
+    out, seen = [], set()
+    for doc, current in checks_and_versions:
+        if not doc or doc.get("verdict") != "change":
+            continue
+        old = str(doc.get("version") or "")
+        if current and old and old == str(current):
+            continue  # the change request is on this very cut: it's still being fixed, not a past problem
+        notes = [{"t": n["t"], "text": n["text"]} for n in notes_from_check(doc)]
+        key = (old, doc.get("at"))
+        if notes and key not in seen:
+            seen.add(key)
+            out.append({"version": old, "at": str(doc.get("at") or ""), "notes": notes})
+    return sorted(out, key=lambda x: x["at"])
 
 
 def notes_from_check(doc: dict | None) -> list[dict]:
@@ -537,10 +571,13 @@ def ask_entries(alljobs: list[dict]) -> list[dict]:
         items = [x for x in items if isinstance(x, dict) and not x.get("cleared")]
         for n, x in enumerate(items, 1):
             e = {k: str(x.get(k) or "") for k in AWAITS_FIELDS}
+            for k in ("prev", "fixed"):  # lists: earlier check ids this cut replaces, and what the agents changed
+                if x.get(k):
+                    e[k] = x[k]
             e["id"] = j["id"] + (f".{n}" if len(items) > 1 else "")
             e["job"] = j["id"]
             e["jobStatus"] = j.get("status") or ""
-            e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+            e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
             e["number"] = e["number"] or str(j.get("film") or "")
             e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
             e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
@@ -581,6 +618,16 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
     count against the new cut."""
     cid = ask_check_id(e)
     c = checks.get(cid)
+    # An entry may name the cards it replaces (`prev`: check ids, e.g. a fix job that re-sends J2395.3 under its own
+    # id) and what the agents changed (`fixed`: lines), so Ben sees what he flagged before under the new cut.
+    prev = e.get("prev") or []
+    prev = [prev] if isinstance(prev, str) else [p for p in prev if isinstance(p, str)]
+    history = past_notes((c, e.get("version")), *[(checks.get(p), e.get("version")) for p in prev])
+    fixed = [str(x)[:200] for x in (e.get("fixed") or []) if str(x).strip()] if isinstance(e.get("fixed"), list) else []
+    if history:
+        card["pastNotes"] = history
+    if fixed:
+        card["fixedNotes"] = fixed
     if c and e.get("version") and c.get("version") and str(c["version"]) != e["version"]:
         c = None
     unhandled = bool(c) and not c.get("handled")
@@ -611,6 +658,67 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
     return card
 
 
+# ---- Already on YouTube (J2427, Ben 8 Nov 2026: "The 8 that passed, what is left to schedule these?"). An OK'd cut whose
+# follow-on upload or swap is recorded in UPLOADS.json is scheduled (or live), not "waiting for the Chief". The ask and
+# OK cards are keyed by job, so they never meet the upload's own card: match by the cut's file name (the UAT copy's
+# "_PHONE" suffix dropped), or by the one live video id of the right kind that the delivering job's result names.
+def upload_files(root: Path | None = None) -> dict:
+    """{"file": {basename: row}, "id": {videoId: row}} for every live upload (not retired, not swapped out)."""
+    root = root or ROOT
+    try:
+        vids = json.loads((root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json").read_text()).get("videos", {})
+    except (OSError, ValueError):
+        vids = {}
+    out: dict = {"file": {}, "id": {}}
+    for vid, meta in vids.items():
+        if not isinstance(meta, dict) or meta.get("retired") or meta.get("supersededBy"):
+            continue
+        row = {"videoId": vid, "kind": meta.get("kind") or "long", "publishAt": meta.get("publishAt") or "",
+               "privacyStatus": meta.get("privacyStatus") or meta.get("privacy") or ""}
+        out["id"][vid] = row
+        if meta.get("file"):
+            out["file"][Path(str(meta["file"])).name] = row
+    return out
+
+
+def _cut_name(path: str) -> str:
+    name = Path(str(path or "")).name
+    return re.sub(r"_PHONE(?=\.[A-Za-z0-9]+$)", "", name)
+
+
+def matched_upload(e: dict, files: dict | None, result: str = "") -> dict | None:
+    """The upload that carries this OK'd cut, if it is on YouTube as Private + scheduled or Public."""
+    files = files or {}
+    row = (files.get("file") or {}).get(_cut_name(e.get("file") or ""))
+    if row is None and result:
+        ids = {x for x in re.findall(r"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}(?![A-Za-z0-9_-])", result)}
+        rows = [(files.get("id") or {}).get(x) for x in ids]
+        rows = [r for r in rows if r and r.get("kind") == (e.get("type") or r.get("kind"))]
+        row = rows[0] if len(rows) == 1 else None
+    if row and (row.get("privacyStatus") == "public" or row.get("publishAt")):
+        return row
+    return None
+
+
+def settle_uploaded(videos: list[dict], card: dict, row: dict, now: datetime) -> None:
+    """Move an OK'd card that is already on YouTube to Done (scheduled/live). A job-keyed ask/OK card that duplicates the
+    video's own card, or whose video aired over a day ago, is dropped: the video's own card or the tracker has it."""
+    own = str(card.get("key") or "").split(":")[1:2] in (["ASK"], ["OK"])
+    vid = row["videoId"]
+    other = any(v is not card and (v.get("youtube") or {}).get("videoId") == vid for v in videos)
+    pub = _parse_iso(row.get("publishAt"))
+    if own and (other or (pub and now > pub + timedelta(days=1))):
+        videos.remove(card)
+        return
+    # A card with other work still running (031's long is scheduled while its Short 2 upload is queued) is still
+    # scheduled: the running work shows on its own card.
+    yt = youtube_state(None, row)
+    card.update(lane="done", readyFor="", waitingOn="YouTube", flags=[], okNote="", collapsed=False, youtube=yt,
+                line=(f"Private, scheduled {yt['publishAtLondon']}." if yt["state"] == "scheduled" else "On YouTube."))
+    card.pop("ask", None)
+    card.pop("approved", None)
+
+
 def ask_card(e: dict) -> dict:
     """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap)."""
     airs = e.get("airs") or ""
@@ -622,7 +730,7 @@ def ask_card(e: dict) -> dict:
             "by": "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
 
 
-def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) -> None:
+def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, files: dict | None = None) -> None:
     by_key = {v["key"]: v for v in videos}
     for e in asks or []:
         if not ask_live(e, checks):
@@ -633,6 +741,11 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) 
             videos.append(card)
             by_key[card["key"]] = card
         apply_ask(card, e, checks, now)
+        row = matched_upload(e, files) if card.get("lane") == "approved" else None
+        if row:
+            settle_uploaded(videos, card, row, now)
+            if card not in videos:
+                by_key.pop(card["key"], None)
 
 
 # ---- Approved, on its way (Ben, 25 Oct 2026 14:13: "Ones I approve can they go into a waiting for deployment lane or
@@ -658,7 +771,7 @@ def approved_entries(alljobs: list[dict]) -> list[dict]:
         e["askJob"] = e.pop("job") or j["id"]
         e["id"] = e["job"] = j["id"]
         e["jobStatus"] = j.get("status") or ""
-        e["channel"] = (e["channel"] or ("HOS" if j.get("repo") == "hos" else "OWB")).upper()
+        e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
         e["number"] = e["number"] or str(j.get("film") or "")
         e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
         e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
@@ -769,7 +882,8 @@ def approved_card(e: dict) -> dict:
             "title": "", "by": e.get("by") or "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
 
 
-def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime) -> None:
+def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime,
+                 files: dict | None = None) -> None:
     by_key = {v["key"]: v for v in videos}
     for e in entries or []:
         if e.get("jobStatus") == "cancelled":
@@ -781,6 +895,16 @@ def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now:
         if card is not None and card.get("lane") == "ready" and card.get("readyFor") == "Ben" and \
                 (card.get("ask") or {}).get("version") not in ("", None, e.get("version")):
             continue  # a newer cut of the same video asks Ben again: that ask wins
+        row = matched_upload(e, files, e.get("result") or "") if e.get("jobStatus") == "done" else None
+        if row and not read_back(e, card):
+            if card is None:
+                card = approved_card(e)
+                videos.append(card)
+                by_key[card["key"]] = card
+            settle_uploaded(videos, card, row, now)
+            if card not in videos:
+                by_key.pop(card["key"], None)
+            continue
         if read_back(e, card):
             if card is None:
                 airs = _parse_iso(e.get("airs"))
@@ -873,6 +997,107 @@ def watch_format(watch):
     return 'short' if re.search(r'(?:^|/)10_Shorts/|(?:^|/)[^/]*_short(?:_v\d+[a-z0-9-]*)?(?:_PHONE)?\.mp4$', file, re.I) else ''
 
 
+def planned_shorts_count(channel: str) -> int:
+    """How many planned Short cards an upcoming long gets on Videos → Backlog."""
+    return int(PLANNED_SHORTS_PER_LONG.get(str(channel or "").upper(), 0))
+
+
+def planned_short_key(parent_key: str, index: int) -> str:
+    """Stable key with no YouTube id: HOS:012:S:planned-1."""
+    return f"{parent_key}:S:{PLANNED_SHORT_TOKEN}-{index}"
+
+
+def is_planned_short_key(key: str) -> bool:
+    return bool(re.search(rf":S:{re.escape(PLANNED_SHORT_TOKEN)}-\d+$", str(key or "")))
+
+
+def parent_has_uploaded_shorts(parent_key: str, *, videos: list[dict], uploads: dict) -> bool:
+    """True when the long already has a real Short upload / YouTube id (not a planned placeholder)."""
+    prefix = f"{parent_key}:S:"
+    for key, rows in (uploads or {}).items():
+        if not str(key).startswith(prefix) or is_planned_short_key(key):
+            continue
+        for row in rows or []:
+            if row.get("videoId") and not row.get("supersededBy"):
+                return True
+    for v in videos:
+        if v.get("parent") != parent_key or v.get("type") != "short":
+            continue
+        if is_planned_short_key(v.get("key") or ""):
+            continue
+        yt = ((v.get("youtube") or {}).get("videoId") or "").strip()
+        sid = str(v.get("shortId") or "").strip()
+        if yt or sid:
+            return True
+    return False
+
+
+def planned_short_title(index: int, film_title: str, script_title: str = "") -> str:
+    """Prefer an existing script title; otherwise 'Short N · {film title}'."""
+    name = (script_title or "").strip()
+    if name:
+        return name
+    film = (film_title or "").strip() or "film"
+    return f"Short {index} · {film}"
+
+
+def add_planned_shorts(
+    videos: list[dict],
+    *,
+    uploads: dict,
+    film_lanes: dict,
+    now: datetime,
+    public: dict | None = None,
+    public_at: str = "",
+    held: frozenset | set = frozenset(),
+    titles_by_parent: dict | None = None,
+) -> None:
+    """Append planned Short cards for upcoming longs with no uploaded Shorts yet.
+
+    Board-only: no YouTube ids, no UPLOADS rows, no production jobs. Counts follow the
+    locked weekly cadence (HOS 4, Orbit 2). Copy the parent's air date when it has one;
+    undated parents (Orbit far-future backlog) get undated planned Shorts — never invent
+    Sundays/Wednesdays or 11:30 slots.
+    """
+    titles_by_parent = titles_by_parent or {}
+    have = {v.get("key") for v in videos}
+    parents = [v for v in list(videos) if v.get("type") == "long"]
+    for parent in parents:
+        if parent.get("lane") != "upcoming":
+            continue
+        air = str(parent.get("air") or "").strip()
+        # Keep a real YYYY-MM-DD when present; empty air is allowed (do not invent dates).
+        if air and not re.match(r"^\d{4}-\d{2}-\d{2}", air):
+            continue
+        channel = str(parent.get("channel") or "")
+        count = planned_shorts_count(channel)
+        if count < 1:
+            continue
+        parent_key = str(parent.get("key") or "")
+        if not parent_key or parent_has_uploaded_shorts(parent_key, videos=videos, uploads=uploads):
+            continue
+        # A YouTube id on the long itself means it is past backlog planning for Shorts.
+        if ((parent.get("youtube") or {}).get("videoId") or "").strip():
+            continue
+        num = str(parent.get("number") or "")
+        film_title = str(parent.get("title") or "")
+        script_titles = titles_by_parent.get(parent_key) or []
+        for i in range(1, count + 1):
+            skey = planned_short_key(parent_key, i)
+            if skey in have:
+                continue
+            title = planned_short_title(i, film_title, script_titles[i - 1] if i - 1 < len(script_titles) else "")
+            videos.append(_card(
+                key=skey, channel=channel, number=num, title=title,
+                vtype="short", air=air, brief={},
+                release=None, upload_rows=[],
+                jobs=[], check=None, watch=None,
+                override_lane=film_lanes.get(skey), now=now,
+                short_id="", parent=parent_key, public=public or {}, public_at=public_at, held=held,
+            ))
+            have.add(skey)
+
+
 def build_videos(
     *,
     hos: dict,
@@ -889,11 +1114,14 @@ def build_videos(
     asks: list[dict] | None = None,
     approved: list[dict] | None = None,
     alljobs: list[dict] | None = None,
+    files: dict | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
     overrides = overrides if overrides is not None else load_overrides()
     watch = watch or {}
+    # Tests that pass their own uploads index get no live UPLOADS.json file match unless they pass `files` too.
+    files = files if files is not None else (upload_files() if uploads is None else {})
     uploads = uploads if uploads is not None else uploads_index()
     vid_keys: dict = {}
     for key, rows in uploads.items():
@@ -939,44 +1167,47 @@ def build_videos(
 
     videos = []
 
-    # --- Longs: HOS ---
-    for f in hos.get("films") or []:
-        num = str(f.get("id") or "")
-        if not re.fullmatch(r"\d{3}", num):
-            continue
-        key = f"HOS:{num}"
-        title = f.get("title") or ""
-        # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads (OWB's own UPLOADS has no HOS rows).
-        up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
-        rows = uploads.get(key) or ([{"file": "", **up}] if up else [])
-        hit = long_hit(key, "HOS", title, rows)
-        videos.append(_card(
-            key=key, channel="HOS", number=num, title=title,
-            vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
-            release=None, upload_rows=rows,
-            jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
-            watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at, held=held,
-        ))
+    # --- Longs: every channel in channels/*/channel.json (docs/MULTI_CHANNEL_PLAN.md phase 1) ---
+    # OWB and HOS come from the board docs as before; any other channel is read from its own checkout through
+    # channel_films, so a channel added by its folder gets cards with no change here.
+    def long_rows(slug: str):
+        """(num, title, air, release, upload_rows, use_public_title) per long film of one channel."""
+        label = channels.label(slug)
+        if slug == "hos":
+            for f in hos.get("films") or []:
+                num = str(f.get("id") or "")
+                # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads.
+                up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
+                yield num, f.get("title") or "", f.get("air") or "", None, uploads.get(f"{label}:{num}") or ([{"file": "", **up}] if up else []), False
+        elif slug == channels.home():
+            for f in owb:
+                num = str(f.get("film") or "")
+                yield num, f.get("title") or titles.get(num) or "", f.get("air") or "", f.get("release"), uploads.get(f"{label}:{num}") or [], True
+        else:
+            try:
+                rows = channel_films.films(slug)
+            except Exception:  # noqa: BLE001  (a channel whose checkout isn't here yet shows nothing, never breaks the board)
+                rows = []
+            for f in rows:
+                yield f["id"], f["title"], f["air"], None, uploads.get(f["key"]) or [], True
 
-    # --- Longs: OWB ---
-    for f in owb:
-        num = str(f.get("film") or "")
-        if not re.fullmatch(r"\d{3}", num):
-            continue
-        key = f"OWB:{num}"
-        title = f.get("title") or titles.get(num) or ""
-        hit = long_hit(key, "OWB", title, uploads.get(key) or [])
-        if hit:
-            title = public[hit]["title"]  # what viewers actually see (021 was retitled on YouTube)
-        videos.append(_card(
-            key=key, channel="OWB", number=num, title=title,
-            vtype="long", air=f.get("air") or "", brief=briefs.get(key) or {},
-            release=f.get("release"), upload_rows=uploads.get(key) or [],
-            jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
-            watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
-            public_vid=hit, public=public, public_at=public_at, held=held,
-        ))
+    for slug in channels.slugs():
+        label = channels.label(slug)
+        for num, title, air, release, rows, use_public_title in long_rows(slug):
+            if not re.fullmatch(r"\d{3}", num):
+                continue
+            key = f"{label}:{num}"
+            hit = long_hit(key, label, title, rows)
+            if hit and use_public_title:
+                title = public[hit]["title"]  # what viewers actually see (021 was retitled on YouTube)
+            videos.append(_card(
+                key=key, channel=label, number=num, title=title,
+                vtype="long", air=air, brief=briefs.get(key) or {},
+                release=release, upload_rows=rows,
+                jobs=by_jobs.get(key) or [], check=checks.get(check_id(key)),
+                watch=watch.get(key), override_lane=film_lanes.get(key), now=now,
+                public_vid=hit, public=public, public_at=public_at, held=held,
+            ))
 
     # --- Shorts from UPLOADS (each Short its own card) ---
     for key, rows in uploads.items():
@@ -1006,6 +1237,13 @@ def build_videos(
             watch=None, override_lane=film_lanes.get(skey), now=now,
             short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
         ))
+
+    # --- Planned Shorts for upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---
+    # HOS: 4 per long; Orbit: 2 per new upcoming long (dated or not). No YouTube ids, no production start.
+    add_planned_shorts(
+        videos, uploads=uploads, film_lanes=film_lanes, now=now,
+        public=public, public_at=public_at, held=held,
+    )
 
     # --- Standalone / extraWatch Shorts (HOS S1…) ---
     # Forced long ids (overrides.youtube) for films with no pipeline/status row, e.g. HOS 001–003 (aired before PIPELINE).
@@ -1047,9 +1285,9 @@ def build_videos(
             v["collapsed"] = False
 
     # Jobs waiting on Ben (awaits_ben on the job): their cards go to Ready for OK, soonest deadline first.
-    add_asks(videos, asks or [], checks, now)
+    add_asks(videos, asks or [], checks, now, files)
     # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
-    add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now)
+    add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now, files)
     settle_ready(videos, now)
 
     # Approval/ask overlays may carry an old project format too. Resolve the
@@ -1061,6 +1299,19 @@ def build_videos(
 
     from uat_outlook import attach
     attach(videos, hos, owb, alljobs or jobs, now)
+
+    # Listing package status for Passed / Scheduled cards (Ben, 7 Nov 2026): what's missing, Ready to upload,
+    # or a real Scheduled-for line — never invent a publishAt or YouTube id.
+    try:
+        import listing_package as listing_package
+        for video in videos:
+            yt = video.get("youtube") or {}
+            public = yt.get("privacy") == "public" or yt.get("state") == "live"
+            scheduled = (not public) and yt.get("state") == "scheduled" and bool(yt.get("publishAt") or yt.get("publishAtLondon"))
+            if video.get("lane") == "approved" or scheduled:
+                video["listing"] = listing_package.for_video(video, ROOT)
+    except Exception:  # noqa: BLE001 — listing is display-only; never block the board
+        pass
 
     videos.sort(key=lambda v: (LANES.index(v["lane"]), 0 if v.get("ask") else 1, (v.get("ask") or {}).get("due") or "9999",
                                (v.get("approved") or {}).get("airs") or v.get("air") or "9999", v["key"]))
@@ -1199,6 +1450,7 @@ def _card(
         "waitingOn": who,
         "readyFor": ready_for,
         "notes": notes,
+        **({"pastNotes": history} if (history := past_notes((check, (watch or {}).get("version") or version))) else {}),
         "flags": flags,
         "okNote": ok_note,
         "youtube": youtube,

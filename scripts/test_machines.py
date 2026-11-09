@@ -53,6 +53,16 @@ class Machines(unittest.TestCase):
         s = {r["id"]: r for r in m.section(q, None, {"state": "working", "job": "J9", "why": []}, AT)["machines"]}
         self.assertEqual(s["macbook"]["now"][0]["id"], "J9")
 
+    def test_both_macbook_slots_show_their_jobs(self):
+        hb = {"at": "2026-11-05T10:00:00Z", "state": "working", "job": "J0001",
+              "slots": [{"agent": "macbook", "job": "J0001", "state": "working"},
+                        {"agent": "macbook-2", "job": "J0002", "state": "working"}]}
+        q = {"jobs": [{"id": "J0002", "status": "claimed", "by": "macbook-2", "title": "b", "history": []}]}
+        row = next(r for r in m.section(q, None, hb, dt.datetime(2026, 11, 5, 10, 5, tzinfo=dt.timezone.utc))["machines"]
+                   if r["id"] == "macbook")
+        self.assertEqual(sorted(n["id"] for n in row["now"]), ["J0001", "J0002"])
+        self.assertEqual(m.machine_of("macbook-2"), "macbook")
+
     def test_relay_execution_and_fresh_heartbeat_show_the_minis_job(self):
         q = {"jobs": [{"id": "J7", "status": "open", "title": "picture"}, {"id": "J8", "status": "open", "title": "review"}]}
         hb = {"at": "2026-11-04T22:50:00Z", "state": "running", "note": "woke Gemini for J8 (cap 25 min)"}

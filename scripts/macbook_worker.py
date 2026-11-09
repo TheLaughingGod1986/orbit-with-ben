@@ -2,14 +2,16 @@
 """MacBook worker lane: the MacBook Pro takes queued `needs macbook` jobs when Ben isn't using it
 (Ben, 28 Oct 2026: "yes" to a MacBook worker lane over Tailscale with power and idle guards).
 
-launchd runs this every 15 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
-scripts/macbook/setup_macbook.sh). Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
+launchd runs this every 3 minutes (scripts/macbook/com.owb.macbook-worker.plist, installed by
+scripts/macbook/setup_macbook.sh; 180 s from 6 Nov 2026 so a free MacBook notices waiting work quickly).
+Each run keeps taking jobs back to back for up to MACBOOK_LOOP_MIN (13) minutes
 (Ben, 5 Nov 2026), and takes each one only when ALL of these hold:
   - it is inside its hours: round the clock by default (Ben, 28 Oct 2026: "let's use the MacBook Pro 24 seven");
     MACBOOK_HOURS=night limits it to weeknights 21:00-09:00 and all weekend, London (the run must also end by 09:00);
   - no pause file (~/_desk/state/macbook-worker.pause), and no other run of this script in progress;
   - the MacBook is on mains power (never drains the battery);
-  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10);
+  - nobody has touched the keyboard or trackpad for MACBOOK_IDLE_MIN minutes (default 10) for slot 2; slot 1 also
+    runs while Ben is using the Mac, at background priority (Ben, 9 Nov 2026; MACBOOK_BUSY_OK=0 turns that off);
   - at least MACBOOK_MIN_FREE_GB free on the disk (default 15).
 Then it pulls both checkouts, claims the oldest `macbook` job with
   jobs.py next --agent macbook --can macbook --git
@@ -39,10 +41,17 @@ import platform
 import re
 import shutil
 import subprocess
+import time
 import sys
 
 HOME = pathlib.Path.home()
 WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for the worker itself
+# Two jobs at once on the MacBook Pro (Ben, 5 Nov 2026: "could that maybe handle two tasks in parallel ... two on the
+# MacBook Pro and one on the Mac Mini"). launchd starts slot 1; slot 1 starts the other slots (MACBOOK_SLOTS, default
+# 2) as their own processes. Each slot has its own clones, lock, agent id (macbook, macbook-2) and heartbeat branch,
+# so the two never share a checkout or a claim.
+SLOT = max(1, int(os.environ.get("MACBOOK_SLOT", "1") or 1))
+SLOTS = max(1, int(os.environ.get("MACBOOK_SLOTS", "2") or 1))
 URLS = {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
         "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"}
 
@@ -58,28 +67,38 @@ def own_checkout(env: str, name: str) -> pathlib.Path:
                 return p
         except (OSError, ValueError):
             pass
-    return WORKER_DIR / name
+    return slot_dir(SLOT) / name
+
+
+def slot_dir(n: int) -> pathlib.Path:
+    return WORKER_DIR if n == 1 else WORKER_DIR / f"slot{n}"
+
+
+def slot_name(n: int, base: str) -> str:
+    return base if n == 1 else f"{base}-{n}"
 
 
 OWB = own_checkout("OWB_REPO", "orbit-with-ben")
 HOS = own_checkout("HOS_REPO", "history-of-science")
 STATE = HOME / "_desk" / "state"
-AGENT_ID = "macbook"
+AGENT_ID = slot_name(SLOT, "macbook")
+HEARTBEAT_REF = slot_name(SLOT, "macbook-heartbeat")
 
 PROMPT = """You are the MacBook worker for Ben's YouTube studio, running unattended on Ben's MacBook Pro while he is
-away from it. Your agent id is `macbook` everywhere (jobs.py --agent macbook). Do ONE job, then stop.
+away from it. Your agent id is `{agent}` everywhere (jobs.py --agent {agent}). Do ONE job, then stop.
+Another MacBook slot may be working on a different job at the same time, in its own checkouts: stay in yours.
 
 The job is already claimed for you: {job}
 1. Orbit With Ben ({owb}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
      python3 scripts/jobs.py show {job}
    For a HOS job, work in the HOS checkout ({hos}) and follow its AGENTS.md.
 2. Do the job exactly as its brief says. Report progress as you go:
-     python3 scripts/jobs.py progress {job} --agent macbook --step <k> --of <n> --action "<what is left>" --git
+     python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
    with gh; say the PR number in the result. Then switch every checkout you touched back to main
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
    History of Science folder must always be left on main.
-4. Finish with  jobs.py done {job} --agent macbook --result "..." --git  (or block / release with a reason).
+4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
 5. Report on the studio thread:  python3 scripts/owb_thread.py post "[MacBook] ..."
 
 This is Ben's own laptop, not the Mini:
@@ -131,7 +150,7 @@ def in_hours(t: dt.datetime) -> bool:
     return lt.hour >= start or lt.hour < end
 
 
-def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
+def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None, load=None) -> list[str]:
     """Reasons not to run now; empty means go."""
     why = []
     now = now or dt.datetime.now(dt.timezone.utc)
@@ -145,12 +164,21 @@ def guards(pmset_out=None, ioreg_out=None, free_gb=None, now=None) -> list[str]:
         why.append("on battery")
     need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
     idle = idle_minutes(ioreg_out)
-    if idle < need:
+    # Ben, 9 Nov 2026: "I want the MacBook Pro to be picking up as many jobs as the Mac Mini". On mains, slot 1 also works
+    # while he is using the Mac, at background priority (taskpolicy -b, see busy_cmd); slot 2 still waits for idle.
+    # MACBOOK_BUSY_OK=0 brings back the old rule (no job at all while he is at the keys).
+    busy_ok = SLOT == 1 and os.environ.get("MACBOOK_BUSY_OK", "1") != "0"
+    if idle < need and not busy_ok:
         why.append(f"in use ({idle:.0f} min idle, needs {need:.0f})")
     free = free_gb if free_gb is not None else shutil.disk_usage(str(HOME)).free / 1024 ** 3
     floor = float(os.environ.get("MACBOOK_MIN_FREE_GB", "15"))
     if free < floor:
         why.append(f"disk low ({free:.0f} GB free, needs {floor:.0f})")
+    if SLOT > 1:
+        # A second job only while the machine has room: the first slot's job always comes first.
+        load, cpus = os.getloadavg()[0] if load is None else load, os.cpu_count() or 8
+        if load > cpus * float(os.environ.get("MACBOOK_SLOT_LOAD", "0.6")):
+            why.append(f"busy (load {load:.1f} on {cpus} cores): slot {SLOT} waits")
     return why
 
 
@@ -208,6 +236,15 @@ def mark_down(agent: str, now: dt.datetime | None = None) -> str:
     return until
 
 
+def failed_run(code: int, seconds: float, still_open: bool) -> bool:
+    """Pause the CLI after this run? A non-zero exit (not the 124 cap), or a clean exit inside 2 minutes that left
+    its job open: an agent out of usage prints a notice and exits 0 (9 Nov 2026: claude claimed and released J2421
+    every minute for an hour)."""
+    if code not in (0, 124):
+        return True
+    return code == 0 and still_open and seconds < float(os.environ.get("MACBOOK_QUICK_EXIT_S", "120"))
+
+
 def usable(have: list, now: dt.datetime | None = None) -> list:
     down = down_agents(now)
     return [a for a in have if a not in down]
@@ -221,10 +258,35 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
+    # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
+    # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
+    addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
+    if addressed in have:
+        return addressed, routing.model_for(job, addressed)
     for a, m in routing.job_chain(job):
+        if a == "claudecode":  # the Mini's Claude Code lane = this MacBook's Claude Code
+            a, m = "claude", ("claude-opus-5-5" if m == "mini-claude-opus-5-5" else m)
         if a in have and routing.lane_ok(a, m):
             return a, (m if routing.RUNS_ON.get(m) == a else "")
     return (have[0], "") if have else ("", "")
+
+
+# Commands an unattended Claude run may use without a prompt (Ben, 9 Nov 2026: "Yes please"). J2427 was released about 40
+# times on 9 Nov because `python3 -m unittest` and `gh pr create` asked for approval with nobody there. Tests, the repo's
+# own checks and opening a PR only; merges stay with the Chief (no `gh pr merge` here).
+CLAUDE_ALLOWED_TOOLS = (
+    "Bash(python3 -m unittest:*)",
+    "Bash(python3 scripts/test_kanban_page.py:*)",
+    "Bash(python3 scripts/test_kanban_snapshot.py:*)",
+    "Bash(node scripts/test_studio_app.cjs:*)",
+    "Bash(python3 scripts/core_sync.py check:*)",
+    "Bash(python3 scripts/sync_rules.py:*)",
+    "Bash(git push:*)",
+    "Bash(gh pr create:*)",
+    "Bash(gh pr view:*)",
+    "Bash(gh pr checks:*)",
+    "Bash(gh pr list:*)",
+)
 
 
 def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
@@ -237,7 +299,10 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
         m = ["-m", model] if model.startswith("gpt-") else []
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
-        return [b, "-p", "--permission-mode", "acceptEdits", *dirs, prompt]
+        # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
+        # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
+        return [b, "-p", prompt, "--permission-mode", "acceptEdits", "--allowedTools", ",".join(CLAUDE_ALLOWED_TOOLS),
+                *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)
@@ -255,6 +320,16 @@ def job_record(job_id: str) -> dict:
         return {}
 
 
+def busy_cmd(cmd: list, idle_min: float | None = None) -> list:
+    """While Ben is using the Mac, run the job at macOS background priority (taskpolicy -b: lowest CPU, disk and
+    network priority), so his apps always come first. Idle: unchanged."""
+    need = float(os.environ.get("MACBOOK_IDLE_MIN", "10"))
+    idle = idle_minutes() if idle_min is None else idle_min
+    if idle < need and shutil.which("taskpolicy"):
+        return ["taskpolicy", "-b", *cmd]
+    return cmd
+
+
 def run_capped(cmd: list, cwd, cap_s: int) -> int:
     """Run in its own process group and kill the whole group at the cap, so no agent or render outlives the run."""
     import signal
@@ -269,9 +344,6 @@ def run_capped(cmd: list, cwd, cap_s: int) -> int:
             os.killpg(p.pid, signal.SIGKILL)
             p.wait()
         code = 124
-    if os.environ.get("OWB_CAPACITY_ENABLED") == "1":
-        import serial_admission
-        serial_admission.confirm_group_exit(p.pid)
     return code
 
 
@@ -322,7 +394,8 @@ def host_observation():
 
 def heartbeat_doc(state: str, why: list, job: str = "", now: dt.datetime | None = None) -> dict:
     now = now or dt.datetime.now(dt.timezone.utc)
-    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "state": state, "why": why, "job": job,
+    return {"at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "host": "macbook", "slot": SLOT, "agent": AGENT_ID,
+            "state": state, "why": why, "job": job,
             "observation": host_observation(),
             "agents": installed(), "paused": down_agents(now)}
 
@@ -340,7 +413,7 @@ def push_heartbeat(state: str, why: list, job: str = "") -> None:
                               text=True, timeout=30, check=True).stdout.strip()
         commit = subprocess.run(git + ["commit-tree", tree, "-m", f"macbook heartbeat {state}"], capture_output=True,
                                 text=True, timeout=30, check=True).stdout.strip()
-        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/macbook-heartbeat"],
+        subprocess.run(git + ["push", "-q", "-f", "origin", f"{commit}:refs/heads/{HEARTBEAT_REF}"],
                        capture_output=True, timeout=60)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"heartbeat not pushed: {e}")
@@ -366,23 +439,58 @@ def pull_main() -> str:
             branch = sh(["git", "-C", str(repo), "branch", "--show-current"]).stdout.strip()
             # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then
             # refused every later job). Its own clone goes back to main by itself when clean; Ben's checkouts never.
-            if branch != "main" and repo.resolve().is_relative_to(WORKER_DIR.resolve()) \
+            own = repo.resolve().is_relative_to(WORKER_DIR.resolve())
+            if own and sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
+                # Left dirty on a job branch (5 Nov 2026: J2165 left macbook/J2165 dirty and every later run errored),
+                # or dirty on main itself (8 Nov 2026: `jobs.py next --git` needs a clean tree, so both slots errored
+                # on every claim). Its own clone only: keep the work in a named stash, never discard it.
+                stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+                if sh(["git", "-C", str(repo), "stash", "push", "-u", "-q", "-m",
+                       f"macbook-worker autostash {branch} {stamp}"]).returncode == 0:
+                    log(f"{repo.name}: saved unfinished work on '{branch}' as stash 'macbook-worker autostash {branch} {stamp}'")
+            if branch != "main" and own \
                     and not sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
                 if sh(["git", "-C", str(repo), "checkout", "-q", "main"]).returncode == 0:
                     log(f"{repo.name}: back on main from '{branch}'")
                     branch = "main"
             if branch != "main":
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only"], timeout=180)
+            # Name origin main: a clone whose branch.main.merge holds more than one entry fails a bare pull with
+            # "Cannot fast-forward to multiple branches" (8 Nov 2026, slot 2).
+            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+            if r.returncode and own and rescue_diverged(repo):
+                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode:
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
+            if own:
+                # A pull can succeed while main is still ahead of GitHub (a queue write whose push lost a race keeps
+                # its local commit). Every --git claim then refuses "main has unpublished/diverged commits" (9 Nov
+                # 2026, slot 1). Keep those commits on a rescue branch and put main back on origin/main.
+                rescue_diverged(repo)
     return ""
 
 
-def capacity_tick(*, lock_held=False):
-    import capacity_caller
-    return capacity_caller.production_tick(role="macbook", owb_root=OWB, hos_root=HOS,
-                                          _serial_lock_held=lock_held)
+def rescue_diverged(repo: pathlib.Path) -> bool:
+    """The worker's own clone has main commits GitHub doesn't (5 Nov 2026 21:36: 'pull failed ... git merge --no-ff',
+    and slot 1 stopped). Keep them on a pushed branch macbook-worker/rescue-<time>, then put main back on origin/main.
+    Its own clone only (the caller checks); nothing is discarded. True when main was moved."""
+    git = ["git", "-C", str(repo)]
+    if sh(git + ["fetch", "-q", "origin", "main"], timeout=180).returncode:
+        return False
+    ahead = sh(git + ["rev-list", "--count", "origin/main..main"]).stdout.strip()
+    if not ahead or ahead == "0":
+        return False
+    stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+    if sh(git + ["status", "--porcelain"]).stdout.strip():
+        sh(git + ["stash", "push", "-u", "-q", "-m", f"macbook-worker autostash main {stamp}"])
+    branch = f"macbook-worker/rescue-{stamp}"
+    if sh(git + ["branch", branch, "main"]).returncode:
+        return False
+    sh(git + ["push", "-q", "origin", branch], timeout=120)
+    if sh(git + ["reset", "-q", "--hard", "origin/main"]).returncode:
+        return False
+    log(f"{repo.name}: main had {ahead} commit(s) GitHub doesn't; kept on {branch} (pushed), main reset to origin/main")
+    return True
 
 
 def run_one() -> str:
@@ -397,53 +505,31 @@ def run_one() -> str:
         log("not now: " + "; ".join(why))
         push_heartbeat("waiting", why)
         return "waiting"
-    import capacity_caller
-    # Observe under the SAME lock used by capacity launches. Keep exclusion
-    # through canonical claim and the entire ordinary child lifetime, so no
-    # gap in legacy process publication can admit a competing launch.
-    with capacity_caller.serial_preflight(role="macbook", owb_root=OWB, hos_root=HOS) as result:
-        if result is not None and (result.get("state") != "capacity_waiting"
-                                   or result.get("serial_safe") is not True):
-            # Only a positively observed occupied state may try extra capacity;
-            # malformed/stale/uncertain evidence never permits serial fallback.
-            if result.get("state") == "capacity_waiting":
-                capacity_result = capacity_tick(lock_held=True)
-                if capacity_result is not None:
-                    log("capacity tick: " + capacity_result["state"])
-                    push_heartbeat(capacity_result["state"], ["capacity attempt; no automatic completion"])
-                    return "ran" if capacity_result["state"] == "capacity_exited" else "waiting"
-            push_heartbeat("waiting", ["capacity occupancy unverified or occupied"])
-            return "waiting"
-        # Recheck laptop guards after the potentially slow evidence subprocess.
-        why = guards()
-        if why:
-            push_heartbeat("waiting", why)
-            return "waiting"
-        admitted = capacity_caller.production_tick(role="macbook", owb_root=OWB,
-            hos_root=HOS, serial_only=True, _serial_lock_held=True, admission={})
-        if admitted is not None and not admitted.get("admission"):
-            # No ordinary candidate/account admission: a portable CPU proposal
-            # still gets its own authoritative reserve/launch checks.
-            capacity_result = capacity_tick(lock_held=True)
-            push_heartbeat("waiting", ["ordinary account admission unavailable"])
-            return "ran" if capacity_result and capacity_result.get("state") == "capacity_exited" else "waiting"
-        why = guards()
-        if why:
-            import serial_admission
-            serial_admission.finish(admitted)  # positively never launched
-            push_heartbeat("waiting", why)
-            return "waiting"
-        outcome = run_ordinary(admitted) if admitted is not None else run_ordinary()
-        import serial_admission
-        serial_admission.finish(admitted)
-        return outcome
+    return run_ordinary()
 
 
-def run_ordinary(admitted=None) -> str:
-    """Called only with launch exclusion held when capacity is enabled."""
+CDP_PORTS = ("9223", "9222")  # Orbit Studio, HOS Studio/Flow: the Mini's ports and profiles (start_cdp_browsers.sh)
+
+
+def cdp_ports_up(ports=CDP_PORTS) -> list:
+    """The CDP ports whose Chrome answers here (Ben, 9 Nov 2026: signed into Studio on the MacBook). jobs.py offers a
+    Studio job to the MacBook only while its channel's browser is up."""
+    import urllib.request
+    up = []
+    for p in ports:
+        try:
+            with urllib.request.urlopen(f"http://127.0.0.1:{p}/json/version", timeout=2) as r:
+                if r.status == 200:
+                    up.append(p)
+        except Exception:
+            pass
+    return up
+
+
+def run_ordinary() -> str:
+    """Claim the next MacBook job and run it on the first installed agent in its chain."""
     args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
-    if admitted:
-        args.extend(["--id", admitted["admission"]["job"]])
+    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up())  # read by jobs.macbook_studio_ok in the claim below
     r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
@@ -462,19 +548,8 @@ def run_ordinary(admitted=None) -> str:
     except Exception:  # noqa: BLE001
         pass
     agent, model = pick_agent(job_record(job), have)
-    if admitted and (job != admitted["admission"]["job"]
-            or agent != admitted["admission"]["worker"] or model != admitted["admission"]["model"]):
-        log("ordinary selected worker changed after admission; retaining occupancy for recovery")
-        raise RuntimeError("serial worker selection changed")
-    if admitted:
-        import capacity_caller
-        checked = capacity_caller.production_tick(role="macbook", owb_root=OWB,
-            hos_root=HOS, serial_only=True, _serial_lock_held=True,
-            admission={"validate": admitted["admission"]})
-        if (not checked or checked.get("admission") != admitted["admission"] or guards()):
-            raise RuntimeError("serial launch revalidation failed; retain admission")
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
-    prompt = PROMPT.format(job=job, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
+    prompt = PROMPT.format(job=job, agent=AGENT_ID, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
                            cap_min=cap // 60)
     cmd = agent_cmd(agent, prompt, model) if agent else None
     if not cmd:
@@ -484,12 +559,15 @@ def run_ordinary(admitted=None) -> str:
         log(f"no CLI for {job} (installed: {have}): released")
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
-    code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
-    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], timeout=180)
+    started = time.monotonic()
+    code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
+    seconds = time.monotonic() - started
+    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
     paused = ""
-    if code not in (0, 124):  # 124 = hit the cap: slow, not broken
+    open_now = still_mine(job)
+    if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
         paused = mark_down(agent)
-    if still_mine(job):
+    if open_now:
         note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
         if paused:
             note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
@@ -507,9 +585,32 @@ def run_ordinary(admitted=None) -> str:
 
 
 
+def start_other_slots(popen=None, system=None) -> list:
+    """Slot 1 starts slots 2..SLOTS, each in its own process group with its own log; a slot still running from an
+    earlier tick holds its lock and the new copy exits at once."""
+    if SLOT != 1 or SLOTS < 2 or (system or platform.system()) != "Darwin":  # the MacBook only: never from a test or another host
+        return []
+    popen = popen or subprocess.Popen
+    started = []
+    logs = HOME / "Library" / "Logs"
+    for n in range(2, SLOTS + 1):
+        env = dict(os.environ, MACBOOK_SLOT=str(n), OWB_REPO=str(slot_dir(n) / "orbit-with-ben"),
+                   HOS_REPO=str(slot_dir(n) / "history-of-science"))
+        try:
+            logs.mkdir(parents=True, exist_ok=True)
+            out = open(logs / f"owb-macbook-worker-{n}.log", "a")
+            popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
+                  stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
+            started.append(n)
+        except OSError as e:
+            log(f"slot {n} not started: {e}")
+    return started
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
-    lock = open(STATE / "macbook-worker.lock", "w")
+    start_other_slots()
+    lock = open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w")
     try:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
