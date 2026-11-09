@@ -208871,10 +208871,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T04:06Z",
+      "eta": "2026-11-09T06:06Z",
       "created_by": "claude",
       "created_at": "2026-11-08T22:59Z",
       "result": "",
@@ -208983,6 +208983,11 @@
           "at": "2026-11-09T03:16Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-09T04:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspecting video_tracker.py, UPLOADS.json, and queue.json for exact ask/OK cases",
