@@ -207516,6 +207516,11 @@
           "at": "2026-11-09T00:14Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-09T00:22Z",
+          "by": "macbook",
+          "what": "waits on Ben: Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical) (by 2026-12-01 18:00 London)"
         }
       ],
       "remaining_action": "Verifying v03 gates, writing handoff/status docs, opening PR, and setting awaits_ben",
@@ -207526,6 +207531,23 @@
         "of": 4,
         "at": "2026-11-09T00:14Z",
         "by": "macbook"
+      },
+      "awaits_ben": {
+        "what": "Watch 031 Short 2 v03 ('What If the Solar Wind Blew Earth's Atmosphere Into Space?', 24.48 s, full-screen 1080x1920 vertical)",
+        "file": "OWB UAT/031_shorts_v03/031_short_sat12_solar_wind_air_v03.mp4",
+        "version": "v03",
+        "due": "2026-12-01T18:00Z",
+        "airs": "2026-12-12T11:30Z",
+        "ifNot": "Remains unuploaded on disk until Ben OK and Chief scheduling",
+        "title": "What If the Solar Wind Blew Earth's Atmosphere Into Space?",
+        "number": "031",
+        "type": "short",
+        "prev": [
+          "OWB-J2395.3"
+        ],
+        "fixed": [
+          "Removed composite_band_on_natural_blur() top/bottom blur pads completely and reframed all 9 shots as true full-bleed 1080x1920 (9:16) vertical imagery"
+        ]
       }
     },
     {
