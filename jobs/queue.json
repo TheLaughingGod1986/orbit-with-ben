@@ -210526,17 +210526,22 @@
           "at": "2026-11-09T17:28Z",
           "by": "gemini",
           "what": "step 2 of 4 done: All 131 cuts and picture_v02.mp4 (17,563 frames, 1920x1080 30 fps) rendered on studio-live NAS; now running audio mix, mux, and 5 QA gates"
+        },
+        {
+          "at": "2026-11-09T17:37Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Muxed 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4 (389,705,443 bytes, 585.44s, 1920x1080 30 fps CFR, -14.5 LUFS, -1.0 dBTP) to studio-live NAS; running 5 gates"
         }
       ],
-      "remaining_action": "Mix VO/SFX/bed, mux 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4, run all 5 gates, and mirror to UAT/git",
+      "remaining_action": "Run all 5 gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level), mirror master_v02.mp4 to NAS/iCloud OWB UAT, and commit pack",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 032 Titan to the new hook rule (FIRST30_PLAN.md) and assemble master v02",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-09T17:28Z",
+        "at": "2026-11-09T17:37Z",
         "by": "gemini",
-        "note": "All 131 cuts and picture_v02.mp4 (17,563 frames, 1920x1080 30 fps) rendered on studio-live NAS; now running audio mix, m"
+        "note": "Muxed 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4 (389,705,443 bytes, 585.44s, 1920x1080 30 fps CFR, -14"
       },
       "taskKeys": [
         "OWB:032"
