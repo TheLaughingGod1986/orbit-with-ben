@@ -291,7 +291,7 @@ Where a lesson below meets one of them, the rule wins.
 
 **Reference channels (Ben, 4 Nov 2026: melodysheep, SEA, Astrum).** Goal: Shorts to tens of thousands of views, longs to thousands. From these channels we take: sell the real picture (LEARNINGS 18), one clean real-image thumbnail concept (19), named series with playlists and end screens (20, a rule), a monthly 40-60 min journey film made from our longs (21), and one tentpole film a month (22, November is 032). The score already follows the chapters (*Polish pass* 2); a tentpole's bed also lifts at its reveals. The monthly report scores each test against the goal.
 
-**Long titles (Ben, 4 Nov 2026):** the Chief checks every long's title before upload against LEARNINGS rule 15 (names the subject and a concrete scenario, number or stakes; 50 characters or fewer; never a vague "What happened to X?").
+**Long titles (Ben, 4 Nov 2026):** the Chief checks every long's title before upload against LEARNINGS rule 15 (names the subject and a concrete scenario, number or stakes; 50 characters or fewer; never a vague "What happened to X?"). **Search first (Ben, 9 Nov 2026, LEARNINGS rule 26):** until a channel has 1,000 subscribers, the title starts with the plain phrase people type for the topic, and the scenario or stakes follows as a bracketed tail or second sentence (70 characters at most). A topic go/no-go names that phrase and two videos that already rank for it. The last four longs got 6 to 32 impressions each.
 
 Ben, 11 Oct 2026, sent `@astrumspace`: *"anything we can learn from the thumbnails, packaging of shorts?"* Chief studied their top and bottom longs and Shorts against our last ten longs and decided the following the same night. Ben delegates creative calls to Chief and the AIs. Evidence: `/workspace/astrum-pack` on the box (contact sheets, `longs_meta.tsv`, `shorts_meta.tsv`).
 
@@ -650,7 +650,7 @@ Once a cut is in **Passed** and the listing package is complete (or Chief gives 
   - Put Orbit at frame 0 of a Short or on any thumbnail.
 - **Subscribe asks:** at the end of a film, or with a subscriber number in the film. One mid-film beat only, and the count goes in the pinned comment.
 - **Titles:** hashtags, series suffixes, hedged claims ("We may have…"), fear framing, or a title that copies an existing public video.
-- **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11). Press **Continue** on "Run a new test? Your current test will be deleted" when a Test & Compare is already set: Cancel and leave it (Cursor, 9 Oct).
+- **Studio:** add a pinned comment to a Short. Add a `/go/` link anywhere: its redirect app is retired, and affiliate links are paused (`STUDIO_PLAYBOOK.md` §11). Press **Continue** on "Run a new test? Your current test will be deleted" when a Test & Compare is already set: Cancel and leave it (Cursor, 9 Oct). One exception, by Ben's own yes (9 Nov 2026), for one video only: on 025 Mars `Js6EQJ8qDi8` the running thumbnail-only test is replaced by a title-and-thumbnail test, in the job that names this exception.
 - **Generation:**
   - Use Kling, Seedance or ElevenLabs Image & Video.
   - Generate anything on the ElevenLabs website, by any agent. VO goes through the API only, one take at a time. (4 Oct 2026: website Video Generation by desk automation burned about 67k credits.)
