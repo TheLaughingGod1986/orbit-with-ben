@@ -211584,10 +211584,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-09T22:11Z",
+      "eta": "2026-11-09T23:11Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:28Z",
       "result": "",
@@ -211606,6 +211606,11 @@
           "at": "2026-11-09T21:32Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-09T23:32:50Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-09T22:11Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Playlist audit, both channels (read-only): views, video count, last update; propose merge/rename/reorder/remove",
