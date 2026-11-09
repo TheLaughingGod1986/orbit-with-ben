@@ -1,0 +1,51 @@
+J0988 / J0956 Neptune S2 v07a Audio-Only Correction & Verification Report
+=========================================================================
+Source v07 master: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4
+Source v07 SHA256: 0919db03d4325aaedc364aeca9c8514345e65d61d857e5e78497c6001957af3d
+Source v07_PHONE SHA256: 51c87fa23b402e06b363e7b13eeca414f66378ac4fb28f86c24adc65d47e06d9
+Source premix.wav SHA256: fa25a263948a4c334fa65af8ead6cff0319b4f52bd71b7ac18082053bc21eccf
+Source stem_vo.wav SHA256: 490d4c989a233b05e492450ce6665a67581b34ddb9cecfb9be70c83ffbf9a418
+Source vo_v04.wav SHA256: 5a63d51004ff4ffd2d11a200ed48e378ee645bbe4abfd6911c83a62cf83e78d2
+
+New v07a master: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a.mp4
+New v07a SHA256: de62264cbd89758d677c0426002b688e7ebbeceabc4c2eb56b962f44cb4ecb12
+New v07a_PHONE: 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a_PHONE.mp4
+New v07a_PHONE SHA256: f11e35a282c74e9792d86bd6a1f72937eb07f05ab16b7e2f9f710275c1c24f69
+
+1. EBU R128 (ebur128=peak=true) Before / After
+----------------------------------------------
+BEFORE (v07 master):
+  I: -14.1 LUFS | TP: -1.4 dBTP | LRA: 4.6 LU
+  Raw: [Parsed_ebur128_0 @ 0xc49045c80] t: 20.599979  TARGET:-23 LUFS    M: -22.4 S: -18.0     I: -14.1 LUFS       LRA:   4.6 LU  FTPK: -24.0 -25.8 dBFS  TPK:  -1.4  -1.4 dBFS
+BEFORE (v07_PHONE):
+  I: -14.1 LUFS | TP: -1.1 dBTP | LRA: 4.6 LU
+  Raw: [Parsed_ebur128_0 @ 0x71900e4c0] t: 20.599979  TARGET:-23 LUFS    M: -22.4 S: -18.0     I: -14.1 LUFS       LRA:   4.6 LU  FTPK: -23.9 -25.9 dBFS  TPK:  -1.3  -1.1 dBFS
+
+AFTER (v07a master, AAC 256k 48kHz stereo):
+  I: -14.1 LUFS (target -14.0 +/-0.5 LUFS -> PASS)
+  TP: -1.8 dBTP (limit <= -1.6 dBTP -> PASS)
+  LRA: 4.5 LU
+  Raw: [Parsed_ebur128_0 @ 0x8b2c59980] t: 20.599979  TARGET:-23 LUFS    M: -22.4 S: -17.8     I: -14.1 LUFS       LRA:   4.5 LU  FTPK: -23.8 -25.6 dBFS  TPK:  -1.8  -1.8 dBFS
+AFTER (v07a_PHONE, stream-copied AAC from v07a master):
+  I: -14.1 LUFS (target -14.0 +/-0.5 LUFS -> PASS)
+  TP: -1.8 dBTP (limit <= -1.6 dBTP -> PASS)
+  LRA: 4.5 LU
+  Raw: [Parsed_ebur128_0 @ 0xaa500e400] t: 20.599979  TARGET:-23 LUFS    M: -22.4 S: -17.8     I: -14.1 LUFS       LRA:   4.5 LU  FTPK: -23.8 -25.6 dBFS  TPK:  -1.8  -1.8 dBFS
+
+2. Exact Filter & Encode Commands
+---------------------------------
+Master:
+  ffmpeg -y -v error -i 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07.mp4 -i /Volumes/data/mac-mini-archive/scratch/J0943/neptune_v07/premix.wav -filter_complex "[1:a]volume=8.250dB,alimiter=limit=0.79891:level=disabled:attack=5:release=50:latency=1,apad=whole_dur=20.6,atrim=0:20.6,asetpts=PTS-STARTPTS[a]" -map 0:v:0 -map "[a]" -c:v copy -c:a aac -b:a 256k -ar 48000 -ac 2 -movflags +faststart 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a.mp4
+Phone:
+  ffmpeg -y -v error -i 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07_PHONE.mp4 -i 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a.mp4 -map 0:v:0 -map 1:a:0 -c:v copy -c:a copy -movflags +faststart 00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s2_neptune_v07a_PHONE.mp4
+
+3. Video & Audio Bit/Frame/Alignment Verification
+-------------------------------------------------
+- Master decoded video framemd5 vs v07: 618/618 frames IDENTICAL (0 diffs, exact timestamps & pts)
+- PHONE decoded video framemd5 vs v07_PHONE: 618/618 frames IDENTICAL (0 diffs, exact timestamps & pts)
+- Video duration: 20.600000s (618 frames @ 30/1 fps)
+- Audio duration: 20.600000s (988,800 samples @ 48,000 Hz stereo)
+- Master vs PHONE decoded PCM: 100% bit-identical (0 sample diffs)
+- Alignment vs lossless premix.wav: lag = 0 samples (0.00 ms), r = 0.979525
+- Alignment vs v07.mp4 (which had uncompensated 5ms alimiter delay): lag = -239 samples (-4.98 ms), r = 0.999303
+- Listening / signal check: max sample peak = -1.81 dBFS, clipped samples = 0, NaN/Inf = 0, VO onset = 0.09s, last word end = 19.45s, tail gap = 1.15s, no clicks, pops, pumping or truncation.

@@ -1,0 +1,302 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short02_water_ice_mountains/06_Final-Exports/034_short02_water_ice_mountains_v01.mp4",
+  "edge_floor": 0.0405,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "R10",
+      "cut": 9,
+      "t": 23.9,
+      "source": "PIA19948.jpg",
+      "why": [
+        "low detail: edge density 0.0403 < film p5 0.0405"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "code_graphic_034_short2_r01_open.mp4",
+      "t": 1.25,
+      "std": 43.17,
+      "mean": 91.72,
+      "p95": 161.0,
+      "edge": 0.1912,
+      "hf": 17.51,
+      "lf": 34.0,
+      "std8": 36.78,
+      "edge8": 0.1224,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "R02",
+      "source": "PIA19710.jpg",
+      "t": 3.5,
+      "std": 30.53,
+      "mean": 52.4,
+      "p95": 108.0,
+      "edge": 0.0408,
+      "hf": 4.81,
+      "lf": 28.76,
+      "std8": 29.36,
+      "edge8": 0.102,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -2.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.029,
+        "reversals": 0,
+        "frames": 32,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "R03",
+      "source": "PIA19944.jpg",
+      "t": 5.3,
+      "std": 37.86,
+      "mean": 121.09,
+      "p95": 181.0,
+      "edge": 0.0827,
+      "hf": 12.56,
+      "lf": 33.98,
+      "std8": 34.17,
+      "edge8": 0.0727,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 2.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.026,
+        "reversals": 0,
+        "frames": 20,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "R04",
+      "source": "PIA20198.jpg",
+      "t": 7.65,
+      "std": 33.23,
+      "mean": 105.68,
+      "p95": 173.0,
+      "edge": 0.1315,
+      "hf": 11.45,
+      "lf": 28.68,
+      "std8": 29.67,
+      "edge8": 0.1496,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -2.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.045,
+        "reversals": 0,
+        "frames": 65,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "R05",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 10.6,
+      "std": 36.15,
+      "mean": 100.24,
+      "p95": 161.0,
+      "edge": 0.0521,
+      "hf": 10.36,
+      "lf": 31.17,
+      "std8": 31.98,
+      "edge8": 0.1246,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "R06",
+      "source": "PIA18033.jpg",
+      "t": 13.6,
+      "std": 34.74,
+      "mean": 96.47,
+      "p95": 161.0,
+      "edge": 0.064,
+      "hf": 7.48,
+      "lf": 32.48,
+      "std8": 33.09,
+      "edge8": 0.1007,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 2.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.039,
+        "reversals": 0,
+        "frames": 68,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "R07",
+      "source": "PIA19842.jpg",
+      "t": 16.35,
+      "std": 39.7,
+      "mean": 76.56,
+      "p95": 149.0,
+      "edge": 0.0676,
+      "hf": 8.45,
+      "lf": 37.39,
+      "std8": 38.05,
+      "edge8": 0.101,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -2.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.026,
+        "reversals": 0,
+        "frames": 41,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "R08",
+      "source": "PIA20473.jpg",
+      "t": 18.75,
+      "std": 53.88,
+      "mean": 120.59,
+      "p95": 205.0,
+      "edge": 0.0593,
+      "hf": 7.89,
+      "lf": 51.99,
+      "std8": 52.74,
+      "edge8": 0.0901,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 2.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.039,
+        "reversals": 0,
+        "frames": 47,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "R09",
+      "source": "PIA20007.jpg",
+      "t": 21.0,
+      "std": 52.84,
+      "mean": 121.55,
+      "p95": 214.0,
+      "edge": 0.0796,
+      "hf": 10.27,
+      "lf": 50.07,
+      "std8": 50.53,
+      "edge8": 0.1212,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -2.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.028,
+        "reversals": 0,
+        "frames": 32,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "R10",
+      "source": "PIA19948.jpg",
+      "t": 23.9,
+      "std": 46.35,
+      "mean": 58.62,
+      "p95": 162.0,
+      "edge": 0.0403,
+      "hf": 5.33,
+      "lf": 45.24,
+      "std8": 45.79,
+      "edge8": 0.1166,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 2.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.04,
+        "reversals": 0,
+        "frames": 86,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0403 < film p5 0.0405"
+      ]
+    }
+  ]
+}

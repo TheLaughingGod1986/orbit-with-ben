@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v04.mp4",
+  "edge_floor": 0.007,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02",
+      "cut": 2,
+      "t": 7.32,
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "why": [
+        "low detail: edge density 0.0029 < film p5 0.0070"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s00",
+      "source": "PIA26673.gif",
+      "t": 1.27,
+      "std": 47.11,
+      "mean": 67.78,
+      "p95": 152.0,
+      "edge": 0.0434,
+      "hf": 12.21,
+      "lf": 39.3,
+      "std8": 41.7,
+      "edge8": 0.156,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s01",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "t": 4.14,
+      "std": 21.98,
+      "mean": 125.23,
+      "p95": 143.0,
+      "edge": 0.0147,
+      "hf": 11.22,
+      "lf": 13.37,
+      "std8": 15.18,
+      "edge8": 0.0395,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s02",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "t": 7.32,
+      "std": 26.33,
+      "mean": 132.19,
+      "p95": 183.0,
+      "edge": 0.0029,
+      "hf": 4.24,
+      "lf": 25.03,
+      "std8": 25.26,
+      "edge8": 0.0205,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0070"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s03",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "t": 10.5,
+      "std": 27.18,
+      "mean": 127.83,
+      "p95": 142.0,
+      "edge": 0.0337,
+      "hf": 16.0,
+      "lf": 9.74,
+      "std8": 15.35,
+      "edge8": 0.0928,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s04",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "t": 13.69,
+      "std": 33.19,
+      "mean": 122.77,
+      "p95": 155.0,
+      "edge": 0.0509,
+      "hf": 14.96,
+      "lf": 23.03,
+      "std8": 25.62,
+      "edge8": 0.1224,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s05",
+      "source": "JPL-20210222-M2020f-0001.mp4",
+      "t": 16.87,
+      "std": 25.25,
+      "mean": 115.28,
+      "p95": 148.0,
+      "edge": 0.021,
+      "hf": 10.49,
+      "lf": 17.3,
+      "std8": 19.5,
+      "edge8": 0.0919,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s06",
+      "source": "JPL-20200303-MSLf-0001.mp4",
+      "t": 20.05,
+      "std": 26.7,
+      "mean": 99.45,
+      "p95": 149.0,
+      "edge": 0.2261,
+      "hf": 15.73,
+      "lf": 15.98,
+      "std8": 17.99,
+      "edge8": 0.1287,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "end_card_loop_PIA26673.gif",
+      "t": 22.14,
+      "std": 40.87,
+      "mean": 63.12,
+      "p95": 135.0,
+      "edge": 0.0275,
+      "hf": 4.98,
+      "lf": 39.69,
+      "std8": 39.99,
+      "edge8": 0.1123,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

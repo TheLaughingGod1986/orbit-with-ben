@@ -2,7 +2,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { describe, expect, it, vi } from "vitest";
-import { isOwnBlobUrl } from "@/lib/publishing/media-host";
+import { isOwnMediaUrl } from "@/lib/publishing/media-host";
 import { createR2Host, isOwnR2Url, parseListObjects, r2Config, r2Key } from "@/lib/publishing/media-host-r2";
 
 const PUB = "https://pub-01001dd688b44d358058422d37345434.r2.dev";
@@ -36,11 +36,12 @@ describe("own media URLs", () => {
     expect(isOwnR2Url(`${PUB}/social/a.mp4`, undefined)).toBe(false);
   });
 
-  it("cleanup accepts both the old Blob store and the R2 bucket", () => {
-    expect(isOwnBlobUrl("https://abc.public.blob.vercel-storage.com/social/a.mp4", undefined)).toBe(true);
-    expect(isOwnBlobUrl(`${PUB}/social/a.mp4`, PUB)).toBe(true);
-    expect(isOwnBlobUrl(`${PUB}/social/a.mp4`, undefined)).toBe(false);
-    expect(isOwnBlobUrl("https://example.com/social/a.mp4", PUB)).toBe(false);
+  it("cleanup accepts only the R2 bucket, never the old Vercel Blob store", () => {
+    expect(isOwnMediaUrl("https://abc.public.blob.vercel-storage.com/social/a.mp4", undefined)).toBe(false);
+    expect(isOwnMediaUrl("https://abc.public.blob.vercel-storage.com/social/a.mp4", PUB)).toBe(false);
+    expect(isOwnMediaUrl(`${PUB}/social/a.mp4`, PUB)).toBe(true);
+    expect(isOwnMediaUrl(`${PUB}/social/a.mp4`, undefined)).toBe(false);
+    expect(isOwnMediaUrl("https://example.com/social/a.mp4", PUB)).toBe(false);
   });
 });
 

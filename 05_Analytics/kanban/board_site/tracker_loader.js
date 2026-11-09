@@ -29,7 +29,7 @@
   async function latest() {
     let sha = "";
     try {
-      const g = await fetch(REF, { cache: "no-cache" });
+      const g = await fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(REF, { cache: "no-cache" })).catch(() => fetch(REF, { cache: "no-cache" }));
       if (g.ok) sha = ((await g.json()).object || {}).sha || "";
     } catch (e) {}
     try {

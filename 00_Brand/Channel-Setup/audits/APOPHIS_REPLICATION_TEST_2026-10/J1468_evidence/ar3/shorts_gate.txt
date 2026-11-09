@@ -1,0 +1,42 @@
+[
+  {
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar3_2027_eclipse_v06.mp4",
+    "air_date": "2026-11-01",
+    "fails": [
+      "pushed still at frame 0 (mean 0–1.5 s frame diff 1.41 < 1.50) — use moving footage"
+    ],
+    "warns": [
+      "duration 18.1s outside 22–27s band",
+      "picture barely changes in the first second (motion 5.0 < 10) — trim the clip's ease-in so frame 0 is already mid-action"
+    ],
+    "stayed_fails": [
+      "pushed still at frame 0 (mean 0–1.5 s frame diff 1.41 < 1.50) — use moving footage"
+    ],
+    "duration_s": 18.07,
+    "audio": {
+      "stream": true,
+      "mean_db": -17.3,
+      "open_mean_db": -15.5
+    },
+    "vo_src": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/stem_vo.wav",
+    "vo_onset_s": 0.079,
+    "last_word_end_s": 16.953,
+    "tail_gap_s": 1.11,
+    "level": {
+      "lufs": -14.1,
+      "true_peak_dbtp": -2.1
+    },
+    "motion_0_1s": 4.96,
+    "frame0_diff_0_1_5s": 1.41,
+    "first_cut_s": 2.4,
+    "dhash": "f55f13d3e41bf55b",
+    "near_opens": [],
+    "orbit": {
+      "orange_frac": 0.0,
+      "dark_frac": 0.1321,
+      "visor_frac": 0.0
+    },
+    "contact_sheet": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/07_Edit-Project/assembly_j1468/ar3/shorts_gate_final/owb_ar3_2027_eclipse_v06_open_sheet.jpg",
+    "verdict": "FAIL"
+  }
+]

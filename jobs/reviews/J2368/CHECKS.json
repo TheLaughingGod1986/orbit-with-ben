@@ -1,0 +1,45 @@
+{
+  "job": "J2368",
+  "reviewer": "chief (Grok Bot, elected; chief_relay status 7 Nov 2026 ~15:30 London)",
+  "decision": "PASS",
+  "reviewed_pr": 626,
+  "reviewed_head": "e96c984324fd5eea358af795b8a35d12fb34e8d1",
+  "shot_list_csv_sha256": "68a5949c670f6e2926b28f2060f1944f38fab7c48011436ce606db26ec61fa25",
+  "shot_list_md_sha256": "e235ed55cddabfc3de9d202b6cf5429ea9d64e6688c238a82266520ee2e17cea",
+  "source_evidence_json_sha256": "71099ee66b7b36b43e95dca63ac2ae595bd039f5b6ce6c5e0d2647dc72d6c195",
+  "stt_timeline_offset_v01_sha256": "922e5ba1c79c41b812361ba7456bb9d3ed2563cd3e382b10ba9c64f18440114c",
+  "stt_raw_untouched_sha256": "af85f3b6fbcb4c0f549f19f0c526fed18f9454bdb9cfa27958ff5a2770d75df7",
+  "clip_check": "74 rows PASS (stt_timeline_offset_v01.json, --vo-end 628.94)",
+  "rows": {"total": 74, "NASA": 60, "CODE": 8, "CARD": 6},
+  "card_onscreen_s": {
+    "R08": 2.50, "R20": 2.50, "R33": 2.50, "R45": 2.50, "R54": 2.50, "R64": 2.50
+  },
+  "card_legible_hold_s": 1.70,
+  "card_breath_s": 0.60,
+  "card_xfade_s": 0.40,
+  "code_rows": ["R02", "R15", "R24", "R29", "R35", "R48", "R56", "R69"],
+  "native_motion_rows": ["R03", "R05", "R19", "R25", "R30", "R34", "R36", "R37", "R40", "R50", "R67"],
+  "code_gaps_without_native_motion": {},
+  "nh_extreme_closeup_ogv": "REJECTED_PAN_AND_ANNOTATED (replaced in R05/R50)",
+  "orbit_beats": 0,
+  "orbit_acts_tags_in_csv": 0,
+  "omni_references_in_csv": 0,
+  "r30_distinct_real_sources": [
+    "File:Video - Pluto and its moon Charon orbiting each other - Nasa-s New Horizons (51712771431).webm",
+    "PIA19968"
+  ],
+  "when_labels_distinct": 14,
+  "max_still_upscale": "1.95x (PIA21965)",
+  "max_video_inset_upscale": "2.00x",
+  "assets_over_two_rows": [],
+  "adjacent_code": [],
+  "music": {
+    "post_word_hold_s": 2.5,
+    "music_fade": "636.94-646.94 (10.0 s)",
+    "picture_fade": "644.94-646.94 (2.0 s)",
+    "runtime_s": 646.94,
+    "verdict": "PASS"
+  },
+  "j2362_defects_cleared": ["card_hold", "native_motion_separators", "orbit_retype_r30_second_source", "when_upscale_luma_claims"],
+  "spend_gbp": 0
+}

@@ -1,0 +1,46 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "scope": "Two downloaded Commons candidates only",
+  "technical_checks": [
+    {
+      "asset_id": "commons_tane_mahuta",
+      "checks": {
+        "local_path": true,
+        "source_evidence_path": true,
+        "licence_evidence_path": true,
+        "commons_original_sha1": true,
+        "native_dimensions": true,
+        "planned_reuse_within_cap": true,
+        "licence_matches_api": true
+      },
+      "native_dimensions": [
+        3264,
+        4896
+      ],
+      "scope": "File integrity and provenance only; no Chief acceptance or composite review"
+    },
+    {
+      "asset_id": "commons_hand_stencils",
+      "checks": {
+        "local_path": true,
+        "source_evidence_path": true,
+        "licence_evidence_path": true,
+        "licence_terms_path": true,
+        "commons_original_sha1": true,
+        "native_dimensions": true,
+        "planned_reuse_within_cap": true,
+        "licence_matches_api": true
+      },
+      "native_dimensions": [
+        4161,
+        2774
+      ],
+      "scope": "File integrity and provenance only; no Chief acceptance or composite review"
+    }
+  ],
+  "source_stills_inspected": true,
+  "review_status": "pending_Chief_crop_and_composite_review",
+  "audio_review": false,
+  "moving_video_review": false
+}

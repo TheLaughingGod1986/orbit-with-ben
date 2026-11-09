@@ -11,6 +11,13 @@ Pools:
 - vertex:     Cloud Billing > Credits (all) in the same Chrome. Free Trial is `--left`; every credit line goes in --note.
 - cursor:     cursor.com/dashboard/spending in the same Chrome: percent of the Cursor Models pool left this cycle
               (the page shows % used per pool and no $ since 12 Oct); Cursor Models and Grok Bot weekly go in --note.
+- codex:      the Codex CLI's own usage limits, from the newest `rate_limits` in ~/.codex/sessions (what /status shows):
+              % of the weekly limit left, with the 5-hour window and both reset times in --note. No sign-in, no network.
+              `--codex-pool codex-macbook` records the MacBook's separate account (scripts/macbook_worker.py does).
+- claude:     claude.ai/settings/usage in the CDP Chrome (:9222): % of the weekly limit left, with the current session
+              and weekly % used + reset times in --note.
+- gemini:     the Antigravity `agy -p /usage` quota output on the Mini: % of the Gemini Models weekly limit left, with
+              the 5-hour session and weekly % used + reset times in --note.
 
 A pool whose read fails records nothing; the reason goes to the log (and stdout). Never guess a number.
 Log: ~/Library/Logs/owb-ai-spend.log (launchd). Exit 0 if every pool read, 1 if any failed.
@@ -19,9 +26,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +40,10 @@ CDP = "http://127.0.0.1:9222"
 BILLING_URL = "https://console.cloud.google.com/billing/0124D1-E6EFD6-40F6DA/credits/all?project=gen-lang-client-0538779324"
 FLOW_URL = "https://flow.google.com/"
 CURSOR_URL = "https://cursor.com/dashboard/spending"
-ALL = ("elevenlabs", "flow", "vertex", "cursor")
+CLAUDE_URL = "https://claude.ai/settings/usage"
+ALL = ("elevenlabs", "flow", "vertex", "cursor", "codex", "claude", "gemini")
+CODEX_HOME = Path.home() / ".codex"
+CODEX_MAX_AGE_H = 72  # an older reading says nothing about this week's limit
 
 
 def read_elevenlabs() -> dict:
@@ -47,18 +60,17 @@ def read_elevenlabs() -> dict:
 def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None) -> str:
     """Body text of `url` in the CDP Chrome. `then(page, text)` may click and return new text."""
     from playwright.sync_api import sync_playwright
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from cdp_tabs import reuse_page, site  # noqa: E402
     with sync_playwright() as p:
         br = p.chromium.connect_over_cdp(CDP)
-        page = br.contexts[0].new_page()
-        try:
-            page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            if wait_text:
-                page.get_by_text(wait_text).first.wait_for(timeout=45000)
-            page.wait_for_timeout(settle_ms)
-            text = page.inner_text("body")
-            return then(page, text) if then else text
-        finally:
-            page.close()
+        page = reuse_page(br.contexts[0], site(url))
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        if wait_text:
+            page.get_by_text(wait_text).first.wait_for(timeout=45000)
+        page.wait_for_timeout(settle_ms)
+        text = page.inner_text("body")
+        return then(page, text) if then else text
 
 
 FLOW_ACCOUNT = "benoats@googlemail.com"
@@ -166,7 +178,26 @@ def parse_cursor(text: str) -> dict:
             used[label] = int(m.group(1))
             label = None
     if "other models" not in used and "cursor models" not in used:
-        raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+        m_wk = re.search(
+            r"(?:(\d{1,3})%\s+used(?:\s+\S)?\s+Weekly included usage|Weekly included usage\s+(\d{1,3})%\s+used)"
+            r"(?:\s*(?:x\s+)?[·•]?\s*Resets\s+([^\n(]+))?",
+            text,
+            re.I,
+        )
+        if not m_wk:
+            raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
+        pct = int(m_wk.group(1) or m_wk.group(2))
+        used["weekly included usage"] = pct
+        bits = [f"Weekly included usage {pct}% used"]
+        if m_wk.group(3):
+            bits.append(f"weekly resets {m_wk.group(3).strip()}")
+        m_mo = re.search(r"(\$[\d,]+(?:\.\d\d)?)\s+used this month(?:\s+Resets\s+([^\n(]+))?", text, re.I)
+        if m_mo:
+            bits.append(f"{m_mo.group(1)} used this month" + (f" (resets {m_mo.group(2).strip()})" if m_mo.group(2) else ""))
+        m_cr = re.search(r"Credits available\s+(\$[\d,]+(?:\.\d\d)?)", text, re.I)
+        if m_cr:
+            bits.append(f"credits available {m_cr.group(1)}")
+        return {"left": max(0, 100 - pct), "total": 100, "used": used, "note": "; ".join(bits)}
     reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
     weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
     bits = [f"{CURSOR_POOLS[k]} {used[k]}% used" for k in CURSOR_POOLS if k in used]
@@ -178,9 +209,25 @@ def parse_cursor(text: str) -> dict:
             "note": "; ".join(bits)}
 
 
+def _cursor_settle(page, text: str) -> str:
+    """Wait for the client-side redirect from cursor.com/dashboard/spending to grok.com/dashboard/billing to render."""
+    for _ in range(2):
+        if re.search(r"\d{1,3}%\s+used", text, re.I):
+            return text
+        if "grok.com" not in page.url:
+            page.goto("https://grok.com/dashboard/billing", wait_until="domcontentloaded", timeout=30000)
+        try:
+            page.get_by_text("Weekly included usage").first.wait_for(timeout=12000)
+        except Exception:  # noqa: BLE001
+            pass
+        page.wait_for_timeout(2000)
+        text = page.inner_text("body")
+    return text
+
+
 def read_cursor() -> dict:
-    text = _page_text(CURSOR_URL, None, settle_ms=8000)
-    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and "% used" not in text:
+    text = _page_text(CURSOR_URL, None, settle_ms=8000, then=_cursor_settle)
+    if re.search(r"\bsign in\b|\blog in\b", text[:2000], re.I) and not re.search(r"\d{1,3}%\s+used", text, re.I):
         raise RuntimeError("Cursor dashboard is signed out in the CDP Chrome")
     r = parse_cursor(text)
     return {"left": r["left"], "total": r["total"],
@@ -201,13 +248,202 @@ def last_left(pool: str) -> float | None:
     return float(rows[-1]["left"]) if rows else None
 
 
-READERS = {"elevenlabs": read_elevenlabs, "flow": read_flow, "vertex": read_vertex, "cursor": read_cursor}
+def _window(w: dict, at: datetime) -> tuple[float, str]:
+    """(used %, reset time UTC) of one Codex rate-limit window; newer CLIs give resets_at, older resets_in_seconds."""
+    used = float(w["used_percent"])
+    if w.get("resets_at") is not None:
+        reset = datetime.fromtimestamp(float(w["resets_at"]), timezone.utc)
+    elif w.get("resets_in_seconds") is not None:
+        reset = at + timedelta(seconds=float(w["resets_in_seconds"]))
+    else:
+        return used, ""
+    return used, reset.strftime("%a %d %b %H:%MZ")
+
+
+def parse_codex(lines, now: datetime | None = None) -> dict:
+    """The newest Codex `rate_limits` reading among session log lines, as a pool reading (weekly % left of 100)."""
+    now = now or datetime.now(timezone.utc)
+    best = None
+    for line in lines:
+        if '"rate_limits"' not in line:
+            continue
+        try:
+            row = json.loads(line)
+        except ValueError:
+            continue
+        payload = row.get("payload") or row.get("msg") or row
+        rl = payload.get("rate_limits") or (payload.get("info") or {}).get("rate_limits")
+        if not isinstance(rl, dict) or not rl.get("secondary") and not rl.get("primary"):
+            continue
+        try:
+            at = datetime.fromisoformat(str(row.get("timestamp", "")).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if best is None or at > best[0]:
+            best = (at, rl)
+    if best is None:
+        raise ValueError("no rate_limits reading in the Codex session logs")
+    at, rl = best
+    if now - at > timedelta(hours=CODEX_MAX_AGE_H):
+        raise ValueError(f"newest Codex reading is {(now - at).total_seconds() / 3600:.0f} h old")
+    weekly = rl.get("secondary") or rl.get("primary")
+    used, reset = _window(weekly, at)
+    note = f"weekly {used:g}% used" + (f", resets {reset}" if reset else "")
+    if rl.get("secondary") and rl.get("primary"):
+        u5, r5 = _window(rl["primary"], at)
+        note += f"; 5-hour {u5:g}% used" + (f", resets {r5}" if r5 else "")
+    note += f"; read from the Codex log at {at:%d %b %H:%MZ}"
+    return {"left": round(max(0.0, 100 - used), 1), "total": 100.0, "note": note}
+
+
+def read_codex(home: Path | None = None) -> dict:
+    sessions = sorted((home or CODEX_HOME).glob("sessions/**/*.jsonl"), key=lambda f: f.stat().st_mtime, reverse=True)
+    if not sessions:
+        raise ValueError(f"no Codex session logs under {home or CODEX_HOME}")
+    lines = []
+    for f in sessions[:5]:  # the newest few runs hold the newest reading
+        lines += f.read_text(errors="replace").splitlines()
+    return parse_codex(lines)
+
+
+def _claude_block(text: str, start_re: str, stop_re: str) -> tuple[int, str] | None:
+    m = re.search(start_re, text, re.I | re.M)
+    if not m:
+        return None
+    tail = text[m.end():]
+    end = re.search(stop_re, tail, re.I | re.M)
+    chunk = tail[:end.start()] if end else tail[:600]
+    m_pct = re.search(r"(\d{1,3})%\s*used", chunk, re.I)
+    if not m_pct:
+        return None
+    m_res = re.search(r"Resets\s+(?:on\s+|at\s+)?([^\n(·•]+)", chunk, re.I)
+    reset = m_res.group(1).strip().rstrip(".") if m_res else ""
+    return int(m_pct.group(1)), reset
+
+
+def parse_claude(text: str) -> dict:
+    """The claude.ai/settings/usage page: % used of the current session and the weekly limit, and their reset times."""
+    m_sess = re.search(r"^\s*Current\s+session\b", text, re.I | re.M)
+    if not m_sess:
+        raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")
+    sess = _claude_block(
+        text[m_sess.start():],
+        r"^\s*Current\s+session\b",
+        r"^\s*(?:This\s+week|Current\s+week|Weekly\s+limits?|All\s+models|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit)\b",
+    )
+    wk = _claude_block(
+        text[m_sess.end():],
+        r"^\s*(?:This\s+week\s*(?:\(all\s+models\))?|Current\s+week\s*(?:\(all\s+models\))?|All\s+models|Weekly\s+limits?)\b",
+        r"^\s*(?:This\s+week\s*\(Sonnet|Current\s+week\s*\(Sonnet|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Claude\s+Code|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit|On-demand)\b",
+    )
+    if not sess or not wk:
+        raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")
+    s_pct, s_res = sess
+    w_pct, w_res = wk
+    s_part = f"{s_pct}% used" + (f" (resets {s_res})" if s_res else "")
+    note = f"{s_part} session; weekly {w_pct}% used" + (f", resets {w_res}" if w_res else "")
+    return {
+        "left": max(0, 100 - w_pct),
+        "total": 100,
+        "used": {"session": s_pct, "weekly": w_pct},
+        "note": note,
+    }
+
+
+def _claude_settle(page, text: str) -> str:
+    for _ in range(2):
+        if re.search(r"\d{1,3}%\s*used", text, re.I) or "login" in page.url:
+            return text
+        try:
+            page.get_by_text("Current session").first.wait_for(timeout=10000)
+        except Exception:  # noqa: BLE001
+            pass
+        page.wait_for_timeout(2000)
+        text = page.inner_text("body")
+    return text
+
+
+def read_claude() -> dict:
+    text = _page_text(CLAUDE_URL, None, settle_ms=6000, then=_claude_settle)
+    if re.search(r"continue with google|continue with email|\bsign in\b|\blog in\b", text[:2000], re.I) and not re.search(r"\d{1,3}%\s*used", text, re.I):
+        raise RuntimeError("claude.ai is signed out in the CDP Chrome")
+    r = parse_claude(text)
+    return {"left": r["left"], "total": r["total"], "note": r["note"]}
+
+
+GEMINI_LIMIT_RE = re.compile(
+    r"Gemini\s+Models\s+(Weekly|Five\s+Hour)\s+Limit\s+(Remaining|Used)\s+(\d{1,3})%(?:\s+([^\n]+))?",
+    re.I,
+)
+
+
+def _gemini_reset(raw: str, time_only: bool = False) -> str:
+    s = raw.strip()
+    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d %H:%M GMT", "%Y-%m-%d %H:%M UTC"):
+        try:
+            dt = datetime.strptime(s, fmt).replace(tzinfo=timezone.utc)
+            return dt.strftime("%H:%MZ" if time_only else "%a %d %b %H:%MZ")
+        except ValueError:
+            continue
+    return s
+
+
+def parse_gemini(text: str) -> dict:
+    """The Antigravity `agy -p /usage` quota output for Gemini Models (weekly + 5-hour % remaining and reset times)."""
+    windows: dict[str, tuple[int, str]] = {}
+    for line in text.splitlines():
+        m = GEMINI_LIMIT_RE.search(line)
+        if not m:
+            continue
+        kind = "weekly" if m.group(1).lower().startswith("week") else "five_hour"
+        pct = int(m.group(3))
+        left_pct = pct if m.group(2).lower() == "remaining" else max(0, 100 - pct)
+        reset_raw = (m.group(4) or "").strip()
+        windows[kind] = (left_pct, reset_raw)
+    if "weekly" not in windows:
+        raise RuntimeError("no 'Gemini Models · Weekly Limit' line in agy /usage output")
+    w_left, w_res_raw = windows["weekly"]
+    w_used = max(0, 100 - w_left)
+    w_res = _gemini_reset(w_res_raw, time_only=False) if w_res_raw else ""
+    used = {"weekly": w_used}
+    if "five_hour" in windows:
+        f_left, f_res_raw = windows["five_hour"]
+        f_used = max(0, 100 - f_left)
+        f_res = _gemini_reset(f_res_raw, time_only=True) if f_res_raw else ""
+        used["five_hour"] = f_used
+        sess = f"5-hour {f_used}% used" + (f" (resets {f_res})" if f_res else "")
+        note = f"{sess} session; weekly {w_used}% used" + (f", resets {w_res}" if w_res else "")
+    else:
+        note = f"weekly {w_used}% used" + (f", resets {w_res}" if w_res else "")
+    return {"left": w_left, "total": 100, "used": used, "note": note}
+
+
+def _agy_bin() -> str:
+    for cand in (os.environ.get("AGY_BIN"), shutil.which("agy"), str(Path.home() / ".local" / "bin" / "agy")):
+        if cand and Path(cand).is_file():
+            return str(cand)
+    raise RuntimeError("agy CLI not found on PATH or ~/.local/bin/agy")
+
+
+def read_gemini() -> dict:
+    p = subprocess.run([_agy_bin(), "-p", "/usage", "--print-timeout", "30s"],
+                       capture_output=True, text=True, timeout=45)
+    out = (p.stdout or "") + "\n" + (p.stderr or "")
+    if p.returncode != 0 and "Gemini Models" not in out:
+        raise RuntimeError(f"agy -p /usage exited {p.returncode}: {out.strip()[:200]}")
+    r = parse_gemini(out)
+    return {"left": r["left"], "total": r["total"], "note": r["note"]}
+
+
+READERS = {"elevenlabs": read_elevenlabs, "flow": read_flow, "vertex": read_vertex, "cursor": read_cursor,
+           "codex": read_codex, "claude": read_claude, "gemini": read_gemini}
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pools", default=",".join(ALL))
     ap.add_argument("--by", default="mini-daily")
+    ap.add_argument("--codex-pool", default="codex", help="pool the codex reading is recorded as (codex-macbook on the MacBook)")
     ap.add_argument("--git", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args(argv)
@@ -224,7 +460,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"READ {pool}: left={r['left']} total={r.get('total')} · {r['note']}", flush=True)
         if a.dry_run:
             continue
-        cmd = [sys.executable, str(ROOT / "scripts" / "ai_spend.py"), "record", "--pool", pool,
+        cmd = [sys.executable, str(ROOT / "scripts" / "ai_spend.py"), "record", "--pool", a.codex_pool if pool == "codex" else pool,
                "--left", str(r["left"]), "--note", r["note"], "--by", a.by]
         if r.get("total") is not None:
             cmd += ["--total", str(r["total"])]

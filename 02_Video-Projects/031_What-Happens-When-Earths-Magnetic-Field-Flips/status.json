@@ -1,7 +1,7 @@
 {
   "film": "031",
-  "title": "",
-  "air": "",
+  "title": "What Happens When Earth's Magnetic Field Flips?",
+  "air": "2026-12-02",
   "stages": {
     "script": {
       "state": "done",
@@ -12,13 +12,62 @@
       "ref": "666bacf8"
     },
     "vo": {
-      "state": "blocked"
+      "state": "done",
+      "ref": "6536440194",
+      "lock": "magnetic_field_flip_vo_v02a",
+      "ruling": "Chief h32 (J0345, OWB #264 6536440194) correcting h24 (6533630504), assembled by J1295",
+      "wav_sha256": "3444635a3efa951a1031d6681390053abd9cdd3cc1ed97d537086ee7de86b3c6",
+      "mp3_sha256": "334085b5f1eb1992a0fd7f31ff46f97b24b0443158551f2cf91476a9d9c31347",
+      "duration_s": 568.28,
+      "frames": 27277440,
+      "loudness": "I -19.9 LUFS, LRA 4.8, true peak -3.5 dBFS",
+      "note": "Locked stem magnetic_field_flip_vo_v02a. Measured per-part qsin fades (ch00 120 ms, ch06 180 ms). v01 and v02 were not modified. Word timings copied from stt/magnetic_field_flip_vo_v02; no new STT. The 1905 date/place card spells PONTFAREIN (h24).",
+      "reviewer": "codex",
+      "review_job": "J1752",
+      "review_result": "technical PASS; final review pending actual listening",
+      "review_evidence": "02_Voiceover/review_J1752/REVIEW.md",
+      "waiting": "Actual listening remains unavailable: J1810 native Gemini fixture validation failed; not a Ben watch hold",
+      "follow_up": "J1810 must demonstrate reliable audio perception, then scope specialist listening for J1752; elected Chief retains VO-only decision",
+      "capability_evidence": "jobs/reviews/J1810/REPORT.md"
     },
     "topic": {
       "state": "done",
       "ref": "sources done (666bacf8)"
+    },
+    "shots": {
+      "state": "done",
+      "ref": "55d4dad1c2"
+    },
+    "picture": {
+      "state": "done",
+      "ref": "ae085e857c"
+    },
+    "thumbs": {
+      "state": "done",
+      "ref": "765d77f8f5 (J2143/J2166 KEEP; T021 proposed)"
+    },
+    "edit": {
+      "state": "done",
+      "ref": "aa9ca3d244",
+      "ruling": "KEEP (J2390 1f42136dce on Long Master v02 680598ae34 + J2395 aa9ca3d244 on Short 1 v01 ebe11bb730 & Short 2 v02 4f25b1cd9d; staged in NAS/iCloud OWB UAT and R2 watch store; J2395.1-J2395.3 awaiting Ben's UAT watch)",
+      "reviewer": "gemini",
+      "review_job": "J2395",
+      "review_evidence": "jobs/reviews/J2395/REVIEW.md",
+      "master_v02_sha256": "680598ae3420afa9fd40efc954cf06cefcfff234044a62e90af6a143fdf4de43",
+      "master_v02_phone_sha256": "a8c748f68cf2215f224f0d616b145ec45ffe04db4b0bfd305a9541bbc9931c9d",
+      "short1_v01_sha256": "ebe11bb730ccfab8681d564d3588d17011a28629c7b6f926eba952bfc98c4bcd",
+      "short2_v02_sha256": "4f25b1cd9d2c806367a98f3a7e173bbd0d16dc3390e0c882c223c23af6f10450"
+    },
+    "upload": {
+      "state": "review",
+      "ref": "c7a34757f1",
+      "package_manifest": "11_Upload-Package/PACKAGE_MANIFEST.json",
+      "short1_manifest": "10_Shorts/testA_opening_flip/07_Upload-Package/PACKAGE_MANIFEST.json",
+      "short2_manifest": "10_Shorts/sat12_solar_wind_air/07_Upload-Package/PACKAGE_MANIFEST.json",
+      "trailer_sha256": "5e383e859b278578210c67eda173e8cbbaeaad52e5b1c5662f6e823608d4de97",
+      "note": "Release upload packages built & dry-run verified PASS (J2401: gate:episode PASS, Long v02 + Active Shorts 1 & 2 v02 youtube:package --dry-run PASS); Private YouTube upload (J2402: Wed 2 Dec 18:00 London long + Sat 5 / Sat 12 Dec 11:30 London Shorts) held on Ben's UAT watch (J2395.1-J2395.3, due 2026-12-01T18:00Z)"
     }
   },
   "claims": [],
-  "next": "J0339 soft-edit PARTIAL spoken lines (Chief FIX on J0318)"
+  "next": "J2402: Long v02 G5uMANXHtNU Private for Wed 2 Dec 18:00Z (en-GB captions serving, T021 A/B/C armed, End Screen 9:10:18-9:30:18 saved) + Short 1 v01 C8lPx5N2DwM Private for Sat 5 Dec 11:30Z (cover set). Short 2 v02 held per J2395.3 CHANGE. Pin & Short 1 Related wait until G5uMANXHtNU goes public 2 Dec 18:05Z."
 }
