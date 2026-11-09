@@ -208375,10 +208375,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T01:06Z",
+      "eta": "2026-11-09T03:06Z",
       "created_by": "macbook",
       "created_at": "2026-11-08T23:22Z",
       "result": "",
@@ -208387,11 +208387,24 @@
           "at": "2026-11-08T23:22Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T01:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "OWB 026/027/032: build the J2417 A/B thumbnails (one big object + 2-4 word text)",
       "due": "2026-11-14T12:00:00Z",
-      "kind": "chart"
+      "kind": "chart",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T01:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2431",
