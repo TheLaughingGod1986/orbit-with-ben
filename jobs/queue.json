@@ -212263,10 +212263,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-09T23:56Z",
+      "eta": "2026-11-10T01:26Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -212275,12 +212275,25 @@
           "at": "2026-11-09T23:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T23:56Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repo clean-up, part 1: fix the six bugs the 7 Nov code audit found (rows F-01a to F-01d, F-05a, F-05b)",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Fix six small bugs in the studio's own code that a code review found on 7 Nov."
+      "plain": "Fix six small bugs in the studio's own code that a code review found on 7 Nov.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T23:56Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2464",
