@@ -44,7 +44,7 @@ class Routing(unittest.TestCase):
         self.assertEqual(routing.preferred_worker({"kind": "thumb"}), "codex")
         self.assertEqual(routing.model_for({"kind": "thumb"}, "codex"), "gpt-6-astra")
         self.assertEqual(routing.chain("thumb")[1:], [("cursor", "cursor-grok-4-7"), ("cursor", "cursor-auto"),
-                                                      ("gemini", "gemini-agy")])
+                                                      ("gemini", "gemini-agy"), routing.MINI_CLAUDE])
 
     def test_an_explicit_model_wins(self):
         job = {"kind": "assembly", "model": "gpt-6-astra"}
@@ -55,7 +55,8 @@ class Routing(unittest.TestCase):
         """Ben, 11 Oct 2026 23:40 ("a Claude model in Cursor") and 23:47 ("we also have Gemini and Codex")."""
         for kind in ("script", "review", "qa", "listing"):
             self.assertEqual(routing.chain(kind), [("claude", "claude-opus-5-5"), ("cursor", "cursor-claude-opus-5-5"),
-                                                   ("gemini", "gemini-argon"), ("codex", "gpt-6-astra")], kind)
+                                                   ("gemini", "gemini-argon"), ("codex", "gpt-6-astra"),
+                                                   routing.MINI_CLAUDE], kind)
             self.assertEqual(routing.model_for({"kind": kind}, "cursor"), "cursor-claude-opus-5-5")
             self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-argon")
             self.assertEqual(routing.model_for({"kind": kind}, "codex"), "gpt-6-astra")
@@ -101,7 +102,7 @@ class Routing(unittest.TestCase):
             jobs.do_reroute(c, "relay", "cursor", "", "", T0)
 
     def test_chief_kind_follows_the_elected_succession_chain(self):
-        self.assertEqual([a for a, _ in routing.chain("chief")], ["chief", "claude", "codex", "gemini"])
+        self.assertEqual([a for a, _ in routing.chain("chief")], ["claude", "chief", "codex", "gemini"])
 
     def test_jobs_add_carries_kind_and_model_and_refuses_invented_ones(self):
         d = {"next_id": 1, "jobs": []}
@@ -124,6 +125,20 @@ class HosPictureOnFlow(unittest.TestCase):
         self.assertEqual(owb[0][1], "flow-veo-3.1")  # OWB: Flow first (Ben, 5 Nov 2026)
         self.assertIn("veo-3.1-fast-generate-001", [m for _, m in owb])  # Vertex stays as the fallback
         self.assertEqual(routing.job_chain({"kind": "image"})[0][1], "flow-nano-banana-2")
+
+
+class MiniClaudeCode(unittest.TestCase):
+    """Ben, 9 Nov 2026: Codex and Cursor out of credit; Claude Code on the Mini (his Max 20x plan) is every worker
+    chain's last resort, under its own id so the cloud Chief's election never blocks or borrows it."""
+    def test_every_worker_chain_ends_with_claude_code_on_the_mini_but_the_chief_chain_does_not(self):
+        for kind in routing.CHAINS:
+            agents = [a for a, _ in routing.chain(kind)]
+            if kind == "chief":
+                self.assertNotIn("claudecode", agents)
+            else:
+                self.assertEqual(agents[-1], "claudecode", kind)
+        self.assertIn("claudecode", routing.MINI_WORKERS)
+        self.assertEqual(routing.RUNS_ON["mini-claude-opus-5-5"], "claudecode")
 
 
 if __name__ == "__main__":

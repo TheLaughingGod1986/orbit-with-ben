@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, setBoard: b => { board = b; }};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -17,7 +17,8 @@ const v = (o) => Object.assign({key: 'OWB:001', channel: 'OWB', number: '001', t
 const vs = [v({key: 'a', lane: 'ready', readyFor: 'Ben', watch: {url: 'https://x/api/watch?v=a'}}), v({key: 'b', lane: 'ready', readyFor: 'Chief'}), v({key: 'c'}),
   v({key: 'd', lane: 'ready', readyFor: 'Ben'})];  // d: no video attached yet, so not shown to Ben
 assert.deepEqual(t.forBen(vs).map(x => x.key), ['a']);
-assert.equal(t.stage(vs[1]), 'Waiting on Chief');
+assert.equal(t.videoLane(vs[1]), 'qa', 'Chief-ready is agent QA, not a Ben blocker');
+assert.equal(t.stage(vs[1]), 'In review');
 
 // Progress comes from a job working now, never a parked or estimated one.
 assert.equal(t.progressOf(v({jobs: [{status: 'blocked', progress: {step: 3, of: 3}}]})), null);
@@ -48,6 +49,9 @@ for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
 }
 const review = t.renderTab('review', board, NOW);
 assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review v06') || review.includes('Watch & review v06'), 'a review card opens the UAT screen');
+assert(review.includes('class="seg two"') && review.includes('<span>Needs your review</span>') && review.includes('<span>Reviewed</span>'), 'Review shows two matching count chips');
+assert(/seg two[\s\S]*Needs your review[\s\S]*Reviewed[\s\S]*<section>[\s\S]*Needs your review[\s\S]*reviewed-fold[\s\S]*open/.test(review), 'Review chips sit above both list sections; reviewed history stays accessible');
+assert(!review.includes('data-seg='), 'Review chips are not lane filters');
 assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
@@ -74,10 +78,190 @@ assert.deepEqual([...t.agentLight('claude', 0, 'green', false)], ['amber', 'Idle
 assert.deepEqual([...t.agentLight('chief', 0, 'green', true)], ['green', 'Coordinating']);
 assert.deepEqual([...t.agentLight('cursor', 1, 'red', false)], ['red', 'Out']);
 
-// Videos: Working / Queued / Backlog.
+// Videos: nine exclusive lanes (Ben, 7 Nov 2026). Later stages win; only UAT needs Ben.
 const g = t.videoGroups([v({key: 'w', jobs: [{status: 'claimed', by: 'codex', title: 'cut', progress: {step: 3, of: 5}}]}), v({key: 'q'}), v({key: 'b', lane: 'upcoming'})]);
-assert.deepEqual([g.working[0].key, g.queued[0].key, g.backlog[0].key], ['w', 'q', 'b']);
-assert(t.doing(g.working[0]).includes('Codex · cut') && t.doing(g.working[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
+assert.deepEqual([g.progress[0].key, g.todo[0].key, g.backlog[0].key], ['w', 'q', 'b']);
+assert(t.doing(g.progress[0]).includes('Codex · cut') && t.doing(g.progress[0]).includes('<b>60%</b> · 3 of 5'), 'the working card says who, what, and the reported step as a percentage');
+// UAT OK → Passed (ready to schedule); UAT notes → In progress (not UAT, not Passed).
+const passedCut = v({key: 'ok', lane: 'approved', listing: {complete: true, missing: [], status: 'Ready to upload'}});
+const uatCut = v({key: 'watch', lane: 'ready', readyFor: 'Ben', watch: {url: 'https://x/api/watch?v=watch', version: 'v02'}});
+const notesCut = v({key: 'fix', lane: 'changes', version: 'v02', checkId: 'fix', check: {verdict: 'change', version: 'v02', handled: false}});
+assert.equal(t.videoLane(passedCut), 'passed');
+assert.equal(t.stage(passedCut), 'Ready to upload');
+assert.equal(t.listingLine(passedCut) || t.stage(passedCut), 'Ready to upload');
+assert.equal(t.videoLane(uatCut), 'uat');
+assert.equal(t.stage(uatCut), 'Ready for you');
+assert.equal(t.videoLane(notesCut), 'progress');
+assert.equal(t.stage(notesCut), 'Fixing your changes');
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).uat.map(x => x.key), ['watch']);
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).passed.map(x => x.key), ['ok']);
+assert.deepEqual(t.videoGroups([passedCut, uatCut, notesCut]).progress.map(x => x.key), ['fix']);
+// Scheduled needs a real publishAt; approved without one stays Passed (never invent a date).
+assert.equal(t.videoLane(v({key: 'sched-no-at', lane: 'approved', youtube: {state: 'scheduled'}})), 'passed');
+assert.equal(t.videoLane(v({key: 'sched-at', lane: 'approved', youtube: {state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}})), 'scheduled');
+assert.equal(t.stage(v({key: 'sched-at', lane: 'approved', youtube: {state: 'scheduled', publishAtLondon: 'Wed 12 Nov 18:00'}})), 'Scheduled for Wed 12 Nov 18:00 London');
+// QA is agent-owned; Passed with a live upload job stays Passed (ready to schedule).
+assert.equal(t.videoLane(v({key: 'chief-qa', lane: 'ready', readyFor: 'Chief'})), 'qa');
+assert.equal(t.videoLane(v({key: 'pass-up', lane: 'approved', jobs: [{status: 'claimed', by: 'cursor', title: 'Upload 032', kind: 'studio'}]})), 'passed');
+const videosHtml = t.renderTab('videos', {tracker: {videos: [passedCut, uatCut, notesCut]}}, NOW);
+assert(videosHtml.includes('Only UAT needs you') && videosHtml.includes('Passed') && videosHtml.includes('ready to schedule'), 'Videos copy names the UAT → Passed loop');
+assert(videosHtml.includes('Needs your review') && videosHtml.includes('Watch &amp; review') || videosHtml.includes('Watch & review'), 'UAT lane cards feel like they need Ben');
+// Nine lane chips in locked 3×3 order (count above label); no wrapping "All" tile.
+const laneChipOrder = [...videosHtml.matchAll(/data-seg="([^"]+)"/g)].map(m => m[1]);
+assert.deepEqual(laneChipOrder, ['backlog', 'todo', 'progress', 'qa', 'uat', 'passed', 'scheduled', 'live', 'postlive'], 'Videos lane chips stay in locked 3×3 order');
+assert(videosHtml.includes('<b>') && videosHtml.includes('<span>Backlog</span>'), 'lane chips keep big counts above labels');
+assert(!/To do[\s\S]*Needs your review/.test(videosHtml) || videosHtml.includes('UAT'), 'Ben review CTA sits in UAT');
+assert(!videosHtml.includes('An agent is on it'), 'In progress blurb no longer claims every card has an agent on it');
+assert(t.VIDEO_LANE_COPY.progress.blurb.includes('Working now first'), 'In progress helper names Working now first');
+
+// Videos → In progress: claimed work first + Overview green pulse; waiting stays in-lane below (Ben, 7 Nov 2026).
+const waitingCut = v({key: 'HOS:011', channel: 'HOS', number: '011', title: 'Anesthesia: The Day Surgery Stopped Hurting',
+  jobs: [{id: 'Jwait', status: 'open', title: 'Voice'}],
+  production: {milestones: [{id:'topic',state:'done'},{id:'script',state:'done'},{id:'sources',state:'done'},{id:'vo',state:'open'},{id:'shots',state:'todo'},{id:'picture',state:'todo'},{id:'edit',state:'todo'},{id:'thumbs',state:'todo'},{id:'qa',state:'todo'}],
+    eta: {state:'estimated', lowerMinutes: 4000, upperMinutes: 5000, confidence: 'medium'}}});
+const workingCut = v({key: 'OWB:034', channel: 'OWB', number: '034', title: 'What Would Happen If You Landed On Pluto',
+  jobs: [{id: 'Jlive', status: 'claimed', by: 'codex', title: '034 picture harvest', remaining_action: 'harvest plates'}],
+  production: {milestones: [{id:'topic',state:'done'},{id:'script',state:'done'},{id:'sources',state:'done'},{id:'vo',state:'done'},{id:'shots',state:'done'},{id:'picture',state:'open'},{id:'edit',state:'todo'},{id:'thumbs',state:'todo'},{id:'qa',state:'todo'}],
+    eta: {state:'estimated', lowerMinutes: 9000, upperMinutes: 11000, confidence: 'medium'}}});
+assert.equal(t.videoLane(waitingCut), 'progress');
+assert.equal(t.videoLane(workingCut), 'progress');
+assert(t.videoHasActiveWork(workingCut) && !t.videoHasActiveWork(waitingCut), 'active-work signal is claimed only');
+assert.deepEqual(t.partitionProgressVideos([waitingCut, workingCut]).working.map(x => x.key), ['OWB:034']);
+assert.deepEqual(t.partitionProgressVideos([waitingCut, workingCut]).waiting.map(x => x.key), ['HOS:011']);
+t.setSeg('progress');
+const progressBoard = {
+  tracker: {videos: [waitingCut, workingCut]},
+  progress24h: {hours: 24, films: [{film: 'OWB:034', title: 'Pluto', from: 33, to: 44, items: [{id: 'Jlive', status: 'claimed'}]}], moved: []},
+  owb: {jobs: [{id: 'Jlive', status: 'claimed', by: 'codex', film: '034', repo: 'owb', title: '034 picture harvest'}]},
+};
+const progressHtml = t.renderTab('videos', progressBoard, NOW);
+const workingHead = progressHtml.indexOf('class="lane-sub">Working now');
+const waitingHead = progressHtml.indexOf('class="lane-sub">Waiting');
+assert(workingHead >= 0 && waitingHead >= 0, 'In progress splits Working now and Waiting subheads');
+assert(workingHead < waitingHead, 'Working now section precedes Waiting');
+assert(progressHtml.indexOf('Pluto') < progressHtml.indexOf('Anesthesia'),
+  'claimed cut renders before waiting cut even when waiting has nearer UAT');
+assert(/data-seg="progress"[^>]*>\s*<b>2<\/b>/.test(progressHtml), 'In progress chip count still includes waiting items');
+const workingRow = t.videoProductionRow(workingCut, NOW, progressBoard);
+const waitingRow = t.videoProductionRow(waitingCut, NOW, progressBoard);
+assert(workingRow.includes('p24-working-dot') && workingRow.includes('is-working') && workingRow.includes('Working now'),
+  'claimed cut reuses Overview working-now visual');
+assert(workingRow.includes('33% → 44%') && workingRow.includes('p24-delta'),
+  'claimed cut can show live film progress delta from progress24h');
+assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-working'),
+  'waiting cut does not impersonate live work');
+assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
+t.setSeg('all');
+
+// Claimed work must not be parked in QA by a sibling review/QA/Chief job (Ben, 7 Nov 2026 ~13:30).
+const claimedPlusBlockedChief = v({
+  key: 'OWB:031', channel: 'OWB', number: '031', title: 'What Happens When Earths Magnetic Field Flips',
+  jobs: [
+    {id: 'J2141', status: 'claimed', by: 'macbook', kind: 'assembly', title: '031 assembly'},
+    {id: 'J1754', status: 'blocked', waitKind: 'blocker', kind: 'chief', title: 'Chief: review workflow handoff'},
+  ],
+});
+const claimedReviewOnly = v({
+  key: 'OWB:034', channel: 'OWB', number: '034', title: 'Why Plutos Frozen Heart Has Zero Craters',
+  jobs: [{id: 'J2361', status: 'claimed', by: 'gemini', kind: 'review', title: '034 shot-list KEEP'}],
+});
+const openQaNoClaim = v({
+  key: 'OWB:qa-only', channel: 'OWB', number: '099', title: 'QA only film',
+  jobs: [{id: 'Jqa', status: 'open', kind: 'review', title: 'Frame review'}],
+});
+const blockedChiefNoClaim = v({
+  key: 'OWB:chief-only', channel: 'OWB', number: '098', title: 'Blocked chief only',
+  jobs: [{id: 'Jchief', status: 'blocked', kind: 'chief', title: 'Chief PASS'}],
+});
+assert.equal(t.videoLane(claimedPlusBlockedChief), 'progress',
+  'claimed assembly + blocked chief sibling → In progress, not QA');
+assert.equal(t.videoLane(claimedReviewOnly), 'progress',
+  'claimed review itself → In progress / Working now');
+assert.equal(t.videoLane(openQaNoClaim), 'qa',
+  'open QA with no claim stays QA');
+assert.equal(t.videoLane(blockedChiefNoClaim), 'qa',
+  'blocked Chief with no claim stays QA');
+assert(t.videoHasActiveWork(claimedPlusBlockedChief) && t.videoHasActiveWork(claimedReviewOnly),
+  'both claimed shapes count as Working now');
+assert(!t.videoHasActiveWork(openQaNoClaim) && !t.videoHasActiveWork(blockedChiefNoClaim),
+  'unclaimed QA/Chief do not get the Working now pulse');
+assert.equal(t.videoLane(waitingCut), 'progress', 'waiting In progress cards stay in progress');
+assert(!t.videoHasActiveWork(waitingCut), 'waiting cut still has no claimed pulse');
+t.setSeg('progress');
+const claimedQaBoard = {
+  tracker: {videos: [waitingCut, claimedPlusBlockedChief, claimedReviewOnly, openQaNoClaim, blockedChiefNoClaim]},
+};
+const claimedQaHtml = t.renderTab('videos', claimedQaBoard, NOW);
+assert(claimedQaHtml.includes('class="lane-sub">Working now'),
+  'Working now heading appears when claimed films are in In progress');
+assert(claimedQaHtml.indexOf('Magnetic Field') >= 0 && claimedQaHtml.indexOf('Pluto') >= 0,
+  'claimed Magnetic Field and Pluto render under In progress');
+assert(!claimedQaHtml.includes('QA only film') && !claimedQaHtml.includes('Blocked chief only'),
+  'unclaimed QA/Chief films stay out of the In progress render');
+const claimedAssemblyRow = t.videoProductionRow(claimedPlusBlockedChief, NOW, claimedQaBoard);
+const claimedReviewRow = t.videoProductionRow(claimedReviewOnly, NOW, claimedQaBoard);
+assert(claimedAssemblyRow.includes('p24-working-dot') && claimedAssemblyRow.includes('is-working'),
+  'claimed + blocked chief still shows green pulse');
+assert(claimedReviewRow.includes('p24-working-dot') && claimedReviewRow.includes('is-working'),
+  'claimed review shows green pulse as Working now');
+t.setSeg('qa');
+const qaOnlyHtml = t.renderTab('videos', claimedQaBoard, NOW);
+assert(qaOnlyHtml.includes('QA only film') && qaOnlyHtml.includes('Blocked chief only'),
+  'unclaimed QA/Chief still surface in the QA lane');
+assert(!qaOnlyHtml.includes('Magnetic Field') && !qaOnlyHtml.includes('Why Plutos Frozen Heart'),
+  'claimed films are not dumped into QA');
+t.setSeg('all');
+
+// Smarter Videos landing + Overview → Videos jump (Ben, 7 Nov 2026 follow-up).
+assert.equal(t.videosJumpHref('OWB:034'), '#videos&lane=progress&focus=OWB%3A034');
+assert.equal(t.videosJumpHref(''), '#videos&lane=progress');
+const jumpCard = t.p24FilmCard({
+  film: 'OWB:034', title: 'Pluto', from: 33, to: 44,
+  items: [{id: 'Jlive', status: 'claimed', title: '034 harvest'}],
+});
+assert(jumpCard.includes('p24-videos-jump') && jumpCard.includes('See on Videos'),
+  'Working on now cards expose an explicit Videos jump');
+assert(jumpCard.includes('href="#videos&amp;lane=progress&amp;focus=OWB%3A034"')
+  || jumpCard.includes('href="#videos&lane=progress&focus=OWB%3A034"'),
+  'Videos jump uses lane=progress and the live film key');
+assert(jumpCard.includes('p24-check-fold') && jumpCard.includes('p24-film-summary'),
+  'Videos jump does not replace the expandable checklist');
+const shortJump = t.p24FilmCard({
+  film: 'OWB:029:S:heiGCnGKTkE', title: 'How Bright Will Betelgeuse Get When It Explodes?',
+  items: [{id: 'J2311', status: 'claimed'}],
+});
+assert(shortJump.includes('focus=OWB%3A029') && !shortJump.includes('heiGCnGKTkE'),
+  'Short jump uses the parent film key, not the YouTube id');
+assert.equal(t.defaultVideosLane({tracker: {videos: [uatCut]}}), 'uat', 'Videos lands on UAT when Ben has a watch');
+assert.equal(t.defaultVideosLane({tracker: {videos: [waitingCut, workingCut]}}), 'progress',
+  'Videos lands on In progress when UAT is empty');
+t.resetVideosLanding();
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [uatCut, waitingCut]}});
+assert.equal(t.getSeg(), 'uat', 'opening Videos with no lane lands on UAT when needed');
+t.ensureVideosLanding({tracker: {videos: [waitingCut]}});
+assert.equal(t.getSeg(), 'uat', 'smart landing does not flip again after the first apply');
+t.resetVideosLanding();
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [waitingCut, workingCut]}});
+assert.equal(t.getSeg(), 'progress', 'opening Videos with empty UAT lands on In progress');
+t.setSeg('backlog');
+context.location.hash = '#videos';
+t.ensureVideosLanding({tracker: {videos: [uatCut]}});
+assert.equal(t.getSeg(), 'backlog', 'a chip Ben already tapped is not overridden');
+t.resetVideosLanding();
+context.location.hash = '#videos&lane=progress&focus=OWB:034';
+assert.equal(t.videosLaneFromHash(), 'progress');
+assert.equal(t.videosFocusFromHash(), 'OWB:034');
+t.ensureVideosLanding({tracker: {videos: [uatCut]}});
+assert.equal(t.getSeg(), 'progress', 'explicit lane deep link wins over UAT default');
+const focusedRow = t.videoProductionRow(workingCut, NOW, progressBoard);
+context.location.hash = '#videos&lane=progress&focus=OWB:034';
+const focusedRow2 = t.videoProductionRow(workingCut, NOW, progressBoard);
+assert(focusedRow2.includes('is-focus') && focusedRow2.includes('data-film-key="OWB:034"'),
+  'Videos row matching Overview focus is marked for scroll/highlight');
+context.location.hash = '';
+t.resetVideosLanding();
 
 // Schedule: a warning only when readiness can't be verified.
 assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'}}), NOW + 864e5, NOW), '');
@@ -134,19 +318,20 @@ assert.equal((vt.match(/class="doing"/g) || []).length, 0, 'task percentages are
 assert(vt.includes('027') && vt.includes('028') && vt.includes('milestones complete'));
 // Videos counts a running studio job too, so it matches Overview's Agents working now.
 const vsj = t.renderTab('videos', {tracker: {videos: []}, owb: {jobs: [{id: 'J1199', status: 'claimed', by: 'cursor', title: 'Shorts fix'}]}}, NOW);
-assert(vsj.includes('Studio job · not one video') && vsj.includes('Working <small>1</small>'), 'Videos shows and counts the studio job');
+assert(vsj.includes('Studio job · not one video') && vsj.includes('data-seg="progress"') && vsj.includes('<b>1</b><span>In progress</span>'), 'Videos shows and counts the studio job under In progress');
 // A public video is published, whatever follow-up jobs it has; private ones never ask YouTube for a thumbnail.
 const pub = v({key: 'pub', lane: 'progress', youtube: {videoId: 'abcdefghijk', privacy: 'public', state: 'live'}, jobs: [{id: 'J9', status: 'open'}]});
-const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled'}});
-assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), ['priv']);
+const priv = v({key: 'priv', lane: 'progress', youtube: {videoId: 'bcdefghijkl', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T18:00:00Z'}});
+assert.deepEqual(t.inProgress([pub, priv]).map(x => x.key), [], 'Live and Scheduled are not overview in-progress');
 const gg = t.videoGroups([pub, priv]);
-assert.deepEqual([gg.queued.map(x => x.key), gg.done.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
-// Post-live lane (Ben, 5 Nov 2026): on YouTube (live or scheduled) with work still open; Done once nothing is left.
-const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled'}, jobs: [{id: 'J8', status: 'blocked'}]});
+assert.deepEqual([gg.scheduled.map(x => x.key), gg.live.map(x => x.key), gg.postlive.map(x => x.key)], [['priv'], [], ['pub']]);
+// Post-live = public with open work; Live = public with nothing left; Scheduled needs publishAt (not Post-live).
+const sched = v({key: 'sched', lane: 'done', youtube: {videoId: 'cdefghijklm', privacy: 'private', state: 'scheduled', publishAt: '2026-11-12T11:30:00Z'}, jobs: [{id: 'J8', status: 'blocked'}]});
 const doneLive = v({key: 'quiet', lane: 'done', youtube: {videoId: 'defghijklmn', privacy: 'public', state: 'live'}, jobs: [{id: 'J7', status: 'done'}]});
 const pl = t.videoGroups([sched, doneLive]);
-assert.deepEqual([pl.postlive.map(x => x.key), pl.done.map(x => x.key)], [['sched'], ['quiet']]);
-assert(t.renderTab('videos', {tracker: {videos: [sched]}}, NOW).includes('Post-live: checks and improvements'));
+assert.deepEqual([pl.scheduled.map(x => x.key), pl.live.map(x => x.key), pl.postlive.map(x => x.key)], [['sched'], ['quiet'], []]);
+assert(t.renderTab('videos', {tracker: {videos: [sched, doneLive]}}, NOW).includes('On YouTube · waiting to go public'));
+assert(t.renderTab('videos', {tracker: {videos: [pub]}}, NOW).includes('Public · improvements still open'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
 // Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
 const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
@@ -158,6 +343,8 @@ assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z')
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
 const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
 assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
+assert(ag.includes('class="seg"') && ag.includes('<span>Running</span>') && ag.includes('<span>Queued</span>') && ag.includes('<span>Waiting</span>'), 'Agents shows three matching job-count chips');
+assert(ag.includes('class="credits"') && ag.includes('class="credit"'), 'Agents keeps the credits grid');
 
 
 // Milestones and ETA share the same producer evidence on Overview and video detail.
@@ -249,7 +436,16 @@ assert.equal(t.weekDates(Date.parse('2026-07-05T23:30:00Z')).start,'2026-07-06',
 context.location.hash='#videos&view=producing';
 assert(t.renderTab('videos',db,NOW).includes('Producing · 2 unique videos'));
 context.location.hash='#schedule&view=week';
-assert(t.renderTab('schedule',db,NOW).includes('This week · scheduled <span class="n">1</span>'));
+{
+  const sch = t.renderTab('schedule',db,NOW);
+  assert(sch.includes('This week · scheduled <span class="n">1</span>'));
+  assert(sch.includes('class="seg"') && sch.includes('aria-label="Schedule counts"'), 'Schedule uses shared matching chip row');
+  assert(sch.includes('<span>This week</span>') && sch.includes('<span>Next week</span>') && sch.includes('<span>Scheduled</span>'), 'Schedule shows three matching week chips');
+  // Chips are summary-only (divs), not lane filters — both week lists stay visible even on view=week.
+  assert(!/aria-label="Schedule counts"[\s\S]*?<button/.test(sch), 'Schedule chips are not filter buttons');
+  assert(sch.includes('Next week <span class="n">') || sch.includes('>Next week<'), 'Next week list stays visible under the chips');
+  assert(/Schedule counts[\s\S]*This week · scheduled[\s\S]*Next week/.test(sch), 'This week then Next week stay stacked under the chips');
+}
 context.location.hash='';
 assert.equal((t.overview(db,NOW).match(/class="featured-video"/g)||[]).length,0,'Overview home no longer carries the feature card');
 assert(!t.overview(db,NOW).includes('How this estimate works'));
@@ -307,7 +503,8 @@ assert(publishedDetail.includes('Published on YouTube')&&publishedDetail.include
 assert(!publishedDetail.includes('role="progressbar"')&&!publishedDetail.includes('progress-number'));
 assert(publishedDetail.includes('Unconfirmed'),'unknown history stays unknown, not changed to complete');
 assert(t.videoGroups([publicMissing]).postlive.some(x=>x.key==='published'));  // live with a follow-up job: Post-live lane
-assert.equal(t.videoGroups([publicMissing]).working.length,0);
+assert.equal(t.videoGroups([publicMissing]).progress.length,0);
+assert.equal(t.videoGroups([publicMissing]).uat.length,0);
 assert(t.videoProductionRow(v({key:'unfinished'}),NOW).includes('0%'),'active production still uses recorded milestone counts');
 console.log('Published-video regression checks OK');
 
@@ -576,8 +773,14 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
   assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
-  assert(ov.includes('overview-stats') && ov.includes('ov-stat'), 'Overview stacks simple stats');
+  assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
+  // 8 Nov 2026: an open studio job after a finished one, titled "... stage for Ben UAT watch", is not Needs attention.
+  const ovStage = t.overview({tracker: {videos: []}, machines: {machines: []}, progress24h: {hours: 24, films: [
+    {film: 'OWB:033', title: 'Uranus', jobs: 1, items: [{id: 'J2404', title: '033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch',
+      status: 'open', stage: 'edit', after: 'J2403', progress: {step: 2, of: 4}}]}], focus: ['OWB:033'],
+    glance: {doneToday: 0, left: 1, blocked: 0, blockedJobs: []}}}, Date.parse('2026-11-08T22:41:00Z'));
+  assert(!ovStage.includes('Needs attention'), 'an open job that will stage a watch for Ben is not a can\'t-run job');
   assert(ov.indexOf('overview-machines') < ov.indexOf('overview-activity'), 'Machines sit above Active jobs');
   assert(ov.includes('Active jobs'), 'Active jobs section uses the cleaner label');
   assert(!ov.includes('overview-agents') && !ov.includes('Agents</h2>'), 'Overview home does not repeat the Agents tab');
@@ -1082,3 +1285,19 @@ console.log('Working checklist hierarchy order OK');
   assert.equal(t.summary({...sb, owb: {jobs: [{id: 'J2165', status: 'claimed'}]}}, NOW).jobs.working, 2);
 }
 console.log('Jobs running count checks OK');
+
+// Ben, 8 Nov 2026: a re-sent cut shows what he flagged last time under the player.
+{
+  const b = {tracker: {videos: [{key: 'OWB:ASK:J2418', channel: 'OWB', number: '031', title: 'Solar wind Short', type: 'short', lane: 'ready',
+    readyFor: 'Ben', version: 'v03', ask: {id: 'J2418'}, watch: {url: 'https://x/api/watch?v=a', version: 'v03'},
+    pastNotes: [{version: 'v02', at: '2026-11-08T10:42:51Z', notes: [{t: '', text: 'like a rectangle and blurry above and below'}]}],
+    fixedNotes: ['Rebuilt full-screen 1080x1920, no blurred bands']}]}};
+  const page = t.uat(b, 'OWB:ASK:J2418');
+  assert(page.includes('What you flagged last time') && page.includes('On v02') && page.includes('blurry above and below'),
+    'the watch page lists the earlier change notes');
+  assert(page.includes('What the agents changed') && page.includes('no blurred bands'), 'and what the agents changed');
+  const fresh = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: [], fixedNotes: []})]}}, 'OWB:ASK:J2418');
+  assert(!fresh.includes('What you flagged last time'), 'a first-time cut has no past-problems box');
+  console.log('UAT past problems OK');
+}
+

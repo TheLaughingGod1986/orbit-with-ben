@@ -121,5 +121,17 @@ class Repos(unittest.TestCase):
             subprocess.run(["rm", "-rf", str(tmp)])
 
 
+class CachesOnly(unittest.TestCase):
+    """The relay's weekly clean (Ben, 9 Nov 2026): caches only, no checkout touched."""
+    def test_caches_only_runs_no_checkout_step(self):
+        from unittest import mock
+        with mock.patch.object(mr, "cache_steps", return_value=[("fake cache", ["true"])]), \
+                mock.patch.object(mr, "unblock", side_effect=AssertionError("checkout touched")), \
+                mock.patch.object(mr, "git", side_effect=AssertionError("git run")):
+            rep = mr.repair(apply=True, repos=[], scan=False)
+        self.assertEqual(rep["checkouts"], [])
+        self.assertTrue(rep["caches"][0].startswith("fake cache: ok"))
+
+
 if __name__ == "__main__":
     unittest.main()

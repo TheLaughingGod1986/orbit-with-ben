@@ -1,0 +1,75 @@
+{
+  "job": "J2141",
+  "status": "technical_checks_only",
+  "spend_gbp": 0,
+  "manifest": "CODE_TWIST_MACBOOK_v01.json",
+  "checks": [
+    {
+      "id": "code_graphic_031_r30_twist_v01",
+      "row": 30,
+      "path": "/Users/ben/_desk/J2141-twist-macbook-v01/code_graphic_031_r30_twist_v01.mov",
+      "sha256": "69233e3c01e89196bc073ed476072bd0250ce2d1a805811d4b2856d70c532b25",
+      "bytes": 1529406,
+      "alpha": true,
+      "pix_fmt": "argb",
+      "duration_s": 3.96,
+      "full_decode": "PASS",
+      "format": "PASS",
+      "distinct_sample_frames": 5,
+      "samples": [
+        {
+          "seconds": 0.0,
+          "alpha_bbox": null,
+          "decoded_rgba_sha256": "be09810e64a7e768ea5b46c57ee4492e86d31f372512e64d98057f781aa7bbc4"
+        },
+        {
+          "seconds": 0.792,
+          "alpha_bbox": [
+            1120,
+            472,
+            1681,
+            594
+          ],
+          "decoded_rgba_sha256": "8785e9a0b443526e5e688b7f8004caa06c16195f26dbe38660e5ed5e1d99d168"
+        },
+        {
+          "seconds": 1.505,
+          "alpha_bbox": [
+            1120,
+            472,
+            1681,
+            594
+          ],
+          "decoded_rgba_sha256": "dbcbdd9fb690e3349384f1ad74747efe7ebe51db6c090ae90a37a64b70a2ca8a"
+        },
+        {
+          "seconds": 2.574,
+          "alpha_bbox": [
+            1020,
+            475,
+            1781,
+            594
+          ],
+          "decoded_rgba_sha256": "f1fa36e4fcfc35da06e26aad8751db4a7e6a1353dc5b92b20ac2179a73dfacfa"
+        },
+        {
+          "seconds": 3.683,
+          "alpha_bbox": [
+            1020,
+            475,
+            1781,
+            594
+          ],
+          "decoded_rgba_sha256": "d4aa734f17d6c1e14140cd8d96b68e525d2019783442784cc11776baaea4f221"
+        }
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-twist-macbook-v01/CONTACT_TECHNICAL_v01.jpg",
+  "contact_sheet_sha256": "0e8d6908c6a11dfe208d9f42f13bead8b55e6622e86d691e050b9f62470d753c",
+  "limitations": [
+    "Static samples and full decode only; no playback or audio perception claimed.",
+    "Alpha overlay for R30 Case closed? / Are we overdue? after r30_recap.",
+    "The 0.3 s hard cut to black stays an assembly cut and is not baked into this file."
+  ]
+}

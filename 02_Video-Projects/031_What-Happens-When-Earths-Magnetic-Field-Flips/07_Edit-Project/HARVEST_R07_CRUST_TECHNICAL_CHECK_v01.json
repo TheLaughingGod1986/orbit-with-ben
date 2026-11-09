@@ -1,0 +1,44 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "asset_id": "commons_usgs_kilauea_skylight",
+  "original_sha256": "418b953d6d490d0537912d5f4f0b7860bdf75fa6835bae1518312a8e635f4d49",
+  "plate": {
+    "file": "plate_031_r07_crust_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-basalt-v01/plate_031_r07_crust_v01.mp4",
+    "sha256": "4fe4125dc3424887a55839cf9fdcc3867e691cec22e8137497d6e05b813af1a2",
+    "bytes": 11615191,
+    "film_start_s": 59.92,
+    "film_end_s": 65.16,
+    "row_end_s": 65.14,
+    "frames": 131,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      0,
+      270,
+      5184,
+      2916
+    ],
+    "push": "linear 1.00 to 1.08, centre",
+    "max_scale_vs_crop": 0.4,
+    "credit": "USGS",
+    "no_loop": true,
+    "no_interpolation": true,
+    "follows": "code_graphic_031_r07_grains_v02 ends 59.92",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "contact_sheet_sha256": "3245cf56593b38d534b5650cf15f5e7f92d412839cf231d0ffcde30bec44a3f2",
+  "r09_contact_sheet_sha256": "b00c26475447be8bd1a7cd751aeaa244d7cb3bc4bb893721c5828f488c546126",
+  "component_polish": {
+    "verdict": "PASS",
+    "failed": 0,
+    "warnings": 0
+  },
+  "motion_perception": false,
+  "audio_perception": false,
+  "status": "technical_checks_only_not_film_PASS"
+}
