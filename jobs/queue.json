@@ -207893,10 +207893,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-09T03:19Z",
-      "eta": "2026-11-09T05:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -208560,6 +208560,11 @@
           "at": "2026-11-09T04:17Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-09T04:40Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
         }
       ],
       "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
