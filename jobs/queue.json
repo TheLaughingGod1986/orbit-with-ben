@@ -211168,17 +211168,22 @@
           "at": "2026-11-09T17:57Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Resumed at step 3/6: cache, scratch, and renders already verified and symlinked onto /Volumes/MiniWork/desk/"
+        },
+        {
+          "at": "2026-11-09T18:06Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Finished rsync -a of ~/_desk/worktrees (13G) to /Volumes/MiniWork/desk/worktrees; starting checksum and file-count verification"
         }
       ],
-      "remaining_action": "Pause relay, verify no other agent CLI is running a job, move ~/_desk/worktrees to /Volumes/MiniWork/desk/worktrees, verify git worktree list, and write DESK_MOVE.md",
+      "remaining_action": "Verify ~/_desk/worktrees copy with rsync --checksum and find | wc -l, symlink ~/_desk/worktrees, verify git worktree list, and write DESK_MOVE.md",
       "due": "2026-11-09T20:00:00Z",
       "kind": "qa",
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-11-09T17:57Z",
+        "at": "2026-11-09T18:06Z",
         "by": "gemini",
-        "note": "Resumed at step 3/6: cache, scratch, and renders already verified and symlinked onto /Volumes/MiniWork/desk/"
+        "note": "Finished rsync -a of ~/_desk/worktrees (13G) to /Volumes/MiniWork/desk/worktrees; starting checksum and file-count verif"
       },
       "rerouted_from": {
         "needs": "mini",
