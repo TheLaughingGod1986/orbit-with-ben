@@ -1,0 +1,218 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v05.mp4",
+  "edge_floor": 0.0152,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s03_chajnantor",
+      "cut": 2,
+      "t": 6.38,
+      "source": "chajnantor_mw.m4v",
+      "why": [
+        "low detail: edge density 0.0114 < film p5 0.0152"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_casa",
+      "source": "casa.jpg",
+      "t": 1.15,
+      "std": 59.74,
+      "mean": 103.24,
+      "p95": 217.0,
+      "edge": 0.0924,
+      "hf": 17.45,
+      "lf": 49.06,
+      "std8": 52.66,
+      "edge8": 0.5428,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_neutrino",
+      "source": "code_graphic_029_mon_neutrino_v01.mp4",
+      "t": 3.46,
+      "std": 30.72,
+      "mean": 50.7,
+      "p95": 58.0,
+      "edge": 0.0248,
+      "hf": 10.49,
+      "lf": 25.07,
+      "std8": 26.79,
+      "edge8": 0.0624,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "s03_chajnantor",
+      "source": "chajnantor_mw.m4v",
+      "t": 6.38,
+      "std": 52.15,
+      "mean": 138.03,
+      "p95": 230.0,
+      "edge": 0.0114,
+      "hf": 7.45,
+      "lf": 50.01,
+      "std8": 50.69,
+      "edge8": 0.1038,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0114 < film p5 0.0152"
+      ]
+    },
+    {
+      "cut": 3,
+      "row": "s04_epic",
+      "source": "dscovr_epic.jpg",
+      "t": 9.87,
+      "std": 56.49,
+      "mean": 110.96,
+      "p95": 219.0,
+      "edge": 0.205,
+      "hf": 15.62,
+      "lf": 47.43,
+      "std8": 50.25,
+      "edge8": 0.55,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 77,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_orion_flare",
+      "source": "code_graphic_029_r25_orion_v01.mp4",
+      "t": 13.5,
+      "std": 26.29,
+      "mean": 83.66,
+      "p95": 117.0,
+      "edge": 0.0224,
+      "hf": 11.04,
+      "lf": 20.77,
+      "std8": 21.59,
+      "edge8": 0.0453,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "s06_half_moon",
+      "source": "half_moon.jpg",
+      "t": 17.23,
+      "std": 45.83,
+      "mean": 66.99,
+      "p95": 170.0,
+      "edge": 0.0925,
+      "hf": 10.05,
+      "lf": 42.92,
+      "std8": 43.7,
+      "edge8": 0.0882,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 82,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_daylight",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "t": 20.25,
+      "std": 29.68,
+      "mean": 88.46,
+      "p95": 134.0,
+      "edge": 0.0299,
+      "hf": 10.3,
+      "lf": 24.24,
+      "std8": 25.41,
+      "edge8": 0.0569,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s08_loop",
+      "source": "frame0_hold_mon14_half_moon_daylight.png",
+      "t": 21.74,
+      "std": 56.63,
+      "mean": 91.53,
+      "p95": 203.0,
+      "edge": 0.0601,
+      "hf": 7.31,
+      "lf": 53.47,
+      "std8": 54.94,
+      "edge8": 0.4216,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

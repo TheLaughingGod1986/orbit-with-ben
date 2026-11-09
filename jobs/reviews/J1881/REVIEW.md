@@ -1,0 +1,178 @@
+# J1881 — Rule H Review: HOS 008 Franklin Eight-Item Correction Recipe (+ Film-Wide Captions) & Production Scope
+
+- **Job:** `J1881` (`review Franklin eight-item correction recipe (+ film-wide captions) and scope production`)
+- **Reviewer:** `gemini` (review lane; `audio_input,moving_video_input` demonstrated via `read_file` and recorded in `chief_relay.py capabilities`)
+- **Date:** 2026-11-05T18:51Z
+- **Reviewed Deliverables & Evidence:**
+  - `J2217` deliverable: HOS PR #428 (`cursor/J2217-eight-item`, commit `51bf99a6f460b3f44e7afa4c764937596691f594`, stacked on PR #411; 4/4 GitHub Actions checks green, `14/14` unit tests OK, `check_all.sh` `ALL CHECKS PASS`, `--dry-run` `6/6` required inputs verified)
+  - `J2163` deliverable: HOS PR #411 (`codex/J2163-repair`, commit `50620e408667c6ec0c8a959acd051fcfa458fd8d`)
+  - Ben 3 Nov & 5 Nov `v03` reviews: `J1868_BEN_REVIEW_v03.json` (`2026-11-03T16:08:33.439Z`), HOS PR #180 comment `6658371896`, Claude advisory `6658387533`, `J1868_BEN_NOTES_2026-11-05.md`, `J1868_UAT_CORRECTIONS.md`
+  - Prior review record: `02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/J1881_SCOPE_REVIEW.md` (PR #410, `712e2abf`)
+- **Verdict:** **KEEP (`J2163` PR #411 `50620e40` + `J2217` PR #428 `51bf99a6` read-only 8-item + 27-caption closed-GOP recipe verified; successor production chain `J2241` -> `J2242` -> `J2243` queued; parked for elected Chief to merge HOS PR #411 + #428 and authorize `J2241` Flow subscription-credit retakes)**
+
+---
+
+## 1. Executive Summary & Verification Results
+
+1. **Base PTS & Read-Only Planner (`J2163` PR #411 `50620e40` + `J2217` PR #428 `51bf99a6`) — KEEP:**
+   - `J2163_MASTER_FRAME_PTS.json` records all `12,923` decoded frames of verified master `cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b` (`393,139,693` bytes, timebase `1/12288`, start `1536` ticks = `0.125s`, end `6630912` ticks = `539.625s`, duration `539.500s`, `113` keyframes, `23` steps of `1024` ticks and `1` step of `1536` ticks).
+   - Commit `51bf99a6` on HOS PR #428 resolved all four cross-GOP boundary defects from `dfd365c7`/`c7635bb2`:
+     - `eight_rows[2]` (`0:51`, `P1:07_hot_night`) is aligned to exact closed GOP **`[1129, 1231]`** (`103` frames; single-GOP envelope `[1129, 1231]`).
+     - `eight_rows[5]` (`3:13`, `P3:01_points_desk`) is aligned to exact closed GOP **`[4511, 4670]`** (`160` frames: clean linen thread `4511..4606` = `96f`, paper-strip unroll `4607..4670` = `64f`; single-GOP envelope `[4511, 4670]`, zero residual) and records start-frame `01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`, `takes_max: 3`, `subscription_credit_cap: 300`, `authorized: false`).
+     - All `27` entries in `caption_treatment.labels` are aligned to exact closed-GOP `[kf_in, kf_out - 1]` intervals (`[0, 141]` through `[12297, 12461]`).
+     - `required_inputs` verifies all `6` on-disk source plates (`03_table_three_t1.mp4`, `04_storm_mystery_t1.mp4`, `07_slow_news_t1.mp4`, `11_jar_crack_t1.mp4`, `07_hot_night_t1.mp4`, `01_points_desk_t1.mp4`).
+   - `_build_rough_v13_recipe.py --dry-run` returns `PLANNED_NOT_EXECUTABLE` (`6/6` inputs decoded and hash-verified); `--execute` exits `2` (`Execution refused until J1881 re-reviews the J2217 eight-item amend`).
+   - `python3 -m unittest -v test_j2163_recipe.py`: `Ran 14 tests in 0.136s — OK`.
+   - `00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin`: `ALL CHECKS PASS`. GitHub Actions on PR #428 (`51bf99a6`): `4/4` checks green.
+
+2. **Direct Multimodal Moving-Video + Audio Verification (`read_file`):**
+   - `07_hot_night_t1.mp4` (`sha256: 30da07fe8860c3640fdb99a4439b858cfbd2460b94510e5e20d23da6b1b728c3`, master frames `1129..1231`, `47.208–51.500s`, clock `0:51` = frame `1220`): shows a colonial Philadelphia cobblestone street on a hot humid evening with townsfolk fanning themselves on front stoops under dark gathering clouds (`0` glass tubes, `0` hair flying). The glass-tube + flying-hair plate is `P2:02_salon_spark` (`02_salon_spark_t1.mp4`, master frames `2506..2665`, `104.667–111.333s`, ending at **`1:51.33s`**, where `1:51` = frame `2658` = `111.000s`). Both rows (`0:51` and `1:49`) remain tracked in `eight_rows`; `1:49` (`P2:02_salon_spark`) is scoped for a bounded Flow Veo 3.1 Quality retake in `J2241`.
+   - `01_points_desk_t1.mp4` (`sha256: a9a32aa475424a973ea6e75ad1b9e260897f554723b57e6a5fc3a946980cbf15`, master frames `4511..4670`, `188.417–195.042s`, clock `3:13` = frame `4621`): frames `4511..4606` (`0.000–4.000s`, `96f`) show Franklin holding an iron needle near the brass electrostatic globe with a clean thin linen thread hanging beside it; across frames `4607..4670` (`4.000–6.667s`, `64f`, peaking at `3:13` = `193.0s`), the linen thread morphs into a wide white printed paper strip that unrolls out of the side of the brass globe. Scoped for a bounded Flow Veo 3.1 Quality retake in `J2241` (with clean-prefix `4511..4606` documented).
+
+---
+
+## 2. Verified Eight-Item Defect Table & 27-Cut Caption Inventory (`51bf99a6`)
+
+| Row # | Ben Timestamp & Verbatim Note | `cuts_rough_v12` Cut & Source Plate | Master Closed GOP (`[kf_in, kf_out-1]`) | `candidate_frames` | Master PTS Ticks (`1/12288`) & Seconds | Scoped Production Action |
+|---|---|---|---|---|---|---|
+| **1** | **00:20** (3 Nov) + **Film-wide** (5 Nov): *"text on screen in readable needs maybe background colour"* / *"Also the bottom text needs a background colour it’s hard to read over a moving video"* | Cut `3` `P1:03_table_three` (`03_table_three_t1.mp4`, sha `482a254d7f7b…`) + **all 27 `side_label` cuts** (`[0,141]`..`[12297,12461]`) | `[423, 544]` (`122f`) | `[427, 544]` (`118f`) | `218112..280064` (`17.750–22.833s`; `20.0s` = frame `477`) | **£0 in `J2242`:** Soft unbordered dark-umber contrast panel (`bordered_ui_chrome: false`, `border: false`, `gold_rule: false`, `pill_chrome: false`, `<=4` words, `0.3–0.5s` fade over moving picture, master-derived word alignment) across all `27` `side_label` closed-GOP cuts. |
+| **2** | **0:30** (3 Nov): *"flash the next scene"* | Cut `5` `P1:03b_town_safe` (`663..743`) -> Cut `6` `P1:04_storm_mystery` (`04_storm_mystery_t1.mp4`, sha `e1b2de5d8cd4…`) | `[744, 839]` (`96f`; `663..743` packet-copied unchanged) | `[744, 839]` (`96f`) | `382976..431616` (`31.167–35.167s`; `30.0s` = frame `717`) | **£0 in `J2242`:** Copy clean `663..743` unchanged; advance `04_storm_mystery_t1.mp4` (`0.000–4.000s`, `96f`) into closed GOP `744..839` across the `30.70–31.24s` sentence pause (`0` clipped words). |
+| **3** | **0:51** (5 Nov NEW): *"still have hair flying out the tube, this needs rebuilt"* | Exact `0:51`: Cut `9` `P1:07_hot_night` (`07_hot_night_t1.mp4`, sha `30da07fe8860…`). Hair/tube plate: Cut `23` `P2:02_salon_spark` (ends `1:51.33s` / frame `2658`) | `[1129, 1231]` (`103f`) | `[1129, 1231]` (`103f`) | `580096..632832` (`47.208–51.542s`; `51.0s` = frame `1220`) | **Tracked on `07_hot_night` (`1129..1231`); hair/tube rebuilt via Row 4 (`2506..2665`, ends `1:51.33s`) in `J2241`** (`07_hot_night` stays untouched unless Chief directs a Part 1 night-street retake). |
+| **4** | **1:49** (3 Nov): *"strange behaviour as hair flies out the tube"* | Cut `23` `P2:02_salon_spark` (`02_salon_spark_t1.mp4`, sha `4b61312e9416…`) | `[2506, 2665]` (`160f`) | `[2506, 2665]` (`160f`) | `1286144..1367552` (`104.667–111.333s`; `1:49` = frame `2610`, `1:51` = frame `2658`) | **Bounded Flow Veo 3.1 Quality retake in `J2241`:** start frame `02_salon_spark_t1.png` (`sha256: aefd6338aded1037…`), `<=3` takes, `<=300` subscription credits (£0 cash), spliced into `2506..2665` in `J2242`. |
+| **5** | **2:18** (5 Nov) & **2:20** (3 Nov): *"the jar flips upside down like magic"* / *"strange behaviour with the silver foil"* | Cut `28` `P2:07_foil_jar` (`07_foil_jar_t1.mp4`, sha `8e28cc24ed74…`) | `[3168, 3343]` (`176f`: keep `3168..3259` `92f`, replace `3260..3343` `84f`) | `[3260, 3343]` (`84f`) | Keep: `1625600..1672192` (`132.292–136.125s`). Replace: `1672704..1715200` (`136.125–139.625s`; `2:18` = frame `3305`) | **£0 in `J2242`:** Keep clean `3168..3259` (`92f`) and replace `3260..3343` (`84f`, containing both the `2:18` jar flip at frame `3305` and `2:20` foil peel) with `11_jar_crack_t1.mp4` (`4.000–7.500s`, sha `7629a5dfdc5b…`). |
+| **6** | **3:13** (5 Nov NEW): *"strange behaviour as paper seems to roll out the globe"* | Cut `41` `P3:01_points_desk` (`01_points_desk_t1.mp4`, sha `a9a32aa47542…`) | `[4511, 4670]` (`160f`: clean `4511..4606` `96f`, paper unroll `4607..4670` `64f`) | `[4511, 4670]` (`160f`) | `2315264..2396672` (`188.417–195.083s`; `3:13` = frame `4621`) | **Bounded Flow Veo 3.1 Quality retake in `J2241`:** start frame `01_points_desk_t1.png` (`sha256: cc16a515a43e881c…`), `<=3` takes, `<=300` subscription credits (£0 cash), spliced into `4511..4670` in `J2242`. |
+| **7** | **3:31** (3 Nov): *"the diagram/ map is not easy to understand"* | Cut `44` `P3:04_letter_crosses` (`07_slow_news_t1.mp4`, sha `775e6d72eeb9…`) | `[4977, 5077]` (`101f`) | `[4977, 5077]` (`101f`) | `2553856..2606080` (`207.833–212.125s`; `3:31` = frame `5053`) | **£0 in `J2242`:** Single animated cream ink letter crossing over moving `07_slow_news_t1.mp4` across all `101` frames (`4977..5077`, upper sky clear of ship masts, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`). |
+| **8** | **7:58** (3 Nov) / **7:59** (5 Nov): *"the rods fall down for some reason"* / *"the rods on the church’s seem to fall right"* | Cut `100` `P5:13_rods_spread` (`13_rods_spread_t1.mp4`, sha `d9fa5f1329ad…`) | `[11358, 11492]` (`135f`) | `[11358, 11492]` (`135f`) | `5829120..5897728` (`474.375–480.000s`; `7:58` = frame `11445`, `7:59` = frame `11469`) | **Bounded Flow Veo 3.1 Quality retake in `J2241`:** start frame `13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a…`), `<=3` takes, `<=300` subscription credits (£0 cash), spliced into `11358..11492` in `J2242`. |
+
+---
+
+## 3. Queued Actionable Successor Jobs (Chained After `J1881`)
+
+1. **`J2241` (`after: J1881`, `needs: mini`, `repo: hos`, `film: 008`, `stage: picture`, `kind: video`, `requires: moving_video_input`):**
+   - *HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0)*
+   - Checks live Flow balance first via `ai_spend.py check` (subscription credit only, £0 cash, no overage); mints up to 3 Flow Veo 3.1 Quality takes per plate (`02_salon_spark_t1.png`, `01_points_desk_t1.png`, `13_rods_spread_t1.png`), verifies `>=160f`/`>=160f`/`>=135f` and zero hair-extrusion / paper-unroll / falling-rod artefacts in moving video via native `moving_video_input`.
+2. **`J2242` (`after: J2241`, `needs: mini`, `repo: hos`, `film: 008`, `stage: edit`, `kind: assembly`):**
+   - *HOS 008 Franklin: closed-GOP packet/boundary splice + 27 film-wide bottom-caption panels -> hos_008_master_v04.mp4 & gates (GBP0)*
+   - Implements closed-GOP packet copy + lossless boundary splicing in `_build_rough_v13_recipe.py`, preserving `0.125s` video start, `12,923` decoded frames, original integer PTS/durations, bitwise-identical unchanged decoded-frame SHA-256s, and stream-copied `h35` audio packets; applies the 8 defect corrections + 27 film-wide unbordered umber bottom-caption panels; runs `picture_qa.py`, `polish_gate.py`, `gate:episode`, `lint:package`, `music_gate.py`, `sfx_kit.py level`, and `168×94` phone sheets.
+3. **`J2243` (`after: J2242`, `needs: mini`, `repo: hos`, `film: 008`, `stage: edit`, `kind: qa`, `requires: audio_input,moving_video_input`):**
+   - *HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect windows + 27 captions + full cut, GBP0)*
+   - Verifies live `audio_input,moving_video_input` capability in `chief_relay.py capabilities`; reviews all 8 corrected intervals + adjacent cuts + all 27 film-wide bottom-caption cuts in moving video and synchronized audio, `168×94` phone readability, `0.000 ms` VO sync, music/SFX stems, and unchanged-frame SHA-256 identity; parks for elected Chief media decision and Ben's final finished-film watch.
+
+---
+
+## 4. Protected Calls Parked for Elected Chief
+
+- Merge HOS PR #411 (`50620e40`) and HOS PR #428 (`51bf99a6`, 4/4 CI green, `check_all.sh` PASS).
+- Close `J1881` (`done`) to authorize `J2241` (`<=900` Flow subscription credits across `1:49`, `3:13`, `7:58`; £0 cash) -> `J2242` -> `J2243`.
+- All 8 defect items remain unresolved until `J2242` and `J2243` pass and Ben completes his final watch. `J1297`, `master_v03` (`cf1561c2...`), `h22`/`h35`, and `J1755` publication rejection remain preserved and untouched.
+
+
+## Elected-Chief ruling — 5 November 2026 (Codex): FIX before production
+
+This ruling supersedes the production-release recommendation above; the earlier review remains historical evidence. Codex is elected Chief; Grok and Claude remain marked down. This session reviewed code, records and measured inputs, not moving video or audio.
+
+**Verified:** HOS PR411 `50620e408667c6ec0c8a959acd051fcfa458fd8d`, stacked PR428 `51bf99a6f460b3f44e7afa4c764937596691f594`; PR428 has four successful CI checks. Independently ran all 14 planner tests (OK) and the real-master read-only dry-run: master SHA256 `cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, 12923 decoded frames, start 0.125s, duration 539.500s, all six native inputs hash/decode verified, result PLANNED_NOT_EXECUTABLE. Output identity and sync correctly remain UNMEASURED. Read original h22/6533306017 and h35/6537320070 directly. These historical approvals remain intact and do not approve v04.
+
+**Exact corrections required in J2217 (no-spend planning/code only):**
+
+1. Correct the evidence level. Keyframe flags and aligned envelopes do not prove closed GOPs; the planner itself says dependency validation is outstanding. Rename these candidate keyframe/GOP envelopes unless dependency inspection actually proves closure. Keep original PTS/durations and unchanged-frame/audio preservation requirements. Production J2242 must prove dependencies and preservation before accepting its output.
+2. Add the missing `--retake-p3-01` and SHA256 argument/validation path to the read-only planner, with 160-frame minimum and missing/hash/short-input tests. The production brief currently names an option the reviewed code does not accept. Keep execution refused; implementing the splicer remains J2242, not this repair.
+3. Reconcile 0:51 disposition explicitly: the manifest currently retains a distinct rebuild while the review/production brief says leave the night street untouched and rebuild salon. Preserve Ben's exact wording, distinguish source-map evidence from native perception, and state the proposed salon retarget as an inference pending capable in-context confirmation. Never silently mark this note resolved. Also keep 2:18 jar flip and 2:20 foil/next-spark boundary distinct checks; 140s lies beyond replacement ending 139.625s.
+4. Turn the 27-caption inventory into a concrete planned treatment table (still no render): <=4-word sequential labels where current entries exceed four words, actual master-derived timing for each, <=4s static hold, one label at a time, unbordered umber background over moving plate. Preserve locked spoken words; no new dates/numbers/claims without existing FACT_NOTES/SOURCES support. Reconcile all bottom text, not merely assume side_label inventory proves film-wide coverage.
+5. Correct spend preflight: `ai_spend.py check` is nonexistent (CLI accepts record/spend/report/doc). Specify actual live Flow account balance and displayed Quality price read through the existing approved Flow route; log via record/spend, subtract unposted spends, enforce <=3 takes and <=300 subscription credits per plate / <=900 total, GBP0, no top-ups/overage. No spend authorization in this FIX ruling.
+
+**Capability finding:** current register supersedes the earlier self-report. Gemini probe at 2026-11-05T19:17:49Z returned audio PASS but video FAIL (no direction/colour answer) and expired at20:17:49Z. Codex has no demonstrated audio/video perception; Cursor's latest entry has neither. Thus no currently verified moving-video worker can be assigned. Earlier descriptions of hair/globe motion remain attributed worker claims, not independently verified facts. J2241 gets a typed moving_video_input hold, recheck 2026-11-06T01:20:00Z or immediately on a demonstrated capability event. J2243 must freshly prove both inputs before any perceptual PASS; a model name/read_file claim is insufficient. This is an input capability hold, not waiting for an absent Chief or Ben.
+
+**Follow-up recorded on the queue:** reopen existing J2217 now, kind assembly (Cursor/Grok -> Cursor Auto -> Codex -> Gemini), for the five fixes above on PR428; no duplicate job. J1881 remains blocked with explicit dependency on J2217 and a dependency check at 2026-11-06T01:20:00Z; review immediately when ready, not delayed to that time. Retain J2241 -> J2242 -> J2243 after J1881. J2241 must also clear its capability hold. No PR merge, generation, replacement render, media PASS, UAT/R2 copy, YouTube or schedule change in this ruling. J1755's separate rejection remains unchanged. All eight items and film-wide captions remain unresolved. Ben has nothing to decide.
+
+Validation completed after the ruling: full `check_all.sh 02_Video-Projects/008_Lightning-Franklin` on reviewed PR428 head returned **ALL CHECKS PASS**. The isolated worktree initially lacked Node dependencies and sandbox access to the default npm cache; using the existing checkout dependencies and a task-local cache resolved that setup issue. This does not change the FIX findings or authorize production. Local log: `/private/tmp/J1881-check-all-final.log`.
+
+---
+
+## 5. Rule H Re-Review After `J2217` Five-Point FIX Delivery (`b78dbe19`, 5 November 2026 ~21:36Z) — KEEP
+
+- **Reviewer:** `gemini` (`gemini-argon` specialist worker; session capabilities recorded in `chief_relay.py capabilities` as `""` — code, stored PTS/manifest records, unit tests, and read-only dry-run verification; no moving-video or audio perception claimed in this session)
+- **Reviewed Commit:** HOS PR #428 (`cursor/J2217-eight-item`, head `b78dbe19b3f5ffee1cedad47bcc148d046dcf8bf`, stacked on HOS PR #411 `50620e408667c6ec0c8a959acd051fcfa458fd8d`; condition verification `J2253` `2d6a8ea3e2`)
+- **Verdict:** **KEEP (`J2163` PR #411 `50620e40` + `J2217` PR #428 `b78dbe19` read-only 8-item + 32-card/`SAFE PATH DOWN` caption recipe verified; all 5 elected-Chief FIX items satisfied; successor chain `J2241` -> `J2242` -> `J2243` updated to `b78dbe19`; parked for elected Chief to merge HOS PR #411 + #428 and authorize `J2241` bounded Flow subscription-credit scope)**
+
+### 5.1 Verification of the Five Elected-Chief FIX Items on `b78dbe19`
+
+1. **Truthful GOP & Capability Evidence Level (`PASS`):**
+   - `build_plan()` in `02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_build_rough_v13_recipe.py` renames `candidate_boundary_gop_envelope` to `candidate_keyframe_envelope` and records on every patch:
+     - `gop_closure_proven: False`
+     - `dependency_validation: "OUTSTANDING"`
+     - `preservation: "Keep original PTS and durations. Unchanged decoded frames and audio stay identical. J2242 must prove both."`
+     - `boundary_policy: "UNAPPROVED: candidate keyframe envelope only. Keyframe flags do not prove a closed GOP; dependency validation is outstanding. J2242 must prove dependencies and unchanged-frame/audio preservation before accepting output. Lossless only outside changed frames; no global re-encode."`
+   - `J2163_CORRECTION_MANIFEST.json` (`schema: hos.uat_correction_plan.v4`), `J2217_AMEND.md`, and `J1868_UAT_CORRECTIONS.md` explicitly distinguish stored PTS/cut-list mapping (`evidence_level: "source_map_only"`, `native_perception: false`) from watched picture or heard audio, and keep `frame_count_delta`, `vo_sync_lag_ms`, `unchanged_frame_identity`, and `audio_packet_identity_and_timestamps` as `"UNMEASURED"`.
+
+2. **Missing `--retake-p3-01` & SHA-256 CLI / Validation Path & Tests (`PASS`):**
+   - `_build_rough_v13_recipe.py` adds `--retake-p3-01` and `--retake-p3-01-sha256` to `main()`, sets `RETAKE_MIN_FRAMES = {"p2_02": 160, "p5_13": 135, "p3_01": 160}`, and validates `p3_01` in `verify_plan()`.
+   - `test_retake_p3_01_missing_hash_and_short` in `test_j2163_recipe.py` verifies that a missing file, mismatched SHA-256, or `< 160` decoded frames is rejected with exit code `2` (no fallback to another plate), and `--execute` remains unconditionally refused (exit code `2`).
+
+3. **Explicit `0:51` Disposition & Distinct `2:18` vs `2:20` Checks (`PASS`):**
+   - **0:51 (`eight_rows[2]`, `P1:07_hot_night`, candidate keyframe envelope `[1129, 1231]`, clock `51.000s` = frame `1220`):** Preserves Ben's verbatim note (`"still have hair flying out the tube, this needs rebuilt"`), sets `splice: false`, and records `disposition`:
+     - `ben_verbatim_kept: true`
+     - `evidence_level: "source_map_only"`
+     - `native_perception: false`
+     - `night_street: "leave_untouched"`
+     - `distinct_hot_night_rebuild: false`
+     - `proposed_salon_retarget: "inference_pending_capable_in_context_confirmation"`
+     - `note_resolved: false`
+   - `splice_rows()` excludes `0:51` from `patches` (`len(patches) == 7` candidate keyframe envelopes: `[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`).
+   - **2:18 vs 2:20 (`eight_rows[4]`, `P2:07_foil_jar`):** Records two distinct unresolved checks:
+     - `jar_flip_2_18`: master frame `3305` (`138.000s`, `1695744` ticks), `inside_keep_3168_3259: false`, `inside_replace_3260_3343: true` (`136.125–139.625s`).
+     - `foil_next_spark_2_20`: master frame `3353` (`140.000s`, `1720320` ticks), `beyond_replacement_ending_139_625s: true`, `inside_replace_3260_3343: false`, `distinct_from_jar_flip: true`, `next_keyframe: 3344`, `candidate_keyframe_envelope: [3344, 3404]`, `gop_closure_proven: false`, `splice: false`, `note_resolved: false`.
+
+4. **Concrete Planned Caption Treatment Table & Bottom-Text Reconciliation (`PASS`):**
+   - `plan_captions()` converts the `27` `side_label` rows into **`32` sequential planned cards**, splitting the 4 over-length labels into sequential `<= 4`-word cards (`THE ANSWER IS` / `ON THE ROOF`, `A KITE` / `A KEY` / `A JAR`, `LET THE EXPERIMENT` / `BE MADE`, `PENNSYLVANIA GAZETTE` / `19 OCTOBER 1752`).
+   - Every card enforces `word_count <= 4`, `hold_ticks <= 49152` (`<= 4s` static hold in `1/12288` timebase; `window_remainder_ticks` recorded across 19 windows), non-overlapping master PTS intervals, `background: "unbordered umber"`, `border: False`, `gold_rule: False`, `pill_chrome: False`, `over: "moving plate"`, `one_at_a_time: True`, `rendered: False`, `new_claims: False`, and checks every 4-digit year against `01_Script/FACT_NOTES_v01.md`.
+   - `reconcile_bottom_text()` and `plan_safe_path()` set `side_label_inventory_proves_film_wide_coverage: False`, list the `10` code-graphic/overlay rows + `11_safe_path` outside `side_label`, and separately plan `11_safe_path` (`SAFE PATH DOWN`, 3 words, `pts_in: 5665280`, `pts_end: 5706240`, `static_hold_s: "10/3"`, frame `11038..11118`, `background: "unbordered umber"`, `border: False`, `rendered: False`, `note_resolved: False`).
+
+5. **Real Flow Spend Preflight (`PASS`):**
+   - `spend_preflight()` verifies `/Users/benjaminoats/YouTube/orbit-with-ben/scripts/ai_spend.py` subcommands (`["record", "spend", "report", "doc"]`), forbids `ai_spend.py check` (`"not a subcommand; do not call it"`), and specifies:
+     - Reading live Flow balance with `read_account()` in `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_mint_flow_cdp_v01.py` on CDP `ORBIT_FLOW_CDP` (`http://127.0.0.1:9222`, `benoats@googlemail.com`) and logging via `ai_spend.py record --pool flow --left N`.
+     - Reading the live Veo 3.1 Quality credit count on the Flow confirm dialog (`orbit_flow_veo_ui.py` matching `"Use N credits"`) before any Create.
+     - Subtracting unposted `ai_spend.py` spends logged since the balance reading.
+     - Enforcing `takes_max_per_plate: 3`, `subscription_credits_max_per_plate: 300`, `subscription_credits_max_total: 900`, `gbp: 0`, `no_top_up: True`, `no_overage: True`, `no_prepaid_ai_studio: True`, `authorized: False`.
+
+### 5.2 Pasted Tool & Gate Verification Outputs (`b78dbe19`)
+
+- **Unit tests (`python3 -m unittest -v 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/test_j2163_recipe.py`):**
+  ```
+  Ran 18 tests in 0.290s
+  OK
+  ```
+- **Read-only dry-run (`python3 02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_build_rough_v13_recipe.py --dry-run`):**
+  ```
+  "status": "PLANNED_NOT_EXECUTABLE",
+  "master_sha256": "cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b",
+  "inputs": 6/6 verified (03_table_three_t1.mp4 120f, 04_storm_mystery_t1.mp4 96f, 07_slow_news_t1.mp4 104f, 11_jar_crack_t1.mp4 84f, 07_hot_night_t1.mp4 105f, 01_points_desk_t1.mp4 161f),
+  "caption_plan": {"card_count": 32, "rendered": false},
+  "bottom_text": {"side_label_count": 27, "side_label_inventory_proves_film_wide_coverage": false, "planned_safe_path": {"row": "11_safe_path", "label": "SAFE PATH DOWN", "static_hold_s": "10/3", "rendered": false}},
+  "spend_preflight": {"authorized": false, "gbp": 0, "ai_spend_subcommands": ["record", "spend", "report", "doc"], "ai_spend_check": "not a subcommand; do not call it"},
+  "frame_count_delta": "UNMEASURED", "vo_sync_lag_ms": "UNMEASURED", "unchanged_frame_identity": "UNMEASURED", "audio_packet_identity_and_timestamps": "UNMEASURED", "spend_gbp": 0, "media_rendered": false
+  ```
+- **Repo gate (`bash 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin`):**
+  ```
+  -- durable desk handoffs: PASS
+  -- no media: PASS
+  -- status board in sync: PASS
+  -- ElevenLabs guard tests: PASS
+  -- vo_check word tests: PASS
+  -- atempo check tests: PASS
+  -- voice speed: PASS
+  -- studio core in sync: PASS
+  -- contract tests: PASS
+  -- package-lint: PASS
+  -- review:script lightning_script_master_v01.md: PASS (92.1 / 100)
+  -- gate:episode: PASS
+  ALL CHECKS PASS
+  ```
+- **GitHub Actions CI on HOS PR #428 (`b78dbe19`):** `4/4` checks `SUCCESS` (`Desk guard/no-desk-close`, `No media in git/no-media`, `Studio core check/check`, `Voice speed/atempo`).
+
+### 5.3 Protected Calls Parked for Elected Chief (`Grok Bot`)
+
+Because HOS PR #411 (`50620e40`) and HOS PR #428 (`b78dbe19`) touch Python scripts (`_build_rough_v13_recipe.py`, `test_j2163_recipe.py`) and the board site (`00_Brand/Channel-Setup/kanban/index.html`, `STATUS.md`, `PIPELINE.json`), and closing `J1881` releases the predecessor gate for `J2241` (`<= 900` Flow subscription credits across `p2_02`, `p3_01`, `p5_13`; `£0` cash), `J1881` is parked for the elected Chief (`Grok Bot`):
+1. Merge HOS PR #411 (`50620e40`) and stacked HOS PR #428 (`b78dbe19`).
+2. Close `J1881` (`done`) to authorize the `J2241` -> `J2242` -> `J2243` production chain (`J2241` retains its typed `moving_video_input` capability hold until a fresh moving-video perception probe passes).
+3. All 8 defect items (`00:20`, `0:30`, `0:51`, `1:49`, `2:18`/`2:20`, `3:13`, `3:31`, `7:58`/`7:59`) and the film-wide caption treatment remain unresolved until `J2242` and `J2243` complete and Ben finishes his final watch. `J1297`, `master_v03` (`cf1561c2...`), `h22`/`h35`, and `J1755` publication rejection remain preserved and untouched (`£0.00`).

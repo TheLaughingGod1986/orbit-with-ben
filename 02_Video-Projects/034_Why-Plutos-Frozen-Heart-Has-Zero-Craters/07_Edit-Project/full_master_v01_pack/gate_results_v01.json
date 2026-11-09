@@ -1,0 +1,28 @@
+{
+  "clip_check": {
+    "code": 0,
+    "out": "clip_check: 74 rows \u2014 PASS\nOK: sentence/card boundaries and end-after-VO checks clear.\n"
+  },
+  "picture_qa": {
+    "code": 0,
+    "out": "Reworked_composite_image_of_Arrokoth_rotated.png.png: kind of picture: 'File:Reworked composite image of Arrokoth rotated.png' (composite), look at it full size\nWARN   9:46 row R69 code_graphic_034_r69_kuiper_outbound_bar.mp4: low detail: luma std 17.77 < 18.0\nWARN  10:27 row R73 PIA21590.jpg: low detail: edge density 0.0054 < film p5 0.0057\nWARN  10:44 row R74 PIA02215.jpg: low detail: edge density 0.0055 < film p5 0.0057\npicture QA PASS: 0 of 131 cuts fail, 12 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg\n"
+  },
+  "music_gate": {
+    "code": 0,
+    "out": "t or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others\nmusic gate PASS: pluto_score_bed_v01.mp3, 646.9 s, about 66.7 BPM, brief Pace: 64-74 BPM\n"
+  },
+  "sfx_level": {
+    "code": 0,
+    "out": "SFX level PASS: VO -19.9 LUFS, SFX -46.6 LUFS, 8 hits\n"
+  },
+  "delivery": {
+    "integrated_lufs": -14.5,
+    "true_peak_dbtp": -1.0,
+    "width": 1920,
+    "height": 1080,
+    "duration": 646.94,
+    "black_frames": [],
+    "sha256": "10ff89794493ec04453e0f3f08a2b42682d8955fecc7291b038989413bdb67e2",
+    "bytes": 244856833
+  }
+}
