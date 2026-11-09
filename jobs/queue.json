@@ -212028,13 +212028,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-09T23:38Z",
-      "eta": "2026-11-10T00:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212075,6 +212075,11 @@
           "at": "2026-11-09T23:46Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: Records in PR #687 (TITLE_TEST section + STUDIO_TESTS row T&C-025)"
+        },
+        {
+          "at": "2026-11-09T23:46Z",
+          "by": "claudecode",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Chief to review and merge PR #687",
@@ -212099,7 +212104,8 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "PR #687"
     },
     {
       "id": "J2460",
