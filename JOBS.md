@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2462 | mini | open | – | – | for gemini · review · `gemini-argon` · Rule 26 title pass: propose search-led titles for the 7 scheduled longs and 3 quiet live ones (read-only; the first airs Thu 12 Nov) |  |
 | J2463 | any | open | – | – | review · Repo clean-up, part 1: fix the six bugs the 7 Nov code audit found (rows F-01a to F-01d, F-05a, F-05b) |  |
 | J2464 | any | open | – | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
+| J2465 | any | open | – | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 
 Recently finished:
 
