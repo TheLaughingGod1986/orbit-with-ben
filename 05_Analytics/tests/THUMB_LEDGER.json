@@ -3,7 +3,7 @@
   "tests": [
     {
       "id": "T001",
-      "status": "running",
+      "status": "done",
       "started": "2026-10-14",
       "channel": "hos",
       "video": "frP_YrNShsU",
@@ -18,23 +18,15 @@
         "file": "_desk/003/20261014-2038_thumbnail/hos_003_mockup2_inside_her_hand.jpg"
       },
       "result": {
-        "readAt": "2026-10-22T01:53:00Z",
-        "status": "running",
-        "estimatedTimeLeft": "6 days 18 hours",
-        "winner": "not shown",
+        "impressions": 41,
+        "winner": "draw",
+        "read": "2026-10-29",
         "wt_a": "not shown",
         "wt_b": "not shown",
-        "impressions_a": "not shown",
-        "impressions_b": "not shown",
-        "ctr_a": "not shown",
-        "ctr_b": "not shown",
-        "videoImpressions": 34,
-        "videoCtr": "not shown",
-        "funnelImpressions_24Sep_20Oct": 35,
-        "funnelCtr_24Sep_20Oct": "0.0%",
-        "note": "Studio Test & Compare: Test running (Estimated time remaining: 6 days 18 hours; ends ~2026-10-28T20:00Z). Reach A/B card: 'Not enough information to display data. Please check back later.' Both variants show '\u2014' watch-time share; per-variant impressions/CTR not shown by Studio. Video-level Reach totals since published: 34 impressions, CTR '\u2014', 2 views (24 Sep\u201320 Oct funnel: 35 impressions, 0.0% CTR, 0 engaged views)."
+        "note": "J1132 / J2397 read-back: Test finished 28 Oct 2026 at 21:17 London (ran 14\u201328 Oct). Studio modal: 'Not enough impressions to declare a winner'; watch-time shares em-dash on both A and B. A (HOW DID WE DISCOVER X-RAYS?) remains visible to all viewers. Lifetime impressions: 41 (2.4% CTR); 28d (12 Oct\u20138 Nov): 15 impressions (6.67% CTR)."
       },
-      "readBack": "2026-10-18"
+      "readBack": "2026-10-29",
+      "ended": "2026-10-28"
     },
     {
       "id": "T002",
@@ -243,7 +235,7 @@
       },
       "result": null,
       "readBack": "2026-11-05",
-      "note": "Armed 22 Oct (J0288, Chief KEEP on J0279 fbcbc6f): thumbnail-only. A house live HOW DID WE DISCOVER GERMS?, B cursor j0279 v02 INVISIBLE LIFE? (1280x720, 267906 bytes, sha256 46b9e18d). Prior 1\u201316 Oct title+thumb test finished inconclusive (no winner, A visible to all). Title and Public privacy unchanged. Studio report: Test running (13d 23h remaining)."
+      "note": "Armed 22 Oct (J0288, Chief KEEP on J0279 fbcbc6f): thumbnail-only. A house live HOW DID WE DISCOVER GERMS?, B cursor j0279 v02 INVISIBLE LIFE? (1280x720, 267906 bytes, sha256 46b9e18d). Prior 1\u201316 Oct title+thumb test finished inconclusive (no winner, A visible to all). Title and Public privacy unchanged. Studio report: Test running (13d 23h remaining). | J2397 check 9 Nov 2026: Studio edit page shows 'Thumbnail: Results ready' (14-day run 22 Oct\u20135 Nov complete; 28d: 14 impr, 7.14% CTR; lifetime: 44 impr, 6.8% CTR). Ready for Mini Studio modal readback."
     },
     {
       "id": "T010",
@@ -558,6 +550,30 @@
         "title": "The Star Next Door Is Invisible (And It Will Outlive Our Sun)",
         "text": "TRILLIONS OF YEARS"
       }
+    },
+    {
+      "id": "T023",
+      "status": "running",
+      "started": "2026-10-29",
+      "channel": "hos",
+      "film": "002",
+      "video": "AL_-qlWko_g",
+      "title": "How Did We Discover the Periodic Table?",
+      "job": "J1129",
+      "a": {
+        "maker": "house",
+        "file": "00_Brand/Channel-Setup/style/long_002_periodic_table.jpg",
+        "text": "HOW DID WE DISCOVER THE PERIODIC TABLE?"
+      },
+      "b": {
+        "maker": "cursor",
+        "file": "02_Video-Projects/002_How-Did-We-Discover-The-Periodic-Table/08_Thumbnail/hos_002_thumb_B_missing_element_v02.jpg",
+        "sha256": "8781da9a1f16cd27e307891cf1ce55edbf24f161dfbf70917e3c425d0889aa3a",
+        "text": "THE MISSING ELEMENT"
+      },
+      "result": null,
+      "readBack": "2026-11-12",
+      "note": "Armed 29 Oct 2026 (J1129, Chief/panel selection J1126): thumbnail-only A vs B on AL_-qlWko_g. A live HOW DID WE DISCOVER THE PERIODIC TABLE?; B existing approved pool hos_002_thumb_B_missing_element_v02.jpg (THE MISSING ELEMENT, 1280x720, 422651 bytes, sha256 8781da9a1f16cd27). J2397 check 9 Nov 2026: Studio shows 'Thumbnail: Running\u2026'; 28d reach (12 Oct\u20138 Nov): 246 impressions, 5.28% CTR (up from 3.44% on 28 Oct), 24 views, 0.70h watch time; lifetime: 1,133 impressions, 3.4% CTR."
     }
   ]
 }
