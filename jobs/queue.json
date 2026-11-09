@@ -175876,6 +175876,11 @@
           "at": "2026-11-08T12:27Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6-astra: Gemini is unavailable or lacks required input; next in its chain: codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-09T17:47Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
@@ -175890,8 +175895,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6-astra"
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2016",
