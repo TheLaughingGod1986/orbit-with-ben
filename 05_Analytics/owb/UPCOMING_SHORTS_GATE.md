@@ -1,6 +1,6 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-08 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-09 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
@@ -14,6 +14,7 @@ Written by `gate_upcoming.py` at 2026-11-08 06:40 London for Shorts scheduled in
 | 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | PASS |
 | 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/cwU_0WWeNZ4) `cwU_0WWeNZ4` | yes | PASS |
 | 2026-11-20 11:30 | [The Nearest Star Is a Cherry Past Cairo. How Do We Know?](https://youtu.be/aAUgIGEuPwQ) `aAUgIGEuPwQ` | yes | PASS |
+| 2026-11-21 11:30 | [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/rvug71d7Dqk) `rvug71d7Dqk` | yes | PASS |
 
 ## Details
 

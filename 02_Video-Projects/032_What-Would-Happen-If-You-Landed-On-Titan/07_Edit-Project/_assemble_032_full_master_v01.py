@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""032 Titan long master v01 (J2379). £0 spend.
+"""032 Titan long master v02 (J2436 / J2435 FIRST30_PLAN.md). £0 spend.
 Assembles the 52-row long master (582.44 s VO / 585.44 s total with post-word hold, 1920x1080 30 fps CFR)
-from SHOT_LIST_v08.md + 62 pre-rendered composites (composites_v01/) + harvested NASA/ESA/STScI/Commons stills
-and NASA SVS 20311 clips + titan_score_bed_v01.mp3 + house SFX kit_v01, and runs all 5 gates.
+with re-cut first 30 s (R01-R06 all <= 3.60 s, r03_pressure at 16.53-20.13 s before 0:20, and smooth
+symmetric sub-pixel PIL Image.Transform.EXTENT BICUBIC zoom 1.000->1.045 on every still cut from Frame 0),
+and runs all 5 gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level).
 """
 from __future__ import annotations
 
+import concurrent.futures
 import csv
 import json
 import math
@@ -27,9 +29,9 @@ sys.path.insert(0, str(REPO / "scripts"))
 import polish_gate  # noqa: E402
 
 EDIT = FILM / "07_Edit-Project"
-WORK = EDIT / "full_master_v01_work"
-PACK = EDIT / "full_master_v01_pack"
-OUT = FILM / "09_Final-Export" / "032_what_would_happen_if_you_landed_on_titan_master_v01.mp4"
+WORK = EDIT / "full_master_v02_work"
+PACK = EDIT / "full_master_v02_pack"
+OUT = FILM / "09_Final-Export" / "032_what_would_happen_if_you_landed_on_titan_master_v02.mp4"
 SHOT = EDIT / "shot_list_v08.csv"
 SHOT_MD = EDIT / "SHOT_LIST_v08.md"
 POOL = EDIT / "HARVEST_POOL_v01.json"
@@ -60,7 +62,7 @@ ENC = [
     "-r", "30", "-fps_mode", "cfr", "-g", "30", "-an",
 ]
 
-# SFX plan v01 on the 585.44 s timeline: rumbles on entry/launch/plume/rotor beats,
+# SFX plan v02 on the 585.44 s timeline: rumbles on entry/launch/plume/rotor beats,
 # soft whooshes on chapter transitions & scale dives, UI ticks on DATA/WHO/WHEN/FACT cards.
 RUMBLES = [
     (0.30, 3.60),     # R01 atmospheric descent open
@@ -77,7 +79,7 @@ WHOOSHES = [
     324.88, 372.76, 389.34, 474.52, 517.27, 567.08,
 ]
 TICKS = [
-    6.45, 19.40, 28.60, 36.80, 54.00, 57.60, 65.00, 76.90,
+    6.45, 16.60, 28.60, 35.75, 54.00, 57.60, 65.00, 76.90,
     83.60, 87.20, 90.80, 108.80, 121.80, 133.60, 149.00, 155.50,
     180.50, 186.90, 194.10, 202.70, 206.40, 216.40, 225.70, 233.00,
     236.60, 248.10, 255.30, 265.00, 273.20, 276.80, 280.40, 284.00,
@@ -92,13 +94,16 @@ STILL_FILES = {
     "PIA08167": ("PIA08167.jpg", "NASA/JPL/Space Science Institute", "Shifting Northern Hazes on Titan (Cassini ISS)"),
     "PIA22766": ("PIA22766.jpg", "NASA/JPL-Caltech/Space Science Institute", "Cassini Grand Finale: Backlit Saturn and Rings"),
     "PIA21902": ("PIA21902.tif", "NASA/JPL-Caltech/Space Science Institute", "Twilight Haze Layers on Titan (Cassini ISS)"),
+    "PIA21890": ("PIA21890.jpg", "NASA/JPL-Caltech/Space Science Institute", "A Last Look at Titan (Cassini ISS)"),
     "PIA07231": ("PIA07231.jpg", "ESA/NASA/JPL/University of Arizona", "Varied Terrain Seen by Huygens DISR During Descent"),
+    "PIA12621": ("PIA12621.jpg", "NASA/JPL/Space Science Institute", "West of the Probe: Titan Adiri Region (Cassini ISS)"),
     "NASA_Dragonfly_BannerFactSheet_2024": (
         "NASA_Dragonfly_BannerFactSheet_2024.jpg",
         "NASA/Johns Hopkins APL/Steve Gribben",
         "Dragonfly Rotorcraft Soaring Over Titan Dunes (NASA Mission Page)",
     ),
     "PIA14922": ("PIA14922.jpg", "NASA/JPL-Caltech/Space Science Institute", "Colorful Colossuses: Titan Beside Ringed Saturn"),
+    "PIA17177": ("PIA17177.jpg", "NASA/JPL-Caltech/Space Science Institute", "Dusk in the South: Titan Atmosphere and Vortex (Cassini ISS)"),
     "huygens_portrait_1671": ("huygens_1671.jpg", "Caspar Netscher / Wikimedia Commons (PD-Art)", "Portrait of Christiaan Huygens (1671)"),
     "PIA08733": ("PIA08733.jpg", "NASA/JPL/Space Science Institute", "Titan Crescent View (Cassini ISS)"),
     "PIA14602": ("PIA14602.jpg", "NASA/JPL-Caltech/Space Science Institute", "Hazy Orange Orb of Titan (Cassini ISS)"),
@@ -170,21 +175,25 @@ ROW_CUT_SPECS: dict[int, list[tuple]] = {
         ("COMP", "r02_survive_check", 3.55),
     ],
     3: [
-        ("STILL", "PIA22766", 1, 4.80, None),
-        ("STILL", "PIA21902", 1, None, None),
+        ("STILL", "PIA22766", 1, 3.40, None),
+        ("STILL", "PIA21902", 1, 3.40, None),
         ("COMP", "r03_pressure", 3.60),
+        ("STILL", "PIA21890", 1, None, None),
     ],
     4: [
-        ("STILL", "PIA08167", 2, None, None),
+        ("STILL", "PIA08167", 2, 2.83, None),
+        ("STILL", "PIA21890", 2, None, None),
         ("COMP", "r04_cold", 3.60),
     ],
     5: [
-        ("STILL", "PIA07231", 1, 4.66, None),
+        ("STILL", "PIA07231", 1, 3.50, None),
         ("COMP", "r05_rain_preview", 3.60),
+        ("STILL", "PIA12621", 1, 2.90, None),
         ("STILL", "NASA_Dragonfly_BannerFactSheet_2024", 1, None, None),
     ],
     6: [
-        ("STILL", "PIA14922", 1, None, None),
+        ("STILL", "PIA14922", 1, 2.90, None),
+        ("STILL", "PIA17177", 1, None, None),
     ],
     7: [
         ("STILL", "huygens_portrait_1671", 1, None, None),
@@ -679,13 +688,62 @@ def build_textured_bg(im: Image.Image, seed_val: int) -> Image.Image:
     return canvas
 
 
-def prepare_still_png(cut: dict, out_png: Path) -> float:
-    """Prepares a 1920x1080 static PNG for a still cut, verifying polish_gate pixel rules in memory."""
+def draw_still_text_overlay(canvas: Image.Image, cut: dict) -> Image.Image:
+    """Draws static bottom-left credit and optional lower-third label on a frame copy."""
+    out = canvas.copy()
+    dr = ImageDraw.Draw(out)
+    credit = cut.get("credit") or ""
+    if credit:
+        f_cr = ImageFont.truetype(FONT_REG, 22)
+        dr.text((38, H - 46), f"Credit: {credit}", font=f_cr, fill=(225, 232, 242))
+
+    label = cut.get("label")
+    if label:
+        f_lb = ImageFont.truetype(FONT_BOLD, 42)
+        bbox = dr.textbbox((0, 0), label, font=f_lb)
+        tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        bx0 = (W - tw) // 2 - 24
+        by0 = H - 148
+        bx1 = (W + tw) // 2 + 24
+        by1 = by0 + th + 24
+        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, fill=(24, 36, 56))
+        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, outline=(245, 166, 35), width=2)
+        dr.text(((W - tw) // 2 - bbox[0], by0 + 12 - bbox[1]), label, font=f_lb, fill=(255, 255, 255))
+    return out
+
+
+def prepare_still_png(cut: dict, out_png: Path, force: bool = False) -> float:
+    """Prepares a 1920x1080 base PNG (and text-labelled PNG) for a still cut, verifying polish_gate pixel rules."""
     src_path = Path(cut["path"])
     asset_id = cut["asset_id"]
     use_idx = int(cut["use_idx"])
+    base_png = out_png.with_name(out_png.stem + "_base.png")
 
     with Image.open(src_path) as raw_im:
+        w, h = raw_im.size
+        if not force and out_png.exists() and base_png.exists():
+            if asset_id == "PIA07232" and w == 546 and h == 693:
+                w, h = (314, 629) if use_idx == 1 else (298, 550)
+            elif asset_id == "PIA09182" and w > 4000:
+                w, h = 2200, 1260
+            elif use_idx == 2 and w > 400 and h > 400:
+                w, h = int(w * 0.88), int(h * 0.88)
+            elif use_idx == 1 and w > 600 and h > 600 and asset_id not in ("weic2310a", "AS17-148-22727"):
+                w, h = int(w * 0.94), int(h * 0.94)
+            inset_caps = {
+                "PIA02238": 1.50, "PIA07232": 1.40, "PIA07231": 1.90, "huygens_portrait_1671": 0.42,
+                "PIA01050": 0.34, "weic2310a": 0.48, "AS17-148-22727": 0.50, "PIA21445": 0.84,
+                "PIA12481": 1.12, "PIA21902": 0.84, "PIA21890": 0.84, "PIA12621": 0.84,
+                "PIA17177": 0.84, "PIA18182": 0.52, "PIA17172": 0.16, "PIA08167": 0.84,
+                "PIA21610": 0.84, "NASA_Dragonfly_BannerFactSheet_2024": 0.45,
+            }
+            cover = max(W / w, H / h)
+            if asset_id in inset_caps or cover > 1.95:
+                cap = inset_caps.get(asset_id, 1.85)
+                scale = min(cap, (W - 180) / w, (H - 130) / h)
+            else:
+                scale = min(1.95, cover)
+            return round(scale, 3)
         im = raw_im.convert("RGB")
     w, h = im.size
 
@@ -708,6 +766,7 @@ def prepare_still_png(cut: dict, out_png: Path) -> float:
 
     w, h = im.size
     canvas = build_textured_bg(im, cut["rnum"] * 10 + use_idx)
+    arr_bg = np.asarray(canvas).astype(np.float32)
 
     inset_caps = {
         "PIA02238": 1.50,
@@ -720,6 +779,9 @@ def prepare_still_png(cut: dict, out_png: Path) -> float:
         "PIA21445": 0.84,
         "PIA12481": 1.12,
         "PIA21902": 0.84,
+        "PIA21890": 0.84,
+        "PIA12621": 0.84,
+        "PIA17177": 0.84,
         "PIA18182": 0.52,
         "PIA17172": 0.16,
         "PIA08167": 0.84,
@@ -737,11 +799,13 @@ def prepare_still_png(cut: dict, out_png: Path) -> float:
         m_fg, s_fg = float(arr_fg.mean()), float(arr_fg.std())
         if s_fg < 34.0:
             arr_fg = (arr_fg - m_fg) * (36.0 / max(8.0, s_fg)) + max(68.0, m_fg)
-        arr_fg = np.clip(arr_fg * 0.88 + 26.0, 26, 246).astype(np.uint8)
-        fg = Image.fromarray(arr_fg, mode="RGB")
-        mask = make_feathered_mask(nw, nh, feather=48)
+        arr_fg = np.clip(arr_fg * 0.88 + 26.0, 26, 246)
         ox = (W - nw) // 2
         oy = (H - nh) // 2
+        bg_patch = arr_bg[oy : oy + nh, ox : ox + nw]
+        arr_fg = np.clip(arr_fg * 0.90 + bg_patch * 0.10, 26, 246).astype(np.uint8)
+        fg = Image.fromarray(arr_fg, mode="RGB")
+        mask = make_feathered_mask(nw, nh, feather=48)
         canvas.paste(fg, (ox, oy), mask)
         actual_upscale = round(scale, 3)
     else:
@@ -755,45 +819,73 @@ def prepare_still_png(cut: dict, out_png: Path) -> float:
         m_fg, s_fg = float(arr_fg.mean()), float(arr_fg.std())
         if s_fg < 26.0:
             arr_fg = (arr_fg - m_fg) * (28.0 / max(8.0, s_fg)) + max(62.0, m_fg)
-        arr_fg = np.clip(arr_fg * 0.86 + 28.0, 26, 246).astype(np.uint8)
+        arr_fg = np.clip(arr_fg * 0.86 + 28.0, 26, 246)
+        arr_fg = np.clip(arr_fg * 0.90 + arr_bg * 0.10, 26, 246).astype(np.uint8)
         canvas = Image.fromarray(arr_fg, mode="RGB")
         actual_upscale = round(scale, 3)
 
-    dr = ImageDraw.Draw(canvas)
+    out_png.parent.mkdir(parents=True, exist_ok=True)
+    base_png = out_png.with_name(out_png.stem + "_base.png")
+    canvas.save(base_png)
+    labelled = draw_still_text_overlay(canvas, cut)
+    labelled.save(out_png)
+    return actual_upscale
+
+
+def render_still_cut(cut: dict, dest: Path) -> None:
+    """Renders a still cut with symmetric sub-pixel PIL Image.Transform.EXTENT BICUBIC zoom (1.000 -> 1.045)."""
+    png_path = WORK / "stills" / f"{cut['row']}_{cut['asset_id']}_u{cut['use_idx']}.png"
+    base_png = png_path.with_name(png_path.stem + "_base.png")
+    if not base_png.exists() or not png_path.exists():
+        up = prepare_still_png(cut, png_path)
+        cut["upscale"] = up
+    base = Image.open(base_png).convert("RGB")
+    n = cut["frames"]
+
+    # Pre-render bottom text overlay strip (y >= H - 160) so compositing per frame is fast and outside the 512x512 centre patch
+    strip_h = 160
+    ov_strip = Image.new("RGBA", (W, strip_h), (0, 0, 0, 0))
+    dr = ImageDraw.Draw(ov_strip)
     credit = cut.get("credit") or ""
     if credit:
         f_cr = ImageFont.truetype(FONT_REG, 22)
-        dr.text((38, H - 46), f"Credit: {credit}", font=f_cr, fill=(225, 232, 242))
-
+        dr.text((38, strip_h - 46), f"Credit: {credit}", font=f_cr, fill=(225, 232, 242, 255))
     label = cut.get("label")
     if label:
         f_lb = ImageFont.truetype(FONT_BOLD, 42)
         bbox = dr.textbbox((0, 0), label, font=f_lb)
         tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
         bx0 = (W - tw) // 2 - 24
-        by0 = H - 148
+        by0 = strip_h - 148
         bx1 = (W + tw) // 2 + 24
         by1 = by0 + th + 24
-        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, fill=(24, 36, 56))
-        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, outline=(245, 166, 35), width=2)
-        dr.text(((W - tw) // 2 - bbox[0], by0 + 12 - bbox[1]), label, font=f_lb, fill=(255, 255, 255))
+        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, fill=(24, 36, 56, 255))
+        dr.rounded_rectangle([bx0, by0, bx1, by1], radius=10, outline=(245, 166, 35, 255), width=2)
+        dr.text(((W - tw) // 2 - bbox[0], by0 + 12 - bbox[1]), label, font=f_lb, fill=(255, 255, 255, 255))
 
-    out_png.parent.mkdir(parents=True, exist_ok=True)
-    canvas.save(out_png)
-    return actual_upscale
-
-
-def render_still_cut(cut: dict, dest: Path) -> None:
-    png_path = WORK / "stills" / f"{cut['row']}_{cut['asset_id']}_u{cut['use_idx']}.png"
-    up = prepare_still_png(cut, png_path)
-    cut["upscale"] = up
-    n = cut["frames"]
-    run([
-        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-        "-loop", "1", "-framerate", str(FPS), "-i", str(png_path),
-        "-vf", "format=yuv420p",
-        *ENC, "-frames:v", str(n), str(dest),
-    ])
+    proc = sp.Popen(
+        [
+            "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+            "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
+            "-i", "pipe:0",
+            *ENC, "-frames:v", str(n), str(dest),
+        ],
+        stdin=sp.PIPE,
+    )
+    assert proc.stdin is not None
+    denom = float(max(1, n - 1))
+    for f_i in range(n):
+        z = 1.0 + 0.045 * (f_i / denom)
+        cw, ch = W / z, H / z
+        l, top = (W - cw) / 2.0, (H - ch) / 2.0
+        fr = base.transform((W, H), Image.Transform.EXTENT, (l, top, l + cw, top + ch), Image.Resampling.BICUBIC)
+        if credit or label:
+            fr.paste(ov_strip, (0, H - strip_h), ov_strip)
+        proc.stdin.write(fr.tobytes())
+    proc.stdin.close()
+    rc = proc.wait()
+    if rc != 0:
+        raise RuntimeError(f"render_still_cut failed with code {rc} for {dest}")
 
 
 def render_svs_cut(cut: dict, dest: Path) -> None:
@@ -908,29 +1000,42 @@ def render_sub_card_cut(cut: dict, dest: Path) -> None:
         raise RuntimeError(f"render_sub_card_cut failed with code {rc}")
 
 
+def _render_one_cut(args: tuple[int, int, dict, Path]) -> None:
+    i, total, cut, dest = args
+    if frames_ok(dest, cut["frames"]):
+        return
+    print(f"render {i + 1}/{total} {cut['row']} {cut['frames']}f {cut['source']}", flush=True)
+    if cut["kind"] == "STILL":
+        render_still_cut(cut, dest)
+    elif cut["kind"] == "SVS":
+        render_svs_cut(cut, dest)
+    elif cut["kind"] == "COMP":
+        render_comp_cut(cut, dest)
+    elif cut["kind"] == "SUB_CARD":
+        render_sub_card_cut(cut, dest)
+
+
 def render_all(cuts: list[dict]) -> list[Path]:
     out_dir = WORK / "cuts"
     out_dir.mkdir(parents=True, exist_ok=True)
+    for cut in cuts:
+        if cut["kind"] == "STILL":
+            png_path = WORK / "stills" / f"{cut['row']}_{cut['asset_id']}_u{cut['use_idx']}.png"
+            up = prepare_still_png(cut, png_path)
+            cut["upscale"] = up
+
     paths = []
+    tasks = []
     for i, cut in enumerate(cuts):
         dest = out_dir / f"{i:03d}_{cut['row']}_{cut['asset_id']}.mp4"
         paths.append(dest)
-        if frames_ok(dest, cut["frames"]):
-            if cut["kind"] == "STILL":
-                png_path = WORK / "stills" / f"{cut['row']}_{cut['asset_id']}_u{cut['use_idx']}.png"
-                if png_path.exists():
-                    continue
-            else:
-                continue
-        print(f"render {i + 1}/{len(cuts)} {cut['row']} {cut['frames']}f {cut['source']}", flush=True)
-        if cut["kind"] == "STILL":
-            render_still_cut(cut, dest)
-        elif cut["kind"] == "SVS":
-            render_svs_cut(cut, dest)
-        elif cut["kind"] == "COMP":
-            render_comp_cut(cut, dest)
-        elif cut["kind"] == "SUB_CARD":
-            render_sub_card_cut(cut, dest)
+        tasks.append((i, len(cuts), cut, dest))
+
+    if frames_ok(WORK / "picture_v02.mp4", sum(c["frames"] for c in cuts)) and all(p.exists() for p in paths):
+        return paths
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        list(ex.map(_render_one_cut, tasks))
     return paths
 
 
@@ -1013,8 +1118,8 @@ def mix(vo: Path, sfx: Path, dest: Path) -> dict:
     bed_gain_db = (vo_i - 22.0) - bed_i
     sfx_i, _ = loudness(sfx)
     sfx_gain_db = min(0.0, (vo_i - 16.0) - sfx_i)
-    bed_laid = WORK / "bed_laid_v01.wav"
-    sfx_laid = WORK / "sfx_laid_v01.wav"
+    bed_laid = WORK / "bed_laid_v02.wav"
+    sfx_laid = WORK / "sfx_laid_v02.wav"
     run([
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(BED),
         "-af", f"volume={bed_gain_db:.2f}dB,atrim=0:{TOTAL}",
@@ -1052,15 +1157,19 @@ def mix(vo: Path, sfx: Path, dest: Path) -> dict:
     }
 
 
-def mux(picture: Path, audio: Path, dest: Path) -> None:
-    dest.parent.mkdir(parents=True, exist_ok=True)
+def mux(picture: Path, audio: Path, dest: Path) -> Path:
+    import shutil
+    local_out = Path("/tmp") / dest.name
     run([
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-i", str(picture), "-i", str(audio),
         "-map", "0:v:0", "-map", "1:a:0",
         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-        "-movflags", "+faststart", str(dest),
+        "-movflags", "+faststart", str(local_out),
     ])
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(local_out, dest)
+    return local_out
 
 
 def write_sidecars(cuts: list[dict]) -> None:
@@ -1078,17 +1187,17 @@ def write_sidecars(cuts: list[dict]) -> None:
         if c["video"]:
             item["framing"] = {"offset": float(c["offset"] or 0.0)}
         cut_json.append(item)
-    (PACK / "cuts_v01.json").write_text(json.dumps(cut_json, indent=2), encoding="utf-8")
+    (PACK / "cuts_v02.json").write_text(json.dumps(cut_json, indent=2), encoding="utf-8")
 
     items = []
     for asset_id, (fname, _credit, title) in STILL_FILES.items():
         items.append({"id": asset_id, "file": fname, "source": fname, "title": title})
     for svs_id, (fname, _credit, title) in SVS_FILES.items():
         items.append({"id": svs_id, "file": fname, "source": fname, "title": title})
-    (PACK / "pool_titles_v01.json").write_text(json.dumps(items, indent=2), encoding="utf-8")
+    (PACK / "pool_titles_v02.json").write_text(json.dumps(items, indent=2), encoding="utf-8")
 
 
-def run_gates() -> dict:
+def run_gates(video_path: Path = OUT) -> dict:
     PACK.mkdir(parents=True, exist_ok=True)
     results = {}
     clip = sp.run([
@@ -1098,38 +1207,45 @@ def run_gates() -> dict:
     results["clip_check"] = {"code": clip.returncode, "out": (clip.stdout or clip.stderr)[-600:]}
 
     pq = sp.run([
-        sys.executable, str(REPO / "scripts/picture_qa.py"), str(OUT),
-        "--cuts", str(PACK / "cuts_v01.json"),
-        "--pool", str(PACK / "pool_titles_v01.json"),
+        sys.executable, str(REPO / "scripts/picture_qa.py"), str(video_path),
+        "--cuts", str(PACK / "cuts_v02.json"),
+        "--pool", str(PACK / "pool_titles_v02.json"),
         "--pool", str(POOL),
         "--out-dir", str(PACK),
     ], capture_output=True, text=True)
     results["picture_qa"] = {"code": pq.returncode, "out": (pq.stdout or pq.stderr)[-1200:]}
 
+    pg = sp.run([
+        sys.executable, str(REPO / "scripts/polish_gate.py"), str(video_path),
+        "--cuts", str(PACK / "cuts_v02.json"),
+        "--out", str(PACK / "polish_gate_v02.json"),
+    ], capture_output=True, text=True)
+    results["polish_gate"] = {"code": pg.returncode, "out": (pg.stdout or pg.stderr)[-1200:]}
+
     mg = sp.run([
         sys.executable, str(REPO / "scripts/music_gate.py"), str(FILM),
-        "--bed", str(BED), "--video", str(OUT),
-        "--out", str(PACK / "music_gate_v01.json"),
+        "--bed", str(BED), "--video", str(video_path),
+        "--out", str(PACK / "music_gate_v02.json"),
     ], capture_output=True, text=True)
     results["music_gate"] = {"code": mg.returncode, "out": (mg.stdout or mg.stderr)[-800:]}
 
     lv = sp.run([
         sys.executable, str(REPO / "scripts/sfx_kit.py"), "level",
-        "--vo", str(WORK / "vo_laid_v01.wav"),
-        "--sfx", str(WORK / "sfx_laid_v01.wav"),
-        "--bed", str(WORK / "bed_laid_v01.wav"),
+        "--vo", str(WORK / "vo_laid_v02.wav"),
+        "--sfx", str(WORK / "sfx_laid_v02.wav"),
+        "--bed", str(WORK / "bed_laid_v02.wav"),
         "--minutes", "9.76",
-        "--out", str(PACK / "sfx_level_v01.json"),
+        "--out", str(PACK / "sfx_level_v02.json"),
     ], capture_output=True, text=True)
     results["sfx_level"] = {"code": lv.returncode, "out": (lv.stdout or lv.stderr)[-800:]}
 
-    i, tp = loudness(OUT)
+    i, tp = loudness(video_path)
     black = sp.run([
-        "ffmpeg", "-hide_banner", "-i", str(OUT),
+        "ffmpeg", "-hide_banner", "-i", str(video_path),
         "-vf", "blackdetect=d=0.04:pix_th=0.10", "-f", "null", "-",
     ], capture_output=True, text=True)
     blacks = [ln for ln in black.stderr.splitlines() if "black_start" in ln]
-    info = probe(OUT)
+    info = probe(video_path)
     results["delivery"] = {
         "integrated_lufs": i,
         "true_peak_dbtp": tp,
@@ -1138,7 +1254,7 @@ def run_gates() -> dict:
         "duration": info["duration"],
         "black_frames": blacks[:8],
     }
-    (PACK / "gate_results_v01.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
+    (PACK / "gate_results_v02.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
     print(json.dumps(results, indent=2), flush=True)
     return results
 
@@ -1149,7 +1265,7 @@ def main() -> None:
     mode = sys.argv[1] if len(sys.argv) > 1 else "--all"
     rows = write_shot_list_csv()
     cuts = build_plan(rows)
-    (WORK / "plan_v01.json").write_text(json.dumps(cuts, indent=2), encoding="utf-8")
+    (WORK / "plan_v02.json").write_text(json.dumps(cuts, indent=2), encoding="utf-8")
     write_sidecars(cuts)
     print(f"plan: {len(cuts)} cuts, {sum(c['frames'] for c in cuts)} frames", flush=True)
     if mode == "--plan":
@@ -1157,30 +1273,31 @@ def main() -> None:
 
     paths = render_all(cuts)
     write_sidecars(cuts)
-    picture = WORK / "picture_v01.mp4"
-    concat_picture(paths, picture)
+    picture = WORK / "picture_v02.mp4"
+    if not frames_ok(picture, sum(c["frames"] for c in cuts)):
+        concat_picture(paths, picture)
 
-    vo = WORK / "vo_laid_v01.wav"
-    sfx = WORK / "sfx_stem_v01.wav"
-    mix_wav = WORK / "mix_v01.wav"
+    vo = WORK / "vo_laid_v02.wav"
+    sfx = WORK / "sfx_stem_v02.wav"
+    mix_wav = WORK / "mix_v02.wav"
     if not vo.exists():
         print("lay vo", flush=True)
         lay_vo(vo)
     if not sfx.exists():
         print("build sfx", flush=True)
         build_sfx(sfx)
-    if not mix_wav.exists() or not (PACK / "mix_report_v01.json").exists():
+    if not mix_wav.exists() or not (PACK / "mix_report_v02.json").exists():
         print("mix", flush=True)
         report = mix(vo, sfx, mix_wav)
         PACK.mkdir(parents=True, exist_ok=True)
-        (PACK / "mix_report_v01.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+        (PACK / "mix_report_v02.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     else:
-        report = json.loads((PACK / "mix_report_v01.json").read_text(encoding="utf-8"))
+        report = json.loads((PACK / "mix_report_v02.json").read_text(encoding="utf-8"))
     print("mux", report, flush=True)
-    mux(picture, mix_wav, OUT)
+    local_out = mux(picture, mix_wav, OUT)
 
     if mode in ("--gates", "--all"):
-        results = run_gates()
+        results = run_gates(local_out)
         failed = [k for k, v in results.items() if isinstance(v, dict) and v.get("code") not in (None, 0)]
         delivery = results.get("delivery") or {}
         if delivery.get("black_frames"):
