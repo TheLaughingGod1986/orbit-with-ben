@@ -192866,13 +192866,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "gemini",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-11-05T19:33Z",
-      "result": "",
+      "result": "Uploaded Private as rvug71d7Dqk (https://youtu.be/rvug71d7Dqk), read back Private with publishAt 2026-11-21T11:30:00Z (sha256 06b935f706c8ac3b1ac4d576d22a20193eb0fd742047f36f0be534b7604b0554)",
       "history": [
         {
           "at": "2026-11-05T19:33Z",
@@ -193038,9 +193038,14 @@
           "at": "2026-11-09T02:10Z",
           "by": "gemini",
           "what": "rerouted to gemini on gemini-agy: Ben OK'd v04 (8 Nov 23:41Z); closing J2248 with rvug71d7Dqk per J2431"
+        },
+        {
+          "at": "2026-11-09T02:14Z",
+          "by": "gemini",
+          "what": "done: Uploaded Private as rvug71d7Dqk (https://youtu.be/rvug71d7Dqk), read back Private with publishAt 2026-11-21T11:30:00Z (sha256 06b935f706c8ac3b1ac4d576d22a20193eb0fd742047f36f0be534b7604b0554)"
         }
       ],
-      "remaining_action": "J2302 reviews verified private v03 evidence now; then repairs or Ben final watch. External code push not required; no scheduling clearance.",
+      "remaining_action": "Completed J2248 (rvug71d7Dqk)",
       "due": "2026-11-09T10:30:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -193052,11 +193057,6 @@
         "at": "2026-11-06T20:35Z",
         "by": "codex",
         "note": "Build, all five tool checks, hash-verified UAT staging and Rule-H handoff complete. J2302 queued. Local commits d04ce8dc"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief ruling 6 Nov: HOLD pending J2302 KEEP/FIX on v03 be63a3d8; all 22 private UAT hashes verified. J2302 uses local c34a0429d6/UAT evidence now; rejected external code push is not a review prerequisite and must not be retried. On FIX return exact repairs; on KEEP set awaits for required Ben final watch. No upload/schedule; Mon9 occupied, Nov21 provisional. Act on completed review immediately; morning check is status only.",
-        "check_at": "2026-11-07T09:00:00Z"
       },
       "escalated_at": "2026-11-07T00:04Z",
       "approved_from": {
@@ -193090,7 +193090,8 @@
         "by": "codex"
       },
       "for": "gemini",
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "done_ref": "rvug71d7Dqk"
     },
     {
       "id": "J2249",
@@ -209002,13 +209003,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-09T01:50Z",
-      "eta": "2026-11-09T03:50Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T23:42Z",
-      "result": "",
+      "result": "Uploaded Private as rvug71d7Dqk (https://youtu.be/rvug71d7Dqk), read back Private with publishAt 2026-11-21T11:30:00Z (sha256 06b935f706c8ac3b1ac4d576d22a20193eb0fd742047f36f0be534b7604b0554)",
       "history": [
         {
           "at": "2026-11-08T23:42Z",
@@ -209039,21 +209040,50 @@
           "at": "2026-11-09T02:08Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Uploaded fri06_muons_ground_v04.mp4 Private as rvug71d7Dqk (publishAt 2026-11-21T11:30:00Z, en-GB, cover set, Studio Related -> rVqgtkBV3jc set) and committed UPLOADS.json + shorts_open_library + 11_Upload-Package"
+        },
+        {
+          "at": "2026-11-09T02:14Z",
+          "by": "gemini",
+          "what": "approved by Ben: Watch 024 muons Short v04 ('Muons Shouldn't Reach the Ground. They Do.') — fixed 0:19 stray code under 'Light Speed?' — before any Private upload or schedule (provisional slot Sat 21 Nov 11:30) v04 (asked in J2248)"
+        },
+        {
+          "at": "2026-11-09T02:14Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Closed J2248 with rvug71d7Dqk, cleared awaits_ben, and verified read-back in UPLOADS.json"
+        },
+        {
+          "at": "2026-11-09T02:14Z",
+          "by": "gemini",
+          "what": "done: Uploaded Private as rvug71d7Dqk (https://youtu.be/rvug71d7Dqk), read back Private with publishAt 2026-11-21T11:30:00Z (sha256 06b935f706c8ac3b1ac4d576d22a20193eb0fd742047f36f0be534b7604b0554)"
         }
       ],
-      "remaining_action": "Close J2248 with rvug71d7Dqk, clear its awaits_ben, post #99 report, and complete J2431",
+      "remaining_action": "Completed J2431",
       "kind": "studio",
       "plain": "Upload and schedule the muons Short Ben just passed.",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-09T02:08Z",
+        "at": "2026-11-09T02:14Z",
         "by": "gemini",
-        "note": "Uploaded fri06_muons_ground_v04.mp4 Private as rvug71d7Dqk (publishAt 2026-11-21T11:30:00Z, en-GB, cover set, Studio Rel"
+        "note": "Closed J2248 with rvug71d7Dqk, cleared awaits_ben, and verified read-back in UPLOADS.json"
       },
       "taskKeys": [
         "OWB:024"
-      ]
+      ],
+      "approved_from": {
+        "what": "Watch 024 muons Short v04 ('Muons Shouldn't Reach the Ground. They Do.') — fixed 0:19 stray code under 'Light Speed?' — before any Private upload or schedule (provisional slot Sat 21 Nov 11:30)",
+        "file": "OWB UAT/024_fri06_muons_ground_v04/fri06_muons_ground_v04.mp4",
+        "version": "v04",
+        "airs": "2026-11-21T11:30Z",
+        "title": "Muons Shouldn't Reach the Ground. They Do.",
+        "number": "024",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2248",
+        "okAt": "2026-11-08T23:41Z",
+        "okRef": "rvug71d7Dqk"
+      },
+      "done_ref": "rvug71d7Dqk"
     },
     {
       "id": "J2432",
