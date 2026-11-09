@@ -68,7 +68,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2303 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
 | J2313 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2040 |  |
-| J2322 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2033 |  |
 | J2323 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2351 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J1809 |  |
@@ -85,7 +84,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
-| J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
