@@ -207275,13 +207275,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-09T02:16Z",
-      "eta": "2026-11-09T04:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T20:25Z",
-      "result": "",
+      "result": "parked for Chief: J2414 condition check complete in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0). HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633) and HOS PR #455 (72608f30 OPEN/SUCCESS) re-verified on Mini/NAS; J2339 step 2/3 audio_input + 23-frame 1-Hz QA PASS re-verified via read_file. Step 3/3 continuous 30fps moving_video_input remains unmet (capability_probe.py gemini --record at 02:18Z passed audio 0.91 and failed video; read_file on video/mp4 returns 23 static 1-Hz frames 00:00..00:22; capabilities.json corrected to ['audio_input']). Elected Chief: run jobs.py wait J2339 --type capability --requires moving_video_input --recheck J2414 --check-at 2026-11-09T08:20:00Z and close J2414; keep J0912 held at 4/4.",
       "history": [
         {
           "at": "2026-11-08T20:25Z",
@@ -207312,6 +207312,11 @@
           "at": "2026-11-09T02:21Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: condition verification artifact committed in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0); parking J2414 for elected Chief to record wait --recheck J2414 on J2339 and close J2414"
+        },
+        {
+          "at": "2026-11-09T02:21Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2414 condition check complete in jobs/reviews/J2414/REVIEW.md (fd8a46d1c0). HOS 008 Short A v04 (76d801a3), preserved v03 (f88315e0), locked VO (40ed4c4e), s06 plate (611e2633) and HOS PR #455 (72608f30 OPEN/SUCCESS) re-verified on Mini/NAS; J2339 step 2/3 audio_input + 23-frame 1-Hz QA PASS re-verified via read_file. Step 3/3 continuous 30fps moving_video_input remains unmet (capability_probe.py gemini --record at 02:18Z passed audio 0.91 and failed video; read_file on video/mp4 returns 23 static 1-Hz frames 00:00..00:22; capabilities.json corrected to ['audio_input']). Elected Chief: run jobs.py wait J2339 --type capability --requires moving_video_input --recheck J2414 --check-at 2026-11-09T08:20:00Z and close J2414; keep J0912 held at 4/4."
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2414 on J2339 (moving_video_input hold) and closes J2414",
