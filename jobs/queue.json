@@ -207870,10 +207870,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-09T02:21Z",
-      "eta": "2026-11-09T04:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T22:30Z",
       "result": "",
@@ -208512,6 +208512,11 @@
           "at": "2026-11-09T02:23Z",
           "by": "macbook-2",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-09T02:47Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
         }
       ],
       "remaining_action": "implement blur-pad and letterbox check in gate_shorts_open.py + unit tests, update Shorts build rules, and scan upcoming Shorts",
