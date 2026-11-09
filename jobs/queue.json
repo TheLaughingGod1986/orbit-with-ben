@@ -1,5 +1,5 @@
 {
-  "next_id": 2448,
+  "next_id": 2449,
   "jobs": [
     {
       "id": "J0001",
@@ -211434,6 +211434,35 @@
       "remaining_action": "Old Orbit longs repackage: 2 new title + thumbnail packages each for the 11 weak longs (rule 23)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "listing"
+    },
+    {
+      "id": "J2448",
+      "title": "Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "From J2447 (05_Analytics/owb/REPACKAGE_2026-11.md, batch 1 rows). Build packages A and B thumbnails for Black Hole 3xrxdmaOwJI, Jupiter -jmMROGoZCM, Andromeda ojk-dfOpAmw with the house thumbnail builders (text from the builders, never the image model), from the real NASA/ESA source images J2447 names. Checks: 1280x720, under 2 MB, readable at 168 px (thumb_preview.py), nothing under the duration badge. Save to each film's 08_Thumbnails/repackage_2026-11/ on studio-live, list paths + sha256 in jobs.py done --result. No Studio change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2447",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T21:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T21:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "thumb"
     }
   ],
   "focus": [
