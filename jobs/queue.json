@@ -208584,17 +208584,22 @@
           "at": "2026-11-09T03:00Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: pulled 90-day and 28-day country geography via YouTube Analytics API and captured HOS Studio Audience tab on 9460"
+        },
+        {
+          "at": "2026-11-09T03:05Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: captured Studio Audience tabs (28d and 90d) on both OWB (9223) and HOS (9460); both channels show 'Not enough viewer data to show this report' on the 'When your viewers are on YouTube' card"
         }
       ],
-      "remaining_action": "Inspect HOS Studio Audience screenshots and read OWB Studio Audience tab on 9223",
+      "remaining_action": "Capture Advanced Mode geography and device splits and write 05_Analytics/PUBLISH_TIME_READ_2026-11.md",
       "kind": "studio",
       "plain": "Look up in YouTube Studio when our viewers are actually online, so we can pick the best upload times.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-09T03:00Z",
+        "at": "2026-11-09T03:05Z",
         "by": "gemini",
-        "note": "Step 1 complete: pulled 90-day and 28-day country geography via YouTube Analytics API and captured HOS Studio Audience t"
+        "note": "Step 2 complete: captured Studio Audience tabs (28d and 90d) on both OWB (9223) and HOS (9460); both channels show 'Not "
       },
       "taskKeys": [
         "OWB:028",
