@@ -42,7 +42,10 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       });
       const base=process.env.STUDIO_PREVIEW_URL||'http://127.0.0.1:8765';
       await page.goto(base);
-      await page.getByRole('heading',{name:/Next for your review/}).waitFor();
+      await page.getByRole('heading',{name:/Ready for your review/}).waitFor();
+      await page.locator('.overview-feature').getByRole('link',{name:/Watch & review/}).click();
+      await page.locator('#uat-notes').waitFor();
+      await page.locator('#nav').getByRole('link',{name:/Overview/}).click();
       assert.equal(await page.locator('.overview-stats>a').count(),3);
       const statValues=await page.locator('.overview-stats b').allTextContents();
       assert.deepEqual(statValues,['2','3','0']);
@@ -81,7 +84,7 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       const text=await page.locator('main').innerText();
       assert(text.includes('33%')&&text.includes('3 of 9 milestones complete'));
       assert(text.includes('Picture production')&&text.includes('101/101 Flow shots generated'));
-      assert(text.includes('Chief reviews and approves this stage.')&&text.includes('Assigned agent: Grok'));
+      assert(text.includes('Chief reviews and approves this stage.')&&text.includes('Recorded job owner')&&text.includes('Grok'));
       assert(!text.includes('J1191 complete')&&!text.includes('/private/tmp/'),'raw evidence hidden by default');
       assert.equal(await page.locator('.milestone-card[open]').count(),1);
       const script=page.locator('details[data-stage="script"]');
@@ -94,7 +97,7 @@ const board={tracker:{videos:[v,{...v,key:'HOS:998',checkId:'HOS-998',title:'The
       // Returning to visibility triggers poll with the same SHA; expanded evidence stays open.
       await page.evaluate(()=>document.dispatchEvent(new Event('visibilitychange')));
       await page.waitForTimeout(150);
-      assert(await page.locator('details[data-stage="picture"] details.technical').evaluate(x=>x.open));
+      assert(await page.locator('details[data-stage="picture"] details[data-disclosure$="-tech"]').evaluate(x=>x.open));
       assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`detail overflow at ${width}`);
       await page.evaluate(()=>window.scrollTo(0,0));
       assert((await page.locator('.video-heading').boundingBox()).y>=16,'content starts below top inset');

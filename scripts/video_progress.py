@@ -9,6 +9,8 @@ import re
 import subprocess
 from pathlib import Path
 
+import channels
+
 OWB_STAGES = ["topic", "script", "sources", "vo", "shots", "picture", "edit", "thumbs", "upload"]
 
 
@@ -78,21 +80,21 @@ def historical_stages(repo, channel, since, cache):
 
 
 def job_targets(j):
-    explicit = {k for k in j.get("taskKeys", []) if re.fullmatch(r"(?:HOS|OWB):\d{3}", k)}
+    explicit = {k for k in j.get("taskKeys", []) if channels.strict_key_re().fullmatch(k)}
     if explicit:
         return sorted(explicit)
     title = j.get("title", "")
-    keys = {ch.upper() + ":" + no for ch, no in re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", title, re.I)}
+    keys = {ch.upper() + ":" + no for ch, no in channels.key_re().findall(title)}
     film = str(j.get("film", ""))
-    if re.fullmatch(r"(?:HOS|OWB):\d{3}", film):
+    if channels.strict_key_re().fullmatch(film):
         keys.add(film)
     elif not keys:
         number = re.match(r"^\s*(\d{3})\b", title)
         no = film if re.fullmatch(r"\d{3}", film) else number[1] if number else ""
         if no:
-            channel = "HOS" if j.get("repo") == "hos" or re.search(r"\bHOS\b|history of science", title, re.I) else "OWB"
+            channel = channels.label_of_job(j)
             keys.add(channel + ":" + no)
-    keys.update(ch.upper() + ":" + no for ch, no in re.findall(r"\b(HOS|OWB)\s*[:·-]?\s*(\d{3})\b", j.get("result", ""), re.I))
+    keys.update(ch.upper() + ":" + no for ch, no in channels.key_re().findall(j.get("result", "")))
     return sorted(keys)
 
 

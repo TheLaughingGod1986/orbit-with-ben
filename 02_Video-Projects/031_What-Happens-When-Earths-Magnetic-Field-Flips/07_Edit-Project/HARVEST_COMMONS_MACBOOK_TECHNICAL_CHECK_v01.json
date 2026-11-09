@@ -1,0 +1,51 @@
+{
+  "job": "J2141",
+  "worker": "macbook-2",
+  "spend_gbp": 0,
+  "source_pr": 572,
+  "source_commit": "cb3ecfa51c8373badff8dbd1b8c64d1ab9cd8f3f",
+  "scope": "Exact original recovery, provenance and static-file integrity only; no KEEP, composite or film QA",
+  "checks": [
+    {
+      "asset_id": "commons_tane_mahuta",
+      "checks": {
+        "original_sha256": true,
+        "commons_sha1": true,
+        "native_dimensions": true,
+        "licence_unchanged": true,
+        "reuse_cap": true,
+        "attribution_preserved": true,
+        "source_evidence_path": true,
+        "licence_evidence_path": true
+      },
+      "local_path": "/Users/ben/_desk/J2141-commons-macbook-v01/tane_mahuta.jpg",
+      "sha256": "e7e7d5c92b36919d5acdac038079e522172532b85f274485d39bcf1a9fce8ce0",
+      "dimensions": [
+        3264,
+        4896
+      ]
+    },
+    {
+      "asset_id": "commons_hand_stencils",
+      "checks": {
+        "original_sha256": true,
+        "commons_sha1": true,
+        "native_dimensions": true,
+        "licence_unchanged": true,
+        "reuse_cap": true,
+        "attribution_preserved": true,
+        "source_evidence_path": true,
+        "licence_evidence_path": true,
+        "licence_terms_path": true
+      },
+      "local_path": "/Users/ben/_desk/J2141-commons-macbook-v01/hand_stencils.jpg",
+      "sha256": "0906747d53014d534c3042e2d64b0b35c9580a7ad68ac2605b39952dea6fcf63",
+      "dimensions": [
+        4161,
+        2774
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-commons-macbook-v01/CONTACT_v01.jpg",
+  "contact_sha256": "a83de1b67e309c528c77aabcfdcea1c5d9cee970ec3b94cdc4968629dbb690be"
+}

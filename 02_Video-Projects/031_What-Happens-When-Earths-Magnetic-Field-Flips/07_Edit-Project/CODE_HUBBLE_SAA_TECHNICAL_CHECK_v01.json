@@ -1,0 +1,29 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "source_row": 11,
+  "quote": "seven to nine orbits in a row",
+  "checks": [
+    {
+      "id": "code_graphic_031_r27_hubble_saa_v01",
+      "sha256": "05fdff082a478efc59288fbd94ebdebf3b6f6b149086960fd2204965ae435e24",
+      "sha256_match": true,
+      "dimensions": [1920, 1080],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 4.64,
+      "frames": 116,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "seven to nine orbits",
+      "start_s": 280.42,
+      "ends_before_fact_card_s": 285.06,
+      "static_sample_times_s": [0.16, 0.7, 1.4, 2.4, 4.2],
+      "samples_inspected": "tally builds from two marks toward seven, then nine; labels follow seven / orbits / in a row / every day; transparent overlay"
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-hubble-saa-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "5cf81589ad6eaa3f6e2744673bd2aec2ce460f5b1b6417f4edb794148149ca58"
+}

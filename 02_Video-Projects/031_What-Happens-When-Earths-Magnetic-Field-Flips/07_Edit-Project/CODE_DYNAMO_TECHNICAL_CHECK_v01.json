@@ -1,0 +1,116 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "source_rows": [
+    6,
+    18
+  ],
+  "checks": [
+    {
+      "id": "code_graphic_031_r16_dynamo_v01",
+      "sha256": "2dc1469200be9952e05c05c592b0261c4c261c859f5606eec059b2c3e63e7141",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 9.44,
+      "expected_duration_s": 9.44,
+      "frames": 236,
+      "expected_frames": 236,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "Most of the time,",
+      "start_s": 159.32,
+      "variant": "align",
+      "static_samples": [
+        {
+          "t": 0.2,
+          "mean_luma": 39.4
+        },
+        {
+          "t": 4.25,
+          "mean_luma": 39.8
+        },
+        {
+          "t": 9.19,
+          "mean_luma": 39.8
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r17_dynamo_v01",
+      "sha256": "78f031e38d0ff8319c630c7146f68bcf7c9190a8ecc8d49a5afe288bdc0df534",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 14.32,
+      "expected_duration_s": 14.32,
+      "frames": 358,
+      "expected_frames": 358,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "Swirling eddies",
+      "start_s": 172.68,
+      "variant": "tip",
+      "static_samples": [
+        {
+          "t": 0.2,
+          "mean_luma": 39.5
+        },
+        {
+          "t": 6.44,
+          "mean_luma": 40.0
+        },
+        {
+          "t": 14.07,
+          "mean_luma": 39.5
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r52_dynamo_v01",
+      "sha256": "43c0d2b11d332cadbf5dbf74aa5ab43371c83fe0f43124e572331da913245342",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 2.4,
+      "expected_duration_s": 2.4,
+      "frames": 60,
+      "expected_frames": 60,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "settled and locked",
+      "start_s": 544.0,
+      "variant": "settle",
+      "static_samples": [
+        {
+          "t": 0.2,
+          "mean_luma": 40.6
+        },
+        {
+          "t": 1.08,
+          "mean_luma": 40.5
+        },
+        {
+          "t": 2.15,
+          "mean_luma": 40.6
+        }
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-dynamo-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "6983b88738718ea9396d5253a7490346895176c550e76db028f37a607cc01ba4"
+}

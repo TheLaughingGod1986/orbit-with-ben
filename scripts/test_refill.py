@@ -177,3 +177,26 @@ class NoArbitraryHolds(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class MonthlyReviews(unittest.TestCase):
+    def item(self):
+        return {"key":"monthly-test", "title":"Review", "needs":"mini", "body":"Read data", "monthly_on":1,"monthly_at":"09:00","start_month":"2026-11"}
+    def test_calendar_catchup_even_with_full_queue_and_once_after_completion(self):
+        d=empty(); it=self.item()
+        for _ in range(4): jobs.do_add(d,title="pipeline",needs="mini",body="",by="codex",at=T0)
+        at=dt.datetime(2026,11,3,10,tzinfo=dt.timezone.utc)
+        self.assertEqual(len(refill.do_refill(d,[it],at)),1)
+        j=d['jobs'][-1];self.assertEqual(j['report_month'],'2026-10');self.assertIn('2026-10',j['body'])
+        j['status']='done';self.assertEqual(refill.do_refill(d,[it],at+H),[])
+        d['backlog_last']={};self.assertEqual(refill.do_refill(d,[it],at+H),[])
+    def test_first_day_time_and_next_month_despite_previous_hold(self):
+        d=empty();it=self.item();at=dt.datetime(2026,11,1,8,59,tzinfo=dt.timezone.utc)
+        self.assertEqual(refill.do_refill(d,[it],at),[])
+        self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
+        d['jobs'][-1]['status']='blocked'
+        self.assertEqual(len(refill.do_refill(d,[it],dt.datetime(2026,12,1,9,tzinfo=dt.timezone.utc))),1)
+        self.assertEqual(d['jobs'][-1]['report_month'],'2026-11')
+    def test_summer_london_time_and_no_early_fallback(self):
+        d=empty();it=self.item();at=dt.datetime(2027,6,1,7,59,tzinfo=dt.timezone.utc)
+        self.assertEqual(refill.do_refill(d,[it],at),[])
+        self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
