@@ -658,6 +658,67 @@ def apply_ask(card: dict, e: dict, checks: dict, now: datetime) -> dict:
     return card
 
 
+# ---- Already on YouTube (J2427, Ben 8 Nov 2026: "The 8 that passed, what is left to schedule these?"). An OK'd cut whose
+# follow-on upload or swap is recorded in UPLOADS.json is scheduled (or live), not "waiting for the Chief". The ask and
+# OK cards are keyed by job, so they never meet the upload's own card: match by the cut's file name (the UAT copy's
+# "_PHONE" suffix dropped), or by the one live video id of the right kind that the delivering job's result names.
+def upload_files(root: Path | None = None) -> dict:
+    """{"file": {basename: row}, "id": {videoId: row}} for every live upload (not retired, not swapped out)."""
+    root = root or ROOT
+    try:
+        vids = json.loads((root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json").read_text()).get("videos", {})
+    except (OSError, ValueError):
+        vids = {}
+    out: dict = {"file": {}, "id": {}}
+    for vid, meta in vids.items():
+        if not isinstance(meta, dict) or meta.get("retired") or meta.get("supersededBy"):
+            continue
+        row = {"videoId": vid, "kind": meta.get("kind") or "long", "publishAt": meta.get("publishAt") or "",
+               "privacyStatus": meta.get("privacyStatus") or meta.get("privacy") or ""}
+        out["id"][vid] = row
+        if meta.get("file"):
+            out["file"][Path(str(meta["file"])).name] = row
+    return out
+
+
+def _cut_name(path: str) -> str:
+    name = Path(str(path or "")).name
+    return re.sub(r"_PHONE(?=\.[A-Za-z0-9]+$)", "", name)
+
+
+def matched_upload(e: dict, files: dict | None, result: str = "") -> dict | None:
+    """The upload that carries this OK'd cut, if it is on YouTube as Private + scheduled or Public."""
+    files = files or {}
+    row = (files.get("file") or {}).get(_cut_name(e.get("file") or ""))
+    if row is None and result:
+        ids = {x for x in re.findall(r"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}(?![A-Za-z0-9_-])", result)}
+        rows = [(files.get("id") or {}).get(x) for x in ids]
+        rows = [r for r in rows if r and r.get("kind") == (e.get("type") or r.get("kind"))]
+        row = rows[0] if len(rows) == 1 else None
+    if row and (row.get("privacyStatus") == "public" or row.get("publishAt")):
+        return row
+    return None
+
+
+def settle_uploaded(videos: list[dict], card: dict, row: dict, now: datetime) -> None:
+    """Move an OK'd card that is already on YouTube to Done (scheduled/live). A job-keyed ask/OK card that duplicates the
+    video's own card, or whose video aired over a day ago, is dropped: the video's own card or the tracker has it."""
+    own = str(card.get("key") or "").split(":")[1:2] in (["ASK"], ["OK"])
+    vid = row["videoId"]
+    other = any(v is not card and (v.get("youtube") or {}).get("videoId") == vid for v in videos)
+    pub = _parse_iso(row.get("publishAt"))
+    if own and (other or (pub and now > pub + timedelta(days=1))):
+        videos.remove(card)
+        return
+    # A card with other work still running (031's long is scheduled while its Short 2 upload is queued) is still
+    # scheduled: the running work shows on its own card.
+    yt = youtube_state(None, row)
+    card.update(lane="done", readyFor="", waitingOn="YouTube", flags=[], okNote="", collapsed=False, youtube=yt,
+                line=(f"Private, scheduled {yt['publishAtLondon']}." if yt["state"] == "scheduled" else "On YouTube."))
+    card.pop("ask", None)
+    card.pop("approved", None)
+
+
 def ask_card(e: dict) -> dict:
     """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap)."""
     airs = e.get("airs") or ""
@@ -669,7 +730,7 @@ def ask_card(e: dict) -> dict:
             "by": "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
 
 
-def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) -> None:
+def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, files: dict | None = None) -> None:
     by_key = {v["key"]: v for v in videos}
     for e in asks or []:
         if not ask_live(e, checks):
@@ -680,6 +741,11 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime) 
             videos.append(card)
             by_key[card["key"]] = card
         apply_ask(card, e, checks, now)
+        row = matched_upload(e, files) if card.get("lane") == "approved" else None
+        if row:
+            settle_uploaded(videos, card, row, now)
+            if card not in videos:
+                by_key.pop(card["key"], None)
 
 
 # ---- Approved, on its way (Ben, 25 Oct 2026 14:13: "Ones I approve can they go into a waiting for deployment lane or
@@ -816,7 +882,8 @@ def approved_card(e: dict) -> dict:
             "title": "", "by": e.get("by") or "", "kind": ""}], "check": None, "shortId": "", "parent": "", "collapsed": False}
 
 
-def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime) -> None:
+def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime,
+                 files: dict | None = None) -> None:
     by_key = {v["key"]: v for v in videos}
     for e in entries or []:
         if e.get("jobStatus") == "cancelled":
@@ -828,6 +895,16 @@ def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now:
         if card is not None and card.get("lane") == "ready" and card.get("readyFor") == "Ben" and \
                 (card.get("ask") or {}).get("version") not in ("", None, e.get("version")):
             continue  # a newer cut of the same video asks Ben again: that ask wins
+        row = matched_upload(e, files, e.get("result") or "") if e.get("jobStatus") == "done" else None
+        if row and not read_back(e, card):
+            if card is None:
+                card = approved_card(e)
+                videos.append(card)
+                by_key[card["key"]] = card
+            settle_uploaded(videos, card, row, now)
+            if card not in videos:
+                by_key.pop(card["key"], None)
+            continue
         if read_back(e, card):
             if card is None:
                 airs = _parse_iso(e.get("airs"))
@@ -1037,11 +1114,14 @@ def build_videos(
     asks: list[dict] | None = None,
     approved: list[dict] | None = None,
     alljobs: list[dict] | None = None,
+    files: dict | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
     overrides = overrides if overrides is not None else load_overrides()
     watch = watch or {}
+    # Tests that pass their own uploads index get no live UPLOADS.json file match unless they pass `files` too.
+    files = files if files is not None else (upload_files() if uploads is None else {})
     uploads = uploads if uploads is not None else uploads_index()
     vid_keys: dict = {}
     for key, rows in uploads.items():
@@ -1205,9 +1285,9 @@ def build_videos(
             v["collapsed"] = False
 
     # Jobs waiting on Ben (awaits_ben on the job): their cards go to Ready for OK, soonest deadline first.
-    add_asks(videos, asks or [], checks, now)
+    add_asks(videos, asks or [], checks, now, files)
     # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
-    add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now)
+    add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now, files)
     settle_ready(videos, now)
 
     # Approval/ask overlays may carry an old project format too. Resolve the
