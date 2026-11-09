@@ -26,7 +26,7 @@ SPECS = [
     dict(id='r22_surface_72m', row=22, kind='counter', labels=['FROM THE SURFACE', '72 MIN'], value=72, source_rows=[7]),
     dict(id='r27_no_oxygen', row=27, kind='absence', labels=['ALMOST NO OXYGEN'], source_rows=[9]),
     dict(id='r30_dunes_label', row=30, kind='card', labels=['CENTURIES BETWEEN SHOWERS'], source_rows=[10]),
-    dict(id='r32_scalemap', row=32, kind='area', labels=['KRAKEN MARE', '400,000 KM²', '≈ 5× LAKE SUPERIOR'], source_rows=[11]),
+    dict(id='r32_scalemap', row=32, kind='area', labels=['KRAKEN MARE', '≈ 400,000 KM²', '≈ 5× LAKE SUPERIOR'], source_rows=[11]),
     dict(id='r37_spark_question', row=37, kind='question', labels=['WOULD IT EXPLODE?', '?'], source_rows=[14]),
     dict(id='r38_reserves', row=38, kind='qualitative', labels=['TITAN', 'HUNDREDS OF TIMES', 'EARTH OIL + GAS'], source_rows=[14]),
     dict(id='r41_no_flame', row=41, kind='extinguish', labels=['NO OXYGEN TO BURN'], source_rows=[14]),
@@ -69,12 +69,17 @@ def frame(s, t=1.8):
         d.ellipse((660, y, 800, y+140), fill=BLUE)
         d.polygon([(660,y+70),(730,y-90),(800,y+70)], fill=BLUE)
     elif kind == 'spectrum':
-        arrow(d, (200, 510), (610, 510))
-        d.polygon([(620,360),(620,660),(830,510)], outline=WHITE, width=5)
+        arrow(d, (200, 510), (648, 510))
+        d.polygon([(580,650),(720,360),(860,650)], outline=WHITE, width=5)
         for i, col in enumerate([BLUE, WHITE, GOLD]):
-            arrow(d, (840,510), (840+390*p,510+(-120+i*120)*p), col)
-        d.line((1120,510,1120,640), fill=(25,40,60,255), width=18)
-        label(d, (900,740), lines[1], colour=GOLD)
+            arrow(d, (792,510), (792+438*p,510+(-120+i*120)*p), col)
+        # J2177: reveal the outlined notch only after the rays arrive.
+        # 792 + 438 * .75 = 1120.5, so it cannot float ahead of the light.
+        if p >= .75:
+            d.rounded_rectangle((1106,480,1134,650), radius=6,
+                                fill=(20,28,42,255), outline=GOLD, width=4)
+            d.line((1120,655,1120,720), fill=GOLD, width=5)
+            label(d, (960,735), lines[1], colour=GOLD)
     elif kind == 'split':
         label(d, (190,440), lines[1], 54)
         arrow(d, (780,480), (1120,480))
@@ -108,7 +113,7 @@ def frame(s, t=1.8):
         d.rectangle((210,390,1110,750),outline=WHITE,width=5)
         d.rectangle((216,396,216+888*p,744),fill=BLUE)
         for n in range(1,5):d.line((210+180*n,390,210+180*n,750),fill=WHITE,width=3)
-        label(d,(240,450),lines[1],80,(20,28,42,255))
+        label(d,(240,450),lines[1],76,WHITE)
         label(d,(210,810),lines[2],58,GOLD)
     elif kind == 'question':
         label(d,(800,390+pulse),lines[1],220,BLUE)

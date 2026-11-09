@@ -1,0 +1,278 @@
+{
+  "job": "J2157",
+  "ruling_ref": "J2347 (6c79d48b83)",
+  "script_master": "02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/01_Script/pluto_frozen_heart_script_master_v03.md",
+  "stem": "pluto_frozen_heart_vo_v03",
+  "pcm": {
+    "frames": 29575680,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "sample_width_bytes": 2,
+    "duration_s": 616.16,
+    "decode_wav_ok": true,
+    "decode_mp3_ok": true
+  },
+  "loudness": {
+    "lufs_integrated": -19.9,
+    "lra_lu": 4.3,
+    "mean_volume_db": -23.0,
+    "max_volume_db": -3.7,
+    "true_peak_dbtp": -3.7
+  },
+  "hashes": {
+    "new_v03": {
+      "pluto_frozen_heart_vo_v03.wav": "2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685",
+      "pluto_frozen_heart_vo_v03.mp3": "86cfc44247d0c8e7aee535c2fe50edb5038351041008e3f304e82fd84f124456",
+      "pluto_frozen_heart_vo_v03_TAKE.json": "370b876904c53040f4b40a5c34aa838caef005d2c97b24edeb0c1c268ae5deb6",
+      "stt_raw.json": "af85f3b6fbcb4c0f549f19f0c526fed18f9454bdb9cfa27958ff5a2770d75df7",
+      "words.srt": "cd4168acc18022c764a13c501c576ad3d84a72f3b1e0944a23ee68a6d79d51b3",
+      "ch05_v03.wav": "2a5c6e02fbf89f7de66bafeeb0b24d83c1508f261daae676b262414393530382",
+      "ch06_v03.wav": "eb82d85dc1012bbfd1d24ceed8d58873d49d637da09d27ccf97a7b802621964e"
+    },
+    "preserved_originals": {
+      "pluto_frozen_heart_vo_v01.wav": "86483fb4919c3fd097a84d3c0d43f52a89521f87b2ff6f1976dea1506d2c8618",
+      "pluto_frozen_heart_vo_v01.mp3": "b7fdd348819c9e2dd98a01fc8ca272f1a135c6ff033302ad98022d8eb7bcaf85",
+      "pluto_ch05_looked_back_v03.wav": "4625cf1166cb13a4f09fe8163e82e8bd760eafee50f7212cac5c8e54982416de",
+      "pluto_ch06_real_worlds_v05_request.wav": "10783edfcdf109c1e1589ff1d2a8b93c0a9b0f2b40bfcf5285851e0527288d23",
+      "pluto_ch06_real_worlds_v05_request.mp3": "a42c50355893f0b24a3e4d9280dfa329a79501f4dde7a39eddf690ddf7bfad88",
+      "pluto_ch06_real_worlds_v04_request.wav": "9fd9f90f8f936176c52f4003d8ce18d6fa5b17d20ba78d6634ef7b93b0c95f8d",
+      "pluto_ch06_real_worlds_v04_request.mp3": "7c89a274c93656a85ddfea6a86ac1601cee22fd71c58d09a72ee289ff7ec4251",
+      "pluto_ch06_real_worlds_v03_request.wav": "e46b491f565b1dd1114213fd33fcf19eacf81c50cc1f5fd9f737070f68d74a5d",
+      "pluto_ch05_looked_back_v02.wav": "9372255a0ae75b183206ef3e3263420c6e517b1b62341683cc0f6a76032bdc19"
+    }
+  },
+  "splice_map": {
+    "ch05": {
+      "retained_v01_span_s": [
+        0.0,
+        76.16
+      ],
+      "retained_v01_frames": 3655680,
+      "retained_v01_last_word": {
+        "word": "today.",
+        "start_s": 74.8,
+        "end_s": 75.22
+      },
+      "boundary_window_before_dbfs": -64.92,
+      "boundary_end_sample_before": [
+        -1,
+        -1
+      ],
+      "appended_pickup": "02_Voiceover/pickups/pluto_ch05_looked_back_v03.wav",
+      "appended_pickup_span_s": [
+        0.0,
+        6.2
+      ],
+      "appended_pickup_frames": 297600,
+      "boundary_start_sample_after": [
+        46,
+        46
+      ],
+      "boundary_window_after_dbfs": -67.84,
+      "new_ch05_duration_s": 82.36,
+      "new_ch05_frames": 3953280,
+      "master_splice_time_s": 528.06
+    },
+    "ch06": {
+      "retained_v01_span_s": [
+        0.0,
+        62.08
+      ],
+      "retained_v01_frames": 2979840,
+      "retained_v01_last_word": {
+        "word": "craters.",
+        "start_s": 60.08,
+        "end_s": 60.72
+      },
+      "boundary_window_before_dbfs": -93.19,
+      "boundary_end_sample_before": [
+        1,
+        1
+      ],
+      "appended_pickup": "02_Voiceover/pickups/pluto_ch06_real_worlds_v05_request.wav",
+      "appended_pickup_span_s": [
+        0.0,
+        19.12
+      ],
+      "appended_pickup_frames": 917760,
+      "boundary_start_sample_after": [
+        283,
+        283
+      ],
+      "boundary_window_after_dbfs": -29.52,
+      "new_ch06_duration_s": 81.2,
+      "new_ch06_frames": 3897600,
+      "master_splice_time_s": 597.04
+    }
+  },
+  "chapters": [
+    {
+      "frames": 3133440,
+      "duration_s": 65.28,
+      "sha256_wav": "16fc20f8658e782686d9c8d2d19a6f5ed6a9c7b2499d442b5d8b314bb0c766c4",
+      "last_3_windows_50ms_dbfs": [
+        -34.8,
+        -37.84,
+        -38.66
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -31.77,
+        "50": -38.66,
+        "100": -38.23,
+        "250": -33.73
+      },
+      "final_stereo_sample": [
+        2464,
+        2464
+      ],
+      "part": "ch00.wav",
+      "sha256_mp3": "6eb5a430fb5692bebcd350bd6dc66cb36367ced02cda15bf78610b8e42f7700a",
+      "master_start_s": 0.0,
+      "master_end_s": 65.28
+    },
+    {
+      "frames": 4450560,
+      "duration_s": 92.72,
+      "sha256_wav": "5ee3fa2cf96d31afb37dc8e3d570c67264e8aff720061f619e165d4064221ee2",
+      "last_3_windows_50ms_dbfs": [
+        -39.4,
+        -42.44,
+        -45.9
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -43.39,
+        "50": -45.9,
+        "100": -43.84,
+        "250": -38.36
+      },
+      "final_stereo_sample": [
+        586,
+        586
+      ],
+      "part": "ch01.wav",
+      "sha256_mp3": "f2f75f0bd085a07bc795d139dd41bb9a50a1954ff4358ab28c5794c152f27810",
+      "master_start_s": 65.98,
+      "master_end_s": 158.7
+    },
+    {
+      "frames": 4857600,
+      "duration_s": 101.2,
+      "sha256_wav": "53368bbe8c102b66823d48676a1a51237c0cff6d875d9fce7e7a9f7a75f1c558",
+      "last_3_windows_50ms_dbfs": [
+        -34.69,
+        -35.49,
+        -41.25
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -53.66,
+        "50": -41.25,
+        "100": -37.48,
+        "250": -34.27
+      },
+      "final_stereo_sample": [
+        -41,
+        -41
+      ],
+      "part": "ch02.wav",
+      "sha256_mp3": "f97d85e72ab730a49fd47b00ec482cd4260f6e6006316fac533ed9b32da88ac5",
+      "master_start_s": 159.4,
+      "master_end_s": 260.6
+    },
+    {
+      "frames": 5107200,
+      "duration_s": 106.4,
+      "sha256_wav": "28d2395caa5124dc2ddcf5cc7859ad4fe2d3d3482e248dbbaab47b77273c1dab",
+      "last_3_windows_50ms_dbfs": [
+        -41.64,
+        -41.76,
+        -40.42
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -54.44,
+        "50": -40.42,
+        "100": -41.04,
+        "250": -39.49
+      },
+      "final_stereo_sample": [
+        7,
+        7
+      ],
+      "part": "ch03.wav",
+      "sha256_mp3": "d36c920f52a793a44f476ae75bdc1459a0aa395c71192752e98bf72102420758",
+      "master_start_s": 261.3,
+      "master_end_s": 367.7
+    },
+    {
+      "frames": 3974400,
+      "duration_s": 82.8,
+      "sha256_wav": "cf908f27e634b7213d901d1f7e486249789b1f345c54cfd220b39d5f9226afca",
+      "last_3_windows_50ms_dbfs": [
+        -39.69,
+        -40.52,
+        -39.88
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -42.01,
+        "50": -39.88,
+        "100": -40.19,
+        "250": -40.36
+      },
+      "final_stereo_sample": [
+        -5,
+        -5
+      ],
+      "part": "ch04.wav",
+      "sha256_mp3": "17f24ba7621e1709016b4092766285a1265a0802b228e37d03a97c13382d0f93",
+      "master_start_s": 368.4,
+      "master_end_s": 451.2
+    },
+    {
+      "frames": 3953280,
+      "duration_s": 82.36,
+      "sha256_wav": "2a5c6e02fbf89f7de66bafeeb0b24d83c1508f261daae676b262414393530382",
+      "last_3_windows_50ms_dbfs": [
+        -90.67,
+        -90.64,
+        -90.64
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -90.57,
+        "50": -90.64,
+        "100": -90.64,
+        "250": -90.65
+      },
+      "final_stereo_sample": [
+        1,
+        1
+      ],
+      "part": "ch05.wav",
+      "sha256_mp3": "93ba82f6f44130b242a608e98f0e77b94cc4e3ffe830dbc66bbadc62a4d21471",
+      "master_start_s": 451.9,
+      "master_end_s": 534.26
+    },
+    {
+      "frames": 3897600,
+      "duration_s": 81.2,
+      "sha256_wav": "eb82d85dc1012bbfd1d24ceed8d58873d49d637da09d27ccf97a7b802621964e",
+      "last_3_windows_50ms_dbfs": [
+        -43.26,
+        -43.32,
+        -36.27
+      ],
+      "tail_rms_dbfs_by_ms": {
+        "10": -33.41,
+        "50": -36.27,
+        "100": -38.5,
+        "250": -40.5
+      },
+      "final_stereo_sample": [
+        -1427,
+        -1427
+      ],
+      "part": "ch06.wav",
+      "sha256_mp3": "f4d7d6fae49c46eb00ab47df6c655d3ea9bb8245a85202e2e561472303763594",
+      "master_start_s": 534.96,
+      "master_end_s": 616.16
+    }
+  ]
+}

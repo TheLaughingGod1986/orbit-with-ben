@@ -2,23 +2,28 @@
 
 Three Shorts for the week of the 027 long (*What If Earth Stopped Spinning?*, Sun 22 Nov 18:00 London). They're written for **VO now, picture later**, under Ben's 4 Oct order. These are Claude's decisions under the 3 Oct order, and Ben can overrule them.
 
-House rules (the same as 026), plus the Shorts feed lessons in `docs/ORBIT_PLAYBOOK_LESSONS.md` §6:
+House rules (the same as 026), plus the Shorts feed lessons in `docs/ORBIT_PLAYBOOK_LESSONS.md` §6 and the **`J2429` First-Second Rule (9 Nov 2026)**:
+- **First-second rule (`0.0–1.5 s`, `J2429`):** Frame 0 (`t = 0.00 s`) is a full-bleed `9:16` (`mode: "cover"`, `>=60%` subject, `<=30%` empty black sky, no `fit` letterbox bars, no `16:9` blur-pad bands [`J2421`], no slow fade-in from black, no Orbit at `0.0 s`) moving payoff image (`frame0_diff_0_1_5s >= 1.50`, `frame0_kick_0_0_5s >= 0.40`). The 2–4 word hook caption (white + `#FFE000` yellow highlight word) is already stamped on frame 0 (`t = 0.00 s`), VO word 1 starts at `<= 0.15 s` with `sfx_owb_whoosh_soft_v01.wav`, the spoken hook names Earth/the subject + surprise inside `0.0–1.5 s` (no unanchored pronoun opener like *"This coral..."* and no meta-promise), and Cut 1 lands at `<= 2.5–2.8 s` (`<= 3.0 s` hard gate).
 - No Orbit at frame 0. Orbit may arrive from about 1 s.
 - Each Short has its own open: frame 0 shows the subject the title names. `gate_shorts_open.py check … --last 10` must pass.
 - 22–27 s including the loop hold.
 - The exact title is on screen at 9–14 s.
-- The spoken end line names the long.
-- The Short loops back to its open.
+- The Short loops back to its open (`< 1.2 s` tail under `OWB-2026-11-E1`, no spoken end-card CTA on newly re-cut exports).
 - Related is set to the long once it's public.
-- The hook caption sits on frame 0: two lines, with a yellow hook word.
+- The hook caption sits on frame 0 (`t = 0.00 s`): two lines, with a yellow hook word.
+
+> **Status of `027` Shorts under `J2429` (9 Nov 2026):**
+> - **Scheduled Short:** `lift_equator_weight` (`Dm4xsF1Ateg`, *Why Do You Weigh Less at Earth's Equator?*, `earth_equator_weight_v07.mp4`, scheduled `Mon 23 Nov 11:30Z`) already passes all first-second gates (`J1100` swap).
+> - **Unlocked `lift_sudden_air`:** `earth_sudden_air_v03.mp4` (`23.27 s`, `f0diff=6.60`, `cut1=2.50s`, `vo_onset=0.00s`, `visor=0.0`) already passes the `22–27 s` band and all `J2429` first-second checks.
+> - **Unlocked reserve lifts (`lift_40000_years`, `lift_ancient_eclipses`, `lift_day_one_year`):** Each unlocked lift folder carries `cuts_v02_first_second_plan.json` enforcing positive question titles, full-bleed `9:16` moving Frame 0, stamped `0.0 s` hook caption, named subject in `<= 1.5 s`, and Cut 1 at `2.20–2.50 s <= 2.8 s`.
 
 All facts come from `../01_Script/SOURCES.md` (`dd053ee`, all rows verified).
 
-| Day (11:30 London) | Title (on screen at 9–14 s) | Hook caption, frame 0 | Cover (adds to the title, no Orbit) | Spoken words |
+| Day (11:30 London) | Title (on screen at 9–14 s, positive question per Keeper + `J2429`) | Hook caption, frame 0 (`t = 0.00 s`) | Cover (adds to the title, no Orbit) | Spoken words |
 |---|---|---|---|---:|
-| Mon 23 Nov | You're Moving at 1,000 km/h Right Now | 1,000 **KM/H** | Yellow **YOU**, white **RIGHT NOW** | 55 |
+| Mon 23 Nov (`Dm4xsF1Ateg` live slot uses *Why Do You Weigh Less at Earth's Equator?*) | Why Are You Moving at 1,000 km/h Right Now? | 1,000 **KM/H** | Yellow **YOU**, white **RIGHT NOW** | 55 |
 | Wed 25 Nov | Could a Robot Survive If Earth Stopped Spinning? | THE AIR **KEEPS GOING** | Yellow **1,670 KM/H**, white **WIND** | 58 |
-| Fri 27 Nov | A Day Used to Last 22 Hours | 22 **HOURS** | Yellow **400**, white **DAYS A YEAR** | 55 |
+| Fri 27 Nov | Why Did a Day on Earth Last Only 22 Hours? | 22 **HOURS** | Yellow **400**, white **DAYS A YEAR** | 55 |
 
 ---
 
@@ -68,11 +73,11 @@ The full film: What If Earth Stopped Spinning?
 
 ---
 
-## 3. Fri 27 Nov: A Day Used to Last 22 Hours
+## 3. Fri 27 Nov: Why Did a Day on Earth Last Only 22 Hours?
 
-[VISUAL MUST: 0:00. A real fossil coral under a lens, with growth lines visible (museum or USGS imagery), the camera already sliding. Whoosh. Caption: 22 HOURS. No Orbit.]
+[VISUAL MUST: 0:00. Full-bleed `9:16` (`cover` mode, no blur-pad bars) moving close-up of a fossil Devonian coral under a lens with daily growth bands translating across frame (`f0diff >= 1.50`). Whoosh at `0.00 s`. Hook caption stamped at `t = 0.00 s`: 22 **HOURS**. No Orbit.]
 
-This coral is about three hundred and eighty million years old.
+On young Earth, a day lasted twenty-two hours — and this 380-million-year-old coral proves it.
 
 [VISUAL MUST: About 1.5 s. A macro of the fine growth lines.]
 

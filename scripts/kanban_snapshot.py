@@ -59,6 +59,15 @@ EST = [(("reading", "readings"), 15), (("assemble", "rough", "full rough", "fina
 LEARNED: dict = {}  # kind -> median minutes from history (set by learn_estimates)
 
 
+def _plain(j: dict) -> str:
+    """The job's one plain-English line for the board (jobs.plain_summary); never fails the snapshot."""
+    try:
+        import jobs
+        return jobs.plain_summary(j)
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def kind_of(j: dict) -> int:
     t = (j.get("title") or "").lower()
     return next((i for i, (words, _) in enumerate(EST) if any(w in t for w in words)), -1)
@@ -595,6 +604,8 @@ def routed_who(kind: str = "", model: str = "") -> str:
     r = _routing()
     if model and model in r.RUNS_ON and not kind:
         return worker_name(r.RUNS_ON[model], model)
+    if kind == "chief" and not model:
+        return "Chief"  # a Chief job goes to whoever is elected (Claude first since 9 Nov 2026), so name the role
     ch = r.job_chain({"kind": kind, "model": model})
     if not ch:
         return ""
@@ -1132,7 +1143,8 @@ def main(argv: list[str] | None = None) -> int:
                      addedAt=(j.get("history") or [{}])[0].get("at", ""),
                      workStart=work_start(j), progress=job_progress(j),
                      estMin=est_minutes(j), typMin=typ.get(kind_key(j), typ["_default"]), kindKey=kind_key(j),
-                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""))
+                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""),
+                     plain=_plain(j))
                 for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
         lanes = lanes_info(alljobs)
         hb = mini_heartbeat()

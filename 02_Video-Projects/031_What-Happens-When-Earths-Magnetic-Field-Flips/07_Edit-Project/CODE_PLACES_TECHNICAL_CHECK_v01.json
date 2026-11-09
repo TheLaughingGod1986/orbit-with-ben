@@ -1,0 +1,74 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "checks": [
+    {
+      "id": "code_graphic_031_r10_matuyama_map_v01",
+      "sha256": "564139407b19d88fcdb551cfdcb8b14d995f8312916767cfa8b53eb69ef853f0",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 3.32,
+      "frames": 83,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "tests volcanic",
+      "start_s": 94.92,
+      "samples": [
+        {
+          "t": 0.16,
+          "mean_luma": 38.6
+        },
+        {
+          "t": 1.66,
+          "mean_luma": 42.9
+        },
+        {
+          "t": 3.12,
+          "mean_luma": 43.4
+        }
+      ],
+      "samples_inspected": "static frames only; labels and pins checked by eye on these three times"
+    },
+    {
+      "id": "code_graphic_031_r48_poles_map_v01",
+      "sha256": "1e7ff19193f29e8a08ba8a60ec58546f16e4592333e6119c85f24383b646b962",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 5.64,
+      "frames": 141,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "You might have a South Pole",
+      "start_s": 493.66,
+      "samples": [
+        {
+          "t": 0.16,
+          "mean_luma": 53.1
+        },
+        {
+          "t": 2.82,
+          "mean_luma": 54.0
+        },
+        {
+          "t": 5.44,
+          "mean_luma": 54.1
+        }
+      ],
+      "samples_inspected": "static frames only; labels and pins checked by eye on these three times"
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-places-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "cb8d72e718d3e9b433790a85c653b5dbd8651b0b2002182b0e3421ca9d116d03"
+}

@@ -64,12 +64,12 @@ CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minu
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
-OWB_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
+OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
               "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/00_Brand/Channel-Setup/PIPELINE.json",
+HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
@@ -539,6 +539,11 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
+    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
+        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
+                             for c in channels.all_channels()]
+    except Exception as e:  # noqa: BLE001
+        log(f"channels not read: {e}")
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
         queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
@@ -589,6 +594,7 @@ def run_once(a) -> int:
 
 
 BOARD_CHECK_EVERY_S = 5 * 60
+APPROVED_DELIVER_EVERY_S = 5 * 60
 
 
 def kick_board_check(at: dt.datetime | None = None) -> bool:
@@ -608,6 +614,31 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
         return True
     except OSError as e:
         log(f"board check not started: {e}")
+        return False
+
+
+def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
+    """Enqueue/unblock Studio upload (or Buffer social) for Passed films whose listing package is complete.
+
+    Ben, 7 Nov 2026: after UAT OK the cut sits in Passed; once title/thumbnail/description/tags are set, create or
+    unblock the upload job (Private + publishAt). Rate-limited like board_check. Never uploads from this process —
+    only queue mutations via approved_deliver.py --apply --git. Idempotent; skips swaps and banned reuse ids.
+    """
+    at = at or now()
+    script = WT / "owb" / "scripts" / "approved_deliver.py"
+    stamp = STATE / "approved_deliver.json"
+    try:
+        if stamp.exists() and at.timestamp() - stamp.stat().st_mtime < APPROVED_DELIVER_EVERY_S:
+            return False
+        if not script.exists():
+            return False
+        stamp.write_text(json.dumps({"kickedAt": iso(at)}, indent=1))
+        subprocess.Popen([sys.executable, str(script), "--apply", "--git", "--agent", "relay"],
+                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                         start_new_session=True, cwd=str(WT / "owb"))
+        return True
+    except OSError as e:
+        log(f"approved_deliver not started: {e}")
         return False
 
 
@@ -637,6 +668,7 @@ def main(argv: list[str] | None = None) -> int:
                 break
     if not a.dry_run:
         kick_board_check()
+        kick_approved_deliver()
     return 0
 
 
