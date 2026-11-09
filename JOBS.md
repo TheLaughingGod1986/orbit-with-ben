@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2432 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2433 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2434 | mini | open | – | – | 031 upload · studio · 031 Short 2 v03 (Ben OK 9 Nov 08:09): upload and schedule Sat 12 Dec 11:30 London, Related = G5uMANXHtNU |  |
+| J2435 | any | open | – | – | review · Re-cut the first 30 s of 032 Titan, 033 Uranus, 034 Pluto to the new rule; list which of 026/027/031 can take a new opening before air |  |
 
 Recently finished:
 
