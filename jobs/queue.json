@@ -1,5 +1,5 @@
 {
-  "next_id": 2445,
+  "next_id": 2446,
   "jobs": [
     {
       "id": "J0001",
@@ -210938,6 +210938,35 @@
         "by": "gemini",
         "note": "Moved & verified ~/_desk/cache (942 entries) and ~/_desk/scratch (89549 entries) onto /Volumes/MiniWork/desk/"
       }
+    },
+    {
+      "id": "J2445",
+      "title": "Free ~70 GB on the Mini: stale Chrome code_sign_clone copies (~60 GB) + 23 finished, clean worktrees (~11 GB)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "From J2443 (jobs/reviews/J2443/DISK_REPORT_2.md), Ben's go 9 Nov 2026 ('get it all sorted'). (A) Chrome on macOS leaves a full app copy in /private/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/X/com.google.Chrome.code_sign_clone for every launch/update and never removes them: 458 copies, ~60 GB physical. Remove ONLY the clone folders no running process uses: for each subfolder, skip it if lsof +D on it or ps -axo command shows any process running from it; rm -rf the rest. Never touch Chrome profile folders (~/.orbit-chrome-youtube-studio, ~/.hos-chrome-*, ~/Library/Application Support/Google): the Studio sign-ins live there. Do not quit any Chrome. (B) Remove the 23 worktrees J2443 lists as done/cancelled + git-clean + nothing unpushed (19 in ~/_desk/worktrees, 4 in /private/tmp), with git -C <main repo> worktree remove <path> (never rm -rf a worktree), re-checking each is still clean and pushed first; skip any that isn't. Then git worktree prune in both checkouts. (C) Record df -h ~ and df -h /Volumes/MiniWork before and after, the count removed and skipped (with why), in jobs/reviews/<this job id>/CLEANUP.md, commit, and jobs.py done with the space freed. Never touch the NAS, media folders or anything under ~/YouTube. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2444",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T16:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T16:51Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Free ~70 GB on the Mini: stale Chrome code_sign_clone copies (~60 GB) + 23 finished, clean worktrees (~11 GB)",
+      "due": "2026-11-10T06:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [
