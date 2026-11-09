@@ -203334,6 +203334,11 @@
           "at": "2026-11-08T12:28Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6-astra: Gemini is unavailable or lacks required input; next in its chain: codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-09T17:48Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Review Orbit performance and identify improvements",
@@ -203346,8 +203351,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
-      "model": "gpt-6-astra"
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2367",

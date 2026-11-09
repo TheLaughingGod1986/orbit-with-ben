@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2339 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2351 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J1809 |  |
 | J2355 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2270 |  |
-| J2366 | mini | open | – | – | for codex · review · `gpt-6-astra` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2366 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2369 | mini | blocked | macbook | – | for gemini · script · `gemini-argon` · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2373 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2374 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
