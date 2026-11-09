@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
-| J2446 | mini | open | – | – | 008 edit · assembly · HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge |  |
+| J2446 | mini | claimed | gemini | 2026-11-10T01:18Z | 008 edit · assembly · HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge |  |
 | J2448 | mini | open (after J2447) | – | – | thumb · Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each) |  |
 | J2449 | mini | open (after J2448) | – | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2452 | mini | open (after J2451) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
