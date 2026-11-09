@@ -208812,17 +208812,22 @@
           "at": "2026-11-09T03:54Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1/5: Verified 028 S6 v07 swap live (X768qs8sNQs private/unscheduled -> lsOCcIYCud0 private/2026-12-07T11:30:00Z, ok:true in J2426.json); identified first two free Mon/Wed/Fri/Sat 11:30Z Short slots: Wed 2026-11-25T11:30:00Z (AR2 v13) and Sat 2026-11-28T11:30:00Z (AR3 v14)"
+        },
+        {
+          "at": "2026-11-09T03:58Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2/5: Packaged AR2 v13 (sha 74aa3546) and AR3 v14 (sha 64e148d4) with frame-0 covers; gate_shorts_open.py, J2421 blur-pad check, thumb_preview.py, and youtube:package --dry-run all PASS"
         }
       ],
-      "remaining_action": "Run Shorts gates (incl. blur-pad check) and build upload packages for AR2 v13 and AR3 v14",
+      "remaining_action": "Upload AR2 v13 (Wed 25 Nov 11:30Z) and AR3 v14 (Sat 28 Nov 11:30Z) Private via youtube-package-upload.ts",
       "kind": "studio",
       "plain": "Upload and schedule the two Shorts Ben passed on 7 Nov, and check the 028 night-sky Short swap went through.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-09T03:54Z",
+        "at": "2026-11-09T03:58Z",
         "by": "gemini",
-        "note": "Step 1/5: Verified 028 S6 v07 swap live (X768qs8sNQs private/unscheduled -> lsOCcIYCud0 private/2026-12-07T11:30:00Z, ok"
+        "note": "Step 2/5: Packaged AR2 v13 (sha 74aa3546) and AR3 v14 (sha 64e148d4) with frame-0 covers; gate_shorts_open.py, J2421 blu"
       },
       "taskKeys": [
         "OWB:030",
