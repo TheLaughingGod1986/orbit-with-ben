@@ -37,7 +37,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2015 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2033 | mini | blocked | chief | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
+| J2033 | mini | open (after J2026) | – | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
@@ -46,7 +46,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2199 | mini | blocked | cursor | – | 099 upload · studio · HOS 099: apply Chief-scoped Studio checklist corrections |  |
-| J2200 | mini | blocked | cursor | – | 009 picture · video · HOS 009: build tested tranche-2 Flow mint runner (no generation) |  |
 | J2215 | macbook | blocked | macbook | – | qa · Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared |  |
 | J2220 | mini | blocked | cursor | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
@@ -66,7 +65,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2280 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2220 |  |
 | J2287 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2245 |  |
 | J2289 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2255 |  |
-| J2293 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2200 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2303 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
