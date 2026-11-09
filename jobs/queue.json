@@ -210521,17 +210521,22 @@
           "at": "2026-11-09T17:17Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Updated _assemble_032_full_master_v01.py / v02.py; plan (131 cuts, 17,563 frames), clip_check (52 rows PASS), and source picture_qa (0 fail, 0 warn) verified"
+        },
+        {
+          "at": "2026-11-09T17:28Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: All 131 cuts and picture_v02.mp4 (17,563 frames, 1920x1080 30 fps) rendered on studio-live NAS; now running audio mix, mux, and 5 QA gates"
         }
       ],
-      "remaining_action": "Render 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4 and run all 5 gates",
+      "remaining_action": "Mix VO/SFX/bed, mux 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4, run all 5 gates, and mirror to UAT/git",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 032 Titan to the new hook rule (FIRST30_PLAN.md) and assemble master v02",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-09T17:17Z",
+        "at": "2026-11-09T17:28Z",
         "by": "gemini",
-        "note": "Updated _assemble_032_full_master_v01.py / v02.py; plan (131 cuts, 17,563 frames), clip_check (52 rows PASS), and source"
+        "note": "All 131 cuts and picture_v02.mp4 (17,563 frames, 1920x1080 30 fps) rendered on studio-live NAS; now running audio mix, m"
       },
       "taskKeys": [
         "OWB:032"
