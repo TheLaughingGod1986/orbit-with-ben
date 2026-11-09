@@ -910,12 +910,26 @@ class Relay(unittest.TestCase):
             "    return {'before_mb': 7000, 'after_mb': 31000, 'target_mb': 20480, 'nas': 'ok', 'would': [], 'kept': [],\n"
             "            'moved': [{'path': '/private/tmp/r', 'nas': '/Volumes/data/x', 'ok': True, 'mb': 24000, 'files': 9}]}\n"
             "def summary(rep):\n"
-            "    return 'NAS offload: moved 1 scratch folder(s), 24,000 MB, to the NAS (sha256 checked). 7,000 -> 31,000 MB free.'\n")
+            "    return 'NAS offload: moved 1 scratch folder(s), 24,000 MB, to the NAS (sha256 checked). 7,000 -> 31,000 MB free.'\n"
+            "if __name__ == '__main__':\n"
+            "    import json\n"
+            "    print(json.dumps(offload(True)))\n")
         os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
         os.environ["CHIEF_OFFLOAD_GB"] = str(10 ** 9)  # the disk counts as under target
         try:
-            cr.offload_scratch(T0)
-            cr.offload_scratch(T0 + 30 * MIN)  # throttled: once per 3 h
+            cr.offload_scratch(T0)  # starts it in the background and returns at once (9 Nov 2026: it held the relay 6 h)
+            st = json.loads((cr.STATE / "chief" / "offload.json").read_text())
+            self.assertTrue(st["running"])
+            import time
+            for _ in range(200):
+                if not cr._pid_alive(st["pid"]):
+                    break
+                try:
+                    os.waitpid(st["pid"], os.WNOHANG)
+                except ChildProcessError:
+                    pass
+                time.sleep(0.05)
+            cr.offload_scratch(T0 + 30 * MIN)  # reports the finished run; throttled: no second start within 3 h
         finally:
             os.environ.pop("CHIEF_OFFLOAD_ANY_OS")
             os.environ.pop("CHIEF_OFFLOAD_GB")
