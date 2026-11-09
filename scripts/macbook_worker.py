@@ -231,6 +231,15 @@ def mark_down(agent: str, now: dt.datetime | None = None) -> str:
     return until
 
 
+def failed_run(code: int, seconds: float, still_open: bool) -> bool:
+    """Pause the CLI after this run? A non-zero exit (not the 124 cap), or a clean exit inside 2 minutes that left
+    its job open: an agent out of usage prints a notice and exits 0 (9 Nov 2026: claude claimed and released J2421
+    every minute for an hour)."""
+    if code not in (0, 124):
+        return True
+    return code == 0 and still_open and seconds < float(os.environ.get("MACBOOK_QUICK_EXIT_S", "120"))
+
+
 def usable(have: list, now: dt.datetime | None = None) -> list:
     down = down_agents(now)
     return [a for a in have if a not in down]
@@ -487,12 +496,15 @@ def run_ordinary() -> str:
         log(f"no CLI for {job} (installed: {have}): released")
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
+    started = time.monotonic()
     code = run_capped(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd, OWB, cap)
+    seconds = time.monotonic() - started
     sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
     paused = ""
-    if code not in (0, 124):  # 124 = hit the cap: slow, not broken
+    open_now = still_mine(job)
+    if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
         paused = mark_down(agent)
-    if still_mine(job):
+    if open_now:
         note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
         if paused:
             note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
