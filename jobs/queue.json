@@ -210523,10 +210523,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-09T17:02Z",
-      "eta": "2026-11-09T19:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
       "result": "",
@@ -210545,6 +210545,11 @@
           "at": "2026-11-09T17:02Z",
           "by": "claudecode",
           "what": "step 0 of 3 done: claudecode checked inputs: no studio-live NAS in this session; FIRST30_PLAN.md only on open PR #667"
+        },
+        {
+          "at": "2026-11-09T17:02Z",
+          "by": "claudecode",
+          "what": "released: Released untouched: this claudecode session is not on the Mini (no /Volumes/data/studio-live, no 033 clips/VO/music locally), so the render and gates can't run here. Also FIRST30_PLAN.md is not on main: PR #667 (macbook/J2435) is still open; read it from the NAS mirror or that branch. Needs a Mini/MacBook worker with the NAS."
         }
       ],
       "remaining_action": "Re-cut first 30 s of 033, shift overlays, render master_v02 and run the gates",
