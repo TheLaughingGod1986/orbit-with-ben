@@ -1,5 +1,5 @@
 {
-  "next_id": 2442,
+  "next_id": 2443,
   "jobs": [
     {
       "id": "J0001",
@@ -210608,6 +210608,35 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J2442",
+      "title": "Format the new SanDisk SSD on the Mac mini as APFS 'MiniWork' (Ben's go, 9 Nov) and create scratch/ and films/",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026 12:50: he plugged a ~250 GB SanDisk Extreme USB SSD into the Mac mini to be its working drive for renders, and said: 'Nothing [on it], can format the drive' and 'Can you get the mini agent local session to do this'. This is his explicit OK to erase THAT drive only. Steps on the Mac mini: (1) diskutil list external physical. GUARD: proceed only if there is exactly ONE external physical disk, its size is between 200 and 300 GB, and diskutil info shows it is not internal (Internal: No / Removable or External yes) and its media name mentions SanDisk or Extreme. Never touch disk0 or any internal or synthesized disk. If the guard fails (none, more than one, wrong size, internal), change nothing, block this job with the diskutil output and stop. (2) diskutil eraseDisk APFS MiniWork /dev/<that diskN>. (3) mkdir -p /Volumes/MiniWork/scratch /Volumes/MiniWork/films and chown them to benjaminoats. (4) Record in the done result: the disk identifier, df -h /Volumes/MiniWork, and diskutil info MiniWork lines Device Node, File System Personality, Disk Size, Volume Name, Internal. Do not move any files and do not change any scripts or the relay (Claude points the render scratch at the drive afterwards). No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T12:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T12:47Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Format the new SanDisk SSD on the Mac mini as APFS 'MiniWork' (Ben's go, 9 Nov) and create scratch/ and films/",
+      "due": "2026-11-09T13:30:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [

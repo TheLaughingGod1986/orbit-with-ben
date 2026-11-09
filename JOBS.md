@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2439 | mini | claimed | gemini | 2026-11-09T13:06Z | qa · Mini disk report (read-only): what is using the disk, and which film folders already have a full copy on studio-live |  |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2441 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2442 | mini | open | – | – | qa · Format the new SanDisk SSD on the Mac mini as APFS 'MiniWork' (Ben's go, 9 Nov) and create scratch/ and films/ |  |
 
 Recently finished:
 
