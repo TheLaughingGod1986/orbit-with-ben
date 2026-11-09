@@ -210894,10 +210894,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-09T16:35Z",
-      "eta": "2026-11-09T18:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T16:20Z",
       "result": "",
@@ -210931,6 +210931,11 @@
           "at": "2026-11-09T16:54Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Moved & verified ~/_desk/renders (3858 entries) onto /Volumes/MiniWork/desk/renders"
+        },
+        {
+          "at": "2026-11-09T16:55Z",
+          "by": "gemini",
+          "what": "released: Step 3/6 clean stop at 23m mark: moved, checksum-verified & symlinked cache (942), scratch (89549), and renders (3858) onto /Volumes/MiniWork/desk/ (internal free space 7.3Gi -> 18Gi; initial df stats saved in /Volumes/MiniWork/desk/J2444_PARTIAL_STATS.md). Removed chief-relay.pause. Remaining: move ~/_desk/worktrees (13G), verify git worktree list, write jobs/reviews/J2444/DESK_MOVE.md."
         }
       ],
       "remaining_action": "Rsync, verify checksums & file counts, and symlink ~/_desk/worktrees onto /Volumes/MiniWork/desk/worktrees",
