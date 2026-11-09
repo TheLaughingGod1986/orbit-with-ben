@@ -1,0 +1,166 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s3_iss_sunrises_v04.mp4",
+  "edge_floor": 0.0458,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": 1,
+      "cut": 0,
+      "t": 1.2,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=3.00s earth-limb crop",
+      "why": [
+        "low detail: edge density 0.0442 < film p5 0.0458"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": 1,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=3.00s earth-limb crop",
+      "t": 1.2,
+      "std": 54.56,
+      "mean": 123.56,
+      "p95": 209.0,
+      "edge": 0.0442,
+      "hf": 16.66,
+      "lf": 44.48,
+      "std8": 47.03,
+      "edge8": 0.217,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0442 < film p5 0.0458"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": 2,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=65.00s earth-limb crop",
+      "t": 3.2,
+      "std": 62.17,
+      "mean": 123.39,
+      "p95": 204.0,
+      "edge": 0.0506,
+      "hf": 11.84,
+      "lf": 56.62,
+      "std8": 58.53,
+      "edge8": 0.41,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": 3,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=22.00s earth-limb crop",
+      "t": 5.78,
+      "std": 52.25,
+      "mean": 143.1,
+      "p95": 220.0,
+      "edge": 0.0686,
+      "hf": 12.52,
+      "lf": 46.35,
+      "std8": 48.29,
+      "edge8": 0.3039,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": 4,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=40.00s earth-limb crop",
+      "t": 9.32,
+      "std": 65.82,
+      "mean": 145.06,
+      "p95": 225.0,
+      "edge": 0.0778,
+      "hf": 18.72,
+      "lf": 57.77,
+      "std8": 60.23,
+      "edge8": 0.432,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": 5,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=50.00s earth-limb crop",
+      "t": 12.88,
+      "std": 63.61,
+      "mean": 135.05,
+      "p95": 218.0,
+      "edge": 0.2167,
+      "hf": 20.64,
+      "lf": 53.1,
+      "std8": 55.92,
+      "edge8": 0.4996,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": 6,
+      "source": "Sunrise To Sunset Aboard The ISS.ogv t=30.00s earth-limb crop",
+      "t": 16.39,
+      "std": 53.77,
+      "mean": 144.5,
+      "p95": 210.0,
+      "edge": 0.0664,
+      "hf": 16.38,
+      "lf": 45.54,
+      "std8": 47.82,
+      "edge8": 0.2371,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

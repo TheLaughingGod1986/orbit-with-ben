@@ -1,0 +1,36 @@
+[
+  {
+    "metrics": "videoThumbnailImpressions,videoThumbnailImpressionsClickRate",
+    "http_status": 400,
+    "response": {
+      "error": {
+        "code": 400,
+        "message": "The query is not supported. Check the documentation at https://developers.google.com/youtube/analytics/v2/available_reports for a list of supported queries.",
+        "errors": [
+          {
+            "message": "The query is not supported. Check the documentation at https://developers.google.com/youtube/analytics/v2/available_reports for a list of supported queries.",
+            "domain": "global",
+            "reason": "badRequest"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "metrics": "views,estimatedMinutesWatched",
+    "http_status": 400,
+    "response": {
+      "error": {
+        "code": 400,
+        "message": "The query is not supported. Check the documentation at https://developers.google.com/youtube/analytics/v2/available_reports for a list of supported queries.",
+        "errors": [
+          {
+            "message": "The query is not supported. Check the documentation at https://developers.google.com/youtube/analytics/v2/available_reports for a list of supported queries.",
+            "domain": "global",
+            "reason": "badRequest"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,184 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar1_2024_yr4_moon_v02.mp4",
+  "edge_floor": 0.0729,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar1_01_GSFC_20171208_Archive_e000868",
+      "cut": 1,
+      "t": 4.2,
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "why": [
+        "low detail: edge density 0.0614 < film p5 0.0729"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar1_00_as11-44-6667",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as11-44-6667.jpg",
+      "t": 1.2,
+      "std": 48.84,
+      "mean": 163.56,
+      "p95": 225.0,
+      "edge": 0.2185,
+      "hf": 18.49,
+      "lf": 37.82,
+      "std8": 40.75,
+      "edge8": 0.3358,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar1_01_GSFC_20171208_Archive_e000868",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "t": 4.2,
+      "std": 40.19,
+      "mean": 167.36,
+      "p95": 232.0,
+      "edge": 0.0614,
+      "hf": 13.3,
+      "lf": 34.29,
+      "std8": 35.59,
+      "edge8": 0.2186,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0614 < film p5 0.0729"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "ar1_02_GSFC_20171208_Archive_e001939",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e001939.jpg",
+      "t": 7.1,
+      "std": 45.44,
+      "mean": 116.66,
+      "p95": 184.0,
+      "edge": 0.6266,
+      "hf": 25.48,
+      "lf": 30.59,
+      "std8": 31.93,
+      "edge8": 0.4804,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "ar1_03_GSFC_20171208_Archive_e000868",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e000868.jpg",
+      "t": 9.9,
+      "std": 49.82,
+      "mean": 170.52,
+      "p95": 242.0,
+      "edge": 0.0997,
+      "hf": 18.08,
+      "lf": 42.0,
+      "std8": 43.04,
+      "edge8": 0.2574,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar1_04_as11-44-6667",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as11-44-6667.jpg",
+      "t": 13.4,
+      "std": 44.51,
+      "mean": 163.65,
+      "p95": 222.0,
+      "edge": 0.212,
+      "hf": 16.44,
+      "lf": 37.37,
+      "std8": 38.86,
+      "edge8": 0.2786,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "ar1_05_GSFC_20171208_Archive_e001939",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/GSFC_20171208_Archive_e001939.jpg",
+      "t": 16.78,
+      "std": 52.76,
+      "mean": 106.81,
+      "p95": 179.0,
+      "edge": 0.5509,
+      "hf": 23.64,
+      "lf": 42.39,
+      "std8": 43.69,
+      "edge8": 0.3989,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "ar1_06_as11-44-6667_loop",
+      "source": "as11-44-6667_loop_preroll",
+      "t": 18.87,
+      "std": 39.24,
+      "mean": 166.97,
+      "p95": 218.0,
+      "edge": 0.1925,
+      "hf": 11.6,
+      "lf": 35.22,
+      "std8": 36.2,
+      "edge8": 0.2263,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

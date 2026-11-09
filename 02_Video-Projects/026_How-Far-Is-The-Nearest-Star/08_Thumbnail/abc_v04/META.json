@@ -1,0 +1,153 @@
+{
+  "job": "J1823",
+  "version": "v04",
+  "status": "REVIEW ONLY \u2014 no publishing authority",
+  "title": "How Far Is the Nearest Star?",
+  "correction": "Both candidates depict Proxima, not Alpha Centauri A/B. The pair image is retained in source history only and unused in v04. Locked title unchanged.",
+  "composition": "Earth is a familiar foreground reference; angular sizes and separation are NOT a physical scale diagram. Telescope diffraction halos are not stellar surfaces.",
+  "original_a": {
+    "path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg",
+    "sha256": "922855804c4a846fc82f1269d0e524b5b89bde781c187afe5f416367aa970216"
+  },
+  "sources": [
+    {
+      "id": "potw1343a",
+      "subject": "Proxima Centauri",
+      "credit": "ESA/Hubble & NASA; CC BY 4.0",
+      "recovered_url": "https://esahubble.org/media/archives/images/large/potw1343a.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/potw1343a.jpg",
+      "sha256": "163774dc420405e6b15e0cbc3fac0b87dc93f405a7e39c4b5d14dcbcfb19a136",
+      "dimensions": [
+        604,
+        592
+      ]
+    },
+    {
+      "id": "GSFC_20171208_Archive_e000214",
+      "subject": "Alpha Centauri A and B, not Proxima",
+      "credit": "NASA/ESA Hubble",
+      "recovered_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000214/GSFC_20171208_Archive_e000214~orig.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/GSFC_20171208_Archive_e000214.jpg",
+      "sha256": "8d3cda622bd552609dba831f2a15096b35edc27184904fa62fd4315d22326d7d",
+      "dimensions": [
+        1280,
+        836
+      ]
+    },
+    {
+      "id": "GSFC_20171208_Archive_e002130",
+      "subject": "Blue Marble 2007 East \u2014 Earth",
+      "credit": "NASA",
+      "recovered_url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002130/GSFC_20171208_Archive_e002130~orig.jpg",
+      "path": "/Users/benjaminoats/_desk/J1823/inputs/GSFC_20171208_Archive_e002130.jpg",
+      "sha256": "3ca40e6058ded3f7b8d777c1fcb3b167f9e1f9af9d1d3f15388e92c2c3d66fb3",
+      "dimensions": [
+        3718,
+        3718
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "key": "B",
+      "file": "nearest_star_thumb_B_v04.jpg",
+      "sha256": "93f6e2a039e7c761503a26c8b550fcd156849adc31dfd18c65856ae96e61be4c",
+      "hook": "900M YEAR WALK",
+      "yellow_word": "900M",
+      "source_id": "potw1343a",
+      "sky_treatment": "Continuous top-edge defocus/dimming, full at y<=150 tapering to original at y220; no flat slab",
+      "crop": [
+        0,
+        90,
+        604,
+        430
+      ],
+      "upscale": 2.119205298013245,
+      "earth_box": [
+        70,
+        440,
+        260,
+        630
+      ],
+      "hook_box": [
+        48,
+        34,
+        1199,
+        114
+      ]
+    },
+    {
+      "key": "C",
+      "file": "nearest_star_thumb_C_v04.jpg",
+      "sha256": "40eccaf47c5ad885cb964218825e3ca23892e76c82463c83d2b863b5ca68148f",
+      "hook": "4.2 LIGHT YEARS",
+      "yellow_word": "4.2",
+      "source_id": "potw1343a",
+      "sky_treatment": "Continuous top-edge defocus/dimming, full at y<=150 tapering to original at y220; no flat slab",
+      "crop": [
+        0,
+        90,
+        604,
+        430
+      ],
+      "upscale": 2.119205298013245,
+      "earth_box": [
+        70,
+        440,
+        260,
+        630
+      ],
+      "hook_box": [
+        48,
+        34,
+        1156,
+        114
+      ]
+    }
+  ],
+  "original_preservation": {
+    "abc_v01/META.json": "640c8fea2f7d7481933b7dc806907b955c80777c2659bab81671cc865b9846fd",
+    "abc_v01/nearest_star_thumb_A_you-cant-see-it.jpg": "922855804c4a846fc82f1269d0e524b5b89bde781c187afe5f416367aa970216",
+    "abc_v01/nearest_star_thumb_B_light-takes-4-years.jpg": "a803750f7ed289380342d648c246d7211f093be0eaaf9e36ab74875bdfdfb311",
+    "abc_v01/nearest_star_thumb_C_900m-years-on-foot.jpg": "48243dfa51a655b0f284698c72dfde27e50363d6da9d12d359da270afe808eb6",
+    "abc_v01/nearest_star_thumbs_v01_small_size_check.jpg": "06d313bd850600c14c50299ae0c354b3c87de159801ce458c18dbeeae5e257fd",
+    "abc_v02/GATE.txt": "9b8a9e4293e4eecdc3cddd4be392796f0152f45e74705715d00d5f8fc2b8e60f",
+    "abc_v02/META.json": "09dfb4e58f1e678c6685a042ae7e7cea36b44793e14f1fbf36d5f2a6942bb0e4",
+    "abc_v02/comparison_true_168x94.png": "b6ad4a945caad93075379450a88813caf0bc99d86df195fcd479320d3cca8642",
+    "abc_v02/nearest_star_thumb_B_v02.jpg": "902fe1931424415e8f3dbc23da74f24da603bc083e7cbfb350396afb2f94254c",
+    "abc_v02/nearest_star_thumb_C_v02.jpg": "62c8a813c53a8f1fff098c492a49c7b4b5168eadb26b40a2572f169114721dab",
+    "abc_v02/tool_preview.jpg": "cd8ddb613dfe746232a0a40db99a9cbd7d83ad9a992000e9772264604e15f395",
+    "abc_v03/GATE.txt": "f4465b4ecbdf210695c9134683962d18807ab0aa07f417fcef45486d7f78b1b6",
+    "abc_v03/META.json": "99b835778c6d3a1bad3d0865bb9c602c028d22a50009f714e0758f3645b68bb6",
+    "abc_v03/comparison_true_168x94.png": "f13bf37f038732d1a6bb2d8e527e63794c72010566e4080a5572a91606809f56",
+    "abc_v03/nearest_star_thumb_B_v03.jpg": "de4d3eca9cbfa05f8c583b4e064ae408fcb030177270ee7c546b7efca9ab7968",
+    "abc_v03/nearest_star_thumb_C_v03.jpg": "62c8a813c53a8f1fff098c492a49c7b4b5168eadb26b40a2572f169114721dab",
+    "abc_v03/tool_preview.jpg": "309a6da662d84781666381893a9e7e8d5e76118a3aa27d7331f619be7e884c57"
+  },
+  "asset_directory": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/abc_v04",
+  "claim_checks": {
+    "900M YEAR WALK": {
+      "locked_captions": "nearest_star_long_v06_en-GB.srt 05:15.260\u201305:23.660",
+      "spoken": "Walk at a steady pace, never stopping, never sleeping, and you would reach Proxima in about nine hundred million years.",
+      "source": "01_Script/SOURCES.md row: 4.018e13 km at 5 km/h = about 0.92 billion years",
+      "calculated_years": 916723705.2247319,
+      "meaning": "Hypothetical uninterrupted walk, not an achievable journey."
+    },
+    "4.2 LIGHT YEARS": {
+      "locked_captions": "nearest_star_long_v06_en-GB.srt 01:42.400\u201301:48.140: four point two four light-years away",
+      "source": "01_Script/SOURCES.md: Proxima about 4.24 ly; rounds to 4.2 ly."
+    }
+  },
+  "artifacts": {
+    "tool_preview.jpg": "80ebed33c22b3f497d704df273be88c2bcbaef8f2e5fe30e48de4076f9ad7bb1",
+    "GATE.txt": "a34c132a65c9efe2f0143721328ada42c984eb480068d0f705dc4207775c4170",
+    "nearest_star_thumb_B_v04.jpg": "93f6e2a039e7c761503a26c8b550fcd156849adc31dfd18c65856ae96e61be4c",
+    "nearest_star_thumb_C_v04.jpg": "40eccaf47c5ad885cb964218825e3ca23892e76c82463c83d2b863b5ca68148f",
+    "comparison_true_168x94.png": "312acfa03fc473d61c5c73a82c3dd41bee82c17d8f8b468dcaac33a6c01616a2"
+  },
+  "source_identity_verification": {
+    "basis": "Existing J1924 official ESA/Hubble potw1343a identity check and exact source hashes reverified this run",
+    "url": "https://esahubble.org/images/potw1343a/",
+    "finding": "Proxima, not Alpha Centauri A/B; Earth source Blue Marble 2007 East. Pair source retained as history only, unused."
+  }
+}

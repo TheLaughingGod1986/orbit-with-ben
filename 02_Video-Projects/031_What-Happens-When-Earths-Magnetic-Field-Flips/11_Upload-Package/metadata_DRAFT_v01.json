@@ -1,0 +1,115 @@
+{
+  "status": "ready_for_upload",
+  "source_script": "01_Script/magnetic_field_flip_script_master_v03.md",
+  "description_file": "Descriptions/magnetic_field_flip_long_description_v01.txt",
+  "chapters_file": "Chapters/magnetic_field_flip_chapters_v02.txt",
+  "captions_file": "Captions/magnetic_field_flip_long_v02_en-GB.srt",
+  "pinned_comment_file": "Pinned-Comments/magnetic_field_flip_pinned_v01.txt",
+  "tags_file": "Tags/magnetic_field_flip_long_tags_v01.txt",
+  "titles_file": "Titles/magnetic_field_flip_titles_v01.txt",
+  "selected_title": "What Happens When Earth's Magnetic Field Flips?",
+  "title_options": [
+    "What Happens When Earth's Magnetic Field Flips?",
+    "Why Earth's Magnetic North Is Racing to Siberia",
+    "What Happens When Earth's Magnetic Poles Swap?",
+    "What Satellites See Weakening Over South America"
+  ],
+  "tags": [
+    "Earth magnetic field",
+    "magnetic pole reversal",
+    "geomagnetic reversal",
+    "north magnetic pole",
+    "magnetic north",
+    "Siberia magnetic pole",
+    "South Atlantic Anomaly",
+    "Earth core",
+    "geodynamo",
+    "Brunhes Matuyama reversal",
+    "Laschamp event",
+    "aurora",
+    "Swarm satellites",
+    "space documentary"
+  ],
+  "chapters": [
+    {
+      "time": "0:00",
+      "name": "The Racing Pole"
+    },
+    {
+      "time": "0:36",
+      "name": "The Backwards Lava"
+    },
+    {
+      "time": "2:05",
+      "name": "The Ocean of Liquid Iron"
+    },
+    {
+      "time": "3:46",
+      "name": "The Dent Over South America"
+    },
+    {
+      "time": "5:19",
+      "name": "The Tree That Remembered"
+    },
+    {
+      "time": "6:33",
+      "name": "Why Our Air Stays Put"
+    },
+    {
+      "time": "8:00",
+      "name": "Poles All Over the Sky"
+    }
+  ],
+  "launch_plan": {
+    "test": "Day-1 YouTube Test & Compare, A/B/C; future authorised publishing job only",
+    "decision": "Chief selects title and reviews all three finished images; leave test until YouTube names a winner. Log makers, CTR/impressions when available and watch-time shares in the thumbnail ledger.",
+    "shared_design": "One large focal point, scale or consequence visible at 168×94. House heavy sans, one yellow hook word, other words white, outline, clear top or edge band, no Orbit, no small text. Grade and phone-preview gates apply; C tests a bright high-contrast background.",
+    "concepts": [
+      {
+        "variant": "A",
+        "file": "/Users/benjaminoats/_desk/j2143/final/031_A_compass_v03.jpg",
+        "sha256": "e1d396ebed9d5c2371a6dea4852dd2846e1541ac4cc6f360cb4d761afd2d6df0",
+        "text": "COMPASS REVERSED",
+        "yellow_word": "REVERSED",
+        "picture": "A huge brass compass dominates the lower two-thirds, its needle pointing down towards south. A smaller graded Earth globe and magnetic field lines behind it give planetary scale. This illustrates a reversal, not a claim that the present drift has already reversed the field.",
+        "source_image": "Built in J2143 (`08_Thumbnail/build_j2143.py` from `/Users/benjaminoats/_desk/j2143/assets/A_clean_plate.png`); reviewed KEEP in J2166 (`jobs/reviews/J2166/REVIEW.md`)."
+      },
+      {
+        "variant": "B",
+        "file": "/Users/benjaminoats/_desk/j2143/final/031_B_real_v04.jpg",
+        "sha256": "742c404da7ad74d3bad2bc4c91f8d5b860fd4e12bef3e37a6f1fbcbb657fa874",
+        "text": "",
+        "yellow_word": "",
+        "picture": "Single real NASA/ISS Expedition 62 aurora and airglow photograph (`ISS062-E-98264`, 16 March 2020, Nikon D5 50 mm) curving above Earth's night-lit limb for planetary scale. Textless LEARNINGS rule-19 real-frame test (0-3 words, no composite, no generative edits).",
+        "source_image": "Official NASA Earth Observatory photograph `ISS062-E-98264` (`https://science.nasa.gov/earth/earth-observatory/aurora-meet-airglow-147122/`), credit: NASA / ISS Crew Earth Observations / Johnson Space Center. Built by `08_Thumbnail/build_j2143.py`; reviewed KEEP in J2166."
+      },
+      {
+        "variant": "C",
+        "file": "/Users/benjaminoats/_desk/j2143/final/031_C_bright_v03.jpg",
+        "sha256": "a4ee140a242a5a1c2a3eb1e2b8a4b4700685fccc94ca3055aca1dc2621c35ff0",
+        "text": "GLOBAL AURORAS",
+        "yellow_word": "AURORAS",
+        "picture": "A single enormous green-and-crimson aurora curtain over a recognisable London skyline (Westminster / Big Ben), with a tiny human silhouette at lower left for scale. Bright cyan twilight background with high contrast against the saturated curtain (LEARNINGS rule 14): a possible reversal-era sky, not a photograph of an observed event.",
+        "source_image": "Built in J2143 (`08_Thumbnail/build_j2143.py` from `/Users/benjaminoats/_desk/j2143/assets/C_clean_plate.png`); reviewed KEEP in J2166 (`jobs/reviews/J2166/REVIEW.md`)."
+      }
+    ]
+  },
+  "pre_upload_holds": [],
+  "pre_upload_holds_resolved": [
+    "Resolved in J2401 (8 Nov 2026): Chief/package review and independent Gemini facts check (`J2396` PASS) complete; Long Master `v02` (`J2387`/`J2390` KEEP) and Active Shorts #1 (`J2388`/`J2395` KEEP) & #2 `v02` (`J2394`/`J2395` KEEP) approved.",
+    "Resolved in J2401: Selected title 'What Happens When Earth's Magnetic Field Flips?' (47 chars) checked against all public OWB video titles; zero collisions.",
+    "Resolved in J2401: Replaced all ?:?? chapter timestamps using locked `cuts_v02.json` chapter cards (`0:00`, `0:36`, `2:05`, `3:46`, `5:19`, `6:33`, `8:00`).",
+    "Resolved in J2401: Added exact image/agency credits and CC licence links from `cuts_v02.json` and `HARVEST_POOL_v01.json` after Sources and before the making-of line.",
+    "Resolved in J2401: Added truthful making-of line (`Pictures: ... Facts: ...`) and confirmed `syntheticDisclosure: true` in `PACKAGE_MANIFEST.json`.",
+    "Resolved in J2143/J2166: Thumbnail variants A/B/C built, gated and approved KEEP (`jobs/reviews/J2166/REVIEW.md`)."
+  ],
+  "line_check": {
+    "method": "Every public-facing sentence, chapter and tag checked against the named locked script and its local SOURCES.md quote tables, plus independent Gemini claims pass J2396 PASS.",
+    "paragraph_support": [
+      "Opening pole motion; chapters 1–3 for lava/core/satellite radiation; chapter 4 for kauri tree rings; chapters 5–6 for air and auroras."
+    ]
+  },
+  "title_notes": {
+    "What Satellites See Weakening Over South America": "rule 18 real-picture variant: ESA Swarm field maps of the South Atlantic Anomaly (chapter 4); check the Swarm source row before use"
+  }
+}

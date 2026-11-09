@@ -1,0 +1,198 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 11,
+      "row": "R04c",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 35.9,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0135 < film p5 0.0144"
+      ],
+      "offset": 4.0
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01a",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 1.2,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 16.0
+    },
+    {
+      "cut": 1,
+      "row": "R01b",
+      "source": "PIA20007.jpg",
+      "title": "Sputnik Planum, in Color",
+      "t": 3.5,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 2,
+      "row": "R01c",
+      "source": "PIA19944.jpg",
+      "title": "Valley Glaciers on Pluto",
+      "t": 6.4,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 3,
+      "row": "R02a",
+      "source": "PIA20726.jpg",
+      "title": "Pluto Heart: Like a Cosmic Lava Lamp",
+      "t": 9.9,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 4,
+      "row": "R02b",
+      "source": "code_graphic_034_r02_sputnik_scale.mp4",
+      "title": "our own clip or graphic",
+      "t": 13.3,
+      "at": "0:13",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 5,
+      "row": "R02c",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 16.8,
+      "at": "0:17",
+      "fail": [],
+      "warn": [],
+      "offset": 26.5
+    },
+    {
+      "cut": 6,
+      "row": "R03a",
+      "source": "File_The_Pluto_System_As_Seen_By_New_Horizons_Spacecraft.webm.webm",
+      "title": "File:The Pluto System As Seen By New Horizons Spacecraft.webm",
+      "t": 20.4,
+      "at": "0:20",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 7,
+      "row": "R03b",
+      "source": "PIA20534.jpg",
+      "title": "Surface Diversity",
+      "t": 23.9,
+      "at": "0:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "R03c",
+      "source": "PIA20198.jpg",
+      "title": "The Mountainous Shoreline of Sputnik Planum",
+      "t": 27.1,
+      "at": "0:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "R04a",
+      "source": "PIA20473.jpg",
+      "title": "The Frozen Canyons of Pluto North Pole",
+      "t": 30.2,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "R04b",
+      "source": "PIA20286.jpg",
+      "title": "Zigzagging Across Pluto",
+      "t": 33.3,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "R04c",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 35.9,
+      "at": "0:36",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0135 < film p5 0.0144"
+      ],
+      "offset": 4.0
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0144,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

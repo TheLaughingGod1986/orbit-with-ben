@@ -50,7 +50,8 @@
       "frames": 237,
       "hits": 0
     },
-    "loop_sentence": "\u2026four years to reach you. The nearest star to the Sun \u2014 you can't see it."
+    "loop_sentence": "\u2026four years to reach you. The nearest star to the Sun \u2014 you can't see it.",
+    "keeper_line1_question_compliant": false
   },
   "long_title_on_screen": {
     "title": "If You Can't See the Nearest Star, How Far Away Is It?",
@@ -61,5 +62,19 @@
     "title": "How Far Is the Nearest Star?",
     "id": "c5AdqQsnnys"
   },
-  "hook": "TOO / FAINT (yellow FAINT), 0-2.0 s"
+  "hook": "TOO / FAINT (yellow FAINT), 0-2.0 s",
+  "status": "PASS_WITH_KEEPER_RECONCILIATION_NOTE",
+  "whisper_transcript": "The nearest star to the sun, you can't see it. It's called Proxima Centauri, a small red dwarf. It gives out less than 1% of the sun's light. Hold up your thumb at arm's length. Close one eye, then the other. Your thumb jumps against the background. Your two eyes are a ruler. Astronomers use the same trick with the whole of Earth's orbit. Its light still takes more than four years to reach you.",
+  "whisper_file": "mon16_cant_see_nearest_star_v03_whisper.json",
+  "checks_file": "mon16_cant_see_nearest_star_v03_checks.json",
+  "infeasibility_file": "mon16_cant_see_nearest_star_v03_infeasibility.json",
+  "checks": {
+    "dark_run_frames_over_85pct": 0,
+    "black_edge_run_over_30pct": 0,
+    "max_black_frac": 0.2049,
+    "ocr_every_3rd_frame": 237,
+    "ocr_url_logo_id_hits": 0,
+    "sheet_2fps_coverage": "8x6 tile (48 frames = 24.0s) covering full 23.68s + loop",
+    "picture_qa_warn_reviewed": "0:08 row s02 GSFC_20160426_SDO_m12224_SolarFlare.mp4 reviewed full-size: clean NASA SDO 171A solar disc matching 'less than 1% of the Sun's light', lower edge density due to smooth solar corona plasma vs point-star fields."
+  }
 }

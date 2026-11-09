@@ -48,6 +48,32 @@ class StayedUnit(unittest.TestCase):
         self.assertEqual(gap_tail, 3.0)
         self.assertIn("3.00s > 1.5s", warns_tail[0])
 
+    def test_frame0_fade_in_verdict(self):
+        # KX-XU_AODoI faded from luma 2.2 at 0.0 s to 58.6 at 0.5 s (20.6% stayed) -> FAIL
+        fade_fail = g.frame0_fade_in_verdict(2.2, 58.6)
+        self.assertEqual(len(fade_fail), 1)
+        self.assertIn("slow fade-in from black at frame 0", fade_fail[0])
+        # Full brightness at t=0.0 s -> PASS
+        self.assertEqual(g.frame0_fade_in_verdict(44.0, 46.0), [])
+        # Uniformly dark plate that stays dark -> not a fade-in
+        self.assertEqual(g.frame0_fade_in_verdict(6.0, 8.0), [])
+
+    def test_frame0_hook_text_verdict(self):
+        # Full-bleed 1080x1920 with stroked hook caption at t=0.0 s -> PASS
+        self.assertEqual(g.frame0_hook_text_verdict(0.042, {}, (1080, 1920)), [])
+        # Full-bleed 1080x1920 missing hook caption at t=0.0 s -> FAIL
+        missing = g.frame0_hook_text_verdict(0.0005, {}, (1080, 1920))
+        self.assertEqual(len(missing), 1)
+        self.assertIn("missing on-screen hook text at frame 0", missing[0])
+        # Meta hook text starting late (>0.05 s) -> FAIL
+        late = g.frame0_hook_text_verdict(0.042, {"hook_text": {"text": "NOT A STAR", "start_s": 0.45}}, (1080, 1920))
+        self.assertEqual(len(late), 1)
+        self.assertIn("late on-screen hook text at frame 0", late[0])
+        # Meta hook text explicitly empty -> FAIL
+        empty = g.frame0_hook_text_verdict(0.042, {"hook_caption": ""}, (1080, 1920))
+        self.assertEqual(len(empty), 1)
+        self.assertIn("missing on-screen hook text at frame 0", empty[0])
+
 
 @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "ffmpeg/ffprobe required")
 class StayedFfmpegIntegration(unittest.TestCase):
@@ -167,6 +193,24 @@ class StayedFfmpegIntegration(unittest.TestCase):
             onset_zero, last_zero, _ = g.vo_timing(p0, 4.0, {"vo_s": 2.1})
             self.assertEqual(onset_zero, 0.0)
             self.assertEqual(last_zero, 2.1)
+
+    def test_fade_in_and_missing_frame0_hook_text_fail_on_full_size_clip(self):
+        with tempfile.TemporaryDirectory() as td:
+            fade_mp4 = Path(td) / "fade_no_hook.mp4"
+            # 540x960 clip that starts black at t=0.0 s and fades to mid-grey by 0.5 s, with no hook text in 0.08..0.48 H
+            subprocess.run([
+                "ffmpeg", "-y", "-v", "error",
+                "-f", "lavfi", "-i", "color=c=0x505050:s=540x960:r=30:d=4.0",
+                "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=48000:duration=4.0",
+                "-vf", "fade=t=in:st=0:d=0.5",
+                "-af", "volume=0.5",
+                "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac", str(fade_mp4),
+            ], check=True)
+            res = g.check(fade_mp4, date(2026, 11, 9), 14, {"entries": []}, None,
+                          spoken="The Sun is getting brighter every million years.")
+            self.assertEqual(res["verdict"], "FAIL")
+            self.assertTrue(any("slow fade-in from black at frame 0" in f for f in res["stayed_fails"]))
+            self.assertTrue(any("missing on-screen hook text at frame 0" in f for f in res["stayed_fails"]))
 
 
 if __name__ == "__main__":

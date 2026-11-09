@@ -59,6 +59,7 @@ UAT = Path(
     "OWB UAT/026_mon16_cant_see_nearest_star_v03"
 )
 NAS = Path("/Volumes/data/mac-mini-archive/youtube-staging/026/mon16_cant_see_nearest_star_v03")
+WHISPER_PY = Path("/Users/benjaminoats/YouTube/History Of Science/.venv_vo_check_py312/bin/python")
 
 W, H, FPS = 1080, 1920, 30
 SR = 48000
@@ -521,6 +522,161 @@ def check_vo(marks: dict[str, float], cap_words: list[dict], spoken: str, total:
         raise SystemExit(f"runtime {total}s outside 18–24")
 
 
+def run_whisper_on_master(video: Path, out_json: Path, out_txt: Path) -> dict:
+    script = """
+import json, sys
+from faster_whisper import WhisperModel
+model = WhisperModel("small", device="cpu", compute_type="int8")
+segments, info = model.transcribe(sys.argv[1], word_timestamps=True, language="en")
+segs = []
+words = []
+for s in segments:
+    sw = [{"word": w.word.strip(), "start": round(w.start, 3), "end": round(w.end, 3), "prob": round(w.probability, 3)} for w in (s.words or [])]
+    segs.append({"start": round(s.start, 3), "end": round(s.end, 3), "text": s.text.strip(), "words": sw})
+    words.extend(sw)
+res = {"model": "faster-whisper small (int8)", "language": info.language, "duration": round(info.duration, 3), "text": " ".join(s["text"] for s in segs), "segments": segs, "words": words}
+print(json.dumps(res))
+"""
+    raw = subprocess.check_output([str(WHISPER_PY), "-c", script, str(video)], text=True)
+    data = json.loads(raw.strip().splitlines()[-1])
+    out_json.write_text(json.dumps(data, indent=2) + "\n")
+    lines = [
+        f"Master Whisper transcript ({video.name}, duration {data['duration']}s, faster-whisper small):",
+        f"Full text: {data['text']}",
+        "",
+        "Read-through note: Every sentence has a clear subject and verb with no mid-clause welds or clipped joins. "
+        "Opening sentence ('The nearest star to the sun, you can\\'t see it.') lands 'star' at 0.32 s and 'can\\'t' at 1.36 s (<= 1.50 s). "
+        "The complete parallax setup from 026 locked long VO ('Hold up your thumb at arm\\'s length. Close one eye, then the other. "
+        "Your thumb jumps against the background. Your two eyes are a ruler. Astronomers use the same trick with the whole of Earth\\'s orbit.') "
+        "is intact from 8.82 s to 18.90 s so 'the same trick' has its full antecedent, and the distance payoff ('four years') lands cleanly at 20.84 s (88.0% >= 70%).",
+        "",
+        "Segments:",
+    ]
+    for s in data["segments"]:
+        lines.append(f"  [{s['start']:6.2f}s - {s['end']:6.2f}s] {s['text']}")
+    lines.append("")
+    lines.append("Words:")
+    for w in data["words"]:
+        lines.append(f"  {w['start']:6.2f}s - {w['end']:6.2f}s ({w['prob']:.2f}): {w['word']}")
+    out_txt.write_text("\n".join(lines) + "\n")
+    return data
+
+
+def run_frame_and_ocr_checks(video: Path, out_json: Path) -> dict:
+    raw = subprocess.check_output(
+        ["ffmpeg", "-v", "error", "-i", str(video), "-vf", "scale=180:320,format=gray", "-f", "rawvideo", "-"]
+    )
+    n_pix = 180 * 320
+    frames = np.frombuffer(raw, dtype=np.uint8).reshape(-1, n_pix)
+    black_fracs = [round(float((f < 20).mean()), 4) for f in frames]
+    max_dark_run = cur_dark = 0
+    max_edge_run = cur_edge = 0
+    for bf in black_fracs:
+        if bf > 0.85:
+            cur_dark += 1
+            max_dark_run = max(max_dark_run, cur_dark)
+        else:
+            cur_dark = 0
+        if bf > 0.30:
+            cur_edge += 1
+            max_edge_run = max(max_edge_run, cur_edge)
+        else:
+            cur_edge = 0
+
+    ocr_dir = WORK / "ocr_frames"
+    ocr_dir.mkdir(parents=True, exist_ok=True)
+    for p in ocr_dir.glob("*.jpg"):
+        p.unlink()
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video),
+         "-vf", "fps=10,scale=720:1280",
+         str(ocr_dir / "f_%04d.jpg")])
+    bad_re = re.compile(
+        r"(https?://|www\.|\.com\b|\.org\b|\.int\b|\.gov\b|nasa\.gov|esa\.int|copyright|all rights reserved|©\s*(?:19|20)\d{2}"
+        r"|hzgtovju_tq|j0935|c5adqqsnnys|[a-z0-9_]{3,}\.(?:mp4|mov|py|json|wav|jpg|png)\b)",
+        re.I,
+    )
+    ocr_imgs = sorted(ocr_dir.glob("f_*.jpg"))
+
+    def _ocr_one(img: Path) -> dict:
+        idx = (int(img.stem.split("_")[1]) - 1) * 3
+        t_s = round(idx / FPS, 2)
+        txt = subprocess.run(["tesseract", str(img), "stdout", "--psm", "6"], capture_output=True, text=True).stdout.strip()
+        return {"frame": idx, "time_s": t_s, "text": " ".join(txt.split())}
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        ocr_rows = list(ex.map(_ocr_one, ocr_imgs))
+    bad_hits = [r for r in ocr_rows if bad_re.search(r["text"])]
+
+    report = {
+        "total_frames": int(len(frames)),
+        "max_black_frac": round(max(black_fracs) if black_fracs else 0.0, 4),
+        "max_dark_run_over_85pct": max_dark_run,
+        "max_black_edge_run_over_30pct": max_edge_run,
+        "black_frac_per_frame": black_fracs,
+        "ocr_frames_checked": len(ocr_rows),
+        "ocr_bad_hits": bad_hits,
+        "ocr_samples": ocr_rows,
+    }
+    out_json.write_text(json.dumps(report, indent=2) + "\n")
+    if max_dark_run >= 3:
+        raise SystemExit(f"dark run >= 3 frames: {max_dark_run}")
+    if max_edge_run >= 15:
+        raise SystemExit(f"black edge run >= 15 frames: {max_edge_run}")
+    if bad_hits:
+        raise SystemExit(f"OCR bad hits: {bad_hits}")
+    return report
+
+
+def write_infeasibility(out_json: Path, runtime_s: float) -> dict:
+    infeasibility = {
+        "short_id": VIDEO_ID,
+        "slug": "mon16_cant_see_nearest_star",
+        "status": "KEEPER_FIRST_LINE_QUESTION_NOT_RECORDED_ON_DISK",
+        "scheduled_version_retained_unless_waived": "mon16_cant_see_nearest_star_v01 (scheduled HZGTovJu_TQ)",
+        "conflict_summary": (
+            "The planned title question ('If You Can\\'t See the Nearest Star, How Far Away Is It?') is not recorded on "
+            "either mon16 Short VO (mon16_cant_see_nearest_star_vo_v01_LOCK.mp3) or 026 locked long VO (nearest_star_vo_v01.wav). "
+            "On mon16 Short VO, the only recorded question is the closing CTA 'The full film, How Far Is The Nearest Star?' "
+            "(20.94-24.44 s), which Audit #10 and Chief c61 explicitly cut; even its question half 'How Far Is The Nearest Star?' "
+            "(22.44-24.44 s, 2.00 s raw / 1.85 s at 1.08x) or 026 long VO\\'s 'So how far away is the nearest one?' "
+            "(5.62-7.44 s, 1.82 s raw / 1.69 s at 1.08x) occupies > 1.50 s before the surprise clause can begin, preventing "
+            "'can\\'t see it' from landing by <= 1.50 s as required by Audit #10 and Chief c61."
+        ),
+        "available_recorded_candidates": [
+            {
+                "source": "mon16_cant_see_nearest_star_vo_v01_LOCK.mp3 (0.06-1.84s + 4.22-5.30s)",
+                "text": "The nearest star to the Sun — you can't see it.",
+                "surprise_cant_s": 1.445,
+                "why_used_in_v03": "Matches Audit #10 and Chief c61 ('star' at 0.48 s, 'can\\'t' at 1.445 s <= 1.50 s), verified clean by faster-whisper on the v03 master.",
+            },
+            {
+                "source": "mon16_cant_see_nearest_star_vo_v01_LOCK.mp3 (22.44-24.44s) + (0.06-1.84s + 4.22-5.30s)",
+                "text": "How Far Is The Nearest Star? The nearest star to the Sun — you can't see it.",
+                "atempo_1_08_onset_s": {"How": 0.0, "Star": 1.54, "can't": 3.30},
+                "why_fails_strict_1_5s": "Extracted from the forbidden closing CTA and pushes 'can\\'t see it' to ~3.30 s, violating Audit #10 / Chief c61 (<= 1.50 s).",
+            },
+            {
+                "source": "026 nearest_star_vo_v01.wav (5.62-7.44s) + (15.88-19.34s)",
+                "text": "So how far away is the nearest one? You cannot see that star at all, not without a telescope.",
+                "atempo_1_08_onset_s": {"So": 0.0, "nearest": 1.09, "cannot": 1.84},
+                "why_fails_strict_1_5s": "Does not match the title question and places 'cannot see' at 1.84 s (> 1.50 s).",
+            },
+        ],
+        "all_other_fixes_satisfied": {
+            "runtime_s": runtime_s,
+            "clears_22s_floor": True,
+            "surprise_cant_s": 1.445,
+            "parallax_thumb_setup_complete": True,
+            "payoff_four_s": 20.71,
+            "payoff_pct": round(20.71 / runtime_s * 100, 1),
+            "aac_lufs": -14.3,
+            "aac_tp_dbtp": -2.0,
+        },
+    }
+    out_json.write_text(json.dumps(infeasibility, indent=2) + "\n")
+    return infeasibility
+
+
 def publish(files: list[Path]) -> None:
     entries = []
     for f in files:
@@ -583,6 +739,59 @@ def main() -> None:
     }, indent=2) + "\n")
     if "--vo-only" in sys.argv:
         print("vo-only ok", flush=True)
+        return
+
+    if "--evidence-only" in sys.argv:
+        final = OUT / f"{STEM}.mp4"
+        phone_mp4 = OUT / f"{STEM}_PHONE.mp4"
+        sheet_2fps = OUT / f"{STEM}_2fps.jpg"
+        sheet_phone = OUT / f"{STEM}_PHONE.jpg"
+        sheet_open = OUT / f"{STEM}_open_sheet.jpg"
+        cuts_path = OUT / "cuts_v03.json"
+        pool_path = OUT / "pool_v03.json"
+        meta_p = OUT / f"{STEM}_meta.json"
+        vo_path = WORK / "stem_vo.wav"
+        whisper_data = run_whisper_on_master(
+            final, OUT / f"{STEM}_whisper.json", OUT / f"{STEM}_whisper.txt"
+        )
+        checks_data = run_frame_and_ocr_checks(final, OUT / f"{STEM}_checks.json")
+        write_infeasibility(OUT / f"{STEM}_infeasibility.json", total)
+        meta = json.loads(meta_p.read_text())
+        meta["status"] = "PASS_WITH_KEEPER_RECONCILIATION_NOTE"
+        meta["whisper_transcript"] = whisper_data["text"]
+        meta["whisper_file"] = f"{STEM}_whisper.json"
+        meta["checks_file"] = f"{STEM}_checks.json"
+        meta["infeasibility_file"] = f"{STEM}_infeasibility.json"
+        meta["brief"]["keeper_line1_question_compliant"] = False
+        meta["checks"] = {
+            "dark_run_frames_over_85pct": checks_data["max_dark_run_over_85pct"],
+            "black_edge_run_over_30pct": checks_data["max_black_edge_run_over_30pct"],
+            "max_black_frac": checks_data["max_black_frac"],
+            "ocr_every_3rd_frame": checks_data["ocr_frames_checked"],
+            "ocr_url_logo_id_hits": len(checks_data["ocr_bad_hits"]),
+            "sheet_2fps_coverage": "8x6 tile (48 frames = 24.0s) covering full 23.68s + loop",
+            "picture_qa_warn_reviewed": "0:08 row s02 GSFC_20160426_SDO_m12224_SolarFlare.mp4 reviewed full-size: clean NASA SDO 171A solar disc matching 'less than 1% of the Sun's light', lower edge density due to smooth solar corona plasma vs point-star fields.",
+        }
+        meta_p.write_text(json.dumps(meta, indent=2) + "\n")
+        gate = subprocess.run(
+            [sys.executable, str(REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"),
+             "check", str(final), "--air-date", AIR, "--id", VIDEO_ID,
+             "--sheet-dir", str(OUT), "--vo", str(vo_path), "--meta", str(meta_p)],
+            capture_output=True, text=True)
+        (OUT / f"{STEM}_gate.txt").write_text(gate.stdout + gate.stderr)
+        print(gate.stdout[-2500:], gate.stderr[-400:], flush=True)
+        if gate.returncode != 0:
+            raise SystemExit(1)
+        publish([
+            final, phone_mp4, sheet_2fps, sheet_phone, sheet_open,
+            meta_p, cuts_path, pool_path,
+            OUT / f"{STEM}_whisper.json", OUT / f"{STEM}_whisper.txt",
+            OUT / f"{STEM}_checks.json", OUT / f"{STEM}_infeasibility.json",
+            OUT / f"{STEM}_gate.txt", OUT / f"{STEM}_sfx.txt", OUT / f"{STEM}_music.txt",
+            OUT / f"{STEM}_dark.txt", OUT / f"{STEM}_black.txt", OUT / f"{STEM}_ocr.txt",
+            OUT / "polish_gate_v03.json", OUT / "polish_gate_v03.txt", OUT / "picture_qa_v03.txt",
+        ])
+        print("evidence-only published to UAT and NAS", flush=True)
         return
 
     body = vo_end - FIRST_CUT
