@@ -210884,10 +210884,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-09T16:35Z",
+      "eta": "2026-11-09T18:05Z",
       "created_by": "claude",
       "created_at": "2026-11-09T16:20Z",
       "result": "",
@@ -210896,11 +210896,24 @@
           "at": "2026-11-09T16:20Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T16:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Move the heavy ~/_desk folders (worktrees, renders, scratch, cache) onto the MiniWork SSD, verified, with links left in place",
       "due": "2026-11-09T20:00:00Z",
-      "kind": "qa"
+      "kind": "qa",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T16:35Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
