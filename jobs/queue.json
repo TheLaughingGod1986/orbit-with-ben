@@ -1,5 +1,5 @@
 {
-  "next_id": 2459,
+  "next_id": 2460,
   "jobs": [
     {
       "id": "J0001",
@@ -211996,6 +211996,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2459",
+      "title": "025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026, his own yes (in chat with Claude, about 23:30 London): on 025 Mars Js6EQJ8qDi8, replace the running thumbnail-only Test and Compare with a combined title-and-thumbnail test. AGENTS.md's Never list records this as a one-video exception (PR #684): for this video only, you may press Continue on \"Run a new test? Your current test will be deleted\". The exception covers nothing else.\n\nWhere: Orbit Studio, CDP 9223. Check the channel name reads Orbit With Ben first.\n\n1. Record the old test before anything else. Open the video's A/B testing panel and write down: test type, time left, and each arm's watch-time share and impressions if Studio shows them. Save a screenshot. This is the only copy of the old test's data.\n\n2. Start a new test of type \"Title and thumbnail\" with three arms. The three images are the same three the running test uses (08_Thumbnail/abc_v03/ in the film folder; if the live ones are abc_v02, use those and say so):\n   A, search-led (LEARNINGS rule 26): \"Could a Robot Survive on Mars? (One Lasted 14 Years)\" with mars_robot_thumb_A_built-for-90-days.jpg\n   B: \"NASA Built This Robot to Last 90 Days on Mars. It Lasted 14 Years.\" with mars_robot_thumb_B_planned-5-flew-72.jpg\n   C, the current title: \"The Mars Robot Meant to Die in 90 Days (It Lasted 14 Years)\" with mars_robot_thumb_C_minus-90-nights.jpg\n   Every fact is in the locked script (Opportunity: designed for 90 sols, worked January 2004 to June 2018).\n\n3. Read it back: test type, the three arms, \"Test running\", video still Public, description unchanged.\n\n4. Records: add a section to the film's 11_Upload-Package/TITLE_TEST_2026-11-08.md (old test's last state, new test's arms, time started) and a row in 05_Analytics/tests/STUDIO_TESTS.md. Commit on a branch and open a PR.\n\nIf Studio has no \"Title and thumbnail\" type for this video, or refuses for any reason: change nothing, leave the running test as it is, and block with exactly what Studio showed.\n\nDo not touch the description, the Shorts, the end screen, or any other video. £0.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T23:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception)",
+      "due": "2026-11-10T18:00:00Z",
+      "kind": "studio",
+      "plain": "Swap the Mars film's running thumbnail test for one that tests three title-and-thumbnail pairs, including a search-led title."
     }
   ],
   "focus": [

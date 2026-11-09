@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2456 | cloud | open (after J2455) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2457 | mini | open | – | – | studio · Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom) |  |
 | J2458 | any | claimed | macbook | 2026-11-10T00:56Z | review · PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes) |  |
+| J2459 | mini | open | – | – | 025 upload · studio · 025 Mars Js6EQJ8qDi8: replace the thumbnail-only Test and Compare with a title-and-thumbnail test (Ben's yes, 9 Nov; one-video exception) |  |
 
 Recently finished:
 
