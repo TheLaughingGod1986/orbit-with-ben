@@ -1,5 +1,5 @@
 {
-  "next_id": 2458,
+  "next_id": 2459,
   "jobs": [
     {
       "id": "J0001",
@@ -211921,6 +211921,36 @@
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Look in YouTube Studio to see whether four old thumbnail tests have finished, so the title tests waiting behind them can start."
+    },
+    {
+      "id": "J2458",
+      "title": "PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief PR sweep, 9 Nov 2026. 95 PRs were open; finished work that is not on main cannot be seen by other agents. The Chief has merged the 44 that only add reports and merge cleanly. These 48 are left and each needs a decision. Work them oldest first, in batches; release with a progress note when a run ends, and the next run carries on.\n\nFor EACH PR below, do exactly one of:\n(a) UP TO DATE: main already has this work (same files, or a later version of them). Write one line of evidence. Do not close it yourself: list it under CLOSE for the Chief.\n(b) BRING UP TO DATE: merge origin/main into the PR branch (never rebase or force-push another agent's branch). For generated files (STATUS.md, JOBS.md, jobs/queue.json, jobs/WIP.json, THUMB_LEDGER.json, append-only ledgers such as elevenlabs_ledger.jsonl and ai_spend ledger.jsonl) keep main's version and re-apply only this PR's own rows with the repo's tool; never hand-merge queue.json. Run the checks the PR touches plus `python3 scripts/sync_rules.py --check`, `python3 scripts/studio.py status --check`, `python3 scripts/core_sync.py check`. Push. List it under MERGE for the Chief.\n(c) NEEDS A DECISION: both sides changed the same logic or rule, or the work was overtaken by a later ruling. Say what the choice is in two lines. List it under CHIEF.\n\nRules: no Studio, no uploads, no spend, no deletes. Do not merge or close any PR: the Chief does that. Code PRs (scripts/, .github/, AGENTS.md, rules) always go under MERGE or CHIEF with the test output, never (a) without proof. Skip #666 (Chief's own draft) and #676 (J2374 still running).\n\nWrite jobs/reviews/<this job id>/PR_SWEEP.md with three lists (CLOSE, MERGE, CHIEF), one line per PR with the evidence. Park for Chief when all are done.\n\nThe PRs:\n#261 (J0874 done, conflicts, superseded): Shorts briefs: add approved Learnings checklist (J0874)\n#283 (J0963 done, merges clean, new): J0963: Sun T&C B v02 — 10% BRIGHTER\n#291 (no job -, conflicts, new): Orbit: audit rules (Orbit Auditor, 26 Oct 2026) — one plate per beat, \n#295 (J0915 cancelled, merges clean, new): J0915: resolve cancelled prerequisite and require recorded-VO preparat\n#301 (J1027 done, merges clean, new): J1027: record thumbnail prerequisite verification\n#303 (J1031 done, merges clean, new): J1031: record thumbnail hold verification\n#310 (J1084 done, merges clean, partial): 025: complete-sentence v06 Mars opening Short for Chief review\n#311 (J1090 done, merges clean, partial): 025: correct v07 final Mars shot and record verification limits\n#314 (J1102 done, conflicts, partial): J1102: deliver approved 028 S3 v04 replacement\n#323 (J1107 done, conflicts, new): J1107 checkpoint: weekly HOS thumbnail audit baseline\n#324 (J1107 done, conflicts, new): J1107 checkpoint: HOS weekly thumbnail audit\n#338 (J1129 done, conflicts, new): Record HOS 002 completed experiment and running thumbnail test\n#354 (J0978 blocked, merges clean, new): J0978: Studio Test B GHZDsiH7L7A — log J0280 Title T&C result + 400 Pr\n#357 (J1269 done, merges clean, new): J1269: retain Atom metadata hold after live Studio check\n#359 (J1100 done, conflicts, new): J1100: continuous pickups and S6 loop evidence for Chief\n#368 (J1333 done, conflicts, new): Fix OWB029 per-cut watch IDs and prevent same-version collisions\n#381 (J1630 done, merges clean, new): J1630: retain Atom title-test hold after fresh Studio check\n#385 (J1663 done, merges clean, new): J1663: record unavailable Atom title-test verification\n#388 (J1700 done, merges clean, new): J1700: Atom title-test clearance still pending\n#487 (J2022 done, conflicts, new): Reuse existing browser tabs in shared CDP helpers\n#490 (J2040 blocked, merges clean, new): J2040: guarded Git allow rule; service permission work remains\n#493 (J2022 done, conflicts, new): Reuse signed-in tabs in shared CDP helpers (J2022)\n#501 (J2143 done, conflicts, partial): 031: three thumbnail concepts with real-frame and bright-background te\n#502 (J2155 done, conflicts, partial): J2155: Uranus narration take and verification evidence\n#517 (J2089 done, conflicts, new): 032: correct fire previews and hold process renders for review (J2089)\n#519 (no job -, conflicts, new): jobs: release a held job the agent can't resume, then pick normally\n#532 (J2215 blocked, merges clean, new): J2215: record /Volumes/shared re-check failure (SMB unmounted after lo\n#539 (J2141 done, conflicts, partial): 031: £0 poledrift, flip, depth and 1905 graphics (J2141 partial)\n#551 (J2141 done, conflicts, partial): 031: £0 strata, sample map, extinction and shield graphics (J2141 part\n#552 (J2203 done, conflicts, new): HOS-2026-11-E1: anomaly-first Short gate for films 008–010\n#553 (J2219 done, merges clean, new): J2219: KEEP review of J01 Journey Film 01 plan and linking script (J21\n#554 (J2204 done, conflicts, new): HOS-2026-11-E2: readout log for the proof-first long open\n#555 (J2141 done, conflicts, new): 031: £0 South Atlantic belt and anomaly graphics (J2141 partial)\n#557 (J2202 done, merges clean, new): HOS monthly Studio Reach window and 1 Nov archive (J2202)\n#562 (J2141 done, conflicts, new): 031: £0 dynamo align, tip and settle graphics (J2141 partial)\n#564 (J2141 done, conflicts, partial): 031: £0 paleo, pole and aurora graphics (J2141 partial)\n#569 (J2141 done, conflicts, partial): 031: £0 tight flip, outer core and Laschamp dip (J2141 partial)\n#571 (J2141 done, conflicts, partial): 031: add progressive historical timeline overlays (J2141)\n#572 (J2141 done, conflicts, partial): 031: harvest kauri and hand-stencil photos with rights evidence (J2141\n#575 (J2141 done, conflicts, partial): 031: consolidate picture batches and add real-body gravity comparison\n#600 (J2223 done, conflicts, partial): J2223: 033 (Uranus) and 034 (Pluto) Shorts slots, plans, and film_brie\n#604 (J2325 done, conflicts, new): J2325: reconcile J2157 Pluto VO evidence/ledgers and verify ch00..ch06\n#609 (J2327 done, merges clean, new): J2327: Topic go/no-go prep for OWB 035–038 (do not start)\n#611 (J2335 cancelled, conflicts, new): J2335: Pluto Chapter 5 sentence take failed its ending\n#642 (J2369 blocked, merges clean, new): J2369: 24 Nov 2026 Full Supermoon dated-event Short script + packaging\n#645 (J2373 blocked, conflicts, new): J2373: Add 8 HOS Shorts lab rows and learnings from 7 Nov weekly audit\n#650 (J2410 done, conflicts, partial): J2410: add OWB 062 (Phobos crash) and 063 (Saturn Hexagon) topic brief\n#653 (J2411 done, conflicts, new): J2411: append HOS:100 & HOS:101 to WIP next_hos + queue Rule-E review ",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T23:13Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "48 old pieces of finished work are still waiting to be saved into the main project. Check each one, bring it up to date, and hand the Chief a merge list and a close list."
     }
   ],
   "focus": [
