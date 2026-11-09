@@ -210251,13 +210251,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-09T12:31Z",
-      "eta": "2026-11-09T13:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T08:52Z",
-      "result": "",
+      "result": "QEoYKIVvKBA uploaded Private for 2026-12-12T11:30:00Z, en-GB and cover set, registered in UPLOADS.json (long=G5uMANXHtNU) and shorts_open_library",
       "history": [
         {
           "at": "2026-11-09T08:52Z",
@@ -210298,6 +210298,11 @@
           "at": "2026-11-09T12:44Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed c7a34757f1: QEoYKIVvKBA uploaded Private for Sat 12 Dec 11:30Z, en-GB and custom cover set, registered in UPLOADS.json and shorts_open_library"
+        },
+        {
+          "at": "2026-11-09T12:44Z",
+          "by": "gemini",
+          "what": "done: QEoYKIVvKBA uploaded Private for 2026-12-12T11:30:00Z, en-GB and cover set, registered in UPLOADS.json (long=G5uMANXHtNU) and shorts_open_library"
         }
       ],
       "remaining_action": "Finish J2434 and report on #99",
@@ -210323,7 +210328,8 @@
       },
       "taskKeys": [
         "OWB:031"
-      ]
+      ],
+      "done_ref": "c7a34757f1"
     },
     {
       "id": "J2435",
