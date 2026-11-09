@@ -208408,13 +208408,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-09T01:30Z",
-      "eta": "2026-11-09T03:30Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-08T23:00Z",
-      "result": "",
+      "result": "parked for Chief: the brief needs an AGENTS.md rule edit and a merge, which only Chief may do (AGENTS.md lines 355-361, 554). gh is also blocked on the unattended MacBook, so no PR can be opened. Suggest splitting it: Chief writes the first-30s rule; a review/build job (Mini) re-cuts the 032/033/034 openings and lists which of 026/027/031 could take a new opening. Second MacBook pass, released/blocked without changes.",
       "history": [
         {
           "at": "2026-11-08T23:00Z",
@@ -208455,6 +208455,11 @@
           "at": "2026-11-09T01:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T01:31Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: the brief needs an AGENTS.md rule edit and a merge, which only Chief may do (AGENTS.md lines 355-361, 554). gh is also blocked on the unattended MacBook, so no PR can be opened. Suggest splitting it: Chief writes the first-30s rule; a review/build job (Mini) re-cuts the 032/033/034 openings and lists which of 026/027/031 could take a new opening. Second MacBook pass, released/blocked without changes."
         }
       ],
       "remaining_action": "Orbit hook: first-30s rewrite rule + re-cut openings of 032/033/034 before they lock (we lose ~half by 0:30)",
