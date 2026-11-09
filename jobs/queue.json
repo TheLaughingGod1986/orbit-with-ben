@@ -208808,19 +208808,26 @@
           "at": "2026-11-09T01:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T01:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2431; starting inspection of J2248 v04 media and slot availability"
         }
       ],
-      "remaining_action": "024 muons Short v04: Ben OK'd 8 Nov 23:41 — upload Private for Sat 21 Nov 11:30 (or first free Orbit Short slot)",
+      "remaining_action": "Verify v04 media hash, check free Orbit Short slot from Sat 21 Nov 11:30Z, and inspect 024 Shorts package",
       "kind": "studio",
       "plain": "Upload and schedule the muons Short Ben just passed.",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-09T01:50Z",
+        "of": 4,
+        "at": "2026-11-09T01:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2431; starting inspection of J2248 v04 media and slot availability"
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     },
     {
       "id": "J2432",
