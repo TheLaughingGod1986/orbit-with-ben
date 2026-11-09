@@ -31,8 +31,16 @@ Fact notes:
 
 No fear framing, no hedge, no hashtag, no series suffix.
 
-## After
+## After (applied 2026-11-09T01:43Z, J2430)
 
-**Not applied yet.** MacBook workers may not change anything on YouTube, so Studio is left to a follow-up job (see the J2417 result). The status note already lists "Studio still: Test & Compare". If a test is already set, do **not** press Continue on "Run a new test?" (Never list). Record what was applied, and when, here.
+- **Built thumbnails (`08_Thumbnail/j2417_v01`, `abc_*` untouched):**
+  - **Arm A:** `027_j2417_A_4_cm_a_year_v01.jpg` (`SHA-256: dc1373490ab0ab37dd9c9d56dec2d33133191a3b393819c73ff9a6c0393ef8d0`, **4 CM A YEAR**, huge bright edge-lit Moon on dark blue-black with thin Earth crescent at corner, no Orbit) — `thumb_preview.py --score`: `PASS  027_j2417_A_4_cm_a_year_v01.jpg  saturation=161.3  near_black=2%`
+  - **Arm B:** `027_j2417_B_corals_kept_count_v01.jpg` (`SHA-256: b7a2cc2875f950cbc9b79528572e098575f922a8c80dde4240db775fd7e0ad46a`, **CORALS KEPT COUNT**, Devonian fossil coral close-up with sharp growth lines in warm light on dark ground, no Orbit) — `thumb_preview.py --score`: `PASS  027_j2417_B_corals_kept_count_v01.jpg  saturation=218.6  near_black=3%`
+  - **168×94 preview sheet:** `027_j2417_preview_sheet_v01.jpg` (`SHA-256: 8e89e3d6467362f858b032192973bf09c90231e18a672c6d8e4a24fb5c08c473`)
+- **Applied in YouTube Studio (`6bbbvfCx6zY`, CDP 9223, `Title and thumbnail` Test & Compare, `T008` in `05_Analytics/tests/THUMB_LEDGER.json`):**
+  - No prior test was running (`#ab-test-button` showed `"A/B testing"`).
+  - **Slot 1 (Arm A):** Title `Earth Is Losing Its Spin (And the Moon Is Taking It)` + Thumbnail `027_j2417_A_4_cm_a_year_v01.jpg`
+  - **Slot 2 (Arm B):** Title `Earth's Day Used to Be 22 Hours (And It's Still Getting Longer)` + Thumbnail `027_j2417_B_corals_kept_count_v01.jpg`
+  - **Saved & Read Back (YouTube Data API v3):** `title: "Earth Is Losing Its Spin (And the Moon Is Taking It)"`, `privacyStatus: "private"`, `publishAt: "2026-11-22T18:00:00Z"`, `madeForKids: false`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`, Studio `saveDisabled: true` (`Changes saved`).
 
 Air: Sun 22 Nov 18:00 London.
