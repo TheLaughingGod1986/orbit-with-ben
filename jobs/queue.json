@@ -1,5 +1,5 @@
 {
-  "next_id": 2444,
+  "next_id": 2445,
   "jobs": [
     {
       "id": "J0001",
@@ -210852,6 +210852,35 @@
         "by": "gemini",
         "note": "Completed worktree inspection (~/_desk/worktrees/* and /private/tmp/*-wt / codex-*) against jobs/queue.json; du -sh scan"
       }
+    },
+    {
+      "id": "J2444",
+      "title": "Move the heavy ~/_desk folders (worktrees, renders, scratch, cache) onto the MiniWork SSD, verified, with links left in place",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: 'queue up step 1 ... get it all working'. Frees about 24 GB of the Mini's internal disk (J2439: worktrees 13G, renders 4.6G, scratch 4.0G, cache 2.3G). Do NOT move ~/_desk/state, logs, venvs, jobs or anything else. Steps on the Mac mini: (0) check /Volumes/MiniWork is mounted and is its own device (stat -f %d /Volumes/MiniWork differs from stat -f %d ~); otherwise block and stop. (1) touch ~/_desk/state/chief-relay.pause so the relay starts nothing new, then wait until no other agent CLI (codex/agy/agent/claude) is running a job (ps), max 30 min; if still busy, remove the pause file, release the job and stop. (2) For each of worktrees, renders, scratch, cache in ~/_desk: rsync -a ~/_desk/<n>/ /Volumes/MiniWork/desk/<n>/ ; then verify with rsync -a --checksum --dry-run --itemize-changes ~/_desk/<n>/ /Volumes/MiniWork/desk/<n>/ printing nothing, and equal file counts (find | wc -l). Only on a full match: mv ~/_desk/<n> ~/_desk/<n>.moving && ln -s /Volumes/MiniWork/desk/<n> ~/_desk/<n> && confirm ls ~/_desk/<n>/ works, then rm -rf ~/_desk/<n>.moving. Any mismatch: leave that folder as it was and say why. (3) For each git worktree that was moved, run git -C <its main repo> worktree list and confirm it still resolves (the path is unchanged through the link). (4) ALWAYS remove ~/_desk/state/chief-relay.pause at the end, even on failure. (5) Record df -h ~ and df -h /Volumes/MiniWork before and after in jobs/reviews/<this job id>/DESK_MOVE.md, commit it, and jobs.py done with the free space gained. Never touch the NAS. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T16:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T16:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Move the heavy ~/_desk folders (worktrees, renders, scratch, cache) onto the MiniWork SSD, verified, with links left in place",
+      "due": "2026-11-09T20:00:00Z",
+      "kind": "qa"
     }
   ],
   "focus": [
