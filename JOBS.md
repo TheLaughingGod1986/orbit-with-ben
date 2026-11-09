@@ -34,7 +34,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1895 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J1130 |  |
 | J1919 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1752 |  |
 | J1925 | mini | open | – | – | for gemini · review · `gemini-argon` · verify condition for J1753 |  |
-| J1932 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J0979 |  |
+| J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2015 | mini | open | – | – | for codex · review · `gpt-6-astra` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
