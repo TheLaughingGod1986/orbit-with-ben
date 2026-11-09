@@ -30,6 +30,8 @@ class Relay(unittest.TestCase):
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
         # Always a fake agy: on the Mini the real one is on PATH, and a test must never wake it.
         os.environ["AGY_BIN"] = str(self.fake("agy", 'echo "gemini did it"'))
+        # And a fake Claude Code: the `claudecode` Mini worker (9 Nov 2026) would find the real `claude` on PATH.
+        os.environ["CLAUDE_BIN"] = str(self.fake("claude", 'echo "claudecode did it"'))
 
     def tearDown(self):
         cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
@@ -70,6 +72,20 @@ class Relay(unittest.TestCase):
         (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
         with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp):
             self.assertIsNone(cr.scratch_dir())  # same device as HOME: an unplugged drive's leftover folder
+
+    def test_claude_code_on_the_mini_runs_unattended_with_the_prompt_last(self):
+        b, args = cr.cli_spec("claudecode")
+        self.assertTrue(b.endswith("/claude"))
+        self.assertIn("--dangerously-skip-permissions", args)
+        self.assertEqual(args[-1], "-p")  # run_cli appends the prompt straight after -p
+
+    def test_with_codex_cursor_and_gemini_out_the_job_goes_to_claude_code(self):
+        q = self.routed_queue('{"next_id": 2, "jobs": [{"id": "J0901", "kind": "assembly", "status": "open", "needs": "mini", "history": []}]}')
+        for a in ("cursor", "codex", "gemini"):
+            cr.mark_down(a, "out of credit", T0 + 60 * MIN, T0)
+        with mock.patch.object(cr, "run_cli", return_value=(0, "done")) as run:
+            cr.cmd_run(T0)
+        self.assertIn("claudecode", [c.args[0] for c in run.call_args_list])
 
     def test_grok_is_chief_while_its_heartbeat_is_fresh(self):
         cr.seen("chief", T0 - 30 * MIN)
