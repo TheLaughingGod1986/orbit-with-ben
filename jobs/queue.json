@@ -1,5 +1,5 @@
 {
-  "next_id": 2438,
+  "next_id": 2439,
   "jobs": [
     {
       "id": "J0001",
@@ -210393,6 +210393,35 @@
       "remaining_action": "Apply 033 FIRST30_PLAN.md (PR #667): split R01/R03/R04 and rebalance R05/R07 so all opening cuts are 2.15-3.83s <=4.00s; render master_v02.mp4 + gates",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 033 Uranus so every cut is <=4 s (FIRST30_PLAN.md) and assemble master v02"
+    },
+    {
+      "id": "J2438",
+      "title": "034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-on from J2435 (PR #667) / J2428 (PR #665). Execute 02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/FIRST30_PLAN.md (also mirrored on studio-live NAS): (1) in lay_vo(), splice out 2.00-4.80s (-2.80s, 'in distant orbit around our sun,') from pluto_frozen_heart_vo_v03.wav so Sentence 1 ends at 5.90s <8.00s and Sentence 2 payoff ('1,000 km wide... zero craters') completes at 16.24s <20.00s, restoring +2.80s across R05-R07 breaths so R08-R72 (65.76-646.94s) stay 100% locked; (2) upgrade render_still() to symmetric sub-pixel PIL Image.Transform.EXTENT BICUBIC zoom (1.000->1.045) so Frame 0 (PIA20291.jpg) is already moving; (3) re-cut R01-R04 (0.00-36.50s) into 11 cuts of 3.00-3.57s <=4.00s (R01: 2x3.17s; R02: 3.50s scale graphic + 3.47s PIA19936 + 3.50s scale graphic; R03: 3x3.54s; R04: 3x3.02s); (4) render 034_pluto_frozen_heart_master_v02.mp4 (+ re-export 034_short01_testA_opening_v02.mp4) and pass all gates. £0.",
+      "ref": "J2435",
+      "film": "034",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-09T10:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-09T10:36Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply 034 FIRST30_PLAN.md (PR #667): splice 2.00-4.80s from Sentence 1 (<8s), BICUBIC push from Frame 0, R01-R04 in 11 cuts <=3.57s; render master_v02.mp4 + gates",
+      "kind": "assembly",
+      "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02"
     }
   ],
   "focus": [

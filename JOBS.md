@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2435 | any | claimed | macbook | 2026-11-09T12:11Z | review · Re-cut the first 30 s of 032 Titan, 033 Uranus, 034 Pluto to the new rule; list which of 026/027/031 can take a new opening before air |  |
 | J2436 | mini | open | – | – | 032 edit · assembly · 032 Titan: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
+| J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 
 Recently finished:
 
