@@ -270,6 +270,12 @@ class AllAgents(unittest.TestCase):
     def test_a_kind_with_no_installed_lane_falls_back_to_any_installed_cli(self):
         self.assertEqual(mw.pick_agent({"kind": "vo"}, ["claude"]), ("claude", ""))
 
+    def test_a_job_for_the_minis_claude_code_runs_on_the_macbooks_claude(self):
+        self.assertEqual(mw.pick_agent({"kind": "review", "for": "claudecode"}, ["codex", "claude"])[0], "claude")
+
+    def test_a_studio_job_uses_claude_when_the_chain_reaches_the_minis_claude_code(self):
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"])[0], "claude")
+
     def test_pin_keeps_the_old_single_agent_setting(self):
         with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
             self.assertEqual(mw.pick_agent({"kind": "review"}, ["codex", "claude"])[0], "codex")

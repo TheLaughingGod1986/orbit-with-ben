@@ -186,7 +186,7 @@ def film_named(title: str) -> bool:
 # playlists) and Flow/Chrome generation stay Mini-hard.
 # Codex stays off the MacBook when addressed (`for=codex`): one shared Codex account with the Mini (Ben, 6 Nov 2026).
 MACBOOK_KINDS = {"review", "script", "facts", "listing"}
-MACBOOK_CLIS = {"gemini", "claude", "cursor"}
+MACBOOK_CLIS = {"gemini", "claude", "cursor", "claudecode"}  # claudecode: a Mini Claude Code job runs on the MacBook's Claude Code (9 Nov 2026)
 CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
 # Hard Mini signs: local paths, media files, Studio/browser/tooling. Always block, even inside "do not …" notes.
 MINI_HARD = re.compile(
@@ -222,6 +222,32 @@ PUBLISH_HARD = re.compile(
     r"\bupload(?:ed|s|ing)? (?:to|the|a)\b|youtube:package|\bupload packages?\b|"
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+# YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
+# MACBOOK_CDP = the CDP ports whose browser is up: 9223 Orbit Studio, 9222 HOS (the Mini's ports, same profiles).
+# With the channel's port up, a Studio job (end screens, pinned comments, titles, tests, playlists, checklists) is
+# portable. Uploads, Buffer, Flow picture-making, renders and local media stay Mini-only.
+STUDIO_PORT = {"owb": "9223", "hos": "9222"}
+STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned comment\b|\bplaylists?\b|"
+                         r"\bTest (?:&|and) Compare\b|\btitle(?:-only)? test\b|\bRelated(?: video)?\b|\bcaptions?\b", re.I)
+STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
+                          r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?)\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|"
+                          r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3)\b|\bhos desk\b|\bicloud\b|"
+                          r"\b(?:change|set|move|make)\b[^.\n]{0,24}\b(?:privacy|schedule|publishAt|public)\b|\bgo public\b", re.I)
+# "Do not change privacy", "never the 9222 Flow browser", "No retitle, upload …": warnings, not work (as MINI_PROHIBITION).
+STUDIO_PROHIBITION = re.compile(r"(?is)\b(?:do\s+not|don't|never|no)\b[^.!\n]{0,240}")
+
+
+def macbook_studio_ok(job: dict, text: str) -> bool:
+    """A Studio-only job the MacBook can do now: its channel's CDP browser is up there, and it needs nothing else the
+    Mini alone has (uploads, Buffer, Flow, renders, local media, privacy or schedule changes)."""
+    ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
+    port = STUDIO_PORT.get(job.get("repo") or channels.home())
+    if not port or port not in ports:
+        return False
+    if job.get("kind") not in ("studio", "", None, "listing", "review") and not STUDIO_WORK.search(str(job.get("title") or "")):
+        return False
+    return (job.get("kind") == "studio" or bool(STUDIO_WORK.search(text))) \
+        and not STUDIO_BLOCK.search(STUDIO_PROHIBITION.sub(" ", text))
 # Shared working-film store on the NAS (both Mini and MacBook mount /Volumes/data). Mini local originals under
 # ~/YouTube stay put; MacBook local checkouts are not this store.
 STUDIO_LIVE_ROOT = pathlib.Path("/Volumes/data/studio-live")
@@ -322,13 +348,16 @@ def media_reachable(job: dict) -> bool:
 
 def macbook_portable(job: dict, data: dict | None = None) -> bool:
     """A `needs mini` job the MacBook can do: portable text/code, or harvest/assembly/watch-listen with reachable media."""
-    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS) \
-            or job.get("kind") in NOT_PORTABLE_KINDS:
+    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS):
         return False
     title = str(job.get("title") or "")
     fields = ("title", "body", "result", "remaining_action", "action")
     parent = find(data, job.get("recheck_of") or job.get("review_of") or "") if data else None
     text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
+    if macbook_studio_ok(job, text):
+        return True
+    if job.get("kind") in NOT_PORTABLE_KINDS:
+        return False
     if shared_media_job(job):
         # Studio login / Buffer / Flow stay Mini even when the film folder is on studio-live.
         return (not publish_mini_hit(text)) and media_reachable(job)

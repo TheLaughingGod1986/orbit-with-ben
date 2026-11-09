@@ -258,9 +258,14 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
-    if job.get("for") in have:  # a job addressed to one agent (a Mini job the MacBook took over): that agent's CLI
-        return job["for"], routing.model_for(job, job["for"])
+    # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
+    # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
+    addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
+    if addressed in have:
+        return addressed, routing.model_for(job, addressed)
     for a, m in routing.job_chain(job):
+        if a == "claudecode":  # the Mini's Claude Code lane = this MacBook's Claude Code
+            a, m = "claude", ("claude-opus-5-5" if m == "mini-claude-opus-5-5" else m)
         if a in have and routing.lane_ok(a, m):
             return a, (m if routing.RUNS_ON.get(m) == a else "")
     return (have[0], "") if have else ("", "")
@@ -503,9 +508,28 @@ def run_one() -> str:
     return run_ordinary()
 
 
+CDP_PORTS = ("9223", "9222")  # Orbit Studio, HOS Studio/Flow: the Mini's ports and profiles (start_cdp_browsers.sh)
+
+
+def cdp_ports_up(ports=CDP_PORTS) -> list:
+    """The CDP ports whose Chrome answers here (Ben, 9 Nov 2026: signed into Studio on the MacBook). jobs.py offers a
+    Studio job to the MacBook only while its channel's browser is up."""
+    import urllib.request
+    up = []
+    for p in ports:
+        try:
+            with urllib.request.urlopen(f"http://127.0.0.1:{p}/json/version", timeout=2) as r:
+                if r.status == 200:
+                    up.append(p)
+        except Exception:
+            pass
+    return up
+
+
 def run_ordinary() -> str:
     """Claim the next MacBook job and run it on the first installed agent in its chain."""
     args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
+    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up())  # read by jobs.macbook_studio_ok in the claim below
     r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
