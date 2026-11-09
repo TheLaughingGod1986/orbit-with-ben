@@ -1,5 +1,5 @@
 """chief_relay.py: the first agent in the chain that is up acts as Chief; out of credit falls through; Grok takes back."""
-import datetime as dt, os, pathlib, stat, sys, tempfile, unittest
+import datetime as dt, os, pathlib, stat, sys, tempfile, time, unittest
 from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -72,6 +72,26 @@ class Relay(unittest.TestCase):
         (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
         with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp):
             self.assertIsNone(cr.scratch_dir())  # same device as HOME: an unplugged drive's leftover folder
+
+    def test_a_blocked_ssd_cannot_hang_the_relay(self):
+        """9 Nov 2026: macOS held the relay on a permission dialog for the SSD and it went silent for hours. The check
+        now runs in a child with a timeout, and the answer is kept so the wait isn't paid on every wake."""
+        (self.tmp / "MiniWork" / "scratch").mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp), \
+                mock.patch.object(cr, "_SSD_PROBE", "import time; time.sleep(60)"), \
+                mock.patch.object(cr, "SSD_PROBE_S", 1):
+            t0 = time.monotonic()
+            self.assertIsNone(cr.scratch_dir())
+            self.assertLess(time.monotonic() - t0, 10)
+            with mock.patch.object(cr.subprocess, "run", side_effect=AssertionError("asked again")):
+                self.assertIsNone(cr.scratch_dir())  # kept answer: no second wait
+
+    def test_the_ssd_is_used_when_the_child_reports_another_device(self):
+        sd = self.tmp / "MiniWork" / "scratch"
+        sd.mkdir(parents=True)
+        with mock.patch.object(cr, "MINIWORK", self.tmp / "MiniWork"), mock.patch.object(cr, "HOME", self.tmp), \
+                mock.patch.object(cr, "_ssd_dev", return_value=os.stat(self.tmp).st_dev + 1):
+            self.assertEqual(cr.scratch_dir(), sd)
 
     def test_claude_code_on_the_mini_runs_unattended_with_the_prompt_last(self):
         b, args = cr.cli_spec("claudecode")
