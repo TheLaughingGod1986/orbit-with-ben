@@ -9,8 +9,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
-| J0124 | mini | blocked | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0135 | mini | blocked | – | – | studio · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
+| J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
+| J0135 | mini | open (after J0123) | – | – | studio · 025 length-test Short (J0134): set Related to Js6EQJ8qDi8 once the long is public, before Thu 12 Nov 11:30 London |  |
 | J0275 | mini | blocked | gemini | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (HZGTovJu_TQ, cwU_0WWeNZ4, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
@@ -85,11 +85,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2397 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
-| J2407 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
-| J2408 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J0135 |  |
 | J2414 | any | blocked | gemini | – | review · Verify condition for J2339 |  |
 | J2415 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J2420 | any | blocked | macbook | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
+| J2420 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2410 (PR #650) |  |
 | J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
 | J2423 | any | open | – | – | review · Verify condition for J0912 |  |
 | J2425 | mini | open | – | – | 025 upload · for codex · studio · `gpt-6.1-sol` · 025 Mars robot (live tonight, Js6EQJ8qDi8): start a 3-way title A/B test now — new 'lost/still out there' style vs current |  |

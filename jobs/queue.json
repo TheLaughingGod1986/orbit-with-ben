@@ -6695,13 +6695,13 @@
       "stage": "",
       "after": "J0123",
       "eta_min": 60,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-11T00:58Z",
-      "result": "waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T00:58Z",
@@ -6727,15 +6727,14 @@
           "at": "2026-11-08T18:09Z",
           "by": "relay",
           "what": "condition verification queued: J2407"
+        },
+        {
+          "at": "2026-11-09T12:53Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: condition met. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done."
         }
       ],
-      "remaining_action": "Add the Related links, pin the comment and check the social schedule",
-      "hold": {
-        "type": "public",
-        "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
-        "check_at": "2026-11-08T19:09:59+00:00",
-        "recheck_task": "J2407"
-      }
+      "remaining_action": "Add the Related links, pin the comment and check the social schedule"
     },
     {
       "id": "J0125",
@@ -7521,13 +7520,13 @@
       "stage": "",
       "after": "J0123",
       "eta_min": 30,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-11T22:29Z",
-      "result": "waits for input: 025 long Js6EQJ8qDi8 public (its YouTube publishAt Sun 8 Nov 18:00Z is a release date, not a job start); reopen when public",
+      "result": "",
       "history": [
         {
           "at": "2026-10-11T22:29Z",
@@ -7558,16 +7557,15 @@
           "at": "2026-11-08T18:09Z",
           "by": "relay",
           "what": "condition verification queued: J2408"
+        },
+        {
+          "at": "2026-11-09T12:53Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: condition met. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done."
         }
       ],
       "kind": "studio",
-      "remaining_action": "Add the Related link to the Mars long video",
-      "hold": {
-        "type": "public",
-        "condition": "Mars long Js6EQJ8qDi8 must read back Public and J0123 must be complete",
-        "check_at": "2026-11-08T19:09:59+00:00",
-        "recheck_task": "J2408"
-      }
+      "remaining_action": "Add the Related link to the Mars long video"
     },
     {
       "id": "J0136",
@@ -206778,13 +206776,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T18:09Z",
-      "result": "",
+      "result": "acting Chief: condition SATISFIED. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done. Parent reopened.",
       "history": [
         {
           "at": "2026-11-08T18:09Z",
@@ -206795,6 +206793,11 @@
           "at": "2026-11-08T18:10Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3977 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-09T12:53Z",
+          "by": "claude",
+          "what": "done: acting Chief: condition SATISFIED. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done. Parent reopened."
         }
       ],
       "remaining_action": "Verify readiness: Add the Related links, pin the comment and check the social schedule",
@@ -206823,13 +206826,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-08T23:25Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-08T18:09Z",
-      "result": "parked for Chief: condition for J0135 verified PARTIALLY UNMET in PR #655 (jobs/reviews/J2408/REVIEW.md, fc955a7b): Mars long Js6EQJ8qDi8 is now Public on YouTube (publishDate 2026-11-08T10:00:15-08:00 / 2026-11-08T18:00:15Z, verified via HTTP 200 oEmbed and watch-page ytInitialPlayerResponse; 2026-11-08 06:40Z snapshot pre-dated 18:00Z release, first post-release snapshot runs 2026-11-09T06:40Z), and J0134 length-test Short N42gKBbD7tE (Private, publishAt 2026-11-12T11:30:00Z) + Chief approvals remain valid, but prerequisite J0123 (after: J0123) is still blocked (J2406 in progress on macbook-2), not done. Only elected Chief (codex) may run jobs.py wait J0135 --recheck J2408 (next check 2026-11-09T05:35:00Z) and close J2408.",
+      "result": "acting Chief: condition SATISFIED. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done. Parent reopened.",
       "history": [
         {
           "at": "2026-11-08T18:09Z",
@@ -206870,6 +206873,11 @@
           "at": "2026-11-09T02:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-09T12:53Z",
+          "by": "claude",
+          "what": "done: acting Chief: condition SATISFIED. Js6EQJ8qDi8 (025 Mars long) public since 2026-11-08T18:00:15Z (oEmbed 200 at 10:53Z today); J0123 done. Parent reopened."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J2408 on J0135 (next check 2026-11-09T05:35:00Z) and closes J2408",
@@ -207840,13 +207848,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "open",
+      "by": "",
       "since": "2026-11-09T00:39Z",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-08T22:25Z",
-      "result": "parked for Chief: the MacBook Claude Code session cannot run network git or gh (git fetch, git push, gh pr view/create all need permission approval, and unattended runs can't grant it). PR #650 branch macbook/J2410 is not local, so 062/063 TOPIC.md can't be read, and a review PR couldn't be pushed anyway. This explains the 8 empty claim/release loops since 22:43Z. Fix: allow git fetch/push and gh in the MacBook Claude permission settings, or reroute to cursor-claude-opus-5-5 on the Mini. No review written, nothing changed.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-08T22:25Z",
@@ -207952,6 +207960,11 @@
           "at": "2026-11-09T02:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-09T12:53Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: the MacBook's unattended Claude runs may now git push and gh pr create (PR #668, merged 12:06Z), the only blocker named."
         }
       ],
       "remaining_action": "read both TOPIC.md files, check rule E + LEARNINGS, write REVIEW.md, PR",
