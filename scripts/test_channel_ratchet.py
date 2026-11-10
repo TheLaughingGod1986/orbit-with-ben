@@ -81,8 +81,20 @@ def channel_lines(source: str) -> dict[int, str]:
     return hits
 
 
+_SCRIPT_CACHE: dict[tuple[str, int, int], tuple[int, int]] = {}
+
+
+def _cached_counts(p: pathlib.Path) -> tuple[int, int]:
+    st = p.stat()
+    key = (str(p), st.st_mtime_ns, st.st_size)
+    if key not in _SCRIPT_CACHE:
+        text = p.read_text()
+        _SCRIPT_CACHE[key] = (len(channel_lines(text)), len(home_lines(text)))
+    return _SCRIPT_CACHE[key]
+
+
 def counts() -> dict[str, int]:
-    return {p.name: len(channel_lines(p.read_text())) for p in engine_scripts()}
+    return {p.name: _cached_counts(p)[0] for p in engine_scripts()}
 
 
 # Folders that hold a channel's own content. In the engine's own repo none of them will exist.
@@ -123,7 +135,7 @@ def home_lines(source: str) -> dict[int, str]:
 
 
 def home_counts() -> dict[str, int]:
-    return {p.name: len(home_lines(p.read_text())) for p in engine_scripts()}
+    return {p.name: _cached_counts(p)[1] for p in engine_scripts()}
 
 
 def home_ceilings() -> dict[str, int]:
