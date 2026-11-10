@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
-| J2512 | mini | open | – | – | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
+| J2512 | mini | claimed | gemini | 2026-11-10T22:39Z | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
 | J2513 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London) |  |
 | J2514 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London) |  |
 | J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
@@ -100,10 +100,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2536 | mini | blocked | claudecode | – | 007 upload · studio · HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A | Ben 10 Nov: Ok on both |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2538 | macbook | blocked | macbook | – | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
-| J2539 | macbook | claimed | macbook-2 | 2026-11-10T22:25Z | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
+| J2539 | macbook | blocked | macbook-2 | – | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
 | J2540 | mini | open (after J2539) | – | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2541 | macbook | blocked | macbook | – | review · One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so |  |
-| J2542 | any | open | – | – | review · Verify condition for J2171 |  |
+| J2542 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 

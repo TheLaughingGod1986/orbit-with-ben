@@ -217117,10 +217117,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T20:39Z",
+      "eta": "2026-11-10T22:39Z",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
       "result": "",
@@ -217129,13 +217129,38 @@
           "at": "2026-11-10T15:01Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T20:39Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:39Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2512; read J2508 review and brief; starting 5-step plan"
+        },
+        {
+          "at": "2026-11-10T20:45Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified J2494 assembly, v06 cut list/overlays, and audio/moving-video capabilities; selected clean v06_13.80 ESO Paranal observatory for Mon 16 s06 and smooth continuous motion on ESO star trails for Wed 18 s05"
         }
       ],
-      "remaining_action": "026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts",
+      "remaining_action": "Build Mon 16 v06 (replace 0:20.23-0:22.63 Paranal repeat) and Wed 18 v07 (animate 0:13.45-0:16.55 ESO star trails still), then run all Shorts gates",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Fix a repeated shot and a frozen picture in the two Nearest Star Shorts, then offer you the fixed versions",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-10T20:45Z",
+        "by": "gemini",
+        "note": "Verified J2494 assembly, v06 cut list/overlays, and audio/moving-video capabilities; selected clean v06_13.80 ESO Parana"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     },
     {
       "id": "J2513",
@@ -218562,13 +218587,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T20:25Z",
-      "eta": "2026-11-10T22:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
-      "result": "",
+      "result": "parked for Chief: OWB PR #766 (61b40b215) and HOS PR #486 (7ab958f) open with frame-0 full-bleed check (check 10, rule 24), caption-safe row-median outside band measurement, 17 unit+ffmpeg tests in test_gate_full_bleed.py, and studio-core sync; verified ffYKoNVPoqg fails as blur-pad on 3/3 frames while full-bleed OWB/HOS Shorts pass. Merge #766 and #486, then unblock/close J2539 so J2540 can run on the Mini.",
       "history": [
         {
           "at": "2026-11-10T20:15Z",
@@ -218594,18 +218619,27 @@
           "at": "2026-11-10T20:26Z",
           "by": "macbook-2",
           "what": "step 1 of 3 done: Read brief and gate_shorts_open.py; locating existing gate tests"
+        },
+        {
+          "at": "2026-11-10T20:50Z",
+          "by": "macbook-2",
+          "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:50Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: OWB PR #766 (61b40b215) and HOS PR #486 (7ab958f) open with frame-0 full-bleed check (check 10, rule 24), caption-safe row-median outside band measurement, 17 unit+ffmpeg tests in test_gate_full_bleed.py, and studio-core sync; verified ffYKoNVPoqg fails as blur-pad on 3/3 frames while full-bleed OWB/HOS Shorts pass. Merge #766 and #486, then unblock/close J2539 so J2540 can run on the Mini."
         }
       ],
-      "remaining_action": "Add frame-0 full-bleed check + tests in gate_shorts_open.py and sync core",
+      "remaining_action": "Tests passed, studio-core synced to HOS, PR #766 (OWB) and PR #486 (HOS) pushed, parking for Chief",
       "due": "2026-11-11T12:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-10T20:26Z",
-        "by": "macbook-2",
-        "note": "Read brief and gate_shorts_open.py; locating existing gate tests"
+        "at": "2026-11-10T20:50Z",
+        "by": "macbook-2"
       }
     },
     {
@@ -218721,25 +218755,56 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T20:38Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T20:35Z",
-      "result": "",
+      "result": "parked for Chief: J2171 condition NOT met, keep J2171 blocked (OWB PR #770, jobs/reviews/J2542/REVIEW.md, cab32b48c). Direct NAS + queue verification at 2026-11-10T20:43Z: (1) J2033 is open at step 2 of 5: Batches 1 and 2 have archived 7/20 Tranche 2 video clips on NAS (including Short A S03 07_ball_to_moon_t1.mp4, 1280x720, 7.917s, sha256 fba484bb8b37...), while 13/20 clips in Batches 3-5 remain unminted; (2) J2034 (open, 0/3, after J2033) and J2035 (open, 0/3, after J2034; 05_Music/ score bed absent on NAS) have not started; (3) all 4 VO files and 17 Tranche 1 / code-graphic plates remain intact on NAS, and 0 duplicate gravity/Newton/Moon HOS videos in 2026-11-10.json snapshot. MacBook is not the holder (gemini) or elected Chief, so 'jobs.py wait J2171 --agent macbook ... --recheck J2542' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-11T02:45:00Z' --type input --recheck J2542 --git and close J2542. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-10T20:35Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T20:38Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:39Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:43Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:44Z",
+          "by": "macbook",
+          "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:44Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2171 condition NOT met, keep J2171 blocked (OWB PR #770, jobs/reviews/J2542/REVIEW.md, cab32b48c). Direct NAS + queue verification at 2026-11-10T20:43Z: (1) J2033 is open at step 2 of 5: Batches 1 and 2 have archived 7/20 Tranche 2 video clips on NAS (including Short A S03 07_ball_to_moon_t1.mp4, 1280x720, 7.917s, sha256 fba484bb8b37...), while 13/20 clips in Batches 3-5 remain unminted; (2) J2034 (open, 0/3, after J2033) and J2035 (open, 0/3, after J2034; 05_Music/ score bed absent on NAS) have not started; (3) all 4 VO files and 17 Tranche 1 / code-graphic plates remain intact on NAS, and 0 duplicate gravity/Newton/Moon HOS videos in 2026-11-10.json snapshot. MacBook is not the holder (gemini) or elected Chief, so 'jobs.py wait J2171 --agent macbook ... --recheck J2542' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-11T02:45:00Z' --type input --recheck J2542 --git and close J2542. £0 / 0 credits."
         }
       ],
-      "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
+      "remaining_action": "Opened OWB PR #770 (cab32b48c); recording hold check and parking for Chief",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-10T21:35:03+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-10T20:44Z",
+        "by": "macbook"
+      }
     }
   ],
   "focus": [
