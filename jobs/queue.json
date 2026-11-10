@@ -1,5 +1,5 @@
 {
-  "next_id": 2486,
+  "next_id": 2487,
   "jobs": [
     {
       "id": "J0001",
@@ -214429,6 +214429,37 @@
       "kind": "review",
       "required_capabilities": [
         "audio_input"
+      ]
+    },
+    {
+      "id": "J2486",
+      "title": "Design review: the new Venus thumbnail B (465°C) before any test is armed",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J2484 built a new Test & Compare B thumbnail for 023 Venus (`VBaYRPp85Sw`): the planet's surface with a lander, text \"465°C\". Its own gate and rubric passed (records in `02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/`, OWB PR #712, merged). The JPG itself is not in the repo (images are ignored): it is in MacBook slot 2's clone at that path and should be on the NAS mirror. This job is the independent design review; a different agent from the one that built it should take it. It needs image input.\n\nLook at `venus_tc_B_465c_VBaYRPp85Sw.jpg` at full size, and at the two preview sheets at phone size next to A (MELTS LEAD):\n1. HOOK, BAND, GRADE, PHONE from THUMBNAIL_AND_TITLE_RULES.md section 2.B, judged with your own eyes, not from the builder's notes.\n2. Saturation measured 245 out of 255. Say whether it reads as rich or as blown out and garish beside the channel's other thumbnails and two competitors' in the same search.\n3. Accuracy: 465°C does not make metal glow brightly (things start to glow visibly at about 525°C). A warm orange cast from Venus's sky is fine. If the lander looks white-hot or molten, that is a FIX: tone the glow down so it reads as heat, not as melting.\n4. Provenance: the base plate `venus_surface_glowing_lander_plate.jpg` has no recorded source. Find out which tool made it and that it cost nothing, and write that into META.json. If it cannot be established, that is a FIX.\n5. No Orbit character, no extra words, text clear of the bottom-right corner.\n\nWrite `jobs/reviews/<this job>/REVIEW.md` with KEEP or a FIX list. On KEEP, check the file's sha256 against SHA256.txt, make sure it is on the NAS mirror, and reopen J1198 with the evidence. On FIX, queue the fix for the thumbnail and leave J1198 waiting.\n\nNothing is changed in Studio by this job. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T05:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T05:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Design review: the new Venus thumbnail B (465°C) before any test is armed",
+      "kind": "review",
+      "required_capabilities": [
+        "image_input"
       ]
     }
   ],
