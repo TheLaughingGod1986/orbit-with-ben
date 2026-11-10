@@ -4,19 +4,63 @@ Ben, 5 Nov 2026: "decouple the studio workflow system from the individual channe
 channels ... each channel can have a slightly different rule set, slightly different flow that can be stored in the
 actual channel repo itself." A third channel is coming once the current two run smoothly.
 
+Ben, 10 Nov 2026: "there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of
+Science ... one repo for the decoupled Studio, where we plug in the 2 repos ... We want a system that we can start
+plugging in repos that will be channels." And: "recommend your findings and implement the best possible solution."
+
 Status (10 Nov 2026): **phase 2 is done, phase 1 is part done, phases 3 and 4 are not started.**
 
 - Done: `scripts/channels.py` (the loader), `channels/channels.json` (the registry), and each channel's own
   `studio/channel.json` in its repo, with a cached copy here for machines that lack that checkout.
-- Part done: engine scripts asking the loader instead of naming a channel. `scripts/test_channel_ratchet.py` counts
-  the code lines that still name one and holds a ceiling per script in `scripts/channel_ratchet.json`. A ceiling can
-  only go down, and a new script must have none. On 10 Nov: 337 lines in 22 scripts, after a first batch of 11
-  small scripts. The largest are `chief_relay.py`, `kanban_snapshot.py`, `approved_deliver.py`, `board_publish.py`
-  and `video_tracker.py`; each of those gets its own change, because they run the live studio.
-- Some of what the ratchet counts is the engine's own name rather than a channel (`owb_thread.py`, `com.owb.*`
-  launchd labels, `OWB_AGENT`). Those go with phase 3, when the engine moves out of this repo.
-- Not started: the engine in its own repo (phase 3) and the one-command new channel (phase 4). Neither starts
-  until the ratchet reads zero for channel logic and the studio has run a clean week on it.
+- Part done: engine scripts asking the loader instead of naming a channel. `scripts/test_channel_ratchet.py` holds
+  two counts per script in `scripts/channel_ratchet.json`. A ceiling can only go down, and a new script must have
+  none.
+  - **Names a channel:** 337 code lines in 22 scripts (362 in 32 before the first batch). The largest are
+    `chief_relay.py`, `kanban_snapshot.py`, `approved_deliver.py`, `board_publish.py` and `video_tracker.py`; each
+    of those gets its own change, because they run the live studio.
+  - **Assumes the engine lives inside one channel's repo** (counted from 10 Nov): 40 code lines in 17 scripts. A
+    call to `channels.home()`, or a path from the engine's root into channel content such as
+    `ROOT / "02_Video-Projects"`.
+- Some of what the first count holds is the engine's own name rather than a channel (`owb_thread.py`, `com.owb.*`
+  launchd labels, `OWB_AGENT`). Those are renamed at the move in phase 3.
+- Not started: the engine in its own repo (phase 3) and the one-command new channel (phase 4). Phase 3 does not
+  start until both counts read zero for channel logic and the studio has run a clean week on it. The channel check
+  and the template from phase 4 do not depend on the move and are being built now.
+
+## Decisions, 10 Nov 2026 (changes to the plan below)
+
+Three repos, as Ben says: `studio` (the engine), `orbit-with-ben` and `history-of-science` (channels). One queue,
+one board and one thread, in the studio repo. On top of the 5 Nov plan:
+
+1. **No home channel.** Today `orbit-with-ben` is "home": the engine sits in it and reads its films from its own
+   root. In the studio repo there are no films. Orbit plugs in exactly as History of Science does, through the
+   registry. The second count above tracks this.
+2. **One progress format.** Orbit keeps one `status.json` per film. History of Science keeps one `PIPELINE.json`
+   plus `STATUS.md` and a board page that are generated and then committed. On 10 Nov, 24 of its 69 open pull
+   requests conflicted with `main`, most of them only on those three files. The standard for every channel is one
+   status file per film, and no generated page is committed to a channel repo: the studio builds the board.
+   History of Science moves to it with a converter before phase 3.
+3. **The studio repo starts clean.** No copied history (this answers open question 3 the other way). The old
+   history holds Google account addresses in 46 files here; a new repo with one first commit, and a pointer to
+   the commit it was taken from, carries none. `orbit-with-ben` keeps the full history for anyone who needs it.
+4. **Rules split.** `AGENTS.md` here mixes studio rules (the Ben gate, the Never list, sign-offs, who does what,
+   the queue and the relay) with Orbit's own style rules (teach on screen, polish, packaging). The first set moves
+   to the studio repo. Each channel keeps its own in `studio/RULES.md`. A channel can add a rule and can never
+   remove a studio one.
+5. **No copied tools.** `core_sync.py` and `studio-core/` keep 56 shared files identical in both channel repos.
+   They retire when the engine has its own repo; a channel's CI checks out the studio repo instead.
+6. **A check every channel passes.** `scripts/channel_check.py` reads a channel checkout and says whether the
+   studio can drive it: `studio/channel.json` complete, the folder layout, the rules file. The same check runs in
+   the channel's CI and before a channel is added to the registry.
+7. **NAS folders by slug.** `studio-live/<slug>/`, not `studio-live/orbit-with-ben` and
+   `studio-live/History Of Science`. The folder name goes in `studio/channel.json` meanwhile.
+8. **Visibility and name are Ben's.** Recommended: `studio`, private, because the queue and the thread are how
+   agents get their instructions and nobody outside can post on a private repo. A private repo has a monthly cap
+   on free check minutes; usage is to be measured first. The repo is not created until Ben answers.
+
+**Order of work:** finish phase 1 (both counts to zero) → the channel check and template → History of Science to
+per-film status files → a clean week → Ben's answer on name and visibility → the move (phase 3), one planned
+window, old copies kept until a week of green.
 
 The plan below is as written on 5 Nov.
 
