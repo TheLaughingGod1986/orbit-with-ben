@@ -6689,7 +6689,7 @@
       "title": "025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103)",
       "needs": "mini",
       "repo": "owb",
-      "body": "The date-bound rest of J0103 (025 Mars robot), under J0084's original brief and authorisation (ref 6077231242). Runs once the gate job says the long `Js6EQJ8qDi8` is public (Sun 8 Nov 18:00Z).\n\nAlready done in J0103: end screen + card on Js6EQJ8qDi8; all three Shorts uploaded private and scheduled with Studio covers set: `iyvWYFP_ETA` (Mon 9 Nov 11:30Z), `TtgHNLXfDSs` (Wed 11 Nov 11:30Z, Test A opening), `bSjWiCbB7pY` (Fri 13 Nov 11:30Z).\n\nTo do:\n1. Related video = `Js6EQJ8qDi8` on all three Shorts in Studio (the picker lists public videos only). `iyvWYFP_ETA` first: it airs Mon 9 Nov 11:30Z. Do NOT change title, privacy or publishAt.\n2. Pinned comment on `Js6EQJ8qDi8` (`update-pinned-comment.ts`; the API refused it while scheduled). No pinned comment on any Short.\n3. Buffer: check the Mon (`iyvWYFP_ETA`) and Fri (`bSjWiCbB7pY`) posts exist (refused at the 10/10 scheduled limit on 10 Oct; the 07:05 `buffer-mirror.ts check` should have added them). If not, run `buffer-mirror.ts check`.\n4. When 026 goes public (Sun 15 Nov), swap the long's end-screen video from `-jmMROGoZCM` to 026's id (the script hands off to 026).\n\nReport ids and what changed on #99, with a thread line for each Studio change.\n\n\n29 Oct (acting Chief Claude): the Mars Opening Short is now B1z2dv7m7Vk (v07, J1059; TtgHNLXfDSs is retired, Private and unscheduled). Set its Related video to Js6EQJ8qDi8 with the others once the long is public, before Wed 11 Nov 11:30 London.",
+      "body": "The date-bound rest of J0103 (025 Mars robot), under J0084's original brief and authorisation (ref 6077231242). Runs once the gate job says the long `Js6EQJ8qDi8` is public (Sun 8 Nov 18:00Z).\n\nAlready done in J0103: end screen + card on Js6EQJ8qDi8; all three Shorts uploaded private and scheduled with Studio covers set: `iyvWYFP_ETA` (Mon 9 Nov 11:30Z), `TtgHNLXfDSs` (Wed 11 Nov 11:30Z, Test A opening), `bSjWiCbB7pY` (Fri 13 Nov 11:30Z).\n\nTo do:\n1. Related video = `Js6EQJ8qDi8` on all three Shorts in Studio (the picker lists public videos only). `iyvWYFP_ETA` first: it airs Mon 9 Nov 11:30Z. Do NOT change title, privacy or publishAt.\n2. Pinned comment on `Js6EQJ8qDi8` (`update-pinned-comment.ts`; the API refused it while scheduled). No pinned comment on any Short.\n3. Buffer: check the Mon (`iyvWYFP_ETA`) and Fri (`bSjWiCbB7pY`) posts exist (refused at the 10/10 scheduled limit on 10 Oct; the 07:05 `buffer-mirror.ts check` should have added them). If not, run `buffer-mirror.ts check`.\n4. When 026 goes public (Sun 15 Nov), swap the long's end-screen video from `-jmMROGoZCM` to 026's id (the script hands off to 026).\n\nReport ids and what changed on #99, with a thread line for each Studio change.\n\n\n29 Oct (acting Chief Claude): the Mars Opening Short is now B1z2dv7m7Vk (v07, J1059; TtgHNLXfDSs is retired, Private and unscheduled). Set its Related video to Js6EQJ8qDi8 with the others once the long is public, before Wed 11 Nov 11:30 London.\n\n10 Nov (J2519, gemini): the Thu 12 Nov Mars wind Short is now uhZSRcvngvE (v05, supersedes N42gKBbD7tE which is Private and unscheduled). Related video Js6EQJ8qDi8, en-GB captions, and Buffer posts (instagram 6af364330649793ed200be83, facebook 6af364340649793ed200beea, threads 6af364350649793ed200bf16) are set on uhZSRcvngvE.\n",
       "ref": "6103189873",
       "film": "",
       "stage": "",
@@ -6762,6 +6762,11 @@
           "at": "2026-11-10T16:37Z",
           "by": "claudecode",
           "what": "condition recorded; next verification 2026-11-15T18:05:00Z"
+        },
+        {
+          "at": "2026-11-10T18:41Z",
+          "by": "gemini",
+          "what": "J2519: Thu 12 Nov Mars wind Short swapped N42gKBbD7tE -> uhZSRcvngvE (Private, 2026-11-12T11:30:00Z, Related Js6EQJ8qDi8 & Buffer set)"
         }
       ],
       "remaining_action": "Swap the Mars long's end-screen video from the Jupiter film to the nearest-star long once it is public",
