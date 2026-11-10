@@ -402,7 +402,9 @@ What the missing 41 GiB is and is not:
 - **Not snapshots:** there are no local APFS or Time Machine snapshots on the Data volume.
 - **3.2 GiB** is files already deleted but still held open by running programs (largest: `FPCKService` 1.6 GiB). A reboot returns it.
 - **The other ~38 GiB is in places macOS will not let this session read, even with sudo,** because Terminal and Claude do not have Full Disk Access: `~/.Trash` (du: not permitted), the Spotlight index (`.Spotlight-V100`), document versions (`.DocumentRevisions-V100`) and the protected parts of `~/Library` (Mail, Messages, Photos, iCloud Drive).
-- **Most likely the Trash.** The earlier cleanup jobs moved large folders, and anything put in the Trash stays on this volume. Ben can confirm in ten seconds: click the Trash in the Dock and read the size in Finder (View → Show Status Bar, or Get Info on the selected items). Nothing was emptied here.
+- **Not the Trash, Photos, Mail or Messages (checked by Ben, 10 Nov).** The Trash is empty. System Settings → Storage shows Photos 1.78 GB, Mail 0.35 GB, Messages 2.6 GB, Other Users 6.67 GB (du could read 2.6 GB of it), and **System Data 113 GB**.
+- **So about 9 GB of the gap is explained** (Photos, Mail, Messages, the other user's app data) plus the 3.2 GiB of deleted-but-open files. **About 30 GB is still unplaced.** It sits inside what macOS calls System Data, in places this session is refused: the Spotlight index, document versions, and the system's temporary and cache folders under `/private/var/folders`. After 37 days without a restart, much of it is probably stale temporary data that a restart releases.
+- **Two ways to settle it, neither urgent (29 GiB is free):** compare free space before and after the Mini's next restart; or Ben gives the Claude app Full Disk Access and the scan is rerun.
 
 The stale `sudo du -xhd 3 /System/Volumes/Data` from 9 Nov was no longer running. No `du` from this session was left behind.
 
