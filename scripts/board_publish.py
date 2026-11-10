@@ -64,13 +64,17 @@ CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minu
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
+# CHANNEL_SPARSE: what channel_check.py looks at to say what housekeeping a channel has left (the Channels section).
+CHANNEL_SPARSE = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
 OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
               "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
               "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
               "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
-              "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
+              "/05_Analytics/dashboard/data.json",  # the Channel Tracker's data, published as tracker.json
+              *CHANNEL_SPARSE]
 HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
-              "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
+              "/00_Brand/Channel-Setup/social/UPLOADS.json",  # each HOS long's YouTube read-back (Private + publishAt)
+              *CHANNEL_SPARSE]
 SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
 CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
@@ -547,7 +551,10 @@ def run_once(a) -> int:
     try:  # The Channels section (Ben, 10 Nov 2026): each one's handle, repo, whether the studio can drive it, what
         # is left to do. The names above stay if this fails, so the filters never lose a channel.
         import channel_cards
-        board["channels"] = channel_cards.cards()
+        # Read each channel from this run's own fresh copy of its main branch (WT/<slug>), never from the working
+        # checkout: that one can be on a job's branch or behind, and then a channel reads as "not checked".
+        fresh = {s: WT / s for s in channels.slugs() if (WT / s / "studio" / "channel.json").is_file()}
+        board["channels"] = channel_cards.cards(fresh)
         board["channelRoom"] = channel_cards.room()
     except Exception as e:  # noqa: BLE001
         log(f"channel cards not read: {e}")
