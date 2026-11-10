@@ -84649,6 +84649,11 @@
           "at": "2026-11-10T11:50Z",
           "by": "claude",
           "what": "reopened on Ben's ask (10 Nov ~11:45Z): try the pin once more; stop if YouTube asks for a password"
+        },
+        {
+          "at": "2026-11-10T12:40Z",
+          "by": "claude",
+          "what": "deadline: 2026-11-10T20:00:00Z (Ben asked for the pin try today; a five-minute Studio step)"
         }
       ],
       "kind": "studio",
@@ -84664,7 +84669,8 @@
         "by": "codex"
       },
       "for": "",
-      "model": ""
+      "model": "",
+      "due": "2026-11-10T20:00:00Z"
     },
     {
       "id": "J0959",
@@ -214547,9 +214553,14 @@
           "at": "2026-11-10T12:14Z",
           "by": "claudecode",
           "what": "released: Found Gemini's earlier uncommitted draft in ~/_desk/wt-J2478 (dirty worktree, do not clean): cut owb_dated_2026_11_24_supermoon_v01.mp4 (19.6 s, 1080x1920, sha 868a1259…) on voice supermoon_2026_11_24_vo_v02 (plan-order Trim 1, 41 words, line 4 at 11.11 s, vo_check PASS). gate_shorts_open PASS this run (cut1 2.63 s, vo onset 0.08 s; warn: 19.6 s outside 22-27 s band). Key files safety-copied to NAS studio-live .../_dated_shorts/2026-11-24_supermoon/from_gemini_wt_J2478/ (16 files). Voice spend is 1,072 characters over four takes (Gemini 291+245, claudecode 291+245), over the 600 cap: no more takes. Next: Chief picks the voice (Gemini v02 follows the plan's trim order; claudecode v03 on branch j2478-supermoon-short skipped Trim 1); then commit Gemini's folder text files + both ledgers from a clean worktree, run the remaining Shorts gates incl. rule 24 first-second on the chosen cut, and queue the watch-and-listen review. Nothing reviewed by ear or eye yet."
+        },
+        {
+          "at": "2026-11-10T12:40Z",
+          "by": "claude",
+          "what": "acting Chief: voice ruled, v02 (plan's trim order); next action rewritten"
         }
       ],
-      "remaining_action": "Chief picks the voice version; then run the remaining Shorts gates on the built cut and queue the watch-and-listen review",
+      "remaining_action": "Chief ruling 10 Nov 12:45Z (thread): use Gemini's v02 voice and its built cut (Trim 1, 41 words, 19.6 s). v03 is not used; leave it on its branch. 1) Start from branch j2478-supermoon-short (take 1's record, the slot change, two ledger lines); add Gemini's folder and its two ledger lines from ~/_desk/wt-J2478. Do not clean that worktree until the commit is pushed and the NAS copy is checked. 2) Mark v03 'not used' in VO_REPORT.md. 3) NO further voice take (four takes, 1,072 characters against a cap of about 600). If sentence 1 fails rule 24 (subject and surprise by 1.5 s), tighten the gaps of the existing take in the edit and say what you did. 4) Run the remaining Shorts gates on the v02 cut, then queue the watch-and-listen review. Ben's OK is needed by Wed 18 Nov 18:00 London.",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "progress": {
