@@ -1,5 +1,5 @@
 {
-  "next_id": 2544,
+  "next_id": 2545,
   "jobs": [
     {
       "id": "J0001",
@@ -218832,6 +218832,11 @@
           "at": "2026-11-10T22:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #774 (2bc420e12) open with jobs/reviews/J2540/REPORT.md and J2540_results.json tabulating frame0_full_bleed across all scheduled OWB (23 scheduled + 10 Nov ref + 3 J2494 re-cuts + J2510/J2512 re-cuts) and HOS (6 scheduled) Shorts. All 3 J2494 re-cuts PASS (gmzaCfJF1gA v02, HZGTovJu_TQ v05/v06, cwU_0WWeNZ4 v06/v07). Two rows FAIL current check: OWB ffYKoNVPoqg (10 Nov ref, true positive blur-pad) and HOS ChbsigHD5_o (18 Nov, visual false positive on full-bleed 9:16 where top of MINT text at y=63 and tabletop edge at y=127 align symmetrically). Also flagged OWB rvug71d7Dqk (21 Nov, fri06_muons_ground_v04.mp4) which PASSes current thresholds but visually opens on a feathered blur-pad (0-1.5s). Nothing re-cut or changed in Studio."
+        },
+        {
+          "at": "2026-11-10T22:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J2544"
         }
       ],
       "remaining_action": "Parked for Chief review of PR #774 and threshold/re-cut decisions",
@@ -218845,6 +218850,12 @@
         "at": "2026-11-10T22:05Z",
         "by": "gemini",
         "note": "PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json coverin"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-10T23:07:15+00:00",
+        "recheck_task": "J2544"
       }
     },
     {
@@ -219054,6 +219065,37 @@
         "by": "macbook-2",
         "note": "Evidence in jobs/reviews/J2543/REVIEW.md (OWB PR #773, b6982c0e3)"
       }
+    },
+    {
+      "id": "J2544",
+      "title": "Verify condition for J2540",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2540: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2540 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T22:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T22:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief review of PR #774 and threshold/re-cut decisions",
+      "kind": "review",
+      "recheck_of": "J2540",
+      "due": "2026-11-10T23:07:15+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
