@@ -186,7 +186,7 @@ def film_named(title: str) -> bool:
 # playlists) and Flow/Chrome generation stay Mini-hard.
 # Codex stays off the MacBook when addressed (`for=codex`): one shared Codex account with the Mini (Ben, 6 Nov 2026).
 MACBOOK_KINDS = {"review", "script", "facts", "listing"}
-MACBOOK_CLIS = {"gemini", "claude", "cursor"}
+MACBOOK_CLIS = {"gemini", "claude", "cursor", "claudecode"}  # claudecode: a Mini Claude Code job runs on the MacBook's Claude Code (9 Nov 2026)
 CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
 # Hard Mini signs: local paths, media files, Studio/browser/tooling. Always block, even inside "do not …" notes.
 MINI_HARD = re.compile(
@@ -222,6 +222,34 @@ PUBLISH_HARD = re.compile(
     r"\bupload(?:ed|s|ing)? (?:to|the|a)\b|youtube:package|\bupload packages?\b|"
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+# YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
+# MACBOOK_CDP = the CDP ports whose browser is up: 9223 Orbit Studio, 9222 HOS (the Mini's ports, same profiles).
+# With the channel's port up, a Studio job (end screens, pinned comments, titles, tests, playlists, checklists) is
+# portable. Uploads, Buffer, Flow picture-making, renders and local media stay Mini-only.
+STUDIO_PORT = {"owb": "9223", "hos": "9222"}
+STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned comment\b|\bplaylists?\b|"
+                         r"\bTest (?:&|and) Compare\b|\btitle(?:-only)? test\b|\bRelated(?: video)?\b|\bcaptions?\b", re.I)
+STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
+                          r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?)\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|"
+                          r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3)\b|\bhos desk\b|\bicloud\b|"
+                          r"\b(?:change|set|move|make)\b[^.\n]{0,24}\b(?:privacy|schedule|publishAt|public)\b|\bgo public\b", re.I)
+# "Do not change privacy", "never the 9222 Flow browser", "No retitle, upload …": warnings, not work (as MINI_PROHIBITION).
+STUDIO_PROHIBITION = re.compile(r"(?is)\b(?:do\s+not|don't|never|no)\b[^.!\n]{0,240}")
+
+
+def macbook_studio_ok(job: dict, text: str) -> bool:
+    """A Studio-only job the MacBook can do now: its channel's CDP browser is up there, and it needs nothing else the
+    Mini alone has (uploads, Buffer, Flow, renders, local media, privacy or schedule changes)."""
+    if job.get("mini_only"):   # the Chief pinned it to the Mini (`jobs.py add --mini-only`), e.g. a change that can't be undone
+        return False
+    ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
+    port = STUDIO_PORT.get(job.get("repo") or channels.home())
+    if not port or port not in ports:
+        return False
+    if job.get("kind") not in ("studio", "", None, "listing", "review") and not STUDIO_WORK.search(str(job.get("title") or "")):
+        return False
+    return (job.get("kind") == "studio" or bool(STUDIO_WORK.search(text))) \
+        and not STUDIO_BLOCK.search(STUDIO_PROHIBITION.sub(" ", text))
 # Shared working-film store on the NAS (both Mini and MacBook mount /Volumes/data). Mini local originals under
 # ~/YouTube stay put; MacBook local checkouts are not this store.
 STUDIO_LIVE_ROOT = pathlib.Path("/Volumes/data/studio-live")
@@ -322,13 +350,18 @@ def media_reachable(job: dict) -> bool:
 
 def macbook_portable(job: dict, data: dict | None = None) -> bool:
     """A `needs mini` job the MacBook can do: portable text/code, or harvest/assembly/watch-listen with reachable media."""
-    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS) \
-            or job.get("kind") in NOT_PORTABLE_KINDS:
+    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS):
+        return False
+    if job.get("mini_only"):
         return False
     title = str(job.get("title") or "")
     fields = ("title", "body", "result", "remaining_action", "action")
     parent = find(data, job.get("recheck_of") or job.get("review_of") or "") if data else None
     text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
+    if macbook_studio_ok(job, text):
+        return True
+    if job.get("kind") in NOT_PORTABLE_KINDS:
+        return False
     if shared_media_job(job):
         # Studio login / Buffer / Flow stay Mini even when the film folder is on studio-live.
         return (not publish_mini_hit(text)) and media_reachable(job)
@@ -408,8 +441,9 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
     due = workflow.deadlines(data["jobs"])
     from workflow_board import load_tracker
-    nearest = workflow.near_watch(load_tracker())
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
+    tracker = load_tracker()
+    nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
@@ -885,7 +919,7 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: str = "", version: str = "", due: str = "",
               airs: str = "", if_not: str = "", card: str = "", title: str = "", number: str = "", vtype: str = "",
-              add: bool = False, clear: bool = False) -> None:
+              add: bool = False, clear: bool = False, prev: list | None = None, fixed: list | None = None) -> None:
     """Mark a job as waiting on Ben (Ben, 25 Oct 2026: every cut he has to OK shows on the board, with Play and its
     deadline). `awaits_ben` is the one signal the Studio Kanban builds Ready for OK cards from (video_tracker.py
     ask_entries); scripts/board_check.py checks every entry reached the published board. --add appends another cut to
@@ -903,6 +937,12 @@ def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: s
                  ("ifNot", if_not), ("card", card), ("title", title), ("number", number), ("type", vtype)):
         if v:
             entry[k] = v
+    # A re-sent cut names Ben's earlier tick(s) it answers and what was changed, so the watch page lists the past
+    # problems under the player (Ben, 8 Nov 2026).
+    if prev:
+        entry["prev"] = [p for p in prev if p]
+    if fixed:
+        entry["fixed"] = [f for f in fixed if f]
     cur = job.get("awaits_ben")
     cur = cur if isinstance(cur, list) else ([cur] if isinstance(cur, dict) else [])
     job["awaits_ben"] = (cur + [entry]) if add else [entry]
@@ -1132,6 +1172,8 @@ def main(argv=None) -> int:
     a.add_argument("--action", default="", help="plain-English action still unfinished")
     a.add_argument("--plain", default="", help="one plain-English line for the board: what this job does, no shorthand")
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
+    a.add_argument("--mini-only", dest="mini_only", action="store_true",
+                   help="pin a `needs mini` job to the Mini: the MacBook never takes it (e.g. a change that can't be undone)")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
     a.add_argument("--approved-from", dest="approved_from", default="",
@@ -1192,6 +1234,9 @@ def main(argv=None) -> int:
     aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
+    aw.add_argument("--prev", action="append", default=[], help="a re-sent cut: the board check id of Ben's earlier change "
+                    "tick it answers, e.g. OWB-J2395.3 (repeatable); his old notes show under the new cut")
+    aw.add_argument("--fixed", action="append", default=[], help="a re-sent cut: one line on what was changed (repeatable)")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "
                     "the default when the job is still open/claimed/blocked")
@@ -1259,6 +1304,8 @@ def main(argv=None) -> int:
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
                 if args.plain.strip():
                     job["plain"] = args.plain.strip()
+                if getattr(args, "mini_only", False):
+                    job["mini_only"] = True
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:
@@ -1332,7 +1379,7 @@ def main(argv=None) -> int:
             elif args.cmd == "awaits":
                 do_awaits(job, args.agent or "chief", at, what=args.what, file=args.file, version=args.version, due=args.due,
                           airs=args.airs, if_not=args.if_not, card=args.card, title=args.title, number=args.number,
-                          vtype=args.vtype, add=args.add, clear=args.clear)
+                          vtype=args.vtype, add=args.add, clear=args.clear, prev=args.prev, fixed=args.fixed)
             elif args.cmd == "approved":
                 src = find(data, args.from_job) if args.from_job else job
                 if not src:

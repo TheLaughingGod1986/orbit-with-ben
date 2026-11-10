@@ -7,6 +7,9 @@ with the cards actually published on the board-data branch, and checks the live 
   - that card has a Play link, the cut's file is on the Mini, and the signed link answers 302 (it opens the video)
   - every cut Ben OK'd that is still on its way (`approved_from` on the delivering job, `jobs.py approved`) has a card in
     "Approved, on its way" for that job (Ben, 25 Oct 14:13), unless the upload already read back (then it's in Done)
+  - after J2427, an ask/approved entry whose cut is already Private+scheduled or live on YouTube
+    (`matched_upload` / `read_back`, or a Done card with the same key or video id) is satisfied even when
+    `settle_uploaded` moved the card to Done and dropped its ask/approved keys (or removed the job-keyed card)
   - the live site (studio-kanban.vercel.app) answers 200
 
 Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
@@ -107,15 +110,53 @@ def duplicate_slots(vids: list[dict]) -> list[str]:
             for (film, at), ids in sorted(slots.items()) if len(ids) > 1]
 
 
-def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
+def cut_on_youtube(e: dict, vids: list[dict], files: dict | None = None, card: dict | None = None) -> bool:
+    """True when this ask/approved cut is already Private+scheduled or live (J2427 settle_uploaded left Passed).
+
+    Satisfied by matched_upload / read_back, or by a Done card with youtube scheduled/live that carries the same
+    key or video id. Used so board_check does not false-FAIL after settle_uploaded pops ask/approved or drops the
+    job-keyed ASK/OK card.
+    """
+    if vt.read_back(e, card):
+        return True
+    files = files or {}
+    row = vt.matched_upload(e, files, e.get("result") or "")
+    if row:
+        return True
+    ch = (e.get("channel") or "OWB").upper()
+    want_keys = {k for k in (e.get("card") or "", f"{ch}:ASK:{e.get('id')}", f"{ch}:OK:{e.get('job')}",
+                             f"{ch}:OK:{e.get('id')}") if k}
+    want_vid = ((card or {}).get("youtube") or {}).get("videoId") or ""
+    for v in vids:
+        yt = v.get("youtube") or {}
+        if v.get("lane") != "done" or yt.get("state") not in ("scheduled", "live"):
+            continue
+        if v.get("key") in want_keys:
+            return True
+        if want_vid and yt.get("videoId") == want_vid:
+            return True
+        if (v.get("ask") or {}).get("id") == e.get("id"):
+            return True
+        if (v.get("approved") or {}).get("job") in {e.get("job"), e.get("id")}:
+            return True
+    return False
+
+
+def check(queue_jobs: list[dict], board: dict, site_status=status_of, files: dict | None = None) -> dict:
     checks = board.get("checks") or {}
     expected = [e for e in vt.ask_entries(queue_jobs) if vt.ask_live(e, checks)]
     vids = ((board.get("tracker") or {}).get("videos")) or []
     by_ask = {(v.get("ask") or {}).get("id"): v for v in vids if v.get("ask")}
+    by_key = {v.get("key"): v for v in vids}
+    files = files if files is not None else vt.upload_files()
     problems, cards = [], []
     for e in expected:
-        v = by_ask.get(e["id"])
+        ch = (e.get("channel") or "OWB").upper()
+        v = by_ask.get(e["id"]) or by_key.get(e.get("card") or "") or by_key.get(f"{ch}:ASK:{e['id']}")
         row = {"id": e["id"], "job": e["job"], "what": e["what"], "due": e.get("due", ""), "file": e.get("file", "")}
+        if cut_on_youtube(e, vids, files, v):
+            cards.append({**row, "card": (v or {}).get("key") or "on_youtube", "lane": (v or {}).get("lane") or "done"})
+            continue
         if not v:
             problems.append(f"{e['id']}: no card on the published board ({e['what'][:80]})")
             cards.append({**row, "card": "missing"})
@@ -136,11 +177,10 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of) -> dict:
         cards.append(row)
     # Approved, on its way: every delivering job not yet read back as Private + scheduled has its card there.
     by_job = {(v.get("approved") or {}).get("job"): v for v in vids if v.get("lane") == "approved" and v.get("approved")}
-    by_key = {v.get("key"): v for v in vids}
     approved = vt.approved_entries(queue_jobs)
     for e in approved:
         card = by_key.get(e.get("card") or "") or by_key.get(f"{e['channel']}:OK:{e['job']}")
-        if vt.read_back(e, card) or e.get("jobStatus") == "cancelled":
+        if e.get("jobStatus") == "cancelled" or cut_on_youtube(e, vids, files, card):
             continue  # on YouTube (Done), or cancelled: that card carries its own warning while it's shown
         v = by_job.get(e["job"])
         row = {"id": e["job"], "job": e["job"], "what": e.get("what") or e.get("title"), "approved": True}

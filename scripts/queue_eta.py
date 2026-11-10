@@ -86,7 +86,7 @@ def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) ->
         flag = (flags.get(a) or {}) if not (r and r.get("up")) else {}
         if not why and flag.get("out_until") and (_t(flag["out_until"]) or at) > at:
             why = f"out of credit until {flag['out_until']}" + (f" ({flag.get('reason')})" if flag.get("reason") else "")
-        # The heartbeat's chain is the Chief chain (Grok, Claude, Codex, Gemini); a worker missing from it (Cursor) is
+        # The heartbeat's chain is the Chief chain (Claude, Grok, Codex, Gemini); a worker missing from it (Cursor) is
         # up unless a down mark or credit flag says otherwise (5 Nov 2026: Cursor showed "not in the Mini's chain").
         out[a] = (why or ("" if r or a not in CHIEF_CHAIN else "not in the Mini's chain"))[:120]
     for a in MACBOOK_SLOTS:

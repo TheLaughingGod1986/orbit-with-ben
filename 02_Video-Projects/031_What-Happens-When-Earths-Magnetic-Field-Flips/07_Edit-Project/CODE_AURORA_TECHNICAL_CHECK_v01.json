@@ -1,0 +1,33 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "source_row": 18,
+  "quote": "Magnetic lines of force near Earth's surface become twisted and tangled, and magnetic poles pop up in unaccustomed places... hunting for magnetic poles while auroras danced overhead.",
+  "words_flag": "City names are the locked spoken words. They are examples in the line, not a surveyed aurora catalogue. Cairo is the only pin on this plate.",
+  "checks": [
+    {
+      "id": "code_graphic_031_r51_aurora_v01",
+      "sha256": "5d157d23b8d41b9af4fe58845fd04aeb2e0c0fa958347c34abf29ec3fabc86eb",
+      "sha256_match": true,
+      "dimensions": [1920, 1080],
+      "fps": "25/1",
+      "pixel_format": "yuv420p",
+      "duration_s": 10.32,
+      "frames": 258,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "locked_start_words": "Curtains of green",
+      "start_s": 522.62,
+      "end_s": 532.94,
+      "ends_after_nights_word_s": 532.92,
+      "next_word_s": 534.48,
+      "static_sample_times_s": [1.2, 3.1, 4.6, 6.4, 7.3, 8.3, 9.5],
+      "mean_luma": [42.6, 43.9, 43.6, 43.9, 43.7, 44.0, 44.0],
+      "samples_inspected": "1.20 s shows GREEN AND CRIMSON on the northern limb. 3.10 s shows FUNNEL DOWN as the bands move south. 4.60 s shows THE MIDDLE across the centre of the disc. 6.40 s shows LONDON in the margin with a ribbon to the northwest limb. 7.30 s shows CAIRO with the pin on the Nile delta. 8.30 s shows MUMBAI in the right margin. 9.50 s shows SYDNEY in the lower-right margin. Curtains are still shimmering. London, Mumbai and Sydney are off this eastern-hemisphere plate."
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-aurora-v01/CONTACT_v01.jpg",
+  "contact_sheet_sha256": "74f07fa5740a02a999988f613696c34121df9728bce7608e8f668b5993fd26cb"
+}

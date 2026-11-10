@@ -1,0 +1,158 @@
+{
+  "job": "J2141",
+  "row": 14,
+  "spend_gbp": 0,
+  "status": "candidate_pending_composite_review",
+  "source_asset_id": "SVS4323_SDO_AIA304_motion",
+  "source_page": "https://svs.gsfc.nasa.gov/4323/",
+  "source_path": "/Users/ben/_desk/J2141-sdo-motion-v01/June2015LimbLoops_304A_1080p.mp4",
+  "source_sha256": "242b625e1082b23b52a2fb4b1b6aca7655772fdef85c75bae73e2225f24b8a48",
+  "source_rows": [
+    6
+  ],
+  "source_interval_s": [
+    2,
+    4.4
+  ],
+  "film_start_s": 138.7,
+  "film_duration_s": 2.4,
+  "locked_row_end_s": 141.12,
+  "remaining_row_s": 0.02,
+  "crop_xywh": [
+    520,
+    350,
+    960,
+    540
+  ],
+  "upscale": 2,
+  "filter": "crop=960:540:520:350,scale=1920:1080:flags=lanczos,eq=gamma=1.15:saturation=1.05,fps=25",
+  "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/031_r14_sdo_surface_candidate_v03.mp4",
+  "sha256": "8d8ed23d2549de3674dd4fe3153a704c9a8b331b122e58f5b3938bb0e5992c79",
+  "bytes": 2425319,
+  "credit": "NASA/SDO",
+  "disclosure": "SDO AIA 304 angstrom; false-colour time-lapse observations",
+  "full_decode": "PASS",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "25/1",
+        "avg_frame_rate": "25/1",
+        "time_base": "1/12800",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 30720,
+        "duration": "2.400000",
+        "bit_rate": "8079206",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "60",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "GPAC ISO Video Handler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/031_r14_sdo_surface_candidate_v03.mp4",
+      "nb_streams": 1,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "2.400000",
+      "size": "2425319",
+      "bit_rate": "8084396",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "samples": [
+    {
+      "time_s": 0,
+      "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/sample_0.png",
+      "sha256": "9ccf8e588538cf4dd642037d52132aa7ad2f81353331e6b3d132f1e639384020",
+      "mean_luma": 46.15,
+      "near_black_fraction": 0.1558
+    },
+    {
+      "time_s": 0.6,
+      "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/sample_1.png",
+      "sha256": "27fe6b9809964378efe40fad8980ea3e1bd3f3e55d27860aaf61b9d3fb3b5a44",
+      "mean_luma": 48.61,
+      "near_black_fraction": 0.1249
+    },
+    {
+      "time_s": 1.2,
+      "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/sample_2.png",
+      "sha256": "566fe81a7d51353297bbf6ae965c0c0ed5e4f7f1db0f3453d7a9d004acc7dce4",
+      "mean_luma": 48.36,
+      "near_black_fraction": 0.1261
+    },
+    {
+      "time_s": 1.8,
+      "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/sample_3.png",
+      "sha256": "8edd389589850049a5693727e0aa139b3f188f1106daebb148aa12df2ce95cd5",
+      "mean_luma": 48.23,
+      "near_black_fraction": 0.1259
+    },
+    {
+      "time_s": 2.36,
+      "path": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/sample_4.png",
+      "sha256": "1675643c627e20647f5f7290aac3b512fc22549b627395042ea0ee74ba6cfea4",
+      "mean_luma": 48.04,
+      "near_black_fraction": 0.1267
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-r14-sdo-crop-v03/CONTACT_R14_v03.jpg",
+  "contact_sheet_sha256": "24305a5bab3f0c1690b2985a5f18e0ec20f7ac09d0af9abb76c7ac1ccacc4f53",
+  "limitations": "No composite or playback review. Existing R14 FACT card overlaps solar surface at its default lower-left position; editor must establish subject clearance before use. Corner NASA/SDO credit and all film gates still required. This is a short comparison insert, not the full row."
+}

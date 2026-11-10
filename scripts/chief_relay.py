@@ -52,7 +52,7 @@ Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.j
 branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "chief,claude,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "claude,chief,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -170,9 +170,11 @@ def refresh_probes(at):
 HOS = channels.repo_path("hos", HOME)
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
-# not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Cursor stays a worker.
-DEFAULT_CHAIN = "chief,claude,codex,gemini"
-NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude"}
+# not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Ben, 9 Nov 2026 (Claude now the
+# bigger plan): Claude -> Grok -> Codex -> Gemini. Cursor stays a worker.
+DEFAULT_CHAIN = "claude,chief,codex,gemini"
+NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude",
+         "claudecode": "Claude Code"}
 
 # What an out-of-credit, over-limit or signed-out CLI says. Only read when the run failed or printed almost nothing,
 # so a job that merely talks about a YouTube quota doesn't count.
@@ -317,9 +319,7 @@ def mark_up(agent: str) -> None:
 def find_bin(env: str, name: str):
     """launchd's `zsh -lc` doesn't read .zshrc, so npm-global and ~/.local CLIs aren't on PATH there: look in the
     usual install places too."""
-    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
-        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
-    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+    return routing.find_cli(env, name, HOME)
 
 
 def cursor_default_out(at: dt.datetime):
@@ -377,6 +377,14 @@ def cli_spec(agent: str, model: str = ""):
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
         flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
+    elif agent == "claudecode":
+        # Claude Code as an ordinary Mini worker (Ben, 9 Nov 2026: Codex and Cursor out of credit; his Claude plan is
+        # Max 20x). Unattended like agy (--dangerously-skip-permissions); -p last, straight before the prompt, because
+        # --add-dir takes a list and would read a prompt after it as one more folder (macbook_worker, 5 Nov 2026).
+        b = find_bin("CLAUDE_BIN", "claude")
+        flags = os.environ.get("CLAUDE_CODE_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
+                                                   f"--add-dir {shlex.quote(str(STATE.parent))}")
+        flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
     else:
         return None
     return (b, shlex.split(flags)) if b else None
@@ -399,7 +407,9 @@ def fetch_comments(since: dt.datetime) -> list:
     """Studio-thread comments updated since `since`, via owb_thread.py's own auth (GH_TOKEN or `gh auth token`)."""
     sys.path.insert(0, str(OWB / "scripts"))
     import owb_thread  # noqa: E402
-    return owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+    # Only the repo's own accounts count (owb_thread.trusted): the repo is public, so anyone can comment on the thread.
+    return [c for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+            if owb_thread.trusted(c)]
 
 
 def note_grok_posts(at: dt.datetime) -> None:
@@ -539,12 +549,13 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     capabilities = worker_capabilities()
     leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
     from workflow_board import load_tracker
-    nearest = workflow.near_watch(load_tracker())
+    tracker = load_tracker()
+    nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
                    and not workflow.capability_problem(j, leader, at, capabilities)
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
-                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
+                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
 
 def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:
@@ -635,7 +646,7 @@ WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PA
 or the Never list. Park protected calls with jobs.py block <id> --agent {agent} --reason "parked for Chief: ..." --git.
 A model or task fallback does not grant Chief authority. Real money and Ben's watch of a finished cut stay with Ben; everything
 else you can't decide goes to the Chief, never to Ben (AGENTS.md, 5 Nov 2026)."""
-CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's 26 Oct 2026 order: Grok -> Claude -> Codex -> Gemini.
+CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's order (26 Oct 2026, reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini.
 You may make the ordinary Chief decisions (reviews, PASS, merges and final OKs) within the existing channel rules.
 Do not park a decision merely because Grok or Claude is unavailable. Check chief_relay.py status again before a
 protected call; if a higher-priority Chief has returned, hand the decision back. Use your own agent id, never chief.
@@ -743,6 +754,51 @@ def notify(text: str) -> bool:
     return True
 
 
+MINIWORK = pathlib.Path(os.environ.get("MINIWORK", "/Volumes/MiniWork"))
+
+
+SSD_PROBE_S = int(os.environ.get("CHIEF_SSD_PROBE_S", "5"))
+SSD_PROBE_KEEP_S = int(os.environ.get("CHIEF_SSD_PROBE_KEEP_S", "600"))
+_SSD_PROBE = "import os,sys; s=sys.argv[1]; print(os.stat(os.path.dirname(s)).st_dev if os.path.isdir(s) and os.access(s, os.W_OK) else '')"
+_ssd_seen: dict = {}
+
+
+def _ssd_dev(s: pathlib.Path) -> int | None:
+    """The device id of the SSD's scratch folder, asked from a child process with a timeout (None: not there, not
+    writable, or no answer). macOS can hold a process on a permission dialog for a removable volume, and nobody is at
+    the Mini to click it: on 9 Nov 2026 this relay checked the SSD itself and went silent from 20:53Z (J2444/J2445
+    record the block). A child that hangs is killed; the relay carries on with /private/tmp."""
+    try:
+        r = subprocess.run([sys.executable, "-c", _SSD_PROBE, str(s)], capture_output=True, text=True,
+                           timeout=SSD_PROBE_S)
+    except subprocess.TimeoutExpired:
+        log(f"SSD check got no answer in {SSD_PROBE_S}s: macOS is probably waiting on a permission dialog "
+            f"(give Python Full Disk Access on the Mini). Using /private/tmp.")
+        return None
+    except OSError:
+        return None
+    out = r.stdout.strip()
+    return int(out) if r.returncode == 0 and out.isdigit() else None
+
+
+def scratch_dir() -> pathlib.Path | None:
+    """The Mini's working SSD (Ben, 9 Nov 2026: a 250 GB SanDisk, APFS "MiniWork") when it is mounted and writable.
+    It must be its own volume: a /Volumes/MiniWork folder left on the internal disk after an unplug would fill the very
+    disk this is meant to keep free. The answer is kept for SSD_PROBE_KEEP_S, so a blocked volume costs one short
+    wait every ten minutes, not one per wake."""
+    s = MINIWORK / "scratch"
+    seen = _ssd_seen.get(str(s))
+    if seen and time.monotonic() - seen[0] < SSD_PROBE_KEEP_S:
+        return seen[1]
+    try:
+        dev, home_dev = _ssd_dev(s), os.stat(HOME).st_dev
+    except OSError:
+        dev, home_dev = None, None
+    got = s if dev is not None and dev != home_dev else None
+    _ssd_seen[str(s)] = (time.monotonic(), got)
+    return got
+
+
 def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     """(exit code, tail of output). Exit 124 = killed at the cap. The whole process group is killed, so a CLI's
     child processes don't outlive the cap."""
@@ -754,6 +810,10 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
     extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
     env = dict(os.environ, OWB_AGENT=agent, PATH=os.pathsep.join(extra + [os.environ.get("PATH", "/usr/bin:/bin")]))
+    # Render scratch on the SSD when it is there (TMPDIR is what Python's tempfile, ffmpeg helpers and most CLIs use;
+    # STUDIO_SCRATCH is the folder AGENTS.md tells agents to put worktrees, frames and part renders in).
+    sd = scratch_dir()
+    env.update(TMPDIR=f"{sd}/", STUDIO_SCRATCH=str(sd)) if sd else env.update(STUDIO_SCRATCH="/private/tmp")
     p = subprocess.Popen([b] + args + [prompt], cwd=str(OWB) if OWB.is_dir() else None, stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT, text=True, start_new_session=True, env=env)
     try:
@@ -1332,14 +1392,67 @@ def self_heal(at: dt.datetime) -> bool:
     return True
 
 
+def _pid_alive(pid) -> bool:
+    try:
+        os.kill(int(pid), 0)
+        return True
+    except (OSError, ValueError, TypeError):
+        return False
+
+
+def _offload_finished(at: dt.datetime) -> bool:
+    """Report a background offload that has ended (its JSON report is in offload.out). True while one still runs."""
+    st = read_json(d("offload.json")) or {}
+    if not st.get("running"):
+        return False
+    if _pid_alive(st.get("pid")):
+        return True
+    try:
+        txt = d("offload.out").read_text()
+        rep = json.loads(txt[txt.index("{"):])
+        no = _load_offload()
+        line = no.summary(rep)
+    except Exception as e:  # no report (killed, crashed): record it and let the next pass start again
+        log(f"offload ended without a report: {e.__class__.__name__}: {str(e)[:200]}")
+        write_json(d("offload.json"), {"at": st.get("at") or iso(at), "error": "ended without a report"})
+        return False
+    write_json(d("offload.json"), {"at": st.get("at") or iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
+                                   "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
+    log(line)
+    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
+        notify(f"Chief relay: {line}")
+    return False
+
+
+def _offload_path() -> pathlib.Path:
+    path = OWB / "scripts" / "nas_offload.py"
+    return path if path.exists() else pathlib.Path(__file__).with_name("nas_offload.py")
+
+
+def _load_offload():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("nas_offload", _offload_path())
+    no = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(no)
+    return no
+
+
 def offload_scratch(at: dt.datetime) -> None:
-    """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 20),
-    move render scratch untouched for 48 h from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
+    """Ben, 28 Oct 2026: "The external storage we can use our NAS for now". Under CHIEF_OFFLOAD_GB free (default 40),
+    move render scratch untouched for CHIEF_OFFLOAD_AGE_H (default 24 h) from /private/tmp to the NAS with scripts/nas_offload.py (rsync, sha256 on
     both sides, the Mini copy goes only on a full match, never deletes on the NAS), at most every CHIEF_OFFLOAD_H
-    hours, and say what moved on the thread. Never stops the relay."""
+    hours, and say what moved on the thread. Never stops the relay.
+
+    It runs as its own background process (Ben, 9 Nov 2026): run inside the relay, one slow copy to the NAS held the
+    whole relay from 05:52 to past noon with no log line and no job started. The relay starts it, carries on, and a
+    later pass reports it once it has ended. nas_offload.py's own lock keeps it to one at a time."""
     if sys.platform != "darwin" and not os.environ.get("CHIEF_OFFLOAD_ANY_OS"):
         return  # the Mini's /private/tmp and /Volumes/data only exist on macOS
-    target = float(os.environ.get("CHIEF_OFFLOAD_GB", "20"))
+    if _offload_finished(at):
+        return  # still copying in the background
+    # Ben, 9 Nov 2026 (disk at 3 GB): start at 40 GB free, not 20, and move scratch untouched for 24 h, not 48.
+    target = float(os.environ.get("CHIEF_OFFLOAD_GB", "40"))
+    age_h = os.environ.get("CHIEF_OFFLOAD_AGE_H", "24")
     try:
         free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
     except OSError:
@@ -1350,24 +1463,44 @@ def offload_scratch(at: dt.datetime) -> None:
     if last.get("at") and at - parse(last["at"]) < dt.timedelta(hours=float(os.environ.get("CHIEF_OFFLOAD_H", "3"))):
         return
     try:
-        import importlib.util
-        path = OWB / "scripts" / "nas_offload.py"
-        if not path.exists():
-            path = pathlib.Path(__file__).with_name("nas_offload.py")
-        spec = importlib.util.spec_from_file_location("nas_offload", path)
-        no = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(no)
-        rep = no.offload(apply=True, target_gb=target)
-        line = no.summary(rep)
+        d().mkdir(parents=True, exist_ok=True)
+        with open(d("offload.out"), "w") as out:
+            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", "--target-gb", str(target),
+                                     "--min-age-h", age_h],
+                                    stdout=out, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                                    start_new_session=True, cwd=str(HOME))
     except Exception as e:  # never let the offload stop the relay
         log(f"offload failed: {e.__class__.__name__}: {e}")
         write_json(d("offload.json"), {"at": iso(at), "error": str(e)[:300]})
         return
-    write_json(d("offload.json"), {"at": iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
-                                   "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
-    log(line)
-    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
-        notify(f"Chief relay: {line}")
+    write_json(d("offload.json"), {"at": iso(at), "running": True, "pid": proc.pid})
+    log(f"offload: started in the background (pid {proc.pid}, {free:,} MB free)")
+
+
+def weekly_caches(at: dt.datetime) -> None:
+    """Ben, 9 Nov 2026 (disk at 3 GB): clear the caches that rebuild themselves (Homebrew, npm, pip, uv) once every
+    CHIEF_CACHE_DAYS days (default 7), not only when the disk is nearly full. It runs as its own background process,
+    like the NAS offload, so a slow `brew cleanup` never holds the relay. Checkouts and media are untouched."""
+    if sys.platform != "darwin" and not os.environ.get("CHIEF_OFFLOAD_ANY_OS"):
+        return
+    last = read_json(d("caches.json")) or {}
+    if last.get("at") and at - parse(last["at"]) < dt.timedelta(days=float(os.environ.get("CHIEF_CACHE_DAYS", "7"))):
+        return
+    path = OWB / "scripts" / "mini_repair.py"
+    if not path.exists():
+        path = pathlib.Path(__file__).with_name("mini_repair.py")
+    try:
+        d().mkdir(parents=True, exist_ok=True)
+        with open(d("caches.out"), "w") as out:
+            proc = subprocess.Popen([sys.executable, str(path), "--apply", "--caches-only", "--json"], stdout=out,
+                                    stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True,
+                                    cwd=str(HOME))
+    except Exception as e:  # never let it stop the relay
+        log(f"weekly cache clean failed to start: {e.__class__.__name__}: {e}")
+        write_json(d("caches.json"), {"at": iso(at), "error": str(e)[:300]})
+        return
+    write_json(d("caches.json"), {"at": iso(at), "pid": proc.pid})
+    log(f"weekly cache clean: started in the background (pid {proc.pid})")
 
 
 def yield_monthly_for_dispatch(selection):
@@ -1421,6 +1554,7 @@ def run_locked(at: dt.datetime) -> int:
         log("out of credit: " + "; ".join(f"{k} ({v})" for k, v in sorted(flags.items())))
     healthy = self_heal(at)
     offload_scratch(at)  # also when the disk is too full to wake anyone: that is when the NAS helps most
+    weekly_caches(at)
     if not healthy:
         log("disk still too full to run a worker: waiting for the next repair")
         return 0

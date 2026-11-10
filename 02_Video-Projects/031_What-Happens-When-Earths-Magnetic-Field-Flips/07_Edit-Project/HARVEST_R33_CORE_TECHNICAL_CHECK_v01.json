@@ -1,0 +1,45 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "asset_id": "noaa_expl2290_tube_core",
+  "original_sha256": "b438fecc32a3cebe0b8a27e8cd34d4844c1105e597b15a3c7dec28f05b986f98",
+  "plate": {
+    "file": "plate_031_r33_core_v01.mp4",
+    "path": "/Users/benjaminoats/_desk/J2141-sediment-v01/plate_031_r33_core_v01.mp4",
+    "sha256": "e11b96dd030b988a71df5830b732de1c1e29d63c9dc7ff7e4395a032e1ac0e69",
+    "bytes": 3279157,
+    "film_start_s": 336.92,
+    "film_end_s": 341.36,
+    "row_end_s": 349.16,
+    "frames": 111,
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "audio": false,
+    "full_decode": true,
+    "crop_xywh": [
+      0,
+      150,
+      1578,
+      1038
+    ],
+    "push": "linear 1.00 to 1.06, centre",
+    "max_scale_vs_native_width": 1.29,
+    "credit": "Lisa Levin / NOAA",
+    "licence": "CC BY 2.0",
+    "no_loop": true,
+    "no_interpolation": true,
+    "hands_to": "CODE paleo at the 41,000 cue, 341.38 s",
+    "status": "technical_candidate_pending_motion_review"
+  },
+  "contact_sheet_sha256": "5ba093fa1f22668e9b726e572ebd15c0a75afcc3a93de79ff04b5a3a58ecec6f",
+  "rejected_contact_sheet_sha256": "5176824ec86d8f31da3c17495e7e3ec211075a6322a7665842d15af16b19b5ff",
+  "component_polish": {
+    "verdict": "PASS",
+    "failed": 0,
+    "warnings": 0
+  },
+  "motion_perception": false,
+  "audio_perception": false,
+  "status": "technical_checks_only_not_film_PASS"
+}

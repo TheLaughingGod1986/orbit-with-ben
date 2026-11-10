@@ -12,7 +12,7 @@
 //   - any request that still carries the old board code (x-board-key), so a phone that has it upgrades silently.
 // The cookie is "v1.<issued unix>.<HMAC-SHA256(HMAC-SHA256(BOARD_KEY, "studio-session-v1"), "v1.<issued>")>":
 // nothing secret in it, and rotating BOARD_KEY in Vercel logs every phone out. An anonymous visitor to the public board
-// has neither; since 25 Oct 13:34 their taps are accepted as "open" taps unless BOARD_OPEN_TAPS=0 (see the end of this file).
+// has neither, and their taps are refused (401) unless BOARD_OPEN_TAPS=1 (see the end of this file; off since 9 Nov 2026).
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 export const COOKIE = "studio_ben";
@@ -73,15 +73,16 @@ export function renewCookie(res, req, how, env = process.env) {
   res.setHeader("Set-Cookie", cookieHeader(how === "cookie" && sessionValid(cur, env.BOARD_KEY) ? cur : makeSession(env.BOARD_KEY)));
 }
 
-// ---- open taps (Ben, 25 Oct 2026 13:34: "I should just be able to click add comment, sent to agent or approve
-// without this confirmation"). With env BOARD_OPEN_TAPS unset or "1" (the default), a tap from a browser with no
-// studio_ben cookie (a Home Screen copy, the Gmail in-app browser, a new phone) is accepted: no dialog, no linking
-// step. That browser is given the 400-day cookie on the same response (and on its next board load), and the post plus
-// the #219 audit list say "new device" with a short device name and a hashed IP, so a stray tap is easy to spot and undo.
-// Guards: same-origin only (Origin / Referer must be this board), at most OPEN_TAPS_PER_HOUR unlinked taps an hour.
-// To lock the board again: set BOARD_OPEN_TAPS=0 in Vercel and redeploy; unlinked taps then get 401 as before.
+// ---- open taps: OFF unless BOARD_OPEN_TAPS=1 (security pass, 9 Nov 2026).
+// History: Ben, 25 Oct 2026 13:34 ("I should just be able to click add comment, sent to agent or approve without this
+// confirmation"): a tap from a browser with no studio_ben cookie was accepted and that browser was given the 400-day
+// cookie. Both repos and this board's address are public, and the only guard was the Origin header, which any
+// script can set. So anyone could record "[Ben] OK" on a film and be handed Ben's cookie, which also plays every
+// private cut (api/watch.js). Now: an unlinked browser gets 401 and links once (a pair link from the Mac mini,
+// scripts/board_pair_link.py, or the saved board link). A phone that already holds the cookie notices no change.
+// If open taps are ever turned back on (BOARD_OPEN_TAPS=1 in Vercel), an open tap still never gets the cookie.
 export const OPEN_TAPS_PER_HOUR = 20;
-export function openTaps(env = process.env) { return String(env.BOARD_OPEN_TAPS ?? "1").trim() !== "0"; }
+export function openTaps(env = process.env) { return String(env.BOARD_OPEN_TAPS ?? "0").trim() === "1"; }
 
 export function sameOrigin(req) {
   const h = req.headers || {}, host = String(h["x-forwarded-host"] || h.host || "").toLowerCase();
@@ -117,9 +118,8 @@ export function tapAuth(req, env = process.env) {
   return openTaps(env) && sameOrigin(req) ? "open" : "";
 }
 
-// Give a browser the cookie: renew for cookie/key, first issue for "open".
+// Renew the cookie for a request that proved it's Ben (cookie or key). An "open" tap never gets one: it proved nothing.
 export function setBenCookie(res, req, how, env = process.env) {
-  if (!how || !env.BOARD_KEY) return;
-  if (how === "open") return res.setHeader("Set-Cookie", cookieHeader(makeSession(env.BOARD_KEY)));
+  if (!how || how === "open" || !env.BOARD_KEY) return;
   return renewCookie(res, req, how, env);
 }

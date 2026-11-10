@@ -95,7 +95,8 @@ def main():
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import owb_thread
         since = (now - dt.timedelta(hours=22)).strftime("%Y-%m-%dT%H:%M:%SZ")
-        recent = [c.get("body", "") for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?per_page=100&since={since}")]
+        recent = [c.get("body", "") for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?per_page=100&since={since}")
+                  if owb_thread.trusted(c)]
         for m, l in zip(found, lines):
             if not already_posted(m[0], now, recent):
                 owb_thread.api("POST", f"/issues/{owb_thread.PR}/comments", {"body": l})

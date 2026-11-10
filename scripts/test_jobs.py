@@ -1,5 +1,6 @@
 """jobs.py: any able agent claims the oldest job it can do; stalled claims are taken over; the board follows."""
-import datetime as dt, json, pathlib, sys, tempfile, unittest
+import datetime as dt, json, os, pathlib, sys, tempfile, unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from unittest.mock import patch
@@ -352,6 +353,20 @@ class HandBack(unittest.TestCase):
             jobs.do_handback(job, "relay", "", at)
 
 
+class MiniOnlyPin(unittest.TestCase):
+    """The Chief can pin a Studio job to the Mini (10 Nov 2026: removing playlists cannot be undone)."""
+
+    def test_a_pinned_job_is_never_the_macbooks(self):
+        job = {"id": "J9", "needs": "mini", "kind": "studio", "repo": "owb", "title": "Studio: remove six playlists",
+               "body": "In Orbit Studio, remove the playlists."}
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertTrue(jobs.macbook_studio_ok(job, job["title"] + " " + job["body"]))
+            self.assertTrue(jobs.macbook_portable(job))
+            pinned = dict(job, mini_only=True)
+            self.assertFalse(jobs.macbook_studio_ok(pinned, job["title"] + " " + job["body"]))
+            self.assertFalse(jobs.macbook_portable(pinned))
+
+
 if __name__ == "__main__":
     unittest.main()
 
@@ -395,6 +410,23 @@ class MacBookTakesTextJobs(unittest.TestCase):
                   ("mini", "Review the Shorts copy", {"kind": "review"}))
         d["jobs"][5]["body"] = "files in /Users/benjaminoats/_desk/cache/J1/"
         self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, True, False, False, False, False])
+
+    def test_a_text_job_rerouted_to_the_minis_claude_code_is_still_portable(self):
+        # 9 Nov 2026: the relay hands Claude jobs to `claudecode` when Codex/Cursor are out; the MacBook has Claude Code.
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "claudecode"}))
+        self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+
+    def test_studio_jobs_go_to_the_macbook_only_while_its_channels_studio_browser_is_up(self):
+        # Ben, 9 Nov 2026: signed into Studio for both channels on the MacBook.
+        d = queue(("mini", "Nearest Star long: add end screen and pinned comment in Studio", {"kind": "studio"}),
+                  ("mini", "Nearest Star Short: upload it and schedule it", {"kind": "studio"}),
+                  ("mini", "Franklin long: pinned comment once public", {"kind": "studio", "repo": "hos"}))
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": ""}):
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [False, False, False])
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223"}):  # Orbit's Studio only
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, False, False])
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):  # uploads stay on the Mini
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, False, True])
 
     def test_the_macbook_claims_a_portable_mini_job_and_the_mini_still_can(self):
         d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}))

@@ -1,4 +1,4 @@
-"""Ben, 26 Oct: Grok -> Claude -> Codex -> Gemini, with real role authority and recovery."""
+"""Ben, 26 Oct (reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini, with real role authority and recovery."""
 import contextlib
 import datetime as dt
 import io
@@ -16,7 +16,9 @@ import board_publish as bp
 T0, MIN = fixture.T0, fixture.MIN
 
 
-class ChiefSuccession(unittest.TestCase):
+class ChiefTestCase(unittest.TestCase):
+    """Shared set-up only, no tests of its own: a test class that subclassed ChiefSuccession ran its 13 tests a
+    second time (J2235 F-01b)."""
     fake = fixture.Relay.fake
     ran = fixture.Relay.ran
     beat = fixture.Relay.beat
@@ -34,16 +36,18 @@ class ChiefSuccession(unittest.TestCase):
     def queue(self, rows):
         self.routed_queue(json.dumps({'next_id': 100, 'jobs': rows}))
 
+
+class ChiefSuccession(ChiefTestCase):
     def test_default_order_and_each_successor(self):
-        self.assertEqual(cr.chain(), ['chief', 'claude', 'codex', 'gemini'])
+        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])  # Ben, 9 Nov 2026: Claude first
         self.assertEqual(self.chief(), 'codex')
-        self.beat(T0 - 5 * MIN)
-        self.assertEqual(self.chief(), 'claude')
         cr.seen('chief', T0)
         self.assertEqual(self.chief(), 'chief')
-        cr.mark_down('chief', 'credit exhausted', None, T0)
+        self.beat(T0 - 5 * MIN)
         self.assertEqual(self.chief(), 'claude')
         self.beat(T0 - 100 * MIN)
+        self.assertEqual(self.chief(), 'chief')
+        cr.mark_down('chief', 'credit exhausted', None, T0)
         self.assertEqual(self.chief(), 'codex')
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
@@ -53,10 +57,10 @@ class ChiefSuccession(unittest.TestCase):
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
         self.assertEqual(self.chief(T0 + 61 * MIN), 'codex')
-        self.beat(T0 + 60 * MIN)
-        self.assertEqual(self.chief(T0 + 62 * MIN), 'claude')
-        cr.seen('chief', T0 + 63 * MIN)
-        self.assertEqual(self.chief(T0 + 64 * MIN), 'chief')
+        cr.seen('chief', T0 + 60 * MIN)
+        self.assertEqual(self.chief(T0 + 62 * MIN), 'chief')
+        self.beat(T0 + 63 * MIN)
+        self.assertEqual(self.chief(T0 + 64 * MIN), 'claude')
 
     def test_a_new_claude_heartbeat_clears_its_old_down_mark_before_election(self):
         cr.mark_down('claude','usage limit',T0+120*MIN,T0-10*MIN)
@@ -169,7 +173,7 @@ class ChiefSuccession(unittest.TestCase):
         self.assertEqual(result['chiefChain'][0]['name'],'Codex')
 
 
-class AutomaticChiefDuties(ChiefSuccession):
+class AutomaticChiefDuties(ChiefTestCase):
     def test_recent_worker_activity_cannot_postpone_chief_work(self):
         cr.seen('codex', T0)
         self.queue([{'id':'J1','status':'blocked','needs':'any','title':'Approved upload',
