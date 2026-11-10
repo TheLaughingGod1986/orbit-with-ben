@@ -1,0 +1,225 @@
+{
+  "job": "J2141",
+  "status": "technical_checks_only",
+  "spend_gbp": 0,
+  "manifest": "CODE_OPENING_MACBOOK_v01.json",
+  "checks": [
+    {
+      "id": "code_graphic_031_r01_poledrift_v01",
+      "row": 1,
+      "path": "/Users/ben/_desk/J2141-opening-macbook-v01/code_graphic_031_r01_poledrift_v01.mp4",
+      "sha256": "5964745f04942ca08164c19050f3f8a0485c43422683f1d30dd711d3648f819c",
+      "bytes": 335901,
+      "alpha": false,
+      "pix_fmt": "yuv420p",
+      "duration_s": 3.84,
+      "full_decode": "PASS",
+      "format": "PASS",
+      "distinct_sample_frames": 5,
+      "samples": [
+        {
+          "seconds": 0.0,
+          "mean_luma": 51.87,
+          "p95_luma": 147.0,
+          "decoded_rgba_sha256": "4cca7cb9eb35c58d0f454917d38935312a86693aa47385bfce3174532accacf5"
+        },
+        {
+          "seconds": 0.955,
+          "mean_luma": 51.87,
+          "p95_luma": 147.22,
+          "decoded_rgba_sha256": "319a957dbe025120a2bf36d1411e4244fd9a0438c6d56c9a4de7ff9673b7f425"
+        },
+        {
+          "seconds": 1.91,
+          "mean_luma": 51.92,
+          "p95_luma": 147.66,
+          "decoded_rgba_sha256": "89f70bc2b5946cfe13f9cb38fcb12b956aa3789e29a788f04c5a419ed3d15b27"
+        },
+        {
+          "seconds": 2.865,
+          "mean_luma": 51.96,
+          "p95_luma": 148.07,
+          "decoded_rgba_sha256": "10ef84639b76dcb79280c9a404adb3b8026f1784fdffabfc8eb9526d8fcc651c"
+        },
+        {
+          "seconds": 3.591,
+          "mean_luma": 51.96,
+          "p95_luma": 148.09,
+          "decoded_rgba_sha256": "8af29ced56f7a8f48dba3df0fe934817578942dbc36633be4950daefe33cab32"
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r02_flip_v01",
+      "row": 2,
+      "path": "/Users/ben/_desk/J2141-opening-macbook-v01/code_graphic_031_r02_flip_v01.mp4",
+      "sha256": "d755efeb82d1d0c877cf1093abb9ff1f4d5e2146d25ec7c041940f3073376064",
+      "bytes": 544936,
+      "alpha": false,
+      "pix_fmt": "yuv420p",
+      "duration_s": 4.56,
+      "full_decode": "PASS",
+      "format": "PASS",
+      "distinct_sample_frames": 5,
+      "samples": [
+        {
+          "seconds": 0.0,
+          "mean_luma": 51.43,
+          "p95_luma": 150.79,
+          "decoded_rgba_sha256": "6331a21375022a970fcde9c8e923884d114a9faeab630a9115d1bec86ceb73c9"
+        },
+        {
+          "seconds": 1.135,
+          "mean_luma": 52.27,
+          "p95_luma": 158.01,
+          "decoded_rgba_sha256": "ec55b99f762573b9f9646dd36a258afac93a6b08f1347cab0b9f913e5e9d7929"
+        },
+        {
+          "seconds": 2.27,
+          "mean_luma": 51.95,
+          "p95_luma": 154.28,
+          "decoded_rgba_sha256": "9060362cf6b1745bcb0d21a38917d1d91eb20b1c21c6796f9a07f816ac920565"
+        },
+        {
+          "seconds": 3.405,
+          "mean_luma": 52.13,
+          "p95_luma": 157.57,
+          "decoded_rgba_sha256": "ffc9c5f57ac4bb4a3191982efc1a5409ab218ade5d4e33e5ea3a7f4af2a7d681"
+        },
+        {
+          "seconds": 4.268,
+          "mean_luma": 51.43,
+          "p95_luma": 150.95,
+          "decoded_rgba_sha256": "0a35f7115693dc45fe40808e289457bd41dee9884208a59e4ad398e60be6f275"
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r13_layers_v01",
+      "row": 13,
+      "path": "/Users/ben/_desk/J2141-opening-macbook-v01/code_graphic_031_r13_layers_v01.mov",
+      "sha256": "b7dfe4f6e01b122b62fede906273058892f146b504774476ea8c4f6e52d30396",
+      "bytes": 5397275,
+      "alpha": true,
+      "pix_fmt": "argb",
+      "duration_s": 5.84,
+      "full_decode": "PASS",
+      "format": "PASS",
+      "distinct_sample_frames": 5,
+      "samples": [
+        {
+          "seconds": 0.0,
+          "alpha_bbox": null,
+          "decoded_rgba_sha256": "1ca7910d2e1f5855b3e23f0096e61e6eca26d7b19278cdb55e35024f4f8f9e0e"
+        },
+        {
+          "seconds": 1.465,
+          "alpha_bbox": [
+            756,
+            53,
+            1497,
+            861
+          ],
+          "decoded_rgba_sha256": "921e3f52ead92a68285bbfa016512c0314d9253ca42276665b0a13643fb78e91"
+        },
+        {
+          "seconds": 2.93,
+          "alpha_bbox": [
+            756,
+            53,
+            1497,
+            861
+          ],
+          "decoded_rgba_sha256": "0875ccaa06ecf501f762a944e9c574cb2c9142adf1001996c6a29d537f8390e6"
+        },
+        {
+          "seconds": 4.395,
+          "alpha_bbox": [
+            765,
+            53,
+            1497,
+            907
+          ],
+          "decoded_rgba_sha256": "e62b9a49580762e27db621ca8ec4fc8636e49b6ad153f761fe6d120679910d08"
+        },
+        {
+          "seconds": 5.508,
+          "alpha_bbox": [
+            765,
+            53,
+            1497,
+            907
+          ],
+          "decoded_rgba_sha256": "256ea7cf8b9aa506b4cb2d582f5ed3d2c56621d67c9dddd6e6030b64f2aedd2a"
+        }
+      ]
+    },
+    {
+      "id": "code_graphic_031_r05_when1905_v01",
+      "row": 5,
+      "path": "/Users/ben/_desk/J2141-opening-macbook-v01/code_graphic_031_r05_when1905_v01.mov",
+      "sha256": "0647252e08805acd58f9cd9084704706a58d449548f8468fe3040e46dc8af272",
+      "bytes": 1225408,
+      "alpha": true,
+      "pix_fmt": "argb",
+      "duration_s": 3.2,
+      "full_decode": "PASS",
+      "format": "PASS",
+      "distinct_sample_frames": 3,
+      "samples": [
+        {
+          "seconds": 0.0,
+          "alpha_bbox": null,
+          "decoded_rgba_sha256": "5d408bd570c2457304e79a2b1061d44e0c25f27954be74bc516f1ec1405d8af6"
+        },
+        {
+          "seconds": 0.805,
+          "alpha_bbox": [
+            280,
+            777,
+            817,
+            975
+          ],
+          "decoded_rgba_sha256": "4acedaa72e5025e4c6f14bed24798f27a4e517974412f7576c8b017e7acb98a3"
+        },
+        {
+          "seconds": 1.61,
+          "alpha_bbox": [
+            280,
+            777,
+            817,
+            975
+          ],
+          "decoded_rgba_sha256": "4acedaa72e5025e4c6f14bed24798f27a4e517974412f7576c8b017e7acb98a3"
+        },
+        {
+          "seconds": 2.415,
+          "alpha_bbox": [
+            280,
+            777,
+            817,
+            975
+          ],
+          "decoded_rgba_sha256": "4acedaa72e5025e4c6f14bed24798f27a4e517974412f7576c8b017e7acb98a3"
+        },
+        {
+          "seconds": 3.027,
+          "alpha_bbox": [
+            280,
+            777,
+            817,
+            975
+          ],
+          "decoded_rgba_sha256": "183297af4e8130c15c944577e131f14d6f26254f0b7c9fb99b1cdd4eaab78495"
+        }
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-opening-macbook-v01/CONTACT_TECHNICAL_v01.jpg",
+  "contact_sheet_sha256": "9ad51e0fc3ffe0961af66cb2611833dc1a7438bb0175a9ffda7dcda7152d2877",
+  "limitations": [
+    "Static samples and full decode only; no playback or audio perception claimed.",
+    "poledrift and flip use verified GSFC_20171208_Archive_e000678 Earth disc.",
+    "layers and when1905 are alpha overlays requiring graded moving plates."
+  ]
+}

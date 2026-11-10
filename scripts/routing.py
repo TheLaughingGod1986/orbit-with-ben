@@ -26,6 +26,7 @@ An ordinary worker never makes a protected call (PROTECTED); the elected acting 
 from __future__ import annotations
 
 import os
+import shutil
 import sys
 
 # Real, configured model ids (11 Oct 2026).
@@ -42,6 +43,8 @@ MODELS = {
     "cursor-claude-opus-5-5": "Claude Opus 5.5 inside the Cursor agent CLI on the Mini (`agent --model claude-opus-5-5`); "
                               "Claude's first fallback when Claude Code is out of usage",
     "gemini-agy": "Gemini via Antigravity `agy` (its default model)",
+    "mini-claude-opus-5-5": "Claude Code CLI on the Mac mini, woken by the relay as worker `claudecode` (Ben's Max 20x "
+                            "plan, 9 Nov 2026: Codex and Cursor out of credit, Claude has the biggest pool)",
     "eleven_v3": "ElevenLabs eleven_v3, voice Ben Orbit Narrator (API only)",
     "scribe_v2": "ElevenLabs Scribe v2 (VO word check)",
     "veo-3.1-fast-generate-001": "Vertex Veo 3.1 Fast",
@@ -55,10 +58,12 @@ MODELS = {
 # The agent (jobs.py --agent) that runs each model. "gemini" = the Antigravity `agy` CLI woken by the relay itself.
 RUNS_ON = {"grok": "chief", "claude-opus-5-5": "claude", "gpt-6-astra": "codex", "gpt-6.1-sol": "codex",
            "cursor-auto": "cursor", "cursor-claude-opus-5-5": "cursor", "cursor-grok-4-7": "cursor",
-           "gemini-agy": "gemini", "gemini-argon": "gemini"}
+           "gemini-agy": "gemini", "gemini-argon": "gemini", "mini-claude-opus-5-5": "claudecode"}
 
-# The Mini workers the relay can wake (chief_relay.cli_spec). Claude and Chief are woken elsewhere.
-MINI_WORKERS = ("cursor", "codex", "gemini")
+# The Mini workers the relay can wake (chief_relay.cli_spec). Claude (the cloud Chief) and Chief are woken elsewhere.
+# `claudecode` is Claude Code run as an ordinary worker on the Mini (Ben, 9 Nov 2026), a different id from the cloud
+# `claude` so the Chief election and its stall marks never block or borrow it.
+MINI_WORKERS = ("cursor", "codex", "gemini", "claudecode")
 
 # The model id the Cursor agent CLI is given (`agent --model <id>`) when it stands in for Claude. "claude-opus-5-5" is
 # the Opus 5.5 entry in Cursor's own model list on the Mini (availableDefaultModels2: name "claude-opus-5-5",
@@ -78,7 +83,7 @@ CURSOR_CLAUDE_MODEL = os.environ.get("CURSOR_CLAUDE_MODEL", "claude-opus-5-5")
 CURSOR_GROK_MODEL = os.environ.get("CURSOR_GROK_MODEL", "grok-4.7")
 AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-4-argon-high")
 CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "cursor-grok-4-7": CURSOR_GROK_MODEL,
-             "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL}
+             "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL, "mini-claude-opus-5-5": ""}
 
 # Claude's first fallback when Claude Code is out of usage or rate-limited (Ben, 11 Oct 2026 23:40).
 CLAUDE_FALLBACK = ("cursor", "cursor-claude-opus-5-5")
@@ -88,6 +93,7 @@ ASTRA = ("codex", "gpt-6-astra")
 SOL = ("codex", "gpt-6.1-sol")
 CURSOR_GROK = ("cursor", "cursor-grok-4-7")
 CURSOR_AUTO = ("cursor", "cursor-auto")
+MINI_CLAUDE = ("claudecode", "mini-claude-opus-5-5")
 
 # Calls only Chief (Grok) makes; real money and the irreversible stay with Ben.
 PROTECTED = ("final OK / PASS", "merge", "AGENTS.md and the Never list", "spend past the written rules",
@@ -95,7 +101,7 @@ PROTECTED = ("final OK / PASS", "merge", "AGENTS.md and the Never list", "spend 
 
 # Reasoning, scripts, listings and review notes: Claude Code -> Cursor on Claude -> Gemini -> Codex (last resort).
 # Gemini stands in on Argon here: these are the hard reasoning jobs (Ben, 15 Oct 2026).
-_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ARGON, ASTRA]
+_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ARGON, ASTRA, MINI_CLAUDE]
 
 # kind: (job type, chain [(agent, model), ...] primary first, how the job runs). Code and graphics: Codex first.
 # Tool jobs (vo, image, video): the same tool, run by whichever worker is up.
@@ -104,40 +110,43 @@ CHAINS = {
                  "Claude writes; Gemini (agy) drafts SOURCES.md and checks every claim (kind facts). A Gemini or Codex "
                  "draft is a draft only; Claude or Chief locks it"),
     "facts":    ("Sources and claims check", [("cursor", "gemini-agy"), ARGON, ("claude", "claude-opus-5-5"),
-                                               CLAUDE_FALLBACK, ASTRA],
+                                               CLAUDE_FALLBACK, ASTRA, MINI_CLAUDE],
                  "the worker runs `agy` (claims as <driver>/gemini), or the relay wakes agy itself; Claude's quote "
                  "check backs it"),
     "review":   ("Script review, reasoning, shot lists, music prompts", _CLAUDE_CHAIN,
                  "a stand-in's review is advisory; Chief makes the call"),
-    "vo":       ("Voice-over", [("cursor", "eleven_v3"), ("codex", "eleven_v3"), ("gemini", "eleven_v3")],
+    "vo":       ("Voice-over", [("cursor", "eleven_v3"), ("codex", "eleven_v3"), ("gemini", "eleven_v3"),
+                                ("claudecode", "eleven_v3")],
                  "vo_take.py / el_client.py on the Mini, Scribe v2 check; no other voice, ever"),
     "image":    ("Stills, plates and thumbnail art", [("cursor", "gemini-2.5-flash-image"),
                                                       ("codex", "gemini-2.5-flash-image"),
-                                                      ("gemini", "gemini-2.5-flash-image")],
+                                                      ("gemini", "gemini-2.5-flash-image"),
+                                                      ("claudecode", "gemini-2.5-flash-image")],
                  "Master frame or NASA plate first, else Flow Nano Banana 2 (OWB too, Ben 5 Nov 2026), then Vertex. "
                  "Text always from the builders, never the image model"),
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
-                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI],
+                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI, MINI_CLAUDE],
                  "our own code graphics (Python/ffmpeg), rendered per row"),
     "thumb":    ("Thumbnail design: the whole thumbnail (art, character, hook text) and its Test & Compare variants",
-                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI],
+                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI, MINI_CLAUDE],
                  "Codex designs it (Ben, 14 Oct 2026: Codex built NO WAY OUT? / NO SOLID GROUND?, which beat the house "
                  "style on sight); every new design goes in as Test & Compare B against the live thumb and the result "
                  "decides; checks: 1280x720, under 2 MB, readable at 168 px, nothing under the duration badge"),
     "video":    ("Video generation", [("cursor", "veo-3.1-fast-generate-001"), ("codex", "veo-3.1-fast-generate-001"),
-                                      ("gemini", "veo-3.1-fast-generate-001")],
+                                      ("gemini", "veo-3.1-fast-generate-001"),
+                                      ("claudecode", "veo-3.1-fast-generate-001")],
                  "Flow Veo 3.1 first for both channels (Ben, 5 Nov 2026: Flow has lots of credit), then Vertex Veo (Quality "
                  "only for a hero); Omni gemini-omni-flash-preview at global for Orbit only when a job names it"),
-    "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI],
+    "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI, MINI_CLAUDE],
                  "on the Mini; long renders in detached tmux"),
     "qa":       ("Frame review and QA", _CLAUDE_CHAIN,
                  "picture_qa / polish_gate / music_gate must PASS first; Chief gives the PASS"),
     "listing":  ("Titles, descriptions, tags, SEO", _CLAUDE_CHAIN,
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
-    "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL],
+    "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL, MINI_CLAUDE],
                  "OWB Studio CDP 9223, HOS Flow 9222; never Replace, never delete"),
-    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("chief", "grok"), ("claude", "claude-opus-5-5"), ASTRA, ARGON],
-                 "only the elected Chief may claim; Grok -> Claude -> Codex -> Gemini; money and the irreversible stay with Ben"),
+    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ("chief", "grok"), ASTRA, ARGON],
+                 "only the elected Chief may claim; Claude -> Grok -> Codex -> Gemini (Ben, 9 Nov 2026); money and the irreversible stay with Ben"),
 }
 
 # Older view kept for callers: kind -> (job type, primary, first fallback or None, how).
@@ -159,13 +168,28 @@ OUT = set()   # flagged model ids and agent ids; chief_relay.py fills it each ru
 FLAGS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credit_flags.json")
 
 
+def find_cli(env: str, name: str, home) -> str | None:
+    """Where a worker's CLI is on this machine (the relay and the MacBook worker both ask; one copy since J2463).
+    An explicit override (CODEX_BIN, AGY_BIN, CLAUDE_BIN, ...) is the answer: when that file is missing or not
+    runnable the CLI counts as missing, and the usual install places are not searched (J2235 F-01a: a test that
+    pointed CODEX_BIN at a missing file still found a real codex in /opt/homebrew/bin). Without an override:
+    PATH, then the places launchd's `zsh -lc` leaves off PATH (npm-global, ~/.local, Homebrew)."""
+    given = os.environ.get(env)
+    if given:
+        return given if os.access(given, os.X_OK) else None
+    cands = [shutil.which(name)] + [os.path.join(str(home), d, name) for d in (".npm-global/bin", ".local/bin")] \
+        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
+    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+
+
 def read_flags(now=None, path: str = FLAGS_FILE) -> dict:
     """{model or agent: reason} for flags in credit_flags.json still in force (out_until in the future, ISO UTC)."""
     import datetime as dt
     import json
     now = now or dt.datetime.now(dt.timezone.utc)
     try:
-        flags = json.load(open(path)).get("flags", {})
+        with open(path) as f:
+            flags = json.load(f).get("flags", {})
     except (OSError, ValueError, AttributeError):
         return {}
     out = {}
@@ -199,8 +223,19 @@ def fallbacks(kind: str) -> list:
 lanes = chain  # older name
 
 
+# Flow names for the Vertex picture models (used by every channel whose picture_route starts with Flow).
 HOS_FLOW = {"veo-3.1-fast-generate-001": "flow-veo-3.1", "veo-3.1-generate-001": "flow-veo-3.1",
             "gemini-2.5-flash-image": "flow-nano-banana-2"}
+
+
+def _picture_route(job: dict) -> str:
+    """The job's channel's picture_route (channels/<slug>/channel.json): flow_only or flow_first (the default)."""
+    try:
+        import channels
+        repo = job.get("repo") if job.get("repo") in channels.slugs() else channels.home()
+        return channels.get(repo).get("picture_route") or "flow_first"
+    except Exception:  # noqa: BLE001  (a missing channel file never stops routing)
+        return "flow_only" if job.get("repo") == "hos" else "flow_first"
 
 
 def job_chain(job: dict) -> list:
@@ -209,11 +244,12 @@ def job_chain(job: dict) -> list:
     kind = job.get("kind")
     if kind in CHAINS:
         ch = chain(kind)
-        if job.get("repo") == "hos" and kind in ("video", "image"):
-            # HOS picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as acting
-            # Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
+        route = _picture_route(job) if kind in ("video", "image") else ""
+        if route == "flow_only":
+            # e.g. HOS: picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as
+            # acting Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
             ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch]
-        elif kind in ("video", "image"):
+        elif route:
             # OWB too goes to Flow first (Ben, 5 Nov 2026: "For the image generation block we have Gemini flow lots of
             # credit"): the AI Ultra credits are already paid for, Vertex bills GBP. Vertex stays behind it as the
             # fallback, still inside the written spend rules.

@@ -48,6 +48,84 @@ def frame(card,t):
  return im
 
 def main():
+ if len(sys.argv)>1 and sys.argv[1]=='opening':
+  from opening_graphics import main as opening
+  return opening(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='field':
+  from field_graphics import main as field
+  return field(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='sky':
+  from sky_graphics import main as sky
+  return sky(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='bodies':
+  from body_graphics import main as bodies
+  return bodies(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='timeline':
+  from timeline_graphics import main as timeline
+  return timeline(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='core':
+  from core_graphics import main as core
+  return core(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='twist':
+  from twist_graphics import main as twist
+  return twist(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='grains-revised':
+  from grain_revision_graphics import main as grains_revised
+  return grains_revised(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='multipole':
+  from multipole_graphics import main as multipole
+  return multipole(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='aurora':
+  from aurora_graphics import main as aurora
+  return aurora(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='saa':
+  from saa_graphics import main as saa
+  return saa(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='places':
+  from place_graphics import main as places
+  return places(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='dynamo':
+  from dynamo_graphics import main as dynamo
+  return dynamo(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='hubble_saa':
+  from hubble_saa_graphics import main as hubble_saa
+  return hubble_saa(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='flip':
+  from flip_graphics import main as flip
+  return flip(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='belts':
+  from belt_graphics import main as belts
+  return belts(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=="pole_speed":
+  from pole_speed_graphics import main as pole_speed
+  return pole_speed(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=="paleo_ratio":
+  from paleo_comparison_graphics import main as paleo_ratio
+  return paleo_ratio(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='recent_dates':
+  from recent_date_graphics import main as recent_dates
+  return recent_dates(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='generations':
+  from generation_graphics import main as generations
+  return generations(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='extinction_check':
+  from extinction_graphics import main as extinction_check
+  return extinction_check(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='strata':
+  from strata_graphics import main as strata
+  return strata(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='history':
+  from history_graphics import main as history
+  return history(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='protection':
+  from protection_graphics import main as protection
+  return protection(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='depth':
+  from depth_graphics import main as depth
+  return depth(sys.argv[2:])
+ if len(sys.argv)>1 and sys.argv[1]=='historical-dates':
+  from historical_date_graphics import main as historical_dates
+  return historical_dates(sys.argv[2:])
  if len(sys.argv)>1 and sys.argv[1]=='comparisons':
   from comparison_graphics import main as comparisons
   return comparisons(sys.argv[2:])

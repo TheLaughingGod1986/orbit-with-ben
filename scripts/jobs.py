@@ -180,36 +180,249 @@ def film_named(title: str) -> bool:
 
 
 # The MacBook takes Mini jobs that don't need the Mini (Ben, 5 Nov 2026: "Sounds good. Go ahead"; 48 of 49 open jobs
-# were `needs mini` only because files used to live there). Text or code work only: anything touching the NAS,
-# Studio/YouTube, Flow/Chrome, media, renders, listening or watching stays on the Mini.
+# were `needs mini` only because files used to live there). Text/code reviews stay portable. Harvest, assembly and
+# watch/listen also go to the MacBook when the working film folder is on the shared NAS studio-live path (or another
+# path the job already names that exists on this machine). Studio login work (upload, youtube:package, Buffer,
+# playlists) and Flow/Chrome generation stay Mini-hard.
+# Codex stays off the MacBook when addressed (`for=codex`): one shared Codex account with the Mini (Ben, 6 Nov 2026).
 MACBOOK_KINDS = {"review", "script", "facts", "listing"}
-MACBOOK_CLIS = {"codex", "gemini", "claude", "cursor"}
+MACBOOK_CLIS = {"gemini", "claude", "cursor", "claudecode"}  # claudecode: a Mini Claude Code job runs on the MacBook's Claude Code (9 Nov 2026)
 CODE_WORK = re.compile(r"\b(?:encode|rules?|code|tests?|refactor|PR|lint|docs?)\b", re.I)
-# Anywhere in the job: a hard sign it needs the Mini's own files, accounts or tools.
+# Hard Mini signs: local paths, media files, Studio/browser/tooling. Always block, even inside "do not …" notes.
+MINI_HARD = re.compile(
+    r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b|youtube studio|\bstudio (?:read|sign|"
+    r"checklist|finish)\b|\bupload(?:ed|s|ing)? (?:to|the|a)\b|(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|"
+    r"\bchrome\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|\bwhisper\b|\bASR\b|\blaunchd\b|\bollama\b|\bredis\b|"
+    r"\btailscale\b|\ballow-?list\b|\bhos desk\b|\bicloud\b", re.I)
+# Soft Mini signs: service names that often appear in "do not change Buffer / never touch the NAS" instructions.
+# Matched only after prohibition clauses are stripped (6 Nov 2026: those false positives parked the MacBook).
+# Bare "YouTube" stays out: briefs often say "before YouTube changes" while the work is a git text review;
+# real YouTube mutations still hit MINI_HARD (`youtube studio`, upload-to) or kind=studio / Buffer / playlists.
+MINI_SOFT = re.compile(r"\bNAS\b|\bbuffer\b|\bplaylists?\b|\bend screens?\b", re.I)
+# "Do not change Buffer", "Never touch … NAS", "No YouTube/Buffer changes" — not a Mini requirement.
+MINI_PROHIBITION = re.compile(
+    r"(?is)\b(?:do\s+not|don't|never)\b[^.!\n]{0,240}"
+    r"|\bno\s+(?:youtube|buffer|nas|uploads?|privacy|schedule|playlists?|end\s+screens?)\b[^.!\n]{0,80}")
+# Kept for tests and callers that still import the old name; prefer mini_only_hit().
 MINI_ONLY = re.compile(
     r"\bNAS\b|/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b|youtube studio|\bstudio (?:read|sign|"
-    r"checklist|finish)|\bupload(?:ed|s|ing)? (?:to|the|a)\b|\bflow\b|chrome|\bmint\b|ffmpeg|\brender(?:s|ed|ing)?\b|whisper|"
-    r"\bASR\b|launchd|ollama|redis|tailscale|allow-?list|hos desk|icloud|buffer|playlists?|end screens?|youtube", re.I)
-# In the title: work that looks at or makes media, which lives on the Mini.
+    r"checklist|finish)\b|\bupload(?:ed|s|ing)? (?:to|the|a)\b|(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|"
+    r"\bchrome\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|\bwhisper\b|\bASR\b|\blaunchd\b|\bollama\b|\bredis\b|"
+    r"\btailscale\b|\ballow-?list\b|\bhos desk\b|\bicloud\b|\bbuffer\b|\bplaylists?\b|\bend screens?\b", re.I)
+# In the title: work that looks at or makes media. Text jobs with these words stay Mini-only unless they qualify as
+# shared media work with reachable studio-live (or local) media.
+# `cuts?` must not match hyphenated English like "cut-over" (6 Nov 2026).
 MEDIA_WORK = re.compile(r"picture|stills?\b|plates?\b|thumbnail|\bthumbs?\b|footage|audio|listen|\bwatch|capture|harvest|"
-                        r"assembl|\bcuts?\b|frames?\b|voice-?over", re.I)
+                        r"assembl|(?<![\w-])cuts?(?![\w-])|frames?\b|voice-?over", re.I)
+# Harvest / assembly / watch-listen: MacBook may take these when the working media is on studio-live (or an existing
+# path the job already names). Studio upload/package/Buffer/playlist and Flow/Chrome stay Mini via publish_mini_hit.
+SHARED_MEDIA_TITLE = re.compile(r"harvest|assembl|\blisten|\bwatch", re.I)
+PUBLISH_HARD = re.compile(
+    r"youtube studio|\bstudio (?:read|sign|checklist|finish)\b|"
+    r"\bupload(?:ed|s|ing)? (?:to|the|a)\b|youtube:package|\bupload packages?\b|"
+    r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+# YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
+# MACBOOK_CDP = the CDP ports whose browser is up: 9223 Orbit Studio, 9222 HOS (the Mini's ports, same profiles).
+# With the channel's port up, a Studio job (end screens, pinned comments, titles, tests, playlists, checklists) is
+# portable. Uploads, Buffer, Flow picture-making, renders and local media stay Mini-only.
+STUDIO_PORT = {"owb": "9223", "hos": "9222"}
+STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned comment\b|\bplaylists?\b|"
+                         r"\bTest (?:&|and) Compare\b|\btitle(?:-only)? test\b|\bRelated(?: video)?\b|\bcaptions?\b", re.I)
+STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
+                          r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?)\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|"
+                          r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3)\b|\bhos desk\b|\bicloud\b|"
+                          r"\b(?:change|set|move|make)\b[^.\n]{0,24}\b(?:privacy|schedule|publishAt|public)\b|\bgo public\b", re.I)
+# "Do not change privacy", "never the 9222 Flow browser", "No retitle, upload …": warnings, not work (as MINI_PROHIBITION).
+STUDIO_PROHIBITION = re.compile(r"(?is)\b(?:do\s+not|don't|never|no)\b[^.!\n]{0,240}")
+
+
+def macbook_studio_ok(job: dict, text: str) -> bool:
+    """A Studio-only job the MacBook can do now: its channel's CDP browser is up there, and it needs nothing else the
+    Mini alone has (uploads, Buffer, Flow, renders, local media, privacy or schedule changes)."""
+    if job.get("mini_only"):   # the Chief pinned it to the Mini (`jobs.py add --mini-only`), e.g. a change that can't be undone
+        return False
+    ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
+    port = STUDIO_PORT.get(job.get("repo") or channels.home())
+    if not port or port not in ports:
+        return False
+    if job.get("kind") not in ("studio", "", None, "listing", "review") and not STUDIO_WORK.search(str(job.get("title") or "")):
+        return False
+    return (job.get("kind") == "studio" or bool(STUDIO_WORK.search(text))) \
+        and not STUDIO_BLOCK.search(STUDIO_PROHIBITION.sub(" ", text))
+# Shared working-film store on the NAS (both Mini and MacBook mount /Volumes/data). Mini local originals under
+# ~/YouTube stay put; MacBook local checkouts are not this store.
+STUDIO_LIVE_ROOT = pathlib.Path("/Volumes/data/studio-live")
+STUDIO_LIVE_PROJECTS = {
+    "owb": STUDIO_LIVE_ROOT / "orbit-with-ben" / "02_Video-Projects",
+    "hos": STUDIO_LIVE_ROOT / "History Of Science" / "02_Video-Projects",
+}
+# Absolute paths the job already names: studio-live / home mounts, or any absolute media file path.
+ABS_MEDIA_PATH = re.compile(
+    r"(?<![\w:])(/(?:Volumes|Users)/[^\s\"'`,;]+|/[^\s\"'`,;]{1,240}\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b)",
+    re.I)
+REL_PROJECT_PATH = re.compile(r"(?<![\w./-])(02_Video-Projects/\d{3}_[^\s\"'`,;]+)")
+
+
+def mini_only_hit(text: str) -> bool:
+    """True when the job text names a Mini-only path, tool or live service the MacBook must not take."""
+    raw = str(text or "")
+    if MINI_HARD.search(raw):
+        return True
+    return bool(MINI_SOFT.search(MINI_PROHIBITION.sub(" ", raw)))
+
+
+def publish_mini_hit(text: str) -> bool:
+    """True when the job needs the Mini's Studio login or Flow/Chrome — even if film media is on studio-live."""
+    raw = str(text or "")
+    if PUBLISH_HARD.search(raw):
+        return True
+    return bool(MINI_SOFT.search(MINI_PROHIBITION.sub(" ", raw)))
+
+
+def shared_media_job(job: dict) -> bool:
+    """Harvest, assembly, or watch/listen work that can run wherever the working film folder is mounted."""
+    if job.get("kind") == "assembly":
+        return True
+    return bool(SHARED_MEDIA_TITLE.search(str(job.get("title") or "")))
+
+
+def job_film_number(job: dict) -> str:
+    """The three-digit film number from `film`, a channel key in the text, or the title."""
+    film = str(job.get("film") or "").strip()
+    if re.fullmatch(r"\d{3}", film):
+        return film
+    blob = " ".join(str(job.get(k) or "") for k in ("title", "body", "remaining_action", "action"))
+    keys = channels.film_keys(blob)
+    if keys:
+        label = channels.label_of_job(job) + ":"
+        for key in sorted(keys):
+            if key.startswith(label):
+                return key.split(":", 1)[1]
+        return sorted(keys)[0].split(":", 1)[1]
+    m = re.search(r"\b(\d{3})\b", str(job.get("title") or ""))
+    return m.group(1) if m else ""
+
+
+def film_folder_under(root: pathlib.Path, film: str) -> pathlib.Path | None:
+    """The single `NNN_*` working folder under a 02_Video-Projects root, or None."""
+    if not film or not root.is_dir():
+        return None
+    try:
+        hits = [d for d in sorted(root.iterdir()) if d.is_dir() and d.name.split("_")[0] == film]
+    except OSError:
+        return None
+    return hits[0] if hits else None
+
+
+def media_reachable(job: dict) -> bool:
+    """True when this machine can see the job's working film media on studio-live or a path the job already names."""
+    slug = channels.of_job(job)
+    live_root = STUDIO_LIVE_PROJECTS.get(slug) or STUDIO_LIVE_PROJECTS["owb"]
+    film = job_film_number(job)
+    if film_folder_under(live_root, film) is not None:
+        return True
+    text = " ".join(str(job.get(k) or "") for k in ("title", "body", "result", "remaining_action", "action"))
+    for m in ABS_MEDIA_PATH.finditer(text):
+        path = pathlib.Path(m.group(1).rstrip(".,;:)'\""))
+        try:
+            if path.exists():
+                return True
+        except OSError:
+            pass
+    channel_root = live_root.parent  # …/orbit-with-ben or …/History Of Science
+    try:
+        repo = channels.repo_path(slug)
+    except Exception:  # noqa: BLE001
+        repo = None
+    for m in REL_PROJECT_PATH.finditer(text):
+        rel = m.group(1).rstrip(".,;:)'\"")
+        for base in (channel_root, repo):
+            if base is None:
+                continue
+            try:
+                if (pathlib.Path(base) / rel).exists():
+                    return True
+            except OSError:
+                pass
+    return False
 
 
 def macbook_portable(job: dict, data: dict | None = None) -> bool:
-    """A `needs mini` job the MacBook can do as well: text/code only, no Mini-only resource named in it (or in the job
-    it reviews or re-checks)."""
-    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS) \
-            or job.get("kind") in NOT_PORTABLE_KINDS:
+    """A `needs mini` job the MacBook can do: portable text/code, or harvest/assembly/watch-listen with reachable media."""
+    if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS):
+        return False
+    if job.get("mini_only"):
         return False
     title = str(job.get("title") or "")
     fields = ("title", "body", "result", "remaining_action", "action")
     parent = find(data, job.get("recheck_of") or job.get("review_of") or "") if data else None
     text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
+    if macbook_studio_ok(job, text):
+        return True
+    if job.get("kind") in NOT_PORTABLE_KINDS:
+        return False
+    if shared_media_job(job):
+        # Studio login / Buffer / Flow stay Mini even when the film folder is on studio-live.
+        return (not publish_mini_hit(text)) and media_reachable(job)
     if parent and MEDIA_WORK.search(str(parent.get("title") or "")):
         return False
     return (job.get("kind") in MACBOOK_KINDS or bool(CODE_WORK.search(title))) \
-        and not MEDIA_WORK.search(title) and not MINI_ONLY.search(text)
+        and not MEDIA_WORK.search(title) and not mini_only_hit(text)
+
+
+# One plain-English line per job for the board (Ben, 6 Nov 2026: "In simple English I would like a brief description on
+# these cards of what the job is doing"). A job's own `plain` wins; otherwise the first rule matching its title, body
+# and action, then its kind. Agents give `jobs.py add --plain "..."` when the title is studio shorthand.
+PLAIN_RULES = [
+    (r"\bdate gate\b", "Waiting for a set date, then marking a step done"),
+    (r"\bverify condition for\b", "Checking whether a waiting job can start yet"),
+    (r"\b(?:multi-channel plan|cleanup audit|dead code|refactor)\b", "Improving how the studio itself works"),
+    (r"\bTest (?:&|and) Compare\b|title-only test|\bTest [AB] start\b",
+     "Running a YouTube test of two thumbnails or titles to see which gets more clicks"),
+    (r"\b(?:Related(?: video)?|end screens?|pinned comment|Studio finish|playlists?)\b",
+     "Finishing touches in YouTube Studio (end screen, pinned comment, linked videos)"),
+    (r"\b(?:reach|impressions?|CTR|analytics|retention|watch[- ]time|(?:weekly|monthly) \w+ audit|our YouTube numbers|"
+     r"Studio read|studio_ctr|subscribers?|subs per|measure)\b",
+     "Collecting YouTube numbers (views, clicks, how long people watch) to see what works"),
+    (r"\bShorts?\b[^.;]*\b(?:cut|build|assembl\w*|fix\w*|frame 0|opening|v\d+|slots?)\b|\bShort cut\b",
+     "Making or fixing a Short"),
+    (r"\b(?:swap|re-?upload|upload|schedul\w*|go public|privacy)\b", "Uploading or scheduling a video on YouTube"),
+    (r"\b(?:assembl\w*|master gates|finished pack|splice)\b", "Putting the video together"),
+    (r"\b(?:thumb\w*|cover)\b", "Making or checking the thumbnail pictures"),
+    (r"\b(?:mint\w*|shot list|plates?|picture|footage|Flow|Veo|images?|stills?|graphics?)\b", "Making the pictures and video shots"),
+    (r"\b(?:topic|ideas?|neighbou?rs?)\b", "Choosing and checking a new video topic"),
+    (r"\b(?:facts?|fact-check|sources?)\b", "Checking the facts are right"),
+    (r"\b(?:voice[- ]?over|VO|narration)\b", "Recording or checking the voice-over"),
+    (r"\b(?:script)\b", "Writing or fixing the script"),
+    (r"\bShorts?\b", "Making or fixing a Short"),
+    (r"\b(?:cut|edit|render|master|captions?)\b", "Putting the video together"),
+    (r"\b(?:title|description|tags|listing|metadata|chapters)\b", "Writing the title, description and tags"),
+    (r"\b(?:Chief|handoffs?|desk|relay|dispatcher|workers?|allow-list|board page|code|checklist|shared folder|\w+\.py)\b",
+     "Keeping the studio's job system running smoothly"),
+]
+PLAIN_KINDS = {"script": "Writing or fixing the script", "facts": "Checking the facts are right",
+               "review": "Checking work before it moves on", "vo": "Recording or checking the voice-over",
+               "image": "Making pictures", "video": "Making video shots", "thumb": "Making the thumbnail pictures",
+               "chart": "Making a chart or diagram", "assembly": "Putting the video together",
+               "qa": "Checking the finished video for faults", "listing": "Writing the title, description and tags",
+               "studio": "A YouTube Studio task (upload, schedule or settings)", "chief": "A decision for the Chief"}
+
+
+def plain_summary(job: dict) -> str:
+    """One short plain-English line saying what the job is doing, for the board's cards."""
+    if str(job.get("plain") or "").strip():
+        return str(job["plain"]).strip()
+    title = str(job.get("title") or "")
+    rest = " ".join(str(job.get(k) or "") for k in ("remaining_action", "action"))
+    review = job.get("kind") == "review" or re.match(r"\s*Review\b", title, re.I)
+    for text in (title, rest):  # the title says what the job is; its notes only when the title says nothing we know
+        for pattern, line in PLAIN_RULES:
+            if re.search(pattern, text, re.I):
+                if review and not line.startswith("Checking whether"):
+                    return "Checking someone else's work: " + line[0].lower() + line[1:]
+                return line
+    return PLAIN_KINDS.get(job.get("kind") or "", "A studio task")
 
 
 def is_macbook(agent: str) -> bool:
@@ -228,8 +441,9 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
 def ordered(data: dict, at: dt.datetime | None = None) -> list:
     due = workflow.deadlines(data["jobs"])
     from workflow_board import load_tracker
-    nearest = workflow.near_watch(load_tracker())
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest))
+    tracker = load_tracker()
+    nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
@@ -705,7 +919,7 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: str = "", version: str = "", due: str = "",
               airs: str = "", if_not: str = "", card: str = "", title: str = "", number: str = "", vtype: str = "",
-              add: bool = False, clear: bool = False) -> None:
+              add: bool = False, clear: bool = False, prev: list | None = None, fixed: list | None = None) -> None:
     """Mark a job as waiting on Ben (Ben, 25 Oct 2026: every cut he has to OK shows on the board, with Play and its
     deadline). `awaits_ben` is the one signal the Studio Kanban builds Ready for OK cards from (video_tracker.py
     ask_entries); scripts/board_check.py checks every entry reached the published board. --add appends another cut to
@@ -723,6 +937,12 @@ def do_awaits(job: dict, agent: str, at: dt.datetime, *, what: str = "", file: s
                  ("ifNot", if_not), ("card", card), ("title", title), ("number", number), ("type", vtype)):
         if v:
             entry[k] = v
+    # A re-sent cut names Ben's earlier tick(s) it answers and what was changed, so the watch page lists the past
+    # problems under the player (Ben, 8 Nov 2026).
+    if prev:
+        entry["prev"] = [p for p in prev if p]
+    if fixed:
+        entry["fixed"] = [f for f in fixed if f]
     cur = job.get("awaits_ben")
     cur = cur if isinstance(cur, list) else ([cur] if isinstance(cur, dict) else [])
     job["awaits_ben"] = (cur + [entry]) if add else [entry]
@@ -797,6 +1017,11 @@ def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
         return None
     path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
     d = studio.load(path)
+    if (d.get("stages", {}).get(job["stage"]) or {}).get("state") in ("done", "skip"):
+        # Follow-up work on a finished stage (a Short or a review on a live film) never reopens it: claiming it set
+        # the stage to doing and a block set it to blocked, so 024's done edit flipped back on every such job
+        # (5 Nov 2026, J2248/J2250; stage_sync kept moving it back).
+        return None
     mins = max(1, int((studio.parse(job["eta"]) - at).total_seconds() // 60))
     err = studio.do_claim(d, job["stage"], agent, mins, f"{job['id']} {job['title']}", at)
     if err:
@@ -945,7 +1170,10 @@ def main(argv=None) -> int:
     a.add_argument("--kind", default="", choices=[""] + list(routing.KINDS), help="job type; routes it (AGENTS.md 'Who does what')")
     a.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="override the kind's model")
     a.add_argument("--action", default="", help="plain-English action still unfinished")
+    a.add_argument("--plain", default="", help="one plain-English line for the board: what this job does, no shorthand")
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
+    a.add_argument("--mini-only", dest="mini_only", action="store_true",
+                   help="pin a `needs mini` job to the Mini: the MacBook never takes it (e.g. a change that can't be undone)")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
     a.add_argument("--approved-from", dest="approved_from", default="",
@@ -1006,6 +1234,9 @@ def main(argv=None) -> int:
     aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
+    aw.add_argument("--prev", action="append", default=[], help="a re-sent cut: the board check id of Ben's earlier change "
+                    "tick it answers, e.g. OWB-J2395.3 (repeatable); his old notes show under the new cut")
+    aw.add_argument("--fixed", action="append", default=[], help="a re-sent cut: one line on what was changed (repeatable)")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "
                     "the default when the job is still open/claimed/blocked")
@@ -1071,6 +1302,10 @@ def main(argv=None) -> int:
                 job = do_add(data, title=args.title, needs=args.needs, body=body, by=args.by, at=at, ref=args.ref,
                              film=args.film, stage=args.stage, after=args.after, repo=args.repo, eta_min=args.eta,
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
+                if args.plain.strip():
+                    job["plain"] = args.plain.strip()
+                if getattr(args, "mini_only", False):
+                    job["mini_only"] = True
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:
@@ -1144,7 +1379,7 @@ def main(argv=None) -> int:
             elif args.cmd == "awaits":
                 do_awaits(job, args.agent or "chief", at, what=args.what, file=args.file, version=args.version, due=args.due,
                           airs=args.airs, if_not=args.if_not, card=args.card, title=args.title, number=args.number,
-                          vtype=args.vtype, add=args.add, clear=args.clear)
+                          vtype=args.vtype, add=args.add, clear=args.clear, prev=args.prev, fixed=args.fixed)
             elif args.cmd == "approved":
                 src = find(data, args.from_job) if args.from_job else job
                 if not src:

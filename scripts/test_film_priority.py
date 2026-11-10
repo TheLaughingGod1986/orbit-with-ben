@@ -99,3 +99,34 @@ class Priority(unittest.TestCase):
                 self.assertEqual(load_tracker(path), {})
             path.write_text(json.dumps({'tracker': self.tracker}))
             self.assertEqual(load_tracker(path), self.tracker)
+
+
+class OldestFilmFirst(unittest.TestCase):
+    """Ben, 8 Nov 2026 (option B): keep the WIP limit, but finish the oldest film's work before a newer one."""
+    TRACKER = {'videos': [
+        {'key': 'OWB:032', 'type': 'long', 'lane': 'progress', 'air': '2026-11-25'},
+        {'key': 'OWB:034', 'type': 'long', 'lane': 'progress', 'air': '2026-12-13'},
+        {'key': 'HOS:009', 'type': 'long', 'lane': 'progress', 'air': '2026-11-26'},
+        {'key': 'OWB:024', 'type': 'long', 'lane': 'done', 'air': '2026-11-01'},
+    ]}
+
+    def test_air_dates_skip_finished_films(self):
+        air = w.air_dates(self.TRACKER)
+        self.assertEqual(set(air), {'OWB:032', 'OWB:034', 'HOS:009'})
+
+    def test_the_film_that_airs_first_wins_even_when_its_job_is_newer(self):
+        air = w.air_dates(self.TRACKER)
+        older_film = job('J2', film='032', repo='owb', stage='edit', created_at='2026-11-08T10:00:00Z')
+        newer_film = job('J1', film='034', repo='owb', stage='edit', created_at='2026-11-01T10:00:00Z')
+        hos = job('J3', film='009', repo='hos', stage='edit', created_at='2026-11-01T10:00:00Z')
+        ranked = sorted([newer_film, hos, older_film], key=lambda j: w.order(j, {}, (), AT, (), air))
+        self.assertEqual([j['id'] for j in ranked], ['J2', 'J3', 'J1'])
+
+    def test_a_deadline_still_beats_air_order_and_backlog_does_not_jump_the_line(self):
+        air = w.air_dates(self.TRACKER)
+        newer = job('J1', film='034', repo='owb', stage='edit')
+        due = {'J1': dt.datetime(2026, 11, 5, tzinfo=dt.timezone.utc)}
+        older = job('J2', film='032', repo='owb', stage='edit')
+        self.assertEqual(min([older, newer], key=lambda j: w.order(j, due, (), AT, (), air))['id'], 'J1')
+        backlog = job('J3', film='032', repo='owb', title='Backlog OWB: next Short', backlog='owb-shorts')
+        self.assertEqual(min([backlog, newer], key=lambda j: w.order(j, {}, (), AT, (), air))['id'], 'J1')

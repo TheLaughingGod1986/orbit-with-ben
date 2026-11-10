@@ -1,0 +1,26 @@
+{
+  "clip_check": {
+    "code": 0,
+    "out": "clip_check: 54 rows \u2014 PASS\nOK: sentence/card boundaries and end-after-VO checks clear.\n"
+  },
+  "picture_qa": {
+    "code": 0,
+    "out": "eld_left.mp4: low detail: luma std 14.41 < 18.0\nWARN   4:07 row R25 code_graphic_031_r25a_belts_600km_v01.mp4: low detail: luma std 14.59 < 18.0; low detail: edge density 0.0033 < film p5 0.0091\nWARN   5:29 row R32 code_graphic_031_r32a_paleo_high_v01.mp4: low detail: luma std 14.55 < 18.0\nWARN   7:01 row R41 iss042e267617.jpg: low detail: edge density 0.0048 < film p5 0.0091\nWARN   7:28 row R44 PIA00407.jpg: low detail: luma std 16.39 < 18.0\nWARN   7:51 row R46 svs_10929_x17_solar_flare.mp4: low detail: edge density 0.0071 < film p5 0.0091\nWARN   8:27 row R49 commons_usfws_tundra_swans.jpg: low detail: edge density 0.0051 < film p5 0.0091\nWARN   9:10 row R53 nasa_svs_3822_magfield_left.mp4: low detail: luma std 13.9 < 18.0\nWARN   9:27 row R54 PIA20016.jpg: low detail: edge density 0.0034 < film p5 0.0091\npicture QA PASS: 0 of 115 cuts fail, 11 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v01_pack/picture_qa_review.jpg\n"
+  },
+  "music_gate": {
+    "code": 0,
+    "out": "ompare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.m4a to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03b_tightened_LOCK.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v01_LISTEN.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read monday_saturn_short_vo_v02_how_long.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read saturn_long_vo_v03_tightened.wav to compare (OSError); download it or pass --others\nWARN pace: measured about 109.1 BPM against the brief's 66-74; Claude listens\nmusic gate PASS: magnetic_field_flip_score_bed_v01.mp3, 570.8 s, about 109.1 BPM, brief Pace: 66-74 BPM\n"
+  },
+  "sfx_level": {
+    "code": 0,
+    "out": "SFX level PASS: VO -19.9 LUFS, SFX -45.3 LUFS, 15 hits\n"
+  },
+  "delivery": {
+    "integrated_lufs": -14.6,
+    "true_peak_dbtp": -1.0,
+    "width": 1920,
+    "height": 1080,
+    "duration": 570.8,
+    "black_frames": []
+  }
+}

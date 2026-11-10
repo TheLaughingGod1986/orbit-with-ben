@@ -1,0 +1,67 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "checks": [
+    {
+      "id": "code_graphic_031_r30_recap_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 5.76,
+      "frames": 144,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        2.88,
+        5.56
+      ]
+    },
+    {
+      "id": "code_graphic_031_r40_dipole_strength_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 4.92,
+      "frames": 123,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        2.46,
+        4.72
+      ]
+    },
+    {
+      "id": "code_graphic_031_r44_duration_comparison_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 5.52,
+      "frames": 138,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        2.76,
+        5.319999999999999
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-comparisons-macbook-v01/CONTACT_MACBOOK_v01.jpg",
+  "contact_sheet_sha256": "e0f1d9faebd1b2b9efd01f032956e2fa3a96671566294d40cb6196f1beb4ae1c"
+}

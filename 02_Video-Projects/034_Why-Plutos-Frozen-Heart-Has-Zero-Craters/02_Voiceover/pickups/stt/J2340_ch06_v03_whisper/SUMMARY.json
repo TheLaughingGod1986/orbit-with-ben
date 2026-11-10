@@ -1,0 +1,43 @@
+{
+  "input": "02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/02_Voiceover/pickups/pluto_ch06_real_worlds_v03_request.wav",
+  "input_sha256": "e46b491f565b1dd1114213fd33fcf19eacf81c50cc1f5fd9f737070f68d74a5d",
+  "engine": "faster-whisper",
+  "engine_version": "1.2.1",
+  "model": "Systran/faster-whisper-medium.en",
+  "full_text": "Next in our Real World series we travel inward to Neptune's largest moon Triton, a captured Kuiper Belt cousin of Pluto that orbits backwards and erupts active geysers on a frozen nitrogen crust at minus 235 degrees Celsius. Looking back from 200,000 kilometers away on the 14th of July 2015, New Horizons captured its farewell colour portrait of Pluto's receding crescent and blue atmospheric haze.",
+  "phrase_text": "in our Real World Series, we travel...",
+  "phrase_note": "window words 1-6: in  our  Real  World  series  we",
+  "phrase_interval_s": [
+    0.32,
+    2.3
+  ],
+  "phrase_sha256": "9bc2cb9d73a5693287f21684765cc18e15b46c861575188166edcfdc26941d15",
+  "world_tokens_full": [
+    {
+      "word": " Real",
+      "start": 0.78,
+      "end": 0.98,
+      "probability": 0.6249
+    },
+    {
+      "word": " World",
+      "start": 0.98,
+      "end": 1.26,
+      "probability": 0.8275
+    }
+  ],
+  "world_tokens_phrase": [
+    {
+      "word": " Real",
+      "start": 0.44,
+      "end": 0.64,
+      "probability": 0.429
+    },
+    {
+      "word": " World",
+      "start": 0.64,
+      "end": 0.94,
+      "probability": 0.9273
+    }
+  ]
+}

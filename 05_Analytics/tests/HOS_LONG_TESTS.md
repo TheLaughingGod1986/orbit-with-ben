@@ -16,4 +16,4 @@ The locked first-minute milestones stay: answer image by 0:05, title question by
 
 **Stop and revert** the rule for any 008–010 edit that is not yet locked if a cut built to it hits a UAT hard fail, or if a scored long's 0:30 retention is under 40%. An uploaded file stays as it aired.
 
-**Readouts:** 3 Dec 2026 and 3 Jan 2027, on the studio thread, from `05_Analytics/hos/REPORT.md`. Learnings row 24 (row 23 is HOS-2026-11-E1).
+**Readouts:** 3 Dec 2026 and 3 Jan 2027, on the studio thread, from `05_Analytics/hos/REPORT.md`. Learnings row 30 (follows rows 27–29 from #645 / J2373; HOS-2026-11-E1 is #552).
