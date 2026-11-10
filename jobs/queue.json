@@ -217998,10 +217998,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T19:20Z",
+      "eta": "2026-11-10T21:20Z",
       "created_by": "claude",
       "created_at": "2026-11-10T18:54Z",
       "result": "",
@@ -218025,6 +218025,11 @@
           "at": "2026-11-10T19:19Z",
           "by": "claude",
           "what": "reopened: FIX, acting Chief (Claude) 10 Nov. Do not merge #759 as it is: all four workflow files fail to load, so merging would have switched every check off. Cause: the `if:` lines are unquoted and hold `'Merge pull request #'`. In YAML a space followed by # starts a comment, so the expression is cut in half. The four runs on the pull request's own head show it (failure in 0 seconds, no jobs). Put each `if"
+        },
+        {
+          "at": "2026-11-10T19:20Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Quote the four if: lines (YAML comment bug), data-only pull requests start nothing, one job per pull request, re-estimate for studio pull requests only",
