@@ -218684,16 +218684,21 @@
           "at": "2026-11-10T21:20Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-10T21:48Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Inspect rules-check.yml timing and optimize ffmpeg + slowest tests",
+      "remaining_action": "Time each test file in scripts/, speed up test_studio_split.py, cache ffmpeg, split scripts/ across parallel processes",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the automatic checks run in under a minute",
       "progress": {
         "step": 1,
-        "of": 3,
-        "at": "2026-11-10T21:20Z",
+        "of": 4,
+        "at": "2026-11-10T21:48Z",
         "by": "macbook"
       }
     },
