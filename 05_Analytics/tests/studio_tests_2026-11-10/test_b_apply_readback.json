@@ -1,0 +1,89 @@
+{
+  "about": "J0978 Test B Studio Details check + read-back 10 Nov 2026 (HOS GHZDsiH7L7A on CDP 9222). Per acting Chief's 10 Nov 03:10Z instructions, opened GHZDsiH7L7A > Details in HOS Studio (after verifying CHANNEL_ID === 'UCXp7HkBIl1LgaznXuZHJyRg') to check whether the title could be changed in the title field itself without deleting the finished J0280 test report. On the Details page, no editable title input/textarea (#title-textarea) is rendered (ytcp-video-title has isTitleDisabled: true, showTitleExperiment: true). Instead, ytcp-video-title renders ytcp-video-title-experiment displaying 'A/B testing titles' ('Results ready'), read-only option 'What's Really Inside an Atom?', 'View test report' (#ab-test-button), and 'Edit title' (#edit-title-button). Clicking 'Edit title' opens ytcp-creator-experiment-delete-confirmation-dialog: 'Edit title / Editing your video title will delete your A/B test including your other title options. / Do you want to continue? / Cancel / Continue', where 'Continue' invokes experimentService.deleteExperiment(videoId). Per step 2 ('If the title field is locked, or saving needs the finished test or its report removed, replaced or a new test started, change nothing, stop, and say exactly what Studio showed. Removing a test report is never ours.'), clicked 'Cancel' immediately, changed nothing, and verified title, line 1, full description, tags, privacy and publishAt match originals.json verbatim.",
+  "checkedAt": "2026-11-10T04:01:45Z",
+  "channel": {
+    "id": "UCXp7HkBIl1LgaznXuZHJyRg",
+    "handle": "@HistoryOfScienceYT",
+    "name": "History of Science",
+    "cdpPort": 9222
+  },
+  "studioDetailsTitleField": {
+    "url": "https://studio.youtube.com/video/GHZDsiH7L7A/edit",
+    "editableTitleInputRendered": false,
+    "isTitleDisabled": true,
+    "showTitleExperiment": true,
+    "abTestButtonAction": "VIEW_REPORT",
+    "renderedComponent": "ytcp-video-title-experiment",
+    "renderedText": "A/B testing titles\nWhat's Really Inside an Atom?\nView test report\nEdit title",
+    "buttons": [
+      {
+        "id": "ab-test-button",
+        "label": "View test report"
+      },
+      {
+        "id": "edit-title-button",
+        "label": "Edit title"
+      }
+    ],
+    "editTitleButtonAction": {
+      "dialogComponent": "ytcp-creator-experiment-delete-confirmation-dialog",
+      "dialogTitle": "Edit title",
+      "dialogBody": "Editing your video title will delete your A/B test including your other title options.\n\nDo you want to continue?",
+      "buttons": [
+        "Cancel",
+        "Continue"
+      ],
+      "confirmCalls": "experimentService.deleteExperiment(videoId, {deleteInTransientState: false})",
+      "actionTaken": "Clicked Cancel immediately; nothing deleted or changed; Save button remained disabled (aria-disabled='true')."
+    }
+  },
+  "studioJ0280TitleTestReport": {
+    "mode": "Title and thumbnail",
+    "editPageState": "A/B testing titles · Results ready",
+    "statusText": "Test finished. Ran from 15 October 2026 at 18:00 to 29 October 2026 at 17:54.",
+    "verdict": "Not enough impressions to declare a winner",
+    "variants": [
+      {
+        "variant": "A",
+        "title": "What's Really Inside an Atom?",
+        "note": "Now visible to all viewers",
+        "watchTimeShare": "—"
+      },
+      {
+        "variant": "B",
+        "title": "Why Is the Periodic Table in This Order?",
+        "watchTimeShare": "—"
+      },
+      {
+        "variant": "C",
+        "title": "How Small Can You Cut Gold?",
+        "watchTimeShare": "—"
+      }
+    ]
+  },
+  "readBack": {
+    "GHZDsiH7L7A": {
+      "title": "What's Really Inside an Atom?",
+      "line1": "What's really inside an atom, and why is the periodic table in this order? Four discoveries, one century — from a knife and a gold coin to the number that fixed the table.",
+      "description": "What's really inside an atom, and why is the periodic table in this order? Four discoveries, one century — from a knife and a gold coin to the number that fixed the table.\n\nCut gold in half, then again. How small can you go before it stops being gold? Dalton weighed atoms. Thomson found a piece inside them. Rutherford found their tiny centre. Moseley counted what was inside every element — and tellurium 52 finally sat before iodine 53 for a reason that wasn't weight.\n\nA 3D cartoon film about the moment chemistry got a ruler that worked.\n\nHistory of Science · Discovery. Wonder. Proof. · @HistoryOfScienceYT\n\n#HistoryOfScience #Atom #PeriodicTable #AtomicNumber #Moseley #Rutherford #Thomson #Dalton\n\n0:00 How small can you cut gold?\n1:09 The table that broke its own rule\n2:41 The crumb inside the atom\n4:05 The shell that bounced back\n5:55 Counting with X-rays\n\nSources: J. Dalton, A New System of Chemical Philosophy (1808); D. Mendeleev, Zeitschrift für Chemie 12 (1869); J. J. Thomson, \"Cathode Rays\", Philosophical Magazine 44 (1897); H. Geiger & E. Marsden, \"On a Diffuse Reflection of the α-Particles\", Proc. R. Soc. A 82 (1909); E. Rutherford, \"The Scattering of α and β Particles by Matter and the Structure of the Atom\", Philosophical Magazine 21 (1911); H. G. J. Moseley, \"The High-Frequency Spectra of the Elements\", Philosophical Magazine 26 (1913).",
+      "tags": [
+        "atom",
+        "history of chemistry",
+        "history of science",
+        "moseley",
+        "periodic table",
+        "rutherford"
+      ],
+      "privacy": "public",
+      "publishAt": null
+    }
+  },
+  "matchesOriginals": {
+    "title": true,
+    "line1": true,
+    "description": true,
+    "tags": true,
+    "privacy": true,
+    "publishAt": true
+  }
+}
