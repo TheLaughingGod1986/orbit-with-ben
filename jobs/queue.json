@@ -215400,18 +215400,23 @@
           "at": "2026-11-10T10:24Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Both re-cut and gate_shorts_open PASS: mon16 v04 first cut 2.40 s; wed18 v05 opens on the film's Milky Way time-lapse. Same mix, level-only fix to -14.2 LUFS / -2.2 dBTP"
+        },
+        {
+          "at": "2026-11-10T10:24Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: Gates: gate_shorts_open PASS on both (not report-only); picture QA PASS on both (0 fails); length 26.5 s and 23.6 s, unchanged"
         }
       ],
-      "remaining_action": "Run picture QA and the remaining Shorts gates on both new files",
+      "remaining_action": "Copy both files to the NAS and Ben's watch folder, then put up the watch card",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-11-10T10:24Z",
         "by": "claudecode",
-        "note": "Both re-cut and gate_shorts_open PASS: mon16 v04 first cut 2.40 s; wed18 v05 opens on the film's Milky Way time-lapse. S"
+        "note": "Gates: gate_shorts_open PASS on both (not report-only); picture QA PASS on both (0 fails); length 26.5 s and 23.6 s, unc"
       },
       "taskKeys": [
         "OWB:026"
