@@ -1,5 +1,5 @@
 {
-  "next_id": 2541,
+  "next_id": 2542,
   "jobs": [
     {
       "id": "J0001",
@@ -218522,6 +218522,36 @@
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
       "mini_only": true
+    },
+    {
+      "id": "J2541",
+      "title": "One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "The board's data (`board.json` on the `board-data` branch) is meant to be published by the Mini only (`scripts/board_publish.py`, top of file: \"Triggers (all on the Mini)\"). On 10 Nov at 20:15Z two publishes four seconds apart held different data, which one machine with one setup cannot produce.\n\n`scripts/jobs.py` starts `board_publish.py` in the background after every queue change, on any machine that has `~/_desk/state/chief`. The MacBook worker runs `jobs.py` all day and nothing turns that off there.\n\n1. On the MacBook, read-only: does `~/_desk/state/chief` exist, and does `~/_desk/state/board/publish.log` show runs that pushed (not only failures)? Count today's. Say which.\n2. If the MacBook has been publishing: stop it in code, not by hand. The worker starts its jobs with `BOARD_PUBLISH=0` in their environment (`scripts/macbook_worker.py`), with a test. The Mini publishes within a minute of any push to main, so nothing is lost.\n3. If it has not: say so, and say what else could explain two different publishes four seconds apart (for example the Mini's timed run and a run started from inside a job, with a different `HOS_REPO`).\n\nOne small pull request if step 2 applies. Park for Chief. Do not touch `board_publish.py`, the `board-data` branch or the Mini. No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T20:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T20:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Make sure only the Mini updates the board, so it cannot flicker"
     }
   ],
   "focus": [
