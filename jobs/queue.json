@@ -1,5 +1,5 @@
 {
-  "next_id": 2509,
+  "next_id": 2510,
   "jobs": [
     {
       "id": "J0001",
@@ -216455,6 +216455,37 @@
       "kind": "review",
       "plain": "An agent watches the three re-cut Shorts for faults before you do",
       "urgent": 6
+    },
+    {
+      "id": "J2509",
+      "title": "Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2494 (10 Nov 14:15Z). The Voyager Short `kKN8Ale42sE` (\"How Far From Earth Is Voyager 1 Right Now?\", airs Tue 17 Nov 11:30 London) was rightly left alone: the file on YouTube (uploaded 13 Oct) is not the one on disk (re-rendered 17 Oct by J0432). So every gate result we have for it describes the wrong file. This job measures the one that will air. Read-only, £0.\n\n1. In the Orbit Studio browser (CDP 9223): Content > `kKN8Ale42sE` > the menu > Download. Studio's download is a 720p copy, which is enough for the opening gate (the same was accepted for the Titan Short in J1889). Save it under `~/_desk/<this job id>/`. Change nothing on the video.\n2. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <the download> --air-date 2026-11-17` and give the whole line. Watch its first three seconds and its end card and say what is on screen and what is said by 1.5 s. Read every piece of text on the end card: any raw video id or stray letters?\n3. Do the same gate run on the file on disk (`.../06_Final-Exports/owb_sa_s8_voyager1_v01.mp4`, the 17 Oct render) and say in two lines how the two differ (length, opening shot, first cut, words).\n4. Result, first line: \"the uploaded Short passes\" or \"the uploaded Short fails: <what>\". If it fails, say whether the 17 Oct render on disk passes and could replace it as it stands, or what a re-cut would need. Do not re-cut and do not upload: the Chief decides, and a swap needs Ben's watch by Mon 16 Nov 18:00.\n\nIf Studio asks for a password or a sign-in, stop and say so: that is Ben's.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T14:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T14:13Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "studio",
+      "plain": "Check the Voyager Short that is actually on YouTube, not the copy on disk",
+      "mini_only": true
     }
   ],
   "focus": [
