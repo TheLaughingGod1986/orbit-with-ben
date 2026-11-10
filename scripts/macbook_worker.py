@@ -190,9 +190,8 @@ BINS = {"codex": ("CODEX_BIN", "codex"), "gemini": ("AGY_BIN", "agy"), "claude":
 def find_bin(agent: str):
     """launchd's PATH misses npm-global and ~/.local: look in the usual install places too (as chief_relay.find_bin)."""
     env, name = BINS[agent]
-    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
-        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
-    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+    import routing
+    return routing.find_cli(env, name, HOME)
 
 
 def installed(names=None) -> list:
@@ -598,9 +597,9 @@ def start_other_slots(popen=None, system=None) -> list:
                    HOS_REPO=str(slot_dir(n) / "history-of-science"))
         try:
             logs.mkdir(parents=True, exist_ok=True)
-            out = open(logs / f"owb-macbook-worker-{n}.log", "a")
-            popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
-                  stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
+            with open(logs / f"owb-macbook-worker-{n}.log", "a") as out:   # the child keeps its own copy of the handle
+                popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
+                      stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
             started.append(n)
         except OSError as e:
             log(f"slot {n} not started: {e}")
@@ -610,12 +609,17 @@ def start_other_slots(popen=None, system=None) -> list:
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
     start_other_slots()
-    lock = open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except OSError:
-        log("another run is still going")
-        return 0
+    # The lock file is closed, and the lock freed, when the run returns (J2463: it used to be left open).
+    with open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            log("another run is still going")
+            return 0
+        return _take_jobs()
+
+
+def _take_jobs() -> int:
     # Keep taking jobs back to back (Ben, 5 Nov 2026: "why are agents taking so long between jobs"): launchd starts a
     # run every 15 min, and the run keeps going while there is work and the guards hold, up to MACBOOK_LOOP_MIN.
     # The lock stops a second run, so a long job simply carries the lane into the next tick.

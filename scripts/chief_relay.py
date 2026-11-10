@@ -319,9 +319,7 @@ def mark_up(agent: str) -> None:
 def find_bin(env: str, name: str):
     """launchd's `zsh -lc` doesn't read .zshrc, so npm-global and ~/.local CLIs aren't on PATH there: look in the
     usual install places too."""
-    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
-        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
-    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+    return routing.find_cli(env, name, HOME)
 
 
 def cursor_default_out(at: dt.datetime):

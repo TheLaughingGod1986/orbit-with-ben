@@ -24,7 +24,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
       - run: python3 -m unittest discover -s scripts -p "test_*.py" -v
-      - run: python3 -m unittest discover -s 04_Audio/tools -p "test_vo_take.py" -v
-      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_gate_background.py" -v
-      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_gate_upcoming.py" -v
-      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_gate_duration.py" -v
+      # Every test file in these two folders, not a hand-kept list: test_orbit_cfr_delivery.py and test_gate_stayed.py
+      # were never run here until J2463 (7 Nov code audit, row F-05a).
+      - run: python3 -m unittest discover -s 04_Audio/tools -p "test_*.py" -v
+      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_*.py" -v
