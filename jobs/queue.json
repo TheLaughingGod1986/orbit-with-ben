@@ -212612,10 +212612,10 @@
       "stage": "",
       "after": "J2451",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T23:45Z",
+      "eta": "2026-11-11T03:45Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -212679,6 +212679,11 @@
           "at": "2026-11-10T23:41Z",
           "by": "macbook",
           "what": "released: Chief step (1) + #6782089969 NAS check done (PR #778): located ALL 4 masters Mini missed (013,021,022,023 on NAS/UAT), but 5 clean VO stems (023-027), 2 beds (026,023) & 7 cover-plate sets are only on Mini SSD. Released per #6781958900/#6782089969."
+        },
+        {
+          "at": "2026-11-10T23:45Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sync 023-027 VO stems, 026/023 beds & missing cover plates from Mini SSD to NAS studio-live (PR #778), then run MacBook encode",
