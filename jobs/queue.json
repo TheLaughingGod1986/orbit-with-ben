@@ -214196,19 +214196,26 @@
           "at": "2026-11-10T09:57Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T09:57Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: Claimed; reading HOS 011 film folder, PR #443 and shot-list rules"
         }
       ],
-      "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row",
+      "remaining_action": "Record the 011 long VO lock (file, sha256, J2286 KEEP)",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-10T09:57Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed; reading HOS 011 film folder, PR #443 and shot-list rules"
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     },
     {
       "id": "J2476",
