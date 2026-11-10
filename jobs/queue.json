@@ -1,5 +1,5 @@
 {
-  "next_id": 2502,
+  "next_id": 2503,
   "jobs": [
     {
       "id": "J0001",
@@ -216044,6 +216044,36 @@
         "at": "2026-11-10T13:24Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2502",
+      "title": "History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Chief ruling on J2495 (10 Nov, thread): of the 27 open history-of-science pull requests, 15 were closed, #434 (experiment E2) was merged, and these are carried. The table and the reasons are in history-of-science `jobs/reviews/J2495/OPEN_PRS.md`. This job does the carrying in ONE new pull request, then the old ones are closed.\n\nCarry means: start a fresh branch from main, copy the named files from the old pull request's head (`git fetch origin pull/N/head:pr-N`, then `git checkout pr-N -- <path>`), never merge the old branch. `GIT_LFS_SKIP_SMUDGE=1` is fine.\n\nRules for files that differ from main: `STATUS.md` and `00_Brand/Channel-Setup/kanban/index.html` are regenerated with `python3 00_Brand/Channel-Setup/tools/status_board.py`. `PIPELINE.json`, `VIDEO_BACKLOG.json`, `UPLOADS.json`, `library.json` and every `production-status.md`: keep main's (add a line only where it says so below).\n\n1. #431 (HOS 011): the 6 missing files: `10_Shorts/SHORTS_SCRIPTS_v02.md` and, under `11_Upload-Package/`, the long description, the tags, `PACKAGE_MANIFEST.json`, `PRODUCTION_CHECKLIST_V2.md`, `evidence_2026-11-05_shorts_public_search.json`. `01_Script/SCRIPT_NOTES_v01.md`: compare and keep the later wording. Add one line for J2239 to 011's `production-status.md`.\n2. #382 (HOS 008, top of the stack; it holds #380, #379, #376): all 141 missing files: `_build_code_graphics_v02.py` to `v04.py`, `_assemble_rough_v01.py` to `v03.py`, `_swap_rough_v04.py`, `_swap_rough_v05.py`, `CODE_GRAPHICS_v01_REVIEW_SOURCE_CORRECTION.md`, the `code_graphics_v03/` and `code_graphics_v04/` folders, and the evidence under `_desk/008/`. Take this pull request's version of `CODE_GRAPHICS_v01_REVIEW.md`, `parts/part-04_plates_v03.json` and `parts/part-05_plates_v03.json` (main's date from 15 and 16 Oct). If the no-media check refuses a file, say which and leave it out.\n3. #359 (HOS 006, records of credits spent): the 7 missing files under `master_v05/`. `FLOW_STILLS_LOG_v05.json`: add the pull request's take entries to main's log, losing none. Keep main's two scripts. Then check the studio's spend ledger (`05_Analytics/ai_spend/ledger.jsonl` in orbit-with-ben) has both J0886 motion takes (10 credits each: `02_balance_trunk_v05` charged, `05_pure_water_v05` marked \"submitting, do not retry\"); it has one line for J0886 today. Report what is missing; do not write the ledger by hand.\n4. #355 (HOS 007 master records): the 21 missing files (the v01 pack, `05_Music/BED_BRIEF_v01.md`, `06_Sound-Effects/kit_v01/sfx_kit_manifest.json`, `J0830_CONTINUE.md`, `_master_audio_v01.py`).\n5. #348: six files only. 009: `PICTURE_PLAN_v05.json`, `PRICE_REVIEW_v05.md`, `_build_plate_boards_v05.py`. 010: `PICTURE_PLAN_v03.json`, `PRICE_REVIEW_v03.md`, `_build_plate_boards_v03.py`. Nothing else from it.\n6. #347: the 9 files under `02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/11_Upload-Package/s05_dalton/`.\n7. #433 (experiment E1, rule text only): the changes to `.cursor/rules/hos-build-shorts.mdc`, `00_Brand/Channel-Setup/HOS_STRATEGY.md`, `02_Video-Projects/_template_NNN_Episode-Slug/10_Shorts/README.md` and `docs/RETENTION_LEARNINGS.md`, applied on top of main's versions. NOT `gate_shorts_open.py` and NOT `studio-core/CORE_FILES.json`: the gate is a copied studio tool. In the report say in three lines what the dropped gate change checked and whether the studio's gate (`00_Brand/Channel-Setup/tools/gate_shorts_open.py` in orbit-with-ben) already checks it.\n8. #334: `02_Video-Projects/004_Whats-Really-Inside-An-Atom/11_Upload-Package/Schedule/LAUNCH_DAY_15_OCT_RESULT.md` only.\n\nBefore anything is added: no added line may hold a personal email address (both repos are public). If a carried file has one, replace it with \"the studio Ultra account\" and say so.\n\nChecks: `OWB_REPO=<orbit-with-ben checkout> PYTHONPATH=<orbit-with-ben checkout>/scripts bash 00_Brand/Channel-Setup/tools/check_all.sh` must end ALL CHECKS PASS. Open one pull request against main and park for the Chief with its number. The Chief merges it and closes #431, #382, #380, #379, #378, #376, #359, #355, #348, #347 and #433.\n\n£0. No YouTube, no Studio, no media beyond the review stills already in those pull requests.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T13:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T13:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "review",
+      "plain": "Bring the still-wanted files from old History of Science pull requests onto main in one tidy change"
     }
   ],
   "focus": [

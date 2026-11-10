@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2499 | mini | open | – | – | 013 picture · assembly · HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review |  |
 | J2500 | mini | open | – | – | qa · Mini SSD re-check for Ben: is MiniWork now on a fast link (it was USB 2.0 speed this morning), read and write speed, any unplug since 09:47Z |  |
 | J2501 | mini | claimed | macbook | 2026-11-10T15:13Z | studio · Today's Orbit Short ffYKoNVPoqg (Titan) has 4 views after 77 minutes: read-only Studio check for anything technically wrong, side by side with yesterday's Mars Short |  |
+| J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 
 Recently finished:
 
