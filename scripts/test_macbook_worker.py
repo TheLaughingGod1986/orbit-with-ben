@@ -376,6 +376,49 @@ class Diverged(unittest.TestCase):
             self.assertIn("macbook-worker/rescue-", kept)
             self.assertFalse(mw.rescue_diverged(t / "b"))  # nothing left to rescue
 
+    def _diverged_clone(self, t):
+        g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+        g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+        for c in ("a", "b"):
+            g("clone", "-q", str(t / "origin.git"), str(t / c), cwd=t)
+            g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+        (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+        g("push", "-q", "origin", "main", cwd=t / "a")
+        g("pull", "-q", "origin", "main", cwd=t / "b")
+        (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+        (t / "b" / "g").write_text("mine"); g("add", "g", cwd=t / "b"); g("commit", "-qm", "local only", cwd=t / "b")
+        return g
+
+    def test_a_stale_index_lock_is_moved_aside_and_the_rescue_goes_through(self):
+        """10 Nov 2026: slot 2 sat in error for an hour. A git killed mid-write leaves .git/index.lock, and reset fails."""
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = self._diverged_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")
+            old = time.time() - mw.STALE_LOCK_S - 60
+            os.utime(lock, (old, old))
+            self.assertTrue(mw.rescue_diverged(t / "b"))
+            self.assertFalse(lock.exists())
+            self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "origin/main", cwd=t / "b"))
+
+    def test_a_failed_reset_says_why_and_the_same_commit_gets_one_rescue_branch(self):
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = self._diverged_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")   # a fresh lock: a git may really be running, so it is left alone
+            self.assertFalse(mw.rescue_diverged(t / "b"))
+            self.assertIn("git reset failed", mw.RESCUE_WHY)
+            self.assertIn("kept on macbook-worker/rescue-", mw.RESCUE_WHY)
+            self.assertFalse(mw.rescue_diverged(t / "b"))
+            self.assertEqual(len(g("branch", "--list", "macbook-worker/rescue-*", cwd=t / "b").split()), 1)
+            lock.unlink()
+            self.assertTrue(mw.rescue_diverged(t / "b"))
+            self.assertEqual(len(g("branch", "--list", "macbook-worker/rescue-*", cwd=t / "b").split()), 1)
+            self.assertEqual(mw.RESCUE_WHY, "")
+
 
 class TwoSlots(unittest.TestCase):
     """Ben, 5 Nov 2026: two jobs at once on the MacBook Pro, one on the Mini, one in the cloud."""
