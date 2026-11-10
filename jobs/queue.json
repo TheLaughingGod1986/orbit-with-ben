@@ -1,5 +1,5 @@
 {
-  "next_id": 2539,
+  "next_id": 2540,
   "jobs": [
     {
       "id": "J0001",
@@ -218422,6 +218422,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the automatic checks run in under a minute"
+    },
+    {
+      "id": "J2539",
+      "title": "Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "The first half of J2505, which hit its time cap three times on the Mini without finishing a step. This half is code and tests only, so it runs on the MacBook. Nothing here needs the Mini, Studio or an upload.\n\nWhy: the Short that went live on 10 Nov opened on a 16:9 picture band with blurred fill above and below, and the Shorts feed barely showed it. LEARNINGS rule 24 says frame 0 must be full-bleed 9:16 with no blur-pad and no letterbox bars. The opening gate passed that Short on 9 Nov because `00_Brand/Channel-Setup/tools/gate_shorts_open.py` has no check for it.\n\n1. Add a frame-0 full-bleed check to the gate. A Short fails when its opening picture does not fill the 9:16 frame: black bars, a blurred or mirrored copy of the picture used as fill, or a flat colour band, above and below a narrower picture band. Measure it on the frames from 0.0 to 0.5 s (for example: compare the detail in the top and bottom fifths with the centre band, and look for the two hard horizontal edges of a band). Give the measured numbers in the gate's report. A caption or hook text over a full-frame picture is not a failure.\n2. Tests with made clips (ffmpeg, a second or two each): a full-frame picture passes; a black-bar letterbox fails; a blur-pad fails; a full-frame picture with a caption band passes. Put them beside the gate's existing tests.\n3. The gate is a shared tool: sync the copy to the second channel the usual way (`scripts/core_sync.py`), in the same pull request or its pair.\n\nOne pull request (and its pair), park for Chief. Do not run the gate over the scheduled Shorts here: that is the second half, on the Mini, after this merges. No real money.\n",
+      "ref": "J2505",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T20:15Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool",
+      "due": "2026-11-11T12:00:00Z",
+      "kind": "review",
+      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
     }
   ],
   "focus": [
