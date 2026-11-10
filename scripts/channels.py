@@ -121,6 +121,26 @@ def home() -> str:
     return next(c["slug"] for c in _load() if c.get("home"))
 
 
+def default() -> str:
+    """The channel of a job or file that names none (old queue rows, backlog items without `repo`). Today that is
+    the channel this repo belongs to. When the studio has its own repo this becomes a field in the registry, and
+    this is the one line that moves."""
+    return home()
+
+
+def queue_key() -> str:
+    """The key in board.json under which the studio's job queue is published (jobs, done, focus). The queue is the
+    studio's, not a channel's; kanban_snapshot.py writes it under the home channel's slug for the board page."""
+    return home()
+
+
+def studio_records(*parts: str) -> pathlib.Path:
+    """Where the studio keeps records that belong to no one channel: the AI spend ledger, the thumbnail test ledger.
+    Today a folder beside the channels' numbers in this repo. When the studio has its own repo this is the one line
+    that moves."""
+    return ROOT.joinpath("05_Analytics", *parts)
+
+
 def label(slug: str) -> str:
     return get(slug)["label"]
 
@@ -194,6 +214,16 @@ def checkout(slug: str) -> pathlib.Path | None:
         return ROOT
     path = repo_path(slug)
     return path if (path / "studio" / "channel.json").is_file() else None
+
+
+def of_path(path) -> str:
+    """The channel whose checkout holds this file or folder (a film folder, a status.json), else the default one."""
+    p = pathlib.Path(path).resolve()
+    for slug in slugs():
+        co = checkout(slug)
+        if co and (p == co.resolve() or co.resolve() in p.parents):
+            return slug
+    return default()
 
 
 def analytics_dir(slug: str) -> pathlib.Path:
