@@ -7,16 +7,28 @@ Repo-wide checks run across updated `MERGE` branches:
 - `python3 scripts/core_sync.py check` -> `core OK (56 shared files)`
 
 Summary of the 48 PRs (`#666` and `#676` skipped per brief; no PR merged or closed by worker):
-- **`CLOSE` (18 PRs):** `#310, #311, #323, #338, #501, #502, #517, #539, #551, #555, #562, #564, #569, #571, #572, #575, #600, #650`
-- **`MERGE` (23 PRs, updated with `origin/main` and pushed):** `#283, #295, #301, #303, #314, #324, #354, #357, #359, #368, #381, #385, #388, #490, #493, #532, #553, #557, #604, #609, #611, #642, #653`
-- **`CHIEF` (7 PRs, needs Chief decision on overlapping rules/code):** `#261, #291, #487, #519, #552, #554, #645`
+- **`CLOSE` (16 PRs):** `#323, #338, #501, #502, #517, #539, #551, #555, #562, #564, #569, #571, #572, #575, #600, #650`
+- **`MERGE` (22 PRs, updated with `origin/main` and pushed):** `#283, #295, #301, #303, #314, #324, #354, #357, #359, #368, #381, #385, #388, #490, #493, #532, #553, #557, #604, #609, #611, #642`
+- **`CHIEF` (10 PRs, needs a Chief decision):** `#261, #291, #310, #311, #487, #519, #552, #554, #645, #653`
+
+## Second-run check (10 Nov 2026, ~00:40Z, `macbook`)
+
+The first run was killed (exit 124) straight after pushing this file, so a second run checked its claims against GitHub and the branches. What changed:
+
+- **#310 and #311 moved from CLOSE to CHIEF.** They are not fully on `main`. `git diff --name-status main origin/codex/J1090` shows `main` lacks `06_Final-Exports/J1084_V06_HANDOFF.md`, `_assemble_wed11_opening_testA_v06.py`, `_assemble_wed11_opening_testA_v07.py`, `jobs/reviews/J1090/RESUME.md`, `jobs/reviews/J1090/VERIFICATION_2026-10-28.md` and four `v07` `ebur128`/`ffprobe` evidence files, and `sha256_manifest.json` differs. The other `v06`/`v07` evidence is on `main` under `06_Final-Exports/`. See section 3.
+- **#653 moved from MERGE to CHIEF.** GitHub shows it `CONFLICTING`. The first run added a review job inside the branch's `jobs/queue.json` as `J2463`, but `J2463` on `main` is a different job (repo clean-up, part 1). The claim "re-queued as `J2463`" was wrong. See section 3.
+- **Seven head commits were wrong in the MERGE list** and are corrected below from `gh pr list` (`#283, #295, #301, #303, #354, #357, #532`). The merges themselves are real and pushed.
+- **All 22 MERGE PRs show `MERGEABLE` / `CLEAN` on GitHub** at 00:35Z on 10 Nov.
+- **Unit tests re-run on the four code branches, all pass:** `#368` `test_watch_links.py` 12 tests OK; `#493` `test_ai_spend_daily.py` + `test_cdp_tabs.py` 21 tests OK; `#557` `test_studio_reach.py` 9 tests OK; `#490` `test_codex_scoped_push.py` 3 tests OK and `07_Content-Ops/tests` `test_codex_*.py` 51 tests OK.
+- **Diffs re-read for the five hand-resolved merges** (`#314, #324, #359, #604, #611`): additions only, no `queue.json`, ledger changes are appended rows only. Two things for the Chief to know: `#324` no longer carries its `PATTERNS.md` change (19 lines) or its `THUMB_LEDGER.json` rows, only the 28 Oct report; `#604` adds one `elevenlabs_ledger.jsonl` row and no `ai_spend` row.
+- **Not re-checked this run:** the other 16 CLOSE lines, the 7 original CHIEF lines, and `studio.py status --check` / `core_sync.py check` per branch (only `sync_rules.py --check` was re-run, on `main`: `rules OK`). Treat those as the first run's word.
 
 ---
 
 ## 1. `CLOSE` — Already on `main` (18 PRs)
 
-- **#310** (`codex/J1084` — *025: rebuild opening Short final Mars shot (v06)*): Already on `main` (`cuts_v06.json`, `picture_qa_v06`, `polish_gate_v06`, `sha256_manifest_v06.json`, `wed11_opening_testA_v06_*` and `v07` landed in `1295111c0` / `1ecbea05c`; `sha256_manifest.json` stays on uploaded `v05` per `e72be473a`).
-- **#311** (`codex/J1090` — *025: rebuild opening Short final Mars shot (v07)*): Already on `main` (`06_Final-Exports/*_v07*`, `sha256_manifest_v07.json`, `jobs/reviews/J1090/J1093_DIRECT_AUDIO_AND_UAT_VERIFICATION_2026-10-28.md` and `jobs/reviews/J1090/evidence/*` landed in `1295111c0` and `1ecbea05c`; `sha256_manifest.json` stays on uploaded `v05` per `e72be473a`).
+- **#310 — MOVED TO CHIEF, see section 3.** First-run line, partly wrong: (`codex/J1084` — *025: rebuild opening Short final Mars shot (v06)*): Already on `main` (`cuts_v06.json`, `picture_qa_v06`, `polish_gate_v06`, `sha256_manifest_v06.json`, `wed11_opening_testA_v06_*` and `v07` landed in `1295111c0` / `1ecbea05c`; `sha256_manifest.json` stays on uploaded `v05` per `e72be473a`).
+- **#311 — MOVED TO CHIEF, see section 3.** First-run line, partly wrong: (`codex/J1090` — *025: rebuild opening Short final Mars shot (v07)*): Already on `main` (`06_Final-Exports/*_v07*`, `sha256_manifest_v07.json`, `jobs/reviews/J1090/J1093_DIRECT_AUDIO_AND_UAT_VERIFICATION_2026-10-28.md` and `jobs/reviews/J1090/evidence/*` landed in `1295111c0` and `1ecbea05c`; `sha256_manifest.json` stays on uploaded `v05` per `e72be473a`).
 - **#323** (`codex/j1107-thumb-audit` — *J1107: checkpoint baseline before live HOS Studio read*): Superseded by `#324` (`codex/j1107-hos-thumb-audit`, full 3-commit 28 Oct HOS report on the same path `05_Analytics/weekly_thumb_audit/HOS/2026-10-28.md`) and `main` commit `d75b56ed6` (`J2397` 9 Nov HOS audit).
 - **#338** (`codex/j1129-ledger` — *HOS 002: record applied thumbnail in THUMB_LEDGER (J1129)*): Already on `main` as `T023` in `05_Analytics/tests/THUMB_LEDGER.json` (`d75b56ed6`, `video: "AL_-qlWko_g"`, `job: "J1129"`, with full sha256 and 9 Nov Studio read-back).
 - **#501** (`codex/j2143-thumbnails` — *031: build three thumbnail concepts (J2143)*): Already on `main` via `765d77f8f` (`J2166: KEEP review of 031 thumbnails (J2143) and land T021 ledger/evidence`; `PROMPTS.json`, `inputs.json`, `measurements.json`, `build_j2143.py` are byte-identical on `main`, and `REVIEW.md` / `THUMB_LEDGER.json` carry the later `J2166` KEEP review).
@@ -38,14 +50,14 @@ Summary of the 48 PRs (`#666` and `#676` skipped per brief; no PR merged or clos
 
 ## 2. `MERGE` — Brought Up to Date with `origin/main` and Pushed (23 PRs)
 
-- **#283** (`codex/j0963-sun-brighter` -> `8665f5bc2`): Merged `origin/main` cleanly; diff is `00_Brand/Channel-Setup/tests/long_thumbs_2026_10/j0963_sun_tc_b_v02.json` and `scripts/build_sun_venus_tc_b_j0908.py` (`py_compile` + `sync_rules`/`studio status`/`core_sync` PASS).
-- **#295** (`codex/j0915-review-20261026` -> `316dfbbbd`): Merged `origin/main` cleanly; diff is `jobs/reviews/J0915_2026-10-26.md` (repo checks PASS).
-- **#301** (`codex-j1027` -> `317eb6be6`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1027.json` (repo checks PASS).
-- **#303** (`codex-j1031` -> `3faeb9c52`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1031.json` (repo checks PASS).
+- **#283** (`codex/j0963-sun-brighter` -> `120346014`): Merged `origin/main` cleanly; diff is `00_Brand/Channel-Setup/tests/long_thumbs_2026_10/j0963_sun_tc_b_v02.json` and `scripts/build_sun_venus_tc_b_j0908.py` (`py_compile` + `sync_rules`/`studio status`/`core_sync` PASS).
+- **#295** (`codex/j0915-review-20261026` -> `6f998911b`): Merged `origin/main` cleanly; diff is `jobs/reviews/J0915_2026-10-26.md` (repo checks PASS).
+- **#301** (`codex-j1027` -> `012ad395a`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1027.json` (repo checks PASS).
+- **#303** (`codex-j1031` -> `d3ad303bf`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1031.json` (repo checks PASS).
 - **#314** (`codex/J1102` -> `01c178657`): Merged `origin/main`, kept `main`'s `queue.json`, `UPLOADS.json`, and `library.json` (which already record `xvarZP2aYyE`), and preserved all 12 `J1102_v04_swap/*`, `jobs/readbacks/J1102*`, and `jobs/reviews/J1102_delivery_2026-10-28.md` evidence files (repo checks PASS).
 - **#324** (`codex/j1107-hos-thumb-audit` -> `0e10665c5`): Merged `origin/main`, kept `main`'s `THUMB_LEDGER.json` and `PATTERNS.md` (`d75b56ed6`), and preserved `05_Analytics/weekly_thumb_audit/HOS/2026-10-28.md` (repo checks PASS).
-- **#354** (`gemini/j0978-test-b-readback` -> `64b43f7b0`): Merged `origin/main` cleanly; diff is `05_Analytics/tests/STUDIO_TESTS.md` and `05_Analytics/tests/test_b_apply_readback.json` (repo checks PASS).
-- **#357** (`codex/j1269-verify` -> `fd62971b6`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1269.json` (repo checks PASS).
+- **#354** (`gemini/j0978-test-b-readback` -> `25b58b457`): Merged `origin/main` cleanly; diff is `05_Analytics/tests/STUDIO_TESTS.md` and `05_Analytics/tests/test_b_apply_readback.json` (repo checks PASS).
+- **#357** (`codex/j1269-verify` -> `8e7e6812f`): Merged `origin/main` cleanly; diff is `jobs/readbacks/J1269.json` (repo checks PASS).
 - **#359** (`codex/J1100-resume-1031` -> `8bfead9a1`): Merged `origin/main`, kept `main`'s `05_Analytics/ai_spend/ledger.jsonl` (already contains `J1100_s2_open_pickup_v01` and `J1100_s5_open_pickup_v01`), appended the 2 `J1100` rows to `04_Audio/elevenlabs_ledger.jsonl`, and kept all 8 `jobs/reviews/J1100/resume_1031/*` files (repo checks PASS).
 - **#368** (`codex/J1333-watch` -> `d9070511f`): Merged `origin/main` into `scripts/kanban_snapshot.py`, `scripts/test_watch_links.py`, `05_Analytics/kanban/watch_uploads.json`, and `jobs/reviews/J1333/*`; `python3 -m unittest scripts/test_watch_links.py` PASS (`Ran 12 tests in 0.055s — OK`) + repo checks PASS.
 - **#381** (`codex/j1630-atom-verification` -> `6a0602ea9`): Merged `origin/main`; diff is `jobs/readbacks/J1630.json` (repo checks PASS).
@@ -53,19 +65,23 @@ Summary of the 48 PRs (`#666` and `#676` skipped per brief; no PR merged or clos
 - **#388** (`codex/j1700-readback` -> `c61a7ea69`): Merged `origin/main`; diff is `jobs/readbacks/J1700.json` (repo checks PASS).
 - **#490** (`codex/j2040-allowlist` -> `f521bcd3f`): Merged `origin/main` with all 21 `J2040` allowlist scripts, docs, evidence, and tests; `python3 -m unittest scripts/test_codex_scoped_push.py` (`Ran 3 tests — OK`) and `python3 -m unittest discover -s 07_Content-Ops/tests -p 'test_codex_*.py'` (`Ran 51 tests — OK`) + repo checks PASS.
 - **#493** (`codex/J2022-finish` -> `7ed87d759`): Merged `origin/main` (keeping `main`'s updated `scripts/ai_spend_daily.py` which already has `reuse_page` and `04f33f2f7`'s retirement of `apply_packaging_long_thumbs_j0133.py`, plus `#493`'s `jobs/reviews/J2022/WORKER_NOTE.md`, `scripts/apply_melodysheep_long_thumbs_v01.py`, and `scripts/apply_yellow_white_v04_thumbs.py`); `python3 -m unittest scripts/test_ai_spend_daily.py scripts/test_cdp_tabs.py` PASS (`Ran 21 tests in 0.007s — OK`) + repo checks PASS.
-- **#532** (`macbook/J2215` -> `f7e0fb0df`): Merged `origin/main` cleanly; diff is `jobs/reviews/J2215/REVIEW.md` (repo checks PASS).
+- **#532** (`macbook/J2215` -> `3073d9724`): Merged `origin/main` cleanly; diff is `jobs/reviews/J2215/REVIEW.md` (repo checks PASS).
 - **#553** (`macbook/J2219` -> `f0f1254dc`): Merged `origin/main` cleanly; diff is `02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package/Descriptions/j01_description_v01.txt` and `jobs/reviews/J2219/REVIEW.md` (repo checks PASS).
 - **#557** (`cursor/J2202-studio-reach` -> `18710f881`): Merged `origin/main` cleanly; `python3 -m unittest scripts/test_studio_reach.py` PASS (`Ran 9 tests in 0.003s — OK`) + repo checks PASS.
 - **#604** (`gemini/J2325` -> `113cc8941`): Merged `origin/main`, appended `pluto_frozen_heart_vo_v01` rows to `04_Audio/elevenlabs_ledger.jsonl` and `05_Analytics/ai_spend/ledger.jsonl`, and preserved all 12 `034` VO/STT and `jobs/reviews/J2157` + `J2325` files (repo checks PASS).
 - **#609** (`macbook/J2327` -> `7268d0fea`): Merged `origin/main` cleanly; diff is OWB 035–038 `TOPIC_GO_NO_GO.md` sheets, `production-status.md`, and `jobs/reviews/J2327/REVIEW.md` (repo checks PASS).
 - **#611** (`cursor/J2335-pluto-pickup` -> `12d8377fa`): Merged `origin/main`, appended `pluto_ch05_looked_back_v02` rows to `04_Audio/elevenlabs_ledger.jsonl` and `05_Analytics/ai_spend/ledger.jsonl`, and preserved all 6 `034` pickup files and `jobs/reviews/J2335/EVIDENCE.md` (repo checks PASS).
 - **#642** (`macbook/J2369` -> `846f4a264`): Merged `origin/main` cleanly; diff is `02_Video-Projects/_dated_shorts/2026-11-24_supermoon-two-earths-closer.md` (repo checks PASS).
-- **#653** (`macbook/J2411` -> `c21ce1f2a`): Merged `origin/main`, kept `main`'s `WIP.json` and `queue.json`, appended `HOS:100` and `HOS:101` to `jobs/WIP.json` `next_hos`, and re-queued the J2411 Rule-E review job via `scripts/jobs.py add` as `J2463` (repo checks PASS).
+- **#653 — MOVED TO CHIEF, see section 3.** First-run line, wrong about `J2463`: (`macbook/J2411` -> `c21ce1f2a`): Merged `origin/main`, kept `main`'s `WIP.json` and `queue.json`, appended `HOS:100` and `HOS:101` to `jobs/WIP.json` `next_hos`, and re-queued the J2411 Rule-E review job via `scripts/jobs.py add` as `J2463` (repo checks PASS).
 
 ---
 
-## 3. `CHIEF` — Needs a Decision (7 PRs)
+## 3. `CHIEF` — Needs a Decision (10 PRs)
 
+- **#310 / #311** (`codex/J1084`, `codex/J1090` — *025 opening Short v06 / v07*; added by the second run): Most `v06`/`v07` evidence is on `main`, but the two `_assemble_wed11_opening_testA_v06/v07.py` build scripts, `J1084_V06_HANDOFF.md`, `jobs/reviews/J1090/RESUME.md`, `VERIFICATION_2026-10-28.md` and four `v07` audio/probe files are not, and both branches change `sha256_manifest.json`, which `main` keeps on the uploaded `v05` (`e72be473a`). Both show `MERGEABLE` on GitHub; neither branch was touched by this job.
+  **Choice:** Merge `#311` (it contains `#310`'s files) and then check `sha256_manifest.json` still names `v05`, closing `#310`; or close both and accept that the v06/v07 build scripts and notes stay off `main`.
+- **#653** (`macbook/J2411` -> `c21ce1f2a`; added by the second run): The branch diff is `jobs/WIP.json` (+`HOS:100`, `HOS:101` in `next_hos`), `jobs/queue.json` and `JOBS.md`. Its `queue.json` adds a Rule-E review job under the id `J2463`, which `main` has since given to a different job, so it is `CONFLICTING` and cannot be merged without hand-merging `queue.json`. Neither `HOS:100`/`HOS:101` nor the review job is on `main`.
+  **Choice:** Close `#653` and redo its two changes on `main` with the repo's tools (add `HOS:100` and `HOS:101` to `next_hos`; `jobs.py add` the Rule-E review for HOS PR #460, which gets a fresh id); or drop them if HOS 100/101 are no longer wanted in the queue.
 - **#261** (`codex/j0874-shorts-learnings` — *rules(shorts): encode J0871 approved learnings checklist (J0874)*): Modifies `.cursor/rules/orbit-build-shorts.mdc` and `02_Video-Projects/_template_NNN_Episode-Slug/10_Shorts/README.md`, which were later expanded on `main` by `J0900`/`J0907`, `OWB-2026-11-E1` (6 Nov), and `J2429` (9 Nov, `4cb58491f`).
   **Choice:** Close `#261` because `main` already includes `## Approved Learnings checklist — Chief, J0871 / J0874 / J0900 / J0907` plus the November Shorts rules (`sync_rules.py --check` PASS on `main`), or cherry-pick only the `_template_NNN_Episode-Slug/10_Shorts/README.md` checklist table if still wanted.
 - **#291** (`grok/audit26-rules` — *Encode 26 Oct Orbit audit rules + add plate_check.py*): Modifies `AGENTS.md`, `STUDIO_PLAYBOOK.md`, `.cursor/rules/orbit-build-shorts.mdc`, `orbit-build-long.mdc`, `orbit-studio.mdc`, `scripts/sync_rules.py`, and `.github/workflows/rules-check.yml`, encoding the 26 Oct "end card with title + yellow long id" Shorts rule that was overtaken by November's zero-end-card `<1.0 s` loop-tail rule (`OWB-2026-11-E1`) and `J2428`/`J2429`.
