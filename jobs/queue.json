@@ -177193,10 +177193,10 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-10T10:10Z",
-      "eta": "2026-11-10T12:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -177400,6 +177400,11 @@
           "at": "2026-11-10T10:13Z",
           "by": "claudecode",
           "what": "step 2 of 5 done: NAS answered in 10 s (studio-live listed twice); style refs present on the Mini 009 media root with matching sha256; 18 of 18 continuation parents resolve; live Flow read: required account, Ultra, 14,890 credits, no pending charge, still price 0 credits. Video-mode price not read yet. 0 generated, 0 spent"
+        },
+        {
+          "at": "2026-11-10T10:14Z",
+          "by": "claudecode",
+          "what": "released: 0/20 generated, 0 Create clicks, 0 credits spent. Check 1 NAS PASS: 10 s ls of /Volumes/data/studio-live answered at 10:11Z and again (009 folder listed). Check 2 style refs PASS, no copy needed: both are on the Mini media root /Users/benjaminoats/YouTube/hos-009-gravity/02_Video-Projects/009_The-Falling-Moon-Gravity/04_Generated-Clips/_style_refs (04_sunny_window_v01.jpg sha256 cdb8b421fa121454bb62d9b6dfc1c782c7c95b1634d80c856bb95555cfdc4b45, 10_mint_jar_v01.jpg sha256 311fe7b886f391eaabe32aabc0be1b1989e483dd814237c7095e3a118d423720); my 09:33Z note that the Mini copy was empty was wrong (I looked at the repo checkout, not hos-009-gravity). That root also holds all 14 tranche-1 parent clips the continuations need (runner resolve_parent_clip OK for each); the two parent rows 10_how_high and 07_ball_to_moon have no start still yet, the runner makes them at zero price. Check 3 PARTIAL: read-only run at 10:13Z with the main runner's readers (HOS main 3f3902f5) under the shared lock: required account, ULTRA, read_live_balance 14890, shared pending false, Flow was in Image mode showing 16:9, x1, 'Generating will use 0 credits'. The Video-mode read (Veo 3.1 - Quality, 8s, x1, 100 credits) was NOT obtained: my probe did not switch Flow to Video mode, so read_live_evidence refused (models/durations empty), as it should. Not a runner refusal on a real submit. Next run: read the Video-mode evidence without Create, then launch batch 1 with launch-worker, --media the hos-009-gravity 009 root, --archive an existing folder under /Volumes/data/studio-live 009 (04_Generated-Clips there is empty; needs a subfolder created), --other-reservations per the shared ledger. Probe script and output: ~/_desk/jobs/J2033/claudecode/. Clean worktree ~/_desk/wt/hos-J2033 at HOS main 3f3902f5. No tmux run started."
         }
       ],
       "remaining_action": "Finish the read-only Flow check in Video mode (Veo 3.1 Quality, 8s, x1, 100 credits), then start batch 1 (the two parent rows) detached",
