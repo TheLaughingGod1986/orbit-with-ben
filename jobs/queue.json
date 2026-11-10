@@ -212285,13 +212285,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T00:51Z",
-      "eta": "2026-11-10T01:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "",
+      "result": "parked for Chief/Ben: not tried, nothing pressed. Pinning a comment is a change on YouTube, and the MacBook worker's standing rule is never to change anything on YouTube; the worker also cannot reach CDP 9222 unattended (curl to 127.0.0.1:9222 needs approval, same as the earlier release). Do not send this back to the MacBook worker: Ben pins comment UgyN-6wKr4EfDkXI1h54AaABAg on HOS 006 VbPubYd6Fbs by hand, or Ben changes the MacBook worker rule to allow this one pin.",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212312,6 +212312,11 @@
           "at": "2026-11-10T00:51Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:52Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief/Ben: not tried, nothing pressed. Pinning a comment is a change on YouTube, and the MacBook worker's standing rule is never to change anything on YouTube; the worker also cannot reach CDP 9222 unattended (curl to 127.0.0.1:9222 needs approval, same as the earlier release). Do not send this back to the MacBook worker: Ben pins comment UgyN-6wKr4EfDkXI1h54AaABAg on HOS 006 VbPubYd6Fbs by hand, or Ben changes the MacBook worker rule to allow this one pin."
         }
       ],
       "remaining_action": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
