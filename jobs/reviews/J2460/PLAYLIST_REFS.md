@@ -1,6 +1,6 @@
 # J2460: what points at the six playlists (Orbit With Ben)
 
-Read on 10 Nov 2026, about 03:25 UTC, by Claude Code on the Mini. Scheduled longs added about 05:25 UTC. **Read-only so far: nothing has been changed, repointed or removed in Studio.**
+Read on 10 Nov 2026, about 03:25 UTC, by Claude Code on the Mini. Scheduled longs added about 05:25 UTC. **Applied 10 Nov 2026, 06:10 to 06:15 UTC: see "Applied" just below. The rest of this file is the state as read before any change.**
 
 ## How it was read
 
@@ -20,11 +20,47 @@ Read in the Orbit Studio tab on CDP 9223 (channel checked on every page: `UC_esA
 | `G5uMANXHtNU` (2 Dec) | subscribe · video "best for viewer" | none |
 | `vP1BbqZ_dnM` (6 Dec) | subscribe · video "best for viewer" | one video card: `F-jImX5h7ws` |
 
-## Still to do before any removal
+## Applied, 10 Nov 2026 (Orbit With Ben), 06:10 to 06:15 UTC
 
-- Confirm the Home tab in Studio's Customisation page against the API's section list below (not yet opened in Studio).
-- Step 2: repoint the four references below and read each back. Then steps 3 to 5.
-- **Nothing has been changed, repointed or removed in Studio so far.**
+By Claude Code on the Mini, on Ben's yes of 9 Nov (job brief). Channel checked before every write: `UC_esArsDKd3GJvOkeO0DUog`. No video was deleted; no title, thumbnail, privacy or schedule was changed.
+
+### Step 2, the four references repointed and read back
+
+| # | Where | Before | After (read back) | How |
+|---:|---|---|---|---|
+| 1 | Saturn `55AEQwvs36g` end screen | video · subscribe · playlist *Start Here* `PLI1AApUz3qz8` · playlist *Real Worlds* `PLdoEpeiktw_Y` | video · subscribe · playlist *Real Worlds* `PLdoEpeiktw_Y` | Studio end-screen editor on CDP 9223: the *Start Here* element deleted, saved. Read back in the editor after a reload, and on the public watch page (which lagged about three minutes, then showed three elements and no `PLI1AApUz3qz8`) |
+| 2 | Europa `NbW5G1BpPY0` description | `Playlist: Orbit's Cosmic Journey https://www.youtube.com/playlist?list=PLI1AApUz3qz8` | `Playlist: Real Worlds https://www.youtube.com/playlist?list=PLdoEpeiktw_Y` | Data API `videos.update`, that one line only. Title, tags, category, languages and privacy read back unchanged |
+| 3 | Home section, position 0 | `PLQLwG0axcZis` | `PLOw2VKzGCOWU` | Data API `channelSections.update` |
+| 4 | Home section, position 8 | `PLOgdBQBnJE2o` | `PLdoEpeiktw_Y` | Data API `channelSections.update` |
+
+### Step 3, re-check and removal
+
+A fresh survey after the repoints (all 195 upload rows' descriptions, the nine Home sections, end screens and cards of the 16 public longs, channel comments on 91 public videos) found no reference to five of the six; those were removed first. Saturn's public page still showed *Start Here* for about three minutes, so that playlist was held until the public page was clear, then removed. Each title was matched against the audit immediately before removal. Contents of all six are under "Contents of the six, for rebuilding" below and were unchanged since the first read.
+
+| Playlist id | Title | Videos | Removed (UTC) |
+|---|---|---:|---|
+| `PLQLwG0axcZis` | What Space Would Do to You | 5 | 06:13 |
+| `PLbTzVnzsyGm4` | Alien Life & The Search for Extraterrestrials | 5 | 06:13 |
+| `PLOgdBQBnJE2o` | James Webb Space Telescope Discoveries | 7 | 06:13 |
+| `PLH6Vkm2g0-q0` | Alien Worlds & Exoplanets | 7 | 06:13 |
+| `PLEs4-0r_LBVQ` | Black Holes Explained | 6 | 06:13 |
+| `PLI1AApUz3qz8` | Start Here — Biggest Mysteries of Space | 9 | 06:15 |
+
+### Step 4, the two kept Orbit playlists (read back)
+
+`PLdoEpeiktw_Y`, now **Real Worlds: Solar System, Moons and Alien Planets Explained** (public, description unchanged). Added Mars `Js6EQJ8qDi8` and Jupiter `-jmMROGoZCM`. Order: `VBaYRPp85Sw`, `55AEQwvs36g`, `Js6EQJ8qDi8`, `ziKBPJ6FY0U`, `NbW5G1BpPY0`, `h8HGfyShEHI`, `-jmMROGoZCM`, `b8-X_FyJnHM`.
+
+`PLOw2VKzGCOWU`, now **What Would Happen If…: Black Holes, Neutron Stars and Extreme Space** (public, description unchanged). Added Mars `Js6EQJ8qDi8`. Order: `REXYxuLOBoI`, `Yk1tLh23rko`, `rVqgtkBV3jc`, `Js6EQJ8qDi8`, `-jmMROGoZCM`, `2fsQcea-voM`, `ojk-dfOpAmw`, `Mo93x0fxB1Q`, `3xrxdmaOwJI`, `m09jUdwC5hk`.
+
+### Read-back after everything (06:15 UTC)
+
+- Playlists on the channel: the two above, nothing else.
+- Videos: 179 distinct ids before, 179 after, none missing. Title, privacy and go-public time identical on every one. Descriptions differ from the 03:26 read on two: Europa `NbW5G1BpPY0` (row 2 above) and `6bbbvfCx6zY`, which this job never wrote to (changed by other work between 03:26 and 06:15).
+- Home sections: position 0 `PLOw2VKzGCOWU`, position 8 `PLdoEpeiktw_Y`, the other seven untouched.
+
+### Not done yet
+
+- **History of Science playlist `PLEbpfUzWzcXU`** (rename, add `VbPubYd6Fbs`, reorder): not started. There is no History of Science Data API login in `07_Content-Ops/.env`, so it has to be done in Studio on CDP 9222, whose tab is on another channel (`UCGGBHuqKAL6WzGLXnxm98eg`) and must be switched first.
 
 ## Playlist ids
 
