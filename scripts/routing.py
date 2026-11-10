@@ -26,6 +26,7 @@ An ordinary worker never makes a protected call (PROTECTED); the elected acting 
 from __future__ import annotations
 
 import os
+import shutil
 import sys
 
 # Real, configured model ids (11 Oct 2026).
@@ -167,13 +168,28 @@ OUT = set()   # flagged model ids and agent ids; chief_relay.py fills it each ru
 FLAGS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credit_flags.json")
 
 
+def find_cli(env: str, name: str, home) -> str | None:
+    """Where a worker's CLI is on this machine (the relay and the MacBook worker both ask; one copy since J2463).
+    An explicit override (CODEX_BIN, AGY_BIN, CLAUDE_BIN, ...) is the answer: when that file is missing or not
+    runnable the CLI counts as missing, and the usual install places are not searched (J2235 F-01a: a test that
+    pointed CODEX_BIN at a missing file still found a real codex in /opt/homebrew/bin). Without an override:
+    PATH, then the places launchd's `zsh -lc` leaves off PATH (npm-global, ~/.local, Homebrew)."""
+    given = os.environ.get(env)
+    if given:
+        return given if os.access(given, os.X_OK) else None
+    cands = [shutil.which(name)] + [os.path.join(str(home), d, name) for d in (".npm-global/bin", ".local/bin")] \
+        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
+    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+
+
 def read_flags(now=None, path: str = FLAGS_FILE) -> dict:
     """{model or agent: reason} for flags in credit_flags.json still in force (out_until in the future, ISO UTC)."""
     import datetime as dt
     import json
     now = now or dt.datetime.now(dt.timezone.utc)
     try:
-        flags = json.load(open(path)).get("flags", {})
+        with open(path) as f:
+            flags = json.load(f).get("flags", {})
     except (OSError, ValueError, AttributeError):
         return {}
     out = {}

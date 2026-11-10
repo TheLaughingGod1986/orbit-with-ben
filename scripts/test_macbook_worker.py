@@ -28,6 +28,8 @@ class Guards(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self._state = mw.STATE
         mw.STATE = pathlib.Path(self.tmp.name)
+        slot = mock.patch.object(mw, "SLOT", 1)   # these are slot 1's rules, whichever slot runs the suite (J2463)
+        slot.start(); self.addCleanup(slot.stop)
 
     def tearDown(self):
         mw.STATE = self._state
@@ -330,11 +332,15 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(one.call_count, 1)
 
     def test_checkouts_are_the_workers_own_never_bens(self):
-        with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
-            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), mw.WORKER_DIR / "history-of-science")
-        inside = mw.WORKER_DIR / "history-of-science"
-        with mock.patch.dict(os.environ, {"HOS_REPO": str(inside)}):
-            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), inside)
+        # Whichever slot runs this test (J2235 F-01c: it failed inside slot 2), the checkout is that slot's own folder.
+        for slot in (1, 2):
+            with mock.patch.object(mw, "SLOT", slot):
+                own = mw.slot_dir(slot) / "history-of-science"
+                with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
+                    self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), own)
+                with mock.patch.dict(os.environ, {"HOS_REPO": str(own)}):
+                    self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), own)
+        self.assertEqual(mw.slot_dir(1), mw.WORKER_DIR)
 
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):

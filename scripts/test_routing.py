@@ -141,5 +141,46 @@ class MiniClaudeCode(unittest.TestCase):
         self.assertEqual(routing.RUNS_ON["mini-claude-opus-5-5"], "claudecode")
 
 
+class FindCli(unittest.TestCase):
+    """One shared lookup for the relay and the MacBook worker (J2463, audit rows F-01a and F-01d)."""
+
+    def setUp(self):
+        import os, stat, tempfile
+        from unittest import mock
+        self.tmp = pathlib.Path(tempfile.mkdtemp())
+        (self.tmp / "bin").mkdir()
+        self.real = self.tmp / "bin" / "codex"
+        self.real.write_text("#!/bin/sh\n")
+        self.real.chmod(self.real.stat().st_mode | stat.S_IXUSR)
+        env = mock.patch.dict(os.environ, {"PATH": str(self.tmp / "bin")})
+        env.start(); self.addCleanup(env.stop)
+        os.environ.pop("CODEX_BIN", None)
+
+    def test_an_override_that_is_not_there_means_missing_even_when_one_is_installed(self):
+        import os
+        os.environ["CODEX_BIN"] = str(self.tmp / "missing")
+        self.assertIsNone(routing.find_cli("CODEX_BIN", "codex", self.tmp))
+
+    def test_a_good_override_wins_and_no_override_searches_path_then_home(self):
+        import os, stat
+        other = self.tmp / "elsewhere"
+        other.write_text("#!/bin/sh\n"); other.chmod(other.stat().st_mode | stat.S_IXUSR)
+        os.environ["CODEX_BIN"] = str(other)
+        self.assertEqual(routing.find_cli("CODEX_BIN", "codex", self.tmp), str(other))
+        os.environ.pop("CODEX_BIN")
+        self.assertEqual(routing.find_cli("CODEX_BIN", "codex", self.tmp), str(self.real))
+        home_bin = self.tmp / ".local" / "bin"; home_bin.mkdir(parents=True)
+        agy = home_bin / "agy"; agy.write_text("#!/bin/sh\n"); agy.chmod(agy.stat().st_mode | stat.S_IXUSR)
+        self.assertEqual(routing.find_cli("AGY_BIN", "agy", self.tmp), str(agy))
+
+    def test_reading_the_credit_flags_leaves_no_file_open(self):
+        import json, warnings
+        f = self.tmp / "flags.json"
+        f.write_text(json.dumps({"flags": {"cursor": {"out_until": "2999-01-01T00:00:00Z", "reason": "x"}}}))
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", ResourceWarning)
+            self.assertIn("cursor", routing.read_flags(path=str(f)))
+
+
 if __name__ == "__main__":
     unittest.main()
