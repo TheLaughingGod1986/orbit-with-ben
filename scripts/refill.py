@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Keep the Mini busy 24/7 (Ben, 12 Oct 2026: "it should always be picking up jobs, completing jobs").
 
-Two rules, run by chief_relay.py on every 10-minute tick (and by hand):
+Two rules, run by chief_relay.py on every 10-minute tick (and by hand). The same tick also queues the first-day
+check of every video that went live about six hours ago (`first_day_checks`, scripts/launch_check.py):
 
   refill    When fewer than MIN_READY Mini jobs are ready to claim, add the next items from jobs/backlog.json
             (lowest tier: `jobs.order` runs them only when no pipeline job is ready; weekly audits and idea/script
@@ -168,11 +169,28 @@ def do_escalate(data: dict, at: dt.datetime, hours: float = STALE_H) -> list:
     return out
 
 
+def first_day_checks(data: dict, at: dt.datetime) -> list:
+    """Queue the first-day check of every video that went live about six hours ago (scripts/launch_check.py; Ben,
+    10 Nov 2026). It rides on this tick because the tick already runs every 10 minutes on the Mini. A fault in it
+    must never stop the refill, so it is caught and said, not raised."""
+    try:
+        import launch_check
+        return launch_check.queue_due(data, at)
+    except Exception as e:  # noqa: BLE001
+        print(f"first-day checks not queued: {e}", file=sys.stderr)
+        return []
+
+
+def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
+    """One refill tick: the first-day checks that are due, then the standing backlog."""
+    return first_day_checks(data, at) + do_refill(data, items, at, min_ready)
+
+
 def run(cmd: str, git: bool, min_ready: int = MIN_READY, hours: float = STALE_H) -> list:
     at = jobs.now()
     if cmd == "refill":
         items = load_backlog()
-        apply = lambda d: (do_refill(d, items, at, min_ready), None, [])  # noqa: E731
+        apply = lambda d: (top_up(d, items, at, min_ready), None, [])  # noqa: E731
         msg = "jobs: refill from backlog by relay"
     else:
         apply = lambda d: ([j["id"] + " " + j["title"][:80] for j in do_escalate(d, at, hours)], None, [])  # noqa: E731

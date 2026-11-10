@@ -148,6 +148,20 @@ class Films(unittest.TestCase):
         self.assertEqual(list(oks), ["024"])
         self.assertIn("v06", oks["024"])
 
+    def test_each_channels_numbers_and_uploads_register_are_asked_for_by_slug(self):
+        # New engine code (the first-day check) asks here instead of writing a channel's folder into a path.
+        for slug in channels.slugs():
+            self.assertEqual(channels.analytics_dir(slug), channels.ROOT / "05_Analytics" / slug)
+            self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
+        home = channels.home()
+        self.assertEqual(channels.uploads_file(home),
+                         channels.ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
+        self.assertTrue(channels.uploads_file(home).is_file())
+
+    def test_a_channel_whose_checkout_is_not_here_has_no_uploads_register(self):
+        with mock.patch.object(channels, "checkout", return_value=None):
+            self.assertIsNone(channels.uploads_file(channels.slugs()[-1]))
+
     def test_the_repair_script_covers_every_channels_checkout(self):
         import mini_repair
         self.assertEqual([p.name for p in mini_repair.REPOS],
