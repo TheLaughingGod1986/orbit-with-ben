@@ -304,7 +304,10 @@ def pick_agent(job: dict, have: list) -> tuple:
 # Commands an unattended Claude run may use without a prompt (Ben, 9 Nov 2026: "Yes please"). J2427 was released about 40
 # times on 9 Nov because `python3 -m unittest` and `gh pr create` asked for approval with nobody there. Tests, the repo's
 # own checks and opening a PR only; merges stay with the Chief (no `gh pr merge` here).
+# `git fetch` was added on 10 Nov 2026 (Ben: "Yes, do a git fetch"): J2495 came straight back because the run could not
+# fetch the pull-request heads it had to read. Fetch only reads from GitHub; it changes no branch and no file.
 CLAUDE_ALLOWED_TOOLS = (
+    "Bash(git fetch:*)",
     "Bash(python3 -m unittest:*)",
     "Bash(python3 scripts/test_kanban_snapshot.py:*)",
     "Bash(node scripts/test_studio_app.cjs:*)",
