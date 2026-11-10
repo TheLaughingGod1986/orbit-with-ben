@@ -213463,9 +213463,14 @@
           "at": "2026-11-10T05:00Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-10T05:03Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Description line 1 set through the API at 05:03Z; title test untouched"
         }
       ],
-      "remaining_action": "Set description line 1 on HOS 007 (title test left alone), read back from Studio, update records",
+      "remaining_action": "Read HOS 007 back from Studio and update the records in both PRs",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved.",
@@ -213483,10 +213488,11 @@
         "HOS:007"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-10T05:00Z",
-        "by": "claudecode"
+        "at": "2026-11-10T05:03Z",
+        "by": "claudecode",
+        "note": "Description line 1 set through the API at 05:03Z; title test untouched"
       }
     },
     {
