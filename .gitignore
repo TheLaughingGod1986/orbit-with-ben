@@ -73,3 +73,10 @@ node_modules/
 
 # Studio Kanban host build output (05_Analytics/kanban/board_site/build.py)
 05_Analytics/kanban/board_site/dist/
+
+# Login tokens and cookies never belong in a public repo (security pass, 9 Nov 2026)
+.elevenlabs_bearer
+*.bearer
+*_bearer
+*.cookies.json
+storage_state*.json

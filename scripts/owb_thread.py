@@ -72,11 +72,23 @@ def api(method, path, body=None):
         return json.load(r)
 
 
+# Both studio repos are public, so anyone on GitHub can comment on the thread. A "[Chief]", "[Ben]" or Claude-footer
+# comment only counts when GitHub says its author belongs to the repo (the owner's account posts for every agent and
+# for the board's buttons). Everything else is dropped before an agent reads it (security pass, 9 Nov 2026: until
+# then the thread trusted a comment by its text alone).
+TRUSTED_AUTHORS = ("OWNER", "MEMBER", "COLLABORATOR")
+
+
+def trusted(c) -> bool:
+    return isinstance(c, dict) and (c.get("author_association") or "") in TRUSTED_AUTHORS \
+        and c.get("user", {}).get("type") != "Bot"   # skip Vercel etc.
+
+
 def comments():
     out, page = [], 1
     while True:
         batch = api("GET", f"/issues/{PR}/comments?per_page=100&page={page}")
-        out += [c for c in batch if c.get("user", {}).get("type") != "Bot"]   # skip Vercel etc.
+        out += [c for c in batch if trusted(c)]
         if len(batch) < 100:
             return out
         page += 1

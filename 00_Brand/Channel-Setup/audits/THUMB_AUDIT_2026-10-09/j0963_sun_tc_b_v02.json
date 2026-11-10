@@ -1,0 +1,52 @@
+{
+  "job": "J0963",
+  "video": "h8HGfyShEHI",
+  "title": "Is the Sun Getting Brighter?",
+  "A_live": "live_A_h8HGfyShEHI.jpg",
+  "A_source_repo": "02_Video-Projects/022_Is-the-Sun-Getting-Brighter/08_Thumbnail/abc_v01/sun_thumb_A_burning-harder.png",
+  "A_text": "BURNING HARDER",
+  "B_new": "sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg",
+  "B_text": "10% BRIGHTER",
+  "yellow": "10%",
+  "plates": [
+    "NASA SVS 11517 (SDO AIA 304 at t=56.0s)",
+    "NASA Apollo 17 Blue Marble (as17-148-22727)"
+  ],
+  "sun_center": [
+    690,
+    434
+  ],
+  "sun_disc_px": 520,
+  "sun_top_y": 174,
+  "earth_center": [
+    176,
+    548
+  ],
+  "earth_px": 156,
+  "earth_scale": 0.05,
+  "band_h": 150,
+  "band_clear_of_sun": true,
+  "duration_badge_clear": true,
+  "near_black": 0.161,
+  "near_black_live": 0.283,
+  "saturation": 176.6,
+  "saturation_live": 174.7,
+  "kb": 245,
+  "score": {
+    "A_live": "PASS saturation 174.7, near-black 28%",
+    "B": "PASS saturation 176.6, near-black 16%"
+  },
+  "sheet": "sun_tc_B_v02_10pct-brighter_AB_sheet.jpg",
+  "test_state": "Not armed; Chief review required",
+  "status": "parked for Chief: 022 T&C B v02",
+  "fails": [],
+  "version": "v02",
+  "files_local": "/Users/benjaminoats/_desk/j0908",
+  "earth_size_vs_v01": 2.0,
+  "scale_note": "Earth is a visual reference, not a literal diameter ratio.",
+  "sha256": {
+    "live_A_h8HGfyShEHI.jpg": "9812f4938641d3eabb040f48987693dc984ace5ab516ad97376e4b603f380e03",
+    "sun_tc_B_v02_10pct-brighter_h8HGfyShEHI.jpg": "e7247c5232a3ec78b7413722e184bfdfc15a1e9ee6070dd63a3acbf6981021bf",
+    "sun_tc_B_v02_10pct-brighter_AB_sheet.jpg": "707d55094d0c67040ba2e7398a3ff11157389a63bae96ce661d47d87ea05b87f"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "next_id": 2463,
+  "next_id": 2473,
   "jobs": [
     {
       "id": "J0001",
@@ -111074,6 +111074,11 @@
           "at": "2026-11-09T01:01Z",
           "by": "relay",
           "what": "condition verification queued: J2432"
+        },
+        {
+          "at": "2026-11-10T00:13Z",
+          "by": "relay",
+          "what": "condition verification queued: J2467"
         }
       ],
       "remaining_action": "After T011 ends: record T011 result in THUMB_LEDGER.json; keep winner thumb; arm title-only or new 465C thumb test per rules 12-13 (park for Ben if Studio warns deleting ended report)",
@@ -111091,8 +111096,8 @@
       "hold": {
         "type": "test",
         "condition": "Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares",
-        "check_at": "2026-11-09T02:01:34+00:00",
-        "recheck_task": "J2432"
+        "check_at": "2026-11-10T01:13:03+00:00",
+        "recheck_task": "J2467"
       }
     },
     {
@@ -187120,6 +187125,11 @@
           "at": "2026-11-09T21:55Z",
           "by": "claude",
           "what": "hold updated: J2200 PASS; waiting on J2033 -> J2034 -> J2035"
+        },
+        {
+          "at": "2026-11-10T00:13Z",
+          "by": "relay",
+          "what": "condition verification queued: J2468"
         }
       ],
       "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -187138,7 +187148,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed",
-        "check_at": "2026-11-11T07:10:00+00:00"
+        "check_at": "2026-11-10T01:13:03+00:00",
+        "recheck_task": "J2468"
       }
     },
     {
@@ -192518,13 +192529,13 @@
       "stage": "picture",
       "after": "J2446",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
-      "result": "parked for Chief dependency: gated on J1881 (do NOT merge HOS #411+#428 here). Capability fallback applied 2026-11-05T22:46:41Z probe (audio PASS, moving_video FAIL): retakes authorized on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when capable probe passes, else Ben finished-film watch (h22 pattern). Timed moving_video recheck at 2026-11-06T01:20:00Z cleared.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T18:52Z",
@@ -192550,6 +192561,16 @@
           "at": "2026-11-09T19:54Z",
           "by": "claude",
           "what": "acting Chief: J1881 KEEP accepted; now gated on J2446 (PRs #411/#428 updated and merged), not J1881."
+        },
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "relay",
+          "what": "condition verification queued: J2469"
+        },
+        {
+          "at": "2026-11-10T01:19Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: HOS PR #411 (with #428 inside) merged to HOS main at 97e44918 on 10 Nov; J1881 and J2446 are done. The earlier ruling stands: retakes on hash, frame-count and still-sheet evidence only, subscription credit only, motion judged at J2243 or at Ben's finished-film watch."
         }
       ],
       "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
@@ -192557,12 +192578,7 @@
       "required_capabilities": [],
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).",
-        "check_at": "2026-12-31T00:00:00Z"
-      }
+      ]
     },
     {
       "id": "J2242",
@@ -204041,10 +204057,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-09T22:39Z",
-      "eta": "2026-11-10T01:39Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-07T16:04Z",
       "result": "",
@@ -204083,6 +204099,11 @@
           "at": "2026-11-09T23:04Z",
           "by": "macbook-2",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-10T00:54Z",
+          "by": "claude",
+          "what": "recorded by acting Chief: macbook-2 finished this at 23:05Z on 9 Nov, but its queue write never reached GitHub (kept on macbook-worker/rescue-20261110T0038Z, commit a9fa81933a)"
         }
       ],
       "remaining_action": "Steps 1-5 complete on PR #676, packaging panel queued, marking done",
@@ -206149,13 +206170,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-10T00:39Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-08T12:28Z",
-      "result": "",
+      "result": "Weekly HOS thumbnail audit (2026-11-09) complete (PR #678 merged + PR #692 for 90d competitor RSS tables): 42 videos audited (8 longs, 34 Shorts); live thumbs + 168x94/style/competitor sheets in /Users/ben/_desk/j2397/; 28d reach (7,107 impr, 2.49% CTR; long med 5.97%, Short med 2.05%); T023 (002 THE MISSING ELEMENT) lifted 28d CTR 3.44%->5.28%; T001 marked done (draw); T009 Results ready; 3 weakest longs parked for Chief per J0777/J1126 (004 & 003 single-variable title Bs + 001 pool B); 5 scheduled Shorts (Wvjd8g0CpzE, xzKoHg0E0_U, xgx2lYHhYZM, ChbsigHD5_o, Bks_JLId1ew) flagged on auto maxres2.jpg with local frame-0 cover paths mapped.",
       "history": [
         {
           "at": "2026-11-08T12:28Z",
@@ -206206,15 +206227,30 @@
           "at": "2026-11-09T23:23Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-10T00:39Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:43Z",
+          "by": "macbook",
+          "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-10T00:46Z",
+          "by": "macbook",
+          "what": "done: Weekly HOS thumbnail audit (2026-11-09) complete (PR #678 merged + PR #692 for 90d competitor RSS tables): 42 videos audited (8 longs, 34 Shorts); live thumbs + 168x94/style/competitor sheets in /Users/ben/_desk/j2397/; 28d reach (7,107 impr, 2.49% CTR; long med 5.97%, Short med 2.05%); T023 (002 THE MISSING ELEMENT) lifted 28d CTR 3.44%->5.28%; T001 marked done (draw); T009 Results ready; 3 weakest longs parked for Chief per J0777/J1126 (004 & 003 single-variable title Bs + 001 pool B); 5 scheduled Shorts (Wvjd8g0CpzE, xzKoHg0E0_U, xgx2lYHhYZM, ChbsigHD5_o, Bks_JLId1ew) flagged on auto maxres2.jpg with local frame-0 cover paths mapped."
         }
       ],
-      "remaining_action": "Step 2-3 done: 42 live thumbs downloaded, 168px & style sheets built, 28d CTR & T001/T009/T014 readback complete; next Step 4 competitor delta & B candidates",
+      "remaining_action": "Adding 90d competitor RSS table (competitors_90d.json) to 2026-11-09.md (PR #678 already merged core audit) and closing J2397",
       "kind": "thumb",
       "backlog": "hos-weekly-thumb-audit",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-09T23:20Z",
+        "at": "2026-11-10T00:43Z",
         "by": "macbook"
       }
     },
@@ -211514,23 +211550,68 @@
       "stage": "edit",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-09T23:48Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T19:54Z",
-      "result": "",
+      "result": "Synced HOS PR #428 (cursor/J2217-eight-item, head 6b4d25741196defeedf2480201ce87b8bdea8302) with HOS origin/main (96ef0ed33988e5c98deab5b245d1fa9beb542f09) via merge commit (no rebase/force-push), merged 008 PIPELINE.json + production-status.md and regenerated STATUS.md + 00_Brand/Channel-Setup/kanban/index.html via status_board.py, then merged #428 into PR #411 (codex/J2163-repair, head 9c31f162850ca6729364bf88eaf98d6d8da34068, state OPEN, mergeable MERGEABLE into main; not merged into main). Verification on both heads: python3 -m unittest test_j2163_recipe -> Ran 18 tests in 0.280s OK; _build_rough_v13_recipe.py --dry-run -> status PLANNED_NOT_EXECUTABLE, master_sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 6 inputs decode verified; 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin -> durable desk handoffs PASS, no media PASS, status board in sync PASS, ElevenLabs guard tests PASS, vo_check word tests PASS, atempo check tests PASS, voice speed PASS, contract tests PASS (28/28), package-lint PASS, review:script PASS (92.1/100), gate:episode PASS -> ALL CHECKS PASS. £0 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-09T19:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-09T23:48Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T23:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2446; starting step 1: inspect PR #411 and #428 in HOS"
+        },
+        {
+          "at": "2026-11-10T00:16Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2446; setting 3-step plan for PR #428 and PR #411 sync with HOS origin/main"
+        },
+        {
+          "at": "2026-11-10T00:22Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Merged HOS origin/main (96ef0ed3) into cursor/J2217-eight-item (PR #428), regenerated STATUS.md + kanban/index.html, verified test_j2163_recipe (18/18 OK) + check_all.sh (ALL CHECKS PASS), pushed cursor/J2217-eight-item"
+        },
+        {
+          "at": "2026-11-10T00:23Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Merged #428 (cursor/J2217-eight-item @ 6b4d2574) into codex/J2163-repair (PR #411), verified test_j2163_recipe (18/18 OK) + check_all.sh (ALL CHECKS PASS), pushed codex/J2163-repair"
+        },
+        {
+          "at": "2026-11-10T00:24Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Both PR #428 (cursor/J2217-eight-item @ 6b4d2574) and PR #411 (codex/J2163-repair @ 9c31f162) brought up to date with HOS origin/main (96ef0ed3); test_j2163_recipe (18/18 OK) and check_all.sh (ALL CHECKS PASS) verified; PR #411 is OPEN and MERGEABLE into main"
+        },
+        {
+          "at": "2026-11-10T00:24Z",
+          "by": "gemini",
+          "what": "done: Synced HOS PR #428 (cursor/J2217-eight-item, head 6b4d25741196defeedf2480201ce87b8bdea8302) with HOS origin/main (96ef0ed33988e5c98deab5b245d1fa9beb542f09) via merge commit (no rebase/force-push), merged 008 PIPELINE.json + production-status.md and regenerated STATUS.md + 00_Brand/Channel-Setup/kanban/index.html via status_board.py, then merged #428 into PR #411 (codex/J2163-repair, head 9c31f162850ca6729364bf88eaf98d6d8da34068, state OPEN, mergeable MERGEABLE into main; not merged into main). Verification on both heads: python3 -m unittest test_j2163_recipe -> Ran 18 tests in 0.280s OK; _build_rough_v13_recipe.py --dry-run -> status PLANNED_NOT_EXECUTABLE, master_sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 6 inputs decode verified; 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin -> durable desk handoffs PASS, no media PASS, status board in sync PASS, ElevenLabs guard tests PASS, vo_check word tests PASS, atempo check tests PASS, voice speed PASS, contract tests PASS (28/28), package-lint PASS, review:script PASS (92.1/100), gate:episode PASS -> ALL CHECKS PASS. £0 / 0 credits spent."
         }
       ],
-      "remaining_action": "HOS 008 Franklin: bring PR #411 + #428 up to date with HOS main (merge, regenerate status files, rerun tests) for the Chief merge",
+      "remaining_action": "Complete J2446 and hand off PR #428 + PR #411 to Chief for merge into HOS main",
       "due": "2026-11-10T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-10T00:24Z",
+        "by": "gemini",
+        "note": "Both PR #428 (cursor/J2217-eight-item @ 6b4d2574) and PR #411 (codex/J2163-repair @ 9c31f162) brought up to date with HO"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2447",
@@ -211593,10 +211674,10 @@
       "stage": "",
       "after": "J2447",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T00:27Z",
+      "eta": "2026-11-10T02:27Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
       "result": "",
@@ -211605,11 +211686,53 @@
           "at": "2026-11-09T21:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:27Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:27Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-10T00:57Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2448; read 05_Analytics/owb/REPACKAGE_2026-11.md batch 1 specifications"
+        },
+        {
+          "at": "2026-11-10T01:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 complete: verified locked scripts/SOURCES for 002, 019, 020 and fetched/verified all 7 official NASA/ESA/ESO source plates (eso1907a, eso2208-eht-mwa, PIA21775, heic1914a, heic1502a, eso0932a, PIA04921)"
+        },
+        {
+          "at": "2026-11-10T01:23Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2448; read REPACKAGE_2026-11.md and THUMBNAIL_AND_TITLE_RULES.md"
+        },
+        {
+          "at": "2026-11-10T01:29Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified 002 script, 019 upload description + chapters, and 020 SOURCES.md + upload description + shot prompts; verified source plates (eso1907a, eso2208-eht-mwa, PIA21775, heic1914a, heic1502a, eso0932a, PIA04921)"
         }
       ],
-      "remaining_action": "Old Orbit longs repackage batch 1: build the 6 new thumbnails (Black Hole, Jupiter, Andromeda; 2 each)",
+      "remaining_action": "Copy builder script to 00_Brand/Channel-Setup/tools/ and run/verify all 6 thumbnails and preview sheets",
       "due": "2026-11-13T18:00:00Z",
-      "kind": "thumb"
+      "kind": "thumb",
+      "progress": {
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-10T01:29Z",
+        "by": "gemini",
+        "note": "Verified 002 script, 019 upload description + chapters, and 020 SOURCES.md + upload description + shot prompts; verified"
+      },
+      "taskKeys": [
+        "OWB:002",
+        "OWB:019",
+        "OWB:020"
+      ]
     },
     {
       "id": "J2449",
@@ -211884,7 +212007,7 @@
     {
       "id": "J2456",
       "title": "Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676)",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "**Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676).** Read the three critiques in `05_Analytics/tests/panels/owb-j2374-weekly-2026-11-09/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -211909,19 +212032,15 @@
           "at": "2026-11-09T23:37Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-10T00:13Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN",
-      "kind": "review",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "kind": "review"
     },
     {
       "id": "J2457",
@@ -211934,13 +212053,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T01:00Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:12Z",
-      "result": "",
+      "result": "parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports.",
       "history": [
         {
           "at": "2026-11-09T23:12Z",
@@ -211956,6 +212075,36 @@
           "at": "2026-11-09T23:26Z",
           "by": "macbook",
           "what": "released: MacBook worker run on codex ended (exit 1) with the job still open; picked up again next run; codex paused on the MacBook until 2026-11-10T01:26:42Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-10T00:22Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:23Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T00:55Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:56Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T01:00Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:01Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports."
         }
       ],
       "remaining_action": "Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom)",
@@ -211982,13 +212131,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
-      "since": "2026-11-09T23:26Z",
-      "eta": "2026-11-10T00:56Z",
+      "since": "2026-11-10T00:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:13Z",
-      "result": "",
+      "result": "Chief accepted the sweep (Claude acting Chief, 10 Nov). Merged 19: #688 and 18 of the MERGE list after one combined test run (872 tests). Closed 20: the CLOSE list plus #261, #291, #487 and #519. Held for the Chief's own review: #368 (it changes the board's watch-link ids) and #490 (Codex allow-list scripts). The rest go to the part 2 sweep job: #604 then #611, #676, #311 and #310, #653, #645, #554, #552.",
       "history": [
         {
           "at": "2026-11-09T23:13Z",
@@ -212004,6 +212153,26 @@
           "at": "2026-11-09T23:36Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-09T23:51Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:29Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: sweep finished, PR #688 (jobs/reviews/J2458/PR_SWEEP.md). 16 CLOSE, 22 MERGE (all MERGEABLE/CLEAN on GitHub 00:35Z, tests re-run and passing on #368 #490 #493 #557), 10 CHIEF. Second run corrected the first: #310/#311 are not fully on main and #653 conflicts (its queue.json reuses id J2463), so all three moved to CHIEF. Not re-checked: the other 16 CLOSE lines and 7 original CHIEF lines. Chief merges and closes."
+        },
+        {
+          "at": "2026-11-10T01:17Z",
+          "by": "claude",
+          "what": "done: Chief accepted the sweep (Claude acting Chief, 10 Nov). Merged 19: #688 and 18 of the MERGE list after one combined test run (872 tests). Closed 20: the CLOSE list plus #261, #291, #487 and #519. Held for the Chief's own review: #368 (it changes the board's watch-link ids) and #490 (Codex allow-list scripts). The rest go to the part 2 sweep job: #604 then #611, #676, #311 and #310, #653, #645, #554, #552."
         }
       ],
       "remaining_action": "Fetched and analyzed all 48 PRs against origin/main; classifying CLOSE/MERGE/CHIEF and updating MERGE branches",
@@ -212028,13 +212197,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-09T23:38Z",
-      "eta": "2026-11-10T00:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212060,9 +212229,29 @@
           "at": "2026-11-09T23:39Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Old test recorded: Thumbnail only, 3 arms, watch-time share blank, 12 d 18 h left; screenshot saved"
+        },
+        {
+          "at": "2026-11-09T23:43Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: Title and thumbnail test set 23:43:14Z, 3 arms (A/B/C), page saved 23:43:31Z"
+        },
+        {
+          "at": "2026-11-09T23:45Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Read back: Title and thumbnail, 3 arms, Test running 13 d 23 h, Public, description unchanged"
+        },
+        {
+          "at": "2026-11-09T23:46Z",
+          "by": "claudecode",
+          "what": "step 5 of 5 done: Records in PR #687 (TITLE_TEST section + STUDIO_TESTS row T&C-025)"
+        },
+        {
+          "at": "2026-11-09T23:46Z",
+          "by": "claudecode",
+          "what": "done: done"
         }
       ],
-      "remaining_action": "Start the title-and-thumbnail test, read back, write records, open PR",
+      "remaining_action": "Chief to review and merge PR #687",
       "due": "2026-11-10T18:00:00Z",
       "kind": "studio",
       "plain": "Swap the Mars film's running thumbnail test for one that tests three title-and-thumbnail pairs, including a search-led title.",
@@ -212076,75 +212265,163 @@
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-09T23:39Z",
+        "at": "2026-11-09T23:46Z",
         "by": "claudecode",
-        "note": "Old test recorded: Thumbnail only, 3 arms, watch-time share blank, 12 d 18 h left; screenshot saved"
+        "note": "Records in PR #687 (TITLE_TEST section + STUDIO_TESTS row T&C-025)"
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "PR #687"
     },
     {
       "id": "J2460",
       "title": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 9 Nov 2026, his own yes: remove the 6 zero-view Orbit With Ben playlists listed in 05_Analytics/PLAYLIST_AUDIT_2026-11.md section 3. Removing a playlist never removes a video. Never press anything that deletes or edits a video itself.\n\nWhere: Orbit Studio (CDP 9223) and History of Science Studio (CDP 9222). Check the channel name in each window first.\n\nStep 1, find what points at the six. At least one is in use: \"Start Here\" (PLI1AApUz3qz8...) is an end-screen element on Saturn 55AEQwvs36g (05_Analytics/live_fixes/2026-10-15.md). For each of the six playlists, check: (a) every public and scheduled long's end screen and cards, (b) the channel Home tab sections (Customisation > Home), (c) video descriptions and pinned comments that link to it. Write the full list to jobs/reviews/<this job id>/PLAYLIST_REFS.md, with the full playlist ids as Studio shows them (the audit shortens them).\n\nStep 2, repoint. Where an end screen, card, Home section or link uses one of the six, swap it for the kept series playlist that holds that film (Real Worlds, or What Would Happen If…). Read each swap back.\n\nStep 3, remove. For each of the six: confirm the title matches the audit, write its video ids into PLAYLIST_REFS.md (so it could be rebuilt), confirm nothing points at it any more, then remove the playlist. If anything still points at it, or the title does not match, keep that playlist and say why.\n\nStep 4, the three kept playlists (Chief's call, all reversible): add the missing films and reorder as the audit lists. Keep each series name (LEARNINGS rule 20) and add the search phrase after it:\n   \"Real Worlds: Solar System, Moons and Alien Planets Explained\"\n   \"What Would Happen If…: Black Holes, Neutron Stars and Extreme Space\"\n   History of Science: \"How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science\"\n\nStep 5, read back both channels' playlist lists and add an \"Applied\" section to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Commit on a branch, open a PR.\n\nDo not change any video's title, thumbnail, privacy or schedule. £0.\n",
+      "body": "Ben, 9 Nov 2026, his own yes: remove the 6 zero-view Orbit With Ben playlists listed in 05_Analytics/PLAYLIST_AUDIT_2026-11.md section 3. Removing a playlist never removes a video. Never press anything that deletes or edits a video itself.\n\nWhere: Orbit Studio (CDP 9223) and History of Science Studio (CDP 9222). Check the channel name in each window first.\n\nStep 1, find what points at the six. At least one is in use: \"Start Here\" (PLI1AApUz3qz8...) is an end-screen element on Saturn 55AEQwvs36g (05_Analytics/live_fixes/2026-10-15.md). For each of the six playlists, check: (a) every public and scheduled long's end screen and cards, (b) the channel Home tab sections (Customisation > Home), (c) video descriptions and pinned comments that link to it. Write the full list to jobs/reviews/<this job id>/PLAYLIST_REFS.md, with the full playlist ids as Studio shows them (the audit shortens them).\n\nStep 2, repoint. Where an end screen, card, Home section or link uses one of the six, swap it for the kept series playlist that holds that film (Real Worlds, or What Would Happen If…). Read each swap back.\n\nStep 3, remove. For each of the six: confirm the title matches the audit, write its video ids into PLAYLIST_REFS.md (so it could be rebuilt), confirm nothing points at it any more, then remove the playlist. If anything still points at it, or the title does not match, keep that playlist and say why.\n\nStep 4, the three kept playlists (Chief's call, all reversible): add the missing films and reorder as the audit lists. Keep each series name (LEARNINGS rule 20) and add the search phrase after it:\n   \"Real Worlds: Solar System, Moons and Alien Planets Explained\"\n   \"What Would Happen If…: Black Holes, Neutron Stars and Extreme Space\"\n   History of Science: \"How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science\"\n\nStep 5, read back both channels' playlist lists and add an \"Applied\" section to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Commit on a branch, open a PR.\n\nDo not change any video's title, thumbnail, privacy or schedule. £0.\n\n\n10 Nov, acting Chief (Claude): pinned to the Mini (mini_only). Removing a playlist cannot be undone, and the MacBook's Claude Code rightly handed this back twice. Ben's yes on 9 Nov stands.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T01:08Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:23Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:23Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T00:57Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:57Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2460 changes YouTube (repoints end screens/cards/Home sections, removes 6 playlists, renames and reorders 3 playlists on both channels). The MacBook worker's launch rule is 'never upload, schedule or change anything on YouTube', and removing playlists cannot be undone, so the MacBook must not do it whatever the brief says. Nothing was touched on YouTube and nothing was written: no PLAYLIST_REFS.md, no branch, no PR. Second time on the MacBook (first time released, CDP 9223/9222 not reachable from this worker). Please run it on the Mini, or pin it there."
+        },
+        {
+          "at": "2026-11-10T01:06Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the MacBook is never offered this job (OWB PR #694)"
+        },
+        {
+          "at": "2026-11-10T01:08Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:09Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
       "due": "2026-11-12T18:00:00Z",
       "kind": "studio",
-      "plain": "Remove six unused Orbit playlists after moving anything that links to them, and tidy the three playlists we keep."
+      "plain": "Remove six unused Orbit playlists after moving anything that links to them, and tidy the three playlists we keep.",
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T01:08Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2461",
       "title": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
-      "needs": "mini",
+      "needs": "macbook",
       "repo": "hos",
-      "body": "Acting Chief (Claude), 9 Nov 2026. HOS 006 Trees VbPubYd6Fbs is public. Its pinned comment is posted but not pinned: comment UgyN-6wKr4EfDkXI1h54AaABAg (\"So where does a tree's weight really come from?\"). On the Mini's HOS window, pressing Pin asked for a password re-entry (J0958), which is Ben's.\n\nThe MacBook's History of Science Studio window (CDP 9222) was signed in fresh on 9 Nov. Try the pin there once:\n1. Check the channel name reads History of Science.\n2. Open the video's comments, find that comment, press Pin, confirm.\n3. If it pins: reload and read back the \"Pinned by\" badge. Done.\n4. If it asks to authenticate or re-enter a password: press nothing more, type nothing, and block for Ben with exactly what it showed.\n\nDo not post a new comment. Do not touch the video's title, thumbnail, description, end screen or any test. £0.\n",
+      "body": "Acting Chief (Claude), 9 Nov 2026. HOS 006 Trees VbPubYd6Fbs is public. Its pinned comment is posted but not pinned: comment UgyN-6wKr4EfDkXI1h54AaABAg (\"So where does a tree's weight really come from?\"). On the Mini's HOS window, pressing Pin asked for a password re-entry (J0958), which is Ben's.\n\nThe MacBook's History of Science Studio window (CDP 9222) was signed in fresh on 9 Nov. Try the pin there once:\n1. Check the channel name reads History of Science.\n2. Open the video's comments, find that comment, press Pin, confirm.\n3. If it pins: reload and read back the \"Pinned by\" badge. Done.\n4. If it asks to authenticate or re-enter a password: press nothing more, type nothing, and block for Ben with exactly what it showed.\n\nDo not post a new comment. Do not touch the video's title, thumbnail, description, end screen or any test. £0.\n\n\n10 Nov, acting Chief (Claude): this is a Studio job routed to the MacBook on purpose (its History of Science window was signed in fresh on 9 Nov; the Mini's asked for a password). The MacBook worker's rule now allows a routed Studio job, and it runs on Gemini there, not Claude Code (OWB PR #694). One try at the pin; if YouTube asks to authenticate, press nothing more and block for Ben.",
       "ref": "",
       "film": "006",
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T01:13Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "",
+      "result": "parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code.",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:21Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:22Z",
+          "by": "macbook",
+          "what": "released: MacBook worker could not try the pin: reaching the HOS Studio browser (CDP 9222) needs a permission approval in unattended runs (curl 127.0.0.1:9222 refused), same as 9223 for J2441. Nothing pressed, nothing posted. Needs a run with CDP access approved, or Ben."
+        },
+        {
+          "at": "2026-11-10T00:51Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:52Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief/Ben: not tried, nothing pressed. Pinning a comment is a change on YouTube, and the MacBook worker's standing rule is never to change anything on YouTube; the worker also cannot reach CDP 9222 unattended (curl to 127.0.0.1:9222 needs approval, same as the earlier release). Do not send this back to the MacBook worker: Ben pins comment UgyN-6wKr4EfDkXI1h54AaABAg on HOS 006 VbPubYd6Fbs by hand, or Ben changes the MacBook worker rule to allow this one pin."
+        },
+        {
+          "at": "2026-11-10T01:12Z",
+          "by": "claude",
+          "what": "reopened by acting Chief as a MacBook job: the worker rule and agent choice are fixed in OWB PR #694"
+        },
+        {
+          "at": "2026-11-10T01:13Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:14Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code."
         }
       ],
       "remaining_action": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
-      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password."
+      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T01:13Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2462",
@@ -212157,13 +212434,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-09T23:55Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "",
+      "result": "Chief PASS (Claude acting Chief, 10 Nov): the report is merged (PR #690). Approved: HOS 007, OWB 026, OWB 027 and HOS 099 change to the proposed titles; OWB 031 and OWB 029 take the proposed tails; OWB 028 keeps its title and gets the new description line 1. J2470 applies the two scheduled HOS films (007 airs Thu 12 Nov) and J2471 the five scheduled Orbit films. The three live films (HOS 005, OWB 024, HOS 006) are retitled at day 14 if still under 100 impressions: 12, 15 and 19 Nov.",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212174,9 +212451,39 @@
           "at": "2026-11-09T23:37Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-09T23:55Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-09T23:56Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-10T00:02Z",
+          "by": "macbook",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-10T00:17Z",
+          "by": "macbook",
+          "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-10T00:17Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: Rule 26 title pass in 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (PR #690, commit 50ed8df44, £0 read-only): 6 CHANGE (HOS 007 ETynHpIYLeY airs first Thu 12 Nov 18:00Z, OWB 026 c5AdqQsnnys, OWB 027 6bbbvfCx6zY, HOS 099 uAomPaOBrM8, HOS 006 VbPubYd6Fbs, HOS 005 wwcjcFfC-5M) and 4 KEEP (OWB 028 F-jImX5h7ws, OWB 031 G5uMANXHtNU, OWB 029 vP1BbqZ_dnM, OWB 024 rVqgtkBV3jc — optional Rule 26b/d bracketed tails and Description Line 1 updates also drafted for all 4)."
+        },
+        {
+          "at": "2026-11-10T01:06Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude acting Chief, 10 Nov): the report is merged (PR #690). Approved: HOS 007, OWB 026, OWB 027 and HOS 099 change to the proposed titles; OWB 031 and OWB 029 take the proposed tails; OWB 028 keeps its title and gets the new description line 1. J2470 applies the two scheduled HOS films (007 airs Thu 12 Nov) and J2471 the five scheduled Orbit films. The three live films (HOS 005, OWB 024, HOS 006) are retitled at day 14 if still under 100 impressions: 12, 15 and 19 Nov."
         }
       ],
-      "remaining_action": "Rule 26 title pass: propose search-led titles for the 7 scheduled longs and 3 quiet live ones (read-only; the first airs Thu 12 Nov)",
+      "remaining_action": "Committed 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on macbook/J2462 (50ed8df44) and opened PR #690; parking for Chief",
       "due": "2026-11-11T12:00:00Z",
       "kind": "review",
       "plain": "Check the titles of the films waiting to air against what people actually search for, and propose better ones where needed.",
@@ -212188,7 +212495,557 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-10T00:17Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2463",
+      "title": "Repo clean-up, part 1: fix the six bugs the 7 Nov code audit found (rows F-01a to F-01d, F-05a, F-05b)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: \"clean up the repo and remove vulnerabilities\". The clean-up plan already exists: jobs/reviews/J2235/AUDIT.md (7 Nov), a ranked table of 21 findings. This job takes the bugs.\n\nDo these rows, in order: F-01a, F-01b, F-01c, F-01d, F-05a, F-05b. For each one:\n1. Re-check it against today's main first. If it is already fixed, say so with the commit and move on.\n2. Fix it the way the audit proposes, with a test that fails before and passes after.\n3. Keep the change small: no renames or tidying beyond the row.\n\nThen run the repo checks: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, python3 -m unittest discover -s scripts -p \"test_*.py\". All must pass.\n\nOne PR for the lot, with a line per row in the description (fixed, already fixed, or not done and why). Park for Chief. No Studio, no spend, nothing deleted.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-09T23:56Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:52Z",
+      "result": "PR #689 merged (96ac3e716e): all six audit rows fixed. F-01a one shared CLI lookup routing.find_cli (an explicit override such as CODEX_BIN is now the answer: a missing file means missing); F-01b ChiefTestCase base, 13 tests no longer run twice; F-01c test_macbook_worker passes from either slot; F-01d read_flags and the MacBook worker's log and lock files are closed; F-05a CI discovers every test in 04_Audio/tools and Channel-Setup tools; F-05b the desk-lock writers test skips where 07_Content-Ops has no node_modules (the audit's npx fallback fails: two writers need packages). 861 tests pass.",
+      "history": [
+        {
+          "at": "2026-11-09T23:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-09T23:56Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:52Z",
+          "by": "claude",
+          "what": "done: PR #689 merged (96ac3e716e): all six audit rows fixed. F-01a one shared CLI lookup routing.find_cli (an explicit override such as CODEX_BIN is now the answer: a missing file means missing); F-01b ChiefTestCase base, 13 tests no longer run twice; F-01c test_macbook_worker passes from either slot; F-01d read_flags and the MacBook worker's log and lock files are closed; F-05a CI discovers every test in 04_Audio/tools and Channel-Setup tools; F-05b the desk-lock writers test skips where 07_Content-Ops has no node_modules (the audit's npx fallback fails: two writers need packages). 861 tests pass."
+        }
+      ],
+      "remaining_action": "Repo clean-up, part 1: fix the six bugs the 7 Nov code audit found (rows F-01a to F-01d, F-05a, F-05b)",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Fix six small bugs in the studio's own code that a code review found on 7 Nov.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-09T23:56Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J2464",
+      "title": "Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: \"clean up the repo\". Plan: jobs/reviews/J2235/AUDIT.md (7 Nov). This job takes the dead and one-off code. Nothing is deleted: everything moves to _archive/ with `git mv`, keeping its path under _archive/ so it can be found again.\n\nRows, in order: F-02a (the retired /classic board), F-02b (15 dead functions in studio_app.js), F-02c (unwired browser tests), F-03a, F-03b, F-03c, F-07, F-04c (one-off scripts under jobs/reviews/), F-06, F-04b. For each one:\n1. Re-check it against today's main: confirm nothing imports, runs or links to the file (grep the repo, the launchd plists under scripts/mini and scripts/macbook, jobs/backlog.json, the workflows, package.json scripts and AGENTS.md). If something still uses it, leave it and say what.\n2. Files listed in studio-core/CORE_FILES.json are shared with History of Science: leave those for a separate job and list them.\n3. Move, then run the checks: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, python3 -m unittest discover -s scripts -p \"test_*.py\", python3 scripts/test_kanban_page.py. For F-02a and F-02b also build the board (cd 05_Analytics/kanban/board_site && python3 build.py) and confirm / and /tracker still render from dist.\n\nTwo PRs: one for the board rows (F-02a, F-02b, F-02c), one for the rest. Each description lists every row as moved, left (and why) or already done, with the size removed from the live tree. Park for Chief. The Chief redeploys the board after merging the first PR. No Studio, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T01:03Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:52Z",
+      "result": "parked for Chief: second time on the MacBook and git mv still needs approval here (even git mv -n), so no file can be moved to _archive/. Nothing moved, nothing deleted, no PR; local branch macbook/J2464 holds no work. Please pin to the Mini or another agent, or allow git mv on the MacBook worker.",
+      "history": [
+        {
+          "at": "2026-11-09T23:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:29Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:30Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-10T00:33Z",
+          "by": "macbook",
+          "what": "released: MacBook cannot do this job: 'git mv' needs approval in unattended runs (denied twice), so nothing was moved and no PR exists; branch macbook/J2464 is local only with no commits. Send to the Mini. Re-check done against main 73b828b6 for the non-board rows, to save the next worker time. F-03a: apply_melodysheep_long_thumbs_v01.py is free to move; LEAVE apply_yellow_white_v04_thumbs.py (STUDIO_PLAYBOOK.md:388 and .cursor/rules/orbit-publish-studio.mdc:27 name it as the pattern, and audits/STANDALONE_SHORTS_TEST_2026-10/_set_j0216_covers.py imports it). F-03b: LEAVE both for now: vidiq_title_score_sheet.py is the command in PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md:89 (and 04_Audio/tools/README.md, docs/CONTENT_WORKFLOW.md); fix_published_playback_lag.py is the command in docs/PLAYBACK_LAG_FIX.md:33 and the README; those docs need the Chief's edit first. F-03c: both are in studio-core/CORE_FILES.json, leave for the HOS-paired job. F-07: j0216-verify.ts and sentence_sheet.py have no live users; research_metadata.py (+ its test) is imported only by jobs/reviews/J1128/J1128-compact.py and resume_recovery.py, so move it together with the J1128 scripts. F-04c: LEAVE the 11 top-level j0936 scripts (shipped Shorts' _v04_meta.json manifests in 026/027/028 and J0936_v04_PREP_v04_maps.json name generate_j0936_prep_v04_openings.py as generator_script, J1015 verification.json names verify_v03; uploaded manifests must not be rewritten) and jobs/reviews/J0989/*.py (listed in J0989/DELIVERY_MANIFEST.sha256); the 5 j1032 top-level scripts and the J0935, J1075, J1128 (11 incl. collectors), J1199, J1208, J1218, J1220, J1326, J1331, J1834, J2016, J2144 and J2176/build.py scripts are named only in their own job reports. Not in the audit, not checked: J1322/*.py, J2176/build_v03.py, J2249/build_thumbnail.py, verify_j1016.py, verify_j1018.py. F-06: LEAVE build_melodysheep_long_thumbs_v01.py (STUDIO_PLAYBOOK.md:353 names it as the long builder) and build_yellow_white_short_thumbs_v04.py (not in the audit, same playbook line); the other 14 builders are named only in dated audit logs and import only each other. F-04b and the board rows F-02a/b/c: not re-checked. Note for F-04b: 001, 002 and 007 also hold upload/Studio scripts outside 07_Edit-Project (11_Upload-Package/Schedule, 10_Shorts, 02_Voiceover), so they are not simply unshipped. Empty folders were created under _archive/ (scripts, 00_Brand/Channel-Setup/tools, jobs/reviews/J*); they hold nothing and are not in git."
+        },
+        {
+          "at": "2026-11-10T01:03Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:03Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: second time on the MacBook and git mv still needs approval here (even git mv -n), so no file can be moved to _archive/. Nothing moved, nothing deleted, no PR; local branch macbook/J2464 holds no work. Please pin to the Mini or another agent, or allow git mv on the MacBook worker."
+        }
+      ],
+      "remaining_action": "re-check rows, PR for non-board rows, PR for board rows, park for Chief",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow.",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-10T00:30Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2465",
+      "title": "Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: \"remove vulnerabilities\". `npm audit` on 9 Nov reports known issues in the upload and analytics tooling: orbit-with-ben 07_Content-Ops has 15 (6 high, 9 moderate; zod, vite, vitest, typescript-eslint, js-yaml, brace-expansion, nanoid, source-map-js). history-of-science 07_Content-Ops has 23 (3 critical: next, concurrently, shell-quote; 12 high incl. prisma, sharp, postcss, zod).\n\nFor each repo, on its own branch:\n1. npm ci, then npm audit fix (never --force). In the cloud session `npm audit fix` and `npm update` both died with \"Cannot read properties of null (reading 'edgesOut')\"; if that happens here, remove node_modules and package-lock.json, run npm install, and check the lock diff only moves versions inside the ranges package.json already allows.\n2. Anything still listed needs a major version: do not take it blindly. List it with what would break and leave it for the Chief.\n3. Prove nothing broke: npm run typecheck, npm run lint, npm test. In history-of-science also build the app (npm run build) and run bash 00_Brand/Channel-Setup/tools/check_all.sh. Run the read-only commands that touch nothing live, if they exist: analytics:report and gate:episode on a finished film. Do not run youtube:package, buffer:mirror or anything that uploads, posts or spends.\n4. npm audit again and put the before and after counts in the PR.\n\nOne PR per repo. Park for Chief with both links and the counts. No Studio, no uploads, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T00:58Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:52Z",
+      "result": "parked for Chief: the MacBook worker cannot run npm at all (npm --version needs approval in unattended runs), so npm ci, audit fix, typecheck, lint, test and build cannot run here. Second time this job reached the MacBook (released once already on 10 Nov). Nothing changed, no branch made. Please pin it to the Mini (--for cursor or codex) or add npm to the MacBook allow-list.",
+      "history": [
+        {
+          "at": "2026-11-09T23:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:24Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-10T00:59Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: the MacBook worker cannot run npm at all (npm --version needs approval in unattended runs), so npm ci, audit fix, typecheck, lint, test and build cannot run here. Second time this job reached the MacBook (released once already on 10 Nov). Nothing changed, no branch made. Please pin it to the Mini (--for cursor or codex) or add npm to the MacBook allow-list."
+        }
+      ],
+      "remaining_action": "npm audit fix in both repos, verify, open two PRs",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Update the code libraries our upload and analytics tools depend on, where a known security problem has a safe fix.",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-10T00:58Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2466",
+      "title": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Ben, 9 Nov 2026: \"clean up the repo\". orbit-with-ben had 396 remote branches on 9 Nov; history-of-science has many too. GitHub now deletes a branch when its pull request merges (Ben turned that on 9 Nov), so this is a one-off for the old ones.\n\nIn each repo:\n1. git fetch --prune origin. List remote branches.\n2. A branch may be removed only if ALL of these hold: its tip is already contained in origin/main (git branch -r --merged origin/main), it has no open pull request (gh pr list --state open --head <branch>), and it is not one of the working branches: main, mini-heartbeat, macbook-heartbeat, macbook-heartbeat-2, board-data, the History of Science desk branch (the head of desk PR 180), any branch named in scripts/thread.json, studio-core, or a branch a launchd plist or workflow names.\n3. Write the full list to jobs/reviews/<this job id>/BRANCHES.md first: branch, tip sha, last commit date, and the reason it qualifies. That file is the way back: any branch can be recreated from its sha.\n4. Remove the qualifying branches with git push origin --delete, in batches of 50. Stop at the first error and report it.\n5. Report: how many removed, how many kept and why (not merged, open PR, working branch).\n\nBranches that are not fully in main are NOT removed in this job, whatever their age: list them separately with their PR state for the Chief. Commit BRANCHES.md on a branch, open a PR, park for Chief. No Studio, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T01:04Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-09T23:52Z",
+      "result": "parked for Chief: second time on the MacBook and git fetch --prune origin still needs approval here (so does gh api matching-refs), so the live remote branch list can't be read and local origin/* refs are stale. Deleting from a stale list is not safe. Nothing listed, nothing deleted, no BRANCHES.md, no PR. Please pin this to the Mini or allow git fetch on the MacBook worker.",
+      "history": [
+        {
+          "at": "2026-11-09T23:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:33Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:34Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T01:04Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:04Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: second time on the MacBook and git fetch --prune origin still needs approval here (so does gh api matching-refs), so the live remote branch list can't be read and local origin/* refs are stale. Deleting from a stale list is not safe. Nothing listed, nothing deleted, no BRANCHES.md, no PR. Please pin this to the Mini or allow git fetch on the MacBook worker."
+        }
+      ],
+      "remaining_action": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:33Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J2467",
+      "title": "Verify condition for J1198",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1198: Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1198 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T00:47Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T00:13Z",
+      "result": "parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432).",
+      "history": [
+        {
+          "at": "2026-11-10T00:13Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:47Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:48Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-10T00:48Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432)."
+        }
+      ],
+      "remaining_action": "Read Studio on 9223 for VBaYRPp85Sw test state",
+      "kind": "review",
+      "recheck_of": "J1198",
+      "due": "2026-11-10T01:13:03+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:48Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2468",
+      "title": "Verify condition for J2171",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-10T00:38Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T00:13Z",
+      "result": "parked for Chief: J2171 condition NOT met, keep it blocked. Evidence from jobs/queue.json at 10 Nov ~02:15Z: J2033 is open and unclaimed, result empty, last note 9 Nov 21:54Z 'reopened: J2200 runner PASS' (0/20 rows minted); J2034 open, not started (after J2033); J2035 open, not started (after J2034). Nothing reopened, spent or changed. MacBook is not the holder, so 'wait' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T08:15Z' --type dependency --recheck J2468 --git",
+      "history": [
+        {
+          "at": "2026-11-10T00:13Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:38Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:39Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2171 condition NOT met, keep it blocked. Evidence from jobs/queue.json at 10 Nov ~02:15Z: J2033 is open and unclaimed, result empty, last note 9 Nov 21:54Z 'reopened: J2200 runner PASS' (0/20 rows minted); J2034 open, not started (after J2033); J2035 open, not started (after J2034). Nothing reopened, spent or changed. MacBook is not the holder, so 'wait' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T08:15Z' --type dependency --recheck J2468 --git"
+        }
+      ],
+      "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-10T01:13:03+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:38Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J2469",
+      "title": "Verify condition for J2241",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2241: Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2241 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-10T00:49Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T00:25Z",
+      "result": "Closed by acting Chief (Claude) 10 Nov: the check was right that HOS #411 was still open. It is merged now (97e44918), so J2241 is reopened.",
+      "history": [
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:49Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:50Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-10T00:50Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2241's condition is NOT satisfied, keep it blocked. Evidence (read 2026-11-10 ~00:55Z): J1881 is done (KEEP accepted by acting Chief 2026-11-09T19:54Z) and J2446 is done (gemini 00:24Z: both PRs up to date, 18 tests OK, check_all ALL CHECKS PASS). gh: HOS #428 MERGED into codex/J2163-repair at 2026-11-10T00:23:42Z (head 6b4d2574); HOS #411 still OPEN, MERGEABLE, not merged to main (head 9c31f162). The Chief's 9 Nov note gates J2241 on the PRs being merged, and that merge is the Chief's. The hold text on J2241 is stale (still says waiting for J1881). MacBook cannot update the hold (jobs.py wait refused: only holder or elected Chief). Chief: merge HOS #411, then reopen J2241; or run: jobs.py wait J2241 --agent <chief id> --condition 'Waiting for Chief merge of HOS PR #411 (9c31f162) into HOS main; J1881 and J2446 done; capability fallback unchanged' --check-at '2026-11-10T07:00:00Z' --type input --recheck J2469. Nothing spent, merged, uploaded or rescheduled."
+        },
+        {
+          "at": "2026-11-10T01:19Z",
+          "by": "claude",
+          "what": "done: Closed by acting Chief (Claude) 10 Nov: the check was right that HOS #411 was still open. It is merged now (97e44918), so J2241 is reopened."
+        }
+      ],
+      "remaining_action": "Check whether HOS PRs 411 and 428 are merged, then record the verdict on J2241's hold",
+      "kind": "review",
+      "recheck_of": "J2241",
+      "due": "2026-11-10T01:25:28+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-10T00:50Z",
+        "by": "macbook"
+      }
+    },
+    {
+      "id": "J2470",
+      "title": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T00:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:59Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:59Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-10T01:02Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:02Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: this job changes the title and description of two scheduled History of Science videos on YouTube (ETynHpIYLeY, uAomPaOBrM8). The MacBook worker launch rule forbids any change on YouTube from Ben's laptop, so nothing was touched: no title, no description, no records, no PR. It is a [mini] job; please run it on the Mini. HOS 007 airs Thu 12 Nov 18:00 London, so it is the urgent one."
+        },
+        {
+          "at": "2026-11-10T01:18Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the retitle tool and its sign-in live there; the MacBook is never offered this job (OWB PR #694)"
+        }
+      ],
+      "remaining_action": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "studio",
+      "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved.",
+      "mini_only": true
+    },
+    {
+      "id": "J2471",
+      "title": "Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the Orbit With Ben films that are still scheduled, in air-date order.\n\n1. c5AdqQsnnys (026, Sun 15 Nov): title becomes\n   How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n2. 6bbbvfCx6zY (027, Sun 22 Nov): title becomes\n   What If Earth Stopped Spinning? (It's Already Slowing Down)\n   and line 1 of the description becomes the \"Proposed Line 1\" in section 3.\n3. F-jImX5h7ws (028, Sun 29 Nov): title stays. Line 1 of the description becomes the \"Proposed Line 1\" in section 4.\n4. G5uMANXHtNU (031, Wed 2 Dec): title becomes\n   What Happens When Earth's Magnetic Field Flips? (183 Times So Far)\n   and line 1 as proposed in section 5.\n5. vP1BbqZ_dnM (029, Sun 6 Dec): title becomes\n   Is Betelgeuse About to Explode? (We'd See It in the Daytime Sky)\n   and line 1 as proposed in section 6.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- The report says 026 and 027 had title arms set under J2430. If a Test and Compare is set on a video and YouTube will not take the new title without removing it: stop on that video, change nothing, and say exactly what Studio showed (which arms, running or waiting). Never press Continue on \"Run a new test?\". The Chief then decides.\n- Use the usual retitle tool, or Orbit Studio on CDP 9223 (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: each film's package manifest, description file and upload record carry the new title and line 1; add a row per film to 05_Analytics/tests/STUDIO_TESTS.md with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec). One PR.\n\nPark for Chief with the five read-backs and the PR link. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T00:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T01:00Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:00Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: this job changes titles and description line 1 on five scheduled YouTube videos, and the MacBook worker's launch rule forbids changing anything on YouTube. Nothing was touched: no Studio or API call, no file edits, no branch. It is a [mini] job; run it on the Mini (retitle tool or Orbit Studio on CDP 9223)."
+        },
+        {
+          "at": "2026-11-10T01:18Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the retitle tool and its sign-in live there; the MacBook is never offered this job (OWB PR #694)"
+        }
+      ],
+      "remaining_action": "Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "studio",
+      "plain": "Change the titles of five Orbit films waiting to air to the search-led versions the Chief approved.",
+      "mini_only": true
+    },
+    {
+      "id": "J2472",
+      "title": "PR backlog sweep, part 2: bring the last nine held pull requests up to date, one at a time (Chief's decisions inside)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 10 Nov 2026. Follow-on from the PR sweep (jobs/reviews/J2458/PR_SWEEP.md, on main). The Chief merged 19 of its MERGE list and closed 20. These are what is left, with the Chief's decision on each. Do them in this order; one PR per item unless it says otherwise. Never rebase or force-push another agent's branch: merge origin/main into it. Never hand-merge jobs/queue.json. The Chief merges.\n\n1. #604 then #611 (034 Pluto voiceover evidence). Each merges cleanly alone, but together they clash on the two append-only ledgers (04_Audio/elevenlabs_ledger.jsonl, 05_Analytics/ai_spend/ledger.jsonl). Bring #604 up to date and stop: the Chief merges it. Then merge the new main into #611 and re-append only its own rows. Say in the result when #604 is ready, release, and carry on with #611 after it is merged.\n2. #676 (weekly Orbit thumbnail audit, J2374, finished 9 Nov): merge origin/main into it, run its checks, list it as ready.\n3. #311 (025 opening Short v07; it contains #310's files): merge origin/main into #311, confirm 06_Final-Exports sha256_manifest.json still names v05 as the uploaded file, list it as ready. The Chief then closes #310.\n4. #653 (HOS 100 and 101 into the waiting line): its queue.json reuses an id main has since given to another job, so it cannot merge. On a fresh branch from main, add HOS:100 and HOS:101 to next_hos in jobs/WIP.json with the repo's tool, and add the Rule-E review job for HOS PR #460 with `jobs.py add` (it gets a new id). The Chief then closes #653.\n5. #645 (8 History of Science Shorts lab rows and 3 learnings, J2373): merge origin/main into it. Keep the 8 lab rows. Renumber its three LEARNINGS.md rows to follow the last row on main (26 is the last today), and drop any that only repeat rows 24 to 26. Run the checks.\n6. #554 (HOS-2026-11-E2, proof-first first 30 seconds): same treatment: merge main in, renumber its LEARNINGS.md row to follow the last row, keep 05_Analytics/tests/HOS_LONG_TESTS.md.\n7. #552 (HOS-2026-11-E1, anomaly-first Short gate): this one touches a shared core file. Re-apply its --hos-anomaly-first flag on today's 00_Brand/Channel-Setup/tools/gate_shorts_open.py on a fresh branch, with its tests, a fresh core hash (python3 scripts/core_sync.py) and its LEARNINGS.md row renumbered. If the flag now contradicts rule 24 (the first second), stop and say how, and leave it for the Chief.\n\nLeave alone: #368 and #490 (the Chief reviews those two code changes), #333 (still a draft), #666.\n\nFor each item run: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, and the tests the change touches. Write jobs/reviews/<this job id>/SWEEP_2.md with one line per item (ready, or stopped and why). Park for Chief. No Studio, no spend, nothing deleted.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T01:22Z",
+      "eta": "2026-11-10T02:52Z",
+      "created_by": "claude",
+      "created_at": "2026-11-10T01:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T01:17Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-10T01:18Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:20Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-10T03:20:11Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-10T01:22Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:31Z",
+          "by": "macbook-2",
+          "what": "step 1 of 7 done"
+        }
+      ],
+      "remaining_action": "Updating #604 (item 1) and checking #676, #311, #653, #645, #554, #552",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them.",
+      "progress": {
+        "step": 1,
+        "of": 7,
+        "at": "2026-11-10T01:31Z",
+        "by": "macbook-2"
+      }
     }
   ],
   "focus": [

@@ -2,7 +2,10 @@
 """J2427 (Ben, 8 Nov 2026: "The 8 that passed, what is left to schedule these?"). A cut Ben OK'd whose upload or swap is
 already recorded in UPLOADS.json leaves Passed: it shows as scheduled (or drops out when the video has its own card or
 aired over a day ago). Cases are the real ones from 8 Nov: S6 Titan v11 = ffYKoNVPoqg, AR1 v06 = 93JL_IK57EM (the UAT
-copy's _PHONE suffix), 031 Short 1 = C8lPx5N2DwM (own card), Apophis v13 -> v13a gJwNJN_yMKU (only id in the result)."""
+copy's _PHONE suffix), 031 Short 1 = C8lPx5N2DwM (own card), Apophis v13 -> v13a gJwNJN_yMKU (only id in the result).
+
+board_check must treat those settled ask/approved entries as satisfied (no false FAIL for a missing Ready/Approved
+card) while still flagging a genuinely missing card or a dead Play link."""
 from __future__ import annotations
 
 import datetime as dt
@@ -12,6 +15,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+import board_check  # noqa: E402
 import jobs as J  # noqa: E402
 import video_tracker as vt  # noqa: E402
 
@@ -110,6 +114,87 @@ class UploadedOkLeavesPassed(unittest.TestCase):
     def test_two_live_ids_of_the_same_kind_are_not_guessed(self):
         e = {"file": "x.mp4", "type": "short"}
         self.assertIsNone(vt.matched_upload(e, FILES, "ffYKoNVPoqg and 93JL_IK57EM"))
+
+
+class BoardCheckSettledUpload(unittest.TestCase):
+    """False positives after settle_uploaded: ask/approved keys gone, card in Done or dropped."""
+
+    def setUp(self):
+        self.orig = board_check.file_on_mini
+        board_check.file_on_mini = lambda rel: True
+
+    def tearDown(self):
+        board_check.file_on_mini = self.orig
+
+    def site(self, url, follow=True):
+        return 302 if not follow else 200
+
+    def test_done_ask_card_without_ask_key_is_ok(self):
+        # J1356.1: settle_uploaded left OWB:ASK:J1356.1 in Done with youtube scheduled, ask popped.
+        # Empty files so satisfaction is the Done card key, not matched_upload.
+        j = asked("J1356", "owb_ar1_2024_yr4_moon_v06_PHONE.mp4", "v06", "", "2026-11-27 11:30")
+        J.do_awaits(j, "chief", NOW, what="watch AR1 v06b", file="OWB UAT/other_cut_v01.mp4",
+                    version="v01", due="2026-11-06 20:00", airs="2026-11-27 11:30", title="AR1", add=True)
+        card = {"key": "OWB:ASK:J1356.1", "lane": "done",
+                "youtube": {"videoId": "93JL_IK57EM", "state": "scheduled", "publishAt": "2026-11-27T11:30Z"}}
+        # Only the .1 card is Done; .2 has no upload and no card → still a real miss. Check .1 alone via cut_on_youtube.
+        e1 = next(x for x in vt.ask_entries([j]) if x["id"] == "J1356.1")
+        self.assertTrue(board_check.cut_on_youtube(e1, [card], files={}, card=None))
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": [card]}}, site_status=self.site, files={})
+        self.assertTrue(any("J1356.2: no card" in p for p in res["problems"]))
+        self.assertFalse(any("J1356.1: no card" in p for p in res["problems"]))
+
+    def test_matched_upload_satisfies_missing_ask_card(self):
+        j = asked("J1356", "owb_ar1_2024_yr4_moon_v06_PHONE.mp4", "v06", "", "2026-11-27 11:30")
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": []}}, site_status=self.site, files=FILES)
+        self.assertTrue(res["ok"], res["problems"])
+
+    def test_genuine_missing_ask_card_still_fails(self):
+        j = asked("J2426", "owb_ar2_iss_v13.mp4", "v13", "", "2026-11-25 11:30")
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": []}}, site_status=self.site, files={})
+        self.assertFalse(res["ok"])
+        self.assertTrue(any("J2426: no card on the published board" in p for p in res["problems"]))
+
+    def test_approved_done_card_without_approved_key_is_ok(self):
+        # J0974: settle moved OK card to Done and popped approved; result alone does not match read_back.
+        j = job("J0974", approved_from={"job": "J0974", "what": "swap Apophis Short to v13",
+                                         "file": "OWB UAT/030_apophis_short_v13_PHONE.mp4",
+                                         "version": "v13", "airs": "2026-11-20T11:30Z", "type": "short"},
+                result="Delivered v13a gJwNJN_yMKU Private + 2026-11-20T11:30Z; old BbsyFrV8kCY Private unscheduled.")
+        j["history"] = [{"at": "2026-10-26T09:00Z", "by": "mini", "what": "done: delivered"}]
+        card = {"key": "OWB:OK:J0974", "lane": "done",
+                "youtube": {"videoId": "gJwNJN_yMKU", "state": "scheduled", "publishAt": "2026-11-20T11:30Z"}}
+        # No UPLOADS match: Done card key alone must clear the approved check.
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": [card]}}, site_status=self.site, files={})
+        self.assertTrue(res["ok"], res["problems"])
+        self.assertFalse(any("approved J0974" in p for p in res["problems"]))
+
+    def test_approved_matched_upload_when_ok_card_dropped(self):
+        j = job("J0974", approved_from={"job": "J0974", "what": "swap Apophis Short to v13",
+                                         "file": "OWB UAT/030_apophis_short_v13_PHONE.mp4",
+                                         "version": "v13", "airs": "2026-11-20T11:30Z", "type": "short"},
+                result="Delivered v13a gJwNJN_yMKU Private + 2026-11-20T11:30Z; old BbsyFrV8kCY Private unscheduled.")
+        j["history"] = [{"at": "2026-10-26T09:00Z", "by": "mini", "what": "done: delivered"}]
+        # Job-keyed OK card dropped; matched_upload from the result id is enough (no Done stand-in required).
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": []}}, site_status=self.site, files=FILES)
+        self.assertTrue(res["ok"], res["problems"])
+
+    def test_genuine_missing_approved_card_still_fails(self):
+        j = job("J1100", status="open",
+                approved_from={"job": "J1100", "what": "upload ISS short", "file": "OWB UAT/missing_cut_v01.mp4",
+                               "version": "v01", "airs": "2026-11-25T11:30Z", "type": "short", "title": "ISS"})
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": []}}, site_status=self.site, files={})
+        self.assertFalse(res["ok"])
+        self.assertTrue(any("approved J1100: no card in Approved, on its way" in p for p in res["problems"]))
+
+    def test_ready_ask_still_flags_dead_play_link(self):
+        j = asked("J2426", "owb_ar2_iss_v13.mp4", "v13", "", "2026-11-25 11:30")
+        card = {"key": "OWB:ASK:J2426", "lane": "ready", "readyFor": "Ben", "ask": {"id": "J2426"},
+                "watch": {"url": URL}}
+        res = board_check.check([j], {"checks": {}, "tracker": {"videos": [card]}},
+                                site_status=lambda url, follow=True: 500, files={})
+        self.assertFalse(res["ok"])
+        self.assertTrue(any("Play link answers 500" in p for p in res["problems"]))
 
 
 if __name__ == "__main__":
