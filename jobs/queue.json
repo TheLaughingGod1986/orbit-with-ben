@@ -218946,13 +218946,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T21:22Z",
-      "eta": "2026-11-10T23:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T21:22Z",
-      "result": "",
+      "result": "parked for Chief: J2536 waiting condition is NOT met — keep J2536 blocked (OWB PR #773, jobs/reviews/J2543/REVIEW.md, b6982c0e3). J2033 (_mint_flow_v05_tranche2.py) is actively claimed by gemini on the Mac Mini (7/20 clips archived on NAS, Batch 3 of 5 starting on CDP 9222 at 21:27-21:29Z, 13/20 rows remaining). Both HOS 007 thumbnails (52cf8ea6... and c102e7bd...) and Ben's 10 Nov exception (AGENTS.md #762 / HOS #483) remain valid. macbook-2 is not the holder (claudecode) or elected Chief, so jobs.py wait J2536 --recheck J2543 is restricted to Chief. Chief please run: python3 scripts/jobs.py wait J2536 --agent claude --condition 'J2033 HOS 009 Flow mint (batches 3-5, 13/20 rows left) finished or idle on Mini CDP 9222 and no _mint_flow process running on the Mini (pgrep -f _mint_flow)' --check-at '2026-11-10T22:45:00Z' --type input --recheck J2543 --git and close J2543. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-10T21:22Z",
@@ -218978,6 +218978,11 @@
           "at": "2026-11-10T21:35Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done: Evidence in jobs/reviews/J2543/REVIEW.md (OWB PR #773, b6982c0e3)"
+        },
+        {
+          "at": "2026-11-10T21:35Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J2536 waiting condition is NOT met — keep J2536 blocked (OWB PR #773, jobs/reviews/J2543/REVIEW.md, b6982c0e3). J2033 (_mint_flow_v05_tranche2.py) is actively claimed by gemini on the Mac Mini (7/20 clips archived on NAS, Batch 3 of 5 starting on CDP 9222 at 21:27-21:29Z, 13/20 rows remaining). Both HOS 007 thumbnails (52cf8ea6... and c102e7bd...) and Ben's 10 Nov exception (AGENTS.md #762 / HOS #483) remain valid. macbook-2 is not the holder (claudecode) or elected Chief, so jobs.py wait J2536 --recheck J2543 is restricted to Chief. Chief please run: python3 scripts/jobs.py wait J2536 --agent claude --condition 'J2033 HOS 009 Flow mint (batches 3-5, 13/20 rows left) finished or idle on Mini CDP 9222 and no _mint_flow process running on the Mini (pgrep -f _mint_flow)' --check-at '2026-11-10T22:45:00Z' --type input --recheck J2543 --git and close J2543. £0 / 0 credits."
         }
       ],
       "remaining_action": "Chief: record wait --recheck J2543 on J2536 (check-at 2026-11-10T22:45:00Z) and close J2543",
