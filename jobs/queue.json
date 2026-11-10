@@ -84488,7 +84488,7 @@
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "Waiting for: J2461 (one pin try on the MacBook's HOS Studio window). If that asks for a password, this goes to Ben.",
+      "result": "Waiting for: Ben pins the comment by hand: YouTube asks for his password before it will keep a pin (a sign-in step, tried on the Mini and on the MacBook, J2461). On HOS 006 Trees (VbPubYd6Fbs), in YouTube Studio or the YouTube app, open Comments and pin the one that starts \"So where does a tree's weight really come from?\". End screen and Test & Compare are already done.",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84639,6 +84639,11 @@
           "at": "2026-11-09T23:29Z",
           "by": "claude",
           "what": "held on J2461: the pin is tried once on the MacBook window first"
+        },
+        {
+          "at": "2026-11-10T03:55Z",
+          "by": "claude",
+          "what": "acting Chief: the pin needs Ben's password (his own sign-in); both machines tried once. Held for him."
         }
       ],
       "kind": "studio",
@@ -84656,9 +84661,12 @@
       "for": "",
       "model": "",
       "hold": {
-        "type": "dependency",
-        "condition": "J2461 done or blocked for Ben",
-        "check_at": "2026-11-11T18:00:00+00:00"
+        "type": "ben",
+        "condition": "Ben pins the comment by hand: YouTube asks for his password before it will keep a pin (a sign-in step, tried on the Mini and on the MacBook, J2461). On HOS 006 Trees (VbPubYd6Fbs), in YouTube Studio or the YouTube app, open Comments and pin the one that starts \"So where does a tree's weight really come from?\". End screen and Test & Compare are already done.",
+        "check_at": "2026-11-11T08:00:00+00:00",
+        "last_recheck": "J2461",
+        "checked_at": "2026-11-10T03:55:07+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -177128,7 +177136,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: per J2033 reopen rule ('If the live evidence read fails closed, block with the captured DOM, do not loosen the reader'), read_live_still_evidence and read_live_evidence in merged _mint_flow_v05_tranche2.py (02b57a1b) fail closed on live Flow DOM (CDP 9222, HOS PR #465 a3dc54d3, jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json): (1) model control is button[aria-label='Select model family'] ('🍌 Nano Banana 2.1 arrow_drop_down' / 'Veo 3.1 - Quality arrow_drop_down'), not aria-selected/checked/pressed, so models=[]; Image model also renamed to '🍌 Nano Banana 2.1'; (2) aspect radio text is 'crop_16_9 16:9', so aspects=[]; (3) Account details shows '14,890 Google Flow credits' (not 'AI credits'), so balances=[], and Account details / Settings trigger CDK overlays are mutually exclusive and closed at submit_create; (4) _flow_still_v01.py hardcodes missing HOS 006 STYLE_REFS path; (5) Mini /Volumes/data NFS vnode is hung in kernel __open. 0/20 generated, 0 KEEP, 0 credits spent (14,890 intact).",
+      "result": "Waiting for: J2481 (Flow page readers repaired to the 10 Nov page, fixture tests, no generation) is merged after an independent review, and the Chief has re-run the price pass for the renamed image model (Nano Banana 2.1). Stopped correctly on 10 Nov: 0 of 20 made, 0 credits spent, 14,890 intact (HOS PR #465).",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177279,6 +177287,11 @@
           "at": "2026-11-10T03:15Z",
           "by": "relay",
           "what": "condition verification queued: J2480"
+        },
+        {
+          "at": "2026-11-10T03:55Z",
+          "by": "claude",
+          "what": "acting Chief: correct stop. Reader repair queued as J2481; NAS check as J2482. Not reopened until both the repair is reviewed and the model price is re-checked."
         }
       ],
       "remaining_action": "Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Volumes/data NFS hang",
@@ -177304,9 +177317,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-10T04:15:06+00:00",
-        "recheck_task": "J2480"
+        "condition": "J2481 (Flow page readers repaired to the 10 Nov page, fixture tests, no generation) is merged after an independent review, and the Chief has re-run the price pass for the renamed image model (Nano Banana 2.1). Stopped correctly on 10 Nov: 0 of 20 made, 0 credits spent, 14,890 intact (HOS PR #465).",
+        "check_at": "2026-11-11T08:00:00+00:00",
+        "last_recheck": "J2480",
+        "checked_at": "2026-11-10T03:55:07+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -212610,13 +212625,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-10T03:00Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "parked for Chief: Needs Ben by hand: tried the pin once in MacBook HOS Studio window (CDP 9222, channel verified History of Science / UCXp7HkBIl1LgaznXuZHJyRg). Removed 'Response status: Unresponded' filter on VbPubYd6Fbs/comments, clicked Action menu -> Pin -> Confirm on comment UgyN-6wKr4EfDkXI1h54AaABAg ('So where does a tree's weight really come from?'). POST /youtubei/v1/comment/perform_comment_action (PerformPin_rid 0x82c878e67a73f97e) returned HTTP 200 and showed optimistic UI toast 'Comment pinned' + 'Pinned by @HistoryOfScienceYT' before reload, but did not persist server-side (same step-up re-auth gate as Mini J0958): after fresh reload and removing the Unresponded filter, 'Pinned by' badge is absent and the action menu still offers 'Pin'. Left comment open on screen in CDP 9222; nothing else touched, no new comment posted. HOS PR #464 (0e59bc9). £0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "Tried once, as asked. The pin showed 'Comment pinned' but did not persist after a reload: the same password re-check as on the Mini (J0958). Nothing else touched; evidence in HOS PR #464. This is Ben's own login, so the pin goes to him by hand (J0958).",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212712,6 +212727,11 @@
           "at": "2026-11-10T03:12Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Needs Ben by hand: tried the pin once in MacBook HOS Studio window (CDP 9222, channel verified History of Science / UCXp7HkBIl1LgaznXuZHJyRg). Removed 'Response status: Unresponded' filter on VbPubYd6Fbs/comments, clicked Action menu -> Pin -> Confirm on comment UgyN-6wKr4EfDkXI1h54AaABAg ('So where does a tree's weight really come from?'). POST /youtubei/v1/comment/perform_comment_action (PerformPin_rid 0x82c878e67a73f97e) returned HTTP 200 and showed optimistic UI toast 'Comment pinned' + 'Pinned by @HistoryOfScienceYT' before reload, but did not persist server-side (same step-up re-auth gate as Mini J0958): after fresh reload and removing the Unresponded filter, 'Pinned by' badge is absent and the action menu still offers 'Pin'. Left comment open on screen in CDP 9222; nothing else touched, no new comment posted. HOS PR #464 (0e59bc9). £0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-10T03:55Z",
+          "by": "claude",
+          "what": "done (acting Chief): Tried once, as asked. The pin showed 'Comment pinned' but did not persist after a reload: the same password re-check as on the Mini (J0958). Nothing else touched; evidence in HOS PR #464. This is Ben's own login, so the pin goes to him by hand (J0958)."
         }
       ],
       "remaining_action": "Commit evidence on macbook/J2461, open HOS PR, and block J2461 for Ben",
@@ -213247,19 +213267,19 @@
       "title": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n\n\n10 Nov 02:00Z, acting Chief (Claude) ruling on HOS 007 ETynHpIYLeY. HOS 099 is done; do not touch it again. Keep the J0959 title test: do not remove it and never press Continue on \"Run a new test?\". In the test panel use Edit title on arm A (now \"Why Vaccines Are Named After a Cow\") and set it to:\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\nLeave arm B (\"How Was the First Vaccine Made?\") as it is, so both arms lead with the search phrase. Then set line 1 of the description to the Proposed Line 1 in section 1 of RULE_26_TITLE_PASS_2026-11.md (a description edit is allowed while a test is set). If Studio will only take the new arm A by replacing the whole test, stop, change nothing, and say exactly what it showed. Read back: both arms, line 1, still private, still Thu 12 Nov 18:00 London. Add the read-back to HOS PR #463. Also add the rule 26 rows this job owes to orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (a new 'Rule 26 title changes' section).",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n\n\n10 Nov 02:00Z, acting Chief (Claude) ruling on HOS 007 ETynHpIYLeY. HOS 099 is done; do not touch it again. Keep the J0959 title test: do not remove it and never press Continue on \"Run a new test?\". In the test panel use Edit title on arm A (now \"Why Vaccines Are Named After a Cow\") and set it to:\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\nLeave arm B (\"How Was the First Vaccine Made?\") as it is, so both arms lead with the search phrase. Then set line 1 of the description to the Proposed Line 1 in section 1 of RULE_26_TITLE_PASS_2026-11.md (a description edit is allowed while a test is set). If Studio will only take the new arm A by replacing the whole test, stop, change nothing, and say exactly what it showed. Read back: both arms, line 1, still private, still Thu 12 Nov 18:00 London. Add the read-back to HOS PR #463. Also add the rule 26 rows this job owes to orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (a new 'Rule 26 title changes' section).\n\n10 Nov 04:00Z, acting Chief (Claude). Thank you for stopping. Studio deletes the whole test if one arm's title is edited, and replacing a set test is on the Never list; only Ben's own yes lifts that, so options (a) and (b) are his and go to him in the morning. Until he answers, option (c):\n1. Leave the J0959 title test exactly as it is. Arm B is already the search phrase (\"How Was the First Vaccine Made?\"), so half the viewers get a search-led title either way.\n2. Set description line 1 only, to the Proposed Line 1 in section 1 of RULE_26_TITLE_PASS_2026-11.md. Use the description field or redescribe-videos.ts. If saving the description also warns that the test will be deleted, cancel, change nothing and report.\n3. Read back: both arms unchanged, new line 1, still private, still Thu 12 Nov 18:00 London. Add it to HOS PR #463 and the STUDIO_TESTS.md row (OWB PR #704).\nIf Ben says yes to replacing the test before it airs, a new job will carry that; this job does not.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-10T03:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "parked for Chief: HOS 007 ETynHpIYLeY unchanged. Studio cannot edit one arm of the J0959 title test: 'Edit title' says 'Editing your video title will delete your A/B test including your other title options'; 'A/B testing' says 'Start a new experiment? This deletes your current experiment'. Cancelled both, changed nothing (description line 1 left too, per the stop rule). Test reads Ineligible; arms and line 1 unchanged; Scheduled. Chief to choose before Thu 12 Nov 18:00 London: (a) name a Never-list exception to replace the test with the two new titles, (b) drop the test and set the plain title, or (c) keep the test and set line 1 only. HOS 099 done earlier. Read-back: history-of-science PR #463 comment; log rows: orbit-with-ben PR #704. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213360,6 +213380,11 @@
           "at": "2026-11-10T03:20Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: HOS 007 ETynHpIYLeY unchanged. Studio cannot edit one arm of the J0959 title test: 'Edit title' says 'Editing your video title will delete your A/B test including your other title options'; 'A/B testing' says 'Start a new experiment? This deletes your current experiment'. Cancelled both, changed nothing (description line 1 left too, per the stop rule). Test reads Ineligible; arms and line 1 unchanged; Scheduled. Chief to choose before Thu 12 Nov 18:00 London: (a) name a Never-list exception to replace the test with the two new titles, (b) drop the test and set the plain title, or (c) keep the test and set line 1 only. HOS 099 done earlier. Read-back: history-of-science PR #463 comment; log rows: orbit-with-ben PR #704. £0."
+        },
+        {
+          "at": "2026-11-10T03:55Z",
+          "by": "claude",
+          "what": "reopened by acting Chief with option (c): keep the test, set description line 1 only. Worker's report before this: parked for Chief: HOS 007 ETynHpIYLeY unchanged. Studio cannot edit one arm of the J0959 title test: 'Edit title' says 'Editing your video title will delete your A/B test including your other title options'; 'A/B testing' says 'Start a new experiment? This deletes your current experiment'. Cancelled both, changed nothing (description line 1 left too, per the stop rule). Test reads Ineligible; arms and line 1 unchanged; Scheduled. Chief to choose before Thu 12 Nov 18:00 London: (a) name a Never-l"
         }
       ],
       "remaining_action": "Chief decides how HOS 007 gets its new title: Studio cannot edit one arm of the title test",
@@ -213378,14 +213403,7 @@
       "model": "mini-claude-opus-5-5",
       "taskKeys": [
         "HOS:007"
-      ],
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-10T03:20Z",
-        "by": "claudecode",
-        "note": "Read-back on HOS PR #463; STUDIO_TESTS rows in orbit-with-ben PR #704"
-      }
+      ]
     },
     {
       "id": "J2471",
@@ -213838,13 +213856,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T03:15Z",
-      "result": "",
+      "result": "Decided by acting Chief, 10 Nov: J2033 stays blocked on the reader repair J2481 (see J2033).",
       "history": [
         {
           "at": "2026-11-10T03:15Z",
@@ -213860,21 +213878,18 @@
           "at": "2026-11-10T03:49Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-10T03:55Z",
+          "by": "claude",
+          "what": "done: decided on J2033 directly"
         }
       ],
       "remaining_action": "Verify readiness: Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Vol",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-10T04:15:06+00:00",
-      "due_kind": "condition-verification",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T03:46Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "due_kind": "condition-verification"
     },
     {
       "id": "J2481",
