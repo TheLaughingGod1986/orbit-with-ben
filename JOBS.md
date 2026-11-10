@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2482 | mini | open | – | – | Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing) |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
-| J2491 | mini | open | – | – | Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722 |  |
+| J2491 | mini | claimed | claudecode | 2026-11-10T10:08Z | Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722 |  |
 
 Recently finished:
 
