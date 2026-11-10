@@ -212120,13 +212120,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T01:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:12Z",
-      "result": "parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:12Z",
@@ -212172,20 +212172,17 @@
           "at": "2026-11-10T01:01Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: Studio reads now go to Gemini on the MacBook or to the Mini, never the MacBook's Claude Code (OWB PR #694)"
         }
       ],
       "remaining_action": "Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
-      "plain": "Look in YouTube Studio to see whether four old thumbnail tests have finished, so the title tests waiting behind them can start.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-09T23:26Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "plain": "Look in YouTube Studio to see whether four old thumbnail tests have finished, so the title tests waiting behind them can start."
     },
     {
       "id": "J2458",
@@ -212354,13 +212351,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T01:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212401,21 +212398,18 @@
           "at": "2026-11-10T01:09Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: the Mini-only pin is live on main (OWB PR #694), so the MacBook is no longer offered this job"
         }
       ],
       "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
       "due": "2026-11-12T18:00:00Z",
       "kind": "studio",
       "plain": "Remove six unused Orbit playlists after moving anything that links to them, and tidy the three playlists we keep.",
-      "mini_only": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T01:08Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "mini_only": true
     },
     {
       "id": "J2461",
@@ -212428,13 +212422,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T01:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212475,20 +212469,17 @@
           "at": "2026-11-10T01:14Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: the MacBook worker's rule and agent choice are live on main (OWB PR #694); it runs on Gemini there"
         }
       ],
       "remaining_action": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
-      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T01:13Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password."
     },
     {
       "id": "J2462",
@@ -212621,7 +212612,7 @@
     {
       "id": "J2464",
       "title": "Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 9 Nov 2026: \"clean up the repo\". Plan: jobs/reviews/J2235/AUDIT.md (7 Nov). This job takes the dead and one-off code. Nothing is deleted: everything moves to _archive/ with `git mv`, keeping its path under _archive/ so it can be found again.\n\nRows, in order: F-02a (the retired /classic board), F-02b (15 dead functions in studio_app.js), F-02c (unwired browser tests), F-03a, F-03b, F-03c, F-07, F-04c (one-off scripts under jobs/reviews/), F-06, F-04b. For each one:\n1. Re-check it against today's main: confirm nothing imports, runs or links to the file (grep the repo, the launchd plists under scripts/mini and scripts/macbook, jobs/backlog.json, the workflows, package.json scripts and AGENTS.md). If something still uses it, leave it and say what.\n2. Files listed in studio-core/CORE_FILES.json are shared with History of Science: leave those for a separate job and list them.\n3. Move, then run the checks: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, python3 -m unittest discover -s scripts -p \"test_*.py\", python3 scripts/test_kanban_page.py. For F-02a and F-02b also build the board (cd 05_Analytics/kanban/board_site && python3 build.py) and confirm / and /tracker still render from dist.\n\nTwo PRs: one for the board rows (F-02a, F-02b, F-02c), one for the rest. Each description lists every row as moved, left (and why) or already done, with the size removed from the live tree. Park for Chief. The Chief redeploys the board after merging the first PR. No Studio, no spend.\n",
       "ref": "",
@@ -212629,13 +212620,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T01:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "parked for Chief: second time on the MacBook and git mv still needs approval here (even git mv -n), so no file can be moved to _archive/. Nothing moved, nothing deleted, no PR; local branch macbook/J2464 holds no work. Please pin to the Mini or another agent, or allow git mv on the MacBook worker.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -212666,23 +212657,23 @@
           "at": "2026-11-10T01:03Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: second time on the MacBook and git mv still needs approval here (even git mv -n), so no file can be moved to _archive/. Nothing moved, nothing deleted, no PR; local branch macbook/J2464 holds no work. Please pin to the Mini or another agent, or allow git mv on the MacBook worker."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the MacBook's Claude Code cannot run git mv, npm or git fetch --prune unattended and handed this back twice"
         }
       ],
       "remaining_action": "re-check rows, PR for non-board rows, PR for board rows, park for Chief",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow.",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-10T00:30Z",
-        "by": "macbook"
-      }
+      "mini_only": true
     },
     {
       "id": "J2465",
       "title": "Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 9 Nov 2026: \"remove vulnerabilities\". `npm audit` on 9 Nov reports known issues in the upload and analytics tooling: orbit-with-ben 07_Content-Ops has 15 (6 high, 9 moderate; zod, vite, vitest, typescript-eslint, js-yaml, brace-expansion, nanoid, source-map-js). history-of-science 07_Content-Ops has 23 (3 critical: next, concurrently, shell-quote; 12 high incl. prisma, sharp, postcss, zod).\n\nFor each repo, on its own branch:\n1. npm ci, then npm audit fix (never --force). In the cloud session `npm audit fix` and `npm update` both died with \"Cannot read properties of null (reading 'edgesOut')\"; if that happens here, remove node_modules and package-lock.json, run npm install, and check the lock diff only moves versions inside the ranges package.json already allows.\n2. Anything still listed needs a major version: do not take it blindly. List it with what would break and leave it for the Chief.\n3. Prove nothing broke: npm run typecheck, npm run lint, npm test. In history-of-science also build the app (npm run build) and run bash 00_Brand/Channel-Setup/tools/check_all.sh. Run the read-only commands that touch nothing live, if they exist: analytics:report and gate:episode on a finished film. Do not run youtube:package, buffer:mirror or anything that uploads, posts or spends.\n4. npm audit again and put the before and after counts in the PR.\n\nOne PR per repo. Park for Chief with both links and the counts. No Studio, no uploads, no spend.\n",
       "ref": "",
@@ -212690,13 +212681,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T00:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "parked for Chief: the MacBook worker cannot run npm at all (npm --version needs approval in unattended runs), so npm ci, audit fix, typecheck, lint, test and build cannot run here. Second time this job reached the MacBook (released once already on 10 Nov). Nothing changed, no branch made. Please pin it to the Mini (--for cursor or codex) or add npm to the MacBook allow-list.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -212727,23 +212718,23 @@
           "at": "2026-11-10T00:59Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: the MacBook worker cannot run npm at all (npm --version needs approval in unattended runs), so npm ci, audit fix, typecheck, lint, test and build cannot run here. Second time this job reached the MacBook (released once already on 10 Nov). Nothing changed, no branch made. Please pin it to the Mini (--for cursor or codex) or add npm to the MacBook allow-list."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the MacBook's Claude Code cannot run git mv, npm or git fetch --prune unattended and handed this back twice"
         }
       ],
       "remaining_action": "npm audit fix in both repos, verify, open two PRs",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Update the code libraries our upload and analytics tools depend on, where a known security problem has a safe fix.",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-10T00:58Z",
-        "by": "macbook"
-      }
+      "mini_only": true
     },
     {
       "id": "J2466",
       "title": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben, 9 Nov 2026: \"clean up the repo\". orbit-with-ben had 396 remote branches on 9 Nov; history-of-science has many too. GitHub now deletes a branch when its pull request merges (Ben turned that on 9 Nov), so this is a one-off for the old ones.\n\nIn each repo:\n1. git fetch --prune origin. List remote branches.\n2. A branch may be removed only if ALL of these hold: its tip is already contained in origin/main (git branch -r --merged origin/main), it has no open pull request (gh pr list --state open --head <branch>), and it is not one of the working branches: main, mini-heartbeat, macbook-heartbeat, macbook-heartbeat-2, board-data, the History of Science desk branch (the head of desk PR 180), any branch named in scripts/thread.json, studio-core, or a branch a launchd plist or workflow names.\n3. Write the full list to jobs/reviews/<this job id>/BRANCHES.md first: branch, tip sha, last commit date, and the reason it qualifies. That file is the way back: any branch can be recreated from its sha.\n4. Remove the qualifying branches with git push origin --delete, in batches of 50. Stop at the first error and report it.\n5. Report: how many removed, how many kept and why (not merged, open PR, working branch).\n\nBranches that are not fully in main are NOT removed in this job, whatever their age: list them separately with their PR state for the Chief. Commit BRANCHES.md on a branch, open a PR, park for Chief. No Studio, no spend.\n",
       "ref": "",
@@ -212751,13 +212742,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T01:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "parked for Chief: second time on the MacBook and git fetch --prune origin still needs approval here (so does gh api matching-refs), so the live remote branch list can't be read and local origin/* refs are stale. Deleting from a stale list is not safe. Nothing listed, nothing deleted, no BRANCHES.md, no PR. Please pin this to the Mini or allow git fetch on the MacBook worker.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -212783,20 +212774,18 @@
           "at": "2026-11-10T01:04Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: second time on the MacBook and git fetch --prune origin still needs approval here (so does gh api matching-refs), so the live remote branch list can't be read and local origin/* refs are stale. Deleting from a stale list is not safe. Nothing listed, nothing deleted, no BRANCHES.md, no PR. Please pin this to the Mini or allow git fetch on the MacBook worker."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the MacBook's Claude Code cannot run git mv, npm or git fetch --prune unattended and handed this back twice"
         }
       ],
       "remaining_action": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T00:33Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "mini_only": true
     },
     {
       "id": "J2467",
@@ -212961,19 +212950,19 @@
       "title": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n\n\n10 Nov 02:00Z, acting Chief (Claude) ruling on HOS 007 ETynHpIYLeY. HOS 099 is done; do not touch it again. Keep the J0959 title test: do not remove it and never press Continue on \"Run a new test?\". In the test panel use Edit title on arm A (now \"Why Vaccines Are Named After a Cow\") and set it to:\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\nLeave arm B (\"How Was the First Vaccine Made?\") as it is, so both arms lead with the search phrase. Then set line 1 of the description to the Proposed Line 1 in section 1 of RULE_26_TITLE_PASS_2026-11.md (a description edit is allowed while a test is set). If Studio will only take the new arm A by replacing the whole test, stop, change nothing, and say exactly what it showed. Read back: both arms, line 1, still private, still Thu 12 Nov 18:00 London. Add the read-back to HOS PR #463. Also add the rule 26 rows this job owes to orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (a new 'Rule 26 title changes' section).",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-10T01:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "parked for Chief: HOS 099 uAomPaOBrM8 done 10 Nov 01:44Z, read back from API and Studio: title 'Experiments That Changed the World (Blood, Germs and Atoms)', line 1 'Six experiments that changed the world: how did we prove how blood circulates, what trees are made of, and what hides in germs, X-rays and atoms?', Scheduled, private, 2026-12-10T18:00:00Z, rest of description and tags unchanged, no Test and Compare. HOS 007 ETynHpIYLeY NOT changed (airs Thu 12 Nov 18:00 London): Studio shows no plain title field, only 'A/B testing titles, Ineligible, Why Vaccines Are Named After a Cow / How Was the First Vaccine Made?, Edit title' (J0959 test); still private, 2026-11-12T18:00:00Z, old line 1. Chief call needed: put the approved title in as title A of the test, remove the test, or air on the test as set. PR https://github.com/TheLaughingGod1986/history-of-science/pull/463 (check_all passes). Still owed: the rule 26 rows in orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (no rule 26 section there yet; row text is in the 099 production-status). GBP 0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213039,6 +213028,11 @@
           "at": "2026-11-10T01:47Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: HOS 099 uAomPaOBrM8 done 10 Nov 01:44Z, read back from API and Studio: title 'Experiments That Changed the World (Blood, Germs and Atoms)', line 1 'Six experiments that changed the world: how did we prove how blood circulates, what trees are made of, and what hides in germs, X-rays and atoms?', Scheduled, private, 2026-12-10T18:00:00Z, rest of description and tags unchanged, no Test and Compare. HOS 007 ETynHpIYLeY NOT changed (airs Thu 12 Nov 18:00 London): Studio shows no plain title field, only 'A/B testing titles, Ineligible, Why Vaccines Are Named After a Cow / How Was the First Vaccine Made?, Edit title' (J0959 test); still private, 2026-11-12T18:00:00Z, old line 1. Chief call needed: put the approved title in as title A of the test, remove the test, or air on the test as set. PR https://github.com/TheLaughingGod1986/history-of-science/pull/463 (check_all passes). Still owed: the rule 26 rows in orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (no rule 26 section there yet; row text is in the 099 production-status). GBP 0."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened with the Chief's ruling (keep the test, edit arm A's title only). Worker's report before this: parked for Chief: HOS 099 uAomPaOBrM8 done 10 Nov 01:44Z, read back from API and Studio: title 'Experiments That Changed the World (Blood, Germs and Atoms)', line 1 'Six experiments that changed the world: how did we prove how blood circulates, what trees are made of, and what hides in germs, X-rays and atoms?', Scheduled, private, 2026-12-10T18:00:00Z, rest of description and tags unchanged, no T"
         }
       ],
       "remaining_action": "Chief decides how HOS 007 takes the approved title while its title test is set, and reviews PR 463",
@@ -213055,13 +213049,6 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-10T01:47Z",
-        "by": "claudecode",
-        "note": "099 records written and check_all passes; PR history-of-science#463 open. 007 untouched."
-      },
       "taskKeys": [
         "HOS:007",
         "HOS:099"
@@ -213072,19 +213059,19 @@
       "title": "Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the Orbit With Ben films that are still scheduled, in air-date order.\n\n1. c5AdqQsnnys (026, Sun 15 Nov): title becomes\n   How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n2. 6bbbvfCx6zY (027, Sun 22 Nov): title becomes\n   What If Earth Stopped Spinning? (It's Already Slowing Down)\n   and line 1 of the description becomes the \"Proposed Line 1\" in section 3.\n3. F-jImX5h7ws (028, Sun 29 Nov): title stays. Line 1 of the description becomes the \"Proposed Line 1\" in section 4.\n4. G5uMANXHtNU (031, Wed 2 Dec): title becomes\n   What Happens When Earth's Magnetic Field Flips? (183 Times So Far)\n   and line 1 as proposed in section 5.\n5. vP1BbqZ_dnM (029, Sun 6 Dec): title becomes\n   Is Betelgeuse About to Explode? (We'd See It in the Daytime Sky)\n   and line 1 as proposed in section 6.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- The report says 026 and 027 had title arms set under J2430. If a Test and Compare is set on a video and YouTube will not take the new title without removing it: stop on that video, change nothing, and say exactly what Studio showed (which arms, running or waiting). Never press Continue on \"Run a new test?\". The Chief then decides.\n- Use the usual retitle tool, or Orbit Studio on CDP 9223 (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: each film's package manifest, description file and upload record carry the new title and line 1; add a row per film to 05_Analytics/tests/STUDIO_TESTS.md with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec). One PR.\n\nPark for Chief with the five read-backs and the PR link. £0.\n",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the Orbit With Ben films that are still scheduled, in air-date order.\n\n1. c5AdqQsnnys (026, Sun 15 Nov): title becomes\n   How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n2. 6bbbvfCx6zY (027, Sun 22 Nov): title becomes\n   What If Earth Stopped Spinning? (It's Already Slowing Down)\n   and line 1 of the description becomes the \"Proposed Line 1\" in section 3.\n3. F-jImX5h7ws (028, Sun 29 Nov): title stays. Line 1 of the description becomes the \"Proposed Line 1\" in section 4.\n4. G5uMANXHtNU (031, Wed 2 Dec): title becomes\n   What Happens When Earth's Magnetic Field Flips? (183 Times So Far)\n   and line 1 as proposed in section 5.\n5. vP1BbqZ_dnM (029, Sun 6 Dec): title becomes\n   Is Betelgeuse About to Explode? (We'd See It in the Daytime Sky)\n   and line 1 as proposed in section 6.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- The report says 026 and 027 had title arms set under J2430. If a Test and Compare is set on a video and YouTube will not take the new title without removing it: stop on that video, change nothing, and say exactly what Studio showed (which arms, running or waiting). Never press Continue on \"Run a new test?\". The Chief then decides.\n- Use the usual retitle tool, or Orbit Studio on CDP 9223 (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: each film's package manifest, description file and upload record carry the new title and line 1; add a row per film to 05_Analytics/tests/STUDIO_TESTS.md with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec). One PR.\n\nPark for Chief with the five read-backs and the PR link. £0.\n\n\n10 Nov 02:00Z, acting Chief (Claude) ruling on 026 c5AdqQsnnys and 027 6bbbvfCx6zY. 028, 031 and 029 are done; do not touch them again. Keep both J2430 title-and-thumbnail tests (T022, T008): do not remove them and never press Continue on \"Run a new test?\". In each test panel use Edit title on arm A only, keep arm A's thumbnail, and leave arm B exactly as it is:\n   026 arm A title becomes: How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n   027 arm A title becomes: What If Earth Stopped Spinning? (It's Already Slowing Down)\nEach test then compares a search-led title with the 8 Nov story title, which is the question rule 26 asks. Also set 027's description line 1 as proposed in section 3 of the report. If Studio will only take a new arm A title by replacing the whole test, stop on that film, change nothing, and say exactly what it showed. Read back per film: both arms (title and thumbnail), still private, schedule unchanged. Update T022 and T008 in THUMB_LEDGER.json with the repo's tool (arm A title, date, 'rule 26, acting Chief 10 Nov') and add the two rows to STUDIO_TESTS.md; put them in PR #698.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-10T01:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "parked for Chief: 3 of 5 done and read back (028 F-jImX5h7ws line 1; 031 G5uMANXHtNU and 029 vP1BbqZ_dnM title + line 1; all private, schedules unchanged). 026 c5AdqQsnnys and 027 6bbbvfCx6zY NOT changed: YouTube 400 UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE; Studio shows 'A/B testing titles, Ineligible' with the two J2430 arms (T022, T008). Chief decides whether to remove those tests (026 airs Sun 15 Nov 18:00Z). Records: PR #698, not merged.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213135,6 +213122,11 @@
           "at": "2026-11-10T01:54Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: 3 of 5 done and read back (028 F-jImX5h7ws line 1; 031 G5uMANXHtNU and 029 vP1BbqZ_dnM title + line 1; all private, schedules unchanged). 026 c5AdqQsnnys and 027 6bbbvfCx6zY NOT changed: YouTube 400 UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE; Studio shows 'A/B testing titles, Ineligible' with the two J2430 arms (T022, T008). Chief decides whether to remove those tests (026 airs Sun 15 Nov 18:00Z). Records: PR #698, not merged."
+        },
+        {
+          "at": "2026-11-10T02:01Z",
+          "by": "claude",
+          "what": "reopened with the Chief's ruling (keep the test, edit arm A's title only). Worker's report before this: parked for Chief: 3 of 5 done and read back (028 F-jImX5h7ws line 1; 031 G5uMANXHtNU and 029 vP1BbqZ_dnM title + line 1; all private, schedules unchanged). 026 c5AdqQsnnys and 027 6bbbvfCx6zY NOT changed: YouTube 400 UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE; Studio shows 'A/B testing titles, Ineligible' with the two J2430 arms (T022, T008). Chief decides whether to remove those tests (026 "
         }
       ],
       "remaining_action": "Chief decides 026 and 027 (title tests block the retitle; 026 airs Sun 15 Nov) and merges PR #698",
@@ -213142,13 +213134,6 @@
       "kind": "studio",
       "plain": "Change the titles of five Orbit films waiting to air to the search-led versions the Chief approved.",
       "mini_only": true,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-10T01:54Z",
-        "by": "claudecode",
-        "note": "Records in PR #698"
-      },
       "taskKeys": [
         "OWB:026",
         "OWB:027",
