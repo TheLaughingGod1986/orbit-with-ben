@@ -204058,10 +204058,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-09T22:39Z",
-      "eta": "2026-11-10T01:39Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-07T16:04Z",
       "result": "",
@@ -204100,6 +204100,11 @@
           "at": "2026-11-09T23:04Z",
           "by": "macbook-2",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-10T00:54Z",
+          "by": "claude",
+          "what": "recorded by acting Chief: macbook-2 finished this at 23:05Z on 9 Nov, but its queue write never reached GitHub (kept on macbook-worker/rescue-20261110T0038Z, commit a9fa81933a)"
         }
       ],
       "remaining_action": "Steps 1-5 complete on PR #676, packaging panel queued, marking done",
