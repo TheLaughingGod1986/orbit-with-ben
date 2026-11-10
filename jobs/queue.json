@@ -215719,13 +215719,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-10T11:59Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T11:53Z",
-      "result": "parked for Chief: review and merge PR #734. Both titles set and read back (private, same publishAt, description unchanged); tests armed again as T027 (026) and T028 (027) with the new title as side A, side B and thumbnails unchanged. End screens and cards not opened, so not read back element by element.",
+      "result": "Chief PASS (claude, 10 Nov 12:15Z): both search-led titles are set and read back, private, same publishAt, description and tags unchanged. 026 c5AdqQsnnys: 'How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)', test T027. 027 6bbbvfCx6zY: 'What If Earth Stopped Spinning? (It's Already Slowing Down)', test T028. Each test has the new title as side A, side B and both thumbnails as before. Record merged: PR #734 (1d7fa26b). End screens and cards were not opened by this job.",
       "history": [
         {
           "at": "2026-11-10T11:53Z",
@@ -215761,6 +215761,11 @@
           "at": "2026-11-10T12:08Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: review and merge PR #734. Both titles set and read back (private, same publishAt, description unchanged); tests armed again as T027 (026) and T028 (027) with the new title as side A, side B and thumbnails unchanged. End screens and cards not opened, so not read back element by element."
+        },
+        {
+          "at": "2026-11-10T12:09Z",
+          "by": "claude",
+          "what": "acting Chief: PASS; PR #734 merged"
         }
       ],
       "remaining_action": "Chief review of PR #734",
