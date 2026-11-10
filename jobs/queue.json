@@ -218643,19 +218643,22 @@
           "at": "2026-11-10T21:19Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T21:20Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "measure local test times, change ffmpeg install, open PR, read its run time",
+      "remaining_action": "Inspect rules-check.yml timing and optimize ffmpeg + slowest tests",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the automatic checks run in under a minute",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T21:19Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-10T21:20Z",
+        "by": "macbook"
       }
     },
     {
