@@ -215297,7 +215297,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T09:34Z",
-      "result": "Chief decision (claude, 10 Nov): 16 of 20 pass. Re-cut the two that fail on one count and need only existing picture and voice: HZGTovJu_TQ (16 Nov) and cwU_0WWeNZ4 (18 Nov) -> J2494, swap only on Ben's OK, else the originals air. Pluto gmzaCfJF1gA (14 Nov) and Voyager kKN8Ale42sE (17 Nov) air as they are (three faults each, one may need a new voice take): they are the 'before' reading for rule 24. Table: jobs/reviews/J2493/SCHEDULED_SHORTS.md.",
+      "result": "Chief decision on the thread, 09:56Z 10 Nov (6764361317): re-cut all four FAILs, soonest air date first, each parked for Ben's watch before it replaces the scheduled upload -> J2494. Also: Studio read of bizlhspnVvY and UPLOADS.json fixes (in J2494). Table: jobs/reviews/J2493/SCHEDULED_SHORTS.md.",
       "history": [
         {
           "at": "2026-11-10T09:34Z",
@@ -215333,6 +215333,11 @@
           "at": "2026-11-10T10:14Z",
           "by": "claude",
           "what": "acting Chief: decided; re-cut job J2494 queued"
+        },
+        {
+          "at": "2026-11-10T10:17Z",
+          "by": "claude",
+          "what": "result corrected to the 09:56Z thread decision (all four); my later two-Short ruling withdrawn"
         }
       ],
       "remaining_action": "Chief picks which of the four failing Shorts to re-cut",
@@ -215349,10 +215354,10 @@
     },
     {
       "id": "J2494",
-      "title": "026 Nearest Star Shorts: re-cut the first second of HZGTovJu_TQ (16 Nov) and cwU_0WWeNZ4 (18 Nov) from existing picture and voice, gate, one watch card for Ben",
+      "title": "Scheduled Orbit Shorts: re-cut the first second of the four that fail rule 24 (Pluto 14 Nov, 026 nearest star 16 Nov, Voyager 17 Nov, 026 75,000 years 18 Nov), gate, Ben's watch",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief decision on J2493 (10 Nov). Two scheduled 026 Shorts fail the first-second gate (rule 24) on one count each, and both can be fixed with the picture and voice we already have. Re-cut those two. Nothing new is recorded or generated. £0.\n\nThe two:\n1. HZGTovJu_TQ \"If You Can't See the Nearest Star, How Far Away Is It?\" airs Mon 16 Nov 11:30Z. Fail: first cut at 4.80 s. Fix: bring the first cut inside 3.0 s.\n2. cwU_0WWeNZ4 \"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\" airs Wed 18 Nov 11:30Z. Fail: a still at frame 0 (movement 0.46, floor 1.50). Fix: open on moving footage.\n\nSource files and the readings: jobs/reviews/J2493/SCHEDULED_SHORTS.md (rows 6 and 8).\n\nSteps:\n1. Re-cut each from its existing project: same voice take, same words, same title, same length band. Only the opening picture changes. Save as the next version (v02) beside the original; do not overwrite v01.\n2. Run `gate_shorts_open.py check` on each new file (not report-only). Both must PASS, including the checks they passed before. Run the normal Shorts gates too (length, loudness, picture QA).\n3. If either cannot pass with existing picture, stop on that one and say why. Do not generate picture and do not spend.\n4. Copy both to Ben's watch folder and put ONE watch card on the board holding both (about 45 seconds of watching). Say on the card: \"Two Shorts re-cut so the first second moves. Same words. OK to swap them in?\"\n5. Park for Chief with the gate results. Do NOT upload, and do NOT touch the two scheduled videos. The swap is a separate step after Ben's OK.\n\nAfter Ben's OK (Chief queues it): upload the new cut as a new private video with the same title, description, tags and slot, then take the old one off the schedule (leave it private; never delete a video). Jobs J0861 (Related on the 026 Shorts) and J2021 (rule 17 measurement) name the old ids and must be given the new ones.\n\nIf Ben has not OK'd by Sun 15 Nov 18:00Z (first) or Tue 17 Nov 18:00Z (second), the original airs as scheduled. That is fine.\n\nAlso, read-only, from the same table: in Studio confirm bizlhspnVvY (comets v01) is not scheduled for 30 Nov, so only xvarZP2aYyE airs that day. Report what Studio shows; change nothing.\n\nNot in this job: gmzaCfJF1gA (Pluto, 14 Nov) and kKN8Ale42sE (Voyager, 17 Nov) air as they are. Each fails on three counts and one may need a new voice take; they stay as the \"before\" reading for rule 24.\n",
+      "body": "This job carries the Chief decision posted on the thread at 09:56Z on 10 Nov (comment 6764361317): re-cut all four scheduled Orbit Shorts that fail the first-second gate (rule 24), soonest air date first. An earlier version of this job named only two of them; that narrower version is withdrawn. Where this text and the 09:56Z thread decision differ, the thread decision wins.\n\nEach re-cut is parked for Ben's watch before it replaces the scheduled upload. Do not touch YouTube until he passes it. £0: no generated picture.\n\nIn this order:\n1. gmzaCfJF1gA \"Why Does Pluto's Giant Ice Heart Have Zero Craters?\" airs Sat 14 Nov 11:30Z. Least time, so first. Open on motion, not a still at frame 0; first cut inside 3.0 s. If \"stay, and I'll show you\" is its own sentence, trim it; otherwise one new voice take of the opening sentence only.\n2. HZGTovJu_TQ \"If You Can't See the Nearest Star, How Far Away Is It?\" airs Mon 16 Nov 11:30Z. Existing picture and voice; bring the first cut forward (now 4.80 s).\n3. kKN8Ale42sE \"How Far From Earth Is Voyager 1 Right Now?\" airs Tue 17 Nov 11:30Z. Same treatment as Pluto. The local file does not match the uploaded sha256: first find the export whose sha256 matches what is on YouTube and work from that. If none matches, say so and stop on this one.\n4. cwU_0WWeNZ4 \"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\" airs Wed 18 Nov 11:30Z. Existing picture and voice; open on motion.\n\nFor each: save as the next version beside the original (never overwrite), run `gate_shorts_open.py check` (not report-only) and the normal Shorts gates; it must PASS, including what it passed before. Then copy to Ben's watch folder. Put the re-cuts on as few watch cards as possible (one card can hold several) and say on the card what changed in plain words: \"Re-cut so the first second moves. OK to swap it in?\"\n\nPark for Chief with the gate results. Do NOT upload and do NOT touch the scheduled videos. The swap is a separate step after Ben's OK: upload the new cut as a new private video with the same title, description, tags and slot, then take the old one off the schedule (leave it private; never delete a video). J0861 (Related on the 026 Shorts) and J2021 (rule 17 measurement) name the old ids and must be given the new ones.\n\nIf Ben has not passed a re-cut by 18:00Z the day before its slot, the original airs as scheduled.\n\nRecords, change nothing on YouTube:\n- In Studio, read whether bizlhspnVvY (comets v01) is unscheduled, with xvarZP2aYyE holding 30 Nov. Fix UPLOADS.json to match Studio.\n- Add the five missing publishAt values to UPLOADS.json from the 10 Nov snapshot.\n\nNot in this job: ffYKoNVPoqg and B1z2dv7m7Vk air inside 48 h and stay as they are.\n\nReadings and file paths: jobs/reviews/J2493/SCHEDULED_SHORTS.md.\n",
       "ref": "",
       "film": "026",
       "stage": "edit",
@@ -215385,12 +215390,17 @@
           "at": "2026-11-10T10:16Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Found v01 build script and the v06 picture on the NAS; v02-v04 names are taken by older voice-changing cuts, so the new files are mon16 v04 and wed18 v05"
+        },
+        {
+          "at": "2026-11-10T10:17Z",
+          "by": "claude",
+          "what": "scope set to the Chief decision posted on the thread at 09:56Z (6764361317): all four, soonest first; the two-Short version of this job is withdrawn"
         }
       ],
-      "remaining_action": "Re-cut the opening picture of both Shorts from the v01 build",
-      "due": "2026-11-13T18:00:00Z",
+      "remaining_action": "Re-cut Pluto gmzaCfJF1gA first (airs 14 Nov), then the other three by air date",
+      "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
-      "plain": "Re-cut the opening second of two scheduled Nearest Star Shorts so they start on movement, then ask Ben to watch both",
+      "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
         "step": 0,
         "of": 5,
