@@ -217115,10 +217115,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-10T16:28Z",
-      "eta": "2026-11-10T18:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T16:25Z",
       "result": "",
@@ -217137,19 +217137,30 @@
           "at": "2026-11-10T16:37Z",
           "by": "macbook-2",
           "what": "step 1 of 3 done: Read MacBook pmset, clamshell state, Tailscale status, and launchd plists"
+        },
+        {
+          "at": "2026-11-10T16:40Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done: MacBook item 9 + Tailscale item 6 + launchd plist inventory recorded in PR #750 (jobs/reviews/J2517/REPORT.md)"
+        },
+        {
+          "at": "2026-11-10T16:40Z",
+          "by": "macbook-2",
+          "what": "released: MacBook item 9 + Tailscale item 6 + repo launchd plists recorded in PR #750; pinned mini_only=true and released for Mac mini (ben-mac-mini) to run local host checks 1-5, 7, 8"
         }
       ],
-      "remaining_action": "Write MacBook item 9 + Tailscale item 6 + launchd plist inventory to jobs/reviews/J2517/REPORT.md, then hand J2517 to the Mac mini for items 1-5, 7, 8",
+      "remaining_action": "On the Mac mini (ben-mac-mini), fill in items 1-5, 7, and 8 in jobs/reviews/J2517/REPORT.md (PR #750), complete the summary table, and park for Chief",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-10T16:37Z",
+        "at": "2026-11-10T16:40Z",
         "by": "macbook-2",
-        "note": "Read MacBook pmset, clamshell state, Tailscale status, and launchd plists"
-      }
+        "note": "MacBook item 9 + Tailscale item 6 + launchd plist inventory recorded in PR #750 (jobs/reviews/J2517/REPORT.md)"
+      },
+      "mini_only": true
     },
     {
       "id": "J2518",
