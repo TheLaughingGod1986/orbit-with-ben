@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
 | J2516 | cloud | open | – | – | review · Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one |  |
 | J2517 | mini | claimed | macbook-2 | 2026-11-10T18:28Z | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
+| J2518 | any | open | – | – | review · Verify condition for J2033 |  |
 
 Recently finished:
 
