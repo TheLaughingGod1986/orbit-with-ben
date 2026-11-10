@@ -1,5 +1,5 @@
 {
-  "next_id": 2499,
+  "next_id": 2500,
   "jobs": [
     {
       "id": "J0001",
@@ -215859,6 +215859,36 @@
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Lay out the Darwin film on its voice-over with what is already built, to prove the timing before any credits are spent"
+    },
+    {
+      "id": "J2499",
+      "title": "HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling, corrected 10 Nov (thread): 013's first mint pass is approved, capped at 5,030 Flow credits, to run as soon as its runner is tested and reviewed. Ben, 10 Nov: \"We should have plenty of credits.\" He is right: the balance is 14,890 and the AI Ultra plan resets on Thu 12 Nov 19:13 (Flow panel, read 5 Nov). Credits are not the limit; a tested runner is. This job builds it. It generates nothing.\n\nBuild the 013 mint runner on the tested shared guards (J2200) and the 009 tranche-2 runner as repaired in history-of-science #468 and #470. Do not copy an older runner that keeps takes automatically.\n\nScope: exactly the 71 mint rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v01.json` (48 Quality, 23 Fast), by row id and prompt hash. Nothing outside that list.\n\nGuards, all tested without submitting anything: right account and plan, right model and length for each row (Quality 8 s or Fast 8 s, 16:9, x1), the live price read before each batch (100 and 10 credits), the live balance, pending charges and other films' reservations counted, a cap of 5,030 for the first pass and at most 1 take per row in it, at most 5 rows or 1,000 credits per batch, the shared writer lock, a second process refused, a missing style reference refused, scope drift refused. Takes are saved as GENERATED / PENDING_REVIEW, never KEEP, with receipts and sha256-checked copies on the NAS.\n\nOrder inside the first pass: Part 01 first (it carries the first 30 seconds and the Shorts' opening frames), then Parts 02 to 06.\n\nDeliver the runner, its tests and a dry-run report in a pull request on history-of-science. Park for Chief. The Chief reviews the guards against the live Flow panel and then queues the mint itself.\n\nNo generation, no Create click, £0.\n",
+      "ref": "",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T12:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T12:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet"
     }
   ],
   "focus": [
