@@ -1,5 +1,5 @@
 {
-  "next_id": 2477,
+  "next_id": 2478,
   "jobs": [
     {
       "id": "J0001",
@@ -213505,6 +213505,39 @@
       "remaining_action": "HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest",
       "due": "2026-11-19T00:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J2477",
+      "title": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review 032 Titan long master v02 (`032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`, SHA-256 `519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, 585.44 s, 1920x1080 30 fps CFR), assembled in J2436 with the re-cut first 30 seconds (FIRST30_PLAN.md, J2435). It is on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_*/` and already copied to NAS `OWB UAT` and iCloud `OWB UAT`.\n\n1. Watch and listen with `moving_video_input` and `audio_input`. Check the first 30 seconds against the first-30s rule (AGENTS.md, PR #665), the Teach-on-screen and Polish-pass gates, and the contact sheets.\n2. Verify the five automated gates J2436 reported (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level; about -14 LUFS, at most -1.0 dBTP, 0 black frames) still PASS on this exact file.\n3. Write `jobs/reviews/<this-job-id>/REVIEW.md` with KEEP or a FIX list (timecodes). On FIX, queue the fix job for the film.\n4. On KEEP: verify the SHA-256 of the copies in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's watch (target Sun 16 Nov; the film airs Wed 25 Nov 18:00 London), and advance `WIP.json` per AGENTS.md \"How films get worked on\".\n\nNo upload, no spend. £0.\n",
+      "ref": "",
+      "film": "032",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ]
     }
   ],
   "focus": [
