@@ -498,3 +498,61 @@ APFS Containers (4 found)
         FileVault:                 No
 
 ```
+
+## Follow-up, 10 Nov (about 10:10 to 10:40 UTC)
+
+### The real cause, and its state now
+
+The hang was not a missing permission. From about 9 Nov evening until about 09:36 UTC on 10 Nov, macOS's file-permission approvals were stuck system-wide. The kernel log showed many lines per second like:
+
+```
+kernel (Sandbox) watchdog expired for approval entry 6421842 (kTCCServiceSystemPolicyRemovableVolumes, pid 63981)
+```
+
+for many programs and services at once (removable volumes, network volumes, Full Disk Access, Downloads, Movies). Nothing answered the kernel's approval requests, so every read of a guarded folder hung, with or without sudo, and no dialog ever appeared. That explains the relay hang, the frozen `du` scans and the fact that switching on Full Disk Access for Python.app changed nothing at first.
+
+**It has cleared.** At 10:11 UTC: no "watchdog expired" lines in the last minute; `ls /Volumes/MiniWork/desk`, `~/Desktop`, `~/Movies` and `~/.Trash` all answer at once. `/usr/libexec/sandboxd` is a new process started at about 09:36 UTC. **I did not restart it in this session** (Step 2 was skipped because the fault was already gone); I do not know what restarted it. Python.app has Full Disk Access (Ben switched it on at about 08:50 UTC).
+
+### Relay
+
+Healthy, not restarted. Last "SSD check got no answer" line: 09:27:21. The run that started J2033 at 10:09:46 logged no SSD line, and J2452 before it ended with exit 0. Codex is flagged out of credit (weekly limit 99% used).
+
+### Worktrees
+
+Of the 19 in the J2445 table:
+
+- **18 were already gone** from `~/_desk/worktrees` when I checked, removed by something other than this session. The SSD went from 26 GiB to 17 GiB used.
+- **1 skipped: `J2206-owb-reach`.** It is clean, but its HEAD (`71672183b`) is on no remote branch: `origin/cursor/J2206-owb-reach` no longer exists and the commit is not an ancestor of `origin/main`. The commit is still on the local branch `cursor/J2206-owb-reach`. Left in place.
+- **0 removed by me.** `git worktree prune` run in both checkouts.
+
+12 other entries remain in `~/_desk/worktrees`; they were not on the list and were not touched.
+
+### Where the missing space is
+
+`sudo du -xhd 3 /System/Volumes/Data` now completes. It totals **163 GiB**, matching what `df` said last night, so the space is located:
+
+| Where | GiB | Earlier reports said |
+|---|---:|---|
+| `~/Library` | 39 | 17 |
+| of which `~/Library/Messages` | 9.2 | not measured |
+| of which `~/Library/Application Support` | 17 | 14 |
+| of which `~/Library/Metadata` | 3.3 | not measured |
+| of which `~/Library/Group Containers` | 2.4 | 0.2 |
+| `/Users/michelleoats` (5.8 of it in her Library) | 6.2 | not measured |
+| `/.Spotlight-V100` (search index) | 5.8 | not measured |
+| `~/Pictures` | 1.8 | not measured |
+| `/private/var` (db 3.1, folders 3.7) | 7.3 | about 6 |
+
+`~/Movies`, `~/Documents` and `~/.Trash` are effectively empty. Top-level totals: `~` 116, `/Users` 122, `/private` 14, `/Library` 7.2, `/System` 5.2, `/Applications` 4.9, `/opt` 3.3.
+
+Added to the "looks safe to clear" list (nothing cleared):
+
+| What | Frees | Note |
+|---|---:|---|
+| `~/Library/Messages` (attachments) | up to 9 GiB | Personal data; Ben's call. Can be trimmed from the Messages settings. |
+| `/private/tmp` worktrees (`codex-*`, `*-wt`, about 0.5 GiB each) | up to 6 GiB | Check each is clean and pushed first. |
+| `/Users/michelleoats` | 6.2 GiB | Only if the account is no longer needed. |
+
+### Open: 9 GiB newer than the scan
+
+`df` now reports **172 GiB used, 27 GiB free (87%)**, against 163 GiB used and 38 GiB free last night. The `du` total is 163 GiB, so about 9 GiB is in use that `du` does not see. I have not found where. Known growth overnight: `~/_desk` went from 5.5 to 10 GiB (new `wt-J2478` 1.2, `worker` 1.4, `J2470` 0.8) and `/private/tmp` from 5.9 to 6.5 GiB. Free space fell 11 GiB in about 10 hours, so this needs watching.
