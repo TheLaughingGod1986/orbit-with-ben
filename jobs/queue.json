@@ -216174,13 +216174,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T16:40Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T12:36Z",
-      "result": "parked for Chief: HOS PR #478 (1c5d1f3e -> main) delivers HOS 013 pass-1 Flow mint runner (_mint_flow_v01_pass1.py), 21/21 offline guard tests, and dry-run report (71 rows: 48Q/23F = 5,030 credits, 15 batches, Part 01 -> Part 06; 0 submissions, 0 Create clicks, £0); ready for Chief review against live Flow panel and mint queue",
+      "result": "PASS, acting Chief (Claude) 10 Nov: history-of-science #478 merged (1e7c7085). Read the runner against the reviewed 009 runner: same shared-ledger events, account checks match, model and price checked for each row before the trusted click, unarmed by default; 21 tests pass on a clean checkout. The mint is J2529, after J2033: 009's runner keeps 3,000 spare and never settles its charges, so 013's reservation must come after 009's 20 rows. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T12:36Z",
@@ -216231,9 +216231,14 @@
           "at": "2026-11-10T17:23Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #478 (1c5d1f3e -> main) delivers HOS 013 pass-1 Flow mint runner (_mint_flow_v01_pass1.py), 21/21 offline guard tests, and dry-run report (71 rows: 48Q/23F = 5,030 credits, 15 batches, Part 01 -> Part 06; 0 submissions, 0 Create clicks, £0); ready for Chief review against live Flow panel and mint queue"
+        },
+        {
+          "at": "2026-11-10T17:57Z",
+          "by": "claude",
+          "what": "done: PASS, acting Chief (Claude) 10 Nov: history-of-science #478 merged (1e7c7085). Read the runner against the reviewed 009 runner: same shared-ledger events, account checks match, model and price checked for each row before the trusted click, unarmed by default; 21 tests pass on a clean checkout. The mint is J2529, after J2033: 009's runner keeps 3,000 spare and never settles its charges, so 013's reservation must come after 009's 20 rows. GBP 0."
         }
       ],
-      "remaining_action": "Waiting for Chief review of HOS PR #478 against live Flow panel before queuing HOS 013 pass-1 mint",
+      "remaining_action": "",
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet",
@@ -217420,13 +217425,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T17:43Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "parked for Chief: PR #753 open (branch macbook/J2521), review and merge. Counted lines 27 -> 1: uat_outlook 14 -> 1, video_progress 8 -> 0, channel_balance 4 -> 0, packaging_panel 1 -> 0; ratchet total 327 -> 301. The one line left is uat_outlook's milestoneSchema id 'studio-nine-stages-hos-aliases-v2': progress24.py uses it as its comparison basis, so renaming it changes behaviour (resets the board's progress comparison). Chief to decide. New channels.pipeline(slug); no new channel.json field. Tests: test_channel* 69 pass (4 new, made-up third channel), uat_outlook 24, video_progress 6, test_video_* 40, test_kanban* 24, sync_rules and studio status checks OK. GBP 0.",
+      "result": "PASS, acting Chief (Claude) 10 Nov: #753 merged (bf72b417). Old and new code give identical output on the live board data and on both channels' history; CI green. The one line left stays: `studio-nine-stages-hos-aliases-v2` is the name of a data format that progress24.py compares, not a channel; renaming it would reset the board's progress comparison. Ceiling for uat_outlook.py stays at 1 until the move. Ratchet total 327 -> 301. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217442,9 +217447,14 @@
           "at": "2026-11-10T17:49Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #753 open (branch macbook/J2521), review and merge. Counted lines 27 -> 1: uat_outlook 14 -> 1, video_progress 8 -> 0, channel_balance 4 -> 0, packaging_panel 1 -> 0; ratchet total 327 -> 301. The one line left is uat_outlook's milestoneSchema id 'studio-nine-stages-hos-aliases-v2': progress24.py uses it as its comparison basis, so renaming it changes behaviour (resets the board's progress comparison). Chief to decide. New channels.pipeline(slug); no new channel.json field. Tests: test_channel* 69 pass (4 new, made-up third channel), uat_outlook 24, video_progress 6, test_video_* 40, test_kanban* 24, sync_rules and studio status checks OK. GBP 0."
+        },
+        {
+          "at": "2026-11-10T17:57Z",
+          "by": "claude",
+          "what": "done: PASS, acting Chief (Claude) 10 Nov: #753 merged (bf72b417). Old and new code give identical output on the live board data and on both channels' history; CI green. The one line left stays: `studio-nine-stages-hos-aliases-v2` is the name of a data format that progress24.py compares, not a channel; renaming it would reset the board's progress comparison. Ceiling for uat_outlook.py stays at 1 until the move. Ratchet total 327 -> 301. GBP 0."
         }
       ],
-      "remaining_action": "Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0)",
+      "remaining_action": "",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Make four more studio tools work for any channel, not only our two",
