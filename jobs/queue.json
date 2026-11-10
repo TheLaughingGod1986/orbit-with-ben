@@ -177662,9 +177662,14 @@
           "at": "2026-11-10T21:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T21:27Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Batch 2 PASS (7/20 GENERATED, 0 KEEP, 700cr spent; all 7 clips 1280x720 7.92s silent decode_ok, NAS sha256 & frame-0 identity verified); starting Batch 3"
         }
       ],
-      "remaining_action": "Wait for detached batch 2 (.done file), verify 7/20 clips, then mint batches 3-5",
+      "remaining_action": "Mint Batch 3 (rows 8-12 of 20), then Batches 4-5",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177679,11 +177684,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-10T20:30Z",
+        "at": "2026-11-10T21:27Z",
         "by": "gemini",
-        "note": "Batch 1 PASS (2/20); Batch 2 running detached in tmux hos009-tranche2 (4/20 GENERATED, 0 KEEP, 400cr spent, 5th take sub"
+        "note": "Batch 2 PASS (7/20 GENERATED, 0 KEEP, 700cr spent; all 7 clips 1280x720 7.92s silent decode_ok, NAS sha256 & frame-0 ide"
       },
       "plain": "Make the last twenty pictures for the History of Science film 009",
       "urgent": 5
