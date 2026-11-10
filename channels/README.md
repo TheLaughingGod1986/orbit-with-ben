@@ -20,5 +20,10 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
 - `pipeline`: where its film state lives.
 - `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
 
-To add a channel, copy a folder, change the values, and open a PR. Phase 2 moves each folder into its channel's own
-repo as `studio/`.
+To add a channel (10 Nov 2026): `python3 scripts/channel_new.py <slug> --label ABC --name "Channel Name"` makes its
+folder from `channels/_template/` with a filled-in `studio/channel.json`, and runs `scripts/channel_check.py` on it.
+The command prints the steps after that: Ben creates the GitHub repo and does the YouTube sign-in and voice, the
+folder is pushed there, and one line goes in `channels.json`. `python3 scripts/channel_check.py --all` says, for
+every channel checked out on the machine, whether the studio can drive it and what is still to do.
+
+`channels/_template/` is not a channel: it has no `channel.json` of its own and is not in the registry.
