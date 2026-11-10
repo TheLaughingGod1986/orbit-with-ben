@@ -60,9 +60,9 @@ def films_for(slug: str, root: Path | None = None) -> list[dict]:
             for f in channel_films.films(slug, root) if f["air"]]
 
 
-def priority(owb: list[dict], hos: list[dict], today: dt.date, n: int = 3) -> dict:
-    """The two-channel form the tests and older callers use."""
-    return priority_all({"owb": owb, "hos": hos}, today, n)
+def priority(first: list[dict], second: list[dict], today: dt.date, n: int = 3) -> dict:
+    """The two-channel form the tests and older callers use: the first two channels, in registry order."""
+    return priority_all(dict(zip(channels.slugs(), (first, second))), today, n)
 
 
 def priority_all(by_channel: dict, today: dt.date, n: int = 3) -> dict:
@@ -91,13 +91,16 @@ def priority_all(by_channel: dict, today: dt.date, n: int = 3) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--hos", type=Path, default=None, help="History of Science checkout (default: channels.repo_path)")
+    # One flag per channel that lives in another repo (--<slug> <checkout>); the registry decides which exist.
+    elsewhere = [c for c in channels.slugs() if channels.checkout(c) != channels.ROOT]
+    for c in elsewhere:
+        ap.add_argument(f"--{c}", type=Path, default=None, help=f"{channels.name(c)} checkout (default: channels.repo_path)")
     ap.add_argument("--today", default=None)
     ap.add_argument("--months", type=int, default=3)
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     today = dt.date.fromisoformat(a.today) if a.today else dt.date.today()
-    res = priority_all({c: films_for(c, a.hos if c == "hos" else None) for c in channels.slugs()}, today, a.months)
+    res = priority_all({c: films_for(c, getattr(a, c, None)) for c in channels.slugs()}, today, a.months)
     if a.json:
         print(json.dumps(res, indent=2))
         return 0

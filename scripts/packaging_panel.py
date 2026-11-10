@@ -61,7 +61,7 @@ def queue(data: dict, what: str, files: list, slug: str, by: str = "claude", at=
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--slug", required=True, help="folder name under 05_Analytics/tests/panels, e.g. owb-024-lightspeed")
+    p.add_argument("--slug", required=True, help="folder name under 05_Analytics/tests/panels, e.g. <channel>-024-lightspeed")
     p.add_argument("--what", required=True, help="what is being judged, e.g. '024 Light Speed upload package'")
     p.add_argument("--files", nargs="*", default=[])
     p.add_argument("--by", default="claude")

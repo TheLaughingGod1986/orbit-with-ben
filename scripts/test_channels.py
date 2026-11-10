@@ -189,6 +189,90 @@ class ThirdChannelOnTheBoard(unittest.TestCase):
         self.assertEqual([(c["channel"], c["title"], c["type"]) for c in cards], [("SKY", "Orion", "long")])
 
 
+class ThirdChannelInTheForecasts(unittest.TestCase):
+    """J2521: uat_outlook, video_progress and channel_balance take a made-up third channel from the registry."""
+
+    def sky(self, **pipeline):
+        base = channels._load()
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", short="Sky",
+                   home=False, order=3, title_match=r"\bSKY\b", stages=["script", "edit", "upload"], pipeline=pipeline,
+                   repo={"env": "SKY_REPO", "checkouts": ["night-sky"]})
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def repo(self, tmp, path, doc):
+        import subprocess
+        root = pathlib.Path(tmp)
+        (root / path).parent.mkdir(parents=True, exist_ok=True)
+        (root / path).write_text(json.dumps(doc))
+        at = "2026-10-17T10:00:00Z"
+        for args in (["init", "-q"], ["add", "."],
+                     ["-c", "user.name=Test", "-c", "user.email=test@example.test", "commit", "-qm", "x"]):
+            subprocess.run(["git", "-C", str(root), *args], check=True, capture_output=True,
+                           env={**__import__("os").environ, "GIT_AUTHOR_DATE": at, "GIT_COMMITTER_DATE": at})
+        return root
+
+    def test_the_loader_says_how_a_channel_keeps_its_films(self):
+        self.assertEqual(channels.pipeline("owb")["kind"], "film_status")
+        self.assertEqual(channels.pipeline("HOS")["kind"], "pipeline_json")
+        with self.sky():
+            self.assertEqual(channels.pipeline("sky"), {})
+
+    def test_video_progress_reads_a_third_channels_past_by_its_pipeline_kind(self):
+        import datetime as dt
+        import video_progress as vp
+        cutoff = dt.datetime(2026, 10, 18, tzinfo=dt.timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp, self.sky(kind="film_status", path="films/*/status.json"):
+            root = self.repo(tmp, "films/001_Orion/status.json", {"film": "001", "stages": {"edit": {"state": "doing"}}})
+            got = vp.historical_stages(root, "SKY", cutoff, {})
+            self.assertEqual(got["films"]["SKY:001"]["stages"], {"edit": {"state": "doing"}})
+            self.assertEqual([d["key"] for d in got["definitions"]], ["script", "edit", "upload"])
+            self.assertAlmostEqual(got["definitions"][0]["weight"], 100 / 3)
+        with tempfile.TemporaryDirectory() as tmp, self.sky(kind="pipeline_json", path="plan/PIPELINE.json"):
+            root = self.repo(tmp, "plan/PIPELINE.json", {"stages": [{"key": "edit", "weight": 60}],
+                                                         "films": [{"id": "002", "stages": {"edit": {"status": "done"}}}]})
+            nowhere = pathlib.Path(tmp) / "absent"
+            doc = vp.progress_document_all({"owb": nowhere, "hos": nowhere, "sky": root}, [], tmp,
+                                           at=dt.datetime(2026, 10, 19, tzinfo=dt.timezone.utc))
+            day = doc["periods"]["day"]["channels"]
+            self.assertEqual(list(day), ["OWB", "HOS", "SKY"])
+            self.assertEqual(day["SKY"]["films"]["SKY:002"]["stages"]["edit"]["status"], "done")
+            self.assertEqual(day["SKY"]["definitions"], [{"key": "edit", "weight": 60}])
+            self.assertFalse(day["OWB"]["available"])
+
+    def test_uat_outlook_gives_a_third_channels_film_its_milestones(self):
+        import datetime as dt
+        import uat_outlook as uo
+        now = dt.datetime(2026, 11, 2, 18, tzinfo=dt.timezone.utc)
+        done = {key: {"state": "done"} for key in uo.PLAN}
+        video = dict(key="SKY:001", channel="SKY", type="long", lane="progress")
+        with self.sky(kind="pipeline_json", path="plan/PIPELINE.json"), \
+                mock.patch.object(uo, "history_samples", return_value={}) as read:
+            uo.attach_all([video], {"owb": [], "hos": {}, "sky": {"films": [{"id": "001", "stages": done}]}}, [], now)
+            self.assertEqual(uo.film_records("SKY", {"films": [{"id": 7}]}), [("SKY:7", {"id": 7})])
+        self.assertEqual(video["production"]["completed"], 9)
+        self.assertIn(("plan/PIPELINE.json", "SKY"), [c.args[1:] for c in read.call_args_list])
+        with self.sky(kind="film_status", path="films/*/status.json"):
+            self.assertEqual(uo.film_records("sky", [{"film": "003"}]), [("SKY:003", {"film": "003"})])
+
+    def test_channel_balance_takes_a_checkout_flag_for_each_channel_kept_elsewhere(self):
+        import contextlib
+        import io
+        import channel_balance as cb
+        import channel_films
+        seen = {}
+        with self.sky(kind="pipeline_json", path="plan/PIPELINE.json"), \
+                mock.patch.dict(cb.NAMES, {"sky": "Night Sky"}), \
+                mock.patch.object(channel_films, "films", side_effect=lambda slug, root=None: seen.update({slug: root}) or []), \
+                contextlib.redirect_stdout(io.StringIO()) as out:
+            self.assertEqual(cb.main(["--sky", "/tmp/sky", "--hos", "/tmp/h", "--today", "2026-10-09", "--json"]), 0)
+            self.assertEqual(cb.priority([], [], T_BALANCE)["channels"].keys(), {"owb", "hos"})
+        self.assertEqual(seen, {"owb": None, "hos": pathlib.Path("/tmp/h"), "sky": pathlib.Path("/tmp/sky")})
+        self.assertEqual(set(json.loads(out.getvalue())["channels"]), {"owb", "hos", "sky"})
+
+
+T_BALANCE = __import__("datetime").date(2026, 10, 9)
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",
