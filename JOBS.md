@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
-| J2499 | mini | claimed | gemini | 2026-11-10T18:40Z | 013 picture · assembly · HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review |  |
+| J2499 | mini | blocked | gemini | – | 013 picture · assembly · HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review |  |
 | J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |

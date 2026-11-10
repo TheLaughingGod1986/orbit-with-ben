@@ -216149,13 +216149,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T16:40Z",
-      "eta": "2026-11-10T18:40Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T12:36Z",
-      "result": "",
+      "result": "parked for Chief: HOS PR #478 (1c5d1f3e -> main) delivers HOS 013 pass-1 Flow mint runner (_mint_flow_v01_pass1.py), 21/21 offline guard tests, and dry-run report (71 rows: 48Q/23F = 5,030 credits, 15 batches, Part 01 -> Part 06; 0 submissions, 0 Create clicks, £0); ready for Chief review against live Flow panel and mint queue",
       "history": [
         {
           "at": "2026-11-10T12:36Z",
@@ -216201,6 +216201,11 @@
           "at": "2026-11-10T17:23Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened HOS PR #478 (1c5d1f3e -> main) with _mint_flow_v01_pass1.py, 21/21 passing guard tests, and dry-run report; 0 submissions, £0"
+        },
+        {
+          "at": "2026-11-10T17:23Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS PR #478 (1c5d1f3e -> main) delivers HOS 013 pass-1 Flow mint runner (_mint_flow_v01_pass1.py), 21/21 offline guard tests, and dry-run report (71 rows: 48Q/23F = 5,030 credits, 15 batches, Part 01 -> Part 06; 0 submissions, 0 Create clicks, £0); ready for Chief review against live Flow panel and mint queue"
         }
       ],
       "remaining_action": "Waiting for Chief review of HOS PR #478 against live Flow panel before queuing HOS 013 pass-1 mint",
