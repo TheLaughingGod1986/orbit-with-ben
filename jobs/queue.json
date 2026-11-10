@@ -177106,13 +177106,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T01:56Z",
-      "eta": "2026-11-10T03:56Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: per J2033 reopen rule ('If the live evidence read fails closed, block with the captured DOM, do not loosen the reader'), read_live_still_evidence and read_live_evidence in merged _mint_flow_v05_tranche2.py (02b57a1b) fail closed on live Flow DOM (CDP 9222, HOS PR #465 a3dc54d3, jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json): (1) model control is button[aria-label='Select model family'] ('🍌 Nano Banana 2.1 arrow_drop_down' / 'Veo 3.1 - Quality arrow_drop_down'), not aria-selected/checked/pressed, so models=[]; Image model also renamed to '🍌 Nano Banana 2.1'; (2) aspect radio text is 'crop_16_9 16:9', so aspects=[]; (3) Account details shows '14,890 Google Flow credits' (not 'AI credits'), so balances=[], and Account details / Settings trigger CDK overlays are mutually exclusive and closed at submit_create; (4) _flow_still_v01.py hardcodes missing HOS 006 STYLE_REFS path; (5) Mini /Volumes/data NFS vnode is hung in kernel __open. 0/20 generated, 0 KEEP, 0 credits spent (14,890 intact).",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177253,6 +177253,11 @@
           "at": "2026-11-10T03:14Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Committed captured live Flow DOM fail-closed evidence in HOS PR #465 (a3dc54d3); 94 runner tests + check_all PASS; 0/20 generated, 0 KEEP, 0 spend"
+        },
+        {
+          "at": "2026-11-10T03:14Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: per J2033 reopen rule ('If the live evidence read fails closed, block with the captured DOM, do not loosen the reader'), read_live_still_evidence and read_live_evidence in merged _mint_flow_v05_tranche2.py (02b57a1b) fail closed on live Flow DOM (CDP 9222, HOS PR #465 a3dc54d3, jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json): (1) model control is button[aria-label='Select model family'] ('🍌 Nano Banana 2.1 arrow_drop_down' / 'Veo 3.1 - Quality arrow_drop_down'), not aria-selected/checked/pressed, so models=[]; Image model also renamed to '🍌 Nano Banana 2.1'; (2) aspect radio text is 'crop_16_9 16:9', so aspects=[]; (3) Account details shows '14,890 Google Flow credits' (not 'AI credits'), so balances=[], and Account details / Settings trigger CDK overlays are mutually exclusive and closed at submit_create; (4) _flow_still_v01.py hardcodes missing HOS 006 STYLE_REFS path; (5) Mini /Volumes/data NFS vnode is hung in kernel __open. 0/20 generated, 0 KEEP, 0 credits spent (14,890 intact)."
         }
       ],
       "remaining_action": "Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Volumes/data NFS hang",
