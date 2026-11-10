@@ -215634,20 +215634,25 @@
           "at": "2026-11-10T11:42Z",
           "by": "gemini",
           "what": "step 2 of 7 done: Step 2 done: ls /Volumes/MiniWork and /Volumes/MiniWork/scratch succeeded; dd 256 MB write = 40.1 MB/s (6.70 s), cached dd read = 19,035 MB/s (0.014 s), sha256 matched (a6d72ac7...), test file removed"
+        },
+        {
+          "at": "2026-11-10T11:42Z",
+          "by": "gemini",
+          "what": "step 4 of 7 done: Steps 3-4 done: F_NOCACHE 256 MiB write 39.6 MB/s, read 39.6 MB/s; df shows 215 GiB (230.5 GB) free of 233 GiB (249.8 GB) (desk 15G, scratch 1.6G, films 0B); last 'SSD check got no answer' at 2026-11-10 09:27:21"
         }
       ],
-      "remaining_action": "Check uncached read speed, free space (df -h), and top-level folder sizes (du -sh) on /Volumes/MiniWork",
+      "remaining_action": "Check macOS unified logs for MiniWork/disk/ejected errors (last 12h) and APFS restart auto-mount settings",
       "due": "2026-11-10T12:00:00Z",
       "kind": "qa",
       "plain": "Check the Mini's SSD is connected, reads and writes at a sensible speed, and is being used",
       "mini_only": true,
       "urgent": 5,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 7,
         "at": "2026-11-10T11:42Z",
         "by": "gemini",
-        "note": "Step 2 done: ls /Volumes/MiniWork and /Volumes/MiniWork/scratch succeeded; dd 256 MB write = 40.1 MB/s (6.70 s), cached "
+        "note": "Steps 3-4 done: F_NOCACHE 256 MiB write 39.6 MB/s, read 39.6 MB/s; df shows 215 GiB (230.5 GB) free of 233 GiB (249.8 GB"
       }
     }
   ],
