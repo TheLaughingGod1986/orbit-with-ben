@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
-| J2510 | mini | claimed | gemini | 2026-11-10T16:52Z | 025 edit · assembly · Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card |  |
+| J2510 | mini | blocked | gemini | – | 025 edit · assembly · Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card |  |
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 | J2512 | mini | open | – | – | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
 | J2513 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London) |  |

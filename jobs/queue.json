@@ -216616,13 +216616,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T14:52Z",
-      "eta": "2026-11-10T16:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:14Z",
-      "result": "",
+      "result": "parked for Chief: PR #745 (dd5184c59, jobs/reviews/J2510/REPORT.md). Both Mars Shorts KEEP after full gates + audio/video viewing: (1) N42gKBbD7tE (Thu 12 Nov) -> thu12_length_test_dust_v05.mp4 (sha256 abb3c33e70c11fdd, 54.63s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 f0diff=4.63, cut1=2.4s, -14.3 LUFS / -2.2 dBTP; all 5 Shorts gates PASS); (2) bSjWiCbB7pY (Fri 13 Nov) -> fri13_ingenuity_72_v06.mp4 (sha256 54929328bd18d8ef, 26.40s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 PIA24593 open f0diff=2.55, cut1=2.8s, -14.3 LUFS / -2.1 dBTP; all 5 Shorts gates PASS). Byte-identical in OWB UAT/025_mars_shorts_recut_J2510/ and NAS; Ben's two watch cards armed (due Wed 11 Nov 18:00 and Thu 12 Nov 18:00 London). Nothing uploaded or changed in Studio.",
       "history": [
         {
           "at": "2026-11-10T14:14Z",
@@ -216683,6 +216683,11 @@
           "at": "2026-11-10T16:06Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Both Mars Shorts re-cut, gated PASS, watched/listened KEEP, copied to OWB UAT + NAS, two watch cards armed, PR #745 opened"
+        },
+        {
+          "at": "2026-11-10T16:06Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #745 (dd5184c59, jobs/reviews/J2510/REPORT.md). Both Mars Shorts KEEP after full gates + audio/video viewing: (1) N42gKBbD7tE (Thu 12 Nov) -> thu12_length_test_dust_v05.mp4 (sha256 abb3c33e70c11fdd, 54.63s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 f0diff=4.63, cut1=2.4s, -14.3 LUFS / -2.2 dBTP; all 5 Shorts gates PASS); (2) bSjWiCbB7pY (Fri 13 Nov) -> fri13_ingenuity_72_v06.mp4 (sha256 54929328bd18d8ef, 26.40s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 PIA24593 open f0diff=2.55, cut1=2.8s, -14.3 LUFS / -2.1 dBTP; all 5 Shorts gates PASS). Byte-identical in OWB UAT/025_mars_shorts_recut_J2510/ and NAS; Ben's two watch cards armed (due Wed 11 Nov 18:00 and Thu 12 Nov 18:00 London). Nothing uploaded or changed in Studio."
         }
       ],
       "remaining_action": "Parked for Chief PR #745 merge and Ben's watch",
