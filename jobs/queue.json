@@ -1,5 +1,5 @@
 {
-  "next_id": 2522,
+  "next_id": 2523,
   "jobs": [
     {
       "id": "J0001",
@@ -217433,6 +217433,36 @@
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Make four more studio tools work for any channel, not only our two"
+    },
+    {
+      "id": "J2522",
+      "title": "Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Scripts in this job (names a channel): `board_check.py` (11 lines), `studio_reach.py` (6), `missed_runs.py` (5), `sfx_kit.py` (4), `routing.py` (4), `core_sync.py` (2), `sync_rules.py` (1), `cdp_tabs.py` (1), `capability_probe.py` (1). 35 lines to 0. Leave `nas_offload.py` (2): pull request 751 is changing it.\n\nBen, 10 Nov 2026: \"What else is blocking the development here? How can we get this project moving and finished?\" The answer was that none of the remaining decoupling work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. For each script listed below, replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `home()`.\n3. If a script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. Behaviour must not change. Run each script's own tests before and after. Where a script treats channels differently, add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone: `chief_relay.py`, `kanban_snapshot.py`, `approved_deliver.py`, `board_publish.py`, `video_tracker.py` (each has its own job), and anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): those are renamed at the move.\n\nChecks before the pull request: `python3 -m unittest discover -s scripts -p \"test_channel*.py\"`, the tests of every script you touched, `python3 scripts/sync_rules.py --check`, `python3 scripts/studio.py status --check`. One pull request, then park for the Chief with the before and after counts. GBP 0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T17:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T17:41Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0)",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Make nine small studio tools work for any channel, not only our two"
     }
   ],
   "focus": [

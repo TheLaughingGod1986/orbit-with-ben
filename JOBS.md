@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2519 | mini | open | – | – | listing · Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2521 | macbook | open | – | – | review · Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0) |  |
+| J2522 | macbook | open | – | – | review · Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0) |  |
 
 Recently finished:
 
