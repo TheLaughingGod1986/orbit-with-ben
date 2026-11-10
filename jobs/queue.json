@@ -1,5 +1,5 @@
 {
-  "next_id": 2538,
+  "next_id": 2539,
   "jobs": [
     {
       "id": "J0001",
@@ -218392,6 +218392,36 @@
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from the History of Science repo, including its past versions"
+    },
+    {
+      "id": "J2538",
+      "title": "Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J2531 cut the checks from about 28,000 minutes a month to an estimated 1,400 to 1,800 for studio pull requests (merged as #764, with history-of-science #485). The free allowance on a private repo is 2,000 and the target is 1,200. Its own notes say what closes the gap: the rules job takes about 1 minute 40 seconds, so every pull request pays 2 minutes; under 60 seconds it pays 1.\n\n1. Find where the time goes in `.github/workflows/rules-check.yml` (the job log of any recent run shows each step's time). The `apt-get install ffmpeg` step is the first place to look: cache it, use a prebuilt binary, or install it only when a changed file needs it.\n2. Then the suite itself: the slowest test files (`python3 -m unittest -v` prints times with `--durations` on newer Pythons; otherwise time each file). Speed up, never skip: a test that needs ffmpeg still runs when its code changes and in the daily run.\n3. Target: the job under 60 seconds on a typical pull request. Say what it is before and after, from this pull request's own runs.\n\nRules: one pull request, park for Chief. Do not skip, weaken or delete a test. `core-check.yml` is a locked core file: do not change it here. No repo setting. No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T20:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T20:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the automatic checks run in under a minute"
     }
   ],
   "focus": [
