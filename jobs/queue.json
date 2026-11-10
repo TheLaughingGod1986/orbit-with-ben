@@ -218812,9 +218812,14 @@
           "at": "2026-11-10T21:52Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified NAS access (time-limited ls OK) and collected all scheduled Shorts across OWB (23 scheduled + 1 aired 10 Nov + J2494/J2510/J2512 re-cuts) and HOS (6 scheduled)"
+        },
+        {
+          "at": "2026-11-10T21:56Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Started detached tmux session J2540-gate (logging to ~/_desk/logs/J2540-gate.log and ~/_desk/logs/J2540-results.json); 3/36 running (~4.5s per Short)"
         }
       ],
-      "remaining_action": "Launch detached tmux run of gate_shorts_open.py on all scheduled OWB and HOS Shorts and collect JSON measurements",
+      "remaining_action": "Finish detached gate run across all scheduled OWB and HOS Shorts and write results table in jobs/reviews/J2540/",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
@@ -218822,9 +218827,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-10T21:52Z",
+        "at": "2026-11-10T21:56Z",
         "by": "gemini",
-        "note": "Verified NAS access (time-limited ls OK) and collected all scheduled Shorts across OWB (23 scheduled + 1 aired 10 Nov + "
+        "note": "Started detached tmux session J2540-gate (logging to ~/_desk/logs/J2540-gate.log and ~/_desk/logs/J2540-results.json); 3"
       }
     },
     {
