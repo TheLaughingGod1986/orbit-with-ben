@@ -213217,16 +213217,16 @@
       "title": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 9 Nov 2026: \"clean up the repo\". orbit-with-ben had 396 remote branches on 9 Nov; history-of-science has many too. GitHub now deletes a branch when its pull request merges (Ben turned that on 9 Nov), so this is a one-off for the old ones.\n\nIn each repo:\n1. git fetch --prune origin. List remote branches.\n2. A branch may be removed only if ALL of these hold: its tip is already contained in origin/main (git branch -r --merged origin/main), it has no open pull request (gh pr list --state open --head <branch>), and it is not one of the working branches: main, mini-heartbeat, macbook-heartbeat, macbook-heartbeat-2, board-data, the History of Science desk branch (the head of desk PR 180), any branch named in scripts/thread.json, studio-core, or a branch a launchd plist or workflow names.\n3. Write the full list to jobs/reviews/<this job id>/BRANCHES.md first: branch, tip sha, last commit date, and the reason it qualifies. That file is the way back: any branch can be recreated from its sha.\n4. Remove the qualifying branches with git push origin --delete, in batches of 50. Stop at the first error and report it.\n5. Report: how many removed, how many kept and why (not merged, open PR, working branch).\n\nBranches that are not fully in main are NOT removed in this job, whatever their age: list them separately with their PR state for the Chief. Commit BRANCHES.md on a branch, open a PR, park for Chief. No Studio, no spend.\n",
+      "body": "Ben, 9 Nov 2026: \"clean up the repo\". orbit-with-ben had 396 remote branches on 9 Nov; history-of-science has many too. GitHub now deletes a branch when its pull request merges (Ben turned that on 9 Nov), so this is a one-off for the old ones.\n\nIn each repo:\n1. git fetch --prune origin. List remote branches.\n2. A branch may be removed only if ALL of these hold: its tip is already contained in origin/main (git branch -r --merged origin/main), it has no open pull request (gh pr list --state open --head <branch>), and it is not one of the working branches: main, mini-heartbeat, macbook-heartbeat, macbook-heartbeat-2, board-data, the History of Science desk branch (the head of desk PR 180), any branch named in scripts/thread.json, studio-core, or a branch a launchd plist or workflow names.\n3. Write the full list to jobs/reviews/<this job id>/BRANCHES.md first: branch, tip sha, last commit date, and the reason it qualifies. That file is the way back: any branch can be recreated from its sha.\n4. Remove the qualifying branches with git push origin --delete, in batches of 50. Stop at the first error and report it.\n5. Report: how many removed, how many kept and why (not merged, open PR, working branch).\n\nBranches that are not fully in main are NOT removed in this job, whatever their age: list them separately with their PR state for the Chief. Commit BRANCHES.md on a branch, open a PR, park for Chief. No Studio, no spend.\n\n\n10 Nov 07:55Z, acting Chief (Claude). This job has taken four 25-minute runs on the Mini since 06:19Z and each one started the branch audit again and got no further than step 1, while the tracker snapshot, the NAS check and the HOS 009 plates waited behind it. It is taken off the Mini until tonight and re-scoped so one run can finish it:\n1. First 5 minutes, per repo: `git fetch --prune origin`, then write the candidate list to `jobs/reviews/J2466/BRANCHES_<repo>.txt` with `git branch -r --merged origin/main` (minus `origin/main`, `origin/HEAD`, `board-data`, the heartbeat branches, `hos-desk`, any `macbook-worker/rescue-*`, and any branch that is the head of an open PR: one `gh pr list --state open --json headRefName` call). Commit and push that file before deleting anything, so a run that is cut short resumes from the file, not from the start.\n2. Delete only branches on that list, in batches of 50 (`git push origin --delete ...`), recording each batch in the file. A branch fully merged into main loses nothing when its name is removed.\n3. Do not look at unmerged branches at all in this job: no per-branch PR lookups, no launchd or workflow audit. Report their count and stop.\n4. Park for the Chief with the two files and the before and after counts.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-10T06:19Z",
-      "eta": "2026-11-10T07:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -213300,6 +213300,11 @@
           "at": "2026-11-10T07:47Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Audited remote branches in both repos: orbit-with-ben has 386 remote branches (136 qualifying merged, 250 kept: 6 working, 13 open PR unmerged, 231 other unmerged); History Of Science has 425 remote branches (58 qualifying merged, 367 kept: 3 working incl. hos-desk open PR #180, 68 other open PR unmerged, 296 other unmerged)"
+        },
+        {
+          "at": "2026-11-10T07:50Z",
+          "by": "claude",
+          "what": "acting Chief: taken off the Mini until 22:00Z and re-scoped. Four runs since 06:19Z each restarted the audit and never passed step 1, holding up urgent and production jobs."
         }
       ],
       "remaining_action": "Create clean worktree and write jobs/reviews/J2466/BRANCHES.md with full qualifying and kept branch tables before deleting any remote branches",
@@ -213307,13 +213312,7 @@
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
       "mini_only": true,
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-11-10T07:47Z",
-        "by": "gemini",
-        "note": "Audited remote branches in both repos: orbit-with-ben has 386 remote branches (136 qualifying merged, 250 kept: 6 workin"
-      }
+      "not_before": "2026-11-10T22:00:00Z"
     },
     {
       "id": "J2467",
