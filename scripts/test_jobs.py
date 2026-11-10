@@ -1,5 +1,6 @@
 """jobs.py: any able agent claims the oldest job it can do; stalled claims are taken over; the board follows."""
-import datetime as dt, json, pathlib, sys, tempfile, unittest
+import datetime as dt, json, os, pathlib, sys, tempfile, unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from unittest.mock import patch
@@ -34,6 +35,17 @@ class Next(unittest.TestCase):
         del j["progress"]
         jobs.do_next(d, "cursor", {"mini"}, T0 + MIN)
         self.assertEqual(j["progress"]["step"], 0)
+
+    def test_a_claim_it_cannot_resume_is_handed_back_and_it_takes_other_work(self):
+        # 5 Nov 2026: Gemini held J1100 (waiting for verified audio_input) and sat idle for an hour.
+        d = queue(("mini", "listen", {}), ("mini", "write", {}))
+        held = jobs.do_next(d, "gemini", {"mini"}, T0)
+        held["required_capabilities"] = ["audio_input"]
+        with patch.object(jobs.chief_relay, "worker_capabilities", return_value={}):
+            j = jobs.do_next(d, "gemini", {"mini"}, T0 + MIN)
+        self.assertEqual(j["title"], "write")
+        self.assertEqual((held["status"], held["by"]), ("open", ""))
+        self.assertIn("progress kept", held["history"][-1]["what"])
 
     def test_takes_the_oldest_job_it_can_do(self):
         d = queue(("cloud", "review", {}), ("mini", "cut", {}), ("mini", "thumbs", {}))
@@ -178,11 +190,50 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+    def test_follow_up_work_never_reopens_a_finished_stage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            films = pathlib.Path(tmp)
+            (films / "024_Light").mkdir()
+            (films / "024_Light" / "status.json").write_text(json.dumps(
+                {"film": "024", "stages": {"edit": {"state": "done", "ref": "upload done"}}, "claims": []}))
+            old = studio.FILMS
+            studio.FILMS = films
+            try:
+                d = queue(("mini", "024 muons Short v01: review the cut", {"film": "024", "stage": "edit"}))
+                j = jobs.do_next(d, "macbook-2", {"mini"}, T0)
+                self.assertIsNone(jobs.board_claim(j, "macbook-2", T0))
+                jobs.board_release(j, "macbook-2", "blocked")
+                st = json.loads((films / "024_Light" / "status.json").read_text())
+                self.assertEqual((st["stages"]["edit"]["state"], st["claims"]), ("done", []))
+            finally:
+                studio.FILMS = old
+
+
+class PlainSummary(unittest.TestCase):
+    """Ben, 6 Nov 2026: a brief plain-English line on each job card."""
+
+    def test_own_line_wins_then_title_rules_then_kind(self):
+        self.assertEqual(jobs.plain_summary({"title": "x", "plain": "Counting views"}), "Counting views")
+        self.assertIn("YouTube numbers", jobs.plain_summary({"title": "URG-OWB-2: monthly Studio Reach window capture",
+                                                              "kind": "assembly"}))
+        self.assertEqual(jobs.plain_summary({"title": "Backlog OWB: next Short cut from a locked long (existing VO + picture only)"}),
+                         "Making or fixing a Short")
+        self.assertIn("end screen", jobs.plain_summary({"title": "027 Shorts: set Related video to the long"}))
+        self.assertEqual(jobs.plain_summary({"title": "verify condition for J0978", "kind": "review"}),
+                         "Checking whether a waiting job can start yet")
+        self.assertTrue(jobs.plain_summary({"title": "Review J2143: 031 thumbs", "kind": "review"}).startswith("Checking someone"))
+        self.assertEqual(jobs.plain_summary({"title": "zzz", "kind": "vo"}), "Recording or checking the voice-over")
+        self.assertEqual(jobs.plain_summary({"title": "zzz"}), "A studio task")
+
+    def test_add_takes_a_plain_line(self):
+        self.assertIn("--plain", jobs.__dict__["main"].__code__.co_consts.__repr__() + open(jobs.__file__).read())
+
+
 class Progress(unittest.TestCase):
     """Ben, 11 Oct 22:09: % done on the board comes from `jobs.py progress <id> --step k --of n`."""
 
     def test_records_steps_and_logs_them(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_progress(j, "cursor", 3, 8, T0 + 10 * MIN, note="grade done")
         self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
@@ -208,7 +259,7 @@ class Progress(unittest.TestCase):
         self.assertEqual(j["progress"], baseline)
 
     def test_kept_across_a_release_and_cleared_on_reopen(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         jobs.do_progress(j, "cursor", 1, 4, T0 + MIN)
         jobs.do_release(j, "cursor", "stopping point", T0 + 2 * MIN)
@@ -221,7 +272,7 @@ class Progress(unittest.TestCase):
         self.assertNotIn("progress", j2)
 
     def test_rejects_bad_steps_and_someone_elses_claim(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)
         for step, of in ((5, 4), (-1, 4), (0, 0)):
             with self.assertRaises(ValueError):
@@ -235,7 +286,7 @@ class Progress(unittest.TestCase):
             jobs.do_progress(j, "cursor", 4, 4, T0)
 
     def test_cli_progress(self):
-        d = queue(("mini", "027 fixes", {}))
+        d = queue(("mini", "edit fixes", {}))
         jobs.do_next(d, "cursor", {"mini"}, T0)
         saved = []
         with tempfile.TemporaryDirectory() as tmp:
@@ -302,5 +353,225 @@ class HandBack(unittest.TestCase):
             jobs.do_handback(job, "relay", "", at)
 
 
+class MiniOnlyPin(unittest.TestCase):
+    """The Chief can pin a Studio job to the Mini (10 Nov 2026: removing playlists cannot be undone)."""
+
+    def test_a_pinned_job_is_never_the_macbooks(self):
+        job = {"id": "J9", "needs": "mini", "kind": "studio", "repo": "owb", "title": "Studio: remove six playlists",
+               "body": "In Orbit Studio, remove the playlists."}
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertTrue(jobs.macbook_studio_ok(job, job["title"] + " " + job["body"]))
+            self.assertTrue(jobs.macbook_portable(job))
+            pinned = dict(job, mini_only=True)
+            self.assertFalse(jobs.macbook_studio_ok(pinned, job["title"] + " " + job["body"]))
+            self.assertFalse(jobs.macbook_portable(pinned))
+
+
 if __name__ == "__main__":
     unittest.main()
+
+
+class OnlyBensCalls(unittest.TestCase):
+    """Ben, 5 Nov 2026: "Nothing should need me apart from watching the video." J1755 had parked a private watch-copy
+    upload for him."""
+
+    def test_a_needs_ben_block_that_isnt_his_call_goes_to_the_chief(self):
+        d = queue(("mini", "deliver", {}))
+        j = jobs.do_next(d, "codex", {"mini"}, T0)
+        jobs.do_block(j, "codex", "needs Ben OK to upload approved master to existing R2 watch store", T0 + MIN)
+        self.assertTrue(j["result"].startswith("parked for Chief:"))
+        self.assertNotEqual((j.get("hold") or {}).get("type"), "ben")
+
+    def test_his_watch_money_and_logins_still_reach_him(self):
+        for reason in ("needs Ben to watch v04 and give timestamp notes", "needs Ben OK to spend £12 on credits",
+                       "waiting for Ben: Studio sign-in expired"):
+            d = queue(("mini", "x", {}))
+            j = jobs.do_next(d, "codex", {"mini"}, T0)
+            jobs.do_block(j, "codex", reason, T0 + MIN)
+            self.assertFalse(j["result"].startswith("parked for Chief"), reason)
+
+    def test_a_job_for_ben_must_be_one_of_his_calls(self):
+        with self.assertRaises(ValueError):
+            queue(("ben", "Approve the R2 upload of the v03 master", {}))
+        self.assertEqual(queue(("ben", "Watch 032 v04 (final watch)", {}))["jobs"][0]["needs"], "ben")
+        self.assertFalse(jobs.ben_gate("upload to the watch store"))
+
+
+class MacBookTakesTextJobs(unittest.TestCase):
+    """Ben, 5 Nov 2026: the MacBook takes Mini jobs that don't need the Mini.
+    6 Nov 2026: prohibition clauses and ordinary English must not look Mini-only."""
+
+    def test_text_and_code_jobs_are_portable_media_and_mini_tools_are_not(self):
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}),
+                  ("mini", "encode long first-30s rules into the gates", {}),
+                  ("mini", "032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
+                  ("mini", "Review the thumbnail concepts", {"kind": "review"}),
+                  ("mini", "OWB series playlists + end screens", {"kind": "studio"}),
+                  ("mini", "Review the Shorts copy", {"kind": "review"}))
+        d["jobs"][5]["body"] = "files in /Users/benjaminoats/_desk/cache/J1/"
+        self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, True, False, False, False, False])
+
+    def test_a_text_job_rerouted_to_the_minis_claude_code_is_still_portable(self):
+        # 9 Nov 2026: the relay hands Claude jobs to `claudecode` when Codex/Cursor are out; the MacBook has Claude Code.
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "claudecode"}))
+        self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+
+    def test_studio_jobs_go_to_the_macbook_only_while_its_channels_studio_browser_is_up(self):
+        # Ben, 9 Nov 2026: signed into Studio for both channels on the MacBook.
+        d = queue(("mini", "Nearest Star long: add end screen and pinned comment in Studio", {"kind": "studio"}),
+                  ("mini", "Nearest Star Short: upload it and schedule it", {"kind": "studio"}),
+                  ("mini", "Franklin long: pinned comment once public", {"kind": "studio", "repo": "hos"}))
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": ""}):
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [False, False, False])
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223"}):  # Orbit's Studio only
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, False, False])
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):  # uploads stay on the Mini
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, False, True])
+
+    def test_the_macbook_claims_a_portable_mini_job_and_the_mini_still_can(self):
+        d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}))
+        j = d["jobs"][0]
+        self.assertTrue(jobs.claimable(d, j, {"macbook", "any"}, T0, "macbook"))
+        self.assertEqual(jobs.do_next(d, "macbook", {"macbook", "any"}, T0)["id"], j["id"])
+        self.assertEqual((j["needs"], j["for"]), ("mini", "gemini"))  # the job itself is unchanged
+
+    def test_a_review_of_media_work_stays_on_the_mini(self):
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}), ("mini", "verify condition for J0001", {"kind": "review"}))
+        d["jobs"][1]["recheck_of"] = "J0001"
+        self.assertFalse(jobs.macbook_portable(d["jobs"][1], d))
+
+    def test_false_mini_only_hits_do_not_block_portable_text(self):
+        # Observed 6 Nov 2026: English "flow", "cut-over", do-not-touch Buffer/NAS, and BUFFER_POSTS.json
+        # wrongly made every open review look Mini-only.
+        cases = [
+            ("Review multi-channel plan: code and phases", "kind", "review",
+             "channels plug in with their own rules and flow, and a third channel is coming."),
+            ("Review multi-channel plan: risk and cut-over", "kind", "review",
+             "What could stop the studio during phase 3 cut-over, and what is the undo?"),
+            ("Cleanup audit: engine and tools", "kind", "review",
+             "Never touch shipped films' outputs or anything on the NAS; propose archiving only with receipts."),
+            ("Review Short candidate KEEP or FIX", "kind", "review",
+             "Do not upload, swap, retitle, or change privacy, schedule, Buffer or UPLOADS. "
+             "A KEEP still needs a separate authorised swap before YouTube changes."),
+            ("Shorts slots for the Dec longs", "kind", "listing",
+             "Check UPLOADS.json and BUFFER_POSTS.json for taken slots. No uploads."),
+        ]
+        for title, _, kind, body in cases:
+            d = queue(("mini", title, {"kind": kind, "for_agent": "gemini"}))
+            d["jobs"][0]["body"] = body
+            self.assertTrue(jobs.macbook_portable(d["jobs"][0], d), title)
+            self.assertFalse(jobs.mini_only_hit(title + " " + body), title)
+
+    def test_true_mini_only_jobs_stay_on_the_mini(self):
+        cases = [
+            ("Verify condition: NAS mount", "kind", "review",
+             "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no files)."),
+            ("Watch and listen review of the master", "kind", "review",
+             "Full watch and listen review of J01_Journey_v01.mp4 before Ben's card."),
+            ("Assemble Short cut with ffmpeg", "kind", "review",
+             "Run ffmpeg to render the 9:16 cut from the locked stems."),
+            ("Check Flow Veo credit then mint", "kind", "review",
+             "Read the Flow credit, then mint the next Veo take on Chrome."),
+            ("Review Codex allow-list on the Mini", "kind", "review",
+             "Confirm the unattended Codex allow-list still matches docs/CODEX_ALLOWLIST.md."),
+            ("Studio finish for 032", "kind", "review",
+             "Open YouTube Studio and set the end screen plus Related video on the long."),
+        ]
+        for title, _, kind, body in cases:
+            d = queue(("mini", title, {"kind": kind, "for_agent": "gemini"}))
+            d["jobs"][0]["body"] = body
+            self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+            self.assertTrue(jobs.mini_only_hit(title + " " + body), title)
+
+    def test_addressed_codex_jobs_stay_off_the_macbook(self):
+        d = queue(("mini", "Review multi-channel plan: code and phases (Codex)",
+                   {"kind": "review", "for_agent": "codex"}))
+        d["jobs"][0]["body"] = "Read the plan and write REVIEW.md. Text only; no Flow or Chrome."
+        self.assertFalse(jobs.macbook_portable(d["jobs"][0], d))
+        self.assertFalse(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"))
+
+    def _studio_live(self, tmp, owb_films=("032_Titan",), hos_films=()):
+        owb = pathlib.Path(tmp) / "orbit-with-ben" / "02_Video-Projects"
+        hos = pathlib.Path(tmp) / "History Of Science" / "02_Video-Projects"
+        for name in owb_films:
+            (owb / name).mkdir(parents=True)
+        for name in hos_films:
+            (hos / name).mkdir(parents=True)
+        return {"owb": owb, "hos": hos}
+
+    def test_harvest_assembly_watch_allowed_when_studio_live_media_exists(self):
+        # Ben, 7 Nov 2026: MacBook takes shared-media jobs when /Volumes/data/studio-live has the film.
+        with tempfile.TemporaryDirectory() as tmp:
+            roots = self._studio_live(tmp, owb_films=("032_Titan",), hos_films=("008_Lightning-Franklin",))
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+                cases = [
+                    ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"},
+                     "Write pool JSON under the studio-live 032 folder; ffmpeg ok."),
+                    ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"},
+                     "Lay the cut from stems in 02_Video-Projects/032_Titan/07_Edit-Project/."),
+                    ("Watch and listen review of 032 master", {"kind": "review", "film": "032", "stage": "edit"},
+                     "Full watch and listen of 032_Titan_v01.mp4 before Ben's card."),
+                    ("HOS 008: harvest stills for Franklin",
+                     {"kind": "assembly", "film": "008", "stage": "picture", "repo": "hos"},
+                     "Harvest plates into the HOS 008 working folder on studio-live."),
+                ]
+                for title, kw, body in cases:
+                    d = queue(("mini", title, kw))
+                    d["jobs"][0]["body"] = body
+                    self.assertTrue(jobs.macbook_portable(d["jobs"][0], d), title)
+                    self.assertTrue(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"), title)
+
+    def test_harvest_assembly_watch_stay_mini_when_media_absent(self):
+        missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
+                   "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
+        with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+            for title, kw in (
+                ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
+                ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"}),
+                ("Watch and listen review of 032 master", {"kind": "review", "film": "032", "stage": "edit"}),
+            ):
+                d = queue(("mini", title, kw))
+                d["jobs"][0]["body"] = "Media should be on studio-live; if missing leave for the Mini."
+                self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+
+    def test_studio_buffer_playlist_package_stay_mini_hard_even_with_studio_live(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            roots = self._studio_live(tmp, owb_films=("032_Titan",))
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+                cases = [
+                    ("032 Studio finish before air", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Open YouTube Studio and set the end screen plus Related video."),
+                    ("032 upload package and schedule", {"kind": "assembly", "film": "032", "stage": "upload"},
+                     "Run youtube:package then upload to YouTube; mirror Buffer at publishAt."),
+                    ("OWB series playlists + end screens", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Add the long to playlists and set end screens in Studio."),
+                    ("032 Buffer mirror after hand upload", {"kind": "review", "film": "032", "stage": "upload"},
+                     "Register the hand upload and create Buffer posts for Instagram."),
+                ]
+                for title, kw, body in cases:
+                    d = queue(("mini", title, kw))
+                    d["jobs"][0]["body"] = body
+                    self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), title)
+
+    def test_existing_local_path_in_job_also_unlocks_shared_media(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cut = pathlib.Path(tmp) / "032_Titan_v01.mp4"
+            cut.write_bytes(b"x")
+            missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
+                       "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
+            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+                d = queue(("mini", "Watch and listen review of the master",
+                           {"kind": "review", "film": "032", "stage": "edit"}))
+                d["jobs"][0]["body"] = f"Full watch and listen of {cut} before Ben's card."
+                self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+
+    def test_nas_flow_buffer_mentions_still_do_not_block_portable_text(self):
+        # Regression guard for PR #597: soft service names inside prohibition notes stay portable.
+        d = queue(("mini", "Review multi-channel plan: code and phases",
+                   {"kind": "review", "for_agent": "gemini"}))
+        d["jobs"][0]["body"] = (
+            "Never touch the NAS working films or Buffer posts. "
+            "channels plug in with their own rules and flow. "
+            "Do not change Buffer or playlists. Text review only.")
+        self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
+        self.assertFalse(jobs.mini_only_hit(d["jobs"][0]["title"] + " " + d["jobs"][0]["body"]))

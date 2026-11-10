@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Same-day alarm for missed daily jobs and silent agents (Ben, 4 Nov 2026, monthly report rec. 6).
+  Every 30 min, scripts/missed_runs.py --post reads git only (tracker and Buffer check commits on main,
+  claude-heartbeat and mini-heartbeat) and posts one "[alarm <check>]" line on the studio thread per miss,
+  at most once per 22 h per check. It never restarts or changes anything.
+  Log: ~/Library/Logs/owb-missed-runs.log
+  Install (or reinstall after a change to this file):
+    launchctl bootout gui/$(id -u)/com.owb.missed-runs 2>/dev/null
+    cp 07_Content-Ops/launchd/com.owb.missed-runs.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.owb.missed-runs.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.missed-runs</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd /Users/benjaminoats/YouTube/orbit-with-ben &amp;&amp; python3 scripts/missed_runs.py --post</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>1800</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-missed-runs.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/owb-missed-runs.log</string>
+</dict>
+</plist>

@@ -1,0 +1,235 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v05.mp4",
+  "edge_floor": 0.0189,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "s02_orion_paranal",
+      "cut": 1,
+      "t": 4.65,
+      "source": "orion_over_paranal.mp4",
+      "why": [
+        "low detail: luma std 17.74 < 18.0"
+      ]
+    },
+    {
+      "row": "s05_alma_orion_set",
+      "cut": 4,
+      "t": 15.43,
+      "source": "alma_orion_set.mp4",
+      "why": [
+        "low detail: edge density 0.0167 < film p5 0.0189"
+      ]
+    }
+  ],
+  "reviewed_ok": [
+    {
+      "row": "s07_twilight",
+      "cut": 6,
+      "t": 21.02,
+      "source": "conjunction.tif",
+      "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+      "why": [
+        "split panel: horizontal gutter at 0.828"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_mw_open",
+      "source": "eso_mw_lasilla.mp4",
+      "t": 1.23,
+      "std": 44.25,
+      "mean": 57.6,
+      "p95": 134.0,
+      "edge": 0.1282,
+      "hf": 17.16,
+      "lf": 31.32,
+      "std8": 36.58,
+      "edge8": 0.1674,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "s02_orion_paranal",
+      "source": "orion_over_paranal.mp4",
+      "t": 4.65,
+      "std": 17.74,
+      "mean": 47.76,
+      "p95": 60.0,
+      "edge": 0.023,
+      "hf": 7.88,
+      "lf": 11.9,
+      "std8": 14.04,
+      "edge8": 0.0355,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.74 < 18.0"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "s03_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "t": 8.57,
+      "std": 27.24,
+      "mean": 42.44,
+      "p95": 84.0,
+      "edge": 0.0541,
+      "hf": 9.95,
+      "lf": 21.42,
+      "std8": 23.39,
+      "edge8": 0.0993,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "s04_star_trails",
+      "source": "eso_startrails.mp4",
+      "t": 12.02,
+      "std": 59.3,
+      "mean": 95.47,
+      "p95": 216.0,
+      "edge": 0.1013,
+      "hf": 19.82,
+      "lf": 50.04,
+      "std8": 51.99,
+      "edge8": 0.2656,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "s05_alma_orion_set",
+      "source": "alma_orion_set.mp4",
+      "t": 15.43,
+      "std": 22.65,
+      "mean": 42.02,
+      "p95": 59.0,
+      "edge": 0.0167,
+      "hf": 8.33,
+      "lf": 17.29,
+      "std8": 19.17,
+      "edge8": 0.0502,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0167 < film p5 0.0189"
+      ]
+    },
+    {
+      "cut": 5,
+      "row": "s06_orion_vlt",
+      "source": "orion_rise_vlt.mp4",
+      "t": 18.53,
+      "std": 31.74,
+      "mean": 37.24,
+      "p95": 60.0,
+      "edge": 0.0385,
+      "hf": 12.86,
+      "lf": 21.71,
+      "std8": 24.99,
+      "edge8": 0.0994,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "s07_twilight",
+      "source": "conjunction.tif",
+      "t": 21.02,
+      "std": 49.09,
+      "mean": 81.9,
+      "p95": 161.0,
+      "edge": 0.0279,
+      "hf": 11.36,
+      "lf": 44.95,
+      "std8": 45.8,
+      "edge8": 0.0837,
+      "seams": [
+        {
+          "kind": "horizontal gutter",
+          "at": 0.828
+        }
+      ],
+      "video": true,
+      "reviewed_ok": {
+        "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+        "why": [
+          "split panel: horizontal gutter at 0.828"
+        ]
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_eso_mw_lasilla.mp4",
+      "t": 22.6,
+      "std": 43.7,
+      "mean": 55.88,
+      "p95": 129.0,
+      "edge": 0.115,
+      "hf": 16.39,
+      "lf": 30.89,
+      "std8": 36.38,
+      "edge8": 0.1584,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

@@ -71,7 +71,29 @@ class NeverEmpty(unittest.TestCase):
         d = empty()
         refill.do_refill(d, ITEMS[:1], T0)
         d["jobs"][0]["status"] = "done"
-        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + H)), 1)  # cooldown waived: queue was empty
+        self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + H), [])  # too soon after its last copy, even when empty
+        self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 6 * H)), 1)  # cooldown waived after the floor
+
+    def test_nothing_ready_does_not_churn_one_key_back_to_back(self):
+        d = empty()
+        for minutes in (0, 5, 10, 60):
+            refill.do_refill(d, ITEMS[:1], T0 + dt.timedelta(minutes=minutes))
+            for j in d["jobs"]:
+                j["status"] = "done"
+        self.assertEqual(len(d["jobs"]), 1)  # one copy in the hour, not four
+
+    def test_nothing_ready_never_rushes_a_weekly_item(self):
+        weekly = [dict(ITEMS[0], key="audit", title="audit", every_h=168)]
+        d = empty()
+        refill.do_refill(d, weekly + ITEMS[1:2], T0)
+        for j in d["jobs"]:
+            j["status"] = "done"
+        refill.do_refill(d, weekly + ITEMS[1:2], T0 + H)
+        self.assertEqual(d["jobs"][-1]["backlog"], "b")  # the 12 h item's cooldown is waived, the weekly audit's is not
+        for j in d["jobs"]:
+            j["status"] = "done"
+        self.assertEqual(refill.do_refill(d, weekly, T0 + 48 * H), [])  # only weekly items left: wait for the week
+        self.assertEqual(len(refill.do_refill(d, weekly, T0 + 169 * H)), 1)
 
     def test_nothing_ready_and_every_key_busy_adds_nothing(self):
         d = empty()
@@ -155,3 +177,26 @@ class NoArbitraryHolds(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class MonthlyReviews(unittest.TestCase):
+    def item(self):
+        return {"key":"monthly-test", "title":"Review", "needs":"mini", "body":"Read data", "monthly_on":1,"monthly_at":"09:00","start_month":"2026-11"}
+    def test_calendar_catchup_even_with_full_queue_and_once_after_completion(self):
+        d=empty(); it=self.item()
+        for _ in range(4): jobs.do_add(d,title="pipeline",needs="mini",body="",by="codex",at=T0)
+        at=dt.datetime(2026,11,3,10,tzinfo=dt.timezone.utc)
+        self.assertEqual(len(refill.do_refill(d,[it],at)),1)
+        j=d['jobs'][-1];self.assertEqual(j['report_month'],'2026-10');self.assertIn('2026-10',j['body'])
+        j['status']='done';self.assertEqual(refill.do_refill(d,[it],at+H),[])
+        d['backlog_last']={};self.assertEqual(refill.do_refill(d,[it],at+H),[])
+    def test_first_day_time_and_next_month_despite_previous_hold(self):
+        d=empty();it=self.item();at=dt.datetime(2026,11,1,8,59,tzinfo=dt.timezone.utc)
+        self.assertEqual(refill.do_refill(d,[it],at),[])
+        self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
+        d['jobs'][-1]['status']='blocked'
+        self.assertEqual(len(refill.do_refill(d,[it],dt.datetime(2026,12,1,9,tzinfo=dt.timezone.utc))),1)
+        self.assertEqual(d['jobs'][-1]['report_month'],'2026-11')
+    def test_summer_london_time_and_no_early_fallback(self):
+        d=empty();it=self.item();at=dt.datetime(2027,6,1,7,59,tzinfo=dt.timezone.utc)
+        self.assertEqual(refill.do_refill(d,[it],at),[])
+        self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)

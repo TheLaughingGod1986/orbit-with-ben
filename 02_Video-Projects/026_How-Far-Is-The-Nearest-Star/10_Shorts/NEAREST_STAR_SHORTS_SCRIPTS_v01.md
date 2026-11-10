@@ -4,14 +4,18 @@
 
 Three Shorts for the week of the 026 long (*How Far Is the Nearest Star?*, Sun 15 Nov 18:00 London). Written for **VO now, picture later**, under Ben's 4 Oct order. These are Claude's decisions under the 3 Oct order, and Ben can overrule.
 
-House rules, the same as `022/10_Shorts/SUN_SHORTS_SCRIPTS_v01.md`:
+House rules, the same as `022/10_Shorts/SUN_SHORTS_SCRIPTS_v01.md`, updated for the **`J2429` First-Second Rule (9 Nov 2026)**:
+- **First-second rule (`0.0–1.5 s`, `J2429`):** Frame 0 (`t = 0.00 s`) is a full-bleed `9:16` (`mode: "cover"`, `>=60%` subject, `<=30%` empty black sky, no `fit` letterbox bars, no `16:9` blur-pad bands [`J2421`], no slow fade-in from black, no Orbit at `0.0 s`) moving payoff image (`frame0_diff_0_1_5s >= 1.50`, `frame0_kick_0_0_5s >= 0.40`). The 2–4 word hook caption (white + `#FFE000` yellow highlight word) is already stamped on frame 0 (`t = 0.00 s`), VO word 1 starts at `<= 0.15 s` with `sfx_owb_whoosh_soft_v01.wav`, the spoken hook names the star/subject + surprise inside `0.0–1.5 s` with zero meta-promise, and Cut 1 lands at `<= 2.5–2.8 s` (`<= 3.0 s` hard gate).
 - No Orbit at frame 0. `gate_shorts_open.py` must pass.
 - 22–27 s.
 - The exact title is on screen at 9–14 s.
-- The spoken end line names the long.
-- The Short loops back to its open.
+- The Short loops back to its open (`< 1.2 s` tail under `OWB-2026-11-E1`, no spoken end-card CTA on newly re-cut exports).
 - Related is set to the long once it is public.
-- The hook caption sits on frame 0, two lines, with a yellow hook word.
+- The hook caption sits on frame 0 (`t = 0.00 s`), two lines, with a yellow hook word.
+
+> **Status of `026` Shorts under `J2429` (9 Nov 2026):**
+> - **Scheduled weekday Shorts:** `mon16_cant_see_nearest_star` (`HZGTovJu_TQ`, `v03` staged on disk with `f0diff=2.62, cut1=2.53s, vo_onset=0.03s`), `wed18_robot_reach_nearest_star` (`cwU_0WWeNZ4`, `v04` staged on disk with `f0diff=1.74, cut1=2.63s, vo_onset=0.00s`), and `fri20_grapefruit_cherry` (`aAUgIGEuPwQ`, `v04` live/scheduled on YouTube, `f0diff=3.58, cut1=2.37s`).
+> - **Unlocked reserve lifts (`lift_earth_pinhead`, `lift_light_4yr`, `lift_red_dwarf`, `lift_walk_900m`):** Each unlocked lift folder carries `cuts_v02_first_second_plan.json` splitting Shot 1 at `2.20–2.50 s <= 2.8 s` over full-bleed `9:16` moving footage with stamped `0.0 s` hook text and `<= 0.15 s` VO onset.
 
 The facts come from `../01_Script/SOURCES.md`. VO waits for Gemini's check and Claude's `Locked: VO`.
 

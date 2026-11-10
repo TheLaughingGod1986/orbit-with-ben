@@ -10,6 +10,8 @@ weren't compared against them. The Mini's 06:40 tracker job runs this after its 
   - `gate_shorts_open.py check <file> --air-date <London date> --id <id>`
   - with --add, a Short missing from the library is registered as `scheduled` (so later Shorts are compared to it)
   - a FAIL that a recorded waiver covers exactly (<export stem>_gate.json beside the file) reads "PASS (waived)"
+  - a missing export the Chief has already ruled on (UPLOADS.json "knownNoFile": "<why, with the ruling>") reads
+    "KNOWN", not NO FILE, so a settled case stops raising the alarm every morning (J1320, 31 Oct 2026)
   - NAS files (26 Oct 2026): macOS privacy stops the launchd job reading /Volumes (EPERM, "Operation not permitted"),
     while agent sessions can. `--stage` (run from an agent session) copies each upcoming Short's NAS export, its
     sidecar meta and every NAS file the meta names into --cache, with the meta rewritten to the local copies; the
@@ -27,6 +29,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -62,7 +65,8 @@ def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[di
         when = datetime.fromisoformat(at.replace("Z", "+00:00"))
         if now <= when <= now + timedelta(days=days):
             out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file"),
-                        "length_test": bool(entry.get("lengthTest"))})
+                        "length_test": bool(entry.get("lengthTest")),
+                        "known_no_file": entry.get("knownNoFile") or ""})
     return sorted(out, key=lambda r: r["publishAt"])
 
 
@@ -107,6 +111,11 @@ def readable(p: Path) -> bool:
         return True
     except OSError:
         return False
+
+
+def export_path(media_root: Path, rel: str | None) -> Path | None:
+    """Resolve `rel` under `media_root` and collapse `..` so `../../../../Volumes/...` starts with `/Volumes/`."""
+    return Path(os.path.abspath((media_root / rel).expanduser())) if rel else None
 
 
 def sidecar(export: Path) -> Path | None:
@@ -216,7 +225,7 @@ def main(argv: list[str] | None = None) -> int:
     rows = upcoming(json.loads(a.snapshot.read_text()), uploads, now, a.days)
     if a.stage:
         for r in rows:
-            f = (a.media_root / r["file"]).expanduser() if r["file"] else None
+            f = export_path(a.media_root, r["file"])
             if not f or not readable(f):
                 print(f"{r['id']}: export not readable here, not staged")
                 continue
@@ -237,7 +246,7 @@ def main(argv: list[str] | None = None) -> int:
         if missing:   # a tool problem on this machine, not a fault in any Short: say so instead of FAIL (8 Oct 2026)
             details.append(f"### Not checked: {', '.join(missing)} not on PATH\n\nFix the job's PATH and re-run; no Short was judged.\n")
         for r in rows:
-            f = (a.media_root / r["file"]).expanduser() if r["file"] else None
+            f = export_path(a.media_root, r["file"])
             lib = in_library(r["id"])
             want = uploads.get("videos", {}).get(r["id"], {}).get("sha256")
             hit = staged(r["id"], f, a.cache, want) if f else None
@@ -260,6 +269,9 @@ def main(argv: list[str] | None = None) -> int:
                 details.append(f"### {r['id']}: NOT CHECKED (NAS not readable from this job)\n\nmacOS privacy blocks this job from: `{blocked[0]}`"
                                f"{' and ' + str(len(blocked) - 1) + ' more' if len(blocked) > 1 else ''}. From an agent session run "
                                "`gate_upcoming.py --stage` (same arguments), then re-run. No Short was judged.\n")
+            elif r["file"] and not f.exists() and r.get("known_no_file"):
+                verdict = "KNOWN"
+                details.append(f"### {r['id']}: KNOWN, no local export\n\nExport not found: `{r['file']}`. Already ruled on: {r['known_no_file']}\n")
             elif not f or not f.exists():
                 verdict = "NO FILE" if r["file"] else "NOT REGISTERED"
                 details.append(f"### {r['id']}: {verdict}\n\n{'Export not found: `' + r['file'] + '`' if r['file'] else 'Not in social/UPLOADS.json, so its export file is unknown.'}\n")

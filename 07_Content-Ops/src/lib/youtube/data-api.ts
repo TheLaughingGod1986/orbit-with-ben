@@ -108,13 +108,20 @@ async function listRecentUploads(token: string, recent = 50): Promise<YouTubeVid
   const ch = await get(token, `${API}/channels?part=contentDetails&mine=true`);
   const uploads: string | undefined = ch.items?.[0]?.contentDetails?.relatedPlaylists?.uploads;
   if (!uploads) return [];
-  const pl = await get(token, `${API}/playlistItems?part=contentDetails&maxResults=${recent}&playlistId=${encodeURIComponent(uploads)}`);
-  const ids: string[] = (pl.items ?? []).map((i: { contentDetails?: { videoId?: string } }) => i.contentDetails?.videoId).filter(Boolean);
-  return [...(await fetchYouTubeVideos(token, ids)).values()];
+  const ids = new Set<string>(), seenPages = new Set<string>();
+  let pageToken = "";
+  for (let page=0; page<Math.ceil(recent/50) && ids.size<recent; page++) {
+    const pl = await get(token, `${API}/playlistItems?part=contentDetails&maxResults=${Math.min(50,recent-ids.size)}&playlistId=${encodeURIComponent(uploads)}${pageToken?`&pageToken=${encodeURIComponent(pageToken)}`:""}`);
+    for (const item of pl.items ?? []) if (item.contentDetails?.videoId) ids.add(item.contentDetails.videoId);
+    const next: string = pl.nextPageToken || "";
+    if (!next || seenPages.has(next)) break;
+    seenPages.add(next); pageToken = next;
+  }
+  return [...(await fetchYouTubeVideos(token, [...ids])).values()];
 }
 
 /** The channel's most recent uploads that are private with a future go-public time. */
-export async function listScheduledUploads(token: string, now = new Date(), recent = 50): Promise<YouTubeVideo[]> {
+export async function listScheduledUploads(token: string, now = new Date(), recent = 500): Promise<YouTubeVideo[]> {
   return (await listRecentUploads(token, recent))
     .filter((v) => v.privacyStatus === "private" && v.publishAt && Date.parse(v.publishAt) > now.getTime())
     .sort((a, b) => Date.parse(a.publishAt!) - Date.parse(b.publishAt!));

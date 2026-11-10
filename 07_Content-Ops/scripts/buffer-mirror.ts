@@ -4,7 +4,7 @@
  * (STUDIO_PLAYBOOK.md §12). `npm run youtube:package` already does this after every
  * live upload; use this for anything uploaded another way, or to re-run one.
  *
- *   # Short: hosts the mp4 on the public Blob store, then schedules all three posts
+ *   # Short: hosts the mp4 on the public R2 bucket, then schedules all three posts
  *   npx tsx --env-file=.env scripts/buffer-mirror.ts mirror --video <shortId> --long <longId> --media <short.mp4>
  *   # Long: the thumbnail on Instagram and Threads, the YouTube link card on Facebook.
  *   # With --trailer (vertical, 30–60 s), Instagram and Facebook get it as a Reel instead.
@@ -31,7 +31,8 @@
  *   npx tsx scripts/buffer-mirror.ts register --channel hos --video <shortId> --media <short.mp4> --long <longId>
  *
  * Needs .env: GOOGLE_CLIENT_ID/SECRET, YOUTUBE_REFRESH_TOKEN (scripts/youtube-auth.ts),
- * BUFFER_API_KEY, BLOB_READ_WRITE_TOKEN. Without the Buffer key it plans only.
+ * BUFFER_API_KEY, R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_PUBLIC_URL. Without the Buffer key it
+ * plans only; without the R2 keys it stops with an error (no Vercel Blob fallback since 29 Oct 2026).
  * What was posted is kept in 00_Brand/Channel-Setup/social/BUFFER_POSTS.json: commit it.
  * Flags: --standalone (a Short with no long), --allow-late (back catalogue, Ben's OK),
  * --media-url / --thumb-url / --trailer-url (already public files), --kind short|long,

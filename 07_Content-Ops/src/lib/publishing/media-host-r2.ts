@@ -1,6 +1,6 @@
 /**
  * Cloudflare R2 host for the Buffer mirror's media (Ben, 21 Oct 2026). Replaces the Vercel
- * Blob store, which went over its Hobby limits and was suspended on 15 Oct. The bucket
+ * Blob store, which went over its Hobby limits and was suspended on 15 Oct (no Blob fallback since 29 Oct). The bucket
  * (owb-media) is public through its r2.dev address; uploads go through R2's S3 API.
  * Needs R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY and R2_PUBLIC_URL.
  */

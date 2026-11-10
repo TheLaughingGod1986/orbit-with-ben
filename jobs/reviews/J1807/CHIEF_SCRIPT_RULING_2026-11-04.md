@@ -1,0 +1,30 @@
+# J1807 — OWB 061 script handoff
+
+Codex, elected acting Chief, 4 November 2026. **FIX / script not locked.** The accepted unlocked draft remains intact. This is an editorial and workflow ruling, not a scientific verification or production approval. J1964 owns the combined topic/editorial decision after J1963; J1808 retains the separate sources repair.
+
+## Approval evidence and gates
+
+- J0789 accepted v00 only as an unlocked candidate. J0802 accepted v01 (commit 0df984b9f) explicitly “Not locked, not for VO.” J0804 deferred locks 035–061. Neither draft continuity nor historical reviewer scores create an approval.
+- J1806 recorded topic FIX and created J1963 for actual neighbours, audience evidence, and overlap with public 023 Venus. That work is open. This ruling grants no exception to the playbook's existing-public-subject rule and reserves no air date.
+- Re-ran the installed script reviewer on the exact `venus_retrograde_script_master_v01.md`: **95.8/100 PASS**, 1,290 reviewer words, five chapters, structure 8/8. Re-ran `gate:episode` with both `--project` and explicit `--script` targeting v01: **BLOCK**, unsigned pre-build audit; other nine checks OK. The automated scientificAccuracy score is not verification of the claims.
+- Marker counts: DATA 6, SCALE 6, WHO 16, WHEN 6, FACT 4. Counts do not establish clarity, source support or style compliance. The project contains no separate formal claims-check or direct quote-check report establishing approval of this version. Existing SOURCES and notes are draft evidence for J1808.
+- Channel balance remains HOS first: November HOS 2/4 complete versus OWB 5/4. No priority change. Session tools establish text/still inspection only, no demonstrated audio_input or moving_video_input; no media was reviewed or needed for this ruling.
+
+## Editorial FIX required if the topic advances
+
+1. **Opening:** sentence one is a scene-setting instruction, “Look from Venus orbit…”, with dimensions/distance before the central contradiction. The first causal answer starts after 82 whitespace-separated words (about 33 seconds at 150 wpm, a text estimate, not measured VO). Rewrite to the claim-first rule and put a concrete answer before 0:30. The current TEACH assertion that it lands in the opening seconds is not evidence.
+2. **Narration load:** Chapter 2 stacks rotation, hours, obliquity, tilt, velocity, eccentricity and conjunction figures; the closing recap stacks scientists, full publication dates and measurements. Replace catalogue delivery with one causal idea at a time and useful sourced comparisons. Birth/death dates belong on sourced WHO cards where not narratively essential. Preserve the word target and one mid-film subscribe beat.
+3. **Scientific wording to verify, not silently correct:** the opening “First observed in 1610”; categorical thermal-tide origin and “science solved”/“Venus proves”; “any rocky planet” versus the conditional wording in the local quoted model; exact conjunction/same-face resonance; Akatsuki's “in orbit … to 2024” versus operational dates; 20-minute variation versus ±20-minute graphic; cloud/surface angular-speed versus wind-speed comparisons; historical measurements versus modern values; and “92-bar thermal tides” versus surface pressure. Keep sidereal and solar days distinct, establish the viewing reference for clockwise/counterclockwise, and reconcile the local source wording “sunrise to sunset” with narration “sunrise to sunrise.” J1808's formal checks must resolve these against primary sources; this review did not browse or certify those claims.
+4. **Graphics:** each DATA block currently combines many properties; Chapter 4 combines rotation states, atmospheric speed and core/day variability. Split into one readable idea per rendered row, with real moving imagery between code graphics. A matching DATA/SCALE count does not prove a spoken everyday comparison for every retained big number; the Chapter 3 underwater analogy exists only in the visual direction. Retain only useful numbers and source comparisons.
+5. **WHO/style:** several cards omit required years (Goldstein, Carpenter, Soter, Correia, Horinouchi, Leconte, Hübers); do not invent them. Roles such as “University of Toronto astrophysicist” exceed four words. Complete sourced years and short roles, source any portrait, keep cards on moving/blurred real imagery, and verify every selected NASA identity/usage. The local SOURCES description itself calls PIA00271 a computer-simulated global view, so treating it as an ordinary real plate requires correction under picture rules, not a filename-based approval.
+6. **Ending and continuity:** final direction holds only 2–3 seconds beyond narration while fading music. Bring it into the standing 15–20-second end-screen picture hold with full-runtime music and prescribed fade. Confirm 060/062 promises against their actual approvals; the manuscript's handoff is not a topic lock.
+
+## Owned next action
+
+J1964 is the elected-Chief decision owner, film 061/script, dependent on J1963. It advances, defers or rejects after the topic evidence, then commissions a specialist revision only if appropriate. J1808 and its successors retain formal Gemini facts and direct MUST QUOTE checks. Any revised script must pass exact-version gates and an explicit Chief lock before VO. No duplicate research job, timed retry, new slot, spend or publishing action is created here. Nothing is needed from Ben.
+
+## Reviewed input fingerprints
+
+- `02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer-Than-Its-Year/01_Script/venus_retrograde_script_master_v01.md`: `bed414eddc1f44ff1a61934a924ea01001054aab105fe31d9b38baf5f69c36ba`
+- `02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer-Than-Its-Year/01_Script/SOURCES.md`: `83f3e5ce46fa82c3efce5fb9a399a3ef5767c5160d52252be01baae9f6393247`
+- `02_Video-Projects/061_Why-Venus-Spins-Backwards-And-Its-Day-Is-Longer-Than-Its-Year/01_Script/SCRIPT_NOTES_v01.md`: `898dcb002d838734ad1e0bc54a666e41982249ac858e12242927fd5c3ecd0864`

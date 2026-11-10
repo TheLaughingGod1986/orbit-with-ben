@@ -40,7 +40,9 @@ class PageNeverAsksForACode(unittest.TestCase):
 
 @unittest.skipUnless(shutil.which("node"), "node not installed")
 class OpenTapsNode(unittest.TestCase):
-    """A browser without the cookie (Home Screen copy, Gmail in-app browser) is accepted, cookied and audited."""
+    """Open taps are off by default (9 Nov 2026): a browser without the cookie is refused. With BOARD_OPEN_TAPS=1 it is
+    accepted and audited, but never given the cookie."""
+    OPEN = 'process.env.BOARD_OPEN_TAPS = "1";'
 
     HANDLER = """import handler from "./api/checks.js";
 const posted = [], patched = [];
@@ -68,18 +70,25 @@ console.log(JSON.stringify({ status: out.status, json: out.json, cookie: out.hea
 
     doc = {"film": "OWB:S3", "version": "v04", "verdict": "ok", "fixes": [], "note": "", "at": "2026-10-25T13:40:00Z"}
 
-    def test_dry_run_from_uncookied_phone_succeeds(self):
-        r = self.run_handler({"id": "OWB-S3", "dryRun": True, "doc": self.doc})
+    def test_an_unlinked_browser_is_refused_by_default_and_gets_no_cookie(self):
+        for body in ({"id": "OWB-S3", "dryRun": True, "doc": self.doc}, {"id": "OWB-S3", "doc": self.doc}, {"id": "!"}):
+            r = self.run_handler(body)
+            self.assertEqual(r["status"], 401, body); self.assertEqual(r["cookie"], "")
+            self.assertEqual(r["posted"], []); self.assertEqual(r["patched"], [])
+
+    def test_dry_run_from_uncookied_phone_succeeds_when_open_taps_are_on(self):
+        r = self.run_handler({"id": "OWB-S3", "dryRun": True, "doc": self.doc}, env=self.OPEN)
         self.assertEqual(r["status"], 200)
         self.assertTrue(r["json"]["ok"]); self.assertEqual(r["json"]["auth"], "open")
         self.assertTrue(r["json"]["wouldPost"].startswith("[Ben] OK S3 v04"))
         self.assertIn("new device: iPhone web app / in-app browser, ip#", r["json"]["wouldPost"])
         self.assertNotIn("203.0.113.7", json.dumps(r))
-        self.assertIn("studio_ben=v1.", r["cookie"]); self.assertIn("Max-Age=34560000; HttpOnly", r["cookie"])
+        self.assertEqual(r["cookie"], "")   # an open tap proved nothing, so it never becomes a session
         self.assertEqual(r["posted"], []); self.assertEqual(r["patched"], [])
 
     def test_real_tap_posts_ben_ok_and_audits(self):
-        r = self.run_handler({"id": "OWB-S3", "doc": self.doc})
+        r = self.run_handler({"id": "OWB-S3", "doc": self.doc}, env=self.OPEN)
+        self.assertEqual(r["cookie"], "")
         self.assertEqual(r["status"], 200)
         self.assertEqual(len(r["posted"]), 1)
         self.assertTrue(r["posted"][0].startswith("[Ben] OK S3 v04"))
@@ -104,14 +113,14 @@ console.log(JSON.stringify({ status: out.status, json: out.json, cookie: out.hea
         self.assertEqual(r["status"], 401); self.assertEqual(r["cookie"], "")
 
     def test_cross_site_post_refused(self):
-        r = self.run_handler({"id": "OWB-S3", "dryRun": True, "doc": self.doc}, {"origin": "https://evil.example"})
+        r = self.run_handler({"id": "OWB-S3", "dryRun": True, "doc": self.doc}, {"origin": "https://evil.example"}, env=self.OPEN)
         self.assertEqual(r["status"], 401)
 
     def test_rate_limit(self):
         import datetime
         now = datetime.datetime.now(datetime.timezone.utc).isoformat()
         audit = json.dumps([{"at": now, "id": "OWB-001", "op": "ok"}] * 20)
-        r = self.run_handler({"id": "OWB-S3", "doc": self.doc}, audit=audit)
+        r = self.run_handler({"id": "OWB-S3", "doc": self.doc}, audit=audit, env=self.OPEN)
         self.assertEqual(r["status"], 429); self.assertEqual(r["posted"], [])
 
 

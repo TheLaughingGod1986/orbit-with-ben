@@ -1,0 +1,34 @@
+{
+  "job": "J2141",
+  "spend_gbp": 0,
+  "status": "partial_saa_strength_only",
+  "locked_words_sha256": "b8e51942b0f0e39ecc9021b0375d520024c966619345217e03d18c39ab3ffa1e",
+  "graphics": [
+    {
+      "row": 29,
+      "mode": "saa",
+      "start_s": 301.2,
+      "duration_s": 5.12,
+      "source_rows": [
+        12
+      ],
+      "alpha": false,
+      "cue": "Since",
+      "geometry": "Schematic single blob that widens, drifts west and splits into two lobes. Zoomed 20,000\u201326,000 nT bar from 24,000 to 22,000. Not an ESA/DTU contour.",
+      "source_url": "https://www.esa.int/Applications/Observing_the_Earth/FutureEO/Swarm/Swarm_probes_weakening_of_Earth_s_magnetic_field",
+      "clear": "x>1080 and y<420 stays empty for the existing 1970 WHEN stamp.",
+      "id": "code_graphic_031_r29_saa_v01",
+      "locked_start_words": "Since 1970,",
+      "path": "/Users/ben/_desk/J2141-saa-v01/code_graphic_031_r29_saa_v01.mp4",
+      "sha256": "6b000c6fd9598622dd2dcf8299dc8a9279c98dfcbad03ad3789f60a3ae1d234d",
+      "bytes": 282376,
+      "preview": "/Users/ben/_desk/J2141-saa-v01/code_graphic_031_r29_saa_v01.png",
+      "width": 1920,
+      "height": 1080,
+      "fps": 25,
+      "schematic": true,
+      "review_status": "pending_composite_motion_and_Chief_review"
+    }
+  ],
+  "words_note": "24,000 nT, 22,000 nT and about 20 km/yr are SOURCES row 12 figures named by SHOT_LIST_v02. They are not spoken on this line. WEAK SPOT, WIDENED and 2 LOBES follow the locked words. Upper right is clear for the existing 1970 stamp."
+}

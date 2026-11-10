@@ -4,16 +4,22 @@
 |-------|-------|
 | Slug | `038_What-We-Left-In-Space-Voyager-Golden-Record` |
 | Idea pack | `00_Brand/Channel-Setup/ideas/IDEAS_2026-10-17_J0437.md` (scored 25/30, #1 of 5) |
-| Topic lock | **Pending Chief decision** (`J0437` parked for Chief: lock 038 or pick #2 Planet Sounds / #3 Wrong Kind of Aliens / #4 Io Volcanoes; confirm whether scheduled standalone Short `kKN8Ale42sE` *Voyager 1 Is About to Be One Light-Day Away* airing 17 Nov 2026 satisfies Short-first) |
-| Script draft | `01_Script/voyager_golden_record_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0446; 1,221 spoken words / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; revised from v00 drafted in J0437) |
-| Script review | **PASS — 95.4 / 100** (1,221 spoken words / 1,299 reviewer words, ~8.7 min, 6 chapters, 8/8 structure gates, 0 warnings; parked for Chief script review in `J0446`) |
+| Topic lock | **DEFER (J1904, 4 Nov): unlocked candidate; no Short-first waiver. J1981 evidence then J1982 capacity/advancement decision.** J1779 restored the handoff from cancelled J0437/J0446; `kKN8Ale42sE` (*How Far From Earth Is Voyager 1 Right Now?*) verified live 4 Nov as private with 0 views (`publishAt: 2026-11-17T11:30:00Z`), not measured Short-first proof. |
+| Script draft | `01_Script/voyager_golden_record_script_master_v01.md` (v01 drafted 17 Oct 2026 in J0446; 1,249 whitespace spoken words / 1,221 notes / 1,299 reviewer words, ~8.7 min; notes in `01_Script/SCRIPT_NOTES_v01.md`; v00 retained) |
+| Script review | **FIX (J1904, 4 Nov).** Historical automated score 95.4/100 from J0446 is not editorial, scientific or script-lock approval. See `jobs/reviews/J1904/CHIEF_EDITORIAL_RULING_2026-11-04.md` for required specialist fixes if advanced. |
 | Sources | `01_Script/SOURCES.md` — 9 rows started and pre-checked with verbatim quotes (`NASA Science Voyager 1`, `NASA Voyager 1 What Is a Light-Day?`, `NASA Apollo 11`, `NASA Science Pioneer 10`, `NASA Voyager Golden Record Contents / Making / Cover`, `NASA Pale Blue Dot / Fast Facts`, `JPL Release Ed Stone`, `NASA Voyager Interstellar Mission / Q&A with Dr. Ed Stone / FAQ`, `NASA Perseverance Rover Components`, `LOC Name Authority Records n80008815 / n79064998 / n84081625 / n79092362 / n79021791 / n83017119`) |
-| Gemini facts pass | Pending topic lock (`SOURCES.md` pre-populated for Gemini `facts` job) |
-| Gate | BLOCK on `prebuild_vidiq` sign-off only (all script/structure checks OK; `npm run review:script` + `npm run gate:episode` pasted below) |
+| Gemini facts pass | Not started; J1982 owns the specialist rewrite → formal Gemini facts → direct quotes/lock chain if advanced. All nine rows remain TO VERIFY. |
+| Gate | Production blocked: topic/neighbour and Short-first decision, unsigned prebuild audit, editorial fixes, formal Gemini facts, direct quote check and explicit script lock remain. Outputs below are historical J0446 evidence only. |
 | VO | Pending (wait for topic lock + Gemini `facts` + `CLAUDE_QUOTE_CHECK` + Chief script sign-off) |
 | CG | Pending (NASA/JPL `PIA14113` Golden Record, `PIA23645` Pale Blue Dot, Pioneer 10 plaque, Voyager 1 & 2 spacecraft + code graphics + Omni Orbit) |
 | Runtime target | 7–9 min (1,221 spoken words / 1,299 reviewer words, ~8.7 min est.) |
 | Shorts | 3 episode Shorts on lock + standalone Short `kKN8Ale42sE` (*Voyager 1 Is About to Be One Light-Day Away*, airing 17 Nov 2026) |
+
+## Current handoff — J1779, 3 November 2026
+
+J1904 owns topic/editorial review and the dependent facts/quote-check/script-lock chain. Both original jobs were cancelled against 061-only reviews; neither cancellation approved 038. All nine SOURCES rows remain TO VERIFY, and the pre-build audit remains unsigned. The title promise, opening, dense data windows and overlong FACT labels need review before lock. No production approval or spend. Detailed evidence: `jobs/reviews/J1779/CHIEF_HANDOFF_2026-11-03.md` (repo root).
+
+The marker counts and pasted gate output below are historical J0446 evidence, not a fresh sign-off.
 
 ## Marker counts (`voyager_golden_record_script_master_v01.md`)
 
@@ -82,3 +88,17 @@ Pass threshold: 90
 
 Script score: **95.4/100** · PASS
 ```
+
+## Chief ruling — 4 November 2026 (J1904)
+
+DEFER topic advancement; FIX script. No Short-first waiver or production approval. J1981 owns neighbours, completed topic audit and matching Short-first evidence (`kKN8Ale42sE`, *How Far From Earth Is Voyager 1 Right Now?*, verified live 4 Nov as private with 0 views, scheduled 17 Nov 2026 11:30Z); J1982 owns capacity/advancement and any specialist rewrite/facts/direct-quotes chain. HOS November is 2/4 complete against OWB 5/4. Reconsider when HOS reaches four completed November films or Chief records a fresh non-displacing capacity rationale, and topic evidence passes. Reconcile incoming 037 (`J1980`) and outgoing 039 (`J1905`) handoffs before script lock. Historical notes above are not approval; v00/v01 and SOURCES are unchanged. Full ruling: `jobs/reviews/J1904/CHIEF_EDITORIAL_RULING_2026-11-04.md`. Nothing for Ben.
+
+
+## Topic go/no-go package prepared — 7 November 2026 (J2327)
+
+- **Scope:** Plans and pre-build evidence only (`£0` / `0` credits; `038` remains in `next` #4 behind the 5-film `active` cap `030`–`034`; `v00`/`v01` and `SOURCES.md` untouched).
+- **Files prepared in `11_Upload-Package/`:**
+  - `TOPIC_OPPORTUNITY_SCORE.md` (**97 / 100 — GO**)
+  - `PRE_BUILD_VIDIQ_AUDIT.md` (filled with `2026-11-07` signed-out YouTube GB data; Section 7 left **UNSIGNED** until `038` enters `active`, `17–18 Nov` Voyager Short stats are read, and `v02` rewrite + `facts` pass complete per `J1904`)
+  - `TOPIC_GO_NO_GO_SHEET.md` (one-page decision summary + entry checklist)
+- **Key evidence (`2026-11-07 01:44 UTC`):** `14` verified education/space neighbours `≥1M` views (`1.62M–28.22M`, including Vsauce `GDrBIKOR01c` **28.22M**, Vox Golden Record `NAN1kt4SG9E` **15.72M**, Destiny `fSbm5LCJspk` **10.90M**, Astrum `UyzBoUvN3PM` **8.28M**, Business Insider `OVe72eMY_pk` **7.57M**, Verge Science `RRuovINxpPc` **6.43M**) + `12,600/mo` search volume on `voyager golden record`; 2 Voyager 1 distance Shorts (`kKN8Ale42sE` airing `2026-11-17` and `cwU_0WWeNZ4` airing `2026-11-18`) will have 3–4 weeks of public analytics before `038` reaches the front of `next` in mid-December; 0-collision `≤50`-char source-backed titles locked (`What NASA Put on the Voyager Golden Record`, 42 chars [Rule 15] / `Inside the Golden Record Aboard NASA's Voyager 1`, 48 chars [Rule 18], replacing 59-char `v01` H1 per `J1904`); real NASA/JPL Golden Record cover `PIA14113` thumbnail concept (no Orbit, Rule 19). Consolidated report: `jobs/reviews/J2327/REVIEW.md`.

@@ -1,0 +1,174 @@
+{
+  "verdict": "PASS",
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v05.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "s02_orion_paranal",
+      "source": "orion_over_paranal.mp4",
+      "title": "orion_over_paranal.mp4",
+      "t": 4.65,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.74 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 4,
+      "row": "s05_alma_orion_set",
+      "source": "alma_orion_set.mp4",
+      "title": "alma_orion_set.mp4",
+      "t": 15.43,
+      "at": "0:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0167 < film p5 0.0189"
+      ],
+      "offset": 0.4
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "s01_lasilla_mw_open",
+      "source": "eso_mw_lasilla.mp4",
+      "title": "eso_mw_lasilla.mp4",
+      "t": 1.23,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 1,
+      "row": "s02_orion_paranal",
+      "source": "orion_over_paranal.mp4",
+      "title": "orion_over_paranal.mp4",
+      "t": 4.65,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.74 < 18.0"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 2,
+      "row": "s03_lasilla_ntt",
+      "source": "eso_lasilla_ntt.mp4",
+      "title": "ESO La Silla night sky, Milky Way over the telescope roof",
+      "t": 8.57,
+      "at": "0:09",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 3,
+      "row": "s04_star_trails",
+      "source": "eso_startrails.mp4",
+      "title": "eso_startrails.mp4",
+      "t": 12.02,
+      "at": "0:12",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 4,
+      "row": "s05_alma_orion_set",
+      "source": "alma_orion_set.mp4",
+      "title": "alma_orion_set.mp4",
+      "t": 15.43,
+      "at": "0:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0167 < film p5 0.0189"
+      ],
+      "offset": 0.4
+    },
+    {
+      "cut": 5,
+      "row": "s06_orion_vlt",
+      "source": "orion_rise_vlt.mp4",
+      "title": "orion_rise_vlt.mp4",
+      "t": 18.53,
+      "at": "0:19",
+      "fail": [],
+      "warn": [],
+      "offset": 0.4
+    },
+    {
+      "cut": 6,
+      "row": "s07_twilight",
+      "source": "conjunction.tif",
+      "title": "conjunction.tif",
+      "t": 21.02,
+      "at": "0:21",
+      "fail": [],
+      "warn": [],
+      "offset": 0.4,
+      "reviewed_ok": {
+        "note": "Codex acting Chief, election rechecked 2026-10-27 11:09Z. Full-resolution frame inspected: one continuous image; detector line is the natural horizon, cloud/land texture, road horizon, stadium boundary or tree silhouette. No composited panel or gutter. This ruling applies only to split-panel detection for this exact source stretch; all other failures remain.",
+        "passed": [
+          "split panel: horizontal gutter at 0.828"
+        ]
+      }
+    },
+    {
+      "cut": 7,
+      "row": "s_loop",
+      "source": "loop_eso_mw_lasilla.mp4",
+      "title": "loop_eso_mw_lasilla.mp4",
+      "t": 22.6,
+      "at": "0:23",
+      "fail": [],
+      "warn": [],
+      "offset": 2.35
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0189,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

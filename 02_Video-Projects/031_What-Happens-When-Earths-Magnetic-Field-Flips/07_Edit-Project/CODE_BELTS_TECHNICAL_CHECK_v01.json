@@ -1,0 +1,48 @@
+{
+  "job": "J2141",
+  "worker": "macbook",
+  "spend_gbp": 0,
+  "scope": "Technical checks and static samples only; no motion/composite, KEEP or stage approval",
+  "checks": [
+    {
+      "id": "code_graphic_031_r25_belts_normal_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 2.4,
+      "frames": 60,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        1.2,
+        2.1999999999999997
+      ]
+    },
+    {
+      "id": "code_graphic_031_r25_belts_dip_v01",
+      "sha256_match": true,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": "25/1",
+      "pixel_format": "argb",
+      "duration_s": 5.56,
+      "frames": 139,
+      "decode_exit": 0,
+      "decode_stderr": "",
+      "static_sample_times_s": [
+        0.2,
+        2.78,
+        5.359999999999999
+      ]
+    }
+  ],
+  "contact_sheet": "/Users/ben/_desk/J2141-belts-macbook-v01/CONTACT_MACBOOK_v01.jpg",
+  "contact_sheet_sha256": "664e3ed3f11b0e97c7b7252e708457f1f226dbfeeaf194643b2762e8deffc959"
+}

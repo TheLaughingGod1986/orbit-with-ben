@@ -1,0 +1,9 @@
+FAIL  owb_sa_s4_uranus_v03.mp4  dur=18.0s  audio=-17.1dB  motion=1.09  f0diff=0.36  cut1=2.7s  vo_onset=0.00s  tail_gap=2.08s  vo_src=/Volumes/data/mac-mini-archive/scratch/J1204/uranus_v03/stem_vo.wav  dhash=6b03070f0f4f3b10  visor=0.0
+   FAIL  integrated loudness -14.6 LUFS outside -14.5..-13.5 (target -14.0)
+   FAIL  pushed still at frame 0 (mean 0–1.5 s frame diff 0.36 < 1.50) — use moving footage
+   warn  duration 18.0s outside 22–27s band
+   warn  gap from last word to end is 2.08s > 1.5s (last word 15.92s, duration 18.00s)
+   warn  picture barely changes in the first second (motion 1.1 < 10) — trim the clip's ease-in so frame 0 is already mid-action
+   warn  open plate 14 bits from 1OCNzhkiBuc (2026-10-27)
+   warn  open plate 15 bits from 2e-giqFmfy8 (2026-10-23)
+   sheet /var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s4_uranus_v03_open_sheet.jpg
