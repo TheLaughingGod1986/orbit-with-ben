@@ -177390,9 +177390,14 @@
           "at": "2026-11-10T10:10Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T10:10Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Chief names the 009 media root; then re-run the NAS check, the read-only Flow check and mint the first batch",
+      "remaining_action": "Run the three pre-generation checks (NAS, style refs, read-only live check) before minting any HOS 009 row",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177409,9 +177414,8 @@
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-10T09:33Z",
-        "by": "claudecode",
-        "note": "NAS answered once then hung again; refs found in the NAS archive 009 folder, not studio-live; nothing generated"
+        "at": "2026-11-10T10:10Z",
+        "by": "claudecode"
       }
     },
     {
