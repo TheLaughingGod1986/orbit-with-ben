@@ -126,6 +126,11 @@ class SiteBuild(unittest.TestCase):
             self.assertIn('<link rel="manifest" href="/tracker.webmanifest">', html)
             self.assertIn('<link rel="apple-touch-icon" href="/static/tracker-180.png">', html)
             self.assertIn('<a href="/">Studio board</a>', html)
+            # 10 Nov 2026 (phone): a real back button, and the Studio's dark colours instead of a white page.
+            self.assertIn('<a class="studio-back" href="/">', html)
+            self.assertIn('<html lang="en" data-theme="dark">', html)
+            self.assertIn('<meta name="theme-color" content="#0B111B">', html)
+            self.assertIn(':root[data-theme="dark"]', html)   # the template still carries the dark theme this relies on
             man = json.loads((dist / "tracker.webmanifest").read_text())
             self.assertEqual((man["start_url"], man["display"]), ("/tracker", "standalone"))
             for icon in man["icons"]:

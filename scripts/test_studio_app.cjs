@@ -268,6 +268,23 @@ assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'
 assert.equal(t.readiness(v({}), NOW + 2 * 864e5, NOW), 'Not uploaded to YouTube yet');
 assert.equal(t.readiness(v({youtube: {state: 'scheduled', publishAt: 'x'}}), NOW + 864e5, NOW), '', 'a swap YouTube already has scheduled is not flagged');
 assert.equal(t.readiness(v({flags: [{kind: 'approved', text: 'no read-back'}]}), NOW + 864e5, NOW), 'no read-back');
+// 10 Nov 2026: a flag written for the Chief is housekeeping, not something Ben is asked. It showed on his Schedule.
+{
+  const sched = {videoId: 'abcdefghijk', state: 'scheduled', publishAt: '2026-10-29T18:00:00Z', publishAtLondon: 'Thu 29 Oct 18:00'};
+  const chief = {kind: 'chief', audience: 'chief', text: 'Chief: brief text still asks Ben for an OK he already gave'};
+  assert.equal(t.readiness(v({youtube: sched, flags: [chief]}), NOW + 864e5, NOW), '', 'a Chief-only flag is not a Schedule warning');
+  assert.equal(t.readiness(v({youtube: sched, flags: [chief, {kind: 'stuck', text: 'No job queued'}]}), NOW + 864e5, NOW), 'No job queued',
+    'a flag for Ben still shows');
+  const b = {tracker: {videos: [v({key: 'HOS:007', channel: 'HOS', number: '007', title: 'Why Vaccines Are Named After a Cow', lane: 'approved',
+    version: 'v04', youtube: sched, flags: [chief]})]}};
+  const page = t.renderTab('schedule', b, NOW);
+  assert(page.includes('Why Vaccines Are Named After a Cow') && !page.includes('still asks Ben'), 'the Schedule tab hides the Chief-only flag');
+  // The day heading and the time line say when; the row no longer repeats "Scheduled for Thu 29 Oct 18:00 London".
+  assert(page.includes('class="meta when">18:00') && !page.includes('Scheduled for Thu 29 Oct 18:00 London'), 'a Schedule row says the time once');
+  assert(page.includes('· v04</span>'), 'and keeps channel, kind and version');
+  assert(!t.detail(b, 'HOS:007').includes('still asks Ben'), "a video's own page hides the Chief-only flag too");
+  console.log('Schedule rows and Chief-only flags OK');
+}
 assert(t.renderTab('schedule', board, NOW).length > 100);
 // One meaning of working: the video flag alone is not an agent working (11 / 1 / 0 no longer disagree).
 const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, models: {checkedAt: new Date(NOW).toISOString(), models: []}, owb: {jobs: []}}, NOW);

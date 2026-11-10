@@ -405,8 +405,12 @@
       ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress on this cut"></span>`
       : "";
     return `<a class="row${working ? " is-working" : ""}${focused ? " is-focus" : ""}" href="${href || detailLink(v)}" data-video-key="${esc(v.key)}" data-film-key="${esc(filmKey)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
-      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
+      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""}${opts && opts.brief ? "" : " · " + esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
+  // A flag written for the Chief (video_tracker.flags_for, audience "chief") is housekeeping, not something Ben is
+  // being asked. The old board hid these; the five-tab app showed them on his Schedule and on a video's page
+  // (10 Nov 2026: "Chief: brief text still asks Ben for an OK he already gave" under HOS 007).
+  const benFlags = v => (v.flags || []).filter(f => f && f.text && f.audience !== "chief");
   const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
@@ -1517,7 +1521,7 @@
         <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
         ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
-    const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
+    const flags = benFlags(v).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
     return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
       <p class="meta">${esc(chName(v.channel))} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
       </div></div>
@@ -1685,7 +1689,7 @@
 
   // A scheduled video we can't vouch for gets one small warning; everything verified stays quiet.
   function readiness(v, at, now) {
-    const flag = (v.flags || []).find(f => f && f.text);
+    const flag = benFlags(v)[0];
     if (flag) return flag.text;
     if (v.approved && v.approved.warn) return v.approved.warn;
     const yt = v.youtube || {};
@@ -1700,7 +1704,8 @@
     const day = at => new Date(at).toLocaleDateString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "short" });
     const time = at => new Date(at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
     const item = r => { const warn = readiness(r.v, r.at, now);
-      return row(r.v, `<span class="meta when">${esc(time(r.at))}${r.scheduled ? "" : " · planned date"}</span>${warn ? `<span class="tag amber">⚠ ${esc(clip(warn, 80))}</span>` : ""}`); };
+      // The day heading and this line say when, so the row drops "Scheduled for Wed 11 Nov 2026 11:30 London".
+      return row(r.v, `<span class="meta when">${esc(time(r.at))}${r.scheduled ? "" : " · planned date"}</span>${warn ? `<span class="tag amber">⚠ ${esc(clip(warn, 80))}</span>` : ""}`, undefined, {brief: true}); };
     const byDay = list => { let out = "", last = "";
       for (const r of list) { const d = day(r.at); if (d !== last) { out += `<h3 class="day">${esc(d)}</h3>`; last = d; } out += item(r); }
       return out; };
