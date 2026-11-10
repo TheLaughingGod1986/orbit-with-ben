@@ -1,5 +1,5 @@
 {
-  "next_id": 2498,
+  "next_id": 2499,
   "jobs": [
     {
       "id": "J0001",
@@ -215723,6 +215723,36 @@
       "kind": "studio",
       "plain": "Put the search-first titles on the Nearest Star and Earth Stopped Spinning films before they air, and set their tests up again",
       "mini_only": true
+    },
+    {
+      "id": "J2498",
+      "title": "HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling on J2476 (10 Nov): the 013 picture plan v01 is accepted as the record (history-of-science PR #473, merged). No minting yet: 013 comes after 009, 010 and 011 in air-date order, and the Flow balance cannot cover all four on expected cost. This job is the free work that can go ahead meanwhile. £0, 0 credits.\n\nBuild a timing rough of 013 on the locked voice-over `02_Voiceover/hos_013_vo_v03a.wav`:\n1. Lay the 23 free rows that are already built and checked (16 code graphics and cards, 6 archive composites, 1 reuse) at their planned times from `07_Edit-Project/PICTURE_PLAN_v01.json`.\n2. For each of the 71 rows still to be minted, lay a plain labelled slate (row id, the one-line shot description, Quality or Fast) for its planned length. No generated picture, no stock stand-ins.\n3. Run `clip_check.py` on the cut list against the word timings: no voice-over sentence may be cut by a picture change, and every overlay must land on its spoken word.\n4. Write down every row where the timing does not hold (a cut inside a sentence, an overlay early or late, a row over 8 s). Fix the plan for those rows as `PICTURE_PLAN_v02` only if something had to move; otherwise say v01 holds.\n5. Say which mint rows could move from Quality to Fast, to archive, or to a code graphic without hurting the film, with the credits each move saves. A list with reasons; change nothing.\n\nDeliver: the rough as a file on studio-live (not for Ben; it is a working cut with slates), the list from step 4, the list from step 5, in a pull request on history-of-science. Park for Chief.\n\nDo not mint, do not set `generation_authorized`, do not send anything to Ben.\n",
+      "ref": "",
+      "film": "013",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T11:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T11:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting)",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Lay out the Darwin film on its voice-over with what is already built, to prove the timing before any credits are spent"
     }
   ],
   "focus": [
