@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 | J2506 | cloud | open | – | – | review · Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done) |  |
-| J2507 | any | claimed | macbook-2 | 2026-11-10T16:11Z | review · Verify condition for J2171 |  |
+| J2507 | any | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 
