@@ -211552,17 +211552,22 @@
           "at": "2026-11-10T00:16Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2446; setting 3-step plan for PR #428 and PR #411 sync with HOS origin/main"
+        },
+        {
+          "at": "2026-11-10T00:22Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Merged HOS origin/main (96ef0ed3) into cursor/J2217-eight-item (PR #428), regenerated STATUS.md + kanban/index.html, verified test_j2163_recipe (18/18 OK) + check_all.sh (ALL CHECKS PASS), pushed cursor/J2217-eight-item"
         }
       ],
-      "remaining_action": "Inspect HOS PRs #411 and #428 and merge origin/main into cursor/J2217-eight-item in clean worktree",
+      "remaining_action": "Merge #428 (cursor/J2217-eight-item) into codex/J2163-repair (#411), verify status files and tests, and push",
       "due": "2026-11-10T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T00:16Z",
+        "at": "2026-11-10T00:22Z",
         "by": "gemini",
-        "note": "Claimed J2446; setting 3-step plan for PR #428 and PR #411 sync with HOS origin/main"
+        "note": "Merged HOS origin/main (96ef0ed3) into cursor/J2217-eight-item (PR #428), regenerated STATUS.md + kanban/index.html, ver"
       },
       "taskKeys": [
         "HOS:008"
