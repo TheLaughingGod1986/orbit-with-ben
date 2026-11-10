@@ -212185,10 +212185,10 @@
       "stage": "",
       "after": "J2451",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-10T10:04Z",
+      "eta": "2026-11-10T14:04Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -212197,11 +212197,24 @@
           "at": "2026-11-09T21:38Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T10:04Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch",
       "due": "2026-11-18T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T10:04Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2453",
