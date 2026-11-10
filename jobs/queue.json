@@ -218973,19 +218973,24 @@
           "at": "2026-11-10T21:33Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done: Condition UNMET: J2033 actively claimed by gemini on Mini (7/20 done, starting Batch 3 of 5 on CDP 9222)"
+        },
+        {
+          "at": "2026-11-10T21:35Z",
+          "by": "macbook-2",
+          "what": "step 3 of 3 done: Evidence in jobs/reviews/J2543/REVIEW.md (OWB PR #773, b6982c0e3)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2543/REVIEW.md, open PR, and park for Chief to update J2536 hold",
+      "remaining_action": "Chief: record wait --recheck J2543 on J2536 (check-at 2026-11-10T22:45:00Z) and close J2543",
       "kind": "review",
       "recheck_of": "J2536",
       "due": "2026-11-10T22:22:03+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-10T21:33Z",
+        "at": "2026-11-10T21:35Z",
         "by": "macbook-2",
-        "note": "Condition UNMET: J2033 actively claimed by gemini on Mini (7/20 done, starting Batch 3 of 5 on CDP 9222)"
+        "note": "Evidence in jobs/reviews/J2543/REVIEW.md (OWB PR #773, b6982c0e3)"
       }
     }
   ],
