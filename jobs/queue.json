@@ -216081,20 +216081,24 @@
           "at": "2026-11-10T14:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T14:09Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2500; starting 5-step MiniWork SSD re-check"
         }
       ],
-      "remaining_action": "Mini SSD re-check for Ben: is MiniWork now on a fast link (it was USB 2.0 speed this morning), read and write speed, any unplug since 09:47Z",
+      "remaining_action": "Check MiniWork mount, USB/Thunderbolt link speed, and run 256 MB read/write test",
       "due": "2026-11-10T18:00:00Z",
       "kind": "qa",
       "plain": "Check again that the Mini's SSD is working and whether it is now running at full speed",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-10T14:08Z",
+        "of": 5,
+        "at": "2026-11-10T14:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2500; starting 5-step MiniWork SSD re-check"
       }
     },
     {
