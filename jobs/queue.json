@@ -211716,17 +211716,22 @@
           "at": "2026-11-10T01:29Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified 002 script, 019 upload description + chapters, and 020 SOURCES.md + upload description + shot prompts; verified source plates (eso1907a, eso2208-eht-mwa, PIA21775, heic1914a, heic1502a, eso0932a, PIA04921)"
+        },
+        {
+          "at": "2026-11-10T01:35Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: All 6 batch-1 repackage thumbnails and preview sheets verified (1280x720, <2 MB, thumb_preview.py --score PASS on all 6, readable at 168x94, clear of duration badge)"
         }
       ],
-      "remaining_action": "Copy builder script to 00_Brand/Channel-Setup/tools/ and run/verify all 6 thumbnails and preview sheets",
+      "remaining_action": "Mark J2448 done with all 6 paths and SHA-256 hashes",
       "due": "2026-11-13T18:00:00Z",
       "kind": "thumb",
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-10T01:29Z",
+        "at": "2026-11-10T01:35Z",
         "by": "gemini",
-        "note": "Verified 002 script, 019 upload description + chapters, and 020 SOURCES.md + upload description + shot prompts; verified"
+        "note": "All 6 batch-1 repackage thumbnails and preview sheets verified (1280x720, <2 MB, thumb_preview.py --score PASS on all 6,"
       },
       "taskKeys": [
         "OWB:002",
