@@ -218601,13 +218601,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T20:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:14Z",
-      "result": "parked for Chief: PR #767 open, check green. Rules job 2m4s (#765) -> 1m3s on #767's own run (one run only): ffmpeg installed without apt-get update or man-page rebuild, and the three test folders run side by side. No test skipped or removed; rules-check.yml only. Still 3 s over the 60 s target, so it is still billed 2 minutes. Not measured: per-step times (gh run view is not allowed on the MacBook). Next: read the step times of run 42894816221, then split the scripts folder's slowest files (2m54s locally on the Mac) across parallel processes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T20:14Z",
@@ -218628,18 +218628,17 @@
           "at": "2026-11-10T20:24Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #767 open, check green. Rules job 2m4s (#765) -> 1m3s on #767's own run (one run only): ffmpeg installed without apt-get update or man-page rebuild, and the three test folders run side by side. No test skipped or removed; rules-check.yml only. Still 3 s over the 60 s target, so it is still billed 2 minutes. Not measured: per-step times (gh run view is not allowed on the MacBook). Next: read the step times of run 42894816221, then split the scripts folder's slowest files (2m54s locally on the Mac) across parallel processes."
+        },
+        {
+          "at": "2026-11-10T21:16Z",
+          "by": "claude",
+          "what": "reopened: acting Chief, 10 Nov 21:16Z: first half PASS and merged (#767). Two runs of the new job, step by step: #767's own run 63 s (checkout 7, ffmpeg 12, tests 39); #771's run 101 s (checkout 9, ffmpeg 22, tests 68). So it is not under a minute yet, and the spread between runs is large. Next step, same rules (nothing skipped, one pull request, park for Chief): (1) time each test file in scripts/ and split the folder across three or four processes by file, with a check that every test_*.py file is in exactly one group, so no file can drop out; (2) scripts/test_studio_split.py builds the whole scratch layout in one test and is new since #767: say what it costs and make it cheaper if it is one of the slowest; (3) the ffmpeg step took 12 s and 22 s: try the runner's tool cache or a static build kept in the Actions cache. Aim for 50 s so a slow runner still lands under 60. Give the step times of your own run; if gh run view is refused, say so and the Chief reads them."
         }
       ],
       "remaining_action": "measure local test times, change ffmpeg install, open PR, read its run time",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Make the automatic checks run in under a minute",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-10T20:19Z",
-        "by": "macbook"
-      }
+      "plain": "Make the automatic checks run in under a minute"
     },
     {
       "id": "J2539",
