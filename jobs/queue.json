@@ -177395,9 +177395,14 @@
           "at": "2026-11-10T10:10Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-10T10:13Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: NAS answered in 10 s (studio-live listed twice); style refs present on the Mini 009 media root with matching sha256; 18 of 18 continuation parents resolve; live Flow read: required account, Ultra, 14,890 credits, no pending charge, still price 0 credits. Video-mode price not read yet. 0 generated, 0 spent"
         }
       ],
-      "remaining_action": "Run the three pre-generation checks (NAS, style refs, read-only live check) before minting any HOS 009 row",
+      "remaining_action": "Finish the read-only Flow check in Video mode (Veo 3.1 Quality, 8s, x1, 100 credits), then start batch 1 (the two parent rows) detached",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177412,10 +177417,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T10:10Z",
-        "by": "claudecode"
+        "at": "2026-11-10T10:13Z",
+        "by": "claudecode",
+        "note": "NAS answered in 10 s (studio-live listed twice); style refs present on the Mini 009 media root with matching sha256; 18 "
       }
     },
     {
