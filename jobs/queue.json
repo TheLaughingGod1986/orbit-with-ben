@@ -1,5 +1,5 @@
 {
-  "next_id": 2512,
+  "next_id": 2513,
   "jobs": [
     {
       "id": "J0001",
@@ -216705,6 +216705,37 @@
       "due": "2026-11-12T18:00:00Z",
       "kind": "listing",
       "plain": "Put the Pluto Short you approved into its Saturday slot",
+      "mini_only": true
+    },
+    {
+      "id": "J2512",
+      "title": "026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd both 026 re-cuts on the board at 14:46Z and 14:47Z on 10 Nov (Mon 16 v05, Wed 18 v06). Minutes earlier the agent viewing (J2508, `jobs/reviews/J2508/REVIEW.md`) had found one craft fault in each, against our own rules. Chief ruling 10 Nov 15:00Z: fix those two faults and nothing else, and offer Ben the fixed cuts. The cuts he OK'd today stay the fallback: if he does not OK the new ones in time, his approved ones are swapped in. So nothing here can make a Short worse than what he approved.\n\nA. Mon 16 Short (`HZGTovJu_TQ`, airs Mon 16 Nov 11:30 London), from `mon16_cant_see_nearest_star_v05.mp4`:\n   the picture at 0:20.23 to 0:22.63, just before the end card, is the opening Paranal shot again. Put a different moving shot from the film's own picture there (not used elsewhere in this Short). Change nothing else: same voice, same words, same length, same end card.\nB. Wed 18 Short (`cwU_0WWeNZ4`, airs Wed 18 Nov 11:30), from `wed18_robot_reach_nearest_star_v06.mp4`:\n   0:13.45 to 0:16.55 is a frozen still for 3.1 s (the ESO star trails). LEARNINGS rule 3: no hold without movement. Give it real movement (a slow push or drift across the still, or a moving shot from the film), so no frame repeats. Change nothing else.\n\nFor each: same level (-14.2 LUFS / -2.2 dBTP), every Shorts gate, then watch and listen to the whole cut yourself with sound and read every piece of text on screen. Name the new files v06 (Mon 16) and v07 (Wed 18).\n\nThen send Ben's watch card with `jobs.py awaits <this job id> ... --add`: Mon 16 first, Wed 18 second (cards are numbered by their order; AGENTS.md \"A watch card keeps its place\"). Title each card for its Short: \"Nearest star Short for Mon 16 Nov (v06, one shot changed)\" and \"Nearest star Short for Wed 18 Nov (v07, the still now moves)\". In `--fixed` say exactly what changed and at what time. `--if-not \"the cut you OK'd on 10 Nov airs\"`. Due Sat 14 Nov 18:00 London for Mon 16, Mon 16 Nov 18:00 for Wed 18. After arming, open the board's Review tab and check both cards are under \"Needs your review\" with the right titles.\n\nNothing is uploaded and nothing changes in Studio here. No new picture is made or bought. £0. Open a pull request with the records and park for the Chief.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T15:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T15:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix a repeated shot and a frozen picture in the two Nearest Star Shorts, then offer you the fixed versions",
       "mini_only": true
     }
   ],
