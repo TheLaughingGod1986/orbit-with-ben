@@ -136,8 +136,8 @@ def _bare_film_key(num: str, j: dict, titles: dict | None) -> str:
     """Map a bare episode number to a known film key only — never invent OWB:180 from a PR number."""
     if not titles or not num:
         return ""
-    # The job's own channel first (its repo when that is a channel, else the home channel), then the others in order.
-    own = j.get("repo") if j.get("repo") in channels.slugs() else channels.home()
+    # The job's own channel first (its repo when that is a channel, else the default one), then the others in order.
+    own = j.get("repo") if j.get("repo") in channels.slugs() else channels.default()
     for slug in [own] + [s for s in channels.slugs() if s != own]:
         key = channels.label(slug) + ":" + num
         if key in titles:
@@ -191,7 +191,7 @@ def film_of(j: dict, titles: dict | None = None) -> str:
 
 def jobs_done(board: dict, at: dt.datetime) -> list:
     seen, out = set(), []
-    for j in ((board.get(channels.home()) or {}).get("done") or []):
+    for j in ((board.get(channels.queue_key()) or {}).get("done") or []):
         t = _t(j.get("at"))
         if t and at - t <= WINDOW and j.get("id") not in seen:
             seen.add(j.get("id")); out.append(j)
@@ -201,7 +201,7 @@ def jobs_done(board: dict, at: dt.datetime) -> list:
 def jobs_done_all(board: dict) -> list:
     """Every finished job the board still carries (for today / yesterday / earlier split)."""
     seen, out = set(), []
-    for j in ((board.get(channels.home()) or {}).get("done") or []):
+    for j in ((board.get(channels.queue_key()) or {}).get("done") or []):
         if j.get("id") and j["id"] not in seen:
             seen.add(j["id"]); out.append(j)
     return out
@@ -210,7 +210,7 @@ def jobs_done_all(board: dict) -> list:
 def jobs_open(board: dict) -> list:
     """Open / claimed / blocked jobs still on a film (remaining work to go live)."""
     seen, out = set(), []
-    for j in ((board.get(channels.home()) or {}).get("jobs") or []):
+    for j in ((board.get(channels.queue_key()) or {}).get("jobs") or []):
         if j.get("status") in OPEN_STATUSES and j.get("id") and j["id"] not in seen:
             seen.add(j["id"]); out.append(j)
     return out
@@ -587,7 +587,7 @@ def _blocked_why(blocked_items: list) -> str | None:
 
 def board_focus(board: dict) -> list:
     """Focus keys from published board.owb.focus (kanban_snapshot ← queue.json)."""
-    queue = board.get(channels.home()) or {}
+    queue = board.get(channels.queue_key()) or {}
     raw = queue.get("focus")
     return list(raw) if isinstance(raw, list) else []
 
