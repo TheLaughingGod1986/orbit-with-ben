@@ -11,6 +11,8 @@ of naming a channel:
   channels.label_of_job(job)        'HOS'
   channels.film_keys(text)          {'OWB:033', 'HOS:013'} named in a title or result
   channels.repo_path("hos")         the checkout ($HOS_REPO, else the first ~/YouTube folder that exists)
+  channels.analytics_dir("hos")     where its numbers are kept (snapshots, Studio reads, first-day checks)
+  channels.uploads_file("hos")      its register of uploads, or None when its checkout is not on this machine
 
   python3 scripts/channels.py       list them, and which file each came from
   python3 scripts/channels.py sync  refresh the cached copies from the channels' own checkouts
@@ -192,6 +194,18 @@ def checkout(slug: str) -> pathlib.Path | None:
         return ROOT
     path = repo_path(slug)
     return path if (path / "studio" / "channel.json").is_file() else None
+
+
+def analytics_dir(slug: str) -> pathlib.Path:
+    """Where the channel's numbers are kept: the daily snapshots, the Studio reads, the first-day checks. Today that
+    is one folder per channel in this repo. When the studio has its own repo this is the one line that moves."""
+    return ROOT / "05_Analytics" / get(slug)["slug"]
+
+
+def uploads_file(slug: str) -> pathlib.Path | None:
+    """The channel's register of uploads (video id, kind, publish time), or None when its checkout is not here."""
+    base = checkout(slug)
+    return base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json" if base else None
 
 
 def main() -> int:
