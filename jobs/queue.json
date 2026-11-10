@@ -215588,18 +215588,23 @@
           "at": "2026-11-10T12:33Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Built mon16 v05 & wed18 v06 without c5AdqQsnnys on end card (-14.2 LUFS / -2.2 dBTP); all gates PASS; placed in OWB UAT"
+        },
+        {
+          "at": "2026-11-10T12:37Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Audited all 24 scheduled Shorts: only N42gKBbD7tE (12 Nov) and bSjWiCbB7pY (13 Nov) still show raw YouTube ID Js6EQJ8qDi8 on end card; all >=20 Nov cuts clean"
         }
       ],
-      "remaining_action": "Audit other scheduled Shorts for end-card ID text, re-cut Pluto & Voyager, update UPLOADS.json, re-send watch card",
+      "remaining_action": "Re-cut Pluto gmzaCfJF1gA (Sat 14 Nov), check/re-cut Voyager kKN8Ale42sE (Tue 17 Nov), update UPLOADS.json, re-send watch cards",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T12:33Z",
+        "at": "2026-11-10T12:37Z",
         "by": "gemini",
-        "note": "Built mon16 v05 & wed18 v06 without c5AdqQsnnys on end card (-14.2 LUFS / -2.2 dBTP); all gates PASS; placed in OWB UAT"
+        "note": "Audited all 24 scheduled Shorts: only N42gKBbD7tE (12 Nov) and bSjWiCbB7pY (13 Nov) still show raw YouTube ID Js6EQJ8qDi"
       },
       "taskKeys": [
         "OWB:026"
