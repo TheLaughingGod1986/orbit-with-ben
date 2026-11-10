@@ -213038,13 +213038,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T05:22Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "Waiting for: PR #715 (the board rows) passes a browser smoke test against main's build (J2492). PR #717 (192 files moved to _archive/, pure renames) is merged: the full test run passed on main plus the PR (888 script tests, audio and brand tools), and every archived test belongs to code archived with it. #715 changes the live board's JavaScript; its tests and static checks pass, but it has not been loaded in a browser, so it waits.",
+      "result": "PASS, both merged 10 Nov. #717: 192 files moved to _archive/ (pure renames). #715: the retired /classic board, 15 unused functions in studio_app.js and 12 unwired browser tests archived. Checks before merge: full test run on main plus each PR (813 script tests left after 75 retired-page tests were archived; every archived test belongs to archived code), the board builds, and a browser smoke test (J2492, PR #724) loaded 36 views from main's build and the PR's build: no page errors, identical text on all 36. Board redeployed from main afterwards.",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -213125,6 +213125,11 @@
           "at": "2026-11-10T07:48Z",
           "by": "claude",
           "what": "acting Chief: #717 merged; #715 held for a browser smoke test (J2492) before it touches the live board"
+        },
+        {
+          "at": "2026-11-10T09:16Z",
+          "by": "claude",
+          "what": "done (acting Chief): PASS, both merged 10 Nov. #717: 192 files moved to _archive/ (pure renames). #715: the retired /classic board, 15 unused functions in studio_app.js and 12 unwired browser tests archived. Checks before merge: full test run on main plus each PR (813 script tests left after 75 retired-page tests were archived; every archived test belongs to archived code), the board builds, and a browser smoke test (J2492, PR #724) loaded 36 views from main's build and the PR's build: no page errors, identical text on all 36. Board redeployed from main afterwards."
         }
       ],
       "remaining_action": "Parked for Chief review and merge of PR #715 (board rows) and PR #717 (non-board rows)",
@@ -213138,14 +213143,6 @@
         "at": "2026-11-10T06:04Z",
         "by": "gemini",
         "note": "Step 4 done: both PR #715 (411,875 B) and PR #717 (1,460,074 B) verified and ready for Chief merge"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "PR #715 (the board rows) passes a browser smoke test against main's build (J2492). PR #717 (192 files moved to _archive/, pure renames) is merged: the full test run passed on main plus the PR (888 script tests, audio and brand tools), and every archived test belongs to code archived with it. #715 changes the live board's JavaScript; its tests and static checks pass, but it has not been loaded in a browser, so it waits.",
-        "check_at": "2026-11-10T16:00:00+00:00",
-        "last_recheck": "J2464",
-        "checked_at": "2026-11-10T07:48:39+00:00",
-        "checked_by": "claude"
       }
     },
     {
