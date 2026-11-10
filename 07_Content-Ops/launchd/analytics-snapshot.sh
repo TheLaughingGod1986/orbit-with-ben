@@ -38,6 +38,19 @@ pick_worktree() {
   fi
 }
 
+# Run the Shorts gate with a time limit and say so when it runs out. Gives back the gate's own exit code, or 142.
+# 10 Nov 2026: with the worktree fixed, the hand run got as far as the gate, which hung until someone stopped it.
+# The gate comes before the commit, so a gate that hangs would cost the day's snapshot as well.
+gate_with_limit() {
+  local limit=$1; shift
+  within "$limit" "$@"
+  local rc=$?
+  if (( rc == 142 )); then
+    echo "Shorts gate did not finish inside ${limit}s and was stopped; the gate report is from an earlier day. The snapshot and reports still go out."
+  fi
+  return $rc
+}
+
 main() {
   # launchd's login shell has no Homebrew on PATH: without it gate_upcoming.py can't find ffprobe/ffmpeg and every
   # scheduled Short reads FAIL (8 Oct 2026).
@@ -86,9 +99,12 @@ main() {
     mkdir -p "$safe_cache"
     gate_cache=(--cache "$safe_cache")
   fi
-  [[ -f $snap ]] && python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot "$snap" \
-    --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root "$repo" \
-    --out "$data/owb/UPCOMING_SHORTS_GATE.md" --add "${gate_cache[@]}"
+  if [[ -f $snap ]]; then
+    gate_with_limit "${GATE_LIMIT_S:-600}" python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot "$snap" \
+      --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root "$repo" \
+      --out "$data/owb/UPCOMING_SHORTS_GATE.md" --add "${gate_cache[@]}"
+    (( $? == 142 )) && code=1   # a stopped gate is worth the "needs a look" notice; a normal gate result is not
+  fi
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
 
   if [[ -n $(git status --porcelain -- "$data" "$lib") ]]; then

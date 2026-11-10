@@ -23,9 +23,9 @@ def sh(body: str, env: dict | None = None, timeout: int = 30) -> subprocess.Comp
 @unittest.skipUnless(shutil.which("bash") and shutil.which("perl"), "needs bash and perl")
 class Helpers(unittest.TestCase):
     def test_sourcing_the_script_does_not_run_the_tracker(self):
-        r = sh("type -t main; type -t within; type -t usable; type -t pick_worktree")
+        r = sh("type -t main; type -t within; type -t usable; type -t pick_worktree; type -t gate_with_limit")
         self.assertEqual(r.returncode, 0, r.stderr)
-        self.assertEqual(r.stdout.split(), ["function"] * 4)
+        self.assertEqual(r.stdout.split(), ["function"] * 5)
         self.assertNotIn("---", r.stdout)   # main prints '--- <date>' first thing
 
     def test_a_command_that_never_returns_is_stopped(self):
@@ -37,6 +37,19 @@ class Helpers(unittest.TestCase):
     def test_a_command_inside_its_time_keeps_its_own_result(self):
         self.assertEqual(sh("within 5 true; echo rc=$?").stdout.strip(), "rc=0")
         self.assertEqual(sh("within 5 false; echo rc=$?").stdout.strip(), "rc=1")
+
+    def test_a_gate_that_hangs_is_stopped_and_says_so(self):
+        """10 Nov 2026: the hand run's gate step hung until a worker stopped it. It sits before the commit."""
+        t0 = time.time()
+        r = sh("gate_with_limit 1 sleep 20; echo rc=$?")
+        self.assertLess(time.time() - t0, 10)
+        self.assertIn("rc=142", r.stdout)
+        self.assertIn("did not finish inside 1s and was stopped", r.stdout)
+        self.assertIn("snapshot and reports still go out", r.stdout)
+
+    def test_a_gate_that_finishes_keeps_its_own_result_and_says_nothing(self):
+        self.assertEqual(sh("gate_with_limit 5 true; echo rc=$?").stdout.strip(), "rc=0")
+        self.assertEqual(sh("gate_with_limit 5 sh -c 'exit 3'; echo rc=$?").stdout.strip(), "rc=3")
 
     def test_usable_makes_a_missing_folder_and_refuses_one_it_cannot_make(self):
         with tempfile.TemporaryDirectory() as t:
