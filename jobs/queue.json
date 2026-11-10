@@ -213098,13 +213098,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T01:22Z",
-      "eta": "2026-11-10T02:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T01:17Z",
-      "result": "",
+      "result": "parked for Chief (PR #697 SWEEP_2.md): #604 (b9842cabc), #676 (88e2cab81), #311 (9aa2b8cdf; v05 in sha256_manifest.json, close #310), #696 (dd752c703 + J2473 for #653, close #653), #645 (edbfc3dde, rows 27-29), and #554 (acdf4a9bd, row 30) are ready to merge; stopped on #611 awaiting Chief merge of #604 first; stopped on #552 (--hos-anomaly-first contradicts Rule 24: 2.0s/2.85s hook vs <=1.5s, passes 'This...' pronoun opener, 0.25s pause vs <=0.15s, 1.8s Cut-1 floor). Reopen after merging #604 (and #645) to finish #611.",
       "history": [
         {
           "at": "2026-11-10T01:17Z",
@@ -213155,6 +213155,11 @@
           "at": "2026-11-10T01:45Z",
           "by": "macbook-2",
           "what": "step 6 of 7 done"
+        },
+        {
+          "at": "2026-11-10T01:46Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief (PR #697 SWEEP_2.md): #604 (b9842cabc), #676 (88e2cab81), #311 (9aa2b8cdf; v05 in sha256_manifest.json, close #310), #696 (dd752c703 + J2473 for #653, close #653), #645 (edbfc3dde, rows 27-29), and #554 (acdf4a9bd, row 30) are ready to merge; stopped on #611 awaiting Chief merge of #604 first; stopped on #552 (--hos-anomaly-first contradicts Rule 24: 2.0s/2.85s hook vs <=1.5s, passes 'This...' pronoun opener, 0.25s pause vs <=0.15s, 1.8s Cut-1 floor). Reopen after merging #604 (and #645) to finish #611."
         }
       ],
       "remaining_action": "Merged origin/main into #554 (macbook/J2204, acdf4a9bd) and verified #552 contradicts Rule 24; writing jobs/reviews/J2472/SWEEP_2.md on macbook/J2472",
