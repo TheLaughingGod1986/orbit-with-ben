@@ -218807,18 +218807,24 @@
           "at": "2026-11-10T21:49Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-10T21:52Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified NAS access (time-limited ls OK) and collected all scheduled Shorts across OWB (23 scheduled + 1 aired 10 Nov + J2494/J2510/J2512 re-cuts) and HOS (6 scheduled)"
         }
       ],
-      "remaining_action": "Verify gate_shorts_open.py frame-0 check, check NAS with time-limited ls, and collect scheduled Shorts of OWB and HOS",
+      "remaining_action": "Launch detached tmux run of gate_shorts_open.py on all scheduled OWB and HOS Shorts and collect JSON measurements",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-10T21:49Z",
-        "by": "gemini"
+        "at": "2026-11-10T21:52Z",
+        "by": "gemini",
+        "note": "Verified NAS access (time-limited ls OK) and collected all scheduled Shorts across OWB (23 scheduled + 1 aired 10 Nov + "
       }
     },
     {
