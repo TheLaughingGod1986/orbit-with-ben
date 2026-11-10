@@ -216472,10 +216472,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-10T20:33Z",
+      "eta": "2026-11-10T22:33Z",
       "created_by": "claude",
       "created_at": "2026-11-10T13:25Z",
       "result": "",
@@ -216489,12 +216489,25 @@
           "at": "2026-11-10T15:08Z",
           "by": "claude",
           "what": "Added 10 Nov 15:10Z: while in the HOS records, tidy the 006 Trees entry (VbPubYd6Fbs) in 00_Brand/Channel-Setup/social/UPLOADS.json. It still has pinConfirmed false and the old pinBlocker text, which contradict the pinnedComment note merged in HOS #476. The public watch page showed 'Pinned by' the channel on 10 Nov (J0958), so set pinConfirmed true and move pinBlocker into the note as history."
+        },
+        {
+          "at": "2026-11-10T20:33Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge",
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
-      "plain": "Tidy the unfinished History of Science changes into one clean update, then close the old ones"
+      "plain": "Tidy the unfinished History of Science changes into one clean update, then close the old ones",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T20:33Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2503",
