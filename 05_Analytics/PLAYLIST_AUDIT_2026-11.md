@@ -215,5 +215,11 @@ Ben's yes, 9 Nov 2026. Full record, with every read-back and the contents of the
 - The names are the Chief's (series name kept, search phrase after it, LEARNINGS rule 20), not the renames proposed in sections 1 and 3.
 - Playlist list read back: those two and nothing else.
 
-**History of Science: not applied yet.** `PLEbpfUzWzcXU` still needs its rename to "How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science", `VbPubYd6Fbs` added and the reorder of section 2.
+**History of Science, done 10 Nov 2026 (rename earlier in the day, add and reorder about 09:55 UTC):**
 
+- `PLEbpfUzWzcXU` is now **How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science** (public, description unchanged).
+- Its default video order was "Date published (oldest)", which is why rows could not be moved. It is now "Manually sorted in YouTube" (Studio, Details, read back after a reload).
+- `VbPubYd6Fbs` (*The Willow Tree That Was Made of Air*) added before the compilation. 7 films, in the order of section 2: `AL_-qlWko_g`, `GHZDsiH7L7A`, `frP_YrNShsU`, `_C92tIJCk8A`, `wwcjcFfC-5M`, `VbPubYd6Fbs`, `uAomPaOBrM8` (compilation last, still private until it airs).
+- No video was edited. The compilation's title now reads *Experiments That Changed the World (Blood, Germs and Atoms)*, not the title section 2 lists; this job did not change it.
+
+**Final read-back, both channels, 10 Nov 2026 about 09:55 UTC (Data API):** Orbit With Ben has two playlists and nothing else, both in order, with Home sections 0 and 8 on `PLOw2VKzGCOWU` and `PLdoEpeiktw_Y`. History of Science has one playlist, as above.
