@@ -1,5 +1,5 @@
 {
-  "next_id": 2517,
+  "next_id": 2518,
   "jobs": [
     {
       "id": "J0001",
@@ -217030,6 +217030,36 @@
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Show on the dashboard which channels are plugged into the studio, and the steps to add one"
+    },
+    {
+      "id": "J2517",
+      "title": "Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 10 Nov, sent a video on running a headless Mac mini as an always-on agent machine and asked whether any of it is worth using. Most of it we already have (the Mini runs the relay round the clock, the MacBook is a second worker, the private network is in place, the board replaces a terminal on the phone). The part worth checking is the short list of settings that decide whether the Mini comes back by itself after a power cut or a restart. Nobody has written down what ours are.\n\nREAD ONLY. Change nothing. Do not touch Tailscale, FileVault, accounts or any setting. Report what is there.\n\nOn the Mini, record in `jobs/reviews/<this job>/REPORT.md`:\n1. Sleep: `pmset -g` (sleep, disksleep, displaysleep, womp, autorestart, powernap). Does it ever sleep? Does it wake for network access? Does it start up by itself when power returns?\n2. Login: is automatic login on, and for which account (`defaults read /Library/Preferences/com.apple.loginwindow autoLoginUser`, name only)? After a restart with nobody there, do the relay, the board publish and the two Studio browsers come back without a person logging in?\n3. Disk encryption: `fdesetup status`. If it is on, say plainly what that means: after a power cut the Mini waits at a password screen until someone types it in.\n4. Accounts: which account do the agents run as, and is it the same one Ben uses himself? One line, account names only.\n5. Remote login: is it on (`systemsetup -getremotelogin`, or `launchctl print system/com.openssh.sshd` if that needs a password)?\n6. The private network: `tailscale status` and nothing else. Is the Mini on it, and is the MacBook?\n7. Last restart and why: `uptime`, `last reboot | head -5`, and `pmset -g log | grep -i -E \"shutdown cause|restart\" | tail -5`.\n8. launchd: list our agents (`launchctl list | grep -i owb`) and say which have `RunAtLoad` and `KeepAlive`.\n9. The MacBook, if a slot is free: `pmset -g` there too. Does the worker stop when the lid is closed?\n\nEnd the report with a table: setting, what it is now, what it should be for a machine nobody sits at, and who can change it (most are Ben's: they need his password). No passwords, tokens or email addresses in the report. Park for the Chief with the report; the Chief decides what to ask Ben. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T16:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T16:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report)",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)"
     }
   ],
   "focus": [
