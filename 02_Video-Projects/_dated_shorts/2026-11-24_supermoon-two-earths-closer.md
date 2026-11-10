@@ -53,7 +53,8 @@ All numbers, dates, and comparisons are verified against official NASA sources (
 - **Mon 23 Nov 2026, 11:30 UTC:** `Dm4xsF1Ateg` — *Why Do You Weigh Less at Earth's Equator?* (`027` Short #1)
 
 ### Locked Target Slot
-- **Locked Target Slot (`PASS`):** **Saturday, 21 November 2026 at 11:30 UTC (London)**
+- **Slot change (J2478, 10 Nov 2026):** Sat 21 Nov 11:30 was taken by the 024 muons Short v04. This Short now goes out **Thursday, 19 November 2026 at 11:30 UTC (London)**, 5 days before the event (inside the 3 to 7 day window; nothing else of Orbit's airs that day). The Saturday slot text below is superseded.
+- **Earlier target slot (superseded):** **Saturday, 21 November 2026 at 11:30 UTC (London)**
   - **Lead time:** **3 days (75 hours) before** the `24 November 2026 14:54 UTC` Full Supermoon (and 4 days before `25 November 21:00 UTC` perigee) — squarely inside the **3–7 days before the event** window required by `LEARNINGS` Rule 16 and `J2369`.
   - **Cadence fit:** Saturday 11:30 London is a locked OWB Short slot (`Mon/Wed/Fri/Sat 11:30 London`; `AGENTS.md` Locked Weekly Targets, leaving Tue/Thu/Sun free), verified empty in `05_Analytics/owb/snapshots/2026-11-08.json`, and respects the hard rule *"never more than one Short a day"*.
 - **Related Video Link:**
@@ -169,10 +170,10 @@ All visual plates come from **existing local NAS footage** (`/Volumes/data/mac-m
   "relatedVideoId": "2fsQcea-voM",
   "relatedVideoTitle": "Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone",
   "schedule": {
-    "publishAt": "2026-11-21T11:30:00Z",
+    "publishAt": "2026-11-19T11:30:00Z",
     "eventUtc": "2026-11-24T14:54:00Z",
     "perigeeUtc": "2026-11-25T21:00:00Z",
-    "leadTimeDays": 3
+    "leadTimeDays": 5
   },
   "description": "On November 24, 2026 at 14:54 UTC, the first of three consecutive full Supermoons reaches full phase nearly two Earth diameters closer to us than average.\n\nNormally the Moon orbits at an average distance of 384,400 kilometres — wide enough to fit 30 Earth-sized planets side by side. During the November 24, 2026 Supermoon, its elliptical orbit brings it to about 360,755 kilometres (and 359,336 kilometres at perigee on November 25 at 21:00 UTC), or roughly 28 Earth diameters away. Look east around sunset on November 24 to watch it rise.\n\nWatch the full Moon film next: Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone (https://www.youtube.com/watch?v=2fsQcea-voM)\n\nSources: NASA Science, 'Supermoons: In Depth' (science.nasa.gov/solar-system/moon/what-is-a-supermoon/); NASA Science, 'What's Up: November 2026 Skywatching Tips from NASA' (2026); NASA Science, 'Moon Facts' (science.nasa.gov/moon/facts/); Ernie Wright, 'Moon Phase and Libration, 2026', NASA Scientific Visualization Studio #5587 (svs.gsfc.nasa.gov/5587).\n\nImage credits: NASA's Scientific Visualization Studio (Ernie Wright, SVS #5587 unlabelled plain Moon visualizations); NASA Goddard Space Flight Center / Lunar Reconnaissance Orbiter; NASA Johnson Space Center (Apollo 11 AS11-44-6667, Apollo 14 AS14-67-09386, STS-103 S103E5050, ISS Crew Earth Observations).",
   "tags": [
