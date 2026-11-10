@@ -217367,9 +217367,14 @@
           "at": "2026-11-10T18:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T18:24Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Started 5-step swap plan for Mars wind Short N42gKBbD7tE -> v05"
         }
       ],
-      "remaining_action": "Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept",
+      "remaining_action": "Read back old Short N42gKBbD7tE metadata and verify v05 sha256",
       "due": "2026-11-11T18:00:00Z",
       "kind": "listing",
       "plain": "Put the Mars wind Short you approved into its Thursday slot",
@@ -217391,12 +217396,14 @@
       "urgent": 6,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-10T18:24Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started 5-step swap plan for Mars wind Short N42gKBbD7tE -> v05"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     },
     {
       "id": "J2520",
