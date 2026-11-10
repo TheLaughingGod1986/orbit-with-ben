@@ -38,7 +38,7 @@ GATE = v01.REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py"
 
 RECUTS = {
     "mon16_cant_see_nearest_star": {
-        "stem": "mon16_cant_see_nearest_star_v04",
+        "stem": "mon16_cant_see_nearest_star_v05",
         "video_id": "HZGTovJu_TQ",
         "spans": [
             (98.17, 2.40, "ESO Paranal night sky (uhd_bt_paranal_07)"),
@@ -50,7 +50,7 @@ RECUTS = {
         ],
     },
     "wed18_robot_reach_nearest_star": {
-        "stem": "wed18_robot_reach_nearest_star_v05",
+        "stem": "wed18_robot_reach_nearest_star_v06",
         "video_id": "cwU_0WWeNZ4",
         "spans": [
             (0.30, 2.60, "Milky Way time-lapse, opening shot of 026 v06"),
@@ -62,6 +62,72 @@ RECUTS = {
         ],
     },
 }
+
+
+def end_card_png_no_id(dest: Path, quote: str, voyager: bool) -> dict:
+    """End card without the raw YouTube video ID ('c5AdqQsnnys') under the title (Ben board note 10 Nov 11:20Z)."""
+    from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+    W, H, BAND_H, BAND_Y0, FONT, WHITE, YELLOW, THUMB = (
+        v01.W, v01.H, v01.BAND_H, v01.BAND_Y0, v01.FONT, v01.WHITE, v01.YELLOW, v01.THUMB
+    )
+    thumb = Image.open(THUMB).convert("RGB")
+    tw, th = thumb.size
+    scale = max(W / tw, H / th)
+    rw, rh = round(tw * scale), round(th * scale)
+    bg = thumb.resize((rw, rh), Image.Resampling.LANCZOS)
+    left = min(rw - W, int((rw - W) * 0.92))
+    top = (rh - H) // 2
+    bg = bg.crop((left, top, left + W, top + H))
+    bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(22))).enhance(0.72)
+    im = bg.convert("RGBA")
+    max_h = int(BAND_H * 0.56)
+    s = min(860 / tw, max_h / th)
+    sw, sh = round(tw * s), round(th * s)
+    sharp = thumb.resize((sw, sh), Image.Resampling.LANCZOS)
+    x = (W - sw) // 2
+    y = BAND_Y0 + 4
+    im.paste(sharp, (x, y))
+    d = ImageDraw.Draw(im)
+    rows: list[tuple[str, tuple, str]] = [
+        ("How Far Is", WHITE, "title"),
+        ("the Nearest Star?", WHITE, "title"),
+    ]
+    if voyager:
+        rows.append(("VOYAGER", YELLOW, "label"))
+    rows.append((quote, WHITE, "quote"))
+    y_text = y + sh + 6
+    limit = BAND_Y0 + BAND_H - 6
+    size = 40
+    fonts: list[ImageFont.FreeTypeFont] = []
+    heights: list[int] = []
+    while size >= 20:
+        fonts, heights = [], []
+        ok = True
+        for text, _col, kind in rows:
+            px = size if kind in ("title", "id") else max(18, size - 8)
+            if kind == "label":
+                px = max(16, size - 14)
+            ff = ImageFont.truetype(FONT, px)
+            bb = d.textbbox((0, 0), text, font=ff, stroke_width=4)
+            if d.textlength(text, font=ff) > W * 0.92:
+                ok = False
+            fonts.append(ff)
+            heights.append(bb[3] - bb[1])
+        if ok and y_text + sum(heights) + 4 * (len(rows) - 1) <= limit:
+            break
+        size -= 2
+    else:
+        raise SystemExit("end card does not fit the 16:9 band")
+    yy = y_text
+    placed = []
+    for (text, col, kind), ff, h in zip(rows, fonts, heights):
+        bb = v01.centred(d, yy, text, ff, col, stroke=4)
+        if bb[1] < BAND_Y0 or bb[3] > BAND_Y0 + BAND_H:
+            raise SystemExit(f"end card outside the 16:9 band: {text} {bb}")
+        placed.append({"text": text, "kind": kind, "bbox": bb})
+        yy += h + 4
+    im.convert("RGB").save(dest, quality=95)
+    return {"rows": placed, "thumb": str(THUMB), "thumb_unaltered": True, "youtube_id": None}
 
 
 def relevel(src: Path, work: Path) -> dict:
@@ -116,9 +182,9 @@ def build(base: dict) -> dict:
     title = v01.title_png(work / "title.png", base["title_rows"])
     for i, c in enumerate(caps):
         v01.caption_png(work / f"cap_{i:02d}.png", c["text"])
-    end = v01.end_card_png(work / "end_card.png", base["quote"], base["voyager"])
+    end = end_card_png_no_id(work / "end_card.png", base["quote"], base["voyager"])
     aud = relevel(src, work)
-    pic = work / "picture_final.mp4"
+    pic = work / f"picture_final_{stem}.mp4"
 
     W, H, FPS, PUSH, CARD = v01.W, v01.H, v01.FPS, v01.PUSH, v01.CARD
     inputs = [
@@ -152,8 +218,9 @@ def build(base: dict) -> dict:
     enc = v01.shorts_encode_args(fps=FPS)
     venc = enc[:enc.index("-c:a")]
     if not pic.exists():
-        print(f"{slug}: cutting {len(spans)} spans", flush=True)
-        v01.cut_spans(work, spans)
+        if not (work / "picture_span.mp4").exists():
+            print(f"{slug}: cutting {len(spans)} spans", flush=True)
+            v01.cut_spans(work, spans)
         print(f"{slug}: encoding", flush=True)
         v01.run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", ";".join(fc),
                  "-map", "[v]", *venc, "-an", "-t", f"{total:.3f}", str(pic)])
