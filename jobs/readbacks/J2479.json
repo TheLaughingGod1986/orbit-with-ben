@@ -1,0 +1,36 @@
+{
+  "job": "J2479",
+  "agent": "macbook-2",
+  "checked_at": "2026-11-10T05:31:03Z",
+  "slot1_owb_clone": {
+    "path": "/Users/ben/_desk/worker/orbit-with-ben",
+    "running_git_processes": [],
+    "stale_lock_before": "-rw-r--r--@ 1 ben staff 0 Nov 10 02:02:18 2026 /Users/ben/_desk/worker/orbit-with-ben/.git/index.lock",
+    "moved_to": "/Users/ben/_desk/worker/orbit-with-ben/.git/index.lock.stale-20261110T052932Z",
+    "git_status_short": "",
+    "git_log_before_pull": "253abfd7f (HEAD -> main) jobs: progress J2449 by macbook",
+    "git_log_after_heartbeat_pull": "9b7eaa087 (HEAD -> main, origin/main, origin/HEAD) jobs: progress J2479 by macbook-2"
+  },
+  "slot1_hos_clone": {
+    "path": "/Users/ben/_desk/worker/history-of-science",
+    "index_lock_exists": false
+  },
+  "slot1_heartbeat_after_fix": {
+    "commit": "03908269726c7982e0c8ca274de78c6ae76d6d69",
+    "at": "2026-11-10T05:31:03Z",
+    "host": "macbook",
+    "slot": 1,
+    "agent": "macbook",
+    "state": "idle",
+    "why": [
+      "no MacBook job waiting"
+    ],
+    "job": ""
+  },
+  "slot1_last_run_J2449": {
+    "claimed_at": "2026-11-10T01:37:18Z",
+    "progress_commit": "253abfd7f (2026-11-10T01:50:13Z) step 1 of 3: Checked Orbit Studio CDP 9223: 3xrxdmaOwJI has no running test; -jmMROGoZCM (T003, 17h 16m left) and ojk-dfOpAmw (T017, 1d 19h left) have running tests",
+    "studio_action_before_timeout": "Armed and started 3-arm Title + Thumbnail Test & Compare on 002 Black Hole (3xrxdmaOwJI, T002) at 2026-11-10T01:57Z, then hit the 25-min cap (exit 124 at 02:02:21Z) while committing, leaving .git/index.lock at 02:02:18Z.",
+    "subsequent_j2449_readback": "Slot 2 (macbook-2) later claimed J2449 at 03:35Z, read back Orbit Studio on CDP 9223 at 03:37Z confirming 3xrxdmaOwJI (T002) Running with all 3 arms and -jmMROGoZCM (T003) + ojk-dfOpAmw (T017) still running their existing thumbnail tests, recorded jobs/readbacks/J2449.json in PR #706, and placed J2449 on wait until 2026-11-10T19:15:00Z."
+  }
+}
