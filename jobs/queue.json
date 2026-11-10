@@ -208893,7 +208893,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -209680,6 +209680,11 @@
           "at": "2026-11-10T09:15Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Gemini is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
