@@ -213999,17 +213999,22 @@
           "at": "2026-11-10T04:26Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Fast-forwarded wt-J2481-hos to origin/main (5d62d731) and inspected LIVE_DOM_CAPTURE_2026-11-10.json and _mint_flow_v05_tranche2.py"
+        },
+        {
+          "at": "2026-11-10T04:41Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Updated Flow readers (BALANCE_EVIDENCE_JS, CREATE_EVIDENCE_JS, STILL_EVIDENCE_JS) and plan style_refs; all 94 existing runner tests pass"
         }
       ],
-      "remaining_action": "Update Flow page readers in _mint_flow_v05_tranche2.py and _flow_still_v01.py for 10 Nov DOM changes, separate balance step, and plan style_refs",
+      "remaining_action": "Add zero-submit fixture tests for 10 Nov captured DOM, legacy DOM, mutual-exclusion balance step, and plan style_refs",
       "due": "2026-11-12T00:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T04:26Z",
+        "at": "2026-11-10T04:41Z",
         "by": "gemini",
-        "note": "Fast-forwarded wt-J2481-hos to origin/main (5d62d731) and inspected LIVE_DOM_CAPTURE_2026-11-10.json and _mint_flow_v05_"
+        "note": "Updated Flow readers (BALANCE_EVIDENCE_JS, CREATE_EVIDENCE_JS, STILL_EVIDENCE_JS) and plan style_refs; all 94 existing r"
       },
       "taskKeys": [
         "HOS:009"
