@@ -215674,10 +215674,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-10T13:13Z",
+      "eta": "2026-11-10T15:13Z",
       "created_by": "claude",
       "created_at": "2026-11-10T11:07Z",
       "result": "",
@@ -215711,6 +215711,11 @@
           "at": "2026-11-10T11:19Z",
           "by": "claude",
           "what": "acting Chief: moved to cloud (the MacBook worker may not git fetch unattended; the cloud checkout already holds the PR heads). Thread 11:20Z."
+        },
+        {
+          "at": "2026-11-10T13:13Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write the table from the cloud checkout, which already holds all 27 PR heads. From the MacBook's read (gh pr list): every base is main except #382 (base is #380's branch); mergeable #434 #382 #334 #325, the other 23 conflict; drafts #457 #454 #437 #405 #359 #355 #349 #334.",
