@@ -95,5 +95,41 @@ class Files(unittest.TestCase):
             self.assertTrue(json.loads(path.read_text())["closed"])
 
 
+class ChannelsFromTheirOwnFiles(unittest.TestCase):
+    """J2533: the reach port and the YouTube id come from each channel's studio/channel.json through channels.py."""
+
+    def sky(self, **youtube):
+        from unittest import mock
+        base = reach.registry._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   youtube=youtube)
+        return mock.patch.object(reach.registry, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_two_real_channels_read_as_the_old_table_did(self):
+        self.assertEqual(reach.reach_channels(), {
+            "hos": {"port": 9460, "channel_id": "UCXp7HkBIl1LgaznXuZHJyRg"},
+            "owb": {"port": 9223, "channel_id": "UC_esArsDKd3GJvOkeO0DUog"},
+        })
+        self.assertEqual(list(reach.reach_channels()), ["hos", "owb"])
+        self.assertEqual(reach.selected_channels("both"), ["hos", "owb"])
+        self.assertEqual(reach.selected_channels("hos"), ["hos"])
+
+    def test_a_made_up_third_channel_is_read_from_its_file(self):
+        with self.sky(id="UCsky0000000000000000000", reach_port="9555", studio_port="9224"):
+            self.assertEqual(reach.reach_channels()["sky"], {"port": 9555, "channel_id": "UCsky0000000000000000000"})
+            self.assertEqual(reach.selected_channels("both"), ["hos", "owb", "sky"])
+            self.assertEqual(reach.selected_channels("sky"), ["sky"])
+            self.assertEqual(reach.channel_dir(Path("/x"), "sky"), Path("/x/05_Analytics/sky"))
+
+    def test_a_channel_missing_the_port_or_the_id_is_not_read(self):
+        for youtube in ({"id": "UCsky0000000000000000000"}, {"reach_port": "9555"}, {}):
+            with self.sky(**youtube):
+                self.assertEqual(list(reach.reach_channels()), ["hos", "owb"])
+                with self.assertRaises(SystemExit):
+                    reach.selected_channels("sky")
+                with self.assertRaises(SystemExit):
+                    reach.channel_dir(Path("/x"), "sky")
+
+
 if __name__ == "__main__":
     unittest.main()

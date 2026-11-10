@@ -38,6 +38,41 @@ class Make(unittest.TestCase):
                     self.assertAlmostEqual(peak / 32767, 10 ** (-12 / 20), delta=0.01)
 
 
+class ThirdChannel(unittest.TestCase):
+    """J2533: the kit a channel uses is named in its own studio/channel.json ("sound_kit"), not in this script."""
+
+    def sky(self, **extra):
+        from unittest import mock
+        base = sk.channels._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, **extra)
+        return mock.patch.object(sk.channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_a_made_up_channel_gets_the_kit_its_file_names(self):
+        with tempfile.TemporaryDirectory() as d, self.sky(sound_kit="ink"):
+            self.assertEqual(sk.houses(), ["hos", "owb", "sky"])
+            kit = sk.make(Path(d), "sky", seed=3)
+            self.assertEqual(kit["kit"], "sky")
+            self.assertEqual([f["file"] for f in kit["files"]],
+                             ["sfx_sky_rumble_low_v01.wav", "sfx_sky_whoosh_soft_v01.wav", "sfx_sky_tick_ink_v01.wav"])
+
+    def test_a_channel_with_no_kit_or_an_unknown_one_is_refused(self):
+        for extra in ({"sound_kit": ""}, {"sound_kit": "brass"}):
+            with tempfile.TemporaryDirectory() as d, self.sky(**extra):
+                self.assertEqual(sk.houses(), ["hos", "owb"])
+                with self.assertRaises(KeyError):
+                    sk.make(Path(d) / "kit", "sky")
+                self.assertFalse((Path(d) / "kit").exists())
+
+    def test_the_two_real_channels_keep_their_kits_and_the_default(self):
+        self.assertEqual(sk.houses(), ["hos", "owb"])
+        self.assertEqual(sk.first_house(), "owb")
+        self.assertEqual([n for n, _f, _k in sk.KITS[sk.channels.sound_kit("owb")]],
+                         ["rumble_low", "whoosh_soft", "tick_ui"])
+        self.assertEqual([(n, k) for n, _f, k in sk.KITS[sk.channels.sound_kit("hos")]],
+                         [("rumble_low", {}), ("whoosh_soft", {"lo": 300.0, "hi": 1800.0, "secs": 1.0}),
+                          ("tick_ink", {})])
+
+
 class Parse(unittest.TestCase):
     def test_reads_momentary_and_summary(self):
         err = ("[Parsed_ebur128_0 @ 0x1] t: 0.1  TARGET:-23 LUFS  M: -70.0 S:-120.7  I: -70.0 LUFS  LRA: 0.0 LU\n"
