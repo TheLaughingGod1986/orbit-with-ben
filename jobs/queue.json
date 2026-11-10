@@ -218398,10 +218398,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-10T20:33Z",
+      "eta": "2026-11-10T21:33Z",
       "created_by": "claude",
       "created_at": "2026-11-10T19:52Z",
       "result": "",
@@ -218410,6 +218410,11 @@
           "at": "2026-11-10T19:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T20:33Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A",
@@ -218417,7 +218422,15 @@
       "kind": "studio",
       "plain": "Give the vaccine film its new title before it goes public on Thursday",
       "mini_only": true,
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T20:33Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2537",
