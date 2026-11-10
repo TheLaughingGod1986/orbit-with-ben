@@ -216096,19 +216096,24 @@
           "at": "2026-11-10T14:11Z",
           "by": "gemini",
           "what": "step 3 of 5 done: 256 MiB test passed: dd write 436.3 MB/s (424.7 MB/s with fsync), F_NOCACHE write 433.9 MB/s, F_NOCACHE read 234.9 MB/s, sha256 matched, test file removed"
+        },
+        {
+          "at": "2026-11-10T14:14Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Unified log & relay checks complete: 3 replugs between 11:56Z and 12:58Z (none since 12:58:33Z); relay TMPDIR=/Volumes/MiniWork/scratch/ and ~/_desk/{worktrees,cache} symlinks intact"
         }
       ],
-      "remaining_action": "Check unified log for unplugs since 09:47Z and verify relay TMPDIR and symlinks",
+      "remaining_action": "Post 3-line plain-English SSD re-check report on thread #99 and mark J2500 done",
       "due": "2026-11-10T18:00:00Z",
       "kind": "qa",
       "plain": "Check again that the Mini's SSD is working and whether it is now running at full speed",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-10T14:11Z",
+        "at": "2026-11-10T14:14Z",
         "by": "gemini",
-        "note": "256 MiB test passed: dd write 436.3 MB/s (424.7 MB/s with fsync), F_NOCACHE write 433.9 MB/s, F_NOCACHE read 234.9 MB/s,"
+        "note": "Unified log & relay checks complete: 3 replugs between 11:56Z and 12:58Z (none since 12:58:33Z); relay TMPDIR=/Volumes/M"
       }
     },
     {
