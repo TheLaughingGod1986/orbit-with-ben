@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2506 | cloud | open | – | – | review · Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done) |  |
 | J2507 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
-| J2510 | mini | open | – | – | 025 edit · assembly · Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card |  |
+| J2510 | mini | claimed | gemini | 2026-11-10T16:52Z | 025 edit · assembly · Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card |  |
 
 Recently finished:
 
