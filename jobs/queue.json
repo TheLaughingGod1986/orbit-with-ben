@@ -84482,13 +84482,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-09T23:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T20:24Z",
-      "result": "Waiting for: Ben pins the comment by hand: YouTube asks for his password before it will keep a pin (a sign-in step, tried on the Mini and on the MacBook, J2461). On HOS 006 Trees (VbPubYd6Fbs), in YouTube Studio or the YouTube app, open Comments and pin the one that starts \"So where does a tree's weight really come from?\". End screen and Test & Compare are already done.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T20:24Z",
@@ -84644,13 +84644,18 @@
           "at": "2026-11-10T03:55Z",
           "by": "claude",
           "what": "acting Chief: the pin needs Ben's password (his own sign-in); both machines tried once. Held for him."
+        },
+        {
+          "at": "2026-11-10T11:50Z",
+          "by": "claude",
+          "what": "reopened on Ben's ask (10 Nov ~11:45Z): try the pin once more; stop if YouTube asks for a password"
         }
       ],
       "kind": "studio",
       "taskKeys": [
         "HOS:006"
       ],
-      "remaining_action": "Reauthenticate HOS Studio, then pin existing comment and verify after reload",
+      "remaining_action": "Ben, 10 Nov about 11:45Z: 'can you try and pin'. One more try. On HOS 006 Trees (VbPubYd6Fbs) pin the channel's own comment that starts \"So where does a tree's weight really come from?\". If the pin holds after a page reload, read it back and close the job. If YouTube asks for a password or any sign-in, stop at once, type nothing, and block the job saying so: the sign-in is Ben's. End screen and Test & Compare are already done; touch nothing else.",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -84659,15 +84664,7 @@
         "by": "codex"
       },
       "for": "",
-      "model": "",
-      "hold": {
-        "type": "ben",
-        "condition": "Ben pins the comment by hand: YouTube asks for his password before it will keep a pin (a sign-in step, tried on the Mini and on the MacBook, J2461). On HOS 006 Trees (VbPubYd6Fbs), in YouTube Studio or the YouTube app, open Comments and pin the one that starts \"So where does a tree's weight really come from?\". End screen and Test & Compare are already done.",
-        "check_at": "2026-11-11T08:00:00+00:00",
-        "last_recheck": "J2461",
-        "checked_at": "2026-11-10T03:55:07+00:00",
-        "checked_by": "claude"
-      }
+      "model": ""
     },
     {
       "id": "J0959",
