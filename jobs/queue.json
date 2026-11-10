@@ -1,5 +1,5 @@
 {
-  "next_id": 2487,
+  "next_id": 2488,
   "jobs": [
     {
       "id": "J0001",
@@ -214571,6 +214571,35 @@
         "at": "2026-11-10T06:14Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2487",
+      "title": "023 Venus VBaYRPp85Sw: fix thumbnail B 465°C (no glowing lander, saturation 170-200, plate source recorded) per J2486",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Design review J2486 (jobs/reviews/J2486/REVIEW.md, OWB PR #716) returned FIX on 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg:\n1. Accuracy (465°C vs glowing metal): At 465°C (below the ~525°C Draper point), metal does not glow visibly and Venus's basalt plains do not have molten red lava cracks. Remove the lander's self-luminous red-orange/white-hot underside glow, the lit ground beneath it, and the glowing rock cracks; keep only the warm amber-orange atmospheric sky cast lighting the metallic lander.\n2. Grade / Saturation: Bring mean HSV saturation down from 245.5/255 (59.4% of pixels pinned at S>=250) to ~165-195 (matching the channel's 140-187 range and Venus search neighbours Cool Worlds 119.2 / Astrum 208.0), with no neon-red clipping and near-black <=30%.\n3. Provenance: Keep or update the plate_provenance block in META.json (tool, model, prompt, and £0 evidence). Cost must remain £0.\n4. Verification & mirror: Re-run 'thumb_preview.py long --score' (must PASS HOOK, BAND, GRADE, PHONE at 168x94), rebuild both preview sheets (venus_tc_B_465c_preview_sheet.jpg and venus_tc_A_vs_B_465c_sheet.jpg), update SHA256.txt, and copy updated files to the NAS mirror (/Volumes/data/studio-live/... and /Volumes/data/mac-mini-archive/...).\n5. Queue a fresh independent design review before J1198 is reopened. Touch nothing in YouTube Studio. £0.",
+      "ref": "",
+      "film": "023",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-10T06:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T06:17Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Tone down red-hot glow on lander/rocks (465°C does not glow), bring mean saturation to ~165-195, record plate provenance, rebuild sheets/NAS copy, queue review",
+      "kind": "thumb",
+      "plain": "Fixing the '465°C' Venus lander thumbnail so the lander looks hot rather than molten and the colours are not blown out"
     }
   ],
   "focus": [
