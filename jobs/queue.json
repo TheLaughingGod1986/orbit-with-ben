@@ -1,5 +1,5 @@
 {
-  "next_id": 2506,
+  "next_id": 2507,
   "jobs": [
     {
       "id": "J0001",
@@ -216281,6 +216281,36 @@
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
+    },
+    {
+      "id": "J2506",
+      "title": "Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 10 Nov 14:00Z, after the first-day check went in: \"Did the improvements to the dashboard go live?\" The board and the Channel Tracker are live and current, but the first-day check itself shows on neither: its verdicts are only on the thread and in `05_Analytics/<channel>/launch/*.json`. This job puts them where Ben looks.\n\nOn the tracker page (`05_Analytics/kanban/video_tracker.html`, data from `scripts/video_tracker.py` / `board_publish.py`), add a \"First day\" panel, newest first, one row per checked video on both channels:\n- title, channel, Short or long, when it went live;\n- the latest reading in plain words: views, against Studio's usual or our own same-age median;\n- the verdict (`launch_check.verdict`): fault, behind, usual, ahead, and the step that lost the viewers when behind;\n- what is different about it (the `differences` lines);\n- what was done (the record's notes), or \"nothing yet\" for a fault or a behind verdict with no note.\nA video that is due a check and has none shows as \"check due\". Read the data through `scripts/launch_check.py`; name no channel in new code (ask `channels.py`).\n\nTests: `node scripts/test_studio_app.cjs` and the `scripts/test_board_*.py` tests pass, plus a test for the new panel's data. Through a pull request; merge when green; redeploy the Vercel project from main as the hourly routine's step 6 says; check /, /board, /tracker, /api/checks and /version.json return 200 and that /version.json changed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T14:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T14:02Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done)",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Show each new video's first-day result on the tracker page"
     }
   ],
   "focus": [
