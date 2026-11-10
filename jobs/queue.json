@@ -111162,6 +111162,11 @@
           "at": "2026-11-10T05:59Z",
           "by": "claude",
           "what": "acting Chief: thumbnail built (J2484); design review queued as J2486"
+        },
+        {
+          "at": "2026-11-10T06:17Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-11-10T14:00:00Z"
         }
       ],
       "remaining_action": "After J2484 465°C thumbnail passes design review: arm thumbnail-only Test & Compare A MELTS LEAD vs B 465°C on VBaYRPp85Sw (park for Ben if Studio warns deleting ended report)",
@@ -111177,11 +111182,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "The new thumbnail B (465°C) has passed its independent design review (J2486; built by J2484, records in OWB PR #712). Then arm the thumbnail-only test. If Studio says that starting it deletes the ended T011 test or its report, stop: that click is Ben's, and it is part of the question put to him on 10 Nov.",
-        "check_at": "2026-11-10T14:00:00+00:00",
-        "last_recheck": "J2484",
-        "checked_at": "2026-11-10T05:59:45+00:00",
-        "checked_by": "claude"
+        "condition": "Waiting for fixed 023 Venus thumbnail B (465°C) (J2487, after design review J2486 returned FIX on glowing/molten lander and 245.5 saturation) to pass a fresh independent design review before arming in Studio.",
+        "check_at": "2026-11-10T14:00:00Z"
       }
     },
     {
