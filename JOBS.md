@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2500 | mini | open | – | – | qa · Mini SSD re-check for Ben: is MiniWork now on a fast link (it was USB 2.0 speed this morning), read and write speed, any unplug since 09:47Z |  |
 | J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
-| J2504 | mini | open | – | – | studio · Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short |  |
+| J2504 | mini | claimed | claudecode | 2026-11-10T16:00Z | studio · Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short |  |
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 
 Recently finished:
