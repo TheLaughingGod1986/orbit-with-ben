@@ -1,5 +1,5 @@
 {
-  "next_id": 2474,
+  "next_id": 2475,
   "jobs": [
     {
       "id": "J0001",
@@ -213418,6 +213418,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2474",
+      "title": "Bring the Anesthesia voiceover records pull request up to date with main so it can merge (generated files only)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "History of Science PR #443 (branch cursor/J2245-011-vo, the Anesthesia long voiceover records) cannot merge: it conflicts with main in three generated files. The voiceover itself is accepted (J2286 returned KEEP; acting Chief closed J2245 on 10 Nov).\n\nDo this, in the history-of-science repo:\n1. Check out cursor/J2245-011-vo and merge origin/main into it (a merge commit; no rebase, no force-push).\n2. The three conflicts are 00_Brand/Channel-Setup/PIPELINE.json, 00_Brand/Channel-Setup/kanban/index.html and STATUS.md. Do not edit them by hand. Take main's version of each, then regenerate them with the repo's own tools so they include this PR's change (the film's VO stage).\n3. If anything else conflicts, stop and park it for the Chief with the file names.\n4. Run 00_Brand/Channel-Setup/tools/check_all.sh. It must pass.\n5. Push the branch and park this job for the Chief with the new head commit. The Chief merges.\n\nNothing is recorded, uploaded or spent. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Bring the Anesthesia voiceover records pull request up to date with main so it can merge (generated files only)",
+      "kind": "assembly",
+      "plain": "A finished voiceover's paperwork can't be filed because three auto-made files clash; this refreshes them."
     }
   ],
   "focus": [
