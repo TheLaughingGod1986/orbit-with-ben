@@ -85,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2478 | mini | open | – | – | for claudecode · assembly · `mini-claude-opus-5-5` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
+| J2493 | mini | open | – | – | qa · Scheduled Orbit Shorts against the first-second rule: gate each one, say what a re-cut would need (table only, nothing built) |  |
 
 Recently finished:
 

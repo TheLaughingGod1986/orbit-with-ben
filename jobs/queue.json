@@ -1,5 +1,5 @@
 {
-  "next_id": 2493,
+  "next_id": 2494,
   "jobs": [
     {
       "id": "J0001",
@@ -215151,6 +215151,36 @@
         "at": "2026-11-10T07:58Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2493",
+      "title": "Scheduled Orbit Shorts against the first-second rule: gate each one, say what a re-cut would need (table only, nothing built)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Twenty Orbit Shorts are uploaded and scheduled between now and 16 Dec (00_Brand/Channel-Setup/social/UPLOADS.json). Most were cut before rule 24, \"The first second\" (9 Nov), and the daily gate report of 9 Nov (05_Analytics/owb/UPCOMING_SHORTS_GATE.md) already says several \"would fail the 60% stayed gate\": a still at frame 0, a first cut after 3 seconds, or a spoken \"stay, and I'll show you\". Our Shorts lose most viewers in the first seconds (22 to 50% stay against a 60% floor), so these are going out with the weakness we know about. Ben, 10 Nov, asked what else would improve views.\n\nThis job fits one run only if it checkpoints early. Do it in this order and commit after each step.\n\n1. First 10 minutes: write `jobs/reviews/<this job>/SCHEDULED_SHORTS.md` with one row per scheduled Short, soonest first: air date, video id, title, the export file, and whether that file is on the Mini or the NAS. Commit and push. A later run resumes from this file.\n2. For each Short whose file is to hand, run `gate_shorts_open.py` with the first-second checks and add to its row: PASS or FAIL, when the subject and surprise word are spoken, voice onset, the longest pause in sentence 1, movement at frame 0, time of the first cut, and any meta-promise line. Put a time limit on anything that reads the NAS or `~/_desk` (both have hung this week). Commit after every five.\n3. For each FAIL, say in one line what would fix it and whether that needs only existing picture and the existing voice-over (a re-cut: start on moving footage, bring the first cut inside 3 seconds, trim a separable meta-promise line) or a new voice take.\n4. Stop there and park for the Chief with the table. Build nothing in this job. The Chief picks which to re-cut, soonest air date first; each re-cut is a new cut and needs Ben's watch before it replaces a scheduled upload.\n\nSkip any Short airing inside 48 hours: there is no time to re-cut and get it watched. Nothing changes on YouTube in this job. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T09:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T09:34Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Scheduled Orbit Shorts against the first-second rule: gate each one, say what a re-cut would need (table only, nothing built)",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "qa",
+      "plain": "Checks the Shorts already scheduled against the newest hook rule, so the weakest can be re-cut before they air."
     }
   ],
   "focus": [
