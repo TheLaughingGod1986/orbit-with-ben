@@ -215506,7 +215506,7 @@
     {
       "id": "J2495",
       "title": "History of Science open pull requests: a decision table for the 27 that are left (close, carry or review), nothing merged or closed",
-      "needs": "macbook",
+      "needs": "cloud",
       "repo": "hos",
       "body": "The history-of-science repo had 69 open pull requests on 10 Nov. The Chief merged or closed 41 that were plain records. 27 are left (plus #180, the desk, which is never merged or closed). They conflict with main or contain code, so each needs a real look. This job makes the table the Chief decides from. Table only: merge nothing, close nothing, push to no branch but your own.\n\nThe 27: #457 #454 #437 #434 #433 #431 #427 #405 #403 #401 #382 #380 #379 #378 #376 #359 #357 #355 #353 #349 #348 #347 #345 #334 #325 #200 #195.\n\nFor each one, in the history-of-science checkout (fetch with `git fetch origin pull/N/head:pr-N`; `GIT_LFS_SKIP_SMUDGE=1` is fine, nothing here needs media):\n1. Base: is it opened against `main`? (#382 is against another PR's branch. Say so for any like it.)\n2. What it adds that main does not have: count the files it adds or changes that are missing from main, the ones already on main byte for byte, and the ones that differ. Name the ones that differ.\n3. Has later work replaced it? Look at the film's `production-status.md`, PIPELINE.json and the newer merged PRs for the same job or film. Say what replaced it, with the PR or job number.\n4. Code: list any file under `00_Brand/Channel-Setup/tools`, `07_Content-Ops`, `.github`, `studio-core`, `.cursor/rules` or `AGENTS.md`. Those are shared tools or rules, not records.\n5. Email addresses: does any added line contain a personal email address? (Both repos are public; say yes or no, never copy the address.)\n6. Recommend one of: CLOSE (replaced, say by what), CARRY (still wanted: say which files, and how to settle each conflict; for STATUS.md and the kanban page the answer is always \"regenerate with status_board.py\"), or REVIEW (shared code or a rule change the Chief must read: say in two lines what it changes).\n\nKnown so far, check rather than trust: #433 and #434 are the November experiment rule changes E1 and E2 (Shorts opening, first 30 seconds of longs) and touch AGENTS.md and the Cursor rules; #454 and #457 are drafts on the 009 tranche-2 runner, which was repaired since in #468 and #470; #379, #380, #382 and #376 are stacked 008 rough-cut evidence from 29 and 30 Oct; #348 adds 750 files (plate boards for 011 to 086).\n\nWrite it to `jobs/reviews/<this job id>/OPEN_PRS.md` in history-of-science as one table (PR, opened, base, missing / same / differs, replaced by, shared code, email, recommendation) and a short paragraph per REVIEW row. Open a pull request with that one file. Then park for Chief.\n\n£0. No YouTube, no Studio, no media.\n",
       "ref": "",
@@ -215514,13 +215514,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T11:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T11:07Z",
-      "result": "parked for Chief: this job cannot run on the MacBook worker, second time here (released once already today). In the history-of-science checkout 'git fetch origin pull/N/head:pr-N' and plain 'git fetch origin' both need approval, so 25 of the 27 PR heads cannot be read (only #433 macbook/J2203 and #434 macbook/J2204 are local). No table written, nothing merged, closed or pushed; HOS checkout left on main, clean. 'gh pr list --json' does work and gave this for the 27: base is main for all except #382 (base cursor/j1241-hos008-cg-v03, the #380 branch); MERGEABLE: #434 #382 #334 #325; CONFLICTING: the other 23. Please pin J2495 to the Mini (mini_only) or allow 'git fetch' for the MacBook worker, then reopen.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T11:07Z",
@@ -215546,9 +215546,14 @@
           "at": "2026-11-10T11:14Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: this job cannot run on the MacBook worker, second time here (released once already today). In the history-of-science checkout 'git fetch origin pull/N/head:pr-N' and plain 'git fetch origin' both need approval, so 25 of the 27 PR heads cannot be read (only #433 macbook/J2203 and #434 macbook/J2204 are local). No table written, nothing merged, closed or pushed; HOS checkout left on main, clean. 'gh pr list --json' does work and gave this for the 27: base is main for all except #382 (base cursor/j1241-hos008-cg-v03, the #380 branch); MERGEABLE: #434 #382 #334 #325; CONFLICTING: the other 23. Please pin J2495 to the Mini (mini_only) or allow 'git fetch' for the MacBook worker, then reopen."
+        },
+        {
+          "at": "2026-11-10T11:19Z",
+          "by": "claude",
+          "what": "acting Chief: moved to cloud (the MacBook worker may not git fetch unattended; the cloud checkout already holds the PR heads). Thread 11:20Z."
         }
       ],
-      "remaining_action": "History of Science open pull requests: a decision table for the 27 that are left (close, carry or review), nothing merged or closed",
+      "remaining_action": "Write the table from the cloud checkout, which already holds all 27 PR heads. From the MacBook's read (gh pr list): every base is main except #382 (base is #380's branch); mergeable #434 #382 #334 #325, the other 23 conflict; drafts #457 #454 #437 #405 #359 #355 #349 #334.",
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
       "plain": "List the 27 old History of Science pull requests still open and say for each whether to close it, carry it or review it",
