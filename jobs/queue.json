@@ -1,5 +1,5 @@
 {
-  "next_id": 2494,
+  "next_id": 2495,
   "jobs": [
     {
       "id": "J0001",
@@ -215341,6 +215341,36 @@
         "by": "claudecode",
         "note": "20 gated (not 21): 4 FAIL (gmzaCfJF1gA 14 Nov, HZGTovJu_TQ 16 Nov, kKN8Ale42sE 17 Nov, cwU_0WWeNZ4 18 Nov), 16 PASS; fix"
       }
+    },
+    {
+      "id": "J2494",
+      "title": "026 Nearest Star Shorts: re-cut the first second of HZGTovJu_TQ (16 Nov) and cwU_0WWeNZ4 (18 Nov) from existing picture and voice, gate, one watch card for Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief decision on J2493 (10 Nov). Two scheduled 026 Shorts fail the first-second gate (rule 24) on one count each, and both can be fixed with the picture and voice we already have. Re-cut those two. Nothing new is recorded or generated. £0.\n\nThe two:\n1. HZGTovJu_TQ \"If You Can't See the Nearest Star, How Far Away Is It?\" airs Mon 16 Nov 11:30Z. Fail: first cut at 4.80 s. Fix: bring the first cut inside 3.0 s.\n2. cwU_0WWeNZ4 \"If Voyager Needs 75,000 Years, How Far Is the Nearest Star?\" airs Wed 18 Nov 11:30Z. Fail: a still at frame 0 (movement 0.46, floor 1.50). Fix: open on moving footage.\n\nSource files and the readings: jobs/reviews/J2493/SCHEDULED_SHORTS.md (rows 6 and 8).\n\nSteps:\n1. Re-cut each from its existing project: same voice take, same words, same title, same length band. Only the opening picture changes. Save as the next version (v02) beside the original; do not overwrite v01.\n2. Run `gate_shorts_open.py check` on each new file (not report-only). Both must PASS, including the checks they passed before. Run the normal Shorts gates too (length, loudness, picture QA).\n3. If either cannot pass with existing picture, stop on that one and say why. Do not generate picture and do not spend.\n4. Copy both to Ben's watch folder and put ONE watch card on the board holding both (about 45 seconds of watching). Say on the card: \"Two Shorts re-cut so the first second moves. Same words. OK to swap them in?\"\n5. Park for Chief with the gate results. Do NOT upload, and do NOT touch the two scheduled videos. The swap is a separate step after Ben's OK.\n\nAfter Ben's OK (Chief queues it): upload the new cut as a new private video with the same title, description, tags and slot, then take the old one off the schedule (leave it private; never delete a video). Jobs J0861 (Related on the 026 Shorts) and J2021 (rule 17 measurement) name the old ids and must be given the new ones.\n\nIf Ben has not OK'd by Sun 15 Nov 18:00Z (first) or Tue 17 Nov 18:00Z (second), the original airs as scheduled. That is fine.\n\nAlso, read-only, from the same table: in Studio confirm bizlhspnVvY (comets v01) is not scheduled for 30 Nov, so only xvarZP2aYyE airs that day. Report what Studio shows; change nothing.\n\nNot in this job: gmzaCfJF1gA (Pluto, 14 Nov) and kKN8Ale42sE (Voyager, 17 Nov) air as they are. Each fails on three counts and one may need a new voice take; they stay as the \"before\" reading for rule 24.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T10:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T10:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "026 Nearest Star Shorts: re-cut the first second of HZGTovJu_TQ (16 Nov) and cwU_0WWeNZ4 (18 Nov) from existing picture and voice, gate, one watch card for Ben",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Re-cut the opening second of two scheduled Nearest Star Shorts so they start on movement, then ask Ben to watch both"
     }
   ],
   "focus": [
