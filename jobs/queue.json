@@ -212039,13 +212039,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T01:00Z",
-      "eta": "2026-11-10T02:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:12Z",
-      "result": "",
+      "result": "parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports.",
       "history": [
         {
           "at": "2026-11-09T23:12Z",
@@ -212086,6 +212086,11 @@
           "at": "2026-11-10T01:00Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:01Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: third time on the MacBook and the Studio read still can't run here. curl to 127.0.0.1:9223 and 127.0.0.1:9222 both need approval in the unattended run, so no Test and Compare page was opened and none of the four verdicts (J0275, J1198, J1130, J0978) was checked. Nothing in Studio was touched, no REVIEW.md, no branch, no PR. Needs the Mini, or the MacBook allow-list to permit the CDP ports."
         }
       ],
       "remaining_action": "Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom)",
