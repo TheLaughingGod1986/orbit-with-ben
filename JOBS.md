@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2536 | mini | open | – | – | 007 upload · studio · HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A | Ben 10 Nov: Ok on both |
 | J2537 | cloud | open | – | – | chief · HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window | Ben 10 Nov: Ok on both |
-| J2538 | macbook | open | – | – | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
+| J2538 | macbook | claimed | macbook | 2026-11-10T22:18Z | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
 | J2539 | macbook | claimed | macbook-2 | 2026-11-10T22:15Z | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
 | J2540 | mini | open (after J2539) | – | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 
