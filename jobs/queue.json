@@ -1,5 +1,5 @@
 {
-  "next_id": 2505,
+  "next_id": 2506,
   "jobs": [
     {
       "id": "J0001",
@@ -216219,6 +216219,36 @@
       "kind": "studio",
       "plain": "Link the Mars Shorts to the Mars film, and give today's Short better search tags",
       "urgent": 6
+    },
+    {
+      "id": "J2505",
+      "title": "Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Found by today's first-day check (J2501): the Short that went live on 10 Nov opens on a 16:9 picture band with blurred fill above and below, and the Shorts feed gave it 2 views in two hours. LEARNINGS rule 24 says frame 0 must be full-bleed 9:16 with no blur-pad and no letterbox bars. The opening gate passed that Short on 9 Nov, because `00_Brand/Channel-Setup/tools/gate_shorts_open.py` has no check for it. This job adds the check and then runs it on what is scheduled. Tool work, £0, no Studio, no upload.\n\n1. Add a frame-0 full-bleed check to the gate. A Short fails when its opening picture does not fill the 9:16 frame: black bars, a blurred or mirrored copy of the picture used as fill, or a flat colour band, above and below a narrower picture band. Measure it on the frames from 0.0 to 0.5 s (for example: compare the detail in the top and bottom fifths with the centre band, and look for the two hard horizontal edges of a band). Give the measured numbers in the gate's report. A caption or hook text over a full-frame picture is not a failure.\n2. Tests with made clips (ffmpeg, a second or two each): full-frame picture passes; black-bar letterbox fails; blur-pad fails; full-frame picture with a caption band passes. Put them beside the gate's existing tests.\n3. Sync the copied tool to the second channel the usual way (`scripts/core_sync.py`), in the same pull request or its pair.\n4. Run the gate on every scheduled Short of both channels whose export is on this machine or the NAS, and write one table in the pull request: video id, air date, pass or fail on the new check, the measured numbers. Do not re-cut anything: the Chief decides from the table, and J2494 is already re-cutting some of them.\n\nOpen a pull request and park for the Chief.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T13:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T13:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "review",
+      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
     }
   ],
   "focus": [

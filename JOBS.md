@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2504 | mini | open | – | – | studio · Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short |  |
+| J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 
 Recently finished:
 
