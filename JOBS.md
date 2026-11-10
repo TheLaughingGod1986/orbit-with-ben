@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2517 | mini | open | – | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2519 | mini | open | – | – | listing · Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
-| J2521 | macbook | claimed | macbook | 2026-11-10T19:43Z | review · Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0) |  |
+| J2521 | macbook | blocked | macbook | – | review · Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0) |  |
 | J2522 | macbook | open | – | – | review · Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0) |  |
 | J2523 | macbook | open | – | – | review · Decoupling: eight scripts stop assuming the studio lives inside one channel's repo (13 lines to 0) |  |
 | J2524 | cloud | open | – | – | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |

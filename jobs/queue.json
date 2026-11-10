@@ -217415,13 +217415,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T17:43Z",
-      "eta": "2026-11-10T19:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "parked for Chief: PR #753 open (branch macbook/J2521), review and merge. Counted lines 27 -> 1: uat_outlook 14 -> 1, video_progress 8 -> 0, channel_balance 4 -> 0, packaging_panel 1 -> 0; ratchet total 327 -> 301. The one line left is uat_outlook's milestoneSchema id 'studio-nine-stages-hos-aliases-v2': progress24.py uses it as its comparison basis, so renaming it changes behaviour (resets the board's progress comparison). Chief to decide. New channels.pipeline(slug); no new channel.json field. Tests: test_channel* 69 pass (4 new, made-up third channel), uat_outlook 24, video_progress 6, test_video_* 40, test_kanban* 24, sync_rules and studio status checks OK. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217432,6 +217432,11 @@
           "at": "2026-11-10T17:43Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T17:49Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: PR #753 open (branch macbook/J2521), review and merge. Counted lines 27 -> 1: uat_outlook 14 -> 1, video_progress 8 -> 0, channel_balance 4 -> 0, packaging_panel 1 -> 0; ratchet total 327 -> 301. The one line left is uat_outlook's milestoneSchema id 'studio-nine-stages-hos-aliases-v2': progress24.py uses it as its comparison basis, so renaming it changes behaviour (resets the board's progress comparison). Chief to decide. New channels.pipeline(slug); no new channel.json field. Tests: test_channel* 69 pass (4 new, made-up third channel), uat_outlook 24, video_progress 6, test_video_* 40, test_kanban* 24, sync_rules and studio status checks OK. GBP 0."
         }
       ],
       "remaining_action": "Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0)",
