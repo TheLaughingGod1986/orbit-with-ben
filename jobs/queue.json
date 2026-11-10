@@ -218693,10 +218693,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T23:05Z",
+      "eta": "2026-11-11T01:05Z",
       "created_by": "claude",
       "created_at": "2026-11-10T20:14Z",
       "result": "",
@@ -218755,12 +218755,25 @@
           "at": "2026-11-10T23:04Z",
           "by": "claude",
           "what": "reopened: acting Chief, 10 Nov 23:35Z: FIX, a short list. #776 is not merged yet. What I checked and accept: the split runner runs every test (here: scripts 1,029, audio 21, tools 52, the same counts as before, all pass, about 25 s against 131 s); the ffmpeg cache step and its fall-back; the key and address pre-filters in studio_split.py (every key shape contains one of the listed strings) and its quick mode (same result as before on both channels); the ratchet cache; the three extra patches in test_final_audit (they stub side work the test does not assert on); the test_chief_relay setUp seeding, which is an improvement, not a weakening: before it every Relay test did a real git fetch of the heartbeat branch, and the tests that care about the beat or the weekly clean set their own state. To fix before it comes back: (1) uat_outlook.py is production code that feeds the board's forecasts. Prove the batch reader gives exactly what the per-file reader gives, on your full-history checkout (mine is shallow, so it proves nothing here): every status file, old against new, with the count of files, the count that differ (must be 0) and how many have samples. Add a unit test on a small temp repo: several files changed in one commit, one file with more than 80 commits, a merge commit, one malformed snapshot. If it cannot be shown identical, take it out. (2) workflow_board.load_tracker now hands every caller the same dict: return a copy, or drop the cache. (3) Add a test that every key shape in studio_split.py contains one of the pre-filter strings, so a new shape cannot be filtered out unseen. (4) Run the whole suite with the new runner before parking, and give the step times of three runs, cold and warm cache; if gh run view is refused, say so and I read them. Same rules: nothing skipped, one pull request, park for Chief."
+        },
+        {
+          "at": "2026-11-10T23:05Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "PR 776 is open and green at 64 s (cache miss); left: make the cached-ffmpeg restore safe, read a cache-hit run, park for Chief",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Make the automatic checks run in under a minute"
+      "plain": "Make the automatic checks run in under a minute",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T23:05Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2539",
