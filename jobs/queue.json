@@ -218785,13 +218785,13 @@
       "stage": "",
       "after": "J2539",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T21:48Z",
-      "eta": "2026-11-10T23:48Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
-      "result": "",
+      "result": "parked for Chief: PR #774 (2bc420e12) open with jobs/reviews/J2540/REPORT.md and J2540_results.json tabulating frame0_full_bleed across all scheduled OWB (23 scheduled + 10 Nov ref + 3 J2494 re-cuts + J2510/J2512 re-cuts) and HOS (6 scheduled) Shorts. All 3 J2494 re-cuts PASS (gmzaCfJF1gA v02, HZGTovJu_TQ v05/v06, cwU_0WWeNZ4 v06/v07). Two rows FAIL current check: OWB ffYKoNVPoqg (10 Nov ref, true positive blur-pad) and HOS ChbsigHD5_o (18 Nov, visual false positive on full-bleed 9:16 where top of MINT text at y=63 and tabletop edge at y=127 align symmetrically). Also flagged OWB rvug71d7Dqk (21 Nov, fri06_muons_ground_v04.mp4) which PASSes current thresholds but visually opens on a feathered blur-pad (0-1.5s). Nothing re-cut or changed in Studio.",
       "history": [
         {
           "at": "2026-11-10T20:15Z",
@@ -218827,6 +218827,11 @@
           "at": "2026-11-10T22:05Z",
           "by": "gemini",
           "what": "step 4 of 4 done: PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json covering all 36 OWB + HOS scheduled Shorts and J2494/J2510/J2512 re-cuts"
+        },
+        {
+          "at": "2026-11-10T22:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #774 (2bc420e12) open with jobs/reviews/J2540/REPORT.md and J2540_results.json tabulating frame0_full_bleed across all scheduled OWB (23 scheduled + 10 Nov ref + 3 J2494 re-cuts + J2510/J2512 re-cuts) and HOS (6 scheduled) Shorts. All 3 J2494 re-cuts PASS (gmzaCfJF1gA v02, HZGTovJu_TQ v05/v06, cwU_0WWeNZ4 v06/v07). Two rows FAIL current check: OWB ffYKoNVPoqg (10 Nov ref, true positive blur-pad) and HOS ChbsigHD5_o (18 Nov, visual false positive on full-bleed 9:16 where top of MINT text at y=63 and tabletop edge at y=127 align symmetrically). Also flagged OWB rvug71d7Dqk (21 Nov, fri06_muons_ground_v04.mp4) which PASSes current thresholds but visually opens on a feathered blur-pad (0-1.5s). Nothing re-cut or changed in Studio."
         }
       ],
       "remaining_action": "Parked for Chief review of PR #774 and threshold/re-cut decisions",
