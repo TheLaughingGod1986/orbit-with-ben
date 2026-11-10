@@ -211525,13 +211525,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-09T23:48Z",
-      "eta": "2026-11-10T01:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T19:54Z",
-      "result": "",
+      "result": "Synced HOS PR #428 (cursor/J2217-eight-item, head 6b4d25741196defeedf2480201ce87b8bdea8302) with HOS origin/main (96ef0ed33988e5c98deab5b245d1fa9beb542f09) via merge commit (no rebase/force-push), merged 008 PIPELINE.json + production-status.md and regenerated STATUS.md + 00_Brand/Channel-Setup/kanban/index.html via status_board.py, then merged #428 into PR #411 (codex/J2163-repair, head 9c31f162850ca6729364bf88eaf98d6d8da34068, state OPEN, mergeable MERGEABLE into main; not merged into main). Verification on both heads: python3 -m unittest test_j2163_recipe -> Ran 18 tests in 0.280s OK; _build_rough_v13_recipe.py --dry-run -> status PLANNED_NOT_EXECUTABLE, master_sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 6 inputs decode verified; 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin -> durable desk handoffs PASS, no media PASS, status board in sync PASS, ElevenLabs guard tests PASS, vo_check word tests PASS, atempo check tests PASS, voice speed PASS, contract tests PASS (28/28), package-lint PASS, review:script PASS (92.1/100), gate:episode PASS -> ALL CHECKS PASS. £0 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-09T19:54Z",
@@ -211567,6 +211567,11 @@
           "at": "2026-11-10T00:24Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Both PR #428 (cursor/J2217-eight-item @ 6b4d2574) and PR #411 (codex/J2163-repair @ 9c31f162) brought up to date with HOS origin/main (96ef0ed3); test_j2163_recipe (18/18 OK) and check_all.sh (ALL CHECKS PASS) verified; PR #411 is OPEN and MERGEABLE into main"
+        },
+        {
+          "at": "2026-11-10T00:24Z",
+          "by": "gemini",
+          "what": "done: Synced HOS PR #428 (cursor/J2217-eight-item, head 6b4d25741196defeedf2480201ce87b8bdea8302) with HOS origin/main (96ef0ed33988e5c98deab5b245d1fa9beb542f09) via merge commit (no rebase/force-push), merged 008 PIPELINE.json + production-status.md and regenerated STATUS.md + 00_Brand/Channel-Setup/kanban/index.html via status_board.py, then merged #428 into PR #411 (codex/J2163-repair, head 9c31f162850ca6729364bf88eaf98d6d8da34068, state OPEN, mergeable MERGEABLE into main; not merged into main). Verification on both heads: python3 -m unittest test_j2163_recipe -> Ran 18 tests in 0.280s OK; _build_rough_v13_recipe.py --dry-run -> status PLANNED_NOT_EXECUTABLE, master_sha256 cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b, 6 inputs decode verified; 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/008_Lightning-Franklin -> durable desk handoffs PASS, no media PASS, status board in sync PASS, ElevenLabs guard tests PASS, vo_check word tests PASS, atempo check tests PASS, voice speed PASS, contract tests PASS (28/28), package-lint PASS, review:script PASS (92.1/100), gate:episode PASS -> ALL CHECKS PASS. £0 / 0 credits spent."
         }
       ],
       "remaining_action": "Complete J2446 and hand off PR #428 + PR #411 to Chief for merge into HOS main",
