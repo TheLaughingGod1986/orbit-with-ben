@@ -214307,17 +214307,22 @@
           "at": "2026-11-10T10:28Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2476; starting inspection of HOS 013 shot list v01 and locked VO timings"
+        },
+        {
+          "at": "2026-11-10T10:33Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected SHOT_LIST_v01.md (62 rows on 512.48s hos_013_vo_v03a), words_fw_small_en.json, and HOS-2026-11-E2 proof-first rules"
         }
       ],
-      "remaining_action": "Inspect HOS 013 shot list v01, locked VO timings, and existing HOS picture plans to write picture plan v01",
+      "remaining_action": "Write HOS 013 picture plan v01 (JSON, markdown, part plate boards) with HOS-2026-11-E2 proof-first first 30s on locked hos_013_vo_v03a timings",
       "due": "2026-11-19T00:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T10:28Z",
+        "at": "2026-11-10T10:33Z",
         "by": "gemini",
-        "note": "Claimed J2476; starting inspection of HOS 013 shot list v01 and locked VO timings"
+        "note": "Inspected SHOT_LIST_v01.md (62 rows on 512.48s hos_013_vo_v03a), words_fw_small_en.json, and HOS-2026-11-E2 proof-first "
       },
       "taskKeys": [
         "HOS:013"
