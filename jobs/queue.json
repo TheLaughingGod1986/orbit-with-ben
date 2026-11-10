@@ -177417,9 +177417,14 @@
           "at": "2026-11-10T11:52Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Check 1 (10s NAS ls) PASS; Check 2 (style refs on media root + NAS studio-live) PASS with verified sha256s; all 14 external parent clips tech_ok=True"
+        },
+        {
+          "at": "2026-11-10T11:54Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Check 3 (read-only live Flow check in Still & Video modes) PASS: Ultra, 14890 credits before/after, Still=Nano Banana 2.1 16:9 x1 0 credits, Video=Veo 3.1 - Quality 16:9 8s x1 100 credits, 0 submits"
         }
       ],
-      "remaining_action": "Run read-only live Flow check (Still mode + Video mode: model, aspect, balance; 0 submits), then launch batch 1 detached",
+      "remaining_action": "Start batch 1 (the two parent rows P02:10_how_high and P03:07_ball_to_moon, including their 2 zero-credit stills) via launch-worker",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177434,11 +177439,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T11:52Z",
+        "at": "2026-11-10T11:54Z",
         "by": "gemini",
-        "note": "Check 1 (10s NAS ls) PASS; Check 2 (style refs on media root + NAS studio-live) PASS with verified sha256s; all 14 exter"
+        "note": "Check 3 (read-only live Flow check in Still & Video modes) PASS: Ultra, 14890 credits before/after, Still=Nano Banana 2."
       }
     },
     {
