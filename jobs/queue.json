@@ -1,5 +1,5 @@
 {
-  "next_id": 2503,
+  "next_id": 2504,
   "jobs": [
     {
       "id": "J0001",
@@ -216074,6 +216074,36 @@
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
       "plain": "Bring the still-wanted files from old History of Science pull requests onto main in one tidy change"
+    },
+    {
+      "id": "J2503",
+      "title": "History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Found while writing the J2495 table (10 Nov): history-of-science main holds an account email address in tracked files. Both repos are public, and AGENTS.md (orbit-with-ben, Never list, 10 Nov) says an account's address is never written into a tracked file, a job or the thread. This job takes it out of the files as they stand. It does NOT rewrite git history: that is Ben's call and is not asked for here.\n\nFind them: `git grep -nIE \"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\.(com|me|co\\.uk)\"` in history-of-science. Known on 10 Nov: 2 lines in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/_mint_flow_v05_tranche2.py`, and lines in HOS 006's `FLOW_FAST_v01.json`, `LITE_TEST_v01.json`, `PART01_MINT_LOG_v01.json`, `PART02_MINT_LOG_v01.json` and `_mint_vertex_v01.py`. List every file you find; never copy the address into the report, the pull request or the thread.\n\n1. Scripts that check \"is this the right account\": read the expected address from a setting outside the repo (an environment variable such as `STUDIO_FLOW_ACCOUNT`, or the file the shared Flow guards already use if there is one; look first). With no setting the script must refuse to run and say which setting is missing. It must never fall back to a guess. Update the tests so they pass a made-up address.\n2. Records (JSON logs, notes): replace the address with \"the studio Ultra account\". Change nothing else in them.\n3. Add a test that fails if any tracked file holds such an address, with a short allowlist only if something truly cannot change (say why). Mirror `scripts/test_email_ratchet.py` in orbit-with-ben.\n4. Write the setting's name and where it is set on the Mini and the MacBook in the pull request, so the Chief can check both machines have it BEFORE the change is merged. A runner that cannot find its account must not be merged ahead of a mint.\n\nChecks: check_all.sh ends ALL CHECKS PASS. One pull request, parked for the Chief. This job starts after J2033 (the 009 mint uses the runner as it is today).\n\n£0. No generation, no Flow page, no YouTube.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2033",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T13:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T13:26Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Remove an account email address from files in the public History of Science repo"
     }
   ],
   "focus": [
