@@ -1,5 +1,5 @@
 {
-  "next_id": 2469,
+  "next_id": 2470,
   "jobs": [
     {
       "id": "J0001",
@@ -192561,6 +192561,11 @@
           "at": "2026-11-09T19:54Z",
           "by": "claude",
           "what": "acting Chief: J1881 KEEP accepted; now gated on J2446 (PRs #411/#428 updated and merged), not J1881."
+        },
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "relay",
+          "what": "condition verification queued: J2469"
         }
       ],
       "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
@@ -192572,7 +192577,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).",
-        "check_at": "2026-12-31T00:00:00Z"
+        "check_at": "2026-11-10T01:25:28+00:00",
+        "recheck_task": "J2469"
       }
     },
     {
@@ -212561,6 +212567,37 @@
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-10T01:13:03+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2469",
+      "title": "Verify condition for J2241",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2241: Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2241 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T00:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T00:25Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
+      "kind": "review",
+      "recheck_of": "J2241",
+      "due": "2026-11-10T01:25:28+00:00",
       "due_kind": "condition-verification"
     }
   ],
