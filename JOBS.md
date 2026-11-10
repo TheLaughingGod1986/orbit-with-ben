@@ -51,14 +51,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2244 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2215 |  |
-| J2255 | mini | blocked | cursor | – | 008 edit · assembly · HOS 008 Short C: assemble Short_C_v03 (Layout C-v03a) after C-Open-1 VO — £0, no upload | J2175/h94 |
 | J2268 | mini | open (after J2200) | – | – | 010 picture · assembly · HOS 010: build tested twelve-plate Flow adapter without generation | J2267 |
 | J2269 | mini | open (after J2268) | – | – | 010 picture · chief · HOS 010: review twelve-plate runner and verify live spend guards | J2267 |
 | J2270 | mini | blocked | codex | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2280 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2220 |  |
 | J2287 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2245 |  |
-| J2289 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2255 |  |
 | J2294 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2246 |  |
 | J2303 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Verify condition for J2199 |  |
 | J2305 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2230 |  |
