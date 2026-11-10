@@ -213288,19 +213288,24 @@
           "at": "2026-11-10T07:43Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Started J2466: auditing remote branches in orbit-with-ben and History Of Science"
+        },
+        {
+          "at": "2026-11-10T07:47Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Audited remote branches in both repos: orbit-with-ben has 386 remote branches (136 qualifying merged, 250 kept: 6 working, 13 open PR unmerged, 231 other unmerged); History Of Science has 425 remote branches (58 qualifying merged, 367 kept: 3 working incl. hos-desk open PR #180, 68 other open PR unmerged, 296 other unmerged)"
         }
       ],
-      "remaining_action": "Fetch/prune remote branches, open PRs, and working/launchd/workflow branch references in both repos",
+      "remaining_action": "Create clean worktree and write jobs/reviews/J2466/BRANCHES.md with full qualifying and kept branch tables before deleting any remote branches",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T07:43Z",
+        "at": "2026-11-10T07:47Z",
         "by": "gemini",
-        "note": "Started J2466: auditing remote branches in orbit-with-ben and History Of Science"
+        "note": "Audited remote branches in both repos: orbit-with-ben has 386 remote branches (136 qualifying merged, 250 kept: 6 workin"
       }
     },
     {
