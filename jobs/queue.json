@@ -218719,16 +218719,21 @@
           "at": "2026-11-10T21:48Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-10T22:45Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
         }
       ],
-      "remaining_action": "Time each test file in scripts/, speed up test_studio_split.py, cache ffmpeg, split scripts/ across parallel processes",
+      "remaining_action": "PR 776 is open and green at 64 s (cache miss); left: make the cached-ffmpeg restore safe, read a cache-hit run, park for Chief",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the automatic checks run in under a minute",
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-10T21:48Z",
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-10T22:45Z",
         "by": "macbook"
       }
     },
