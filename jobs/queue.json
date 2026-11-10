@@ -1,5 +1,5 @@
 {
-  "next_id": 2491,
+  "next_id": 2492,
   "jobs": [
     {
       "id": "J0001",
@@ -214819,6 +214819,36 @@
         "at": "2026-11-10T07:17Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2491",
+      "title": "Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "The daily channel tracker made no snapshot on 10 Nov: `05_Analytics/owb/snapshots/2026-11-10.json` is not on main, and the usual \"Channel tracker <date>\" commit (06:41 every day until now) is missing. Likely cause: its worktree, `~/_desk/worktrees/analytics`, sits on the removable SSD since 9 Nov, and launchd cannot open that volume without a permission click, so the run hangs at its first git call. OWB PR #722 makes the script fall back to the internal disk.\n\nOn the Mini, in this order. Put a time limit on anything that touches `~/_desk` (for example `perl -e 'alarm 10; exec @ARGV' ls ~/_desk/worktrees`), so this job cannot hang on the same thing:\n1. Read and report: `tail -40 ~/Library/Logs/orbit-analytics.log`, and `ps -axo pid,etime,command | grep -E \"analytics-snapshot|worktrees/analytics\" | grep -v grep`. Say whether this morning's run is still alive and where it is stuck.\n2. If this morning's run is still alive: stop it with a plain `kill <pid>` (the script's bash process first, then any git child of it). Nothing else. Report the pids.\n3. Confirm the shared checkout `~/YouTube/orbit-with-ben` is on main and has PR #722 (`grep -n pick_worktree 07_Content-Ops/launchd/analytics-snapshot.sh`). If #722 is not merged yet, wait for it: do not run the old script, it will hang again.\n4. Run today's snapshot by hand, the way launchd does: `/bin/zsh -lc ~/YouTube/orbit-with-ben/07_Content-Ops/launchd/analytics-snapshot.sh >> ~/Library/Logs/orbit-analytics.log 2>&1`. It reads YouTube only; it changes nothing there and spends nothing.\n5. Report the new log lines, which worktree it used (the log says if it moved to the internal disk), and that `05_Analytics/owb/snapshots/2026-11-10.json` and the \"Channel tracker 2026-11-10\" commit are on main.\n6. If it fails for another reason (a token, a rebase), paste the error and stop. Do not edit the script on the Mini.\n\nDo not delete the old worktree on the SSD or anything else. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T07:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T07:26Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722",
+      "due": "2026-11-10T12:00:00Z",
+      "plain": "The daily numbers page did not update this morning; this finds out why and runs it by hand.",
+      "mini_only": true
     }
   ],
   "focus": [
