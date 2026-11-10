@@ -1,5 +1,5 @@
 {
-  "next_id": 2548,
+  "next_id": 2549,
   "jobs": [
     {
       "id": "J0001",
@@ -219557,6 +219557,37 @@
         "at": "2026-11-10T23:52Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2548",
+      "title": "Sleep video: copy the inputs that are only on the Mini (5 narration stems, 2 music beds, 7 cover-plate sets, this morning's word timings) to the NAS, checked by sha256",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "The two-hour sleep video (J2452) is being built on the MacBook, which can read the NAS but not this machine's disk. Its input check (`05_Analytics/owb/SLEEP_VIDEO_01_NAS_INPUT_CHECK.md`, merged as #778) lists what is only on the Mini. Copy those to the NAS so the build can go on.\n\nCopy, never move, and never delete anything on the NAS or here:\n\n1. The five narration stems it names (films 023, 024, 025, 026, 027: each film's `02_Voiceover/` audio).\n2. The two music beds it names (026 and 023, `05_Music/`).\n3. The seven cover-plate sets it names (013, 027, 025, 020, 026, 019, 006: `03_Footage/` or the film's picture pool, only the files named).\n4. The muxed 021 Saturn master `saturn_first_cut_v03f.mp4` if it is on this disk.\n5. This morning's word timings for the sleep build: `/Volumes/MiniWork/scratch/j2452/` (the timings and `inputs.json`).\n\nWhere: under `/Volumes/data/studio-live/orbit-with-ben/`, at the same path each file has in the repo folder here; the word timings under `02_Video-Projects/_sleep_video_01/j2452/`. Use `rsync -a` with no delete flag. Check a time-limited `ls` of the NAS first. If the copy is more than a few GB, start it detached and pick it up on a later wake.\n\nThen check each copied file by size and sha256 against the one here, and write one table (file, size, sha256, copied or already there or not found here) to `jobs/reviews/<this job id>/COPIED.md` through a pull request. Say plainly what was not found on this machine. Park for Chief.\n\nNo Studio, no upload, no real money.\n",
+      "ref": "J2452",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T23:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T23:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sleep video: copy the inputs that are only on the Mini (5 narration stems, 2 music beds, 7 cover-plate sets, this morning's word timings) to the NAS, checked by sha256",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Copy the files the sleep video still needs from the Mac mini to the shared drive, so the MacBook can build it",
+      "mini_only": true
     }
   ],
   "focus": [
