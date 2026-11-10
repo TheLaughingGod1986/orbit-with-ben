@@ -460,6 +460,8 @@ def pull_main() -> str:
             if r.returncode and own and rescue_diverged(repo):
                 r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
             if r.returncode:
+                if own and RESCUE_WHY:
+                    return f"pull failed in {repo.name}: {RESCUE_WHY}"
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
             if own:
                 # A pull can succeed while main is still ahead of GitHub (a queue write whose push lost a race keeps
@@ -469,24 +471,58 @@ def pull_main() -> str:
     return ""
 
 
+STALE_LOCK_S = 600
+RESCUE_WHY = ""   # why the last rescue_diverged could not finish; pull_main adds it to the heartbeat's reason
+
+
+def clear_stale_index_lock(repo: pathlib.Path, now: float | None = None) -> bool:
+    """A git killed mid-write (the run cap kills the whole process group) leaves .git/index.lock behind, and every
+    later reset, checkout and stash in that clone then fails. In the worker's own clone a lock untouched for
+    STALE_LOCK_S is moved aside, never deleted (no git step here holds the index for ten minutes). True when moved."""
+    lock = repo / ".git" / "index.lock"
+    try:
+        if not lock.exists() or (now or time.time()) - lock.stat().st_mtime < STALE_LOCK_S:
+            return False
+        lock.rename(lock.with_name("index.lock.stale-" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())))
+    except OSError:
+        return False
+    log(f"{repo.name}: moved a stale .git/index.lock aside")
+    return True
+
+
 def rescue_diverged(repo: pathlib.Path) -> bool:
     """The worker's own clone has main commits GitHub doesn't (5 Nov 2026 21:36: 'pull failed ... git merge --no-ff',
     and slot 1 stopped). Keep them on a pushed branch macbook-worker/rescue-<time>, then put main back on origin/main.
-    Its own clone only (the caller checks); nothing is discarded. True when main was moved."""
+    Its own clone only (the caller checks); nothing is discarded. True when main was moved.
+    10 Nov 2026: slot 2 sat in error for an hour with one unpushed queue write. Each run pushed another rescue branch
+    for the same commit and main never moved, and nothing said why. Now a commit already on a rescue branch is not
+    branched again, a stale index.lock is moved aside first, and a reset that fails says so (RESCUE_WHY)."""
+    global RESCUE_WHY
+    RESCUE_WHY = ""
     git = ["git", "-C", str(repo)]
     if sh(git + ["fetch", "-q", "origin", "main"], timeout=180).returncode:
+        RESCUE_WHY = "could not fetch origin main"
         return False
     ahead = sh(git + ["rev-list", "--count", "origin/main..main"]).stdout.strip()
     if not ahead or ahead == "0":
         return False
     stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+    clear_stale_index_lock(repo)
     if sh(git + ["status", "--porcelain"]).stdout.strip():
         sh(git + ["stash", "push", "-u", "-q", "-m", f"macbook-worker autostash main {stamp}"])
-    branch = f"macbook-worker/rescue-{stamp}"
-    if sh(git + ["branch", branch, "main"]).returncode:
-        return False
-    sh(git + ["push", "-q", "origin", branch], timeout=120)
-    if sh(git + ["reset", "-q", "--hard", "origin/main"]).returncode:
+    kept = sh(git + ["branch", "--list", "macbook-worker/rescue-*", "--contains", "main",
+                     "--format", "%(refname:short)"]).stdout.split()
+    branch = kept[0] if kept else f"macbook-worker/rescue-{stamp}"
+    if not kept:
+        if sh(git + ["branch", branch, "main"]).returncode:
+            RESCUE_WHY = f"could not make branch {branch}"
+            return False
+        sh(git + ["push", "-q", "origin", branch], timeout=120)
+    r = sh(git + ["reset", "-q", "--hard", "origin/main"])
+    if r.returncode:
+        RESCUE_WHY = f"main has {ahead} commit(s) GitHub doesn't (kept on {branch}) and git reset failed: " \
+                     f"{(r.stderr or r.stdout).strip()[-160:]}"
+        log(f"{repo.name}: {RESCUE_WHY}")
         return False
     log(f"{repo.name}: main had {ahead} commit(s) GitHub doesn't; kept on {branch} (pushed), main reset to origin/main")
     return True
