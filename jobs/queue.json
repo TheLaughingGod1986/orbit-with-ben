@@ -177632,9 +177632,14 @@
           "at": "2026-11-10T20:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:12Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2033 after HOS #480 merged; creating clean HOS worktree from origin/main (d3b1fc87) for preflight and batch 1"
         }
       ],
-      "remaining_action": "Pull main (HOS #480), read-only live check, then batch 1; watch the first video take",
+      "remaining_action": "Run preflight checks (NAS, style refs, read-only live Flow check), then mint batch 1 and watch first video take",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177649,11 +177654,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 4,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-10T18:15Z",
+        "at": "2026-11-10T20:12Z",
         "by": "gemini",
-        "note": "2/2 0-credit parent stills minted & NAS-archived (0 credits spent, 14,890 intact, 0/20 videos); opened tested HOS PR #48"
+        "note": "Claimed J2033 after HOS #480 merged; creating clean HOS worktree from origin/main (d3b1fc87) for preflight and batch 1"
       },
       "plain": "Make the last twenty pictures for the History of Science film 009",
       "urgent": 5
