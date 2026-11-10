@@ -404,7 +404,22 @@ What the missing 41 GiB is and is not:
 - **The other ~38 GiB is in places macOS will not let this session read, even with sudo,** because Terminal and Claude do not have Full Disk Access: `~/.Trash` (du: not permitted), the Spotlight index (`.Spotlight-V100`), document versions (`.DocumentRevisions-V100`) and the protected parts of `~/Library` (Mail, Messages, Photos, iCloud Drive).
 - **Not the Trash, Photos, Mail or Messages (checked by Ben, 10 Nov).** The Trash is empty. System Settings → Storage shows Photos 1.78 GB, Mail 0.35 GB, Messages 2.6 GB, Other Users 6.67 GB (du could read 2.6 GB of it), and **System Data 113 GB**.
 - **So about 9 GB of the gap is explained** (Photos, Mail, Messages, the other user's app data) plus the 3.2 GiB of deleted-but-open files. **About 30 GB is still unplaced.** It sits inside what macOS calls System Data, in places this session is refused: the Spotlight index, document versions, and the system's temporary and cache folders under `/private/var/folders`. After 37 days without a restart, much of it is probably stale temporary data that a restart releases.
-- **Two ways to settle it, neither urgent (29 GiB is free):** compare free space before and after the Mini's next restart; or Ben gives the Claude app Full Disk Access and the scan is rerun.
+- **Settled (10 Nov, after Ben gave the Claude app Full Disk Access).** The rerun reads 164 GiB of the 173 GiB now in use. The space that was "missing" is ordinary system and app data that the first scan was refused:
+
+| Was hidden | GiB |
+|---|---:|
+| `~/Library/Messages` (attachments) | 9.2 |
+| Spotlight index (`/.Spotlight-V100`) | 6.1 |
+| other user's app data (now 6.2 in all, was 2.4) | 3.8 |
+| `~/Library/Metadata` | 3.3 |
+| `~/Library/Application Support`, protected parts (now 16.9, was 14.5) | 2.4 |
+| `~/Library/Group Containers` (now 2.4, was 0.2) | 2.2 |
+| `~/Pictures` (Photos library) | 1.8 |
+| `~/Library/Mobile Documents`, `Photos`, `Biome`, Mail and smaller | about 3 |
+| `/private/var/folders` (now 3.7, was 3.0) | 0.7 |
+
+  The last 9 GiB that `du` still cannot count is the 3.2 GiB of deleted-but-open files plus Apple's own protected model and asset folders (87 paths refused, mostly under `/System/Library/AssetsV2`). Nothing is lost or leaking; there is no single large stray folder. The Trash is 0.
+- **Biggest things that could be trimmed, if space is ever needed (nothing was cleared):** Messages attachments 9.2; `/private/tmp` 6.5 (old job worktrees); `~/.gemini/antigravity-cli` 7.2; `~/.cursor` + `~/.cursor-server` 8.1; `~/.codex` 4.1.
 
 The stale `sudo du -xhd 3 /System/Volumes/Data` from 9 Nov was no longer running. No `du` from this session was left behind.
 
