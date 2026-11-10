@@ -212882,6 +212882,11 @@
           "at": "2026-11-10T00:48Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432)."
+        },
+        {
+          "at": "2026-11-10T02:49Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Read Studio on 9223 for VBaYRPp85Sw test state",
@@ -212894,7 +212899,8 @@
         "of": 3,
         "at": "2026-11-10T00:48Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-10T02:49Z"
     },
     {
       "id": "J2468",
@@ -212929,6 +212935,11 @@
           "at": "2026-11-10T00:39Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2171 condition NOT met, keep it blocked. Evidence from jobs/queue.json at 10 Nov ~02:15Z: J2033 is open and unclaimed, result empty, last note 9 Nov 21:54Z 'reopened: J2200 runner PASS' (0/20 rows minted); J2034 open, not started (after J2033); J2035 open, not started (after J2034). Nothing reopened, spent or changed. MacBook is not the holder, so 'wait' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T08:15Z' --type dependency --recheck J2468 --git"
+        },
+        {
+          "at": "2026-11-10T02:49Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -212943,7 +212954,8 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-10T02:49Z"
     },
     {
       "id": "J2469",
