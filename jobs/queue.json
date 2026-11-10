@@ -214337,17 +214337,22 @@
           "at": "2026-11-10T11:34Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Step 3-4 complete: 22 free CG/ARCH clips + 10 WHO overlays built and QA'd (picture_qa PASS 0/22 fail, polish_gate PASS 0/22 fail); 71 mint rows priced (48 Q + 23 F = 5,030 try-1 / 12,892 expected Flow credits)"
+        },
+        {
+          "at": "2026-11-10T11:37Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: check_all.sh 013 PASS; opened HOS PR #473 (bfd7b9f0) with picture plan v01, 22 free clips + 10 WHO overlays QA'd, and cost table"
         }
       ],
-      "remaining_action": "Update production-status.md, run check_all.sh, open PR, and park for Chief",
+      "remaining_action": "Complete: PR #473 open, parking for Chief price pass",
       "due": "2026-11-19T00:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-10T11:34Z",
+        "at": "2026-11-10T11:37Z",
         "by": "gemini",
-        "note": "Step 3-4 complete: 22 free CG/ARCH clips + 10 WHO overlays built and QA'd (picture_qa PASS 0/22 fail, polish_gate PASS 0"
+        "note": "check_all.sh 013 PASS; opened HOS PR #473 (bfd7b9f0) with picture plan v01, 22 free clips + 10 WHO overlays QA'd, and co"
       },
       "taskKeys": [
         "HOS:013"
