@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
 | J2517 | mini | open | – | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
-| J2524 | cloud | open | – | – | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |
+| J2524 | cloud | claimed | claude | 2026-11-10T23:33Z | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |
 | J2525 | cloud | open | – | – | review · Decoupling: video_tracker.py asks channels.py instead of naming a channel (30 + 7 lines to 0) |  |
 | J2526 | cloud | open | – | – | review · Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0) |  |
 | J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |

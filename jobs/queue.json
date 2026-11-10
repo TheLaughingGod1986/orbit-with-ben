@@ -217781,10 +217781,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-10T20:33Z",
+      "eta": "2026-11-10T23:33Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
       "result": "",
@@ -217798,12 +217798,25 @@
           "at": "2026-11-10T18:55Z",
           "by": "claude",
           "what": "brief extended: the dry run also fails on a key or a filled-in .env (Ben chose private, 10 Nov)"
+        },
+        {
+          "at": "2026-11-10T20:33Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Rehearse moving the studio into its own home, without moving anything"
+      "plain": "Rehearse moving the studio into its own home, without moving anything",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T20:33Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2525",
