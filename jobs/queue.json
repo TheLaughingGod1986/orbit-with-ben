@@ -212598,13 +212598,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T00:47Z",
-      "eta": "2026-11-10T02:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T00:13Z",
-      "result": "",
+      "result": "parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432).",
       "history": [
         {
           "at": "2026-11-10T00:13Z",
@@ -212620,6 +212620,11 @@
           "at": "2026-11-10T00:48Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-10T00:48Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432)."
         }
       ],
       "remaining_action": "Read Studio on 9223 for VBaYRPp85Sw test state",
