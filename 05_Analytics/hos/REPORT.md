@@ -123,13 +123,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 35 h (early) | 206 | 14.8% | MISS | 58.6% | WATCH |
-| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 4 d | 36 | 15.6% | too few to judge | 41.7% | too few to judge |
+| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 44 h (early) | 206 | 14.8% | MISS | 58.6% | WATCH |
+| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 4 d | 34 | 15.6% | too few to judge | 41.7% | too few to judge |
 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 6 d | 34 | 57.7% | too few to judge | 192.6% | too few to judge |
 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 8 d | 133 | 36.6% | MISS | 114.5% | LOOP |
 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 9 d | 89 | 32.9% | too few to judge | 81.7% | too few to judge |
 | [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 10 d | 78 | 26.6% | too few to judge | 53.6% | too few to judge |
 | [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 12 d | 274 | 22.7% | MISS | 76.9% | PASS |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 13 d | 116 | 75.4% | PASS | 70.8% | PASS |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | 13 d | 117 | 75.8% | PASS | 70.5% | PASS |
 
 Stayed to watch: 1 of 4 judged Shorts at 60%+. Average viewed: 3 of 4 at 70%+.
