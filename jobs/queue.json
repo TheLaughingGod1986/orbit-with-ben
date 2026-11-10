@@ -219421,21 +219421,39 @@
           "at": "2026-11-10T23:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T23:42Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Inspected J2540 list (30 unique Shorts + 10 Nov reference ffYKoNVPoqg, using J2520 v06, J2511 v02, J2513 v06, J2514 v07 where swaps are queued); starting NAS check and detached contact sheet generation"
         }
       ],
-      "remaining_action": "Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests",
+      "remaining_action": "Step 1/5: check NAS with time-limited ls and generate 2s-interval contact sheets detached for all scheduled Shorts (using queued re-cuts where waiting to be swapped in)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Look through every scheduled Short of both channels for shots that sit as a strip with a blurred copy above and below, and list them",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-10T23:40Z",
+        "of": 5,
+        "at": "2026-11-10T23:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Inspected J2540 list (30 unique Shorts + 10 Nov reference ffYKoNVPoqg, using J2520 v06, J2511 v02, J2513 v06, J2514 v07 "
+      },
+      "taskKeys": [
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007"
+      ]
     },
     {
       "id": "J2546",
