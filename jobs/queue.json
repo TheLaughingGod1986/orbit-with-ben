@@ -218431,19 +218431,22 @@
           "at": "2026-11-10T20:18Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:19Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped",
+      "remaining_action": "measure local test times, change ffmpeg install, open PR, read its run time",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the automatic checks run in under a minute",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T20:18Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-10T20:19Z",
+        "by": "macbook"
       }
     },
     {
