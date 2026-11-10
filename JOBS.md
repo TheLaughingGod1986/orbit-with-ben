@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2461 | mini | blocked | macbook | – | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
 | J2462 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Rule 26 title pass: propose search-led titles for the 7 scheduled longs and 3 quiet live ones (read-only; the first airs Thu 12 Nov) |  |
 | J2464 | any | open | – | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
-| J2465 | any | open | – | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
+| J2465 | any | claimed | macbook | 2026-11-10T02:28Z | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 | J2466 | any | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
 | J2467 | any | blocked | macbook | – | review · Verify condition for J1198 |  |
 | J2468 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
