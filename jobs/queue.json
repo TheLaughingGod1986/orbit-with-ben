@@ -219431,19 +219431,24 @@
           "at": "2026-11-10T23:42Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Inspected J2540 list (30 unique Shorts + 10 Nov reference ffYKoNVPoqg, using J2520 v06, J2511 v02, J2513 v06, J2514 v07 where swaps are queued); starting NAS check and detached contact sheet generation"
+        },
+        {
+          "at": "2026-11-10T23:48Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: NAS verified via time-limited ls; detached tmux session J2545-sheets generated all 30 2s-interval contact sheets on NAS (/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/) with exit 0"
         }
       ],
-      "remaining_action": "Step 1/5: check NAS with time-limited ls and generate 2s-interval contact sheets detached for all scheduled Shorts (using queued re-cuts where waiting to be swapped in)",
+      "remaining_action": "Step 2/5: finish visual inspection of all 30 contact sheets and measure exact start-end second boundaries for every padded stretch",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Look through every scheduled Short of both channels for shots that sit as a strip with a blurred copy above and below, and list them",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T23:42Z",
+        "at": "2026-11-10T23:48Z",
         "by": "gemini",
-        "note": "Inspected J2540 list (30 unique Shorts + 10 Nov reference ffYKoNVPoqg, using J2520 v06, J2511 v02, J2513 v06, J2514 v07 "
+        "note": "Step 1 done: NAS verified via time-limited ls; detached tmux session J2545-sheets generated all 30 2s-interval contact s"
       },
       "taskKeys": [
         "OWB:024",
