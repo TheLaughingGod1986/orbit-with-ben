@@ -42,5 +42,16 @@
       "PHONE": "PASS — Verified at 168x94 and 426x240 in venus_tc_A_vs_B_465c_sheet.jpg; '465°C' and the red-glowing surface lander read in under a second."
     }
   },
-  "studio_status": "NOT_ARMED — parked for Chief / design review; J1198 arms in Studio after review sign-off."
+  "plate_provenance": {
+    "status": "UNRESOLVED",
+    "recorded_by": "J2486 design review, 2026-11-10",
+    "established": "The plate carries an embedded C2PA manifest: 'Created by Google Generative AI' (trainedAlgorithmicMedia), 'Applied imperceptible SynthID watermark', signed by Google C2PA Media Services, time-stamped 2026-11-10T04:43:59Z (inside the J2484 run). 1376x768. It is an AI-generated image, not an existing approved 023 plate.",
+    "not_established": "Which tool and account made it (Gemini CLI image tool, Flow or Vertex), the prompt, and that it cost nothing. The cost_gbp 0 above is unverified for the plate."
+  },
+  "design_review": {
+    "job": "J2486",
+    "verdict": "FIX",
+    "review": "jobs/reviews/J2486/REVIEW.md"
+  },
+  "studio_status": "NOT_ARMED — design review J2486 returned FIX; J1198 stays waiting until a fixed file passes review."
 }
