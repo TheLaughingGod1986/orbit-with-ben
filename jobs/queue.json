@@ -214517,13 +214517,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-10T09:21Z",
-      "eta": "2026-11-10T11:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:54Z",
-      "result": "",
+      "result": "NFS mount healthy; opens hang Mac-side on both /Volumes/data and /Volumes/MiniWork since 9 Nov 17:37-23:37Z. No remount needed. Needs a person at the Mini screen to grant file access to relay-launched binaries (Ben step, via Chief). nas_offload pid 73678 stuck in open() since 02:49Z, left alone.",
       "history": [
         {
           "at": "2026-11-10T03:54Z",
@@ -214554,6 +214554,11 @@
           "at": "2026-11-10T09:26Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: Verdict: NFS mount healthy (stat, df, ping, showmount, port 2049 all answer); every open() on /Volumes/data and on local SSD /Volumes/MiniWork hangs from relay-launched processes since 9 Nov 17:37-23:37Z. Mac-side block, likely a privacy permission; remount would not help."
+        },
+        {
+          "at": "2026-11-10T09:26Z",
+          "by": "claudecode",
+          "what": "done: NFS mount healthy; opens hang Mac-side on both /Volumes/data and /Volumes/MiniWork since 9 Nov 17:37-23:37Z. No remount needed. Needs a person at the Mini screen to grant file access to relay-launched binaries (Ben step, via Chief). nas_offload pid 73678 stuck in open() since 02:49Z, left alone."
         }
       ],
       "remaining_action": "Post the report",
