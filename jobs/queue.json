@@ -218826,13 +218826,13 @@
       "stage": "",
       "after": "J2539",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-10T21:48Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
-      "result": "parked for Chief: PR #774 (2bc420e12) open with jobs/reviews/J2540/REPORT.md and J2540_results.json tabulating frame0_full_bleed across all scheduled OWB (23 scheduled + 10 Nov ref + 3 J2494 re-cuts + J2510/J2512 re-cuts) and HOS (6 scheduled) Shorts. All 3 J2494 re-cuts PASS (gmzaCfJF1gA v02, HZGTovJu_TQ v05/v06, cwU_0WWeNZ4 v06/v07). Two rows FAIL current check: OWB ffYKoNVPoqg (10 Nov ref, true positive blur-pad) and HOS ChbsigHD5_o (18 Nov, visual false positive on full-bleed 9:16 where top of MINT text at y=63 and tabletop edge at y=127 align symmetrically). Also flagged OWB rvug71d7Dqk (21 Nov, fri06_muons_ground_v04.mp4) which PASSes current thresholds but visually opens on a feathered blur-pad (0-1.5s). Nothing re-cut or changed in Studio.",
+      "result": "Accepted (acting Chief, 10 Nov 23:15Z), #774. 36 Shorts measured. The new check caught the Short that aired on 10 Nov, wrongly failed one History of Science Short (a full-frame cartoon shot) and passed the muons Short for 21 Nov, which is padded with a feathered seam. All three re-cuts Ben OK'd today pass. Nothing re-cut, nothing changed in Studio. Next: J2545 looks at every scheduled Short by eye for its whole length; J2546 then calibrates the check on those real frames. Re-cuts are decided from J2545's table.",
       "history": [
         {
           "at": "2026-11-10T20:15Z",
@@ -218883,6 +218883,11 @@
           "at": "2026-11-10T22:16Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-11T04:15:00Z"
+        },
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "done: Accepted (acting Chief, 10 Nov 23:15Z), #774. 36 Shorts measured. The new check caught the Short that aired on 10 Nov, wrongly failed one History of Science Short (a full-frame cartoon shot) and passed the muons Short for 21 Nov, which is padded with a feathered seam. All three re-cuts Ben OK'd today pass. Nothing re-cut, nothing changed in Studio. Next: J2545 looks at every scheduled Short by eye for its whole length; J2546 then calibrates the check on those real frames. Re-cuts are decided from J2545's table."
         }
       ],
       "remaining_action": "Parked for Chief review of PR #774 (2bc420e12) and threshold/re-cut decisions",
@@ -218897,11 +218902,7 @@
         "by": "gemini",
         "note": "PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json coverin"
       },
-      "hold": {
-        "type": "input",
-        "condition": "Elected-Chief review of PR #774 (2bc420e12) and threshold/re-cut decisions; J2539 predecessor and J2540 36-Short gate table are complete",
-        "check_at": "2026-11-11T04:15:00Z"
-      }
+      "done_ref": "#774"
     },
     {
       "id": "J2541",
@@ -219128,13 +219129,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-10T22:08Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T22:07Z",
-      "result": "parked for Chief: J2540 condition verified — keep J2540 blocked for Chief review of PR #774 (OWB PR #775, jobs/reviews/J2544/REVIEW.md, 79329d6e9). Predecessor J2539 is done (21:15Z) and J2540 worker execution is already complete (step 4 of 4 at 22:05Z, 36 OWB+HOS Shorts tabulated in jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json on PR #774 2bc420e12). Reopening J2540 would re-run completed worker steps. As holder of J2540, gemini updated J2540's hold to 2026-11-11T04:15:00Z; recording --recheck J2544 and closing J2544/J2540 require the elected Chief (claude). £0 / 0 credits.",
+      "result": "Accepted (acting Chief, 10 Nov 23:15Z): J2540 had finished and only waited for review, which is done (#774 merged, follow-ups J2545 and J2546). Record merged as #775.",
       "history": [
         {
           "at": "2026-11-10T22:07Z",
@@ -219170,6 +219171,11 @@
           "at": "2026-11-10T22:16Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2540 condition verified — keep J2540 blocked for Chief review of PR #774 (OWB PR #775, jobs/reviews/J2544/REVIEW.md, 79329d6e9). Predecessor J2539 is done (21:15Z) and J2540 worker execution is already complete (step 4 of 4 at 22:05Z, 36 OWB+HOS Shorts tabulated in jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json on PR #774 2bc420e12). Reopening J2540 would re-run completed worker steps. As holder of J2540, gemini updated J2540's hold to 2026-11-11T04:15:00Z; recording --recheck J2544 and closing J2544/J2540 require the elected Chief (claude). £0 / 0 credits."
+        },
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "done: Accepted (acting Chief, 10 Nov 23:15Z): J2540 had finished and only waited for review, which is done (#774 merged, follow-ups J2545 and J2546). Record merged as #775."
         }
       ],
       "remaining_action": "Parked for elected Chief to record --recheck J2544 and review PR #774 / #775",
@@ -219183,7 +219189,8 @@
         "at": "2026-11-10T22:16Z",
         "by": "gemini",
         "note": "Evidence in jobs/reviews/J2544/REVIEW.md (OWB PR #775, 79329d6e9); J2540 hold updated to 2026-11-11T04:15:00Z"
-      }
+      },
+      "done_ref": "#775"
     },
     {
       "id": "J2545",
