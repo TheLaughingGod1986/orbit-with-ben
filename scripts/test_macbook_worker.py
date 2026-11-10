@@ -305,9 +305,9 @@ class AllAgents(unittest.TestCase):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
             c = mw.agent_cmd("claude", "P")
         allowed = c[c.index("--allowedTools") + 1].split(",")
-        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)"):
-            self.assertIn(rule, allowed)
-        self.assertFalse(any("merge" in r for r in allowed))
+        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)", "Bash(git fetch:*)"):
+            self.assertIn(rule, allowed)   # git fetch: Ben, 10 Nov 2026, after J2495 could not read the PR heads
+        self.assertFalse(any("merge" in r or "pull" in r for r in allowed))   # fetch reads; nothing here changes a branch
         self.assertLess(c.index("--allowedTools"), c.index("--add-dir"))
 
     def test_a_failed_cli_is_paused_and_skipped(self):
