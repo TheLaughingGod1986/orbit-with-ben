@@ -214883,13 +214883,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T07:49Z",
-      "eta": "2026-11-10T09:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T07:48Z",
-      "result": "",
+      "result": "PASS (OWB PR #724, jobs/reviews/J2492/REVIEW.md): built dist_main and dist_715 (main + PR #715), served both via http.server, and smoke-tested 36 views across /index.html and /board.html in Chrome via Playwright. 0 page errors on both builds, identical 3 static-server 404 console errors (/api/ref, /api/checks) on both builds, and 36/36 exact visible text length + SHA256 matches across all views. Parked for Chief to merge #715; nothing deployed. £0.",
       "history": [
         {
           "at": "2026-11-10T07:48Z",
@@ -214920,6 +214920,11 @@
           "at": "2026-11-10T07:58Z",
           "by": "macbook",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-10T08:00Z",
+          "by": "macbook",
+          "what": "done: PASS (OWB PR #724, jobs/reviews/J2492/REVIEW.md): built dist_main and dist_715 (main + PR #715), served both via http.server, and smoke-tested 36 views across /index.html and /board.html in Chrome via Playwright. 0 page errors on both builds, identical 3 static-server 404 console errors (/api/ref, /api/checks) on both builds, and 36/36 exact visible text length + SHA256 matches across all views. Parked for Chief to merge #715; nothing deployed. £0."
         }
       ],
       "remaining_action": "Write jobs/reviews/J2492/REVIEW.md, open PR, and park for Chief",
