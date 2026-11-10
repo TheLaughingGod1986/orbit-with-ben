@@ -215567,18 +215567,23 @@
           "at": "2026-11-10T12:23Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Inspecting 026 mon16/wed18 build script for the end-card text under title at 0:22-0:23"
+        },
+        {
+          "at": "2026-11-10T12:33Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Built mon16 v05 & wed18 v06 without c5AdqQsnnys on end card (-14.2 LUFS / -2.2 dBTP); all gates PASS; placed in OWB UAT"
         }
       ],
-      "remaining_action": "Fix 026 mon16/wed18 end-card text & audio level, audit other Shorts, re-cut Pluto & Voyager, update UPLOADS.json",
+      "remaining_action": "Audit other scheduled Shorts for end-card ID text, re-cut Pluto & Voyager, update UPLOADS.json, re-send watch card",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T12:23Z",
+        "at": "2026-11-10T12:33Z",
         "by": "gemini",
-        "note": "Inspecting 026 mon16/wed18 build script for the end-card text under title at 0:22-0:23"
+        "note": "Built mon16 v05 & wed18 v06 without c5AdqQsnnys on end card (-14.2 LUFS / -2.2 dBTP); all gates PASS; placed in OWB UAT"
       },
       "taskKeys": [
         "OWB:026"
