@@ -177422,9 +177422,14 @@
           "at": "2026-11-10T11:54Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Check 3 (read-only live Flow check in Still & Video modes) PASS: Ultra, 14890 credits before/after, Still=Nano Banana 2.1 16:9 x1 0 credits, Video=Veo 3.1 - Quality 16:9 8s x1 100 credits, 0 submits"
+        },
+        {
+          "at": "2026-11-10T11:57Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: All 3 preflight checks PASS (10s NAS ls, style refs sha256 verified, read-only Still+Video Flow check 14890 credits 0 submits). Started detached batch 1 (2 zero-credit stills + 2 parent videos P02:10_how_high and P03:07_ball_to_moon) in tmux hos009-tranche2"
         }
       ],
-      "remaining_action": "Start batch 1 (the two parent rows P02:10_how_high and P03:07_ball_to_moon, including their 2 zero-credit stills) via launch-worker",
+      "remaining_action": "Check ~/_desk/logs/J2033-batch1.done (tmux hos009-tranche2, log ~/_desk/logs/J2033-batch1.log, pid 52101); when batch 1 finishes, run batches 2-5",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177439,11 +177444,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-10T11:54Z",
+        "at": "2026-11-10T11:57Z",
         "by": "gemini",
-        "note": "Check 3 (read-only live Flow check in Still & Video modes) PASS: Ultra, 14890 credits before/after, Still=Nano Banana 2."
+        "note": "All 3 preflight checks PASS (10s NAS ls, style refs sha256 verified, read-only Still+Video Flow check 14890 credits 0 su"
       }
     },
     {
