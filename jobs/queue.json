@@ -212258,13 +212258,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T00:57Z",
-      "eta": "2026-11-10T02:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "",
+      "result": "parked for Chief: J2460 changes YouTube (repoints end screens/cards/Home sections, removes 6 playlists, renames and reorders 3 playlists on both channels). The MacBook worker's launch rule is 'never upload, schedule or change anything on YouTube', and removing playlists cannot be undone, so the MacBook must not do it whatever the brief says. Nothing was touched on YouTube and nothing was written: no PLAYLIST_REFS.md, no branch, no PR. Second time on the MacBook (first time released, CDP 9223/9222 not reachable from this worker). Please run it on the Mini, or pin it there.",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212285,6 +212285,11 @@
           "at": "2026-11-10T00:57Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:57Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2460 changes YouTube (repoints end screens/cards/Home sections, removes 6 playlists, renames and reorders 3 playlists on both channels). The MacBook worker's launch rule is 'never upload, schedule or change anything on YouTube', and removing playlists cannot be undone, so the MacBook must not do it whatever the brief says. Nothing was touched on YouTube and nothing was written: no PLAYLIST_REFS.md, no branch, no PR. Second time on the MacBook (first time released, CDP 9223/9222 not reachable from this worker). Please run it on the Mini, or pin it there."
         }
       ],
       "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
