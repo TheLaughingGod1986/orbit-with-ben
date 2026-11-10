@@ -571,6 +571,33 @@ class TwoSlots(unittest.TestCase):
         self.assertTrue(jobs.claimable({"jobs": [j]}, j, {"macbook", "any"}, T0, "macbook-2"))
 
 
+class OnePublisher(unittest.TestCase):
+    """J2541, 10 Nov 2026: the board is published by the Mini only. The MacBook has ~/_desk/state/chief, so every
+    jobs.py call here also force-pushed board-data."""
+
+    def test_a_run_turns_the_board_publish_off_for_everything_it_starts(self):
+        slot_envs = []
+        with tempfile.TemporaryDirectory() as t, mock.patch.dict(os.environ, {"BOARD_PUBLISH": "1"}), \
+                mock.patch.object(mw, "STATE", pathlib.Path(t)), mock.patch.object(mw, "run_one", return_value="idle"), \
+                mock.patch.object(mw, "start_other_slots", side_effect=lambda: slot_envs.append(dict(os.environ))):
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(slot_envs[0]["BOARD_PUBLISH"], "0")      # slot 2 is started with it
+            out = pathlib.Path(t) / "seen"
+            mw.run_capped(["sh", "-c", f'printf %s "$BOARD_PUBLISH" > {out}'], t, 10)   # the woken agent
+            self.assertEqual(out.read_text(), "0")
+            self.assertEqual(mw.sh(["sh", "-c", 'printf %s "$BOARD_PUBLISH"']).stdout, "0")   # its own jobs.py calls
+
+    def test_jobs_py_does_not_start_the_publisher_when_it_is_off(self):
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(jobs.chief_relay, "STATE", pathlib.Path(t)), \
+                mock.patch.object(jobs.subprocess, "Popen") as popen:
+            with mock.patch.dict(os.environ, {"BOARD_PUBLISH": "0"}):
+                jobs.publish_board()
+            popen.assert_not_called()
+            with mock.patch.dict(os.environ, {"BOARD_PUBLISH": "1"}):
+                jobs.publish_board()      # the Mini: state folder there, hook on
+            self.assertEqual(popen.call_count, 1)
+
+
 class LaunchAgent(unittest.TestCase):
     def test_worker_looks_every_three_minutes(self):
         # 6 Nov 2026: 900 s left a free MacBook idle while portable reviews waited.
