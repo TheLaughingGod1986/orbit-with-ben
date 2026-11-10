@@ -77655,7 +77655,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "Acting-Chief codex review: technical s06 repair accepted; v04 SHA256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d verified on Mini/NAS, five submitted gates PASS, eight full-resolution midpoint stills inspected. No full Short PASS: J2339 owns capability-qualified audio/motion QA, then elected Chief decides full PASS/private watch handoff. Typed capability hold checks 2026-11-07T10:00:00Z; worker 4/4 preserved. No spend/upload/schedule. https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6701818953",
+      "result": "Waiting for: the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov) and the Chief's PASS on it",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -77891,6 +77891,11 @@
           "at": "2026-11-08T22:46Z",
           "by": "relay",
           "what": "condition verification queued: J2423"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "still waiting (acting Chief, 10 Nov 17:10Z): the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov) and the Chief's PASS on it"
         }
       ],
       "kind": "assembly",
@@ -77913,17 +77918,18 @@
         "moving_video_input"
       ],
       "hold": {
-        "type": "capability",
-        "condition": "J2399 condition check (jobs/reviews/J2399/REVIEW.md, 7e3e179229): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). However, J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input: live capability_probe.py gemini --record at 2026-11-08T16:26:45Z passed audio_input (0.93) and failed moving_video_input (truth left_to_right green>blue>yellow; answer none), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Preserve worker 4/4 and h47 locks; no generation/spend/upload/schedule.",
-        "check_at": "2026-11-08T23:46:42+00:00",
+        "type": "dependency",
+        "condition": "the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov) and the Chief's PASS on it",
+        "check_at": "2026-11-12T08:00:00+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J2399",
-        "checked_at": "2026-11-08T16:29:16+00:00",
-        "checked_by": "gemini",
+        "checked_at": "2026-11-10T17:02:53+00:00",
+        "checked_by": "claude",
         "recheck_task": "J2423"
-      }
+      },
+      "plain": "Cut the next History of Science Short from a finished film"
     },
     {
       "id": "J0913",
@@ -156476,13 +156482,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-03T10:45Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-03T10:43Z",
-      "result": "Waiting for: Installed relay ac2d15fae277db48 is observed loaded after this run exits; J1809 safely refreshes HOS role-aware delivery without historical replay; J1810 establishes a genuine listening capability or precise supported limitation; an actual eligible Chief stage ruling survives job done and has its next action recorded. Evidence PR397. CI and synthetic stage tests alone do not satisfy this hold.",
+      "result": "Chief ruling 10 Nov 17:10Z: validated in live use, closed. Each thing this job waited for has happened: the HOS desk watcher was refreshed safely with no replay (J1809, done 7 Nov); the listening route was replaced by Ben's rule of 4 Nov that his final watch is the watch-and-listen check (J1810 cancelled as superseded); and Chief rulings have persisted after 'done' with their next action queued every day since (10 Nov: J2508 ruled, swaps J2511 to J2514 queued; J2518 ruled, J2033 reopened). Nothing left to validate.",
       "history": [
         {
           "at": "2026-11-03T10:43Z",
@@ -156533,6 +156539,11 @@
           "at": "2026-11-04T11:15Z",
           "by": "relay",
           "what": "condition verification queued: J2015"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "done: Chief ruling 10 Nov 17:10Z: validated in live use, closed. Each thing this job waited for has happened: the HOS desk watcher was refreshed safely with no replay (J1809, done 7 Nov); the listening route was replaced by Ben's rule of 4 Nov that his final watch is the watch-and-listen check (J1810 cancelled as superseded); and Chief rulings have persisted after 'done' with their next action queued every day since (10 Nov: J2508 ruled, swaps J2511 to J2514 queued; J2518 ruled, J2033 reopened). Nothing left to validate."
         }
       ],
       "remaining_action": "Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
@@ -156548,12 +156559,6 @@
         "OWB:031",
         "OWB:032"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "J1914 directly observed installed AND loaded relay 672fbdd6a32d7c9c with active J1914 runtime, corroborating J1887. Obsolete ac2d15fae277db48 is superseded, not an install target. Still require J1809 safe HOS watcher handoff without historical replay, J1810 genuine listening route or precise limitation, and a real eligible Chief stage ruling persisted after done with successor action. Runtime identity alone is not end-to-end validation. Prior PR397 and J1887 evidence retained.",
-        "check_at": "2026-11-04T12:15:30+00:00",
-        "recheck_task": "J2015"
-      },
       "superseded_holds": [
         {
           "type": "input",
@@ -177594,7 +177599,8 @@
         "at": "2026-11-10T16:27Z",
         "by": "gemini",
         "note": "Opened HOS PR #477 (65/65 tests + check_all.sh PASS) fixing Flow event.isTrusted Create click drop and still evidence re"
-      }
+      },
+      "plain": "Make the last twenty pictures for the History of Science film 009"
     },
     {
       "id": "J2034",
@@ -178023,7 +178029,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T17:53Z",
-      "result": "Agent cannot modify its own security or approval controls. Inspection complete; authorized operator configuration and acceptance tests remain. No allow rules installed. J2007 is cancelled; historical push not retried.",
+      "result": "Waiting for: Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.",
       "history": [
         {
           "at": "2026-11-04T17:53Z",
@@ -178209,6 +178215,11 @@
           "at": "2026-11-06T22:36Z",
           "by": "relay",
           "what": "condition verification queued: J2313"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "still waiting (acting Chief, 10 Nov 17:10Z): Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490."
         }
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
@@ -178232,10 +178243,13 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Agent cannot modify its own security or approval controls. Inspection complete; authorized operator configuration and acceptance tests remain. No allow rules installed. J2007 is cancelled; historical push not retried.",
-        "check_at": "2026-11-06T23:36:09+00:00",
-        "recheck_task": "J2313"
-      }
+        "condition": "Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.",
+        "check_at": "2026-11-12T18:00:00+00:00",
+        "recheck_task": "J2313",
+        "checked_at": "2026-11-10T17:02:53+00:00",
+        "checked_by": "claude"
+      },
+      "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
     {
       "id": "J2041",
@@ -191275,13 +191289,13 @@
       "stage": "vo",
       "after": "J2219",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "open",
+      "by": "",
       "since": "2026-11-06T13:07Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "Waiting for: OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -191312,9 +191326,14 @@
           "at": "2026-11-06T13:12Z",
           "by": "relay",
           "what": "condition verification queued: J2280"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "reopened (acting Chief, 10 Nov 17:10Z): Condition met: OWB:J01 is in jobs/WIP.json active. Record the 8 linking voice-over takes for Journey Film 01 (about 392 words, script from J2146, reviewed in J2219) in the locked voice, on the ElevenLabs plan credits (£0; read the balance first and write the spend in the ledger). Run the voice checks, then park for the Chief with the takes."
         }
       ],
-      "remaining_action": "Record the 8 J01 linking VO takes after J01 enters the active WIP list",
+      "remaining_action": "Condition met: OWB:J01 is in jobs/WIP.json active. Record the 8 linking voice-over takes for Journey Film 01 (about 392 words, script from J2146, reviewed in J2219) in the locked voice, on the ElevenLabs plan credits (£0; read the balance first and write the spend in the ledger). Run the voice checks, then park for the Chief with the takes.",
       "kind": "vo",
       "progress": {
         "step": 1,
@@ -191323,12 +191342,7 @@
         "by": "cursor",
         "note": "J2219 locked. J01 still in WIP next, not active. No takes and no ElevenLabs spend."
       },
-      "hold": {
-        "type": "dependency",
-        "condition": "OWB:J01 is in jobs/WIP.json active. Checked 2026-11-06T13:09Z: it is first in next, not active. Active OWB is 030, 031, 032, 033 and 034 (cap 5). 031 and 032 are still in picture, not at Ben's watch. Linking VO stays unrecorded and ElevenLabs is not spent until that active entry.",
-        "check_at": "2026-11-06T14:12:32+00:00",
-        "recheck_task": "J2280"
-      }
+      "plain": "Record the linking voice-over for the first Journey film"
     },
     {
       "id": "J2221",
@@ -192032,13 +192046,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "open",
+      "by": "",
       "since": "2026-11-06T20:51Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
-      "result": "Waiting for: Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T17:12Z",
@@ -192184,9 +192198,14 @@
           "at": "2026-11-06T22:00Z",
           "by": "relay",
           "what": "condition verification queued: J2305"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "reopened (acting Chief, 10 Nov 17:10Z): The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job."
         }
       ],
-      "remaining_action": "A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
+      "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
       "urgent": 4,
       "progress": {
@@ -192201,18 +192220,11 @@
         "HOS:006",
         "HOS:007"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "Actual listening needed on corrected HOS eradication VO at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). vo_check FAIL reproduced on hash-verified raw Part05 and corrected final-master stem; old master-input timing repaired. This session exposes command text and still images only, with no demonstrated audio_input. Evidence HOS ce08d292 jobs/J2230/CURRENT_HANDOFF.md; corrected WAV at /Users/benjaminoats/_desk/renders/J2230/eradication_corrected_inputs_v02/eradication_vo_from_master_v02.wav. Do not regenerate, rewrite text or waive gate. Final assembly/opening fixes remain after listener/Chief resolution.",
-        "check_at": "2026-11-06T23:00:28+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "recheck_task": "J2305"
-      },
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "plain": "Make the History of Science Shorts for late November from the finished Harvey, Willow and Vaccine films",
+      "for": "gemini"
     },
     {
       "id": "J2231",
@@ -201488,13 +201500,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "open",
+      "by": "",
       "since": "2026-11-07T06:45Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-07T03:43Z",
-      "result": "Waiting for: Audio/speech/cadence/SFX/score-provenance QA (audio_input PASS 0.94 in capability_probe.py) and 23-frame 1-Hz sequence/caption/s06 continuity audit on hos_008_short_A_v04.mp4 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d) completed with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 comment 6703687627. Continuous 30fps moving_video_input remains unavailable in this session: capability_probe.py gemini --record failed video (truth left_to_right yellow>blue>red; answer left_to_right green>red>blue) and default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22) rather than 30fps continuous motion. Parent J0912 stays held.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-07T03:43Z",
@@ -201565,16 +201577,21 @@
           "at": "2026-11-10T03:01Z",
           "by": "claude",
           "what": "acting Chief: condition checked by J2414, still not met. No agent has moving-video input yet. Next look 2026-11-12T08:00Z"
+        },
+        {
+          "at": "2026-11-10T17:02Z",
+          "by": "claude",
+          "what": "reopened (acting Chief, 10 Nov 17:10Z): The capability this waited for exists now: Gemini has moving-video and audio input (it watched and listened through J2508 and J2510 on 10 Nov). Watch and listen to HOS 008 Short A v04 (sha256 76d801a34714ba90...) from the first frame to the last, as J2508 did for the 026 Shorts. Record KEEP or FIX with timestamps. On KEEP, park for the Chief to send it to Ben's watch."
         }
       ],
-      "remaining_action": "Complete continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3) with demonstrated moving_video_input and hand off to elected Chief",
+      "remaining_action": "The capability this waited for exists now: Gemini has moving-video and audio input (it watched and listened through J2508 and J2510 on 10 Nov). Watch and listen to HOS 008 Short A v04 (sha256 76d801a34714ba90...) from the first frame to the last, as J2508 did for the 026 Shorts. Record KEEP or FIX with timestamps. On KEEP, park for the Chief to send it to Ben's watch.",
       "due": "2026-11-18T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
       ],
-      "plain": "Check the Franklin Short sound and movement before final approval.",
+      "plain": "Watch and listen to a finished History of Science Short before it goes to you",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -201593,18 +201610,7 @@
       },
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "capability",
-        "condition": "J2393 condition check (jobs/reviews/J2393/REVIEW.md, 68376aeaf2): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; step 2/3 audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA completed with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). Step 3/3 continuous 30fps moving_video_input QA remains blocked: default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), capability_probe.py video failed, and no online worker has demonstrated moving_video_input. Parent J0912 stays held at 4/4 (J2392).",
-        "check_at": "2026-11-12T08:00:00+00:00",
-        "requires": [
-          "moving_video_input"
-        ],
-        "last_recheck": "J2414",
-        "checked_at": "2026-11-10T03:01:32+00:00",
-        "checked_by": "claude"
-      }
+      ]
     },
     {
       "id": "J2340",
