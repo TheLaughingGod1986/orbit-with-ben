@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 | J2506 | cloud | open | – | – | review · Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done) |  |
 | J2507 | any | open | – | – | review · Verify condition for J2171 |  |
+| J2508 | mini | open | – | – | 026 edit · review · Watch and listen to the three re-cut Shorts from J2494 before Ben does (Pluto v02, Mon 16 v05, Wed 18 v06): KEEP or FIX each |  |
 
 Recently finished:
 
