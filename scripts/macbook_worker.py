@@ -487,6 +487,11 @@ def pull_main() -> str:
             # A job may leave the worker's own clone on its work branch (J1194, 29 Oct 2026: the MacBook then
             # refused every later job). Its own clone goes back to main by itself when clean; Ben's checkouts never.
             own = repo.resolve().is_relative_to(WORKER_DIR.resolve())
+            if own:
+                # 10 Nov 2026, slot 1: a git killed mid-commit left .git/index.lock in a clone that was only behind
+                # GitHub, not ahead of it. The lock was cleared only on the diverged path, so every run failed its
+                # pull with "Another git process seems to be running" and the slot sat in error.
+                clear_stale_index_lock(repo)
             if own and sh(["git", "-C", str(repo), "status", "--porcelain"]).stdout.strip():
                 # Left dirty on a job branch (5 Nov 2026: J2165 left macbook/J2165 dirty and every later run errored),
                 # or dirty on main itself (8 Nov 2026: `jobs.py next --git` needs a clean tree, so both slots errored
