@@ -216647,7 +216647,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:14Z",
-      "result": "parked for Chief: PR #745 (dd5184c59, jobs/reviews/J2510/REPORT.md). Both Mars Shorts KEEP after full gates + audio/video viewing: (1) N42gKBbD7tE (Thu 12 Nov) -> thu12_length_test_dust_v05.mp4 (sha256 abb3c33e70c11fdd, 54.63s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 f0diff=4.63, cut1=2.4s, -14.3 LUFS / -2.2 dBTP; all 5 Shorts gates PASS); (2) bSjWiCbB7pY (Fri 13 Nov) -> fri13_ingenuity_72_v06.mp4 (sha256 54929328bd18d8ef, 26.40s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 PIA24593 open f0diff=2.55, cut1=2.8s, -14.3 LUFS / -2.1 dBTP; all 5 Shorts gates PASS). Byte-identical in OWB UAT/025_mars_shorts_recut_J2510/ and NAS; Ben's two watch cards armed (due Wed 11 Nov 18:00 and Thu 12 Nov 18:00 London). Nothing uploaded or changed in Studio.",
+      "result": "Waiting for: Ben's watch of the two re-cuts. Chief ruling 10 Nov 16:30Z: both KEEP (PR #745 merged; gates, picture QA and an agent viewing all pass; the video id is gone from both end cards). Cards are armed in order Thu 12 (v05) then Fri 13 (v06). On his OK the Chief queues one swap job per Short with `jobs.py approved`; with no OK by each deadline the original airs.",
       "history": [
         {
           "at": "2026-11-10T14:14Z",
@@ -216713,6 +216713,11 @@
           "at": "2026-11-10T16:06Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #745 (dd5184c59, jobs/reviews/J2510/REPORT.md). Both Mars Shorts KEEP after full gates + audio/video viewing: (1) N42gKBbD7tE (Thu 12 Nov) -> thu12_length_test_dust_v05.mp4 (sha256 abb3c33e70c11fdd, 54.63s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 f0diff=4.63, cut1=2.4s, -14.3 LUFS / -2.2 dBTP; all 5 Shorts gates PASS); (2) bSjWiCbB7pY (Fri 13 Nov) -> fri13_ingenuity_72_v06.mp4 (sha256 54929328bd18d8ef, 26.40s, Js6EQJ8qDi8 removed from end card, full-bleed 9:16 PIA24593 open f0diff=2.55, cut1=2.8s, -14.3 LUFS / -2.1 dBTP; all 5 Shorts gates PASS). Byte-identical in OWB UAT/025_mars_shorts_recut_J2510/ and NAS; Ben's two watch cards armed (due Wed 11 Nov 18:00 and Thu 12 Nov 18:00 London). Nothing uploaded or changed in Studio."
+        },
+        {
+          "at": "2026-11-10T16:26Z",
+          "by": "claude",
+          "what": "acting Chief: both re-cuts KEEP (#745). Waiting for Ben's watch; swap jobs are queued on his OK, one per Short."
         }
       ],
       "remaining_action": "Parked for Chief PR #745 merge and Ben's watch",
@@ -216760,7 +216765,14 @@
             "Removed the jumble of letters (the YouTube video ID Js6EQJ8qDi8) under the title on the end card; opens full-bleed 9:16 on moving aerial Mars picture with first cut at 2.8 s; audio levelled to -14.3 LUFS / -2.1 dBTP"
           ]
         }
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's watch of the two re-cut Mars Shorts on the Review tab (Thu 12 by Wed 11 Nov 18:00 London; Fri 13 by Thu 12 Nov 18:00 London). No OK by then: the original airs as scheduled.",
+        "check_at": "2026-11-11T18:05:00+00:00",
+        "checked_at": "2026-11-10T16:26:48+00:00",
+        "checked_by": "claude"
+      }
     },
     {
       "id": "J2511",
