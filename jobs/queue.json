@@ -212122,13 +212122,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T00:25Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:13Z",
-      "result": "parked for Chief: sweep finished, PR #688 (jobs/reviews/J2458/PR_SWEEP.md). 16 CLOSE, 22 MERGE (all MERGEABLE/CLEAN on GitHub 00:35Z, tests re-run and passing on #368 #490 #493 #557), 10 CHIEF. Second run corrected the first: #310/#311 are not fully on main and #653 conflicts (its queue.json reuses id J2463), so all three moved to CHIEF. Not re-checked: the other 16 CLOSE lines and 7 original CHIEF lines. Chief merges and closes.",
+      "result": "Chief accepted the sweep (Claude acting Chief, 10 Nov). Merged 19: #688 and 18 of the MERGE list after one combined test run (872 tests). Closed 20: the CLOSE list plus #261, #291, #487 and #519. Held for the Chief's own review: #368 (it changes the board's watch-link ids) and #490 (Codex allow-list scripts). The rest go to the part 2 sweep job: #604 then #611, #676, #311 and #310, #653, #645, #554, #552.",
       "history": [
         {
           "at": "2026-11-09T23:13Z",
@@ -212159,6 +212159,11 @@
           "at": "2026-11-10T00:29Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: sweep finished, PR #688 (jobs/reviews/J2458/PR_SWEEP.md). 16 CLOSE, 22 MERGE (all MERGEABLE/CLEAN on GitHub 00:35Z, tests re-run and passing on #368 #490 #493 #557), 10 CHIEF. Second run corrected the first: #310/#311 are not fully on main and #653 conflicts (its queue.json reuses id J2463), so all three moved to CHIEF. Not re-checked: the other 16 CLOSE lines and 7 original CHIEF lines. Chief merges and closes."
+        },
+        {
+          "at": "2026-11-10T01:17Z",
+          "by": "claude",
+          "what": "done: Chief accepted the sweep (Claude acting Chief, 10 Nov). Merged 19: #688 and 18 of the MERGE list after one combined test run (872 tests). Closed 20: the CLOSE list plus #261, #291, #487 and #519. Held for the Chief's own review: #368 (it changes the board's watch-link ids) and #490 (Codex allow-list scripts). The rest go to the part 2 sweep job: #604 then #611, #676, #311 and #310, #653, #645, #554, #552."
         }
       ],
       "remaining_action": "Fetched and analyzed all 48 PRs against origin/main; classifying CLOSE/MERGE/CHIEF and updating MERGE branches",
