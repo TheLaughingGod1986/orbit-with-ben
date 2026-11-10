@@ -212614,13 +212614,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T00:38Z",
-      "eta": "2026-11-10T02:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T00:13Z",
-      "result": "",
+      "result": "parked for Chief: J2171 condition NOT met, keep it blocked. Evidence from jobs/queue.json at 10 Nov ~02:15Z: J2033 is open and unclaimed, result empty, last note 9 Nov 21:54Z 'reopened: J2200 runner PASS' (0/20 rows minted); J2034 open, not started (after J2033); J2035 open, not started (after J2034). Nothing reopened, spent or changed. MacBook is not the holder, so 'wait' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T08:15Z' --type dependency --recheck J2468 --git",
       "history": [
         {
           "at": "2026-11-10T00:13Z",
@@ -212631,6 +212631,11 @@
           "at": "2026-11-10T00:38Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:39Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2171 condition NOT met, keep it blocked. Evidence from jobs/queue.json at 10 Nov ~02:15Z: J2033 is open and unclaimed, result empty, last note 9 Nov 21:54Z 'reopened: J2200 runner PASS' (0/20 rows minted); J2034 open, not started (after J2033); J2035 open, not started (after J2034). Nothing reopened, spent or changed. MacBook is not the holder, so 'wait' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T08:15Z' --type dependency --recheck J2468 --git"
         }
       ],
       "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
