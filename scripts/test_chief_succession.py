@@ -240,6 +240,28 @@ class AutomaticChiefDuties(ChiefTestCase):
         with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([changed],'chief',T0+32*MIN)
         self.assertFalse(cr.chief_delivery_overdue('chief',T0+33*MIN))
 
+    def test_a_cloud_chief_that_is_clearing_duties_is_not_benched_for_one_it_cannot_settle(self):
+        """9-10 Nov 2026: Claude's hourly Chief cleared most of its inbox each run, but one duty it could not settle
+        yet (waiting on another machine) passed the window and the relay benched it, every night."""
+        stuck = {'id': 'J1', 'status': 'blocked', 'result': 'parked for Chief: needs a listen'}
+        other = {'id': 'J2', 'status': 'blocked', 'result': 'parked for Chief: review'}
+        with mock.patch.object(cr, 'notify', return_value=True):
+            cr.publish_chief_inbox([stuck, other], 'claude', T0)
+            self.assertFalse(cr.chief_delivery_overdue('claude', T0 + 149 * MIN))
+            cr.publish_chief_inbox([stuck], 'claude', T0 + 60 * MIN)            # J2 settled at the hourly run
+            self.assertFalse(cr.chief_delivery_overdue('claude', T0 + 151 * MIN))  # J1 is old, but the inbox moved
+            cr.publish_chief_inbox([stuck], 'claude', T0 + 120 * MIN)           # nothing moved since
+            self.assertFalse(cr.chief_delivery_overdue('claude', T0 + 209 * MIN))
+            self.assertTrue(cr.chief_delivery_overdue('claude', T0 + 211 * MIN))  # 150 min with no movement at all
+
+    def test_an_untouched_cloud_inbox_still_benches_claude_after_two_runs(self):
+        j = {'id': 'J1', 'status': 'blocked', 'result': 'parked for Chief: decision'}
+        with mock.patch.object(cr, 'notify', return_value=True):
+            cr.publish_chief_inbox([j], 'claude', T0)
+            cr.publish_chief_inbox([j], 'claude', T0 + 100 * MIN)
+        self.assertFalse(cr.chief_delivery_overdue('claude', T0 + 149 * MIN))
+        self.assertTrue(cr.chief_delivery_overdue('claude', T0 + 151 * MIN))
+
     def test_cloud_chief_with_ignored_inbox_yields_to_available_successor(self):
         j={'id':'J1','status':'blocked','needs':'any','result':'parked for Chief: decision'}
         self.queue([j]);cr.seen('chief',T0)

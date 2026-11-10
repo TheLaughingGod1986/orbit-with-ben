@@ -43,7 +43,8 @@ code and graphics start at Codex. Every `run` walks them:
 
 `run` checks the Chief inbox every pass, alongside production in shared deadline order, round the clock. CLI Chiefs process up to
 CHIEF_CHAIN_MAX duties/jobs (25-minute cap each); app/cloud Chiefs receive a durable inbox and yield if a delivered
-duty makes no progress for CHIEF_DUTY_ACK_MIN (30 minutes) with no live claim. Per-job retries use CHIEF_REVIEW_MIN
+duty makes no progress for CHIEF_DUTY_ACK_MIN (30 minutes; 150 for Claude's hourly cloud run, and only if its
+inbox has not moved at all in that time) with no live claim. Per-job retries use CHIEF_REVIEW_MIN
 (10 minutes), never the Chief heartbeat. A pause file or an existing run lock still prevents overlapping runs.
 Every change of Chief is posted to the studio thread once.
 
@@ -604,6 +605,11 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> Non
                 if old_waits.get(row["id"], {}).get("fingerprint") == row["fingerprint"] else iso(at)}
                for row in rows}
     sent = previous.get("notified_at", "") if same else ""
+    # When the Chief last moved its inbox: a duty left the list or its evidence changed. A Chief that is clearing
+    # duties is not stalled, even while one it cannot settle yet keeps waiting (chief_delivery_overdue).
+    progress = previous.get("progress_at", "") if same else iso(at)
+    if previous.get("agent") != leader or not progress:
+        progress = iso(at)
     if items and cloud_chief(leader):
         try:
             due = not sent or at - parse(sent) >= dt.timedelta(minutes=10)
@@ -613,7 +619,7 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> Non
                           "; ".join(j["id"] + " " + j.get("title", "")[:120] for j in items) +
                           ". Resolve or delegate these before ordinary work; record each decision on its job."):
             sent = iso(at)
-    write_json(d("inbox.json"), {"at": iso(at), "agent": leader, "since": since,
+    write_json(d("inbox.json"), {"at": iso(at), "agent": leader, "since": since, "progress_at": progress,
                                  "notified_at": sent, "jobs": rows, "waiting": waiting})
 
 
@@ -630,9 +636,16 @@ def chief_delivery_overdue(agent: str | None, at: dt.datetime) -> bool:
            and (not j.get("eta") or parse(j["eta"]) > at) for j in data.get("jobs", [])):
         return False
     # Claude's cloud Chief runs hourly at :50, so a 30-min window benched it every hour (5 Nov 2026: down until 22:13Z,
-    # doubling each time): it gets one full run plus margin.
+    # doubling each time). 75 min still benched it every night (9-10 Nov 2026: Chief flipped between Claude and Grok
+    # Bot about every 40 min) because one duty it could not settle yet counted as a stall while it cleared the rest.
+    # Now: two full runs plus margin, and only when the inbox has not moved at all in that time.
     limit = dt.timedelta(minutes=int(os.environ.get("CHIEF_DUTY_ACK_MIN", "30")) if agent != "claude"
-                         else int(os.environ.get("CHIEF_DUTY_ACK_MIN_CLAUDE", "75")))
+                         else int(os.environ.get("CHIEF_DUTY_ACK_MIN_CLAUDE", "150")))
+    try:
+        if at - parse(inbox.get("progress_at") or inbox.get("since") or "") < limit:
+            return False   # a duty was settled or re-parked inside the window: the Chief is working
+    except (TypeError, ValueError):
+        pass
     for item in inbox.get("waiting", {}).values():
         try:
             if at - parse(item["since"]) >= limit:
