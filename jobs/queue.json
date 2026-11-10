@@ -218497,19 +218497,23 @@
           "at": "2026-11-10T20:25Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:26Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done: Read brief and gate_shorts_open.py; locating existing gate tests"
         }
       ],
-      "remaining_action": "Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool",
+      "remaining_action": "Add frame-0 full-bleed check + tests in gate_shorts_open.py and sync core",
       "due": "2026-11-11T12:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T20:15Z",
+        "at": "2026-11-10T20:26Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Read brief and gate_shorts_open.py; locating existing gate tests"
       }
     },
     {
