@@ -177,9 +177,13 @@ class TheJob(Fixture):
         short = lc.job_spec({"id": "s", "title": "S", "format": "short", "at": LIVE, "channel": "aaa", "hours": 6})["body"]
         long_ = lc.job_spec({"id": "l", "title": "L", "format": "long", "at": LIVE, "channel": "aaa", "hours": 48})["body"]
         self.assertIn("Viewed vs swiped away", short)
-        self.assertIn("--shown <n> --stayed <%>", short)
+        self.assertIn("--typical <n> --feed-views <n> --stayed <%>", short)
+        self.assertIn("than usual", short)
+        self.assertIn("Leave out any flag Studio gives no figure for.", short)
+        self.assertIn("--typical <n> --impressions <n>", long_)
         self.assertIn("Impressions click-through rate", long_)
         self.assertIn("--impressions <n> --ctr <%>", long_)
+        self.assertNotIn("--feed-views", long_)
         self.assertNotIn("Shorts tab", long_)
 
 
@@ -235,6 +239,20 @@ class WhereItStands(Fixture):
         self.assertEqual(self.level(views=400, rank=5, of=10)[0], "usual")
         self.assertEqual(self.level(views=900, rank=2, of=10)[0], "ahead")
 
+    def test_studios_own_usual_figure_outranks_its_rank(self):
+        # 10 Nov 2026, the Titan Short at 1 h 54 min: "4 views, 36 less than usual", yet ranked 7 of 10.
+        v = lc.verdict("aaa", self.checked("mine", views=4, typical=40, rank=7, of=10))
+        self.assertEqual(v["level"], "behind")
+        self.assertEqual(v["why"][:2], ["4 views at 6 h; Studio says the usual for us at this age is 40.",
+                                        "Studio ranks it 7 of 10 against our latest videos at the same age."])
+        self.assertEqual(self.level(views=30, typical=40, rank=9, of=10)[0], "usual")
+        self.assertEqual(self.level(views=1046, typical=630, rank=9, of=10)[0], "ahead")
+
+    def test_our_own_earlier_checks_outrank_studios_usual_figure(self):
+        for i, views in enumerate((400, 500, 600)):
+            self.checked(f"old{i}", live=f"2026-11-0{i + 1}T11:30Z", views=views)
+        self.assertEqual(self.level(views=450, typical=5000)[0], "usual")
+
     def test_with_neither_a_rank_nor_earlier_checks_it_says_so(self):
         v = lc.verdict("aaa", self.checked("mine", views=4))
         self.assertEqual(v["level"], "unknown")
@@ -288,6 +306,17 @@ class WhichStepLostTheViewers(Fixture):
         v = self.stage(views=40, shown=300, stayed=31.0, avgPct=66.0)
         self.assertEqual(v["stage"], "small pool")
         self.assertIn("Nothing to fix", v["now"][0])
+
+    def test_without_a_shown_figure_the_feed_views_and_the_stayed_rate_give_it(self):
+        # Studio had no "Shown in feed" card on 10 Nov. 2 feed views at 25% stayed: the feed showed it about 8 times.
+        v = self.stage(views=4, feedViews=2, stayed=25.0)
+        self.assertEqual(v["stage"], "not shown")
+        self.assertEqual(lc.shown_in_feed({"feedViews": 1003, "stayed": 38.5}), 2605)
+        self.assertEqual(lc.shown_in_feed({"shown": 900, "feedViews": 2, "stayed": 25.0}), 900)   # Studio's own figure wins
+        self.assertEqual(lc.shown_in_feed({"feedViews": 3}), 3)        # no stayed rate: at least the views themselves
+        self.assertIsNone(lc.shown_in_feed({"views": 4}))
+        swiped = self.stage(views=40, feedViews=120, stayed=12.0, avgPct=70)   # shown about 1,000 times, and swiped
+        self.assertEqual(swiped["stage"], "swiped")
 
     def test_with_no_reach_figure_it_does_not_guess(self):
         v = self.stage(views=4)
@@ -433,6 +462,8 @@ class TheWords(Fixture):
         self.assertIn("At 6 h: views 4 · Studio rank 10 of 10 · shown in feed 30 · stayed to watch no figure yet · "
                       "average viewed no figure yet", text)
         self.assertIn("Usual for this channel: stayed to watch 32%, average viewed 66%", text)
+        est = lc.judge_text("aaa", self.checked("est", views=4, rank=10, of=10, feedViews=2, stayed=25.0))
+        self.assertIn("shown in feed about 8 (from 2 feed views) · stayed to watch 25.0%", est)
         self.assertIn("Verdict: BEHIND, not shown", text)
         self.assertIn("Do now", text)
         self.assertIn("Carry forward", text)
