@@ -177432,9 +177432,14 @@
           "at": "2026-11-10T11:57Z",
           "by": "gemini",
           "what": "released: Detached batch 1 running in tmux session hos009-tranche2 (PID 52101 in ~/_desk/state/flow/hos009-tranche2/runner.pid, log ~/_desk/logs/J2033-batch1.log, done ~/_desk/logs/J2033-batch1.done, ledger ~/_desk/state/flow/hos009-tranche2/ledger.jsonl, archive '/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/04_Generated-Clips/v05_tranche2_archive'). Preflight 1-3 all PASS; J2033 6000-credit reservation active in ~/_desk/state/flow/shared/account.jsonl; first 0-credit still 10_how_high_t1.png in progress. Do not start a second copy while J2033-batch1.done is missing."
+        },
+        {
+          "at": "2026-11-10T12:36Z",
+          "by": "claude",
+          "what": "added a read-only step: record the Flow panel's reset time and whether unused credits carry over"
         }
       ],
-      "remaining_action": "Check ~/_desk/logs/J2033-batch1.done (tmux hos009-tranche2, log ~/_desk/logs/J2033-batch1.log, pid 52101); when batch 1 finishes, run batches 2-5",
+      "remaining_action": "Check ~/_desk/logs/J2033-batch1.done (tmux hos009-tranche2, log ~/_desk/logs/J2033-batch1.log, pid 52101); when batch 1 finishes, run batches 2-5 ALSO, read-only, while the Flow panel is open: write down exactly what it says about the plan's reset (the date and time, and whether unused credits carry over or are lost). Ben asked about credits on 10 Nov.",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -195199,6 +195204,11 @@
           "at": "2026-11-10T03:01Z",
           "by": "claude",
           "what": "acting Chief: condition checked by J2355, still not met. Waiting on J2033 done, then J2269. Next look 2026-11-11T08:00Z"
+        },
+        {
+          "at": "2026-11-10T12:36Z",
+          "by": "claude",
+          "what": "deadline: 2026-11-12T18:00:00Z (the AI Ultra plan resets Thu 12 Nov 19:13; pulls J2268 and J2269 forward)"
         }
       ],
       "remaining_action": "Generate twelve plates only after tested runner and live spend approval",
@@ -195211,7 +195221,8 @@
         "checked_by": "claude",
         "checked_at": "2026-11-10T03:01:32+00:00",
         "last_recheck": "J2355"
-      }
+      },
+      "due": "2026-11-12T18:00:00Z"
     },
     {
       "id": "J2271",
@@ -214318,7 +214329,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:03Z",
-      "result": "Chief price pass (claude, 10 Nov): picture plan v01 PASS as the record; history-of-science PR #473 merged at c10042fb (check_all PASS on main plus the PR, every check green). No mint authorised yet: mints run in air-date order 009, 010, 011, then 013, and the Flow balance (14,890 on 10 Nov) cannot cover all four on expected cost. 013's first pass is capped at 5,030 credits when its turn comes; retries row by row on the Chief's go. Free work meanwhile: J2498 (timing rough with the 23 built rows and slates, plus a list of rows that could be cheaper).",
+      "result": "Chief price pass (claude, 10 Nov): picture plan v01 PASS as the record; history-of-science PR #473 merged at c10042fb (check_all PASS on main plus the PR, every check green). No mint authorised yet: mints run in air-date order 009, 010, 011, then 013, and the Flow balance (14,890 on 10 Nov) cannot cover all four on expected cost. 013's first pass is capped at 5,030 credits when its turn comes; retries row by row on the Chief's go. Free work meanwhile: J2498 (timing rough with the 23 built rows and slates, plus a list of rows that could be cheaper). CORRECTED 10 Nov 12:30Z: the 'no mint yet' part was wrong. The balance is 14,890 and the AI Ultra plan resets on Thu 12 Nov 19:13, so credits are not the limit. 013's first pass (cap 5,030) is approved and runs as soon as its runner is tested and reviewed: J2499.",
       "history": [
         {
           "at": "2026-11-10T03:03Z",
@@ -214379,6 +214390,11 @@
           "at": "2026-11-10T11:57Z",
           "by": "claude",
           "what": "acting Chief: price pass recorded; PR #473 merged; no mint yet; follow-up J2498"
+        },
+        {
+          "at": "2026-11-10T12:36Z",
+          "by": "claude",
+          "what": "acting Chief: ruling corrected after Ben's question; first pass approved, runner job J2499"
         }
       ],
       "remaining_action": "Complete: PR #473 open, parking for Chief price pass",
