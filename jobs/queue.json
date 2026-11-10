@@ -212268,13 +212268,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T01:08Z",
-      "eta": "2026-11-10T02:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212310,6 +212310,11 @@
           "at": "2026-11-10T01:08Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:09Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: parked for Chief: J2460 was claimed for the MacBook again at 01:08Z, two minutes after the Mini-only pin. The job record has mini_only: true, but the code that honours it is in OWB PR #694, which is still OPEN (not merged), so the MacBook launcher on main still takes this job. The MacBook must not do it: it changes YouTube and removes playlists, which cannot be undone (launch rule: never change anything on YouTube). Nothing was touched on either Studio; no playlist read, repointed, renamed or removed; no branch or PR. To move it: merge PR #694 so the pin is live on main, then reopen J2460 for the Mini. Ben's yes of 9 Nov stands. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
