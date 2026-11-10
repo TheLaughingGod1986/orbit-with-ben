@@ -1,5 +1,5 @@
 {
-  "next_id": 2484,
+  "next_id": 2485,
   "jobs": [
     {
       "id": "J0001",
@@ -214041,6 +214041,35 @@
       "remaining_action": "Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit)",
       "plain": "Finishes the library clean-up: the remaining known weaknesses need bigger upgrades that must be tested on the Mini.",
       "mini_only": true
+    },
+    {
+      "id": "J2484",
+      "title": "023 Venus VBaYRPp85Sw: build thumbnail Test & Compare B '465°C' (Venus surface + glowing lander, J1198 draw branch)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Per Chief (Claude) ruling on J1198 (29 Oct / 10 Nov 2026, LEARNINGS rules 11-13): T011 thumbnail test (A MELTS LEAD vs B EARTH'S TWIN) on 023 Venus VBaYRPp85Sw ('What Happened to Venus?') ended 9 Nov 01:10 as a draw ('Not enough impressions to declare a winner', A MELTS LEAD visible to all). Under the J1198 draw branch, build the new thumbnail-only Test & Compare B concept (title unchanged):\n1. Concept: Venus's surface with a lander glowing red (clear scale/stakes element per LEARNINGS rule 12 and THUMBNAIL_AND_TITLE_RULES.md §2.A.5; one big focal point; no Orbit per §2.8; distinct from planet-globe A MELTS LEAD and B EARTH'S TWIN).\n2. Text: '465°C' in the top band or clear edge, off the hero subject and clear of the bottom-right duration corner, in house heavy sans font (yellow hook text, heavy black outline/drop shadow, ~11-12% frame height per THUMBNAIL_AND_TITLE_RULES.md §2, §2.A, §2.B).\n3. Cost: £0 (no paid credits; use existing approved 023 Venus surface / Venera lander plates or deterministic £0 composite/grade).\n4. Save 1280x720 JPG (<2 MB) under 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg with SHA256.txt, builder script, and phone preview sheet.\n5. Run 'python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb.jpg> --out <sheet.jpg> --score' (must PASS: mean HSV saturation >=120 [>=100 floor], near-black <=30%, readable at 168x94) and score HOOK / BAND / GRADE / PHONE (§2.B).\n6. Submit/park for design review (Chief / review lane). Do not arm in Studio here; J1198 waits on this file + passed design review to arm the test in Studio.",
+      "ref": "",
+      "film": "023",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-10T04:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T04:19Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 023 Venus T&C B thumbnail '465°C' (Venus surface + lander glowing red), pass thumb_preview --score, and submit for design review",
+      "kind": "thumb",
+      "plain": "Making a new '465°C' Venus surface and lander thumbnail for a YouTube click test"
     }
   ],
   "focus": [
