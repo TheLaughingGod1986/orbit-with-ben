@@ -214201,17 +214201,22 @@
           "at": "2026-11-10T09:57Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Claimed; reading HOS 011 film folder, PR #443 and shot-list rules"
+        },
+        {
+          "at": "2026-11-10T09:59Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: Inputs read: VO records on HOS main (#467), script v02, 193 timing cues, 013 lock pattern, Gemini's 16 Oct pre-VO board for prices"
         }
       ],
-      "remaining_action": "Record the 011 long VO lock (file, sha256, J2286 KEEP)",
+      "remaining_action": "Record the 011 long VO lock, then write shot list v01 on the locked timings",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-10T09:57Z",
+        "at": "2026-11-10T09:59Z",
         "by": "claudecode",
-        "note": "Claimed; reading HOS 011 film folder, PR #443 and shot-list rules"
+        "note": "Inputs read: VO records on HOS main (#467), script v02, 193 timing cues, 013 lock pattern, Gemini's 16 Oct pre-VO board "
       },
       "taskKeys": [
         "HOS:011"
