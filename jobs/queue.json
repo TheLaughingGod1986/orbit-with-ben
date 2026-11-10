@@ -212590,10 +212590,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-10T05:06Z",
-      "eta": "2026-11-10T06:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
       "result": "",
@@ -212677,6 +212677,11 @@
           "at": "2026-11-10T05:13Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Scheduled longs read in Studio: none of the five uses a playlist on its end screen or cards. Nothing changed in Studio."
+        },
+        {
+          "at": "2026-11-10T05:13Z",
+          "by": "claudecode",
+          "what": "released: Out of run time at a clean point; nothing changed in Studio, nothing removed. Branch worker/J2460-playlist-refs (d5aca9509) now has the 5 scheduled longs: end screens and cards read in the Studio editor on 9223, none uses a playlist, so the reference list stays at four (Saturn 55AEQwvs36g end screen and Europa NbW5G1BpPY0 description -> PLI1AApUz3qz8; Home section 0 -> PLQLwG0axcZis; Home section 8 -> PLOgdBQBnJE2o). Left in step 1: open Customisation > Home in Studio to confirm the two sections. Then steps 2-5. How to read in Studio: Playwright connect_over_cdp 9223 + cdp_tabs.reuse_page, open /video/<id>/edit, click #endscreen-editor-link or #info-cards-editor-link and read the get_creator_endscreens / list_creator_info_cards response; Escape does not close the editor, reload the page instead. Earlier cautions stand: use /tmp not ~/_desk/scratch; the 9222 tab is on another channel, switch first; no Playwright ctx.request against youtube.com."
         }
       ],
       "remaining_action": "Confirm the Home tab in Studio, then repoint the four references (Saturn end screen, Europa description link, two Home sections) before removing anything",
