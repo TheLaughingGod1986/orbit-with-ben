@@ -40,7 +40,8 @@ class Fixture(unittest.TestCase):
         self.addCleanup(self.tmp.cleanup)
         self.root = pathlib.Path(self.tmp.name)
         names = {"aaa": "Channel A", "bbb": "Channel B"}
-        for name, fake in (("slugs", lambda: ["aaa", "bbb"]), ("name", names.get), ("studio_port", lambda slug: "9333"),
+        for name, fake in (("slugs", lambda: ["aaa", "bbb"]), ("name", names.get), ("label", str.upper),
+                           ("studio_port", lambda slug: "9333"),
                            ("analytics_dir", lambda slug: self.root / "numbers" / slug),
                            ("uploads_file", lambda slug: self.root / "repo" / slug / "UPLOADS.json")):
             patch = mock.patch.object(lc.channels, name, fake)
@@ -532,6 +533,92 @@ class TheCommands(Fixture):
         code, _, err = self.run_cli("judge", "short1")
         self.assertEqual(code, 1)
         self.assertIn("use `record` first", err)
+
+
+class BoardPanel(Fixture):
+    """`panel`: what the board's First day panel shows."""
+
+    def rows(self, when: str, queue=None):
+        return lc.panel(t(when), queue)
+
+    def test_a_checked_video_shows_its_verdict_in_plain_words(self):
+        self.checked("slow", title="Saturn Short", views=4, typical=40, rank=9, of=10, shown=8, stayed=25.0)
+        row, = self.rows("2026-11-10T18:00")
+        self.assertEqual((row["id"], row["channel"], row["channelName"], row["format"], row["title"], row["wentLive"]),
+                         ("slow", "AAA", "Channel A", "short", "Saturn Short", "2026-11-10T11:30Z"))
+        self.assertEqual((row["level"], row["word"], row["stage"]), ("behind", "Slow start", "not shown"))
+        self.assertTrue(row["stageText"].startswith("YouTube has shown it to very few people"))
+        self.assertEqual(row["summary"], "4 views at 6 h; Studio says the usual for us at this age is 40.")
+        self.assertIn("shown in feed 8", row["figures"])
+        self.assertEqual(row["hours"], 6)
+        self.assertTrue(row["now"] and row["carry"])
+        self.assertIsNone(row["next"], "a Short has one check and it is read")
+
+    def test_it_says_the_same_as_judge(self):
+        rec = self.checked("slow", views=4, typical=40, shown=8, stayed=25.0)
+        row, = self.rows("2026-11-10T18:00")
+        v = lc.verdict("aaa", rec)
+        self.assertEqual((row["level"], row["stage"], row["why"], row["now"], row["carry"]),
+                         (v["level"], v["stage"], v["why"], v["now"], v["carry"]))
+
+    def test_a_video_just_live_says_when_its_check_comes(self):
+        self.snapshot("2026-11-10T06:40:00Z", [video("short1", privacy="private", live="2026-11-10T11:30:00Z", title="New Short")])
+        row, = self.rows("2026-11-10T12:00")
+        self.assertEqual((row["id"], row["title"], row["level"], row["word"]), ("short1", "New Short", "", "Not checked yet"))
+        self.assertEqual(row["next"], {"hours": 6, "at": "2026-11-10T17:30Z", "due": False, "job": ""})
+        self.assertEqual((row["why"], row["done"], row["summary"]), ([], [], ""))
+
+    def test_a_check_that_is_due_names_the_job_that_has_it(self):
+        self.snapshot("2026-11-10T06:40:00Z", [video("short1", privacy="private", live="2026-11-10T11:30:00Z")])
+        row, = self.rows("2026-11-10T17:45", {"jobs": [{"id": "J9", "launch": "short1@6"}, {"id": "J8"}]})
+        self.assertEqual((row["word"], row["next"]["due"], row["next"]["job"]), ("Check due", True, "J9"))
+
+    def test_a_long_read_at_six_hours_says_when_the_two_day_check_comes(self):
+        self.checked("long1", fmt="long", views=50, typical=40)
+        row, = self.rows("2026-11-10T18:00")
+        self.assertEqual((row["level"], row["word"]), ("usual", "As usual"))
+        self.assertEqual(row["next"], {"hours": 48, "at": "2026-11-12T11:30Z", "due": False, "job": ""})
+
+    def test_a_video_whose_checks_were_all_missed_is_left_out(self):
+        self.snapshot("2026-11-10T06:40:00Z", [video("missed", live="2026-11-08T11:30:00Z", views=30)])
+        self.assertEqual(self.rows("2026-11-10T12:00"), [])
+
+    def test_a_checked_video_is_listed_once_even_while_it_is_still_new(self):
+        self.snapshot("2026-11-10T06:40:00Z", [video("long1", fmt="long", privacy="private", live="2026-11-10T11:30:00Z")])
+        self.checked("long1", fmt="long", views=50, typical=40)
+        self.assertEqual([r["id"] for r in self.rows("2026-11-10T18:00")], ["long1"])
+
+    def test_what_was_done_is_carried(self):
+        rec = self.checked("slow", views=4, typical=40)
+        rec["notes"] = [{"at": "2026-11-10T14:06Z", "by": "claude", "text": "tags set to search phrases"}, {"at": "x", "text": ""}]
+        lc.save_record("aaa", rec)
+        row, = self.rows("2026-11-10T18:00")
+        self.assertEqual(row["done"], [{"at": "2026-11-10T14:06Z", "by": "claude", "text": "tags set to search phrases"}])
+
+    def test_a_fault_is_the_headline(self):
+        self.checked("broken", views=40, typical=40, faults=["captions are missing"])
+        row, = self.rows("2026-11-10T18:00")
+        self.assertEqual((row["level"], row["word"], row["summary"]), ("fault", "Fault", "Fault: captions are missing"))
+
+    def test_newest_first_two_weeks_only_and_no_more_than_a_dozen(self):
+        self.checked("ancient", live="2026-10-20T11:30Z", views=10, typical=10)
+        for day in range(1, 11):
+            self.checked(f"d{day:02d}", live=f"2026-11-{day:02d}T11:30Z", views=10, typical=10)
+        ids = [r["id"] for r in self.rows("2026-11-10T18:00")]
+        self.assertEqual(ids, [f"d{day:02d}" for day in range(10, 0, -1)])
+        for extra in range(5):
+            self.checked(f"e{extra}", live=f"2026-11-09T0{extra}:30Z", views=10, typical=10)
+        self.assertEqual(len(self.rows("2026-11-10T18:00")), lc.PANEL_ROWS)
+
+    def test_every_level_and_stage_has_plain_words(self):
+        self.assertEqual(set(lc.LEVEL_WORD), {"fault", "behind", "usual", "ahead", "unknown"})
+        self.assertEqual(set(lc.STAGE_WORD), {stage for _fmt, stage in lc.ADVICE})
+
+    def test_a_record_with_no_live_time_does_not_break_the_panel(self):
+        folder = self.root / "numbers" / "aaa" / "launch"
+        folder.mkdir(parents=True)
+        (folder / "odd.json").write_text(json.dumps({"id": "odd", "format": "short", "readings": []}))
+        self.assertEqual(self.rows("2026-11-10T18:00"), [])
 
 
 if __name__ == "__main__":

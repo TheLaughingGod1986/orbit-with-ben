@@ -6,6 +6,7 @@
     python3 scripts/launch_check.py judge <id>             the verdict, what is different about it, what to do
     python3 scripts/launch_check.py note <id> "what we did about it" [--git]
     python3 scripts/launch_check.py report                 every checked video, and what the weak starts share
+    python3 scripts/launch_check.py panel                  the board's First day panel, as JSON (nothing written)
 
 Ben, 10 Nov 2026, with a Short on 4 views after 77 minutes where the two before it reached 1,000 and 1,200: "set
 something up in the Studio to learn from our failures and iterate and improve ... do a scan or an audit, maybe 5-6
@@ -388,7 +389,7 @@ ADVICE = {
         ["Nothing in the cut explains this yet: YouTube has shown it to too few people to judge it.",
          "Check the faults list is empty, then read tomorrow morning's snapshot. Under a tenth of the usual first "
          "day means the feed tried it and stopped: treat the subject and the title as the cause, not the edit."],
-        ["If the subject line below says earlier videos on it were weak too, take that subject off the next four "
+        ["If \"What is different about this one\" says earlier videos on its subject were weak too, take that subject off the next four "
          "weeks of the schedule and tell the topic go/no-go."]),
     ("short", "swiped"): (
         ["People were shown it and swiped away: the first second or the promise is the fault. A live Short cannot "
@@ -604,6 +605,78 @@ def report_text() -> str:
     return "\n".join(lines).rstrip() or "No video has been checked yet."
 
 
+# ---- the board's First day panel ---------------------------------------------------------------------------------
+
+PANEL_DAYS = 14   # the panel shows the checks of the last two weeks
+PANEL_ROWS = 12
+LEVEL_WORD = {"fault": "Fault", "behind": "Slow start", "usual": "As usual", "ahead": "Strong start",
+              "unknown": "Too early to say"}
+STAGE_WORD = {"not shown": "YouTube has shown it to very few people so far",
+              "swiped": "People were shown it and swiped away",
+              "left early": "People started it and left early",
+              "not clicked": "It is being shown but not clicked",
+              "small pool": "Watched about as usual, by few people so far"}
+
+
+def next_check(vid: str, at: dt.datetime, fmt: str, have: set, now: dt.datetime, asked: dict) -> dict | None:
+    """The next check still to make on a video: its age, when it falls, whether it is due now and the job that has
+    it. None when every check is read or the last one is too late to be worth making."""
+    for hours in CHECKS[fmt]:
+        start = at + dt.timedelta(hours=hours)
+        if hours in have or now > start + dt.timedelta(hours=LATE_H):
+            continue
+        job = asked.get(f"{vid}@{hours}") or {}
+        return {"hours": hours, "at": studio.iso(start), "due": start <= now, "job": job.get("id") or ""}
+    return None
+
+
+def _panel_row(slug: str, vid: str, title: str, fmt: str, at: dt.datetime, nxt: dict | None) -> dict:
+    return {"id": vid, "channel": channels.label(slug), "channelName": channels.name(slug), "format": fmt,
+            "title": title or vid, "wentLive": studio.iso(at), "level": "", "word": "", "stage": "", "stageText": "",
+            "hours": None, "readAt": "", "summary": "", "figures": "", "why": [], "differences": [], "now": [],
+            "carry": [], "done": [], "next": nxt}
+
+
+def panel(now: dt.datetime, queue: dict | None = None) -> list[dict]:
+    """The board's First day panel, newest first: every video checked in the last two weeks with its verdict in
+    plain words, and every video that has just gone live and still has a check to come. Built from the same
+    records and the same `verdict` as `judge`, so the board and the thread never say different things."""
+    asked = {j["launch"]: j for j in (queue or {}).get("jobs", []) if j.get("launch")}
+    since = now - dt.timedelta(days=PANEL_DAYS)
+    rows = []
+    for slug in channels.slugs():
+        seen = set()
+        for rec in records(slug):
+            try:
+                at = studio.parse(rec["wentLive"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            seen.add(rec["id"])
+            if at < since or rec.get("format") not in CHECKS:
+                continue
+            v = verdict(slug, rec)
+            reading = v.get("reading") or {}
+            have = {r.get("hours") for r in rec.get("readings", [])}
+            row = _panel_row(slug, rec["id"], rec.get("title") or "", rec["format"], at,
+                             next_check(rec["id"], at, rec["format"], have, now, asked))
+            row.update(level=v["level"], word=LEVEL_WORD[v["level"]], stage=v["stage"],
+                       stageText=STAGE_WORD.get(v["stage"], ""), hours=v["hours"], readAt=reading.get("readAt") or "",
+                       summary=v["why"][0] if v["why"] else "",
+                       figures=_figures_line(rec["format"], reading) if reading else "",
+                       why=v["why"], differences=[d["text"] for d in v["differences"]], now=v["now"], carry=v["carry"],
+                       done=[{"at": n.get("at") or "", "by": n.get("by") or "", "text": n.get("text") or ""}
+                             for n in rec.get("notes") or [] if n.get("text")])
+            rows.append(row)
+        for video in went_live(slug, now):
+            nxt = None if video["id"] in seen else next_check(video["id"], video["at"], video["format"], set(), now, asked)
+            if nxt:   # live, not read yet, and a check is still to come
+                row = _panel_row(slug, video["id"], video["title"], video["format"], video["at"], nxt)
+                row["word"] = "Check due" if nxt["due"] else "Not checked yet"
+                rows.append(row)
+    rows.sort(key=lambda r: (r["wentLive"], r["id"]), reverse=True)
+    return rows[:PANEL_ROWS]
+
+
 # ---- command line ------------------------------------------------------------------------------------------------
 
 def _commit(change, message: str, git: bool) -> str | None:
@@ -644,6 +717,7 @@ def main(argv=None) -> int:
     note.add_argument("--by", default="chief")
     note.add_argument("--git", action="store_true")
     sub.add_parser("report", help="every checked video, and what the weak starts share")
+    sub.add_parser("panel", help="the board's First day panel, as JSON")
     args = ap.parse_args(argv)
     now = dt.datetime.now(dt.timezone.utc)
 
@@ -657,6 +731,10 @@ def main(argv=None) -> int:
         return 0
     if args.cmd == "report":
         print(report_text())
+        return 0
+    if args.cmd == "panel":
+        import jobs
+        print(json.dumps(panel(now, jobs.load()), indent=2))
         return 0
 
     found = lookup(args.id, now)

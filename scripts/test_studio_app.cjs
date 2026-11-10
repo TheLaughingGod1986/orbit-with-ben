@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, firstDayCard, firstDaySection, firstDayPage, firstDayNext, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1282,3 +1282,48 @@ console.log('Jobs running count checks OK');
   console.log('UAT past problems OK');
 }
 
+
+// Ben, 10 Nov 2026: "learn from our failures". The first-day check's verdict shows on the Overview and the video's page.
+{
+  const row = o => Object.assign({id: 'aaaaaaaaaaa', channel: 'OWB', format: 'short', title: 'Titan <b>Short</b>', wentLive: '2026-10-28T11:30Z',
+    level: 'behind', word: 'Slow start', stage: 'not shown', stageText: 'YouTube has shown it to very few people so far', hours: 6,
+    summary: '4 views at 6 h; Studio says the usual for us at this age is 40.', figures: 'views 4 · shown in feed 8',
+    why: ['4 views at 6 h; Studio says the usual for us at this age is 40.', 'Studio ranks it 7 of 10 against our latest videos at the same age.'],
+    differences: ['"Saturn" was in the title of 4 earlier Shorts.'], now: ['Read it again tomorrow.'], carry: ['Take the subject off the schedule.'],
+    done: [{at: '2026-10-28T14:06Z', by: 'claudecode', text: 'tags set to search phrases'}], next: null}, o);
+  const waiting = row({id: 'bbbbbbbbbbb', title: 'Mars long', format: 'long', wentLive: '2026-10-28T18:00Z', level: '', word: 'Not checked yet',
+    stage: '', stageText: '', hours: null, summary: '', figures: '', why: [], differences: [], now: [], carry: [], done: [],
+    next: {hours: 6, at: '2026-10-29T00:00Z', due: false, job: ''}});
+  const old = row({id: 'ccccccccccc', title: 'Old Short', wentLive: '2026-10-20T11:30Z', level: 'ahead', word: 'Strong start', stage: '', stageText: '', done: []});
+  const fb = {tracker: {videos: [v({key: 'OWB:032:S:x', type: 'short', youtube: {videoId: 'aaaaaaaaaaa', state: 'live', privacy: 'public', url: 'https://youtu.be/aaaaaaaaaaa'}})],
+    firstDay: [waiting, row({}), old]}};
+  const home = t.overview(fb, NOW);
+  assert(home.includes('aria-label="First day"') && home.includes('Slow start') && home.includes('Not checked yet'), 'the Overview shows the recent checks');
+  assert(!home.includes('Old Short') && home.includes('href="#firstday"') && home.includes('All 3'), 'an older check is one tap away, not on the Overview');
+  assert(home.indexOf('aria-label="First day"') < home.indexOf('aria-label="Machines"'), 'First day sits above Machines');
+  assert(!home.includes('<b>Short</b>') && home.includes('Titan &lt;b&gt;Short&lt;/b&gt;'), 'the title is escaped');
+  assert(home.includes('tag amber') && home.includes('4 views at 6 h; Studio says the usual for us at this age is 40.'), 'a slow start is amber, with its numbers in one line');
+  assert(home.includes('What is different about this one') && home.includes('What we did') && home.includes('Claude Code') && home.includes('tags set to search phrases'),
+    'opened, the card says what is different and what was done');
+  assert(home.includes('Next check Thu 29 Oct 00:00'), 'a video not read yet says when its check comes');
+  assert(home.includes('#v=OWB%3A032%3AS%3Ax') && home.includes('https://youtu.be/aaaaaaaaaaa'), 'the card links to the video page and to YouTube');
+  assert.equal(t.firstDayNext({next: {hours: 48, at: '2026-10-30T18:00Z', due: true}}), 'The 2-day check is due now');
+  assert.equal(t.firstDayNext({next: {hours: 6, at: '2026-10-28T17:30Z', due: true}}), 'The 6-hour check is due now');
+  assert.equal(t.firstDayNext({next: null}), '');
+  // A weak start nobody has acted on says so; a good one does not ask for anything.
+  assert(t.firstDayCard(row({done: []}), fb).includes('Nothing has been done about it yet.'));
+  assert(t.firstDayCard(row({level: 'usual', word: 'As usual', done: [], stage: '', stageText: ''}), fb).includes('Nothing needed doing.'));
+  assert(t.firstDayCard(row({level: 'fault', word: 'Fault'}), fb).includes('tag red'), 'a fault is red');
+  // No recent check: the Overview has no First day section at all.
+  assert(!t.overview({tracker: {videos: [], firstDay: [old]}}, NOW).includes('aria-label="First day"'), 'nothing recent, no section');
+  assert(!t.overview({tracker: {videos: []}}, NOW).includes('aria-label="First day"'), 'a board without the panel still renders');
+  // The full list and the video's own page.
+  const all = t.firstDayPage(fb);
+  assert(all.includes('Old Short') && all.includes('Strong start') && all.includes('tag green') && all.includes('Back to Overview'), 'the list page shows every check');
+  assert(t.firstDayPage({tracker: {videos: []}}).includes('No video has been checked yet.'));
+  const page = t.detail(fb, 'OWB:032:S:x');
+  assert(page.includes('aria-label="First day"') && page.includes('data-disclosure="first-aaaaaaaaaaa-page" open') && !page.includes("Open the video's page"),
+    'the video page shows its own check, open, without a link to itself');
+  assert(!t.detail({tracker: {videos: fb.tracker.videos}}, 'OWB:032:S:x').includes('aria-label="First day"'), 'a video with no check has no block');
+  console.log('First day panel OK');
+}

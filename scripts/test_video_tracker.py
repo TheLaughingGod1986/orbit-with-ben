@@ -2,12 +2,14 @@
 """Tests for the five-lane per-video Studio tracker (Ben, 24 Oct 2026)."""
 from __future__ import annotations
 
+import io
 import json
 import sys
 import unittest
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import video_tracker as vt  # noqa: E402
@@ -443,6 +445,38 @@ class LiveMapping(unittest.TestCase):
         for f in self.by["OWB:029"]["flags"]:
             if "brief" in f["text"].lower():
                 self.assertEqual(f.get("audience"), "chief")
+
+
+class FirstDayPanel(unittest.TestCase):
+    """Ben, 10 Nov 2026: the first-day check's verdicts show on the board, from `launch_check.panel`."""
+    NOW = datetime(2026, 11, 10, 18, 0, tzinfo=timezone.utc)
+
+    def test_the_tracker_carries_the_panel_with_the_queue_it_was_given(self):
+        import launch_check
+        seen = {}
+
+        def fake(now, queue):
+            seen.update(now=now, queue=queue)
+            return [{"id": "abc", "word": "Slow start"}]
+
+        jobs = [{"id": "J1", "launch": "abc@6"}]
+        with mock.patch.object(launch_check, "panel", fake):
+            self.assertEqual(vt.first_day(jobs, self.NOW), [{"id": "abc", "word": "Slow start"}])
+        self.assertEqual((seen["now"], seen["queue"]), (self.NOW, {"jobs": jobs}))
+
+    def test_a_broken_panel_never_costs_the_board_its_videos(self):
+        import launch_check
+        with mock.patch.object(launch_check, "panel", side_effect=ValueError("bad record")), \
+                mock.patch.object(vt.sys, "stderr", io.StringIO()) as err:
+            self.assertEqual(vt.first_day([], self.NOW), [])
+        self.assertIn("first-day panel not built: bad record", err.getvalue())
+
+    def test_the_board_document_has_the_panel(self):
+        import launch_check
+        with mock.patch.object(launch_check, "panel", lambda now, queue: [{"id": "abc"}]):
+            doc = vt.build_from_docs({}, {}, {})
+        self.assertEqual(doc["firstDay"], [{"id": "abc"}])
+        self.assertIn("videos", doc)
 
 
 if __name__ == "__main__":
