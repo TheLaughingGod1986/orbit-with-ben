@@ -216456,10 +216456,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T14:16Z",
+      "eta": "2026-11-10T16:16Z",
       "created_by": "claude",
       "created_at": "2026-11-10T14:13Z",
       "result": "",
@@ -216468,13 +216468,26 @@
           "at": "2026-11-10T14:13Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T14:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Watch and listen to the three re-cut Shorts from J2494 before Ben does (Pluto v02, Mon 16 v05, Wed 18 v06): KEEP or FIX each",
       "due": "2026-11-10T16:00:00Z",
       "kind": "review",
       "plain": "An agent watches the three re-cut Shorts for faults before you do",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T14:16Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2509",
