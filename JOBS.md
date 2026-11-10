@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2539 | macbook | claimed | macbook-2 | 2026-11-10T22:25Z | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
 | J2540 | mini | open (after J2539) | – | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2541 | macbook | blocked | macbook | – | review · One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so |  |
+| J2542 | any | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 
