@@ -218439,10 +218439,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T20:15Z",
+      "eta": "2026-11-10T22:15Z",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
       "result": "",
@@ -218451,12 +218451,25 @@
           "at": "2026-11-10T20:15Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T20:15Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool",
       "due": "2026-11-11T12:00:00Z",
       "kind": "review",
-      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
+      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T20:15Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2540",
