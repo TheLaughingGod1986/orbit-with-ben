@@ -16,8 +16,10 @@ Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
   {"at", "ok": true|false, "expected": n, "problems": [...], "cards": [...]}
 plus ~/_desk/state/board/BOARD_CHECK_FLAG, one line: "OK <time>" or "FAIL <time>: <first problem>".
 Nothing is ever deleted. When the same problems are seen on two runs in a row (a fresh `awaits` needs one publish to
-show), it posts one short "[Chief] board-check" note on orbit-with-ben #264 with `gh` (at most once per problem set,
-and again after 6 h if it's still broken). That note never starts with "[Ben]".
+show), it posts one short "[Chief] board-check" note on the studio thread with `gh` (at most once per problem set,
+and again after 6 h if it's still broken). That note never starts with "[Ben]". The thread is the one scripts/thread.json
+names, the file owb_thread.py posts by: until 10 Nov 2026 the number was written here and the notes went on the October
+thread for six days after the November one opened.
 
   python3 scripts/board_check.py            # check, write the result, post if needed
   python3 scripts/board_check.py --no-post  # check and write only
@@ -46,7 +48,8 @@ OWB = pathlib.Path(os.environ.get("OWB_REPO", str(HOME / "YouTube" / "orbit-with
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
-THREAD = ("TheLaughingGod1986/orbit-with-ben", 264)
+_THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
+THREAD = (_THREAD["repo"], int(_THREAD["number"]))
 ICLOUD = HOME / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
 CHECK_EVERY_S = 5 * 60
 REPOST_S = 6 * 3600

@@ -261,9 +261,11 @@ def uploads_index(root: Path | None = None) -> dict:
         if meta.get("retired"):
             continue  # replaced/retired upload (e.g. black-dwarf v02/v04 → canonical 1NeQFVnzO2Q)
         kind = meta.get("kind") or "long"
-        pkg = str(meta.get("packageDir") or meta.get("file") or "")
-        m = (re.search(r"02_Video-Projects/(\d{3})_", pkg)
-             or re.search(r"02_Video-Projects/(\d{3})_", str(meta.get("thumb") or "")))
+        # The film number is in whichever path sits under the film's folder. A swap delivered from a read-back folder
+        # has packageDir "jobs/readbacks/J1059/package", and only its file names the film: B1z2dv7m7Vk (025's Short for
+        # Wed 11 Nov) had no card until 10 Nov 2026, while the copy it replaced still showed as scheduled.
+        m = next((hit for hit in (re.search(r"02_Video-Projects/(\d{3})_", str(meta.get(k) or ""))
+                                  for k in ("packageDir", "file", "thumb")) if hit), None)
         if not m:
             continue
         film = m.group(1)

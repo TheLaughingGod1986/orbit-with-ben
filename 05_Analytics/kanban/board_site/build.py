@@ -14,7 +14,7 @@ Outputs:
   dist/version.json, updater.js, static/, tracker.webmanifest
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
-redeploy of the Vercel project studio-kanban; data changes do not. api/checks.js (Ben's ticks → OWB #264 / HOS #180)
+redeploy of the Vercel project studio-kanban; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
 and vercel.json sit next to this file.
 """
 from __future__ import annotations

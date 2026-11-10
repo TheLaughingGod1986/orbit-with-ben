@@ -52,6 +52,20 @@ class TrackerSwap(unittest.TestCase):
         self.assertEqual(old["supersededBy"], "NEWNEWNEW01")
         self.assertTrue(idx["OWB:027:S:NEWNEWNEW01"][0]["publishAt"].startswith("2026-10-26T11:30"))
 
+    def test_a_swap_delivered_from_a_readback_folder_still_gets_its_card(self):
+        # 10 Nov 2026: B1z2dv7m7Vk, the Short airing the next morning, had no card. Its packageDir was the read-back
+        # folder of the job that delivered it, and only its file sat under the film's folder.
+        uploads = self.root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+        doc = json.loads(uploads.read_text())
+        doc["videos"]["READBACK001"] = {
+            "packageDir": "jobs/readbacks/J1059/package", "kind": "short", "publishAt": "2026-11-11T11:30:00Z",
+            "file": "/Users/someone/YouTube/repo/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/x/v07.mp4"}
+        doc["videos"]["NOWHERE0001"] = {"packageDir": "jobs/readbacks/J1/package", "kind": "short", "file": "/tmp/v01.mp4"}
+        uploads.write_text(json.dumps(doc))
+        idx = vt.uploads_index(self.root)
+        self.assertEqual(idx["OWB:027:S:READBACK001"][0]["publishAt"], "2026-11-11T11:30:00Z")
+        self.assertFalse([k for k in idx if "NOWHERE0001" in k])   # no path names a film: still no card, no guess
+
     def test_receipt_fallback_only_reads_its_own_video(self):
         self.assertEqual(vt._receipt_privacy(self.root, PKG, "NOPUBLISH01"), ("", ""))
         self.assertEqual(vt._receipt_privacy(self.root, PKG, "OLDOLDOLD01")[0], "private")
@@ -64,6 +78,14 @@ class TrackerSwap(unittest.TestCase):
         self.assertIn("OWB:027:S:NEWNEWNEW01", keys)
         self.assertNotIn("OWB:027:S:OLDOLDOLD01", keys)
         self.assertEqual(board_check.duplicate_slots(out["videos"]), [])
+
+
+class NoteGoesOnTheLiveThread(unittest.TestCase):
+    def test_board_check_posts_on_the_thread_in_thread_json(self):
+        # 10 Nov 2026: the number was written in board_check.py and stayed on October's thread after the rollover.
+        thread = json.loads((Path(__file__).resolve().parent / "thread.json").read_text())
+        self.assertEqual(board_check.THREAD, (thread["repo"], thread["number"]))
+        self.assertNotIn("264", (Path(__file__).resolve().parent / "board_check.py").read_text().split('"""', 2)[2])
 
 
 class SlotCheck(unittest.TestCase):
