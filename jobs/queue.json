@@ -177285,13 +177285,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T17:28Z",
-      "eta": "2026-11-10T19:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: review and merge HOS PR #480 (base main, 108 unit tests + check_all PASS). Batch 1 minted & NAS-archived both 0-credit Nano Banana 2.1 parent stills (P02:10_how_high 1376x768 sha256 ccd7342b136fb9be1fca8368049405f793e83c24fa16b5fb52e00133f4642fff, P03:07_ball_to_moon 1376x768 sha256 f33525249b149802f2214d1068b347e598cf5492e3fd15dd48c727c2fa87d50c; 0 credits spent, live Flow balance 14,890 intact), then exited cleanly at verify_still_inventory (1376/768=1.7917 > 0.01). PR #480 aligns still 16:9 tolerance to <0.02 and fixes two live video-path UI diffs caught in zero-click CDP 9222 rehearsal (Settings trigger pill collision in _set_video_aspect_and_outputs and flow.google.com/asb/...=mm,22,15 passive download in wait_and_download_passive). 0/20 videos generated, 0 KEEP.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177612,6 +177612,11 @@
           "at": "2026-11-10T18:15Z",
           "by": "gemini",
           "what": "step 4 of 5 done: 2/2 0-credit parent stills minted & NAS-archived (0 credits spent, 14,890 intact, 0/20 videos); opened tested HOS PR #480 fixing 1376x768 still check, Video popover & passive /asb/ video harvest"
+        },
+        {
+          "at": "2026-11-10T18:15Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge HOS PR #480 (base main, 108 unit tests + check_all PASS). Batch 1 minted & NAS-archived both 0-credit Nano Banana 2.1 parent stills (P02:10_how_high 1376x768 sha256 ccd7342b136fb9be1fca8368049405f793e83c24fa16b5fb52e00133f4642fff, P03:07_ball_to_moon 1376x768 sha256 f33525249b149802f2214d1068b347e598cf5492e3fd15dd48c727c2fa87d50c; 0 credits spent, live Flow balance 14,890 intact), then exited cleanly at verify_still_inventory (1376/768=1.7917 > 0.01). PR #480 aligns still 16:9 tolerance to <0.02 and fixes two live video-path UI diffs caught in zero-click CDP 9222 rehearsal (Settings trigger pill collision in _set_video_aspect_and_outputs and flow.google.com/asb/...=mm,22,15 passive download in wait_and_download_passive). 0/20 videos generated, 0 KEEP."
         }
       ],
       "remaining_action": "Await Chief review/merge of HOS PR #480, then mint batch 1 videos (10_how_high & 07_ball_to_moon) and batches 2-5",
