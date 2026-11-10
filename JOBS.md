@@ -101,10 +101,27 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2526 | cloud | open | – | – | review · Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0) |  |
 | J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
 | J2529 | mini | open (after J2033) | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
-| J2530 | mini | claimed | claudecode | 2026-11-10T18:38Z | studio · First-day check at 48 h: "Could a Robot Survive on Mars? (One Lasted 14 Years)" (Js6EQJ8qDi8) |  |
 
 Recently finished:
 
+- J2530 done: First-day check at 48 h: "Could a Robot Survive on Mars? (One Lasted 14 Years)" (Js6EQJ8qDi8) ("Could a Robot Survive on Mars? (One Lasted 14 Years)" (Js6EQJ8qDi8) · Orbit With Ben · long · went live Sun 8 Nov 18:00 London
+At 48 h: views 8 · impressions 55 · click rate 1.8% · average viewed no figure yet
+Usual for this channel: click rate 2.1%, average viewed 15.2%
+
+Verdict: AHEAD
+  - 8 views at 48 h; Studio says the usual for us at this age is 5.
+  - By the next morning it had 1 views; the 5 before it had 1 (median).
+
+What is different about this one
+  - It is 491 s long; the last 10 longs were 492 to 2858 s.
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.
+
+Fault check (read-only, Studio CDP 9223, 10 Nov): no faults. Public; Notices/Restrictions column empty; not Made for Kids; SD, HD and 4K processing complete; description identical to the package file; a long, so no Related video in its package. Studio showed no 'Ranking by views' line, no average percentage viewed (not enough data) and 0 likes; rank and avg-pct left out of the record. A/B title test still running (13 days 5 hours left, no watch-time share yet). Nothing in Studio was changed.)
 - J2528 done: First-day check at 6 h: "What Would Standing on Saturn's Moon Titan Feel Like?" (ffYKoNVPoqg) (Ruled, acting Chief (Claude) 10 Nov: no fault (review merged as #755). 17 views at 6 h against 240 usual; shown to very few people. No re-cut, no second upload, no Studio change. Carry forward: no new Saturn-titled Short planned before 8 Dec; the Titan film on 25 Nov stays; its Shorts' titles lead with the experience. Note is on the First day card. GBP 0.)
 - J2521 done: Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0) (PASS, acting Chief (Claude) 10 Nov: #753 merged (bf72b417). Old and new code give identical output on the live board data and on both channels' history; CI green. The one line left stays: `studio-nine-stages-hos-aliases-v2` is the name of a data format that progress24.py compares, not a channel; renaming it would reset the board's progress comparison. Ceiling for uat_outlook.py stays at 1 until the move. Ratchet total 327 -> 301. GBP 0.)
 - J2518 done: Verify condition for J2033 (Chief ruling on the thread (comment 6773109239, 10 Nov 16:36Z): PASS on merged HOS PR 477 (the Create click is now a trusted mouse click after position checks; the charge intent is still written before the click; any doubt leaves the charge pending with no retry). J2033 reopened by claude (acting Chief) at this time. Record: jobs/reviews/J2518/REVIEW.md (OWB PR 748, merged).)
@@ -135,4 +152,3 @@ PR #738 (jobs/reviews/J2501/REVIEW.md).
 3. First 3s on Shorts watch page:
 - ffYKoNVPoqg: Animated artist's illustration of orange-brown Titan terrain under amber haze (16:9 band with blurred amber top/bottom fill) + top hook '15 M / UNDERWATER' + lower-third captions, cutting at 2.67s to Cassini global Titan (PIA06230); first 1.5s VO says 'Standing on Titan feels'.
 - iyvWYFP_ETA: Full-frame vertical slow push-in on real NASA Mars lander frost-covered rocky ground photo (PIA11132) + top hook 'ONE / NIGHT' + lower-third captions, holding through 3.0s (first cut at 4.10s); first 1.5s VO says 'On Mars, the night can fall to'.)
-- J2500 done: Mini SSD re-check for Ben: is MiniWork now on a fast link (it was USB 2.0 speed this morning), read and write speed, any unplug since 09:47Z (done)
