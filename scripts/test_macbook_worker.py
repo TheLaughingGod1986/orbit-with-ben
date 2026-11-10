@@ -119,6 +119,9 @@ class Guards(unittest.TestCase):
 
 
 class BackToMain(unittest.TestCase):
+    # These clones have no remote: bringing main up to date is stubbed, every other git call is real.
+    OK_FF = staticmethod(lambda repo, own=True: subprocess.CompletedProcess([], 0, "", ""))
+
     def repo(self, root, name):
         r = pathlib.Path(root) / name
         r.mkdir(parents=True)
@@ -133,7 +136,7 @@ class BackToMain(unittest.TestCase):
             r = self.repo(t, "orbit-with-ben")
             real = mw.sh  # no remote to pull from here: the pull itself is stubbed, every other git call is real
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "main")
 
@@ -145,7 +148,7 @@ class BackToMain(unittest.TestCase):
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("branch", "--show-current"), "main")
@@ -160,7 +163,7 @@ class BackToMain(unittest.TestCase):
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("status", "--porcelain"), "")
@@ -174,7 +177,7 @@ class BackToMain(unittest.TestCase):
             (r / "bens_work.md").write_text("mine\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 mw.pull_main()
             self.assertTrue((r / "bens_work.md").exists())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
@@ -203,7 +206,7 @@ class BackToMain(unittest.TestCase):
             calls = []
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), \
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
                     mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(calls, [r])
@@ -428,6 +431,28 @@ class Diverged(unittest.TestCase):
         (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
         (t / "b" / "g").write_text("mine"); g("add", "g", cwd=t / "b"); g("commit", "-qm", "local only", cwd=t / "b")
         return g
+
+    def test_a_clone_with_broken_branch_settings_still_follows_main(self):
+        """8 and 10 Nov 2026, slot 2: `git pull origin main` died with "Cannot fast-forward to multiple branches"."""
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+            g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+            for c in ("a", "b"):
+                g("clone", "-q", str(t / "origin.git"), str(t / c), cwd=t)
+                g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+            (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+            g("push", "-q", "origin", "main", cwd=t / "a")
+            g("pull", "-q", "origin", "main", cwd=t / "b")
+            g("push", "-q", "origin", "main:other", cwd=t / "a")
+            # the damage: two merge targets for main, and no fetch refspec at all
+            g("config", "--add", "branch.main.merge", "refs/heads/other", cwd=t / "b")
+            g("config", "--unset-all", "remote.origin.fetch", cwd=t / "b")
+            (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+            r = mw.ff_main(t / "b")
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "main", cwd=t / "a"))
+            self.assertEqual((t / "b" / "f").read_text(), "2")
 
     def test_a_stale_index_lock_is_moved_aside_and_the_rescue_goes_through(self):
         """10 Nov 2026: slot 2 sat in error for an hour. A git killed mid-write leaves .git/index.lock, and reset fails."""

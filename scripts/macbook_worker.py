@@ -449,6 +449,23 @@ def push_heartbeat(state: str, why: list, job: str = "") -> None:
         log(f"heartbeat not pushed: {e}")
 
 
+MAIN_REF = "+refs/heads/main:refs/remotes/origin/main"
+
+
+def ff_main(repo: pathlib.Path, own: bool = True) -> subprocess.CompletedProcess:
+    """Bring `repo`'s main up to GitHub's, fast-forward only. In the worker's own clone this names the exact ref both
+    ways (fetch refs/heads/main into refs/remotes/origin/main, then merge that), so nothing depends on the clone's
+    branch or remote settings: on 8 and 10 Nov 2026 slot 2's `git pull origin main` died with "Cannot fast-forward to
+    multiple branches". One of Ben's own checkouts keeps the plain pull."""
+    git = ["git", "-C", str(repo)]
+    if not own:
+        return sh(git + ["pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+    r = sh(git + ["fetch", "-q", "origin", MAIN_REF], timeout=180)
+    if r.returncode:
+        return r
+    return sh(git + ["merge", "-q", "--ff-only", "refs/remotes/origin/main"], timeout=120)
+
+
 def pull_main() -> str:
     """Pull both checkouts; '' when fine, else why not. Runs before the guards so fixes reach a MacBook that keeps
     waiting (it used to pull only after the guards passed, so one stuck guard kept it on old code)."""
@@ -487,9 +504,9 @@ def pull_main() -> str:
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
             # Name origin main: a clone whose branch.main.merge holds more than one entry fails a bare pull with
             # "Cannot fast-forward to multiple branches" (8 Nov 2026, slot 2).
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+            r = ff_main(repo, own)
             if r.returncode and own and rescue_diverged(repo):
-                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+                r = ff_main(repo, own)
             if r.returncode:
                 if own and RESCUE_WHY:
                     return f"pull failed in {repo.name}: {RESCUE_WHY}"
@@ -531,7 +548,7 @@ def rescue_diverged(repo: pathlib.Path) -> bool:
     global RESCUE_WHY
     RESCUE_WHY = ""
     git = ["git", "-C", str(repo)]
-    if sh(git + ["fetch", "-q", "origin", "main"], timeout=180).returncode:
+    if sh(git + ["fetch", "-q", "origin", MAIN_REF], timeout=180).returncode:   # the exact ref: origin/main is never stale
         RESCUE_WHY = "could not fetch origin main"
         return False
     ahead = sh(git + ["rev-list", "--count", "origin/main..main"]).stdout.strip()
@@ -630,7 +647,7 @@ def run_ordinary() -> str:
     started = time.monotonic()
     code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
     seconds = time.monotonic() - started
-    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+    ff_main(OWB, OWB.resolve().is_relative_to(WORKER_DIR.resolve()))
     paused = ""
     open_now = still_mine(job)
     if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
