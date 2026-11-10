@@ -50,10 +50,11 @@ def implied(stages: dict, ben_ok: str = "") -> dict:
     return {k: v for k, v in out.items() if stages.get(k, {}).get("state", "todo") in OPEN}
 
 
-def ben_oks(checks: dict) -> dict:
-    """{"026": "Ben OK v06 (22 Oct)"} for the home channel's films Ben approved on the board."""
+def ben_oks(checks: dict, slug: str | None = None) -> dict:
+    """{"026": "Ben OK v06 (22 Oct)"} for one channel's films Ben approved on the board (the default channel's when
+    none is named)."""
     out = {}
-    prefix = channels.label(channels.home()) + "-"   # board ticks are keyed <LABEL>-<film>
+    prefix = channels.label(slug or channels.default()) + "-"   # board ticks are keyed <LABEL>-<film>
     for key, c in (checks or {}).items():
         if key.startswith(prefix) and c.get("verdict") == "ok":
             out[key[len(prefix):]] = f"Ben OK {c.get('version', '')} ({(c.get('at') or '')[:10]})".replace("  ", " ")
@@ -69,7 +70,7 @@ def fetch_checks(url: str = CHECKS_URL) -> dict:
 
 
 def plan(films, checks: dict) -> list[tuple]:
-    oks = ben_oks(checks)
+    oks = ben_oks(checks, channels.of_path(films))   # the ticks of the channel these films belong to
     moves = []
     for p in sorted(films.glob("*/status.json")):
         data = studio.load(p)

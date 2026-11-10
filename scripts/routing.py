@@ -51,8 +51,8 @@ MODELS = {
     "veo-3.1-generate-001": "Vertex Veo 3.1 Quality",
     "gemini-omni-flash-preview": "Vertex Gemini Omni Flash, location global (Orbit only)",
     "gemini-2.5-flash-image": "Vertex Gemini 2.5 Flash Image (stills, no text)",
-    "flow-veo-3.1": "Google Flow Veo 3.1 (HOS, Mini browser)",
-    "flow-nano-banana-2": "Google Flow Nano Banana 2 (HOS stills)",
+    "flow-veo-3.1": "Google Flow Veo 3.1 (Mini browser)",
+    "flow-nano-banana-2": "Google Flow Nano Banana 2 (stills)",
 }
 
 # The agent (jobs.py --agent) that runs each model. "gemini" = the Antigravity `agy` CLI woken by the relay itself.
@@ -122,7 +122,7 @@ CHAINS = {
                                                       ("codex", "gemini-2.5-flash-image"),
                                                       ("gemini", "gemini-2.5-flash-image"),
                                                       ("claudecode", "gemini-2.5-flash-image")],
-                 "Master frame or NASA plate first, else Flow Nano Banana 2 (OWB too, Ben 5 Nov 2026), then Vertex. "
+                 "Master frame or NASA plate first, else Flow Nano Banana 2 (every channel, Ben 5 Nov 2026), then Vertex. "
                  "Text always from the builders, never the image model"),
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
                  [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI, MINI_CLAUDE],

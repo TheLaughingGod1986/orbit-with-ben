@@ -81,7 +81,7 @@ def apply(data: dict, at: dt.datetime, agent: str = "claude") -> list:
                             kind="review", by=agent, at=at, body=RUBRIC.format(parent=j["id"]) +
                             "\n\nWhat the worker asked the Chief: " + str(j.get("result") or "")[:1500],
                             film=(j.get("film") or "") if j.get("stage") else "",
-                            stage=(j.get("stage") or "") if j.get("film") else "", repo=j.get("repo") or channels.home())
+                            stage=(j.get("stage") or "") if j.get("film") else "", repo=j.get("repo") or channels.default())
             r["review_of"] = j["id"]
             if j.get("urgent"):
                 r["urgent"] = j["urgent"]
