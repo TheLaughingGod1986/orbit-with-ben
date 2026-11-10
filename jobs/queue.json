@@ -215410,6 +215410,11 @@
           "at": "2026-11-10T10:25Z",
           "by": "claudecode",
           "what": "waits on Ben: Two Shorts re-cut so the first second moves. Same words. OK to swap them in? (by 2026-11-15 18:00 London)"
+        },
+        {
+          "at": "2026-11-10T10:25Z",
+          "by": "claudecode",
+          "what": "waits on Ben: Two Shorts re-cut so the first second moves. Same words. OK to swap them in? (by 2026-11-17 18:00 London)"
         }
       ],
       "remaining_action": "Copy both files to the NAS and Ben's watch folder, then put up the watch card",
@@ -215426,17 +215431,27 @@
       "taskKeys": [
         "OWB:026"
       ],
-      "awaits_ben": {
-        "what": "Two Shorts re-cut so the first second moves. Same words. OK to swap them in?",
-        "file": "OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v04.mp4",
-        "version": "v04",
-        "due": "2026-11-15T18:00Z",
-        "airs": "2026-11-16T11:30Z",
-        "ifNot": "the original airs as scheduled",
-        "title": "026 Nearest Star Shorts: first-second re-cuts (Mon 16 and Wed 18 Nov)",
-        "number": "026",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "Two Shorts re-cut so the first second moves. Same words. OK to swap them in?",
+          "file": "OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v04.mp4",
+          "version": "v04",
+          "due": "2026-11-15T18:00Z",
+          "airs": "2026-11-16T11:30Z",
+          "ifNot": "the original airs as scheduled",
+          "title": "026 Nearest Star Shorts: first-second re-cuts (Mon 16 and Wed 18 Nov)",
+          "number": "026",
+          "type": "short"
+        },
+        {
+          "what": "Two Shorts re-cut so the first second moves. Same words. OK to swap them in?",
+          "file": "OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v05.mp4",
+          "version": "v05",
+          "due": "2026-11-17T18:00Z",
+          "airs": "2026-11-18T11:30Z",
+          "ifNot": "the original airs as scheduled"
+        }
+      ]
     }
   ],
   "focus": [
