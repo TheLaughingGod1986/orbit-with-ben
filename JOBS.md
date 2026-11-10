@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2456 | cloud | open (after J2455) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2457 | mini | open | – | – | studio · Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom) |  |
 | J2458 | any | open | – | – | review · PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes) |  |
-| J2460 | mini | claimed | macbook | 2026-11-10T01:53Z | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
+| J2460 | mini | open | – | – | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
 | J2461 | mini | open | – | – | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
 | J2462 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Rule 26 title pass: propose search-led titles for the 7 scheduled longs and 3 quiet live ones (read-only; the first airs Thu 12 Nov) |  |
 | J2463 | any | claimed | claude | 2026-11-10T01:26Z | review · Repo clean-up, part 1: fix the six bugs the 7 Nov code audit found (rows F-01a to F-01d, F-05a, F-05b) |  |
