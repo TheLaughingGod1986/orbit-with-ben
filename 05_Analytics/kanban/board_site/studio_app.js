@@ -1,7 +1,7 @@
 (function () {
   // Studio app, the board's front page (Ben, 28 Oct 2026 mock-up): Overview, Videos, Review, Agents, Schedule.
-  // Reads the same board.json as the video board (/board) and the AI page (/ai). Its only write is Ben's OK / changes
-  // tick on the Review tab, sent to /api/checks exactly as /board sends it (same document, same key, no confirmation).
+  // Reads the same board.json as the AI page (/ai). Its only write is Ben's OK / changes tick on the Review tab, sent
+  // to /api/checks (the document the old board page sent: same shape, same key, no confirmation).
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
   // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
   // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
@@ -19,8 +19,12 @@
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
   let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
-  // Ben's board links carry his tick key (/#k=...); that page lives at /board now, so hand them over untouched.
-  if (/(?:^#|&)k=/.test(location.hash)) { location.replace("/board" + location.hash); return; }
+  // Ben's oldest board links carry his tick key (/#k=...). The old board page (/board, retired 10 Nov 2026) used to
+  // take it; now this page keeps it for the buttons and takes it out of the address bar.
+  try {
+    const m = location.hash.match(/(?:^#|&)k=([A-Za-z0-9_-]{8,})/);
+    if (m) { localStorage.setItem("studio-board-key", m[1]); history.replaceState(null, "", location.pathname + location.search); }
+  } catch (e) { /* private window: the cookie still works */ }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -295,10 +299,10 @@
   // Watch & review opened an empty page).
   const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
     && !!(v.watch || {}).url);
-  // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
+  // Approve / Changes show for a long, or a Short with an ask.
   const canTick = v => v.type === "long" || !!v.ask;
 
-  // Ben's tick, as /board sends it (tracker_app.js approve / openChangesModal and postCheck).
+  // Ben's tick: the document api/checks.js expects.
   function boardKey() { try { return localStorage.getItem("studio-board-key") || ""; } catch (e) { return ""; } }
   function tickDoc(v, verdict, raw) {
     const fixes = verdict === "ok" ? [] : String(raw || "").split(/\n+/).map(line => {
@@ -2023,5 +2027,8 @@
   render();
   poll();
   setInterval(poll, 60 * 1000);
+  // One read of /api/checks per load renews Ben's sign-in cookie (400 days) and upgrades a phone that still has the
+  // old key to the cookie. The retired board page did this every minute; once a load is enough.
+  try { const key = boardKey(); fetch("/api/checks?t=" + Date.now(), { cache: "no-store", credentials: "same-origin", headers: key ? { "x-board-key": key } : {} }).catch(() => {}); } catch (e) {}
   document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
 })();

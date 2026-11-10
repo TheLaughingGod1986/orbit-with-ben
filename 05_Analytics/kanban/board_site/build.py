@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Build the Studio Kanban site (Ben, 24 Oct 2026: simple per-video tracker is the home page).
+"""Build the Studio Kanban site (the Studio app is the home page: Ben, 28 Oct 2026).
 
   python3 05_Analytics/kanban/board_site/build.py [--out DIR]    # default: …/board_site/dist
 
 Outputs:
   dist/index.html     — Studio app (Ben, 28 Oct 2026): Overview, Videos, Review, Agents, Schedule (/)
-  dist/board.html     — five-lane per-video tracker, where Ben ticks OK / changes (/board)
-  (/classic, the October swim-lane board, is retired: vercel.json redirects it to /; build_classic stays for reference)
+  (/board, the five-lane per-video tracker, was retired on 10 Nov 2026: Ben, "This seems legacy. I think we can
+   remove this section." The Studio app's Videos and Review tabs do its job. vercel.json redirects /board to /, so old
+   links with #v=<video> or #k=<key> still land on the right page. Its files are in _archive/05_Analytics/kanban/.
+   /classic, the October swim-lane board, was retired the same way on 28 Oct.)
   dist/tracker.html   — Channel Tracker web app (/tracker)
   dist/ai.html        — AI & credits: who is up, who is Chief, credit left per plan, where it went (/ai)
   dist/version.json, updater.js, static/, tracker.webmanifest
@@ -25,15 +27,11 @@ import shutil
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-SIMPLE = HERE.parent / "video_tracker.html"
 AI_PAGE = HERE.parent / "ai_credits.html"
 STUDIO = HERE.parent / "studio_app.html"
 TRACKER = HERE.parent.parent / "dashboard" / "template.html"
 TRACKER_DATA = HERE.parent.parent / "dashboard" / "data.json"
-ROOT = HERE.parents[2]
 
-sys.path.insert(0, str(ROOT / "scripts"))
-from kanban_snapshot import release_record
 
 
 # The tracker wears the Studio's dark colours on the board site (Ben, 10 Nov 2026: one look across the pages on a
@@ -65,68 +63,14 @@ TRACKER_PATCHES = [
 
 
 def app_version() -> str:
-    files = [SIMPLE, TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
-             HERE / "tracker_app.js", HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
+    files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
+             HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
 def versioned_page(html: str) -> str:
     marker = f'<meta name="studio-version" content="{app_version()}"><script src="/updater.js" defer></script>'
     return html.replace("</head>", marker + "</head>", 1)
-
-
-def baked_tracker() -> dict:
-    """Best-effort offline tracker from this checkout (+ optional /tmp/hos-sparse PIPELINE)."""
-    try:
-        from video_tracker import build_videos
-        hos_path = pathlib.Path("/tmp/hos-sparse/00_Brand/Channel-Setup/PIPELINE.json")
-        if not hos_path.exists():
-            # On Vercel there is no HOS checkout: bake the Mini's last published tracker instead (offline fallback).
-            import urllib.request
-            url = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json"
-            with urllib.request.urlopen(url, timeout=15) as r:
-                live = json.loads(r.read().decode())
-            tracker = live.get("tracker") or {}
-            if tracker.get("videos"):
-                return tracker
-            return {"updatedAt": "", "lanes": [], "videos": [], "note": "no HOS PIPELINE at build time"}
-        hos = json.loads(hos_path.read_text())
-        owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
-        for film in owb:
-            receipt = release_record(str(film.get("film", "")))
-            if receipt:
-                film["release"] = receipt
-        briefs = {}
-        bf = ROOT / "05_Analytics" / "kanban" / "film_briefs.json"
-        if bf.exists():
-            briefs = json.loads(bf.read_text()).get("films") or {}
-        jobs = []
-        q = ROOT / "jobs" / "queue.json"
-        if q.exists():
-            jobs = json.loads(q.read_text()).get("jobs") or []
-        checks = {}
-        try:
-            import urllib.request
-            with urllib.request.urlopen("https://studio-kanban.vercel.app/api/checks", timeout=10) as r:
-                checks = json.loads(r.read().decode()).get("checks") or {}
-        except Exception:
-            pass
-        return build_videos(hos=hos, owb=owb, briefs=briefs, jobs=jobs, checks=checks)
-    except Exception as e:
-        return {"updatedAt": "", "lanes": [], "videos": [], "error": str(e)[:200]}
-
-
-def build_simple(out: pathlib.Path) -> None:
-    html = SIMPLE.read_text()
-    marker = "<script>\n/* VIDEO_TRACKER_BOOT */\n</script>"
-    if html.count(marker) != 1:
-        sys.exit("build: expected one VIDEO_TRACKER_BOOT script block in video_tracker.html")
-    boot = (HERE / "tracker_app.js").read_text()
-    baked = json.dumps(baked_tracker(), ensure_ascii=False).replace("</", "<\\/")
-    inject = f'<script type="application/json" id="baked-tracker">{baked}</script>\n<script>\n{boot}\n</script>'
-    html = html.replace(marker, inject)
-    (out / "board.html").write_text(versioned_page(html))
-    print(f"built {out / 'board.html'} ({len(html):,} bytes)")
 
 
 def build_studio(out: pathlib.Path) -> None:
@@ -178,7 +122,6 @@ def build(out: pathlib.Path) -> None:
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
-    build_simple(out)
     build_tracker(out)
     build_ai(out)
     build_studio(out)

@@ -93,24 +93,37 @@ class SiteBuild(unittest.TestCase):
         spec.loader.exec_module(mod)
         with tempfile.TemporaryDirectory() as d:
             mod.build(Path(d) / "dist")
-            simple = (Path(d) / "dist" / "board.html").read_text()
             home = (Path(d) / "dist" / "index.html").read_text()
-            # Home page is the studio app (Ben, 28 Oct 2026); the per-video column board moved to /board
+            ai = (Path(d) / "dist" / "ai.html").read_text()
+            # Home page is the studio app (Ben, 28 Oct 2026)
             self.assertIn("STUDIO_APP_TEST_HOOK", home)
-            self.assertIn('location.replace("/board" + location.hash)', home)  # Ben's /#k= links still reach his board
-            self.assertIn("Studio videos", simple)
-            self.assertIn("Changes requested", simple)
-            self.assertIn("board-data/board.json", simple)
+            self.assertIn("board-data/board.json", home)
+            # The per-video column board (/board) is retired (Ben, 10 Nov 2026: "This seems legacy. I think we can
+            # remove this section"): not built, not linked, its address sent to the Studio app. The Studio app keeps
+            # the old /#k= key itself now instead of handing it to that page.
+            self.assertFalse((Path(d) / "dist" / "board.html").exists())
+            self.assertNotIn('href="/board"', home + ai)
+            self.assertNotIn('location.replace("/board"', home)
+            self.assertIn('localStorage.setItem("studio-board-key", m[1])', home)
+            self.assertIn('href="/#videos">Videos</a>', ai)
             # The October swim-lane board (/classic) is retired (Ben, 28 Oct 2026): not built, not linked
             self.assertFalse((Path(d) / "dist" / "classic.html").exists())
-            self.assertNotIn('href="/classic"', simple + home)
+            self.assertNotIn('href="/classic"', home + ai)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
             version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
-            self.assertIn(f'<meta name="studio-version" content="{version}">', simple)
-            self.assertIn('src="/updater.js"', simple)
+            self.assertIn(f'<meta name="studio-version" content="{version}">', home)
+            self.assertIn('src="/updater.js"', home)
             self.assertTrue((Path(d)/"dist/updater.js").exists())
             tracker=(Path(d)/"dist/tracker.html").read_text()
             self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
+
+    def test_retired_addresses_go_to_the_studio_app(self):
+        site = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
+        gone = {r["source"]: r["destination"] for r in site["redirects"]}
+        for source in ("/board", "/board/", "/board.html", "/classic", "/classic/", "/classic.html"):
+            # No fragment in the destination: the browser then carries an old link's own #v=<video> or #k=<key> over.
+            self.assertEqual(gone.get(source), "/", source)
+        self.assertEqual([r for r in site["rewrites"] + site["headers"] if "board" in r["source"]], [])
 
     def test_build_makes_the_tracker_web_app(self):
         spec = importlib.util.spec_from_file_location("board_build", HERE.parent / "05_Analytics/kanban/board_site/build.py")
@@ -347,9 +360,6 @@ class QuickNoOp(unittest.TestCase):
         self.assertIn("<key>StartInterval</key><integer>60</integer>", plist)
 
     def test_page_polls_board_data_every_minute(self):
-        tracker = (HERE.parent / "05_Analytics/kanban/board_site/tracker_app.js").read_text()
-        self.assertIn("setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);", tracker)
-        self.assertIn("publishedAt: j.publishedAt", tracker)
         studio = (HERE.parent / "05_Analytics/kanban/board_site/studio_app.js").read_text()
         self.assertIn("setInterval(poll, 60 * 1000);", studio)
 
