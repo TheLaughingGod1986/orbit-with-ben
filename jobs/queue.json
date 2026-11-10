@@ -214302,13 +214302,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T10:28Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:03Z",
-      "result": "parked for Chief: HOS PR #473 (bfd7b9f0) ready for Chief price pass on HOS 013 picture plan v01 (94 rows: 23 free £0 built & QA'd, 71 mint rows = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected behind HOS 009 and 010)",
+      "result": "Chief price pass (claude, 10 Nov): picture plan v01 PASS as the record; history-of-science PR #473 merged at c10042fb (check_all PASS on main plus the PR, every check green). No mint authorised yet: mints run in air-date order 009, 010, 011, then 013, and the Flow balance (14,890 on 10 Nov) cannot cover all four on expected cost. 013's first pass is capped at 5,030 credits when its turn comes; retries row by row on the Chief's go. Free work meanwhile: J2498 (timing rough with the 23 built rows and slates, plus a list of rows that could be cheaper).",
       "history": [
         {
           "at": "2026-11-10T03:03Z",
@@ -214364,6 +214364,11 @@
           "at": "2026-11-10T11:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #473 (bfd7b9f0) ready for Chief price pass on HOS 013 picture plan v01 (94 rows: 23 free £0 built & QA'd, 71 mint rows = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected behind HOS 009 and 010)"
+        },
+        {
+          "at": "2026-11-10T11:57Z",
+          "by": "claude",
+          "what": "acting Chief: price pass recorded; PR #473 merged; no mint yet; follow-up J2498"
         }
       ],
       "remaining_action": "Complete: PR #473 open, parking for Chief price pass",
