@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2489 | any | open | – | – | chief · Chief: reopen J1198 after J2488 KEEP on fixed 023 Venus thumbnail B (465°C) |  |
 | J2491 | mini | open | – | – | Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722 |  |
+| J2492 | macbook | open | – | – | review · Browser smoke test of the board build with PR #715 before it merges (compare against main's build) |  |
 
 Recently finished:
 

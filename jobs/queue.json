@@ -1,5 +1,5 @@
 {
-  "next_id": 2492,
+  "next_id": 2493,
   "jobs": [
     {
       "id": "J0001",
@@ -214860,6 +214860,35 @@
       "plain": "The daily numbers page did not update this morning; this finds out why and runs it by hand.",
       "mini_only": true,
       "urgent": 6
+    },
+    {
+      "id": "J2492",
+      "title": "Browser smoke test of the board build with PR #715 before it merges (compare against main's build)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "OWB PR #715 (J2464, repo clean-up part 2, board rows) removes about 15 unused functions from the live board's `05_Analytics/kanban/board_site/studio_app.js`, drops the retired `/classic` page from `build.py`, and archives that page's files and tests. Its own tests and the static checks pass (no live file refers to any removed function; `test_studio_app.cjs` passes; the built `index.html` is 15.8 KB smaller and the other pages are byte-for-byte the same size). What has not been done is to load the built page in a real browser, and this is the page Ben looks at every day. The acting Chief could not run a browser from the cloud, so this job does it.\n\n1. In a worktree of orbit-with-ben: build the board from main (`cd 05_Analytics/kanban/board_site && python3 build.py`, keep `dist` as `dist_main`), then from main with PR #715 merged in (keep as `dist_715`).\n2. Serve each folder on its own local port (`python3 -m http.server`), and with Playwright or the CDP Chrome load `/index.html` and `/board.html` from each. Wait for the data to load. Click through every tab or view the page has.\n3. Record for each build: any page error (uncaught exception), every console error, and the visible text length of each view. Take one screenshot per view.\n4. The test passes if the PR's build has no page error and no console error that main's build does not also have, and each view shows the same content as main's.\n5. Write `jobs/reviews/<this job>/REVIEW.md` with the two lists side by side and PASS or FAIL. Open a PR with it and park for the Chief. Do not merge #715 yourself, and do not deploy anything.\n\nNothing on the live site changes in this job. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T07:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T07:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Browser smoke test of the board build with PR #715 before it merges (compare against main's build)",
+      "due": "2026-11-11T12:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
