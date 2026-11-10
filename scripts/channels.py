@@ -176,6 +176,14 @@ def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
     return next((c for c in cands if c.is_dir()), cands[0])
 
 
+def checkout(slug: str) -> pathlib.Path | None:
+    """Where the channel is checked out on this machine, or None. The home channel's checkout is this repo."""
+    if get(slug).get("home"):
+        return ROOT
+    path = repo_path(slug)
+    return path if (path / "studio" / "channel.json").is_file() else None
+
+
 def main() -> int:
     if sys.argv[1:] == ["sync"]:
         changed = sync()
