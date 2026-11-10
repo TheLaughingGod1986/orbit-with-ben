@@ -218398,13 +218398,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T20:33Z",
-      "eta": "2026-11-10T21:33Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:52Z",
-      "result": "",
+      "result": "Waiting for: The detached J2033 Flow mint (_mint_flow_v05_tranche2.py, pids 61178/61179, started 20:24Z, about 20 paid takes) is driving the HOS Chrome on CDP 9222. Studio work in that browser now would pull focus from Flow mid-take and risk paid takes, and the title change cannot be undone, so it must not be started with under 15 minutes of run left. Clear when no _mint_flow process is running (pgrep -f _mint_flow).",
       "history": [
         {
           "at": "2026-11-10T19:52Z",
@@ -218425,9 +218425,19 @@
           "at": "2026-11-10T20:34Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Step 2 of the brief done offline: both thumbnails are on the Mini. A hos_007_thumb_A_milkmaids_secret_v01.jpg sha256 52cf8ea687d13eaade5a80ba610de6aa4b56a5c851f148dff5ed5102e07dc7c6; B hos_007_thumb_B_immune_v01.jpg sha256 c102e7bd426970a68a799e73b784a2b163f93249985c4f9f02d613870558c71a. Nothing in Studio touched yet."
+        },
+        {
+          "at": "2026-11-10T20:34Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: The detached J2033 Flow mint (_mint_flow_v05_tranche2.py, pids 61178/61179, started 20:24Z, about 20 paid takes) is driving the HOS Chrome on CDP 9222. Studio work in that browser now would pull focus from Flow mid-take and risk paid takes, and the title change cannot be undone, so it must not be started with under 15 minutes of run left. Clear when no _mint_flow process is running (pgrep -f _mint_flow)."
+        },
+        {
+          "at": "2026-11-10T20:34Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-10T21:20:00Z"
         }
       ],
-      "remaining_action": "Read the unstarted title test in Studio (CDP 9222) once the J2033 Flow mint has stopped driving that browser, then set the title and re-arm the test",
+      "remaining_action": "Read the unstarted HOS 007 title test in Studio, set the search-led title, re-arm the test (steps 1, 3, 4; thumbnails already hashed)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Give the vaccine film its new title before it goes public on Thursday",
@@ -218442,7 +218452,12 @@
       },
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "The detached J2033 Flow mint (_mint_flow_v05_tranche2.py, pids 61178/61179, started 20:24Z, about 20 paid takes) is driving the HOS Chrome on CDP 9222. Studio work in that browser now would pull focus from Flow mid-take and risk paid takes, and the title change cannot be undone, so it must not be started with under 15 minutes of run left. Clear when no _mint_flow process is running (pgrep -f _mint_flow).",
+        "check_at": "2026-11-10T21:20:00Z"
+      }
     },
     {
       "id": "J2537",
