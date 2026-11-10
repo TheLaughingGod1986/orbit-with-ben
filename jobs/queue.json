@@ -1,5 +1,5 @@
 {
-  "next_id": 2476,
+  "next_id": 2477,
   "jobs": [
     {
       "id": "J0001",
@@ -213476,6 +213476,35 @@
       "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script"
+    },
+    {
+      "id": "J2476",
+      "title": "HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 013 Darwin & Wallace airs Thu 17 Dec and holds a HOS production place. Long VO hos_013_vo_v03a is locked (J1310), shot list v01 is on main (J2240), and the two Shorts voiceovers are accepted (J2288 KEEP; HOS PR #444 merged 10 Nov).\n\nDo this, in the history-of-science repo, at £0:\n1. Turn shot list v01 into picture plan v01 on the locked VO timings: one row per shot with its in and out time.\n2. For each row say where the picture comes from: an existing accepted plate or code graphic (give the path), a free archive source (link and licence), or a new plate that would need minting. Apply the HOS-2026-11-E2 proof-first open to the first 30 seconds.\n3. Build everything that costs nothing now: code graphics, archive pulls, maps and diagrams, with picture_qa on each.\n4. Total the rows that still need minting and their Flow credit cost. Mint nothing: paid picture parks for the Chief's price pass, behind HOS 009 and 010 in the mint line.\n5. Run check_all.sh, open a PR, and park it for the Chief with the cost table.\n",
+      "ref": "",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest",
+      "due": "2026-11-19T00:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [

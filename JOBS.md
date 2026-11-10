@@ -92,6 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2473 | mini | open | – | – | for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: two new HOS backlog films from J2411 (HOS PR #460) |  |
 | J2474 | any | open | – | – | assembly · Bring the Anesthesia voiceover records pull request up to date with main so it can merge (generated files only) |  |
 | J2475 | mini | open | – | – | 011 shots · script · HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row |  |
+| J2476 | mini | open | – | – | 013 picture · assembly · HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest |  |
 
 Recently finished:
 
