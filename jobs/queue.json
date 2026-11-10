@@ -215562,18 +215562,23 @@
           "at": "2026-11-10T12:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T12:23Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Inspecting 026 mon16/wed18 build script for the end-card text under title at 0:22-0:23"
         }
       ],
-      "remaining_action": "FIRST, Ben's notes on both re-cuts (board, 10 Nov 11:20Z, both marked 'change'): mon16 v04 at 0:23 'under the title is letters that don't make sense'; wed18 v05 at 0:22 'under the title is a jumble of letters'. Find what that line under the title is (most likely the long's YouTube id or a file code on the end card; Ben flagged the same thing on another Short on 25 Oct: 'shows a code in text, does not mean anything to a viewer'). Remove it, or replace it with plain words a viewer understands, in both. Same picture otherwise, same voice. In the same pass apply the Chief ruling of 10:35Z (thread 6765128508): flat gain and peak limiter to about -14.2 LUFS / -2.2 dBTP. New versions beside the old ones, every gate again (gate_shorts_open.py check, level gate, picture QA), then replace the files in Ben's watch folder and re-send the watch card as a fixed cut (jobs.py awaits with --prev OWB-J2494.1 and OWB-J2494.2 and --fixed saying what changed, in plain words). THEN say, as a list only, which other scheduled Shorts carry the same line under the title at their end (check the build files for that text; nothing changed on them). THEN Pluto gmzaCfJF1gA (Ben's watch by Fri 13 Nov 18:00 London), without that line, then Voyager kKN8Ale42sE, then the comets Studio read.",
+      "remaining_action": "Fix 026 mon16/wed18 end-card text & audio level, audit other Shorts, re-cut Pluto & Voyager, update UPLOADS.json",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
-        "step": 4,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-10T10:26Z",
-        "by": "claudecode",
-        "note": "Both files on the NAS and in Ben's watch folder (hashes match); one watch card holds both; evidence PR #728"
+        "at": "2026-11-10T12:23Z",
+        "by": "gemini",
+        "note": "Inspecting 026 mon16/wed18 build script for the end-card text under title at 0:22-0:23"
       },
       "taskKeys": [
         "OWB:026"
