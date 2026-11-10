@@ -218822,19 +218822,24 @@
           "at": "2026-11-10T21:59Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Detached J2540-gate run completed (exit 0, 36/36 items); HOS ChbsigHD5_o (18 Nov) and OWB ffYKoNVPoqg (10 Nov ref) fail frame-0 full-bleed check, all other scheduled OWB/HOS Shorts and J2494 re-cuts pass"
+        },
+        {
+          "at": "2026-11-10T22:05Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json covering all 36 OWB + HOS scheduled Shorts and J2494/J2510/J2512 re-cuts"
         }
       ],
-      "remaining_action": "Write full results table and JSON in jobs/reviews/J2540/ and open PR",
+      "remaining_action": "Parked for Chief review of PR #774 and threshold/re-cut decisions",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-10T21:59Z",
+        "at": "2026-11-10T22:05Z",
         "by": "gemini",
-        "note": "Detached J2540-gate run completed (exit 0, 36/36 items); HOS ChbsigHD5_o (18 Nov) and OWB ffYKoNVPoqg (10 Nov ref) fail "
+        "note": "PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json coverin"
       }
     },
     {
