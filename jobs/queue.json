@@ -215634,18 +215634,23 @@
           "at": "2026-11-10T13:42Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Resumed J2494 at step 2 of 5; inspecting STANDALONE_SHORTS_TEST_2026-10 for s7_pluto_heart_v02 assembly"
+        },
+        {
+          "at": "2026-11-10T13:50Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Pluto Short owb_sa_s7_pluto_heart_v02.mp4 built and passed all gates (gate_shorts_open, sfx_kit level, polish_gate, music_gate, picture_qa, loop finish_scan); copied to OWB UAT; Voyager kKN8Ale42sE stopped per brief (uploaded sha256 9c45c0187274 overwritten in J0432)"
         }
       ],
-      "remaining_action": "Assemble and gate Pluto Short owb_sa_s7_pluto_heart_v02.mp4, run Studio comets check and UPLOADS.json fix, and update watch card/PR #728",
+      "remaining_action": "Run Studio comets check (bizlhspnVvY vs xvarZP2aYyE) and update UPLOADS.json publishAt values, then update watch card and PR #728",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-cut the opening second of four scheduled Shorts so they start on movement, then ask Ben to watch them",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-10T13:42Z",
+        "at": "2026-11-10T13:50Z",
         "by": "gemini",
-        "note": "Resumed J2494 at step 2 of 5; inspecting STANDALONE_SHORTS_TEST_2026-10 for s7_pluto_heart_v02 assembly"
+        "note": "Pluto Short owb_sa_s7_pluto_heart_v02.mp4 built and passed all gates (gate_shorts_open, sfx_kit level, polish_gate, musi"
       },
       "taskKeys": [
         "OWB:026"
