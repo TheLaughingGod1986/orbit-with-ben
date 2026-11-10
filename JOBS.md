@@ -74,7 +74,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2423 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0912 |  |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
-| J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |
 | J2449 | mini | claimed | macbook | 2026-11-10T02:37Z | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2452 | mini | open (after J2451) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 | J2453 | mini | open | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
