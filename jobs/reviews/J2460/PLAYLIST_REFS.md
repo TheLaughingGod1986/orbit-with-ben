@@ -58,9 +58,15 @@ A fresh survey after the repoints (all 195 upload rows' descriptions, the nine H
 - Videos: 179 distinct ids before, 179 after, none missing. Title, privacy and go-public time identical on every one. Descriptions differ from the 03:26 read on two: Europa `NbW5G1BpPY0` (row 2 above) and `6bbbvfCx6zY`, which this job never wrote to (changed by other work between 03:26 and 06:15).
 - Home sections: position 0 `PLOw2VKzGCOWU`, position 8 `PLdoEpeiktw_Y`, the other seven untouched.
 
+### History of Science playlist `PLEbpfUzWzcXU`, 10 Nov 2026 about 08:35 UTC
+
+Done in Studio on CDP 9222 (`?authuser=1`; the content list showed channel `UCXp7HkBIl1LgaznXuZHJyRg`, History of Science, one playlist).
+
+- **Renamed and read back:** *How Did We Discover…? | History of Science* is now **How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science**. Studio Details tab, Save (`edit_playlist` 200), page reloaded: new title shown, still Public, description unchanged.
+
 ### Not done yet
 
-- **History of Science playlist `PLEbpfUzWzcXU`** (rename, add `VbPubYd6Fbs`, reorder): not started. There is no History of Science Data API login in `07_Content-Ops/.env`, so it has to be done in Studio on CDP 9222. That browser's first account (`UCGGBHuqKAL6WzGLXnxm98eg`) has no access and the channel switcher does not list History of Science; the second signed-in account does: `https://studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg/...?authuser=1` loaded with channel id `UCXp7HkBIl1LgaznXuZHJyRg` (probed read-only at 06:17 UTC; the `/playlists` path itself showed an error page, so use Content > Playlists). CDP 9223 has no access to it.
+- **Add `VbPubYd6Fbs` (Willow Tree) and reorder `PLEbpfUzWzcXU`.** Still 6 videos in date order (Germs, Periodic Table, X-rays, Atom, Tied Arm, compilation `uAomPaOBrM8`). Studio's Videos tab only lists them; adding and ordering go through "Edit in YouTube" (`youtube.com/playlist?list=PLEbpfUzWzcXU`), and there this browser's sign-in is a viewer, not the channel (it shows Subscribe and Save playlist, no edit controls, with or without `authuser=1`). Two things to try next, in this order: (1) Studio Content > Videos, tick `VbPubYd6Fbs`, "Add to playlist" (a playlist action, the video itself is not edited); (2) Studio Details > Default video order > Manual, then see whether the Videos tab allows moving rows. If the order cannot be set from this sign-in it needs the History of Science identity on youtube.com or a History of Science Data API login, neither of which is on the Mini today.
 
 ## Playlist ids
 
