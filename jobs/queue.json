@@ -218460,10 +218460,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-10T20:15Z",
-      "eta": "2026-11-10T22:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
       "result": "",
@@ -218477,6 +218477,11 @@
           "at": "2026-11-10T20:15Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:22Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
         }
       ],
       "remaining_action": "Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool",
