@@ -214439,10 +214439,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-10T12:09Z",
-      "eta": "2026-11-10T14:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
       "result": "",
@@ -214526,6 +214526,11 @@
           "at": "2026-11-10T12:14Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Voice done twice over (Gemini v02 Trim 1, claudecode v03 Trim 2); Gemini's 19.6 s draft cut found and passes the opening gate; spend 1,072 chars vs 600 cap"
+        },
+        {
+          "at": "2026-11-10T12:14Z",
+          "by": "claudecode",
+          "what": "released: Found Gemini's earlier uncommitted draft in ~/_desk/wt-J2478 (dirty worktree, do not clean): cut owb_dated_2026_11_24_supermoon_v01.mp4 (19.6 s, 1080x1920, sha 868a1259…) on voice supermoon_2026_11_24_vo_v02 (plan-order Trim 1, 41 words, line 4 at 11.11 s, vo_check PASS). gate_shorts_open PASS this run (cut1 2.63 s, vo onset 0.08 s; warn: 19.6 s outside 22-27 s band). Key files safety-copied to NAS studio-live .../_dated_shorts/2026-11-24_supermoon/from_gemini_wt_J2478/ (16 files). Voice spend is 1,072 characters over four takes (Gemini 291+245, claudecode 291+245), over the 600 cap: no more takes. Next: Chief picks the voice (Gemini v02 follows the plan's trim order; claudecode v03 on branch j2478-supermoon-short skipped Trim 1); then commit Gemini's folder text files + both ledgers from a clean worktree, run the remaining Shorts gates incl. rule 24 first-second on the chosen cut, and queue the watch-and-listen review. Nothing reviewed by ear or eye yet."
         }
       ],
       "remaining_action": "Chief picks the voice version; then run the remaining Shorts gates on the built cut and queue the watch-and-listen review",
