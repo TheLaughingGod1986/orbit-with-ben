@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2477 | mini | open | – | – | 032 edit · review · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | open | – | – | assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2479 | macbook | open | – | – | MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted) |  |
-| J2480 | any | claimed | macbook-2 | 2026-11-10T05:46Z | review · Verify condition for J2033 |  |
+| J2480 | any | open | – | – | review · Verify condition for J2033 |  |
 
 Recently finished:
 
