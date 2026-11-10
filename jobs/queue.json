@@ -218060,13 +218060,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T19:01Z",
-      "eta": "2026-11-10T21:01Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T18:54Z",
-      "result": "",
+      "result": "parked for Chief: part done. OWB PR #760 + HOS PR #482 (merge #482 first). Counts: studio_reach 6->0, sfx_kit 4->0, total 300->290 on main; home count unchanged at 40. Tests: 54 + 69 pass incl. ratchet and new made-up third channel tests. NOT done: core_sync.py (2; it is a locked core file copied to HOS, which has no channels.py, and lock/push cannot run on the MacBook) and routing.py (4 on main, 1 after #754; would collide with #754/#758). Not checked: byte-for-byte kit sha before/after (script runs blocked here). channel_ratchet.json will conflict with #754/#758 on the total line.",
       "history": [
         {
           "at": "2026-11-10T18:54Z",
@@ -218082,6 +218082,11 @@
           "at": "2026-11-10T19:02Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-10T19:05Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: part done. OWB PR #760 + HOS PR #482 (merge #482 first). Counts: studio_reach 6->0, sfx_kit 4->0, total 300->290 on main; home count unchanged at 40. Tests: 54 + 69 pass incl. ratchet and new made-up third channel tests. NOT done: core_sync.py (2; it is a locked core file copied to HOS, which has no channels.py, and lock/push cannot run on the MacBook) and routing.py (4 on main, 1 after #754; would collide with #754/#758). Not checked: byte-for-byte kit sha before/after (script runs blocked here). channel_ratchet.json will conflict with #754/#758 on the total line."
         }
       ],
       "remaining_action": "HOS channel.json fields + PR, then OWB channels.py readers, studio_reach, sfx_kit, tests, ratchet, PR",
