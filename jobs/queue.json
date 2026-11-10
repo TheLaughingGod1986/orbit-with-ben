@@ -216585,8 +216585,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-10T18:49Z",
       "eta": "",
       "created_by": "claude",
@@ -216627,6 +216627,11 @@
           "at": "2026-11-10T20:08Z",
           "by": "relay",
           "what": "blocked: parked for Chief: 3 runs in a row hit the time cap at step 0 of 4 without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released."
+        },
+        {
+          "at": "2026-11-10T20:15Z",
+          "by": "claude",
+          "what": "cancelled"
         }
       ],
       "remaining_action": "Add frame-0 full-bleed check to gate_shorts_open.py",

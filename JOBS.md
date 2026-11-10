@@ -83,7 +83,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
 | J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
-| J2505 | mini | blocked | gemini | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 | J2512 | mini | open | – | – | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
