@@ -6695,13 +6695,13 @@
       "stage": "",
       "after": "J0123",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T16:30Z",
-      "eta": "2026-11-10T17:30Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-11T00:58Z",
-      "result": "",
+      "result": "Waiting for: 026 nearest-star long c5AdqQsnnys reads Public (publishAt 2026-11-15T18:00:00Z); it is Private and scheduled as of 10 Nov 16:35Z",
       "history": [
         {
           "at": "2026-10-11T00:58Z",
@@ -6752,9 +6752,19 @@
           "at": "2026-11-10T16:36Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: Step 1 done: comment UgyioTqynJeuTyfp9qF4AaABAg posted and pinned on Js6EQJ8qDi8; public page reads Pinned by @OrbitWithBen; record in commit 6ee3657ae"
+        },
+        {
+          "at": "2026-11-10T16:37Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: 026 nearest-star long c5AdqQsnnys reads Public (publishAt 2026-11-15T18:00:00Z); it is Private and scheduled as of 10 Nov 16:35Z"
+        },
+        {
+          "at": "2026-11-10T16:37Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-15T18:05:00Z"
         }
       ],
-      "remaining_action": "Check the Buffer posts for the Mars Shorts, then hold for the 15 Nov end-screen swap",
+      "remaining_action": "Swap the Mars long's end-screen video from the Jupiter film to the nearest-star long once it is public",
       "due": "2026-11-11T12:00:00Z",
       "progress": {
         "step": 1,
@@ -6765,7 +6775,12 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "026 nearest-star long c5AdqQsnnys reads Public (publishAt 2026-11-15T18:00:00Z); it is Private and scheduled as of 10 Nov 16:35Z",
+        "check_at": "2026-11-15T18:05:00Z"
+      }
     },
     {
       "id": "J0125",
