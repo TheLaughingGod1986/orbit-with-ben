@@ -37,13 +37,15 @@ def repo_name(url) -> str:
     return m.group(1) if m else ""
 
 
-def card(c: dict) -> dict:
+def card(c: dict, root=None) -> dict:
+    """`root`: where to read the channel's files. The board publisher passes its own fresh copy of the channel's
+    main branch; without one, the channel's working checkout on this machine is read."""
     out = {k: c.get(k) for k in KEEP}
     out["handle"] = str((c.get("youtube") or {}).get("handle") or "")
     out["repo"] = repo_name((c.get("repo") or {}).get("url"))
     limit = (c.get("wip") or {}).get("limit")
     out["wip"] = limit if isinstance(limit, int) and not isinstance(limit, bool) else None
-    root = channels.checkout(c["slug"])
+    root = root or channels.checkout(c["slug"])
     if root is None:
         out.update(here=False, ready=None, must=[], todo=[], rules=None)
         return out
@@ -53,12 +55,16 @@ def card(c: dict) -> dict:
     return out
 
 
-def cards() -> list[dict]:
-    """One card per registered channel, in the registry's order. A channel that cannot be read still gets its name."""
+def cards(roots: dict | None = None) -> list[dict]:
+    """One card per registered channel, in the registry's order. A channel that cannot be read still gets its name.
+
+    `roots`: {slug: folder} for channels whose files should be read from somewhere other than the working checkout.
+    The board publisher reads its own fresh copies of each channel's main branch: a working checkout can be on a job's
+    branch, or behind (10 Nov 2026: on the Mini the second channel read "not checked here" for that reason)."""
     out = []
     for c in channels.all_channels():
         try:
-            out.append(card(c))
+            out.append(card(c, (roots or {}).get(c["slug"])))
         except Exception as e:  # noqa: BLE001  one bad channel must not take the others off the board
             out.append({**{k: c.get(k) for k in KEEP}, "here": None, "ready": None, "must": [],
                         "todo": [], "rules": None, "error": str(e)[:160]})

@@ -93,6 +93,24 @@ class Cards(unittest.TestCase):
         self.assertEqual(channel_cards.repo_name(""), "")
         self.assertEqual(channel_cards.repo_name(None), "")
 
+    def test_the_publisher_reads_its_own_fresh_copy_not_the_working_checkout(self):
+        # 10 Nov 2026: on the Mini the second channel read "not checked here". Its working checkout was not where the
+        # card looked (a checkout can be on a job's branch, or behind). The publisher passes its own copies instead.
+        with tempfile.TemporaryDirectory() as tmp:
+            root, plugged = third(tmp)
+            with plugged, mock.patch.dict(os.environ, {"SKY_REPO": str(Path(tmp) / "nowhere")}):
+                self.assertIs(channel_cards.cards()[-1]["here"], False)
+                sky = channel_cards.cards({"night-sky": root})[-1]
+        self.assertEqual((sky["here"], sky["ready"]), (True, True))
+
+    def test_the_publishers_copies_hold_what_the_check_looks_at(self):
+        import board_publish
+        for sparse in (board_publish.OWB_SPARSE, board_publish.HOS_SPARSE):
+            self.assertIn("/studio/", sparse)
+            for page in channel_check.GENERATED_PAGES:
+                self.assertIn("/" + page, sparse)
+            self.assertTrue(any(p.startswith("/studio-core/") for p in sparse))
+
     def test_room_for_another_channel_is_both_counts_added(self):
         counts = json.loads((Path(__file__).resolve().parent / "channel_ratchet.json").read_text())
         room = channel_cards.room()
@@ -101,10 +119,10 @@ class Cards(unittest.TestCase):
 
     def test_the_board_publisher_carries_the_cards(self):
         text = (Path(__file__).resolve().parent / "board_publish.py").read_text()
-        self.assertIn('board["channels"] = channel_cards.cards()', text)
+        self.assertIn('board["channels"] = channel_cards.cards(fresh)', text)
         self.assertIn('board["channelRoom"] = channel_cards.room()', text)
         # the plain names are set first, so a failure of the cards never loses a channel from the filters
-        self.assertLess(text.index('for c in channels.all_channels()]'), text.index("channel_cards.cards()"))
+        self.assertLess(text.index('for c in channels.all_channels()]'), text.index("channel_cards.cards(fresh)"))
 
 
 if __name__ == "__main__":
