@@ -1,5 +1,5 @@
 {
-  "next_id": 2479,
+  "next_id": 2480,
   "jobs": [
     {
       "id": "J0001",
@@ -213592,6 +213592,34 @@
       "remaining_action": "Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J2479",
+      "title": "MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "MacBook slot 1 has been in error since about 02:51Z on 10 Nov. Its heartbeat says: \"pull failed in orbit-with-ben: ... Another git process seems to be running ... remove the file manually to continue.\" A git process killed mid-commit left a lock file in slot 1's own clone, and slot 1 cannot pull the fix (OWB PR #702) until that file is out of the way. Slot 2 runs on the same MacBook and can reach the folder.\n\nOn the MacBook, in slot 1's own clone only (`~/_desk/worker/orbit-with-ben`, never one of Ben's folders):\n1. Confirm nothing is using it: `pgrep -fl \"git -C .*_desk/worker/orbit-with-ben\"` and `pgrep -fl \"_desk/worker/orbit-with-ben\"` should show no git process. If one is really running, stop here and say so.\n2. `ls -l ~/_desk/worker/orbit-with-ben/.git/index.lock`. If it is less than 10 minutes old, wait and look again; do not touch a fresh lock.\n3. Move it aside, do not delete it: `mv ~/_desk/worker/orbit-with-ben/.git/index.lock ~/_desk/worker/orbit-with-ben/.git/index.lock.stale-$(date -u +%Y%m%dT%H%M%SZ)`\n4. `git -C ~/_desk/worker/orbit-with-ben status --short | head` and `git -C ~/_desk/worker/orbit-with-ben log --oneline -1`. Report both. Do not reset, stash or check anything out: the worker does that itself on its next run.\n5. Check `~/_desk/worker/history-of-science/.git/index.lock` the same way and report whether it exists (move it aside only under the same rules).\n6. Wait for slot 1's next heartbeat (branch `macbook-heartbeat`, every 3 minutes) and report its state.\n\nAlso report what slot 1 was doing when it stopped: J2449 was claimed by it at 01:37Z and reached step 1 of 3. Read the tail of `~/Library/Logs/owb-macbook-worker-1.log` (or the worker's log folder) and say what the last agent run did, so the next worker on J2449 knows what to read back in Studio before changing anything.\n\nNothing is deleted. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:10Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted)",
+      "plain": "One of the MacBook's two workers is stuck on a leftover lock file; the other worker moves it aside."
     }
   ],
   "focus": [
