@@ -212967,10 +212967,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T05:22Z",
+      "eta": "2026-11-10T06:52Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -213009,13 +213009,26 @@
           "at": "2026-11-10T02:01Z",
           "by": "claude",
           "what": "reopened and pinned to the Mini by acting Chief: the MacBook's Claude Code cannot run git mv, npm or git fetch --prune unattended and handed this back twice"
+        },
+        {
+          "at": "2026-11-10T05:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "re-check rows, PR for non-board rows, PR for board rows, park for Chief",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow.",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T05:22Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2465",
