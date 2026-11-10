@@ -213341,10 +213341,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-10T05:00Z",
+      "eta": "2026-11-10T06:00Z",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
       "result": "",
@@ -213453,6 +213453,11 @@
           "at": "2026-11-10T03:55Z",
           "by": "claude",
           "what": "reopened by acting Chief with option (c): keep the test, set description line 1 only. Worker's report before this: parked for Chief: HOS 007 ETynHpIYLeY unchanged. Studio cannot edit one arm of the J0959 title test: 'Edit title' says 'Editing your video title will delete your A/B test including your other title options'; 'A/B testing' says 'Start a new experiment? This deletes your current experiment'. Cancelled both, changed nothing (description line 1 left too, per the stop rule). Test reads Ineligible; arms and line 1 unchanged; Scheduled. Chief to choose before Thu 12 Nov 18:00 London: (a) name a Never-l"
+        },
+        {
+          "at": "2026-11-10T05:00Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief decides how HOS 007 gets its new title: Studio cannot edit one arm of the title test",
@@ -213471,7 +213476,15 @@
       "model": "mini-claude-opus-5-5",
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T05:00Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2471",
