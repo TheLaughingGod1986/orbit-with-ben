@@ -299,6 +299,49 @@ def _norm_title(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", (t or "").lower().replace("’", "'").replace("'", ""))
 
 
+def _newest_snapshot_rows():
+    """(channel label, video row) for every video in each channel's newest readable daily snapshot."""
+    for slug in channels.slugs():
+        files = sorted((channels.analytics_dir(slug) / "snapshots").glob("*.json"))
+        for path in reversed(files):
+            try:
+                rows = json.loads(path.read_text()).get("videos") or []
+            except (OSError, ValueError, AttributeError):
+                continue
+            for v in rows:
+                if isinstance(v, dict) and v.get("id") and v.get("title"):
+                    yield channels.label(slug).upper(), v
+            break
+
+
+def snapshot_titles() -> dict:
+    """videoId -> its title on YouTube, from each channel's newest daily snapshot. The snapshot lists every video,
+    scheduled ones included, so a Short that is uploaded but not yet public still has its real title here. The
+    public read below only knows public videos, and the board showed such a Short as "Scale" or "028 short mon30
+    comets", the name of its folder (10 Nov 2026)."""
+    return {v["id"]: v["title"] for _, v in _newest_snapshot_rows()}
+
+
+def snapshot_slots() -> dict:
+    """(channel label, "YYYY-MM-DDTHH:MM", "short"|"long") -> the titles of the videos YouTube has scheduled then.
+    A card made from Ben's OK on a swap knows its slot but not its video id, and carried the working name of the
+    cut ("Jenner smallpox test HC v04"). One video in that slot means that is the one."""
+    out: dict = {}
+    for label, v in _newest_snapshot_rows():
+        if v.get("privacy") != "public" and v.get("publishAt") and v.get("format") in ("short", "long"):
+            out.setdefault((label, str(v["publishAt"])[:16], v["format"]), []).append(v["title"])
+    return out
+
+
+def title_from_slot(card: dict, slots: dict) -> str:
+    """The YouTube title for a card with a scheduled slot and no video id, when exactly one video holds that slot."""
+    yt = card.get("youtube") or {}
+    if yt.get("videoId") or not yt.get("publishAt"):
+        return ""
+    hits = slots.get((card.get("channel"), str(yt["publishAt"])[:16], card.get("type"))) or []
+    return hits[0] if len(hits) == 1 else ""
+
+
 def public_index(root: Path | None = None) -> tuple[dict, str]:
     """videoId → {channel, title, format, publishedAt} from the Channel Tracker's public YouTube read."""
     path = (root / "05_Analytics" / "dashboard" / "data.json") if root else PUBLIC_DATA
@@ -1115,6 +1158,8 @@ def build_videos(
     approved: list[dict] | None = None,
     alljobs: list[dict] | None = None,
     files: dict | None = None,
+    scheduled_titles: dict | None = None,
+    scheduled_slots: dict | None = None,
 ) -> dict:
     """Return {updatedAt, lanes, videos} for board/tracker."""
     now = now or datetime.now(timezone.utc)
@@ -1141,6 +1186,10 @@ def build_videos(
     by_jobs = job_index(jobs, overrides, vid_keys)
     held = frozenset(j.get("id") for j in (alljobs or jobs) if j.get("status") == "blocked")
     film_lanes = (overrides.get("lanes") or {}) if overrides else {}
+    if scheduled_titles is None:   # tests that pass their own `public` get no live snapshot titles either
+        scheduled_titles = snapshot_titles() if public is None else {}
+    if scheduled_slots is None:
+        scheduled_slots = snapshot_slots() if public is None else {}
     if public is None:
         public, public_at = public_index()
     else:
@@ -1220,7 +1269,7 @@ def build_videos(
         vid = meta["videoId"]
         parent = f"OWB:{num}"
         parent_title = next((v["title"] for v in videos if v["key"] == parent), f"{num}")
-        title = ((public.get(vid) or {}).get("title") or short_title_from_path(meta)
+        title = ((public.get(vid) or {}).get("title") or scheduled_titles.get(vid) or short_title_from_path(meta)
                  or (f"Short · {parent_title}" if parent_title != num else "Short"))
         skey = f"OWB:{num}:S:{vid}"
         # Attach jobs that mention this Short id or the parent film's Shorts work
@@ -1289,6 +1338,10 @@ def build_videos(
     # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
     add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now, files)
     settle_ready(videos, now)
+    for video in videos:   # a swap's card takes the real title of the video in its slot (see snapshot_slots)
+        real = title_from_slot(video, scheduled_slots) if ":OK:" in str(video.get("key") or "") else ""
+        if real:
+            video["workingTitle"], video["title"] = video.get("title") or "", real
 
     # Approval/ask overlays may carry an old project format too. Resolve the
     # recorded watch asset again without changing IDs, checks or workflow state.

@@ -36,9 +36,11 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from kanban_snapshot import release_record
 
 
-TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
+# The tracker wears the Studio's dark colours on the board site (Ben, 10 Nov 2026: one look across the pages on a
+# phone). Its template already has a dark theme for `data-theme="dark"`; the colours below are studio_app.html's.
+TRACKER_HEAD = """<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f7f9">
+<meta name="theme-color" content="#0B111B">
 <link rel="manifest" href="/tracker.webmanifest">
 <link rel="apple-touch-icon" href="/static/tracker-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/static/tracker-192.png">
@@ -48,7 +50,8 @@ TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}
 .studio-back{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0 2px;font:600 .95rem var(--f-display);color:var(--accent);text-decoration:none}
-#tracker-refresh{justify-self:start;min-height:44px}</style>
+#tracker-refresh{justify-self:start;min-height:44px}
+html[data-theme="dark"]:root{--bg:#0B111B;--panel:#172433;--line:#243244;--grid:#1F2D3F;--chip:#1B2A3B;--ink:#F1F5F9;--ink-2:#B6C2D2;--ink-3:#94A3B8}</style>
 </head><body>
 """
 

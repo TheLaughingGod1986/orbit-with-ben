@@ -300,6 +300,64 @@ class PlannedShortsBacklog(unittest.TestCase):
         self.assertEqual(len(real), 1)
         self.assertEqual(real[0]["shortId"], "AbCdEfGhIjK")
 
+    def test_a_scheduled_short_shows_its_youtube_title_not_its_folder_name(self):
+        # 10 Nov 2026: scheduled Shorts showed as "Scale" and "028 short mon30 comets". The public read only knows
+        # public videos; the daily snapshot has every scheduled video's real title.
+        upload = {"videoId": "SchedShort01", "kind": "short", "film": "028", "channel": "OWB",
+                  "file": "x/10_Shorts/mon30_comets/028_short_mon30_comets.mp4", "privacyStatus": "private",
+                  "publishAt": "2026-11-30T11:30:00Z", "supersededBy": ""}
+        kw = dict(owb=[{"film": "028", "title": "Gliese 710", "air": ""}], uploads={"OWB:028:S:SchedShort01": [upload]})
+        card = lambda out: next(v for v in out["videos"] if v["key"] == "OWB:028:S:SchedShort01")
+        real = "Why Will Gliese 710's Comets Arrive After It Has Gone?"
+        self.assertEqual(card(self.build(**kw, scheduled_titles={"SchedShort01": real}))["title"], real)
+        self.assertNotEqual(card(self.build(**kw))["title"], real)   # no snapshot: the folder name, as before
+        public = {"SchedShort01": {"title": "The Public Title", "channel": "OWB", "format": "short", "publishedAt": ""}}
+        self.assertEqual(card(self.build(**kw, public=public, scheduled_titles={"SchedShort01": real}))["title"],
+                         "The Public Title")   # once public, the public read wins
+
+    def test_a_swap_card_takes_the_real_title_of_the_video_in_its_slot(self):
+        # 10 Nov 2026: Ben's Schedule showed "Jenner smallpox test HC v04", the working name of a re-cut.
+        slots = {("HOS", "2026-11-13T11:30", "short"): ["What Did Jenner's Smallpox Test Prove?"],
+                 ("OWB", "2026-11-13T11:30", "short"): ["A", "B"]}
+        card = {"key": "HOS:OK:J1219", "channel": "HOS", "type": "short", "title": "Jenner smallpox test HC v04",
+                "youtube": {"state": "scheduled", "videoId": "", "publishAt": "2026-11-13T11:30Z"}}
+        self.assertEqual(vt.title_from_slot(card, slots), "What Did Jenner's Smallpox Test Prove?")
+        self.assertEqual(vt.title_from_slot({**card, "channel": "OWB"}, slots), "")   # two videos in the slot: no guess
+        self.assertEqual(vt.title_from_slot({**card, "type": "long"}, slots), "")      # nothing scheduled then
+        self.assertEqual(vt.title_from_slot({**card, "youtube": {"videoId": "abc", "publishAt": "2026-11-13T11:30Z"}}, slots), "")
+        self.assertEqual(vt.title_from_slot({**card, "youtube": None}, slots), "")
+
+    def test_snapshot_slots_list_what_youtube_has_scheduled(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            folder = Path(d) / "aaa" / "snapshots"
+            folder.mkdir(parents=True)
+            (folder / "2026-11-10.json").write_text(json.dumps({"videos": [
+                {"id": "s1", "title": "Scheduled Short", "format": "short", "privacy": "private", "publishAt": "2026-11-13T11:30:00Z"},
+                {"id": "p1", "title": "Public Short", "format": "short", "privacy": "public", "publishAt": None},
+                {"id": "u1", "title": "Unscheduled", "format": "short", "privacy": "private", "publishAt": None}]}))
+            with mock.patch.object(vt.channels, "slugs", lambda: ["aaa"]), \
+                    mock.patch.object(vt.channels, "analytics_dir", lambda slug: Path(d) / slug), \
+                    mock.patch.object(vt.channels, "label", lambda slug: "Aaa"):
+                self.assertEqual(vt.snapshot_slots(), {("AAA", "2026-11-13T11:30", "short"): ["Scheduled Short"]})
+
+    def test_snapshot_titles_come_from_each_channels_newest_snapshot(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for slug, day, rows in (("aaa", "2026-11-09", [{"id": "old", "title": "Yesterday's"}]),
+                                    ("aaa", "2026-11-10", [{"id": "s1", "title": "Scheduled One"}, {"id": "x"}]),
+                                    ("bbb", "2026-11-10", [{"id": "s2", "title": "Second Channel"}])):
+                folder = root / slug / "snapshots"
+                folder.mkdir(parents=True, exist_ok=True)
+                (folder / f"{day}.json").write_text(json.dumps({"videos": rows}))
+            with mock.patch.object(vt.channels, "slugs", lambda: ["aaa", "bbb", "ccc"]), \
+                    mock.patch.object(vt.channels, "analytics_dir", lambda slug: root / slug), \
+                    mock.patch.object(vt.channels, "label", lambda slug: slug):
+                self.assertEqual(vt.snapshot_titles(), {"s1": "Scheduled One", "s2": "Second Channel"})
+
     def test_undated_long_with_live_shorts_gets_no_planned_placeholders(self):
         # Older shipped films (e.g. 005 Last Star, 019 Andromeda) stay long-only for planned cards.
         out = self.build(
