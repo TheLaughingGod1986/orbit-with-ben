@@ -1255,6 +1255,13 @@ console.log('Jobs running count checks OK');
   assert(page.includes('What the agents changed') && page.includes('no blurred bands'), 'and what the agents changed');
   const fresh = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: [], fixedNotes: []})]}}, 'OWB:ASK:J2418');
   assert(!fresh.includes('What you flagged last time'), 'a first-time cut has no past-problems box');
+  // 10 Nov 2026 (phone): the box sits under the player and above the notes box and buttons, not a screen below them.
+  assert(page.indexOf('class="past-problems"') > page.indexOf('class="player"'), 'the box is under the player');
+  assert(page.indexOf('class="past-problems"') < page.indexOf('id="uat-notes"'), 'and above the notes box');
+  // A re-cut Ben has not seen yet says what changed, without claiming he flagged anything.
+  const recut = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: []})]}}, 'OWB:ASK:J2418');
+  assert(recut.includes('What changed in this cut') && recut.includes('no blurred bands') && !recut.includes('What you flagged last time'),
+    'a first-time re-cut is headed "What changed in this cut"');
   console.log('UAT past problems OK');
 }
 

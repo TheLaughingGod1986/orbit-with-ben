@@ -553,6 +553,23 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .blocker-facts>div { display:flex; gap:12px; justify-content:space-between; margin:8px 0; }
 .blocker-facts dt { color:var(--muted); flex:0 0 36%; }.blocker-facts dd { margin:0; text-align:right; overflow-wrap:anywhere; }
 .blocker-job-link { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; color:var(--blue); font-size:13px; }
+/* Phone clean-up (Ben, 10 Nov 2026, from a 390 px audit of the live board): no label under 12 px, every tap target
+   at least 44 px, room between a page's intro line and its tiles, and machine chips that do not cut their text off. */
+p.meta + .seg { margin-top: 12px; }
+.seg > button span, .seg > div span, .seg > a span { font-size: 0.75rem; }
+.p24-videos-jump, .operation-status { min-height: 44px; }
+.overview-activity a.active-job-card .aj-eta,
+.overview-p24 .p24-stats span, .overview-p24 .p24-agents, .overview-p24 .p24-note,
+.overview-p24 .p24-film-meta, .overview-p24 .p24-glance-stats span,
+.overview-home .mc-chip .mc-chip-state, .featured-next>span,
+.blocker-guide .blocker-scope, .blocker-guide .blocker-caption { font-size: 12px; }
+.eyebrow, .next-action>span { font-size: .75rem; }
+@media (max-width: 480px) {
+  .overview-machines .mc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overview-home .mc-chip { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 8px; min-height: 52px; }
+  .overview-home .mc-chip .mc-light { margin-bottom: 0; }
+  .overview-home .mc-chip .mc-chip-state { flex-basis: 100%; white-space: normal; }
+}
 </style>
 </head>
 <body>

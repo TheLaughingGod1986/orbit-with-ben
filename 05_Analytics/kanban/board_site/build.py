@@ -46,14 +46,16 @@ TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Tracker">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}</style>
+<style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}
+.studio-back{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0 2px;font:600 .95rem var(--f-display);color:var(--accent);text-decoration:none}
+#tracker-refresh{justify-self:start;min-height:44px}</style>
 </head><body>
 """
 
 TRACKER_PATCHES = [
     ('<span class="eyebrow">YouTube · daily snapshot</span>',
-     '<span class="eyebrow">YouTube · daily snapshot · <a href="/">Studio board</a></span>'),
-    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div><button type="button" id="tracker-refresh" class="tab">Refresh data</button>'),
+     '<a class="studio-back" href="/">‹ Studio</a><span class="eyebrow">YouTube · daily snapshot · <a href="/">Studio board</a></span>'),
+    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div><button type="button" id="tracker-refresh" class="tab">↻ Refresh data</button>'),
     ('(() => {\n  let DATA = { channels: [] };\n  try { DATA = JSON.parse(document.getElementById("tracker-data").textContent); } catch (e) { /* template without data */ }',
      'window.__trackerStart = (DATA) => {\n  DATA = DATA || { channels: [] };'),
 ]

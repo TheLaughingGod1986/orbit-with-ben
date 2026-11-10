@@ -132,6 +132,17 @@ a.tv:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .older-row,.earnline{display:flex;justify-content:space-between;gap:16px;margin:12px 0}.older-row a{min-width:0}.older-row b{white-space:nowrap}
 progress{width:100%;height:10px;accent-color:var(--accent)}.panel p{line-height:1.5}.tiers p{margin-top:12px}
 @media(max-width:600px){.readout{grid-template-columns:repeat(3,minmax(0,1fr))}.readout .cell{padding:14px 10px}.readout .big{font-size:1.7rem}.readout .eyebrow{font-size:10px}.readout .sub{font-size:11px}.panel{padding:18px}.explore>summary{padding:16px 18px}}
+/* Phone clean-up (Ben, 10 Nov 2026): tap targets of 44 px, no label under 11 px, and a search box that does not
+   make iPhone Safari zoom the page (it zooms on any field under 16 px). */
+@media (max-width:600px){
+  .tab{min-height:44px;padding:10px 14px}
+  .seg button{min-height:44px;padding:8px 13px}
+  summary{min-height:44px;padding-block:12px}
+  input[type="search"]{min-height:44px;font-size:16px;width:100%}
+  .readout .eyebrow{font-size:11px}.readout .sub{font-size:12px}
+  .pill{font-size:.75rem}
+  th{font-size:.72rem}
+}
 </style>
 
 <div class="wrap">
