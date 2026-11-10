@@ -213014,20 +213014,24 @@
           "at": "2026-11-10T05:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T05:24Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting 4-step plan: (1) re-check all rows, (2) board PR (F-02a/b/c), (3) non-board PR (F-03/04/06/07), (4) verify and park for Chief"
         }
       ],
-      "remaining_action": "re-check rows, PR for non-board rows, PR for board rows, park for Chief",
+      "remaining_action": "Re-check audit rows against main and CORE_FILES.json, open board PR and non-board PR, park for Chief",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow.",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-10T05:22Z",
+        "of": 4,
+        "at": "2026-11-10T05:24Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Starting 4-step plan: (1) re-check all rows, (2) board PR (F-02a/b/c), (3) non-board PR (F-03/04/06/07), (4) verify and "
       }
     },
     {
