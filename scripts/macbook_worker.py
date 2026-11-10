@@ -306,7 +306,6 @@ def pick_agent(job: dict, have: list) -> tuple:
 # own checks and opening a PR only; merges stay with the Chief (no `gh pr merge` here).
 CLAUDE_ALLOWED_TOOLS = (
     "Bash(python3 -m unittest:*)",
-    "Bash(python3 scripts/test_kanban_page.py:*)",
     "Bash(python3 scripts/test_kanban_snapshot.py:*)",
     "Bash(node scripts/test_studio_app.cjs:*)",
     "Bash(python3 scripts/core_sync.py check:*)",

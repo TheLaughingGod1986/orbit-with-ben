@@ -1,0 +1,22 @@
+name: Notes check
+
+# The board's film notes are pushed straight to main, about once an hour, and no other workflow watches that file.
+# On 10 Nov 2026 a notes push left main red for 85 minutes before anything noticed. This runs the same checks the
+# push script runs (scripts/notes_push.py --check): the file's form, the fields the board draws, and every test
+# that reads the notes. It takes a few seconds.
+on:
+  push:
+    branches: [main]
+    paths: ["05_Analytics/kanban/film_briefs.json", "scripts/notes_push.py", ".github/workflows/notes-check.yml"]
+  pull_request:
+    paths: ["05_Analytics/kanban/film_briefs.json", "scripts/notes_push.py", ".github/workflows/notes-check.yml"]
+
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/notes_push.py --check
