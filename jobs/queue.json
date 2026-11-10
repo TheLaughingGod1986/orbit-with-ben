@@ -213003,9 +213003,14 @@
           "at": "2026-11-10T01:38Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-10T01:41Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: Titles and line 1 read from the approved file; API dry-run shows both films private, on their old titles and schedules (12 Nov and 10 Dec 18:00Z). HOS 007 carries a title A/B test, so its Studio page is being read before any write."
         }
       ],
-      "remaining_action": "Read the approved titles and the two films' records, then retitle HOS 007 first",
+      "remaining_action": "Read the Studio page for HOS 007 to see whether the title test blocks the new title",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved.",
@@ -213020,10 +213025,11 @@
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T01:38Z",
-        "by": "claudecode"
+        "at": "2026-11-10T01:41Z",
+        "by": "claudecode",
+        "note": "Titles and line 1 read from the approved file; API dry-run shows both films private, on their old titles and schedules ("
       },
       "taskKeys": [
         "HOS:007",
