@@ -218644,13 +218644,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T20:25Z",
-      "eta": "2026-11-10T22:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:19Z",
-      "result": "",
+      "result": "parked for Chief: (1) ~/_desk/state/chief exists on the MacBook (contains heartbeat/macbook and heartbeat/macbook-2), and ~/_desk/state/board/publish.log shows 902 pushes total since 5 Nov, including 203 pushes today (2026-11-10, 00:03:16Z to 20:27:51Z, including 20:16:03Z last change 20:15:42Z with stale tracker generated 2026-11-10T08:20:18.772Z) plus 8 failed pushes today (00:24:10Z, 00:25:30Z, 00:59:24Z, 01:00:09Z, 01:00:49Z, 14:09:25Z, 14:22:10Z, 19:02:17Z, mostly cannot lock ref refs/heads/board-data races). (2) PR #768 (branch macbook/J2541, commit 6b13612f5, CI green) sets BOARD_PUBLISH=0 in scripts/macbook_worker.py run() with unit tests in scripts/test_macbook_worker.py so the worker's jobs.py calls, woken agents and slot 2 all skip the hook.",
       "history": [
         {
           "at": "2026-11-10T20:19Z",
@@ -218686,6 +218686,11 @@
           "at": "2026-11-10T20:34Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:35Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: (1) ~/_desk/state/chief exists on the MacBook (contains heartbeat/macbook and heartbeat/macbook-2), and ~/_desk/state/board/publish.log shows 902 pushes total since 5 Nov, including 203 pushes today (2026-11-10, 00:03:16Z to 20:27:51Z, including 20:16:03Z last change 20:15:42Z with stale tracker generated 2026-11-10T08:20:18.772Z) plus 8 failed pushes today (00:24:10Z, 00:25:30Z, 00:59:24Z, 01:00:09Z, 01:00:49Z, 14:09:25Z, 14:22:10Z, 19:02:17Z, mostly cannot lock ref refs/heads/board-data races). (2) PR #768 (branch macbook/J2541, commit 6b13612f5, CI green) sets BOARD_PUBLISH=0 in scripts/macbook_worker.py run() with unit tests in scripts/test_macbook_worker.py so the worker's jobs.py calls, woken agents and slot 2 all skip the hook."
         }
       ],
       "remaining_action": "Park J2541 for Chief with PR #768 and read-only MacBook findings",
