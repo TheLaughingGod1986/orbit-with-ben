@@ -15,8 +15,16 @@ MacBook worker, 10 Nov 2026. Window: 3 Nov 20:30Z to 10 Nov 20:30Z, `origin/main
 - **A pull request pays for one job.** The Rules check's job starts on every pull request that is not data-only.
   It always runs the core check's two steps. Its "Scope" step lists the pull request's files and runs the rules
   steps (`sync_rules`, `studio.py status --check`, ffmpeg, the three test folders) only when one is on the rules
-  paths, the same paths as before. `core-check.yml` no longer starts on pull requests (except one that changes
-  `core-check.yml` itself). On a push, the daily run and the manual button, everything runs as before.
+  paths, the same paths as before. On a push, the daily run and the manual button, everything runs as before.
+- **Third pass (macbook-2, 10 Nov): why the second pass's own checks failed, and the fix.** `core-check.yml` is
+  itself a locked core file (`studio-core/CORE_FILES.json`), so editing it without the new sha256 failed
+  `core_sync.py check` in both the Rules check and the Studio core check (12 s and 14 s). Now: the lock holds the
+  new hash, and the file is written to be the same in both repos. It starts on any pull request that is not
+  data-only, and its job is skipped (no runner, no minutes) on pull requests in orbit-with-ben, where the Rules
+  check's job carries the two steps; in history-of-science the job runs as before, because its Rules check does
+  not carry them. The name in that `if` must change when the checks move to `studio`. The same file goes to
+  history-of-science in its own pull request (named in this one); until that merges, the two repos' copies differ
+  and nothing fails, because each repo checks its own lock.
 - Why not two path lists: in this week 104 of the 119 merged pull requests on the rules paths also changed other
   code, so they would still have started both workflows.
 
