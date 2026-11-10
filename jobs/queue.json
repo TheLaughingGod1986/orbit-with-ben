@@ -216490,13 +216490,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T14:16Z",
-      "eta": "2026-11-10T16:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:13Z",
-      "result": "",
+      "result": "PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3). (1) owb_sa_s7_pluto_heart_v02.mp4 (Sat 14 Nov): KEEP — moving 9:16 open (f0diff=4.48, motion=18.77), NO CRATERS on f0, 0.15s VO join at 2.62-2.77s clean across 3 listens (no click/jump/breath), all text clean, smooth loop at 0:16.39-0:17.60. (2) mon16_cant_see_nearest_star_v05.mp4 (Mon 16 Nov): FIX — end card clean of c5AdqQsnnys, audio clean (-14.2 LUFS / -2.2 dBTP), but 0:20.23-0:22.63 (s06) repeats the 0:00-0:02.40 opening Paranal shot right before the static end card (and locked VO surprise 'You can't see it' is at 0:04.28). (3) wed18_robot_reach_nearest_star_v06.mp4 (Wed 18 Nov): FIX — end card clean of c5AdqQsnnys, audio clean, but 0:13.45-0:16.55 (3.10s, s05 ESO star trails) is a 100% frozen still frame (0.002/fr diff, zero zoom/pan) and f0 motion warns (9.0 < 10). Ben should watch Card 3 (Pluto v02) and skip Cards 1 & 2 (Mon 16 v05, Wed 18 v06) pending Chief decision.",
       "history": [
         {
           "at": "2026-11-10T14:13Z",
@@ -216527,6 +216527,11 @@
           "at": "2026-11-10T14:40Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Opened PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3): Pluto v02 KEEP, Mon16 v05 FIX (repeated shot at 0:20.23-0:22.63), Wed18 v06 FIX (3.10s frozen still at 0:13.45-0:16.55 + motion 9.0<10 warn)"
+        },
+        {
+          "at": "2026-11-10T14:40Z",
+          "by": "gemini",
+          "what": "done: PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3). (1) owb_sa_s7_pluto_heart_v02.mp4 (Sat 14 Nov): KEEP — moving 9:16 open (f0diff=4.48, motion=18.77), NO CRATERS on f0, 0.15s VO join at 2.62-2.77s clean across 3 listens (no click/jump/breath), all text clean, smooth loop at 0:16.39-0:17.60. (2) mon16_cant_see_nearest_star_v05.mp4 (Mon 16 Nov): FIX — end card clean of c5AdqQsnnys, audio clean (-14.2 LUFS / -2.2 dBTP), but 0:20.23-0:22.63 (s06) repeats the 0:00-0:02.40 opening Paranal shot right before the static end card (and locked VO surprise 'You can't see it' is at 0:04.28). (3) wed18_robot_reach_nearest_star_v06.mp4 (Wed 18 Nov): FIX — end card clean of c5AdqQsnnys, audio clean, but 0:13.45-0:16.55 (3.10s, s05 ESO star trails) is a 100% frozen still frame (0.002/fr diff, zero zoom/pan) and f0 motion warns (9.0 < 10). Ben should watch Card 3 (Pluto v02) and skip Cards 1 & 2 (Mon 16 v05, Wed 18 v06) pending Chief decision."
         }
       ],
       "remaining_action": "Close J2508 and post KEEP/FIX findings on #99",
