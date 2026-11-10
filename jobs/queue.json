@@ -218169,16 +218169,21 @@
           "at": "2026-11-10T19:26Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-10T19:33Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Check references to 004 .env and prepare .env.example / gitignore",
+      "remaining_action": "Create 004 .env.example, untrack .env on branch macbook/J2534, and verify .gitignore and check_all.sh",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Tidy one settings file that should not be in the History of Science repo (it holds no key)",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T19:26Z",
+        "at": "2026-11-10T19:33Z",
         "by": "macbook"
       }
     }
