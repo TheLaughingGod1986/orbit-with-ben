@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2481 | mini | blocked | gemini | – | 009 picture · assembly · HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief |  |
 | J2482 | mini | open | – | – | Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing) |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
-| J2484 | mini | open | – | – | 023 thumbs · thumb · 023 Venus VBaYRPp85Sw: build thumbnail Test & Compare B '465°C' (Venus surface + glowing lander, J1198 draw branch) |  |
+| J2484 | mini | claimed | macbook-2 | 2026-11-10T07:24Z | 023 thumbs · thumb · 023 Venus VBaYRPp85Sw: build thumbnail Test & Compare B '465°C' (Venus surface + glowing lander, J1198 draw branch) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 
 Recently finished:
