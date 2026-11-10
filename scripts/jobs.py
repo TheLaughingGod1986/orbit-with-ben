@@ -120,9 +120,10 @@ def london_hm(stamp: str) -> str:
 
 
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
-           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
+           stage: str = "", after: str = "", repo: str = "", eta_min: int = DEFAULT_ETA, for_agent: str = "",
            kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "", action: str = "", requires=None) -> dict:
     requirements = workflow.capability_names(requires)
+    repo = repo or channels.home()
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if needs == "ben" and not ben_gate(title + " " + body):
@@ -223,10 +224,10 @@ PUBLISH_HARD = re.compile(
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
 # YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
-# MACBOOK_CDP = the CDP ports whose browser is up: 9223 Orbit Studio, 9222 HOS (the Mini's ports, same profiles).
+# MACBOOK_CDP = the CDP ports whose browser is up (the Mini's ports, same profiles). Each channel names its own port
+# in studio/channel.json (youtube.studio_port).
 # With the channel's port up, a Studio job (end screens, pinned comments, titles, tests, playlists, checklists) is
 # portable. Uploads, Buffer, Flow picture-making, renders and local media stay Mini-only.
-STUDIO_PORT = {"owb": "9223", "hos": "9222"}
 STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned comment\b|\bplaylists?\b|"
                          r"\bTest (?:&|and) Compare\b|\btitle(?:-only)? test\b|\bRelated(?: video)?\b|\bcaptions?\b", re.I)
 STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
@@ -243,7 +244,7 @@ def macbook_studio_ok(job: dict, text: str) -> bool:
     if job.get("mini_only"):   # the Chief pinned it to the Mini (`jobs.py add --mini-only`), e.g. a change that can't be undone
         return False
     ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
-    port = STUDIO_PORT.get(job.get("repo") or channels.home())
+    port = channels.studio_port(channels.of_job(job))
     if not port or port not in ports:
         return False
     if job.get("kind") not in ("studio", "", None, "listing", "review") and not STUDIO_WORK.search(str(job.get("title") or "")):
@@ -253,10 +254,19 @@ def macbook_studio_ok(job: dict, text: str) -> bool:
 # Shared working-film store on the NAS (both Mini and MacBook mount /Volumes/data). Mini local originals under
 # ~/YouTube stay put; MacBook local checkouts are not this store.
 STUDIO_LIVE_ROOT = pathlib.Path("/Volumes/data/studio-live")
-STUDIO_LIVE_PROJECTS = {
-    "owb": STUDIO_LIVE_ROOT / "orbit-with-ben" / "02_Video-Projects",
-    "hos": STUDIO_LIVE_ROOT / "History Of Science" / "02_Video-Projects",
-}
+
+
+def studio_live_projects(slug: str) -> pathlib.Path:
+    """The channel's working-films folder on the NAS: studio-live/<its nas_folder>/02_Video-Projects."""
+    return STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects"
+
+
+def keys_example() -> str:
+    """Two example video ids built from the registered labels, for help and error text."""
+    labels = channels.labels()
+    return f"{labels[-1]}:006 or {labels[0]}:028,{labels[0]}:029"
+
+
 # Absolute paths the job already names: studio-live / home mounts, or any absolute media file path.
 ABS_MEDIA_PATH = re.compile(
     r"(?<![\w:])(/(?:Volumes|Users)/[^\s\"'`,;]+|/[^\s\"'`,;]{1,240}\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b)",
@@ -318,7 +328,7 @@ def film_folder_under(root: pathlib.Path, film: str) -> pathlib.Path | None:
 def media_reachable(job: dict) -> bool:
     """True when this machine can see the job's working film media on studio-live or a path the job already names."""
     slug = channels.of_job(job)
-    live_root = STUDIO_LIVE_PROJECTS.get(slug) or STUDIO_LIVE_PROJECTS["owb"]
+    live_root = studio_live_projects(slug)
     film = job_film_number(job)
     if film_folder_under(live_root, film) is not None:
         return True
@@ -867,7 +877,7 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
     if films is not None:
         keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
         if not keys or any(not channels.strict_key_re().fullmatch(x) for x in keys):
-            raise ValueError("--films needs channel-qualified video ids, e.g. HOS:006 or OWB:028,OWB:029")
+            raise ValueError("--films needs channel-qualified video ids, e.g. " + keys_example())
         job["taskKeys"] = keys
     if action is not None:
         job["remaining_action"] = action.strip()
@@ -1230,7 +1240,7 @@ def main(argv=None) -> int:
             p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
             p.add_argument("--action", default=None, help="plain-English action still unfinished; update when the remaining work changes")
-            p.add_argument("--films", default=None, help="video(s) this job advances, e.g. HOS:006 or OWB:028,OWB:029")
+            p.add_argument("--films", default=None, help="video(s) this job advances, e.g. " + keys_example())
         if name == "stuck":
             p.add_argument("--runs", type=int, required=True, help="runs in a row that hit the time cap (relay only)")
         if name == "reroute":
@@ -1240,18 +1250,18 @@ def main(argv=None) -> int:
     aw.add_argument("id")
     aw.add_argument("--agent", default="")
     aw.add_argument("--what", default="", help="what Ben is OKing, in plain words, e.g. 'swap the 027 Short to v05'")
-    aw.add_argument("--file", default="", help="the cut to play: iCloud path from CloudDocs ('OWB UAT/...mp4'), or absolute")
+    aw.add_argument("--file", default="", help="the cut to play: iCloud path from CloudDocs ('<LABEL> UAT/...mp4'), or absolute")
     aw.add_argument("--version", default="", help="the cut's version, e.g. v05 (Ben's tick is matched on it)")
     aw.add_argument("--due", default="", help='"YYYY-MM-DD HH:MM" London: Ben\'s OK is needed by then')
     aw.add_argument("--airs", default="", help='"YYYY-MM-DD HH:MM" London: when it airs, if scheduled')
     aw.add_argument("--if-not", dest="if_not", default="", help="what happens with no OK by the deadline")
-    aw.add_argument("--card", default="", help="an existing board card to move, e.g. HOS:007 (longs); else a new card")
+    aw.add_argument("--card", default="", help=f"an existing board card to move, e.g. {channels.labels()[-1]}:007 (longs); else a new card")
     aw.add_argument("--title", default="", help="card title (new cards)")
     aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
     aw.add_argument("--prev", action="append", default=[], help="a re-sent cut: the board check id of Ben's earlier change "
-                    "tick it answers, e.g. OWB-J2395.3 (repeatable); his old notes show under the new cut")
+                    f"tick it answers, e.g. {channels.labels()[0]}-J2395.3 (repeatable); his old notes show under the new cut")
     aw.add_argument("--fixed", action="append", default=[], help="a re-sent cut: one line on what was changed (repeatable)")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "

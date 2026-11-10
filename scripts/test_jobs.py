@@ -406,9 +406,6 @@ class MiniOnlyPin(unittest.TestCase):
             self.assertFalse(jobs.macbook_portable(pinned))
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 class OnlyBensCalls(unittest.TestCase):
     """Ben, 5 Nov 2026: "Nothing should need me apart from watching the video." J1755 had parked a private watch-copy
@@ -536,13 +533,28 @@ class MacBookTakesTextJobs(unittest.TestCase):
             (owb / name).mkdir(parents=True)
         for name in hos_films:
             (hos / name).mkdir(parents=True)
-        return {"owb": owb, "hos": hos}
+        return pathlib.Path(tmp)
+
+    def test_each_channels_nas_folder_and_studio_port_come_from_its_settings(self):
+        import channels
+        for slug in channels.slugs():
+            self.assertEqual(jobs.studio_live_projects(slug),
+                             jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
+            self.assertTrue(channels.studio_port(slug).isdigit(), slug)
+        ports = [channels.studio_port(s) for s in channels.slugs()]
+        self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
+        self.assertRegex(jobs.keys_example(), r"^[A-Z]+:006 or [A-Z]+:028,[A-Z]+:029$")
+
+    def test_a_job_added_with_no_channel_goes_to_the_home_channel(self):
+        import channels
+        d = queue(("mini", "tidy the cache", {}))
+        self.assertEqual(d["jobs"][0]["repo"], channels.home())
 
     def test_harvest_assembly_watch_allowed_when_studio_live_media_exists(self):
         # Ben, 7 Nov 2026: MacBook takes shared-media jobs when /Volumes/data/studio-live has the film.
         with tempfile.TemporaryDirectory() as tmp:
             roots = self._studio_live(tmp, owb_films=("032_Titan",), hos_films=("008_Lightning-Franklin",))
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", roots):
                 cases = [
                     ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"},
                      "Write pool JSON under the studio-live 032 folder; ffmpeg ok."),
@@ -561,9 +573,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
                     self.assertTrue(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"), title)
 
     def test_harvest_assembly_watch_stay_mini_when_media_absent(self):
-        missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
-                   "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
-        with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+        with patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path("/no/such/studio-live")):
             for title, kw in (
                 ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
                 ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"}),
@@ -576,7 +586,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
     def test_studio_buffer_playlist_package_stay_mini_hard_even_with_studio_live(self):
         with tempfile.TemporaryDirectory() as tmp:
             roots = self._studio_live(tmp, owb_films=("032_Titan",))
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", roots):
                 cases = [
                     ("032 Studio finish before air", {"kind": "review", "film": "032", "stage": "upload"},
                      "Open YouTube Studio and set the end screen plus Related video."),
@@ -596,9 +606,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             cut = pathlib.Path(tmp) / "032_Titan_v01.mp4"
             cut.write_bytes(b"x")
-            missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
-                       "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path("/no/such/studio-live")):
                 d = queue(("mini", "Watch and listen review of the master",
                            {"kind": "review", "film": "032", "stage": "edit"}))
                 d["jobs"][0]["body"] = f"Full watch and listen of {cut} before Ben's card."
@@ -614,3 +622,6 @@ class MacBookTakesTextJobs(unittest.TestCase):
             "Do not change Buffer or playlists. Text review only.")
         self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
         self.assertFalse(jobs.mini_only_hit(d["jobs"][0]["title"] + " " + d["jobs"][0]["body"]))
+
+if __name__ == "__main__":
+    unittest.main()
