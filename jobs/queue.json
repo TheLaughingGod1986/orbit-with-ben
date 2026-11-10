@@ -218837,9 +218837,14 @@
           "at": "2026-11-10T22:07Z",
           "by": "relay",
           "what": "condition verification queued: J2544"
+        },
+        {
+          "at": "2026-11-10T22:16Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-11T04:15:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief review of PR #774 and threshold/re-cut decisions",
+      "remaining_action": "Parked for Chief review of PR #774 (2bc420e12) and threshold/re-cut decisions",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
@@ -218852,10 +218857,9 @@
         "note": "PR #774 (2bc420e12) opened with jobs/reviews/J2540/REPORT.md, FRAME0_FULL_BLEED_TABLE.md, and J2540_results.json coverin"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-10T23:07:15+00:00",
-        "recheck_task": "J2544"
+        "type": "input",
+        "condition": "Elected-Chief review of PR #774 (2bc420e12) and threshold/re-cut decisions; J2539 predecessor and J2540 36-Short gate table are complete",
+        "check_at": "2026-11-11T04:15:00Z"
       }
     },
     {
