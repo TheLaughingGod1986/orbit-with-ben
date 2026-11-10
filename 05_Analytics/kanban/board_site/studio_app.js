@@ -1459,12 +1459,78 @@
       <div class="overview-home"><header class="overview-header"><div><h1>First day</h1><p>How each video started in its first hours, the last two weeks. Read from YouTube Studio 6 hours after going live; a long again at 2 days.</p></div></header>
       <div class="ov-stack">${rows.map(r => firstDayCard(r, b)).join("") || empty("No video has been checked yet.")}</div></div>`;
   }
+  // Channels (Ben, 10 Nov 2026: "is there a small part on the dashboard we can show what repos are plugged in ...
+  // and the ability that we can just add another repo if we want, for example a brand new channel"). The facts come
+  // from board.channels (scripts/channel_cards.py: each channel's own settings and the answer of channel_check.py).
+  // Films in production and the last video live are counted here, from the same list as the Producing number.
+  // The page changes nothing: creating a repo, the YouTube sign-in and the voice are Ben's.
+  // Green: the studio is running it. Amber: it passes the check but has no repo yet, so it is still being set up.
+  // Red: the check says the studio cannot run it. What is left to tidy is on the card, not in the light: it is the
+  // studio's housekeeping, not something wrong with the channel (and not something for Ben to do).
+  function channelLight(c) {
+    if (c.ready === false) return ["red", "not ready"];
+    if (c.ready === true) return c.repo === "" ? ["amber", "being set up"] : ["green", "running"];
+    return ["", c.here === false ? "not checked here" : "plugged in"];
+  }
+  function channelFacts(b, c) {
+    const vs = uniqueVideos((((b || {}).tracker || {}).videos) || []).filter(v => v.channel === c.label);
+    const live = vs.filter(v => (v.youtube || {}).state === "live" && Date.parse((v.youtube || {}).publishAt || ""))
+      .sort((x, y) => Date.parse(y.youtube.publishAt) - Date.parse(x.youtube.publishAt))[0];
+    return { producing: producingVideos(vs).length, live };
+  }
+  const ADD_CHANNEL_STEPS = [
+    ["You", "Tell Claude the channel's name and what it is about."],
+    ["Claude", "Makes the channel's folder from the template and fills in its settings."],
+    ["You", "Create its GitHub repo, sign in to its YouTube Studio on the Mini, and choose its voice."],
+    ["Claude", "Checks that the studio can run it, then plugs it in. It then shows on this page."],
+    ["Claude", "Writes the channel's own rules with you before its first script."]];
+  const channelsOf = b => ((b || {}).channels || []).length ? b.channels : channelList();
+  function channelsSection(b) {
+    const list = channelsOf(b);
+    if (!list.length) return "";
+    return `<section class="overview-channels" aria-label="Channels"><div class="ov-section-head"><h2>Channels</h2><a class="more" href="#channels">Details, and adding one ›</a></div>
+      <div class="ch-chips">${list.map(c => { const [tone, text] = channelLight(c);
+        return `<a class="ch-chip" href="#channels"><b>${esc(c.name)}</b><span class="tag ${tone}">${esc(text)}</span></a>`; }).join("")}</div></section>`;
+  }
+  function channelCard(b, c) {
+    const [tone, text] = channelLight(c), f = channelFacts(b, c);
+    const row = (k, v) => v ? `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>` : "";
+    const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    const handle = /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
+    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "It has no GitHub repo yet." : "");
+    const lead = c.ready === true ? "The studio can run this channel." : c.ready === false ? "The studio cannot run this channel yet."
+      : c.here === false ? "The machine that publishes this board does not hold this channel's files, so it was not checked." : "";
+    const rules = c.rules === true ? "Its own rules, on top of the studio's." : c.rules === false ? "The studio's rules only. Its own rules file is still to write." : "";
+    const live = f.live ? `${esc(f.live.title || "")} <span class="ch-when">${esc(londonWhen(f.live.youtube.publishAt))}</span>` : "";
+    const must = c.must || [], todo = c.todo || [];
+    return `<article class="ov-card ch-card"><header class="ch-head"><h2>${esc(c.name)}</h2><span class="tag ${tone}">${esc(text)}</span></header>
+      ${lead ? `<p class="ch-lead">${esc(lead)}</p>` : ""}
+      <dl class="job-facts ch-facts">${row("On YouTube", handle)}${row("Its files", repo)}${row("In production", `${f.producing} film${f.producing === 1 ? "" : "s"} now`)}${
+        row("Workload", Number.isFinite(c.wip) ? `Up to ${esc(c.wip)} films in work at a time` : "")}${row("Last live", live)}${row("Rules", esc(rules))}</dl>
+      ${must.length ? `<h3>What stops the studio running it</h3>${list(must)}` : ""}
+      ${todo.length ? `<details class="technical" data-disclosure="channel-${esc(c.slug)}-todo"><summary>Housekeeping left · ${todo.length}</summary><div class="technical-body">${list(todo)}</div></details>` : ""}</article>`;
+  }
+  function channelsPage(b) {
+    const list = channelsOf(b), room = (b || {}).channelRoom;
+    const left = room && Number.isFinite(room.left) ? room.left : null;
+    const roomLine = left === null ? "" : left > 0
+      ? `Not yet. ${left} places in the studio's own code still assume the channels we have today${Number.isFinite(room.from) && room.from > left ? ` (down from ${room.from})` : ""}. That work is under way; a new channel's folder can be made ready in the meantime.`
+      : "Yes. The studio's own code no longer assumes which channels it runs.";
+    return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
+      <div class="overview-home"><header class="overview-header"><div><h1>Channels</h1><p>Each channel is its own set of films and rules. The studio does the work for every channel plugged in here.</p></div></header>
+      <div class="ov-stack">${list.map(c => channelCard(b, c)).join("") || empty("No channel is plugged in.")}
+        <article class="ov-card ch-card ch-add"><header class="ch-head"><h2>Add a channel</h2></header>
+          <p class="ch-lead">Nothing on this page changes anything. Adding a channel starts with a message to Claude.</p>
+          <ol class="ch-steps">${ADD_CHANNEL_STEPS.map(([who, what]) => `<li><b>${esc(who)}</b> ${esc(what)}</li>`).join("")}</ol>
+          <p class="ch-note">A new channel starts small: two films in work at most, and its pictures are made only with credits already paid for.</p>
+          ${roomLine ? `<h3>Is the studio ready for another one?</h3><p>${esc(roomLine)}</p>` : ""}</article></div></div>`;
+  }
   // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
   // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
   // First day sits under Needs attention (10 Nov): it is the one card about how the videos themselves are doing.
   function overview(b, now) {
     const s=overviewModel(b,now);
-    return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
+    return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${needsAttentionBanner(b)}
       ${firstDaySection(b,now)}
@@ -1472,7 +1538,8 @@
       ${activityCard(b,now)}
       ${workingOnNow(b)}
       ${last24Section(b)}
-      ${p24Totals(b)}</div>`;
+      ${p24Totals(b)}
+      ${channelsSection(b)}</div>`;
   }
 
   // Nine exclusive Videos swim lanes (Ben, 7 Nov 2026). Only UAT needs Ben; UAT OK → Passed, notes → In progress.
@@ -1907,7 +1974,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;

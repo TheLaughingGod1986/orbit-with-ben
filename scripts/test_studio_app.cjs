@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, firstDayCard, firstDaySection, firstDayPage, firstDayNext, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1326,6 +1326,62 @@ console.log('Jobs running count checks OK');
     'the video page shows its own check, open, without a link to itself');
   assert(!t.detail({tracker: {videos: fb.tracker.videos}}, 'OWB:032:S:x').includes('aria-label="First day"'), 'a video with no check has no block');
   console.log('First day panel OK');
+}
+
+// Channels (Ben, 10 Nov 2026: "is there a small part on the dashboard we can show what repos are plugged in ... and
+// the ability that we can just add another repo"). Facts from board.channels (scripts/channel_cards.py).
+{
+  const ch = (o) => Object.assign({slug: 'owb', label: 'OWB', name: 'Orbit With Ben', short: 'Orbit', home: true, handle: '@OrbitWithBen',
+    repo: 'someone/orbit-with-ben', wip: 5, here: true, ready: true, must: [], todo: [], rules: true}, o);
+  const sky = ch({slug: 'night-sky', label: 'SKY', name: 'Night <b>Sky</b>', short: 'Sky', home: false, handle: '@NightSky', repo: '', wip: 2,
+    todo: ['repo.url is empty: put the GitHub address in once the repo exists', 'studio/RULES.md: <i>its own rules</i>'], rules: false});
+  const broken = ch({slug: 'deep', label: 'SEA', name: 'Deep Sea', short: 'Sea', home: false, handle: 'javascript:alert(1)', repo: 'not a repo',
+    ready: false, must: ['studio/channel.json: picture_route must be one of flow_only, flow_first'], rules: null});
+  const away = ch({slug: 'far', label: 'FAR', name: 'Far Away', short: 'Far', home: false, here: false, ready: null, rules: null, wip: null});
+  const cb = {channels: [ch({todo: ['one thing']}), sky, broken, away], channelRoom: {left: 302, from: 367},
+    tracker: {videos: [v({key: 'OWB:031', channel: 'OWB', lane: 'progress'}), v({key: 'OWB:032', channel: 'OWB', lane: 'progress'}),
+      v({key: 'OWB:020', channel: 'OWB', lane: 'done', title: 'Older film', youtube: {state: 'live', privacy: 'public', videoId: 'o', publishAt: '2026-10-01T18:00:00Z'}}),
+      v({key: 'OWB:025', channel: 'OWB', lane: 'done', title: 'Newest film', youtube: {state: 'live', privacy: 'public', videoId: 'n', publishAt: '2026-10-25T18:00:00Z'}}),
+      v({key: 'SKY:001', channel: 'SKY', lane: 'progress', title: 'Orion'})]}};
+  assert.deepEqual([...t.channelLight(ch({}))], ['green', 'running']);
+  assert.deepEqual([...t.channelLight(ch({todo: ['a']}))], ['green', 'running'], 'housekeeping left is not a fault in the channel');
+  assert.deepEqual([...t.channelLight(sky)], ['amber', 'being set up'], 'a channel with no repo yet is still being set up');
+  assert.deepEqual([...t.channelLight(broken)], ['red', 'not ready']);
+  assert.deepEqual([...t.channelLight(away)], ['', 'not checked here']);
+  assert.deepEqual([...t.channelLight({slug: 'old', label: 'OLD', name: 'Old'})], ['', 'plugged in'], 'an older board.json carries only the names');
+
+  const home = t.overview(cb, NOW);
+  assert(home.includes('aria-label="Channels"') && home.includes('href="#channels"'), 'the Overview has a Channels section that opens the page');
+  assert(home.indexOf('aria-label="Channels"') > home.indexOf('aria-label="Machines"'), 'it sits at the foot, under the work');
+  assert(home.includes('<b>Orbit With Ben</b><span class="tag green">running</span>') && home.includes('<span class="tag red">not ready</span>'), 'one chip per channel with its light');
+  assert(home.includes('Night &lt;b&gt;Sky&lt;/b&gt;') && !home.includes('Night <b>Sky</b>'), 'a channel name is escaped');
+  assert(t.overview({tracker: {videos: []}}, NOW).includes('aria-label="Channels"'), 'a board with no channels field still names the channels it knows');
+
+  const page = t.channelsPage(cb);
+  assert(page.includes('<h1>Channels</h1>') && page.includes('href="#overview"'), 'the page has a title and a way back');
+  assert.equal((page.match(/class="ov-card ch-card"/g) || []).length, 4, 'one card per channel');
+  assert(page.includes('The studio can run this channel.') && page.includes('The studio cannot run this channel yet.'), 'each card says whether the studio can run it');
+  assert(page.includes('does not hold this channel&#39;s files, so it was not checked'), 'a channel that is not on the publishing machine says so, without a fault');
+  assert(page.includes('<a href="https://www.youtube.com/@OrbitWithBen" target="_blank" rel="noopener">@OrbitWithBen</a>'), 'a real handle links to YouTube');
+  assert(!page.includes('href="https://www.youtube.com/javascript') && page.includes('javascript:alert(1)') && !page.includes('href="javascript'), 'anything else is shown as text, never as a link');
+  assert(page.includes('<a href="https://github.com/someone/orbit-with-ben"') && !page.includes('github.com/not a repo'), 'only an owner/name repo is linked');
+  assert(page.includes('It has no GitHub repo yet.'), 'a channel with no repo yet says so');
+  const own = t.channelCard(cb, cb.channels[0]);
+  assert(own.includes('2 films now') && own.includes('<dt>Workload</dt><dd>Up to 5 films in work at a time</dd>'), 'films in production come from the same list as the Producing number');
+  assert(own.includes('Newest film') && !own.includes('Older film'), 'the last video live is the newest public one');
+  assert(t.channelCard(cb, sky).includes('1 film now') && !t.channelCard(cb, sky).includes('Last live'), 'a channel with nothing live has no last-live row');
+  assert.equal(t.channelFacts(cb, away).producing, 0);
+  assert(page.includes('What stops the studio running it') && page.includes('picture_route must be one of'), 'what stops a channel is in the open');
+  assert(page.includes('data-disclosure="channel-night-sky-todo"') && page.includes('Housekeeping left · 2') && page.includes('&lt;i&gt;its own rules&lt;/i&gt;'), 'what is left is listed, closed, and escaped');
+  assert(page.includes('Its own rules, on top of the studio&#39;s.') && page.includes('Its own rules file is still to write.'), 'whether it has its own rules');
+  assert(page.includes('<h2>Add a channel</h2>') && (page.match(/<li><b>(You|Claude)<\/b>/g) || []).length === 5, 'the steps to add one, each marked with who does it');
+  assert(page.includes('Create its GitHub repo, sign in to its YouTube Studio') && page.includes('Nothing on this page changes anything'), 'creating the repo and the sign-in are Ben\'s; the page writes nothing');
+  assert(!/<button|<form|<input/.test(page), 'no control on the page can change anything');
+  assert(page.includes('Not yet. 302 places') && page.includes('(down from 367)'), 'it says how far the studio is from running another channel');
+  assert(t.channelsPage(Object.assign({}, cb, {channelRoom: {left: 0, from: 367}})).includes('Yes. The studio&#39;s own code no longer assumes'), 'and when it is ready');
+  assert(!t.channelsPage({channels: cb.channels}).includes('Is the studio ready for another one?'), 'no figure, no claim');
+  assert(t.channelsPage({}).includes('<h1>Channels</h1>'), 'the page renders with no channels field at all');
+  console.log('Channels section OK');
 }
 
 // Ben, 10 Nov 2026: "when I click into the job, it's completely jargon ... I just want to see what it's doing".
