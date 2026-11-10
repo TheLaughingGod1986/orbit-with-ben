@@ -1,5 +1,5 @@
 {
-  "next_id": 2497,
+  "next_id": 2498,
   "jobs": [
     {
       "id": "J0001",
@@ -215687,6 +215687,37 @@
         "by": "gemini",
         "note": "Posted 5-line plain-English SSD check summary and full numbers for Ben on OWB thread #99"
       }
+    },
+    {
+      "id": "J2497",
+      "title": "026 and 027: set the search-led titles (the unstarted title tests are replaced, Ben's go-ahead 10 Nov), then re-arm each test with the new title as side A",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 10 Nov about 11:45Z, asked whether the title tests on 026 and 027 may be deleted so the search-led titles can go in: \"do what you think is best.\" Chief decision: yes. Both longs are scheduled and private, their tests have not started, so no result is lost. This is the job named by the second exception in AGENTS.md, Never, Studio. It covers these two video ids and nothing else.\n\nTitles to set, exactly:\n- 026 `c5AdqQsnnys` (airs Sun 15 Nov 18:00Z): How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n- 027 `6bbbvfCx6zY` (airs Sun 22 Nov 18:00Z): What If Earth Stopped Spinning? (It's Already Slowing Down)\n\nDo 026 first, then 027. Orbit Studio is CDP 9223; check the channel id on every page before any click.\n\nFor each video:\n1. Read and write down the test as it is set (026: T022, 027: T008, armed in J2430): every side's title and thumbnail, and its state. Save it to jobs/reviews/<this job id>/BEFORE_<film>.md. If the test shows any impressions, \"running\" or results, STOP on that video: the exception only covers a test that has not started.\n2. Check the thumbnail file for every side is on the Mini and its sha256 matches the J2430 record. If one is missing, STOP on that video before deleting anything.\n3. Click \"Edit title\" and confirm the dialog that says the A/B test and its other title options will be deleted. Set the title above. Save. Read back: the title, still Private, the same publishAt, description and end screen unchanged.\n4. Arm a new title-and-thumbnail Test & Compare with the same sides as before, except that side A's title is the new search-led title. Side A keeps the thumbnail it had. Side B (and C if there was one) keeps its own title and thumbnail. Read it back.\n5. If step 4 fails after step 3 worked, leave the new title in place, do not retry more than once, and say exactly what Studio showed. The search-led title airing with no test is acceptable; the old title with no test is not, so never put the old title back.\n\nThen record it the way J2471 did (read-backs under jobs/reviews/<this job id>/, the test ledger with the new test ids), open a PR, and park for Chief.\n\nNot in this job, and not covered by the exception: History of Science 007, the finished Atom test, Venus T011, and any other video. Do not change privacy, schedule, description, tags, cards or end screens. £0.\n",
+      "ref": "",
+      "film": "026",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T11:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T11:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "026 and 027: set the search-led titles (the unstarted title tests are replaced, Ben's go-ahead 10 Nov), then re-arm each test with the new title as side A",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "studio",
+      "plain": "Put the search-first titles on the Nearest Star and Earth Stopped Spinning films before they air, and set their tests up again",
+      "mini_only": true
     }
   ],
   "focus": [
