@@ -102,6 +102,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2464 | any | open | – | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
 | J2465 | any | open | – | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 | J2466 | any | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
+| J2467 | any | open | – | – | review · Verify condition for J1198 |  |
+| J2468 | any | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 
