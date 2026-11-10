@@ -70,6 +70,33 @@ class FullBleedUnit(unittest.TestCase):
             return picture(x, y)
         self.assertIsNone(g.full_bleed_frame(frame(captioned))["kind"])
 
+    def test_centred_caption_over_full_frame_picture_passes(self):
+        def centred_caption(x, y):
+            if BAND_Y0 <= y < BAND_Y1 and (y - BAND_Y0) % 14 < 8 and 14 <= x < W - 14:
+                return 255 if (x // 4) % 2 else 0
+            return picture(x, y)
+        self.assertIsNone(g.full_bleed_frame(frame(centred_caption))["kind"])
+
+    def test_black_bars_with_hook_caption_fail(self):
+        def bars_with_caption(x, y):
+            if BAND_Y0 <= y < BAND_Y1:
+                return picture(x, y)
+            if 14 <= y < 34 and 12 <= x < W - 12:
+                return 255 if (x // 5) % 2 else 0
+            return 0
+        m = g.full_bleed_frame(frame(bars_with_caption))
+        self.assertEqual(m["kind"], "bars", m)
+
+    def test_blur_pad_with_hook_caption_fails(self):
+        def pad_with_caption(x, y):
+            if BAND_Y0 <= y < BAND_Y1:
+                return picture(x, y)
+            if 14 <= y < 34 and 12 <= x < W - 12:
+                return 255 if (x // 5) % 2 else 0
+            return 100 + x // 4
+        m = g.full_bleed_frame(frame(pad_with_caption))
+        self.assertEqual(m["kind"], "blur-pad", m)
+
     def test_subject_on_black_space_passes(self):
         # a planet on black: flat top and bottom, detail in the centre, but no straight full-width seam
         def planet(x, y):

@@ -174,13 +174,14 @@ FRAME0_HOOK_MIN_DIMS = (540, 960)
 #     read the numbers J2540 tables for real exports before tightening.
 FB_W, FB_H = 108, 192
 FB_TIMES = (0.0, 0.25, 0.5)
-FB_SEAM_RANGE = (0.08, 0.42)   # upper seam row as a share of the height; the lower one mirrors it
+FB_SEAM_RANGE = (0.16, 0.42)   # upper seam row as a share of the height; the lower one mirrors it
 FB_SEAM_DIFF = 12              # grey levels across the seam (rows y-2 and y+1, so a 1-row soft edge still counts)
 FB_SEAM_COLS = 0.70
 FB_SEGS = 4                    # column segments for the row-detail jump
 FB_SEG_NEED = 3
 FB_SEAM_SYM_ROWS = 3          # the two seams sit within this many rows of the same distance from the centre
-FB_SOFT_RATIO = 0.35
+FB_SOFT_RATIO = 0.40
+FB_BLUR_MAX_DETAIL = 4.2       # blurred fill is low-pass filtered; above this the outer bands carry real picture
 FB_DETAIL_FLOOR = 1.5          # the sharp side must carry real detail, or the frame proves nothing (dark space)
 FB_FLAT_STD = 3.0
 FB_PICTURE_STD = 12.0
@@ -547,6 +548,15 @@ def _fb_avg(vals: list[float], y0: int, y1: int) -> float:
     return sum(v) / len(v) if v else 0.0
 
 
+def _fb_med(vals: list[float], y0: int, y1: int) -> float:
+    """Median over rows y0..y1 so a hook or subtitle caption inside an outer band does not mask bars or blur fill."""
+    v = sorted(vals[max(0, y0):max(0, y1)])
+    if not v:
+        return 0.0
+    m = len(v) // 2
+    return v[m] if len(v) % 2 else (v[m - 1] + v[m]) / 2
+
+
 def _fb_step_share(g: bytes, y: int) -> float:
     """Share of columns with a brightness step of FB_SEAM_DIFF or more between rows y-2 and y+1."""
     if y < 2 or y + 1 >= FB_H:
@@ -600,6 +610,7 @@ def full_bleed_frame(g: bytes) -> dict:
     'mirror'. The other keys are the numbers behind it, for the gate's report."""
     H = FB_H
     det, segs = _fb_row_stats(g)
+    rstd = [_fb_std(g, y, y + 1) for y in range(H)]
     fifth = H // 5
     c0, c1 = int(H * 0.38), int(H * 0.62)
     out: dict = {
@@ -627,14 +638,14 @@ def full_bleed_frame(g: bytes) -> dict:
             low_ok, low_share, low_ratio = _fb_seam(g, det, segs, low, False)
             if not low_ok:
                 continue
-            std_out = max(_fb_std(g, 0, u - 2), _fb_std(g, low + 2, H))
+            std_out = max(_fb_med(rstd, 0, u - 2), _fb_med(rstd, low + 2, H))
             std_pic = _fb_std(g, u + 1, low - 1)
-            det_out = max(_fb_avg(det, 0, u - 2), _fb_avg(det, low + 2, H))
+            det_out = max(_fb_med(det, 0, u - 2), _fb_med(det, low + 2, H))
             det_pic = _fb_avg(det, u + 1, low - 1)
             kind = None
             if std_out <= FB_FLAT_STD and std_pic >= FB_PICTURE_STD:
                 kind = "bars"
-            elif det_pic >= FB_DETAIL_FLOOR and det_out < FB_SOFT_RATIO * det_pic:
+            elif det_pic >= FB_DETAIL_FLOOR and det_out <= FB_BLUR_MAX_DETAIL and det_out < FB_SOFT_RATIO * det_pic:
                 kind = "blur-pad"
             if kind:
                 out.update(
