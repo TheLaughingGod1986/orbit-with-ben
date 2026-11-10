@@ -217576,13 +217576,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T17:49Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "parked for Chief: PR #754 is part of the job. These nine scripts 35 -> 19 lines (ratchet total 327 -> 311): board_check 11 -> 0, capability_probe 1 -> 0, sync_rules 1 -> 0, routing 4 -> 1. Not started: studio_reach 6 and sfx_kit 4 (need new fields in both channel files: youtube.id + a reach port, and a kit name), core_sync 2 (needs lock + push to the other repo), routing 1 (Studio port note), missed_runs 5 and cdp_tabs 1 (all the studio's own name, left per the brief). Channel tests 67 OK, board 84 OK, sync_rules and studio status checks OK. Needs a follow-up job for the remaining 19.",
+      "result": "PASS, acting Chief (Claude) 10 Nov: #754 carried to main in #758 (fc5294f2); it no longer merged after #753 and #757. board_check.py keeps main's thread line (scripts/thread.json). Names a channel: 300 -> 285 with J2523. What is left (studio_reach, sfx_kit, core_sync, routing) is J2533. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217598,9 +217598,14 @@
           "at": "2026-11-10T17:53Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #754 is part of the job. These nine scripts 35 -> 19 lines (ratchet total 327 -> 311): board_check 11 -> 0, capability_probe 1 -> 0, sync_rules 1 -> 0, routing 4 -> 1. Not started: studio_reach 6 and sfx_kit 4 (need new fields in both channel files: youtube.id + a reach port, and a kit name), core_sync 2 (needs lock + push to the other repo), routing 1 (Studio port note), missed_runs 5 and cdp_tabs 1 (all the studio's own name, left per the brief). Channel tests 67 OK, board 84 OK, sync_rules and studio status checks OK. Needs a follow-up job for the remaining 19."
+        },
+        {
+          "at": "2026-11-10T19:16Z",
+          "by": "claude",
+          "what": "done: PASS, acting Chief (Claude) 10 Nov: #754 carried to main in #758 (fc5294f2); it no longer merged after #753 and #757. board_check.py keeps main's thread line (scripts/thread.json). Names a channel: 300 -> 285 with J2523. What is left (studio_reach, sfx_kit, core_sync, routing) is J2533. GBP 0."
         }
       ],
-      "remaining_action": "Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0)",
+      "remaining_action": "",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Make nine small studio tools work for any channel, not only our two",
@@ -217624,13 +217629,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T17:54Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "parked for Chief: PR #756 open (branch macbook/J2523). Home ratchet: the eight scripts 13 -> 0, home_total 40 -> 27. Four loader functions added to channels.py (default, queue_key, studio_records, of_path); default() and queue_key() still return home() today, so the Chief should judge whether that counts. One behaviour change: music_gate compares against the film's own channel's beds and UAT (same as before for films in this repo). music_gate tests are skipped here (no numpy): run test_music_gate.py on the Mini. apply_yellow_white_v04_thumbs.py NOT archived: git mv needs approval here and STUDIO_PLAYBOOK.md plus one audit script still name it; its ceiling stays 3. Checks: test_channel*.py 72 OK, touched scripts' tests OK, sync_rules OK, studio status OK; full suite not run. GBP 0.",
+      "result": "PASS, acting Chief (Claude) 10 Nov: #756 carried to main in #758 (fc5294f2). default() and queue_key() count: each is one named line that moves with the studio. The music gate change is accepted (a film is compared with its own channel's films; nothing changes for films in this repo); test_music_gate.py passes where numpy is installed. Home count 40 -> 27. apply_yellow_white_v04_thumbs.py stays at 3 until it is archived with its two mentions. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217646,9 +217651,14 @@
           "at": "2026-11-10T17:57Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #756 open (branch macbook/J2523). Home ratchet: the eight scripts 13 -> 0, home_total 40 -> 27. Four loader functions added to channels.py (default, queue_key, studio_records, of_path); default() and queue_key() still return home() today, so the Chief should judge whether that counts. One behaviour change: music_gate compares against the film's own channel's beds and UAT (same as before for films in this repo). music_gate tests are skipped here (no numpy): run test_music_gate.py on the Mini. apply_yellow_white_v04_thumbs.py NOT archived: git mv needs approval here and STUDIO_PLAYBOOK.md plus one audit script still name it; its ceiling stays 3. Checks: test_channel*.py 72 OK, touched scripts' tests OK, sync_rules OK, studio status OK; full suite not run. GBP 0."
+        },
+        {
+          "at": "2026-11-10T19:16Z",
+          "by": "claude",
+          "what": "done: PASS, acting Chief (Claude) 10 Nov: #756 carried to main in #758 (fc5294f2). default() and queue_key() count: each is one named line that moves with the studio. The music gate change is accepted (a film is compared with its own channel's films; nothing changes for films in this repo); test_music_gate.py passes where numpy is installed. Home count 40 -> 27. apply_yellow_white_v04_thumbs.py stays at 3 until it is archived with its two mentions. GBP 0."
         }
       ],
-      "remaining_action": "Decoupling: eight scripts stop assuming the studio lives inside one channel's repo (13 lines to 0)",
+      "remaining_action": "",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Stop eight studio tools assuming the studio lives inside the Orbit folder",
