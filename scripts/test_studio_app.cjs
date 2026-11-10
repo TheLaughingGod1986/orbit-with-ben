@@ -1405,3 +1405,25 @@ console.log('Jobs running count checks OK');
   t.setBoard(null);
   console.log('Jobs in plain words OK');
 }
+
+// Ben, 10 Nov 2026: the old board page (/board) is retired. The Studio app now keeps the old /#k= key itself.
+{
+  const store = {}, replaced = [];
+  const ctx = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {},
+    location: {hash: '#k=AbCdEfGh_1234-xyz', pathname: '/', search: ''},
+    localStorage: {setItem: (k, v2) => { store[k] = v2; }, getItem: k => store[k] || null},
+    history: {replaceState: (a, b, url) => replaced.push(url)}};
+  vm.createContext(ctx);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', ctx);
+  assert.equal(store['studio-board-key'], 'AbCdEfGh_1234-xyz', 'the key from an old link is kept for the buttons');
+  assert.deepEqual(replaced, ['/'], 'and taken out of the address bar');
+  assert(!source.includes('location.replace("/board"'), 'nothing is handed to the retired page');
+  // A link without a key, or a private window with no storage, changes nothing and does not throw.
+  const plain = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {}, location: {hash: '#videos'}};
+  vm.createContext(plain);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', plain);
+  const noStore = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {}, location: {hash: '#k=AbCdEfGh_1234'}};
+  vm.createContext(noStore);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', noStore);
+  console.log('Old board key hand-off OK');
+}
