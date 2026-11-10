@@ -32,13 +32,15 @@ from pathlib import Path
 
 import numpy as np
 
+import channels
+
 SR = 8000
 BANDS = 24
 SIM_FAIL = 0.8
 GAP_DB, GAP_S = 15.0, 6.0  # "the music stopped": more than 15 dB under the bed's median level for over 6 s
 MAX_SECONDS = 300  # compare the first 5 minutes; a reused bed matches long before that
 REPO = Path(__file__).resolve().parent.parent
-UAT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT"
+UAT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs" / channels.get(channels.home())["uat_dir"]["icloud"]
 AUDIO = (".mp3", ".wav", ".m4a", ".aac", ".flac")
 
 
@@ -215,7 +217,7 @@ def main(argv=None) -> int:
     ap.add_argument("film_dir", type=Path)
     ap.add_argument("--bed", type=Path, required=True)
     ap.add_argument("--video", type=Path)
-    ap.add_argument("--others", type=Path, nargs="*", help="files or folders to compare against (default: other films + OWB UAT)")
+    ap.add_argument("--others", type=Path, nargs="*", help="files or folders to compare against (default: other films + the UAT folder)")
     ap.add_argument("--out", type=Path)
     a = ap.parse_args(argv)
     others = None

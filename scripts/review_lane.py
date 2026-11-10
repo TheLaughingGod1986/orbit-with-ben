@@ -23,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import jobs  # noqa: E402
+import channels  # noqa: E402
 import workflow_state as workflow  # noqa: E402
 
 CHIEF_ONLY = re.compile(
@@ -80,7 +81,7 @@ def apply(data: dict, at: dt.datetime, agent: str = "claude") -> list:
                             kind="review", by=agent, at=at, body=RUBRIC.format(parent=j["id"]) +
                             "\n\nWhat the worker asked the Chief: " + str(j.get("result") or "")[:1500],
                             film=(j.get("film") or "") if j.get("stage") else "",
-                            stage=(j.get("stage") or "") if j.get("film") else "", repo=j.get("repo") or "owb")
+                            stage=(j.get("stage") or "") if j.get("film") else "", repo=j.get("repo") or channels.home())
             r["review_of"] = j["id"]
             if j.get("urgent"):
                 r["urgent"] = j["urgent"]

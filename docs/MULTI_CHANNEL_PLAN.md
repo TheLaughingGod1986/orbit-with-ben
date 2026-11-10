@@ -4,7 +4,21 @@ Ben, 5 Nov 2026: "decouple the studio workflow system from the individual channe
 channels ... each channel can have a slightly different rule set, slightly different flow that can be stored in the
 actual channel repo itself." A third channel is coming once the current two run smoothly.
 
-Status: **draft for team review** (Codex for the code plan, Gemini for the risk). Nothing has moved yet.
+Status (10 Nov 2026): **phase 2 is done, phase 1 is part done, phases 3 and 4 are not started.**
+
+- Done: `scripts/channels.py` (the loader), `channels/channels.json` (the registry), and each channel's own
+  `studio/channel.json` in its repo, with a cached copy here for machines that lack that checkout.
+- Part done: engine scripts asking the loader instead of naming a channel. `scripts/test_channel_ratchet.py` counts
+  the code lines that still name one and holds a ceiling per script in `scripts/channel_ratchet.json`. A ceiling can
+  only go down, and a new script must have none. On 10 Nov: 337 lines in 22 scripts, after a first batch of 11
+  small scripts. The largest are `chief_relay.py`, `kanban_snapshot.py`, `approved_deliver.py`, `board_publish.py`
+  and `video_tracker.py`; each of those gets its own change, because they run the live studio.
+- Some of what the ratchet counts is the engine's own name rather than a channel (`owb_thread.py`, `com.owb.*`
+  launchd labels, `OWB_AGENT`). Those go with phase 3, when the engine moves out of this repo.
+- Not started: the engine in its own repo (phase 3) and the one-command new channel (phase 4). Neither starts
+  until the ratchet reads zero for channel logic and the studio has run a clean week on it.
+
+The plan below is as written on 5 Nov.
 
 ## Where we are
 

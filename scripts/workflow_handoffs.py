@@ -44,7 +44,7 @@ def findings(data, film_records, at, exclude=(), waiting=None):
         upload = stages.get('upload') or {}
         if isinstance(upload, dict) and upload.get('state') in ('done', 'skip'):
             continue
-        linked = [j for j in rows if j.get('film') == film and j.get('repo', 'owb') == 'owb' and j.get('status') in workflow.LIVE]
+        linked = [j for j in rows if j.get('film') == film and (j.get('repo') or channels.home()) == channels.home() and j.get('status') in workflow.LIVE]
         issues = []
         if record.get('record_error'):
             issues.append(('record', 'invalid-record'))

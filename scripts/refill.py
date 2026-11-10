@@ -29,6 +29,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import jobs  # noqa: E402
+import channels  # noqa: E402
 import studio  # noqa: E402
 
 BACKLOG = jobs.ROOT / "jobs" / "backlog.json"
@@ -78,7 +79,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
     def add(it):
         nonlocal have
         j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
-                        repo=it.get("repo", "owb"), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""), action=it.get("remaining_action") or it["title"][:180])
+                        repo=it.get("repo") or channels.home(), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""), action=it.get("remaining_action") or it["title"][:180])
         j["backlog"] = it["key"]
         last[it["key"]] = studio.iso(at)
         added.append(j["id"])

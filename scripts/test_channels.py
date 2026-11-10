@@ -120,6 +120,40 @@ class Films(unittest.TestCase):
         self.assertTrue(any(m.startswith("veo-") for _, m in owb))               # flow_first: Vertex behind Flow
         self.assertTrue(owb[0][1].startswith("flow-"))
 
+    def test_picture_route_takes_the_route_that_cannot_bill_when_channels_cannot_be_read(self):
+        """10 Nov 2026: the fallback used to name a channel ('flow_only' for hos, else 'flow_first'). Not knowing the
+        channel's route, a job must not be walked to priced Vertex."""
+        import routing
+        with mock.patch.object(channels, "slugs", side_effect=RuntimeError("channel file unreadable")):
+            for repo in ("owb", "hos", "third"):
+                self.assertEqual(routing._picture_route({"kind": "video", "repo": repo}), "flow_only")
+                chain = routing.job_chain({"kind": "video", "repo": repo})
+                self.assertTrue(chain and all(not m.startswith("veo-") for _, m in chain), repo)
+
+    def test_a_bare_film_number_goes_to_the_jobs_own_channel_first_then_the_others(self):
+        import progress24
+        titles = {"OWB:031": "x", "HOS:009": "y", "OWB:009": "z"}
+        self.assertEqual(progress24._bare_film_key("009", {"repo": "hos"}, titles), "HOS:009")
+        self.assertEqual(progress24._bare_film_key("009", {"repo": "owb"}, titles), "OWB:009")
+        self.assertEqual(progress24._bare_film_key("009", {}, titles), "OWB:009")                    # no repo: home first
+        self.assertEqual(progress24._bare_film_key("031", {"repo": "hos"}, titles), "OWB:031")       # only the other has it
+        self.assertEqual(progress24._bare_film_key("180", {"repo": "hos"}, titles), "")              # never invented
+        self.assertEqual(progress24._bare_film_key("009", {"repo": "hos"}, None), "")
+
+    def test_board_ticks_for_the_home_channel_are_read_by_its_label(self):
+        import stage_sync
+        oks = stage_sync.ben_oks({"OWB-024": {"verdict": "ok", "version": "v06", "at": "2026-10-22T09:17:55Z"},
+                                  "HOS-007": {"verdict": "ok", "version": "v03", "at": "2026-10-25T10:00:00Z"},
+                                  "OWB-025": {"verdict": "change", "at": "2026-10-23T10:00:00Z"}})
+        self.assertEqual(list(oks), ["024"])
+        self.assertIn("v06", oks["024"])
+
+    def test_the_repair_script_covers_every_channels_checkout(self):
+        import mini_repair
+        self.assertEqual([p.name for p in mini_repair.REPOS],
+                         [channels.repo_path(s, mini_repair.HOME).name for s in channels.slugs()])
+        self.assertEqual(len(mini_repair.REPOS), len(channels.slugs()))
+
 
 class ThirdChannelOnTheBoard(unittest.TestCase):
     def test_a_channel_added_by_folder_gets_video_cards(self):

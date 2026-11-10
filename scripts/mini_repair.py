@@ -40,8 +40,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import channels  # noqa: E402
 
 HOME = pathlib.Path.home()
-OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
-HOS = channels.repo_path("hos", HOME)
+# Every channel's shared checkout, in channel order (the registry decides which; a third channel is covered too).
+REPOS = tuple(channels.repo_path(s, HOME) for s in channels.slugs())
 TMP_ROOTS = ("/tmp/", "/private/tmp/")
 
 
@@ -223,7 +223,7 @@ def repair(apply: bool, repos=None, do_caches: bool = True, scan: bool = True) -
                 report["caches"].append(f"{name}: {'ok' if r.returncode == 0 else 'failed'} (+{free_mb() - before} MB)")
             else:
                 report["caches"].append(f"{name}: would run {' '.join(cmd)}")
-    repos = (OWB, HOS) if repos is None else repos  # [] = caches only (the weekly clean, Ben 9 Nov 2026)
+    repos = REPOS if repos is None else repos  # [] = caches only (the weekly clean, Ben 9 Nov 2026)
     for repo in repos:
         if not (repo / ".git").exists():
             continue

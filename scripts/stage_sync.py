@@ -23,6 +23,7 @@ import sys
 import urllib.request
 
 import studio
+import channels
 
 CHECKS_URL = "https://studio-kanban.vercel.app/api/checks"
 OPEN = ("todo", "doing", "review", "blocked")
@@ -50,11 +51,12 @@ def implied(stages: dict, ben_ok: str = "") -> dict:
 
 
 def ben_oks(checks: dict) -> dict:
-    """{"026": "Ben OK v06 (22 Oct)"} for OWB films Ben approved on the board."""
+    """{"026": "Ben OK v06 (22 Oct)"} for the home channel's films Ben approved on the board."""
     out = {}
+    prefix = channels.label(channels.home()) + "-"   # board ticks are keyed <LABEL>-<film>
     for key, c in (checks or {}).items():
-        if key.startswith("OWB-") and c.get("verdict") == "ok":
-            out[key[4:]] = f"Ben OK {c.get('version', '')} ({(c.get('at') or '')[:10]})".replace("  ", " ")
+        if key.startswith(prefix) and c.get("verdict") == "ok":
+            out[key[len(prefix):]] = f"Ben OK {c.get('version', '')} ({(c.get('at') or '')[:10]})".replace("  ", " ")
     return out
 
 

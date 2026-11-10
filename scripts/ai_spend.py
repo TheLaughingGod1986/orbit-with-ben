@@ -159,7 +159,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("spend", help="one use of credit")
     s.add_argument("--pool", choices=POOLS, required=True)
     s.add_argument("--amount", type=float, required=True)
-    s.add_argument("--film", default="", help="CHANNEL:NNN, e.g. HOS:006 or OWB:025")
+    s.add_argument("--film", default="", help="the film key: the channel's label, a colon, three digits (CHANNEL:NNN)")
     s.add_argument("--what", default="")
     s.add_argument("--by", required=True)
     s.add_argument("--git", action="store_true")
@@ -174,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         append({k: v for k, v in row.items() if v not in (None, "")}, a.git)
     elif a.cmd == "spend":
         if a.film and ":" not in a.film:
-            ap.error("--film is CHANNEL:NNN, e.g. HOS:006")
+            ap.error("--film is CHANNEL:NNN: the channel's label, a colon, three digits")
         append({"at": now(), "kind": "spend", "pool": a.pool, "amount": a.amount, "film": a.film, "what": a.what, "by": a.by}, a.git)
     elif a.cmd == "doc":
         print(json.dumps(build_doc(load()), ensure_ascii=False, indent=1))
