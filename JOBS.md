@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2486 | macbook | claimed | macbook-2 | 2026-11-10T08:04Z | review · Design review: the new Venus thumbnail B (465°C) before any test is armed |  |
-| J2487 | macbook | open | – | – | 023 thumbs · thumb · 023 Venus VBaYRPp85Sw: fix thumbnail B 465°C (no glowing lander, saturation 170-200, plate source recorded) per J2486 |  |
+| J2487 | macbook | claimed | macbook | 2026-11-10T08:18Z | 023 thumbs · thumb · 023 Venus VBaYRPp85Sw: fix thumbnail B 465°C (no glowing lander, saturation 170-200, plate source recorded) per J2486 |  |
 
 Recently finished:
 
