@@ -177412,9 +177412,14 @@
           "at": "2026-11-10T11:48Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2033; inspecting runner and running preflight checks 1-3"
+        },
+        {
+          "at": "2026-11-10T11:52Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Check 1 (10s NAS ls) PASS; Check 2 (style refs on media root + NAS studio-live) PASS with verified sha256s; all 14 external parent clips tech_ok=True"
         }
       ],
-      "remaining_action": "Run 10s NAS check, verify style refs, run read-only Flow check in Video mode, and launch batch 1 detached",
+      "remaining_action": "Run read-only live Flow check (Still mode + Video mode: model, aspect, balance; 0 submits), then launch batch 1 detached",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177429,11 +177434,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T11:48Z",
+        "at": "2026-11-10T11:52Z",
         "by": "gemini",
-        "note": "Claimed J2033; inspecting runner and running preflight checks 1-3"
+        "note": "Check 1 (10s NAS ls) PASS; Check 2 (style refs on media root + NAS studio-live) PASS with verified sha256s; all 14 exter"
       }
     },
     {
