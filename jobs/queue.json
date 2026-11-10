@@ -1,5 +1,5 @@
 {
-  "next_id": 2511,
+  "next_id": 2512,
   "jobs": [
     {
       "id": "J0001",
@@ -216675,6 +216675,37 @@
       "taskKeys": [
         "OWB:025"
       ]
+    },
+    {
+      "id": "J2511",
+      "title": "Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd the re-cut Pluto Short on the board at 14:47Z on 10 Nov (tick OWB-J2494.3, v02). The agent viewing (J2508, pull request 742) also says KEEP. Chief ruling 10 Nov 15:00Z: swap it in.\n\nOld video: `gmzaCfJF1gA` \"Why Does Pluto's Giant Ice Heart Have Zero Craters?\", Private, scheduled Sat 14 Nov 11:30 London.\nNew file: `owb_sa_s7_pluto_heart_v02.mp4`, sha256 `ab33a789dbb00411d5bb91cee362fa697a64072803ed9c2d7b422ede4fd8fdc2`, 17.6 s. Records: `jobs/reviews/J2494/REPORT.md`. Watch copy: `OWB UAT/026_shorts_first_second_recut_J2494/`.\n\n1. Read back the old id: privacy, publish time, title, description, tags, cover, Related video. It should be Private and scheduled for 14 Nov 11:30. If not, park for the Chief.\n2. Check the new file's sha256. Upload it as a NEW Private video with the same publish time. Copy the title, description, tags, cover and Related video from the old id. Captions en-GB from the v02 words (the \"Stay, and I'll show you\" sentence is gone).\n3. Only after step 2 reads back Private with the right publish time: set the old id to Private and unscheduled. Nothing is deleted. No Replace.\n4. Verify the swap (`verify-swap.ts`), update `00_Brand/Channel-Setup/social/UPLOADS.json` (new entry with `supersedes`, old entry `supersededBy` and `unscheduledAt`), the Buffer posts for that slot, and any queued job that names the old id.\n5. Post the read-back on the thread.\n\nDone by Thu 12 Nov 18:00 London. If it fails after that, leave the original scheduled and park for the Chief. Never Public, never delete, no force-push. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T15:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T15:01Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "listing",
+      "plain": "Put the Pluto Short you approved into its Saturday slot",
+      "mini_only": true
     }
   ],
   "focus": [

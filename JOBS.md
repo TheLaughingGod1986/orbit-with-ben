@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2507 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
 | J2510 | mini | claimed | gemini | 2026-11-10T16:52Z | 025 edit · assembly · Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card |  |
+| J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 
 Recently finished:
 
