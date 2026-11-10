@@ -214180,10 +214180,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-10T08:28Z",
-      "eta": "2026-11-10T10:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
       "result": "",
@@ -214222,6 +214222,11 @@
           "at": "2026-11-10T09:02Z",
           "by": "gemini",
           "what": "step 2 of 5 done: VO v02 recorded and vo_check PASS (18.60s); picture_qa, polish_gate, sfx_level, loop_metrics PASS on v01"
+        },
+        {
+          "at": "2026-11-10T09:14Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Gemini run failed (exit 3); next in its chain: claudecode"
         }
       ],
       "remaining_action": "Fix -14.6 LUFS audio mix to -14.0 LUFS for gate_shorts_open PASS, check music_gate, and park for review",
@@ -214233,7 +214238,16 @@
         "at": "2026-11-10T09:02Z",
         "by": "gemini",
         "note": "VO v02 recorded and vo_check PASS (18.60s); picture_qa, polish_gate, sfx_level, loop_metrics PASS on v01"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "gemini"
+      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2479",
