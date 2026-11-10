@@ -213398,13 +213398,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T03:47Z",
-      "eta": "2026-11-10T04:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "",
+      "result": "parked for Chief: 026 c5AdqQsnnys and 027 6bbbvfCx6zY NOT changed. Studio (Orbit With Ben, CDP 9223) has no in-place arm A edit. 'Edit title' shows: 'Editing your video title will delete your A/B test including your other title options. Do you want to continue?'. 'A/B testing' shows: 'Start a new experiment? This deletes your current experiment. Do you want to continue?'. Cancel pressed on both, both films; Continue never pressed. Read back 03:53Z: 026 arms 'The Nearest Star Is One You Can't See (And It Has a Planet)' / 'The Star Next Door Is Invisible (And It Will Outlive Our Sun)', private, 2026-11-15T18:00Z; 027 arms 'Earth Is Losing Its Spin (And the Moon Is Taking It)' / 'Earth's Day Used to Be 22 Hours (And It's Still Getting Longer)', private, 2026-11-22T18:00Z; panel says 'A/B testing titles, Ineligible'; line 1 unchanged on both (027 line 1 not set, per 'change nothing'). Thumbnails not re-read (panel shows titles only; nothing saved). THUMB_LEDGER untouched. Record: PR #708 (PR #698 was already merged). Chief decides: delete each test and set the search-led title, or delete and re-arm with the new arm A, or leave as is. 026 airs Sun 15 Nov.",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213480,6 +213480,11 @@
           "at": "2026-11-10T03:54Z",
           "by": "claudecode",
           "what": "step 4 of 4 done: Refusal recorded in PR #708; nothing changed on YouTube"
+        },
+        {
+          "at": "2026-11-10T03:54Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: 026 c5AdqQsnnys and 027 6bbbvfCx6zY NOT changed. Studio (Orbit With Ben, CDP 9223) has no in-place arm A edit. 'Edit title' shows: 'Editing your video title will delete your A/B test including your other title options. Do you want to continue?'. 'A/B testing' shows: 'Start a new experiment? This deletes your current experiment. Do you want to continue?'. Cancel pressed on both, both films; Continue never pressed. Read back 03:53Z: 026 arms 'The Nearest Star Is One You Can't See (And It Has a Planet)' / 'The Star Next Door Is Invisible (And It Will Outlive Our Sun)', private, 2026-11-15T18:00Z; 027 arms 'Earth Is Losing Its Spin (And the Moon Is Taking It)' / 'Earth's Day Used to Be 22 Hours (And It's Still Getting Longer)', private, 2026-11-22T18:00Z; panel says 'A/B testing titles, Ineligible'; line 1 unchanged on both (027 line 1 not set, per 'change nothing'). Thumbnails not re-read (panel shows titles only; nothing saved). THUMB_LEDGER untouched. Record: PR #708 (PR #698 was already merged). Chief decides: delete each test and set the search-led title, or delete and re-arm with the new arm A, or leave as is. 026 airs Sun 15 Nov."
         }
       ],
       "remaining_action": "Chief decides 026 and 027: Studio will only retitle by deleting the title test (026 airs Sun 15 Nov 18:00Z)",

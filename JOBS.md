@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2465 | mini | blocked | gemini | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 | J2466 | mini | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
 | J2470 | mini | blocked | claudecode | – | for claudecode · studio · `mini-claude-opus-5-5` · Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov) |  |
-| J2471 | mini | claimed | claudecode | 2026-11-10T04:47Z | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
+| J2471 | mini | blocked | claudecode | – | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
 | J2473 | mini | open | – | – | for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: two new HOS backlog films from J2411 (HOS PR #460) |  |
 | J2474 | any | open | – | – | assembly · Bring the Anesthesia voiceover records pull request up to date with main so it can merge (generated files only) |  |
 | J2475 | mini | open | – | – | 011 shots · script · HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row |  |
