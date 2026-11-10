@@ -1,5 +1,5 @@
 {
-  "next_id": 2537,
+  "next_id": 2538,
   "jobs": [
     {
       "id": "J0001",
@@ -218297,6 +218297,36 @@
       "plain": "Give the vaccine film its new title before it goes public on Thursday",
       "mini_only": true,
       "urgent": 6
+    },
+    {
+      "id": "J2537",
+      "title": "HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Ben, 10 Nov, asked \"Email address in HOS history: do you want the history rewritten to remove it?\", said: \"Ok on both\". This repo is public and stays public.\n\nCounted on 10 Nov (names and counts only, never an address): History of Science's current files hold an email address in 374 files (980 places, 8 different addresses), nearly all under `02_Video-Projects`. Its history holds more. Orbit With Ben's current files hold one in 46 files; its history is NOT covered by Ben's OK and is not touched by this job.\n\nA history rewrite cannot be undone and breaks every copy of the repo, so it is done once, in a planned window, in this order. Nothing in stage 4 happens while a picture run or any other History of Science job is working.\n\n1. The files as they are today. In ordinary pull requests, replace each address with what it stands for (\"the studio Ultra account\", \"the personal account\", a role), and where code compares an address, compare its sha256 instead (the 013 runner already does). Do not touch a file that a working job pins by hash (009's and 013's plans, boards and scopes) until that job is done, then change it and re-pin in the same pull request. The repo's own address check goes to zero and stays there.\n2. Open pull requests. A branch that still holds an address brings it back when merged. Close or carry every open pull request first (the table from J2495; the carry is J2502).\n3. Rehearse on a mirror copy: rewrite with the same replacement list, then check every branch and tag for zero addresses, count the rewritten commits, and check the newest commit's files are byte for byte what main has. Keep one full copy of the old history as a bundle on the NAS (never deleted, never pushed anywhere).\n4. The window. Tell Ben the day before. Hold History of Science jobs in the queue, push the rewritten branches and tags, then every machine takes a fresh copy (the Mini, both MacBook slots, cloud sessions) and its checks are run. Lift the hold. No video is made, changed or published by any of this.\n5. What a rewrite does not reach: GitHub keeps old commits reachable through closed pull requests and its caches until its support team clears them. Draft that request for Ben to send (it goes under his name), and say plainly what remains visible until they act.\n\nReport after each stage on the thread. No real money.\n",
+      "ref": "Ben 10 Nov: Ok on both",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T19:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T19:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window",
+      "due": "2026-11-18T18:00:00Z",
+      "kind": "chief",
+      "plain": "Remove email addresses from the History of Science repo, including its past versions"
     }
   ],
   "focus": [

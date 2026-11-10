@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2535 | any | blocked | macbook | – | review · Verify condition for J2449 |  |
 | J2536 | mini | open | – | – | 007 upload · studio · HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A | Ben 10 Nov: Ok on both |
+| J2537 | cloud | open | – | – | chief · HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window | Ben 10 Nov: Ok on both |
 
 Recently finished:
 
