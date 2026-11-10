@@ -203,6 +203,23 @@ def studio_port(slug: str) -> str:
     return str((get(slug).get("youtube") or {}).get("studio_port") or "")
 
 
+def youtube_id(slug: str) -> str:
+    """The channel's YouTube channel id (UC...), '' if its file names none."""
+    return str((get(slug).get("youtube") or {}).get("id") or "")
+
+
+def reach_port(slug: str) -> int | None:
+    """The CDP port the monthly Studio Reach read uses for this channel, or None when its file names none (it need
+    not be the Studio port: a channel can keep a separate browser for the read)."""
+    port = (get(slug).get("youtube") or {}).get("reach_port")
+    return int(port) if port else None
+
+
+def sound_kit(slug: str) -> str:
+    """The name of the channel's house sound kit (a recipe in sfx_kit.KITS), '' if its file names none."""
+    return str(get(slug).get("sound_kit") or "")
+
+
 def nas_folder(slug: str) -> str:
     """The channel's folder name under studio-live on the NAS. A channel that names none uses its slug."""
     return get(slug).get("nas_folder") or get(slug)["slug"]
