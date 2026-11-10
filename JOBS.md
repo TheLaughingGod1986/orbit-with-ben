@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2540 | mini | blocked | gemini | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2544 | any | blocked | gemini | – | review · Verify condition for J2540 |  |
 | J2545 | mini | open | – | – | review · Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests | J2540 |
+| J2546 | macbook | open (after J2545) | – | – | review · Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421) | J2540 |
 
 Recently finished:
 

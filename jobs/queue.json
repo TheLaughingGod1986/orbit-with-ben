@@ -1,5 +1,5 @@
 {
-  "next_id": 2546,
+  "next_id": 2547,
   "jobs": [
     {
       "id": "J0001",
@@ -219210,6 +219210,36 @@
       "kind": "review",
       "plain": "Look through every scheduled Short of both channels for shots that sit as a strip with a blurred copy above and below, and list them",
       "mini_only": true
+    },
+    {
+      "id": "J2546",
+      "title": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Second half of the padded-Short work. J2539 was the first half. J2421 asked for the whole-clip version on 8 Nov and is folded in here. This starts when the by-eye job named in `after` is merged: it gives labelled real frames in its `jobs/reviews/` folder, padded and full-frame.\n\n1. Make `full_bleed_frame()` in `00_Brand/Channel-Setup/tools/gate_shorts_open.py` right on the labelled frames: every frame labelled padded is called padded, every frame labelled full passes. Known cases from J2540 (`jobs/reviews/J2540/REPORT.md`): `ffYKoNVPoqg` (padded, caught); `rvug71d7Dqk` (padded, with a feathered seam and a hook caption in the upper band: missed); `ChbsigHD5_o` (full frame, wrongly failed: the top of a caption and a table edge lined up at one third and two thirds of the height); `cLKDiYP55J8` at 0.50 s (full frame, wrongly called padded).\n   One idea, yours to judge: the fill is a blurred, enlarged copy of the picture band itself, so the outer bands should match a blurred, stretched copy of the band (compare column brightness profiles, or a small downscaled correlation). A real room's wall and table do not match the middle of the picture. Also ask for the soft-outside, sharp-inside jump at both seams, and let a seam be a ramp over several rows.\n2. The whole Short, not only its opening: sample one frame every second. Hard FAIL when the frame at 0.0 s is padded (as now) or more than 10% of the sampled frames are. Report the padded stretches in seconds.\n3. Tests from the labelled frames (the JSON file; no media in the repo), plus the made clips already there. Say how many labelled frames there are and that all are called right. If one cannot be got right without breaking another, leave it wrong, name it and say why.\n4. It is a shared file: sync it to history-of-science as J2539 did (a pair of pull requests).\n\nDo not change AGENTS.md or the rule files: the Chief adds the rule line when this merges. Do not skip or weaken a test. One pull request in each repo, park for Chief. No real money.\n",
+      "ref": "J2540",
+      "film": "",
+      "stage": "",
+      "after": "J2545",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T22:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts"
     }
   ],
   "focus": [
