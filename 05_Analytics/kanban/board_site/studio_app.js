@@ -1684,7 +1684,8 @@
   function jobWaiting(b, j) {
     const h = j.hold && typeof j.hold === "object" ? j.hold : {}, t = String(h.type || ""), text = String(h.condition || "") + " " + String(j.result || "");
     const earlier = boardJob(b, j.after || j.waitsFor);
-    if (j.awaits_ben || t === "ben" || (t === "input" && /\bBen'?s? (?:yes|OK|go-ahead|approval|decision|answer)\b/i.test(text))) return "It is waiting for you to watch it or say yes.";
+    const asksBen = Array.isArray(j.awaits_ben) ? j.awaits_ben.length > 0 : !!j.awaits_ben;  // an empty list is not a question
+    if (asksBen || t === "ben" || (t === "input" && /\bBen'?s? (?:yes|OK|go-ahead|approval|decision|answer)\b/i.test(text))) return "It is waiting for you to watch it or say yes.";
     if (t === "public") return "It starts once the video is public on YouTube.";
     if (t === "date") return "It is waiting for a set date.";
     if (t === "test") return "It is waiting for a YouTube test of two thumbnails or titles to finish.";

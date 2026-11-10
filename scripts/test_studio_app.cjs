@@ -1368,6 +1368,7 @@ console.log('Jobs running count checks OK');
   assert.equal(t.jobWaiting(jb, {status: 'blocked', awaits_ben: [{what: 'watch'}]}), 'It is waiting for you to watch it or say yes.');
   assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'input', condition: "Ben's yes to delete the finished title test"}}), 'It is waiting for you to watch it or say yes.');
   assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'date'}}), 'It is waiting for a set date.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', awaits_ben: [], hold: {type: 'date'}}), 'It is waiting for a set date.', 'an empty list of questions is not a question for Ben');
   assert.equal(t.jobWaiting(jb, {status: 'blocked', result: 'parked for Chief: needs a ruling'}), 'It is waiting for the Chief to decide.');
   assert.equal(t.jobWaiting(jb, {status: 'blocked'}), 'It is waiting for something it needs before it can go on.');
   // A job that has gone, and text that needs escaping.
