@@ -212302,6 +212302,11 @@
           "at": "2026-11-10T19:42Z",
           "by": "relay",
           "what": "condition verification queued: J2535"
+        },
+        {
+          "at": "2026-11-10T19:53Z",
+          "by": "claude",
+          "what": "still waiting: Andromeda test ends Wed 11 Nov 20:37Z; look again 21:00Z on the Mini (J2535)"
         }
       ],
       "remaining_action": "Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxdmaOwJI T002 running",
@@ -212315,10 +212320,11 @@
       },
       "hold": {
         "type": "test",
-        "condition": "Jupiter -jmMROGoZCM thumbnail test T003 (15h 26m left at 03:37Z, ends ~2026-11-10T19:03Z) and Andromeda ojk-dfOpAmw thumbnail test T017 (1d 17h left at 03:37Z, ends ~2026-11-11T20:37Z) have ended in Studio. Black Hole 3xrxdmaOwJI 3-arm Title+Thumbnail test (T002) is already armed and running since 2026-11-10T01:57Z (PR #706, f690fd508).",
-        "check_at": "2026-11-10T20:42:24+00:00",
+        "condition": "Andromeda ojk-dfOpAmw thumbnail test T017 has ended in Studio (about Wed 11 Nov 20:37Z); Jupiter -jmMROGoZCM T003 ended about Tue 10 Nov 19:03Z. Read both in Orbit Studio on the Mini, then start the two title-and-thumbnail tests.",
+        "check_at": "2026-11-11T21:00:00Z",
         "recheck_task": "J2535"
-      }
+      },
+      "mini_only": true
     },
     {
       "id": "J2450",
@@ -218233,13 +218239,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T19:48Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T19:42Z",
-      "result": "parked for Chief: could not verify the J2449 condition. Studio read on CDP 9223 needs approval on the MacBook worker (curl 127.0.0.1:9223 refused), so neither test end was read. Repo evidence only: THUMB_LEDGER.json rows T003 (-jmMROGoZCM) and T017 (ojk-dfOpAmw) both still say running; T017 had 1d 17h left at 2026-11-10T03:37Z. J2449 left blocked, nothing changed on YouTube. jobs.py wait J2449 was refused (only the holder macbook-2 or Chief may update the hold). Chief or the Mini to run after a Studio read: jobs.py wait J2449 --agent <id> --condition 'Jupiter T003 and Andromeda T017 ended in Studio' --check-at '2026-11-11T01:50:00Z' --type input --recheck J2535. Please route J2449 rechecks to the Mini.",
+      "result": "Ruled, acting Chief (Claude) 10 Nov: the condition is not met and cannot be before Wed 11 Nov 20:37Z, when Andromeda's thumbnail test ends by its own clock (Jupiter's ended about 19:03Z today). No Studio read was needed to know that. J2449 keeps waiting and looks again on Wed 11 Nov 21:00Z; that read is for the Mini, since the MacBook's unattended worker cannot open Studio. Nothing changed on YouTube. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T19:42Z",
@@ -218255,9 +218261,14 @@
           "at": "2026-11-10T19:49Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: could not verify the J2449 condition. Studio read on CDP 9223 needs approval on the MacBook worker (curl 127.0.0.1:9223 refused), so neither test end was read. Repo evidence only: THUMB_LEDGER.json rows T003 (-jmMROGoZCM) and T017 (ojk-dfOpAmw) both still say running; T017 had 1d 17h left at 2026-11-10T03:37Z. J2449 left blocked, nothing changed on YouTube. jobs.py wait J2449 was refused (only the holder macbook-2 or Chief may update the hold). Chief or the Mini to run after a Studio read: jobs.py wait J2449 --agent <id> --condition 'Jupiter T003 and Andromeda T017 ended in Studio' --check-at '2026-11-11T01:50:00Z' --type input --recheck J2535. Please route J2449 rechecks to the Mini."
+        },
+        {
+          "at": "2026-11-10T19:53Z",
+          "by": "claude",
+          "what": "done: Ruled, acting Chief (Claude) 10 Nov: the condition is not met and cannot be before Wed 11 Nov 20:37Z, when Andromeda's thumbnail test ends by its own clock (Jupiter's ended about 19:03Z today). No Studio read was needed to know that. J2449 keeps waiting and looks again on Wed 11 Nov 21:00Z; that read is for the Mini, since the MacBook's unattended worker cannot open Studio. Nothing changed on YouTube. GBP 0."
         }
       ],
-      "remaining_action": "Verify readiness: Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxd",
+      "remaining_action": "",
       "kind": "review",
       "recheck_of": "J2449",
       "due": "2026-11-10T20:42:24+00:00",
