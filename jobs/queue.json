@@ -216161,18 +216161,23 @@
           "at": "2026-11-10T16:41Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Started 5-step plan: (1) inspect 013 plan + J2200/#468/#470 guards, (2) build 013 mint runner, (3) build & run guard tests, (4) run dry-run report + check_all.sh, (5) open HOS PR and park for Chief"
+        },
+        {
+          "at": "2026-11-10T16:46Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected PICTURE_PLAN_v01 (94 rows: 71 flow-first mint = 48 Quality + 23 Fast = 5,030 credits), J2200 shared accounting, and HOS #468/#470/#477 Flow page/trusted-click guards"
         }
       ],
-      "remaining_action": "Inspecting 013 picture plan, shared Flow guards (J2200), and repaired 009 runner (#468/#470)",
+      "remaining_action": "Building HOS 013 Flow mint runner and locked 71-row scope manifest on J2200/#468/#470/#477 guards",
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T16:41Z",
+        "at": "2026-11-10T16:46Z",
         "by": "gemini",
-        "note": "Started 5-step plan: (1) inspect 013 plan + J2200/#468/#470 guards, (2) build 013 mint runner, (3) build & run guard tes"
+        "note": "Inspected PICTURE_PLAN_v01 (94 rows: 71 flow-first mint = 48 Quality + 23 Fast = 5,030 credits), J2200 shared accounting"
       },
       "taskKeys": [
         "HOS:013"
