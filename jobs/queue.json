@@ -214179,10 +214179,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-10T09:57Z",
+      "eta": "2026-11-10T11:57Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
       "result": "",
@@ -214191,11 +214191,24 @@
           "at": "2026-11-10T03:02Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T09:57Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row",
       "due": "2026-11-17T00:00:00Z",
-      "kind": "script"
+      "kind": "script",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T09:57Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2476",
