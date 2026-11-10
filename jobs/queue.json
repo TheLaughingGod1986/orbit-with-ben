@@ -217232,13 +217232,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-10T20:39Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
-      "result": "Waiting for: Ben's watch of the two fixed Nearest Star Shorts (first card due Sat 14 Nov 18:00 London, second Mon 16 Nov 18:00); if he does not tick, the cuts he OK'd on 10 Nov air",
+      "result": "Done. Both faults fixed and passed; Ben OK'd both fixed cuts on the board on 10 Nov at 23:05Z and 23:06Z. The swaps are J2513 (Mon 16, v06) and J2514 (Wed 18, v07).",
       "history": [
         {
           "at": "2026-11-10T15:01Z",
@@ -217304,6 +217304,21 @@
           "at": "2026-11-10T22:59Z",
           "by": "claude",
           "what": "acting Chief, 10 Nov 23:20Z: PASS. Both fixes are what was asked and nothing else (one shot changed in the Mon 16 Short, the frozen still now moves in the Wed 18 Short); every gate passes; the agent watched both with sound. Records merged as #772. The two watch cards stay with Ben; the swap jobs J2513 and J2514 take whichever cut he has OK'd by their time."
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J2514"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2513"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "done: Done. Both faults fixed and passed; Ben OK'd both fixed cuts on the board on 10 Nov at 23:05Z and 23:06Z. The swaps are J2513 (Mon 16, v06) and J2514 (Wed 18, v07)."
         }
       ],
       "remaining_action": "Parked for Chief review and Ben's watch",
@@ -217321,45 +217336,25 @@
       "taskKeys": [
         "OWB:026"
       ],
-      "awaits_ben": [
-        {
-          "what": "Watch the fixed Mon 16 Short (v06). OK to swap it in instead of v05?",
-          "file": "OWB UAT/026_shorts_fixes_J2512/mon16_cant_see_nearest_star_v06.mp4",
-          "version": "v06",
-          "due": "2026-11-14T18:00Z",
-          "airs": "2026-11-16T11:30Z",
-          "ifNot": "the cut you OK'd on 10 Nov airs",
-          "title": "Nearest star Short for Mon 16 Nov (v06, one shot changed)",
-          "number": "026",
-          "type": "short",
-          "fixed": [
-            "At 0:20.23-0:22.63 (just before the end card), replaced the repeated opening Paranal shot with a different moving ESO Paranal observatory shot from the film; everything else is unchanged"
-          ]
-        },
-        {
-          "what": "Watch the fixed Wed 18 Short (v07). OK to swap it in instead of v06?",
-          "file": "OWB UAT/026_shorts_fixes_J2512/wed18_robot_reach_nearest_star_v07.mp4",
-          "version": "v07",
-          "due": "2026-11-16T18:00Z",
-          "airs": "2026-11-18T11:30Z",
-          "ifNot": "the cut you OK'd on 10 Nov airs",
-          "title": "Nearest star Short for Wed 18 Nov (v07, the still now moves)",
-          "number": "026",
-          "type": "short",
-          "fixed": [
-            "At 0:13.45-0:16.55 (the ESO star trails), replaced the 3.1 s frozen still with a smooth horizontal drift across the star trails so no frame repeats; everything else is unchanged"
-          ]
-        }
-      ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben's watch of the two fixed Nearest Star Shorts (first card due Sat 14 Nov 18:00 London, second Mon 16 Nov 18:00); if he does not tick, the cuts he OK'd on 10 Nov air",
-        "check_at": "2026-11-14T18:05:00Z"
-      }
+      "awaits_was": {
+        "what": "Watch the fixed Mon 16 Short (v06). OK to swap it in instead of v05?",
+        "file": "OWB UAT/026_shorts_fixes_J2512/mon16_cant_see_nearest_star_v06.mp4",
+        "version": "v06",
+        "due": "2026-11-14T18:00Z",
+        "airs": "2026-11-16T11:30Z",
+        "ifNot": "the cut you OK'd on 10 Nov airs",
+        "title": "Nearest star Short for Mon 16 Nov (v06, one shot changed)",
+        "number": "026",
+        "type": "short",
+        "fixed": [
+          "At 0:20.23-0:22.63 (just before the end card), replaced the repeated opening Paranal shot with a different moving ESO Paranal observatory shot from the film; everything else is unchanged"
+        ]
+      },
+      "done_ref": "#772"
     },
     {
       "id": "J2513",
-      "title": "Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London)",
+      "title": "Swap the 026 Mon 16 Short HZGTovJu_TQ to v06, the cut Ben OK'd on 10 Nov 23:05Z",
       "needs": "mini",
       "repo": "owb",
       "body": "Swap the 026 Mon 16 Short to the newest cut Ben has OK'd. Chief ruling 10 Nov 15:00Z.\n\nBen OK'd `mon16_cant_see_nearest_star_v05.mp4` (sha256 `5a2a4c2af8fb2148ad0975ed0d3cc88d329b3bd20ed071eb3626ba1d874d14f3`) and `wed18_robot_reach_nearest_star_v06.mp4` (sha256 `80e4c86df51417db71efb9eaef9097669d6201d41396585acafb8ecbacfd936b`) on 10 Nov. The job this one follows may have offered him a fixed v06 and v07. Check the board's ticks (`/api/checks`) and the queue: if he has OK'd the newer cut, swap that one in; if not, swap in the one he OK'd on 10 Nov. Say in the result which went in and why.\n\n- Mon 16: old id `HZGTovJu_TQ`, Private, scheduled Mon 16 Nov 11:30 London. Do it on Sat 14 Nov after 18:00 London, not before (that is Ben's deadline for the newer cut).\n\nEach swap, as usual: read back the old id (Private, right publish time, else park); check the new file's sha256; upload as a NEW Private video with the same publish time, copying title, description, tags, cover and Related video (the 026 long `c5AdqQsnnys`); captions en-GB; only then set the old id Private and unscheduled; verify (`verify-swap.ts`); update UPLOADS.json, the Buffer posts and any job that names the old id (J0861 sets Related on these three Shorts); post the read-back on the thread.\n\nNever Public, never delete, no Replace, no force-push. £0. If a swap fails within 12 hours of its air time, leave the original scheduled and park for the Chief.\n",
@@ -217368,13 +217363,13 @@
       "stage": "upload",
       "after": "J2512",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-10T15:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
-      "result": "Waiting for: Ben's deadline for the newer cut (Sat 14 Nov 18:00 London), or his OK on it.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T15:01Z",
@@ -217395,38 +217390,41 @@
           "at": "2026-11-10T15:03Z",
           "by": "claude",
           "what": "approved by Ben: Watch the re-cut Mon 16 Short. OK to swap it in? v05 (asked in J2494)"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the fixed Mon 16 Short (v06). OK to swap it in instead of v05? v06 (asked in J2512)"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "reopened: acting Chief, 10 Nov 23:20Z: Ben OK'd the newer cut on the board at 23:05Z (ticks OWB-J2512.1 and OWB-J2512.2, both ok), so the wait for his deadline is over. Swap in mon16_cant_see_nearest_star_v06.mp4 (sha256 7eb4f03d58e9738f8b10f865d098e4239e5a634ddc9bab58dcaad69e36e33349) now; do not wait for the date in the title. It airs Mon 16 Nov 11:30 London. Everything else as the brief says: read back the old id first, check the sha256, new Private upload with the same publish time, only then unschedule the old one, never delete, never Public."
         }
       ],
       "remaining_action": "Swap the Mon 16 Short to the newest cut Ben has OK'd",
       "due": "2026-11-15T12:00:00Z",
       "kind": "listing",
-      "plain": "Put the Monday Nearest Star Short you approved into its slot",
+      "plain": "Put the fixed Nearest Star Short you OK'd in its Monday 16 Nov slot",
       "mini_only": true,
-      "hold": {
-        "type": "date",
-        "condition": "Ben's deadline for the newer cut has passed (Sat 14 Nov 18:00 London), or he has OK'd it",
-        "check_at": "2026-11-14T18:05:00+00:00",
-        "checked_at": "2026-11-10T15:03:23+00:00",
-        "checked_by": "claude"
-      },
       "approved_from": {
-        "what": "Watch the re-cut Mon 16 Short. OK to swap it in?",
-        "file": "OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v05.mp4",
-        "version": "v05",
+        "what": "Watch the fixed Mon 16 Short (v06). OK to swap it in instead of v05?",
+        "file": "OWB UAT/026_shorts_fixes_J2512/mon16_cant_see_nearest_star_v06.mp4",
+        "version": "v06",
         "airs": "2026-11-16T11:30Z",
-        "title": "Nearest star Short for Mon 16 Nov (re-cut v05)",
+        "title": "Nearest star Short for Mon 16 Nov (v06, one shot changed)",
         "number": "026",
         "type": "short",
         "channel": "OWB",
-        "job": "J2494",
-        "askId": "J2494.1",
-        "okAt": "2026-11-10T15:03Z",
-        "okRef": "board tick OWB-J2494.1, 10 Nov 14:47Z"
+        "job": "J2512",
+        "okAt": "2026-11-10T23:05Z",
+        "okRef": "board tick OWB-J2512.1",
+        "askId": "J2512.1"
       }
     },
     {
       "id": "J2514",
-      "title": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London)",
+      "title": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to v07, the cut Ben OK'd on 10 Nov 23:06Z",
       "needs": "mini",
       "repo": "owb",
       "body": "Swap the 026 Wed 18 Short to the newest cut Ben has OK'd. Chief ruling 10 Nov 15:00Z.\n\nBen OK'd `mon16_cant_see_nearest_star_v05.mp4` (sha256 `5a2a4c2af8fb2148ad0975ed0d3cc88d329b3bd20ed071eb3626ba1d874d14f3`) and `wed18_robot_reach_nearest_star_v06.mp4` (sha256 `80e4c86df51417db71efb9eaef9097669d6201d41396585acafb8ecbacfd936b`) on 10 Nov. The job this one follows may have offered him a fixed v06 and v07. Check the board's ticks (`/api/checks`) and the queue: if he has OK'd the newer cut, swap that one in; if not, swap in the one he OK'd on 10 Nov. Say in the result which went in and why.\n\n- Wed 18: old id `cwU_0WWeNZ4`, Private, scheduled Wed 18 Nov 11:30 London. Do it on Mon 16 Nov after 18:00 London, not before.\n\nEach swap, as usual: read back the old id (Private, right publish time, else park); check the new file's sha256; upload as a NEW Private video with the same publish time, copying title, description, tags, cover and Related video (the 026 long `c5AdqQsnnys`); captions en-GB; only then set the old id Private and unscheduled; verify (`verify-swap.ts`); update UPLOADS.json, the Buffer posts and any job that names the old id (J0861 sets Related on these three Shorts); post the read-back on the thread.\n\nNever Public, never delete, no Replace, no force-push. £0. If a swap fails within 12 hours of its air time, leave the original scheduled and park for the Chief.\n",
@@ -217435,13 +217433,13 @@
       "stage": "upload",
       "after": "J2512",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-10T15:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:03Z",
-      "result": "Waiting for: Ben's deadline for the newer cut (Mon 16 Nov 18:00 London), or his OK on it.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T15:03Z",
@@ -217457,32 +217455,36 @@
           "at": "2026-11-10T15:03Z",
           "by": "claude",
           "what": "approved by Ben: Watch the re-cut Wed 18 Short. OK to swap it in? v06 (asked in J2494)"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the fixed Wed 18 Short (v07). OK to swap it in instead of v06? v07 (asked in J2512)"
+        },
+        {
+          "at": "2026-11-10T23:18Z",
+          "by": "claude",
+          "what": "reopened: acting Chief, 10 Nov 23:20Z: Ben OK'd the newer cut on the board at 23:05Z (ticks OWB-J2512.1 and OWB-J2512.2, both ok), so the wait for his deadline is over. Swap in wed18_robot_reach_nearest_star_v07.mp4 (sha256 c0e6a13865a6abce10503ffa7ea29116fa885de2da34072f771dc85c0f1a2888) now; do not wait for the date in the title. It airs Wed 18 Nov 11:30 London. Everything else as the brief says: read back the old id first, check the sha256, new Private upload with the same publish time, only then unschedule the old one, never delete, never Public."
         }
       ],
       "remaining_action": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London)",
       "due": "2026-11-17T12:00:00Z",
       "kind": "listing",
-      "plain": "Put the Wednesday Nearest Star Short you approved into its slot",
+      "plain": "Put the fixed Nearest Star Short you OK'd in its Wednesday 18 Nov slot",
       "mini_only": true,
-      "hold": {
-        "type": "date",
-        "condition": "Ben's deadline for the newer cut has passed (Mon 16 Nov 18:00 London), or he has OK'd it",
-        "check_at": "2026-11-16T18:05:00+00:00",
-        "checked_at": "2026-11-10T15:03:23+00:00",
-        "checked_by": "claude"
-      },
       "approved_from": {
-        "what": "Watch the re-cut Wed 18 Short. OK to swap it in?",
-        "file": "OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v06.mp4",
-        "version": "v06",
+        "what": "Watch the fixed Wed 18 Short (v07). OK to swap it in instead of v06?",
+        "file": "OWB UAT/026_shorts_fixes_J2512/wed18_robot_reach_nearest_star_v07.mp4",
+        "version": "v07",
         "airs": "2026-11-18T11:30Z",
-        "title": "Nearest star Short for Wed 18 Nov (re-cut v06)",
+        "title": "Nearest star Short for Wed 18 Nov (v07, the still now moves)",
         "number": "026",
         "type": "short",
         "channel": "OWB",
-        "job": "J2494",
-        "okAt": "2026-11-10T15:03Z",
-        "okRef": "board tick OWB-J2494.2, 10 Nov 14:46Z"
+        "job": "J2512",
+        "askId": "J2512.2",
+        "okAt": "2026-11-10T23:06Z",
+        "okRef": "board tick OWB-J2512.2"
       }
     },
     {
