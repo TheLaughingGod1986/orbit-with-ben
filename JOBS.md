@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2460 | mini | open | – | – | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
 | J2461 | macbook | blocked | macbook-2 | – | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
 | J2464 | mini | open | – | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
-| J2465 | mini | open | – | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
+| J2465 | mini | claimed | gemini | 2026-11-10T05:01Z | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 | J2466 | mini | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
 | J2470 | mini | blocked | claudecode | – | for claudecode · studio · `mini-claude-opus-5-5` · Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov) |  |
 | J2471 | mini | open | – | – | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
