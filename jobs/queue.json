@@ -215743,6 +215743,11 @@
           "at": "2026-11-10T15:03Z",
           "by": "claude",
           "what": "no longer waits on Ben (entry 1): OK'd, delivered by J2513"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2514"
         }
       ],
       "remaining_action": "Parked for Chief review and Ben's watch",
@@ -215760,28 +215765,7 @@
         "OWB:026"
       ],
       "urgent": 1,
-      "awaits_was": [
-        {
-          "what": "Two Shorts re-cut so the first second moves. Same words. OK to swap them in?",
-          "file": "OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v04.mp4",
-          "version": "v04",
-          "due": "2026-11-15T18:00Z",
-          "airs": "2026-11-16T11:30Z",
-          "ifNot": "the original airs as scheduled",
-          "title": "026 Nearest Star Shorts: first-second re-cuts (Mon 16 and Wed 18 Nov)",
-          "number": "026",
-          "type": "short"
-        },
-        {
-          "what": "Two Shorts re-cut so the first second moves. Same words. OK to swap them in?",
-          "file": "OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v05.mp4",
-          "version": "v05",
-          "due": "2026-11-17T18:00Z",
-          "airs": "2026-11-18T11:30Z",
-          "ifNot": "the original airs as scheduled"
-        }
-      ],
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the re-cut Wed 18 Short. OK to swap it in?",
         "file": "OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v06.mp4",
         "version": "v06",
@@ -216843,6 +216827,11 @@
           "at": "2026-11-10T15:03Z",
           "by": "claude",
           "what": "held until Mon 16 Nov 18:00 London: the swap takes the newest cut Ben has OK'd by then"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the re-cut Wed 18 Short. OK to swap it in? v06 (asked in J2494)"
         }
       ],
       "remaining_action": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London)",
@@ -216856,6 +216845,19 @@
         "check_at": "2026-11-16T18:05:00+00:00",
         "checked_at": "2026-11-10T15:03:23+00:00",
         "checked_by": "claude"
+      },
+      "approved_from": {
+        "what": "Watch the re-cut Wed 18 Short. OK to swap it in?",
+        "file": "OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v06.mp4",
+        "version": "v06",
+        "airs": "2026-11-18T11:30Z",
+        "title": "Nearest star Short for Wed 18 Nov (re-cut v06)",
+        "number": "026",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2494",
+        "okAt": "2026-11-10T15:03Z",
+        "okRef": "board tick OWB-J2494.2, 10 Nov 14:46Z"
       }
     }
   ],
