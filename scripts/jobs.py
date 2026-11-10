@@ -240,6 +240,8 @@ STUDIO_PROHIBITION = re.compile(r"(?is)\b(?:do\s+not|don't|never|no)\b[^.!\n]{0,
 def macbook_studio_ok(job: dict, text: str) -> bool:
     """A Studio-only job the MacBook can do now: its channel's CDP browser is up there, and it needs nothing else the
     Mini alone has (uploads, Buffer, Flow, renders, local media, privacy or schedule changes)."""
+    if job.get("mini_only"):   # the Chief pinned it to the Mini (`jobs.py add --mini-only`), e.g. a change that can't be undone
+        return False
     ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
     port = STUDIO_PORT.get(job.get("repo") or channels.home())
     if not port or port not in ports:
@@ -349,6 +351,8 @@ def media_reachable(job: dict) -> bool:
 def macbook_portable(job: dict, data: dict | None = None) -> bool:
     """A `needs mini` job the MacBook can do: portable text/code, or harvest/assembly/watch-listen with reachable media."""
     if job.get("needs") != "mini" or job.get("required_capabilities") or job.get("for") not in (None, "", *MACBOOK_CLIS):
+        return False
+    if job.get("mini_only"):
         return False
     title = str(job.get("title") or "")
     fields = ("title", "body", "result", "remaining_action", "action")
@@ -1168,6 +1172,8 @@ def main(argv=None) -> int:
     a.add_argument("--action", default="", help="plain-English action still unfinished")
     a.add_argument("--plain", default="", help="one plain-English line for the board: what this job does, no shorthand")
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
+    a.add_argument("--mini-only", dest="mini_only", action="store_true",
+                   help="pin a `needs mini` job to the Mini: the MacBook never takes it (e.g. a change that can't be undone)")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
     a.add_argument("--approved-from", dest="approved_from", default="",
@@ -1298,6 +1304,8 @@ def main(argv=None) -> int:
                              for_agent=args.for_agent, kind=args.kind, model=args.model, not_before=args.not_before, reset=args.reset, due=args.due, action=args.action, requires=args.requires)
                 if args.plain.strip():
                     job["plain"] = args.plain.strip()
+                if getattr(args, "mini_only", False):
+                    job["mini_only"] = True
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:

@@ -11,6 +11,11 @@ REPO = OPS.parent
 LOCK = OPS / 'scripts/desk-lock.sh'
 BUFFER_CHECK = OPS / 'launchd/buffer-check.sh'
 
+# The writer CLIs import their own packages (googleapis and others), so they only run where `npm ci` has been run in
+# this checkout. A worker's checkout has no node_modules: there the writers test is skipped, not failed (7 Nov code
+# audit, row F-05b: seven failures in the MacBook worker's checkouts). CI runs it after npm ci.
+HAS_DEPS = (OPS / 'node_modules' / 'tsx').exists()
+
 
 class DeskLockTests(unittest.TestCase):
     def test_daily_wrapper_reaches_both_locked_clis_without_self_deadlock(self):
@@ -54,6 +59,8 @@ class DeskLockTests(unittest.TestCase):
             self.assertFalse((Path(root)/'youtube-buffer.lock').exists())
 
     def test_writers_and_cleanup(self):
+        if not HAS_DEPS:
+            self.skipTest('07_Content-Ops/node_modules is missing here (run npm ci); CI runs this test')
         with tempfile.TemporaryDirectory(prefix='owb-lock-') as root:
             env = {**os.environ, 'DESK_LOCK_ROOT': root}
             directory = Path(root) / 'youtube-buffer.lock'

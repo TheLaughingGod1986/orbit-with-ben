@@ -28,6 +28,8 @@ class Guards(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self._state = mw.STATE
         mw.STATE = pathlib.Path(self.tmp.name)
+        slot = mock.patch.object(mw, "SLOT", 1)   # these are slot 1's rules, whichever slot runs the suite (J2463)
+        slot.start(); self.addCleanup(slot.stop)
 
     def tearDown(self):
         mw.STATE = self._state
@@ -117,6 +119,9 @@ class Guards(unittest.TestCase):
 
 
 class BackToMain(unittest.TestCase):
+    # These clones have no remote: bringing main up to date is stubbed, every other git call is real.
+    OK_FF = staticmethod(lambda repo, own=True: subprocess.CompletedProcess([], 0, "", ""))
+
     def repo(self, root, name):
         r = pathlib.Path(root) / name
         r.mkdir(parents=True)
@@ -131,7 +136,7 @@ class BackToMain(unittest.TestCase):
             r = self.repo(t, "orbit-with-ben")
             real = mw.sh  # no remote to pull from here: the pull itself is stubbed, every other git call is real
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "main")
 
@@ -143,7 +148,7 @@ class BackToMain(unittest.TestCase):
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("branch", "--show-current"), "main")
@@ -158,7 +163,7 @@ class BackToMain(unittest.TestCase):
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("status", "--porcelain"), "")
@@ -172,7 +177,7 @@ class BackToMain(unittest.TestCase):
             (r / "bens_work.md").write_text("mine\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake):
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 mw.pull_main()
             self.assertTrue((r / "bens_work.md").exists())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
@@ -201,7 +206,7 @@ class BackToMain(unittest.TestCase):
             calls = []
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), \
+            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
                     mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(calls, [r])
@@ -273,8 +278,10 @@ class AllAgents(unittest.TestCase):
     def test_a_job_for_the_minis_claude_code_runs_on_the_macbooks_claude(self):
         self.assertEqual(mw.pick_agent({"kind": "review", "for": "claudecode"}, ["codex", "claude"])[0], "claude")
 
-    def test_a_studio_job_uses_claude_when_the_chain_reaches_the_minis_claude_code(self):
-        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"])[0], "claude")
+    def test_a_studio_job_is_not_run_on_the_macbooks_claude(self):
+        # 9 Nov this picked Claude; on 10 Nov Claude handed two Studio jobs straight back (see StudioJobs below).
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"]), ("", ""))
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude", "gemini"])[0], "gemini")
 
     def test_pin_keeps_the_old_single_agent_setting(self):
         with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
@@ -330,16 +337,58 @@ class AllAgents(unittest.TestCase):
             self.assertEqual(one.call_count, 1)
 
     def test_checkouts_are_the_workers_own_never_bens(self):
-        with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
-            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), mw.WORKER_DIR / "history-of-science")
-        inside = mw.WORKER_DIR / "history-of-science"
-        with mock.patch.dict(os.environ, {"HOS_REPO": str(inside)}):
-            self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), inside)
+        # Whichever slot runs this test (J2235 F-01c: it failed inside slot 2), the checkout is that slot's own folder.
+        for slot in (1, 2):
+            with mock.patch.object(mw, "SLOT", slot):
+                own = mw.slot_dir(slot) / "history-of-science"
+                with mock.patch.dict(os.environ, {"HOS_REPO": str(mw.HOME / "YouTube" / "History Of Science")}):
+                    self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), own)
+                with mock.patch.dict(os.environ, {"HOS_REPO": str(own)}):
+                    self.assertEqual(mw.own_checkout("HOS_REPO", "history-of-science"), own)
+        self.assertEqual(mw.slot_dir(1), mw.WORKER_DIR)
 
     def test_installed_honours_macbook_agents_and_what_exists(self):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):
             self.assertEqual(mw.installed(), ["codex", "claude"])
             self.assertEqual(mw.installed("claude,gemini"), ["claude"])
+
+
+class StudioJobs(unittest.TestCase):
+    """10 Nov 2026: the MacBook's Claude Code handed J2460 and J2461 straight back. Its unattended allowlist cannot
+    reach the Studio browser, and its launch rule still said never to change anything on YouTube."""
+
+    JOB = {"id": "J9", "needs": "mini", "kind": "studio", "repo": "owb", "title": "Studio: set the end screen on a long",
+           "body": "In Orbit Studio, set the end screen."}
+
+    def test_a_studio_job_runs_on_gemini_and_never_on_claude(self):
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertTrue(mw.is_studio_job(self.JOB))
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude", "codex", "gemini"])[0], "gemini")
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude", "codex"])[0], "codex")
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude"]), ("", ""))
+            self.assertFalse(mw.is_studio_job(dict(self.JOB, needs="any", kind="review")))
+            self.assertTrue(mw.is_studio_job(dict(self.JOB, needs="macbook")))  # sent to this Mac's own window
+
+    def test_studio_jobs_are_not_offered_when_only_claude_is_here(self):
+        seen = {}
+
+        def fake_sh(args, cwd=None, timeout=300):
+            if "next" in args:
+                seen["cdp"] = os.environ.get("MACBOOK_CDP")
+                return subprocess.CompletedProcess(args, 10, "", "")
+            return subprocess.CompletedProcess(args, 0, "", "")
+        for have, want in ((["claude"], ""), (["claude", "gemini"], "9223,9222")):
+            with mock.patch.dict(os.environ), \
+                    mock.patch.object(mw, "sh", side_effect=fake_sh), mock.patch.object(mw, "push_heartbeat"), \
+                    mock.patch.object(mw, "cdp_ports_up", return_value=["9223", "9222"]), \
+                    mock.patch.object(mw, "installed", return_value=have), mock.patch.object(mw, "usable", side_effect=lambda h: h):
+                self.assertEqual(mw.run_ordinary(), "idle")
+                self.assertEqual(seen["cdp"], want, have)
+
+    def test_the_launch_rule_allows_a_routed_studio_job_but_never_an_upload(self):
+        self.assertNotIn("change anything on YouTube", mw.PROMPT)
+        self.assertIn("never upload a video, change a video's privacy or schedule, or delete a video", mw.PROMPT)
+        self.assertIn("YouTube Studio job the Chief routed to this Mac", mw.PROMPT)
 
 
 class AddressedJobs(unittest.TestCase):
@@ -369,6 +418,71 @@ class Diverged(unittest.TestCase):
             kept = g("branch", "-r", cwd=t / "b") + g("branch", cwd=t / "b")
             self.assertIn("macbook-worker/rescue-", kept)
             self.assertFalse(mw.rescue_diverged(t / "b"))  # nothing left to rescue
+
+    def _diverged_clone(self, t):
+        g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+        g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+        for c in ("a", "b"):
+            g("clone", "-q", str(t / "origin.git"), str(t / c), cwd=t)
+            g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+        (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+        g("push", "-q", "origin", "main", cwd=t / "a")
+        g("pull", "-q", "origin", "main", cwd=t / "b")
+        (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+        (t / "b" / "g").write_text("mine"); g("add", "g", cwd=t / "b"); g("commit", "-qm", "local only", cwd=t / "b")
+        return g
+
+    def test_a_clone_with_broken_branch_settings_still_follows_main(self):
+        """8 and 10 Nov 2026, slot 2: `git pull origin main` died with "Cannot fast-forward to multiple branches"."""
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+            g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+            for c in ("a", "b"):
+                g("clone", "-q", str(t / "origin.git"), str(t / c), cwd=t)
+                g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+            (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+            g("push", "-q", "origin", "main", cwd=t / "a")
+            g("pull", "-q", "origin", "main", cwd=t / "b")
+            g("push", "-q", "origin", "main:other", cwd=t / "a")
+            # the damage: two merge targets for main, and no fetch refspec at all
+            g("config", "--add", "branch.main.merge", "refs/heads/other", cwd=t / "b")
+            g("config", "--unset-all", "remote.origin.fetch", cwd=t / "b")
+            (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+            r = mw.ff_main(t / "b")
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "main", cwd=t / "a"))
+            self.assertEqual((t / "b" / "f").read_text(), "2")
+
+    def test_a_stale_index_lock_is_moved_aside_and_the_rescue_goes_through(self):
+        """10 Nov 2026: slot 2 sat in error for an hour. A git killed mid-write leaves .git/index.lock, and reset fails."""
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = self._diverged_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")
+            old = time.time() - mw.STALE_LOCK_S - 60
+            os.utime(lock, (old, old))
+            self.assertTrue(mw.rescue_diverged(t / "b"))
+            self.assertFalse(lock.exists())
+            self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "origin/main", cwd=t / "b"))
+
+    def test_a_failed_reset_says_why_and_the_same_commit_gets_one_rescue_branch(self):
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            g = self._diverged_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")   # a fresh lock: a git may really be running, so it is left alone
+            self.assertFalse(mw.rescue_diverged(t / "b"))
+            self.assertIn("git reset failed", mw.RESCUE_WHY)
+            self.assertIn("kept on macbook-worker/rescue-", mw.RESCUE_WHY)
+            self.assertFalse(mw.rescue_diverged(t / "b"))
+            self.assertEqual(len(g("branch", "--list", "macbook-worker/rescue-*", cwd=t / "b").split()), 1)
+            lock.unlink()
+            self.assertTrue(mw.rescue_diverged(t / "b"))
+            self.assertEqual(len(g("branch", "--list", "macbook-worker/rescue-*", cwd=t / "b").split()), 1)
+            self.assertEqual(mw.RESCUE_WHY, "")
 
 
 class TwoSlots(unittest.TestCase):

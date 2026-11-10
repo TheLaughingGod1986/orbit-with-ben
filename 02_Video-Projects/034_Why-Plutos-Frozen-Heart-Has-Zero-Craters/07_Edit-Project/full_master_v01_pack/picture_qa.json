@@ -1,0 +1,1672 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/09_Final-Export/034_pluto_frozen_heart_master_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 3,
+      "row": "R03",
+      "source": "File_The_Pluto_System_As_Seen_By_New_Horizons_Spacecraft.webm.webm",
+      "title": "File:The Pluto System As Seen By New Horizons Spacecraft.webm",
+      "t": 22.25,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.08 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 29,
+      "row": "R18",
+      "source": "PIA20727.jpg",
+      "title": "Secrets Revealed from Pluto Twilight Zone",
+      "t": 152.03,
+      "at": "2:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 39,
+      "row": "R23",
+      "source": "File_Nix_e_Hidra.jpg.jpg",
+      "title": "File:Nix e Hidra.jpg",
+      "t": 190.25,
+      "at": "3:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "R29",
+      "source": "code_graphic_034_r29_tidal_lock_dial.mp4",
+      "title": "our own clip or graphic",
+      "t": 234.93,
+      "at": "3:55",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.54 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 62,
+      "row": "R37",
+      "source": "File_Nix_e_Hidra.jpg.jpg",
+      "title": "File:Nix e Hidra.jpg",
+      "t": 308.62,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 67,
+      "row": "R40",
+      "source": "File_Jupiter_Io.jpg.jpg",
+      "title": "File:Jupiter&Io.jpg",
+      "t": 332.37,
+      "at": "5:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 92,
+      "row": "R53",
+      "source": "File_Sputnik_Planum_floating_hills_-_unannotated.jpg.jpg",
+      "title": "File:Sputnik Planum floating hills - unannotated.jpg",
+      "t": 452.7,
+      "at": "7:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.21 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 114,
+      "row": "R65",
+      "source": "PIA21590.jpg",
+      "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+      "t": 555.13,
+      "at": "9:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0054 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 118,
+      "row": "R68",
+      "source": "File_Reworked_composite_image_of_Arrokoth_rotated.png.png",
+      "title": "File:Reworked composite image of Arrokoth rotated.png",
+      "t": 577.1,
+      "at": "9:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'File:Reworked composite image of Arrokoth rotated.png' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 119,
+      "row": "R69",
+      "source": "code_graphic_034_r69_kuiper_outbound_bar.mp4",
+      "title": "our own clip or graphic",
+      "t": 585.78,
+      "at": "9:46",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.77 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 127,
+      "row": "R73",
+      "source": "PIA21590.jpg",
+      "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+      "t": 626.53,
+      "at": "10:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0054 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 130,
+      "row": "R74",
+      "source": "PIA02215.jpg",
+      "title": "Crescents of Neptune and Triton",
+      "t": 643.93,
+      "at": "10:44",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0055 < film p5 0.0057"
+      ],
+      "offset": null
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01",
+      "source": "PIA20291.jpg",
+      "title": "Color Image of Pluto",
+      "t": 2.28,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "R01",
+      "source": "PIA19944.jpg",
+      "title": "Valley Glaciers on Pluto",
+      "t": 6.85,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 2,
+      "row": "R02",
+      "source": "code_graphic_034_r02_sputnik_scale.mp4",
+      "title": "our own clip or graphic",
+      "t": 14.37,
+      "at": "0:14",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 3,
+      "row": "R03",
+      "source": "File_The_Pluto_System_As_Seen_By_New_Horizons_Spacecraft.webm.webm",
+      "title": "File:The Pluto System As Seen By New Horizons Spacecraft.webm",
+      "t": 22.25,
+      "at": "0:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.08 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 4,
+      "row": "R03",
+      "source": "PIA20534.jpg",
+      "title": "Surface Diversity",
+      "t": 27.55,
+      "at": "0:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 5,
+      "row": "R04",
+      "source": "PIA20038.jpg",
+      "title": "A Full View of Pluto Stunning Crescent",
+      "t": 32.47,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "R04",
+      "source": "PIA20286.jpg",
+      "title": "Zigzagging Across Pluto",
+      "t": 37.02,
+      "at": "0:37",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 7,
+      "row": "R05",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 44.2,
+      "at": "0:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 8,
+      "row": "R05",
+      "source": "PIA20726.jpg",
+      "title": "Pluto Heart: Like a Cosmic Lava Lamp",
+      "t": 51.55,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "R06",
+      "source": "PIA20155.jpg",
+      "title": "Ice Volcanoes on Pluto?",
+      "t": 55.63,
+      "at": "0:56",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "R06",
+      "source": "PIA20155.jpg",
+      "title": "Ice Volcanoes on Pluto?",
+      "t": 58.9,
+      "at": "0:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "R07",
+      "source": "PIA21965.jpg",
+      "title": "Pluto's Bladed Terrain",
+      "t": 63.15,
+      "at": "1:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "R08",
+      "source": "chapter_card_034_ch01_girl_who_named_a_world.mp4",
+      "title": "our own clip or graphic",
+      "t": 67.02,
+      "at": "1:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 13,
+      "row": "R09",
+      "source": "File_The_Telescope_that_Discovered_Pluto.jpg.jpg",
+      "title": "File:The Telescope that Discovered Pluto.jpg",
+      "t": 69.6,
+      "at": "1:10",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "R10",
+      "source": "File_Clyde_W._Tombaugh.jpeg.jpeg",
+      "title": "File:Clyde W. Tombaugh.jpeg",
+      "t": 73.17,
+      "at": "1:13",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 15,
+      "row": "R10",
+      "source": "File_Clyde_W._Tombaugh.jpeg.jpeg",
+      "title": "File:Clyde W. Tombaugh.jpeg",
+      "t": 77.65,
+      "at": "1:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 16,
+      "row": "R10",
+      "source": "File_Abbot_L._Lowell_Astrograph_-_Flickr_-_brewbooks.jpg.jpg",
+      "title": "File:Abbot L. Lowell Astrograph - Flickr - brewbooks.jpg",
+      "t": 82.13,
+      "at": "1:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 17,
+      "row": "R11",
+      "source": "File_Photo_of_Venetia_Burney__aged_11__c._1929.jpg.jpg",
+      "title": "File:Photo of Venetia Burney, aged 11, c. 1929.jpg",
+      "t": 86.55,
+      "at": "1:27",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 18,
+      "row": "R11",
+      "source": "File_Photo_of_Venetia_Burney__aged_11__c._1929.jpg.jpg",
+      "title": "File:Photo of Venetia Burney, aged 11, c. 1929.jpg",
+      "t": 90.93,
+      "at": "1:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "R11",
+      "source": "File_Venetia_Burney_Student_Dust_Counter.jpeg.jpeg",
+      "title": "File:Venetia Burney Student Dust Counter.jpeg",
+      "t": 95.32,
+      "at": "1:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "R12",
+      "source": "File_Photo_of_Venetia_Burney__aged_11__c._1929.jpg.jpg",
+      "title": "File:Photo of Venetia Burney, aged 11, c. 1929.jpg",
+      "t": 100.28,
+      "at": "1:40",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "R13",
+      "source": "File_The_Telescope_that_Discovered_Pluto.jpg.jpg",
+      "title": "File:The Telescope that Discovered Pluto.jpg",
+      "t": 105.7,
+      "at": "1:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 22,
+      "row": "R14",
+      "source": "PIA21965.jpg",
+      "title": "Pluto's Bladed Terrain",
+      "t": 109.9,
+      "at": "1:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 23,
+      "row": "R15",
+      "source": "code_graphic_034_r15_pluto_diameter_scale.mp4",
+      "title": "our own clip or graphic",
+      "t": 118.78,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 24,
+      "row": "R16",
+      "source": "PIA20473.jpg",
+      "title": "The Frozen Canyons of Pluto North Pole",
+      "t": 129.0,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 25,
+      "row": "R16",
+      "source": "PIA20038.jpg",
+      "title": "A Full View of Pluto Stunning Crescent",
+      "t": 134.78,
+      "at": "2:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 26,
+      "row": "R17",
+      "source": "PIA20727.jpg",
+      "title": "Secrets Revealed from Pluto Twilight Zone",
+      "t": 139.7,
+      "at": "2:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 27,
+      "row": "R17",
+      "source": "PIA20727.jpg",
+      "title": "Secrets Revealed from Pluto Twilight Zone",
+      "t": 143.77,
+      "at": "2:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 28,
+      "row": "R17",
+      "source": "as11-44-6667.jpg",
+      "title": "View of a full Moon photographed from Apollo 11 spacecraft",
+      "t": 147.83,
+      "at": "2:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 29,
+      "row": "R18",
+      "source": "PIA20727.jpg",
+      "title": "Secrets Revealed from Pluto Twilight Zone",
+      "t": 152.03,
+      "at": "2:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 30,
+      "row": "R19",
+      "source": "File_Video_-_Pluto_and_its_moon_Charon_orbiting_each_other_-_Nasa-s_New_Horizons__51712771431_.webm.webm",
+      "title": "File:Video - Pluto and its moon Charon orbiting each other - Nasa-s New Horizons (51712771431).webm",
+      "t": 156.0,
+      "at": "2:36",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 31,
+      "row": "R19",
+      "source": "PIA19856.jpg",
+      "title": "A Binary Planet in Color",
+      "t": 159.62,
+      "at": "2:40",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 32,
+      "row": "R20",
+      "source": "chapter_card_034_ch02_moon_that_never_sets.mp4",
+      "title": "our own clip or graphic",
+      "t": 162.68,
+      "at": "2:43",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 33,
+      "row": "R21",
+      "source": "File_Charon_Discovery.jpg.jpg",
+      "title": "File:Charon Discovery.jpg",
+      "t": 166.08,
+      "at": "2:46",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 34,
+      "row": "R21",
+      "source": "File_Charon_Discovery.jpg.jpg",
+      "title": "File:Charon Discovery.jpg",
+      "t": 170.4,
+      "at": "2:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 35,
+      "row": "R21",
+      "source": "PIA19932.jpg",
+      "title": "Charon Complexity",
+      "t": 174.72,
+      "at": "2:55",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 36,
+      "row": "R22",
+      "source": "File_Charon_Discovery.jpg.jpg",
+      "title": "File:Charon Discovery.jpg",
+      "t": 178.55,
+      "at": "2:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 37,
+      "row": "R22",
+      "source": "PIA19932.jpg",
+      "title": "Charon Complexity",
+      "t": 181.92,
+      "at": "3:02",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 38,
+      "row": "R23",
+      "source": "PIA20287.jpg",
+      "title": "Pluto Moon Nix, Half Illuminated",
+      "t": 185.82,
+      "at": "3:06",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 39,
+      "row": "R23",
+      "source": "File_Nix_e_Hidra.jpg.jpg",
+      "title": "File:Nix e Hidra.jpg",
+      "t": 190.25,
+      "at": "3:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 40,
+      "row": "R23",
+      "source": "PIA12453.jpg",
+      "title": "Pluto and its Moons: Charon, Nix, and Hydra",
+      "t": 194.68,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 41,
+      "row": "R24",
+      "source": "code_graphic_034_r24_double_planet_scale.mp4",
+      "title": "our own clip or graphic",
+      "t": 200.37,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 42,
+      "row": "R25",
+      "source": "File_The_Pluto_System_As_Seen_By_New_Horizons_Spacecraft.webm.webm",
+      "title": "File:The Pluto System As Seen By New Horizons Spacecraft.webm",
+      "t": 205.83,
+      "at": "3:26",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 43,
+      "row": "R25",
+      "source": "PIA19966.jpg",
+      "title": "Charon and Pluto: Strikingly Different Worlds",
+      "t": 209.82,
+      "at": "3:30",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "R26",
+      "source": "PIA19856.jpg",
+      "title": "A Binary Planet in Color",
+      "t": 214.65,
+      "at": "3:35",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 45,
+      "row": "R27",
+      "source": "as11-44-6667.jpg",
+      "title": "View of a full Moon photographed from Apollo 11 spacecraft",
+      "t": 219.8,
+      "at": "3:40",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 46,
+      "row": "R28",
+      "source": "PIA19933.jpg",
+      "title": "Dark Areas",
+      "t": 224.03,
+      "at": "3:44",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 47,
+      "row": "R28",
+      "source": "PIA18182.jpg",
+      "title": "Uranus as seen by NASA Voyager 2",
+      "t": 227.9,
+      "at": "3:48",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "R29",
+      "source": "code_graphic_034_r29_tidal_lock_dial.mp4",
+      "title": "our own clip or graphic",
+      "t": 234.93,
+      "at": "3:55",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.54 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 49,
+      "row": "R30",
+      "source": "File_Video_-_Pluto_and_its_moon_Charon_orbiting_each_other_-_Nasa-s_New_Horizons__51712771431_.webm.webm",
+      "title": "File:Video - Pluto and its moon Charon orbiting each other - Nasa-s New Horizons (51712771431).webm",
+      "t": 244.52,
+      "at": "4:05",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 50,
+      "row": "R30",
+      "source": "PIA19968.jpg",
+      "title": "Charon in Enhanced Color",
+      "t": 251.25,
+      "at": "4:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 51,
+      "row": "R31",
+      "source": "KSC-05pd2555.jpg",
+      "title": "File:KSC-05pd2555.jpg",
+      "t": 255.1,
+      "at": "4:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 52,
+      "row": "R31",
+      "source": "KSC-05pd2555.jpg",
+      "title": "File:KSC-05pd2555.jpg",
+      "t": 258.32,
+      "at": "4:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 53,
+      "row": "R32",
+      "source": "KSC-05pd2581.jpg",
+      "title": "File:KSC-05pd2581.jpg",
+      "t": 262.77,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 54,
+      "row": "R33",
+      "source": "chapter_card_034_ch03_nine_years_to_kuiper_belt.mp4",
+      "title": "our own clip or graphic",
+      "t": 266.85,
+      "at": "4:27",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 55,
+      "row": "R34",
+      "source": "ksc_011906_nh_launch.mp4",
+      "title": "ksc_011906_nh_launch",
+      "t": 270.43,
+      "at": "4:30",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 56,
+      "row": "R34",
+      "source": "ksc_011906_nh_launchchange.mp4",
+      "title": "ksc_011906_nh_launchchange",
+      "t": 275.1,
+      "at": "4:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "R35",
+      "source": "code_graphic_034_r35_launch_speedometer.mp4",
+      "title": "our own clip or graphic",
+      "t": 282.68,
+      "at": "4:43",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 58,
+      "row": "R36",
+      "source": "File_New_Horizons_encapsulation.jpg.jpg",
+      "title": "File:New Horizons encapsulation.jpg",
+      "t": 290.25,
+      "at": "4:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 59,
+      "row": "R36",
+      "source": "ksc_011906_nh_spacesep.mp4",
+      "title": "ksc_011906_nh_spacesep",
+      "t": 294.9,
+      "at": "4:55",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 60,
+      "row": "R36",
+      "source": "PIA12453.jpg",
+      "title": "Pluto and its Moons: Charon, Nix, and Hydra",
+      "t": 299.55,
+      "at": "5:00",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "R37",
+      "source": "ksc_011906_nh_launch.mp4",
+      "title": "ksc_011906_nh_launch",
+      "t": 304.12,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 62,
+      "row": "R37",
+      "source": "File_Nix_e_Hidra.jpg.jpg",
+      "title": "File:Nix e Hidra.jpg",
+      "t": 308.62,
+      "at": "5:09",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0011 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 63,
+      "row": "R38",
+      "source": "PIA20287.jpg",
+      "title": "Pluto Moon Nix, Half Illuminated",
+      "t": 313.3,
+      "at": "5:13",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 64,
+      "row": "R38",
+      "source": "PIA01492.jpg",
+      "title": "PIA01492",
+      "t": 318.17,
+      "at": "5:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 65,
+      "row": "R39",
+      "source": "PIA01492.jpg",
+      "title": "PIA01492",
+      "t": 323.52,
+      "at": "5:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 66,
+      "row": "R40",
+      "source": "ksc_011906_nh_srbjett.mp4",
+      "title": "ksc_011906_nh_srbjett",
+      "t": 328.42,
+      "at": "5:28",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 67,
+      "row": "R40",
+      "source": "File_Jupiter_Io.jpg.jpg",
+      "title": "File:Jupiter&Io.jpg",
+      "t": 332.37,
+      "at": "5:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0051 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 68,
+      "row": "R40",
+      "source": "PIA10103.jpg",
+      "title": "Io and Europa Meet Again",
+      "t": 336.32,
+      "at": "5:36",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 69,
+      "row": "R41",
+      "source": "PIA20155.jpg",
+      "title": "Ice Volcanoes on Pluto?",
+      "t": 341.05,
+      "at": "5:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 70,
+      "row": "R41",
+      "source": "PIA19934.jpg",
+      "title": "Chaos Region",
+      "t": 346.55,
+      "at": "5:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 71,
+      "row": "R42",
+      "source": "PIA19952.jpg",
+      "title": "The Rich Color Variations of Pluto",
+      "t": 350.83,
+      "at": "5:51",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 72,
+      "row": "R42",
+      "source": "PIA19952.jpg",
+      "title": "The Rich Color Variations of Pluto",
+      "t": 353.92,
+      "at": "5:54",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 73,
+      "row": "R43",
+      "source": "File_New_Horizons_1.jpg.jpg",
+      "title": "File:New Horizons 1.jpg",
+      "t": 357.83,
+      "at": "5:58",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "R43",
+      "source": "KSC-05pd2555.jpg",
+      "title": "File:KSC-05pd2555.jpg",
+      "t": 362.58,
+      "at": "6:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "R44",
+      "source": "PIA19842.jpg",
+      "title": "A Mountain Range within Pluto Heart",
+      "t": 367.45,
+      "at": "6:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 76,
+      "row": "R44",
+      "source": "PIA19710.jpg",
+      "title": "The Icy Mountains of Pluto",
+      "t": 372.42,
+      "at": "6:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "R45",
+      "source": "chapter_card_034_ch04_glacier_that_breathes.mp4",
+      "title": "our own clip or graphic",
+      "t": 376.15,
+      "at": "6:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 78,
+      "row": "R46",
+      "source": "PIA20291.jpg",
+      "title": "Color Image of Pluto",
+      "t": 379.4,
+      "at": "6:19",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 79,
+      "row": "R46",
+      "source": "PIA20291.jpg",
+      "title": "Color Image of Pluto",
+      "t": 383.4,
+      "at": "6:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 80,
+      "row": "R47",
+      "source": "PIA20007.jpg",
+      "title": "Sputnik Planum, in Color",
+      "t": 388.0,
+      "at": "6:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 81,
+      "row": "R47",
+      "source": "PIA19944.jpg",
+      "title": "Valley Glaciers on Pluto",
+      "t": 393.18,
+      "at": "6:33",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 82,
+      "row": "R48",
+      "source": "code_graphic_034_r48_glacier_width_scale.mp4",
+      "title": "our own clip or graphic",
+      "t": 400.28,
+      "at": "6:40",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 83,
+      "row": "R49",
+      "source": "PIA20286.jpg",
+      "title": "Zigzagging Across Pluto",
+      "t": 407.7,
+      "at": "6:48",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 84,
+      "row": "R49",
+      "source": "PIA14458.jpg",
+      "title": "New Horizons Best Close-Up of Pluto Surface",
+      "t": 413.48,
+      "at": "6:53",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 85,
+      "row": "R50",
+      "source": "PIA20726.jpg",
+      "title": "Pluto Heart: Like a Cosmic Lava Lamp",
+      "t": 418.9,
+      "at": "6:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 86,
+      "row": "R50",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "title": "File:Video - Nasa\u2019s New Horizons - Pluto Flyby 14 7 2015 (51718116305).webm",
+      "t": 423.95,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 87,
+      "row": "R51",
+      "source": "PIA19954.jpg",
+      "title": "Ice Mountains and Plains",
+      "t": 428.73,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 88,
+      "row": "R51",
+      "source": "PIA20473.jpg",
+      "title": "The Frozen Canyons of Pluto North Pole",
+      "t": 433.27,
+      "at": "7:13",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 89,
+      "row": "R52",
+      "source": "PIA19934.jpg",
+      "title": "Chaos Region",
+      "t": 437.97,
+      "at": "7:18",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 90,
+      "row": "R52",
+      "source": "PIA19934.jpg",
+      "title": "Chaos Region",
+      "t": 442.82,
+      "at": "7:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 91,
+      "row": "R52",
+      "source": "PIA19934.jpg",
+      "title": "Chaos Region",
+      "t": 447.67,
+      "at": "7:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 92,
+      "row": "R53",
+      "source": "File_Sputnik_Planum_floating_hills_-_unannotated.jpg.jpg",
+      "title": "File:Sputnik Planum floating hills - unannotated.jpg",
+      "t": 452.7,
+      "at": "7:33",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.21 < 18.0"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 93,
+      "row": "R53",
+      "source": "PIA19954.jpg",
+      "title": "Ice Mountains and Plains",
+      "t": 457.92,
+      "at": "7:38",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 94,
+      "row": "R54",
+      "source": "chapter_card_034_ch05_where_water_is_bedrock.mp4",
+      "title": "our own clip or graphic",
+      "t": 461.78,
+      "at": "7:42",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 95,
+      "row": "R55",
+      "source": "PIA20732.jpg",
+      "title": "The Jagged Shores of Pluto Highlands",
+      "t": 465.3,
+      "at": "7:45",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 96,
+      "row": "R55",
+      "source": "File_Sputnik_Planum_floating_hills_-_unannotated.jpg.jpg",
+      "title": "File:Sputnik Planum floating hills - unannotated.jpg",
+      "t": 469.83,
+      "at": "7:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 97,
+      "row": "R56",
+      "source": "code_graphic_034_r56_water_bedrock_phase.mp4",
+      "title": "our own clip or graphic",
+      "t": 478.35,
+      "at": "7:58",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 98,
+      "row": "R57",
+      "source": "PIA20198.jpg",
+      "title": "The Mountainous Shoreline of Sputnik Planum",
+      "t": 486.75,
+      "at": "8:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 99,
+      "row": "R57",
+      "source": "PIA19842.jpg",
+      "title": "A Mountain Range within Pluto Heart",
+      "t": 491.05,
+      "at": "8:11",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 100,
+      "row": "R58",
+      "source": "NHQ201812310001.tif",
+      "title": "New Horizons Ultima Thule Flyby",
+      "t": 495.88,
+      "at": "8:16",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 101,
+      "row": "R58",
+      "source": "NHQ201812310001.tif",
+      "title": "New Horizons Ultima Thule Flyby",
+      "t": 501.25,
+      "at": "8:21",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 102,
+      "row": "R59",
+      "source": "PIA19936.jpg",
+      "title": "Surface Variety",
+      "t": 505.87,
+      "at": "8:26",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 103,
+      "row": "R59",
+      "source": "PIA19933.jpg",
+      "title": "Dark Areas",
+      "t": 509.72,
+      "at": "8:30",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 104,
+      "row": "R60",
+      "source": "PIA19946.jpg",
+      "title": "Near-Surface Haze or Fog on Pluto",
+      "t": 513.77,
+      "at": "8:34",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 105,
+      "row": "R60",
+      "source": "PIA19710.jpg",
+      "title": "The Icy Mountains of Pluto",
+      "t": 518.05,
+      "at": "8:38",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 106,
+      "row": "R61",
+      "source": "PIA19936.jpg",
+      "title": "Surface Variety",
+      "t": 522.47,
+      "at": "8:42",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 107,
+      "row": "R61",
+      "source": "PIA19936.jpg",
+      "title": "Surface Variety",
+      "t": 527.0,
+      "at": "8:47",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 108,
+      "row": "R62",
+      "source": "PIA20732.jpg",
+      "title": "The Jagged Shores of Pluto Highlands",
+      "t": 531.63,
+      "at": "8:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 109,
+      "row": "R62",
+      "source": "PIA20198.jpg",
+      "title": "The Mountainous Shoreline of Sputnik Planum",
+      "t": 536.37,
+      "at": "8:56",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 110,
+      "row": "R63",
+      "source": "PIA19948.jpg",
+      "title": "Pluto Majestic Mountains, Frozen Plains and Foggy Hazes",
+      "t": 540.38,
+      "at": "9:00",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 111,
+      "row": "R63",
+      "source": "PIA19948.jpg",
+      "title": "Pluto Majestic Mountains, Frozen Plains and Foggy Hazes",
+      "t": 543.68,
+      "at": "9:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 112,
+      "row": "R64",
+      "source": "chapter_card_034_ch06_beyond_the_frozen_heart.mp4",
+      "title": "our own clip or graphic",
+      "t": 546.58,
+      "at": "9:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 113,
+      "row": "R65",
+      "source": "PIA21590.jpg",
+      "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+      "t": 550.27,
+      "at": "9:10",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 114,
+      "row": "R65",
+      "source": "PIA21590.jpg",
+      "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+      "t": 555.13,
+      "at": "9:15",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0054 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 115,
+      "row": "R66",
+      "source": "PIA19964.jpg",
+      "title": "Pluto Blue Sky",
+      "t": 559.93,
+      "at": "9:20",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 116,
+      "row": "R67",
+      "source": "File_New_Horizons_Approach_to_Arrokoth.ogv.ogv",
+      "title": "File:New Horizons Approach to Arrokoth.ogv",
+      "t": 565.3,
+      "at": "9:25",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 117,
+      "row": "R67",
+      "source": "File_VIDEO_-_Arrokoth_Flyby_-_Kuiper_Belt_-_NASA_s_New_Horizons_2019__52829322492_.webm.webm",
+      "title": "File:VIDEO - Arrokoth Flyby - Kuiper Belt - NASA's New Horizons 2019 (52829322492).webm",
+      "t": 571.3,
+      "at": "9:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 118,
+      "row": "R68",
+      "source": "File_Reworked_composite_image_of_Arrokoth_rotated.png.png",
+      "title": "File:Reworked composite image of Arrokoth rotated.png",
+      "t": 577.1,
+      "at": "9:37",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'File:Reworked composite image of Arrokoth rotated.png' (composite), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 119,
+      "row": "R69",
+      "source": "code_graphic_034_r69_kuiper_outbound_bar.mp4",
+      "title": "our own clip or graphic",
+      "t": 585.78,
+      "at": "9:46",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.77 < 18.0"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 120,
+      "row": "R70",
+      "source": "PIA19946.jpg",
+      "title": "Near-Surface Haze or Fog on Pluto",
+      "t": 594.27,
+      "at": "9:54",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 121,
+      "row": "R71",
+      "source": "PIA19952.jpg",
+      "title": "The Rich Color Variations of Pluto",
+      "t": 598.92,
+      "at": "9:59",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 122,
+      "row": "R71",
+      "source": "PIA19952.jpg",
+      "title": "The Rich Color Variations of Pluto",
+      "t": 603.02,
+      "at": "10:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 123,
+      "row": "R71",
+      "source": "PIA19957.jpg",
+      "title": "Snakeskin Terrain",
+      "t": 607.12,
+      "at": "10:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 124,
+      "row": "R72",
+      "source": "PIA02215.jpg",
+      "title": "Crescents of Neptune and Triton",
+      "t": 611.7,
+      "at": "10:12",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 125,
+      "row": "R72",
+      "source": "PIA02234.jpg",
+      "title": "Triton Surface Topography",
+      "t": 616.78,
+      "at": "10:17",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 126,
+      "row": "R73",
+      "source": "PIA01536.jpg",
+      "title": "Detail of Triton Surface",
+      "t": 621.73,
+      "at": "10:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 127,
+      "row": "R73",
+      "source": "PIA21590.jpg",
+      "title": "Blue Rays: New Horizons High-Res Farewell to Pluto",
+      "t": 626.53,
+      "at": "10:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0054 < film p5 0.0057"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 128,
+      "row": "R74",
+      "source": "PIA19948.jpg",
+      "title": "Pluto Majestic Mountains, Frozen Plains and Foggy Hazes",
+      "t": 631.93,
+      "at": "10:32",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 129,
+      "row": "R74",
+      "source": "PIA19964.jpg",
+      "title": "Pluto Blue Sky",
+      "t": 637.93,
+      "at": "10:38",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 130,
+      "row": "R74",
+      "source": "PIA02215.jpg",
+      "title": "Crescents of Neptune and Triton",
+      "t": 643.93,
+      "at": "10:44",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0055 < film p5 0.0057"
+      ],
+      "offset": null
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0057,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

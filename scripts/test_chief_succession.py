@@ -16,7 +16,9 @@ import board_publish as bp
 T0, MIN = fixture.T0, fixture.MIN
 
 
-class ChiefSuccession(unittest.TestCase):
+class ChiefTestCase(unittest.TestCase):
+    """Shared set-up only, no tests of its own: a test class that subclassed ChiefSuccession ran its 13 tests a
+    second time (J2235 F-01b)."""
     fake = fixture.Relay.fake
     ran = fixture.Relay.ran
     beat = fixture.Relay.beat
@@ -34,6 +36,8 @@ class ChiefSuccession(unittest.TestCase):
     def queue(self, rows):
         self.routed_queue(json.dumps({'next_id': 100, 'jobs': rows}))
 
+
+class ChiefSuccession(ChiefTestCase):
     def test_default_order_and_each_successor(self):
         self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])  # Ben, 9 Nov 2026: Claude first
         self.assertEqual(self.chief(), 'codex')
@@ -169,7 +173,7 @@ class ChiefSuccession(unittest.TestCase):
         self.assertEqual(result['chiefChain'][0]['name'],'Codex')
 
 
-class AutomaticChiefDuties(ChiefSuccession):
+class AutomaticChiefDuties(ChiefTestCase):
     def test_recent_worker_activity_cannot_postpone_chief_work(self):
         cr.seen('codex', T0)
         self.queue([{'id':'J1','status':'blocked','needs':'any','title':'Approved upload',

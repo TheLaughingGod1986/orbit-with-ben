@@ -103,7 +103,11 @@ The job is already claimed for you: {job}
 
 This is Ben's own laptop, not the Mini:
 - never spend money or credit beyond the written rules, never sign in to anything, never print secrets;
-- never upload, schedule or change anything on YouTube, and never delete anything on the NAS;
+- never upload a video, change a video's privacy or schedule, or delete a video; never delete anything on the NAS;
+- change something on YouTube only when this job is a YouTube Studio job the Chief routed to this Mac (Ben, 9 Nov
+  2026: he signed both channels into Studio here for these). Then do exactly what the brief names, in the Studio
+  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch
+  nothing else on YouTube;
 - the local model at http://127.0.0.1:11434 (Ollama, model {model}) is for low-stakes text only: metadata drafts,
   caption cleanup, gate summaries. Never scripts, facts or anything spoken;
 - keep files inside the two checkouts and ~/_desk; leave nothing running when you stop.
@@ -190,9 +194,8 @@ BINS = {"codex": ("CODEX_BIN", "codex"), "gemini": ("AGY_BIN", "agy"), "claude":
 def find_bin(agent: str):
     """launchd's PATH misses npm-global and ~/.local: look in the usual install places too (as chief_relay.find_bin)."""
     env, name = BINS[agent]
-    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
-        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
-    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+    import routing
+    return routing.find_cli(env, name, HOME)
 
 
 def installed(names=None) -> list:
@@ -250,6 +253,30 @@ def usable(have: list, now: dt.datetime | None = None) -> list:
     return [a for a in have if a not in down]
 
 
+# Agents that can drive the signed-in Studio windows here with nobody at the keys, best first. Claude Code is not one:
+# its unattended allowlist (CLAUDE_ALLOWED_TOOLS) covers tests and PRs only, so it cannot reach the browser, and on
+# 10 Nov 2026 it handed J2460 and J2461 straight back. The free Codex model goes last: it failed J0135 on 9 Nov.
+STUDIO_AGENTS = ("gemini", "cursor", "codex")
+
+
+def studio_agents(have: list) -> list:
+    return [a for a in STUDIO_AGENTS if a in have]
+
+
+def is_studio_job(job: dict) -> bool:
+    """A job done in the Studio browser here: any `kind: studio` job, or a `needs mini` job this MacBook was offered
+    as Studio-only (jobs.macbook_studio_ok)."""
+    if job.get("kind") == "studio":
+        return True
+    if job.get("needs") != "mini":
+        return False
+    try:
+        import jobs
+        return jobs.macbook_studio_ok(job, f"{job.get('title') or ''} {job.get('body') or ''}")
+    except Exception:  # noqa: BLE001
+        return job.get("kind") == "studio"
+
+
 def pick_agent(job: dict, have: list) -> tuple:
     """(agent, model) for this job on this MacBook: the first lane in the job's routing chain (scripts/routing.py,
     AGENTS.md "Who does what") whose CLI is installed here and has credit; else the first installed CLI with its
@@ -258,6 +285,9 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
+    if is_studio_job(job):
+        can = studio_agents(have)
+        return (can[0], routing.model_for(job, can[0])) if can else ("", "")
     # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
     # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
     addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
@@ -419,6 +449,23 @@ def push_heartbeat(state: str, why: list, job: str = "") -> None:
         log(f"heartbeat not pushed: {e}")
 
 
+MAIN_REF = "+refs/heads/main:refs/remotes/origin/main"
+
+
+def ff_main(repo: pathlib.Path, own: bool = True) -> subprocess.CompletedProcess:
+    """Bring `repo`'s main up to GitHub's, fast-forward only. In the worker's own clone this names the exact ref both
+    ways (fetch refs/heads/main into refs/remotes/origin/main, then merge that), so nothing depends on the clone's
+    branch or remote settings: on 8 and 10 Nov 2026 slot 2's `git pull origin main` died with "Cannot fast-forward to
+    multiple branches". One of Ben's own checkouts keeps the plain pull."""
+    git = ["git", "-C", str(repo)]
+    if not own:
+        return sh(git + ["pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+    r = sh(git + ["fetch", "-q", "origin", MAIN_REF], timeout=180)
+    if r.returncode:
+        return r
+    return sh(git + ["merge", "-q", "--ff-only", "refs/remotes/origin/main"], timeout=120)
+
+
 def pull_main() -> str:
     """Pull both checkouts; '' when fine, else why not. Runs before the guards so fixes reach a MacBook that keeps
     waiting (it used to pull only after the guards passed, so one stuck guard kept it on old code)."""
@@ -457,10 +504,12 @@ def pull_main() -> str:
                 return f"{repo} is on '{branch or 'detached'}', not main (re-run setup_macbook.sh)"
             # Name origin main: a clone whose branch.main.merge holds more than one entry fails a bare pull with
             # "Cannot fast-forward to multiple branches" (8 Nov 2026, slot 2).
-            r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+            r = ff_main(repo, own)
             if r.returncode and own and rescue_diverged(repo):
-                r = sh(["git", "-C", str(repo), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+                r = ff_main(repo, own)
             if r.returncode:
+                if own and RESCUE_WHY:
+                    return f"pull failed in {repo.name}: {RESCUE_WHY}"
                 return f"pull failed in {repo.name}: {(r.stderr or r.stdout).strip()[-200:]}"
             if own:
                 # A pull can succeed while main is still ahead of GitHub (a queue write whose push lost a race keeps
@@ -470,24 +519,58 @@ def pull_main() -> str:
     return ""
 
 
+STALE_LOCK_S = 600
+RESCUE_WHY = ""   # why the last rescue_diverged could not finish; pull_main adds it to the heartbeat's reason
+
+
+def clear_stale_index_lock(repo: pathlib.Path, now: float | None = None) -> bool:
+    """A git killed mid-write (the run cap kills the whole process group) leaves .git/index.lock behind, and every
+    later reset, checkout and stash in that clone then fails. In the worker's own clone a lock untouched for
+    STALE_LOCK_S is moved aside, never deleted (no git step here holds the index for ten minutes). True when moved."""
+    lock = repo / ".git" / "index.lock"
+    try:
+        if not lock.exists() or (now or time.time()) - lock.stat().st_mtime < STALE_LOCK_S:
+            return False
+        lock.rename(lock.with_name("index.lock.stale-" + time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())))
+    except OSError:
+        return False
+    log(f"{repo.name}: moved a stale .git/index.lock aside")
+    return True
+
+
 def rescue_diverged(repo: pathlib.Path) -> bool:
     """The worker's own clone has main commits GitHub doesn't (5 Nov 2026 21:36: 'pull failed ... git merge --no-ff',
     and slot 1 stopped). Keep them on a pushed branch macbook-worker/rescue-<time>, then put main back on origin/main.
-    Its own clone only (the caller checks); nothing is discarded. True when main was moved."""
+    Its own clone only (the caller checks); nothing is discarded. True when main was moved.
+    10 Nov 2026: slot 2 sat in error for an hour with one unpushed queue write. Each run pushed another rescue branch
+    for the same commit and main never moved, and nothing said why. Now a commit already on a rescue branch is not
+    branched again, a stale index.lock is moved aside first, and a reset that fails says so (RESCUE_WHY)."""
+    global RESCUE_WHY
+    RESCUE_WHY = ""
     git = ["git", "-C", str(repo)]
-    if sh(git + ["fetch", "-q", "origin", "main"], timeout=180).returncode:
+    if sh(git + ["fetch", "-q", "origin", MAIN_REF], timeout=180).returncode:   # the exact ref: origin/main is never stale
+        RESCUE_WHY = "could not fetch origin main"
         return False
     ahead = sh(git + ["rev-list", "--count", "origin/main..main"]).stdout.strip()
     if not ahead or ahead == "0":
         return False
     stamp = time.strftime("%Y%m%dT%H%MZ", time.gmtime())
+    clear_stale_index_lock(repo)
     if sh(git + ["status", "--porcelain"]).stdout.strip():
         sh(git + ["stash", "push", "-u", "-q", "-m", f"macbook-worker autostash main {stamp}"])
-    branch = f"macbook-worker/rescue-{stamp}"
-    if sh(git + ["branch", branch, "main"]).returncode:
-        return False
-    sh(git + ["push", "-q", "origin", branch], timeout=120)
-    if sh(git + ["reset", "-q", "--hard", "origin/main"]).returncode:
+    kept = sh(git + ["branch", "--list", "macbook-worker/rescue-*", "--contains", "main",
+                     "--format", "%(refname:short)"]).stdout.split()
+    branch = kept[0] if kept else f"macbook-worker/rescue-{stamp}"
+    if not kept:
+        if sh(git + ["branch", branch, "main"]).returncode:
+            RESCUE_WHY = f"could not make branch {branch}"
+            return False
+        sh(git + ["push", "-q", "origin", branch], timeout=120)
+    r = sh(git + ["reset", "-q", "--hard", "origin/main"])
+    if r.returncode:
+        RESCUE_WHY = f"main has {ahead} commit(s) GitHub doesn't (kept on {branch}) and git reset failed: " \
+                     f"{(r.stderr or r.stdout).strip()[-160:]}"
+        log(f"{repo.name}: {RESCUE_WHY}")
         return False
     log(f"{repo.name}: main had {ahead} commit(s) GitHub doesn't; kept on {branch} (pushed), main reset to origin/main")
     return True
@@ -529,7 +612,9 @@ def cdp_ports_up(ports=CDP_PORTS) -> list:
 def run_ordinary() -> str:
     """Claim the next MacBook job and run it on the first installed agent in its chain."""
     args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
-    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up())  # read by jobs.macbook_studio_ok in the claim below
+    # Read by jobs.macbook_studio_ok in the claim below. Empty when no agent here can drive the browser unattended, so
+    # a Studio job is never claimed just to be handed back.
+    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up()) if studio_agents(usable(installed())) else ""
     r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
@@ -562,7 +647,7 @@ def run_ordinary() -> str:
     started = time.monotonic()
     code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
     seconds = time.monotonic() - started
-    sh(["git", "-C", str(OWB), "pull", "-q", "--ff-only", "origin", "main"], timeout=180)
+    ff_main(OWB, OWB.resolve().is_relative_to(WORKER_DIR.resolve()))
     paused = ""
     open_now = still_mine(job)
     if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
@@ -598,9 +683,9 @@ def start_other_slots(popen=None, system=None) -> list:
                    HOS_REPO=str(slot_dir(n) / "history-of-science"))
         try:
             logs.mkdir(parents=True, exist_ok=True)
-            out = open(logs / f"owb-macbook-worker-{n}.log", "a")
-            popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
-                  stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
+            with open(logs / f"owb-macbook-worker-{n}.log", "a") as out:   # the child keeps its own copy of the handle
+                popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
+                      stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
             started.append(n)
         except OSError as e:
             log(f"slot {n} not started: {e}")
@@ -610,12 +695,17 @@ def start_other_slots(popen=None, system=None) -> list:
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
     start_other_slots()
-    lock = open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except OSError:
-        log("another run is still going")
-        return 0
+    # The lock file is closed, and the lock freed, when the run returns (J2463: it used to be left open).
+    with open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except OSError:
+            log("another run is still going")
+            return 0
+        return _take_jobs()
+
+
+def _take_jobs() -> int:
     # Keep taking jobs back to back (Ben, 5 Nov 2026: "why are agents taking so long between jobs"): launchd starts a
     # run every 15 min, and the run keeps going while there is work and the guards hold, up to MACBOOK_LOOP_MIN.
     # The lock stops a second run, so a long job simply carries the lane into the next tick.

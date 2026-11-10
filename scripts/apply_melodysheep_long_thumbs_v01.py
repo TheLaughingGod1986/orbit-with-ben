@@ -130,7 +130,8 @@ def apply_one(ctx, s: dict, i: int) -> dict:
     if not cover.exists():
         row["error"] = "missing cover"
         return row
-    page = ctx.new_page()
+    from cdp_tabs import reuse_page
+    page = reuse_page(ctx, "studio.youtube.com")
     try:
         page.goto(f"https://studio.youtube.com/video/{vid}/edit", wait_until="domcontentloaded", timeout=90000)
         page.wait_for_timeout(2800)
@@ -155,8 +156,6 @@ def apply_one(ctx, s: dict, i: int) -> dict:
         row["screenshot"] = str(shot)
     except Exception as e:
         row["error"] = str(e)[:400]
-    finally:
-        page.close()
     return row
 
 

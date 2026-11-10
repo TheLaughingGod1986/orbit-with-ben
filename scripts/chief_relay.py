@@ -319,9 +319,7 @@ def mark_up(agent: str) -> None:
 def find_bin(env: str, name: str):
     """launchd's `zsh -lc` doesn't read .zshrc, so npm-global and ~/.local CLIs aren't on PATH there: look in the
     usual install places too."""
-    cands = [os.environ.get(env), shutil.which(name)] + [str(HOME / d / name) for d in (".npm-global/bin", ".local/bin")] \
-        + [f"/opt/homebrew/bin/{name}", f"/usr/local/bin/{name}"]
-    return next((c for c in cands if c and os.access(c, os.X_OK)), None)
+    return routing.find_cli(env, name, HOME)
 
 
 def cursor_default_out(at: dt.datetime):
@@ -409,7 +407,9 @@ def fetch_comments(since: dt.datetime) -> list:
     """Studio-thread comments updated since `since`, via owb_thread.py's own auth (GH_TOKEN or `gh auth token`)."""
     sys.path.insert(0, str(OWB / "scripts"))
     import owb_thread  # noqa: E402
-    return owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+    # Only the repo's own accounts count (owb_thread.trusted): the repo is public, so anyone can comment on the thread.
+    return [c for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
+            if owb_thread.trusted(c)]
 
 
 def note_grok_posts(at: dt.datetime) -> None:
@@ -757,17 +757,46 @@ def notify(text: str) -> bool:
 MINIWORK = pathlib.Path(os.environ.get("MINIWORK", "/Volumes/MiniWork"))
 
 
+SSD_PROBE_S = int(os.environ.get("CHIEF_SSD_PROBE_S", "5"))
+SSD_PROBE_KEEP_S = int(os.environ.get("CHIEF_SSD_PROBE_KEEP_S", "600"))
+_SSD_PROBE = "import os,sys; s=sys.argv[1]; print(os.stat(os.path.dirname(s)).st_dev if os.path.isdir(s) and os.access(s, os.W_OK) else '')"
+_ssd_seen: dict = {}
+
+
+def _ssd_dev(s: pathlib.Path) -> int | None:
+    """The device id of the SSD's scratch folder, asked from a child process with a timeout (None: not there, not
+    writable, or no answer). macOS can hold a process on a permission dialog for a removable volume, and nobody is at
+    the Mini to click it: on 9 Nov 2026 this relay checked the SSD itself and went silent from 20:53Z (J2444/J2445
+    record the block). A child that hangs is killed; the relay carries on with /private/tmp."""
+    try:
+        r = subprocess.run([sys.executable, "-c", _SSD_PROBE, str(s)], capture_output=True, text=True,
+                           timeout=SSD_PROBE_S)
+    except subprocess.TimeoutExpired:
+        log(f"SSD check got no answer in {SSD_PROBE_S}s: macOS is probably waiting on a permission dialog "
+            f"(give Python Full Disk Access on the Mini). Using /private/tmp.")
+        return None
+    except OSError:
+        return None
+    out = r.stdout.strip()
+    return int(out) if r.returncode == 0 and out.isdigit() else None
+
+
 def scratch_dir() -> pathlib.Path | None:
     """The Mini's working SSD (Ben, 9 Nov 2026: a 250 GB SanDisk, APFS "MiniWork") when it is mounted and writable.
     It must be its own volume: a /Volumes/MiniWork folder left on the internal disk after an unplug would fill the very
-    disk this is meant to keep free."""
+    disk this is meant to keep free. The answer is kept for SSD_PROBE_KEEP_S, so a blocked volume costs one short
+    wait every ten minutes, not one per wake."""
     s = MINIWORK / "scratch"
+    seen = _ssd_seen.get(str(s))
+    if seen and time.monotonic() - seen[0] < SSD_PROBE_KEEP_S:
+        return seen[1]
     try:
-        if s.is_dir() and os.access(s, os.W_OK) and os.stat(MINIWORK).st_dev != os.stat(HOME).st_dev:
-            return s
+        dev, home_dev = _ssd_dev(s), os.stat(HOME).st_dev
     except OSError:
-        pass
-    return None
+        dev, home_dev = None, None
+    got = s if dev is not None and dev != home_dev else None
+    _ssd_seen[str(s)] = (time.monotonic(), got)
+    return got
 
 
 def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:

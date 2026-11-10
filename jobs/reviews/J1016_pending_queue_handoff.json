@@ -1,0 +1,21 @@
+{
+  "reason": "Automatic approval review rejected direct-main queue updates; these are proposed changes, not applied live.",
+  "agent": "codex",
+  "J1016": {
+    "progress": {"step": 3, "of": 3},
+    "status": "done",
+    "result": "Chief FIX completed; ruling 4d95c81e7, PR 298. J1017 corrections and J1018 Chief lock queued. Source/preview mismatch, scale-card timing and evidence coverage prevent lock. No assembly/spend/publishing. Original deadlines and v01 fallback unchanged.",
+    "done_ref": "4d95c81e7"
+  },
+  "J0936": {
+    "status": "blocked",
+    "after": "J1018",
+    "remaining_action": "Await J1017 preparation corrections and J1018 Chief lock before assembly dispatch",
+    "preserve": ["progress", "history", "due", "awaits_ben"]
+  },
+  "film_links": {
+    "J1017": ["OWB:026", "OWB:027", "OWB:028"],
+    "J1018": ["OWB:026", "OWB:027", "OWB:028"]
+  },
+  "boundaries": "Do not reopen J0936 or unrelated holds. This review is not a replacement PASS, watch-card authority, or swap approval. No automatic merge permission."
+}

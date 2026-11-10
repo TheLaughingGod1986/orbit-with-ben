@@ -126,11 +126,10 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   try {
     // Ben is the phone with the studio_ben cookie (or the old board code); see ../benauth.js. Renewed on every load.
-    // Open taps (Ben, 25 Oct 13:34, default on, BOARD_OPEN_TAPS=0 locks it): any same-origin browser without the
-    // cookie gets it on its first tap (not on a plain load, so that first tap is recorded as "new device" in the post
-    // and in the #219 audit list), and its taps go through with no dialog or link.
+    // Open taps are off unless BOARD_OPEN_TAPS=1 (9 Nov 2026): a browser without the cookie gets 401 and links once.
+    // Even when they are on, an open tap is recorded as "new device" and never receives the cookie.
     const how = tapAuth(req);
-    if (how !== "open" || req.method === "POST") setBenCookie(res, req, how);
+    setBenCookie(res, req, how);
     const via = how === "open" ? `new device: ${deviceName(req.headers["user-agent"])}, ${ipTag(clientIp(req), process.env.BOARD_KEY)}` : "";
     if (req.method === "GET") {
       const { version, state } = await load();
@@ -139,7 +138,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ checks: state.checks, at: new Date().toISOString(), version, stampUrl, ben: !!how });
     }
     if (req.method !== "POST") return res.status(405).json({ error: "GET or POST" });
-    if (!how) return res.status(401).json({ error: "board locked (BOARD_OPEN_TAPS=0) or not from the board page", linked: false });
+    if (!how) return res.status(401).json({ error: "This phone isn't linked to the board yet. Open your board link once, or ask for a new link.", linked: false });
     const b = await readBody(req);
     if (!ID.test(String(b.id || ""))) return res.status(400).json({ error: "bad id" });
     // dryRun: proves this phone can post (auth + id + the line it would post) without saving or posting anything.
