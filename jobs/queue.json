@@ -214456,10 +214456,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T06:00Z",
+      "eta": "2026-11-10T08:00Z",
       "created_by": "claude",
       "created_at": "2026-11-10T05:59Z",
       "result": "",
@@ -214473,10 +214473,23 @@
           "at": "2026-11-10T05:59Z",
           "by": "claude",
           "what": "removed the image_input requirement: the system only tracks audio_input and moving_video_input, so nothing could have claimed it"
+        },
+        {
+          "at": "2026-11-10T06:00Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Design review: the new Venus thumbnail B (465°C) before any test is armed",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T06:00Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

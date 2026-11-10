@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2482 | mini | open | – | – | Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing) |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
-| J2486 | macbook | open | – | – | review · Design review: the new Venus thumbnail B (465°C) before any test is armed |  |
+| J2486 | macbook | claimed | macbook-2 | 2026-11-10T08:00Z | review · Design review: the new Venus thumbnail B (465°C) before any test is armed |  |
 
 Recently finished:
 
