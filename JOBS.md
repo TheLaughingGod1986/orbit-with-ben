@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2538 | macbook | blocked | macbook-2 | – | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
 | J2545 | mini | open | – | – | review · Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests | J2540 |
 | J2546 | macbook | open (after J2545) | – | – | review · Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421) | J2540 |
+| J2547 | any | open | – | – | review · Verify condition for J2268 |  |
 
 Recently finished:
 
