@@ -111067,13 +111067,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T04:07Z",
-      "eta": "2026-11-10T06:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "",
+      "result": "Waiting for: J2484 (023 Venus VBaYRPp85Sw thumbnail Test & Compare B '465°C', Venus surface with lander glowing red) is built at 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg and has passed design review (HOOK/BAND/GRADE/PHONE + Chief/review PASS). T011 draw result (26 Oct 00:12 to 9 Nov 01:10, no winner, watch-time share not shown, A MELTS LEAD visible to all) is recorded in THUMB_LEDGER.json in OWB PR #711 (25d51e24e). Title-only test not armed per Chief 29 Oct / 10 Nov draw branch.",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -111134,9 +111134,19 @@
           "at": "2026-11-10T04:20Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-10T04:20Z",
+          "by": "macbook-2",
+          "what": "blocked: Waiting for: J2484 (023 Venus VBaYRPp85Sw thumbnail Test & Compare B '465°C', Venus surface with lander glowing red) is built at 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg and has passed design review (HOOK/BAND/GRADE/PHONE + Chief/review PASS). T011 draw result (26 Oct 00:12 to 9 Nov 01:10, no winner, watch-time share not shown, A MELTS LEAD visible to all) is recorded in THUMB_LEDGER.json in OWB PR #711 (25d51e24e). Title-only test not armed per Chief 29 Oct / 10 Nov draw branch."
+        },
+        {
+          "at": "2026-11-10T04:20Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-11-10T10:15:00Z"
         }
       ],
-      "remaining_action": "After J2484 builds and passes design review on 023 Venus 465°C thumbnail B: arm thumbnail-only Test & Compare in Studio (park for Ben if Studio warns deleting ended report)",
+      "remaining_action": "After J2484 465°C thumbnail passes design review: arm thumbnail-only Test & Compare A MELTS LEAD vs B 465°C on VBaYRPp85Sw (park for Ben if Studio warns deleting ended report)",
       "kind": "studio",
       "taskKeys": [
         "OWB:023"
@@ -111146,6 +111156,11 @@
         "of": 3,
         "at": "2026-11-10T04:20Z",
         "by": "macbook-2"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J2484 (023 Venus VBaYRPp85Sw thumbnail Test & Compare B '465°C', Venus surface with lander glowing red) is built at 02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg and has passed design review (HOOK/BAND/GRADE/PHONE + Chief/review PASS). T011 draw result (26 Oct 00:12 to 9 Nov 01:10, no winner, watch-time share not shown, A MELTS LEAD visible to all) is recorded in THUMB_LEDGER.json in OWB PR #711 (25d51e24e). Title-only test not armed per Chief 29 Oct / 10 Nov draw branch.",
+        "check_at": "2026-11-10T10:15:00Z"
       }
     },
     {
