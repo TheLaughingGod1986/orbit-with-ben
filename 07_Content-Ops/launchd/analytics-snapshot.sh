@@ -10,17 +10,47 @@
 #      staged with `gate_upcoming.py --stage` (~/_desk/cache/gate-media), else it reads NOT CHECKED (26 Oct 2026). A failed channel still lets the other one through, then notifies.
 #   4. Runs scripts/board_publish.py once, so the tracker web app (studio-kanban.vercel.app/tracker) shows the new data.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
+
+# Run a command with a time limit in seconds (macOS has no `timeout`). The alarm survives the exec, so a command that
+# never returns is stopped and reads as a failure.
+within() {
+  local secs=$1; shift
+  perl -e 'alarm shift; exec @ARGV' "$secs" "$@"
+}
+
+# True when a folder exists (or can be made) and can be written, inside 5 s. launchd cannot open a removable volume
+# without a macOS permission click that nobody is there to make; a call into one just sits there.
+usable() {
+  within 5 /bin/sh -c 'mkdir -p "$1" && test -w "$1"' sh "$1" >/dev/null 2>&1
+}
+
+# Where the tracker's own worktree goes. 10 Nov 2026: no snapshot was made, because ~/_desk/worktrees had moved to
+# the removable SSD on 9 Nov and the first git call never came back. A folder that does not answer is not used:
+# the tracker keeps a worktree on the internal disk instead.
+pick_worktree() {
+  local want="${ANALYTICS_WORKTREE:-$HOME/_desk/worktrees/analytics}"
+  local safe="${ANALYTICS_SAFE_DIR:-$HOME/Library/Application Support/owb-analytics}"
+  if usable "$(dirname "$want")"; then
+    echo "$want"
+  else
+    echo "worktree folder $(dirname "$want") did not answer or cannot be written; using $safe/worktree" >&2
+    echo "$safe/worktree"
+  fi
+}
+
 main() {
   # launchd's login shell has no Homebrew on PATH: without it gate_upcoming.py can't find ffprobe/ffmpeg and every
   # scheduled Short reads FAIL (8 Oct 2026).
   export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
-  local wt="${ANALYTICS_WORKTREE:-$HOME/_desk/worktrees/analytics}"
   local data=05_Analytics
   echo "--- $(date)"
-  if ! git -C "$wt" rev-parse --git-dir >/dev/null 2>&1; then
+  local wt; wt="$(pick_worktree)"
+  if ! within 60 git -C "$wt" rev-parse --git-dir >/dev/null 2>&1; then
     mkdir -p "$(dirname "$wt")"
-    git -C "$repo" fetch -q origin main && git -C "$repo" worktree add -q --detach "$wt" origin/main || return 1
+    # Time-limited too: git looks at every worktree it knows, and some of those may sit on the volume that hangs.
+    git -C "$repo" fetch -q origin main && within 300 git -C "$repo" worktree add -q --detach "$wt" origin/main \
+      || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
   fi
   cd "$wt" || return 1
   ln -sfn "$repo/07_Content-Ops/node_modules" 07_Content-Ops/node_modules
@@ -47,9 +77,18 @@ main() {
   # Gate every Short scheduled in the next 14 days and add any missing one to the open-gate library.
   # Report only: a FAIL is for Claude to act on at 07:10; nothing here touches YouTube.
   local snap="$data/owb/snapshots/$(TZ=Europe/London date +%F).json"
+  # The staged copies of NAS files live in ~/_desk/cache. If that folder does not answer, point the gate at an
+  # empty folder on the internal disk: those Shorts read NOT CHECKED today, and the run still finishes.
+  local gate_cache=()
+  if ! usable "$HOME/_desk/cache"; then
+    local safe_cache="${ANALYTICS_SAFE_DIR:-$HOME/Library/Application Support/owb-analytics}/gate-media"
+    echo "gate cache $HOME/_desk/cache did not answer; using $safe_cache (Shorts on the NAS read NOT CHECKED today)"
+    mkdir -p "$safe_cache"
+    gate_cache=(--cache "$safe_cache")
+  fi
   [[ -f $snap ]] && python3 00_Brand/Channel-Setup/tools/gate_upcoming.py --snapshot "$snap" \
     --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root "$repo" \
-    --out "$data/owb/UPCOMING_SHORTS_GATE.md" --add
+    --out "$data/owb/UPCOMING_SHORTS_GATE.md" --add "${gate_cache[@]}"
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
 
   if [[ -n $(git status --porcelain -- "$data" "$lib") ]]; then
@@ -73,4 +112,13 @@ main() {
   fi
   return $code
 }
-main "$@"
+# Not run when the file is sourced (the tests source it for the helpers above).
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  # A run that hangs must not block tomorrow's: launchd will not start a new run while this one is alive.
+  # One process, so stopping it when the run ends first leaves nothing behind and runs nothing more.
+  perl -e 'sleep 2700; print "tracker run still going after 45 minutes; stopping it\n"; kill "TERM", $ARGV[0]' $$ &
+  watchdog=$!
+  main "$@"; code=$?
+  kill "$watchdog" 2>/dev/null
+  exit $code
+fi
