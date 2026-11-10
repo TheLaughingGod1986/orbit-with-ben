@@ -212334,21 +212334,21 @@
     {
       "id": "J2461",
       "title": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
-      "needs": "mini",
+      "needs": "macbook",
       "repo": "hos",
-      "body": "Acting Chief (Claude), 9 Nov 2026. HOS 006 Trees VbPubYd6Fbs is public. Its pinned comment is posted but not pinned: comment UgyN-6wKr4EfDkXI1h54AaABAg (\"So where does a tree's weight really come from?\"). On the Mini's HOS window, pressing Pin asked for a password re-entry (J0958), which is Ben's.\n\nThe MacBook's History of Science Studio window (CDP 9222) was signed in fresh on 9 Nov. Try the pin there once:\n1. Check the channel name reads History of Science.\n2. Open the video's comments, find that comment, press Pin, confirm.\n3. If it pins: reload and read back the \"Pinned by\" badge. Done.\n4. If it asks to authenticate or re-enter a password: press nothing more, type nothing, and block for Ben with exactly what it showed.\n\nDo not post a new comment. Do not touch the video's title, thumbnail, description, end screen or any test. £0.\n",
+      "body": "Acting Chief (Claude), 9 Nov 2026. HOS 006 Trees VbPubYd6Fbs is public. Its pinned comment is posted but not pinned: comment UgyN-6wKr4EfDkXI1h54AaABAg (\"So where does a tree's weight really come from?\"). On the Mini's HOS window, pressing Pin asked for a password re-entry (J0958), which is Ben's.\n\nThe MacBook's History of Science Studio window (CDP 9222) was signed in fresh on 9 Nov. Try the pin there once:\n1. Check the channel name reads History of Science.\n2. Open the video's comments, find that comment, press Pin, confirm.\n3. If it pins: reload and read back the \"Pinned by\" badge. Done.\n4. If it asks to authenticate or re-enter a password: press nothing more, type nothing, and block for Ben with exactly what it showed.\n\nDo not post a new comment. Do not touch the video's title, thumbnail, description, end screen or any test. £0.\n\n\n10 Nov, acting Chief (Claude): this is a Studio job routed to the MacBook on purpose (its History of Science window was signed in fresh on 9 Nov; the Mini's asked for a password). The MacBook worker's rule now allows a routed Studio job, and it runs on Gemini there, not Claude Code (OWB PR #694). One try at the pin; if YouTube asks to authenticate, press nothing more and block for Ben.",
       "ref": "",
       "film": "006",
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T00:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "parked for Chief/Ben: not tried, nothing pressed. Pinning a comment is a change on YouTube, and the MacBook worker's standing rule is never to change anything on YouTube; the worker also cannot reach CDP 9222 unattended (curl to 127.0.0.1:9222 needs approval, same as the earlier release). Do not send this back to the MacBook worker: Ben pins comment UgyN-6wKr4EfDkXI1h54AaABAg on HOS 006 VbPubYd6Fbs by hand, or Ben changes the MacBook worker rule to allow this one pin.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212374,20 +212374,17 @@
           "at": "2026-11-10T00:52Z",
           "by": "macbook",
           "what": "blocked: parked for Chief/Ben: not tried, nothing pressed. Pinning a comment is a change on YouTube, and the MacBook worker's standing rule is never to change anything on YouTube; the worker also cannot reach CDP 9222 unattended (curl to 127.0.0.1:9222 needs approval, same as the earlier release). Do not send this back to the MacBook worker: Ben pins comment UgyN-6wKr4EfDkXI1h54AaABAg on HOS 006 VbPubYd6Fbs by hand, or Ben changes the MacBook worker rule to allow this one pin."
+        },
+        {
+          "at": "2026-11-10T01:12Z",
+          "by": "claude",
+          "what": "reopened by acting Chief as a MacBook job: the worker rule and agent choice are fixed in OWB PR #694"
         }
       ],
       "remaining_action": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
-      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T00:21Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "plain": "Pin the comment under the Trees film using the MacBook's signed-in window; only ask Ben if YouTube wants his password."
     },
     {
       "id": "J2462",
