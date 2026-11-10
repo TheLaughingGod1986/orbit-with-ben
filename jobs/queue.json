@@ -218419,13 +218419,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T20:18Z",
-      "eta": "2026-11-10T22:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:14Z",
-      "result": "",
+      "result": "parked for Chief: PR #767 open, check green. Rules job 2m4s (#765) -> 1m3s on #767's own run (one run only): ffmpeg installed without apt-get update or man-page rebuild, and the three test folders run side by side. No test skipped or removed; rules-check.yml only. Still 3 s over the 60 s target, so it is still billed 2 minutes. Not measured: per-step times (gh run view is not allowed on the MacBook). Next: read the step times of run 42894816221, then split the scripts folder's slowest files (2m54s locally on the Mac) across parallel processes.",
       "history": [
         {
           "at": "2026-11-10T20:14Z",
@@ -218441,6 +218441,11 @@
           "at": "2026-11-10T20:19Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-10T20:24Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: PR #767 open, check green. Rules job 2m4s (#765) -> 1m3s on #767's own run (one run only): ffmpeg installed without apt-get update or man-page rebuild, and the three test folders run side by side. No test skipped or removed; rules-check.yml only. Still 3 s over the 60 s target, so it is still billed 2 minutes. Not measured: per-step times (gh run view is not allowed on the MacBook). Next: read the step times of run 42894816221, then split the scripts folder's slowest files (2m54s locally on the Mac) across parallel processes."
         }
       ],
       "remaining_action": "measure local test times, change ffmpeg install, open PR, read its run time",
