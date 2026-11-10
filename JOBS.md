@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2457 | mini | blocked | macbook | – | studio · Studio read-only check, both channels: have these thumbnail tests ended? (J0275 Saturn, J1198 Venus, J1130 HOS Periodic Table, J0978 HOS Atom) |  |
 | J2458 | any | blocked | macbook | – | review · PR backlog sweep: bring 48 old open PRs up to date with main, or show they are already on main (Chief merges and closes) |  |
 | J2460 | mini | blocked | macbook | – | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
-| J2461 | macbook | claimed | macbook | 2026-11-10T01:43Z | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
+| J2461 | macbook | blocked | macbook | – | 006 upload · studio · HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben) |  |
 | J2464 | any | blocked | macbook | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
 | J2465 | any | blocked | macbook | – | review · Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades) |  |
 | J2466 | any | blocked | macbook | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |

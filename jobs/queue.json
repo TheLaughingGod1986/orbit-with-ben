@@ -212347,13 +212347,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T01:13Z",
-      "eta": "2026-11-10T01:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "",
+      "result": "parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code.",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212389,6 +212389,11 @@
           "at": "2026-11-10T01:13Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T01:14Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: not tried, nothing pressed in Studio. This run was the MacBook's Claude Code, launched with the OLD worker prompt ('never upload, schedule or change anything on YouTube'), so the pin is forbidden to it. The checkout has #694 (macbook_worker.py pick_agent sends kind:studio to Gemini/Cursor/Codex and the new prompt allows a routed Studio job), but the worker process running on the MacBook is still the pre-#694 code: it picked Claude Code and sent the old prompt. Fix: restart the MacBook worker (launchd) so it loads the merged macbook_worker.py, then reopen J2461; it should then run on Gemini. Releasing instead would loop back to Claude Code."
         }
       ],
       "remaining_action": "HOS 006 Trees VbPubYd6Fbs: pin the existing pinned comment from the MacBook's Studio window (one try, then Ben)",
