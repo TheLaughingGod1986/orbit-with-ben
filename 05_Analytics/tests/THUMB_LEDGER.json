@@ -211,7 +211,7 @@
     },
     {
       "id": "T008",
-      "status": "running",
+      "status": "done",
       "started": "2026-11-09",
       "channel": "owb",
       "video": "6bbbvfCx6zY",
@@ -233,7 +233,7 @@
         "text": "CORALS KEPT COUNT"
       },
       "result": null,
-      "note": "Armed 9 Nov 2026 (J2430 / J2417, Ben 8 Nov 'Just go ahead'): Title and thumbnail Test & Compare A vs B in YouTube Studio on 6bbbvfCx6zY (private scheduled for 2026-11-22T18:00:00Z). Slot 1: Earth Is Losing Its Spin (And the Moon Is Taking It) + 027_j2417_A_4_cm_a_year_v01.jpg; Slot 2: Earth's Day Used to Be 22 Hours (And It's Still Getting Longer) + 027_j2417_B_corals_kept_count_v01.jpg.",
+      "note": "Armed 9 Nov 2026 (J2430 / J2417, Ben 8 Nov 'Just go ahead'): Title and thumbnail Test & Compare A vs B in YouTube Studio on 6bbbvfCx6zY (private scheduled for 2026-11-22T18:00:00Z). Slot 1: Earth Is Losing Its Spin (And the Moon Is Taking It) + 027_j2417_A_4_cm_a_year_v01.jpg; Slot 2: Earth's Day Used to Be 22 Hours (And It's Still Getting Longer) + 027_j2417_B_corals_kept_count_v01.jpg. REPLACED 10 Nov 2026 (J2497) before it started (Studio: Ineligible, 0 views, no result): 'Edit title' confirmed, Studio showed 'Experiment deleted'. No result to count. Successor: T028.",
       "readBack": "2026-11-09"
     },
     {
@@ -560,7 +560,7 @@
     },
     {
       "id": "T022",
-      "status": "running",
+      "status": "done",
       "started": "2026-11-09",
       "channel": "owb",
       "film": "026",
@@ -572,7 +572,7 @@
       ],
       "result": null,
       "readBack": "2026-11-09",
-      "note": "Armed 9 Nov 2026 (J2430 / J2417, Ben 8 Nov 'Just go ahead'): Title and thumbnail Test & Compare A vs B in YouTube Studio on c5AdqQsnnys (private scheduled for 2026-11-15T18:00:00Z). Slot 1: The Nearest Star Is One You Can't See (And It Has a Planet) + 026_j2417_A_11_day_year_v01.jpg; Slot 2: The Star Next Door Is Invisible (And It Will Outlive Our Sun) + 026_j2417_B_trillions_of_years_v01.jpg.",
+      "note": "Armed 9 Nov 2026 (J2430 / J2417, Ben 8 Nov 'Just go ahead'): Title and thumbnail Test & Compare A vs B in YouTube Studio on c5AdqQsnnys (private scheduled for 2026-11-15T18:00:00Z). Slot 1: The Nearest Star Is One You Can't See (And It Has a Planet) + 026_j2417_A_11_day_year_v01.jpg; Slot 2: The Star Next Door Is Invisible (And It Will Outlive Our Sun) + 026_j2417_B_trillions_of_years_v01.jpg. REPLACED 10 Nov 2026 (J2497) before it started (Studio: Ineligible, 0 views, no result): 'Edit title' confirmed, Studio showed 'Experiment deleted'. No result to count. Successor: T027.",
       "a": {
         "maker": "gemini",
         "file": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/j2417_v01/026_j2417_A_11_day_year_v01.jpg",
@@ -686,6 +686,63 @@
         "sha256": "74917c9d3104caa54976c7e8177bcfa4c1ef9cb19021e07ee82cb23cb299c339",
         "text": "RAINS MOLTEN GLASS"
       }
+    },
+    {
+      "id": "T027",
+      "status": "running",
+      "started": "2026-11-10",
+      "channel": "owb",
+      "film": "026",
+      "video": "c5AdqQsnnys",
+      "title": "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)",
+      "job": "J2497",
+      "tags": [
+        "rule23"
+      ],
+      "result": null,
+      "readBack": "2026-11-10",
+      "note": "Armed 10 Nov 2026 (J2497; Ben 10 Nov 'do what you think is best', second exception in AGENTS.md Never, Studio): replaces T022, which had not started. Title and thumbnail Test & Compare A vs B in YouTube Studio on c5AdqQsnnys (private, scheduled for 2026-11-15T18:00:00Z). Slot 1: How Far Is the Nearest Star? (You Can't See It, and It Has a Planet) + 026_j2417_A_11_day_year_v01.jpg; Slot 2: The Star Next Door Is Invisible (And It Will Outlive Our Sun) + 026_j2417_B_trillions_of_years_v01.jpg. Same thumbnails and same side B as T022; only side A's title changed (was: The Nearest Star Is One You Can't See (And It Has a Planet)). Studio state at read-back: Ineligible until public.",
+      "a": {
+        "maker": "gemini",
+        "file": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/j2417_v01/026_j2417_A_11_day_year_v01.jpg",
+        "sha256": "6917875bbdf207424ca4eb76a6b6f351511f9d0975b0fd81d0b5350e08f2a1a0",
+        "title": "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)",
+        "text": "11-DAY YEAR"
+      },
+      "b": {
+        "maker": "gemini",
+        "file": "02_Video-Projects/026_How-Far-Is-The-Nearest-Star/08_Thumbnail/j2417_v01/026_j2417_B_trillions_of_years_v01.jpg",
+        "sha256": "7865817d793299912836c71e0fa49852a8d24c68dd734499158afb004fe1e90b",
+        "title": "The Star Next Door Is Invisible (And It Will Outlive Our Sun)",
+        "text": "TRILLIONS OF YEARS"
+      }
+    },
+    {
+      "id": "T028",
+      "status": "running",
+      "started": "2026-11-10",
+      "channel": "owb",
+      "video": "6bbbvfCx6zY",
+      "film": "027",
+      "title": "What If Earth Stopped Spinning? (It's Already Slowing Down)",
+      "job": "J2497",
+      "a": {
+        "maker": "gemini",
+        "file": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/08_Thumbnail/j2417_v01/027_j2417_A_4_cm_a_year_v01.jpg",
+        "sha256": "dc1373490ab0ab37dd9c9d56dec2d33133191a3b393819c73ff9a6c0393ef8d0",
+        "title": "What If Earth Stopped Spinning? (It's Already Slowing Down)",
+        "text": "4 CM A YEAR"
+      },
+      "b": {
+        "maker": "gemini",
+        "file": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/08_Thumbnail/j2417_v01/027_j2417_B_corals_kept_count_v01.jpg",
+        "sha256": "b7a2cc2875f950cbc9b79528572e09855f922a8c80dde4240db775fd7e0ad46a",
+        "title": "Earth's Day Used to Be 22 Hours (And It's Still Getting Longer)",
+        "text": "CORALS KEPT COUNT"
+      },
+      "result": null,
+      "note": "Armed 10 Nov 2026 (J2497; Ben 10 Nov 'do what you think is best', second exception in AGENTS.md Never, Studio): replaces T008, which had not started. Title and thumbnail Test & Compare A vs B in YouTube Studio on 6bbbvfCx6zY (private, scheduled for 2026-11-22T18:00:00Z). Slot 1: What If Earth Stopped Spinning? (It's Already Slowing Down) + 027_j2417_A_4_cm_a_year_v01.jpg; Slot 2: Earth's Day Used to Be 22 Hours (And It's Still Getting Longer) + 027_j2417_B_corals_kept_count_v01.jpg. Same thumbnails and same side B as T008; only side A's title changed (was: Earth Is Losing Its Spin (And the Moon Is Taking It)). Studio state at read-back: Ineligible until public.",
+      "readBack": "2026-11-10"
     }
   ]
 }
