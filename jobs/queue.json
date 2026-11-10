@@ -216589,18 +216589,23 @@
           "at": "2026-11-10T19:05Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Analysed all 29 scheduled Shorts across OWB and HOS (0.0-0.5s) and verified blur-pad vs full-bleed metrics; creating worktree to implement check and synthetic tests"
+        },
+        {
+          "at": "2026-11-10T19:18Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2505; inspecting gate_shorts_open.py, LEARNINGS rule 24, and J2501 evidence"
         }
       ],
-      "remaining_action": "Implement frame-0 full-bleed check in gate_shorts_open.py and test_gate_stayed.py",
+      "remaining_action": "Add frame-0 full-bleed check to gate_shorts_open.py",
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-10T19:05Z",
+        "at": "2026-11-10T19:18Z",
         "by": "gemini",
-        "note": "Analysed all 29 scheduled Shorts across OWB and HOS (0.0-0.5s) and verified blur-pad vs full-bleed metrics; creating wor"
+        "note": "Claimed J2505; inspecting gate_shorts_open.py, LEARNINGS rule 24, and J2501 evidence"
       }
     },
     {
