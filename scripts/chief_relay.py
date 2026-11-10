@@ -1202,14 +1202,21 @@ def stalled_claims(data: dict, at: dt.datetime) -> list:
             and workflow.claim_is_stalled(j,at,execution)]
 
 
-def reroute(job: dict, to: str, model: str, note: str) -> bool:
-    """`jobs.py reroute <id> --to <to> --model <model> --git` in the OWB checkout. True when it went through."""
-    argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), "reroute", job["id"], "--agent", "relay", "--to", to,
-            "--note", note, "--git"] + (["--model", model] if model and model in routing.MODELS else [])
+def jobs_py(*args):
+    """Run `jobs.py <args> --git` in the engine checkout. The finished process, or None if it could not be run."""
+    argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), *args, "--git"]
     try:
-        r = subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
+        return subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as e:
-        log(f"reroute {job['id']} failed: {e}")
+        log(f"jobs.py {' '.join(args[:2])} failed: {e}")
+        return None
+
+
+def reroute(job: dict, to: str, model: str, note: str) -> bool:
+    """`jobs.py reroute <id> --to <to> --model <model> --git` in the engine checkout. True when it went through."""
+    r = jobs_py("reroute", job["id"], "--agent", "relay", "--to", to, "--note", note,
+                *(["--model", model] if model and model in routing.MODELS else []))
+    if r is None:
         return False
     if r.returncode != 0:
         log(f"reroute {job['id']} failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
@@ -1538,6 +1545,69 @@ def yield_monthly_for_dispatch(selection):
     return True
 
 
+STUCK_RUNS = 3  # runs in a row at the time cap, with no step finished, before a job is parked for the Chief
+
+
+def capped_runs_in_a_row(job: dict, runs: list) -> int:
+    """How many of this job's newest runs, in a row, were killed at the time cap since it last finished a step.
+
+    10 Nov 2026: J2466 began its first step again in four 25-minute runs, and the Mini did nothing else for 90
+    minutes. A run killed at the cap (exit 124) leaves the job claimed, and the relay resumes a claim before
+    anything else, so nothing broke the loop. Only capped runs count: a worker that releases a job with a note has
+    handed it back on purpose (a detached render it will check later), and that is not a loop. The count starts
+    again when a step is finished, when the job is added or reopened, and when another worker takes it.
+    """
+    moved = None
+    best = -1
+    for h in job.get("history") or []:
+        what, at = str(h.get("what") or ""), workflow.timestamp(h.get("at"))
+        if not at:
+            continue
+        if what.startswith(("added", "reopened")):
+            moved, best = at, -1
+        step = re.match(r"step (\d+) of \d+ done", what)
+        if step and int(step.group(1)) > best:
+            if best >= 0 or int(step.group(1)) > 0:  # "step 0 of N" at the start of a run is not a finished step
+                moved = at
+            best = int(step.group(1))
+    count, worker = 0, None
+    for row in reversed([r for r in runs if r.get("job") == job.get("id")]):
+        started = workflow.timestamp(row.get("at"))
+        if row.get("exit") != 124 or not started or (worker and row.get("worker") != worker):
+            break
+        # History stamps are to the minute. A run that began in the same minute as the last step is not counted.
+        if moved and started.replace(second=0, microsecond=0) <= moved:
+            break
+        worker = row.get("worker")
+        count += 1
+    return count
+
+
+def stuck_runs(job: dict) -> int:
+    try:
+        lines = d("runs.jsonl").read_text().splitlines()[-400:]
+    except OSError:
+        return 0
+    rows = []
+    for line in lines:
+        try:
+            rows.append(json.loads(line))
+        except ValueError:
+            continue
+    return capped_runs_in_a_row(job, rows)
+
+
+def park_stuck(job: dict, runs: int) -> bool:
+    """`jobs.py stuck <id> --runs N --git` in the engine checkout. True when the job is now parked for the Chief."""
+    r = jobs_py("stuck", job["id"], "--agent", "relay", "--runs", str(runs))
+    if r is None:
+        return False
+    if r.returncode != 0:
+        log(f"stuck: parking {job['id']} failed (exit {r.returncode}): {(r.stdout + r.stderr).strip()[-300:]}")
+        return False
+    return True
+
+
 def recorded_task_outcome(job, who, started):
     """A worker that parked its task has not necessarily failed as an agent.
 
@@ -1706,6 +1776,15 @@ def run_locked(at: dt.datetime) -> int:
             model = routing.model_for({"kind": "chief"} if review_work else job, who)
         elif not addressed and who in routing.MINI_WORKERS:
             who, model, job = route_worker(who, up)
+        if job and not review_work:
+            capped = stuck_runs(job)
+            if capped >= STUCK_RUNS and park_stuck(job, capped):
+                log(f"stuck: {job['id']} parked for Chief: {capped} runs in a row hit the cap with no step finished")
+                notify(f"Chief relay: {job['id']} is parked for the Chief. {capped} runs in a row hit the time cap "
+                       "without finishing a step, so it was not started again. It needs splitting or a narrower next step.")
+                attempted.add(job["id"])
+                at = now()
+                continue
         if chained and not review_work and (job is None or (last_ran and job.get("id") == last_ran)):
             log(f"chain: stop after {chained} job(s): " + ("next job is the one just run (released to retry later)"
                                                          if job else "no next job identified"))

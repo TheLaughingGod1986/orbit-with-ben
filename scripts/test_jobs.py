@@ -168,6 +168,45 @@ class Lifecycle(unittest.TestCase):
         self.assertNotIn("| J0002 |", md)
 
 
+class Stuck(unittest.TestCase):
+    """The relay parks a job whose runs keep hitting the time cap on one step (10 Nov 2026, J2466)."""
+
+    def test_it_goes_to_the_chief_and_keeps_its_progress(self):
+        j = {"id": "J0400", "status": "claimed", "by": "codex", "since": "2026-10-07T11:00Z", "eta": "2026-10-07T13:00Z",
+             "progress": {"step": 2, "of": 5}, "history": []}
+        jobs.do_stuck(j, "relay", 3, T0)
+        self.assertEqual((j["status"], j["eta"]), ("blocked", ""))
+        self.assertTrue(j["result"].startswith("parked for Chief: 3 runs in a row hit the time cap at step 2 of 5"))
+        self.assertEqual(j["progress"], {"step": 2, "of": 5})
+        self.assertTrue(j["history"][-1]["what"].startswith("blocked: parked for Chief"))
+        self.assertEqual(j["history"][-1]["by"], "relay")
+
+    def test_a_job_with_no_steps_yet_says_its_first_step(self):
+        j = {"id": "J0401", "status": "open", "history": []}
+        jobs.do_stuck(j, "relay", 4, T0)
+        self.assertIn("4 runs in a row hit the time cap at its first step", j["result"])
+
+    def test_a_finished_job_is_left_alone(self):
+        with self.assertRaises(ValueError):
+            jobs.do_stuck({"id": "J0402", "status": "done", "history": []}, "relay", 3, T0)
+
+    def test_cli_stuck(self):
+        d = queue(("mini", "clean up old branches", {}))
+        jobs.do_next(d, "cursor", {"mini"}, T0)
+        saved = []
+        with tempfile.TemporaryDirectory() as tmp:
+            old = (jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat)
+            jobs.load, jobs.save = (lambda *a: d), (lambda data, *a: saved.append(data))
+            jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = pathlib.Path(tmp) / "JOBS.md", (lambda: None), (lambda a: None)
+            try:
+                rc = jobs.main(["stuck", "J0001", "--agent", "relay", "--runs", "3"])
+            finally:
+                jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = old
+        self.assertEqual(rc, 0)
+        self.assertEqual(saved[0]["jobs"][0]["status"], "blocked")
+        self.assertIn("parked for Chief: 3 runs in a row", saved[0]["jobs"][0]["result"])
+
+
 class BoardLink(unittest.TestCase):
     def test_a_film_job_claims_and_releases_its_board_stage(self):
         with tempfile.TemporaryDirectory() as tmp:

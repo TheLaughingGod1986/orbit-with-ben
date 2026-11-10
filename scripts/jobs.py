@@ -829,6 +829,20 @@ def do_release(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "released" + (": " + note if note else ""))
 
 
+def do_stuck(job: dict, agent: str, runs: int, at: dt.datetime) -> None:
+    """The relay parks a job whose runs keep hitting the time cap without finishing a step (10 Nov 2026: J2466 began
+    its first step again in four 25-minute runs and held the Mini for 90 minutes). It goes to the Chief, who splits
+    it, narrows its next step, or has the long part started detached. Progress is kept, so nothing is redone."""
+    if job["status"] not in ("open", "claimed"):
+        raise ValueError(f"{job['id']} is {job['status']}; nothing to park")
+    progress = job.get("progress") or {}
+    where = f"step {progress.get('step', 0)} of {progress['of']}" if progress.get("of") else "its first step"
+    reason = (f"parked for Chief: {runs} runs in a row hit the time cap at {where} without finishing a step. "
+              "Split the job, narrow its next step, or have the long part started detached (tmux) and released.")
+    job.update(status="blocked", result=reason, eta="")
+    log(job, at, agent, "blocked: " + reason)
+
+
 def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     _mine(job, agent)
     require_chief(job, agent, at)
@@ -1203,7 +1217,7 @@ def main(argv=None) -> int:
     n.add_argument("--eta", type=int, default=None)
     n.add_argument("--id", default="", help="claim only this actionable job; preserve role, hold and existing-claim checks")
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
-    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback"):
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback", "stuck"):
         p = sub.add_parser(name)
         p.add_argument("id")
         p.add_argument("--agent", default="")
@@ -1217,6 +1231,8 @@ def main(argv=None) -> int:
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
             p.add_argument("--action", default=None, help="plain-English action still unfinished; update when the remaining work changes")
             p.add_argument("--films", default=None, help="video(s) this job advances, e.g. HOS:006 or OWB:028,OWB:029")
+        if name == "stuck":
+            p.add_argument("--runs", type=int, required=True, help="runs in a row that hit the time cap (relay only)")
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
@@ -1391,6 +1407,11 @@ def main(argv=None) -> int:
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "handback":
                 do_handback(job, args.agent or "relay", args.note, at)
+            elif args.cmd == "stuck":
+                held = job.get("by") if job["status"] == "claimed" else ""
+                do_stuck(job, args.agent or "relay", args.runs, at)
+                if held:
+                    board_release(job, held, "blocked")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
                 do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)

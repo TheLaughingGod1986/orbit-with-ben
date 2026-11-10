@@ -1041,5 +1041,96 @@ class Relay(unittest.TestCase):
         self.assertEqual([j["id"] for j in cr.stalled_claims(data, T0)], ["J1", "J3"])
 
 
+    # ---- a job that keeps hitting the time cap on one step is parked, not started again (10 Nov 2026, J2466) ----
+    def capped(self, n, worker="codex", job="J0400", start=T0 - 180 * MIN, every=30):
+        return [{"at": cr.iso(start + i * every * MIN), "job": job, "worker": worker, "exit": 124} for i in range(n)]
+
+    def test_three_capped_runs_with_no_step_finished_count_as_three(self):
+        job = {"id": "J0400", "history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(3)), 3)
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(2)), 2)
+
+    def test_reporting_step_zero_again_is_not_a_finished_step(self):
+        job = {"id": "J0400", "history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}] + [
+            {"at": cr.iso(T0 - 180 * MIN + i * 30 * MIN)[:16] + "Z", "by": "codex", "what": "step 0 of 5 done"} for i in range(3)]}
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(3)), 3)
+
+    def test_a_finished_step_starts_the_count_again(self):
+        job = {"id": "J0400", "history": [
+            {"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"},
+            {"at": "2026-10-07T09:45Z", "by": "codex", "what": "step 1 of 5 done: inventory written"}]}
+        # runs began 09:00, 09:30, 10:00, 10:30: the step was finished during the second, so two count
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(4)), 2)
+        job["history"].append({"at": "2026-10-07T10:40Z", "by": "codex", "what": "step 1 of 5 done: said again"})
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(4)), 2)  # the same step again is not progress
+
+    def test_a_run_that_began_in_the_minute_of_the_last_step_is_not_counted(self):
+        job = {"id": "J0400", "history": [{"at": "2026-10-07T10:30Z", "by": "codex", "what": "step 2 of 5 done"}]}
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(4)), 0)
+
+    def test_a_run_that_ended_by_itself_breaks_the_row(self):
+        job = {"id": "J0400", "history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}
+        runs = self.capped(2) + [{"at": cr.iso(T0 - 100 * MIN), "job": "J0400", "worker": "codex", "exit": 0}] + \
+            self.capped(2, start=T0 - 60 * MIN)
+        self.assertEqual(cr.capped_runs_in_a_row(job, runs), 2)  # a release with a note is a hand-back, not a loop
+
+    def test_other_jobs_other_workers_and_a_reopen_do_not_count(self):
+        job = {"id": "J0400", "history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}
+        runs = self.capped(3, job="J0999") + self.capped(2, worker="cursor") + self.capped(1, start=T0 - 20 * MIN)
+        self.assertEqual(cr.capped_runs_in_a_row(job, runs), 1)  # only the newest, by codex, on this job
+        job["history"].append({"at": "2026-10-07T11:50Z", "by": "claude", "what": "reopened: narrower first step"})
+        self.assertEqual(cr.capped_runs_in_a_row(job, self.capped(3)), 0)
+
+    def stuck_setup(self, job_json):
+        import json
+        import jobs
+        self.routed_queue('{"jobs": [' + job_json + ']}')
+        q = cr.OWB / "jobs" / "queue.json"
+        (cr.STATE / "chief").mkdir(parents=True, exist_ok=True)
+        (cr.STATE / "chief" / "runs.jsonl").write_text("".join(json.dumps(r) + "\n" for r in self.capped(3)))
+        old_park, old_q = cr.park_stuck, cr.queue_has_work
+
+        def fake_park(job, runs):  # jobs.py stuck, on the test queue (never the live one)
+            data = json.loads(q.read_text())
+            jobs.do_stuck(next(x for x in data["jobs"] if x["id"] == job["id"]), "relay", runs, cr.now())
+            q.write_text(json.dumps(data))
+            return True
+        cr.park_stuck, cr.queue_has_work = fake_park, (lambda agent: True)
+        self.addCleanup(lambda: setattr(cr, "park_stuck", old_park))
+        self.addCleanup(lambda: setattr(cr, "queue_has_work", old_q))
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
+        cr.seen("chief", T0 - 10 * MIN)
+        return q
+
+    def test_a_job_capped_three_times_running_is_parked_for_the_chief_and_not_started_again(self):
+        q = self.stuck_setup('{"id": "J0400", "kind": "chart", "status": "open", "needs": "mini", "progress": '
+                             '{"step": 1, "of": 6}, "history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}')
+        cr.cmd_run(T0)
+        j = self.job(q, "J0400")
+        self.assertEqual(j["status"], "blocked")
+        self.assertIn("parked for Chief: 3 runs in a row hit the time cap at step 1 of 6", j["result"])
+        self.assertTrue(cr.workflow.is_review(j))  # so it reaches the Chief's inbox
+        self.assertEqual(j["progress"], {"step": 1, "of": 6})  # kept: nothing is redone
+        self.assertFalse(self.ran("codex"))
+        self.assertIn("J0400 is parked for the Chief", self.posts.read_text())
+
+    def test_two_capped_runs_are_not_enough(self):
+        import json
+        q = self.stuck_setup('{"id": "J0400", "kind": "chart", "status": "open", "needs": "mini", '
+                             '"history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}')
+        (cr.STATE / "chief" / "runs.jsonl").write_text("".join(json.dumps(r) + "\n" for r in self.capped(2)))
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0400")["status"], "open")
+        self.assertTrue(self.ran("codex"))
+
+    def test_if_parking_fails_the_job_runs_as_before(self):
+        q = self.stuck_setup('{"id": "J0400", "kind": "chart", "status": "open", "needs": "mini", '
+                             '"history": [{"at": "2026-10-07T08:00Z", "by": "claude", "what": "added"}]}')
+        cr.park_stuck = lambda job, runs: False
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0400")["status"], "open")
+        self.assertTrue(self.ran("codex"))
+
+
 if __name__ == "__main__":
     unittest.main()
