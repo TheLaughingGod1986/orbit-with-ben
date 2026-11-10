@@ -216446,13 +216446,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T14:16Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T14:07Z",
-      "result": "parked for Chief: J2171 condition NOT met, keep it blocked (OWB PR #740, jobs/reviews/J2507/REVIEW.md, 2cbdefadc). Direct NAS + queue verification at 2026-11-10T14:25Z: (1) all 4 VO files and 17 available row plates in HOS main 5179035e INPUT_INVENTORY.json verified intact by SHA-256 on NAS, and 0 duplicate gravity/Newton/Moon HOS videos in 2026-11-10.json snapshot; (2) J2033 is open at step 3 of 5 (detached batch 1 launched at 11:57Z in tmux hos009-tranche2; only 10_how_high_t1.png.still.create.json is in v05_tranche2_archive on NAS so far; 0/20 Tranche 2 video clips archived on NAS, Short A S03 P03:07_ball_to_moon still unminted); (3) J2034 (open, 0/3, after J2033) and J2035 (open, 0/3, after J2034, 05_Music/ absent on NAS) have not started. MacBook is not the holder (gemini) or elected Chief, so 'jobs.py wait J2171 --agent macbook ... --recheck J2507' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T20:25:00Z' --type input --recheck J2507 --git and close J2507. £0 / 0 credits.",
+      "result": "Accepted (acting Chief, 10 Nov 15:00Z; #740 merged): J2171's condition is NOT met. J2033 is at step 3 of 5 with 0 of 20 clips archived; J2034 and J2035 have not started. J2171 stays blocked; its wait is recorded with the next check at 20:25Z. J2171 condition NOT met, keep it blocked (OWB PR #740, jobs/reviews/J2507/REVIEW.md, 2cbdefadc). Direct NAS + queue verification at 2026-11-10T14:25Z: (1) all 4 VO files and 17 available row plates in HOS main 5179035e INPUT_INVENTORY.json verified intact by SHA-256 on NAS, and 0 duplicate gravity/Newton/Moon HOS videos in 2026-11-10.json snapshot; (2) J2033 is open at step 3 of 5 (detached batch 1 launched at 11:57Z in tmux hos009-tranche2; only 10_how_high_t1.png.still.create.json is in v05_tranche2_archive on NAS so far; 0/20 Tranche 2 video clips archived on NAS, Short A S03 P03:07_ball_to",
       "history": [
         {
           "at": "2026-11-10T14:07Z",
@@ -216503,6 +216503,11 @@
           "at": "2026-11-10T14:27Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2171 condition NOT met, keep it blocked (OWB PR #740, jobs/reviews/J2507/REVIEW.md, 2cbdefadc). Direct NAS + queue verification at 2026-11-10T14:25Z: (1) all 4 VO files and 17 available row plates in HOS main 5179035e INPUT_INVENTORY.json verified intact by SHA-256 on NAS, and 0 duplicate gravity/Newton/Moon HOS videos in 2026-11-10.json snapshot; (2) J2033 is open at step 3 of 5 (detached batch 1 launched at 11:57Z in tmux hos009-tranche2; only 10_how_high_t1.png.still.create.json is in v05_tranche2_archive on NAS so far; 0/20 Tranche 2 video clips archived on NAS, Short A S03 P03:07_ball_to_moon still unminted); (3) J2034 (open, 0/3, after J2033) and J2035 (open, 0/3, after J2034, 05_Music/ absent on NAS) have not started. MacBook is not the holder (gemini) or elected Chief, so 'jobs.py wait J2171 --agent macbook ... --recheck J2507' was refused ('Only the holder or elected Chief may update this hold'). Chief please run: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed' --check-at '2026-11-10T20:25:00Z' --type input --recheck J2507 --git and close J2507. £0 / 0 credits."
+        },
+        {
+          "at": "2026-11-10T15:02Z",
+          "by": "claude",
+          "what": "acting Chief: accepted; J2171 wait recorded (next check 20:25Z)"
         }
       ],
       "remaining_action": "Chief to record wait on J2171 (--recheck J2507) and close J2507; see OWB PR #740 (2cbdefadc)",
@@ -216534,7 +216539,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:13Z",
-      "result": "PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3). (1) owb_sa_s7_pluto_heart_v02.mp4 (Sat 14 Nov): KEEP — moving 9:16 open (f0diff=4.48, motion=18.77), NO CRATERS on f0, 0.15s VO join at 2.62-2.77s clean across 3 listens (no click/jump/breath), all text clean, smooth loop at 0:16.39-0:17.60. (2) mon16_cant_see_nearest_star_v05.mp4 (Mon 16 Nov): FIX — end card clean of c5AdqQsnnys, audio clean (-14.2 LUFS / -2.2 dBTP), but 0:20.23-0:22.63 (s06) repeats the 0:00-0:02.40 opening Paranal shot right before the static end card (and locked VO surprise 'You can't see it' is at 0:04.28). (3) wed18_robot_reach_nearest_star_v06.mp4 (Wed 18 Nov): FIX — end card clean of c5AdqQsnnys, audio clean, but 0:13.45-0:16.55 (3.10s, s05 ESO star trails) is a 100% frozen still frame (0.002/fr diff, zero zoom/pan) and f0 motion warns (9.0 < 10). Ben should watch Card 3 (Pluto v02) and skip Cards 1 & 2 (Mon 16 v05, Wed 18 v06) pending Chief decision.",
+      "result": "Chief ruling 10 Nov 15:00Z (#742 merged): Pluto v02 KEEP, swap queued (J2511). Mon 16 v05 and Wed 18 v06: Ben OK'd both at 14:47Z; the two faults found here are being fixed as an offer to him (J2512), with his approved cuts as the fallback (J2513). PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3). (1) owb_sa_s7_pluto_heart_v02.mp4 (Sat 14 Nov): KEEP — moving 9:16 open (f0diff=4.48, motion=18.77), NO CRATERS on f0, 0.15s VO join at 2.62-2.77s clean across 3 listens (no click/jump/breath), all text clean, smooth loop at 0:16.39-0:17.60. (2) mon16_cant_see_nearest_star_v05.mp4 (Mon 16 Nov): FIX — end card clean of c5AdqQsnnys, audio clean (-14.2 LUFS / -2.2 dBTP), but 0:20.23-0:22.63 (s06) repeats the 0:00-0:02.40 opening Paranal shot right before the static end card (and locked VO surprise 'You can't see it' is at 0:04.28). (3) wed18_robot_reach_nearest_star_v06.mp4 (Wed 18 Nov): FIX — end card clean of c5AdqQsnnys, audio clean, but 0:13.45-0:16.55 (3.10s, s05 ESO star trails) is a 100% frozen still frame (0.002/fr diff, zero zoom/pan) and f0 motion warns (9.0 < 10). Ben should watch Card 3 (Pluto v02) and skip Cards 1 & 2 (Mon 16 v05, Wed 18 v06) pending Chief decision.",
       "history": [
         {
           "at": "2026-11-10T14:13Z",
@@ -216570,6 +216575,11 @@
           "at": "2026-11-10T14:40Z",
           "by": "gemini",
           "what": "done: PR #742 (jobs/reviews/J2508/REVIEW.md, commit 5991257f3). (1) owb_sa_s7_pluto_heart_v02.mp4 (Sat 14 Nov): KEEP — moving 9:16 open (f0diff=4.48, motion=18.77), NO CRATERS on f0, 0.15s VO join at 2.62-2.77s clean across 3 listens (no click/jump/breath), all text clean, smooth loop at 0:16.39-0:17.60. (2) mon16_cant_see_nearest_star_v05.mp4 (Mon 16 Nov): FIX — end card clean of c5AdqQsnnys, audio clean (-14.2 LUFS / -2.2 dBTP), but 0:20.23-0:22.63 (s06) repeats the 0:00-0:02.40 opening Paranal shot right before the static end card (and locked VO surprise 'You can't see it' is at 0:04.28). (3) wed18_robot_reach_nearest_star_v06.mp4 (Wed 18 Nov): FIX — end card clean of c5AdqQsnnys, audio clean, but 0:13.45-0:16.55 (3.10s, s05 ESO star trails) is a 100% frozen still frame (0.002/fr diff, zero zoom/pan) and f0 motion warns (9.0 < 10). Ben should watch Card 3 (Pluto v02) and skip Cards 1 & 2 (Mon 16 v05, Wed 18 v06) pending Chief decision."
+        },
+        {
+          "at": "2026-11-10T15:02Z",
+          "by": "claude",
+          "what": "acting Chief: ruling recorded; J2511, J2512, J2513 queued"
         }
       ],
       "remaining_action": "Close J2508 and post KEEP/FIX findings on #99",
