@@ -215619,9 +215619,14 @@
           "at": "2026-11-10T11:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T11:40Z",
+          "by": "gemini",
+          "what": "step 0 of 7 done: Claimed J2496; starting 7-step time-limited SSD check on /Volumes/MiniWork"
         }
       ],
-      "remaining_action": "Mini SSD check for Ben: is MiniWork connected, reading and writing, and is the studio using it (time-limited, read-only bar one test file)",
+      "remaining_action": "Check MiniWork mount, diskutil info, USB/Thunderbolt port & speed, and device ID",
       "due": "2026-11-10T12:00:00Z",
       "kind": "qa",
       "plain": "Check the Mini's SSD is connected, reads and writes at a sensible speed, and is being used",
@@ -215629,11 +215634,10 @@
       "urgent": 5,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-10T11:39Z",
+        "of": 7,
+        "at": "2026-11-10T11:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2496; starting 7-step time-limited SSD check on /Volumes/MiniWork"
       }
     }
   ],
