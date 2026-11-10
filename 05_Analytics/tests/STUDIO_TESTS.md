@@ -351,3 +351,18 @@ None from this loop (no test ended). The keeper-score rules (#286, #287) were Be
 | Mon 2 Nov 2026 | A | provisional look (data to ~31 Oct) | — |
 | Mon 9 Nov 2026 | A, B | end date | — |
 | Mon 16 Nov 2026 | A, B | final readout (data through 9 Nov) | — |
+
+
+---
+
+## Rule 26 title changes (J2471, 10 Nov 2026; read out 7 Dec)
+
+Approved in `RULE_26_TITLE_PASS_2026-11.md` (J2462). Applied with `retitle-videos.ts` / `redescribe-videos.ts`; each read back private with its schedule unchanged. Fix lists and results: `05_Analytics/live_fixes/2026-11-10_rule26_*`.
+
+| Film | Video | Old title | New title | Line 1 | Changed (UTC) | State |
+|---|---|---|---|---|---|---|
+| 026 | `c5AdqQsnnys` | The Nearest Star Is One You Can't See (And It Has a Planet) | (unchanged) | unchanged (already leads with the phrase) | — | NOT applied: API 400 `UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE`; Studio shows A/B testing titles, Ineligible (T022 arms). Wanted: How Far Is the Nearest Star? (You Can't See It, and It Has a Planet). Parked for Chief |
+| 027 | `6bbbvfCx6zY` | Earth Is Losing Its Spin (And the Moon Is Taking It) | (unchanged) | unchanged (not applied) | — | NOT applied: API 400 `UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE`; Studio shows A/B testing titles, Ineligible (T008 arms). Wanted: What If Earth Stopped Spinning? (It's Already Slowing Down). Parked for Chief |
+| 028 | `F-jImX5h7ws` | What Happens When a Star Enters Our Solar System? | (unchanged) | new search-phrase line 1 | 2026-11-10T01:52Z | applied; private, 2026-11-29T18:00Z |
+| 031 | `G5uMANXHtNU` | What Happens When Earth's Magnetic Field Flips? | What Happens When Earth's Magnetic Field Flips? (183 Times So Far) | new search-phrase line 1 | 2026-11-10T01:52Z | applied; private, 2026-12-02T18:00Z; thumbnail test T021 untouched |
+| 029 | `vP1BbqZ_dnM` | Is Betelgeuse About to Explode? | Is Betelgeuse About to Explode? (We'd See It in the Daytime Sky) | new search-phrase line 1 | 2026-11-10T01:52Z | applied; private, 2026-12-06T18:00Z; thumbnail test T010 untouched |
