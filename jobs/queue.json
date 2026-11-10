@@ -213341,13 +213341,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T05:00Z",
-      "eta": "2026-11-10T06:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "",
+      "result": "parked for Chief: option (c) done. HOS 007 ETynHpIYLeY description line 1 set 05:02Z; read-back (Studio 05:03Z, API 05:04Z): title test arms A and B unchanged, new line 1, private, Thu 12 Nov 18:00 London. HOS 099 done earlier. Review HOS PR #463 (bf6e5b41) and OWB PR #704 (129e27439). The approved 007 title is not applied; that waits on the test-replacement call. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213478,6 +213478,11 @@
           "at": "2026-11-10T05:05Z",
           "by": "claudecode",
           "what": "step 4 of 4 done: check_all.sh passes; PR comments posted"
+        },
+        {
+          "at": "2026-11-10T05:05Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: option (c) done. HOS 007 ETynHpIYLeY description line 1 set 05:02Z; read-back (Studio 05:03Z, API 05:04Z): title test arms A and B unchanged, new line 1, private, Thu 12 Nov 18:00 London. HOS 099 done earlier. Review HOS PR #463 (bf6e5b41) and OWB PR #704 (129e27439). The approved 007 title is not applied; that waits on the test-replacement call. GBP 0."
         }
       ],
       "remaining_action": "Chief review of HOS PR 463 and OWB PR 704",
