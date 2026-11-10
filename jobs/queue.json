@@ -1,5 +1,5 @@
 {
-  "next_id": 2516,
+  "next_id": 2517,
   "jobs": [
     {
       "id": "J0001",
@@ -216918,6 +216918,35 @@
       ],
       "remaining_action": "Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card",
       "due": "2026-11-12T18:00:00Z",
+      "kind": "review"
+    },
+    {
+      "id": "J2516",
+      "title": "Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 10 Nov 2026 (thinking out loud): \"is there a small part on the dashboard we can show what repos are plugged in, like History of Science, Orbit with Ben, and the ability that we can just add another repo ... a brand new channel ... and this system will read the individual channel's rules and guidance\". Chief ruling: yes to showing them and to a guided way to add one; no to a button on the public board that adds a repo by itself (creating a repo, the YouTube sign-in and the voice are Ben's, and the board is a web page).\n\nBuild the read-only part now.\n\n1. Data: `board.json` already carries `channels` (slug, label, name, short, home). Add for each, from `scripts/channels.py` and `scripts/channel_check.py`: the YouTube handle, the repo, its share of the work places (`wip`), whether the studio can drive it and the list of things still to do (the same lines `channel_check.py --all` prints), whether it has its own rules file (`studio/RULES.md`), how many films are in production, and its last video to go live. A channel whose checkout is not on the machine says so; it is not an error.\n2. Board (Studio app): a small Channels section at the foot of the Overview, one chip per channel (name, a green or amber light, \"ready\" or \"2 things to do\"). Tapping opens `/#channels`: one card per channel with the fields above in plain words, then \"Add a channel\": the steps in order, marked with who does each (Claude: make the folder from the template with `channel_new.py`, fill in its settings, run the check, plug it in. Ben: create the GitHub repo, sign in to its YouTube Studio, choose the voice). No write from the page.\n3. Name no channel in new code. Plain words on the page: \"channel\", not \"repo\", except where the repo's name is shown.\n4. Tests: the data for two channels and for a third added by folder (as `test_channels.py` `ThirdChannelOnTheBoard` does); the page renders with no channels field, escapes text, and shows the to-do lines. `node scripts/test_studio_app.cjs` and the board tests pass.\n5. Through a pull request; merge when green; redeploy the board from main and check /, /board, /tracker, /api/checks and /version.json.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T15:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T15:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one",
+      "due": "2026-11-11T18:00:00Z",
       "kind": "review"
     }
   ],
