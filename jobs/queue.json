@@ -216235,6 +216235,11 @@
           "at": "2026-11-10T13:25Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T15:08Z",
+          "by": "claude",
+          "what": "Added 10 Nov 15:10Z: while in the HOS records, tidy the 006 Trees entry (VbPubYd6Fbs) in 00_Brand/Channel-Setup/social/UPLOADS.json. It still has pinConfirmed false and the old pinBlocker text, which contradict the pinnedComment note merged in HOS #476. The public watch page showed 'Pinned by' the channel on 10 Nov (J0958), so set pinConfirmed true and move pinBlocker into the note as history."
         }
       ],
       "remaining_action": "History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge",
