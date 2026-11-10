@@ -212476,10 +212476,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-10T03:21Z",
-      "eta": "2026-11-10T04:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
       "result": "",
@@ -212543,6 +212543,11 @@
           "at": "2026-11-10T03:28Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Step 1 part done, read-only: four references found (Saturn end screen and Europa description use Start Here; Home sections 0 and 8 use What Space Would Do to You and James Webb). Nothing changed in Studio."
+        },
+        {
+          "at": "2026-11-10T03:28Z",
+          "by": "claudecode",
+          "what": "released: Out of run time at a clean point; nothing changed in Studio, nothing removed. Branch worker/J2460-playlist-refs (e37e4b8f81) has jobs/reviews/J2460/PLAYLIST_REFS.md: full ids, all six titles match, contents of the six for rebuilding, and four references to repoint (Saturn 55AEQwvs36g end screen -> PLI1AApUz3qz8; Europa NbW5G1BpPY0 description link -> PLI1AApUz3qz8; Home section 0 -> PLQLwG0axcZis; Home section 8 -> PLOgdBQBnJE2o). Still to read before any swap or removal: end screens and cards of the 5 scheduled longs (c5AdqQsnnys, 6bbbvfCx6zY, F-jImX5h7ws, G5uMANXHtNU, vP1BbqZ_dnM) in the Studio editor on 9223. Then steps 2-5. Watch out: ~/_desk/scratch (/Volumes/MiniWork) hangs on write, use /tmp; the 9222 Studio tab is on channel UCGGBHuqKAL6WzGLXnxm98eg, not History of Science, so switch channel first; do not use Playwright ctx.request against youtube.com, its error text dumps session cookies."
         }
       ],
       "remaining_action": "Read the five scheduled longs' end screens and cards in Studio, then repoint the four references found",
