@@ -1,5 +1,5 @@
 {
-  "next_id": 2533,
+  "next_id": 2534,
   "jobs": [
     {
       "id": "J0001",
@@ -218019,6 +218019,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the board work when the studio repo is private"
+    },
+    {
+      "id": "J2533",
+      "title": "Decoupling: the 13 lines J2522 left (studio_reach, sfx_kit, core_sync, routing) read the channel's own file",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "What J2522 left: 13 code lines in four scripts still name a channel. Count file: `scripts/channel_ratchet.json`; rules as in J2522 (behaviour must not change; a ceiling only goes down; add tests with a made-up third channel).\n\n- `studio_reach.py` (6) and `sfx_kit.py` (4): they need facts that belong to a channel and are not in its file yet (the channel's YouTube id and the port its reach read uses; the name of its sound kit). Add the fields to each channel's `studio/channel.json`: History of Science first, in a pull request on that repo, then this repo's file and the two scripts reading them through `channels.py`.\n- `core_sync.py` (2) and `routing.py` (1).\n\nLeave alone: `missed_runs.py`, `cdp_tabs.py` and `owb_thread.py` (the studio's own name; it changes at the move), and `nas_offload.py` (pull request 751 is changing it). Do not touch `chief_relay.py`, `kanban_snapshot.py`, `approved_deliver.py`, `board_publish.py`, `video_tracker.py` or `macbook_worker.py`.\n\nOne pull request on each repo, park for Chief with the counts before and after. No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T18:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T18:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling: the 13 lines J2522 left (studio_reach, sfx_kit, core_sync, routing) read the channel's own file",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Make four more studio tools work for any channel"
     }
   ],
   "focus": [
