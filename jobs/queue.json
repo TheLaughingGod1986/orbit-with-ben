@@ -214617,13 +214617,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T06:18Z",
-      "eta": "2026-11-10T08:18Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-10T06:17Z",
-      "result": "",
+      "result": "PR #719 (macbook/J2487): Fixed 023 Venus (VBaYRPp85Sw) Test & Compare B thumbnail '465°C' per J2486 design review. (1) Accuracy (465°C < ~525°C Draper point): built from clean text-free base plate venus_surface_465c_lander_plate.jpg (SHA256 3374c505401ac19f3bbe902a2d5298fc0069ca911d46a4acdd90218c96892bbc, £0 via Antigravity built-in image-generator) and removed additive red lander_glow/sphere_glow boosts; lower hull, landing ring, and struts sit in natural cast shadow (0.0% of lower hull at R>=245, down from 31.4%), no red ground pool, no glowing basalt lava cracks, warm amber-orange atmospheric sky cast lighting upper metallic lander. (2) Grade/Saturation: thumb_preview.py long --score PASS with saturation=183.3 (within 165-195 / 170-200 target; down from 245.5), only 1.97% pixels at S>=250 (down from 59.4%), near_black=24% (<=30%). (3) Provenance recorded in META.json (£0). (4) Rebuilt venus_tc_B_465c_VBaYRPp85Sw.jpg (1280x720, 233,366 bytes, SHA256 c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b), venus_tc_B_465c_preview_sheet.jpg, venus_tc_A_vs_B_465c_sheet.jpg, SHA256.txt, and mirrored to both NAS paths (/Volumes/data/studio-live/... and /Volumes/data/mac-mini-archive/...). (5) Queued fresh independent design review J2488; J1198 stays waiting on J2488. Nothing touched in Studio. £0.",
       "history": [
         {
           "at": "2026-11-10T06:17Z",
@@ -214649,6 +214649,11 @@
           "at": "2026-11-10T06:34Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-10T06:35Z",
+          "by": "macbook",
+          "what": "done: PR #719 (macbook/J2487): Fixed 023 Venus (VBaYRPp85Sw) Test & Compare B thumbnail '465°C' per J2486 design review. (1) Accuracy (465°C < ~525°C Draper point): built from clean text-free base plate venus_surface_465c_lander_plate.jpg (SHA256 3374c505401ac19f3bbe902a2d5298fc0069ca911d46a4acdd90218c96892bbc, £0 via Antigravity built-in image-generator) and removed additive red lander_glow/sphere_glow boosts; lower hull, landing ring, and struts sit in natural cast shadow (0.0% of lower hull at R>=245, down from 31.4%), no red ground pool, no glowing basalt lava cracks, warm amber-orange atmospheric sky cast lighting upper metallic lander. (2) Grade/Saturation: thumb_preview.py long --score PASS with saturation=183.3 (within 165-195 / 170-200 target; down from 245.5), only 1.97% pixels at S>=250 (down from 59.4%), near_black=24% (<=30%). (3) Provenance recorded in META.json (£0). (4) Rebuilt venus_tc_B_465c_VBaYRPp85Sw.jpg (1280x720, 233,366 bytes, SHA256 c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b), venus_tc_B_465c_preview_sheet.jpg, venus_tc_A_vs_B_465c_sheet.jpg, SHA256.txt, and mirrored to both NAS paths (/Volumes/data/studio-live/... and /Volumes/data/mac-mini-archive/...). (5) Queued fresh independent design review J2488; J1198 stays waiting on J2488. Nothing touched in Studio. £0."
         }
       ],
       "remaining_action": "Queue fresh independent design review before reopening J1198",
