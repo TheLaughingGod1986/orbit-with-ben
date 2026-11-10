@@ -468,6 +468,48 @@ class Diverged(unittest.TestCase):
             self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
             self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "origin/main", cwd=t / "b"))
 
+    def _behind_clone(self, t):
+        g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout  # noqa: E731
+        g("init", "-q", "--bare", "-b", "main", str(t / "origin.git"), cwd=t)
+        for c in ("a", "b"):
+            g("clone", "-q", str(t / "origin.git"), str(t / c), cwd=t)
+            g("config", "user.email", "x@y", cwd=t / c); g("config", "user.name", "x", cwd=t / c)
+        (t / "a" / "f").write_text("1"); g("add", "f", cwd=t / "a"); g("commit", "-qm", "one", cwd=t / "a")
+        g("push", "-q", "origin", "main", cwd=t / "a")
+        g("pull", "-q", "origin", "main", cwd=t / "b")
+        (t / "a" / "f").write_text("2"); g("commit", "-qam", "upstream", cwd=t / "a"); g("push", "-q", "origin", "main", cwd=t / "a")
+        return g
+
+    def test_a_stale_index_lock_in_a_clone_that_is_only_behind_does_not_stop_the_pull(self):
+        """10 Nov 2026, slot 1: 'pull failed ... Another git process seems to be running ... remove the file manually'.
+        The clone had nothing of its own to rescue, so the lock was never looked at and every run errored."""
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "log"):
+            t = pathlib.Path(t)
+            g = self._behind_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")
+            old = time.time() - mw.STALE_LOCK_S - 60
+            os.utime(lock, (old, old))
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
+                    mock.patch.object(mw, "HOS", t / "none"):
+                self.assertEqual(mw.pull_main(), "")
+            self.assertFalse(lock.exists())
+            self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
+            self.assertEqual(g("rev-parse", "main", cwd=t / "b"), g("rev-parse", "main", cwd=t / "a"))
+            self.assertEqual((t / "b" / "f").read_text(), "2")
+
+    def test_a_fresh_index_lock_is_left_alone_and_the_pull_says_why(self):
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "log"):
+            t = pathlib.Path(t)
+            self._behind_clone(t)
+            lock = t / "b" / ".git" / "index.lock"
+            lock.write_text("")   # a git may really be running: never touched inside STALE_LOCK_S
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
+                    mock.patch.object(mw, "HOS", t / "none"):
+                self.assertIn("pull failed in b", mw.pull_main())
+            self.assertTrue(lock.exists())
+            self.assertEqual((t / "b" / "f").read_text(), "1")
+
     def test_a_failed_reset_says_why_and_the_same_commit_gets_one_rescue_branch(self):
         with tempfile.TemporaryDirectory() as t:
             t = pathlib.Path(t)
