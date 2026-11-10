@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 """
-J2484 — Build 023 Venus (VBaYRPp85Sw, "What Happened to Venus?") Test & Compare B
-thumbnail '465°C' (Venus's surface with a lander glowing red, J1198 draw branch).
+J2484 / J2487 — Build 023 Venus (VBaYRPp85Sw, "What Happened to Venus?") Test & Compare B
+thumbnail '465°C' (Venus's surface with a Venera-style lander under 465°C atmospheric sky
+cast, J1198 draw branch; fixed per J2486 design review).
 
-Rules enforced (00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md §2, §2.A, §2.B
-& 05_Analytics/LEARNINGS.md rules 11-13):
-  - £0 cost: built from text-free base plate `venus_surface_glowing_lander_plate.jpg`
-    (photorealistic Soviet Venera-style lander on fractured Venusian basalt slabs
-    glowing incandescent red-orange from 465°C surface heat, volcanic peak in background)
+Rules enforced (00_Brand/Channel-Setup/THUMBNAIL_AND_TITLE_RULES.md §2, §2.A, §2.B,
+05_Analytics/LEARNINGS.md rules 11-13, and J2486 design review):
+  - £0 cost: built from text-free base plate `venus_surface_465c_lander_plate.jpg`
+    (photorealistic Soviet Venera-style lander on solid fractured Venusian basalt slabs
+    under dense warm amber-orange atmospheric sky cast, with NO incandescent red-orange
+    metal glow and NO molten rock cracks since 465°C is below the ~525°C Draper point)
     + deterministic colour grade and code-rendered typography.
-  - One big focal point (>= 1/3 of frame): spacecraft lander on Venus's rocky surface
-    glowing red-hot from the 465°C heat.
+  - One big focal point (>= 1/3 of frame): spacecraft lander on Venus's rocky surface.
   - Clear scale / stakes element (spacecraft lander baking on the surface), distinct from
     planet-globe A ('MELTS LEAD') and ended B ('EARTH'S TWIN').
   - No Orbit on long-form thumbnails (§2.8).
   - Text: '465°C' (1 token, <= 3 words) in the top-left sky band (off the lander hero and
     clear of the bottom-right duration corner), house heavy sans (Arial Black),
-    yellow (255, 230, 0), heavy black stroke + drop shadow, ~11.8% cap height.
-  - Color grade: mean HSV saturation >= 120 (target >= 170), near-black <= 30% (target <= 10%).
+    yellow (255, 230, 0), heavy black stroke + drop shadow, ~11.9% cap height.
+  - Color grade (J2487 fix): mean HSV saturation ~175-185 (within 165-195 / 170-200 target,
+    matching the channel's 140-187 range and Venus search neighbours), < 2% pixels pinned at
+    S >= 250 (no neon-red clipping), near-black <= 30%.
   - Output: 1280x720 JPG (< 2 MB) + SHA256.txt + thumb_preview.py --score gate sheet.
 """
 
@@ -34,15 +37,15 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
 OUT_DIR = Path(__file__).resolve().parent
-PLATE_JPG = OUT_DIR / "venus_surface_glowing_lander_plate.jpg"
+PLATE_JPG = OUT_DIR / "venus_surface_465c_lander_plate.jpg"
 NAS_PLATE_CANDIDATES = [
     Path(
         "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/"
-        "023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_surface_glowing_lander_plate.jpg"
+        "023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_surface_465c_lander_plate.jpg"
     ),
     Path(
         "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/"
-        "023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_surface_glowing_lander_plate.jpg"
+        "023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_surface_465c_lander_plate.jpg"
     ),
 ]
 OUT_JPG = OUT_DIR / "venus_tc_B_465c_VBaYRPp85Sw.jpg"
@@ -58,47 +61,44 @@ STROKE_BLACK = (8, 5, 4)
 
 def _grade_venus_lander_plate(plate_path: Path) -> Image.Image:
     """
-    Resize the text-free Venera lander plate to 1280x720 and apply the house
-    saturated warm grade so that:
-      - Mean HSV saturation is well above the 120 target (~175-190)
-      - Near-black pixels (luma < 16) stay well below the 30% ceiling (< 8%)
-      - The incandescent red-orange thermal glow on the lander and basalt rocks pops at 168x94.
+    Resize the text-free Venera lander plate to 1280x720 and apply a restrained,
+    physically accurate warm atmospheric grade (J2487 fix):
+      - Mean HSV saturation sits in ~175-185 (within 165-195 and 170-200)
+      - < 2% of pixels are pinned at S >= 250 (no neon-red clipping)
+      - Near-black pixels (luma < 26) stay ~21% (<= 30% ceiling)
+      - Zero self-luminous red-orange/white-hot glow on the lander underside or basalt rocks;
+        only the warm amber-orange atmospheric sky cast lights the upper metallic lander.
     """
     im = Image.open(plate_path).convert("RGB").resize((W, H), Image.Resampling.LANCZOS)
 
-    # 1. Boost colour saturation and local contrast
-    im = ImageEnhance.Color(im).enhance(1.42)
-    im = ImageEnhance.Contrast(im).enhance(1.12)
-    im = ImageEnhance.Sharpness(im).enhance(1.18)
+    # 1. Moderate colour saturation to ~182 mean HSV sat and sharpen metallic hardware
+    im = ImageEnhance.Color(im).enhance(0.88)
+    im = ImageEnhance.Contrast(im).enhance(1.08)
+    im = ImageEnhance.Sharpness(im).enhance(1.22)
 
     arr = np.asarray(im, dtype=np.float32)
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
 
-    # 2. Intensify the red-orange incandescent glow around the lander hull, brake ring, and base
-    # Lander center of thermal emission is around (x=835, y=490)
-    lander_glow = np.exp(-(((xx - 835.0) / 275.0) ** 2 + ((yy - 495.0) / 185.0) ** 2))
-    red_dominance = np.clip((arr[..., 0] - arr[..., 1] * 0.65) / 120.0, 0.0, 1.0)
-    thermal_boost = lander_glow * (0.35 + 0.65 * red_dominance)
-
-    arr[..., 0] = np.clip(arr[..., 0] + thermal_boost * 48.0, 0.0, 255.0)
-    arr[..., 1] = np.clip(arr[..., 1] + thermal_boost * 12.0, 0.0, 255.0)
-
-    # Subtle red-hot rim glow on the upper spherical pressure vessel (x=835, y=260)
-    sphere_glow = np.exp(-(((xx - 835.0) / 145.0) ** 2 + ((yy - 275.0) / 105.0) ** 2))
-    arr[..., 0] = np.clip(arr[..., 0] + sphere_glow * 34.0, 0.0, 255.0)
-    arr[..., 1] = np.clip(arr[..., 1] + sphere_glow * 8.0, 0.0, 255.0)
-
-    # 3. Lift deep basalt rock shadows into warm volcanic crimson-brown so near-black stays < 8%
+    # 2. Gentle neutral-warm shadow lift so deepest basalt shadows do not crush (keeps near_black ~19% <= 30% without red tint)
     luma = 0.299 * arr[..., 0] + 0.587 * arr[..., 1] + 0.114 * arr[..., 2]
     dark_lift = np.clip((38.0 - luma) / 38.0, 0.0, 1.0) ** 1.15
-    arr[..., 0] += dark_lift * 36.0
+    arr[..., 0] += dark_lift * 16.0
     arr[..., 1] += dark_lift * 12.0
-    arr[..., 2] += dark_lift * 3.0
+    arr[..., 2] += dark_lift * 7.0
 
-    # 4. Warm golden-orange atmospheric push in the sky while keeping top-left dark enough for yellow text
-    sky_mask = np.clip((300.0 - yy) / 300.0, 0.0, 1.0)
-    arr[..., 0] = np.clip(arr[..., 0] + sky_mask * 18.0, 0.0, 255.0)
-    arr[..., 1] = np.clip(arr[..., 1] + sky_mask * 6.0, 0.0, 255.0)
+    # 3. Warm amber-orange atmospheric sky cast on upper lander & clouds (no red clipping)
+    sky_and_upper = np.clip((430.0 - yy) / 430.0, 0.0, 1.0) * np.clip(luma / 140.0, 0.0, 1.0)
+    arr[..., 0] = np.clip(arr[..., 0] + sky_and_upper * 14.0, 0.0, 255.0)
+    arr[..., 1] = np.clip(arr[..., 1] + sky_and_upper * 4.0, 0.0, 255.0)
+
+    # 4. Neutral-warm metallic clarity on the lander hardware (x=620..1050, y=180..610)
+    # Lifts existing metallic highlights (not shadows) in balanced gold-bronze so the lander
+    # struts, collar, and hull separate cleanly from the dark basalt rocks at 168x94 without glowing.
+    lander_mask = np.exp(-(((xx - 835.0) / 195.0) ** 2 + ((yy - 410.0) / 195.0) ** 2))
+    metal_hi = np.clip((luma - 28.0) / 95.0, 0.0, 1.0) * lander_mask
+    arr[..., 0] = np.clip(arr[..., 0] + metal_hi * 22.0, 0.0, 255.0)
+    arr[..., 1] = np.clip(arr[..., 1] + metal_hi * 17.0, 0.0, 255.0)
+    arr[..., 2] = np.clip(arr[..., 2] + metal_hi * 10.0, 0.0, 255.0)
 
     return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), mode="RGB")
 
@@ -195,11 +195,11 @@ def main() -> int:
     )
 
     hsv = np.asarray(final_img.convert("HSV"), dtype=np.float32)
-    rgb = np.asarray(final_img, dtype=np.float32)
-    luma = 0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]
+    luma_l = np.asarray(final_img.convert("L"), dtype=np.float32)
     sat_mean = float(hsv[..., 1].mean())
+    sat_pinned_250_pct = float((hsv[..., 1] >= 250).mean() * 100.0)
     val_mean = float(hsv[..., 2].mean())
-    near_black_pct = float((luma < 16).mean() * 100.0)
+    near_black_pct = float((luma_l < 26).mean() * 100.0)
 
     print(
         json.dumps(
@@ -209,6 +209,7 @@ def main() -> int:
                 "sha256": sha256,
                 "plate_sha256": plate_sha256,
                 "sat_mean": round(sat_mean, 1),
+                "sat_pinned_250_pct": round(sat_pinned_250_pct, 2),
                 "val_mean": round(val_mean, 1),
                 "near_black_pct": round(near_black_pct, 1),
                 "text_meta": text_meta,
