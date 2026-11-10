@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2529 | mini | open (after J2033) | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
 | J2531 | macbook | open | – | – | review · Private-ready 1: checks run on pull requests and code changes only, not on queue or data commits; a month must fit the free minutes |  |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
-| J2535 | any | claimed | macbook | 2026-11-10T21:48Z | review · Verify condition for J2449 |  |
+| J2535 | any | blocked | macbook | – | review · Verify condition for J2449 |  |
 
 Recently finished:
 
