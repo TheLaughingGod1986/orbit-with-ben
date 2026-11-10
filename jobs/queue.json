@@ -216156,20 +216156,27 @@
           "at": "2026-11-10T16:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T16:41Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Started 5-step plan: (1) inspect 013 plan + J2200/#468/#470 guards, (2) build 013 mint runner, (3) build & run guard tests, (4) run dry-run report + check_all.sh, (5) open HOS PR and park for Chief"
         }
       ],
-      "remaining_action": "HOS 013 Darwin & Wallace: build and test the Flow mint runner for the 71 rows of picture plan v01 (no generation), ready for the Chief's review",
+      "remaining_action": "Inspecting 013 picture plan, shared Flow guards (J2200), and repaired 009 runner (#468/#470)",
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-10T16:40Z",
+        "of": 5,
+        "at": "2026-11-10T16:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started 5-step plan: (1) inspect 013 plan + J2200/#468/#470 guards, (2) build 013 mint runner, (3) build & run guard tes"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J2500",
