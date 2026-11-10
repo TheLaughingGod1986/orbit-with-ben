@@ -217180,9 +217180,14 @@
           "at": "2026-11-10T16:40Z",
           "by": "macbook-2",
           "what": "released: MacBook item 9 + Tailscale item 6 + repo launchd plists recorded in PR #750; pinned mini_only=true and released for Mac mini (ben-mac-mini) to run local host checks 1-5, 7, 8"
+        },
+        {
+          "at": "2026-11-10T17:03Z",
+          "by": "claude",
+          "what": "Chief ruling on part 1 (PR 750), 10 Nov 17:12Z: FIX before merge. The report prints the private network's device list and addresses (section 6 and the summary table). This repo is public and the job asked only 'is the Mini on it, and is the MacBook?'. Whoever finishes the report on the Mini: replace the device table with two lines (Mini: on; MacBook: on), take every 100.x address and the other devices' names out of the file, then finish items 1-5, 7 and 8 on the same branch and park for the Chief. No addresses, account emails, passwords or tokens in the report."
         }
       ],
-      "remaining_action": "On the Mac mini (ben-mac-mini), fill in items 1-5, 7, and 8 in jobs/reviews/J2517/REPORT.md (PR #750), complete the summary table, and park for Chief",
+      "remaining_action": "Finish the Mini's own checks (items 1-5, 7, 8) in jobs/reviews/J2517/REPORT.md on branch macbook/J2517, and take the private network's device list and addresses out of the report (keep only: Mini on, MacBook on). Then park for the Chief.",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)",
