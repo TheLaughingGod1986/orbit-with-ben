@@ -42,5 +42,27 @@
       "PHONE": "PASS — Verified at 168x94 and 426x240 in venus_tc_A_vs_B_465c_sheet.jpg; '465°C' and the red-glowing surface lander read in under a second."
     }
   },
-  "studio_status": "NOT_ARMED — parked for Chief / design review; J1198 arms in Studio after review sign-off."
+  "plate_provenance": {
+    "status": "ESTABLISHED",
+    "recorded_by": "J2486 design review, 2026-11-10",
+    "tool": "Antigravity CLI built-in `image-generator` subagent (`generate_image` tool)",
+    "model_provider": "Google Generative AI (C2PA `trainedAlgorithmicMedia`, SynthID watermark, signed by Google C2PA Media Services)",
+    "parent_conversation_id": "a6954191-23b5-4450-888f-0153442d6226",
+    "subagent_conversation_id": "be87b190-eca3-4a5f-8f61-640c279f65d9",
+    "generated_at_utc": "2026-11-10T04:43:59Z",
+    "source_path": "/Users/ben/.gemini/antigravity-cli/brain/a6954191-23b5-4450-888f-0153442d6226/venus_surface_glowing_lander_plate_1794285839136.jpg",
+    "native_dimensions": [1376, 768],
+    "size_bytes": 911250,
+    "sha256": "8f5f2b84fcbf27e7ec891343b64e23c1effc18542b5474d1be5ffb5e30de2aac",
+    "cost_gbp": 0,
+    "cost_basis": "£0 marginal spend — built-in Antigravity image-generator tool under Google AI Ultra subscription (no Vertex, OpenAI API, or paid overage billed).",
+    "prompt": "Cinematic photorealistic space-documentary still of the surface of Venus. In the lower two-thirds, slightly right of center, sits a heavy Soviet Venera-style planetary lander probe with a spherical titanium pressure hull, a wide scalloped serrated aerodynamic brake collar disk, cylindrical sensor housings, a top helical helical antenna mast, and a heavy circular shock-absorbing landing ring resting on jagged, fractured dark volcanic basalt slabs. The lander's lower metallic hull, landing ring, support struts, and edges are intensely incandescent, glowing bright cherry red-orange and crimson-gold from the crushing 465-degree Celsius furnace atmospheric heat, casting vibrant orange-red thermal illumination onto the cracked basalt rocks beneath. The scorching Venusian landscape features jagged basalt plates with faint glowing molten red-orange thermal fractures in the rock, leading toward a massive hazy volcanic shield volcano mountain on the horizon. The top twenty-two percent of the frame features a thick, dense, hazy dark-amber and sulfuric orange-yellow cloud deck across the sky. High contrast, saturated warm crimson, amber-gold, and furnace-orange color palette with deep warm shadows, 8k resolution, razor-sharp hardware and geological texture, authentic space probe engineering detail, absolutely no text, no numbers, no labels, no logos, no human figures, no robots."
+  },
+  "design_review": {
+    "job": "J2486",
+    "verdict": "FIX",
+    "fix_job": "J2487",
+    "review": "jobs/reviews/J2486/REVIEW.md"
+  },
+  "studio_status": "NOT_ARMED — design review J2486 returned FIX (queued J2487); J1198 stays waiting until a fixed file passes review."
 }
