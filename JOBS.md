@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2531 | macbook | claimed | macbook | 2026-11-10T21:20Z | review · Private-ready 1: checks run on pull requests and code changes only, not on queue or data commits; a month must fit the free minutes |  |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2533 | macbook | blocked | macbook | – | review · Decoupling: the 13 lines J2522 left (studio_reach, sfx_kit, core_sync, routing) read the channel's own file |  |
+| J2534 | mini | open | – | – | review · HOS: stop tracking the one real .env (film 004, project name and region only), keep an example, re-scan both repos for keys |  |
 
 Recently finished:
 

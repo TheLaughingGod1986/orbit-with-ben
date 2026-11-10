@@ -1,5 +1,5 @@
 {
-  "next_id": 2534,
+  "next_id": 2535,
   "jobs": [
     {
       "id": "J0001",
@@ -218125,6 +218125,36 @@
         "at": "2026-11-10T19:02Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2534",
+      "title": "HOS: stop tracking the one real .env (film 004, project name and region only), keep an example, re-scan both repos for keys",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "History of Science tracks one real `.env`: `02_Video-Projects/004_Whats-Really-Inside-An-Atom/07_Edit-Project/.env`. It holds a cloud project name and a region, no key or token (checked 10 Nov, names only). The rule is that no `.env` is tracked, and Ben's condition for the private studio repo is that keys and `.env` files stay on his machines.\n\n1. Check on the Mini whether anything still reads that file (film 004 is published). \n2. In one pull request on history-of-science: keep the two values in a `.env.example` beside it, stop tracking `.env` without deleting the Mini's working copy (the pull must not remove a file a script needs: say how you made sure), and confirm `.gitignore` covers it.\n3. Then scan both repos' tracked files once more for `.env` files that are not examples and for key-shaped strings; report file names and counts only, never a value.\n\nNo history rewrite. No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T19:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T19:21Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS: stop tracking the one real .env (film 004, project name and region only), keep an example, re-scan both repos for keys",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Tidy one settings file that should not be in the History of Science repo (it holds no key)"
     }
   ],
   "focus": [
