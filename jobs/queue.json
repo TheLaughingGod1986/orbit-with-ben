@@ -212419,10 +212419,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T00:24Z",
+      "eta": "2026-11-10T01:54Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -212431,12 +212431,25 @@
           "at": "2026-11-09T23:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:24Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Security: update vulnerable code libraries in the upload tooling of both channel repos (npm audit, no forced upgrades)",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Update the code libraries our upload and analytics tools depend on, where a known security problem has a safe fix."
+      "plain": "Update the code libraries our upload and analytics tools depend on, where a known security problem has a safe fix.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:24Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2466",
