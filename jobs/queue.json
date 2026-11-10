@@ -212507,10 +212507,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T01:03Z",
+      "eta": "2026-11-10T02:33Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -212534,6 +212534,11 @@
           "at": "2026-11-10T00:33Z",
           "by": "macbook",
           "what": "released: MacBook cannot do this job: 'git mv' needs approval in unattended runs (denied twice), so nothing was moved and no PR exists; branch macbook/J2464 is local only with no commits. Send to the Mini. Re-check done against main 73b828b6 for the non-board rows, to save the next worker time. F-03a: apply_melodysheep_long_thumbs_v01.py is free to move; LEAVE apply_yellow_white_v04_thumbs.py (STUDIO_PLAYBOOK.md:388 and .cursor/rules/orbit-publish-studio.mdc:27 name it as the pattern, and audits/STANDALONE_SHORTS_TEST_2026-10/_set_j0216_covers.py imports it). F-03b: LEAVE both for now: vidiq_title_score_sheet.py is the command in PRE_BUILD_VIDIQ_AUDIT_TEMPLATE.md:89 (and 04_Audio/tools/README.md, docs/CONTENT_WORKFLOW.md); fix_published_playback_lag.py is the command in docs/PLAYBACK_LAG_FIX.md:33 and the README; those docs need the Chief's edit first. F-03c: both are in studio-core/CORE_FILES.json, leave for the HOS-paired job. F-07: j0216-verify.ts and sentence_sheet.py have no live users; research_metadata.py (+ its test) is imported only by jobs/reviews/J1128/J1128-compact.py and resume_recovery.py, so move it together with the J1128 scripts. F-04c: LEAVE the 11 top-level j0936 scripts (shipped Shorts' _v04_meta.json manifests in 026/027/028 and J0936_v04_PREP_v04_maps.json name generate_j0936_prep_v04_openings.py as generator_script, J1015 verification.json names verify_v03; uploaded manifests must not be rewritten) and jobs/reviews/J0989/*.py (listed in J0989/DELIVERY_MANIFEST.sha256); the 5 j1032 top-level scripts and the J0935, J1075, J1128 (11 incl. collectors), J1199, J1208, J1218, J1220, J1326, J1331, J1834, J2016, J2144 and J2176/build.py scripts are named only in their own job reports. Not in the audit, not checked: J1322/*.py, J2176/build_v03.py, J2249/build_thumbnail.py, verify_j1016.py, verify_j1018.py. F-06: LEAVE build_melodysheep_long_thumbs_v01.py (STUDIO_PLAYBOOK.md:353 names it as the long builder) and build_yellow_white_short_thumbs_v04.py (not in the audit, same playbook line); the other 14 builders are named only in dated audit logs and import only each other. F-04b and the board rows F-02a/b/c: not re-checked. Note for F-04b: 001, 002 and 007 also hold upload/Studio scripts outside 07_Edit-Project (11_Upload-Package/Schedule, 10_Shorts, 02_Voiceover), so they are not simply unshipped. Empty folders were created under _archive/ (scripts, 00_Brand/Channel-Setup/tools, jobs/reviews/J*); they hold nothing and are not in git."
+        },
+        {
+          "at": "2026-11-10T01:03Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "re-check rows, PR for non-board rows, PR for board rows, park for Chief",
