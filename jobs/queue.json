@@ -213685,10 +213685,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T04:51Z",
+      "eta": "2026-11-10T06:51Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-10T01:39Z",
       "result": "",
@@ -213702,6 +213702,11 @@
           "at": "2026-11-10T01:47Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-10T04:51Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule-E topic go/no-go review: two new HOS backlog films from J2411 (HOS PR #460)",
@@ -213715,7 +213720,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T04:51Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2474",
