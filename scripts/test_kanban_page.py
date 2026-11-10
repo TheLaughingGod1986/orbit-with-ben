@@ -267,8 +267,12 @@ class TickedCardsLeaveTheBox(unittest.TestCase):
 
 class VenusApproved(unittest.TestCase):
     def test_023_note_is_off_bens_box_and_shipping(self):
-        j = json.loads((PAGE.parent / "film_briefs.json").read_text())["films"]["OWB:023"]
-        self.assertEqual(j["you"], "")
+        j = json.loads((PAGE.parent / "film_briefs.json").read_text())["films"].get("OWB:023")
+        # A film's note leaves the board two weeks after it airs. 023 aired 25 Oct 2026 and its note was removed on
+        # 10 Nov; this test read it by name and turned main red. Gone or present, 023 puts nothing in Ben's box.
+        self.assertEqual((j or {}).get("you", ""), "")
+        if j is None:
+            return
         self.assertEqual(j["mood"], "watched")
         self.assertTrue(j["line"].startswith("Approved by Ben Sun 11 Oct 20:26"))
         self.assertTrue(any(s["what"].startswith("ship v05e") for s in j["steps"]))   # Claude, or the Mac mini (J0236, 14 Oct)
