@@ -22,7 +22,8 @@ concurrency:
 jobs:
   check:
     # A skipped job uses no runner and no minutes.
-    if: ${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}
+    # The value is in double quotes on purpose: unquoted, YAML reads " #" as the start of a comment and cuts it in half.
+    if: "${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}"
     runs-on: ubuntu-latest
     defaults:
       run:

@@ -4,7 +4,7 @@ name: Rules check
 # the playbook are generated from it, and superseded wording is blocked, so the rules can't drift apart again.
 #
 # When it runs (J2531, 10 Nov 2026, jobs/reviews/J2531/MINUTES.md): a push that changes only STATUS.md or a film's
-# status.json no longer starts it (the push list below leaves those two out; the pull-request list keeps them).
+# status.json no longer starts it, as a push or as a pull request.
 # `studio.py status --check` for those commits now runs once a day on main, with the whole suite. A merged pull
 # request is not checked a second time on main: its head ran this already.
 on:
@@ -14,8 +14,13 @@ on:
   schedule:
     - cron: "40 4 * * *"
   workflow_dispatch:
+  # Pull requests (acting Chief, 10 Nov): this is the one job a pull request pays for. It starts on any pull request
+  # that changes something other than data, always runs the Studio core check's two steps, and runs the rules steps
+  # only when the pull request touches the rules paths (the "scope" step below; same list as the push list above).
+  # In the week to 10 Nov, 104 of 119 pull requests on the rules paths also changed other code, so two workflows
+  # with two path lists would have charged most of them twice.
   pull_request:
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "scripts/picture_qa.py", "scripts/terminal_loop.py", "scripts/fixtures/terminal_loop/**", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/test_gate_duration.py", "00_Brand/Channel-Setup/tools/gate_upcoming.py", "00_Brand/Channel-Setup/tools/test_gate_upcoming.py", "00_Brand/Channel-Setup/tools/testdata/**", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
+    paths-ignore: ["jobs/**", "JOBS.md", "STATUS.md", "02_Video-Projects/*/status.json", "05_Analytics/**"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,21 +29,55 @@ concurrency:
 jobs:
   check:
     # A skipped job uses no runner and no minutes.
-    if: ${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}
+    # The value is in double quotes on purpose: unquoted, YAML reads " #" as the start of a comment and cuts it in half.
+    if: "${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Two commits, so the scope step can compare a pull request's merge commit with its base.
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 scripts/sync_rules.py --check
-      - run: python3 scripts/studio.py status --check
+      # Does this run need the rules steps? Always yes on a push, the daily run and the manual button. On a pull
+      # request, yes when a changed file is on the rules paths. If the file list cannot be read or is empty, yes.
+      # RULES_PATHS must say the same as the push path list at the top of this file.
+      - name: Scope
+        id: scope
+        env:
+          EVENT: ${{ github.event_name }}
+          RULES_PATHS: '^(AGENTS\.md$|\.cursor/rules/|docs/|00_Brand/Channel-Setup/STUDIO_PLAYBOOK\.md$|scripts/sync_rules\.py$|scripts/studio\.py$|scripts/test_[^/]*\.py$|scripts/picture_qa\.py$|scripts/terminal_loop\.py$|scripts/fixtures/terminal_loop/|04_Audio/tools/vo_take\.py$|04_Audio/tools/test_vo_take\.py$|00_Brand/Channel-Setup/tools/gate_shorts_open\.py$|00_Brand/Channel-Setup/tools/test_gate_background\.py$|00_Brand/Channel-Setup/tools/test_gate_duration\.py$|00_Brand/Channel-Setup/tools/gate_upcoming\.py$|00_Brand/Channel-Setup/tools/test_gate_upcoming\.py$|00_Brand/Channel-Setup/tools/testdata/|\.github/workflows/rules-check\.yml$)'
+        run: |
+          rules=true
+          if [ "$EVENT" = "pull_request" ]; then
+            files=$(git diff --name-only HEAD^1 HEAD || true)
+            echo "$files"
+            if [ -n "$files" ] && ! printf '%s\n' "$files" | grep -Eq "$RULES_PATHS"; then
+              rules=false
+            fi
+          fi
+          echo "rules=$rules"
+          echo "rules=$rules" >> "$GITHUB_OUTPUT"
+      # The Studio core check's two steps (core-check.yml), so a pull request pays for one job, not two. This is the
+      # first; the second is the last step of this job (rules runs) or the step after this one (other runs).
+      - run: python3 scripts/core_sync.py check
+      - if: steps.scope.outputs.rules != 'true'
+        run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_weekly_public_audit.py" -v
+      - if: steps.scope.outputs.rules == 'true'
+        run: python3 scripts/sync_rules.py --check
+      - if: steps.scope.outputs.rules == 'true'
+        run: python3 scripts/studio.py status --check
       - name: Install media-test tools
+        if: steps.scope.outputs.rules == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-      - run: python3 -m unittest discover -s scripts -p "test_*.py" -v
+      - if: steps.scope.outputs.rules == 'true'
+        run: python3 -m unittest discover -s scripts -p "test_*.py" -v
       # Every test file in these two folders, not a hand-kept list: test_orbit_cfr_delivery.py and test_gate_stayed.py
       # were never run here until J2463 (7 Nov code audit, row F-05a).
-      - run: python3 -m unittest discover -s 04_Audio/tools -p "test_*.py" -v
-      - run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_*.py" -v
+      - if: steps.scope.outputs.rules == 'true'
+        run: python3 -m unittest discover -s 04_Audio/tools -p "test_*.py" -v
+      - if: steps.scope.outputs.rules == 'true'
+        run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_*.py" -v

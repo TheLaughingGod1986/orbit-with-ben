@@ -6,14 +6,15 @@ name: Notes check
 # that reads the notes. It takes a few seconds.
 #
 # When it runs (J2531, 10 Nov 2026, jobs/reviews/J2531/MINUTES.md): a push of the notes file alone no longer starts
-# it, because scripts/notes_push.py runs these same checks before it pushes. It runs on pull requests that touch
-# the notes or the script, on a push that changes the script, and once a day on main.
+# it, because scripts/notes_push.py runs these same checks before it pushes. It runs on pull requests and pushes
+# that change the script or this file, and once a day on main.
 on:
   push:
     branches: [main]
     paths: ["scripts/notes_push.py", ".github/workflows/notes-check.yml"]
   pull_request:
-    paths: ["05_Analytics/kanban/film_briefs.json", "scripts/notes_push.py", ".github/workflows/notes-check.yml"]
+    # The notes file itself is data: a pull request that changes only data starts no workflow (acting Chief, 10 Nov).
+    paths: ["scripts/notes_push.py", ".github/workflows/notes-check.yml"]
   schedule:
     - cron: "40 4 * * *"
   workflow_dispatch:
@@ -25,7 +26,8 @@ concurrency:
 jobs:
   notes:
     # A skipped job uses no runner and no minutes. A merged pull request ran this on its head already.
-    if: ${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}
+    # The value is in double quotes on purpose: unquoted, YAML reads " #" as the start of a comment and cuts it in half.
+    if: "${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

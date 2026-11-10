@@ -2,6 +2,73 @@
 
 MacBook worker, 10 Nov 2026. Window: 3 Nov 20:30Z to 10 Nov 20:30Z, `origin/main`, first-parent.
 
+## Second pass (10 Nov, after the acting Chief's FIX). Read this first; it replaces sections 2 and 3 where they differ
+
+**What was fixed and added**
+
+- All four `if:` values are now in double quotes. Unquoted, YAML cut each one at ` #` and none of the four files
+  loaded.
+- **A pull request that changes only data starts no workflow.** Data is `jobs/**` (so `jobs/reviews/**` too),
+  `JOBS.md`, `STATUS.md`, `02_Video-Projects/*/status.json`, `05_Analytics/**`. The Rules check's pull-request
+  trigger lost `STATUS.md` and `status.json`, and the Notes check's lost `film_briefs.json`. Those two checks for
+  those files are now: `notes_push.py` before it pushes (notes), and the daily run (both).
+- **A pull request pays for one job.** The Rules check's job starts on every pull request that is not data-only.
+  It always runs the core check's two steps. Its "Scope" step lists the pull request's files and runs the rules
+  steps (`sync_rules`, `studio.py status --check`, ffmpeg, the three test folders) only when one is on the rules
+  paths, the same paths as before. `core-check.yml` no longer starts on pull requests (except one that changes
+  `core-check.yml` itself). On a push, the daily run and the manual button, everything runs as before.
+- Why not two path lists: in this week 104 of the 119 merged pull requests on the rules paths also changed other
+  code, so they would still have started both workflows.
+
+**Two things to weigh**
+
+1. The Scope step's list (`RULES_PATHS`, a regular expression) must be kept the same as the push path list in the
+   same file. If the file list cannot be read or is empty, the rules steps run.
+2. `05_Analytics/**` is in the data list, and the board site's code (`05_Analytics/kanban/board_site`,
+   `studio_app.html`) lives under it. A pull request that changes only board code starts no check. That is the
+   list as briefed; if the board code should be checked, move it out of the data list.
+
+**The week's merged pull requests, sorted by what they would start now** (298 listed; `gh pr list` stops at 300,
+so the true count may be higher; pushes to a pull request before its last head are not counted):
+
+| Kind | Pull requests | Job now | Minutes a run |
+|---|---|---|---|
+| Data only | 105 | none | 0 |
+| On the rules paths (104 of them with other code too) | 119 | one, rules steps on | 2.4 (measured average, includes one 36-minute run; 2.1 without it) |
+| Other code only | 74 | one, core steps only | 1 |
+| Of all 298: touch studio code (`scripts/`, `.github/`, `docs/`, `AGENTS.md`, `07_Content-Ops/`, `studio-core/`, the board site) | 135 (45%) | | |
+| Of those 135: on the rules paths | 116 | | |
+| Of those 135: other code only | 19 | | |
+
+The brief says about one in three touched studio code. Counted over the full week it is 135 of 298, or 45%.
+
+**New estimate, studio pull requests only**
+
+| Source | Minutes a week | How |
+|---|---|---|
+| Pull requests on the rules paths | 278 | 116 × 2.4 |
+| Pull requests, core steps only | 19 | 19 × 1 |
+| Content Ops on pull requests | 10 | measured, unchanged |
+| Push to main (not merges) | 56 | section 3, upper bound; most of these are film records that will not be in `studio` |
+| Daily run | 49 | 7 a day |
+| **Total** | **about 410** | |
+
+A month (× 30 / 7): about **1,770 minutes**. At the brief's one in three (100 pull requests, same mix): about
+**1,440**. **The target of 1,200 is not reached**; both are under the free 2,000, with little room, and both are
+lower bounds on the pull-request side.
+
+What would reach it, dropping no test: the rules job averages 109 seconds, so it is billed 2 minutes. Under 60
+seconds it is billed 1, and the month falls to about 1,100 (135 pull requests) or 950 (100). The place to look is
+the `apt-get install ffmpeg` step (not measured here; a cached or static ffmpeg would do the same job). That is a
+separate job. Failing that, the two fallbacks at the end of this file stand.
+
+For the whole repo as it is today (all 298 pull requests, films included), this pass gives about 475 minutes a
+week, about 2,000 a month, down from about 3,400 after the first pass.
+
+---
+
+Sections below are the first pass, kept as written.
+
 **Answer: the target is not reached.** The change cuts push runs from about 5,900 minutes a week to about 105, but
 pull requests alone used at least 635 minutes in the same week (about 2,700 a month). The estimate after the change
 is about **3,400 minutes a month** against a target of 1,200 and a free cap of 2,000. See "What is left".
