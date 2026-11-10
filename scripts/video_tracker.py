@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -1555,7 +1556,7 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
     approved = approved_entries(all_jobs)
     for e in approved:
         e["watch"] = links.get(e["id"])
-    return build_videos(
+    doc = build_videos(
         hos=hos if "films" in hos else {"films": []},
         owb=owb,
         briefs=films,
@@ -1567,6 +1568,20 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         approved=approved,
         alljobs=all_jobs,
     )
+    doc["firstDay"] = first_day(all_jobs)
+    return doc
+
+
+def first_day(all_jobs: list[dict], now: datetime | None = None) -> list[dict]:
+    """The board's First day panel: how each video that has just gone live started, from `launch_check.panel` (Ben,
+    10 Nov 2026: "learn from our failures"). The verdicts were only on the thread and in the record files; this
+    puts them where Ben looks. A failure here must never cost the board its videos, so it yields an empty panel."""
+    try:
+        import launch_check
+        return launch_check.panel(now or datetime.now(timezone.utc), {"jobs": all_jobs})
+    except Exception as e:  # noqa: BLE001
+        print(f"first-day panel not built: {e}", file=sys.stderr)
+        return []
 
 
 if __name__ == "__main__":

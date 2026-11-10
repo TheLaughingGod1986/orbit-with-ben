@@ -1400,13 +1400,70 @@
     const p=b.progress24h; if(!p) return '';
     return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><div class="ov-section-head"><h2>Last 24 hours</h2></div>${p24Glance(p, p24WorkingFilms(b))}</section>`;
   }
+  // First day (Ben, 10 Nov 2026: "learn from our failures ... do a scan or an audit, maybe 5-6 hours after the short
+  // goes live"). scripts/launch_check.py makes the check and judges it; tracker.firstDay carries each verdict here.
+  // The Overview shows the videos of the last three days, closed; #firstday lists the last two weeks.
+  const FIRST_DAY_TONE = { fault: "red", behind: "amber", ahead: "green" };
+  const FIRST_DAY_RECENT_H = 72, FIRST_DAY_HOME_ROWS = 3;
+  const AGENT_NAMES = Object.assign({ claudecode: "Claude Code" }, AGENTS);
+  const firstDayRows = b => (((b || {}).tracker || {}).firstDay || []).filter(r => r && r.id);
+  const londonWhen = iso => { const at = Date.parse(iso || ""); if (!at) return "";
+    return new Date(at).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).replace(",", ""); };
+  function firstDayNext(r) {
+    const n = r.next; if (!n) return "";
+    const age = n.hours >= 48 ? `${Math.round(n.hours / 24)}-day` : `${n.hours}-hour`;
+    return n.due ? `The ${age} check is due now` : `Next check ${londonWhen(n.at)}`;
+  }
+  function firstDayCard(r, b, open) {
+    const tone = FIRST_DAY_TONE[r.level] || "";
+    const kindText = `${r.format === "short" ? "Short" : "Long"} · ${chInfo(r.channel).short || r.channel} · live ${londonWhen(r.wentLive)}`;
+    const next = firstDayNext(r);
+    const video = ((((b || {}).tracker || {}).videos) || []).find(v => (v.youtube || {}).videoId === r.id);
+    const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    const done = (r.done || []).map(n => `<li><b>${esc(londonWhen(n.at))}${n.by ? " · " + esc(AGENT_NAMES[n.by] || n.by) : ""}</b> ${esc(n.text)}</li>`).join("");
+    const weak = r.level === "fault" || r.level === "behind";
+    const advice = [...(r.now || []), ...(r.carry || [])];
+    const links = [video ? `<a class="btn" href="${detailLink(video)}">Open the video's page</a>` : "",
+      `<a class="btn" href="https://youtu.be/${encodeURIComponent(r.id)}" target="_blank" rel="noopener">Open on YouTube</a>`].filter(Boolean).join("");
+    const body = r.level ? `
+        ${r.stageText ? `<p class="fd-lead">${esc(r.stageText)}.</p>` : ""}
+        <h3>The numbers at ${esc(r.hours)} h</h3><p>${esc(r.figures)}</p>${(r.why || []).length > 1 ? list(r.why.slice(1)) : ""}
+        ${(r.differences || []).length ? `<h3>What is different about this one</h3>${list(r.differences)}` : ""}
+        <h3>What we did</h3>${done ? `<ul>${done}</ul>` : `<p>${weak ? "Nothing has been done about it yet." : "Nothing needed doing."}</p>`}
+        ${advice.length ? `<details class="technical" data-disclosure="first-${esc(r.id)}-advice"><summary>What the check advises</summary><div class="technical-body">${list(advice)}</div></details>` : ""}`
+      : `<p>${esc(r.next && r.next.due ? "The numbers are being read from YouTube Studio now." : "It is too soon to read the numbers. The check reads YouTube Studio a few hours after the video goes live.")}</p>`;
+    // The video's own page shows the card open; it keeps its own open/closed memory so a closed card on the Overview
+    // does not close it there.
+    return `<details class="ov-card fd-card" data-disclosure="first-${esc(r.id)}${open ? "-page" : ""}"${open ? " open" : ""}>
+      <summary><span class="fd-top"><span class="tag ${tone}">${esc(r.word || "Not checked yet")}</span><span class="fd-kind">${esc(kindText)}</span></span>
+        <b class="fd-title">${esc(r.title)}</b>
+        ${r.summary ? `<span class="fd-line">${esc(r.summary)}</span>` : ""}
+        ${next ? `<span class="fd-line fd-next">${esc(next)}</span>` : ""}</summary>
+      <div class="fd-body">${body}<div class="btns">${links}</div></div></details>`;
+  }
+  function firstDaySection(b, now) {
+    const rows = firstDayRows(b);
+    const recent = rows.filter(r => r.next || now - Date.parse(r.wentLive || "") <= FIRST_DAY_RECENT_H * 36e5).slice(0, FIRST_DAY_HOME_ROWS);
+    if (!recent.length) return "";
+    const more = rows.length > recent.length ? `<a class="more" href="#firstday">All ${rows.length} ›</a>` : "";
+    return `<section class="overview-first" aria-label="First day"><div class="ov-section-head"><h2>First day</h2>${more || `<span class="ov-count">how each new video started</span>`}</div>
+      <div class="ov-stack">${recent.map(r => firstDayCard(r, b)).join("")}</div></section>`;
+  }
+  function firstDayPage(b) {
+    const rows = firstDayRows(b);
+    return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
+      <div class="overview-home"><header class="overview-header"><div><h1>First day</h1><p>How each video started in its first hours, the last two weeks. Read from YouTube Studio 6 hours after going live; a long again at 2 days.</p></div></header>
+      <div class="ov-stack">${rows.map(r => firstDayCard(r, b)).join("") || empty("No video has been checked yet.")}</div></div>`;
+  }
   // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
   // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
+  // First day sits under Needs attention (10 Nov): it is the one card about how the videos themselves are doing.
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${needsAttentionBanner(b)}
+      ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
       ${workingOnNow(b)}
@@ -1522,10 +1579,12 @@
         ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
     const flags = benFlags(v).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
+    const firstDay = yt.videoId && firstDayRows(b).find(r => r.id === yt.videoId);
     return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
       <p class="meta">${esc(chName(v.channel))} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
       </div></div>
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
+      ${firstDay ? `<div class="overview-home video-first"><section class="overview-first" aria-label="First day"><div class="ov-section-head"><h2>First day</h2></div>${firstDayCard(firstDay, null, true)}</section></div>` : ""}
       ${productionDetail(v, Date.now())}
       <details class="technical video-technical" data-disclosure="${esc(v.key)}-jobs"><summary>Agent work &amp; technical details <span>${jobs.length} jobs</span></summary><div class="technical-body">${v.line?`<p>${esc(v.line)}</p>`:''}${flags}${jobRows}${jobs.map(j=>technicalFields(j)).join('')}</div></details>
       ${notes ? section("Your notes", null, `<ul class="notes">${notes}</ul>`) : ""}`;
@@ -1749,7 +1808,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
