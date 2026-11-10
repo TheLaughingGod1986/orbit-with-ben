@@ -1,5 +1,5 @@
 {
-  "next_id": 2481,
+  "next_id": 2482,
   "jobs": [
     {
       "id": "J0001",
@@ -213875,6 +213875,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2481",
+      "title": "HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J2033 (twenty HOS 009 plates) stopped safely on 10 Nov: the live Flow page has changed and the evidence readers in `_mint_flow_v05_tranche2.py` (merged at 02b57a1b) read nothing, so they refused to submit. 0 of 20 made, 0 credits spent, 14,890 intact. The captured page is in HOS PR #465 (`jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json`). This job repairs the readers. It does not generate anything.\n\nWhat changed (from J2033's report):\n1. Model: the control is now `button[aria-label='Select model family']` and its text carries the model name (\"Veo 3.1 - Quality\", \"🍌 Nano Banana 2.1\"). The old reader looked for aria-selected/checked/pressed and found no model.\n2. Aspect: the radio text is now \"crop_16_9 16:9\", so no aspect was read.\n3. Balance: Account details now says \"14,890 Google Flow credits\", not \"AI credits\", so no balance was read. The Account details and Settings overlays cannot be open together and were both closed at submit time.\n4. `_flow_still_v01.py` has a hard-coded HOS 006 STYLE_REFS path that does not exist for this film.\n\nDo this:\n- Update the readers to the captured page. Keep them fail-closed: an unknown model, aspect or balance text still refuses. Do not widen a match to \"anything that looks like a model\".\n- Use the captured JSON as a test fixture, plus a fixture of the old page, so both shapes are covered. Zero-submit tests only.\n- Read the balance in its own step before the model and aspect, since the two overlays cannot be open together, and carry the value to the submit guard.\n- Take the style-refs path from the film's plan, not a constant.\n- Check the readers read-only against live Flow (CDP 9222): open the page, read model, aspect and balance, submit nothing.\n- The image model's name changed to \"Nano Banana 2.1\". Do not add it to the approved list yourself. Report what Flow shows as its cost per image and whether it is the same model the HOS 009 plan priced, and park that for the Chief's price pass.\n- Run check_all.sh, open a HOS PR, and park it for the Chief. An independent review comes before J2033 reopens.\n\nNo generation, no spend, no Studio change. £0.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief",
+      "due": "2026-11-12T00:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [

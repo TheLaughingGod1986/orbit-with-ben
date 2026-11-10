@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2478 | mini | open | – | – | assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2479 | macbook | open | – | – | MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted) |  |
 | J2480 | any | open | – | – | review · Verify condition for J2033 |  |
+| J2481 | mini | open | – | – | 009 picture · assembly · HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief |  |
 
 Recently finished:
 
