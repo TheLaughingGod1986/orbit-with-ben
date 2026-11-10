@@ -1,5 +1,5 @@
 {
-  "next_id": 2501,
+  "next_id": 2502,
   "jobs": [
     {
       "id": "J0001",
@@ -215957,6 +215957,36 @@
       "kind": "qa",
       "plain": "Check again that the Mini's SSD is working and whether it is now running at full speed",
       "mini_only": true
+    },
+    {
+      "id": "J2501",
+      "title": "Today's Orbit Short ffYKoNVPoqg (Titan) has 4 views after 77 minutes: read-only Studio check for anything technically wrong, side by side with yesterday's Mars Short",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 10 Nov 12:46 London, with a Studio screenshot: today's Short has 4 views after 1 h 17 min and Studio ranks it 10 of 10, where yesterday's Mars Short reached about 1,000 in a day and the one before about 1,200. \"Something's gone wrong, something's changed to what normally works for us.\" This job finds out whether anything is technically wrong with it, while it can still be fixed today. Read-only: change nothing in Studio. £0. About 20 minutes.\n\nToday's Short: `ffYKoNVPoqg`, \"What Would Standing on Saturn's Moon Titan Feel Like?\", went public Tue 10 Nov 11:30 London. It is a second upload: it replaced `RLSJm59OSzI` (same Short, unscheduled 5 Nov, still private).\nCompare with yesterday's: `iyvWYFP_ETA`, \"Could a Robot Survive a Night on Mars?\" (about 1,000 views in its first day).\nOrbit Studio browser, CDP 9223.\n\n1. Is anything broken? For BOTH videos open Studio > Content > the video > Details, and write the two side by side:\n   - Visibility (Public?) and the exact published time.\n   - Is it listed under the Shorts tab of Content, and does the watch page open as a Short (youtube.com/shorts/<id>)?\n   - Restrictions column: copyright, \"Made for kids\", age restriction, anything at all.\n   - Audience setting, Altered content setting, Category, Language, Tags, the full Description (hashtags), Related video.\n   - \"Publish to subscriptions feed and notify subscribers\" (Show more > Licence and distribution), Embedding, Shorts remixing, Comments.\n   - Video quality: is HD processing finished (hover the quality badge), the resolution (1080x1920?), frame rate, length in seconds.\n   - Checks: copyright and ad-suitability results if shown.\n   - Is the old upload `RLSJm59OSzI` still Private (not Public or Unlisted)?\n   List every row where today's differs from yesterday's.\n\n2. The numbers now, for both videos (today's as it stands; yesterday's as lifetime): Analytics > Overview: views, \"Ranking by views N of 10\". Reach/Engagement: Shown in feed, Viewed vs swiped away (%), Average percentage viewed, and the top three traffic sources with their views. Give the time you read them (UTC). If Studio has no figure yet, say \"no figure yet\", never a guess.\n\n3. Watch the first three seconds of both on the Shorts watch page and say in one line each what is on screen and what is said in the first 1.5 s. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py` (or wherever `gate_shorts_open.py` lives) on today's export `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v11.mp4` if the file is on this machine, and give its result.\n\nResult: first line is the answer in plain words for Ben: \"nothing is technically wrong\" or \"this is wrong: …\". Then the side-by-side list and the numbers. If something is wrong and can be put right in Studio (a setting, the Related video, the description), do NOT change it: park for the Chief with \"parked for Chief: <what is wrong and the exact fix>\".\n\nNever: edit either video, its title, cover, visibility, schedule or any setting. Never delete anything. No spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T12:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Today's Orbit Short ffYKoNVPoqg (Titan) has 4 views after 77 minutes: read-only Studio check for anything technically wrong, side by side with yesterday's Mars Short",
+      "due": "2026-11-10T14:00:00Z",
+      "kind": "studio",
+      "plain": "Find out whether anything is technically wrong with today's Short, which has almost no views"
     }
   ],
   "focus": [
