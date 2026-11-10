@@ -216561,13 +216561,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-10T23:05Z",
-      "eta": "2026-11-11T00:45Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T13:25Z",
-      "result": "",
+      "result": "Done and merged: history-of-science #488. The work main lacked from eight old pull requests is carried in one (201 files, 15 MB, mostly film 008's review stills): #431 (011), #382 with #380, #379 and #376 inside it (008), #359 (006), #355 (007), #348 (six files), #347 (004), #433 (E1 rule text only, not the gate), #334 (one note). All checks pass; no added line holds an address or a key; no video or audio. The eleven old pull requests are closed with a pointer to #488 (#334 was closed already). One finding: the studio's spend ledger has no line for the 10-credit J0886 motion take of 23 Oct; add it with ai_spend.py spend when no picture run is appending to the ledger.",
       "history": [
         {
           "at": "2026-11-10T13:25Z",
@@ -216593,6 +216593,11 @@
           "at": "2026-11-10T23:05Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T23:14Z",
+          "by": "claude",
+          "what": "done: Done and merged: history-of-science #488. The work main lacked from eight old pull requests is carried in one (201 files, 15 MB, mostly film 008's review stills): #431 (011), #382 with #380, #379 and #376 inside it (008), #359 (006), #355 (007), #348 (six files), #347 (004), #433 (E1 rule text only, not the gate), #334 (one note). All checks pass; no added line holds an address or a key; no video or audio. The eleven old pull requests are closed with a pointer to #488 (#334 was closed already). One finding: the studio's spend ledger has no line for the 10-credit J0886 motion take of 23 Oct; add it with ai_spend.py spend when no picture run is appending to the ledger."
         }
       ],
       "remaining_action": "History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge",
@@ -216606,7 +216611,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "history-of-science #488"
     },
     {
       "id": "J2503",
