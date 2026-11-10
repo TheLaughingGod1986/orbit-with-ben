@@ -284,10 +284,10 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
     if reserved(j) and not ((j.get("dispatch_reservation") or {}).get("phase") == "serial"
             and j["dispatch_reservation"].get("claimant") == agent):
         return False
-    stage = (j.get("repo", "owb"), j.get("film"), j.get("stage"))
+    stage = (j.get("repo") or channels.home(), j.get("film"), j.get("stage"))
     if stage[1] and stage[2] and any(
             r.get("id") != j.get("id") and reserved(r)
-            and (r.get("repo", "owb"), r.get("film"), r.get("stage")) == stage for r in rows):
+            and (r.get("repo") or channels.home(), r.get("film"), r.get("stage")) == stage for r in rows):
         return False
     by_id = {r["id"]: r for r in rows}
     if external_hold(j, at) or dependency_problem(j, by_id) or capability_problem(j, agent, at, capabilities):

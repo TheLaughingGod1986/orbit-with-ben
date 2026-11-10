@@ -224,7 +224,7 @@ lanes = chain  # older name
 
 
 # Flow names for the Vertex picture models (used by every channel whose picture_route starts with Flow).
-HOS_FLOW = {"veo-3.1-fast-generate-001": "flow-veo-3.1", "veo-3.1-generate-001": "flow-veo-3.1",
+FLOW_NAMES = {"veo-3.1-fast-generate-001": "flow-veo-3.1", "veo-3.1-generate-001": "flow-veo-3.1",
             "gemini-2.5-flash-image": "flow-nano-banana-2"}
 
 
@@ -235,7 +235,8 @@ def _picture_route(job: dict) -> str:
         repo = job.get("repo") if job.get("repo") in channels.slugs() else channels.home()
         return channels.get(repo).get("picture_route") or "flow_first"
     except Exception:  # noqa: BLE001  (a missing channel file never stops routing)
-        return "flow_only" if job.get("repo") == "hos" else "flow_first"
+        # Not knowing the channel's route, take the one that cannot bill: Flow on the paid-for credits, no priced Vertex.
+        return "flow_only"
 
 
 def job_chain(job: dict) -> list:
@@ -248,12 +249,12 @@ def job_chain(job: dict) -> list:
         if route == "flow_only":
             # e.g. HOS: picture is minted in Flow on the Ultra credits; Vertex is a separate, priced route (Claude as
             # acting Chief, 14 Oct 2026: J0140 was walked to "Gemini on veo-3.1-fast-generate-001", which reads as Vertex).
-            ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch]
+            ch = [(a, FLOW_NAMES.get(m, m)) for a, m in ch]
         elif route:
             # OWB too goes to Flow first (Ben, 5 Nov 2026: "For the image generation block we have Gemini flow lots of
             # credit"): the AI Ultra credits are already paid for, Vertex bills GBP. Vertex stays behind it as the
             # fallback, still inside the written spend rules.
-            ch = [(a, HOS_FLOW.get(m, m)) for a, m in ch] + ch
+            ch = [(a, FLOW_NAMES.get(m, m)) for a, m in ch] + ch
         return ch
     m = job.get("model") or ""
     for k, (_, ch, _) in CHAINS.items():
