@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
-| J2512 | mini | claimed | gemini | 2026-11-10T22:39Z | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
+| J2512 | mini | blocked | gemini | – | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
 | J2513 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London) |  |
 | J2514 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London) |  |
 | J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |

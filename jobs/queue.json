@@ -217126,13 +217126,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T20:39Z",
-      "eta": "2026-11-10T22:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
-      "result": "",
+      "result": "parked for Chief: PR #772 (3775ef1b3, jobs/reviews/J2512/REPORT.md). Fixed the two J2508 craft faults on the 026 Shorts (£0, nothing uploaded or changed in Studio; Ben's 10 Nov approved v05/v06 remain the fallback for J2513/J2514): (1) Mon 16 HZGTovJu_TQ -> mon16_cant_see_nearest_star_v06.mp4 (sha256 7eb4f03d58e9738f, 26.5s, -14.2 LUFS / -2.2 dBTP): replaced repeated opening Paranal shot at 0:20.23-0:22.63 (s06) with unused moving ESO Paranal observatory shot v06_13.80 (uhd_bt_paranal_06, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. (2) Wed 18 cwU_0WWeNZ4 -> wed18_robot_reach_nearest_star_v07.mp4 (sha256 c0e6a13865a6abce, 23.6s, -14.2 LUFS / -2.2 dBTP): replaced 3.10s frozen still at 0:13.45-0:16.55 (s05 ESO star trails) with smooth horizontal drift (min_diff=17.37, median_diff=18.96, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. Armed Ben's watch cards in order (J2512.1 Mon 16 due Sat 14 Nov 18:00 London, J2512.2 Wed 18 due Mon 16 Nov 18:00 London, --if-not 'the cut you OK'd on 10 Nov airs') and verified both under 'Needs your review' on the live Review tab with working 302 Play links.",
       "history": [
         {
           "at": "2026-11-10T15:01Z",
@@ -217183,6 +217183,11 @@
           "at": "2026-11-10T21:20Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened PR #772 (3775ef1b3, jobs/reviews/J2512/REPORT.md); both watch cards verified on live board Review tab"
+        },
+        {
+          "at": "2026-11-10T21:20Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #772 (3775ef1b3, jobs/reviews/J2512/REPORT.md). Fixed the two J2508 craft faults on the 026 Shorts (£0, nothing uploaded or changed in Studio; Ben's 10 Nov approved v05/v06 remain the fallback for J2513/J2514): (1) Mon 16 HZGTovJu_TQ -> mon16_cant_see_nearest_star_v06.mp4 (sha256 7eb4f03d58e9738f, 26.5s, -14.2 LUFS / -2.2 dBTP): replaced repeated opening Paranal shot at 0:20.23-0:22.63 (s06) with unused moving ESO Paranal observatory shot v06_13.80 (uhd_bt_paranal_06, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. (2) Wed 18 cwU_0WWeNZ4 -> wed18_robot_reach_nearest_star_v07.mp4 (sha256 c0e6a13865a6abce, 23.6s, -14.2 LUFS / -2.2 dBTP): replaced 3.10s frozen still at 0:13.45-0:16.55 (s05 ESO star trails) with smooth horizontal drift (min_diff=17.37, median_diff=18.96, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. Armed Ben's watch cards in order (J2512.1 Mon 16 due Sat 14 Nov 18:00 London, J2512.2 Wed 18 due Mon 16 Nov 18:00 London, --if-not 'the cut you OK'd on 10 Nov airs') and verified both under 'Needs your review' on the live Review tab with working 302 Play links."
         }
       ],
       "remaining_action": "Parked for Chief review and Ben's watch",
