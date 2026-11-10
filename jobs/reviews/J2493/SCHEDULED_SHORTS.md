@@ -1,0 +1,36 @@
+# Scheduled Orbit Shorts against the first-second rule (J2493)
+
+Written 10 Nov 2026 by claudecode. Table only: nothing built, nothing changed on YouTube, £0.
+
+Schedule source: `05_Analytics/owb/snapshots/2026-11-10.json` (publishAt per video) merged with `00_Brand/Channel-Setup/social/UPLOADS.json` (export file, sha256). The brief says twenty; the merge gives **24**, because UPLOADS.json has no publishAt for four that the snapshot shows scheduled (B1z2dv7m7Vk, bSjWiCbB7pY, gmzaCfJF1gA, kKN8Ale42sE) and none for xvarZP2aYyE, while it still carries a stale 30 Nov publishAt for `bizlhspnVvY` (comets v01), which the snapshot shows with no schedule: xvarZP2aYyE (comets v04) holds that slot. bizlhspnVvY is left out.
+
+"sha ok" means the file to hand hashes to the sha256 recorded at upload, so it is the bytes on YouTube.
+
+## Step 1: what is scheduled and where its file is
+
+| # | Airs (UTC) | Video id | Title | Export file | File to hand | In scope |
+|---|---|---|---|---|---|---|
+| 1 | 2026-11-10 11:30 | `ffYKoNVPoqg` | What Would Standing on Saturn's Moon Titan Feel Like? | `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v11.mp4` | Mini (sha ok) | no: airs inside 48 h |
+| 2 | 2026-11-11 11:30 | `B1z2dv7m7Vk` | Why Did a 90-Day Mars Rover Last 14 Years? | `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07.mp4` | Mini (sha ok), NAS (sha ok) | no: airs inside 48 h |
+| 3 | 2026-11-12 11:30 | `N42gKBbD7tE` | How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years? | `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4` | none. Ruled KNOWN (J1320): uploaded bytes not kept; YouTube copy is canonical | no: no file to gate |
+| 4 | 2026-11-13 11:30 | `bSjWiCbB7pY` | How Did a Helicopter Fly 72 Times on Mars? | `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4` | none. Ruled KNOWN (J1320): uploaded bytes not kept; YouTube copy is canonical | no: no file to gate |
+| 5 | 2026-11-14 11:30 | `gmzaCfJF1gA` | Why Does Pluto's Giant Ice Heart Have Zero Craters? | `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4` | Mini (sha ok) | yes |
+| 6 | 2026-11-16 11:30 | `HZGTovJu_TQ` | If You Can't See the Nearest Star, How Far Away Is It? | `../../../../Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 7 | 2026-11-17 11:30 | `kKN8Ale42sE` | How Far From Earth Is Voyager 1 Right Now? | `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4` | Mini (sha DIFFERS) | yes |
+| 8 | 2026-11-18 11:30 | `cwU_0WWeNZ4` | If Voyager Needs 75,000 Years, How Far Is the Nearest Star? | `../../../../Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/wed18_robot_reach_nearest_star_v01.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 9 | 2026-11-20 11:30 | `aAUgIGEuPwQ` | The Nearest Star Is a Cherry Past Cairo. How Do We Know? | `02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 10 | 2026-11-21 11:30 | `rvug71d7Dqk` | Muons Shouldn't Reach the Ground. They Do. | `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v04.mp4` | Mini (sha ok) | yes |
+| 11 | 2026-11-23 11:30 | `Dm4xsF1Ateg` | Why Do You Weigh Less at Earth's Equator? | `02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v07.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 12 | 2026-11-25 11:30 | `xdurJQcoiGM` | Where Will the International Space Station Crash? | `00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar2_iss_2030_deorbit_v13.mp4` | Mini (sha ok) | yes |
+| 13 | 2026-11-27 11:30 | `93JL_IK57EM` | Will Asteroid 2024 YR4 Hit the Moon in 2032? | `00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar1_2024_yr4_moon_v06.mp4` | Mini (sha ok) | yes |
+| 14 | 2026-11-28 11:30 | `MScK2CK2ZFg` | Where Will the 2027 Total Solar Eclipse Last Over Six Minutes? | `00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar3_2027_eclipse_v14.mp4` | Mini (sha ok) | yes |
+| 15 | 2026-11-30 11:30 | `xvarZP2aYyE` | Why Will Gliese 710's Comets Arrive After It Has Gone? | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_mon30_comets_v04/028_short_mon30_comets_v04.mp4` | NAS archive only (no sha256 recorded at upload, so not provable as the uploaded bytes) | yes |
+| 16 | 2026-12-02 11:30 | `v6euXX2omz4` | Is a Star Really Coming Towards Us? | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_wed02_opening_testA_v04/028_short_wed02_opening_testA_v04.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 17 | 2026-12-04 11:30 | `BTuL_QBbEgY` | How Close Will Gliese 710 Come to the Sun? | `02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v07.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 18 | 2026-12-05 11:30 | `C8lPx5N2DwM` | What Happens When Earth's Magnetic Field Flips? | `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01.mp4` | NAS (sha ok) | yes |
+| 19 | 2026-12-07 11:30 | `lsOCcIYCud0` | What Will the Night Sky Look Like When Gliese 710 Arrives? | `02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v07.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 20 | 2026-12-09 11:30 | `SWDCZfWZVao` | Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light? | `02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 21 | 2026-12-11 11:30 | `k2kEaA7ICjc` | Is Betelgeuse Really About to Explode? | `02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 22 | 2026-12-12 11:30 | `QEoYKIVvKBA` | What If the Solar Wind Blew Earth's Atmosphere Into Space? | `02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03.mp4` | NAS (sha ok) | yes |
+| 23 | 2026-12-14 11:30 | `heiGCnGKTkE` | How Bright Will Betelgeuse Get When It Explodes? | `02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04.mp4` | Mini (sha ok), NAS (sha ok) | yes |
+| 24 | 2026-12-16 11:30 | `f17XCtUmN-g` | What Happens When Gliese 710 Passes Through the Oort Cloud? | `02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03.mp4` | Mini (sha ok), NAS (sha ok) | yes |
