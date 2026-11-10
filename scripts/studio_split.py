@@ -217,7 +217,9 @@ def plug_in(studio: pathlib.Path, folders: dict, strict: bool = False) -> tuple[
                        text=True, timeout=120)
     if r.returncode == 0:
         return "", env
-    return (r.stderr.strip().splitlines() or ["the channel list could not be read"])[-1][:200], env
+    last = (r.stderr.strip().splitlines() or ["the channel list could not be read"])[-1]
+    # "ValueError: /tmp/.../channels: exactly one channel must be home" -> the loader's own words, without the path
+    return "the loader says: " + re.sub(r"^\w+(?:Error|Exception): (?:\S*/\S*: )?", "", last)[:160], env
 
 
 def key_findings(root: pathlib.Path, files: list[str]) -> list[str]:
