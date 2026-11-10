@@ -118,9 +118,9 @@ jobs:
               pinned = {m for g in heavy.values() for m in g}
               groups = [[m for m in heavy.get(i, []) if m in all_mods] for i in range(n)]
               rest = [m for m in all_mods if m not in pinned]
-              slots = [i for i in range(n) if i != 0] or [0]
               for idx, m in enumerate(rest):
-                  groups[slots[idx % len(slots)]].append(m)
+                  target = min(range(n), key=lambda i: (len(groups[i]), i))
+                  groups[target].append(m)
               flat = [m for g in groups for m in g]
               if len(flat) != len(all_mods) or len(set(flat)) != len(all_mods) or sorted(flat) != all_mods:
                   raise SystemExit(f"partition check failed for {folder}: grouped={len(flat)} unique={len(set(flat))} disk={len(all_mods)}")
@@ -128,14 +128,15 @@ jobs:
               return groups
 
           scripts_heavy = {
-              0: ["test_chief_relay", "test_studio_split"],
-              1: ["test_analytics_snapshot_sh", "test_mini_repair", "test_terminal_loop"],
+              0: ["test_chief_relay", "test_studio_split", "test_terminal_loop"],
+              1: ["test_analytics_snapshot_sh", "test_mini_repair"],
               2: ["test_macbook_worker", "test_capability_probe", "test_sfx_kit"],
               3: ["test_metadata_git", "test_email_ratchet", "test_chief_succession", "test_board_benauth"],
           }
           tools_heavy = {
-              0: ["test_gate_stayed", "test_gate_duration"],
+              0: ["test_gate_stayed"],
               1: ["test_gate_full_bleed"],
+              2: ["test_gate_duration"],
           }
 
           runs = []
@@ -143,7 +144,7 @@ jobs:
               runs.append((f"scripts-{idx}", "scripts", grp))
           for idx, grp in enumerate(make_groups("04_Audio/tools", 1, {}), 1):
               runs.append(("audio", "04_Audio/tools", grp))
-          for idx, grp in enumerate(make_groups("00_Brand/Channel-Setup/tools", 2, tools_heavy), 1):
+          for idx, grp in enumerate(make_groups("00_Brand/Channel-Setup/tools", 3, tools_heavy), 1):
               runs.append((f"tools-{idx}", "00_Brand/Channel-Setup/tools", grp))
 
           procs = []
