@@ -1,5 +1,5 @@
 {
-  "next_id": 2515,
+  "next_id": 2516,
   "jobs": [
     {
       "id": "J0001",
@@ -216890,6 +216890,35 @@
         "okAt": "2026-11-10T15:03Z",
         "okRef": "board tick OWB-J2494.2, 10 Nov 14:46Z"
       }
+    },
+    {
+      "id": "J2515",
+      "title": "Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Found 10 Nov while putting the first-day check on the board (#744): a standalone Short has no card on the board's Videos tab. Today's example is ffYKoNVPoqg (\"What Would Standing on Saturn's Moon Titan Feel Like?\", live 10 Nov 11:30 London, `standalone: true` in the uploads register, second upload of RLSJm59OSzI). No card in `tracker.videos` carries its video id, so its First day card can only link to YouTube and Ben cannot open it from Videos or Schedule.\n\n1. In `scripts/video_tracker.py`, find why a register entry with `standalone: true` and no parent long gets no card (look at `uploads_index`, `build_videos` and the \"public Short without record gets one card\" path), and give each standalone Short one card: its real title, its YouTube state, its channel, type short. A superseded upload (`supersededBy`) gets none.\n2. Name no channel in new code (ask `channels.py`).\n3. Tests in `scripts/test_video_tracker.py`: a standalone Short gets exactly one card; a superseded one gets none; a Short that belongs to a long is unchanged.\n4. Through a pull request; merge when green; no board redeploy is needed (data only), but check the live board.json shows the card.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T15:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T15:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
