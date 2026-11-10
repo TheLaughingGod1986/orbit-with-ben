@@ -192529,13 +192529,13 @@
       "stage": "picture",
       "after": "J2446",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
-      "result": "parked for Chief dependency: gated on J1881 (do NOT merge HOS #411+#428 here). Capability fallback applied 2026-11-05T22:46:41Z probe (audio PASS, moving_video FAIL): retakes authorized on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when capable probe passes, else Ben finished-film watch (h22 pattern). Timed moving_video recheck at 2026-11-06T01:20:00Z cleared.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T18:52Z",
@@ -192566,6 +192566,11 @@
           "at": "2026-11-10T00:25Z",
           "by": "relay",
           "what": "condition verification queued: J2469"
+        },
+        {
+          "at": "2026-11-10T01:19Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: HOS PR #411 (with #428 inside) merged to HOS main at 97e44918 on 10 Nov; J1881 and J2446 are done. The earlier ruling stands: retakes on hash, frame-count and still-sheet evidence only, subscription credit only, motion judged at J2243 or at Ben's finished-film watch."
         }
       ],
       "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
@@ -192573,13 +192578,7 @@
       "required_capabilities": [],
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Waiting for J1881 (HOS #411+#428 remain parked for Chief merge — do NOT merge those PRs under this ruling). Fresh gemini probe 2026-11-05T22:46:41Z: audio_input PASS, moving_video_input FAIL; no agent has fresh moving_video_input. Chief authorizes J2241 retakes on hash/frame-count/still-sheet evidence only; motion judged at J2243 if/when a capable probe passes, else at Ben's finished-film watch (h22 pattern).",
-        "check_at": "2026-11-10T01:25:28+00:00",
-        "recheck_task": "J2469"
-      }
+      ]
     },
     {
       "id": "J2242",
@@ -212834,13 +212833,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T00:49Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T00:25Z",
-      "result": "parked for Chief: J2241's condition is NOT satisfied, keep it blocked. Evidence (read 2026-11-10 ~00:55Z): J1881 is done (KEEP accepted by acting Chief 2026-11-09T19:54Z) and J2446 is done (gemini 00:24Z: both PRs up to date, 18 tests OK, check_all ALL CHECKS PASS). gh: HOS #428 MERGED into codex/J2163-repair at 2026-11-10T00:23:42Z (head 6b4d2574); HOS #411 still OPEN, MERGEABLE, not merged to main (head 9c31f162). The Chief's 9 Nov note gates J2241 on the PRs being merged, and that merge is the Chief's. The hold text on J2241 is stale (still says waiting for J1881). MacBook cannot update the hold (jobs.py wait refused: only holder or elected Chief). Chief: merge HOS #411, then reopen J2241; or run: jobs.py wait J2241 --agent <chief id> --condition 'Waiting for Chief merge of HOS PR #411 (9c31f162) into HOS main; J1881 and J2446 done; capability fallback unchanged' --check-at '2026-11-10T07:00:00Z' --type input --recheck J2469. Nothing spent, merged, uploaded or rescheduled.",
+      "result": "Closed by acting Chief (Claude) 10 Nov: the check was right that HOS #411 was still open. It is merged now (97e44918), so J2241 is reopened.",
       "history": [
         {
           "at": "2026-11-10T00:25Z",
@@ -212861,6 +212860,11 @@
           "at": "2026-11-10T00:50Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2241's condition is NOT satisfied, keep it blocked. Evidence (read 2026-11-10 ~00:55Z): J1881 is done (KEEP accepted by acting Chief 2026-11-09T19:54Z) and J2446 is done (gemini 00:24Z: both PRs up to date, 18 tests OK, check_all ALL CHECKS PASS). gh: HOS #428 MERGED into codex/J2163-repair at 2026-11-10T00:23:42Z (head 6b4d2574); HOS #411 still OPEN, MERGEABLE, not merged to main (head 9c31f162). The Chief's 9 Nov note gates J2241 on the PRs being merged, and that merge is the Chief's. The hold text on J2241 is stale (still says waiting for J1881). MacBook cannot update the hold (jobs.py wait refused: only holder or elected Chief). Chief: merge HOS #411, then reopen J2241; or run: jobs.py wait J2241 --agent <chief id> --condition 'Waiting for Chief merge of HOS PR #411 (9c31f162) into HOS main; J1881 and J2446 done; capability fallback unchanged' --check-at '2026-11-10T07:00:00Z' --type input --recheck J2469. Nothing spent, merged, uploaded or rescheduled."
+        },
+        {
+          "at": "2026-11-10T01:19Z",
+          "by": "claude",
+          "what": "done: Closed by acting Chief (Claude) 10 Nov: the check was right that HOS #411 was still open. It is merged now (97e44918), so J2241 is reopened."
         }
       ],
       "remaining_action": "Check whether HOS PRs 411 and 428 are merged, then record the verdict on J2241's hold",
