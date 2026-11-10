@@ -254,7 +254,9 @@ class Relay(unittest.TestCase):
             cr.write_json(cr.d("inbox.json"), {"agent": agent, "notified_at": cr.iso(T0),
                                                "waiting": {"J1": {"since": cr.iso(T0)}}})
             self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 45 * MIN), agent == "chief")
-            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + 76 * MIN))
+            # 10 Nov 2026: 75 min still benched Claude nightly; it now gets two full runs (150 min).
+            self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 76 * MIN), agent == "chief")
+            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + 151 * MIN))
 
     def test_repeat_stalls_keep_grok_down_longer(self):
         windows = [cr.stall_window("chief", T0 + i * MIN) for i in range(6)]
