@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, featureVideo, featuredCard, scheduledThisWeek, uniqueVideos, producingVideos, featuredOutlook, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, miniLine, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, agentLines, agentsCards, machinesCard, plainWhy, qWhen, progressCard, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, p24NextLive, workingOnNow, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -283,10 +283,6 @@ const det = t.detail({tracker: {videos: [v({key: 'OWB:005', line: 'Held up by th
 assert(det.indexOf('J2') < det.indexOf('J1'), 'working job first');
 assert(det.includes('after the Chief review') && det.includes('2 of 4') && det.includes('Held up by the audit'));
 assert(t.detail({tracker: {videos: []}}, 'x').includes('on the board any more'));
-// The Mac mini line: working, or between jobs with a queue, never a silent zero.
-const s1 = t.summary({tracker: {videos: []}, models: {checkedAt: new Date(NOW).toISOString(), runner: {state: 'ready'}}, owb: {jobs: [{id: 'J9', status: 'open'}]}}, NOW);
-assert(t.miniLine(s1, {owb: {jobs: [{id: 'J9', status: 'open'}]}}).includes('between jobs · 1 queued'));
-assert(t.miniLine(s1, {owb: {jobs: [{id: 'J8', status: 'claimed', by: 'codex', title: 'disk'}]}}).includes('Mac mini working: Codex on J8'));
 // ETA: the pace of reported steps, else the typical time for the kind; overruns say so.
 const start = new Date(NOW - 30 * 6e4).toISOString();
 t.setBoard({owb: {jobs: [{id: 'J7', claimedAt: start, estMin: 85}]}});
@@ -358,7 +354,6 @@ assert(t.uatOutlook(v({}), NOW).detail.includes('not been published'));
 const blockedProduction = v({production: {milestones: [], eta: {state: 'unavailable', reasons: ['Flow <manual>', 'credit reset']}}});
 assert(t.productionDetail(blockedProduction, NOW).includes('Flow &lt;manual&gt;') && t.productionDetail(blockedProduction, NOW).includes('credit reset'));
 const trackedBoard={tracker: {videos: [tracked]}};
-assert(t.featuredCard(t.featureVideo(trackedBoard, NOW), NOW, 1).includes('milestones complete'));
 assert(!t.overview(trackedBoard, NOW).includes('milestones complete'),'Overview home no longer embeds milestone feature copy');
 assert(!t.renderTab('review', {tracker: {videos: [tracked, blockedProduction]}}, NOW).includes('15–25 min'));
 
@@ -412,14 +407,7 @@ const readyFilm=v({key:'OWB:104',lane:'ready',readyFor:'Ben',watch:{url:'https:/
 const db=makeBoard([producingA,producingA,producingB,publicFollowup,scheduled,readyFilm,readyFilm]);
 const om=t.overviewModel(db,NOW);
 assert.equal(om.ready.length,1);assert.equal(om.producing.length,2);assert.equal(om.running.length,1);assert.equal(om.week.length,1);
-assert.equal(t.featureVideo(db,NOW).key,'OWB:104','finished Ben review comes first');
-assert.equal(t.featureVideo(makeBoard([pending1,pending2,sooner,later]),NOW).key,'sooner','credible earliest UAT outranks pending');
 const nearlyDone=v({key:'blocked',production:{milestones:nine.map((id,i)=>({id,state:i<8?'done':'review'})),activeStages:['qa']}});
-assert.equal(t.featureVideo(makeBoard([nearlyDone,producingA]),NOW).key,producingA.key,'nominal progress does not promote a blocked film');
-const focused=makeBoard([v({key:'OWB:202'}),v({key:'OWB:201'})]);focused.owb.focus=['202'];
-assert.equal(t.featureVideo(focused,NOW).key,'OWB:202','recorded focus breaks readiness ties');
-assert.equal(t.featureVideo(makeBoard([v({key:'z'}),v({key:'a'})]),NOW).key,'a','fallback has an explicit stable key');
-assert.equal(t.featuredOutlook(pending1,NOW),'Estimate pending');
 const staleBoard={...makeBoard([v({key:'stale',jobs:[{...shared,claimedAt:new Date(NOW-80*6e4).toISOString()}]})]),models:{checkedAt:new Date(NOW-80*6e4).toISOString()}};
 assert.equal(t.overviewModel(staleBoard,NOW).status.text,'Attention needed');
 assert(!t.overview(staleBoard,NOW).includes('Codex is working'));
@@ -586,8 +574,6 @@ assert.equal(t.overviewModel(readyBoard,NOW).ready.length,1,'ready cuts still co
 const readyReview=t.renderTab('review',readyBoard,NOW);
 assert(readyReview.includes('href="#uat=watch-now"')&&(readyReview.includes('▶ Watch & review v02')||readyReview.includes('Watch &amp; review v02')),
   'Watch CTA lives on the Review tab');
-const featuredReady=t.featuredCard(t.featureVideo(readyBoard,NOW),NOW,0);
-assert(featuredReady.includes('Ready for your review')||featuredReady.includes('Watch'),'featuredCard helper still renders ready cuts for Review');
 const missingDelivery=t.overview({tracker:{videos:[v({key:'missing-watch',lane:'ready',readyFor:'Ben'})]},owb:{jobs:[]}},NOW);
 assert(!missingDelivery.includes('▶ Watch & review')&&!missingDelivery.includes('overview-feature'));
 console.log('Review readiness wording and Watch CTA checks OK');
@@ -689,21 +675,10 @@ const hosRows=nine.map(id=>({id,label:id,state:['topic','script','sources','vo']
   summary:id==='picture'?'70/90 picture rows recorded':'',evidence:id==='picture'?'/private/internal-generation-log':''}));
 const hosPicture=v({key:'HOS:009',channel:'HOS',production:{milestones:hosRows,activeStages:['picture'],eta:{state:'unavailable'}}});
 const hosBoard={tracker:{videos:[hosPicture]}};
-const hosFeatured=t.featuredCard(t.featureVideo(hosBoard,NOW),NOW,1);
-assert(hosFeatured.includes('70/90 picture rows recorded'));
-assert(hosFeatured.includes('4 of 9 milestones complete')&&hosFeatured.includes('44%'));
-assert(!hosFeatured.includes('/private/internal-generation-log'));
 assert(!t.overview(hosBoard,NOW).includes('70/90 picture rows recorded'),'Overview home no longer embeds the feature card');
-const noRowSummary=t.featuredCard(t.featureVideo({tracker:{videos:[{...hosPicture,production:{...hosPicture.production,milestones:hosRows.map(m=>({...m,summary:''}))}}]}},NOW),NOW,1);
-assert(!noRowSummary.includes('picture rows recorded'),'missing row counts never get invented');
-const unknownCutRows=t.featuredCard(t.featureVideo({tracker:{videos:[{...hosPicture,production:{scope:'unconfirmed_cut',projectHistory:hosPicture.production}}]}},NOW),NOW,1);
-assert(!unknownCutRows.includes('70/90 picture rows recorded'),'project row counts do not certify an unconfirmed cut');
 const normalized=t.normalizeCut(mixedCut);
 assert.equal(normalized.type,'short');assert.equal(normalized.key,'OWB:030');assert.equal(mixedCut.type,'long','source records are unchanged');
 const mixedBoard={tracker:{videos:[mixedCut]}};
-const mixedFeatured=t.featuredCard(t.featureVideo(mixedBoard,NOW),NOW,1);
-assert(mixedFeatured.includes('Short')&&mixedFeatured.includes('Cut progress')&&mixedFeatured.includes('Unconfirmed'));
-assert(!mixedFeatured.includes('78%')&&!mixedFeatured.includes('0%'));
 assert(!t.overview(mixedBoard,NOW).includes('Cut progress'),'Overview home no longer embeds cut progress feature copy');
 assert(!t.videoProductionRow(mixedCut,NOW).includes('78%'));
 const mixedDetail=t.productionDetail(mixedCut,NOW);
@@ -734,18 +709,6 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(line.startsWith('Next for Gemini · #4 in line · starts about'), line);
   assert.equal(t.forecastLine(qb, {id: 'J8'}), 'Waiting for codex: marked down');
   assert.equal(t.forecastLine(qb, {id: 'J9'}), '');
-  const lanes = t.agentLines(qb);
-  assert(lanes.includes('on J6 · free about') && lanes.includes('4 in line') && lanes.includes('clear about'), lanes);
-  assert(lanes.includes('Not available · out of credit'), lanes);
-  assert(lanes.includes('Not available · last run about 11 hours ago'), lanes);
-  assert(!/<span class="p24-film">MacBook(?: 2)?<\/span>/.test(lanes), 'idle MacBook with nothing waiting is hidden');
-  assert(!lanes.includes('min/job'), 'per-row minutes-per-job is gone');
-  assert(lanes.includes('p24-title wrap'), 'queue lines use the wrapping title class');
-  assert.equal(t.agentLines({}), '');
-  assert.equal(t.agentLines({queueForecast: {agents: [{agent: 'macbook', up: true, now: '', queued: 0}]}}), '',
-    'Agents block hides when every row is idle and empty');
-  assert.equal(t.plainWhy('no Claude run for 647 min (heartbeat…)'), 'last run about 11 hours ago');
-  assert.equal(t.plainWhy('no MacBook heartbeat in 40 min'), "MacBook hasn't checked in for about 40 min");
 }
 {
   const now = Date.parse('2026-11-06T10:51:00Z');
@@ -768,10 +731,6 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(!card.includes('Agents here'), 'Agents here CLI list is gone');
   assert(!card.includes('overview-agents'), 'Machines section does not swallow Agents');
   assert((card.match(/aria-label="Machines"/g)||[]).length===1, 'Machines is its own section');
-  const agents = t.agentsCards(qb);
-  assert(agents.includes('overview-agents') && agents.includes('aria-label="Agents"'), 'agentsCards helper still builds a separate Agents section');
-  assert(agents.includes('mc-chip') && agents.includes('light-green') && agents.includes('J2276'), 'agent chips use traffic lights');
-  assert(agents.includes('light-red') || agents.includes('Idle') || agents.includes('Down'), 'idle/down agents get a red light');
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
@@ -841,7 +800,8 @@ console.log('Queue forecast checks OK');
       {id: 'J2291', title: 'House rules condition check', status: 'done', when: 'today', by: 'codex'},
     ],
   };
-  const card = t.progressCard({progress24h: p24});
+  const composeP24 = b => t.last24Section(b) + t.workingOnNow(b) + t.p24Totals(b);
+  const card = composeP24({progress24h: p24});
   assert(card.includes('Video jobs finished') && card.includes('30 of 57 jobs were on videos'), 'headline stats stay');
   assert(card.includes('Videos that had work') && card.includes('p24-film-card'), 'films render as cards');
   assert(card.includes('OWB 031') && card.includes('56% → 67%'), 'moved films show the % change');
@@ -854,12 +814,9 @@ console.log('Queue forecast checks OK');
   assert(card.includes('p24-glance') && card.includes('Done today') && card.includes('Left to go live') && card.includes("Can't run yet"),
     'glance strip shows done today, left, and cannot-run counts');
   assert(!card.includes('p24-glance-fold') && !card.includes('overview-attention'),
-    'progressCard glance stays numbers-only; Needs attention lives on Overview');
+    'progress24h glance stays numbers-only; Needs attention lives on Overview');
   assert(!card.includes('Next to go live') && !card.includes('overview-next-live'),
-    'progressCard no longer mixes Next to go live into Last 24 hours');
-  const nextLive = t.p24NextLive(p24);
-  assert(nextLive.includes('Next to go live') && nextLive.includes('Could a Robot Survive on Mars?') && nextLive.includes('Why Vaccines Are Named After a Cow'),
-    'p24NextLive helper still lists the next four from publish times');
+    'progress24h no longer mixes Next to go live into Last 24 hours');
   // Compact film row; full checklist expands from the row (Ben, 6 Nov ~23:07).
   // After-waits are not Ben-facing, so Can't run counts 0 even when Left still lists them.
   assert(card.includes('6 of 9 stages') && card.includes('Done 1') && card.includes('Left 3') && card.includes('Can&#39;t run 0'),
@@ -888,10 +845,10 @@ console.log('Queue forecast checks OK');
   assert(/p24-studio[\s\S]*p24-check[\s\S]*J2290/.test(card) || (card.includes('Studio-wide') && card.includes('is-done') && card.includes('J2290')),
     'studio-wide jobs use the same checklist treatment');
   // Older snapshots with only moved[] still render cards.
-  const legacy = t.progressCard({progress24h: {hours: 24, jobsDone: 3, videoJobs: 2, milestones: 1, moved: p24.moved.slice(0, 1), films: []}});
+  const legacy = composeP24({progress24h: {hours: 24, jobsDone: 3, videoJobs: 2, milestones: 1, moved: p24.moved.slice(0, 1), films: []}});
   assert(legacy.includes('p24-film-card') && legacy.includes('OWB 031') && legacy.includes('56% → 67%'), 'legacy moved-only snapshots still show a film card');
   // Live board.json shape on 6 Nov: non-empty older films[] (count+last, no items/status) plus moved[] with 031 missing from films.
-  const liveLegacy = t.progressCard({progress24h: {
+  const liveLegacy = composeP24({progress24h: {
     hours: 24, jobsDone: 57, videoJobs: 30, otherJobs: 27, milestones: 3,
     moved: [
       {key: 'OWB:031', title: 'What Happens When Earths Magnetic Field Flips', from: 56, to: 67, milestones: 1},
@@ -959,7 +916,7 @@ console.log('Queue forecast checks OK');
       ], nextLive: p24.glance.nextLive},
     },
   };
-  const focused = t.progressCard(focusedBoard);
+  const focused = composeP24(focusedBoard);
   assert(focused.includes('Working on now'), 'focus mode labels the film stack as working on now');
   assert(focused.includes('OWB 031') && focused.includes('OWB 032') && focused.includes('OWB 033'), 'focus films stay on Overview');
   assert(!focused.includes('OWB 024') && !focused.includes('HOS 006') && !focused.includes('OWB ASK'),

@@ -14,7 +14,7 @@ import board_pair_link as bpl  # noqa: E402
 
 class PageNeverAsksForACode(unittest.TestCase):
     def test_no_prompt_anywhere(self):
-        for f in ("tracker_app.js", "shim.js"):
+        for f in ("tracker_app.js", "studio_app.js"):
             js = (SITE / f).read_text()
             self.assertNotIn("prompt(", js, f)
             self.assertIn('credentials: "same-origin"', js, f)
@@ -28,14 +28,15 @@ class PageNeverAsksForACode(unittest.TestCase):
 
     def test_no_dialogs_on_the_buttons(self):
         # Ben, 25 Oct 13:34: Approve / Request changes / comment / Send to the Chief just go, with a toast, never a dialog
-        for f in ("tracker_app.js", "shim.js"):
+        for f in ("tracker_app.js", "studio_app.js"):
             js = (SITE / f).read_text()
             for bad in ("alert(", "confirm(", "isn't linked", "NOT_LINKED"):
                 self.assertNotIn(bad, js, f"{f}: {bad}")
-            self.assertIn('toast("Sent ✓")', js, f)
-        page = (SITE.parent / "studio_kanban.html").read_text()
-        self.assertNotIn("alert(", page)
-        self.assertNotIn("confirm(", page)
+            self.assertIn("sent ✓", js.lower(), f)
+        for p in ("video_tracker.html", "studio_app.html"):
+            page = (SITE.parent / p).read_text()
+            self.assertNotIn("alert(", page)
+            self.assertNotIn("confirm(", page)
 
 
 @unittest.skipUnless(shutil.which("node"), "node not installed")

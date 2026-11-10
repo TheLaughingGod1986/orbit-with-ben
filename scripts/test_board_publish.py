@@ -342,10 +342,11 @@ class QuickNoOp(unittest.TestCase):
         self.assertIn("<key>StartInterval</key><integer>60</integer>", plist)
 
     def test_page_polls_board_data_every_minute(self):
-        shim = (HERE.parent / "05_Analytics/kanban/board_site/shim.js").read_text()
-        self.assertIn("const PERIOD = 60 * 1000;", shim)   # re-read a minute after the last read (Refresh restarts it)
-        self.assertIn("timer = setTimeout(() => { pollData().then(schedule); }", shim)
-        self.assertIn("publishedAt: j.publishedAt", shim)
+        tracker = (HERE.parent / "05_Analytics/kanban/board_site/tracker_app.js").read_text()
+        self.assertIn("setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);", tracker)
+        self.assertIn("publishedAt: j.publishedAt", tracker)
+        studio = (HERE.parent / "05_Analytics/kanban/board_site/studio_app.js").read_text()
+        self.assertIn("setInterval(poll, 60 * 1000);", studio)
 
 
 if __name__ == "__main__":
