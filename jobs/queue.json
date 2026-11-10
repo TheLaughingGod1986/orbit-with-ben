@@ -212584,10 +212584,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-10T08:22Z",
+      "eta": "2026-11-10T09:52Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
       "result": "",
@@ -212711,6 +212711,11 @@
           "at": "2026-11-10T06:18Z",
           "by": "claudecode",
           "what": "released: Out of run time at a clean point. DONE on Orbit (10 Nov 06:10-06:15Z, all read back): four references repointed (Saturn 55AEQwvs36g end screen, Europa NbW5G1BpPY0 description link, Home sections 0 and 8); all six playlists removed; PLdoEpeiktw_Y renamed 'Real Worlds: Solar System, Moons and Alien Planets Explained' (+Mars, +Jupiter, reordered); PLOw2VKzGCOWU renamed 'What Would Happen If…: Black Holes, Neutron Stars and Extreme Space' (+Mars, reordered); 179 videos before and after, no title/privacy/schedule changed. Record: draft PR #718, branch worker/J2460-playlist-refs (PLAYLIST_REFS.md 'Applied' + audit section 4). LEFT: History of Science playlist PLEbpfUzWzcXU only (rename to 'How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science', add VbPubYd6Fbs before the compilation, reorder per audit section 2), then add it to both Applied sections and mark PR #718 ready. How: no HOS API login in 07_Content-Ops/.env, so use Studio on CDP 9222 with ?authuser=1 (studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg/...?authuser=1 loads as HOS; first account and 9223 have no access; channel_switcher does not list HOS). Do NOT redo any Orbit step. Scripts used are in /tmp/J2460-run and /tmp/J2460-run2; run tsx with --env-file=.env from 07_Content-Ops; Data API reads lag a few seconds after a write."
+        },
+        {
+          "at": "2026-11-10T08:22Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Tidy the History of Science playlist in Studio, then open the PR",
