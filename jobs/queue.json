@@ -1,5 +1,5 @@
 {
-  "next_id": 2529,
+  "next_id": 2530,
   "jobs": [
     {
       "id": "J0001",
@@ -217740,6 +217740,37 @@
         "by": "macbook-2",
         "note": "PR #755 opened; parking for Chief"
       }
+    },
+    {
+      "id": "J2529",
+      "title": "HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Approved to run. Chief ruling of 10 Nov on the thread: 013's first mint pass, capped at 5,030 Flow credits. Ben, 10 Nov: \"We should have plenty of credits.\" The runner was reviewed and merged by the acting Chief on 10 Nov (history-of-science #478, commit 1e7c7085; J2499). Included Flow credits only. No real money.\n\nWhat it makes: one take for each of the 71 rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v01.json` (48 Quality at 100 credits, 23 Fast at 10), Part 01 first, in 15 batches of at most 5 rows.\n\nWhy it waits for J2033 (009's last 20 rows). Both films share one credit ledger on the Mini. 009's runner keeps 3,000 credits spare and never marks its charges as settled. Once 013's reservation is in the ledger, 009 can make only 8 more takes before its own runner refuses. So the order is: 009's 20 rows first, then this job. If J2033 is parked instead of finished, do not start this; the Chief decides the order.\n\nSteps, in this order. Stop with a report if any step fails.\n1. Pull history-of-science main (it must contain 1e7c7085). Run `python3 -m unittest tests/test_hos013_pass1_runner.py`: 21 tests pass.\n2. NAS: a time-limited `ls /Volumes/data/studio-live` (10 s). If it does not answer, generate nothing. A paid take that cannot be saved is a loss.\n3. Run the runner's `dry-run` on the Mini and save it under `jobs/reviews/<this job>/`. It must show no pending charge and `would_allow_reserve_at_recorded_balance: true`. Put the reservations, the total liability and the balance in the job log.\n4. Run `submit` once without arming it. It must refuse.\n5. Batch 1 (the first 5 rows of Part 01, at most 500 credits). Get the launch command from `detach-command`, with `--other-reservations 0` and fresh `--log` and `--done` paths. The shared ledger already counts 009's reservation; passing 6000 counts it twice and the runner refuses. Set `HOS013_PASS1_SUBMIT=1` for that one command only. Watch the first video take all the way: the price it read (100 or 10), the Create, the saved clip, and the balance falling by exactly that price. Then let the batch run on.\n6. After each batch: read the batch receipt, the ledger and the balance, record `jobs.py progress <this job> --step N --of 15`, then start the next batch with fresh log and done paths. A wake that finds a runner already going (its pid file, no done file) waits for it; never start a second one.\n\nStop rules.\n- Any `STOP` from the runner: stop, report the exact message, park for Chief. Do not edit the runner, the scope, the plan or any ledger to get past a refusal. Do not retry an ambiguous Create.\n- A charge left pending, a take left at SUBMITTING, or a balance that fell by more than the price of the take: stop and park with the numbers.\n- A still is made only at \"Generating will use 0 credits\".\n\nWhat comes out. Every take is saved GENERATED / PENDING_REVIEW with its receipt and a checked copy on the NAS. Nothing is marked KEEP here and nothing is reviewed here. When all 15 batches are in, or at the first stop, park for Chief with: takes per part, credits spent, the balance before and after, and the receipts folder. The Chief queues the review of the takes.\n\nDeadline: 12 Nov 12:00Z. The credits reset on 12 Nov at 19:13 and what is unused does not carry over.\n",
+      "ref": "J2499",
+      "film": "013",
+      "stage": "picture",
+      "after": "J2033",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T17:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T17:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "video",
+      "plain": "Make the 71 pictures for the Darwin and Wallace film",
+      "mini_only": true
     }
   ],
   "focus": [
