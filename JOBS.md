@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2414 | any | blocked | gemini | – | review · Verify condition for J2339 |  |
 | J2421 | mini | open | – | – | for gemini · qa · `gemini-argon` · Shorts gate: fail any Short built as a 16:9 picture with blurred bands above/below (blur-pad), plus the rule |  |
-| J2423 | any | open | – | – | review · Verify condition for J0912 |  |
+| J2423 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0912 |  |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2440 | mini | open | – | – | chief · Chief: resolve 031 upload orphan-review |  |

@@ -209205,7 +209205,7 @@
     {
       "id": "J2423",
       "title": "Verify condition for J0912",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J0912: J2399 condition check (jobs/reviews/J2399/REVIEW.md, 7e3e179229): HOS 008 Short A v04 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d), preserved v03 (f88315e0), locked VO (40ed4c4e) and s06 plate (611e2633) freshly re-verified on Mini and NAS; J2339 step 2/3 completed audio_input/speech/cadence/SFX/own-score-provenance and 23-frame 1-Hz sequence/caption/s06 continuity QA with PASS in HOS PR #455 (72608f30, 10_Shorts/J2339/QA_v04.md) and Desk #180 6703687627 (re-verified audibly via read_file). However, J2339 step 3/3 (continuous 30fps moving_video_input QA) remains blocked on moving_video_input: live capability_probe.py gemini --record at 2026-11-08T16:26:45Z passed audio_input (0.93) and failed moving_video_input (truth left_to_right green>blue>yellow; answer none), default_api:read_file on video/mp4 returns 1-Hz sampled frames (00:00..00:22), and codex/cursor report []. Preserve worker 4/4 and h47 locks; no generation/spend/upload/schedule.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0912 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -209240,6 +209240,11 @@
           "at": "2026-11-09T03:45Z",
           "by": "gemini",
           "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
+        },
+        {
+          "at": "2026-11-10T01:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify HOS 008 Short A v04 assets on Mini/NAS, check J2339 and capabilities, and update J0912 wait",
@@ -209259,7 +209264,16 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2424",
