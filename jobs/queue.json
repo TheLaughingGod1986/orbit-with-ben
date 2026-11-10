@@ -216191,18 +216191,23 @@
           "at": "2026-11-10T17:18Z",
           "by": "gemini",
           "what": "step 3 of 5 done: All 21 HOS 013 pass-1 guard unit tests (test_hos013_pass1_runner.py) PASS with 0 submissions and £0 spend"
+        },
+        {
+          "at": "2026-11-10T17:22Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Dry-run report generated (71 rows = 48Q/23F = 5,030 credits, 15 batches, 0 submissions); check_all.sh 013 ALL CHECKS PASS; email ratchet PASS"
         }
       ],
-      "remaining_action": "Running dry-run report, email ratchet check, and check_all.sh",
+      "remaining_action": "Committing HOS 013 pass-1 runner, tests, and dry-run report, opening HOS PR, and parking J2499 for Chief",
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-10T17:18Z",
+        "at": "2026-11-10T17:22Z",
         "by": "gemini",
-        "note": "All 21 HOS 013 pass-1 guard unit tests (test_hos013_pass1_runner.py) PASS with 0 submissions and £0 spend"
+        "note": "Dry-run report generated (71 rows = 48Q/23F = 5,030 credits, 15 batches, 0 submissions); check_all.sh 013 ALL CHECKS PAS"
       },
       "taskKeys": [
         "HOS:013"
