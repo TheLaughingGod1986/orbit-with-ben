@@ -7,9 +7,11 @@
 make   Writes our own synthesised SFX as 48 kHz stereo WAVs, peak -12 dBFS, plus sfx_kit_manifest.json (sha256, seed,
        source "own synthesis"). Nothing is downloaded, bought or generated on a paid API, so there's no licence to
        track and no credit spent. The same --seed gives the same files.
-         owb: rumble_low (4 s, deep swell under violent or huge shots), whoosh_soft (0.9 s, fly-throughs and fast
-              moves), tick_ui (50 ms, a label, line, bar or timeline marker appearing)
-         hos: rumble_low (the same), whoosh_soft (warmer, lower), tick_ink (a pen tap: a card or chart line inking in)
+       --house is a channel; its studio/channel.json names its kit ("sound_kit"):
+         ui  (owb): rumble_low (4 s, deep swell under violent or huge shots), whoosh_soft (0.9 s, fly-throughs and
+              fast moves), tick_ui (50 ms, a label, line, bar or timeline marker appearing)
+         ink (hos): rumble_low (the same), whoosh_soft (warmer, lower), tick_ink (a pen tap: a card or chart line
+              inking in)
 level  Reads EBU R128 momentary loudness (ffmpeg ebur128, 100 ms steps) of the separate stems and checks the SFX rule:
          under   FAIL the SFX stem's integrated loudness is less than 12 LU under the VO's
          speech  FAIL while the VO speaks (VO momentary within 10 LU of its integrated), the SFX is less than 10 LU under
@@ -23,6 +25,9 @@ from __future__ import annotations
 
 import argparse, hashlib, json, math, random, re, struct, subprocess as sp, sys, wave
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
 
 SR = 48000
 PEAK_DBFS = -12.0
@@ -107,11 +112,22 @@ def tick_ink(rng, secs=0.06):
     return _norm([s, s])
 
 
+# Recipes by kit name. A channel picks one in its own studio/channel.json ("sound_kit"); nothing here names a channel.
 KITS = {
-    "owb": [("rumble_low", rumble, {}), ("whoosh_soft", whoosh, {}), ("tick_ui", tick_ui, {})],
-    "hos": [("rumble_low", rumble, {}), ("whoosh_soft", whoosh, {"lo": 300.0, "hi": 1800.0, "secs": 1.0}),
+    "ui": [("rumble_low", rumble, {}), ("whoosh_soft", whoosh, {}), ("tick_ui", tick_ui, {})],
+    "ink": [("rumble_low", rumble, {}), ("whoosh_soft", whoosh, {"lo": 300.0, "hi": 1800.0, "secs": 1.0}),
             ("tick_ink", tick_ink, {})],
 }
+
+
+def houses() -> list[str]:
+    """The channels that have a house kit: their file names a recipe in KITS. Sorted, as --house always listed them."""
+    return sorted(s for s in channels.slugs() if channels.sound_kit(s) in KITS)
+
+
+def first_house() -> str:
+    """The house used when none is given: the first channel in the registry's order that has a kit."""
+    return next(s for s in channels.slugs() if channels.sound_kit(s) in KITS)
 
 
 def write_wav(path, chs):
@@ -123,10 +139,15 @@ def write_wav(path, chs):
         w.writeframes(bytes(frames))
 
 
-def make(out_dir: Path, house="owb", seed=11):
+def make(out_dir: Path, house=None, seed=11):
+    """`house` is a channel's slug. It stays in the file names, the seed and the manifest, so a kit made before the
+    recipes had their own names comes out byte for byte the same."""
+    house = house or first_house()
+    if house not in houses():
+        raise KeyError(f"no house sound kit for {house!r} (have {', '.join(houses())})")
     out_dir.mkdir(parents=True, exist_ok=True)
     rows = []
-    for name, fn, kw in KITS[house]:
+    for name, fn, kw in KITS[channels.sound_kit(house)]:
         rng = random.Random(f"{house}:{name}:{seed}")
         chs = fn(rng, **kw)
         path = out_dir / f"sfx_{house}_{name}_v01.wav"
@@ -211,7 +232,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     mk = sub.add_parser("make"); mk.add_argument("--out-dir", type=Path, required=True)
-    mk.add_argument("--house", choices=sorted(KITS), default="owb"); mk.add_argument("--seed", type=int, default=11)
+    mk.add_argument("--house", choices=houses(), default=first_house()); mk.add_argument("--seed", type=int, default=11)
     lv = sub.add_parser("level")
     lv.add_argument("--vo", type=Path, required=True); lv.add_argument("--sfx", type=Path, required=True)
     lv.add_argument("--bed", type=Path); lv.add_argument("--minutes", type=float); lv.add_argument("--out", type=Path)
