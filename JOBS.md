@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2468 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
 | J2469 | any | blocked | macbook | – | review · Verify condition for J2241 |  |
 | J2470 | mini | open | – | – | studio · Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov) |  |
+| J2471 | mini | open | – | – | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
 
 Recently finished:
 

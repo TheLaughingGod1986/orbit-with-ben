@@ -1,5 +1,5 @@
 {
-  "next_id": 2471,
+  "next_id": 2472,
   "jobs": [
     {
       "id": "J0001",
@@ -212820,6 +212820,36 @@
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved."
+    },
+    {
+      "id": "J2471",
+      "title": "Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the Orbit With Ben films that are still scheduled, in air-date order.\n\n1. c5AdqQsnnys (026, Sun 15 Nov): title becomes\n   How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\n2. 6bbbvfCx6zY (027, Sun 22 Nov): title becomes\n   What If Earth Stopped Spinning? (It's Already Slowing Down)\n   and line 1 of the description becomes the \"Proposed Line 1\" in section 3.\n3. F-jImX5h7ws (028, Sun 29 Nov): title stays. Line 1 of the description becomes the \"Proposed Line 1\" in section 4.\n4. G5uMANXHtNU (031, Wed 2 Dec): title becomes\n   What Happens When Earth's Magnetic Field Flips? (183 Times So Far)\n   and line 1 as proposed in section 5.\n5. vP1BbqZ_dnM (029, Sun 6 Dec): title becomes\n   Is Betelgeuse About to Explode? (We'd See It in the Daytime Sky)\n   and line 1 as proposed in section 6.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- The report says 026 and 027 had title arms set under J2430. If a Test and Compare is set on a video and YouTube will not take the new title without removing it: stop on that video, change nothing, and say exactly what Studio showed (which arms, running or waiting). Never press Continue on \"Run a new test?\". The Chief then decides.\n- Use the usual retitle tool, or Orbit Studio on CDP 9223 (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: each film's package manifest, description file and upload record carry the new title and line 1; add a row per film to 05_Analytics/tests/STUDIO_TESTS.md with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec). One PR.\n\nPark for Chief with the five read-backs and the PR link. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T00:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "studio",
+      "plain": "Change the titles of five Orbit films waiting to air to the search-led versions the Chief approved."
     }
   ],
   "focus": [
