@@ -1,6 +1,6 @@
 # J2460: what points at the six playlists (Orbit With Ben)
 
-Read on 10 Nov 2026, about 03:25 UTC, by Claude Code on the Mini. **Read-only so far: nothing has been changed, repointed or removed in Studio.**
+Read on 10 Nov 2026, about 03:25 UTC, by Claude Code on the Mini. Scheduled longs added about 05:25 UTC. **Read-only so far: nothing has been changed, repointed or removed in Studio.**
 
 ## How it was read
 
@@ -8,11 +8,23 @@ Read on 10 Nov 2026, about 03:25 UTC, by Claude Code on the Mini. **Read-only so
 - End screens and cards on public longs: the public watch page (`ytInitialPlayerResponse.endscreen` and `.cards`), the same method as `05_Analytics/live_fixes/2026-10-15.md`.
 - Channel comments: `commentThreads.list` on all 91 public videos (39 threads in total), keeping any comment written by the channel that names a playlist.
 
-## Still to read (step 1 is not finished)
+## Scheduled longs: read in Studio, 10 Nov 2026 about 05:25 UTC (read-only)
 
-- **End screens and cards on the five scheduled longs** (`c5AdqQsnnys` 15 Nov, `6bbbvfCx6zY` 22 Nov, `F-jImX5h7ws` 29 Nov, `G5uMANXHtNU` 2 Dec, `vP1BbqZ_dnM` 6 Dec). They are Private, so the public page cannot show them; they need the Studio editor (CDP 9223). Their descriptions were read and name no playlist.
-- The Home tab as Studio's Customisation page shows it, to confirm the API's section list below.
-- No playlist may be removed until both are read and the four references below are repointed and read back.
+Read in the Orbit Studio tab on CDP 9223 (channel checked on every page: `UC_esArsDKd3GJvOkeO0DUog`). Each video's End screen and Cards editors were opened and Studio's own answers (`get_creator_endscreens`, `list_creator_info_cards`) were read; the page was reloaded without saving. **None of the five uses a playlist anywhere, so none points at the six.**
+
+| Scheduled long | End screen | Cards |
+|---|---|---|
+| `c5AdqQsnnys` (15 Nov) | subscribe · video `rVqgtkBV3jc` | one video card: `rVqgtkBV3jc` |
+| `6bbbvfCx6zY` (22 Nov) | subscribe · video `VBaYRPp85Sw` | none |
+| `F-jImX5h7ws` (29 Nov) | subscribe · video "best for viewer" | one video card: `c5AdqQsnnys` |
+| `G5uMANXHtNU` (2 Dec) | subscribe · video "best for viewer" | none |
+| `vP1BbqZ_dnM` (6 Dec) | subscribe · video "best for viewer" | one video card: `F-jImX5h7ws` |
+
+## Still to do before any removal
+
+- Confirm the Home tab in Studio's Customisation page against the API's section list below (not yet opened in Studio).
+- Step 2: repoint the four references below and read each back. Then steps 3 to 5.
+- **Nothing has been changed, repointed or removed in Studio so far.**
 
 ## Playlist ids
 
