@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2491 | mini | open | – | – | Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722 |  |
-| J2492 | macbook | open | – | – | review · Browser smoke test of the board build with PR #715 before it merges (compare against main's build) |  |
+| J2492 | macbook | claimed | macbook | 2026-11-10T09:49Z | review · Browser smoke test of the board build with PR #715 before it merges (compare against main's build) |  |
 
 Recently finished:
 
