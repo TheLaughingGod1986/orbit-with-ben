@@ -218180,16 +218180,21 @@
           "at": "2026-11-10T19:33Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-10T19:43Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
         }
       ],
-      "remaining_action": "Create 004 .env.example, untrack .env on branch macbook/J2534, and verify .gitignore and check_all.sh",
+      "remaining_action": "Commit, push macbook/J2534, open PR on history-of-science, and return checkout to main",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Tidy one settings file that should not be in the History of Science repo (it holds no key)",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-10T19:33Z",
+        "at": "2026-11-10T19:43Z",
         "by": "macbook"
       }
     },
