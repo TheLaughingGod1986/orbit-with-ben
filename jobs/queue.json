@@ -212965,13 +212965,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T05:22Z",
-      "eta": "2026-11-10T06:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "",
+      "result": "parked for Chief: opened PR #715 (board rows F-02a, F-02b, F-02c; 411,875 B moved to _archive/, board build dist/ verified) and PR #717 (non-board rows F-03a, F-03b, F-03c, F-07, F-04c, F-06, F-04b; 192 files / 1,460,074 B moved to _archive/, CORE_FILES.json and doc-referenced files left with reasons documented). Ready for Chief merge and board redeploy.",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -213042,6 +213042,11 @@
           "at": "2026-11-10T06:04Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 done: both PR #715 (411,875 B) and PR #717 (1,460,074 B) verified and ready for Chief merge"
+        },
+        {
+          "at": "2026-11-10T06:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: opened PR #715 (board rows F-02a, F-02b, F-02c; 411,875 B moved to _archive/, board build dist/ verified) and PR #717 (non-board rows F-03a, F-03b, F-03c, F-07, F-04c, F-06, F-04b; 192 files / 1,460,074 B moved to _archive/, CORE_FILES.json and doc-referenced files left with reasons documented). Ready for Chief merge and board redeploy."
         }
       ],
       "remaining_action": "Parked for Chief review and merge of PR #715 (board rows) and PR #717 (non-board rows)",

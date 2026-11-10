@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2455 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2456 | cloud | open (after J2455) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2460 | mini | open | – | – | studio · Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels |  |
-| J2464 | mini | claimed | gemini | 2026-11-10T06:52Z | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
+| J2464 | mini | blocked | gemini | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
 | J2466 | mini | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
 | J2475 | mini | open | – | – | 011 shots · script · HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row |  |
 | J2476 | mini | open | – | – | 013 picture · assembly · HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest |  |
