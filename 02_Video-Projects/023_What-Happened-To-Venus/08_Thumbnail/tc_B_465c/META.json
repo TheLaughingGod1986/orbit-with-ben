@@ -1,5 +1,7 @@
 {
-  "job": "J2484",
+  "job": "J2487",
+  "built_originally_by": "J2484",
+  "fixed_per_review": "J2486",
   "depends_for_arming": "J1198",
   "film": "023_What-Happened-To-Venus",
   "video_id": "VBaYRPp85Sw",
@@ -10,12 +12,12 @@
     "key": "B",
     "slug": "465c",
     "file": "venus_tc_B_465c_VBaYRPp85Sw.jpg",
-    "sha256": "b580d47539dee75bcb19867377ddfd3384453bbf880ddf42c5675a8eabc31568",
-    "size_bytes": 291606,
+    "sha256": "c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b",
+    "size_bytes": 233366,
     "dimensions": [1280, 720],
-    "plate_file": "venus_surface_glowing_lander_plate.jpg",
-    "plate_sha256": "8f5f2b84fcbf27e7ec891343b64e23c1effc18542b5474d1be5ffb5e30de2aac",
-    "concept": "Venus's volcanic basalt surface with a Soviet Venera-style spacecraft lander in the foreground glowing incandescent red-orange from the 465°C surface heat, volcanic peak in background (clear scale/stakes element per LEARNINGS.md rule 12; no Orbit per §2.8; distinct from planet-globe A 'MELTS LEAD' and ended B 'EARTH'S TWIN').",
+    "plate_file": "venus_surface_465c_lander_plate.jpg",
+    "plate_sha256": "3374c505401ac19f3bbe902a2d5298fc0069ca911d46a4acdd90218c96892bbc",
+    "concept": "Venus's volcanic basalt surface with a Soviet Venera-style spacecraft lander in the foreground under dense warm amber-orange atmospheric sky cast from the 465°C surface oven (no incandescent glowing metal and no molten rock cracks, as 465°C is below the ~525°C Draper point), volcanic peak in background (clear scale/stakes element per LEARNINGS.md rule 12; no Orbit per §2.8; distinct from planet-globe A 'MELTS LEAD' and ended B 'EARTH'S TWIN').",
     "text": "465°C",
     "text_meta": {
       "font": "/System/Library/Fonts/Supplemental/Arial Black.ttf",
@@ -30,17 +32,52 @@
     "gate_score": {
       "tool": "00_Brand/Channel-Setup/tools/thumb_preview.py long --score",
       "status": "PASS",
-      "hsv_saturation_mean": 245.5,
-      "near_black_pct": 15.0,
+      "hsv_saturation_mean": 183.3,
+      "hsv_saturation_float_mean": 182.1,
+      "sat_pinned_250_pct": 1.97,
+      "near_black_pct": 24.0,
+      "lower_hull_r_ge_245_pct": 0.0,
       "preview_sheet": "venus_tc_B_465c_preview_sheet.jpg",
       "comparison_sheet": "venus_tc_A_vs_B_465c_sheet.jpg"
     },
     "rubric_2B": {
-      "HOOK": "PASS — '465°C' (1 token, <= 3 words), complements 'What Happened to Venus?' without repeating title words; states the physical furnace stakes that bake the lander.",
+      "HOOK": "PASS — '465°C' (1 token, <= 3 words), complements 'What Happened to Venus?' without repeating title words; states the physical furnace temperature baking the lander.",
       "BAND": "PASS — Top-left sky band [68, 34, 462, 138], 86 px cap height (11.94% of 720p), house Arial Black in yellow (255, 230, 0) with 9 px black stroke + drop shadow; completely off the lander hero and clear of the bottom-right duration corner.",
-      "GRADE": "PASS — Mean HSV saturation 245.5 (>= 120 target), near-black 15% (<= 30% ceiling); incandescent red-orange thermal glow on lander hull/base against deep volcanic amber sky.",
-      "PHONE": "PASS — Verified at 168x94 and 426x240 in venus_tc_A_vs_B_465c_sheet.jpg; '465°C' and the red-glowing surface lander read in under a second."
+      "GRADE": "PASS — Mean HSV saturation 183.3 (within 165-195 / 170-200 target, matching channel range 139-186.5 and Venus search neighbours Cool Worlds 119.2 / Astrum 208.0), only 1.97% pixels pinned at S>=250 (down from 59.4%), near-black 24% (<= 30% ceiling); warm amber-orange atmospheric sky cast lighting solid metallic lander with natural shadow beneath.",
+      "PHONE": "PASS — Verified at 168x94 and 360x202 in venus_tc_B_465c_preview_sheet.jpg and venus_tc_A_vs_B_465c_sheet.jpg; '465°C' and the metallic Venera-style surface lander read immediately with no red-orange fireball clipping."
     }
   },
-  "studio_status": "NOT_ARMED — parked for Chief / design review; J1198 arms in Studio after review sign-off."
+  "plate_provenance": {
+    "status": "ESTABLISHED",
+    "recorded_by": "J2487 fix (updating J2486 provenance record), 2026-11-10",
+    "tool": "Antigravity CLI built-in `image-generator` subagent (`generate_image` tool)",
+    "model_provider": "Google Generative AI (C2PA `trainedAlgorithmicMedia`, SynthID watermark, signed by Google C2PA Media Services)",
+    "parent_conversation_id": "614a7af3-731c-40ee-85aa-aa12b9810774",
+    "subagent_conversation_id": "3faf01da-546e-4c94-aead-5fe2afe05aba",
+    "generated_at_utc": "2026-11-10T06:22:16Z",
+    "source_path": "/Users/ben/.gemini/antigravity-cli/brain/614a7af3-731c-40ee-85aa-aa12b9810774/venus_surface_465c_lander_plate_1794291736206.jpg",
+    "native_dimensions": [1376, 768],
+    "size_bytes": 716477,
+    "sha256": "3374c505401ac19f3bbe902a2d5298fc0069ca911d46a4acdd90218c96892bbc",
+    "cost_gbp": 0,
+    "cost_basis": "£0 marginal spend — built-in Antigravity image-generator tool under Google AI Ultra subscription (no Vertex, OpenAI API, or paid overage billed).",
+    "prompt": "Edit the provided image to remove all incandescence and thermal glowing effects, maintaining exact physical accuracy for Venus at 465°C (which is below the 525°C Draper point where thermal incandescence begins).\n\nKeep the exact composition, camera angle, atmospheric lighting, background shield volcano, and the Soviet Venera-style planetary lander design:\n1. Underneath the scalloped circular aerobrake collar: remove ALL red, orange, and yellow glowing light and self-luminous incandescence. The lower hull, cylindrical base, internal machinery, landing struts, and landing pads beneath the collar must be non-glowing, solid, weathered dark matte metallic titanium/steel in deep natural cast shadow under the overhang of the aerobrake collar.\n2. Remove the red/orange reflection and glow under the spherical upper pressure hull.\n3. Ground beneath the lander: completely eliminate the red-orange spotlight and pool of light on the rocks beneath the lander. The ground directly underneath the lander must be in dark, natural ambient shadow cast by the aerobrake collar and lander body.\n4. Volcanic basalt rock field: remove ALL glowing red molten lava, glowing cracks, and hot embers between the foreground basalt rocks. All rocks must be cold, solid, dry, non-glowing, fractured dark brownish-grey basalt slabs and plates.\n5. Lighting: Keep only the natural diffuse warm golden-amber and orange overhead lighting filtering down from the dense Venusian sulfuric acid cloud ceiling, illuminating the upper surfaces of the lander and landscape.\nNo text, no numbers, no logos, no robots.",
+    "superseded_j2484_plate": {
+      "file": "venus_surface_glowing_lander_plate.jpg",
+      "sha256": "8f5f2b84fcbf27e7ec891343b64e23c1effc18542b5474d1be5ffb5e30de2aac",
+      "parent_conversation_id": "a6954191-23b5-4450-888f-0153442d6226",
+      "subagent_conversation_id": "be87b190-eca3-4a5f-8f61-640c279f65d9",
+      "generated_at_utc": "2026-11-10T04:43:59Z",
+      "cost_gbp": 0
+    }
+  },
+  "design_review_history": [
+    {
+      "job": "J2486",
+      "verdict": "FIX",
+      "fix_job": "J2487",
+      "review": "jobs/reviews/J2486/REVIEW.md"
+    }
+  ],
+  "studio_status": "NOT_ARMED — fixed in J2487 per J2486; queued for fresh independent design review before J1198 is reopened."
 }
