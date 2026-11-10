@@ -212185,10 +212185,10 @@
       "stage": "",
       "after": "J2451",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-10T10:04Z",
-      "eta": "2026-11-10T14:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -212212,6 +212212,11 @@
           "at": "2026-11-10T10:08Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Inputs checked: 11 of 15 source masters found and readable (027 025 031 020 028 029 024 026 019 005 006). Not found at the plan's or UPLOADS.json paths: 013 Moon, 021 Saturn v03f (archive has v03c/d/e only), 022 Sun v05 (archive has v01-v04 only). 023 Venus v05e is in iCloud OWB UAT but ffprobe gets 'Resource deadlock avoided' (file not downloaded locally). Most of the plan's clean voice-stem file names do not exist either, so its cut times are unverified. Detached: tmux j2452-asr writes word timings for the 11 masters to /Volumes/MiniWork/scratch/j2452/asr/<film>_words.json; log ~/_desk/logs/j2452-asr.log; done file ~/_desk/logs/j2452-asr.done. Input list: /Volumes/MiniWork/scratch/j2452/inputs.json. No film folder or video id exists for the sleep video yet, so no --films link."
+        },
+        {
+          "at": "2026-11-10T10:08Z",
+          "by": "claudecode",
+          "what": "released: Inputs checked: 11 of 15 source masters found and readable (027 025 031 020 028 029 024 026 019 005 006). Not found at the plan's or UPLOADS.json paths: 013 Moon, 021 Saturn v03f (archive has v03c/d/e only), 022 Sun v05 (archive has v01-v04 only). 023 Venus v05e is in iCloud OWB UAT but ffprobe gets 'Resource deadlock avoided' (file not downloaded locally). Most of the plan's clean voice-stem file names do not exist either, so its cut times are unverified. Detached: tmux j2452-asr writes word timings for the 11 masters to /Volumes/MiniWork/scratch/j2452/asr/<film>_words.json; log ~/_desk/logs/j2452-asr.log; done file ~/_desk/logs/j2452-asr.done. Input list: /Volumes/MiniWork/scratch/j2452/inputs.json. No film folder or video id exists for the sleep video yet, so no --films link. Next run: read the .done file (missing = still running, do not start a second copy); then locate the 4 missing masters, verify each plan cut against the words, build audio then picture detached."
         }
       ],
       "remaining_action": "Find the 013, 021, 022 and 023 masters, check every cut time in the plan against the word timings, then write the build script",
