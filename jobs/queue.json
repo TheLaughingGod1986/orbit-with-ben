@@ -217345,10 +217345,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T18:24Z",
+      "eta": "2026-11-10T20:24Z",
       "created_by": "claude",
       "created_at": "2026-11-10T16:57Z",
       "result": "",
@@ -217362,6 +217362,11 @@
           "at": "2026-11-10T16:57Z",
           "by": "claude",
           "what": "approved by Ben: Watch the re-cut Thu 12 Mars Wind Short. OK to swap it in? v05 (asked in J2510)"
+        },
+        {
+          "at": "2026-11-10T18:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept",
@@ -217383,7 +217388,15 @@
         "okAt": "2026-11-10T16:57Z",
         "okRef": "board tick OWB-J2510.1, 10 Nov 16:21Z"
       },
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T18:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2520",
