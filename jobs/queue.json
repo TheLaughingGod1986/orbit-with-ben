@@ -177238,9 +177238,14 @@
           "at": "2026-11-10T01:57Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2033 after J2200 runner PASS (02b57a1b on HOS origin/main); creating clean HOS worktree and inspecting runner + scope"
+        },
+        {
+          "at": "2026-11-10T03:07Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Created clean HOS worktree on 97e44918, verified 94 runner tests + 20-row plan, running live Flow DOM + archive preflight"
         }
       ],
-      "remaining_action": "Mint 2 zero-credit parent stills (P02:10_how_high, P03:07_ball_to_moon), then run tranche-2 batches of <=5 rows with merged runner on HOS main",
+      "remaining_action": "Verify live Flow DOM evidence reader and NAS archive readiness, then mint 2 parent stills + tranche-2 batches or block with captured DOM if reader fails closed",
       "due": "2026-11-15T18:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177255,11 +177260,11 @@
       },
       "escalated_at": "2026-11-04T19:27Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-10T01:57Z",
+        "at": "2026-11-10T03:07Z",
         "by": "gemini",
-        "note": "Claimed J2033 after J2200 runner PASS (02b57a1b on HOS origin/main); creating clean HOS worktree and inspecting runner +"
+        "note": "Created clean HOS worktree on 97e44918, verified 94 runner tests + 20-row plan, running live Flow DOM + archive prefligh"
       }
     },
     {
