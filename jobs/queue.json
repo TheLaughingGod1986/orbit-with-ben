@@ -187599,6 +187599,16 @@
           "at": "2026-11-10T20:35Z",
           "by": "relay",
           "what": "condition verification queued: J2542"
+        },
+        {
+          "at": "2026-11-10T21:03Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-11T02:45:00Z"
+        },
+        {
+          "at": "2026-11-10T21:03Z",
+          "by": "claude",
+          "what": "acting Chief: condition checked by J2542 (#770): not met, 7 of 20 pictures made, J2034 and J2035 not started. Next look 11 Nov 02:45Z."
         }
       ],
       "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -187617,11 +187627,10 @@
       "hold": {
         "type": "dependency",
         "condition": "J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed",
-        "check_at": "2026-11-10T21:35:03+00:00",
-        "last_recheck": "J2507",
-        "checked_at": "2026-11-10T15:03:23+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2542"
+        "check_at": "2026-11-11T02:45:00Z",
+        "last_recheck": "J2542",
+        "checked_at": "2026-11-10T21:03:50+00:00",
+        "checked_by": "claude"
       }
     },
     {
