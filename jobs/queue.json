@@ -217463,13 +217463,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T17:49Z",
-      "eta": "2026-11-10T19:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "parked for Chief: PR #754 is part of the job. These nine scripts 35 -> 19 lines (ratchet total 327 -> 311): board_check 11 -> 0, capability_probe 1 -> 0, sync_rules 1 -> 0, routing 4 -> 1. Not started: studio_reach 6 and sfx_kit 4 (need new fields in both channel files: youtube.id + a reach port, and a kit name), core_sync 2 (needs lock + push to the other repo), routing 1 (Studio port note), missed_runs 5 and cdp_tabs 1 (all the studio's own name, left per the brief). Channel tests 67 OK, board 84 OK, sync_rules and studio status checks OK. Needs a follow-up job for the remaining 19.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217480,6 +217480,11 @@
           "at": "2026-11-10T17:49Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T17:53Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: PR #754 is part of the job. These nine scripts 35 -> 19 lines (ratchet total 327 -> 311): board_check 11 -> 0, capability_probe 1 -> 0, sync_rules 1 -> 0, routing 4 -> 1. Not started: studio_reach 6 and sfx_kit 4 (need new fields in both channel files: youtube.id + a reach port, and a kit name), core_sync 2 (needs lock + push to the other repo), routing 1 (Studio port note), missed_runs 5 and cdp_tabs 1 (all the studio's own name, left per the brief). Channel tests 67 OK, board 84 OK, sync_rules and studio status checks OK. Needs a follow-up job for the remaining 19."
         }
       ],
       "remaining_action": "Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0)",
