@@ -11,7 +11,6 @@ from pathlib import Path
 
 import channels
 
-OWB_STAGES = ["topic", "script", "sources", "vo", "shots", "picture", "edit", "thumbs", "upload"]
 
 
 def stage_record(stages):
@@ -60,18 +59,23 @@ def historical_stages(repo, channel, since, cache):
         key = channel + ":" + revision
         if key in cache:
             return cache[key]
-        if channel == "HOS":
-            pipeline = documents_at(repo, revision, ["00_Brand/Channel-Setup/PIPELINE.json"])["00_Brand/Channel-Setup/PIPELINE.json"]
-            films = {"HOS:" + f["id"]: {"stages": stage_record(f["stages"])} for f in pipeline["films"]}
+        # How the channel keeps its film state decides how its past is read (channel.json: pipeline.kind).
+        prefix = channels.label(channel) + ":"
+        kept = channels.pipeline(channel)
+        if kept["kind"] == "pipeline_json":
+            pipeline = documents_at(repo, revision, [kept["path"]])[kept["path"]]
+            films = {prefix + f["id"]: {"stages": stage_record(f["stages"])} for f in pipeline["films"]}
             definitions = [{"key": s["key"], "weight": s["weight"]} for s in pipeline["stages"]]
         else:
-            paths = git(repo, "ls-tree", "-r", "--name-only", "-z", revision, "--", "02_Video-Projects").decode().split("\0")
-            paths = [p for p in paths if re.fullmatch(r"02_Video-Projects/\d{3}_[^/]+/status.json", p)]
+            folder, _, leaf = kept["path"].partition("/*/")
+            paths = git(repo, "ls-tree", "-r", "--name-only", "-z", revision, "--", folder).decode().split("\0")
+            paths = [p for p in paths if re.fullmatch(re.escape(folder) + r"/\d{3}_[^/]+/" + re.escape(leaf), p)]
             docs = documents_at(repo, revision, paths)
-            films = {"OWB:" + d["film"]: {"film": d["film"], "stages": stage_record(d.get("stages", {})),
+            films = {prefix + d["film"]: {"film": d["film"], "stages": stage_record(d.get("stages", {})),
                      "claims": [{k: v for k, v in c.items() if k in ("stage", "by", "at", "eta")} for c in d.get("claims", [])]}
                      for d in docs.values()}
-            definitions = [{"key": s, "weight": 100 / 9} for s in OWB_STAGES]
+            stages = channels.get(channel)["stages"]
+            definitions = [{"key": s, "weight": 100 / len(stages)} for s in stages]
         out = {"available": True, "commit": revision, "sourceAt": source_at, "films": films, "definitions": definitions}
         cache[key] = out
         return out
@@ -128,7 +132,13 @@ def work_since(jobs, since, until):
     return items
 
 
-def progress_document(owb, hos, jobs, out_dir, at=None):
+def progress_document(first, second, jobs, out_dir, at=None):
+    """The two-checkout form kanban_snapshot.py calls: the checkouts of the first two channels, in registry order."""
+    return progress_document_all(dict(zip(channels.slugs(), (first, second))), jobs, out_dir, at)
+
+
+def progress_document_all(checkouts, jobs, out_dir, at=None):
+    """checkouts: {slug: that channel's checkout}. One history per channel, keyed by its label."""
     at = at or dt.datetime.now(dt.timezone.utc)
     # Hourly comparison anchors keep the publishing clock from masquerading as work on every minute check.
     anchor = at.replace(minute=0, second=0, microsecond=0)
@@ -141,8 +151,8 @@ def progress_document(owb, hos, jobs, out_dir, at=None):
     for name, days in (("day", 1), ("week", 7)):
         since = anchor - dt.timedelta(days=days)
         periods[name] = {"since": stamp(since), "channels": {
-            "OWB": historical_stages(owb, "OWB", since, cache),
-            "HOS": historical_stages(hos, "HOS", since, cache)}, "work": work_since(jobs, since, at)}
+            channels.label(slug): historical_stages(repo, channels.label(slug), since, cache)
+            for slug, repo in checkouts.items()}, "work": work_since(jobs, since, at)}
     used = {ch + ":" + h["commit"] for period in periods.values() for ch, h in period["channels"].items() if h.get("commit")}
     try:
         cache_path.write_text(json.dumps({k: v for k, v in cache.items() if k in used}))

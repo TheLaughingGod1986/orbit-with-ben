@@ -188,6 +188,12 @@ def nas_folder(slug: str) -> str:
     return get(slug).get("nas_folder") or get(slug)["slug"]
 
 
+def pipeline(slug: str) -> dict:
+    """How the channel keeps its film state: {'kind': 'film_status' | 'pipeline_json', 'path': ...} ({} if unset).
+    Code that reads a channel's films or their history branches on the kind, never on which channel it is."""
+    return dict(get(slug).get("pipeline") or {})
+
+
 def checkout(slug: str) -> pathlib.Path | None:
     """Where the channel is checked out on this machine, or None. The home channel's checkout is this repo."""
     if get(slug).get("home"):
