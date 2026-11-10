@@ -216165,18 +216165,23 @@
           "at": "2026-11-10T16:46Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected PICTURE_PLAN_v01 (94 rows: 71 flow-first mint = 48 Quality + 23 Fast = 5,030 credits), J2200 shared accounting, and HOS #468/#470/#477 Flow page/trusted-click guards"
+        },
+        {
+          "at": "2026-11-10T17:01Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built _mint_flow_v01_pass1.py, PASS1_SCOPE_J2499.json, PASS1_MINT_PLAN_J2499.json, and DRY_RUN_2026-11-10.json (71 rows: 48Q/23F = 5,030 credits, 15 batches, Part 01 -> Part 06, 0 submissions)"
         }
       ],
-      "remaining_action": "Building HOS 013 Flow mint runner and locked 71-row scope manifest on J2200/#468/#470/#477 guards",
+      "remaining_action": "Writing and running unit tests for all HOS 013 Flow mint runner guards",
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Build and test the tool that will make the Darwin film's pictures, without making any yet",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T16:46Z",
+        "at": "2026-11-10T17:01Z",
         "by": "gemini",
-        "note": "Inspected PICTURE_PLAN_v01 (94 rows: 71 flow-first mint = 48 Quality + 23 Fast = 5,030 credits), J2200 shared accounting"
+        "note": "Built _mint_flow_v01_pass1.py, PASS1_SCOPE_J2499.json, PASS1_MINT_PLAN_J2499.json, and DRY_RUN_2026-11-10.json (71 rows:"
       },
       "taskKeys": [
         "HOS:013"
