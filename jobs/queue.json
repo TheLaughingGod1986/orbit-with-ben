@@ -216673,6 +216673,11 @@
           "at": "2026-11-10T16:05Z",
           "by": "gemini",
           "what": "waits on Ben: Watch the re-cut Thu 12 Mars Wind Short. OK to swap it in? (by 2026-11-11 18:00 London)"
+        },
+        {
+          "at": "2026-11-10T16:05Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the re-cut Fri 13 Mars Helicopter Short. OK to swap it in? (by 2026-11-12 18:00 London)"
         }
       ],
       "remaining_action": "Watch and listen to both final rebuilt cuts from start to end, read all on-screen text, copy to OWB UAT and NAS, and send Ben's watch cards",
@@ -216691,20 +216696,36 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "awaits_ben": {
-        "what": "Watch the re-cut Thu 12 Mars Wind Short. OK to swap it in?",
-        "file": "OWB UAT/025_mars_shorts_recut_J2510/thu12_length_test_dust_v05.mp4",
-        "version": "v05",
-        "due": "2026-11-11T18:00Z",
-        "airs": "2026-11-12T11:30Z",
-        "ifNot": "the original airs as scheduled",
-        "title": "Mars wind Short for Thu 12 Nov (re-cut v05)",
-        "number": "025",
-        "type": "short",
-        "fixed": [
-          "Removed the jumble of letters (the YouTube video ID Js6EQJ8qDi8) under the title on the end card; first cut brought forward to 2.4 s; audio levelled to -14.3 LUFS / -2.2 dBTP"
-        ]
-      }
+      "awaits_ben": [
+        {
+          "what": "Watch the re-cut Thu 12 Mars Wind Short. OK to swap it in?",
+          "file": "OWB UAT/025_mars_shorts_recut_J2510/thu12_length_test_dust_v05.mp4",
+          "version": "v05",
+          "due": "2026-11-11T18:00Z",
+          "airs": "2026-11-12T11:30Z",
+          "ifNot": "the original airs as scheduled",
+          "title": "Mars wind Short for Thu 12 Nov (re-cut v05)",
+          "number": "025",
+          "type": "short",
+          "fixed": [
+            "Removed the jumble of letters (the YouTube video ID Js6EQJ8qDi8) under the title on the end card; first cut brought forward to 2.4 s; audio levelled to -14.3 LUFS / -2.2 dBTP"
+          ]
+        },
+        {
+          "what": "Watch the re-cut Fri 13 Mars Helicopter Short. OK to swap it in?",
+          "file": "OWB UAT/025_mars_shorts_recut_J2510/fri13_ingenuity_72_v06.mp4",
+          "version": "v06",
+          "due": "2026-11-12T18:00Z",
+          "airs": "2026-11-13T11:30Z",
+          "ifNot": "the original airs as scheduled",
+          "title": "Mars helicopter Short for Fri 13 Nov (re-cut v06)",
+          "number": "025",
+          "type": "short",
+          "fixed": [
+            "Removed the jumble of letters (the YouTube video ID Js6EQJ8qDi8) under the title on the end card; opens full-bleed 9:16 on moving aerial Mars picture with first cut at 2.8 s; audio levelled to -14.3 LUFS / -2.1 dBTP"
+          ]
+        }
+      ]
     },
     {
       "id": "J2511",
