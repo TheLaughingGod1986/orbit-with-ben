@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 | J2512 | mini | open | – | – | 026 edit · assembly · 026 Mon 16 and Wed 18 Shorts: fix the two faults the agent viewing found (a repeated shot, a 3 s frozen still), gate, watch, and offer Ben the fixed cuts |  |
 | J2513 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Mon 16 and Wed 18 Shorts to the newest cut Ben has OK'd (on Sat 14 and Mon 16 Nov after 18:00 London) |  |
+| J2514 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London) |  |
 
 Recently finished:
 
