@@ -216386,24 +216386,30 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:02Z",
-      "result": "",
+      "result": "First day panel is live on the board (#744 merged as de1bd1b87; board version 72e8f2a38d7e72bb; /, /board, /tracker, /api/checks, /version.json all 200; board.json already carries tracker.firstDay). It is in the Studio app, where Ben looks, not on the old /board page: the Overview has a First day section under Needs attention (videos of the last three days, closed cards: verdict, one line of numbers, next check), the video's own page shows the same card open, and /#firstday lists two weeks. Data: launch_check.panel(), same verdict() as judge; a failure gives an empty panel, never a board without videos. Tests: 12 new in test_launch_check, 3 in test_video_tracker, a First day block in test_studio_app.cjs. Known gap, not fixed here: a standalone Short (the Titan one) has no card on the Videos tab, so its First day card links only to YouTube.",
       "history": [
         {
           "at": "2026-11-10T14:02Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T15:56Z",
+          "by": "claude",
+          "what": "done: First day panel is live on the board (#744 merged as de1bd1b87; board version 72e8f2a38d7e72bb; /, /board, /tracker, /api/checks, /version.json all 200; board.json already carries tracker.firstDay). It is in the Studio app, where Ben looks, not on the old /board page: the Overview has a First day section under Needs attention (videos of the last three days, closed cards: verdict, one line of numbers, next check), the video's own page shows the same card open, and /#firstday lists two weeks. Data: launch_check.panel(), same verdict() as judge; a failure gives an empty panel, never a board without videos. Tests: 12 new in test_launch_check, 3 in test_video_tracker, a First day block in test_studio_app.cjs. Known gap, not fixed here: a standalone Short (the Titan one) has no card on the Videos tab, so its First day card links only to YouTube."
         }
       ],
       "remaining_action": "Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done)",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
-      "plain": "Show each new video's first-day result on the tracker page"
+      "plain": "Show each new video's first-day result on the tracker page",
+      "done_ref": "PR #744"
     },
     {
       "id": "J2507",
