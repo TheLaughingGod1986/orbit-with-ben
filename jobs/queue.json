@@ -21800,7 +21800,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
-      "result": "Waiting for: J0189 (Saturn 55AEQwvs36g thumbnail-only Test & Compare A live vs B RINGS ARE FALLING) has been armed and completed its 14-day test in Studio; Jupiter -jmMROGoZCM T003 NO SOLID GROUND? is already armed and running (52e6ed35b)",
+      "result": "Waiting for: Saturn 55AEQwvs36g thumbnail test T013 (J0189) has ended in Studio. On 10 Nov 02:46Z it was still running, estimated end about 10 Nov 22:02Z; Jupiter -jmMROGoZCM T003 was also running, estimated end about 10 Nov 19:03Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
       "history": [
         {
           "at": "2026-10-15T07:51Z",
@@ -22056,6 +22056,11 @@
           "at": "2026-10-27T19:06Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-10T19:05:00Z"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "acting Chief: condition checked, still waiting. Saturn 55AEQwvs36g thumbnail test T013 (J0189) has ended in Studio. On 10 Nov 02:46Z it was still running, estimated end about 10 Nov 22:02Z; Jupiter -jmMROGoZCM T003 was also running, estimated end about 10 Nov 19:03Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))"
         }
       ],
       "kind": "studio",
@@ -22073,8 +22078,11 @@
       },
       "hold": {
         "type": "test",
-        "condition": "J0189 (Saturn 55AEQwvs36g thumbnail-only Test & Compare A live vs B RINGS ARE FALLING) has been armed and completed its 14-day test in Studio; Jupiter -jmMROGoZCM T003 NO SOLID GROUND? is already armed and running (52e6ed35b)",
-        "check_at": "2026-11-10T19:05:00Z"
+        "condition": "Saturn 55AEQwvs36g thumbnail test T013 (J0189) has ended in Studio. On 10 Nov 02:46Z it was still running, estimated end about 10 Nov 22:02Z; Jupiter -jmMROGoZCM T003 was also running, estimated end about 10 Nov 19:03Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
+        "check_at": "2026-11-11T08:00:00+00:00",
+        "last_recheck": "J2457",
+        "checked_at": "2026-11-10T02:57:09+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -87611,19 +87619,19 @@
       "title": "Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends)",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Studio Test B start: HOS Atom `GHZDsiH7L7A` (Monday test loop, Ben pt4241u, 26 Oct). Not before Fri 30 Oct, the day after J0280's Title Test & Compare ends.**\n\nPlan, originals, baselines and pass rule: OWB `05_Analytics/tests/STUDIO_TESTS.md` > *Test B* (PR #289). Originals also in `05_Analytics/tests/studio_tests_2026-10-26/originals.json`.\n\n1. **HOS channel in Studio (check the channel name first):** open `GHZDsiH7L7A` > Test & Compare. If the title test still reads *Running*, change nothing: `jobs.py block <this id> --reason \"waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running\"` and stop. Never press anything that ends or deletes a running test.\n2. When it has ended, record the result (winning title, watch-time share per title) in Test B's section. If the live title is no longer *What's Really Inside an Atom?*, log the new live title as the original and check the planned title still makes sense before going on; if unsure, block \"parked for Chief: Test B title vs J0280 winner\".\n3. Apply only the planned change from STUDIO_TESTS.md: title `What's Inside an Atom? Mostly Empty Space`, description **line 1 only**, and the planned tags. Data API, dry run first (`07_Content-Ops/scripts/retitle-videos.ts` / `redescribe-videos.ts`), send the snippet without `status`. No privacy, schedule, thumbnail, Related or end-screen change. Nothing deleted, £0.\n4. Read back title, line 1, tags, privacy; save `05_Analytics/tests/studio_tests_<date>/test_b_apply_readback.json`.\n5. Update Test B in STUDIO_TESTS.md to **Running** with the real start date (end stays 9 Nov; the readout also checks 14 days from start), by PR to OWB `main`. Post the one-line AGENTS note on #99.\n\nIf the Data API refuses again (`Precondition check failed`), revert any field that did change from the originals, read back, and block with the error.\n",
+      "body": "**Studio Test B start: HOS Atom `GHZDsiH7L7A` (Monday test loop, Ben pt4241u, 26 Oct). Not before Fri 30 Oct, the day after J0280's Title Test & Compare ends.**\n\nPlan, originals, baselines and pass rule: OWB `05_Analytics/tests/STUDIO_TESTS.md` > *Test B* (PR #289). Originals also in `05_Analytics/tests/studio_tests_2026-10-26/originals.json`.\n\n1. **HOS channel in Studio (check the channel name first):** open `GHZDsiH7L7A` > Test & Compare. If the title test still reads *Running*, change nothing: `jobs.py block <this id> --reason \"waits for: J0280 Title Test & Compare on GHZDsiH7L7A still running\"` and stop. Never press anything that ends or deletes a running test.\n2. When it has ended, record the result (winning title, watch-time share per title) in Test B's section. If the live title is no longer *What's Really Inside an Atom?*, log the new live title as the original and check the planned title still makes sense before going on; if unsure, block \"parked for Chief: Test B title vs J0280 winner\".\n3. Apply only the planned change from STUDIO_TESTS.md: title `What's Inside an Atom? Mostly Empty Space`, description **line 1 only**, and the planned tags. Data API, dry run first (`07_Content-Ops/scripts/retitle-videos.ts` / `redescribe-videos.ts`), send the snippet without `status`. No privacy, schedule, thumbnail, Related or end-screen change. Nothing deleted, £0.\n4. Read back title, line 1, tags, privacy; save `05_Analytics/tests/studio_tests_<date>/test_b_apply_readback.json`.\n5. Update Test B in STUDIO_TESTS.md to **Running** with the real start date (end stays 9 Nov; the readout also checks 14 days from start), by PR to OWB `main`. Post the one-line AGENTS note on #99.\n\nIf the Data API refuses again (`Precondition check failed`), revert any field that did change from the originals, read back, and block with the error.\n\n\n10 Nov 03:10Z, acting Chief (Claude). The J0280 test is finished: ran 15 Oct 18:00 to 29 Oct 17:54, no winner, variant A \"What's Really Inside an Atom?\" visible to all (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701)). The Data API has refused the title three times while Studio still shows \"A/B testing titles · Results ready\", so do not try the API for the title again. Instead:\n1. HOS channel in Studio (check the channel name first). Open GHZDsiH7L7A > Details and change the title in the title field itself to: What's Inside an Atom? Mostly Empty Space. Save. One try.\n2. If the title field is locked, or saving needs the finished test or its report removed, replaced or a new test started, change nothing, stop, and say exactly what Studio showed. Removing a test report is never ours.\n3. If the title saved: set description line 1 and the tags from Test B in STUDIO_TESTS.md (the API is fine for those; send the snippet without status). Read back title, line 1, tags, privacy.\n4. Dates changed because the start slipped: take a fresh 14-day baseline ending the day before the change, and read out 14 days after it. Update Test B in STUDIO_TESTS.md to Running with the real start date and the new readout date, by PR.\nNo privacy, schedule, thumbnail, Related or end-screen change. £0.",
       "ref": "PR #289",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-30T07:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T09:43Z",
-      "result": "Data API 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE on GHZDsiH7L7A; J0280 Title Test & Compare finished 29 Oct 17:54 inconclusive with Variant A 'What's Really Inside an Atom?' visible to all and watch-time share '—' on A/B/C, but Studio edit page still holds 'A/B testing titles · Results ready'; readback verified all fields original in PR #354)",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T09:43Z",
@@ -87859,6 +87867,11 @@
           "at": "2026-11-03T20:27Z",
           "by": "relay",
           "what": "condition verification queued: J1888"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: J0280 ended 29 Oct 17:54, no winner (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))"
         }
       ],
       "kind": "listing",
@@ -87874,23 +87887,7 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Wait for verified Atom title-test clearance before approved Test B listing update",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-10-30T07:26Z",
-        "by": "gemini",
-        "note": "Data API retitle refused with 400 Precondition check failed (UPDATE_TITLE_NOT_ALLOWED_DURING_TEST_AND_COMPARE) while 'A/"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Fresh Studio reload 3 Nov 14:21 UTC still shows A/B testing titles / Results ready on Atom GHZDsiH7L7A, original title and Public. Read-only widget clearance and API restriction removal remain unproven; no write probe. Evidence f4870c57a jobs/readbacks/J1836.json and _desk/handoff/J1836/readback.json.",
-        "check_at": "2026-11-03T21:27:22+00:00",
-        "last_recheck": "J1836",
-        "checked_at": "2026-11-03T14:22:18+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1888"
-      }
+      "remaining_action": "Wait for verified Atom title-test clearance before approved Test B listing update"
     },
     {
       "id": "J0979",
@@ -104446,7 +104443,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "Waiting for: Studio report for AL_-qlWko_g confirms the J1129 MISSING ELEMENT v02 thumbnail-only test ended, supplies actual completion time, and London calendar date is at least the day after that completion",
+      "result": "Waiting for: HOS AL_-qlWko_g MISSING ELEMENT v02 thumbnail test has ended in Studio and the London date is at least the day after. On 10 Nov 02:46Z it was still running, 1 day 21 hours left, so about 12 Nov 00:00Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -104877,6 +104874,11 @@
           "at": "2026-11-03T21:24Z",
           "by": "relay",
           "what": "condition verification queued: J1895"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "acting Chief: condition checked, still waiting. HOS AL_-qlWko_g MISSING ELEMENT v02 thumbnail test has ended in Studio and the London date is at least the day after. On 10 Nov 02:46Z it was still running, 1 day 21 hours left, so about 12 Nov 00:00Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))"
         }
       ],
       "remaining_action": "Verify T020 completion and next London calendar day before arming approved title-only test",
@@ -104893,12 +104895,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "3 Nov 15:20:49 UTC: refreshed HOS Studio AL_-qlWko_g thumbnail still Running; no completion timestamp. Evidence /Users/benjaminoats/_desk/handoff/J1850/studio_details.txt and PNG. Require actual T020 completion timestamp and at least the following London calendar day.",
-        "check_at": "2026-11-03T22:24:26+00:00",
-        "last_recheck": "J1850",
-        "checked_at": "2026-11-03T15:21:13+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J1895"
+        "condition": "HOS AL_-qlWko_g MISSING ELEMENT v02 thumbnail test has ended in Studio and the London date is at least the day after. On 10 Nov 02:46Z it was still running, 1 day 21 hours left, so about 12 Nov 00:00Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
+        "check_at": "2026-11-13T08:00:00+00:00",
+        "last_recheck": "J2457",
+        "checked_at": "2026-11-10T02:57:09+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -111026,19 +111027,19 @@
       "title": "023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief (Claude), 29 Oct audit (LEARNINGS rule 11): Venus has the best long watch time (30.6% average viewed) but 1.6% CTR on 705 impressions. Packaging is the gap.\nWait: thumbnail-only test T011 (A MELTS LEAD vs B EARTH'S TWIN, armed 25 Oct by J0962) must have ended in Studio. Verify the end time in Studio; do not infer it from elapsed days. If it is still running, record a structured wait (condition + next check) and stop.\nThen: keep the thumbnail Studio applied as the winner fixed, record T011's result (every variant's watch-time share, winner, dates) in 05_Analytics/tests/THUMB_LEDGER.json first, and arm a title-only Test & Compare: A 'What Happened to Venus?' (live) vs B 'Venus Was Earth's Twin. Why Is It Hot Enough to Melt Lead?' (58 characters). If Studio warns that starting deletes the ended test's report, stop and park: that click waits on Ben (same as J1132). Read back that the test is running; add the ledger row. Never change privacy or schedule. GBP0.\n\n29 Oct (acting Chief Claude, rules 12-13): decide by T011's result. If B EARTH'S TWIN (a concept change) wins or clearly leads, keep it and arm the title-only test above. If A MELTS LEAD wins or it is a draw, instead arm a thumbnail-only test of a new concept: Venus's surface with a lander glowing red, text '465°C' (title unchanged), and park the title test for after it. Either way, record T011 first.",
+      "body": "Acting Chief (Claude), 29 Oct audit (LEARNINGS rule 11): Venus has the best long watch time (30.6% average viewed) but 1.6% CTR on 705 impressions. Packaging is the gap.\nWait: thumbnail-only test T011 (A MELTS LEAD vs B EARTH'S TWIN, armed 25 Oct by J0962) must have ended in Studio. Verify the end time in Studio; do not infer it from elapsed days. If it is still running, record a structured wait (condition + next check) and stop.\nThen: keep the thumbnail Studio applied as the winner fixed, record T011's result (every variant's watch-time share, winner, dates) in 05_Analytics/tests/THUMB_LEDGER.json first, and arm a title-only Test & Compare: A 'What Happened to Venus?' (live) vs B 'Venus Was Earth's Twin. Why Is It Hot Enough to Melt Lead?' (58 characters). If Studio warns that starting deletes the ended test's report, stop and park: that click waits on Ben (same as J1132). Read back that the test is running; add the ledger row. Never change privacy or schedule. GBP0.\n\n29 Oct (acting Chief Claude, rules 12-13): decide by T011's result. If B EARTH'S TWIN (a concept change) wins or clearly leads, keep it and arm the title-only test above. If A MELTS LEAD wins or it is a draw, instead arm a thumbnail-only test of a new concept: Venus's surface with a lander glowing red, text '465°C' (title unchanged), and park the title test for after it. Either way, record T011 first.\n\n10 Nov 03:10Z, acting Chief (Claude). T011 has ended: it ran 26 Oct 00:12 to 9 Nov 01:10, \"Not enough impressions to declare a winner\", A MELTS LEAD visible to all (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701)). That is a draw, so the 29 Oct draw branch above applies, in this order:\n1. Record T011's result in THUMB_LEDGER.json with the repo's tool (dates, no winner, watch-time share not shown on either arm).\n2. Do not arm the title-only test. The draw branch is a thumbnail-only test of a new concept (Venus's surface, a lander glowing red, text 465°C; title unchanged).\n3. If that thumbnail file does not exist yet with a passed design review, queue its design job under the thumbnail rules and put this job on a wait for it. Arm nothing without a reviewed file.\n4. If Studio says that starting a new test deletes the ended test's report, stop and park: that click is Ben's (as J1132).\nNever change privacy or the schedule. £0.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T07:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "Waiting for: Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -111079,26 +111080,18 @@
           "at": "2026-11-10T00:13Z",
           "by": "relay",
           "what": "condition verification queued: J2467"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: T011 ended 9 Nov 01:10, no winner (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))"
         }
       ],
       "remaining_action": "After T011 ends: record T011 result in THUMB_LEDGER.json; keep winner thumb; arm title-only or new 465C thumb test per rules 12-13 (park for Ben if Studio warns deleting ended report)",
       "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-10-30T07:31Z",
-        "by": "cursor",
-        "note": "Studio CDP 9223: T011 still Test running, estimated 9d 16h left (~2026-11-08 23:30Z). Evidence ~/_desk/handoff/J1198/. N"
-      },
       "taskKeys": [
         "OWB:023"
-      ],
-      "hold": {
-        "type": "test",
-        "condition": "Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended (no longer 'Test running…' / estimated remaining); A/B test report shows final watch-time shares",
-        "check_at": "2026-11-10T01:13:03+00:00",
-        "recheck_task": "J2467"
-      }
+      ]
     },
     {
       "id": "J1199",
@@ -168004,13 +167997,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T20:27Z",
-      "result": "",
+      "result": "condition met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): J0280 title test ended 29 Oct 2026 17:54 with no winner",
       "history": [
         {
           "at": "2026-11-03T20:27Z",
@@ -168036,6 +168029,11 @@
           "at": "2026-11-09T17:47Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "done: condition met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): J0280 title test ended 29 Oct 2026 17:54 with no winner"
         }
       ],
       "remaining_action": "Verify readiness: Wait for verified Atom title-test clearance before approved Test B listing update",
@@ -168502,13 +168500,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-03T21:24Z",
-      "result": "",
+      "result": "condition not met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): HOS Periodic Table thumbnail test still running, Studio estimates the end about 12 Nov",
       "history": [
         {
           "at": "2026-11-03T21:24Z",
@@ -168534,6 +168532,11 @@
           "at": "2026-11-09T17:53Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "done: condition not met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): HOS Periodic Table thumbnail test still running, Studio estimates the end about 12 Nov"
         }
       ],
       "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
@@ -212120,13 +212123,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-10T02:32Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:12Z",
-      "result": "parked for Chief (PR #701, jobs/reviews/J2457/REVIEW.md): (1) J0275 Saturn 55AEQwvs36g: CONDITION UNMET (running, ~19h 16m left at 02:46Z, ends ~2026-11-10T22:02Z, no winner, per-arm impr not shown / 1.3k Reach impr; look again 2026-11-11); (2) J1198 Venus VBaYRPp85Sw: CONDITION MET (reopen; T011 ended 2026-11-09 01:10, no winner, A visible to all, per-arm impr not shown / 1.3k Reach impr); (3) J1130 HOS Periodic Table AL_-qlWko_g: CONDITION UNMET (running, ~1d 21h left at 02:46Z, ends ~2026-11-12, no winner, per-arm impr not shown / 1.1k Reach impr; look again 2026-11-13); (4) J0978 HOS Atom GHZDsiH7L7A: CONDITION MET (reopen; J0280 ended 2026-10-29 17:54, no winner, A visible to all, per-arm impr not shown / 816-817 Reach impr).",
+      "result": "done (accepted by acting Chief, 10 Nov): Venus T011 ended 9 Nov 01:10 and HOS Atom J0280 ended 29 Oct 17:54, both with no winner, so J1198 and J0978 are reopened. Saturn T013 runs to about 10 Nov 22:02Z (J0275 looks again 11 Nov); HOS Periodic Table T023 runs to about 12 Nov (J1130 looks again 13 Nov). Report: jobs/reviews/J2457/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-09T23:12Z",
@@ -212207,6 +212210,11 @@
           "at": "2026-11-10T02:50Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief (PR #701, jobs/reviews/J2457/REVIEW.md): (1) J0275 Saturn 55AEQwvs36g: CONDITION UNMET (running, ~19h 16m left at 02:46Z, ends ~2026-11-10T22:02Z, no winner, per-arm impr not shown / 1.3k Reach impr; look again 2026-11-11); (2) J1198 Venus VBaYRPp85Sw: CONDITION MET (reopen; T011 ended 2026-11-09 01:10, no winner, A visible to all, per-arm impr not shown / 1.3k Reach impr); (3) J1130 HOS Periodic Table AL_-qlWko_g: CONDITION UNMET (running, ~1d 21h left at 02:46Z, ends ~2026-11-12, no winner, per-arm impr not shown / 1.1k Reach impr; look again 2026-11-13); (4) J0978 HOS Atom GHZDsiH7L7A: CONDITION MET (reopen; J0280 ended 2026-10-29 17:54, no winner, A visible to all, per-arm impr not shown / 816-817 Reach impr)."
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "done: done (accepted by acting Chief, 10 Nov): Venus T011 ended 9 Nov 01:10 and HOS Atom J0280 ended 29 Oct 17:54, both with no winner, so J1198 and J0978 are reopened. Saturn T013 runs to about 10 Nov 22:02Z (J0275 looks again 11 Nov); HOS Periodic Table T023 runs to about 12 Nov (J1130 looks again 13 Nov). Report: jobs/reviews/J2457/REVIEW.md."
         }
       ],
       "remaining_action": "Parking J2457 for Chief with PR #701 and the four verdicts",
@@ -212865,13 +212873,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-10T00:47Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T00:13Z",
-      "result": "parked for Chief: could not verify J1198's condition from the MacBook. The read of Studio on CDP 9223 (curl 127.0.0.1:9223) is refused by this unattended run's permissions, so T011's state on VBaYRPp85Sw is unread: not proven ended, not proven running. Last real reading is Cursor's, 30 Oct 07:31Z: 'Test running', about 9d 16h left (est. end ~2026-11-08 23:30Z); that date alone proves nothing. J1198 stays blocked, nothing reopened, nothing changed in Studio. The hold update was also refused ('Only the holder or elected Chief may update this hold'). Chief or the Mini to run: jobs.py wait J1198 --agent <id> --condition \"Studio CDP 9223 on VBaYRPp85Sw: T011 thumbnail-only test has ended; A/B report shows final watch-time shares\" --check-at 2026-11-10T08:30Z --type input --recheck J2467 --git. Open Mini job J2457 already reads this same test in Studio; its reading can settle J1198. Please route J1198's condition checks to the Mini, not the MacBook (same outcome as J2432).",
+      "result": "condition met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): T011 ended 9 Nov 2026 01:10 with no winner",
       "history": [
         {
           "at": "2026-11-10T00:13Z",
@@ -212897,6 +212905,11 @@
           "at": "2026-11-10T02:49Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "done: condition met, per J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701): T011 ended 9 Nov 2026 01:10 with no winner"
         }
       ],
       "remaining_action": "Read Studio on 9223 for VBaYRPp85Sw test state",
@@ -212904,12 +212917,6 @@
       "recheck_of": "J1198",
       "due": "2026-11-10T01:13:03+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T00:48Z",
-        "by": "macbook"
-      },
       "escalated_at": "2026-11-10T02:49Z"
     },
     {
@@ -213226,19 +213233,19 @@
       "title": "PR backlog sweep, part 2: bring the last nine held pull requests up to date, one at a time (Chief's decisions inside)",
       "needs": "any",
       "repo": "owb",
-      "body": "Acting Chief (Claude), 10 Nov 2026. Follow-on from the PR sweep (jobs/reviews/J2458/PR_SWEEP.md, on main). The Chief merged 19 of its MERGE list and closed 20. These are what is left, with the Chief's decision on each. Do them in this order; one PR per item unless it says otherwise. Never rebase or force-push another agent's branch: merge origin/main into it. Never hand-merge jobs/queue.json. The Chief merges.\n\n1. #604 then #611 (034 Pluto voiceover evidence). Each merges cleanly alone, but together they clash on the two append-only ledgers (04_Audio/elevenlabs_ledger.jsonl, 05_Analytics/ai_spend/ledger.jsonl). Bring #604 up to date and stop: the Chief merges it. Then merge the new main into #611 and re-append only its own rows. Say in the result when #604 is ready, release, and carry on with #611 after it is merged.\n2. #676 (weekly Orbit thumbnail audit, J2374, finished 9 Nov): merge origin/main into it, run its checks, list it as ready.\n3. #311 (025 opening Short v07; it contains #310's files): merge origin/main into #311, confirm 06_Final-Exports sha256_manifest.json still names v05 as the uploaded file, list it as ready. The Chief then closes #310.\n4. #653 (HOS 100 and 101 into the waiting line): its queue.json reuses an id main has since given to another job, so it cannot merge. On a fresh branch from main, add HOS:100 and HOS:101 to next_hos in jobs/WIP.json with the repo's tool, and add the Rule-E review job for HOS PR #460 with `jobs.py add` (it gets a new id). The Chief then closes #653.\n5. #645 (8 History of Science Shorts lab rows and 3 learnings, J2373): merge origin/main into it. Keep the 8 lab rows. Renumber its three LEARNINGS.md rows to follow the last row on main (26 is the last today), and drop any that only repeat rows 24 to 26. Run the checks.\n6. #554 (HOS-2026-11-E2, proof-first first 30 seconds): same treatment: merge main in, renumber its LEARNINGS.md row to follow the last row, keep 05_Analytics/tests/HOS_LONG_TESTS.md.\n7. #552 (HOS-2026-11-E1, anomaly-first Short gate): this one touches a shared core file. Re-apply its --hos-anomaly-first flag on today's 00_Brand/Channel-Setup/tools/gate_shorts_open.py on a fresh branch, with its tests, a fresh core hash (python3 scripts/core_sync.py) and its LEARNINGS.md row renumbered. If the flag now contradicts rule 24 (the first second), stop and say how, and leave it for the Chief.\n\nLeave alone: #368 and #490 (the Chief reviews those two code changes), #333 (still a draft), #666.\n\nFor each item run: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, and the tests the change touches. Write jobs/reviews/<this job id>/SWEEP_2.md with one line per item (ready, or stopped and why). Park for Chief. No Studio, no spend, nothing deleted.\n",
+      "body": "Acting Chief (Claude), 10 Nov 2026. Follow-on from the PR sweep (jobs/reviews/J2458/PR_SWEEP.md, on main). The Chief merged 19 of its MERGE list and closed 20. These are what is left, with the Chief's decision on each. Do them in this order; one PR per item unless it says otherwise. Never rebase or force-push another agent's branch: merge origin/main into it. Never hand-merge jobs/queue.json. The Chief merges.\n\n1. #604 then #611 (034 Pluto voiceover evidence). Each merges cleanly alone, but together they clash on the two append-only ledgers (04_Audio/elevenlabs_ledger.jsonl, 05_Analytics/ai_spend/ledger.jsonl). Bring #604 up to date and stop: the Chief merges it. Then merge the new main into #611 and re-append only its own rows. Say in the result when #604 is ready, release, and carry on with #611 after it is merged.\n2. #676 (weekly Orbit thumbnail audit, J2374, finished 9 Nov): merge origin/main into it, run its checks, list it as ready.\n3. #311 (025 opening Short v07; it contains #310's files): merge origin/main into #311, confirm 06_Final-Exports sha256_manifest.json still names v05 as the uploaded file, list it as ready. The Chief then closes #310.\n4. #653 (HOS 100 and 101 into the waiting line): its queue.json reuses an id main has since given to another job, so it cannot merge. On a fresh branch from main, add HOS:100 and HOS:101 to next_hos in jobs/WIP.json with the repo's tool, and add the Rule-E review job for HOS PR #460 with `jobs.py add` (it gets a new id). The Chief then closes #653.\n5. #645 (8 History of Science Shorts lab rows and 3 learnings, J2373): merge origin/main into it. Keep the 8 lab rows. Renumber its three LEARNINGS.md rows to follow the last row on main (26 is the last today), and drop any that only repeat rows 24 to 26. Run the checks.\n6. #554 (HOS-2026-11-E2, proof-first first 30 seconds): same treatment: merge main in, renumber its LEARNINGS.md row to follow the last row, keep 05_Analytics/tests/HOS_LONG_TESTS.md.\n7. #552 (HOS-2026-11-E1, anomaly-first Short gate): this one touches a shared core file. Re-apply its --hos-anomaly-first flag on today's 00_Brand/Channel-Setup/tools/gate_shorts_open.py on a fresh branch, with its tests, a fresh core hash (python3 scripts/core_sync.py) and its LEARNINGS.md row renumbered. If the flag now contradicts rule 24 (the first second), stop and say how, and leave it for the Chief.\n\nLeave alone: #368 and #490 (the Chief reviews those two code changes), #333 (still a draft), #666.\n\nFor each item run: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, and the tests the change touches. Write jobs/reviews/<this job id>/SWEEP_2.md with one line per item (ready, or stopped and why). Park for Chief. No Studio, no spend, nothing deleted.\n\n\n10 Nov 03:10Z, acting Chief (Claude). Merged: #697, #604, #676, #311, #696, #645, #698, and #554 (as #700, row 30). Closed: #310, #653, #554, #552 (#552's gate disagrees with rule 24; reason is on the PR). The only thing left for this job is #611 (cursor/J2335-pluto-pickup): merge current main into it, keep main's ledger rows from #604, re-append only #611's own two pickup rows, run the checks, and park it for the Chief to merge. Leave #368, #490, #333 and #666 alone as before.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-10T01:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T01:17Z",
-      "result": "parked for Chief (PR #697 SWEEP_2.md): #604 (b9842cabc), #676 (88e2cab81), #311 (9aa2b8cdf; v05 in sha256_manifest.json, close #310), #696 (dd752c703 + J2473 for #653, close #653), #645 (edbfc3dde, rows 27-29), and #554 (acdf4a9bd, row 30) are ready to merge; stopped on #611 awaiting Chief merge of #604 first; stopped on #552 (--hos-anomaly-first contradicts Rule 24: 2.0s/2.85s hook vs <=1.5s, passes 'This...' pronoun opener, 0.25s pause vs <=0.15s, 1.8s Cut-1 floor). Reopen after merging #604 (and #645) to finish #611.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T01:17Z",
@@ -213294,18 +213301,17 @@
           "at": "2026-11-10T01:46Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief (PR #697 SWEEP_2.md): #604 (b9842cabc), #676 (88e2cab81), #311 (9aa2b8cdf; v05 in sha256_manifest.json, close #310), #696 (dd752c703 + J2473 for #653, close #653), #645 (edbfc3dde, rows 27-29), and #554 (acdf4a9bd, row 30) are ready to merge; stopped on #611 awaiting Chief merge of #604 first; stopped on #552 (--hos-anomaly-first contradicts Rule 24: 2.0s/2.85s hook vs <=1.5s, passes 'This...' pronoun opener, 0.25s pause vs <=0.15s, 1.8s Cut-1 floor). Reopen after merging #604 (and #645) to finish #611."
+        },
+        {
+          "at": "2026-11-10T02:57Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: #604 and #645 are on main; finish #611 only"
         }
       ],
       "remaining_action": "Merged origin/main into #554 (macbook/J2204, acdf4a9bd) and verified #552 contradicts Rule 24; writing jobs/reviews/J2472/SWEEP_2.md on macbook/J2472",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them.",
-      "progress": {
-        "step": 6,
-        "of": 7,
-        "at": "2026-11-10T01:45Z",
-        "by": "macbook-2"
-      }
+      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them."
     },
     {
       "id": "J2473",
