@@ -213239,10 +213239,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-10T02:58Z",
+      "eta": "2026-11-10T04:28Z",
       "created_by": "claude",
       "created_at": "2026-11-10T01:17Z",
       "result": "",
@@ -213306,12 +213306,25 @@
           "at": "2026-11-10T02:57Z",
           "by": "claude",
           "what": "reopened by acting Chief: #604 and #645 are on main; finish #611 only"
+        },
+        {
+          "at": "2026-11-10T02:58Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Merged origin/main into #554 (macbook/J2204, acdf4a9bd) and verified #552 contradicts Rule 24; writing jobs/reviews/J2472/SWEEP_2.md on macbook/J2472",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them."
+      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T02:58Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2473",
