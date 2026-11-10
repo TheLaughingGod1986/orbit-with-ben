@@ -217350,13 +217350,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T18:24Z",
-      "eta": "2026-11-10T20:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T16:57Z",
-      "result": "",
+      "result": "Swapped Thu 12 Nov Mars wind Short N42gKBbD7tE -> uhZSRcvngvE (thu12_length_test_dust_v05.mp4, sha256 abb3c33e70c11fddd2455587b7685b1da7ffc2883fbbe125e715f38549d6fb1b, Ben OK tick OWB-J2510.1, Chief KEEP PR #745). 1) Read back N42gKBbD7tE before swap: Private, publishAt 2026-11-12T11:30:00Z, Related Js6EQJ8qDi8, custom cover, 6 tags. 2) Uploaded v05 via youtube:package as NEW Private video uhZSRcvngvE scheduled for 2026-11-12T11:30:00Z; copied title, description, tags, and custom cover; set defaultLanguage & defaultAudioLanguage=en-GB; uploaded en-GB.srt captions (serving); set Related video=Js6EQJ8qDi8 in Studio (CDP 9223) and re-read from fresh page load. 3) Set N42gKBbD7tE Private + unscheduled via set-private.ts (verified Private, publishAt=null in API and Studio; nothing deleted or replaced). 4) verify-swap.ts PASS (jobs/readbacks/J2519.json + jobs/readbacks/J2519/); updated UPLOADS.json (uhZSRcvngvE supersedes N42gKBbD7tE; N42gKBbD7tE supersededBy uhZSRcvngvE, unscheduledAt 2026-11-10T18:39:54Z), BUFFER_POSTS.json (IG 6af364330649793ed200be83, FB 6af364340649793ed200beea, Threads 6af364350649793ed200bf16), shorts_open_library (N42gKBbD7tE retired, uhZSRcvngvE scheduled), J0124 note, and staged gate-media cache (commit b65751c61). £0.",
       "history": [
         {
           "at": "2026-11-10T16:57Z",
@@ -217402,6 +217402,11 @@
           "at": "2026-11-10T18:46Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: all 5 steps complete; closing J2519"
+        },
+        {
+          "at": "2026-11-10T18:46Z",
+          "by": "gemini",
+          "what": "done: Swapped Thu 12 Nov Mars wind Short N42gKBbD7tE -> uhZSRcvngvE (thu12_length_test_dust_v05.mp4, sha256 abb3c33e70c11fddd2455587b7685b1da7ffc2883fbbe125e715f38549d6fb1b, Ben OK tick OWB-J2510.1, Chief KEEP PR #745). 1) Read back N42gKBbD7tE before swap: Private, publishAt 2026-11-12T11:30:00Z, Related Js6EQJ8qDi8, custom cover, 6 tags. 2) Uploaded v05 via youtube:package as NEW Private video uhZSRcvngvE scheduled for 2026-11-12T11:30:00Z; copied title, description, tags, and custom cover; set defaultLanguage & defaultAudioLanguage=en-GB; uploaded en-GB.srt captions (serving); set Related video=Js6EQJ8qDi8 in Studio (CDP 9223) and re-read from fresh page load. 3) Set N42gKBbD7tE Private + unscheduled via set-private.ts (verified Private, publishAt=null in API and Studio; nothing deleted or replaced). 4) verify-swap.ts PASS (jobs/readbacks/J2519.json + jobs/readbacks/J2519/); updated UPLOADS.json (uhZSRcvngvE supersedes N42gKBbD7tE; N42gKBbD7tE supersededBy uhZSRcvngvE, unscheduledAt 2026-11-10T18:39:54Z), BUFFER_POSTS.json (IG 6af364330649793ed200be83, FB 6af364340649793ed200beea, Threads 6af364350649793ed200bf16), shorts_open_library (N42gKBbD7tE retired, uhZSRcvngvE scheduled), J0124 note, and staged gate-media cache (commit b65751c61). £0."
         }
       ],
       "remaining_action": "None: swap verified and committed",
@@ -217433,7 +217438,8 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "b65751c61"
     },
     {
       "id": "J2520",
