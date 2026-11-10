@@ -177290,13 +177290,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T21:24Z",
-      "eta": "2026-11-10T23:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: Batch 2 PASS (7/20 GENERATED, 0 KEEP, 700 Flow credits total spent across Batches 1-2, all 7 NAS sha256 & frame-0 verified, live Flow balance 14,190 on the studio Ultra account). Batch 3 exited 2 before accounting.intent/Create on P02:08_the_apple_c1 (0 credits spent, shared/account.jsonl untouched) because orbit_flow_veo_ui.py attach_image_to_prompt clicked a background flow-image-tile canvas card outside .cdk-overlay-pane, navigating to /project/.../edit/... (Nano Banana 2.1), which _mint_flow_v05_tranche2.py create_guard rightly refused. Runner untouched per brief; opened tested HOS PR #487 (base main, check_all PASS) scoping Start-frame clicks to overlays and rejecting /edit/. On PASS/merge of HOS PR #487, authorize appending 1 FAILED/0-credit reconciliation line for P02:08_the_apple_c1:t1 in ~/_desk/state/flow/hos009-tranche2/ledger.jsonl and reopen J2033 to mint remaining 13/20 rows.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177672,6 +177672,11 @@
           "at": "2026-11-10T21:44Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Batch 2 PASS: 7/20 GENERATED (0 KEEP, 700 Flow credits spent, all 7 NAS & frame-0 verified, live balance 14,190); Batch 3 stopped pre-Create on /edit/ canvas click (0cr spent); opened tested HOS PR #487"
+        },
+        {
+          "at": "2026-11-10T21:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Batch 2 PASS (7/20 GENERATED, 0 KEEP, 700 Flow credits total spent across Batches 1-2, all 7 NAS sha256 & frame-0 verified, live Flow balance 14,190 on the studio Ultra account). Batch 3 exited 2 before accounting.intent/Create on P02:08_the_apple_c1 (0 credits spent, shared/account.jsonl untouched) because orbit_flow_veo_ui.py attach_image_to_prompt clicked a background flow-image-tile canvas card outside .cdk-overlay-pane, navigating to /project/.../edit/... (Nano Banana 2.1), which _mint_flow_v05_tranche2.py create_guard rightly refused. Runner untouched per brief; opened tested HOS PR #487 (base main, check_all PASS) scoping Start-frame clicks to overlays and rejecting /edit/. On PASS/merge of HOS PR #487, authorize appending 1 FAILED/0-credit reconciliation line for P02:08_the_apple_c1:t1 in ~/_desk/state/flow/hos009-tranche2/ledger.jsonl and reopen J2033 to mint remaining 13/20 rows."
         }
       ],
       "remaining_action": "Chief review/merge HOS PR #487 (Start-frame overlay scope), reconcile unsubmitted P02:08_the_apple_c1:t1 local ledger row (0cr), then mint remaining 13/20 rows",
