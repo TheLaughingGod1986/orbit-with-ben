@@ -214317,17 +214317,22 @@
           "at": "2026-11-10T10:55Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2476; starting inspection of HOS 013 files and repo state."
+        },
+        {
+          "at": "2026-11-10T10:58Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected SHOT_LIST_v01.md (67 rows, 512.48s VO), HOS-2026-11-E2 opening rules, and verified 17 Public Domain archive scans/portraits in archive_pulls_v01."
         }
       ],
-      "remaining_action": "Inspect HOS 013 shot list v01, locked VO timings, and existing HOS picture plans",
+      "remaining_action": "Build picture plan v01 (Part 01-06 JSON boards and markdown table) on hos_013_vo_v03a timings with HOS-2026-11-E2 opening",
       "due": "2026-11-19T00:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-10T10:55Z",
+        "at": "2026-11-10T10:58Z",
         "by": "gemini",
-        "note": "Claimed J2476; starting inspection of HOS 013 files and repo state."
+        "note": "Inspected SHOT_LIST_v01.md (67 rows, 512.48s VO), HOS-2026-11-E2 opening rules, and verified 17 Public Domain archive sc"
       },
       "taskKeys": [
         "HOS:013"
