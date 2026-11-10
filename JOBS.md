@@ -101,7 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2538 | macbook | claimed | macbook | 2026-11-10T23:19Z | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
 | J2540 | mini | blocked | gemini | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2543 | any | blocked | macbook-2 | – | review · Verify condition for J2536 |  |
-| J2544 | any | open | – | – | review · Verify condition for J2540 |  |
+| J2544 | any | claimed | gemini | 2026-11-11T00:08Z | review · Verify condition for J2540 |  |
 
 Recently finished:
 
