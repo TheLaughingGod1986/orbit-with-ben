@@ -212521,13 +212521,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T03:00Z",
-      "eta": "2026-11-10T03:30Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "",
+      "result": "parked for Chief: Needs Ben by hand: tried the pin once in MacBook HOS Studio window (CDP 9222, channel verified History of Science / UCXp7HkBIl1LgaznXuZHJyRg). Removed 'Response status: Unresponded' filter on VbPubYd6Fbs/comments, clicked Action menu -> Pin -> Confirm on comment UgyN-6wKr4EfDkXI1h54AaABAg ('So where does a tree's weight really come from?'). POST /youtubei/v1/comment/perform_comment_action (PerformPin_rid 0x82c878e67a73f97e) returned HTTP 200 and showed optimistic UI toast 'Comment pinned' + 'Pinned by @HistoryOfScienceYT' before reload, but did not persist server-side (same step-up re-auth gate as Mini J0958): after fresh reload and removing the Unresponded filter, 'Pinned by' badge is absent and the action menu still offers 'Pin'. Left comment open on screen in CDP 9222; nothing else touched, no new comment posted. HOS PR #464 (0e59bc9). £0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212618,6 +212618,11 @@
           "at": "2026-11-10T03:11Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-10T03:12Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: Needs Ben by hand: tried the pin once in MacBook HOS Studio window (CDP 9222, channel verified History of Science / UCXp7HkBIl1LgaznXuZHJyRg). Removed 'Response status: Unresponded' filter on VbPubYd6Fbs/comments, clicked Action menu -> Pin -> Confirm on comment UgyN-6wKr4EfDkXI1h54AaABAg ('So where does a tree's weight really come from?'). POST /youtubei/v1/comment/perform_comment_action (PerformPin_rid 0x82c878e67a73f97e) returned HTTP 200 and showed optimistic UI toast 'Comment pinned' + 'Pinned by @HistoryOfScienceYT' before reload, but did not persist server-side (same step-up re-auth gate as Mini J0958): after fresh reload and removing the Unresponded filter, 'Pinned by' badge is absent and the action menu still offers 'Pin'. Left comment open on screen in CDP 9222; nothing else touched, no new comment posted. HOS PR #464 (0e59bc9). £0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Commit evidence on macbook/J2461, open HOS PR, and block J2461 for Ben",
