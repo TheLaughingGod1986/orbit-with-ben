@@ -699,8 +699,18 @@ def start_other_slots(popen=None, system=None) -> list:
     return started
 
 
+def leave_the_board_to_the_mini() -> None:
+    """One publisher for the board (J2541, 10 Nov 2026). jobs.py starts board_publish.py after every queue change on
+    any machine with ~/_desk/state/chief, and the MacBook has that folder, so both slots force-pushed board-data all
+    day beside the Mini (197 pushes on 10 Nov; one was rejected because another publish landed mid-push). With
+    BOARD_PUBLISH=0 in the worker's own environment, its jobs.py calls, the agents it wakes and slot 2 all skip the
+    hook. The Mini publishes within a minute of any push to main, so nothing is lost."""
+    os.environ["BOARD_PUBLISH"] = "0"
+
+
 def run() -> int:
     STATE.mkdir(parents=True, exist_ok=True)
+    leave_the_board_to_the_mini()
     start_other_slots()
     # The lock file is closed, and the lock freed, when the run returns (J2463: it used to be left open).
     with open(STATE / f"{slot_name(SLOT, 'macbook-worker')}.lock", "w") as lock:
