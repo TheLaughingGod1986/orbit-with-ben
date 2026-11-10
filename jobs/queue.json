@@ -217117,19 +217117,23 @@
           "at": "2026-11-10T16:28Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T16:37Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done: Read MacBook pmset, clamshell state, Tailscale status, and launchd plists"
         }
       ],
-      "remaining_action": "Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report)",
+      "remaining_action": "Write MacBook item 9 + Tailscale item 6 + launchd plist inventory to jobs/reviews/J2517/REPORT.md, then hand J2517 to the Mac mini for items 1-5, 7, 8",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T16:28Z",
+        "at": "2026-11-10T16:37Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Read MacBook pmset, clamshell state, Tailscale status, and launchd plists"
       }
     },
     {
