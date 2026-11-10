@@ -209279,6 +209279,11 @@
           "at": "2026-11-09T12:45Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Cursor is unavailable or lacks required input; next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-10T09:15Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Gemini is unavailable or lacks required input; next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Add blur-pad and letterbox check to gate_shorts_open.py + unit tests",
@@ -209297,8 +209302,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2422",
