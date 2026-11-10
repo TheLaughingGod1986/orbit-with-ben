@@ -212207,17 +212207,22 @@
           "at": "2026-11-10T10:05Z",
           "by": "claudecode",
           "what": "step 0 of 6 done: plan: 1 inputs inventory, 2 build script + audio timeline, 3 picture render (detached), 4 gates, 5 NAS master + thumbnail, 6 awaits for Ben"
+        },
+        {
+          "at": "2026-11-10T10:08Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Inputs checked: 11 of 15 source masters found and readable (027 025 031 020 028 029 024 026 019 005 006). Not found at the plan's or UPLOADS.json paths: 013 Moon, 021 Saturn v03f (archive has v03c/d/e only), 022 Sun v05 (archive has v01-v04 only). 023 Venus v05e is in iCloud OWB UAT but ffprobe gets 'Resource deadlock avoided' (file not downloaded locally). Most of the plan's clean voice-stem file names do not exist either, so its cut times are unverified. Detached: tmux j2452-asr writes word timings for the 11 masters to /Volumes/MiniWork/scratch/j2452/asr/<film>_words.json; log ~/_desk/logs/j2452-asr.log; done file ~/_desk/logs/j2452-asr.done. Input list: /Volumes/MiniWork/scratch/j2452/inputs.json. No film folder or video id exists for the sleep video yet, so no --films link."
         }
       ],
-      "remaining_action": "Check all 15 source masters, voice stems and music beds exist, then write the build script for the 2-hour sleep cut",
+      "remaining_action": "Find the 013, 021, 022 and 023 masters, check every cut time in the plan against the word timings, then write the build script",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-10T10:05Z",
+        "at": "2026-11-10T10:08Z",
         "by": "claudecode",
-        "note": "plan: 1 inputs inventory, 2 build script + audio timeline, 3 picture render (detached), 4 gates, 5 NAS master + thumbnai"
+        "note": "Inputs checked: 11 of 15 source masters found and readable (027 025 031 020 028 029 024 026 019 005 006). Not found at t"
       }
     },
     {
