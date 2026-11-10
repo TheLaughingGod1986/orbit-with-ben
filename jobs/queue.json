@@ -177280,13 +177280,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "open",
+      "by": "",
       "since": "2026-11-10T16:08Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: J2033-batch1 exited 1 (0/20 generated, 0 KEEP, 0 credits spent, live balance 14890) because Flow FLOW-BASE-PROMPT-BOX.submit(a) drops untrusted page.evaluate buttons[0].click() (a.isTrusted===false) in STILL_EVIDENCE_JS and CREATE_EVIDENCE_JS. Opened tested HOS PR #477 (65/65 unit tests + check_all.sh PASS) using trusted page.mouse.click after synchronous atomic UI/hit-target check and non-destructive .still.attemptN.create.json retry path. Verbatim Flow panel reset text on studio Ultra account: '14,890 Google Flow credits' / 'Resets on 12 Nov at 19:13'; linked Google One & Flow Help pages state '25,000 Google Flow credits are included as part of your Google AI plan and refresh monthly. You will also receive an additional 50 Google Flow credits daily.' and 'Unused monthly Google Flow credits do not roll over to the next month.' / 'If you don’t use the full 50 Google Flow credits in a day, the unused Google Flow credits don’t roll over.'",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177567,9 +177567,14 @@
           "at": "2026-11-10T16:29Z",
           "by": "relay",
           "what": "condition verification queued: J2518"
+        },
+        {
+          "at": "2026-11-10T17:01Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling on the thread (comment 6773109239, 10 Nov 16:36Z): PASS on merged HOS PR 477 (the Create click is now a trusted mouse click after position checks; the charge intent is still written before the click; any doubt leaves the charge pending with no retry). Reopened on the Chief's PASS of HOS PR 477 (thread comment 6773109239). Run preflight 1-3 again, then batch 1 with fresh log and done paths. Watch the first take actually generate before letting the batch run on. Included Flow credits only (£0), 100 credits per take, the headroom floor as before. Deadline 11 Nov 12:00Z; the Flow credits reset 12 Nov 19:13 and do not roll over."
         }
       ],
-      "remaining_action": "Chief review/merge of HOS PR #477 before re-running batch 1",
+      "remaining_action": "Reopened on the Chief's PASS of HOS PR 477 (thread comment 6773109239). Run preflight 1-3 again, then batch 1 with fresh log and done paths. Watch the first take actually generate before letting the batch run on. Included Flow credits only (£0), 100 credits per take, the headroom floor as before. Deadline 11 Nov 12:00Z; the Flow credits reset 12 Nov 19:13 and do not roll over.",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177589,12 +177594,6 @@
         "at": "2026-11-10T16:27Z",
         "by": "gemini",
         "note": "Opened HOS PR #477 (65/65 tests + check_all.sh PASS) fixing Flow event.isTrusted Create click drop and still evidence re"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-10T17:29:13+00:00",
-        "recheck_task": "J2518"
       }
     },
     {
@@ -217191,13 +217190,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-10T16:32Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-10T16:29Z",
-      "result": "parked for Chief: J2033's condition is NOT proven, J2033 stays blocked. HOS PR 477 (trusted Create click in the HOS 009 tranche-2 runner) is MERGED (16:29:02Z 10 Nov, merge eb9856f7, CI green) but it was merged 112 s after opening with 0 reviews, 0 comments and no Chief ruling in J2033's history or on the thread; the change is on the credit-spending Create step, and every earlier J2033 reopen followed a recorded Chief ruling. Needed: Chief reads merged PR 477, records PASS or FIX, and on PASS reopens J2033 (preflight 1-3 again, batch 1 with fresh log/done paths). 0/20 generated, 0 credits spent. Deadline 11 Nov 12:00Z; Flow panel says credits reset 12 Nov 19:13. The MacBook could not update the hold (jobs.py wait refused: only the holder or elected Chief). Run: jobs.py wait J2033 --agent <chief> --condition 'Chief review of merged HOS PR 477 is recorded (PASS) before batch 1 is re-run' --check-at '2026-11-10T19:00Z' --type input --recheck J2518 --git. Evidence: jobs/reviews/J2518/REVIEW.md in OWB PR 748. Not checked: the HOS desk thread, anything on the Mini.",
+      "result": "Chief ruling on the thread (comment 6773109239, 10 Nov 16:36Z): PASS on merged HOS PR 477 (the Create click is now a trusted mouse click after position checks; the charge intent is still written before the click; any doubt leaves the charge pending with no retry). J2033 reopened by claude (acting Chief) at this time. Record: jobs/reviews/J2518/REVIEW.md (OWB PR 748, merged).",
       "history": [
         {
           "at": "2026-11-10T16:29Z",
@@ -217218,6 +217217,11 @@
           "at": "2026-11-10T16:36Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2033's condition is NOT proven, J2033 stays blocked. HOS PR 477 (trusted Create click in the HOS 009 tranche-2 runner) is MERGED (16:29:02Z 10 Nov, merge eb9856f7, CI green) but it was merged 112 s after opening with 0 reviews, 0 comments and no Chief ruling in J2033's history or on the thread; the change is on the credit-spending Create step, and every earlier J2033 reopen followed a recorded Chief ruling. Needed: Chief reads merged PR 477, records PASS or FIX, and on PASS reopens J2033 (preflight 1-3 again, batch 1 with fresh log/done paths). 0/20 generated, 0 credits spent. Deadline 11 Nov 12:00Z; Flow panel says credits reset 12 Nov 19:13. The MacBook could not update the hold (jobs.py wait refused: only the holder or elected Chief). Run: jobs.py wait J2033 --agent <chief> --condition 'Chief review of merged HOS PR 477 is recorded (PASS) before batch 1 is re-run' --check-at '2026-11-10T19:00Z' --type input --recheck J2518 --git. Evidence: jobs/reviews/J2518/REVIEW.md in OWB PR 748. Not checked: the HOS desk thread, anything on the Mini."
+        },
+        {
+          "at": "2026-11-10T17:01Z",
+          "by": "claude",
+          "what": "done: Chief ruling on the thread (comment 6773109239, 10 Nov 16:36Z): PASS on merged HOS PR 477 (the Create click is now a trusted mouse click after position checks; the charge intent is still written before the click; any doubt leaves the charge pending with no retry). J2033 reopened by claude (acting Chief) at this time. Record: jobs/reviews/J2518/REVIEW.md (OWB PR 748, merged)."
         }
       ],
       "remaining_action": "Record the finding on J2033: PR 477 is merged but no Chief review is on record",
@@ -217231,7 +217235,8 @@
         "at": "2026-11-10T16:35Z",
         "by": "macbook",
         "note": "HOS PR 477 merged 16:29Z with 0 reviews; no Chief ruling found"
-      }
+      },
+      "done_ref": "thread comment 6773109239; OWB PR 748"
     },
     {
       "id": "J2519",
