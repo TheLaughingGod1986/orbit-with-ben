@@ -216091,19 +216091,24 @@
           "at": "2026-11-10T14:10Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Mount verified (dev 16777242 vs home 16777234); SPUSBHostDataType shows SanDisk Extreme SSD at 5 Gb/s on USB 3.1 Bus 0x00000000 (Location 0x00200000)"
+        },
+        {
+          "at": "2026-11-10T14:11Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: 256 MiB test passed: dd write 436.3 MB/s (424.7 MB/s with fsync), F_NOCACHE write 433.9 MB/s, F_NOCACHE read 234.9 MB/s, sha256 matched, test file removed"
         }
       ],
-      "remaining_action": "Run 256 MB dd write/read speed and sha256 check on /Volumes/MiniWork/scratch/.ssd-check-J2500",
+      "remaining_action": "Check unified log for unplugs since 09:47Z and verify relay TMPDIR and symlinks",
       "due": "2026-11-10T18:00:00Z",
       "kind": "qa",
       "plain": "Check again that the Mini's SSD is working and whether it is now running at full speed",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-10T14:10Z",
+        "at": "2026-11-10T14:11Z",
         "by": "gemini",
-        "note": "Mount verified (dev 16777242 vs home 16777234); SPUSBHostDataType shows SanDisk Extreme SSD at 5 Gb/s on USB 3.1 Bus 0x0"
+        "note": "256 MiB test passed: dd write 436.3 MB/s (424.7 MB/s with fsync), F_NOCACHE write 433.9 MB/s, F_NOCACHE read 234.9 MB/s,"
       }
     },
     {
