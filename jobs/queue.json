@@ -213008,9 +213008,14 @@
           "at": "2026-11-10T01:41Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Titles and line 1 read from the approved file; API dry-run shows both films private, on their old titles and schedules (12 Nov and 10 Dec 18:00Z). HOS 007 carries a title A/B test, so its Studio page is being read before any write."
+        },
+        {
+          "at": "2026-11-10T01:44Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: HOS 007 ETynHpIYLeY: nothing changed. Studio shows no plain title field, only 'A/B testing titles, Ineligible' with the two test titles and an Edit title button, so the title lives inside the Test and Compare. HOS 099 uAomPaOBrM8: title and description line 1 changed at 01:44Z; still private for 10 Dec 18:00Z, rest of description and tags unchanged."
         }
       ],
-      "remaining_action": "Read the Studio page for HOS 007 to see whether the title test blocks the new title",
+      "remaining_action": "Write the 099 records and the Studio tests log rows, run check_all, open one PR",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved.",
@@ -213025,11 +213030,11 @@
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T01:41Z",
+        "at": "2026-11-10T01:44Z",
         "by": "claudecode",
-        "note": "Titles and line 1 read from the approved file; API dry-run shows both films private, on their old titles and schedules ("
+        "note": "HOS 007 ETynHpIYLeY: nothing changed. Studio shows no plain title field, only 'A/B testing titles, Ineligible' with the "
       },
       "taskKeys": [
         "HOS:007",
