@@ -339,6 +339,77 @@ $ launchctl list | grep com.owb      (PID / last exit / label)
 - Ports: 9223 yes, 9222 yes, 9460 yes (each answers `/json/version` as Chrome/156). Nothing opened or closed.
 - Internal disk free: 38 GiB at 23:40, 36 GiB at 00:22 (82% used).
 
+## Follow-up, 10 Nov (09:17–09:40 Mini time)
+
+**Result: not cleared. The one approved command did not restart sandboxd, so the fault is unchanged.**
+
+### Needs Ben
+
+Run this one command in Terminal on the Mini (it asks for nothing if sudo is still cached, otherwise for your password):
+
+```bash
+sudo killall -9 sandboxd
+```
+
+It is the same restart you approved, with a forced stop, because the helper ignores the polite one. It was not run here: only `sudo -n killall sandboxd` was approved. If the SSD still hangs after that, the Mini needs a reboot, which will close the Chrome Studio windows.
+
+### 1. Fault confirmed
+
+- `ls /Volumes/MiniWork/desk` under a 10-second limit was killed (exit 142).
+- The kernel log still shows `(Sandbox) watchdog expired for approval entry …` lines for `kTCCServiceSystemPolicyRemovableVolumes` and `kTCCServiceReminders`, last at 09:17:30.
+- Uptime 37 days. sandboxd was pid 11247, running 15 h 26 min.
+
+### 2. Restart of sandboxd
+
+- `sudo -n killall sandboxd` ran at 09:18 and returned 0 (no password asked).
+- sandboxd did not exit. It is still pid 11247 twenty minutes later. Its own log repeats, twice a second: `Remaining transactions after SIGTERM: 1 (0 os_transaction + 1 xpc_transaction_begin)`. It received the signal and is waiting for one stuck request to finish, which never does.
+- The SSD listing was retried at 10 s and at 40 s after the signal: killed both times (exit 142).
+- Nothing further was tried: no forced kill, no other daemon, no reboot.
+
+### 3. Relay
+
+- `com.owb.chief-relay` is running (pid 90906, on the fixed code) and was in the middle of J2460 (Claude Code, started 09:15:43, cap 1500 s), so it was not restarted.
+- That run logged `SSD check got no answer in 5s … Using /private/tmp`, as expected while the fault is present. A clean run without that line is still to be seen.
+- Also in the log: Gemini returned `INVALID_ARGUMENT (code 400)` on J2478 (rerouted to Claude Code); Codex is flagged out of weekly credit until Tue 10 Nov 23:17Z; ten jobs wait with no worker up in their chain.
+
+### 4. Worktrees
+
+None of the 19 removed, none checked: all sit on `/Volumes/MiniWork/desk/worktrees`, which does not answer. To do after the fault clears.
+
+### 5. Disk space (read-only; nothing cleared)
+
+The two `sudo du` commands in the task cannot finish while the fault is present (they stop at the first guarded folder), so each folder was measured on its own under a time limit. Data volume: 171 GiB used, 29 GiB free (86%).
+
+| Measured | GiB |
+|---|---:|
+| `~/YouTube` | 25.9 |
+| `~/Library/Application Support` | 14.5 |
+| `~/_desk` | 9.5 |
+| `~/.gemini` | 7.2 |
+| `/Library` | 7.2 |
+| `/private/tmp` | 6.5 |
+| `/System` (Data side) | 5.2 |
+| `/Applications` | 4.9 |
+| `~/.cursor` + `~/.cursor-server` | 8.1 |
+| `~/.codex` | 4.1 |
+| `/opt` | 3.3 |
+| `/private/var/db` | 3.0 |
+| `~/.local`, `~/code`, `~/.venvs`, `~/agent-tools` | 8.3 |
+| three Chrome profile folders (size only, not opened) | 5.9 |
+| other small folders in `~` | about 3.5 |
+| **Total located** | **about 118** |
+
+**About 53 GiB is still not located, and it is inside folders that hang:** `~/Desktop`, `~/Documents`, `~/Downloads`, `~/Movies`, `~/.Trash`, `~/Music`, the other user's home folder, `~/Library/Containers`, `~/Library/Group Containers`, `~/Library/Mail`, `~/Library/Messages`, `~/Library/Mobile Documents`, `~/Library/Photos` and `/private/var/folders`. None of these can be sized until sandboxd is restarted. The missing 40 GiB is in that set; this pass cannot say which folder.
+
+The stale `sudo du -xhd 3 /System/Volumes/Data` from 9 Nov is no longer running. No `du` from this session was left behind.
+
+### Still to do, after the forced restart
+
+1. Confirm `ls /Volumes/MiniWork/desk` lists and the watchdog lines stop.
+2. Restart the relay between jobs and see a run with no "SSD check got no answer".
+3. Check and remove the 19 worktrees.
+4. Rerun the two `sudo du` commands to place the last 53 GiB.
+
 ## Appendix: diskutil apfs list
 
 ```
