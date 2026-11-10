@@ -217516,13 +217516,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T17:54Z",
-      "eta": "2026-11-10T19:54Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "parked for Chief: PR #756 open (branch macbook/J2523). Home ratchet: the eight scripts 13 -> 0, home_total 40 -> 27. Four loader functions added to channels.py (default, queue_key, studio_records, of_path); default() and queue_key() still return home() today, so the Chief should judge whether that counts. One behaviour change: music_gate compares against the film's own channel's beds and UAT (same as before for films in this repo). music_gate tests are skipped here (no numpy): run test_music_gate.py on the Mini. apply_yellow_white_v04_thumbs.py NOT archived: git mv needs approval here and STUDIO_PLAYBOOK.md plus one audit script still name it; its ceiling stays 3. Checks: test_channel*.py 72 OK, touched scripts' tests OK, sync_rules OK, studio status OK; full suite not run. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -217533,6 +217533,11 @@
           "at": "2026-11-10T17:54Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T17:57Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: PR #756 open (branch macbook/J2523). Home ratchet: the eight scripts 13 -> 0, home_total 40 -> 27. Four loader functions added to channels.py (default, queue_key, studio_records, of_path); default() and queue_key() still return home() today, so the Chief should judge whether that counts. One behaviour change: music_gate compares against the film's own channel's beds and UAT (same as before for films in this repo). music_gate tests are skipped here (no numpy): run test_music_gate.py on the Mini. apply_yellow_white_v04_thumbs.py NOT archived: git mv needs approval here and STUDIO_PLAYBOOK.md plus one audit script still name it; its ceiling stays 3. Checks: test_channel*.py 72 OK, touched scripts' tests OK, sync_rules OK, studio status OK; full suite not run. GBP 0."
         }
       ],
       "remaining_action": "Decoupling: eight scripts stop assuming the studio lives inside one channel's repo (13 lines to 0)",
