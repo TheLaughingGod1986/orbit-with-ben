@@ -215514,13 +215514,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T11:12Z",
-      "eta": "2026-11-10T13:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T11:07Z",
-      "result": "",
+      "result": "parked for Chief: this job cannot run on the MacBook worker, second time here (released once already today). In the history-of-science checkout 'git fetch origin pull/N/head:pr-N' and plain 'git fetch origin' both need approval, so 25 of the 27 PR heads cannot be read (only #433 macbook/J2203 and #434 macbook/J2204 are local). No table written, nothing merged, closed or pushed; HOS checkout left on main, clean. 'gh pr list --json' does work and gave this for the 27: base is main for all except #382 (base cursor/j1241-hos008-cg-v03, the #380 branch); MERGEABLE: #434 #382 #334 #325; CONFLICTING: the other 23. Please pin J2495 to the Mini (mini_only) or allow 'git fetch' for the MacBook worker, then reopen.",
       "history": [
         {
           "at": "2026-11-10T11:07Z",
@@ -215541,6 +215541,11 @@
           "at": "2026-11-10T11:12Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T11:14Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: this job cannot run on the MacBook worker, second time here (released once already today). In the history-of-science checkout 'git fetch origin pull/N/head:pr-N' and plain 'git fetch origin' both need approval, so 25 of the 27 PR heads cannot be read (only #433 macbook/J2203 and #434 macbook/J2204 are local). No table written, nothing merged, closed or pushed; HOS checkout left on main, clean. 'gh pr list --json' does work and gave this for the 27: base is main for all except #382 (base cursor/j1241-hos008-cg-v03, the #380 branch); MERGEABLE: #434 #382 #334 #325; CONFLICTING: the other 23. Please pin J2495 to the Mini (mini_only) or allow 'git fetch' for the MacBook worker, then reopen."
         }
       ],
       "remaining_action": "History of Science open pull requests: a decision table for the 27 that are left (close, carry or review), nothing merged or closed",
