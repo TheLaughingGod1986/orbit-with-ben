@@ -217191,7 +217191,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
-      "result": "parked for Chief: PR #772 (3775ef1b3, jobs/reviews/J2512/REPORT.md). Fixed the two J2508 craft faults on the 026 Shorts (£0, nothing uploaded or changed in Studio; Ben's 10 Nov approved v05/v06 remain the fallback for J2513/J2514): (1) Mon 16 HZGTovJu_TQ -> mon16_cant_see_nearest_star_v06.mp4 (sha256 7eb4f03d58e9738f, 26.5s, -14.2 LUFS / -2.2 dBTP): replaced repeated opening Paranal shot at 0:20.23-0:22.63 (s06) with unused moving ESO Paranal observatory shot v06_13.80 (uhd_bt_paranal_06, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. (2) Wed 18 cwU_0WWeNZ4 -> wed18_robot_reach_nearest_star_v07.mp4 (sha256 c0e6a13865a6abce, 23.6s, -14.2 LUFS / -2.2 dBTP): replaced 3.10s frozen still at 0:13.45-0:16.55 (s05 ESO star trails) with smooth horizontal drift (min_diff=17.37, median_diff=18.96, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. Armed Ben's watch cards in order (J2512.1 Mon 16 due Sat 14 Nov 18:00 London, J2512.2 Wed 18 due Mon 16 Nov 18:00 London, --if-not 'the cut you OK'd on 10 Nov airs') and verified both under 'Needs your review' on the live Review tab with working 302 Play links.",
+      "result": "Waiting for: Ben's watch of the two fixed Nearest Star Shorts (first card due Sat 14 Nov 18:00 London, second Mon 16 Nov 18:00); if he does not tick, the cuts he OK'd on 10 Nov air",
       "history": [
         {
           "at": "2026-11-10T15:01Z",
@@ -217247,6 +217247,16 @@
           "at": "2026-11-10T21:20Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #772 (3775ef1b3, jobs/reviews/J2512/REPORT.md). Fixed the two J2508 craft faults on the 026 Shorts (£0, nothing uploaded or changed in Studio; Ben's 10 Nov approved v05/v06 remain the fallback for J2513/J2514): (1) Mon 16 HZGTovJu_TQ -> mon16_cant_see_nearest_star_v06.mp4 (sha256 7eb4f03d58e9738f, 26.5s, -14.2 LUFS / -2.2 dBTP): replaced repeated opening Paranal shot at 0:20.23-0:22.63 (s06) with unused moving ESO Paranal observatory shot v06_13.80 (uhd_bt_paranal_06, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. (2) Wed 18 cwU_0WWeNZ4 -> wed18_robot_reach_nearest_star_v07.mp4 (sha256 c0e6a13865a6abce, 23.6s, -14.2 LUFS / -2.2 dBTP): replaced 3.10s frozen still at 0:13.45-0:16.55 (s05 ESO star trails) with smooth horizontal drift (min_diff=17.37, median_diff=18.96, 0 repeated frames); gate_shorts_open, polish_gate, picture_qa, music_gate all PASS; watched & listened end-to-end with sound, all text clean. Armed Ben's watch cards in order (J2512.1 Mon 16 due Sat 14 Nov 18:00 London, J2512.2 Wed 18 due Mon 16 Nov 18:00 London, --if-not 'the cut you OK'd on 10 Nov airs') and verified both under 'Needs your review' on the live Review tab with working 302 Play links."
+        },
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T18:05:00Z"
+        },
+        {
+          "at": "2026-11-10T22:59Z",
+          "by": "claude",
+          "what": "acting Chief, 10 Nov 23:20Z: PASS. Both fixes are what was asked and nothing else (one shot changed in the Mon 16 Short, the frozen still now moves in the Wed 18 Short); every gate passes; the agent watched both with sound. Records merged as #772. The two watch cards stay with Ben; the swap jobs J2513 and J2514 take whichever cut he has OK'd by their time."
         }
       ],
       "remaining_action": "Parked for Chief review and Ben's watch",
@@ -217293,7 +217303,12 @@
             "At 0:13.45-0:16.55 (the ESO star trails), replaced the 3.1 s frozen still with a smooth horizontal drift across the star trails so no frame repeats; everything else is unchanged"
           ]
         }
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's watch of the two fixed Nearest Star Shorts (first card due Sat 14 Nov 18:00 London, second Mon 16 Nov 18:00); if he does not tick, the cuts he OK'd on 10 Nov air",
+        "check_at": "2026-11-14T18:05:00Z"
+      }
     },
     {
       "id": "J2513",
