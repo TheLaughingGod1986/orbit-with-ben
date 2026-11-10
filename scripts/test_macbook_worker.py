@@ -275,8 +275,10 @@ class AllAgents(unittest.TestCase):
     def test_a_job_for_the_minis_claude_code_runs_on_the_macbooks_claude(self):
         self.assertEqual(mw.pick_agent({"kind": "review", "for": "claudecode"}, ["codex", "claude"])[0], "claude")
 
-    def test_a_studio_job_uses_claude_when_the_chain_reaches_the_minis_claude_code(self):
-        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"])[0], "claude")
+    def test_a_studio_job_is_not_run_on_the_macbooks_claude(self):
+        # 9 Nov this picked Claude; on 10 Nov Claude handed two Studio jobs straight back (see StudioJobs below).
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"]), ("", ""))
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude", "gemini"])[0], "gemini")
 
     def test_pin_keeps_the_old_single_agent_setting(self):
         with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
@@ -346,6 +348,44 @@ class AllAgents(unittest.TestCase):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/x" if a in ("codex", "claude") else None):
             self.assertEqual(mw.installed(), ["codex", "claude"])
             self.assertEqual(mw.installed("claude,gemini"), ["claude"])
+
+
+class StudioJobs(unittest.TestCase):
+    """10 Nov 2026: the MacBook's Claude Code handed J2460 and J2461 straight back. Its unattended allowlist cannot
+    reach the Studio browser, and its launch rule still said never to change anything on YouTube."""
+
+    JOB = {"id": "J9", "needs": "mini", "kind": "studio", "repo": "owb", "title": "Studio: set the end screen on a long",
+           "body": "In Orbit Studio, set the end screen."}
+
+    def test_a_studio_job_runs_on_gemini_and_never_on_claude(self):
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertTrue(mw.is_studio_job(self.JOB))
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude", "codex", "gemini"])[0], "gemini")
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude", "codex"])[0], "codex")
+            self.assertEqual(mw.pick_agent(self.JOB, ["claude"]), ("", ""))
+            self.assertFalse(mw.is_studio_job(dict(self.JOB, needs="any", kind="review")))
+            self.assertTrue(mw.is_studio_job(dict(self.JOB, needs="macbook")))  # sent to this Mac's own window
+
+    def test_studio_jobs_are_not_offered_when_only_claude_is_here(self):
+        seen = {}
+
+        def fake_sh(args, cwd=None, timeout=300):
+            if "next" in args:
+                seen["cdp"] = os.environ.get("MACBOOK_CDP")
+                return subprocess.CompletedProcess(args, 10, "", "")
+            return subprocess.CompletedProcess(args, 0, "", "")
+        for have, want in ((["claude"], ""), (["claude", "gemini"], "9223,9222")):
+            with mock.patch.dict(os.environ), \
+                    mock.patch.object(mw, "sh", side_effect=fake_sh), mock.patch.object(mw, "push_heartbeat"), \
+                    mock.patch.object(mw, "cdp_ports_up", return_value=["9223", "9222"]), \
+                    mock.patch.object(mw, "installed", return_value=have), mock.patch.object(mw, "usable", side_effect=lambda h: h):
+                self.assertEqual(mw.run_ordinary(), "idle")
+                self.assertEqual(seen["cdp"], want, have)
+
+    def test_the_launch_rule_allows_a_routed_studio_job_but_never_an_upload(self):
+        self.assertNotIn("change anything on YouTube", mw.PROMPT)
+        self.assertIn("never upload a video, change a video's privacy or schedule, or delete a video", mw.PROMPT)
+        self.assertIn("YouTube Studio job the Chief routed to this Mac", mw.PROMPT)
 
 
 class AddressedJobs(unittest.TestCase):

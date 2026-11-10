@@ -215,13 +215,13 @@ Both machines read and write those same remote folders. Share: NFS `192.168.1.11
 | **Newly copied** (MacBook-listed; final exits 0) | OWB **025** Mars; OWB **026** Nearest Star; OWB **027, 028, 029**; OWB **035–061** editorial stubs; OWB **J01** Journey; **HOS000** Explorer Test (conservative); **HOS002** Periodic Table (copied conservatively — production records were ambiguous); **HOS005** Harvey; **HOS006** Trees; **HOS007** Vaccine; **HOS099** Compilation (conservative) |
 | **Skipped** | **HOS004 How-Did-We-Discover-The-Atom** — empty stub (zero files) |
 
-**Editorial stubs do not authorise starting production** on those films. Mini originals were left in place (no deletes). Uploads, Buffer, playlists, Flow, and YouTube Studio stay on the Mini; MacBook may take harvests / assemblies / watches when that film's folder exists on studio-live.
+**Editorial stubs do not authorise starting production** on those films. Mini originals were left in place (no deletes). Uploads, Buffer and Flow stay on the Mini; Studio-only jobs may also run on the MacBook (the MacBook lane, 9 Nov 2026). MacBook may take harvests / assemblies / watches when that film's folder exists on studio-live.
 
 **Expand studio-live policy (Ben thumbs-up ~12:40 London 7 Nov 2026):** when new working/upcoming folders appear only on the Mini, copy them onto studio-live. Skip films that are **already fully shipped** under `mac-mini-archive` unless they still have active or upcoming work. If unsure whether a folder is working or shipped, **copy it**. Do **not** recopy shipped archive films as working films. Mini local copies stay until jobs finish writing those folders.
 
 **Who may run media jobs:**
 - **MacBook** may take portable text/review jobs always, and harvest / assembly / watch-listen when that film's studio-live folder is reachable on this machine (or when the job already names another path that exists here). If the files are **not** on studio-live, leave the media job for the Mini (`jobs.macbook_portable`).
-- **Mini-only (Studio login lives on the Mini; the MacBook does not need a YouTube Studio sign-in):** YouTube Studio upload / `youtube:package`, Buffer, playlists, end screens, Flow/Chrome generation, and the HOS desk.
+- **Mini-only:** YouTube Studio upload / `youtube:package`, privacy or schedule changes, Buffer, Flow/Chrome generation, and the HOS desk. Studio-only jobs (playlists, end screens, pinned comments, titles, Test & Compare, Related) also run on the MacBook's signed-in Studio windows since 9 Nov 2026 (the MacBook lane above), unless the Chief pins one to the Mini with `jobs.py add --mini-only`.
 - Big renders over the network can be slower than Mini local disk; that is an **accepted tradeoff** for one shared working copy.
 
 **Mini locals:** originals under `/Users/benjaminoats/YouTube/…` stay put while any job may still be writing that folder. Do **not** delete or move Mini locals during active writes. After ship, a Mini local may be removed only when no job is still writing that folder — do **not** delete Mini locals "now" as part of the studio-live rollout.
@@ -272,7 +272,7 @@ Never two Shorts on the same day.
 
 ### Machine split (restated; full paths under Film folders)
 
-- **Mini-only:** YouTube Studio uploads / `youtube:package`, Buffer, playlists / end screens, Flow/Chrome. The MacBook does not need a Studio sign-in.
+- **Mini-only:** YouTube Studio uploads / `youtube:package`, privacy or schedule changes, Buffer, Flow/Chrome. Studio-only jobs also run on the MacBook (9 Nov 2026) unless pinned with `--mini-only`.
 - **MacBook may take** harvests, assemblies, and watch/listen jobs when that film's folder exists on `/Volumes/data/studio-live/…/02_Video-Projects/`. If the files are **not** there, the job stays on the Mini.
 - Machines are **workers against NAS files**; they are **not yet diskless**. Mini local copies under `/Users/benjaminoats/YouTube/…` stay until jobs finish writing those folders.
 
