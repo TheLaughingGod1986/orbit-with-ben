@@ -2,13 +2,27 @@ name: Studio core check
 
 # Shared tooling lives once (Ben, 15 Oct 2026: unify HOS and OWB, keep their own rules). studio-core/CORE_FILES.json
 # locks every shared file by sha256 in both repos; editing one in a single repo fails here.
+#
+# When it runs (J2531, 10 Nov 2026, jobs/reviews/J2531/MINUTES.md): on every pull request; on a push to main that
+# changes something other than data (the queue, STATUS.md, a film's status.json, the analytics and board records);
+# and once a day on main. A merged pull request is not checked a second time: its head ran this already.
 on:
   push:
     branches: [main]
+    paths-ignore: ["jobs/**", "JOBS.md", "STATUS.md", "02_Video-Projects/*/status.json", "05_Analytics/**"]
   pull_request:
+  schedule:
+    - cron: "40 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check:
+    # A skipped job uses no runner and no minutes.
+    if: ${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

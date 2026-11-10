@@ -2,15 +2,29 @@ name: Rules check
 
 # AGENTS.md is the source of the sign-off order and the Never list. The copies in the always-on Cursor rule and
 # the playbook are generated from it, and superseded wording is blocked, so the rules can't drift apart again.
+#
+# When it runs (J2531, 10 Nov 2026, jobs/reviews/J2531/MINUTES.md): a push that changes only STATUS.md or a film's
+# status.json no longer starts it (the push list below leaves those two out; the pull-request list keeps them).
+# `studio.py status --check` for those commits now runs once a day on main, with the whole suite. A merged pull
+# request is not checked a second time on main: its head ran this already.
 on:
   push:
     branches: [main]
-    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "scripts/picture_qa.py", "scripts/terminal_loop.py", "scripts/fixtures/terminal_loop/**", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/test_gate_duration.py", "00_Brand/Channel-Setup/tools/gate_upcoming.py", "00_Brand/Channel-Setup/tools/test_gate_upcoming.py", "00_Brand/Channel-Setup/tools/testdata/**", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
+    paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "scripts/picture_qa.py", "scripts/terminal_loop.py", "scripts/fixtures/terminal_loop/**", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/test_gate_duration.py", "00_Brand/Channel-Setup/tools/gate_upcoming.py", "00_Brand/Channel-Setup/tools/test_gate_upcoming.py", "00_Brand/Channel-Setup/tools/testdata/**", ".github/workflows/rules-check.yml"]
+  schedule:
+    - cron: "40 4 * * *"
+  workflow_dispatch:
   pull_request:
     paths: ["AGENTS.md", ".cursor/rules/**", "docs/**", "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md", "scripts/sync_rules.py", "scripts/studio.py", "scripts/test_*.py", "scripts/picture_qa.py", "scripts/terminal_loop.py", "scripts/fixtures/terminal_loop/**", "04_Audio/tools/vo_take.py", "04_Audio/tools/test_vo_take.py", "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "00_Brand/Channel-Setup/tools/test_gate_background.py", "00_Brand/Channel-Setup/tools/test_gate_duration.py", "00_Brand/Channel-Setup/tools/gate_upcoming.py", "00_Brand/Channel-Setup/tools/test_gate_upcoming.py", "00_Brand/Channel-Setup/tools/testdata/**", "02_Video-Projects/*/status.json", "STATUS.md", ".github/workflows/rules-check.yml"]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   check:
+    # A skipped job uses no runner and no minutes.
+    if: ${{ github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#')) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
