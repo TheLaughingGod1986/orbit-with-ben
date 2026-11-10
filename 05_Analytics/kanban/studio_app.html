@@ -590,6 +590,24 @@ p.meta + .seg { margin-top: 12px; }
 .fd-body .technical > summary { min-height: 44px; }
 .fd-body .btns .btn { min-height: 44px; display: flex; align-items: center; justify-content: center; }
 .video-first { margin: 14px 0; }
+/* Channels (Ben, 10 Nov 2026: "show what repos are plugged in ... and the ability that we can just add another").
+   Chips at the foot of the Overview; one card per channel and the steps to add one on #channels. */
+.ch-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ch-chip { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 12px; background: var(--panel); color: inherit; text-decoration: none; }
+.ch-chip b { font-size: 14px; font-weight: 600; }
+.overview-home .ch-card { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.ch-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.ch-head h2 { margin: 0; font-size: 17px; }
+.ch-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+.ch-card h3 { font-size: 12px; font-weight: 700; color: var(--muted); margin: 6px 0 0; }
+.ch-card ul, .ch-steps { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.ch-card li { margin-bottom: 6px; }
+.ch-facts { background: transparent; padding: 0; }
+.ch-facts dd a { color: inherit; }
+.ch-when { color: var(--muted); white-space: nowrap; }
+.ch-steps b { display: inline-block; min-width: 54px; }
+.ch-note { color: var(--muted); }
+.ch-card .technical > summary { min-height: 44px; }
 /* Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon"). The job page leads
    with what the job is doing; the record as the agents wrote it sits under Technical details. */
 .job-page { display: flex; flex-direction: column; gap: 12px; }

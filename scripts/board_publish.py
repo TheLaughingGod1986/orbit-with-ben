@@ -544,6 +544,13 @@ def run_once(a) -> int:
                              for c in channels.all_channels()]
     except Exception as e:  # noqa: BLE001
         log(f"channels not read: {e}")
+    try:  # The Channels section (Ben, 10 Nov 2026): each one's handle, repo, whether the studio can drive it, what
+        # is left to do. The names above stay if this fails, so the filters never lose a channel.
+        import channel_cards
+        board["channels"] = channel_cards.cards()
+        board["channelRoom"] = channel_cards.room()
+    except Exception as e:  # noqa: BLE001
+        log(f"channel cards not read: {e}")
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
         queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
