@@ -212436,10 +212436,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T00:29Z",
+      "eta": "2026-11-10T01:59Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -212448,12 +212448,25 @@
           "at": "2026-11-09T23:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:29Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted)",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
-      "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow."
+      "plain": "Move unused and one-off code out of the live project into the archive folder, so the working code is easier to follow.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:29Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2465",
