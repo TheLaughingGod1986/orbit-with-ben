@@ -187409,6 +187409,11 @@
           "at": "2026-11-10T14:07Z",
           "by": "relay",
           "what": "condition verification queued: J2507"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "acting Chief: condition checked by J2507 (not met: J2033 at step 3 of 5, 0 of 20 clips archived); next check 20:25Z"
         }
       ],
       "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -187427,11 +187432,10 @@
       "hold": {
         "type": "dependency",
         "condition": "J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed",
-        "check_at": "2026-11-10T15:07:23+00:00",
-        "last_recheck": "J2468",
-        "checked_at": "2026-11-10T03:01:32+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2507"
+        "check_at": "2026-11-10T20:25:00+00:00",
+        "last_recheck": "J2507",
+        "checked_at": "2026-11-10T15:03:23+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -216750,34 +216754,51 @@
     },
     {
       "id": "J2513",
-      "title": "Swap the 026 Mon 16 and Wed 18 Shorts to the newest cut Ben has OK'd (on Sat 14 and Mon 16 Nov after 18:00 London)",
+      "title": "Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Swap the two 026 Shorts to the newest cut Ben has OK'd. Chief ruling 10 Nov 15:00Z.\n\nBen OK'd `mon16_cant_see_nearest_star_v05.mp4` (sha256 `5a2a4c2af8fb2148ad0975ed0d3cc88d329b3bd20ed071eb3626ba1d874d14f3`) and `wed18_robot_reach_nearest_star_v06.mp4` (sha256 `80e4c86df51417db71efb9eaef9097669d6201d41396585acafb8ecbacfd936b`) on 10 Nov. The job this one follows may have offered him a fixed v06 and v07. For each Short, check the board's ticks (`/api/checks`) and the queue: if he has OK'd the newer cut, swap that one in; if not, swap in the one he OK'd on 10 Nov. Say in the result which went in and why.\n\n- Mon 16: old id `HZGTovJu_TQ`, Private, scheduled Mon 16 Nov 11:30 London. Do it on Sat 14 Nov after 18:00 London, not before (that is Ben's deadline for the newer cut).\n- Wed 18: old id `cwU_0WWeNZ4`, Private, scheduled Wed 18 Nov 11:30 London. Do it on Mon 16 Nov after 18:00 London, not before.\n\nEach swap, as usual: read back the old id (Private, right publish time, else park); check the new file's sha256; upload as a NEW Private video with the same publish time, copying title, description, tags, cover and Related video (the 026 long `c5AdqQsnnys`); captions en-GB; only then set the old id Private and unscheduled; verify (`verify-swap.ts`); update UPLOADS.json, the Buffer posts and any job that names the old id (J0861 sets Related on these three Shorts); post the read-back on the thread.\n\nNever Public, never delete, no Replace, no force-push. £0. If a swap fails within 12 hours of its air time, leave the original scheduled and park for the Chief.\n",
+      "body": "Swap the 026 Mon 16 Short to the newest cut Ben has OK'd. Chief ruling 10 Nov 15:00Z.\n\nBen OK'd `mon16_cant_see_nearest_star_v05.mp4` (sha256 `5a2a4c2af8fb2148ad0975ed0d3cc88d329b3bd20ed071eb3626ba1d874d14f3`) and `wed18_robot_reach_nearest_star_v06.mp4` (sha256 `80e4c86df51417db71efb9eaef9097669d6201d41396585acafb8ecbacfd936b`) on 10 Nov. The job this one follows may have offered him a fixed v06 and v07. Check the board's ticks (`/api/checks`) and the queue: if he has OK'd the newer cut, swap that one in; if not, swap in the one he OK'd on 10 Nov. Say in the result which went in and why.\n\n- Mon 16: old id `HZGTovJu_TQ`, Private, scheduled Mon 16 Nov 11:30 London. Do it on Sat 14 Nov after 18:00 London, not before (that is Ben's deadline for the newer cut).\n\nEach swap, as usual: read back the old id (Private, right publish time, else park); check the new file's sha256; upload as a NEW Private video with the same publish time, copying title, description, tags, cover and Related video (the 026 long `c5AdqQsnnys`); captions en-GB; only then set the old id Private and unscheduled; verify (`verify-swap.ts`); update UPLOADS.json, the Buffer posts and any job that names the old id (J0861 sets Related on these three Shorts); post the read-back on the thread.\n\nNever Public, never delete, no Replace, no force-push. £0. If a swap fails within 12 hours of its air time, leave the original scheduled and park for the Chief.\n",
       "ref": "",
       "film": "026",
       "stage": "upload",
       "after": "J2512",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-10T15:03Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:01Z",
-      "result": "",
+      "result": "Waiting for: Ben's deadline for the newer cut (Sat 14 Nov 18:00 London), or his OK on it.",
       "history": [
         {
           "at": "2026-11-10T15:01Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "narrowed to the Mon 16 Short (one swap job per Short, so each shows on the board as approved); Wed 18 is J2514"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "held until Sat 14 Nov 18:00 London: the swap takes the newest cut Ben has OK'd by then"
         }
       ],
-      "remaining_action": "Swap the 026 Mon 16 and Wed 18 Shorts to the newest cut Ben has OK'd (on Sat 14 and Mon 16 Nov after 18:00 London)",
-      "due": "2026-11-16T20:00:00Z",
+      "remaining_action": "Swap the Mon 16 Short to the newest cut Ben has OK'd",
+      "due": "2026-11-15T12:00:00Z",
       "kind": "listing",
-      "plain": "Put the two Nearest Star Shorts you approved into their slots",
-      "mini_only": true
+      "plain": "Put the Monday Nearest Star Short you approved into its slot",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Ben's deadline for the newer cut has passed (Sat 14 Nov 18:00 London), or he has OK'd it",
+        "check_at": "2026-11-14T18:05:00+00:00",
+        "checked_at": "2026-11-10T15:03:23+00:00",
+        "checked_by": "claude"
+      }
     },
     {
       "id": "J2514",
@@ -216790,25 +216811,37 @@
       "stage": "upload",
       "after": "J2512",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-10T15:03Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:03Z",
-      "result": "",
+      "result": "Waiting for: Ben's deadline for the newer cut (Mon 16 Nov 18:00 London), or his OK on it.",
       "history": [
         {
           "at": "2026-11-10T15:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T15:03Z",
+          "by": "claude",
+          "what": "held until Mon 16 Nov 18:00 London: the swap takes the newest cut Ben has OK'd by then"
         }
       ],
       "remaining_action": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London)",
       "due": "2026-11-17T12:00:00Z",
       "kind": "listing",
       "plain": "Put the Wednesday Nearest Star Short you approved into its slot",
-      "mini_only": true
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Ben's deadline for the newer cut has passed (Mon 16 Nov 18:00 London), or he has OK'd it",
+        "check_at": "2026-11-16T18:05:00+00:00",
+        "checked_at": "2026-11-10T15:03:23+00:00",
+        "checked_by": "claude"
+      }
     }
   ],
   "focus": [
