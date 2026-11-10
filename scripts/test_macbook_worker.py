@@ -275,8 +275,10 @@ class AllAgents(unittest.TestCase):
     def test_a_job_for_the_minis_claude_code_runs_on_the_macbooks_claude(self):
         self.assertEqual(mw.pick_agent({"kind": "review", "for": "claudecode"}, ["codex", "claude"])[0], "claude")
 
-    def test_a_studio_job_uses_claude_when_the_chain_reaches_the_minis_claude_code(self):
-        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"])[0], "claude")
+    def test_a_studio_job_is_not_run_on_the_macbooks_claude(self):
+        # 9 Nov this picked Claude; on 10 Nov Claude handed two Studio jobs straight back (see StudioJobs below).
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude"]), ("", ""))
+        self.assertEqual(mw.pick_agent({"kind": "studio"}, ["claude", "gemini"])[0], "gemini")
 
     def test_pin_keeps_the_old_single_agent_setting(self):
         with mock.patch.dict(os.environ, {"MACBOOK_AGENT": "codex"}):
@@ -373,7 +375,8 @@ class StudioJobs(unittest.TestCase):
                 return subprocess.CompletedProcess(args, 10, "", "")
             return subprocess.CompletedProcess(args, 0, "", "")
         for have, want in ((["claude"], ""), (["claude", "gemini"], "9223,9222")):
-            with mock.patch.object(mw, "sh", side_effect=fake_sh), mock.patch.object(mw, "push_heartbeat"), \
+            with mock.patch.dict(os.environ), \
+                    mock.patch.object(mw, "sh", side_effect=fake_sh), mock.patch.object(mw, "push_heartbeat"), \
                     mock.patch.object(mw, "cdp_ports_up", return_value=["9223", "9222"]), \
                     mock.patch.object(mw, "installed", return_value=have), mock.patch.object(mw, "usable", side_effect=lambda h: h):
                 self.assertEqual(mw.run_ordinary(), "idle")
