@@ -176,6 +176,16 @@ def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
     return next((c for c in cands if c.is_dir()), cands[0])
 
 
+def studio_port(slug: str) -> str:
+    """The CDP port of the browser signed in to this channel's YouTube Studio ('' if it has none yet)."""
+    return str((get(slug).get("youtube") or {}).get("studio_port") or "")
+
+
+def nas_folder(slug: str) -> str:
+    """The channel's folder name under studio-live on the NAS. A channel that names none uses its slug."""
+    return get(slug).get("nas_folder") or get(slug)["slug"]
+
+
 def checkout(slug: str) -> pathlib.Path | None:
     """Where the channel is checked out on this machine, or None. The home channel's checkout is this repo."""
     if get(slug).get("home"):

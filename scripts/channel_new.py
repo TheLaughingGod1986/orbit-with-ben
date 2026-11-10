@@ -40,6 +40,7 @@ def settings(slug: str, label: str, name: str, handle: str = "", wip: int = 2, o
         "order": order,
         "youtube": {"handle": handle},
         "repo": {"url": "", "env": f"{label}_REPO", "checkouts": [slug]},
+        "nas_folder": slug,
         "title_match": rf"\b{re.escape(label)}\b|{re.escape(name.lower())}",
         "wip": {"limit": wip, "line": f"next_{slug.replace('-', '_')}"},
         "stages": list(studio.STAGES),

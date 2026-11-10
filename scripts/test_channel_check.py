@@ -43,6 +43,14 @@ class Settings(unittest.TestCase):
             self.assertEqual(len(found), 1, field)
             self.assertTrue(found[0].startswith(field + ":"), found[0])
 
+    def test_the_two_optional_settings_are_checked_when_given(self):
+        self.assertEqual(cc.settings_problems(good(youtube={"handle": "@x", "studio_port": "9224"}, nas_folder="deep-sea")), [])
+        self.assertEqual(cc.settings_problems(good(youtube={"handle": "@x"})), [])  # no Studio browser yet
+        found = cc.settings_problems(good(youtube={"studio_port": 9224}))
+        self.assertTrue(found and found[0].startswith("youtube.studio_port:"))
+        found = cc.settings_problems(good(nas_folder="films/deep-sea"))
+        self.assertTrue(found and found[0].startswith("nas_folder:"))
+
     def test_a_true_or_false_is_not_a_wip_limit(self):
         self.assertTrue(cc.settings_problems(good(wip={"limit": True, "line": "next_x"})))
 
@@ -150,6 +158,7 @@ class NewChannel(unittest.TestCase):
         self.assertEqual(c["youtube"], {"handle": "@DeepSea"})
         self.assertEqual(c["picture_route"], "flow_only")  # a new channel starts on the route that cannot bill
         self.assertEqual(c["repo"], {"url": "", "env": "SEA_REPO", "checkouts": ["deep-sea"]})
+        self.assertEqual(c["nas_folder"], "deep-sea")  # its NAS folder is its slug
 
     def test_the_templates_blanks_are_filled_in(self):
         root = cn.create(self.parent, "deep-sea", "SEA", "Deep Sea Stories", registered=REGISTERED)
