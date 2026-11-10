@@ -212535,10 +212535,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T00:33Z",
+      "eta": "2026-11-10T02:03Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -212547,12 +212547,25 @@
           "at": "2026-11-09T23:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T00:33Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first)",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
-      "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back."
+      "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T00:33Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2467",
