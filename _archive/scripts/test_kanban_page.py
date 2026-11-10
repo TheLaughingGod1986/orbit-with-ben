@@ -267,7 +267,10 @@ class TickedCardsLeaveTheBox(unittest.TestCase):
 
 class VenusApproved(unittest.TestCase):
     def test_023_note_is_off_bens_box_and_shipping(self):
-        j = json.loads((PAGE.parent / "film_briefs.json").read_text())["films"].get("OWB:023")
+        briefs_path = PAGE.parent / "film_briefs.json"
+        if not briefs_path.exists():
+            briefs_path = Path(__file__).resolve().parents[2] / "05_Analytics/kanban/film_briefs.json"
+        j = json.loads(briefs_path.read_text())["films"].get("OWB:023")
         # A film's note leaves the board two weeks after it airs. 023 aired 25 Oct 2026 and its note was removed on
         # 10 Nov; this test read it by name and turned main red. Gone or present, 023 puts nothing in Ben's box.
         self.assertEqual((j or {}).get("you", ""), "")
