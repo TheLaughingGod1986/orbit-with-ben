@@ -1,5 +1,5 @@
 {
-  "next_id": 2483,
+  "next_id": 2484,
   "jobs": [
     {
       "id": "J0001",
@@ -213972,6 +213972,35 @@
         }
       ],
       "remaining_action": "Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing)",
+      "mini_only": true
+    },
+    {
+      "id": "J2483",
+      "title": "Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2465 (10 Nov). The safe, in-range library updates are merged: Orbit PR #705 (15 known vulnerabilities down to 7, none high; the upload tooling's production libraries show 0) and History of Science PR #466 (23 down to 11, none critical). What is left needs changes that can break things, so it gets its own job.\n\nLeft over:\n- History of Science `07_Content-Ops`: 4 high and 1 moderate in production libraries, all through `next` 15.5.29 (fix is next 16.x, a major version), plus `prisma` 6.19.3 (fix is 7.x, a major version) and `minimatch` in dev tools.\n- Orbit `07_Content-Ops`: 7 moderate, all dev-only, all `minimatch` 7.0.0 to 11.0.0 through `typescript-eslint` (needs an override to minimatch 11.0.1 or newer).\n\nDo this:\n1. First say where the History of Science Next app actually runs: is it deployed anywhere reachable from the internet (Vercel, a tunnel), or only started by hand on the Mini? Read the repo and `vercel.json`/deploy notes; do not guess. The answer decides how urgent the `next` upgrade is, so put it at the top of the report.\n2. Orbit: add the `minimatch` override, `npm install`, then typecheck, lint and test. Open a PR.\n3. History of Science, on a branch: upgrade `next` to the fixed 16.x and follow its upgrade guide for anything the type check, lint or tests flag. Run typecheck, lint and test on the Mini, where the database tests can run (four tests in `tests/autopublish.test.ts` need DATABASE_URL and cannot run in the cloud). Do not run `npm run build` against the live database: it runs `prisma migrate deploy`.\n4. Prisma 6 to 7 is a separate step: only do it if step 3 is green, on its own commit, and say what its migration guide changes. If it needs a schema or client change you are unsure of, stop and report.\n5. No `npm audit fix --force`. Never commit a `.env` or any key. Run check_all.sh on the History of Science branch. Park both PRs for the Chief with the before and after audit counts.\n\n£0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T04:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T04:00Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit)",
+      "plain": "Finishes the library clean-up: the remaining known weaknesses need bigger upgrades that must be tested on the Mini.",
       "mini_only": true
     }
   ],
