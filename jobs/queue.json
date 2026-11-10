@@ -218817,19 +218817,24 @@
           "at": "2026-11-10T21:56Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Started detached tmux session J2540-gate (logging to ~/_desk/logs/J2540-gate.log and ~/_desk/logs/J2540-results.json); 3/36 running (~4.5s per Short)"
+        },
+        {
+          "at": "2026-11-10T21:59Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Detached J2540-gate run completed (exit 0, 36/36 items); HOS ChbsigHD5_o (18 Nov) and OWB ffYKoNVPoqg (10 Nov ref) fail frame-0 full-bleed check, all other scheduled OWB/HOS Shorts and J2494 re-cuts pass"
         }
       ],
-      "remaining_action": "Finish detached gate run across all scheduled OWB and HOS Shorts and write results table in jobs/reviews/J2540/",
+      "remaining_action": "Write full results table and JSON in jobs/reviews/J2540/ and open PR",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-10T21:56Z",
+        "at": "2026-11-10T21:59Z",
         "by": "gemini",
-        "note": "Started detached tmux session J2540-gate (logging to ~/_desk/logs/J2540-gate.log and ~/_desk/logs/J2540-results.json); 3"
+        "note": "Detached J2540-gate run completed (exit 0, 36/36 items); HOS ChbsigHD5_o (18 Nov) and OWB ffYKoNVPoqg (10 Nov ref) fail "
       }
     },
     {
