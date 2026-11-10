@@ -1,5 +1,5 @@
 {
-  "next_id": 2540,
+  "next_id": 2541,
   "jobs": [
     {
       "id": "J0001",
@@ -218452,6 +218452,37 @@
       "due": "2026-11-11T12:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
+    },
+    {
+      "id": "J2540",
+      "title": "Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "The second half of J2505. It starts when the first half is merged (the new frame-0 full-bleed check in `gate_shorts_open.py`).\n\nRun the opening gate, with the new check, on every scheduled Short of both channels whose export is on the Mini or the NAS. Start it detached (it reads many video files; do not sit inside one wake waiting for it) and check a time-limited `ls` of the NAS first.\n\nWrite one table: video id, air date, pass or fail on the new check, the measured numbers. Put it in `jobs/reviews/<this job id>/` and open a pull request with it.\n\nDo not re-cut anything and do not change anything in Studio. The Chief decides from the table. Three scheduled Shorts were already re-cut today for their first second (J2494): say which rows are the re-cuts. Park for Chief. No real money.\n",
+      "ref": "J2505",
+      "film": "",
+      "stage": "",
+      "after": "J2539",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T20:15Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Check every scheduled Short opens on a picture that fills the screen",
+      "mini_only": true
     }
   ],
   "focus": [
