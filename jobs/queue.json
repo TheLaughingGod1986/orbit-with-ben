@@ -212262,19 +212262,19 @@
       "title": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben, 9 Nov 2026, his own yes: remove the 6 zero-view Orbit With Ben playlists listed in 05_Analytics/PLAYLIST_AUDIT_2026-11.md section 3. Removing a playlist never removes a video. Never press anything that deletes or edits a video itself.\n\nWhere: Orbit Studio (CDP 9223) and History of Science Studio (CDP 9222). Check the channel name in each window first.\n\nStep 1, find what points at the six. At least one is in use: \"Start Here\" (PLI1AApUz3qz8...) is an end-screen element on Saturn 55AEQwvs36g (05_Analytics/live_fixes/2026-10-15.md). For each of the six playlists, check: (a) every public and scheduled long's end screen and cards, (b) the channel Home tab sections (Customisation > Home), (c) video descriptions and pinned comments that link to it. Write the full list to jobs/reviews/<this job id>/PLAYLIST_REFS.md, with the full playlist ids as Studio shows them (the audit shortens them).\n\nStep 2, repoint. Where an end screen, card, Home section or link uses one of the six, swap it for the kept series playlist that holds that film (Real Worlds, or What Would Happen If…). Read each swap back.\n\nStep 3, remove. For each of the six: confirm the title matches the audit, write its video ids into PLAYLIST_REFS.md (so it could be rebuilt), confirm nothing points at it any more, then remove the playlist. If anything still points at it, or the title does not match, keep that playlist and say why.\n\nStep 4, the three kept playlists (Chief's call, all reversible): add the missing films and reorder as the audit lists. Keep each series name (LEARNINGS rule 20) and add the search phrase after it:\n   \"Real Worlds: Solar System, Moons and Alien Planets Explained\"\n   \"What Would Happen If…: Black Holes, Neutron Stars and Extreme Space\"\n   History of Science: \"How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science\"\n\nStep 5, read back both channels' playlist lists and add an \"Applied\" section to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Commit on a branch, open a PR.\n\nDo not change any video's title, thumbnail, privacy or schedule. £0.\n",
+      "body": "Ben, 9 Nov 2026, his own yes: remove the 6 zero-view Orbit With Ben playlists listed in 05_Analytics/PLAYLIST_AUDIT_2026-11.md section 3. Removing a playlist never removes a video. Never press anything that deletes or edits a video itself.\n\nWhere: Orbit Studio (CDP 9223) and History of Science Studio (CDP 9222). Check the channel name in each window first.\n\nStep 1, find what points at the six. At least one is in use: \"Start Here\" (PLI1AApUz3qz8...) is an end-screen element on Saturn 55AEQwvs36g (05_Analytics/live_fixes/2026-10-15.md). For each of the six playlists, check: (a) every public and scheduled long's end screen and cards, (b) the channel Home tab sections (Customisation > Home), (c) video descriptions and pinned comments that link to it. Write the full list to jobs/reviews/<this job id>/PLAYLIST_REFS.md, with the full playlist ids as Studio shows them (the audit shortens them).\n\nStep 2, repoint. Where an end screen, card, Home section or link uses one of the six, swap it for the kept series playlist that holds that film (Real Worlds, or What Would Happen If…). Read each swap back.\n\nStep 3, remove. For each of the six: confirm the title matches the audit, write its video ids into PLAYLIST_REFS.md (so it could be rebuilt), confirm nothing points at it any more, then remove the playlist. If anything still points at it, or the title does not match, keep that playlist and say why.\n\nStep 4, the three kept playlists (Chief's call, all reversible): add the missing films and reorder as the audit lists. Keep each series name (LEARNINGS rule 20) and add the search phrase after it:\n   \"Real Worlds: Solar System, Moons and Alien Planets Explained\"\n   \"What Would Happen If…: Black Holes, Neutron Stars and Extreme Space\"\n   History of Science: \"How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science\"\n\nStep 5, read back both channels' playlist lists and add an \"Applied\" section to 05_Analytics/PLAYLIST_AUDIT_2026-11.md. Commit on a branch, open a PR.\n\nDo not change any video's title, thumbnail, privacy or schedule. £0.\n\n\n10 Nov, acting Chief (Claude): pinned to the Mini (mini_only). Removing a playlist cannot be undone, and the MacBook's Claude Code rightly handed this back twice. Ben's yes on 9 Nov stands.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-10T00:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:28Z",
-      "result": "parked for Chief: J2460 changes YouTube (repoints end screens/cards/Home sections, removes 6 playlists, renames and reorders 3 playlists on both channels). The MacBook worker's launch rule is 'never upload, schedule or change anything on YouTube', and removing playlists cannot be undone, so the MacBook must not do it whatever the brief says. Nothing was touched on YouTube and nothing was written: no PLAYLIST_REFS.md, no branch, no PR. Second time on the MacBook (first time released, CDP 9223/9222 not reachable from this worker). Please run it on the Mini, or pin it there.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T23:28Z",
@@ -212300,20 +212300,18 @@
           "at": "2026-11-10T00:57Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2460 changes YouTube (repoints end screens/cards/Home sections, removes 6 playlists, renames and reorders 3 playlists on both channels). The MacBook worker's launch rule is 'never upload, schedule or change anything on YouTube', and removing playlists cannot be undone, so the MacBook must not do it whatever the brief says. Nothing was touched on YouTube and nothing was written: no PLAYLIST_REFS.md, no branch, no PR. Second time on the MacBook (first time released, CDP 9223/9222 not reachable from this worker). Please run it on the Mini, or pin it there."
+        },
+        {
+          "at": "2026-11-10T01:06Z",
+          "by": "claude",
+          "what": "reopened and pinned to the Mini by acting Chief: the MacBook is never offered this job (OWB PR #694)"
         }
       ],
       "remaining_action": "Playlists: repoint end screens, then remove the 6 zero-view Orbit playlists (Ben's yes, 9 Nov); tidy the 3 kept playlists on both channels",
       "due": "2026-11-12T18:00:00Z",
       "kind": "studio",
       "plain": "Remove six unused Orbit playlists after moving anything that links to them, and tidy the three playlists we keep.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-10T00:23Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "mini_only": true
     },
     {
       "id": "J2461",
@@ -212384,13 +212382,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-09T23:55Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:29Z",
-      "result": "parked for Chief: Rule 26 title pass in 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (PR #690, commit 50ed8df44, £0 read-only): 6 CHANGE (HOS 007 ETynHpIYLeY airs first Thu 12 Nov 18:00Z, OWB 026 c5AdqQsnnys, OWB 027 6bbbvfCx6zY, HOS 099 uAomPaOBrM8, HOS 006 VbPubYd6Fbs, HOS 005 wwcjcFfC-5M) and 4 KEEP (OWB 028 F-jImX5h7ws, OWB 031 G5uMANXHtNU, OWB 029 vP1BbqZ_dnM, OWB 024 rVqgtkBV3jc — optional Rule 26b/d bracketed tails and Description Line 1 updates also drafted for all 4).",
+      "result": "Chief PASS (Claude acting Chief, 10 Nov): the report is merged (PR #690). Approved: HOS 007, OWB 026, OWB 027 and HOS 099 change to the proposed titles; OWB 031 and OWB 029 take the proposed tails; OWB 028 keeps its title and gets the new description line 1. J2470 applies the two scheduled HOS films (007 airs Thu 12 Nov) and J2471 the five scheduled Orbit films. The three live films (HOS 005, OWB 024, HOS 006) are retitled at day 14 if still under 100 impressions: 12, 15 and 19 Nov.",
       "history": [
         {
           "at": "2026-11-09T23:29Z",
@@ -212426,6 +212424,11 @@
           "at": "2026-11-10T00:17Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: Rule 26 title pass in 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md (PR #690, commit 50ed8df44, £0 read-only): 6 CHANGE (HOS 007 ETynHpIYLeY airs first Thu 12 Nov 18:00Z, OWB 026 c5AdqQsnnys, OWB 027 6bbbvfCx6zY, HOS 099 uAomPaOBrM8, HOS 006 VbPubYd6Fbs, HOS 005 wwcjcFfC-5M) and 4 KEEP (OWB 028 F-jImX5h7ws, OWB 031 G5uMANXHtNU, OWB 029 vP1BbqZ_dnM, OWB 024 rVqgtkBV3jc — optional Rule 26b/d bracketed tails and Description Line 1 updates also drafted for all 4)."
+        },
+        {
+          "at": "2026-11-10T01:06Z",
+          "by": "claude",
+          "what": "done: Chief PASS (Claude acting Chief, 10 Nov): the report is merged (PR #690). Approved: HOS 007, OWB 026, OWB 027 and HOS 099 change to the proposed titles; OWB 031 and OWB 029 take the proposed tails; OWB 028 keeps its title and gets the new description line 1. J2470 applies the two scheduled HOS films (007 airs Thu 12 Nov) and J2471 the five scheduled Orbit films. The three live films (HOS 005, OWB 024, HOS 006) are retitled at day 14 if still under 100 impressions: 12, 15 and 19 Nov."
         }
       ],
       "remaining_action": "Committed 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on macbook/J2462 (50ed8df44) and opened PR #690; parking for Chief",
