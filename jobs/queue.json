@@ -1,5 +1,5 @@
 {
-  "next_id": 2510,
+  "next_id": 2511,
   "jobs": [
     {
       "id": "J0001",
@@ -216485,6 +216485,37 @@
       "due": "2026-11-12T18:00:00Z",
       "kind": "studio",
       "plain": "Check the Voyager Short that is actually on YouTube, not the copy on disk",
+      "mini_only": true
+    },
+    {
+      "id": "J2510",
+      "title": "Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2494 (10 Nov 14:15Z). J2494's end-card audit found that two scheduled Mars Shorts still show the raw video id `Js6EQJ8qDi8` under the title on their end cards: `N42gKBbD7tE` (airs Thu 12 Nov 11:30 London) and `bSjWiCbB7pY` (airs Fri 13 Nov 11:30). Ben flagged exactly this on two other Shorts today (\"under the title is a jumble of letters\"). Both are also listed KNOWN in the opening gate table. The bytes on YouTube are not kept locally (J1320), so a fix means a re-cut from what is on disk and a swap. Time is short: do `N42gKBbD7tE` first.\n\nFor each of the two:\n1. Start from the latest render and project on disk for that Short. Remove the raw video id from the end card, as J2494 did for the 026 pair (see `jobs/reviews/J2494/REPORT.md`). Same locked voice, same words, same length unless the gate needs a trim.\n2. While it is open: if the first second fails rule 24 with the picture already on hand, fix it the way J2494 did (open on moving picture, first cut by 3.0 s). Do not make or buy new picture. If it cannot pass with what is on hand, say so and still deliver the end-card fix.\n3. Level to the 26 Oct gate (about -14.2 LUFS / -2.2 dBTP) if the mix is off it.\n4. Run every Shorts gate and give the lines. Then watch and listen to the whole cut yourself, with sound, and read every piece of text on screen. Say KEEP or FIX.\n5. On KEEP: copy to the OWB UAT watch folder and NAS, and send Ben's watch card with `jobs.py awaits` (what changed in plain words; \"if not: the original airs as scheduled\"; due Wed 11 Nov 18:00 London for `N42gKBbD7tE`, Thu 12 Nov 18:00 for `bSjWiCbB7pY`).\n\nNothing is uploaded and nothing changes in Studio in this job. The swap (private upload in the same slot, the old one unscheduled and kept, the register updated) is a separate job after Ben's OK. If the 12 Nov cut cannot be ready for Ben by Wed 11 Nov 15:00 London, say so on the thread at once: the original then airs as it is.\n\n£0. No generation.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T14:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T14:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Two Mars Shorts (12 and 13 Nov) still show a raw video id on the end card: re-cut from disk, gate, watch, and send Ben's watch card",
+      "due": "2026-11-11T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Remove the stray letters from the end of two Mars Shorts before they air",
       "mini_only": true
     }
   ],
