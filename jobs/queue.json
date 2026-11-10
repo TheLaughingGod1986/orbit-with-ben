@@ -1,5 +1,5 @@
 {
-  "next_id": 2496,
+  "next_id": 2497,
   "jobs": [
     {
       "id": "J0001",
@@ -215545,6 +215545,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2496",
+      "title": "Mini SSD check for Ben: is MiniWork connected, reading and writing, and is the studio using it (time-limited, read-only bar one test file)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben, 10 Nov about 11:10Z: \"Can you check the SSD is working, it's connected and I can see it.\" He can see it in Finder on the Mini. This job says, in plain words, whether it is really working and whether the studio is using it. Read-only apart from one small test file of its own. £0. About 10 minutes.\n\nThe SSD is the 250 GB SanDisk, APFS volume \"MiniWork\", mounted at /Volumes/MiniWork. Opens on it hung from 9 Nov evening until about 09:36Z today (macOS permission approvals were stuck; cleared when sandboxd restarted).\n\nPut a time limit on every command (15 s; `perl -e 'alarm shift; exec @ARGV' 15 <cmd>` works where `timeout` is missing). If a command hits its limit, that is a finding: write it down and go on. Never wait on a hung read.\n\n1. Connected: `mount | grep -i miniwork`, `diskutil info /Volumes/MiniWork` (device, Protocol, File System, Volume Total and Free, Read-Only, SMART Status), `system_profiler SPUSBDataType` or `SPThunderboltDataType` for the drive's line (which port, what speed it negotiated).\n2. Its own volume, not a folder on the internal disk: `stat -f %d /Volumes/MiniWork` differs from `stat -f %d ~`.\n3. Reads and writes: `ls /Volumes/MiniWork` and `ls /Volumes/MiniWork/scratch`. Then write a 256 MB test file to `/Volumes/MiniWork/scratch/.ssd-check-<job id>` with dd, time it, read it back, time it, compare sha256, remove that one file. Give the MB/s for write and read.\n4. Space: `df -h /Volumes/MiniWork`, and `du -sh` of each top-level folder on it (each under the time limit).\n5. Is the studio using it: the last 30 lines of `~/Library/Logs/chief-relay.log` that mention SSD, scratch or MiniWork; the time of the last \"SSD check got no answer\"; what TMPDIR and STUDIO_SCRATCH the relay gave its latest run; whether `~/_desk/worktrees` and `~/_desk/cache` point at the SSD.\n6. Errors: `log show --last 12h --predicate 'eventMessage CONTAINS[c] \"MiniWork\" OR eventMessage CONTAINS[c] \"disk4\" OR eventMessage CONTAINS[c] \"ejected\"' --style compact | tail -40` (60 s limit). Look for unplugs, I/O errors, \"disk not ejected properly\".\n7. Will it survive a restart: is it mounted at login without anyone clicking (it is APFS; say whether it is encrypted and would ask for a password).\n\nReport on the thread for Ben in plain words, five lines at most: connected (yes/no, which port and speed), working (read and write speed), free space, is the studio using it, anything wrong. Then the numbers underneath for the record. If anything hangs or errors, say exactly what and stop there; do not unmount, repair, erase or reformat anything.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T11:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T11:11Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mini SSD check for Ben: is MiniWork connected, reading and writing, and is the studio using it (time-limited, read-only bar one test file)",
+      "due": "2026-11-10T12:00:00Z",
+      "kind": "qa",
+      "plain": "Check the Mini's SSD is connected, reads and writes at a sensible speed, and is being used",
+      "mini_only": true
     }
   ],
   "focus": [

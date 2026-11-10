@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2494 | mini | open | – | – | 026 edit · assembly · Scheduled Orbit Shorts: re-cut the first second of the four that fail rule 24 (Pluto 14 Nov, 026 nearest star 16 Nov, Voyager 17 Nov, 026 75,000 years 18 Nov), gate, Ben's watch |  |
 | J2495 | macbook | claimed | macbook | 2026-11-10T13:10Z | review · History of Science open pull requests: a decision table for the 27 that are left (close, carry or review), nothing merged or closed |  |
+| J2496 | mini | open | – | – | qa · Mini SSD check for Ben: is MiniWork connected, reading and writing, and is the studio using it (time-limited, read-only bar one test file) |  |
 
 Recently finished:
 
