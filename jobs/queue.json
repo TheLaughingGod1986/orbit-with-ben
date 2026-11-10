@@ -215639,20 +215639,25 @@
           "at": "2026-11-10T11:42Z",
           "by": "gemini",
           "what": "step 4 of 7 done: Steps 3-4 done: F_NOCACHE 256 MiB write 39.6 MB/s, read 39.6 MB/s; df shows 215 GiB (230.5 GB) free of 233 GiB (249.8 GB) (desk 15G, scratch 1.6G, films 0B); last 'SSD check got no answer' at 2026-11-10 09:27:21"
+        },
+        {
+          "at": "2026-11-10T11:45Z",
+          "by": "gemini",
+          "what": "step 6 of 7 done: Steps 5-6 done: TMPDIR=/Volumes/MiniWork/scratch/, STUDIO_SCRATCH=/Volumes/MiniWork/scratch, ~/_desk/{worktrees,cache,scratch,renders} symlinked to MiniWork; APFS unencrypted (FileVault No), auto-mounts on restart"
         }
       ],
-      "remaining_action": "Check macOS unified logs for MiniWork/disk/ejected errors (last 12h) and APFS restart auto-mount settings",
+      "remaining_action": "Post 5-line plain-English summary and full numbers for Ben on OWB thread, then mark J2496 done",
       "due": "2026-11-10T12:00:00Z",
       "kind": "qa",
       "plain": "Check the Mini's SSD is connected, reads and writes at a sensible speed, and is being used",
       "mini_only": true,
       "urgent": 5,
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 7,
-        "at": "2026-11-10T11:42Z",
+        "at": "2026-11-10T11:45Z",
         "by": "gemini",
-        "note": "Steps 3-4 done: F_NOCACHE 256 MiB write 39.6 MB/s, read 39.6 MB/s; df shows 215 GiB (230.5 GB) free of 233 GiB (249.8 GB"
+        "note": "Steps 5-6 done: TMPDIR=/Volumes/MiniWork/scratch/, STUDIO_SCRATCH=/Volumes/MiniWork/scratch, ~/_desk/{worktrees,cache,sc"
       }
     }
   ],
