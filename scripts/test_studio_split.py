@@ -144,6 +144,33 @@ class WholeRun(unittest.TestCase):
                "tests": "run", "layout": {"studio": 10}}
         self.assertIn("PASS. Nothing stops the move.", split.report(res))
 
+    def test_the_daily_run_records_itself_through_the_clean_main_transaction(self):
+        import studio
+        res = {"at": "2026-11-11T05:00Z", "commit": "abc", "clean": True, "left": 3, "counts": {"names": 3},
+               "groups": [], "tests": "run", "layout": {}}
+        with tempfile.TemporaryDirectory() as t:
+            out, hist = Path(t) / "r" / "latest.json", Path(t) / "r" / "history.jsonl"
+            seen = {}
+
+            def transaction(write, message, tries=3):
+                seen["message"] = message
+                seen["paths"] = write()[2]
+                return None, None
+            with mock.patch.object(studio, "git_transaction", transaction):
+                self.assertIsNone(split.save(res, out, hist, git=True))
+            self.assertEqual(seen["message"], "dry run of the move: 3 left on 2026-11-11")
+            self.assertEqual(seen["paths"], [out.resolve(), hist.resolve()])
+            self.assertEqual(json.loads(out.read_text())["left"], 3)
+            self.assertEqual(json.loads(hist.read_text())["day"], "2026-11-11")
+            # a refusal (not on a clean main) comes back as words and nothing is claimed as recorded
+            with mock.patch.object(studio, "git_transaction", lambda w, m, tries=3: (None, "requires clean main")):
+                self.assertEqual(split.save(res, out, hist, git=True), "requires clean main")
+            self.assertIn("nothing to commit", split.save(res, git=True))
+            # without --git it only writes the files
+            plain = Path(t) / "plain.jsonl"
+            self.assertIsNone(split.save(res, None, plain))
+            self.assertTrue(plain.is_file())
+
     def test_nothing_to_rehearse_once_no_channel_lives_here(self):
         with mock.patch.object(split, "resident", lambda root: None):
             self.assertRaises(SystemExit, split.check, ROOT, None, False)

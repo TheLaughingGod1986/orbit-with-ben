@@ -4,6 +4,8 @@
     python3 scripts/studio_split.py                 build the layout in a temp folder, print what still stops the move
     python3 scripts/studio_split.py --json out.json the same as a file (one number: `left`)
     python3 scripts/studio_split.py --record FILE   also add today's result to a history file (one line a day)
+    python3 scripts/studio_split.py --json jobs/reviews/studio_split/latest.json \\
+            --record jobs/reviews/studio_split/history.jsonl --git      the daily run: record it on main and push
     python3 scripts/studio_split.py --streak FILE   how many days in a row the dry run has passed
     python3 scripts/studio_split.py --keep DIR      build the layout in DIR and leave it there to look at
 
@@ -391,6 +393,29 @@ def streak(path: pathlib.Path, today: dt.date | None = None) -> int:
         day -= dt.timedelta(days=1)
 
 
+def save(res: dict, json_path=None, history=None, git: bool = False) -> str | None:
+    """Write the result (`json_path`) and the day's line (`history`). With `git`, do it on a clean main and push, so
+    the count of days in a row outlives the machine that ran it. Returns what went wrong, or None."""
+    def write() -> list:
+        paths = []
+        if json_path:
+            json_path.parent.mkdir(parents=True, exist_ok=True)
+            json_path.write_text(json.dumps(res, indent=2) + "\n")
+            paths.append(json_path.resolve())
+        if history:
+            record(history, res)
+            paths.append(history.resolve())
+        return paths
+    if not git:
+        write()
+        return None
+    if not (json_path or history):
+        return "--git needs --record or --json: there is nothing to commit"
+    import studio
+    return studio.git_transaction(lambda: (None, None, write()),
+                                  f"dry run of the move: {res['left']} left on {res['at'][:10]}")[1]
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--json", type=pathlib.Path, help="write the result here as JSON")
@@ -398,6 +423,8 @@ def main(argv=None) -> int:
     ap.add_argument("--streak", type=pathlib.Path, help="print the days in a row the dry run has passed, and stop")
     ap.add_argument("--keep", type=pathlib.Path, help="build the layout here and leave it (the folder must not exist)")
     ap.add_argument("--no-tests", action="store_true", help="skip running the tests in the new layout")
+    ap.add_argument("--git", action="store_true",
+                    help="commit --json and --record on a clean main and push (the daily run)")
     a = ap.parse_args(argv)
     if a.streak:
         print(streak(a.streak))
@@ -407,11 +434,10 @@ def main(argv=None) -> int:
         return 2
     res = check(ROOT, a.keep, tests=not a.no_tests)
     print(report(res))
-    if a.json:
-        a.json.parent.mkdir(parents=True, exist_ok=True)
-        a.json.write_text(json.dumps(res, indent=2) + "\n")
-    if a.record:
-        record(a.record, res)
+    err = save(res, a.json, a.record, a.git)
+    if err:
+        print(f"not recorded: {err}", file=sys.stderr)
+        return 2
     return 0 if res["left"] == 0 else 1
 
 
