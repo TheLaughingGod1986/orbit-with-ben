@@ -218668,13 +218668,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T23:29Z",
-      "eta": "2026-11-11T00:29Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:52Z",
-      "result": "",
+      "result": "parked for Chief: work done and read back 10 Nov 23:37Z. HOS 007 ETynHpIYLeY now titled 'How Was the First Vaccine Made? (And Why It's Named After a Cow)'; old unstarted test deleted via Edit title; new title-and-thumbnail test T029 set (A: new title + thumbnail A; B: 'Why Vaccines Are Named After a Cow' + thumbnail B), Studio shows Ineligible until public. Private, publishAt 2026-11-12T18:00Z, description and 8 tags unchanged. Records in PR #777 (jobs/reviews/J2536/); needs Chief review and merge. Limits: no API read before the change; thumbnail A not re-uploaded (Studio kept the video's own).",
       "history": [
         {
           "at": "2026-11-10T19:52Z",
@@ -218745,6 +218745,11 @@
           "at": "2026-11-10T23:38Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: Records, ledger row T029 and pull request 777 are up"
+        },
+        {
+          "at": "2026-11-10T23:39Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: work done and read back 10 Nov 23:37Z. HOS 007 ETynHpIYLeY now titled 'How Was the First Vaccine Made? (And Why It's Named After a Cow)'; old unstarted test deleted via Edit title; new title-and-thumbnail test T029 set (A: new title + thumbnail A; B: 'Why Vaccines Are Named After a Cow' + thumbnail B), Studio shows Ineligible until public. Private, publishAt 2026-11-12T18:00Z, description and 8 tags unchanged. Records in PR #777 (jobs/reviews/J2536/); needs Chief review and merge. Limits: no API read before the change; thumbnail A not re-uploaded (Studio kept the video's own)."
         }
       ],
       "remaining_action": "Chief to check the records and merge pull request 777",
