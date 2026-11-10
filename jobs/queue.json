@@ -212951,13 +212951,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-10T01:37Z",
-      "eta": "2026-11-10T02:37Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T00:58Z",
-      "result": "",
+      "result": "parked for Chief: HOS 099 uAomPaOBrM8 done 10 Nov 01:44Z, read back from API and Studio: title 'Experiments That Changed the World (Blood, Germs and Atoms)', line 1 'Six experiments that changed the world: how did we prove how blood circulates, what trees are made of, and what hides in germs, X-rays and atoms?', Scheduled, private, 2026-12-10T18:00:00Z, rest of description and tags unchanged, no Test and Compare. HOS 007 ETynHpIYLeY NOT changed (airs Thu 12 Nov 18:00 London): Studio shows no plain title field, only 'A/B testing titles, Ineligible, Why Vaccines Are Named After a Cow / How Was the First Vaccine Made?, Edit title' (J0959 test); still private, 2026-11-12T18:00:00Z, old line 1. Chief call needed: put the approved title in as title A of the test, remove the test, or air on the test as set. PR https://github.com/TheLaughingGod1986/history-of-science/pull/463 (check_all passes). Still owed: the rule 26 rows in orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (no rule 26 section there yet; row text is in the 099 production-status). GBP 0.",
       "history": [
         {
           "at": "2026-11-10T00:58Z",
@@ -213018,6 +213018,11 @@
           "at": "2026-11-10T01:47Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: 099 records written and check_all passes; PR history-of-science#463 open. 007 untouched."
+        },
+        {
+          "at": "2026-11-10T01:47Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: HOS 099 uAomPaOBrM8 done 10 Nov 01:44Z, read back from API and Studio: title 'Experiments That Changed the World (Blood, Germs and Atoms)', line 1 'Six experiments that changed the world: how did we prove how blood circulates, what trees are made of, and what hides in germs, X-rays and atoms?', Scheduled, private, 2026-12-10T18:00:00Z, rest of description and tags unchanged, no Test and Compare. HOS 007 ETynHpIYLeY NOT changed (airs Thu 12 Nov 18:00 London): Studio shows no plain title field, only 'A/B testing titles, Ineligible, Why Vaccines Are Named After a Cow / How Was the First Vaccine Made?, Edit title' (J0959 test); still private, 2026-11-12T18:00:00Z, old line 1. Chief call needed: put the approved title in as title A of the test, remove the test, or air on the test as set. PR https://github.com/TheLaughingGod1986/history-of-science/pull/463 (check_all passes). Still owed: the rule 26 rows in orbit-with-ben 05_Analytics/tests/STUDIO_TESTS.md (no rule 26 section there yet; row text is in the 099 production-status). GBP 0."
         }
       ],
       "remaining_action": "Chief decides how HOS 007 takes the approved title while its title test is set, and reviews PR 463",
