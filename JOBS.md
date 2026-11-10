@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2478 | mini | open | – | – | for claudecode · assembly · `mini-claude-opus-5-5` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
-| J2494 | mini | open | – | – | 026 edit · assembly · Scheduled Orbit Shorts: re-cut the first second of the four that fail rule 24 (Pluto 14 Nov, 026 nearest star 16 Nov, Voyager 17 Nov, 026 75,000 years 18 Nov), gate, Ben's watch |  |
+| J2494 | mini | claimed | gemini | 2026-11-10T14:21Z | 026 edit · assembly · Scheduled Orbit Shorts: re-cut the first second of the four that fail rule 24 (Pluto 14 Nov, 026 nearest star 16 Nov, Voyager 17 Nov, 026 75,000 years 18 Nov), gate, Ben's watch |  |
 | J2495 | cloud | open | – | – | review · History of Science open pull requests: a decision table for the 27 that are left (close, carry or review), nothing merged or closed |  |
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
 
