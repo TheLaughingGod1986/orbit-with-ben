@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2494, J2034, J2037, J2040, J2230, J2504.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2494, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -89,12 +89,18 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2500 | mini | open | – | – | qa · Mini SSD re-check for Ben: is MiniWork now on a fast link (it was USB 2.0 speed this morning), read and write speed, any unplug since 09:47Z |  |
 | J2502 | cloud | open | – | – | review · History of Science: carry the records and files from the 11 pull requests still open into one new pull request (J2495 ruling), ready for the Chief to merge |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
-| J2504 | mini | claimed | claudecode | 2026-11-10T16:00Z | studio · Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short |  |
 | J2505 | mini | open | – | – | review · Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short |  |
 | J2506 | cloud | open | – | – | review · Tracker page: a First day panel showing each video's first-day check (verdict, what is different, what was done) |  |
 
 Recently finished:
 
+- J2504 done: Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short (Studio (CDP 9223), 10 Nov, before read 14:02Z, after read 14:05-14:06Z, each saved and re-read from a fresh page load.
+iyvWYFP_ETA: Related video None -> Js6EQJ8qDi8 "Could a Robot Survive on Mars? (One Lasted 14 Years)", saved 14:03Z. Still Public; tags and title unchanged.
+B1z2dv7m7Vk: Related video None -> Js6EQJ8qDi8, saved 14:04Z. Still Scheduled; nothing else changed.
+N42gKBbD7tE: Related video was already the Mars long (before and after the same; that title belongs only to Js6EQJ8qDi8 in the picker). No change made, nothing saved.
+bSjWiCbB7pY: Related video None -> Js6EQJ8qDi8, saved 14:04Z. Still Scheduled; nothing else changed.
+ffYKoNVPoqg: tags astronomy, space, titan -> what would standing on titan feel like, standing on titan, titan surface pressure, titan atmosphere, saturn moon titan, titan, space, astronomy; video language English (United States) -> English (United Kingdom); saved 14:05Z. Related video still None; title, description and Public unchanged.
+launch_check note recorded for ffYKoNVPoqg. No sign-in prompt. Not done here: nothing outside the brief. Seen, not changed: video language is unset ("Select") on iyvWYFP_ETA, B1z2dv7m7Vk and bSjWiCbB7pY, and English (United States) on N42gKBbD7tE. Evidence (before.json, after.json, screenshots): ~/_desk/J2504 on the Mini.)
 - J2501 done: Today's Orbit Short ffYKoNVPoqg (Titan) has 4 views after 77 minutes: read-only Studio check for anything technically wrong, side by side with yesterday's Mars Short (nothing is technically wrong
 PR #738 (jobs/reviews/J2501/REVIEW.md).
 1. Side-by-side Studio Details & Content (read 2026-11-10T13:18Z–13:26Z UTC):
@@ -119,4 +125,3 @@ PR #738 (jobs/reviews/J2501/REVIEW.md).
 - J2491 done: Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722 (done)
 - J2490 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (16 OWB + 6 HOS longs (plus 80 OWB + 28 HOS Shorts, 130/130 videos, 0 skipped, PR #721 / commit 8be571712); CTR hits vs 4%: OWB Why You Can't Stand On Jupiter (-jmMROGoZCM) 5.2% (58 imp, 5 views, 9.3% avg viewed); HOS The Tied Arm That Proved Your Blood Circulates (wwcjcFfC-5M) 21.4% (14 imp, 5 views, 9.2% avg viewed) and How Did We Discover Germs? (_C92tIJCk8A) 6.8% (44 imp, 7 views, 48.1% avg viewed))
 - J2489 done: Chief: reopen J1198 after J2488 KEEP on fixed 023 Venus thumbnail B (465°C) (Done by acting Chief, 10 Nov: J1198's hold released and the job reopened with the J2488 KEEP evidence.)
-- J2488 done: Design review: fixed 023 Venus thumbnail B (465°C) after J2487 before any test is armed (KEEP (OWB PR #720, macbook/J2488, jobs/reviews/J2488/REVIEW.md, reviewed on Gemini 4 Argon High): Fixed 023 Venus (VBaYRPp85Sw) Test & Compare B thumbnail '465°C' (venus_tc_B_465c_VBaYRPp85Sw.jpg, 1280x720, 233,366 bytes, SHA256 c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b) passes all checks. (1) §2.B rubric: HOOK PASS ('465°C'), BAND PASS (top-left sky band [68,34,462,138], 86px=11.94% cap height, off lander & clear of bottom-right duration corner), GRADE PASS (thumb_preview.py long --score PASS saturation=183.3 near_black=24%), PHONE PASS at 168x94 & 360x202. (2) Saturation & Grade: 183.3/255 mean HSV sat (1.97% float / 4.53% uint8 at S>=250, 2.74% outside text box, down from 59.4%), near_black=24% (<=30%), natural beside channel thumbs (139-186.5) and Venus neighbours (Cool Worlds 119.2, Astrum 208.0). (3) Physical accuracy (465°C < 525°C Draper point): lower hull in natural dark cast shadow (0.09% R>=245 vs 31.4%), no red ground pool, no glowing basalt cracks (0.0% R>=245), warm amber-orange sky cast only. (4) Provenance verified in META.json (venus_surface_465c_lander_plate.jpg, SHA256 3374c505401ac19f3bbe902a2d5298fc0069ca911d46a4acdd90218c96892bbc, C2PA verified, £0). (5) No Orbit, no extra words, clear bottom-right corner. SHA256 verified against SHA256.txt and both NAS mirrors. Queued Chief task J2489 to release J1198's verified hold ('Only the elected Chief may release a verified hold'). Touch nothing in Studio. £0.)
