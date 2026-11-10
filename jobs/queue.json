@@ -177492,9 +177492,14 @@
           "at": "2026-11-10T16:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T16:10Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Checked J2033-batch1.done=1: 0-credit still 10_how_high_t1.png timed out after 300s (0 new img srcs, 0 credits spent); inspecting Flow page, reset/carryover text, and submit_create"
         }
       ],
-      "remaining_action": "Check ~/_desk/logs/J2033-batch1.done (tmux hos009-tranche2, log ~/_desk/logs/J2033-batch1.log, pid 52101); when batch 1 finishes, run batches 2-5 ALSO, read-only, while the Flow panel is open: write down exactly what it says about the plan's reset (the date and time, and whether unused credits carry over or are lost). Ben asked about credits on 10 Nov.",
+      "remaining_action": "Inspect Flow page & reset/carryover terms, diagnose 10_how_high_t1.png 0-credit still timeout, and proceed safely or stop per Chief rules",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177511,9 +177516,9 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-10T11:57Z",
+        "at": "2026-11-10T16:10Z",
         "by": "gemini",
-        "note": "All 3 preflight checks PASS (10s NAS ls, style refs sha256 verified, read-only Still+Video Flow check 14890 credits 0 su"
+        "note": "Checked J2033-batch1.done=1: 0-credit still 10_how_high_t1.png timed out after 300s (0 new img srcs, 0 credits spent); i"
       }
     },
     {
