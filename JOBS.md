@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2524 | cloud | open | – | – | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |
 | J2525 | cloud | open | – | – | review · Decoupling: video_tracker.py asks channels.py instead of naming a channel (30 + 7 lines to 0) |  |
 | J2526 | cloud | open | – | – | review · Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0) |  |
+| J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
 
 Recently finished:
 

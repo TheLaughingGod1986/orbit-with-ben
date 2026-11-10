@@ -1,5 +1,5 @@
 {
-  "next_id": 2527,
+  "next_id": 2528,
   "jobs": [
     {
       "id": "J0001",
@@ -217583,6 +217583,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the MacBook's worker work for any channel, not only our two"
+    },
+    {
+      "id": "J2527",
+      "title": "Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 10 Nov 2026: \"this system will read the individual channel's rules and guidance\". docs/MULTI_CHANNEL_PLAN.md decision 4: `AGENTS.md` mixes the studio's rules (the Ben gate, the Never list, sign-offs, who does what, the queue and the relay) with Orbit With Ben's own style rules (teach on screen, polish, packaging, titles, voice). A channel can add a rule and can never remove a studio rule.\n\n1. Go through `AGENTS.md` section by section and mark each rule studio or channel. Write the table in `docs/RULES_SPLIT.md` first, so the split can be read before anything moves.\n2. Move Orbit With Ben's own rules into `studio/RULES.md` at this repo's root (the file `scripts/channel_check.py` already asks for), keeping every quote of Ben and every date. `AGENTS.md` keeps the studio rules and says where a channel's rules are read from.\n3. `scripts/sync_rules.py` and the rule copies under `.cursor/rules/` and `STUDIO_PLAYBOOK.md` keep working: extend them to read both files, with tests. `python3 scripts/sync_rules.py --check` and `python3 scripts/channel_check.py --all` pass.\n4. Every agent start-up text that says \"read AGENTS.md\" also names the channel's rules file for the job's channel (`jobs.py show`, the relay's prompt, the MacBook worker's prompt): list the places in the pull request; change the ones outside the five live scripts here and queue the rest.\n5. Say in the pull request what History of Science's own `studio/RULES.md` should hold, for the job that writes it there.\n\nNo rule is dropped or reworded. Through a pull request; this changes the rule book, so the Chief reads the whole diff before merging. GBP 0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T17:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T17:41Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md)",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Split the rule book: the studio's rules in one place, each channel's own rules in its own"
     }
   ],
   "focus": [
