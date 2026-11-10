@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2516 | cloud | open | – | – | review · Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one |  |
 | J2517 | mini | open | – | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2518 | any | blocked | macbook | – | review · Verify condition for J2033 |  |
+| J2519 | mini | open | – | – | listing · Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept |  |
 
 Recently finished:
 

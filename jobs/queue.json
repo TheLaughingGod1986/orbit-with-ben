@@ -1,5 +1,5 @@
 {
-  "next_id": 2519,
+  "next_id": 2520,
   "jobs": [
     {
       "id": "J0001",
@@ -217239,6 +217239,37 @@
         "by": "macbook",
         "note": "HOS PR 477 merged 16:29Z with 0 reviews; no Chief ruling found"
       }
+    },
+    {
+      "id": "J2519",
+      "title": "Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben OK'd the re-cut Mars wind Short on the board at 16:21Z on 10 Nov (tick OWB-J2510.1, v05). Chief ruling 10 Nov 16:27Z: KEEP (pull request 745: gates, picture QA and the agent viewing all pass). Swap it in.\n\nOld video: `N42gKBbD7tE` \"How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?\", Private, scheduled Thu 12 Nov 11:30 London.\nNew file: `thu12_length_test_dust_v05.mp4`, sha256 `abb3c33e70c11fddd2455587b7685b1da7ffc2883fbbe125e715f38549d6fb1b`, 54.63 s. Records: `jobs/reviews/J2510/REPORT.md`. Watch copy: `OWB UAT/025_mars_shorts_recut_J2510/`.\n\n1. Read back the old id: privacy, publish time, title, description, tags, cover, language, Related video (it should be the Mars long `Js6EQJ8qDi8`). It should be Private and scheduled for 12 Nov 11:30 London. If not, park for the Chief.\n2. Check the new file's sha256. Upload it as a NEW Private video with the same publish time. Copy the title, description, tags, cover and Related video from the old id. Language en-GB. Captions en-GB from the v05 words.\n3. Only after step 2 reads back Private with the right publish time: set the old id to Private and unscheduled. Nothing is deleted. No Replace.\n4. Verify the swap (`verify-swap.ts`), update `00_Brand/Channel-Setup/social/UPLOADS.json` (new entry with `supersedes`, old entry `supersededBy` and `unscheduledAt`), the Buffer posts for that slot, and any queued job that names the old id (J0124 names the Mars Shorts).\n5. Post the read-back on the thread.\n\nDone by Wed 11 Nov 18:00 London. If it has not read back by Thu 12 Nov 09:00 London, leave the original scheduled and park for the Chief. Never Public, never delete, no force-push. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T16:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T16:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap the Mars wind Short N42gKBbD7tE (Thu 12 Nov) to the re-cut Ben OK'd, v05: Private upload in the same slot, old one unscheduled and kept",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "listing",
+      "plain": "Put the Mars wind Short you approved into its Thursday slot",
+      "mini_only": true
     }
   ],
   "focus": [
