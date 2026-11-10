@@ -217138,10 +217138,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T16:32Z",
+      "eta": "2026-11-10T18:32Z",
       "created_by": "relay",
       "created_at": "2026-11-10T16:29Z",
       "result": "",
@@ -217150,13 +217150,26 @@
           "at": "2026-11-10T16:29Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T16:32Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief review/merge of HOS PR #477 before re-running batch 1",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-10T17:29:13+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T16:32Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
