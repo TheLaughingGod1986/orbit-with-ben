@@ -1,5 +1,5 @@
 {
-  "next_id": 2482,
+  "next_id": 2483,
   "jobs": [
     {
       "id": "J0001",
@@ -213904,6 +213904,34 @@
       "remaining_action": "HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief",
       "due": "2026-11-12T00:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J2482",
+      "title": "Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2033 reported on 10 Nov that the NAS mount on the Mini, `/Volumes/data` (NFS), was hung: a process sat in the kernel in `__open` on it. J2446's Gemini run also hit its 25-minute cap that night. Find out whether the mount is healthy. Read-only.\n\nOn the Mini, each probe with a time limit so nothing here can hang (for example `perl -e 'alarm 10; exec @ARGV' ls /Volumes/data`):\n1. `mount | grep -i /Volumes/data` and `nfsstat -m 2>/dev/null | head -20`: how it is mounted, and with which options.\n2. Time-limited `ls /Volumes/data`, `ls /Volumes/data/studio-live`, `ls /Volumes/data/studio-live/orbit-with-ben | head`, and `stat` on one known file. Say which answered and how long each took.\n3. `ps -axo pid,etime,stat,command | grep -v grep | grep -E \" U| D\"` and `ps -axo pid,etime,command | grep -i -E \"nas_offload|rsync|mount_nfs\"`: any process stuck in an uninterruptible wait, and for how long.\n4. `ping -c 3` the NAS address from the mount line, and `showmount -e <that address>` with a time limit.\n5. The last 30 lines of `~/Library/Logs/chief-relay.log` that mention the NAS, offload or a timeout.\n\nReport: healthy, slow, or hung, and since when. If it is hung and a remount would fix it, write the exact commands and say whether they need sudo or a password, but do not run them: a forced unmount while something is writing can damage that write, and a password is Ben's. Do not delete or move anything on the NAS. Do not touch Tailscale.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T03:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing)",
+      "mini_only": true
     }
   ],
   "focus": [
