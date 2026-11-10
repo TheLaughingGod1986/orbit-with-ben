@@ -353,6 +353,20 @@ class HandBack(unittest.TestCase):
             jobs.do_handback(job, "relay", "", at)
 
 
+class MiniOnlyPin(unittest.TestCase):
+    """The Chief can pin a Studio job to the Mini (10 Nov 2026: removing playlists cannot be undone)."""
+
+    def test_a_pinned_job_is_never_the_macbooks(self):
+        job = {"id": "J9", "needs": "mini", "kind": "studio", "repo": "owb", "title": "Studio: remove six playlists",
+               "body": "In Orbit Studio, remove the playlists."}
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertTrue(jobs.macbook_studio_ok(job, job["title"] + " " + job["body"]))
+            self.assertTrue(jobs.macbook_portable(job))
+            pinned = dict(job, mini_only=True)
+            self.assertFalse(jobs.macbook_studio_ok(pinned, job["title"] + " " + job["body"]))
+            self.assertFalse(jobs.macbook_portable(pinned))
+
+
 if __name__ == "__main__":
     unittest.main()
 

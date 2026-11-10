@@ -103,7 +103,11 @@ The job is already claimed for you: {job}
 
 This is Ben's own laptop, not the Mini:
 - never spend money or credit beyond the written rules, never sign in to anything, never print secrets;
-- never upload, schedule or change anything on YouTube, and never delete anything on the NAS;
+- never upload a video, change a video's privacy or schedule, or delete a video; never delete anything on the NAS;
+- change something on YouTube only when this job is a YouTube Studio job the Chief routed to this Mac (Ben, 9 Nov
+  2026: he signed both channels into Studio here for these). Then do exactly what the brief names, in the Studio
+  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch
+  nothing else on YouTube;
 - the local model at http://127.0.0.1:11434 (Ollama, model {model}) is for low-stakes text only: metadata drafts,
   caption cleanup, gate summaries. Never scripts, facts or anything spoken;
 - keep files inside the two checkouts and ~/_desk; leave nothing running when you stop.
@@ -249,6 +253,30 @@ def usable(have: list, now: dt.datetime | None = None) -> list:
     return [a for a in have if a not in down]
 
 
+# Agents that can drive the signed-in Studio windows here with nobody at the keys, best first. Claude Code is not one:
+# its unattended allowlist (CLAUDE_ALLOWED_TOOLS) covers tests and PRs only, so it cannot reach the browser, and on
+# 10 Nov 2026 it handed J2460 and J2461 straight back. The free Codex model goes last: it failed J0135 on 9 Nov.
+STUDIO_AGENTS = ("gemini", "cursor", "codex")
+
+
+def studio_agents(have: list) -> list:
+    return [a for a in STUDIO_AGENTS if a in have]
+
+
+def is_studio_job(job: dict) -> bool:
+    """A job done in the Studio browser here: any `kind: studio` job, or a `needs mini` job this MacBook was offered
+    as Studio-only (jobs.macbook_studio_ok)."""
+    if job.get("kind") == "studio":
+        return True
+    if job.get("needs") != "mini":
+        return False
+    try:
+        import jobs
+        return jobs.macbook_studio_ok(job, f"{job.get('title') or ''} {job.get('body') or ''}")
+    except Exception:  # noqa: BLE001
+        return job.get("kind") == "studio"
+
+
 def pick_agent(job: dict, have: list) -> tuple:
     """(agent, model) for this job on this MacBook: the first lane in the job's routing chain (scripts/routing.py,
     AGENTS.md "Who does what") whose CLI is installed here and has credit; else the first installed CLI with its
@@ -257,6 +285,9 @@ def pick_agent(job: dict, have: list) -> tuple:
     pin = os.environ.get("MACBOOK_AGENT", "")
     if pin:
         return (pin, routing.model_for(job, pin)) if pin in have else ("", "")
+    if is_studio_job(job):
+        can = studio_agents(have)
+        return (can[0], routing.model_for(job, can[0])) if can else ("", "")
     # A job addressed to one agent (a Mini job the MacBook took over) runs that agent's CLI. `claudecode` is the Mini's
     # Claude Code worker (9 Nov 2026): here it is the MacBook's own Claude Code.
     addressed = {"claudecode": "claude"}.get(job.get("for") or "", job.get("for"))
@@ -564,7 +595,9 @@ def cdp_ports_up(ports=CDP_PORTS) -> list:
 def run_ordinary() -> str:
     """Claim the next MacBook job and run it on the first installed agent in its chain."""
     args = [sys.executable, "scripts/jobs.py", "next", "--agent", AGENT_ID, "--can", "macbook,any", "--git"]
-    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up())  # read by jobs.macbook_studio_ok in the claim below
+    # Read by jobs.macbook_studio_ok in the claim below. Empty when no agent here can drive the browser unattended, so
+    # a Studio job is never claimed just to be handed back.
+    os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up()) if studio_agents(usable(installed())) else ""
     r = sh(args, cwd=OWB)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
