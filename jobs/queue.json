@@ -218752,13 +218752,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T23:13Z",
-      "eta": "2026-11-11T01:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:14Z",
-      "result": "",
+      "result": "parked for Chief: PR #776 (head 19b7aebb6), all 4 FIX items done and green. (1) uat_outlook.py reverted to main (MacBook checkout is also shallow; test_uat_outlook takes 0.1 s without batch reader). (2) workflow_board.load_tracker returns copy.deepcopy + unit test test_each_caller_gets_its_own_copy_of_the_tracker. (3) test_every_key_shape_gets_past_the_quick_filter verifies every shape in studio_split._KEY_SHAPES has a sample and non-optional _KEY_PREFIXES literal. (4) Full suite run with new parallel runner locally (1,031 + 21 + 52 = 1,104 tests in 63.1 s) and on CI (all 1,104 pass). Step times across 5 runs on PR #776: cold cache 42916670873 = 64 s (checkout 9 s, cache miss 1 s, apt-get+bundle 16 s, tests 31 s, cache save 2 s); warm cache 42917472706 = 47 s (checkout 9 s, cache hit 2 s, restore 1 s, tests 31 s); warm cache 42920801046 = 57 s (checkout 10 s, cache hit 3 s, restore 1 s, tests 36 s); warm cache 42921352927 = 37 s (checkout 8 s, cache hit 2 s, restore 1 s, tests 22 s); warm cache 42922632484 = 53 s (checkout 16 s, cache hit 3 s, restore 2 s, tests 26 s). Before: 2m4s (#765), then 63 s and 101 s (#767).",
       "history": [
         {
           "at": "2026-11-10T20:14Z",
@@ -218849,6 +218849,11 @@
           "at": "2026-11-10T23:21Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-10T23:22Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: PR #776 (head 19b7aebb6), all 4 FIX items done and green. (1) uat_outlook.py reverted to main (MacBook checkout is also shallow; test_uat_outlook takes 0.1 s without batch reader). (2) workflow_board.load_tracker returns copy.deepcopy + unit test test_each_caller_gets_its_own_copy_of_the_tracker. (3) test_every_key_shape_gets_past_the_quick_filter verifies every shape in studio_split._KEY_SHAPES has a sample and non-optional _KEY_PREFIXES literal. (4) Full suite run with new parallel runner locally (1,031 + 21 + 52 = 1,104 tests in 63.1 s) and on CI (all 1,104 pass). Step times across 5 runs on PR #776: cold cache 42916670873 = 64 s (checkout 9 s, cache miss 1 s, apt-get+bundle 16 s, tests 31 s, cache save 2 s); warm cache 42917472706 = 47 s (checkout 9 s, cache hit 2 s, restore 1 s, tests 31 s); warm cache 42920801046 = 57 s (checkout 10 s, cache hit 3 s, restore 1 s, tests 36 s); warm cache 42921352927 = 37 s (checkout 8 s, cache hit 2 s, restore 1 s, tests 22 s); warm cache 42922632484 = 53 s (checkout 16 s, cache hit 3 s, restore 2 s, tests 26 s). Before: 2m4s (#765), then 63 s and 101 s (#767)."
         }
       ],
       "remaining_action": "Wait for PR #776 head 19b7aebb6 CI run to pass and park for Chief",
