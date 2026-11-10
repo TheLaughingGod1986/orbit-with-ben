@@ -63,7 +63,7 @@ SHOWN_MIN = 100      # below this Studio has too few viewers to say anything abo
 CTR_FLOOR = 2.0      # a long's click rate (%), judged only from 200 impressions up
 CTR_MIN_IMPRESSIONS = 200
 GONE = ("supersededBy", "retired", "replacedBy")   # register marks: this upload will never air
-FIGURES = ("views", "rank", "of", "shown", "stayed", "avgPct", "impressions", "ctr", "likes")
+FIGURES = ("views", "typical", "rank", "of", "shown", "feedViews", "stayed", "avgPct", "impressions", "ctr", "likes")
 COMPARED = ("views", "shown", "stayed", "avgPct", "impressions", "ctr")   # figures that have a "usual for us"
 STOP = set("""about after already been before being could does ever every feel from have into just last like long
 made many more most much over real really than that their there they this time what when where which while will with
@@ -221,15 +221,18 @@ def job_spec(item: dict) -> dict:
     port = channels.studio_port(item["channel"])
     browser = f"its signed-in Studio browser (CDP {port})" if port else "its signed-in Studio browser"
     if item["format"] == "short":
-        figures = ("Analytics for the video, period \"Since published\". Overview: views, and \"Ranking by views N of "
-                   "10\". Engagement: Shown in feed, Viewed vs swiped away (the % who stayed), Average percentage "
-                   "viewed. Likes.")
-        flags = "--shown <n> --stayed <%> --avg-pct <%> --likes <n>"
+        figures = ("Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) "
+                   "than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it "
+                   "may only be on the channel dashboard's latest-Short card). Reach: the views that came from the "
+                   "Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs "
+                   "swiped away (the % who stayed), Average percentage viewed. Likes.")
+        flags = "--typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) `"
     else:
-        figures = ("Analytics for the video, period \"Since published\". Overview: views, and \"Ranking by views N of "
-                   "10\". Reach: Impressions and Impressions click-through rate. Engagement: Average percentage "
-                   "viewed. Likes.")
-        flags = "--impressions <n> --ctr <%> --avg-pct <%> --likes <n>"
+        figures = ("Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) "
+                   "than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\". "
+                   "Reach: Impressions and Impressions click-through rate. Engagement: Average percentage viewed. "
+                   "Likes.")
+        flags = "--typical <n> --impressions <n> --ctr <%> --avg-pct <%> --likes <n>"
     body = f"""First-day check, {item['hours']} hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.
 
 Video: "{name}" (`{item['id']}`), {channels.name(item['channel'])}, a {kind}. It went live {_when(item['at'])} London. Use {browser}.
@@ -240,6 +243,7 @@ Video: "{name}" (`{item['id']}`), {channels.name(item['channel'])}, a {kind}. It
 
 3. Store them:
    `python3 scripts/launch_check.py record {item['id']} --hours {item['hours']} --views <n> --rank <N> --of 10 {flags} --by <your agent name> --git`
+   Leave out any flag Studio gives no figure for.
    Add `--fault "<what is wrong>"` once for each thing found in step 1.
 
 4. Paste the whole output of `python3 scripts/launch_check.py judge {item['id']}` as this job's result.
@@ -421,6 +425,18 @@ ADVICE = {
 }
 
 
+def shown_in_feed(reading: dict):
+    """How many times the feed showed a Short. Studio does not always give the figure (10 Nov 2026: no "Shown in
+    feed" card on either Short read), so without it: the views that came from the feed, divided by the share who
+    stayed. "Viewed vs swiped away" is exactly that share, so 2 feed views at 25% stayed means about 8 showings."""
+    if reading.get("shown") is not None:
+        return reading["shown"]
+    feed, stayed = reading.get("feedViews"), reading.get("stayed")
+    if feed is None:
+        return None
+    return round(feed / (stayed / 100)) if stayed else feed
+
+
 NO_FIGURES = ["Studio gave no reach figures at this check, so the step that lost the viewers is not known. Read "
               "them again before deciding anything."]
 
@@ -432,7 +448,7 @@ def _below(value, usual, margin: float) -> bool:
 def _stage(fmt: str, reading: dict, base: dict, usual: dict) -> str:
     """Which step lost the viewers: "not shown", "swiped" or "not clicked", "left early", "small pool". "" when
     Studio gave no reach figure to tell by. Only asked of a video that is behind."""
-    shown = reading.get("shown" if fmt == "short" else "impressions")
+    shown = shown_in_feed(reading) if fmt == "short" else reading.get("impressions")
     usual_shown = base.get("shown" if fmt == "short" else "impressions")
     if shown is None:
         return ""
@@ -468,12 +484,19 @@ def verdict(slug: str, rec: dict, hours: int | None = None) -> dict:
         level = "behind" if ratio < BEHIND else "ahead" if ratio > AHEAD else "usual"
         why.append(f"{views} views at {reading['hours']} h; the last {base['n']} checked at the same age had "
                    f"{round(base['views'])} (median).")
+    typical = reading.get("typical")
+    if views is not None and typical is not None:
+        if level == "unknown":
+            ratio = views / max(typical, 1)
+            level = "behind" if ratio < BEHIND else "ahead" if ratio > AHEAD else "usual"
+        why.append(f"{views} views at {reading['hours']} h; Studio says the usual for us at this age is {typical}.")
     if rank and of:
         if level == "unknown":
             level = "behind" if rank > 0.7 * of else "ahead" if rank <= 0.3 * of else "usual"
         why.append(f"Studio ranks it {rank} of {of} against our latest videos at the same age.")
     if level == "unknown":
-        why.append("Nothing to compare it with yet: no Studio rank, and fewer than three earlier checks at this age.")
+        why.append("Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier "
+                   "checks at this age.")
     mine = next((h for h in history(slug, fmt) if h["id"] == rec["id"]), None)
     prior = [h["firstMorning"] for h in history(slug, fmt) if h["at"] < at and h["firstMorning"] is not None][-LOOK_BACK:]
     before = _median(prior)
@@ -511,7 +534,11 @@ def _figures_line(fmt: str, r: dict) -> str:
     if r.get("rank") and r.get("of"):
         parts.append(f"Studio rank {r['rank']} of {r['of']}")
     if fmt == "short":
-        parts += [show("shown", "shown in feed"), show("stayed", "stayed to watch", "%")]
+        if r.get("shown") is None and shown_in_feed(r) is not None:
+            parts.append(f"shown in feed about {shown_in_feed(r)} (from {r['feedViews']} feed views)")
+        else:
+            parts.append(show("shown", "shown in feed"))
+        parts.append(show("stayed", "stayed to watch", "%"))
     else:
         parts += [show("impressions", "impressions"), show("ctr", "click rate", "%")]
     parts.append(show("avgPct", "average viewed", "%"))
@@ -595,9 +622,11 @@ def main(argv=None) -> int:
     rec.add_argument("id")
     rec.add_argument("--hours", type=int, required=True, help="the age the check is for (6, or 48 for a long)")
     rec.add_argument("--views", type=int, required=True)
+    rec.add_argument("--typical", type=int, help="Studio's \"N more/less than usual\": the usual views at this age")
     rec.add_argument("--rank", type=int, help="Studio's Ranking by views: the N of \"N of 10\"")
     rec.add_argument("--of", type=int, default=None, help="the 10 of \"N of 10\"")
-    rec.add_argument("--shown", type=int, help="Short: Shown in feed")
+    rec.add_argument("--shown", type=int, help="Short: Shown in feed, when Studio has that card")
+    rec.add_argument("--feed-views", dest="feedViews", type=int, help="Short: views that came from the Shorts feed")
     rec.add_argument("--stayed", type=float, help="Short: Viewed vs swiped away, the %% who stayed")
     rec.add_argument("--avg-pct", dest="avgPct", type=float, help="Average percentage viewed")
     rec.add_argument("--impressions", type=int, help="long: Impressions")
