@@ -2,13 +2,36 @@ name: Studio core check
 
 # Shared tooling lives once (Ben, 15 Oct 2026: unify HOS and OWB, keep their own rules). studio-core/CORE_FILES.json
 # locks every shared file by sha256 in both repos; editing one in a single repo fails here.
+#
+# When it runs (J2531, 10 Nov 2026, orbit-with-ben jobs/reviews/J2531/MINUTES.md): on pull requests (in
+# orbit-with-ben inside the Rules check's job, see below); on a push to main that
+# changes something other than data (the queue, STATUS.md, a film's status.json, the analytics and board records);
+# and once a day on main. A merged pull request is not checked a second time: its head ran this already.
 on:
   push:
     branches: [main]
+    paths-ignore: ["jobs/**", "JOBS.md", "STATUS.md", "02_Video-Projects/*/status.json", "05_Analytics/**"]
+  # Pull requests: a pull request that changes only data starts nothing. This file is itself a core file, so it is
+  # the same in both repos, and the job's `if` below tells them apart. In orbit-with-ben (acting Chief, 10 Nov) the
+  # two steps run inside the Rules check's job (rules-check.yml), which starts on every pull request that changes
+  # something other than data, so a pull request pays for one job, not two: here the job is skipped (no runner, no
+  # minutes; the skipped run still proves the file loads). In history-of-science, whose Rules check does not carry
+  # these steps, the job runs as before. When the checks move to the `studio` repo, change the name in the `if`.
   pull_request:
+    paths-ignore: ["jobs/**", "JOBS.md", "STATUS.md", "02_Video-Projects/*/status.json", "05_Analytics/**"]
+  schedule:
+    - cron: "40 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check:
+    # A skipped job uses no runner and no minutes.
+    # The value is in double quotes on purpose: unquoted, YAML reads " #" as the start of a comment and cuts it in half.
+    if: "${{ (github.event_name != 'push' || !(startsWith(github.event.head_commit.message, 'Merge pull request #') || contains(github.event.head_commit.message, '(#'))) && !(github.event_name == 'pull_request' && github.repository == 'TheLaughingGod1986/orbit-with-ben') }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
