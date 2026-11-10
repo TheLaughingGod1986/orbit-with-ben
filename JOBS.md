@@ -90,7 +90,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2513 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to the newest cut Ben has OK'd (on Sat 14 Nov after 18:00 London) |  |
 | J2514 | mini | blocked | claude | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London) |  |
 | J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
-| J2516 | cloud | claimed | claude | 2026-11-10T21:53Z | review · Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one |  |
 | J2517 | mini | open | – | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2524 | cloud | open | – | – | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |

@@ -217252,13 +217252,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-10T19:53Z",
-      "eta": "2026-11-10T21:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:59Z",
-      "result": "",
+      "result": "Channels section is live (#763, site version 2eff5ff506654388, release check passed). Foot of the Overview: one chip per channel with a light. /#channels: one card per channel (YouTube handle, files, films in production, workload limit, last video live, own rules, what is left), then five steps to add a channel, each marked You or Claude, and how far the studio is from running another (302 places, down from 367). The page writes nothing. Data: scripts/channel_cards.py, called by board_publish.py. GBP 0.",
       "history": [
         {
           "at": "2026-11-10T15:59Z",
@@ -217269,6 +217269,11 @@
           "at": "2026-11-10T19:53Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:10Z",
+          "by": "claude",
+          "what": "done: Channels section is live (#763, site version 2eff5ff506654388, release check passed). Foot of the Overview: one chip per channel with a light. /#channels: one card per channel (YouTube handle, files, films in production, workload limit, last video live, own rules, what is left), then five steps to add a channel, each marked You or Claude, and how far the studio is from running another (302 places, down from 367). The page writes nothing. Data: scripts/channel_cards.py, called by board_publish.py. GBP 0."
         }
       ],
       "remaining_action": "Board: a Channels section showing which channels are plugged into the studio, whether each is ready, and the steps to add one",
@@ -217282,7 +217287,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#763"
     },
     {
       "id": "J2517",
