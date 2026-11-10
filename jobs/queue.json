@@ -214544,17 +214544,23 @@
           "at": "2026-11-10T09:21Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-10T09:24Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Mount is NFSv3 hard,nointr from 192.168.1.119. NAS answers ping, showmount, port 2049. stat answers in <1s; ls of /Volumes/data and of local SSD /Volumes/MiniWork both give no answer in 20s. nas_offload pid 73678 stuck in open() for 6h34m."
         }
       ],
-      "remaining_action": "Run the five time-limited read-only NAS mount probes",
+      "remaining_action": "Find what blocks opens on both external volumes and since when; write report",
       "mini_only": true,
       "urgent": 5,
       "due": "2026-11-10T11:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-10T09:21Z",
-        "by": "claudecode"
+        "at": "2026-11-10T09:24Z",
+        "by": "claudecode",
+        "note": "Mount is NFSv3 hard,nointr from 192.168.1.119. NAS answers ping, showmount, port 2049. stat answers in <1s; ls of /Volum"
       }
     },
     {
