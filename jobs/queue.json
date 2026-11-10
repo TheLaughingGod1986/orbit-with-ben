@@ -87633,13 +87633,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T03:49Z",
-      "eta": "2026-11-10T05:19Z",
+      "eta": "",
       "created_by": "chief",
       "created_at": "2026-10-26T09:43Z",
-      "result": "",
+      "result": "parked for Chief: HOS Studio GHZDsiH7L7A Details renders no editable #title-textarea (isTitleDisabled: true, showTitleExperiment: true); the title box holds <ytcp-video-title-experiment> ('A/B testing titles · Results ready' · read-only 'What's Really Inside an Atom?' · 'View test report' / 'Edit title'), and clicking 'Edit title' opens <ytcp-creator-experiment-delete-confirmation-dialog>: 'Editing your video title will delete your A/B test including your other title options. Do you want to continue?' (Cancel / Continue -> experimentService.deleteExperiment). Clicked Cancel, changed nothing; readback and log in PR #710.",
       "history": [
         {
           "at": "2026-10-26T09:43Z",
@@ -87890,6 +87890,16 @@
           "at": "2026-11-10T03:50Z",
           "by": "macbook-2",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-10T04:03Z",
+          "by": "macbook-2",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-10T04:06Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: HOS Studio GHZDsiH7L7A Details renders no editable #title-textarea (isTitleDisabled: true, showTitleExperiment: true); the title box holds <ytcp-video-title-experiment> ('A/B testing titles · Results ready' · read-only 'What's Really Inside an Atom?' · 'View test report' / 'Edit title'), and clicking 'Edit title' opens <ytcp-creator-experiment-delete-confirmation-dialog>: 'Editing your video title will delete your A/B test including your other title options. Do you want to continue?' (Cancel / Continue -> experimentService.deleteExperiment). Clicked Cancel, changed nothing; readback and log in PR #710."
         }
       ],
       "kind": "listing",
@@ -87905,11 +87915,11 @@
       "taskKeys": [
         "HOS:004"
       ],
-      "remaining_action": "Checking HOS Studio (CDP 9222) GHZDsiH7L7A Details title field",
+      "remaining_action": "Recording Studio title-field lock/delete-test dialog finding in STUDIO_TESTS.md and readback JSON",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-10T03:50Z",
+        "at": "2026-11-10T04:03Z",
         "by": "macbook-2"
       }
     },
@@ -111057,10 +111067,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T04:07Z",
+      "eta": "2026-11-10T06:07Z",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
       "result": "",
@@ -111109,13 +111119,26 @@
           "at": "2026-11-10T02:57Z",
           "by": "claude",
           "what": "reopened by acting Chief: T011 ended 9 Nov 01:10, no winner (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))"
+        },
+        {
+          "at": "2026-11-10T04:07Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After T011 ends: record T011 result in THUMB_LEDGER.json; keep winner thumb; arm title-only or new 465C thumb test per rules 12-13 (park for Ben if Studio warns deleting ended report)",
       "kind": "studio",
       "taskKeys": [
         "OWB:023"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T04:07Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1199",
@@ -213933,17 +213956,22 @@
           "at": "2026-11-10T03:58Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Inspected J2033 DOM capture (PR #465), _mint_flow_v05_tranche2.py, _flow_still_v01.py, and existing test suites"
+        },
+        {
+          "at": "2026-11-10T04:09Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Completed reader and plan-based style_refs design; updating HOS files in clean worktree"
         }
       ],
-      "remaining_action": "Design and implement fail-closed Flow readers, separate balance read step, and plan-based style_refs path",
+      "remaining_action": "Update _mint_flow_v05_tranche2.py, _flow_still_v01.py, and HOS 009 plan files",
       "due": "2026-11-12T00:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-10T03:58Z",
+        "at": "2026-11-10T04:09Z",
         "by": "gemini",
-        "note": "Inspected J2033 DOM capture (PR #465), _mint_flow_v05_tranche2.py, _flow_still_v01.py, and existing test suites"
+        "note": "Completed reader and plan-based style_refs design; updating HOS files in clean worktree"
       },
       "taskKeys": [
         "HOS:009"
