@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2521 | macbook | open | – | – | review · Decoupling: uat_outlook, video_progress, channel_balance and packaging_panel ask channels.py instead of naming a channel (27 lines to 0) |  |
 | J2522 | macbook | open | – | – | review · Decoupling: nine small scripts ask channels.py instead of naming a channel (35 lines to 0) |  |
 | J2523 | macbook | open | – | – | review · Decoupling: eight scripts stop assuming the studio lives inside one channel's repo (13 lines to 0) |  |
+| J2524 | cloud | open | – | – | review · Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes |  |
 
 Recently finished:
 

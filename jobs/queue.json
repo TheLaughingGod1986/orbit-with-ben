@@ -1,5 +1,5 @@
 {
-  "next_id": 2524,
+  "next_id": 2525,
   "jobs": [
     {
       "id": "J0001",
@@ -217493,6 +217493,36 @@
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Stop eight studio tools assuming the studio lives inside the Orbit folder"
+    },
+    {
+      "id": "J2524",
+      "title": "Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ben, 10 Nov 2026: \"How can we get this project moving and finished?\" The last step of the decoupling plan (docs/MULTI_CHANNEL_PLAN.md, phase 3) is moving the studio into its own repo, named `studio` (Ben, 10 Nov: \"You can name it whatever you think's best\"). That move is hard to undo, so it is rehearsed first, every day, until it passes.\n\nBuild `scripts/studio_split.py`: a dry run that changes nothing outside a scratch folder.\n1. From a clean checkout of main it builds, in a temporary folder, the three folders the move would make: `studio/` (the engine: `scripts/` engine files, `jobs/`, the board site, `channels/`, the studio's rules), and one folder per channel holding only that channel's content and its `studio/channel.json`. The list of what goes where is one table at the top of the script, so the plan and the script cannot drift.\n2. It then runs the engine's tests from inside the scratch `studio/` with the channels plugged in as sibling folders, the way a real checkout would find them.\n3. It prints what failed and why, in plain words, grouped: a script that still names a channel, a script that still reaches into a channel's folder from the studio's root, a test that reads a file the move would put elsewhere.\n4. `--json` writes the same as a file, so the board can show one number: how many things still stop the move.\n\nIt creates no repository, pushes nothing and moves nothing. Tests for the script itself. Through a pull request; park nothing: this is a cloud job, merge when green. Then add one line to the hourly routine's step 2: run the dry run once a day and put the number on the thread when it changes. GBP 0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T17:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T17:41Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling: a dry run of the move to a studio repo (scripts/studio_split.py), run daily until it passes",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Rehearse moving the studio into its own home, without moving anything"
     }
   ],
   "focus": [
