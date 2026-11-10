@@ -216562,10 +216562,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T18:49Z",
+      "eta": "2026-11-10T20:49Z",
       "created_by": "claude",
       "created_at": "2026-11-10T13:57Z",
       "result": "",
@@ -216574,12 +216574,25 @@
           "at": "2026-11-10T13:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T18:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Opening gate: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests, then run it on every scheduled Short",
       "due": "2026-11-12T12:00:00Z",
       "kind": "review",
-      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen"
+      "plain": "Teach the Shorts opening check to catch a picture that does not fill the screen",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T18:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2506",
