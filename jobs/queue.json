@@ -111074,19 +111074,19 @@
       "title": "023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief (Claude), 29 Oct audit (LEARNINGS rule 11): Venus has the best long watch time (30.6% average viewed) but 1.6% CTR on 705 impressions. Packaging is the gap.\nWait: thumbnail-only test T011 (A MELTS LEAD vs B EARTH'S TWIN, armed 25 Oct by J0962) must have ended in Studio. Verify the end time in Studio; do not infer it from elapsed days. If it is still running, record a structured wait (condition + next check) and stop.\nThen: keep the thumbnail Studio applied as the winner fixed, record T011's result (every variant's watch-time share, winner, dates) in 05_Analytics/tests/THUMB_LEDGER.json first, and arm a title-only Test & Compare: A 'What Happened to Venus?' (live) vs B 'Venus Was Earth's Twin. Why Is It Hot Enough to Melt Lead?' (58 characters). If Studio warns that starting deletes the ended test's report, stop and park: that click waits on Ben (same as J1132). Read back that the test is running; add the ledger row. Never change privacy or schedule. GBP0.\n\n29 Oct (acting Chief Claude, rules 12-13): decide by T011's result. If B EARTH'S TWIN (a concept change) wins or clearly leads, keep it and arm the title-only test above. If A MELTS LEAD wins or it is a draw, instead arm a thumbnail-only test of a new concept: Venus's surface with a lander glowing red, text '465°C' (title unchanged), and park the title test for after it. Either way, record T011 first.\n\n10 Nov 03:10Z, acting Chief (Claude). T011 has ended: it ran 26 Oct 00:12 to 9 Nov 01:10, \"Not enough impressions to declare a winner\", A MELTS LEAD visible to all (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701)). That is a draw, so the 29 Oct draw branch above applies, in this order:\n1. Record T011's result in THUMB_LEDGER.json with the repo's tool (dates, no winner, watch-time share not shown on either arm).\n2. Do not arm the title-only test. The draw branch is a thumbnail-only test of a new concept (Venus's surface, a lander glowing red, text 465°C; title unchanged).\n3. If that thumbnail file does not exist yet with a passed design review, queue its design job under the thumbnail rules and put this job on a wait for it. Arm nothing without a reviewed file.\n4. If Studio says that starting a new test deletes the ended test's report, stop and park: that click is Ben's (as J1132).\nNever change privacy or the schedule. £0.",
+      "body": "Acting Chief (Claude), 29 Oct audit (LEARNINGS rule 11): Venus has the best long watch time (30.6% average viewed) but 1.6% CTR on 705 impressions. Packaging is the gap.\nWait: thumbnail-only test T011 (A MELTS LEAD vs B EARTH'S TWIN, armed 25 Oct by J0962) must have ended in Studio. Verify the end time in Studio; do not infer it from elapsed days. If it is still running, record a structured wait (condition + next check) and stop.\nThen: keep the thumbnail Studio applied as the winner fixed, record T011's result (every variant's watch-time share, winner, dates) in 05_Analytics/tests/THUMB_LEDGER.json first, and arm a title-only Test & Compare: A 'What Happened to Venus?' (live) vs B 'Venus Was Earth's Twin. Why Is It Hot Enough to Melt Lead?' (58 characters). If Studio warns that starting deletes the ended test's report, stop and park: that click waits on Ben (same as J1132). Read back that the test is running; add the ledger row. Never change privacy or schedule. GBP0.\n\n29 Oct (acting Chief Claude, rules 12-13): decide by T011's result. If B EARTH'S TWIN (a concept change) wins or clearly leads, keep it and arm the title-only test above. If A MELTS LEAD wins or it is a draw, instead arm a thumbnail-only test of a new concept: Venus's surface with a lander glowing red, text '465°C' (title unchanged), and park the title test for after it. Either way, record T011 first.\n\n10 Nov 03:10Z, acting Chief (Claude). T011 has ended: it ran 26 Oct 00:12 to 9 Nov 01:10, \"Not enough impressions to declare a winner\", A MELTS LEAD visible to all (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701)). That is a draw, so the 29 Oct draw branch above applies, in this order:\n1. Record T011's result in THUMB_LEDGER.json with the repo's tool (dates, no winner, watch-time share not shown on either arm).\n2. Do not arm the title-only test. The draw branch is a thumbnail-only test of a new concept (Venus's surface, a lander glowing red, text 465°C; title unchanged).\n3. If that thumbnail file does not exist yet with a passed design review, queue its design job under the thumbnail rules and put this job on a wait for it. Arm nothing without a reviewed file.\n4. If Studio says that starting a new test deletes the ended test's report, stop and park: that click is Ben's (as J1132).\nNever change privacy or the schedule. £0.\n\n10 Nov 07:55Z, acting Chief (Claude). The new thumbnail B passed design review: J2486 returned FIX (lander looked incandescent, grade blown out, plate source not recorded), J2487 fixed all three, J2488 returned KEEP (sha256 c1c80951…, checked against both NAS mirrors; records in OWB PR #723). Arm the thumbnail-only test on VBaYRPp85Sw: A is the live MELTS LEAD, B is venus_tc_B_465c_VBaYRPp85Sw.jpg; title unchanged. Check the file's sha256 before uploading it. If Studio says that starting a test deletes the ended T011 test or its report, press Cancel, change nothing, and report the exact words: that click is Ben's. T011's result is already in THUMB_LEDGER.json (PR #711). Read back that the test is running and add the ledger row. Never change privacy or the schedule. £0.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-10T04:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "Waiting for: The new thumbnail B (465°C) has passed its independent design review (J2486; built by J2484, records in OWB PR #712). Then arm the thumbnail-only test. If Studio says that starting it deletes the ended T011 test or its report, stop: that click is Ben's, and it is part of the question put to him on 10 Nov.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -111167,24 +111167,18 @@
           "at": "2026-11-10T06:17Z",
           "by": "macbook-2",
           "what": "condition recorded; next verification 2026-11-10T14:00:00Z"
+        },
+        {
+          "at": "2026-11-10T07:48Z",
+          "by": "claude",
+          "what": "reopened by acting Chief: thumbnail B passed its design review (J2488 KEEP after J2486 FIX and J2487 fix)"
         }
       ],
       "remaining_action": "After J2484 465°C thumbnail passes design review: arm thumbnail-only Test & Compare A MELTS LEAD vs B 465°C on VBaYRPp85Sw (park for Ben if Studio warns deleting ended report)",
       "kind": "studio",
       "taskKeys": [
         "OWB:023"
-      ],
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-10T04:20Z",
-        "by": "macbook-2"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Waiting for fixed 023 Venus thumbnail B (465°C) (J2487, after design review J2486 returned FIX on glowing/molten lander and 245.5 saturation) to pass a fresh independent design review before arming in Studio.",
-        "check_at": "2026-11-10T14:00:00Z"
-      }
+      ]
     },
     {
       "id": "J1199",
@@ -213011,7 +213005,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "parked for Chief: opened PR #715 (board rows F-02a, F-02b, F-02c; 411,875 B moved to _archive/, board build dist/ verified) and PR #717 (non-board rows F-03a, F-03b, F-03c, F-07, F-04c, F-06, F-04b; 192 files / 1,460,074 B moved to _archive/, CORE_FILES.json and doc-referenced files left with reasons documented). Ready for Chief merge and board redeploy.",
+      "result": "Waiting for: PR #715 (the board rows) passes a browser smoke test against main's build (J2492). PR #717 (192 files moved to _archive/, pure renames) is merged: the full test run passed on main plus the PR (888 script tests, audio and brand tools), and every archived test belongs to code archived with it. #715 changes the live board's JavaScript; its tests and static checks pass, but it has not been loaded in a browser, so it waits.",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -213087,6 +213081,11 @@
           "at": "2026-11-10T06:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: opened PR #715 (board rows F-02a, F-02b, F-02c; 411,875 B moved to _archive/, board build dist/ verified) and PR #717 (non-board rows F-03a, F-03b, F-03c, F-07, F-04c, F-06, F-04b; 192 files / 1,460,074 B moved to _archive/, CORE_FILES.json and doc-referenced files left with reasons documented). Ready for Chief merge and board redeploy."
+        },
+        {
+          "at": "2026-11-10T07:48Z",
+          "by": "claude",
+          "what": "acting Chief: #717 merged; #715 held for a browser smoke test (J2492) before it touches the live board"
         }
       ],
       "remaining_action": "Parked for Chief review and merge of PR #715 (board rows) and PR #717 (non-board rows)",
@@ -213100,6 +213099,14 @@
         "at": "2026-11-10T06:04Z",
         "by": "gemini",
         "note": "Step 4 done: both PR #715 (411,875 B) and PR #717 (1,460,074 B) verified and ready for Chief merge"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "PR #715 (the board rows) passes a browser smoke test against main's build (J2492). PR #717 (192 files moved to _archive/, pure renames) is merged: the full test run passed on main plus the PR (888 script tests, audio and brand tools), and every archived test belongs to code archived with it. #715 changes the live board's JavaScript; its tests and static checks pass, but it has not been loaded in a browser, so it waits.",
+        "check_at": "2026-11-10T16:00:00+00:00",
+        "last_recheck": "J2464",
+        "checked_at": "2026-11-10T07:48:39+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -214762,18 +214769,23 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-10T07:01Z",
-      "result": "",
+      "result": "Done by acting Chief, 10 Nov: J1198's hold released and the job reopened with the J2488 KEEP evidence.",
       "history": [
         {
           "at": "2026-11-10T07:01Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T07:48Z",
+          "by": "claude",
+          "what": "done: J1198 reopened"
         }
       ],
       "remaining_action": "Reopen J1198 with J2488 KEEP evidence (OWB PR #720)",
