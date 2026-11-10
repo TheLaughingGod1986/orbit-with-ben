@@ -1,5 +1,5 @@
 {
-  "next_id": 2504,
+  "next_id": 2505,
   "jobs": [
     {
       "id": "J0001",
@@ -216188,6 +216188,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo"
+    },
+    {
+      "id": "J2504",
+      "title": "Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Two small listing fixes in the Orbit Studio browser (CDP 9223), found by today's first-day check (J2501, review in pull request 738). Chief ruling 10 Nov 14:00Z. £0. About 20 minutes. Read each video's Details before and after, and give both in the result.\n\nA. Related video on the Mars Shorts (LEARNINGS rule 17; two days late). The Mars long `Js6EQJ8qDi8` has been public since Sun 8 Nov 18:00Z. In Studio > Content > the Short > Details > Related video, set `Js6EQJ8qDi8` on:\n   1. `iyvWYFP_ETA` \"Could a Robot Survive a Night on Mars?\" (live, 1,046 views, Related video is None today). Do this one first.\n   2. `B1z2dv7m7Vk` (goes live Wed 11 Nov 11:30 London).\n   3. `N42gKBbD7tE` (Thu 12 Nov 11:30).\n   4. `bSjWiCbB7pY` (Fri 13 Nov 11:30).\n   Change nothing else on them.\n\nB. Today's Short `ffYKoNVPoqg` \"What Would Standing on Saturn's Moon Titan Feel Like?\": its tags are three single words (astronomy, space, titan), where yesterday's Short has six search phrases. Half of its few views came from search. Set:\n   - Tags: `what would standing on titan feel like`, `standing on titan`, `titan surface pressure`, `titan atmosphere`, `saturn moon titan`, `titan` (keep `space` and `astronomy` after them).\n   - Video language: English (United Kingdom), the channel default.\n   Leave its Related video empty (the standalone test runs to 20 Nov and the Titan long is not out yet). Change nothing else.\n\nAllowed here: the Related video field, tags and video language on these five videos. Not allowed: title, description, cover, visibility, the scheduled time, comments, anything on any other video. If Studio asks for a password or a sign-in, stop and say so: that is Ben's.\n\nResult: one line per video with before and after, and the time (UTC). Then, from a clean main, `python3 scripts/launch_check.py note ffYKoNVPoqg \"tags set to search phrases and language to en-GB (<this job id>)\" --by <your agent name> --git`.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T13:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T13:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Orbit Studio: set the Related video on the four Mars Shorts (two days late), and search-phrase tags and en-GB on today's Titan Short",
+      "due": "2026-11-10T15:00:00Z",
+      "kind": "studio",
+      "plain": "Link the Mars Shorts to the Mars film, and give today's Short better search tags"
     }
   ],
   "focus": [
