@@ -1,5 +1,5 @@
 {
-  "next_id": 2472,
+  "next_id": 2473,
   "jobs": [
     {
       "id": "J0001",
@@ -212975,6 +212975,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2472",
+      "title": "PR backlog sweep, part 2: bring the last nine held pull requests up to date, one at a time (Chief's decisions inside)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Acting Chief (Claude), 10 Nov 2026. Follow-on from the PR sweep (jobs/reviews/J2458/PR_SWEEP.md, on main). The Chief merged 19 of its MERGE list and closed 20. These are what is left, with the Chief's decision on each. Do them in this order; one PR per item unless it says otherwise. Never rebase or force-push another agent's branch: merge origin/main into it. Never hand-merge jobs/queue.json. The Chief merges.\n\n1. #604 then #611 (034 Pluto voiceover evidence). Each merges cleanly alone, but together they clash on the two append-only ledgers (04_Audio/elevenlabs_ledger.jsonl, 05_Analytics/ai_spend/ledger.jsonl). Bring #604 up to date and stop: the Chief merges it. Then merge the new main into #611 and re-append only its own rows. Say in the result when #604 is ready, release, and carry on with #611 after it is merged.\n2. #676 (weekly Orbit thumbnail audit, J2374, finished 9 Nov): merge origin/main into it, run its checks, list it as ready.\n3. #311 (025 opening Short v07; it contains #310's files): merge origin/main into #311, confirm 06_Final-Exports sha256_manifest.json still names v05 as the uploaded file, list it as ready. The Chief then closes #310.\n4. #653 (HOS 100 and 101 into the waiting line): its queue.json reuses an id main has since given to another job, so it cannot merge. On a fresh branch from main, add HOS:100 and HOS:101 to next_hos in jobs/WIP.json with the repo's tool, and add the Rule-E review job for HOS PR #460 with `jobs.py add` (it gets a new id). The Chief then closes #653.\n5. #645 (8 History of Science Shorts lab rows and 3 learnings, J2373): merge origin/main into it. Keep the 8 lab rows. Renumber its three LEARNINGS.md rows to follow the last row on main (26 is the last today), and drop any that only repeat rows 24 to 26. Run the checks.\n6. #554 (HOS-2026-11-E2, proof-first first 30 seconds): same treatment: merge main in, renumber its LEARNINGS.md row to follow the last row, keep 05_Analytics/tests/HOS_LONG_TESTS.md.\n7. #552 (HOS-2026-11-E1, anomaly-first Short gate): this one touches a shared core file. Re-apply its --hos-anomaly-first flag on today's 00_Brand/Channel-Setup/tools/gate_shorts_open.py on a fresh branch, with its tests, a fresh core hash (python3 scripts/core_sync.py) and its LEARNINGS.md row renumbered. If the flag now contradicts rule 24 (the first second), stop and say how, and leave it for the Chief.\n\nLeave alone: #368 and #490 (the Chief reviews those two code changes), #333 (still a draft), #666.\n\nFor each item run: python3 scripts/sync_rules.py --check, python3 scripts/studio.py status --check, python3 scripts/core_sync.py check, and the tests the change touches. Write jobs/reviews/<this job id>/SWEEP_2.md with one line per item (ready, or stopped and why). Park for Chief. No Studio, no spend, nothing deleted.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T01:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T01:17Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "PR backlog sweep, part 2: bring the last nine held pull requests up to date, one at a time (Chief's decisions inside)",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "review",
+      "plain": "Finish tidying the old pull requests: nine need individual attention before the Chief can merge them."
     }
   ],
   "focus": [
