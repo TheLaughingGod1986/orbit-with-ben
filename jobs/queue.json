@@ -218780,10 +218780,10 @@
       "stage": "",
       "after": "J2539",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-10T21:48Z",
+      "eta": "2026-11-10T23:48Z",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
       "result": "",
@@ -218792,13 +218792,26 @@
           "at": "2026-11-10T20:15Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T21:48Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Check every scheduled Short opens on a picture that fills the screen",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T21:48Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2541",
