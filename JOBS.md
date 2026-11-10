@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2538 | macbook | blocked | macbook | – | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
 | J2540 | mini | blocked | gemini | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2544 | any | blocked | gemini | – | review · Verify condition for J2540 |  |
+| J2545 | mini | open | – | – | review · Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests | J2540 |
 
 Recently finished:
 

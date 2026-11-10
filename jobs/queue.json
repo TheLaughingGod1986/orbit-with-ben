@@ -1,5 +1,5 @@
 {
-  "next_id": 2545,
+  "next_id": 2546,
   "jobs": [
     {
       "id": "J0001",
@@ -219179,6 +219179,37 @@
         "by": "gemini",
         "note": "Evidence in jobs/reviews/J2544/REVIEW.md (OWB PR #775, 79329d6e9); J2540 hold updated to 2026-11-11T04:15:00Z"
       }
+    },
+    {
+      "id": "J2545",
+      "title": "Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2540 (10 Nov 23:10Z). The new frame-0 check was run over 36 Shorts (`jobs/reviews/J2540/`). It caught the Short that aired on 10 Nov. It wrongly failed one: History of Science `ChbsigHD5_o`, a full-frame cartoon shot with a soft wall above and a smooth table below. It passed one that is padded: `rvug71d7Dqk`, the muons Short for Sat 21 Nov, whose seam is feathered. And it only looks at the first half second. Ben, 8 Nov, on a Short built this way: \"like a rectangle and blurry above and below\". J2421 says some Shorts are built that way for their whole length (a 16:9 plate over a blurred copy of itself).\n\nSo before any threshold is moved or any Short is re-cut, the studio needs the truth by eye, for the whole of every Short.\n\n1. For every scheduled Short of both channels (the J2540 list; where a re-cut is waiting to be swapped in, the re-cut and not the old upload), make a contact sheet: one frame every 2 s from 0.0 s to the end. Start it detached and check a time-limited `ls` of the NAS first.\n2. Look at every sheet yourself. For each Short write: full frame throughout, or which stretches (start to end, in seconds) show a picture band with a blurred, mirrored or flat copy above and below it. A caption strip over a full-frame picture is not padding. A planet on black space is not padding. Say how sure you are of each call and name the ones you could not decide.\n3. One table in `jobs/reviews/<this job id>/`: video id, channel, air date, file, seconds padded out of total, the stretches, and whether Ben has already OK'd this cut.\n4. For the gate's tests: for every padded stretch, and for the same number of full-frame Shorts chosen to be hard (soft walls, flat sky, big captions; `ChbsigHD5_o` and `cLKDiYP55J8` among them), save the 108x192 grey frame the gate reads (`raw_frame(path, 108, 192, t, \"gray\")`) at each sampled second, with its label, as text in one JSON file (zlib then base64 per frame). No image or video file goes into the repo. Keep the file under 1 MB.\n5. One pull request with the table, the labels file and where the contact sheets are on the NAS. Park for Chief.\n\nDo not re-cut anything and change nothing in Studio. The Chief decides the re-cuts from the table, soonest air date first. Until the check is put right, `ChbsigHD5_o` showing FAIL in the morning Shorts report is a known wrong call: nobody re-cuts it. No real money.\n",
+      "ref": "J2540",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T22:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T22:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Look through every scheduled Short of both channels for shots that sit as a strip with a blurred copy above and below, and list them",
+      "mini_only": true
     }
   ],
   "focus": [
