@@ -1,5 +1,5 @@
 {
-  "next_id": 2531,
+  "next_id": 2532,
   "jobs": [
     {
       "id": "J0001",
@@ -217959,6 +217959,36 @@
         "OWB:025"
       ],
       "done_ref": "b05d90a37"
+    },
+    {
+      "id": "J2531",
+      "title": "Private-ready 1: checks run on pull requests and code changes only, not on queue or data commits; a month must fit the free minutes",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Ben chose private for the new `studio` repo (10 Nov: \"If you think private is best, let's do a private repo.\"). A private repo on the free plan gets 2,000 check minutes a month, and every job of every run is rounded up to a whole minute. Today most commits to main are queue, status or data commits, and many of them start a check. Plan: `docs/MULTI_CHANNEL_PLAN.md`, decision 8.\n\nDo this in the orbit-with-ben repo, where the checks live today. The same files move to `studio` later.\n\n1. Count. From the last 7 days of workflow runs here: runs and billed minutes for each workflow and each trigger (pull request, push to main), and how many of the pushes changed only the queue, `STATUS.md`, a film's `status.json`, notes, snapshots or other data. Write the table to `jobs/reviews/<this job>/MINUTES.md`.\n2. Change the workflows so that:\n   - a commit that changes only data (the queue, `STATUS.md`, `status.json`, notes, snapshots, launch records, board records) starts no workflow at all;\n   - a merged pull request does not run the full suite a second time on main when its head already passed.\n   Every check that exists today must still run somewhere. For each check that no longer runs on data commits, say where it went: on pull requests, in one scheduled run a day, or in a script the Mini already runs.\n3. Estimate a month after the change from the same 7 days. Target: under 1,200 minutes a month. If that cannot be reached, say so with the numbers and set out the two fallbacks: a runner on one of Ben's own machines (needs Ben's OK; do not set one up), or a public repo.\n\nRules: one pull request, park for Chief. Do not weaken, skip or delete a test. Do not touch branch protection or any repo setting. No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T18:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T18:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Private-ready 1: checks run on pull requests and code changes only, not on queue or data commits; a month must fit the free minutes",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the automatic checks cheap enough for a private studio repo"
     }
   ],
   "focus": [
