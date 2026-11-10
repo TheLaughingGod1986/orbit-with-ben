@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2476 | mini | open | – | – | 013 picture · assembly · HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest |  |
 | J2477 | mini | open | – | – | 032 edit · review · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | open | – | – | assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
-| J2479 | macbook | claimed | macbook-2 | 2026-11-10T06:50Z | MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted) |  |
+| J2479 | macbook | open | – | – | MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted) |  |
 | J2481 | mini | claimed | gemini | 2026-11-10T05:55Z | 009 picture · assembly · HOS 009 picture: repair the Flow page readers after the 10 Nov page change (no generation), with fixture tests, park for Chief |  |
 | J2482 | mini | open | – | – | Mini: is the NAS mount healthy? Time-limited read-only checks after a hung-open report (change nothing) |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
