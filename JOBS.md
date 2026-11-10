@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2531 | macbook | claimed | macbook-2 | 2026-11-10T21:48Z | review · Private-ready 1: checks run on pull requests and code changes only, not on queue or data commits; a month must fit the free minutes |  |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2535 | any | blocked | macbook | – | review · Verify condition for J2449 |  |
+| J2536 | mini | open | – | – | 007 upload · studio · HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A | Ben 10 Nov: Ok on both |
 
 Recently finished:
 

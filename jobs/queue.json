@@ -1,5 +1,5 @@
 {
-  "next_id": 2536,
+  "next_id": 2537,
   "jobs": [
     {
       "id": "J0001",
@@ -218265,6 +218265,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2536",
+      "title": "HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ben, 10 Nov, asked \"OK to replace the unstarted test so it airs as 'How Was the First Vaccine Made? (And Why It's Named After a Cow)'?\", said: \"Ok on both\". This is the job named by the third exception in AGENTS.md, Never, Studio (orbit-with-ben #762; the same sentence is in History of Science's AGENTS.md, #483). It covers this one video and nothing else.\n\nVideo: History of Science 007, `ETynHpIYLeY`. Private, goes public Thu 12 Nov 18:00 London. Its title test was saved by J0959 and has not started.\n\nTitle to set, exactly:\nHow Was the First Vaccine Made? (And Why It's Named After a Cow)\n\nHistory of Science's Studio is CDP 9222. Check the channel id on every page before any click.\n\n1. Read and write down the test as it is set: each side's title and thumbnail, and its state. J0959 set side A \"Why Vaccines Are Named After a Cow\" with thumbnail A (`08_Thumbnail/Selected/hos_007_thumb_A_milkmaids_secret_v01.jpg`) and side B \"How Was the First Vaccine Made?\" with thumbnail B (`08_Thumbnail/Selected/hos_007_thumb_B_immune_v01.jpg`). Save it to `jobs/reviews/<this job id>/BEFORE_007.md`. If the test shows any impressions, \"running\" or results, STOP: the exception only covers a test that has not started.\n2. Check both thumbnail files are on the Mini and write down their sha256. If one is missing, STOP before deleting anything.\n3. Click \"Edit title\" and confirm the dialog that says the A/B test and its other title options will be deleted. Set the title above. Save. Read back: the title, still Private, the same publish time, and the description, end screen and thumbnail unchanged.\n4. Arm a new title-and-thumbnail Test & Compare. Side A: the new title with thumbnail A. Side B: \"Why Vaccines Are Named After a Cow\" with thumbnail B. (The old side B title is now the first half of the new title, so the old side A title is the real alternative.) Read it back.\n5. If step 4 fails after step 3 worked, leave the new title in place, do not retry more than once, and say exactly what Studio showed. The new title airing with no test is acceptable. The old title with no test is not, so never put the old title back.\n\nThen record it the way J2497 did for 026 and 027: the read-backs under `jobs/reviews/<this job id>/`, the test ledger with the new test id, one pull request, park for Chief.\n\nTime limit: done and read back by Wed 11 Nov 18:00 London. If it is not read back by Thu 12 Nov 12:00 London, stop where it is, change nothing more, and park for Chief with what Studio shows.\n\nNot in this job: any other video, the pinned comment (J0960), the Shorts' Related video (J0875). Do not change privacy, schedule, description, tags, cards or the end screen. No real money.\n",
+      "ref": "Ben 10 Nov: Ok on both",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T19:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T19:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "studio",
+      "plain": "Give the vaccine film its new title before it goes public on Thursday",
+      "mini_only": true
     }
   ],
   "focus": [
