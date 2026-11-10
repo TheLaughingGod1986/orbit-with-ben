@@ -100,6 +100,18 @@ class Priority(unittest.TestCase):
             path.write_text(json.dumps({'tracker': self.tracker}))
             self.assertEqual(load_tracker(path), self.tracker)
 
+    def test_each_caller_gets_its_own_copy_of_the_tracker(self):
+        # J2538: the file is parsed once per version, so what one caller does to its copy must not reach the next.
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'board.json'
+            path.write_text(json.dumps({'tracker': self.tracker}))
+            first = load_tracker(path)
+            first['videos'].clear()
+            first['added'] = True
+            second = load_tracker(path)
+            self.assertIsNot(first, second)
+            self.assertEqual(second, self.tracker)
+
 
 class OldestFilmFirst(unittest.TestCase):
     """Ben, 8 Nov 2026 (option B): keep the WIP limit, but finish the oldest film's work before a newer one."""

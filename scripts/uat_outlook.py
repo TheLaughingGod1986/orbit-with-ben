@@ -101,31 +101,10 @@ def history_repo(slug, root):
     return next((p for p in candidates if p and (p / marker).exists()), root.parent / slug)
 
 
-_HISTORY_CACHE = {}
-
-
-def _cache_key(repo, relative, channel):
-    from pathlib import Path
-    target = Path(repo) / relative
-    try:
-        st = target.stat()
-        stamp = (st.st_mtime_ns, st.st_size)
-    except OSError:
-        stamp = None
-    return (str(Path(repo).resolve()), str(relative), str(channel), stamp)
-
-
-def _copy_samples(samples):
-    return {bucket: list(values) for bucket, values in samples.items()}
-
-
 def history_samples(repo, relative, channel):
     """Bounded Git observation; shallow/missing history cannot fabricate starts."""
     import json
     import subprocess
-    ckey = _cache_key(repo, relative, channel)
-    if ckey in _HISTORY_CACHE:
-        return _copy_samples(_HISTORY_CACHE[ckey])
     try:
         log = subprocess.run(['git', '-C', str(repo), 'log', '-80', '--format=%H %cI',
                               '--', relative], capture_output=True, check=True, timeout=15).stdout.decode().splitlines()
@@ -143,56 +122,9 @@ def history_samples(repo, relative, channel):
             doc = json.loads(stream.read(int(header[2])))
             stream.read(1)
             snapshots.append((date(at), {key: f.get('stages') or {} for key, f in film_records(channel, doc, strict=True)}))
-        res = learn_documents(snapshots, channel)
-        _HISTORY_CACHE[ckey] = _copy_samples(res)
-        return res
+        return learn_documents(snapshots, channel)
     except (OSError, ValueError, KeyError, subprocess.SubprocessError):
         return {}
-
-
-_DEFAULT_HISTORY_SAMPLES = history_samples
-
-
-def _preload_history_samples(repo, relatives, channel):
-    """Preload multiple relative paths in one git log and one git cat-file --batch call."""
-    import io
-    import json
-    import subprocess
-    missing = [rel for rel in relatives if _cache_key(repo, rel, channel) not in _HISTORY_CACHE]
-    if len(missing) < 2:
-        return
-    try:
-        log = subprocess.run(['git', '-C', str(repo), 'log', '--format=COMMIT %H %cI', '--name-only',
-                              '--', *missing], capture_output=True, check=True, timeout=15).stdout.decode().splitlines()
-        by_file = {rel: [] for rel in missing}
-        cur = None
-        for line in log:
-            if line.startswith('COMMIT '):
-                cur = line[7:].split(' ', 1)
-            elif line in by_file and cur and len(by_file[line]) < 80:
-                by_file[line].append(cur)
-        file_revs = [(rel, list(reversed(by_file[rel]))) for rel in missing]
-        specs = ''.join(f'{sha}:{rel}\n' for rel, revs in file_revs for sha, _ in revs)
-        data = subprocess.run(['git', '-C', str(repo), 'cat-file', '--batch'], input=specs.encode(),
-                              capture_output=True, check=True, timeout=15).stdout if specs else b''
-        stream = io.BytesIO(data)
-        for rel, revs in file_revs:
-            snapshots, ok = [], True
-            for _, at in revs:
-                header = stream.readline().decode().split()
-                if len(header) != 3 or header[1] != 'blob':
-                    continue
-                raw = stream.read(int(header[2]))
-                stream.read(1)
-                try:
-                    doc = json.loads(raw)
-                    snapshots.append((date(at), {key: f.get('stages') or {} for key, f in film_records(channel, doc, strict=True)}))
-                except (ValueError, KeyError):
-                    ok = False
-            if ok:
-                _HISTORY_CACHE[_cache_key(repo, rel, channel)] = _copy_samples(learn_documents(snapshots, channel))
-    except (OSError, ValueError, KeyError, subprocess.SubprocessError):
-        return
 
 
 def milestone_rows(stages, jobs):
@@ -387,10 +319,7 @@ def attach_all(videos, documents, alljobs, now):
         if kept['kind'] == 'pipeline_json':
             samples.update(history_samples(repo, kept['path'], label))
             continue
-        statuses = list(repo.glob(kept['path']))
-        if history_samples is _DEFAULT_HISTORY_SAMPLES:
-            _preload_history_samples(repo, [str(s.relative_to(repo)) for s in statuses], label)
-        for status in statuses:
+        for status in repo.glob(kept['path']):
             for bucket, values in history_samples(repo, str(status.relative_to(repo)), label).items():
                 samples.setdefault(bucket, []).extend(values)
     for video in videos:
