@@ -177288,7 +177288,7 @@
       "ref": "J2026",
       "film": "009",
       "stage": "picture",
-      "after": "J2026",
+      "after": "J2536",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -177682,6 +177682,11 @@
           "at": "2026-11-10T22:56Z",
           "by": "claude",
           "what": "reopened: acting Chief, 10 Nov 23:00Z. Ruling on the stop before take 8: (1) the fix is merged (history-of-science #487, f5d5daba): the start-frame step now clicks only inside the open picker and never a tile on the project canvas; pull main in the run's worktree before the next batch. The runner itself is untouched. (2) The one unsubmitted marker on P02:08_the_apple_c1 take 1: yes, record it as FAILED at 0 credits, on three conditions. First read the live Flow balance again without submitting; it must still read 14,190. Second, the Flow account must show no eighth clip for that row. Third, use the runner's or the shared ledger's own reconcile or release call if it has one; only if it has none, append exactly one line to the tranche ledger, saying who, when, 0 credits, and the evidence (the guard's refusal before intent and before Create, and both balance readings). Do not edit shared/account.jsonl by hand. If the balance is not 14,190, stop and park with the numbers. (3) Then mint the remaining 13 rows, one take a row, inside the cap already set. (4) The browser is shared with the 007 title job (J2536), which goes first: do not start a batch while J2536 is claimed (python3 scripts/jobs.py show J2536); look again every ten minutes. Not before 23:40Z. No real money: Flow credits only, 1,300 expected, 14,190 in hand, reset 12 Nov 19:13Z."
+        },
+        {
+          "at": "2026-11-10T23:19Z",
+          "by": "claude",
+          "what": "acting Chief: now follows J2536 (was after J2026, which is done). The dispatcher puts the earlier deadline first, so at 23:40Z this job would have taken the browser ahead of the 007 title job, the opposite of the ruling. It becomes claimable when J2536 is done. If J2536 parks for a reason that is not the browser, the Chief lifts this at the next hourly run."
         }
       ],
       "remaining_action": "Chief review/merge HOS PR #487 (Start-frame overlay scope), reconcile unsubmitted P02:08_the_apple_c1:t1 local ledger row (0cr), then mint remaining 13/20 rows",
