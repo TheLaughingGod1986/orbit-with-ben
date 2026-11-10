@@ -212071,13 +212071,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-10T00:25Z",
-      "eta": "2026-11-10T01:55Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:13Z",
-      "result": "",
+      "result": "parked for Chief: sweep finished, PR #688 (jobs/reviews/J2458/PR_SWEEP.md). 16 CLOSE, 22 MERGE (all MERGEABLE/CLEAN on GitHub 00:35Z, tests re-run and passing on #368 #490 #493 #557), 10 CHIEF. Second run corrected the first: #310/#311 are not fully on main and #653 conflicts (its queue.json reuses id J2463), so all three moved to CHIEF. Not re-checked: the other 16 CLOSE lines and 7 original CHIEF lines. Chief merges and closes.",
       "history": [
         {
           "at": "2026-11-09T23:13Z",
@@ -212103,6 +212103,11 @@
           "at": "2026-11-10T00:25Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T00:29Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: sweep finished, PR #688 (jobs/reviews/J2458/PR_SWEEP.md). 16 CLOSE, 22 MERGE (all MERGEABLE/CLEAN on GitHub 00:35Z, tests re-run and passing on #368 #490 #493 #557), 10 CHIEF. Second run corrected the first: #310/#311 are not fully on main and #653 conflicts (its queue.json reuses id J2463), so all three moved to CHIEF. Not re-checked: the other 16 CLOSE lines and 7 original CHIEF lines. Chief merges and closes."
         }
       ],
       "remaining_action": "Fetched and analyzed all 48 PRs against origin/main; classifying CLOSE/MERGE/CHIEF and updating MERGE branches",
