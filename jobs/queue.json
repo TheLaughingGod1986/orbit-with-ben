@@ -218223,10 +218223,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-10T19:48Z",
+      "eta": "2026-11-10T21:48Z",
       "created_by": "relay",
       "created_at": "2026-11-10T19:42Z",
       "result": "",
@@ -218235,13 +218235,26 @@
           "at": "2026-11-10T19:42Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T19:48Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxd",
       "kind": "review",
       "recheck_of": "J2449",
       "due": "2026-11-10T20:42:24+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T19:48Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
