@@ -217144,19 +217144,24 @@
           "at": "2026-11-10T20:45Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified J2494 assembly, v06 cut list/overlays, and audio/moving-video capabilities; selected clean v06_13.80 ESO Paranal observatory for Mon 16 s06 and smooth continuous motion on ESO star trails for Wed 18 s05"
+        },
+        {
+          "at": "2026-11-10T20:59Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Refined Wed 18 s05 ESO star-trails drift to exact 1 source-px/frame step (zero Pillow EXTENT rounding cadence) and re-running gates"
         }
       ],
-      "remaining_action": "Build Mon 16 v06 (replace 0:20.23-0:22.63 Paranal repeat) and Wed 18 v07 (animate 0:13.45-0:16.55 ESO star trails still), then run all Shorts gates",
+      "remaining_action": "Verify rebuilt Mon 16 v06 and Wed 18 v07 Shorts, watch/listen end-to-end, arm Ben's two watch cards, and open PR",
       "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Fix a repeated shot and a frozen picture in the two Nearest Star Shorts, then offer you the fixed versions",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-10T20:45Z",
+        "at": "2026-11-10T20:59Z",
         "by": "gemini",
-        "note": "Verified J2494 assembly, v06 cut list/overlays, and audio/moving-video capabilities; selected clean v06_13.80 ESO Parana"
+        "note": "Refined Wed 18 s05 ESO star-trails drift to exact 1 source-px/frame step (zero Pillow EXTENT rounding cadence) and re-ru"
       },
       "taskKeys": [
         "OWB:026"
