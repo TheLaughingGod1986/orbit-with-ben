@@ -590,6 +590,24 @@ p.meta + .seg { margin-top: 12px; }
 .fd-body .technical > summary { min-height: 44px; }
 .fd-body .btns .btn { min-height: 44px; display: flex; align-items: center; justify-content: center; }
 .video-first { margin: 14px 0; }
+/* Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon"). The job page leads
+   with what the job is doing; the record as the agents wrote it sits under Technical details. */
+.job-page { display: flex; flex-direction: column; gap: 12px; }
+.job-page .tag { align-self: flex-start; }
+.job-page h1 { margin: 0; }
+.job-facts { margin: 0; background: var(--panel); border-radius: 14px; padding: 4px 14px; }
+.job-facts > div { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.job-facts > div:first-child { border-top: 0; }
+.job-facts dt { flex: 0 0 96px; color: var(--muted); font-size: 13px; }
+.job-facts dd { margin: 0; flex: 1; min-width: 0; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.job-facts .bar { margin-top: 8px; }
+.job-video { display: block; color: var(--blue); min-height: 44px; padding: 2px 0 6px; }
+.job-video span { display: block; color: var(--muted); font-size: 12px; }
+.job-page .technical > summary, .job-more > summary { min-height: 44px; }
+.job-more > summary { font-size: 0.85rem; }
+.job-more .row { margin-top: 8px; }
+.overview-activity a.active-job-card .aj-what { color: var(--ink); }
+.thumb.job { font-size: 1.2rem; }
 </style>
 </head>
 <body>

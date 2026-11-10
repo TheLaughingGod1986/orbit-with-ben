@@ -123,8 +123,8 @@
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
     const working = j && j.status === "claimed";
     const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
-    return `<a class="row${working ? " is-working" : ""}" href="#agents">${dot}<div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
-      <span class="meta">${esc(j.plain || "Studio job · not one video")}</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
+    return `<a class="row${working ? " is-working" : ""}" href="${jobRoute(j.id)}">${dot}<div class="thumb job" aria-hidden="true">⚙</div><div class="body"><b>${esc(clip(jobPlain(null, j), 110))}</b>
+      <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")}</span>
       ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
@@ -435,7 +435,7 @@
   const MILESTONES = [['topic','Topic'],['script','Script'],['sources','Fact checks'],['vo','Voice'],['shots','Shot plan'],['picture','Picture'],['edit','Edit'],['thumbs','Packaging'],['qa','Chief QA']];
   const expandedStages = new Map();
   const disclosureState = new Map();
-  let renderedView="", renderedNav="", focusedJobRoute="";
+  let renderedView="", renderedNav="";
   let videoSort = 'uat';
   const completeStage = m => ['done','skip','passed'].includes(m.displayState || m.state) && !m.awaitingApproval;
   function milestones(v) {
@@ -678,7 +678,7 @@
       const explanation=published?'This video is published. Production progress and UAT forecasts no longer apply.':changes?'Your requested changes need correction and fresh QA before another review. The earlier milestone records do not measure progress on these revisions.':ready?'A finished cut has been handed over for your review. Incomplete historical milestone records do not describe how much of this cut remains to be made.':scheduled?'This video is scheduled. The publication date is separate from production milestone history.':'Your UAT handoff is complete. Delivery and any linked follow-up work are separate from historical milestone coverage.';
       const linked=[...new Map((v.jobs||[]).filter(LIVE).map(j=>[j.id,j])).values()];
       return section(title,null,`<p class="muted">${esc(explanation)}</p>${changes?'<p class="muted">Your timestamped notes are listed below. The records must identify the correction owner and next action.</p>':''}
-        ${linked.length?`<div class="next-action"><span>${published?'Post-publication work':'Linked outstanding work'} · ${linked.length} job${linked.length===1?'':'s'}</span><p>${published?'These linked jobs do not make the published video unfinished. A shared job may also cover other videos.':'Job completion and recorded milestone history are separate from your review decision.'}</p>${linked.map(j=>`<a class="other-stage blocker-job-link" href="${jobRoute(j.id)}">${esc(j.id)} · ${esc(clip(j.remaining_action||j.title||'Action not recorded',160))} · ${esc((JOB_WORD[j.status]||['',j.status])[1])}</a>`).join('')}</div>`:''}
+        ${linked.length?`<div class="next-action"><span>${published?'Post-publication work':'Linked outstanding work'} · ${linked.length} job${linked.length===1?'':'s'}</span><p>${published?'These linked jobs do not make the published video unfinished. A shared job may also cover other videos.':'Job completion and recorded milestone history are separate from your review decision.'}</p>${linked.map(j=>`<a class="other-stage blocker-job-link" href="${jobRoute(j.id)}">${esc(clip(jobPlain(board,j),160))} · ${esc((JOB_WORD[j.status]||['',j.status])[1])}</a>`).join('')}</div>`:''}
         <details class="technical" data-disclosure="${esc(v.key)}-history"><summary>${unconfirmedCut(v)?'Related project history':'Recorded production history'}</summary><p class="muted">Unconfirmed milestones mean historical records are missing, not that the delivered video is unfinished. Source records and approval requirements remain unchanged.</p>${milestones({...v,production:relatedProduction(v)}).map(m=>milestoneCard(v,m,null)).join('')}</details>`);
     }
 
@@ -863,11 +863,11 @@
     const agent=AGENTS[j.by]||j.by||'Unassigned';
     const steps=p?`${p.step} / ${p.of} steps (${pct(p)}%)`:(starting?'Starting…':'Progress n/a');
     const videoLabel=activityJobVideoLabel(b,j);
-    const sub=videoLabel?`${j.id} · ${videoLabel}`:`${j.id} · ${category.label}`;
+    const sub=videoLabel||category.label, plain=jobPlain(b,j);
     // Compact Active jobs row (Ben, 6 Nov ~23:05/23:21) — agent, id · video, steps/ETA, spinning icon, thin bar.
     return `<a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${esc(videoLabel||category.label)}">
       <span class="aj-icon" aria-hidden="true"></span>
-      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub">${esc(sub)}</span></div>
+      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub aj-what">${esc(clip(plain,110))}</span><span class="aj-sub">${esc(sub)}</span></div>
       <div class="aj-right"><span class="aj-steps">${esc(steps)}</span>${eta?`<span class="aj-eta">${esc(eta)}</span>`:''}</div>
       ${p?`<div class="aj-bar" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div>`:''}
     </a>`;
@@ -1665,9 +1665,103 @@
     return ["amber", "Idle"];
   }
 
+  // ---- Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon. I don't understand
+  // any of it. If I click into a job, I just want to see what it's doing. For example, building a new scene, doing a
+  // voiceover, double checking the data"). Every job on the board carries `plain` (scripts/jobs.py plain_summary, or
+  // the line its author wrote with --plain). The job page and every job row lead with it. Job numbers, titles and the
+  // agents' own notes stay, behind "Technical details".
+  const JOB_KIND_PLAIN = { script: "Writing or fixing the script", facts: "Checking the facts are right", review: "Checking work before it moves on",
+    vo: "Recording or checking the voice-over", image: "Making pictures", video: "Making video shots", thumb: "Making the thumbnail pictures",
+    chart: "Making a chart or diagram", assembly: "Putting the video together", qa: "Checking the finished video for faults",
+    listing: "Writing the title, description and tags", studio: "A YouTube Studio task (upload, schedule or settings)", chief: "A decision for the Chief" };
+  const JOB_STATE = { claimed: ["green", "Working now"], open: ["", "In the queue"], blocked: ["amber", "Waiting"] };
+  const boardJob = (b, id) => id ? ((((b || {}).owb || {}).jobs) || []).find(x => x.id === id) : undefined;
+  const jobPlain = (b, j) => String((j && j.plain) || (boardJob(b, j && j.id) || {}).plain || JOB_KIND_PLAIN[(j && j.kind) || ""] || (j && j.title) || "A studio task").trim();
+  const agentName = id => AGENT_NAMES[id] || id || "";
+  const lowerFirst = text => text ? text.charAt(0).toLowerCase() + text.slice(1) : "";
+  const noStop = text => String(text || "").replace(/[.\s]+$/, "");
+  // Why a job that cannot run yet is waiting, in a sentence Ben can read without knowing any job number.
+  function jobWaiting(b, j) {
+    const h = j.hold && typeof j.hold === "object" ? j.hold : {}, t = String(h.type || ""), text = String(h.condition || "") + " " + String(j.result || "");
+    const earlier = boardJob(b, j.after || j.waitsFor);
+    if (j.awaits_ben || t === "ben" || (t === "input" && /\bBen'?s? (?:yes|OK|go-ahead|approval|decision|answer)\b/i.test(text))) return "It is waiting for you to watch it or say yes.";
+    if (t === "public") return "It starts once the video is public on YouTube.";
+    if (t === "date") return "It is waiting for a set date.";
+    if (t === "test") return "It is waiting for a YouTube test of two thumbnails or titles to finish.";
+    if (t === "credits") return "It is waiting for credits to refill.";
+    if (t === "capability") return "It needs an agent that can do this kind of work (for example, listen to the sound), and none can right now.";
+    if (earlier && LIVE(earlier)) return `It is waiting for an earlier job to finish: ${lowerFirst(noStop(jobPlain(b, earlier)))}.`;
+    if (t === "dependency" || j.after) return "It is waiting for earlier work to finish.";
+    if (/parked for Chief|Chief review|for (?:the )?Chief/i.test(text) || j.kind === "chief") return "It is waiting for the Chief to decide.";
+    return "It is waiting for something it needs before it can go on.";
+  }
+  // Where a queued job stands: its place in line and when it should start, or which agent it is waiting for.
+  function jobQueueLine(b, j) {
+    const q = (b && b.queueForecast) || {}, f = (q.jobs || {})[j.id];
+    if (f) return `Number ${f.pos} in line for ${agentName(f.agent)}${f.startAt ? ` · starts about ${qWhen(f.startAt)}` : ""}`;
+    const m = /^waiting for ([\w-]+)(?::\s*(.*))?$/i.exec(String((q.noAgent || {})[j.id] || ""));
+    if (m) return `Waiting for ${agentName(m[1])}${/out of credit|limit/i.test(m[2] || "") ? ", which is out of credit right now" : " to be free"}`;
+    return "In the queue";
+  }
+  // The videos a job is for, as links to their pages; "" for a job about the studio itself.
+  function jobVideos(b, j) {
+    const ctx = activityVideoContext(b, j), videos = uniqueVideos((((b || {}).tracker || {}).videos) || []);
+    return ctx.keys.slice(0, 3).map(key => { const v = videos.find(x => x.key === key);
+      return v ? `<a class="job-video" href="${detailLink(v)}">${esc(v.title || key)} <span>${esc(chName(v.channel))} · ${kind(v)}</span></a>` : ""; }).filter(Boolean).join("");
+  }
+  // One line under a job's plain name in a list: who has it and how far, where it is in line, or what it waits for.
+  function jobStateLine(b, j, now) {
+    if (j.status === "claimed") { const p = recordedTaskProgress(j), e = taskEstimate(j, now);
+      return `${agentName(j.by) || "An agent"} is working on it${p ? ` · step ${p.step} of ${p.of}` : ""}${e ? (e.over ? " · taking longer than usual" : ` · about ${durationText(e.min)} left`) : ""}`; }
+    if (j.status === "blocked") return waitWord(j).replace("Waiting for Ben", "Waiting for you");
+    return jobQueueLine(b, j);
+  }
+  function jobRow(b, j, now) {
+    const [tone] = JOB_STATE[j.status] || [""], video = activityJobVideoLabel(b, j).replace(/^[A-Z]+ \d{3}(?: · )?/, "");
+    return `<a class="row agent job-row" href="${jobRoute(j.id)}"><span class="dot ${tone}"></span><div class="body"><b>${esc(clip(jobPlain(b, j), 120))}</b>
+      ${video ? `<span class="meta">${esc(clip(video, 80))}</span>` : ""}<span class="meta">${esc(jobStateLine(b, j, now))}</span></div><span class="chev">›</span></a>`;
+  }
+  // The page behind a job: what it is doing, for which video, who has it, how far, and why it waits. No job numbers
+  // up top; the record as the agents wrote it is one tap away.
+  function jobPage(b, id, now) {
+    const j = boardJob(b, id);
+    const back = `<header class="top"><a class="more back" href="#agents">‹ Back to Agents</a></header>`;
+    if (!j) return back + empty("That job has finished, or is no longer in the queue.");
+    const [tone, word] = JOB_STATE[j.status] || ["", "In the queue"], p = j.status === "claimed" ? recordedTaskProgress(j) : null;
+    const e = j.status === "claimed" ? taskEstimate(j, now) : null, videos = jobVideos(b, j), h = j.hold && typeof j.hold === "object" ? j.hold : {};
+    const fact = (label, value) => value ? `<div><dt>${esc(label)}</dt><dd>${value}</dd></div>` : "";
+    const facts = [
+      fact("For", videos || "The studio itself, not one video"),
+      j.status === "claimed" ? fact("Who", `${esc(agentName(j.by) || "An agent")} is working on it now`) : "",
+      j.status === "claimed" && j.claimedAt ? fact("Started", esc(londonWhen(j.claimedAt))) : "",
+      p ? fact("How far", `Step ${p.step} of ${p.of}${e ? (e.over ? " · taking longer than usual" : ` · about ${esc(durationText(e.min))} left`) : ""}<div class="bar"><i style="width:${pct(p)}%"></i></div>`)
+        : e ? fact("How long", e.over ? "Taking longer than usual" : `About ${esc(durationText(e.min))} left`) : "",
+      j.status === "open" ? fact("When", esc(jobQueueLine(b, j))) : "",
+      j.status === "blocked" ? fact("Waiting for", esc(jobWaiting(b, j))) : "",
+      j.status === "blocked" && Date.parse(h.check_at || "") > now ? fact("We look again", esc(londonWhen(h.check_at))) : "",  // a date already past says nothing
+      j.due ? fact("Due by", esc(londonWhen(j.due))) : "",
+    ].join("");
+    const note = [["Job", `${j.id} · ${j.title || ""}`], ["Next step, in the agent's words", j.remaining_action], ["Latest progress note", (j.progress || {}).note],
+      ["Last entry", (j.last || {}).what], ["Waiting on, as recorded", h.condition], ["Result so far", j.result]]
+      .filter(([, value]) => value).map(([label, value]) => `<p><b>${esc(label)}</b><br>${esc(value)}</p>`).join("");
+    return `${back}<div class="job-page"><span class="tag ${tone}">${esc(word)}</span>
+      <h1 class="uat-title">${esc(jobPlain(b, j))}</h1>
+      <dl class="job-facts">${facts}</dl>
+      <details class="technical" data-disclosure="job-${esc(j.id)}-tech"><summary>Technical details <span>${esc(j.id)}</span></summary><div class="technical-body">${note}
+        <details class="technical" data-disclosure="job-${esc(j.id)}-meta"><summary>Everything recorded on the job</summary>${technicalFields(j)}</details></div></details></div>`;
+  }
+  // The Agents tab's list of work, in plain words: what is being done now, what is next, and what is waiting.
+  const QUEUE_NEXT_ROWS = 5;
   function agentQueue(b,now) {
-    const s=overviewModel(b,now), jobs=s.jobs.filter(j=>['claimed','open','blocked'].includes(j.status)).sort((a,b)=>['claimed','open','blocked'].indexOf(a.status)-['claimed','open','blocked'].indexOf(b.status));
-    return `<details class="technical video-technical" data-disclosure="agent-queue" ${selectedJob()?'open':''}><summary>Job queue · ${jobs.length} job${jobs.length===1?'':'s'}</summary><div class="technical-body">${jobs.length?jobs.map(j=>`<article id="job-${esc(j.id)}" class="job ${selectedJob()===j.id?'selected-job':''}" tabindex="-1"><b>${esc(j.id)} · ${esc(j.title || 'Untitled job')}</b><p>Recorded status: ${esc(j.status)}${j.by?' · '+esc(AGENTS[j.by]||j.by):''}</p>${j.remaining_action?`<p>${esc(j.remaining_action)}</p>`:''}${technicalFields(j.hold)}${j.result?`<p>${esc(j.result)}</p>`:''}<details class="technical"><summary>Recorded job metadata</summary>${technicalFields(j)}</details></article>`).join(''):'No queued or active jobs recorded.'}</div></details>`;
+    const s=overviewModel(b,now), live=s.jobs.filter(LIVE), q=((b&&b.queueForecast)||{}).jobs||{};
+    const start=j=>Date.parse((q[j.id]||{}).startAt||'')||Infinity;
+    const working=live.filter(j=>j.status==='claimed'), next=live.filter(j=>j.status==='open').sort((a,c)=>start(a)-start(c));
+    const waiting=live.filter(j=>j.status==='blocked').sort((a,c)=>(Date.parse((a.hold||{}).check_at||'')||Infinity)-(Date.parse((c.hold||{}).check_at||'')||Infinity));
+    const rows=list=>list.map(j=>jobRow(b,j,now)).join('');
+    const rest=next.slice(QUEUE_NEXT_ROWS);
+    return `${section('Working on now',working.length,rows(working)||empty('Nothing is being worked on right now.'))}
+      ${section('Up next',next.length,(rows(next.slice(0,QUEUE_NEXT_ROWS))||empty('Nothing is waiting its turn.'))+(rest.length?`<details class="technical job-more" data-disclosure="queue-next"><summary>${rest.length} more in the queue</summary>${rows(rest)}</details>`:''))}
+      ${waiting.length?`<details class="technical job-more" data-disclosure="queue-waiting"><summary>Waiting for something first · ${waiting.length}</summary><p class="meta">These cannot start yet: a video has to go public, a test has to finish, or an earlier job comes first.</p>${rows(waiting)}</details>`:''}`;
   }
 
   function agents(b, now) {
@@ -1678,7 +1772,7 @@
     const teamRows = Object.entries(AGENTS).map(([id, name]) => {
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
-      let why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
+      let why = mine.length ? "Working on: " + mine.map(j => lowerFirst(jobPlain(b, j))).join(" · ")
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
@@ -1808,7 +1902,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
@@ -1834,14 +1928,10 @@
       notes.focus();
     });
     document.querySelectorAll('details[data-disclosure]').forEach(el => {
-      if (el.dataset.disclosure==='agent-queue' && selectedJob()) el.open=true;
-      else if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
+      if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
     });
     if (focusId) document.getElementById(focusId)?.focus({preventScroll:true});
     else if (focusStage) document.querySelector(`details[data-stage="${focusStage}"]>summary`)?.focus({preventScroll:true});
-    const target=tab==='agents' && selectedJob() ? document.getElementById('job-'+selectedJob()) : null;
-    if(tab!=='agents' || !selectedJob()) focusedJobRoute="";
-    if(target && focusedJobRoute!==location.hash) {focusedJobRoute=location.hash;requestAnimationFrame(()=>{target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});});}
     document.querySelectorAll('[data-open-stage]').forEach(button => button.onclick = () => {
       const card = [...document.querySelectorAll('details[data-stage]')].find(el => el.dataset.stage === button.dataset.openStage);
       if (!card) return;

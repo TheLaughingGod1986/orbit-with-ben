@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, firstDayCard, firstDaySection, firstDayPage, firstDayNext, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, firstDayCard, firstDaySection, firstDayPage, firstDayNext, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -41,7 +41,7 @@ assert.equal(quiet.health[0], 'red');
 const board = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'ai_board.json'), 'utf8'));
 board.tracker = {videos: [v({key: 'OWB:019', title: 'Andromeda <script>', lane: 'ready', readyFor: 'Ben',
   watch: {url: 'https://example.com/w', version: 'v06'}})]};
-board.owb = {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'Credit readings'}], day: {doneToday: 4}};
+board.owb = {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'Credit readings', plain: 'Reading how many credits are left'}], day: {doneToday: 4}};
 for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
   const html = t.renderTab(tab, board, NOW);
   assert(!html.includes('<script>'), `${tab} escapes text`);
@@ -52,7 +52,7 @@ assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review 
 assert(review.includes('class="seg two"') && review.includes('<span>Needs your review</span>') && review.includes('<span>Reviewed</span>'), 'Review shows two matching count chips');
 assert(/seg two[\s\S]*Needs your review[\s\S]*Reviewed[\s\S]*<section>[\s\S]*Needs your review[\s\S]*reviewed-fold[\s\S]*open/.test(review), 'Review chips sit above both list sections; reviewed history stays accessible');
 assert(!review.includes('data-seg='), 'Review chips are not lane filters');
-assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
+assert(t.renderTab('agents', board, NOW).includes('Working on: reading how many credits are left'), 'an agent row says what the agent is doing, not a job number and title');
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
 const ok = t.tickDoc(v({key: 'OWB:029:S:abc', version: 'v04', ask: {job: 'J0961', what: 'swap'}}), 'ok');
@@ -1326,4 +1326,81 @@ console.log('Jobs running count checks OK');
     'the video page shows its own check, open, without a link to itself');
   assert(!t.detail({tracker: {videos: fb.tracker.videos}}, 'OWB:032:S:x').includes('aria-label="First day"'), 'a video with no check has no block');
   console.log('First day panel OK');
+}
+
+// Ben, 10 Nov 2026: "when I click into the job, it's completely jargon ... I just want to see what it's doing".
+{
+  const video = v({key: 'OWB:025', number: '025', title: 'Could a Robot Survive on Mars?', jobs: [{id: 'J2510', status: 'claimed'}]});
+  const working = {id: 'J2510', status: 'claimed', by: 'gemini', kind: 'assembly', title: 'Two Mars Shorts still show a raw video id on the end card: re-cut from disk, gate, watch',
+    plain: 'Remove the stray letters from the end of two Mars Shorts before they air', remaining_action: 'Build and gate thu12_length_test_dust_v05.mp4 (N42gKBbD7tE)',
+    claimedAt: new Date(NOW - 20 * 6e4).toISOString(), progress: {step: 1, of: 6, note: 'Diagnosed v01 and v02 gate failures'}, due: '2026-10-29T12:00:00Z', taskKeys: ['OWB:025']};
+  const queued = {id: 'J2499', status: 'open', kind: 'assembly', title: 'HOS 013: build and test the Flow mint runner for the 71 rows',
+    plain: "Build and test the tool that will make the Darwin film's pictures, without making any yet"};
+  const noAgent = {id: 'J2455', status: 'open', title: 'Panel critique', plain: 'Checking the thumbnails with a panel'};
+  const earlier = {id: 'J2512', status: 'open', title: 'Fix faults', plain: 'Fix a repeated shot and a frozen picture in two Shorts.'};
+  const held = {id: 'J2513', status: 'blocked', title: 'Swap HZGTovJu_TQ', plain: 'Put the Monday Short you approved into its slot', after: 'J2512',
+    hold: {type: 'dependency', condition: 'J2512 done', check_at: '2026-10-31T18:05:00Z'}, result: 'Waiting for: J2512'};
+  const jb = {tracker: {videos: [video]}, models: freshModels, owb: {jobs: [working, queued, noAgent, earlier, held]},
+    queueForecast: {jobs: {J2499: {agent: 'gemini', pos: 3, startAt: '2026-10-28T21:52Z'}}, noAgent: {J2455: 'waiting for cursor: out of credit until 2026-12-09'}}};
+
+  // The job page: plain name first, then for, who, how far and due. No job number or raw title above the fold.
+  const page = t.jobPage(jb, 'J2510', NOW), top = page.slice(0, page.indexOf('<details'));  // what Ben sees before opening anything
+  assert(top.includes('<h1 class="uat-title">Remove the stray letters from the end of two Mars Shorts before they air</h1>'), 'the page is headed by what the job is doing');
+  assert(top.includes('Working now') && top.includes('Gemini is working on it now') && top.includes('Step 1 of 6'), 'who has it and how far');
+  assert(top.includes('#v=OWB%3A025') && top.includes('Could a Robot Survive on Mars?'), 'the video it is for, as a link');
+  assert(top.includes('Due by') && top.includes('Thu 29 Oct 12:00'), 'when it is due, in London time');
+  assert(!top.includes('J2510') && !top.includes('raw video id') && !top.includes('thu12_length_test') && !top.includes('claimed'), 'no job number, title or file name up top');
+  assert(page.includes('J2510 · Two Mars Shorts still show a raw video id') && page.includes('thu12_length_test_dust_v05.mp4') && page.includes('Diagnosed v01 and v02 gate failures'),
+    'the record as the agents wrote it is under Technical details');
+  assert(page.includes('Back to Agents'));
+  // A queued job says where it is in line; one whose agent is out says which.
+  const q = t.jobPage(jb, 'J2499', NOW);
+  assert(q.includes('In the queue') && /Number 3 in line for Gemini · starts about (?:\w+ )?21:52/.test(q) && q.includes('The studio itself, not one video'));
+  assert.equal(t.jobQueueLine(jb, noAgent), 'Waiting for Cursor, which is out of credit right now');
+  assert.equal(t.jobQueueLine({queueForecast: {noAgent: {x: 'waiting for claudecode'}}}, {id: 'x'}), 'Waiting for Claude Code to be free');
+  assert.equal(t.jobQueueLine({}, {id: 'x'}), 'In the queue');
+  // A waiting job says why in a sentence, naming the earlier job by what it does.
+  const w = t.jobPage(jb, 'J2513', NOW);
+  assert(w.includes('It is waiting for an earlier job to finish: fix a repeated shot and a frozen picture in two Shorts.') && w.includes('We look again') && w.includes('Sat 31 Oct 18:05'));
+  assert(!t.jobPage(jb, 'J2513', Date.parse('2026-11-05T00:00:00Z')).includes('We look again'), 'a look-again date already past is not shown');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'public'}}), 'It starts once the video is public on YouTube.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'test'}}), 'It is waiting for a YouTube test of two thumbnails or titles to finish.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', awaits_ben: [{what: 'watch'}]}), 'It is waiting for you to watch it or say yes.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'input', condition: "Ben's yes to delete the finished title test"}}), 'It is waiting for you to watch it or say yes.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'date'}}), 'It is waiting for a set date.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', result: 'parked for Chief: needs a ruling'}), 'It is waiting for the Chief to decide.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked'}), 'It is waiting for something it needs before it can go on.');
+  // A job that has gone, and text that needs escaping.
+  assert(t.jobPage(jb, 'J9999', NOW).includes('That job has finished, or is no longer in the queue.'));
+  assert(!t.jobPage({tracker: {videos: []}, owb: {jobs: [{id: 'Jx', status: 'open', plain: 'Fix <script>'}]}}, 'Jx', NOW).includes('<script>'), 'the page escapes its text');
+  // Without a plain line the kind says what it is; never an empty name.
+  assert.equal(t.jobPlain(null, {id: 'Jv', kind: 'vo', title: 'VO pass 2'}), 'Recording or checking the voice-over');
+  assert.equal(t.jobPlain(null, {id: 'Jn'}), 'A studio task');
+  assert.equal(t.jobPlain(jb, {id: 'J2510', title: 'short row from a video card'}), 'Remove the stray letters from the end of two Mars Shorts before they air', "a video's job row borrows the plain line from the queue");
+
+  // The Agents tab lists work in three plain groups; rows open the job page.
+  const tab = t.agents(jb, NOW);
+  assert(/Working on now[\s\S]*Up next[\s\S]*Waiting for something first · 1/.test(tab), 'working, next, waiting');
+  assert(!tab.includes('Job queue ·') && !tab.includes('Recorded status') && !tab.includes('Recorded job metadata'), 'the old jargon list is gone');
+  assert(tab.includes('href="#agents&job=J2510"') && tab.includes('Gemini is working on it · step 1 of 6'), 'a working row says who and how far');
+  assert(tab.includes('Number 3 in line for Gemini') && tab.includes('Waiting for an earlier job'), 'a queued row says its place; a waiting row says what for');
+  assert(tab.indexOf("Build and test the tool that will make the Darwin film") < tab.indexOf('Checking the thumbnails with a panel'), 'the job starting soonest is first in Up next');
+  assert(tab.includes('Working on: remove the stray letters from the end of two Mars Shorts before they air'), 'the agent team says what Gemini is doing');
+  const many = {...jb, owb: {jobs: Array.from({length: 8}, (_, i) => ({id: 'Jq' + i, status: 'open', plain: 'Queued job ' + i}))}};
+  assert(t.agentQueue(many, NOW).includes('3 more in the queue'), 'a long queue shows five, the rest one tap away');
+  assert(t.agentQueue({tracker: {videos: []}, owb: {jobs: []}}, NOW).includes('Nothing is being worked on right now.'));
+
+  // The Overview's running-job card says what the job is doing; the Videos tab's studio job card too.
+  const card = t.activityCard(jb, NOW);
+  assert(card.includes('Gemini is working') && card.includes('Remove the stray letters from the end of two Mars Shorts before they air') && card.includes('OWB 025 · Could a Robot Survive on Mars?'));
+  assert(!/>J2510 ·/.test(card), 'no job number in the card text');
+  const sj = t.jobCard({id: 'J77', status: 'claimed', by: 'claude', title: 'kanban deploy', plain: 'Keeping the studio running smoothly'});
+  assert(sj.includes('Keeping the studio running smoothly') && sj.includes('href="#agents&job=J77"') && !sj.includes('>J77<') && !sj.includes('kanban deploy'));
+  // A published video's linked work reads as what is being done.
+  const live = v({key: 'OWB:025', number: '025', title: 'Mars', lane: 'done', youtube: {state: 'live', privacy: 'public', videoId: 'abc'}, jobs: [{id: 'J2510', status: 'claimed', title: 'raw title', remaining_action: 'Build and gate'}]});
+  t.setBoard(jb);
+  const vp = t.detail({...jb, tracker: {videos: [live]}}, 'OWB:025');
+  assert(vp.includes('Remove the stray letters from the end of two Mars Shorts before they air · Working'), 'linked work is in plain words');
+  t.setBoard(null);
+  console.log('Jobs in plain words OK');
 }
