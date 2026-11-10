@@ -214869,20 +214869,23 @@
           "at": "2026-11-10T08:08Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T08:08Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Channel tracker: no snapshot today. Read its log, stop a hung run, run today's snapshot by hand after PR #722",
+      "remaining_action": "Read the tracker log and check for a hung run",
       "due": "2026-11-10T12:00:00Z",
       "plain": "The daily numbers page did not update this morning; this finds out why and runs it by hand.",
       "mini_only": true,
       "urgent": 6,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-10T08:08Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "by": "claudecode"
       }
     },
     {
