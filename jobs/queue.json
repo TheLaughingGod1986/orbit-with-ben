@@ -1,5 +1,5 @@
 {
-  "next_id": 2480,
+  "next_id": 2481,
   "jobs": [
     {
       "id": "J0001",
@@ -177258,6 +177258,11 @@
           "at": "2026-11-10T03:14Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: per J2033 reopen rule ('If the live evidence read fails closed, block with the captured DOM, do not loosen the reader'), read_live_still_evidence and read_live_evidence in merged _mint_flow_v05_tranche2.py (02b57a1b) fail closed on live Flow DOM (CDP 9222, HOS PR #465 a3dc54d3, jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json): (1) model control is button[aria-label='Select model family'] ('🍌 Nano Banana 2.1 arrow_drop_down' / 'Veo 3.1 - Quality arrow_drop_down'), not aria-selected/checked/pressed, so models=[]; Image model also renamed to '🍌 Nano Banana 2.1'; (2) aspect radio text is 'crop_16_9 16:9', so aspects=[]; (3) Account details shows '14,890 Google Flow credits' (not 'AI credits'), so balances=[], and Account details / Settings trigger CDK overlays are mutually exclusive and closed at submit_create; (4) _flow_still_v01.py hardcodes missing HOS 006 STYLE_REFS path; (5) Mini /Volumes/data NFS vnode is hung in kernel __open. 0/20 generated, 0 KEEP, 0 credits spent (14,890 intact)."
+        },
+        {
+          "at": "2026-11-10T03:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J2480"
         }
       ],
       "remaining_action": "Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Volumes/data NFS hang",
@@ -177280,6 +177285,12 @@
         "at": "2026-11-10T03:14Z",
         "by": "gemini",
         "note": "Committed captured live Flow DOM fail-closed evidence in HOS PR #465 (a3dc54d3); 94 runner tests + check_all PASS; 0/20 "
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-10T04:15:06+00:00",
+        "recheck_task": "J2480"
       }
     },
     {
@@ -213645,6 +213656,37 @@
       ],
       "remaining_action": "MacBook slot 1 repair: move the stale git lock aside in its own clone so it can pull again (nothing deleted)",
       "plain": "One of the MacBook's two workers is stuck on a leftover lock file; the other worker moves it aside."
+    },
+    {
+      "id": "J2480",
+      "title": "Verify condition for J2033",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2033: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-10T03:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T03:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Vol",
+      "kind": "review",
+      "recheck_of": "J2033",
+      "due": "2026-11-10T04:15:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
