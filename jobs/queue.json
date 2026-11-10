@@ -213013,9 +213013,14 @@
           "at": "2026-11-10T01:44Z",
           "by": "claudecode",
           "what": "step 2 of 5 done: HOS 007 ETynHpIYLeY: nothing changed. Studio shows no plain title field, only 'A/B testing titles, Ineligible' with the two test titles and an Edit title button, so the title lives inside the Test and Compare. HOS 099 uAomPaOBrM8: title and description line 1 changed at 01:44Z; still private for 10 Dec 18:00Z, rest of description and tags unchanged."
+        },
+        {
+          "at": "2026-11-10T01:47Z",
+          "by": "claudecode",
+          "what": "step 4 of 5 done: 099 records written and check_all passes; PR history-of-science#463 open. 007 untouched."
         }
       ],
-      "remaining_action": "Write the 099 records and the Studio tests log rows, run check_all, open one PR",
+      "remaining_action": "Chief decides how HOS 007 takes the approved title while its title test is set, and reviews PR 463",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved.",
@@ -213030,11 +213035,11 @@
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-10T01:44Z",
+        "at": "2026-11-10T01:47Z",
         "by": "claudecode",
-        "note": "HOS 007 ETynHpIYLeY: nothing changed. Studio shows no plain title field, only 'A/B testing titles, Ineligible' with the "
+        "note": "099 records written and check_all passes; PR history-of-science#463 open. 007 untouched."
       },
       "taskKeys": [
         "HOS:007",
