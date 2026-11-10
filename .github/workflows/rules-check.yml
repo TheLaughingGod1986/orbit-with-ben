@@ -75,14 +75,33 @@ jobs:
         run: python3 scripts/studio.py status --check
       - name: Install media-test tools
         if: steps.scope.outputs.rules == 'true'
+        # J2538 (10 Nov 2026): the same Ubuntu ffmpeg package, installed faster. The runner's own package index is
+        # used first (`apt-get update` only if that fails), the man-page rebuild that follows every install is
+        # switched off, and suggested extras are left out. ffmpeg and ffprobe must both answer or the job fails, so
+        # no media test can be skipped for want of them.
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-      - if: steps.scope.outputs.rules == 'true'
-        run: python3 -m unittest discover -s scripts -p "test_*.py" -v
-      # Every test file in these two folders, not a hand-kept list: test_orbit_cfr_delivery.py and test_gate_stayed.py
+          sudo rm -f /var/lib/man-db/auto-update
+          sudo apt-get install -y --no-install-recommends ffmpeg || { sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg; }
+          ffmpeg -version | head -1
+          ffprobe -version | head -1
+      # Every test file in the three folders, not a hand-kept list: test_orbit_cfr_delivery.py and test_gate_stayed.py
       # were never run here until J2463 (7 Nov code audit, row F-05a).
-      - if: steps.scope.outputs.rules == 'true'
-        run: python3 -m unittest discover -s 04_Audio/tools -p "test_*.py" -v
-      - if: steps.scope.outputs.rules == 'true'
-        run: python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_*.py" -v
+      # J2538: the three folders run side by side, not one after another. Same commands, same tests; each folder's
+      # full output is printed when all three have finished, and the step fails if any folder fails.
+      - name: Tests (three folders, side by side)
+        if: steps.scope.outputs.rules == 'true'
+        run: |
+          python3 -m unittest discover -s scripts -p "test_*.py" -v > /tmp/tests_scripts.log 2>&1 & p1=$!
+          python3 -m unittest discover -s 04_Audio/tools -p "test_*.py" -v > /tmp/tests_audio.log 2>&1 & p2=$!
+          python3 -m unittest discover -s 00_Brand/Channel-Setup/tools -p "test_*.py" -v > /tmp/tests_tools.log 2>&1 & p3=$!
+          rc=0
+          wait $p1 || rc=1
+          wait $p2 || rc=1
+          wait $p3 || rc=1
+          for f in scripts audio tools; do
+            echo "::group::$f"
+            cat /tmp/tests_$f.log
+            echo "::endgroup::"
+            tail -4 /tmp/tests_$f.log
+          done
+          exit $rc
