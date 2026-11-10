@@ -1,0 +1,50 @@
+{
+  "job": "J2510",
+  "version": "v05",
+  "replaces_for_watch": "thu12_length_test_dust_v01 (scheduled N42gKBbD7tE). v01..v04 untouched.",
+  "test": "Short length test, 50-60 s (AGENTS.md -> Packaging 5)",
+  "air": "2026-11-12",
+  "related": "Js6EQJ8qDi8",
+  "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v05.mp4",
+  "frames": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v05_frames.jpg",
+  "sha256": "abb3c33e70c11fddd2455587b7685b1da7ffc2883fbbe125e715f38549d6fb1b",
+  "duration_s": 54.633333,
+  "master": {
+    "file": "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/09_Final-Export/025_MarsRobot_full_rough_v03f.mp4",
+    "sha256_prefix": "cce6268c",
+    "from_s": 254.7,
+    "to_s": 307.3,
+    "loop_tail_from_s": 254.7,
+    "loop_tail_s": 2.02
+  },
+  "first_line": "Opportunity should have starved within months.",
+  "last_line": "It was the sky turning off.",
+  "words": 127,
+  "last_word_end_s": 52.120000000000005,
+  "hold_s": 2.5,
+  "fade_s": 1.0,
+  "first_cut_s": 2.4,
+  "reframe": "crop 608x1080 at x=656, scale to 1080x1920 (1.78x); opening shot pushed 12% over 1.2 s (1.99x at the end of the push); hard cut at 2.4 s (after 'months.') to s02_r20 (PIA17759.jpg quad='c' sub-pixel push)",
+  "hook": "SAVED BY / THE WIND (yellow THE WIND), 0-2.2 s",
+  "title_on_screen": "Could a Robot Survive on Mars?",
+  "title_windows_s": [
+    [
+      9.0,
+      14.0
+    ],
+    [
+      52.120000000000005,
+      54.62
+    ]
+  ],
+  "long_id_on_screen": null,
+  "audio": "locked v01 mix releveled to -14.3 LUFS / -2.2 dBTP (26 Oct gate: -14.0\u00b10.5 LUFS, <=-1.6 dBTP)",
+  "stems": [
+    "thu12_length_test_dust_v05_stem_vo.wav",
+    "thu12_length_test_dust_v05_stem_sfx.wav",
+    "thu12_length_test_dust_v05_stem_bed.wav"
+  ],
+  "spend": "none (\u00a30 local re-cut)",
+  "orbit": "none on screen (no Omni shot in master 254-310 s)",
+  "overlay": "none"
+}
