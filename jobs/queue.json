@@ -1,5 +1,5 @@
 {
-  "next_id": 2485,
+  "next_id": 2486,
   "jobs": [
     {
       "id": "J0001",
@@ -214180,6 +214180,38 @@
         "at": "2026-11-10T04:33Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2485",
+      "title": "HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "HOS 008 Short C v03 was assembled on 6 Nov (J2255, Cursor): `hos_008_short_C_v03.mp4`, sha256 `9f25a16de5fc7d454be7adbc0e301614c7b060cd28b10cd076bcd2b4a6642161`, 22.708 s, -14.1 LUFS. Its gates passed then (shorts open, picture QA, music, SFX, atempo). The evidence is on branch `cursor/J2255-short-c` (commit 9631a14b) in history-of-science and has no PR yet. It was built three days before rule 24, \"The first second\" (9 Nov), so it has not been through that gate. The gate is on History of Science main since 10 Nov (PR #461).\n\n1. File the evidence: merge origin/main into `cursor/J2255-short-c` (a merge commit, no rebase), run check_all.sh, and open a PR.\n2. Run `gate_shorts_open.py` with the first-second checks on the master and its voice timings. Report the numbers: when the subject and the surprise word are spoken (must be by 1.5 s), voice onset (0.15 s at most), the longest pause in sentence 1 (0.15 s at most), and whether something moves at frame 0.\n3. If the gate fails: write the fix list with timecodes in `jobs/reviews/<this job>/REVIEW.md`, queue the re-cut job for the film (existing voice and picture only; a new voice take parks for the Chief's price pass), and stop.\n4. If the gate passes: listen to it and look at it (audio input; one frame a second) and write KEEP or a FIX list.\n5. On KEEP: copy it to the HOS UAT watch folders, verify the sha256 of the copies, and call `jobs.py awaits` for Ben's phone watch. Its slot is Wed 2 Dec 11:30 and it must not go out before the 008 long is public (Thu 19 Nov 18:00).\n\nNo upload, no Studio change, nothing spent. £0.\n",
+      "ref": "",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T04:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T04:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch",
+      "due": "2026-11-20T00:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ]
     }
   ],
   "focus": [
