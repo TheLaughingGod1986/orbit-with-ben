@@ -177375,9 +177375,14 @@
           "at": "2026-11-10T09:28Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Claimed; NAS preflight: first 10 s ls of /Volumes/data/studio-live timed out, retrying once"
+        },
+        {
+          "at": "2026-11-10T09:33Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: NAS answered once then hung again; refs found in the NAS archive 009 folder, not studio-live; nothing generated"
         }
       ],
-      "remaining_action": "Pass the three preflight checks (NAS answers, style refs present, read-only Flow check), then mint the first batch of HOS 009 rows",
+      "remaining_action": "Chief names the 009 media root; then re-run the NAS check, the read-only Flow check and mint the first batch",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177394,9 +177399,9 @@
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-10T09:28Z",
+        "at": "2026-11-10T09:33Z",
         "by": "claudecode",
-        "note": "Claimed; NAS preflight: first 10 s ls of /Volumes/data/studio-live timed out, retrying once"
+        "note": "NAS answered once then hung again; refs found in the NAS archive 009 folder, not studio-live; nothing generated"
       }
     },
     {
