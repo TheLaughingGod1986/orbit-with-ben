@@ -218587,13 +218587,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-10T20:25Z",
-      "eta": "2026-11-10T22:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T20:15Z",
-      "result": "",
+      "result": "parked for Chief: OWB PR #766 (61b40b215) and HOS PR #486 (7ab958f) open with frame-0 full-bleed check (check 10, rule 24), caption-safe row-median outside band measurement, 17 unit+ffmpeg tests in test_gate_full_bleed.py, and studio-core sync; verified ffYKoNVPoqg fails as blur-pad on 3/3 frames while full-bleed OWB/HOS Shorts pass. Merge #766 and #486, then unblock/close J2539 so J2540 can run on the Mini.",
       "history": [
         {
           "at": "2026-11-10T20:15Z",
@@ -218624,6 +218624,11 @@
           "at": "2026-11-10T20:50Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:50Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: OWB PR #766 (61b40b215) and HOS PR #486 (7ab958f) open with frame-0 full-bleed check (check 10, rule 24), caption-safe row-median outside band measurement, 17 unit+ffmpeg tests in test_gate_full_bleed.py, and studio-core sync; verified ffYKoNVPoqg fails as blur-pad on 3/3 frames while full-bleed OWB/HOS Shorts pass. Merge #766 and #486, then unblock/close J2539 so J2540 can run on the Mini."
         }
       ],
       "remaining_action": "Tests passed, studio-core synced to HOS, PR #766 (OWB) and PR #486 (HOS) pushed, parking for Chief",

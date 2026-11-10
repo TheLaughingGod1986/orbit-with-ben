@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2536 | mini | blocked | claudecode | – | 007 upload · studio · HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A | Ben 10 Nov: Ok on both |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2538 | macbook | blocked | macbook | – | review · Private-ready 1b: the rules check job under one minute on a typical pull request (ffmpeg install first, then the slowest tests), nothing skipped |  |
-| J2539 | macbook | claimed | macbook-2 | 2026-11-10T22:25Z | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
+| J2539 | macbook | blocked | macbook-2 | – | review · Opening gate, part 1: add the frame-0 full-bleed check that rule 24 asks for (no blur-pad, no letterbox band), with tests; sync the shared tool | J2505 |
 | J2540 | mini | open (after J2539) | – | – | review · Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results | J2505 |
 | J2541 | macbook | blocked | macbook | – | review · One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so |  |
 | J2542 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
