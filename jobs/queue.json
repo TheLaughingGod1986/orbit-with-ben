@@ -218590,16 +218590,21 @@
           "at": "2026-11-10T20:27Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-10T20:29Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Check ~/_desk/state/chief and ~/_desk/state/board/publish.log on MacBook",
+      "remaining_action": "Set BOARD_PUBLISH=0 in scripts/macbook_worker.py and add unit tests",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Make sure only the Mini updates the board, so it cannot flicker",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-10T20:27Z",
+        "at": "2026-11-10T20:29Z",
         "by": "macbook"
       }
     }
