@@ -218585,19 +218585,22 @@
           "at": "2026-11-10T20:25Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-10T20:27Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so",
+      "remaining_action": "Check ~/_desk/state/chief and ~/_desk/state/board/publish.log on MacBook",
       "due": "2026-11-11T18:00:00Z",
       "kind": "review",
       "plain": "Make sure only the Mini updates the board, so it cannot flicker",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-10T20:22Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-10T20:27Z",
+        "by": "macbook"
       }
     }
   ],
