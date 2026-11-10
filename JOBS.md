@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2464 | mini | open | – | – | review · Repo clean-up, part 2: move dead and one-off code to the archive folder (7 Nov code audit; nothing deleted) |  |
 | J2466 | mini | open | – | – | review · Repo clean-up, part 3: remove old branches that are already fully in main, both repos (list them first) |  |
 | J2470 | mini | blocked | claudecode | – | for claudecode · studio · `mini-claude-opus-5-5` · Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov) |  |
-| J2471 | mini | claimed | claudecode | 2026-11-10T06:15Z | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
+| J2471 | mini | blocked | claudecode | – | studio · Apply the approved search-led titles to the five scheduled Orbit longs (the first airs Sun 15 Nov) |  |
 | J2473 | mini | claimed | macbook-2 | 2026-11-10T06:51Z | for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: two new HOS backlog films from J2411 (HOS PR #460) |  |
 | J2475 | mini | open | – | – | 011 shots · script · HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row |  |
 | J2476 | mini | open | – | – | 013 picture · assembly · HOS 013 Darwin & Wallace (Thu 17 Dec): picture plan v01 on the locked VO, build the free picture, price the rest |  |
