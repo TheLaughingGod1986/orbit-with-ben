@@ -84,13 +84,25 @@ jobs:
         # J2538 (10 Nov 2026): cache the Ubuntu ffmpeg/ffprobe binaries and every resolved shared library (`ldd` with
         # `cp -L`, so update-alternatives links such as libblas/liblapack are stored as real files). On a cache hit
         # this restores in ~1 s instead of paying 12-22 s for apt-get + dpkg.
+        # Only libraries the runner does not already have are added: the bundle also holds libc and other system
+        # libraries, and writing over one that running programs have open can crash them. If the restored copy does
+        # not answer, it is removed and the package is installed as before, so the tests never run without ffmpeg.
         run: |
           if [ -x ~/.cache/ffmpeg-bundle/bin/ffmpeg ] && [ -x ~/.cache/ffmpeg-bundle/bin/ffprobe ]; then
-            sudo cp -a ~/.cache/ffmpeg-bundle/bin/* /usr/local/bin/
-            sudo cp -a ~/.cache/ffmpeg-bundle/lib/* /usr/lib/x86_64-linux-gnu/
+            sudo cp -a ~/.cache/ffmpeg-bundle/bin/ffmpeg ~/.cache/ffmpeg-bundle/bin/ffprobe /usr/local/bin/
+            added=0
+            for lib in ~/.cache/ffmpeg-bundle/lib/*; do
+              if [ ! -e "/usr/lib/x86_64-linux-gnu/$(basename "$lib")" ]; then
+                sudo cp -a "$lib" /usr/lib/x86_64-linux-gnu/
+                added=$((added + 1))
+              fi
+            done
+            echo "restored ffmpeg from the cache: $added libraries added"
             sudo ldconfig
           fi
           if ! (command -v ffmpeg >/dev/null && command -v ffprobe >/dev/null && ffmpeg -version >/dev/null 2>&1 && ffprobe -version >/dev/null 2>&1); then
+            sudo rm -f /usr/local/bin/ffmpeg /usr/local/bin/ffprobe
+            hash -r
             sudo rm -f /var/lib/man-db/auto-update
             sudo apt-get install -y --no-install-recommends ffmpeg || { sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg; }
             rm -rf ~/.cache/ffmpeg-bundle
@@ -102,7 +114,7 @@ jobs:
           ffprobe -version | head -1
       # Every test file in the three folders, not a hand-kept list: test_orbit_cfr_delivery.py and test_gate_stayed.py
       # were never run here until J2463 (7 Nov code audit, row F-05a).
-      # J2538: split scripts/ across four parallel processes and 00_Brand/Channel-Setup/tools across two, with an
+      # J2538: split scripts/ across four parallel processes and 00_Brand/Channel-Setup/tools across three, with an
       # explicit partition check before running that every test_*.py file on disk is in exactly one group.
       - name: Tests (parallel groups, partition-checked)
         if: steps.scope.outputs.rules == 'true'
