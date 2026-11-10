@@ -208,6 +208,22 @@ def uploads_file(slug: str) -> pathlib.Path | None:
     return base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json" if base else None
 
 
+def studio_checkout(home_dir: pathlib.Path | None = None) -> pathlib.Path:
+    """The checkout that carries the studio's own data (the board branch, the job queue). Today that is the home
+    channel's repo. When the studio has its own repo this is the one line that moves."""
+    return repo_path(home(), home_dir)
+
+
+def studio_github() -> str:
+    """`owner/name` on GitHub of the repo that carries the studio's board and threads (today the home channel's)."""
+    return re.sub(r"^https://github\.com/|\.git$", "", get(home())["repo"]["url"])
+
+
+def home_label() -> str:
+    """The label a record gets when it names no channel (the old `or "OWB"`)."""
+    return label(home())
+
+
 def main() -> int:
     if sys.argv[1:] == ["sync"]:
         changed = sync()

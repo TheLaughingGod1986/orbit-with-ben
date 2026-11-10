@@ -189,6 +189,33 @@ class ThirdChannelOnTheBoard(unittest.TestCase):
         self.assertEqual([(c["channel"], c["title"], c["type"]) for c in cards], [("SKY", "Orion", "long")])
 
 
+class StudioOwnRepo(unittest.TestCase):
+    """What board_check.py asks instead of naming the repo that carries the board (J2522)."""
+
+    def test_the_board_repo_and_its_github_name_come_from_the_home_channel(self):
+        self.assertEqual(channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
+        self.assertEqual(channels.home_label(), "OWB")
+        with mock.patch.dict("os.environ", {"OWB_REPO": "/somewhere/else"}):
+            self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {"OWB_REPO": ""}):
+            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / "orbit-with-ben")
+
+
+class ThirdChannelInTheBoardCheck(unittest.TestCase):
+    def test_a_third_pipeline_channel_gets_the_scheduled_read_back_check(self):
+        import board_check
+        base = channels._load()
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", home=False,
+                   order=3, title_match=r"\bSKY\b", pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        board = {"sky": {"films": [{"id": "001", "stages": {"scheduled": {"status": "done"}}}]},
+                 "owb": {"films": [{"id": "002", "stages": {"scheduled": {"status": "done"}}}]},
+                 "tracker": {"videos": [{"key": "SKY:001", "lane": "progress"}, {"key": "OWB:002", "lane": "progress"}]}}
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (sky,)):
+            res = board_check.check([], board, site_status=lambda url, follow=True: 200, files={})
+        self.assertEqual(res["problems"], ["SKY:001: scheduled in PIPELINE but the card is in progress; "
+                                           "no YouTube read-back (add the long to SKY UPLOADS.json)"])
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",
