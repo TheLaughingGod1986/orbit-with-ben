@@ -216727,13 +216727,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T14:52Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:14Z",
-      "result": "Waiting for: Ben's watch of the two re-cuts. Chief ruling 10 Nov 16:30Z: both KEEP (PR #745 merged; gates, picture QA and an agent viewing all pass; the video id is gone from both end cards). Cards are armed in order Thu 12 (v05) then Fri 13 (v06). On his OK the Chief queues one swap job per Short with `jobs.py approved`; with no OK by each deadline the original airs.",
+      "result": "Done: both re-cuts made, checked and OK'd. Chief ruling 10 Nov 16:27Z KEEP (PR #745). Ben OK'd both on the board (Thu 12 v05 at 16:21Z, Fri 13 v06 at 16:22Z). Swaps queued, one per Short: J2519 (Mars wind, by Wed 11 Nov 18:00 London) and J2520 (Mars helicopter, by Thu 12 Nov 18:00 London).",
       "history": [
         {
           "at": "2026-11-10T14:14Z",
@@ -216814,6 +216814,11 @@
           "at": "2026-11-10T16:57Z",
           "by": "claude",
           "what": "no longer waits on Ben: OK'd, delivered by J2520"
+        },
+        {
+          "at": "2026-11-10T16:57Z",
+          "by": "claude",
+          "what": "done: Done: both re-cuts made, checked and OK'd. Chief ruling 10 Nov 16:27Z KEEP (PR #745). Ben OK'd both on the board (Thu 12 v05 at 16:21Z, Fri 13 v06 at 16:22Z). Swaps queued, one per Short: J2519 (Mars wind, by Wed 11 Nov 18:00 London) and J2520 (Mars helicopter, by Thu 12 Nov 18:00 London)."
         }
       ],
       "remaining_action": "Parked for Chief PR #745 merge and Ben's watch",
@@ -216832,13 +216837,6 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben's watch of the two re-cut Mars Shorts on the Review tab (Thu 12 by Wed 11 Nov 18:00 London; Fri 13 by Thu 12 Nov 18:00 London). No OK by then: the original airs as scheduled.",
-        "check_at": "2026-11-11T18:05:00+00:00",
-        "checked_at": "2026-11-10T16:26:48+00:00",
-        "checked_by": "claude"
-      },
       "awaits_was": {
         "what": "Watch the re-cut Fri 13 Mars Helicopter Short. OK to swap it in?",
         "file": "OWB UAT/025_mars_shorts_recut_J2510/fri13_ingenuity_72_v06.mp4",
@@ -216852,7 +216850,8 @@
         "fixed": [
           "Removed the jumble of letters (the YouTube video ID Js6EQJ8qDi8) under the title on the end card; opens full-bleed 9:16 on moving aerial Mars picture with first cut at 2.8 s; audio levelled to -14.3 LUFS / -2.1 dBTP"
         ]
-      }
+      },
+      "done_ref": "PR #745; board ticks OWB-J2510.1 and .2"
     },
     {
       "id": "J2511",
