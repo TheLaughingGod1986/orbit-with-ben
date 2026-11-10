@@ -214533,13 +214533,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-10T06:04Z",
-      "eta": "2026-11-10T08:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T05:59Z",
-      "result": "",
+      "result": "PR #716 (macbook/J2486): Design review of 023 Venus (VBaYRPp85Sw) Test & Compare B thumbnail '465°C' returns FIX. (1) §2.B rubric: HOOK PASS ('465°C'), BAND PASS (top-left [68,34,462,138], 86px=11.94% cap height, off lander & bottom-right corner), PHONE PASS with caveat, GRADE FAIL visually. (2) Saturation 245.5/255 (59.4% of pixels pinned at S>=250) reads blown out and garish beside channel thumbs (139.0-186.5; 023 A MELTS LEAD 161.8) and Venus search competitors (Cool Worlds bfVJBZJjcYg 119.2, Insider Tech tsBAozoyYZw 125.7, Astrum XZJfHBc4-0w 208.0). (3) Accuracy FIX: at 465°C (<525°C Draper point) metal does not glow visibly and basalt has no molten lava cracks, whereas 31.4% of lower lander hull has R>=250 (max RGB [255,238,157]). (4) Provenance ESTABLISHED and written to META.json: Antigravity image-generator subagent (generate_image, session a6954191 -> be87b190, 2026-11-10T04:43:59Z, £0 subscription tool). (5) No Orbit, no extra words, corner clear. Queued fix job J2487; J1198 left waiting. £0.",
       "history": [
         {
           "at": "2026-11-10T05:59Z",
@@ -214585,6 +214585,11 @@
           "at": "2026-11-10T06:14Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-10T06:20Z",
+          "by": "macbook-2",
+          "what": "done: PR #716 (macbook/J2486): Design review of 023 Venus (VBaYRPp85Sw) Test & Compare B thumbnail '465°C' returns FIX. (1) §2.B rubric: HOOK PASS ('465°C'), BAND PASS (top-left [68,34,462,138], 86px=11.94% cap height, off lander & bottom-right corner), PHONE PASS with caveat, GRADE FAIL visually. (2) Saturation 245.5/255 (59.4% of pixels pinned at S>=250) reads blown out and garish beside channel thumbs (139.0-186.5; 023 A MELTS LEAD 161.8) and Venus search competitors (Cool Worlds bfVJBZJjcYg 119.2, Insider Tech tsBAozoyYZw 125.7, Astrum XZJfHBc4-0w 208.0). (3) Accuracy FIX: at 465°C (<525°C Draper point) metal does not glow visibly and basalt has no molten lava cracks, whereas 31.4% of lower lander hull has R>=250 (max RGB [255,238,157]). (4) Provenance ESTABLISHED and written to META.json: Antigravity image-generator subagent (generate_image, session a6954191 -> be87b190, 2026-11-10T04:43:59Z, £0 subscription tool). (5) No Orbit, no extra words, corner clear. Queued fix job J2487; J1198 left waiting. £0."
         }
       ],
       "remaining_action": "Writing jobs/reviews/J2486/REVIEW.md, recording plate provenance in META.json, and opening PR on macbook/J2486",
