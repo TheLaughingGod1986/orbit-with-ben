@@ -211674,13 +211674,13 @@
       "stage": "",
       "after": "J2447",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-10T00:27Z",
-      "eta": "2026-11-10T02:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
-      "result": "",
+      "result": "Built all 6 Batch 1 repackage thumbnails (1280x720, <2 MB, house Arial Black top-band builder, thumb_preview.py --score PASS on all 6, clear of duration badge, £0 spend): (1) 002 A (*REAL* PHOTO, eso1907a, sat 153.7, nb 7.9%, 123.2 KB): 02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/08_Thumbnails/repackage_2026-11/002_blackhole_package_A_real-photo_3xrxdmaOwJI.jpg sha256=2adb399dfafd513c2c59cc39ea0b1693461e485dd2e75fb0de082cac23fb5df5; (2) 002 B (TIME *STOPS*, eso2208-eht-mwa, sat 154.1, nb 5.1%, 118.4 KB): 02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/08_Thumbnails/repackage_2026-11/002_blackhole_package_B_time-stops_3xrxdmaOwJI.jpg sha256=f7f1ae325f9e8ba7787131cb6303e9941f817564e30de6e491c42038968ce063; (3) 020 A (*58* MINUTES, PIA21775, sat 153.4, nb 5.9%, 259.5 KB): 02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/08_Thumbnails/repackage_2026-11/020_jupiter_package_A_58-minutes_-jmMROGoZCM.jpg sha256=85768b75e995878eeaf30cef6bd82ec66d50509ec965a07a30ae7c4662fedff1; (4) 020 B (NO *CORE*?, heic1914a, sat 178.8, nb 3.2%, 229.4 KB): 02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/08_Thumbnails/repackage_2026-11/020_jupiter_package_B_no-core_-jmMROGoZCM.jpg sha256=3394228a25e25fac9f1079644340dd52a000d330cc5fcae312161ee6faf5f3e7; (5) 019 A (*NO* CRASH, heic1502a, sat 128.0, nb 2.9%, 1126.8 KB): 02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg sha256=dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7; (6) 019 B (*4* BILLION YEARS, eso0932a + PIA04921 + vlt-mw-potw, sat 126.7, nb 4.1%, 302.8 KB): 02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_B_4-billion-years_ojk-dfOpAmw.jpg sha256=1d893adc2a868a9ae363c6cfe9e3f9f045e63483e2e91a6e70768654ab48ce44. (Note: unattended launchd jobs on the Mini are blocked by macOS TCC on /Volumes/data, and 002/019/020 are shipped archive films whose active Mini folders live under /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/; saved to 08_Thumbnails/repackage_2026-11/ and 08_Thumbnail/repackage_2026-11/ plus ~/_desk/jobs/J2448/.)",
       "history": [
         {
           "at": "2026-11-09T21:12Z",
@@ -211721,6 +211721,11 @@
           "at": "2026-11-10T01:35Z",
           "by": "gemini",
           "what": "step 5 of 5 done: All 6 batch-1 repackage thumbnails and preview sheets verified (1280x720, <2 MB, thumb_preview.py --score PASS on all 6, readable at 168x94, clear of duration badge)"
+        },
+        {
+          "at": "2026-11-10T01:35Z",
+          "by": "gemini",
+          "what": "done: Built all 6 Batch 1 repackage thumbnails (1280x720, <2 MB, house Arial Black top-band builder, thumb_preview.py --score PASS on all 6, clear of duration badge, £0 spend): (1) 002 A (*REAL* PHOTO, eso1907a, sat 153.7, nb 7.9%, 123.2 KB): 02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/08_Thumbnails/repackage_2026-11/002_blackhole_package_A_real-photo_3xrxdmaOwJI.jpg sha256=2adb399dfafd513c2c59cc39ea0b1693461e485dd2e75fb0de082cac23fb5df5; (2) 002 B (TIME *STOPS*, eso2208-eht-mwa, sat 154.1, nb 5.1%, 118.4 KB): 02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/08_Thumbnails/repackage_2026-11/002_blackhole_package_B_time-stops_3xrxdmaOwJI.jpg sha256=f7f1ae325f9e8ba7787131cb6303e9941f817564e30de6e491c42038968ce063; (3) 020 A (*58* MINUTES, PIA21775, sat 153.4, nb 5.9%, 259.5 KB): 02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/08_Thumbnails/repackage_2026-11/020_jupiter_package_A_58-minutes_-jmMROGoZCM.jpg sha256=85768b75e995878eeaf30cef6bd82ec66d50509ec965a07a30ae7c4662fedff1; (4) 020 B (NO *CORE*?, heic1914a, sat 178.8, nb 3.2%, 229.4 KB): 02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/08_Thumbnails/repackage_2026-11/020_jupiter_package_B_no-core_-jmMROGoZCM.jpg sha256=3394228a25e25fac9f1079644340dd52a000d330cc5fcae312161ee6faf5f3e7; (5) 019 A (*NO* CRASH, heic1502a, sat 128.0, nb 2.9%, 1126.8 KB): 02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg sha256=dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7; (6) 019 B (*4* BILLION YEARS, eso0932a + PIA04921 + vlt-mw-potw, sat 126.7, nb 4.1%, 302.8 KB): 02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_B_4-billion-years_ojk-dfOpAmw.jpg sha256=1d893adc2a868a9ae363c6cfe9e3f9f045e63483e2e91a6e70768654ab48ce44. (Note: unattended launchd jobs on the Mini are blocked by macOS TCC on /Volumes/data, and 002/019/020 are shipped archive films whose active Mini folders live under /Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/; saved to 08_Thumbnails/repackage_2026-11/ and 08_Thumbnail/repackage_2026-11/ plus ~/_desk/jobs/J2448/.)"
         }
       ],
       "remaining_action": "Mark J2448 done with all 6 paths and SHA-256 hashes",
