@@ -60,7 +60,7 @@ A fresh survey after the repoints (all 195 upload rows' descriptions, the nine H
 
 ### Not done yet
 
-- **History of Science playlist `PLEbpfUzWzcXU`** (rename, add `VbPubYd6Fbs`, reorder): not started. There is no History of Science Data API login in `07_Content-Ops/.env`, so it has to be done in Studio on CDP 9222, whose tab is on another channel (`UCGGBHuqKAL6WzGLXnxm98eg`) and must be switched first.
+- **History of Science playlist `PLEbpfUzWzcXU`** (rename, add `VbPubYd6Fbs`, reorder): not started. There is no History of Science Data API login in `07_Content-Ops/.env`, so it has to be done in Studio on CDP 9222. That browser's first account (`UCGGBHuqKAL6WzGLXnxm98eg`) has no access and the channel switcher does not list History of Science; the second signed-in account does: `https://studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg/...?authuser=1` loaded with channel id `UCXp7HkBIl1LgaznXuZHJyRg` (probed read-only at 06:17 UTC; the `/playlists` path itself showed an error page, so use Content > Playlists). CDP 9223 has no access to it.
 
 ## Playlist ids
 
