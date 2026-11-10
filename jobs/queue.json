@@ -213793,10 +213793,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-10T03:46Z",
+      "eta": "2026-11-10T05:46Z",
       "created_by": "relay",
       "created_at": "2026-11-10T03:15Z",
       "result": "",
@@ -213805,13 +213805,26 @@
           "at": "2026-11-10T03:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-10T03:46Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief review of captured live Flow DOM schema in HOS PR #465 (jobs/reviews/J2033/LIVE_DOM_CAPTURE_2026-11-10.json) + _flow_still_v01.py style-ref path + Mini /Vol",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-10T04:15:06+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-10T03:46Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
