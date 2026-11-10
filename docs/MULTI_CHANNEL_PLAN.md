@@ -55,17 +55,28 @@ one board and one thread, in the studio repo. On top of the 5 Nov plan:
 7. **NAS folders by slug.** `studio-live/<slug>/`, not `studio-live/orbit-with-ben` and
    `studio-live/History Of Science`. The folder name goes in `studio/channel.json` meanwhile.
 8. **The name is `studio` (Ben, 10 Nov 2026: "You can name it whatever you think's best. I'll let you handle on
-   the naming front."). Visibility is still Ben's.** Recommended: private, because the queue and the thread are how
-   agents get their instructions and nobody outside can post on a private repo. Two things have to be true before
-   a private repo works, and both are jobs, not decisions:
+   the naming front."). It will be private (Ben, 10 Nov 2026: "If you think private is best, let's do a private
+   repo. ... as long as the .env files and all the keys and stuff are local on my machine, that's fine.").** Why
+   private: the queue and the thread are how agents get their instructions, and nobody outside can post on a
+   private repo. A slip in a report (an address, a list of devices) is also not published. A private repo can be
+   opened later; a public one cannot be taken back. Ben's fallback stands: if the automatic checks cannot be kept
+   inside the free monthly minutes, the repo is made public instead, and that is the Chief's call to bring to him
+   with the numbers. Three things have to be true before a private repo works, and all three are jobs, not
+   decisions:
    - **Check minutes.** A private repo has a monthly cap on free check minutes. Today the full suite runs on most
      queue commits (they touch `STATUS.md`), which would spend the cap in days. Queue-only commits must stop
      running it.
    - **The board reads public addresses.** The pages fetch `board.json` and the heartbeats straight from GitHub's
      public file addresses. In a private repo those answer nothing, so the site's own server has to read them
-     (`api/ref.js` already does this for one small read).
-   The repo is not created until the dry run of the move passes (`scripts/studio_split.py`, J2524) and Ben has said
-   private or public.
+     (`api/ref.js` already does this for one small read). A page that reads private data must also ask who is
+     looking: only a signed-in viewer (Ben's paired devices) gets the data, or the site would publish what the
+     repo hides.
+   - **Keys stay on the machines.** Checked on 10 Nov 2026: neither repo tracks a key, a token or a `.env` that
+     holds a credential. History of Science tracks one `.env` with a cloud project name and a region and no key; it
+     becomes an example file. The dry run fails if the tree it would move holds a key-shaped string or a `.env`
+     that is not an example.
+   The repo is not created until the dry run of the move (`scripts/studio_split.py`, J2524) has passed seven days in
+   a row, and Ben is told the day before.
 
 **Why it stalled, and how it finishes (10 Nov 2026).** Ben: "What else is blocking the development here? How can we
 get this project moving and finished?" Nothing was blocked on a decision. None of the remaining work was in the job
@@ -74,19 +85,19 @@ queued as jobs with ceilings that can only fall:
 
 | Wave | What | Jobs |
 |---|---|---|
-| 1, now | Small scripts stop naming a channel (62 of 327 lines) and stop assuming the studio lives in one channel's repo (13 of 40) | J2521, J2522, J2523 (MacBook) |
+| 1, now | Small scripts stop naming a channel (62 of 327 lines) and stop assuming the studio lives in one channel's repo (13 of 40) | J2521, J2522, J2523 (MacBook). In on 10 Nov: 327 to 285 and 40 to 27. What J2522 left is J2533 |
 | 1, now | The dry run of the move, run daily: one number for what still stops it | J2524 (cloud) |
 | 1, now | `video_tracker.py`, `macbook_worker.py`; the rule book split | J2525, J2526, J2527 (cloud) |
 | 2 | The four scripts that run the live studio, one change each: `board_publish.py`, `approved_deliver.py`, `kanban_snapshot.py`, `chief_relay.py` (203 lines) | queued as wave 1 merges |
 | 2 | The rest of the second count (`jobs.py`, `workflow_state.py`, `workflow_handoffs.py`, `studio.py`, `routing.py`) | queued as wave 1 merges |
 | 3 | History of Science to per-film status files; its own `studio/RULES.md` | after the rule book split |
-| 3 | Ready for private: check minutes, and the board reading through its own server | before Ben's private-or-public answer is acted on |
+| 3 | Ready for private (Ben said private on 10 Nov): check minutes, and the board reading through its own server | J2531, J2532 (queued 10 Nov) |
 | 4 | A week in which the dry run passes every day, then the move in one planned window | Chief, with Ben told the day before |
 
 The dry run replaces "a clean week" as a feeling with a number: the move happens after seven daily passes in a row.
 
 **Order of work:** finish phase 1 (both counts to zero) → the channel check and template → History of Science to
-per-film status files → a clean week → Ben's answer on name and visibility → the move (phase 3), one planned
+per-film status files → ready for private → seven daily passes of the dry run → the move (phase 3), one planned
 window, old copies kept until a week of green.
 
 The plan below is as written on 5 Nov.

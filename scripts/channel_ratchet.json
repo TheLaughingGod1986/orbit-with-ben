@@ -1,6 +1,6 @@
 {
   "_about": "Decoupling ratchet (scripts/test_channel_ratchet.py). For each engine script: how many code lines still name a channel. Ceilings only go down; a script not listed must have none. Lower them with `python3 scripts/test_channel_ratchet.py --lower`.",
-  "total": 300,
+  "total": 285,
   "ceilings": {
     "chief_relay.py": 79,
     "kanban_snapshot.py": 56,
@@ -8,38 +8,27 @@
     "board_publish.py": 33,
     "video_tracker.py": 30,
     "macbook_worker.py": 25,
-    "board_check.py": 10,
     "studio_reach.py": 6,
     "missed_runs.py": 5,
     "owb_thread.py": 5,
-    "routing.py": 4,
     "sfx_kit.py": 4,
     "core_sync.py": 2,
     "nas_offload.py": 2,
-    "capability_probe.py": 1,
     "cdp_tabs.py": 1,
-    "sync_rules.py": 1,
+    "routing.py": 1,
     "uat_outlook.py": 1
   },
   "_about_home": "Second ratchet, same rules: code lines that assume the engine lives inside one channel's repo (channels.home(), or a path from the engine's root into channel content).",
-  "home_total": 40,
+  "home_total": 27,
   "home": {
     "video_tracker.py": 7,
-    "progress24.py": 5,
     "jobs.py": 4,
     "apply_yellow_white_v04_thumbs.py": 3,
     "kanban_snapshot.py": 3,
     "workflow_state.py": 3,
     "chief_relay.py": 2,
-    "music_gate.py": 2,
     "studio.py": 2,
     "workflow_handoffs.py": 2,
-    "ai_spend.py": 1,
-    "ai_spend_daily.py": 1,
-    "refill.py": 1,
-    "review_lane.py": 1,
-    "routing.py": 1,
-    "stage_sync.py": 1,
-    "thumb_ledger.py": 1
+    "routing.py": 1
   }
 }

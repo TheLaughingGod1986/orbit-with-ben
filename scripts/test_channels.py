@@ -273,6 +273,99 @@ class ThirdChannelInTheForecasts(unittest.TestCase):
 T_BALANCE = __import__("datetime").date(2026, 10, 9)
 
 
+class StudioOwnRepo(unittest.TestCase):
+    """What board_check.py asks instead of naming the repo that carries the board (J2522)."""
+
+    def test_the_board_repo_and_its_github_name_come_from_the_home_channel(self):
+        self.assertEqual(channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
+        self.assertEqual(channels.home_label(), "OWB")
+        with mock.patch.dict("os.environ", {"OWB_REPO": "/somewhere/else"}):
+            self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {"OWB_REPO": ""}):
+            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / "orbit-with-ben")
+
+
+class ThirdChannelInTheBoardCheck(unittest.TestCase):
+    def test_a_third_pipeline_channel_gets_the_scheduled_read_back_check(self):
+        import board_check
+        base = channels._load()
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", home=False,
+                   order=3, title_match=r"\bSKY\b", pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        board = {"sky": {"films": [{"id": "001", "stages": {"scheduled": {"status": "done"}}}]},
+                 "owb": {"films": [{"id": "002", "stages": {"scheduled": {"status": "done"}}}]},
+                 "tracker": {"videos": [{"key": "SKY:001", "lane": "progress"}, {"key": "OWB:002", "lane": "progress"}]}}
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (sky,)):
+            res = board_check.check([], board, site_status=lambda url, follow=True: 200, files={})
+        self.assertEqual(res["problems"], ["SKY:001: scheduled in PIPELINE but the card is in progress; "
+                                           "no YouTube read-back (add the long to SKY UPLOADS.json)"])
+
+
+class NoHomeChannelInTheScripts(unittest.TestCase):
+    """J2523: eight scripts stopped asking which channel this repo belongs to. They ask these instead."""
+
+    def _with_sky(self):
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", short="Sky",
+                   home=False, order=3, title_match=r"\bSKY\b", uat_dir={"icloud": "SKY UAT"})
+        base = channels._load()
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_a_job_that_names_no_channel_gets_the_default_one(self):
+        self.assertEqual(channels.default(), "owb")
+        self.assertEqual(channels.queue_key(), "owb")   # where kanban_snapshot.py publishes the queue in board.json
+
+    def test_the_studios_own_records_stay_where_they_were(self):
+        root = HERE.parent
+        self.assertEqual(channels.studio_records("ai_spend"), root / "05_Analytics" / "ai_spend")
+        self.assertEqual(channels.studio_records("tests", "THUMB_LEDGER.json"),
+                         root / "05_Analytics" / "tests" / "THUMB_LEDGER.json")
+        import ai_spend
+        import thumb_ledger
+        self.assertEqual(ai_spend.LEDGER, root / "05_Analytics" / "ai_spend" / "ledger.jsonl")
+        self.assertEqual(ai_spend.PLANS, root / "05_Analytics" / "ai_spend" / "plans.json")
+        self.assertEqual(thumb_ledger.LEDGER, root / "05_Analytics" / "tests" / "THUMB_LEDGER.json")
+
+    def test_a_path_belongs_to_the_channel_whose_checkout_holds_it(self):
+        root = HERE.parent
+        self.assertEqual(channels.of_path(root / "02_Video-Projects" / "033_X"), "owb")
+        with tempfile.TemporaryDirectory() as t:
+            self.assertEqual(channels.of_path(t), "owb")   # nobody's: the default channel
+            sky_repo = pathlib.Path(t) / "night-sky"
+            (sky_repo / "studio").mkdir(parents=True)
+            (sky_repo / "studio" / "channel.json").write_text("{}")
+            with self._with_sky(), mock.patch.object(
+                    channels, "repo_path", lambda slug, home_dir=None: sky_repo if slug == "sky" else pathlib.Path(t) / "none"):
+                self.assertEqual(channels.of_path(sky_repo / "02_Video-Projects" / "001_Orion"), "sky")
+                self.assertEqual(channels.of_path(root / "02_Video-Projects"), "owb")
+
+    def test_board_ticks_are_read_for_the_channel_asked_for(self):
+        import stage_sync
+        checks = {"OWB-024": {"verdict": "ok", "version": "v06", "at": "2026-10-22T09:17:55Z"},
+                  "SKY-001": {"verdict": "ok", "version": "v02", "at": "2026-11-01T09:00:00Z"}}
+        with self._with_sky():
+            self.assertEqual(list(stage_sync.ben_oks(checks)), ["024"])
+            self.assertEqual(stage_sync.ben_oks(checks, "sky"), {"001": "Ben OK v02 (2026-11-01)"})
+
+    def test_a_bare_film_number_tries_the_jobs_own_channel_first(self):
+        import progress24
+        titles = {"OWB:001": "Moon", "SKY:001": "Orion", "SKY:002": "Lyra"}
+        with self._with_sky():
+            self.assertEqual(progress24._bare_film_key("001", {"repo": "sky"}, titles), "SKY:001")
+            self.assertEqual(progress24._bare_film_key("001", {}, titles), "OWB:001")
+            self.assertEqual(progress24._bare_film_key("002", {}, titles), "SKY:002")
+
+    def test_the_queue_is_read_from_the_boards_queue_key(self):
+        import progress24
+        board = {channels.queue_key(): {"focus": ["OWB:033"], "jobs": [], "done": [{"id": "J1"}]}}
+        self.assertEqual(progress24.board_focus(board), ["OWB:033"])
+        self.assertEqual([j["id"] for j in progress24.jobs_done_all(board)], ["J1"])
+
+    def test_the_voice_tools_are_found_in_a_channels_checkout(self):
+        import ai_spend_daily
+        self.assertEqual(ai_spend_daily.voice_tools(), HERE.parent / "04_Audio" / "tools")
+        with mock.patch.object(channels, "checkout", lambda slug: None):
+            self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",

@@ -20,7 +20,10 @@ the live thumbnail.
 """
 import argparse, datetime as dt, json, pathlib, sys
 
-LEDGER = pathlib.Path(__file__).resolve().parent.parent / "05_Analytics" / "tests" / "THUMB_LEDGER.json"
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
+LEDGER = channels.studio_records("tests", "THUMB_LEDGER.json")
 MIN_TESTS = 4
 WIN_SHARE = 0.75
 WIN_MARGIN = 5.0   # watch-time share points

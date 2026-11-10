@@ -34,8 +34,10 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
-TOOLS = ROOT / "04_Audio" / "tools"
 CDP = "http://127.0.0.1:9222"
 BILLING_URL = "https://console.cloud.google.com/billing/0124D1-E6EFD6-40F6DA/credits/all?project=gen-lang-client-0538779324"
 FLOW_URL = "https://flow.google.com/"
@@ -46,8 +48,17 @@ CODEX_HOME = Path.home() / ".codex"
 CODEX_MAX_AGE_H = 72  # an older reading says nothing about this week's limit
 
 
+def voice_tools() -> Path:
+    """The ElevenLabs helpers (el_auth, vo_take) live in a channel's repo: the first checkout that has them."""
+    for slug in channels.slugs():
+        base = channels.checkout(slug)
+        if base and base.joinpath("04_Audio", "tools", "el_auth.py").is_file():
+            return base.joinpath("04_Audio", "tools")
+    raise RuntimeError("no channel checkout on this machine has 04_Audio/tools/el_auth.py")
+
+
 def read_elevenlabs() -> dict:
-    sys.path.insert(0, str(TOOLS))
+    sys.path.insert(0, str(voice_tools()))
     from el_auth import load_token  # noqa: E402
     from vo_take import credits  # noqa: E402
     token, mode = load_token(prefer_api_key=True)
