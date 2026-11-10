@@ -295,8 +295,11 @@ class ButtonStamp(unittest.TestCase):
         self.assertNotIn("@vercel/blob", js)
         self.assertIn("version, stampUrl", js)
         self.assertIn("/api/checks?stamp=1", js)
-        # 24 Oct 2026: OWB desk thread rolled from #99 (full) to issue #264; HOS stays #180
-        self.assertIn('OWB: ["TheLaughingGod1986/orbit-with-ben", 264]', js)
+        # Ben's ticks go on the thread scripts/thread.json names (10 Nov 2026: this line still said #264 six days
+        # after the November thread opened, so his words went where no agent was reading). A rollover must change both.
+        thread = json.loads((HERE / "thread.json").read_text())
+        self.assertIn(f'OWB: ["{thread["repo"]}", {thread["number"]}]', js)
+        self.assertNotIn(', 264]', js)
         self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
         self.assertNotIn(', 99]', js)
         # one post per real change, exactly as before, and only after the tick is saved

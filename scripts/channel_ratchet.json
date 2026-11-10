@@ -1,6 +1,6 @@
 {
   "_about": "Decoupling ratchet (scripts/test_channel_ratchet.py). For each engine script: how many code lines still name a channel. Ceilings only go down; a script not listed must have none. Lower them with `python3 scripts/test_channel_ratchet.py --lower`.",
-  "total": 301,
+  "total": 300,
   "ceilings": {
     "chief_relay.py": 79,
     "kanban_snapshot.py": 56,
@@ -8,7 +8,7 @@
     "board_publish.py": 33,
     "video_tracker.py": 30,
     "macbook_worker.py": 25,
-    "board_check.py": 11,
+    "board_check.py": 10,
     "studio_reach.py": 6,
     "missed_runs.py": 5,
     "owb_thread.py": 5,
