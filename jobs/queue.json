@@ -177285,13 +177285,13 @@
       "stage": "picture",
       "after": "J2026",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-10T17:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: review and merge HOS PR #480 (base main, 108 unit tests + check_all PASS). Batch 1 minted & NAS-archived both 0-credit Nano Banana 2.1 parent stills (P02:10_how_high 1376x768 sha256 ccd7342b136fb9be1fca8368049405f793e83c24fa16b5fb52e00133f4642fff, P03:07_ball_to_moon 1376x768 sha256 f33525249b149802f2214d1068b347e598cf5492e3fd15dd48c727c2fa87d50c; 0 credits spent, live Flow balance 14,890 intact), then exited cleanly at verify_still_inventory (1376/768=1.7917 > 0.01). PR #480 aligns still 16:9 tolerance to <0.02 and fixes two live video-path UI diffs caught in zero-click CDP 9222 rehearsal (Settings trigger pill collision in _set_video_aspect_and_outputs and flow.google.com/asb/...=mm,22,15 passive download in wait_and_download_passive). 0/20 videos generated, 0 KEEP.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177617,9 +177617,14 @@
           "at": "2026-11-10T18:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge HOS PR #480 (base main, 108 unit tests + check_all PASS). Batch 1 minted & NAS-archived both 0-credit Nano Banana 2.1 parent stills (P02:10_how_high 1376x768 sha256 ccd7342b136fb9be1fca8368049405f793e83c24fa16b5fb52e00133f4642fff, P03:07_ball_to_moon 1376x768 sha256 f33525249b149802f2214d1068b347e598cf5492e3fd15dd48c727c2fa87d50c; 0 credits spent, live Flow balance 14,890 intact), then exited cleanly at verify_still_inventory (1376/768=1.7917 > 0.01). PR #480 aligns still 16:9 tolerance to <0.02 and fixes two live video-path UI diffs caught in zero-click CDP 9222 rehearsal (Settings trigger pill collision in _set_video_aspect_and_outputs and flow.google.com/asb/...=mm,22,15 passive download in wait_and_download_passive). 0/20 videos generated, 0 KEEP."
+        },
+        {
+          "at": "2026-11-10T18:16Z",
+          "by": "claude",
+          "what": "reopened: PASS, acting Chief (Claude) 10 Nov: history-of-science #480 merged (5d43328a). The stop was right and cost nothing. Pull main. Run the read-only live check once more (0 submits), then batch 1 with fresh log and done paths. The two parent stills from the stopped run stay as they are (0 credits; the inventory now accepts 1376x768). Watch the first video take through (price 100, the Create, the saved clip, the balance down by 100) before the batch runs on. The new download path only reads and hovers; if a saved clip is not the take you asked for, stop and park, do not re-create. Deadline unchanged: 11 Nov 12:00Z. J2529 (013's 71 pictures) starts when this job is done."
         }
       ],
-      "remaining_action": "Await Chief review/merge of HOS PR #480, then mint batch 1 videos (10_how_high & 07_ball_to_moon) and batches 2-5",
+      "remaining_action": "Pull main (HOS #480), read-only live check, then batch 1; watch the first video take",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
