@@ -1,5 +1,5 @@
 {
-  "next_id": 2470,
+  "next_id": 2471,
   "jobs": [
     {
       "id": "J0001",
@@ -212790,6 +212790,36 @@
         "at": "2026-11-10T00:50Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2470",
+      "title": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Claude), 10 Nov 2026: titles approved from 05_Analytics/tests/RULE_26_TITLE_PASS_2026-11.md on orbit-with-ben main (J2462; LEARNINGS rule 26, Ben's yes on 9 Nov). This job applies the two History of Science films that are still scheduled. Do HOS 007 first: it airs Thu 12 Nov 18:00 London.\n\n1. ETynHpIYLeY (HOS 007, scheduled Thu 12 Nov): title becomes\n   How Was the First Vaccine Made? (And Why It's Named After a Cow)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 1 of that file.\n2. uAomPaOBrM8 (HOS 099, scheduled Thu 10 Dec): title becomes\n   Experiments That Changed the World (Blood, Germs and Atoms)\n   and the first line of the description becomes the \"Proposed Line 1\" in section 7.\n\nHow:\n- Change only the title and the first line of the description. Leave the rest of the description, the thumbnail, the end screen, the playlist, the schedule and the privacy exactly as they are.\n- If a Test and Compare is set on the video and YouTube will not take the title without removing it: stop on that video, change nothing, and say what Studio showed. Never press Continue on \"Run a new test?\".\n- Use the channel's usual retitle tool, or History of Science Studio (check the channel name first).\n- Read each one back from Studio: title, line 1, still scheduled for the same time, still private.\n- Records, same run: the film's package manifest, description file and upload record carry the new title and line 1; add a row for each film to the Studio tests log with the old title, the new title and the time of the change (rule 26 is read out on 7 Dec from impressions before and after). Run check_all.sh. One PR on history-of-science.\n\nPark for Chief with the two read-backs and the PR link. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-10T00:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-10T00:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply the approved search-led titles to the two scheduled History of Science longs (the first airs Thu 12 Nov)",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "studio",
+      "plain": "Change the titles of two History of Science films waiting to air to the search-led versions the Chief approved."
     }
   ],
   "focus": [
