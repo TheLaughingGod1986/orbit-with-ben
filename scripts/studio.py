@@ -21,7 +21,7 @@ agents racing for the same stage can't both win.
 Stages, in order: topic script sources vo shots picture edit thumbs upload.
 States: todo, doing, review, done, skip, blocked.
 """
-import argparse, datetime as dt, json, pathlib, subprocess, sys
+import argparse, datetime as dt, json, os, pathlib, subprocess, sys
 import fcntl
 
 
@@ -192,6 +192,99 @@ def git(*args):
     return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
 
 
+# A picture run appends its spend rows to this tracked file as it works (the Flow runners' `export_ai_spend`, which
+# is made to write the shared checkout's own ledger). Until 11 Nov 2026 those unsaved rows made every queue write on
+# the Mini refuse ("requires a clean working tree") for as long as a batch ran: workers committed them by hand four
+# times in ten minutes and one could not claim its job at all.
+SPEND_LEDGER = "05_Analytics/ai_spend/ledger.jsonl"
+
+
+def _replace(path, lines):
+    """Write the ledger in one step. A run reads this file while it works: it must never see it missing or half
+    written (it stops on a ledger whose last line is unfinished)."""
+    tmp = path.with_name(path.name + f".{os.getpid()}.tmp")
+    tmp.write_text("".join(line + "\n" for line in lines))
+    os.replace(tmp, path)
+
+
+def _row_key(line):
+    try:
+        row = json.loads(line)
+    except ValueError:
+        return line
+    return ("id", row["id"]) if isinstance(row, dict) and row.get("id") else line
+
+
+def settle_spend_rows():
+    """Commit and push the rows a picture run added to the spend ledger and left unsaved. Returns an error, or None.
+
+    Only called when that file is the one thing changed in the checkout. Rows are only ever added: a ledger that was
+    edited or cut is refused. Nothing is written when main's ledger has not moved (the usual case). When it has, the
+    file becomes main's rows followed by ours, written whole each time. A run may add a row while this works: it is
+    kept if seen, and the run's own export puts back any row of its own that is missing, so none is lost.
+    """
+    path = ROOT / SPEND_LEDGER
+    head = git("show", f"HEAD:{SPEND_LEDGER}")
+    if head.returncode:
+        return "metadata --git requires a clean working tree and index"
+    text = path.read_text()
+    if text and not text.endswith("\n"):
+        return "the spend ledger's last line is unfinished (a run may be writing it); nothing changed, try again"
+    was, now = head.stdout.splitlines(), text.splitlines()
+    if now[:len(was)] != was:
+        return "the spend ledger was edited, not only added to; settle it by hand before any queue write"
+    ours = now[len(was):]
+    for line in ours:
+        try:
+            if not isinstance(json.loads(line), dict):
+                raise ValueError
+        except ValueError:
+            return "the spend ledger has an unreadable new row; settle it by hand before any queue write"
+    if git("fetch", "-q", "origin", "refs/heads/main").returncode:
+        return "metadata fetch failed; no changes applied"
+    base = git("rev-parse", "FETCH_HEAD").stdout.strip()
+    if git("merge-base", "--is-ancestor", "HEAD", base).returncode:
+        return "main has unpublished/diverged commits; no changes applied"
+    theirs = git("show", f"{base}:{SPEND_LEDGER}").stdout.splitlines()
+    if theirs == was:  # main's ledger has not moved: the fast-forward does not touch the file
+        if git("merge", "-q", "--ff-only", base).returncode:
+            return "main fast-forward failed; no changes applied"
+    else:
+        if theirs[:len(was)] != was:
+            return "main's spend ledger was edited, not only added to; settle it by hand before any queue write"
+        seen = {_row_key(line) for line in theirs}
+        ours = [line for line in ours if _row_key(line) not in seen]
+        entry = git("ls-tree", base, "--", SPEND_LEDGER).stdout.split()      # mode, "blob", sha, path
+        if len(entry) < 3:
+            return "main has no spend ledger; settle it by hand before any queue write"
+        # The file and the index are set to main's version, so the fast-forward has nothing to write to the file.
+        # The index is set from main's own blob, not from the file: a run may add a row to the file at any moment.
+        _replace(path, theirs)
+        git("update-index", "--cacheinfo", f"{entry[0]},{entry[2]},{SPEND_LEDGER}")
+        moved = not git("merge", "-q", "--ff-only", base).returncode
+        known = seen | {_row_key(line) for line in ours}
+        late = [line for line in path.read_text().splitlines() if _row_key(line) not in known]  # added meanwhile
+        if not moved:
+            _replace(path, now + [line for line in late if _row_key(line) not in {_row_key(x) for x in now}])
+            git("reset", "-q", "--", SPEND_LEDGER)
+            return "main fast-forward failed; no changes applied"
+        _replace(path, theirs + ours + late)
+    git("add", "--", SPEND_LEDGER)
+    if not git("diff", "--cached", "--quiet", "--", SPEND_LEDGER).returncode:
+        return None                                   # every row was already on main
+    if git("commit", "-q", "-m", "ai_spend: rows a picture run wrote to the shared ledger (saved by the next queue write)",
+           "--", SPEND_LEDGER).returncode:
+        git("reset", "-q", "--", SPEND_LEDGER)
+        return "spend ledger commit failed; rows kept in the file"
+    commit = git("rev-parse", "HEAD").stdout.strip()
+    parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
+    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit).stdout.splitlines()
+    if parents != [commit, base] or changed != [SPEND_LEDGER] or git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
+        git("reset", "-q", "--soft", base)            # the rows stay in the file, unsaved, for the next write
+        git("reset", "-q", "--", SPEND_LEDGER)
+    return None
+
+
 def git_transaction(write, message, tries=3):
     """Fail closed outside clean main; push only the verified metadata commit.
 
@@ -220,6 +313,13 @@ def git_transaction(write, message, tries=3):
             return None, ("metadata --git refused: main is checked out in more than one worktree; remove the extra one "
                           "(git worktree list) and use `git worktree add --detach <dir> origin/main` instead")
         state = git("status", "--porcelain")
+        if not state.returncode and state.stdout.splitlines() == [f" M {SPEND_LEDGER}"]:
+            problem = settle_spend_rows()             # a picture run's unsaved rows are saved, not a reason to stop
+            if problem:
+                return None, problem
+            state = git("status", "--porcelain")      # a row added since then stays for the next write
+            if not state.returncode and state.stdout.splitlines() == [f" M {SPEND_LEDGER}"]:
+                state = subprocess.CompletedProcess(state.args, 0, "", "")
         if state.returncode or state.stdout.strip():
             return None, "metadata --git requires a clean working tree and index"
         for attempt in range(max(1, tries)):
