@@ -849,10 +849,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T10:33Z",
+      "updated": "2026-11-11T10:47Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "The second tries at the salon spark and the points desk also came out wrong: the picture tool keeps adding what the prompt names, so asking for a spark brought lightning twice. The Chief changed the approach for the third and last try: describe only the movement, and add the tiny spark in the edit, where it can be controlled. The third takes are being made now (at most 200 credits, none in cash). If one still fails it comes to you: no older version is quietly reused. It is tight for a Thu 19 Nov air date.",
+      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, has now failed three remakes. The cause is its starting picture, which already shows an open tube with loose wisps beside it, so every take inherits them. So the Chief changed the plan: a new starting picture at no cost, then one last take with almost no movement (100 credits, none in cash), and the tiny spark added in the edit. You will see the result in v04 and can say no there. The points-desk shot looks right on its third take and is being checked. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -891,15 +891,47 @@
           "what": "third takes of the salon and points shots, movement only (at most 200 credits)",
           "job": "J2589",
           "kind": "video",
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov; salon failed again"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check the points shot's third take",
+          "job": "J2590",
+          "kind": "qa",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
+        },
+        {
+          "who": "Mac mini",
+          "what": "new starting picture for the salon shot (free)",
+          "job": "J2596",
+          "kind": "image",
+          "when": "2026-11-11",
+          "whenText": "today"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check the new starting picture",
+          "job": "J2597",
+          "kind": "qa",
+          "afterJob": "J2596"
+        },
+        {
+          "who": "Mac mini",
+          "what": "fourth and last take of the salon shot (100 credits)",
+          "job": "J2598",
+          "kind": "video",
+          "afterJob": "J2597",
           "when": "2026-11-12",
           "whenText": "before Thu 12 Nov 19:13"
         },
         {
           "who": "Reviewer",
-          "what": "check the two third takes",
-          "job": "J2590",
+          "what": "check the fourth take; the Chief passes it",
+          "job": "J2599",
           "kind": "qa",
-          "afterJob": "J2589"
+          "afterJob": "J2598"
         },
         {
           "who": "Mac mini",
@@ -912,7 +944,7 @@
           "what": "add the spark to the salon shot",
           "job": "J2592",
           "kind": "assembly",
-          "afterJob": "J2590"
+          "afterJob": "J2599"
         },
         {
           "who": "Reviewer",
