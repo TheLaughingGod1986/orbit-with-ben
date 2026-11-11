@@ -88,3 +88,5 @@ Verified NAS copies and SHA-256 values are in `safety_copies.json`. Still sheet:
 Automatic approval review rejected the requested iCloud CloudDocs copy as sensitive synced egress not specifically authorized. No iCloud write occurred. NAS-only copies are the safe alternative, and the watch card uses the absolute NAS file path.
 
 Chief: review the still warning and semantic compromises, then decide v07. Ben’s watch is due Thu 12 Nov 18:00 London, with “the cut you OK’d airs” as fallback. Per brief, if v07 is not ready and passed by Thu 12 Nov 12:00 London, retain v06. J2520 remains responsible for putting v06 in the slot first. Any v07 upload/swap requires a separate Chief job after Ben’s approval.
+
+Published-board verification succeeded at 11 Nov approximately 01:44Z: `board_check.py --no-post` returned `ok: true`, 5 expected cards, no problems, site 200. The NAS-backed v07 watch card and its Play link are present. PR #785 CI check passed. Chief review is still pending; this is worker delivery only.
