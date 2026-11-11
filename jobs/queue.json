@@ -226644,10 +226644,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-11T14:16Z",
-      "eta": "2026-11-11T16:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -226661,6 +226661,11 @@
           "at": "2026-11-11T14:16Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:24Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
         }
       ],
       "remaining_action": "Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0)",
