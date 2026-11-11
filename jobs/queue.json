@@ -228398,10 +228398,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T18:19Z",
+      "eta": "2026-11-11T20:19Z",
       "created_by": "claude",
       "created_at": "2026-11-11T17:27Z",
       "result": "",
@@ -228410,6 +228410,11 @@
           "at": "2026-11-11T17:27Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-11T18:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Three stale lines say the decision is pending; set them to KEEP, splice_authorized stays false",
@@ -228417,7 +228422,15 @@
       "for": "codex",
       "kind": "chart",
       "model": "gpt-6-astra",
-      "plain": "Write down in the gravity film's records that the first diagram is approved"
+      "plain": "Write down in the gravity film's records that the first diagram is approved",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T18:19Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2636",
