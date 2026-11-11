@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |
 | J2579 | cloud | open | – | – | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
 | J2580 | cloud | open | – | – | Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page | J2566 |
-| J2581 | any | claimed | gemini | 2026-11-11T11:15Z | review · Verify condition for J2034 |  |
+| J2581 | any | blocked | gemini | – | review · Verify condition for J2034 |  |
 
 Recently finished:
 

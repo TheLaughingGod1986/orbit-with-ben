@@ -223549,13 +223549,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T09:15Z",
-      "eta": "2026-11-11T11:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T09:14Z",
-      "result": "",
+      "result": "parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-11T09:14Z",
@@ -223586,6 +223586,11 @@
           "at": "2026-11-11T09:27Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified J2034 awaits Chief picture ruling (2f6a1374ab); measured all 18 continuation joins (RGB MAE 1.99-15.39) and v05 trim windows; parking J2581 for Chief"
+        },
+        {
+          "at": "2026-11-11T09:27Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits."
         }
       ],
       "remaining_action": "Chief rules on J2034 HOS 009 tranche-2 picture review (2f6a1374ab + J2581 join/trim verification) and closes J2581",
