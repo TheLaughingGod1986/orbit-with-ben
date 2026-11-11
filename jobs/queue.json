@@ -212885,10 +212885,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T05:54Z",
-      "eta": "2026-11-11T09:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -213257,6 +213257,11 @@
           "at": "2026-11-11T06:08Z",
           "by": "macbook",
           "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T06:11Z",
+          "by": "macbook",
+          "what": "released: Checked observation-grade checkpoint pushed to PR #789 (3b49c2742). Saved 494.30s/14829-frame chapter fully decodes, normal polish PASS 0 failures/6 warnings and sampled scope read-back PASS. Source-only picture QA retains 13 reuse failures. Resume jobs/reviews/J2452/RESUME_2026-11-11_OBSERVATIONS.md on macbook/J2452. Remaining pictures, final compilation/gates, NAS master/reel and UAT exceed this wake. No launched process remains; no upload or spend."
         }
       ],
       "remaining_action": "Verify saved observation grade and normal picture checks, then release a resumable checkpoint",
