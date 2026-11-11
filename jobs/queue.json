@@ -196285,9 +196285,14 @@
           "at": "2026-11-11T18:49Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Batch 2 finished with exit 0 (J2270-batch2-run2.done=0) and J2628 is done; verifying Batch 2 receipts and preparing Batch 3"
+        },
+        {
+          "at": "2026-11-11T18:59Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Batch 3 dry-run preflight and 21/21 runner tests passed; diagnosing CDP :9222 connect timeout on first Batch 3 launch before relaunching"
         }
       ],
-      "remaining_action": "Verify Batch 2 receipts, run Batch 3 (P5:13_explorer_turn, P5:14_end_hold), and hand off 12-plate manifest to review",
+      "remaining_action": "Run Batch 3 (P5:09a_pigeon_pavement, P5:13a_gull_seaside) and hand off 12-plate manifest to review",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196299,9 +196304,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-11T18:49Z",
+        "at": "2026-11-11T18:59Z",
         "by": "gemini",
-        "note": "Batch 2 finished with exit 0 (J2270-batch2-run2.done=0) and J2628 is done; verifying Batch 2 receipts and preparing Batc"
+        "note": "Batch 3 dry-run preflight and 21/21 runner tests passed; diagnosing CDP :9222 connect timeout on first Batch 3 launch be"
       },
       "rerouted_from": {
         "needs": "mini",
