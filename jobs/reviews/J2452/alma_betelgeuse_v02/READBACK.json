@@ -1,0 +1,51 @@
+{
+  "status": "CLOCK_AND_REPLACEMENT_READBACK_PASS",
+  "frames": 14829,
+  "replacements": [
+    {
+      "plate_id": "r07_sphere_jan",
+      "frames": 191,
+      "maximum_frame_error": 0.9723321759259259
+    },
+    {
+      "plate_id": "r36_visir",
+      "frames": 218,
+      "maximum_frame_error": 0.8920543981481481
+    }
+  ],
+  "unchanged_samples": [
+    {
+      "time_s": 5,
+      "mean_error": 0.33839699074074076
+    },
+    {
+      "time_s": 100,
+      "mean_error": 0.06788773148148149
+    },
+    {
+      "time_s": 250,
+      "mean_error": 0.6485474537037037
+    },
+    {
+      "time_s": 400,
+      "mean_error": 0.35962962962962963
+    },
+    {
+      "time_s": 471,
+      "mean_error": 0.518894675925926
+    },
+    {
+      "time_s": 477,
+      "mean_error": 0.2740740740740741
+    },
+    {
+      "time_s": 490,
+      "mean_error": 0.41097222222222224
+    }
+  ],
+  "sha256": "85d0090af6bb829b314b7a10dcdb703dce3565eb216c7114802016f8ef29c73b",
+  "limitations": [
+    "Replacement compared every frame at 320x180; seven sparse samples elsewhere.",
+    "Not listening or moving-picture review; normal QA remains authoritative."
+  ]
+}

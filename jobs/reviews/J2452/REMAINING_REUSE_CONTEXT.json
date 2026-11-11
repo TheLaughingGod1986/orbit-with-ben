@@ -1,25 +1,7 @@
 {
   "status": "CURRENT_FAILED_WINDOWS_WITH_MASTER_ASR_CONTEXT_NOT_APPROVAL",
-  "source_report": "home_earth_qa_v04/picture_qa.json",
+  "source_report": "alma_betelgeuse_qa_v02/picture_qa.json",
   "windows": [
-    {
-      "cut": 10,
-      "plate_id": "r07_sphere_jan",
-      "source": "sphere_jan.jpg",
-      "chapter_range_s": [
-        52.4,
-        58.25
-      ],
-      "master_range_s": [
-        67.5,
-        73.35
-      ],
-      "spoken_words": "Betelgeuse is only about 10 million years old and it is already near the end of its life.",
-      "fail": [
-        "reuse: appears 3 times (limit 2)"
-      ],
-      "current_action": "Needs actual picture/source change; do not waive or rename source"
-    },
     {
       "cut": 15,
       "plate_id": "r10_span_c",
@@ -145,29 +127,11 @@
         "reuse: same stretch as 0:03 (give it a new stretch, or a new render)"
       ],
       "current_action": "Needs actual picture/source change; do not waive or rename source"
-    },
-    {
-      "cut": 70,
-      "plate_id": "r36_visir",
-      "source": "visir_flames.jpg",
-      "chapter_range_s": [
-        439.09,
-        445.85
-      ],
-      "master_range_s": [
-        459.59,
-        466.35
-      ],
-      "spoken_words": "a very long time. But it will. And when it does, it will give something back.",
-      "fail": [
-        "reuse: appears 3 times (limit 2)"
-      ],
-      "current_action": "Needs actual picture/source change; do not waive or rename source"
     }
   ],
   "limitations": [
     "ASR text locates the window; not a new factual or script check.",
-    "Ten remaining failed rows from normal combined QA after the Crab replacement.",
+    "Seven remaining failed rows after the ALMA Betelgeuse replacements.",
     "Changing framing metadata without replacing the actual pixels cannot fix reuse."
   ]
 }

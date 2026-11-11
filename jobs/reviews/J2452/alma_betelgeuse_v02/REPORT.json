@@ -1,0 +1,49 @@
+{
+  "status": "BOUNDED_REPAIR_NOT_FINAL_QA_OR_UAT",
+  "base": "/Users/ben/_desk/J2452-sleep-scratch/home_earth_v04/029_picture_home_earth.mp4",
+  "base_sha256": "759c3d853b0a5d87fae4ac1471091cf87cb899f41197b6c1f91be2de3682b9cd",
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_source_v01/potw1726a.jpg",
+  "source_sha256": "3f75e8b1df70dca7f0e828e8fd640880a7bfcbdef0945304792bace2eb243bbe",
+  "provenance": {
+    "id": "potw1726a",
+    "title": "Betelgeuse captured by ALMA",
+    "credit": "ALMA (ESO/NAOJ/NRAO)/E. O\u2019Gorman/P. Kervella",
+    "licence": "CC BY 4.0",
+    "page": "https://www.eso.org/public/images/potw1726a/",
+    "file": "https://cdn.eso.org/images/publicationjpg/potw1726a.jpg",
+    "terms": "https://www.eso.org/public/outreach/copyright/",
+    "status": "ok",
+    "note": "Observation at 338 GHz; no labels, no simulation. Cropped, gently pushed and darkened; not a before/after epoch comparison."
+  },
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/029_picture_alma_betelgeuse.mp4",
+  "sha256": "85d0090af6bb829b314b7a10dcdb703dce3565eb216c7114802016f8ef29c73b",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "patches": [
+    {
+      "plate_id": "r07_sphere_jan",
+      "frames": [
+        1557,
+        1748
+      ],
+      "patch": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/r07_sphere_jan.mp4",
+      "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/r07_sphere_jan_dissolved.mp4",
+      "dissolved_sha256": "ec0164a8b39f2a19b929bc0af23685250b90d2441ee3c41e9665564f3f5f7850"
+    },
+    {
+      "plate_id": "r36_visir",
+      "frames": [
+        13158,
+        13376
+      ],
+      "patch": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/r36_visir.mp4",
+      "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/r36_visir_dissolved.mp4",
+      "dissolved_sha256": "5f871e4e9edc2903a158fd02ee1915addc4e840c71bc3fc8776284c2443e42ae"
+    }
+  ],
+  "limitations": [
+    "Real submillimetre observation, not visible-light colour or a 2019 dimming comparison.",
+    "Narration and source masters untouched.",
+    "Two appearances of this observation; remaining picture QA failures stay authoritative."
+  ]
+}
