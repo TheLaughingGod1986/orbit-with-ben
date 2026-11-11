@@ -1,5 +1,5 @@
 {
-  "next_id": 2603,
+  "next_id": 2604,
   "jobs": [
     {
       "id": "J0001",
@@ -224839,6 +224839,11 @@
           "at": "2026-11-11T11:14Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: FAIL on question 3. Still 02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0. Q1 knuckle near tube end: YES. Q2 wig smooth, air and tube mouth clear: YES. Q3 same room and same two people: NO (new still is a dark panelled candle-lit library with a crowd, a different lady in a pink gown and tall white wig, a different lecturer with glasses on the left; old frame is a plain daylit room, lady in brown dress, lecturer on the right). Blocked rather than done so J2598 (100 credits, after J2597) is not released. Next: the still job makes free try 2 of 3 with the old frame attached as reference, then this check again."
+        },
+        {
+          "at": "2026-11-11T11:20Z",
+          "by": "relay",
+          "what": "condition verification queued: J2603"
         }
       ],
       "remaining_action": "Yes or no on the new start still; PASS lets the fourth take go",
@@ -224853,6 +224858,12 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T12:20:06+00:00",
+        "recheck_task": "J2603"
       }
     },
     {
@@ -225069,6 +225080,37 @@
         "at": "2026-11-11T11:16Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2603",
+      "title": "Verify condition for J2597",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2597: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2597 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T11:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:20Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Yes or no on the new start still; PASS lets the fourth take go",
+      "kind": "review",
+      "recheck_of": "J2597",
+      "due": "2026-11-11T12:20:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
