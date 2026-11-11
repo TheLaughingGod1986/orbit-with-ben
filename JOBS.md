@@ -77,6 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2585 | cloud | claimed | claude | – | 009 picture · script · HOS 009: write the board change for the four remade shots, as a pull request for Grok (no credit) | J2582 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
+| J2588 | any | open | – | – | review · Verify condition for J2576 |  |
 
 Recently finished:
 

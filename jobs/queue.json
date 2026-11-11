@@ -1,5 +1,5 @@
 {
-  "next_id": 2588,
+  "next_id": 2589,
   "jobs": [
     {
       "id": "J0001",
@@ -223587,6 +223587,11 @@
           "at": "2026-11-11T10:16Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: FAIL (HOS desk #6793160719) — Salon take 2 (02_salon_spark_j2241_t2): Q1 NO (branching lightning arcs at 00:00–00:01 and 00:04–00:05 + blue glow on hair/forehead at 00:04), Q2 NO (7–8 giant stiff white hair spikes shoot out the top of the frame at 00:02–00:04), Q3 NO (hollow-tube reflection at 00:01–00:04 and arcs erupting off rod at 00:00 & 00:04); Points take 2 (01_points_desk_j2241_t2): Q1 NO (second wispy white streamer under bottom-left of sphere at 00:03–00:05, left-equator filament at 3.5s/4.5s, right thread morphs into feather/strip tail at 00:05–00:06 and detaches/floats at 00:07), Q2 YES (00:00–00:07 top of sphere clean), Q3 YES (00:00–00:07 both hands stay in view)"
+        },
+        {
+          "at": "2026-11-11T10:17Z",
+          "by": "relay",
+          "what": "condition verification queued: J2588"
         }
       ],
       "remaining_action": "Park J2576 for Chief after posting HOS desk report",
@@ -223603,7 +223608,13 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T11:17:51+00:00",
+        "recheck_task": "J2588"
+      }
     },
     {
       "id": "J2577",
@@ -224119,6 +224130,37 @@
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
       "urgent": 8
+    },
+    {
+      "id": "J2588",
+      "title": "Verify condition for J2576",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2576: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2576 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T10:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:17Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Park J2576 for Chief after posting HOS desk report",
+      "kind": "review",
+      "recheck_of": "J2576",
+      "due": "2026-11-11T11:17:51+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
