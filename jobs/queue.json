@@ -217774,13 +217774,13 @@
       "stage": "",
       "after": "J2033",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T07:14Z",
-      "eta": "2026-11-11T09:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T13:26Z",
-      "result": "",
+      "result": "parked for Chief: history-of-science PR #505 (branch gemini/J2503-email-scrub, commit 778717d7) removes account email addresses from all 374 matched tracked files (+ 5 regex-escaped files), moves runner account checks to STUDIO_FLOW_ACCOUNT, adds scripts/test_email_ratchet.py (0 allowlisted), and passes check_all.sh + 180 unit tests. Chief: verify STUDIO_FLOW_ACCOUNT is set in ~/.zshenv on both Mini and MacBook BEFORE merging ahead of any mint.",
       "history": [
         {
           "at": "2026-11-10T13:26Z",
@@ -217821,6 +217821,11 @@
           "at": "2026-11-11T08:05Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened PR #505 (commit 778717d7) in history-of-science with all 374 regex-matched files + 5 escaped-regex files scrubbed, STUDIO_FLOW_ACCOUNT externalized, email ratchet test added (0 allowlisted), and check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-11-11T08:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: history-of-science PR #505 (branch gemini/J2503-email-scrub, commit 778717d7) removes account email addresses from all 374 matched tracked files (+ 5 regex-escaped files), moves runner account checks to STUDIO_FLOW_ACCOUNT, adds scripts/test_email_ratchet.py (0 allowlisted), and passes check_all.sh + 180 unit tests. Chief: verify STUDIO_FLOW_ACCOUNT is set in ~/.zshenv on both Mini and MacBook BEFORE merging ahead of any mint."
         }
       ],
       "remaining_action": "Parked for Chief review and pre-merge STUDIO_FLOW_ACCOUNT check on Mini and MacBook",
