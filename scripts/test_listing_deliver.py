@@ -450,7 +450,17 @@ class AnyChannel(unittest.TestCase):
                 self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])
                 self.assertEqual(set(docs), set(channels.slugs()))
             with self.sky(pipeline={"kind": "film_status", "path": "films/*/status.json"}):
-                self.assertNotIn("sky", ad.load_documents(root))   # read by the tracker from its own checkout
+                self.assertNotIn("sky", ad.load_documents(root))   # its checkout is not on this machine: nothing to read
+            # J2622: a channel with a status file per film is read from its own checkout, as the board's snapshot does
+            (sky_root / "studio").mkdir()
+            (sky_root / "studio" / "channel.json").write_text("{}")
+            (sky_root / "films" / "007_Orion").mkdir(parents=True)
+            (sky_root / "films" / "007_Orion" / "status.json").write_text(json.dumps({"film": "007", "title": "Orion", "stages": {}}))
+            with self.sky(pipeline={"kind": "film_status", "path": "films/*/status.json"}), \
+                    mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
+                docs = ad.load_documents(root)
+                self.assertEqual([f["film"] for f in docs["sky"]], ["007"])
+                self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])   # the default channel's, from `root`
 
 
 if __name__ == "__main__":

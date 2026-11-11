@@ -549,6 +549,23 @@ class ThirdChannelInTheBoardCheck(unittest.TestCase):
         self.assertEqual(res["problems"], ["SKY:001: scheduled in PIPELINE but the card is in progress; "
                                            "no YouTube read-back (add the long to SKY UPLOADS.json)"])
 
+    def test_the_same_check_for_a_channel_with_status_files_that_has_a_scheduled_stage(self):
+        # J2622: the check must not be lost when a channel moves from one pipeline file to a status file per film.
+        import board_check
+        base = channels._load()
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", stages=["script", "scheduled"],
+                   pipeline={"kind": "film_status", "path": "02_Video-Projects/*/status.json"})
+        board = {"sky": {"films": [{"film": "001", "stages": {"scheduled": {"state": "done"}}},
+                                   {"film": "003", "stages": {"scheduled": {"state": "todo"}}}]},
+                 "owb": {"films": [{"film": "002", "stages": {"scheduled": {"state": "done"}}}]},   # not one of Orbit's stages
+                 "tracker": {"videos": [{"key": "SKY:001", "lane": "progress"}, {"key": "SKY:003", "lane": "progress"},
+                                        {"key": "OWB:002", "lane": "progress"}]}}
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (sky,)):
+            res = board_check.check([], board, site_status=lambda url, follow=True: 200, files={})
+        self.assertEqual(res["problems"], ["SKY:001: scheduled in its status file but the card is in progress; "
+                                           "no YouTube read-back (add the long to SKY UPLOADS.json)"])
+
 
 class NoHomeChannelInTheScripts(unittest.TestCase):
     """J2523: eight scripts stopped asking which channel this repo belongs to. They ask these instead."""
