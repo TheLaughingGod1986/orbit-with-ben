@@ -222071,10 +222071,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T08:21Z",
+      "eta": "2026-11-11T10:21Z",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
       "result": "",
@@ -222143,6 +222143,11 @@
           "at": "2026-11-11T06:53Z",
           "by": "claude",
           "what": "reopened: Grok sent history-of-science #503 back for one row (desk 6788932935): P4:07b_packet_to_mailbag becomes a free code graphic of the packet's route, not a portrait of Darwin; re-pin, re-check, push to the same branch. The job stays open until Grok posts the merge."
+        },
+        {
+          "at": "2026-11-11T08:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap one row of 013 plan v02 to a route graphic, re-pin both PASS1 files, re-run checks, push to the same branch for Grok",
@@ -222151,7 +222156,15 @@
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T08:21Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2559",
