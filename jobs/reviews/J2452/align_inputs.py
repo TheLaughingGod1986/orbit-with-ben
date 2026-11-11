@@ -3,15 +3,13 @@
 Run using _desk/J2141-venv/bin/python (numpy), with --out under local _desk.
 Sparse correlations are alignment evidence, not approval of cuts or source identity.
 """
-import argparse, hashlib, json, re, subprocess
+import argparse, json, re, subprocess
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[3]
 LIVE=Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects')
 ARCH=Path('/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects')
 ORDER=['013','021','027','025','023','031','020','022','028','029','024','026','019']
-def probe(p):
- return json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(p)]))
 def decode(p):
  return np.frombuffer(subprocess.check_output(['ffmpeg','-v','error','-i',str(p),'-vn','-ac','1','-ar','4000','-f','f32le','-']),np.float32).astype(np.float64)
 def only(base,pattern):
