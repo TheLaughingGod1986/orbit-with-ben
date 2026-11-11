@@ -227491,6 +227491,11 @@
           "at": "2026-11-11T17:41Z",
           "by": "claude",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T18:28Z",
+          "by": "claude",
+          "what": "step 3 of 4 done: Loader, relay, MacBook worker, board publisher and the dry run are changed; the whole suite passes in today's layout and inside the layout the dry run builds (1270 tests there). Left: one last full dry run, commit, push to the held pull request"
         }
       ],
       "remaining_action": "The loader without a home channel, then the 14 tests in the new layout; the first step (the old thumbnail script) is in #833",
@@ -227498,10 +227503,11 @@
       "kind": "review",
       "plain": "Let the studio run with no channel as its home, and make its checks pass that way",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-11T17:41Z",
-        "by": "claude"
+        "at": "2026-11-11T18:28Z",
+        "by": "claude",
+        "note": "Loader, relay, MacBook worker, board publisher and the dry run are changed; the whole suite passes in today's layout and"
       }
     },
     {
