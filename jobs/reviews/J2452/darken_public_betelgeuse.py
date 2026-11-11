@@ -5,8 +5,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
 import build_public_betelgeuse as b
-SRC=b.OUT.with_name('public_betelgeuse_v05')
-OUT=b.OUT.with_name('public_betelgeuse_dark_v01')
+SRC=b.OUT.with_name('public_betelgeuse_v07')
+OUT=b.OUT.with_name('public_betelgeuse_dark_v02')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def scan(p):
@@ -31,7 +31,7 @@ def main(verify_existing=False):
  assert len(records)==9, len(records)
  start=sum(r['build']['duration_s']+4 for r in records)
  assert start>=1230,start
- video=OUT/'029_betelgeuse_darkened_v01.mp4'
+ video=OUT/'029_betelgeuse_darkened_v02.mp4'
  vf='format=yuv420p10le,lut=y=(val-64)*0.85+64+0.5:u=(val-512)*0.85+512:v=(val-512)*0.85+512,format=yuv420p'
  if not verify_existing:
   b.run(['-threads','4','-i',build['output'],'-filter_threads','2','-vf',vf,'-map','0:v','-map','0:a','-frames:v',str(build['expected_frames']),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','copy',str(video)])
