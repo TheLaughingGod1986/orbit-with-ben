@@ -221798,18 +221798,22 @@
           "at": "2026-11-11T06:26Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:27Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: Pulled main in both repos (#794 and #502 verified); resolving NAS/local paths for the 13 Shorts"
         }
       ],
-      "remaining_action": "Run the new Shorts check on the nine named Shorts, table the edge and no-edge frames, open the report PR",
+      "remaining_action": "Run straight-edge gate check across all 13 Shorts and verify verdicts",
       "due": "2026-11-12T12:00:00Z",
       "plain": "Run the fixed Shorts check on nine real Shorts to confirm it passes the good ones and still stops the padded ones",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T06:26Z",
+        "at": "2026-11-11T06:27Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Pulled main in both repos (#794 and #502 verified); resolving NAS/local paths for the 13 Shorts"
       }
     }
   ],
