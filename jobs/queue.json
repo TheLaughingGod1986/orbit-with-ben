@@ -223547,9 +223547,14 @@
           "at": "2026-11-11T10:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T10:10Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2576; locating take-2 still sheets, start frames, and clips for HOS 008"
         }
       ],
-      "remaining_action": "Look at two still sheets and answer three yes/no questions for each",
+      "remaining_action": "Inspect salon and points take-2 still sheets, start frames, and clips",
       "due": "2026-11-12T14:00:00Z",
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before they go into the edit",
@@ -223559,9 +223564,11 @@
         "of": 3,
         "at": "2026-11-11T10:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2576; locating take-2 still sheets, start frames, and clips for HOS 008"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2577",
