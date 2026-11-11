@@ -105,6 +105,13 @@ def settings_problems(c) -> list[str]:
     social = c.get("social")
     need(social is None or (isinstance(social, dict) and social.get("tiktok") in (None, "buffer")),
          "social.tiktok: \"buffer\" when its TikTok posts go through Buffer only; leave it out otherwise")
+    desk = c.get("desk")
+    number = desk.get("number") if isinstance(desk, dict) else None
+    need(desk is None or (isinstance(desk, dict) and _text(desk.get("tool")) and desk["tool"].endswith(".py")
+                          and not desk["tool"].startswith(("/", "~")) and ".." not in desk["tool"].split("/")
+                          and isinstance(number, int) and not isinstance(number, bool) and number > 0),
+         "desk: when the channel runs its own desk, {\"tool\": the desk tool's path inside its repo (a .py file), "
+         "\"number\": the number of the desk's thread}; leave it out otherwise")
     return out
 
 

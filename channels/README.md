@@ -26,6 +26,9 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
   cut Ben has passed the next free one. Changing a channel's days is Ben's call. Left out, an approved cut is
   given the default channel's days, and `channel_check.py` lists it as still to do.
 - `social.tiktok`: `"buffer"` when the channel's TikTok posts go through Buffer only. Left out otherwise.
+- `desk`: for a channel that runs its own desk (where its Chief and reviewers talk): `{"tool": the desk tool's path
+  inside its repo, "number": the number of the desk's thread}`. The relay's brief then sends an agent to that desk's
+  inbox before the shared queue, and tells it how to report there. Left out otherwise. Read with `channels.desk(slug)`.
 - `pipeline`: where its film state lives.
 - `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
 

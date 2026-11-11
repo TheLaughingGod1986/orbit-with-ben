@@ -227,6 +227,19 @@ def tiktok_by_buffer(slug: str) -> bool:
     return False
 
 
+def desk(slug: str) -> dict:
+    """The channel's desk, when it runs one: {'tool': the desk tool's path inside its checkout, 'number': the number
+    of the desk's thread}. {} when it has none. From `desk` in its studio/channel.json, or the studio's cached copy
+    when its checkout is behind. A desk is where a channel's own Chief and reviewers talk; the relay sends an agent
+    to its inbox before the shared queue."""
+    c = get(slug)
+    for doc in (c, _cached(c["slug"])):
+        kept = doc.get("desk")
+        if isinstance(kept, dict) and kept.get("tool"):
+            return {"tool": str(kept["tool"]), "number": kept.get("number")}
+    return {}
+
+
 def _cached(slug: str) -> dict:
     try:
         return json.loads((DIR / slug / "channel.json").read_text())
@@ -304,12 +317,13 @@ def board_channel() -> str:
     return next((c["slug"] for c in _load() if (c.get("pipeline") or {}).get("kind") == "film_status"), default())
 
 
-def films_dir(slug: str) -> pathlib.Path:
+def films_dir(slug: str, in_checkout: pathlib.Path | None = None) -> pathlib.Path:
     """The folder that holds the channel's film folders, in the channel's own checkout (where that checkout would be
-    when it is not on this machine): the part of its pipeline path before the first wildcard."""
+    when it is not on this machine): the part of its pipeline path before the first wildcard. `in_checkout` asks for
+    the same folder inside another copy of that channel's repo (the relay's, found from its own home folder)."""
     kept = str(pipeline(slug).get("path") or "")
     head = kept.split("*", 1)[0].strip("/") if "*" in kept else "02_Video-Projects"
-    return (checkout(slug) or repo_path(slug)) / head
+    return (in_checkout or checkout(slug) or repo_path(slug)) / head
 
 
 def checkout(slug: str) -> pathlib.Path | None:

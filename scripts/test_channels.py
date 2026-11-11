@@ -578,6 +578,21 @@ class DeliveryAsksTheLoader(unittest.TestCase):
             self.assertEqual(channels.cadence("hos")["long"], [(3, 18, 0)])
             self.assertTrue(channels.tiktok_by_buffer("hos"))
 
+    def test_a_channels_desk_comes_from_its_file_and_from_the_cached_copy_when_its_checkout_is_behind(self):
+        # J2618: the relay's brief sends an agent to a channel's desk. On the Mini that channel's checkout can sit on
+        # an old branch, with no `desk` in its file yet; the brief must not lose the desk for that.
+        want = {"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 180}
+        self.assertEqual(channels.desk("hos"), want)
+        self.assertEqual(channels.desk("owb"), {})
+        stale = tuple({k: v for k, v in c.items() if k != "desk"} if c["slug"] == "hos" else c for c in channels._load())
+        with mock.patch.object(channels, "_load", lambda directory=None: stale):
+            self.assertEqual(channels.desk("hos"), want)
+            self.assertEqual(channels.desk("owb"), {})
+
+    def test_the_film_folder_can_be_asked_for_inside_another_copy_of_the_repo(self):
+        self.assertEqual(channels.films_dir("owb", pathlib.Path("/elsewhere/o")), pathlib.Path("/elsewhere/o/02_Video-Projects"))
+        self.assertEqual(channels.films_dir("owb"), channels.ROOT / "02_Video-Projects")       # asked plainly: as before
+
     def test_the_delivery_tool_names_no_channel(self):
         import test_channel_ratchet as ratchet
         source = (pathlib.Path(channels.__file__).parent / "approved_deliver.py").read_text()

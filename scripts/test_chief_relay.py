@@ -12,9 +12,9 @@ MIN = dt.timedelta(minutes=1)
 class Relay(unittest.TestCase):
     def setUp(self):
         self.tmp = pathlib.Path(tempfile.mkdtemp())
-        self.old_state, self.old_home, self.old_fetch, self.old_owb = cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB
+        self.old_state, self.old_home, self.old_fetch, self.old_owb = cr.STATE, cr.HOME, cr.fetch_comments, cr.STUDIO
         cr.STATE, cr.HOME = self.tmp / "state", self.tmp  # so a real CLI on this machine can't stand in for a fake
-        cr.OWB = self.tmp / "no-owb"  # never the live queue: an addressed job there (J0071, 9 Oct) changed who ran
+        cr.STUDIO = self.tmp / "no-owb"  # never the live queue: an addressed job there (J0071, 9 Oct) changed who ran
         self.thread = []  # fake studio thread: (created_at, body)
         cr.fetch_comments = lambda since: [{"created_at": t, "body": b} for t, b in self.thread if cr.parse(t) >= since]
         cr.STATE.mkdir()
@@ -36,7 +36,7 @@ class Relay(unittest.TestCase):
         os.environ["CLAUDE_BIN"] = str(self.fake("claude", 'echo "claudecode did it"'))
 
     def tearDown(self):
-        cr.STATE, cr.HOME, cr.fetch_comments, cr.OWB = self.old_state, self.old_home, self.old_fetch, self.old_owb
+        cr.STATE, cr.HOME, cr.fetch_comments, cr.STUDIO = self.old_state, self.old_home, self.old_fetch, self.old_owb
         cr.routing.OUT = set()
         os.environ.clear()
         os.environ.update(self.env)
@@ -249,9 +249,9 @@ class Relay(unittest.TestCase):
 
     def test_hourly_cloud_claude_gets_a_full_run_to_take_its_inbox(self):
         # 5 Nov 2026: a 30-min window benched Claude (runs hourly at :50) every hour, up to 12 h.
-        cr.OWB = self.tmp / "owb"
-        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": []}')
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text('{"jobs": []}')
         for agent in ("claude", "chief"):
             cr.write_json(cr.d("inbox.json"), {"agent": agent, "notified_at": cr.iso(T0),
                                                "waiting": {"J1": {"since": cr.iso(T0)}}})
@@ -266,8 +266,8 @@ class Relay(unittest.TestCase):
         self.assertEqual(int(cr.stall_window("chief", T0 + 25 * 60 * MIN).total_seconds() // 60), 30)  # a day later
 
     def test_a_hard_flag_from_ben_is_not_cleared_by_a_post(self):
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "credit_flags.json").write_text(
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "credit_flags.json").write_text(
             '{"flags": {"chief": {"out_until": "2099-01-01T00:00:00Z", "reason": "Ben: Grok is down", "hard": true}}}')
         self.post(T0 + 5 * MIN, "[Chief] back")
         cr.note_grok_posts(T0 + 6 * MIN)
@@ -389,10 +389,10 @@ class Relay(unittest.TestCase):
             cr.queue_has_work = old
 
     def test_a_job_addressed_to_codex_wakes_codex_while_cursor_is_chief(self):
-        old_owb, old_q = cr.OWB, cr.queue_has_work
-        cr.OWB = self.tmp / "owb"
-        (cr.OWB / "jobs").mkdir(parents=True)
-        q = cr.OWB / "jobs" / "queue.json"
+        old_owb, old_q = cr.STUDIO, cr.queue_has_work
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True)
+        q = cr.STUDIO / "jobs" / "queue.json"
         q.write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
         cr.queue_has_work = lambda agent: True
         try:
@@ -406,13 +406,13 @@ class Relay(unittest.TestCase):
             self.assertTrue(self.ran("cursor"))
             self.assertFalse(self.ran("codex"))
         finally:
-            cr.OWB, cr.queue_has_work = old_owb, old_q
+            cr.STUDIO, cr.queue_has_work = old_owb, old_q
 
     def test_a_model_at_capacity_flags_only_that_model(self):
-        old_owb, old_q = cr.OWB, cr.queue_has_work
-        cr.OWB = self.tmp / "owb"
-        (cr.OWB / "jobs").mkdir(parents=True)
-        (cr.OWB / "jobs" / "queue.json").write_text(
+        old_owb, old_q = cr.STUDIO, cr.queue_has_work
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text(
             '{"jobs": [{"id": "J0072", "for": "codex", "model": "gpt-6.1-sol", "status": "open", "needs": "any"}]}')
         self.fake("codex", 'echo "ERROR: Selected model is at capacity. Please try a different model."; exit 1')
         cr.queue_has_work = lambda agent: True
@@ -423,13 +423,13 @@ class Relay(unittest.TestCase):
             self.assertTrue(cr.state_of("codex", cr.now() + 16 * MIN)[0])  # its default too: a 15-min pause, not 1 h
             self.assertNotIn("run failed", self.posts.read_text() if self.posts.exists() else "")
         finally:
-            cr.OWB, cr.queue_has_work = old_owb, old_q
+            cr.STUDIO, cr.queue_has_work = old_owb, old_q
 
     def test_a_failed_addressed_run_is_not_retried_every_tick(self):
-        old_owb, old_q = cr.OWB, cr.queue_has_work
-        cr.OWB = self.tmp / "owb"
-        (cr.OWB / "jobs").mkdir(parents=True)
-        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
+        old_owb, old_q = cr.STUDIO, cr.queue_has_work
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text('{"jobs": [{"id": "J0071", "for": "codex", "status": "open", "needs": "any"}]}')
         self.fake("codex", 'echo "error: unexpected argument"; exit 2')
         cr.queue_has_work = lambda agent: True
         try:
@@ -442,7 +442,7 @@ class Relay(unittest.TestCase):
             self.assertFalse(self.ran("codex"))
             self.assertTrue(self.ran("cursor"))  # the acting Chief carries on
         finally:
-            cr.OWB, cr.queue_has_work = old_owb, old_q
+            cr.STUDIO, cr.queue_has_work = old_owb, old_q
 
     def test_agy_gets_the_prompt_straight_after_p(self):
         # `agy -p` takes the next argument as the prompt; with -p first it read a flag as the prompt (exit 2, 13 Oct).
@@ -472,9 +472,35 @@ class Relay(unittest.TestCase):
             cr.queue_has_work = old_q
 
     def routed_queue(self, jobs_json):
-        cr.OWB = self.tmp / "owb"
-        (cr.OWB / "jobs").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "jobs" / "queue.json").write_text(jobs_json)
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text(jobs_json)
+
+    def test_a_made_up_third_channels_job_wakes_its_worker_like_any_other(self):
+        # J2618: nothing in the relay names a channel, so a channel that is only in the channel files is served too.
+        base = cr.channels._load()
+        home = next(c for c in base if c.get("home"))
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
+                   repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
+        old_q, old_others = cr.queue_has_work, cr.OTHERS
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
+        self.routed_queue('{"jobs": [{"id": "J0201", "kind": "chart", "status": "open", "needs": "mini", "repo": "sky", '
+                          '"title": "SKY 001: draw the star chart"}]}')
+        cr.queue_has_work = lambda agent: True
+        try:
+            with mock.patch.object(cr.channels, "_load", lambda directory=None: base + (sky,)):
+                cr.OTHERS = {**old_others, "sky": self.tmp / "YouTube" / "Night Sky"}
+                cr.seen("chief", T0 - 10 * MIN)
+                cr.cmd_run(T0)
+            self.assertTrue(self.ran("codex"))
+            brief = (self.tmp / "codex.args").read_text()
+            self.assertIn("claim only J0201", brief)
+            self.assertIn(f"2b. Night Sky ({self.tmp / 'YouTube' / 'Night Sky'}): git pull.", brief)
+            self.assertIn(f'--sky "{self.tmp / "YouTube" / "Night Sky"}"', brief)
+            self.assertIn("Chief for Night Sky", brief)                      # its own Chief chain, by its own name
+            self.assertIn(f"--add-dir {self.tmp / 'YouTube' / 'Night Sky'}", brief)
+        finally:
+            cr.queue_has_work, cr.OTHERS = old_q, old_others
 
     def test_a_chart_job_wakes_codex_on_gpt_6_astra_while_grok_is_chief(self):
         old_q = cr.queue_has_work
@@ -559,7 +585,7 @@ class Relay(unittest.TestCase):
         self.cursor = self.fake("cursor", f'echo "$@" >> {self.tmp}/cursor.args; echo "cursor did it"')
         self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         self.old_reroute, self.old_q = cr.reroute, cr.queue_has_work
-        q = cr.OWB / "jobs" / "queue.json"
+        q = cr.STUDIO / "jobs" / "queue.json"
 
         def fake_reroute(job, to, model, note):  # jobs.py reroute, on the test queue (never the live one)
             data = json.loads(q.read_text())
@@ -682,7 +708,7 @@ class Relay(unittest.TestCase):
     def test_a_claude_ledger_note_about_its_limit_counts_as_out(self):
         led = self.tmp / "owb" / "05_Analytics" / "ai_spend"
         led.mkdir(parents=True)
-        cr.OWB = self.tmp / "owb"
+        cr.STUDIO = self.tmp / "owb"
         (led / "ledger.jsonl").write_text('{"at": "%s", "kind": "record", "pool": "claude", "note": "hit the 5-hour limit"}\n'
                                           % cr.iso(T0 - 30 * MIN))
         self.assertTrue(cr.claude_out(T0)[0])
@@ -718,14 +744,14 @@ class Relay(unittest.TestCase):
         for k, v in (("user.name", "t"), ("user.email", "t@t")):
             subprocess.run(["git", "-C", str(repo), "config", k, v], check=True)
         subprocess.run(["git", "-C", str(repo), "remote", "add", "origin", str(remote)], check=True)
-        old_owb = cr.OWB
+        old_owb = cr.STUDIO
         try:
-            cr.OWB = repo
+            cr.STUDIO = repo
             os.environ["CHIEF_HEARTBEAT"] = "1"
             cr.push_heartbeat(T0, "idle", "cursor", "nothing queued")
             cr.push_heartbeat(T0 + 10 * MIN, "running", "cursor", "woke Cursor")
         finally:
-            cr.OWB = old_owb
+            cr.STUDIO = old_owb
         log = subprocess.run(["git", "-C", str(remote), "log", "--format=%P|%s", "mini-heartbeat"], capture_output=True, text=True, check=True).stdout
         self.assertEqual(len(log.strip().splitlines()), 1)  # replaced, not stacked
         self.assertTrue(log.startswith("|"))  # no parent
@@ -736,8 +762,8 @@ class Relay(unittest.TestCase):
 
     def flags(self, flags):
         import json
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "credit_flags.json").write_text(json.dumps({"flags": flags}))
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "credit_flags.json").write_text(json.dumps({"flags": flags}))
 
     def test_a_flagged_model_is_skipped_and_its_worker_keeps_its_other_models(self):
         q = self.claude_setup('{"jobs": [{"id": "J0401", "kind": "review", "status": "open", "needs": "cloud"},'
@@ -766,8 +792,8 @@ class Relay(unittest.TestCase):
     def test_ben_names_claude_chief_and_the_mini_clis_run_as_workers(self):
         import json
         self.routed_queue('{"jobs": [{"id": "J0403", "kind": "assembly", "status": "open", "needs": "mini"}]}')
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "chief_override.json").write_text(json.dumps(
             {"agent": "claude", "until": "2026-10-16T18:00:00Z", "reason": "Ben, 14 Oct: Grok out until Friday"}))
         self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
         old = cr.queue_has_work
@@ -830,8 +856,8 @@ class Relay(unittest.TestCase):
 
     def test_while_claude_is_out_the_next_one_down_is_chief_then_claude_takes_it_back(self):
         import json
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "chief_override.json").write_text(json.dumps(
             {"agent": "claude", "until": "2026-10-16T18:00:00Z", "reason": "Ben, 14 Oct"}))
         self.beat(T0 - 200 * MIN)
         self.assertEqual(self.chief(), "cursor")                 # Claude out: the Mini chain covers
@@ -883,8 +909,8 @@ class Relay(unittest.TestCase):
     def test_an_override_naming_a_chain_member_defers_to_the_chain(self):
         import json
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "chief_override.json").write_text(json.dumps(
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "chief_override.json").write_text(json.dumps(
             {"agent": "claude", "until": "2026-12-31T00:00:00Z", "reason": "Ben, 21 Oct"}))
         self.beat(T0 - 5 * MIN)
         rows, who = cr.acting(T0)
@@ -892,9 +918,9 @@ class Relay(unittest.TestCase):
         self.assertEqual([a for a, _, _ in rows].count("claude"), 1)
 
     def test_nobody_chief_for_three_hours_with_reviews_waiting_pings_ben_once(self):
-        cr.OWB.mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "jobs").mkdir(exist_ok=True)
-        (cr.OWB / "jobs" / "queue.json").write_text(
+        cr.STUDIO.mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "jobs").mkdir(exist_ok=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text(
             '{"jobs": [{"id": "J0792", "status": "blocked", "result": "parked for Chief: review before Ben\'s watch"}]}')
         os.environ["CHIEF_ALERT_HOURS"] = "0-24"
         rows = [("chief", False, "quiet"), ("cursor", False, "out of usage")]
@@ -911,14 +937,14 @@ class Relay(unittest.TestCase):
         self.assertFalse(cr.d("no_chief.json").exists())
 
     def test_no_alert_without_waiting_reviews_or_at_night(self):
-        cr.OWB.mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "jobs").mkdir(exist_ok=True)
-        (cr.OWB / "jobs" / "queue.json").write_text('{"jobs": []}')
+        cr.STUDIO.mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "jobs").mkdir(exist_ok=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text('{"jobs": []}')
         os.environ["CHIEF_ALERT_HOURS"] = "0-24"
         cr.alert_no_chief(None, [], T0)
         cr.alert_no_chief(None, [], T0 + 4 * 60 * MIN)
         self.assertFalse(self.posts.exists())
-        (cr.OWB / "jobs" / "queue.json").write_text(
+        (cr.STUDIO / "jobs" / "queue.json").write_text(
             '{"jobs": [{"id": "J1", "status": "blocked", "result": "parked for Chief: x"}]}')
         os.environ["CHIEF_ALERT_HOURS"] = "0-0"                  # outside the alert hours
         cr.alert_no_chief(None, [], T0 + 5 * 60 * MIN)
@@ -941,9 +967,9 @@ class Relay(unittest.TestCase):
     def test_a_stuck_mini_repairs_itself_once_and_says_so(self):
         import json
         self.routed_queue('{"jobs": []}')
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
         calls = self.tmp / "repair.calls"
-        (cr.OWB / "scripts" / "mini_repair.py").write_text(
+        (cr.STUDIO / "scripts" / "mini_repair.py").write_text(
             "def repair(apply, repos=None, do_caches=True, scan=True):\n"
             f"    open({str(calls)!r}, 'a').write('x')\n"
             "    return {'before_mb': 110, 'after_mb': 25000, 'caches': [], 'worktrees': ['/private/tmp/a: remove (clean)'],\n"
@@ -961,9 +987,9 @@ class Relay(unittest.TestCase):
 
     def test_a_low_disk_moves_old_scratch_to_the_nas_and_says_so(self):
         import json
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
         calls = self.tmp / "offload.calls"
-        (cr.OWB / "scripts" / "nas_offload.py").write_text(
+        (cr.STUDIO / "scripts" / "nas_offload.py").write_text(
             "def offload(apply, target_gb=20):\n"
             f"    open({str(calls)!r}, 'a').write('x')\n"
             "    return {'before_mb': 7000, 'after_mb': 31000, 'target_mb': 20480, 'nas': 'ok', 'would': [], 'kept': [],\n"
@@ -1016,8 +1042,8 @@ class Relay(unittest.TestCase):
 
     def test_a_disk_still_full_after_repair_wakes_nobody(self):
         self.routed_queue('{"jobs": [{"id": "J0404", "kind": "assembly", "status": "open", "needs": "mini"}]}')
-        (cr.OWB / "scripts").mkdir(parents=True, exist_ok=True)
-        (cr.OWB / "scripts" / "mini_repair.py").write_text(
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "scripts" / "mini_repair.py").write_text(
             "def repair(apply, repos=None, do_caches=True, scan=True):\n"
             "    return {'before_mb': 110, 'after_mb': 120, 'caches': [], 'worktrees': [], 'checkouts': [],\n"
             "            'biggest': ['  29,000 MB  /private/tmp/owb_comp']}\n")
@@ -1088,7 +1114,7 @@ class Relay(unittest.TestCase):
         import json
         import jobs
         self.routed_queue('{"jobs": [' + job_json + ']}')
-        q = cr.OWB / "jobs" / "queue.json"
+        q = cr.STUDIO / "jobs" / "queue.json"
         (cr.STATE / "chief").mkdir(parents=True, exist_ok=True)
         (cr.STATE / "chief" / "runs.jsonl").write_text("".join(json.dumps(r) + "\n" for r in self.capped(3)))
         old_park, old_q = cr.park_stuck, cr.queue_has_work
@@ -1139,7 +1165,7 @@ class PromptNamesTheRuleFiles(unittest.TestCase):
     """J2577: the relay's prompt names the studio's AGENTS.md and then the channel's own studio/RULES.md, for each
     checkout that has one. A checkout that has not split its rules yet reads as it always did."""
 
-    FILL = dict(name="Codex", agent="codex", why="a test", owb="/o", hos="/h", authority="A", priority="P", role="a specialist worker")
+    FILL = dict(name="Codex", agent="codex", why="a test", authority="A", priority="P", role="a specialist worker")
 
     def checkout(self, root, name, split):
         path = pathlib.Path(root) / name
@@ -1148,35 +1174,223 @@ class PromptNamesTheRuleFiles(unittest.TestCase):
             (path / "studio" / "RULES.md").write_text("# rules\n")
         return path
 
+    def brief(self, checkouts):
+        return cr.PROMPT.format(**self.FILL, **cr.brief_channels("codex", checkouts))
+
     def test_each_channel_is_told_the_files_its_checkout_has(self):
         with tempfile.TemporaryDirectory() as d:
-            names = cr.rule_names({"owb": self.checkout(d, "o", True), "hos": self.checkout(d, "h", False)})
-            self.assertEqual(names, {"owb_rules": "AGENTS.md and then studio/RULES.md", "hos_rules": "AGENTS.md"})
-            p = cr.PROMPT.format(**self.FILL, **names)
-            self.assertIn('1. Orbit With Ben (/o): git pull. Read AGENTS.md and then studio/RULES.md (the rules, the Never list, '
+            o, h = self.checkout(d, "o", True), self.checkout(d, "h", False)
+            p = self.brief({"owb": o, "hos": h})
+            self.assertIn(f'1. Orbit With Ben ({o}): git pull. Read AGENTS.md and then studio/RULES.md (the rules, the Never list, '
                           '"Stop and ask Ben", "Who does what",\n', p)
-            self.assertIn('2. History of Science (/h): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:\n', p)
+            self.assertIn(f'2. History of Science ({h}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:\n', p)
             self.assertIn("Do them in the HOS checkout, following its AGENTS.md.", p)
-            both = cr.rule_names({"owb": self.checkout(d, "o2", True), "hos": self.checkout(d, "h2", True)})
-            p = cr.PROMPT.format(**self.FILL, **both)
+            p = self.brief({"owb": self.checkout(d, "o2", True), "hos": self.checkout(d, "h2", True)})
             self.assertIn('Read its AGENTS.md and then studio/RULES.md ("The desk").', p)
             self.assertIn("Do them in the HOS checkout, following its AGENTS.md and then studio/RULES.md.", p)
 
     def test_with_no_channel_file_the_prompt_reads_as_it_always_did(self):
         with tempfile.TemporaryDirectory() as d:
-            names = cr.rule_names({"owb": self.checkout(d, "o", False), "hos": self.checkout(d, "h", False)})
-        p = cr.PROMPT.format(**self.FILL, **names)
-        self.assertIn('1. Orbit With Ben (/o): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", '
+            o = self.checkout(d, "o", False)
+            p = self.brief({"owb": o, "hos": self.checkout(d, "h", False)})
+        self.assertIn(f'1. Orbit With Ben ({o}): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", '
                       '"Who does what",\n', p)
         self.assertNotIn("studio/RULES.md", p)
-        self.assertNotIn("{owb_rules}", p)
-        self.assertNotIn("{hos_rules}", p)
 
-    def test_by_default_every_channel_in_the_channel_files_gets_a_name(self):
-        names = cr.rule_names()
-        self.assertEqual(sorted(names), sorted(f"{slug}_rules" for slug in cr.channels.slugs()))
-        self.assertTrue(all(v.startswith("AGENTS.md") for v in names.values()))
-        cr.PROMPT.format(**self.FILL, **names, sky_rules="AGENTS.md")   # a channel the prompt does not mention is no error
+    def test_by_default_every_channel_in_the_channel_files_is_in_the_brief(self):
+        p = cr.PROMPT.format(**self.FILL, **cr.brief_channels("codex"))
+        for slug in cr.channels.slugs():
+            self.assertIn(f"{cr.channels.name(slug)} (", p)
+        self.assertNotRegex(p, r"\{\w+\}")                       # nothing left unfilled
+
+
+BRIEF_BEFORE_J2618 = '''You are {name}, {role} on the Mac mini because {why}. You run unattended: do ONE job, then stop.
+Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk.py --as/--from).
+
+0. If a git pull fails (no space left, or local files in the way), run  python3 scripts/mini_repair.py --apply
+   (safe: caches, clean temp worktrees; blocking files are kept in ~/_desk/rescue, local edits stashed, local commits
+   pushed to a rescue branch first) and pull again. Still under 20 GB free: move render scratch to the NAS by
+   AGENTS.md "Render scratch" before anything else.
+1. Orbit With Ben ({owb}): git pull. Read {owb_rules} (the rules, the Never list, "Stop and ask Ben", "Who does what",
+   "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
+2. History of Science ({hos}): git pull. Read its {hos_rules} ("The desk"). Run its desk inbox:
+     python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
+3. Follow the DISPATCH PRIORITY or CHIEF REVIEW PRIORITY below first, if supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
+     python3 scripts/channel_balance.py --hos "{hos}"
+   If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
+   there is none, fall through to the OWB queue below.
+   Queue jobs marked `hos` (repo: hos, e.g. "HOS 007 Shorts VO") are NOT HOS desk tasks: they are normal queue jobs
+   that `jobs.py next` hands out like any other. Do them in the HOS checkout, following its {hos_rules}. "HOS desk tasks"
+   means only desk #180 messages that are not in the queue.
+   The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
+   If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
+   Ben watches % done on the board: split the job into n steps (replace a default_plan at step 0; otherwise keep its earlier n) and run
+     python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
+   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   During a long step, repeat the current k with an honest --note at least every 5 minutes; never increase k for elapsed time.
+   As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
+   command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
+   This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.
+   Inspect your actual input tools once at session start. Record demonstrated audio_input/moving_video_input only
+   if this session can really perceive that medium (ffmpeg, ASR, a player window or a model name is not proof):
+     python3 scripts/chief_relay.py capabilities --agent {agent} --available '<demonstrated identifiers, or empty>' --evidence '<actual tool/probe result>'
+   If the assigned work cannot proceed because of an input capability, park it with a typed hold, not a generic
+   six-hour input retry: jobs.py wait <id> --agent {agent} --type capability --requires audio_input
+   --condition '<what input is unavailable and what was actually tested>' --check-at '<future UTC time>' --git.
+   For a condition verification, update its original parent with --recheck <verification id> and finish the
+   verification itself. Never claim to hear audio or review motion from text/stills/measurements.
+   If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
+   desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
+   If nothing is waiting anywhere, stop without posting.
+4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS
+   desk's own rule), commit only from a clean worktree (your own: `git worktree add --detach <dir> origin/main` or
+   `-b <branch>`; never `git worktree add --force <dir> main`, which moves main under the shared checkout), never spend money or credit beyond the written rules, never
+   upload, schedule, retitle or change privacy on YouTube unless the job brief or a Chief/Claude message for that task
+   says to, never delete a video or anything on the NAS, and never print secrets. Chief owns AGENTS.md and the Never list
+   (Ben, 9-10 Oct 2026): a job added by chief, a "[Chief]" OK, or a brief saying "Ben approved (relayed by Chief)" is
+   full authorisation, including Never-list exceptions it names. Never ask Ben to re-post an OK on #99. If a step needs
+   Ben (real money, a sign-in, something that can't be undone), say so in your report and stop.
+   A job that needs `gemini` is a facts-and-numbers check: run it through Gemini with the `agy` CLI (AGENTS.md "Who does
+   what"), claim it as {agent}/gemini, and commit Gemini's findings as the job says. You check Gemini's output is complete;
+   you don't rewrite its findings or any spoken line.
+5. Report: OWB by writing the report to a file and posting it with  python3 scripts/owb_thread.py post -f <file>
+   (start with "{name} covering"); HOS with  hos_desk.py post --from {agent} --to claude ...  Say what you did,
+   what's next, and what blocks you. Never put the report text on the command line: the shell runs any backtick
+   or $(...) in it as a command and posts the output.
+{authority}
+{priority}
+   Each job's kind selects its specialist worker. Acting-Chief authority is a separate role; a worker fallback does
+   not inherit it merely because it runs Claude or GPT.
+Your run is killed at 25 minutes. Anything that takes longer (a full render, a big download, a batch of picture jobs):
+start it detached so it outlives you, e.g.
+   tmux new -d -s <job>-render "cd <dir> && <command> > ~/_desk/logs/<job>-render.log 2>&1; echo $? > ~/_desk/logs/<job>-render.done"
+then release the job with a note naming the tmux session, the log and the .done file. The next run checks that file:
+missing means still running (leave it, take a quick job meanwhile); present means read the exit code and the log, and
+carry on. Never start a second copy of a render that is still running.
+Otherwise, if a job will take longer than about 20 minutes, stop at a clean point, release your claim with a note,
+report, and stop.
+'''
+
+
+class TheBriefIsBuiltFromTheChannelFiles(unittest.TestCase):
+    """J2618, 11 Nov 2026: chief_relay.py names no channel. The brief it gives every agent on the Mini is put together
+    from the channel files. For today's two channels it must read as the hand-written one did, word for word: that
+    text, as it stood on main before the change, is BRIEF_BEFORE_J2618 above. The one intended difference is the
+    thread tool's file name, which moved to studio_thread.py in J2620 (the old name still runs the same tool)."""
+
+    COMMON = dict(name="Codex", agent="codex", why="it is first in line", authority="AUTHORITY", priority="PRIORITY",
+                  role="a specialist worker")
+    O, H = pathlib.Path("/Users/x/YouTube/orbit-with-ben"), pathlib.Path("/Users/x/YouTube/History Of Science")
+
+    def sky(self, **more):
+        base = cr.channels._load()
+        home = next(c for c in base if c.get("home"))
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
+                   repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]},
+                   **more)
+        sky.pop("cadence", None)
+        return mock.patch.object(cr.channels, "_load", lambda directory=None: base + (sky,))
+
+    def rules(self, studio, other):
+        return mock.patch.object(cr.channels, "rules_phrase", lambda path: studio if path == self.O else other)
+
+    def test_todays_brief_is_the_old_one_word_for_word(self):
+        for studio, other in (("AGENTS.md and then studio/RULES.md", "AGENTS.md and then studio/RULES.md"),
+                              ("AGENTS.md and then studio/RULES.md", "AGENTS.md"), ("AGENTS.md", "AGENTS.md")):
+            with self.subTest(rules=(studio, other)), self.rules(studio, other):
+                now = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O, "hos": self.H}))
+                was = BRIEF_BEFORE_J2618.format(**self.COMMON, owb=self.O, hos=self.H, owb_rules=studio, hos_rules=other)
+                self.assertEqual(was.count("scripts/owb_thread.py"), 2)
+                self.assertEqual(now, was.replace("scripts/owb_thread.py", "scripts/studio_thread.py"))
+
+    def test_the_sentence_a_worker_gets_is_the_old_one(self):
+        self.assertEqual(cr.worker_only_steps(),
+                         "In step 3 skip the channel check and the HOS desk inbox: do only the job "
+                         "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
+                         "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
+
+    def test_a_third_channel_gets_its_own_lines_and_changes_nobody_elses(self):
+        sky = pathlib.Path("/Users/x/YouTube/Night Sky")
+        with self.rules("AGENTS.md", "AGENTS.md"):
+            two = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O, "hos": self.H}))
+            with self.sky():
+                three = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O, "hos": self.H, "sky": sky}))
+        self.assertIn(f"2b. Night Sky ({sky}): git pull. Read its AGENTS.md.\n3. Follow the DISPATCH PRIORITY", three)
+        self.assertIn(f'python3 scripts/channel_balance.py --hos "{self.H}" --sky "{sky}"\n', three)
+        self.assertIn("   Queue jobs marked `sky` (repo: sky) are normal queue jobs that `jobs.py next` hands out like any other.\n"
+                      "   Do them in the SKY checkout, following its AGENTS.md.\n", three)
+        added = [line for line in three.splitlines() if line not in two.splitlines()]
+        gone = [line for line in two.splitlines() if line not in three.splitlines()]
+        self.assertEqual(len(added), 4, added)                     # its step, the balance line, its two queue lines
+        self.assertEqual(gone, [f'     python3 scripts/channel_balance.py --hos "{self.H}"'])
+        self.assertNotIn("SKY desk", three)                        # it has no desk, so no desk line names it
+
+    def test_a_third_channel_with_a_desk_gets_the_desk_lines_too(self):
+        sky = pathlib.Path("/Users/x/YouTube/Night Sky")
+        with self.rules("AGENTS.md", "AGENTS.md"), self.sky(desk={"tool": "tools/sky_desk.py", "number": 12}):
+            p = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O, "hos": self.H, "sky": sky}))
+        self.assertIn("(jobs.py --agent, studio.py --by, hos_desk.py --as/--from, sky_desk.py --as/--from).", p)
+        self.assertIn(f'2b. Night Sky ({sky}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:\n'
+                      "     python3 tools/sky_desk.py inbox --as codex   (run in the SKY checkout; there is no scripts/sky_desk.py)", p)
+        self.assertIn("   If it says Night Sky first: take the single oldest SKY desk task you can do now, and go to step 4.", p)
+        self.assertIn('means only desk #12 messages that are not in the queue.', p)
+        self.assertIn("(on the HOS or SKY\n   desk, or a Claude message on #99", p)
+        self.assertIn("; HOS with  hos_desk.py post --from codex --to claude ...; SKY with  sky_desk.py post --from codex --to claude ...", p)
+
+    def test_the_studio_alone_still_gets_a_brief(self):
+        with self.rules("AGENTS.md", "AGENTS.md"):
+            p = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O}))
+        self.assertIn("2. No other channel is plugged in.\n3. Follow", p)
+        self.assertIn("(jobs.py --agent, studio.py --by).", p)
+        self.assertIn("claim before work (studio.py claim --git), commit only", p)
+        self.assertNotIn("desk", p.split("3. Follow")[1].split("4. Do that one task")[0].replace("HOS desk", ""))
+        with mock.patch.object(cr, "OTHERS", {}):
+            self.assertEqual(cr.worker_only_steps(), "In step 3 skip the channel check: do only the job `jobs.py next` "
+                                                     "gives you. If it exits 10, stop without posting")
+
+    def test_every_cli_is_allowed_each_other_channels_checkout_and_the_desk_folder(self):
+        with mock.patch.object(cr, "OTHERS", {"hos": self.H}), mock.patch.object(cr, "STATE", pathlib.Path("/Users/x/_desk/state")):
+            self.assertEqual(cr.add_dirs(), "--add-dir '/Users/x/YouTube/History Of Science' --add-dir /Users/x/_desk")
+            for agent in ("codex", "gemini", "claudecode"):
+                with self.subTest(agent=agent), mock.patch.dict(os.environ, {"CODEX_BIN": "/bin/echo", "AGY_BIN": "/bin/echo",
+                                                                             "CLAUDE_BIN": "/bin/echo"}):
+                    os.environ.pop("AGY_FLAGS", None), os.environ.pop("CLAUDE_CODE_FLAGS", None)
+                    _bin, args = cr.cli_spec(agent, "")
+                    at = args.index("--add-dir")                 # the folder with a space in its name is one argument
+                    self.assertEqual(args[at:at + 4], ["--add-dir", "/Users/x/YouTube/History Of Science", "--add-dir", "/Users/x/_desk"])
+        with mock.patch.object(cr, "OTHERS", {"hos": self.H, "sky": pathlib.Path("/s")}), \
+                mock.patch.object(cr, "STATE", pathlib.Path("/Users/x/_desk/state")):
+            self.assertEqual(cr.add_dirs(), "--add-dir '/Users/x/YouTube/History Of Science' --add-dir /s --add-dir /Users/x/_desk")
+
+    def test_the_checkouts_are_the_ones_the_old_constants_named(self):
+        home = pathlib.Path("/Users/x")
+        with mock.patch.dict(os.environ, {"OWB_REPO": "", "HOS_REPO": ""}):
+            self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "orbit-with-ben")
+            self.assertEqual(cr.channels.repo_path("hos", home), home / "YouTube" / "History Of Science")
+        with mock.patch.dict(os.environ, {"OWB_REPO": "/elsewhere/o", "HOS_REPO": "/elsewhere/h"}):
+            self.assertEqual(cr.channels.studio_checkout(home), pathlib.Path("/elsewhere/o"))
+            self.assertEqual(cr.channels.repo_path("hos", home), pathlib.Path("/elsewhere/h"))
+
+    def test_the_studios_own_names_come_from_the_registry(self):
+        src = pathlib.Path(cr.__file__).read_text()
+        self.assertIn('env[channels.studio_env("AGENT")] = agent', src)
+        self.assertIn('f"https://raw.githubusercontent.com/{channels.studio_github()}/"', src)
+        self.assertEqual(cr.channels.studio_env("AGENT"), "OWB_AGENT")
+        self.assertEqual(cr.channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
+
+    def test_the_spend_ledger_and_the_film_folders_are_where_they_were(self):
+        with mock.patch.object(cr, "STUDIO", pathlib.Path("/o")), mock.patch.object(cr, "HOME", pathlib.Path("/Users/x")), \
+                mock.patch.dict(os.environ, {"OWB_REPO": ""}):
+            self.assertEqual(cr.STUDIO / cr.channels.studio_records("ai_spend", "ledger.jsonl").relative_to(cr.channels.ROOT),
+                             pathlib.Path("/o/05_Analytics/ai_spend/ledger.jsonl"))
+            self.assertEqual(cr.board_films(), pathlib.Path("/Users/x/YouTube/orbit-with-ben/02_Video-Projects"))
+
+    def test_the_script_names_no_channel_and_reaches_into_no_channels_folder(self):
+        import test_channel_ratchet as ratchet
+        src = pathlib.Path(cr.__file__).read_text()
+        self.assertEqual(ratchet.channel_lines(src), {})
+        self.assertEqual(ratchet.home_lines(src), {})
 
 
 if __name__ == "__main__":
