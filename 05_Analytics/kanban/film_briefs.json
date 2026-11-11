@@ -143,10 +143,10 @@
       "limit": ""
     },
     "OWB:025": {
-      "updated": "2026-11-11T00:56Z",
+      "updated": "2026-11-11T02:04Z",
       "mood": "watched",
       "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
-      "holdup": "Nothing blocking. The re-cut Mars wind Short is scheduled for Thu 12 Nov 11:30. The Mars helicopter Short for Fri 13 Nov gets the cut you OK'd first. An agent looked through every scheduled Short on 10 Nov for shots that sit as a strip with a blurred copy above and below. In that Short about 12 of its 26 seconds do. A version that fills the screen throughout is being tried in time for Friday; you would get it to watch by Thu 12 Nov 18:00, and if it is not ready the cut you OK'd airs.",
+      "holdup": "Nothing blocking. The re-cut Mars wind Short is scheduled for Thu 12 Nov 11:30. For the Mars helicopter Short on Fri 13 Nov, a version that fills the screen all the way through was built overnight and passes every check. In two places its pictures were weaker than the cut you OK'd: bare ground under the line about the blades, and one photo used twice. It is getting one more pass with real photos of the helicopter itself. It comes to you to watch this morning, Wed 11 Nov. Your OK is needed by Thu 12 Nov 18:00; without one the cut you OK'd airs. The swap into the Friday slot waits until Wed 20:00, so the slot is changed once, with the cut you pick.",
       "steps": [
         {
           "who": "Ben",
@@ -199,15 +199,15 @@
           "what": "put the re-cut Mars helicopter Short in its Fri 13 Nov slot (the old one is kept, unscheduled)",
           "job": "J2520",
           "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov 18:00"
+          "whenText": "after Wed 11 Nov 20:00, by Thu 12 Nov 18:00"
         },
         {
           "who": "Mac mini",
-          "what": "try a Mars helicopter Short that fills the screen throughout, for your watch",
+          "what": "Mars helicopter Short that fills the screen throughout: built; one more pass on two pictures, then your watch",
           "job": "J2549",
           "kind": "assembly",
-          "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov 12:00; else the cut you OK'd airs"
+          "when": "2026-11-11",
+          "whenText": "to you Wed 11 Nov morning; else the cut you OK'd airs"
         }
       ],
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
@@ -888,20 +888,21 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T00:56Z",
+      "updated": "2026-11-11T02:04Z",
       "mood": "good",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "Nothing is stuck now. Twelve of the last twenty pictures are made and checked; the other eight are being made overnight. Picture was due Sun 15 Nov and is still tight for your watch on Sun 22 Nov.",
+      "holdup": "Nothing is stuck now. Fourteen of the last twenty pictures are made; the last six are being made today, before the credits reset on Thu 12 Nov 19:13. Picture was due Sun 15 Nov and is still tight for your watch on Sun 22 Nov.",
       "steps": [
         {
           "who": "Mac mini",
           "what": "Shorts voiceover (with 010)",
           "job": "J0862",
-          "whenText": "existing takes checked; 009 B waits for approved replacement opening, not credit reset"
+          "done": true,
+          "doneText": "takes checked"
         },
         {
           "who": "Mac mini",
-          "what": "make the last 8 of 20 plates (12 made; three stops fixed, nothing lost)",
+          "what": "make the last 6 of 20 plates (14 made; the one refused plate cost nothing and is reworded)",
           "when": "2026-11-15",
           "whenText": "picture due Sun 15 Nov, tight",
           "job": "J2033",
@@ -922,21 +923,22 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "First picture tranche accepted. Of the last twenty plates, twelve are made (1,200 Flow credits) and each was checked; in one, the apple jumps up into the tree before it falls, which the picture review will look at. The run stopped itself three times on 10 Nov, each time before spending anything, and each fault is fixed. The last eight are running overnight (J2033). After that: picture acceptance (J2034), score (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
+      "line": "First picture tranche accepted. Of the last twenty plates, fourteen are made (1,400 Flow credits) and each file is checked; in one, the apple jumps up into the tree before it falls, which the picture review will look at. One plate, of Halley's visit, was refused by the picture tool because its prompt named a real person. It cost nothing. The Chief ruled on 11 Nov: describe the man without naming him, one more try for each such plate, and if it is refused again use a free picture or a drawn graphic. The last six run as a fresh batch with a cap of 600 credits (J2033). After that: picture acceptance (J2034), score (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
       "youShort": "your final OK Sun 22 Nov",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-10T03:05Z",
+      "updated": "2026-11-11T02:04Z",
       "mood": "good",
       "done": "Script, fact check and upload package.",
-      "holdup": "Waiting behind HOS 009's picture (J2033), then the tested runner (J2268, J2269). No new picture is authorised yet.",
+      "holdup": "Waiting for the check of the plate tool (J2269), then the twelve plates (J2270). No new picture is authorised until that check passes.",
       "steps": [
         {
           "who": "Mac mini",
           "what": "Shorts voiceover (with 009)",
           "job": "J0862",
-          "whenText": "existing takes checked; 009 B waits for approved replacement opening, not credit reset"
+          "done": true,
+          "doneText": "takes checked"
         },
         {
           "who": "Cursor",
@@ -959,7 +961,7 @@
       "you": "Your final OK on Sun 29 Nov.",
       "youWhen": "2026-11-29",
       "timing": "Airs Thu 3 Dec.",
-      "line": "Script, long voice and shot list done. Its two Shorts for 4 and 7 Dec wait on twelve new plates, and those wait in line: HOS 009's twenty plates are being made now (J2033), then the twelve-plate runner is built and checked (J2268, J2269) before anything is spent. Checked again on 10 Nov; next look Wed 11 Nov.",
+      "line": "Script, long voice and shot list done. Its two Shorts for 4 and 7 Dec wait on twelve new plates. The tool that makes them is built, tested and reviewed by the Chief (J2268, 10 Nov). Its check against the live credit guards (J2269) is next. On 11 Nov the Chief confirmed it does not have to wait for HOS 009's last batch: the two can run side by side. Nothing is spent until that check passes. The aim is to make the twelve plates before the credits reset on Thu 12 Nov 19:13.",
       "youShort": "your final OK Sun 29 Nov",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
