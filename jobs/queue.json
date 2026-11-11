@@ -193614,19 +193614,25 @@
           "at": "2026-11-11T21:53Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T21:56Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed existing 1/3 checkpoint. Salon 160-frame lossless intermediate verified against exact source frame hashes and original timestamp mapping; full master still absent."
         }
       ],
-      "remaining_action": "Validate Franklin assembly inputs and preservation requirements",
+      "remaining_action": "Finish Franklin patch rendering, caption reconstruction and packet-preserving assembly",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T21:53Z",
-        "by": "codex"
+        "at": "2026-11-11T21:56Z",
+        "by": "codex",
+        "note": "Resumed existing 1/3 checkpoint. Salon 160-frame lossless intermediate verified against exact source frame hashes and or"
       }
     },
     {
