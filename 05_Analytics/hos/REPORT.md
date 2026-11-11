@@ -117,10 +117,10 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 2 d | 206 | 14.8% | MISS | 58.6% | WATCH |
-| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 5 d | 34 | 15.6% | too few to judge | 41.7% | too few to judge |
+| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 2 d | 218 | 15.2% | MISS | 61.1% | WATCH |
+| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 5 d | 39 | 18.2% | too few to judge | 51.5% | too few to judge |
 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 7 d | 34 | 57.7% | too few to judge | 192.6% | too few to judge |
-| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 9 d | 133 | 36.6% | MISS | 114.5% | LOOP |
+| [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 9 d | 137 | 37.2% | MISS | 112.4% | LOOP |
 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 10 d | 89 | 32.9% | too few to judge | 81.7% | too few to judge |
 | [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | 11 d | 78 | 26.6% | too few to judge | 53.6% | too few to judge |
 | [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | 13 d | 274 | 22.7% | MISS | 76.9% | PASS |

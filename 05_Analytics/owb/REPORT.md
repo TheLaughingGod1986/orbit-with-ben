@@ -196,12 +196,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 3 d | 1266 | 49.6% | WATCH | 66.5% | WATCH |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 20 h (early) | 48 | 39.6% | too few to judge | 48.8% | too few to judge |
+| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 44 h (early) | 1060 | 38.8% | MISS | 62.6% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 3 d | 1282 | 49.8% | WATCH | 66.4% | WATCH |
 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 7 d | 481 | 26.9% | MISS | 306.8% | LOOP |
-| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 8 d | 565 | 31.4% | MISS | 66.4% | WATCH |
+| [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 8 d | 566 | 31.6% | MISS | 66.2% | WATCH |
 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 10 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
 | [How Thin Are Saturn's Rings?](https://youtu.be/6dcL5rBmHPM) | 11 d | 45 | 21.7% | too few to judge | 66.7% | too few to judge |
 | [Why Is Venus Hot Enough to Melt Lead?](https://youtu.be/_a66uhRDips) | 12 d | 519 | 32.8% | MISS | 91.7% | PASS |
 | [How Close Will Asteroid Apophis Pass Earth on Friday the 13th?](https://youtu.be/gJwNJN_yMKU) | 13 d | 461 | 34.5% | MISS | 231.0% | LOOP |
 
-Stayed to watch: 0 of 6 judged Shorts at 60%+. Average viewed: 3 of 6 at 70%+.
+Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 3 of 7 at 70%+.
