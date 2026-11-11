@@ -100,7 +100,7 @@ def counts() -> dict[str, int]:
 # Folders that hold a channel's own content. In the engine's own repo none of them will exist.
 CONTENT = {"00_Brand", "01_Orbit-Character", "02_Video-Projects", "04_Audio", "05_Analytics", "07_Content-Ops"}
 ENGINE_INSIDE_CONTENT = ("05_Analytics/kanban",)  # the board: the engine's, though it sits in a content folder today
-ROOT_NAMES = {"ROOT", "OWB", "REPO"}
+ROOT_NAMES = {"ROOT", "OWB", "REPO", "STUDIO"}
 
 
 def _first_parts(node: ast.AST) -> str:

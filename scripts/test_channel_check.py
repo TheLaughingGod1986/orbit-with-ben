@@ -71,6 +71,18 @@ class Settings(unittest.TestCase):
         self.assertEqual(len(found), 1)
         self.assertTrue(found[0].startswith("social.tiktok:"))
 
+    def test_a_desk_is_checked_when_given(self):
+        # J2618: the relay's brief is built from this, so a wrong shape would reach every agent on the Mini.
+        self.assertEqual(cc.settings_problems(good(desk={"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 180})), [])
+        self.assertEqual(cc.settings_problems(good()), [])                      # most channels have none
+        for bad in ({}, {"tool": "tools/desk.py"}, {"number": 180}, {"tool": "tools/desk.sh", "number": 1},
+                    {"tool": "/abs/desk.py", "number": 1}, {"tool": "~/desk.py", "number": 1}, {"tool": "../desk.py", "number": 1},
+                    {"tool": "tools/desk.py", "number": 0}, {"tool": "tools/desk.py", "number": "180"},
+                    {"tool": "tools/desk.py", "number": True}, "tools/desk.py", ["tools/desk.py", 180]):
+            found = cc.settings_problems(good(desk=bad))
+            self.assertEqual(len(found), 1, bad)
+            self.assertTrue(found[0].startswith("desk:"), found[0])
+
     def test_the_slot_pattern_is_the_loaders(self):
         self.assertEqual(cc.SLOT.pattern, channels.SLOT.pattern)
 
