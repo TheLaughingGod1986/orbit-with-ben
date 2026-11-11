@@ -219503,13 +219503,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-10T23:40Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T22:58Z",
-      "result": "parked for Chief: PR #780 (commit 1d7768b80) delivers whole-length by-eye padding table (jobs/reviews/J2545/REPORT.md), 56-frame 108x192 grey test dataset (jobs/reviews/J2545/J2545_labelled_frames.json, 965 KB < 1 MB: 28 padded + 28 full including ChbsigHD5_o and cLKDiYP55J8), and 30 2s-interval contact sheets on NAS (/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/). 19/29 scheduled Shorts are full-frame throughout (all 6 HOS + 13 OWB); 8 OWB Shorts have padded body shots (bSjWiCbB7pY 12.1/26.4s, kKN8Ale42sE 2.3/20.7s, rvug71d7Dqk 7.0/22.2s two-sided or 22.2/22.2s incl. bottom-only, xdurJQcoiGM 3.6/18.4s, C8lPx5N2DwM 20.6-24.3/33.0s, SWDCZfWZVao 5.2/22.7s, k2kEaA7ICjc 12.5-16.1/33.9s, heiGCnGKTkE 9.1/23.9s) and 2 OWB Shorts have blur-pad on the ~3.8s end-card thumbnail only (HZGTovJu_TQ, cwU_0WWeNZ4).",
+      "result": "Accepted (acting Chief), #780. Every scheduled Short of both channels was looked at by eye for its whole length. All 6 History of Science Shorts and 13 of Orbit's fill the screen throughout. 8 Orbit Shorts have shots that sit as a strip over a blurred copy: Mars helicopter (13 Nov, 12 of 26 s), Voyager (17 Nov, one shot), Muons (21 Nov, all of it), ISS (25 Nov, last shot), the 031 opening Short (5 Dec) and three 029 Shorts (9, 11, 14 Dec). The two Nearest Star Shorts fill the screen except their end cards. Re-cuts are queued soonest first: J2549 (13 Nov), J2550 (17, 21, 25 Nov), J2551 (December). Each fixed cut goes to Ben on a watch card; the cut he OK'd airs if he does not tick. 56 labelled frames go to J2546 for the check.",
       "history": [
         {
           "at": "2026-11-10T22:58Z",
@@ -219550,6 +219550,11 @@
           "at": "2026-11-11T00:04Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #780 (commit 1d7768b80) delivers whole-length by-eye padding table (jobs/reviews/J2545/REPORT.md), 56-frame 108x192 grey test dataset (jobs/reviews/J2545/J2545_labelled_frames.json, 965 KB < 1 MB: 28 padded + 28 full including ChbsigHD5_o and cLKDiYP55J8), and 30 2s-interval contact sheets on NAS (/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/). 19/29 scheduled Shorts are full-frame throughout (all 6 HOS + 13 OWB); 8 OWB Shorts have padded body shots (bSjWiCbB7pY 12.1/26.4s, kKN8Ale42sE 2.3/20.7s, rvug71d7Dqk 7.0/22.2s two-sided or 22.2/22.2s incl. bottom-only, xdurJQcoiGM 3.6/18.4s, C8lPx5N2DwM 20.6-24.3/33.0s, SWDCZfWZVao 5.2/22.7s, k2kEaA7ICjc 12.5-16.1/33.9s, heiGCnGKTkE 9.1/23.9s) and 2 OWB Shorts have blur-pad on the ~3.8s end-card thumbnail only (HZGTovJu_TQ, cwU_0WWeNZ4)."
+        },
+        {
+          "at": "2026-11-11T00:55Z",
+          "by": "claude",
+          "what": "done: Accepted (acting Chief), #780. Every scheduled Short of both channels was looked at by eye for its whole length. All 6 History of Science Shorts and 13 of Orbit's fill the screen throughout. 8 Orbit Shorts have shots that sit as a strip over a blurred copy: Mars helicopter (13 Nov, 12 of 26 s), Voyager (17 Nov, one shot), Muons (21 Nov, all of it), ISS (25 Nov, last shot), the 031 opening Short (5 Dec) and three 029 Shorts (9, 11, 14 Dec). The two Nearest Star Shorts fill the screen except their end cards. Re-cuts are queued soonest first: J2549 (13 Nov), J2550 (17, 21, 25 Nov), J2551 (December). Each fixed cut goes to Ben on a watch card; the cut he OK'd airs if he does not tick. 56 labelled frames go to J2546 for the check."
         }
       ],
       "remaining_action": "Park PR #780 for Chief review and re-cut decisions",
@@ -219577,14 +219582,15 @@
         "HOS:005",
         "HOS:006",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "#780"
     },
     {
       "id": "J2546",
       "title": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
       "needs": "macbook",
       "repo": "owb",
-      "body": "Second half of the padded-Short work. J2539 was the first half. J2421 asked for the whole-clip version on 8 Nov and is folded in here. This starts when the by-eye job named in `after` is merged: it gives labelled real frames in its `jobs/reviews/` folder, padded and full-frame.\n\n1. Make `full_bleed_frame()` in `00_Brand/Channel-Setup/tools/gate_shorts_open.py` right on the labelled frames: every frame labelled padded is called padded, every frame labelled full passes. Known cases from J2540 (`jobs/reviews/J2540/REPORT.md`): `ffYKoNVPoqg` (padded, caught); `rvug71d7Dqk` (padded, with a feathered seam and a hook caption in the upper band: missed); `ChbsigHD5_o` (full frame, wrongly failed: the top of a caption and a table edge lined up at one third and two thirds of the height); `cLKDiYP55J8` at 0.50 s (full frame, wrongly called padded).\n   One idea, yours to judge: the fill is a blurred, enlarged copy of the picture band itself, so the outer bands should match a blurred, stretched copy of the band (compare column brightness profiles, or a small downscaled correlation). A real room's wall and table do not match the middle of the picture. Also ask for the soft-outside, sharp-inside jump at both seams, and let a seam be a ramp over several rows.\n2. The whole Short, not only its opening: sample one frame every second. Hard FAIL when the frame at 0.0 s is padded (as now) or more than 10% of the sampled frames are. Report the padded stretches in seconds.\n3. Tests from the labelled frames (the JSON file; no media in the repo), plus the made clips already there. Say how many labelled frames there are and that all are called right. If one cannot be got right without breaking another, leave it wrong, name it and say why.\n4. It is a shared file: sync it to history-of-science as J2539 did (a pair of pull requests).\n\nDo not change AGENTS.md or the rule files: the Chief adds the rule line when this merges. Do not skip or weaken a test. One pull request in each repo, park for Chief. No real money.\n",
+      "body": "Second half of the padded-Short work. J2539 was the first half. J2421 asked for the whole-clip version on 8 Nov and is folded in here. This starts when the by-eye job named in `after` is merged: it gives labelled real frames in its `jobs/reviews/` folder, padded and full-frame.\n\n1. Make `full_bleed_frame()` in `00_Brand/Channel-Setup/tools/gate_shorts_open.py` right on the labelled frames: every frame labelled padded is called padded, every frame labelled full passes. Known cases from J2540 (`jobs/reviews/J2540/REPORT.md`): `ffYKoNVPoqg` (padded, caught); `rvug71d7Dqk` (padded, with a feathered seam and a hook caption in the upper band: missed); `ChbsigHD5_o` (full frame, wrongly failed: the top of a caption and a table edge lined up at one third and two thirds of the height); `cLKDiYP55J8` at 0.50 s (full frame, wrongly called padded).\n   One idea, yours to judge: the fill is a blurred, enlarged copy of the picture band itself, so the outer bands should match a blurred, stretched copy of the band (compare column brightness profiles, or a small downscaled correlation). A real room's wall and table do not match the middle of the picture. Also ask for the soft-outside, sharp-inside jump at both seams, and let a seam be a ramp over several rows.\n2. The whole Short, not only its opening: sample one frame every second. Hard FAIL when the frame at 0.0 s is padded (as now) or more than 10% of the sampled frames are. Report the padded stretches in seconds.\n3. Tests from the labelled frames (the JSON file; no media in the repo), plus the made clips already there. Say how many labelled frames there are and that all are called right. If one cannot be got right without breaking another, leave it wrong, name it and say why.\n4. It is a shared file: sync it to history-of-science as J2539 did (a pair of pull requests).\n\nDo not change AGENTS.md or the rule files: the Chief adds the rule line when this merges. Do not skip or weaken a test. One pull request in each repo, park for Chief. No real money.\n\n\nChief rulings from the by-eye audit (J2545, `jobs/reviews/J2545/REPORT.md`, 11 Nov), which is this job's input. The labelled frames are in `jobs/reviews/J2545/J2545_labelled_frames.json`: 28 padded, 28 full. (1) A blurred copy used as fill on one side only is padding too (the muons Short, 3.0 to 18.2 s, blur below the Earth's limb). (2) A 16:9 graphic over a faint blurred backdrop is padding, whatever its colour. (3) The end card is judged apart from the shots. The frame check still calls an end card that sits on a blurred copy padded, because it is. The whole-Short rule leaves out a stretch that the cut's own meta file names as the end card; with no meta, nothing is left out. Do not use a share of the length as a stand-in for the end card. (4) The audit names seven frames the first-pass check wrongly failed (a map card over clouds, an eclipse corona, a compass over field lines, a Sun limb with text, a parchment on a desk, wooden spheres, a rover shadow). Each is in the labelled set as full and must pass.",
       "ref": "J2540",
       "film": "",
       "stage": "",
@@ -219602,6 +219608,11 @@
           "at": "2026-11-10T22:59Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T00:55Z",
+          "by": "claude",
+          "what": "acting Chief: the audit's rulings added to the brief (one-sided blur is padding; a graphic over a faint blurred backdrop is padding; the end card is judged apart, only where the cut's meta names it; the seven wrongly failed frames must pass)."
         }
       ],
       "remaining_action": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
