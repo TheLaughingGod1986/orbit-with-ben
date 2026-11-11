@@ -227474,9 +227474,14 @@
           "at": "2026-11-11T15:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T15:26Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2628; starting pre-take checks in clean HOS worktree"
         }
       ],
-      "remaining_action": "HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits",
+      "remaining_action": "Run unit tests, detach-command --retakes-j2626, and precheck in clean HOS worktree; check J2270 batch 2 done file and post pre-take report on HOS desk",
       "due": "2026-11-12T16:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -227486,12 +227491,14 @@
       "urgent": 11,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T15:25Z",
+        "of": 4,
+        "at": "2026-11-11T15:26Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2628; starting pre-take checks in clean HOS worktree"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2629",
