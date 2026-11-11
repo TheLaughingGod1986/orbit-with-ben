@@ -224344,13 +224344,13 @@
       "stage": "picture",
       "after": "J2589",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T10:46Z",
-      "eta": "2026-11-11T12:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
-      "result": "",
+      "result": "Points take 3 (01_points_desk_j2241_t3.mp4, 950a2b34...): YES, YES, YES -> KEEP (sphere/thread unchanged f000-f189; no wire/streamers/paper/strips; both hands and both needles stay in view across 0.00s-7.88s including 1:1 check at 6.50s-7.50s f156-f180). Salon take 3 (02_salon_spark_j2241_t3.mp4, b9b9d588...): NO, NO, NO -> FAIL logged formally with frames (arc at 3.00s f072, wisp stream 3.50s-7.88s f084-f189, wig frizz at 4.00s f096, hollow tube and no knuckle contact; already ruled by Chief in 6793606102/6793719472 with J2596-J2599 queued). HOS desk #6794025150.",
       "history": [
         {
           "at": "2026-11-11T10:22Z",
@@ -224386,6 +224386,11 @@
           "at": "2026-11-11T11:00Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Posted half-second sheets beside start frames and 6 yes/no answers to HOS desk #6794025150"
+        },
+        {
+          "at": "2026-11-11T11:00Z",
+          "by": "gemini",
+          "what": "done: Points take 3 (01_points_desk_j2241_t3.mp4, 950a2b34...): YES, YES, YES -> KEEP (sphere/thread unchanged f000-f189; no wire/streamers/paper/strips; both hands and both needles stay in view across 0.00s-7.88s including 1:1 check at 6.50s-7.50s f156-f180). Salon take 3 (02_salon_spark_j2241_t3.mp4, b9b9d588...): NO, NO, NO -> FAIL logged formally with frames (arc at 3.00s f072, wisp stream 3.50s-7.88s f084-f189, wig frizz at 4.00s f096, hollow tube and no knuckle contact; already ruled by Chief in 6793606102/6793719472 with J2596-J2599 queued). HOS desk #6794025150."
         }
       ],
       "remaining_action": "Close J2590 with HOS desk comment #6794025150",
@@ -224402,7 +224407,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6794025150"
     },
     {
       "id": "J2591",
