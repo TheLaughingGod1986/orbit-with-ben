@@ -23,7 +23,7 @@
 2. **Scope, Take & Credit Compliance (`J2306` -> `J2332`)**:
    - `J2306` (`jobs/reviews/J2306/CHIEF_RULING.md`, PR #610 `daa2f24bd92eeccdfa24f32ba9f8a7fded7bc0f9`) authorised: Flow Veo 3.1 only, `3` takes maximum, `<= 100` credits per take, `<= 300` existing subscription credits total, `£0.00` cash, no Vertex, no Omni, no new VO/music, failed takes counting against the cap.
    - Verified in `05_Analytics/ai_spend/ledger.jsonl` (lines 576–580) and `generation.json` (`781d05d4f7aaa79832719147a0cdb5d265d5e3bc86d1625e39e126cc7937d4c5`):
-     - Pre-generation Flow balance (`2026-11-07T02:41:35Z`): `14,890.0` credits (`benoats@googlemail.com` ULTRA, CDP `9222`).
+     - Pre-generation Flow balance (`2026-11-07T02:41:35Z`): `14,890.0` credits (the studio Ultra account, CDP `9222`).
      - Three `Veo 3.1 - Fast 8s 16:9 x1` text-to-video takes (`r01`, `r55a`, `r55b`, no start frame) at `10.0` credits each = `30.0` credits total (`<= 100`/take, `<= 300` total).
      - Post-generation Flow balance (`2026-11-07T02:49:45Z` & `2026-11-07T08:30:20Z`): `14,860.0` credits (`£0.00` monetary spend, no 4th `Create`).
      - **Compliance**: **PASS** (`3/3` takes used, `30/300` subscription credits spent, `£0.00` cash). Because all `3` authorised takes were consumed and `J2334` prohibits generation expansion, no further Flow/Veo/Vertex/Omni generation is authorised.

@@ -219,7 +219,7 @@ DENIED(Interrupted system call)	/System/Volumes/Data/.TemporaryItems
     1.32 GiB	~/.hos-chrome-youtube-studio
     1.80 GiB	~/.venvs
     1.86 GiB	~/.orbit-chrome-youtube-studio
-    2.15 GiB	~/.hos-chrome-flow-benoats-googlemail-cdp
+    2.15 GiB	~/.hos-chrome-flow-ACCOUNT-cdp
     2.79 GiB	~/code
     3.02 GiB	~/.local
     3.84 GiB	~/.cursor-server

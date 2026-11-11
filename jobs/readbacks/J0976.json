@@ -11,7 +11,7 @@
     },
     "google_account_switcher": {
       "owner": "Benjamin Oats",
-      "email": "benoats86@gmail.com",
+      "email": "the personal account",
       "channels_listed_in_order": [
         {
           "title": "OpptiAI",
@@ -111,6 +111,6 @@
   "findings": {
     "card_label_is_plain_subscribers": true,
     "why_dash_is_shown": "YouTube Studio renders net subscriber change = 0 (0 gained, 0 lost; 4 views on m09jUdwC5hk and 2 views on VBaYRPp85Sw) as an em-dash ('—') on the Overview/Audience key-metric card, whereas n_4XskX0yZk has +1 subscriber so it renders '+1'. The DOM structure (#SUBSCRIBERS_NET_CHANGE-tab -> #metric-label 'Subscribers') is identical across all three videos.",
-    "where_opptiai_comes_from": "The string 'Oppti' does not exist anywhere in the Studio Analytics DOM, shadow DOM, tooltips, vidIQ toolbar, or YouTube Studio JS bundles on CDP 9223. 'OpptiAI' (@OpptiAI, UCXRVwrCxXpN_o9gvuHPKAPQ, 3 subscribers) is the first Brand/YouTube channel listed under Benjamin Oats (benoats86@gmail.com) in the top-right Studio Account Switcher ('Switch account' popup, which visually overlays the right side of the Subscribers card when open: 'Sub[scribers] | OpptiAI @OpptiAI 3 subscribers'), and is also the active Studio channel on CDP 9222 (/tmp/chrome-oppti-profile). Both m09jUdwC5hk and VBaYRPp85Sw resolve CreatorChannelData to UC_esArsDKd3GJvOkeO0DUog ('Orbit With Ben')."
+    "where_opptiai_comes_from": "The string 'Oppti' does not exist anywhere in the Studio Analytics DOM, shadow DOM, tooltips, vidIQ toolbar, or YouTube Studio JS bundles on CDP 9223. 'OpptiAI' (@OpptiAI, UCXRVwrCxXpN_o9gvuHPKAPQ, 3 subscribers) is the first Brand/YouTube channel listed under Benjamin Oats (the personal account) in the top-right Studio Account Switcher ('Switch account' popup, which visually overlays the right side of the Subscribers card when open: 'Sub[scribers] | OpptiAI @OpptiAI 3 subscribers'), and is also the active Studio channel on CDP 9222 (/tmp/chrome-oppti-profile). Both m09jUdwC5hk and VBaYRPp85Sw resolve CreatorChannelData to UC_esArsDKd3GJvOkeO0DUog ('Orbit With Ben')."
   }
 }

@@ -5,6 +5,9 @@ On 10 Nov 2026 a search found Google account addresses in 46 tracked files here:
 account a browser was signed in to, plate boards copied from a template that named it, old hand-over notes. They are
 public and stay public until Ben decides what to do about them. This test stops the number growing.
 
+Ben decided on 10 Nov ("Ok on both", J2537): they come out. On 11 Nov 2026 every file but the AI spend ledger was
+cleaned, each address replaced by what it stands for. The ledger follows when no picture run is appending to it.
+
 `email_ratchet.json` lists the files that already contain one. The rules:
   - a file not on the list must contain none. Write "the studio Ultra account", the channel name or "Ben's account";
   - a listed file that no longer contains one must come off the list (`--lower` does it), so a clean-up stays clean;
@@ -29,8 +32,9 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 LIST = HERE / "email_ratchet.json"
 DOMAINS = "gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton"
-# One pattern for git grep (extended regex) and for Python.
-PATTERN = rf"[A-Za-z0-9._%+-]+@({DOMAINS})\.(com|me|co\.uk)"
+# One pattern for git grep (extended regex) and for Python. The optional backslash catches an address written as a
+# search pattern (its dot as backslash-dot), which eight old scripts held until 11 Nov 2026 and the plain pattern missed.
+PATTERN = rf"[A-Za-z0-9._%+-]+@({DOMAINS})\\?\.(com|me|co\.uk)"
 ADDRESS = re.compile(PATTERN)
 
 
@@ -55,6 +59,17 @@ class WhatCounts(unittest.TestCase):
     def test_personal_mail_domains_count(self):
         for domain in ("gmail.com", "googlemail.com", "outlook.com", "icloud.com", "proton.me", "yahoo.co.uk"):
             self.assertTrue(ADDRESS.search("signed in as someone" + "@" + domain), domain)
+
+    def test_an_address_written_as_a_search_pattern_counts(self):
+        escaped = "someone" + "@" + "gmail" + "\\" + ".com"   # as in re.compile(r"...")
+        self.assertTrue(ADDRESS.search("popup.get_by_text(re.compile(r\"" + escaped + "\", re.I))"))
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            git = ["git", "-C", d, "-c", "user.name=t", "-c", "user.email=t@example.com"]
+            subprocess.run(git + ["init", "-q"], check=True)
+            (root / "old_script.py").write_text("acc = re.compile(r\"" + escaped + "\")\n")
+            subprocess.run(git + ["add", "old_script.py"], check=True)
+            self.assertEqual(files_with_an_address(root), ["old_script.py"])
 
     def test_organisation_addresses_and_links_do_not(self):
         for text in ("Co-Authored-By: Claude <noreply" + "@" + "anthropic.com>", "press" + "@" + "nasa.gov",
