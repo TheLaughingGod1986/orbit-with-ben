@@ -230889,19 +230889,24 @@
           "at": "2026-11-11T23:35Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Planned 4 steps: 1) inspect HOS 011 VO provenance & git/LFS; 2) search Mini local, MiniWork, scratch & studio-live; 3) search NAS archive/staging & MacBook reachability; 4) restore verified copy or park with full search log"
+        },
+        {
+          "at": "2026-11-11T23:37Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Found hos_011_vo_v01.wav in Mini _desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ with exact SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2 (plus matching MP3 9fdd84d5... and ch00-ch04 WAV/MP3 stems)"
         }
       ],
-      "remaining_action": "Check HOS 011 VO provenance, git/LFS history, and mounted volumes before hash search",
+      "remaining_action": "Audit remaining search roots (MiniWork, checkouts, NAS) and verify studio-live mount and folder layout",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T23:35Z",
+        "at": "2026-11-11T23:37Z",
         "by": "gemini",
-        "note": "Planned 4 steps: 1) inspect HOS 011 VO provenance & git/LFS; 2) search Mini local, MiniWork, scratch & studio-live; 3) s"
+        "note": "Found hos_011_vo_v01.wav in Mini _desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ with exact SHA-256 d873f1d"
       },
       "taskKeys": [
         "HOS:011"
