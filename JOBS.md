@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2644 | mini | blocked | gemini | – | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
 | J2649 | cloud | blocked | claude | – | for claude · studio · Relay: a condition check for a job pinned to the Mini goes to the Mini, not the MacBook |  |
 | J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
-| J2651 | any | claimed | macbook | 2026-11-11T23:41Z | review · Verify condition for J2644 |  |
+| J2651 | any | blocked | macbook | – | review · Verify condition for J2644 |  |
 
 Recently finished:
 
