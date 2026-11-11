@@ -214988,17 +214988,22 @@
           "at": "2026-11-11T03:51Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Recorded HOS 011 VO lock (hos_011_vo_v01, WAV sha256 d873f1d0..., J2286 KEEP + J2245 closed 10 Nov) in VO_STATUS.md and updated description chapter times"
+        },
+        {
+          "at": "2026-11-11T04:03Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Built HOS 011 shot list v01 and picture plan v01 on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 try-1 / 12,892 expected Flow credits + 22 free £0 rows; HOS-2026-11-E2 PASS; check_all.sh ALL CHECKS PASS)"
         }
       ],
-      "remaining_action": "Build HOS 011 shot list v01 and picture plan v01 on locked hos_011_vo_v01 words.srt with picture source and mint cost per row",
+      "remaining_action": "Run check_all.sh, commit and push HOS 011 VO lock + shot list v01 branch, open PR, and park J2475 for Chief",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-11T03:51Z",
+        "at": "2026-11-11T04:03Z",
         "by": "gemini",
-        "note": "Recorded HOS 011 VO lock (hos_011_vo_v01, WAV sha256 d873f1d0..., J2286 KEEP + J2245 closed 10 Nov) in VO_STATUS.md and "
+        "note": "Built HOS 011 shot list v01 and picture plan v01 on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 try"
       },
       "taskKeys": [
         "HOS:011"
