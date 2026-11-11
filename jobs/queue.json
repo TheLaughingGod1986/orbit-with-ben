@@ -228805,13 +228805,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T21:44Z",
-      "eta": "2026-11-11T23:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T15:59Z",
-      "result": "",
+      "result": "parked for Chief: PR 543 at 5b21ec03 supplies the 21-frame head, open rings, sheets, manifest and check_all pass. Gemini flags 0.175s parent24fps/head30fps mismatch plus fade coverage; Chief must reconcile timing and decide KEEP. No splice.",
       "history": [
         {
           "at": "2026-11-11T15:59Z",
@@ -228942,6 +228942,11 @@
           "at": "2026-11-11T21:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 543 updated at 5b21ec03; check_all passed, Gemini flagged join-clock mismatch, studio-live copy hash verified. Worker evidence complete; no KEEP or splice."
+        },
+        {
+          "at": "2026-11-11T21:51Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: PR 543 at 5b21ec03 supplies the 21-frame head, open rings, sheets, manifest and check_all pass. Gemini flags 0.175s parent24fps/head30fps mismatch plus fade coverage; Chief must reconcile timing and decide KEEP. No splice."
         }
       ],
       "remaining_action": "Chief to resolve the timing conflict and review the revised falling-Moon graphic",
