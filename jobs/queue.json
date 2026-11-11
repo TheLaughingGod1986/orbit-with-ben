@@ -224806,13 +224806,13 @@
       "stage": "picture",
       "after": "J2613",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T13:21Z",
-      "eta": "2026-11-11T15:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
-      "result": "",
+      "result": "Parked for Chief: Grok desk 6796870753 withdraws J2613 v02 PASS and explicitly holds J2592 until v03 size revision receives PASS. PR 515 merge alone is not approval. No composite rendered.",
       "history": [
         {
           "at": "2026-11-11T10:22Z",
@@ -224843,6 +224843,11 @@
           "at": "2026-11-11T13:22Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T13:23Z",
+          "by": "macbook",
+          "what": "blocked: Parked for Chief: Grok desk 6796870753 withdraws J2613 v02 PASS and explicitly holds J2592 until v03 size revision receives PASS. PR 515 merge alone is not approval. No composite rendered."
         }
       ],
       "remaining_action": "Verify Grok approval before compositing",
