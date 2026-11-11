@@ -217291,9 +217291,14 @@
           "at": "2026-11-11T22:02Z",
           "by": "codex",
           "what": "waits on Ben: Watch the Supermoon Short and its cover (by 2026-11-18 18:00 London)"
+        },
+        {
+          "at": "2026-11-11T22:03Z",
+          "by": "codex",
+          "what": "step 5 of 5 done: Watch card registered for v03, deadline 18 Nov 18:00 London. PR834 CI passed. Worker handoff complete."
         }
       ],
-      "remaining_action": "Add the Supermoon watch card and hand the pull request to Chief",
+      "remaining_action": "Chief merges the ready pull request; Ben watches the approved Supermoon Short",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -217303,11 +217308,11 @@
       "for": "codex",
       "action": "KEEP ruled. Merge main into 834's branch and push; copy v03 and cover to the watch folders; jobs.py awaits for Ben",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-11T22:02Z",
+        "at": "2026-11-11T22:03Z",
         "by": "codex",
-        "note": "Both approved NAS hashes match; video and cover copied and hash-checked in OWB UAT and WATCH_FULL."
+        "note": "Watch card registered for v03, deadline 18 Nov 18:00 London. PR834 CI passed. Worker handoff complete."
       },
       "awaits_ben": {
         "what": "Watch the Supermoon Short and its cover",
