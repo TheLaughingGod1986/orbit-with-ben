@@ -196070,9 +196070,14 @@
           "at": "2026-11-11T09:32Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Batch1 exit file is 0; shared writer lock is free. J2575 remains open with no completion file or running batch. Chief requires J2575 before batch2; no generation submitted."
         }
       ],
-      "remaining_action": "Next worker: check batch-one exit code and receipts, then continue remaining bounded batches",
+      "remaining_action": "Wait for the Franklin retakes to finish, then continue the Dinosaur scenes",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196081,9 +196086,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-11T08:57Z",
+        "at": "2026-11-11T09:33Z",
         "by": "codex",
-        "note": "First five-row batch launched detached in tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit f"
+        "note": "Batch1 exit file is 0; shared writer lock is free. J2575 remains open with no completion file or running batch. Chief re"
       },
       "taskKeys": [
         "HOS:010"
