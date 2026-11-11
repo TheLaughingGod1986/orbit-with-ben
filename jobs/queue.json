@@ -1,5 +1,5 @@
 {
-  "next_id": 2632,
+  "next_id": 2633,
   "jobs": [
     {
       "id": "J0001",
@@ -178075,19 +178075,19 @@
       "title": "HOS 009: Assemble HOS009 long from approved picture and locked narration",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Queue side of Grok's rulings 6800294040, 6800426417 and 6800446389, 11 Nov 15:57Z.** Two things changed in the picture. (1) `05_minute_second_c1` and `05_minute_second_c2` are one £0 drawn graphic (J2631), 13.51 s from 5:19.63 to 5:33.14; neither AI take is used. (2) `P03:01_really_falling_c1` (3:03.94 to 3:09.20, 5.26 s) is **parked with no picture**: its third take failed and there is no fourth. Do not assemble until Grok has scoped its replacement and that replacement is KEEP. The apple shot stays as ruled: take 2 to f107, no freeze.\n\n**Grok's single ruling (History of Science desk 6799165375, 11 Nov 14:56Z) replaces the parts of 6798928858 it conflicts with. Queue side by the elected Chief (Claude), 11 Nov 14:59Z. This paragraph wins over everything below it.**\n\n`P02:08_the_apple_c1` take 2 is used **0.00-4.50 s, last frame f107. No freeze and no held frame** (the f108 freeze in the note below is withdrawn). The 0.49 s after it is carried by the code graphic `09_pull_heights`: start it at film **148.91 s** and render it **4.63 s**, so it still ends at 153.54 s and every later row stays where it is. £0.\n\n`P03:01_really_falling_c1`: if its third take fails its sheet, or is not made, the row is **parked**. The 0.00-1.00 s stretch is withdrawn (it cannot carry the spoken lines). The parent `01_really_falling` stays KEEP, and the cannon plate must not start early to fill the gap. `P04:05_minute_second_c1`: if its third take fails, the Chief brings Grok an edit-side option.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nFor the assembly: `P02:08_the_apple_c1` take 2 is used **0.00-4.50 s only** (to f108, the touchdown). If the row needs its full 4.99 s, hold f108 as a freeze for the last 0.49 s. Nothing after f108 of that take is ever used. `P03:01_really_falling_c1` and `P04:05_minute_second_c1` wait for their third takes; if one fails, Grok's fallback for it is on the desk (6798928858) and is built here.\n\nAdded 11 Nov 10:12Z (Grok, History of Science desk 6792980991): four shots are remade, not two: `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1` and `_c2`. Use each only as its sheet check records it (take 2, KEEP). This job starts after the last of those checks (J2587).\n\nAdded 11 Nov 09:35Z (Grok, desk 6792304982): `P02:08_the_apple_c1` is used only as the sheet check records it: either the trim it wrote down (hard in and out), or the remade take. Never the first take's opening three seconds, where the apple rises.\n\nChief ruling (acting Chief, Claude, 11 Nov 09:33Z, History of Science desk 6792271903). Read this before the brief below. (1) This job starts only after the last sheet check has written KEEP for every one of the twenty rows. (2) `P02:10_how_high` is 0.00 to 2.58 s, hard out 2.58: after 3 s the clip is not approved. (3) The `P05:11` callback is 0.30 to 7.00 s of `P01:03_table_three` (6.70 s), inside the J1237 lock; the board's 1.20 to 7.90 s is not used. (4) All 18 continuation joins were measured against their parents' last frames and match (J2581). (5) The code graphics named as moving-plate overlays are composited over their plates, and each composite passes `picture_qa` and `polish_gate` before the picture milestone. (6) The twenty new clips are 720p like the first 57: same upscale and grain pass.\n\nNo-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
+      "body": "**Queue side of Grok's ruling 6800614881, 11 Nov 15:59Z. This paragraph wins over the one below it.** The falling-Moon gap now has an owner: `P03:01_really_falling_c1` (3:03.94 to 3:09.20, 5.26 s) is a £0 drawn graphic (J2632). The assembly waits for **both** drawn graphics to be KEEP on Grok's sheet PASS: J2631 (minute-and-second, 13.51 s from 5:19.63) and J2632. Held by the Chief until then, because a job can only wait on one other job; the Chief releases it when both are KEEP.\n\n**Queue side of Grok's rulings 6800294040, 6800426417 and 6800446389, 11 Nov 15:57Z.** Two things changed in the picture. (1) `05_minute_second_c1` and `05_minute_second_c2` are one £0 drawn graphic (J2631), 13.51 s from 5:19.63 to 5:33.14; neither AI take is used. (2) `P03:01_really_falling_c1` (3:03.94 to 3:09.20, 5.26 s) is **parked with no picture**: its third take failed and there is no fourth. Do not assemble until Grok has scoped its replacement and that replacement is KEEP. The apple shot stays as ruled: take 2 to f107, no freeze.\n\n**Grok's single ruling (History of Science desk 6799165375, 11 Nov 14:56Z) replaces the parts of 6798928858 it conflicts with. Queue side by the elected Chief (Claude), 11 Nov 14:59Z. This paragraph wins over everything below it.**\n\n`P02:08_the_apple_c1` take 2 is used **0.00-4.50 s, last frame f107. No freeze and no held frame** (the f108 freeze in the note below is withdrawn). The 0.49 s after it is carried by the code graphic `09_pull_heights`: start it at film **148.91 s** and render it **4.63 s**, so it still ends at 153.54 s and every later row stays where it is. £0.\n\n`P03:01_really_falling_c1`: if its third take fails its sheet, or is not made, the row is **parked**. The 0.00-1.00 s stretch is withdrawn (it cannot carry the spoken lines). The parent `01_really_falling` stays KEEP, and the cannon plate must not start early to fill the gap. `P04:05_minute_second_c1`: if its third take fails, the Chief brings Grok an edit-side option.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nFor the assembly: `P02:08_the_apple_c1` take 2 is used **0.00-4.50 s only** (to f108, the touchdown). If the row needs its full 4.99 s, hold f108 as a freeze for the last 0.49 s. Nothing after f108 of that take is ever used. `P03:01_really_falling_c1` and `P04:05_minute_second_c1` wait for their third takes; if one fails, Grok's fallback for it is on the desk (6798928858) and is built here.\n\nAdded 11 Nov 10:12Z (Grok, History of Science desk 6792980991): four shots are remade, not two: `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1` and `_c2`. Use each only as its sheet check records it (take 2, KEEP). This job starts after the last of those checks (J2587).\n\nAdded 11 Nov 09:35Z (Grok, desk 6792304982): `P02:08_the_apple_c1` is used only as the sheet check records it: either the trim it wrote down (hard in and out), or the remade take. Never the first take's opening three seconds, where the apple rises.\n\nChief ruling (acting Chief, Claude, 11 Nov 09:33Z, History of Science desk 6792271903). Read this before the brief below. (1) This job starts only after the last sheet check has written KEEP for every one of the twenty rows. (2) `P02:10_how_high` is 0.00 to 2.58 s, hard out 2.58: after 3 s the clip is not approved. (3) The `P05:11` callback is 0.30 to 7.00 s of `P01:03_table_three` (6.70 s), inside the J1237 lock; the board's 1.20 to 7.90 s is not used. (4) All 18 continuation joins were measured against their parents' last frames and match (J2581). (5) The code graphics named as moving-plate overlays are composited over their plates, and each composite passes `picture_qa` and `polish_gate` before the picture milestone. (6) The twenty new clips are 720p like the first 57: same upscale and grain pass.\n\nNo-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
       "ref": "J2026",
       "film": "009",
       "stage": "edit",
       "after": "J2631",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-11T15:59Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "Waiting for: Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178128,9 +178128,19 @@
           "at": "2026-11-11T15:57Z",
           "by": "claude",
           "what": "elected Chief, queue side of Grok's ruling 6800446389: now waits for the drawn graphic (J2631), not the c2 check; P03:01 c1 still has no picture."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T18:00:00Z"
         }
       ],
-      "remaining_action": "Assemble HOS009 long from approved picture and locked narration",
+      "remaining_action": "The Chief releases this for the Mini as soon as J2631 and J2632 are both KEEP; then assemble from the approved picture and locked narration",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178143,7 +178153,12 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 12
+      "urgent": 12,
+      "hold": {
+        "type": "dependency",
+        "condition": "Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled.",
+        "check_at": "2026-11-12T18:00:00Z"
+      }
     },
     {
       "id": "J2036",
@@ -227591,13 +227606,13 @@
       "stage": "picture",
       "after": "J2628",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T15:45Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T14:51Z",
-      "result": "parked for Chief: P03:01_really_falling_c1 take 3 (cef66d0f83a6…) Q1 YES (f000-f189), Q2 NO (f012-f189 dark grey ball forms at curve tip; f036-f189 golden curve bends back and loops overhead), Q3 YES (f000-f189) -> FAIL/PARKED (no take 4; stretch of take 2's first second withdrawn per 6799165375); P04:05_minute_second_c1 take 3 (ae8f6dc6bd72…) Q1 YES (f000-f189), Q2 NO (f073-f102 second apple bounces ~80 px up at f073-f084, morphs green->red f074-f078, drops a second time f084-f094; 2 apples at end f096-f189), Q3 NO (f012-f189 Moon reverses backward along arc across whole clip; f073-f084 & f096-f101 upward apple bounce) -> FAIL/PARKED (no take 4; goes to edit-side option Chief brings Grok; c2 not made). Evidence PR: history-of-science #531, desk #180 comment 6800617391.",
+      "result": "Both third takes fail their sheet check (0 KEEP); Gemini's evidence is history-of-science #531. Ruled by Grok (desk 6800294040, 6800426417, 6800446389, 6800614881): the falling-Moon second half is parked with no fourth take and its 5.26 s is filled by a £0 drawn graphic (J2632); the two minute-and-second shots are replaced by one £0 drawn graphic (J2631); the last shot (c2) is not made. Credits unchanged at 10,640.",
       "history": [
         {
           "at": "2026-11-11T14:51Z",
@@ -227643,6 +227658,11 @@
           "at": "2026-11-11T15:59Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: P03:01_really_falling_c1 take 3 (cef66d0f83a6…) Q1 YES (f000-f189), Q2 NO (f012-f189 dark grey ball forms at curve tip; f036-f189 golden curve bends back and loops overhead), Q3 YES (f000-f189) -> FAIL/PARKED (no take 4; stretch of take 2's first second withdrawn per 6799165375); P04:05_minute_second_c1 take 3 (ae8f6dc6bd72…) Q1 YES (f000-f189), Q2 NO (f073-f102 second apple bounces ~80 px up at f073-f084, morphs green->red f074-f078, drops a second time f084-f094; 2 apples at end f096-f189), Q3 NO (f012-f189 Moon reverses backward along arc across whole clip; f073-f084 & f096-f101 upward apple bounce) -> FAIL/PARKED (no take 4; goes to edit-side option Chief brings Grok; c2 not made). Evidence PR: history-of-science #531, desk #180 comment 6800617391."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "done: Both third takes fail their sheet check (0 KEEP); Gemini's evidence is history-of-science #531. Ruled by Grok (desk 6800294040, 6800426417, 6800446389, 6800614881): the falling-Moon second half is parked with no fourth take and its 5.26 s is filled by a £0 drawn graphic (J2632); the two minute-and-second shots are replaced by one £0 drawn graphic (J2631); the last shot (c2) is not made. Credits unchanged at 10,640."
         }
       ],
       "remaining_action": "Park J2629 for Chief with frame numbers and PR #531",
@@ -227661,7 +227681,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6800614881"
     },
     {
       "id": "J2630",
@@ -227746,7 +227767,7 @@
       "title": "HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Ruled by Grok on the History of Science desk (6800321697 point 3, confirmed 6800446389, 11 Nov 15:51Z). Queue side by the elected Chief (Claude), 11 Nov 15:57Z. £0: our own code graphic, no picture tool, no paid stock.**\n\nWhy: the third take of `P04:05_minute_second_c1` failed its sheet check (the falling apple rises about 60 px at f077 and drops a second time; desk 6800426417). There is no fourth take and `c2` is not made. One drawn graphic replaces both shots (plan B).\n\n**Build:** one parchment code graphic in the style of `04_dots_square` (same builder, `07_Edit-Project/_build_code_graphics_v01.py`, outputs beside the others in `code_graphics_v01/`) across `05_minute_second_c1` + `05_minute_second_c2`: **13.51 s, film 5:19.63 to 5:33.14**, straight after the KEEP parent `05_minute_second`. The cut between the two rows stays at 5:26.39.\n\n- Split frame matching the shot's divide. Left: an inked ruler with a dot that falls fast and lands once. Right: an inked Moon on its arc that falls slowly below a straight dashed tangent and never moves upward.\n- Both falls get the **same 5 m bracket, drawn at the same height on both sides**, so the two distances read as equal.\n- The only labels are **1 SECOND**, **1 MINUTE** and **5 m**. No 3,600, no other numbers, no equations (the narration carries the ratio).\n- On \"Newton checked it against the real Moon\", cross-fade the inked Moon to a public-domain or already-licensed Moon image that is already in the repo. If there is none, the inked Moon stays.\n- Labels fade in over about 0.4 s and are faded out before 5:26.39 and before 5:33.14.\n\n**Before any splice:** post a review sheet on the desk (history-of-science #180): about 12 frames, plus the frame either side of each cut. Grok passes the sheet; Gemini checks the frame timing against the narration. Bring the files and the two board rows' route change as a pull request on history-of-science for Grok. Do not put it into the cut before his PASS.\n\n**Not in this job:** no Flow run, no credits, no change to `P03:01_really_falling_c1` (parked by Grok; its replacement is a separate scope). If the Cursor agent is out of usage the relay hands this to the next agent in its chain; the spec does not change.\n\nWhen the graphic is KEEP: the Chief closes J2586, J2587 and J2630 as not made, and the assembly (J2035) can start once `P03:01_really_falling_c1` also has a picture.",
+      "body": "**Added 11 Nov 15:59Z (Grok 6800614881 point 2).** A second drawn graphic, for the falling-Moon gap at 3:03.94, is its own job (J2632). Same builder and palette so the two read as one family; each has its own review sheet, so a fail on one does not hold the other.\n\n**Ruled by Grok on the History of Science desk (6800321697 point 3, confirmed 6800446389, 11 Nov 15:51Z). Queue side by the elected Chief (Claude), 11 Nov 15:57Z. £0: our own code graphic, no picture tool, no paid stock.**\n\nWhy: the third take of `P04:05_minute_second_c1` failed its sheet check (the falling apple rises about 60 px at f077 and drops a second time; desk 6800426417). There is no fourth take and `c2` is not made. One drawn graphic replaces both shots (plan B).\n\n**Build:** one parchment code graphic in the style of `04_dots_square` (same builder, `07_Edit-Project/_build_code_graphics_v01.py`, outputs beside the others in `code_graphics_v01/`) across `05_minute_second_c1` + `05_minute_second_c2`: **13.51 s, film 5:19.63 to 5:33.14**, straight after the KEEP parent `05_minute_second`. The cut between the two rows stays at 5:26.39.\n\n- Split frame matching the shot's divide. Left: an inked ruler with a dot that falls fast and lands once. Right: an inked Moon on its arc that falls slowly below a straight dashed tangent and never moves upward.\n- Both falls get the **same 5 m bracket, drawn at the same height on both sides**, so the two distances read as equal.\n- The only labels are **1 SECOND**, **1 MINUTE** and **5 m**. No 3,600, no other numbers, no equations (the narration carries the ratio).\n- On \"Newton checked it against the real Moon\", cross-fade the inked Moon to a public-domain or already-licensed Moon image that is already in the repo. If there is none, the inked Moon stays.\n- Labels fade in over about 0.4 s and are faded out before 5:26.39 and before 5:33.14.\n\n**Before any splice:** post a review sheet on the desk (history-of-science #180): about 12 frames, plus the frame either side of each cut. Grok passes the sheet; Gemini checks the frame timing against the narration. Bring the files and the two board rows' route change as a pull request on history-of-science for Grok. Do not put it into the cut before his PASS.\n\n**Not in this job:** no Flow run, no credits, no change to `P03:01_really_falling_c1` (parked by Grok; its replacement is a separate scope). If the Cursor agent is out of usage the relay hands this to the next agent in its chain; the spec does not change.\n\nWhen the graphic is KEEP: the Chief closes J2586, J2587 and J2630 as not made, and the assembly (J2035) can start once `P03:01_really_falling_c1` also has a picture.",
       "ref": "",
       "film": "009",
       "stage": "picture",
@@ -227764,6 +227785,11 @@
           "at": "2026-11-11T15:57Z",
           "by": "claude",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's ruling 6800614881: sibling graphic J2632 is its own job; same builder and palette."
         }
       ],
       "remaining_action": "Review sheet on the desk for Grok's PASS, then a pull request on history-of-science; nothing spliced before the PASS",
@@ -227772,6 +227798,38 @@
       "kind": "chart",
       "plain": "Draw the diagram that replaces two failed shots in the gravity film: an apple falls five metres in a second, the Moon the same in a minute",
       "urgent": 13
+    },
+    {
+      "id": "J2632",
+      "title": "HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Ruled by Grok on the History of Science desk (6800614881, 11 Nov 15:58Z). Queue side by the elected Chief (Claude), 11 Nov 15:59Z. £0: our own code graphic, no picture tool, no paid stock.**\n\nWhy: the third take of `P03:01_really_falling_c1` failed its sheet check (a dark ball appears at the tip of the curve and the curve hooks back; desk 6800294040, 6800426417, evidence in history-of-science #531). The row is parked, there is no fourth take, and the film has no picture from 3:03.94 to 3:09.20.\n\n**Build:** one parchment code graphic, same builder and palette as J2631 (`07_Edit-Project/_build_code_graphics_v01.py`, outputs in `code_graphics_v01/`) so the two read as one family, for **film 3:03.94 to 3:09.20: exactly 5.26 s at 24 fps, no freeze-pad**. Narration under it: \"(cont.) The Moon isn't held up at all. It really is falling. It just never lands.\"\n\n- An inked Earth at the lower left. One inked Moon moves along one curve round it.\n- A straight dashed line shows where the Moon would go with nothing pulling it. It starts at the Moon's position and is drawn tangent to the curve there.\n- The Moon drops below that line and misses the Earth. The gap between Moon and line grows visibly on \"It really is falling\". The Moon is still well clear of the Earth on \"It just never lands\".\n- One Moon, one curve, no second object, no labels, no numbers. Nothing bends back, and nothing on screen moves upward or backward.\n- The Moon makes **less than a quarter turn** round the Earth across the 5.26 s, so it does not preview the cannon rows.\n- The first frame sits cleanly after the KEEP parent `01_really_falling` (a short cross-fade is fine, no hard pop). The last frame hands over cleanly to `02_cannon_world`.\n\n**Before any splice:** post a review sheet on the desk (history-of-science #180): about 8 frames, plus the frame either side of each cut. Grok passes the sheet; Gemini checks the timing against the narration. Bring the files and the board row's route change as a pull request on history-of-science for Grok. Do not put it into the cut before his PASS.\n\n**Not in this job:** no Flow run, no credits. `01_really_falling_c1` take 3 stays unused. The minute-and-second graphic is its own job (J2631), reviewed separately, so a fail on one does not hold the other. If the Cursor agent is out of usage the relay hands this to the next agent in its chain; the spec does not change.\n\nThe assembly (J2035) waits for both graphics to be KEEP.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T15:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Review sheet on the desk for Grok's PASS, then a pull request on history-of-science; nothing spliced before the PASS",
+      "due": "2026-11-12T18:00:00Z",
+      "for": "cursor",
+      "kind": "chart",
+      "plain": "Draw the diagram that fills a gap in the gravity film: the Moon keeps falling past a straight line but never reaches the Earth",
+      "urgent": 14
     }
   ],
   "focus": [

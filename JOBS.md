@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2629, J2586, J2587, J2035, J2631.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2586, J2587, J2035, J2631, J2632.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2035 | mini | open (after J2631) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
+| J2035 | mini | blocked | claude | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
@@ -76,12 +76,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2624 | cloud | open | – | – | review · MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back |  |
-| J2629 | mini | blocked | gemini | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each) |  |
 | J2630 | cloud | blocked | claude | – | 009 picture · review · HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved | https://github.com/TheLaughingGod1986/history-of-science/pull/529 |
 | J2631 | mini | open | – | – | 009 picture · for cursor · chart · HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 |  |
+| J2632 | mini | open | – | – | 009 picture · for cursor · chart · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 |  |
 
 Recently finished:
 
+- J2629 done: HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each) (Both third takes fail their sheet check (0 KEEP); Gemini's evidence is history-of-science #531. Ruled by Grok (desk 6800294040, 6800426417, 6800446389, 6800614881): the falling-Moon second half is parked with no fourth take and its 5.26 s is filled by a £0 drawn graphic (J2632); the two minute-and-second shots are replaced by one £0 drawn graphic (J2631); the last shot (c2) is not made. Credits unchanged at 10,640.)
 - J2628 done: HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits (Generated & archived take 3 of P03:01_really_falling_c1 (cef66d0f83a6) and take 3 of P04:05_minute_second_c1 (ae8f6dc6bd72) under --retakes-j2626 (200 credits: 10,840 -> 10,740 -> 10,640; J2626 released); full-clip 0.5 s sheets for J2629 in HOS PR #530 (ac7928d4))
 - J2627 done: HOS 009: correct the record in #527 (apple shot kept 0.00 to 4.50 s, frames 0 to 107; falling Moon reads RETAKE) (done)
 - J2626 done: HOS 009: let the picture tool make the two third takes Grok ruled (falling Moon c1, minute-and-second c1), 200 credits reserved (Passed and merged by Grok: history-of-science #528 (main 4d94db91, desk 6799526318). The picture tool has a second retake path, --retakes-j2626: its own identity J2626 at 200 credits, two rows in order, each on takes 1 and 2 with take 2 verified, never the apple row, c2 or a fourth take, and a hard stop if the start frame is not the one take 2 was made from. The old path and its file are untouched. Grok's wording is in the boards, with the three sentences he ruled out removed. Nothing was generated: 0 credits.)
@@ -91,4 +92,3 @@ Recently finished:
 - J2617 done: Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0) (Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed.)
 - J2616 done: Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) (Merged: #826 (main 03b7506d), and history-of-science #526 passed and merged by Grok (main e235d80, desk 6798876558). approved_deliver.py names no channel (34 lines to 0; the count is 98). The locked publishing slots moved from the script's table to each channel's own studio/channel.json, written as "Sun 18:00"; the Buffer-only TikTok note is a channel setting too. No slot changed: 5,040 slot choices and every upload job the tool would create were compared old against new, all the same. Built from the MacBook's handover.)
 - J2615 done: Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0) (Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed.)
-- J2613 done: HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) (Second-pass delivery on PR 523 head 4b74aebc verified: 5 tests OK, source hash matches, all 24 artifacts reproduce byte-for-byte. Chief review required before merge or J2592 placement; no stage PASS.)
