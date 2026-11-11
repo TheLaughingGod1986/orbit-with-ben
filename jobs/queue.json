@@ -222488,10 +222488,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T07:51Z",
+      "eta": "2026-11-11T09:51Z",
       "created_by": "claude",
       "created_at": "2026-11-11T07:44Z",
       "result": "",
@@ -222500,11 +222500,24 @@
           "at": "2026-11-11T07:44Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T07:51Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decide and build how a finished MacBook file gets onto the NAS",
       "due": "2026-11-13T18:00:00Z",
-      "plain": "Work out how a video finished on the MacBook gets onto the shared drive"
+      "plain": "Work out how a video finished on the MacBook gets onto the shared drive",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T07:51Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
