@@ -177712,9 +177712,14 @@
           "at": "2026-11-11T00:22Z",
           "by": "gemini",
           "what": "step 1 of 5 done: 10/20 GENERATED, 0 KEEP (1,000cr spent, 14,190->13,890): 08_the_apple_c1, 11_explorer_apple_c1, 01_really_falling_c1 ok=True & NAS verified; 05_shot_orbit_c1 submitted"
+        },
+        {
+          "at": "2026-11-11T00:28Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Batch 3 PASS (exit 0): 12/20 GENERATED, 0 KEEP (1,200cr spent; all 12 clips 1280x720 silent ok=True & NAS sha256 verified); launching detached Batch 4"
         }
       ],
-      "remaining_action": "Minting Batch 3 in detached tmux hos009-tranche2 (10/20 GENERATED, 05_shot_orbit_c1 generating, then 05_shot_orbit_c2)",
+      "remaining_action": "Mint Batch 4 (5 rows: 05_minute_second_c1..04_comet_1758_c1) in detached tmux hos009-tranche2, then Batch 5 (final 3 rows)",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177732,11 +177737,11 @@
       "urgent": 5,
       "not_before": "2026-11-10T23:40Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-11T00:22Z",
+        "at": "2026-11-11T00:28Z",
         "by": "gemini",
-        "note": "10/20 GENERATED, 0 KEEP (1,000cr spent, 14,190->13,890): 08_the_apple_c1, 11_explorer_apple_c1, 01_really_falling_c1 ok="
+        "note": "Batch 3 PASS (exit 0): 12/20 GENERATED, 0 KEEP (1,200cr spent; all 12 clips 1280x720 silent ok=True & NAS sha256 verifie"
       }
     },
     {
