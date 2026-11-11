@@ -217796,9 +217796,14 @@
           "at": "2026-11-11T03:34Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: HZGTovJu_TQ read back Private for 2026-11-16T11:30:00Z (API + Studio); Ben OK'd v06 on board tick OWB-J2512.1 (2026-11-10T23:05Z); v06 sha256 verified 7eb4f03d58e9738f"
+        },
+        {
+          "at": "2026-11-11T03:37Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: uploaded v06 as aEfdxex__Bo (Private, publishAt 2026-11-16T11:30:00Z, cover & en-GB captions serving, Buffer IG 6af3e2b4d9a6812579cb1b7a / FB 6af3e2b5ffe2872794edf9ed / Threads 6af3e2b5d9a6812579cb1bab)"
         }
       ],
-      "remaining_action": "Upload mon16_cant_see_nearest_star_v06.mp4 as new Private video for 2026-11-16T11:30:00Z, set en-GB captions and Studio cover",
+      "remaining_action": "Unschedule old copy HZGTovJu_TQ (Private, publishAt null) and run verify-swap.ts",
       "due": "2026-11-15T12:00:00Z",
       "kind": "listing",
       "plain": "Put the fixed Nearest Star Short you OK'd in its Monday 16 Nov slot",
@@ -217818,11 +217823,11 @@
         "askId": "J2512.1"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-11T03:34Z",
+        "at": "2026-11-11T03:37Z",
         "by": "gemini",
-        "note": "Step 1 done: HZGTovJu_TQ read back Private for 2026-11-16T11:30:00Z (API + Studio); Ben OK'd v06 on board tick OWB-J2512"
+        "note": "Step 2 done: uploaded v06 as aEfdxex__Bo (Private, publishAt 2026-11-16T11:30:00Z, cover & en-GB captions serving, Buffe"
       },
       "taskKeys": [
         "OWB:026"
