@@ -370,14 +370,41 @@ def studio_slug() -> str:
     return home()
 
 
+def _studio_section() -> dict:
+    """The `studio` section of the registry: what is the studio's own and no channel's."""
+    return json.loads((DIR / "channels.json").read_text()).get("studio") or {}
+
+
 def studio_github() -> str:
-    """`owner/name` on GitHub of the repo that carries the studio's board and threads (today the home channel's)."""
-    return re.sub(r"^https://github\.com/|\.git$", "", get(home())["repo"]["url"])
+    """`owner/name` on GitHub of the repo that carries the studio's board and threads: the registry's `studio.github`
+    (11 Nov 2026), so asking needs no channel to be "home". A registry without the field gives the home channel's
+    repo, as before."""
+    return str(_studio_section().get("github") or re.sub(r"^https://github\.com/|\.git$", "", get(home())["repo"]["url"]))
 
 
 def home_label() -> str:
     """The label a record gets when it names no channel (the old `or "OWB"`)."""
     return label(home())
+
+
+@functools.lru_cache(maxsize=None)
+def studio_prefix() -> str:
+    """The studio's own short name, from the `studio` section of channels/channels.json. It is not a channel's: it
+    prefixes what the studio installed on the machines under one name (launchd labels, state and log files, two
+    environment variables). Engine code asks here instead of spelling it, so the studio can move to its own repo
+    without a rename on any machine."""
+    return str(_studio_section()["prefix"])
+
+
+def studio_env(name: str) -> str:
+    """The studio's own environment variable for `name`: studio_env("AGENT") is the variable the relay sets to say
+    which agent it woke."""
+    return f"{studio_prefix().upper()}_{name}"
+
+
+def studio_label(name: str) -> str:
+    """The launchd label of one of the studio's own background jobs: studio_label("chief-relay")."""
+    return f"com.{studio_prefix()}.{name}"
 
 
 def main() -> int:

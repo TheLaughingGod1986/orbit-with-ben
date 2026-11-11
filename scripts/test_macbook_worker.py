@@ -598,11 +598,13 @@ class TwoSlots(unittest.TestCase):
 
     def test_slot_one_starts_slot_two_in_its_own_clones(self):
         calls = []
-        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
-                mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())):
+        home = pathlib.Path(tempfile.mkdtemp())
+        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), mock.patch.object(mw, "HOME", home):
             self.assertEqual(mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin"), [2])
         env = calls[0]
         self.assertEqual(env["MACBOOK_SLOT"], "2")
+        # The log's name comes from the registry now (J2620) and is the one already on the MacBook.
+        self.assertEqual([f.name for f in (home / "Library" / "Logs").iterdir()], ["owb-macbook-worker-2.log"])
         self.assertTrue(env["OWB_REPO"].endswith("worker/slot2/orbit-with-ben"))
         self.assertTrue(env["HOS_REPO"].endswith("worker/slot2/history-of-science"))
 

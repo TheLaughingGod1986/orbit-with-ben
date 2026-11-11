@@ -124,7 +124,7 @@ The job is already claimed for you: {job}
    {bens_folders} must always be left on main.
 4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
 5. Report on the studio thread: write the report to a file, starting "[MacBook] ...", and post it with
-   python3 scripts/owb_thread.py post -f <file>   Never put the report text on the command line: the shell runs
+   python3 scripts/studio_thread.py post -f <file>   Never put the report text on the command line: the shell runs
    any backtick or $(...) in it as a command and posts the output.
 
 This is Ben's own laptop, not the Mini:
@@ -875,7 +875,7 @@ def start_other_slots(popen=None, system=None) -> list:
         env = dict(os.environ, MACBOOK_SLOT=str(n), **clones)
         try:
             logs.mkdir(parents=True, exist_ok=True)
-            with open(logs / f"owb-macbook-worker-{n}.log", "a") as out:   # the child keeps its own copy of the handle
+            with open(logs / f"{channels.studio_prefix()}-macbook-worker-{n}.log", "a") as out:   # the child keeps its own handle
                 popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"], env=env, stdout=out,
                       stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, start_new_session=True)
             started.append(n)

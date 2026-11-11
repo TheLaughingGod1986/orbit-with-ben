@@ -1,5 +1,10 @@
 {
   "_about": "The channels plugged into the studio (docs/MULTI_CHANNEL_PLAN.md phase 2). Each channel's settings live in its own repo at studio/channel.json; channels.py reads them from the checkout found here (env var, then ~/YouTube/<name>, then a sibling folder). channels/<slug>/channel.json is the cached copy used when that checkout isn't on this machine (CI, the cloud): refresh it with `python3 scripts/channels.py sync`. The home channel is this repo itself (studio/channel.json at its root). To add a channel: give its repo a studio/channel.json and add one line here.",
+  "studio": {
+    "_about": "The studio's own short name. It is not a channel's. It prefixes what the studio installed on the machines under one name: launchd labels (com.<prefix>.*), state and log files, and the <PREFIX>_AGENT and <PREFIX>_THREAD_PR variables. Read with channels.studio_prefix(). Changing it here renames nothing on a machine, so rename there first. `github` is the repo that carries the studio's board and threads (owner/name); it is the one field that changes when the studio moves to its own repo.",
+    "prefix": "owb",
+    "github": "TheLaughingGod1986/orbit-with-ben"
+  },
   "channels": [
     {"slug": "owb", "home": true},
     {"slug": "hos", "env": "HOS_REPO", "checkouts": ["History Of Science", "history-of-science"]}

@@ -17,6 +17,9 @@ Run it on the Mini (a Claude that is down can't report itself). Reads only; neve
 """
 import argparse, datetime as dt, json, os, subprocess, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import channels  # noqa: E402  the studio's own name, for the launchd label in the relay's fix line
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UTC = dt.timezone.utc
 
@@ -28,7 +31,7 @@ CHECKS = {
     "claude": {"kind": "beat", "branch": "claude-heartbeat", "max_h": 1.5,
                "fix": "Claude's hourly run is not beating: open the Claude session or check its scheduled task"},
     "mini": {"kind": "beat", "branch": "mini-heartbeat", "max_h": 1.25,
-             "fix": "the Mini relay is not beating: check com.owb.chief-relay and scripts/mini_repair.py"},
+             "fix": f"the Mini relay is not beating: check {channels.studio_label('chief-relay')} and scripts/mini_repair.py"},
 }
 MARK = "[alarm {key}]"
 
@@ -92,14 +95,13 @@ def main():
     for l in lines:
         print(l)
     if a.post and found:
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        import owb_thread
+        import studio_thread as thread
         since = (now - dt.timedelta(hours=22)).strftime("%Y-%m-%dT%H:%M:%SZ")
-        recent = [c.get("body", "") for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?per_page=100&since={since}")
-                  if owb_thread.trusted(c)]
+        recent = [c.get("body", "") for c in thread.api("GET", f"/issues/{thread.PR}/comments?per_page=100&since={since}")
+                  if thread.trusted(c)]
         for m, l in zip(found, lines):
             if not already_posted(m[0], now, recent):
-                owb_thread.api("POST", f"/issues/{owb_thread.PR}/comments", {"body": l})
+                thread.api("POST", f"/issues/{thread.PR}/comments", {"body": l})
                 print("posted", m[0])
     return 1 if found else 0
 

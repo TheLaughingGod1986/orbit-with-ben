@@ -47,5 +47,13 @@ class Misses(unittest.TestCase):
         self.assertFalse(m.already_posted("claude", NOW, ["[alarm buffer] buffer missed"]))
 
 
+class TheRelaysFixLine(unittest.TestCase):
+    def test_it_names_the_launchd_job_that_is_on_the_mini(self):
+        # J2620, 11 Nov 2026: the label's prefix comes from the registry; the line reads as it always did.
+        self.assertEqual(m.CHECKS["mini"]["fix"],
+                         "the Mini relay is not beating: check com.owb.chief-relay and scripts/mini_repair.py")
+
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
