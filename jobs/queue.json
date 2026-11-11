@@ -229381,13 +229381,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T20:17Z",
-      "eta": "2026-11-11T21:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
-      "result": "",
+      "result": "parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend",
       "history": [
         {
           "at": "2026-11-11T20:08Z",
@@ -229418,6 +229418,11 @@
           "at": "2026-11-11T20:21Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 545 opened; 37 runner tests and all repository checks pass; no spend"
+        },
+        {
+          "at": "2026-11-11T20:21Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend"
         }
       ],
       "remaining_action": "Chief reviews the credit-floor fix in HOS pull request 545",
