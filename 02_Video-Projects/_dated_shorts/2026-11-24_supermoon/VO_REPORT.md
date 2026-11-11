@@ -35,3 +35,15 @@ Built by `02_Voiceover/vo_build/splice_v03.sh` (checks the v01 hash, never overw
 2. Rule 24 first-second: in sentence 1 "two" starts at 1.36 s and "closer" at 2.10 s, so the surprise is not finished by 1.5 s. The gate has not been run on a built cut yet; expect a FAIL on that line unless the reviewer rules "The Moon swings two…" enough, or OKs one more take (about 240 characters).
 3. The splice has not been checked by a second speech-to-text pass (faster-whisper failed to load on the Mini this run), and no one has listened to it.
 4. The picture plan's shot times (s02/s03 on the nickel line) need re-timing to the shorter voice.
+
+## Chief ruling, 10 Nov 12:45Z: v02 is the voice; `supermoon_vo_v03` is NOT USED
+The acting Chief ruled on the thread to use Gemini's `supermoon_2026_11_24_vo_v02` (plan-order Trim 1, 41 words) and its built cut. `supermoon_vo_v03` (Trim 2) stays on the NAS and this branch for the record only. No further voice take: four takes, 1,072 characters, against a cap of about 600.
+
+## Chosen cut: `owb_dated_2026_11_24_supermoon_v01.mp4` (11 Nov 2026, claudecode)
+- 19.6 s, 1080x1920, sha256 `868a1259ddb264e24022b41dbcd82ba63ed4f802d8197bc78d38e6bf5b3481aa`. NAS: `studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/from_gemini_wt_J2478/` (hash matched on the NAS).
+- Gemini's records (voice takes, splice, cut list, gate results, package draft, build script) are committed here from its worktree. Its code-graphic PNG frames and media are not in git; they are on the NAS under `from_gemini_wt_J2478/full/`.
+- Gates (tool results, nothing watched or heard): `gate_shorts_open` re-run 11 Nov with the current gate (including the frame-0 full-bleed check) for air date 19 Nov: **PASS**, 0 fails, no near-duplicate opening; warn only on length (19.6 s against the 22 to 27 s band; the plan's bar for this Short is 17 to 20 s). Result: `07_Edit-Project/assembly_j2478_v01/qa/gate_shorts_open_2026-11-11_air-2026-11-19.json`. Gemini's runs on 10 Nov: vo_check, picture_qa, polish_gate, music_gate (reused bed under the J1468 waiver; pace warning 120 BPM against 84 to 96), sfx_level, loop metrics, all PASS.
+- First-second rule (rule 24), measured on the v02 voice stem:
+  - Voice starts at 0.08 s; picture moves at frame 0 (motion 17.6, frame-0 change 4.76); first cut 2.63 s.
+  - No pause over 0.15 s in sentence 1 (longest 0.13 s at 2.60 s, silencedetect -50 dB).
+  - **Open point for the reviewer:** word starts by Scribe: "The" 0.07, "Moon" 0.21, "swings" 0.65, "two" 1.19, "Earths" 1.57, "closer" 2.05 (ends 2.53). The subject and "swings two" are spoken by 1.5 s; "Earths closer" lands after it. The gaps inside the sentence are already under 0.13 s, so tightening gaps in the edit cannot bring "closer" under 1.5 s; only a faster read could, and no further take is allowed. The on-screen hook "TWO EARTHS CLOSER" is up from frame 0.
