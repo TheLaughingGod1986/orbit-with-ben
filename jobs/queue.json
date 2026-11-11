@@ -1,5 +1,5 @@
 {
-  "next_id": 2577,
+  "next_id": 2579,
   "jobs": [
     {
       "id": "J0001",
@@ -219793,13 +219793,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T08:59Z",
-      "eta": "2026-11-11T10:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "orbit-with-ben #807 and #811 merged. AGENTS.md holds the studio's rules (704 lines to 436); studio/RULES.md holds Orbit With Ben's own (303 lines). No line was cut in two; the move was made by a script and checked against the old file: 231 lines moved, none lost, none changed, 18 new pointers and headers. sync_rules.py reads both files, with tests; every safety line of the Never list stays in AGENTS.md. AGENTS.md says in its first screen to read studio/RULES.md next; CLAUDE.md and the Cursor rule name both. Left as their own jobs: the two live prompts (J2577) and History of Science's own file (J2578). docs/RULES_SPLIT.md records what went where and why.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -219825,6 +219825,11 @@
           "at": "2026-11-11T08:59Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "done: orbit-with-ben #807 and #811 merged. AGENTS.md holds the studio's rules (704 lines to 436); studio/RULES.md holds Orbit With Ben's own (303 lines). No line was cut in two; the move was made by a script and checked against the old file: 231 lines moved, none lost, none changed, 18 new pointers and headers. sync_rules.py reads both files, with tests; every safety line of the Never list stays in AGENTS.md. AGENTS.md says in its first screen to read studio/RULES.md next; CLAUDE.md and the Cursor rule name both. Left as their own jobs: the two live prompts (J2577) and History of Science's own file (J2578). docs/RULES_SPLIT.md records what went where and why."
         }
       ],
       "remaining_action": "Step 2: move Orbit With Ben's own rules to studio/RULES.md word for word, with a check that no line is lost",
@@ -219836,7 +219841,8 @@
         "of": 5,
         "at": "2026-11-11T08:25Z",
         "by": "claude"
-      }
+      },
+      "done_ref": "#811"
     },
     {
       "id": "J2528",
@@ -223364,6 +223370,64 @@
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before they go into the edit",
       "urgent": 3
+    },
+    {
+      "id": "J2577",
+      "title": "The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Follow-up to J2527 (orbit-with-ben #807 and #811, merged). The rule book is two files now: `AGENTS.md` (the studio's rules) and `studio/RULES.md` (this channel's own). `AGENTS.md` says in its first screen to read the channel file next, so nothing is broken today. Two live prompts still name only `AGENTS.md`:\n\n1. The relay's prompt in `scripts/chief_relay.py` (\"Read AGENTS.md (the rules, the Never list, ...)\" and, for History of Science, \"Read its AGENTS.md\").\n2. The MacBook worker's brief in `scripts/macbook_worker.py` (the same line, and \"follow its AGENTS.md\" for the other channels).\n\nChange each so it names both files for the job's channel: the studio's `AGENTS.md`, then that channel's `studio/RULES.md` when the checkout has one (ask `channels.py`; a channel without the file yet is told only `AGENTS.md`, as now). Keep every other word of both prompts. Tests beside each script's own: today's two channels, a channel with no rules file, and a made-up third channel. One pull request; the whole suite and both ratchets pass.",
+      "ref": "J2527",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make the two live prompts name both rule files for the job's channel",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Tell the Mini's and the MacBook's helpers to read each channel's own rules as well as the studio's"
+    },
+    {
+      "id": "J2578",
+      "title": "History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Follow-up to J2527. Orbit With Ben's own rules moved to its `studio/RULES.md` (orbit-with-ben #811) by a script that never cut a line in two and checked that none was lost or changed. Do the same for History of Science, in a pull request there for Grok.\n\n`docs/RULES_SPLIT.md` in orbit-with-ben, section \"What History of Science's own rules file should hold\", says what goes: its *Definition of done*, *Teach on screen*, *Polish pass*, *Reference lessons*, *Packaging* and *Ben's check-in* sections, and from its Never list the lines that are its own (Channels, premiere, the Explorer at frame 0, burned-in subscribe graphics, Made for Kids, Titles, Studio, Picture, Voice, TikTok, Social). Its publish days and times stay where they are for now. Add \"every shot fills the 9:16 frame\" to its Shorts rules: the shared gate already enforces it and the file does not state it.\n\nMethod: copy `jobs/reviews/J2527/move.py` as the pattern. Each line goes whole to one file; a line holding both kinds stays in `AGENTS.md`; the check must print \"lost or changed: 0\". Its `sync_rules.py` reads both files the way orbit-with-ben's does now. Its `AGENTS.md` says in its first screen to read `studio/RULES.md` next. Do not touch a runner, a plan, a scope or any file a live picture job pins. Post on the History of Science desk for Grok when it is up.",
+      "ref": "J2527",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Split History of Science's rule book into studio rules and its own, with the nothing-lost check",
+      "due": "2026-11-14T18:00:00Z",
+      "plain": "Give History of Science its own rules file, separate from the studio's rules"
     }
   ],
   "focus": [

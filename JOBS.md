@@ -63,7 +63,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
 | J2503 | mini | blocked | gemini | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
-| J2527 | cloud | claimed | claude | 2026-11-11T10:59Z | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
 | J2529 | mini | blocked | claude | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
@@ -74,6 +73,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2572 | mini | claimed | macbook-2 | 2026-11-11T10:58Z | for gemini · review · History of Science: rework the address clean-up (#505) to fingerprints, 010 and 013 runners untouched, 008 and 009 held back | J2503 |
 | J2575 | mini | open | – | – | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
 | J2576 | mini | open (after J2575) | – | – | 008 picture · qa · HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) | J2575 |
+| J2577 | cloud | open | – | – | The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) | J2527 |
+| J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |
 
 Recently finished:
 
