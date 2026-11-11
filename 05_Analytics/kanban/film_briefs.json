@@ -849,10 +849,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T10:47Z",
+      "updated": "2026-11-11T11:58Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, has now failed three remakes. The cause is its starting picture, which already shows an open tube with loose wisps beside it, so every take inherits them. So the Chief changed the plan: a new starting picture at no cost, then one last take with almost no movement (100 credits, none in cash), and the tiny spark added in the edit. You will see the result in v04 and can say no there. The points-desk shot looks right on its third take and is being checked. It is tight for a Thu 19 Nov air date.",
+      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, failed three remakes. The cause is its starting picture, which already shows an open tube with loose wisps beside it, so every take inherits them. So the Chief changed the plan: a new starting picture at no cost, then one last take with almost no movement (100 credits, none in cash), and the tiny spark added in the edit. Two free tries at the new picture each got part of the way: the first changed the room and the people; the second kept them and cleaned the wig, but her hand is not near the end of the tube. The third and last free try moves only her hand. If it fails, the fallback is the clean first two seconds of the third take with the spark added on a cut. You will see the result in v04 and can say no there. The points-desk shot's third take is kept. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -899,30 +899,46 @@
           "what": "check the points shot's third take",
           "job": "J2590",
           "kind": "qa",
-          "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov"
+          "done": true,
+          "doneText": "kept \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
-          "what": "new starting picture for the salon shot (free)",
-          "job": "J2596",
+          "what": "new starting picture for the salon shot, two free tries",
+          "job": "J2604",
+          "kind": "image",
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov; neither passed"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check the two tries",
+          "job": "J2605",
+          "kind": "qa",
+          "done": true,
+          "doneText": "wrong room, then hand too far from the tube"
+        },
+        {
+          "who": "Mac mini",
+          "what": "third and last free try: only her hand moves",
+          "job": "J2607",
           "kind": "image",
           "when": "2026-11-11",
           "whenText": "today"
         },
         {
           "who": "Reviewer",
-          "what": "check the new starting picture",
-          "job": "J2597",
+          "what": "check the third try",
+          "job": "J2608",
           "kind": "qa",
-          "afterJob": "J2596"
+          "afterJob": "J2607"
         },
         {
           "who": "Mac mini",
-          "what": "fourth and last take of the salon shot (100 credits)",
+          "what": "fourth and last take of the salon shot (100 credits), only if the third try passes",
           "job": "J2598",
           "kind": "video",
-          "afterJob": "J2597",
+          "afterJob": "J2608",
           "when": "2026-11-12",
           "whenText": "before Thu 12 Nov 19:13"
         },
@@ -991,15 +1007,15 @@
       "you": "",
       "youWhen": "",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Your eleven notes are scoped and the repair plan is on main. Next: retakes of three shots on the plan's credits, never cash (J2241). They had been passed over in the queue; on 11 Nov the Chief put them first on the picture tool, to be made before the credits reset on Thu 12 Nov 19:13. The shot at 1:49 is the hair-and-tube one you confirmed. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
+      "line": "Your eleven notes are scoped and the repair plan is on main. Of the three shots being remade, the rods shot and the points-desk shot are kept. The shot at 1:49, the hair-and-tube one you confirmed, is on its last free try at a new starting picture (11 Nov), then one last take before the credits reset on Thu 12 Nov 19:13. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
       "youShort": "",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T10:33Z",
+      "updated": "2026-11-11T11:58Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "The review of the last twenty pictures found four that cannot go out. In one the Moon fades away while the voice says it never lands. In three an apple moves upward, in a film about gravity. All four are being made again, one try each, at most 400 credits and none in cash. The wording for them is written and the Chief has passed it. The other sixteen are kept. The edit starts once the remade shots are checked. Picture was due Sun 15 Nov and is still on course.",
+      "holdup": "The review of the last twenty pictures found four that cannot go out. In one the Moon fades away while the voice says it never lands. In three an apple moves upward, in a film about gravity. All four are being made again, one try each, at most 400 credits and none in cash. The wording for them and the change to the tool that makes them are both passed by the Chief, so the first three can be made as soon as the picture tool is free. The other sixteen are kept. The edit starts once the remade shots are checked. Picture was due Sun 15 Nov and is still on course.",
       "steps": [
         {
           "who": "Mac mini",
