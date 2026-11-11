@@ -1,0 +1,36 @@
+{
+  "status": "SAVED_FULL_CHAPTER_CLOCK_AND_COVER_READBACK",
+  "sha256": "69151e31eee05f9bab481fd16893fb50f8c8e3720e0fc39a1379b7e9302095dc",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "constant_frame_clock": true,
+  "geometry": [
+    1920,
+    1080,
+    "yuv420p"
+  ],
+  "hash_match": true,
+  "opaque_checks": [
+    {
+      "cover": 1,
+      "frames_compared": 237,
+      "maximum_mean_absolute_rgb_error": 0.848275462962963,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "cover": 2,
+      "frames_compared": 136,
+      "maximum_mean_absolute_rgb_error": 0.9509085648148148,
+      "threshold": 2,
+      "pass_check": true
+    }
+  ],
+  "all_opaque_checks_pass": true,
+  "limitations": [
+    "Silent checkpoint, not UAT.",
+    "Bright source diagrams and original in-film hard cuts remain unresolved.",
+    "No quiet chapter title or four-second inter-film breath yet.",
+    "No whole-chapter picture_qa, final AV sync, final mux, compilation QA or NAS master/reel claim."
+  ]
+}

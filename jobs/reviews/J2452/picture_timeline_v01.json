@@ -529,7 +529,7 @@
       "compilation_start_s": 4436.46,
       "duration_s": 494.29999999999995,
       "breath_after_s": 4,
-      "picture_status": "NOT_RENDERED; cover windows and source cut softening still required",
+      "picture_status": "COVERS_INTEGRATED_NOT_FINAL_SLEEP_PICTURE_QA",
       "moon_note": null,
       "required_orbit_covers": [
         {
@@ -540,7 +540,7 @@
           "compilation_in_s": 4544.52,
           "compilation_out_s": 4551.78,
           "original_source": "sun_orbit_row67_omni_v01.mp4",
-          "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+          "status": "COVER_INTEGRATED_AND_PIXEL_CHECKED_NOT_FULL_CHAPTER_QA",
           "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
           "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
           "candidate_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6"
@@ -553,12 +553,24 @@
           "compilation_in_s": 4698.12,
           "compilation_out_s": 4702.04,
           "original_source": "orbit_thumb_omni_v01.mp4",
-          "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+          "status": "COVER_INTEGRATED_AND_PIXEL_CHECKED_NOT_FULL_CHAPTER_QA",
           "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
           "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
           "candidate_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48"
         }
-      ]
+      ],
+      "picture_checkpoint": {
+        "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/029_picture_checkpoint.mp4",
+        "sha256": "69151e31eee05f9bab481fd16893fb50f8c8e3720e0fc39a1379b7e9302095dc",
+        "frames": 14829,
+        "duration_s": 494.3,
+        "limitations": [
+          "Silent checkpoint, not UAT.",
+          "Bright source diagrams and original in-film hard cuts remain unresolved.",
+          "No quiet chapter title or four-second inter-film breath yet.",
+          "No whole-chapter picture_qa, final AV sync, final mux, compilation QA or NAS master/reel claim."
+        ]
+      }
     },
     {
       "number": 11,

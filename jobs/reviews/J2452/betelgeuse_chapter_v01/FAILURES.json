@@ -1,0 +1,166 @@
+{
+  "verdict": "FAIL_NOT_WAIVED",
+  "failures": [
+    {
+      "row": "5",
+      "cut": 5,
+      "t": 24.45,
+      "source": "sphere_dec.jpg",
+      "why": [
+        "near-black: mean 25.13, p95 95.0"
+      ],
+      "chapter_time_s": 24.45,
+      "master_time_s": 39.55,
+      "compilation_time_s": 4460.91,
+      "chapter_range_s": [
+        22.1,
+        26.8
+      ],
+      "master_range_s": [
+        37.2,
+        41.9
+      ]
+    },
+    {
+      "row": "18",
+      "cut": 27,
+      "t": 172.39,
+      "source": "sphere_dec.jpg",
+      "why": [
+        "near-black: mean 24.58, p95 90.0"
+      ],
+      "chapter_time_s": 172.39,
+      "master_time_s": 187.49,
+      "compilation_time_s": 4608.85,
+      "chapter_range_s": [
+        170.76,
+        174.02
+      ],
+      "master_range_s": [
+        185.86,
+        189.12
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 38,
+      "t": 237.54,
+      "source": "chajnantor_mw.m4v",
+      "why": [
+        "near-black: mean 26.38, p95 77.0"
+      ],
+      "chapter_time_s": 237.54,
+      "master_time_s": 258.04,
+      "compilation_time_s": 4674.0,
+      "chapter_range_s": [
+        234.3,
+        240.78
+      ],
+      "master_range_s": [
+        254.8,
+        261.28
+      ]
+    },
+    {
+      "row": "32",
+      "cut": 59,
+      "t": 361.38,
+      "source": "sphere_dec.jpg",
+      "why": [
+        "near-black: mean 25.29, p95 98.0"
+      ],
+      "chapter_time_s": 361.38,
+      "master_time_s": 381.88,
+      "compilation_time_s": 4797.84,
+      "chapter_range_s": [
+        357.8,
+        364.96
+      ],
+      "master_range_s": [
+        378.3,
+        385.46
+      ]
+    },
+    {
+      "row": "33",
+      "cut": 61,
+      "t": 377.3,
+      "source": "companion_speckle.jpg",
+      "why": [
+        "near-black: mean 22.85, p95 50.0"
+      ],
+      "chapter_time_s": 377.3,
+      "master_time_s": 397.8,
+      "compilation_time_s": 4813.76,
+      "chapter_range_s": [
+        372.1,
+        382.5
+      ],
+      "master_range_s": [
+        392.6,
+        403.0
+      ]
+    },
+    {
+      "row": "33",
+      "cut": 63,
+      "t": 389.45,
+      "source": "companion_speckle.jpg",
+      "why": [
+        "near-black: mean 22.71, p95 47.0"
+      ],
+      "chapter_time_s": 389.45,
+      "master_time_s": 409.95,
+      "compilation_time_s": 4825.91,
+      "chapter_range_s": [
+        386.1,
+        392.8
+      ],
+      "master_range_s": [
+        406.6,
+        413.3
+      ]
+    },
+    {
+      "row": "36",
+      "cut": 69,
+      "t": 435.79,
+      "source": "orion_over_paranal.mp4",
+      "why": [
+        "split panel: vertical gutter at 0.826"
+      ],
+      "chapter_time_s": 435.79,
+      "master_time_s": 456.29,
+      "compilation_time_s": 4872.25,
+      "chapter_range_s": [
+        432.5,
+        439.09
+      ],
+      "master_range_s": [
+        453.0,
+        459.59
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "row": "6",
+      "cut": 8,
+      "t": 43.45,
+      "source": "sphere_jan.jpg",
+      "why": [
+        "low detail: edge density 0.0029 < film p5 0.0030"
+      ]
+    },
+    {
+      "row": "24",
+      "cut": 40,
+      "t": 250.04,
+      "source": "chajnantor_mw.m4v",
+      "why": [
+        "low detail: luma std 16.8 < 18.0"
+      ]
+    }
+  ],
+  "note": "Normal polish thresholds used. Fix these saved-picture findings, all source/graphic/reuse issues, and scene/film finishing before final QA."
+}

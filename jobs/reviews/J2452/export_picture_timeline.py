@@ -35,6 +35,19 @@ if readback.exists():
             for requirement,cover in zip(chapter['required_orbit_covers'],cover_report['covers']):
                 assert requirement['original_source']==cover['original_source']
                 requirement.update(status='COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA',candidate_path=cover['output'],candidate_sha256=cover['sha256'])
+# A complete silent 029 checkpoint proves cover placement, not sleep-picture QA.
+checkpoint=root/'jobs/reviews/J2452/betelgeuse_chapter_v01'
+if (checkpoint/'READBACK.json').exists():
+    saved=json.loads((checkpoint/'REPORT.json').read_text())
+    verified=json.loads((checkpoint/'READBACK.json').read_text())
+    assert saved['sha256']==verified['sha256'] and verified['all_opaque_checks_pass']
+    for chapter in chapters:
+        if chapter['film']=='029':
+            assert abs(saved['duration_s']-chapter['duration_s'])<.002
+            chapter['picture_status']='COVERS_INTEGRATED_NOT_FINAL_SLEEP_PICTURE_QA'
+            chapter['picture_checkpoint']={k:saved[k] for k in ['output','sha256','frames','duration_s','limitations']}
+            for requirement in chapter['required_orbit_covers']:
+                requirement['status']='COVER_INTEGRATED_AND_PIXEL_CHECKED_NOT_FULL_CHAPTER_QA'
 report=dict(status='CORRECTED_COORDINATES_ONLY_NOT_FINAL_PICTURE_CUT_LIST',duration_s=round(global_t,6),chapters=chapters,darkening=dict(ramp_global_s=[1170,1230],multiplier=[1,.85],hold_multiplier=.85,highlight_luma_cap_after_ramp=180),final_fade_global_s=[round(global_t-20,6),round(global_t,6)],remaining='Validate actual frames and all cover windows; render picture chapters with matching duration/settings; two-second dissolves must not shorten or shift narration. Final AV QA and NAS master/reel pending.')
 (root/'jobs/reviews/J2452/picture_timeline_v01.json').write_text(json.dumps(report,indent=2)+'\n')
 print(f'{len(chapters)} chapters; {global_t:.2f} s including breaths/fade')
