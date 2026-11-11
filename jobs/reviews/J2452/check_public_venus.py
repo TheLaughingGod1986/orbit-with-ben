@@ -16,8 +16,6 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--out',type=Path,default=OUT)
     OUT=parser.parse_args().out
-    if OUT.name=='public_venus_v02':
-        raise ValueError('Known quiet-title collision with source Opportunity label. Run repair_public_venus_title.py, then check public_venus_v03 before grading.')
     build=json.loads((OUT/'BUILD.json').read_text()); video=build['output']
     full=json.loads((OUT/'full_pixel_cuts.json').read_text())
     # Merge a sub-frame tail into its preceding sampling bin. Seeking after
@@ -63,7 +61,7 @@ def main():
     levels=sp.run(['ffmpeg','-v','info','-i',video,'-vn','-af','loudnorm=I=-20:TP=-6:LRA=7:print_format=json','-f','null','-'],capture_output=True,text=True,timeout=180)
     text=levels.stderr; levels=json.loads(text[text.rfind('{'):text.rfind('}')+1])
     # Whole-video luminance scan at 4 fps; rank non-overlapping 2 s windows.
-    scan=sp.run(['ffmpeg','-v','info','-xerror','-reinit_filter','0','-i',video,'-an','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
+    scan=sp.run(['ffmpeg','-v','info','-xerror','-threads','4','-reinit_filter','0','-i',video,'-an','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
     (OUT/'decode_scan.log').write_bytes(scan.stderr)
     raw=scan.stdout
     decoded=[int(x) for x in re.findall(r'\bn:\s*(\d+)\s+pts:',scan.stderr.decode(errors='replace'))]

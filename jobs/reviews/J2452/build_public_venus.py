@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finished-master Venus chapter; no source-film reconstruction or source audio. Candidate requires repair_public_venus_card.py before QA."""
+"""Finished-master Venus chapter; no source-film reconstruction or source audio. Candidate requires full undarkened gates and cover inspection before grading."""
 import hashlib,json,subprocess as sp
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
@@ -16,7 +16,7 @@ def main():
  OUT.mkdir(exist_ok=False)
  chapter=json.loads((ROOT/'jobs/reviews/J2452/picture_timeline_v01.json').read_text())['chapters'][4]
  assert sha(NARR)==chapter['narration_sha256']
- # Half-second full-decode still scan located cards/Orbit in this actual master.
+ # Five-second full-master sheet plus the source cut list locate the retained Orbit and subscribe tail.
  # Extend replacement beyond the visible card fade. Reuse adjacent clean moving
  # picture as Chief's explicit fallback; narration and timeline never move.
  covers=[(209,212.2,204,'subscribe-edge'),(408.6,414.2,414.2,'Orbit-cover')]
@@ -39,7 +39,7 @@ def main():
   if i==0:
    run(['-reinit_filter','0','-ss',str(src),'-i',str(MASTER),'-loop','1','-i',str(OUT/'title.png'),'-filter_complex_threads','1','-filter_complex',f'[0:v]{vf}[base];[1:v]format=rgba,fade=t=in:st=0:d=1.5:alpha=1,fade=t=out:st=4.5:d=1.5:alpha=1[t];[base][t]overlay=0:0:enable=lt(t\\,6)[v]','-map','[v]','-frames:v',str(frames),*enc(),str(dest)])
   else:run(['-reinit_filter','0','-ss',str(src),'-i',str(MASTER),'-vf',vf,'-frames:v',str(frames),*enc(),str(dest)])
-  rows.append(dict(row=f'piece-{i}',timeline_in=start/30,timeline_out=end/30,source=('PIA19400.tif' if label=='Orbit-winter' else MASTER.name),framing=dict(offset=src),src_w=(1344 if label=='Orbit-winter' else 1920),upscale=(1920/1344 if label=='Orbit-winter' else 1),label=label,original_master_range=[a,b]))
+  rows.append(dict(row=f'piece-{i}',timeline_in=start/30,timeline_out=end/30,source=MASTER.name,framing=dict(offset=src),src_w=1920,upscale=1,label=label,original_master_range=[a,b]))
   pieces.append((dest,dur));clock+=b-a
   print('saved',i,label,dur,flush=True)
  # Two-second cloned-handle dissolves preserve the complete narration clock.
