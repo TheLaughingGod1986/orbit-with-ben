@@ -218195,10 +218195,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T00:56Z",
+      "eta": "2026-11-11T02:46Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
       "result": "",
@@ -218207,12 +218207,25 @@
           "at": "2026-11-10T17:41Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T00:56Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decoupling: video_tracker.py asks channels.py instead of naming a channel (30 + 7 lines to 0)",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
-      "plain": "Make the board's video list work for any channel, not only our two"
+      "plain": "Make the board's video list work for any channel, not only our two",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T00:56Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2526",
