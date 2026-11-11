@@ -226208,10 +226208,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T13:09Z",
+      "eta": "2026-11-11T15:09Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
       "result": "",
@@ -226220,6 +226220,11 @@
           "at": "2026-11-11T13:06Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T13:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rework the spark overlay on #515 as Grok ruled, post the review sheet on the desk",
@@ -226227,7 +226232,15 @@
       "kind": "chart",
       "plain": "Redraw the tiny spark for the Franklin salon shot so it looks like a soft streak",
       "mini_only": true,
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T13:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2614",

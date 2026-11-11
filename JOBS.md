@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2592 | mini | open (after J2613) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's fourth take, at frame 30 | J2241 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2610 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2583 |  |
-| J2613 | mini | open | – | – | 008 picture · chart · HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) | J2591 |
+| J2613 | mini | claimed | codex | 2026-11-11T15:09Z | 008 picture · chart · HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) | J2591 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 
 Recently finished:
