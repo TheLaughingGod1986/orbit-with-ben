@@ -213505,10 +213505,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T21:48Z",
-      "eta": "2026-11-12T01:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214657,6 +214657,11 @@
           "at": "2026-11-11T22:04Z",
           "by": "macbook",
           "what": "step 12 of 15 done"
+        },
+        {
+          "at": "2026-11-11T22:12Z",
+          "by": "macbook",
+          "what": "released: PR #789 updated at a24ea2f20. Andromeda full undarkened decode and edit QA verified; native spatial grade fully rendered and hashed. Graded pixel verification stopped cleanly at run limit; no NAS delivery, progress 12/15. Resume PUBLIC_ANDROMEDA_READBACK checkpoint on job branch; verify-existing, inspect brightest, then additive NAS copy/hash. All launched processes stopped; OWB main, HOS untouched."
         }
       ],
       "remaining_action": "Finish Andromeda darkening measurement and NAS save; full decode and edit checks verified",
