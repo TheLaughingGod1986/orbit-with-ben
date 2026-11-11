@@ -1,0 +1,2563 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/public_andromeda_v03/019_andromeda_undarkened_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 18,
+      "row": "change-1-2",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 119.75,
+      "at": "2:00",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0511 < film p5 0.0576"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 20,
+      "row": "change-1-4",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 120.75,
+      "at": "2:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0575 < film p5 0.0576"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 21,
+      "row": "change-1-5",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 121.25,
+      "at": "2:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0545 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 22,
+      "row": "change-1-6",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 121.75,
+      "at": "2:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0499 < film p5 0.0576"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 29,
+      "row": "change-1-13",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 125.25,
+      "at": "2:05",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0568 < film p5 0.0576"
+      ],
+      "offset": 6.5
+    },
+    {
+      "cut": 63,
+      "row": "change-2-26",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 199.65,
+      "at": "3:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0527 < film p5 0.0576"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 72,
+      "row": "change-3-6",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 299.65,
+      "at": "5:00",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0432 < film p5 0.0576"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 142,
+      "row": "change-6-5",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 423.48,
+      "at": "7:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0506 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 163,
+      "row": "change-7-5",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 467.48,
+      "at": "7:47",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 164,
+      "row": "change-7-6",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 467.98,
+      "at": "7:48",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.92 < 18.0"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 187,
+      "row": "change-8-0",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 519.98,
+      "at": "8:40",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0503 < film p5 0.0576"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 192,
+      "row": "change-8-5",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 522.48,
+      "at": "8:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0545 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "change-0-0",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 0.25,
+      "at": "0:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "change-0-1",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 0.75,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 2,
+      "row": "change-0-2",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 1.25,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 3,
+      "row": "change-0-3",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 1.75,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 4,
+      "row": "change-0-4",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 2.25,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 5,
+      "row": "change-0-5",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 2.75,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 6,
+      "row": "change-0-6",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 7,
+      "row": "change-0-7",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 3.75,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 8,
+      "row": "change-0-8",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 4.25,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 9,
+      "row": "change-0-9",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 4.75,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 10,
+      "row": "change-0-10",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 5.25,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 11,
+      "row": "change-0-11",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 5.75,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 12,
+      "row": "change-0-12",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 6.25,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 13,
+      "row": "change-0-13",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 6.75,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 14,
+      "row": "change-0-14",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 7.25,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 15,
+      "row": "change-0-15",
+      "source": "finished_transition_0",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 16,
+      "row": "change-1-0",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 118.75,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 17,
+      "row": "change-1-1",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 119.25,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 18,
+      "row": "change-1-2",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 119.75,
+      "at": "2:00",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0511 < film p5 0.0576"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 19,
+      "row": "change-1-3",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 120.25,
+      "at": "2:00",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 20,
+      "row": "change-1-4",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 120.75,
+      "at": "2:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0575 < film p5 0.0576"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 21,
+      "row": "change-1-5",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 121.25,
+      "at": "2:01",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0545 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 22,
+      "row": "change-1-6",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 121.75,
+      "at": "2:02",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0499 < film p5 0.0576"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 23,
+      "row": "change-1-7",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 122.25,
+      "at": "2:02",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 24,
+      "row": "change-1-8",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 122.75,
+      "at": "2:03",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 25,
+      "row": "change-1-9",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 123.25,
+      "at": "2:03",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 26,
+      "row": "change-1-10",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 123.75,
+      "at": "2:04",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 27,
+      "row": "change-1-11",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 124.25,
+      "at": "2:04",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 28,
+      "row": "change-1-12",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 124.75,
+      "at": "2:05",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 29,
+      "row": "change-1-13",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 125.25,
+      "at": "2:05",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0568 < film p5 0.0576"
+      ],
+      "offset": 6.5
+    },
+    {
+      "cut": 30,
+      "row": "change-1-14",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 125.75,
+      "at": "2:06",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 31,
+      "row": "change-1-15",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 126.25,
+      "at": "2:06",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 32,
+      "row": "change-1-16",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 126.75,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 33,
+      "row": "change-1-17",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 127.25,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 34,
+      "row": "change-1-18",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 127.75,
+      "at": "2:08",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 35,
+      "row": "change-1-19",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 128.25,
+      "at": "2:08",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 36,
+      "row": "change-1-20",
+      "source": "finished_transition_1",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 128.6,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 37,
+      "row": "change-2-0",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 186.65,
+      "at": "3:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "change-2-1",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 187.15,
+      "at": "3:07",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 39,
+      "row": "change-2-2",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 187.65,
+      "at": "3:08",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 40,
+      "row": "change-2-3",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 188.15,
+      "at": "3:08",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 41,
+      "row": "change-2-4",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 188.65,
+      "at": "3:09",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 42,
+      "row": "change-2-5",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 189.15,
+      "at": "3:09",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 43,
+      "row": "change-2-6",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 189.65,
+      "at": "3:10",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 44,
+      "row": "change-2-7",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 190.15,
+      "at": "3:10",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 45,
+      "row": "change-2-8",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 190.65,
+      "at": "3:11",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 46,
+      "row": "change-2-9",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 191.15,
+      "at": "3:11",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 47,
+      "row": "change-2-10",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 191.65,
+      "at": "3:12",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 48,
+      "row": "change-2-11",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 192.15,
+      "at": "3:12",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 49,
+      "row": "change-2-12",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 192.65,
+      "at": "3:13",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 50,
+      "row": "change-2-13",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 193.15,
+      "at": "3:13",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 51,
+      "row": "change-2-14",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 193.65,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 52,
+      "row": "change-2-15",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 194.15,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 53,
+      "row": "change-2-16",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 194.65,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 54,
+      "row": "change-2-17",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 195.15,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 55,
+      "row": "change-2-18",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 195.65,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 56,
+      "row": "change-2-19",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 196.15,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 57,
+      "row": "change-2-20",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 196.65,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 58,
+      "row": "change-2-21",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 197.15,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 59,
+      "row": "change-2-22",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 197.65,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 60,
+      "row": "change-2-23",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 198.15,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 61,
+      "row": "change-2-24",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 198.65,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 62,
+      "row": "change-2-25",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 199.15,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 63,
+      "row": "change-2-26",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 199.65,
+      "at": "3:20",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0527 < film p5 0.0576"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 64,
+      "row": "change-2-27",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 200.15,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 65,
+      "row": "change-2-28",
+      "source": "finished_transition_2",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 200.55,
+      "at": "3:21",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 66,
+      "row": "change-3-0",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 296.65,
+      "at": "4:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 67,
+      "row": "change-3-1",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 297.15,
+      "at": "4:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 68,
+      "row": "change-3-2",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 297.65,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 69,
+      "row": "change-3-3",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 298.15,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 70,
+      "row": "change-3-4",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 298.65,
+      "at": "4:59",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 71,
+      "row": "change-3-5",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 299.15,
+      "at": "4:59",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 72,
+      "row": "change-3-6",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 299.65,
+      "at": "5:00",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0432 < film p5 0.0576"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 73,
+      "row": "change-3-7",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 300.15,
+      "at": "5:00",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 74,
+      "row": "change-3-8",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 300.65,
+      "at": "5:01",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 75,
+      "row": "change-3-9",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 301.15,
+      "at": "5:01",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 76,
+      "row": "change-3-10",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 301.65,
+      "at": "5:02",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 77,
+      "row": "change-3-11",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 302.15,
+      "at": "5:02",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 78,
+      "row": "change-3-12",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 302.65,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 79,
+      "row": "change-3-13",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 303.15,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 80,
+      "row": "change-3-14",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 303.65,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 81,
+      "row": "change-3-15",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 304.15,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 82,
+      "row": "change-3-16",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 304.65,
+      "at": "5:05",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 83,
+      "row": "change-3-17",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 305.15,
+      "at": "5:05",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 84,
+      "row": "change-3-18",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 305.65,
+      "at": "5:06",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 85,
+      "row": "change-3-19",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 306.15,
+      "at": "5:06",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 86,
+      "row": "change-3-20",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 306.65,
+      "at": "5:07",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 87,
+      "row": "change-3-21",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 307.15,
+      "at": "5:07",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 88,
+      "row": "change-3-22",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 307.65,
+      "at": "5:08",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 89,
+      "row": "change-3-23",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 308.15,
+      "at": "5:08",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 90,
+      "row": "change-3-24",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 308.65,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 91,
+      "row": "change-3-25",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 309.15,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 92,
+      "row": "change-3-26",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 309.65,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 13.0
+    },
+    {
+      "cut": 93,
+      "row": "change-3-27",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 310.15,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 94,
+      "row": "change-3-28",
+      "source": "finished_transition_3",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 310.55,
+      "at": "5:11",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 95,
+      "row": "change-4-0",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 337.65,
+      "at": "5:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 96,
+      "row": "change-4-1",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 338.15,
+      "at": "5:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 97,
+      "row": "change-4-2",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 338.65,
+      "at": "5:39",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 98,
+      "row": "change-4-3",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 339.15,
+      "at": "5:39",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 99,
+      "row": "change-4-4",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 339.65,
+      "at": "5:40",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 100,
+      "row": "change-4-5",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 340.15,
+      "at": "5:40",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 101,
+      "row": "change-4-6",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 340.65,
+      "at": "5:41",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 102,
+      "row": "change-4-7",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 341.15,
+      "at": "5:41",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 103,
+      "row": "change-4-8",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 341.65,
+      "at": "5:42",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 104,
+      "row": "change-4-9",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 342.15,
+      "at": "5:42",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 105,
+      "row": "change-4-10",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 342.65,
+      "at": "5:43",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 106,
+      "row": "change-4-11",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 343.15,
+      "at": "5:43",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 107,
+      "row": "change-4-12",
+      "source": "finished_transition_4",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 343.42,
+      "at": "5:43",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 108,
+      "row": "change-5-0",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 377.78,
+      "at": "6:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 109,
+      "row": "change-5-1",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 378.28,
+      "at": "6:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 110,
+      "row": "change-5-2",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 378.78,
+      "at": "6:19",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 111,
+      "row": "change-5-3",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 379.28,
+      "at": "6:19",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 112,
+      "row": "change-5-4",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 379.78,
+      "at": "6:20",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 113,
+      "row": "change-5-5",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 380.28,
+      "at": "6:20",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 114,
+      "row": "change-5-6",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 380.78,
+      "at": "6:21",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 115,
+      "row": "change-5-7",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 381.28,
+      "at": "6:21",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 116,
+      "row": "change-5-8",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 381.78,
+      "at": "6:22",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 117,
+      "row": "change-5-9",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 382.28,
+      "at": "6:22",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 118,
+      "row": "change-5-10",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 382.78,
+      "at": "6:23",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 119,
+      "row": "change-5-11",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 383.28,
+      "at": "6:23",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 120,
+      "row": "change-5-12",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 383.78,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 121,
+      "row": "change-5-13",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 384.28,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 122,
+      "row": "change-5-14",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 384.78,
+      "at": "6:25",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 123,
+      "row": "change-5-15",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 385.28,
+      "at": "6:25",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 124,
+      "row": "change-5-16",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 385.78,
+      "at": "6:26",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 125,
+      "row": "change-5-17",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 386.28,
+      "at": "6:26",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 126,
+      "row": "change-5-18",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 386.78,
+      "at": "6:27",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 127,
+      "row": "change-5-19",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 387.28,
+      "at": "6:27",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 128,
+      "row": "change-5-20",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 387.78,
+      "at": "6:28",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 129,
+      "row": "change-5-21",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 388.28,
+      "at": "6:28",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 130,
+      "row": "change-5-22",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 388.78,
+      "at": "6:29",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 131,
+      "row": "change-5-23",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 389.28,
+      "at": "6:29",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 132,
+      "row": "change-5-24",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 389.78,
+      "at": "6:30",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 133,
+      "row": "change-5-25",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 390.28,
+      "at": "6:30",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 134,
+      "row": "change-5-26",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 390.78,
+      "at": "6:31",
+      "fail": [],
+      "warn": [],
+      "offset": 13.0
+    },
+    {
+      "cut": 135,
+      "row": "change-5-27",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 391.28,
+      "at": "6:31",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 136,
+      "row": "change-5-28",
+      "source": "finished_transition_5",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 391.78,
+      "at": "6:32",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 137,
+      "row": "change-6-0",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 420.98,
+      "at": "7:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 138,
+      "row": "change-6-1",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 421.48,
+      "at": "7:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 139,
+      "row": "change-6-2",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 421.98,
+      "at": "7:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 140,
+      "row": "change-6-3",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 422.48,
+      "at": "7:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 141,
+      "row": "change-6-4",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 422.98,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 142,
+      "row": "change-6-5",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 423.48,
+      "at": "7:03",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0506 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 143,
+      "row": "change-6-6",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 423.98,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 144,
+      "row": "change-6-7",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 424.48,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 145,
+      "row": "change-6-8",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 424.98,
+      "at": "7:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 146,
+      "row": "change-6-9",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 425.48,
+      "at": "7:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 147,
+      "row": "change-6-10",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 425.98,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 148,
+      "row": "change-6-11",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 426.48,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 149,
+      "row": "change-6-12",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 426.98,
+      "at": "7:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 150,
+      "row": "change-6-13",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 427.48,
+      "at": "7:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 151,
+      "row": "change-6-14",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 427.98,
+      "at": "7:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 152,
+      "row": "change-6-15",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 428.48,
+      "at": "7:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 153,
+      "row": "change-6-16",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 428.98,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 154,
+      "row": "change-6-17",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 429.48,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 155,
+      "row": "change-6-18",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 429.98,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 156,
+      "row": "change-6-19",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 430.48,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 157,
+      "row": "change-6-20",
+      "source": "finished_transition_6",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 430.9,
+      "at": "7:11",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 158,
+      "row": "change-7-0",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 464.98,
+      "at": "7:45",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 159,
+      "row": "change-7-1",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 465.48,
+      "at": "7:45",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 160,
+      "row": "change-7-2",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 465.98,
+      "at": "7:46",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 161,
+      "row": "change-7-3",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 466.48,
+      "at": "7:46",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 162,
+      "row": "change-7-4",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 466.98,
+      "at": "7:47",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 163,
+      "row": "change-7-5",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 467.48,
+      "at": "7:47",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0199 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 164,
+      "row": "change-7-6",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 467.98,
+      "at": "7:48",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.92 < 18.0"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 165,
+      "row": "change-7-7",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 468.48,
+      "at": "7:48",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 166,
+      "row": "change-7-8",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 468.98,
+      "at": "7:49",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 167,
+      "row": "change-7-9",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 469.48,
+      "at": "7:49",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 168,
+      "row": "change-7-10",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 469.98,
+      "at": "7:50",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 169,
+      "row": "change-7-11",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 470.48,
+      "at": "7:50",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 170,
+      "row": "change-7-12",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 470.98,
+      "at": "7:51",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 171,
+      "row": "change-7-13",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 471.48,
+      "at": "7:51",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 172,
+      "row": "change-7-14",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 471.98,
+      "at": "7:52",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 173,
+      "row": "change-7-15",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 472.48,
+      "at": "7:52",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 174,
+      "row": "change-7-16",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 472.98,
+      "at": "7:53",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 175,
+      "row": "change-7-17",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 473.48,
+      "at": "7:53",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 176,
+      "row": "change-7-18",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 473.98,
+      "at": "7:54",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 177,
+      "row": "change-7-19",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 474.48,
+      "at": "7:54",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 178,
+      "row": "change-7-20",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 474.98,
+      "at": "7:55",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 179,
+      "row": "change-7-21",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 475.48,
+      "at": "7:55",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 180,
+      "row": "change-7-22",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 475.98,
+      "at": "7:56",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 181,
+      "row": "change-7-23",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 476.48,
+      "at": "7:56",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 182,
+      "row": "change-7-24",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 476.98,
+      "at": "7:57",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 183,
+      "row": "change-7-25",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 477.48,
+      "at": "7:57",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 184,
+      "row": "change-7-26",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 477.98,
+      "at": "7:58",
+      "fail": [],
+      "warn": [],
+      "offset": 13.0
+    },
+    {
+      "cut": 185,
+      "row": "change-7-27",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 478.48,
+      "at": "7:58",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 186,
+      "row": "change-7-28",
+      "source": "finished_transition_7",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 478.9,
+      "at": "7:59",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 187,
+      "row": "change-8-0",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 519.98,
+      "at": "8:40",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0503 < film p5 0.0576"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 188,
+      "row": "change-8-1",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 520.48,
+      "at": "8:40",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 189,
+      "row": "change-8-2",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 520.98,
+      "at": "8:41",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 190,
+      "row": "change-8-3",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 521.48,
+      "at": "8:41",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 191,
+      "row": "change-8-4",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 521.98,
+      "at": "8:42",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 192,
+      "row": "change-8-5",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 522.48,
+      "at": "8:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0545 < film p5 0.0576"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 193,
+      "row": "change-8-6",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 522.98,
+      "at": "8:43",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 194,
+      "row": "change-8-7",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 523.48,
+      "at": "8:43",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 195,
+      "row": "change-8-8",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 523.98,
+      "at": "8:44",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 196,
+      "row": "change-8-9",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 524.48,
+      "at": "8:44",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 197,
+      "row": "change-8-10",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 524.98,
+      "at": "8:45",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 198,
+      "row": "change-8-11",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 525.48,
+      "at": "8:45",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 199,
+      "row": "change-8-12",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 525.98,
+      "at": "8:46",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 200,
+      "row": "change-8-13",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 526.48,
+      "at": "8:46",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 201,
+      "row": "change-8-14",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 526.98,
+      "at": "8:47",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 202,
+      "row": "change-8-15",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 527.48,
+      "at": "8:47",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 203,
+      "row": "change-8-16",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 527.98,
+      "at": "8:48",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 204,
+      "row": "change-8-17",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 528.48,
+      "at": "8:48",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 205,
+      "row": "change-8-18",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 528.98,
+      "at": "8:49",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 206,
+      "row": "change-8-19",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 529.48,
+      "at": "8:49",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 207,
+      "row": "change-8-20",
+      "source": "finished_transition_8",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 529.88,
+      "at": "8:50",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 208,
+      "row": "change-9-0",
+      "source": "finished_transition_9",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 603.08,
+      "at": "10:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 209,
+      "row": "change-9-1",
+      "source": "finished_transition_9",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 603.58,
+      "at": "10:04",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 210,
+      "row": "change-9-2",
+      "source": "finished_transition_9",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 604.08,
+      "at": "10:04",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 211,
+      "row": "change-9-3",
+      "source": "finished_transition_9",
+      "title": "Finished Andromeda picture surrounding compilation edits",
+      "t": 604.57,
+      "at": "10:05",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0576,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

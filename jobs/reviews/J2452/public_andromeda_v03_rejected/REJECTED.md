@@ -1,0 +1,1 @@
+Rejected: visual cover review found outgoing Orbit ghosts in three dissolves. Automated edit QA PASS does not override visual failure. Full decode found 18143 frames, two short of planned 18145; no READBACK.json or darkening produced. Both issues repaired in later candidates; all later gates remain independent.

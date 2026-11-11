@@ -35,7 +35,7 @@ def main():
   if cursor<hi:recipes.append((cursor,hi,cursor,'public'))
  clock=0;pieces=[];rows=[]
  for i,(a,b,src,label) in enumerate(recipes):
-  end=round((clock+b-a)*30); start=round(clock*30);frames=end-start;dur=frames/30
+  end=round((clock+(b-a))*30); start=round(clock*30);frames=end-start;dur=frames/30
   dest=OUT/f'piece_{i:02d}.mp4'
   vf='setpts=PTS-STARTPTS,scale=1920:1080:flags=lanczos,setsar=1,fps=30,format=yuv420p'
   if dest.exists():

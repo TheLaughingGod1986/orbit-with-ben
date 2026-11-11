@@ -1,0 +1,88 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "019",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_andromeda_v03/019_andromeda_undarkened_v01.mp4",
+  "sha256": "98a3d7763e7409a750dcfe10fb1035c9ef2928822f64d58b339d739bdf63f95b",
+  "source_master": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4",
+  "source_sha256": "c137c21c8c7ba50cb516c974535d171c865bc31f18e9fabec9b01b4044050b14",
+  "narration_sha256": "0d2afc68f723d99cc9f95ac20867009861568f1acd4ee20777d17f87186b2c9e",
+  "expected_frames": 18145,
+  "duration_s": 604.8333333333334,
+  "slices": [
+    {
+      "master_in_s": 2.3,
+      "master_out_s": 342.1,
+      "chapter_in_s": 0,
+      "chapter_out_s": 339.8,
+      "compilation_in_s": 5877.51,
+      "compilation_out_s": 6217.31
+    },
+    {
+      "master_in_s": 347.75,
+      "master_out_s": 612.8,
+      "chapter_in_s": 339.8,
+      "chapter_out_s": 604.85,
+      "compilation_in_s": 6217.31,
+      "compilation_out_s": 6482.36
+    }
+  ],
+  "planned_ranges": [
+    [
+      3.0,
+      612.8
+    ]
+  ],
+  "covers": [
+    [
+      123.8,
+      128,
+      116,
+      "chapter-2 cover"
+    ],
+    [
+      191.7,
+      200,
+      0,
+      "plate:heic1502a.jpg"
+    ],
+    [
+      301.7,
+      310,
+      314,
+      "night-sky neighbour cover"
+    ],
+    [
+      347.75,
+      349,
+      350,
+      "chapter-4 tail cover"
+    ],
+    [
+      388.5,
+      397,
+      398,
+      "stars neighbour cover"
+    ],
+    [
+      431.7,
+      436,
+      436.1,
+      "chapter-5 cover"
+    ],
+    [
+      475.7,
+      484,
+      0,
+      "plate:heic1502a.jpg"
+    ],
+    [
+      530.7,
+      535,
+      536,
+      "chapter-6 cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Use copied plan-named heic1502a twice. Other Orbit covers use distinct neighbouring finished-master galaxy shots; SVS plates are absent from copied inputs. Timings inspected at one-second spacing; all cover edges require saved-candidate QA. Charts and labels retained under Chief ruling. No replacement footage search or generated picture.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver."
+}
