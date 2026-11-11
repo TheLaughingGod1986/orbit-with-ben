@@ -229306,13 +229306,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T20:13Z",
-      "eta": "2026-11-11T21:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
-      "result": "",
+      "result": "parked for Chief: own-batch after-balance readings absent in inspected logs/receipts; all 34 charges remain unposted, 3400 credits unchanged. Evidence branch codex/j2642-reconciliation-evidence, commit 7ff177c6.",
       "history": [
         {
           "at": "2026-11-11T20:08Z",
@@ -229333,6 +229333,11 @@
           "at": "2026-11-11T20:15Z",
           "by": "codex",
           "what": "step 1 of 3 done: Inspected logs and accounting receipts; required after readings absent; no ledger changes"
+        },
+        {
+          "at": "2026-11-11T20:16Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: own-batch after-balance readings absent in inspected logs/receipts; all 34 charges remain unposted, 3400 credits unchanged. Evidence branch codex/j2642-reconciliation-evidence, commit 7ff177c6."
         }
       ],
       "remaining_action": "Reporting missing post-charge balance readings to Chief",
