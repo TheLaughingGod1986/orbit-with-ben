@@ -213772,9 +213772,14 @@
           "at": "2026-11-11T10:08Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T10:10Z",
+          "by": "macbook",
+          "what": "step 1 of 15 done"
         }
       ],
-      "remaining_action": "Build Saturn next, then the remaining chapters and final compilation checks",
+      "remaining_action": "Building Saturn from its finished master, then checking its edits and saving the chapter",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the two-hour 'fall asleep to the solar system' video from our finished films, ready for you to spot-check",
@@ -213782,7 +213787,7 @@
       "progress": {
         "step": 1,
         "of": 15,
-        "at": "2026-11-11T10:07Z",
+        "at": "2026-11-11T10:10Z",
         "by": "macbook"
       }
     },
@@ -223530,10 +223535,10 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T10:10Z",
+      "eta": "2026-11-11T12:10Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:57Z",
       "result": "",
@@ -223542,13 +223547,33 @@
           "at": "2026-11-11T08:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:10Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T10:10Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2576; locating take-2 still sheets, start frames, and clips for HOS 008"
         }
       ],
-      "remaining_action": "Look at two still sheets and answer three yes/no questions for each",
+      "remaining_action": "Inspect salon and points take-2 still sheets, start frames, and clips",
       "due": "2026-11-12T14:00:00Z",
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before they go into the edit",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T10:10Z",
+        "by": "gemini",
+        "note": "Claimed J2576; locating take-2 still sheets, start frames, and clips for HOS 008"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2577",
