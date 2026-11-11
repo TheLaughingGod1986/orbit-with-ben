@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2613, J2592, J2593, J2583, J2270, J2584, J2586, J2587, J2242, J2614, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2592, J2593, J2583, J2270, J2584, J2586, J2587, J2242, J2614, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -73,7 +73,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2592 | mini | blocked | macbook | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's fourth take, at frame 30 | J2241 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
-| J2613 | mini | claimed | codex | 2026-11-11T16:00Z | 008 picture · for codex · chart · `gpt-6-astra` · HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) | J2591 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2615 | macbook | open | – | – | review · Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
 | J2616 | macbook | open | – | – | review · Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
@@ -86,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2613 done: HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) (Second-pass delivery on PR 523 head 4b74aebc verified: 5 tests OK, source hash matches, all 24 artifacts reproduce byte-for-byte. Chief review required before merge or J2592 placement; no stage PASS.)
 - J2612 done: Verify condition for J2270 (Condition checked by the MacBook: not met as written. Settled by Grok's ruling (desk 6796425693): J2270's batch 2 runs now, and J2270 is reopened.)
 - J2611 done: Is the NAS's NVMe share working? Check on the Mini that it is mounted, writable and taking daytime copies (looking only) (1 Mounted: yes, the NAS's fast share is a real mount on the Mini; 355 GB used, 1.4 TB free of 1.7 TB. 2 Writable: yes, the tool's check returned (True, 'ok'). 3 On it now: nothing but the empty folder skeleton; the 10 Nov test folder is gone. 4 Real folder through it: no; dry run says 'nothing in /private/tmp old enough to move. 14,589 -> 14,589 MB free'; two MOVED_TO_NAS notes since 10 Nov (newest 10 Nov 23:24Z), neither staged on the SSD. 5 Mover at 01:10: the share shows no log or marker, so it cannot be confirmed from here; needs a real staged folder and a look after 01:00. 6 Mini disk: 14 GB free, under the 20 GB floor, nothing eligible to move; largest working folders are the Orbit checkout 16.3 GB, the History of Science checkout 9.0 GB and the desk worktrees 4.1 GB, about 35 GB of 186 GB used, so most of the space is elsewhere. Nothing changed. Full answers on the studio thread.)
 - J2610 done: Verify condition for J2583 (Condition met at 13:17Z: Grok passed and merged history-of-science #522 (desk 6796862047, main 2f35b87f). J2583 is reopened and goes to Gemini.)
@@ -95,4 +95,3 @@ Recently finished:
 - J2606 done: Verify condition for J2605 (Condition checked by Gemini 11 Nov 11:57Z: not met (try 2 failed question 1). Settled by the acting Chief on Grok's ruling (History of Science desk 6795030083): J2605 is closed with its FAIL recorded, the third and last free try is J2607, its check is J2608, and the take (J2598) waits on that check.)
 - J2605 done: HOS 008: check try 2 of the salon start picture before any credit is spent (three yes/no questions) (Try 2 FAIL on question 1 (Gemini's check, History of Science desk 6795015739; upheld by Grok, 6795030083). Knuckle near the tube's end: no, her fist is under the lower half of the tube, about 150 pixels from its open upper end. Wig smooth, air and tube mouth clear: yes. Same room, same two people, same tube angle: yes. Still 02_salon_spark_t4_start_try2.png, sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2, is not used for the take but is the picture try 3 changes. Closed by the acting Chief on Grok's word: free try 3 of 3 is J2607, its check is J2608, and the fourth take (J2598) waits on that check.)
 - J2604 done: HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same (One zero-credit image edit delivered using revised Chief wording. Both PNG copies hash-verified, SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2. Evidence: history-of-science PR 518. J2605 performs the separate image check; no visual approval claimed.)
-- J2603 done: Verify condition for J2597 (Condition checked by the MacBook: not met (try 1 failed question 3). Settled by the acting Chief: J2597 is closed with its FAIL recorded, free try 2 is J2604 and its check is J2605; J2598 waits on that check.)

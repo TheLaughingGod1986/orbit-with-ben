@@ -226389,13 +226389,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T14:00Z",
-      "eta": "2026-11-11T16:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
-      "result": "",
+      "result": "Second-pass delivery on PR 523 head 4b74aebc verified: 5 tests OK, source hash matches, all 24 artifacts reproduce byte-for-byte. Chief review required before merge or J2592 placement; no stage PASS.",
       "history": [
         {
           "at": "2026-11-11T13:06Z",
@@ -226471,6 +226471,11 @@
           "at": "2026-11-11T14:03Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified second-pass sheets linked on PR 523 comment 6797898275; no placement or approval."
+        },
+        {
+          "at": "2026-11-11T14:03Z",
+          "by": "codex",
+          "what": "done: Second-pass delivery on PR 523 head 4b74aebc verified: 5 tests OK, source hash matches, all 24 artifacts reproduce byte-for-byte. Chief review required before merge or J2592 placement; no stage PASS."
         }
       ],
       "remaining_action": "Awaiting the Chief decision on the revised spark sheets",
@@ -226482,7 +226487,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6796813356",
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/523#issuecomment-6797898275",
       "rerouted_from": {
         "needs": "mini",
         "for": "",
