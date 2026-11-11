@@ -214896,10 +214896,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T03:46Z",
+      "eta": "2026-11-11T05:46Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
       "result": "",
@@ -214928,6 +214928,11 @@
           "at": "2026-11-10T10:03Z",
           "by": "claudecode",
           "what": "released: Pushed HOS branch claudecode/J2475-011-shotlist (worktree ~/_desk/wt/hos-J2475): VO lock recorded in VO_STATUS.md; SHOT_LIST_v01.md written, 100 rows, 84 to mint (57 Quality, 27 Fast) = 5,970 Flow credits first try at 100/10 per clip (prices from Gemini's J0380 board, not read live). STILL TO DO: run check_all.sh, fix row numbers in the marker-audit table, update production-status.md, open the PR, park for Chief. Archive links and the 001 Lister reuse are unverified."
+        },
+        {
+          "at": "2026-11-11T03:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record the 011 long VO lock, then write shot list v01 on the locked timings",
