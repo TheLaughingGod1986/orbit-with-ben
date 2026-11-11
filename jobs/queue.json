@@ -177295,10 +177295,10 @@
       "stage": "picture",
       "after": "J2536",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T04:09Z",
-      "eta": "2026-11-11T06:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -177812,6 +177812,11 @@
           "at": "2026-11-11T04:15Z",
           "by": "codex",
           "what": "step 2 of 4 done: Detached tmux J2033-batch5 active; log /Users/benjaminoats/_desk/logs/J2033-batch5-r2.log and done /Users/benjaminoats/_desk/logs/J2033-batch5-r2.done. Five-row runner bound retained; sixth final row follows next wake. Reversal -100 exported once; evidence HOS PR497, check_all ALL CHECKS PASS."
+        },
+        {
+          "at": "2026-11-11T04:16Z",
+          "by": "codex",
+          "what": "released: Detached tmux J2033-batch5 running from /private/tmp/J2033-codex-run. Log /Users/benjaminoats/_desk/logs/J2033-batch5-r2.log; completion /Users/benjaminoats/_desk/logs/J2033-batch5-r2.done. Missing done means leave running, never duplicate. Halley take2 submitted under exact strict guard. Reconciliation POLICY_REFUSED0 and single -100 reversal verified. Baseline14/20 generated,0 KEEP; new counts await receipts. Runner selects5 rows, final P05:06_iss_apple_c1 follows next wake within combined600 cap. HOS PR497 contains preflight and handoff; all local checks pass."
         }
       ],
       "remaining_action": "After detached batch5 ends, verify outputs and run final apple row within remaining scope cap",
