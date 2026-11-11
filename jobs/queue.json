@@ -218102,9 +218102,14 @@
           "at": "2026-11-11T04:38Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: cwU_0WWeNZ4 read back Private for 2026-11-18T11:30:00Z (API + Studio); Ben OK'd v07 on board tick OWB-J2512.2 (2026-11-10T23:06Z); v07 sha256 verified c0e6a13865a6abce"
+        },
+        {
+          "at": "2026-11-11T04:41Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: uploaded v07 as dH_yCRmzkMo (Private, publishAt 2026-11-18T11:30:00Z, cover & en-GB captions serving, Buffer deferred >7d)"
         }
       ],
-      "remaining_action": "Upload wed18_robot_reach_nearest_star_v07.mp4 as new Private video scheduled for 2026-11-18T11:30:00Z, set en-GB captions and cover, and mirror to Buffer",
+      "remaining_action": "Unschedule old cwU_0WWeNZ4 (Private, publishAt null) and run verify-swap.ts",
       "due": "2026-11-17T12:00:00Z",
       "kind": "listing",
       "plain": "Put the fixed Nearest Star Short you OK'd in its Wednesday 18 Nov slot",
@@ -218124,11 +218129,11 @@
         "okRef": "board tick OWB-J2512.2"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-11T04:38Z",
+        "at": "2026-11-11T04:41Z",
         "by": "gemini",
-        "note": "Step 1 done: cwU_0WWeNZ4 read back Private for 2026-11-18T11:30:00Z (API + Studio); Ben OK'd v07 on board tick OWB-J2512"
+        "note": "Step 2 done: uploaded v07 as dH_yCRmzkMo (Private, publishAt 2026-11-18T11:30:00Z, cover & en-GB captions serving, Buffe"
       },
       "taskKeys": [
         "OWB:026"
