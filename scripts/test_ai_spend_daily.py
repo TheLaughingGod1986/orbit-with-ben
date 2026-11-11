@@ -3,6 +3,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import ai_spend  # noqa: E402
@@ -314,6 +315,116 @@ class PageExcerpt(unittest.TestCase):
         self.assertIn("the reader needs a fix", text)
         self.assertNotIn("@", text)
         self.assertNotIn("team=1", text)
+
+
+class ClaudeSentElsewhere(unittest.TestCase):
+    """J2580. On 11 Nov 2026 the usage address ended on the new-chat page and the log kept only its menu lines
+    (jobs/reviews/J2564/PAGES.md). The reader now asks once more, and if it is still elsewhere says so plainly and
+    prints the links that page offers, so the next morning's log shows where the usage page went."""
+
+    MENU = "Claude\nNavigation\nNew\nSearch\nProjects\nArtifacts\nScheduled\n"
+    USAGE = "Settings\nUsage\nCurrent session\n12% used\nResets in 3 hr\nThis week (all models)\n40% used\nResets Thu 9:00 AM\n"
+
+    class Page:
+        """A browser page that answers the usage address with `after` and lists `hrefs` as its links."""
+
+        def __init__(self, url, hrefs, after=None):
+            self.url, self.hrefs, self.after, self.asked, self.text = url, hrefs, after, [], ""
+
+        def goto(self, url, **kw):
+            self.asked.append(url)
+            if self.after:
+                self.url, self.text = self.after
+
+        def eval_on_selector_all(self, selector, script):
+            return self.hrefs
+
+        def get_by_text(self, text):
+            from unittest import mock
+            return mock.Mock()
+
+        def wait_for_timeout(self, ms):
+            pass
+
+        def inner_text(self, selector):
+            return self.text
+
+    def setUp(self):
+        ai_spend_daily.SEEN.update(url="", text="", links=[])
+
+    def test_links_are_paths_that_mention_settings_or_usage(self):
+        got = ai_spend_daily.settings_links([
+            "/new", "https://claude.ai/settings/profile?tab=1", "/settings/profile", "/usage#week", None, "",
+            "/projects", "https://claude.ai/settings/limits"])
+        self.assertEqual(got, ["/settings/profile", "/usage", "/settings/limits"])
+        self.assertEqual(len(ai_spend_daily.settings_links([f"/settings/{n}" for n in range(40)])), 12)
+
+    def test_it_asks_for_the_usage_page_once_more_and_reads_it(self):
+        page = self.Page("https://claude.ai/new", ["/settings/profile"], after=("https://claude.ai/settings/usage", self.USAGE))
+        page.text = self.MENU
+        text = ai_spend_daily._claude_settle(page, self.MENU)
+        self.assertEqual(page.asked, [ai_spend_daily.CLAUDE_URL])
+        self.assertEqual(ai_spend_daily.parse_claude(text)["used"], {"session": 12, "weekly": 40})
+
+    def test_still_elsewhere_it_keeps_the_pages_own_links(self):
+        page = self.Page("https://claude.ai/new", ["/settings/limits?x=1", "/new", "/settings/limits"])
+        page.text = self.MENU
+        text = ai_spend_daily._claude_settle(page, self.MENU)
+        self.assertEqual(text, self.MENU)
+        self.assertEqual(ai_spend_daily.SEEN["links"], ["/settings/limits"])
+        self.assertEqual(len(page.asked), 2)
+
+    def test_the_error_names_the_page_it_was_sent_to(self):
+        def landed(url, wait_text, settle_ms=0, then=None):
+            ai_spend_daily.SEEN.update(url="https://claude.ai/new?from=usage", text=self.MENU)
+            return self.MENU
+        with mock.patch.object(ai_spend_daily, "_page_text", landed):
+            with self.assertRaises(RuntimeError) as e:
+                ai_spend_daily.read_claude()
+        self.assertEqual(str(e.exception), "the Claude usage address sent the browser to claude.ai/new, not to the usage page")
+        self.assertIn("the usage page has moved", ai_spend_daily.likely_cause(str(e.exception), self.MENU))
+        self.assertNotIn("Ben", ai_spend_daily.likely_cause(str(e.exception), self.MENU))   # not a sign-in
+
+    def test_on_the_usage_page_or_with_figures_it_is_not_elsewhere(self):
+        self.assertFalse(ai_spend_daily.claude_sent_elsewhere("https://claude.ai/settings/usage", self.MENU))
+        self.assertFalse(ai_spend_daily.claude_sent_elsewhere("https://claude.ai/new", self.USAGE))
+        self.assertFalse(ai_spend_daily.claude_sent_elsewhere("", self.MENU))
+        self.assertTrue(ai_spend_daily.claude_sent_elsewhere("https://claude.ai/new", self.MENU))
+
+    def test_the_log_lists_the_links_under_the_page_lines(self):
+        import contextlib
+        import io
+
+        def reader():
+            ai_spend_daily.SEEN.update(url="https://claude.ai/new", text=self.MENU, links=["/settings/limits", "/settings/profile"])
+            raise RuntimeError("the Claude usage address sent the browser to claude.ai/new, not to the usage page")
+        out = io.StringIO()
+        with mock.patch.dict(ai_spend_daily.READERS, {"claude": reader}), \
+                mock.patch.object(ai_spend_daily, "last_record", lambda pool: None), contextlib.redirect_stdout(out):
+            rc = ai_spend_daily.main(["--dry-run", "--pools", "claude"])
+        text = out.getvalue()
+        self.assertEqual(rc, 0)                                   # a usage page: not a missing spending figure
+        self.assertIn("UNREAD claude: RuntimeError: the Claude usage address sent the browser to claude.ai/new", text)
+        self.assertIn("  page address: claude.ai/new\n", text)
+        self.assertIn("  page links to: /settings/limits\n  page links to: /settings/profile\n", text)
+
+    def test_one_pools_links_never_show_under_the_next(self):
+        import contextlib
+        import io
+
+        def claude():
+            ai_spend_daily.SEEN.update(url="https://claude.ai/new", text=self.MENU, links=["/settings/limits"])
+            raise RuntimeError("the Claude usage address sent the browser to claude.ai/new, not to the usage page")
+
+        def cursor():
+            ai_spend_daily.SEEN.update(url="https://grok.com/dashboard/billing", text="Billing\nSomething else\n")
+            raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page "
+                               "(signed out, or the page changed)")
+        out = io.StringIO()
+        with mock.patch.dict(ai_spend_daily.READERS, {"claude": claude, "cursor": cursor}), \
+                mock.patch.object(ai_spend_daily, "last_record", lambda pool: None), contextlib.redirect_stdout(out):
+            ai_spend_daily.main(["--dry-run", "--pools", "claude,cursor"])
+        self.assertEqual(out.getvalue().count("page links to:"), 1)
 
 
 class FlowPageBelongsToAPictureRun(unittest.TestCase):

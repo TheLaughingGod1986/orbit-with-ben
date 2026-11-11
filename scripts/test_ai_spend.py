@@ -149,6 +149,30 @@ class CursorSpending(unittest.TestCase):
         self.assertIn("$17.14 used this month (resets Nov 1)", r["note"])
         self.assertIn("credits available $0.00", r["note"])
 
+    def test_weekly_included_usage_with_the_split_lines_of_november_2026(self):
+        # J2580. The lines the Mini's reader saw on 11 Nov 2026 (jobs/reviews/J2564/PAGES.md): the week's figure,
+        # then who used it, one per line, then the label. The reader raised "the page changed" on it.
+        import ai_spend_daily
+        page = ("Overview\nMy settings\nCloud Agents\nAPI\nAPI keys\nCustomizations\nPlugins\nIntegrations\n"
+                "Shared resources\nSubscription\nMembers\nUsage\nBilling\n<account holder's name>\nUltra\nOverview\nUltra\n"
+                "30%\nused\nx\nGrok Bot 29%\nCursor 1%\nWeekly included usage\nResets 12 Nov\n"
+                "Included usage with your subscription. Used before your credits.\n")
+        r = ai_spend_daily.parse_cursor(page)
+        self.assertEqual((r["left"], r["total"]), (70, 100))
+        self.assertEqual(r["used"], {"weekly included usage": 30, "grok bot": 29, "cursor": 1})
+        self.assertIn("Weekly included usage 30% used (Grok Bot 29%, Cursor 1%)", r["note"])
+        self.assertIn("weekly resets 12 Nov", r["note"])
+        self.assertEqual(r["of"], "the weekly included usage")
+
+    def test_the_note_says_which_figure_left_is(self):
+        import ai_spend_daily
+        from unittest import mock
+        week = "Ultra\n30%\nused\nx\nGrok Bot 29%\nCursor 1%\nWeekly included usage\nResets 12 Nov\n"
+        with mock.patch.object(ai_spend_daily, "_page_text", lambda *a, **k: week):
+            self.assertIn("% of the weekly included usage left: Weekly included usage 30% used", ai_spend_daily.read_cursor()["note"])
+        with mock.patch.object(ai_spend_daily, "_page_text", lambda *a, **k: SPENDING_PAGE):
+            self.assertIn("% of Cursor Models left: Cursor Models 14% used", ai_spend_daily.read_cursor()["note"])
+
     def test_billing_expiring_row_is_available(self):
         import ai_spend_daily
         page = ("Free Trial\n Expiring in 30 days\nDanger\n2%\n£4.93\n£225.63 One-time\nFreeTrialUpgrade:x\n"
