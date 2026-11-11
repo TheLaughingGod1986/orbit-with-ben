@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2618 | cloud | blocked | claude | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
 | J2621 | cloud | blocked | claude | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
 | J2622 | cloud | claimed | claude | 2026-11-11T20:39Z | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
-| J2632 | mini | blocked | codex | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 |  |
+| J2632 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6804458227 |
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2636 | cloud | open (after J2632) | – | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
 | J2640 | mini | open | – | – | studio · Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind |  |
