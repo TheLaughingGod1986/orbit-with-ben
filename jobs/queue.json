@@ -217471,6 +217471,11 @@
           "at": "2026-11-11T22:03Z",
           "by": "codex",
           "what": "blocked: Worker handoff complete: PR834 ready with passing CI for Chief merge; approved v03 and cover hash-verified in OWB UAT and WATCH_FULL; awaits_ben registered, deadline 18 Nov 18:00 London. No upload until board OK."
+        },
+        {
+          "at": "2026-11-11T22:56Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
         }
       ],
       "remaining_action": "Chief merges the ready pull request; Ben watches the approved Supermoon Short",
@@ -217489,7 +217494,12 @@
         "by": "codex",
         "note": "Watch card registered for v03, deadline 18 Nov 18:00 London. PR834 CI passed. Worker handoff complete."
       },
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "Worker handoff complete: PR834 ready with passing CI for Chief merge; approved v03 and cover hash-verified in OWB UAT and WATCH_FULL; awaits_ben registered, deadline 18 Nov 18:00 London. No upload until board OK.",
+        "check_at": "2026-11-12T04:03:18+00:00"
+      },
+      "awaits_was": {
         "what": "Watch the Supermoon Short and its cover",
         "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v03.mp4",
         "version": "v03",
@@ -217498,11 +217508,6 @@
         "ifNot": "Do not upload this dated Short if approval misses the deadline",
         "title": "Supermoon: two Earths closer on November 24",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Worker handoff complete: PR834 ready with passing CI for Chief merge; approved v03 and cover hash-verified in OWB UAT and WATCH_FULL; awaits_ben registered, deadline 18 Nov 18:00 London. No upload until board OK.",
-        "check_at": "2026-11-12T04:03:18+00:00"
       }
     },
     {
