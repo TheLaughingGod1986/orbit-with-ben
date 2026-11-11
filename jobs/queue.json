@@ -226702,10 +226702,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T14:22Z",
-      "eta": "2026-11-11T16:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -226724,6 +226724,11 @@
           "at": "2026-11-11T14:22Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T14:25Z",
+          "by": "macbook",
+          "what": "released: Unfinished, no code changed. Needs both repos: cadence and social.tiktok fields in each channel's studio/channel.json (history-of-science too, or test_channels cached-copy test fails), plus a rename of kanban_snapshot.attach_hos_uploads. Design, the 35 lines and the tests are in jobs/reviews/J2616/HANDOVER.md on branch macbook/J2616 (pushed, no PR). About 40 min: split it or run it uncapped."
         }
       ],
       "remaining_action": "replace the channel names in approved_deliver.py with channels.py calls, test, open the pull request",
