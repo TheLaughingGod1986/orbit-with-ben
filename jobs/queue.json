@@ -224673,6 +224673,11 @@
           "at": "2026-11-11T11:22Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-11T11:23Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: clean worktree of 67cb29f5 made; core_sync check passes (56 shared files); gate run started in tmux J2594-gate"
         }
       ],
       "remaining_action": "Rerun the thirteen Shorts through the twice-a-second gate and post the table",
@@ -224680,10 +224685,11 @@
       "plain": "Try the new Shorts screen-fill check on thirteen real Shorts before it is switched on",
       "urgent": 4,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-11T11:22Z",
-        "by": "claudecode"
+        "at": "2026-11-11T11:23Z",
+        "by": "claudecode",
+        "note": "clean worktree of 67cb29f5 made; core_sync check passes (56 shared files); gate run started in tmux J2594-gate"
       }
     },
     {
