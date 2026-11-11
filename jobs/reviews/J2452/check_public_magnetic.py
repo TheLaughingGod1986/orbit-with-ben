@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[3]
-OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v02')
+OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05')
 def main():
     global OUT
     parser=argparse.ArgumentParser()

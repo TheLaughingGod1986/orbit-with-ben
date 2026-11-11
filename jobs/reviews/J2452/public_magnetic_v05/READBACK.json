@@ -1,0 +1,336 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/031_magnetic_undarkened_v05.mp4",
+  "sha256": "bc0ab3f33d20646b2c5d3545150e67c5c2ffa8a52078b6fbedd111789d229815",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 48924000,
+        "duration": "543.600000",
+        "bit_rate": "5562267",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "16308",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 26092320,
+        "duration": "543.590000",
+        "bit_rate": "186695",
+        "nb_frames": "25482",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/031_magnetic_undarkened_v05.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "543.600000",
+      "size": "391238248",
+      "bit_rate": "5757737",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 16308,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-18",
+      "cut": 9,
+      "t": 19.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.937"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 19.0
+    },
+    {
+      "row": "pixel-90",
+      "cut": 45,
+      "t": 91.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "low detail: luma std 7.46 < 13.44 and edge density 0.0008 < 0.0259 (absolute floor)",
+        "near-black: mean 35.82, p95 38.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 99.25999999999999
+    },
+    {
+      "row": "pixel-114",
+      "cut": 57,
+      "t": 115.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.139"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 123.25999999999999
+    },
+    {
+      "row": "pixel-138",
+      "cut": 69,
+      "t": 139.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.93"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 147.26
+    },
+    {
+      "row": "pixel-288",
+      "cut": 144,
+      "t": 289.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "near-black: mean 40.61, p95 41.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 302.9100000000001
+    },
+    {
+      "row": "pixel-290",
+      "cut": 145,
+      "t": 291.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "near-black: mean 38.79, p95 39.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 304.9100000000001
+    },
+    {
+      "row": "pixel-292",
+      "cut": 146,
+      "t": 293.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "near-black: mean 38.89, p95 39.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 306.9100000000001
+    },
+    {
+      "row": "pixel-418",
+      "cut": 209,
+      "t": 419.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "split panel: vertical gutter at 0.653"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 432.9100000000001
+    },
+    {
+      "row": "pixel-458",
+      "cut": 229,
+      "t": 459.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "noise: grain 6.76 over structure 9.09, 8x-downscaled std 10.56 < 13.44 and edge 0.0233 < 0.0259"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 472.9100000000001
+    },
+    {
+      "row": "pixel-466",
+      "cut": 233,
+      "t": 467.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "low detail: luma std 11.18 < 13.44 and edge density 0.0056 < 0.0259 (absolute floor)",
+        "near-black: mean 28.14, p95 27.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 480.9100000000001
+    },
+    {
+      "row": "pixel-478",
+      "cut": 239,
+      "t": 479.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "split panel: horizontal gutter at 0.144"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 492.9100000000001
+    },
+    {
+      "row": "pixel-528",
+      "cut": 264,
+      "t": 529.0,
+      "source": "031_what_happens_when_earths_magnetic_field_flips_master_v02.mp4",
+      "why": [
+        "near-black: mean 33.81, p95 46.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 542.9100000000001
+    }
+  ],
+  "levels": {
+    "input_i": "-20.73",
+    "input_tp": "-6.43",
+    "input_lra": "3.40",
+    "input_thresh": "-31.12",
+    "output_i": "-19.87",
+    "output_tp": "-6.00",
+    "output_lra": "3.10",
+    "output_thresh": "-30.27",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.13"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 30.0,
+      "end_s": 32.0,
+      "mean_luma": 136.4186545138889,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/brightest_01.jpg"
+    },
+    {
+      "start_s": 28.0,
+      "end_s": 30.0,
+      "mean_luma": 132.49230902777776,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/brightest_02.jpg"
+    },
+    {
+      "start_s": 324.0,
+      "end_s": 326.0,
+      "mean_luma": 130.1716840277778,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/brightest_03.jpg"
+    },
+    {
+      "start_s": 492.0,
+      "end_s": 494.0,
+      "mean_luma": 118.76736111111111,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/brightest_04.jpg"
+    },
+    {
+      "start_s": 256.0,
+      "end_s": 258.0,
+      "mean_luma": 116.25947048611111,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_magnetic_v05/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}
