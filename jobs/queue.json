@@ -221540,9 +221540,14 @@
           "at": "2026-11-11T23:11Z",
           "by": "gemini",
           "what": "step 0 of 14 done: Claimed J2529 (default_plan replaced with 14 batches); reading Chief rulings 6807600765, 6805739027, 6805898066"
+        },
+        {
+          "at": "2026-11-11T23:20Z",
+          "by": "gemini",
+          "what": "step 0 of 14 done: Preflight green on canonical HOS main 90711687 (40/40 tests OK, Explorer sha256 24659dc1...476d, NAS live, unarmed submit refused). Pre-launch dry-run (DRY_RUN_2026-11-11T2318Z.json): active_reservations={}, remaining_reservations=0, unposted_charges=800, total_liability=800, live_balance=10440 (>=9600), floor=3000, projected_headroom=3040, would_allow_reserve_at_recorded_balance=true"
         }
       ],
-      "remaining_action": "Run preflight checks (40 tests, NAS check, Explorer sha256, dry-run --floor 3000, unarmed submit check) and launch Batch 1 of 14",
+      "remaining_action": "Launch Batch 1 of 14 detached with --floor 3000, watch first take end-to-end (price=100, Create, saved clip, balance -100), then release between batches",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -221556,9 +221561,9 @@
       "progress": {
         "step": 0,
         "of": 14,
-        "at": "2026-11-11T23:11Z",
+        "at": "2026-11-11T23:20Z",
         "by": "gemini",
-        "note": "Claimed J2529 (default_plan replaced with 14 batches); reading Chief rulings 6807600765, 6805739027, 6805898066"
+        "note": "Preflight green on canonical HOS main 90711687 (40/40 tests OK, Explorer sha256 24659dc1...476d, NAS live, unarmed submi"
       }
     },
     {
