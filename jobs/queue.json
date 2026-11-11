@@ -227250,13 +227250,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T16:20Z",
-      "eta": "2026-11-11T18:20Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Merged: orbit-with-ben #830 (main e827a922). The studio's own short name and repo are one section of channels/channels.json (studio.prefix, studio.github), read with channels.studio_prefix(), studio_env(), studio_label() and studio_github(); today's values are unchanged, so nothing on the Mini or the MacBook is renamed. The thread tool is scripts/studio_thread.py and scripts/owb_thread.py stays as the same tool under its old name. Ratchet 98 to 79 lines, all chief_relay.py. Dry run of the move with its tests, unrecorded: 113 on main before, 94 after, the same 7 test files failing in the new layout. 20 new tests; whole suite passes. The shared sync script's copy for the other repo is history-of-science #534, with Grok for review.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -227272,6 +227272,11 @@
           "at": "2026-11-11T16:42Z",
           "by": "claude",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-11T16:47Z",
+          "by": "claude",
+          "what": "done: Merged: orbit-with-ben #830 (main e827a922). The studio's own short name and repo are one section of channels/channels.json (studio.prefix, studio.github), read with channels.studio_prefix(), studio_env(), studio_label() and studio_github(); today's values are unchanged, so nothing on the Mini or the MacBook is renamed. The thread tool is scripts/studio_thread.py and scripts/owb_thread.py stays as the same tool under its old name. Ratchet 98 to 79 lines, all chief_relay.py. Dry run of the move with its tests, unrecorded: 113 on main before, 94 after, the same 7 test files failing in the new layout. 20 new tests; whole suite passes. The shared sync script's copy for the other repo is history-of-science #534, with Grok for review."
         }
       ],
       "remaining_action": "Merge #830 when its checks are green, then push the shared sync script to history-of-science as a pull request for Grok",
@@ -227283,7 +227288,8 @@
         "of": 3,
         "at": "2026-11-11T16:42Z",
         "by": "claude"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/830"
     },
     {
       "id": "J2621",
