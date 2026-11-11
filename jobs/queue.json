@@ -224256,13 +224256,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T10:27Z",
-      "eta": "2026-11-11T12:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
-      "result": "",
+      "result": "Two authorized third takes generated for 200 Flow subscription credits, GBP 0. Both fully decode: 190 frames, 1280x720, 24fps; hashes and half-second sheets recorded. HOS PR #514 (4f879b79), ALL CHECKS PASS; desk 6793564894. Pending J2590 visual acceptance; no KEEP.",
       "history": [
         {
           "at": "2026-11-11T10:22Z",
@@ -224298,6 +224298,11 @@
           "at": "2026-11-11T10:37Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS PR #514 (4f879b79), ALL CHECKS PASS; desk 6793564894 includes both half-second sheets and hashes. Generation complete, 200 subscription credits; no KEEP."
+        },
+        {
+          "at": "2026-11-11T10:37Z",
+          "by": "codex",
+          "what": "done: Two authorized third takes generated for 200 Flow subscription credits, GBP 0. Both fully decode: 190 frames, 1280x720, 24fps; hashes and half-second sheets recorded. HOS PR #514 (4f879b79), ALL CHECKS PASS; desk 6793564894. Pending J2590 visual acceptance; no KEEP."
         }
       ],
       "remaining_action": "Both final takes are ready for the queued visual review",
@@ -224315,7 +224320,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6793564894"
     },
     {
       "id": "J2590",

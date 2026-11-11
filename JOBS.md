@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2589, J2594, J2591, J2270, J2590, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2594, J2591, J2270, J2590, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -75,7 +75,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
-| J2589 | mini | claimed | codex | 2026-11-11T12:27Z | 008 picture · video · HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has) | J2241 |
 | J2590 | any | open (after J2589) | – | – | 008 picture · qa · HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) | J2241 |
 | J2591 | mini | open | – | – | 008 picture · chart · HOS 008: build the salon's contact spark as a code graphic (one warm-white flick, three to four frames) | J2241 |
 | J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
@@ -84,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2589 done: HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has) (Two authorized third takes generated for 200 Flow subscription credits, GBP 0. Both fully decode: 190 frames, 1280x720, 24fps; hashes and half-second sheets recorded. HOS PR #514 (4f879b79), ALL CHECKS PASS; desk 6793564894. Pending J2590 visual acceptance; no KEEP.)
 - J2588 done: Verify condition for J2576 (No action needed on J2576: Chief Grok ruled on the two take-2 FAILs (HOS desk #6793185344 & #6793202900) and acting Chief Claude closed J2576 at 10:22Z, opened J2589-J2593 (gesture-only take 3s, Codex spark overlay, placement and frame check), and updated J2242 to wait for J2593. Left J2576 and J2242 untouched.)
 - J2585 done: HOS 009: write the board change for the four remade shots, as a pull request for Grok (no credit) (Board change written and passed by Grok: History of Science #512, merged as aba45ec. The four prompts carry his wording word for word; the scope is re-pinned; TRANCHE2_RETAKES_J2583.json holds the retake scope (four rows, 400 credits at most). Credits are released for J2583; its runner change goes to Grok as its own pull request before it runs.)
 - J2582 done: HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule (Sheets done (History of Science #511): 16 kept, the Explorer's shot kept (one continuous camera move), the apple shot to be remade, and two more found with the apple rising (P04:05_minute_second_c1 and _c2). Grok ruled on the desk (6792980991): both are remade; the cap is 400 credits for four shots, one take each.)
@@ -93,4 +93,3 @@ Recently finished:
 - J2576 done: HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) (Both second takes failed (salon: no, no, no; points: no, yes, yes). Grok ruled (desk 6793185344): third takes with a new approach, gesture only and no electricity words; the spark is added in the edit as a code graphic; a failed third take is parked for him and put to Ben, never an earlier plate reused. Next: J2589, J2590, J2591, J2592, J2593, then J2242.)
 - J2575 done: HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) (Two authorized second takes generated for 200 Flow credits, GBP 0; decoded, frame-counted, hashed and still sheets posted. HOS PR #510; desk 6792510470. Pending visual review by J2576; no KEEP.)
 - J2574 done: Studio read on the Mini: have thumbnail tests T013 (Saturn) and T003 (Jupiter) ended? Record the results; reopen J0275 if both have (Codex's read-only Studio read, recorded in orbit-with-ben #808 (merged): both thumbnail tests have finished with Studio's verdict "Not enough impressions to declare a winner". T013 Saturn ran 27 Oct to 10 Nov 22:36; T003 Jupiter ran 27 Oct to 10 Nov 19:49. The first option is visible to all viewers on both. Nothing in Studio was changed. J0275 is reopened by the acting Chief.)
-- J2573 done: HOS 008: look at the salon retake's still sheet before the re-edit (one spark, hair on heads, solid rod), and glance at the other two (Gemini's check, accepted by Grok (History of Science desk 6791231280): salon take 1 FAILS (a room-wide branching bolt at 0:02 to 0:03); hair stays on heads; nothing comes out of the rod. Points take 1 also fails on a second look (a wire from the globe's top at 0:04 to 0:07, a hand vanishing at 0:07). Rods take 2 is clean. Second takes for salon and points are queued under J2241's limits.)
