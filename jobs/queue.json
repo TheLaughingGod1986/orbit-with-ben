@@ -222194,10 +222194,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T07:16Z",
+      "eta": "2026-11-11T08:01Z",
       "created_by": "refill",
       "created_at": "2026-11-11T07:13Z",
       "result": "",
@@ -222206,12 +222206,25 @@
           "at": "2026-11-11T07:13Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T07:16Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the latest Studio performance figures",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0
+      "urgent": 0,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T07:16Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
