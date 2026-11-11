@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2594 | mini | open | – | – | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
+| J2595 | mini | open | – | – | Is Cursor out of credit or not? Run its command line once on the Mini and copy what it says | J2580 |
 
 Recently finished:
 

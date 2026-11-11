@@ -1,5 +1,5 @@
 {
-  "next_id": 2595,
+  "next_id": 2596,
   "jobs": [
     {
       "id": "J0001",
@@ -224538,6 +224538,35 @@
         "at": "2026-11-11T10:43Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2595",
+      "title": "Is Cursor out of credit or not? Run its command line once on the Mini and copy what it says",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "A five-minute check on the Mini. No spend, no upgrade, no purchase, no sign-in.\n\nCursor has been flagged out of credit since 9 Nov (`scripts/credit_flags.json`, on Ben's word and the command line's \"You are out of credits. Upgrade your plan\"), so every Cursor job falls to the next agent. But the usage page the Mini copied on 11 Nov 08:30Z (`jobs/reviews/J2564/PAGES.md`) shows a signed-in \"Ultra\" plan with **30% of the weekly included usage used** (\"Grok Bot 29%\", \"Cursor 1%\", \"Resets 12 Nov\"). One of the two is out of date.\n\n1. Run Cursor's command-line agent once with a one-word task (the way `scripts/capability_probe.py` wakes an agent), with a short timeout. Do not retry.\n2. Copy the first lines it prints, exactly, into this job's result: either its answer, or its out-of-credit message.\n3. Do not change the flag yourself. Finish the job with what you saw; the acting Chief takes the flag off or leaves it.\n\nIf the command line offers an upgrade, a purchase or a sign-in, stop there and say so. Those are Ben's.",
+      "ref": "J2580",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:45Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wake Cursor's command line once with a one-word task and record its first lines",
+      "due": "2026-11-11T18:00:00Z",
+      "plain": "Check whether one of our AI helpers has credit again, so it can go back to work"
     }
   ],
   "focus": [
