@@ -20,11 +20,23 @@ Pools:
               the 5-hour session and weekly % used + reset times in --note.
 
 A pool whose read fails records nothing; the reason goes to the log (and stdout). Never guess a number.
-Log: ~/Library/Logs/owb-ai-spend.log (launchd). Exit 0 if every pool read, 1 if any failed.
+Log: ~/Library/Logs/owb-ai-spend.log (launchd).
+
+What the exit code means (J2564). Exit 1 says a spending figure is missing: a SPEND pool (elevenlabs, flow, vertex)
+could not be read, or a reading could not be written. The usage pages (cursor, codex, claude, gemini) are a percent
+of a plan's limit, not money: one that cannot be read is printed as UNREAD with its likely cause, what the page
+shows now and when the pool was last recorded, and the run still exits 0. For three days the run ended in an error
+over three usage pages while every spending figure was read, which hides the day a spending figure really is missing.
+`--strict` also exits 1 for an unread usage page: the MacBook worker asks for one pool and must know if it was recorded.
+
+The Flow page belongs to a picture run while one is going. The run and this reading find the same tab
+(`cdp_tabs.reuse_page`), so the reading takes the runs' own lock first (FLOW_LOCK) and, when a run holds it, leaves
+the tab alone and prints BUSY: the run records the balance itself.
 """
 from __future__ import annotations
 
 import argparse
+import contextlib
 import json
 import os
 import re
@@ -44,8 +56,13 @@ FLOW_URL = "https://flow.google.com/"
 CURSOR_URL = "https://cursor.com/dashboard/spending"
 CLAUDE_URL = "https://claude.ai/settings/usage"
 ALL = ("elevenlabs", "flow", "vertex", "cursor", "codex", "claude", "gemini")
+SPEND = ("elevenlabs", "flow", "vertex")  # credit or money: one of these unread fails the run. The rest are usage pages.
+# The picture runs hold this lock for a whole batch (the channel's Flow runners, `SharedFlowAccounting`).
+FLOW_LOCK = Path.home() / "_desk" / "state" / "flow" / "shared" / "writer.lock"
+SEEN = {"url": "", "text": ""}  # the last page read in the CDP Chrome, kept so a failed reading can say what it showed
 CODEX_HOME = Path.home() / ".codex"
 CODEX_MAX_AGE_H = 72  # an older reading says nothing about this week's limit
+CODEX_MAX_LOGS = 60
 
 
 def voice_tools() -> Path:
@@ -81,7 +98,37 @@ def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None
             page.get_by_text(wait_text).first.wait_for(timeout=45000)
         page.wait_for_timeout(settle_ms)
         text = page.inner_text("body")
-        return then(page, text) if then else text
+        SEEN.update(url=page.url, text=text)
+        if then:
+            text = then(page, text)
+            SEEN.update(url=page.url, text=text)
+        return text
+
+
+class Busy(RuntimeError):
+    """The page is in use by a picture run. Nothing was read, and nothing is wrong."""
+
+
+@contextlib.contextmanager
+def flow_page_free(lock: Path | None = None):
+    """Hold the picture runs' lock while the Flow page is read; raise Busy when a run already holds it.
+
+    A run that starts during the reading is refused by its own guard and can be started again a moment later; that is
+    cheaper than a reading that navigates the tab a run is generating in."""
+    lock = lock or FLOW_LOCK
+    if not lock.parent.is_dir():  # no picture run has ever used this machine
+        yield
+        return
+    import fcntl
+    with open(lock, "a+") as handle:
+        try:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise Busy("a picture run holds the Flow page (the shared writer lock); it records the balance itself") from None
+        try:
+            yield
+        finally:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
 FLOW_ACCOUNT = "benoats@googlemail.com"
@@ -121,7 +168,8 @@ def _flow_picker(page, text: str) -> str:
 
 
 def read_flow() -> dict:
-    text = _page_text(FLOW_URL, None, settle_ms=8000, then=_flow_picker)
+    with flow_page_free():
+        text = _page_text(FLOW_URL, None, settle_ms=8000, then=_flow_picker)
     if re.search(r"sign in to continue|you.?re not signed in", text, re.I):
         raise RuntimeError("Flow is signed out in the CDP Chrome")
     emails = {e.lower() for e in EMAIL_RE.findall(text)}
@@ -275,9 +323,11 @@ def parse_codex(lines, now: datetime | None = None) -> dict:
     """The newest Codex `rate_limits` reading among session log lines, as a pool reading (weekly % left of 100)."""
     now = now or datetime.now(timezone.utc)
     best = None
+    mentions = 0
     for line in lines:
         if '"rate_limits"' not in line:
             continue
+        mentions += 1
         try:
             row = json.loads(line)
         except ValueError:
@@ -293,7 +343,8 @@ def parse_codex(lines, now: datetime | None = None) -> dict:
         if best is None or at > best[0]:
             best = (at, rl)
     if best is None:
-        raise ValueError("no rate_limits reading in the Codex session logs")
+        raise ValueError("no rate_limits reading in the Codex session logs "
+                         f"(lines with rate_limits: {mentions}; none holds a limit window)")
     at, rl = best
     if now - at > timedelta(hours=CODEX_MAX_AGE_H):
         raise ValueError(f"newest Codex reading is {(now - at).total_seconds() / 3600:.0f} h old")
@@ -312,8 +363,10 @@ def read_codex(home: Path | None = None) -> dict:
     if not sessions:
         raise ValueError(f"no Codex session logs under {home or CODEX_HOME}")
     lines = []
-    for f in sessions[:5]:  # the newest few runs hold the newest reading
-        lines += f.read_text(errors="replace").splitlines()
+    oldest = datetime.now(timezone.utc).timestamp() - CODEX_MAX_AGE_H * 3600
+    # Every run inside the window, newest first: a short run can end without a limit reading, so five was too few.
+    for f in [s for s in sessions if s.stat().st_mtime >= oldest][:CODEX_MAX_LOGS] or sessions[:1]:
+        lines += [ln for ln in f.read_text(errors="replace").splitlines() if '"rate_limits"' in ln]
     return parse_codex(lines)
 
 
@@ -327,8 +380,12 @@ def _claude_block(text: str, start_re: str, stop_re: str) -> tuple[int, str] | N
     m_pct = re.search(r"(\d{1,3})%\s*used", chunk, re.I)
     if not m_pct:
         return None
-    m_res = re.search(r"Resets\s+(?:on\s+|at\s+)?([^\n(·•]+)", chunk, re.I)
+    # The time sits on the "Resets" line. With no session running the line is bare, and reading on into the next
+    # line gave "resets 0% used" in the ledger notes of 6 to 8 Nov 2026.
+    m_res = re.search(r"Resets[ \t]+(?:on[ \t]+|at[ \t]+)?([^\n(·•]+)", chunk, re.I)
     reset = m_res.group(1).strip().rstrip(".") if m_res else ""
+    if re.fullmatch(r"\d{1,3}%\s*used", reset, re.I):
+        reset = ""
     return int(m_pct.group(1)), reset
 
 
@@ -450,6 +507,81 @@ READERS = {"elevenlabs": read_elevenlabs, "flow": read_flow, "vertex": read_vert
            "codex": read_codex, "claude": read_claude, "gemini": read_gemini}
 
 
+SIGN_IN_RE = re.compile(r"\bsign in\b|\blog in\b|continue with google|continue with email", re.I)
+ANY_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+PRIVATE_LINE_RE = re.compile(r"\bcard\b|visa|mastercard|amex|billing address|invoice|payment method|[•*]{4}", re.I)
+
+
+def likely_cause(err: str, page: str = "") -> str:
+    """Why a reading failed, in words the log's reader can act on. `page` is what the page showed, when there was one."""
+    e = err.lower()
+    if "signed out in the cdp chrome" in e or "signed in as another account" in e:
+        return "signed out in this machine's browser; it needs Ben's sign-in"
+    if "the page changed" in e or "picker moved" in e:
+        if not page.strip():
+            return "the page came back empty; signed out, or it did not load"
+        if SIGN_IN_RE.search(page[:2000]):
+            return "the page shows a sign-in screen; it needs Ben's sign-in"
+        return "signed in, but the page's wording is not what the reader expects; the reader needs a fix (the page's text is below)"
+    if "no codex session logs" in e:
+        return "Codex has not run on this machine"
+    if "no rate_limits reading" in e:
+        return "the Codex runs on this machine in the last three days wrote no limit reading"
+    if "h old" in e and "codex" in e:
+        return "Codex has not run on this machine for three days"
+    if "agy cli not found" in e:
+        return "the Antigravity command-line tool is not installed on this machine"
+    if "econnrefused" in e or "connect_over_cdp" in e or "connection refused" in e:
+        return "this machine's browser is not answering on its debugging port"
+    if "timeout" in e:
+        return "the page did not load in time"
+    return "not known; the error above is all there is"
+
+
+def page_excerpt(text: str, limit: int = 25) -> list[str]:
+    """The first lines of a page, safe to keep in a log: no email address, no payment line."""
+    out = []
+    for ln in (x.strip() for x in text.splitlines()):
+        if not ln or PRIVATE_LINE_RE.search(ln):
+            continue
+        out.append(ANY_EMAIL_RE.sub("<email>", ln)[:120])
+        if len(out) == limit:
+            break
+    return out
+
+
+def page_address(url: str) -> str:
+    """Host and path only: a query string can carry an account or project id."""
+    m = re.match(r"https?://([^/?#]+)([^?#]*)", url or "")
+    return (m.group(1) + m.group(2)) if m else ""
+
+
+def last_record(pool: str) -> dict | None:
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from ai_spend import load  # noqa: E402
+    rows = [x for x in load() if x.get("kind") == "record" and x.get("pool") == pool and x.get("left") is not None]
+    return rows[-1] if rows else None
+
+
+def last_recorded(pool: str, now: datetime | None = None) -> str:
+    """When the pool was last recorded and by whom, so an unread page says whether the board's figure is fresh."""
+    try:
+        row = last_record(pool)
+    except Exception as e:  # noqa: BLE001  (the ledger being unreadable must not hide the reading's own failure)
+        return f"the ledger could not be read ({type(e).__name__})"
+    if not row:
+        return "never recorded"
+    try:
+        at = datetime.fromisoformat(str(row.get("at", "")).replace("Z", "+00:00"))
+        if at.tzinfo is None:
+            at = at.replace(tzinfo=timezone.utc)
+    except ValueError:
+        return f"last recorded {row.get('at')} by {row.get('by') or '?'}"
+    hours = ((now or datetime.now(timezone.utc)) - at).total_seconds() / 3600
+    age = f"{hours:.0f} h ago" if hours < 48 else f"{hours / 24:.0f} days ago"
+    return f"last recorded {at:%d %b %H:%MZ} by {row.get('by') or '?'} ({age})"
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pools", default=",".join(ALL))
@@ -457,17 +589,36 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--codex-pool", default="codex", help="pool the codex reading is recorded as (codex-macbook on the MacBook)")
     ap.add_argument("--git", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--strict", action="store_true",
+                    help="exit 1 for a usage page that was not read too (for a caller that asked for one pool and must know)")
     a = ap.parse_args(argv)
-    failed = 0
+    read, failed, unread, busy = [], [], [], []
     for pool in [p.strip() for p in a.pools.split(",") if p.strip()]:
+        SEEN.update(url="", text="")
+        recorded_as = a.codex_pool if pool == "codex" else pool
         try:
             r = READERS[pool]()
             if pool == "flow":
                 r = flow_refill(r, last_left("flow"))
-        except Exception as e:  # one pool failing never blocks the others
-            failed += 1
-            print(f"FAIL {pool}: {type(e).__name__}: {str(e)[:300]}", flush=True)
+        except Busy as e:  # the page is a picture run's for now: not a failure of anything
+            busy.append(pool)
+            print(f"BUSY {pool}: {e} · {last_recorded(recorded_as)}", flush=True)
             continue
+        except Exception as e:  # one pool failing never blocks the others
+            err = f"{type(e).__name__}: {str(e)[:300]}"
+            cause = likely_cause(err, SEEN["text"])
+            if pool in SPEND:
+                failed.append(pool)
+                print(f"FAIL {pool}: {err} · likely cause: {cause}", flush=True)
+            else:
+                unread.append(pool)
+                print(f"UNREAD {pool}: {err} · likely cause: {cause} · {last_recorded(recorded_as)}", flush=True)
+            if SEEN["text"].strip():
+                print(f"  page address: {page_address(SEEN['url'])}", flush=True)
+                for ln in page_excerpt(SEEN["text"]):
+                    print(f"  page shows: {ln}", flush=True)
+            continue
+        read.append(pool)
         print(f"READ {pool}: left={r['left']} total={r.get('total')} · {r['note']}", flush=True)
         if a.dry_run:
             continue
@@ -478,8 +629,19 @@ def main(argv: list[str] | None = None) -> int:
         if a.git:
             cmd.append("--git")
         if subprocess.run(cmd, cwd=ROOT).returncode != 0:
-            failed += 1
-    return 1 if failed else 0
+            failed.append(f"{pool} (read, but the reading could not be written)")
+            print(f"FAIL {pool}: the reading could not be written to the ledger", flush=True)
+    parts = [f"{len(read)} read"]
+    if busy:
+        parts.append("left alone for a picture run: " + ", ".join(busy))
+    if unread:
+        parts.append("usage pages not read (no spending figure is missing): " + ", ".join(unread))
+    if failed:
+        parts.append("SPENDING FIGURE MISSING: " + ", ".join(failed))
+    elif any(p in SPEND for p in read):
+        parts.append("every spending figure read was recorded" if not a.dry_run else "every spending figure asked for was read")
+    print("SUMMARY " + "; ".join(parts), flush=True)
+    return 1 if failed or (a.strict and unread) else 0
 
 
 if __name__ == "__main__":
