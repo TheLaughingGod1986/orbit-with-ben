@@ -21,6 +21,27 @@ IDLE_20 = '    |   "HIDIdleTime" = 1200000000000\n'
 IDLE_1 = '    |   "HIDIdleTime" = 60000000000\n'
 T0 = dt.datetime(2026, 10, 28, 12, 0, tzinfo=dt.timezone.utc)
 WED_NIGHT = dt.datetime(2026, 10, 28, 22, 0, tzinfo=dt.timezone.utc)
+_OWN_WORLD = []
+
+
+def setUpModule():
+    """These tests state the worker's rules, not the state of the machine they run on. Where the film store is mounted
+    (the Mini and the MacBook) the brief gains its film-store line and the agent one more folder, so two tests that
+    read the brief failed there and passed in the cloud (found 11 Nov 2026 by running the suite against a simulated
+    store). No test here sees the real store or the live board; a test that needs one sets it itself."""
+    tmp = tempfile.TemporaryDirectory()
+    _OWN_WORLD.append(tmp)
+    for p in (mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(tmp.name) / "no-film-store"),
+              mock.patch("workflow_board.load_tracker", return_value={})):
+        p.start()
+        _OWN_WORLD.append(p)
+
+
+def tearDownModule():
+    for p in reversed(_OWN_WORLD[1:]):
+        p.stop()
+    _OWN_WORLD[0].cleanup()
+    _OWN_WORLD.clear()
 
 
 class Guards(unittest.TestCase):
