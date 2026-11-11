@@ -219760,19 +219760,24 @@
           "at": "2026-11-11T00:51Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Audit complete: found j2452 timings on MiniWork, heic1502a on Mini, 021 v03f + 023 VO/bed + 026 bed + 027 webm in mac-mini-archive dated dirs, and 024/025/026 VO stems materializing from OWB UAT"
+        },
+        {
+          "at": "2026-11-11T01:22Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Finished rsync -a (no --delete) of 38 located files to studio-live"
         }
       ],
-      "remaining_action": "rsync -a located sleep-video inputs and j2452 timings to studio-live",
+      "remaining_action": "Verify size and sha256 of every copied file on studio-live",
       "due": "2026-11-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Copy the files the sleep video still needs from the Mac mini to the shared drive, so the MacBook can build it",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T00:51Z",
+        "at": "2026-11-11T01:22Z",
         "by": "gemini",
-        "note": "Audit complete: found j2452 timings on MiniWork, heic1502a on Mini, 021 v03f + 023 VO/bed + 026 bed + 027 webm in mac-mi"
+        "note": "Finished rsync -a (no --delete) of 38 located files to studio-live"
       },
       "taskKeys": [
         "OWB:013",
