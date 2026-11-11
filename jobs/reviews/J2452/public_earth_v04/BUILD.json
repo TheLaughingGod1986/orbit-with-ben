@@ -1,0 +1,109 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "027",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/027_earth_undarkened_v04.mp4",
+  "sha256": "6eb3c0fb72cd10f1b6ff4afa5fbd9be8a654810b9534d69f1e5ea596e689a819",
+  "source_master": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/027_EarthSpin_rough_v01m.mp4",
+  "source_sha256": "499e8edc06910cb646006a260fccbbbd9b9bc9e975f39940b0cbec2fc457b31d",
+  "narration_sha256": "93cc5ce8ad647f3677e1809e8dbdebc15bd355816635ed39a407390ae94a5bc8",
+  "expected_frames": 13141,
+  "duration_s": 438.03333333333336,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 164.45,
+      "chapter_in_s": 0,
+      "chapter_out_s": 164.45,
+      "compilation_in_s": 967.19,
+      "compilation_out_s": 1131.64
+    },
+    {
+      "master_in_s": 169.9,
+      "master_out_s": 443.5,
+      "chapter_in_s": 164.45,
+      "chapter_out_s": 438.05,
+      "compilation_in_s": 1131.64,
+      "compilation_out_s": 1405.24
+    }
+  ],
+  "planned_ranges": [
+    [
+      0,
+      164.9
+    ],
+    [
+      169.42,
+      443.5
+    ]
+  ],
+  "covers": [
+    [
+      65.8,
+      74.6,
+      125,
+      "Orbit-northpole"
+    ],
+    [
+      175,
+      181,
+      181,
+      "act-slow-stop"
+    ],
+    [
+      219,
+      226.3,
+      226.4,
+      "Orbit-sunset"
+    ],
+    [
+      354,
+      360,
+      360,
+      "act-keeping-score"
+    ]
+  ],
+  "darkening": "Pending: chapter crosses 19:30-20:30 ramp; darkening must be measured after gates.",
+  "fallback": "EPIC absent at named locations. Named Five_Minutes_in_Orbit pool file inspected at 18s: near-black night view and premature EOF decoder warning; master neighbour fallback used, no extended search.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "parent_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v03",
+  "repair_patches": [
+    {
+      "chapter_in_s": 0,
+      "chapter_out_s": 10,
+      "master_donor_in_s": 27,
+      "donor_duration_s": 2,
+      "label": "opening-title-background"
+    },
+    {
+      "chapter_in_s": 63,
+      "chapter_out_s": 81,
+      "master_donor_in_s": 27,
+      "donor_duration_s": 2,
+      "label": "northpole-cover-failed-pixels"
+    },
+    {
+      "chapter_in_s": 161,
+      "chapter_out_s": 172,
+      "master_donor_in_s": 181,
+      "donor_duration_s": 2,
+      "label": "subscribe-join-gutter"
+    },
+    {
+      "chapter_in_s": 341,
+      "chapter_out_s": 356,
+      "master_donor_in_s": 361,
+      "donor_duration_s": 2,
+      "label": "clock-cover-neighbourhood"
+    }
+  ],
+  "repair": "Pixel repairs use held neighbouring finished picture, no new source search. One-frame endpoint pad restores the narration clock. Additional chapter-card covers plus widened cover boundaries, finishing the fade-in before the first unwanted frame and starting fade-out after its last frame. Master 248.38-250.88 maps to chapter 242.93-245.43 after the removed subscribe sentence. Own neighbouring master pictures; no narration changes or gate override.",
+  "quiet_title_verified": true,
+  "title_follow_up": "Encoded frame at 3 seconds visually inspected: restored III \u00b7 The Lengthening Day at lower left; entry sheet 55\u201368 seconds inspected, no dark diagram remains in the repair.",
+  "entry_repair": {
+    "chapter_in_s": 57,
+    "chapter_out_s": 66,
+    "master_donor_in_s": 54,
+    "donor_duration_s": 3,
+    "reason": "Three remaining near-black edit-neighbourhood samples; neighbouring daylight ISS master stretch, inspected at one-second intervals before use."
+  }
+}
