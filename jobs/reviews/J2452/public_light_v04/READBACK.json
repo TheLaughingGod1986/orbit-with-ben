@@ -1,0 +1,432 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/024_light_undarkened_v03.mp4",
+  "sha256": "da7b60d5e44d95a578ccdccee58fa3587bc66125f6f3cdf796ce1a6fd01f4648",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 41700000,
+        "duration": "463.333333",
+        "bit_rate": "3557525",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "13900",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 22239984,
+        "duration": "463.333000",
+        "bit_rate": "190519",
+        "nb_frames": "21720",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/024_light_undarkened_v03.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "463.333333",
+      "size": "217584029",
+      "bit_rate": "3756846",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 13900,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-54",
+      "cut": 27,
+      "t": 55.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 25.63, p95 77.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 68.3
+    },
+    {
+      "row": "pixel-56",
+      "cut": 28,
+      "t": 57.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 26.04, p95 78.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 70.3
+    },
+    {
+      "row": "pixel-66",
+      "cut": 33,
+      "t": 67.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 13.64, p95 43.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 80.3
+    },
+    {
+      "row": "pixel-68",
+      "cut": 34,
+      "t": 69.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 14.34, p95 44.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 82.3
+    },
+    {
+      "row": "pixel-70",
+      "cut": 35,
+      "t": 71.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 14.44, p95 45.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 84.3
+    },
+    {
+      "row": "pixel-86",
+      "cut": 43,
+      "t": 87.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "split panel: horizontal seam at 0.556"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 100.3
+    },
+    {
+      "row": "pixel-162",
+      "cut": 81,
+      "t": 163.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 27.68, p95 205.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 176.29999999999998
+    },
+    {
+      "row": "pixel-222",
+      "cut": 111,
+      "t": 223.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 8.42, p95 19.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 242.64999999999998
+    },
+    {
+      "row": "pixel-224",
+      "cut": 112,
+      "t": 225.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 8.45, p95 19.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 244.64999999999998
+    },
+    {
+      "row": "pixel-318",
+      "cut": 159,
+      "t": 319.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 6.55, p95 27.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 338.65000000000003
+    },
+    {
+      "row": "pixel-320",
+      "cut": 160,
+      "t": 321.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 6.87, p95 28.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 340.65000000000003
+    },
+    {
+      "row": "pixel-396",
+      "cut": 198,
+      "t": 397.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 6.1, p95 20.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 416.65000000000003
+    },
+    {
+      "row": "pixel-398",
+      "cut": 199,
+      "t": 399.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 4.6, p95 14.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 418.65000000000003
+    },
+    {
+      "row": "pixel-406",
+      "cut": 203,
+      "t": 407.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "low detail: luma std 10.17 < 13.44 and edge density 0.0224 < 0.0259 (absolute floor)",
+        "near-black: mean 7.59, p95 21.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 426.65000000000003
+    },
+    {
+      "row": "pixel-408",
+      "cut": 204,
+      "t": 409.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "low detail: luma std 10.25 < 13.44 and edge density 0.0224 < 0.0259 (absolute floor)",
+        "near-black: mean 7.62, p95 21.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 428.65000000000003
+    },
+    {
+      "row": "pixel-412",
+      "cut": 206,
+      "t": 413.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 11.72, p95 52.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 432.65000000000003
+    },
+    {
+      "row": "pixel-414",
+      "cut": 207,
+      "t": 415.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 12.39, p95 54.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 434.65000000000003
+    },
+    {
+      "row": "pixel-438",
+      "cut": 219,
+      "t": 439.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 11.13, p95 16.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 458.65000000000003
+    },
+    {
+      "row": "pixel-440",
+      "cut": 220,
+      "t": 441.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 10.4, p95 13.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 460.65000000000003
+    },
+    {
+      "row": "pixel-442",
+      "cut": 221,
+      "t": 443.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "near-black: mean 7.95, p95 9.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 462.65000000000003
+    },
+    {
+      "row": "pixel-444",
+      "cut": 222,
+      "t": 445.0,
+      "source": "024_LightSpeed_v06.mp4",
+      "why": [
+        "low detail: luma std 10.05 < 13.44 and edge density 0.002 < 0.0259 (absolute floor)",
+        "near-black: mean 4.58, p95 6.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 464.65000000000003
+    }
+  ],
+  "levels": {
+    "input_i": "-20.73",
+    "input_tp": "-6.56",
+    "input_lra": "3.00",
+    "input_thresh": "-31.21",
+    "output_i": "-20.04",
+    "output_tp": "-6.00",
+    "output_lra": "2.90",
+    "output_thresh": "-30.51",
+    "normalization_type": "dynamic",
+    "target_offset": "0.04"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 38.0,
+      "end_s": 40.0,
+      "mean_luma": 185.3902170138889,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/brightest_01.jpg"
+    },
+    {
+      "start_s": 36.0,
+      "end_s": 38.0,
+      "mean_luma": 159.49456597222223,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/brightest_02.jpg"
+    },
+    {
+      "start_s": 88.0,
+      "end_s": 90.0,
+      "mean_luma": 151.33055555555555,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/brightest_03.jpg"
+    },
+    {
+      "start_s": 86.0,
+      "end_s": 88.0,
+      "mean_luma": 150.34381944444445,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/brightest_04.jpg"
+    },
+    {
+      "start_s": 102.0,
+      "end_s": 104.0,
+      "mean_luma": 149.3330295138889,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}
