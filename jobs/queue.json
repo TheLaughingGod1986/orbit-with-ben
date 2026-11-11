@@ -228313,7 +228313,7 @@
       "title": "HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path",
       "needs": "cloud",
       "repo": "hos",
-      "body": "**Tooling follow-up found 11 Nov 17:27Z while testing history-of-science #535.** £0, no picture run.\n\nhistory-of-science #533 changed `parts/part-04_plates_v05.json` (two rows are now a drawn graphic). The 009 picture tool (`07_Edit-Project/_mint_flow_v05_tranche2.py`) pins its boards by hash, so it now refuses that board, and 77 tests in its test files fail on main (`python3 -m unittest discover -s tests -p \"test_*.py\"`: 278 tests, 10 failures, 73 errors, six of them the usual cloud-only ones). Nothing can spend, no 009 picture run is left to make, and film 010's tool is separate and passes.\n\nWait until J2632 is KEEP: it changes the part-03 board too, and J2635 touches part-04 once more. Then, in one reviewed change:\n1. Re-pin `TRANCHE2_SCOPE_J2026.json` to the final part-03 and part-04 boards.\n2. Retire the c2 path that was never used: `--retakes-j2630`, `TRANCHE2_RETAKES_J2630.json`, `tests/test_hos009_c2_path.py`. Grok ruled it closed once the graphic was KEEP (desk 6800446389 point 3).\n3. Keep the J2583 and J2626 retake records as history: their takes are made and their evidence is merged. Their tests must pass against the pinned hashes they recorded, not against the live boards.\n4. The whole suite back to its six cloud-only errors. Say in the pull request whether history-of-science's own checks should run these tests, so a board change cannot turn main red unseen again.",
+      "body": "**Plan approved by Grok (desk 6802691009, 11 Nov 17:28Z), with one addition:** in the same pull request, propose a small step in history-of-science's own checks that runs `tests/` and skips the cloud-only ones, so a board change cannot merge green again. Until this job is done, nobody spends on 009 picture and nobody relies on the 009 tool's tests.\n\n**Tooling follow-up found 11 Nov 17:27Z while testing history-of-science #535.** £0, no picture run.\n\nhistory-of-science #533 changed `parts/part-04_plates_v05.json` (two rows are now a drawn graphic). The 009 picture tool (`07_Edit-Project/_mint_flow_v05_tranche2.py`) pins its boards by hash, so it now refuses that board, and 77 tests in its test files fail on main (`python3 -m unittest discover -s tests -p \"test_*.py\"`: 278 tests, 10 failures, 73 errors, six of them the usual cloud-only ones). Nothing can spend, no 009 picture run is left to make, and film 010's tool is separate and passes.\n\nWait until J2632 is KEEP: it changes the part-03 board too, and J2635 touches part-04 once more. Then, in one reviewed change:\n1. Re-pin `TRANCHE2_SCOPE_J2026.json` to the final part-03 and part-04 boards.\n2. Retire the c2 path that was never used: `--retakes-j2630`, `TRANCHE2_RETAKES_J2630.json`, `tests/test_hos009_c2_path.py`. Grok ruled it closed once the graphic was KEEP (desk 6800446389 point 3).\n3. Keep the J2583 and J2626 retake records as history: their takes are made and their evidence is merged. Their tests must pass against the pinned hashes they recorded, not against the live boards.\n4. The whole suite back to its six cloud-only errors. Say in the pull request whether history-of-science's own checks should run these tests, so a board change cannot turn main red unseen again.",
       "ref": "",
       "film": "009",
       "stage": "picture",
@@ -228331,6 +228331,11 @@
           "at": "2026-11-11T17:27Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T17:33Z",
+          "by": "claude",
+          "what": "queue side of Grok's approval 6802691009: the pull request also proposes a CI step that runs tests/ without the cloud-only ones."
         }
       ],
       "remaining_action": "One history-of-science pull request for Grok once both graphics are KEEP and the boards have stopped changing",
