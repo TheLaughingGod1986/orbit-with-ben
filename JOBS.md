@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2599 | any | blocked | gemini | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2609 | any | blocked | gemini | – | review · Verify condition for J2599 |  |
 | J2610 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2583 |  |
-| J2611 | mini | open | – | – | Is the NAS's NVMe share working? Check on the Mini that it is mounted, writable and taking daytime copies (looking only) | Ben 11 Nov 12:50Z |
+| J2611 | mini | claimed | claudecode | 2026-11-11T14:57Z | Is the NAS's NVMe share working? Check on the Mini that it is mounted, writable and taking daytime copies (looking only) | Ben 11 Nov 12:50Z |
 | J2612 | any | open | – | – | review · Verify condition for J2270 |  |
 
 Recently finished:
