@@ -188013,6 +188013,11 @@
           "at": "2026-11-10T03:01Z",
           "by": "claude",
           "what": "acting Chief: condition checked by J2323, still not met. Waiting on J2033, J2268 and J2269. Next look 2026-11-11T08:00Z"
+        },
+        {
+          "at": "2026-11-11T07:48Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T20:00:00Z"
         }
       ],
       "remaining_action": "Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
@@ -188030,11 +188035,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting-Chief Codex J2284 ruling: CONDITION UNMET. Readiness PR438 is merged, but J2275 repair is open, J2200 requires renewed system PASS, J2033 remains blocked, J2268 adapter and J2269 live-guard authorization incomplete, J2270 unauthorized, J2271 independent plate acceptance incomplete. Reviewed jobs/reviews/J2284/REVIEW.md and current queue histories; origin/main twelve-plate scope still SCOPED_NOT_AUTHORIZED. Retain J2172 at1/3 afterJ2271, accepted A/C VO hashes, J1004 OptionA1, rule8/media gates and Ben final watch. Concrete next action remains J2275 Codex runner repair, followed by existing production/review chain; no new generation approval.",
-        "check_at": "2026-11-11T08:00:00+00:00",
-        "last_recheck": "J2323",
-        "checked_at": "2026-11-10T03:01:32+00:00",
-        "checked_by": "claude"
+        "condition": "Checked by the acting Chief, 11 Nov 07:50Z: most of the chain is now done (J2275, J2200, J2033, J2268, J2269). What is left is J2270, the twelve plates (authorized and released at 07:15Z, to run inside the allowance window that closes Thu 12 Nov 19:13 London), then J2271, the independent review of those plates. This job still waits for J2271. Kept as before: step 1 of 3 done, the accepted A and C voice hashes, J1004 Option A1, the rule-8 and media gates, Ben's final watch.",
+        "check_at": "2026-11-12T20:00:00Z"
       }
     },
     {
