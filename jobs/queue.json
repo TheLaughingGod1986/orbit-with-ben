@@ -219958,13 +219958,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T01:27Z",
-      "eta": "2026-11-11T03:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T01:28Z",
-      "result": "",
+      "result": "parked for Chief: J2033 condition NOT satisfied, keep it blocked. Verified from jobs/queue.json: predecessor J2536 is done (claude, 10 Nov 23:29Z), but J2033 was parked by codex at 11 Nov 01:28Z and no Chief ruling follows it: P04:08_halley_visit_c1 take 1 is still SUBMITTING after batch 4 exit 1, Flow shows a prominent-people failure with refund pending, balance 13490 (ledger: 14 generated, 0 KEEP, 1400 credits + the 100-credit Halley intent), strict live reader refused. Not verified here: the live Flow balance/refund (Mini browser) and HOS commit a361d267. The MacBook cannot set the hold (jobs.py wait refused: only the holder or Chief). Chief to run: jobs.py wait J2033 --agent <chief> --condition 'Chief ruling needed: reconcile the Halley take 1 100-credit charge/refund against a fresh live Flow balance, then rule on the Halley row and the remaining 6 rows before any new take' --check-at '2026-11-11T03:30:00Z' --type input --recheck J2552. J2033 deadline 11 Nov 12:00Z; Flow credits reset 12 Nov 19:13.",
       "history": [
         {
           "at": "2026-11-11T01:28Z",
@@ -219975,6 +219975,11 @@
           "at": "2026-11-11T01:27Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T01:29Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2033 condition NOT satisfied, keep it blocked. Verified from jobs/queue.json: predecessor J2536 is done (claude, 10 Nov 23:29Z), but J2033 was parked by codex at 11 Nov 01:28Z and no Chief ruling follows it: P04:08_halley_visit_c1 take 1 is still SUBMITTING after batch 4 exit 1, Flow shows a prominent-people failure with refund pending, balance 13490 (ledger: 14 generated, 0 KEEP, 1400 credits + the 100-credit Halley intent), strict live reader refused. Not verified here: the live Flow balance/refund (Mini browser) and HOS commit a361d267. The MacBook cannot set the hold (jobs.py wait refused: only the holder or Chief). Chief to run: jobs.py wait J2033 --agent <chief> --condition 'Chief ruling needed: reconcile the Halley take 1 100-credit charge/refund against a fresh live Flow balance, then rule on the Halley row and the remaining 6 rows before any new take' --check-at '2026-11-11T03:30:00Z' --type input --recheck J2552. J2033 deadline 11 Nov 12:00Z; Flow credits reset 12 Nov 19:13."
         }
       ],
       "remaining_action": "Verify readiness: Resolve the failed Halley take and reconcile its refund before generating more scenes",
