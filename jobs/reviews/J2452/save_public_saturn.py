@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Save a verified chapter additively to its own working-film folder."""
+import argparse
 import hashlib
 import json
 import shutil
@@ -13,10 +14,19 @@ def sha(p):
     with p.open('rb') as f: return hashlib.file_digest(f,'sha256').hexdigest()
 
 def main():
+    global SRC, DEST
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', type=Path, default=SRC)
+    parser.add_argument('--destination', type=Path, default=DEST)
+    args = parser.parse_args()
+    SRC, DEST = args.source, args.destination
+    allowed = Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/j2452/public_chapters_v01')
+    assert DEST.parent.resolve() == allowed.resolve(), 'Save only inside this film chapter folder'
     read=json.loads((SRC/'READBACK.json').read_text())
     build=json.loads((SRC/'BUILD.json').read_text())
     assert read['gate_exit_codes'] in ([0,0],[1,0]), read['gate_exit_codes']
     assert all(x['classification']=='in the public film' for x in read['inherited_findings'])
+    assert float(read['levels']['input_tp']) <= -6, 'Encoded narration exceeds peak ceiling'
     assert read['full_decode_exit']==0 and read['decoded_frames']==build['expected_frames']
     assert sha(Path(read['output']))==read['sha256']==build['sha256']
     assert Path('/Volumes/data').is_mount(), 'NAS not mounted'
