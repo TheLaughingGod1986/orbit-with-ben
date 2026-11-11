@@ -1,5 +1,5 @@
 {
-  "next_id": 2647,
+  "next_id": 2649,
   "jobs": [
     {
       "id": "J0001",
@@ -213300,6 +213300,11 @@
           "at": "2026-11-10T19:53Z",
           "by": "claude",
           "what": "still waiting: Andromeda test ends Wed 11 Nov 20:37Z; look again 21:00Z on the Mini (J2535)"
+        },
+        {
+          "at": "2026-11-11T21:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J2647"
         }
       ],
       "remaining_action": "Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxdmaOwJI T002 running",
@@ -213314,8 +213319,8 @@
       "hold": {
         "type": "test",
         "condition": "Andromeda ojk-dfOpAmw thumbnail test T017 has ended in Studio (about Wed 11 Nov 20:37Z); Jupiter -jmMROGoZCM T003 ended about Tue 10 Nov 19:03Z. Read both in Orbit Studio on the Mini, then start the two title-and-thumbnail tests.",
-        "check_at": "2026-11-11T21:00:00Z",
-        "recheck_task": "J2535"
+        "check_at": "2026-11-11T22:08:05+00:00",
+        "recheck_task": "J2647"
       },
       "mini_only": true
     },
@@ -214552,6 +214557,11 @@
           "at": "2026-11-11T21:02Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: the MacBook run on codex ended (exit 0) with its work pushed and the job still open. Branch macbook/J2452 in orbit-with-ben is 105 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/789. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-11T21:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J2648"
         }
       ],
       "remaining_action": "Proxima chapter verified locally; completing or checkpointing its NAS copy before Andromeda and final compilation checks",
@@ -214564,6 +214574,12 @@
         "of": 15,
         "at": "2026-11-11T20:46Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T22:08:05+00:00",
+        "recheck_task": "J2648"
       }
     },
     {
@@ -229809,6 +229825,68 @@
       "taskKeys": [
         "OWB:013"
       ]
+    },
+    {
+      "id": "J2647",
+      "title": "Verify condition for J2449",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2449: Andromeda ojk-dfOpAmw thumbnail test T017 has ended in Studio (about Wed 11 Nov 20:37Z); Jupiter -jmMROGoZCM T003 ended about Tue 10 Nov 19:03Z. Read both in Orbit Studio on the Mini, then start the two title-and-thumbnail tests.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2449 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T21:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T21:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxd",
+      "kind": "review",
+      "recheck_of": "J2449",
+      "due": "2026-11-11T22:08:05+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2648",
+      "title": "Verify condition for J2452",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2452: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2452 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T21:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T21:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Proxima chapter verified locally; completing or checkpointing its NAS copy before Andromeda and final compilation checks",
+      "kind": "review",
+      "recheck_of": "J2452",
+      "due": "2026-11-11T22:08:05+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
