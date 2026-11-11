@@ -229408,20 +229408,25 @@
           "at": "2026-11-11T20:19Z",
           "by": "codex",
           "what": "step 1 of 3 done: Launcher now carries the floor to its submit child; offline regression tests added"
+        },
+        {
+          "at": "2026-11-11T20:20Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 37 runner tests pass; check_all.sh ALL CHECKS PASS; added lines checked for private data"
         }
       ],
-      "remaining_action": "Verify the launcher floor and prepare the review pull request",
+      "remaining_action": "Submit the verified credit-floor fix for Chief review",
       "due": "2026-11-12T06:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Make the picture tool keep its 3,000-credit reserve when it is launched in the background",
       "urgent": 10,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T20:19Z",
+        "at": "2026-11-11T20:20Z",
         "by": "codex",
-        "note": "Launcher now carries the floor to its submit child; offline regression tests added"
+        "note": "37 runner tests pass; check_all.sh ALL CHECKS PASS; added lines checked for private data"
       },
       "taskKeys": [
         "HOS:013"
