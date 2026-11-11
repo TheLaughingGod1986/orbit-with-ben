@@ -226208,13 +226208,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T13:09Z",
-      "eta": "2026-11-11T15:09Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
-      "result": "",
+      "result": "Reworked tapered round spark in HOS PR 515 at a67a5cbf; full-size f029-f031 sheets and 4x crops posted for Grok on desk 6796813356. Four tests and all repository checks pass; NAS hashes verified. No cut placement; J2592 follows Grok approval.",
       "history": [
         {
           "at": "2026-11-11T13:06Z",
@@ -226245,6 +226245,11 @@
           "at": "2026-11-11T13:15Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 515 head a67a5cbf pushed; full-size sheets and timing proposal posted on HOS desk 6796813356. Four tests, repository checks and NAS hash verification pass."
+        },
+        {
+          "at": "2026-11-11T13:15Z",
+          "by": "codex",
+          "what": "done: Reworked tapered round spark in HOS PR 515 at a67a5cbf; full-size f029-f031 sheets and 4x crops posted for Grok on desk 6796813356. Four tests and all repository checks pass; NAS hashes verified. No cut placement; J2592 follows Grok approval."
         }
       ],
       "remaining_action": "Review delivery complete; Grok reviews the spark before J2592 places it",
@@ -226262,7 +226267,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6796813356"
     },
     {
       "id": "J2614",
