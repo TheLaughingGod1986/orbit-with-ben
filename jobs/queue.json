@@ -230867,13 +230867,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T23:34Z",
-      "eta": "2026-11-12T00:19Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:57Z",
-      "result": "",
+      "result": "Found hos_011_vo_v01.wav on the Mini (_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ and /Volumes/MiniWork/desk/worktrees/J2245-011-vo/) matching SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2; copied clean 011 project folder and VO stems into /Volumes/data/studio-live/History Of Science/02_Video-Projects/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and re-verified SHA-256 on studio-live (532.720 s, 102,282,318 bytes). Copy only, nothing deleted or moved, GBP 0. Unblocks J2655.",
       "history": [
         {
           "at": "2026-11-11T22:57Z",
@@ -230909,6 +230909,11 @@
           "at": "2026-11-11T23:43Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted studio-live path, verified SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2, and full search log on HOS desk #180 (#issuecomment-6809930596)"
+        },
+        {
+          "at": "2026-11-11T23:43Z",
+          "by": "gemini",
+          "what": "done: Found hos_011_vo_v01.wav on the Mini (_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ and /Volumes/MiniWork/desk/worktrees/J2245-011-vo/) matching SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2; copied clean 011 project folder and VO stems into /Volumes/data/studio-live/History Of Science/02_Video-Projects/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and re-verified SHA-256 on studio-live (532.720 s, 102,282,318 bytes). Copy only, nothing deleted or moved, GBP 0. Unblocks J2655."
         }
       ],
       "remaining_action": "Close J2653",
@@ -230925,7 +230930,8 @@
       },
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6809930596"
     },
     {
       "id": "J2654",
