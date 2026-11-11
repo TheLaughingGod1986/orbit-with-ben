@@ -223771,13 +223771,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T09:46Z",
-      "eta": "2026-11-11T11:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
-      "result": "",
+      "result": "parked for Chief: HOS PR #511 (desk #6792953590) records 16 KEEP (including P02:11_explorer_apple_c1 continuous 9-frame camera push-in 3.00-5.00s) and P02:08_the_apple_c1 FIX retake (apple rises 1.50-2.50s / f036-f060, already in J2583), plus 2 newly surfaced upward-motion FIX rows per item 5: P04:05_minute_second_c1 (sha 4d69871bc14e, apple rises up ruler 3x at t=1.00-1.50s / f024-f036, t=3.00-3.50s / f072-f084, t=5.00-5.50s / f120-f132) and P04:05_minute_second_c2 (sha c2f862ad7f39, apple rises up ruler t=2.00-3.50s / f048-f084; Moon slides upward t=0.50-2.00s / f012-f048)",
       "history": [
         {
           "at": "2026-11-11T09:33Z",
@@ -223823,6 +223823,11 @@
           "at": "2026-11-11T10:06Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 complete: opened HOS PR #511 (93d08418) with all 20 sheets and JSON/MD verdicts, passed check_all.sh 009 and 185 unit tests, posted HOS desk #6792953590"
+        },
+        {
+          "at": "2026-11-11T10:06Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS PR #511 (desk #6792953590) records 16 KEEP (including P02:11_explorer_apple_c1 continuous 9-frame camera push-in 3.00-5.00s) and P02:08_the_apple_c1 FIX retake (apple rises 1.50-2.50s / f036-f060, already in J2583), plus 2 newly surfaced upward-motion FIX rows per item 5: P04:05_minute_second_c1 (sha 4d69871bc14e, apple rises up ruler 3x at t=1.00-1.50s / f024-f036, t=3.00-3.50s / f072-f084, t=5.00-5.50s / f120-f132) and P04:05_minute_second_c2 (sha c2f862ad7f39, apple rises up ruler t=2.00-3.50s / f048-f084; Moon slides upward t=0.50-2.00s / f012-f048)"
         }
       ],
       "remaining_action": "Parked for Chief on newly surfaced FIX rows P04:05_minute_second_c1 and P04:05_minute_second_c2 (HOS PR #511)",
