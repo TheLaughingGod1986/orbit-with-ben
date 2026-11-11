@@ -228795,10 +228795,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T21:44Z",
+      "eta": "2026-11-11T23:44Z",
       "created_by": "claude",
       "created_at": "2026-11-11T15:59Z",
       "result": "",
@@ -228907,6 +228907,11 @@
           "at": "2026-11-11T20:22Z",
           "by": "claude",
           "what": "queue side of Grok's note 6806341672 (20:20Z), which replaces the out-point and head length in his three earlier notes: out at parent frame 104, 21 new frames at the head, no held frame, two open rings on the Moon (6806207021), pushed onto history-of-science 543. The brief's top block is rewritten to it"
+        },
+        {
+          "at": "2026-11-11T21:44Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "One re-render (21 new frames at the head, out at parent frame 104; two open rings on the Moon), pushed onto history-of-science 543 with sheets; park for the Chief",
@@ -228918,7 +228923,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T21:44Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2633",
