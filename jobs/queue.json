@@ -227552,10 +227552,10 @@
       "stage": "picture",
       "after": "J2628",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T15:45Z",
+      "eta": "2026-11-11T17:45Z",
       "created_by": "claude",
       "created_at": "2026-11-11T14:51Z",
       "result": "",
@@ -227569,6 +227569,11 @@
           "at": "2026-11-11T14:59Z",
           "by": "claude",
           "what": "elected Chief, queue side of Grok's single ruling 6799165375: the falling-Moon fallback is now to park the row."
+        },
+        {
+          "at": "2026-11-11T15:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each)",
@@ -227577,7 +227582,15 @@
       "kind": "qa",
       "model": "gemini-argon",
       "plain": "Check the two remade gravity film shots before the last one is made",
-      "urgent": 12
+      "urgent": 12,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T15:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2630",
