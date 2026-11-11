@@ -82,12 +82,16 @@ def settings_problems(c) -> list[str]:
     uat = c.get("uat_dir")
     need(isinstance(uat, dict) and _text(uat.get("icloud")), "uat_dir: needs `icloud`, the watch folder's name")
     need(c.get("picture_route") in PICTURE_ROUTES, f"picture_route: {' or '.join(PICTURE_ROUTES)}")
-    # Two optional settings. Left out, the channel has no YouTube Studio browser yet and its NAS folder is its slug.
+    # Three optional settings. Left out, the channel has no YouTube Studio browser yet, its NAS folder is its slug
+    # and the board holds no places for Shorts that are not made yet.
     port = (c.get("youtube") or {}).get("studio_port") if isinstance(c.get("youtube"), dict) else None
     need(port in (None, "") or (isinstance(port, str) and port.isdigit()),
          "youtube.studio_port: the browser port of its YouTube Studio, as digits in a string, e.g. \"9224\"")
     need("nas_folder" not in c or (_text(c["nas_folder"]) and "/" not in c["nas_folder"]),
          "nas_folder: its folder name under studio-live on the NAS (one name, no slashes)")
+    planned = (c.get("shorts") or {}).get("planned_per_long") if isinstance(c.get("shorts", {}), dict) else "bad"
+    need(planned is None or (isinstance(planned, int) and not isinstance(planned, bool) and planned >= 0),
+         "shorts.planned_per_long: how many Shorts each long video gets a place for on the board (a whole number, 0 or more)")
     return out
 
 

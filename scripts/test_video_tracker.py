@@ -5,6 +5,7 @@ from __future__ import annotations
 import io
 import json
 import sys
+import tempfile
 import unittest
 import urllib.request
 from datetime import datetime, timezone
@@ -188,6 +189,75 @@ class RealYouTubeState(unittest.TestCase):
         shorts = [v for v in by.values() if v["shortId"] == "LCZRHUyTiq0"]
         self.assertEqual(len(shorts), 1)
         self.assertEqual(shorts[0]["title"], "What Are Cathode Rays?")
+
+    # --- A Short that belongs to no film (J2515, 10 Nov 2026: the Titan Short that aired that day had no card) ---
+    LONE = {"videoId": "LoneShort01", "kind": "short", "film": "", "channel": "OWB", "long": "",
+            "file": "00_Brand/x/06_Final-Exports/owb_sa_s6_titan_v11.mp4", "packageDir": "00_Brand/x/owb_sa_s6_titan",
+            "privacyStatus": "private", "publishAt": "2026-11-10T11:30:00Z",
+            "title": "What Would Standing on Saturn's Moon Titan Feel Like?", "supersededBy": ""}
+
+    def lone(self, **kw):
+        key = vt.lone_short_key("OWB", "LoneShort01")
+        out = self.build(uploads={key: [dict(self.LONE)]}, **kw)
+        return key, [v for v in out.values() if (v.get("youtube") or {}).get("videoId") == "LoneShort01"
+                     or v.get("shortId") == "LoneShort01"]
+
+    def test_a_short_with_no_film_gets_exactly_one_card_before_it_airs(self):
+        key, cards = self.lone()
+        self.assertEqual(len(cards), 1)
+        card = cards[0]
+        self.assertEqual((card["key"], card["type"], card["channel"], card["number"]), (key, "short", "OWB", ""))
+        self.assertEqual(card["title"], "What Would Standing on Saturn's Moon Titan Feel Like?")
+        self.assertEqual((card["youtube"]["state"], card["youtube"]["privacy"]), ("scheduled", "private"))
+        self.assertEqual(card["shortId"], "LoneShort01")
+        self.assertFalse(card.get("parent"))
+
+    def test_it_keeps_that_one_card_and_its_key_once_it_is_public(self):
+        public = dict(self.PUBLIC, LoneShort01={"channel": "OWB", "title": "The Title On YouTube", "format": "short",
+                                                "publishedAt": "2026-11-10T11:30:00Z"})
+        key, cards = self.lone(public=public)
+        self.assertEqual([c["key"] for c in cards], [key])       # not a second card from the public read
+        self.assertEqual((cards[0]["youtube"]["state"], cards[0]["title"], cards[0]["lane"]),
+                         ("live", "The Title On YouTube", "done"))
+
+    def test_the_copy_a_swap_replaced_gets_no_card(self):
+        key = vt.lone_short_key("OWB", "LoneShort01")
+        old = dict(self.LONE, videoId="OldCopy0001", publishAt="", supersededBy="LoneShort01")
+        out = self.build(uploads={key: [dict(self.LONE)], vt.lone_short_key("OWB", "OldCopy0001"): [old]})
+        ids = [(v.get("youtube") or {}).get("videoId") for v in out.values()]
+        self.assertIn("LoneShort01", ids)
+        self.assertNotIn("OldCopy0001", ids)
+
+    def test_a_job_that_names_its_video_id_is_on_its_card(self):
+        job = {"id": "J9001", "status": "open", "needs": "mini", "title": "Swap the Titan Short LoneShort01 to v12"}
+        key, cards = self.lone(jobs=[job])
+        self.assertEqual(len(cards), 1)
+        self.assertIn("J9001", json.dumps(cards[0]))
+
+    def test_a_short_that_belongs_to_a_long_is_unchanged(self):
+        upload = {"videoId": "FilmShort001", "kind": "short", "film": "022", "channel": "OWB",
+                  "file": "x/10_Shorts/sun/022_short.mp4", "privacyStatus": "private",
+                  "publishAt": "2026-11-30T11:30:00Z", "supersededBy": ""}
+        out = self.build(uploads={"OWB:022:S:FilmShort001": [upload], vt.lone_short_key("OWB", "LoneShort01"): [dict(self.LONE)]})
+        card = out["OWB:022:S:FilmShort001"]
+        self.assertEqual((card["type"], card["parent"], card["number"]), ("short", "OWB:022", "022"))
+
+    def test_the_register_gives_a_filmless_short_a_row_and_a_filmless_long_none(self):
+        with tempfile.TemporaryDirectory() as t:
+            reg = Path(t) / "00_Brand" / "Channel-Setup" / "social"
+            reg.mkdir(parents=True)
+            (reg / "UPLOADS.json").write_text(json.dumps({"videos": {
+                "LoneShort01": {"kind": "short", "standalone": True, "title": "Titan", "privacyStatus": "private",
+                                "publishAt": "2026-11-10T11:30:00Z", "packageDir": "00_Brand/x/owb_sa_s6_titan"},
+                "LoneLong001": {"kind": "long", "packageDir": "00_Brand/x/owb_compilation"},
+                "RetiredSh01": {"kind": "short", "retired": True, "packageDir": "00_Brand/x/old"},
+            }}))
+            idx = vt.uploads_index(Path(t))
+        label = vt.channels.home_label()
+        self.assertEqual(list(idx), [vt.lone_short_key(label, "LoneShort01")])
+        row = idx[vt.lone_short_key(label, "LoneShort01")][0]
+        self.assertEqual((row["film"], row["channel"], row["title"], row["publishAt"]),
+                         ("", label, "Titan", "2026-11-10T11:30:00Z"))
 
     def test_ready_needs_a_playable_cut(self):
         by = self.build(

@@ -1,16 +1,12 @@
 {
   "about": "Out-of-credit flags (Ben, 14 Oct 2026: 'add a flag onto the system to run out of credits and switch it then to Codex or to Cursor or to Gemini'). Keys are a model id from scripts/routing.py MODELS (one lane) or an agent id (all its lanes). scripts/chief_relay.py skips flagged lanes until out_until (UTC), so each job goes to the next worker and model in its chain that has credit. Claude or Chief keeps this current from the credit readings (scripts/ai_spend.py); the relay adds its own short marks when a run says it is out. Remove a flag early when the pool is topped up.",
-  "updated": "2026-11-10T03:12:00Z",
+  "updated": "2026-11-11T02:03:00Z",
   "by": "claude",
   "flags": {
     "cursor": {
       "out_until": "2026-12-09T00:00:00Z",
       "hard": true,
       "reason": "Ben, 9 Nov 2026: \"I believe cursor's out of credit, yes\" (CLI: 'You are out of credits. Upgrade your plan'); not in his plan list. Remove this flag if Cursor is topped up."
-    },
-    "codex": {
-      "out_until": "2026-11-10T23:17:00Z",
-      "reason": "Weekly limit 99% used (Codex log reading recorded 9 Nov 21:03Z); the Mini relay's run at 9 Nov 23:37Z ended 'out of usage'. Resets Tue 10 Nov 23:17Z. The flag ends by itself then."
     }
   }
 }

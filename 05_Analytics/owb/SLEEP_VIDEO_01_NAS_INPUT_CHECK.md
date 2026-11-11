@@ -1,67 +1,85 @@
-# SLEEP_VIDEO_01 — NAS Input Readability Audit (`J2452`, Chief Step 1)
+# SLEEP_VIDEO_01 — NAS Input Readability Audit & Thumbnail Gate (`J2452`)
 
 - **Job:** `J2452` (`Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch`)
-- **Agent:** `macbook`
-- **Checked At:** `2026-11-10T23:36Z`
+- **Agents:** `macbook` (`2026-11-10T23:36Z`, PR `#778`) + `macbook-2` (`2026-11-11T00:02Z` deep archive & `_desk` verification + Thumbnail Option A build)
 - **Plan Audited:** `05_Analytics/owb/SLEEP_VIDEO_01_PLAN.md` (`J2451`, primary 15-film running order)
-- **Result:** **HOLD / RELEASE FOR MINI→NAS SYNC** per acting Chief instruction `(1)` (`#6781958900`: *"first check that every source master, narration stem and cover plate the plan names can be read from the NAS; if one cannot, list which and release the job with that list"*).
+- **Status:** Waiting on `J2548` (`after: J2548`, Mini → NAS sync of `/Volumes/MiniWork/scratch/j2452/` word timings + any remaining Mini-local VO stems/plates), plus Chief note on `005`/`006` discrete narration stems below.
 
 ---
 
-## 1. Summary of Missing NAS Inputs (Must Be Copied from Mini Local SSD to `/Volumes/data/studio-live/...`)
+## 1. Deep Follow-Up Findings (`macbook-2`, `2026-11-11T00:02Z`)
 
-When `023`–`027` were synced to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/`, only scripts, JSONs, and review packs were copied; the untracked `.wav`/`.mp3` clean VO stems, music beds, and `pool_v01` / `03_Footage` plates remained on the Mac mini's local SSD (`/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/...`) or in iCloud `OWB UAT` (evicted `0` local blocks on the MacBook).
+Slot 1 (`#778`) checked `/Volumes/data/studio-live/` and `/Volumes/data/mac-mini-archive/YouTube/`, flagging 5 VO stems (`023`–`027`), 2 beds (`023`, `026`), and 7 cover-plate sets as Mini-only. Checking the dated NAS archive trees (`2026-10-24/` and `2026-11-05/`, indexed in `/Volumes/data/mac-mini-archive/MOVES_2026-10-24.log`) and MacBook `/Users/ben/_desk/` resolved nearly all of those on NAS/MacBook already — **important because the 24 Oct disk-relief job moved (`MOVE`) many `023`–`026` files off the Mini SSD into `.tar` archives on NAS**:
 
-### A. Missing Source Master (`1` of `15` muxed masters; unmuxed `v03f` components ARE on NAS)
-1. **`021` Saturn muxed master:** `saturn_first_cut_v03f.mp4`
-   - *Plan path (absent on NAS):* `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/07_Edit-Project/saturn_film/saturn_first_cut_v03f.mp4`
-   - *Note:* The unmuxed `v03f` streams **are** readable on NAS at `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/picture_all.mp4` + `vo_timeline.wav` + `mix.m4a`, and `saturn_first_cut_v03f.mp4` (`175.3 MB`) is also in `OWB UAT/saturn_first_cut_v03f/saturn_first_cut_v03f.mp4`, so copying `saturn_first_cut_v03f.mp4` to `studio-live` is optional if Chief confirms `work_first_cut_v03f/picture_all.mp4` + `vo_timeline.wav` is acceptable.
+### A. Newly Resolved on NAS / MacBook (Fallback Ready Even If Absent on Mini SSD in `J2548`)
 
-### B. Missing Clean Narration Stems (`5` of `13` discrete VO stems — Mandatory per §2 & §3.1)
-1. **`023` *What Happened to Venus?*:**
-   - *Missing from NAS:* `023_venus_vo_master.wav` / `venus_vo_v01.wav` (or `.mp3`)
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/02_Voiceover/`
-2. **`024` *What Happens If You Travel Near Light Speed?*:**
-   - *Missing from NAS:* `024_lightspeed_vo_master.wav` / `light_speed_vo_v01.wav` (or `.mp3`)
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/02_Voiceover/`
-3. **`025` *Could a Robot Survive on Mars?*:**
-   - *Missing from NAS:* `025_vo_master.wav` / `mars_robot_vo_v01.mp3` (`.wav`) — `studio-live/.../02_Voiceover/` contains only `.json`/`.txt` metadata.
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/02_Voiceover/mars_robot_vo_v01.mp3` (and `.wav` if present)
-4. **`026` *The Nearest Star Is One You Can't See*:**
-   - *Missing from NAS:* `026_vo_master.wav` / `nearest_star_vo_v01.mp3` (`.wav`) — `studio-live/.../02_Voiceover/` contains only `.json`/`.txt` metadata.
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/nearest_star_vo_v01.mp3` (and `.wav` if present)
-5. **`027` *Earth Is Losing Its Spin*:**
-   - *Missing from NAS:* `027_vo_master_v02order.wav` / `earth_spin_vo_v01.wav` — `studio-live/.../02_Voiceover/` has only the 1.0 MB `J1100_s2_open_pickup_v01.wav`, not the full narration stem.
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/02_Voiceover/`
+1. **All 5 `023`–`027` Clean Discrete Narration Stems (`13` of `13` clean-stem films now located on NAS):**
+   - `023` Venus: inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb023.tar` -> `02_Video-Projects/023_What-Happened-To-Venus/02_Voiceover/venus_vo_v01.wav` (`.mp3`, `words.json` also tracked in git `02_Video-Projects/023_What-Happened-To-Venus/02_Voiceover/words.json`).
+   - `024` Light Speed: inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb024.tar` -> `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/02_Voiceover/light_speed_vo_v01.wav` (`.mp3`, `words.json` in git).
+   - `025` Mars: inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb025.tar` -> `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/02_Voiceover/mars_robot_vo_v01.wav` (`.mp3`, `words.json` in git).
+   - `026` Nearest Star: inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb026.tar` -> `02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/nearest_star_vo_v01.wav` (`.mp3`, `words.json` in git).
+   - `027` Earth Spin: unpacked master-laid VO stem at `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-15/earth027_v_before_last/earth027_score_v01i/stem_vo_v01i.wav`, plus raw VO inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owbextra.tar` -> `02_Video-Projects/027_What-If-Earth-Stopped-Spinning/02_Voiceover/earth_spin_vo_v02order.wav` (`words_v02order.json` in git).
 
-### C. Missing House Drone Music Beds (`2` of `4` beds named in §3.2)
-1. **`026` Primary Drone Loop Source:**
-   - *Missing from NAS:* `026_How-Far-Is-The-Nearest-Star/05_Music/bed_v01.mp3` (`nearest-star_score_bed_v01_full.mp3` per `_assemble_nearest_star_rough_v06.py`)
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.mp3`
-2. **`023` Supplemental Drone Source:**
-   - *Missing from NAS:* `023_What-Happened-To-Venus/05_Music/bed_v01.mp3`
-   - *Mini local source:* `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/`
+2. **Both "Missing" House Drone Music Beds (`4` of `4` plan beds unpacked on NAS):**
+   - `026` Primary Drone Loop: `/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav` (and `.mp3`).
+   - `023` Supplemental Drone: `/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full.mp3` (and `.wav`).
 
-### D. Missing Cover / Orbit-Replacement Plates (`7` film plate sets named in §2)
-1. **Ch. 01 (`013` Moon, Beat 1 `~2:05–2:13`):** NASA `SVS 4404` lunar evolution / LRO limb drift (`013/03_Footage/` absent on NAS; Beat 2 `totality_silent.mp4` IS on NAS).
-2. **Ch. 03 (`027` Earth Spin, Row 21):** `Five_Minutes_in_Orbit.webm` (Mini local: `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/`).
-3. **Ch. 04 (`025` Mars, Rows 13–14 & Row 25):** `PIA19400` / `PIA03240` (Spirit winter panorama) and `PIA19803` (Curiosity MAHLI wheel) — `studio-live/.../025/.../nasa_pool_v01` subdirs are empty `0`-entry directories; files are on Mini local `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/07_Edit-Project/nasa_pool_v01/`.
-4. **Ch. 07 (`020` Jupiter, 4 `[ORBIT ACTS]` windows):** `PIA21974`, `PIA22946` (Juno Perijove), `PIA02863` (Cassini Jupiter cloud motion) — `020/03_Footage/` absent on NAS.
-5. **Ch. 12 (`026` Nearest Star, Rows 11 & 24):** ESO `NGC 6752` southern starfield & full-res Voyager `PIA00452` / Hubble starfield (the only `PIA00452.jpg` on NAS is `453×614`, which exceeds the `2.35×` 1080p upscale cap; full-res pool is on Mini local `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/07_Edit-Project/pool_v01/`).
-6. **Ch. 13 (`019` Andromeda, 4 Omni cuts):** `heic1502a` (Hubble PHAT Andromeda mosaic) and NASA `SVS 11640` (`019/03_Footage/` absent on NAS).
-7. **Ch. 15 (`006` Europa, Veo Orbit-in-frame replacements):** `PIA19048`, `PIA00502`, `PIA01211`, `PIA16826`, and NASA `SVS 14556` (`006/03_Footage/` absent on NAS; also `heic1608a` for `005` if not using `005`'s internal clean slices `172.2–179.9 s` and `275.2–283.0 s`).
+3. **6 of 7 Cover-Plate Sets Resolved (`<= 1.69×` upscale on `1920×1080`):**
+   - Ch. 01 (`013` Moon, Beat 1): `/Users/ben/_desk/j2374/plates/GSFC_20171208_Archive_e000868.jpg` (`3240×3240`, `0.59×` upscale) + `/Users/ben/_desk/J2141-bodies-source-macbook-v01/as17-148-22727.jpg` (`1881×1881`).
+   - Ch. 03 (`027` Earth Spin, Row 21): unpacked on NAS at `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Five_Minutes_in_Orbit.webm`.
+   - Ch. 04 (`025` Mars, Rows 13–14 & 25): inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb025.tar` -> `.../nasa_pool_v01/mer/PIA19400.jpg` (`PIA19803` still check on Mini in `J2548`, or clean Curiosity frame from `025` non-Orbit row).
+   - Ch. 07 (`020` Jupiter, 4 `[ORBIT ACTS]` windows): `/Users/ben/_desk/j2374/plates/PIA22069.jpg` (`4800×2700`, `0.40×` upscale), `/Users/ben/_desk/j2449/plates/PIA04921.jpg` (`6200×6200`, `0.31×` upscale), and `/Users/ben/_desk/j2449/plates/PIA21775.jpg` (`1620×1440`, `1.19×` upscale).
+   - Ch. 12 (`026` Nearest Star, Rows 11 & 24): inside `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb026.tar` -> `.../pool_v01/eso1629a.tif` + `/Users/ben/_desk/j2449/plates/eso0932a.jpg` (`1280×640`, `1.69×` upscale).
+   - Ch. 13 (`019` Andromeda, 4 Omni cuts): `/Users/ben/_desk/j2449/plates/heic1914a.jpg` (`1280×1280`, `1.50×` upscale), `/Users/ben/_desk/j2449/plates/eso2208a.jpg` (`1280×1280`, `1.50×` upscale), and `/Users/ben/_desk/j2449/plates/heic1502a.jpg` (`1280×409`).
 
 ---
 
-## 2. Verified Readable NAS Paths Found (`read=True`)
+## 2. Critical Note for `J2548` & Chief Ruling Check: `005` & `006` Discrete Narration Stems vs `110–130 min` Floor
 
-Several files in `SLEEP_VIDEO_01_PLAN.md` had stale `mac-mini-archive/YouTube/...` paths because earlier disk-relief jobs moved them into `Desktop/`, `youtube-staging/`, or `mini-tmp-scratch/`. Every real NAS path below was verified readable from the MacBook (`4 KB` read check):
+1. **Master-Aligned Word Timings (`/Volumes/MiniWork/scratch/j2452/`):**
+   - `faster-whisper` is **not installed** on the MacBook (`J2141-venv` has `PIL` and `numpy` only). Syncing `/Volumes/MiniWork/scratch/j2452/` in `J2548` is essential for exact subscribe/end-CTA cut alignment on the multi-part early masters (`013`, `019`, `020`).
 
-### Source Masters (14 muxed + `021` `v03f` split + `024` `v05d`)
+2. **`005` (*Last Star*) and `006` (*Europa*) Discrete Narration Stems (`#6782089969` Strict Narration Rule):**
+   - `SLEEP_VIDEO_01_PLAN.md` §3.1 proposed extracting `005` and `006` audio from `last_star_STUDIO_OWNER.mp4` and `europa_v02_STUDIO_OWNER.mp4` via mono-sum + `afftdn`.
+   - However, Acting Chief's `23:25Z` correction (`#6782089969`) ruled:
+     > *"Narration: use each film's real locked voice files (the film's own build script names them), lined up to the master with the word timings. If a film's narration cannot be separated from its music and effects, leave that film out and say so; do not put a film in with its stings and effects."*
+   - On NAS (`mac-mini-archive` + `MOVES_2026-10-24.log` + `studio-live`) and `OWB UAT`, **`005` and `006` have NO discrete VO `.wav`/`.mp3` stems** — only muxed `STUDIO_OWNER.mp4` with baked stereo music and SFX (mono-sum + `afftdn` does not strip music/SFX). Fillers `003` (*Alien Worlds*) and `004` (*JWST*) (and `001`/`002`) also have **no** masters or VO stems on NAS.
+   - **Impact if `J2548` confirms `005`/`006` discrete stems and `003`/`004` are also absent on Mini SSD:**
+     - The **13 clean-stem films** (`013, 021, 027, 025, 023, 031, 020, 022, 028, 029, 024, 026, 019` — calm Moon first, calm Andromeda dusk last) sum to **`6,399.7 s` (`106 min 40 s`)** kept slices = **`107 min 40 s` (`107.7 min`)** total with twelve `3.5 s` breaths + `20 s` dark fade (`2.3 min` under the `110–130 min` floor).
+     - **Options for Chief when `J2548` reports back:**
+       - **(Option 1 — Zero-compromise clean stems, ready immediately):** Approve the 13-film `107.7 min` clean-stem cut (`~1h 48m`, still ~2 hours and 100% pure discrete Ben VO over the single `-39 LUFS` house drone with zero baked stings/SFX).
+       - **(Option 2 — 14 clean-stem films = `116.5 min`):** Include `032` (*What Would Happen If You Landed on Titan?*, `545 s` master + clean VO + `PIA17172` plates already on `studio-live`) once `032` is scheduled for its Nov 25 slot (well before the Dec 12 sleep-video air floor).
+
+3. **Detached Encode Constraint on MacBook:**
+   - `tmux` is not installed on the MacBook and `macbook_worker.py` caps each worker turn at `25 min` (`start_new_session=True` process-group kill on timeout) with worker prompt rule *"leave nothing running when you stop"*.
+   - To complete cleanly within `25 min` turns on MacBook once `J2548` finishes, the build script should render **idempotent per-chapter `.mp4` + `.wav` segments with `sha256` checkpoints** in `/Users/ben/_desk/scratch/J2452/chapters/` (`h264_videotoolbox` hardware encode on Apple Silicon processes `108 min` of `1080p` in `~6–9 minutes`, well inside a single `25 min` turn!).
+
+---
+
+## 3. Deliverable Already Built & Staged on NAS: Thumbnail Option A (`PASS`)
+
+Built from verified Cassini `PIA17172.jpg` (`9000×3500`, *The Day the Earth Smiled*) per `SLEEP_VIDEO_01_PLAN.md` §10 Option A and `THUMBNAIL_AND_TITLE_RULES.md` §2.B (`FALL ASLEEP` in `#F5D376` / `IN SPACE` in `#FFFFFF` in top band, whole backlit Saturn + rings uncovered below):
+
+- **NAS Thumbnail Path:** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/08_Thumbnail/sleep_video_01_thumb_option_A_v01.jpg`
+  - Size: `127,479 bytes` (`1280×720` JPEG)
+  - SHA-256: `f7e41f1d30cee60b51dbf0d5ff716d356d21fe5cb4e100d17e2b04ebd89192cd`
+- **NAS Phone Preview Sheet (`168×94` & `360×202`):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/08_Thumbnail/sleep_video_01_thumb_preview_sheet_v01.jpg`
+  - SHA-256: `2026c647de4cb5dd65be1107d15de81a6f07f0eef954dfce04b25d95ec1bd89d`
+- **Pasted `thumb_preview.py --score` Gate Output:**
+  ```text
+  /Users/ben/_desk/scratch/J2452/sleep_video_01_thumb_preview_sheet_v01.jpg
+  PASS  sleep_video_01_thumb_option_A_v01.jpg  saturation=168.6  near_black=3%
+  ```
+
+---
+
+## 4. Complete Verified Readable NAS Paths Table (`read=True`)
+
+### Source Masters (`14` muxed + `021` `v03f` split + `024` `v05d`)
 | Ch. | Film | Verified Readable NAS Path | Size |
 |---:|---|---|---:|
 | 01 | `013` Moon | `/Volumes/data/mac-mini-archive/Desktop/MOON_LEAVING_FULL_v04_WATCH_THIS.mp4` | `469.4 MB` |
-| 02 | `021` Saturn (`v03f` split) | `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/picture_all.mp4` | — |
+| 02 | `021` Saturn (`v03f` split) | `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/picture_all.mp4` + `vo_timeline.wav` | — |
 | 03 | `027` Earth Spin | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/027_EarthSpin_rough_v01m.mp4` | `529.3 MB` |
 | 04 | `025` Mars | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/09_Final-Export/025_MarsRobot_full_rough_v03f.mp4` | `310.1 MB` |
 | 05 | `023` Venus | `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/loose_renders/023_Venus_full_rough_v05e.mp4` | `327.9 MB` |
@@ -74,39 +92,27 @@ Several files in `SLEEP_VIDEO_01_PLAN.md` had stale `mac-mini-archive/YouTube/..
 | 11b | `024` Pre-Omni (`v05d`) | `/Volumes/data/mac-mini-archive/youtube-staging/024/024_LightSpeed_v05d.mp4` | `225.9 MB` |
 | 12 | `026` Nearest Star | `/Volumes/data/mac-mini-archive/youtube-staging/026/026_NearestStar_v06_cfr18.mp4` | `489.1 MB` |
 | 13 | `019` Andromeda | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/07_Edit-Project/rough/andromeda_collision_rough_v06.mp4` | `392.0 MB` |
-| 14 | `005` Last Star | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/09_Final-Export/last_star_STUDIO_OWNER.mp4` | `118.1 MB` |
-| 15 | `006` Europa | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/09_Final-Export/europa_v02_STUDIO_OWNER.mp4` | `93.3 MB` |
+| 14 | `005` Last Star *(muxed audio only on NAS)* | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/09_Final-Export/last_star_STUDIO_OWNER.mp4` | `118.1 MB` |
+| 15 | `006` Europa *(muxed audio only on NAS)* | `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/09_Final-Export/europa_v02_STUDIO_OWNER.mp4` | `93.3 MB` |
 
-### Clean VO Stems Already Readable on NAS (`8` of `13` discrete; `005` & `006` extract per §3.1)
+### Clean Discrete VO Stems Readable on NAS (`13` of `13` clean-stem films)
 - `013`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/02_Voiceover/parts/moon_leaving_part-01_vo_v01.wav` (`part-01`..`part-04`)
-- `021`: `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav` (also `02_Voiceover/parts/saturn_rings_vo_v03_tightened.wav`)
-- `031`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/02_Voiceover/magnetic_field_flip_vo_v02a.wav` (and `07_Edit-Project/full_master_v02_work/vo_laid_v02.wav`, `109.6 MB`)
-- `020`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/02_Voiceover/jupiter_vo_v01.mp3` (`9.3 MB`)
-- `022`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/02_Voiceover/parts/sun_brighter_vo_v01.wav` (`96.5 MB`)
-- `028`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/02_Voiceover/star_coming_vo_v01.wav` (`90.1 MB`, plus `J1100_s5_open_pickup_v01.wav`)
-- `029`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/02_Voiceover/betelgeuse_vo_v01.wav` (`98.9 MB`)
-- `019`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/02_Voiceover/parts/andromeda_collision_vo_v03_full.wav` (`58.3 MB`)
+- `021`: `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav`
+- `027`: `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-15/earth027_v_before_last/earth027_score_v01i/stem_vo_v01i.wav` (plus `owbextra.tar` -> `earth_spin_vo_v02order.wav`)
+- `025`: `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb025.tar` -> `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/02_Voiceover/mars_robot_vo_v01.wav`
+- `023`: `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb023.tar` -> `02_Video-Projects/023_What-Happened-To-Venus/02_Voiceover/venus_vo_v01.wav`
+- `031`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/full_master_v02_work/vo_laid_v02.wav` (and `02_Voiceover/magnetic_field_flip_vo_v02a.wav`)
+- `020`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/02_Voiceover/jupiter_vo_v01.mp3`
+- `022`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/02_Voiceover/parts/sun_brighter_vo_v01.wav`
+- `028`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/02_Voiceover/star_coming_vo_v01.wav` (plus `J1100_s5_open_pickup_v01.wav`)
+- `029`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/02_Voiceover/betelgeuse_vo_v01.wav`
+- `024`: `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb024.tar` -> `02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/02_Voiceover/light_speed_vo_v01.wav`
+- `026`: `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/owb026.tar` -> `02_Video-Projects/026_How-Far-Is-The-Nearest-Star/02_Voiceover/nearest_star_vo_v01.wav`
+- `019`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/02_Voiceover/parts/andromeda_collision_vo_v03_full.wav`
 
-### House Music Beds Already Readable on NAS
-- `013`: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part01_score_bed_v01.mp3` (`1.6 MB`)
-- `031`: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01.wav` (`100.7 MB`)
-- `028` (extra house drone): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3` (`12.0 MB`)
-- `029` (extra house drone): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/05_Music/betelgeuse_score_bed_v01.mp3` (`13.0 MB`)
-
-### Cover Plates & Thumbnail Base Already Readable on NAS (Dimensions Verified)
-- **Thumbnail Option A & `021` Act V (`PIA17172.jpg`, `9000×3500`):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/PIA17172.jpg`
-- **`013` Beat 2 eclipse (`totality_silent.mp4`):** `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/07_Edit-Project/sunday_moon_long/plates/totality_silent.mp4`
-- **`021` Row 23 (`PIA08248`, `1920×1080`):** `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/07_Edit-Project/saturn_film/work_first_cut_v03c/still_009_PIA08248.jpg`
-- **`027` Row 14 DSCOVR EPIC (`215.1 MB`):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/svs_moving_v01/originals/svs_12312_epic_earth_timelapse.mp4`
-- **`023` Row 46 (`PIA00271` `4096×4096` + `AS17-148-22727` `1881×1881`):**
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/PIA00271.jpg`
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/03_Reference-Material/harvest_J2089_v01/AS17-148-22727.jpg`
-- **`031` Rows R21 & R41:**
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/j2141_remaining_v01/plates/plate_031_r05a_basalt_outcrop_v01.mp4`
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/07_Edit-Project/svs_moving_v01/originals/hdev_earth_views_orig.mp4`
-- **`022` Rows 67 & 81 (`1920×1080`):**
-  - `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/07_Edit-Project/sun_film/work_first_cut_v01/still_007_PIA21218.jpg`
-  - `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/07_Edit-Project/sun_film/work_first_cut_v01/still_080_STS067-709-007.jpg`
-- **`028` Rows r08 & r23:**
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/nasa_pool_v01/028_harvest_v01/eso_lasilla_ntt.mp4`
-  - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/orion_over_paranal.mp4`
+### House Drone Music Beds Readable on NAS (`4` of `4` + `2` extras)
+- `026` Primary Loop: `/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav`
+- `031` Secondary Blend: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01.wav`
+- `023` Supplemental: `/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full.mp3`
+- `013` Supplemental: `/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part01_score_bed_v01.mp3`
+- `028` / `029` Extras: `studio-live/.../028.../05_Music/gliese_score_bed_v03.mp3`, `studio-live/.../029.../05_Music/betelgeuse_score_bed_v01.mp3`

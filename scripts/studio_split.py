@@ -96,6 +96,8 @@ _KEY_SHAPES = (
     ("ya" + r"29\.[A-Za-z0-9_-]{30,}", False),
 )
 KEY = re.compile("|".join(("(?<![A-Za-z0-9])" if word else "") + shape for shape, word in _KEY_SHAPES))
+_KEY_PREFIXES = ("s" + "k-", "AI" + "za", "gh" + "p_", "github" + "_pat_", "xo" + "x", "PRIVATE " + "KEY-----", "ya" + "29.")
+_BINARY_SUFFIXES = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".mp3", ".mp4", ".wav", ".mov", ".ico", ".woff", ".woff2", ".ttf")
 # A web app's public identifier is shaped like a key and is not one: it is sent to every visitor's browser.
 PUBLIC_ID_NEAR = re.compile(r"firebase:authUser:|securetoken\.googleapis\.com/v1/token\?key=")
 ENV_FILE = re.compile(r"(^|/)\.env(\.[^/]*)?$")
@@ -231,12 +233,17 @@ def key_findings(root: pathlib.Path, files: list[str]) -> list[str]:
         if ENV_FILE.search(f) and not f.endswith(ENV_EXAMPLE):
             out.append(f"{f}: a .env file that is not an example")
             continue
+        if f.lower().endswith(_BINARY_SUFFIXES):
+            continue
         path = root / f
         try:
-            if path.stat().st_size > TEXT_LIMIT:
+            sz = path.stat().st_size
+            if sz < 20 or sz > TEXT_LIMIT:
                 continue
             text = path.read_text(errors="strict")
         except (OSError, UnicodeDecodeError):
+            continue
+        if not any(p in text for p in _KEY_PREFIXES):
             continue
         hits = [m for m in KEY.finditer(text) if not PUBLIC_ID_NEAR.search(text[max(0, m.start() - 60):m.start()])]
         if hits:
@@ -247,11 +254,15 @@ def key_findings(root: pathlib.Path, files: list[str]) -> list[str]:
 def address_files(root: pathlib.Path, files: list[str]) -> list[str]:
     out = []
     for f in files:
+        if f.lower().endswith(_BINARY_SUFFIXES):
+            continue
         path = root / f
         try:
-            if path.stat().st_size > TEXT_LIMIT * 4:
+            sz = path.stat().st_size
+            if sz < 5 or sz > TEXT_LIMIT * 4:
                 continue
-            n = len(channel_check.ADDRESS.findall(path.read_text(errors="strict")))
+            text = path.read_text(errors="strict")
+            n = len(channel_check.ADDRESS.findall(text)) if "@" in text else 0
         except (OSError, UnicodeDecodeError):
             continue
         if n:
@@ -307,7 +318,13 @@ def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests:
     scratch = pathlib.Path(tempfile.mkdtemp(prefix="studio-split-")) if made else pathlib.Path(scratch)
     tests_state = "not run"
     try:
-        folders = build(scratch, root, placed, home, others)
+        # When `made and not tests` (`--no-tests` without `--keep`), the temp folder is deleted at the end of this
+        # call and only `plug_in` runs inside it, so only the registry and channel settings files need to be placed.
+        for_scratch = ({
+            STUDIO: [f for f in placed[STUDIO] if f.startswith("channels/") or f == "scripts/channels.py"],
+            home: [f for f in placed[home] if f == "studio/channel.json"],
+        } if (made and not tests) else placed)
+        folders = build(scratch, root, for_scratch, home, others)
         why, env = plug_in(scratch / STUDIO, folders)
         if why:
             groups["registry"] = [why]

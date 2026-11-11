@@ -87,6 +87,39 @@ class Gates(unittest.TestCase):
                  self.write("old/real.py", f'API_KEY = "{public}"\n')]
         self.assertEqual(split.key_findings(self.root, files), ["old/real.py: 1 key-shaped string"])
 
+    def test_every_key_shape_gets_past_the_quick_filter(self):
+        # J2538: key_findings only runs the key patterns on a file that holds one of _KEY_PREFIXES. So every shape
+        # must always carry one of them, or a key of that shape would be passed over unseen. A new shape needs a
+        # sample here, and its fixed text in _KEY_PREFIXES.
+        import re
+        fill = "A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8S9t0U1v2W3x4"
+        samples = (
+            "s" + "k-" + fill[:28],
+            "AI" + "za" + fill[:35],
+            "gh" + "p_" + fill[:36],
+            "github" + "_pat_" + fill[:40],
+            "xo" + "xb-" + fill[:24],
+            "-----BEGIN RSA PRIVATE " + "KEY-----",
+            "ya" + "29." + fill[:32],
+        )
+        self.assertEqual(len(samples), len(split._KEY_SHAPES), "a key shape has no sample in this test")
+        for n, ((shape, _word), sample) in enumerate(zip(split._KEY_SHAPES, samples)):
+            with self.subTest(shape=n):
+                self.assertTrue(re.fullmatch(shape, sample), "the sample is not of this shape")
+                # The fixed text is in the pattern itself, outside any group, class or repeat: every match has it.
+                plain = shape.replace("\\", "")
+                held = [p for p in split._KEY_PREFIXES if p in plain]
+                self.assertTrue(held, "no quick-filter string is part of this shape")
+                self.assertTrue(any(
+                    plain[:plain.index(p)].count("(") == plain[:plain.index(p)].count(")")
+                    and plain[:plain.index(p)].count("[") == plain[:plain.index(p)].count("]")
+                    and plain[plain.index(p) + len(p):][:1] not in ("?", "*", "{", "|")
+                    and "|" not in plain[:plain.index(p)]
+                    for p in held), "the quick-filter string is optional in this shape")
+                self.assertTrue(any(p in sample for p in split._KEY_PREFIXES))
+                name = self.write(f"scripts/shape_{n}.py", f'# notes\nVALUE = "{sample}"\n')
+                self.assertEqual(split.key_findings(self.root, [name]), [f"{name}: 1 key-shaped string"])
+
     def test_addresses_are_counted_by_file(self):
         who = "someone" + "@" + "gmail.com"
         files = [self.write("jobs/a.md", f"sent from {who} and again {who}\n"), self.write("jobs/b.md", "the studio account\n")]

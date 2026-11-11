@@ -18,12 +18,14 @@ class Relay(unittest.TestCase):
         self.thread = []  # fake studio thread: (created_at, body)
         cr.fetch_comments = lambda since: [{"created_at": t, "body": b} for t, b in self.thread if cr.parse(t) >= since]
         cr.STATE.mkdir()
+        cr.write_json(cr.d("caches.json"), {"at": cr.iso(T0)})
+        cr.write_json(cr.d("claude_beat.json"), {"fetched": cr.iso(T0), "beat": None})
         self.posts = self.tmp / "posts.txt"
         notify = self.tmp / "notify.sh"
         notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
-        os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
+        os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_CLAUDE_BEAT_FETCH_MIN": "999999", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
                            "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0"})  # never push a heartbeat from a test run on the Mini
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
@@ -996,6 +998,7 @@ class Relay(unittest.TestCase):
 
     def test_weekly_cache_clean_starts_in_the_background_once_a_week(self):
         import json
+        cr.d("caches.json").unlink(missing_ok=True)
         os.environ["CHIEF_OFFLOAD_ANY_OS"] = "1"
         started = []
         class P:
