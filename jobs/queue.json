@@ -196230,9 +196230,14 @@
           "at": "2026-11-11T15:08Z",
           "by": "gemini",
           "what": "step 1 of 3 done: First 3 batch-2 stills minted at 0 credits (balance 11290); Explorer ref uploaded to Flow library; relaunched J2270-batch2-run2 for remaining 2 stills and 5 video takes"
+        },
+        {
+          "at": "2026-11-11T15:09Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Batch 2 running detached in tmux J2270-batch2-run2 (PID 16600); 4 of 5 batch-2 zero-credit stills already minted and archived on NAS (P04_06_dust_veil_t1.png, P05_08_all_at_once_t1.png, P05_09_robin_t1.png, P05_10_explorer_robin_t1.png); log ~/_desk/logs/J2270-batch2-run2.log; done ~/_desk/logs/J2270-batch2-run2.done; live balance 11290 verified"
         }
       ],
-      "remaining_action": "Finish batch-2 start stills (P05_10, P05_12) and run 5-row HOS 010 batch-2 video generation detached",
+      "remaining_action": "Verify J2270-batch2-run2.done exit code and canonical ledger, then run 2-row batch 3",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196242,11 +196247,11 @@
         "HOS:010"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T15:08Z",
+        "at": "2026-11-11T15:09Z",
         "by": "gemini",
-        "note": "First 3 batch-2 stills minted at 0 credits (balance 11290); Explorer ref uploaded to Flow library; relaunched J2270-batc"
+        "note": "Batch 2 running detached in tmux J2270-batch2-run2 (PID 16600); 4 of 5 batch-2 zero-credit stills already minted and arc"
       },
       "rerouted_from": {
         "needs": "mini",
