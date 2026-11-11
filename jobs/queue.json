@@ -224544,9 +224544,14 @@
           "at": "2026-11-11T14:30Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: located all three J2583 second takes (P03:01_really_falling_c1 t2 sha cc697162, P02:08_the_apple_c1 t2 sha f95edc7d, P04:05_minute_second_c1 t2 sha 0322f98d) and their whole-clip 0.5s sheets beside START_FRAME in review_J2584_sheets/ (HOS PR #525 / commit 067cb22b)"
+        },
+        {
+          "at": "2026-11-11T14:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: inspected P03:01_really_falling_c1 t2 (Q1 YES f000-f189 Moon stays in sky; Q2 no ball/apple/second object, single golden line loops over Moon at f036-f132; Q3 Moon face has no mark until golden line crosses lower disc at f108-f189) and P02:08_the_apple_c1 t2 (Q1 YES f000-f189 first apple still; Q2 second apple drops f048-f108, 2 apples at end; Q3 NO at f108-f124 / 4.50-5.17s where second apple bounces upward into mid-air after touching grass)"
         }
       ],
-      "remaining_action": "Visually inspect P03:01_really_falling_c1 and P02:08_the_apple_c1 on whole-clip 0.5s sheets against their three yes/no questions",
+      "remaining_action": "Visually inspect P04:05_minute_second_c1 on whole-clip 0.5s sheet and record all three shots' yes/no verdicts",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
@@ -224561,11 +224566,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T14:30Z",
+        "at": "2026-11-11T14:36Z",
         "by": "gemini",
-        "note": "Step 1 complete: located all three J2583 second takes (P03:01_really_falling_c1 t2 sha cc697162, P02:08_the_apple_c1 t2 "
+        "note": "Step 2 complete: inspected P03:01_really_falling_c1 t2 (Q1 YES f000-f189 Moon stays in sky; Q2 no ball/apple/second obje"
       },
       "taskKeys": [
         "HOS:009"
