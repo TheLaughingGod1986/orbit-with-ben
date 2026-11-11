@@ -680,6 +680,15 @@ def cloud_chief(who) -> bool:
 
 # ---- the run ----
 
+def rule_names(checkouts: dict | None = None) -> dict:
+    """{"<channel>_rules": what the prompt calls that channel's rule files}, for every channel. The rule book is two
+    files since J2527: the studio's AGENTS.md, then the channel's own studio/RULES.md. A checkout that has no channel
+    file yet is told AGENTS.md alone, as before. `checkouts` is {channel: its checkout}; by default each channel's
+    own, as the channel files give it."""
+    paths = checkouts or {slug: channels.repo_path(slug, HOME) for slug in channels.slugs()}
+    return {f"{slug}_rules": channels.rules_phrase(path) for slug, path in paths.items()}
+
+
 PROMPT = """You are {name}, {role} on the Mac mini because {why}. You run unattended: do ONE job, then stop.
 Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk.py --as/--from).
 
@@ -687,16 +696,16 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    (safe: caches, clean temp worktrees; blocking files are kept in ~/_desk/rescue, local edits stashed, local commits
    pushed to a rescue branch first) and pull again. Still under 20 GB free: move render scratch to the NAS by
    AGENTS.md "Render scratch" before anything else.
-1. Orbit With Ben ({owb}): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", "Who does what",
+1. Orbit With Ben ({owb}): git pull. Read {owb_rules} (the rules, the Never list, "Stop and ask Ben", "Who does what",
    "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
-2. History of Science ({hos}): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:
+2. History of Science ({hos}): git pull. Read its {hos_rules} ("The desk"). Run its desk inbox:
      python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
 3. Follow the DISPATCH PRIORITY or CHIEF REVIEW PRIORITY below first, if supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
      python3 scripts/channel_balance.py --hos "{hos}"
    If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
    there is none, fall through to the OWB queue below.
    Queue jobs marked `hos` (repo: hos, e.g. "HOS 007 Shorts VO") are NOT HOS desk tasks: they are normal queue jobs
-   that `jobs.py next` hands out like any other. Do them in the HOS checkout, following its AGENTS.md. "HOS desk tasks"
+   that `jobs.py next` hands out like any other. Do them in the HOS checkout, following its {hos_rules}. "HOS desk tasks"
    means only desk #180 messages that are not in the queue.
    The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
@@ -1808,7 +1817,8 @@ def run_locked(at: dt.datetime) -> int:
                         "If it is no longer claimable, stop; the relay will replan from the current queue.")
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
-                               role="the elected acting Chief" if who == leader else "a specialist worker")
+                               role="the elected acting Chief" if who == leader else "a specialist worker",
+                               **rule_names())
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)

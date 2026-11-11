@@ -1135,5 +1135,49 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("codex"))
 
 
+class PromptNamesTheRuleFiles(unittest.TestCase):
+    """J2577: the relay's prompt names the studio's AGENTS.md and then the channel's own studio/RULES.md, for each
+    checkout that has one. A checkout that has not split its rules yet reads as it always did."""
+
+    FILL = dict(name="Codex", agent="codex", why="a test", owb="/o", hos="/h", authority="A", priority="P", role="a specialist worker")
+
+    def checkout(self, root, name, split):
+        path = pathlib.Path(root) / name
+        (path / "studio").mkdir(parents=True)
+        if split:
+            (path / "studio" / "RULES.md").write_text("# rules\n")
+        return path
+
+    def test_each_channel_is_told_the_files_its_checkout_has(self):
+        with tempfile.TemporaryDirectory() as d:
+            names = cr.rule_names({"owb": self.checkout(d, "o", True), "hos": self.checkout(d, "h", False)})
+            self.assertEqual(names, {"owb_rules": "AGENTS.md and then studio/RULES.md", "hos_rules": "AGENTS.md"})
+            p = cr.PROMPT.format(**self.FILL, **names)
+            self.assertIn('1. Orbit With Ben (/o): git pull. Read AGENTS.md and then studio/RULES.md (the rules, the Never list, '
+                          '"Stop and ask Ben", "Who does what",\n', p)
+            self.assertIn('2. History of Science (/h): git pull. Read its AGENTS.md ("The desk"). Run its desk inbox:\n', p)
+            self.assertIn("Do them in the HOS checkout, following its AGENTS.md.", p)
+            both = cr.rule_names({"owb": self.checkout(d, "o2", True), "hos": self.checkout(d, "h2", True)})
+            p = cr.PROMPT.format(**self.FILL, **both)
+            self.assertIn('Read its AGENTS.md and then studio/RULES.md ("The desk").', p)
+            self.assertIn("Do them in the HOS checkout, following its AGENTS.md and then studio/RULES.md.", p)
+
+    def test_with_no_channel_file_the_prompt_reads_as_it_always_did(self):
+        with tempfile.TemporaryDirectory() as d:
+            names = cr.rule_names({"owb": self.checkout(d, "o", False), "hos": self.checkout(d, "h", False)})
+        p = cr.PROMPT.format(**self.FILL, **names)
+        self.assertIn('1. Orbit With Ben (/o): git pull. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben", '
+                      '"Who does what",\n', p)
+        self.assertNotIn("studio/RULES.md", p)
+        self.assertNotIn("{owb_rules}", p)
+        self.assertNotIn("{hos_rules}", p)
+
+    def test_by_default_every_channel_in_the_channel_files_gets_a_name(self):
+        names = cr.rule_names()
+        self.assertEqual(sorted(names), sorted(f"{slug}_rules" for slug in cr.channels.slugs()))
+        self.assertTrue(all(v.startswith("AGENTS.md") for v in names.values()))
+        cr.PROMPT.format(**self.FILL, **names, sky_rules="AGENTS.md")   # a channel the prompt does not mention is no error
+
+
 if __name__ == "__main__":
     unittest.main()
