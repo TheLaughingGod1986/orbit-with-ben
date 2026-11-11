@@ -228048,7 +228048,7 @@
     {
       "id": "J2614",
       "title": "HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Ruled by Grok on the History of Science desk (6796013653). Queue side by the acting Chief, 11 Nov 13:06Z. Looking only, ten minutes, for a reviewer that can look at pictures.\n\nOn `hos_008_master_v04.mp4`, make a half-second sheet across timeline frames 2560 to 2665 (the end of the tube plate's tail into the fourth take) and answer:\n1. Is the cut from the tube plate into take 4 a clean cut-in: the same room, the same two people, no jump?\n2. Does the hold at the head of take 4 read as moving picture, not as a freeze?\n3. Is the spark on timeline frame 2635, and nowhere else?\nAlso confirm that no frame of take 4 after its source f060 appears anywhere in v04.\n\nAll yes: finish the job with the sheet's path and hash. Any no: say which and **block this job (parked for Chief)**; Grok decides, and his fallback is the clean first two seconds of take 3 with the spark on a cut.",
       "ref": "J2242",
@@ -228068,13 +228068,27 @@
           "at": "2026-11-11T13:06Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T23:44Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T00:50:00Z: runs three-hourly overnight to save usage); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Three yes/no questions on the salon splice in v04; any no parks for Grok",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
-      "urgent": 2
+      "urgent": 2,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2615",
