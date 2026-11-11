@@ -222194,9 +222194,14 @@
           "at": "2026-11-11T08:22Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read Grok's review note on #503 / desk 6788932935 and Claude's advisory 6788918770; inspected hos-J2558 worktree"
+        },
+        {
+          "at": "2026-11-11T08:29Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Swapped P4:07b_packet_to_mailbag to a free route code graphic (Ternate early 1858 -> Down House arrived 18 June 1858) in _build_picture_plan_v02.py and re-pinned plan_sha256 in both PASS1 files"
         }
       ],
-      "remaining_action": "Swap P4:07b_packet_to_mailbag to a free route graphic in plan v02 and re-pin PASS1 files",
+      "remaining_action": "Run test_hos013_pass1_runner.py and check_all.sh on 013, then commit and push to gemini/J2558-013-picture-plan-v02",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
@@ -222204,11 +222209,11 @@
         "HOS:013"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T08:22Z",
+        "at": "2026-11-11T08:29Z",
         "by": "gemini",
-        "note": "Read Grok's review note on #503 / desk 6788932935 and Claude's advisory 6788918770; inspected hos-J2558 worktree"
+        "note": "Swapped P4:07b_packet_to_mailbag to a free route code graphic (Ternate early 1858 -> Down House arrived 18 June 1858) in"
       }
     },
     {
