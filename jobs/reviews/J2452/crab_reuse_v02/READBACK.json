@@ -1,0 +1,69 @@
+{
+  "replacement_window": {
+    "frames_compared": 333,
+    "mean_error": 0.604772028973418,
+    "maximum_frame_mean_error": 1.7304224537037036,
+    "threshold": 2,
+    "dissolved_sha256": "169b1dbb584e68903c416ea633b564e0126fc839b87fb4159a1d6bbae4872ec6"
+  },
+  "status": "CLOCK_REPLACEMENT_WINDOW_AND_SPARSE_OUTSIDE_READBACK_PASS",
+  "sha256": "78dc108fc34a242733b8ba65bfe331c110ce9275c2bb3ba51d9bf1d8531bde39",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "samples": [
+    {
+      "chapter_s": 5,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.4429243827160494
+    },
+    {
+      "chapter_s": 100,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.09666409465020576
+    },
+    {
+      "chapter_s": 250,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.745977366255144
+    },
+    {
+      "chapter_s": 329,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.024747942386831277
+    },
+    {
+      "chapter_s": 340,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.21199331275720165
+    },
+    {
+      "chapter_s": 440,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.40423611111111113
+    },
+    {
+      "chapter_s": 490,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.6505735596707819
+    },
+    {
+      "chapter_s": 423.59999999999997,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 1.269565329218107
+    },
+    {
+      "chapter_s": 426.9,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 1.1468981481481482
+    },
+    {
+      "chapter_s": 429.9,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 1.2462885802469137
+    }
+  ],
+  "limitations": [
+    "All replacement-window frames compared at 320x180; outside it, seven sparse still comparisons. Not full-film or moving-picture/listening review.",
+    "Normal combined picture QA remains authoritative; no failure waived."
+  ]
+}

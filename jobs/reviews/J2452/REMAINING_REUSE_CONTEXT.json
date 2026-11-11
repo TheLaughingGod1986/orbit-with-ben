@@ -1,6 +1,6 @@
 {
   "status": "CURRENT_FAILED_WINDOWS_WITH_MASTER_ASR_CONTEXT_NOT_APPROVAL",
-  "source_report": "late_observatory_qa_framefixed_v01/picture_qa.json",
+  "source_report": "crab_reuse_qa_v02/picture_qa.json",
   "windows": [
     {
       "cut": 10,
@@ -129,24 +129,6 @@
       "current_action": "Needs actual picture/source change; do not waive or rename source"
     },
     {
-      "cut": 68,
-      "plate_id": "r35_crab",
-      "source": "crab.jpg",
-      "chapter_range_s": [
-        421.5,
-        432.5
-      ],
-      "master_range_s": [
-        442.0,
-        453.0
-      ],
-      "spoken_words": "it could be seen in daylight for more than three weeks. Today, at that spot in the sky, there is the Crab Nebula still expanding.",
-      "fail": [
-        "reuse: appears 3 times (limit 2)"
-      ],
-      "current_action": "Needs actual picture/source change; do not waive or rename source"
-    },
-    {
       "cut": 69,
       "plate_id": "r36_orion_b",
       "source": "orion_rise_vlt.mp4",
@@ -203,7 +185,7 @@
   ],
   "limitations": [
     "ASR text locates the window; not a new factual or script check.",
-    "Eleven remaining failed rows from normal combined QA after the observatory replacement.",
+    "Ten remaining failed rows from normal combined QA after the Crab replacement.",
     "Changing framing metadata without replacing the actual pixels cannot fix reuse."
   ]
 }
