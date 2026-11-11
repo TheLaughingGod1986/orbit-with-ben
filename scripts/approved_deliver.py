@@ -508,8 +508,8 @@ def load_hos_pipeline(root: Path | None = None) -> dict:
     if not isinstance(hos.get("films"), list):
         return {"films": []}
     try:
-        from kanban_snapshot import attach_hos_uploads
-        attach_hos_uploads(hos_root, hos)
+        from kanban_snapshot import attach_pipeline_uploads
+        attach_pipeline_uploads(hos_root, hos)
     except Exception:  # noqa: BLE001
         pass
     return hos

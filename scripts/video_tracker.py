@@ -1272,7 +1272,7 @@ def build_videos(
                 if f["status_files"]:
                     yield num, f["title"] or own.get(num) or "", f["air"], f["release"], rows or [], True
                 else:
-                    # The pipeline document's own upload read-back, attached by kanban_snapshot.attach_hos_uploads.
+                    # The pipeline document's own upload read-back, attached by kanban_snapshot.attach_pipeline_uploads.
                     yield num, f["title"], f["air"], None, rows or ([{"file": "", **f["upload"]}] if f["upload"] else []), False
         else:
             try:
