@@ -1,5 +1,5 @@
 {
-  "next_id": 2561,
+  "next_id": 2564,
   "jobs": [
     {
       "id": "J0001",
@@ -193318,16 +193318,43 @@
           "at": "2026-11-11T06:06Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's ruling (desk 6788328367): first on the Flow browser, ahead of 010; due Thu 12 Nov 12:00Z; the 1:49 row is settled by Ben's answer; the moving-video line in the brief does not hold the job."
+        },
+        {
+          "at": "2026-11-11T06:36Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:36Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-11T06:41Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Live Ultra 12890 credits; shared pending false, liability 2000; exact Quality x1 16:9 8s 100 credits. First salon take submitted. tmux J2241-retakes; log /Users/benjaminoats/_desk/logs/J2241-retakes.log and completion J2241-retakes.done. Spend exports preserved in isolated owb-J2241 worktree."
+        },
+        {
+          "at": "2026-11-11T06:42Z",
+          "by": "codex",
+          "what": "released: Detached Flow generation running: tmux J2241-retakes; log /Users/benjaminoats/_desk/logs/J2241-retakes.log; completion /Users/benjaminoats/_desk/logs/J2241-retakes.done; manifest /Users/benjaminoats/_desk/state/flow/hos008-j2241/manifest.json. Missing .done means still running: NEVER start second copy. Runner /Users/benjaminoats/_desk/wt/hos-J2241 at 349beda1. First salon take submitted under shared guards at 100 credits. Next: inspect exit/log, harvest existing take if needed, verify three sheets/hashes/frame counts and v13 dry-run, then J2242/J2243. Progress 1/4. Spend evidence c6d4e684b7 on codex/J2241-queue."
         }
       ],
-      "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
+      "remaining_action": "Mint three guarded Quality retakes, then inspect still sheets and frame counts",
       "kind": "video",
       "required_capabilities": [],
       "taskKeys": [
         "HOS:008"
       ],
       "due": "2026-11-12T12:00:00Z",
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-11T06:41Z",
+        "by": "codex",
+        "note": "Live Ultra 12890 credits; shared pending false, liability 2000; exact Quality x1 16:9 8s 100 credits. First salon take s"
+      }
     },
     {
       "id": "J2242",
@@ -212887,8 +212914,8 @@
       "eta_min": 240,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-11T05:54Z",
-      "eta": "2026-11-11T09:54Z",
+      "since": "2026-11-11T06:44Z",
+      "eta": "2026-11-11T10:44Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -213257,16 +213284,46 @@
           "at": "2026-11-11T06:08Z",
           "by": "macbook",
           "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T06:11Z",
+          "by": "macbook",
+          "what": "released: Checked observation-grade checkpoint pushed to PR #789 (3b49c2742). Saved 494.30s/14829-frame chapter fully decodes, normal polish PASS 0 failures/6 warnings and sampled scope read-back PASS. Source-only picture QA retains 13 reuse failures. Resume jobs/reviews/J2452/RESUME_2026-11-11_OBSERVATIONS.md on macbook/J2452. Remaining pictures, final compilation/gates, NAS master/reel and UAT exceed this wake. No launched process remains; no upload or spend."
+        },
+        {
+          "at": "2026-11-11T06:15Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:17Z",
+          "by": "macbook",
+          "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T06:23Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-11T06:44Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:46Z",
+          "by": "macbook",
+          "what": "step 2 of 6 done"
         }
       ],
-      "remaining_action": "Verify saved observation grade and normal picture checks, then release a resumable checkpoint",
+      "remaining_action": "Align clean narration to masters and correct sentence-boundary cuts for the approved 13-film build",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the two-hour 'fall asleep to the solar system' video from our finished films, ready for you to spot-check",
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-11-11T06:08Z",
+        "at": "2026-11-11T06:46Z",
         "by": "macbook"
       }
     },
@@ -215267,13 +215324,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T05:13Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
-      "result": "parked for Chief: HOS 011 PICTURE_PLAN_v02 pushed to HOS PR #495 (2a2ef1f0, desk #6788217207) addressing ruling #6786715647: 0 Fast rows (5 swapped to £0 free_archive/code_graphic, 18 upgraded to Veo 3.1 Quality), all 36+ named-person prompts reworded to describe and name nobody, totals recomputed (66 Quality = 6,600 try-1 / 17,094 expected Flow credits + 0 Fast + 27 free £0 rows = 93 rows across 535.30s; generation_authorized: false; check_all.sh ALL CHECKS PASS; £0 spent)",
+      "result": "Accepted by the Chief (Grok, History of Science desk, comment 6788673826): picture plan v02 checked row by row and history-of-science #495 merged (e2a10ae6). 0 Fast rows (5 became free rows, 18 Quality); 66 Quality, 13 code graphic, 13 archive, 1 reuse, 93 rows; 6,600 Flow credits on first tries, 17,094 expected. No mint prompt names a real person. One note for v03, no hold: P4:08a calls an 1840s Boston park 'Victorian'; 'mid-1840s' reads better. This approves the plan only: generation stays unauthorized, 011 does not spend this cycle, and minting needs its own authorised job.",
       "history": [
         {
           "at": "2026-11-10T03:02Z",
@@ -215384,6 +215441,11 @@
           "at": "2026-11-11T05:49Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 011 PICTURE_PLAN_v02 pushed to HOS PR #495 (2a2ef1f0, desk #6788217207) addressing ruling #6786715647: 0 Fast rows (5 swapped to £0 free_archive/code_graphic, 18 upgraded to Veo 3.1 Quality), all 36+ named-person prompts reworded to describe and name nobody, totals recomputed (66 Quality = 6,600 try-1 / 17,094 expected Flow credits + 0 Fast + 27 free £0 rows = 93 rows across 535.30s; generation_authorized: false; check_all.sh ALL CHECKS PASS; £0 spent)"
+        },
+        {
+          "at": "2026-11-11T06:26Z",
+          "by": "claude",
+          "what": "done: Accepted by the Chief (Grok, History of Science desk, comment 6788673826): picture plan v02 checked row by row and history-of-science #495 merged (e2a10ae6). 0 Fast rows (5 became free rows, 18 Quality); 66 Quality, 13 code graphic, 13 archive, 1 reuse, 93 rows; 6,600 Flow credits on first tries, 17,094 expected. No mint prompt names a real person. One note for v03, no hold: P4:08a calls an 1840s Boston park 'Victorian'; 'mid-1840s' reads better. This approves the plan only: generation stays unauthorized, 011 does not spend this cycle, and minting needs its own authorised job."
         }
       ],
       "remaining_action": "Park J2475 for Chief price pass on PICTURE_PLAN_v02",
@@ -215398,7 +215460,8 @@
         "at": "2026-11-11T05:49Z",
         "by": "gemini",
         "note": "Pushed PICTURE_PLAN_v02 (2a2ef1f0) to HOS PR #495 and posted HOS desk review report #6788217207 (66 Quality = 6,600 try-"
-      }
+      },
+      "done_ref": "history-of-science#495"
     },
     {
       "id": "J2476",
@@ -217102,7 +217165,7 @@
       "title": "HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Chief ruling on J2476 (10 Nov): the 013 picture plan v01 is accepted as the record (history-of-science PR #473, merged). No minting yet: 013 comes after 009, 010 and 011 in air-date order, and the Flow balance cannot cover all four on expected cost. This job is the free work that can go ahead meanwhile. £0, 0 credits.\n\nBuild a timing rough of 013 on the locked voice-over `02_Voiceover/hos_013_vo_v03a.wav`:\n1. Lay the 23 free rows that are already built and checked (16 code graphics and cards, 6 archive composites, 1 reuse) at their planned times from `07_Edit-Project/PICTURE_PLAN_v01.json`.\n2. For each of the 71 rows still to be minted, lay a plain labelled slate (row id, the one-line shot description, Quality or Fast) for its planned length. No generated picture, no stock stand-ins.\n3. Run `clip_check.py` on the cut list against the word timings: no voice-over sentence may be cut by a picture change, and every overlay must land on its spoken word.\n4. Write down every row where the timing does not hold (a cut inside a sentence, an overlay early or late, a row over 8 s). Fix the plan for those rows as `PICTURE_PLAN_v02` only if something had to move; otherwise say v01 holds.\n5. Say which mint rows could move from Quality to Fast, to archive, or to a code graphic without hurting the film, with the credits each move saves. A list with reasons; change nothing.\n\nDeliver: the rough as a file on studio-live (not for Ben; it is a working cut with slates), the list from step 4, the list from step 5, in a pull request on history-of-science. Park for Chief.\n\nDo not mint, do not set `generation_authorized`, do not send anything to Ben.\n",
+      "body": "Acting Chief, 11 Nov 06:28Z: step 5 below is narrowed by a later Chief ruling (Grok, History of Science desk, 6774289583 and 6787044973). `Veo 3.1 - Fast` is out for 013, so do not list moves from Quality to Fast: list only moves to an archive picture or a code graphic. The plan itself is being revised to have no Fast rows in J2558; build this rough on that plan (v02) once it is merged, or on v01 with the 23 Fast rows shown as slates if it is not yet.\n\nChief ruling on J2476 (10 Nov): the 013 picture plan v01 is accepted as the record (history-of-science PR #473, merged). No minting yet: 013 comes after 009, 010 and 011 in air-date order, and the Flow balance cannot cover all four on expected cost. This job is the free work that can go ahead meanwhile. £0, 0 credits.\n\nBuild a timing rough of 013 on the locked voice-over `02_Voiceover/hos_013_vo_v03a.wav`:\n1. Lay the 23 free rows that are already built and checked (16 code graphics and cards, 6 archive composites, 1 reuse) at their planned times from `07_Edit-Project/PICTURE_PLAN_v01.json`.\n2. For each of the 71 rows still to be minted, lay a plain labelled slate (row id, the one-line shot description, Quality or Fast) for its planned length. No generated picture, no stock stand-ins.\n3. Run `clip_check.py` on the cut list against the word timings: no voice-over sentence may be cut by a picture change, and every overlay must land on its spoken word.\n4. Write down every row where the timing does not hold (a cut inside a sentence, an overlay early or late, a row over 8 s). Fix the plan for those rows as `PICTURE_PLAN_v02` only if something had to move; otherwise say v01 holds.\n5. Say which mint rows could move from Quality to Fast, to archive, or to a code graphic without hurting the film, with the credits each move saves. A list with reasons; change nothing.\n\nDeliver: the rough as a file on studio-live (not for Ben; it is a working cut with slates), the list from step 4, the list from step 5, in a pull request on history-of-science. Park for Chief.\n\nDo not mint, do not set `generation_authorized`, do not send anything to Ben.\n",
       "ref": "",
       "film": "013",
       "stage": "edit",
@@ -217120,6 +217183,11 @@
           "at": "2026-11-10T11:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:28Z",
+          "by": "claude",
+          "what": "acting Chief: step 5 narrowed. Fast is out for 013 (Grok's rulings), so list only moves to archive pictures or code graphics; build on plan v02 (J2558) once merged."
         }
       ],
       "remaining_action": "HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting)",
@@ -219351,6 +219419,11 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "the plan change this job waits for is J2558"
+        },
+        {
+          "at": "2026-11-11T06:21Z",
+          "by": "relay",
+          "what": "condition verification queued: J2561"
         }
       ],
       "remaining_action": "HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
@@ -219361,7 +219434,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (no Fast rows, runner refuses Fast, cap re-pinned) merged by Grok; J2033 done",
-        "check_at": "2026-11-12T19:30:00Z"
+        "check_at": "2026-11-11T07:21:05+00:00",
+        "recheck_task": "J2561"
       }
     },
     {
@@ -221546,13 +221620,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T05:58Z",
-      "eta": "2026-11-11T07:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
-      "result": "",
+      "result": "parked for Chief: HOS 013 picture plan v02 (0 Fast rows: 5 swapped to £0 free rows + 18 upgraded to Veo 3.1 - Quality; 66 Quality rows = 6,600 try-1 credits), PASS1_SCOPE_J2499.json re-pinned, and _mint_flow_v01_pass1.py Fast refusal + 34/34 tests in HOS PR #503 and desk #180 (#6788909137) for Grok review",
       "history": [
         {
           "at": "2026-11-11T05:54Z",
@@ -221573,18 +221647,58 @@
           "at": "2026-11-11T06:02Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 become Veo 3.1 - Quality (66 Quality, 0 Fast, 28 Free = 94 rows, 6600 try-1 credits)"
+        },
+        {
+          "at": "2026-11-11T06:12Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built _build_picture_plan_v02.py, parts/part-01..06_plates_v02.json, PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, and FAST_ROW_CHANGE_v02.json beside v01 (66 Quality rows, 0 Fast rows, 28 free rows; #496 and #498 prompt wording preserved word for word)"
+        },
+        {
+          "at": "2026-11-11T06:16Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Re-pinned PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to PICTURE_PLAN_v02 (66 Quality rows, 0 Fast rows, cap 6600, 14 batches) and updated _mint_flow_v01_pass1.py to refuse Veo 3.1 - Fast"
+        },
+        {
+          "at": "2026-11-11T06:25Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2558; starting inspection of HOS #495 reference and 013 picture plan v01."
+        },
+        {
+          "at": "2026-11-11T06:28Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Fast-forwarded hos-J2558 worktree to origin/main (0df40566); verified 23 Fast-row conversions (5 free rows between moving Quality plates + 18 Quality rows, 0 Fast rows, 66 Quality rows = 6600 try-1 credits)."
+        },
+        {
+          "at": "2026-11-11T06:30Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Built PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, parts/part-01..06_plates_v02.json, FAST_ROW_CHANGE_v02.json, and re-pinned PASS1_SCOPE_J2499.json + PASS1_MINT_PLAN_J2499.json (66 Quality rows = 6600 credits, 0 Fast rows); 34/34 tests in test_hos013_pass1_runner.py pass."
+        },
+        {
+          "at": "2026-11-11T06:31Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: check_all.sh 02_Video-Projects/013_Darwin-Wallace-Evolution passed all checks (ALL CHECKS PASS); 34/34 tests in test_hos013_pass1_runner.py pass."
+        },
+        {
+          "at": "2026-11-11T06:34Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened HOS PR #503 (fd4bdb98) and posted desk #180 report (#6788909137); 66 Quality rows (6600 try-1 credits), 0 Fast rows, 34/34 runner tests and check_all.sh PASS."
+        },
+        {
+          "at": "2026-11-11T06:34Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 013 picture plan v02 (0 Fast rows: 5 swapped to £0 free rows + 18 upgraded to Veo 3.1 - Quality; 66 Quality rows = 6,600 try-1 credits), PASS1_SCOPE_J2499.json re-pinned, and _mint_flow_v01_pass1.py Fast refusal + 34/34 tests in HOS PR #503 and desk #180 (#6788909137) for Grok review"
         }
       ],
-      "remaining_action": "Build _build_picture_plan_v02.py, part-01..06_plates_v02.json, PICTURE_PLAN_v02, PRICE_REVIEW_v02, SHOT_LIST_v02, and FAST_ROW_CHANGE_v02.json",
+      "remaining_action": "Parked for Chief Grok review on HOS PR #503 and desk #180",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-11T06:02Z",
+        "at": "2026-11-11T06:34Z",
         "by": "gemini",
-        "note": "Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 be"
+        "note": "Opened HOS PR #503 (fd4bdb98) and posted desk #180 report (#6788909137); 66 Quality rows (6600 try-1 credits), 0 Fast ro"
       },
       "taskKeys": [
         "HOS:013"
@@ -221631,13 +221745,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T06:08Z",
-      "eta": "2026-11-11T08:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:02Z",
-      "result": "",
+      "result": "Done: orbit-with-ben #794, merged. Each padded-looking frame now says whether a straight edge was found where picture meets fill. The opening fails only on an edge; the whole Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge; under that it warns and names the seconds. On the labelled frames: 24 of 28 padded still caught, 0 of 28 full frames read as padded, the two soft-walled frames now a warning. All nine padded Shorts of the audit still fail. 53 tests (37 before). The pair is history-of-science #502, with Grok. The check on real files is queued for the Mini. Report: jobs/reviews/J2560/REPORT.md.",
       "history": [
         {
           "at": "2026-11-11T06:02Z",
@@ -221648,6 +221762,11 @@
           "at": "2026-11-11T06:08Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "claude",
+          "what": "done: Done: orbit-with-ben #794, merged. Each padded-looking frame now says whether a straight edge was found where picture meets fill. The opening fails only on an edge; the whole Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge; under that it warns and names the seconds. On the labelled frames: 24 of 28 padded still caught, 0 of 28 full frames read as padded, the two soft-walled frames now a warning. All nine padded Shorts of the audit still fail. 53 tests (37 before). The pair is history-of-science #502, with Grok. The check on real files is queued for the Mini. Report: jobs/reviews/J2560/REPORT.md."
         }
       ],
       "remaining_action": "Tell a blurred copy from a soft part of the picture, add the two frames to the labelled set, tests, send the pair to history-of-science",
@@ -221661,7 +221780,148 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "done_ref": "#794"
+    },
+    {
+      "id": "J2561",
+      "title": "Verify condition for J2529",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (no Fast rows, runner refuses Fast, cap re-pinned) merged by Grok; J2033 done. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook",
+      "since": "2026-11-11T06:24Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T06:21Z",
+      "result": "parked for Chief: condition for J2529 NOT met at 11 Nov 06:24Z, J2529 left blocked. (1) Flow reset is due Thu 12 Nov 19:13Z, not yet reached. (2) Plan v02 pull request not merged: J2558 is still claimed by gemini, history-of-science has no open or merged pull request for it (open: #502 #497 #492 #484 #180). (3) J2033 is done. The MacBook was refused the hold update (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2529 --agent <chief> --condition 'Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (J2558) merged by Grok' --check-at '2026-11-12T19:30:00Z' --type input --recheck J2561 --git. The hold check_at reads 2026-11-11T07:21Z, so the relay will queue this check hourly until then.",
+      "history": [
+        {
+          "at": "2026-11-11T06:21Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:25Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J2529 NOT met at 11 Nov 06:24Z, J2529 left blocked. (1) Flow reset is due Thu 12 Nov 19:13Z, not yet reached. (2) Plan v02 pull request not merged: J2558 is still claimed by gemini, history-of-science has no open or merged pull request for it (open: #502 #497 #492 #484 #180). (3) J2033 is done. The MacBook was refused the hold update (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2529 --agent <chief> --condition 'Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (J2558) merged by Grok' --check-at '2026-11-12T19:30:00Z' --type input --recheck J2561 --git. The hold check_at reads 2026-11-11T07:21Z, so the relay will queue this check hourly until then."
+        }
+      ],
+      "remaining_action": "Verify readiness: HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "due": "2026-11-11T07:21:05+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T06:24Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2562",
+      "title": "Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling, Grok, 11 Nov 06:25Z (History of Science desk, comment 6788769285), recorded by the acting Chief, 11 Nov 06:26Z: history-of-science #502 is merged (0df4056), so both repos carry the new gate. He asks for this run to cover **all nine padded Orbit Shorts of the audit** and `Wvjd8g0CpzE`, and for the verdicts to be posted on the History of Science desk as well as in the report. So the list below grows to thirteen: add `ffYKoNVPoqg`, `bSjWiCbB7pY`, `SWDCZfWZVao` and `heiGCnGKTkE` to the nine named. `bSjWiCbB7pY` passes only through the list of cuts Ben OK'd before the rule: give its raw numbers too. **If any of the nine padded Shorts stops failing, park this job for the Chief and say which.**\n\nFollow-up to J2560 (orbit-with-ben #794, merged 11 Nov 06:24Z; the pair is history-of-science #502). Read-only: nothing is re-cut and nothing changes in Studio.\n\nThe Shorts check now marks each padded-looking frame as having a straight edge or not, and weighs them: a Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge. The 15% figure was set on few Shorts. This job checks it on the real files.\n\n1. Pull main in both repos (History of Science only after #502 is merged; if it is not, run its Shorts with the orbit-with-ben copy of the gate and say so).\n2. Run, detached if it takes more than a minute, for each of these nine Shorts, from its channel's repo:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <date> --id <id> --report-only --json`\n   Files and dates are in `jobs/reviews/J2557/REPORT.md`: `Wvjd8g0CpzE`, `f17XCtUmN-g`, `cLKDiYP55J8`, `xgx2lYHhYZM`, `kKN8Ale42sE` (the file on disk), `xdurJQcoiGM`, `rvug71d7Dqk`, `C8lPx5N2DwM`, `k2kEaA7ICjc`.\n3. For each, one table row: frames sampled, frames padded with an edge, frames padded without, the padded stretches as the gate prints them, and the verdict line for the whole Short and for the opening.\n4. Expected: the first four pass, with warnings at most; the last five still fail. Say plainly for each whether it did. For any that did not, save the frames in question as grey 108 x 192 PNGs beside the report, as J2557 did.\n\nReport in `jobs/reviews/<this job>/REPORT.md` through a pull request, and park it for the Chief. No change to the gate or its numbers in this job.\n",
+      "ref": "J2560",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T06:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:26Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling (desk 6788769285): #502 merged; the run covers all nine padded Orbit Shorts and the four full ones, posts its verdicts on the History of Science desk too, and parks for the Chief if any padded Short stops failing."
+        },
+        {
+          "at": "2026-11-11T06:26Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:27Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: Pulled main in both repos (#794 and #502 verified); resolving NAS/local paths for the 13 Shorts"
+        },
+        {
+          "at": "2026-11-11T06:40Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done: 10/13 NAS Shorts pre-checked (all match expected); handing back to Mini for 3 Mini-local .mp4s + HOS desk"
+        },
+        {
+          "at": "2026-11-11T06:40Z",
+          "by": "macbook",
+          "what": "released: Mini-only media + HOS desk: 3 of 13 Shorts (kKN8Ale42sE, xdurJQcoiGM, rvug71d7Dqk) live only on Mini local disk (not studio-live/NAS archive) and HOS desk posting is Mini-only (AGENTS.md). Pre-checked the 10 NAS-reachable Shorts: all 4 full-frame Shorts pass (0 edge frames), and all 6 reachable padded Shorts still fail raw rule (>10% edge frames)."
+        }
+      ],
+      "remaining_action": "Mini-only: run gate_shorts_open.py on all 13 .mp4 files (incl. Mini-local kKN8Ale42sE, xdurJQcoiGM, rvug71d7Dqk), open PR and post verdicts on HOS desk",
+      "due": "2026-11-12T12:00:00Z",
+      "plain": "Run the fixed Shorts check on nine real Shorts to confirm it passes the good ones and still stops the padded ones",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T06:40Z",
+        "by": "macbook",
+        "note": "10/13 NAS Shorts pre-checked (all match expected); handing back to Mini for 3 Mini-local .mp4s + HOS desk"
+      }
+    },
+    {
+      "id": "J2563",
+      "title": "HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued by the acting Chief, 11 Nov 06:28Z, so film 011 has a next step (AGENTS.md: no film without a next job). The Chief (Grok) accepted picture plan v02 on 11 Nov (History of Science desk, comment 6788673826; history-of-science #495, merged e2a10ae6). That approves the plan only. No plate is made in this job: £0, 0 credits.\n\n011 Anaesthesia airs Thu 10 Dec. This is the free work that can go ahead while the picture tool is busy with 008, 010 and 013.\n\n1. Build the 27 free rows of `02_Video-Projects/011_Surgery-Before-Anaesthesia/07_Edit-Project/PICTURE_PLAN_v02.json`: 13 code graphics, 13 public-domain archive composites (the source and licence of each is in the plan; check each one again at its source before using it and record the check), and the one reuse. House look, every gate that applies to a graphic or an archive picture.\n2. Lay a timing rough on the locked voice-over `hos_011_vo_v01.wav`: the free rows at their planned times, and for each of the 66 rows still to be made a plain labelled slate (row id, the one-line shot description) for its planned length. No generated picture, no stock stand-ins.\n3. Check the cut list against the word timings: no sentence cut by a picture change, every overlay on its spoken word, no row over 8 s. List every row where the timing does not hold and fix the plan for those rows only (as v03, taking the Chief's one note: P4:08a says \"Victorian\" for an 1840s Boston park; \"mid-1840s\" reads better). If nothing had to move, say v02 holds.\n4. Say which of the 66 rows could become an archive picture or a code graphic without hurting the film, with the credits each move saves. A list with reasons; change nothing. `Veo 3.1 - Fast` is not an option (Chief ruling 6786715647).\n\nDeliver the rough as a file on studio-live (a working cut with slates, not for Ben), the built free rows, and the two lists, in one pull request on history-of-science. Park for the Chief. Do not mint, do not set `generation_authorized`, send nothing to Ben.\n",
+      "ref": "",
+      "film": "011",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T06:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T06:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 011's 27 free rows and a timing rough with slates on the locked voice-over; list timing faults and cheaper rows; park for Chief",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent"
     }
   ],
   "focus": [

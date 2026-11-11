@@ -849,34 +849,54 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-10T04:56Z",
+      "updated": "2026-11-11T06:23Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "Retakes for the salon spark at 1:49, the points desk at 3:13 and the church and ship rods at 7:58 (J2241), then the v04 re-edit.",
+      "holdup": "Retakes for the salon spark at 1:49, the points desk at 3:13 and the church and ship rods at 7:58 (J2241), first in line on the Mini now; then the v04 re-edit. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
           "who": "Chief",
-          "what": "Chief price pass for the Flow picture, after the ~12 Nov renewal",
+          "what": "price pass for the picture",
           "job": "J0863",
-          "whenText": "blocked until Flow renews, about 12 Nov"
-        },
-        {
-          "who": "Cursor",
-          "what": "picture (about 58 plates)",
-          "when": "2026-11-08",
-          "whenText": "due Sun 8 Nov"
-        },
-        {
-          "who": "Ben",
-          "what": "final OK",
-          "when": "2026-11-15"
+          "done": true,
+          "doneText": "passed"
         },
         {
           "who": "Mac mini",
-          "what": "Build Short A from accepted media; watch-ready target 20 Nov",
-          "job": "J0912",
-          "kind": "assembly"
+          "what": "retake three shots (1:49, 3:13, 7:58), at most 900 credits",
+          "job": "J2241",
+          "kind": "video",
+          "when": "2026-11-12",
+          "whenText": "first in line; before Thu 12 Nov 19:13"
+        },
+        {
+          "who": "Mac mini",
+          "what": "v04 re-edit: the new shots in, 32 caption cards",
+          "job": "J2242",
+          "kind": "assembly",
+          "afterJob": "J2241"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check v04 against your notes",
+          "job": "J2243",
+          "kind": "review",
+          "afterJob": "J2242"
+        },
+        {
+          "who": "Ben",
+          "what": "watch v04",
+          "when": "2026-11-15",
+          "whenText": "after the check; tight for Sun 15 Nov, the film airs Thu 19 Nov"
+        },
+        {
+          "who": "Reviewer",
+          "what": "Short A v04: finish its check",
+          "job": "J2339",
+          "kind": "review",
+          "when": "2026-11-18",
+          "whenText": "by Wed 18 Nov"
         },
         {
           "who": "Reviewer",
@@ -888,7 +908,7 @@
       "you": "",
       "youWhen": "",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Your eleven notes are scoped and the repair plan is on main (HOS PR #411, merged 10 Nov). Next: retakes of three shots on the plan's credits, never cash (J2241), then the v04 re-edit, then v04 comes to you. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
+      "line": "Your eleven notes are scoped and the repair plan is on main. Next: retakes of three shots on the plan's credits, never cash (J2241). They had been passed over in the queue; on 11 Nov the Chief put them first on the picture tool, to be made before the credits reset on Thu 12 Nov 19:13. The shot at 1:49 is the hair-and-tube one you confirmed. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
       "youShort": "",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
@@ -1249,12 +1269,12 @@
       ]
     },
     "HOS:011": {
-      "updated": "2026-11-11T05:58Z",
+      "updated": "2026-11-11T06:28Z",
       "mood": "good",
       "timing": "Airs Thu 10 Dec 18:00 London.",
-      "line": "Anaesthesia: the day surgery stopped hurting. Airs Thu 10 Dec. Script locked, long voice-over accepted and locked (8 min 53 s). The shot list is built on the voice timings: 93 scenes. The Chief sent the first picture plan back on 11 Nov for two changes, both now made: no scene on the cheaper, lower-quality setting (5 became free archive pictures or drawn graphics, 18 became full-quality plates), and no prompt names a real person. The revised plan is 66 new plates and 27 free scenes, about 6,600 Flow credits on first tries. It is with the Chief for the price check; nothing is spent before that.",
-      "done": "Topic, script v02 (91.1, facts checked), Shorts scripts v02, long voice-over (locked 11 Nov), shot list and picture plan v02 (with the Chief).",
-      "holdup": "Nothing is stuck. Paid picture waits for the Chief's price check, and its turn comes after films 009, 010 and 013.",
+      "line": "Anaesthesia: the day surgery stopped hurting. Airs Thu 10 Dec. Script locked, long voice-over accepted and locked (8 min 53 s). The shot list is built on the voice timings: 93 scenes. The Chief sent the first picture plan back for two changes and accepted the revised one on 11 Nov: no scene on the cheaper, lower-quality setting, and no prompt names a real person. The plan is 66 new plates and 27 free scenes, about 6,600 Flow credits on first tries. Accepting the plan spends nothing: making the plates needs its own go-ahead, after films 008, 010 and 013 have had the picture tool.",
+      "done": "Topic, script v02 (91.1, facts checked), Shorts scripts v02, long voice-over (locked 11 Nov), shot list and picture plan v02 (accepted by the Chief 11 Nov).",
+      "holdup": "Nothing is stuck. Its plates wait their turn on the picture tool and for the credits that reset on Thu 12 Nov; no date is set for them yet.",
       "limit": "",
       "you": "",
       "youShort": "",
@@ -1286,11 +1306,19 @@
         },
         {
           "who": "Mac mini",
-          "what": "shot list on the voice timings and the picture plan, revised to the Chief's two changes",
+          "what": "shot list on the voice timings and the picture plan",
           "job": "J2475",
           "kind": "script",
-          "when": "2026-11-17",
-          "whenText": "with the Chief for the price check; due Tue 17 Nov"
+          "done": true,
+          "doneText": "accepted by the Chief \u00b7 Wed 11 Nov"
+        },
+        {
+          "who": "Mac mini",
+          "what": "build the 27 free scenes and lay the film out on its voice-over, to prove the timing",
+          "job": "J2563",
+          "kind": "assembly",
+          "when": "2026-11-20",
+          "whenText": "by Fri 20 Nov"
         }
       ]
     }
