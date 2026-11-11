@@ -227867,9 +227867,14 @@
           "at": "2026-11-11T16:12Z",
           "by": "codex",
           "what": "step 2 of 3 done: Rendered 406 frames at 30 fps; per-frame geometry checks confirm one landing, no upward motion, equal brackets and no overlapping labels. Narration timing still needs Gemini and Chief review."
+        },
+        {
+          "at": "2026-11-11T16:19Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Draft HOS PR 533 and desk 6801068011 contain rendered candidate, contact sheets and Gemini timing hold. Required repository checks passed; no film approval."
         }
       ],
-      "remaining_action": "Prepare the review sheet, timing caveat and pull request",
+      "remaining_action": "Chief to resolve label timing and review the candidate before any splice",
       "due": "2026-11-12T18:00:00Z",
       "for": "codex",
       "kind": "chart",
@@ -227877,11 +227882,11 @@
       "urgent": 13,
       "model": "gpt-6-astra",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-11T16:12Z",
+        "at": "2026-11-11T16:19Z",
         "by": "codex",
-        "note": "Rendered 406 frames at 30 fps; per-frame geometry checks confirm one landing, no upward motion, equal brackets and no ov"
+        "note": "Draft HOS PR 533 and desk 6801068011 contain rendered candidate, contact sheets and Gemini timing hold. Required reposit"
       },
       "taskKeys": [
         "HOS:009"
