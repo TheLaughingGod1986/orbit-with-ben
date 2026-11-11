@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2579 | cloud | open | – | – | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
 | J2580 | cloud | open | – | – | Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page | J2566 |
 | J2582 | any | open | – | – | 009 picture · qa · HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule | J2034 |
-| J2583 | mini | open (after J2582) | – | – | 009 picture · video · HOS 009: remake the falling-Moon shot (and the Explorer's apple shot only if its sheet shows a jump), 200 credits at most | J2034 |
+| J2583 | mini | open (after J2582) | – | – | 009 picture · video · HOS 009: remake the falling-Moon shot, and the apple or Explorer shot only if its sheet says so (200 credits at most) | J2034 |
 | J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the remade shots' still sheets before the edit (three yes/no questions each) | J2034 |
 
 Recently finished:
