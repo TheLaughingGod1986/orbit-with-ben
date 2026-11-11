@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2562 | mini | open | – | – | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
-| J2569 | any | claimed | macbook | 2026-11-11T10:13Z | review · Verify condition for J0275 |  |
+| J2569 | any | blocked | macbook | – | review · Verify condition for J0275 |  |
 | J2570 | any | open | – | – | review · Verify condition for J0978 |  |
 
 Recently finished:

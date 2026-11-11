@@ -222626,13 +222626,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T08:13Z",
-      "eta": "2026-11-11T10:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T08:08Z",
-      "result": "",
+      "result": "parked for Chief: could not verify J0275's condition. Studio read (curl 127.0.0.1:9223) needs approval on the MacBook; THUMB_LEDGER.json still has T013 and T003 as running (readBack 10 Nov, no later Studio read). Estimated ends 10 Nov 19:03Z/22:02Z have passed but completion is not inferred from dates. J0275 left blocked. Chief: run jobs.py wait J0275 --condition 'T013 and T003 shown as ended in Studio Test & Compare (CDP 9223)' --check-at '2026-11-11T16:00Z' --type input --recheck J2569, on a machine that can read 9223.",
       "history": [
         {
           "at": "2026-11-11T08:08Z",
@@ -222643,6 +222643,11 @@
           "at": "2026-11-11T08:13Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T08:14Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: could not verify J0275's condition. Studio read (curl 127.0.0.1:9223) needs approval on the MacBook; THUMB_LEDGER.json still has T013 and T003 as running (readBack 10 Nov, no later Studio read). Estimated ends 10 Nov 19:03Z/22:02Z have passed but completion is not inferred from dates. J0275 left blocked. Chief: run jobs.py wait J0275 --condition 'T013 and T003 shown as ended in Studio Test & Compare (CDP 9223)' --check-at '2026-11-11T16:00Z' --type input --recheck J2569, on a machine that can read 9223."
         }
       ],
       "remaining_action": "Verify readiness: Arm approved Saturn 55AEQwvs36g Test & Compare B RINGS VANISHING? once J0189 RINGS ARE FALLING completes its 14-day test",
