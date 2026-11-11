@@ -9,6 +9,8 @@ def main():
  assert Path('/Volumes/data').is_mount()
  assert r['frames_before']==r['frames_after']==b['expected_frames']
  assert .83<=r['post_2030_brightness_ratio']<=.87
+ assert r['timed_grade_two_second_measurements']
+ assert all(abs(w['actual_ratio']-w['expected_ratio'])<=.02 for w in r['timed_grade_two_second_measurements'])
  assert r['post_2030_two_second_measurements']
  assert all(w['ratio'] is not None and .83<=w['ratio']<=.87 for w in r['post_2030_two_second_measurements'])
  assert q['gate_exit_codes'] in ([0,0],[1,0]) and all(x['classification']=='in the public film' for x in q['inherited_findings'])
