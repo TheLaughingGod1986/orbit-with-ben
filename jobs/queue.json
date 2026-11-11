@@ -227381,9 +227381,14 @@
           "at": "2026-11-11T15:13Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2627; reading HOS PR #527 branch and desk messages"
+        },
+        {
+          "at": "2026-11-11T15:19Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Updated J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.json, J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.md, and review_J2584_sheets/README.md so P02:08_the_apple_c1 records KEEP 0.00-4.50 s (f000-f107, last frame f107, no freeze) and P03:01_really_falling_c1 reads RETAKE"
         }
       ],
-      "remaining_action": "Inspect history-of-science PR #527 branch and update P02:08 (0.00-4.50 s, f000-f107, no freeze) and P03:01 (RETAKE)",
+      "remaining_action": "Run check_all.sh, commit and push updated #527 records",
       "due": "2026-11-12T12:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -227391,11 +227396,11 @@
       "plain": "Correct the written record of which remade gravity film shots are kept",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T15:13Z",
+        "at": "2026-11-11T15:19Z",
         "by": "gemini",
-        "note": "Claimed J2627; reading HOS PR #527 branch and desk messages"
+        "note": "Updated J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.json, J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.md, and review_J2584_sheet"
       },
       "taskKeys": [
         "HOS:009"
