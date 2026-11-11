@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
 | J2569 | any | open | – | – | review · Verify condition for J0275 |  |
 | J2570 | any | open | – | – | review · Verify condition for J0978 |  |
-| J2571 | any | open | – | – | review · Verify condition for J2503 |  |
+| J2571 | any | claimed | macbook | 2026-11-11T10:09Z | review · Verify condition for J2503 |  |
 
 Recently finished:
 
