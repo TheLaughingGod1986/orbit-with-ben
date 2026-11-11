@@ -167,6 +167,33 @@ def label_of_job(job: dict) -> str:
     return label(of_job(job))
 
 
+def label_of_repo(repo) -> str:
+    """The label for a record's `repo` (or channel) field: that channel's when it names one, else the default
+    channel's. Unlike `of_job` it never reads a title."""
+    r = str(repo or "").lower()
+    return label(r if r in slugs() else default())
+
+
+def planned_shorts(slug: str) -> int:
+    """How many Shorts the board plans for each upcoming long of this channel: `shorts.planned_per_long` in its
+    studio/channel.json, 0 when it names none. A checkout that is behind its main branch may not have the field
+    yet; then the studio's cached copy of the file (channels/<slug>/channel.json) answers."""
+    c = get(slug)
+    for doc in (c, _cached(c["slug"])):
+        shorts = doc.get("shorts")
+        n = shorts.get("planned_per_long") if isinstance(shorts, dict) else None
+        if isinstance(n, int) and not isinstance(n, bool) and n >= 0:
+            return n
+    return 0
+
+
+def _cached(slug: str) -> dict:
+    try:
+        return json.loads((DIR / slug / "channel.json").read_text())
+    except (OSError, ValueError):
+        return {}
+
+
 @functools.lru_cache(maxsize=None)
 def key_re() -> re.Pattern:
     """`OWB:033`, `HOS 013`, `hos-013` ... for every channel's label."""
