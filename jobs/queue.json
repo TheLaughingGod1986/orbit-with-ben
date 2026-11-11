@@ -219791,9 +219791,14 @@
           "at": "2026-11-11T13:44Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 done: uploaded v08 as Private RT-ec4_GcOk for 2026-11-13T11:30:00Z; set en-GB language/audio, en-GB.srt captions (serving), custom cover, Related Js6EQJ8qDi8 in Studio, and Buffer posts"
+        },
+        {
+          "at": "2026-11-11T13:45Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3 done: bSjWiCbB7pY set Private and unscheduled (publishAt=null in API and Studio; nothing deleted or replaced); verify-swap.ts PASS (ok: true)"
         }
       ],
-      "remaining_action": "Unschedule old Short bSjWiCbB7pY (keep Private) and run verify-swap.ts",
+      "remaining_action": "Update UPLOADS.json, BUFFER_POSTS.json, shorts_open_library, and queued job J0124 in clean worktree and push",
       "due": "2026-11-12T18:00:00Z",
       "kind": "listing",
       "plain": "Put the full-screen Mars helicopter Short you approved into its Friday slot",
@@ -219821,11 +219826,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-11T13:44Z",
+        "at": "2026-11-11T13:45Z",
         "by": "gemini",
-        "note": "Step 2 done: uploaded v08 as Private RT-ec4_GcOk for 2026-11-13T11:30:00Z; set en-GB language/audio, en-GB.srt captions "
+        "note": "Step 3 done: bSjWiCbB7pY set Private and unscheduled (publishAt=null in API and Studio; nothing deleted or replaced); ve"
       },
       "taskKeys": [
         "OWB:025"
