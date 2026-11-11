@@ -220598,10 +220598,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T03:06Z",
+      "eta": "2026-11-11T05:06Z",
       "created_by": "claudecode",
       "created_at": "2026-11-11T03:04Z",
       "result": "",
@@ -220610,12 +220610,25 @@
           "at": "2026-11-11T03:04Z",
           "by": "claudecode",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T03:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review the built supermoon Short and rule KEEP or FIX",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
-      "plain": "Checking the finished supermoon Short before it goes to Ben to watch"
+      "plain": "Checking the finished supermoon Short before it goes to Ben to watch",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T03:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
