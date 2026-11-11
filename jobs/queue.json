@@ -222958,10 +222958,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T08:35Z",
+      "eta": "2026-11-11T10:35Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
       "result": "",
@@ -222970,12 +222970,25 @@
           "at": "2026-11-11T08:24Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T08:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Look at the salon retake's still sheet and answer three yes/no questions",
       "due": "2026-11-11T14:00:00Z",
       "kind": "qa",
-      "plain": "Check one new shot for the Franklin film before it goes into the edit"
+      "plain": "Check one new shot for the Franklin film before it goes into the edit",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T08:35Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2574",
