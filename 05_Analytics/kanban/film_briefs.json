@@ -851,10 +851,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T13:59Z",
+      "updated": "2026-11-11T15:11Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, is nearly there. Its old starting picture was the cause, so a new one was made at no cost (third try), and one last take was made from it (100 credits, none in cash). The Chief passed that take for its first two and a half seconds only: the tube is clear, the wig is still, and her knuckle stops just short of the glass. The rest of the take is never used. The tiny spark is added in the edit on that frame, and the shot is joined to the end of the shot before it. The spark was redrawn as a soft streak; the Chief asked for one more change to its size before it is placed. You will see the result in v04 and can say no there. The points-desk shot's third take is kept. It is tight for a Thu 19 Nov air date.",
+      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, is nearly there. Its old starting picture was the cause, so a new one was made at no cost (third try), and one last take was made from it (100 credits, none in cash). The Chief passed that take for its first two and a half seconds only: the tube is clear, the wig is still, and her knuckle stops just short of the glass. The rest of the take is never used. The tiny spark is added in the edit on that frame, and the shot is joined to the end of the shot before it. The spark was redrawn larger so it reads on a phone, passed by the Chief, and placed on the three frames where her knuckle meets the tube. The Chief checked the placement frame by frame. One check is left before the edit: watching it move at phone size. You will see the result in v04 and can say no there. The points-desk shot's third take is kept. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -965,22 +965,20 @@
           "what": "redraw the spark as a soft streak, for the Chief's pass",
           "job": "J2613",
           "kind": "chart",
-          "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov"
+          "done": true
         },
         {
           "who": "Mac mini",
           "what": "add the spark to the salon shot, on the frame the Chief named",
           "job": "J2592",
           "kind": "assembly",
-          "afterJob": "J2613"
+          "done": true
         },
         {
           "who": "Reviewer",
-          "what": "check the added spark, frame by frame",
+          "what": "check the added spark in motion, at phone size",
           "job": "J2593",
-          "kind": "qa",
-          "afterJob": "J2592"
+          "kind": "qa"
         },
         {
           "who": "Mac mini",
@@ -1027,15 +1025,15 @@
       "you": "",
       "youWhen": "",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Your eleven notes are scoped and the repair plan is on main. Of the three shots being remade, the rods shot and the points-desk shot are kept. The shot at 1:49, the hair-and-tube one you confirmed, has its last take, passed by the Chief for its first two and a half seconds (11 Nov). The spark is being redrawn and is then placed on it. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
+      "line": "Your eleven notes are scoped and the repair plan is on main. Of the three shots being remade, the rods shot and the points-desk shot are kept. The shot at 1:49, the hair-and-tube one you confirmed, has its last take, passed by the Chief for its first two and a half seconds (11 Nov). The spark is drawn, passed by the Chief and placed on it (11 Nov). One check is left, watching it move at phone size (J2593). Then the v04 re-edit (J2242) and its checks, and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
       "youShort": "",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T13:59Z",
+      "updated": "2026-11-11T15:11Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "The review of the last twenty pictures found four that cannot go out. In one the Moon fades away while the voice says it never lands. In three an apple moves upward, in a film about gravity. All four are being made again, one try each, at most 400 credits and none in cash. The wording for them and the change to the tool that makes them are both passed by the Chief, but the tool refused to start them: its credit reservation for this film had been closed. The fix that reserves 300 credits for the three shots is merged (11 Nov), so they are next on the picture tool. Gemini makes them, because Codex's own safety check refused to start picture runs this afternoon. They must be made by Thu 12 Nov 19:13. The other sixteen are kept. The edit starts once the remade shots are checked. Picture was due Sun 15 Nov and is still on course.",
+      "holdup": "Two of the remade shots still cannot go out. In one, the Moon's trail loops back round the Moon, which reads as the Moon going backwards. In the other, an apple rolls, a third apple appears and an apple flies up onto the Moon. The Chief reworded both and each gets one more try (200 credits, none in cash). The picture tool first had to be changed so it can make a third take. That change is written and is with the Chief for review. The credits lapse Thu 12 Nov 19:13, so the takes must be made by then. There is no fourth try: if the Moon shot fails again it is left out for now and the shot before it stays, and the other is solved in the edit. The edit starts once these are settled. Picture was due Sun 15 Nov and is still on course.",
       "steps": [
         {
           "who": "Mac mini",
@@ -1081,22 +1079,51 @@
           "what": "remake three shots (falling Moon, apple, minute-and-second)",
           "job": "J2583",
           "kind": "video",
-          "when": "2026-11-12",
-          "whenText": "aim: before Thu 12 Nov 19:13"
+          "done": true
         },
         {
           "who": "Reviewer",
           "what": "check the three remade shots",
           "job": "J2584",
           "kind": "qa",
-          "afterJob": "J2583"
+          "done": true
+        },
+        {
+          "who": "Claude",
+          "kind": "review",
+          "what": "change the picture tool so it can make a third take",
+          "job": "J2626",
+          "when": "2026-11-12",
+          "whenText": "written; with the Chief for review"
+        },
+        {
+          "who": "Reviewer",
+          "kind": "qa",
+          "what": "correct the written record of which remade shots are kept",
+          "job": "J2627",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
         },
         {
           "who": "Mac mini",
-          "what": "remake the fourth shot, which follows on from the third",
+          "kind": "video",
+          "what": "last try at two shots (falling Moon, minute-and-second), 200 credits",
+          "job": "J2628",
+          "afterJob": "J2626"
+        },
+        {
+          "who": "Reviewer",
+          "kind": "qa",
+          "what": "check the two last tries",
+          "job": "J2629",
+          "afterJob": "J2628"
+        },
+        {
+          "who": "Mac mini",
+          "what": "remake the fourth shot, only if the minute-and-second shot passes",
           "job": "J2586",
           "kind": "video",
-          "afterJob": "J2584"
+          "afterJob": "J2629"
         },
         {
           "who": "Reviewer",
@@ -1129,15 +1156,15 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "First picture tranche accepted, and all twenty of the last plates are made (2,000 Flow credits). The Chief reviewed them on 11 Nov and a closer look, a frame every half second, followed. Sixteen are kept. Four are remade, one try each: the Moon fades out in one, and an apple moves upward in three. The wording for the remakes is passed. Next: the remakes (J2583, then J2586), their checks, the edit (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
+      "line": "First picture tranche accepted, and all twenty of the last plates are made (2,000 Flow credits). Sixteen are kept and four had to be remade. Three second takes were made on 11 Nov (300 credits, none in cash) and checked a frame every half second. The apple shot is kept, cut just before the apple bounces. The falling-Moon shot and the minute-and-second shot failed again, so each gets one last try with new wording from the Chief. The fourth shot follows on from the minute-and-second one, so it waits for that. Next: the last tries, their check, the edit (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
       "youShort": "your final OK Sun 22 Nov",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-11T13:59Z",
+      "updated": "2026-11-11T15:11Z",
       "mood": "fixing",
       "done": "Script, fact check and upload package.",
-      "holdup": "The first five of its twelve plates are made. The second batch did not start this afternoon: Codex's own safety check refused to launch it, though the run is authorised. It has moved to Gemini and follows film 009's three remade shots on the picture tool. The other seven plates must be made inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
+      "holdup": "The first five of its twelve plates are made. The second batch is running now on the picture tool (Gemini started it 11 Nov 15:09 UTC, after Codex's own safety check had refused to launch it). The last batch follows. All seven remaining plates must be made inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
       "steps": [
         {
           "who": "Mac mini",
