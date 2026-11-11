@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tests for scripts/macbook_worker.py: it only runs on mains power while the MacBook is idle, the `macbook` lane is
 kept apart from the Mini's, and a run never outlives its cap (Ben, 28 Oct 2026)."""
+import contextlib
 import datetime as dt
 import os
 import pathlib
@@ -21,6 +22,27 @@ IDLE_20 = '    |   "HIDIdleTime" = 1200000000000\n'
 IDLE_1 = '    |   "HIDIdleTime" = 60000000000\n'
 T0 = dt.datetime(2026, 10, 28, 12, 0, tzinfo=dt.timezone.utc)
 WED_NIGHT = dt.datetime(2026, 10, 28, 22, 0, tzinfo=dt.timezone.utc)
+_OWN_WORLD = []
+
+
+def setUpModule():
+    """These tests state the worker's rules, not the state of the machine they run on. Where the film store is mounted
+    (the Mini and the MacBook) the brief gains its film-store line and the agent one more folder, so two tests that
+    read the brief failed there and passed in the cloud (found 11 Nov 2026 by running the suite against a simulated
+    store). No test here sees the real store or the live board; a test that needs one sets it itself."""
+    tmp = tempfile.TemporaryDirectory()
+    _OWN_WORLD.append(tmp)
+    for p in (mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(tmp.name) / "no-film-store"),
+              mock.patch("workflow_board.load_tracker", return_value={})):
+        p.start()
+        _OWN_WORLD.append(p)
+
+
+def tearDownModule():
+    for p in reversed(_OWN_WORLD[1:]):
+        p.stop()
+    _OWN_WORLD[0].cleanup()
+    _OWN_WORLD.clear()
 
 
 class Guards(unittest.TestCase):
@@ -89,7 +111,7 @@ class Guards(unittest.TestCase):
         self.assertEqual(mw.claimed_job("jobs: nothing waiting for you"), "")
 
     def test_prompt_names_the_job_and_the_local_model_limits(self):
-        p = mw.PROMPT.format(job="J1102", agent="macbook-2", owb="/o", hos="/h", model="qwen3:14b", cap_min=25)
+        p = mw.PROMPT.format(job="J1102", agent="macbook-2", model="qwen3:14b", cap_min=25, **mw.prompt_channels())
         self.assertIn("jobs.py show J1102", p)
         self.assertIn("jobs.py done J1102 --agent macbook-2", p)
         self.assertIn("127.0.0.1:11434", p)
@@ -102,6 +124,7 @@ class Guards(unittest.TestCase):
         self.addCleanup(setattr, mw, "sh", real)
         self.assertTrue(mw.record_usage(now=WED_NIGHT))
         self.assertEqual(calls[0][calls[0].index("--codex-pool") + 1], "codex")  # one account on both machines
+        self.assertIn("--strict", calls[0])  # exit 0 must mean "recorded": an unread log gets no stamp (J2564)
         self.assertFalse(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=1)))
         self.assertTrue(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=4)))
         self.assertEqual(len(calls), 2)
@@ -110,6 +133,21 @@ class Guards(unittest.TestCase):
         doc = mw.heartbeat_doc("waiting", ["on battery", "in use (2 min idle, needs 10)"], now=WED_NIGHT)
         self.assertEqual((doc["host"], doc["state"], doc["at"]), ("macbook", "waiting", "2026-10-28T22:00:00Z"))
         self.assertIn("on battery", doc["why"])
+
+    def test_the_heartbeat_never_carries_the_machines_network_name(self):
+        # The heartbeat is on a public branch. Until 11 Nov 2026 it printed the machine's network name
+        # (AGENTS.md "Never": no device's network name in a tracked file). It now carries a twelve-character mark.
+        import json
+        with mock.patch.object(mw.platform, "node", return_value="Somebodys-Laptop.local"):
+            doc = mw.heartbeat_doc("working", [], job="J0001", now=WED_NIGHT)
+            mark = mw.machine_mark()
+        text = json.dumps(doc)
+        self.assertNotIn("Somebodys-Laptop", text)
+        self.assertNotIn("machine_name", doc["observation"])
+        self.assertEqual(doc["observation"]["machine"], mark)
+        self.assertRegex(mark, r"^[0-9a-f]{12}$")
+        with mock.patch.object(mw.platform, "node", return_value="Another-Machine.local"):
+            self.assertNotEqual(mw.machine_mark(), mark)  # it still tells two machines apart
 
     def test_it_pulls_before_the_guards(self):
         # A stuck guard must not keep the MacBook on old code: pull_main runs first in each job's run_one().
@@ -132,23 +170,23 @@ class BackToMain(unittest.TestCase):
 
     def test_its_own_clone_left_on_a_work_branch_goes_back_to_main(self):
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             real = mw.sh  # no remote to pull from here: the pull itself is stubbed, every other git call is real
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "main")
 
     def test_its_own_clone_left_dirty_on_a_work_branch_stashes_and_goes_back_to_main(self):
         # 5 Nov 2026: J2165 left macbook/J2165 dirty and every later MacBook run errored.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("branch", "--show-current"), "main")
@@ -157,13 +195,13 @@ class BackToMain(unittest.TestCase):
     def test_its_own_clone_left_dirty_on_main_stashes_so_the_next_claim_works(self):
         # 8 Nov 2026: a job left the slot's main dirty and `jobs.py next --git` refused every later claim.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("status", "--porcelain"), "")
@@ -171,13 +209,13 @@ class BackToMain(unittest.TestCase):
 
     def test_bens_dirty_checkout_is_never_stashed(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
-                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             (r / "bens_work.md").write_text("mine\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 mw.pull_main()
             self.assertTrue((r / "bens_work.md").exists())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
@@ -200,22 +238,22 @@ class BackToMain(unittest.TestCase):
     def test_its_own_clone_ahead_of_github_after_a_good_pull_is_rescued(self):
         # 9 Nov 2026: the pull succeeded but main kept an unpublished queue commit, and every claim refused.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             calls = []
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
                     mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(calls, [r])
 
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
-                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]):
             r = self.repo(t, "orbit-with-ben")
-            with mock.patch.object(mw, "OWB", r):
+            with mock.patch.object(mw, "STUDIO", r):
                 self.assertIn("not main", mw.pull_main())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "macbook/j1194-work")
 
@@ -305,10 +343,38 @@ class AllAgents(unittest.TestCase):
         with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
             c = mw.agent_cmd("claude", "P")
         allowed = c[c.index("--allowedTools") + 1].split(",")
-        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)"):
-            self.assertIn(rule, allowed)
-        self.assertFalse(any("merge" in r for r in allowed))
+        for rule in ("Bash(python3 -m unittest:*)", "Bash(gh pr create:*)", "Bash(git push:*)", "Bash(git fetch:*)"):
+            self.assertIn(rule, allowed)   # git fetch: Ben, 10 Nov 2026, after J2495 could not read the PR heads
+        self.assertFalse(any("merge" in r or "pull" in r for r in allowed))   # fetch reads; nothing here changes a branch
         self.assertLess(c.index("--allowedTools"), c.index("--add-dir"))
+
+    def test_unattended_claude_is_refused_merges_and_pushes_to_main_outright(self):
+        # J2600, from the draft #666 (9 Nov 2026). The allowlist lets a run push; nothing said what it may never do.
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+            others = {agent: mw.agent_cmd(agent, "P") for agent in ("codex", "gemini", "cursor")}
+        denied = c[c.index("--disallowedTools") + 1].split(",")
+        for rule in ("Bash(gh pr merge:*)", "Bash(gh pr review:*)", "Bash(gh pr close:*)", "Bash(gh pr ready:*)",
+                     "Bash(gh api:*)", "Bash(git push origin main:*)", "Bash(git push -u origin main:*)",
+                     "Bash(git push --force:*)", "Bash(git push -f:*)", "Bash(git push --force-with-lease:*)"):
+            self.assertIn(rule, denied)
+        self.assertEqual(c[1:3], ["-p", "P"])                                  # the prompt stays straight after -p
+        self.assertLess(c.index("--disallowedTools"), c.index("--add-dir"))    # both lists come before the folders
+        self.assertFalse(set(c[c.index("--allowedTools") + 1].split(",")) & set(denied))   # never both allowed and refused
+        for rule in denied:                                                    # each is one plain "starts with" rule
+            self.assertRegex(rule, r"^Bash\([a-z][a-z -]*[a-z]:\*\)$")
+        starts = [r[len("Bash("):-len(":*)")] for r in denied]
+        for cmd in ("git push -u origin macbook/J1234", "git push origin macbook/J1234", "git push",
+                    "gh pr create --title x", "gh pr view 1", "gh pr checks 1"):   # what a job really runs
+            self.assertFalse(any(cmd.startswith(s) for s in starts), cmd)
+        for agent, cmd in others.items():                                      # the other agents' commands are as they were
+            self.assertNotIn("--disallowedTools", cmd or [], agent)
+
+    def test_the_brief_says_never_merge_and_never_push_to_main(self):
+        p = mw.brief("J1", "m", 25)
+        self.assertIn("Never merge, approve or close a PR, and never push to main: merges are\n", p)
+        self.assertIn('a brief that says "merge" stops at the open PR and says so.', p)
+        self.assertIn("open a PR to main", p)                                  # the step it sits in is still there
 
     def test_a_failed_cli_is_paused_and_skipped(self):
         import tempfile
@@ -490,8 +556,8 @@ class Diverged(unittest.TestCase):
             lock.write_text("")
             old = time.time() - mw.STALE_LOCK_S - 60
             os.utime(lock, (old, old))
-            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
-                    mock.patch.object(mw, "HOS", t / "none"):
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "STUDIO", t / "b"), \
+                    mock.patch.object(mw, "OTHERS", [t / "none"]):
                 self.assertEqual(mw.pull_main(), "")
             self.assertFalse(lock.exists())
             self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
@@ -504,8 +570,8 @@ class Diverged(unittest.TestCase):
             self._behind_clone(t)
             lock = t / "b" / ".git" / "index.lock"
             lock.write_text("")   # a git may really be running: never touched inside STALE_LOCK_S
-            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
-                    mock.patch.object(mw, "HOS", t / "none"):
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "STUDIO", t / "b"), \
+                    mock.patch.object(mw, "OTHERS", [t / "none"]):
                 self.assertIn("pull failed in b", mw.pull_main())
             self.assertTrue(lock.exists())
             self.assertEqual((t / "b" / "f").read_text(), "1")
@@ -532,11 +598,13 @@ class TwoSlots(unittest.TestCase):
 
     def test_slot_one_starts_slot_two_in_its_own_clones(self):
         calls = []
-        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
-                mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())):
+        home = pathlib.Path(tempfile.mkdtemp())
+        with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), mock.patch.object(mw, "HOME", home):
             self.assertEqual(mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin"), [2])
         env = calls[0]
         self.assertEqual(env["MACBOOK_SLOT"], "2")
+        # The log's name comes from the registry now (J2620) and is the one already on the MacBook.
+        self.assertEqual([f.name for f in (home / "Library" / "Logs").iterdir()], ["owb-macbook-worker-2.log"])
         self.assertTrue(env["OWB_REPO"].endswith("worker/slot2/orbit-with-ben"))
         self.assertTrue(env["HOS_REPO"].endswith("worker/slot2/history-of-science"))
 
@@ -571,12 +639,386 @@ class TwoSlots(unittest.TestCase):
         self.assertTrue(jobs.claimable({"jobs": [j]}, j, {"macbook", "any"}, T0, "macbook-2"))
 
 
+class PushedWorkIsParked(unittest.TestCase):
+    """J2624, 11 Nov 2026. A run opened its pull request and ended with the job still open. The worker handed the job
+    back, and two minutes later the other slot began the same work again and opened a second pull request. A clean
+    run that pushed its work branch is now parked for the Chief; every other ending is handled as before. The git
+    calls here are real, against a throwaway "GitHub"; the queue and the agent are stand-ins."""
+    JOB = "J9001"
+
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.t = pathlib.Path(tmp.name)
+        self.g("init", "-q", "--bare", "-b", "main", str(self.t / "origin.git"), cwd=self.t)
+        self.clone = self.cloned("studio")
+        (self.clone / "f").write_text("1")
+        self.g("add", "f", cwd=self.clone); self.g("commit", "-qm", "one", cwd=self.clone)
+        self.g("push", "-q", "origin", "main", cwd=self.clone)
+
+    def g(self, *a, cwd):
+        return subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout.strip()
+
+    def cloned(self, name, origin="origin.git"):
+        self.g("clone", "-q", str(self.t / origin), str(self.t / name), cwd=self.t)
+        self.g("config", "user.email", "x@y", cwd=self.t / name); self.g("config", "user.name", "x", cwd=self.t / name)
+        return self.t / name
+
+    def push_work(self, clone=None, branch=None, commits=1):
+        """What an agent does: commit on the job's branch (carrying on from it if it exists), push it, back to main."""
+        clone, branch = clone or self.clone, branch or mw.work_branch(self.JOB)
+        exists = subprocess.run(["git", "rev-parse", "-q", "--verify", branch], cwd=clone, capture_output=True).returncode == 0
+        self.g("checkout", "-q", *([] if exists else ["-b"]), branch, cwd=clone)
+        for _ in range(commits):
+            self.g("commit", "-q", "--allow-empty", "-m", "work", cwd=clone)
+        self.g("push", "-q", "origin", branch, cwd=clone)
+        self.g("checkout", "-q", "main", cwd=clone)
+
+    def run_job(self, agent_does=lambda: None, code=0, after="claimed", block_code=0, others=(), quick_s="0", pr=""):
+        """One whole run of the worker. Returns (what it returned, the queue commands it sent, what else happened)."""
+        import routing
+        queue, seen = [], {"paused": [], "beat": [], "log": []}
+        real = mw.sh
+
+        def sh(cmd, **k):
+            if len(cmd) > 2 and cmd[1] == "scripts/jobs.py":
+                queue.append(cmd[2:])
+                if cmd[2] == "next":
+                    return subprocess.CompletedProcess(cmd, 0, f"{self.JOB} [macbook] claimed by {mw.AGENT_ID} until 13:00\n", "")
+                if cmd[2] == "show":
+                    state = f"claimed by {mw.AGENT_ID}" if after == "claimed" else after
+                    return subprocess.CompletedProcess(cmd, 0, f"{self.JOB} [macbook] {state}\n", "")
+                return subprocess.CompletedProcess(cmd, block_code if cmd[2] == "block" else 0, "", "")
+            return real(cmd, **k)
+
+        def agent_runs(cmd, cwd, cap):
+            agent_does()
+            return code
+
+        stand_ins = {
+            "STUDIO": self.clone, "OTHERS": list(others), "WORKER_DIR": self.t, "STATE": self.t, "sh": sh,
+            "run_capped": agent_runs, "cdp_ports_up": lambda: [], "installed": lambda: ["codex"],
+            "usable": lambda have: have, "pick_agent": lambda j, have: ("codex", ""),
+            "agent_cmd": lambda a, prompt, m="": ["true"], "brief": lambda *a: "brief",
+            "busy_cmd": lambda cmd, idle_min=None: cmd, "record_usage": lambda: False,
+            "open_pr": lambda repo, branch: pr,
+            "mark_down": lambda a: seen["paused"].append(a) or "2026-10-28T14:00",
+            "push_heartbeat": lambda state, why, job="": seen["beat"].append((state, " ".join(why))),
+            "log": seen["log"].append,
+        }
+        with contextlib.ExitStack() as stack:
+            for name, value in stand_ins.items():
+                stack.enter_context(mock.patch.object(mw, name, value))
+            stack.enter_context(mock.patch.object(mw.shutil, "which", lambda name: None))
+            stack.enter_context(mock.patch.object(routing, "OUT", set(routing.OUT)))  # the run re-reads the credit flags
+            stack.enter_context(mock.patch.dict(os.environ, {"MACBOOK_QUICK_EXIT_S": quick_s}))  # and sets MACBOOK_CDP
+            return mw.run_ordinary(), queue, seen
+
+    def sent(self, queue, name):
+        return [c for c in queue if c[0] == name]
+
+    def test_a_clean_run_that_pushed_its_branch_and_left_the_job_open_is_parked(self):
+        result, queue, seen = self.run_job(self.push_work)
+        self.assertEqual(result, "ran")
+        (block,) = self.sent(queue, "block")
+        self.assertEqual(block[:3], ["block", self.JOB, "--agent"])
+        self.assertEqual(block[3], mw.AGENT_ID)
+        reason = block[block.index("--reason") + 1]
+        self.assertTrue(reason.startswith("parked for Chief: "), reason)
+        self.assertIn("Branch macbook/J9001 in studio is 1 commit(s) ahead of main", reason)
+        self.assertIn("--git", block)
+        self.assertEqual(self.sent(queue, "release"), [], "handing it back is what let the other slot start it again")
+        self.assertEqual(seen["paused"], [])
+        self.assertIn("parked for the Chief", seen["beat"][-1][1])
+
+    def test_the_parked_job_names_its_pull_request_when_one_can_be_read(self):
+        _, queue, _ = self.run_job(lambda: self.push_work(commits=3), pr="https://github.example/pull/822")
+        reason = self.sent(queue, "block")[0][-2]
+        self.assertIn("3 commit(s) ahead of main; pull request https://github.example/pull/822.", reason)
+        _, queue, _ = self.run_job(lambda: self.push_work(commits=1))
+        self.assertIn("no open pull request was found for it", self.sent(queue, "block")[0][-2])
+
+    def test_a_quick_clean_run_that_pushed_its_work_does_not_pause_the_agent(self):
+        # A clean exit inside two minutes with the job open normally means "out of usage". Pushed work says otherwise.
+        _, queue, seen = self.run_job(self.push_work, quick_s="120")
+        self.assertEqual(len(self.sent(queue, "block")), 1)
+        self.assertEqual(seen["paused"], [])
+
+    def test_a_run_that_pushed_nothing_is_handed_back_as_before(self):
+        _, queue, seen = self.run_job()
+        self.assertEqual(self.sent(queue, "block"), [])
+        (release,) = self.sent(queue, "release")
+        self.assertIn("ended (exit 0) with the job still open; picked up again next run", release[release.index("--note") + 1])
+        self.assertEqual(seen["paused"], [])
+        _, queue, seen = self.run_job(quick_s="120")                # the same, over inside two minutes: out of usage
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        self.assertEqual(seen["paused"], ["codex"])
+
+    def test_a_failed_run_is_handed_back_and_the_agent_paused_even_with_a_branch_pushed(self):
+        _, queue, seen = self.run_job(self.push_work, code=1)
+        self.assertEqual(self.sent(queue, "block"), [])
+        (release,) = self.sent(queue, "release")
+        self.assertIn("ended (exit 1)", release[release.index("--note") + 1])
+        self.assertIn("codex paused on the MacBook until", release[release.index("--note") + 1])
+        self.assertEqual(seen["paused"], ["codex"])
+
+    def test_a_run_killed_at_the_cap_is_handed_back_for_the_next_run_to_carry_on(self):
+        _, queue, seen = self.run_job(self.push_work, code=124)
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        self.assertEqual(seen["paused"], [])
+
+    def test_a_branch_an_earlier_run_left_does_not_park_a_run_that_pushed_nothing(self):
+        # A long job keeps one branch across many runs and hands itself back between them.
+        self.push_work()
+        _, queue, _ = self.run_job()
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        _, queue, _ = self.run_job(self.push_work)                   # the next run adds to it and stops without closing
+        self.assertIn("2 commit(s) ahead of main", self.sent(queue, "block")[0][-2])
+
+    def test_a_branch_with_nothing_main_lacks_is_not_work_to_park(self):
+        def pushes_main_under_the_branch_name():
+            self.g("push", "-q", "origin", "main:refs/heads/" + mw.work_branch(self.JOB), cwd=self.clone)
+        _, queue, _ = self.run_job(pushes_main_under_the_branch_name)
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+
+    def test_work_pushed_in_another_channels_clone_is_parked_too(self):
+        self.g("init", "-q", "--bare", "-b", "main", str(self.t / "other.git"), cwd=self.t)
+        other = self.cloned("another-channel", "other.git")
+        self.g("commit", "-q", "--allow-empty", "-m", "one", cwd=other); self.g("push", "-q", "origin", "main", cwd=other)
+        _, queue, _ = self.run_job(lambda: self.push_work(other), others=[other, self.t / "not-cloned-here"])
+        self.assertIn("Branch macbook/J9001 in another-channel is 1 commit(s) ahead of main", self.sent(queue, "block")[0][-2])
+
+    def test_a_job_the_agent_closed_itself_is_left_alone(self):
+        _, queue, seen = self.run_job(self.push_work, after="done by macbook")
+        self.assertEqual(self.sent(queue, "block") + self.sent(queue, "release"), [])
+        self.assertIn("finished", seen["beat"][-1][1])
+
+    def test_if_parking_fails_the_job_is_still_handed_back_never_left_claimed(self):
+        _, queue, _ = self.run_job(self.push_work, block_code=1)
+        self.assertEqual(len(self.sent(queue, "block")), 1)
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+
+    def test_a_parked_job_is_on_the_chiefs_list_and_no_slot_claims_it_again(self):
+        import workflow_state as workflow
+        job = {"id": self.JOB, "title": "t", "needs": "macbook", "status": "claimed", "by": "macbook", "history": []}
+        reason = mw.park_reason("codex", {"repo": "studio", "branch": "macbook/J9001", "ahead": 2, "pr": ""})
+        jobs.do_block(job, "macbook", reason, T0)
+        self.assertEqual(job["status"], "blocked")
+        self.assertTrue(workflow.is_review(job), "it must reach the Chief's review list")
+        self.assertEqual(workflow.external_hold(job, T0), "", "a timed wait would take it off that list")
+        for slot in ("macbook", "macbook-2"):
+            self.assertFalse(jobs.claimable({"jobs": [job]}, job, {"macbook", "any"}, T0, slot))
+
+    def test_the_pull_request_lookup_never_stops_a_run(self):
+        ok = lambda out, code=0: mock.patch.object(mw, "sh", lambda cmd, **k: subprocess.CompletedProcess(cmd, code, out, ""))  # noqa: E731
+        with mock.patch.object(mw.shutil, "which", lambda name: "/usr/bin/gh"):
+            with ok('[{"url": "https://github.example/pull/7"}]'):
+                self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "https://github.example/pull/7")
+            for out, code in (("[]", 0), ("not json", 0), ('{"url": 1}', 0), ("", 1), ('[{"url": "x"}]', 1)):
+                with ok(out, code):
+                    self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "", (out, code))
+        with mock.patch.object(mw.shutil, "which", lambda name: None):
+            self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "")
+
+    def test_a_clone_that_cannot_be_asked_reads_as_nothing_pushed(self):
+        with mock.patch.object(mw, "STUDIO", self.clone), mock.patch.object(mw, "OTHERS", [self.t / "missing"]), \
+                mock.patch.object(mw, "sh", lambda cmd, **k: subprocess.CompletedProcess(cmd, 128, "", "no network")):
+            self.assertEqual(mw.branch_heads(self.JOB), {})
+            self.assertEqual(mw.pushed_work(self.JOB, {}), {})
+
+
+class OnePublisher(unittest.TestCase):
+    """J2541, 10 Nov 2026: the board is published by the Mini only. The MacBook has ~/_desk/state/chief, so every
+    jobs.py call here also force-pushed board-data."""
+
+    def test_a_run_turns_the_board_publish_off_for_everything_it_starts(self):
+        slot_envs = []
+        with tempfile.TemporaryDirectory() as t, mock.patch.dict(os.environ, {"BOARD_PUBLISH": "1"}), \
+                mock.patch.object(mw, "STATE", pathlib.Path(t)), mock.patch.object(mw, "run_one", return_value="idle"), \
+                mock.patch.object(mw, "start_other_slots", side_effect=lambda: slot_envs.append(dict(os.environ))):
+            self.assertEqual(mw.run(), 0)
+            self.assertEqual(slot_envs[0]["BOARD_PUBLISH"], "0")      # slot 2 is started with it
+            out = pathlib.Path(t) / "seen"
+            mw.run_capped(["sh", "-c", f'printf %s "$BOARD_PUBLISH" > {out}'], t, 10)   # the woken agent
+            self.assertEqual(out.read_text(), "0")
+            self.assertEqual(mw.sh(["sh", "-c", 'printf %s "$BOARD_PUBLISH"']).stdout, "0")   # its own jobs.py calls
+
+    def test_jobs_py_does_not_start_the_publisher_when_it_is_off(self):
+        with tempfile.TemporaryDirectory() as t, mock.patch.object(jobs.chief_relay, "STATE", pathlib.Path(t)), \
+                mock.patch.object(jobs.subprocess, "Popen") as popen:
+            with mock.patch.dict(os.environ, {"BOARD_PUBLISH": "0"}):
+                jobs.publish_board()
+            popen.assert_not_called()
+            with mock.patch.dict(os.environ, {"BOARD_PUBLISH": "1"}):
+                jobs.publish_board()      # the Mini: state folder there, hook on
+            self.assertEqual(popen.call_count, 1)
+
+
 class LaunchAgent(unittest.TestCase):
     def test_worker_looks_every_three_minutes(self):
         # 6 Nov 2026: 900 s left a free MacBook idle while portable reviews waited.
         plist = (pathlib.Path(__file__).resolve().parent / "macbook" / "com.owb.macbook-worker.plist").read_text()
         self.assertIn("<key>StartInterval</key>\n  <integer>180</integer>", plist)
         self.assertNotIn("<integer>900</integer>", plist)
+
+
+ALLOWED_BEFORE_J2526 = 11   # len(CLAUDE_ALLOWED_TOOLS) on main before the worker stopped naming channels
+
+
+class AsksTheChannelLoader(unittest.TestCase):
+    """J2526: the worker names no channel. Its clones, its brief and its Studio ports come from the channel files,
+    so today's two channels behave exactly as before and a third needs no edit here."""
+
+    def sky(self):
+        import channels
+        base = channels._load()
+        home = next(c for c in base if c.get("home"))
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
+                   repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_brief_reads_as_it_always_did_for_todays_channels(self):
+        with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h"]), \
+                mock.patch.object(mw, "AGENT_ID", "macbook-2"):
+            p = mw.brief("J1102", "qwen3:14b", 25)
+        for line in (
+            '1. Orbit With Ben (/o) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then',
+            "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.",
+            "   History of Science folder must always be left on main.",
+            "  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch",
+            "- keep files inside the two checkouts and ~/_desk. The shared working-film store on the NAS is not",
+            "- leave nothing running when you stop.",
+            "     python3 scripts/jobs.py show J1102",
+            "Your run is killed at 25 minutes:",
+        ):
+            self.assertIn(line + ("\n" if not line.endswith(":") else ""), p)
+        self.assertNotIn("{", p)                                   # every placeholder was filled
+
+    def test_clones_urls_and_ports_come_from_the_channel_files(self):
+        self.assertEqual(mw.URLS, {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
+                                   "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"})
+        self.assertEqual(mw.STUDIO.name, "orbit-with-ben")
+        self.assertEqual([p.name for p in mw.OTHERS], ["history-of-science"])
+        self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
+        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
+        self.assertEqual(mw.clone_name("hos"), "history-of-science")
+
+    def test_a_third_channel_gets_its_own_clone_its_line_in_the_brief_and_its_port(self):
+        with self.sky():
+            self.assertEqual(mw.other_slugs(), ["hos", "sky"])
+            self.assertEqual(mw.clone_name("sky"), "night-sky")
+            with mock.patch.dict(os.environ, {"SKY_REPO": str(mw.HOME / "YouTube" / "Night Sky")}):
+                self.assertEqual(mw.channel_clone("sky"), mw.slot_dir(mw.SLOT) / "night-sky")   # never Ben's folder
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/s"]):
+                p = mw.brief("J1", "m", 25)
+            self.assertIn("   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                          "   For a SKY job, work in the SKY checkout (/s) and follow its AGENTS.md.\n", p)
+            self.assertIn("History of Science and Night Sky folders must always be left on main", p)
+            self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
+            self.assertIn("inside the three checkouts", p)
+
+    def test_the_brief_names_each_checkouts_rule_files(self):
+        # J2577: the rule book is two files since J2527. A checkout with studio/RULES.md is told both, in order; one
+        # that has not split its rules yet is told AGENTS.md alone, as before; a made-up third channel needs no edit.
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            for name, split in (("o", True), ("h", False), ("s", True)):
+                (root / name / "studio").mkdir(parents=True)
+                if split:
+                    (root / name / "studio" / "RULES.md").write_text("# rules\n")
+            o, h, sk = str(root / "o"), str(root / "h"), str(root / "s")
+            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, sk]):
+                p = mw.brief("J1", "m", 25)
+            self.assertIn(f'1. Orbit With Ben ({o}) is pulled. Read AGENTS.md and then studio/RULES.md '
+                          '(the rules, the Never list, "Stop and ask Ben") and then\n', p)
+            self.assertIn(f"   For a HOS job, work in the HOS checkout ({h}) and follow its AGENTS.md.\n"
+                          f"   For a SKY job, work in the SKY checkout ({sk}) and follow its AGENTS.md and then "
+                          "studio/RULES.md.\n", p)
+            self.assertNotIn("{", p)
+
+    def test_a_third_channel_reaches_the_agent_and_the_second_slot(self):
+        with self.sky():
+            with mock.patch.object(mw, "OTHERS", [pathlib.Path("/h"), pathlib.Path("/s")]), \
+                    mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+                c = mw.agent_cmd("claude", "P")
+            dirs = [c[i + 1] for i, x in enumerate(c) if x == "--add-dir"]
+            self.assertEqual(dirs, ["/h", "/s", str(mw.HOME / "_desk")])
+            calls = []
+            with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
+                    mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())):
+                mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin")
+            self.assertTrue(calls[0]["SKY_REPO"].endswith("worker/slot2/night-sky"))
+            self.assertTrue(calls[0]["HOS_REPO"].endswith("worker/slot2/history-of-science"))
+
+    def test_a_channel_with_no_repo_url_yet_does_not_stop_the_worker(self):
+        import channels
+        base = channels._load()
+        bare = dict(next(c for c in base if c.get("home")), slug="new", label="NEW", name="New One", home=False,
+                    order=9, title_match=r"\bNEW\b", youtube={}, repo={"env": "NEW_REPO", "checkouts": ["new-one"]})
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (bare,)):
+            self.assertEqual(mw.clone_name("new"), "new")
+            self.assertEqual(mw.channel_clone("new"), mw.slot_dir(mw.SLOT) / "new")
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/n"]):
+                self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science), check", mw.brief("J1", "m", 25))
+
+    def test_the_unattended_tool_list_is_not_widened(self):
+        # the list an unattended Claude may use without asking, as it stood before this change
+        self.assertEqual(len(mw.CLAUDE_ALLOWED_TOOLS), ALLOWED_BEFORE_J2526)
+        self.assertFalse(any("merge" in r or "pull" in r for r in mw.CLAUDE_ALLOWED_TOOLS))
+
+
+class FilmStoreOnTheNas(unittest.TestCase):
+    """J2568, 11 Nov 2026. AGENTS.md "Film folders on the NAS" (Ben, 7 Nov) has both machines read and write a film's
+    folder on the shared store. The brief said "inside the checkouts and ~/_desk", so a run was refused a copy into
+    its own film's folder and a finished film had no allowed way off the MacBook."""
+    STORE = pathlib.Path("/Volumes/data/studio-live")
+
+    def brief(self, store):
+        with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h"]), \
+                mock.patch.object(mw, "film_store", lambda: store):
+            return mw.brief("J1", "m", 25)
+
+    def test_mounted_the_brief_allows_the_store_and_carries_the_nas_rules(self):
+        p = self.brief(self.STORE)
+        self.assertIn("inside the two checkouts, ~/_desk and the shared working-film store on the NAS", p)
+        self.assertIn("(/Volumes/data/studio-live;", p)
+        for rule in ("never delete or move a file that is already", "never replace a finished media file",
+                     "never write outside that", "SHA-256", "01:00-06:00"):
+            self.assertIn(rule, p)
+        self.assertIn("never delete anything on the NAS", p)          # the standing line is still there too
+        self.assertNotIn("{", p)
+
+    def test_not_mounted_the_brief_says_so_and_keeps_files_on_the_mac(self):
+        p = self.brief(None)
+        self.assertIn("is not\n  mounted on this Mac right now, so do not try to reach it", p)
+        self.assertIn("SHA-256 in your report", p)
+        self.assertNotIn("/Volumes/data", p)
+        self.assertNotIn("{", p)
+
+    def test_the_agents_sandbox_gets_the_store_only_when_it_is_mounted(self):
+        for agent in ("codex", "claude", "gemini"):
+            with mock.patch.object(mw, "OTHERS", [pathlib.Path("/h")]), \
+                    mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+                with mock.patch.object(mw, "film_store", lambda: self.STORE):
+                    c = mw.agent_cmd(agent, "P")
+                with mock.patch.object(mw, "film_store", lambda: None):
+                    without = mw.agent_cmd(agent, "P")
+            dirs = [c[i + 1] for i, x in enumerate(c) if x == "--add-dir"]
+            self.assertEqual(dirs, ["/h", str(mw.HOME / "_desk"), str(self.STORE)], agent)
+            self.assertNotIn(str(self.STORE), without, agent)
+            self.assertNotIn("/Volumes/data/mac-mini-archive", " ".join(c), agent)   # never the archive
+
+    def test_film_store_is_the_queues_own_path_and_none_when_absent(self):
+        import jobs
+        with tempfile.TemporaryDirectory() as d:
+            with mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(d)):
+                self.assertEqual(mw.film_store(), pathlib.Path(d))
+            with mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(d) / "gone"):
+                self.assertIsNone(mw.film_store())
 
 
 if __name__ == "__main__":

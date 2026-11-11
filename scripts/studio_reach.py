@@ -31,10 +31,21 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CHANNELS = {
-    "hos": {"port": 9460, "channel_id": "UCXp7HkBIl1LgaznXuZHJyRg"},
-    "owb": {"port": 9223, "channel_id": "UC_esArsDKd3GJvOkeO0DUog"},
-}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels as registry  # noqa: E402
+
+
+def reach_channels() -> dict:
+    """{slug: {"port", "channel_id"}} for every channel whose own file names both a reach port and a YouTube id
+    (studio/channel.json: youtube.reach_port, youtube.id). Sorted by slug, the order the old table had."""
+    out = {}
+    for slug in sorted(registry.slugs()):
+        port, channel_id = registry.reach_port(slug), registry.youtube_id(slug)
+        if port and channel_id:
+            out[slug] = {"port": port, "channel_id": channel_id}
+    return out
+
+
 LONG_TAB = "ANALYTICS_TAB_ID_REACH"
 SHORT_TAB = "ANALYTICS_TAB_ID_ENGAGEMENT"
 
@@ -193,7 +204,7 @@ def reach_name(start: dt.date) -> str:
 
 
 def channel_dir(root: Path, channel: str) -> Path:
-    if channel not in CHANNELS:
+    if channel not in reach_channels():
         raise SystemExit(f"unknown channel {channel}")
     return root / "05_Analytics" / channel
 
@@ -318,7 +329,7 @@ def scrape_window(root: Path, channel: str, start: dt.date, end: dt.date) -> dic
     from playwright.sync_api import sync_playwright
     from cdp_tabs import reuse_page
 
-    info = CHANNELS[channel]
+    info = reach_channels()[channel]
     videos = [video for video in channel_videos(root, channel) if video["format"] in ("long", "short")]
     if not videos:
         raise SystemExit(f"no videos for {channel}")
@@ -384,8 +395,8 @@ def scrape_window(root: Path, channel: str, start: dt.date, end: dt.date) -> dic
 
 def selected_channels(name: str) -> list[str]:
     if name == "both":
-        return ["hos", "owb"]
-    if name not in CHANNELS:
+        return list(reach_channels())
+    if name not in reach_channels():
         raise SystemExit(f"unknown channel {name}")
     return [name]
 
@@ -396,16 +407,17 @@ def main(argv=None) -> int:
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     morning = sub.add_parser("morning")
-    morning.add_argument("--channel", required=True, choices=["hos", "owb", "both"])
+    names = list(reach_channels())
+    morning.add_argument("--channel", required=True, choices=names + ["both"])
     morning.add_argument("--today", default=dt.date.today().isoformat())
 
     month = sub.add_parser("month")
-    month.add_argument("--channel", required=True, choices=["hos", "owb"])
+    month.add_argument("--channel", required=True, choices=names)
     month.add_argument("--start", required=True)
     month.add_argument("--end", required=True)
 
     seed = sub.add_parser("seed-archive")
-    seed.add_argument("--channel", required=True, choices=["hos", "owb"])
+    seed.add_argument("--channel", required=True, choices=names)
     seed.add_argument("--date", required=True)
     seed.add_argument("--git-rev", required=True)
 

@@ -44,3 +44,7 @@ No fear framing, no hedge, no hashtag, no series suffix.
   - **Saved & Read Back (YouTube Data API v3):** `title: "Earth Is Losing Its Spin (And the Moon Is Taking It)"`, `privacyStatus: "private"`, `publishAt: "2026-11-22T18:00:00Z"`, `madeForKids: false`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`, Studio `saveDisabled: true` (`Changes saved`).
 
 Air: Sun 22 Nov 18:00 London.
+
+## Title changed and test armed again (J2497, 2026-11-10T12:06Z)
+
+Ben, 10 Nov: "do what you think is best". The unstarted test T008 was deleted by Studio when the title was edited. Title now: **What If Earth Stopped Spinning? (It's Already Slowing Down)**. New test T028: side A is that title with the same thumbnail (4 CM A YEAR); side B is unchanged. Records: `jobs/reviews/J2497/`.

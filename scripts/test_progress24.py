@@ -379,5 +379,38 @@ class Summary(unittest.TestCase):
         )
 
 
+class TheBasisLostAChannelsName(unittest.TestCase):
+    """J2620, 11 Nov 2026: the nine-stage counting basis used to carry a channel's name in its id. The count did not
+    change when the name went, so the 24-hour panel must keep comparing across the rename."""
+    OLD, NEW = 'studio-nine-stages-hos-aliases-v2', 'studio-nine-stages-aliases-v2'
+
+    def test_the_outlook_writes_the_plain_id(self):
+        import uat_outlook
+        src = Path(uat_outlook.__file__).read_text()
+        self.assertIn(f"milestoneSchema='{self.NEW}'", src)
+
+    def test_the_old_id_and_the_new_one_are_the_same_basis(self):
+        self.assertTrue(p.same_basis(self.OLD, self.NEW))
+        self.assertTrue(p.same_basis(self.NEW, self.NEW))
+        self.assertTrue(p.same_basis(None, None))
+        self.assertTrue(p.same_basis(f"other-v1|{self.OLD}", f"other-v1|{self.NEW}"))
+
+    def test_a_real_change_of_basis_is_still_a_change(self):
+        self.assertFalse(p.same_basis(self.NEW, 'studio-nine-stages-aliases-v3'))
+        self.assertFalse(p.same_basis(self.OLD, 'studio-ten-stages-aliases-v2'))
+        self.assertFalse(p.same_basis(self.NEW, None))
+
+    def test_the_panel_keeps_its_history_across_the_rename(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / 'h.json'
+            before = {'at': '2026-11-04T12:00Z', 'counts': {'HOS:009': 4}, 'basis': self.OLD}
+            f.write_text(json.dumps([before]))
+            b = board([('HOS:009', 'Moon', ms(5))])
+            b['tracker']['videos'][0]['production']['milestoneSchema'] = self.NEW
+            s = p.section(f, b, NOW)
+            self.assertEqual(s['milestones'], 1, 'one stage finished in the hour; the rename must not hide it')
+
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)

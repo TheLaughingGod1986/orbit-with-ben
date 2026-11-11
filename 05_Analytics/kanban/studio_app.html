@@ -553,6 +553,79 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .blocker-facts>div { display:flex; gap:12px; justify-content:space-between; margin:8px 0; }
 .blocker-facts dt { color:var(--muted); flex:0 0 36%; }.blocker-facts dd { margin:0; text-align:right; overflow-wrap:anywhere; }
 .blocker-job-link { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; color:var(--blue); font-size:13px; }
+/* Phone clean-up (Ben, 10 Nov 2026, from a 390 px audit of the live board): no label under 12 px, every tap target
+   at least 44 px, room between a page's intro line and its tiles, and machine chips that do not cut their text off. */
+p.meta + .seg { margin-top: 12px; }
+.seg > button span, .seg > div span, .seg > a span { font-size: 0.75rem; }
+.p24-videos-jump, .operation-status { min-height: 44px; }
+.overview-activity a.active-job-card .aj-eta,
+.overview-p24 .p24-stats span, .overview-p24 .p24-agents, .overview-p24 .p24-note,
+.overview-p24 .p24-film-meta, .overview-p24 .p24-glance-stats span,
+.overview-home .mc-chip .mc-chip-state, .featured-next>span,
+.blocker-guide .blocker-scope, .blocker-guide .blocker-caption { font-size: 12px; }
+.eyebrow, .next-action>span { font-size: .75rem; }
+.credit small { font-size: 0.75rem; }
+@media (max-width: 480px) {
+  .overview-machines .mc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .overview-home .mc-chip { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 8px; min-height: 52px; }
+  .overview-home .mc-chip .mc-light { margin-bottom: 0; }
+  .overview-home .mc-chip .mc-chip-state { flex-basis: 100%; white-space: normal; }
+}
+/* First day (Ben, 10 Nov 2026: "learn from our failures"): how each new video started. Closed, a card is the
+   verdict, the title and one line of numbers; open, it is the whole check. Scoped to .fd-card. */
+.overview-home .fd-card { padding: 0; }
+.fd-card > summary { list-style: none; display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; min-height: 44px; cursor: pointer; }
+.fd-card > summary::-webkit-details-marker { display: none; }
+.fd-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fd-top .tag { align-self: center; }
+.fd-kind { color: var(--muted); font-size: 12px; }
+.fd-title { font-size: 15px; line-height: 1.3; font-weight: 600; }
+.fd-line { font-size: 13px; line-height: 1.45; }
+.fd-next { color: var(--muted); }
+.fd-body { padding: 0 14px 14px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.fd-body h3 { font-size: 12px; font-weight: 700; color: var(--muted); margin: 14px 0 4px; }
+.fd-body p { margin: 0 0 6px; } .fd-body .fd-lead { margin-top: 12px; font-weight: 600; }
+.fd-body ul { margin: 0; padding-left: 18px; } .fd-body li { margin-bottom: 4px; }
+.fd-body .btns { padding: 0; margin-top: 12px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.fd-body .technical > summary { min-height: 44px; }
+.fd-body .btns .btn { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+.video-first { margin: 14px 0; }
+/* Channels (Ben, 10 Nov 2026: "show what repos are plugged in ... and the ability that we can just add another").
+   Chips at the foot of the Overview; one card per channel and the steps to add one on #channels. */
+.ch-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ch-chip { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border-radius: 12px; background: var(--panel); color: inherit; text-decoration: none; }
+.ch-chip b { font-size: 14px; font-weight: 600; }
+.overview-home .ch-card { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.ch-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.ch-head h2 { margin: 0; font-size: 17px; }
+.ch-card p { margin: 0; font-size: 14px; line-height: 1.5; }
+.ch-card h3 { font-size: 12px; font-weight: 700; color: var(--muted); margin: 6px 0 0; }
+.ch-card ul, .ch-steps { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.ch-card li { margin-bottom: 6px; }
+.ch-facts { background: transparent; padding: 0; }
+.ch-facts dd a { color: inherit; }
+.ch-when { color: var(--muted); white-space: nowrap; }
+.ch-steps b { display: inline-block; min-width: 54px; }
+.ch-note { color: var(--muted); }
+.ch-card .technical > summary { min-height: 44px; }
+/* Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon"). The job page leads
+   with what the job is doing; the record as the agents wrote it sits under Technical details. */
+.job-page { display: flex; flex-direction: column; gap: 12px; }
+.job-page .tag { align-self: flex-start; }
+.job-page h1 { margin: 0; }
+.job-facts { margin: 0; background: var(--panel); border-radius: 14px; padding: 4px 14px; }
+.job-facts > div { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.job-facts > div:first-child { border-top: 0; }
+.job-facts dt { flex: 0 0 96px; color: var(--muted); font-size: 13px; }
+.job-facts dd { margin: 0; flex: 1; min-width: 0; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.job-facts .bar { margin-top: 8px; }
+.job-video { display: block; color: var(--blue); min-height: 44px; padding: 2px 0 6px; }
+.job-video span { display: block; color: var(--muted); font-size: 12px; }
+.job-page .technical > summary, .job-more > summary { min-height: 44px; }
+.job-more > summary { font-size: 0.85rem; }
+.job-more .row { margin-top: 8px; }
+.overview-activity a.active-job-card .aj-what { color: var(--ink); }
+.thumb.job { font-size: 1.2rem; }
 </style>
 </head>
 <body>

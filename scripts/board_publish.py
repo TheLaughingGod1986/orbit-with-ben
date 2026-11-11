@@ -53,8 +53,11 @@ import sys
 import urllib.request
 
 HOME = pathlib.Path.home()
-OWB = pathlib.Path(os.environ.get("OWB_REPO", str(HOME / "YouTube" / "orbit-with-ben")))
-HOS = channels.repo_path("hos", HOME)
+# No channel is named here (J2615): the registry says which channels are plugged in and where each is checked out.
+STUDIO = channels.studio_slug()   # the channel whose repo carries the studio's own code, queue and board branch
+QUEUE = channels.queue_key()      # the section of board.json that carries the job queue
+REPOS = {s: channels.repo_path(s, HOME) for s in channels.slugs()}
+STUDIO_REPO = REPOS[STUDIO]
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
@@ -64,14 +67,40 @@ CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minu
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
-OWB_SPARSE = ["/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/", "/02_Video-Projects/*/status.json",
-              "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",  # actual schedules, excluding dry runs
-              "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
-              "/00_Brand/Channel-Setup/social/UPLOADS.json",  # watch links: private YouTube uploads
-              "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
-HOS_SPARSE = ["/studio/", "/00_Brand/Channel-Setup/PIPELINE.json",
-              "/00_Brand/Channel-Setup/social/UPLOADS.json"]  # each HOS long's YouTube read-back (Private + publishAt)
-SECTIONS = ("hos", "owb", "briefs", "credits", "tracker")
+# CHANNEL_SPARSE: what channel_check.py looks at to say what housekeeping a channel has left (the Channels section).
+CHANNEL_SPARSE = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
+# STUDIO_SPARSE: the studio's own files, read from the repo that carries them.
+STUDIO_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
+                 "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
+# A channel that keeps one status file per film also has its upload results beside them (actual schedules,
+# excluding dry runs).
+FILM_STATUS_SPARSE = ["/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
+                      "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json"]
+UPLOADS_SPARSE = "/00_Brand/Channel-Setup/social/UPLOADS.json"  # watch links and each long's YouTube read-back
+
+
+def sparse(slug: str) -> list[str]:
+    """What this run's read-only copy of a channel's main branch holds: its settings, its film state (where its
+    studio/channel.json `pipeline` says that is kept), its uploads register and what channel_check.py reads; plus
+    the studio's own files for the channel whose repo carries them."""
+    kept = channels.pipeline(slug)
+    films = ["/" + kept["path"]] if kept.get("path") else []
+    if kept.get("kind") == "film_status":
+        films += FILM_STATUS_SPARSE
+    return [*(STUDIO_SPARSE if slug == STUDIO else []), "/studio/", *films, UPLOADS_SPARSE, *CHANNEL_SPARSE]
+
+
+def wt(slug: str | None = None) -> pathlib.Path:
+    """This run's copy of a channel's main branch (the studio's own repo when no channel is given)."""
+    return WT / (slug or STUDIO)
+
+
+# One section per channel (sorted, so the order in board.json does not depend on the registry's), then the studio's.
+def sections() -> tuple:
+    return (*sorted(channels.slugs()), "briefs", "credits", "tracker")
+
+
+SECTIONS = sections()
 NAMES = {"chief": "Grok", "cursor": "Cursor", "codex": "Codex", "claude": "Claude", "gemini": "Gemini"}
 CHIEF_STATE = pathlib.Path(os.environ.get("CHIEF_STATE", str(HOME / "_desk" / "state" / "chief")))
 # The board's Models row (Ben, 24 Oct 2026 23:40): a traffic light per worker plus voice and picture services.
@@ -170,7 +199,7 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
     live jobs blocked on a provider's credit. green = available, red = out of usage/credit or not running (the relay
     routes round it), amber = no recent reading."""
     state = state or CHIEF_STATE
-    flags_file = flags_file or (WT / "owb" / "scripts" / "credit_flags.json")
+    flags_file = flags_file or (wt() / "scripts" / "credit_flags.json")
     chain = _read_json(state / "chain.json") or {}
     rows = {r.get("agent"): r for r in chain.get("rows") or [] if isinstance(r, dict)}
     checked = _when(chain.get("at"))
@@ -252,7 +281,7 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
 def stable(section: str, doc: dict) -> dict:
     """The part of a section whose change counts as 'the board changed' (run times and the Mini's 10-min heartbeat don't)."""
     d = {k: v for k, v in doc.items() if k != "updatedAt"}
-    if section == "owb" and isinstance(d.get("lanes"), dict):
+    if section == QUEUE and isinstance(d.get("lanes"), dict):
         d["lanes"] = {k: ({kk: vv for kk, vv in v.items() if kk != "heartbeat"} if isinstance(v, dict) else v)
                       for k, v in d["lanes"].items()}
     return d
@@ -278,12 +307,24 @@ def chief_args() -> list[str]:
     return ["--chief", NAMES.get(who, who), "--chief-since", c.get("since", "")] if who else []
 
 
+def snapshot_command(out: pathlib.Path) -> list[str]:
+    """kanban_snapshot.py from the studio's copy, told where every other channel's copy is (`--<slug> <path>`)."""
+    others = [arg for s in channels.slugs() if s != STUDIO for arg in (f"--{s}", str(wt(s)))]
+    return [sys.executable, str(wt() / "scripts" / "kanban_snapshot.py"), *others, "--db-out", str(out), *chief_args()]
+
+
+def films_summary(docs: dict) -> str:
+    """'12 HOS films, 34 OWB films': each channel's section holds its films under `pipeline` or at the top."""
+    def films(doc: dict) -> list:
+        return doc["pipeline"]["films"] if "pipeline" in doc else doc["films"]
+    return ", ".join(f"{len(films(docs[s]))} {channels.label(s)} films" for s in sorted(channels.slugs()))
+
+
 def build(out: pathlib.Path) -> dict:
-    worktree(OWB, WT / "owb", OWB_SPARSE)
-    worktree(HOS, WT / "hos", HOS_SPARSE)
+    for slug in channels.slugs():
+        worktree(REPOS[slug], wt(slug), sparse(slug))
     out.mkdir(parents=True, exist_ok=True)
-    subprocess.run([sys.executable, str(WT / "owb" / "scripts" / "kanban_snapshot.py"), "--hos", str(WT / "hos"),
-                    "--db-out", str(out), *chief_args()], capture_output=True, text=True, timeout=300, check=True)
+    subprocess.run(snapshot_command(out), capture_output=True, text=True, timeout=300, check=True)
     docs = {s: json.loads((out / f"{s}.json").read_text()) for s in SECTIONS if (out / f"{s}.json").exists()}
     if "tracker" not in docs:
         docs["tracker"] = {"updatedAt": "", "lanes": [], "videos": []}
@@ -292,7 +333,7 @@ def build(out: pathlib.Path) -> dict:
 
 def refresh_tracker(docs: dict, checks: dict) -> dict:
     """Re-derive the five-lane tracker with Ben's live ticks (snapshot wrote it with checks={})."""
-    sys.path.insert(0, str(WT / "owb" / "scripts"))
+    sys.path.insert(0, str(wt() / "scripts"))
     try:
         from video_tracker import build_from_docs
         docs["tracker"] = build_from_docs(docs, checks=checks or {})
@@ -310,7 +351,7 @@ def tracker_text() -> str | None:
     broken (so a bad commit never blanks the page). None only before the first good read."""
     keep = STATE / "tracker.json"
     try:
-        text = (WT / "owb" / TRACKER_SRC).read_text()
+        text = (wt() / TRACKER_SRC).read_text()
         if isinstance(json.loads(text).get("channels"), list):
             keep.write_text(text)
             return text
@@ -415,13 +456,14 @@ def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str
 
 def push(board: dict, at: dt.datetime, tracker: str | None = None) -> str:
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
-    blob = git(OWB, "hash-object", "-w", "--stdin", inp=body)
-    nd = git(OWB, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
-    sub = git(OWB, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
-    tb = git(OWB, "hash-object", "-w", "--stdin", inp=tracker) if tracker else None
-    tree = git(OWB, "mktree", inp=tree_listing(blob, nd, sub, tb))
-    commit = git(OWB, "commit-tree", tree, "-m", f"board data {iso(at)}")
-    git(OWB, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
+    repo = STUDIO_REPO
+    blob = git(repo, "hash-object", "-w", "--stdin", inp=body)
+    nd = git(repo, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
+    sub = git(repo, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
+    tb = git(repo, "hash-object", "-w", "--stdin", inp=tracker) if tracker else None
+    tree = git(repo, "mktree", inp=tree_listing(blob, nd, sub, tb))
+    commit = git(repo, "commit-tree", tree, "-m", f"board data {iso(at)}")
+    git(repo, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
     return commit
 
 
@@ -451,7 +493,7 @@ def merge_macbook(slots: list) -> dict | None:
 def heartbeats(repo: pathlib.Path | None = None) -> tuple:
     """(Mini heartbeat, MacBook heartbeat) from their branches, or None each when unreadable (machines card). The
     MacBook one merges every slot's branch (merge_macbook)."""
-    repo = repo or OWB
+    repo = repo or STUDIO_REPO
     out = {}
     for branch in ("mini-heartbeat", *MACBOOK_SLOT_REFS):
         try:
@@ -467,8 +509,9 @@ def quick_key(remote=ls_remote) -> str | None:
     orbit-with-ben, main of history-of-science (one ls-remote each, no fetch) and the Mini's acting-Chief file.
     None if a remote can't be read; the caller then does the full rebuild."""
     try:
-        parts = [remote(OWB, "refs/heads/main", "refs/heads/mini-heartbeat", *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
-                 remote(HOS, "refs/heads/main")]
+        parts = [remote(STUDIO_REPO, "refs/heads/main", "refs/heads/mini-heartbeat",
+                        *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
+                 *(remote(REPOS[s], "refs/heads/main") for s in channels.slugs() if s != STUDIO)]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])
         return None
@@ -500,8 +543,8 @@ def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | N
     """The same pure selector used by the relay; publish a projection of the exact queue revision."""
     import chief_relay as relay
     import routing
-    path = queue_path or WT / "owb" / "jobs" / "queue.json"
-    data = _read_json(path) or {"jobs": (board.get("owb") or {}).get("jobs") or []}
+    path = queue_path or wt() / "jobs" / "queue.json"
+    data = _read_json(path) or {"jobs": (board.get(QUEUE) or {}).get("jobs") or []}
     rows = (board.get("models") or {}).get("chiefChain") or []
     up = {r.get("agent") for r in rows if r.get("up") and r.get("agent") in routing.MINI_WORKERS}
     # Cursor is a specialist, not in the Chief chain.
@@ -535,18 +578,14 @@ def run_once(a) -> int:
     docs = refresh_tracker(docs, checks)
     board, hashes = assemble(docs, prev, checks, at)
     try:  # Models row + acting Chief (Ben, 24 Oct 23:40); never blocks the board push
-        board["models"] = models_status(at, (docs.get("owb") or {}).get("jobs") or [])
+        board["models"] = models_status(at, (docs.get(QUEUE) or {}).get("jobs") or [])
     except Exception as e:  # noqa: BLE001
         log(f"models not read: {e}")
     board["workflow"] = dispatch_snapshot(board, at)
-    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
-        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
-                             for c in channels.all_channels()]
-    except Exception as e:  # noqa: BLE001
-        log(f"channels not read: {e}")
+    add_channels(board)
     try:  # Machines: what each one is on and its jobs in 24 h (Ben, 4 Nov 2026); never blocks the board push
         import machines
-        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
         import chief_relay as relay
         ex = relay.current_execution(at)
         board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
@@ -554,7 +593,7 @@ def run_once(a) -> int:
         log(f"machines not built: {e}")
     try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)
         import queue_eta
-        queue = _read_json(WT / "owb" / "jobs" / "queue.json") or {"jobs": []}
+        queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
         board["queueForecast"] = queue_eta.section(queue, *heartbeats(), at)
     except Exception as e:  # noqa: BLE001
         log(f"queue forecast not built: {e}")
@@ -563,14 +602,38 @@ def run_once(a) -> int:
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
+    return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, checks_meta)
+
+
+def add_channels(board: dict) -> None:
+    """board.channels (every channel plugged in) and board.channelRoom. Never blocks the board push."""
+    try:  # The channels plugged in (channels/*/channel.json): names, labels and filters on the board come from here
+        board["channels"] = [{k: c.get(k) for k in ("slug", "label", "name", "short", "home")}
+                             for c in channels.all_channels()]
+    except Exception as e:  # noqa: BLE001
+        log(f"channels not read: {e}")
+    try:  # The Channels section (Ben, 10 Nov 2026): each one's handle, repo, whether the studio can drive it, what
+        # is left to do. The names above stay if this fails, so the filters never lose a channel.
+        import channel_cards
+        # Read each channel from this run's own fresh copy of its main branch (WT/<slug>), never from the working
+        # checkout: that one can be on a job's branch or behind, and then a channel reads as "not checked".
+        fresh = {s: WT / s for s in channels.slugs() if (WT / s / "studio" / "channel.json").is_file()}
+        board["channels"] = channel_cards.cards(fresh)
+        board["channelRoom"] = channel_cards.room()
+    except Exception as e:  # noqa: BLE001
+        log(f"channel cards not read: {e}")
+
+
+def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, checks_meta) -> int:
+    """The end of a run: write the state copy, then push if anything changed."""
     tracker = tracker_text()
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
     board["publishedAt"] = iso(at)  # the page's small "Updated HH:MM"; after the digest, so it never forces a push
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
-    summary = (f"{len(docs['hos']['pipeline']['films'])} HOS films, {len(docs['owb']['films'])} OWB films, "
-               f"{len(docs['owb'].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
+    summary = (f"{films_summary(docs)}, "
+               f"{len(docs[QUEUE].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
                f"; tracker {'generated ' + str(json.loads(tracker).get('generatedAt')) if tracker else 'missing'}")
     if a.dry_run:
         print(f"dry run: {summary}; would {'push' if whole != prev.get('whole') or a.force else 'skip (unchanged)'}")
@@ -602,7 +665,7 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
     the jobs waiting on Ben on the published board with a working Play link, and is the site up? Its result is
     ~/_desk/state/board/board_check.json. Fire-and-forget, like everything here."""
     at = at or now()
-    script = WT / "owb" / "scripts" / "board_check.py"
+    script = wt() / "scripts" / "board_check.py"
     result = STATE / "board_check.json"
     try:
         if result.exists() and at.timestamp() - result.stat().st_mtime < BOARD_CHECK_EVERY_S:
@@ -610,7 +673,7 @@ def kick_board_check(at: dt.datetime | None = None) -> bool:
         if not script.exists():
             return False
         subprocess.Popen([sys.executable, str(script), "--quiet"], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                         stderr=subprocess.DEVNULL, start_new_session=True, cwd=str(WT / "owb"))
+                         stderr=subprocess.DEVNULL, start_new_session=True, cwd=str(wt()))
         return True
     except OSError as e:
         log(f"board check not started: {e}")
@@ -625,7 +688,7 @@ def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
     only queue mutations via approved_deliver.py --apply --git. Idempotent; skips swaps and banned reuse ids.
     """
     at = at or now()
-    script = WT / "owb" / "scripts" / "approved_deliver.py"
+    script = wt() / "scripts" / "approved_deliver.py"
     stamp = STATE / "approved_deliver.json"
     try:
         if stamp.exists() and at.timestamp() - stamp.stat().st_mtime < APPROVED_DELIVER_EVERY_S:
@@ -635,7 +698,7 @@ def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
         stamp.write_text(json.dumps({"kickedAt": iso(at)}, indent=1))
         subprocess.Popen([sys.executable, str(script), "--apply", "--git", "--agent", "relay"],
                          stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                         start_new_session=True, cwd=str(WT / "owb"))
+                         start_new_session=True, cwd=str(wt()))
         return True
     except OSError as e:
         log(f"approved_deliver not started: {e}")

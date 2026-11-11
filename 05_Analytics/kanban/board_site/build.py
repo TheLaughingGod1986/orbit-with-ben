@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Build the Studio Kanban site (Ben, 24 Oct 2026: simple per-video tracker is the home page).
+"""Build the Studio Kanban site (the Studio app is the home page: Ben, 28 Oct 2026).
 
   python3 05_Analytics/kanban/board_site/build.py [--out DIR]    # default: …/board_site/dist
 
 Outputs:
   dist/index.html     — Studio app (Ben, 28 Oct 2026): Overview, Videos, Review, Agents, Schedule (/)
-  dist/board.html     — five-lane per-video tracker, where Ben ticks OK / changes (/board)
-  (/classic, the October swim-lane board, is retired: vercel.json redirects it to /; build_classic stays for reference)
+  (/board, the five-lane per-video tracker, was retired on 10 Nov 2026: Ben, "This seems legacy. I think we can
+   remove this section." The Studio app's Videos and Review tabs do its job. vercel.json redirects /board to /, so old
+   links with #v=<video> or #k=<key> still land on the right page. Its files are in _archive/05_Analytics/kanban/.
+   /classic, the October swim-lane board, was retired the same way on 28 Oct.)
   dist/tracker.html   — Channel Tracker web app (/tracker)
   dist/ai.html        — AI & credits: who is up, who is Chief, credit left per plan, where it went (/ai)
   dist/version.json, updater.js, static/, tracker.webmanifest
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
-redeploy of the Vercel project studio-kanban; data changes do not. api/checks.js (Ben's ticks → OWB #264 / HOS #180)
+redeploy of the Vercel project studio-kanban; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
 and vercel.json sit next to this file.
 """
 from __future__ import annotations
@@ -25,20 +27,18 @@ import shutil
 import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
-SIMPLE = HERE.parent / "video_tracker.html"
 AI_PAGE = HERE.parent / "ai_credits.html"
 STUDIO = HERE.parent / "studio_app.html"
 TRACKER = HERE.parent.parent / "dashboard" / "template.html"
 TRACKER_DATA = HERE.parent.parent / "dashboard" / "data.json"
-ROOT = HERE.parents[2]
-
-sys.path.insert(0, str(ROOT / "scripts"))
-from kanban_snapshot import release_record
 
 
-TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
+
+# The tracker wears the Studio's dark colours on the board site (Ben, 10 Nov 2026: one look across the pages on a
+# phone). Its template already has a dark theme for `data-theme="dark"`; the colours below are studio_app.html's.
+TRACKER_HEAD = """<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f7f9">
+<meta name="theme-color" content="#0B111B">
 <link rel="manifest" href="/tracker.webmanifest">
 <link rel="apple-touch-icon" href="/static/tracker-180.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/static/tracker-192.png">
@@ -46,82 +46,32 @@ TRACKER_HEAD = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Tracker">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}</style>
+<style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}
+.studio-back{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0 2px;font:600 .95rem var(--f-display);color:var(--accent);text-decoration:none}
+#tracker-refresh{justify-self:start;min-height:44px}
+html[data-theme="dark"]:root{--bg:#0B111B;--panel:#172433;--line:#243244;--grid:#1F2D3F;--chip:#1B2A3B;--ink:#F1F5F9;--ink-2:#B6C2D2;--ink-3:#94A3B8}</style>
 </head><body>
 """
 
 TRACKER_PATCHES = [
     ('<span class="eyebrow">YouTube · daily snapshot</span>',
-     '<span class="eyebrow">YouTube · daily snapshot · <a href="/">Studio board</a></span>'),
-    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div><button type="button" id="tracker-refresh" class="tab">Refresh data</button>'),
+     '<a class="studio-back" href="/">‹ Studio</a><span class="eyebrow">YouTube · daily snapshot · <a href="/">Studio board</a></span>'),
+    ('<div class="stamp" id="stamp"></div>', '<div class="stamp" id="stamp"></div>\n  <div class="stamp" id="livestamp"></div><button type="button" id="tracker-refresh" class="tab">↻ Refresh data</button>'),
     ('(() => {\n  let DATA = { channels: [] };\n  try { DATA = JSON.parse(document.getElementById("tracker-data").textContent); } catch (e) { /* template without data */ }',
      'window.__trackerStart = (DATA) => {\n  DATA = DATA || { channels: [] };'),
 ]
 
 
 def app_version() -> str:
-    files = [SIMPLE, TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
-             HERE / "tracker_app.js", HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
+    files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
+             HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js",
+             HERE / "api" / "data.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
 def versioned_page(html: str) -> str:
     marker = f'<meta name="studio-version" content="{app_version()}"><script src="/updater.js" defer></script>'
     return html.replace("</head>", marker + "</head>", 1)
-
-
-def baked_tracker() -> dict:
-    """Best-effort offline tracker from this checkout (+ optional /tmp/hos-sparse PIPELINE)."""
-    try:
-        from video_tracker import build_videos
-        hos_path = pathlib.Path("/tmp/hos-sparse/00_Brand/Channel-Setup/PIPELINE.json")
-        if not hos_path.exists():
-            # On Vercel there is no HOS checkout: bake the Mini's last published tracker instead (offline fallback).
-            import urllib.request
-            url = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json"
-            with urllib.request.urlopen(url, timeout=15) as r:
-                live = json.loads(r.read().decode())
-            tracker = live.get("tracker") or {}
-            if tracker.get("videos"):
-                return tracker
-            return {"updatedAt": "", "lanes": [], "videos": [], "note": "no HOS PIPELINE at build time"}
-        hos = json.loads(hos_path.read_text())
-        owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
-        for film in owb:
-            receipt = release_record(str(film.get("film", "")))
-            if receipt:
-                film["release"] = receipt
-        briefs = {}
-        bf = ROOT / "05_Analytics" / "kanban" / "film_briefs.json"
-        if bf.exists():
-            briefs = json.loads(bf.read_text()).get("films") or {}
-        jobs = []
-        q = ROOT / "jobs" / "queue.json"
-        if q.exists():
-            jobs = json.loads(q.read_text()).get("jobs") or []
-        checks = {}
-        try:
-            import urllib.request
-            with urllib.request.urlopen("https://studio-kanban.vercel.app/api/checks", timeout=10) as r:
-                checks = json.loads(r.read().decode()).get("checks") or {}
-        except Exception:
-            pass
-        return build_videos(hos=hos, owb=owb, briefs=briefs, jobs=jobs, checks=checks)
-    except Exception as e:
-        return {"updatedAt": "", "lanes": [], "videos": [], "error": str(e)[:200]}
-
-
-def build_simple(out: pathlib.Path) -> None:
-    html = SIMPLE.read_text()
-    marker = "<script>\n/* VIDEO_TRACKER_BOOT */\n</script>"
-    if html.count(marker) != 1:
-        sys.exit("build: expected one VIDEO_TRACKER_BOOT script block in video_tracker.html")
-    boot = (HERE / "tracker_app.js").read_text()
-    baked = json.dumps(baked_tracker(), ensure_ascii=False).replace("</", "<\\/")
-    inject = f'<script type="application/json" id="baked-tracker">{baked}</script>\n<script>\n{boot}\n</script>'
-    html = html.replace(marker, inject)
-    (out / "board.html").write_text(versioned_page(html))
-    print(f"built {out / 'board.html'} ({len(html):,} bytes)")
 
 
 def build_studio(out: pathlib.Path) -> None:
@@ -173,7 +123,6 @@ def build(out: pathlib.Path) -> None:
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
-    build_simple(out)
     build_tracker(out)
     build_ai(out)
     build_studio(out)

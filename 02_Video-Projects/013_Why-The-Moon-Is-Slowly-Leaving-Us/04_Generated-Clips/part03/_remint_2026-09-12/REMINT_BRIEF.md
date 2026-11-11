@@ -1,6 +1,6 @@
 # Moon Leaving P03 remint — LIVE overnight 12 Sep 2026
 
-START NOW. Credits green (25,050 on benoats@googlemail.com). Engine: Veo 3.1 Fast only.
+START NOW. Credits green (25,050 on the studio Ultra account). Engine: Veo 3.1 Fast only.
 P01 KEEP. Do not overwrite *_LOCKED_*.mp4. No double-mint. scenery_only (no Orbit/mascot/text).
 
 Dest (this folder): write exactly these filenames after each gen:

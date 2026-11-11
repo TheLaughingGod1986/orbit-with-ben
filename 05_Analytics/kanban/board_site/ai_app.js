@@ -2,11 +2,25 @@
   // AI & credits page (Ben, 28 Oct 2026): which agents are up or out of credit, who is acting Chief, what credit is
   // left on each plan and where it went, so we can pick agents and plans on evidence. Reads the same board.json as
   // the video board (board.models from the relay, board.credits from scripts/ai_spend.py); no secrets, no writes.
+  // Data comes through the site's own server (api/data.js, J2532). It reads with the server's token, so this page
+  // works when the data's repo is private, and it answers 401 to a viewer who is not signed in. GitHub's public
+  // addresses below are only the fallback when that server cannot be reached; they work while the repo is public.
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
-  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
-  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
-  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+  const SIGN_IN = "This page is private. Open your board link on this device to sign in, then come back to this page.";
+  // One read from api/data.js. A 401 means "sign in": it is thrown, so the caller stops instead of trying GitHub.
+  async function own(query, cache) {
+    let key = ""; try { key = localStorage.getItem("studio-board-key") || ""; } catch (e) { /* private window */ }
+    const r = await fetch("/api/data?" + query, { cache, credentials: "same-origin", headers: key ? { "x-board-key": key } : {} });
+    if (r.status === 401) throw Object.assign(new Error("sign in"), { signIn: true });
+    return r;
+  }
+  // Our own server first; the old way only if it cannot be reached or says no for another reason.
+  const elsewhere = (p, old) => p.then(r => r.ok ? r : old()).catch(e => { if (e && e.signIn) throw e; return old(); });
+  const oldRef = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
     .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
+  const refFetch = () => elsewhere(own("f=ref", "no-cache"), oldRef);
+  const boardFetch = sha => elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+    () => fetch(sha ? DATA_AT(sha) : DATA + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const STALE_H = 30;   // a pool read daily is stale after a missed day
@@ -148,22 +162,21 @@
 
   async function poll() {
     try {
-      let url = DATA + "?t=" + Date.now(), sha = "";
+      let sha = "";
       try {
         const g = await refFetch();
         if (g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) return render();
-          if (sha) url = DATA_AT(sha);
         }
-      } catch (e) {}
-      const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
+      } catch (e) { if (e && e.signIn) throw e; }
+      const r = await boardFetch(sha);
       if (!r.ok) return;
       board = await r.json();
       if (sha) lastSha = sha;
       render();
     } catch (e) {
-      document.getElementById("asof").textContent = "Could not load the data";
+      document.getElementById("asof").textContent = e && e.signIn ? SIGN_IN : "Could not load the data";
     }
   }
 

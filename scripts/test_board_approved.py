@@ -211,15 +211,10 @@ class Check(unittest.TestCase):
 
 class Page(unittest.TestCase):
     def test_phone_page_has_the_lane(self):
-        site = HERE.parent / "05_Analytics/kanban"
-        js = (site / "board_site/tracker_app.js").read_text()
-        self.assertIn('["approved", "Approved, on its way"]', js)
-        self.assertLess(js.index('["ready", "Ready for OK"]'), js.index('["approved", "Approved, on its way"]'))
-        self.assertLess(js.index('["approved", "Approved, on its way"]'), js.index('["done", "On YouTube"]'))
-        self.assertIn("function approvedHtml", js)
-        html = (site / "video_tracker.html").read_text()
-        self.assertIn('.lane[data-lane="approved"]', html)
-        self.assertIn("repeat(6, minmax(0, 1fr))", html)  # six lanes; minmax since the 27 Oct layout pass
+        # The old five-lane page (/board) is retired (10 Nov 2026); what Ben OK'd shows in the Studio app's Passed lane.
+        js = (HERE.parent / "05_Analytics/kanban/board_site/studio_app.js").read_text()
+        self.assertIn('if (v.lane === "approved") return "passed";', js)
+        self.assertIn('if (v.lane === "approved") return listingLine(v) || "Ready to schedule";', js)
 
 
 if __name__ == "__main__":

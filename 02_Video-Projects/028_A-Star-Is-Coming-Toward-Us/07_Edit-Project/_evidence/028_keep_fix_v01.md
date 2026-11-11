@@ -27,7 +27,7 @@ Audited all 17 existing Orbit Omni clips across `023`–`027` (`orbit_venus_omni
 
 ## 3. Pool Balances After Mint
 
-- **Flow (`benoats@googlemail.com`, CDP `:9222`):**
+- **Flow (the studio Ultra account, CDP `:9222`):**
   - Before `J0850` mint: **20,950** credits
   - Spent in `J0850` + `J0855` retake: **120** credits (`100` cr Quality `r11_night_road` + `10` cr Fast `r17_pitch` Take 1 + `10` cr Fast `r17_pitch` Take 2 — **159 cr under** the `279` cr expected reserve)
   - Live Flow balance after `J0855`: **20,830** credits

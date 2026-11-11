@@ -147,22 +147,74 @@ class StatusPage(unittest.TestCase):
 
 class SyncRules(unittest.TestCase):
     SRC = "# A\n\n## Never\n- one\n- two\n\n## Other\nx\n"
+    CHANNEL = "# Channel\n\n## Teach on screen\n- show it\n\n## Never (this channel's additions)\n- three\n"
+    BOTH = {"AGENTS.md": SRC, "studio/RULES.md": CHANNEL}
 
     def test_section_body(self):
-        self.assertEqual(sync_rules.section(self.SRC, "Never"), "- one\n- two\n")
+        self.assertEqual(sync_rules.find_section(self.SRC, "Never"), "- one\n- two\n")
+        self.assertEqual(sync_rules.section(self.BOTH, "AGENTS.md", "Never"), "- one\n- two\n")
+        self.assertIsNone(sync_rules.find_section(self.SRC, "Missing"))
 
     def test_block_rewritten_from_source(self):
         doc = "top\n<!-- SYNC: AGENTS.md#Never -->\n- stale\n<!-- /SYNC -->\nend\n"
         self.assertEqual(sync_rules.sync(doc, self.SRC),
                          "top\n<!-- SYNC: AGENTS.md#Never -->\n- one\n- two\n<!-- /SYNC -->\nend\n")
 
+    def test_a_block_is_filled_from_the_rule_file_its_marker_names(self):
+        """J2527, 11 Nov 2026: the studio's rules are in AGENTS.md and the channel's own in studio/RULES.md."""
+        doc = ("<!-- SYNC: AGENTS.md#Never -->\nold\n<!-- /SYNC -->\n"
+               "<!-- SYNC: studio/RULES.md#Teach on screen -->\nold\n<!-- /SYNC -->\n"
+               "<!-- SYNC: studio/RULES.md#Never (this channel's additions) -->\n<!-- /SYNC -->\n")
+        self.assertEqual(sync_rules.sync(doc, self.BOTH),
+                         "<!-- SYNC: AGENTS.md#Never -->\n- one\n- two\n<!-- /SYNC -->\n"
+                         "<!-- SYNC: studio/RULES.md#Teach on screen -->\n- show it\n<!-- /SYNC -->\n"
+                         "<!-- SYNC: studio/RULES.md#Never (this channel's additions) -->\n- three\n<!-- /SYNC -->\n")
+
+    def test_the_two_never_lists_do_not_shadow_each_other(self):
+        self.assertEqual(sync_rules.section(self.BOTH, "studio/RULES.md", "Never (this channel's additions)"), "- three\n")
+        self.assertEqual(sync_rules.section(self.BOTH, "AGENTS.md", "Never"), "- one\n- two\n")
+
+    def test_a_marker_naming_the_wrong_file_says_where_the_section_is(self):
+        with self.assertRaises(SystemExit) as cm:
+            sync_rules.sync("<!-- SYNC: AGENTS.md#Teach on screen -->\n<!-- /SYNC -->\n", self.BOTH)
+        self.assertIn("AGENTS.md has no '## Teach on screen' section", str(cm.exception))
+        self.assertIn("it is in studio/RULES.md", str(cm.exception))
+        with self.assertRaises(SystemExit) as cm:
+            sync_rules.sync("<!-- SYNC: AGENTS.md#Nowhere -->\n<!-- /SYNC -->\n", self.BOTH)
+        self.assertNotIn("it is in", str(cm.exception))
+
     def test_repo_rules_are_in_sync(self):
         self.assertEqual(sync_rules.main.__name__, "main")
-        src = sync_rules.SOURCE.read_text()
+        src = {name: path.read_text() for name, path in sync_rules.SOURCES.items()}
         for rel in sync_rules.TARGETS:
             text = (sync_rules.ROOT / rel).read_text()
             self.assertEqual(sync_rules.sync(text, src), text, rel)
         self.assertEqual(sync_rules.stale_hits(), [])
+
+    def test_the_studio_file_points_at_the_channel_file_and_the_channel_file_back(self):
+        studio = sync_rules.SOURCE.read_text()
+        channel = sync_rules.CHANNEL_SOURCE.read_text()
+        self.assertIn("**Then read `studio/RULES.md`.**", studio[:1500])     # in the first screen, before any rule
+        self.assertIn("Read `AGENTS.md` first.", channel[:400])
+        self.assertIn("can never remove a studio rule", studio)
+        self.assertIn("Nothing here removes a studio rule", channel)
+
+    def test_no_section_sits_in_both_rule_files(self):
+        import re
+        heads = lambda text: set(re.findall(r"^## (.+)$", text, re.M))
+        both = heads(sync_rules.SOURCE.read_text()) & heads(sync_rules.CHANNEL_SOURCE.read_text())
+        self.assertEqual(both, set(), "a heading in both files makes it unclear which one a copy is filled from")
+
+    def test_the_safety_lines_stay_in_the_studio_file(self):
+        """A channel can add a rule and can never remove a studio one: these must not move to a channel's file."""
+        import re
+        never = re.search(r"^## Never\n(.*?)(?=^## )", sync_rules.SOURCE.read_text(), re.S | re.M).group(1)
+        for line in ("Swap the file on an existing YouTube id.", "Delete a video.", "Air more than one Short a day.",
+                     "Ship a Short of 40 s or more.", "Ship a silent or near-silent file.", "Run a new test? Your current test will be deleted",
+                     "Generate anything on the ElevenLabs website", "Use a video model's speech as VO.", "**Security (both repos are public",
+                     "Commit a token, cookie, bearer, password", "email address into a tracked file", "private-network address",
+                     "**Repo:** merge, close or push to a studio thread", "**Secrets:** commit or print them."):
+            self.assertIn(line, never, line)
 
 
 if __name__ == "__main__":

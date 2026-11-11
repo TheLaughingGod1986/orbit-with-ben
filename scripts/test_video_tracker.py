@@ -2,12 +2,15 @@
 """Tests for the five-lane per-video Studio tracker (Ben, 24 Oct 2026)."""
 from __future__ import annotations
 
+import io
 import json
 import sys
+import tempfile
 import unittest
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import video_tracker as vt  # noqa: E402
@@ -187,6 +190,75 @@ class RealYouTubeState(unittest.TestCase):
         self.assertEqual(len(shorts), 1)
         self.assertEqual(shorts[0]["title"], "What Are Cathode Rays?")
 
+    # --- A Short that belongs to no film (J2515, 10 Nov 2026: the Titan Short that aired that day had no card) ---
+    LONE = {"videoId": "LoneShort01", "kind": "short", "film": "", "channel": "OWB", "long": "",
+            "file": "00_Brand/x/06_Final-Exports/owb_sa_s6_titan_v11.mp4", "packageDir": "00_Brand/x/owb_sa_s6_titan",
+            "privacyStatus": "private", "publishAt": "2026-11-10T11:30:00Z",
+            "title": "What Would Standing on Saturn's Moon Titan Feel Like?", "supersededBy": ""}
+
+    def lone(self, **kw):
+        key = vt.lone_short_key("OWB", "LoneShort01")
+        out = self.build(uploads={key: [dict(self.LONE)]}, **kw)
+        return key, [v for v in out.values() if (v.get("youtube") or {}).get("videoId") == "LoneShort01"
+                     or v.get("shortId") == "LoneShort01"]
+
+    def test_a_short_with_no_film_gets_exactly_one_card_before_it_airs(self):
+        key, cards = self.lone()
+        self.assertEqual(len(cards), 1)
+        card = cards[0]
+        self.assertEqual((card["key"], card["type"], card["channel"], card["number"]), (key, "short", "OWB", ""))
+        self.assertEqual(card["title"], "What Would Standing on Saturn's Moon Titan Feel Like?")
+        self.assertEqual((card["youtube"]["state"], card["youtube"]["privacy"]), ("scheduled", "private"))
+        self.assertEqual(card["shortId"], "LoneShort01")
+        self.assertFalse(card.get("parent"))
+
+    def test_it_keeps_that_one_card_and_its_key_once_it_is_public(self):
+        public = dict(self.PUBLIC, LoneShort01={"channel": "OWB", "title": "The Title On YouTube", "format": "short",
+                                                "publishedAt": "2026-11-10T11:30:00Z"})
+        key, cards = self.lone(public=public)
+        self.assertEqual([c["key"] for c in cards], [key])       # not a second card from the public read
+        self.assertEqual((cards[0]["youtube"]["state"], cards[0]["title"], cards[0]["lane"]),
+                         ("live", "The Title On YouTube", "done"))
+
+    def test_the_copy_a_swap_replaced_gets_no_card(self):
+        key = vt.lone_short_key("OWB", "LoneShort01")
+        old = dict(self.LONE, videoId="OldCopy0001", publishAt="", supersededBy="LoneShort01")
+        out = self.build(uploads={key: [dict(self.LONE)], vt.lone_short_key("OWB", "OldCopy0001"): [old]})
+        ids = [(v.get("youtube") or {}).get("videoId") for v in out.values()]
+        self.assertIn("LoneShort01", ids)
+        self.assertNotIn("OldCopy0001", ids)
+
+    def test_a_job_that_names_its_video_id_is_on_its_card(self):
+        job = {"id": "J9001", "status": "open", "needs": "mini", "title": "Swap the Titan Short LoneShort01 to v12"}
+        key, cards = self.lone(jobs=[job])
+        self.assertEqual(len(cards), 1)
+        self.assertIn("J9001", json.dumps(cards[0]))
+
+    def test_a_short_that_belongs_to_a_long_is_unchanged(self):
+        upload = {"videoId": "FilmShort001", "kind": "short", "film": "022", "channel": "OWB",
+                  "file": "x/10_Shorts/sun/022_short.mp4", "privacyStatus": "private",
+                  "publishAt": "2026-11-30T11:30:00Z", "supersededBy": ""}
+        out = self.build(uploads={"OWB:022:S:FilmShort001": [upload], vt.lone_short_key("OWB", "LoneShort01"): [dict(self.LONE)]})
+        card = out["OWB:022:S:FilmShort001"]
+        self.assertEqual((card["type"], card["parent"], card["number"]), ("short", "OWB:022", "022"))
+
+    def test_the_register_gives_a_filmless_short_a_row_and_a_filmless_long_none(self):
+        with tempfile.TemporaryDirectory() as t:
+            reg = Path(t) / "00_Brand" / "Channel-Setup" / "social"
+            reg.mkdir(parents=True)
+            (reg / "UPLOADS.json").write_text(json.dumps({"videos": {
+                "LoneShort01": {"kind": "short", "standalone": True, "title": "Titan", "privacyStatus": "private",
+                                "publishAt": "2026-11-10T11:30:00Z", "packageDir": "00_Brand/x/owb_sa_s6_titan"},
+                "LoneLong001": {"kind": "long", "packageDir": "00_Brand/x/owb_compilation"},
+                "RetiredSh01": {"kind": "short", "retired": True, "packageDir": "00_Brand/x/old"},
+            }}))
+            idx = vt.uploads_index(Path(t))
+        label = vt.channels.home_label()
+        self.assertEqual(list(idx), [vt.lone_short_key(label, "LoneShort01")])
+        row = idx[vt.lone_short_key(label, "LoneShort01")][0]
+        self.assertEqual((row["film"], row["channel"], row["title"], row["publishAt"]),
+                         ("", label, "Titan", "2026-11-10T11:30:00Z"))
+
     def test_ready_needs_a_playable_cut(self):
         by = self.build(
             hos={"films": [{"id": "009", "title": "Why Doesn't the Moon Fall to Earth?", "air": "2026-11-26"},
@@ -300,6 +372,64 @@ class PlannedShortsBacklog(unittest.TestCase):
         self.assertEqual(len(real), 1)
         self.assertEqual(real[0]["shortId"], "AbCdEfGhIjK")
 
+    def test_a_scheduled_short_shows_its_youtube_title_not_its_folder_name(self):
+        # 10 Nov 2026: scheduled Shorts showed as "Scale" and "028 short mon30 comets". The public read only knows
+        # public videos; the daily snapshot has every scheduled video's real title.
+        upload = {"videoId": "SchedShort01", "kind": "short", "film": "028", "channel": "OWB",
+                  "file": "x/10_Shorts/mon30_comets/028_short_mon30_comets.mp4", "privacyStatus": "private",
+                  "publishAt": "2026-11-30T11:30:00Z", "supersededBy": ""}
+        kw = dict(owb=[{"film": "028", "title": "Gliese 710", "air": ""}], uploads={"OWB:028:S:SchedShort01": [upload]})
+        card = lambda out: next(v for v in out["videos"] if v["key"] == "OWB:028:S:SchedShort01")
+        real = "Why Will Gliese 710's Comets Arrive After It Has Gone?"
+        self.assertEqual(card(self.build(**kw, scheduled_titles={"SchedShort01": real}))["title"], real)
+        self.assertNotEqual(card(self.build(**kw))["title"], real)   # no snapshot: the folder name, as before
+        public = {"SchedShort01": {"title": "The Public Title", "channel": "OWB", "format": "short", "publishedAt": ""}}
+        self.assertEqual(card(self.build(**kw, public=public, scheduled_titles={"SchedShort01": real}))["title"],
+                         "The Public Title")   # once public, the public read wins
+
+    def test_a_swap_card_takes_the_real_title_of_the_video_in_its_slot(self):
+        # 10 Nov 2026: Ben's Schedule showed "Jenner smallpox test HC v04", the working name of a re-cut.
+        slots = {("HOS", "2026-11-13T11:30", "short"): ["What Did Jenner's Smallpox Test Prove?"],
+                 ("OWB", "2026-11-13T11:30", "short"): ["A", "B"]}
+        card = {"key": "HOS:OK:J1219", "channel": "HOS", "type": "short", "title": "Jenner smallpox test HC v04",
+                "youtube": {"state": "scheduled", "videoId": "", "publishAt": "2026-11-13T11:30Z"}}
+        self.assertEqual(vt.title_from_slot(card, slots), "What Did Jenner's Smallpox Test Prove?")
+        self.assertEqual(vt.title_from_slot({**card, "channel": "OWB"}, slots), "")   # two videos in the slot: no guess
+        self.assertEqual(vt.title_from_slot({**card, "type": "long"}, slots), "")      # nothing scheduled then
+        self.assertEqual(vt.title_from_slot({**card, "youtube": {"videoId": "abc", "publishAt": "2026-11-13T11:30Z"}}, slots), "")
+        self.assertEqual(vt.title_from_slot({**card, "youtube": None}, slots), "")
+
+    def test_snapshot_slots_list_what_youtube_has_scheduled(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            folder = Path(d) / "aaa" / "snapshots"
+            folder.mkdir(parents=True)
+            (folder / "2026-11-10.json").write_text(json.dumps({"videos": [
+                {"id": "s1", "title": "Scheduled Short", "format": "short", "privacy": "private", "publishAt": "2026-11-13T11:30:00Z"},
+                {"id": "p1", "title": "Public Short", "format": "short", "privacy": "public", "publishAt": None},
+                {"id": "u1", "title": "Unscheduled", "format": "short", "privacy": "private", "publishAt": None}]}))
+            with mock.patch.object(vt.channels, "slugs", lambda: ["aaa"]), \
+                    mock.patch.object(vt.channels, "analytics_dir", lambda slug: Path(d) / slug), \
+                    mock.patch.object(vt.channels, "label", lambda slug: "Aaa"):
+                self.assertEqual(vt.snapshot_slots(), {("AAA", "2026-11-13T11:30", "short"): ["Scheduled Short"]})
+
+    def test_snapshot_titles_come_from_each_channels_newest_snapshot(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for slug, day, rows in (("aaa", "2026-11-09", [{"id": "old", "title": "Yesterday's"}]),
+                                    ("aaa", "2026-11-10", [{"id": "s1", "title": "Scheduled One"}, {"id": "x"}]),
+                                    ("bbb", "2026-11-10", [{"id": "s2", "title": "Second Channel"}])):
+                folder = root / slug / "snapshots"
+                folder.mkdir(parents=True, exist_ok=True)
+                (folder / f"{day}.json").write_text(json.dumps({"videos": rows}))
+            with mock.patch.object(vt.channels, "slugs", lambda: ["aaa", "bbb", "ccc"]), \
+                    mock.patch.object(vt.channels, "analytics_dir", lambda slug: root / slug), \
+                    mock.patch.object(vt.channels, "label", lambda slug: slug):
+                self.assertEqual(vt.snapshot_titles(), {"s1": "Scheduled One", "s2": "Second Channel"})
+
     def test_undated_long_with_live_shorts_gets_no_planned_placeholders(self):
         # Older shipped films (e.g. 005 Last Star, 019 Andromeda) stay long-only for planned cards.
         out = self.build(
@@ -387,8 +517,37 @@ class LiveMapping(unittest.TestCase):
                 self.assertEqual(f.get("audience"), "chief")
 
 
-if __name__ == "__main__":
-    unittest.main()
+class FirstDayPanel(unittest.TestCase):
+    """Ben, 10 Nov 2026: the first-day check's verdicts show on the board, from `launch_check.panel`."""
+    NOW = datetime(2026, 11, 10, 18, 0, tzinfo=timezone.utc)
+
+    def test_the_tracker_carries_the_panel_with_the_queue_it_was_given(self):
+        import launch_check
+        seen = {}
+
+        def fake(now, queue):
+            seen.update(now=now, queue=queue)
+            return [{"id": "abc", "word": "Slow start"}]
+
+        jobs = [{"id": "J1", "launch": "abc@6"}]
+        with mock.patch.object(launch_check, "panel", fake):
+            self.assertEqual(vt.first_day(jobs, self.NOW), [{"id": "abc", "word": "Slow start"}])
+        self.assertEqual((seen["now"], seen["queue"]), (self.NOW, {"jobs": jobs}))
+
+    def test_a_broken_panel_never_costs_the_board_its_videos(self):
+        import launch_check
+        with mock.patch.object(launch_check, "panel", side_effect=ValueError("bad record")), \
+                mock.patch.object(vt.sys, "stderr", io.StringIO()) as err:
+            self.assertEqual(vt.first_day([], self.NOW), [])
+        self.assertIn("first-day panel not built: bad record", err.getvalue())
+
+    def test_the_board_document_has_the_panel(self):
+        import launch_check
+        with mock.patch.object(launch_check, "panel", lambda now, queue: [{"id": "abc"}]):
+            doc = vt.build_from_docs({}, {}, {})
+        self.assertEqual(doc["firstDay"], [{"id": "abc"}])
+        self.assertIn("videos", doc)
+
 
 
 class PastNotes(unittest.TestCase):
@@ -414,3 +573,6 @@ class PastNotes(unittest.TestCase):
         self.assertEqual(card["pastNotes"][0]["notes"][0]["text"], "blurry above and below")
         self.assertEqual(card["fixedNotes"], ["Rebuilt full-screen 1080x1920"])
 
+
+if __name__ == "__main__":
+    unittest.main()

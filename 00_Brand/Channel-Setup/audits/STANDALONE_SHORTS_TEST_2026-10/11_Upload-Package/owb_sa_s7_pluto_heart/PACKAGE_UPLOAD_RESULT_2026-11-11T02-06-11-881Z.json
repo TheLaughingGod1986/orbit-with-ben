@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-14T11:30:00.000Z",
+    "platformPostId": "z5V6gIXXYs8",
+    "platformUrl": "https://youtu.be/z5V6gIXXYs8",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-14T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"z5V6gIXXYs8\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-14T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s7_pluto_heart",
+    "sha256": "ab33a789dbb00411d5bb91cee362fa697a64072803ed9c2d7b422ede4fd8fdc2",
+    "title": "Why Does Pluto's Giant Ice Heart Have Zero Craters?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 3,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/08_Covers/cover_owb_sa_s7_pluto_heart.jpg",
+    "scheduledAt": "2026-11-14T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Volumes/MiniWork/scratch/J2511-wt/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/11_Upload-Package/owb_sa_s7_pluto_heart/PACKAGE_MANIFEST_v02.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v02.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/08_Covers/cover_owb_sa_s7_pluto_heart.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af3cd92d9a6812579c51e2a"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af3cd936a689e197d1a223d"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af3cd94ffe2872794e863f4"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "z5V6gIXXYs8",
+    "studioEditUrl": "https://studio.youtube.com/video/z5V6gIXXYs8/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/z5V6gIXXYs8/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (z5V6gIXXYs8). 1 required Studio finish step(s) remain."
+  }
+}

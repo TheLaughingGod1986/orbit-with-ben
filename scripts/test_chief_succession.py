@@ -53,6 +53,38 @@ class ChiefSuccession(ChiefTestCase):
         self.assertEqual(self.chief(), 'gemini')
         self.assertTrue(cr.state_of('cursor', T0)[0])  # available Cursor does not enter succession
 
+    def test_history_of_science_keeps_grok_first_while_orbit_keeps_claude(self):
+        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])
+        self.assertEqual(cr.chain('hos'), ['chief', 'claude', 'codex', 'gemini'])
+        self.beat(T0 - 5 * MIN)
+        cr.seen('chief', T0)
+        hos = {'id': 'J9', 'repo': 'hos', 'kind': 'chief', 'title': 'Desk ruling'}
+        owb = {'id': 'J8', 'repo': 'owb', 'kind': 'chief', 'title': 'Queue ruling'}
+        self.assertEqual(self.chief(), 'claude')
+        self.assertEqual(cr.acting(T0, 'hos')[1], 'chief')
+        self.assertTrue(cr.elected_for('chief', T0, hos))
+        self.assertFalse(cr.elected_for('claude', T0, hos))
+        self.assertTrue(cr.elected_for('claude', T0, owb))
+        self.assertFalse(cr.elected_for('chief', T0, owb))
+        cr.mark_down('chief', 'quiet', None, T0)
+        self.assertEqual(cr.acting(T0, 'hos')[1], 'claude')
+        self.assertTrue(cr.elected_for('claude', T0, hos))
+
+    def test_a_hos_queue_job_names_grok_while_grok_is_up(self):
+        self.beat(T0 - 5 * MIN)
+        cr.seen('chief', T0)
+        self.queue([{'id': 'J1', 'status': 'open', 'needs': 'mini', 'kind': 'assembly',
+                     'repo': 'hos', 'title': 'Desk tool refuse a stale chief post'}])
+        calls = []
+        with mock.patch.object(cr, 'run_cli', side_effect=lambda a, p, c, m: calls.append(p) or (0, 'done')), \
+                mock.patch.object(cr, 'reroute_work', return_value=[]), \
+                mock.patch.object(cr, 'queue_has_work', return_value=True):
+            cr.cmd_run(T0)
+        self.assertTrue(calls)
+        self.assertIn('Grok Bot is Chief for History of Science', calls[0])
+        self.assertIn('If this line names anyone but Grok Bot, Grok is down', calls[0])
+        self.assertNotIn('Claude is Chief (reviews, PASS, merges', calls[0])
+
     def test_recovery_hands_back_in_priority_order_without_manual_switches(self):
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')

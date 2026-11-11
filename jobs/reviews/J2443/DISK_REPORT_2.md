@@ -30,7 +30,7 @@ Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
      - `~/.codex` (`4.1G`: `sessions` `2.3G`, `packages` `815M`, `thread_history_1.sqlite` `675M`, `plugins` `71M`, `cache` `67M`, `generated_images` `63M`)
      - `~/.cursor-server` (`3.8G`: `data` `2.4G`, `bin` `1.4G`)
      - `~/.local` (`3.0G`: `share/disabled-gui` `1.3G`, `share/cursor-agent` `1.2G`, `share/cursor-mac-mini-hos-worker` `151M`, `share/uv` `71M`)
-     - `~/.hos-chrome-flow-benoats-googlemail-cdp` (`2.1G`)
+     - `~/.hos-chrome-flow-ACCOUNT-cdp` (`2.1G`)
      - `~/.venvs` (`1.8G`: `hos-vl-precheck` `759M`, `orbit-omni` `513M`, `hos-vertex` `228M`, `hos-vo` `226M`, `orbit-code-graphics` `122M`)
      - `~/.orbit-chrome-youtube-studio` (`1.7G`)
      - `~/.hos-chrome-youtube-studio` (`1.3G`)
@@ -67,7 +67,7 @@ Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
 | 13 | `/Users/benjaminoats/.local` | `3.0G` | `share/disabled-gui` (`1.3G`), `share/cursor-agent` (`1.2G`), `share/cursor-mac-mini-hos-worker` (`151M`), `share/uv` (`71M`) |
 | 14 | `/private/var/db` | `2.9G` | macOS system databases (readable portion without `sudo`) |
 | 15 | `/Users/benjaminoats/code` | `2.8G` | `WP-Alt-text-plugin` (`2.2G`), `beepbeep-titles` (`158M`), `youtube` (`113M`), `beepbeep-platform` (`112M`) |
-| 16 | `/Users/benjaminoats/.hos-chrome-flow-benoats-googlemail-cdp` | `2.1G` | HOS Flow Chrome CDP profile |
+| 16 | `/Users/benjaminoats/.hos-chrome-flow-ACCOUNT-cdp` | `2.1G` | HOS Flow Chrome CDP profile |
 | 17 | `/Users/benjaminoats/.venvs` | `1.8G` | `hos-vl-precheck` (`759M`), `orbit-omni` (`513M`), `hos-vertex` (`228M`), `hos-vo` (`226M`), `orbit-code-graphics` (`122M`) |
 | 18 | `/Users/benjaminoats/.orbit-chrome-youtube-studio` | `1.7G` | OWB YouTube Studio Chrome CDP profile (port 9223) |
 | 19 | `/Users/benjaminoats/.hos-chrome-youtube-studio` | `1.3G` | HOS YouTube Studio Chrome CDP profile |
@@ -97,7 +97,7 @@ Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
 | 11 | `/Users/benjaminoats/Library/Application Support/Google` | `3.7G` | Inside `~/Library/Application Support/*` |
 | 12 | `/Users/benjaminoats/.local` | `3.0G` | Top-level `~/.[!.]*` |
 | 13 | `/Users/benjaminoats/code` | `2.8G` | Top-level `~/*` |
-| 14 | `/Users/benjaminoats/.hos-chrome-flow-benoats-googlemail-cdp` | `2.1G` | Top-level `~/.[!.]*` |
+| 14 | `/Users/benjaminoats/.hos-chrome-flow-ACCOUNT-cdp` | `2.1G` | Top-level `~/.[!.]*` |
 | 15 | `/Users/benjaminoats/.venvs` | `1.8G` | Top-level `~/.[!.]*` |
 | 16 | `/Users/benjaminoats/.orbit-chrome-youtube-studio` | `1.7G` | Top-level `~/.[!.]*` |
 | 17 | `/Users/benjaminoats/.hos-chrome-youtube-studio` | `1.3G` | Top-level `~/.[!.]*` |
@@ -137,7 +137,7 @@ Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
 1.3G	/Users/benjaminoats/.hos-chrome-youtube-studio
 1.7G	/Users/benjaminoats/.orbit-chrome-youtube-studio
 1.8G	/Users/benjaminoats/.venvs
-2.1G	/Users/benjaminoats/.hos-chrome-flow-benoats-googlemail-cdp
+2.1G	/Users/benjaminoats/.hos-chrome-flow-ACCOUNT-cdp
 2.8G	/Users/benjaminoats/code
 3.0G	/Users/benjaminoats/.local
 3.8G	/Users/benjaminoats/.cursor-server

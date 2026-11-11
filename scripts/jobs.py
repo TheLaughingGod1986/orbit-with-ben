@@ -83,9 +83,41 @@ def load(path: pathlib.Path = QUEUE) -> dict:
     return {"next_id": 1, "jobs": []}
 
 
+# The queue is public and every write goes straight to main with no review, so a worker's result line is the one
+# place a private detail can reach a tracked file unseen. Two tests fail on such a detail anywhere in the repo
+# (test_email_ratchet.py, test_no_private_network.py); one pasted `mount` line here would turn every pull request red
+# until someone cleaned it. So the queue cannot hold one: it is replaced as the file is written.
+EMAIL_TEXT = re.compile(r"[A-Za-z0-9._%+-]+@(?:gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\.(?:com|me|co\.uk)")
+EMAIL_HINT = re.compile(r"@(?:gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\.")
+NETWORK_AT = re.compile(r"(?:192\.168|10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7]))"
+                        r"\.\d{1,3}\.\d{1,3}(?!\d)")
+NETWORK_TEXT = re.compile(r"(?<![0-9.])" + NETWORK_AT.pattern)
+NETWORK_STARTS = ("192.168.", "10.", "172.", "100.")
+
+
+def has_network_address(text: str) -> bool:
+    """A quick look before the slow replace: the queue is over 12 MB and is written many times an hour."""
+    for start in NETWORK_STARTS:
+        at = text.find(start)
+        while at != -1:
+            if (at == 0 or text[at - 1] not in "0123456789.") and NETWORK_AT.match(text, at):
+                return True
+            at = text.find(start, at + 1)
+    return False
+
+
+def scrub(text: str) -> str:
+    """`text` with any personal email address or private-network address replaced by a placeholder."""
+    if EMAIL_HINT.search(text):
+        text = EMAIL_TEXT.sub("<email address>", text)
+    if has_network_address(text):
+        text = NETWORK_TEXT.sub("<network address>", text)
+    return text
+
+
 def save(data: dict, path: pathlib.Path = QUEUE) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    path.write_text(scrub(json.dumps(data, indent=2, ensure_ascii=False)) + "\n")
 
 
 def find(data: dict, jid: str) -> dict | None:
@@ -120,9 +152,10 @@ def london_hm(stamp: str) -> str:
 
 
 def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.datetime, ref: str = "", film: str = "",
-           stage: str = "", after: str = "", repo: str = "owb", eta_min: int = DEFAULT_ETA, for_agent: str = "",
+           stage: str = "", after: str = "", repo: str = "", eta_min: int = DEFAULT_ETA, for_agent: str = "",
            kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "", action: str = "", requires=None) -> dict:
     requirements = workflow.capability_names(requires)
+    repo = repo or channels.default()
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if needs == "ben" and not ben_gate(title + " " + body):
@@ -223,10 +256,10 @@ PUBLISH_HARD = re.compile(
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
 # YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
-# MACBOOK_CDP = the CDP ports whose browser is up: 9223 Orbit Studio, 9222 HOS (the Mini's ports, same profiles).
+# MACBOOK_CDP = the CDP ports whose browser is up (the Mini's ports, same profiles). Each channel names its own port
+# in studio/channel.json (youtube.studio_port).
 # With the channel's port up, a Studio job (end screens, pinned comments, titles, tests, playlists, checklists) is
 # portable. Uploads, Buffer, Flow picture-making, renders and local media stay Mini-only.
-STUDIO_PORT = {"owb": "9223", "hos": "9222"}
 STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned comment\b|\bplaylists?\b|"
                          r"\bTest (?:&|and) Compare\b|\btitle(?:-only)? test\b|\bRelated(?: video)?\b|\bcaptions?\b", re.I)
 STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
@@ -243,7 +276,7 @@ def macbook_studio_ok(job: dict, text: str) -> bool:
     if job.get("mini_only"):   # the Chief pinned it to the Mini (`jobs.py add --mini-only`), e.g. a change that can't be undone
         return False
     ports = {p.strip() for p in os.environ.get("MACBOOK_CDP", "").split(",") if p.strip()}
-    port = STUDIO_PORT.get(job.get("repo") or channels.home())
+    port = channels.studio_port(channels.of_job(job))
     if not port or port not in ports:
         return False
     if job.get("kind") not in ("studio", "", None, "listing", "review") and not STUDIO_WORK.search(str(job.get("title") or "")):
@@ -253,10 +286,19 @@ def macbook_studio_ok(job: dict, text: str) -> bool:
 # Shared working-film store on the NAS (both Mini and MacBook mount /Volumes/data). Mini local originals under
 # ~/YouTube stay put; MacBook local checkouts are not this store.
 STUDIO_LIVE_ROOT = pathlib.Path("/Volumes/data/studio-live")
-STUDIO_LIVE_PROJECTS = {
-    "owb": STUDIO_LIVE_ROOT / "orbit-with-ben" / "02_Video-Projects",
-    "hos": STUDIO_LIVE_ROOT / "History Of Science" / "02_Video-Projects",
-}
+
+
+def studio_live_projects(slug: str) -> pathlib.Path:
+    """The channel's working-films folder on the NAS: studio-live/<its nas_folder>/02_Video-Projects."""
+    return STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects"
+
+
+def keys_example() -> str:
+    """Two example video ids built from the registered labels, for help and error text."""
+    labels = channels.labels()
+    return f"{labels[-1]}:006 or {labels[0]}:028,{labels[0]}:029"
+
+
 # Absolute paths the job already names: studio-live / home mounts, or any absolute media file path.
 ABS_MEDIA_PATH = re.compile(
     r"(?<![\w:])(/(?:Volumes|Users)/[^\s\"'`,;]+|/[^\s\"'`,;]{1,240}\.(?:mp4|mov|wav|m4a|mp3|png|jpe?g|webp)\b)",
@@ -318,7 +360,7 @@ def film_folder_under(root: pathlib.Path, film: str) -> pathlib.Path | None:
 def media_reachable(job: dict) -> bool:
     """True when this machine can see the job's working film media on studio-live or a path the job already names."""
     slug = channels.of_job(job)
-    live_root = STUDIO_LIVE_PROJECTS.get(slug) or STUDIO_LIVE_PROJECTS["owb"]
+    live_root = studio_live_projects(slug)
     film = job_film_number(job)
     if film_folder_under(live_root, film) is not None:
         return True
@@ -431,7 +473,7 @@ def is_macbook(agent: str) -> bool:
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
-    chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
+    chief = agent if workflow.role_job(job) and chief_relay.elected_for(agent, at, job) else ""
     if is_macbook(agent) and "macbook" in can and macbook_portable(job, data):
         # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
         job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
@@ -472,7 +514,7 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
         _mine(job,agent)
     if job.get("status") not in ("claimed", "blocked"):
         raise ValueError("A hold can only be recorded on a claimed or blocked job")
-    if agent != "relay" and job.get("by") != agent and not chief_relay.is_elected_chief(agent,at):
+    if agent != "relay" and job.get("by") != agent and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the holder or elected Chief may update this hold")
     condition = str(hold.get("condition") or "").strip()
     check = workflow.normalize_due(hold.get("check_at"))
@@ -484,7 +526,7 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
-        if not chief_relay.is_elected_chief(agent,at):
+        if not chief_relay.elected_for(agent, at, job):
             raise ValueError("Only the elected Chief may record a condition check")
         value.update(last_recheck=recheck,checked_at=at.isoformat(),checked_by=agent)
     if job.get("status") == "claimed":
@@ -547,6 +589,20 @@ def recheck_backoff(data, parent, by_id, at):
     return at < last + wait
 
 
+def recheck_moot(parent: dict) -> str:
+    """Why an open condition check has nothing left to verify: the job it checks is no longer held.
+
+    A check is only ever queued for a blocked job (workflow.hold_due). When that job is finished, cancelled or
+    reopened some other way, the check used to stay open for ever: on 11 Nov 2026 eleven of them, up to eight days
+    old and all overdue, were still being offered to the Mini's workers ahead of real work."""
+    status = parent.get("status")
+    if status in ("done", "cancelled"):
+        return f"{parent['id']} is {status}"
+    if status != "blocked":
+        return f"{parent['id']} is {status} and no longer waiting"
+    return ""
+
+
 def reconcile_holds(data, at):
     by_id = {j["id"]:j for j in data["jobs"]}
     due = workflow.deadlines(data["jobs"])
@@ -557,6 +613,14 @@ def reconcile_holds(data, at):
         pending = next((j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") in workflow.LIVE),None)
         requirements = (parent.get("hold") or {}).get("requires", []) if (parent.get("hold") or {}).get("type") == "capability" else []
         if pending:
+            moot = recheck_moot(parent) if pending.get("status") == "open" else ""  # a claimed check is someone's work
+            if moot:
+                pending.update(status="cancelled", by="", eta="")
+                log(pending, at, "relay", "cancelled: nothing left to verify, " + moot)
+                if (parent.get("hold") or {}).get("recheck_task") == pending["id"]:
+                    parent["hold"].pop("recheck_task", None)
+                changed.append(pending["id"])
+                continue
             if requirements and pending.get("status") == "open" and pending.get("required_capabilities") != requirements:
                 pending["required_capabilities"] = list(requirements)
                 changed.append(pending["id"])
@@ -617,7 +681,7 @@ MINI_NEEDS = {"mini", "gemini", "any"}
 
 
 def can_any_mini_claim(data, job, at):
-    chief = chief_relay.acting(at)[1] if workflow.role_job(job) else ""
+    chief = chief_relay.acting(at, chief_relay.job_chain(job))[1] if workflow.role_job(job) else ""
     actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
     return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at),chief_relay.worker_capabilities()) for actor in actors)
 
@@ -683,7 +747,7 @@ def order(job: dict, focus=()) -> tuple:
 def require_chief(job, agent, at):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
-    if workflow.role_job(job) and not chief_relay.is_elected_chief(agent, at):
+    if workflow.role_job(job) and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Chief authority changed: only the currently elected Chief may resume or complete this job; release or park it")
 
 
@@ -829,6 +893,20 @@ def do_release(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "released" + (": " + note if note else ""))
 
 
+def do_stuck(job: dict, agent: str, runs: int, at: dt.datetime) -> None:
+    """The relay parks a job whose runs keep hitting the time cap without finishing a step (10 Nov 2026: J2466 began
+    its first step again in four 25-minute runs and held the Mini for 90 minutes). It goes to the Chief, who splits
+    it, narrows its next step, or has the long part started detached. Progress is kept, so nothing is redone."""
+    if job["status"] not in ("open", "claimed"):
+        raise ValueError(f"{job['id']} is {job['status']}; nothing to park")
+    progress = job.get("progress") or {}
+    where = f"step {progress.get('step', 0)} of {progress['of']}" if progress.get("of") else "its first step"
+    reason = (f"parked for Chief: {runs} runs in a row hit the time cap at {where} without finishing a step. "
+              "Split the job, narrow its next step, or have the long part started detached (tmux) and released.")
+    job.update(status="blocked", result=reason, eta="")
+    log(job, at, agent, "blocked: " + reason)
+
+
 def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     _mine(job, agent)
     require_chief(job, agent, at)
@@ -853,7 +931,7 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
     if films is not None:
         keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
         if not keys or any(not channels.strict_key_re().fullmatch(x) for x in keys):
-            raise ValueError("--films needs channel-qualified video ids, e.g. HOS:006 or OWB:028,OWB:029")
+            raise ValueError("--films needs channel-qualified video ids, e.g. " + keys_example())
         job["taskKeys"] = keys
     if action is not None:
         job["remaining_action"] = action.strip()
@@ -867,7 +945,7 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     require_chief(job,agent,at)
     if job["status"] not in ("blocked", "done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; only blocked, done or cancelled jobs reopen")
-    if job.get("hold") and not chief_relay.is_elected_chief(agent, at):
+    if job.get("hold") and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the elected Chief may release a verified hold")
     if job.get("hold") and not str(note or "").strip():
         raise ValueError("Reopening a hold requires current verification evidence in --note")
@@ -887,7 +965,7 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
     if model and routing.RUNS_ON.get(model) != to:
         raise ValueError(f"{model} doesn't run on {to}")
-    if job.get("kind") == "chief" and not chief_relay.is_elected_chief(to, at):
+    if job.get("kind") == "chief" and not chief_relay.elected_for(to, at, job):
         raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
@@ -978,7 +1056,7 @@ def do_approved(job: dict, src: dict, agent: str, at: dt.datetime, *, entry: int
     if not rec.get("what") and not rec.get("title"):
         raise ValueError(f"nothing to say what Ben approved: {src['id']} has no awaits entry; give --what (and --version, --airs)")
     repo = src.get("repo") or job.get("repo")
-    rec["channel"] = (rec.get("channel") or channels.label(repo if repo in channels.slugs() else channels.home())).upper()
+    rec["channel"] = (rec.get("channel") or channels.label(repo if repo in channels.slugs() else channels.default())).upper()
     rec.setdefault("number", str(src.get("film") or job.get("film") or ""))
     rec["job"] = src["id"]
     if len(items) > 1 and entry:
@@ -1008,8 +1086,9 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 # ----------------------------------------------------------------------------- board link (film/stage claims)
 def on_board(job: dict) -> bool:
-    """Only OWB jobs have a film folder on this repo's studio board; HOS films live in the HOS checkout."""
-    return bool(job.get("film")) and job.get("repo", channels.home()) == channels.home()
+    """Only the board channel's jobs have a film folder on the stage board (one status.json per film); a channel that
+    keeps its films another way has none."""
+    return bool(job.get("film")) and job.get("repo", channels.default()) == channels.board_channel()
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
@@ -1163,7 +1242,7 @@ def main(argv=None) -> int:
     a.add_argument("--film", default="")
     a.add_argument("--stage", default="")
     a.add_argument("--after", default="")
-    a.add_argument("--repo", default=channels.home(), choices=channels.slugs())
+    a.add_argument("--repo", default=channels.default(), choices=channels.slugs())
     a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
     a.add_argument("--by", required=True)
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")
@@ -1203,7 +1282,7 @@ def main(argv=None) -> int:
     n.add_argument("--eta", type=int, default=None)
     n.add_argument("--id", default="", help="claim only this actionable job; preserve role, hold and existing-claim checks")
     n.add_argument("--peek", action="store_true", help="show what you would get, claim nothing")
-    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback"):
+    for name in ("done", "block", "release", "renew", "reopen", "cancel", "show", "progress", "reroute", "handback", "stuck"):
         p = sub.add_parser(name)
         p.add_argument("id")
         p.add_argument("--agent", default="")
@@ -1216,7 +1295,9 @@ def main(argv=None) -> int:
             p.add_argument("--step", type=int, required=True, help="steps finished so far (0 at the start)")
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
             p.add_argument("--action", default=None, help="plain-English action still unfinished; update when the remaining work changes")
-            p.add_argument("--films", default=None, help="video(s) this job advances, e.g. HOS:006 or OWB:028,OWB:029")
+            p.add_argument("--films", default=None, help="video(s) this job advances, e.g. " + keys_example())
+        if name == "stuck":
+            p.add_argument("--runs", type=int, required=True, help="runs in a row that hit the time cap (relay only)")
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
@@ -1224,18 +1305,18 @@ def main(argv=None) -> int:
     aw.add_argument("id")
     aw.add_argument("--agent", default="")
     aw.add_argument("--what", default="", help="what Ben is OKing, in plain words, e.g. 'swap the 027 Short to v05'")
-    aw.add_argument("--file", default="", help="the cut to play: iCloud path from CloudDocs ('OWB UAT/...mp4'), or absolute")
+    aw.add_argument("--file", default="", help="the cut to play: iCloud path from CloudDocs ('<LABEL> UAT/...mp4'), or absolute")
     aw.add_argument("--version", default="", help="the cut's version, e.g. v05 (Ben's tick is matched on it)")
     aw.add_argument("--due", default="", help='"YYYY-MM-DD HH:MM" London: Ben\'s OK is needed by then')
     aw.add_argument("--airs", default="", help='"YYYY-MM-DD HH:MM" London: when it airs, if scheduled')
     aw.add_argument("--if-not", dest="if_not", default="", help="what happens with no OK by the deadline")
-    aw.add_argument("--card", default="", help="an existing board card to move, e.g. HOS:007 (longs); else a new card")
+    aw.add_argument("--card", default="", help=f"an existing board card to move, e.g. {channels.labels()[-1]}:007 (longs); else a new card")
     aw.add_argument("--title", default="", help="card title (new cards)")
     aw.add_argument("--number", default="", help="film number or S2 etc. shown on the card")
     aw.add_argument("--type", dest="vtype", default="", choices=["", "long", "short"])
     aw.add_argument("--add", action="store_true", help="add another cut to this job's list instead of replacing it")
     aw.add_argument("--prev", action="append", default=[], help="a re-sent cut: the board check id of Ben's earlier change "
-                    "tick it answers, e.g. OWB-J2395.3 (repeatable); his old notes show under the new cut")
+                    f"tick it answers, e.g. {channels.labels()[0]}-J2395.3 (repeatable); his old notes show under the new cut")
     aw.add_argument("--fixed", action="append", default=[], help="a re-sent cut: one line on what was changed (repeatable)")
     aw.add_argument("--clear", action="store_true", help="the job no longer waits on Ben")
     aw.add_argument("--ok", action="store_true", help="with --clear: Ben OK'd it and this job now delivers it (as `approved`); "
@@ -1391,6 +1472,11 @@ def main(argv=None) -> int:
                 do_cancel(job, args.agent or "claude", args.note, at)
             elif args.cmd == "handback":
                 do_handback(job, args.agent or "relay", args.note, at)
+            elif args.cmd == "stuck":
+                held = job.get("by") if job["status"] == "claimed" else ""
+                do_stuck(job, args.agent or "relay", args.runs, at)
+                if held:
+                    board_release(job, held, "blocked")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
                 do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)

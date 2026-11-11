@@ -98,7 +98,7 @@ class FinalAudit(unittest.TestCase):
         self.assertEqual(data,before)
 
     def test_version_change_yields_before_dispatch(self):
-        with tempfile.TemporaryDirectory() as tmp,patch.object(cr,'STATE',pathlib.Path(tmp)),patch.object(cr,'note_grok_posts'),patch.object(cr,'fetch_claude_beat'),patch.object(cr,'load_out',return_value={}),patch.object(cr,'self_heal',return_value=True),patch.object(cr,'escalate_stale'),patch.object(cr,'code_version',return_value='changed'),patch.object(cr,'run_cli') as cli:
+        with tempfile.TemporaryDirectory() as tmp,patch.object(cr,'STATE',pathlib.Path(tmp)),patch.object(cr,'note_grok_posts'),patch.object(cr,'fetch_claude_beat'),patch.object(cr,'load_out',return_value={}),patch.object(cr,'self_heal',return_value=True),patch.object(cr,'offload_scratch'),patch.object(cr,'weekly_caches'),patch.object(cr,'escalate_stale'),patch.object(cr,'refresh_probes'),patch.object(cr,'code_version',return_value='changed'),patch.object(cr,'run_cli') as cli:
             self.assertEqual(cr.run_locked(AT),0);cli.assert_not_called()
             self.assertEqual(json.loads(cr.d('runner.json').read_text())['state'],'restarting')
 

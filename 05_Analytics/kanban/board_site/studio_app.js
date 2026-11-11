@@ -1,12 +1,26 @@
 (function () {
   // Studio app, the board's front page (Ben, 28 Oct 2026 mock-up): Overview, Videos, Review, Agents, Schedule.
-  // Reads the same board.json as the video board (/board) and the AI page (/ai). Its only write is Ben's OK / changes
-  // tick on the Review tab, sent to /api/checks exactly as /board sends it (same document, same key, no confirmation).
+  // Reads the same board.json as the AI page (/ai). Its only write is Ben's OK / changes tick on the Review tab, sent
+  // to /api/checks (the document the old board page sent: same shape, same key, no confirmation).
+  // Data comes through the site's own server (api/data.js, J2532). It reads with the server's token, so this page
+  // works when the data's repo is private, and it answers 401 to a viewer who is not signed in. GitHub's public
+  // addresses below are only the fallback when that server cannot be reached; they work while the repo is public.
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
-  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
-  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
-  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+  const SIGN_IN = "This board is private. Open your board link on this device to sign in, then come back to this page.";
+  // One read from api/data.js. A 401 means "sign in": it is thrown, so the caller stops instead of trying GitHub.
+  async function own(query, cache) {
+    let key = ""; try { key = localStorage.getItem("studio-board-key") || ""; } catch (e) { /* private window */ }
+    const r = await fetch("/api/data?" + query, { cache, credentials: "same-origin", headers: key ? { "x-board-key": key } : {} });
+    if (r.status === 401) throw Object.assign(new Error("sign in"), { signIn: true });
+    return r;
+  }
+  // Our own server first; the old way only if it cannot be reached or says no for another reason.
+  const elsewhere = (p, old) => p.then(r => r.ok ? r : old()).catch(e => { if (e && e.signIn) throw e; return old(); });
+  const oldRef = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
     .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
+  const refFetch = () => elsewhere(own("f=ref", "no-cache"), oldRef);
+  const boardFetch = sha => elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+    () => fetch(sha ? DATA_AT(sha) : DATA + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
@@ -19,8 +33,12 @@
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
   const MACBOOK = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/macbook-heartbeat/heartbeat.json";
   let macbook = null;  // the MacBook worker's own report (scripts/macbook_worker.py push_heartbeat), every 15 min
-  // Ben's board links carry his tick key (/#k=...); that page lives at /board now, so hand them over untouched.
-  if (/(?:^#|&)k=/.test(location.hash)) { location.replace("/board" + location.hash); return; }
+  // Ben's oldest board links carry his tick key (/#k=...). The old board page (/board, retired 10 Nov 2026) used to
+  // take it; now this page keeps it for the buttons and takes it out of the address bar.
+  try {
+    const m = location.hash.match(/(?:^#|&)k=([A-Za-z0-9_-]{8,})/);
+    if (m) { localStorage.setItem("studio-board-key", m[1]); history.replaceState(null, "", location.pathname + location.search); }
+  } catch (e) { /* private window: the cookie still works */ }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -123,8 +141,8 @@
     const left = etaText(etaOf(j, Date.now())), p = j.progress && j.progress.of ? j.progress : null;
     const working = j && j.status === "claimed";
     const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
-    return `<a class="row${working ? " is-working" : ""}" href="#agents">${dot}<div class="thumb job">${esc(j.id)}</div><div class="body"><b>${esc(clip(j.remaining_action || j.title, 90))}</b>
-      <span class="meta">${esc(j.plain || "Studio job · not one video")}</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")} · ${esc(j.id)}</span>
+    return `<a class="row${working ? " is-working" : ""}" href="${jobRoute(j.id)}">${dot}<div class="thumb job" aria-hidden="true">⚙</div><div class="body"><b>${esc(clip(jobPlain(null, j), 110))}</b>
+      <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")}</span>
       ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
@@ -295,10 +313,10 @@
   // Watch & review opened an empty page).
   const forBen = vs => uniqueVideos(vs).filter(v => !isLive(v) && v.lane === "ready" && v.readyFor === "Ben" && !sent[v.checkId] && !pendingChanges(v)
     && !!(v.watch || {}).url);
-  // /board shows Approve / Changes for a long, or a Short with an ask (tracker_app.js showActions); the same here.
+  // Approve / Changes show for a long, or a Short with an ask.
   const canTick = v => v.type === "long" || !!v.ask;
 
-  // Ben's tick, as /board sends it (tracker_app.js approve / openChangesModal and postCheck).
+  // Ben's tick: the document api/checks.js expects.
   function boardKey() { try { return localStorage.getItem("studio-board-key") || ""; } catch (e) { return ""; } }
   function tickDoc(v, verdict, raw) {
     const fixes = verdict === "ok" ? [] : String(raw || "").split(/\n+/).map(line => {
@@ -405,8 +423,12 @@
       ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress on this cut"></span>`
       : "";
     return `<a class="row${working ? " is-working" : ""}${focused ? " is-focus" : ""}" href="${href || detailLink(v)}" data-video-key="${esc(v.key)}" data-film-key="${esc(filmKey)}">${dot}${thumb(v)}<div class="body"><b>${esc(v.title)}</b>
-      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
+      <span class="meta">${ch(v)} · ${kind(v)}${v.version ? " · " + esc(v.version) : ""}${opts && opts.brief ? "" : " · " + esc(stage(v))}</span>${extra || (isLive(v) ? "" : bar(progressOf(v)))}</div><span class="chev">›</span></a>`;
   }
+  // A flag written for the Chief (video_tracker.flags_for, audience "chief") is housekeeping, not something Ben is
+  // being asked. The old board hid these; the five-tab app showed them on his Schedule and on a video's page
+  // (10 Nov 2026: "Chief: brief text still asks Ben for an OK he already gave" under HOS 007).
+  const benFlags = v => (v.flags || []).filter(f => f && f.text && f.audience !== "chief");
   const jobTiles = j => `<div class="seg" aria-label="Job counts"><div><b>${j.working}</b><span>Running</span></div><div><b>${j.queued}</b><span>Queued</span></div><div><b>${j.held}</b><span>Waiting</span></div></div>`;
   const section = (title, n, body, more) => `<section><h2>${esc(title)}${n != null ? ` <span class="n">${n}</span>` : ""}${more || ""}</h2>${body}</section>`;
   const empty = text => `<p class="empty">${esc(text)}</p>`;
@@ -431,7 +453,7 @@
   const MILESTONES = [['topic','Topic'],['script','Script'],['sources','Fact checks'],['vo','Voice'],['shots','Shot plan'],['picture','Picture'],['edit','Edit'],['thumbs','Packaging'],['qa','Chief QA']];
   const expandedStages = new Map();
   const disclosureState = new Map();
-  let renderedView="", renderedNav="", focusedJobRoute="";
+  let renderedView="", renderedNav="";
   let videoSort = 'uat';
   const completeStage = m => ['done','skip','passed'].includes(m.displayState || m.state) && !m.awaitingApproval;
   function milestones(v) {
@@ -674,7 +696,7 @@
       const explanation=published?'This video is published. Production progress and UAT forecasts no longer apply.':changes?'Your requested changes need correction and fresh QA before another review. The earlier milestone records do not measure progress on these revisions.':ready?'A finished cut has been handed over for your review. Incomplete historical milestone records do not describe how much of this cut remains to be made.':scheduled?'This video is scheduled. The publication date is separate from production milestone history.':'Your UAT handoff is complete. Delivery and any linked follow-up work are separate from historical milestone coverage.';
       const linked=[...new Map((v.jobs||[]).filter(LIVE).map(j=>[j.id,j])).values()];
       return section(title,null,`<p class="muted">${esc(explanation)}</p>${changes?'<p class="muted">Your timestamped notes are listed below. The records must identify the correction owner and next action.</p>':''}
-        ${linked.length?`<div class="next-action"><span>${published?'Post-publication work':'Linked outstanding work'} · ${linked.length} job${linked.length===1?'':'s'}</span><p>${published?'These linked jobs do not make the published video unfinished. A shared job may also cover other videos.':'Job completion and recorded milestone history are separate from your review decision.'}</p>${linked.map(j=>`<a class="other-stage blocker-job-link" href="${jobRoute(j.id)}">${esc(j.id)} · ${esc(clip(j.remaining_action||j.title||'Action not recorded',160))} · ${esc((JOB_WORD[j.status]||['',j.status])[1])}</a>`).join('')}</div>`:''}
+        ${linked.length?`<div class="next-action"><span>${published?'Post-publication work':'Linked outstanding work'} · ${linked.length} job${linked.length===1?'':'s'}</span><p>${published?'These linked jobs do not make the published video unfinished. A shared job may also cover other videos.':'Job completion and recorded milestone history are separate from your review decision.'}</p>${linked.map(j=>`<a class="other-stage blocker-job-link" href="${jobRoute(j.id)}">${esc(clip(jobPlain(board,j),160))} · ${esc((JOB_WORD[j.status]||['',j.status])[1])}</a>`).join('')}</div>`:''}
         <details class="technical" data-disclosure="${esc(v.key)}-history"><summary>${unconfirmedCut(v)?'Related project history':'Recorded production history'}</summary><p class="muted">Unconfirmed milestones mean historical records are missing, not that the delivered video is unfinished. Source records and approval requirements remain unchanged.</p>${milestones({...v,production:relatedProduction(v)}).map(m=>milestoneCard(v,m,null)).join('')}</details>`);
     }
 
@@ -859,11 +881,11 @@
     const agent=AGENTS[j.by]||j.by||'Unassigned';
     const steps=p?`${p.step} / ${p.of} steps (${pct(p)}%)`:(starting?'Starting…':'Progress n/a');
     const videoLabel=activityJobVideoLabel(b,j);
-    const sub=videoLabel?`${j.id} · ${videoLabel}`:`${j.id} · ${category.label}`;
+    const sub=videoLabel||category.label, plain=jobPlain(b,j);
     // Compact Active jobs row (Ben, 6 Nov ~23:05/23:21) — agent, id · video, steps/ETA, spinning icon, thin bar.
     return `<a class="ov-card active-job-card" href="${jobRoute(j.id)}" aria-label="Open job ${esc(j.id)} in Agents. ${esc(videoLabel||category.label)}">
       <span class="aj-icon" aria-hidden="true"></span>
-      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub">${esc(sub)}</span></div>
+      <div class="aj-main"><b>${esc(agent)} is ${starting?'starting':'working'}</b><span class="aj-sub aj-what">${esc(clip(plain,110))}</span><span class="aj-sub">${esc(sub)}</span></div>
       <div class="aj-right"><span class="aj-steps">${esc(steps)}</span>${eta?`<span class="aj-eta">${esc(eta)}</span>`:''}</div>
       ${p?`<div class="aj-bar" role="progressbar" aria-label="Recorded task steps, not video completion" aria-valuemin="0" aria-valuemax="${p.of}" aria-valuenow="${p.step}"><i style="width:${pct(p)}%"></i></div>`:''}
     </a>`;
@@ -1396,18 +1418,142 @@
     const p=b.progress24h; if(!p) return '';
     return `<section class="overview-p24 overview-last24" aria-label="Last 24 hours"><div class="ov-section-head"><h2>Last 24 hours</h2></div>${p24Glance(p, p24WorkingFilms(b))}</section>`;
   }
+  // First day (Ben, 10 Nov 2026: "learn from our failures ... do a scan or an audit, maybe 5-6 hours after the short
+  // goes live"). scripts/launch_check.py makes the check and judges it; tracker.firstDay carries each verdict here.
+  // The Overview shows the videos of the last three days, closed; #firstday lists the last two weeks.
+  const FIRST_DAY_TONE = { fault: "red", behind: "amber", ahead: "green" };
+  const FIRST_DAY_RECENT_H = 72, FIRST_DAY_HOME_ROWS = 3;
+  const AGENT_NAMES = Object.assign({ claudecode: "Claude Code" }, AGENTS);
+  const firstDayRows = b => (((b || {}).tracker || {}).firstDay || []).filter(r => r && r.id);
+  const londonWhen = iso => { const at = Date.parse(iso || ""); if (!at) return "";
+    return new Date(at).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).replace(",", ""); };
+  function firstDayNext(r) {
+    const n = r.next; if (!n) return "";
+    const age = n.hours >= 48 ? `${Math.round(n.hours / 24)}-day` : `${n.hours}-hour`;
+    return n.due ? `The ${age} check is due now` : `Next check ${londonWhen(n.at)}`;
+  }
+  function firstDayCard(r, b, open) {
+    const tone = FIRST_DAY_TONE[r.level] || "";
+    const kindText = `${r.format === "short" ? "Short" : "Long"} · ${chInfo(r.channel).short || r.channel} · live ${londonWhen(r.wentLive)}`;
+    const next = firstDayNext(r);
+    const video = ((((b || {}).tracker || {}).videos) || []).find(v => (v.youtube || {}).videoId === r.id);
+    const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    const done = (r.done || []).map(n => `<li><b>${esc(londonWhen(n.at))}${n.by ? " · " + esc(AGENT_NAMES[n.by] || n.by) : ""}</b> ${esc(n.text)}</li>`).join("");
+    const weak = r.level === "fault" || r.level === "behind";
+    const advice = [...(r.now || []), ...(r.carry || [])];
+    const links = [video ? `<a class="btn" href="${detailLink(video)}">Open the video's page</a>` : "",
+      `<a class="btn" href="https://youtu.be/${encodeURIComponent(r.id)}" target="_blank" rel="noopener">Open on YouTube</a>`].filter(Boolean).join("");
+    const body = r.level ? `
+        ${r.stageText ? `<p class="fd-lead">${esc(r.stageText)}.</p>` : ""}
+        <h3>The numbers at ${esc(r.hours)} h</h3><p>${esc(r.figures)}</p>${(r.why || []).length > 1 ? list(r.why.slice(1)) : ""}
+        ${(r.differences || []).length ? `<h3>What is different about this one</h3>${list(r.differences)}` : ""}
+        <h3>What we did</h3>${done ? `<ul>${done}</ul>` : `<p>${weak ? "Nothing has been done about it yet." : "Nothing needed doing."}</p>`}
+        ${advice.length ? `<details class="technical" data-disclosure="first-${esc(r.id)}-advice"><summary>What the check advises</summary><div class="technical-body">${list(advice)}</div></details>` : ""}`
+      : `<p>${esc(r.next && r.next.due ? "The numbers are being read from YouTube Studio now." : "It is too soon to read the numbers. The check reads YouTube Studio a few hours after the video goes live.")}</p>`;
+    // The video's own page shows the card open; it keeps its own open/closed memory so a closed card on the Overview
+    // does not close it there.
+    return `<details class="ov-card fd-card" data-disclosure="first-${esc(r.id)}${open ? "-page" : ""}"${open ? " open" : ""}>
+      <summary><span class="fd-top"><span class="tag ${tone}">${esc(r.word || "Not checked yet")}</span><span class="fd-kind">${esc(kindText)}</span></span>
+        <b class="fd-title">${esc(r.title)}</b>
+        ${r.summary ? `<span class="fd-line">${esc(r.summary)}</span>` : ""}
+        ${next ? `<span class="fd-line fd-next">${esc(next)}</span>` : ""}</summary>
+      <div class="fd-body">${body}<div class="btns">${links}</div></div></details>`;
+  }
+  function firstDaySection(b, now) {
+    const rows = firstDayRows(b);
+    const recent = rows.filter(r => r.next || now - Date.parse(r.wentLive || "") <= FIRST_DAY_RECENT_H * 36e5).slice(0, FIRST_DAY_HOME_ROWS);
+    if (!recent.length) return "";
+    const more = rows.length > recent.length ? `<a class="more" href="#firstday">All ${rows.length} ›</a>` : "";
+    return `<section class="overview-first" aria-label="First day"><div class="ov-section-head"><h2>First day</h2>${more || `<span class="ov-count">how each new video started</span>`}</div>
+      <div class="ov-stack">${recent.map(r => firstDayCard(r, b)).join("")}</div></section>`;
+  }
+  function firstDayPage(b) {
+    const rows = firstDayRows(b);
+    return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
+      <div class="overview-home"><header class="overview-header"><div><h1>First day</h1><p>How each video started in its first hours, the last two weeks. Read from YouTube Studio 6 hours after going live; a long again at 2 days.</p></div></header>
+      <div class="ov-stack">${rows.map(r => firstDayCard(r, b)).join("") || empty("No video has been checked yet.")}</div></div>`;
+  }
+  // Channels (Ben, 10 Nov 2026: "is there a small part on the dashboard we can show what repos are plugged in ...
+  // and the ability that we can just add another repo if we want, for example a brand new channel"). The facts come
+  // from board.channels (scripts/channel_cards.py: each channel's own settings and the answer of channel_check.py).
+  // Films in production and the last video live are counted here, from the same list as the Producing number.
+  // The page changes nothing: creating a repo, the YouTube sign-in and the voice are Ben's.
+  // Green: the studio is running it. Amber: it passes the check but has no repo yet, so it is still being set up.
+  // Red: the check says the studio cannot run it. What is left to tidy is on the card, not in the light: it is the
+  // studio's housekeeping, not something wrong with the channel (and not something for Ben to do).
+  function channelLight(c) {
+    if (c.ready === false) return ["red", "not ready"];
+    if (c.ready === true) return c.repo === "" ? ["amber", "being set up"] : ["green", "running"];
+    return ["", c.here === false ? "not checked here" : "plugged in"];
+  }
+  function channelFacts(b, c) {
+    const vs = uniqueVideos((((b || {}).tracker || {}).videos) || []).filter(v => v.channel === c.label);
+    const live = vs.filter(v => (v.youtube || {}).state === "live" && Date.parse((v.youtube || {}).publishAt || ""))
+      .sort((x, y) => Date.parse(y.youtube.publishAt) - Date.parse(x.youtube.publishAt))[0];
+    return { producing: producingVideos(vs).length, live };
+  }
+  const ADD_CHANNEL_STEPS = [
+    ["You", "Tell Claude the channel's name and what it is about."],
+    ["Claude", "Makes the channel's folder from the template and fills in its settings."],
+    ["You", "Create its GitHub repo, sign in to its YouTube Studio on the Mini, and choose its voice."],
+    ["Claude", "Checks that the studio can run it, then plugs it in. It then shows on this page."],
+    ["Claude", "Writes the channel's own rules with you before its first script."]];
+  const channelsOf = b => ((b || {}).channels || []).length ? b.channels : channelList();
+  function channelsSection(b) {
+    const list = channelsOf(b);
+    if (!list.length) return "";
+    return `<section class="overview-channels" aria-label="Channels"><div class="ov-section-head"><h2>Channels</h2><a class="more" href="#channels">Details, and adding one ›</a></div>
+      <div class="ch-chips">${list.map(c => { const [tone, text] = channelLight(c);
+        return `<a class="ch-chip" href="#channels"><b>${esc(c.name)}</b><span class="tag ${tone}">${esc(text)}</span></a>`; }).join("")}</div></section>`;
+  }
+  function channelCard(b, c) {
+    const [tone, text] = channelLight(c), f = channelFacts(b, c);
+    const row = (k, v) => v ? `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>` : "";
+    const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+    const handle = /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
+    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "It has no GitHub repo yet." : "");
+    const lead = c.ready === true ? "The studio can run this channel." : c.ready === false ? "The studio cannot run this channel yet."
+      : c.here === false ? "The machine that publishes this board does not hold this channel's files, so it was not checked." : "";
+    const rules = c.rules === true ? "Its own rules, on top of the studio's." : c.rules === false ? "The studio's rules only. Its own rules file is still to write." : "";
+    const live = f.live ? `${esc(f.live.title || "")} <span class="ch-when">${esc(londonWhen(f.live.youtube.publishAt))}</span>` : "";
+    const must = c.must || [], todo = c.todo || [];
+    return `<article class="ov-card ch-card"><header class="ch-head"><h2>${esc(c.name)}</h2><span class="tag ${tone}">${esc(text)}</span></header>
+      ${lead ? `<p class="ch-lead">${esc(lead)}</p>` : ""}
+      <dl class="job-facts ch-facts">${row("On YouTube", handle)}${row("Its files", repo)}${row("In production", `${f.producing} film${f.producing === 1 ? "" : "s"} now`)}${
+        row("Workload", Number.isFinite(c.wip) ? `Up to ${esc(c.wip)} films in work at a time` : "")}${row("Last live", live)}${row("Rules", esc(rules))}</dl>
+      ${must.length ? `<h3>What stops the studio running it</h3>${list(must)}` : ""}
+      ${todo.length ? `<details class="technical" data-disclosure="channel-${esc(c.slug)}-todo"><summary>Housekeeping left · ${todo.length}</summary><div class="technical-body">${list(todo)}</div></details>` : ""}</article>`;
+  }
+  function channelsPage(b) {
+    const list = channelsOf(b), room = (b || {}).channelRoom;
+    const left = room && Number.isFinite(room.left) ? room.left : null;
+    const roomLine = left === null ? "" : left > 0
+      ? `Not yet. ${left} places in the studio's own code still assume the channels we have today${Number.isFinite(room.from) && room.from > left ? ` (down from ${room.from})` : ""}. That work is under way; a new channel's folder can be made ready in the meantime.`
+      : "Yes. The studio's own code no longer assumes which channels it runs.";
+    return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
+      <div class="overview-home"><header class="overview-header"><div><h1>Channels</h1><p>Each channel is its own set of films and rules. The studio does the work for every channel plugged in here.</p></div></header>
+      <div class="ov-stack">${list.map(c => channelCard(b, c)).join("") || empty("No channel is plugged in.")}
+        <article class="ov-card ch-card ch-add"><header class="ch-head"><h2>Add a channel</h2></header>
+          <p class="ch-lead">Nothing on this page changes anything. Adding a channel starts with a message to Claude.</p>
+          <ol class="ch-steps">${ADD_CHANNEL_STEPS.map(([who, what]) => `<li><b>${esc(who)}</b> ${esc(what)}</li>`).join("")}</ol>
+          <p class="ch-note">A new channel starts small: two films in work at most, and its pictures are made only with credits already paid for.</p>
+          ${roomLine ? `<h3>Is the studio ready for another one?</h3><p>${esc(roomLine)}</p>` : ""}</article></div></div>`;
+  }
   // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
   // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
+  // First day sits under Needs attention (10 Nov): it is the one card about how the videos themselves are doing.
   function overview(b, now) {
     const s=overviewModel(b,now);
-    return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>Orbit With Ben · History of Science</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
+    return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${needsAttentionBanner(b)}
+      ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
       ${workingOnNow(b)}
       ${last24Section(b)}
-      ${p24Totals(b)}</div>`;
+      ${p24Totals(b)}
+      ${channelsSection(b)}</div>`;
   }
 
   // Nine exclusive Videos swim lanes (Ben, 7 Nov 2026). Only UAT needs Ben; UAT OK → Passed, notes → In progress.
@@ -1517,11 +1663,13 @@
         <span class="meta">${esc(j.id)}${j.by ? " · " + esc(AGENTS[j.by] || j.by) : ""}${why ? " · " + esc(clip(why, 160)) : ""}</span>
         ${j.status === "claimed" ? (j.progress && j.progress.of > 0 ? bar(j.progress, etaText(etaOf(j, Date.now()))) : `<span class="meta">${esc(etaText(etaOf(j, Date.now())))}</span>`) : ""}</div>`; }).join("");
     const notes = (v.notes || []).map(n => `<li class="${n.done ? "done" : ""}">${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("");
-    const flags = (v.flags || []).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
+    const flags = benFlags(v).map(f => `<span class="tag amber">⚠ ${esc(clip(f.text, 120))}</span>`).join("");
+    const firstDay = yt.videoId && firstDayRows(b).find(r => r.id === yt.videoId);
     return `${back}<div class="video-heading">${thumb(v)}<div><h1 class="uat-title">${esc(v.title)}</h1>
       <p class="meta">${esc(chName(v.channel))} · ${kind(v)} ${esc(v.number || "")}${v.version ? " · " + esc(v.version) : ""} · ${esc(stage(v))}${v.airText ? " · " + (yt.state === "live" && yt.privacy === "public" ? "published " : "airs ") + esc(v.airText) : ""}</p>
       </div></div>
       ${links.length ? `<div class="btns">${links.join("")}</div>` : ""}
+      ${firstDay ? `<div class="overview-home video-first"><section class="overview-first" aria-label="First day"><div class="ov-section-head"><h2>First day</h2></div>${firstDayCard(firstDay, null, true)}</section></div>` : ""}
       ${productionDetail(v, Date.now())}
       <details class="technical video-technical" data-disclosure="${esc(v.key)}-jobs"><summary>Agent work &amp; technical details <span>${jobs.length} jobs</span></summary><div class="technical-body">${v.line?`<p>${esc(v.line)}</p>`:''}${flags}${jobRows}${jobs.map(j=>technicalFields(j)).join('')}</div></details>
       ${notes ? section("Your notes", null, `<ul class="notes">${notes}</ul>`) : ""}`;
@@ -1562,11 +1710,12 @@
       : `<p class="line">This Short is reviewed with its long film: your OK or changes there cover it.</p>`;
     return `<header class="top"><a class="more back" href="#review">‹ Review</a></header>
       <h1 class="uat-title">${esc(v.title)}</h1><p class="meta">${ch(v)} · ${kind(v)} · ${esc(w.version || v.version || "")}${v.airText ? " · airs " + esc(v.airText) : ""} · your watch</p>
-      <div class="player">${player}</div>${actions}${pastNotesHtml(v)}`;
+      <div class="player">${player}</div>${pastNotesHtml(v)}${actions}`;
   }
 
   // Ben, 8 Nov 2026: a cut he sent back shows, under the player, what he flagged last time (and what the agents say
-  // they changed), so he can check each fix as he watches.
+  // they changed), so he can check each fix as he watches. It sits above the notes box (10 Nov 2026): on a phone it
+  // was below the box and both buttons, a full screen under the video it is about.
   function pastNotesHtml(v) {
     const rounds = (v.pastNotes || []).filter(r => (r.notes || []).length);
     const fixed = (v.fixedNotes || []).filter(Boolean);
@@ -1575,7 +1724,9 @@
     const list = rounds.map(r => `<p class="meta">On ${esc(r.version || "the last cut")}${when(r.at) ? " (" + esc(when(r.at)) + ")" : ""} you asked for:</p>
       <ul class="past-notes">${r.notes.map(n => `<li>${n.t ? `<b>${esc(n.t)}</b> ` : ""}${esc(n.text)}</li>`).join("")}</ul>`).join("");
     const did = fixed.length ? `<p class="meta">What the agents changed:</p><ul class="past-notes">${fixed.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : "";
-    return `<section class="past-problems" aria-label="What you flagged last time"><h2>What you flagged last time</h2>${list}${did}</section>`;
+    // A first-time cut can still say what the agents changed (a re-cut Ben has not seen): that is not "last time".
+    const head = rounds.length ? "What you flagged last time" : "What changed in this cut";
+    return `<section class="past-problems" aria-label="${head}"><h2>${head}</h2>${list}${did}</section>`;
   }
 
   // Green only for real work (a claimed job, or the Chief coordinating on a fresh relay check); amber for online but
@@ -1599,9 +1750,104 @@
     return ["amber", "Idle"];
   }
 
+  // ---- Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon. I don't understand
+  // any of it. If I click into a job, I just want to see what it's doing. For example, building a new scene, doing a
+  // voiceover, double checking the data"). Every job on the board carries `plain` (scripts/jobs.py plain_summary, or
+  // the line its author wrote with --plain). The job page and every job row lead with it. Job numbers, titles and the
+  // agents' own notes stay, behind "Technical details".
+  const JOB_KIND_PLAIN = { script: "Writing or fixing the script", facts: "Checking the facts are right", review: "Checking work before it moves on",
+    vo: "Recording or checking the voice-over", image: "Making pictures", video: "Making video shots", thumb: "Making the thumbnail pictures",
+    chart: "Making a chart or diagram", assembly: "Putting the video together", qa: "Checking the finished video for faults",
+    listing: "Writing the title, description and tags", studio: "A YouTube Studio task (upload, schedule or settings)", chief: "A decision for the Chief" };
+  const JOB_STATE = { claimed: ["green", "Working now"], open: ["", "In the queue"], blocked: ["amber", "Waiting"] };
+  const boardJob = (b, id) => id ? ((((b || {}).owb || {}).jobs) || []).find(x => x.id === id) : undefined;
+  const jobPlain = (b, j) => String((j && j.plain) || (boardJob(b, j && j.id) || {}).plain || JOB_KIND_PLAIN[(j && j.kind) || ""] || (j && j.title) || "A studio task").trim();
+  const agentName = id => AGENT_NAMES[id] || id || "";
+  const lowerFirst = text => text ? text.charAt(0).toLowerCase() + text.slice(1) : "";
+  const noStop = text => String(text || "").replace(/[.\s]+$/, "");
+  // Why a job that cannot run yet is waiting, in a sentence Ben can read without knowing any job number.
+  function jobWaiting(b, j) {
+    const h = j.hold && typeof j.hold === "object" ? j.hold : {}, t = String(h.type || ""), text = String(h.condition || "") + " " + String(j.result || "");
+    const earlier = boardJob(b, j.after || j.waitsFor);
+    const asksBen = Array.isArray(j.awaits_ben) ? j.awaits_ben.length > 0 : !!j.awaits_ben;  // an empty list is not a question
+    if (asksBen || t === "ben" || (t === "input" && /\bBen'?s? (?:yes|OK|go-ahead|approval|decision|answer)\b/i.test(text))) return "It is waiting for you to watch it or say yes.";
+    if (t === "public") return "It starts once the video is public on YouTube.";
+    if (t === "date") return "It is waiting for a set date.";
+    if (t === "test") return "It is waiting for a YouTube test of two thumbnails or titles to finish.";
+    if (t === "credits") return "It is waiting for credits to refill.";
+    if (t === "capability") return "It needs an agent that can do this kind of work (for example, listen to the sound), and none can right now.";
+    if (earlier && LIVE(earlier)) return `It is waiting for an earlier job to finish: ${lowerFirst(noStop(jobPlain(b, earlier)))}.`;
+    if (t === "dependency" || j.after) return "It is waiting for earlier work to finish.";
+    if (/parked for Chief|Chief review|for (?:the )?Chief/i.test(text) || j.kind === "chief") return "It is waiting for the Chief to decide.";
+    return "It is waiting for something it needs before it can go on.";
+  }
+  // Where a queued job stands: its place in line and when it should start, or which agent it is waiting for.
+  function jobQueueLine(b, j) {
+    const q = (b && b.queueForecast) || {}, f = (q.jobs || {})[j.id];
+    if (f) return `Number ${f.pos} in line for ${agentName(f.agent)}${f.startAt ? ` · starts about ${qWhen(f.startAt)}` : ""}`;
+    const m = /^waiting for ([\w-]+)(?::\s*(.*))?$/i.exec(String((q.noAgent || {})[j.id] || ""));
+    if (m) return `Waiting for ${agentName(m[1])}${/out of credit|limit/i.test(m[2] || "") ? ", which is out of credit right now" : " to be free"}`;
+    return "In the queue";
+  }
+  // The videos a job is for, as links to their pages; "" for a job about the studio itself.
+  function jobVideos(b, j) {
+    const ctx = activityVideoContext(b, j), videos = uniqueVideos((((b || {}).tracker || {}).videos) || []);
+    return ctx.keys.slice(0, 3).map(key => { const v = videos.find(x => x.key === key);
+      return v ? `<a class="job-video" href="${detailLink(v)}">${esc(v.title || key)} <span>${esc(chName(v.channel))} · ${kind(v)}</span></a>` : ""; }).filter(Boolean).join("");
+  }
+  // One line under a job's plain name in a list: who has it and how far, where it is in line, or what it waits for.
+  function jobStateLine(b, j, now) {
+    if (j.status === "claimed") { const p = recordedTaskProgress(j), e = taskEstimate(j, now);
+      return `${agentName(j.by) || "An agent"} is working on it${p ? ` · step ${p.step} of ${p.of}` : ""}${e ? (e.over ? " · taking longer than usual" : ` · about ${durationText(e.min)} left`) : ""}`; }
+    if (j.status === "blocked") return waitWord(j).replace("Waiting for Ben", "Waiting for you");
+    return jobQueueLine(b, j);
+  }
+  function jobRow(b, j, now) {
+    const [tone] = JOB_STATE[j.status] || [""], video = activityJobVideoLabel(b, j).replace(/^[A-Z]+ \d{3}(?: · )?/, "");
+    return `<a class="row agent job-row" href="${jobRoute(j.id)}"><span class="dot ${tone}"></span><div class="body"><b>${esc(clip(jobPlain(b, j), 120))}</b>
+      ${video ? `<span class="meta">${esc(clip(video, 80))}</span>` : ""}<span class="meta">${esc(jobStateLine(b, j, now))}</span></div><span class="chev">›</span></a>`;
+  }
+  // The page behind a job: what it is doing, for which video, who has it, how far, and why it waits. No job numbers
+  // up top; the record as the agents wrote it is one tap away.
+  function jobPage(b, id, now) {
+    const j = boardJob(b, id);
+    const back = `<header class="top"><a class="more back" href="#agents">‹ Back to Agents</a></header>`;
+    if (!j) return back + empty("That job has finished, or is no longer in the queue.");
+    const [tone, word] = JOB_STATE[j.status] || ["", "In the queue"], p = j.status === "claimed" ? recordedTaskProgress(j) : null;
+    const e = j.status === "claimed" ? taskEstimate(j, now) : null, videos = jobVideos(b, j), h = j.hold && typeof j.hold === "object" ? j.hold : {};
+    const fact = (label, value) => value ? `<div><dt>${esc(label)}</dt><dd>${value}</dd></div>` : "";
+    const facts = [
+      fact("For", videos || "The studio itself, not one video"),
+      j.status === "claimed" ? fact("Who", `${esc(agentName(j.by) || "An agent")} is working on it now`) : "",
+      j.status === "claimed" && j.claimedAt ? fact("Started", esc(londonWhen(j.claimedAt))) : "",
+      p ? fact("How far", `Step ${p.step} of ${p.of}${e ? (e.over ? " · taking longer than usual" : ` · about ${esc(durationText(e.min))} left`) : ""}<div class="bar"><i style="width:${pct(p)}%"></i></div>`)
+        : e ? fact("How long", e.over ? "Taking longer than usual" : `About ${esc(durationText(e.min))} left`) : "",
+      j.status === "open" ? fact("When", esc(jobQueueLine(b, j))) : "",
+      j.status === "blocked" ? fact("Waiting for", esc(jobWaiting(b, j))) : "",
+      j.status === "blocked" && Date.parse(h.check_at || "") > now ? fact("We look again", esc(londonWhen(h.check_at))) : "",  // a date already past says nothing
+      j.due ? fact("Due by", esc(londonWhen(j.due))) : "",
+    ].join("");
+    const note = [["Job", `${j.id} · ${j.title || ""}`], ["Next step, in the agent's words", j.remaining_action], ["Latest progress note", (j.progress || {}).note],
+      ["Last entry", (j.last || {}).what], ["Waiting on, as recorded", h.condition], ["Result so far", j.result]]
+      .filter(([, value]) => value).map(([label, value]) => `<p><b>${esc(label)}</b><br>${esc(value)}</p>`).join("");
+    return `${back}<div class="job-page"><span class="tag ${tone}">${esc(word)}</span>
+      <h1 class="uat-title">${esc(jobPlain(b, j))}</h1>
+      <dl class="job-facts">${facts}</dl>
+      <details class="technical" data-disclosure="job-${esc(j.id)}-tech"><summary>Technical details <span>${esc(j.id)}</span></summary><div class="technical-body">${note}
+        <details class="technical" data-disclosure="job-${esc(j.id)}-meta"><summary>Everything recorded on the job</summary>${technicalFields(j)}</details></div></details></div>`;
+  }
+  // The Agents tab's list of work, in plain words: what is being done now, what is next, and what is waiting.
+  const QUEUE_NEXT_ROWS = 5;
   function agentQueue(b,now) {
-    const s=overviewModel(b,now), jobs=s.jobs.filter(j=>['claimed','open','blocked'].includes(j.status)).sort((a,b)=>['claimed','open','blocked'].indexOf(a.status)-['claimed','open','blocked'].indexOf(b.status));
-    return `<details class="technical video-technical" data-disclosure="agent-queue" ${selectedJob()?'open':''}><summary>Job queue · ${jobs.length} job${jobs.length===1?'':'s'}</summary><div class="technical-body">${jobs.length?jobs.map(j=>`<article id="job-${esc(j.id)}" class="job ${selectedJob()===j.id?'selected-job':''}" tabindex="-1"><b>${esc(j.id)} · ${esc(j.title || 'Untitled job')}</b><p>Recorded status: ${esc(j.status)}${j.by?' · '+esc(AGENTS[j.by]||j.by):''}</p>${j.remaining_action?`<p>${esc(j.remaining_action)}</p>`:''}${technicalFields(j.hold)}${j.result?`<p>${esc(j.result)}</p>`:''}<details class="technical"><summary>Recorded job metadata</summary>${technicalFields(j)}</details></article>`).join(''):'No queued or active jobs recorded.'}</div></details>`;
+    const s=overviewModel(b,now), live=s.jobs.filter(LIVE), q=((b&&b.queueForecast)||{}).jobs||{};
+    const start=j=>Date.parse((q[j.id]||{}).startAt||'')||Infinity;
+    const working=live.filter(j=>j.status==='claimed'), next=live.filter(j=>j.status==='open').sort((a,c)=>start(a)-start(c));
+    const waiting=live.filter(j=>j.status==='blocked').sort((a,c)=>(Date.parse((a.hold||{}).check_at||'')||Infinity)-(Date.parse((c.hold||{}).check_at||'')||Infinity));
+    const rows=list=>list.map(j=>jobRow(b,j,now)).join('');
+    const rest=next.slice(QUEUE_NEXT_ROWS);
+    return `${section('Working on now',working.length,rows(working)||empty('Nothing is being worked on right now.'))}
+      ${section('Up next',next.length,(rows(next.slice(0,QUEUE_NEXT_ROWS))||empty('Nothing is waiting its turn.'))+(rest.length?`<details class="technical job-more" data-disclosure="queue-next"><summary>${rest.length} more in the queue</summary>${rows(rest)}</details>`:''))}
+      ${waiting.length?`<details class="technical job-more" data-disclosure="queue-waiting"><summary>Waiting for something first · ${waiting.length}</summary><p class="meta">These cannot start yet: a video has to go public, a test has to finish, or an earlier job comes first.</p>${rows(waiting)}</details>`:''}`;
   }
 
   function agents(b, now) {
@@ -1612,7 +1858,7 @@
     const teamRows = Object.entries(AGENTS).map(([id, name]) => {
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
-      let why = mine.length ? "Working on " + mine.map(j => `${j.id}: ${j.title}`).join(" · ")
+      let why = mine.length ? "Working on: " + mine.map(j => lowerFirst(jobPlain(b, j))).join(" · ")
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
@@ -1682,7 +1928,7 @@
 
   // A scheduled video we can't vouch for gets one small warning; everything verified stays quiet.
   function readiness(v, at, now) {
-    const flag = (v.flags || []).find(f => f && f.text);
+    const flag = benFlags(v)[0];
     if (flag) return flag.text;
     if (v.approved && v.approved.warn) return v.approved.warn;
     const yt = v.youtube || {};
@@ -1697,7 +1943,8 @@
     const day = at => new Date(at).toLocaleDateString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "short" });
     const time = at => new Date(at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
     const item = r => { const warn = readiness(r.v, r.at, now);
-      return row(r.v, `<span class="meta when">${esc(time(r.at))}${r.scheduled ? "" : " · planned date"}</span>${warn ? `<span class="tag amber">⚠ ${esc(clip(warn, 80))}</span>` : ""}`); };
+      // The day heading and this line say when, so the row drops "Scheduled for Wed 11 Nov 2026 11:30 London".
+      return row(r.v, `<span class="meta when">${esc(time(r.at))}${r.scheduled ? "" : " · planned date"}</span>${warn ? `<span class="tag amber">⚠ ${esc(clip(warn, 80))}</span>` : ""}`, undefined, {brief: true}); };
     const byDay = list => { let out = "", last = "";
       for (const r of list) { const d = day(r.at); if (d !== last) { out += `<h3 class="day">${esc(d)}</h3>`; last = d; } out += item(r); }
       return out; };
@@ -1741,7 +1988,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
@@ -1767,14 +2014,10 @@
       notes.focus();
     });
     document.querySelectorAll('details[data-disclosure]').forEach(el => {
-      if (el.dataset.disclosure==='agent-queue' && selectedJob()) el.open=true;
-      else if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
+      if (disclosureState.has(el.dataset.disclosure)) el.open=disclosureState.get(el.dataset.disclosure);
     });
     if (focusId) document.getElementById(focusId)?.focus({preventScroll:true});
     else if (focusStage) document.querySelector(`details[data-stage="${focusStage}"]>summary`)?.focus({preventScroll:true});
-    const target=tab==='agents' && selectedJob() ? document.getElementById('job-'+selectedJob()) : null;
-    if(tab!=='agents' || !selectedJob()) focusedJobRoute="";
-    if(target && focusedJobRoute!==location.hash) {focusedJobRoute=location.hash;requestAnimationFrame(()=>{target.scrollIntoView({block:'center',behavior:'instant'});target.focus({preventScroll:true});});}
     document.querySelectorAll('[data-open-stage]').forEach(button => button.onclick = () => {
       const card = [...document.querySelectorAll('details[data-stage]')].find(el => el.dataset.stage === button.dataset.openStage);
       if (!card) return;
@@ -1822,7 +2065,7 @@
 
   async function poll() {
     try {
-      let url = DATA + "?t=" + Date.now(), sha = "";
+      let sha = "";
       try {
         const g = await refFetch();
         if (g.ok) {
@@ -1831,20 +2074,19 @@
             if (!uatKey() || !document.getElementById("uat-notes")) render();
             return;
           }
-          if (sha) url = DATA_AT(sha);
         }
-      } catch (e) {}
-      const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
+      } catch (e) { if (e && e.signIn) throw e; }
+      const r = await boardFetch(sha);
       if (!r.ok) throw new Error("Board unavailable");
       const incoming=await r.json();
       if (!incoming || !incoming.tracker || !Array.isArray(incoming.tracker.videos)) throw new Error("Invalid board data");
       board = incoming;
       board.tracker.videos=board.tracker.videos.map(normalizeCut);
       if (sha) lastSha = sha;
-      try { const mb = await fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" }); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
+      try { const mb = await elsewhere(own("f=macbook", "no-store"), () => fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" })); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
       if (!uatKey() || !document.getElementById("uat-notes")) render();  // never wipe notes or the player mid-review
     } catch (e) {
-      if (!board) { renderedView=""; document.getElementById("view").innerHTML = '<p class="empty" role="status">Could not load the studio data. Retrying automatically.</p>'; }
+      if (!board) { renderedView=""; document.getElementById("view").innerHTML = '<p class="empty" role="status">' + (e && e.signIn ? SIGN_IN : "Could not load the studio data. Retrying automatically.") + '</p>'; }
     }
   }
 
@@ -1865,5 +2107,8 @@
   render();
   poll();
   setInterval(poll, 60 * 1000);
+  // One read of /api/checks per load renews Ben's sign-in cookie (400 days) and upgrades a phone that still has the
+  // old key to the cookie. The retired board page did this every minute; once a load is enough.
+  try { const key = boardKey(); fetch("/api/checks?t=" + Date.now(), { cache: "no-store", credentials: "same-origin", headers: key ? { "x-board-key": key } : {} }).catch(() => {}); } catch (e) {}
   document.addEventListener("visibilitychange", () => { if (!document.hidden) poll(); });
 })();

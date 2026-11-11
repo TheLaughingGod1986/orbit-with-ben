@@ -27,7 +27,7 @@ class WatchLinks(unittest.TestCase):
         self.uploads.write_text(json.dumps({"videos": {"Js6EQJ8qDi8": {"kind": "long",
             "packageDir": "02_Video-Projects/025_Mars/11_Upload-Package", "file": "x/025_MarsRobot_full_rough_v03f.mp4"}}}))
         self.saved = (ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS, ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER, os.environ.pop("WATCH_UPLOAD_KEY", None))
-        ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS = self.icloud, {"OWB": owb, "HOS": hos}, self.uploads
+        ks.ICLOUD, ks.UAT_DIRS, ks.UPLOADS = self.icloud, {"OWB": owb, "HOS": hos}, {"owb": self.uploads}
         ks.WATCH_REGISTER, ks.WATCH_LOCAL_REGISTER = root / "reg.json", root / "local_reg.json"
         self.saved_sign = (ks.WATCH_LINK_SECRET_FILE, os.environ.pop("WATCH_LINK_SECRET", None), ks.r2_ready)
         # Never upload from a test: on the Mini the main checkout's .env has real R2 keys (25 Oct: a run here
@@ -46,7 +46,31 @@ class WatchLinks(unittest.TestCase):
 
     def links(self, owb_extra=None, briefs=None):
         owb = [{"film": "023"}, {"film": "025"}, {"film": "026"}, {"film": "028"}] + (owb_extra or [])
-        return ks.watch_links({"films": [{"id": "006"}]}, owb, briefs or {})
+        return ks.watch_links({"owb": owb, "hos": {"films": [{"id": "006"}]}}, briefs or {})
+
+    def test_same_film_version_distinct_cuts_and_aliases(self):
+        names = [f"029_short_{slug}_v04_PHONE.mp4" for slug in
+                 ("wed09_great_dimming", "fri11_opening_testA", "mon14_half_moon_daylight")]
+        ids = [ks.watch_id("OWB", "029", "v04", n) for n in names]
+        self.assertEqual(len(set(ids)), 3)
+        for name, wid in zip(names, ids):
+            self.assertEqual(ks.watch_id("OWB", "029", "v04", "nested/" + name), wid)
+            self.assertLessEqual(len(wid), 64)
+
+    def test_both_auto_upload_routes_distinguish_same_version_cuts(self):
+        from unittest.mock import patch
+        names = [f"029_short_{slug}_v04_PHONE.mp4" for slug in
+                 ("wed09_great_dimming", "mon14_half_moon_daylight")]
+        with patch.object(ks, "auto_upload", return_value=True) as upload:
+            for name in names:
+                pick = ks.UAT_DIRS["OWB"] / name
+                pick.write_bytes(b"fixture")
+                rel = "OWB UAT/" + name
+                ks.stream_link("OWB", "029", pick, rel)
+                ks.ask_watch({"channel": "OWB", "id": "J0961", "version": "v04", "file": rel})
+            ids = [call.args[0] for call in upload.call_args_list]
+        self.assertNotEqual(ids[0], ids[2])
+        self.assertNotEqual(ids[1], ids[3])
 
     def test_newest_cut_phone_copy_in_files(self):
         w = self.links()["OWB:026"]
@@ -92,6 +116,25 @@ class WatchLinks(unittest.TestCase):
 
     def test_hos_long_not_shorts(self):
         self.assertEqual(self.links()["HOS:006"]["version"], "v02")
+
+    def test_a_channel_in_no_registry_gets_its_link_from_its_own_folder_under_its_own_label(self):
+        # J2617: the watch folder is the channel's own setting (channel.json uat_dir), a cut's name may open with the
+        # channel's slug, and the key carries its label. Nothing in kanban_snapshot.py names a channel.
+        import channels
+        from unittest import mock
+        base = channels._load()
+        sky = dict(channels.get(channels.default()), slug="sky", label="SKY", name="Night Sky", home=False,
+                   title_match=r"\bSKY\b", pipeline={"kind": "film_status", "path": "films/*/status.json"},
+                   repo={"env": "SKY_REPO", "checkouts": ["night-sky"]}, uat_dir={"env": "SKY_UAT_DIR", "icloud": "Sky Cuts"})
+        folder = self.icloud / "Sky Cuts"
+        folder.mkdir()
+        for n in ("sky_001_Orion_rough_v02.mp4", "001_Orion_rough_v03.mp4", "002_Lyra_rough_v09.mp4"):
+            (folder / n).write_bytes(b"x")
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (sky,)):
+            links = ks.watch_links({"sky": [{"film": "001"}, {"film": "003"}]}, {})
+        self.assertEqual(links["SKY:001"]["version"], "v03")
+        self.assertNotIn("SKY:003", links)
+        self.assertNotIn("SKY:002", links)   # a cut with no film in the document gets no card
 
     def test_explicit_link_wins_and_bad_ones_are_ignored(self):
         w = self.links(briefs={"OWB:026": {"watch": {"url": "https://www.icloud.com/iclouddrive/abc", "version": "v05"}}})["OWB:026"]

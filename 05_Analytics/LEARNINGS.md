@@ -4,6 +4,8 @@ Ben, 21 Oct 2026: "we should audit our channels and videos weekly and work out h
 
 The weekly audits (`owb-weekly-audit`, `hos-weekly-audit` in `jobs/backlog.json`) add a row to the Shorts lab for every Short public 48 h or more, and turn the evidence into rules or tests below. A rule proven on 3 or more Shorts goes to the Chief for the Shorts brief and the playbook.
 
+**First-day checks (Ben, 10 Nov 2026).** Six hours after any video goes live it is checked in Studio (`scripts/launch_check.py`): is anything broken, how it stands against our own recent videos, which step lost the viewers, and what is different about it. The weekly audits start from `python3 scripts/launch_check.py report`; a difference shared by three weak starts is proposed here as a rule or a test. Why six hours: a Short gets nearly all its views in its first day (`OVLv9dxTcpE` had 888 the next morning and 892 two weeks later), so that is the only time a fault can still be put right.
+
 **Goals (Ben, 4 Nov 2026):** Shorts to **tens of thousands** of views each and longs to **thousands** each. The monthly report scores every test below against these, and keeps, changes or drops it.
 
 **What YouTube rewards on a Short** (targets, kept distinct):

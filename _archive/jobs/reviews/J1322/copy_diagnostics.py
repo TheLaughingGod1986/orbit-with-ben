@@ -11,7 +11,7 @@ def st(p):
  s=p.stat();return (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
 def mount():
  assert os.path.ismount('/Volumes/data')
- assert subprocess.check_output(['df','/Volumes/data'],text=True).splitlines()[-1].startswith('192.168.1.119:')
+ assert subprocess.check_output(['df','/Volumes/data'],text=True).splitlines()[-1].startswith('<NAS>:')
  assert os.statvfs(NAS).f_bavail*os.statvfs(NAS).f_frsize>5*2**30
 mount();A.mkdir(exist_ok=False)
 rows=[];before=subprocess.check_output(['df','-k',str(H)],text=True)

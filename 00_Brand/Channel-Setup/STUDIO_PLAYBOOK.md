@@ -183,7 +183,7 @@ Source-only checks report **PREFLIGHT** (exit 2) if otherwise clean, preserving 
 
 ### Teach on screen (Ben, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
 
-<!-- SYNC: AGENTS.md#Teach on screen (Ben, 11 Oct 2026) -->
+<!-- SYNC: studio/RULES.md#Teach on screen (Ben, 11 Oct 2026) -->
 Ben, 11 Oct 2026 21:45, for every future video on both channels: *"add more graphs and charts when needed, more overlays, more animations, and more interesting facts to explain about dates, explain about the people we're mentioning, and make it more educational and more useful."* This applies to every script locked and every cut started after 11 Oct 2026. It adds to lesson 7 and the edit locks, and it relaxes none of them.
 
 **Script.** Mark these inside the scene's `[VISUAL MUST: …]`, so `review:script` doesn't count them as spoken words and `gate:episode` doesn't change. Chief counts them at script review (`grep -o "DATA:" <script> | wc -l`, and the same for each marker).
@@ -224,7 +224,7 @@ A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is
 
 ### Polish pass (Astrum ref, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
 
-<!-- SYNC: AGENTS.md#Polish pass (Astrum ref, 11 Oct 2026) -->
+<!-- SYNC: studio/RULES.md#Polish pass (Astrum ref, 11 Oct 2026) -->
 Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black Hole Planet?* (`PxJSOWyYWkc`, 27 min, 1.1M views) as a style reference: *"let me know what you think we can incorporate into our workflow."* Chief adopted five of its techniques the same night. They apply to every cut started after 11 Oct 2026. They add to lesson 7, the edit locks and *Teach on screen*, and relax none of them.
 
 **Not adopted:** Astrum's long shot holds (6–8 s, some 15 s). That pace suits a 27-minute film, not our 8–9 minute longs and 22–27 s Shorts. The picture still changes every 4–6 s, and nothing holds still for more than 4 s.
@@ -493,7 +493,7 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
 Locked dual-machine media paths for Mini + MacBook. Generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
 <!-- SYNC: AGENTS.md#Film folders on the NAS (studio-live + archive) -->
-**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini (`ben-mac-mini`) and the MacBook Pro (`bens-macbook-pro`) already mount the same Synology NFS export `192.168.1.119:/volume1/data` at `/Volumes/data` (Tailscale account `benoats@`; phone host `iphone-14-pro-max` is not a film worker). The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
+**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini and the MacBook Pro already mount the same Synology NFS export at `/Volumes/data` (the phone is not a film worker). The export's address is on the machines (`mount | grep /Volumes/data`), never in a tracked file. The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
 
 | Role | Where |
 |---|---|
@@ -511,7 +511,7 @@ Working film folders live on the NAS both machines share, mirroring the Mini You
 | Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
 | History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
 
-Both machines read and write those same remote folders. Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
+Both machines read and write those same remote folders. Share: the NAS's NFS export, mounted at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
 
 **studio-live inventory (verified COMPLETE ~13:36 London 7 Nov 2026).** Leftover working/upcoming copy finished (all final copy exits **0**). Do **not** invent further folders.
 
@@ -544,7 +544,7 @@ Both machines read and write those same remote folders. Share: NFS `192.168.1.11
 
 Shipped and archived films already live under `/Volumes/data/mac-mini-archive/` (including `YouTube/` and `youtube-staging/` for finished videos waiting to go out). That share often holds the **only** copy: the 3 Oct and 5 Oct moves deleted the Mini copies after checking them. **Do not recopy those archive films into studio-live** unless they still have active or upcoming work.
 - **Never delete anything on the NAS.** "Looks like a partial duplicate" is not proof. On 5 Oct the HOS 003 folder held 1,090 files that existed nowhere else.
-- **Bulk moves to the NAS run 01:00-06:00 only (Ben, 5 Nov 2026: get it "nice, clean" so the NAS "spins down when it needs to").** The NAS hard drives sleep outside that window, and daytime moves (scratch offloads, disk clear-outs) kept them awake from 22 Oct to 4 Nov. `scripts/nas_offload.py --apply` waits for the window by itself. Any other move or clear-out of more than a handful of files waits for it too. The only daytime exceptions are a master's safety copy (the master rule under Render scratch) and a Mini under 20 GB free (8 GB until 9 Nov 2026, when the disk reached 3 GB).
+- **Bulk moves to the NAS run 01:00-06:00 only (Ben, 5 Nov 2026: get it "nice, clean" so the NAS "spins down when it needs to").** The NAS hard drives sleep outside that window, and daytime moves (scratch offloads, disk clear-outs) kept them awake from 22 Oct to 4 Nov. `scripts/nas_offload.py --apply` waits for the window by itself; when the Mini is short of disk in the day it copies to the NAS's SSD share (`/Volumes/nas-staging`) instead, which the NAS moves into the archive after 01:00, so even that never wakes the drives (Ben, 10 Nov 2026). Any other move or clear-out of more than a handful of files waits for it too. The only daytime exceptions are a master's safety copy (the master rule under Render scratch) and a Mini under 20 GB free (8 GB until 9 Nov 2026, when the disk reached 3 GB).
 - **Moving files to the archive (ship / offload):**
   1. rsync, then SHA-256 manifests on both sides;
   2. delete the Mini copy only on a full match **and** only when no job is still writing that folder;
@@ -617,6 +617,9 @@ Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This
 **Chief owns `AGENTS.md` and the Never list** (Ben to Claude, 5 Oct 2026; handed to Chief 9 Oct, confirmed 10 Oct). Chief changes them and OKs one-off Never-list exceptions for reversible studio actions (e.g. re-uploading a fixed copy of a broken Short, a video going private), recording each with its date and reason on the thread and in the commit, and telling Ben. Ordinary workers outside the elected Chief role do not relax the Never list themselves. **Real money stays with Ben** (item 1), and no OK covers deleting a video.
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+- **All subscription credit floors are zero (Ben, 12 Oct 2026 14:46):** ElevenLabs, Flow (AI Ultra) and the Vertex trial are spent down to 0 (Vertex: £0.10, see below). Only subscription or trial credit: never buy credits, top up, upgrade or enable paid overage. At 0 the job fails gracefully: it walks its routing fallback, or the job type parks until the reset.
+- **ElevenLabs has no floor (Ben, 9 Oct: *"No floor on ElevenLabs. Keep going until the credit runs out."*).** One account pays for both channels' voice and music. It's a flat fee, so running out only stops work until the monthly reset; a top-up stays Ben's call. When credits are short, the channel `channel_balance.py` puts first gets them first, then air date within it.
 
 **Credit holds until the 30 Oct ElevenLabs reset (Chief, 9 Oct 2026; Chief owns the studio since 9 Oct).**
 - **ElevenLabs** (one account, both channels): about 18,653 credits left (9 Oct). The HOS voice queue goes first: 007 Shorts B + C (J0109), then the 009 and 010 long VO (J0111, J0113). Every VO job reads the balance first and spends nothing if it is below what the job needs. **No OWB (or HOS) music bed is started without the Chief's OK until 30 Oct.** Laying in a bed that already exists (J0089) is fine.

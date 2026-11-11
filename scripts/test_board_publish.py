@@ -7,6 +7,7 @@ import os
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -93,24 +94,37 @@ class SiteBuild(unittest.TestCase):
         spec.loader.exec_module(mod)
         with tempfile.TemporaryDirectory() as d:
             mod.build(Path(d) / "dist")
-            simple = (Path(d) / "dist" / "board.html").read_text()
             home = (Path(d) / "dist" / "index.html").read_text()
-            # Home page is the studio app (Ben, 28 Oct 2026); the per-video column board moved to /board
+            ai = (Path(d) / "dist" / "ai.html").read_text()
+            # Home page is the studio app (Ben, 28 Oct 2026)
             self.assertIn("STUDIO_APP_TEST_HOOK", home)
-            self.assertIn('location.replace("/board" + location.hash)', home)  # Ben's /#k= links still reach his board
-            self.assertIn("Studio videos", simple)
-            self.assertIn("Changes requested", simple)
-            self.assertIn("board-data/board.json", simple)
+            self.assertIn("board-data/board.json", home)
+            # The per-video column board (/board) is retired (Ben, 10 Nov 2026: "This seems legacy. I think we can
+            # remove this section"): not built, not linked, its address sent to the Studio app. The Studio app keeps
+            # the old /#k= key itself now instead of handing it to that page.
+            self.assertFalse((Path(d) / "dist" / "board.html").exists())
+            self.assertNotIn('href="/board"', home + ai)
+            self.assertNotIn('location.replace("/board"', home)
+            self.assertIn('localStorage.setItem("studio-board-key", m[1])', home)
+            self.assertIn('href="/#videos">Videos</a>', ai)
             # The October swim-lane board (/classic) is retired (Ben, 28 Oct 2026): not built, not linked
             self.assertFalse((Path(d) / "dist" / "classic.html").exists())
-            self.assertNotIn('href="/classic"', simple + home)
+            self.assertNotIn('href="/classic"', home + ai)
             self.assertTrue((HERE.parent / "05_Analytics/kanban/board_site/api/checks.js").exists())
             version=json.loads((Path(d)/"dist/version.json").read_text())["version"]
-            self.assertIn(f'<meta name="studio-version" content="{version}">', simple)
-            self.assertIn('src="/updater.js"', simple)
+            self.assertIn(f'<meta name="studio-version" content="{version}">', home)
+            self.assertIn('src="/updater.js"', home)
             self.assertTrue((Path(d)/"dist/updater.js").exists())
             tracker=(Path(d)/"dist/tracker.html").read_text()
             self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
+
+    def test_retired_addresses_go_to_the_studio_app(self):
+        site = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
+        gone = {r["source"]: r["destination"] for r in site["redirects"]}
+        for source in ("/board", "/board/", "/board.html", "/classic", "/classic/", "/classic.html"):
+            # No fragment in the destination: the browser then carries an old link's own #v=<video> or #k=<key> over.
+            self.assertEqual(gone.get(source), "/", source)
+        self.assertEqual([r for r in site["rewrites"] + site["headers"] if "board" in r["source"]], [])
 
     def test_build_makes_the_tracker_web_app(self):
         spec = importlib.util.spec_from_file_location("board_build", HERE.parent / "05_Analytics/kanban/board_site/build.py")
@@ -126,6 +140,11 @@ class SiteBuild(unittest.TestCase):
             self.assertIn('<link rel="manifest" href="/tracker.webmanifest">', html)
             self.assertIn('<link rel="apple-touch-icon" href="/static/tracker-180.png">', html)
             self.assertIn('<a href="/">Studio board</a>', html)
+            # 10 Nov 2026 (phone): a real back button, and the Studio's dark colours instead of a white page.
+            self.assertIn('<a class="studio-back" href="/">', html)
+            self.assertIn('<html lang="en" data-theme="dark">', html)
+            self.assertIn('<meta name="theme-color" content="#0B111B">', html)
+            self.assertIn(':root[data-theme="dark"]', html)   # the template still carries the dark theme this relies on
             man = json.loads((dist / "tracker.webmanifest").read_text())
             self.assertEqual((man["start_url"], man["display"]), ("/tracker", "standalone"))
             for icon in man["icons"]:
@@ -277,8 +296,11 @@ class ButtonStamp(unittest.TestCase):
         self.assertNotIn("@vercel/blob", js)
         self.assertIn("version, stampUrl", js)
         self.assertIn("/api/checks?stamp=1", js)
-        # 24 Oct 2026: OWB desk thread rolled from #99 (full) to issue #264; HOS stays #180
-        self.assertIn('OWB: ["TheLaughingGod1986/orbit-with-ben", 264]', js)
+        # Ben's ticks go on the thread scripts/thread.json names (10 Nov 2026: this line still said #264 six days
+        # after the November thread opened, so his words went where no agent was reading). A rollover must change both.
+        thread = json.loads((HERE / "thread.json").read_text())
+        self.assertIn(f'OWB: ["{thread["repo"]}", {thread["number"]}]', js)
+        self.assertNotIn(', 264]', js)
         self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
         self.assertNotIn(', 99]', js)
         # one post per real change, exactly as before, and only after the tick is saved
@@ -342,11 +364,79 @@ class QuickNoOp(unittest.TestCase):
         self.assertIn("<key>StartInterval</key><integer>60</integer>", plist)
 
     def test_page_polls_board_data_every_minute(self):
-        tracker = (HERE.parent / "05_Analytics/kanban/board_site/tracker_app.js").read_text()
-        self.assertIn("setInterval(() => { pollData(); pollChecks(); }, 60 * 1000);", tracker)
-        self.assertIn("publishedAt: j.publishedAt", tracker)
         studio = (HERE.parent / "05_Analytics/kanban/board_site/studio_app.js").read_text()
         self.assertIn("setInterval(poll, 60 * 1000);", studio)
+
+
+class AsksTheLoader(unittest.TestCase):
+    """J2615: board_publish.py names no channel. These pin what it did by name on 11 Nov 2026, and show a made-up
+    third channel plugging in."""
+
+    def sky(self):
+        import channels
+        base = channels._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        return unittest.mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_nothing_changed_for_the_two_channels(self):
+        import channels
+        self.assertEqual(bp.SECTIONS, ("hos", "owb", "briefs", "credits", "tracker"))
+        self.assertEqual((bp.STUDIO, bp.QUEUE), ("owb", "owb"))
+        self.assertEqual(bp.STUDIO_REPO, channels.repo_path("owb", bp.HOME))
+        if not os.environ.get("OWB_REPO"):
+            self.assertEqual(bp.STUDIO_REPO, bp.HOME / "YouTube" / "orbit-with-ben")
+        self.assertEqual(bp.REPOS["hos"], channels.repo_path("hos", bp.HOME))
+        self.assertEqual(bp.wt(), bp.WT / "owb")
+        self.assertEqual(bp.wt("hos"), bp.WT / "hos")
+        shared = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
+        self.assertEqual(sorted(bp.sparse("owb")), sorted([
+            "/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
+            "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
+            "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
+            "/00_Brand/Channel-Setup/social/UPLOADS.json", "/05_Analytics/dashboard/data.json", *shared]))
+        self.assertEqual(sorted(bp.sparse("hos")), sorted([
+            "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
+            *shared]))
+
+    def test_the_snapshot_is_called_as_before(self):
+        out = Path("/tmp/out")
+        with unittest.mock.patch.object(bp, "chief_args", lambda: []):
+            self.assertEqual(bp.snapshot_command(out),
+                             [sys.executable, str(bp.WT / "owb" / "scripts" / "kanban_snapshot.py"),
+                              "--hos", str(bp.WT / "hos"), "--db-out", str(out)])
+
+    def test_the_summary_reads_as_before(self):
+        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films")
+
+    def test_the_quick_check_asks_each_repo_as_before(self):
+        asked = []
+        bp.quick_key(lambda repo, *refs: asked.append((repo, refs)) or "x")
+        self.assertEqual(asked, [
+            (bp.STUDIO_REPO, ("refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat",
+                              "refs/heads/macbook-heartbeat-2")),
+            (bp.REPOS["hos"], ("refs/heads/main",))])
+
+    def test_the_heartbeat_is_left_out_of_the_queue_sections_change_check_only(self):
+        d = docs()
+        self.assertNotIn("heartbeat", bp.stable("owb", d["owb"])["lanes"]["mini"])
+        self.assertIn("heartbeat", bp.stable("hos", d["owb"])["lanes"]["mini"])
+
+    def test_a_third_channel_is_on_the_board_with_its_own_section(self):
+        with self.sky():
+            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "briefs", "credits", "tracker"))
+            self.assertEqual(bp.sparse("sky"), ["/studio/", "/PIPELINE.json",
+                                                "/00_Brand/Channel-Setup/social/UPLOADS.json", *bp.CHANNEL_SPARSE])
+            with unittest.mock.patch.object(bp, "chief_args", lambda: []):
+                cmd = bp.snapshot_command(Path("/tmp/out"))
+            self.assertEqual(cmd[cmd.index("--sky") + 1], str(bp.WT / "sky"))
+            d = dict(docs(), sky={"pipeline": {"films": [{"id": "001"}, {"id": "002"}]}})
+            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films")
+            board = {}
+            bp.add_channels(board)
+        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "sky"])
+        self.assertEqual(board["channels"][-1]["name"], "Night Sky")
 
 
 if __name__ == "__main__":
