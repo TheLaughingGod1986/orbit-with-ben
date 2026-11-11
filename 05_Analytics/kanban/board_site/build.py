@@ -64,7 +64,8 @@ TRACKER_PATCHES = [
 
 def app_version() -> str:
     files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
-             HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js"]
+             HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js",
+             HERE / "api" / "data.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
