@@ -193542,10 +193542,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T21:52Z",
-      "eta": "2026-11-11T23:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -193619,6 +193619,11 @@
           "at": "2026-11-11T21:56Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed existing 1/3 checkpoint. Salon 160-frame lossless intermediate verified against exact source frame hashes and original timestamp mapping; full master still absent."
+        },
+        {
+          "at": "2026-11-11T21:58Z",
+          "by": "codex",
+          "what": "released: 1/3 checkpoint continued: HOS PR #542 commit 7dc4b4e0; exact 160-frame lossless salon intermediate rendered and verified by independent source pixel hashes and original timestamp mapping. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Remaining packet splicer, captions, other renders and final gates exceed this run. No v04 master, no running process or detached render. 26 tests OK; check_all ALL CHECKS PASS. No spend/publication."
         }
       ],
       "remaining_action": "Finish Franklin patch rendering, caption reconstruction and packet-preserving assembly",
