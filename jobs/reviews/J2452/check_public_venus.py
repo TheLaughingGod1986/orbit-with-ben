@@ -26,6 +26,9 @@ def main():
     full[-1]['timeline_out']=build['duration_s']
     (OUT/'full_pixel_cuts.json').write_text(json.dumps(full,indent=2)+'\n')
     changed=json.loads((OUT/'changed_cuts.json').read_text())
+    # The ending trim is also this job's edit: its two-second neighbourhood
+    # must never be classified as untouched public-film picture.
+    changed.append(dict(row='end-trim',timeline_in=build['duration_s'],timeline_out=build['duration_s'],source='end-trim'))
     # Inspect half-second neighbourhoods on both sides of every new trim/join.
     # Each transition groups contiguous sampling rows under one identity;
     # their offsets advance through that finished transition interval.

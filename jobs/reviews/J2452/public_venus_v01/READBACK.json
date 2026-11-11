@@ -1,0 +1,309 @@
+{
+  "status": "V01_READBACK_NOT_PASS_END_TRIM_NEEDS_REPAIR",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/023_venus_undarkened_v01.mp4",
+  "sha256": "45fc6286b53ce3a04b4215bcc38edd4dca082b4493bf3d7b3b18187396220630",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 44226000,
+        "duration": "491.400000",
+        "bit_rate": "4338179",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "14742",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 23587200,
+        "duration": "491.400000",
+        "bit_rate": "190401",
+        "nb_frames": "23036",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/023_venus_undarkened_v01.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "491.400000",
+      "size": "278707411",
+      "bit_rate": "4537361",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 14742,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-24",
+      "cut": 12,
+      "t": 25.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "split panel: vertical gutter at 0.043"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 25.0
+    },
+    {
+      "row": "pixel-222",
+      "cut": 111,
+      "t": 223.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 5.67 < 13.44 and edge density 0.0 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 236.39999999999998
+    },
+    {
+      "row": "pixel-300",
+      "cut": 150,
+      "t": 301.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 26.83, p95 147.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 314.40000000000003
+    },
+    {
+      "row": "pixel-308",
+      "cut": 154,
+      "t": 309.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 20.33, p95 157.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 322.40000000000003
+    },
+    {
+      "row": "pixel-310",
+      "cut": 155,
+      "t": 311.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 22.51, p95 158.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 324.40000000000003
+    },
+    {
+      "row": "pixel-482",
+      "cut": 241,
+      "t": 483.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.05 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 496.40000000000003
+    },
+    {
+      "row": "pixel-484",
+      "cut": 242,
+      "t": 485.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.06 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 498.40000000000003
+    },
+    {
+      "row": "pixel-486",
+      "cut": 243,
+      "t": 487.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.06 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 500.40000000000003
+    },
+    {
+      "row": "pixel-488",
+      "cut": 244,
+      "t": 489.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 11.46 < 13.44 and edge density 0.002 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 502.40000000000003
+    },
+    {
+      "row": "pixel-490",
+      "cut": 245,
+      "t": 490.7,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 11.46 < 13.44 and edge density 0.002 < 0.0259 (absolute floor)"
+      ],
+      "classification": "NEW_EDIT_NEIGHBOURHOOD",
+      "master_time_s": 504.09999999999997
+    }
+  ],
+  "levels": {
+    "input_i": "-20.72",
+    "input_tp": "-6.51",
+    "input_lra": "3.20",
+    "input_thresh": "-31.19",
+    "output_i": "-19.90",
+    "output_tp": "-6.00",
+    "output_lra": "3.10",
+    "output_thresh": "-30.38",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.10"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 40.0,
+      "end_s": 42.0,
+      "mean_luma": 171.53936631944444,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/brightest_01.jpg"
+    },
+    {
+      "start_s": 38.0,
+      "end_s": 40.0,
+      "mean_luma": 168.5566059027778,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/brightest_02.jpg"
+    },
+    {
+      "start_s": 120.0,
+      "end_s": 122.0,
+      "mean_luma": 160.5481597222222,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/brightest_03.jpg"
+    },
+    {
+      "start_s": 118.0,
+      "end_s": 120.0,
+      "mean_luma": 160.1525173611111,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/brightest_04.jpg"
+    },
+    {
+      "start_s": 36.0,
+      "end_s": 38.0,
+      "mean_luma": 158.89153645833332,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v01/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed.",
+  "end_trim_correction": "End trim was absent from v01 sampled edit QA; v02 and all later candidates must use updated checker. No complete edit gate PASS claimed."
+}
