@@ -177697,9 +177697,14 @@
           "at": "2026-11-11T00:08Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2033 after J2536 done and Chief #487 ruling; starting preflight and live 14,190 balance/canvas check"
+        },
+        {
+          "at": "2026-11-11T00:15Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Preflight 1-3 PASS (NAS 10s ok, style refs sha256 ok, read-only Flow live balance 14,190, 0 video tiles on 9dae2d10, Veo 3.1 Quality 16:9 8s x1=100cr); reconciled P02:08_the_apple_c1:t1 FAILED/0cr per Chief ruling; Batch 3 launched detached"
         }
       ],
-      "remaining_action": "Pull HOS main (#487), verify NAS + 14,190 Flow balance + no 8th clip, reconcile P02:08_the_apple_c1:t1 (0cr), and mint remaining 13/20 HOS009 Quality rows",
+      "remaining_action": "Minting Batch 3 (5 rows: 08_the_apple_c1..05_shot_orbit_c2) in detached tmux hos009-tranche2; then Batch 4 (5 rows) and Batch 5 (3 rows)",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177717,11 +177722,11 @@
       "urgent": 5,
       "not_before": "2026-11-10T23:40Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-11T00:08Z",
+        "at": "2026-11-11T00:15Z",
         "by": "gemini",
-        "note": "Claimed J2033 after J2536 done and Chief #487 ruling; starting preflight and live 14,190 balance/canvas check"
+        "note": "Preflight 1-3 PASS (NAS 10s ok, style refs sha256 ok, read-only Flow live balance 14,190, 0 video tiles on 9dae2d10, Veo"
       }
     },
     {
