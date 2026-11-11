@@ -214936,13 +214936,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T03:46Z",
-      "eta": "2026-11-11T05:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
-      "result": "",
+      "result": "parked for Chief: HOS 011 VO lock (hos_011_vo_v01, sha256 d873f1d0..., J2286 KEEP) recorded and shot list v01 built on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected + 22 free £0 rows; HOS-2026-11-E2 PASS; check_all.sh PASS; HOS PR #495, £0 spent)",
       "history": [
         {
           "at": "2026-11-10T03:02Z",
@@ -214998,6 +214998,11 @@
           "at": "2026-11-11T04:05Z",
           "by": "gemini",
           "what": "step 4 of 4 done: check_all.sh ALL CHECKS PASS; opened HOS PR #495 (ba734c91) and posted review report on HOS desk (#6786681752)"
+        },
+        {
+          "at": "2026-11-11T04:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 011 VO lock (hos_011_vo_v01, sha256 d873f1d0..., J2286 KEEP) recorded and shot list v01 built on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected + 22 free £0 rows; HOS-2026-11-E2 PASS; check_all.sh PASS; HOS PR #495, £0 spent)"
         }
       ],
       "remaining_action": "Parked for Chief: review HOS 011 VO lock + shot list v01 PR #495 and price pass (5,030 Flow credits try-1 / 12,892 expected)",
