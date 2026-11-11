@@ -214938,17 +214938,22 @@
           "at": "2026-11-11T03:47Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J2475: inspecting HOS 011 VO files (PR #443 / main / studio-live) and HOS 013 VO lock + shot list templates"
+        },
+        {
+          "at": "2026-11-11T03:49Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected HOS 011 VO files (hos_011_vo_v01_TAKE.json, words.srt, J2286 KEEP review) and HOS 013 VO lock + shot list templates in clean worktree"
         }
       ],
-      "remaining_action": "Inspect HOS 011 VO records and 013 lock/shot-list templates, then record VO lock and build shot list v01",
+      "remaining_action": "Record the HOS 011 VO lock in VO_STATUS.md and production-status.md, then build shot list v01 on words.srt",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T03:47Z",
+        "at": "2026-11-11T03:49Z",
         "by": "gemini",
-        "note": "Started J2475: inspecting HOS 011 VO files (PR #443 / main / studio-live) and HOS 013 VO lock + shot list templates"
+        "note": "Inspected HOS 011 VO files (hos_011_vo_v01_TAKE.json, words.srt, J2286 KEEP review) and HOS 013 VO lock + shot list temp"
       },
       "taskKeys": [
         "HOS:011"
