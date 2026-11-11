@@ -214462,13 +214462,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T06:46Z",
-      "eta": "2026-11-11T08:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "",
+      "result": "Deleted 137 branches in orbit-with-ben (all 136 in jobs/reviews/J2466/BRANCHES_owb.txt in 3 batches of 50/50/36, plus macbook/J2517 at ac438cb8700e631d1df671d98159b4e2b384c497; 0 skipped, 0 errors; remote heads 398 -> 261) and 58 branches in history-of-science (all 58 in jobs/reviews/J2466/BRANCHES_hos.txt in 2 batches of 50/8; 0 skipped, 0 errors; remote heads 443 -> 385).",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -214594,6 +214594,11 @@
           "at": "2026-11-11T06:50Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 complete: all 136 OWB branches in BRANCHES_owb.txt + macbook/J2517 (137 total; 398 -> 261 remote branches) and all 58 HOS branches in BRANCHES_hos.txt (443 -> 385 remote branches) deleted with 0 skipped and 0 errors"
+        },
+        {
+          "at": "2026-11-11T06:50Z",
+          "by": "gemini",
+          "what": "done: Deleted 137 branches in orbit-with-ben (all 136 in jobs/reviews/J2466/BRANCHES_owb.txt in 3 batches of 50/50/36, plus macbook/J2517 at ac438cb8700e631d1df671d98159b4e2b384c497; 0 skipped, 0 errors; remote heads 398 -> 261) and 58 branches in history-of-science (all 58 in jobs/reviews/J2466/BRANCHES_hos.txt in 2 batches of 50/8; 0 skipped, 0 errors; remote heads 443 -> 385)."
         }
       ],
       "remaining_action": "Done: deleted 137 OWB branches and 58 HOS branches; 0 skipped; 0 errors",
