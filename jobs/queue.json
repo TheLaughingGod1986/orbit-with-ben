@@ -229400,9 +229400,14 @@
           "at": "2026-11-11T21:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T21:09Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed; investigating logs and transaction rollback before isolated code changes"
         }
       ],
-      "remaining_action": "Read the relay log around both times, name the cause, and fix it in a pull request with a test",
+      "remaining_action": "Investigating the two failed queue pushes",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless",
@@ -229411,8 +229416,7 @@
         "of": 3,
         "at": "2026-11-11T21:09Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed; investigating logs and transaction rollback before isolated code changes"
       }
     },
     {
