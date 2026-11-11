@@ -221512,10 +221512,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T05:58Z",
+      "eta": "2026-11-11T07:58Z",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
       "result": "",
@@ -221524,12 +221524,25 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T05:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write 013 picture plan v02 with no Fast rows, re-pin the scope and the runner, open the pull request for Grok",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
-      "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting"
+      "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T05:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2559",
