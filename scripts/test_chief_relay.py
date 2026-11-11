@@ -1,5 +1,5 @@
 """chief_relay.py: the first agent in the chain that is up acts as Chief; out of credit falls through; Grok takes back."""
-import datetime as dt, os, pathlib, stat, sys, tempfile, time, unittest
+import contextlib, datetime as dt, os, pathlib, stat, sys, tempfile, time, unittest
 from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -7,6 +7,29 @@ import chief_relay as cr  # noqa: E402
 
 T0 = dt.datetime(2026, 10, 7, 12, 0, tzinfo=dt.timezone.utc)
 MIN = dt.timedelta(minutes=1)
+
+
+def _layout(home: bool, studio=None, others=None):
+    """Pin which layout a test is about, whichever one it runs in. `home` True is today's: the default channel's repo
+    carries the studio and every other channel is beside it. False is the layout after the move: the studio has a
+    repo of its own (`studio`) and every channel is beside it. Returns an ExitStack; close it to undo."""
+    own = cr.channels.default()
+    base = tuple(dict(c, home=home and c["slug"] == own) for c in cr.channels._load())
+    paths = dict(others if others is not None else
+                 {s: cr.OTHERS.get(s) or cr.channels.repo_path(s, cr.HOME) for s in cr.channels.slugs() if not (home and s == own)})
+    stack = contextlib.ExitStack()
+    stack.enter_context(mock.patch.object(cr.channels, "_load", lambda directory=None: base))
+    stack.enter_context(mock.patch.object(cr, "OTHERS", paths))
+    if studio is not None:
+        stack.enter_context(mock.patch.object(cr, "STUDIO", studio))
+    return stack
+
+
+class TodaysLayout(unittest.TestCase):
+    """For tests that hold the relay to what it does today, with one channel's repo carrying the studio."""
+
+    def setUp(self):
+        self.addCleanup(_layout(True).close)
 
 
 class Relay(unittest.TestCase):
@@ -479,7 +502,7 @@ class Relay(unittest.TestCase):
     def test_a_made_up_third_channels_job_wakes_its_worker_like_any_other(self):
         # J2618: nothing in the relay names a channel, so a channel that is only in the channel files is served too.
         base = cr.channels._load()
-        home = next(c for c in base if c.get("home"))
+        home = next(c for c in base if c["slug"] == cr.channels.default())
         sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
                    repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
         old_q, old_others = cr.queue_has_work, cr.OTHERS
@@ -495,7 +518,8 @@ class Relay(unittest.TestCase):
             self.assertTrue(self.ran("codex"))
             brief = (self.tmp / "codex.args").read_text()
             self.assertIn("claim only J0201", brief)
-            self.assertIn(f"2b. Night Sky ({self.tmp / 'YouTube' / 'Night Sky'}): git pull.", brief)
+            step = "2" + ("" if not old_others else chr(ord("a") + len(old_others)))   # after every channel already beside the studio
+            self.assertIn(f"{step}. Night Sky ({self.tmp / 'YouTube' / 'Night Sky'}): git pull.", brief)
             self.assertIn(f'--sky "{self.tmp / "YouTube" / "Night Sky"}"', brief)
             self.assertIn("Chief for Night Sky", brief)                      # its own Chief chain, by its own name
             self.assertIn(f"--add-dir {self.tmp / 'YouTube' / 'Night Sky'}", brief)
@@ -1161,7 +1185,7 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("codex"))
 
 
-class PromptNamesTheRuleFiles(unittest.TestCase):
+class PromptNamesTheRuleFiles(TodaysLayout):
     """J2577: the relay's prompt names the studio's AGENTS.md and then the channel's own studio/RULES.md, for each
     checkout that has one. A checkout that has not split its rules yet reads as it always did."""
 
@@ -1272,7 +1296,7 @@ report, and stop.
 '''
 
 
-class TheBriefIsBuiltFromTheChannelFiles(unittest.TestCase):
+class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
     """J2618, 11 Nov 2026: chief_relay.py names no channel. The brief it gives every agent on the Mini is put together
     from the channel files. For today's two channels it must read as the hand-written one did, word for word: that
     text, as it stood on main before the change, is BRIEF_BEFORE_J2618 above. The one intended difference is the
@@ -1284,7 +1308,7 @@ class TheBriefIsBuiltFromTheChannelFiles(unittest.TestCase):
 
     def sky(self, **more):
         base = cr.channels._load()
-        home = next(c for c in base if c.get("home"))
+        home = next(c for c in base if c["slug"] == cr.channels.default())
         sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
                    title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
                    repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]},
@@ -1391,6 +1415,63 @@ class TheBriefIsBuiltFromTheChannelFiles(unittest.TestCase):
         src = pathlib.Path(cr.__file__).read_text()
         self.assertEqual(ratchet.channel_lines(src), {})
         self.assertEqual(ratchet.home_lines(src), {})
+
+
+class TheBriefOnceTheStudioHasItsOwnRepo(unittest.TestCase):
+    """J2621, 11 Nov 2026 (plan decision 1: no home channel). With no channel marked `home` in the registry the studio
+    is a checkout of its own: step 1 of the brief. Every channel, Orbit included, is then one of the others."""
+
+    COMMON = dict(name="Codex", agent="codex", why="it is first in line", authority="AUTHORITY", priority="PRIORITY",
+                  role="a specialist worker")
+    S, O, H = (pathlib.Path("/Users/x/YouTube/studio"), pathlib.Path("/Users/x/YouTube/orbit-with-ben"),
+               pathlib.Path("/Users/x/YouTube/History Of Science"))
+
+    def setUp(self):
+        self.addCleanup(_layout(False, studio=self.S, others={"owb": self.O, "hos": self.H}).close)
+        rules = mock.patch.object(cr.channels, "rules_phrase",
+                                  lambda path: "AGENTS.md" if path == self.S else "AGENTS.md and then studio/RULES.md")
+        rules.start()
+        self.addCleanup(rules.stop)
+
+    def test_the_loader_says_no_channel_carries_the_studio(self):
+        self.assertIsNone(cr.channels.studio_slug())
+        self.assertEqual(cr.channels.default(), "owb")           # a job that names no channel is still Orbit's
+        self.assertEqual((cr.channels.studio_name(), cr.channels.studio_short()), ("the studio", "studio"))
+
+    def test_step_one_is_the_studio_and_every_channel_is_a_step_two(self):
+        p = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex"))
+        self.assertIn(f"1. the studio ({self.S}): git pull. Read AGENTS.md (the rules, the Never list, ", p)
+        self.assertIn(f"2. Orbit With Ben ({self.O}): git pull. Read its AGENTS.md and then studio/RULES.md.\n", p)
+        self.assertIn(f'2b. History of Science ({self.H}): git pull. Read its AGENTS.md and then studio/RULES.md ("The desk"). '
+                      "Run its desk inbox:\n", p)
+        self.assertIn(f'python3 scripts/channel_balance.py --owb "{self.O}" --hos "{self.H}"\n', p)
+        self.assertIn("   Queue jobs marked `owb` (repo: owb) are normal queue jobs that `jobs.py next` hands out like any other.\n"
+                      "   Do them in the OWB checkout, following its AGENTS.md and then studio/RULES.md.\n", p)
+        self.assertIn("there is none, fall through to the studio queue below.", p)
+        self.assertNotRegex(p, r"\{\w+\}")                       # nothing left unfilled
+
+    def test_a_worker_is_told_both_channels_jobs_are_queue_jobs(self):
+        self.assertEqual(cr.worker_only_steps(),
+                         "In step 3 skip the channel check and the HOS desk inbox: do only the job "
+                         "`jobs.py next` gives you, and that includes `owb` and `hos` queue jobs (repo: owb, repo: hos), "
+                         "which are normal queue jobs, not desk tasks: do them in the OWB or HOS checkout. "
+                         "If it exits 10, stop without posting")
+
+    def test_every_cli_is_allowed_every_channels_checkout(self):
+        with mock.patch.object(cr, "STATE", pathlib.Path("/Users/x/_desk/state")):
+            self.assertEqual(cr.add_dirs(), "--add-dir /Users/x/YouTube/orbit-with-ben "
+                                            "--add-dir '/Users/x/YouTube/History Of Science' --add-dir /Users/x/_desk")
+
+    def test_the_studios_checkout_is_found_by_its_repos_name_or_the_registrys_own(self):
+        home = pathlib.Path("/Users/x")
+        self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "orbit-with-ben")   # named after its repo
+        kept = dict(cr.channels._studio_section(), github="someone/studio", checkouts=["Studio", "studio"], env="STUDIO_REPO")
+        with mock.patch.object(cr.channels, "_studio_section", lambda: kept):
+            self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "Studio")
+            self.assertEqual(cr.channels.studio_repo(), {"url": "https://github.com/someone/studio.git", "env": "STUDIO_REPO",
+                                                         "checkouts": ["Studio", "studio"]})
+            with mock.patch.dict(os.environ, {"STUDIO_REPO": "/elsewhere/s"}):
+                self.assertEqual(cr.channels.studio_checkout(home), pathlib.Path("/elsewhere/s"))
 
 
 if __name__ == "__main__":

@@ -54,10 +54,11 @@ import urllib.request
 
 HOME = pathlib.Path.home()
 # No channel is named here (J2615): the registry says which channels are plugged in and where each is checked out.
-STUDIO = channels.studio_slug()   # the channel whose repo carries the studio's own code, queue and board branch
+STUDIO = channels.studio_slug()   # the channel whose repo carries the studio's own code, queue and board branch;
+#                                   None once the studio has a repo of its own (then every channel is beside it)
 QUEUE = channels.queue_key()      # the section of board.json that carries the job queue
 REPOS = {s: channels.repo_path(s, HOME) for s in channels.slugs()}
-STUDIO_REPO = REPOS[STUDIO]
+STUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
@@ -92,7 +93,7 @@ def sparse(slug: str) -> list[str]:
 
 def wt(slug: str | None = None) -> pathlib.Path:
     """This run's copy of a channel's main branch (the studio's own repo when no channel is given)."""
-    return WT / (slug or STUDIO)
+    return WT / (slug or channels.studio_key())
 
 
 # One section per channel (sorted, so the order in board.json does not depend on the registry's), then the studio's.
@@ -323,6 +324,8 @@ def films_summary(docs: dict) -> str:
 def build(out: pathlib.Path) -> dict:
     for slug in channels.slugs():
         worktree(REPOS[slug], wt(slug), sparse(slug))
+    if not STUDIO:                    # the studio's own repo: its files only, no channel's
+        worktree(STUDIO_REPO, wt(), STUDIO_SPARSE)
     out.mkdir(parents=True, exist_ok=True)
     subprocess.run(snapshot_command(out), capture_output=True, text=True, timeout=300, check=True)
     docs = {s: json.loads((out / f"{s}.json").read_text()) for s in SECTIONS if (out / f"{s}.json").exists()}
