@@ -11,6 +11,8 @@ Pools:
 - vertex:     Cloud Billing > Credits (all) in the same Chrome. Free Trial is `--left`; every credit line goes in --note.
 - cursor:     cursor.com/dashboard/spending in the same Chrome: percent of the Cursor Models pool left this cycle
               (the page shows % used per pool and no $ since 12 Oct); Cursor Models and Grok Bot weekly go in --note.
+              Since November 2026 the page shows one "Weekly included usage" figure with who used it: `left` is then
+              the percent of that week left, and the note says so.
 - codex:      the Codex CLI's own usage limits, from the newest `rate_limits` in ~/.codex/sessions (what /status shows):
               % of the weekly limit left, with the 5-hour window and both reset times in --note. No sign-in, no network.
               `--codex-pool codex-macbook` records the MacBook's separate account (scripts/macbook_worker.py does).
@@ -60,7 +62,7 @@ ALL = ("elevenlabs", "flow", "vertex", "cursor", "codex", "claude", "gemini")
 SPEND = ("elevenlabs", "flow", "vertex")  # credit or money: one of these unread fails the run. The rest are usage pages.
 # The picture runs hold this lock for a whole batch (the channel's Flow runners, `SharedFlowAccounting`).
 FLOW_LOCK = Path.home() / "_desk" / "state" / "flow" / "shared" / "writer.lock"
-SEEN = {"url": "", "text": ""}  # the last page read in the CDP Chrome, kept so a failed reading can say what it showed
+SEEN = {"url": "", "text": "", "links": []}  # the last page read in the CDP Chrome, kept so a failed reading can say what it showed
 CODEX_HOME = Path.home() / ".codex"
 CODEX_MAX_AGE_H = 72  # an older reading says nothing about this week's limit
 CODEX_MAX_LOGS = 60
@@ -227,6 +229,8 @@ def read_vertex() -> dict:
 
 
 CURSOR_POOLS = {"cursor models": "Cursor Models", "other models": "Other Models", "weekly usage": "Grok Bot weekly"}
+# Up to six short "<who> N%" lines: the split of the week's usage the billing page shows since November 2026.
+CURSOR_SPLIT = r"(?:[ \t]*\n[ \t]*[A-Za-z][A-Za-z .&-]{0,30}?[ \t]+\d{1,3}%[ \t]*){0,6}"
 
 
 def parse_cursor(text: str) -> dict:
@@ -249,26 +253,31 @@ def parse_cursor(text: str) -> dict:
             used[label] = int(m.group(1))
             label = None
     if "other models" not in used and "cursor models" not in used:
+        # 11 Nov 2026 (J2580): the page now lists who used the week between the figure and its label, one per line
+        # ("30%", "used", "x", "Grok Bot 29%", "Cursor 1%", "Weekly included usage"). Those lines are read, not skipped.
         m_wk = re.search(
-            r"(?:(\d{1,3})%\s+used(?:\s+\S)?\s+Weekly included usage|Weekly included usage\s+(\d{1,3})%\s+used)"
+            r"(?:(\d{1,3})%\s+used(?:\s+\S)?(" + CURSOR_SPLIT + r")\s+Weekly included usage|Weekly included usage\s+(\d{1,3})%\s+used)"
             r"(?:\s*(?:x\s+)?[·•]?\s*Resets\s+([^\n(]+))?",
             text,
             re.I,
         )
         if not m_wk:
             raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
-        pct = int(m_wk.group(1) or m_wk.group(2))
+        pct = int(m_wk.group(1) or m_wk.group(3))
+        split = [(name.strip(), int(n)) for name, n in re.findall(r"([A-Za-z][A-Za-z .&-]*?)[ \t]+(\d{1,3})%", m_wk.group(2) or "")]
         used["weekly included usage"] = pct
-        bits = [f"Weekly included usage {pct}% used"]
-        if m_wk.group(3):
-            bits.append(f"weekly resets {m_wk.group(3).strip()}")
+        used.update({name.lower(): n for name, n in split})
+        by = " (" + ", ".join(f"{name} {n}%" for name, n in split) + ")" if split else ""
+        bits = [f"Weekly included usage {pct}% used{by}"]
+        if m_wk.group(4):
+            bits.append(f"weekly resets {m_wk.group(4).strip()}")
         m_mo = re.search(r"(\$[\d,]+(?:\.\d\d)?)\s+used this month(?:\s+Resets\s+([^\n(]+))?", text, re.I)
         if m_mo:
             bits.append(f"{m_mo.group(1)} used this month" + (f" (resets {m_mo.group(2).strip()})" if m_mo.group(2) else ""))
         m_cr = re.search(r"Credits available\s+(\$[\d,]+(?:\.\d\d)?)", text, re.I)
         if m_cr:
             bits.append(f"credits available {m_cr.group(1)}")
-        return {"left": max(0, 100 - pct), "total": 100, "used": used, "note": "; ".join(bits)}
+        return {"left": max(0, 100 - pct), "total": 100, "used": used, "note": "; ".join(bits), "of": "the weekly included usage"}
     reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
     weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
     bits = [f"{CURSOR_POOLS[k]} {used[k]}% used" for k in CURSOR_POOLS if k in used]
@@ -302,7 +311,7 @@ def read_cursor() -> dict:
         raise RuntimeError("Cursor dashboard is signed out in the CDP Chrome")
     r = parse_cursor(text)
     return {"left": r["left"], "total": r["total"],
-            "note": f"Cursor spending page, % of Cursor Models left: {r['note']} (CDP :9222)"}
+            "note": f"Cursor spending page, % of {r.get('of', 'Cursor Models')} left: {r['note']} (CDP :9222)"}
 
 
 def flow_refill(r: dict, last_left: float | None) -> dict:
@@ -430,23 +439,62 @@ def parse_claude(text: str) -> dict:
     }
 
 
+CLAUDE_PATH = "/settings/usage"
+
+
+def settings_links(hrefs, limit: int = 12) -> list[str]:
+    """The links on a page that mention settings or usage, as paths: no host, no query, no repeats. Kept so that a
+    reading that was sent to another page can say where the usage page may have gone (J2580)."""
+    out = []
+    for h in hrefs or []:
+        path = re.sub(r"^https?://[^/]+", "", re.sub(r"[?#].*$", "", str(h or "")))[:80]
+        if path and re.search(r"settings|usage", path, re.I) and path not in out:
+            out.append(path)
+    return out[:limit]
+
+
+def _links(page) -> list[str]:
+    try:
+        return settings_links(page.eval_on_selector_all("a[href]", "els => els.map(e => e.getAttribute('href') || '')"))
+    except Exception:  # noqa: BLE001
+        return []
+
+
 def _claude_settle(page, text: str) -> str:
+    """Wait for the usage figures. On 11 Nov 2026 the usage address ended on the new-chat page with no figures
+    (J2566): if the browser is not on the usage page, note the links that page offers and ask for the usage address
+    once more, since the app can land on the new-chat page on a cold start."""
     for _ in range(2):
         if re.search(r"\d{1,3}%\s*used", text, re.I) or "login" in page.url:
             return text
+        if CLAUDE_PATH not in page.url:
+            SEEN["links"] = _links(page) or SEEN.get("links") or []
+            try:
+                page.goto(CLAUDE_URL, wait_until="domcontentloaded", timeout=30000)
+            except Exception:  # noqa: BLE001
+                pass
         try:
             page.get_by_text("Current session").first.wait_for(timeout=10000)
         except Exception:  # noqa: BLE001
             pass
         page.wait_for_timeout(2000)
         text = page.inner_text("body")
+    if CLAUDE_PATH not in page.url:
+        SEEN["links"] = _links(page) or SEEN.get("links") or []
     return text
+
+
+def claude_sent_elsewhere(url: str, text: str) -> bool:
+    """The browser asked for the usage page and ended on another one, with no usage figure on it."""
+    return bool(url) and CLAUDE_PATH not in url and not re.search(r"\d{1,3}%\s*used", text, re.I)
 
 
 def read_claude() -> dict:
     text = _page_text(CLAUDE_URL, None, settle_ms=6000, then=_claude_settle)
     if re.search(r"continue with google|continue with email|\bsign in\b|\blog in\b", text[:2000], re.I) and not re.search(r"\d{1,3}%\s*used", text, re.I):
         raise RuntimeError("claude.ai is signed out in the CDP Chrome")
+    if claude_sent_elsewhere(SEEN["url"], text):
+        raise RuntimeError(f"the Claude usage address sent the browser to {page_address(SEEN['url'])}, not to the usage page")
     r = parse_claude(text)
     return {"left": r["left"], "total": r["total"], "note": r["note"]}
 
@@ -529,6 +577,9 @@ def likely_cause(err: str, page: str = "") -> str:
     e = err.lower()
     if "signed out in the cdp chrome" in e or "signed in as another account" in e:
         return "signed out in this machine's browser; it needs Ben's sign-in"
+    if "sent the browser to" in e:
+        return ("signed in, but the site sent the browser to another page: the usage page has moved, or it opens "
+                "another way now; the reader needs the new address (the page's own links are below)")
     if "the page changed" in e or "picker moved" in e:
         if not page.strip():
             return "the page came back empty; signed out, or it did not load"
@@ -606,7 +657,7 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     read, failed, unread, busy = [], [], [], []
     for pool in [p.strip() for p in a.pools.split(",") if p.strip()]:
-        SEEN.update(url="", text="")
+        SEEN.update(url="", text="", links=[])
         recorded_as = a.codex_pool if pool == "codex" else pool
         try:
             r = READERS[pool]()
@@ -629,6 +680,8 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  page address: {page_address(SEEN['url'])}", flush=True)
                 for ln in page_excerpt(SEEN["text"]):
                     print(f"  page shows: {ln}", flush=True)
+                for link in SEEN.get("links") or []:
+                    print(f"  page links to: {link}", flush=True)
             continue
         read.append(pool)
         print(f"READ {pool}: left={r['left']} total={r.get('total')} · {r['note']}", flush=True)
