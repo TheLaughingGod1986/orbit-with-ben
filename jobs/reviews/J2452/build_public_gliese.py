@@ -16,6 +16,7 @@ def main():
  OUT.mkdir(exist_ok=False)
  chapter=json.loads((ROOT/'jobs/reviews/J2452/picture_timeline_v01.json').read_text())['chapters'][8]
  assert sha(NARR)==chapter['narration_sha256']
+ assert sha(MASTER)=='a9780e548a2775f4e7a1acecb6ac24308927f0b58ab1d606e67d27741e3db824', 'Source differs from recorded upload master'
  # Finished-master card times come from its checked v03 assembler.
  # Exact card/Orbit windows checked against source assembler and source sheet.
  # Retain this finished picture; narration and timeline never move.
