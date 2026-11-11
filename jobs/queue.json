@@ -230884,21 +230884,28 @@
           "at": "2026-11-11T23:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T23:35Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Planned 4 steps: 1) inspect HOS 011 VO provenance & git/LFS; 2) search Mini local, MiniWork, scratch & studio-live; 3) search NAS archive/staging & MacBook reachability; 4) restore verified copy or park with full search log"
         }
       ],
-      "remaining_action": "Search by SHA-256, copy only; restore into the film's studio-live folder; post path and hash",
+      "remaining_action": "Check HOS 011 VO provenance, git/LFS history, and mounted volumes before hash search",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T23:34Z",
+        "of": 4,
+        "at": "2026-11-11T23:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Planned 4 steps: 1) inspect HOS 011 VO provenance & git/LFS; 2) search Mini local, MiniWork, scratch & studio-live; 3) s"
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     },
     {
       "id": "J2654",
