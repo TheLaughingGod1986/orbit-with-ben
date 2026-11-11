@@ -219712,10 +219712,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claude",
-      "since": "2026-11-11T08:16Z",
-      "eta": "2026-11-11T10:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
       "result": "",
@@ -219734,6 +219734,11 @@
           "at": "2026-11-11T08:25Z",
           "by": "claude",
           "what": "step 1 of 5 done"
+        },
+        {
+          "at": "2026-11-11T08:25Z",
+          "by": "claude",
+          "what": "released: step 1 of 5 merged (#807, docs/RULES_SPLIT.md: every section and every line of the split sections sorted, nothing moved). Next: the move itself, word for word, with a check that compares the two files against the old AGENTS.md; then sync_rules reading both files; then the start-up texts."
         }
       ],
       "remaining_action": "Step 2: move Orbit With Ben's own rules to studio/RULES.md word for word, with a check that no line is lost",
