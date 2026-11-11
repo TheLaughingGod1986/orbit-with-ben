@@ -1,0 +1,83 @@
+{
+  "status": "TWO_LOCAL_JOIN_CANDIDATES_NOT_FINAL_CHAPTER",
+  "joins": [
+    {
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v04/join_01_candidate.mp4",
+      "sha256": "2fc6a97d940923f2ef9fcfc22f9cefc001e287c32396c4f196b4e90dbda4f93a",
+      "frames": 458,
+      "duration_s": 15.266666666666667,
+      "master_range_s": [
+        119.16,
+        134.42666666666668
+      ],
+      "nominal_orbit_local_s": [
+        4,
+        11.259999999999991
+      ],
+      "fully_opaque_local_s": [
+        3.6666666666666665,
+        11.593333333333325
+      ],
+      "fade_duration_s": 2,
+      "cover_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+      "cover_matrix_conversion": "untagged component default BT.601 to output BT.709",
+      "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1,format=rgb24[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601,format=rgba,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=11.926666666666659,format=rgba,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=9.926666666666659:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=rgb,scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]",
+      "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA",
+      "source_geometry": {
+        "frames_checked": 457,
+        "geometry": [
+          1920,
+          1080,
+          "yuv420p"
+        ],
+        "colour_spaces": [
+          "bt709",
+          "smpte170m"
+        ],
+        "pts_strictly_increasing": true
+      }
+    },
+    {
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v04/join_02_candidate.mp4",
+      "sha256": "abf383c49e67fb5fae554de5835ae3782151312cfc517171c4b6c933a46f5a4e",
+      "frames": 358,
+      "duration_s": 11.933333333333334,
+      "master_range_s": [
+        278.16,
+        290.09333333333336
+      ],
+      "nominal_orbit_local_s": [
+        4,
+        7.919999999999959
+      ],
+      "fully_opaque_local_s": [
+        3.6666666666666665,
+        8.253333333333293
+      ],
+      "fade_duration_s": 2,
+      "cover_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+      "cover_matrix_conversion": "untagged component default BT.601 to output BT.709",
+      "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1,format=rgb24[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601,format=rgba,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=8.586666666666627,format=rgba,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=6.586666666666627:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=rgb,scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]",
+      "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA",
+      "source_geometry": {
+        "frames_checked": 356,
+        "geometry": [
+          1920,
+          1080,
+          "yuv420p"
+        ],
+        "colour_spaces": [
+          "bt709",
+          "smpte170m"
+        ],
+        "pts_strictly_increasing": true
+      }
+    }
+  ],
+  "limitations": [
+    "No audio; narration clock unchanged by these local picture tests.",
+    "Adjacent source diagrams remain: these candidates do not resolve the chapter bright-graphic recipe.",
+    "No whole-chapter, final compilation, loudness, silence or UAT claim.",
+    "Inspect exact output frames at opaque and dissolve endpoints before adoption."
+  ]
+}

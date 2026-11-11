@@ -1,0 +1,381 @@
+[
+  {
+    "version": 1,
+    "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v01",
+    "render": {
+      "status": "TWO_LOCAL_JOIN_CANDIDATES_NOT_FINAL_CHAPTER",
+      "joins": [
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v01/join_01_candidate.mp4",
+          "sha256": "df796c1f9fb4d9029865571b13227da0879f578e15e6bcf7cf47a817b10e606b",
+          "frames": 458,
+          "duration_s": 15.266666666666667,
+          "master_range_s": [
+            119.16,
+            134.42666666666668
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            11.259999999999991
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            11.593333333333325
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=11.926666666666659,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=9.926666666666659:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=auto,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        },
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v01/join_02_candidate.mp4",
+          "sha256": "68a1879294696a99b6ce1790e38dbd468402cc802c6cc8320e41eecb92a698c9",
+          "frames": 358,
+          "duration_s": 11.933333333333334,
+          "master_range_s": [
+            278.16,
+            290.09333333333336
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            7.919999999999959
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            8.253333333333293
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=8.586666666666627,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=6.586666666666627:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=auto,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        }
+      ],
+      "limitations": [
+        "No audio; narration clock unchanged by these local picture tests.",
+        "Adjacent source diagrams remain: these candidates do not resolve the chapter bright-graphic recipe.",
+        "No whole-chapter, final compilation, loudness, silence or UAT claim.",
+        "Inspect exact output frames at opaque and dissolve endpoints before adoption."
+      ]
+    },
+    "readback": {
+      "status": "SAVED_JOIN_FRAME_READBACK",
+      "opaque_checks": [
+        {
+          "join": 1,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 1.1370733667695474,
+          "threshold": 2,
+          "pass_check": true
+        },
+        {
+          "join": 1,
+          "time_s": 7.6299999999999955,
+          "reference_cover_time_s": 3.6299999999999955,
+          "mean_absolute_pixel_error": 1.1676615547839506,
+          "threshold": 2,
+          "pass_check": true
+        },
+        {
+          "join": 1,
+          "time_s": 11.226666666666658,
+          "reference_cover_time_s": 7.226666666666658,
+          "mean_absolute_pixel_error": 52.76032777134774,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 5.693419656635802,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 5.9599999999999795,
+          "reference_cover_time_s": 1.9599999999999795,
+          "mean_absolute_pixel_error": 5.528373360339506,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 7.886666666666626,
+          "reference_cover_time_s": 3.8666666666666667,
+          "mean_absolute_pixel_error": 0.9774008166152264,
+          "threshold": 2,
+          "pass_check": true
+        }
+      ],
+      "all_opaque_checks_pass": false,
+      "hashes_match": true,
+      "limitations": "Sparse frame comparisons; no moving-video perception or final chapter QA."
+    }
+  },
+  {
+    "version": 2,
+    "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v02",
+    "render": {
+      "status": "TWO_LOCAL_JOIN_CANDIDATES_NOT_FINAL_CHAPTER",
+      "joins": [
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v02/join_01_candidate.mp4",
+          "sha256": "5b2c0e1f20af31240b6fadb9cdf426613a38e9737afee865e10f55e68c86573f",
+          "frames": 458,
+          "duration_s": 15.266666666666667,
+          "master_range_s": [
+            119.16,
+            134.42666666666668
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            11.259999999999991
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            11.593333333333325
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=11.926666666666659,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=9.926666666666659:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=yuv420,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        },
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v02/join_02_candidate.mp4",
+          "sha256": "5fb1d6826974fe71216eef2ae9823adf7791cde69b1b3e46a094db1d5e048e12",
+          "frames": 358,
+          "duration_s": 11.933333333333334,
+          "master_range_s": [
+            278.16,
+            290.09333333333336
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            7.919999999999959
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            8.253333333333293
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=8.586666666666627,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=6.586666666666627:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=yuv420,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        }
+      ],
+      "limitations": [
+        "No audio; narration clock unchanged by these local picture tests.",
+        "Adjacent source diagrams remain: these candidates do not resolve the chapter bright-graphic recipe.",
+        "No whole-chapter, final compilation, loudness, silence or UAT claim.",
+        "Inspect exact output frames at opaque and dissolve endpoints before adoption."
+      ]
+    },
+    "readback": {
+      "status": "SAVED_JOIN_FRAME_READBACK",
+      "opaque_checks": [
+        {
+          "join": 1,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 3.2074495241769547,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 1,
+          "time_s": 7.6299999999999955,
+          "reference_cover_time_s": 3.6299999999999955,
+          "mean_absolute_pixel_error": 3.0746743184156378,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 1,
+          "time_s": 11.226666666666658,
+          "reference_cover_time_s": 7.226666666666658,
+          "mean_absolute_pixel_error": 3.102397762345679,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 3.1921609760802467,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 5.9599999999999795,
+          "reference_cover_time_s": 1.9599999999999795,
+          "mean_absolute_pixel_error": 3.025476305298354,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 7.886666666666626,
+          "reference_cover_time_s": 3.8666666666666667,
+          "mean_absolute_pixel_error": 3.0702010995370372,
+          "threshold": 2,
+          "pass_check": false
+        }
+      ],
+      "every_opaque_frame_checks": [
+        {
+          "join": 1,
+          "frames_compared": 237,
+          "maximum_mean_absolute_pixel_error": 3.124646990740741,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "frames_compared": 137,
+          "maximum_mean_absolute_pixel_error": 3.15458912037037,
+          "threshold": 2,
+          "pass_check": false
+        }
+      ],
+      "all_opaque_checks_pass": false,
+      "hashes_match": true,
+      "limitations": "Every opaque output frame compared at 320x180; sparse full-size endpoint samples; no moving-video perception or final chapter QA."
+    }
+  },
+  {
+    "version": 3,
+    "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v03",
+    "render": {
+      "status": "TWO_LOCAL_JOIN_CANDIDATES_NOT_FINAL_CHAPTER",
+      "joins": [
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v03/join_01_candidate.mp4",
+          "sha256": "5b2c0e1f20af31240b6fadb9cdf426613a38e9737afee865e10f55e68c86573f",
+          "frames": 458,
+          "duration_s": 15.266666666666667,
+          "master_range_s": [
+            119.16,
+            134.42666666666668
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            11.259999999999991
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            11.593333333333325
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+          "cover_matrix_conversion": "untagged component default BT.601 to output BT.709",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601:out_color_matrix=bt709,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=11.926666666666659,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=9.926666666666659:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=yuv420,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        },
+        {
+          "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v03/join_02_candidate.mp4",
+          "sha256": "5fb1d6826974fe71216eef2ae9823adf7791cde69b1b3e46a094db1d5e048e12",
+          "frames": 358,
+          "duration_s": 11.933333333333334,
+          "master_range_s": [
+            278.16,
+            290.09333333333336
+          ],
+          "nominal_orbit_local_s": [
+            4,
+            7.919999999999959
+          ],
+          "fully_opaque_local_s": [
+            3.6666666666666665,
+            8.253333333333293
+          ],
+          "fade_duration_s": 2,
+          "cover_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+          "cover_matrix_conversion": "untagged component default BT.601 to output BT.709",
+          "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601:out_color_matrix=bt709,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=8.586666666666627,format=yuva420p,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=6.586666666666627:d=2:alpha=1,setpts=PTS+1.6666666666666665/TB[cover];[base][cover]overlay=eof_action=pass:format=yuv420,format=yuv420p[v]",
+          "status": "JOIN_CANDIDATE_NOT_CHAPTER_QA"
+        }
+      ],
+      "limitations": [
+        "No audio; narration clock unchanged by these local picture tests.",
+        "Adjacent source diagrams remain: these candidates do not resolve the chapter bright-graphic recipe.",
+        "No whole-chapter, final compilation, loudness, silence or UAT claim.",
+        "Inspect exact output frames at opaque and dissolve endpoints before adoption."
+      ]
+    },
+    "readback": {
+      "status": "SAVED_JOIN_FRAME_READBACK",
+      "opaque_checks": [
+        {
+          "join": 1,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 3.2074495241769547,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 1,
+          "time_s": 7.6299999999999955,
+          "reference_cover_time_s": 3.6299999999999955,
+          "mean_absolute_pixel_error": 3.0746743184156378,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 1,
+          "time_s": 11.226666666666658,
+          "reference_cover_time_s": 7.226666666666658,
+          "mean_absolute_pixel_error": 3.102397762345679,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 4,
+          "reference_cover_time_s": 0,
+          "mean_absolute_pixel_error": 3.1921609760802467,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 5.9599999999999795,
+          "reference_cover_time_s": 1.9599999999999795,
+          "mean_absolute_pixel_error": 3.025476305298354,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "time_s": 7.886666666666626,
+          "reference_cover_time_s": 3.8666666666666667,
+          "mean_absolute_pixel_error": 3.0702010995370372,
+          "threshold": 2,
+          "pass_check": false
+        }
+      ],
+      "every_opaque_frame_checks": [
+        {
+          "join": 1,
+          "frames_compared": 237,
+          "maximum_mean_absolute_pixel_error": 3.124646990740741,
+          "threshold": 2,
+          "pass_check": false
+        },
+        {
+          "join": 2,
+          "frames_compared": 137,
+          "maximum_mean_absolute_pixel_error": 3.15458912037037,
+          "threshold": 2,
+          "pass_check": false
+        }
+      ],
+      "all_opaque_checks_pass": false,
+      "hashes_match": true,
+      "limitations": "Every opaque output frame compared at 320x180; sparse full-size endpoint samples; no moving-video perception or final chapter QA."
+    }
+  }
+]
