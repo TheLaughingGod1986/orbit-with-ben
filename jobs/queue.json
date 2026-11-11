@@ -193594,20 +193594,25 @@
           "at": "2026-11-11T19:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Clean origin/main worktree created; source AVC packet and decoded-frame preflight running; 18 planner tests and four new negative/IDR tests pass."
+        },
+        {
+          "at": "2026-11-11T19:58Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Source verified: 12923 frame hashes with exact PTS/duration, 113 actual IDR boundaries, 25296 audio packets; approved composite/points-t3/rods-t2 hashes and full decodes verified; 22 tests and repository checks pass. No v04 rendered."
         }
       ],
-      "remaining_action": "Validating original Franklin packet boundaries and recording preservation hashes",
+      "remaining_action": "Implementing Franklin packet splicing and caption rendering before output verification",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T19:56Z",
+        "at": "2026-11-11T19:58Z",
         "by": "codex",
-        "note": "Clean origin/main worktree created; source AVC packet and decoded-frame preflight running; 18 planner tests and four new"
+        "note": "Source verified: 12923 frame hashes with exact PTS/duration, 113 actual IDR boundaries, 25296 audio packets; approved co"
       }
     },
     {
