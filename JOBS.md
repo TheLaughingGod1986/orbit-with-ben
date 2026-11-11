@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2549 | mini | blocked | claude | – | assembly · Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready | J2545 |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2558 | mini | claimed | gemini | 2026-11-11T10:21Z | 013 shots · script · HOS 013 Darwin & Wallace: picture plan v02 with no Fast rows (each of the 23 becomes a free row or a Quality row), the runner refuses Fast, the credit cap re-pinned |  |
+| J2558 | mini | blocked | gemini | – | 013 shots · script · HOS 013 Darwin & Wallace: picture plan v02 with no Fast rows (each of the 23 becomes a free row or a Quality row), the runner refuses Fast, the credit cap re-pinned |  |
 | J2562 | mini | open | – | – | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
