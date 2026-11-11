@@ -225575,10 +225575,10 @@
       "stage": "picture",
       "after": "J2607",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T12:09Z",
+      "eta": "2026-11-11T14:09Z",
       "created_by": "claude",
       "created_at": "2026-11-11T11:56Z",
       "result": "",
@@ -225587,13 +225587,26 @@
           "at": "2026-11-11T11:56Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T12:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Yes or no on try 3 of the start still; PASS lets the fourth take go",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the last try at the starting picture for the Franklin salon shot",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T12:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
