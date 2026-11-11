@@ -220754,9 +220754,14 @@
           "at": "2026-11-11T11:55Z",
           "by": "claude",
           "what": "stage 1, Orbit: the queue's text no longer holds an account's name without its domain (3 places in 2 jobs: a browser profile folder named after the account, and one bare account name). Through the queue tool, as the 10 Nov pass was."
+        },
+        {
+          "at": "2026-11-11T11:57Z",
+          "by": "claude",
+          "what": "stage 1, Orbit's film folders, records and archive: orbit-with-ben #820 merged (main f4144299). 42 of the 43 files that held an address are cleaned; three old picture runners compare a sha256, eight archived set-up scripts read the account from a setting, and the address check now also catches an address written as a search pattern. The list of files allowed to hold one is down to 1: the AI spend ledger, left until no picture run is appending to it (after Thu 12 Nov 19:13 London), together with the missing 10-credit J0886 line. Then History of Science's own files, after its two scrub pull requests (Grok's hold: not before the picture window closes and J2241 and J2270 are done)."
         }
       ],
-      "remaining_action": "HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window",
+      "remaining_action": "Orbit: the AI spend ledger's notes, in a quiet window after Thu 12 Nov 19:13 London. Then History of Science's files and the history stages",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions"
