@@ -221781,13 +221781,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-11T06:52Z",
-      "eta": "2026-11-11T08:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
-      "result": "",
+      "result": "parked for Chief: PR #795 to review and merge (tracker folder fix, browser agent in scripts/mini, jobs/reviews/J2559/REPORT.md). Three calls: (1) the September Cursor agents were NOT unloaded: four are live, up 5 days 16 h without a restart and serving sessions, two in folders outside the studio; (2) the old 9223 agent's plist is in LaunchAgents/disabled but the agent stays loaded until the next restart, because unloading it quits the running Orbit Studio browser; (3) the credit reading still exits 1: its Codex, Claude and Cursor readings fail and need a look at the two usage pages. Buffer check: one 'fetch failed' on 10 Nov, nothing to fix; read today's 07:05 result.",
       "history": [
         {
           "at": "2026-11-11T05:54Z",
@@ -221813,6 +221813,11 @@
           "at": "2026-11-11T06:58Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Tracker fixed in PR 795 and run by hand (exit 0, today's snapshot on main); browser agent copied into the repo; old 9223 plist moved to disabled; report written"
+        },
+        {
+          "at": "2026-11-11T06:58Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: PR #795 to review and merge (tracker folder fix, browser agent in scripts/mini, jobs/reviews/J2559/REPORT.md). Three calls: (1) the September Cursor agents were NOT unloaded: four are live, up 5 days 16 h without a restart and serving sessions, two in folders outside the studio; (2) the old 9223 agent's plist is in LaunchAgents/disabled but the agent stays loaded until the next restart, because unloading it quits the running Orbit Studio browser; (3) the credit reading still exits 1: its Codex, Claude and Cursor readings fail and need a look at the two usage pages. Buffer check: one 'fetch failed' on 10 Nov, nothing to fix; read today's 07:05 result."
         }
       ],
       "remaining_action": "Chief to review and merge the pull request and rule on the Cursor agents, the 9223 unload and the credit reading",
