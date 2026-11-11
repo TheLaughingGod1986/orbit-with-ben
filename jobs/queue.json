@@ -228403,13 +228403,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T18:19Z",
-      "eta": "2026-11-11T20:19Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T17:27Z",
-      "result": "",
+      "result": "Recorded KEEP in the manifest and both board rows; check_all.sh ALL CHECKS PASS; PR 537 ready for Grok, splice remains unauthorized",
       "history": [
         {
           "at": "2026-11-11T17:27Z",
@@ -228440,6 +228440,11 @@
           "at": "2026-11-11T18:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Opened HOS PR 537 at 3edb2f1f with all requested records updated and check_all.sh passing"
+        },
+        {
+          "at": "2026-11-11T18:22Z",
+          "by": "codex",
+          "what": "done: Recorded KEEP in the manifest and both board rows; check_all.sh ALL CHECKS PASS; PR 537 ready for Grok, splice remains unauthorized"
         }
       ],
       "remaining_action": "Grok reviews the completed KEEP record update",
@@ -228457,7 +228462,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/537"
     },
     {
       "id": "J2636",
