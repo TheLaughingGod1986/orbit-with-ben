@@ -10,19 +10,24 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402  where the channel's film folders are, wherever the studio's code lives
+
 CDP = "http://127.0.0.1:9222"
 OUT = Path("/tmp/orbit_thumbs_v04_apply_result.json")
 SHOTS = Path("/tmp/orbit_thumbs_v04_apply")
 
-EU = ROOT / "02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/08_Thumbs/yellow_white_v04"
-NS = ROOT / "02_Video-Projects/007_What-Happens-To-Your-Body-Near-A-Neutron-Star/10_Shorts/08_Thumbs/yellow_white_v04"
-LS = ROOT / "02_Video-Projects/005_The-Last-Star-In-The-Universe/10_Shorts/08_Thumbs/yellow_white_v04"
+# The film folders of the channel these covers were made for: the channel a record belongs to when it names none.
+FILMS = channels.films_dir(channels.default())
+EU = FILMS / "006_Could-Life-Exist-Under-The-Ice-Of-Europa/10_Shorts/08_Thumbs/yellow_white_v04"
+NS = FILMS / "007_What-Happens-To-Your-Body-Near-A-Neutron-Star/10_Shorts/08_Thumbs/yellow_white_v04"
+LS = FILMS / "005_The-Last-Star-In-The-Universe/10_Shorts/08_Thumbs/yellow_white_v04"
 
 SHORTS = [
     {"id": "FbRFvSApfOQ", "cover": EU / "cover_FbRFvSApfOQ.jpg", "related": "NbW5G1BpPY0"},
