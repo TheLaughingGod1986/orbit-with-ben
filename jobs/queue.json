@@ -225017,23 +225017,29 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:59Z",
-      "result": "",
+      "result": "Merged: orbit-with-ben #819 (main 73eca800). The MacBook's Claude Code is now refused outright from merging, approving or closing a pull request, from the GitHub API, from pushing to main and from force pushes (a refused list passed after its allowlist), and its brief says a job that says 'merge' stops at the open pull request. Two tests. One rule of the old #666 is left out on purpose (a push written as HEAD:main: a colon inside the rule may not parse); the other push forms and the brief's sentence cover it. It takes effect when the MacBook next pulls main.",
       "history": [
         {
           "at": "2026-11-11T10:59Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:47Z",
+          "by": "claude",
+          "what": "done: Merged: orbit-with-ben #819 (main 73eca800). The MacBook's Claude Code is now refused outright from merging, approving or closing a pull request, from the GitHub API, from pushing to main and from force pushes (a refused list passed after its allowlist), and its brief says a job that says 'merge' stops at the open pull request. Two tests. One rule of the old #666 is left out on purpose (a push written as HEAD:main: a colon inside the rule may not parse); the other push forms and the brief's sentence cover it. It takes effect when the MacBook next pulls main."
         }
       ],
       "remaining_action": "Add a deny list and one brief line to the MacBook worker, with tests",
       "due": "2026-11-14T18:00:00Z",
-      "plain": "Make sure the MacBook helper can never merge code or push to the main branch by itself"
+      "plain": "Make sure the MacBook helper can never merge code or push to the main branch by itself",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/819"
     },
     {
       "id": "J2601",
