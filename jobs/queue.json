@@ -225592,9 +225592,14 @@
           "at": "2026-11-11T12:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T12:10Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J2608 3-step visual check for HOS 008 salon start picture try 3"
         }
       ],
-      "remaining_action": "Yes or no on try 3 of the start still; PASS lets the fourth take go",
+      "remaining_action": "Locate and hash-verify 02_salon_spark_t4_start_try3.png, try 2 and the old start frame",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the last try at the starting picture for the Franklin salon shot",
@@ -225602,11 +225607,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-11T12:09Z",
+        "at": "2026-11-11T12:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2608 3-step visual check for HOS 008 salon start picture try 3"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
