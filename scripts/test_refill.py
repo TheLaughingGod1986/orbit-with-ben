@@ -199,5 +199,12 @@ class MonthlyReviews(unittest.TestCase):
         self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
 
 
+class FailedTransaction(unittest.TestCase):
+    def test_cli_reports_metadata_failure(self):
+        from unittest.mock import patch
+        with patch.object(refill, 'run', side_effect=RuntimeError('metadata push rejected')):
+            self.assertEqual(refill.main(['refill', '--git']), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

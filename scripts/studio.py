@@ -306,7 +306,7 @@ def git_transaction(write, message, tries=3):
     No rebase, autostash or worker-branch switch. A push that loses a race drops
     only its own verified metadata commit (`reset --keep` to the base it was made
     on), fast-forwards to the new main and re-applies the change, up to `tries`
-    times; the last loss leaves the commit for explicit reconciliation. Other
+    times; even the last loss rolls back the verified commit. Other
     unpublished commits are never replayed or dropped.
     """
     common = git("rev-parse", "--git-common-dir")
@@ -339,25 +339,42 @@ def git_transaction(write, message, tries=3):
             return None, "metadata --git requires a clean working tree and index"
         for attempt in range(max(1, tries)):
             result, retry = _metadata_attempt(write, message)
-            if not retry or attempt == max(1, tries) - 1:
+            if not retry:
                 return result
             # Another machine pushed first (5 Nov 2026: the Mini and the MacBook both write the queue). Our own
             # verified commit, and nothing else, goes; the change is re-applied on the new main. Never replayed.
-            if git("reset", "-q", "--keep", retry).returncode:
-                return None, "metadata push rejected; local commit preserved; reconcile main before retry"
+            commit, base = retry
+            # Never remove a commit another writer put on HEAD, or any concurrent local edits.
+            state = git("status", "--porcelain")
+            if git("rev-parse", "HEAD").stdout.strip() != commit or state.returncode or state.stdout.strip():
+                return None, "metadata rollback refused: checkout changed concurrently; reconcile main before retry"
+            if git("reset", "-q", "--keep", base).returncode:
+                return None, "metadata rollback failed; reconcile main before retry"
+            if attempt == max(1, tries) - 1:
+                # A rejected non-fast-forward may mean origin advanced on the final try too.
+                if not git("fetch", "-q", "--no-write-fetch-head", "origin",
+                           "refs/heads/main:refs/remotes/origin/main").returncode:
+                    if git("merge", "-q", "--ff-only", "refs/remotes/origin/main").returncode:
+                        return None, "metadata rolled back but main fast-forward failed"
+                return result
         return result
 
 
 def _metadata_attempt(write, message):
-    """((out, err), base to return to when the push lost a race, else None)."""
-    if git("fetch", "-q", "origin", "refs/heads/main").returncode:
+    """((out, err), (verified commit, base) to roll back on push failure, else None)."""
+    if git("fetch", "-q", "--no-write-fetch-head", "origin", "refs/heads/main:refs/remotes/origin/main").returncode:
         return (None, "metadata fetch failed; no changes applied"), None
-    base = git("rev-parse", "FETCH_HEAD").stdout.strip()
+    base = git("rev-parse", "refs/remotes/origin/main").stdout.strip()
     head = git("rev-parse", "HEAD").stdout.strip()
     if git("merge-base", "--is-ancestor", head, base).returncode:
         return (None, "main has unpublished/diverged commits; no changes applied"), None
     if git("merge", "-q", "--ff-only", base).returncode:
         return (None, "main fast-forward failed; no changes applied"), None
+    # An unlocked background pull can fast-forward main between fetch and merge.
+    # Verify against the parent actually being edited, never a stale FETCH_HEAD.
+    base = git("rev-parse", "HEAD").stdout.strip()
+    if git("merge-base", "--is-ancestor", base, "refs/remotes/origin/main").returncode:
+        return (None, "main changed concurrently to unpublished history; no changes applied"), None
     out, err, paths = write()
     if err or not paths:
         return (out, err), None
@@ -370,9 +387,15 @@ def _metadata_attempt(write, message):
     parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
     changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
     if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
+        # A pull can also land after the base was captured. Drop only our metadata commit,
+        # on a single parent proven published; keep the other writer's history intact.
+        if (len(parents) == 2 and not changed.returncode and set(changed.stdout.splitlines()) <= set(paths)
+                and not git("merge-base", "--is-ancestor", parents[1], "refs/remotes/origin/main").returncode):
+            return (None, "metadata parent changed concurrently; verified local commit rolled back"), (commit, parents[1])
         return (None, "metadata commit verification failed; not pushed, changes preserved"), None
-    if git("push", "-q", "origin", f"{commit}:refs/heads/main").returncode:
-        return (None, "metadata push rejected; local commit preserved; reconcile main before retry"), base
+    pushed = git("push", "-q", "origin", f"{commit}:refs/heads/main")
+    if pushed.returncode:
+        return (None, "metadata push rejected; verified local commit rolled back: " + pushed.stderr.strip()), (commit, base)
     return (out, None), None
 
 
