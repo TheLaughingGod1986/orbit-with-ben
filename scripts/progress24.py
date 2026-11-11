@@ -111,10 +111,21 @@ def video_milestones(board: dict) -> dict:
     return out
 
 
+_NAMED_BASIS = re.compile(r"\bstudio-nine-stages-[a-z0-9]+-aliases-")
+
+
+def same_basis(a, b) -> bool:
+    """Do two samples count the same thing? Until 11 Nov 2026 the nine-stage basis carried a channel's name in its id
+    (studio-nine-stages-<channel>-aliases-v2). Dropping the name changed no count, so an id with a name and the id
+    without one are the same basis, and the 24-hour panel keeps its history across the rename."""
+    plain = lambda x: _NAMED_BASIS.sub("studio-nine-stages-aliases-", x) if isinstance(x, str) else x  # noqa: E731
+    return plain(a) == plain(b)
+
+
 def record(history: list, at: dt.datetime, counts: dict, basis=None) -> list:
     """Add a sample if the newest is 30+ min old; drop samples older than 48 h."""
     hist = [h for h in history if _t(h.get("at")) and at - _t(h["at"]) <= KEEP]
-    if not hist or hist[-1].get("basis") != basis or at - _t(hist[-1]["at"]) >= SAMPLE_EVERY:
+    if not hist or not same_basis(hist[-1].get("basis"), basis) or at - _t(hist[-1]["at"]) >= SAMPLE_EVERY:
         sample = {"at": _iso(at), "counts": {k: c[0] for k, c in counts.items()}}
         if basis is not None:
             sample["basis"] = basis
@@ -806,7 +817,7 @@ def section(history_path: Path, board: dict, at: dt.datetime) -> dict:
         Path(history_path).write_text(json.dumps(history))
     except Exception:
         pass
-    comparable = [h for h in history if h.get("basis") == basis]
+    comparable = [h for h in history if same_basis(h.get("basis"), basis)]
     return summarise(
         comparable, at, counts, jobs_done(board, at),
         open_jobs=jobs_open(board), stages=video_stages(board),

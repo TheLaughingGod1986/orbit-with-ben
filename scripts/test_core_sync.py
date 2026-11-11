@@ -33,5 +33,25 @@ class CoreSync(unittest.TestCase):
             self.assertFalse(any(n in rel for n in never), rel)
 
 
+class TheCanonicalRepoIsReadNotSpelled(unittest.TestCase):
+    """J2620, 11 Nov 2026: this script is copied into every repo that shares the tools, so it takes the canonical
+    repo's name from the lock file beside it."""
+
+    def test_the_name_is_the_lock_files(self):
+        self.assertEqual(cs.canonical(), json.loads((cs.ROOT / cs.LOCK).read_text())["canonical"])
+
+    def test_the_script_spells_no_repo(self):
+        src = pathlib.Path(cs.__file__).read_text()
+        code = src.split('"""', 2)[2]                      # after the module's own description
+        for name in ("orbit-with-ben", "history-of-science"):
+            self.assertNotIn(name, code)
+
+    def test_a_lock_without_the_field_still_gives_a_readable_line(self):
+        from unittest import mock
+        with mock.patch.object(cs, "load", lambda root=cs.ROOT: {"files": {}}):
+            self.assertEqual(cs.canonical(), "the canonical repo")
+
+
+
 if __name__ == "__main__":
     unittest.main()

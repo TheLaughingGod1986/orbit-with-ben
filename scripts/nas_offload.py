@@ -67,22 +67,33 @@ SKIP_PREFIXES = ("com.apple", "launchd", "tmux", "powerlog", "ollama", "pip-", "
                  "codex", "gemini", "cursor", "playwright", "pytest", "_MEI", ".", "boost_interprocess")
 # Scheduled-Short export paths that a 'superseded' sweep must never offload before the Short airs (J1320).
 SCHEDULED_SHORT_KEEP_PATHS = (
-    "00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s4_uranus_v01.mp4",
     "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/mon09_night_cold/06_Final-Exports/mon09_night_cold_v01.mp4",
     "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v01.mp4",
     "02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
 )
 
 
+REGISTER = pathlib.PurePosixPath("00_Brand/Channel-Setup/social/UPLOADS.json")
+
+
+def upload_registers(repo_root: pathlib.Path | None = None) -> list[pathlib.Path]:
+    """Every register of uploads that can name a scheduled Short's export: this checkout's own, a copy of another
+    channel's kept beside it (social/<slug>/), and, for the live checkout, each channel's own register in its own
+    checkout. Which channels there are comes from scripts/channels.py, asked for here and not when this module
+    loads, so the nightly mover depends on nothing new."""
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import channels
+    root = repo_root or pathlib.Path(__file__).resolve().parent.parent
+    found = [root / REGISTER] + [root / REGISTER.parent / slug / REGISTER.name for slug in channels.slugs()]
+    if repo_root is None:
+        found += [p for p in (channels.uploads_file(slug) for slug in channels.slugs()) if p]
+    return list(dict.fromkeys(found))
+
+
 def scheduled_short_keep_paths(repo_root: pathlib.Path | None = None) -> set[str]:
     """Repo-relative or absolute paths of scheduled (non-retired, non-superseded) Short exports to keep on disk."""
-    root = repo_root or pathlib.Path(__file__).resolve().parent.parent
     keep = set(SCHEDULED_SHORT_KEEP_PATHS)
-    for rel_uploads in (
-        "00_Brand/Channel-Setup/social/UPLOADS.json",
-        "00_Brand/Channel-Setup/social/hos/UPLOADS.json",
-    ):
-        up_path = root / rel_uploads
+    for up_path in upload_registers(repo_root):
         if not up_path.is_file():
             continue
         try:

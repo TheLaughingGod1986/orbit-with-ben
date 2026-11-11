@@ -96,5 +96,21 @@ class Reuse(unittest.TestCase):
         c.reuse_page(ctx, "studio.youtube.com"); self.assertEqual(ctx.made, 1)
 
 
+class TheJanitorsStateFile(unittest.TestCase):
+    """J2620, 11 Nov 2026: the state file's name carries the studio's own short name, read from the registry. The
+    picture tools import this module only for reuse_page(), so loading it must pull in nothing else."""
+
+    def test_the_file_is_the_one_already_on_the_mini(self):
+        self.assertTrue(c.state_file().endswith("/.cache/owb-cdp-tabs.json"))
+
+    def test_loading_the_module_does_not_load_the_channel_registry(self):
+        import subprocess
+        code = "import sys, cdp_tabs; print('channels' in sys.modules)"
+        run = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
+                             cwd=os.path.dirname(os.path.abspath(__file__)))
+        self.assertEqual(run.stdout.strip(), "False", run.stderr)
+
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
