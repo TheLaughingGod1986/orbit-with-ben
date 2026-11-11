@@ -557,6 +557,20 @@ def recheck_backoff(data, parent, by_id, at):
     return at < last + wait
 
 
+def recheck_moot(parent: dict) -> str:
+    """Why an open condition check has nothing left to verify: the job it checks is no longer held.
+
+    A check is only ever queued for a blocked job (workflow.hold_due). When that job is finished, cancelled or
+    reopened some other way, the check used to stay open for ever: on 11 Nov 2026 eleven of them, up to eight days
+    old and all overdue, were still being offered to the Mini's workers ahead of real work."""
+    status = parent.get("status")
+    if status in ("done", "cancelled"):
+        return f"{parent['id']} is {status}"
+    if status != "blocked":
+        return f"{parent['id']} is {status} and no longer waiting"
+    return ""
+
+
 def reconcile_holds(data, at):
     by_id = {j["id"]:j for j in data["jobs"]}
     due = workflow.deadlines(data["jobs"])
@@ -567,6 +581,14 @@ def reconcile_holds(data, at):
         pending = next((j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") in workflow.LIVE),None)
         requirements = (parent.get("hold") or {}).get("requires", []) if (parent.get("hold") or {}).get("type") == "capability" else []
         if pending:
+            moot = recheck_moot(parent) if pending.get("status") == "open" else ""  # a claimed check is someone's work
+            if moot:
+                pending.update(status="cancelled", by="", eta="")
+                log(pending, at, "relay", "cancelled: nothing left to verify, " + moot)
+                if (parent.get("hold") or {}).get("recheck_task") == pending["id"]:
+                    parent["hold"].pop("recheck_task", None)
+                changed.append(pending["id"])
+                continue
             if requirements and pending.get("status") == "open" and pending.get("required_capabilities") != requirements:
                 pending["required_capabilities"] = list(requirements)
                 changed.append(pending["id"])

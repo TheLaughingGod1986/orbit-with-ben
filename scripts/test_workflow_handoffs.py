@@ -80,6 +80,38 @@ class Handoffs(unittest.TestCase):
             self.assertEqual(h.findings(self.data,list(h.records(root)),AT)[0]['kind'],'invalid-record')
 
 
+class StaleCheckRetires(unittest.TestCase):
+    """11 Nov 2026: eleven overdue 'Verify condition' jobs were still open after the job each one checked had finished,
+    been cancelled or been reopened. A check with nothing left to verify cancels itself."""
+    def pair(self, parent_status, check_status='open'):
+        parent={'id':'J1','title':'held job','status':parent_status,'history':[]}
+        if parent_status=='blocked':
+            parent['hold']={'type':'input','condition':'x','check_at':(AT+dt.timedelta(hours=5)).isoformat(),'recheck_task':'V1'}
+        check={'id':'V1','title':'Verify condition for J1','status':check_status,'recheck_of':'J1','history':[],'by':'codex' if check_status=='claimed' else ''}
+        return {'jobs':[parent,check],'next_id':10}
+    def test_retired_when_the_job_it_checks_is_done_cancelled_or_reopened(self):
+        for status in ('done','cancelled','open','claimed'):
+            data=self.pair(status)
+            self.assertEqual(jobs.reconcile_holds(data,AT),['V1'],status)
+            check=data['jobs'][1]
+            self.assertEqual(check['status'],'cancelled')
+            self.assertIn('nothing left to verify',check['history'][-1]['what'])
+            self.assertIn('J1 is '+status,check['history'][-1]['what'])
+            self.assertEqual(jobs.reconcile_holds(data,AT),[],status)   # and it stays retired, nothing new is queued
+    def test_kept_while_the_job_is_still_held(self):
+        data=self.pair('blocked');before=copy.deepcopy(data)
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        self.assertEqual(data,before)
+    def test_a_check_someone_is_working_on_is_left_alone(self):
+        data=self.pair('done','claimed');before=copy.deepcopy(data)
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        self.assertEqual(data,before)
+    def test_the_held_jobs_pointer_to_the_check_is_cleared(self):
+        data=self.pair('blocked');data['jobs'][0]['status']='open'
+        jobs.reconcile_holds(data,AT)
+        self.assertNotIn('recheck_task',data['jobs'][0]['hold'])
+
+
 class RecheckBackoff(unittest.TestCase):
     """Ben, 4 Nov 2026: hourly re-checks of the same held jobs crowded out video work."""
     def held(self):
