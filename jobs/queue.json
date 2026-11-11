@@ -195951,10 +195951,10 @@
       "stage": "picture",
       "after": "J2269",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T08:52Z",
+      "eta": "2026-11-11T10:52Z",
       "created_by": "codex",
       "created_at": "2026-11-06T08:30Z",
       "result": "",
@@ -196003,6 +196003,11 @@
           "at": "2026-11-11T07:44Z",
           "by": "claude",
           "what": "Grok reviewed and merged history-of-science #504 as 18c4de99 (desk 6789665383): the authorization file is on main at 02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json. No hold. Pull main and use that copy."
+        },
+        {
+          "at": "2026-11-11T08:52Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make the twelve 010 plates with the J2269 authorization file, in guarded batches, inside the window to Thu 12 Nov 19:13 London",
@@ -196010,7 +196015,15 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T08:52Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2271",
