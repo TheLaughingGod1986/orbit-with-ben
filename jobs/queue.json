@@ -196028,13 +196028,13 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T13:19Z",
-      "eta": "2026-11-11T15:19Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:30Z",
-      "result": "",
+      "result": "parked for Chief: automatic approval review rejected detached batch-two submit because external generation spends credits and writes production media; it did not accept recorded J2269 authorization and Chief release as trusted authorization. No launch or spend occurred; preflight is in ~/_desk/logs/J2270-batch2-preflight.json.",
       "history": [
         {
           "at": "2026-11-06T08:30Z",
@@ -196185,6 +196185,11 @@
           "at": "2026-11-11T13:21Z",
           "by": "codex",
           "what": "step 2 of 3 done: Clean main preflight verified scope, authorization, VO hashes and staged refs. Detached launch rejected by automatic approval review before execution; no batch two started."
+        },
+        {
+          "at": "2026-11-11T13:21Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: automatic approval review rejected detached batch-two submit because external generation spends credits and writes production media; it did not accept recorded J2269 authorization and Chief release as trusted authorization. No launch or spend occurred; preflight is in ~/_desk/logs/J2270-batch2-preflight.json."
         }
       ],
       "remaining_action": "Waiting for Chief to resolve automatic approval rejection of the authorized plate batch",
