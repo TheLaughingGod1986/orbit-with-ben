@@ -213455,13 +213455,13 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T20:51Z",
-      "eta": "2026-11-12T00:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on codex ended (exit 0) with its work pushed and the job still open. Branch macbook/J2452 in orbit-with-ben is 105 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/789. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-09T21:38Z",
@@ -214547,6 +214547,11 @@
           "at": "2026-11-11T20:51Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T21:02Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: the MacBook run on codex ended (exit 0) with its work pushed and the job still open. Branch macbook/J2452 in orbit-with-ben is 105 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/789. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Proxima chapter verified locally; completing or checkpointing its NAS copy before Andromeda and final compilation checks",
