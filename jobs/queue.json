@@ -220423,13 +220423,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T03:43Z",
-      "eta": "2026-11-11T05:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
-      "result": "",
+      "result": "Waiting for: J2550 explicitly requires watching and listening to each complete repaired Short before watch cards. Session tool inventory offers text and still-image inspection, with no demonstrated audio or moving-video perception; ffmpeg and ASR do not establish those capabilities. No media changed or watch cards sent. Resume with a worker that demonstrates both inputs.",
       "history": [
         {
           "at": "2026-11-11T00:54Z",
@@ -220455,9 +220455,19 @@
           "at": "2026-11-11T03:44Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read both Chief rulings and J2545 audit. No media changed: the brief requires full moving-picture and audio review, which this session cannot demonstrate."
+        },
+        {
+          "at": "2026-11-11T03:44Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2550 explicitly requires watching and listening to each complete repaired Short before watch cards. Session tool inventory offers text and still-image inspection, with no demonstrated audio or moving-video perception; ffmpeg and ASR do not establish those capabilities. No media changed or watch cards sent. Resume with a worker that demonstrates both inputs."
+        },
+        {
+          "at": "2026-11-11T03:44Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-11T06:00:00Z"
         }
       ],
-      "remaining_action": "Rebuild the three Shorts with a worker able to review sound and motion",
+      "remaining_action": "Repair the three Shorts and review their full sound and motion before watch cards",
       "due": "2026-11-15T12:00:00Z",
       "kind": "assembly",
       "plain": "Make the Voyager, Muons and Space Station Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -220472,6 +220482,19 @@
       "taskKeys": [
         "OWB:024",
         "OWB:030"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "J2550 explicitly requires watching and listening to each complete repaired Short before watch cards. Session tool inventory offers text and still-image inspection, with no demonstrated audio or moving-video perception; ffmpeg and ASR do not establish those capabilities. No media changed or watch cards sent. Resume with a worker that demonstrates both inputs.",
+        "check_at": "2026-11-11T06:00:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
       ]
     },
     {
