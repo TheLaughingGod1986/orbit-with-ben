@@ -219445,13 +219445,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-10T23:40Z",
-      "eta": "2026-11-11T01:40Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T22:58Z",
-      "result": "",
+      "result": "parked for Chief: PR #780 (commit 1d7768b80) delivers whole-length by-eye padding table (jobs/reviews/J2545/REPORT.md), 56-frame 108x192 grey test dataset (jobs/reviews/J2545/J2545_labelled_frames.json, 965 KB < 1 MB: 28 padded + 28 full including ChbsigHD5_o and cLKDiYP55J8), and 30 2s-interval contact sheets on NAS (/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/). 19/29 scheduled Shorts are full-frame throughout (all 6 HOS + 13 OWB); 8 OWB Shorts have padded body shots (bSjWiCbB7pY 12.1/26.4s, kKN8Ale42sE 2.3/20.7s, rvug71d7Dqk 7.0/22.2s two-sided or 22.2/22.2s incl. bottom-only, xdurJQcoiGM 3.6/18.4s, C8lPx5N2DwM 20.6-24.3/33.0s, SWDCZfWZVao 5.2/22.7s, k2kEaA7ICjc 12.5-16.1/33.9s, heiGCnGKTkE 9.1/23.9s) and 2 OWB Shorts have blur-pad on the ~3.8s end-card thumbnail only (HZGTovJu_TQ, cwU_0WWeNZ4).",
       "history": [
         {
           "at": "2026-11-10T22:58Z",
@@ -219487,6 +219487,11 @@
           "at": "2026-11-11T00:04Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: PR #780 opened (commit 1d7768b80) with jobs/reviews/J2545/REPORT.md and J2545_labelled_frames.json (965,881 bytes < 1 MB, 56 frames: 28 padded + 28 full); 30 2s-interval contact sheets saved on NAS at /Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/"
+        },
+        {
+          "at": "2026-11-11T00:04Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #780 (commit 1d7768b80) delivers whole-length by-eye padding table (jobs/reviews/J2545/REPORT.md), 56-frame 108x192 grey test dataset (jobs/reviews/J2545/J2545_labelled_frames.json, 965 KB < 1 MB: 28 padded + 28 full including ChbsigHD5_o and cLKDiYP55J8), and 30 2s-interval contact sheets on NAS (/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2545_contact_sheets/). 19/29 scheduled Shorts are full-frame throughout (all 6 HOS + 13 OWB); 8 OWB Shorts have padded body shots (bSjWiCbB7pY 12.1/26.4s, kKN8Ale42sE 2.3/20.7s, rvug71d7Dqk 7.0/22.2s two-sided or 22.2/22.2s incl. bottom-only, xdurJQcoiGM 3.6/18.4s, C8lPx5N2DwM 20.6-24.3/33.0s, SWDCZfWZVao 5.2/22.7s, k2kEaA7ICjc 12.5-16.1/33.9s, heiGCnGKTkE 9.1/23.9s) and 2 OWB Shorts have blur-pad on the ~3.8s end-card thumbnail only (HZGTovJu_TQ, cwU_0WWeNZ4)."
         }
       ],
       "remaining_action": "Park PR #780 for Chief review and re-cut decisions",

@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2529 | mini | open (after J2033) | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
-| J2545 | mini | claimed | gemini | 2026-11-11T01:40Z | review · Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests | J2540 |
+| J2545 | mini | blocked | gemini | – | review · Every scheduled Short, whole length: which shots are a picture band over blurred fill? Label by eye from contact sheets, table them, save small grey frames for the gate's tests | J2540 |
 | J2546 | macbook | open (after J2545) | – | – | review · Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421) | J2540 |
 | J2548 | mini | open | – | – | assembly · Sleep video: copy the inputs that are only on the Mini (5 narration stems, 2 music beds, 7 cover-plate sets, this morning's word timings) to the NAS, checked by sha256 | J2452 |
 
