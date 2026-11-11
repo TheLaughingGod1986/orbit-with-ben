@@ -216,8 +216,10 @@ Every film is trimmed on clean sentence boundaries verified against the Whisper/
   - `0:22.10 – 0:37.20` (`22.10 – 37.20 s`): `"In this film, I will show you what really happened in 2019..."` agenda (`22.58–36.94 s`).
   - `4:02.20 – 4:07.60` (`242.20 – 247.60 s`): `r22_subscribe` (`242.50–247.60 s`, `"We make one of these every week. Subscribing is how the next one finds you."`).
   - `8:34.80 – 9:03.00` (`514.80 – 543.00 s`): `r40_closing_card` (`"What Happens When Earth's Magnetic Field Flips?"`) + `28.2 s` end hold.
-- **Orbit Reaction Beat Replacements:**
-  - **None required:** `029_Betelgeuse_full_rough_v03b.mp4` was assembled with `omni_fallback=True`, so `r12_orbit_thumb` (`123.16–130.42 s`) and `r26_orbit_flare` (`282.16–286.08 s`) already use real ESO Paranal night-sky footage (`orion_over_paranal.mp4`). Zero Orbit appears in `029`.
+- **Orbit Reaction Beat Replacements (corrected 11 Nov 2026, J2452 actual-master check):**
+  - The previous `omni_fallback=True` / zero-Orbit assertion was wrong for the NAS master whose SHA-256 is `54e04d3bfcb42bcf9066a0613254f10c978435b148d158468711e25908060c93`. Orbit is visible in both windows, and the v03b cut list names the Omni sources.
+  - Replace `r12_orbit_thumb` (`123.16–130.42 s`, `sun_orbit_row67_omni_v01.mp4`) and `r26_orbit_flare` (`282.16–286.08 s`, `orbit_thumb_omni_v01.mp4`) with real subject-matching footage before the sleep chapter can pass. Preserve the clean narration and corrected audio clock; source and reuse QA still apply.
+  - Exact cut metadata, source-frame probes and compilation coordinates: `jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json`. The probes verify Orbit presence; they do not establish sample-accurate disappearance boundaries or approve a replacement.
 - **Net Kept Runtime:** **`494.2 s` (`8:14.2`)**
 
 #### Ch. 11 — `024` *What Happens If You Travel Near Light Speed?* (`rVqgtkBV3jc`)

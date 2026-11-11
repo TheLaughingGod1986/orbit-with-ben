@@ -530,7 +530,35 @@
       "duration_s": 494.29999999999995,
       "breath_after_s": 4,
       "picture_status": "NOT_RENDERED; cover windows and source cut softening still required",
-      "moon_note": null
+      "moon_note": null,
+      "required_orbit_covers": [
+        {
+          "master_in_s": 123.16,
+          "master_out_s": 130.42,
+          "chapter_in_s": 108.06,
+          "chapter_out_s": 115.32,
+          "compilation_in_s": 4544.52,
+          "compilation_out_s": 4551.78,
+          "original_source": "sun_orbit_row67_omni_v01.mp4",
+          "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+          "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+          "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+          "candidate_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6"
+        },
+        {
+          "master_in_s": 282.16,
+          "master_out_s": 286.08,
+          "chapter_in_s": 261.66,
+          "chapter_out_s": 265.58,
+          "compilation_in_s": 4698.12,
+          "compilation_out_s": 4702.04,
+          "original_source": "orbit_thumb_omni_v01.mp4",
+          "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+          "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+          "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+          "candidate_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48"
+        }
+      ]
     },
     {
       "number": 11,
