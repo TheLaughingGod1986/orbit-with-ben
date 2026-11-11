@@ -1,5 +1,5 @@
 {
-  "next_id": 2611,
+  "next_id": 2612,
   "jobs": [
     {
       "id": "J0001",
@@ -225979,6 +225979,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2611",
+      "title": "Is the NAS's NVMe share working? Check on the Mini that it is mounted, writable and taking daytime copies (looking only)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben asked on 11 Nov at 12:50Z: \"Is the NVME working\". Queued by Claude, 11 Nov 12:55Z. About ten minutes, looking only.\n\n**Change nothing.** No move, no delete, no mount or unmount, no network or sharing setting. Write \"the NAS\" and \"the Mini\" in everything you post: no addresses, no device names.\n\n**Do not list or read the hard-drive archive (`/Volumes/data/...`) for this job.** In the day that wakes the NAS's hard drives, which is the thing the NVMe share exists to prevent.\n\nBackground. Since orbit-with-ben #751 (on main 11 Nov 10:55Z) a daytime offload from the Mini copies to the NAS's SSD share, mounted on the Mini at `/Volumes/nas-staging`. The NAS moves each staged copy into the archive itself after 01:00 (its own mover, 01:10) and checks every sha256. It was tried once on 10 Nov with a 235 MB test folder. A run today at about 12:50Z said \"no eligible scratch, about 15 GB free\", so no real folder may have gone through it yet.\n\nAnswer each of these with what you saw:\n1. **Mounted?** Is `/Volumes/nas-staging` a real mount on the Mini right now (`mount`, `df -h /Volumes/nas-staging`)? How much room is used and free on it.\n2. **Writable?** The offload tool's own check: `python3 -c \"import sys; sys.path.insert(0,'scripts'); import nas_offload as n; print(n.nas_ready(n.STAGE_MOUNT))\"` from the orbit-with-ben checkout on main. It writes one small probe file on the SSD share and removes it again; that is the tool's normal check.\n3. **What is on it now?** Folder names and sizes two levels down on the SSD share. Is the 10 Nov test folder gone from it (so the NAS's mover did move it)?\n4. **Has a real folder gone through it?** `python3 scripts/nas_offload.py` with no `--apply` (a dry run) and quote its line. Then any `MOVED_TO_NAS.txt` under the Mini's scratch folders written since 10 Nov that says it was staged on the NAS's SSD: how many, and the newest one's date.\n5. **Did the NAS's mover run at 01:10 last night?** Only from what the SSD share itself shows (a log or a marker the mover leaves there). If nothing on the share says so, say that plainly: it can only be confirmed after 01:00.\n6. **The Mini's own disk.** `df -h /` and how much is free. 20 GB is the floor; if it is under that and the dry run finds nothing to move, name the three largest folders under the Mini's scratch and working areas (names and sizes only). Do not move or delete them.\n\nPost the six answers on the studio thread in plain words Ben can read, then finish this job with the same answers as its result. If the share is not mounted or not writable, do not try to fix it: say what you saw and park this job for the Chief.",
+      "ref": "Ben 11 Nov 12:50Z",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T12:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T12:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Six read-only checks of the NAS's SSD share from the Mini; post the answers",
+      "due": "2026-11-11T14:00:00Z",
+      "plain": "Check that the fast drive on the storage box is connected and taking the Mac mini's daytime copies",
+      "mini_only": true
     }
   ],
   "focus": [
