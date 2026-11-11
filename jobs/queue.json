@@ -222958,13 +222958,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T08:35Z",
-      "eta": "2026-11-11T10:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
-      "result": "",
+      "result": "parked for Chief: FAIL on part02/j2241/02_salon_spark_j2241_t1.jpg — Q1 NO (frames 3-4 / 00:02-00:03 show a huge branching lightning bolt across lecturer's arm/chest and full frame height, plus blue arcs on hair in frames 5-6, not one small spark to a knuckle); Q2 YES (frames 1-8 hair stays attached to head); Q3 YES on no hair extruding from rod / NO on near it (branching lightning across rod in frames 3-4, hollow top rim in frame 8). Other two sheets: part03/j2241/01_points_desk_j2241_t1.jpg has no paper strips but frames 5-8 morph the side thread into a long white wire arching out of the top of the brass globe while holding two needles; part05/j2241/13_rods_spread_j2241_t2.jpg is clean across frames 1-8. Needs second salon take under J2241 limits (2 takes / 200 cr left).",
       "history": [
         {
           "at": "2026-11-11T08:24Z",
@@ -222995,6 +222995,11 @@
           "at": "2026-11-11T08:38Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Posted J2573 still-sheet review on HOS desk #180; FAIL on 02_salon_spark_j2241_t1 (Q1 NO: frames 3-4 show room-scale branching lightning bolt and frames 5-6 show hair corona arcs)"
+        },
+        {
+          "at": "2026-11-11T08:38Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: FAIL on part02/j2241/02_salon_spark_j2241_t1.jpg — Q1 NO (frames 3-4 / 00:02-00:03 show a huge branching lightning bolt across lecturer's arm/chest and full frame height, plus blue arcs on hair in frames 5-6, not one small spark to a knuckle); Q2 YES (frames 1-8 hair stays attached to head); Q3 YES on no hair extruding from rod / NO on near it (branching lightning across rod in frames 3-4, hollow top rim in frame 8). Other two sheets: part03/j2241/01_points_desk_j2241_t1.jpg has no paper strips but frames 5-8 morph the side thread into a long white wire arching out of the top of the brass globe while holding two needles; part05/j2241/13_rods_spread_j2241_t2.jpg is clean across frames 1-8. Needs second salon take under J2241 limits (2 takes / 200 cr left)."
         }
       ],
       "remaining_action": "Chief decision/queueing for a second P2:02_salon_spark take under J2241 limits (2 takes and 200 credits left)",
