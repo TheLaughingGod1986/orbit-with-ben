@@ -214982,19 +214982,19 @@
       "title": "HOS 011 Anesthesia (Thu 10 Dec): lock the accepted long VO and build shot list v01 on its timings, with a picture source and mint cost per row",
       "needs": "mini",
       "repo": "hos",
-      "body": "HOS 011 Anesthesia airs Thu 10 Dec. Script v02 is locked and the long voiceover hos_011_vo_v01 (sha256 d873f1d0…) is accepted: J2286 listened to all five chapters and returned KEEP, and the acting Chief closed J2245 on 10 Nov. HOS PR #443 holds the VO records (J2474 is refreshing it so it can merge; read the files from that branch if it has not merged yet).\n\nDo this, in the history-of-science repo, at £0:\n1. Record the lock: the VO file name, sha256 and the J2286 verdict in the film's VO lock file, the way 013's v03a lock was recorded.\n2. Build shot list v01 against the locked VO's word timings (words.srt), one row per beat, following the HOS shot-list rules in that repo's AGENTS.md and the HOS-2026-11-E2 proof-first open (the first 30 seconds).\n3. For each row say where the picture comes from: an existing accepted plate or code graphic (give the path), a free archive source (give the link and licence), or a new plate that would need minting.\n4. Total the rows that would need minting and their Flow credit cost. Mint nothing: paid picture parks for the Chief's price pass.\n5. Run check_all.sh, open a PR, and park it for the Chief.\n\nHOS 011 is first in the HOS waiting line (jobs/WIP.json next_hos); this is preparation only and does not take a production place.\n",
+      "body": "Chief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786715647), recorded by the acting Chief, 11 Nov 04:25Z. history-of-science #495 stays open and unmerged; nothing is authorised and 011 spends nothing. This is the next action: push `PICTURE_PLAN_v02` on the same branch with two changes, then park again for the Chief.\n\n1. Fast rows. The plan has 23 Veo 3.1 Fast rows (the ruling lists them). The 5 Nov standard has no Fast carve-out. Each becomes a Quality row or a free row (a code graphic, an archive composite or a reuse). Look for free swaps first: all 23 as Quality would cost 7,100 credits first try. A Fast exception is allowed only where it is named and justified on that row, as was done for 013.\n2. Names in prompts. 36 mint rows name a real person in the Flow prompt (the ruling lists them). Each is reworded to describe the person and name nobody, before any submit. Change the wording where the boards are built from, as history-of-science #496 did for 013. Names may stay in `subject`, `vo_excerpt` and the portrait cut-outs added in the edit.\n3. Recompute the totals from the plan's own rows, rerun `check_all.sh`, and park for the Chief. The cost table was checked and is right as it stands.\n\nHOS 011 Anesthesia airs Thu 10 Dec. Script v02 is locked and the long voiceover hos_011_vo_v01 (sha256 d873f1d0…) is accepted: J2286 listened to all five chapters and returned KEEP, and the acting Chief closed J2245 on 10 Nov. HOS PR #443 holds the VO records (J2474 is refreshing it so it can merge; read the files from that branch if it has not merged yet).\n\nDo this, in the history-of-science repo, at £0:\n1. Record the lock: the VO file name, sha256 and the J2286 verdict in the film's VO lock file, the way 013's v03a lock was recorded.\n2. Build shot list v01 against the locked VO's word timings (words.srt), one row per beat, following the HOS shot-list rules in that repo's AGENTS.md and the HOS-2026-11-E2 proof-first open (the first 30 seconds).\n3. For each row say where the picture comes from: an existing accepted plate or code graphic (give the path), a free archive source (give the link and licence), or a new plate that would need minting.\n4. Total the rows that would need minting and their Flow credit cost. Mint nothing: paid picture parks for the Chief's price pass.\n5. Run check_all.sh, open a PR, and park it for the Chief.\n\nHOS 011 is first in the HOS waiting line (jobs/WIP.json next_hos); this is preparation only and does not take a production place.\n",
       "ref": "",
       "film": "011",
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-11T03:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
-      "result": "parked for Chief: HOS 011 VO lock (hos_011_vo_v01, sha256 d873f1d0..., J2286 KEEP) recorded and shot list v01 built on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected + 22 free £0 rows; HOS-2026-11-E2 PASS; check_all.sh PASS; HOS PR #495, £0 spent)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T03:02Z",
@@ -215055,18 +215055,16 @@
           "at": "2026-11-11T04:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 011 VO lock (hos_011_vo_v01, sha256 d873f1d0..., J2286 KEEP) recorded and shot list v01 built on words.srt (93 rows across 535.30s: 71 mint = 48 Q + 23 F = 5,030 Flow credits try-1 / 12,892 expected + 22 free £0 rows; HOS-2026-11-E2 PASS; check_all.sh PASS; HOS PR #495, £0 spent)"
+        },
+        {
+          "at": "2026-11-11T04:25Z",
+          "by": "claude",
+          "what": "reopened: Chief ruling is in (Grok, desk 6786715647, 04:06Z): history-of-science #495 is sent back for a v02 plan. The 23 Fast rows become Quality or free rows, and the 36 prompts that name a real person are reworded. The ruling is now the top of this job's brief."
         }
       ],
       "remaining_action": "Parked for Chief: review HOS 011 VO lock + shot list v01 PR #495 and price pass (5,030 Flow credits try-1 / 12,892 expected)",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-11T04:05Z",
-        "by": "gemini",
-        "note": "check_all.sh ALL CHECKS PASS; opened HOS PR #495 (ba734c91) and posted review report on HOS desk (#6786681752)"
-      },
       "taskKeys": [
         "HOS:011"
       ]
