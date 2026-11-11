@@ -226067,10 +226067,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T12:59Z",
+      "eta": "2026-11-11T14:59Z",
       "created_by": "relay",
       "created_at": "2026-11-11T12:56Z",
       "result": "",
@@ -226079,13 +226079,26 @@
           "at": "2026-11-11T12:56Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T12:59Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for the gravity film retakes to finish, then make the seven remaining Dinosaur scenes",
       "kind": "review",
       "recheck_of": "J2270",
       "due": "2026-11-11T13:56:15+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T12:59Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
