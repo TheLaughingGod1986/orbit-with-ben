@@ -224316,10 +224316,10 @@
       "stage": "picture",
       "after": "J2585",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T14:05Z",
+      "eta": "2026-11-11T16:05Z",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
       "result": "",
@@ -224408,6 +224408,11 @@
           "at": "2026-11-11T13:58Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Codex's approval reviewer refuses picture submits on the Mini (desk 6796976818); the next lane in the picture chain takes it. Same runner, guards and caps."
+        },
+        {
+          "at": "2026-11-11T14:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Three second takes with --retakes-j2583 (300 credits), then half-second sheets for J2584",
@@ -224427,7 +224432,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T14:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2584",
