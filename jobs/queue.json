@@ -227201,18 +227201,18 @@
       "needs": "cloud",
       "repo": "owb",
       "body": "Script in this job: `chief_relay.py` (79 lines that name a channel, 2 that assume the studio lives inside one channel's repo). It is the relay that wakes every agent on the Mini, so: no behaviour change, the whole of `scripts/test_chief_relay.py` passes before and after, the prompts it builds are byte-identical for today's two channels (a test pins them), and a made-up third channel is woken for its jobs. After merge, watch one full relay cycle on the Mini's heartbeat before closing the job.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
-      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-11-11T16:51Z",
-      "eta": "2026-11-11T18:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Waiting for: Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -227223,9 +227223,19 @@
           "at": "2026-11-11T16:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T17:26Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main."
+        },
+        {
+          "at": "2026-11-11T17:26Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
         }
       ],
-      "remaining_action": "Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0)",
+      "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "plain": "Make the relay that wakes the agents work for any channel",
@@ -227236,6 +227246,11 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.",
+        "check_at": "2026-11-12T19:15:00Z"
       }
     },
     {
@@ -227922,9 +227937,14 @@
           "at": "2026-11-11T15:57Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
+        },
+        {
+          "at": "2026-11-11T17:26Z",
+          "by": "claude",
+          "what": "history-of-science main has 77 failing tests in the 009 picture tool's test files since #533 changed the part-4 board (the tool pins its boards by hash and now refuses, which is the guard working; nothing can spend; film 010's tool is separate and its tests pass). The repair rides this job's closing change, once both graphics are KEEP."
         }
       ],
-      "remaining_action": "No pull request. Close as unused once the graphic (J2631) is KEEP, with J2586 and J2587",
+      "remaining_action": "When both drawn graphics (J2631, J2632) are KEEP and the boards stop moving: one history-of-science pull request for Grok that re-pins the 009 picture tool to the final boards, retires the unused c2 path (--retakes-j2630) and brings its tests back to green. Then close this job with J2586 and J2587",
       "due": "2026-11-12T11:00:00Z",
       "kind": "review",
       "plain": "Get the picture tool ready to remake the last gravity film shot, if the one before it passes",
