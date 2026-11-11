@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import fcntl
+import hashlib
 import json
 import os
 import pathlib
@@ -488,14 +489,21 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     return r.returncode == 0
 
 
+def machine_mark() -> str:
+    """Twelve hex characters that tell this machine from another without naming it. The heartbeat is on a public
+    branch, and a device's network name never goes into a tracked file (AGENTS.md "Never"). Until 11 Nov 2026 the
+    heartbeat carried the name itself."""
+    return hashlib.sha256(platform.node().encode()).hexdigest()[:12]
+
+
 def host_observation():
     """Measured host identity/resources; no implied auth, quota or media capability.
 
-    A generic `host=macbook` is retained for old board readers. The machine name
+    A generic `host=macbook` is retained for old board readers. The machine's mark
     must be matched against an independently approved registration before use.
     Missing memory/capability evidence deliberately cannot unlock another lane.
     """
-    return {"machine_name": platform.node(), "architecture": platform.machine(),
+    return {"machine": machine_mark(), "architecture": platform.machine(),
             "on_ac": on_ac_power(), "idle_minutes": idle_minutes(),
             "free_gb": shutil.disk_usage(str(HOME)).free / 1024**3,
             "load": os.getloadavg()[0], "cpu_count": os.cpu_count(),

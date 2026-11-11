@@ -133,6 +133,21 @@ class Guards(unittest.TestCase):
         self.assertEqual((doc["host"], doc["state"], doc["at"]), ("macbook", "waiting", "2026-10-28T22:00:00Z"))
         self.assertIn("on battery", doc["why"])
 
+    def test_the_heartbeat_never_carries_the_machines_network_name(self):
+        # The heartbeat is on a public branch. Until 11 Nov 2026 it printed the machine's network name
+        # (AGENTS.md "Never": no device's network name in a tracked file). It now carries a twelve-character mark.
+        import json
+        with mock.patch.object(mw.platform, "node", return_value="Somebodys-Laptop.local"):
+            doc = mw.heartbeat_doc("working", [], job="J0001", now=WED_NIGHT)
+            mark = mw.machine_mark()
+        text = json.dumps(doc)
+        self.assertNotIn("Somebodys-Laptop", text)
+        self.assertNotIn("machine_name", doc["observation"])
+        self.assertEqual(doc["observation"]["machine"], mark)
+        self.assertRegex(mark, r"^[0-9a-f]{12}$")
+        with mock.patch.object(mw.platform, "node", return_value="Another-Machine.local"):
+            self.assertNotEqual(mw.machine_mark(), mark)  # it still tells two machines apart
+
     def test_it_pulls_before_the_guards(self):
         # A stuck guard must not keep the MacBook on old code: pull_main runs first in each job's run_one().
         src = pathlib.Path(mw.__file__).read_text()
