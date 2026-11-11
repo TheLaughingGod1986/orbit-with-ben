@@ -216898,12 +216898,12 @@
       "after": "",
       "eta_min": 120,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T20:22Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
-      "result": "parked for Chief: v03 assembly and automated verification complete; review J2646 and draft PR #834 (f5c5821bc6) await Chief KEEP/FIX and merge. Media and 33 files SHA-verified on NAS in natural_speed_v03_delivery_20261111. Actual output ASR confirms November 24th after restoring 105ms from existing take. On KEEP send to Ben watch; no upload without board OK by 18 Nov 18:00 London. No new take/spend or Studio/Buffer change.",
+      "result": "Waiting for: J2646: Gemini's review of v03 by watching it. Then the Chief rules KEEP or FIX and reads pull request 834",
       "history": [
         {
           "at": "2026-11-10T03:09Z",
@@ -217124,9 +217124,24 @@
           "at": "2026-11-11T20:38Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v03 assembly and automated verification complete; review J2646 and draft PR #834 (f5c5821bc6) await Chief KEEP/FIX and merge. Media and 33 files SHA-verified on NAS in natural_speed_v03_delivery_20261111. Actual output ASR confirms November 24th after restoring 105ms from existing take. On KEEP send to Ben watch; no upload without board OK by 18 Nov 18:00 London. No new take/spend or Studio/Buffer change."
+        },
+        {
+          "at": "2026-11-11T20:44Z",
+          "by": "claude",
+          "what": "acting Chief ruling on the park: v03 is built and every automated gate passes, but nobody has watched or heard it, so it is not ruled KEEP from measurements. The review Codex queued (J2646) comes first, by Gemini. On that record I rule KEEP or FIX, read draft pull request 834 and merge it on KEEP, and only then does v03 go to Ben's watch folders. Good catch by Codex on the clipped date (the voice read 4th, not 24th; restored from the existing take)"
+        },
+        {
+          "at": "2026-11-11T20:44Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: J2646: Gemini's review of v03 by watching it. Then the Chief rules KEEP or FIX and reads pull request 834"
+        },
+        {
+          "at": "2026-11-11T20:44Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T12:00:00Z"
         }
       ],
-      "remaining_action": "Chief reviews the completed Supermoon Short before Ben watches it",
+      "remaining_action": "Rule KEEP or FIX on Gemini's review (J2646); on KEEP merge 834 and send v03 to Ben's watch",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -217138,6 +217153,12 @@
         "at": "2026-11-11T20:38Z",
         "by": "codex",
         "note": "Assembly/verification/handoff complete: v03 18.367s, all required automated gates pass, final ASR reads November 24th, 3"
+      },
+      "plain": "Build the Supermoon Short that goes out Thu 19 Nov",
+      "hold": {
+        "type": "dependency",
+        "condition": "J2646: Gemini's review of v03 by watching it. Then the Chief rules KEEP or FIX and reads pull request 834",
+        "check_at": "2026-11-12T12:00:00Z"
       }
     },
     {
@@ -229648,7 +229669,7 @@
       "title": "Review Supermoon dated Short v03 after natural-speed rebuild",
       "needs": "mini",
       "repo": "owb",
-      "body": "Parent J2478: review the actual rebuilt Supermoon v03 and its handoff under the Chief's 11 Nov 05:54 natural-speed ruling. This is the review of an assembled dated-event Short, not permission to upload.\n\nBranch codex/J2478-natural-speed, commit f5c5821bc6. Read 02_Video-Projects/_dated_shorts/2026-11-24_supermoon/V03_REVIEW_HANDOFF.md and DELIVERY_v03_SHA256.json. The film's studio-live working folder contains natural_speed_v03_delivery_20261111/06_Final-Exports/owb_dated_2026_11_24_supermoon_v03.mp4. SHA-256 9b1993364a2858d875b33a97898931a458f084c72711db96c29fe0831aa0b501, 18.366667s, 1080x1920, 30fps. 33 files copied and read-back checked. Earlier v02 remains a diagnostic record; review v03.\n\nAll required automated gates pass, including narration vo_check, SFX, music with the existing reuse waiver, picture, polish, finish/loop, opening/whole-Short, and cover preview. No report-only or gate override. Whole-Short line: full-bleed whole Short 0/19 frames padded at one a second, 0/37 at two a second; padded stretches none. Natural speed throughout; closer ends at 2.095s (Chief's spoken-1.5s waiver), first cut 2.10s, Earth cut 3.666667s, title 6.5-9.5s, answer starts 9.87s. Date ASR exposed 105ms clipped by the inherited Scribe-based splice; restored from the existing take. Both isolated v02d and actual v03 mix now transcribe November 24th, and actual mix reads 360,000 kilometres. No new take, generation, credit spend, Studio or Buffer change.\n\nInspect the full-size Earth low-detail warning, music pace warning (~120 BPM against brief 84-96), sound-alike word-check warnings and every cut/title/cover. State which media you actually perceived. Codex inspected stills and ran ASR/measurements; it did not hear or perceive moving video. The Chief explicitly ruled that lack of a listening worker does not hold this job: no speed-up is present, and Ben's final watch is the listening check. Do not invent a perceptual review from measurements. Review may advise; Chief owns KEEP/FIX, final approval, packaging panel and merge.\n\nWrite a review record and update original parent J2478. Only on Chief KEEP copy v03 and cover to the existing OWB UAT watch folders and call jobs.py awaits for Ben. Do not upload or schedule in this review. A Private upload may be queued only after Ben's board OK by Wed 18 Nov 18:00 London; target Thu 19 Nov 11:30 London, Related 2fsQcea-voM. If that deadline is missed, no upload.\n",
+      "body": "Parent J2478: review the actual rebuilt Supermoon v03 and its handoff under the Chief's 11 Nov 05:54 natural-speed ruling. This is the review of an assembled dated-event Short, not permission to upload.\n\nBranch codex/J2478-natural-speed, commit f5c5821bc6. Read 02_Video-Projects/_dated_shorts/2026-11-24_supermoon/V03_REVIEW_HANDOFF.md and DELIVERY_v03_SHA256.json. The film's studio-live working folder contains natural_speed_v03_delivery_20261111/06_Final-Exports/owb_dated_2026_11_24_supermoon_v03.mp4. SHA-256 9b1993364a2858d875b33a97898931a458f084c72711db96c29fe0831aa0b501, 18.366667s, 1080x1920, 30fps. 33 files copied and read-back checked. Earlier v02 remains a diagnostic record; review v03.\n\nAll required automated gates pass, including narration vo_check, SFX, music with the existing reuse waiver, picture, polish, finish/loop, opening/whole-Short, and cover preview. No report-only or gate override. Whole-Short line: full-bleed whole Short 0/19 frames padded at one a second, 0/37 at two a second; padded stretches none. Natural speed throughout; closer ends at 2.095s (Chief's spoken-1.5s waiver), first cut 2.10s, Earth cut 3.666667s, title 6.5-9.5s, answer starts 9.87s. Date ASR exposed 105ms clipped by the inherited Scribe-based splice; restored from the existing take. Both isolated v02d and actual v03 mix now transcribe November 24th, and actual mix reads 360,000 kilometres. No new take, generation, credit spend, Studio or Buffer change.\n\nInspect the full-size Earth low-detail warning, music pace warning (~120 BPM against brief 84-96), sound-alike word-check warnings and every cut/title/cover. State which media you actually perceived. Codex inspected stills and ran ASR/measurements; it did not hear or perceive moving video. The Chief explicitly ruled that lack of a listening worker does not hold this job: no speed-up is present, and Ben's final watch is the listening check. Do not invent a perceptual review from measurements. Review may advise; Chief owns KEEP/FIX, final approval, packaging panel and merge.\n\nWrite a review record and update original parent J2478. Only on Chief KEEP copy v03 and cover to the existing OWB UAT watch folders and call jobs.py awaits for Ben. Do not upload or schedule in this review. A Private upload may be queued only after Ben's board OK by Wed 18 Nov 18:00 London; target Thu 19 Nov 11:30 London, Related 2fsQcea-voM. If that deadline is missed, no upload.\n\n\nActing Chief (Claude), 11 Nov: this review is Gemini's, as the v01 review was (J2556), because it has to be made by watching the file. Say plainly what you watched and what you heard. If the film 013 dry-run (J2644) or its mint (J2529) opens while you are on this, release this job at a step boundary and take that first: those credits lapse on Thu 12 Nov, and this Short's deadline is Wed 18 Nov.",
       "ref": "",
       "film": "013",
       "stage": "edit",
@@ -229666,12 +229687,18 @@
           "at": "2026-11-11T20:37Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T20:44Z",
+          "by": "claude",
+          "what": "acting Chief: addressed to Gemini, who reviewed v01 and can watch the file; film 013's dry-run and mint come first if they open meanwhile. The parent J2478 waits on this review by name"
         }
       ],
       "remaining_action": "Review the rebuilt Supermoon Short and report the remaining picture and sound warnings to Chief",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Checking the finished Supermoon Short before Ben watches it"
+      "plain": "Checking the finished Supermoon Short before Ben watches it",
+      "for": "gemini"
     }
   ],
   "focus": [
