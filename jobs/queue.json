@@ -229709,10 +229709,10 @@
       "stage": "picture",
       "after": "J2642",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T21:27Z",
+      "eta": "2026-11-11T21:57Z",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
       "result": "",
@@ -229736,6 +229736,11 @@
           "at": "2026-11-11T20:43Z",
           "by": "claude",
           "what": "queue side of Grok's rulings 6806577173 and 6806623496: both floor changes are merged (546, 547), so this dry-run now waits only on J2642 (the 33 postings and the rods reversal). It waits on J2642 by name, so closing J2645 does not open it early"
+        },
+        {
+          "at": "2026-11-11T21:27Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "When the charges are posted and the launch-path change is on main: fresh balance read, dry-run, post it, park",
@@ -229743,7 +229748,15 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Check the credit sums once more before any picture is made, and show the Chief",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T21:27Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2645",
