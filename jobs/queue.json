@@ -221620,18 +221620,23 @@
           "at": "2026-11-11T06:25Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2558; starting inspection of HOS #495 reference and 013 picture plan v01."
+        },
+        {
+          "at": "2026-11-11T06:28Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Fast-forwarded hos-J2558 worktree to origin/main (0df40566); verified 23 Fast-row conversions (5 free rows between moving Quality plates + 18 Quality rows, 0 Fast rows, 66 Quality rows = 6600 try-1 credits)."
         }
       ],
-      "remaining_action": "Inspect HOS #495/#496/#498 and 013 v01 picture plan to design the 23 Fast-row conversions",
+      "remaining_action": "Format _build_picture_plan_v02.py string literals so NoNameWordingTests pass and verify v02 boards/plan/FAST_ROW_CHANGE_v02.json",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-11T06:25Z",
+        "at": "2026-11-11T06:28Z",
         "by": "gemini",
-        "note": "Claimed J2558; starting inspection of HOS #495 reference and 013 picture plan v01."
+        "note": "Fast-forwarded hos-J2558 worktree to origin/main (0df40566); verified 23 Fast-row conversions (5 free rows between movin"
       },
       "taskKeys": [
         "HOS:013"
