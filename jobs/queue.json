@@ -223104,13 +223104,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-11T08:58Z",
-      "eta": "2026-11-11T10:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
-      "result": "",
+      "result": "Reworked HOS PR #505 (gemini/J2503-email-scrub @ ab2287b) per Grok ruling 6790775957: 010/013 runners+tests back 100% as on main (0 diff), zero STUDIO_FLOW env vars, SHA-256 fingerprint comparisons in 002..007 scripts and placeholder in _archive, all 16 008/009 files restored to main and held in scripts/email_ratchet.json, check_all.sh + unit tests PASS, posted to HOS desk (#180 comment 6792072319). PR #505 held unmerged until Thu 12 Nov 19:13 London and J2270.",
       "history": [
         {
           "at": "2026-11-11T08:24Z",
@@ -223161,6 +223161,11 @@
           "at": "2026-11-11T09:22Z",
           "by": "macbook-2",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:23Z",
+          "by": "macbook-2",
+          "what": "done: Reworked HOS PR #505 (gemini/J2503-email-scrub @ ab2287b) per Grok ruling 6790775957: 010/013 runners+tests back 100% as on main (0 diff), zero STUDIO_FLOW env vars, SHA-256 fingerprint comparisons in 002..007 scripts and placeholder in _archive, all 16 008/009 files restored to main and held in scripts/email_ratchet.json, check_all.sh + unit tests PASS, posted to HOS desk (#180 comment 6792072319). PR #505 held unmerged until Thu 12 Nov 19:13 London and J2270."
         }
       ],
       "remaining_action": "Mark J2572 done and post MacBook report on OWB studio thread",
