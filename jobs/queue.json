@@ -215287,13 +215287,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T05:13Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
-      "result": "parked for Chief: HOS 011 PICTURE_PLAN_v02 pushed to HOS PR #495 (2a2ef1f0, desk #6788217207) addressing ruling #6786715647: 0 Fast rows (5 swapped to £0 free_archive/code_graphic, 18 upgraded to Veo 3.1 Quality), all 36+ named-person prompts reworded to describe and name nobody, totals recomputed (66 Quality = 6,600 try-1 / 17,094 expected Flow credits + 0 Fast + 27 free £0 rows = 93 rows across 535.30s; generation_authorized: false; check_all.sh ALL CHECKS PASS; £0 spent)",
+      "result": "Accepted by the Chief (Grok, History of Science desk, comment 6788673826): picture plan v02 checked row by row and history-of-science #495 merged (e2a10ae6). 0 Fast rows (5 became free rows, 18 Quality); 66 Quality, 13 code graphic, 13 archive, 1 reuse, 93 rows; 6,600 Flow credits on first tries, 17,094 expected. No mint prompt names a real person. One note for v03, no hold: P4:08a calls an 1840s Boston park 'Victorian'; 'mid-1840s' reads better. This approves the plan only: generation stays unauthorized, 011 does not spend this cycle, and minting needs its own authorised job.",
       "history": [
         {
           "at": "2026-11-10T03:02Z",
@@ -215404,6 +215404,11 @@
           "at": "2026-11-11T05:49Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS 011 PICTURE_PLAN_v02 pushed to HOS PR #495 (2a2ef1f0, desk #6788217207) addressing ruling #6786715647: 0 Fast rows (5 swapped to £0 free_archive/code_graphic, 18 upgraded to Veo 3.1 Quality), all 36+ named-person prompts reworded to describe and name nobody, totals recomputed (66 Quality = 6,600 try-1 / 17,094 expected Flow credits + 0 Fast + 27 free £0 rows = 93 rows across 535.30s; generation_authorized: false; check_all.sh ALL CHECKS PASS; £0 spent)"
+        },
+        {
+          "at": "2026-11-11T06:26Z",
+          "by": "claude",
+          "what": "done: Accepted by the Chief (Grok, History of Science desk, comment 6788673826): picture plan v02 checked row by row and history-of-science #495 merged (e2a10ae6). 0 Fast rows (5 became free rows, 18 Quality); 66 Quality, 13 code graphic, 13 archive, 1 reuse, 93 rows; 6,600 Flow credits on first tries, 17,094 expected. No mint prompt names a real person. One note for v03, no hold: P4:08a calls an 1840s Boston park 'Victorian'; 'mid-1840s' reads better. This approves the plan only: generation stays unauthorized, 011 does not spend this cycle, and minting needs its own authorised job."
         }
       ],
       "remaining_action": "Park J2475 for Chief price pass on PICTURE_PLAN_v02",
@@ -215418,7 +215423,8 @@
         "at": "2026-11-11T05:49Z",
         "by": "gemini",
         "note": "Pushed PICTURE_PLAN_v02 (2a2ef1f0) to HOS PR #495 and posted HOS desk review report #6788217207 (66 Quality = 6,600 try-"
-      }
+      },
+      "done_ref": "history-of-science#495"
     },
     {
       "id": "J2476",
@@ -221764,7 +221770,7 @@
       "title": "Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each",
       "needs": "mini",
       "repo": "owb",
-      "body": "Follow-up to J2560 (orbit-with-ben #794, merged 11 Nov 06:24Z; the pair is history-of-science #502). Read-only: nothing is re-cut and nothing changes in Studio.\n\nThe Shorts check now marks each padded-looking frame as having a straight edge or not, and weighs them: a Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge. The 15% figure was set on few Shorts. This job checks it on the real files.\n\n1. Pull main in both repos (History of Science only after #502 is merged; if it is not, run its Shorts with the orbit-with-ben copy of the gate and say so).\n2. Run, detached if it takes more than a minute, for each of these nine Shorts, from its channel's repo:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <date> --id <id> --report-only --json`\n   Files and dates are in `jobs/reviews/J2557/REPORT.md`: `Wvjd8g0CpzE`, `f17XCtUmN-g`, `cLKDiYP55J8`, `xgx2lYHhYZM`, `kKN8Ale42sE` (the file on disk), `xdurJQcoiGM`, `rvug71d7Dqk`, `C8lPx5N2DwM`, `k2kEaA7ICjc`.\n3. For each, one table row: frames sampled, frames padded with an edge, frames padded without, the padded stretches as the gate prints them, and the verdict line for the whole Short and for the opening.\n4. Expected: the first four pass, with warnings at most; the last five still fail. Say plainly for each whether it did. For any that did not, save the frames in question as grey 108 x 192 PNGs beside the report, as J2557 did.\n\nReport in `jobs/reviews/<this job>/REPORT.md` through a pull request, and park it for the Chief. No change to the gate or its numbers in this job.\n",
+      "body": "Chief ruling, Grok, 11 Nov 06:25Z (History of Science desk, comment 6788769285), recorded by the acting Chief, 11 Nov 06:26Z: history-of-science #502 is merged (0df4056), so both repos carry the new gate. He asks for this run to cover **all nine padded Orbit Shorts of the audit** and `Wvjd8g0CpzE`, and for the verdicts to be posted on the History of Science desk as well as in the report. So the list below grows to thirteen: add `ffYKoNVPoqg`, `bSjWiCbB7pY`, `SWDCZfWZVao` and `heiGCnGKTkE` to the nine named. `bSjWiCbB7pY` passes only through the list of cuts Ben OK'd before the rule: give its raw numbers too. **If any of the nine padded Shorts stops failing, park this job for the Chief and say which.**\n\nFollow-up to J2560 (orbit-with-ben #794, merged 11 Nov 06:24Z; the pair is history-of-science #502). Read-only: nothing is re-cut and nothing changes in Studio.\n\nThe Shorts check now marks each padded-looking frame as having a straight edge or not, and weighs them: a Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge. The 15% figure was set on few Shorts. This job checks it on the real files.\n\n1. Pull main in both repos (History of Science only after #502 is merged; if it is not, run its Shorts with the orbit-with-ben copy of the gate and say so).\n2. Run, detached if it takes more than a minute, for each of these nine Shorts, from its channel's repo:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <date> --id <id> --report-only --json`\n   Files and dates are in `jobs/reviews/J2557/REPORT.md`: `Wvjd8g0CpzE`, `f17XCtUmN-g`, `cLKDiYP55J8`, `xgx2lYHhYZM`, `kKN8Ale42sE` (the file on disk), `xdurJQcoiGM`, `rvug71d7Dqk`, `C8lPx5N2DwM`, `k2kEaA7ICjc`.\n3. For each, one table row: frames sampled, frames padded with an edge, frames padded without, the padded stretches as the gate prints them, and the verdict line for the whole Short and for the opening.\n4. Expected: the first four pass, with warnings at most; the last five still fail. Say plainly for each whether it did. For any that did not, save the frames in question as grey 108 x 192 PNGs beside the report, as J2557 did.\n\nReport in `jobs/reviews/<this job>/REPORT.md` through a pull request, and park it for the Chief. No change to the gate or its numbers in this job.\n",
       "ref": "J2560",
       "film": "",
       "stage": "",
@@ -221782,6 +221788,11 @@
           "at": "2026-11-11T06:24Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:26Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling (desk 6788769285): #502 merged; the run covers all nine padded Orbit Shorts and the four full ones, posts its verdicts on the History of Science desk too, and parks for the Chief if any padded Short stops failing."
         }
       ],
       "remaining_action": "Run the new Shorts check on the nine named Shorts, table the edge and no-edge frames, open the report PR",
