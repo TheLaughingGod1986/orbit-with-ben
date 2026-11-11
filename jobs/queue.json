@@ -222678,13 +222678,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-11T08:09Z",
-      "eta": "2026-11-11T10:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T08:08Z",
-      "result": "",
+      "result": "No action needed on J2503: the acting Chief already ruled at 08:08Z (same minute this check was queued) and reopened it with history-of-science #505 sent back. Verified in the queue record: J2503 is open, unclaimed, pinned to the Mini, due 14 Nov; predecessor J2033 is done. #505 is still OPEN and unmerged at head 778717d7 (no rework pushed yet). Left J2503 and #505 untouched: no reopen, no wait. No files changed, so no branch or PR. The old pre-merge machine-setting check no longer applies (the ruling drops the setting).",
       "history": [
         {
           "at": "2026-11-11T08:08Z",
@@ -222695,6 +222695,11 @@
           "at": "2026-11-11T08:09Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T08:10Z",
+          "by": "macbook",
+          "what": "done: No action needed on J2503: the acting Chief already ruled at 08:08Z (same minute this check was queued) and reopened it with history-of-science #505 sent back. Verified in the queue record: J2503 is open, unclaimed, pinned to the Mini, due 14 Nov; predecessor J2033 is done. #505 is still OPEN and unmerged at head 778717d7 (no rework pushed yet). Left J2503 and #505 untouched: no reopen, no wait. No files changed, so no branch or PR. The old pre-merge machine-setting check no longer applies (the ruling drops the setting)."
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief review and pre-merge STUDIO_FLOW_ACCOUNT check on Mini and MacBook",
