@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2575 | mini | open | – | – | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
+| J2575 | mini | claimed | codex | 2026-11-11T11:35Z | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
 | J2576 | mini | open (after J2575) | – | – | 008 picture · qa · HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) | J2575 |
 | J2577 | cloud | open | – | – | The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) | J2527 |
 | J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |

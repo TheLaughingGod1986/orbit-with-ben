@@ -223377,10 +223377,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T09:35Z",
+      "eta": "2026-11-11T11:35Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:57Z",
       "result": "",
@@ -223409,6 +223409,11 @@
           "at": "2026-11-11T09:02Z",
           "by": "codex",
           "what": "released: Clean hand-back: J2270 batch1 is active and shared Flow writer.lock probe returned HELD. /Users/benjaminoats/_desk/logs/J2270-batch1.done absent; log shows submitted Create. Resume only after writer free, using existing J2241 manifest and guarded runner; append salon t2 and points t2, preserve rods t2, cap 200 credits. No J2575 generation started, no spend, no outputs overwritten."
+        },
+        {
+          "at": "2026-11-11T09:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Generate the two approved retakes when the shared Flow writer is free, then prepare review evidence",
