@@ -1,5 +1,5 @@
 {
-  "next_id": 2566,
+  "next_id": 2567,
   "jobs": [
     {
       "id": "J0001",
@@ -222180,13 +222180,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T07:18Z",
-      "eta": "2026-11-11T09:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T07:07Z",
-      "result": "",
+      "result": "orbit-with-ben #797 merged: the daily credit reading exits 1 only when ElevenLabs, Flow or Vertex cannot be read or a reading cannot be written; an unread usage page is named with its likely cause, the page's own words and when the pool was last recorded. The reading also takes the picture runs' lock and leaves the Flow tab alone while a run holds it (it could have taken a running batch's tab at 08:30). MacBook worker passes --strict. 33 tests. Report: jobs/reviews/J2564/REPORT.md. Still open: the Claude and Cursor readers stop working when their pool runs out; fixing them needs the pages' words, which the follow-up Mini job copies from the log.",
       "history": [
         {
           "at": "2026-11-11T07:07Z",
@@ -222197,6 +222197,11 @@
           "at": "2026-11-11T07:18Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T07:30Z",
+          "by": "claude",
+          "what": "done: orbit-with-ben #797 merged: the daily credit reading exits 1 only when ElevenLabs, Flow or Vertex cannot be read or a reading cannot be written; an unread usage page is named with its likely cause, the page's own words and when the pool was last recorded. The reading also takes the picture runs' lock and leaves the Flow tab alone while a run holds it (it could have taken a running batch's tab at 08:30). MacBook worker passes --strict. 33 tests. Report: jobs/reviews/J2564/REPORT.md. Still open: the Claude and Cursor readers stop working when their pool runs out; fixing them needs the pages' words, which the follow-up Mini job copies from the log."
         }
       ],
       "remaining_action": "Make the daily credit reading's exit code tell the truth and name the usage pages it could not read, with tests",
@@ -222210,7 +222215,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#797"
     },
     {
       "id": "J2565",
@@ -222262,6 +222268,35 @@
         "at": "2026-11-11T07:29Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2566",
+      "title": "Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2564 (orbit-with-ben #797, merged). Ten minutes, read-only, no spend, no sign-in.\n\nThe Mini's daily credit reading now prints, for every page it could not read, the likely cause, the page's address and the page's first 25 lines (any email address and any payment line are already removed by the script). Two usage pages have been unreadable since their pool ran out: Claude (since 9 Nov) and Cursor (since 10 Nov). The cloud cannot see the Mini's browser, so the words on those pages have to be copied out once.\n\n1. Pull main in the Mini's main checkout. Do not use the browser on port 9222 by hand: a picture run may be using it.\n2. Take the lines from the newest run in `~/Library/Logs/owb-ai-spend.log` (the 08:30 run of 11 Nov or later, after #797 landed: it ends with a `SUMMARY` line). If no run since #797 has happened yet, run `python3 scripts/ai_spend_daily.py --dry-run --pools cursor,codex,claude` once instead. That command records nothing, and it leaves the Flow page alone.\n3. Write `jobs/reviews/J2564/PAGES.md` with, for each of cursor, codex and claude: the whole `READ`, `UNREAD` or `FAIL` line, the `page address:` line and every `page shows:` line, copied exactly. Add the `SUMMARY` line and the exit code (`launchctl list | grep ai-spend-daily`). Check there is no email address and no card detail in the file before you commit; if the script let one through, replace it with `<removed>` and say so.\n4. One pull request with that one file. Do not change the readers: the acting Chief fixes them from your file.\n\nIf a page is a sign-in screen, say which page in your done line. Do not sign in; sign-ins are Ben's.",
+      "ref": "J2564",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T07:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T07:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Copy the unread pages' lines from the credit-reading log into one file",
+      "due": "2026-11-12T18:00:00Z",
+      "plain": "Copy what two usage pages say on the Mini, so the daily credit check can read them again"
     }
   ],
   "focus": [
