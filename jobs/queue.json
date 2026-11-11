@@ -230989,21 +230989,28 @@
           "at": "2026-11-11T23:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T23:46Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2654; starting step 1 (inspecting HOS 011 archive rows and J2563_PREFLIGHT.json)"
         }
       ],
-      "remaining_action": "Find a resolving free source per row, record URL, licence and date; small pull request for the Chief",
+      "remaining_action": "Inspect J2563_PREFLIGHT.json (commit e61d5c76 / PR 550), HOS 011 archive rows, and Chief ruling #6808400290",
       "due": "2026-11-14T18:00:00Z",
       "for": "gemini",
       "kind": "facts",
       "plain": "Find real, free sources for the 13 old pictures the Anaesthesia film wants to use",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-11T23:46Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2654; starting step 1 (inspecting HOS 011 archive rows and J2563_PREFLIGHT.json)"
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     },
     {
       "id": "J2655",
