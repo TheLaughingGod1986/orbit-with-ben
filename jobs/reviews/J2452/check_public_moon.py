@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[3]
-OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_moon_v03')
+OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_moon_v04')
 def main():
     build=json.loads((OUT/'BUILD.json').read_text()); video=build['output']
     full=json.loads((OUT/'full_pixel_cuts.json').read_text())
