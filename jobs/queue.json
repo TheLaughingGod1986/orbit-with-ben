@@ -196018,20 +196018,25 @@
           "at": "2026-11-11T08:55Z",
           "by": "codex",
           "what": "step 1 of 3 done: Authorization/scope/VO checks verified. Under shared lock: Ultra account verified, Quality x1 16:9 8s price 100, balance stable 12590, no PENDING, liability 2400, projected headroom 6590 after full 3600 cap. Approved house references copied and hashes verified; NAS archive ready."
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: First five-row batch launched detached in tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit file /Users/benjaminoats/_desk/logs/J2270-batch1.done. No duplicate when exit file absent. Runner state /Users/benjaminoats/_desk/state/flow/hos010-twelve-plates. First reference still generation underway; no completed plate or KEEP claimed."
         }
       ],
-      "remaining_action": "Launch the first five scoped plates detached; retain receipts and ledger for the next run",
+      "remaining_action": "Next worker: check batch-one exit code and receipts, then continue remaining bounded batches",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
       "urgent": 2,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T08:55Z",
+        "at": "2026-11-11T08:57Z",
         "by": "codex",
-        "note": "Authorization/scope/VO checks verified. Under shared lock: Ultra account verified, Quality x1 16:9 8s price 100, balance"
+        "note": "First five-row batch launched detached in tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit f"
       },
       "taskKeys": [
         "HOS:010"
