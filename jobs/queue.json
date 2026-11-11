@@ -227603,9 +227603,14 @@
           "at": "2026-11-11T15:52Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Inspected both take-3 full-clip 0.5s sheets and verified frame coordinates: P03:01_really_falling_c1 take 3 fails Q2 (f012-f189 dark ball at curve tip + f036-f189 curve bends back/loops overhead); P04:05_minute_second_c1 take 3 fails Q2/Q3 (f073-f084 upward bounce + green-to-red morph + second drop, and f012-f189 Moon reverses backward along arc)"
+        },
+        {
+          "at": "2026-11-11T15:56Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed J2629_THIRD_TAKES_SHEETS_EVIDENCE_2026-11-11.json/.md, passed check_all.sh, and opened HOS PR #531"
         }
       ],
-      "remaining_action": "Write J2629 sheet review evidence files in HOS worktree and open PR for Chief/Grok",
+      "remaining_action": "Post J2629 sheet verdicts to HOS desk #180 and OWB thread, and park J2629 for Chief",
       "due": "2026-11-12T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -227613,11 +227618,11 @@
       "plain": "Check the two remade gravity film shots before the last one is made",
       "urgent": 12,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-11T15:52Z",
+        "at": "2026-11-11T15:56Z",
         "by": "gemini",
-        "note": "Inspected both take-3 full-clip 0.5s sheets and verified frame coordinates: P03:01_really_falling_c1 take 3 fails Q2 (f0"
+        "note": "Committed J2629_THIRD_TAKES_SHEETS_EVIDENCE_2026-11-11.json/.md, passed check_all.sh, and opened HOS PR #531"
       },
       "taskKeys": [
         "HOS:009"
