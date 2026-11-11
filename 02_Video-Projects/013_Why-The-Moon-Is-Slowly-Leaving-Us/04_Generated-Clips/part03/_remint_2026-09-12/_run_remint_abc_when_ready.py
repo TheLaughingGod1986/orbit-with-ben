@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Mint Moon 013 Part 03 remint plates A/B/C once Flow is signed in as benoats@googlemail.com.
+"""Mint Moon 013 Part 03 remint plates A/B/C once Flow is signed in as the studio Ultra account.
 
 Hard rules:
-  - Account MUST be benoats@googlemail.com (never benoats86@gmail.com)
+  - Account MUST be the studio Ultra account (never the personal account)
   - Veo 3.1 Fast only
   - Write exactly: p03A_modern_earth.mp4 / p03B_terminator.mp4 / p03C_fossil_rock.mp4
   - Do not overwrite *_LOCKED_*.mp4
@@ -27,8 +27,16 @@ from playwright.sync_api import sync_playwright
 CDP = "http://127.0.0.1:9222"
 HERE = Path(__file__).resolve().parent
 BRIEF = HERE / "REMINT_BRIEF.md"
-REQUIRED_ACCOUNT_NEEDLES = ("benoats@googlemail.com",)
-FORBIDDEN_ACCOUNT_NEEDLES = ("benoats86@gmail.com", "benoats86")
+# The account by fingerprint: no address sits in a tracked file (AGENTS.md Never list, J2537).
+REQUIRED_ACCOUNT_SHA256 = ("81a01c9d841483f444008cd69e98b26019e032ed75b5e33e17409a76c6525ce9",)  # the studio Ultra account
+ADDRESS_RE = re.compile(r"[a-z0-9._%+-]+@[a-z0-9-]+(?:\.[a-z0-9-]+)+", re.I)
+
+
+def account_marks(text: str) -> set:
+    """The sha256 of every address a page shows."""
+    return {hashlib.sha256(a.lower().encode()).hexdigest() for a in ADDRESS_RE.findall(text)}
+
+
 ENGINE_LABEL = "Veo 3.1 Fast"
 
 PROMPTS = [
@@ -72,8 +80,9 @@ def flow_page(browser):
 def account_guard(page) -> dict:
     body = page.inner_text("body")
     lower = body.lower()
-    forbidden = [n for n in FORBIDDEN_ACCOUNT_NEEDLES if n.lower() in lower]
-    required_hit = any(n.lower() in lower for n in REQUIRED_ACCOUNT_NEEDLES)
+    seen = account_marks(body)
+    forbidden = sorted(m[:12] for m in seen if m not in REQUIRED_ACCOUNT_SHA256)  # any other account on the page
+    required_hit = any(m in seen for m in REQUIRED_ACCOUNT_SHA256)
     credits = None
     m = re.search(r"([0-9][0-9,]{2,})\s*credits?", body, re.I)
     if m:
@@ -84,7 +93,7 @@ def account_guard(page) -> dict:
         "forbidden_account_hit": forbidden,
         "credits": credits,
         "signed_in_guess": "sign in" not in lower[:800].lower(),
-        "body_head": body[:400],
+        "body_head": ADDRESS_RE.sub("(an address)", body[:400]),
     }
 
 

@@ -3,11 +3,16 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
+
+# The Google account is not written here (AGENTS.md Never list, J2537): set ORBIT_SETUP_ACCOUNT to run this.
+ACCOUNT = os.environ.get("ORBIT_SETUP_ACCOUNT", "")
+ACCOUNT_RE = re.compile(re.escape(ACCOUNT) if ACCOUNT else r"(?!)", re.I)
 
 PROFILE = "/Users/ben/code/youtube/.playwright-youtube-profile"
 OUT = Path("/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok")
@@ -96,8 +101,8 @@ def main() -> None:
                     page.wait_for_timeout(2000)
                     shot(pop, "02_pop")
                     # Google account
-                    if pop.get_by_text(re.compile(r"benoats86@gmail\.com", re.I)).count():
-                        pop.get_by_text(re.compile(r"benoats86@gmail\.com", re.I)).first.click()
+                    if pop.get_by_text(ACCOUNT_RE).count():
+                        pop.get_by_text(ACCOUNT_RE).first.click()
                         pop.wait_for_timeout(3000)
                     for lab in (r"^Continue$", r"^Allow$", r"^Confirm$", r"^Approve$"):
                         b = pop.get_by_role("button", name=re.compile(lab, re.I))

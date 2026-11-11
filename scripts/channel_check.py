@@ -38,7 +38,7 @@ RULES = pathlib.PurePosixPath("studio/RULES.md")
 PIPELINE_KINDS = ("film_status", "pipeline_json")
 PICTURE_ROUTES = ("flow_only", "flow_first")
 # The same pattern as scripts/test_email_ratchet.py (a test there keeps the two in step).
-ADDRESS = re.compile(r"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\.(com|me|co\.uk)")
+ADDRESS = re.compile(r"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\?\.(com|me|co\.uk)")
 GENERATED_PAGES = ("STATUS.md", "00_Brand/Channel-Setup/kanban/index.html")
 
 

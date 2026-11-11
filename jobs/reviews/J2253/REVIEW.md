@@ -51,7 +51,7 @@
 
 5. **Real Flow Spend Preflight (`PASS`):**
    - `spend_preflight()` verifies `/Users/benjaminoats/YouTube/orbit-with-ben/scripts/ai_spend.py` subcommands (`['record', 'spend', 'report', 'doc']`), explicitly rejects `ai_spend.py check` (`"not a subcommand; do not call it"`), and specifies:
-     - Reading live Flow account balance via `read_account()` in `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_mint_flow_cdp_v01.py` on CDP `ORBIT_FLOW_CDP` (`http://127.0.0.1:9222`, account `benoats@googlemail.com`) and logging with `ai_spend.py record --pool flow --left N`.
+     - Reading live Flow account balance via `read_account()` in `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_mint_flow_cdp_v01.py` on CDP `ORBIT_FLOW_CDP` (`http://127.0.0.1:9222`, the studio Ultra account) and logging with `ai_spend.py record --pool flow --left N`.
      - Reading the live Veo 3.1 Quality credit price on the Flow confirm dialog (`orbit_flow_veo_ui.py` matching `'Use N credits'`) prior to any Create.
      - Subtracting unposted `ai_spend.py` spends logged since the balance reading.
      - Enforcing `takes_max_per_plate: 3`, `subscription_credits_max_per_plate: 300`, `subscription_credits_max_total: 900`, `gbp: 0`, `no_top_up: True`, `no_overage: True`, `no_prepaid_ai_studio: True`, and `authorized: False`.

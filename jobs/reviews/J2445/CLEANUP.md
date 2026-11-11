@@ -75,7 +75,7 @@ Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  M
   drwxr-xr-x@ 3 benjaminoats  staff  96 Nov  5 11:20 ..
   drwx------@ 3 benjaminoats  staff  96 Nov  5 14:52 code_sign_clone.c6s3Zc
   ```
-- **Chrome profiles & instances:** Untouched (`~/.orbit-chrome-youtube-studio`, `~/.hos-chrome-youtube-studio`, `~/.hos-chrome-flow-benoats-googlemail-cdp`, `~/Library/Application Support/Google` all intact; no Chrome process quit).
+- **Chrome profiles & instances:** Untouched (`~/.orbit-chrome-youtube-studio`, `~/.hos-chrome-youtube-studio`, `~/.hos-chrome-flow-ACCOUNT-cdp`, `~/Library/Application Support/Google` all intact; no Chrome process quit).
 
 ---
 

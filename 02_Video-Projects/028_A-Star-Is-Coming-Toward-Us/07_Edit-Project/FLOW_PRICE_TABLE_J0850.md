@@ -6,7 +6,7 @@ v01 files are unchanged. Rebuild with `python3 _build_plate_boards_v02.py`. Also
 
 ## Readings this run (22 Oct 2026)
 
-- Flow: **20950** credits at `2026-10-22T16:56:01Z` (`ai_spend_daily.py --dry-run --pools flow,vertex`, account picker, `benoats@googlemail.com`, CDP `:9222`). Down `2,790` net from the 15 Oct reading (`23,740`) after HOS 007 minted all `73/73` Flow rows in `J0352` (`46d59506`) for `2,890` credits (`24 Quality × 100 + 49 Fast × 10 = 2,890 cr`, 100% try-1 KEEP, plus two `+50` Flow allotment adjustments).
+- Flow: **20950** credits at `2026-10-22T16:56:01Z` (`ai_spend_daily.py --dry-run --pools flow,vertex`, account picker, the studio Ultra account, CDP `:9222`). Down `2,790` net from the 15 Oct reading (`23,740`) after HOS 007 minted all `73/73` Flow rows in `J0352` (`46d59506`) for `2,890` credits (`24 Quality × 100 + 49 Fast × 10 = 2,890 cr`, 100% try-1 KEEP, plus two `+50` Flow allotment adjustments).
 - Vertex promo: **£71.02** Available at `2026-10-22T16:56:01Z` (`Google Developer Program premium benefit - CREDIT_TYPE_MONTHLY`). Free Trial **£0.00 Used**. Usable **£70.02** after the £1.00 margin. No spend logged in this run.
 
 ## Remaining 028 picture rows to mint (`boards v02`)
@@ -46,7 +46,7 @@ On 21 Oct (`J0352`, HOS `#351`), HOS 007 minted all `73/73` Flow rows on take 1 
 
 | Pool / Film | Try-1 Credits | Expected Credits | Balance After (Try-1) | Balance After (Expected) | Notes |
 |---|---:|---:|---:|---:|---|
-| **Live Flow balance (22 Oct 16:56Z)** | — | — | **20,950** | **20,950** | `benoats@googlemail.com` (CDP `:9222`) |
+| **Live Flow balance (22 Oct 16:56Z)** | — | — | **20,950** | **20,950** | the studio Ultra account (CDP `:9222`) |
 | **HOS 006** | 0 | 0 | 20,950 | 20,950 | Done (`full_join_v03_teach` on HOS `main`, 0 Flow) |
 | **HOS 007** | 0 | 0 | 20,950 | 20,950 | Done (`73/73` rows minted & KEEP in `J0352` for `2,890` cr, already deducted from `20,950`; `full_join_v01` in `J0827`) |
 | **OWB 028 (if minted next)** | **110** | **279** | **20,840** | **20,671** | 1 Quality (`259` exp) + 1 Fast (`20` exp) |

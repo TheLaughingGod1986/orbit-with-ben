@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import secrets
 import string
@@ -11,13 +12,17 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+# The Google account is not written here (AGENTS.md Never list, J2537): set ORBIT_SETUP_ACCOUNT to run this.
+ACCOUNT = os.environ.get("ORBIT_SETUP_ACCOUNT", "")
+ACCOUNT_RE = re.compile(re.escape(ACCOUNT) if ACCOUNT else r"(?!)", re.I)
+
 PROFILE = "/Users/ben/code/youtube/.playwright-tiktok-mobile-profile"
 SETUP = Path("/Users/ben/code/Orbit-YouTube/00_Brand/Channel-Setup/TikTok")
 AVATAR = SETUP / "avatar_800x800.png"
 BIO = (SETUP / "bio.txt").read_text().strip()
 WEBSITE = "https://www.youtube.com/@OrbitWithBen"
 DISPLAY = "Orbit with Ben"
-EMAIL = "benoats86@gmail.com"
+EMAIL = ACCOUNT
 AUDIT = SETUP / "audit"
 RESULT = SETUP / "CREATE_RESULT.json"
 META = SETUP / "TIKTOK_META.json"
@@ -195,7 +200,7 @@ def apply_brand(page) -> dict:
 def wait_for_code_or_progress(page, seconds: int = 240) -> str:
     """Wait while user enters email/SMS code. Returns state tag."""
     print(f"Waiting up to {seconds}s for verification / next step...")
-    print("If TikTok emailed a code to benoats86@gmail.com, enter it in the browser.")
+    print("If TikTok emailed a code to the personal account, enter it in the browser.")
     deadline = time.time() + seconds
     while time.time() < deadline:
         page.wait_for_timeout(5000)
@@ -255,7 +260,7 @@ def main() -> None:
             result["steps"].append("birthday")
             page.wait_for_timeout(1500)
             # may land on phone/email chooser
-            if has(page, r"Email") and not has(page, r"Email address|benoats"):
+            if has(page, r"Email") and not has(page, r"Email address|" + (re.escape(EMAIL.split("@")[0]) or r"(?!)")):
                 try:
                     page.get_by_text("Email", exact=True).first.click()
                     page.wait_for_timeout(1000)
@@ -320,7 +325,7 @@ def main() -> None:
             result["steps"].append("awaiting_code")
             result["status"] = "awaiting_email_code"
             result["notes"] = (
-                "Enter the 6-digit code from benoats86@gmail.com in the open TikTok window."
+                "Enter the 6-digit code from the personal account in the open TikTok window."
             )
             save(result)
             state = wait_for_code_or_progress(page, 300)

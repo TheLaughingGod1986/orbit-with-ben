@@ -55,7 +55,7 @@
 
 - **Scope Authorised by `J2306`**: Flow Veo 3.1 only, `3` takes maximum, `<= 100` credits per take, `<= 300` existing subscription credits total, `£0.00` monetary spend, no Vertex, no Omni, no new VO/music.
 - **Actual Execution Verified**:
-  - **Pre-generation balance read** (`2026-11-07T02:41:35Z`, line 576): `14,890.0` Flow credits (`benoats@googlemail.com` ULTRA, CDP `9222`, project `a1400a5e-916a-4c90-b6f2-15c0838500f8`; `Veo 3.1 - Fast 8s 16:9 x1` = `10` credits).
+  - **Pre-generation balance read** (`2026-11-07T02:41:35Z`, line 576): `14,890.0` Flow credits (the studio Ultra account, CDP `9222`, project `a1400a5e-916a-4c90-b6f2-15c0838500f8`; `Veo 3.1 - Fast 8s 16:9 x1` = `10` credits).
   - **Take 1 (`r01`)** (`2026-11-07T02:43:17Z`, line 577): `10.0` Flow credits (`text-to-video`, no start frame).
   - **Take 2 (`r55a`)** (`2026-11-07T02:44:19Z`, line 578): `10.0` Flow credits (`text-to-video`, no start frame).
   - **Take 3 (`r55b`)** (`2026-11-07T02:44:35Z`, line 579): `10.0` Flow credits (`text-to-video`, no start frame).
