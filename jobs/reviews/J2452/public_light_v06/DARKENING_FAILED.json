@@ -1,0 +1,32 @@
+{
+  "status": "REJECTED_DARKENING_NOT_DELIVERED",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_light_dark_v01/024_light_darkened_v01.mp4",
+  "sha256": "9ceb5c0fff83aa8cc6358ce751e57df77d9d9ef87b9e9268b2d048ef71acfc77",
+  "reason": "Full grade scan failed strict two-second brightness tolerance. No waiver; no NAS save.",
+  "target_ratio": 0.85,
+  "tolerance": 0.02,
+  "failed_windows": [
+    {
+      "start_s": 68,
+      "actual_ratio": 0.8751842301689626
+    },
+    {
+      "start_s": 398,
+      "actual_ratio": 0.8803098282473847
+    },
+    {
+      "start_s": 406,
+      "actual_ratio": 0.8756628746069357
+    },
+    {
+      "start_s": 440,
+      "actual_ratio": 0.8297273382196331
+    },
+    {
+      "start_s": 442,
+      "actual_ratio": 0.898220888308038
+    }
+  ],
+  "process_exit": 1,
+  "next": "Investigate quantization on dark inherited stretches; full new grade scan required, keep undarkened v06."
+}
