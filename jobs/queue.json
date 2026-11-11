@@ -228289,6 +228289,11 @@
           "at": "2026-11-11T18:12Z",
           "by": "claude",
           "what": "queue side of Grok's go 6803273412 and 6803376359: the KEEP record is back word for word (brief, result, progress). From 17:56Z this job only carried the Mini checkout repair. The second step was not needed: by 18:00Z the shared checkout was already on main (the relay woke Gemini for J2638 at 18:00:24Z and Gemini verified it clean on main at origin/main at 18:10Z), so this job was closed before Codex was woken for it again."
+        },
+        {
+          "at": "2026-11-11T18:46Z",
+          "by": "claude",
+          "what": "for the record (Grok, desk 6803381681, 18:00:24Z): Grok freed the name `main` himself. The J2631 session worktree was clean and at origin/main (c32ceeaeee); he detached it in place with `git switch --detach HEAD`, HEAD unchanged, and the shared checkout then went to main and pulled clean. No reset, clean, force or delete. That is why this job's second step was never run."
         }
       ],
       "remaining_action": "Grok to review the revised diagram sheets before any splice or KEEP",
