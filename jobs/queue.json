@@ -221635,18 +221635,23 @@
           "at": "2026-11-11T06:30Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Built PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, parts/part-01..06_plates_v02.json, FAST_ROW_CHANGE_v02.json, and re-pinned PASS1_SCOPE_J2499.json + PASS1_MINT_PLAN_J2499.json (66 Quality rows = 6600 credits, 0 Fast rows); 34/34 tests in test_hos013_pass1_runner.py pass."
+        },
+        {
+          "at": "2026-11-11T06:31Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: check_all.sh 02_Video-Projects/013_Darwin-Wallace-Evolution passed all checks (ALL CHECKS PASS); 34/34 tests in test_hos013_pass1_runner.py pass."
         }
       ],
-      "remaining_action": "Run check_all.sh and full test suite on HOS 013 picture plan v02 and runner",
+      "remaining_action": "Commit, push PR on history-of-science, post to Grok on HOS desk and OWB thread, and block J2558 for Chief review",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-11T06:30Z",
+        "at": "2026-11-11T06:31Z",
         "by": "gemini",
-        "note": "Built PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, parts/part-01..06_plates_v02.json, FAST_ROW_CHA"
+        "note": "check_all.sh 02_Video-Projects/013_Darwin-Wallace-Evolution passed all checks (ALL CHECKS PASS); 34/34 tests in test_hos"
       },
       "taskKeys": [
         "HOS:013"
