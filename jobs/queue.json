@@ -217947,17 +217947,23 @@
           "at": "2026-11-11T02:51Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T02:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Collected all 9 read-only system checks on the Mac mini (pmset -g, loginwindow autoLoginUser, fdesetup, accounts, sshd, tailscale status, uptime/last reboot/pmset log, launchctl list + plist inspection, and MacBook heartbeat/setup inspection)"
         }
       ],
-      "remaining_action": "Collecting read-only Mac mini always-on settings (pmset, login, fdesetup, ssh, tailscale, reboot log, launchd)",
+      "remaining_action": "Writing jobs/reviews/J2517/REPORT.md in a clean worktree and committing to main",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T02:51Z",
-        "by": "gemini"
+        "at": "2026-11-11T02:55Z",
+        "by": "gemini",
+        "note": "Collected all 9 read-only system checks on the Mac mini (pmset -g, loginwindow autoLoginUser, fdesetup, accounts, sshd, "
       },
       "mini_only": true
     },
