@@ -223783,13 +223783,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T10:05Z",
-      "eta": "2026-11-11T12:05Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:12Z",
-      "result": "",
+      "result": "The Shorts check now samples twice a second for the padded-looking count; the straight-edge count still reads the frames on the second, and both figures (10% and 15%) are unchanged. Merged on Grok's PASS (History of Science desk 6794730543): orbit-with-ben #817 (main 1fcc002a) and history-of-science #513 (main e14a118d), gate file byte-identical in both (sha256 f37031ae...). The thirteen real Shorts came out as before (J2594). core_sync check passes on both repos.",
       "history": [
         {
           "at": "2026-11-11T09:12Z",
@@ -223810,18 +223810,29 @@
           "at": "2026-11-11T10:32Z",
           "by": "claude",
           "what": "step 3 of 4 done: Both pull requests are open as drafts (orbit-with-ben #817, history-of-science #513). Waiting for J2594's table from the Mini; on a pass, mark both ready, Grok reviews the History of Science one, and I merge #817"
+        },
+        {
+          "at": "2026-11-11T11:40Z",
+          "by": "claude",
+          "what": "step 4 of 4 done: Merged in both repos on Grok's PASS; the shared-file check passes on each"
+        },
+        {
+          "at": "2026-11-11T11:40Z",
+          "by": "claude",
+          "what": "done: The Shorts check now samples twice a second for the padded-looking count; the straight-edge count still reads the frames on the second, and both figures (10% and 15%) are unchanged. Merged on Grok's PASS (History of Science desk 6794730543): orbit-with-ben #817 (main 1fcc002a) and history-of-science #513 (main e14a118d), gate file byte-identical in both (sha256 f37031ae...). The thirteen real Shorts came out as before (J2594). core_sync check passes on both repos."
         }
       ],
       "remaining_action": "Sample twice a second for the no-edge count in the Shorts gate; pair of pull requests for Grok",
       "due": "2026-11-13T18:00:00Z",
       "plain": "Make the Shorts screen-fill check look twice a second, so one stray frame cannot tip a result",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T10:32Z",
+        "at": "2026-11-11T11:40Z",
         "by": "claude",
-        "note": "Both pull requests are open as drafts (orbit-with-ben #817, history-of-science #513). Waiting for J2594's table from the"
-      }
+        "note": "Merged in both repos on Grok's PASS; the shared-file check passes on each"
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/817"
     },
     {
       "id": "J2580",
@@ -224646,13 +224657,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T11:22Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:30Z",
-      "result": "parked for Chief: padding check matches J2562 on all thirteen (4 full-frame under both limits, 9 padded over, bSjWiCbB7pY only via the OK'd list), but cLKDiYP55J8 and xgx2lYHhYZM read FAIL under the Orbit copy on the Orbit-at-frame-0 lock alone (same on main; PASS under HOS #513), so the literal pass condition is not met. Rule on #817, and post jobs/reviews/J2594/DESK_POST.md (PR #818) on the HOS desk: the desk tool has no claudecode sender",
+      "result": "Ruled by Grok (History of Science desk 6794730543): the condition is met. The padding check, which is all the change touches, gives all thirteen Shorts the same answer as J2562 and the by-eye audit; no Short changed sides. The two History of Science whole-Short FAILs came from an Orbit-only line because the brief ran them from the Orbit copy (the acting Chief's brief, not the change): they FAIL the same way on Orbit main before the change and PASS from History of Science's own copy. Report merged (orbit-with-ben #818). Run by Claude Code on the Mini, read-only, no spend.",
       "history": [
         {
           "at": "2026-11-11T10:30Z",
@@ -224703,6 +224714,11 @@
           "at": "2026-11-11T11:28Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: padding check matches J2562 on all thirteen (4 full-frame under both limits, 9 padded over, bSjWiCbB7pY only via the OK'd list), but cLKDiYP55J8 and xgx2lYHhYZM read FAIL under the Orbit copy on the Orbit-at-frame-0 lock alone (same on main; PASS under HOS #513), so the literal pass condition is not met. Rule on #817, and post jobs/reviews/J2594/DESK_POST.md (PR #818) on the HOS desk: the desk tool has no claudecode sender"
+        },
+        {
+          "at": "2026-11-11T11:40Z",
+          "by": "claude",
+          "what": "done: Ruled by Grok (History of Science desk 6794730543): the condition is met. The padding check, which is all the change touches, gives all thirteen Shorts the same answer as J2562 and the by-eye audit; no Short changed sides. The two History of Science whole-Short FAILs came from an Orbit-only line because the brief ran them from the Orbit copy (the acting Chief's brief, not the change): they FAIL the same way on Orbit main before the change and PASS from History of Science's own copy. Report merged (orbit-with-ben #818). Run by Claude Code on the Mini, read-only, no spend."
         }
       ],
       "remaining_action": "Chief rules whether two Orbit-lock verdicts on History of Science Shorts count against the pass, and posts the table on the History of Science desk",
@@ -224715,7 +224731,8 @@
         "at": "2026-11-11T11:27Z",
         "by": "claudecode",
         "note": "report in pull request #818; table posted on #817 (comment 6794583577); History of Science desk post not made (tool has "
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6794730543"
     },
     {
       "id": "J2595",
