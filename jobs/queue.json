@@ -221710,10 +221710,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T06:24Z",
+      "eta": "2026-11-11T08:24Z",
       "created_by": "relay",
       "created_at": "2026-11-11T06:21Z",
       "result": "",
@@ -221722,13 +221722,26 @@
           "at": "2026-11-11T06:21Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
       "kind": "review",
       "recheck_of": "J2529",
       "due": "2026-11-11T07:21:05+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T06:24Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
