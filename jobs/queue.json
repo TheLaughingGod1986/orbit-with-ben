@@ -227574,9 +227574,14 @@
           "at": "2026-11-11T15:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T15:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2629; starting 4-step sheet inspection of P03:01_really_falling_c1 take 3 and P04:05_minute_second_c1 take 3"
         }
       ],
-      "remaining_action": "HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each)",
+      "remaining_action": "Locate HOS 009 take-3 contact sheets and start frames, and inspect prior PR/evidence structure",
       "due": "2026-11-12T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -227585,12 +227590,14 @@
       "urgent": 12,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-11T15:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2629; starting 4-step sheet inspection of P03:01_really_falling_c1 take 3 and P04:05_minute_second_c1 take 3"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2630",
