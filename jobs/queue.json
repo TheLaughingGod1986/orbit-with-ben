@@ -1,5 +1,5 @@
 {
-  "next_id": 2582,
+  "next_id": 2585,
   "jobs": [
     {
       "id": "J0001",
@@ -177966,13 +177966,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T09:10Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: picture ruling on HOS 009 tranche 2 from jobs/reviews/J2034/REVIEW.md (2f6a1374ab). (1) KEEP or not on 17 clean rows; (2) trim or retake P02:10_how_high, P02:11_explorer_apple_c1, P03:01_really_falling_c1 (up to 300 credits, inside the J2026 cap); (3) record P05:11 callback as 0.30-7.00 s of P01:03_table_three (inside the J1237 0-7 lock); (4) order the continuation-join check and the code-graphic composites. 20 of 20 clips hash/decode clean. Stills and measurements only, no motion watched. No PASS given.",
+      "result": "acting Chief ruling (History of Science desk 6792271903): P02:10 kept at 0.00 to 2.58 s, no retake; P03:01_c1 one retake; P02:11_c1 decided by a quarter-second sheet, with a retake already allowed if it is a jump; the other 17 kept for the window the board uses once a half-second sheet shows nothing appearing, vanishing or changing; P05:11 callback 0.30 to 7.00 s; composites checked in the edit. 200 credits at most. Next: J2582, J2583, J2584, then J2035.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178033,6 +178033,11 @@
           "at": "2026-11-11T09:14Z",
           "by": "relay",
           "what": "condition verification queued: J2581"
+        },
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "done: acting Chief ruling (History of Science desk 6792271903): P02:10 kept at 0.00 to 2.58 s, no retake; P03:01_c1 one retake; P02:11_c1 decided by a quarter-second sheet, with a retake already allowed if it is a jump; the other 17 kept for the window the board uses once a half-second sheet shows nothing appearing, vanishing or changing; P05:11 callback 0.30 to 7.00 s; composites checked in the edit. 200 credits at most. Next: J2582, J2583, J2584, then J2035."
         }
       ],
       "remaining_action": "Chief rules on the 17 rows, the 3 fixes and the P05:11 trim",
@@ -178058,23 +178063,18 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T10:14:12+00:00",
-        "recheck_task": "J2581"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6792271903"
     },
     {
       "id": "J2035",
       "title": "HOS 009: Assemble HOS009 long from approved picture and locked narration",
       "needs": "mini",
       "repo": "hos",
-      "body": "No-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
+      "body": "Chief ruling (acting Chief, Claude, 11 Nov 09:33Z, History of Science desk 6792271903). Read this before the brief below. (1) This job starts only after the last sheet check has written KEEP for every one of the twenty rows. (2) `P02:10_how_high` is 0.00 to 2.58 s, hard out 2.58: after 3 s the clip is not approved. (3) The `P05:11` callback is 0.30 to 7.00 s of `P01:03_table_three` (6.70 s), inside the J1237 lock; the board's 1.20 to 7.90 s is not used. (4) All 18 continuation joins were measured against their parents' last frames and match (J2581). (5) The code graphics named as moving-plate overlays are composited over their plates, and each composite passes `picture_qa` and `polish_gate` before the picture milestone. (6) The twenty new clips are 720p like the first 57: same upscale and grain pass.\n\nNo-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
       "ref": "J2026",
       "film": "009",
       "stage": "edit",
-      "after": "J2034",
+      "after": "J2584",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -178093,6 +178093,11 @@
           "at": "2026-11-04T16:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Queued successor under J2026; not claimed or started"
+        },
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "acting Chief: waits for J2584 (the last sheet check). Brief now carries the picture ruling: P02:10 is 0.00 to 2.58 s; the P05:11 callback is 0.30 to 7.00 s of P01:03; composites pass picture_qa and polish_gate."
         }
       ],
       "remaining_action": "Assemble HOS009 long from approved picture and locked narration",
@@ -178107,7 +178112,8 @@
         "at": "2026-11-04T16:56Z",
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
-      }
+      },
+      "urgent": 8
     },
     {
       "id": "J2036",
@@ -178240,7 +178246,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 6,
+      "urgent": 9,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178613,7 +178619,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 7,
+      "urgent": 10,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192623,7 +192629,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 8,
+      "urgent": 11,
       "progress": {
         "step": 3,
         "of": 4,
@@ -223580,13 +223586,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T09:15Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T09:14Z",
-      "result": "parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits.",
+      "result": "acting Chief: the measurements were used in the ruling on J2034 (desk 6792271903): 18 joins match, P02:10 clean to 2.58 s, the red apple and glasses are in the approved parent. J2034 is closed by that ruling.",
       "history": [
         {
           "at": "2026-11-11T09:14Z",
@@ -223622,6 +223628,11 @@
           "at": "2026-11-11T09:27Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits."
+        },
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "done: acting Chief: the measurements were used in the ruling on J2034 (desk 6792271903): 18 joins match, P02:10 clean to 2.58 s, the red apple and glasses are in the approved parent. J2034 is closed by that ruling."
         }
       ],
       "remaining_action": "Chief rules on J2034 HOS 009 tranche-2 picture review (2f6a1374ab + J2581 join/trim verification) and closes J2581",
@@ -223638,7 +223649,102 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6792271903"
+    },
+    {
+      "id": "J2582",
+      "title": "HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Ruled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Looking only: no spend, nothing on YouTube, about twenty minutes. For a reviewer that can look at pictures.\n\nFilm 009's last twenty pictures are the files in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/J2033_COMPLETION_EVIDENCE_2026-11-11.json` (`outputs`, each with its copy on the working-film store and its hash). The window each row uses is `use_s` in `TRANCHE2_SCOPE_J2026.json`, from the start of the clip.\n\n1. **Nineteen rows** (all but `P03:01_really_falling_c1`, which is being remade): cut one frame every half second across the used window and put them on one sheet per row. `P02:10_how_high` is 0.00 to 2.58 s only.\n2. **A row is KEEP** if, inside its window, no person, Moon, apple, comet, station or ball appears, vanishes or turns into something else, and nothing on the board's forbidden list is in it. Otherwise it is FIX, with the time of the frame.\n3. **`P02:11_explorer_apple_c1` also gets frames every quarter second from 3.0 to 5.0 s.** If the framing changes across three or more frames in a row it is a camera move: KEEP. If it changes between two neighbouring frames it is a jump: FIX, and the retake job (next in line) remakes it; that is already allowed.\n4. **Already settled, not faults:** the red apple and gold glasses in `P02:11` (the approved parent has them); frost, not snow, in `P05:04`; the timber farmhouse and the hats that continue approved parents; the station's shape in `P05:05`.\n5. **Write the result** into the film's evidence folder in History of Science: each row's verdict, window, hash and sheet, as a pull request for Grok, with a desk note. KEEP rows need nothing more from the Chief. Park only a FIX other than the `P02:11` jump, with its frames.\n\nDo not start the edit. Do not regenerate anything.",
+      "ref": "J2034",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sheet each used window at half-second steps; KEEP or FIX by the rule; pull request for Grok",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "qa",
+      "plain": "Look closely at the last 19 gravity film pictures, frame by frame, before they go into the edit",
+      "urgent": 5
+    },
+    {
+      "id": "J2583",
+      "title": "HOS 009: remake the falling-Moon shot (and the Explorer's apple shot only if its sheet shows a jump), 200 credits at most",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Runs on the Mini's Flow browser under J2033's runner and every guard in `TRANCHE2_SCOPE_J2026.json` (three takes a row, 100 credits a take, the 3,000 floor, live balance and price before each take, one output a take). Subscription credits only. **200 credits at most.** Never beside another Flow submit: film 008's second takes (J2575) go first if they have not run, and wait for any J2270 batch that holds the writer lock.\n\n1. **`P03:01_really_falling_c1`, take 2.** In take 1 the Moon fades at about 3.5 s and a ball rides the curve, under the line \"It really is falling. It just never lands.\" Same start frame (the last frame of `P03:01_really_falling`) and settings. Wording, in the board's own style: \"Same shot continues from the last frame of 01_really_falling, camera drifts slowly: the same plain pale Moon stays in the sky above the orchard for the whole shot and slides gently sideways and down along a smooth curve. One thin curved line draws under it. The Moon never fades, never changes and never leaves the frame. No ball, no second object, no second line, no mark on the Moon's face.\" Keep the board's usual closing lines.\n2. **`P02:11_explorer_apple_c1`, take 2, only if the sheet check before this job called its move at 4.0 s a jump.** If it was kept, do not remake it. If it is remade: same start frame and settings; the Explorer keeps holding the apple up beside the pale Moon and looks from one to the other; the camera drifts slowly with no sudden move; and the row's closing line reads \"Exactly one Explorer, on model: round gold glasses, teal long coat, finished hair\", not \"No Explorer\".\n3. **The changed wording is a board change.** Put it in a History of Science pull request (the board or the scope file, whichever the runner reads, with its new hash) and wait for Grok's review before spending a credit. Grok may tighten the wording; his version wins.\n4. One take each. Archive each take to the working-film store with its hash, write the ledger rows and the evidence file as J2033 did. A take that Flow refuses costs nothing and is recorded as J2033 recorded its own.\n\nDo not judge the pictures here: the sheet check after this job does that.",
+      "ref": "J2034",
+      "film": "009",
+      "stage": "picture",
+      "after": "J2582",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "One take of P03:01_really_falling_c1 under J2033's guards, after Grok reviews the wording",
+      "due": "2026-11-12T18:00:00Z",
+      "kind": "video",
+      "plain": "Remake one gravity film shot where the Moon faded out, using credits we already have",
+      "mini_only": true,
+      "urgent": 6
+    },
+    {
+      "id": "J2584",
+      "title": "HOS 009: look at the remade shots' still sheets before the edit (three yes/no questions each)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Ruled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Looking only, fifteen minutes, as J2576 is for film 008. For a reviewer that can look at pictures.\n\nFor each take the retake job made (`P03:01_really_falling_c1` take 2, and `P02:11_explorer_apple_c1` take 2 if it was remade): frames every half second across the window the board uses, beside the start frame.\n\n**`P03:01_really_falling_c1` (0.00 to 5.26 s). Yes or no, with the frame:**\n1. The same Moon is in the sky in every frame, and it never fades or leaves.\n2. No ball, second object or second line appears.\n3. The Moon's face carries no mark.\n\n**`P02:11_explorer_apple_c1` (0.00 to 4.94 s), if remade:**\n1. One Explorer, with round gold glasses, in every frame.\n2. The apple stays in hand; nothing is picked up again from the ground.\n3. No sudden change of framing between two neighbouring frames.\n\nAll yes: write KEEP with the hash and window into the film's evidence file (a pull request for Grok) and finish; the edit (J2035) can then start. Any no: park it for the Chief with the frame, and the Chief rules on a third take the same day.",
+      "ref": "J2034",
+      "film": "009",
+      "stage": "picture",
+      "after": "J2583",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Yes or no on the remade shots; KEEP lets the edit start",
+      "due": "2026-11-13T12:00:00Z",
+      "kind": "qa",
+      "plain": "Check the remade gravity film shot before the film is put together",
+      "urgent": 7
     }
   ],
   "focus": [
