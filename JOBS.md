@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2575, J2576, J2270, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2576, J2270, J2550, J2582, J2583, J2584, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -28,8 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2034 | mini | blocked | claudecode | – | 009 picture · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
-| J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
+| J2035 | mini | open (after J2584) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
@@ -41,7 +40,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2230 | mini | open | – | – | for gemini · assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2242 | mini | open (after J2576) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
-| J2270 | mini | open (after J2269) | – | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
+| J2270 | mini | open (after J2575) | – | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2339 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2366 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
@@ -51,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2449 | mini | blocked | macbook-2 | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
-| J2452 | macbook | claimed | macbook | 2026-11-11T13:29Z | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
+| J2452 | macbook | claimed | macbook | 2026-11-11T14:08Z | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 | J2453 | mini | open (after J2567) | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2454 | mini | open (after J2567) | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2455 | mini | open (after J2567) | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
@@ -70,16 +69,19 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2575 | mini | open | – | – | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
 | J2576 | mini | open (after J2575) | – | – | 008 picture · qa · HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) | J2575 |
-| J2577 | cloud | open | – | – | The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) | J2527 |
 | J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |
-| J2579 | cloud | open | – | – | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
+| J2579 | cloud | claimed | claude | 2026-11-11T12:05Z | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
 | J2580 | cloud | open | – | – | Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page | J2566 |
-| J2581 | any | blocked | gemini | – | review · Verify condition for J2034 |  |
+| J2582 | any | blocked | gemini | – | 009 picture · qa · HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule | J2034 |
+| J2583 | mini | open (after J2582) | – | – | 009 picture · video · HOS 009: remake the falling-Moon shot, and the apple or Explorer shot only if its sheet says so (200 credits at most) | J2034 |
+| J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the remade shots' still sheets before the edit (three yes/no questions each) | J2034 |
 
 Recently finished:
 
+- J2581 done: Verify condition for J2034 (acting Chief: the measurements were used in the ruling on J2034 (desk 6792271903): 18 joins match, P02:10 clean to 2.58 s, the red apple and glasses are in the approved parent. J2034 is closed by that ruling.)
+- J2577 done: The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) (Both prompts name the rule files for each checkout: AGENTS.md, then studio/RULES.md where the checkout has one (orbit-with-ben #815, merged). History of Science reads as before until it has its own file (J2578).)
+- J2575 done: HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) (Two authorized second takes generated for 200 Flow credits, GBP 0; decoded, frame-counted, hashed and still sheets posted. HOS PR #510; desk 6792510470. Pending visual review by J2576; no KEEP.)
 - J2574 done: Studio read on the Mini: have thumbnail tests T013 (Saturn) and T003 (Jupiter) ended? Record the results; reopen J0275 if both have (Codex's read-only Studio read, recorded in orbit-with-ben #808 (merged): both thumbnail tests have finished with Studio's verdict "Not enough impressions to declare a winner". T013 Saturn ran 27 Oct to 10 Nov 22:36; T003 Jupiter ran 27 Oct to 10 Nov 19:49. The first option is visible to all viewers on both. Nothing in Studio was changed. J0275 is reopened by the acting Chief.)
 - J2573 done: HOS 008: look at the salon retake's still sheet before the re-edit (one spark, hair on heads, solid rod), and glance at the other two (Gemini's check, accepted by Grok (History of Science desk 6791231280): salon take 1 FAILS (a room-wide branching bolt at 0:02 to 0:03); hair stays on heads; nothing comes out of the rod. Points take 1 also fails on a second look (a wire from the globe's top at 0:04 to 0:07, a hand vanishing at 0:07). Rods take 2 is clean. Second takes for salon and points are queued under J2241's limits.)
 - J2572 done: History of Science: rework the address clean-up (#505) to fingerprints, 010 and 013 runners untouched, 008 and 009 held back (Reworked HOS PR #505 (gemini/J2503-email-scrub @ ab2287b) per Grok ruling 6790775957: 010/013 runners+tests back 100% as on main (0 diff), zero STUDIO_FLOW env vars, SHA-256 fingerprint comparisons in 002..007 scripts and placeholder in _archive, all 16 008/009 files restored to main and held in scripts/email_ratchet.json, check_all.sh + unit tests PASS, posted to HOS desk (#180 comment 6792072319). PR #505 held unmerged until Thu 12 Nov 19:13 London and J2270.)
@@ -87,6 +89,3 @@ Recently finished:
 - J2570 done: Verify condition for J0978 (acting Chief: condition not met, correctly found. No yes from Ben is on record for deleting the finished, empty title test on the History of Science Atom video. It is asked again in chat today (11 Nov). J0978 stays held; look-again Fri 13 Nov 09:00Z so it is not re-checked every hour.)
 - J2569 done: Verify condition for J0275 (acting Chief: not verified, and it cannot be from the MacBook (its Studio read needs an approval there). The check is now J2574, a read-only Studio job pinned to the Mini, which reopens J0275 itself if both tests have ended. J0275 stays held until Thu 12 Nov 09:00Z.)
 - J2568 done: A way for files finished on the MacBook to reach the NAS (the sleep video will need it) (orbit-with-ben #803 merged. Neither option in the brief was needed: AGENTS.md "Film folders on the NAS" (Ben, 7 Nov 2026) already has both machines read and write a film's folder on the shared working-film store. The MacBook worker's brief was older and said checkouts and ~/_desk only. Now, when the store is mounted, the brief names it with the NAS rules (add only, never delete or move, never replace a finished media file, never outside the store, SHA-256 on each copy, bulk copies 01:00-06:00) and the agent's sandbox allows it; when it is not mounted the brief says so and files stay in ~/_desk with hashes. The archive is not allowed. 66 tests.)
-- J2567 done: Put the three draft thumbnails from the weekly audit (J2374) into the repo, so the panel can see them (PR #800: copied the eight original J2374 JPEGs into the audit designs directory. All three draft and both sheet SHA-256 values match DESIGN_REVIEW.md; all eight byte-identical copies are under 2 MB. No rebuild or image changes. Branch macbook/J2567 pushed; checkout returned to main. No YouTube changes or spend.)
-- J2566 done: Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed (PR #810 adds jobs/reviews/J2564/PAGES.md from the 11 Nov 08:30Z run. Neither page is a sign-in screen. Cursor: signed-in usage overview without the wording the reader expects. Claude: address is the new-chat page, navigation lines only, no usage figure captured. Codex read normally. Exit code 0. No email or card detail; nothing replaced. Readers untouched; PR waits for the Chief to merge.)
-- J2565 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (16 OWB + 6 HOS longs (plus 82 OWB + 28 HOS Shorts, 132/132 videos, 0 skipped, PR #798 / commit f507cbdad); CTR hits vs 4%: OWB Why You Can't Stand On Jupiter (-jmMROGoZCM) 5.2% (58 imp, 5 views, 9.3% avg viewed); HOS The Tied Arm That Proved Your Blood Circulates (wwcjcFfC-5M) 21.4% (14 imp, 5 views, 9.2% avg viewed) and How Did We Discover Germs? (_C92tIJCk8A) 6.8% (44 imp, 7 views, 48.1% avg viewed))

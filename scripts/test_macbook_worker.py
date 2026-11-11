@@ -21,6 +21,27 @@ IDLE_20 = '    |   "HIDIdleTime" = 1200000000000\n'
 IDLE_1 = '    |   "HIDIdleTime" = 60000000000\n'
 T0 = dt.datetime(2026, 10, 28, 12, 0, tzinfo=dt.timezone.utc)
 WED_NIGHT = dt.datetime(2026, 10, 28, 22, 0, tzinfo=dt.timezone.utc)
+_OWN_WORLD = []
+
+
+def setUpModule():
+    """These tests state the worker's rules, not the state of the machine they run on. Where the film store is mounted
+    (the Mini and the MacBook) the brief gains its film-store line and the agent one more folder, so two tests that
+    read the brief failed there and passed in the cloud (found 11 Nov 2026 by running the suite against a simulated
+    store). No test here sees the real store or the live board; a test that needs one sets it itself."""
+    tmp = tempfile.TemporaryDirectory()
+    _OWN_WORLD.append(tmp)
+    for p in (mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(tmp.name) / "no-film-store"),
+              mock.patch("workflow_board.load_tracker", return_value={})):
+        p.start()
+        _OWN_WORLD.append(p)
+
+
+def tearDownModule():
+    for p in reversed(_OWN_WORLD[1:]):
+        p.stop()
+    _OWN_WORLD[0].cleanup()
+    _OWN_WORLD.clear()
 
 
 class Guards(unittest.TestCase):
@@ -111,6 +132,21 @@ class Guards(unittest.TestCase):
         doc = mw.heartbeat_doc("waiting", ["on battery", "in use (2 min idle, needs 10)"], now=WED_NIGHT)
         self.assertEqual((doc["host"], doc["state"], doc["at"]), ("macbook", "waiting", "2026-10-28T22:00:00Z"))
         self.assertIn("on battery", doc["why"])
+
+    def test_the_heartbeat_never_carries_the_machines_network_name(self):
+        # The heartbeat is on a public branch. Until 11 Nov 2026 it printed the machine's network name
+        # (AGENTS.md "Never": no device's network name in a tracked file). It now carries a twelve-character mark.
+        import json
+        with mock.patch.object(mw.platform, "node", return_value="Somebodys-Laptop.local"):
+            doc = mw.heartbeat_doc("working", [], job="J0001", now=WED_NIGHT)
+            mark = mw.machine_mark()
+        text = json.dumps(doc)
+        self.assertNotIn("Somebodys-Laptop", text)
+        self.assertNotIn("machine_name", doc["observation"])
+        self.assertEqual(doc["observation"]["machine"], mark)
+        self.assertRegex(mark, r"^[0-9a-f]{12}$")
+        with mock.patch.object(mw.platform, "node", return_value="Another-Machine.local"):
+            self.assertNotEqual(mw.machine_mark(), mark)  # it still tells two machines apart
 
     def test_it_pulls_before_the_guards(self):
         # A stuck guard must not keep the MacBook on old code: pull_main runs first in each job's run_one().
@@ -662,6 +698,25 @@ class AsksTheChannelLoader(unittest.TestCase):
             self.assertIn("History of Science and Night Sky folders must always be left on main", p)
             self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
             self.assertIn("inside the three checkouts", p)
+
+    def test_the_brief_names_each_checkouts_rule_files(self):
+        # J2577: the rule book is two files since J2527. A checkout with studio/RULES.md is told both, in order; one
+        # that has not split its rules yet is told AGENTS.md alone, as before; a made-up third channel needs no edit.
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            for name, split in (("o", True), ("h", False), ("s", True)):
+                (root / name / "studio").mkdir(parents=True)
+                if split:
+                    (root / name / "studio" / "RULES.md").write_text("# rules\n")
+            o, h, sk = str(root / "o"), str(root / "h"), str(root / "s")
+            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, sk]):
+                p = mw.brief("J1", "m", 25)
+            self.assertIn(f'1. Orbit With Ben ({o}) is pulled. Read AGENTS.md and then studio/RULES.md '
+                          '(the rules, the Never list, "Stop and ask Ben") and then\n', p)
+            self.assertIn(f"   For a HOS job, work in the HOS checkout ({h}) and follow its AGENTS.md.\n"
+                          f"   For a SKY job, work in the SKY checkout ({sk}) and follow its AGENTS.md and then "
+                          "studio/RULES.md.\n", p)
+            self.assertNotIn("{", p)
 
     def test_a_third_channel_reaches_the_agent_and_the_second_slot(self):
         with self.sky():

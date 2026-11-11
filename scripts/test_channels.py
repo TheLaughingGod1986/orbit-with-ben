@@ -436,6 +436,24 @@ class NoHomeChannelInTheScripts(unittest.TestCase):
             self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
 
 
+class RuleFiles(unittest.TestCase):
+    """J2577: the rule book is two files since J2527. Prompts ask here what to call them for a checkout."""
+
+    def test_a_checkout_with_its_own_rules_is_told_both_files_in_order(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            self.assertEqual(channels.rule_files(root), ["AGENTS.md"])            # not split yet
+            self.assertEqual(channels.rules_phrase(root), "AGENTS.md")
+            (root / "studio").mkdir()
+            (root / "studio" / "RULES.md").write_text("# rules\n")
+            self.assertEqual(channels.rule_files(root), ["AGENTS.md", "studio/RULES.md"])
+            self.assertEqual(channels.rules_phrase(str(root)), "AGENTS.md and then studio/RULES.md")
+        self.assertEqual(channels.rule_files("/no/such/checkout"), ["AGENTS.md"])  # not on this machine
+
+    def test_this_repo_has_both(self):
+        self.assertEqual(channels.rule_files(HERE.parent), ["AGENTS.md", "studio/RULES.md"])
+
+
 class NoNewChannelNames(unittest.TestCase):
     """Engine files already moved to channels.py must not grow new literal channel regexes."""
     MOVED = ("jobs.py", "kanban_snapshot.py", "progress24.py", "video_progress.py", "workflow_state.py",

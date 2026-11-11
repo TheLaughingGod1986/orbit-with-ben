@@ -34,6 +34,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import fcntl
+import hashlib
 import json
 import os
 import pathlib
@@ -109,7 +110,7 @@ away from it. Your agent id is `{agent}` everywhere (jobs.py --agent {agent}). D
 Another MacBook slot may be working on a different job at the same time, in its own checkouts: stay in yours.
 
 The job is already claimed for you: {job}
-1. {studio_name} ({studio}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
+1. {studio_name} ({studio}) is pulled. Read {studio_rules} (the rules, the Never list, "Stop and ask Ben") and then
      python3 scripts/jobs.py show {job}
 {other_checkouts}
 2. Do the job exactly as its brief says. Report progress as you go:
@@ -177,8 +178,10 @@ def prompt_channels() -> dict:
         "studio_name": channels.name(channels.studio_slug()),
         "studio": STUDIO,
         "other_checkouts": "\n".join(
-            f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its AGENTS.md."
+            f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its "
+            f"{channels.rules_phrase(path)}."
             for s, path in others),
+        "studio_rules": channels.rules_phrase(STUDIO),
         "bens_folders": " and ".join(names) + (" folder" if len(names) < 2 else " folders"),
         "studio_ports": " or ".join(f"{port} ({name})" for port, name in ports),
         "checkout_count": {1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)),
@@ -488,14 +491,21 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     return r.returncode == 0
 
 
+def machine_mark() -> str:
+    """Twelve hex characters that tell this machine from another without naming it. The heartbeat is on a public
+    branch, and a device's network name never goes into a tracked file (AGENTS.md "Never"). Until 11 Nov 2026 the
+    heartbeat carried the name itself."""
+    return hashlib.sha256(platform.node().encode()).hexdigest()[:12]
+
+
 def host_observation():
     """Measured host identity/resources; no implied auth, quota or media capability.
 
-    A generic `host=macbook` is retained for old board readers. The machine name
+    A generic `host=macbook` is retained for old board readers. The machine's mark
     must be matched against an independently approved registration before use.
     Missing memory/capability evidence deliberately cannot unlock another lane.
     """
-    return {"machine_name": platform.node(), "architecture": platform.machine(),
+    return {"machine": machine_mark(), "architecture": platform.machine(),
             "on_ac": on_ac_power(), "idle_minutes": idle_minutes(),
             "free_gb": shutil.disk_usage(str(HOME)).free / 1024**3,
             "load": os.getloadavg()[0], "cpu_count": os.cpu_count(),
