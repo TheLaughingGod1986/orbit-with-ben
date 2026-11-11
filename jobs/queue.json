@@ -219609,10 +219609,10 @@
       "stage": "",
       "after": "J2545",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T01:23Z",
+      "eta": "2026-11-11T03:23Z",
       "created_by": "claude",
       "created_at": "2026-11-10T22:59Z",
       "result": "",
@@ -219641,6 +219641,11 @@
           "at": "2026-11-11T01:21Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-11T01:23Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Calibrating full_bleed_frame() on 56 labelled frames and adding whole-Short padding check",
