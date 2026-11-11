@@ -217942,18 +217942,22 @@
           "at": "2026-11-11T02:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T02:51Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Finish the Mini's own checks (items 1-5, 7, 8) in jobs/reviews/J2517/REPORT.md on branch macbook/J2517, and take the private network's device list and addresses out of the report (keep only: Mini on, MacBook on). Then park for the Chief.",
+      "remaining_action": "Collecting read-only Mac mini always-on settings (pmset, login, fdesetup, ssh, tailscale, reboot log, launchd)",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Check the Mac mini is set up to keep running by itself after a power cut or a restart (a report only, nothing is changed)",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-10T16:40Z",
-        "by": "macbook-2",
-        "note": "MacBook item 9 + Tailscale item 6 + launchd plist inventory recorded in PR #750 (jobs/reviews/J2517/REPORT.md)"
+        "at": "2026-11-11T02:51Z",
+        "by": "gemini"
       },
       "mini_only": true
     },
