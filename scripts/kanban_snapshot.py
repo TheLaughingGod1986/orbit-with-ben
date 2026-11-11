@@ -704,13 +704,21 @@ def route_steps(briefs: dict, alljobs: list[dict]) -> dict:
     return out
 
 
-def route_pipeline_stages(pipeline: dict) -> None:
-    """A PIPELINE.json's stages still to do with no owner: the routed worker for the stage's kind (done stages keep
-    their doer)."""
-    for f in pipeline.get("films", []):
+def route_stages(films: list, kinds: dict) -> None:
+    """A film's stages still to do with no owner: the routed worker for the stage's kind (done stages keep their
+    doer). `kinds` is {stage: the kind of job it is}, the channel's own (channels.stage_kinds); a stage whose kind
+    is not named is left alone. It reads either shape of stage record: `status` (one pipeline file for the channel)
+    or `state` (one status file per film)."""
+    for f in films or []:
         for key, st in (f.get("stages") or {}).items():
-            if st.get("status") == "todo" and not st.get("owner") and key in PIPELINE_STAGE_KIND:
-                st["owner"] = routed_who(PIPELINE_STAGE_KIND[key])
+            if isinstance(st, dict) and (st.get("status") or st.get("state")) == "todo" and not st.get("owner") and key in kinds:
+                st["owner"] = routed_who(kinds[key])
+
+
+def route_pipeline_stages(pipeline: dict, kinds: dict | None = None) -> None:
+    """The same for a channel's one pipeline file. Until that channel names its stages' kinds in its own settings,
+    the kinds are the ones this file has always used for it (PIPELINE_STAGE_KIND)."""
+    route_stages(pipeline.get("films", []), kinds or PIPELINE_STAGE_KIND)
 
 
 # ---- Ben's handoffs (Ben, 10 Oct: the card said "Waiting for you" while the For-you box said nothing to check) ----
@@ -1191,10 +1199,11 @@ def main(argv: list[str] | None = None) -> int:
     for slug, doc in documents.items():
         if one_file(slug):
             add_since_pipeline(roots[slug], doc, kept_at(slug))
-            route_pipeline_stages(doc)
+            route_pipeline_stages(doc, channels.stage_kinds(slug))
             store[slug] = {"updatedAt": now, "pipeline": doc}
         else:
             add_since_status(doc, roots[slug], kept_at(slug))
+            route_stages(doc, channels.stage_kinds(slug))     # a channel that names no kinds keeps its cards as they are
             store[slug] = {"updatedAt": now, "films": doc}
     queue_slug = channels.queue_key()  # the document that also carries the studio's queue
     for slug in store:

@@ -30,6 +30,27 @@ class Settings(unittest.TestCase):
         for c in channels.all_channels():
             self.assertEqual(cc.settings_problems(c), [], c["slug"])
 
+    def test_stages_can_be_names_or_objects_with_weights_owners_and_kinds(self):
+        # J2622: a channel that gives each stage its weight, who it goes to and the kind of job it is.
+        full = [{"key": "script", "label": "Script", "weight": 60, "owner": "Grok", "kind": "script"},
+                {"key": "ben_ok", "label": "Ben's OK", "weight": 40, "owner": "Ben"}]
+        for stages in (["script", "edit"], full, [{"key": "script"}, {"key": "edit"}], ["script", {"key": "edit", "kind": "assembly"}]):
+            self.assertEqual(cc.settings_problems(good(stages=stages)), [], stages)
+        self.assertEqual(cc.settings_problems(good(stages="from pipeline")), [])
+
+    def test_a_stage_list_that_cannot_be_read_is_named(self):
+        bad = {
+            "two stages have the same name": ["script", {"key": "script"}],
+            "every stage has one and they add up to 100": [{"key": "a", "weight": 60}, {"key": "b"}],
+            "they add up to 100": [{"key": "a", "weight": 60}, {"key": "b", "weight": 30}],
+            "add up to 100 ": [{"key": "a", "weight": 100}, {"key": "b", "weight": 0}],
+            "a stage's `kind` is the kind of job it is": [{"key": "a", "kind": ""}, {"key": "b"}],
+            "names, or objects with a `key`": [{"label": "No key"}, "edit"],
+        }
+        for says, stages in bad.items():
+            problems = cc.settings_problems(good(stages=stages))
+            self.assertTrue(any(says.strip() in line for line in problems), (says, problems))
+
     def test_each_bad_field_is_named(self):
         cases = {
             "slug": {"slug": "Deep Sea"}, "label": {"label": "sea"}, "name": {"name": " "},

@@ -230,6 +230,31 @@ class RoutedSteps(unittest.TestCase):
         self.assertEqual(st["thumbnails"]["owner"], "Codex")
         self.assertEqual(st["edit"]["owner"], "Cursor")
 
+    def test_a_channel_with_one_status_file_per_film_is_routed_from_its_own_stage_kinds(self):
+        # J2622: the same rule for the other shape of stage record (`state`), with the kinds the channel itself names.
+        films = [{"film": "006", "stages": {"facts": {"state": "done"}, "thumbnails": {"state": "todo"},
+                                            "edit": {"state": "todo", "owner": "Cursor"}, "ben_ok": {"state": "todo"}}}]
+        ks.route_stages(films, {"facts": "facts", "thumbnails": "chart", "edit": "assembly"})
+        st = films[0]["stages"]
+        self.assertNotIn("owner", st["facts"])                       # done: keeps its doer, gets no owner
+        self.assertEqual(st["thumbnails"]["owner"], "Codex")         # to do, nobody has it: the routed worker
+        self.assertEqual(st["edit"]["owner"], "Cursor")              # someone has it: left alone
+        self.assertNotIn("owner", st["ben_ok"])                      # a stage whose kind the channel does not name
+
+    def test_a_channel_that_names_no_kinds_keeps_its_cards_as_they_are(self):
+        films = [{"film": "033", "stages": {"script": {"state": "todo"}, "edit": {"state": "todo"}}}]
+        before = json.dumps(films)
+        ks.route_stages(films, {})
+        self.assertEqual(json.dumps(films), before)
+        ks.route_stages(None, {"script": "script"})                  # a channel with no films yet
+
+    def test_the_one_file_channel_takes_its_kinds_from_its_settings_once_it_names_them(self):
+        hos = {"films": [{"id": "006", "stages": {"thumbnails": {"status": "todo"}, "edit": {"status": "todo"}}}]}
+        ks.route_pipeline_stages(hos, {"edit": "assembly"})          # its own kinds: only `edit` is named
+        st = hos["films"][0]["stages"]
+        self.assertIn("owner", st["edit"])
+        self.assertNotIn("owner", st["thumbnails"])
+
 
 class WeekNumbers(unittest.TestCase):
     """Ben, 14 Oct: the board's tiles show seven days of jobs done and Mini idle, today last."""
