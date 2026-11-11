@@ -219704,20 +219704,37 @@
           "at": "2026-11-11T00:35Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Plan set (4 steps): 1) audit Mini inputs & NAS ls, 2) rsync -a to studio-live, 3) sha256/size verify, 4) PR COPIED.md & park for Chief"
+        },
+        {
+          "at": "2026-11-11T00:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Audit complete: found j2452 timings on MiniWork, heic1502a on Mini, 021 v03f + 023 VO/bed + 026 bed + 027 webm in mac-mini-archive dated dirs, and 024/025/026 VO stems materializing from OWB UAT"
         }
       ],
-      "remaining_action": "Locate all named sleep-video inputs on the Mini and check NAS reachability and total copy size",
+      "remaining_action": "rsync -a located sleep-video inputs and j2452 timings to studio-live",
       "due": "2026-11-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Copy the files the sleep video still needs from the Mac mini to the shared drive, so the MacBook can build it",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T00:35Z",
+        "at": "2026-11-11T00:51Z",
         "by": "gemini",
-        "note": "Plan set (4 steps): 1) audit Mini inputs & NAS ls, 2) rsync -a to studio-live, 3) sha256/size verify, 4) PR COPIED.md & "
-      }
+        "note": "Audit complete: found j2452 timings on MiniWork, heic1502a on Mini, 021 v03f + 023 VO/bed + 026 bed + 027 webm in mac-mi"
+      },
+      "taskKeys": [
+        "OWB:013",
+        "OWB:019",
+        "OWB:020",
+        "OWB:021",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:006"
+      ]
     }
   ],
   "focus": [
