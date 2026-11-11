@@ -1,0 +1,26 @@
+{
+  "status": "PRESERVED_NOT_ADOPTED",
+  "candidates": [
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_original_sources_v01/orion_sky_crop.mp4",
+      "reason": "Native cropped sky at sleep brightness fails low detail and near-black."
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_original_sources_v01/orion_sky_exposure.mp4",
+      "reason": "Midpoint pixel gate passes with warning but framing clips M42; not adopted."
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/orion_source_repair_v02/orion_source_repair.mp4",
+      "reason": "Five-point visual sheet shows telescope/rail sweeps into crop and obscures M42; rejected despite midpoint gate PASS."
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/orion_source_repair_v03/orion_source_repair.mp4",
+      "reason": "Unneeded 10 percent retime; original alternate is 6.8 seconds, enough at native speed."
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/orion_source_repair_v04/orion_source_repair.mp4",
+      "reason": "Native alternate with sleep darkening fails near-black/absolute low-detail. v05 uses modest 1.2x source exposure before required 0.85 sleep factor."
+    }
+  ],
+  "no_deletions": true
+}
