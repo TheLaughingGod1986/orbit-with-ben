@@ -1,0 +1,345 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "scratch/public_proxima_v05/026_proxima_undarkened_v05.mp4",
+  "sha256": "ae5c675a2414209e2f114f20487a583f0878cbab9c79fdfd65761c8b39b2ba63",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 42426000,
+        "duration": "471.400000",
+        "bit_rate": "5241235",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "14142",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 22627200,
+        "duration": "471.400000",
+        "bit_rate": "190528",
+        "nb_frames": "22098",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "scratch/public_proxima_v05/026_proxima_undarkened_v05.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "471.400000",
+      "size": "320584871",
+      "bit_rate": "5440557",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 14142,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-66",
+      "cut": 33,
+      "t": 67.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 21.63, p95 63.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 79.3
+    },
+    {
+      "row": "pixel-68",
+      "cut": 34,
+      "t": 69.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 20.84, p95 63.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 81.3
+    },
+    {
+      "row": "pixel-276",
+      "cut": 138,
+      "t": 277.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 10.19, p95 82.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 296.9
+    },
+    {
+      "row": "pixel-278",
+      "cut": 139,
+      "t": 279.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 10.55, p95 88.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 298.9
+    },
+    {
+      "row": "pixel-310",
+      "cut": 155,
+      "t": 311.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 21.8, p95 92.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 330.9
+    },
+    {
+      "row": "pixel-336",
+      "cut": 168,
+      "t": 337.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 25.72, p95 76.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 356.9
+    },
+    {
+      "row": "pixel-338",
+      "cut": 169,
+      "t": 339.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 25.73, p95 76.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 358.9
+    },
+    {
+      "row": "pixel-340",
+      "cut": 170,
+      "t": 341.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 22.92, p95 69.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 360.9
+    },
+    {
+      "row": "pixel-342",
+      "cut": 171,
+      "t": 343.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "noise: grain 8.19 over structure 11.42, 8x-downscaled std 12.53 < 13.44 and edge 0.0233 < 0.0259"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 362.9
+    },
+    {
+      "row": "pixel-388",
+      "cut": 194,
+      "t": 389.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 18.57, p95 79.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 408.9
+    },
+    {
+      "row": "pixel-390",
+      "cut": 195,
+      "t": 391.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 24.47, p95 96.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 410.9
+    },
+    {
+      "row": "pixel-392",
+      "cut": 196,
+      "t": 393.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 17.39, p95 73.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 412.9
+    },
+    {
+      "row": "pixel-394",
+      "cut": 197,
+      "t": 395.0,
+      "source": "026_NearestStar_v06_cfr18.mp4",
+      "why": [
+        "near-black: mean 17.26, p95 78.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 414.9
+    }
+  ],
+  "levels": {
+    "input_i": "-20.72",
+    "input_tp": "-6.54",
+    "input_lra": "3.00",
+    "input_thresh": "-31.15",
+    "output_i": "-20.05",
+    "output_tp": "-6.00",
+    "output_lra": "2.90",
+    "output_thresh": "-30.48",
+    "normalization_type": "dynamic",
+    "target_offset": "0.05"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 434.0,
+      "end_s": 436.0,
+      "mean_luma": 171.5595920138889,
+      "frame": "scratch/public_proxima_v05/brightest_01.jpg"
+    },
+    {
+      "start_s": 420.0,
+      "end_s": 422.0,
+      "mean_luma": 166.55044270833332,
+      "frame": "scratch/public_proxima_v05/brightest_02.jpg"
+    },
+    {
+      "start_s": 180.0,
+      "end_s": 182.0,
+      "mean_luma": 164.06838541666667,
+      "frame": "scratch/public_proxima_v05/brightest_03.jpg"
+    },
+    {
+      "start_s": 418.0,
+      "end_s": 420.0,
+      "mean_luma": 163.1882204861111,
+      "frame": "scratch/public_proxima_v05/brightest_04.jpg"
+    },
+    {
+      "start_s": 432.0,
+      "end_s": 434.0,
+      "mean_luma": 157.9525954861111,
+      "frame": "scratch/public_proxima_v05/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}
