@@ -1,0 +1,253 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/013_moon_undarkened_v03.mp4",
+  "sha256": "cb7edd7482e8d2b8c2980d6521ace15033c96d844aa596acd32331a46b76d994",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 39627000,
+        "duration": "440.300000",
+        "bit_rate": "6710363",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "13209",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 21133920,
+        "duration": "440.290000",
+        "bit_rate": "189783",
+        "nb_frames": "20640",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/013_moon_undarkened_v03.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "440.300000",
+      "size": "380246376",
+      "bit_rate": "6908859",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 13209,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-36",
+      "cut": 18,
+      "t": 37.0,
+      "source": "MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+      "why": [
+        "split panel: horizontal seam at 0.5"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 65.62625
+    },
+    {
+      "row": "pixel-40",
+      "cut": 20,
+      "t": 41.0,
+      "source": "MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+      "why": [
+        "split panel: horizontal seam at 0.259"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 69.62625
+    },
+    {
+      "row": "pixel-164",
+      "cut": 82,
+      "t": 165.0,
+      "source": "MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+      "why": [
+        "near-black: mean 17.82, p95 104.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 199.57875
+    },
+    {
+      "row": "pixel-166",
+      "cut": 83,
+      "t": 167.0,
+      "source": "MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+      "why": [
+        "near-black: mean 23.85, p95 123.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 201.57875
+    },
+    {
+      "row": "pixel-214",
+      "cut": 107,
+      "t": 215.0,
+      "source": "MOON_LEAVING_FULL_v04_WATCH_THIS.mp4",
+      "why": [
+        "near-black: mean 25.65, p95 130.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 255.57300000000004
+    }
+  ],
+  "levels": {
+    "input_i": "-20.33",
+    "input_tp": "-8.98",
+    "input_lra": "3.10",
+    "input_thresh": "-30.76",
+    "output_i": "-19.90",
+    "output_tp": "-6.82",
+    "output_lra": "3.00",
+    "output_thresh": "-30.32",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.10"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 318.0,
+      "end_s": 320.0,
+      "mean_luma": 137.94824652777777,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/brightest_01.jpg"
+    },
+    {
+      "start_s": 340.0,
+      "end_s": 342.0,
+      "mean_luma": 134.85873263888888,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/brightest_02.jpg"
+    },
+    {
+      "start_s": 364.0,
+      "end_s": 366.0,
+      "mean_luma": 133.69448784722223,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/brightest_03.jpg"
+    },
+    {
+      "start_s": 320.0,
+      "end_s": 322.0,
+      "mean_luma": 133.29571180555556,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/brightest_04.jpg"
+    },
+    {
+      "start_s": 56.0,
+      "end_s": 58.0,
+      "mean_luma": 125.26859375,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_moon_v06/brightest_05.jpg"
+    }
+  ],
+  "darkening": "Not active in chapter 1; the undarkened saved file is the delivered file. No brightness change or frame-count change.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Read back the saved Moon candidate, normal gates and brightest windows."""
+import argparse
 import hashlib
 import json
 import re
@@ -11,6 +12,10 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[3]
 OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_moon_v04')
 def main():
+    global OUT
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--out',type=Path,default=OUT)
+    OUT=parser.parse_args().out
     build=json.loads((OUT/'BUILD.json').read_text()); video=build['output']
     full=json.loads((OUT/'full_pixel_cuts.json').read_text())
     if full[-1]['timeline_out'] < build['duration_s']:
@@ -42,7 +47,8 @@ def main():
     levels=sp.run(['ffmpeg','-v','info','-i',video,'-vn','-af','loudnorm=I=-20:TP=-6:LRA=7:print_format=json','-f','null','-'],capture_output=True,text=True,timeout=180)
     text=levels.stderr; levels=json.loads(text[text.rfind('{'):text.rfind('}')+1])
     # Whole-video luminance scan at 4 fps; rank non-overlapping 2 s windows.
-    scan=sp.run(['ffmpeg','-v','info','-i',video,'-an','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
+    scan=sp.run(['ffmpeg','-v','info','-xerror','-reinit_filter','0','-i',video,'-an','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
+    (OUT/'decode_scan.log').write_bytes(scan.stderr)
     raw=scan.stdout
     decoded=[int(x) for x in re.findall(r'\bn:\s*(\d+)\s+pts:',scan.stderr.decode(errors='replace'))]
     if not decoded or max(decoded)+1 != build['expected_frames']: raise ValueError(('decoded frame count',max(decoded)+1 if decoded else None,build['expected_frames']))
