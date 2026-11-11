@@ -219631,19 +219631,22 @@
           "at": "2026-11-11T00:56Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T00:57Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
+      "remaining_action": "Calibrating full_bleed_frame() on 56 labelled frames and adding whole-Short padding check",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
       "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T00:56Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-11T00:57Z",
+        "by": "macbook-2"
       }
     },
     {
