@@ -226926,13 +226926,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T14:36Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "parked for Chief: PR #823 open, ready to review, not merged. Written by macbook-2 (run ended without parking); this run merged main into it (ratchet conflict; home_total now 17 to 5, the 12 lines of the five scripts at 0), head 95c99a70d, mergeable, Rules check green. On the merged branch: 1,188 script tests pass, sync_rules OK, core_sync OK, studio.py status --check OK. Not done: apply_yellow_white_v04_thumbs.py left in place because _set_j0216_covers.py imports it; Chief's call.",
+      "result": "Reviewed and merged by the elected Chief: #823 (main 47a2d664). jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py no longer assume the studio lives inside one channel's repo (12 lines to 0; the second count is 5). CI green; today's values are unchanged (the board channel and its film folder are what they were). Left by the MacBook for the Chief: apply_yellow_white_v04_thumbs.py (3 lines), which is still imported by one audit script and named in the playbook. It goes with J2621.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226958,6 +226958,11 @@
           "at": "2026-11-11T14:43Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #823 open, ready to review, not merged. Written by macbook-2 (run ended without parking); this run merged main into it (ratchet conflict; home_total now 17 to 5, the 12 lines of the five scripts at 0), head 95c99a70d, mergeable, Rules check green. On the merged branch: 1,188 script tests pass, sync_rules OK, core_sync OK, studio.py status --check OK. Not done: apply_yellow_white_v04_thumbs.py left in place because _set_j0216_covers.py imports it; Chief's call."
+        },
+        {
+          "at": "2026-11-11T14:47Z",
+          "by": "claude",
+          "what": "done: Reviewed and merged by the elected Chief: #823 (main 47a2d664). jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py no longer assume the studio lives inside one channel's repo (12 lines to 0; the second count is 5). CI green; today's values are unchanged (the board channel and its film folder are what they were). Left by the MacBook for the Chief: apply_yellow_white_v04_thumbs.py (3 lines), which is still imported by one audit script and named in the playbook. It goes with J2621."
         }
       ],
       "remaining_action": "Five engine scripts read channel content through channels.py; one old one-off script is archived",
@@ -226971,7 +226976,8 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/823"
     },
     {
       "id": "J2620",
@@ -227008,7 +227014,7 @@
       "title": "Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout",
       "needs": "cloud",
       "repo": "owb",
-      "body": "Two of the dry run's groups, after the second count is at zero. (1) \"The list of channels still needs one of them to be the studio's home\": `scripts/channels.py` insists exactly one channel is `home` (plan decision 1: no home channel). Make it optional: with none, the studio's root holds no channel content and every channel is read through its checkout. Today's layout, with Orbit as home, must keep working unchanged until the move. (2) \"Tests that fail once the studio and the channels are apart\": 14 tests in `test_channel_cards.py`, `test_channel_check.py`, `test_channels.py`, `test_email_ratchet.py`, `test_no_private_network.py`, `test_studio.py` and `test_studio_split.py`. `HOS_REPO=<checkout> python3 scripts/studio_split.py --json out.json` builds the new layout and names each; make them pass there and here.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nChecks: every `scripts/test_*.py`, the three repo checks, and the dry run's `registry` and `tests` groups at 0. One pull request. No real money.",
+      "body": "**Added 11 Nov 14:47Z (from J2619, #823).** `apply_yellow_white_v04_thumbs.py` still has 3 lines that build a path from the studio's root into a film folder. Do not archive it: `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/_set_j0216_covers.py` imports it and `STUDIO_PLAYBOOK.md` names it as the pattern to copy. Make it take the film folder from `channels.films_dir(...)` (added in #823). After that the second count is `chief_relay.py`'s 2 lines only, which J2618 owns.\n\nTwo of the dry run's groups, after the second count is at zero. (1) \"The list of channels still needs one of them to be the studio's home\": `scripts/channels.py` insists exactly one channel is `home` (plan decision 1: no home channel). Make it optional: with none, the studio's root holds no channel content and every channel is read through its checkout. Today's layout, with Orbit as home, must keep working unchanged until the move. (2) \"Tests that fail once the studio and the channels are apart\": 14 tests in `test_channel_cards.py`, `test_channel_check.py`, `test_channels.py`, `test_email_ratchet.py`, `test_no_private_network.py`, `test_studio.py` and `test_studio_split.py`. `HOS_REPO=<checkout> python3 scripts/studio_split.py --json out.json` builds the new layout and names each; make them pass there and here.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nChecks: every `scripts/test_*.py`, the three repo checks, and the dry run's `registry` and `tests` groups at 0. One pull request. No real money.",
       "ref": "docs/MULTI_CHANNEL_PLAN.md",
       "film": "",
       "stage": "",
@@ -227026,6 +227032,11 @@
           "at": "2026-11-11T13:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T14:47Z",
+          "by": "claude",
+          "what": "elected Chief: the one script J2619 left (apply_yellow_white_v04_thumbs.py, 3 lines) is added to this job, with how to do it."
         }
       ],
       "remaining_action": "channels.py stops requiring a home channel; the dry run's failing tests pass with the studio on its own",
