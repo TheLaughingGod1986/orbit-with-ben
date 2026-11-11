@@ -227638,6 +227638,11 @@
           "at": "2026-11-11T18:41Z",
           "by": "claude",
           "what": "step 1 of 4 done: Converter written and tested on a local branch: PIPELINE.json becomes 15 status files plus the channel's own part and comes back unchanged. A trial board built from those files matches today's for Orbit and differs for 14 History of Science films (stage owners, three watch links), so the studio's reader needs work before the switch. Nothing pushed or changed on either repo"
+        },
+        {
+          "at": "2026-11-11T19:06Z",
+          "by": "claude",
+          "what": "step 2 of 4 done: Both halves are written on local branches and tested. The studio now reads a channel with one status file per film exactly as it reads one pipeline file, with that channel's own stage weights, owners and kinds; this changes nothing for either channel today. History of Science's side converts its one file into 15, moves its stage list into its settings and stops keeping its two built pages. A trial board from the converted copy matches today's except that three films gain a link to their own upload. Nothing is pushed: the studio's half follows #833 after the window, then History of Science's goes to Grok"
         }
       ],
       "remaining_action": "A converter and a pull request on history-of-science for Grok: one status file per film; the board is built by the studio",
@@ -227645,11 +227650,11 @@
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T18:41Z",
+        "at": "2026-11-11T19:06Z",
         "by": "claude",
-        "note": "Converter written and tested on a local branch: PIPELINE.json becomes 15 status files plus the channel's own part and co"
+        "note": "Both halves are written on local branches and tested. The studio now reads a channel with one status file per film exact"
       }
     },
     {
