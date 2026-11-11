@@ -10,12 +10,25 @@ OUT=b.OUT.with_name('public_andromeda_dark_v01')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def scan(p):
- # Measure brightness in decoded Y, whose legal black is 16. The implicit
- # YUV-to-gray conversion produced different ratios on near-dark pictures.
- # Extracting Y first makes the physical quantity and black offset explicit.
- r=sp.run(['ffmpeg','-v','info','-xerror','-threads','4','-i',str(p),'-an','-filter_threads','2','-vf','showinfo,fps=4,extractplanes=y,scale=160:90:flags=area','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
- n=[int(x) for x in re.findall(rb'\bn:\s*(\d+)\s+pts:',r.stderr)]
- return np.maximum(np.frombuffer(r.stdout,np.uint8).reshape(-1,90,160).astype(np.float64)-16,0),max(n)+1
+ # Read native decoded Y before averaging: 8-bit resizing rounds near-black
+ # values and can change a two-second ratio by several percentage points.
+ log=OUT/(Path(p).stem+'_native_decode.log')
+ values=[]; frame_bytes=1920*1080
+ weights=np.maximum(np.arange(256,dtype=np.float64)-16,0)
+ with log.open('wb') as err:
+  proc=sp.Popen(['ffmpeg','-v','info','-xerror','-threads','4','-i',str(p),'-an','-filter_threads','2','-vf','showinfo,fps=4,extractplanes=y','-f','rawvideo','-'],stdout=sp.PIPE,stderr=err)
+  try:
+   while True:
+    raw=proc.stdout.read(frame_bytes)
+    if not raw:break
+    assert len(raw)==frame_bytes, 'Truncated native luma frame'
+    counts=np.bincount(np.frombuffer(raw,np.uint8),minlength=256)
+    values.append(float(counts@weights/frame_bytes))
+   assert proc.wait(timeout=30)==0,log
+  finally:
+   if proc.poll() is None:proc.kill();proc.wait()
+ n=[int(x) for x in re.findall(rb'\bn:\s*(\d+)\s+pts:',log.read_bytes())]
+ return np.asarray(values).reshape(-1,1,1),max(n)+1
 
 def main(verify_existing=False):
  build=json.loads((SRC/'BUILD.json').read_text());read=json.loads((SRC/'READBACK.json').read_text())
@@ -32,9 +45,12 @@ def main(verify_existing=False):
  start=sum(r['build']['duration_s']+4 for r in records)
  assert start>=1230,start
  video=OUT/'019_andromeda_darkened_v01.mp4'
- vf='format=yuv420p10le,lut=y=(val-64)*0.85+64+0.5:u=(val-512)*0.85+512:v=(val-512)*0.85+512,format=yuv420p'
+ # Ordered spatial rounding preserves the fractional 0.85 luma change
+ # without a uniform rounding bias; lossless encoding preserves the result.
+ vf=r'geq=lum=floor((lum(X\,Y)-16)*0.85+16+mod(X+Y\,20)/20):cb=(cb(X\,Y)-128)*0.85+128:cr=(cr(X\,Y)-128)*0.85+128'
  if not verify_existing:
-  b.run(['-threads','4','-i',build['output'],'-filter_threads','2','-vf',vf,'-map','0:v','-map','0:a','-frames:v',str(build['expected_frames']),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','copy',str(video)])
+  from render_andromeda_lut import main as render
+  render()
  before,n0=scan(build['output']);after,n1=scan(video)
  assert n0==n1==build['expected_frames'],(n0,n1)
  assert before.shape==after.shape
@@ -65,7 +81,7 @@ def main(verify_existing=False):
   if not frame.exists():sp.run(['ffmpeg','-v','error','-n','-ss',str(w['start_s']+1),'-i',str(video),'-frames:v','1',str(frame)],check=True)
   im=Image.open(frame).convert('RGB');im.thumbnail((480,270));sheet.paste(im,(0,i*294));d.text((490,i*294+12),f"{w['start_s']:.2f}-{w['end_s']:.2f}s\nMean luma {w['mean_luma']:.2f}",fill='white');w['frame']=str(frame)
  sheet.save(OUT/'BRIGHTEST_WINDOWS.jpg',quality=90)
- report=dict(status='DARKENED_CHAPTER_VERIFIED_NOT_FINAL_COMPILATION',output=str(video),sha256=sha(video),source_undarkened=str(SRC),source_sha256=build['sha256'],compilation_start_s=start,frames_before=n0,frames_after=n1,probe=probe,post_2030_brightness_ratio=ratio,target_ratio=.85,tolerance=.02,post_2030_two_second_measurements=windows,brightest_two_second_windows=bright,grade=vf,brightness_measurement='Decoded legal-range Y plane, black 16 subtracted and clipped at zero; area downsample at 4 fps. Avoids chroma-dependent YUV-to-gray conversion.',timed_grade_two_second_measurements=ramp_checks,undarkened_build=build,undarkened_readback=read,remaining='NAS save and destination hashes; final continuous bed, full-film loudness/peak/silence/CTA/join checks, reel and Ben watch card. Public-source charts and labels retained; dissolves only on compilation edits.')
+ report=dict(status='DARKENED_CHAPTER_VERIFIED_NOT_FINAL_COMPILATION',output=str(video),sha256=sha(video),source_undarkened=str(SRC),source_sha256=build['sha256'],compilation_start_s=start,frames_before=n0,frames_after=n1,probe=probe,post_2030_brightness_ratio=ratio,target_ratio=.85,tolerance=.02,post_2030_two_second_measurements=windows,brightest_two_second_windows=bright,grade=vf,brightness_measurement='Decoded legal-range Y plane, black 16 subtracted and clipped at zero; native 1920x1080 pixels averaged at 4 fps, with no spatial resizing or intermediate quantization. Avoids chroma-dependent YUV-to-gray conversion.',timed_grade_two_second_measurements=ramp_checks,undarkened_build=build,undarkened_readback=read,remaining='NAS save and destination hashes; final continuous bed, full-film loudness/peak/silence/CTA/join checks, reel and Ben watch card. Public-source charts and labels retained; dissolves only on compilation edits.')
  (OUT/'DARKEN_READBACK.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:report[k] for k in ['output','sha256','frames_after','post_2030_brightness_ratio']},indent=2))
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--verify-existing',action='store_true')
