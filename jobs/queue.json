@@ -214006,7 +214006,7 @@
     {
       "id": "J2456",
       "title": "Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676)",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "Acting Chief, 11 Nov 07:32Z: no critique was written in 32 hours because the draft images were on the MacBook only. J2567 copies them into the repo (05_Analytics/weekly_thumb_audit/OWB/2026-11-09_evidence/designs/); the three critiques follow. Decide 24 hours after J2567 is done with whatever critiques are in. Cursor is out of credit until 9 Dec, so two critiques may be all there is. Check the Moon hook's fact yourself: total solar eclipses end, annular and lunar ones do not.\n\n**Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676).** Read the three critiques in `05_Analytics/tests/panels/owb-j2374-weekly-2026-11-09/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -214056,19 +214056,15 @@
           "at": "2026-11-11T12:52Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T12:56Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN",
-      "kind": "review",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "kind": "review"
     },
     {
       "id": "J2457",
