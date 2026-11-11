@@ -213455,10 +213455,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T20:51Z",
+      "eta": "2026-11-12T00:51Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214542,6 +214542,11 @@
           "at": "2026-11-11T20:47Z",
           "by": "macbook",
           "what": "released: Proxima locally verified: 14142 frames, 471.4s, edit QA PASS, all 235 native darkening windows pass. PR #789 updated. NAS save stopped at bounded run limit before destination hash/CHAPTER.json; progress stays 11/15. Resume save_public_proxima.py first, verify complete existing prefix and destination hash; no re-render. OWB restored main; HOS untouched main. All launched processes exited."
+        },
+        {
+          "at": "2026-11-11T20:51Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Proxima chapter verified locally; completing or checkpointing its NAS copy before Andromeda and final compilation checks",
