@@ -116,7 +116,8 @@ The job is already claimed for you: {job}
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
-   with gh; say the PR number in the result. Then switch every checkout you touched back to main
+   with gh; say the PR number in the result. Never merge, approve or close a PR, and never push to main: merges are
+   the Chief's (AGENTS.md), so a brief that says "merge" stops at the open PR and says so. Then switch every checkout you touched back to main
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
    {bens_folders} must always be left on main.
 4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
@@ -399,6 +400,25 @@ CLAUDE_ALLOWED_TOOLS = (
 )
 
 
+# Refused outright, whatever a brief says: no run waits for an approval that cannot come, and none can be talked into
+# it (J2600, from the draft #666 of 9 Nov 2026). Merging, approving and closing a PR are the Chief's, main is pushed to
+# only by the queue's own Python (`jobs.py ... --git`, which is not a shell `git push`), and a forced push rewrites
+# what a reviewer has already read. These match by how the command starts, so they stop the usual forms; the brief's
+# own line is what forbids the rest.
+CLAUDE_DENIED_TOOLS = (
+    "Bash(gh pr merge:*)",
+    "Bash(gh pr review:*)",
+    "Bash(gh pr close:*)",
+    "Bash(gh pr ready:*)",
+    "Bash(gh api:*)",
+    "Bash(git push origin main:*)",
+    "Bash(git push -u origin main:*)",
+    "Bash(git push --force:*)",
+    "Bash(git push -f:*)",
+    "Bash(git push --force-with-lease:*)",
+)
+
+
 def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     """The agent CLI's one-shot form, as the Mini runs it (scripts/chief_relay.py cli_spec)."""
     b = find_bin(agent) if agent in BINS else None
@@ -415,7 +435,7 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
         # ("Input must be provided ... when using --print", 5 Nov 2026: every MacBook job given to Claude failed).
         return [b, "-p", prompt, "--permission-mode", "acceptEdits", "--allowedTools", ",".join(CLAUDE_ALLOWED_TOOLS),
-                *dirs]
+                "--disallowedTools", ",".join(CLAUDE_DENIED_TOOLS), *dirs]
     import routing
     cm = routing.cli_model(model) if model and routing.RUNS_ON.get(model) == agent else ""
     if agent == "gemini":  # Antigravity agy: -p must come last, straight before the prompt (chief_relay note, 14 Oct)

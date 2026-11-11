@@ -7,6 +7,7 @@ no text/logos/people. KEEP it if clean.
 """
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import os
@@ -24,8 +25,18 @@ OUT = HERE.parent / "04_Generated-Clips/01_Raw/veo_v01"
 SHEETS = OUT / "sheets"
 REPORT = HERE / "flow_gen_report_11_17_v01.json"
 CDP = os.environ.get("ORBIT_FLOW_CDP", "http://127.0.0.1:9222")
-REQUIRED = "benoats@googlemail.com"
-FORBIDDEN = "benoats86@gmail.com"
+# The studio Ultra account, by fingerprint: no address sits in a tracked file (AGENTS.md Never list, J2537).
+REQUIRED_SHA256 = "81a01c9d841483f444008cd69e98b26019e032ed75b5e33e17409a76c6525ce9"
+ACCOUNT_NAME = "the studio Ultra account"
+
+
+def is_required(account) -> bool:
+    return hashlib.sha256((account or "").strip().lower().encode()).hexdigest() == REQUIRED_SHA256
+
+
+def account_name(account) -> str:
+    """What a report may say about the signed-in account: its role, never its address."""
+    return ACCOUNT_NAME if is_required(account) else "not the studio Ultra account"
 COST = 10
 BUFFER = 3000
 
@@ -87,9 +98,9 @@ def main() -> int:
         browser = pw.chromium.connect_over_cdp(CDP)
         page = mint006.flow_page(browser, flow)
         credits, account = mint006.read_account(page)
-        print(f"GATE account={account} credits={credits}", flush=True)
-        if account != REQUIRED or (account and FORBIDDEN in account):
-            raise SystemExit(f"STOP wrong Flow account: {account}")
+        print(f"GATE account={account_name(account)} credits={credits}", flush=True)
+        if not is_required(account):
+            raise SystemExit(f"STOP wrong Flow account: {account_name(account)}")
         if credits is None or credits - COST < BUFFER:
             raise SystemExit(f"STOP gate: credits={credits} cost={COST} buffer={BUFFER}")
         if mint006.UNPAID_RE.search(mint006.body_text(page)):
@@ -155,7 +166,7 @@ def main() -> int:
             "credits_after": after,
             "credits_used": used,
             "credits_ui_drop": ui_drop,
-            "account": account,
+            "account": account_name(account),
             "finished_at": now(),
         }
         report["rows"].append(entry)

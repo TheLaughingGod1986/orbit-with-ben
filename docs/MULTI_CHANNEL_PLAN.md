@@ -88,9 +88,9 @@ queued as jobs with ceilings that can only fall:
 | 1, now | Small scripts stop naming a channel (62 of 327 lines) and stop assuming the studio lives in one channel's repo (13 of 40) | J2521, J2522, J2523 (MacBook). In on 10 Nov: 327 to 285 and 40 to 27. What J2522 left is J2533 |
 | 1, now | The dry run of the move, run daily: one number for what still stops it | J2524 (cloud) |
 | 1, now | `video_tracker.py`, `macbook_worker.py`; the rule book split | J2525, J2526, J2527 (cloud) |
-| 2 | The four scripts that run the live studio, one change each: `board_publish.py`, `approved_deliver.py`, `kanban_snapshot.py`, `chief_relay.py` (203 lines) | queued as wave 1 merges |
-| 2 | The rest of the second count (`jobs.py`, `workflow_state.py`, `workflow_handoffs.py`, `studio.py`, `routing.py`) | queued as wave 1 merges |
-| 3 | History of Science to per-film status files; its own `studio/RULES.md` | after the rule book split |
+| 2, now | The four scripts that run the live studio, one change each: `board_publish.py`, `approved_deliver.py`, `kanban_snapshot.py`, `chief_relay.py` (203 lines) | Queued 11 Nov: J2615, J2616 (MacBook), J2617, J2618 (cloud). `board_publish.py` (J2615), `kanban_snapshot.py` (J2617) and `approved_deliver.py` (J2616) are in: 222 to 98 |
+| 2, now | The rest of the second count (`jobs.py`, `workflow_state.py`, `workflow_handoffs.py`, `studio.py`, `routing.py`); the studio's own name; no home channel and the 14 tests | J2619 is in (11 Nov): 20 to 5. J2620, J2621 (cloud) queued 11 Nov |
+| 3 | History of Science to per-film status files; its own `studio/RULES.md` | The rule book is in (J2578, 11 Nov). Status files: J2622, not before Thu 12 Nov 19:13 London |
 | 3 | Ready for private (Ben said private on 10 Nov): check minutes, and the board reading through its own server | J2531, J2532 (queued 10 Nov) |
 | 4 | A week in which the dry run passes every day, then the move in one planned window | Chief, with Ben told the day before |
 

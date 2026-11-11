@@ -436,6 +436,64 @@ class NoHomeChannelInTheScripts(unittest.TestCase):
             self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
 
 
+class StudioRootHoldsNoChannelContent(unittest.TestCase):
+    """J2619: jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py take a film's folder and a
+    job's channel from the loader, so they still work when the studio's own root holds no channel content."""
+
+    def test_today_nothing_moves(self):
+        import studio
+        root = HERE.parent
+        self.assertEqual(channels.board_channel(), "owb")
+        self.assertEqual(channels.films_dir("owb"), root / "02_Video-Projects")
+        self.assertEqual(studio.FILMS, root / "02_Video-Projects")
+        self.assertEqual(studio._board_name(), channels.name("owb"))
+
+    def test_the_board_reads_films_from_the_channels_checkout_not_the_studios_root(self):
+        import datetime as dt
+        import jobs
+        import studio
+        import workflow_handoffs as handoffs
+        with tempfile.TemporaryDirectory() as t:
+            engine = pathlib.Path(t) / "studio-engine"          # the studio's own repo: scripts and jobs, no films
+            (engine / "scripts").mkdir(parents=True)
+            (engine / "jobs").mkdir()
+            channel = pathlib.Path(t) / "channel-checkout"      # the channel's repo, somewhere else
+            film = channel / "02_Video-Projects" / "033_Uranus"
+            film.mkdir(parents=True)
+            (film / "status.json").write_text(json.dumps(
+                {"film": "033", "title": "Uranus", "air": "", "stages": {}, "claims": [], "next": ""}))
+            self.assertFalse(any((engine / d).exists() for d in ("00_Brand", "02_Video-Projects", "05_Analytics")))
+            with mock.patch.object(channels, "ROOT", engine), \
+                    mock.patch.object(channels, "checkout", lambda slug: channel if slug == "owb" else None):
+                films = studio._films()
+                self.assertEqual(films, channel / "02_Video-Projects")
+                with mock.patch.object(studio, "FILMS", films):
+                    at = dt.datetime(2026, 11, 11, 15, 0, tzinfo=dt.timezone.utc)
+                    job = {"id": "J1", "film": "033", "stage": "edit", "repo": "owb", "eta": "2026-11-11T16:00Z",
+                           "title": "edit"}
+                    self.assertTrue(jobs.on_board(job))
+                    self.assertEqual(jobs.film_status_path(job), film / "status.json")
+                    self.assertIsNone(jobs.board_claim(job, "cursor", at))
+                    claims = json.loads((film / "status.json").read_text())["claims"]
+                    self.assertEqual([(c["stage"], c["by"]) for c in claims], [("edit", "cursor")])
+                    self.assertEqual([f for f, _ in handoffs.records(studio.FILMS)], ["033"])
+                    self.assertIn("033", studio.render_md(studio.FILMS))
+
+    def test_a_job_that_names_no_channel_is_still_the_default_channels(self):
+        import jobs
+        import routing
+        import workflow_handoffs as handoffs
+        self.assertTrue(jobs.on_board({"film": "033"}))                      # an old row with no repo
+        self.assertFalse(jobs.on_board({"film": "013", "repo": "hos"}))      # keeps its films another way
+        self.assertFalse(jobs.on_board({"film": "", "repo": "owb"}))
+        self.assertEqual(routing._picture_route({}), routing._picture_route({"repo": channels.default()}))
+        with tempfile.TemporaryDirectory() as t:
+            wip = pathlib.Path(t) / "WIP.json"
+            line = channels.wip_line(channels.board_channel())
+            wip.write_text(json.dumps({line: ["OWB:041", "HOS:020"]}))
+            self.assertEqual(handoffs.waiting_films(wip), {"041"})
+
+
 class RuleFiles(unittest.TestCase):
     """J2577: the rule book is two files since J2527. Prompts ask here what to call them for a checkout."""
 
@@ -470,6 +528,60 @@ class NoNewChannelNames(unittest.TestCase):
             text = (HERE / name).read_text()
             self.assertIsNone(re.search(r"HOS\|OWB|OWB\|HOS", text), name)
             self.assertNotRegex(text, r'"HOS" if [^\n]*"hos"', name)
+
+
+class DeliveryAsksTheLoader(unittest.TestCase):
+    """J2616: approved_deliver.py names no channel. The publishing slots and the TikTok rule it held by the two
+    channels' names are each channel's own settings now."""
+
+    def sky(self, **extra):
+        base = channels._load()
+        sky = {k: v for k, v in json.loads(_file("owb").read_text()).items() if k not in ("cadence", "social", "shorts")}
+        sky.update(slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
+                   repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        sky.update(extra)
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_locked_slots_are_the_ones_ben_set_on_7_nov_2026(self):
+        # The table that was in approved_deliver.py until 11 Nov 2026, number for number: (weekday, hour, minute),
+        # Mon=0 … Sun=6, London time, in the order they are filled. Changing a channel's days is Ben's call.
+        self.assertEqual(channels.cadence("owb"), {"long": [(6, 18, 0), (2, 18, 0)],                        # Sun, Wed 18:00
+                                                   "short": [(0, 11, 30), (2, 11, 30), (4, 11, 30), (5, 11, 30)]})  # Mon Wed Fri Sat
+        self.assertEqual(channels.cadence("hos"), {"long": [(3, 18, 0)],                                    # Thu 18:00
+                                                   "short": [(5, 11, 30), (4, 11, 30), (6, 11, 30), (1, 11, 30)]})  # Sat Fri Sun Tue
+        self.assertEqual((channels.tiktok_by_buffer("owb"), channels.tiktok_by_buffer("hos")), (False, True))
+
+    def test_a_third_channel_has_its_own_slots_or_none(self):
+        with self.sky(cadence={"long": ["Fri 17:05"], "short": ["Tue 09:00", "Mon 23:59"]}, social={"tiktok": "buffer"}):
+            self.assertEqual(channels.cadence("SKY"), {"long": [(4, 17, 5)], "short": [(1, 9, 0), (0, 23, 59)]})
+            self.assertTrue(channels.tiktok_by_buffer("sky"))
+        with self.sky(cadence={"long": ["Fri 17:05"]}, social={"tiktok": "browser"}):
+            self.assertEqual(channels.cadence("sky"), {"long": [(4, 17, 5)], "short": []})
+            self.assertFalse(channels.tiktok_by_buffer("sky"))
+        with self.sky():
+            self.assertEqual(channels.cadence("sky"), {})         # names none, and has no cached copy
+            self.assertFalse(channels.tiktok_by_buffer("sky"))
+
+    def test_a_slot_that_does_not_read_is_an_error_never_a_slot_quietly_dropped(self):
+        for bad in ("Sunday 18:00", "Sun 6pm", "Sun 24:00", "sun 18:00", " Sun 18:00", [6, 18, 0], None):
+            with self.sky(cadence={"long": ["Fri 17:00", bad]}):
+                with self.assertRaises(ValueError, msg=repr(bad)):
+                    channels.cadence("sky")
+
+    def test_a_checkout_behind_main_takes_both_settings_from_the_cached_copy(self):
+        # The same net as planned_shorts: a channel's checkout on an old branch has no `cadence` or `social` yet.
+        # Its videos must not move to another channel's days for it.
+        stale = tuple({k: v for k, v in c.items() if k not in ("cadence", "social")} if c["slug"] == "hos" else c
+                      for c in channels._load())
+        with mock.patch.object(channels, "_load", lambda directory=None: stale):
+            self.assertEqual(channels.cadence("hos")["long"], [(3, 18, 0)])
+            self.assertTrue(channels.tiktok_by_buffer("hos"))
+
+    def test_the_delivery_tool_names_no_channel(self):
+        import test_channel_ratchet as ratchet
+        source = (pathlib.Path(channels.__file__).parent / "approved_deliver.py").read_text()
+        self.assertEqual((len(ratchet.channel_lines(source)), len(ratchet.home_lines(source))), (0, 0))
 
 
 if __name__ == "__main__":

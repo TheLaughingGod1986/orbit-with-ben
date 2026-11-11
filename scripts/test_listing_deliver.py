@@ -366,5 +366,92 @@ class ApprovedDeliver(unittest.TestCase):
         self.assertNotEqual(when.date().isoformat(), "2026-11-08")
 
 
+class AnyChannel(unittest.TestCase):
+    """J2616 (11 Nov 2026): approved_deliver.py names no channel. Slots, the TikTok note, the job's repo and the film
+    documents come from the registry. Today's two channels get exactly what they got; a channel in no registry gets
+    its own."""
+
+    def sky(self, **extra):
+        import channels
+        base = channels._load()
+        sky = {k: v for k, v in channels.get(channels.default()).items() if k not in ("cadence", "social", "shorts", "_source")}
+        sky.update(slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
+                   repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        sky.update(extra)
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def plan(self, **card):
+        v = {"key": "SKY:007", "lane": "approved", "channel": "SKY", "number": "007", "type": "long", "title": "Orion",
+             "listing": ready_listing(), "approved": {"version": "v02"}}
+        v.update(card)
+        with mock.patch.object(ad.lp, "for_video", return_value=v["listing"]), \
+             mock.patch.object(ad, "parent_long_public", lambda v, videos: True):
+            return ad.plan_actions([v], [], now=NOW, root=Path(tempfile.mkdtemp()))
+
+    def test_todays_slots_are_the_table_the_script_held(self):
+        # The old lookup, number for number: CADENCE.get(label, CADENCE[first]).get(kind) or CADENCE[first]["long"].
+        owb = {"long": [(6, 18, 0), (2, 18, 0)], "short": [(0, 11, 30), (2, 11, 30), (4, 11, 30), (5, 11, 30)]}
+        hos = {"long": [(3, 18, 0)], "short": [(5, 11, 30), (4, 11, 30), (6, 11, 30), (1, 11, 30)]}
+        for label, table in (("OWB", owb), ("HOS", hos), ("NOPE", owb), ("", owb)):
+            for kind in ("long", "short"):
+                self.assertEqual(ad.cadence_slots(label, kind), table[kind], (label, kind))
+            self.assertEqual(ad.cadence_slots(label, "live"), owb["long"], label)   # a kind with no slots
+        # and the days they give from Sat 7 Nov 2026 midday, as they were
+        self.assertEqual(ad.next_cadence_slot("OWB", "long", now=NOW, taken_days=set()), "2026-11-08T18:00Z")   # Sun
+        self.assertEqual(ad.next_cadence_slot("HOS", "long", now=NOW, taken_days=set()), "2026-11-12T18:00Z")   # Thu
+        self.assertEqual(ad.next_cadence_slot("OWB", "short", now=NOW, taken_days=set()), "2026-11-09T11:30Z")  # Mon
+        self.assertEqual(ad.next_cadence_slot("HOS", "short", now=NOW, taken_days=set()), "2026-11-08T11:30Z")  # Sun
+        self.assertEqual(ad.next_cadence_slot(None, "short", now=NOW, taken_days=set()),
+                         ad.next_cadence_slot("OWB", "short", now=NOW, taken_days=set()))
+
+    def test_a_third_channel_gets_its_own_day_and_its_own_job(self):
+        with self.sky(cadence={"long": ["Fri 17:00"], "short": ["Tue 09:00"]}):
+            self.assertEqual(ad.next_cadence_slot("SKY", "long", now=NOW, taken_days=set()), "2026-11-13T17:00Z")   # Fri
+            self.assertEqual(ad.next_cadence_slot("sky", "short", now=NOW, taken_days=set()), "2026-11-10T09:00Z")  # Tue
+            a = self.plan()[0]
+        self.assertEqual((a["op"], a["repo"], a["film"], a["stage"], a["airs"]), ("create", "sky", "", "", "2026-11-13T17:00Z"))
+        self.assertEqual(a["title"], "Upload SKY 007 long v02 (Orion) Private, 2026-11-13T17:00Z")
+
+    def test_a_channel_with_no_days_of_its_own_is_given_the_default_channels(self):
+        with self.sky():
+            self.assertEqual(ad.next_cadence_slot("SKY", "long", now=NOW, taken_days=set()),
+                             ad.next_cadence_slot(ad.default_label(), "long", now=NOW, taken_days=set()))
+
+    def test_the_tiktok_note_follows_the_channels_own_setting(self):
+        social = {"type": "short", "parent": "SKY:007", "listing": ready_listing(destination="social", status="Ready to post")}
+        with self.sky(social={"tiktok": "buffer"}):
+            self.assertIn("; SKY TikTok stays Buffer-only)", self.plan(**social)[0]["body"])
+        with self.sky():
+            self.assertNotIn("TikTok stays", self.plan(**social)[0]["body"])
+
+    def test_only_the_default_channels_films_carry_a_stage_for_the_queue(self):
+        own = self.plan(key=f"{ad.default_label()}:041", channel=ad.default_label(), number="041")[0]
+        self.assertEqual((own["film"], own["stage"], own["repo"]), ("041", "upload", ad.channels.default()))
+        short = self.plan(key=f"{ad.default_label()}:S9", channel=ad.default_label(), number="S9", type="short")[0]
+        self.assertEqual((short["film"], short["stage"]), ("", ""))
+        unknown = self.plan(key="NOPE:041", channel="NOPE", number="041")[0]
+        self.assertEqual((unknown["film"], unknown["stage"], unknown["repo"]), ("", "", ad.channels.default()))
+
+    def test_film_documents_are_read_the_way_each_channel_keeps_them(self):
+        import channels
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            sky_root = root / "night-sky"
+            sky_root.mkdir()
+            (sky_root / "PIPELINE.json").write_text(json.dumps({"films": [{"id": "007", "title": "Orion"}]}))
+            kept = channels.pipeline(channels.default())
+            film = root / kept["path"].replace("*", "041_Made-Up")
+            film.parent.mkdir(parents=True)
+            film.write_text(json.dumps({"film": "041", "title": "Made up", "stages": {}}))
+            with self.sky(), mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
+                docs = ad.load_documents(root)
+                self.assertEqual(docs["sky"]["films"][0]["id"], "007")
+                self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])
+                self.assertEqual(set(docs), set(channels.slugs()))
+            with self.sky(pipeline={"kind": "film_status", "path": "films/*/status.json"}):
+                self.assertNotIn("sky", ad.load_documents(root))   # read by the tracker from its own checkout
+
+
 if __name__ == "__main__":
     unittest.main()

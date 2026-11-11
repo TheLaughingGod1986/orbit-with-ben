@@ -8,7 +8,7 @@ Prepared by Gemini (`gemini`) under `J0855` after Chief's `J0850` KEEP/FIX rulin
 - **KEEP `r11_night_road`** (`night_road_veo_v01.mp4`, Flow Veo 3.1 Quality, `6dfb64f683998705`): straight empty night road, headlights approach and grow; `94.36–101.20 s` covered by the planned star cutaway (`eso_lasilla_ntt.mp4`) and `101.20–109.20 s` (`8.00 s`) on `night_road_veo_v01.mp4`.
 - **KEEP `r23_orbit_ice`** (`orbit_ice_omni_v01.mp4`, Vertex Omni, `8c509d86cc18dbed`): canonical Orbit in deep space among dark grey Oort ice lumps (no planet).
 - **FIX -> KEEP `r17_pitch` Take 2 (`football_pitch_veo_v02.mp4`, promoted to `football_pitch_veo_v01.mp4`)**:
-  - Minted 1 Flow Veo 3.1 Fast retake (`10 cr`, `20,840 -> 20,830` on `benoats@googlemail.com`, `_mint_028_r17_retake_v02.py`).
+  - Minted 1 Flow Veo 3.1 Fast retake (`10 cr`, `20,840 -> 20,830` on the studio Ultra account, `_mint_028_r17_retake_v02.py`).
   - SHA-256: `c2a0aa340d3a0486fe1fb9d553b69b3c88c8242ece6bcce015d780320d004450` (`8.0 s`, `5,449,736 B`, `0` freezes `>=0.8s`, audio stripped).
   - Camera glides low and slow along the white halfway line on empty dusk turf towards the centre circle; no goals or goal nets anywhere in frame, soft distant stands, no text/logos/people.
   - Contact sheet updated: `02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/07_Edit-Project/_evidence/028_keep_fix_v01_contact.jpg`.

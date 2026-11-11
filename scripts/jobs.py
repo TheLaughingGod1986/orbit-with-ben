@@ -155,7 +155,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
            stage: str = "", after: str = "", repo: str = "", eta_min: int = DEFAULT_ETA, for_agent: str = "",
            kind: str = "", model: str = "", not_before: str = "", reset: str = "", due: str = "", action: str = "", requires=None) -> dict:
     requirements = workflow.capability_names(requires)
-    repo = repo or channels.home()
+    repo = repo or channels.default()
     if needs not in NEEDS:
         raise ValueError(f"needs must be one of {', '.join(NEEDS)}")
     if needs == "ben" and not ben_gate(title + " " + body):
@@ -1056,7 +1056,7 @@ def do_approved(job: dict, src: dict, agent: str, at: dt.datetime, *, entry: int
     if not rec.get("what") and not rec.get("title"):
         raise ValueError(f"nothing to say what Ben approved: {src['id']} has no awaits entry; give --what (and --version, --airs)")
     repo = src.get("repo") or job.get("repo")
-    rec["channel"] = (rec.get("channel") or channels.label(repo if repo in channels.slugs() else channels.home())).upper()
+    rec["channel"] = (rec.get("channel") or channels.label(repo if repo in channels.slugs() else channels.default())).upper()
     rec.setdefault("number", str(src.get("film") or job.get("film") or ""))
     rec["job"] = src["id"]
     if len(items) > 1 and entry:
@@ -1086,8 +1086,9 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 # ----------------------------------------------------------------------------- board link (film/stage claims)
 def on_board(job: dict) -> bool:
-    """Only OWB jobs have a film folder on this repo's studio board; HOS films live in the HOS checkout."""
-    return bool(job.get("film")) and job.get("repo", channels.home()) == channels.home()
+    """Only the board channel's jobs have a film folder on the stage board (one status.json per film); a channel that
+    keeps its films another way has none."""
+    return bool(job.get("film")) and job.get("repo", channels.default()) == channels.board_channel()
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
@@ -1241,7 +1242,7 @@ def main(argv=None) -> int:
     a.add_argument("--film", default="")
     a.add_argument("--stage", default="")
     a.add_argument("--after", default="")
-    a.add_argument("--repo", default=channels.home(), choices=channels.slugs())
+    a.add_argument("--repo", default=channels.default(), choices=channels.slugs())
     a.add_argument("--eta", type=int, default=DEFAULT_ETA, help="minutes a claim lasts before it counts as stalled")
     a.add_argument("--by", required=True)
     a.add_argument("--for", dest="for_agent", default="", help="only this agent may claim it, e.g. codex; the relay wakes it")

@@ -205,8 +205,11 @@ class FullBleedFfmpeg(unittest.TestCase):
             p = self._long(td, "padded_middle", 4.0, 7.9)
             self.assertEqual(g.frame0_full_bleed_verdict(g.frame0_full_bleed(p)), [])     # the opening is fine
             frames = g.clip_full_bleed(p)
-            self.assertEqual([f["t"] for f in frames], [float(t) for t in range(12)])
-            self.assertEqual([f["t"] for f in frames if f["kind"]], [4.0, 5.0, 6.0, 7.0], frames)
+            self.assertEqual([f["t"] for f in frames], [t / 2 for t in range(24)])                 # two a second
+            # the straight-edge count reads the frames one a second: the ones it read before J2579
+            self.assertEqual([f["t"] for f in g.on_the_second(frames)], [float(t) for t in range(12)])
+            self.assertEqual([f["t"] for f in frames if f["kind"]], [t / 2 for t in range(8, 16)], frames)
+            self.assertEqual(g.padded_stretches(frames), [(4.0, 8.0, "blur-pad")])
             fails, warns = g.clip_full_bleed_verdict(frames)
             self.assertEqual(len(fails), 1)
             self.assertIn("4/12 frames", fails[0])
@@ -528,6 +531,74 @@ class StraightEdgeEvidence(unittest.TestCase):
         fails, warns = g.clip_full_bleed_verdict(self.clip(24, marks), (20.0, 24.0))
         self.assertEqual(fails, [])
         self.assertTrue(any("end card" in w for w in warns))
+
+
+class TwoFramesASecond(unittest.TestCase):
+    """J2579 (Grok's ruling, History of Science desk 6791598029). The padded-looking count is sampled twice a second,
+    so one stray frame cannot tip a result. The straight-edge count and both figures are as they were. Made result
+    rows; no media."""
+    OK = {"kind": None}
+    EDGED = {"kind": "blur-pad", "edge": True}
+    SOFT = {"kind": "blur-pad", "edge": False}
+
+    def clip(self, seconds: int, marks: dict) -> list[dict]:
+        """Two frames a second for `seconds` seconds; `marks` is {time: row}."""
+        return [dict(marks.get(i / 2, self.OK), t=i / 2, on_second=i % 2 == 0) for i in range(2 * seconds)]
+
+    def test_four_stray_frames_on_the_second_no_longer_fail_a_short(self):
+        on_second_only = {float(t): self.SOFT for t in (5, 6, 7, 8)}
+        old = [dict(on_second_only.get(float(i), self.OK), t=float(i)) for i in range(26)]      # as sampled before
+        self.assertEqual(len(g.clip_full_bleed_verdict(old)[0]), 1)                             # 4/26 = 15.4%: failed
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, on_second_only))                 # 4/52 = 7.7%
+        self.assertEqual(fails, [])
+        self.assertIn("may not fill 9:16 on 4/52 sampled frames", warns[0])
+
+    def test_padding_that_lasts_still_fails_at_the_same_share(self):
+        lasting = {t / 2: self.SOFT for t in range(10, 18)}                                     # 5.0 to 8.5 s
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, lasting))                        # 8/52 = 15.4%
+        self.assertEqual(len(fails), 1)
+        self.assertIn("8/52 frames sampled twice a second", fails[0])
+        self.assertIn("15.4%", fails[0])
+        self.assertIn("limit 15%", fails[0])
+        self.assertIn("5-9s (blur-pad, no edge)", fails[0])
+        self.assertEqual(warns, [])
+        one_less = dict(list(lasting.items())[:7])                                              # 7/52 = 13.5%
+        self.assertEqual(g.clip_full_bleed_verdict(self.clip(26, one_less))[0], [])
+
+    def test_the_straight_edge_count_still_reads_one_frame_a_second(self):
+        three_seconds = {t / 2: self.EDGED for t in range(10, 16)}                              # 5.0 to 7.5 s
+        fails, _ = g.clip_full_bleed_verdict(self.clip(26, three_seconds))                      # 3/26 on the second
+        self.assertEqual(len(fails), 1)
+        self.assertIn("3/26 frames sampled once a second", fails[0])
+        self.assertIn("12%, limit 10%", fails[0])
+        between = {5.5: self.EDGED, 6.5: self.EDGED, 7.5: self.EDGED}                           # none on the second
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, between))                        # 0/26 edged, 3/52 in all
+        self.assertEqual(fails, [])
+        self.assertIn("does not fill 9:16 on 3/52 sampled frames", warns[0])
+
+    def test_the_end_card_is_left_out_of_both_counts(self):
+        card = {t / 2: self.SOFT for t in range(40, 48)}                                        # 20.0 to 23.5 s
+        fails, warns = g.clip_full_bleed_verdict(self.clip(24, card), (20.0, 24.0))
+        self.assertEqual(fails, [])
+        self.assertTrue(any("end card" in w for w in warns))
+        self.assertEqual(len(g.clip_full_bleed_verdict(self.clip(24, card))[0]), 1)             # 8/48 = 16.7% with no card
+
+    def test_a_stretch_ends_half_a_second_after_its_last_padded_frame(self):
+        frames = self.clip(12, {t / 2: self.EDGED for t in range(8, 16)})                       # 4.0 to 7.5 s
+        self.assertEqual(g.padded_stretches(frames), [(4.0, 8.0, "blur-pad")])
+        self.assertEqual(g.sample_step_s(frames), 0.5)
+
+    def test_rows_sampled_before_the_change_read_as_they_did(self):
+        old = [dict(self.SOFT if i in (5, 6, 7, 8) else self.OK, t=float(i)) for i in range(26)]
+        self.assertEqual(g.on_the_second(old), old)
+        self.assertEqual(g.sample_step_s(old), 1.0)
+        fails, _ = g.clip_full_bleed_verdict(old)
+        self.assertIn("4/26 frames sampled once a second", fails[0])
+        self.assertEqual(g.padded_stretches(old), [(5.0, 9.0, "blur-pad, no edge")])
+
+    def test_the_figures_did_not_move(self):
+        self.assertEqual((g.FB_CLIP_MAX_SHARE, g.FB_CLIP_SOFT_SHARE), (0.10, 0.15))
+        self.assertEqual((g.FB_CLIP_STEP_S, g.FB_CLIP_SOFT_STEP_S), (1.0, 0.5))
 
 
 class SoftWalledRealFrames(unittest.TestCase):

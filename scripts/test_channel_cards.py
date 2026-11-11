@@ -105,7 +105,7 @@ class Cards(unittest.TestCase):
 
     def test_the_publishers_copies_hold_what_the_check_looks_at(self):
         import board_publish
-        for sparse in (board_publish.OWB_SPARSE, board_publish.HOS_SPARSE):
+        for sparse in map(board_publish.sparse, channels.slugs()):
             self.assertIn("/studio/", sparse)
             for page in channel_check.GENERATED_PAGES:
                 self.assertIn("/" + page, sparse)

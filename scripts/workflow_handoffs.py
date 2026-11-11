@@ -22,11 +22,11 @@ WIP = Path(__file__).resolve().parents[1] / 'jobs' / 'WIP.json'
 
 
 def waiting_films(path=WIP):
-    """Home-channel films parked in its waiting line by Ben's WIP limit (G, 4 Nov 2026): not in production, so not
-    orphans. The line's name comes from the channel file (channels/<slug>/channel.json wip.line)."""
+    """The board channel's films parked in its waiting line by Ben's WIP limit (G, 4 Nov 2026): not in production,
+    so not orphans. The line's name comes from the channel file (channels/<slug>/channel.json wip.line)."""
     try:
-        home = channels.get(channels.home())
-        line, prefix = home['wip'].get('line', 'next'), home['label'] + ':'
+        board = channels.get(channels.board_channel())
+        line, prefix = board['wip'].get('line', 'next'), board['label'] + ':'
         return {f.split(':', 1)[1] for f in json.loads(Path(path).read_text()).get(line, []) if str(f).startswith(prefix)}
     except (OSError, ValueError, AttributeError):
         return set()
@@ -44,7 +44,7 @@ def findings(data, film_records, at, exclude=(), waiting=None):
         upload = stages.get('upload') or {}
         if isinstance(upload, dict) and upload.get('state') in ('done', 'skip'):
             continue
-        linked = [j for j in rows if j.get('film') == film and (j.get('repo') or channels.home()) == channels.home() and j.get('status') in workflow.LIVE]
+        linked = [j for j in rows if j.get('film') == film and (j.get('repo') or channels.default()) == channels.board_channel() and j.get('status') in workflow.LIVE]
         issues = []
         if record.get('record_error'):
             issues.append(('record', 'invalid-record'))

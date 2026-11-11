@@ -58,6 +58,22 @@ class Settings(unittest.TestCase):
     def test_not_an_object(self):
         self.assertEqual(len(cc.settings_problems(["slug"])), 1)
 
+    def test_publishing_slots_and_the_tiktok_setting_are_checked_when_given(self):
+        ok = {"long": ["Sun 18:00", "Wed 18:00"], "short": ["Mon 11:30"]}
+        self.assertEqual(cc.settings_problems(good(cadence=ok, social={"tiktok": "buffer"})), [])
+        self.assertEqual(cc.settings_problems(good(cadence={"long": ["Thu 18:00"]}, social={})), [])
+        for bad in ({"long": [[6, 18, 0]]}, {"long": ["Sunday 18:00"]}, {"long": ["Sun 24:00"]}, {"long": ["Sun 18:60"]},
+                    {"long": ["sun 18:00"]}, {"long": "Sun 18:00"}, {"long": []}, {}, {"live": ["Sun 18:00"]}, ["Sun 18:00"]):
+            found = cc.settings_problems(good(cadence=bad))
+            self.assertEqual(len(found), 1, bad)
+            self.assertTrue(found[0].startswith("cadence:"), found[0])
+        found = cc.settings_problems(good(social={"tiktok": "browser"}))
+        self.assertEqual(len(found), 1)
+        self.assertTrue(found[0].startswith("social.tiktok:"))
+
+    def test_the_slot_pattern_is_the_loaders(self):
+        self.assertEqual(cc.SLOT.pattern, channels.SLOT.pattern)
+
     def test_the_address_pattern_is_the_email_ratchets(self):
         self.assertEqual(cc.ADDRESS.pattern, test_email_ratchet.ADDRESS.pattern)
 
@@ -74,11 +90,14 @@ class Checkout(unittest.TestCase):
         c.update(change)
         file.write_text(json.dumps(c))
 
-    def test_a_new_channel_passes_and_only_lacks_its_github_address(self):
+    def test_a_new_channel_passes_and_only_lacks_its_github_address_and_its_publishing_days(self):
         must, todo = cc.check(self.root)
         self.assertEqual(must, [])
-        self.assertEqual(len(todo), 1)
+        self.assertEqual(len(todo), 2)
         self.assertIn("repo.url is empty", todo[0])
+        self.assertTrue(todo[1].startswith("cadence:"))   # its days are Ben's call; nothing is made up for it
+        self.settings(cadence={"long": ["Fri 17:00"]})
+        self.assertEqual(len(cc.check(self.root)[1]), 1)
 
     def test_no_settings_file(self):
         (self.root / "studio" / "channel.json").unlink()
@@ -128,10 +147,11 @@ class Checkout(unittest.TestCase):
         self.settings(repo={"url": "https://github.com/x/deep-sea.git", "checkouts": ["deep-sea"]})
         must, todo = cc.check(self.root)
         self.assertEqual(must, [])
-        self.assertEqual(len(todo), 3)
+        self.assertEqual(len(todo), 4)
         self.assertTrue(todo[0].startswith("studio/RULES.md"))
         self.assertIn("STATUS.md", todo[1])
         self.assertTrue(todo[2].startswith("studio-core/"))
+        self.assertTrue(todo[3].startswith("cadence:"))
 
     def test_this_repo_can_be_driven(self):
         self.assertEqual(cc.check(HERE.parent)[0], [])

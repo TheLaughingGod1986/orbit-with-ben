@@ -10,7 +10,7 @@ Status: **Brand-new Brand Account channel — branded and ready for first upload
 | Public handle | https://www.youtube.com/@OrbitWithBen |
 | Channel ID | `UC_esArsDKd3GJvOkeO0DUog` |
 | Studio | https://studio.youtube.com/channel/UC_esArsDKd3GJvOkeO0DUog |
-| Managing Google account | `benoats86@gmail.com` (Ben Oates) |
+| Managing Google account | the personal account (Ben Oates) |
 
 ## Identity
 
@@ -55,7 +55,7 @@ OpptiAI (`UCXRVwrCxXpN_o9gvuHPKAPQ`) was **not** edited.
 
 ## Email note
 
-No new Gmail was required. YouTube created a **Brand Account** linked to `benoats86@gmail.com`, which is the normal multi-channel setup (separate from OpptiAI, same login). If you later want a dedicated inbox such as `ben.oates.orbit@gmail.com`, that can be added as a manager — it is not needed to publish.
+No new Gmail was required. YouTube created a **Brand Account** linked to the personal account, which is the normal multi-channel setup (separate from OpptiAI, same login). If you later want a dedicated inbox for the channel, that can be added as a manager — it is not needed to publish.
 
 ## Ready for publishing means
 
