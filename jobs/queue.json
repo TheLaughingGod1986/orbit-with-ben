@@ -196280,9 +196280,14 @@
           "at": "2026-11-11T18:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T18:49Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Batch 2 finished with exit 0 (J2270-batch2-run2.done=0) and J2628 is done; verifying Batch 2 receipts and preparing Batch 3"
         }
       ],
-      "remaining_action": "Verify J2270-batch2-run2.done exit code and canonical ledger, then run 2-row batch 3",
+      "remaining_action": "Verify Batch 2 receipts, run Batch 3 (P5:13_explorer_turn, P5:14_end_hold), and hand off 12-plate manifest to review",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196294,9 +196299,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-11T15:09Z",
+        "at": "2026-11-11T18:49Z",
         "by": "gemini",
-        "note": "Batch 2 running detached in tmux J2270-batch2-run2 (PID 16600); 4 of 5 batch-2 zero-credit stills already minted and arc"
+        "note": "Batch 2 finished with exit 0 (J2270-batch2-run2.done=0) and J2628 is done; verifying Batch 2 receipts and preparing Batc"
       },
       "rerouted_from": {
         "needs": "mini",
