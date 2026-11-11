@@ -224370,7 +224370,7 @@
     {
       "id": "J2587",
       "title": "HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Ruled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. Looking only, ten minutes.\n\n`P04:05_minute_second_c2` take 2, on a half-second sheet of the **whole clip**, beside its start frame. Yes or no, with the frame:\n1. Both apples lie still on the table for the whole shot, and no new apple appears.\n2. Nothing moves upward, and on the right the Moon never slides back or upward.\n3. There is only the one curved path: no second bright arc appears over the Earth.\n\nAll yes: write KEEP with hash and window into the film's evidence file (a pull request for Grok). The edit (J2035) can then start: all twenty of the last pictures are settled. Any no: park it for Grok with the frame.",
       "ref": "J2582",
@@ -224390,13 +224390,27 @@
           "at": "2026-11-11T10:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T12:52Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Yes or no on the last remade shot; KEEP lets the edit start",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
-      "urgent": 11
+      "urgent": 11,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2588",
