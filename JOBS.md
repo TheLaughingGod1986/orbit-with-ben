@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2241, J2270, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2241, J2270, J2550, J2034, J2037, J2040, J2230, J2567.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -66,10 +66,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2449 | mini | blocked | macbook-2 | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2452 | macbook | open (after J2548) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
-| J2453 | mini | open | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2454 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2455 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2456 | cloud | open (after J2455) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
+| J2453 | mini | open (after J2567) | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
+| J2454 | mini | open (after J2567) | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
+| J2455 | mini | open (after J2567) | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
+| J2456 | cloud | open (after J2567) | – | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2477 | mini | open | – | – | 032 edit · review · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | open | – | – | assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
 | J2565 | mini | claimed | macbook | 2026-11-11T08:01Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
+| J2567 | macbook | open | – | – | Put the three draft thumbnails from the weekly audit (J2374) into the repo, so the panel can see them | J2374 |
 
 Recently finished:
 
