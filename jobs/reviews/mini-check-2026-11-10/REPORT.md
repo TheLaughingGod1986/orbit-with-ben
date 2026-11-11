@@ -334,7 +334,7 @@ $ launchctl list | grep com.owb      (PID / last exit / label)
 -      0  com.owb.tab-janitor
 ```
 
-- NAS: no SMB mount. The NAS is mounted over NFS: `192.168.1.119:/volume1/data on /Volumes/data (nfs)`.
+- NAS: no SMB mount. The NAS is mounted over NFS: `<NAS>:/volume1/data on /Volumes/data (nfs)`.
 - SSD: `/dev/disk6s1 on /Volumes/MiniWork (apfs, local)`, 26 GiB used of 233 GiB, 12%. `df` on it answered at once.
 - Ports: 9223 yes, 9222 yes, 9460 yes (each answers `/json/version` as Chrome/156). Nothing opened or closed.
 - Internal disk free: 38 GiB at 23:40, 36 GiB at 00:22 (82% used).

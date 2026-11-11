@@ -12,7 +12,7 @@ def digest(p):
  return h.hexdigest()
 def mount():
  assert os.path.ismount('/Volumes/data'), 'NAS unmounted'
- assert subprocess.check_output(['df','/Volumes/data'],text=True).splitlines()[-1].startswith('192.168.1.119:'),'Wrong mount'
+ assert subprocess.check_output(['df','/Volumes/data'],text=True).splitlines()[-1].startswith('<NAS>:'),'Wrong mount'
  assert os.statvfs(NAS).f_bavail*os.statvfs(NAS).f_frsize>5*2**30
 
 def stamp(p):

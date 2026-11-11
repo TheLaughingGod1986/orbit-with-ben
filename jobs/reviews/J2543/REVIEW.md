@@ -2,7 +2,7 @@
 
 - **Verification Job:** `J2543` (`recheck_of`: `J2536`)
 - **Parent Job:** `J2536` (`HOS 007: set the search-led title on ETynHpIYLeY (the unstarted title test is replaced, Ben's OK 10 Nov), then re-arm the test with the new title as side A`)
-- **Agent / Host:** `macbook-2` (`bens-macbook-pro`)
+- **Agent / Host:** `macbook-2` (`<macbook>`)
 - **Verified At:** `2026-11-10T21:34Z`
 - **Verdict:** **HOLD / CONDITION NOT MET** — keep `J2536` blocked until `J2033` finishes minting on the Mac Mini's HOS Chrome (`CDP 9222`).
 
@@ -25,7 +25,7 @@
      - Batch 2 (5 continuation rows): `05_heavens_map_c1_t1.mp4` (`20:26Z`), `07_night_field_c1_t1.mp4` (`20:29Z`), `01_cambridge_closes_c1_t1.mp4` (`20:31Z`), `03_christmas_birth_c1_t1.mp4` (`20:33Z`), `05_working_alone_c1_t1.mp4` (`20:35:38Z`, sha256 `02f3ccbe6346518230f6ad5d7c78da8781e9518bceec0120071f0177c04362f2`).
    - **13 of 20** rows remain across Batch 3 (5 rows: `08_the_apple_c1`, `11_explorer_apple_c1`, `01_really_falling_c1`, `05_shot_orbit_c1`, `05_shot_orbit_c2`), Batch 4 (5 rows), and Batch 5 (3 rows).
    - At `2026-11-10T21:27:33Z` (`cf13b351d`), `gemini` on the Mini reported `step 3 of 5 done: Batch 2 PASS (7/20 GENERATED, 0 KEEP, 700cr spent...); starting Batch 3` (`remaining_action: "Mint Batch 3 (rows 8-12 of 20), then Batches 4-5"`), wrote `.tranche2-write-probe-315177a7eef34481b063fda5400da35d` to the NAS archive at `21:28Z`, and recorded the post-Batch-2 Flow balance (`14,190` left) in `05_Analytics/ai_spend/ledger.jsonl` at `2026-11-10T21:29:14Z` (`1b6bd7b89`).
-   - In addition, `J2543` was claimed by `macbook-2` (`bens-macbook-pro`), which cannot inspect the Mac Mini's process table (`pgrep -f _mint_flow` on `ben-mac-mini`) directly.
+   - In addition, `J2543` was claimed by `macbook-2` (`<macbook>`), which cannot inspect the Mac Mini's process table (`pgrep -f _mint_flow` on `<mini>`) directly.
 
 2. **`J2536` Approvals & Prerequisite Gates:**
    - **Ben Approval & Never-List Exception:** Valid and in force in both `orbit-with-ben/AGENTS.md` (PR #762) and `history-of-science/AGENTS.md` (PR #483, commit `d3b1fc8`) — Ben's 10 Nov approval (`"Ok on both"`) authorizes replacing the unstarted title test on HOS 007 `ETynHpIYLeY` so it airs as `How Was the First Vaccine Made? (And Why It's Named After a Cow)` and re-arming the test with that title as side A.

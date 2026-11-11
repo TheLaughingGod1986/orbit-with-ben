@@ -11,7 +11,7 @@
 |------------|--------|
 | Mac mini self-hosted worker (`mac-mini`, computer use on) | Worker **is connected** (`b4eccfb5-11d8-487d-bd40-cad8dce9efa6`) |
 | `computerUse` subagent on that worker | **Blocked** — Claude usage cap (`claude-4.5-sonnet`). Inherit / Composer / Grok all routed to that model |
-| SSH `benjaminoats@192.168.1.122` | Connection timed out (cloud VM cannot reach LAN) |
+| SSH `benjaminoats@<Mini>` | Connection timed out (cloud VM cannot reach LAN) |
 | Playwright → Studio | Google sign-in wall (no channel session here) |
 | Data API from this VM | No OAuth, no Content Ops `.env`, **no Short mp4s** in the cloud clone |
 | TikTok | Still paused — not used |

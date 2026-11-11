@@ -493,7 +493,7 @@ It never uploads the file for a video it refuses. If one channel fails, the othe
 Locked dual-machine media paths for Mini + MacBook. Generated from `AGENTS.md` by `scripts/sync_rules.py`; edit `AGENTS.md`, not this block.
 
 <!-- SYNC: AGENTS.md#Film folders on the NAS (studio-live + archive) -->
-**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini (`ben-mac-mini`) and the MacBook Pro (`bens-macbook-pro`) already mount the same Synology NFS export `192.168.1.119:/volume1/data` at `/Volumes/data` (Tailscale account `benoats@`; phone host `iphone-14-pro-max` is not a film worker). The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
+**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini and the MacBook Pro already mount the same Synology NFS export at `/Volumes/data` (the phone is not a film worker). The export's address is on the machines (`mount | grep /Volumes/data`), never in a tracked file. The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
 
 | Role | Where |
 |---|---|
@@ -511,7 +511,7 @@ Working film folders live on the NAS both machines share, mirroring the Mini You
 | Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
 | History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
 
-Both machines read and write those same remote folders. Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
+Both machines read and write those same remote folders. Share: the NAS's NFS export, mounted at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
 
 **studio-live inventory (verified COMPLETE ~13:36 London 7 Nov 2026).** Leftover working/upcoming copy finished (all final copy exits **0**). Do **not** invent further folders.
 
