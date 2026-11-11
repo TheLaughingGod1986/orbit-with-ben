@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2549 | mini | blocked | claude | – | assembly · Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready | J2545 |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2557 | mini | open | – | – | review · Shorts gate, part 3: run the whole-Short check on every scheduled Short of both channels and compare it with the by-eye audit |  |
+| J2557 | mini | claimed | gemini | 2026-11-11T06:46Z | review · Shorts gate, part 3: run the whole-Short check on every scheduled Short of both channels and compare it with the by-eye audit |  |
 
 Recently finished:
 
