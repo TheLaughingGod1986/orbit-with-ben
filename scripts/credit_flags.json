@@ -1,12 +1,21 @@
 {
   "about": "Out-of-credit flags (Ben, 14 Oct 2026: 'add a flag onto the system to run out of credits and switch it then to Codex or to Cursor or to Gemini'). Keys are a model id from scripts/routing.py MODELS (one lane) or an agent id (all its lanes). scripts/chief_relay.py skips flagged lanes until out_until (UTC), so each job goes to the next worker and model in its chain that has credit. Claude or Chief keeps this current from the credit readings (scripts/ai_spend.py); the relay adds its own short marks when a run says it is out. Remove a flag early when the pool is topped up.",
-  "updated": "2026-11-11T02:03:00Z",
+  "updated": "2026-11-11T11:28:00Z",
   "by": "claude",
   "flags": {
     "cursor": {
-      "out_until": "2026-12-09T00:00:00Z",
+      "out_until": "2026-11-12T19:30:00Z",
       "hard": true,
-      "reason": "Ben, 9 Nov 2026: \"I believe cursor's out of credit, yes\" (CLI: 'You are out of credits. Upgrade your plan'); not in his plan list. Remove this flag if Cursor is topped up."
+      "reason": "Ben, 9 Nov 2026: \"I believe cursor's out of credit, yes\". Checked on the Mini 11 Nov (J2595, J2601): only its Claude Opus lane is refused; its Grok model answers. The whole-agent flag stays until the picture credits window closes (Thu 12 Nov 19:13 London), so the capped 008, 009 and 010 takes stay with the worker that has been making them. After that only the two lanes below stay flagged."
+    },
+    "cursor-claude-opus-5-5": {
+      "out_until": "2026-12-09T00:00:00Z",
+      "reason": "Cursor's own command line on the Mini, 11 Nov 2026 11:03Z (J2595): \"Claude Opus 5.5 is not included in your weekly usage. Buy credits or switch to a Grok model to continue.\" Nothing is bought without Ben. Remove this flag only if Ben adds credits for it."
+    },
+    "cursor-auto": {
+      "out_until": "2026-12-09T00:00:00Z",
+      "reason": "Cursor's own command line on the Mini, 11 Nov 2026 11:03Z (J2595): \"Claude Opus 5.5 is not included in your weekly usage. Buy credits or switch to a Grok model to continue.\" Nothing is bought without Ben. With no model named, Cursor on the Mini starts on Claude Opus 5.5, so this lane is refused too."
     }
-  }
+  },
+  "note": "11 Nov 2026: Cursor's own command line refuses Claude Opus 5.5 (\"not included in your weekly usage. Buy credits or switch to a Grok model\") and answers on Grok 4.7 (exit 0, J2601). So from Thu 12 Nov 19:30Z `cursor-grok-4-7` and Cursor's tool lanes come back on their own, and `cursor-claude-opus-5-5` and `cursor-auto` stay out. That weekly included usage is shared with Grok Bot: 30% used (Grok Bot 29%, Cursor 1%) on the page copied 11 Nov, resets 12 Nov. If it runs short, flag `cursor-grok-4-7` first so the Chief keeps the rest."
 }
