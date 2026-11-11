@@ -224078,10 +224078,10 @@
       "stage": "picture",
       "after": "J2585",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T12:48Z",
+      "eta": "2026-11-11T14:48Z",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
       "result": "",
@@ -224130,6 +224130,11 @@
           "at": "2026-11-11T11:27Z",
           "by": "claude",
           "what": "reopened: acting Chief, queue side of Grok's PASS (History of Science desk 6794446185): the runner change is merged (history-of-science #517, main 1d7928c) and this job is released."
+        },
+        {
+          "at": "2026-11-11T12:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Three second takes with --retakes-j2583 at J2270's next batch boundary, then half-second sheets for J2584",
@@ -224140,7 +224145,15 @@
       "urgent": 8,
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T12:48Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2584",
