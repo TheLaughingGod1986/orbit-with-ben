@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | blocked | gemini | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2520 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2529 | mini | blocked | claude | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
-| J2532 | mini | open | – | – | for gemini · review · `gemini-argon` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
+| J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2549 | mini | blocked | claude | – | assembly · Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready | J2545 |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
