@@ -227882,19 +227882,24 @@
           "at": "2026-11-11T16:02Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2633 to verify waiting condition for J2586 (HOS 009)"
+        },
+        {
+          "at": "2026-11-11T16:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2586, J2629, J2630, J2631, and HOS 009 code_graphics_v01: J2629 completed with 0 KEEP (PR #531), J2631 (drawn graphic code_graphic_009_p4_05_minute_second.mp4) is still open for Codex and not yet rendered or approved as KEEP on HOS desk #180"
         }
       ],
-      "remaining_action": "Inspect J2586, J2631, and HOS desk #180 to verify whether graphic J2631 is KEEP",
+      "remaining_action": "Update J2586 wait condition and check-at via jobs.py wait --recheck J2633",
       "kind": "review",
       "recheck_of": "J2586",
       "due": "2026-11-11T16:59:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-11T16:02Z",
         "by": "gemini",
-        "note": "Claimed J2633 to verify waiting condition for J2586 (HOS 009)"
+        "note": "Verified J2586, J2629, J2630, J2631, and HOS 009 code_graphics_v01: J2629 completed with 0 KEEP (PR #531), J2631 (drawn "
       },
       "taskKeys": [
         "HOS:009"
