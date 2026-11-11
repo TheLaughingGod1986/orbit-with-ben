@@ -1,5 +1,5 @@
 {
-  "next_id": 2640,
+  "next_id": 2641,
   "jobs": [
     {
       "id": "J0001",
@@ -228599,6 +228599,36 @@
       "kind": "studio",
       "launch": "B1z2dv7m7Vk@6",
       "plain": "Check how \"Why Did a 90-Day Mars Rover Last 14 Years?\" is doing 6 hours after it went live"
+    },
+    {
+      "id": "J2640",
+      "title": "Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Queued by Claude (Chief for orbit-with-ben), 11 Nov 18:14Z.** About an hour. £0.\n\n**What happened, twice in one day.** The relay's ten-minute tick (`scripts/refill.py refill --git`) made a queue commit in the Mini's shared orbit-with-ben checkout and the push did not go through. The commit stayed on the local `main`, so the checkout was ahead of GitHub until the next repair moved it to a rescue branch:\n- 07:05:40Z, `1185238a0` \"jobs: refill from backlog by relay\" -> `rescue/mini-2026-11-11-orbit-with-ben-1185238a0b`. The next refill went through at 07:14Z.\n- 18:01:04Z, `b74cb5fcd` (it added the first-day check for today's Mars rover Short) -> `rescue/mini-2026-11-11-orbit-with-ben-b74cb5fcd4`. Its parent was the newest commit on main and nothing else reached main until 18:09Z, so this one was not a race with another push. I queued that check by hand at 18:14Z (J2639).\n\n**Why it matters.** While the shared checkout is ahead of or apart from GitHub its pull fails, and the relay then reads an old copy of the queue. On 11 Nov a checkout that could not pull kept the Mini off the queue from 16:56Z to 18:00Z (thread 6803495464).\n\n**Do:**\n1. Read the relay's log on the Mini around 07:05Z and 18:01Z (`~/_desk/state/chief/` and the launchd log). Find the exact push error both times. At 18:01Z the checkout had just come back to `main` from a side branch; say whether that is the cause.\n2. Read `jobs.with_git` (scripts/jobs.py). Whatever the cause, a push that fails must leave the checkout as it found it: no commit left on the local `main`, the working tree clean, and the caller told it failed. Say whether it does that today; if not, fix it.\n3. A test that makes the push fail (a throwaway origin that refuses it) and shows the checkout is back at `origin/main` afterwards, with nothing lost that was not already in the queue file on GitHub.\n4. One pull request on orbit-with-ben. Every `scripts/test_*.py` passes. Park for the Chief with the cause in one sentence.\n\n**Leave alone:** the three rescue branches (they are the record), the stashes, and the History of Science checkout. Never: reset or clean the shared checkout by hand, force anything, delete a branch or a stash.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T18:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T18:14Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the relay log around both times, name the cause, and fix it in a pull request with a test",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "studio",
+      "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless"
     }
   ],
   "focus": [

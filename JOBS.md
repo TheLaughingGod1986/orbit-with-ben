@@ -77,6 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2635 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: record the five-metre graphic's KEEP in its manifest and the two board rows (no new render) |  |
 | J2636 | cloud | open (after J2632) | – | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
 | J2639 | mini | open | – | – | studio · First-day check at 6 h: "Why Did a 90-Day Mars Rover Last 14 Years?" (B1z2dv7m7Vk) |  |
+| J2640 | mini | open | – | – | studio · Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind |  |
 
 Recently finished:
 
