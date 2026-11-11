@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2598 | mini | open (after J2608) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2606 | any | blocked | gemini | – | review · Verify condition for J2605 |  |
-| J2607 | mini | open | – | – | 008 picture · image · HOS 008: salon start picture, free try 3 of 3 (the last): only her hand moves, up to the open upper end of the tube | J2604 |
+| J2607 | mini | claimed | codex | 2026-11-11T13:59Z | 008 picture · image · HOS 008: salon start picture, free try 3 of 3 (the last): only her hand moves, up to the open upper end of the tube | J2604 |
 | J2608 | any | open (after J2607) | – | – | 008 picture · qa · HOS 008: check try 3 of the salon start picture before any credit is spent (three yes/no questions) | J2605 |
 
 Recently finished:
