@@ -214374,6 +214374,11 @@
           "at": "2026-11-11T02:59Z",
           "by": "relay",
           "what": "blocked: parked for Chief: 3 runs in a row hit the time cap at its first step without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released."
+        },
+        {
+          "at": "2026-11-11T05:35Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Create clean worktree and write jobs/reviews/J2466/BRANCHES.md with full qualifying and kept branch tables before deleting any remote branches",
@@ -214381,7 +214386,8 @@
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
       "mini_only": true,
-      "not_before": "2026-11-10T22:00:00Z"
+      "not_before": "2026-11-10T22:00:00Z",
+      "escalated_at": "2026-11-11T05:35Z"
     },
     {
       "id": "J2467",
@@ -218498,6 +218504,11 @@
           "at": "2026-11-11T02:58Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: complete read-only always-on report for ben-mac-mini and bens-macbook-pro in jobs/reviews/J2517/REPORT.md (PR #750, commit ac438cb87). Mini already comes back unattended after a power cut (sleep=0, disksleep=0, displaysleep=0, womp=1, autorestart=1, FileVault Off, autoLoginUser=benjaminoats, sshd enabled on port 22, Tailscale + NAS daemons + chief-relay/board-publish/cdp-browsers RunAtLoad=true). Chief to review PR #750 and decide whether anything needs asking Ben."
+        },
+        {
+          "at": "2026-11-11T05:35Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief review of jobs/reviews/J2517/REPORT.md (PR #750)",
@@ -218511,7 +218522,8 @@
         "by": "gemini",
         "note": "All 9 always-on checks on Mac mini and MacBook Pro recorded in PR #750"
       },
-      "mini_only": true
+      "mini_only": true,
+      "escalated_at": "2026-11-11T05:35Z"
     },
     {
       "id": "J2518",
