@@ -221609,18 +221609,23 @@
           "at": "2026-11-11T06:16Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Re-pinned PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to PICTURE_PLAN_v02 (66 Quality rows, 0 Fast rows, cap 6600, 14 batches) and updated _mint_flow_v01_pass1.py to refuse Veo 3.1 - Fast"
+        },
+        {
+          "at": "2026-11-11T06:25Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2558; starting inspection of HOS #495 reference and 013 picture plan v01."
         }
       ],
-      "remaining_action": "Update tests/test_hos013_pass1_runner.py, add Fast refusal tests, and run full test suite and check_all.sh",
+      "remaining_action": "Inspect HOS #495/#496/#498 and 013 v01 picture plan to design the 23 Fast-row conversions",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-11T06:16Z",
+        "at": "2026-11-11T06:25Z",
         "by": "gemini",
-        "note": "Re-pinned PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to PICTURE_PLAN_v02 (66 Quality rows, 0 Fast rows, cap 6"
+        "note": "Claimed J2558; starting inspection of HOS #495 reference and 013 picture plan v01."
       },
       "taskKeys": [
         "HOS:013"
