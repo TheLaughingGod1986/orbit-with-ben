@@ -20,7 +20,9 @@ here (Codex, Gemini `agy`, Claude Code, Cursor `agent`; Ben, 4 Nov 2026: "get al
 Pro"; MACBOOK_AGENTS limits the set, MACBOOK_AGENT pins one), which keeps the Mac awake for
 that one run only (nothing global changes; sleep settings are untouched). The run is killed at MACBOOK_CAP_S seconds
 (default 1500); a job still claimed afterwards is released with a note so the next run (or another worker) picks
-it up. After a Codex run it records the Codex usage limits (pool codex: the same account as the Mini) for the board.
+it up, unless the run ended cleanly and pushed its work branch: that job is parked for the Chief, so nobody starts
+the same work again. After a Codex run it records the Codex usage limits (pool codex: the same account as the Mini)
+for the board.
 
 The `macbook` lane is separate: the Mini's workers never take these jobs and this worker never takes Mini jobs
 (Studio sign-ins, the NAS rules and the HOS desk all live on the Mini). The Chief routes a job here with
@@ -491,6 +493,72 @@ def still_mine(job: str) -> bool:
     return "claimed" in first and AGENT_ID in first
 
 
+def work_branch(job: str) -> str:
+    """The branch the brief tells every run to push its work on."""
+    return f"macbook/{job}"
+
+
+def branch_heads(job: str) -> dict:
+    """What GitHub holds on this job's work branch, per clone: {clone: commit}. Read before and after a run, so a
+    branch this run pushed is told apart from one an earlier run left there (a long job keeps one across many runs).
+    A clone that cannot be asked is left out, which reads as "nothing pushed"."""
+    heads = {}
+    for repo in (STUDIO, *OTHERS):
+        if not (repo / ".git").exists():
+            continue
+        r = sh(["git", "-C", str(repo), "ls-remote", "--heads", "origin", work_branch(job)], timeout=60)
+        sha = (r.stdout.split() or [""])[0] if r.returncode == 0 else ""
+        if sha:
+            heads[repo] = sha
+    return heads
+
+
+def open_pr(repo: pathlib.Path, branch: str) -> str:
+    """The open pull request for `branch`, as its address; '' when gh is missing, fails or finds none."""
+    if not shutil.which("gh"):
+        return ""
+    r = sh(["gh", "pr", "list", "--head", branch, "--state", "open", "--json", "url", "--limit", "1"], cwd=repo, timeout=60)
+    try:
+        return str(json.loads(r.stdout or "[]")[0].get("url") or "") if r.returncode == 0 else ""
+    except (ValueError, LookupError, AttributeError, TypeError):
+        return ""
+
+
+def pushed_work(job: str, before: dict) -> dict:
+    """The work this run pushed and nobody has merged: {'repo', 'branch', 'ahead', 'pr'}, or {} for none. It counts
+    only when the branch's head on GitHub moved during the run and is ahead of main there."""
+    branch = work_branch(job)
+    for repo, sha in branch_heads(job).items():
+        if before.get(repo) == sha:
+            continue
+        git = ["git", "-C", str(repo)]
+        r = sh(git + ["fetch", "-q", "origin", MAIN_REF, f"+refs/heads/{branch}:refs/remotes/origin/{branch}"], timeout=180)
+        if r.returncode == 0:
+            r = sh(git + ["rev-list", "--count", f"refs/remotes/origin/main..{sha}"])
+        count = r.stdout.strip() if r.returncode == 0 else ""
+        if count.isdigit() and int(count):
+            return {"repo": repo.name, "branch": branch, "ahead": int(count), "pr": open_pr(repo, branch)}
+    return {}
+
+
+def park_reason(agent: str, pushed: dict) -> str:
+    """What the Chief reads on a job parked by park(). It starts "parked for Chief", which is what puts the job on
+    the Chief's review list; it carries no timed wait, because a wait would take it off that list until it fell due."""
+    return (f"parked for Chief: the MacBook run on {agent} ended (exit 0) with its work pushed and the job still open. "
+            f"Branch {pushed['branch']} in {pushed['repo']} is {pushed['ahead']} commit(s) ahead of main; "
+            + (f"pull request {pushed['pr']}" if pushed.get("pr") else "no open pull request was found for it")
+            + ". Review and merge it and close the job, or reopen the job with a note.")
+
+
+def park(job: str, agent: str, pushed: dict) -> bool:
+    """Park a job whose run pushed its branch and stopped without closing it (11 Nov 2026: the run opened its pull
+    request and ended with the job open; it was handed back, and two minutes later the other slot began the same work
+    again and opened a second pull request). The brief already tells the agent to park; this is the net under it."""
+    r = sh([sys.executable, "scripts/jobs.py", "block", job, "--agent", AGENT_ID, "--reason", park_reason(agent, pushed),
+            "--git"], cwd=STUDIO)
+    return r.returncode == 0
+
+
 def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     """After a run, record the Codex usage limits for the board's AI & credits page (pool codex, shared with the Mini),
     at most every few hours so the ledger isn't one line per job. A failed read records nothing."""
@@ -760,15 +828,22 @@ def run_ordinary() -> str:
         log(f"no CLI for {job} (installed: {have}): released")
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
+    before = branch_heads(job)
     started = time.monotonic()
     code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), STUDIO, cap)
     seconds = time.monotonic() - started
     ff_main(STUDIO, STUDIO.resolve().is_relative_to(WORKER_DIR.resolve()))
     paused = ""
     open_now = still_mine(job)
-    if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
+    # A clean exit that pushed its branch but left the job open is finished work waiting for the Chief, not a job to
+    # hand back. A failed run, a run that hit the cap and a run that pushed nothing are released as before.
+    pushed = pushed_work(job, before) if open_now and code == 0 else {}
+    if not pushed and failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
         paused = mark_down(agent)
-    if open_now:
+    if pushed and park(job, agent, pushed):
+        log(f"{job}: parked for the Chief ({pushed['branch']} pushed, job left open)")
+        push_heartbeat("idle", [f"last run: {job} on {agent} pushed its work; parked for the Chief"])
+    elif open_now:
         note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
         if paused:
             note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
