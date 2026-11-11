@@ -195832,19 +195832,24 @@
           "at": "2026-11-11T07:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: Wrote authorization pinning exact scope, 3600 cap, 3000 floor, five J2033 batch-one receipt hashes, and locked live-ledger evidence. Existing runner accepts the file. No generation."
+        },
+        {
+          "at": "2026-11-11T07:04Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Commit 959b14f6, HOS PR #504; required check_all.sh ALL CHECKS PASS; exact authorization schema accepted. No generation or publishing change."
         }
       ],
-      "remaining_action": "Publish the authorization record for the Chief and hand it to the plate producer",
+      "remaining_action": "Authorization record ready for the plate producer; Chief owns evidence merge",
       "kind": "video",
       "plain": "Check the generation tool and available credits before making Dinosaur Shorts clips.",
       "urgent": 2,
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-11T07:02Z",
+        "at": "2026-11-11T07:04Z",
         "by": "codex",
-        "note": "Wrote authorization pinning exact scope, 3600 cap, 3000 floor, five J2033 batch-one receipt hashes, and locked live-ledg"
+        "note": "Commit 959b14f6, HOS PR #504; required check_all.sh ALL CHECKS PASS; exact authorization schema accepted. No generation "
       },
       "taskKeys": [
         "HOS:010"
