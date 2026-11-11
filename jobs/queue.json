@@ -177300,10 +177300,10 @@
       "stage": "picture",
       "after": "J2536",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T05:04Z",
-      "eta": "2026-11-11T07:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -177827,9 +177827,44 @@
           "at": "2026-11-11T05:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:04Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T05:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Verified 19 existing outputs and NAS hashes via runner selection; amended preflight matches Quality x1 16:9 8s 100 credits, account verified, balance 12990, no pending shared charge. Only P05:06_iss_apple_c1 remains."
+        },
+        {
+          "at": "2026-11-11T05:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Started final remaining P05:06_iss_apple_c1 with reviewed origin/main f04c707c runner in tmux hos009-tranche2; prior 19 generated, 0 KEEP. Log /Users/benjaminoats/_desk/logs/J2033-final-row-codex.log; completion /Users/benjaminoats/_desk/logs/J2033-final-row-codex.done. No duplicate generation."
+        },
+        {
+          "at": "2026-11-11T05:07Z",
+          "by": "codex",
+          "what": "released: Final remaining row P05:06_iss_apple_c1 running detached in tmux hos009-tranche2 from clean /Users/benjaminoats/_desk/wt/J2033-codex-20261111 (origin/main f04c707c). Log /Users/benjaminoats/_desk/logs/J2033-final-row-codex.log; done /Users/benjaminoats/_desk/logs/J2033-final-row-codex.done. Missing done means still running: do not duplicate. Next run read exit/log, verify all 20 outputs and accounting, commit sanitized evidence and hand off J2034. Prior 19 generated and NAS-hash-verified, 0 KEEP; preflight balance12990, Quality x1 100 credits, no pending shared charge; refusal reversal already present once."
+        },
+        {
+          "at": "2026-11-11T05:07Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:07Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Corrected tmux environment after first launch safely refused before submit. Active hos009-tranche2 uses /Users/benjaminoats/_desk/logs/J2033-final-row-codex-r2.log and .done; do not duplicate."
+        },
+        {
+          "at": "2026-11-11T05:08Z",
+          "by": "codex",
+          "what": "released: Detached final row only running in tmux hos009-tranche2. Read /Users/benjaminoats/_desk/logs/J2033-final-row-codex-r2.done and /Users/benjaminoats/_desk/logs/J2033-final-row-codex-r2.log; missing done means do not duplicate. Prior attempt without -r2 refused before submit (environment). Next verify all 20 and commit sanitized evidence for J2034. Full handoff /Users/benjaminoats/_desk/logs/J2033-codex-20261111-report.md. Clean worktree /Users/benjaminoats/_desk/wt/J2033-codex-20261111."
         }
       ],
-      "remaining_action": "After detached batch5 ends, verify outputs and run final apple row within remaining scope cap",
+      "remaining_action": "Check final-row detached result, verify all 20 outputs and hand off to J2034",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177847,11 +177882,11 @@
       "urgent": 6,
       "not_before": "2026-11-10T23:40Z",
       "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-11-11T04:15Z",
+        "step": 1,
+        "of": 3,
+        "at": "2026-11-11T05:07Z",
         "by": "codex",
-        "note": "Detached tmux J2033-batch5 active; log /Users/benjaminoats/_desk/logs/J2033-batch5-r2.log and done /Users/benjaminoats/_"
+        "note": "Corrected tmux environment after first launch safely refused before submit. Active hos009-tranche2 uses /Users/benjamino"
       }
     },
     {
@@ -212789,8 +212824,8 @@
       "eta_min": 240,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-11T05:01Z",
-      "eta": "2026-11-11T09:01Z",
+      "since": "2026-11-11T05:28Z",
+      "eta": "2026-11-11T09:28Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -213069,16 +213104,51 @@
           "at": "2026-11-11T05:04Z",
           "by": "macbook",
           "what": "step 4 of 6 done"
+        },
+        {
+          "at": "2026-11-11T05:12Z",
+          "by": "macbook",
+          "what": "released: Saved full 494.30s Betelgeuse picture checkpoint on PR #789 (659fac6c6): frame clock, decode, hashes and opaque-cover pixel checks pass; normal polish FAILS 7 rows, retained without waivers. Resume jobs/reviews/J2452/RESUME_2026-11-11_0510.md. Remaining 13-chapter picture finishing/final QA/NAS master and reel exceed this unattended run limit. No UAT, upload or spend; all launched processes exited."
+        },
+        {
+          "at": "2026-11-11T05:15Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:17Z",
+          "by": "macbook",
+          "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T05:27Z",
+          "by": "macbook",
+          "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T05:27Z",
+          "by": "macbook",
+          "what": "released: Clean checkpoint PR789 fa844255c. Saved 494.3s v04 picture; decode/hash/14829-frame clock/cover checks pass, normal polish FAIL 1/78 rows with 5 warnings. Six near-black samples clear but picture style unapproved; no UAT or final delivery. Three grade trials retained; do not repeat. Resume jobs/reviews/J2452/RESUME_2026-11-11_SHADOW.md. Remaining full assembly exceeds 25-minute wake. No processes left running, no spend/upload/NAS changes."
+        },
+        {
+          "at": "2026-11-11T05:28Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:29Z",
+          "by": "macbook",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Integrate verified Betelgeuse covers on corrected full-chapter clock; remaining picture chapters and final checks pending",
+      "remaining_action": "Align clean narration and correct sentence-boundary cut list; build local chapters",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the two-hour 'fall asleep to the solar system' video from our finished films, ready for you to spot-check",
       "progress": {
-        "step": 4,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-11T05:04Z",
+        "at": "2026-11-11T05:29Z",
         "by": "macbook"
       }
     },
@@ -215063,10 +215133,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T05:13Z",
+      "eta": "2026-11-11T07:13Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
       "result": "",
@@ -215135,14 +215205,41 @@
           "at": "2026-11-11T04:25Z",
           "by": "claude",
           "what": "reopened: Chief ruling is in (Grok, desk 6786715647, 04:06Z): history-of-science #495 is sent back for a v02 plan. The 23 Fast rows become Quality or free rows, and the 36 prompts that name a real person are reworded. The ruling is now the top of this job's brief."
+        },
+        {
+          "at": "2026-11-11T05:13Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:13Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J2475 v02 revision: reading Grok ruling #6786715647, HOS PR #495 branch, and HOS #496 reference"
+        },
+        {
+          "at": "2026-11-11T05:15Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read Grok ruling #6786715647, HOS #495 branch in clean worktree, and HOS #496/#498 013 prompt-rewrite reference"
+        },
+        {
+          "at": "2026-11-11T05:27Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Audited all 23 Fast rows (6 swapped to £0 free_archive/code_graphic with 0 back-to-back graphics, 17 upgraded to Veo 3.1 Quality; 0 Fast rows) and all 39 prompts naming real people"
         }
       ],
-      "remaining_action": "Parked for Chief: review HOS 011 VO lock + shot list v01 PR #495 and price pass (5,030 Flow credits try-1 / 12,892 expected)",
+      "remaining_action": "Apply 23 Fast->free/Quality swaps and 39 named-person prompt rewrites in _build_shot_list_v01.py",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-11T05:27Z",
+        "by": "gemini",
+        "note": "Audited all 23 Fast rows (6 swapped to £0 free_archive/code_graphic with 0 back-to-back graphics, 17 upgraded to Veo 3.1"
+      }
     },
     {
       "id": "J2476",
