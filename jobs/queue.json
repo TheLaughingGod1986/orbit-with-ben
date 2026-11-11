@@ -224534,9 +224534,14 @@
           "at": "2026-11-11T14:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Planned 4 steps: (1) locate J2583 remade takes and half-second sheets, (2) inspect P03:01_really_falling_c1 and P02:08_the_apple_c1, (3) inspect P04:05_minute_second_c1, (4) write evidence/PR or park for Chief and report"
         }
       ],
-      "remaining_action": "Yes or no on the remade shots; KEEP lets the edit start",
+      "remaining_action": "Locate the three remade clips and whole-clip half-second sheets from J2583, then inspect each clip against its three yes/no questions",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
@@ -224552,12 +224557,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T14:27Z",
+        "of": 4,
+        "at": "2026-11-11T14:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Planned 4 steps: (1) locate J2583 remade takes and half-second sheets, (2) inspect P03:01_really_falling_c1 and P02:08_t"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2585",
