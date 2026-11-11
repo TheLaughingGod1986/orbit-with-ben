@@ -71,3 +71,5 @@ picture QA PASS: 0 of 7 cuts fail, 1 to look at -> /Volumes/MiniWork/scratch/J25
 ## Handoff
 
 v08 watch card requested for Thu 12 Nov 18:00 London, air Fri 13 Nov 11:30; fallback “the cut you OK’d airs”. Chief reviews the source/crops and inherited warning, then rules on v08. J2520 remains the separate swap job after Ben’s approval. No worker approval, merge or upload.
+
+Live-board read-back at 11 Nov 02:41Z: `board_check.py --no-post` returned `ok: true`, expected 5, no problems, site 200. v08 card and Play link verified. PR #786 CI check passed.
