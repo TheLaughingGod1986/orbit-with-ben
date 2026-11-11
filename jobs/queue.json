@@ -230899,19 +230899,24 @@
           "at": "2026-11-11T23:39Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Completed search across all roots: two byte-identical SHA-256 matches found on the Mini (_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and /Volumes/MiniWork/desk/worktrees/J2245-011-vo/.../hos_011_vo_v01.wav); 0 matches in git/LFS, NAS archive, or shared HOS checkouts; 011 studio-live folder not yet created"
+        },
+        {
+          "at": "2026-11-11T23:42Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Restored 011_Surgery-Before-Anaesthesia and hos_011_vo_v01.wav (plus MP3 and ch00-ch04 stems) into studio-live via rsync --partial --update; re-verified SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2 on studio-live; nothing moved or deleted"
         }
       ],
-      "remaining_action": "Copy HOS 011 film folder and verified VO audio into studio-live and re-verify SHA-256 on studio-live",
+      "remaining_action": "Post restored studio-live path and SHA-256 on HOS desk #180 and close J2653",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-11T23:39Z",
+        "at": "2026-11-11T23:42Z",
         "by": "gemini",
-        "note": "Completed search across all roots: two byte-identical SHA-256 matches found on the Mini (_desk/media/HOS/011_Surgery-Bef"
+        "note": "Restored 011_Surgery-Before-Anaesthesia and hos_011_vo_v01.wav (plus MP3 and ch00-ch04 stems) into studio-live via rsync"
       },
       "taskKeys": [
         "HOS:011"
