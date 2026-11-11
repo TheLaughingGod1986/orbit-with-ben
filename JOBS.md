@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2554 | any | blocked | macbook | – | review · Verify condition for J2452 |  |
-| J2555 | any | open | – | – | review · Verify condition for J2171 |  |
+| J2555 | any | claimed | macbook-2 | 2026-11-11T04:50Z | review · Verify condition for J2171 |  |
 
 Recently finished:
 
