@@ -221001,13 +221001,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "",
+      "result": "Waiting for: The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -221043,12 +221043,27 @@
           "at": "2026-11-11T11:57Z",
           "by": "claude",
           "what": "stage 1, Orbit's film folders, records and archive: orbit-with-ben #820 merged (main f4144299). 42 of the 43 files that held an address are cleaned; three old picture runners compare a sha256, eight archived set-up scripts read the account from a setting, and the address check now also catches an address written as a search pattern. The list of files allowed to hold one is down to 1: the AI spend ledger, left until no picture run is appending to it (after Thu 12 Nov 19:13 London), together with the missing 10-credit J0886 line. Then History of Science's own files, after its two scrub pull requests (Grok's hold: not before the picture window closes and J2241 and J2270 are done)."
+        },
+        {
+          "at": "2026-11-11T14:44Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820)."
+        },
+        {
+          "at": "2026-11-11T14:44Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
         }
       ],
       "remaining_action": "Orbit: the AI spend ledger's notes, in a quiet window after Thu 12 Nov 19:13 London. Then History of Science's files and the history stages",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
-      "plain": "Remove email addresses from both channels' repos, including their past versions"
+      "plain": "Remove email addresses from both channels' repos, including their past versions",
+      "hold": {
+        "type": "date",
+        "condition": "The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).",
+        "check_at": "2026-11-12T19:15:00Z"
+      }
     },
     {
       "id": "J2538",
