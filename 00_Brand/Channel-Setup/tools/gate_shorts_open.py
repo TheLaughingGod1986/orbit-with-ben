@@ -34,10 +34,12 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
                                                         got 20.6 % stayed; winners stamp the 2–4
                                                         word hook caption at t=0.0 s on full-bleed
                                                         moving video)
- 10. frame 0 not full-bleed 9:16: black bars, a flat   (10 Nov 2026, J2539, LEARNINGS rule 24 — the
-     band, or a blurred / mirrored copy as fill, above  Short that aired on 10 Nov opened on a 16:9
-     and below a narrower picture band (0.0–0.5 s)      band over blurred fill and passed this gate;
-                                                        the Shorts feed barely showed it)
+ 10. the picture does not fill 9:16: black bars, a flat   (10 Nov 2026, J2539, LEARNINGS rule 24 — the
+     band, a blurred copy or a mirrored copy above and    Short that aired on 10 Nov opened on a 16:9 band
+     below a picture band. At the opening (frame 0, or    over blurred fill, passed this gate on 9 Nov and
+     most frames to 0.5 s), or on more than 10% of the    the feed barely showed it. 11 Nov 2026, J2546: the
+     frames sampled once a second over the whole Short.   rule was set on 56 real frames labelled by eye, and
+     An end card the cut's meta names is judged apart.    the whole Short is sampled, not only its opening.)
 
 Warnings:
 
@@ -159,35 +161,68 @@ FRAME0_FADE_RATIO_FAIL = 2.25
 FRAME0_HOOK_EDGE_MIN = 0.005
 FRAME0_HOOK_MAX_START_S = 0.05
 FRAME0_HOOK_MIN_DIMS = (540, 960)
-# Frame-0 full-bleed (10 Nov 2026, J2539, LEARNINGS rule 24): the Short that aired on 10 Nov opened on a 16:9 picture
-# band with blurred fill above and below, passed this gate on 9 Nov, and the Shorts feed barely showed it.
-# (i) FAIL when the opening picture does not fill the 9:16 frame. Grey FB_W x FB_H frames at FB_TIMES. A frame is
-#     padded when it has a pair of straight, full-width horizontal seams, one above and one below the centre and the
-#     same distance from it (fill is always centred), and outside them the frame is one of:
-#       "bars"     flat (pixel spread <= FB_FLAT_STD) while the band between is not: black bars or a flat colour band;
-#       "blur-pad" far softer than the band between (row detail < FB_SOFT_RATIO of it): a blurred copy as fill;
-#       "mirror"   the picture's own rows reflected outward from each seam.
-#     A seam is a brightness step across FB_SEAM_COLS of the width, or a jump in row detail (soft outside, sharp
-#     inside). Row detail = mean absolute left-right difference along a row, so the seam itself adds nothing to it.
-#     A caption strip or hook text over a full-frame picture has real picture outside it, so it is none of the three.
-#     A planet on black space has no straight full-width seam. Thresholds are first-pass, set on made clips only:
-#     read the numbers J2540 tables for real exports before tightening.
+# Full-bleed (10 Nov 2026, J2539, LEARNINGS rule 24; made right on real frames 11 Nov 2026, J2546): the Short that
+# aired on 10 Nov opened on a 16:9 picture band with blurred fill above and below, passed this gate on 9 Nov, and
+# the Shorts feed barely showed it. An audit by eye then found the same look inside eight more scheduled Shorts.
+# (i) FAIL when the picture does not fill the 9:16 frame: at the opening, or on more than FB_CLIP_MAX_SHARE of the
+#     frames sampled once a second over the whole Short. Grey FB_W x FB_H frames.
+#     What marks a padded frame, measured on 56 frames labelled by eye (jobs/reviews/J2545): fill has no fine
+#     detail. A blurred, enlarged copy is smooth at one-pixel spacing, and a flat band has nothing at all. A real
+#     picture nearly always has some, even a soft wall behind a subject. So a frame is padded when
+#       - the outer top and the outer bottom (FB_TOP, FB_BOTTOM: outside the picture band of any shape from 16:9
+#         to square) each have at most FB_OUT_MAX of their pixels sharp, with caption rows left out, and
+#       - the middle (FB_MIDDLE) has at least FB_MID_MIN of its pixels sharp: there is a picture between them, and
+#       - the outside is fill and not the picture's own plain background:
+#           "blur-pad" it still holds a picture (smooth brightness spread of FB_PICTURE_STD or more on a side),
+#                      or its top and bottom differ in brightness by FB_SIDES_MEAN or more, or it is plain with a
+#                      straight edge above and below the picture;
+#           "bars"     it is one flat shade (spread <= FB_UNIFORM_STD on both sides, the same shade top and
+#                      bottom) AND the picture has a straight edge above and below. Without the edges it is a
+#                      subject on a plain backdrop, a planet on black space, and passes.
+#       "mirror" is looked for on its own: the picture's rows reflected outward from a seam above and below.
+#     Sharp = the second difference (left-right or up-down) is FB_SHARP grey levels or more.
+#     A caption row has FB_CAPTION_PIXELS or more pixels both bright and very sharp; FB_CAPTION_GROW rows each
+#     side go with it. A side with fewer than FB_MIN_ROWS rows left cannot be judged, and the frame passes.
+#     A straight edge = FB_SEAM_COLS of the columns step by FB_SEAM_STEP across one row, and at most FB_SEAM_QUIET
+#     of them step four rows further out (a planet's curved limb, or picture texture, steps there too).
+#     Known limits, named in the test: a light, feathered blur under a large hook caption still reads as sharp;
+#     a dark graphic on a dark backdrop of another colour is one shade in grey.
 FB_W, FB_H = 108, 192
 FB_TIMES = (0.0, 0.25, 0.5)
-FB_SEAM_RANGE = (0.16, 0.42)   # upper seam row as a share of the height; the lower one mirrors it
-FB_SEAM_DIFF = 12              # grey levels across the seam (rows y-2 and y+1, so a 1-row soft edge still counts)
-FB_SEAM_COLS = 0.70
-FB_SEGS = 4                    # column segments for the row-detail jump
-FB_SEG_NEED = 3
-FB_SEAM_SYM_ROWS = 3          # the two seams sit within this many rows of the same distance from the centre
-FB_SOFT_RATIO = 0.40
-FB_BLUR_MAX_DETAIL = 4.2       # blurred fill is low-pass filtered; above this the outer bands carry real picture
-FB_DETAIL_FLOOR = 1.5          # the sharp side must carry real detail, or the frame proves nothing (dark space)
-FB_FLAT_STD = 3.0
-FB_PICTURE_STD = 12.0
+FB_TOP = (3, 42)               # rows; outside the band of any picture from 16:9 (rows 66-126) to square (42-150)
+FB_TOP_MORE = (42, 54)         # added when captions leave too few rows above: still outside a 16:9 or 4:3 band
+FB_BOTTOM = (150, 189)
+FB_BOTTOM_MORE = (138, 150)
+FB_MIDDLE = (76, 116)          # inside the band of any picture from 16:9 to square
+FB_SHARP = 8                   # grey levels of second difference
+FB_OUT_MAX = 0.08              # labelled frames: padded 0.064 at most, full 0.102 at least
+FB_MID_MIN = 0.06              # labelled frames: padded 0.08 at least; a smooth full frame (an eclipse) 0.03
+FB_CAPTION_BRIGHT = 180
+FB_CAPTION_SHARP = 28
+FB_CAPTION_PIXELS = 3
+FB_CAPTION_GROW = 4
+FB_MIN_ROWS = 10
+FB_UNIFORM_STD = 3.0
+FB_UNIFORM_MEAN = 6.0
+FB_PICTURE_STD = 10.0          # spread of 6-pixel block means along the rows: brightness that is not fine detail
+FB_SIDES_MEAN = 15.0
+FB_SEAM_ROWS = (24, 90)        # where the upper edge may sit; the lower one mirrors it
+FB_SEAM_STEP = 3.0
+FB_SEAM_COLS = 0.60
+FB_SEAM_QUIET = 0.25
+FB_SEAM_SYM_ROWS = 4           # the two edges sit within this many rows of the same distance from the centre
+FB_DETAIL_FLOOR = 1.5          # row detail a real picture carries (reported; the made-frame tests read it)
+FB_MIRROR_RANGE = (0.16, 0.42) # upper mirror seam as a share of the height
+FB_MIRROR_SYM_ROWS = 3
 FB_MIRROR_ROWS = 8
 FB_MIRROR_DIFF = 4.0
 FB_MIRROR_VERT = 8.0           # the picture must change this much over FB_MIRROR_ROWS rows for a mirror to count
+FB_CLIP_STEP_S = 1.0           # the whole Short: one frame a second
+FB_CLIP_MAX_SHARE = 0.10
+# Cuts Ben OK'd by watching before the whole-Short rule existed. Their padded stretches are measured and said, as a
+# warning: the cut he OK'd must still be able to go up as the fallback while its full-frame version waits for his
+# watch. Matched by the file's sha256, so a re-cut is never covered. The opening rule has no such list.
+FB_OKD_BEFORE_RULE = Path(__file__).resolve().parent / "full_bleed_okd_before_rule.json"
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -520,19 +555,15 @@ def frame0_hook_text_verdict(hook_edge_0s: float, meta: dict, dims: tuple[int, i
     return []
 
 
-# ----------------------------------------------------------------------------- frame-0 full-bleed (J2539)
-def _fb_row_stats(g: bytes) -> tuple[list[float], list[list[float]]]:
-    """Per row of an FB_W x FB_H grey frame: (detail, detail in each of FB_SEGS equal column segments).
-    Detail = mean absolute left-right difference."""
+# ----------------------------------------------------------------------------- full-bleed (J2539, J2546)
+def _fb_row_detail(g: bytes) -> list[float]:
+    """Per row of an FB_W x FB_H grey frame: mean absolute left-right difference."""
     W = FB_W
-    seg_w = W // FB_SEGS
-    det, segs = [], []
+    out = []
     for y in range(FB_H):
         row = g[y * W:(y + 1) * W]
-        d = [abs(row[x + 1] - row[x]) for x in range(W - 1)]
-        det.append(sum(d) / (W - 1))
-        segs.append([sum(d[s * seg_w:(s + 1) * seg_w - 1]) / (seg_w - 1) for s in range(FB_SEGS)])
-    return det, segs
+        out.append(sum(abs(row[x + 1] - row[x]) for x in range(W - 1)) / (W - 1))
+    return out
 
 
 def _fb_std(g: bytes, y0: int, y1: int) -> float:
@@ -548,44 +579,93 @@ def _fb_avg(vals: list[float], y0: int, y1: int) -> float:
     return sum(v) / len(v) if v else 0.0
 
 
-def _fb_med(vals: list[float], y0: int, y1: int) -> float:
-    """Median over rows y0..y1 so a hook or subtitle caption inside an outer band does not mask bars or blur fill."""
-    v = sorted(vals[max(0, y0):max(0, y1)])
-    if not v:
-        return 0.0
-    m = len(v) // 2
-    return v[m] if len(v) % 2 else (v[m - 1] + v[m]) / 2
+def _fb_sharpness(g: bytes) -> bytearray:
+    """Per pixel: the larger of the left-right and the up-down second difference (0 on the frame's edge where one
+    cannot be taken). Fine detail is large here; a blurred enlargement is close to 0 even where it has contrast."""
+    W, H = FB_W, FB_H
+    out = bytearray(W * H)
+    for y in range(H):
+        o = y * W
+        row = g[o:o + W]
+        up = g[o - W:o] if y > 0 else None
+        dn = g[o + W:o + 2 * W] if y < H - 1 else None
+        for x in range(W):
+            h = abs(row[x - 1] - 2 * row[x] + row[x + 1]) if 0 < x < W - 1 else 0
+            v = abs(up[x] - 2 * row[x] + dn[x]) if up is not None and dn else 0
+            out[o + x] = min(255, h if h > v else v)
+    return out
+
+
+def _fb_caption_rows(g: bytes, sharp: bytearray) -> list[bool]:
+    """Rows that carry lettering (pixels both bright and very sharp), with FB_CAPTION_GROW rows each side for the
+    outline and the glow. A hook or a subtitle over the fill must not make the fill look like picture."""
+    W, H = FB_W, FB_H
+    hit = []
+    for y in range(H):
+        o = y * W
+        n = sum(1 for x in range(W) if g[o + x] >= FB_CAPTION_BRIGHT and sharp[o + x] >= FB_CAPTION_SHARP)
+        hit.append(n >= FB_CAPTION_PIXELS)
+    return [any(hit[max(0, y - FB_CAPTION_GROW):y + FB_CAPTION_GROW + 1]) for y in range(H)]
+
+
+def _fb_side(g: bytes, sharp: bytearray, caption: list[bool], zone: tuple[int, int], more: tuple[int, int]) -> dict | None:
+    """One outer zone with its caption rows left out: share of sharp pixels, brightness mean and spread, and the
+    spread of 6-pixel block means (brightness that is not fine detail). None when too few rows are left."""
+    W = FB_W
+    rows = [y for y in range(*zone) if not caption[y]]
+    if len(rows) < FB_MIN_ROWS:
+        rows += [y for y in range(*more) if not caption[y]]
+    if len(rows) < FB_MIN_ROWS:
+        return None
+    n = len(rows) * W
+    hits = tot = 0
+    blocks = []
+    for y in rows:
+        o = y * W
+        row = g[o:o + W]
+        hits += sum(1 for x in range(W) if sharp[o + x] >= FB_SHARP)
+        tot += sum(row)
+        blocks += [sum(row[x:x + 6]) / 6 for x in range(0, W - W % 6, 6)]
+    mean = tot / n
+    var = sum((g[y * W + x] - mean) ** 2 for y in rows for x in range(W)) / n
+    bm = sum(blocks) / len(blocks)
+    return {
+        "share": hits / n, "mean": mean, "std": var ** 0.5,
+        "smooth_std": (sum((v - bm) ** 2 for v in blocks) / len(blocks)) ** 0.5, "rows": len(rows),
+    }
 
 
 def _fb_step_share(g: bytes, y: int) -> float:
-    """Share of columns with a brightness step of FB_SEAM_DIFF or more between rows y-2 and y+1."""
-    if y < 2 or y + 1 >= FB_H:
+    """Share of columns whose brightness steps by FB_SEAM_STEP or more across row y (two rows each side)."""
+    W = FB_W
+    if y < 2 or y + 2 >= FB_H:
         return 0.0
-    a, b = (y - 2) * FB_W, (y + 1) * FB_W
-    return sum(1 for x in range(FB_W) if abs(g[a + x] - g[b + x]) >= FB_SEAM_DIFF) / FB_W
+    a0, a1, b0, b1 = (y - 2) * W, (y - 1) * W, (y + 1) * W, (y + 2) * W
+    return sum(1 for x in range(W) if abs(g[b0 + x] + g[b1 + x] - g[a0 + x] - g[a1 + x]) >= 2 * FB_SEAM_STEP) / W
 
 
-def _fb_seam(g: bytes, det: list[float], segs: list[list[float]], y: int, upper: bool) -> tuple[bool, float, float]:
-    """Is there a straight seam at row y (the first picture row for the upper seam, the first fill row for the
-    lower one)? Returns (seam, brightness-step share, outside/inside row-detail ratio). The detail jump must show in
-    FB_SEG_NEED of the FB_SEGS column segments, on every one of the three rows each side, so the curved edge of a
-    planet on black space is not a seam."""
-    share = _fb_step_share(g, y)
-    out_rows = range(y - 4, y - 1) if upper else range(y + 1, y + 4)
-    in_rows = range(y + 1, y + 4) if upper else range(y - 4, y - 1)
-    if min(out_rows) < 0 or max(out_rows) >= FB_H or min(in_rows) < 0 or max(in_rows) >= FB_H:
-        return share >= FB_SEAM_COLS, round(share, 3), 1.0
-    outside = sum(det[r] for r in out_rows) / 3
-    inside = sum(det[r] for r in in_rows) / 3
-    ratio = outside / inside if inside > 0 else 1.0
-    jumps = 0
-    for s in range(FB_SEGS):
-        sharp = min(segs[r][s] for r in in_rows)
-        soft = max(segs[r][s] for r in out_rows)
-        if sharp >= FB_DETAIL_FLOOR and soft <= FB_SOFT_RATIO * sharp:
-            jumps += 1
-    seam = share >= FB_SEAM_COLS or jumps >= FB_SEG_NEED
-    return seam, round(share, 3), round(ratio, 3)
+def _fb_edges(g: bytes) -> tuple[int, int, float] | None:
+    """A straight edge above the picture and another below it, the same distance from the centre: (upper row,
+    lower row, the smaller share of columns that step). Four rows further out almost nothing may step, so a
+    planet's curved limb and the texture inside a picture are not edges."""
+    H = FB_H
+    memo: dict[int, float] = {}
+
+    def share(y: int) -> float:
+        if y not in memo:
+            memo[y] = _fb_step_share(g, y)
+        return memo[y]
+
+    best = None
+    for u in range(*FB_SEAM_ROWS):
+        if share(u) < FB_SEAM_COLS or share(u - 4) > FB_SEAM_QUIET:
+            continue
+        for low in range(H - 1 - u - FB_SEAM_SYM_ROWS, H - 1 - u + FB_SEAM_SYM_ROWS + 1):
+            if share(low) >= FB_SEAM_COLS and share(low + 4) <= FB_SEAM_QUIET:
+                score = min(share(u), share(low))
+                if best is None or score > best[2]:
+                    best = (u, low, score)
+    return best
 
 
 def _fb_mirror_diff(g: bytes, y: int) -> tuple[float, float]:
@@ -605,57 +685,83 @@ def _fb_mirror_diff(g: bytes, y: int) -> tuple[float, float]:
     return tot / (FB_MIRROR_ROWS * W), vert
 
 
+def _fb_mirror(g: bytes) -> tuple[int, int, float, float] | None:
+    """Mirrored fill has no brightness step at its seam, so it is looked for on its own."""
+    H = FB_H
+    memo: dict[int, tuple[float, float]] = {}
+
+    def diff(y: int) -> tuple[float, float]:
+        if y not in memo:
+            memo[y] = _fb_mirror_diff(g, y)
+        return memo[y]
+
+    for u in range(int(H * FB_MIRROR_RANGE[0]), int(H * FB_MIRROR_RANGE[1]) + 1):
+        md_u, mv_u = diff(u)
+        if md_u > FB_MIRROR_DIFF or mv_u < FB_MIRROR_VERT:
+            continue
+        for low in range(H - u - FB_MIRROR_SYM_ROWS, H - u + FB_MIRROR_SYM_ROWS + 1):
+            md_l, mv_l = diff(low)
+            if md_l <= FB_MIRROR_DIFF and mv_l >= FB_MIRROR_VERT:
+                return u, low, md_u, md_l
+    return None
+
+
 def full_bleed_frame(g: bytes) -> dict:
     """Measure one FB_W x FB_H grey frame. 'kind' is None (the picture fills the frame), 'bars', 'blur-pad' or
-    'mirror'. The other keys are the numbers behind it, for the gate's report."""
+    'mirror'; 'why' says which evidence decided it. The other keys are the numbers behind it, for the report."""
     H = FB_H
-    det, segs = _fb_row_stats(g)
-    rstd = [_fb_std(g, y, y + 1) for y in range(H)]
+    det = _fb_row_detail(g)
     fifth = H // 5
-    c0, c1 = int(H * 0.38), int(H * 0.62)
     out: dict = {
         "kind": None,
+        "why": None,
         "detail_top": round(_fb_avg(det, 0, fifth), 2),
-        "detail_centre": round(_fb_avg(det, c0, c1), 2),
+        "detail_centre": round(_fb_avg(det, int(H * 0.38), int(H * 0.62)), 2),
         "detail_bottom": round(_fb_avg(det, H - fifth, H), 2),
         "std_top": round(_fb_std(g, 0, fifth), 2),
         "std_bottom": round(_fb_std(g, H - fifth, H), 2),
         "seam_rows": None,
+        "sharp_top": None,
+        "sharp_middle": None,
+        "sharp_bottom": None,
     }
-    lo, hi = int(H * FB_SEAM_RANGE[0]), int(H * FB_SEAM_RANGE[1])
-    for u in range(lo, hi + 1):
-        # mirrored fill has no brightness step at the seam, so it is looked for on its own
-        for low in range(H - u - FB_SEAM_SYM_ROWS, H - u + FB_SEAM_SYM_ROWS + 1):
-            md_u, mv_u = _fb_mirror_diff(g, u)
-            md_l, mv_l = _fb_mirror_diff(g, low)
-            if max(md_u, md_l) <= FB_MIRROR_DIFF and min(mv_u, mv_l) >= FB_MIRROR_VERT:
-                out.update(kind="mirror", seam_rows=[u, low], mirror_diff=[round(md_u, 2), round(md_l, 2)])
-                return out
-        up_ok, up_share, up_ratio = _fb_seam(g, det, segs, u, True)
-        if not up_ok:
-            continue
-        for low in range(H - u - FB_SEAM_SYM_ROWS, H - u + FB_SEAM_SYM_ROWS + 1):
-            low_ok, low_share, low_ratio = _fb_seam(g, det, segs, low, False)
-            if not low_ok:
-                continue
-            std_out = max(_fb_med(rstd, 0, u - 2), _fb_med(rstd, low + 2, H))
-            std_pic = _fb_std(g, u + 1, low - 1)
-            det_out = max(_fb_med(det, 0, u - 2), _fb_med(det, low + 2, H))
-            det_pic = _fb_avg(det, u + 1, low - 1)
-            kind = None
-            if std_out <= FB_FLAT_STD and std_pic >= FB_PICTURE_STD:
-                kind = "bars"
-            elif det_pic >= FB_DETAIL_FLOOR and det_out <= FB_BLUR_MAX_DETAIL and det_out < FB_SOFT_RATIO * det_pic:
-                kind = "blur-pad"
-            if kind:
-                out.update(
-                    kind=kind, seam_rows=[u, low], seam_step_share=[up_share, low_share],
-                    seam_detail_ratio=[up_ratio, low_ratio],
-                    picture_share_of_height=round((low - u) / H, 3),
-                    std_outside=round(std_out, 2), std_picture=round(std_pic, 2),
-                    detail_outside=round(det_out, 2), detail_picture=round(det_pic, 2),
-                )
-                return out
+    mirror = _fb_mirror(g)
+    if mirror:
+        out.update(kind="mirror", why="the picture's rows are reflected outward above and below it",
+                   seam_rows=[mirror[0], mirror[1]], mirror_diff=[round(mirror[2], 2), round(mirror[3], 2)])
+        return out
+    sharp = _fb_sharpness(g)
+    caption = _fb_caption_rows(g, sharp)
+    top = _fb_side(g, sharp, caption, FB_TOP, FB_TOP_MORE)
+    bottom = _fb_side(g, sharp, caption, FB_BOTTOM, FB_BOTTOM_MORE)
+    m0, m1 = FB_MIDDLE
+    middle = sum(1 for i in range(m0 * FB_W, m1 * FB_W) if sharp[i] >= FB_SHARP) / ((m1 - m0) * FB_W)
+    out["sharp_middle"] = round(middle, 3)
+    if top is None or bottom is None:
+        return out                                   # captions cover an outer zone: it cannot be judged
+    out.update(
+        sharp_top=round(top["share"], 3), sharp_bottom=round(bottom["share"], 3),
+        outside_std=[round(top["std"], 2), round(bottom["std"], 2)],
+        outside_mean=[round(top["mean"], 1), round(bottom["mean"], 1)],
+        outside_smooth_std=[round(top["smooth_std"], 2), round(bottom["smooth_std"], 2)],
+    )
+    if max(top["share"], bottom["share"]) > FB_OUT_MAX or middle < FB_MID_MIN:
+        return out                                   # real detail outside, or no picture in the middle
+    edges = _fb_edges(g)
+    if edges:
+        out.update(seam_rows=[edges[0], edges[1]], seam_step_share=round(edges[2], 3))
+    uniform = (max(top["std"], bottom["std"]) <= FB_UNIFORM_STD
+               and abs(top["mean"] - bottom["mean"]) <= FB_UNIFORM_MEAN)
+    if uniform:
+        if edges:
+            out.update(kind="bars", why="one flat shade above and below, with a straight edge at the picture")
+        return out                                   # no straight edges: a subject on its own plain backdrop
+    if max(top["smooth_std"], bottom["smooth_std"]) >= FB_PICTURE_STD:
+        out.update(kind="blur-pad", why="no fine detail above or below, yet a picture's brightness is there")
+    elif abs(top["mean"] - bottom["mean"]) >= FB_SIDES_MEAN:
+        out.update(kind="blur-pad", why="no fine detail above or below, and the two differ in brightness")
+    elif edges:
+        out.update(kind="blur-pad", why="plain above and below, with a straight edge at the picture")
     return out
 
 
@@ -672,6 +778,13 @@ def frame0_full_bleed(path: Path, dur: float | None = None) -> list[dict]:
     return out
 
 
+def _fb_numbers(f: dict) -> str:
+    if f["kind"] == "mirror":
+        return f"mirror difference {f['mirror_diff'][0]} / {f['mirror_diff'][1]}"
+    return (f"sharp pixels above/middle/below {f['sharp_top']:.0%}/{f['sharp_middle']:.0%}/{f['sharp_bottom']:.0%}: "
+            f"{f['why']}")
+
+
 def frame0_full_bleed_verdict(frames: list[dict]) -> list[str]:
     """(i) FAIL when the frame at 0.0 s, or most of the frames to 0.5 s, show a picture band with fill above and below."""
     bad = [f for f in frames if f.get("kind")]
@@ -681,18 +794,111 @@ def frame0_full_bleed_verdict(frames: list[dict]) -> list[str]:
         return []
     f = bad[0]
     kinds = " / ".join(sorted({b["kind"] for b in bad}))
-    if f["kind"] == "bars":
-        nums = f"spread outside {f['std_outside']} vs picture {f['std_picture']}"
-    elif f["kind"] == "blur-pad":
-        nums = f"row detail outside {f['detail_outside']} vs picture {f['detail_picture']}"
-    else:
-        nums = f"mirror difference {f['mirror_diff'][0]} / {f['mirror_diff'][1]}"
-    u, low = f["seam_rows"]
     return [
         f"frame 0 is not full-bleed 9:16: {kinds} above and below a picture band on {len(bad)}/{len(frames)} frames "
-        f"from 0.0 to 0.5 s (band from {u / FB_H:.0%} to {low / FB_H:.0%} of the height at {f['t']:.2f}s, {nums}) — "
-        "reframe the opening shot to fill 1080x1920"
+        f"from 0.0 to 0.5 s (at {f['t']:.2f}s, {_fb_numbers(f)}) — reframe the opening shot to fill 1080x1920"
     ]
+
+
+def end_card_window(meta: dict | None, dur: float) -> tuple[float, float] | None:
+    """The stretch the cut's own meta file names as its end card, in seconds, or None. Only what the meta says:
+    a share of the length is never used as a stand-in (Chief ruling on J2545, 11 Nov 2026)."""
+    if not isinstance(meta, dict):
+        return None
+    w = meta.get("end_card_window_s")
+    if isinstance(w, (list, tuple)) and len(w) == 2 and all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in w):
+        a, b = float(w[0]), float(w[1])
+    else:
+        card = meta.get("end_card")
+        start = card.get("start_s") if isinstance(card, dict) else None
+        if not isinstance(start, (int, float)) or isinstance(start, bool):
+            return None
+        length = card.get("len_s")
+        a = float(start)
+        b = a + float(length) if isinstance(length, (int, float)) and not isinstance(length, bool) else dur
+    a, b = max(0.0, a), min(dur, b)
+    return (a, b) if b > a else None
+
+
+def okd_before_rule(path: Path, listed: Path | None = None) -> dict | None:
+    """The entry for this exact file in the list of cuts Ben OK'd before the whole-Short rule, or None."""
+    listed = listed or FB_OKD_BEFORE_RULE
+    try:
+        cuts = json.loads(listed.read_text()).get("cuts") or []
+    except (OSError, ValueError, AttributeError):
+        return None
+    wanted = {str(c.get("sha256") or "").lower(): c for c in cuts if isinstance(c, dict) and c.get("ok")}
+    if not wanted:
+        return None
+    import hashlib
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return wanted.get(h.hexdigest())
+
+
+def clip_full_bleed(path: Path, dur: float | None = None) -> list[dict]:
+    """full_bleed_frame() for one frame every FB_CLIP_STEP_S over the whole Short, each with its time 't'."""
+    if dur is None:
+        dur = duration_s(path)
+    out = []
+    t = 0.0
+    while t < dur - 0.05:
+        m = full_bleed_frame(raw_frame(path, FB_W, FB_H, t, "gray"))
+        m["t"] = round(t, 2)
+        out.append(m)
+        t += FB_CLIP_STEP_S
+    return out
+
+
+def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
+    """Runs of padded sampled frames as (first second, last second + one step, kinds)."""
+    out: list[tuple[float, float, str]] = []
+    run_start = None
+    kinds: set[str] = set()
+    last = 0.0
+    for f in frames:
+        if f.get("kind"):
+            if run_start is None:
+                run_start, kinds = f["t"], set()
+            kinds.add(f["kind"])
+            last = f["t"]
+        elif run_start is not None:
+            out.append((run_start, last + FB_CLIP_STEP_S, " / ".join(sorted(kinds))))
+            run_start = None
+    if run_start is not None:
+        out.append((run_start, last + FB_CLIP_STEP_S, " / ".join(sorted(kinds))))
+    return out
+
+
+def clip_full_bleed_verdict(frames: list[dict], end_card: tuple[float, float] | None = None) -> tuple[list[str], list[str]]:
+    """(fails, warns) for the whole Short. FAIL when more than FB_CLIP_MAX_SHARE of the frames sampled outside
+    the end card are padded. A padded end card is said, not failed: it is judged apart from the shots."""
+    def in_card(f: dict) -> bool:
+        return end_card is not None and end_card[0] <= f["t"] < end_card[1]
+
+    body = [f for f in frames if not in_card(f)]
+    card = [f for f in frames if in_card(f)]
+    fails, warns = [], []
+    bad = [f for f in body if f.get("kind")]
+    if body and len(bad) > FB_CLIP_MAX_SHARE * len(body):
+        runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
+        left_out = f", end card {end_card[0]:.1f}-{end_card[1]:.1f}s left out" if end_card else ""
+        fails.append(
+            f"the picture does not fill 9:16 on {len(bad)}/{len(body)} frames sampled once a second "
+            f"({len(bad) / len(body):.0%}, limit {FB_CLIP_MAX_SHARE:.0%}{left_out}): {runs} — make every shot fill "
+            "1080x1920 (crop and scale, or other picture; no blurred, mirrored or flat band)"
+        )
+    elif bad:
+        runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
+        warns.append(f"the picture does not fill 9:16 on {len(bad)}/{len(body)} sampled frames: {runs}")
+    if any(f.get("kind") for f in card):
+        warns.append(
+            f"the end card ({end_card[0]:.1f}-{end_card[1]:.1f}s) sits on fill, not a full 9:16 picture: "
+            "judged apart from the shots"
+        )
+    return fails, warns
 
 
 # ----------------------------------------------------------------------------- library
@@ -1108,7 +1314,22 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
 
     # Rule 24 is a hard fail in every mode: --report-only still reports it as a FAIL, with the numbers.
     res["frame0_full_bleed"] = frame0_full_bleed(path, dur)
-    res["fails"] += frame0_full_bleed_verdict(res["frame0_full_bleed"])
+    opening = frame0_full_bleed_verdict(res["frame0_full_bleed"])
+    res["fails"] += opening
+    # The whole Short, one frame a second. The end card is judged apart, only where the cut's meta names it.
+    card = end_card_window(meta, dur)
+    res["end_card_window_s"] = list(card) if card else None
+    res["clip_full_bleed"] = clip_full_bleed(path, dur)
+    res["padded_stretches_s"] = [[a, b, k] for a, b, k in padded_stretches(res["clip_full_bleed"])]
+    clip_fails, clip_warns = clip_full_bleed_verdict(res["clip_full_bleed"], card)
+    okd = okd_before_rule(path) if clip_fails else None
+    res["okd_before_full_bleed_rule"] = okd
+    if okd:
+        clip_warns += [f"{f} [not a FAIL for this file: OK'd before the rule ({okd['ok']}); a re-cut is not covered]"
+                       for f in clip_fails]
+        clip_fails = []
+    res["fails"] += clip_fails
+    res["warns"] += clip_warns
 
     cut1 = first_cut_s(path, dur)
     res["first_cut_s"] = cut1
@@ -1238,11 +1459,21 @@ def main(argv: list[str] | None = None) -> int:
                     + (f"  visor={r['orbit']['visor_frac']}" if r.get("orbit") else "")
                 )
                 for m in r.get("frame0_full_bleed", []):
-                    band = (f"  band rows {m['seam_rows'][0]}-{m['seam_rows'][1]} of {FB_H}" if m.get("seam_rows") else "")
+                    band = (f"  edge rows {m['seam_rows'][0]}-{m['seam_rows'][1]} of {FB_H}" if m.get("seam_rows") else "")
                     print(
                         f"   full-bleed {m['t']:.2f}s  {m['kind'] or 'fills the frame'}  "
+                        f"sharp above/middle/below={m['sharp_top']}/{m['sharp_middle']}/{m['sharp_bottom']}  "
                         f"detail top/centre/bottom={m['detail_top']}/{m['detail_centre']}/{m['detail_bottom']}  "
                         f"spread top/bottom={m['std_top']}/{m['std_bottom']}{band}"
+                    )
+                clip = r.get("clip_full_bleed") or []
+                if clip:
+                    runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in r.get("padded_stretches_s") or []) or "none"
+                    card = r.get("end_card_window_s")
+                    print(
+                        f"   full-bleed whole Short  {sum(1 for m in clip if m['kind'])}/{len(clip)} frames padded, "
+                        f"one a second  padded stretches: {runs}"
+                        + (f"  end card {card[0]:.1f}-{card[1]:.1f}s judged apart" if card else "  no end card named in meta")
                     )
                 for x in r["fails"]:
                     print(f"   FAIL  {x}")
