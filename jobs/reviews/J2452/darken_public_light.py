@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image,ImageDraw
 import build_public_light as b
 SRC=b.OUT.with_name('public_light_v06')
-OUT=b.OUT.with_name('public_light_dark_v03')
+OUT=b.OUT.with_name('public_light_dark_v05')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def scan(p):
@@ -44,12 +44,13 @@ def main(verify_existing=False):
  assert len(records)==10, len(records)
  start=sum(r['build']['duration_s']+4 for r in records)
  assert start>=1230,start
- video=OUT/'024_light_darkened_v03.mp4'
+ video=OUT/'024_light_darkened_v05.mp4'
  # Ordered spatial rounding preserves the fractional 0.85 luma change
  # without a uniform rounding bias; lossless encoding preserves the result.
  vf=r'geq=lum=floor((lum(X\,Y)-16)*0.85+16+mod(X+Y\,20)/20):cb=(cb(X\,Y)-128)*0.85+128:cr=(cr(X\,Y)-128)*0.85+128'
  if not verify_existing:
-  sp.run(['ffmpeg','-v','error','-nostdin','-n','-threads','4','-i',build['output'],'-filter_threads','8','-vf',vf,'-map','0:v','-map','0:a','-frames:v',str(build['expected_frames']),'-c:v','libx264','-preset','ultrafast','-crf','0','-threads','4','-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','copy',str(video)],check=True,timeout=600)
+  from render_light_lut import main as render
+  render()
  before,n0=scan(build['output']);after,n1=scan(video)
  assert n0==n1==build['expected_frames'],(n0,n1)
  assert before.shape==after.shape

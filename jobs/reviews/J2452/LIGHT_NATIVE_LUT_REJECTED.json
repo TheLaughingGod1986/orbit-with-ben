@@ -1,0 +1,44 @@
+{
+  "filter": "format=yuv420p16le,lutyuv=y=(val-4096)*0.85+4096:u=(val-32768)*0.85+32768:v=(val-32768)*0.85+32768,scale=iw:ih:sws_dither=ed,format=yuv420p",
+  "rows": [
+    {
+      "t": 68,
+      "base": 12.798026499807099,
+      "after": 10.634631558641976,
+      "ratio": 0.8309587074852728,
+      "elapsed": 4.260618958156556
+    },
+    {
+      "t": 398,
+      "base": 3.9965291039737654,
+      "after": 3.204174141589506,
+      "ratio": 0.8017392237688404,
+      "elapsed": 2.062619916163385
+    },
+    {
+      "t": 406,
+      "base": 7.082346221547068,
+      "after": 5.7222559799382715,
+      "ratio": 0.807960497967339,
+      "elapsed": 4.207888083066791
+    },
+    {
+      "t": 440,
+      "base": 8.861725260416666,
+      "after": 7.2836157527970675,
+      "ratio": 0.821918479613822,
+      "elapsed": 2.2099892082624137
+    },
+    {
+      "t": 442,
+      "base": 6.598614185474537,
+      "after": 5.23195125626929,
+      "ratio": 0.792886371169621,
+      "elapsed": 3.1403574999421835
+    }
+  ],
+  "status": "REJECTED_NOT_DELIVERED",
+  "reason": "Native saved-pixel measurements below 83 percent in four of five windows; conversion dithering did not preserve fractional luma.",
+  "source": "public_light_v06/024_light_undarkened_v04.mp4",
+  "source_sha256": "621f6d198475a1e02f240f56691e41f16794625850c25315fa0ae5b30d87fcae"
+}

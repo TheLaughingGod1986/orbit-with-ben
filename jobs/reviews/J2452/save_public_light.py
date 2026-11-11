@@ -19,10 +19,22 @@ def main():
  assert all(w['ratio'] is not None and .83<=w['ratio']<=.87 for w in r['post_2030_two_second_measurements'])
  assert q['gate_exit_codes'] in ([0,0],[1,0]) and all(x['classification']=='in the public film' for x in q['inherited_findings'])
  assert sha(Path(r['output']))==r['sha256']
- DEST.mkdir(parents=True,exist_ok=False);copies=[]
+ DEST.mkdir(parents=True,exist_ok=True);copies=[]
  for p in [Path(r['output']),OUT/'BRIGHTEST_WINDOWS.jpg']:
   target=DEST/p.name
-  with p.open('rb') as src,target.open('xb') as dst:shutil.copyfileobj(src,dst,512000)
+  # Resume only an identical prefix of this exact source; never overwrite.
+  offset=target.stat().st_size if target.exists() else 0
+  assert offset<=p.stat().st_size
+  with p.open('rb') as src:
+   if offset:
+    with target.open('rb') as saved:
+     left=offset
+     while left:
+      take=min(left,8*1024*1024)
+      assert saved.read(take)==src.read(take), 'Existing destination prefix differs'
+      left-=take
+   with target.open('ab' if offset else 'xb') as dst:
+    shutil.copyfileobj(src,dst,8*1024*1024)
   digest=sha(target);assert digest==sha(p)
   copies.append(dict(path=str(target),sha256=digest,bytes=target.stat().st_size))
  record=dict(status='CHAPTER_SAVED_NOT_FINAL_UAT',build=b,readback=q,darkening=r,copies=copies,notes='Eleventh chapter only. Full compilation, bed and sound checks, joins, reel and Ben watch card still owed. Finished-source charts and labels retained; dissolves only on compilation edits. No upload or spend.')
