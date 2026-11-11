@@ -6,13 +6,16 @@ import numpy as np
 from PIL import Image,ImageDraw
 import build_public_sun as b
 SRC=b.OUT.with_name('public_sun_v03')
-OUT=b.OUT.with_name('public_sun_dark_v01')
+OUT=b.OUT.with_name('public_sun_dark_v02')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def scan(p):
- r=sp.run(['ffmpeg','-v','info','-xerror','-threads','4','-i',str(p),'-an','-filter_threads','2','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
+ # Measure brightness in decoded Y, whose legal black is 16. The implicit
+ # YUV-to-gray conversion produced different ratios on near-dark pictures.
+ # Extracting Y first makes the physical quantity and black offset explicit.
+ r=sp.run(['ffmpeg','-v','info','-xerror','-threads','4','-i',str(p),'-an','-filter_threads','2','-vf','showinfo,fps=4,extractplanes=y,scale=160:90:flags=area','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
  n=[int(x) for x in re.findall(rb'\bn:\s*(\d+)\s+pts:',r.stderr)]
- return np.frombuffer(r.stdout,np.uint8).reshape(-1,90,160),max(n)+1
+ return np.maximum(np.frombuffer(r.stdout,np.uint8).reshape(-1,90,160).astype(np.float64)-16,0),max(n)+1
 
 def main(verify_existing=False):
  build=json.loads((SRC/'BUILD.json').read_text());read=json.loads((SRC/'READBACK.json').read_text())
@@ -33,8 +36,8 @@ def main(verify_existing=False):
  jupiter=json.loads((nas/'020_jupiter_v01/CHAPTER.json').read_text())
  start=jupiter['build']['duration_s']+4+moon['build']['duration_s']+saturn['build']['duration_s']+earth['build']['duration_s']+mars['build']['duration_s']+venus['build']['duration_s']+magnetic['build']['duration_s']+24
  assert start>=1230,start
- video=OUT/'022_sun_darkened_v01.mp4'
- vf='format=yuv420p10le,lut=y=(val-64)*0.85+64+0.5,format=yuv420p'
+ video=OUT/'022_sun_darkened_v02.mp4'
+ vf='format=yuv420p10le,lut=y=(val-64)*0.85+64+0.5:u=(val-512)*0.85+512:v=(val-512)*0.85+512,format=yuv420p'
  if not verify_existing:
   b.run(['-threads','4','-i',build['output'],'-filter_threads','2','-vf',vf,'-map','0:v','-map','0:a','-frames:v',str(build['expected_frames']),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','copy',str(video)])
  before,n0=scan(build['output']);after,n1=scan(video)
@@ -67,7 +70,7 @@ def main(verify_existing=False):
   if not frame.exists():sp.run(['ffmpeg','-v','error','-n','-ss',str(w['start_s']+1),'-i',str(video),'-frames:v','1',str(frame)],check=True)
   im=Image.open(frame).convert('RGB');im.thumbnail((480,270));sheet.paste(im,(0,i*294));d.text((490,i*294+12),f"{w['start_s']:.2f}-{w['end_s']:.2f}s\nMean luma {w['mean_luma']:.2f}",fill='white');w['frame']=str(frame)
  sheet.save(OUT/'BRIGHTEST_WINDOWS.jpg',quality=90)
- report=dict(status='DARKENED_CHAPTER_VERIFIED_NOT_FINAL_COMPILATION',output=str(video),sha256=sha(video),source_undarkened=str(SRC),source_sha256=build['sha256'],compilation_start_s=start,frames_before=n0,frames_after=n1,probe=probe,post_2030_brightness_ratio=ratio,target_ratio=.85,tolerance=.02,post_2030_two_second_measurements=windows,brightest_two_second_windows=bright,grade=vf,timed_grade_two_second_measurements=ramp_checks,undarkened_build=build,undarkened_readback=read,remaining='NAS save and destination hashes; final continuous bed, full-film loudness/peak/silence/CTA/join checks, reel and Ben watch card. Public-source charts and labels retained; dissolves only on compilation edits.')
+ report=dict(status='DARKENED_CHAPTER_VERIFIED_NOT_FINAL_COMPILATION',output=str(video),sha256=sha(video),source_undarkened=str(SRC),source_sha256=build['sha256'],compilation_start_s=start,frames_before=n0,frames_after=n1,probe=probe,post_2030_brightness_ratio=ratio,target_ratio=.85,tolerance=.02,post_2030_two_second_measurements=windows,brightest_two_second_windows=bright,grade=vf,brightness_measurement='Decoded legal-range Y plane, black 16 subtracted and clipped at zero; area downsample at 4 fps. Avoids chroma-dependent YUV-to-gray conversion.',timed_grade_two_second_measurements=ramp_checks,undarkened_build=build,undarkened_readback=read,remaining='NAS save and destination hashes; final continuous bed, full-film loudness/peak/silence/CTA/join checks, reel and Ben watch card. Public-source charts and labels retained; dissolves only on compilation edits.')
  (OUT/'DARKEN_READBACK.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:report[k] for k in ['output','sha256','frames_after','post_2030_brightness_ratio']},indent=2))
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--verify-existing',action='store_true')

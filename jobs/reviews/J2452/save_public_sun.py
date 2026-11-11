@@ -8,6 +8,7 @@ def main():
  r=json.loads((OUT/'DARKEN_READBACK.json').read_text());b=r['undarkened_build'];q=r['undarkened_readback']
  assert Path('/Volumes/data').is_mount()
  assert r['frames_before']==r['frames_after']==b['expected_frames']
+ assert r['brightness_measurement'].startswith('Decoded legal-range Y plane')
  assert .83<=r['post_2030_brightness_ratio']<=.87
  assert r['timed_grade_two_second_measurements']
  assert all(abs(w['actual_ratio']-w['expected_ratio'])<=.02 for w in r['timed_grade_two_second_measurements'])
