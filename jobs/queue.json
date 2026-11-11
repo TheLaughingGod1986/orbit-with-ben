@@ -215103,10 +215103,10 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T05:13Z",
+      "eta": "2026-11-11T07:13Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:02Z",
       "result": "",
@@ -215175,6 +215175,11 @@
           "at": "2026-11-11T04:25Z",
           "by": "claude",
           "what": "reopened: Chief ruling is in (Grok, desk 6786715647, 04:06Z): history-of-science #495 is sent back for a v02 plan. The 23 Fast rows become Quality or free rows, and the 36 prompts that name a real person are reworded. The ruling is now the top of this job's brief."
+        },
+        {
+          "at": "2026-11-11T05:13Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: review HOS 011 VO lock + shot list v01 PR #495 and price pass (5,030 Flow credits try-1 / 12,892 expected)",
@@ -215182,7 +215187,15 @@
       "kind": "script",
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T05:13Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2476",
