@@ -1,5 +1,5 @@
 {
-  "next_id": 2560,
+  "next_id": 2561,
   "jobs": [
     {
       "id": "J0001",
@@ -221430,13 +221430,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T04:46Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T04:36Z",
-      "result": "parked for Chief: PR #792 (eee316d6e2) delivers jobs/reviews/J2557/REPORT.md and the two 108x192 grey PNGs comparing the J2546 whole-Short full-bleed gate against the J2545 by-eye audit across all 30 Shorts. 0 body-padded Shorts missed; 1 full-frame Short falsely failed (HOS Wvjd8g0CpzE at 5-8 s, 3/26 = 11.5%, red/blue vessels across middle third over smooth pink tissue); 4 Shorts with closing/end-card fill whose meta lacks end_card.start_s (xdurJQcoiGM, rvug71d7Dqk, C8lPx5N2DwM, heiGCnGKTkE).",
+      "result": "Accepted by the acting Chief; report merged as #792. Result: the whole-Short check catches every Short the by-eye audit called padded (9 of 9), and passes the Friday Mars helicopter cut only through the list of cuts Ben OK'd before the rule. It wrongly fails one full-frame Short, History of Science Wvjd8g0CpzE (3 of 26 frames, a soft-walled tissue shot), which reproduces on main; the fix is queued as its own job. Four Orbit Shorts end on a card over fill without naming it in their meta; all four are already on the re-cut list, so no separate fix.",
       "history": [
         {
           "at": "2026-11-11T04:36Z",
@@ -221472,6 +221472,11 @@
           "at": "2026-11-11T05:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #792 (eee316d6e2) delivers jobs/reviews/J2557/REPORT.md and the two 108x192 grey PNGs comparing the J2546 whole-Short full-bleed gate against the J2545 by-eye audit across all 30 Shorts. 0 body-padded Shorts missed; 1 full-frame Short falsely failed (HOS Wvjd8g0CpzE at 5-8 s, 3/26 = 11.5%, red/blue vessels across middle third over smooth pink tissue); 4 Shorts with closing/end-card fill whose meta lacks end_card.start_s (xdurJQcoiGM, rvug71d7Dqk, C8lPx5N2DwM, heiGCnGKTkE)."
+        },
+        {
+          "at": "2026-11-11T06:02Z",
+          "by": "claude",
+          "what": "done: Accepted by the acting Chief; report merged as #792. Result: the whole-Short check catches every Short the by-eye audit called padded (9 of 9), and passes the Friday Mars helicopter cut only through the list of cuts Ben OK'd before the rule. It wrongly fails one full-frame Short, History of Science Wvjd8g0CpzE (3 of 26 frames, a soft-walled tissue shot), which reproduces on main; the fix is queued as its own job. Four Orbit Shorts end on a card over fill without naming it in their meta; all four are already on the re-cut list, so no separate fix."
         }
       ],
       "remaining_action": "Parked for Chief review of PR #792",
@@ -221499,7 +221504,8 @@
         "HOS:005",
         "HOS:006",
         "HOS:007"
-      ]
+      ],
+      "done_ref": "#792"
     },
     {
       "id": "J2558",
@@ -221580,6 +221586,36 @@
       "due": "2026-11-13T18:00:00Z",
       "plain": "Tidy the Mac mini's background helpers: fix three that are failing and switch off the old ones nobody uses",
       "mini_only": true
+    },
+    {
+      "id": "J2560",
+      "title": "Shorts gate, part 4: a full-frame shot with a detailed middle and soft areas above and below is read as padding (one wrong FAIL, Wvjd8g0CpzE)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Follow-up to J2557 (report merged as #792), ruled by the acting Chief, 11 Nov 06:02Z.\n\nThe whole-Short check wrongly fails one full-frame Short: History of Science `Wvjd8g0CpzE` (airs Sun 15 Nov), 5.0 to 8.0 s, 3 of 26 sampled frames, one over the allowance. The shot is a full-frame cartoon view inside living tissue: vessels and blood cells across the middle, soft shaded tissue walls above and below. The check reads a detailed middle with soft, varied areas above and below as a picture band over a blurred copy. Two of the frames are saved beside the report as grey 108 x 192 PNGs (`jobs/reviews/J2557/`), and both reproduce as `blur-pad` on main.\n\nThe same reading gave single-frame warnings, under the allowance, on three other full-frame Shorts (`f17XCtUmN-g` 11 s, `cLKDiYP55J8` 9 s, `xgx2lYHhYZM` 14 s) and on full-frame Betelgeuse shots.\n\n1. Find a measure that tells a blurred copy of the picture from a soft part of the picture itself. In a blur pad the fill above and below is the band's own picture, enlarged and blurred, so it should match a blurred, scaled copy of the band; a soft wall or sky does not. Or use the straight seam where band meets fill. Decide on the frames, not on theory.\n2. Add the two saved frames to the labelled set as full frames. The check must still catch at least 24 of the 28 padded labelled frames and fail none of the 28 full ones, plus these two. Say plainly what it now misses.\n3. Tests beside the existing ones (`test_gate_full_bleed.py`). The gate is a shared core file: lock it and send the pair to history-of-science for Grok.\n4. Ask the Mini to run the check again on `Wvjd8g0CpzE` and the three warned Shorts and paste the lines.\n\nNo Short is re-cut and nothing changes in Studio. The gate stays a hard stop with no override.\n",
+      "ref": "J2557",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T06:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T06:02Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Tell a blurred copy from a soft part of the picture, add the two frames to the labelled set, tests, send the pair to history-of-science",
+      "due": "2026-11-12T18:00:00Z",
+      "plain": "Fix the Shorts check so it stops calling one kind of full-screen shot a padded one",
+      "for": "claude"
     }
   ],
   "focus": [
