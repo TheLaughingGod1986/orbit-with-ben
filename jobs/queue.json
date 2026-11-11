@@ -225597,19 +225597,24 @@
           "at": "2026-11-11T12:10Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J2608 3-step visual check for HOS 008 salon start picture try 3"
+        },
+        {
+          "at": "2026-11-11T12:12Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Located and hash-verified 02_salon_spark_t4_start_try3.png (cdeb4f6bd15a13afe4164ea2e02d0b755fb9ffa860223063b75695ce4009e592), try 2 (33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2) and old start frame 02_salon_spark_t1.png (aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58)"
         }
       ],
-      "remaining_action": "Locate and hash-verify 02_salon_spark_t4_start_try3.png, try 2 and the old start frame",
+      "remaining_action": "Visually inspect 02_salon_spark_t4_start_try3.png beside try 2 and the old start frame",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the last try at the starting picture for the Franklin salon shot",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T12:10Z",
+        "at": "2026-11-11T12:12Z",
         "by": "gemini",
-        "note": "Starting J2608 3-step visual check for HOS 008 salon start picture try 3"
+        "note": "Located and hash-verified 02_salon_spark_t4_start_try3.png (cdeb4f6bd15a13afe4164ea2e02d0b755fb9ffa860223063b75695ce4009"
       },
       "taskKeys": [
         "HOS:008"
