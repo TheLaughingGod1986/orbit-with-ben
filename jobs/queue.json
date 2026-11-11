@@ -214569,9 +214569,14 @@
           "at": "2026-11-11T06:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:47Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Plan set (4 steps): 1) delete qualifying OWB remote branches from BRANCHES_owb.txt + macbook/J2517, 2) delete qualifying HOS remote branches from BRANCHES_hos.txt, 3) verify remote counts and skipped branches in both repos, 4) report results and complete/park job"
         }
       ],
-      "remaining_action": "Delete the branches named in the two lists on main, 50 at a time, plus macbook/J2517 by name; report the counts",
+      "remaining_action": "Delete the branches named in BRANCHES_owb.txt (in batches of 50) plus macbook/J2517, then delete the branches named in BRANCHES_hos.txt (in batches of 50), and report counts",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
@@ -214580,11 +214585,10 @@
       "escalated_at": "2026-11-11T05:35Z",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T06:46Z",
+        "of": 4,
+        "at": "2026-11-11T06:47Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Plan set (4 steps): 1) delete qualifying OWB remote branches from BRANCHES_owb.txt + macbook/J2517, 2) delete qualifying"
       }
     },
     {
