@@ -11,6 +11,33 @@ T0 = dt.datetime(2026, 10, 7, 12, 0, tzinfo=dt.timezone.utc)
 MIN = dt.timedelta(minutes=1)
 
 
+_OWN_WORLD = []
+
+
+def setUpModule():
+    """These tests state the queue's rules, not the state of the machine they run on. On 11 Nov 2026 two of them failed
+    on the Mini and passed everywhere else: its film store was mounted and held film 032, so a harvest job read as
+    reachable from the MacBook; and its live board gave film 025 an air date, which ranks a film's job ahead of an
+    urgent one (Ben, 8 Nov: oldest film first). So nothing here reads the live board, the film store, the relay's
+    state folder or the MacBook's browser list. A test that needs one of them sets it itself."""
+    tmp = tempfile.TemporaryDirectory()
+    _OWN_WORLD.append(tmp)
+    nowhere = pathlib.Path(tmp.name)
+    for p in (patch("workflow_board.load_tracker", return_value={}),
+              patch.object(jobs, "STUDIO_LIVE_ROOT", nowhere / "no-film-store"),
+              patch.object(jobs.chief_relay, "STATE", nowhere / "no-state"),
+              mock.patch.dict(os.environ, {"MACBOOK_CDP": ""})):
+        p.start()
+        _OWN_WORLD.append(p)
+
+
+def tearDownModule():
+    for p in reversed(_OWN_WORLD[1:]):
+        p.stop()
+    _OWN_WORLD[0].cleanup()
+    _OWN_WORLD.clear()
+
+
 def queue(*specs):
     d = {"next_id": 1, "jobs": []}
     for needs, title, kw in specs:
