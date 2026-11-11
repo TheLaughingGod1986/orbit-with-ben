@@ -221849,17 +221849,22 @@
           "at": "2026-11-11T06:27Z",
           "by": "macbook",
           "what": "step 1 of 3 done: Pulled main in both repos (#794 and #502 verified); resolving NAS/local paths for the 13 Shorts"
+        },
+        {
+          "at": "2026-11-11T06:40Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done: 10/13 NAS Shorts pre-checked (all match expected); handing back to Mini for 3 Mini-local .mp4s + HOS desk"
         }
       ],
-      "remaining_action": "Run straight-edge gate check across all 13 Shorts and verify verdicts",
+      "remaining_action": "Mini-only: run gate_shorts_open.py on all 13 .mp4 files (incl. Mini-local kKN8Ale42sE, xdurJQcoiGM, rvug71d7Dqk), open PR and post verdicts on HOS desk",
       "due": "2026-11-12T12:00:00Z",
       "plain": "Run the fixed Shorts check on nine real Shorts to confirm it passes the good ones and still stops the padded ones",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-11T06:27Z",
+        "at": "2026-11-11T06:40Z",
         "by": "macbook",
-        "note": "Pulled main in both repos (#794 and #502 verified); resolving NAS/local paths for the 13 Shorts"
+        "note": "10/13 NAS Shorts pre-checked (all match expected); handing back to Mini for 3 Mini-local .mp4s + HOS desk"
       }
     },
     {
