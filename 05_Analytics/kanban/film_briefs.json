@@ -143,10 +143,10 @@
       "limit": ""
     },
     "OWB:025": {
-      "updated": "2026-11-11T02:53Z",
-      "mood": "watched",
+      "updated": "2026-11-11T13:07Z",
+      "mood": "good",
       "done": "Script, voice, picture and the film's own music. Your 8 Oct notes fixed (v03f), plus Codex's picture ideas.",
-      "holdup": "Nothing blocking. The re-cut Mars wind Short is scheduled for Thu 12 Nov 11:30. The Mars helicopter Short for Fri 13 Nov now has a version that fills the screen all the way through: the two stretches that sat as a strip over a blurred copy are replaced with a real NASA photo of the rover and the helicopter, wide and then close on its blades. Same voice, words, captions and length. It is on the board for you to watch. The swap into the Friday slot waits until Wed 11 Nov 20:00, so the slot is changed once, with the cut you pick.",
+      "holdup": "Nothing blocking. The re-cut Mars wind Short is scheduled for Thu 12 Nov 11:30. You OK'd the full-screen Mars helicopter Short on 11 Nov, so that is the cut that goes into the Fri 13 Nov 11:30 slot. It is checked once more with today's stricter screen-fill check before it is uploaded. The video in the slot now is unscheduled and kept, not deleted.",
       "steps": [
         {
           "who": "Ben",
@@ -205,21 +205,23 @@
           "who": "Ben",
           "what": "watch the full-screen Mars helicopter Short",
           "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov 18:00; else the cut you OK'd airs"
+          "whenText": "by Thu 12 Nov 18:00; else the cut you OK'd airs",
+          "done": true,
+          "doneText": "you OK'd it \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
-          "what": "put the Mars helicopter Short you pick in its Fri 13 Nov slot (the old one is kept, unscheduled)",
+          "what": "put the full-screen Mars helicopter Short in its Fri 13 Nov slot",
           "job": "J2520",
           "when": "2026-11-12",
-          "whenText": "after Wed 11 Nov 20:00, by Thu 12 Nov 18:00"
+          "whenText": "by Thu 12 Nov 18:00"
         }
       ],
       "timing": "Airs Sun 8 Nov 18:00 London. Four weeks in hand.",
-      "line": "Public since Sun 8 Nov. At 48 hours there was nothing to fix: 8 views where 5 is usual for one of our long films at that age. On 9 Nov you OK'd a three-way title-and-thumbnail test; it has run since 23:43 that night. The film has had very few impressions so far, so the test may not get enough to decide. Its Shorts point at it. Two of them (Thu 12 and Fri 13 Nov) showed stray letters at the end; both were re-cut and you OK'd both on 10 Nov. The Thursday one is in its slot since this evening. The Friday one goes in by Thu 12 Nov 18:00.",
-      "you": "Watch the Mars helicopter Short that now fills the screen. Your OK by Thu 12 Nov 18:00; without one the cut you OK'd airs.",
-      "youShort": "Watch the Mars helicopter Short",
-      "youWhen": "2026-11-12"
+      "line": "Public since Sun 8 Nov. At 48 hours there was nothing to fix: 8 views where 5 is usual for one of our long films at that age. On 9 Nov you OK'd a three-way title-and-thumbnail test; it has run since 23:43 that night. The film has had very few impressions so far, so the test may not get enough to decide. Its Shorts point at it. Two of them (Thu 12 and Fri 13 Nov) showed stray letters at the end; both were re-cut and you OK'd both on 10 Nov. The Thursday one is in its slot since this evening. For the Friday one you then OK'd a version that fills the screen all the way through (11 Nov); that one goes in by Thu 12 Nov 18:00.",
+      "you": "",
+      "youShort": "",
+      "youWhen": ""
     },
     "OWB:026": {
       "updated": "2026-11-11T05:58Z",
@@ -849,10 +851,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T11:58Z",
+      "updated": "2026-11-11T13:07Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, failed three remakes. The cause is its starting picture, which already shows an open tube with loose wisps beside it, so every take inherits them. So the Chief changed the plan: a new starting picture at no cost, then one last take with almost no movement (100 credits, none in cash), and the tiny spark added in the edit. Two free tries at the new picture each got part of the way: the first changed the room and the people; the second kept them and cleaned the wig, but her hand is not near the end of the tube. The third and last free try moves only her hand. If it fails, the fallback is the clean first two seconds of the third take with the spark added on a cut. You will see the result in v04 and can say no there. The points-desk shot's third take is kept. It is tight for a Thu 19 Nov air date.",
+      "holdup": "The salon shot at 1:49, the one you flagged for hair flying out of the tube, is nearly there. Its old starting picture was the cause, so a new one was made at no cost (third try), and one last take was made from it (100 credits, none in cash). The Chief passed that take for its first two and a half seconds only: the tube is clear, the wig is still, and her knuckle stops just short of the glass. The rest of the take is never used. The tiny spark is added in the edit on that frame, and the shot is joined to the end of the shot before it. You will see the result in v04 and can say no there. The points-desk shot's third take is kept. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -923,44 +925,55 @@
           "what": "third and last free try: only her hand moves",
           "job": "J2607",
           "kind": "image",
-          "when": "2026-11-11",
-          "whenText": "today"
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov"
         },
         {
           "who": "Reviewer",
           "what": "check the third try",
           "job": "J2608",
           "kind": "qa",
-          "afterJob": "J2607"
+          "done": true,
+          "doneText": "passed \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
-          "what": "fourth and last take of the salon shot (100 credits), only if the third try passes",
+          "what": "fourth and last take of the salon shot (100 credits)",
           "job": "J2598",
           "kind": "video",
-          "afterJob": "J2608",
-          "when": "2026-11-12",
-          "whenText": "before Thu 12 Nov 19:13"
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov"
         },
         {
           "who": "Reviewer",
           "what": "check the fourth take; the Chief passes it",
           "job": "J2599",
           "kind": "qa",
-          "afterJob": "J2598"
+          "done": true,
+          "doneText": "passed for its first 2.5 s \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
           "what": "draw the tiny spark to add in the edit",
           "job": "J2591",
-          "kind": "chart"
+          "kind": "chart",
+          "done": true,
+          "doneText": "drawn; being redrawn softer"
         },
         {
           "who": "Mac mini",
-          "what": "add the spark to the salon shot",
+          "what": "redraw the spark as a soft streak, for the Chief's pass",
+          "job": "J2613",
+          "kind": "chart",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
+        },
+        {
+          "who": "Mac mini",
+          "what": "add the spark to the salon shot, on the frame the Chief named",
           "job": "J2592",
           "kind": "assembly",
-          "afterJob": "J2599"
+          "afterJob": "J2613"
         },
         {
           "who": "Reviewer",
@@ -978,10 +991,17 @@
         },
         {
           "who": "Reviewer",
+          "what": "check the join in the salon shot",
+          "job": "J2614",
+          "kind": "qa",
+          "afterJob": "J2242"
+        },
+        {
+          "who": "Reviewer",
           "what": "check v04 against your notes",
           "job": "J2243",
           "kind": "review",
-          "afterJob": "J2242"
+          "afterJob": "J2614"
         },
         {
           "who": "Ben",
@@ -1007,15 +1027,15 @@
       "you": "",
       "youWhen": "",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Your eleven notes are scoped and the repair plan is on main. Of the three shots being remade, the rods shot and the points-desk shot are kept. The shot at 1:49, the hair-and-tube one you confirmed, is on its last free try at a new starting picture (11 Nov), then one last take before the credits reset on Thu 12 Nov 19:13. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
+      "line": "Your eleven notes are scoped and the repair plan is on main. Of the three shots being remade, the rods shot and the points-desk shot are kept. The shot at 1:49, the hair-and-tube one you confirmed, has its last take, passed by the Chief for its first two and a half seconds (11 Nov). The spark is being redrawn and is then placed on it. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
       "youShort": "",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T11:58Z",
+      "updated": "2026-11-11T13:07Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "The review of the last twenty pictures found four that cannot go out. In one the Moon fades away while the voice says it never lands. In three an apple moves upward, in a film about gravity. All four are being made again, one try each, at most 400 credits and none in cash. The wording for them and the change to the tool that makes them are both passed by the Chief, so the first three can be made as soon as the picture tool is free. The other sixteen are kept. The edit starts once the remade shots are checked. Picture was due Sun 15 Nov and is still on course.",
+      "holdup": "The review of the last twenty pictures found four that cannot go out. In one the Moon fades away while the voice says it never lands. In three an apple moves upward, in a film about gravity. All four are being made again, one try each, at most 400 credits and none in cash. The wording for them and the change to the tool that makes them are both passed by the Chief, but the tool refused to start them: its credit reservation for this film had been closed. A small fix that reserves 300 credits for the three shots is being reviewed by the Chief; they are made as soon as it is merged, by Thu 12 Nov 19:13. The other sixteen are kept. The edit starts once the remade shots are checked. Picture was due Sun 15 Nov and is still on course.",
       "steps": [
         {
           "who": "Mac mini",
@@ -1114,10 +1134,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-11T09:53Z",
+      "updated": "2026-11-11T13:07Z",
       "mood": "good",
       "done": "Script, fact check and upload package.",
-      "holdup": "Nothing is stuck. The first five of its twelve plates are made; the batch finished cleanly at 09:33 this morning. Film 008's two remade shots went next on the picture tool, as the Chief ordered, and the other seven plates follow, inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
+      "holdup": "Nothing is stuck. The first five of its twelve plates are made. The second batch is running now on the Chief's word (11 Nov), and the last follows, inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
       "steps": [
         {
           "who": "Mac mini",
