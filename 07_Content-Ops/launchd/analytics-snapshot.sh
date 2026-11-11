@@ -20,8 +20,17 @@ within() {
 
 # True when a folder exists (or can be made) and can be written, inside 5 s. launchd cannot open a removable volume
 # without a macOS permission click that nobody is there to make; a call into one just sits there.
+# 11 Nov 2026: `mkdir -p` and `test -w` both passed on the removable SSD while every file on it stayed unreadable to
+# launchd, so the run chose a worktree it then could not open. The check now writes a file and reads it back.
 usable() {
-  within 5 /bin/sh -c 'mkdir -p "$1" && test -w "$1"' sh "$1" >/dev/null 2>&1
+  within 5 /bin/sh -c 'mkdir -p "$1" && f="$1/.usable.$$" && echo ok > "$f" && cat "$f" >/dev/null && rm -f "$f"' \
+    sh "$1" >/dev/null 2>&1
+}
+
+# True when a worktree that is already there can be read (its .git pointer opens), or when there is none yet.
+readable_worktree() {
+  [[ ! -e "$1" ]] && return 0
+  within 5 /bin/sh -c 'cat "$1/.git" >/dev/null' sh "$1" >/dev/null 2>&1
 }
 
 # Where the tracker's own worktree goes. 10 Nov 2026: no snapshot was made, because ~/_desk/worktrees had moved to
@@ -30,7 +39,7 @@ usable() {
 pick_worktree() {
   local want="${ANALYTICS_WORKTREE:-$HOME/_desk/worktrees/analytics}"
   local safe="${ANALYTICS_SAFE_DIR:-$HOME/Library/Application Support/owb-analytics}"
-  if usable "$(dirname "$want")"; then
+  if usable "$(dirname "$want")" && readable_worktree "$want"; then
     echo "$want"
   else
     echo "worktree folder $(dirname "$want") did not answer or cannot be written; using $safe/worktree" >&2
