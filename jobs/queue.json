@@ -220962,9 +220962,19 @@
           "at": "2026-11-11T14:03Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-11T18:00:00Z"
+        },
+        {
+          "at": "2026-11-11T17:55Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
+        },
+        {
+          "at": "2026-11-11T17:55Z",
+          "by": "claude",
+          "what": "looked again 11 Nov 17:58Z: no word from Ben yet, the live board is fine on the old build. Next look 12 Nov 09:00Z, after the morning summary asks him again."
         }
       ],
-      "remaining_action": "Redeploy studio-kanban from main once the deploy step is approved, then check the live pages and close",
+      "remaining_action": "Redeploy the board site from main and check its live pages as soon as Ben says \"deploy\"; he is asked again in the 12 Nov morning summary",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the board work when the studio repo is private",
@@ -220978,7 +220988,7 @@
       "hold": {
         "type": "input",
         "condition": "The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile",
-        "check_at": "2026-11-11T18:00:00Z"
+        "check_at": "2026-11-12T09:00:00Z"
       }
     },
     {
