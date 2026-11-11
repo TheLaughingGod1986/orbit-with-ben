@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Render exact-time cover-edge stills for human review; never grants a gate pass."""
-import json,subprocess as sp
+import argparse,json,subprocess as sp
 from pathlib import Path
 from PIL import Image,ImageDraw
 from build_public_andromeda import OUT
 
 def main():
+ global OUT
+ parser=argparse.ArgumentParser();parser.add_argument("--out",type=Path,default=OUT);OUT=parser.parse_args().out
  b=json.loads((OUT/'BUILD.json').read_text());rows=json.loads((OUT/'source_cuts.json').read_text())
  times={0,2,5,b['duration_s']-1}
  for r in rows:
