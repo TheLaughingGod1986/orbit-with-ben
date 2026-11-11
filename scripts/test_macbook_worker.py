@@ -347,6 +347,34 @@ class AllAgents(unittest.TestCase):
         self.assertFalse(any("merge" in r or "pull" in r for r in allowed))   # fetch reads; nothing here changes a branch
         self.assertLess(c.index("--allowedTools"), c.index("--add-dir"))
 
+    def test_unattended_claude_is_refused_merges_and_pushes_to_main_outright(self):
+        # J2600, from the draft #666 (9 Nov 2026). The allowlist lets a run push; nothing said what it may never do.
+        with mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+            c = mw.agent_cmd("claude", "P")
+            others = {agent: mw.agent_cmd(agent, "P") for agent in ("codex", "gemini", "cursor")}
+        denied = c[c.index("--disallowedTools") + 1].split(",")
+        for rule in ("Bash(gh pr merge:*)", "Bash(gh pr review:*)", "Bash(gh pr close:*)", "Bash(gh pr ready:*)",
+                     "Bash(gh api:*)", "Bash(git push origin main:*)", "Bash(git push -u origin main:*)",
+                     "Bash(git push --force:*)", "Bash(git push -f:*)", "Bash(git push --force-with-lease:*)"):
+            self.assertIn(rule, denied)
+        self.assertEqual(c[1:3], ["-p", "P"])                                  # the prompt stays straight after -p
+        self.assertLess(c.index("--disallowedTools"), c.index("--add-dir"))    # both lists come before the folders
+        self.assertFalse(set(c[c.index("--allowedTools") + 1].split(",")) & set(denied))   # never both allowed and refused
+        for rule in denied:                                                    # each is one plain "starts with" rule
+            self.assertRegex(rule, r"^Bash\([a-z][a-z -]*[a-z]:\*\)$")
+        starts = [r[len("Bash("):-len(":*)")] for r in denied]
+        for cmd in ("git push -u origin macbook/J1234", "git push origin macbook/J1234", "git push",
+                    "gh pr create --title x", "gh pr view 1", "gh pr checks 1"):   # what a job really runs
+            self.assertFalse(any(cmd.startswith(s) for s in starts), cmd)
+        for agent, cmd in others.items():                                      # the other agents' commands are as they were
+            self.assertNotIn("--disallowedTools", cmd or [], agent)
+
+    def test_the_brief_says_never_merge_and_never_push_to_main(self):
+        p = mw.brief("J1", "m", 25)
+        self.assertIn("Never merge, approve or close a PR, and never push to main: merges are\n", p)
+        self.assertIn('a brief that says "merge" stops at the open PR and says so.', p)
+        self.assertIn("open a PR to main", p)                                  # the step it sits in is still there
+
     def test_a_failed_cli_is_paused_and_skipped(self):
         import tempfile
         with tempfile.TemporaryDirectory() as d, mock.patch.object(mw, "DOWN", pathlib.Path(d) / "down.json"), \
