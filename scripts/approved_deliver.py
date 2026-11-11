@@ -23,6 +23,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
 
+import channels  # noqa: E402
 import jobs as J  # noqa: E402
 import listing_package as lp  # noqa: E402
 import video_tracker as vt  # noqa: E402
@@ -31,17 +32,29 @@ LONDON = ZoneInfo("Europe/London")
 BANNED_REUSE_IDS = frozenset({"TtgHNLXfDSs", "k9pXeeJvLpc"})
 SWAP_RE = re.compile(r"\bswap\b", re.I)
 LISTING_HOLD_RE = re.compile(r"listing|title|thumbnail|description|tags|package incomplete|needs title", re.I)
-# Locked cadence (Ben, 7 Nov 2026). Weekday: Mon=0 … Sun=6. (weekday, hour, minute) London.
-CADENCE = {
-    "OWB": {
-        "long": [(6, 18, 0), (2, 18, 0)],          # Sun / Wed 18:00
-        "short": [(0, 11, 30), (2, 11, 30), (4, 11, 30), (5, 11, 30)],  # Mon Wed Fri Sat 11:30
-    },
-    "HOS": {
-        "long": [(3, 18, 0)],                       # Thu 18:00
-        "short": [(5, 11, 30), (4, 11, 30), (6, 11, 30), (1, 11, 30)],  # Sat Fri Sun Tue 11:30
-    },
-}
+# Locked cadence (Ben, 7 Nov 2026): each channel's own slots, in its studio/channel.json (`cadence`, read by
+# channels.cadence). Until 11 Nov 2026 the table was here, keyed by the two channels' labels.
+
+
+def default_label() -> str:
+    """The label of the channel a card or a call that names none belongs to."""
+    return channels.label(channels.default())
+
+
+def slug_of(label: str) -> str:
+    """The channel a card's label belongs to ('' when no channel has it)."""
+    try:
+        return channels.get(label)["slug"] if label else ""
+    except KeyError:
+        return ""
+
+
+def cadence_slots(label: str, kind: str) -> list:
+    """The (weekday, hour, minute) slots a channel fills for longs or Shorts. A label no channel has, or a channel
+    that names no cadence, uses the default channel's; a kind with no slots uses the default channel's long slots."""
+    default = channels.cadence(channels.default())
+    own = channels.cadence(slug_of(label)) if slug_of(label) else {}
+    return (own or default).get(kind) or default.get("long") or []
 
 
 def now_utc() -> dt.datetime:
@@ -195,10 +208,10 @@ def taken_cadence_days(videos: list[dict], channel: str, vtype: str, from_day: d
                        *, root: Path | None = None) -> set[str]:
     """London YYYY-MM-DD that already have a Short (or long) scheduled or public on this channel.
 
-    Reads tracker cards plus OWB/HOS UPLOADS.json so empty stubs cannot hide a booked Monday 11:30
+    Reads tracker cards plus the channel's own UPLOADS.json so empty stubs cannot hide a booked Monday 11:30
     or Sunday 18:00. Fill gaps only; never invent ids.
     """
-    ch = (channel or "OWB").upper()
+    ch = (channel or default_label()).upper()
     want_short = vtype == "short"
     out: set[str] = set()
     for v in videos:
@@ -212,19 +225,14 @@ def taken_cadence_days(videos: list[dict], channel: str, vtype: str, from_day: d
             day = str(v.get("air"))[:10]
         if day and day >= from_day.isoformat():
             out.add(day)
-    root = root or ROOT
-    owb_uploads = root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
-    if ch == "OWB" and owb_uploads.is_file():
-        out |= _uploads_publish_days(owb_uploads, channel="OWB", want_short=want_short, from_day=from_day)
-    if ch == "HOS":
-        try:
-            import channels
-            hos_root = channels.repo_path("hos")
-            hos_uploads = hos_root / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
-            if hos_uploads.is_file():
-                out |= _uploads_publish_days(hos_uploads, channel="HOS", want_short=want_short, from_day=from_day)
-        except Exception:  # noqa: BLE001
-            pass
+    try:  # the channel's own register of uploads: `root` for the default channel, its own checkout for any other
+        slug = slug_of(ch)
+        base = (root or ROOT) if slug == channels.default() else channels.repo_path(slug) if slug else None
+        uploads = base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json" if base else None
+        if uploads and uploads.is_file():
+            out |= _uploads_publish_days(uploads, channel=ch, want_short=want_short, from_day=from_day)
+    except Exception:  # noqa: BLE001
+        pass
     return out
 
 
@@ -240,9 +248,9 @@ def next_cadence_slot(channel: str, vtype: str, *, now: dt.datetime, taken_days:
     A known `airs` is used only when that London day is free; otherwise the next free cadence slot wins.
     Never invents past dates or YouTube ids.
     """
-    ch = (channel or "OWB").upper()
+    ch = (channel or default_label()).upper()
     kind = "short" if vtype == "short" else "long"
-    slots = CADENCE.get(ch, CADENCE["OWB"]).get(kind) or CADENCE["OWB"]["long"]
+    slots = cadence_slots(ch, kind)
     local = now.astimezone(LONDON)
     taken = set(taken_days or set())
     if airs:
@@ -371,7 +379,7 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
                                 "reason": f"Delivery job already {j.get('status')}"})
             continue
         # Create a new delivery job.
-        channel = str(v.get("channel") or "OWB").upper()
+        channel = str(v.get("channel") or default_label()).upper()
         vtype = "short" if v.get("type") == "short" else "long"
         airs = ((v.get("approved") or {}).get("airs") or "")
         taken = taken_for(channel, vtype)
@@ -390,7 +398,7 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
         if dest == "social":
             title = f"{channel} {num} {vtype}: Buffer social for {title_bit}".strip()
             body = ("Deliver social-only posts through Buffer (Instagram / Facebook / YouTube Community"
-                    + ("; HOS TikTok stays Buffer-only" if channel == "HOS" else "")
+                    + (f"; {channel} TikTok stays Buffer-only" if slug_of(channel) and channels.tiktok_by_buffer(slug_of(channel)) else "")
                     + "). Do not use the TikTok browser or API. Only after the parent long is public when that"
                     " house rule applies. Listing package is complete.")
             kind = "studio"
@@ -404,9 +412,10 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             kind = "studio"
         actions.append({
             "op": "create", "key": v.get("key"), "destination": dest, "title": title, "body": body,
-            "kind": kind, "film": num if channel == "OWB" and re.fullmatch(r"\d{3}", str(num)) else "",
-            "stage": "upload" if channel == "OWB" and re.fullmatch(r"\d{3}", str(num)) else "",
-            "repo": "hos" if channel == "HOS" else "owb",
+            # The queue can only claim a stage on the default channel's films, so only those carry film and stage.
+            "kind": kind, "film": num if channel == default_label() and re.fullmatch(r"\d{3}", str(num)) else "",
+            "stage": "upload" if channel == default_label() and re.fullmatch(r"\d{3}", str(num)) else "",
+            "repo": slug_of(channel) or channels.default(),
             "airs": slot, "version": ver, "channel": channel, "type": vtype,
             "approved_job": (v.get("approved") or {}).get("job") or "",
         })
@@ -432,7 +441,7 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
                 continue
             kwargs = {"film": a["film"], "stage": a["stage"]} if a.get("film") and a.get("stage") else {}
             job = J.do_add(data, title=a["title"], needs="mini", body=a["body"], by=agent, at=at,
-                           kind=a.get("kind") or "studio", repo=a.get("repo") or "owb",
+                           kind=a.get("kind") or "studio", repo=a.get("repo") or channels.default(),
                            action=("Upload to YouTube Studio as Private" if a.get("destination") != "social"
                                    else "Schedule Buffer social posts"),
                            **kwargs)
@@ -469,10 +478,11 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
     return touched
 
 
-def load_owb_films(root: Path) -> list[dict]:
-    """Every OWB status.json, with PACKAGE_UPLOAD_RESULT release when present (same as kanban_snapshot)."""
+def load_status_films(root: Path, pattern: str) -> list[dict]:
+    """Every per-film status file of a channel that keeps one per film (`pattern` is its channels.pipeline path),
+    with PACKAGE_UPLOAD_RESULT release when present (same as kanban_snapshot)."""
     films = []
-    for path in sorted((root / "02_Video-Projects").glob("*/status.json")):
+    for path in sorted(root.glob(pattern)):
         try:
             film = json.loads(path.read_text())
         except (OSError, ValueError):
@@ -490,29 +500,43 @@ def load_owb_films(root: Path) -> list[dict]:
     return films
 
 
-def load_hos_pipeline(root: Path | None = None) -> dict:
-    """HOS PIPELINE.json + long upload read-back from HOS UPLOADS (board_publish / kanban_snapshot path)."""
-    hos: dict = {"films": []}
+def load_pipeline(slug: str) -> dict:
+    """The one pipeline file of a channel that keeps its films that way, from its own checkout, plus each long's
+    upload read-back from its UPLOADS.json (board_publish / kanban_snapshot path)."""
+    empty: dict = {"films": []}
     try:
-        import channels
-        hos_root = channels.repo_path("hos")
+        base = channels.repo_path(slug)
+        pipe = base / channels.pipeline(slug)["path"]
     except Exception:  # noqa: BLE001
-        return hos
-    pipe = hos_root / "00_Brand" / "Channel-Setup" / "PIPELINE.json"
+        return empty
     if not pipe.is_file():
-        return hos
+        return empty
     try:
-        hos = json.loads(pipe.read_text())
+        doc = json.loads(pipe.read_text())
     except (OSError, ValueError):
         return {"films": []}
-    if not isinstance(hos.get("films"), list):
+    if not isinstance(doc.get("films"), list):
         return {"films": []}
     try:
         from kanban_snapshot import attach_pipeline_uploads
-        attach_pipeline_uploads(hos_root, hos)
+        attach_pipeline_uploads(base, doc)
     except Exception:  # noqa: BLE001
         pass
-    return hos
+    return doc
+
+
+def load_documents(root: Path) -> dict:
+    """{slug: that channel's film document}, each read the way the channel keeps its films: the default channel's
+    status files from `root`, a one-file channel's pipeline from its own checkout. A channel of any other shape is
+    given no document; video_tracker.build_videos then reads it from its own checkout."""
+    documents = {}
+    for slug in channels.slugs():
+        kept = channels.pipeline(slug)
+        if kept.get("kind") == "pipeline_json":
+            documents[slug] = load_pipeline(slug)
+        elif kept.get("kind") == "film_status" and slug == channels.default():
+            documents[slug] = load_status_films(root, kept["path"])
+    return documents
 
 
 def load_briefs(root: Path) -> dict:
@@ -536,13 +560,11 @@ def load_delivery_videos(root: Path, alljobs: list[dict], *, now: dt.datetime) -
     attachments); never invent YouTube ids.
     """
     uploads = vt.uploads_index(root)
-    hos = load_hos_pipeline(root)
-    owb = load_owb_films(root)
+    documents = load_documents(root)
     briefs = load_briefs(root)
     live = [j for j in alljobs if j.get("status") in vt.LIVE_STATUSES]
     doc = vt.build_videos(
-        hos=hos,
-        owb=owb,
+        documents=documents,
         briefs=briefs,
         jobs=live,
         checks={},

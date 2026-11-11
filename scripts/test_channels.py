@@ -530,5 +530,59 @@ class NoNewChannelNames(unittest.TestCase):
             self.assertNotRegex(text, r'"HOS" if [^\n]*"hos"', name)
 
 
+class DeliveryAsksTheLoader(unittest.TestCase):
+    """J2616: approved_deliver.py names no channel. The publishing slots and the TikTok rule it held by the two
+    channels' names are each channel's own settings now."""
+
+    def sky(self, **extra):
+        base = channels._load()
+        sky = {k: v for k, v in json.loads(_file("owb").read_text()).items() if k not in ("cadence", "social", "shorts")}
+        sky.update(slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3, title_match=r"\bSKY\b",
+                   repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        sky.update(extra)
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_locked_slots_are_the_ones_ben_set_on_7_nov_2026(self):
+        # The table that was in approved_deliver.py until 11 Nov 2026, number for number: (weekday, hour, minute),
+        # Mon=0 … Sun=6, London time, in the order they are filled. Changing a channel's days is Ben's call.
+        self.assertEqual(channels.cadence("owb"), {"long": [(6, 18, 0), (2, 18, 0)],                        # Sun, Wed 18:00
+                                                   "short": [(0, 11, 30), (2, 11, 30), (4, 11, 30), (5, 11, 30)]})  # Mon Wed Fri Sat
+        self.assertEqual(channels.cadence("hos"), {"long": [(3, 18, 0)],                                    # Thu 18:00
+                                                   "short": [(5, 11, 30), (4, 11, 30), (6, 11, 30), (1, 11, 30)]})  # Sat Fri Sun Tue
+        self.assertEqual((channels.tiktok_by_buffer("owb"), channels.tiktok_by_buffer("hos")), (False, True))
+
+    def test_a_third_channel_has_its_own_slots_or_none(self):
+        with self.sky(cadence={"long": ["Fri 17:05"], "short": ["Tue 09:00", "Mon 23:59"]}, social={"tiktok": "buffer"}):
+            self.assertEqual(channels.cadence("SKY"), {"long": [(4, 17, 5)], "short": [(1, 9, 0), (0, 23, 59)]})
+            self.assertTrue(channels.tiktok_by_buffer("sky"))
+        with self.sky(cadence={"long": ["Fri 17:05"]}, social={"tiktok": "browser"}):
+            self.assertEqual(channels.cadence("sky"), {"long": [(4, 17, 5)], "short": []})
+            self.assertFalse(channels.tiktok_by_buffer("sky"))
+        with self.sky():
+            self.assertEqual(channels.cadence("sky"), {})         # names none, and has no cached copy
+            self.assertFalse(channels.tiktok_by_buffer("sky"))
+
+    def test_a_slot_that_does_not_read_is_an_error_never_a_slot_quietly_dropped(self):
+        for bad in ("Sunday 18:00", "Sun 6pm", "Sun 24:00", "sun 18:00", " Sun 18:00", [6, 18, 0], None):
+            with self.sky(cadence={"long": ["Fri 17:00", bad]}):
+                with self.assertRaises(ValueError, msg=repr(bad)):
+                    channels.cadence("sky")
+
+    def test_a_checkout_behind_main_takes_both_settings_from_the_cached_copy(self):
+        # The same net as planned_shorts: a channel's checkout on an old branch has no `cadence` or `social` yet.
+        # Its videos must not move to another channel's days for it.
+        stale = tuple({k: v for k, v in c.items() if k not in ("cadence", "social")} if c["slug"] == "hos" else c
+                      for c in channels._load())
+        with mock.patch.object(channels, "_load", lambda directory=None: stale):
+            self.assertEqual(channels.cadence("hos")["long"], [(3, 18, 0)])
+            self.assertTrue(channels.tiktok_by_buffer("hos"))
+
+    def test_the_delivery_tool_names_no_channel(self):
+        import test_channel_ratchet as ratchet
+        source = (pathlib.Path(channels.__file__).parent / "approved_deliver.py").read_text()
+        self.assertEqual((len(ratchet.channel_lines(source)), len(ratchet.home_lines(source))), (0, 0))
+
+
 if __name__ == "__main__":
     unittest.main()
