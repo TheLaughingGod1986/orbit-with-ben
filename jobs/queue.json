@@ -227386,9 +227386,14 @@
           "at": "2026-11-11T15:19Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Updated J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.json, J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.md, and review_J2584_sheets/README.md so P02:08_the_apple_c1 records KEEP 0.00-4.50 s (f000-f107, last frame f107, no freeze) and P03:01_really_falling_c1 reads RETAKE"
+        },
+        {
+          "at": "2026-11-11T15:20Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed and pushed 98a42514 to gemini/J2584-sheet-review (PR #527) and updated PR #527 body; check_all.sh ALL CHECKS PASS"
         }
       ],
-      "remaining_action": "Run check_all.sh, commit and push updated #527 records",
+      "remaining_action": "Post outcome on HOS desk, close J2627, and post OWB thread report",
       "due": "2026-11-12T12:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -227396,11 +227401,11 @@
       "plain": "Correct the written record of which remade gravity film shots are kept",
       "urgent": 10,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T15:19Z",
+        "at": "2026-11-11T15:20Z",
         "by": "gemini",
-        "note": "Updated J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.json, J2584_RETAKE_SHEETS_EVIDENCE_2026-11-11.md, and review_J2584_sheet"
+        "note": "Committed and pushed 98a42514 to gemini/J2584-sheet-review (PR #527) and updated PR #527 body; check_all.sh ALL CHECKS P"
       },
       "taskKeys": [
         "HOS:009"
