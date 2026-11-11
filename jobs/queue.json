@@ -229599,20 +229599,25 @@
           "at": "2026-11-11T20:41Z",
           "by": "codex",
           "what": "step 1 of 3 done: Main 8ac9e65d includes PR 547 guard and regression coverage; avoiding duplicate changes."
+        },
+        {
+          "at": "2026-11-11T20:42Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 40 runner tests OK; check_all.sh ALL CHECKS PASS on 8ac9e65d. PR 547 already merged."
         }
       ],
-      "remaining_action": "Verifying the credit-floor fix already merged on current main",
+      "remaining_action": "Reporting the verified merged fix to the Chief",
       "due": "2026-11-12T06:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Close the last way the picture tool could run without its 3,000-credit reserve",
       "urgent": 11,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T20:41Z",
+        "at": "2026-11-11T20:42Z",
         "by": "codex",
-        "note": "Main 8ac9e65d includes PR 547 guard and regression coverage; avoiding duplicate changes."
+        "note": "40 runner tests OK; check_all.sh ALL CHECKS PASS on 8ac9e65d. PR 547 already merged."
       },
       "taskKeys": [
         "HOS:013"
