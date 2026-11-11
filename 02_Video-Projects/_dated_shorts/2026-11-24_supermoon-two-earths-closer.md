@@ -44,22 +44,21 @@ All numbers, dates, and comparisons are verified against official NASA sources (
 
 ## 3. Target Publish Slot (3–7 Days Before Event) & Measurement Plan
 
-### Current OWB Schedule Around 17–24 November 2026 (`05_Analytics/owb/snapshots/2026-11-08.json`)
+### Current OWB Schedule Around 17–24 November 2026 (`05_Analytics/owb/snapshots/2026-11-08.json` + `J2478` Slot Update)
 - **Tue 17 Nov 2026, 11:30 UTC:** `kKN8Ale42sE` — *How Far From Earth Is Voyager 1 Right Now?* (Standalone S8)
 - **Wed 18 Nov 2026, 11:30 UTC:** `cwU_0WWeNZ4` — *If Voyager Needs 75,000 Years, How Far Is the Nearest Star?* (`026` Short #2)
+- **Thu 19 Nov 2026, 11:30 UTC:** *No video scheduled — locked for this 24 Nov Supermoon dated-event Short (`J2478`)*
 - **Fri 20 Nov 2026, 11:30 UTC:** `aAUgIGEuPwQ` — *The Nearest Star Is a Cherry Past Cairo. How Do We Know?* (`026` Short #3)
-- **Sat 21 Nov 2026, 11:30 UTC:** *No video scheduled (open OWB Saturday 11:30 London Short slot)*
+- **Sat 21 Nov 2026, 11:30 UTC:** Taken by `024` muons Short v04 (`J2478` slot update)
 - **Sun 22 Nov 2026, 18:00 UTC:** `6bbbvfCx6zY` — *What If Earth Stopped Spinning?* (Long `027`)
 - **Mon 23 Nov 2026, 11:30 UTC:** `Dm4xsF1Ateg` — *Why Do You Weigh Less at Earth's Equator?* (`027` Short #1)
 
-### Locked Target Slot
-- **Slot change (J2478, 10 Nov 2026):** Sat 21 Nov 11:30 was taken by the 024 muons Short v04. This Short now goes out **Thursday, 19 November 2026 at 11:30 UTC (London)**, 5 days before the event (inside the 3 to 7 day window; nothing else of Orbit's airs that day). The Saturday slot text below is superseded.
-- **Earlier target slot (superseded):** **Saturday, 21 November 2026 at 11:30 UTC (London)**
-  - **Lead time:** **3 days (75 hours) before** the `24 November 2026 14:54 UTC` Full Supermoon (and 4 days before `25 November 21:00 UTC` perigee) — squarely inside the **3–7 days before the event** window required by `LEARNINGS` Rule 16 and `J2369`.
-  - **Cadence fit:** Saturday 11:30 London is a locked OWB Short slot (`Mon/Wed/Fri/Sat 11:30 London`; `AGENTS.md` Locked Weekly Targets, leaving Tue/Thu/Sun free), verified empty in `05_Analytics/owb/snapshots/2026-11-08.json`, and respects the hard rule *"never more than one Short a day"*.
+### Locked Target Slot (`J2478`)
+- **Locked Target Slot (`PASS`):** **Thursday, 19 November 2026 at 11:30 UTC (London)**
+  - **Lead time:** **5 days (~123 hours) before** the `24 November 2026 14:54 UTC` Full Supermoon (and 6 days before `25 November 21:00 UTC` perigee) — squarely inside the **3–7 days before the event** window required by `LEARNINGS` Rule 16 (`J2369` / `J2478`).
+  - **Slot change (`J2478`, 10 Nov 2026):** Sat 21 Nov 11:30 London was subsequently taken by the `024` muons Short v04; Acting Chief (Claude) moved this dated-event Short to **Thu 19 Nov 2026 at 11:30 London** (nothing else of Orbit's airs that day, respecting *"never more than one Short a day"*).
 - **Related Video Link:**
-  - At upload / on Sat 21 Nov: `2fsQcea-voM` (*Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone*, public Long `013` on Moon orbit/distance).
-  - Or switch Related Video after Sun 22 Nov 18:00 UTC to `6bbbvfCx6zY` (*What If Earth Stopped Spinning?*, Long `027`).
+  - At upload / on Thu 19 Nov: `2fsQcea-voM` (*Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone*, public Long `013` on Moon orbit/distance).
 - **Rule 16 Pass / Fail Readout (`2026-11-28` / `2026-12-01`):**
   - **PASS:** YouTube views or Cross-network reach within 7 days of publish is **`≥2x` the October 2026 non-dated Short median** (`118` YouTube views → **`≥236` YouTube views**, or strong Facebook/IG distribution via Buffer mirror).
   - **FAIL:** `<236` YouTube views and no Facebook/IG breakout after 4 dated-event Shorts.
