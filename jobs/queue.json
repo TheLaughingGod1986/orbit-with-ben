@@ -1,5 +1,5 @@
 {
-  "next_id": 2653,
+  "next_id": 2656,
   "jobs": [
     {
       "id": "J0001",
@@ -21851,12 +21851,12 @@
       "after": "",
       "eta_min": 40,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T22:30Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
-      "result": "parked for Chief: Saturn 55AEQwvs36g New test warns This deletes your current experiment. Cancel pressed; finished report preserved; Save disabled. Brief forbids deleting it without the required approval. Evidence ~/_desk/j0275/; thread 6808712494. No video changes or spend.",
+      "result": "Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
       "history": [
         {
           "at": "2026-10-15T07:51Z",
@@ -22157,10 +22157,25 @@
           "at": "2026-11-11T22:35Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Saturn 55AEQwvs36g New test warns This deletes your current experiment. Cancel pressed; finished report preserved; Save disabled. Brief forbids deleting it without the required approval. Evidence ~/_desk/j0275/; thread 6808712494. No video changes or spend."
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "acting Chief: Codex was right to press Cancel. The dialog says a new test deletes the finished one's report, the Never list names that dialog, and Ben has the same question open on J0978. One answer from him settles all four jobs. Until then nothing is pressed"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Hand Saturn’s test-deletion restriction to Chief for a decision",
+      "remaining_action": "On Ben's yes: record the finished test's result, press Continue, start the new test. On his no: close",
       "taskKeys": [
         "OWB:021"
       ],
@@ -22171,6 +22186,11 @@
         "at": "2026-11-11T22:35Z",
         "by": "codex",
         "note": "Studio warned This deletes your current experiment; Cancel pressed. Finished report preserved and Save disabled. Evidenc"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
+        "check_at": "2026-11-12T09:00:00Z"
       }
     },
     {
@@ -111235,12 +111255,12 @@
       "after": "",
       "eta_min": 120,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T22:36Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "parked for Chief: parked for Chief: Studio New test warns: Start a new experiment? This deletes your current experiment. Do you want to continue? Pressed Cancel. Brief requires Ben approval before Continue; no new test armed. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -111351,9 +111371,24 @@
           "at": "2026-11-11T22:42Z",
           "by": "codex",
           "what": "blocked: parked for Chief: parked for Chief: Studio New test warns: Start a new experiment? This deletes your current experiment. Do you want to continue? Pressed Cancel. Brief requires Ben approval before Continue; no new test armed. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "acting Chief: Codex was right to press Cancel. The dialog says a new test deletes the finished one's report, the Never list names that dialog, and Ben has the same question open on J0978. One answer from him settles all four jobs. Until then nothing is pressed"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
-      "remaining_action": "Await Chief handling of approval to delete the ended Venus experiment",
+      "remaining_action": "On Ben's yes: record the finished test's result, press Continue, start the new test. On his no: close",
       "kind": "studio",
       "taskKeys": [
         "OWB:023"
@@ -111364,6 +111399,11 @@
         "at": "2026-11-11T22:42Z",
         "by": "codex",
         "note": "Studio warning cancelled and exact wording reported on the thread; no upload, new test, privacy or schedule change."
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
+        "check_at": "2026-11-12T09:00:00Z"
       }
     },
     {
@@ -213367,12 +213407,12 @@
       "after": "J2448",
       "eta_min": 60,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T22:04Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
-      "result": "parked for Chief: Jupiter T003 is finished (27 Oct 19:03 to 10 Nov 19:49), but New test presents Start a new experiment? This deletes your current experiment. Cancelled; never pressed Continue, as Chief reopening instruction requires. No new tests started. Andromeda needs fresh read; navigation timed out and remained on Jupiter. Black Hole left untouched.",
+      "result": "Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
       "history": [
         {
           "at": "2026-11-09T21:12Z",
@@ -213448,9 +213488,24 @@
           "at": "2026-11-11T22:07Z",
           "by": "codex",
           "what": "blocked: parked for Chief: Jupiter T003 is finished (27 Oct 19:03 to 10 Nov 19:49), but New test presents Start a new experiment? This deletes your current experiment. Cancelled; never pressed Continue, as Chief reopening instruction requires. No new tests started. Andromeda needs fresh read; navigation timed out and remained on Jupiter. Black Hole left untouched."
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "acting Chief: Codex was right to press Cancel. The dialog says a new test deletes the finished one's report, the Never list names that dialog, and Ben has the same question open on J0978. One answer from him settles all four jobs. Until then nothing is pressed"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "blocked: parked for Chief: Waiting for: Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
-      "remaining_action": "Chief must resolve the explicit experiment-deletion warning before Jupiter can start; Andromeda still needs a fresh read",
+      "remaining_action": "On Ben's yes: record the finished test's result, press Continue, start the new test. On his no: close",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -213465,7 +213520,12 @@
         "OWB:002",
         "OWB:020",
         "OWB:019"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Ben's yes or no, once, for four jobs (J0978, J0275, J1198, J2449). Starting a new title or thumbnail test on a video whose last test has finished makes Studio delete that finished test's report. The results are already in the studio's own ledger. It cannot be undone, and the Never list says not to press Continue on that dialog, so it is his call. Asked in chat on 11 Nov. No further tries until he answers.",
+        "check_at": "2026-11-12T09:00:00Z"
+      }
     },
     {
       "id": "J2450",
@@ -217188,19 +217248,19 @@
       "title": "Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Chief ruling (11 Nov 21:18Z, acting Chief, Claude): KEEP v03.** Gemini watched the whole cut and heard the mix and the stems (J2646, `jobs/reviews/J2646/REVIEW.md`): no fails. The voice plays at its natural speed, the date reads \"November twenty-fourth\" by ear, every shot fills the frame, the title clears the answer by 0.37 s. The three warnings are accepted: the Earth shot reads low in detail because it is a globe on plain space, which is how it was ruled to be built; the music's pace warning is the half-time pad under the existing waiver; the two sound-alike notes are the transcriber's spelling. The file is `owb_dated_2026_11_24_supermoon_v03.mp4`, SHA-256 `9b1993364a2858d875b33a97898931a458f084c72711db96c29fe0831aa0b501`; the cover is `supermoon_2026_11_24_cover_v03.jpg`, SHA-256 `dd0cd9f6958800c10cef308854f839d6c05f48ecbd4ad266683f3ddbdfc70869`.\n\n**What is left, in this order. Film 013's ledger job (J2642) comes before this.**\n1. Pull request 834 no longer merges cleanly: `05_Analytics/ai_spend/ledger.jsonl` moved on main. Bring main into `codex/J2478-natural-speed` with a merge commit, keep every line from both sides of that file, run the checks, push, and mark the pull request ready. The Chief merges it. Do not rebase or force-push.\n2. Check both hashes above, then copy v03 and the v03 cover to the existing Orbit watch folders and call `python3 scripts/jobs.py awaits J2478` so Ben gets his watch card.\n3. Stop there. No upload, no schedule, nothing in Studio or Buffer. A Private upload is queued only after Ben's OK on the board, and only if it comes by Wed 18 Nov 18:00 London. The slot is Thu 19 Nov 11:30 London, Related `2fsQcea-voM`.\n\n---\n\nChief ruling (11 Nov 05:54Z, acting Chief, Claude) on the timing question Codex parked at 04:22Z. No Chief decision on it was on the thread.\n\n1. **The opening plays at its natural recorded speed.** No speed change anywhere in sentence 1, and none on the date. The 1.45x and 1.25x candidate is not adopted; keep it on the NAS as a record. Reason: Ben has already turned down a sped-up opening on a Short. His note on `X768qs8sNQs`: \"00:01 vo speed is a bit strange\". The fix ruled then was: the opening at its natural recorded speed, and any speed-up 1.03x or less, in the body only. The same holds here. The review's fix 1 (J2556) is amended to match: close the small gaps inside sentence 1 to about 0.04 to 0.05 s each, the breath after sentence 1 to 0.16 to 0.20 s, and the pause after \"nickel,\" to about 0.14 s. Trim pauses; do not change speed.\n2. **The 1.5 s bar for the spoken surprise (rule 24) is waived for this Short**, as far as the locked take needs at natural speed. Record in the report where \"closer\" ends (expected near 2.0 s). Why the waiver: the subject is spoken inside the first half second, the surprise is on screen as the hook text at frame 0, a new take is ruled out, and a squeezed voice costs more than half a second does. Everything else in rule 24 stands: something moving at frame 0, the hook text at 0.0 s, the voice starting by 0.15 s, no pause over 0.15 s in sentence 1.\n3. **Cut 1 at the end of \"closer\"** (it must be at or before 2.8 s). The date, \"on November twenty-fourth\", plays over a tighter crop of the same Moon footage: a punch-in from the native 4K file, inside the upscale limit, filling the frame. Cut 2, to the Earth, lands on \"If Earth were a nickel\" (at or before 4.8 s).\n4. **The title banner**: on no earlier than 6.5 s, up for at least 2.0 s, off at least 0.15 s before sentence 4 starts (the answer, which carries the scale bar). The 9 to 14 s window is written for Shorts of 22 to 27 s. This one is 17 to 20 s by the dated-Short bar, so its window moves forward in proportion. This is a ruling for this Short, not a new rule.\n5. Everything else in J2556's list stands: the full Earth on space, the Earth and Moon pair on space with no second Moon behind, a clean lunar plate on \"Normally thirty Earths\", the native 4K crop for the opening, the slot edits. So does the note below on filling the frame. Total length stays inside 17.0 to 20.0 s.\n6. No listening review of a speed-up is needed, because there is none. A job is not held for lack of a worker that can listen: Ben's final watch is that check. Deadline unchanged: his OK on the board by Wed 18 Nov 18:00 London, or no upload.\n\nChief note (11 Nov 04:37Z, acting Chief, Claude), for the v02 rebuild: every shot must fill 1080x1920. The Shorts gate now checks the whole Short, one frame a second (J2546, merged 11 Nov), and fails a Short when more than a tenth of it shows a picture band over fill. The review's fix list asks for the Earth, and the Earth with the Moon, \"on the 16:9 band over graded dark space\". Build those two shots as one field of dark space that reaches every edge of the frame, with the Earth and the Moon placed on it. No band: a 16:9 picture with a visible edge above and below it, over a flat or graded backdrop, is padding and fails. A disc on space that is one shade to the frame's edge passes. Run the gate without report-only on v02 and paste its whole-Short line.\n\nBuild the dated-event Short for the 24 November supermoon (LEARNINGS rule 16 test, Ben's go 4 Nov). The script, sources, picture plan and packaging are in `02_Video-Projects/_dated_shorts/2026-11-24_supermoon-two-earths-closer.md` (J2369). Acting Chief (Claude) passed the script on 10 Nov after the five fixes from `jobs/reviews/J2369/REVIEW.md` were applied.\n\nSlot change: the plan's slot, Sat 21 Nov 11:30, has since been taken by the 024 muons Short v04. This Short goes out **Thu 19 Nov 11:30 London** instead (5 days before the event, inside the 3 to 7 day window; nothing else of Orbit's airs that day). Update the slot in the plan file.\n\n1. Voice-over: record the 46-word script with the channel voice. Approved spend: plan credits only, at most two takes (about 600 characters). Apply the pre-approved trims in the plan (C7) if the take runs over 20.0 s with its tail or line 4 starts after 13.5 s. Run vo_check.\n2. Picture: only the free NASA sources named in the plan (SVS 5587 Moon, Blue Marble, LRO). No picture generation.\n3. Assemble 9:16 to the plan, then run every Shorts gate, including the first-second gate (rule 24): subject and surprise spoken by 1.5 s, something moving at frame 0, no pause over 0.15 s in sentence 1.\n4. Park for a review by watching and listening (queue it as a review job). On KEEP, copy to the OWB UAT watch folders and call `jobs.py awaits` for Ben's phone watch.\n5. Only after Ben's OK on the board: queue the Private upload for Thu 19 Nov 11:30 London, Related video `2fsQcea-voM`, title and cover from the plan.\n\nDeadline: if Ben's OK is not on the board by Wed 18 Nov 18:00 London, do not upload. A dated Short after its window is no use; record that and close.\n\nNo Studio change in this job. Nothing spent beyond the plan's voice credits.\n",
+      "body": "**Ben's change (11 Nov 22:57Z, acting Chief, Claude). Ben watched v03 at 22:37Z on 11 Nov and asked for one change. His words: \"0:18 ends on as …\".** The last line is \"Look east at sunset, as…\", written to run on into the first line when the Short loops. Heard once, it sounds cut off. Build v04:\n\n1. The voice ends on \"Look east at sunset.\" Cut the word \"as\" out of the existing take. No new take, nothing spent. Let \"sunset\" end on its own natural tail with a short fade: no click, no clipped last sound.\n2. The last caption reads LOOK EAST AT SUNSET. with no \"as…\" after it. Line 5 of the script in the plan file becomes \"Look east at sunset.\" (45 words in all).\n3. Keep the picture and the 1.0 s tail of music and picture, so the Short still loops to the eye. The length stays inside 17.0 to 20.0 s. Nothing else in the cut changes.\n4. The loop gate's bar that the last line runs on into the first is waived for this Short: Ben's note outranks it. Every other gate runs again on v04, with the voice check against the 45-word script.\n5. If \"sunset\" cannot end cleanly because the two words run together, stop and park with the waveform. Do not record a new take.\n6. Queue a short review for Gemini of the ending only: listen to the last three seconds and watch the tail. **If Gemini finds the ending clean, with no fails, that is the Chief's KEEP for v04:** copy v04 and the cover to Ben's watch folders and call `python3 scripts/jobs.py awaits J2478` for v04, without waiting for another ruling. Anything else parks for the Chief.\n7. Same branch and pull request 834. The Chief merges it once v04 is with Ben and its checks pass. No upload. Ben's OK is still needed on the board by Wed 18 Nov 18:00 London.\n\n---\n\n**Chief ruling (11 Nov 21:18Z, acting Chief, Claude): KEEP v03.** Gemini watched the whole cut and heard the mix and the stems (J2646, `jobs/reviews/J2646/REVIEW.md`): no fails. The voice plays at its natural speed, the date reads \"November twenty-fourth\" by ear, every shot fills the frame, the title clears the answer by 0.37 s. The three warnings are accepted: the Earth shot reads low in detail because it is a globe on plain space, which is how it was ruled to be built; the music's pace warning is the half-time pad under the existing waiver; the two sound-alike notes are the transcriber's spelling. The file is `owb_dated_2026_11_24_supermoon_v03.mp4`, SHA-256 `9b1993364a2858d875b33a97898931a458f084c72711db96c29fe0831aa0b501`; the cover is `supermoon_2026_11_24_cover_v03.jpg`, SHA-256 `dd0cd9f6958800c10cef308854f839d6c05f48ecbd4ad266683f3ddbdfc70869`.\n\n**What is left, in this order. Film 013's ledger job (J2642) comes before this.**\n1. Pull request 834 no longer merges cleanly: `05_Analytics/ai_spend/ledger.jsonl` moved on main. Bring main into `codex/J2478-natural-speed` with a merge commit, keep every line from both sides of that file, run the checks, push, and mark the pull request ready. The Chief merges it. Do not rebase or force-push.\n2. Check both hashes above, then copy v03 and the v03 cover to the existing Orbit watch folders and call `python3 scripts/jobs.py awaits J2478` so Ben gets his watch card.\n3. Stop there. No upload, no schedule, nothing in Studio or Buffer. A Private upload is queued only after Ben's OK on the board, and only if it comes by Wed 18 Nov 18:00 London. The slot is Thu 19 Nov 11:30 London, Related `2fsQcea-voM`.\n\n---\n\nChief ruling (11 Nov 05:54Z, acting Chief, Claude) on the timing question Codex parked at 04:22Z. No Chief decision on it was on the thread.\n\n1. **The opening plays at its natural recorded speed.** No speed change anywhere in sentence 1, and none on the date. The 1.45x and 1.25x candidate is not adopted; keep it on the NAS as a record. Reason: Ben has already turned down a sped-up opening on a Short. His note on `X768qs8sNQs`: \"00:01 vo speed is a bit strange\". The fix ruled then was: the opening at its natural recorded speed, and any speed-up 1.03x or less, in the body only. The same holds here. The review's fix 1 (J2556) is amended to match: close the small gaps inside sentence 1 to about 0.04 to 0.05 s each, the breath after sentence 1 to 0.16 to 0.20 s, and the pause after \"nickel,\" to about 0.14 s. Trim pauses; do not change speed.\n2. **The 1.5 s bar for the spoken surprise (rule 24) is waived for this Short**, as far as the locked take needs at natural speed. Record in the report where \"closer\" ends (expected near 2.0 s). Why the waiver: the subject is spoken inside the first half second, the surprise is on screen as the hook text at frame 0, a new take is ruled out, and a squeezed voice costs more than half a second does. Everything else in rule 24 stands: something moving at frame 0, the hook text at 0.0 s, the voice starting by 0.15 s, no pause over 0.15 s in sentence 1.\n3. **Cut 1 at the end of \"closer\"** (it must be at or before 2.8 s). The date, \"on November twenty-fourth\", plays over a tighter crop of the same Moon footage: a punch-in from the native 4K file, inside the upscale limit, filling the frame. Cut 2, to the Earth, lands on \"If Earth were a nickel\" (at or before 4.8 s).\n4. **The title banner**: on no earlier than 6.5 s, up for at least 2.0 s, off at least 0.15 s before sentence 4 starts (the answer, which carries the scale bar). The 9 to 14 s window is written for Shorts of 22 to 27 s. This one is 17 to 20 s by the dated-Short bar, so its window moves forward in proportion. This is a ruling for this Short, not a new rule.\n5. Everything else in J2556's list stands: the full Earth on space, the Earth and Moon pair on space with no second Moon behind, a clean lunar plate on \"Normally thirty Earths\", the native 4K crop for the opening, the slot edits. So does the note below on filling the frame. Total length stays inside 17.0 to 20.0 s.\n6. No listening review of a speed-up is needed, because there is none. A job is not held for lack of a worker that can listen: Ben's final watch is that check. Deadline unchanged: his OK on the board by Wed 18 Nov 18:00 London, or no upload.\n\nChief note (11 Nov 04:37Z, acting Chief, Claude), for the v02 rebuild: every shot must fill 1080x1920. The Shorts gate now checks the whole Short, one frame a second (J2546, merged 11 Nov), and fails a Short when more than a tenth of it shows a picture band over fill. The review's fix list asks for the Earth, and the Earth with the Moon, \"on the 16:9 band over graded dark space\". Build those two shots as one field of dark space that reaches every edge of the frame, with the Earth and the Moon placed on it. No band: a 16:9 picture with a visible edge above and below it, over a flat or graded backdrop, is padding and fails. A disc on space that is one shade to the frame's edge passes. Run the gate without report-only on v02 and paste its whole-Short line.\n\nBuild the dated-event Short for the 24 November supermoon (LEARNINGS rule 16 test, Ben's go 4 Nov). The script, sources, picture plan and packaging are in `02_Video-Projects/_dated_shorts/2026-11-24_supermoon-two-earths-closer.md` (J2369). Acting Chief (Claude) passed the script on 10 Nov after the five fixes from `jobs/reviews/J2369/REVIEW.md` were applied.\n\nSlot change: the plan's slot, Sat 21 Nov 11:30, has since been taken by the 024 muons Short v04. This Short goes out **Thu 19 Nov 11:30 London** instead (5 days before the event, inside the 3 to 7 day window; nothing else of Orbit's airs that day). Update the slot in the plan file.\n\n1. Voice-over: record the 46-word script with the channel voice. Approved spend: plan credits only, at most two takes (about 600 characters). Apply the pre-approved trims in the plan (C7) if the take runs over 20.0 s with its tail or line 4 starts after 13.5 s. Run vo_check.\n2. Picture: only the free NASA sources named in the plan (SVS 5587 Moon, Blue Marble, LRO). No picture generation.\n3. Assemble 9:16 to the plan, then run every Shorts gate, including the first-second gate (rule 24): subject and surprise spoken by 1.5 s, something moving at frame 0, no pause over 0.15 s in sentence 1.\n4. Park for a review by watching and listening (queue it as a review job). On KEEP, copy to the OWB UAT watch folders and call `jobs.py awaits` for Ben's phone watch.\n5. Only after Ben's OK on the board: queue the Private upload for Thu 19 Nov 11:30 London, Related video `2fsQcea-voM`, title and cover from the plan.\n\nDeadline: if Ben's OK is not on the board by Wed 18 Nov 18:00 London, do not upload. A dated Short after its window is no use; record that and close.\n\nNo Studio change in this job. Nothing spent beyond the plan's voice credits.\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-11T21:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
-      "result": "Worker handoff complete: PR834 ready with passing CI for Chief merge; approved v03 and cover hash-verified in OWB UAT and WATCH_FULL; awaits_ben registered, deadline 18 Nov 18:00 London. No upload until board OK.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T03:09Z",
@@ -217481,6 +217541,11 @@
           "at": "2026-11-11T22:56Z",
           "by": "claude",
           "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "reopened: Ben watched v03 (tick 11 Nov 22:37Z) and asked for a change: \"0:18 ends on as …\". Acting Chief: v04 ends the voice on \"Look east at sunset.\", with the word \"as\" cut from the existing take, no new take, the picture and tail kept. Gemini checks the ending by ear; a clean result is the KEEP and v04 goes back to Ben's watch. Pull request 834 stays open until then"
         }
       ],
       "remaining_action": "Chief merges the ready pull request; Ben watches the approved Supermoon Short",
@@ -217491,19 +217556,7 @@
       ],
       "plain": "Build the Supermoon Short that goes out Thu 19 Nov",
       "for": "codex",
-      "action": "KEEP ruled. Merge main into 834's branch and push; copy v03 and cover to the watch folders; jobs.py awaits for Ben",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-11T22:03Z",
-        "by": "codex",
-        "note": "Watch card registered for v03, deadline 18 Nov 18:00 London. PR834 CI passed. Worker handoff complete."
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Worker handoff complete: PR834 ready with passing CI for Chief merge; approved v03 and cover hash-verified in OWB UAT and WATCH_FULL; awaits_ben registered, deadline 18 Nov 18:00 London. No upload until board OK.",
-        "check_at": "2026-11-12T04:03:18+00:00"
-      },
+      "action": "v04: end the voice on \"Look east at sunset.\" (cut \"as\"), re-run the gates, Gemini checks the ending, back to Ben's watch",
       "awaits_was": {
         "what": "Watch the Supermoon Short and its cover",
         "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v03.mp4",
@@ -224203,12 +224256,12 @@
       "after": "",
       "eta_min": 120,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T22:12Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
-      "result": "parked for Chief: 13 archive source URLs return 404; locked WAV not located; reuse depends on unmade P1:07b; 11 sentences exceed 8s so literal no-sentence-cut and max-8s rules conflict. Preflight and savings committed e61d5c76 on HOS codex/J2563-free-rough; build incomplete.",
+      "result": "Waiting for: J2653 (the voice-over file found), J2654 (the source brief, approved by the Chief) and J2655 (the v03 retime). Then Codex builds the 26 free rows and the rough",
       "history": [
         {
           "at": "2026-11-11T06:28Z",
@@ -224234,9 +224287,24 @@
           "at": "2026-11-11T22:16Z",
           "by": "codex",
           "what": "blocked: parked for Chief: 13 archive source URLs return 404; locked WAV not located; reuse depends on unmade P1:07b; 11 sentences exceed 8s so literal no-sentence-cut and max-8s rules conflict. Preflight and savings committed e61d5c76 on HOS codex/J2563-free-rough; build incomplete."
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "queue side of Grok's ruling 6808400290 (11 Nov 22:17Z): the preflight was right to stop. This build stays parked until three rows land: the voice-over file found (J2653), the corrected source brief approved by the Chief (J2654), and the v03 retime (J2655). The reuse row P5:16b stays a labelled slate until P1:07b is minted. History-of-science 550 stays a draft"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: J2653 (the voice-over file found), J2654 (the source brief, approved by the Chief) and J2655 (the v03 retime). Then Codex builds the 26 free rows and the rough"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T18:00:00Z"
         }
       ],
-      "remaining_action": "Resolve missing source inputs and conflicting cut rules before building the anaesthesia rough",
+      "remaining_action": "When all three are done: reopen for Codex to build the free rows and the rough on v03",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent",
@@ -224249,7 +224317,12 @@
       },
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J2653 (the voice-over file found), J2654 (the source brief, approved by the Chief) and J2655 (the v03 retime). Then Codex builds the 26 free rows and the rough",
+        "check_at": "2026-11-14T18:00:00Z"
+      }
     },
     {
       "id": "J2564",
@@ -230659,25 +230732,133 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "",
+      "result": "Waiting for: Thu 12 Nov, once the fresh Claude session has taken over the hourly run: this is two hours of careful work and belongs there",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
           "by": "claude",
           "what": "added for claude"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Thu 12 Nov, once the fresh Claude session has taken over the hourly run: this is two hours of careful work and belongs there"
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
-      "remaining_action": "Write PICTURE_PLAN v03 per the Chief's six points; pull request on history-of-science for his review",
+      "remaining_action": "Write PICTURE_PLAN v03 per the Chief's points; pull request on history-of-science",
       "due": "2026-11-16T18:00:00Z",
       "for": "claude",
       "kind": "script",
-      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word"
+      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
+      "hold": {
+        "type": "date",
+        "condition": "Thu 12 Nov, once the fresh Claude session has taken over the hourly run: this is two hours of careful work and belongs there",
+        "check_at": "2026-11-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "J2653",
+      "title": "HOS 011 Anaesthesia: find the locked voice-over file by its hash and restore a copy (read-only search)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued 11 Nov 22:57Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 (Grok, 11 Nov 22:17Z), point 2. Backup: Codex.\n\nIn his words: search by SHA-256 `d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2` for `hos_011_vo_v01.wav` across the NAS (including the shipped-film archive), every `/Volumes/MiniWork` scratch worktree, both Mini and MacBook HOS checkouts, studio-live, and git history/LFS of `history-of-science`. Copy only, delete and move nothing. If the hash matches, restore a copy into the 011 studio-live film folder and post the path and hash. If it isn't found, park back to Chief with the search log. **No regeneration, no new voice, no ElevenLabs call** without a separate Chief ruling. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290",
+      "film": "011",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Search by SHA-256, copy only; restore into the film's studio-live folder; post path and hash",
+      "due": "2026-11-13T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it"
+    },
+    {
+      "id": "J2654",
+      "title": "HOS 011 Anaesthesia: a real source page and licence for each of the 13 archive pictures (corrected source brief)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued 11 Nov 22:57Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 (Grok, 11 Nov 22:17Z), point 3. Backup: Claude.\n\nIn his words: all 13 v02 URLs are Commons file titles that 404, so treat them as unverified guesses, not sources. Find a real, currently resolving page for each row (Commons, Wellcome Collection, Internet Archive, Library of Congress, NLM or similar), record the exact URL, the licence as the page states it (public domain or CC with attribution text), and the date checked, and write a corrected archive-source brief as a small PR. Any row with no verifiable free source gets marked for an own-drawn diagram instead; nothing is licensed or bought. The Chief approves the brief before J2563 downloads anything. The rows and the failed checks are in `J2563_PREFLIGHT.json` on history-of-science 550 (`e61d5c76`). £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290",
+      "film": "011",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Find a resolving free source per row, record URL, licence and date; small pull request for the Chief",
+      "due": "2026-11-14T18:00:00Z",
+      "for": "gemini",
+      "kind": "facts",
+      "plain": "Find real, free sources for the 13 old pictures the Anaesthesia film wants to use"
+    },
+    {
+      "id": "J2655",
+      "title": "HOS 011 Anaesthesia: picture plan v03, the cuts re-timed to word gaps (mechanical, from the word timings)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued 11 Nov 22:57Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 (Grok, 11 Nov 22:17Z), point 1. Starts after the voice-over file is found (J2653), so the timings are checked against the real file. Backup: Cursor.\n\nIn his words: the 8 s maximum row stays. \"No sentence cut by a picture change\" is read as **no picture change inside a spoken word**:\n- The 18 cuts that cross a word interval move to the nearest word gap (prefer a comma or clause join such as \"and\"), shifting the neighbouring rows so both stay at or under 8 s.\n- The 17 in-sentence cuts already in a word gap stand where they sit at a clause join or breath; any that split a tight noun phrase (e.g. \"glass / globe\") move to the nearest clause join.\n- The 11 sentences over 8 s split at the clause join nearest their midpoint.\n- This is a v03 retime done from the tracked word timings, and it also carries the accepted P4:08a \"mid-1840s\" correction. v02 stays immutable. Mechanical retime: no line or fact changes.\n\nEvery boundary is listed in `J2563_TIMING_AUDIT.md` on history-of-science 550. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290",
+      "film": "011",
+      "stage": "edit",
+      "after": "J2653",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Write v03: no cut inside a word, no row over 8 s, the mid-1840s correction; pull request for the Chief",
+      "due": "2026-11-15T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Re-time the picture plan for the Anaesthesia film so no picture changes in the middle of a word"
     }
   ],
   "focus": [
