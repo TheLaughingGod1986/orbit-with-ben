@@ -89,7 +89,7 @@ class Guards(unittest.TestCase):
         self.assertEqual(mw.claimed_job("jobs: nothing waiting for you"), "")
 
     def test_prompt_names_the_job_and_the_local_model_limits(self):
-        p = mw.PROMPT.format(job="J1102", agent="macbook-2", owb="/o", hos="/h", model="qwen3:14b", cap_min=25)
+        p = mw.PROMPT.format(job="J1102", agent="macbook-2", model="qwen3:14b", cap_min=25, **mw.prompt_channels())
         self.assertIn("jobs.py show J1102", p)
         self.assertIn("jobs.py done J1102 --agent macbook-2", p)
         self.assertIn("127.0.0.1:11434", p)
@@ -132,23 +132,23 @@ class BackToMain(unittest.TestCase):
 
     def test_its_own_clone_left_on_a_work_branch_goes_back_to_main(self):
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             real = mw.sh  # no remote to pull from here: the pull itself is stubbed, every other git call is real
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "main")
 
     def test_its_own_clone_left_dirty_on_a_work_branch_stashes_and_goes_back_to_main(self):
         # 5 Nov 2026: J2165 left macbook/J2165 dirty and every later MacBook run errored.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("branch", "--show-current"), "main")
@@ -157,13 +157,13 @@ class BackToMain(unittest.TestCase):
     def test_its_own_clone_left_dirty_on_main_stashes_so_the_next_claim_works(self):
         # 8 Nov 2026: a job left the slot's main dirty and `jobs.py next --git` refused every later claim.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             (r / "half_done.md").write_text("unfinished\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 self.assertEqual(mw.pull_main(), "")
             run = lambda *a: subprocess.run(["git", "-C", str(r), *a], capture_output=True, text=True).stdout.strip()
             self.assertEqual(run("status", "--porcelain"), "")
@@ -171,13 +171,13 @@ class BackToMain(unittest.TestCase):
 
     def test_bens_dirty_checkout_is_never_stashed(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
-                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             (r / "bens_work.md").write_text("mine\n")
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF):
                 mw.pull_main()
             self.assertTrue((r / "bens_work.md").exists())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "stash", "list"], capture_output=True, text=True).stdout.strip(), "")
@@ -200,22 +200,22 @@ class BackToMain(unittest.TestCase):
     def test_its_own_clone_ahead_of_github_after_a_good_pull_is_rescued(self):
         # 9 Nov 2026: the pull succeeded but main kept an unpublished queue commit, and every claim refused.
         with tempfile.TemporaryDirectory() as t, mock.patch.object(mw, "WORKER_DIR", pathlib.Path(t)), \
-                mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"), mock.patch.object(mw, "log"):
+                mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]), mock.patch.object(mw, "log"):
             r = self.repo(t, "orbit-with-ben")
             subprocess.run(["git", "-C", str(r), "checkout", "-q", "main"], check=True)
             calls = []
             real = mw.sh
             fake = lambda cmd, **k: subprocess.CompletedProcess(cmd, 0, "", "") if "pull" in cmd else real(cmd, **k)
-            with mock.patch.object(mw, "OWB", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
+            with mock.patch.object(mw, "STUDIO", r), mock.patch.object(mw, "sh", fake), mock.patch.object(mw, "ff_main", self.OK_FF), \
                     mock.patch.object(mw, "rescue_diverged", lambda repo: calls.append(repo) or False):
                 self.assertEqual(mw.pull_main(), "")
             self.assertEqual(calls, [r])
 
     def test_bens_own_checkout_is_never_switched(self):
         with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as w, \
-                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "HOS", pathlib.Path(t) / "none"):
+                mock.patch.object(mw, "WORKER_DIR", pathlib.Path(w)), mock.patch.object(mw, "OTHERS", [pathlib.Path(t) / "none"]):
             r = self.repo(t, "orbit-with-ben")
-            with mock.patch.object(mw, "OWB", r):
+            with mock.patch.object(mw, "STUDIO", r):
                 self.assertIn("not main", mw.pull_main())
             self.assertEqual(subprocess.run(["git", "-C", str(r), "branch", "--show-current"], capture_output=True, text=True).stdout.strip(), "macbook/j1194-work")
 
@@ -490,8 +490,8 @@ class Diverged(unittest.TestCase):
             lock.write_text("")
             old = time.time() - mw.STALE_LOCK_S - 60
             os.utime(lock, (old, old))
-            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
-                    mock.patch.object(mw, "HOS", t / "none"):
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "STUDIO", t / "b"), \
+                    mock.patch.object(mw, "OTHERS", [t / "none"]):
                 self.assertEqual(mw.pull_main(), "")
             self.assertFalse(lock.exists())
             self.assertTrue(list((t / "b" / ".git").glob("index.lock.stale-*")))  # moved aside, not deleted
@@ -504,8 +504,8 @@ class Diverged(unittest.TestCase):
             self._behind_clone(t)
             lock = t / "b" / ".git" / "index.lock"
             lock.write_text("")   # a git may really be running: never touched inside STALE_LOCK_S
-            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "OWB", t / "b"), \
-                    mock.patch.object(mw, "HOS", t / "none"):
+            with mock.patch.object(mw, "WORKER_DIR", t), mock.patch.object(mw, "STUDIO", t / "b"), \
+                    mock.patch.object(mw, "OTHERS", [t / "none"]):
                 self.assertIn("pull failed in b", mw.pull_main())
             self.assertTrue(lock.exists())
             self.assertEqual((t / "b" / "f").read_text(), "1")
@@ -604,6 +604,92 @@ class LaunchAgent(unittest.TestCase):
         plist = (pathlib.Path(__file__).resolve().parent / "macbook" / "com.owb.macbook-worker.plist").read_text()
         self.assertIn("<key>StartInterval</key>\n  <integer>180</integer>", plist)
         self.assertNotIn("<integer>900</integer>", plist)
+
+
+ALLOWED_BEFORE_J2526 = 11   # len(CLAUDE_ALLOWED_TOOLS) on main before the worker stopped naming channels
+
+
+class AsksTheChannelLoader(unittest.TestCase):
+    """J2526: the worker names no channel. Its clones, its brief and its Studio ports come from the channel files,
+    so today's two channels behave exactly as before and a third needs no edit here."""
+
+    def sky(self):
+        import channels
+        base = channels._load()
+        home = next(c for c in base if c.get("home"))
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
+                   repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_brief_reads_as_it_always_did_for_todays_channels(self):
+        with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h"]), \
+                mock.patch.object(mw, "AGENT_ID", "macbook-2"):
+            p = mw.brief("J1102", "qwen3:14b", 25)
+        for line in (
+            '1. Orbit With Ben (/o) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then',
+            "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.",
+            "   History of Science folder must always be left on main.",
+            "  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch",
+            "- keep files inside the two checkouts and ~/_desk; leave nothing running when you stop.",
+            "     python3 scripts/jobs.py show J1102",
+            "Your run is killed at 25 minutes:",
+        ):
+            self.assertIn(line + ("\n" if not line.endswith(":") else ""), p)
+        self.assertNotIn("{", p)                                   # every placeholder was filled
+
+    def test_clones_urls_and_ports_come_from_the_channel_files(self):
+        self.assertEqual(mw.URLS, {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
+                                   "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"})
+        self.assertEqual(mw.STUDIO.name, "orbit-with-ben")
+        self.assertEqual([p.name for p in mw.OTHERS], ["history-of-science"])
+        self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
+        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
+        self.assertEqual(mw.clone_name("hos"), "history-of-science")
+
+    def test_a_third_channel_gets_its_own_clone_its_line_in_the_brief_and_its_port(self):
+        with self.sky():
+            self.assertEqual(mw.other_slugs(), ["hos", "sky"])
+            self.assertEqual(mw.clone_name("sky"), "night-sky")
+            with mock.patch.dict(os.environ, {"SKY_REPO": str(mw.HOME / "YouTube" / "Night Sky")}):
+                self.assertEqual(mw.channel_clone("sky"), mw.slot_dir(mw.SLOT) / "night-sky")   # never Ben's folder
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/s"]):
+                p = mw.brief("J1", "m", 25)
+            self.assertIn("   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                          "   For a SKY job, work in the SKY checkout (/s) and follow its AGENTS.md.\n", p)
+            self.assertIn("History of Science and Night Sky folders must always be left on main", p)
+            self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
+            self.assertIn("inside the three checkouts", p)
+
+    def test_a_third_channel_reaches_the_agent_and_the_second_slot(self):
+        with self.sky():
+            with mock.patch.object(mw, "OTHERS", [pathlib.Path("/h"), pathlib.Path("/s")]), \
+                    mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+                c = mw.agent_cmd("claude", "P")
+            dirs = [c[i + 1] for i, x in enumerate(c) if x == "--add-dir"]
+            self.assertEqual(dirs, ["/h", "/s", str(mw.HOME / "_desk")])
+            calls = []
+            with mock.patch.object(mw, "SLOT", 1), mock.patch.object(mw, "SLOTS", 2), \
+                    mock.patch.object(mw, "HOME", pathlib.Path(tempfile.mkdtemp())):
+                mw.start_other_slots(popen=lambda cmd, **kw: calls.append(kw["env"]), system="Darwin")
+            self.assertTrue(calls[0]["SKY_REPO"].endswith("worker/slot2/night-sky"))
+            self.assertTrue(calls[0]["HOS_REPO"].endswith("worker/slot2/history-of-science"))
+
+    def test_a_channel_with_no_repo_url_yet_does_not_stop_the_worker(self):
+        import channels
+        base = channels._load()
+        bare = dict(next(c for c in base if c.get("home")), slug="new", label="NEW", name="New One", home=False,
+                    order=9, title_match=r"\bNEW\b", youtube={}, repo={"env": "NEW_REPO", "checkouts": ["new-one"]})
+        with mock.patch.object(channels, "_load", lambda directory=None: base + (bare,)):
+            self.assertEqual(mw.clone_name("new"), "new")
+            self.assertEqual(mw.channel_clone("new"), mw.slot_dir(mw.SLOT) / "new")
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/n"]):
+                self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science), check", mw.brief("J1", "m", 25))
+
+    def test_the_unattended_tool_list_is_not_widened(self):
+        # the list an unattended Claude may use without asking, as it stood before this change
+        self.assertEqual(len(mw.CLAUDE_ALLOWED_TOOLS), ALLOWED_BEFORE_J2526)
+        self.assertFalse(any("merge" in r or "pull" in r for r in mw.CLAUDE_ALLOWED_TOOLS))
 
 
 if __name__ == "__main__":
