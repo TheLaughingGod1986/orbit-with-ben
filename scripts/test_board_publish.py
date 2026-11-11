@@ -54,6 +54,58 @@ class ChangeTimes(unittest.TestCase):
         self.assertEqual(board["checks"]["OWB-022"]["verdict"], "ok")
 
 
+class ThirdChannelOnTheBoard(unittest.TestCase):
+    """J2615: board_publish.py names no channel. A channel added by folder gets its own section, worktree
+    patterns and a place in board.channels, and the two that are there today read exactly as before."""
+
+    def sky(self):
+        import channels
+        from unittest import mock
+        base = channels._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_today_nothing_moves(self):
+        import channels
+        self.assertEqual(bp.SECTIONS, (*reversed(channels.slugs()), "briefs", "credits", "tracker"))
+        self.assertEqual(bp.sections(), bp.SECTIONS)
+        self.assertEqual(set(docs()), set(bp.SECTIONS))
+        self.assertEqual(bp.STUDIO, channels.repo_path(channels.home(), bp.HOME))
+        for slug in channels.slugs():
+            if slug != bp.studio_slug():
+                self.assertEqual(bp.sparse_for(slug), ["/studio/", "/" + channels.pipeline(slug)["path"],
+                                                       bp.UPLOADS_SPARSE, *bp.CHANNEL_SPARSE])
+        self.assertIs(bp.sparse_for(bp.studio_slug()), bp.STUDIO_SPARSE)
+        self.assertEqual([len(bp.section_films(docs()[s])) for s in bp.channel_sections()], [1, 1])
+
+    def test_a_third_channel_has_its_own_section_and_is_listed(self):
+        with self.sky():
+            self.assertIn("sky", bp.sections())
+            self.assertEqual(bp.channel_names()[-1],
+                             {"slug": "sky", "label": "SKY", "name": "Night Sky", "short": "Sky", "home": False})
+            self.assertEqual(bp.sparse_for("sky"), ["/studio/", "/PIPELINE.json", bp.UPLOADS_SPARSE, *bp.CHANNEL_SPARSE])
+            d = dict(docs(), sky={"updatedAt": "x", "pipeline": {"films": [{"id": "001"}, {"id": "002"}]}})
+            board, hashes = bp.assemble(d, {}, {}, T0)
+            self.assertEqual(len(bp.section_films(board["sky"])), 2)
+            self.assertEqual(board["changedAt"]["sky"], "2026-10-09T20:00:00Z")
+            self.assertIn("sky", hashes)
+
+    def test_the_snapshot_gets_a_checkout_only_for_a_channel_it_has_a_flag_for(self):
+        with tempfile.TemporaryDirectory() as d:
+            script = Path(d) / "kanban_snapshot.py"
+            script.write_text('ap.add_argument("--one", type=Path)\n')
+            self.assertEqual(bp.snapshot_args(script, ["one", "sky"]), ["--one", str(bp.WT / "one")])
+
+    def test_the_queue_section_is_the_one_whose_heartbeat_is_left_out(self):
+        import channels
+        doc = {"updatedAt": "x", "lanes": {"mini": {"busy": 1, "heartbeat": {"at": "now"}}}}
+        self.assertEqual(bp.stable(channels.queue_key(), doc), {"lanes": {"mini": {"busy": 1}}})
+        other = next(s for s in channels.slugs() if s != channels.queue_key())
+        self.assertEqual(bp.stable(other, doc), {"lanes": doc["lanes"]})
+
+
 class Lock(unittest.TestCase):
     def test_a_busy_publish_queues_one_more_round_and_never_fails(self):
         with tempfile.TemporaryDirectory() as d:
