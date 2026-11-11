@@ -224968,13 +224968,13 @@
       "stage": "picture",
       "after": "J2608",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T12:18Z",
-      "eta": "2026-11-11T14:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:46Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-11T10:46Z",
@@ -225025,6 +225025,11 @@
           "at": "2026-11-11T12:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: 192f at 24fps, 1280x720, full decode; SHA256 82eb0d10c57a9ddfabd10aed92d158be726ad57f987d0c35e7ecdd7422993ad5. Half-second sheet and NAS copies hash-verified. HOS PR #521 (013c2a66). One take 100cr GBP0; no picture judgment."
+        },
+        {
+          "at": "2026-11-11T12:25Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Claude reviews the delivered final salon take before splice",
@@ -225042,7 +225047,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/521"
     },
     {
       "id": "J2599",

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2598, J2270, J2599, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2270, J2599, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -75,7 +75,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2592 | mini | open (after J2599) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
-| J2598 | mini | claimed | codex | 2026-11-11T14:18Z | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 
 Recently finished:
@@ -89,4 +88,4 @@ Recently finished:
 - J2602 done: Verify condition for J2171 (Condition checked by the MacBook 11 Nov 11:16Z: not met (four shots of film 009 are being remade; J2035 has not started). Recorded on J2171 by the acting Chief; next look Thu 12 Nov 08:00Z.)
 - J2601 done: Does Cursor work on its Grok model? Run its command line once with that model on the Mini and copy what it says (Cursor command line 2026.11.05-86047df, run once on the Mini 11 Nov 11:13Z, same way as J2595's second run (--trust, empty temp folder, one-word task, -p, text output) but with --model grok-4.7. Exit 0 after 9 s. It printed exactly one line: "ok". That is its answer, not a refusal: no purchase, upgrade or sign-in offered, no error. So Cursor works on its Grok model; only its default model (Claude Opus 5.5) is refused, per J2595. One run, no retry. Flag in scripts/credit_flags.json and the routing untouched. Log: ~/_desk/logs/J2601-cursor.log.)
 - J2600 done: MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main) (Merged: orbit-with-ben #819 (main 73eca800). The MacBook's Claude Code is now refused outright from merging, approving or closing a pull request, from the GitHub API, from pushing to main and from force pushes (a refused list passed after its allowlist), and its brief says a job that says 'merge' stops at the open pull request. Two tests. One rule of the old #666 is left out on purpose (a push written as HEAD:main: a colon inside the rule may not parse); the other push forms and the brief's sentence cover it. It takes effect when the MacBook next pulls main.)
-- J2597 done: HOS 008: check the new salon start picture before any credit is spent (three yes/no questions) (Try 1 FAIL on question 3 (the MacBook's check, thread 6794334039). Knuckle near the tube end: yes. Wig smooth, air and tube mouth clear: yes. Same room and same two people: no. Still 02_salon_spark_t4_start.png, sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0, is not used. Closed by the acting Chief so the record is whole: free try 2 of 3 is J2604, its check is J2605, and the fourth take (J2598) now waits on that check, not this job.)
+- J2598 done: HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) (done)
