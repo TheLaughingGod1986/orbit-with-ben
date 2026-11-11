@@ -229719,13 +229719,13 @@
       "stage": "picture",
       "after": "J2642",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T21:27Z",
-      "eta": "2026-11-11T21:57Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
-      "result": "",
+      "result": "parked for Chief: floor-3000 dry-run passed on post-plate balance 10440 (20:08:51Z, unposted_charges=800, projected_headroom=3040, would_allow_reserve_at_recorded_balance=true, 40 runner tests OK on main 1c59247b, 0 credits/no browser); full output posted on HOS desk #180 (6807584517) for Chief's second ruling before releasing J2529",
       "history": [
         {
           "at": "2026-11-11T20:08Z",
@@ -229771,6 +229771,11 @@
           "at": "2026-11-11T21:37Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted full floor-3000 dry-run output on HOS desk #180 (comment 6807584517, acked 6806064371); parking for Chief's second ruling"
+        },
+        {
+          "at": "2026-11-11T21:37Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: floor-3000 dry-run passed on post-plate balance 10440 (20:08:51Z, unposted_charges=800, projected_headroom=3040, would_allow_reserve_at_recorded_balance=true, 40 runner tests OK on main 1c59247b, 0 credits/no browser); full output posted on HOS desk #180 (6807584517) for Chief's second ruling before releasing J2529"
         }
       ],
       "remaining_action": "Chief makes second ruling on HOS 013 pass-1 floor-3000 dry-run (desk 6807584517) before releasing J2529",

@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2622 | cloud | blocked | claude | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2632 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806341672 |
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
-| J2644 | mini | claimed | gemini | 2026-11-11T21:57Z | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
+| J2644 | mini | blocked | gemini | – | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
 | J2649 | cloud | blocked | claude | – | for claude · studio · Relay: a condition check for a job pinned to the Mini goes to the Mini, not the MacBook |  |
 | J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
 
