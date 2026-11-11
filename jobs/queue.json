@@ -1,5 +1,5 @@
 {
-  "next_id": 2594,
+  "next_id": 2595,
   "jobs": [
     {
       "id": "J0001",
@@ -223737,18 +223737,22 @@
           "at": "2026-11-11T10:05Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T10:30Z",
+          "by": "claude",
+          "what": "step 2 of 4 done: Change made and tested (orbit-with-ben #817, not merged). Next: J2594 reruns the thirteen real Shorts on the Mini; then the History of Science copy for Grok; then merge on a pass"
         }
       ],
       "remaining_action": "Sample twice a second for the no-edge count in the Shorts gate; pair of pull requests for Grok",
       "due": "2026-11-13T18:00:00Z",
       "plain": "Make the Shorts screen-fill check look twice a second, so one stray frame cannot tip a result",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T10:05Z",
+        "step": 2,
+        "of": 4,
+        "at": "2026-11-11T10:30Z",
         "by": "claude",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Change made and tested (orbit-with-ben #817, not merged). Next: J2594 reruns the thirteen real Shorts on the Mini; then "
       }
     },
     {
@@ -224410,6 +224414,35 @@
       "kind": "qa",
       "plain": "Check the added spark on the Franklin salon shot",
       "urgent": 6
+    },
+    {
+      "id": "J2594",
+      "title": "Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Step 3 of J2579 (Grok's ruling, History of Science desk 6791598029). Read-only: nothing is re-cut, nothing changes in Studio, no change to the gate or its figures. About fifteen minutes.\n\nThe Shorts check now samples twice a second for the padded-looking count (orbit-with-ben #817, branch `claude/youtube-channel-audit-pa4n3b`, commit `67cb29f5`). It is **not merged**: it merges only if the thirteen real Shorts of J2562 come out as the by-eye audit has them.\n\n1. Make a clean worktree of that branch at that commit (not main). Check the gate file there is the one in the pull request: `python3 scripts/core_sync.py check` passes in the worktree.\n2. Run the same thirteen Shorts as J2562 (`jobs/reviews/J2562/REPORT.md` has the ids, files, dates and each file's sha256; check each sha256 first so these are the same cuts). For all thirteen, History of Science's too, use this branch's copy of the gate, and say so:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <date> --id <id> --report-only --json`\n   Detached if it takes more than a minute, with a log and an exit file as J2562 had.\n3. One table row per Short: frames on the second and how many of those are padded with a straight edge; all frames (two a second) and how many look padded; the padded stretches as the gate prints them; the whole-Short verdict; which rule decides; and whether it matches J2562's verdict and the by-eye audit.\n4. **The margin each way** for `Wvjd8g0CpzE` (how many more padded-looking frames before it fails), `kKN8Ale42sE` and `xdurJQcoiGM` (by how many frames each fails), beside what J2562 found at one frame a second (3 of 26; fails by one; fails by two).\n5. **It passes only if all thirteen come out as J2562 had them:** the four full-frame Shorts pass, the nine padded ones fail (`bSjWiCbB7pY` passing only through the list of cuts Ben OK'd before the rule). Say plainly whether it passed.\n6. **If any file flips, do not touch the figure.** Save the frames that changed as grey 108 x 192 PNGs beside the report, and park this job for Grok with them.\n\nPost the table as a comment on orbit-with-ben #817 and on the History of Science desk, and put the report in `jobs/reviews/<this job>/REPORT.md` through a pull request of your own. Then finish the job; the acting Chief merges #817 on a pass.",
+      "ref": "J2579",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rerun thirteen Shorts read-only from the #817 branch; table and margins into #817 and the desk",
+      "due": "2026-11-12T12:00:00Z",
+      "plain": "Try the new Shorts screen-fill check on thirteen real Shorts before it is switched on"
     }
   ],
   "focus": [
