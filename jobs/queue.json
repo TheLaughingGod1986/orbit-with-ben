@@ -221545,9 +221545,14 @@
           "at": "2026-11-11T23:20Z",
           "by": "gemini",
           "what": "step 0 of 14 done: Preflight green on canonical HOS main 90711687 (40/40 tests OK, Explorer sha256 24659dc1...476d, NAS live, unarmed submit refused). Pre-launch dry-run (DRY_RUN_2026-11-11T2318Z.json): active_reservations={}, remaining_reservations=0, unposted_charges=800, total_liability=800, live_balance=10440 (>=9600), floor=3000, projected_headroom=3040, would_allow_reserve_at_recorded_balance=true"
+        },
+        {
+          "at": "2026-11-11T23:23Z",
+          "by": "gemini",
+          "what": "step 0 of 14 done: HOS013_PASS1 reserved (cap 6600, --floor 3000); Batch 1 0-credit start stills running (P01_01_study_beaks_t1.png 1376x768 saved at 0 credits, P01_02_drawer_lock_t1.png underway)"
         }
       ],
-      "remaining_action": "Launch Batch 1 of 14 detached with --floor 3000, watch first take end-to-end (price=100, Create, saved clip, balance -100), then release between batches",
+      "remaining_action": "Watch Batch 1 first paid take (P1:01_study_beaks) complete (price=100, Create, saved clip, balance 10440->10340), then release between batches",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -221561,9 +221566,9 @@
       "progress": {
         "step": 0,
         "of": 14,
-        "at": "2026-11-11T23:20Z",
+        "at": "2026-11-11T23:23Z",
         "by": "gemini",
-        "note": "Preflight green on canonical HOS main 90711687 (40/40 tests OK, Explorer sha256 24659dc1...476d, NAS live, unarmed submi"
+        "note": "HOS013_PASS1 reserved (cap 6600, --floor 3000); Batch 1 0-credit start stills running (P01_01_study_beaks_t1.png 1376x76"
       }
     },
     {
