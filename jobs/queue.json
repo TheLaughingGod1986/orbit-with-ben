@@ -217158,13 +217158,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T01:46Z",
-      "eta": "2026-11-11T03:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:13Z",
-      "result": "",
+      "result": "Waiting for: Direct first-three-seconds and ending watch/listen requested by brief remains unavailable: session tool inventory has shell output and still image viewing only; ffmpeg and offline ASR were tested but do not demonstrate audio or moving-video perception. Local evidence commit 99fc3f1ed; external evidence push rejected by automatic approval review.",
       "history": [
         {
           "at": "2026-11-10T14:13Z",
@@ -217195,9 +217195,19 @@
           "at": "2026-11-11T01:50Z",
           "by": "codex",
           "what": "step 3 of 4 done: Both gates FAIL; same 20.74s runtime and 4.60s first cut. Local offline ASR confirms same words and meta-promise. Tail stills show no end-card title or raw id. Remaining: direct watch/listen input and Chief decision."
+        },
+        {
+          "at": "2026-11-11T01:52Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Direct first-three-seconds and ending watch/listen requested by brief remains unavailable: session tool inventory has shell output and still image viewing only; ffmpeg and offline ASR were tested but do not demonstrate audio or moving-video perception. Local evidence commit 99fc3f1ed; external evidence push rejected by automatic approval review."
+        },
+        {
+          "at": "2026-11-11T01:52Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-11T08:00:00Z"
         }
       ],
-      "remaining_action": "Record the comparison and obtain the direct audio and motion inspection this session cannot perform",
+      "remaining_action": "Have a capable reviewer inspect the opening and ending; obtain Chief decision from local evidence",
       "due": "2026-11-12T18:00:00Z",
       "kind": "studio",
       "plain": "Check the Voyager Short that is actually on YouTube, not the copy on disk",
@@ -217208,7 +217218,20 @@
         "at": "2026-11-11T01:50Z",
         "by": "codex",
         "note": "Both gates FAIL; same 20.74s runtime and 4.60s first cut. Local offline ASR confirms same words and meta-promise. Tail s"
-      }
+      },
+      "hold": {
+        "type": "capability",
+        "condition": "Direct first-three-seconds and ending watch/listen requested by brief remains unavailable: session tool inventory has shell output and still image viewing only; ffmpeg and offline ASR were tested but do not demonstrate audio or moving-video perception. Local evidence commit 99fc3f1ed; external evidence push rejected by automatic approval review.",
+        "check_at": "2026-11-11T08:00:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ]
     },
     {
       "id": "J2510",
