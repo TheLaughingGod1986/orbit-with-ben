@@ -221716,13 +221716,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T06:24Z",
-      "eta": "2026-11-11T08:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T06:21Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2529 NOT met at 11 Nov 06:24Z, J2529 left blocked. (1) Flow reset is due Thu 12 Nov 19:13Z, not yet reached. (2) Plan v02 pull request not merged: J2558 is still claimed by gemini, history-of-science has no open or merged pull request for it (open: #502 #497 #492 #484 #180). (3) J2033 is done. The MacBook was refused the hold update (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2529 --agent <chief> --condition 'Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (J2558) merged by Grok' --check-at '2026-11-12T19:30:00Z' --type input --recheck J2561 --git. The hold check_at reads 2026-11-11T07:21Z, so the relay will queue this check hourly until then.",
       "history": [
         {
           "at": "2026-11-11T06:21Z",
@@ -221733,6 +221733,11 @@
           "at": "2026-11-11T06:24Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:25Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J2529 NOT met at 11 Nov 06:24Z, J2529 left blocked. (1) Flow reset is due Thu 12 Nov 19:13Z, not yet reached. (2) Plan v02 pull request not merged: J2558 is still claimed by gemini, history-of-science has no open or merged pull request for it (open: #502 #497 #492 #484 #180). (3) J2033 is done. The MacBook was refused the hold update (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2529 --agent <chief> --condition 'Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (J2558) merged by Grok' --check-at '2026-11-12T19:30:00Z' --type input --recheck J2561 --git. The hold check_at reads 2026-11-11T07:21Z, so the relay will queue this check hourly until then."
         }
       ],
       "remaining_action": "Verify readiness: HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
