@@ -1,5 +1,5 @@
 {
-  "next_id": 2639,
+  "next_id": 2640,
   "jobs": [
     {
       "id": "J0001",
@@ -228563,6 +228563,42 @@
         "by": "gemini",
         "note": "Posted J2638 verification and checkout repair report on studio thread #264"
       }
+    },
+    {
+      "id": "J2639",
+      "title": "First-day check at 6 h: \"Why Did a 90-Day Mars Rover Last 14 Years?\" (B1z2dv7m7Vk)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "First-day check, 6 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"Why Did a 90-Day Mars Rover Last 14 Years?\" (`B1z2dv7m7Vk`), Orbit With Ben, a Short. It went live Wed 11 Nov 11:30 London. Use its signed-in Studio browser (CDP 9223).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. It is listed under the Shorts tab. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it may only be on the channel dashboard's latest-Short card). Reach: the views that came from the Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs swiped away (the % who stayed), Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record B1z2dv7m7Vk --hours 6 --views <n> --rank <N> --of 10 --typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) ` --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge B1z2dv7m7Vk` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-11T18:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T18:14Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-11T18:14Z",
+          "by": "claude",
+          "what": "queued by the acting Chief: the Mini's 18:01Z tick made this job but could not push it (kept on rescue/mini-2026-11-11-orbit-with-ben-b74cb5fcd4), and the six hours were up at 17:30Z."
+        }
+      ],
+      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "due": "2026-11-11T20:14:00Z",
+      "kind": "studio",
+      "launch": "B1z2dv7m7Vk@6",
+      "plain": "Check how \"Why Did a 90-Day Mars Rover Last 14 Years?\" is doing 6 hours after it went live"
     }
   ],
   "focus": [
