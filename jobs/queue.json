@@ -224423,9 +224423,14 @@
           "at": "2026-11-11T14:06Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2583; inspecting runner and preflight for HOS 009 three retakes"
+        },
+        {
+          "at": "2026-11-11T14:10Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Preflight passed: live balance 11590, liability 6000, reserve cap 300, headroom 5290 >= 3000 floor, disk 14 GiB >= 12 GB waiver, 0 pending charges"
         }
       ],
-      "remaining_action": "Run preflight check (lock, disk floor, credit balance, runner)",
+      "remaining_action": "Launch and complete the three J2583 second takes via --retakes-j2583",
       "due": "2026-11-12T18:00:00Z",
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
@@ -224444,11 +224449,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T14:06Z",
+        "at": "2026-11-11T14:10Z",
         "by": "gemini",
-        "note": "Claimed J2583; inspecting runner and preflight for HOS 009 three retakes"
+        "note": "Preflight passed: live balance 11590, liability 6000, reserve cap 300, headroom 5290 >= 3000 floor, disk 14 GiB >= 12 GB"
       }
     },
     {
