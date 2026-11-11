@@ -229415,18 +229415,23 @@
           "at": "2026-11-11T21:14Z",
           "by": "codex",
           "what": "step 2 of 3 done: 19 metadata regressions and 24 refill tests pass, including a real rejecting origin and both pull timing races; full suite running."
+        },
+        {
+          "at": "2026-11-11T21:18Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR #835 opened; all 65 script test files pass in fresh processes. Failed-origin regression restores clean origin/main and original queue bytes. Historical error logging gap documented."
         }
       ],
-      "remaining_action": "Running all script tests and preparing the rollback fix for Chief review",
+      "remaining_action": "Chief review and merge of the tested metadata rollback fix",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-11T21:14Z",
+        "at": "2026-11-11T21:18Z",
         "by": "codex",
-        "note": "19 metadata regressions and 24 refill tests pass, including a real rejecting origin and both pull timing races; full sui"
+        "note": "PR #835 opened; all 65 script test files pass in fresh processes. Failed-origin regression restores clean origin/main an"
       }
     },
     {
