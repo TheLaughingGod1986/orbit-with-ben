@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0124 | mini | blocked | claudecode | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0275 | mini | blocked | claude | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
+| J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
@@ -18,11 +18,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
-| J0978 | mini | blocked | macbook-2 | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
+| J0978 | mini | open | – | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
-| J1198 | mini | blocked | claude | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
+| J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
-| J2449 | mini | blocked | claude | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
+| J2449 | mini | open (after J2448) | – | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2452 | macbook | open (after J2548) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 | J2453 | mini | open (after J2567) | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2454 | mini | open (after J2567) | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
@@ -76,6 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2652 | cloud | blocked | claude | – | 013 edit · for claude · script · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2654 | mini | claimed | gemini | 2026-11-12T01:16Z | 011 edit · for gemini · facts · HOS 011 Anaesthesia: a real source page and licence for each of the 13 archive pictures (corrected source brief) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 |
 | J2655 | mini | open (after J2653) | – | – | 011 edit · for codex · assembly · HOS 011 Anaesthesia: picture plan v03, the cuts re-timed to word gaps (mechanical, from the word timings) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 |
+| J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 
 Recently finished:
 
