@@ -414,6 +414,7 @@ class AnyChannel(unittest.TestCase):
                 self.assertEqual(ks.main([*args, "--db-out", str(out)]), 0)
             docs = {p.stem: json.loads(p.read_text()) for p in out.glob("*.json")}
             slugs = channels.slugs()
+            one_file = {slug: ks.one_file(slug) for slug in slugs}   # each channel's own way, whatever it is this week
         # what the publisher reads is all there, and every channel has its own file in its own shape
         self.assertLessEqual(set(board_publish.SECTIONS), set(docs))
         for slug in slugs:
@@ -423,7 +424,7 @@ class AnyChannel(unittest.TestCase):
             self.assertIn(key, queue)
         for slug in slugs:   # only the queue's document carries the queue
             if slug != channels.queue_key():
-                self.assertEqual(set(docs[slug]), {"updatedAt", "pipeline" if slug != "sky" else "films"}, slug)
+                self.assertEqual(set(docs[slug]), {"updatedAt", "pipeline" if one_file[slug] else "films"}, slug)
         # the made-up channels came through like any other
         self.assertEqual([f["film"] for f in docs["sky"]["films"]], ["001"])
         self.assertEqual([f["id"] for f in docs["deep-sea"]["pipeline"]["films"]], ["007"])

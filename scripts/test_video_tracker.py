@@ -14,6 +14,19 @@ from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import video_tracker as vt  # noqa: E402
+import channel_pins  # noqa: E402
+
+# These tests hand the board History of Science's films as one pipeline document. They are about that shape, so
+# they say so, whatever the real channel does this week (J2622).
+PIN = channel_pins.one_file("hos")
+
+
+def setUpModule():
+    PIN.start()
+
+
+def tearDownModule():
+    PIN.stop()
 
 ROOT = Path(__file__).resolve().parents[1]
 HOS_PIPE = Path("/tmp/hos-sparse/00_Brand/Channel-Setup/PIPELINE.json")
