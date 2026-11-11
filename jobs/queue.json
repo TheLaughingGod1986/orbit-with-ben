@@ -229410,18 +229410,23 @@
           "at": "2026-11-11T21:12Z",
           "by": "codex",
           "what": "step 1 of 3 done: Confirmed watchdog fast-forward at 18:01:01; 07:05 has no watchdog run. Added real rejecting-origin regression and failure exit propagation."
+        },
+        {
+          "at": "2026-11-11T21:14Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 19 metadata regressions and 24 refill tests pass, including a real rejecting origin and both pull timing races; full suite running."
         }
       ],
-      "remaining_action": "Fixing metadata rollback and reproducing background pull races",
+      "remaining_action": "Running all script tests and preparing the rollback fix for Chief review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-11T21:12Z",
+        "at": "2026-11-11T21:14Z",
         "by": "codex",
-        "note": "Confirmed watchdog fast-forward at 18:01:01; 07:05 has no watchdog run. Added real rejecting-origin regression and failu"
+        "note": "19 metadata regressions and 24 refill tests pass, including a real rejecting origin and both pull timing races; full sui"
       }
     },
     {
