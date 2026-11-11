@@ -24,6 +24,11 @@ class HistoricalStages(unittest.TestCase):
         return self.run_git(root, '-c', 'user.name=Test', '-c', 'user.email=test@example.test', 'commit', '-qm', at,
                             env={**os.environ, 'GIT_AUTHOR_DATE': at, 'GIT_COMMITTER_DATE': at}) or self.run_git(root, 'rev-parse', 'HEAD')
 
+    def settings(self, root, kind, path):
+        """The channel's own settings in its repo: how it keeps its film state."""
+        p = root / 'studio/channel.json'; p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps({'pipeline': {'kind': kind, 'path': path}}))
+
     def test_baseline_uses_tree_before_cutoff_and_reads_paths_with_spaces(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); self.run_git(root, 'init', '-q')
@@ -46,6 +51,7 @@ class HistoricalStages(unittest.TestCase):
             root=Path(tmp); self.run_git(root, 'init', '-q')
             p=root/'00_Brand/Channel-Setup/PIPELINE.json';p.parent.mkdir(parents=True)
             p.write_text(json.dumps({'stages':[{'key':'picture','weight':35}], 'films':[{'id':'006','stages':{'picture':{'status':'doing','progress':0.4}}}]}))
+            self.settings(root, 'pipeline_json', '00_Brand/Channel-Setup/PIPELINE.json')
             self.commit(root,'2026-10-17T10:00:00Z')
             d=vp.historical_stages(root,'HOS',dt.datetime(2026,10,18,tzinfo=UTC),{})
             self.assertEqual(d['films']['HOS:006']['stages']['picture']['progress'],0.4)
@@ -69,11 +75,54 @@ class HistoricalStages(unittest.TestCase):
             self.assertEqual(len({s['weight'] for s in even['definitions']}), 1)
             self.assertAlmostEqual(sum(s['weight'] for s in even['definitions']), 100)
 
+    def switching_repo(self, root):
+        """A channel that kept one pipeline file, then got settings saying so, then moved to one status file per film."""
+        self.run_git(root, 'init', '-q')
+        one = root / '00_Brand/Channel-Setup/PIPELINE.json'; one.parent.mkdir(parents=True)
+        film = lambda progress: {'stages': [{'key': 'picture', 'weight': 35}],
+                                 'films': [{'id': '006', 'stages': {'picture': {'status': 'doing', 'progress': progress}}}]}
+        one.write_text(json.dumps(film(0.2)))
+        no_settings = self.commit(root, '2026-10-15T10:00:00Z')
+        one.write_text(json.dumps(film(0.4)))
+        self.settings(root, 'pipeline_json', '00_Brand/Channel-Setup/PIPELINE.json')
+        one_file = self.commit(root, '2026-10-17T10:00:00Z')
+        one.unlink()
+        each = root / '02_Video-Projects/006_Trees/status.json'; each.parent.mkdir(parents=True)
+        each.write_text(json.dumps({'film': '006', 'stages': {'picture': {'state': 'doing', 'progress': 0.6}}}))
+        self.settings(root, 'film_status', '02_Video-Projects/*/status.json')
+        switched = self.commit(root, '2026-10-19T10:00:00Z')
+        return no_settings, one_file, switched
+
+    def test_a_commit_from_before_a_channel_changed_how_it_keeps_its_films_is_read_the_old_way(self):
+        # J2622: the day a channel moves to one status file per film, yesterday's commit still holds the one pipeline
+        # file. Read today's way it has no films at all, and the board loses every film's progress for the period.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); _, one_file, switched = self.switching_repo(root)
+            for today in ({'kind': 'film_status', 'path': '02_Video-Projects/*/status.json'},
+                          {'kind': 'pipeline_json', 'path': '00_Brand/Channel-Setup/PIPELINE.json'}):
+                with patch.object(vp.channels, 'pipeline', lambda slug: dict(today)):   # whatever the studio thinks today
+                    before = vp.historical_stages(root, 'HOS', dt.datetime(2026, 10, 18, tzinfo=UTC), {})
+                    after = vp.historical_stages(root, 'HOS', dt.datetime(2026, 10, 20, tzinfo=UTC), {})
+                self.assertEqual(before['commit'], one_file)
+                self.assertEqual(before['films']['HOS:006']['stages']['picture'], {'status': 'doing', 'progress': 0.4})
+                self.assertEqual(before['definitions'], [{'key': 'picture', 'weight': 35}])
+                self.assertEqual(after['commit'], switched)
+                self.assertEqual(after['films']['HOS:006']['stages']['picture'], {'state': 'doing', 'progress': 0.6})
+
+    def test_a_commit_from_before_a_channel_had_settings_is_read_by_its_first_settings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); no_settings, _, _ = self.switching_repo(root)
+            with patch.object(vp.channels, 'pipeline', lambda slug: {'kind': 'film_status', 'path': '02_Video-Projects/*/status.json'}):
+                d = vp.historical_stages(root, 'HOS', dt.datetime(2026, 10, 16, tzinfo=UTC), {})
+            self.assertEqual(d['commit'], no_settings)
+            self.assertEqual(d['films']['HOS:006']['stages']['picture'], {'status': 'doing', 'progress': 0.2})
+
     def test_missing_history_and_invalid_json_are_unknown(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertFalse(vp.historical_stages(Path(tmp),'HOS',dt.datetime.now(UTC),{})['available'])
             root=Path(tmp);self.run_git(root,'init','-q')
             p=root/'00_Brand/Channel-Setup/PIPELINE.json';p.parent.mkdir(parents=True);p.write_text('{bad')
+            self.settings(root, 'pipeline_json', '00_Brand/Channel-Setup/PIPELINE.json')
             self.commit(root,'2026-10-17T10:00:00Z')
             self.assertFalse(vp.historical_stages(root,'HOS',dt.datetime.now(UTC),{})['available'])
 
