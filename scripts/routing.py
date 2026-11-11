@@ -232,7 +232,7 @@ def _picture_route(job: dict) -> str:
     """The job's channel's picture_route (channels/<slug>/channel.json): flow_only or flow_first (the default)."""
     try:
         import channels
-        repo = job.get("repo") if job.get("repo") in channels.slugs() else channels.home()
+        repo = job.get("repo") if job.get("repo") in channels.slugs() else channels.default()
         return channels.get(repo).get("picture_route") or "flow_first"
     except Exception:  # noqa: BLE001  (a missing channel file never stops routing)
         # Not knowing the channel's route, take the one that cannot bill: Flow on the paid-for credits, no priced Vertex.
