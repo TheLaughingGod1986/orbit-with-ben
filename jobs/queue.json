@@ -1,5 +1,5 @@
 {
-  "next_id": 2551,
+  "next_id": 2552,
   "jobs": [
     {
       "id": "J0001",
@@ -219802,6 +219802,37 @@
       "due": "2026-11-15T12:00:00Z",
       "kind": "assembly",
       "plain": "Make the Voyager, Muons and Space Station Shorts fill the screen all the way through, then offer you the fixed versions",
+      "mini_only": true
+    },
+    {
+      "id": "J2551",
+      "title": "Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Four Orbit Shorts airing in December have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. 031 opening Short, `C8lPx5N2DwM`, airs Sat 5 Dec: 8.4 to 11.4 s and 14.1 to 31.7 s, and the dark-blue graphic at 4.7 to 8.4 s, which also counts. Watch card due Wed 2 Dec 18:00 London.\n2. 029 Great Dimming Short, `SWDCZfWZVao`, airs Wed 9 Dec: 2.7 to 5.1 s and 12.4 to 15.2 s. Watch card due Sun 6 Dec 18:00 London.\n3. 029 opening Short, `k2kEaA7ICjc`, airs Fri 11 Dec: 12.2 to 19.2 s and 21.5 to 27.0 s, and the dark-blue card at 8.6 to 12.2 s, which also counts. Watch card due Tue 8 Dec 18:00 London.\n4. 029 half-Moon Short, `heiGCnGKTkE`, airs Mon 14 Dec: 5.8 to 8.9 s, 12.4 to 16.2 s and 19.8 to 22.0 s. Watch card due Fri 11 Dec 18:00 London.\n\nThe diagrams and graphics in these were built 16:9. Rebuild each upright from its own build script where there is one; a crop that cuts off labels is not a fix.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "ref": "J2545",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T00:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T00:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
       "mini_only": true
     }
   ],
