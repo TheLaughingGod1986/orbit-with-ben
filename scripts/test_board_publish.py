@@ -7,6 +7,7 @@ import os
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -365,6 +366,77 @@ class QuickNoOp(unittest.TestCase):
     def test_page_polls_board_data_every_minute(self):
         studio = (HERE.parent / "05_Analytics/kanban/board_site/studio_app.js").read_text()
         self.assertIn("setInterval(poll, 60 * 1000);", studio)
+
+
+class AsksTheLoader(unittest.TestCase):
+    """J2615: board_publish.py names no channel. These pin what it did by name on 11 Nov 2026, and show a made-up
+    third channel plugging in."""
+
+    def sky(self):
+        import channels
+        base = channels._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+                   title_match=r"\bSKY\b", repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        return unittest.mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_nothing_changed_for_the_two_channels(self):
+        import channels
+        self.assertEqual(bp.SECTIONS, ("hos", "owb", "briefs", "credits", "tracker"))
+        self.assertEqual((bp.STUDIO, bp.QUEUE), ("owb", "owb"))
+        self.assertEqual(bp.STUDIO_REPO, channels.repo_path("owb", bp.HOME))
+        if not os.environ.get("OWB_REPO"):
+            self.assertEqual(bp.STUDIO_REPO, bp.HOME / "YouTube" / "orbit-with-ben")
+        self.assertEqual(bp.REPOS["hos"], channels.repo_path("hos", bp.HOME))
+        self.assertEqual(bp.wt(), bp.WT / "owb")
+        self.assertEqual(bp.wt("hos"), bp.WT / "hos")
+        shared = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
+        self.assertEqual(sorted(bp.sparse("owb")), sorted([
+            "/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
+            "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
+            "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
+            "/00_Brand/Channel-Setup/social/UPLOADS.json", "/05_Analytics/dashboard/data.json", *shared]))
+        self.assertEqual(sorted(bp.sparse("hos")), sorted([
+            "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
+            *shared]))
+
+    def test_the_snapshot_is_called_as_before(self):
+        out = Path("/tmp/out")
+        with unittest.mock.patch.object(bp, "chief_args", lambda: []):
+            self.assertEqual(bp.snapshot_command(out),
+                             [sys.executable, str(bp.WT / "owb" / "scripts" / "kanban_snapshot.py"),
+                              "--hos", str(bp.WT / "hos"), "--db-out", str(out)])
+
+    def test_the_summary_reads_as_before(self):
+        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films")
+
+    def test_the_quick_check_asks_each_repo_as_before(self):
+        asked = []
+        bp.quick_key(lambda repo, *refs: asked.append((repo, refs)) or "x")
+        self.assertEqual(asked, [
+            (bp.STUDIO_REPO, ("refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat",
+                              "refs/heads/macbook-heartbeat-2")),
+            (bp.REPOS["hos"], ("refs/heads/main",))])
+
+    def test_the_heartbeat_is_left_out_of_the_queue_sections_change_check_only(self):
+        d = docs()
+        self.assertNotIn("heartbeat", bp.stable("owb", d["owb"])["lanes"]["mini"])
+        self.assertIn("heartbeat", bp.stable("hos", d["owb"])["lanes"]["mini"])
+
+    def test_a_third_channel_is_on_the_board_with_its_own_section(self):
+        with self.sky():
+            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "briefs", "credits", "tracker"))
+            self.assertEqual(bp.sparse("sky"), ["/studio/", "/PIPELINE.json",
+                                                "/00_Brand/Channel-Setup/social/UPLOADS.json", *bp.CHANNEL_SPARSE])
+            with unittest.mock.patch.object(bp, "chief_args", lambda: []):
+                cmd = bp.snapshot_command(Path("/tmp/out"))
+            self.assertEqual(cmd[cmd.index("--sky") + 1], str(bp.WT / "sky"))
+            d = dict(docs(), sky={"pipeline": {"films": [{"id": "001"}, {"id": "002"}]}})
+            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films")
+            board = {}
+            bp.add_channels(board)
+        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "sky"])
+        self.assertEqual(board["channels"][-1]["name"], "Night Sky")
 
 
 if __name__ == "__main__":
