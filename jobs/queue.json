@@ -213987,13 +213987,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
+      "status": "blocked",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
-      "result": "",
+      "result": "parked for Chief: 3 runs in a row hit the time cap at its first step without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released.",
       "history": [
         {
           "at": "2026-11-09T23:52Z",
@@ -214069,6 +214069,11 @@
           "at": "2026-11-10T07:50Z",
           "by": "claude",
           "what": "acting Chief: taken off the Mini until 22:00Z and re-scoped. Four runs since 06:19Z each restarted the audit and never passed step 1, holding up urgent and production jobs."
+        },
+        {
+          "at": "2026-11-11T02:59Z",
+          "by": "relay",
+          "what": "blocked: parked for Chief: 3 runs in a row hit the time cap at its first step without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released."
         }
       ],
       "remaining_action": "Create clean worktree and write jobs/reviews/J2466/BRANCHES.md with full qualifying and kept branch tables before deleting any remote branches",
