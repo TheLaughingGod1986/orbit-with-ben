@@ -849,34 +849,54 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-10T04:56Z",
+      "updated": "2026-11-11T06:23Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "Retakes for the salon spark at 1:49, the points desk at 3:13 and the church and ship rods at 7:58 (J2241), then the v04 re-edit.",
+      "holdup": "Retakes for the salon spark at 1:49, the points desk at 3:13 and the church and ship rods at 7:58 (J2241), first in line on the Mini now; then the v04 re-edit. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
           "who": "Chief",
-          "what": "Chief price pass for the Flow picture, after the ~12 Nov renewal",
+          "what": "price pass for the picture",
           "job": "J0863",
-          "whenText": "blocked until Flow renews, about 12 Nov"
-        },
-        {
-          "who": "Cursor",
-          "what": "picture (about 58 plates)",
-          "when": "2026-11-08",
-          "whenText": "due Sun 8 Nov"
-        },
-        {
-          "who": "Ben",
-          "what": "final OK",
-          "when": "2026-11-15"
+          "done": true,
+          "doneText": "passed"
         },
         {
           "who": "Mac mini",
-          "what": "Build Short A from accepted media; watch-ready target 20 Nov",
-          "job": "J0912",
-          "kind": "assembly"
+          "what": "retake three shots (1:49, 3:13, 7:58), at most 900 credits",
+          "job": "J2241",
+          "kind": "video",
+          "when": "2026-11-12",
+          "whenText": "first in line; before Thu 12 Nov 19:13"
+        },
+        {
+          "who": "Mac mini",
+          "what": "v04 re-edit: the new shots in, 32 caption cards",
+          "job": "J2242",
+          "kind": "assembly",
+          "afterJob": "J2241"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check v04 against your notes",
+          "job": "J2243",
+          "kind": "review",
+          "afterJob": "J2242"
+        },
+        {
+          "who": "Ben",
+          "what": "watch v04",
+          "when": "2026-11-15",
+          "whenText": "after the check; tight for Sun 15 Nov, the film airs Thu 19 Nov"
+        },
+        {
+          "who": "Reviewer",
+          "what": "Short A v04: finish its check",
+          "job": "J2339",
+          "kind": "review",
+          "when": "2026-11-18",
+          "whenText": "by Wed 18 Nov"
         },
         {
           "who": "Reviewer",
@@ -888,7 +908,7 @@
       "you": "",
       "youWhen": "",
       "timing": "Airs Thu 19 Nov.",
-      "line": "Your eleven notes are scoped and the repair plan is on main (HOS PR #411, merged 10 Nov). Next: retakes of three shots on the plan's credits, never cash (J2241), then the v04 re-edit, then v04 comes to you. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
+      "line": "Your eleven notes are scoped and the repair plan is on main. Next: retakes of three shots on the plan's credits, never cash (J2241). They had been passed over in the queue; on 11 Nov the Chief put them first on the picture tool, to be made before the credits reset on Thu 12 Nov 19:13. The shot at 1:49 is the hair-and-tube one you confirmed. Then the v04 re-edit (J2242) and its check (J2243), and v04 comes to you. The film airs Thu 19 Nov. Short C v03 is built; it was made before the first-second rule, so it goes through that check and a listening review before it comes to you (J2485). Its slot is Wed 2 Dec.",
       "youShort": "",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
