@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 | J2513 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to v06, the cut Ben OK'd on 10 Nov 23:05Z |  |
 | J2514 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to v07, the cut Ben OK'd on 10 Nov 23:06Z |  |
-| J2515 | cloud | open | – | – | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
+| J2515 | cloud | claimed | claude | 2026-11-11T01:00Z | review · Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card |  |
 | J2517 | mini | open | – | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2525 | cloud | open | – | – | review · Decoupling: video_tracker.py asks channels.py instead of naming a channel (30 + 7 lines to 0) |  |
