@@ -223205,10 +223205,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T09:00Z",
+      "eta": "2026-11-11T11:00Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:57Z",
       "result": "",
@@ -223217,6 +223217,11 @@
           "at": "2026-11-11T08:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T09:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make salon take 2 and points take 2 with the tightened prompts, guarded, 200 credits at most",
@@ -223224,7 +223229,15 @@
       "kind": "video",
       "plain": "Remake two shots for the Franklin film that came out wrong (a spark far too big, a stray wire)",
       "mini_only": true,
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T09:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2576",

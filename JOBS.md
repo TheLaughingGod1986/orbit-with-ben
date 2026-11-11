@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
 | J2572 | mini | claimed | macbook-2 | 2026-11-11T10:58Z | for gemini · review · History of Science: rework the address clean-up (#505) to fingerprints, 010 and 013 runners untouched, 008 and 009 held back | J2503 |
-| J2575 | mini | open | – | – | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
+| J2575 | mini | claimed | codex | 2026-11-11T11:00Z | 008 picture · video · HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) | J2241 |
 | J2576 | mini | open (after J2575) | – | – | 008 picture · qa · HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) | J2575 |
 
 Recently finished:
