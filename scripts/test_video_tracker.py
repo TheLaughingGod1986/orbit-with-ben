@@ -549,9 +549,6 @@ class FirstDayPanel(unittest.TestCase):
         self.assertIn("videos", doc)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 class PastNotes(unittest.TestCase):
     """Ben, 8 Nov 2026: a re-sent cut lists what he flagged last time."""
@@ -576,3 +573,6 @@ class PastNotes(unittest.TestCase):
         self.assertEqual(card["pastNotes"][0]["notes"][0]["text"], "blurry above and below")
         self.assertEqual(card["fixedNotes"], ["Rebuilt full-screen 1080x1920"])
 
+
+if __name__ == "__main__":
+    unittest.main()

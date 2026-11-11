@@ -1,5 +1,5 @@
 {
-  "next_id": 2624,
+  "next_id": 2625,
   "jobs": [
     {
       "id": "J0001",
@@ -224331,13 +224331,13 @@
       "stage": "picture",
       "after": "J2585",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T14:05Z",
-      "eta": "2026-11-11T16:05Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-11T09:33Z",
@@ -224448,9 +224448,19 @@
           "at": "2026-11-11T14:20Z",
           "by": "gemini",
           "what": "step 2 of 3 done: All three J2583 second takes generated, verified, and archived on NAS (300 credits: 11590 -> 11290); J2583 reservation released"
+        },
+        {
+          "at": "2026-11-11T14:25Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Built 3 full-clip 0.5s sheets for J2584, verified check_all.sh PASS, and opened HOS PR #525 (067cb22b)"
+        },
+        {
+          "at": "2026-11-11T14:25Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
-      "remaining_action": "Build full-clip half-second sheets for J2584 and commit J2583 completion evidence",
+      "remaining_action": "Complete J2583 and post desk/thread reports",
       "due": "2026-11-12T18:00:00Z",
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
@@ -224469,11 +224479,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-11T14:20Z",
+        "at": "2026-11-11T14:25Z",
         "by": "gemini",
-        "note": "All three J2583 second takes generated, verified, and archived on NAS (300 credits: 11590 -> 11290); J2583 reservation r"
+        "note": "Built 3 full-clip 0.5s sheets for J2584, verified check_all.sh PASS, and opened HOS PR #525 (067cb22b)"
       }
     },
     {
@@ -224487,10 +224497,10 @@
       "stage": "picture",
       "after": "J2583",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T14:27Z",
+      "eta": "2026-11-11T16:27Z",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
       "result": "",
@@ -224519,9 +224529,34 @@
           "at": "2026-11-11T12:52Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T14:27Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:28Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Planned 4 steps: (1) locate J2583 remade takes and half-second sheets, (2) inspect P03:01_really_falling_c1 and P02:08_the_apple_c1, (3) inspect P04:05_minute_second_c1, (4) write evidence/PR or park for Chief and report"
+        },
+        {
+          "at": "2026-11-11T14:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: located all three J2583 second takes (P03:01_really_falling_c1 t2 sha cc697162, P02:08_the_apple_c1 t2 sha f95edc7d, P04:05_minute_second_c1 t2 sha 0322f98d) and their whole-clip 0.5s sheets beside START_FRAME in review_J2584_sheets/ (HOS PR #525 / commit 067cb22b)"
+        },
+        {
+          "at": "2026-11-11T14:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: inspected P03:01_really_falling_c1 t2 (Q1 YES f000-f189 Moon stays in sky; Q2 no ball/apple/second object, single golden line loops over Moon at f036-f132; Q3 Moon face has no mark until golden line crosses lower disc at f108-f189) and P02:08_the_apple_c1 t2 (Q1 YES f000-f189 first apple still; Q2 second apple drops f048-f108, 2 apples at end; Q3 NO at f108-f124 / 4.50-5.17s where second apple bounces upward into mid-air after touching grass)"
+        },
+        {
+          "at": "2026-11-11T14:36Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 complete: inspected P04:05_minute_second_c1 t2 (Q1 NO f084-f120 first apple slides right; Q2 NO f108-f189 third apple appears on left leaving 3 apples at 5.50-7.88s; Q3 NO f012-f189 giant apple flies upward along space orbital curve onto the Moon while Moon stays pinned)"
         }
       ],
-      "remaining_action": "Yes or no on the remade shots; KEEP lets the edit start",
+      "remaining_action": "Write J2584 review evidence and open HOS PR for Grok, post HOS desk and OWB reports, and park J2584 for Chief",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
@@ -224534,7 +224569,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-11T14:36Z",
+        "by": "gemini",
+        "note": "Step 3 complete: inspected P04:05_minute_second_c1 t2 (Q1 NO f084-f120 first apple slides right; Q2 NO f108-f189 third a"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2585",
@@ -226644,13 +226689,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-11T14:26Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226666,36 +226711,50 @@
           "at": "2026-11-11T14:24Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-11T14:26Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:27Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T14:32Z",
+          "by": "claude",
+          "what": "done: Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed."
         }
       ],
-      "remaining_action": "Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0)",
+      "remaining_action": "replace 33 channel-naming lines in board_publish.py, third-channel test, lower ceiling, PR",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Make the tool that publishes the board work for any channel, not only our two",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T14:16Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-11T14:27Z",
+        "by": "macbook"
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/822"
     },
     {
       "id": "J2616",
       "title": "Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0)",
-      "needs": "macbook",
+      "needs": "cloud",
       "repo": "owb",
-      "body": "Script in this job: `approved_deliver.py` (35 lines that name a channel). It carries a cut Ben approved to its upload or swap, so: no behaviour change, every test that names it passes before and after (`grep -l approved_deliver scripts/test_*.py`), and nothing is uploaded, swapped or posted by this job: tests and dry runs only.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "body": "**Moved to a cloud session, 11 Nov 14:32Z.** The MacBook read it and found it needs a change in both repos (two new fields in each channel's `studio/channel.json`), which a MacBook run cannot do. Its design, the 35 lines and the tests to add are in `jobs/reviews/J2616/HANDOVER.md` on branch `macbook/J2616` (pushed, no pull request): start from that, do not re-read the script. Step 8 of it (rename `kanban_snapshot.attach_hos_uploads`) is already done in #824 (J2617): the count for this script is 34 after that merge. The history-of-science pull request is small (two fields) and goes to Grok for review.\n\nScript in this job: `approved_deliver.py` (35 lines that name a channel). It carries a cut Ben approved to its upload or swap, so: no behaviour change, every test that names it passes before and after (`grep -l approved_deliver scripts/test_*.py`), and nothing is uploaded, swapped or posted by this job: tests and dry runs only.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
       "ref": "docs/MULTI_CHANNEL_PLAN.md",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
       "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T14:22Z",
-      "eta": "2026-11-11T16:22Z",
+      "by": "claude",
+      "since": "2026-11-11T14:34Z",
+      "eta": "2026-11-11T16:34Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -226714,6 +226773,21 @@
           "at": "2026-11-11T14:22Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T14:25Z",
+          "by": "macbook",
+          "what": "released: Unfinished, no code changed. Needs both repos: cadence and social.tiktok fields in each channel's studio/channel.json (history-of-science too, or test_channels cached-copy test fails), plus a rename of kanban_snapshot.attach_hos_uploads. Design, the 35 lines and the tests are in jobs/reviews/J2616/HANDOVER.md on branch macbook/J2616 (pushed, no PR). About 40 min: split it or run it uncapped."
+        },
+        {
+          "at": "2026-11-11T14:32Z",
+          "by": "claude",
+          "what": "elected Chief: moved to a cloud session. The MacBook's hand-back (14:25Z) shows it needs both repos; its handover is on branch macbook/J2616."
+        },
+        {
+          "at": "2026-11-11T14:34Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "replace the channel names in approved_deliver.py with channels.py calls, test, open the pull request",
@@ -226738,13 +226812,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T14:04Z",
-      "eta": "2026-11-11T16:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226755,6 +226829,11 @@
           "at": "2026-11-11T14:04Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:33Z",
+          "by": "claude",
+          "what": "done: Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed."
         }
       ],
       "remaining_action": "Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0)",
@@ -226768,7 +226847,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/824"
     },
     {
       "id": "J2618",
@@ -226812,9 +226892,9 @@
       "after": "",
       "eta_min": 120,
       "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-11T14:24Z",
-      "eta": "2026-11-11T16:24Z",
+      "by": "macbook",
+      "since": "2026-11-11T14:36Z",
+      "eta": "2026-11-11T16:36Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -226827,6 +226907,16 @@
         {
           "at": "2026-11-11T14:24Z",
           "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:31Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-11T14:36Z",
+          "by": "macbook",
           "what": "claimed"
         }
       ],
@@ -226982,6 +227072,36 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6797825254"
+    },
+    {
+      "id": "J2624",
+      "title": "MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "**Seen 11 Nov 2026, J2615.** The MacBook finished the job and opened #822 (\"parked for the Chief\" in its text), but the run ended with the job still open in the queue. `scripts/macbook_worker.py` then released it (\"ended (exit 0) with the job still open; picked up again next run\"), and two minutes later the other slot claimed it and started the same work again. The Chief closed it by hand.\n\n**Wanted.** When a run ends with exit 0, the job still open, and a branch `macbook/<job>` on the remote that is ahead of main, the worker parks the job for the Chief (blocked, with a typed wait naming the branch and the pull request if it can be read) instead of releasing it. A run that ends with no branch pushed, or a non-zero exit, is released as now. The brief already tells the agent to park; this is the net under it.\n\n**Check.** `scripts/test_macbook_worker.py`: a run that pushed its branch is parked once and not claimed again; a run that pushed nothing is released; a failed run is released and the agent paused, as now. No channel named (the ratchet holds this script at 0). Whole suite, then a pull request.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T14:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T14:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Stop the MacBook redoing a job it has already finished and sent for review"
     }
   ],
   "focus": [

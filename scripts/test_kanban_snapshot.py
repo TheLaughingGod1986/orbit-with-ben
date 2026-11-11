@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """Tests for kanban_snapshot.py: stage 'since' times and the film notes (board/briefs)."""
+import contextlib
+import io
 import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
 import kanban_snapshot as ks  # noqa: E402
 
 
@@ -82,6 +86,19 @@ class MiniWork(unittest.TestCase):
         self.assertEqual((w["jobs"], w["minutes"]), (2, 525))
         self.assertNotIn("claude", w["byAgent"])
 
+    def test_work_is_filed_under_the_jobs_own_channel(self):
+        # Until 11 Nov 2026 every film was filed under the first channel's label, so another channel's film 013 was
+        # added to the first channel's 013.
+        other = next(c for c in channels.slugs() if c != channels.default())
+        stretch = [{"at": "2026-10-08T10:00Z", "by": "cursor", "what": "claimed"},
+                   {"at": "2026-10-08T10:30Z", "by": "cursor", "what": "done: ok"}]
+        whole = f"{channels.label(other)}:standalone"  # a film field that is already a whole key stays as it is
+        jobs = [{"id": "J1", "needs": "mini", "film": "013", "repo": channels.default(), "history": stretch},
+                {"id": "J2", "needs": "mini", "film": "013", "repo": other, "history": stretch},
+                {"id": "J3", "needs": "mini", "film": whole, "repo": other, "history": stretch}]
+        self.assertEqual(ks.mini_work(jobs, "2026-10-08")["byFilm"],
+                         {f"{channels.label(channels.default())}:013": 30, f"{channels.label(other)}:013": 30, whole: 30})
+
 
 class Briefs(unittest.TestCase):
     def test_real_file_loads_and_every_step_says_when(self):
@@ -132,10 +149,6 @@ class JobProgress(unittest.TestCase):
         self.assertEqual(ks.work_start({"history": h}), "2")
         self.assertEqual(ks.work_start({"history": h + [{"at": "5", "what": "reopened"}, {"at": "6", "what": "claimed"}]}), "6")
         self.assertEqual(ks.work_start({"history": [{"at": "1", "what": "added"}]}), "")
-
-
-if __name__ == "__main__":
-    unittest.main()
 
 
 class OrderAndHandoffs(unittest.TestCase):
@@ -202,7 +215,7 @@ class RoutedSteps(unittest.TestCase):
     def test_hos_queue_jobs_join_the_note_before_ben(self):
         b = {"HOS:006": {"steps": [{"who": "Cursor", "what": "x", "job": "J2"}, {"who": "Ben", "what": "final OK"}]},
              "OWB:025": {"steps": []}}
-        out = ks.hos_job_steps(b, self.jobs)
+        out = ks.queue_job_steps(b, self.jobs)
         self.assertEqual([s.get("job") for s in out["HOS:006"]["steps"]], ["J2", "J1", None])
         self.assertEqual(out["HOS:006"]["steps"][1]["who"], "Cursor")
         self.assertEqual(out["HOS:006"]["steps"][1]["what"], "Part 03 rough v01")
@@ -211,7 +224,7 @@ class RoutedSteps(unittest.TestCase):
     def test_todo_hos_stages_get_the_routed_owner(self):
         hos = {"films": [{"id": "006", "stages": {"facts": {"status": "done"}, "thumbnails": {"status": "todo"},
                                                   "edit": {"status": "todo", "owner": "Cursor"}}}]}
-        ks.route_hos_stages(hos)
+        ks.route_pipeline_stages(hos)
         st = hos["films"][0]["stages"]
         self.assertNotIn("owner", st["facts"])
         self.assertEqual(st["thumbnails"]["owner"], "Codex")
@@ -277,3 +290,129 @@ class ReleaseReceipts(unittest.TestCase):
             self.assertEqual(ks.release_record("025", root)["state"], "uploaded")
             self.receipt(root, "PACKAGE_UPLOAD_RESULT_2026-10-11.json", upload={"platformPostId":"new12345678", "published":True, "responseSummary":'{"privacyStatus":"public"}'})
             self.assertEqual(ks.release_record("025", root)["state"], "live")
+
+
+def made_up(slug, label, **pipeline):
+    """A channel that is in no registry: an existing one's settings under another name, keeping its films as given."""
+    return dict(channels.get(channels.default()), slug=slug, label=label, name=f"Made Up {label}", short=label.title(),
+                home=False, order=9, title_match=rf"\b{label}\b", pipeline=pipeline,
+                repo={"env": f"{label}_REPO", "checkouts": [f"made-up-{slug}"]},
+                uat_dir={"env": f"{label}_UAT_DIR", "icloud": f"{label} UAT"})
+
+
+def plugged(*more):
+    base = channels._load()
+    return mock.patch.object(channels, "_load", lambda directory=None: base + tuple(more))
+
+
+def checkout_of(slug: str, base: Path, films=()) -> Path:
+    """A folder that holds a channel's film state the way that channel keeps it, with these film numbers."""
+    root, kept = base / slug, channels.pipeline(slug)
+    if kept["kind"] == "pipeline_json":
+        (root / kept["path"]).parent.mkdir(parents=True, exist_ok=True)
+        (root / kept["path"]).write_text(json.dumps({"films": [
+            {"id": n, "title": f"Film {n}", "stages": {"edit": {"status": "todo"}}} for n in films]}))
+    else:
+        root.mkdir(parents=True, exist_ok=True)
+        for n in films:
+            file = root / kept["path"].replace("*", f"{n}_Made-Up")
+            file.parent.mkdir(parents=True, exist_ok=True)
+            file.write_text(json.dumps({"film": n, "title": f"Film {n}", "next": "edit it",
+                                        "stages": {"edit": {"state": "todo"}}}))
+    return root
+
+
+class AnyChannel(unittest.TestCase):
+    """J2617 (11 Nov 2026): the card builder takes its channels from the registry. Two channels that exist nowhere,
+    one keeping its films each way, get documents, queue steps and a store file. No line of kanban_snapshot.py names a
+    channel: scripts/test_channel_ratchet.py holds that at 0."""
+    SKY = made_up("sky", "SKY", kind="film_status", path="films/*/status.json")
+    SEA = made_up("deep-sea", "SEA", kind="pipeline_json", path="plan/PIPELINE.json")
+
+    def test_documents_are_read_the_way_each_channel_keeps_its_films(self):
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY, self.SEA):
+            roots = {"sky": checkout_of("sky", Path(tmp), ["001", "002"]),
+                     "deep-sea": checkout_of("deep-sea", Path(tmp), ["007"])}
+            got = ks.read_documents(roots)
+            self.assertEqual([f["film"] for f in got["sky"]], ["001", "002"])
+            self.assertEqual([f["id"] for f in got["deep-sea"]["films"]], ["007"])
+            self.assertEqual(ks.film_rows("sky", got["sky"])[0][0], "001")
+            self.assertEqual(ks.film_rows("deep-sea", got["deep-sea"])[0][0], "007")
+
+    def test_a_pipeline_file_with_no_films_list_stops_the_run(self):
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SEA):
+            root = checkout_of("deep-sea", Path(tmp))
+            (root / "plan/PIPELINE.json").write_text("{}")
+            with self.assertRaises(SystemExit):
+                ks.read_documents({"deep-sea": root})
+
+    def test_queue_jobs_join_any_channels_note_except_the_queue_documents_own(self):
+        own = channels.label(channels.queue_key())
+        jobs = [{"id": "J1", "status": "open", "title": "SEA 007 Part 03 rough v01 (after J9)", "kind": "video"},
+                {"id": "J2", "status": "open", "title": f"{own} 025 Part 03 rough v01", "kind": "video"},
+                {"id": "J3", "status": "done", "title": "SEA 007 old job"},
+                {"id": "J4", "status": "claimed", "title": "no film in the title", "film": "SKY:001"}]
+        notes = {"SEA:007": {"steps": [{"who": "Ben", "what": "final OK"}]}, "SKY:001": {"steps": []},
+                 f"{own}:025": {"steps": []}, "XYZ:001": {"steps": []}}
+        with plugged(self.SKY, self.SEA):
+            out = ks.queue_job_steps(notes, jobs)
+        self.assertEqual([s.get("job") for s in out["SEA:007"]["steps"]], ["J1", None])  # before Ben's own step
+        self.assertEqual(out["SEA:007"]["steps"][0]["what"], "Part 03 rough v01")
+        self.assertEqual([s.get("job") for s in out["SKY:001"]["steps"]], ["J4"])
+        self.assertEqual(out[f"{own}:025"]["steps"], [])   # the page adds these itself
+        self.assertEqual(out["XYZ:001"]["steps"], [])      # no such channel: left as it is
+
+    def test_the_bad_key_message_lists_the_registrys_labels(self):
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY):
+            file = Path(tmp) / "briefs.json"
+            file.write_text(json.dumps({"films": {"NOPE:001": {"steps": []}}}))
+            with mock.patch.object(ks, "BRIEFS", file), self.assertRaises(SystemExit) as stop:
+                ks.load_briefs()
+        self.assertIn("SKY:NNN", str(stop.exception))
+
+    def test_the_whole_builder_with_two_made_up_channels_beside_todays(self):
+        """One real run on this checkout, with a made folder for every channel that is not this checkout."""
+        import board_publish
+        films = {"sky": ["001"], "deep-sea": ["007"]}
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY, self.SEA), contextlib.ExitStack() as quiet:
+            # Never touch the world from a test (25 Oct 2026: a test run on the Mini sent fixtures to the video
+            # store). No watch folder, no upload, no register outside the temp folder, no fetch.
+            for name, value in (("ICLOUD", Path(tmp) / "icloud"), ("WATCH_LOCAL_REGISTER", Path(tmp) / "register.json"),
+                                ("UAT_DIRS", {c: Path(tmp) / "icloud" / c for c in channels.labels()}),
+                                ("r2_ready", lambda *a, **k: False), ("mini_heartbeat", lambda: None)):
+                quiet.enter_context(mock.patch.object(ks, name, value))
+            args, out = [], Path(tmp) / "out"
+            for slug in channels.slugs():
+                if channels.checkout(slug) != ks.ROOT:
+                    args += [f"--{slug}", str(checkout_of(slug, Path(tmp), films.get(slug, ())))]
+            with contextlib.redirect_stdout(io.StringIO()) as said:
+                self.assertEqual(ks.main([*args, "--db-out", str(out)]), 0)
+            docs = {p.stem: json.loads(p.read_text()) for p in out.glob("*.json")}
+            slugs = channels.slugs()
+        # what the publisher reads is all there, and every channel has its own file in its own shape
+        self.assertLessEqual(set(board_publish.SECTIONS), set(docs))
+        for slug in slugs:
+            self.assertIn(f"/{slug}.json", said.getvalue())
+        queue = docs[channels.queue_key()]
+        for key in ("films", "jobs", "lanes", "focus", "runOrder", "recent", "jobStates", "routing", "done", "videoProgress"):
+            self.assertIn(key, queue)
+        for slug in slugs:   # only the queue's document carries the queue
+            if slug != channels.queue_key():
+                self.assertEqual(set(docs[slug]), {"updatedAt", "pipeline" if slug != "sky" else "films"}, slug)
+        # the made-up channels came through like any other
+        self.assertEqual([f["film"] for f in docs["sky"]["films"]], ["001"])
+        self.assertEqual([f["id"] for f in docs["deep-sea"]["pipeline"]["films"]], ["007"])
+        self.assertTrue(docs["deep-sea"]["pipeline"]["films"][0]["stages"]["edit"].get("owner"))  # routed like any other
+        keys = {v.get("key") for v in docs["tracker"]["videos"]}
+        self.assertTrue({"SKY:001", "SEA:007"} <= keys, sorted(k for k in keys if k and k[:3] in ("SKY", "SEA")))
+
+    def test_a_channel_that_is_not_this_checkout_must_be_given_its_folder(self):
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY), contextlib.redirect_stderr(io.StringIO()) as said:
+            with self.assertRaises(SystemExit) as stop:
+                ks.main(["--db-out", tmp])
+        self.assertEqual(stop.exception.code, 2)
+        self.assertIn("--sky", said.getvalue())
+
+
+if __name__ == "__main__":
+    unittest.main()
