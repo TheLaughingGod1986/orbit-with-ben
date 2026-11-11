@@ -48,6 +48,30 @@ class WatchLinks(unittest.TestCase):
         owb = [{"film": "023"}, {"film": "025"}, {"film": "026"}, {"film": "028"}] + (owb_extra or [])
         return ks.watch_links({"films": [{"id": "006"}]}, owb, briefs or {})
 
+    def test_same_film_version_distinct_cuts_and_aliases(self):
+        names = [f"029_short_{slug}_v04_PHONE.mp4" for slug in
+                 ("wed09_great_dimming", "fri11_opening_testA", "mon14_half_moon_daylight")]
+        ids = [ks.watch_id("OWB", "029", "v04", n) for n in names]
+        self.assertEqual(len(set(ids)), 3)
+        for name, wid in zip(names, ids):
+            self.assertEqual(ks.watch_id("OWB", "029", "v04", "nested/" + name), wid)
+            self.assertLessEqual(len(wid), 64)
+
+    def test_both_auto_upload_routes_distinguish_same_version_cuts(self):
+        from unittest.mock import patch
+        names = [f"029_short_{slug}_v04_PHONE.mp4" for slug in
+                 ("wed09_great_dimming", "mon14_half_moon_daylight")]
+        with patch.object(ks, "auto_upload", return_value=True) as upload:
+            for name in names:
+                pick = ks.UAT_DIRS["OWB"] / name
+                pick.write_bytes(b"fixture")
+                rel = "OWB UAT/" + name
+                ks.stream_link("OWB", "029", pick, rel)
+                ks.ask_watch({"channel": "OWB", "id": "J0961", "version": "v04", "file": rel})
+            ids = [call.args[0] for call in upload.call_args_list]
+        self.assertNotEqual(ids[0], ids[2])
+        self.assertNotEqual(ids[1], ids[3])
+
     def test_newest_cut_phone_copy_in_files(self):
         w = self.links()["OWB:026"]
         self.assertEqual((w["label"], w["kind"]), ("Watch v04", "files"))
