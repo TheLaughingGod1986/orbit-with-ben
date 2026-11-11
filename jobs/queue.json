@@ -227409,10 +227409,10 @@
       "stage": "",
       "after": "J2619",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T17:35Z",
+      "eta": "2026-11-11T19:35Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -227426,12 +227426,25 @@
           "at": "2026-11-11T14:47Z",
           "by": "claude",
           "what": "elected Chief: the one script J2619 left (apply_yellow_white_v04_thumbs.py, 3 lines) is added to this job, with how to do it."
+        },
+        {
+          "at": "2026-11-11T17:35Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "channels.py stops requiring a home channel; the dry run's failing tests pass with the studio on its own",
       "due": "2026-11-16T18:00:00Z",
       "kind": "review",
-      "plain": "Let the studio run with no channel as its home, and make its checks pass that way"
+      "plain": "Let the studio run with no channel as its home, and make its checks pass that way",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T17:35Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2622",
