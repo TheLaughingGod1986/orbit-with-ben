@@ -226797,13 +226797,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T14:34Z",
-      "eta": "2026-11-11T16:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Merged: #826 (main 03b7506d), and history-of-science #526 passed and merged by Grok (main e235d80, desk 6798876558). approved_deliver.py names no channel (34 lines to 0; the count is 98). The locked publishing slots moved from the script's table to each channel's own studio/channel.json, written as \"Sun 18:00\"; the Buffer-only TikTok note is a channel setting too. No slot changed: 5,040 slot choices and every upload job the tool would create were compared old against new, all the same. Built from the MacBook's handover.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226834,6 +226834,11 @@
           "at": "2026-11-11T14:34Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:49Z",
+          "by": "claude",
+          "what": "done: Merged: #826 (main 03b7506d), and history-of-science #526 passed and merged by Grok (main e235d80, desk 6798876558). approved_deliver.py names no channel (34 lines to 0; the count is 98). The locked publishing slots moved from the script's table to each channel's own studio/channel.json, written as \"Sun 18:00\"; the Buffer-only TikTok note is a channel setting too. No slot changed: 5,040 slot choices and every upload job the tool would create were compared old against new, all the same. Built from the MacBook's handover."
         }
       ],
       "remaining_action": "replace the channel names in approved_deliver.py with channels.py calls, test, open the pull request",
@@ -226845,7 +226850,8 @@
         "of": 4,
         "at": "2026-11-11T14:22Z",
         "by": "macbook"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/826"
     },
     {
       "id": "J2617",
