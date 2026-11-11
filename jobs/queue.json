@@ -220289,13 +220289,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T02:21Z",
-      "eta": "2026-11-11T04:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T02:18Z",
-      "result": "",
+      "result": "parked for Chief: J2452 condition NOT satisfied, left blocked. Verified in jobs/queue.json: predecessor J2548 is done (PASS, 38 files copied and sha256-checked, PR #784 merged), but J2452 was blocked by macbook-2 at 02:07Z on a different, still-open point: 005 Last Star and 006 Europa have no discrete narration, and leaving them out gives about 107.7 min, under the 110-minute floor (PR #781). No Chief ruling in the job history since. The wait command was refused here (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2452 --agent <chief> --condition 'Chief ruling on 005/006 narration: clean stems, or an approved replacement or runtime below 110 min' --check-at 2026-11-11T09:20Z --type input --recheck J2554. Nothing built, uploaded or spent.",
       "history": [
         {
           "at": "2026-11-11T02:18Z",
@@ -220306,6 +220306,11 @@
           "at": "2026-11-11T02:21Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T02:22Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2452 condition NOT satisfied, left blocked. Verified in jobs/queue.json: predecessor J2548 is done (PASS, 38 files copied and sha256-checked, PR #784 merged), but J2452 was blocked by macbook-2 at 02:07Z on a different, still-open point: 005 Last Star and 006 Europa have no discrete narration, and leaving them out gives about 107.7 min, under the 110-minute floor (PR #781). No Chief ruling in the job history since. The wait command was refused here (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J2452 --agent <chief> --condition 'Chief ruling on 005/006 narration: clean stems, or an approved replacement or runtime below 110 min' --check-at 2026-11-11T09:20Z --type input --recheck J2554. Nothing built, uploaded or spent."
         }
       ],
       "remaining_action": "Verify readiness: Resolve clean narration for Last Star and Europa or approve a replacement that meets the sleep compilation runtime",
