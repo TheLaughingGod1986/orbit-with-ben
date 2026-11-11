@@ -16,7 +16,13 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
   names to look for under `~/YouTube`.
 - `title_match`: a regex that marks a job's title as this channel when `repo` is missing.
 - `wip`: its share of the WIP places.
-- `stages`: the production stages, in order.
+- `stages`: the production stages, in order. Plain names (`["script", "edit"]`): each stage then weighs the same.
+  Or objects, for a channel that knows more about its stages: `{"key": "script", "label": "Script", "weight": 10,
+  "owner": "Grok", "kind": "script"}`. `weight` is how much of a film the stage is (every stage has one and they
+  add up to 100). `owner` is who the stage goes to when nobody has it. `kind` is the kind of job it is; the board
+  gives a stage that is still to do, and that nobody has, to the worker that kind is routed to. A channel that
+  still keeps every film in one pipeline file says `"from pipeline"`: its stages are that file's own. Read with
+  `channels.stage_defs(slug)`, `stage_keys(slug)` and `stage_kinds(slug)`.
 - `picture_route`: where video and image jobs are minted. `flow_only` uses Flow on the AI Ultra credits, with no priced
   Vertex fallback (HOS). `flow_first` uses Flow, then Vertex inside the spend rules (OWB).
 - `shorts.planned_per_long`: how many Shorts each long video gets a place for on the board before they are made.
