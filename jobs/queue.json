@@ -214589,9 +214589,14 @@
           "at": "2026-11-11T06:50Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3 complete: verified post-deletion remote branch counts via git ls-remote --heads origin: orbit-with-ben 398 -> 261 (137 deleted: 136 from BRANCHES_owb.txt + macbook/J2517; 0 skipped; 0 errors); history-of-science 443 -> 385 (58 deleted from BRANCHES_hos.txt; 0 skipped; 0 errors)"
+        },
+        {
+          "at": "2026-11-11T06:50Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Step 4 complete: all 136 OWB branches in BRANCHES_owb.txt + macbook/J2517 (137 total; 398 -> 261 remote branches) and all 58 HOS branches in BRANCHES_hos.txt (443 -> 385 remote branches) deleted with 0 skipped and 0 errors"
         }
       ],
-      "remaining_action": "Post report on #99 and complete J2466 with deletion counts",
+      "remaining_action": "Done: deleted 137 OWB branches and 58 HOS branches; 0 skipped; 0 errors",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
@@ -214599,11 +214604,11 @@
       "not_before": "2026-11-10T22:00:00Z",
       "escalated_at": "2026-11-11T05:35Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
         "at": "2026-11-11T06:50Z",
         "by": "gemini",
-        "note": "Step 3 complete: verified post-deletion remote branch counts via git ls-remote --heads origin: orbit-with-ben 398 -> 261"
+        "note": "Step 4 complete: all 136 OWB branches in BRANCHES_owb.txt + macbook/J2517 (137 total; 398 -> 261 remote branches) and al"
       }
     },
     {
