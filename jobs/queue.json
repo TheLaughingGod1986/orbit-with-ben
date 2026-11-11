@@ -196215,9 +196215,14 @@
           "at": "2026-11-11T14:53Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J2270 on Gemini; verifying predecessor jobs, Flow lock, and HOS 010 runner on main"
+        },
+        {
+          "at": "2026-11-11T14:59Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Clean origin/main worktree (e235d803) and batch-2 dry-run preflight passed (~/_desk/logs/J2270-batch2-gemini-preflight.json); J2583 done; 21/21 runner tests OK"
         }
       ],
-      "remaining_action": "Verify J2583/lock readiness, run clean main preflight, and launch HOS 010 batch 2 detached under J2269 authorization",
+      "remaining_action": "Launch HOS 010 batch 2 detached under J2269 authorization and Flow writer lock",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196227,11 +196232,11 @@
         "HOS:010"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T14:53Z",
+        "at": "2026-11-11T14:59Z",
         "by": "gemini",
-        "note": "Started J2270 on Gemini; verifying predecessor jobs, Flow lock, and HOS 010 runner on main"
+        "note": "Clean origin/main worktree (e235d803) and batch-2 dry-run preflight passed (~/_desk/logs/J2270-batch2-gemini-preflight.j"
       },
       "rerouted_from": {
         "needs": "mini",
