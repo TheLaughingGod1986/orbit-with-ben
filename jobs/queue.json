@@ -226901,13 +226901,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T14:36Z",
-      "eta": "2026-11-11T16:36Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "parked for Chief: PR #823 open, ready to review, not merged. Written by macbook-2 (run ended without parking); this run merged main into it (ratchet conflict; home_total now 17 to 5, the 12 lines of the five scripts at 0), head 95c99a70d, mergeable, Rules check green. On the merged branch: 1,188 script tests pass, sync_rules OK, core_sync OK, studio.py status --check OK. Not done: apply_yellow_white_v04_thumbs.py left in place because _set_j0216_covers.py imports it; Chief's call.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226928,6 +226928,11 @@
           "at": "2026-11-11T14:36Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:43Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: PR #823 open, ready to review, not merged. Written by macbook-2 (run ended without parking); this run merged main into it (ratchet conflict; home_total now 17 to 5, the 12 lines of the five scripts at 0), head 95c99a70d, mergeable, Rules check green. On the merged branch: 1,188 script tests pass, sync_rules OK, core_sync OK, studio.py status --check OK. Not done: apply_yellow_white_v04_thumbs.py left in place because _set_j0216_covers.py imports it; Chief's call."
         }
       ],
       "remaining_action": "Five engine scripts read channel content through channels.py; one old one-off script is archived",
