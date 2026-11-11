@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
-| J2509 | mini | open | – | – | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
+| J2509 | mini | claimed | codex | 2026-11-11T03:46Z | studio · Voyager Short kKN8Ale42sE (airs 17 Nov): download the Studio copy and run the opening gate on the file that will really air |  |
 | J2511 | mini | open | – | – | listing · Swap the Pluto Short gmzaCfJF1gA (Sat 14 Nov) to the re-cut Ben OK'd, v02: Private upload in the same slot, old one unscheduled and kept |  |
 | J2513 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to v06, the cut Ben OK'd on 10 Nov 23:05Z |  |
 | J2514 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to v07, the cut Ben OK'd on 10 Nov 23:06Z |  |
