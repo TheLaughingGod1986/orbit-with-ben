@@ -221808,18 +221808,23 @@
           "at": "2026-11-11T06:54Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Causes found: tracker cannot read its worktree on the removable SSD under launchd; Buffer check hit one 'fetch failed' on 10 Nov; spend reader fails on the Codex, Claude and Cursor readings"
+        },
+        {
+          "at": "2026-11-11T06:58Z",
+          "by": "claudecode",
+          "what": "step 4 of 5 done: Tracker fixed in PR 795 and run by hand (exit 0, today's snapshot on main); browser agent copied into the repo; old 9223 plist moved to disabled; report written"
         }
       ],
-      "remaining_action": "Fix the tracker script, run the tracker by hand, park the leftover agents, copy the browser agent into the repo, write the report",
+      "remaining_action": "Chief to review and merge the pull request and rule on the Cursor agents, the 9223 unload and the credit reading",
       "due": "2026-11-13T18:00:00Z",
       "plain": "Tidy the Mac mini's background helpers: fix three that are failing and switch off the old ones nobody uses",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-11T06:54Z",
+        "at": "2026-11-11T06:58Z",
         "by": "claudecode",
-        "note": "Causes found: tracker cannot read its worktree on the removable SSD under launchd; Buffer check hit one 'fetch failed' o"
+        "note": "Tracker fixed in PR 795 and run by hand (exit 0, today's snapshot on main); browser agent copied into the repo; old 9223"
       }
     },
     {
