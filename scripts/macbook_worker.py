@@ -132,10 +132,38 @@ This is Ben's own laptop, not the Mini:
   nothing else on YouTube;
 - the local model at http://127.0.0.1:11434 (Ollama, model {model}) is for low-stakes text only: metadata drafts,
   caption cleanup, gate summaries. Never scripts, facts or anything spoken;
-- keep files inside the {checkout_count} checkouts and ~/_desk; leave nothing running when you stop.
+{file_rule}
+- leave nothing running when you stop.
 Your run is killed at {cap_min} minutes: if the job will take longer, stop at a clean point, release it with a note,
 and stop.
 """
+
+
+def film_store() -> pathlib.Path | None:
+    """The shared working-film store on the NAS, when this Mac has it mounted.
+
+    AGENTS.md "Film folders on the NAS" (Ben, 7 Nov 2026): both machines read and write a film's folder there. Until
+    11 Nov the brief said "keep files inside the checkouts and ~/_desk", so a run was refused the copy of a source
+    image into its own film's folder (J2452) and a finished film had no allowed way off this Mac (J2568)."""
+    import jobs
+    try:
+        return jobs.STUDIO_LIVE_ROOT if jobs.STUDIO_LIVE_ROOT.is_dir() else None
+    except OSError:
+        return None
+
+
+def file_rule(count: str, store: pathlib.Path | None) -> str:
+    """Where this run may put files. The NAS rules ride along, because the store is the only copy of a lot of work."""
+    if not store:
+        return (f"- keep files inside the {count} checkouts and ~/_desk. The shared working-film store on the NAS is not\n"
+                "  mounted on this Mac right now, so do not try to reach it: keep finished files in ~/_desk and put each\n"
+                "  one's SHA-256 in your report;")
+    return (f"- keep files inside the {count} checkouts, ~/_desk and the shared working-film store on the NAS\n"
+            f"  ({store}; AGENTS.md \"Film folders on the NAS\": both machines read and write a film's folder there).\n"
+            "  On the NAS you add to a film's own folder and nothing else: never delete or move a file that is already\n"
+            "  there, never replace a finished media file (a new version gets a new name), never write outside that\n"
+            "  store (the archive beside it is not yours), and check each copy with SHA-256. More than a handful of\n"
+            "  files waits for the 01:00-06:00 window, unless it is a finished master's copy;")
 
 
 def prompt_channels() -> dict:
@@ -154,6 +182,7 @@ def prompt_channels() -> dict:
         "bens_folders": " and ".join(names) + (" folder" if len(names) < 2 else " folders"),
         "studio_ports": " or ".join(f"{port} ({name})" for port, name in ports),
         "checkout_count": {1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)),
+        "file_rule": file_rule({1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)), film_store()),
     }
 
 
@@ -373,6 +402,9 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     if not b:
         return None
     dirs = [x for path in OTHERS for x in ("--add-dir", str(path))] + ["--add-dir", str(HOME / "_desk")]
+    store = film_store()
+    if store:  # the brief allows it, so the agent's own sandbox has to as well
+        dirs += ["--add-dir", str(store)]
     if agent == "codex":
         m = ["-m", model] if model.startswith("gpt-") else []
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]

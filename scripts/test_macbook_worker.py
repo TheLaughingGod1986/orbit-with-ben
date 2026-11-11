@@ -632,7 +632,8 @@ class AsksTheChannelLoader(unittest.TestCase):
             "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.",
             "   History of Science folder must always be left on main.",
             "  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch",
-            "- keep files inside the two checkouts and ~/_desk; leave nothing running when you stop.",
+            "- keep files inside the two checkouts and ~/_desk. The shared working-film store on the NAS is not",
+            "- leave nothing running when you stop.",
             "     python3 scripts/jobs.py show J1102",
             "Your run is killed at 25 minutes:",
         ):
@@ -691,6 +692,56 @@ class AsksTheChannelLoader(unittest.TestCase):
         # the list an unattended Claude may use without asking, as it stood before this change
         self.assertEqual(len(mw.CLAUDE_ALLOWED_TOOLS), ALLOWED_BEFORE_J2526)
         self.assertFalse(any("merge" in r or "pull" in r for r in mw.CLAUDE_ALLOWED_TOOLS))
+
+
+class FilmStoreOnTheNas(unittest.TestCase):
+    """J2568, 11 Nov 2026. AGENTS.md "Film folders on the NAS" (Ben, 7 Nov) has both machines read and write a film's
+    folder on the shared store. The brief said "inside the checkouts and ~/_desk", so a run was refused a copy into
+    its own film's folder and a finished film had no allowed way off the MacBook."""
+    STORE = pathlib.Path("/Volumes/data/studio-live")
+
+    def brief(self, store):
+        with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h"]), \
+                mock.patch.object(mw, "film_store", lambda: store):
+            return mw.brief("J1", "m", 25)
+
+    def test_mounted_the_brief_allows_the_store_and_carries_the_nas_rules(self):
+        p = self.brief(self.STORE)
+        self.assertIn("inside the two checkouts, ~/_desk and the shared working-film store on the NAS", p)
+        self.assertIn("(/Volumes/data/studio-live;", p)
+        for rule in ("never delete or move a file that is already", "never replace a finished media file",
+                     "never write outside that", "SHA-256", "01:00-06:00"):
+            self.assertIn(rule, p)
+        self.assertIn("never delete anything on the NAS", p)          # the standing line is still there too
+        self.assertNotIn("{", p)
+
+    def test_not_mounted_the_brief_says_so_and_keeps_files_on_the_mac(self):
+        p = self.brief(None)
+        self.assertIn("is not\n  mounted on this Mac right now, so do not try to reach it", p)
+        self.assertIn("SHA-256 in your report", p)
+        self.assertNotIn("/Volumes/data", p)
+        self.assertNotIn("{", p)
+
+    def test_the_agents_sandbox_gets_the_store_only_when_it_is_mounted(self):
+        for agent in ("codex", "claude", "gemini"):
+            with mock.patch.object(mw, "OTHERS", [pathlib.Path("/h")]), \
+                    mock.patch.object(mw, "find_bin", side_effect=lambda a: "/bin/" + a):
+                with mock.patch.object(mw, "film_store", lambda: self.STORE):
+                    c = mw.agent_cmd(agent, "P")
+                with mock.patch.object(mw, "film_store", lambda: None):
+                    without = mw.agent_cmd(agent, "P")
+            dirs = [c[i + 1] for i, x in enumerate(c) if x == "--add-dir"]
+            self.assertEqual(dirs, ["/h", str(mw.HOME / "_desk"), str(self.STORE)], agent)
+            self.assertNotIn(str(self.STORE), without, agent)
+            self.assertNotIn("/Volumes/data/mac-mini-archive", " ".join(c), agent)   # never the archive
+
+    def test_film_store_is_the_queues_own_path_and_none_when_absent(self):
+        import jobs
+        with tempfile.TemporaryDirectory() as d:
+            with mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(d)):
+                self.assertEqual(mw.film_store(), pathlib.Path(d))
+            with mock.patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path(d) / "gone"):
+                self.assertIsNone(mw.film_store())
 
 
 if __name__ == "__main__":
