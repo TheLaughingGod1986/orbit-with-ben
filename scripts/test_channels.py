@@ -584,5 +584,66 @@ class DeliveryAsksTheLoader(unittest.TestCase):
         self.assertEqual((len(ratchet.channel_lines(source)), len(ratchet.home_lines(source))), (0, 0))
 
 
+class TheStudiosOwnName(unittest.TestCase):
+    """J2620, 11 Nov 2026. Some names in the studio's code were never a channel's: the launchd labels, state files,
+    log files and two environment variables carry the studio's own short name. They are read from the registry's
+    `studio` section, so the studio's code spells no name and nothing on a machine is renamed."""
+
+    def test_todays_names_are_the_ones_already_on_the_machines(self):
+        self.assertEqual(channels.studio_prefix(), "owb")
+        self.assertEqual(channels.studio_env("AGENT"), "OWB_AGENT")
+        self.assertEqual(channels.studio_env("THREAD_PR"), "OWB_THREAD_PR")
+        self.assertEqual(channels.studio_label("chief-relay"), "com.owb.chief-relay")
+
+    def test_the_studios_own_launchd_jobs_are_shipped_under_that_label(self):
+        root = pathlib.Path(channels.ROOT)
+        for folder, job in (("scripts/mini", "chief-relay"), ("scripts/mini", "board-publish"),
+                            ("scripts/macbook", "macbook-worker"), ("07_Content-Ops/launchd", "missed-runs"),
+                            ("07_Content-Ops/launchd", "tab-janitor"), ("07_Content-Ops/launchd", "ai-spend-daily")):
+            with self.subTest(job=job):
+                self.assertTrue((root / folder / (channels.studio_label(job) + ".plist")).is_file())
+
+    def test_the_name_comes_from_the_registry_and_nowhere_else(self):
+        with tempfile.TemporaryDirectory() as t:
+            (pathlib.Path(t) / "channels.json").write_text(json.dumps({"studio": {"prefix": "abc"}, "channels": []}))
+            channels.studio_prefix.cache_clear()
+            try:
+                with mock.patch.object(channels, "DIR", pathlib.Path(t)):
+                    self.assertEqual((channels.studio_prefix(), channels.studio_env("AGENT"), channels.studio_label("x")),
+                                     ("abc", "ABC_AGENT", "com.abc.x"))
+            finally:
+                channels.studio_prefix.cache_clear()
+        self.assertEqual(channels.studio_prefix(), "owb")
+
+    def test_the_studios_repo_is_a_registry_field_and_agrees_with_the_home_channel_until_the_move(self):
+        reg = json.loads((channels.DIR / "channels.json").read_text())["studio"]
+        self.assertEqual(channels.studio_github(), reg["github"])
+        self.assertEqual("https://github.com/" + reg["github"] + ".git", channels.get(channels.home())["repo"]["url"])
+
+    def test_asking_for_the_studios_repo_needs_no_home_channel(self):
+        with tempfile.TemporaryDirectory() as t:
+            (pathlib.Path(t) / "channels.json").write_text(json.dumps(
+                {"studio": {"prefix": "abc", "github": "someone/studio"}, "channels": []}))
+            with mock.patch.object(channels, "DIR", pathlib.Path(t)), \
+                    mock.patch.object(channels, "home", side_effect=AssertionError("asked which channel is home")):
+                self.assertEqual(channels.studio_github(), "someone/studio")
+
+    def test_a_registry_without_the_field_still_gives_the_home_channels_repo(self):
+        with tempfile.TemporaryDirectory() as t:
+            (pathlib.Path(t) / "channels.json").write_text(json.dumps({"studio": {"prefix": "abc"}, "channels": []}))
+            with mock.patch.object(channels, "DIR", pathlib.Path(t)), \
+                    mock.patch.object(channels, "home", return_value="x"), \
+                    mock.patch.object(channels, "get", return_value={"repo": {"url": "https://github.com/a/b.git"}}):
+                self.assertEqual(channels.studio_github(), "a/b")
+
+    def test_the_small_scripts_spell_no_name(self):
+        import test_channel_ratchet as ratchet
+        counts = ratchet.counts()
+        for name in ("studio_thread.py", "owb_thread.py", "missed_runs.py", "core_sync.py", "macbook_worker.py",
+                     "nas_offload.py", "cdp_tabs.py", "routing.py", "uat_outlook.py"):
+            with self.subTest(script=name):
+                self.assertEqual(counts.get(name, 0), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

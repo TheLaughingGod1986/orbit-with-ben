@@ -25,7 +25,6 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LOCK = pathlib.Path("studio-core") / "CORE_FILES.json"
 SELF = pathlib.Path("scripts") / "core_sync.py"
-CANONICAL = "orbit-with-ben"
 
 
 def sha(p: pathlib.Path) -> str:
@@ -34,6 +33,12 @@ def sha(p: pathlib.Path) -> str:
 
 def load(root: pathlib.Path = ROOT) -> dict:
     return json.loads((root / LOCK).read_text())
+
+
+def canonical() -> str:
+    """The repo where a shared file is changed first: the lock file's own `canonical` field. This script is copied
+    into every repo that shares the tools, so it reads the name and never spells one."""
+    return str(load().get("canonical") or "the canonical repo")
 
 
 def save(data: dict, root: pathlib.Path = ROOT) -> None:
@@ -56,8 +61,8 @@ def problems(root: pathlib.Path, data: dict) -> list:
 def cmd_check(_a) -> int:
     bad = problems(ROOT, load())
     if bad:
-        print("Studio core drift. A shared file was edited in one repo only. Make the change in orbit-with-ben, run "
-              "`core_sync.py lock`, then `core_sync.py push --to <history-of-science checkout>`:")
+        print(f"Studio core drift. A shared file was edited in one repo only. Make the change in {canonical()}, run "
+              "`core_sync.py lock`, then `core_sync.py push --to <the other repo's checkout>`:")
         print("\n".join("  " + b for b in bad))
         return 1
     print(f"core OK ({len(load()['files'])} shared files)")
@@ -92,8 +97,8 @@ def cmd_diff(a) -> int:
 
 
 def cmd_push(a) -> int:
-    if not (ROOT / "jobs" / "queue.json").is_file() and not a.force:   # only orbit-with-ben carries the job queue
-        print(f"push runs from the canonical repo ({CANONICAL}), not from {ROOT}")
+    if not (ROOT / "jobs" / "queue.json").is_file() and not a.force:   # only the canonical repo carries the job queue
+        print(f"push runs from the canonical repo ({canonical()}), not from {ROOT}")
         return 1
     if problems(ROOT, load()):
         print("this checkout doesn't match its own lock; run `core_sync.py lock` first")

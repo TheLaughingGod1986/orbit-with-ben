@@ -278,5 +278,56 @@ class Offload(unittest.TestCase):
             self.assertIn(rel, keep)
 
 
+class RegistersOfUploads(unittest.TestCase):
+    """J2620, 11 Nov 2026: the keep list read two registers by name. It now reads every channel's, from the registry,
+    so a third channel's scheduled Shorts are kept too. Nothing that was kept before stops being kept."""
+
+    def test_this_checkouts_own_register_and_each_channels_copy_beside_it_are_read(self):
+        import channels
+        root = pathlib.Path(tempfile.mkdtemp())
+        found = no.upload_registers(root)
+        self.assertEqual(found[0], root / "00_Brand/Channel-Setup/social/UPLOADS.json")
+        for slug in channels.slugs():
+            self.assertIn(root / "00_Brand/Channel-Setup/social" / slug / "UPLOADS.json", found)
+
+    def test_a_third_channels_scheduled_short_is_kept(self):
+        import json
+        import channels
+        from unittest import mock
+        root = pathlib.Path(tempfile.mkdtemp())
+        reg = root / "00_Brand/Channel-Setup/social/xyz/UPLOADS.json"
+        reg.parent.mkdir(parents=True)
+        reg.write_text(json.dumps({"videos": {"a": {"file": "/exports/xyz_short_v01.mp4"},
+                                              "b": {"file": "/exports/old_v01.mp4", "supersededBy": "a"},
+                                              "c": {"file": "/exports/gone_v01.mp4", "retired": True}}}))
+        with mock.patch.object(channels, "slugs", lambda: ["owb", "hos", "xyz"]):
+            keep = no.scheduled_short_keep_paths(root)
+        self.assertIn("/exports/xyz_short_v01.mp4", keep)
+        self.assertNotIn("/exports/old_v01.mp4", keep)
+        self.assertNotIn("/exports/gone_v01.mp4", keep)
+
+    def test_the_live_checkout_keeps_everything_every_register_it_can_find_names(self):
+        # Wherever the registers are: beside the studio's code today, in each channel's own checkout after the move.
+        import json
+        keep = no.scheduled_short_keep_paths()
+        found = [p for p in no.upload_registers() if p.is_file()]
+        root = pathlib.Path(no.__file__).resolve().parent.parent
+        for was_read_by_name in ("00_Brand/Channel-Setup/social/UPLOADS.json", "00_Brand/Channel-Setup/social/hos/UPLOADS.json"):
+            if (root / was_read_by_name).is_file():
+                self.assertIn(root / was_read_by_name, found, "a register the old list named is no longer read")
+        for register in found:
+            for rec in json.loads(register.read_text()).get("videos", {}).values():
+                if isinstance(rec, dict) and rec.get("file") and not rec.get("retired") and not rec.get("supersededBy"):
+                    self.assertIn(str(rec["file"]), keep)
+
+    def test_loading_the_mover_does_not_load_the_channel_registry(self):
+        import subprocess
+        code = "import sys, nas_offload; print('channels' in sys.modules)"
+        run = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
+                             cwd=str(pathlib.Path(no.__file__).resolve().parent))
+        self.assertEqual(run.stdout.strip(), "False", run.stderr)
+
+
+
 if __name__ == "__main__":
     unittest.main()
