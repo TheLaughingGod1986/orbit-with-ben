@@ -241,6 +241,40 @@ class FullBleedFfmpeg(unittest.TestCase):
             self.assertTrue(any("end card (9.0-12.0s)" in w for w in res["warns"]), res["warns"])
             self.assertEqual(res["end_card_window_s"], [9.0, 12.0])
 
+    def test_a_cut_ok_d_before_the_rule_is_warned_not_failed_and_a_re_cut_is_not_covered(self):
+        import hashlib
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as td:
+            p = self._long(td, "okd_before", 4.0, 7.9)
+            other = self._long(td, "re_cut", 4.0, 8.9)
+            listed = Path(td) / "okd.json"
+            listed.write_text(json.dumps({"cuts": [
+                {"sha256": hashlib.sha256(p.read_bytes()).hexdigest(), "file": p.name, "ok": "Ben, 10 Nov 2026"},
+                {"sha256": hashlib.sha256(other.read_bytes()).hexdigest(), "file": other.name},     # no OK named
+            ]}))
+            self.assertEqual(g.okd_before_rule(p, listed)["file"], p.name)
+            self.assertIsNone(g.okd_before_rule(other, listed))                  # an entry with no OK covers nothing
+            self.assertIsNone(g.okd_before_rule(p, Path(td) / "missing.json"))
+            with mock.patch.object(g, "FB_OKD_BEFORE_RULE", listed):
+                res = g.check(p, date(2026, 11, 10), 14, {"entries": []}, None, report_only=True, spoken="A clean line.")
+                again = g.check(other, date(2026, 11, 10), 14, {"entries": []}, None, report_only=True, spoken="A clean line.")
+            self.assertFalse(any("sampled once a second" in f for f in res["fails"]), res["fails"])
+            warned = [w for w in res["warns"] if "sampled once a second" in w]
+            self.assertEqual(len(warned), 1, res["warns"])
+            self.assertIn("OK'd before the rule (Ben, 10 Nov 2026)", warned[0])
+            self.assertIn("4-8s (blur-pad)", warned[0])                          # still measured and said
+            self.assertTrue(any("sampled once a second" in f for f in again["fails"]), again["fails"])
+
+    def test_the_list_of_cuts_ok_d_before_the_rule_is_short_and_exact(self):
+        doc = json.loads(g.FB_OKD_BEFORE_RULE.read_text())
+        self.assertLessEqual(len(doc["cuts"]), 3)                # a way out for a fallback, not a way round the rule
+        for cut in doc["cuts"]:
+            with self.subTest(cut=cut.get("file")):
+                self.assertRegex(cut["sha256"], r"^[0-9a-f]{64}$")
+                for key in ("file", "ok", "airs", "why"):
+                    self.assertTrue(str(cut.get(key) or "").strip(), key)
+                self.assertIn("Ben", cut["ok"])
+
     def test_check_reports_it_as_a_hard_fail_with_numbers(self):
         with tempfile.TemporaryDirectory() as td:
             p = self._clip(td, "letterbox_audio",

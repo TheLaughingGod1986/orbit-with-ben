@@ -219,6 +219,10 @@ FB_MIRROR_DIFF = 4.0
 FB_MIRROR_VERT = 8.0           # the picture must change this much over FB_MIRROR_ROWS rows for a mirror to count
 FB_CLIP_STEP_S = 1.0           # the whole Short: one frame a second
 FB_CLIP_MAX_SHARE = 0.10
+# Cuts Ben OK'd by watching before the whole-Short rule existed. Their padded stretches are measured and said, as a
+# warning: the cut he OK'd must still be able to go up as the fallback while its full-frame version waits for his
+# watch. Matched by the file's sha256, so a re-cut is never covered. The opening rule has no such list.
+FB_OKD_BEFORE_RULE = Path(__file__).resolve().parent / "full_bleed_okd_before_rule.json"
 
 
 # ----------------------------------------------------------------------------- ffmpeg
@@ -816,6 +820,24 @@ def end_card_window(meta: dict | None, dur: float) -> tuple[float, float] | None
     return (a, b) if b > a else None
 
 
+def okd_before_rule(path: Path, listed: Path | None = None) -> dict | None:
+    """The entry for this exact file in the list of cuts Ben OK'd before the whole-Short rule, or None."""
+    listed = listed or FB_OKD_BEFORE_RULE
+    try:
+        cuts = json.loads(listed.read_text()).get("cuts") or []
+    except (OSError, ValueError, AttributeError):
+        return None
+    wanted = {str(c.get("sha256") or "").lower(): c for c in cuts if isinstance(c, dict) and c.get("ok")}
+    if not wanted:
+        return None
+    import hashlib
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return wanted.get(h.hexdigest())
+
+
 def clip_full_bleed(path: Path, dur: float | None = None) -> list[dict]:
     """full_bleed_frame() for one frame every FB_CLIP_STEP_S over the whole Short, each with its time 't'."""
     if dur is None:
@@ -1300,6 +1322,12 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     res["clip_full_bleed"] = clip_full_bleed(path, dur)
     res["padded_stretches_s"] = [[a, b, k] for a, b, k in padded_stretches(res["clip_full_bleed"])]
     clip_fails, clip_warns = clip_full_bleed_verdict(res["clip_full_bleed"], card)
+    okd = okd_before_rule(path) if clip_fails else None
+    res["okd_before_full_bleed_rule"] = okd
+    if okd:
+        clip_warns += [f"{f} [not a FAIL for this file: OK'd before the rule ({okd['ok']}); a re-cut is not covered]"
+                       for f in clip_fails]
+        clip_fails = []
     res["fails"] += clip_fails
     res["warns"] += clip_warns
 
