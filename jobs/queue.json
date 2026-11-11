@@ -177762,9 +177762,14 @@
           "at": "2026-11-11T02:44Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-11T02:46Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: NAS and both style refs verified; live balance13490; strict preflight refused create_count0. No submissions or spend. CHARGED100 shared entry cannot be zeroed by existing pending-only resolver."
         }
       ],
-      "remaining_action": "Verify batch5 scope, ledger, NAS and live exact settings before generation",
+      "remaining_action": "Resolve strict preflight Create-state failure and reviewed zero-cost policy-charge reconciliation before batch5",
       "due": "2026-11-11T12:00:00Z",
       "kind": "video",
       "taskKeys": [
@@ -177782,10 +177787,11 @@
       "urgent": 5,
       "not_before": "2026-11-10T23:40Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T02:44Z",
-        "by": "codex"
+        "at": "2026-11-11T02:46Z",
+        "by": "codex",
+        "note": "NAS and both style refs verified; live balance13490; strict preflight refused create_count0. No submissions or spend. CH"
       }
     },
     {
