@@ -212958,10 +212958,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-11T07:07Z",
-      "eta": "2026-11-11T11:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -213385,6 +213385,11 @@
           "at": "2026-11-11T07:20Z",
           "by": "macbook-2",
           "what": "step 3 of 6 done: PR 789: Crab repair verified; compilation remains incomplete"
+        },
+        {
+          "at": "2026-11-11T07:21Z",
+          "by": "macbook-2",
+          "what": "released: Clean checkpoint pushed to PR #789, commit 5cda8998b. Resume jobs/reviews/J2452/RESUME_2026-11-11_CRAB.md. Replaced third Crab appearance; 333-frame comparison and exact clock pass. Normal picture QA remains FAIL: ten reuse rows, seven warnings. Twelve other picture chapters and final AV gates/reel/delivery remain; exceeds this 25-minute run. Source image remains in _desk: automatic approval review rejected NAS copy under the run restriction. No finished master/UAT/upload/spend; all launched processes exited; HOS untouched."
         }
       ],
       "remaining_action": "Repair ten remaining picture reuse failures, complete the other chapters, then assemble and check the sleep compilation",
