@@ -217109,20 +217109,25 @@
           "at": "2026-11-11T20:34Z",
           "by": "codex",
           "what": "step 2 of 4 done: Output ASR found a clipped date in inherited v02c splice. Restored 105ms from existing raw take; isolated ASR now reads November 24th. Preserving v02; rendering v03 on v02d voice, no new take/spend."
+        },
+        {
+          "at": "2026-11-11T20:38Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Assembly/verification/handoff complete: v03 18.367s, all required automated gates pass, final ASR reads November 24th, 33 NAS files hash-checked. Review J2646; draft PR #834 at f5c5821bc6. No creative approval or upload."
         }
       ],
-      "remaining_action": "Rechecking the Supermoon Short after restoring the full date pronunciation",
+      "remaining_action": "Chief reviews the completed Supermoon Short before Ben watches it",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:013"
       ],
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T20:34Z",
+        "at": "2026-11-11T20:38Z",
         "by": "codex",
-        "note": "Output ASR found a clipped date in inherited v02c splice. Restored 105ms from existing raw take; isolated ASR now reads "
+        "note": "Assembly/verification/handoff complete: v03 18.367s, all required automated gates pass, final ASR reads November 24th, 3"
       }
     },
     {
