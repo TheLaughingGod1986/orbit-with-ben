@@ -223764,23 +223764,29 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:12Z",
-      "result": "",
+      "result": "Merged by Grok on his PASS (History of Science desk 6795124133): history-of-science #519, main e0449cc8. That channel's rule book is two files now: AGENTS.md (416 lines to 179) keeps the rules that are not its alone, and studio/RULES.md (272 lines) holds its own. Every line moved whole: lost or changed 0, 12 added and declared (Grok checked the two files as line sets himself). One new rule line, accepted: a Short must not ship with a shot that does not fill the 9:16 frame. Three items stay in AGENTS.md so no line or list is cut in two, accepted: Ben's check-in, the Never list's Studio line, The week. sync_rules.py reads both files; rules and shared-file checks pass on main.",
       "history": [
         {
           "at": "2026-11-11T09:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:59Z",
+          "by": "claude",
+          "what": "done: Merged by Grok on his PASS (History of Science desk 6795124133): history-of-science #519, main e0449cc8. That channel's rule book is two files now: AGENTS.md (416 lines to 179) keeps the rules that are not its alone, and studio/RULES.md (272 lines) holds its own. Every line moved whole: lost or changed 0, 12 added and declared (Grok checked the two files as line sets himself). One new rule line, accepted: a Short must not ship with a shot that does not fill the 9:16 frame. Three items stay in AGENTS.md so no line or list is cut in two, accepted: Ben's check-in, the Never list's Studio line, The week. sync_rules.py reads both files; rules and shared-file checks pass on main."
         }
       ],
       "remaining_action": "Split History of Science's rule book into studio rules and its own, with the nothing-lost check",
       "due": "2026-11-14T18:00:00Z",
-      "plain": "Give History of Science its own rules file, separate from the studio's rules"
+      "plain": "Give History of Science its own rules file, separate from the studio's rules",
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/519"
     },
     {
       "id": "J2579",
