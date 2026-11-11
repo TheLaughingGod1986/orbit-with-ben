@@ -219916,6 +219916,11 @@
           "at": "2026-11-11T01:39Z",
           "by": "codex",
           "what": "step 3 of 4 done: All five gates now report PASS (opening, picture QA, polish, SFX, music). 26.400 s / 792 frames preserved; AAC stream SHA identical. Still sheet inspected; no claim of hearing or motion perception. Picture warning: existing 5.87–9.93 s low-detail panorama."
+        },
+        {
+          "at": "2026-11-11T01:42Z",
+          "by": "codex",
+          "what": "waits on Ben: Watch the Mars helicopter Short with the blurred picture bands replaced by full-screen Mars photos (by 2026-11-12 18:00 London)"
         }
       ],
       "remaining_action": "Save the checked v07 safely and prepare its review report and watch card",
@@ -219933,7 +219938,21 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch the Mars helicopter Short with the blurred picture bands replaced by full-screen Mars photos",
+        "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2549_mars_helicopter/fri13_ingenuity_72_v07.mp4",
+        "version": "v07",
+        "due": "2026-11-12T18:00Z",
+        "airs": "2026-11-13T11:30Z",
+        "ifNot": "the cut you OK’d airs",
+        "title": "Mars helicopter: full-screen pictures for Friday",
+        "number": "025",
+        "type": "short",
+        "fixed": [
+          "Replaced both stretches with blurred padding by full-screen real Mars photographs; same voice, words, length and captions"
+        ]
+      }
     },
     {
       "id": "J2550",
