@@ -220190,13 +220190,13 @@
       "stage": "",
       "after": "J2545",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T04:05Z",
-      "eta": "2026-11-11T06:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T22:59Z",
-      "result": "",
+      "result": "The padded-frame check is set on the 56 labelled frames and covers the whole Short. 52 of 56 right (32 before): all 28 full frames pass, 24 of 28 padded are caught. The four missed are named in the test with why, and each of their Shorts is caught through its other frames. The gate now samples one frame a second and fails a Short when more than 10% show a picture band over fill, naming the stretches; an end card the cut's meta names is judged apart. A cut Ben OK'd before the rule can still go up (a list pinned by sha256, one entry: the Mars helicopter v06 fallback). Merged as #790; the history-of-science copy is its pull request #499. J2557 runs the check over every scheduled Short on the Mini and compares it with the by-eye audit.",
       "history": [
         {
           "at": "2026-11-10T22:59Z",
@@ -220262,6 +220262,11 @@
           "at": "2026-11-11T04:05Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T04:36Z",
+          "by": "claude",
+          "what": "done: The padded-frame check is set on the 56 labelled frames and covers the whole Short. 52 of 56 right (32 before): all 28 full frames pass, 24 of 28 padded are caught. The four missed are named in the test with why, and each of their Shorts is caught through its other frames. The gate now samples one frame a second and fails a Short when more than 10% show a picture band over fill, naming the stretches; an end card the cut's meta names is judged apart. A cut Ben OK'd before the rule can still go up (a list pinned by sha256, one entry: the Mars helicopter v06 fallback). Merged as #790; the history-of-science copy is its pull request #499. J2557 runs the check over every scheduled Short on the Mini and compares it with the by-eye audit."
         }
       ],
       "remaining_action": "read brief and labelled frames; next: calibrate full_bleed_frame on the 56 frames, whole-Short sampling, tests, HOS sync, PRs",
@@ -220275,7 +220280,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#790"
     },
     {
       "id": "J2547",
