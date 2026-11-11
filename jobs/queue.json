@@ -226704,19 +226704,22 @@
           "at": "2026-11-11T14:22Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:22Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0)",
+      "remaining_action": "replace the channel names in approved_deliver.py with channels.py calls, test, open the pull request",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Make the tool that delivers the cuts you approve work for any channel",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 1,
+        "of": 4,
         "at": "2026-11-11T14:22Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "by": "macbook"
       }
     },
     {
