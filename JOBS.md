@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2576, J2270, J2550, J2582, J2583, J2584, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2576, J2270, J2585, J2550, J2583, J2584, J2586, J2587, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2035 | mini | open (after J2584) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
+| J2035 | mini | open (after J2587) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
@@ -73,12 +73,15 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |
 | J2579 | cloud | claimed | claude | 2026-11-11T12:05Z | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
 | J2580 | cloud | open | – | – | Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page | J2566 |
-| J2582 | any | blocked | gemini | – | 009 picture · qa · HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule | J2034 |
-| J2583 | mini | open (after J2582) | – | – | 009 picture · video · HOS 009: remake the falling-Moon shot, and the apple or Explorer shot only if its sheet says so (200 credits at most) | J2034 |
-| J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the remade shots' still sheets before the edit (three yes/no questions each) | J2034 |
+| J2583 | mini | open (after J2585) | – | – | 009 picture · video · HOS 009: remake three shots (falling Moon, apple, minute-and-second c1), 300 of the 400 credits, after Grok passes the board change | J2034 |
+| J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
+| J2585 | cloud | open | – | – | 009 picture · script · HOS 009: write the board change for the four remade shots, as a pull request for Grok (no credit) | J2582 |
+| J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
+| J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 
 Recently finished:
 
+- J2582 done: HOS 009: half-second still sheets of the window each of the last pictures uses, KEEP or FIX by a stated rule (Sheets done (History of Science #511): 16 kept, the Explorer's shot kept (one continuous camera move), the apple shot to be remade, and two more found with the apple rising (P04:05_minute_second_c1 and _c2). Grok ruled on the desk (6792980991): both are remade; the cap is 400 credits for four shots, one take each.)
 - J2581 done: Verify condition for J2034 (acting Chief: the measurements were used in the ruling on J2034 (desk 6792271903): 18 joins match, P02:10 clean to 2.58 s, the red apple and glasses are in the approved parent. J2034 is closed by that ruling.)
 - J2577 done: The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) (Both prompts name the rule files for each checkout: AGENTS.md, then studio/RULES.md where the checkout has one (orbit-with-ben #815, merged). History of Science reads as before until it has its own file (J2578).)
 - J2575 done: HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits) (Two authorized second takes generated for 200 Flow credits, GBP 0; decoded, frame-counted, hashed and still sheets posted. HOS PR #510; desk 6792510470. Pending visual review by J2576; no KEEP.)
@@ -88,4 +91,3 @@ Recently finished:
 - J2571 done: Verify condition for J2503 (No action needed on J2503: the acting Chief already ruled at 08:08Z (same minute this check was queued) and reopened it with history-of-science #505 sent back. Verified in the queue record: J2503 is open, unclaimed, pinned to the Mini, due 14 Nov; predecessor J2033 is done. #505 is still OPEN and unmerged at head 778717d7 (no rework pushed yet). Left J2503 and #505 untouched: no reopen, no wait. No files changed, so no branch or PR. The old pre-merge machine-setting check no longer applies (the ruling drops the setting).)
 - J2570 done: Verify condition for J0978 (acting Chief: condition not met, correctly found. No yes from Ben is on record for deleting the finished, empty title test on the History of Science Atom video. It is asked again in chat today (11 Nov). J0978 stays held; look-again Fri 13 Nov 09:00Z so it is not re-checked every hour.)
 - J2569 done: Verify condition for J0275 (acting Chief: not verified, and it cannot be from the MacBook (its Studio read needs an approval there). The check is now J2574, a read-only Studio job pinned to the Mini, which reopens J0275 itself if both tests have ended. J0275 stays held until Thu 12 Nov 09:00Z.)
-- J2568 done: A way for files finished on the MacBook to reach the NAS (the sleep video will need it) (orbit-with-ben #803 merged. Neither option in the brief was needed: AGENTS.md "Film folders on the NAS" (Ben, 7 Nov 2026) already has both machines read and write a film's folder on the shared working-film store. The MacBook worker's brief was older and said checkouts and ~/_desk only. Now, when the store is mounted, the brief names it with the NAS rules (add only, never delete or move, never replace a finished media file, never outside the store, SHA-256 on each copy, bulk copies 01:00-06:00) and the agent's sandbox allows it; when it is not mounted the brief says so and files stay in ~/_desk with hashes. The archive is not allowed. 66 tests.)
