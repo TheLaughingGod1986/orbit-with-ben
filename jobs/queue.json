@@ -221529,20 +221529,27 @@
           "at": "2026-11-11T05:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T05:59Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2558; starting inspection of 011 v02 reference (#495) and 013 v01 files"
         }
       ],
-      "remaining_action": "Write 013 picture plan v02 with no Fast rows, re-pin the scope and the runner, open the pull request for Grok",
+      "remaining_action": "Inspect HOS #495 (011 v02 reference), #496, #498 and 013 v01 picture plan, scope, and runner",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T05:58Z",
+        "of": 5,
+        "at": "2026-11-11T05:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2558; starting inspection of 011 v02 reference (#495) and 013 v01 files"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J2559",
