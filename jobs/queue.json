@@ -196305,9 +196305,14 @@
           "at": "2026-11-11T19:12Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Plate 11/12 (P05_09a_pigeon_pavement_t1.mp4) generated and archived; Plate 12/12 (P05_13a_gull_seaside_t1.mp4) submitted at 19:11Z and harvesting"
+        },
+        {
+          "at": "2026-11-11T19:20Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Recovered J2270-batch3-run2.done=0; Plate 12/12 (P05_13a_gull_seaside_t1.mp4) harvested and archived at 19:12:37Z"
         }
       ],
-      "remaining_action": "Wait ~30s for final plate P5:13a_gull_seaside_t1.mp4 to harvest and hand off 12-plate manifest to J2271",
+      "remaining_action": "Verify all 12 generated plates, release HOS010_TWELVE_PLATES_J2270 reservation, and open HOS completion manifest PR for J2271",
       "kind": "video",
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
@@ -196319,9 +196324,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-11T19:12Z",
+        "at": "2026-11-11T19:20Z",
         "by": "gemini",
-        "note": "Plate 11/12 (P05_09a_pigeon_pavement_t1.mp4) generated and archived; Plate 12/12 (P05_13a_gull_seaside_t1.mp4) submitted"
+        "note": "Recovered J2270-batch3-run2.done=0; Plate 12/12 (P05_13a_gull_seaside_t1.mp4) harvested and archived at 19:12:37Z"
       },
       "rerouted_from": {
         "needs": "mini",
