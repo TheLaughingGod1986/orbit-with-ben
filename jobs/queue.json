@@ -227436,19 +227436,22 @@
           "at": "2026-11-11T17:35Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T17:41Z",
+          "by": "claude",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "channels.py stops requiring a home channel; the dry run's failing tests pass with the studio on its own",
+      "remaining_action": "The loader without a home channel, then the 14 tests in the new layout; the first step (the old thumbnail script) is in #833",
       "due": "2026-11-16T18:00:00Z",
       "kind": "review",
       "plain": "Let the studio run with no channel as its home, and make its checks pass that way",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T17:35Z",
-        "by": "claude",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-11T17:41Z",
+        "by": "claude"
       }
     },
     {
