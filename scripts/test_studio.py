@@ -142,6 +142,11 @@ class StatusPage(unittest.TestCase):
             self.assertEqual(studio.main(["--films", str(films), "status", "--check"]), 0)
 
     def test_repo_status_page_is_current(self):
+        import channels
+        if not channels.home():
+            # The studio in a repo of its own keeps no STATUS.md: the page is built on every run (the move's table,
+            # scripts/studio_split.py ROUTES), so there is no committed copy to be out of date.
+            self.skipTest("no channel is the studio's home: STATUS.md is built, not kept")
         self.assertEqual(studio.main(["status", "--check"]), 0)
 
 
