@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2558 | mini | open | – | – | 013 shots · script · HOS 013 Darwin & Wallace: picture plan v02 with no Fast rows (each of the 23 becomes a free row or a Quality row), the runner refuses Fast, the credit cap re-pinned |  |
 | J2562 | mini | open | – | – | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2564 | cloud | open | – | – | for claude · Daily credit reading on the Mini: exit 1 only when a spend reading fails; name the usage pages that could not be read and why | J2559 |
+| J2564 | cloud | claimed | claude | 2026-11-11T09:18Z | for claude · Daily credit reading on the Mini: exit 1 only when a spend reading fails; name the usage pages that could not be read and why | J2559 |
 | J2565 | mini | claimed | macbook | 2026-11-11T08:01Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
