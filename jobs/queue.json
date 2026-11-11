@@ -1,5 +1,5 @@
 {
-  "next_id": 2600,
+  "next_id": 2601,
   "jobs": [
     {
       "id": "J0001",
@@ -224744,6 +224744,35 @@
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
       "urgent": 7
+    },
+    {
+      "id": "J2600",
+      "title": "MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "From the closed draft orbit-with-ben #666 (9 Nov). Two things in it never reached main, and both make the MacBook worker safer.\n\nToday `scripts/macbook_worker.py` gives the worker's Claude an allowlist (`CLAUDE_ALLOWED_TOOLS`) that includes `Bash(git push:*)` in any form, and no list of commands that are refused outright. Its brief tells it to work on a `macbook/<job>` branch and open a pull request, but does not say it must never merge one or push to main.\n\n1. **Refuse outright**, with the CLI's own deny option, so that no approval can be waited for and no brief can talk a run into it: `gh pr merge`, `gh pr review`, `gh pr close`, `gh pr ready`, `gh api`, a `git push` to main, and a forced push. Merges are the Chief's.\n2. **Keep every push the worker really makes working.** Read the last two days of MacBook runs in the queue history and the open `macbook/*` branches first: pushes of `macbook/<job>` branches in both repos must still go through, and `jobs.py ... --git` does its own push from Python, which this list does not touch. Do not narrow the allowlist unless a test shows the real commands still pass: on 9 Nov a list that was too narrow sent one job back about forty times.\n3. **One line in the brief:** never merge, approve or close a pull request, and never push to main; a brief that says \"merge\" stops at the open pull request and says so.\n4. Tests beside the worker's own: the deny list is passed to the CLI; each refused command is on it; the brief carries the line; Codex's and the other agents' commands are unchanged.\n\nOne pull request. The whole suite passes.",
+      "ref": "J2526",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:59Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add a deny list and one brief line to the MacBook worker, with tests",
+      "due": "2026-11-14T18:00:00Z",
+      "plain": "Make sure the MacBook helper can never merge code or push to the main branch by itself"
     }
   ],
   "focus": [

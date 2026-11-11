@@ -84,6 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2597 | any | open (after J2596) | – | – | 008 picture · qa · HOS 008: check the new salon start picture before any credit is spent (three yes/no questions) | J2241 |
 | J2598 | mini | open (after J2597) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
+| J2600 | cloud | open | – | – | MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main) | J2526 |
 
 Recently finished:
 
