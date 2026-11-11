@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
 | J2485 | mini | open | – | – | 008 edit · review · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
 | J2498 | mini | open | – | – | 013 edit · assembly · HOS 013 Darwin & Wallace: timing rough on the locked voice-over with the 23 free rows and labelled slates, and a list of mint rows that could be cheaper (no minting) |  |
-| J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
+| J2503 | mini | claimed | gemini | 2026-11-11T09:14Z | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
 | J2529 | mini | blocked | claude | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |

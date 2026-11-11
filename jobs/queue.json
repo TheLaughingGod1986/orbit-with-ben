@@ -217636,10 +217636,10 @@
       "stage": "",
       "after": "J2033",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T07:14Z",
+      "eta": "2026-11-11T09:14Z",
       "created_by": "claude",
       "created_at": "2026-11-10T13:26Z",
       "result": "",
@@ -217648,12 +217648,25 @@
           "at": "2026-11-10T13:26Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T07:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Remove an account email address from files in the public History of Science repo"
+      "plain": "Remove an account email address from files in the public History of Science repo",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T07:14Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2504",
