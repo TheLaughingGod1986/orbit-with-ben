@@ -1,0 +1,19 @@
+# J2452 — Sun gates pass; darkening fails, 11 November 2026
+
+Worker macbook. Progress stays **7 of 15**. No eighth chapter saved to NAS; no UAT, upload or spend. Resume branch `macbook/J2452`, PR #789.
+
+## Verified candidate
+
+Local directory `/Users/ben/_desk/J2452-sleep-scratch/public_sun_v03/`, file `022_sun_undarkened_v03.mp4`. BUILD.json and READBACK.json are copied beside this note in `public_sun_v03/`, with full pixel and edit QA evidence. Duration 480.333333 seconds; full decode 14,410 frames. Prepared corrected clean narration used unchanged: master 0–21.2, 30.5–236.5, 242.38–495.5 seconds. Plan boundaries and actual slices recorded. Narration −20.73 LUFS / −6.55 dBTP.
+
+Finished master picture used throughout. Quiet chapter title added. Plan footage folder absent on studio-live; bounded fallback used own neighbouring master shots, with no downloads, generation or source-film reconstruction. Initial covers: master 30.5–35.5 from 36, 242.38–245.5 from 246, and 384–392 from 366 seconds. First candidate exposed near-black source frames around compilation edits. Corrections are recorded by `repair_public_sun_edges.py`: chapter 16–24, 222–239, 361–382. First donor crossed another dark horizon, so `repair_public_sun_first_trim.py` uses master 146–152 stretched across chapter 16–24; preserves the other two repairs. Every added edge has a dissolve; narration clock remains unchanged.
+
+Fresh edit picture QA **PASS: 144 samples, zero failures, nine advisory stills inspected**. Source and candidate edge sheets inspected locally; no unwanted hook/subscribe/Orbit card visible at sampled cover edges. Low-detail advisories show recognisable solar prominence, white-light Sun, Earth cloud/hurricane and dissolves; reuse advisories concern grouped edit sampling identities across several source shots. Still inspection/tool evidence only, no playback or listening claim. Full polish: **41 failures**, all outside compilation-edit neighbourhoods, recorded as **in the public film** under Chief's 09:29 ruling. None waived. Original charts, labels and illustrations retained.
+
+## Failure and next action
+
+`darken_public_sun.py` produced local `public_sun_dark_v01/022_sun_darkened_v01.mp4`, but verification **FAILS** the required 83–87% brightness band on numerous two-second windows. **Do not deliver this file.** `public_sun_v03/DARKENING_FAILED.json` records its hash and exact assertion diagnostics. No brightest-window or NAS completion claim.
+
+Bounded short probes in local `sun_grade_probes_v02/` and `sun_grade_probes_v03/` tested 10-bit YUV with chroma scaled too, then 16-bit RGB scaling. Both improve saturated red samples at 12/36 seconds (~85%) but fail other samples: 126 seconds ~82.7%, 442 seconds ~79.8%. Probe recipes/results copied into the tracked evidence directory. Source and graded stream metadata both report limited-range bt709; no confirmed cause yet. **Next: diagnose conversion/measurement at those exact windows using short probes before any new full encode.** Preserve thresholds; the first chapter-wide luma-only recipe is not sufficient here. Update OUT/version to a new name before any render; v01 remains evidence. `save_public_sun.py` points at v01 and must follow only a newly verified successful grade.
+
+Once a measured grade passes: same duration/frame count, every two-second window 83–87%; brightest five windows and frames; additive NAS save and destination SHA-256 read-back; progress 8/15. Then 028 Gliese 710. Five remaining chapters, final bed/assembly/sound/silence/CTA/joins, reel, copies and Ben watch card remain. No detached encodes or other launched processes left running. Checkout returned to main; HOS untouched. Python compilation, 13 privacy tests and diff check pass. Thread read to #6801821610 (state-file write was denied, but the trusted comment was read).
