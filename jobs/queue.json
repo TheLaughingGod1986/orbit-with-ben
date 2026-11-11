@@ -223028,10 +223028,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T08:40Z",
+      "eta": "2026-11-11T10:40Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
       "result": "",
@@ -223040,13 +223040,26 @@
           "at": "2026-11-11T08:24Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T08:40Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read two thumbnail tests' results in Studio and record them",
       "due": "2026-11-11T18:00:00Z",
       "kind": "studio",
       "plain": "Read the results of two thumbnail tests on the Saturn and Jupiter videos",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T08:40Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

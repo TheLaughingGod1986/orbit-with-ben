@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2566 | mini | open | – | – | Copy what the Claude and Cursor usage pages show from the Mini's credit-reading log, so their readers can be fixed | J2564 |
 | J2572 | mini | claimed | macbook | 2026-11-11T10:30Z | for gemini · review · History of Science: rework the address clean-up (#505) to fingerprints, 010 and 013 runners untouched, 008 and 009 held back | J2503 |
 | J2573 | mini | blocked | gemini | – | 008 picture · qa · HOS 008: look at the salon retake's still sheet before the re-edit (one spark, hair on heads, solid rod), and glance at the other two | J2241 |
-| J2574 | mini | open | – | – | studio · Studio read on the Mini: have thumbnail tests T013 (Saturn) and T003 (Jupiter) ended? Record the results; reopen J0275 if both have | J0275 |
+| J2574 | mini | claimed | codex | 2026-11-11T10:40Z | studio · Studio read on the Mini: have thumbnail tests T013 (Saturn) and T003 (Jupiter) ended? Record the results; reopen J0275 if both have | J0275 |
 
 Recently finished:
 
