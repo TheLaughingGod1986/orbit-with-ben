@@ -1,5 +1,5 @@
 {
-  "next_id": 2562,
+  "next_id": 2563,
   "jobs": [
     {
       "id": "J0001",
@@ -221667,13 +221667,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T06:08Z",
-      "eta": "2026-11-11T08:08Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:02Z",
-      "result": "",
+      "result": "Done: orbit-with-ben #794, merged. Each padded-looking frame now says whether a straight edge was found where picture meets fill. The opening fails only on an edge; the whole Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge; under that it warns and names the seconds. On the labelled frames: 24 of 28 padded still caught, 0 of 28 full frames read as padded, the two soft-walled frames now a warning. All nine padded Shorts of the audit still fail. 53 tests (37 before). The pair is history-of-science #502, with Grok. The check on real files is queued for the Mini. Report: jobs/reviews/J2560/REPORT.md.",
       "history": [
         {
           "at": "2026-11-11T06:02Z",
@@ -221684,6 +221684,11 @@
           "at": "2026-11-11T06:08Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "claude",
+          "what": "done: Done: orbit-with-ben #794, merged. Each padded-looking frame now says whether a straight edge was found where picture meets fill. The opening fails only on an edge; the whole Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge; under that it warns and names the seconds. On the labelled frames: 24 of 28 padded still caught, 0 of 28 full frames read as padded, the two soft-walled frames now a warning. All nine padded Shorts of the audit still fail. 53 tests (37 before). The pair is history-of-science #502, with Grok. The check on real files is queued for the Mini. Report: jobs/reviews/J2560/REPORT.md."
         }
       ],
       "remaining_action": "Tell a blurred copy from a soft part of the picture, add the two frames to the labelled set, tests, send the pair to history-of-science",
@@ -221697,7 +221702,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#794"
     },
     {
       "id": "J2561",
@@ -221742,6 +221748,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2562",
+      "title": "Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2560 (orbit-with-ben #794, merged 11 Nov 06:24Z; the pair is history-of-science #502). Read-only: nothing is re-cut and nothing changes in Studio.\n\nThe Shorts check now marks each padded-looking frame as having a straight edge or not, and weighs them: a Short fails above 10% of frames padded with an edge, or above 15% that look padded, edge or no edge. The 15% figure was set on few Shorts. This job checks it on the real files.\n\n1. Pull main in both repos (History of Science only after #502 is merged; if it is not, run its Shorts with the orbit-with-ben copy of the gate and say so).\n2. Run, detached if it takes more than a minute, for each of these nine Shorts, from its channel's repo:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <date> --id <id> --report-only --json`\n   Files and dates are in `jobs/reviews/J2557/REPORT.md`: `Wvjd8g0CpzE`, `f17XCtUmN-g`, `cLKDiYP55J8`, `xgx2lYHhYZM`, `kKN8Ale42sE` (the file on disk), `xdurJQcoiGM`, `rvug71d7Dqk`, `C8lPx5N2DwM`, `k2kEaA7ICjc`.\n3. For each, one table row: frames sampled, frames padded with an edge, frames padded without, the padded stretches as the gate prints them, and the verdict line for the whole Short and for the opening.\n4. Expected: the first four pass, with warnings at most; the last five still fail. Say plainly for each whether it did. For any that did not, save the frames in question as grey 108 x 192 PNGs beside the report, as J2557 did.\n\nReport in `jobs/reviews/<this job>/REPORT.md` through a pull request, and park it for the Chief. No change to the gate or its numbers in this job.\n",
+      "ref": "J2560",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T06:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T06:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run the new Shorts check on the nine named Shorts, table the edge and no-edge frames, open the report PR",
+      "due": "2026-11-12T12:00:00Z",
+      "plain": "Run the fixed Shorts check on nine real Shorts to confirm it passes the good ones and still stops the padded ones"
     }
   ],
   "focus": [
