@@ -213388,10 +213388,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T19:02Z",
+      "eta": "2026-11-11T23:02Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214370,6 +214370,11 @@
           "at": "2026-11-11T18:59Z",
           "by": "macbook",
           "what": "released: Light Speed checkpoint pushed to PR #789. v04 edit QA PASS 241 samples, full decode 13900 frames, but visual review caught donor chapter card at 199.5-201.5s. Clean 6s replacement prepared and pixel PASS; next run integrates it with integrate_public_light_starfield.py, reruns full gates, then grades and NAS-saves. Resume jobs/reviews/J2452/RESUME_2026-11-11_PUBLIC_LIGHT_CHECKPOINT.md on macbook/J2452. Progress stays 10/15. No encode left running; released before 25-minute cap."
+        },
+        {
+          "at": "2026-11-11T19:02Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Checking the repaired light-speed chapter before grading and saving it",
