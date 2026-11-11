@@ -225305,13 +225305,13 @@
       "stage": "picture",
       "after": "J2604",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T11:42Z",
-      "eta": "2026-11-11T13:42Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T11:27Z",
-      "result": "",
+      "result": "parked for Chief: FAIL on question 1 (Q1 NO, Q2 YES, Q3 YES) on 02_salon_spark_t4_start_try2.png (sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2). Q1 knuckle very close to tube end: NO — because the tube stays at the original ~37 deg upward angle, its open upper end sits high at (x~645, y~195) near her forehead/upper wig while her raised fist/knuckle is lower at eye/nose level (x~710, y~330), ~150 px below/right of the tube tip and ~55-65 px underneath the mid-shaft. Q2 wig smooth, air and tube mouth clear: YES. Q3 same room, same two people, same tube angle as old frame: YES. Blocked per brief so J2598 (100 credits) is not released; try 3 wording goes back to Grok on the desk before running.",
       "history": [
         {
           "at": "2026-11-11T11:27Z",
@@ -225347,6 +225347,11 @@
           "at": "2026-11-11T11:49Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Three-question check complete on 02_salon_spark_t4_start_try2.png (33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2): Q1 NO, Q2 YES, Q3 YES; blocking J2605 so J2598 is not released"
+        },
+        {
+          "at": "2026-11-11T11:49Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: FAIL on question 1 (Q1 NO, Q2 YES, Q3 YES) on 02_salon_spark_t4_start_try2.png (sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2). Q1 knuckle very close to tube end: NO — because the tube stays at the original ~37 deg upward angle, its open upper end sits high at (x~645, y~195) near her forehead/upper wig while her raised fist/knuckle is lower at eye/nose level (x~710, y~330), ~150 px below/right of the tube tip and ~55-65 px underneath the mid-shaft. Q2 wig smooth, air and tube mouth clear: YES. Q3 same room, same two people, same tube angle as old frame: YES. Blocked per brief so J2598 (100 credits) is not released; try 3 wording goes back to Grok on the desk before running."
         }
       ],
       "remaining_action": "Block J2605 (parked for Chief) and post report",
