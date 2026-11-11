@@ -193542,10 +193542,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T19:53Z",
-      "eta": "2026-11-11T21:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -193599,6 +193599,11 @@
           "at": "2026-11-11T19:58Z",
           "by": "codex",
           "what": "step 1 of 3 done: Source verified: 12923 frame hashes with exact PTS/duration, 113 actual IDR boundaries, 25296 audio packets; approved composite/points-t3/rods-t2 hashes and full decodes verified; 22 tests and repository checks pass. No v04 rendered."
+        },
+        {
+          "at": "2026-11-11T20:00Z",
+          "by": "codex",
+          "what": "released: Source validation complete 1/3. HOS branch codex/J2242-source-preflight c12cabbc; resume jobs/reviews/J2242/RESUME.md in /Volumes/MiniWork/scratch/J2242-hos. 12923 frame hashes preserve PTS/durations, 113 actual IDR points, 25296 audio packets; selected composite/points-t3/rods-t2 verified. 22 tests and check_all pass. Remaining packet splicer/caption renderer and full output gates exceed one unattended run. No v04 exists; all processes ended, no detached render. No spend/publication."
         }
       ],
       "remaining_action": "Implementing Franklin packet splicing and caption rendering before output verification",
