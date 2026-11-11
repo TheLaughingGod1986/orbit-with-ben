@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2554 | any | blocked | macbook | – | review · Verify condition for J2452 |  |
 | J2555 | any | blocked | macbook-2 | – | review · Verify condition for J2171 |  |
+| J2556 | any | open | – | – | review · Review the supermoon dated Short v01 (J2478): KEEP or FIX, then send to Ben's watch |  |
 
 Recently finished:
 

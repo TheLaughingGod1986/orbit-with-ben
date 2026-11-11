@@ -1,5 +1,5 @@
 {
-  "next_id": 2556,
+  "next_id": 2557,
   "jobs": [
     {
       "id": "J0001",
@@ -220576,6 +220576,36 @@
         "at": "2026-11-11T03:03Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2556",
+      "title": "Review the supermoon dated Short v01 (J2478): KEEP or FIX, then send to Ben's watch",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Review the built supermoon dated-event Short from J2478 (rule H review; KEEP or FIX with an exact list in `jobs/reviews/<this id>/REVIEW.md`).\n\n- Cut: `owb_dated_2026_11_24_supermoon_v01.mp4`, 19.6 s, 1080x1920, sha256 `868a1259ddb264e24022b41dbcd82ba63ed4f802d8197bc78d38e6bf5b3481aa`. On the NAS: `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/from_gemini_wt_J2478/` (full build folder under `full/`).\n- Records: branch `j2478-supermoon-short` (commit a0bfd29c0), folder `02_Video-Projects/_dated_shorts/2026-11-24_supermoon/`. Read `VO_REPORT.md` first. Plan: `02_Video-Projects/_dated_shorts/2026-11-24_supermoon-two-earths-closer.md`.\n- Voice: `supermoon_2026_11_24_vo_v02` (plan Trim 1, 41 words), ruled by the acting Chief on 10 Nov 12:45Z. No further voice take is allowed (1,072 characters spent against a cap of about 600).\n- Tool results so far (nothing has been watched or heard): gate_shorts_open PASS for air date 19 Nov (current gate, with the full-bleed check), vo_check, picture_qa, polish_gate, music_gate, sfx_level and loop metrics PASS. Warnings: length 19.6 s against the general 22 to 27 s band (this Short's own bar is 17 to 20 s); music pace 120 BPM against the brief's 84 to 96; s01 low detail.\n\nDecide:\n1. First-second rule (rule 24): the subject and \"swings two\" are spoken by 1.5 s, but \"Earths closer\" lands after it (\"closer\" ends 2.53 s). No pause over 0.15 s in sentence 1 (longest 0.13 s), so gap-tightening cannot fix it. The hook caption \"TWO EARTHS CLOSER\" is on screen from frame 0. Rule whether this meets rule 24 or needs an edit (for example a small speed-up of sentence 1); no new take.\n2. Check the picture against the plan from stills and the contact sheet (only the named free NASA sources; one overlay; title banner window; no Orbit at frame 0), the package draft (`11_Upload-Package/PACKAGE_MANIFEST.json`: its publishAt must read Thu 19 Nov 11:30 London, Related `2fsQcea-voM`), and that Gemini's slot edits to the plan match the branch's.\n3. On KEEP: merge or carry the branch records as the Chief rules, copy the cut to the OWB UAT watch folders and call `jobs.py awaits` for Ben's phone watch (his watch is the watch-and-listen check). On FIX: reopen J2478 with the exact list.\n\nDeadline: Ben's OK must be on the board by Wed 18 Nov 18:00 London, or the Short is not uploaded. No Studio change, no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-11T03:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T03:04Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the built supermoon Short and rule KEEP or FIX",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Checking the finished supermoon Short before it goes to Ben to watch"
     }
   ],
   "focus": [
