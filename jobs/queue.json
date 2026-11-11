@@ -223546,13 +223546,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T09:52Z",
-      "eta": "2026-11-11T11:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:12Z",
-      "result": "",
+      "result": "Both prompts name the rule files for each checkout: AGENTS.md, then studio/RULES.md where the checkout has one (orbit-with-ben #815, merged). History of Science reads as before until it has its own file (J2578).",
       "history": [
         {
           "at": "2026-11-11T09:12Z",
@@ -223563,6 +223563,11 @@
           "at": "2026-11-11T09:52Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T10:04Z",
+          "by": "claude",
+          "what": "done: Both prompts name the rule files for each checkout: AGENTS.md, then studio/RULES.md where the checkout has one (orbit-with-ben #815, merged). History of Science reads as before until it has its own file (J2578)."
         }
       ],
       "remaining_action": "Make the two live prompts name both rule files for the job's channel",
@@ -223575,7 +223580,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/815"
     },
     {
       "id": "J2578",
