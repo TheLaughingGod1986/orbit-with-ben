@@ -225083,21 +225083,28 @@
           "at": "2026-11-11T12:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T12:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2599; starting inspection of HOS 008 salon take 4 and desk messages 6793719472/6793775605"
         }
       ],
-      "remaining_action": "Three yes/no answers on salon take 4, with the contact frame's time; sheet to the desk",
+      "remaining_action": "Locate HOS 008 salon take 4 clip, start still, and half-second sheet",
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
       "urgent": 5,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-11T12:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2599; starting inspection of HOS 008 salon take 4 and desk messages 6793719472/6793775605"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2600",
