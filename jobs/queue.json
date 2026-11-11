@@ -219682,10 +219682,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T00:34Z",
+      "eta": "2026-11-11T02:34Z",
       "created_by": "claude",
       "created_at": "2026-11-10T23:55Z",
       "result": "",
@@ -219694,13 +219694,26 @@
           "at": "2026-11-10T23:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T00:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sleep video: copy the inputs that are only on the Mini (5 narration stems, 2 music beds, 7 cover-plate sets, this morning's word timings) to the NAS, checked by sha256",
       "due": "2026-11-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Copy the files the sleep video still needs from the Mac mini to the shared drive, so the MacBook can build it",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T00:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
