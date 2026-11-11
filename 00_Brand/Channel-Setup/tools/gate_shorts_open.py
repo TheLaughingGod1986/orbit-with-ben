@@ -39,7 +39,9 @@ Hard FAILs (STUDIO_PLAYBOOK.md §7 · .cursor/rules/orbit-build-shorts.mdc):
      below a picture band. At the opening (frame 0, or    over blurred fill, passed this gate on 9 Nov and
      most frames to 0.5 s), or on more than 10% of the    the feed barely showed it. 11 Nov 2026, J2546: the
      frames sampled once a second over the whole Short.   rule was set on 56 real frames labelled by eye, and
-     An end card the cut's meta names is judged apart.    the whole Short is sampled, not only its opening.)
+     An end card the cut's meta names is judged apart.    the whole Short is sampled, not only its opening.
+     Frames that look padded with no straight edge fail   J2579: that second count is sampled twice a second,
+     at more than 15%, sampled twice a second.            so one stray frame cannot tip a result.)
 
 Warnings:
 
@@ -217,7 +219,7 @@ FB_MIRROR_SYM_ROWS = 3
 FB_MIRROR_ROWS = 8
 FB_MIRROR_DIFF = 4.0
 FB_MIRROR_VERT = 8.0           # the picture must change this much over FB_MIRROR_ROWS rows for a mirror to count
-FB_CLIP_STEP_S = 1.0           # the whole Short: one frame a second
+FB_CLIP_STEP_S = 1.0           # the whole Short: one frame a second, for the straight-edge count
 FB_CLIP_MAX_SHARE = 0.10
 # A frame can look padded with no straight edge where the picture meets the fill: a blurred copy with feathered
 # edges, or a full-frame shot whose own top and bottom are soft (tissue walls round vessels, a smooth nebula
@@ -225,6 +227,11 @@ FB_CLIP_MAX_SHARE = 0.10
 FB_EDGE_RATIO = 2.5            # an edge: the step across one row is this many times the change just outside it
 FB_EDGE_SHARE = 0.65           # labelled frames: a soft full frame 0.54 at most; a padded frame with a clear edge 0.69 at least
 FB_CLIP_SOFT_SHARE = 0.15      # padded-looking frames, with or without an edge: this share of the Short before it fails
+# The padded-looking count is sampled twice a second (Grok's ruling, History of Science desk 6791598029, J2579). On
+# thirteen real Shorts (J2562) the 15% figure gave the right answer every time, with one sampled frame of room each
+# way at one frame a second: a pass with 3 of 26, a fail by one frame, a fail by two. Twice the frames halves what
+# one stray frame can do. The straight-edge count and both figures are as they were.
+FB_CLIP_SOFT_STEP_S = 0.5
 # Cuts Ben OK'd by watching before the whole-Short rule existed. Their padded stretches are measured and said, as a
 # warning: the cut he OK'd must still be able to go up as the fallback while its full-frame version waits for his
 # watch. Matched by the file's sha256, so a re-cut is never covered. The opening rule has no such list.
@@ -895,23 +902,39 @@ def okd_before_rule(path: Path, listed: Path | None = None) -> dict | None:
 
 
 def clip_full_bleed(path: Path, dur: float | None = None) -> list[dict]:
-    """full_bleed_frame() for one frame every FB_CLIP_STEP_S over the whole Short, each with its time 't'."""
+    """full_bleed_frame() for one frame every FB_CLIP_SOFT_STEP_S over the whole Short, each with its time 't'.
+    'on_second' marks the frames one FB_CLIP_STEP_S apart: the straight-edge count reads those alone, exactly the
+    frames it read before J2579; the padded-looking count reads them all."""
     if dur is None:
         dur = duration_s(path)
+    every = round(FB_CLIP_STEP_S / FB_CLIP_SOFT_STEP_S)
     out = []
-    t = 0.0
-    while t < dur - 0.05:
+    i = 0
+    while i * FB_CLIP_SOFT_STEP_S < dur - 0.05:
+        t = i * FB_CLIP_SOFT_STEP_S
         m = full_bleed_frame(raw_frame(path, FB_W, FB_H, t, "gray"))
         m["t"] = round(t, 2)
+        m["on_second"] = i % every == 0
         out.append(m)
-        t += FB_CLIP_STEP_S
+        i += 1
     return out
+
+
+def on_the_second(frames: list[dict]) -> list[dict]:
+    """The frames one a second. A frame with no 'on_second' was sampled before J2579, once a second, and counts."""
+    return [f for f in frames if f.get("on_second", True)]
+
+
+def sample_step_s(frames: list[dict]) -> float:
+    """How far apart these frames were sampled: twice a second if any of them sits between the seconds."""
+    return FB_CLIP_SOFT_STEP_S if any(f.get("on_second") is False for f in frames) else FB_CLIP_STEP_S
 
 
 def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
     """Runs of padded sampled frames as (first second, last second + one step, kinds). A kind found without a
     straight edge is named so: 'blur-pad, no edge'."""
     out: list[tuple[float, float, str]] = []
+    step = sample_step_s(frames)
     run_start = None
     kinds: set[str] = set()
     last = 0.0
@@ -922,18 +945,18 @@ def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
             kinds.add(f["kind"] if f.get("edge", True) else f["kind"] + ", no edge")
             last = f["t"]
         elif run_start is not None:
-            out.append((run_start, last + FB_CLIP_STEP_S, " / ".join(sorted(kinds))))
+            out.append((run_start, last + step, " / ".join(sorted(kinds))))
             run_start = None
     if run_start is not None:
-        out.append((run_start, last + FB_CLIP_STEP_S, " / ".join(sorted(kinds))))
+        out.append((run_start, last + step, " / ".join(sorted(kinds))))
     return out
 
 
 def clip_full_bleed_verdict(frames: list[dict], end_card: tuple[float, float] | None = None) -> tuple[list[str], list[str]]:
     """(fails, warns) for the whole Short, on the frames sampled outside the end card. FAIL when more than
-    FB_CLIP_MAX_SHARE of them are padded with a straight edge at the picture, or more than FB_CLIP_SOFT_SHARE look
-    padded, edge or no edge. Fewer is a warning that names the seconds. A padded end card is said, not failed: it
-    is judged apart from the shots."""
+    FB_CLIP_MAX_SHARE of the frames one a second are padded with a straight edge at the picture, or more than
+    FB_CLIP_SOFT_SHARE of all the sampled frames (two a second since J2579) look padded, edge or no edge. Fewer is
+    a warning that names the seconds. A padded end card is said, not failed: it is judged apart from the shots."""
     def in_card(f: dict) -> bool:
         return end_card is not None and end_card[0] <= f["t"] < end_card[1]
 
@@ -941,21 +964,29 @@ def clip_full_bleed_verdict(frames: list[dict], end_card: tuple[float, float] | 
     card = [f for f in frames if in_card(f)]
     fails, warns = [], []
     bad = [f for f in body if f.get("kind")]
-    edged = [f for f in bad if f.get("edge", True)]
+    whole = on_the_second(body)                       # the straight-edge count: one frame a second, as before J2579
+    bad_whole = [f for f in whole if f.get("kind")]
+    edged = [f for f in bad_whole if f.get("edge", True)]
+    any_edge = any(f.get("edge", True) for f in bad)
     runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
-    if body and (len(edged) > FB_CLIP_MAX_SHARE * len(body) or len(bad) > FB_CLIP_SOFT_SHARE * len(body)):
+    over_edge = bool(whole) and len(edged) > FB_CLIP_MAX_SHARE * len(whole)
+    over_soft = bool(body) and len(bad) > FB_CLIP_SOFT_SHARE * len(body)
+    if over_edge or over_soft:
         left_out = f", end card {end_card[0]:.1f}-{end_card[1]:.1f}s left out" if end_card else ""
-        if len(edged) > FB_CLIP_MAX_SHARE * len(body):
-            share = f"{len(bad) / len(body):.0%}, limit {FB_CLIP_MAX_SHARE:.0%}"
+        if over_edge:
+            count = f"{len(bad_whole)}/{len(whole)} frames sampled once a second"
+            share = f"{len(bad_whole) / len(whole):.0%}, limit {FB_CLIP_MAX_SHARE:.0%}"
         else:
+            rate = "twice" if sample_step_s(body) == FB_CLIP_SOFT_STEP_S else "once"
+            count = f"{len(bad)}/{len(body)} frames sampled {rate} a second"
             share = (f"{len(bad) / len(body):.1%}; {len(edged)} with a straight edge at the picture; "
                      f"limit {FB_CLIP_SOFT_SHARE:.0%} when no edge is found")
         fails.append(
-            f"the picture does not fill 9:16 on {len(bad)}/{len(body)} frames sampled once a second "
+            f"the picture does not fill 9:16 on {count} "
             f"({share}{left_out}): {runs} — make every shot fill "
             "1080x1920 (crop and scale, or other picture; no blurred, mirrored or flat band)"
         )
-    elif bad and not edged:
+    elif bad and not any_edge:
         warns.append(
             f"the picture may not fill 9:16 on {len(bad)}/{len(body)} sampled frames: {runs}. They are soft above "
             "and below a detailed middle, with no straight edge found, so this is not a FAIL: look at those "
@@ -1387,7 +1418,8 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     opening = frame0_full_bleed_verdict(res["frame0_full_bleed"])
     res["fails"] += opening
     res["warns"] += frame0_full_bleed_note(res["frame0_full_bleed"])
-    # The whole Short, one frame a second. The end card is judged apart, only where the cut's meta names it.
+    # The whole Short, two frames a second (one a second for the straight-edge count). The end card is judged
+    # apart, only where the cut's meta names it.
     card = end_card_window(meta, dur)
     res["end_card_window_s"] = list(card) if card else None
     res["clip_full_bleed"] = clip_full_bleed(path, dur)
@@ -1541,9 +1573,11 @@ def main(argv: list[str] | None = None) -> int:
                 if clip:
                     runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in r.get("padded_stretches_s") or []) or "none"
                     card = r.get("end_card_window_s")
+                    on_sec = on_the_second(clip)
                     print(
-                        f"   full-bleed whole Short  {sum(1 for m in clip if m['kind'])}/{len(clip)} frames padded, "
-                        f"one a second  padded stretches: {runs}"
+                        f"   full-bleed whole Short  {sum(1 for m in on_sec if m['kind'])}/{len(on_sec)} frames padded "
+                        f"at one a second, {sum(1 for m in clip if m['kind'])}/{len(clip)} at "
+                        f"{'two' if sample_step_s(clip) == FB_CLIP_SOFT_STEP_S else 'one'} a second  padded stretches: {runs}"
                         + (f"  end card {card[0]:.1f}-{card[1]:.1f}s judged apart" if card else "  no end card named in meta")
                     )
                 for x in r["fails"]:
