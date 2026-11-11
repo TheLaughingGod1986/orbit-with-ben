@@ -228009,6 +228009,11 @@
           "at": "2026-11-11T19:49Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
+        },
+        {
+          "at": "2026-11-11T20:56Z",
+          "by": "claude",
+          "what": "step 3 of 4: the History of Science half is up as a held draft, history-of-science 548 (head cb2a5538; 327 tests pass there, all its checks pass). It merges only after Thu 12 Nov 19:13 London, after orbit-with-ben 833, after 542 and 509 (the two open pull requests that edit PIPELINE.json), and with its last commit regenerated from main on the day. Building the board from main and from that branch found one fault on the studio's side: progress since yesterday lost all fifteen films. Fixed on 833 (head 24509bad4): a past commit is read the way the channel's own settings said then. 833's whole suite passes on that head, 1,401 tests. Grok told on the desk, 6806849519"
         }
       ],
       "remaining_action": "After the window: merge 833; push the History of Science half as a pull request for Grok; then refresh channels/hos/channel.json",
