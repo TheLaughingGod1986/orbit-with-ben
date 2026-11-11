@@ -227494,18 +227494,18 @@
       "needs": "cloud",
       "repo": "hos",
       "body": "**Why now.** J2586 makes `P04:05_minute_second_c2`, but the runner has no path for it: `--retakes-j2583` never made c2, and `--retakes-j2626` (history-of-science #528) refuses it. If c1's third take passes its sheet (J2629) on Thu 12 Nov, c2 has only until 19:13 London. Building the path then would lose the window, so it is built now and waits.\n\n**Build, as one small pull request on history-of-science for Grok (the pattern of #528, after #528 is merged):** a third retake set in the runner's table, with its own flag and its own identity at **100** credits (the last of the 600 ceiling; Grok, desk 6798955014 point 2: c2 gets its own 100, only after c1 passes). One row: `P04:05_minute_second_c2`, take 2. It requires c2 to hold take 1 only, and c1 to hold a verified take 3 that is recorded KEEP in the film's evidence (the runner must read that, not assume it). The start frame is the last frame of c1 take 3, never take 1's or take 2's. It refuses every other row and never overwrites a take. The wording is the board's as it stands after #528 (Grok's motion line of 6792980991, the house line that names a ball already out).\n\nTests like #528's, the film's `check_all.sh`, the whole suite. No picture is made here: 0 credits. If c1's third take fails, this change is simply never used, and J2586 is closed by the Chief.",
-      "ref": "",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/529",
       "film": "009",
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-11-11T15:14Z",
-      "eta": "2026-11-11T17:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T15:12Z",
-      "result": "",
+      "result": "Waiting for: The change is written and open as history-of-science #529 (284 tests pass in the cloud; the path is shut until the Chief's KEEP is recorded). Grok's two notes differ on when it comes in (desk 6799526318: bring it now; 6799633198: only after c1 is KEEP), so he was asked for one line: merge now, or hold until c1's third take is KEEP (desk 6799732915). It waits on that answer.",
       "history": [
         {
           "at": "2026-11-11T15:12Z",
@@ -227516,9 +227516,19 @@
           "at": "2026-11-11T15:14Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T15:21Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: The change is written and open as history-of-science #529 (284 tests pass in the cloud; the path is shut until the Chief's KEEP is recorded). Grok's two notes differ on when it comes in (desk 6799526318: bring it now; 6799633198: only after c1 is KEEP), so he was asked for one line: merge now, or hold until c1's third take is KEEP (desk 6799732915). It waits on that answer."
+        },
+        {
+          "at": "2026-11-11T15:21Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
-      "remaining_action": "HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved",
+      "remaining_action": "When Grok merges #529: nothing runs. If c1's third take is KEEP (J2629), record that take's sha256 and the ruling in the scope file's parent_keep (one small pull request for Grok), then J2586 makes c2 with --retakes-j2630. If c1 fails, close #529 unmerged and close this job.",
       "due": "2026-11-12T11:00:00Z",
       "kind": "review",
       "plain": "Get the picture tool ready to remake the last gravity film shot, if the one before it passes",
@@ -227529,6 +227539,11 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "The change is written and open as history-of-science #529 (284 tests pass in the cloud; the path is shut until the Chief's KEEP is recorded). Grok's two notes differ on when it comes in (desk 6799526318: bring it now; 6799633198: only after c1 is KEEP), so he was asked for one line: merge now, or hold until c1's third take is KEEP (desk 6799732915). It waits on that answer.",
+        "check_at": "2026-11-12T09:00:00Z"
       }
     }
   ],
