@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2559 | mini | blocked | claudecode | – | Mac mini housekeeping after the always-on check: three scheduled agents that fail, leftover agents to unload, the browser agent's file into the repo | J2517 |
 | J2562 | mini | open | – | – | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
+| J2564 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
