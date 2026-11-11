@@ -229375,10 +229375,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T20:17Z",
+      "eta": "2026-11-11T21:47Z",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
       "result": "",
@@ -229387,6 +229387,11 @@
           "at": "2026-11-11T20:08Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-11T20:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Thread --floor 3000 into detached_command with tests; one pull request off main; park for the Chief",
@@ -229394,7 +229399,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Make the picture tool keep its 3,000-credit reserve when it is launched in the background",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T20:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2644",
