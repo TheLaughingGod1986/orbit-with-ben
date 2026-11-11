@@ -196043,10 +196043,10 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-11T14:51Z",
-      "eta": "2026-11-11T16:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:30Z",
       "result": "",
@@ -196235,6 +196235,11 @@
           "at": "2026-11-11T15:09Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Batch 2 running detached in tmux J2270-batch2-run2 (PID 16600); 4 of 5 batch-2 zero-credit stills already minted and archived on NAS (P04_06_dust_veil_t1.png, P05_08_all_at_once_t1.png, P05_09_robin_t1.png, P05_10_explorer_robin_t1.png); log ~/_desk/logs/J2270-batch2-run2.log; done ~/_desk/logs/J2270-batch2-run2.done; live balance 11290 verified"
+        },
+        {
+          "at": "2026-11-11T15:09Z",
+          "by": "gemini",
+          "what": "released: Batch 2 running detached in tmux J2270-batch2-run2 (PID 16600); log /Users/benjaminoats/_desk/logs/J2270-batch2-run2.log; done /Users/benjaminoats/_desk/logs/J2270-batch2-run2.done. Missing .done means still running (never start a second copy). Next run checks J2270-batch2-run2.done and ledger.jsonl, reconciles any policy refusal if needed, and runs batch 3 (2 rows: P5:13_explorer_turn, P5:14_end_hold) or yields at the batch boundary if a ready retake job is queued."
         }
       ],
       "remaining_action": "Verify J2270-batch2-run2.done exit code and canonical ledger, then run 2-row batch 3",
