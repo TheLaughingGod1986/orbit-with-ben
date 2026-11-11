@@ -227365,9 +227365,14 @@
           "at": "2026-11-11T15:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T15:13Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2627; reading HOS PR #527 branch and desk messages"
         }
       ],
-      "remaining_action": "HOS 009: confirm the apple shot's new end on a tenth-of-a-second strip (frames 96 to 110), and correct the record in #527",
+      "remaining_action": "Inspect history-of-science PR #527 branch and update P02:08 (0.00-4.50 s, f000-f107, no freeze) and P03:01 (RETAKE)",
       "due": "2026-11-12T12:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -227377,11 +227382,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-11T15:12Z",
+        "at": "2026-11-11T15:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2627; reading HOS PR #527 branch and desk messages"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2628",
