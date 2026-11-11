@@ -1,5 +1,5 @@
 {
-  "next_id": 2550,
+  "next_id": 2551,
   "jobs": [
     {
       "id": "J0001",
@@ -219771,6 +219771,37 @@
       "due": "2026-11-12T12:00:00Z",
       "kind": "assembly",
       "plain": "Make the Mars helicopter Short for Friday fill the screen all the way through, then offer you the fixed version",
+      "mini_only": true
+    },
+    {
+      "id": "J2550",
+      "title": "Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Three Orbit Shorts airing in the next two weeks have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. Voyager 1, `kKN8Ale42sE`, airs Tue 17 Nov 11:30: one shot, 4.6 to 6.9 s. The file on disk did not match the upload's sha256 (J2494 stopped on it; J2509 is checking the Studio copy). Work only from an export that matches what is on YouTube. If none does, say so and go to the next. Watch card due Sun 15 Nov 18:00 London.\n2. Muons, `rvug71d7Dqk`, airs Sat 21 Nov 11:30: its build script pads every segment. 0.0 to 3.0 s and 18.2 to 22.2 s are padded on both sides; 3.0 to 18.2 s has a blurred copy below the Earth's limb, which also counts. Rebuild the picture full-frame throughout. Watch card due Thu 19 Nov 18:00 London.\n3. ISS, `xdurJQcoiGM`, airs Wed 25 Nov 11:30: the last shot, 14.8 to 18.4 s. Watch card due Mon 23 Nov 18:00 London.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "ref": "J2545",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T00:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T00:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards",
+      "due": "2026-11-15T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Make the Voyager, Muons and Space Station Shorts fill the screen all the way through, then offer you the fixed versions",
       "mini_only": true
     }
   ],
