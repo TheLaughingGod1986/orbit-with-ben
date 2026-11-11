@@ -224641,13 +224641,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-11T11:22Z",
-      "eta": "2026-11-11T13:22Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:30Z",
-      "result": "",
+      "result": "parked for Chief: padding check matches J2562 on all thirteen (4 full-frame under both limits, 9 padded over, bSjWiCbB7pY only via the OK'd list), but cLKDiYP55J8 and xgx2lYHhYZM read FAIL under the Orbit copy on the Orbit-at-frame-0 lock alone (same on main; PASS under HOS #513), so the literal pass condition is not met. Rule on #817, and post jobs/reviews/J2594/DESK_POST.md (PR #818) on the HOS desk: the desk tool has no claudecode sender",
       "history": [
         {
           "at": "2026-11-11T10:30Z",
@@ -224693,6 +224693,11 @@
           "at": "2026-11-11T11:27Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: report in pull request #818; table posted on #817 (comment 6794583577); History of Science desk post not made (tool has no claudecode sender), text in DESK_POST.md"
+        },
+        {
+          "at": "2026-11-11T11:28Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: padding check matches J2562 on all thirteen (4 full-frame under both limits, 9 padded over, bSjWiCbB7pY only via the OK'd list), but cLKDiYP55J8 and xgx2lYHhYZM read FAIL under the Orbit copy on the Orbit-at-frame-0 lock alone (same on main; PASS under HOS #513), so the literal pass condition is not met. Rule on #817, and post jobs/reviews/J2594/DESK_POST.md (PR #818) on the HOS desk: the desk tool has no claudecode sender"
         }
       ],
       "remaining_action": "Chief rules whether two Orbit-lock verdicts on History of Science Shorts count against the pass, and posts the table on the History of Science desk",
