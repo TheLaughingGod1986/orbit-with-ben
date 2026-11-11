@@ -1,5 +1,5 @@
 {
-  "next_id": 2549,
+  "next_id": 2550,
   "jobs": [
     {
       "id": "J0001",
@@ -219741,6 +219741,37 @@
         "OWB:027",
         "OWB:006"
       ]
+    },
+    {
+      "id": "J2549",
+      "title": "Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. The Mars helicopter Short for Fri 13 Nov (`bSjWiCbB7pY`, cut `fri13_ingenuity_72_v06.mp4`, the one Ben OK'd on 10 Nov) is 12.1 s of 26.4 s a picture band over a blurred copy: 2.8 to 5.9 s and 9.9 to 18.9 s (the Navcam shots). Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\".\n\nTime is short. J2520 still puts v06 in the slot first (the copy scheduled now shows a raw video id on its end card). This job tries for a v07 with those two stretches full-frame. Ben's watch card is due Thu 12 Nov 18:00 London. If v07 is not ready and passed by Thu 12 Nov 12:00 London, stop: v06 airs, and say so.\n\nThe Navcam pictures are small. If they cannot fill the frame inside the upscale limit, use other real footage of the helicopter or of Mars from the film's own pool that can.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "ref": "J2545",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T00:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T00:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Make the Mars helicopter Short for Friday fill the screen all the way through, then offer you the fixed version",
+      "mini_only": true
     }
   ],
   "focus": [
