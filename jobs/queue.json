@@ -224021,10 +224021,10 @@
       "stage": "picture",
       "after": "J2585",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T11:15Z",
+      "eta": "2026-11-11T13:15Z",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
       "result": "",
@@ -224048,6 +224048,11 @@
           "at": "2026-11-11T10:12Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's rulings 6792980991 and 6792995872: cap 400 credits, four shots, one take each; this job makes three; the Explorer's shot is kept; the board change is its own job (J2585) and waits for Grok's PASS; J2270's batches run now and this job takes the lock at the next batch boundary after the PASS."
+        },
+        {
+          "at": "2026-11-11T11:15Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "One take of P03:01_really_falling_c1 under J2033's guards, after Grok reviews the wording",
@@ -224055,7 +224060,15 @@
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
       "mini_only": true,
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:15Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2584",
