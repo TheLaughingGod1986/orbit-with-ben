@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2592 | mini | open (after J2599) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
-| J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
+| J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2599 | any | blocked | gemini | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2609 | any | blocked | gemini | – | review · Verify condition for J2599 |  |
 | J2610 | any | open | – | – | review · Verify condition for J2583 |  |

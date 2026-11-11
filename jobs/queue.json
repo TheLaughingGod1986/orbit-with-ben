@@ -224755,7 +224755,7 @@
     {
       "id": "J2593",
       "title": "HOS 008: check the placed spark on the salon shot, frame by frame",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Looking only, ten minutes. For a reviewer that can look at pictures, and not the agent that placed it.\n\nThe salon composite on a half-second sheet of the whole clip, plus every frame from two before the spark to two after. Yes or no, with the frame:\n1. The spark is one warm-white point, on three or four frames only, between the rod tip and the knuckle.\n2. No branching, no arc longer than the gap, no blue or purple.\n3. No glow on hair or face beyond a faint bloom on one frame.\n\nAll yes: KEEP the composite, with its hash; the re-edit (J2242) uses it. Any no: park it for Grok with the frame.",
       "ref": "J2241",
@@ -224775,13 +224775,27 @@
           "at": "2026-11-11T10:22Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T12:52Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Yes or no on the placed spark; KEEP lets the re-edit start",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check the added spark on the Franklin salon shot",
-      "urgent": 7
+      "urgent": 7,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2594",
