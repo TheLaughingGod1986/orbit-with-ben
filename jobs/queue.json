@@ -229378,10 +229378,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T21:09Z",
+      "eta": "2026-11-11T23:09Z",
       "created_by": "claude",
       "created_at": "2026-11-11T18:14Z",
       "result": "",
@@ -229395,12 +229395,25 @@
           "at": "2026-11-11T18:24Z",
           "by": "claude",
           "what": "a lead from Gemini's J2638 report (thread 6803656294): at 18:01Z `refill.py` raced with `owb_stale_watch`'s 18:01:01Z `git pull --ff-only`, and the push was aborted on the check `parents != [commit, base]`; the commit stayed on the local main until `mini_repair.py` moved it to the rescue branch. Start there: two background jobs write in the same checkout at the same second. Check whether 07:05Z was the same pair."
+        },
+        {
+          "at": "2026-11-11T21:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the relay log around both times, name the cause, and fix it in a pull request with a test",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
-      "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless"
+      "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T21:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2641",
