@@ -225321,9 +225321,14 @@
           "at": "2026-11-11T11:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T11:42Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2605; checking J2597 result and locating start frames for visual inspection"
         }
       ],
-      "remaining_action": "Yes or no on try 2 of the start still; PASS lets the fourth take go",
+      "remaining_action": "Locate and inspect 02_salon_spark_t4_start_try2.png beside the old start frame 02_salon_spark_t1.png",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the second try at the starting picture for the Franklin salon shot",
@@ -225333,9 +225338,11 @@
         "of": 3,
         "at": "2026-11-11T11:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2605; checking J2597 result and locating start frames for visual inspection"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
