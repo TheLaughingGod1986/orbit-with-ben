@@ -227591,13 +227591,13 @@
       "stage": "picture",
       "after": "J2628",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T15:45Z",
-      "eta": "2026-11-11T17:45Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T14:51Z",
-      "result": "",
+      "result": "parked for Chief: P03:01_really_falling_c1 take 3 (cef66d0f83a6…) Q1 YES (f000-f189), Q2 NO (f012-f189 dark grey ball forms at curve tip; f036-f189 golden curve bends back and loops overhead), Q3 YES (f000-f189) -> FAIL/PARKED (no take 4; stretch of take 2's first second withdrawn per 6799165375); P04:05_minute_second_c1 take 3 (ae8f6dc6bd72…) Q1 YES (f000-f189), Q2 NO (f073-f102 second apple bounces ~80 px up at f073-f084, morphs green->red f074-f078, drops a second time f084-f094; 2 apples at end f096-f189), Q3 NO (f012-f189 Moon reverses backward along arc across whole clip; f073-f084 & f096-f101 upward apple bounce) -> FAIL/PARKED (no take 4; goes to edit-side option Chief brings Grok; c2 not made). Evidence PR: history-of-science #531, desk #180 comment 6800617391.",
       "history": [
         {
           "at": "2026-11-11T14:51Z",
@@ -227638,6 +227638,11 @@
           "at": "2026-11-11T15:59Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted J2629 sheet verdicts and sheets to HOS desk #180 (6800617391) and opened HOS PR #531; parking J2629 for Chief per ruling 6799165375"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: P03:01_really_falling_c1 take 3 (cef66d0f83a6…) Q1 YES (f000-f189), Q2 NO (f012-f189 dark grey ball forms at curve tip; f036-f189 golden curve bends back and loops overhead), Q3 YES (f000-f189) -> FAIL/PARKED (no take 4; stretch of take 2's first second withdrawn per 6799165375); P04:05_minute_second_c1 take 3 (ae8f6dc6bd72…) Q1 YES (f000-f189), Q2 NO (f073-f102 second apple bounces ~80 px up at f073-f084, morphs green->red f074-f078, drops a second time f084-f094; 2 apples at end f096-f189), Q3 NO (f012-f189 Moon reverses backward along arc across whole clip; f073-f084 & f096-f101 upward apple bounce) -> FAIL/PARKED (no take 4; goes to edit-side option Chief brings Grok; c2 not made). Evidence PR: history-of-science #531, desk #180 comment 6800617391."
         }
       ],
       "remaining_action": "Park J2629 for Chief with frame numbers and PR #531",
