@@ -221822,10 +221822,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T06:26Z",
-      "eta": "2026-11-11T08:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:24Z",
       "result": "",
@@ -221854,6 +221854,11 @@
           "at": "2026-11-11T06:40Z",
           "by": "macbook",
           "what": "step 0 of 3 done: 10/13 NAS Shorts pre-checked (all match expected); handing back to Mini for 3 Mini-local .mp4s + HOS desk"
+        },
+        {
+          "at": "2026-11-11T06:40Z",
+          "by": "macbook",
+          "what": "released: Mini-only media + HOS desk: 3 of 13 Shorts (kKN8Ale42sE, xdurJQcoiGM, rvug71d7Dqk) live only on Mini local disk (not studio-live/NAS archive) and HOS desk posting is Mini-only (AGENTS.md). Pre-checked the 10 NAS-reachable Shorts: all 4 full-frame Shorts pass (0 edge frames), and all 6 reachable padded Shorts still fail raw rule (>10% edge frames)."
         }
       ],
       "remaining_action": "Mini-only: run gate_shorts_open.py on all 13 .mp4 files (incl. Mini-local kKN8Ale42sE, xdurJQcoiGM, rvug71d7Dqk), open PR and post verdicts on HOS desk",
