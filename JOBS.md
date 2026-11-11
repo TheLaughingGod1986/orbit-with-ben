@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2584 | mini | claimed | gemini | 2026-11-11T16:27Z | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
+| J2584 | mini | blocked | gemini | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
