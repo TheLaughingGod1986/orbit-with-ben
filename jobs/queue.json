@@ -225990,9 +225990,14 @@
           "at": "2026-11-11T13:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T13:02Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2610 condition verification for J2583 (HOS:009)"
         }
       ],
-      "remaining_action": "Verify readiness: Chief to resolve the closed credit reservation before the three shots can run",
+      "remaining_action": "Inspect J2583 waiting condition, HOS runner/PRs and desk comments",
       "kind": "review",
       "recheck_of": "J2583",
       "due": "2026-11-11T13:51:58+00:00",
@@ -226009,11 +226014,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-11T13:01Z",
+        "at": "2026-11-11T13:02Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2610 condition verification for J2583 (HOS:009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2611",
