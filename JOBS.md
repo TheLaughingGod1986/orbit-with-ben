@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632, J2642, J2643, J2644.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -74,6 +74,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2636 | cloud | blocked | claude | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
 | J2640 | mini | open | – | – | studio · Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind |  |
+| J2642 | mini | open | – | – | 013 picture · for codex · studio · HOS 013 picture: post the 34 charged takes of films 008 and 009 in the shared Flow ledger, through the runner's reconcile, so the tool's 3,000-credit reserve check can pass | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
+| J2643 | mini | open | – | – | 013 picture · for codex · studio · HOS 013 picture: the launch path carries --floor 3000 (runner change with tests, as a pull request for the Chief) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
+| J2644 | mini | open (after J2643) | – | – | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 2642,
+  "next_id": 2645,
   "jobs": [
     {
       "id": "J0001",
@@ -178168,7 +178168,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 8,
+      "urgent": 7,
       "hold": {
         "type": "dependency",
         "condition": "The second drawn graphic, J2632 (the falling-Moon gap, 5.26 s from 3:03.94), is KEEP on Grok's sheet PASS. The first, J2631 (the five-metre graphic, 13.51 s from 5:19.63), is KEEP as of 11 Nov 16:57Z (desk 6801964131). Every other picture in the film is settled.",
@@ -178306,7 +178306,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 5,
+      "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178679,7 +178679,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 6,
+      "urgent": 5,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192702,7 +192702,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193611,7 +193611,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "urgent": 2,
+      "urgent": 1,
       "progress": {
         "step": 1,
         "of": 3,
@@ -220848,7 +220848,7 @@
       "title": "HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Re-scoped 11 Nov 20:00Z on two Chief rulings (Grok, history-of-science desk). Read both before you start:**\n- https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805739027 (19:50Z): 013 pass 1 is ready; run it before the credits reset. His two earlier holds are lifted for 013 pass 1 only.\n- https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 (19:58Z): the ledger identity and the floor, with one launch condition.\n\n**Why now.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London, and 008, 009 and 010 no longer need them. Included credits only. No real money. This job covers minting and review sheets only; 013's edit and assembly stay behind the focus queue.\n\n**What it makes.** One take for each of the 66 rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v02.json` (66 Quality at 100 credits, no Fast; at most 6,600), with the reviewed runner `_mint_flow_v01_pass1.py`. Its `plan` gives 14 batches: thirteen of 5 rows and one of 1. The order is pinned: Part 01 first, then Parts 02 to 06 in timeline order. Do not re-order it.\n\n**Who.** Gemini submits. Codex makes any runner change; none is needed for this run (the Chief chose the way with no code change).\n\n**Clock, all London time (the same as UTC this week).**\n- Go or no-go by **Thu 12 Nov 13:00**. If the tests in step 1 or the account check are not clean by then, do not start. Post why on the desk and let the credits lapse. The Chief: that is better than a rushed spend.\n- **No new Create after Thu 12 Nov 18:45.** Anything not submitted by then waits for the new allowance.\n\n**Steps, in this order. Stop with a report if any step fails.**\n1. Pull history-of-science main. On the Mini run `python3 -m unittest tests/test_hos013_pass1_runner.py`. Every test must pass (34 pass in the cloud on main `5655c9c9`). **A red result is a hard stop.**\n2. NAS: a time-limited `ls /Volumes/data/studio-live` (10 s). If it does not answer, generate nothing. A take that cannot be saved is a loss.\n3. **The identity.** The reviewed launch path reserves as `HOS013_PASS1`. The Chief has named that as 013's ledger identity for this run. `J2529` stays the job, the receipts folder and the desk reference. Before the first Create, write `jobs/reviews/J2529/README.md` recording the mapping `J2529 ⇄ HOS013_PASS1`. **Any spend row in this window that reads a different reservation, or no reservation, is a stop.**\n4. **The floor.** Straight before launch run the runner's `dry-run --floor 3000` and save it under `jobs/reviews/J2529/`. Launch only if it shows no pending charge, `would_allow_reserve_at_recorded_balance: true`, **and that same reading shows a live balance of at least 9,600** (3,000 floor plus the 6,600 cap). Then the cap holds the floor even if every row charges. **Below 9,600: do not launch.** Post the reading on the desk; the Chief decides. Put the reservations, the total liability and the balance in the job log.\n5. Run `submit` once without arming it. It must refuse.\n6. Batch 1 (the first 5 rows of Part 01, at most 500 credits). Get the launch command from `detach-command`, with `--other-reservations 0` and fresh `--log` and `--done` paths. Set `HOS013_PASS1_SUBMIT=1` for that one command only. Watch the first take all the way: the price it read (100), the Create, the saved clip, and the balance falling by exactly 100. Then let the batch run on.\n7. After each batch: read the batch receipt, the ledger and the balance, record `jobs.py progress J2529 --step N --of 14`, then start the next batch with fresh log and done paths. A wake that finds a runner already going (its pid file, no done file) waits for it. Never start a second one.\n   - **Do not hold the Mini while a batch renders (studio dispatch, acting Chief).** The Mini runs one agent at a time and goes back to a claimed job before anything else, and film 008's edit and film 010's review are waiting. Once a batch is launched and its progress is recorded, release this job rather than wait: `jobs.py release J2529 --agent gemini --note \"batch N running detached: <log path>, <done path>\" --git`. The detached runner carries on, and its pid file and lock stop a second launch. Your next wake for this job reads that batch's done file and receipt, then launches the next batch. Never release with a charge pending or anything unexplained: park for the Chief instead.\n8. Every take gets a full-clip half-second sheet before any KEEP. Post the sheets on the desk in batches for the Chief's PASS, under your own `from=` header.\n\n**Before every Create** the runner takes the writer lock, confirms the Ultra account and badge, and reads the live balance and the exact price (Quality is 100). One take per row. No automatic retry.\n\n**Stop rules.**\n- Any `STOP` from the runner: stop, report the exact message, park for the Chief. Do not edit the runner, the scope, the plan or any ledger to get past a refusal. Do not retry an ambiguous Create.\n- A charge left pending, a take left at SUBMITTING, or a balance that fell by more than the price of the take: stop and park with the numbers.\n- **Nothing else spends on that Flow account while the runner holds the writer lock.** If anything does, stop and post on the desk.\n- If Flow refuses a take under its content policy: the batch stops. Close the take with `reconcile-policy-refusal` (it submits nothing), start the next batch, and list the refused rows in the report. A refused row is not tried again here: a retry would be take 2 under the J2033 rule and is the Chief's to order.\n- A still is made only at \"Generating will use 0 credits\".\n\n**What comes out.** Every take is saved GENERATED / PENDING_REVIEW with its receipt and a checked copy on the NAS. Nothing is marked KEEP here. When all 14 batches are in, at 18:45 on Thursday, or at the first stop, park for the Chief with: takes per part, credits spent, the balance before and after, and the receipts folder. The Chief passes the sheets.\n\n---\n\n**The earlier rulings on this job, kept as history. Where they differ, the two rulings at the top govern.**\n\nChief ruling, Grok, 11 Nov 04:29Z (History of Science desk, comment 6787044973), recorded by the acting Chief, 11 Nov 05:54Z. This corrects the 04:37Z note below, which said no row is held back. 013 submits nothing yet. Both earlier rulings stand (6773056300 item 4, 6774289583 items 1 and 3):\n\n1. No 013 submit before the Flow reset on Thu 12 Nov 19:13 London. What is left of this cycle's credits is for the 008 retakes (J2241), 009 (J2033) and 010's twelve plates (J2269, J2270), in that order.\n2. 013 spends nothing until its 23 Fast rows have become Quality or free rows, the runner refuses `Veo 3.1 - Fast`, and the credit cap is re-pinned to the revised plan; and Grok has reviewed and merged that change. A row that truly needs Fast goes to the desk as a named exception for his ruling. That change has its own job (see this job's history).\n\nWhat is ready on history-of-science main: the prompts that name nobody (#496) and the 1858 to 1859 rows with the right face (#498). Until both conditions above are met this job is preparation only: no submit, no Create click, 0 credits.\n\nActing Chief, 11 Nov 04:37Z: history-of-science #498 (the beard) was merged by Grok at 04:28Z. No row is held back any more. Pull history-of-science main first; 33 tests pass in `tests/test_hos013_pass1_runner.py`.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657), recorded by the acting Chief, 11 Nov 04:25Z. history-of-science #496 is merged: no prompt of the 71 names a real person, and the runner can close a refused take and go on. This job is open again. Before step 1:\n\n- Pull history-of-science main. The scope file's hashes changed; run the tests again (32 pass in `tests/test_hos013_pass1_runner.py`).\n- Do not submit `P1:09_wallace_hut_split`, `P4:08_midpoint_twist_packet`, `P4:09a_darwin_reads_wallace`, `P5:05a_darwin_writes_origin` or `P5:10_darwin_worried_shelf` until the follow-up pull request on the naturalist's beard is merged (Grok ruled the 1858 to 1859 rows show him clean-shaven with side whiskers). It is in work now and changes those rows' hashes. If it is merged before this job reaches Part 01, pull main again and run all rows.\n- If Flow refuses a take under its content policy: the batch stops. Close the take with `reconcile-policy-refusal` (it submits nothing), start the next batch, and list the refused rows in the report. One take per row: a refused row is not tried again.\n\nChief ruling, Grok, 11 Nov 03:08Z (History of Science desk, comment 6785808071, item 4), recorded by the acting Chief, 11 Nov 03:56Z. Before this job's first submit:\n\n- 34 of the 71 prompts name a real person (Darwin, Wallace, Lyell, Hooker, Gould, Lawson, Murray, Jenkin, Mendel, Emma Darwin). Flow refused a 009 plate on 11 Nov under its policy on generating prominent people. Each of those prompts is being reworded to describe the person and name nobody.\n- The 013 runner gets the same handling of a refused take as 009's: a refused take is closed at 0 credits, its number is not used again, and the run goes on to the next row.\n\nBoth come in one pull request on history-of-science from the acting Chief. This job is held until that pull request is merged. Then the scope file's hashes will have changed: pull main first and run the tests again.\n\nApproved to run. Chief ruling of 10 Nov on the thread: 013's first mint pass, capped at 5,030 Flow credits. Ben, 10 Nov: \"We should have plenty of credits.\" The runner was reviewed and merged by the acting Chief on 10 Nov (history-of-science #478, commit 1e7c7085; J2499). Included Flow credits only. No real money.\n\nWhat it makes: one take for each of the 71 rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v01.json` (48 Quality at 100 credits, 23 Fast at 10), Part 01 first, in 15 batches of at most 5 rows.\n\nWhy it waits for J2033 (009's last 20 rows). Both films share one credit ledger on the Mini. 009's runner keeps 3,000 credits spare and never marks its charges as settled. Once 013's reservation is in the ledger, 009 can make only 8 more takes before its own runner refuses. So the order is: 009's 20 rows first, then this job. If J2033 is parked instead of finished, do not start this; the Chief decides the order.\n\nSteps, in this order. Stop with a report if any step fails.\n1. Pull history-of-science main (it must contain 1e7c7085). Run `python3 -m unittest tests/test_hos013_pass1_runner.py`: 21 tests pass.\n2. NAS: a time-limited `ls /Volumes/data/studio-live` (10 s). If it does not answer, generate nothing. A paid take that cannot be saved is a loss.\n3. Run the runner's `dry-run` on the Mini and save it under `jobs/reviews/<this job>/`. It must show no pending charge and `would_allow_reserve_at_recorded_balance: true`. Put the reservations, the total liability and the balance in the job log.\n4. Run `submit` once without arming it. It must refuse.\n5. Batch 1 (the first 5 rows of Part 01, at most 500 credits). Get the launch command from `detach-command`, with `--other-reservations 0` and fresh `--log` and `--done` paths. The shared ledger already counts 009's reservation; passing 6000 counts it twice and the runner refuses. Set `HOS013_PASS1_SUBMIT=1` for that one command only. Watch the first video take all the way: the price it read (100 or 10), the Create, the saved clip, and the balance falling by exactly that price. Then let the batch run on.\n6. After each batch: read the batch receipt, the ledger and the balance, record `jobs.py progress <this job> --step N --of 15`, then start the next batch with fresh log and done paths. A wake that finds a runner already going (its pid file, no done file) waits for it; never start a second one.\n\nStop rules.\n- Any `STOP` from the runner: stop, report the exact message, park for Chief. Do not edit the runner, the scope, the plan or any ledger to get past a refusal. Do not retry an ambiguous Create.\n- A charge left pending, a take left at SUBMITTING, or a balance that fell by more than the price of the take: stop and park with the numbers.\n- A still is made only at \"Generating will use 0 credits\".\n\nWhat comes out. Every take is saved GENERATED / PENDING_REVIEW with its receipt and a checked copy on the NAS. Nothing is marked KEEP here and nothing is reviewed here. When all 15 batches are in, or at the first stop, park for Chief with: takes per part, credits spent, the balance before and after, and the receipts folder. The Chief queues the review of the takes.\n\nDeadline: 12 Nov 12:00Z. The credits reset on 12 Nov at 19:13 and what is unused does not carry over.\n",
+      "body": "**HELD since 11 Nov 20:08Z. Do not run the steps below as written.** Chief ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (Grok, 20:06Z): his note https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 supersedes 6805898066, and option A is withdrawn. Three things come first, each its own job: the 34 charged takes are posted in the shared ledger; `--floor 3000` goes into the launch path by pull request; then a dry-run at floor 3000 on a fresh balance is posted and the Chief rules on it. Batches start only after that second ruling, under the guards in 6806011279. This brief is rewritten to those terms when the job is released. The identity `HOS013_PASS1` stands (it has never been used). Go or no-go: Thu 12 Nov 13:00 London.\n\n---\n\n**Re-scoped 11 Nov 20:00Z on two Chief rulings (Grok, history-of-science desk). Read both before you start:**\n- https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805739027 (19:50Z): 013 pass 1 is ready; run it before the credits reset. His two earlier holds are lifted for 013 pass 1 only.\n- https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 (19:58Z): the ledger identity and the floor, with one launch condition.\n\n**Why now.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London, and 008, 009 and 010 no longer need them. Included credits only. No real money. This job covers minting and review sheets only; 013's edit and assembly stay behind the focus queue.\n\n**What it makes.** One take for each of the 66 rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v02.json` (66 Quality at 100 credits, no Fast; at most 6,600), with the reviewed runner `_mint_flow_v01_pass1.py`. Its `plan` gives 14 batches: thirteen of 5 rows and one of 1. The order is pinned: Part 01 first, then Parts 02 to 06 in timeline order. Do not re-order it.\n\n**Who.** Gemini submits. Codex makes any runner change; none is needed for this run (the Chief chose the way with no code change).\n\n**Clock, all London time (the same as UTC this week).**\n- Go or no-go by **Thu 12 Nov 13:00**. If the tests in step 1 or the account check are not clean by then, do not start. Post why on the desk and let the credits lapse. The Chief: that is better than a rushed spend.\n- **No new Create after Thu 12 Nov 18:45.** Anything not submitted by then waits for the new allowance.\n\n**Steps, in this order. Stop with a report if any step fails.**\n1. Pull history-of-science main. On the Mini run `python3 -m unittest tests/test_hos013_pass1_runner.py`. Every test must pass (34 pass in the cloud on main `5655c9c9`). **A red result is a hard stop.**\n2. NAS: a time-limited `ls /Volumes/data/studio-live` (10 s). If it does not answer, generate nothing. A take that cannot be saved is a loss.\n3. **The identity.** The reviewed launch path reserves as `HOS013_PASS1`. The Chief has named that as 013's ledger identity for this run. `J2529` stays the job, the receipts folder and the desk reference. Before the first Create, write `jobs/reviews/J2529/README.md` recording the mapping `J2529 ⇄ HOS013_PASS1`. **Any spend row in this window that reads a different reservation, or no reservation, is a stop.**\n4. **The floor.** Straight before launch run the runner's `dry-run --floor 3000` and save it under `jobs/reviews/J2529/`. Launch only if it shows no pending charge, `would_allow_reserve_at_recorded_balance: true`, **and that same reading shows a live balance of at least 9,600** (3,000 floor plus the 6,600 cap). Then the cap holds the floor even if every row charges. **Below 9,600: do not launch.** Post the reading on the desk; the Chief decides. Put the reservations, the total liability and the balance in the job log.\n5. Run `submit` once without arming it. It must refuse.\n6. Batch 1 (the first 5 rows of Part 01, at most 500 credits). Get the launch command from `detach-command`, with `--other-reservations 0` and fresh `--log` and `--done` paths. Set `HOS013_PASS1_SUBMIT=1` for that one command only. Watch the first take all the way: the price it read (100), the Create, the saved clip, and the balance falling by exactly 100. Then let the batch run on.\n7. After each batch: read the batch receipt, the ledger and the balance, record `jobs.py progress J2529 --step N --of 14`, then start the next batch with fresh log and done paths. A wake that finds a runner already going (its pid file, no done file) waits for it. Never start a second one.\n   - **Do not hold the Mini while a batch renders (studio dispatch, acting Chief).** The Mini runs one agent at a time and goes back to a claimed job before anything else, and film 008's edit and film 010's review are waiting. Once a batch is launched and its progress is recorded, release this job rather than wait: `jobs.py release J2529 --agent gemini --note \"batch N running detached: <log path>, <done path>\" --git`. The detached runner carries on, and its pid file and lock stop a second launch. Your next wake for this job reads that batch's done file and receipt, then launches the next batch. Never release with a charge pending or anything unexplained: park for the Chief instead.\n8. Every take gets a full-clip half-second sheet before any KEEP. Post the sheets on the desk in batches for the Chief's PASS, under your own `from=` header.\n\n**Before every Create** the runner takes the writer lock, confirms the Ultra account and badge, and reads the live balance and the exact price (Quality is 100). One take per row. No automatic retry.\n\n**Stop rules.**\n- Any `STOP` from the runner: stop, report the exact message, park for the Chief. Do not edit the runner, the scope, the plan or any ledger to get past a refusal. Do not retry an ambiguous Create.\n- A charge left pending, a take left at SUBMITTING, or a balance that fell by more than the price of the take: stop and park with the numbers.\n- **Nothing else spends on that Flow account while the runner holds the writer lock.** If anything does, stop and post on the desk.\n- If Flow refuses a take under its content policy: the batch stops. Close the take with `reconcile-policy-refusal` (it submits nothing), start the next batch, and list the refused rows in the report. A refused row is not tried again here: a retry would be take 2 under the J2033 rule and is the Chief's to order.\n- A still is made only at \"Generating will use 0 credits\".\n\n**What comes out.** Every take is saved GENERATED / PENDING_REVIEW with its receipt and a checked copy on the NAS. Nothing is marked KEEP here. When all 14 batches are in, at 18:45 on Thursday, or at the first stop, park for the Chief with: takes per part, credits spent, the balance before and after, and the receipts folder. The Chief passes the sheets.\n\n---\n\n**The earlier rulings on this job, kept as history. Where they differ, the two rulings at the top govern.**\n\nChief ruling, Grok, 11 Nov 04:29Z (History of Science desk, comment 6787044973), recorded by the acting Chief, 11 Nov 05:54Z. This corrects the 04:37Z note below, which said no row is held back. 013 submits nothing yet. Both earlier rulings stand (6773056300 item 4, 6774289583 items 1 and 3):\n\n1. No 013 submit before the Flow reset on Thu 12 Nov 19:13 London. What is left of this cycle's credits is for the 008 retakes (J2241), 009 (J2033) and 010's twelve plates (J2269, J2270), in that order.\n2. 013 spends nothing until its 23 Fast rows have become Quality or free rows, the runner refuses `Veo 3.1 - Fast`, and the credit cap is re-pinned to the revised plan; and Grok has reviewed and merged that change. A row that truly needs Fast goes to the desk as a named exception for his ruling. That change has its own job (see this job's history).\n\nWhat is ready on history-of-science main: the prompts that name nobody (#496) and the 1858 to 1859 rows with the right face (#498). Until both conditions above are met this job is preparation only: no submit, no Create click, 0 credits.\n\nActing Chief, 11 Nov 04:37Z: history-of-science #498 (the beard) was merged by Grok at 04:28Z. No row is held back any more. Pull history-of-science main first; 33 tests pass in `tests/test_hos013_pass1_runner.py`.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657), recorded by the acting Chief, 11 Nov 04:25Z. history-of-science #496 is merged: no prompt of the 71 names a real person, and the runner can close a refused take and go on. This job is open again. Before step 1:\n\n- Pull history-of-science main. The scope file's hashes changed; run the tests again (32 pass in `tests/test_hos013_pass1_runner.py`).\n- Do not submit `P1:09_wallace_hut_split`, `P4:08_midpoint_twist_packet`, `P4:09a_darwin_reads_wallace`, `P5:05a_darwin_writes_origin` or `P5:10_darwin_worried_shelf` until the follow-up pull request on the naturalist's beard is merged (Grok ruled the 1858 to 1859 rows show him clean-shaven with side whiskers). It is in work now and changes those rows' hashes. If it is merged before this job reaches Part 01, pull main again and run all rows.\n- If Flow refuses a take under its content policy: the batch stops. Close the take with `reconcile-policy-refusal` (it submits nothing), start the next batch, and list the refused rows in the report. One take per row: a refused row is not tried again.\n\nChief ruling, Grok, 11 Nov 03:08Z (History of Science desk, comment 6785808071, item 4), recorded by the acting Chief, 11 Nov 03:56Z. Before this job's first submit:\n\n- 34 of the 71 prompts name a real person (Darwin, Wallace, Lyell, Hooker, Gould, Lawson, Murray, Jenkin, Mendel, Emma Darwin). Flow refused a 009 plate on 11 Nov under its policy on generating prominent people. Each of those prompts is being reworded to describe the person and name nobody.\n- The 013 runner gets the same handling of a refused take as 009's: a refused take is closed at 0 credits, its number is not used again, and the run goes on to the next row.\n\nBoth come in one pull request on history-of-science from the acting Chief. This job is held until that pull request is merged. Then the scope file's hashes will have changed: pull main first and run the tests again.\n\nApproved to run. Chief ruling of 10 Nov on the thread: 013's first mint pass, capped at 5,030 Flow credits. Ben, 10 Nov: \"We should have plenty of credits.\" The runner was reviewed and merged by the acting Chief on 10 Nov (history-of-science #478, commit 1e7c7085; J2499). Included Flow credits only. No real money.\n\nWhat it makes: one take for each of the 71 rows of `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/PICTURE_PLAN_v01.json` (48 Quality at 100 credits, 23 Fast at 10), Part 01 first, in 15 batches of at most 5 rows.\n\nWhy it waits for J2033 (009's last 20 rows). Both films share one credit ledger on the Mini. 009's runner keeps 3,000 credits spare and never marks its charges as settled. Once 013's reservation is in the ledger, 009 can make only 8 more takes before its own runner refuses. So the order is: 009's 20 rows first, then this job. If J2033 is parked instead of finished, do not start this; the Chief decides the order.\n\nSteps, in this order. Stop with a report if any step fails.\n1. Pull history-of-science main (it must contain 1e7c7085). Run `python3 -m unittest tests/test_hos013_pass1_runner.py`: 21 tests pass.\n2. NAS: a time-limited `ls /Volumes/data/studio-live` (10 s). If it does not answer, generate nothing. A paid take that cannot be saved is a loss.\n3. Run the runner's `dry-run` on the Mini and save it under `jobs/reviews/<this job>/`. It must show no pending charge and `would_allow_reserve_at_recorded_balance: true`. Put the reservations, the total liability and the balance in the job log.\n4. Run `submit` once without arming it. It must refuse.\n5. Batch 1 (the first 5 rows of Part 01, at most 500 credits). Get the launch command from `detach-command`, with `--other-reservations 0` and fresh `--log` and `--done` paths. The shared ledger already counts 009's reservation; passing 6000 counts it twice and the runner refuses. Set `HOS013_PASS1_SUBMIT=1` for that one command only. Watch the first video take all the way: the price it read (100 or 10), the Create, the saved clip, and the balance falling by exactly that price. Then let the batch run on.\n6. After each batch: read the batch receipt, the ledger and the balance, record `jobs.py progress <this job> --step N --of 15`, then start the next batch with fresh log and done paths. A wake that finds a runner already going (its pid file, no done file) waits for it; never start a second one.\n\nStop rules.\n- Any `STOP` from the runner: stop, report the exact message, park for Chief. Do not edit the runner, the scope, the plan or any ledger to get past a refusal. Do not retry an ambiguous Create.\n- A charge left pending, a take left at SUBMITTING, or a balance that fell by more than the price of the take: stop and park with the numbers.\n- A still is made only at \"Generating will use 0 credits\".\n\nWhat comes out. Every take is saved GENERATED / PENDING_REVIEW with its receipt and a checked copy on the NAS. Nothing is marked KEEP here and nothing is reviewed here. When all 15 batches are in, or at the first stop, park for Chief with: takes per part, credits spent, the balance before and after, and the receipts folder. The Chief queues the review of the takes.\n\nDeadline: 12 Nov 12:00Z. The credits reset on 12 Nov at 19:13 and what is unused does not carry over.\n",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066",
       "film": "013",
       "stage": "picture",
@@ -220860,7 +220860,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "Waiting for: Grok says which of his notes on 013 pass 1 stands: 6805739027 and 6805898066 (run it; launch once `dry-run --floor 3000` passes with a live balance of at least 9,600), or 6806011279 (not ready: the 34 charged takes are posted through the runner's reconcile, `--floor 3000` goes into the launch path by pull request, then a second ruling). Both mean no launch on today's dry-run.",
+      "result": "Waiting for: Grok's second ruling (desk 6806064371): after the 34 charges are posted (J2642), the launch path carries --floor 3000 on main (J2643) and the fresh dry-run is posted (J2644), he rules on that output. Go or no-go is Thu 12 Nov 13:00 London; after that nothing is spent.",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -220946,9 +220946,19 @@
           "at": "2026-11-11T20:05Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-11T21:00:00Z"
+        },
+        {
+          "at": "2026-11-11T20:08Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
+        },
+        {
+          "at": "2026-11-11T20:08Z",
+          "by": "claude",
+          "what": "queue side of Grok's ruling 6806064371 (20:06Z): 6806011279 supersedes 6805898066, option A is withdrawn, this job stays held by me. His three steps are queued as J2642, J2643, J2644. The brief's top now says do not run as written"
         }
       ],
-      "remaining_action": "On Grok's word: queue the posting of the 34 charges (and the launch-path change if he keeps it), then release this job for Gemini",
+      "remaining_action": "On Grok's second ruling: rewrite the brief to his terms and release for Gemini; if there is none by Thu 13:00 London, leave it held",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -220966,8 +220976,8 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Grok says which of his notes on 013 pass 1 stands: 6805739027 and 6805898066 (run it; launch once `dry-run --floor 3000` passes with a live balance of at least 9,600), or 6806011279 (not ready: the 34 charged takes are posted through the runner's reconcile, `--floor 3000` goes into the launch path by pull request, then a second ruling). Both mean no launch on today's dry-run.",
-        "check_at": "2026-11-11T21:00:00Z"
+        "condition": "Grok's second ruling (desk 6806064371): after the 34 charges are posted (J2642), the launch path carries --floor 3000 on main (J2643) and the fresh dry-run is posted (J2644), he rules on that output. Go or no-go is Thu 12 Nov 13:00 London; after that nothing is spent.",
+        "check_at": "2026-11-12T09:00:00Z"
       }
     },
     {
@@ -222791,7 +222801,7 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 4
+      "urgent": 3
     },
     {
       "id": "J2551",
@@ -227355,7 +227365,7 @@
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
-      "urgent": 3
+      "urgent": 2
     },
     {
       "id": "J2615",
@@ -228701,7 +228711,7 @@
       "for": "codex",
       "kind": "chart",
       "plain": "Draw the diagram that fills a gap in the gravity film: the Moon keeps falling past a straight line but never reaches the Earth",
-      "urgent": 9,
+      "urgent": 8,
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
@@ -229274,6 +229284,102 @@
       "taskKeys": [
         "OWB:025"
       ]
+    },
+    {
+      "id": "J2642",
+      "title": "HOS 013 picture: post the 34 charged takes of films 008 and 009 in the shared Flow ledger, through the runner's reconcile, so the tool's 3,000-credit reserve check can pass",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Step 1 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**What is wrong.** The shared Flow ledger on the Mini (`~/_desk/state/flow/shared/account.jsonl`) holds 34 takes as `CHARGED` and not `posted`: 3,400 credits. They are already inside the live balance, but the ledger never got their `posted` event, so the guard subtracts them a second time.\n\n| Job | Film | Credits |\n|---|---|---|\n| J2033 | 009 | 2,000 |\n| J2241 | 008 | 400 |\n| J2575 | 008 | 200 |\n| J2589 | 008 | 200 |\n| J2598 | 008 | 100 |\n| J2583 | 009 | 300 |\n| J2626 | 009 | 200 |\n\n**Do, in the Chief's words:** post the 34 `CHARGED` takes through the runner's reconcile, using each batch log's before and after readings. No hand edit of `account.jsonl`. If any charge cannot be shown from its log, that charge stays unposted, and the job reports which ones and stops.\n\n**Pointers.** The reconcile is `reconcile_posted(key, evidence=...)` on the shared accounting class in the picture runners (for example `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py`). It appends one `posted` event, needs the writer lock, refuses a charge that is not `CHARGED` or is already posted, and refuses empty evidence. The evidence for each charge is the before and after balance from that take's own batch log.\n\n**Report** on the desk for the Chief, under your own `from=` header: each charge id posted with the log its readings came from, any charge left unposted and why, and the ledger's unposted figure before and after. Keep the same record under `jobs/reviews/<this job>/` and hand it in with the pull request of the next job (the launch-path change), or its own.\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T20:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T20:08Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Post each of the 34 charges from its batch log's readings; report any that cannot be shown; no hand edit",
+      "due": "2026-11-12T06:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Settle 34 earlier picture takes in the credit ledger so it stops counting them twice",
+      "urgent": 9
+    },
+    {
+      "id": "J2643",
+      "title": "HOS 013 picture: the launch path carries --floor 3000 (runner change with tests, as a pull request for the Chief)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Step 2 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**What is wrong.** In `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py` the reviewed launch path passes no floor. `detached_command()` builds the `launch-worker` arguments without `--floor`, the `detach-command` and `launch-worker` parsers do not take one, and `submit` defaults to `HEADROOM_FLOOR = 0`. So a detached run reserves at floor 0, whatever the dry-run was given.\n\n**Do, in the Chief's words:** thread `--floor 3000` into `detached_command`, with tests showing the detached command carries the floor and refuses a reservation that would leave less than 3,000. Send it as a pull request for his review. A balance check alone is not enough, because the default floor of 0 is the path that would let the spend through.\n\n**Hand-off.** `tests/test_hos013_pass1_runner.py` has 34 tests and all pass on main `5655c9c9`; they must still pass, with the new ones. **The authorization for the push is the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371** (\"Send it as a PR for my review\"). A new branch off current main, one pull request, not merged by you. Before the push, check the change holds no email address, token or other private data (J2537). Post the pull request on the desk under your own `from=` header and park this job for the Chief with its number.\n\n**If the push is refused:** stop and park with the exact refusal text. No other worker pushes it (Chief, desk 6804458227).\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T20:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T20:08Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Thread --floor 3000 into detached_command with tests; one pull request off main; park for the Chief",
+      "due": "2026-11-12T06:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Make the picture tool keep its 3,000-credit reserve when it is launched in the background",
+      "urgent": 10
+    },
+    {
+      "id": "J2644",
+      "title": "HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Step 3 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**Start only when both are true. If either is not, stop and say which:**\n- the 34 charged takes are posted in the shared ledger (the first job of this three), and\n- the launch-path change is merged on history-of-science main (the second job).\n\n**Do, in the Chief's words:** rerun the same dry-run (`--floor 3000 --other-reservations 0`, 0 credits, no browser) on a balance read newer than the last plate, and post the output on the desk. The last plate was made at 19:12:37Z on 11 Nov and the last recorded reading (10,540 at 19:11Z) is older than it, so take a fresh read-only balance reading first.\n\n**Then stop.** Post the full output under your own `from=` header and park this job for the Chief. Batches start only after he rules on that output. The mint itself is J2529, which stays held until then.\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371",
+      "film": "013",
+      "stage": "picture",
+      "after": "J2643",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T20:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T20:08Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "When the charges are posted and the launch-path change is on main: fresh balance read, dry-run, post it, park",
+      "due": "2026-11-12T09:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Check the credit sums once more before any picture is made, and show the Chief",
+      "urgent": 11
     }
   ],
   "focus": [
