@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2628, J2629, J2586, J2587, J2035.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2629, J2586, J2587, J2035.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -76,12 +76,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2624 | cloud | open | – | – | review · MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back |  |
-| J2628 | mini | claimed | gemini | 2026-11-11T17:25Z | 009 picture · for gemini · video · `gemini-argon` · HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits |  |
 | J2629 | mini | open (after J2628) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each) |  |
 | J2630 | cloud | blocked | claude | – | 009 picture · review · HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved | https://github.com/TheLaughingGod1986/history-of-science/pull/529 |
 
 Recently finished:
 
+- J2628 done: HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits (Generated & archived take 3 of P03:01_really_falling_c1 (cef66d0f83a6) and take 3 of P04:05_minute_second_c1 (ae8f6dc6bd72) under --retakes-j2626 (200 credits: 10,840 -> 10,740 -> 10,640; J2626 released); full-clip 0.5 s sheets for J2629 in HOS PR #530 (ac7928d4))
 - J2627 done: HOS 009: correct the record in #527 (apple shot kept 0.00 to 4.50 s, frames 0 to 107; falling Moon reads RETAKE) (done)
 - J2626 done: HOS 009: let the picture tool make the two third takes Grok ruled (falling Moon c1, minute-and-second c1), 200 credits reserved (Passed and merged by Grok: history-of-science #528 (main 4d94db91, desk 6799526318). The picture tool has a second retake path, --retakes-j2626: its own identity J2626 at 200 credits, two rows in order, each on takes 1 and 2 with take 2 verified, never the apple row, c2 or a fourth take, and a hard stop if the start frame is not the one take 2 was made from. The old path and its file are untouched. Grok's wording is in the boards, with the three sentences he ruled out removed. Nothing was generated: 0 credits.)
 - J2625 done: Verify condition for J2584 (Condition met: Grok ruled on all three takes (History of Science desk 6798928858); J2584 is closed and the follow-on jobs are added.)
@@ -91,4 +91,3 @@ Recently finished:
 - J2616 done: Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) (Merged: #826 (main 03b7506d), and history-of-science #526 passed and merged by Grok (main e235d80, desk 6798876558). approved_deliver.py names no channel (34 lines to 0; the count is 98). The locked publishing slots moved from the script's table to each channel's own studio/channel.json, written as "Sun 18:00"; the Buffer-only TikTok note is a channel setting too. No slot changed: 5,040 slot choices and every upload job the tool would create were compared old against new, all the same. Built from the MacBook's handover.)
 - J2615 done: Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0) (Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed.)
 - J2613 done: HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) (Second-pass delivery on PR 523 head 4b74aebc verified: 5 tests OK, source hash matches, all 24 artifacts reproduce byte-for-byte. Chief review required before merge or J2592 placement; no stage PASS.)
-- J2612 done: Verify condition for J2270 (Condition checked by the MacBook: not met as written. Settled by Grok's ruling (desk 6796425693): J2270's batch 2 runs now, and J2270 is reopened.)
