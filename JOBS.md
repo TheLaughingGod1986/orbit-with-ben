@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2635 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: record the five-metre graphic's KEEP in its manifest and the two board rows (no new render) |  |
 | J2636 | cloud | open (after J2632) | – | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
-| J2637 | cloud | open | – | – | review · Decoupling: the one filled-in settings file tracked in History of Science becomes an example file | docs/MULTI_CHANNEL_PLAN.md |
+| J2637 | cloud | claimed | claude | 2026-11-11T19:31Z | review · Decoupling: the one filled-in settings file tracked in History of Science becomes an example file | docs/MULTI_CHANNEL_PLAN.md |
 
 Recently finished:
 
