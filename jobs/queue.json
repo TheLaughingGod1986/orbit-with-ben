@@ -219675,6 +219675,11 @@
           "at": "2026-11-11T02:00Z",
           "by": "claude",
           "what": "acting Chief: held until Wed 11 Nov 20:00 London. A full-screen version of this Short (J2549) goes to Ben this morning; if he OKs it before then, this swap carries that cut and the slot is swapped once, not twice. With no OK by then, v06 goes in as approved. The Short airs Fri 13 Nov 11:30 either way."
+        },
+        {
+          "at": "2026-11-11T12:52Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept",
@@ -219695,7 +219700,16 @@
         "okAt": "2026-11-10T16:57Z",
         "okRef": "board tick OWB-J2510.2, 10 Nov 16:22Z"
       },
-      "not_before": "2026-11-11T20:00Z"
+      "not_before": "2026-11-11T20:00Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2521",
