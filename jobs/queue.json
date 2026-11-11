@@ -223222,9 +223222,14 @@
           "at": "2026-11-11T09:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T09:00Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Make salon take 2 and points take 2 with the tightened prompts, guarded, 200 credits at most",
+      "remaining_action": "Check Flow credit records, generate the two approved retakes, and prepare evidence for review",
       "due": "2026-11-12T12:00:00Z",
       "kind": "video",
       "plain": "Remake two shots for the Franklin film that came out wrong (a spark far too big, a stray wire)",
@@ -223234,10 +223239,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-11T09:00Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2576",
