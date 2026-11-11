@@ -1415,12 +1415,12 @@
       "line": "Pluto, airs Sun 13 Dec 18:00. The full film is built (master v01) and its voice-over records are filed. Next: the opening is re-cut to the new first-30-seconds rule (J2438), then the long and its two Shorts are reviewed by watching and listening before they come to you (J2383)."
     },
     "HOS:013": {
-      "updated": "2026-11-11T21:29Z",
-      "mood": "fixing",
+      "updated": "2026-11-11T22:58Z",
+      "mood": "good",
       "timing": "Airs Thu 17 Dec 18:00 London. Two Shorts follow the long.",
       "line": "Darwin & Wallace. Airs Thu 17 Dec. Voice-overs locked. The picture tool for its plates is built and tested. On 11 Nov its prompts were reworded so none names a real person (the picture tool refuses those), and the scenes of 1858 and 1859 now show Darwin as he looked then, clean-shaven with side whiskers. The Chief ruled that no scene uses the cheaper, lower-quality setting. He first held the plates until after the credits reset on Thu 12 Nov 19:13, then on 11 Nov ruled they are made before it, on credits that would otherwise expire. The revised plan is written: 66 full-quality plates and 28 free scenes, about 6,600 credits on first tries. The Chief asked for one scene to be changed (a route map in place of a portrait) and will then accept it (J2558).",
       "done": "Script v02, long voice-over (locked v03a), shot list v01, Shorts scripts v02 and their voice-overs (accepted 10 Nov), picture plan v01 (passed 10 Nov), prompts that name nobody (11 Nov).",
-      "holdup": "About 10,400 credits from this month's allowance would expire unused on Thu 12 Nov 19:13, and nothing else needs them now, so the Chief ruled that film 013's 66 plates are made with them, at no cost in cash. Nothing is spent yet. The picture tool's own safety check stopped it: the credit ledger counted 34 earlier takes (3,400 credits) as unsettled, so the 3,000-credit reserve looked too thin. Two of the three fixes are done. The tool now keeps its 3,000-credit reserve however it is started. And 26 of the 34 takes are settled in the ledger; eight are left for the Chief to rule on (seven have a bookkeeping entry between their two balance readings, and one was never charged). The third step, checking the sums again on a fresh balance, is running now. The Chief rules once more before the first plate. If that is not done by Thu 13:00 London, nothing is spent and the credits lapse. No new plate is begun after Thu 18:45.",
+      "holdup": "The Chief ruled go on the evening of 11 Nov: the credit sums passed their check, with the 3,000-credit reserve kept. The 66 plates are being made now, in 14 small batches, on about 10,400 credits that would otherwise expire on Thu 12 Nov 19:13. No cash is spent. The tool reads the live balance before every plate and stops if the reserve would be touched. A plate that fails is reported, not re-made. No batch is started after Thu 13:00 London. Every plate then gets a review sheet before it is kept. Separately, the timing check on the rough cut did not pass: some picture changes fall in the middle of a word, so the picture plan is being re-timed.",
       "limit": "",
       "you": "",
       "youShort": "",
@@ -1488,7 +1488,9 @@
           "who": "Mac mini",
           "what": "check the credit sums again, for the Chief",
           "job": "J2644",
-          "kind": "studio"
+          "kind": "studio",
+          "done": true,
+          "doneText": "passed \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
@@ -1496,7 +1498,7 @@
           "job": "J2529",
           "kind": "video",
           "when": "2026-11-12",
-          "whenText": "Thu 12 Nov, before the credits lapse at 19:13, once the Chief rules"
+          "whenText": "running now; no batch starts after Thu 12 Nov 13:00"
         },
         {
           "who": "Mac mini",
@@ -1504,7 +1506,17 @@
           "job": "J2498",
           "kind": "assembly",
           "when": "2026-11-26",
-          "whenText": "by Thu 26 Nov"
+          "whenText": "by Thu 26 Nov",
+          "done": true,
+          "doneText": "timing not passed; plan being re-timed"
+        },
+        {
+          "who": "Agent",
+          "what": "re-time the picture plan so no picture changes inside a word",
+          "job": "J2652",
+          "kind": "script",
+          "when": "2026-11-16",
+          "whenText": "by Mon 16 Nov"
         }
       ]
     },
