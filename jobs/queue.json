@@ -224678,10 +224678,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T11:05Z",
+      "eta": "2026-11-11T13:05Z",
       "created_by": "claude",
       "created_at": "2026-11-11T10:46Z",
       "result": "",
@@ -224695,6 +224695,11 @@
           "at": "2026-11-11T11:00Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's edit 6793775605: the still's wig line reads 'smooth and neat, with a clean, solid outline'."
+        },
+        {
+          "at": "2026-11-11T11:05Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make the new salon start still at 0 credits; up to three free tries",
@@ -224702,7 +224707,15 @@
       "kind": "image",
       "plain": "Make a fresh starting picture for the Franklin salon shot, at no cost",
       "mini_only": true,
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:05Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2597",
