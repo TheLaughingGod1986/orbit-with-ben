@@ -44,6 +44,9 @@ import subprocess
 import time
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import channels  # noqa: E402  which channels there are, their repos, names and Studio ports
+
 HOME = pathlib.Path.home()
 WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for the worker itself
 # Two jobs at once on the MacBook Pro (Ben, 5 Nov 2026: "could that maybe handle two tasks in parallel ... two on the
@@ -52,8 +55,18 @@ WORKER_DIR = HOME / "_desk" / "worker"  # the clones setup_macbook.sh made for t
 # so the two never share a checkout or a claim.
 SLOT = max(1, int(os.environ.get("MACBOOK_SLOT", "1") or 1))
 SLOTS = max(1, int(os.environ.get("MACBOOK_SLOTS", "2") or 1))
-URLS = {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
-        "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"}
+
+
+def clone_name(slug: str) -> str:
+    """The folder name of the worker's own clone of a channel's repo: the repo's name on GitHub. A channel whose
+    file gives no URL yet gets its slug, and is never cloned from here."""
+    url = str(channels.get(slug)["repo"].get("url") or "")
+    return url.rstrip("/").rsplit("/", 1)[-1].removesuffix(".git") or channels.get(slug)["slug"]
+
+
+def other_slugs() -> list[str]:
+    """Every channel but the one whose repo carries the studio, in the registry's order."""
+    return [s for s in channels.slugs() if s != channels.studio_slug()]
 
 
 def own_checkout(env: str, name: str) -> pathlib.Path:
@@ -78,8 +91,15 @@ def slot_name(n: int, base: str) -> str:
     return base if n == 1 else f"{base}-{n}"
 
 
-OWB = own_checkout("OWB_REPO", "orbit-with-ben")
-HOS = own_checkout("HOS_REPO", "history-of-science")
+def channel_clone(slug: str) -> pathlib.Path:
+    return own_checkout(channels.get(slug)["repo"].get("env") or "", clone_name(slug))
+
+
+# The clone that carries the studio (the queue, these scripts), and the clone of every other channel. Which repos
+# those are comes from the channel files; nothing here names one.
+STUDIO = channel_clone(channels.studio_slug())
+OTHERS = [channel_clone(s) for s in other_slugs()]
+URLS = {clone_name(s): channels.get(s)["repo"]["url"] for s in channels.slugs() if channels.get(s)["repo"].get("url")}
 STATE = HOME / "_desk" / "state"
 AGENT_ID = slot_name(SLOT, "macbook")
 HEARTBEAT_REF = slot_name(SLOT, "macbook-heartbeat")
@@ -89,15 +109,15 @@ away from it. Your agent id is `{agent}` everywhere (jobs.py --agent {agent}). D
 Another MacBook slot may be working on a different job at the same time, in its own checkouts: stay in yours.
 
 The job is already claimed for you: {job}
-1. Orbit With Ben ({owb}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
+1. {studio_name} ({studio}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
      python3 scripts/jobs.py show {job}
-   For a HOS job, work in the HOS checkout ({hos}) and follow its AGENTS.md.
+{other_checkouts}
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
    with gh; say the PR number in the result. Then switch every checkout you touched back to main
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
-   History of Science folder must always be left on main.
+   {bens_folders} must always be left on main.
 4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
 5. Report on the studio thread: write the report to a file, starting "[MacBook] ...", and post it with
    python3 scripts/owb_thread.py post -f <file>   Never put the report text on the command line: the shell runs
@@ -108,14 +128,67 @@ This is Ben's own laptop, not the Mini:
 - never upload a video, change a video's privacy or schedule, or delete a video; never delete anything on the NAS;
 - change something on YouTube only when this job is a YouTube Studio job the Chief routed to this Mac (Ben, 9 Nov
   2026: he signed both channels into Studio here for these). Then do exactly what the brief names, in the Studio
-  window on CDP port 9223 (Orbit With Ben) or 9222 (History of Science), check the channel name first, and touch
+  window on CDP port {studio_ports}, check the channel name first, and touch
   nothing else on YouTube;
 - the local model at http://127.0.0.1:11434 (Ollama, model {model}) is for low-stakes text only: metadata drafts,
   caption cleanup, gate summaries. Never scripts, facts or anything spoken;
-- keep files inside the two checkouts and ~/_desk; leave nothing running when you stop.
+{file_rule}
+- leave nothing running when you stop.
 Your run is killed at {cap_min} minutes: if the job will take longer, stop at a clean point, release it with a note,
 and stop.
 """
+
+
+def film_store() -> pathlib.Path | None:
+    """The shared working-film store on the NAS, when this Mac has it mounted.
+
+    AGENTS.md "Film folders on the NAS" (Ben, 7 Nov 2026): both machines read and write a film's folder there. Until
+    11 Nov the brief said "keep files inside the checkouts and ~/_desk", so a run was refused the copy of a source
+    image into its own film's folder (J2452) and a finished film had no allowed way off this Mac (J2568)."""
+    import jobs
+    try:
+        return jobs.STUDIO_LIVE_ROOT if jobs.STUDIO_LIVE_ROOT.is_dir() else None
+    except OSError:
+        return None
+
+
+def file_rule(count: str, store: pathlib.Path | None) -> str:
+    """Where this run may put files. The NAS rules ride along, because the store is the only copy of a lot of work."""
+    if not store:
+        return (f"- keep files inside the {count} checkouts and ~/_desk. The shared working-film store on the NAS is not\n"
+                "  mounted on this Mac right now, so do not try to reach it: keep finished files in ~/_desk and put each\n"
+                "  one's SHA-256 in your report;")
+    return (f"- keep files inside the {count} checkouts, ~/_desk and the shared working-film store on the NAS\n"
+            f"  ({store}; AGENTS.md \"Film folders on the NAS\": both machines read and write a film's folder there).\n"
+            "  On the NAS you add to a film's own folder and nothing else: never delete or move a file that is already\n"
+            "  there, never replace a finished media file (a new version gets a new name), never write outside that\n"
+            "  store (the archive beside it is not yours), and check each copy with SHA-256. More than a handful of\n"
+            "  files waits for the 01:00-06:00 window, unless it is a finished master's copy;")
+
+
+def prompt_channels() -> dict:
+    """The parts of the brief that depend on which channels there are: built from the channel files, so the brief
+    reads the same for the channels of today and needs no edit for the next one."""
+    others = list(zip(other_slugs(), OTHERS))
+    names = [channels.name(s) for s, _ in others]
+    ports = [(channels.studio_port(s), channels.name(s)) for s in channels.slugs() if channels.studio_port(s)]
+    count = 1 + len(others)
+    return {
+        "studio_name": channels.name(channels.studio_slug()),
+        "studio": STUDIO,
+        "other_checkouts": "\n".join(
+            f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its AGENTS.md."
+            for s, path in others),
+        "bens_folders": " and ".join(names) + (" folder" if len(names) < 2 else " folders"),
+        "studio_ports": " or ".join(f"{port} ({name})" for port, name in ports),
+        "checkout_count": {1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)),
+        "file_rule": file_rule({1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)), film_store()),
+    }
+
+
+def brief(job: str, model: str, cap_min: int) -> str:
+    """The brief the agent CLI gets for one claimed job."""
+    return PROMPT.format(job=job, agent=AGENT_ID, model=model, cap_min=cap_min, **prompt_channels())
 
 
 def log(msg: str) -> None:
@@ -328,7 +401,10 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     b = find_bin(agent) if agent in BINS else None
     if not b:
         return None
-    dirs = ["--add-dir", str(HOS), "--add-dir", str(HOME / "_desk")]
+    dirs = [x for path in OTHERS for x in ("--add-dir", str(path))] + ["--add-dir", str(HOME / "_desk")]
+    store = film_store()
+    if store:  # the brief allows it, so the agent's own sandbox has to as well
+        dirs += ["--add-dir", str(store)]
     if agent == "codex":
         m = ["-m", model] if model.startswith("gpt-") else []
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
@@ -348,7 +424,7 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
 
 def job_record(job_id: str) -> dict:
     try:
-        return next((j for j in json.loads((OWB / "jobs" / "queue.json").read_text()).get("jobs", [])
+        return next((j for j in json.loads((STUDIO / "jobs" / "queue.json").read_text()).get("jobs", [])
                      if j.get("id") == job_id), {})
     except (OSError, ValueError):
         return {}
@@ -387,7 +463,7 @@ def claimed_job(out: str) -> str:
 
 
 def still_mine(job: str) -> bool:
-    r = sh([sys.executable, "scripts/jobs.py", "show", job], cwd=OWB)
+    r = sh([sys.executable, "scripts/jobs.py", "show", job], cwd=STUDIO)
     first = (r.stdout.splitlines() or [""])[0]
     return "claimed" in first and AGENT_ID in first
 
@@ -402,9 +478,10 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
             return False
     except (OSError, ValueError):
         pass
-    # Same ChatGPT account as the Mini (benoats@gmail.com, one shared weekly limit): one pool, read from either machine.
+    # Same ChatGPT account as the Mini (Ben's personal account, one shared weekly limit): one pool, read from either machine.
+    # --strict: this caller asked for one pool, so an unread one must not look like a recorded one (J2564).
     r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex",
-            "--by", AGENT_ID, "--git"], cwd=OWB, timeout=180)
+            "--by", AGENT_ID, "--git", "--strict"], cwd=STUDIO, timeout=180)
     log(f"usage reading: {(r.stdout or r.stderr).strip()[-200:]}")
     if r.returncode == 0:
         stamp.write_text(str(now.timestamp()))
@@ -439,7 +516,7 @@ def push_heartbeat(state: str, why: list, job: str = "") -> None:
     Mini's relay does on mini-heartbeat). Ben, 28 Oct 2026, after five hours with no MacBook job and no way to see
     why: the hub's Agents tab reads it ("waiting: on battery", "working on J1122"). Never raises."""
     body = json.dumps(heartbeat_doc(state, why, job)) + "\n"
-    git = ["git", "-C", str(OWB)]
+    git = ["git", "-C", str(STUDIO)]
     try:
         blob = subprocess.run(git + ["hash-object", "-w", "--stdin"], input=body, capture_output=True, text=True,
                               timeout=30, check=True).stdout.strip()
@@ -473,7 +550,7 @@ def ff_main(repo: pathlib.Path, own: bool = True) -> subprocess.CompletedProcess
 def pull_main() -> str:
     """Pull both checkouts; '' when fine, else why not. Runs before the guards so fixes reach a MacBook that keeps
     waiting (it used to pull only after the guards passed, so one stuck guard kept it on old code)."""
-    for repo in (OWB, HOS):
+    for repo in (STUDIO, *OTHERS):
         if not (repo / ".git").exists() and repo.name in URLS:
             # First run after the switch to the worker's own clones: make it (media stays out: LFS is skipped).
             repo.parent.mkdir(parents=True, exist_ok=True)
@@ -600,7 +677,8 @@ def run_one() -> str:
     return run_ordinary()
 
 
-CDP_PORTS = ("9223", "9222")  # Orbit Studio, HOS Studio/Flow: the Mini's ports and profiles (start_cdp_browsers.sh)
+# Each channel's Studio browser: the Mini's ports and profiles (start_cdp_browsers.sh), named in the channel files.
+CDP_PORTS = tuple(p for p in (channels.studio_port(s) for s in channels.slugs()) if p)
 
 
 def cdp_ports_up(ports=CDP_PORTS) -> list:
@@ -624,7 +702,7 @@ def run_ordinary() -> str:
     # Read by jobs.macbook_studio_ok in the claim below. Empty when no agent here can drive the browser unattended, so
     # a Studio job is never claimed just to be handed back.
     os.environ["MACBOOK_CDP"] = ",".join(cdp_ports_up()) if studio_agents(usable(installed())) else ""
-    r = sh(args, cwd=OWB)  # any: rule H reviews
+    r = sh(args, cwd=STUDIO)  # any: rule H reviews
     if r.returncode == 10:
         log("no macbook job waiting")
         push_heartbeat("idle", ["no MacBook job waiting"])
@@ -638,25 +716,24 @@ def run_ordinary() -> str:
     have = usable(installed())
     try:  # the same out-of-credit flags the Mini's relay honours (scripts/credit_flags.json)
         import routing
-        routing.OUT = set(routing.read_flags(path=str(OWB / "scripts" / "credit_flags.json")))
+        routing.OUT = set(routing.read_flags(path=str(STUDIO / "scripts" / "credit_flags.json")))
     except Exception:  # noqa: BLE001
         pass
     agent, model = pick_agent(job_record(job), have)
     cap = int(os.environ.get("MACBOOK_CAP_S", "1500"))
-    prompt = PROMPT.format(job=job, agent=AGENT_ID, owb=OWB, hos=HOS, model=os.environ.get("OLLAMA_MODEL", "qwen3:14b"),
-                           cap_min=cap // 60)
+    prompt = brief(job, os.environ.get("OLLAMA_MODEL", "qwen3:14b"), cap // 60)
     cmd = agent_cmd(agent, prompt, model) if agent else None
     if not cmd:
         sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note",
             f"MacBook worker: no agent CLI installed for this job (installed: {', '.join(have) or 'none'})", "--git"],
-           cwd=OWB)
+           cwd=STUDIO)
         log(f"no CLI for {job} (installed: {have}): released")
         return "error"
     log(f"{job}: waking {agent}{' on ' + model if model else ''} (cap {cap // 60} min)")
     started = time.monotonic()
-    code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), OWB, cap)
+    code = run_capped(busy_cmd(["caffeinate", "-i", *cmd] if shutil.which("caffeinate") else cmd), STUDIO, cap)
     seconds = time.monotonic() - started
-    ff_main(OWB, OWB.resolve().is_relative_to(WORKER_DIR.resolve()))
+    ff_main(STUDIO, STUDIO.resolve().is_relative_to(WORKER_DIR.resolve()))
     paused = ""
     open_now = still_mine(job)
     if failed_run(code, seconds, open_now):  # 124 = hit the cap: slow, not broken
@@ -665,7 +742,7 @@ def run_ordinary() -> str:
         note = f"MacBook worker run on {agent} ended (exit {code}) with the job still open; picked up again next run"
         if paused:
             note += f"; {agent} paused on the MacBook until {paused}, so the next run uses the next agent in the chain"
-        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note", note, "--git"], cwd=OWB)
+        sh([sys.executable, "scripts/jobs.py", "release", job, "--agent", AGENT_ID, "--note", note, "--git"], cwd=STUDIO)
         log(f"{job}: released after exit {code}")
         push_heartbeat("idle", [f"last run: {job} on {agent} failed (exit {code})"
                                 + (f"; {agent} paused until {paused}" if paused else "")])
@@ -688,8 +765,9 @@ def start_other_slots(popen=None, system=None) -> list:
     started = []
     logs = HOME / "Library" / "Logs"
     for n in range(2, SLOTS + 1):
-        env = dict(os.environ, MACBOOK_SLOT=str(n), OWB_REPO=str(slot_dir(n) / "orbit-with-ben"),
-                   HOS_REPO=str(slot_dir(n) / "history-of-science"))
+        clones = {channels.get(s)["repo"]["env"]: str(slot_dir(n) / clone_name(s))
+                  for s in channels.slugs() if channels.get(s)["repo"].get("env")}
+        env = dict(os.environ, MACBOOK_SLOT=str(n), **clones)
         try:
             logs.mkdir(parents=True, exist_ok=True)
             with open(logs / f"owb-macbook-worker-{n}.log", "a") as out:   # the child keeps its own copy of the handle

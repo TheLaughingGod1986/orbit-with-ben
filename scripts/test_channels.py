@@ -209,6 +209,14 @@ class TrackerAsksTheLoader(unittest.TestCase):
         # unlike of_job, a title is never read: a home-channel job that mentions the other channel stays the home's
         self.assertEqual(channels.label_of_repo(channels.home()), channels.home_label())
 
+    def test_the_studio_slug_is_the_channel_whose_repo_carries_the_studio(self):
+        # for code that must clone or pull the studio's repo (the MacBook worker): today the home channel's
+        self.assertEqual(channels.studio_slug(), channels.home())
+        self.assertEqual(channels.get(channels.studio_slug())["repo"]["url"],
+                         "https://github.com/" + channels.studio_github() + ".git")
+        with self.sky():
+            self.assertEqual(channels.studio_slug(), channels.home())     # a third channel does not move it
+
     def test_planned_shorts_is_each_channels_own_setting(self):
         self.assertEqual((channels.planned_shorts("owb"), channels.planned_shorts("hos")), (2, 4))   # Ben, 7 Nov 2026
         with self.sky(shorts={"planned_per_long": 3}):

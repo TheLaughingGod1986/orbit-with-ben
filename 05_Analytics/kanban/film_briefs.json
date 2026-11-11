@@ -849,10 +849,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T06:23Z",
+      "updated": "2026-11-11T08:58Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "Retakes for the salon spark at 1:49, the points desk at 3:13 and the church and ship rods at 7:58 (J2241), first in line on the Mini now; then the v04 re-edit. It is tight for a Thu 19 Nov air date.",
+      "holdup": "Three shots were remade this morning. A check of their stills found two came out wrong: the salon shot shows a lightning bolt across the room where there should be one small spark, and the points shot has a stray wire coming out of the globe. The church and ship rods shot is good. The two are being made again with tighter instructions (J2575, at most 200 credits), then checked again (J2576) before the v04 re-edit. Both must be made before Thu 12 Nov 19:13. It is tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -867,15 +867,30 @@
           "what": "retake three shots (1:49, 3:13, 7:58), at most 900 credits",
           "job": "J2241",
           "kind": "video",
+          "done": true,
+          "doneText": "made; rods shot kept, two to remake"
+        },
+        {
+          "who": "Mac mini",
+          "what": "remake the salon and points shots (second takes, at most 200 credits)",
+          "job": "J2575",
+          "kind": "video",
           "when": "2026-11-12",
-          "whenText": "first in line; before Thu 12 Nov 19:13"
+          "whenText": "before Thu 12 Nov 19:13"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check the two remade shots' stills",
+          "job": "J2576",
+          "kind": "qa",
+          "afterJob": "J2575"
         },
         {
           "who": "Mac mini",
           "what": "v04 re-edit: the new shots in, 32 caption cards",
           "job": "J2242",
           "kind": "assembly",
-          "afterJob": "J2241"
+          "afterJob": "J2576"
         },
         {
           "who": "Reviewer",
@@ -961,10 +976,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-11T05:58Z",
+      "updated": "2026-11-11T08:58Z",
       "mood": "good",
       "done": "Script, fact check and upload package.",
-      "holdup": "Waiting for the check of the plate tool against the live credit count (J2269), then the twelve plates (J2270). No new picture is authorised until that check passes.",
+      "holdup": "Nothing is stuck. The first five of its twelve plates started on the Mini at 08:57 this morning, with the credit checks before each one. The rest follow in batches inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
       "steps": [
         {
           "who": "Mac mini",
@@ -1199,12 +1214,12 @@
       "line": "Pluto, airs Sun 13 Dec 18:00. The full film is built (master v01) and its voice-over records are filed. Next: the opening is re-cut to the new first-30-seconds rule (J2438), then the long and its two Shorts are reviewed by watching and listening before they come to you (J2383)."
     },
     "HOS:013": {
-      "updated": "2026-11-11T05:58Z",
+      "updated": "2026-11-11T08:58Z",
       "mood": "held",
       "timing": "Airs Thu 17 Dec 18:00 London. Two Shorts follow the long.",
-      "line": "Darwin & Wallace. Airs Thu 17 Dec. Voice-overs locked. The picture tool for its 71 plates is built and tested. On 11 Nov its prompts were reworded so none names a real person (the picture tool refuses those), and the scenes of 1858 and 1859 now show Darwin as he looked then, clean-shaven with side whiskers. The Chief ruled two things before any credits are spent: no plate before the credits reset on Thu 12 Nov 19:13, and the 23 scenes planned on the cheaper, lower-quality setting must each become a full-quality plate or a free picture. That plan change is being made now (J2558).",
+      "line": "Darwin & Wallace. Airs Thu 17 Dec. Voice-overs locked. The picture tool for its plates is built and tested. On 11 Nov its prompts were reworded so none names a real person (the picture tool refuses those), and the scenes of 1858 and 1859 now show Darwin as he looked then, clean-shaven with side whiskers. The Chief ruled two things before any credits are spent: no plate before the credits reset on Thu 12 Nov 19:13, and no scene on the cheaper, lower-quality setting. The revised plan is written: 66 full-quality plates and 28 free scenes, about 6,600 credits on first tries. The Chief asked for one scene to be changed (a route map in place of a portrait) and will then accept it (J2558).",
       "done": "Script v02, long voice-over (locked v03a), shot list v01, Shorts scripts v02 and their voice-overs (accepted 10 Nov), picture plan v01 (passed 10 Nov), prompts that name nobody (11 Nov).",
-      "holdup": "Held on purpose until the credits reset on Thu 12 Nov 19:13 and the revised picture plan is reviewed by the Chief. The plates start that evening.",
+      "holdup": "Held on purpose until the credits reset on Thu 12 Nov 19:13. The revised picture plan is reviewed and accepted (66 scenes at the good setting, none at the cheap one, 6,600 credits). The plates start that evening.",
       "limit": "",
       "you": "",
       "youShort": "",
