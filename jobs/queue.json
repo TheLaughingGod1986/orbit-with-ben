@@ -230894,19 +230894,24 @@
           "at": "2026-11-11T23:37Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Found hos_011_vo_v01.wav in Mini _desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ with exact SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2 (plus matching MP3 9fdd84d5... and ch00-ch04 WAV/MP3 stems)"
+        },
+        {
+          "at": "2026-11-11T23:39Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Completed search across all roots: two byte-identical SHA-256 matches found on the Mini (_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and /Volumes/MiniWork/desk/worktrees/J2245-011-vo/.../hos_011_vo_v01.wav); 0 matches in git/LFS, NAS archive, or shared HOS checkouts; 011 studio-live folder not yet created"
         }
       ],
-      "remaining_action": "Audit remaining search roots (MiniWork, checkouts, NAS) and verify studio-live mount and folder layout",
+      "remaining_action": "Copy HOS 011 film folder and verified VO audio into studio-live and re-verify SHA-256 on studio-live",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T23:37Z",
+        "at": "2026-11-11T23:39Z",
         "by": "gemini",
-        "note": "Found hos_011_vo_v01.wav in Mini _desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ with exact SHA-256 d873f1d"
+        "note": "Completed search across all roots: two byte-identical SHA-256 matches found on the Mini (_desk/media/HOS/011_Surgery-Bef"
       },
       "taskKeys": [
         "HOS:011"
