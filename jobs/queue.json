@@ -221540,18 +221540,23 @@
           "at": "2026-11-11T05:59Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2558; starting inspection of 011 v02 reference (#495) and 013 v01 files"
+        },
+        {
+          "at": "2026-11-11T06:02Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 become Veo 3.1 - Quality (66 Quality, 0 Fast, 28 Free = 94 rows, 6600 try-1 credits)"
         }
       ],
-      "remaining_action": "Inspect HOS #495 (011 v02 reference), #496, #498 and 013 v01 picture plan, scope, and runner",
+      "remaining_action": "Build _build_picture_plan_v02.py, part-01..06_plates_v02.json, PICTURE_PLAN_v02, PRICE_REVIEW_v02, SHOT_LIST_v02, and FAST_ROW_CHANGE_v02.json",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-11T05:59Z",
+        "at": "2026-11-11T06:02Z",
         "by": "gemini",
-        "note": "Claimed J2558; starting inspection of 011 v02 reference (#495) and 013 v01 files"
+        "note": "Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 be"
       },
       "taskKeys": [
         "HOS:013"
