@@ -229854,13 +229854,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T21:09Z",
-      "eta": "2026-11-11T23:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T21:08Z",
-      "result": "",
+      "result": "parked for Chief: could not read Orbit Studio from the MacBook (the local call to port 9223 needs approval in unattended runs), so the Andromeda half is unverified. Evidence from 05_Analytics/tests/THUMB_LEDGER.json: Jupiter -jmMROGoZCM T003 is PROVEN ended (status done, Studio read 2026-11-11T08:43:06Z, finishedAt 2026-11-10T19:49Z, draw: not enough impressions). Andromeda ojk-dfOpAmw T017 still says running, last Studio read 10 Nov 03:37Z (expected end about 11 Nov 20:37Z; checked at 21:10Z, not inferred from the date). No new ledger row for either video, so neither repackage test is started. J2449 left blocked; jobs.py wait J2449 --recheck J2647 was refused for macbook (holder is macbook-2). Chief or the Mini: read T017 in Studio; if ended, reopen J2449 (Jupiter can start now). Else run: jobs.py wait J2449 --agent chief --condition 'Andromeda ojk-dfOpAmw thumbnail test T017 read as ended in Orbit Studio (Jupiter T003 already proven ended 10 Nov 19:49Z)' --check-at '2026-11-12T03:10:00Z' --type input --recheck J2647 --git",
       "history": [
         {
           "at": "2026-11-11T21:08Z",
@@ -229871,6 +229871,11 @@
           "at": "2026-11-11T21:09Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T21:10Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: could not read Orbit Studio from the MacBook (the local call to port 9223 needs approval in unattended runs), so the Andromeda half is unverified. Evidence from 05_Analytics/tests/THUMB_LEDGER.json: Jupiter -jmMROGoZCM T003 is PROVEN ended (status done, Studio read 2026-11-11T08:43:06Z, finishedAt 2026-11-10T19:49Z, draw: not enough impressions). Andromeda ojk-dfOpAmw T017 still says running, last Studio read 10 Nov 03:37Z (expected end about 11 Nov 20:37Z; checked at 21:10Z, not inferred from the date). No new ledger row for either video, so neither repackage test is started. J2449 left blocked; jobs.py wait J2449 --recheck J2647 was refused for macbook (holder is macbook-2). Chief or the Mini: read T017 in Studio; if ended, reopen J2449 (Jupiter can start now). Else run: jobs.py wait J2449 --agent chief --condition 'Andromeda ojk-dfOpAmw thumbnail test T017 read as ended in Orbit Studio (Jupiter T003 already proven ended 10 Nov 19:49Z)' --check-at '2026-11-12T03:10:00Z' --type input --recheck J2647 --git"
         }
       ],
       "remaining_action": "Verify readiness: Arm 3-arm Title+Thumbnail Test & Compare on Jupiter -jmMROGoZCM (after T003 ends ~10 Nov 19:03Z) and Andromeda ojk-dfOpAmw (after T017 ends ~11 Nov 20:37Z); 3xrxd",
