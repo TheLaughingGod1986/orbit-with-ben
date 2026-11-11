@@ -229405,18 +229405,23 @@
           "at": "2026-11-11T21:09Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed; investigating logs and transaction rollback before isolated code changes"
+        },
+        {
+          "at": "2026-11-11T21:12Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Confirmed watchdog fast-forward at 18:01:01; 07:05 has no watchdog run. Added real rejecting-origin regression and failure exit propagation."
         }
       ],
-      "remaining_action": "Investigating the two failed queue pushes",
+      "remaining_action": "Fixing metadata rollback and reproducing background pull races",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T21:09Z",
+        "at": "2026-11-11T21:12Z",
         "by": "codex",
-        "note": "Claimed; investigating logs and transaction rollback before isolated code changes"
+        "note": "Confirmed watchdog fast-forward at 18:01:01; 07:05 has no watchdog run. Added real rejecting-origin regression and failu"
       }
     },
     {
