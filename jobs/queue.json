@@ -213455,10 +213455,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-11T19:47Z",
-      "eta": "2026-11-11T23:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214487,6 +214487,11 @@
           "at": "2026-11-11T19:52Z",
           "by": "macbook",
           "what": "step 10 of 15 done"
+        },
+        {
+          "at": "2026-11-11T20:10Z",
+          "by": "macbook",
+          "what": "released: PR #789 c89153c34: Light Speed fully verified locally; 13900 frames and all native brightness windows pass. NAS copy stopped cleanly before cap, partial preserved. Resume save_public_light.py with byte-prefix check, then full SHA256 and 11/15. No rerender needed; resume note PUBLIC_LIGHT_COPY_PENDING on job branch. All processes exited."
         }
       ],
       "remaining_action": "Testing a faster precise darkening method for Light Speed; chapter delivery still pending",
