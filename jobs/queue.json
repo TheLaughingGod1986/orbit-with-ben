@@ -227322,6 +227322,11 @@
           "at": "2026-11-11T17:26Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
+        },
+        {
+          "at": "2026-11-11T18:34Z",
+          "by": "claude",
+          "what": "both conditions named in this wait are met (history-of-science #535 merged 17:28Z; the Mini's checkout is on main, Gemini 18:10Z, J2638). #833 now also carries J2621 as its third commit. Only the window is left."
         }
       ],
       "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
@@ -227464,18 +227469,18 @@
       "needs": "cloud",
       "repo": "owb",
       "body": "**Added 11 Nov 14:47Z (from J2619, #823).** `apply_yellow_white_v04_thumbs.py` still has 3 lines that build a path from the studio's root into a film folder. Do not archive it: `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/_set_j0216_covers.py` imports it and `STUDIO_PLAYBOOK.md` names it as the pattern to copy. Make it take the film folder from `channels.films_dir(...)` (added in #823). After that the second count is `chief_relay.py`'s 2 lines only, which J2618 owns.\n\nTwo of the dry run's groups, after the second count is at zero. (1) \"The list of channels still needs one of them to be the studio's home\": `scripts/channels.py` insists exactly one channel is `home` (plan decision 1: no home channel). Make it optional: with none, the studio's root holds no channel content and every channel is read through its checkout. Today's layout, with Orbit as home, must keep working unchanged until the move. (2) \"Tests that fail once the studio and the channels are apart\": 14 tests in `test_channel_cards.py`, `test_channel_check.py`, `test_channels.py`, `test_email_ratchet.py`, `test_no_private_network.py`, `test_studio.py` and `test_studio_split.py`. `HOS_REPO=<checkout> python3 scripts/studio_split.py --json out.json` builds the new layout and names each; make them pass there and here.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nChecks: every `scripts/test_*.py`, the three repo checks, and the dry run's `registry` and `tests` groups at 0. One pull request. No real money.",
-      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833",
       "film": "",
       "stage": "",
       "after": "J2619",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-11-11T17:35Z",
-      "eta": "2026-11-11T19:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Waiting for: Built and green: the third commit of orbit-with-ben #833 (draft), with J2618. It changes the loader, the relay, the MacBook worker and the board publisher, so it is not merged inside the picture window, which closes Thu 12 Nov 19:13 London.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -227501,18 +227506,38 @@
           "at": "2026-11-11T18:28Z",
           "by": "claude",
           "what": "step 3 of 4 done: Loader, relay, MacBook worker, board publisher and the dry run are changed; the whole suite passes in today's layout and inside the layout the dry run builds (1270 tests there). Left: one last full dry run, commit, push to the held pull request"
+        },
+        {
+          "at": "2026-11-11T18:34Z",
+          "by": "claude",
+          "what": "step 4 of 4 done: built and pushed as the third commit of orbit-with-ben #833 (ec261a9e0). The dry run of the move reads 1 on that branch (the spend ledger's addresses, J2537); its registry and tests groups read 0. The whole suite passes in today's layout and inside the layout the dry run builds."
+        },
+        {
+          "at": "2026-11-11T18:34Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Built and green: the third commit of orbit-with-ben #833 (draft), with J2618. It changes the loader, the relay, the MacBook worker and the board publisher, so it is not merged inside the picture window, which closes Thu 12 Nov 19:13 London."
+        },
+        {
+          "at": "2026-11-11T18:34Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
         }
       ],
-      "remaining_action": "The loader without a home channel, then the 14 tests in the new layout; the first step (the old thumbnail script) is in #833",
+      "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite and the dry run, merge, then watch one relay cycle and one board publish on the Mini before closing",
       "due": "2026-11-16T18:00:00Z",
       "kind": "review",
       "plain": "Let the studio run with no channel as its home, and make its checks pass that way",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T18:28Z",
+        "at": "2026-11-11T18:34Z",
         "by": "claude",
-        "note": "Loader, relay, MacBook worker, board publisher and the dry run are changed; the whole suite passes in today's layout and"
+        "note": "Built and pushed as the third commit of orbit-with-ben #833 (ec261a9e0)"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Built and green: the third commit of orbit-with-ben #833 (draft), with J2618. It changes the loader, the relay, the MacBook worker and the board publisher, so it is not merged inside the picture window, which closes Thu 12 Nov 19:13 London.",
+        "check_at": "2026-11-12T19:15:00Z"
       }
     },
     {
