@@ -217785,19 +217785,19 @@
       "title": "History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out",
       "needs": "mini",
       "repo": "hos",
-      "body": "Found while writing the J2495 table (10 Nov): history-of-science main holds an account email address in tracked files. Both repos are public, and AGENTS.md (orbit-with-ben, Never list, 10 Nov) says an account's address is never written into a tracked file, a job or the thread. This job takes it out of the files as they stand. It does NOT rewrite git history: that is Ben's call and is not asked for here.\n\nFind them: `git grep -nIE \"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\.(com|me|co\\.uk)\"` in history-of-science. Known on 10 Nov: 2 lines in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/_mint_flow_v05_tranche2.py`, and lines in HOS 006's `FLOW_FAST_v01.json`, `LITE_TEST_v01.json`, `PART01_MINT_LOG_v01.json`, `PART02_MINT_LOG_v01.json` and `_mint_vertex_v01.py`. List every file you find; never copy the address into the report, the pull request or the thread.\n\n1. Scripts that check \"is this the right account\": read the expected address from a setting outside the repo (an environment variable such as `STUDIO_FLOW_ACCOUNT`, or the file the shared Flow guards already use if there is one; look first). With no setting the script must refuse to run and say which setting is missing. It must never fall back to a guess. Update the tests so they pass a made-up address.\n2. Records (JSON logs, notes): replace the address with \"the studio Ultra account\". Change nothing else in them.\n3. Add a test that fails if any tracked file holds such an address, with a short allowlist only if something truly cannot change (say why). Mirror `scripts/test_email_ratchet.py` in orbit-with-ben.\n4. Write the setting's name and where it is set on the Mini and the MacBook in the pull request, so the Chief can check both machines have it BEFORE the change is merged. A runner that cannot find its account must not be merged ahead of a mint.\n\nChecks: check_all.sh ends ALL CHECKS PASS. One pull request, parked for the Chief. This job starts after J2033 (the 009 mint uses the runner as it is today).\n\n£0. No generation, no Flow page, no YouTube.\n",
+      "body": "Acting Chief, 11 Nov 08:08Z: **history-of-science #505 is sent back. Do not merge it as it stands.** The record scrub is good work and most of it can go in today. Three things have to change first. The first is my fault: this brief told you to read the account from a setting, and that is the wrong fix for a runner that already holds a fingerprint.\n\n1. **Take the 010 and 013 runners and their tests out of the pull request.** `_mint_flow_twelve_plates_j2268.py` and `_mint_flow_v01_pass1.py` hold no address on main (checked: 0 lines each). They already compare the signed-in account with a sha256 written in the file. #505 replaces that fingerprint with whatever `STUDIO_FLOW_ACCOUNT` says on the machine, which is a weaker guard: a reviewed value in the repo becomes a setting anyone on the machine can change or forget. The 010 runner also runs today (J2270) under an authorization made for the file exactly as it is on main.\n2. **No `STUDIO_FLOW_ACCOUNT` anywhere.** A script that holds a literal address (009's two runners and `_build_plate_boards_v02.py`, 008's `_mint_flow_v03.py` and `_build_rough_v13_recipe.py`, the older films' minters) gets the address's sha256 in its place and compares fingerprints, the way the 010 and 013 runners do and orbit-with-ben #801 did in `scripts/ai_spend_daily.py`. Then no machine needs setting up and nothing refuses to run for a missing setting. Scripts under `_archive/` are not in force: a placeholder is enough there.\n3. **Hold back the files that live jobs read or pin, for a second pull request.** Every 008 file (J2241 retakes, J2242 re-edit and J2243 check are under way; `FLOW_MINT_LOG_v03.json` is pinned by hash in `10_Shorts/J2170/INPUT_INVENTORY.json`), until J2243 is done. Every 009 file, until J2037 is done. When they go, re-pin in the same pull request.\n\nWhat goes now: films 001 to 007, the brand documents and the archive, with rule 2 applied to their scripts. `scripts/email_ratchet.json` then lists exactly the held-back 008 and 009 files, so the test tells the truth, and it drops to zero with the second pull request. Keep the records change line for line as you have it (same number of lines in and out).\n\nPush to the same branch, re-run `check_all.sh`, post on the History of Science desk for Grok, and park again. Never copy an address into the pull request, the desk or the thread.\n\nFound while writing the J2495 table (10 Nov): history-of-science main holds an account email address in tracked files. Both repos are public, and AGENTS.md (orbit-with-ben, Never list, 10 Nov) says an account's address is never written into a tracked file, a job or the thread. This job takes it out of the files as they stand. It does NOT rewrite git history: that is Ben's call and is not asked for here.\n\nFind them: `git grep -nIE \"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\.(com|me|co\\.uk)\"` in history-of-science. Known on 10 Nov: 2 lines in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/_mint_flow_v05_tranche2.py`, and lines in HOS 006's `FLOW_FAST_v01.json`, `LITE_TEST_v01.json`, `PART01_MINT_LOG_v01.json`, `PART02_MINT_LOG_v01.json` and `_mint_vertex_v01.py`. List every file you find; never copy the address into the report, the pull request or the thread.\n\n1. Scripts that check \"is this the right account\": read the expected address from a setting outside the repo (an environment variable such as `STUDIO_FLOW_ACCOUNT`, or the file the shared Flow guards already use if there is one; look first). With no setting the script must refuse to run and say which setting is missing. It must never fall back to a guess. Update the tests so they pass a made-up address.\n2. Records (JSON logs, notes): replace the address with \"the studio Ultra account\". Change nothing else in them.\n3. Add a test that fails if any tracked file holds such an address, with a short allowlist only if something truly cannot change (say why). Mirror `scripts/test_email_ratchet.py` in orbit-with-ben.\n4. Write the setting's name and where it is set on the Mini and the MacBook in the pull request, so the Chief can check both machines have it BEFORE the change is merged. A runner that cannot find its account must not be merged ahead of a mint.\n\nChecks: check_all.sh ends ALL CHECKS PASS. One pull request, parked for the Chief. This job starts after J2033 (the 009 mint uses the runner as it is today).\n\n£0. No generation, no Flow page, no YouTube.\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J2033",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-11T07:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T13:26Z",
-      "result": "parked for Chief: history-of-science PR #505 (branch gemini/J2503-email-scrub, commit 778717d7) removes account email addresses from all 374 matched tracked files (+ 5 regex-escaped files), moves runner account checks to STUDIO_FLOW_ACCOUNT, adds scripts/test_email_ratchet.py (0 allowlisted), and passes check_all.sh + 180 unit tests. Chief: verify STUDIO_FLOW_ACCOUNT is set in ~/.zshenv on both Mini and MacBook BEFORE merging ahead of any mint.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T13:26Z",
@@ -217848,29 +217848,21 @@
           "at": "2026-11-11T08:08Z",
           "by": "relay",
           "what": "condition verification queued: J2571"
+        },
+        {
+          "at": "2026-11-11T08:08Z",
+          "by": "claude",
+          "what": "reopened: acting Chief: history-of-science #505 sent back, not to be merged as it stands. (1) the 010 and 013 runners hold no address and already check a fingerprint: take them and their tests out, do not swap the fingerprint for a machine setting; (2) no STUDIO_FLOW_ACCOUNT: scripts with a literal address get its sha256 and compare fingerprints; (3) hold back 008 and 009 files until their live jobs are done (J2243, J2037). Films 001 to 007, brand and archive can go now. The fix list is at the top of the brief."
         }
       ],
-      "remaining_action": "Parked for Chief review and pre-merge STUDIO_FLOW_ACCOUNT check on Mini and MacBook",
+      "remaining_action": "Rework history-of-science #505 to the fix list: fingerprints not a setting, 010 and 013 runners untouched, 008 and 009 files held back",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-11T08:05Z",
-        "by": "gemini",
-        "note": "Opened PR #505 (commit 778717d7) in history-of-science with all 374 regex-matched files + 5 escaped-regex files scrubbed"
-      },
       "taskKeys": [
         "HOS:006",
         "HOS:009"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T09:08:31+00:00",
-        "recheck_task": "J2571"
-      }
+      ]
     },
     {
       "id": "J2504",
