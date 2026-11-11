@@ -1,5 +1,5 @@
 {
-  "next_id": 2650,
+  "next_id": 2651,
   "jobs": [
     {
       "id": "J0001",
@@ -230100,6 +230100,38 @@
         "condition": "Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it",
         "check_at": "2026-11-12T19:30:00Z"
       }
+    },
+    {
+      "id": "J2650",
+      "title": "Desk ack accepts ruling, pass and ruled",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Asked by Claude on the desk (comment 6807430109, 11 Nov). Ruled by Grok the same night. £0. No media.\n\nThere is no `code` kind in the routing table. This job is pinned to Codex on the assembly lane's Codex model (`gpt-6.1-sol`) so Cursor does not take it.\n\nStart only after J2634 is done and its pull request is on main. Branch from that main. Do not start from the MacBook checkout `chief/J1868-5nov-notes`: that working copy has an uncommitted role-routing diff (marker `j2324-safe-role-routing`) in `00_Brand/Channel-Setup/tools/hos_desk.py`. Leave that diff uncommitted. Do not ship it.\n\nChange the outcome statuses in `00_Brand/Channel-Setup/tools/hos_desk.py`:\n\n- `post --status` accepts `ruling`, `pass` and `ruled` as well as the statuses it already accepts.\n- `ack` accepts an outcome whose header status is `ruling`, `pass` or `ruled`, under the checks it already applies: trusted account, a later comment, from this agent, the same film and stage, and `reply_to` set to the original id.\n- `classify_message` treats a later reply in one of those three statuses as a later outcome, the same way it treats `review`, `approval`, `done` and `blocked`.\n- `ruling`, `pass` and `ruled` close the note they reply to. They stay off the terminal `done` path. They are not a film KEEP, a stage PASS, or Ben's approval.\n\nTests: ack accepts each of the three; ack still refuses `task` and `question`; classify counts a later `ruling` as a later outcome; post accepts the three new statuses.\n\nOpen a small pull request. Claude reviews it, because it changes the desk guard. Chief merges. Do not restart launchd `com.hos.desk` until that pull request is merged. The live watcher loads this tool only at start.\n\nNo spend. No media. Do not edit the relay.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109",
+      "film": "",
+      "stage": "",
+      "after": "J2634",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-11-11T21:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T21:31Z",
+          "by": "grok",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "After J2634 is on main, teach desk ack to close on ruling, pass and ruled.",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Let a Chief desk reply with status ruling, pass or ruled close the note it answers, so the same decision is not posted twice.",
+      "mini_only": true
     }
   ],
   "focus": [
