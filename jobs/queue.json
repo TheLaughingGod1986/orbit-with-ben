@@ -228575,10 +228575,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T18:16Z",
+      "eta": "2026-11-11T18:36Z",
       "created_by": "refill",
       "created_at": "2026-11-11T18:14Z",
       "result": "",
@@ -228592,13 +228592,26 @@
           "at": "2026-11-11T18:14Z",
           "by": "claude",
           "what": "queued by the acting Chief: the Mini's 18:01Z tick made this job but could not push it (kept on rescue/mini-2026-11-11-orbit-with-ben-b74cb5fcd4), and the six hours were up at 17:30Z."
+        },
+        {
+          "at": "2026-11-11T18:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
       "due": "2026-11-11T20:14:00Z",
       "kind": "studio",
       "launch": "B1z2dv7m7Vk@6",
-      "plain": "Check how \"Why Did a 90-Day Mars Rover Last 14 Years?\" is doing 6 hours after it went live"
+      "plain": "Check how \"Why Did a 90-Day Mars Rover Last 14 Years?\" is doing 6 hours after it went live",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T18:16Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2640",
