@@ -6362,7 +6362,7 @@
       "title": "Authorize Chief box SSH key on the mini (Tailscale backup path)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Authorize the Grok Bot box (Chief) to SSH into this Mac mini over Tailscale, as a backup path when the Grok Bot app link drops. Ben approved this (10 Oct 2026 12:41 London).\n\nRun exactly this as the normal user (benjaminoats) in Terminal/shell, nothing else:\n\nmkdir -p ~/.ssh && chmod 700 ~/.ssh && grep -qF 'grokbot-box->ben-mac-mini' ~/.ssh/authorized_keys 2>/dev/null || echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmaKz9kiErfDQwa/4ZRXpLTa0xA3kiKOLjbr+YUVqLh grokbot-box->ben-mac-mini (tailscale)' >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys; whoami; tail -1 ~/.ssh/authorized_keys\n\nDo not change sshd settings, Remote Login, or any other keys. Post a one-line [Chief] note on OWB #99 with the whoami output when done.\n",
+      "body": "Authorize the Grok Bot box (Chief) to SSH into this Mac mini over Tailscale, as a backup path when the Grok Bot app link drops. Ben approved this (10 Oct 2026 12:41 London).\n\nRun exactly this as the normal user (benjaminoats) in Terminal/shell, nothing else:\n\nmkdir -p ~/.ssh && chmod 700 ~/.ssh && grep -qF 'grokbot-box-><mini>' ~/.ssh/authorized_keys 2>/dev/null || echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPmaKz9kiErfDQwa/4ZRXpLTa0xA3kiKOLjbr+YUVqLh grokbot-box-><mini> (tailscale)' >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys; whoami; tail -1 ~/.ssh/authorized_keys\n\nDo not change sshd settings, Remote Login, or any other keys. Post a one-line [Chief] note on OWB #99 with the whoami output when done.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -21289,7 +21289,7 @@
         {
           "at": "2026-10-15T07:20Z",
           "by": "cursor",
-          "what": "released: OWB UAT copy re-verified 08:22 (sha f74ca3e8 match; MASTER_COPIES.md records it as master of record). NAS leg still blocked: /Volumes/data (NFS 192.168.1.119) hangs on mkdir/ls although host and port 2049 answer; mini_repair.py --apply run 08:20, no change. Copy left in tmux j0267-nas (stuck in mkdir since 08:11), result ~/_desk/logs/j0267-nas.done/.log; don't start a second copy. HOS J0175 ffmpeg writing to the NAS also stuck 4.5 h. Needs the NFS mount reset (remount or NAS restart) on the Mini, which may need Ben."
+          "what": "released: OWB UAT copy re-verified 08:22 (sha f74ca3e8 match; MASTER_COPIES.md records it as master of record). NAS leg still blocked: /Volumes/data (NFS <NAS>) hangs on mkdir/ls although host and port 2049 answer; mini_repair.py --apply run 08:20, no change. Copy left in tmux j0267-nas (stuck in mkdir since 08:11), result ~/_desk/logs/j0267-nas.done/.log; don't start a second copy. HOS J0175 ffmpeg writing to the NAS also stuck 4.5 h. Needs the NFS mount reset (remount or NAS restart) on the Mini, which may need Ben."
         },
         {
           "at": "2026-10-15T08:11Z",
@@ -21309,7 +21309,7 @@
         {
           "at": "2026-10-15T08:16Z",
           "by": "cursor",
-          "what": "blocked: parked for Chief: NAS NFS mount /Volumes/data hung (192.168.1.119 pings; ls and mkdir hang; 08:11 copy in tmux j0267-nas still stuck in mkdir). mini_repair.py run, no effect. Needs a remount of /Volumes/data (or NAS restart) before the NAS copy. Master is safe meanwhile: OWB UAT and 027 07_Edit-Project copies both sha f74ca3e8 = pack."
+          "what": "blocked: parked for Chief: NAS NFS mount /Volumes/data hung (<NAS> pings; ls and mkdir hang; 08:11 copy in tmux j0267-nas still stuck in mkdir). mini_repair.py run, no effect. Needs a remount of /Volumes/data (or NAS restart) before the NAS copy. Master is safe meanwhile: OWB UAT and 027 07_Edit-Project copies both sha f74ca3e8 = pack."
         },
         {
           "at": "2026-10-15T08:47Z",
@@ -22403,7 +22403,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T08:09Z",
-      "result": "Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (192.168.1.119:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted.",
+      "result": "Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (<NAS>:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted.",
       "history": [
         {
           "at": "2026-10-15T08:09Z",
@@ -22428,7 +22428,7 @@
         {
           "at": "2026-10-15T12:49Z",
           "by": "cursor",
-          "what": "done: Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (192.168.1.119:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted."
+          "what": "done: Created /Volumes/data/mac-mini-archive/youtube-staging on the mounted NFS share (<NAS>:/volume1/data). README_YOUTUBE_STAGING.txt read back matches the brief (219 bytes). Nothing deleted."
         }
       ],
       "kind": "studio",
@@ -121021,7 +121021,7 @@
       "title": "Chief h36: copy-first NAS move of HOS 008 master v03 build scratch /private/tmp/j1287-v03 (J1287 PASS h35) + gemini-j0240-wt only if lsof clear; done whatever free space",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief ruling h36 on J1296 (OWB #264, the h36 comment in this job's ref). J1296's 34 moves (4,635,643,887 B) are accepted (PASS). This is the one bounded follow-on h34 already foresaw (\"J1287 v03 scratch can go to the NAS after Chief rules on v03\"). Chief ruled J1287 master v03 PASS at h35 (HOS #180 6537320070) and J1297 (UAT copy) is done, so the v03 build scratch is now releasable. Not urgent. J1100 is NOT gated on this job (h34 bar: start at df >=10 GiB, park below 6 GiB). GBP0.\n\nCandidate list (the only candidates; Chief read them at 02:40Z, verify each yourself):\n1. `/private/tmp/j1287-v03/` (about 1.6 GB, 21 files, newest mtime 01:26Z on 31 Oct). It holds HOS 008 master v03 build/verification scratch: `stem_bed_v02_arranged.wav`, `stem_bed_v03.wav`, `stem_bed_v03_preduck.wav`, `stem_sfx_v02.wav`, `stem_sfx_v03.wav`, `stem_vo_v03_unshifted.wav`, `stem_vo_v12.wav`, `audio_master_v03.wav`/`_dry.wav`/`.m4a`, `decode_*` f32/wav/m4a, `_lufs_snip.wav`. The master itself (sha cf1561c2...3099b) is already on the NAS desk and in precheck; this folder isn't.\n2. `~/_desk/scratch/gemini-j0240-wt` (106 MB, J0240 done), only if `lsof +D` is clear. At 02:40Z it was still the cwd of bash 1852 (`check_all.sh 02_Video-Projects/008_Lightning-Franklin`, up 16 days) and its npm child 1975. Do NOT kill those processes in this job. If they still hold it, skip it and say so.\n\nMethod (same as J1293/J1296):\n- Before you start, confirm `/Volumes/data` is mounted (NFS 192.168.1.119:/volume1/data). If it isn't, stop and park.\n- Run `lsof +D /private/tmp/j1287-v03`. If anything holds it, stop and park.\n- Grep OWB jobs/queue.json (non-done jobs: body, result, history) and HOS desk/PIPELINE json for `j1287-v03`. If any open, claimed or blocked job other than this one cites it, skip it.\n- Copy with COPYFILE_DISABLE=1 to `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-31/tmp/j1287-v03/` (worktree: `.../2026-10-31/scratch/gemini-j0240-wt/`). Create only missing folders. Never overwrite or delete anything on the NAS. Write FILE_LIST.txt, SHA256SUMS.txt and MOVED_FROM.txt there.\n- Match sha256 and byte size on every file. Remove local files only on a full match of the whole folder, then leave `/private/tmp/j1287-v03.MOVED_TO_NAS.txt` with the NAS path, file count, total bytes, SHA256SUMS location, time, owning job (J1287, PASS h35) and \"HOS 008 not yet uploaded\". For the worktree, the copy keeps dirty files; run `git worktree prune` only, with no branch delete.\n- Log `df -k /System/Volumes/Data` and diskutil \"Container Free Space\" before, after each folder, and at the end.\n\nDo NOT touch anything else. That includes `/private/tmp/j1100_*`, `/private/tmp/j1299-wt`, every other /private/tmp entry, `~/_desk/renders/J1100*`, ~/_desk/008/031/032, every item on the J1296 do-not-touch list, the files J1296 kept (newest two Short versions, uranus v06, HOS 006 master_v06/_PHONE/stem_vo, 029 v03/v04, lift v01, HOS 006 Shorts), the Chrome code-sign clones, agent homes, and ~/Library. No git gc, no resets, no force-push, no reboot, no process kills.\n\nDone condition: when the copy is verified and the locals are released, mark this job **done** whatever the final free space. Expected result is about 18.5-19 GB container free. Chief h36 accepts that the house 20 GB target can't be reached right now without touching protected live work. Don't hunt for more candidates; the next headroom step is J1100's own scratch/renders going to the NAS when J1100 delivers (AGENTS.md). Report on OWB #264 with a [Chief] prefix: df/container before and after, per-folder file count, bytes and sha match, NAS path, and each skip with its reason. GBP0. Never print secrets.\n",
+      "body": "Chief ruling h36 on J1296 (OWB #264, the h36 comment in this job's ref). J1296's 34 moves (4,635,643,887 B) are accepted (PASS). This is the one bounded follow-on h34 already foresaw (\"J1287 v03 scratch can go to the NAS after Chief rules on v03\"). Chief ruled J1287 master v03 PASS at h35 (HOS #180 6537320070) and J1297 (UAT copy) is done, so the v03 build scratch is now releasable. Not urgent. J1100 is NOT gated on this job (h34 bar: start at df >=10 GiB, park below 6 GiB). GBP0.\n\nCandidate list (the only candidates; Chief read them at 02:40Z, verify each yourself):\n1. `/private/tmp/j1287-v03/` (about 1.6 GB, 21 files, newest mtime 01:26Z on 31 Oct). It holds HOS 008 master v03 build/verification scratch: `stem_bed_v02_arranged.wav`, `stem_bed_v03.wav`, `stem_bed_v03_preduck.wav`, `stem_sfx_v02.wav`, `stem_sfx_v03.wav`, `stem_vo_v03_unshifted.wav`, `stem_vo_v12.wav`, `audio_master_v03.wav`/`_dry.wav`/`.m4a`, `decode_*` f32/wav/m4a, `_lufs_snip.wav`. The master itself (sha cf1561c2...3099b) is already on the NAS desk and in precheck; this folder isn't.\n2. `~/_desk/scratch/gemini-j0240-wt` (106 MB, J0240 done), only if `lsof +D` is clear. At 02:40Z it was still the cwd of bash 1852 (`check_all.sh 02_Video-Projects/008_Lightning-Franklin`, up 16 days) and its npm child 1975. Do NOT kill those processes in this job. If they still hold it, skip it and say so.\n\nMethod (same as J1293/J1296):\n- Before you start, confirm `/Volumes/data` is mounted (NFS <NAS>:/volume1/data). If it isn't, stop and park.\n- Run `lsof +D /private/tmp/j1287-v03`. If anything holds it, stop and park.\n- Grep OWB jobs/queue.json (non-done jobs: body, result, history) and HOS desk/PIPELINE json for `j1287-v03`. If any open, claimed or blocked job other than this one cites it, skip it.\n- Copy with COPYFILE_DISABLE=1 to `/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-31/tmp/j1287-v03/` (worktree: `.../2026-10-31/scratch/gemini-j0240-wt/`). Create only missing folders. Never overwrite or delete anything on the NAS. Write FILE_LIST.txt, SHA256SUMS.txt and MOVED_FROM.txt there.\n- Match sha256 and byte size on every file. Remove local files only on a full match of the whole folder, then leave `/private/tmp/j1287-v03.MOVED_TO_NAS.txt` with the NAS path, file count, total bytes, SHA256SUMS location, time, owning job (J1287, PASS h35) and \"HOS 008 not yet uploaded\". For the worktree, the copy keeps dirty files; run `git worktree prune` only, with no branch delete.\n- Log `df -k /System/Volumes/Data` and diskutil \"Container Free Space\" before, after each folder, and at the end.\n\nDo NOT touch anything else. That includes `/private/tmp/j1100_*`, `/private/tmp/j1299-wt`, every other /private/tmp entry, `~/_desk/renders/J1100*`, ~/_desk/008/031/032, every item on the J1296 do-not-touch list, the files J1296 kept (newest two Short versions, uranus v06, HOS 006 master_v06/_PHONE/stem_vo, 029 v03/v04, lift v01, HOS 006 Shorts), the Chrome code-sign clones, agent homes, and ~/Library. No git gc, no resets, no force-push, no reboot, no process kills.\n\nDone condition: when the copy is verified and the locals are released, mark this job **done** whatever the final free space. Expected result is about 18.5-19 GB container free. Chief h36 accepts that the house 20 GB target can't be reached right now without touching protected live work. Don't hunt for more candidates; the next headroom step is J1100's own scratch/renders going to the NAS when J1100 delivers (AGENTS.md). Report on OWB #264 with a [Chief] prefix: df/container before and after, per-folder file count, bytes and sha match, NAS path, and each skip with its reason. GBP0. Never print secrets.\n",
       "ref": "6537808816",
       "film": "",
       "stage": "",
@@ -163972,7 +163972,7 @@
         {
           "at": "2026-11-04T22:49Z",
           "by": "claude",
-          "what": "note from Ben's MacBook check 4 Nov 22:5xZ: tailscale status on the MacBook lists bens-macbook-pro and ben-mac-mini both online on Ben's tailnet, so the MacBook overflow input/output hand-off can use the existing tailnet between those two hosts (no Tailscale setting changes, nothing public). The MacBook now has Codex, Claude Code (Claude Pro account), Cursor agent and agy (Google AI Ultra) signed in."
+          "what": "note from Ben's MacBook check 4 Nov 22:5xZ: tailscale status on the MacBook lists <macbook> and <mini> both online on Ben's tailnet, so the MacBook overflow input/output hand-off can use the existing tailnet between those two hosts (no Tailscale setting changes, nothing public). The MacBook now has Codex, Claude Code (Claude Pro account), Cursor agent and agy (Google AI Ultra) signed in."
         },
         {
           "at": "2026-11-05T00:13Z",
@@ -185814,7 +185814,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:46Z",
-      "result": "MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local",
+      "result": "MacBook test OK: agy, Gemini 4 Argon (High), <macbook>.local",
       "history": [
         {
           "at": "2026-11-04T22:46Z",
@@ -185829,7 +185829,7 @@
         {
           "at": "2026-11-04T23:41Z",
           "by": "macbook",
-          "what": "done: MacBook test OK: agy, Gemini 4 Argon (High), Bens-MacBook-Pro.local"
+          "what": "done: MacBook test OK: agy, Gemini 4 Argon (High), <macbook>.local"
         }
       ],
       "remaining_action": "MacBook setup test: gemini",
@@ -185921,7 +185921,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T22:46Z",
-      "result": "MacBook test OK: Codex CLI, exact model not verified, Bens-MacBook-Pro.local",
+      "result": "MacBook test OK: Codex CLI, exact model not verified, <macbook>.local",
       "history": [
         {
           "at": "2026-11-04T22:46Z",
@@ -185936,7 +185936,7 @@
         {
           "at": "2026-11-05T00:13Z",
           "by": "macbook",
-          "what": "done: MacBook test OK: Codex CLI, exact model not verified, Bens-MacBook-Pro.local"
+          "what": "done: MacBook test OK: Codex CLI, exact model not verified, <macbook>.local"
         }
       ],
       "remaining_action": "MacBook setup test: codex",
@@ -190751,7 +190751,7 @@
       "title": "Shared folder test: MacBook worker side (read Mini file via the share under launchd)",
       "needs": "macbook",
       "repo": "owb",
-      "body": "Shared-folder test, MacBook worker side (after the Mini side). This checks the folder works for the MacBook worker itself, run by launchd and not from Ben's Terminal. macOS can block background jobs from network volumes, so this is the real test. £0. Read/write only in the share's _share_test folder. Never delete anything.\n\n```\nM=$(mount | awk '/smbfs/ && /ben-mac-mini/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo \"mount: ${M:-NONE}\"; mount | grep -i smbfs\nT=\"$M/_share_test\"; ls -l \"$T\" || echo \"CANNOT LIST (Network Volumes permission for the worker?)\"\nfor f in \"$T\"/from_mini*.bin; do want=$(cat \"$f.sha256\"); s=$(date +%s); got=$(shasum -a 256 \"$f\" | cut -d' ' -f1); e=$(( $(date +%s)-s )); [ \"$want\" = \"$got\" ] && echo \"OK $f read in ${e}s\" || echo \"MISMATCH $f\"; done\nf=\"$T/from_macbook_worker_$(date -u +%Y%m%dT%H%MZ).bin\"; head -c 67108864 /dev/urandom > \"$f\" && shasum -a 256 \"$f\" | cut -d' ' -f1 > \"$f.sha256\" && echo \"wrote $f\"\n```\n\nDone when: the Mini's file hashes OK and the worker can write. If listing fails with \"Operation not permitted\", block with: \"parked for Ben: allow Network Volumes for the MacBook worker (System Settings > Privacy & Security > Files and Folders)\".\n",
+      "body": "Shared-folder test, MacBook worker side (after the Mini side). This checks the folder works for the MacBook worker itself, run by launchd and not from Ben's Terminal. macOS can block background jobs from network volumes, so this is the real test. £0. Read/write only in the share's _share_test folder. Never delete anything.\n\n```\nM=$(mount | awk '/smbfs/ && /<mini>/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo \"mount: ${M:-NONE}\"; mount | grep -i smbfs\nT=\"$M/_share_test\"; ls -l \"$T\" || echo \"CANNOT LIST (Network Volumes permission for the worker?)\"\nfor f in \"$T\"/from_mini*.bin; do want=$(cat \"$f.sha256\"); s=$(date +%s); got=$(shasum -a 256 \"$f\" | cut -d' ' -f1); e=$(( $(date +%s)-s )); [ \"$want\" = \"$got\" ] && echo \"OK $f read in ${e}s\" || echo \"MISMATCH $f\"; done\nf=\"$T/from_macbook_worker_$(date -u +%Y%m%dT%H%MZ).bin\"; head -c 67108864 /dev/urandom > \"$f\" && shasum -a 256 \"$f\" | cut -d' ' -f1 > \"$f.sha256\" && echo \"wrote $f\"\n```\n\nDone when: the Mini's file hashes OK and the worker can write. If listing fails with \"Operation not permitted\", block with: \"parked for Ben: allow Network Volumes for the MacBook worker (System Settings > Privacy & Security > Files and Folders)\".\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -190763,7 +190763,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T09:29Z",
-      "result": "PASS (PR #522): mount=/Volumes/shared (smbfs @ben-mac-mini/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0).",
+      "result": "PASS (PR #522): mount=/Volumes/shared (smbfs @<mini>/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0).",
       "history": [
         {
           "at": "2026-11-05T09:29Z",
@@ -190793,7 +190793,7 @@
         {
           "at": "2026-11-05T10:32Z",
           "by": "macbook",
-          "what": "done: PASS (PR #522): mount=/Volumes/shared (smbfs @ben-mac-mini/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0)."
+          "what": "done: PASS (PR #522): mount=/Volumes/shared (smbfs @<mini>/shared); OK /Volumes/shared/_share_test/from_mini_20261105T0953Z.bin read in 23s (sha256=19e3e573873d6df9e9d42a011015dc9f15999226de203c90a1e7877c13cba8f4); wrote 64 MB /Volumes/shared/_share_test/from_macbook_worker_20261105T1030Z.bin in 6s (sha256=98c9958da9154eca0119af17c9f4c9ead56fb231e750c383be24561aa9d41fa0)."
         }
       ],
       "remaining_action": "Record test result and finish J2209",
@@ -191254,7 +191254,7 @@
       "title": "Shared folder re-check after lock-down: MacBook worker reads/writes /Volumes/shared",
       "needs": "macbook",
       "repo": "owb",
-      "body": "After ~/_desk/shared was set to 700 and guest access off (5 Nov). Run: M=$(mount | awk '/smbfs/ && /ben-mac-mini/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo $M; f=\"$M/.rw_check_$(date +%s)\"; echo ok > \"$f\" && cat \"$f\" && rm \"$f\" && echo PASS. Done when PASS (it removes only its own one-line check file). If it can't read or write, block with the error.",
+      "body": "After ~/_desk/shared was set to 700 and guest access off (5 Nov). Run: M=$(mount | awk '/smbfs/ && /<mini>/ {for(i=1;i<=NF;i++) if($i==\"on\"){print $(i+1); exit}}'); echo $M; f=\"$M/.rw_check_$(date +%s)\"; echo ok > \"$f\" && cat \"$f\" && rm \"$f\" && echo PASS. Done when PASS (it removes only its own one-line check file). If it can't read or write, block with the error.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -191266,7 +191266,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T12:36Z",
-      "result": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
+      "result": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for <mini>; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://<mini>/shared on the MacBook and re-run.",
       "history": [
         {
           "at": "2026-11-05T12:36Z",
@@ -191306,7 +191306,7 @@
         {
           "at": "2026-11-05T12:49Z",
           "by": "macbook",
-          "what": "blocked: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run."
+          "what": "blocked: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for <mini>; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://<mini>/shared on the MacBook and re-run."
         },
         {
           "at": "2026-11-05T18:54Z",
@@ -191329,7 +191329,7 @@
       },
       "hold": {
         "type": "input",
-        "condition": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
+        "condition": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for <mini>; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://<mini>/shared on the MacBook and re-run.",
         "check_at": "2026-11-05T19:54:07+00:00"
       }
     },
@@ -193470,7 +193470,7 @@
       "title": "Verify condition for J2215",
       "needs": "mini",
       "repo": "owb",
-      "body": "Verify the waiting condition for J2215: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2215 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "body": "Verify the waiting condition for J2215: PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for <mini>; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://<mini>/shared on the MacBook and re-run.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2215 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -216318,7 +216318,7 @@
         {
           "at": "2026-11-10T09:24Z",
           "by": "claudecode",
-          "what": "step 3 of 5 done: Mount is NFSv3 hard,nointr from 192.168.1.119. NAS answers ping, showmount, port 2049. stat answers in <1s; ls of /Volumes/data and of local SSD /Volumes/MiniWork both give no answer in 20s. nas_offload pid 73678 stuck in open() for 6h34m."
+          "what": "step 3 of 5 done: Mount is NFSv3 hard,nointr from <NAS>. NAS answers ping, showmount, port 2049. stat answers in <1s; ls of /Volumes/data and of local SSD /Volumes/MiniWork both give no answer in 20s. nas_offload pid 73678 stuck in open() for 6h34m."
         },
         {
           "at": "2026-11-10T09:26Z",
@@ -218987,7 +218987,7 @@
         {
           "at": "2026-11-10T16:40Z",
           "by": "macbook-2",
-          "what": "released: MacBook item 9 + Tailscale item 6 + repo launchd plists recorded in PR #750; pinned mini_only=true and released for Mac mini (ben-mac-mini) to run local host checks 1-5, 7, 8"
+          "what": "released: MacBook item 9 + Tailscale item 6 + repo launchd plists recorded in PR #750; pinned mini_only=true and released for Mac mini (<mini>) to run local host checks 1-5, 7, 8"
         },
         {
           "at": "2026-11-10T17:03Z",
@@ -219022,7 +219022,7 @@
         {
           "at": "2026-11-11T02:58Z",
           "by": "gemini",
-          "what": "blocked: parked for Chief: complete read-only always-on report for ben-mac-mini and bens-macbook-pro in jobs/reviews/J2517/REPORT.md (PR #750, commit ac438cb87). Mini already comes back unattended after a power cut (sleep=0, disksleep=0, displaysleep=0, womp=1, autorestart=1, FileVault Off, autoLoginUser=benjaminoats, sshd enabled on port 22, Tailscale + NAS daemons + chief-relay/board-publish/cdp-browsers RunAtLoad=true). Chief to review PR #750 and decide whether anything needs asking Ben."
+          "what": "blocked: parked for Chief: complete read-only always-on report for <mini> and <macbook> in jobs/reviews/J2517/REPORT.md (PR #750, commit ac438cb87). Mini already comes back unattended after a power cut (sleep=0, disksleep=0, displaysleep=0, womp=1, autorestart=1, FileVault Off, autoLoginUser=benjaminoats, sshd enabled on port 22, Tailscale + NAS daemons + chief-relay/board-publish/cdp-browsers RunAtLoad=true). Chief to review PR #750 and decide whether anything needs asking Ben."
         },
         {
           "at": "2026-11-11T05:35Z",
