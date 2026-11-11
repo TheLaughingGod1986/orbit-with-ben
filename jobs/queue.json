@@ -224334,10 +224334,10 @@
       "stage": "picture",
       "after": "J2589",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T10:46Z",
+      "eta": "2026-11-11T12:46Z",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
       "result": "",
@@ -224346,13 +224346,26 @@
           "at": "2026-11-11T10:22Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Yes or no on each third take; a fail is parked for Grok with the shot named",
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before the film is re-edited",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T10:46Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2591",

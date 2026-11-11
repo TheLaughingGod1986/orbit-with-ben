@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
-| J2590 | any | open (after J2589) | – | – | 008 picture · qa · HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) | J2241 |
+| J2590 | any | claimed | gemini | 2026-11-11T12:46Z | 008 picture · qa · HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) | J2241 |
 | J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2594 | mini | open | – | – | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
