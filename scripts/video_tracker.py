@@ -266,9 +266,12 @@ def uploads_index(root: Path | None = None) -> dict:
         # Wed 11 Nov) had no card until 10 Nov 2026, while the copy it replaced still showed as scheduled.
         m = next((hit for hit in (re.search(r"02_Video-Projects/(\d{3})_", str(meta.get(k) or ""))
                                   for k in ("packageDir", "file", "thumb")) if hit), None)
-        if not m:
+        # A Short that belongs to no film (a standalone test Short, a dated-event Short) has no film folder in any of
+        # its paths. It still gets a row, keyed by its video id: until 10 Nov 2026 such a Short had no card at all
+        # until the day after it aired (J2515, the Titan Short of 10 Nov).
+        if not m and kind != "short":
             continue
-        film = m.group(1)
+        film = m.group(1) if m else ""
         privacy = meta.get("privacyStatus") or meta.get("privacy") or ""
         publish_at = meta.get("publishAt") or ""
         # A swap's old copy is recorded with publishAt null (unscheduled) and supersededBy the new id. That null is a
@@ -293,9 +296,19 @@ def uploads_index(root: Path | None = None) -> dict:
             "title": meta.get("title") or _receipt_title(root, meta.get("packageDir") or ""),
             "supersededBy": superseded,
         }
-        key = f"OWB:{film}" if kind == "long" else f"OWB:{film}:S:{vid}"
+        if not film:
+            row["channel"] = channels.home_label()
+            key = lone_short_key(row["channel"], vid)
+        else:
+            key = f"OWB:{film}" if kind == "long" else f"OWB:{film}:S:{vid}"
         by_film.setdefault(key, []).append(row)
     return by_film
+
+
+def lone_short_key(channel: str, vid: str) -> str:
+    """The card key of a Short that belongs to no film. It is the key the same video gets once it is public and read
+    from YouTube (`<channel>:YT:<id>`), so the card keeps its key, and anything hung on it, when the Short airs."""
+    return f"{channel}:YT:{vid}"
 
 
 def _norm_title(t: str) -> str:
@@ -1288,6 +1301,25 @@ def build_videos(
             jobs=sjobs, check=None,  # Ben's OK/changes attach to the long, not each Short
             watch=None, override_lane=film_lanes.get(skey), now=now,
             short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
+        ))
+
+    # --- Shorts that belong to no film (standalone and dated-event Shorts): one card each, from the register ---
+    for key, rows in uploads.items():
+        meta = rows[0]
+        vid = meta.get("videoId") or ""
+        if meta.get("film") or not vid or key != lone_short_key(meta.get("channel") or "", vid):
+            continue
+        if meta.get("supersededBy"):
+            continue  # a swap's old copy: only the new copy holds the slot on the board
+        seen = public.get(vid) or {}
+        videos.append(_card(
+            key=key, channel=meta["channel"], number="",
+            title=seen.get("title") or scheduled_titles.get(vid) or short_title_from_path(meta) or "Short",
+            vtype="short", air=str(seen.get("publishedAt") or "")[:10], brief={},
+            release=None, upload_rows=[meta],
+            jobs=list(by_jobs.get(key) or []), check=None,
+            watch=None, override_lane=film_lanes.get(key), now=now,
+            short_id=vid, public=public, public_at=public_at, held=held,
         ))
 
     # --- Planned Shorts for upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---

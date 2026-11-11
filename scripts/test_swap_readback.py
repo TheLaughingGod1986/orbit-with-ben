@@ -64,7 +64,10 @@ class TrackerSwap(unittest.TestCase):
         uploads.write_text(json.dumps(doc))
         idx = vt.uploads_index(self.root)
         self.assertEqual(idx["OWB:027:S:READBACK001"][0]["publishAt"], "2026-11-11T11:30:00Z")
-        self.assertFalse([k for k in idx if "NOWHERE0001" in k])   # no path names a film: still no card, no guess
+        # No path names a film: no film is guessed. Since J2515 it has a row of its own under its video id, so a Short
+        # that belongs to no film is on the board before it airs.
+        self.assertEqual([k for k in idx if "NOWHERE0001" in k], [vt.lone_short_key(vt.channels.home_label(), "NOWHERE0001")])
+        self.assertEqual(idx[vt.lone_short_key(vt.channels.home_label(), "NOWHERE0001")][0]["film"], "")
 
     def test_receipt_fallback_only_reads_its_own_video(self):
         self.assertEqual(vt._receipt_privacy(self.root, PKG, "NOPUBLISH01"), ("", ""))
