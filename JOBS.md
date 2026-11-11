@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2599 | any | blocked | gemini | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2609 | any | blocked | gemini | – | review · Verify condition for J2599 |  |
-| J2610 | any | open | – | – | review · Verify condition for J2583 |  |
+| J2610 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2583 |  |
 
 Recently finished:
 
