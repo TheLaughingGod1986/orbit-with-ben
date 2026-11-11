@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2592, J2593, J2583, J2270, J2584, J2586, J2587, J2242, J2614, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2583, J2270, J2584, J2586, J2587, J2242, J2614, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -71,7 +71,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2584 | mini | open (after J2583) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
-| J2592 | mini | claimed | macbook | 2026-11-11T16:16Z | 008 picture · assembly · HOS 008: place the contact spark on the salon's fourth take, at frame 30 | J2241 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2615 | macbook | claimed | macbook-2 | 2026-11-11T16:16Z | review · Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
