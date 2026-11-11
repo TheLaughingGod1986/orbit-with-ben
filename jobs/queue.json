@@ -227484,9 +227484,14 @@
           "at": "2026-11-11T15:26Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2628; starting pre-take checks in clean HOS worktree"
+        },
+        {
+          "at": "2026-11-11T15:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Unit tests (113 OK), detach-command --retakes-j2626, start-frame hashes, and live Flow balance (10,790, price 100) verified and posted on HOS desk; launching detached run"
         }
       ],
-      "remaining_action": "Run unit tests, detach-command --retakes-j2626, and precheck in clean HOS worktree; check J2270 batch 2 done file and post pre-take report on HOS desk",
+      "remaining_action": "Run detached --retakes-j2626 for P03:01_really_falling_c1 take 3 and P04:05_minute_second_c1 take 3 (200 credits)",
       "due": "2026-11-12T16:00:00Z",
       "for": "gemini",
       "kind": "video",
@@ -227495,11 +227500,11 @@
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T15:26Z",
+        "at": "2026-11-11T15:30Z",
         "by": "gemini",
-        "note": "Claimed J2628; starting pre-take checks in clean HOS worktree"
+        "note": "Unit tests (113 OK), detach-command --retakes-j2626, start-frame hashes, and live Flow balance (10,790, price 100) verif"
       },
       "taskKeys": [
         "HOS:009"
