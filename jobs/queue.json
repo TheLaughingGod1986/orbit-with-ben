@@ -214948,17 +214948,22 @@
           "at": "2026-11-11T03:49Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected HOS 011 VO files (hos_011_vo_v01_TAKE.json, words.srt, J2286 KEEP review) and HOS 013 VO lock + shot list templates in clean worktree"
+        },
+        {
+          "at": "2026-11-11T03:51Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Recorded HOS 011 VO lock (hos_011_vo_v01, WAV sha256 d873f1d0..., J2286 KEEP + J2245 closed 10 Nov) in VO_STATUS.md and updated description chapter times"
         }
       ],
-      "remaining_action": "Record the HOS 011 VO lock in VO_STATUS.md and production-status.md, then build shot list v01 on words.srt",
+      "remaining_action": "Build HOS 011 shot list v01 and picture plan v01 on locked hos_011_vo_v01 words.srt with picture source and mint cost per row",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T03:49Z",
+        "at": "2026-11-11T03:51Z",
         "by": "gemini",
-        "note": "Inspected HOS 011 VO files (hos_011_vo_v01_TAKE.json, words.srt, J2286 KEEP review) and HOS 013 VO lock + shot list temp"
+        "note": "Recorded HOS 011 VO lock (hos_011_vo_v01, WAV sha256 d873f1d0..., J2286 KEEP + J2245 closed 10 Nov) in VO_STATUS.md and "
       },
       "taskKeys": [
         "HOS:011"
