@@ -1,0 +1,69 @@
+{
+  "replacement_window": {
+    "frames_compared": 266,
+    "mean_error": 0.384135164299638,
+    "maximum_frame_mean_error": 0.6459432870370371,
+    "threshold": 2,
+    "dissolved_sha256": "65229bda35c7cdb3d1704e3a41c6c0a8e0b5a78728716acb305a06a3cb7954b2"
+  },
+  "status": "CLOCK_REPLACEMENT_WINDOW_AND_SPARSE_OUTSIDE_READBACK_PASS",
+  "sha256": "4037046cbea93cbc2ad02b468016b5ec90def570122de11fad850e6a13e19760",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "samples": [
+    {
+      "chapter_s": 5,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.5401414609053498
+    },
+    {
+      "chapter_s": 100,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.10996141975308642
+    },
+    {
+      "chapter_s": 250,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.7473559670781893
+    },
+    {
+      "chapter_s": 329,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.02787551440329218
+    },
+    {
+      "chapter_s": 340,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.2562319958847737
+    },
+    {
+      "chapter_s": 430,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.47911779835390944
+    },
+    {
+      "chapter_s": 490,
+      "comparison": "unchanged base",
+      "mean_absolute_error": 0.7741409465020576
+    },
+    {
+      "chapter_s": 332.2,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 0.7503060699588477
+    },
+    {
+      "chapter_s": 334.0,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 0.7387551440329219
+    },
+    {
+      "chapter_s": 336.5,
+      "comparison": "opaque replacement",
+      "mean_absolute_error": 0.7699871399176955
+    }
+  ],
+  "limitations": [
+    "All replacement-window frames compared at 320x180; outside it, seven sparse still comparisons. Not full-film or moving-picture/listening review.",
+    "Normal combined picture QA remains authoritative; no failure waived."
+  ]
+}
