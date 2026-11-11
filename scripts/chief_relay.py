@@ -77,12 +77,15 @@ import time
 
 HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
-OWB = pathlib.Path(os.environ.get("OWB_REPO", HOME / "YouTube" / "orbit-with-ben"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import workflow_state as workflow
 import workflow_handoffs as handoffs
 import routing  # noqa: E402  (AGENTS.md "Who does what": job kind -> worker and model)
 import channels  # noqa: E402  (channels/*/channel.json: checkouts, labels)
+
+# The checkout that carries the studio's own code, queue and thread, and the checkouts of the channels kept beside it.
+# Which is which comes from the channel files (11 Nov 2026, J2618): this script names no channel.
+STUDIO = channels.studio_checkout(HOME)
 
 
 def code_version():
@@ -139,7 +142,7 @@ def refresh_probes(at):
     every 15 min per agent, so jobs needing audio go to a worker shown this hour to hear (Claude, 5 Nov 2026)."""
     if os.environ.get("CHIEF_PROBE", "1") != "1":
         return
-    jobs = (read_json(OWB / "jobs" / "queue.json") or {}).get("jobs", [])
+    jobs = (read_json(STUDIO / "jobs" / "queue.json") or {}).get("jobs", [])
     if not any(j.get("required_capabilities") and j.get("status") not in ("done", "cancelled") for j in jobs):
         return
     import capability_probe
@@ -167,8 +170,15 @@ def refresh_probes(at):
         log(f"capability probe: {agent} has {', '.join(available) or 'no media input'} ({evidence[:300]})")
 
 
-# On Ben's Mini the HOS checkout is "History Of Science" (Cursor, 7 Oct); keep the git-style name as a fallback.
-HOS = channels.repo_path("hos", HOME)
+# Every other channel's checkout, by slug. A channel file can list more than one folder name for it (on Ben's Mini one
+# is "History Of Science", Cursor, 7 Oct; the git-style name is the fallback): the first that exists is used.
+OTHERS = {slug: channels.repo_path(slug, HOME) for slug in channels.slugs() if slug != channels.studio_slug()}
+
+
+def add_dirs() -> str:
+    """The folders an unattended CLI is allowed besides the studio checkout it starts in: every other channel's
+    checkout, then the desk folder."""
+    return " ".join(f"--add-dir {shlex.quote(str(path))}" for path in [*OTHERS.values(), STATE.parent])
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
 # not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Ben, 9 Nov 2026 (Claude now the
@@ -307,7 +317,7 @@ def stall_window(agent: str, at: dt.datetime) -> dt.timedelta:
 def hard_flag(agent: str, at: dt.datetime) -> bool:
     """A credit_flags.json entry with "hard": true is Ben's own call that an agent is out (28 Oct 2026). Unlike a
     credit flag, a thread post does not clear it; only its out_until does."""
-    flag = ((read_json(OWB / "scripts" / "credit_flags.json") or {}).get("flags") or {}).get(agent) or {}
+    flag = ((read_json(STUDIO / "scripts" / "credit_flags.json") or {}).get("flags") or {}).get(agent) or {}
     try:
         return bool(flag.get("hard")) and parse(flag["out_until"]) > at
     except (KeyError, ValueError, TypeError):
@@ -323,7 +333,7 @@ def mark_model_down(model: str, reason: str, until: dt.datetime, at: dt.datetime
 def load_out(at: dt.datetime) -> dict:
     """Out-of-credit flags in force this run: scripts/credit_flags.json (committed by Claude or Chief, with the known
     reset time) plus the relay's own model marks. Sets routing.OUT so every chain skips those lanes. {id: reason}."""
-    flags = routing.read_flags(at, str(OWB / "scripts" / "credit_flags.json"))
+    flags = routing.read_flags(at, str(STUDIO / "scripts" / "credit_flags.json"))
     for p in sorted(d("down_models").glob("*.json")) if d("down_models").is_dir() else []:
         m = read_json(p) or {}
         try:
@@ -388,8 +398,7 @@ def cli_spec(agent: str, model: str = ""):
         # three runs on 8 Oct (all exit 2), so the env is ignored and only noted in the log.
         if os.environ.get("CODEX_FLAGS"):
             log("CODEX_FLAGS is set in the environment and ignored; the flags come from cli_spec()")
-        flags = (f"exec --approve-for-me -c sandbox_workspace_write.network_access=true "
-                 f"--add-dir {shlex.quote(str(HOS))} --add-dir {shlex.quote(str(STATE.parent))}")
+        flags = f"exec --approve-for-me -c sandbox_workspace_write.network_access=true {add_dirs()}"
         if model.startswith("gpt-"):
             flags = flags.replace("exec ", f"exec -m {shlex.quote(model)} ", 1)
     elif agent == "gemini":
@@ -400,8 +409,7 @@ def cli_spec(agent: str, model: str = ""):
         # With `-p` first, agy read --dangerously-skip-permissions as its prompt and exited 2 on every wake (Cursor,
         # #99 6136609471; 88 "run failed" posts 13-14 Oct).
         b = find_bin("AGY_BIN", "agy")
-        flags = os.environ.get("AGY_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
-                                            f"--add-dir {shlex.quote(str(STATE.parent))}")
+        flags = os.environ.get("AGY_FLAGS", f"--dangerously-skip-permissions {add_dirs()}")
         cm = routing.cli_model(model) if routing.RUNS_ON.get(model) == "gemini" else ""
         if cm:
             flags = f"{flags} --model {shlex.quote(cm)}"
@@ -411,8 +419,7 @@ def cli_spec(agent: str, model: str = ""):
         # Max 20x). Unattended like agy (--dangerously-skip-permissions); -p last, straight before the prompt, because
         # --add-dir takes a list and would read a prompt after it as one more folder (macbook_worker, 5 Nov 2026).
         b = find_bin("CLAUDE_BIN", "claude")
-        flags = os.environ.get("CLAUDE_CODE_FLAGS", f"--dangerously-skip-permissions --add-dir {shlex.quote(str(HOS))} "
-                                                   f"--add-dir {shlex.quote(str(STATE.parent))}")
+        flags = os.environ.get("CLAUDE_CODE_FLAGS", f"--dangerously-skip-permissions {add_dirs()}")
         flags = shlex.join([a for a in shlex.split(flags) if a != "-p"] + ["-p"])
     else:
         return None
@@ -433,12 +440,12 @@ NOT_GROK = re.compile(r"\[(?:Cursor|Codex|Gemini|Claude|relay)\]|\b(?:Cursor|Cod
 
 
 def fetch_comments(since: dt.datetime) -> list:
-    """Studio-thread comments updated since `since`, via owb_thread.py's own auth (GH_TOKEN or `gh auth token`)."""
-    sys.path.insert(0, str(OWB / "scripts"))
-    import owb_thread  # noqa: E402
-    # Only the repo's own accounts count (owb_thread.trusted): the repo is public, so anyone can comment on the thread.
-    return [c for c in owb_thread.api("GET", f"/issues/{owb_thread.PR}/comments?since={iso(since)}&per_page=100")
-            if owb_thread.trusted(c)]
+    """Studio-thread comments updated since `since`, via the thread tool's own auth (GH_TOKEN or `gh auth token`)."""
+    sys.path.insert(0, str(STUDIO / "scripts"))
+    import studio_thread as thread  # noqa: E402
+    # Only the repo's own accounts count (thread.trusted): the repo is public, so anyone can comment on the thread.
+    return [c for c in thread.api("GET", f"/issues/{thread.PR}/comments?since={iso(since)}&per_page=100")
+            if thread.trusted(c)]
 
 
 def note_grok_posts(at: dt.datetime) -> None:
@@ -487,7 +494,7 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
             mark_up(agent)
         else:
             return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
-    flag = routing.read_flags(at, str(OWB / "scripts" / "credit_flags.json")).get(agent)
+    flag = routing.read_flags(at, str(STUDIO / "scripts" / "credit_flags.json")).get(agent)
     if flag and (hard_flag(agent, at) or not (agent == "chief" and grok_post_age(at) is not None
                                              and grok_post_age(at) <= int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180")))):
         return False, f"flagged out of credit: {flag}"   # Grok posting again proves it's back, flag or not
@@ -502,7 +509,7 @@ def state_of(agent: str, at: dt.datetime) -> tuple:
         return False, "no Grok post on the thread in the last {} h".format(fresh // 60) + (
             f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
     if agent == "claude":
-        out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+        out, why = claude_out(at, read_json(STUDIO / "jobs" / "queue.json") or {})
         if out:
             return False, why
         beat = ((read_json(d("claude_beat.json")) or {}).get("beat") or {}).get("at")
@@ -518,7 +525,7 @@ def override(at: dt.datetime):
     """Ben's standing order naming a Chief outside the Mini chain (scripts/chief_override.json), while it holds:
     {"agent": "claude", "until": ISO, "reason": ...}. Ben, 14 Oct 2026: "Grokbot is out of credits until Friday, so you
     should be taking over as the main agent to run this as chief." Grok posting on the thread again ends it early."""
-    o = read_json(OWB / "scripts" / "chief_override.json") or {}
+    o = read_json(STUDIO / "scripts" / "chief_override.json") or {}
     try:
         until = parse(o["until"])
     except (KeyError, ValueError, TypeError):
@@ -537,7 +544,7 @@ def acting(at: dt.datetime, repo: str | None = None):
     if o and o.get("agent") in order:
         return rows, first   # already a link in the chain: its own up/down state decides
     if o and o.get("agent") == "claude" and first != "chief":
-        out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+        out, why = claude_out(at, read_json(STUDIO / "jobs" / "queue.json") or {})
         if out:
             # Ben, 14 Oct 2026: while Claude is out of usage the next one down runs as Chief, and Claude takes it back
             # by itself when its heartbeat returns.
@@ -584,7 +591,7 @@ def chief_order(job: dict) -> tuple:
 
 def pending_chief_reviews(at: dt.datetime) -> list:
     """All actionable role work, not just reviews. Never release a hold here."""
-    data = read_json(OWB / "jobs" / "queue.json") or {}
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
     by_id = {j["id"]: j for j in data.get("jobs", [])}
     due = workflow.deadlines(data.get("jobs", []))
     capabilities = worker_capabilities()
@@ -678,7 +685,7 @@ def chief_delivery_overdue(agent: str | None, at: dt.datetime, dest: pathlib.Pat
     inbox = read_json(dest or d("inbox.json")) or {}
     if inbox.get("agent") != agent or not inbox.get("notified_at"):
         return False
-    data = read_json(OWB / "jobs" / "queue.json") or {}
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
     # Never preempt a live Chief claim. Normal credit/error failover still applies.
     if any(j.get("status") == "claimed" and j.get("by") == agent
            and (not j.get("eta") or parse(j["eta"]) > at) for j in data.get("jobs", [])):
@@ -731,40 +738,85 @@ def cloud_chief(who) -> bool:
 
 # ---- the run ----
 
-def rule_names(checkouts: dict | None = None) -> dict:
-    """{"<channel>_rules": what the prompt calls that channel's rule files}, for every channel. The rule book is two
-    files since J2527: the studio's AGENTS.md, then the channel's own studio/RULES.md. A checkout that has no channel
-    file yet is told AGENTS.md alone, as before. `checkouts` is {channel: its checkout}; by default each channel's
-    own, as the channel files give it."""
-    paths = checkouts or {slug: channels.repo_path(slug, HOME) for slug in channels.slugs()}
-    return {f"{slug}_rules": channels.rules_phrase(path) for slug, path in paths.items()}
+def brief_channels(agent: str, checkouts: dict | None = None) -> dict:
+    """The parts of the brief that are about channels, each built from the channel files, so the brief names no
+    channel itself (J2618, 11 Nov 2026). `checkouts` is {channel: its checkout} for every channel; by default the
+    studio's own and the others', as the channel files give them.
+
+    The studio's channel is step 1. Every other channel gets a step-2 line (2, 2b, 2c ...), its flag for the balance
+    check and a note on its queue jobs. A channel with a desk (`desk` in its channel file: the desk tool's path and
+    the desk's number) also gets the desk inbox, the desk-first rule and its way of reporting. For today's two
+    channels the result reads exactly as the hand-written brief did (a test holds the old text against it)."""
+    studio = channels.studio_slug()
+    paths = dict(checkouts or {studio: STUDIO, **OTHERS})
+    rules = {slug: channels.rules_phrase(path) for slug, path in paths.items()}
+    others = [slug for slug in paths if slug != studio]
+    desks = {slug: channels.desk(slug) for slug in others if channels.desk(slug)}
+    label, tool = channels.label, lambda slug: pathlib.PurePosixPath(desks[slug]["tool"]).name
+    steps, first, notes = [], [], []
+    for i, slug in enumerate(others):
+        line = f"2{'' if i == 0 else chr(ord('a') + i)}. {channels.name(slug)} ({paths[slug]}): git pull. Read its {rules[slug]}"
+        if slug in desks:
+            steps.append(line + f' ("The desk"). Run its desk inbox:\n     python3 {desks[slug]["tool"]} inbox --as {agent}   '
+                                f"(run in the {label(slug)} checkout; there is no scripts/{tool(slug)})")
+            first.append(f"   If it says {channels.name(slug)} first: take the single oldest {label(slug)} desk task you can do "
+                         f"now, and go to step 4. Only if\n   there is none, fall through to the {label(studio)} queue below.\n")
+            notes.append(f'   Queue jobs marked `{slug}` (repo: {slug}, e.g. "{label(slug)} 007 Shorts VO") are NOT {label(slug)} '
+                         f"desk tasks: they are normal queue jobs\n   that `jobs.py next` hands out like any other. Do them in "
+                         f'the {label(slug)} checkout, following its {rules[slug]}. "{label(slug)} desk tasks"\n   means only '
+                         f"desk #{desks[slug]['number']} messages that are not in the queue.\n")
+        else:
+            steps.append(line + ".")
+            notes.append(f"   Queue jobs marked `{slug}` (repo: {slug}) are normal queue jobs that `jobs.py next` hands out like "
+                         f"any other.\n   Do them in the {label(slug)} checkout, following its {rules[slug]}.\n")
+    desk_labels = " or ".join(label(slug) for slug in desks)
+    return {
+        "studio_name": channels.name(studio), "studio": paths[studio], "studio_rules": rules[studio],
+        "studio_label": label(studio),
+        "desk_ids": "".join(f", {tool(slug)} --as/--from" for slug in desks),
+        "channel_steps": "\n".join(steps) or "2. No other channel is plugged in.",
+        "balance_flags": " ".join(f'--{slug} "{paths[slug]}"' for slug in others),
+        "desk_first": "".join(first), "queue_notes": "".join(notes),
+        "film_example": f"{label(others[0] if others else studio)}:006",
+        "desk_or": f"on the {desk_labels}\n   desk, or " if desks else "",
+        "desk_claim": f", or the {desk_labels}\n   desk's own rule" if desks else "",
+        "desk_reports": "".join(f"; {label(slug)} with  {tool(slug)} post --from {agent} --to claude ..." for slug in desks),
+    }
+
+
+def worker_only_steps() -> str:
+    """What a worker that is not the Chief is told to skip and still do, in the sentence that goes into its brief."""
+    others = list(OTHERS)
+    desks = [slug for slug in others if channels.desk(slug)]
+    skip = "the channel check" + (f" and the {' and '.join(channels.label(s) for s in desks)} desk inbox" if desks else "")
+    if not others:
+        return f"In step 3 skip {skip}: do only the job `jobs.py next` gives you. If it exits 10, stop without posting"
+    return (f"In step 3 skip {skip}: do only the job "
+            f"`jobs.py next` gives you, and that includes {' and '.join(f'`{s}`' for s in others)} queue jobs "
+            f"({', '.join(f'repo: {s}' for s in others)}), which are normal "
+            f"queue jobs, not desk tasks: do them in the {' or '.join(channels.label(s) for s in others)} checkout. "
+            "If it exits 10, stop without posting")
 
 
 PROMPT = """You are {name}, {role} on the Mac mini because {why}. You run unattended: do ONE job, then stop.
-Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk.py --as/--from).
+Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by{desk_ids}).
 
 0. If a git pull fails (no space left, or local files in the way), run  python3 scripts/mini_repair.py --apply
    (safe: caches, clean temp worktrees; blocking files are kept in ~/_desk/rescue, local edits stashed, local commits
    pushed to a rescue branch first) and pull again. Still under 20 GB free: move render scratch to the NAS by
    AGENTS.md "Render scratch" before anything else.
-1. Orbit With Ben ({owb}): git pull. Read {owb_rules} (the rules, the Never list, "Stop and ask Ben", "Who does what",
-   "Chief relay"). Run: python3 scripts/owb_thread.py read   and   python3 scripts/studio.py board
-2. History of Science ({hos}): git pull. Read its {hos_rules} ("The desk"). Run its desk inbox:
-     python3 00_Brand/Channel-Setup/tools/hos_desk.py inbox --as {agent}   (run in the HOS checkout; there is no scripts/hos_desk.py)
+1. {studio_name} ({studio}): git pull. Read {studio_rules} (the rules, the Never list, "Stop and ask Ben", "Who does what",
+   "Chief relay"). Run: python3 scripts/studio_thread.py read   and   python3 scripts/studio.py board
+{channel_steps}
 3. Follow the DISPATCH PRIORITY or CHIEF REVIEW PRIORITY below first, if supplied; otherwise, which channel first (Ben, 9 Oct: 4 videos a month on each channel; credits follow):
-     python3 scripts/channel_balance.py --hos "{hos}"
-   If it says History of Science first: take the single oldest HOS desk task you can do now, and go to step 4. Only if
-   there is none, fall through to the OWB queue below.
-   Queue jobs marked `hos` (repo: hos, e.g. "HOS 007 Shorts VO") are NOT HOS desk tasks: they are normal queue jobs
-   that `jobs.py next` hands out like any other. Do them in the HOS checkout, following its {hos_rules}. "HOS desk tasks"
-   means only desk #180 messages that are not in the queue.
-   The OWB job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
+     python3 scripts/channel_balance.py {balance_flags}
+{desk_first}{queue_notes}   The {studio_label} job queue (AGENTS.md "Job queue"):  python3 scripts/jobs.py next --agent {agent} --can mini,gemini,any --git
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
    Ben watches % done on the board: split the job into n steps (replace a default_plan at step 0; otherwise keep its earlier n) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
    with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
    During a long step, repeat the current k with an honest --note at least every 5 minutes; never increase k for elapsed time.
-   As soon as you choose the video(s), include --films HOS:006 (or OWB:028,OWB:029 for a shared job) on that progress
+   As soon as you choose the video(s), include --films {film_example} (or {studio_label}:028,{studio_label}:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
    This connects the live job to the video's swim lane. A job parked for review is not an approved film stage.
    Inspect your actual input tools once at session start. Record demonstrated audio_input/moving_video_input only
@@ -775,11 +827,9 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    --condition '<what input is unavailable and what was actually tested>' --check-at '<future UTC time>' --git.
    For a condition verification, update its original parent with --recheck <verification id> and finish the
    verification itself. Never claim to hear audio or review motion from text/stills/measurements.
-   If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue (on the HOS
-   desk, or a Claude message on #99 asking the Chief for something with no Chief reply yet).
+   If it exits 10 (nothing waiting): pick the single oldest task for the Chief that isn't in the queue ({desk_or}a Claude message on #99 asking the Chief for something with no Chief reply yet).
    If nothing is waiting anywhere, stop without posting.
-4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git, or the HOS
-   desk's own rule), commit only from a clean worktree (your own: `git worktree add --detach <dir> origin/main` or
+4. Do that one task, following that repo's AGENTS.md exactly: claim before work (studio.py claim --git{desk_claim}), commit only from a clean worktree (your own: `git worktree add --detach <dir> origin/main` or
    `-b <branch>`; never `git worktree add --force <dir> main`, which moves main under the shared checkout), never spend money or credit beyond the written rules, never
    upload, schedule, retitle or change privacy on YouTube unless the job brief or a Chief/Claude message for that task
    says to, never delete a video or anything on the NAS, and never print secrets. Chief owns AGENTS.md and the Never list
@@ -789,8 +839,8 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    A job that needs `gemini` is a facts-and-numbers check: run it through Gemini with the `agy` CLI (AGENTS.md "Who does
    what"), claim it as {agent}/gemini, and commit Gemini's findings as the job says. You check Gemini's output is complete;
    you don't rewrite its findings or any spoken line.
-5. Report: OWB by writing the report to a file and posting it with  python3 scripts/owb_thread.py post -f <file>
-   (start with "{name} covering"); HOS with  hos_desk.py post --from {agent} --to claude ...  Say what you did,
+5. Report: {studio_label} by writing the report to a file and posting it with  python3 scripts/studio_thread.py post -f <file>
+   (start with "{name} covering"){desk_reports}  Say what you did,
    what's next, and what blocks you. Never put the report text on the command line: the shell runs any backtick
    or $(...) in it as a command and posts the output.
 {authority}
@@ -816,9 +866,9 @@ def notify(text: str) -> bool:
     """Post one line on the studio thread. False (and the reason in the log) if it didn't go out, e.g. no GitHub token
     in launchd's environment."""
     cmd = os.environ.get("CHIEF_NOTIFY")
-    argv = shlex.split(cmd) if cmd else [sys.executable, str(OWB / "scripts" / "owb_thread.py"), "post"]
+    argv = shlex.split(cmd) if cmd else [sys.executable, str(STUDIO / "scripts" / "studio_thread.py"), "post"]
     try:
-        r = subprocess.run(argv + [text], cwd=str(OWB) if OWB.is_dir() else None, capture_output=True, text=True,
+        r = subprocess.run(argv + [text], cwd=str(STUDIO) if STUDIO.is_dir() else None, capture_output=True, text=True,
                            timeout=120)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"notify failed: {e}")
@@ -881,15 +931,16 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     # The exact command, minus the prompt, so a usage error (exit 2) can be matched to its flags. Flags hold no secrets.
     log(f"cmd: {b} {' '.join(shlex.quote(a) for a in args)} <prompt>" + (" (flags from the env)" if os.environ.get(
         {"cursor": "CURSOR_AGENT_FLAGS"}.get(agent, "")) else ""))
-    # owb_thread.py tags its posts "[Chief] [Cursor]". PATH: launchd's shell has no Homebrew or user bins, and doesn't
+    # The thread tool tags its posts "[Chief] [Cursor]" from this variable. PATH: launchd's shell has no Homebrew or user bins, and doesn't
     # expand "~", so put the real dirs first; the woken agent then finds gh, agy, agent and codex itself.
     extra = [str(HOME / ".local" / "bin"), str(HOME / ".npm-global" / "bin"), "/opt/homebrew/bin", "/usr/local/bin"]
-    env = dict(os.environ, OWB_AGENT=agent, PATH=os.pathsep.join(extra + [os.environ.get("PATH", "/usr/bin:/bin")]))
+    env = dict(os.environ, PATH=os.pathsep.join(extra + [os.environ.get("PATH", "/usr/bin:/bin")]))
+    env[channels.studio_env("AGENT")] = agent
     # Render scratch on the SSD when it is there (TMPDIR is what Python's tempfile, ffmpeg helpers and most CLIs use;
     # STUDIO_SCRATCH is the folder AGENTS.md tells agents to put worktrees, frames and part renders in).
     sd = scratch_dir()
     env.update(TMPDIR=f"{sd}/", STUDIO_SCRATCH=str(sd)) if sd else env.update(STUDIO_SCRATCH="/private/tmp")
-    p = subprocess.Popen([b] + args + [prompt], cwd=str(OWB) if OWB.is_dir() else None, stdout=subprocess.PIPE,
+    p = subprocess.Popen([b] + args + [prompt], cwd=str(STUDIO) if STUDIO.is_dir() else None, stdout=subprocess.PIPE,
                          stderr=subprocess.STDOUT, text=True, start_new_session=True, env=env)
     try:
         out, _ = p.communicate(timeout=cap_s)
@@ -987,7 +1038,7 @@ def alert_no_chief(who, rows, at: dt.datetime) -> None:
     lo, hi = (int(x) for x in os.environ.get("CHIEF_ALERT_HOURS", "7-22").split("-"))
     if not lo <= dt.datetime.now().hour < hi:
         return
-    waiting = parked_reviews(read_json(OWB / "jobs" / "queue.json") or {})
+    waiting = parked_reviews(read_json(STUDIO / "jobs" / "queue.json") or {})
     if not waiting:
         return
     states = "; ".join(f"{NAMES.get(a, a)}: {why}" for a, up, why in rows)
@@ -999,7 +1050,7 @@ def alert_no_chief(who, rows, at: dt.datetime) -> None:
 
 def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "") -> None:
     """One parentless commit holding heartbeat.json, force-pushed to refs/heads/mini-heartbeat. Never raises."""
-    if os.environ.get("CHIEF_HEARTBEAT", "1") == "0" or not (OWB / ".git").exists():
+    if os.environ.get("CHIEF_HEARTBEAT", "1") == "0" or not (STUDIO / ".git").exists():
         return
     # The relay ticks every minute (Ben, 12 Oct: next job within a minute): don't re-push the same idle/busy state
     # more than once per CHIEF_HB_REPEAT_MIN (10) minutes.
@@ -1024,7 +1075,7 @@ def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "")
             pass
     body = json.dumps(heartbeat_doc(at, state, agent, note)) + "\n"
     try:
-        git = ["git", "-C", str(OWB)]
+        git = ["git", "-C", str(STUDIO)]
         blob = subprocess.run(git + ["hash-object", "-w", "--stdin"], input=body, capture_output=True, text=True,
                               timeout=30, check=True).stdout.strip()
         tree = subprocess.run(git + ["mktree"], input=f"100644 blob {blob}\theartbeat.json\n", capture_output=True,
@@ -1062,13 +1113,13 @@ def queue_has_work(agent: str) -> bool:
     """Is a Mini job waiting for this agent (jobs.py next --peek)? The relay runs every minute and chains jobs back to back (Ben,
     12 Oct: the Mini never idles), but only wakes a CLI when there's work, plus a sweep every 2 h for
     thread/desk tasks outside the queue. If the queue can't be read, it wakes the agent anyway."""
-    jobs = OWB / "scripts" / "jobs.py"
+    jobs = STUDIO / "scripts" / "jobs.py"
     if not jobs.exists():
         return True
-    subprocess.run(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], capture_output=True, timeout=120)
+    subprocess.run(["git", "-C", str(STUDIO), "pull", "-q", "--ff-only"], capture_output=True, timeout=120)
     try:
         r = subprocess.run([sys.executable, str(jobs), "next", "--agent", agent, "--can", "mini,gemini,any", "--peek"],
-                           cwd=str(OWB), capture_output=True, text=True, timeout=120)
+                           cwd=str(STUDIO), capture_output=True, text=True, timeout=120)
     except (OSError, subprocess.SubprocessError):
         return True
     return r.returncode != 10
@@ -1076,7 +1127,7 @@ def queue_has_work(agent: str) -> bool:
 
 def addressed_to(agent: str) -> list:
     """Open jobs only this agent may claim (`jobs.py add --for <agent>`), e.g. Claude asking Codex for its own view."""
-    q = read_json(OWB / "jobs" / "queue.json") or {}
+    q = read_json(STUDIO / "jobs" / "queue.json") or {}
     by_id = {j["id"]: j for j in q.get("jobs", [])}
     import jobs
     at = now()
@@ -1090,7 +1141,7 @@ def next_job(agent: str):
     """The queue job `agent` would get next (the one it holds, else the next claimable Mini job), or None."""
     try:
         import jobs  # noqa: E402  (jobs imports this module; by now it's loaded)
-        data = jobs.load(OWB / "jobs" / "queue.json")
+        data = jobs.load(STUDIO / "jobs" / "queue.json")
         at = jobs.now()
         return jobs.choose_next(data, agent, jobs.MINI_NEEDS, at)
     except Exception as e:  # an unreadable queue never stops a run: the worker just gets its default model
@@ -1100,11 +1151,18 @@ def next_job(agent: str):
 
 # ---- Claude out of usage: its jobs go to Cursor on the Claude model (Ben, 11 Oct 2026 23:40) ----
 
+def board_films() -> pathlib.Path:
+    """The folder of film folders the stage board tracks: the board's channel, in that channel's own checkout."""
+    slug = channels.board_channel()
+    return channels.films_dir(slug, channels.repo_path(slug, HOME))
+
+
 def claude_ledger_note(at: dt.datetime):
     """The newest Claude ledger note (ai_spend.py record --pool claude) from the last CHIEF_CLAUDE_OUT_H hours that says
     it hit a limit, or None."""
     hours = float(os.environ.get("CHIEF_CLAUDE_OUT_H", "5"))
-    ledger = OWB / "05_Analytics" / "ai_spend" / "ledger.jsonl"
+    # the studio's own records folder, inside the studio checkout (the loader knows where that folder is)
+    ledger = STUDIO / channels.studio_records("ai_spend", "ledger.jsonl").relative_to(channels.ROOT)
     try:
         rows = [json.loads(l) for l in ledger.read_text().splitlines() if l.strip()]
     except (OSError, ValueError):
@@ -1129,7 +1187,7 @@ CLAUDE_BEAT_BRANCH = "claude-heartbeat"
 
 def raw_claude_beat():
     """heartbeat.json straight from GitHub's raw file host (the repo is public), or None."""
-    url = os.environ.get("CHIEF_CLAUDE_BEAT_URL", "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/"
+    url = os.environ.get("CHIEF_CLAUDE_BEAT_URL", f"https://raw.githubusercontent.com/{channels.studio_github()}/"
                          f"{CLAUDE_BEAT_BRANCH}/heartbeat.json")
     if not url:
         return None
@@ -1154,10 +1212,10 @@ def fetch_claude_beat(at: dt.datetime):
         return st.get("beat")
     beat = st.get("beat")
     try:
-        subprocess.run(["git", "-C", str(OWB), "fetch", "-q", "origin",
+        subprocess.run(["git", "-C", str(STUDIO), "fetch", "-q", "origin",
                         f"+refs/heads/{CLAUDE_BEAT_BRANCH}:refs/remotes/origin/{CLAUDE_BEAT_BRANCH}"],
                        capture_output=True, timeout=60)
-        r = subprocess.run(["git", "-C", str(OWB), "show", f"origin/{CLAUDE_BEAT_BRANCH}:heartbeat.json"],
+        r = subprocess.run(["git", "-C", str(STUDIO), "show", f"origin/{CLAUDE_BEAT_BRANCH}:heartbeat.json"],
                            capture_output=True, text=True, timeout=30)
         if r.returncode == 0:
             beat = json.loads(r.stdout)
@@ -1266,9 +1324,9 @@ def stalled_claims(data: dict, at: dt.datetime) -> list:
 
 def jobs_py(*args):
     """Run `jobs.py <args> --git` in the engine checkout. The finished process, or None if it could not be run."""
-    argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), *args, "--git"]
+    argv = [sys.executable, str(STUDIO / "scripts" / "jobs.py"), *args, "--git"]
     try:
-        return subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
+        return subprocess.run(argv, cwd=str(STUDIO), capture_output=True, text=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"jobs.py {' '.join(args[:2])} failed: {e}")
         return None
@@ -1294,10 +1352,10 @@ def hand_back_claude(data: dict) -> list:
         rf = j.get("rerouted_from") or {}
         if j.get("status") != "open" or rf.get("needs") != "cloud" or rf.get("for", "") not in ("", "claude"):
             continue
-        argv = [sys.executable, str(OWB / "scripts" / "jobs.py"), "handback", j["id"], "--agent", "relay",
+        argv = [sys.executable, str(STUDIO / "scripts" / "jobs.py"), "handback", j["id"], "--agent", "relay",
                 "--note", "Claude is back online", "--git"]
         try:
-            r = subprocess.run(argv, cwd=str(OWB), capture_output=True, text=True, timeout=180)
+            r = subprocess.run(argv, cwd=str(STUDIO), capture_output=True, text=True, timeout=180)
         except (OSError, subprocess.SubprocessError) as e:
             log(f"handback {j['id']} failed: {e}")
             continue
@@ -1322,7 +1380,7 @@ def reroute_work(at: dt.datetime) -> list:
     already handed to a worker that has since run out walks on to the next one. Returns the ids moved; each is addressed
     to its new worker, so this same run wakes it. Called once per pass, before a worker is picked."""
     up = workers_up(at)
-    data = read_json(OWB / "jobs" / "queue.json") or {}
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
     out, why = claude_out(at, data)
     if any(claude_blocked_on_limit(j) for j in data.get("jobs", [])) and not read_json(d("down", "claude.json")):
         retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
@@ -1386,10 +1444,10 @@ def log_run(at: dt.datetime, job, who: str, model: str, code: int, usage: bool) 
 def keep_busy() -> list:
     """Ben, 12 Oct 2026: the Mini never idles. Top the queue up from the standing backlog (scripts/refill.py) so at
     least 3 Mini jobs are ready. False/empty if nothing was added or the refill couldn't run."""
-    if os.environ.get("CHIEF_REFILL", "1") == "0" or not (OWB / "scripts" / "refill.py").exists():
+    if os.environ.get("CHIEF_REFILL", "1") == "0" or not (STUDIO / "scripts" / "refill.py").exists():
         return []
     try:
-        r = subprocess.run([sys.executable, str(OWB / "scripts" / "refill.py"), "refill", "--git"], cwd=str(OWB),
+        r = subprocess.run([sys.executable, str(STUDIO / "scripts" / "refill.py"), "refill", "--git"], cwd=str(STUDIO),
                            capture_output=True, text=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"refill failed: {e}")
@@ -1404,8 +1462,8 @@ def escalate_stale() -> None:
     """A review parked for Chief past CHIEF_STALE_H hours (default 2) is posted once on #99 for the Chief. Parking
     holds only that job; every other job keeps running."""
     try:
-        r = subprocess.run([sys.executable, str(OWB / "scripts" / "refill.py"), "escalate", "--git",
-                            "--hours", os.environ.get("CHIEF_STALE_H", "2")], cwd=str(OWB),
+        r = subprocess.run([sys.executable, str(STUDIO / "scripts" / "refill.py"), "escalate", "--git",
+                            "--hours", os.environ.get("CHIEF_STALE_H", "2")], cwd=str(STUDIO),
                            capture_output=True, text=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as e:
         log(f"escalate failed: {e}")
@@ -1430,9 +1488,9 @@ def self_heal(at: dt.datetime) -> bool:
     except OSError:
         free = min_mb
     pulled = True
-    if (OWB / ".git").exists():
+    if (STUDIO / ".git").exists():
         try:
-            pulled = subprocess.run(["git", "-C", str(OWB), "pull", "-q", "--ff-only"], capture_output=True,
+            pulled = subprocess.run(["git", "-C", str(STUDIO), "pull", "-q", "--ff-only"], capture_output=True,
                                     timeout=120).returncode == 0
         except (OSError, subprocess.SubprocessError):
             pulled = False
@@ -1444,12 +1502,12 @@ def self_heal(at: dt.datetime) -> bool:
         return free >= hard_mb
     try:
         import importlib.util
-        spec = importlib.util.spec_from_file_location("mini_repair", OWB / "scripts" / "mini_repair.py")
-        if spec is None or not (OWB / "scripts" / "mini_repair.py").exists():
+        spec = importlib.util.spec_from_file_location("mini_repair", STUDIO / "scripts" / "mini_repair.py")
+        if spec is None or not (STUDIO / "scripts" / "mini_repair.py").exists():
             spec = importlib.util.spec_from_file_location("mini_repair", pathlib.Path(__file__).with_name("mini_repair.py"))
         mr = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mr)
-        rep = mr.repair(apply=True, repos=[r for r in (OWB, HOS) if (r / ".git").exists()],
+        rep = mr.repair(apply=True, repos=[r for r in (STUDIO, *OTHERS.values()) if (r / ".git").exists()],
                         do_caches=free < min_mb, scan=free < min_mb)
     except Exception as e:  # never let the repair stop the relay
         log(f"heal failed: {e.__class__.__name__}: {e}")
@@ -1507,7 +1565,7 @@ def _offload_finished(at: dt.datetime) -> bool:
 
 
 def _offload_path() -> pathlib.Path:
-    path = OWB / "scripts" / "nas_offload.py"
+    path = STUDIO / "scripts" / "nas_offload.py"
     return path if path.exists() else pathlib.Path(__file__).with_name("nas_offload.py")
 
 
@@ -1568,7 +1626,7 @@ def weekly_caches(at: dt.datetime) -> None:
     last = read_json(d("caches.json")) or {}
     if last.get("at") and at - parse(last["at"]) < dt.timedelta(days=float(os.environ.get("CHIEF_CACHE_DAYS", "7"))):
         return
-    path = OWB / "scripts" / "mini_repair.py"
+    path = STUDIO / "scripts" / "mini_repair.py"
     if not path.exists():
         path = pathlib.Path(__file__).with_name("mini_repair.py")
     try:
@@ -1678,7 +1736,7 @@ def recorded_task_outcome(job, who, started):
     """
     if not job:
         return ""
-    data = read_json(OWB / "jobs" / "queue.json") or {}
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
     current = next((j for j in data.get("jobs", []) if j.get("id") == job["id"]), None)
     if not current or current.get("by") != who or current.get("status") not in {"blocked", "done", "cancelled"}:
         return ""
@@ -1703,7 +1761,7 @@ def run_locked(at: dt.datetime) -> int:
     if not healthy:
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
-    if (OWB / "scripts" / "refill.py").exists():
+    if (STUDIO / "scripts" / "refill.py").exists():
         escalate_stale()
     refresh_probes(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
@@ -1725,15 +1783,15 @@ def run_locked(at: dt.datetime) -> int:
         if desired != LOADED_VERSION:
             log("runner update: safe boundary reached; yielding to a fresh launchd run")
             return 0
-        queue = read_json(OWB / "jobs" / "queue.json") or {}
+        queue = read_json(STUDIO / "jobs" / "queue.json") or {}
         by_id = {j["id"]:j for j in queue.get("jobs", [])}
         broken = any(j.get("status") in ("open","blocked") and workflow.dependency_problem(j,by_id)
                      and j.get("dependency_problem") != workflow.dependency_problem(j,by_id) for j in queue.get("jobs", []))
         check_due = any(workflow.hold_due(j,by_id,at) and not any(x.get("recheck_of") == j["id"] and x.get("status") in workflow.LIVE for x in queue.get("jobs", [])) for j in queue.get("jobs", []))
-        stage_gaps = handoffs.findings(queue, list(handoffs.records(OWB / '02_Video-Projects')), at)
+        stage_gaps = handoffs.findings(queue, list(handoffs.records(board_films())), at)
         missing_handoff = any(not any(j.get('handoff', {}).get('signature') == gap['signature'] and j.get('status') in workflow.LIVE for j in queue.get('jobs', [])) for gap in stage_gaps)
-        if (broken or check_due or missing_handoff) and (OWB / "scripts" / "jobs.py").exists():
-            result = subprocess.run([sys.executable,str(OWB / "scripts/jobs.py"),"reconcile","--agent","relay","--git"],capture_output=True,text=True,timeout=180)
+        if (broken or check_due or missing_handoff) and (STUDIO / "scripts" / "jobs.py").exists():
+            result = subprocess.run([sys.executable,str(STUDIO / "scripts/jobs.py"),"reconcile","--agent","relay","--git"],capture_output=True,text=True,timeout=180)
             if result.returncode:
                 log("queue reconciliation failed: " + (result.stderr or result.stdout)[-250:])
         # Re-read Claude's heartbeat each pass (at most every 5 min): a chain of worker jobs can hold this run for
@@ -1791,7 +1849,7 @@ def run_locked(at: dt.datetime) -> int:
         added = keep_busy()  # refill before selecting, so new ready work is seen in this pass
         if added:
             log(f"refill: added {' '.join(added)} from jobs/backlog.json")
-        data = read_json(OWB / "jobs" / "queue.json") or {}
+        data = read_json(STUDIO / "jobs" / "queue.json") or {}
         from workflow_board import load_tracker
         data["tracker"] = load_tracker()
         selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
@@ -1848,9 +1906,7 @@ def run_locked(at: dt.datetime) -> int:
                    f"would, and stop at the same protected calls")
         elif worker_only:
             why = (f"{NAMES.get(leader, leader) or 'No agent'} is Chief (reviews, PASS, merges, decisions, the board) and you are its WORKER for the Mini "
-                   "job queue. In step 3 skip the channel check and the HOS desk inbox: do only the job "
-                   "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
-                   "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
+                   f"job queue. {worker_only_steps()}")
         model, job = "", None
         if selection:
             who = selection["worker"]
@@ -1902,10 +1958,10 @@ def run_locked(at: dt.datetime) -> int:
                        "`jobs.py next` gives you. If it exits 10, stop without posting")
         auth_leader = guest_who if guest_job else leader
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
-                               owb=OWB, hos=HOS, authority=authority_prompt(who, auth_leader, guest_job),
+                               authority=authority_prompt(who, auth_leader, guest_job),
                                priority=priority,
                                role="the elected acting Chief" if who == auth_leader else "a specialist worker",
-                               **rule_names())
+                               **brief_channels(who))
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)
@@ -2009,7 +2065,7 @@ def run_locked(at: dt.datetime) -> int:
         chained += 1
         last_ran = job.get("id") if job else None
         if job:
-            current = read_json(OWB / "jobs" / "queue.json") or {}
+            current = read_json(STUDIO / "jobs" / "queue.json") or {}
             row = next((j for j in current.get("jobs", []) if j.get("id") == job["id"]), None)
             # Never abandon an unfinished claim. Its owner must resume or park
             # it; released/done/blocked tasks may yield to other work immediately.
@@ -2024,7 +2080,7 @@ def run_locked(at: dt.datetime) -> int:
 def walk_on(job: dict, who: str, model: str, at: dt.datetime, reason="out of usage") -> None:
     """`who` ran out of usage on `job`: if the job is still open or held by `who`, hand it to the next worker up in its
     chain (so it isn't left claimed by a worker that can't finish it). If nobody further down is up, it waits."""
-    data = read_json(OWB / "jobs" / "queue.json") or {}
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
     cur = next((j for j in data.get("jobs", []) if j.get("id") == job.get("id")), None)
     if not cur or not (cur.get("status") == "open" or (cur.get("status") == "claimed" and cur.get("by") == who)):
         return
@@ -2060,7 +2116,7 @@ def cmd_status(at: dt.datetime) -> int:
         if worker not in [a for a, _, _ in rows]:
             up, why = state_of(worker, at)
             print(f"  {worker:<7} {NAMES[worker]:<9} {'UP  ' if up else 'down'}  {why} (specialist worker)")
-    out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
+    out, why = claude_out(at, read_json(STUDIO / "jobs" / "queue.json") or {})
     print(f"Claude: {'OUT of usage (' + why + '); its jobs walk their chain: Cursor on ' + routing.CURSOR_CLAUDE_MODEL + ', Gemini, Codex' if out else 'up (' + why + ')'}")
     print(gemini_line())
     for k, v in sorted(flags.items()):
@@ -2076,7 +2132,7 @@ def gemini_line() -> str:
     """Gemini is both the facts checker and the last Chief fallback. Show CLI presence and queued fact work."""
     b = find_bin("AGY_BIN", "agy")
     try:
-        q = json.loads((OWB / "jobs" / "queue.json").read_text())["jobs"]
+        q = json.loads((STUDIO / "jobs" / "queue.json").read_text())["jobs"]
         waiting = sum(1 for j in q if j.get("needs") == "gemini" and j.get("status") in ("open", "claimed"))
         jobs = f"{waiting} gemini job{'s' if waiting != 1 else ''} waiting"
     except (OSError, ValueError, KeyError):
