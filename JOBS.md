@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632, J2638.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -76,10 +76,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2635 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: record the five-metre graphic's KEEP in its manifest and the two board rows (no new render) |  |
 | J2636 | cloud | open (after J2632) | – | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
-| J2638 | mini | claimed | gemini | 2026-11-11T20:09Z | review · Mini: put the studio checkout back on main (it has sat on a merged side branch since about 16:20Z on 11 Nov) |  |
 
 Recently finished:
 
+- J2638 done: Mini: put the studio checkout back on main (it has sat on a merged side branch since about 16:20Z on 11 Nov) (Shared orbit-with-ben checkout verified clean on main at origin/main (aborted 18:01Z refill commit b74cb5fcd4 rescued to origin/rescue/mini-2026-11-11-orbit-with-ben-b74cb5fcd4); status, 35 stashes, and reflog reported on #264; HOS checkout untouched on chief/J1868-5nov-notes.)
 - J2637 done: Decoupling: the one filled-in settings file tracked in History of Science becomes an example file (Merged by Grok: history-of-science #536 (main 49ea23f0). The tracked .env in film 004's edit folder is replaced by a .env.example with the same three names and no values; it held three Google Cloud project settings and no key. Only film 004's own voice scripts read that path, and that film is published. The dry run's count of keys, tokens or filled-in .env files is now 0.)
 - J2633 done: Verify condition for J2586 (Checked by Gemini: not met. J2586 stays held and is not reopened. The graphic (J2631) has a first candidate (history-of-science #533) and Grok has ruled its revision; it is not KEEP yet. Wait recorded on J2586, next look 13 Nov 12:00Z.)
 - J2631 done: HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 (KEEP on Grok's sheet PASS (desk 6801964131, 6801965561, 6802108222, 6802206390): code_graphic_009_p4_05_minute_second.mp4, sha256 e35f9a9879c8e590ec66853b85307999f39bfe30c67b9bed193ca224cab42da3, 1920x1080, 30 fps, 406 frames, silent; history-of-science #533 (main 61c3ef5f). Drawn at 1.3x with four labels on Grok's windows, no Earth limb. Not spliced: the assembler checks both joins, and no crop or zoom may cut the right bracket, which sits near the frame edge.)
@@ -89,4 +89,3 @@ Recently finished:
 - J2627 done: HOS 009: correct the record in #527 (apple shot kept 0.00 to 4.50 s, frames 0 to 107; falling Moon reads RETAKE) (done)
 - J2626 done: HOS 009: let the picture tool make the two third takes Grok ruled (falling Moon c1, minute-and-second c1), 200 credits reserved (Passed and merged by Grok: history-of-science #528 (main 4d94db91, desk 6799526318). The picture tool has a second retake path, --retakes-j2626: its own identity J2626 at 200 credits, two rows in order, each on takes 1 and 2 with take 2 verified, never the apple row, c2 or a fourth take, and a hard stop if the start frame is not the one take 2 was made from. The old path and its file are untouched. Grok's wording is in the boards, with the three sentences he ruled out removed. Nothing was generated: 0 credits.)
 - J2625 done: Verify condition for J2584 (Condition met: Grok ruled on all three takes (History of Science desk 6798928858); J2584 is closed and the follow-on jobs are added.)
-- J2624 done: MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back (Merged: orbit-with-ben #828 (main f56f0745). The MacBook worker reads the job's work branch on GitHub before and after each run. A run that exits 0 with the job still open, and whose branch moved during the run and is ahead of main, is parked for the Chief with the branch, how far ahead it is and the open pull request if it can be read. Failed runs, runs killed at the cap, runs that pushed nothing and a branch left by an earlier run are handed back as before; if parking fails the job is still handed back. No timed wait is set: a wait would take the job off the Chief's review list. 14 new tests; seven deliberate breakages each caught; whole suite passes. The MacBook takes it on its next pull of main.)
