@@ -226010,9 +226010,14 @@
           "at": "2026-11-11T13:06Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified shared Flow ledger (J2033 closed, 11690 balance, 6000 liability) and HOS PR #522 (head 31f9675a open, changes requested by Chief for 300 cap + release)"
+        },
+        {
+          "at": "2026-11-11T13:06Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Condition for J2583 NOT met: HOS PR #522 (31f9675a) needs 300-credit cap + release rework, Chief PASS and merge; J2583 stays blocked"
         }
       ],
-      "remaining_action": "Record condition-not-met verdict and park J2610 for elected Chief hold update",
+      "remaining_action": "Chief records hold update on J2583 with --recheck J2610 after PR #522 rework",
       "kind": "review",
       "recheck_of": "J2583",
       "due": "2026-11-11T13:51:58+00:00",
@@ -226027,11 +226032,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-11T13:06Z",
         "by": "gemini",
-        "note": "Verified shared Flow ledger (J2033 closed, 11690 balance, 6000 liability) and HOS PR #522 (head 31f9675a open, changes r"
+        "note": "Condition for J2583 NOT met: HOS PR #522 (31f9675a) needs 300-credit cap + release rework, Chief PASS and merge; J2583 s"
       },
       "taskKeys": [
         "HOS:009"
