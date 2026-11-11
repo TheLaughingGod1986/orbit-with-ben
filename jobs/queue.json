@@ -213363,10 +213363,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T17:18Z",
+      "eta": "2026-11-11T21:18Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214235,6 +214235,11 @@
           "at": "2026-11-11T17:14Z",
           "by": "macbook",
           "what": "released: PR #789 updated at aef7c576f. Sun v03 undarkened edit QA PASS: 144 samples, full decode 14410 frames, -20.73 LUFS/-6.55 dBTP; 41 inherited pixel findings. Grade failed 83-87 percent windows; short probes also fail 126s and 442s. Progress remains 7/15; no Sun NAS delivery. Resume RESUME_2026-11-11_PUBLIC_SUN_GATES.md on macbook/J2452. Clean checkpoint within run limit; no encodes left running; full compilation/UAT incomplete."
+        },
+        {
+          "at": "2026-11-11T17:18Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sun undarkened gates pass; measure darkening then copy chapter with SHA-256 read-back",
