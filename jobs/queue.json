@@ -224787,10 +224787,10 @@
       "stage": "picture",
       "after": "J2596",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T11:13Z",
+      "eta": "2026-11-11T13:13Z",
       "created_by": "claude",
       "created_at": "2026-11-11T10:46Z",
       "result": "",
@@ -224799,13 +224799,26 @@
           "at": "2026-11-11T10:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:13Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Yes or no on the new start still; PASS lets the fourth take go",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the new starting picture for the Franklin salon shot",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:13Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2598",
