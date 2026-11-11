@@ -226000,9 +226000,14 @@
           "at": "2026-11-11T13:02Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J2610 condition verification for J2583 (HOS:009)"
+        },
+        {
+          "at": "2026-11-11T13:04Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2583 history, HOS desk rulings 6796365164/6796543977, and PR #522 (31f9675a changes requested by Chief)"
         }
       ],
-      "remaining_action": "Inspect J2583 waiting condition, HOS runner/PRs and desk comments",
+      "remaining_action": "Verify shared Flow ledger, PR #522 head, and update J2583 structured hold",
       "kind": "review",
       "recheck_of": "J2583",
       "due": "2026-11-11T13:51:58+00:00",
@@ -226017,11 +226022,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T13:02Z",
+        "at": "2026-11-11T13:04Z",
         "by": "gemini",
-        "note": "Started J2610 condition verification for J2583 (HOS:009)"
+        "note": "Read J2583 history, HOS desk rulings 6796365164/6796543977, and PR #522 (31f9675a changes requested by Chief)"
       },
       "taskKeys": [
         "HOS:009"
