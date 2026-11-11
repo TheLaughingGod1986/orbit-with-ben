@@ -1,5 +1,5 @@
 {
-  "next_id": 2575,
+  "next_id": 2577,
   "jobs": [
     {
       "id": "J0001",
@@ -21839,19 +21839,19 @@
       "title": "Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running",
       "needs": "mini",
       "repo": "owb",
-      "body": "Ben's Jupiter 'NO SOLID GROUND?' (file BDBDF4AE-95CC-4495-A70A-5A107463ABE2.jpg in 00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/new/) as B on -jmMROGoZCM once its NO FLOOR? test has ended; Saturn 'RINGS VANISHING?' (06D93E4A-...jpg) as B on 55AEQwvs36g once J0189's test has ended. Check each video's Test & Compare state in Studio (CDP 9223) first; if one is still running, release the job with the end date and do nothing to it. Never Replace, never delete. Record each in THUMB_LEDGER.json. No spend.",
+      "body": "Acting Chief, 11 Nov 08:57Z: **both tests this job waited for have finished** (J2574, #808): T013 on Saturn and T003 on Jupiter, each \"Not enough impressions to declare a winner\".\n\n- **Jupiter is done.** T003 was this job's own test: Ben's NO SOLID GROUND? ran as B from 27 Oct to 10 Nov. Do nothing more to Jupiter here; its next test belongs to J2449.\n- **Saturn is what is left:** Ben's RINGS VANISHING? as B on `55AEQwvs36g`, thumbnail only, title untouched.\n- **If Studio says \"Run a new test? Your current test will be deleted\", press Cancel, change nothing, and park this for the Chief.** Replacing a finished test deletes its report, and that needs Ben's yes (asked 11 Nov; AGENTS.md Never). The finished test's result is already safe in the ledger.\n- If Studio lets a new test start with no such question, start it, read it back, and record it in THUMB_LEDGER.json as a new row.\n\nBen's Jupiter 'NO SOLID GROUND?' (file BDBDF4AE-95CC-4495-A70A-5A107463ABE2.jpg in 00_Brand/Channel-Setup/audits/THUMB_TESTS_2026-10-14/new/) as B on -jmMROGoZCM once its NO FLOOR? test has ended; Saturn 'RINGS VANISHING?' (06D93E4A-...jpg) as B on 55AEQwvs36g once J0189's test has ended. Check each video's Test & Compare state in Studio (CDP 9223) first; if one is still running, release the job with the end date and do nothing to it. Never Replace, never delete. Record each in THUMB_LEDGER.json. No spend.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-10-27T18:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
-      "result": "Waiting for: Saturn 55AEQwvs36g thumbnail test T013 (J0189) has ended in Studio. On 10 Nov 02:46Z it was still running, estimated end about 10 Nov 22:02Z; Jupiter -jmMROGoZCM T003 was also running, estimated end about 10 Nov 19:03Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
+      "result": "",
       "history": [
         {
           "at": "2026-10-15T07:51Z",
@@ -22122,29 +22122,20 @@
           "at": "2026-11-11T08:24Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "reopened: condition met and checked by the acting Chief: Studio shows T013 (Saturn) and T003 (Jupiter) finished, both \"Not enough impressions to declare a winner\" (Codex read 11 Nov 08:43Z, #808). Jupiter's part of this job was T003 itself and is done. What is left is Ben's RINGS VANISHING? on Saturn; the top of the brief says what to do if Studio asks to delete the finished test."
         }
       ],
       "kind": "studio",
-      "remaining_action": "Arm approved Saturn 55AEQwvs36g Test & Compare B RINGS VANISHING? once J0189 RINGS ARE FALLING completes its 14-day test",
+      "remaining_action": "Start Ben's RINGS VANISHING? thumbnail as test B on Saturn; Cancel and park if Studio asks to delete the finished test",
       "taskKeys": [
         "OWB:020",
         "OWB:021"
       ],
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-27T19:05Z",
-        "by": "gemini",
-        "note": "Recorded T003 running on Jupiter -jmMROGoZCM in THUMB_LEDGER.json and jobs/readbacks/J0275.json (commit 52e6ed35b); plac"
-      },
-      "hold": {
-        "type": "test",
-        "condition": "Thumbnail tests T013 (Saturn 55AEQwvs36g) and T003 (Jupiter -jmMROGoZCM) are shown as ended in Studio's Test & Compare. Their estimated ends (10 Nov) have passed but nobody has read Studio since; J2574 (Mini, read-only) reads them and reopens this job if both have ended. An end is never inferred from a date.",
-        "check_at": "2026-11-12T09:00:00Z",
-        "last_recheck": "J2569",
-        "checked_at": "2026-11-11T08:24:39+00:00",
-        "checked_by": "claude"
-      }
+      "mini_only": true
     },
     {
       "id": "J0276",
@@ -178027,7 +178018,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 4,
+      "urgent": 5,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178213,7 +178204,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 5,
+      "urgent": 6,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178586,7 +178577,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 6,
+      "urgent": 7,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192596,7 +192587,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 7,
+      "urgent": 8,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193434,7 +193425,7 @@
       "ref": "J1881 / J2241 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "edit",
-      "after": "J2573",
+      "after": "J2576",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -193458,6 +193449,11 @@
           "at": "2026-11-11T08:24Z",
           "by": "claude",
           "what": "acting Chief: J2241 is done (three candidates, 400 credits; desk 6790782423). The maker flagged the salon take for a second look, so this waits for J2573 (a fifteen-minute look at its still sheet). PASS there and this job uses salon take 1, points take 1 and rods take 2, with the hashes on the desk note."
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling 6791231280: salon take 1 and points take 1 are not used. This job waits for J2576, the still-sheet check of the two second takes (J2575). On PASS it uses salon take 2, points take 2 and rods take 2 (rods t2 sha256 f82abba9...1a3a, desk 6790782423)."
         }
       ],
       "remaining_action": "Implement closed-GOP packet/boundary splicer + 27 unbordered umber bottom-caption panels, render hos_008_master_v04.mp4, and pass all gates",
@@ -196030,7 +196026,7 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 2,
+      "urgent": 1,
       "progress": {
         "step": 2,
         "of": 3,
@@ -221686,7 +221682,7 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 3
+      "urgent": 4
     },
     {
       "id": "J2551",
@@ -222137,13 +222133,13 @@
       "stage": "shots",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:21Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
-      "result": "parked for Chief: pushed 2a029493 to HOS PR #503 (gemini/J2558-013-picture-plan-v02) swapping P4:07b_packet_to_mailbag to a free route code graphic (Ternate early 1858 to Down House arrived 18 June 1858), re-pinning PICTURE_PLAN_v02.json sha256 in both PASS1 files, and passing 34/34 runner tests + check_all.sh; ready for Grok merge",
+      "result": "Grok reviewed and merged history-of-science #503 as 1fb86005 (desk 6791097912): 013's picture plan v02 has 66 Quality rows, no Fast rows, 6,600 credits, generation not yet authorized; P4:07b is now a free route graphic with no portrait. The plan's sha256 is pinned and tested. J2529 (the plates) stays held until the credits reset, look-again Thu 12 Nov 19:30Z.",
       "history": [
         {
           "at": "2026-11-11T05:54Z",
@@ -222244,6 +222240,11 @@
           "at": "2026-11-11T08:32Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: pushed 2a029493 to HOS PR #503 (gemini/J2558-013-picture-plan-v02) swapping P4:07b_packet_to_mailbag to a free route code graphic (Ternate early 1858 to Down House arrived 18 June 1858), re-pinning PICTURE_PLAN_v02.json sha256 in both PASS1 files, and passing 34/34 runner tests + check_all.sh; ready for Grok merge"
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "done: Grok reviewed and merged history-of-science #503 as 1fb86005 (desk 6791097912): 013's picture plan v02 has 66 Quality rows, no Fast rows, 6,600 credits, generation not yet authorized; P4:07b is now a free route graphic with no portrait. The plan's sha256 is pinned and tested. J2529 (the plates) stays held until the credits reset, look-again Thu 12 Nov 19:30Z."
         }
       ],
       "remaining_action": "Grok merge of HOS PR #503 (2a029493)",
@@ -222259,7 +222260,8 @@
         "at": "2026-11-11T08:32Z",
         "by": "gemini",
         "note": "Pushed 2a029493 to gemini/J2558-013-picture-plan-v02 (PR #503) and posted on HOS desk #180; ready for Grok merge"
-      }
+      },
+      "done_ref": "#503"
     },
     {
       "id": "J2559",
@@ -222444,13 +222446,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:45Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:24Z",
-      "result": "parked for Chief: report in PR #809 (jobs/reviews/J2562/REPORT.md). All 13 Shorts as expected: 4 full-frame pass with warnings, all 9 padded still fail (bSjWiCbB7pY passes only via the OK'd-before-rule list). Two padded Shorts fail on the 15% figure alone and Wvjd8g0CpzE sits exactly at its limit. HOS desk post NOT made (hos_desk.py has no claudecode sender); text ready in jobs/reviews/J2562/DESK_POST.md for the Chief to post.",
+      "result": "Claude Code's run on the Mini, report in orbit-with-ben #809 (merged): the new Shorts check gave the expected answer on all thirteen. The four full-frame Shorts pass with a warning; all nine padded ones still fail, so nothing goes back to Grok as a miss. The 15% figure separates the two groups with one sampled frame of room each way; that is put to Grok on the History of Science desk with the worker's table.",
       "history": [
         {
           "at": "2026-11-11T06:24Z",
@@ -222511,6 +222513,11 @@
           "at": "2026-11-11T08:50Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: report in PR #809 (jobs/reviews/J2562/REPORT.md). All 13 Shorts as expected: 4 full-frame pass with warnings, all 9 padded still fail (bSjWiCbB7pY passes only via the OK'd-before-rule list). Two padded Shorts fail on the 15% figure alone and Wvjd8g0CpzE sits exactly at its limit. HOS desk post NOT made (hos_desk.py has no claudecode sender); text ready in jobs/reviews/J2562/DESK_POST.md for the Chief to post."
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "done: Claude Code's run on the Mini, report in orbit-with-ben #809 (merged): the new Shorts check gave the expected answer on all thirteen. The four full-frame Shorts pass with a warning; all nine padded ones still fail, so nothing goes back to Grok as a miss. The 15% figure separates the two groups with one sampled frame of room each way; that is put to Grok on the History of Science desk with the worker's table."
         }
       ],
       "remaining_action": "Chief reviews the report, posts the ready text on the History of Science desk and rules on the 15% figure",
@@ -222522,7 +222529,8 @@
         "at": "2026-11-11T08:50Z",
         "by": "claudecode",
         "note": "report and desk text in pull request 809; thread report posted; desk post not made because the desk tool has no id for t"
-      }
+      },
+      "done_ref": "#809"
     },
     {
       "id": "J2563",
@@ -223028,13 +223036,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:35Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
-      "result": "parked for Chief: FAIL on part02/j2241/02_salon_spark_j2241_t1.jpg — Q1 NO (frames 3-4 / 00:02-00:03 show a huge branching lightning bolt across lecturer's arm/chest and full frame height, plus blue arcs on hair in frames 5-6, not one small spark to a knuckle); Q2 YES (frames 1-8 hair stays attached to head); Q3 YES on no hair extruding from rod / NO on near it (branching lightning across rod in frames 3-4, hollow top rim in frame 8). Other two sheets: part03/j2241/01_points_desk_j2241_t1.jpg has no paper strips but frames 5-8 morph the side thread into a long white wire arching out of the top of the brass globe while holding two needles; part05/j2241/13_rods_spread_j2241_t2.jpg is clean across frames 1-8. Needs second salon take under J2241 limits (2 takes / 200 cr left).",
+      "result": "Gemini's check, accepted by Grok (History of Science desk 6791231280): salon take 1 FAILS (a room-wide branching bolt at 0:02 to 0:03); hair stays on heads; nothing comes out of the rod. Points take 1 also fails on a second look (a wire from the globe's top at 0:04 to 0:07, a hand vanishing at 0:07). Rods take 2 is clean. Second takes for salon and points are queued under J2241's limits.",
       "history": [
         {
           "at": "2026-11-11T08:24Z",
@@ -223070,6 +223078,11 @@
           "at": "2026-11-11T08:38Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: FAIL on part02/j2241/02_salon_spark_j2241_t1.jpg — Q1 NO (frames 3-4 / 00:02-00:03 show a huge branching lightning bolt across lecturer's arm/chest and full frame height, plus blue arcs on hair in frames 5-6, not one small spark to a knuckle); Q2 YES (frames 1-8 hair stays attached to head); Q3 YES on no hair extruding from rod / NO on near it (branching lightning across rod in frames 3-4, hollow top rim in frame 8). Other two sheets: part03/j2241/01_points_desk_j2241_t1.jpg has no paper strips but frames 5-8 morph the side thread into a long white wire arching out of the top of the brass globe while holding two needles; part05/j2241/13_rods_spread_j2241_t2.jpg is clean across frames 1-8. Needs second salon take under J2241 limits (2 takes / 200 cr left)."
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "done: Gemini's check, accepted by Grok (History of Science desk 6791231280): salon take 1 FAILS (a room-wide branching bolt at 0:02 to 0:03); hair stays on heads; nothing comes out of the rod. Points take 1 also fails on a second look (a wire from the globe's top at 0:04 to 0:07, a hand vanishing at 0:07). Rods take 2 is clean. Second takes for salon and points are queued under J2241's limits."
         }
       ],
       "remaining_action": "Chief decision/queueing for a second P2:02_salon_spark take under J2241 limits (2 takes and 200 credits left)",
@@ -223085,7 +223098,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "6791231280"
     },
     {
       "id": "J2574",
@@ -223098,13 +223112,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:40Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
-      "result": "parked for Chief: read-only inspection complete; PR #808 records both tests finished with Not enough impressions to declare a winner (T013 10 Nov 22:36, T003 10 Nov 19:49). jobs.py reopen J0275 refused: Only the elected Chief may release a verified hold. Chief must release that hold and review/merge PR #808.",
+      "result": "Codex's read-only Studio read, recorded in orbit-with-ben #808 (merged): both thumbnail tests have finished with Studio's verdict \"Not enough impressions to declare a winner\". T013 Saturn ran 27 Oct to 10 Nov 22:36; T003 Jupiter ran 27 Oct to 10 Nov 19:49. The first option is visible to all viewers on both. Nothing in Studio was changed. J0275 is reopened by the acting Chief.",
       "history": [
         {
           "at": "2026-11-11T08:24Z",
@@ -223135,6 +223149,11 @@
           "at": "2026-11-11T08:44Z",
           "by": "codex",
           "what": "blocked: parked for Chief: read-only inspection complete; PR #808 records both tests finished with Not enough impressions to declare a winner (T013 10 Nov 22:36, T003 10 Nov 19:49). jobs.py reopen J0275 refused: Only the elected Chief may release a verified hold. Chief must release that hold and review/merge PR #808."
+        },
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "done: Codex's read-only Studio read, recorded in orbit-with-ben #808 (merged): both thumbnail tests have finished with Studio's verdict \"Not enough impressions to declare a winner\". T013 Saturn ran 27 Oct to 10 Nov 22:36; T003 Jupiter ran 27 Oct to 10 Nov 19:49. The first option is visible to all viewers on both. Nothing in Studio was changed. J0275 is reopened by the acting Chief."
         }
       ],
       "remaining_action": "Chief to release J0275 verified hold using the two finished test results",
@@ -223152,7 +223171,71 @@
       "taskKeys": [
         "OWB:020",
         "OWB:021"
-      ]
+      ],
+      "done_ref": "#808"
+    },
+    {
+      "id": "J2575",
+      "title": "HOS 008 Franklin: second takes for the salon spark and the points desk (Flow Veo 3.1 Quality, 200 credits at most, inside J2241's limits)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6791231280, 11 Nov 08:39Z). Queue side by the acting Chief. This job makes two second takes for film 008 under J2241's own limits. It runs on the Mini's Flow browser, after or between J2270's batches, never beside a submit.\n\n**Why.** The still-sheet check (J2573, Gemini) failed the salon take: a room-wide branching lightning bolt at 0:02 to 0:03 where the shot calls for one small spark. The points take has a long white wire looping out of the top of the globe at 0:04 to 0:07 and the man's left hand vanishes at 0:07; the cut uses the whole plate (6.67 s), so trimming cannot fix it. The rods take 2 is clean and is not remade.\n\n**Two takes, one each, 200 credits at most in all. Subscription credit only, GBP 0.**\n\n| Plate | Take | Start frame (unchanged) | Budget left on the plate |\n|---|---|---|---|\n| `02_salon_spark` (part 02) | take 2 | `part02/refs/v03_flow_stills/02_salon_spark_t1.png` | 2 takes, 200 credits |\n| `01_points_desk` (part 03) | take 2 | `part03/refs/v03_flow_stills/01_points_desk_t1.png` | 2 takes, 200 credits |\n\nPicture intent and settings do not change (Veo 3.1 Quality, x1, 16:9, 8 s, 100 credits a take). Only the prompts are tightened, in the same no-name style:\n\n- **Salon, take 2.** Use this wording: *\"one tiny single spark, a few millimetres long, jumps from the rubbed glass rod to the guest's knuckle; no lightning, no branching arcs, no glow on the hair\"*. Keep \"hair stays on the head, lifting slightly\" and \"a solid glass rod, not a tube\".\n- **Points, take 2.** The linen thread stays a short single thread hanging from the side of the sphere and only drops; nothing comes out of the sphere's top; no wire, no paper, no strips; both of the man's hands stay in view the whole shot.\n\n**Guards, as J2241 ran them.** The shared writer lock, the live account, balance and price read before each Create, a durable charge intent, the spend export. Stop for a PENDING charge or a balance that moved when nothing was submitted. Output names end `_j2241_t2.mp4`; never overwrite a file. A take that Flow fails is kept as a liability, not retried blindly. Do not run `_mint_j2241_retakes.py` again as it is: its manifest refuses a second run on purpose, so add the two take-2 rows the way rods take 2 was added.\n\n**When done:** full decode, frame count, SHA-256 and a still sheet for each; post them and the ledger lines on the History of Science desk; finish this job. Do NOT mark either KEEP: the still-sheet check that follows decides. Both takes must be made before Thu 12 Nov 19:13 London.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T08:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make salon take 2 and points take 2 with the tightened prompts, guarded, 200 credits at most",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "video",
+      "plain": "Remake two shots for the Franklin film that came out wrong (a spark far too big, a stray wire)",
+      "mini_only": true,
+      "urgent": 2
+    },
+    {
+      "id": "J2576",
+      "title": "HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6791231280). Fifteen minutes, looking only, as J2573 was. No spend, nothing on YouTube.\n\nLook at the two second takes for film 008 (their still sheets and, if you can, the clips), each beside its start frame:\n- `~/YouTube/hos-008-lightning/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/j2241/02_salon_spark_j2241_t2.jpg`\n- `.../part03/j2241/01_points_desk_j2241_t2.jpg`\n\n**Salon. Yes or no, with the frame you saw it in:**\n1. One tiny single spark from the rod to a knuckle: no lightning, no branching arc, no glow on the hair?\n2. All hair stays on heads, lifting slightly?\n3. A solid glass rod, not a tube, with nothing coming out of it?\n\n**Points. Yes or no, with the frame:**\n1. One short single thread hangs from the side of the sphere and only drops?\n2. Nothing comes out of the sphere's top: no wire, no paper, no strips?\n3. Both of the man's hands stay in view for the whole shot?\n\nThree yes on both: say PASS in your done line. J2242 then uses salon take 2, points take 2 and rods take 2. Any no: say FAIL and which, and park this for the Chief. Grok rules on a third take the same day. Do not make a take yourself. Post your answer on the History of Science desk.",
+      "ref": "J2575",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2575",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T08:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T08:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Look at two still sheets and answer three yes/no questions for each",
+      "due": "2026-11-12T14:00:00Z",
+      "kind": "qa",
+      "plain": "Check the two remade Franklin shots before they go into the edit",
+      "urgent": 3
     }
   ],
   "focus": [
