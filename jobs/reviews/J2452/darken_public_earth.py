@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image,ImageDraw
 import build_public_earth as b
 SRC=b.OUT.with_name('public_earth_v04')
-OUT=b.OUT.with_name('public_earth_dark_v01')
+OUT=b.OUT.with_name('public_earth_dark_v03')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def scan(p):
@@ -28,11 +28,14 @@ def main():
  saturn=json.loads((nas/'021_saturn_v05/CHAPTER.json').read_text())
  start=moon['build']['duration_s']+saturn['build']['duration_s']+8
  assert abs(start-967.2)<.1,start
- video=OUT/'027_earth_darkened_v01.mp4'
- # Scale legal-range signal above black. The latest ruling's 85% measured
- # brightness target controls this test grade; no additional highlight clipping.
- factor=f'(1-0.15*clip((T+{start}-1170)/60,0,1))'
- vf=f"geq=lum='16+floor((lum(X,Y)-16)*{factor}+0.5)':cb='cb(X,Y)':cr='cr(X,Y)'"
+ video=OUT/'027_earth_darkened_v03.mp4'
+ # FFmpeg eq builds a per-frame lookup table instead of evaluating an
+ # expression per pixel. Contrast f and brightness (1-f)*(16/256-1/2)
+ # scale legal-range luma around black level 16, preserving chroma.
+ # Add one code value at full grade to compensate eq integer LUT rounding;
+ # actual output must still pass every measured two-second window.
+ ramp=f'clip((t+{start}-1170)/60,0,1)'
+ vf=f"eq=contrast='1-0.15*{ramp}':brightness='-0.06171875*{ramp}':eval=frame"
  b.run(['-i',build['output'],'-vf',vf,'-map','0:v','-map','0:a','-frames:v',str(build['expected_frames']),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','copy',str(video)])
  before,n0=scan(build['output']);after,n1=scan(video)
  assert n0==n1==build['expected_frames'],(n0,n1)

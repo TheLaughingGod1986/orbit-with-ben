@@ -9,6 +9,8 @@ def main():
  assert Path('/Volumes/data').is_mount()
  assert r['frames_before']==r['frames_after']==b['expected_frames']
  assert .83<=r['post_2030_brightness_ratio']<=.87
+ assert r['post_2030_two_second_measurements']
+ assert all(w['ratio'] is not None and .83<=w['ratio']<=.87 for w in r['post_2030_two_second_measurements'])
  assert q['gate_exit_codes'] in ([0,0],[1,0]) and all(x['classification']=='in the public film' for x in q['inherited_findings'])
  assert sha(Path(r['output']))==r['sha256']
  DEST.mkdir(parents=True,exist_ok=False);copies=[]
