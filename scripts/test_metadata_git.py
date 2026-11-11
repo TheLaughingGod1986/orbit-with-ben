@@ -153,19 +153,89 @@ class MetadataGit(unittest.TestCase):
         self.assertEqual(self.git(self.work, 'rev-list', '--count', 'HEAD'),
                          str(int(self.git(self.work, 'rev-list', '--count', self.base)) + 2))  # theirs + ours, once
 
-    def test_push_that_keeps_losing_fails_closed_and_preserves_the_commit(self):
+    def test_rejecting_origin_rolls_back_even_the_last_attempt(self):
+        hook = self.remote / 'hooks' / 'pre-receive'
+        hook.write_text('#!/bin/sh\necho "test origin refuses metadata" >&2\nexit 1\n')
+        hook.chmod(0o755)
+        before = self.queue.read_bytes()
+        for tries in (1, 3):
+            with self.subTest(tries=tries):
+                def apply(data):
+                    data['next_id'] += 1
+                    return 'must not report success', None, []
+                out, error = jobs.with_git(apply, 'rejected metadata', tries=tries)
+                self.assertIsNone(out)
+                self.assertIn('test origin refuses metadata', error)
+                self.assertEqual(self.remote_head(), self.base)
+                self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), self.base)
+                self.assertEqual(self.git(self.work, 'rev-parse', 'origin/main'), self.base)
+                self.assertEqual(self.git(self.work, 'status', '--porcelain'), '')
+                self.assertEqual(self.queue.read_bytes(), before)
+        hook.unlink()
+        self.assertIsNone(self.run_metadata('jobs'))  # the next caller is not stranded
+
+    def test_background_pull_between_base_read_and_merge_uses_actual_parent(self):
         original = studio.git
+        raced = False
+        def pull(*args):
+            nonlocal raced
+            if args[:3] == ('merge', '-q', '--ff-only') and not raced:
+                raced = True
+                self.advance_remote()
+                self.git(self.work, 'pull', '-q', '--ff-only', 'origin', 'main')
+            return original(*args)
+        with patch.object(studio, 'git', side_effect=pull):
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), self.remote_head())
+        self.assertEqual(json.loads(self.queue.read_text())['concurrent_marker'], 'other agent')
+        self.assertEqual(self.git(self.work, 'status', '--porcelain'), '')
+
+    def test_pull_after_base_capture_rolls_back_and_reapplies(self):
+        original = studio.git
+        raced = False
+        def pull(*args):
+            nonlocal raced
+            if args[0] == 'add' and not raced:
+                raced = True
+                # Advance only an unrelated file so Git can fast-forward beside our unsaved queue.
+                self.advance_remote()
+                # Keep queue identical to the base on the remote for this race.
+                other = self.work.parent / 'other'
+                self.git(other, 'checkout', self.base, '--', 'jobs/queue.json')
+                self.git(other, 'commit', '-qm', 'restore queue before race')
+                self.git(other, 'push', '-q', 'origin', 'main')
+                self.git(self.work, 'pull', '-q', '--ff-only', 'origin', 'main')
+            return original(*args)
+        with patch.object(studio, 'git', side_effect=pull):
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), self.remote_head())
+        self.assertEqual(json.loads(self.queue.read_text())['next_id'], 2)
+        self.assertEqual(self.git(self.work, 'status', '--porcelain'), '')
+
+    def test_other_fetch_head_cannot_change_metadata_base(self):
+        original = studio.git
+        def fetch(*args):
+            result = original(*args)
+            if args[0] == 'fetch':
+                # Another process in this checkout can overwrite FETCH_HEAD; it is not private.
+                (self.work / '.git' / 'FETCH_HEAD').write_text('invalid concurrent fetch\n')
+            return result
+        with patch.object(studio, 'git', side_effect=fetch):
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), self.remote_head())
+
+    def test_failed_push_does_not_discard_another_writers_commit(self):
+        original = studio.git
+        other = []
         def reject(*args):
             if args[0] == 'push':
+                other.append(self.unrelated())
                 return subprocess.CompletedProcess(args, 1, '', 'rejected')
             return original(*args)
         with patch.object(studio, 'git', side_effect=reject):
-            self.assertIn('push rejected', self.run_metadata('jobs'))
-        self.assertEqual(self.remote_head(), self.base)
-        local = self.git(self.work, 'rev-parse', 'HEAD')
-        self.assertNotEqual(local, self.base)
-        self.assertIn('unpublished/diverged', self.run_metadata('jobs'))
-        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), local)
+            self.assertIn('rollback refused', self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), other[0])
+        self.assertTrue((self.work / 'implementation.py').exists())
 
 class SpendRowsFromAPictureRun(unittest.TestCase):
     """11 Nov 2026. A picture run appends its spend rows to the tracked ledger in the shared checkout as it works.

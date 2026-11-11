@@ -198,8 +198,7 @@ def run(cmd: str, git: bool, min_ready: int = MIN_READY, hours: float = STALE_H)
     if git:
         out, err = jobs.with_git(apply, msg)
         if err:
-            print(err, file=sys.stderr)
-            return []
+            raise RuntimeError(err)
         return out or []
     data = jobs.load()
     out, _, _ = apply(data)
@@ -216,7 +215,12 @@ def main(argv=None) -> int:
     ap.add_argument("--hours", type=float, default=STALE_H)
     ap.add_argument("--git", action="store_true")
     a = ap.parse_args(argv)
-    for line in run(a.cmd, a.git, a.min, a.hours):
+    try:
+        lines = run(a.cmd, a.git, a.min, a.hours)
+    except RuntimeError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+    for line in lines:
         print(line)
     return 0
 
