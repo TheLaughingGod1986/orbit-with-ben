@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2585 | cloud | claimed | claude | – | 009 picture · script · HOS 009: write the board change for the four remade shots, as a pull request for Grok (no credit) | J2582 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
-| J2589 | mini | open | – | – | 008 picture · video · HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has) | J2241 |
+| J2589 | mini | claimed | codex | 2026-11-11T12:27Z | 008 picture · video · HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has) | J2241 |
 | J2590 | any | open (after J2589) | – | – | 008 picture · qa · HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) | J2241 |
 | J2591 | mini | open | – | – | 008 picture · chart · HOS 008: build the salon's contact spark as a code graphic (one warm-white flick, three to four frames) | J2241 |
 | J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
