@@ -339,6 +339,13 @@ $ launchctl list | grep com.owb      (PID / last exit / label)
 - Ports: 9223 yes, 9222 yes, 9460 yes (each answers `/json/version` as Chrome/156). Nothing opened or closed.
 - Internal disk free: 38 GiB at 23:40, 36 GiB at 00:22 (82% used).
 
+### 6. Lean-up (10–11 Nov, Ben's OK)
+
+- **Agent history moved to the SSD, not deleted: about 6 GB.** Codex sessions, Cursor chats and Gemini conversations older than 3 days are now in `/Volumes/MiniWork/archive/agent-history-2026-11-10` (1.1 GB) and `agent-history-2026-11-11` (4.9 GB). Every copy was compared byte-for-byte before its original was removed. Each folder has a README and a file list; to restore one, copy it back to the same path under `~`.
+- **npm download cache cleared:** 0.15 GB. The Whisper speech model in `~/.cache/huggingface` (0.46 GB) was left, because the voice checks use it.
+- **Old worktrees and spare repo copies in `/private/tmp` were left to the relay's own overnight NAS offload,** which was already working through them (it moved `J2404-wt` and `j2427-wt` at 00:57 on 11 Nov).
+- **Free space: 28 GiB** after the lean-up (it had fallen to 19.6 GiB on the evening of 10 Nov while jobs ran). Jobs are writing roughly 6 GiB a day to the internal disk; worth its own job.
+
 ## Appendix: diskutil apfs list
 
 ```
