@@ -223181,13 +223181,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T22:27Z",
-      "eta": "2026-11-12T00:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:55Z",
-      "result": "",
+      "result": "Waiting for: Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.",
       "history": [
         {
           "at": "2026-11-11T00:55Z",
@@ -223203,9 +223203,19 @@
           "at": "2026-11-11T22:28Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read Chief brief and J2545 audit; required complete-cut audio and motion review is unavailable in this session. No media changed."
+        },
+        {
+          "at": "2026-11-11T22:28Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input."
+        },
+        {
+          "at": "2026-11-11T22:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T01:00:00Z"
         }
       ],
-      "remaining_action": "Rebuild the four December Shorts full-frame, run their checks, and watch and listen before sending watch cards",
+      "remaining_action": "Rebuild and review four December Shorts on a worker that can watch and hear the complete cuts",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -223220,6 +223230,19 @@
       "taskKeys": [
         "OWB:031",
         "OWB:029"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.",
+        "check_at": "2026-11-12T01:00:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
       ]
     },
     {
