@@ -229582,13 +229582,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T20:40Z",
-      "eta": "2026-11-11T21:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:24Z",
-      "result": "",
+      "result": "parked for Chief: requested fix already merged in HOS PR #547, SHA 8ac9e65d034e44d22f099202baad3cb7b9c01ddd; verified 40 runner tests OK and check_all.sh ALL CHECKS PASS. Reconcile duplicate queue request; fresh dry-run/launch remains separate.",
       "history": [
         {
           "at": "2026-11-11T20:24Z",
@@ -229619,6 +229619,11 @@
           "at": "2026-11-11T20:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified main 8ac9e65d; 40 runner tests and all repository checks pass; report prepared for HOS desk."
+        },
+        {
+          "at": "2026-11-11T20:43Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: requested fix already merged in HOS PR #547, SHA 8ac9e65d034e44d22f099202baad3cb7b9c01ddd; verified 40 runner tests OK and check_all.sh ALL CHECKS PASS. Reconcile duplicate queue request; fresh dry-run/launch remains separate."
         }
       ],
       "remaining_action": "Chief to reconcile the verified fix already merged in pull request 547",
