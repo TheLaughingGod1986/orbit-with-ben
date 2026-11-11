@@ -7,6 +7,9 @@ DEST=Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_vid
 def main():
  r=json.loads((OUT/'DARKEN_READBACK.json').read_text());b=r['undarkened_build'];q=r['undarkened_readback']
  assert Path('/Volumes/data').is_mount()
+ assert b.get('unwanted_cards_removed_verified') is True
+ assert b.get('visual_review', {}).get('patch_times_s')
+ assert q['sha256']==b['sha256']
  assert r['frames_before']==r['frames_after']==b['expected_frames']
  assert r['brightness_measurement'].startswith('Decoded legal-range Y plane')
  assert .83<=r['post_2030_brightness_ratio']<=.87
