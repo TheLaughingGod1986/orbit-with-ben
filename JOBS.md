@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2558 | mini | claimed | gemini | 2026-11-11T07:58Z | 013 shots · script · HOS 013 Darwin & Wallace: picture plan v02 with no Fast rows (each of the 23 becomes a free row or a Quality row), the runner refuses Fast, the credit cap re-pinned |  |
 | J2559 | mini | open | – | – | Mac mini housekeeping after the always-on check: three scheduled agents that fail, leftover agents to unload, the browser agent's file into the repo | J2517 |
-| J2560 | cloud | open | – | – | for claude · Shorts gate, part 4: a full-frame shot with a detailed middle and soft areas above and below is read as padding (one wrong FAIL, Wvjd8g0CpzE) | J2557 |
+| J2560 | cloud | claimed | claude | 2026-11-11T08:08Z | for claude · Shorts gate, part 4: a full-frame shot with a detailed middle and soft areas above and below is read as padding (one wrong FAIL, Wvjd8g0CpzE) | J2557 |
 
 Recently finished:
 

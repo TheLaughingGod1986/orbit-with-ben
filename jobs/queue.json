@@ -221626,10 +221626,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T06:08Z",
+      "eta": "2026-11-11T08:08Z",
       "created_by": "claude",
       "created_at": "2026-11-11T06:02Z",
       "result": "",
@@ -221638,12 +221638,25 @@
           "at": "2026-11-11T06:02Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T06:08Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Tell a blurred copy from a soft part of the picture, add the two frames to the labelled set, tests, send the pair to history-of-science",
       "due": "2026-11-12T18:00:00Z",
       "plain": "Fix the Shorts check so it stops calling one kind of full-screen shot a padded one",
-      "for": "claude"
+      "for": "claude",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T06:08Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
