@@ -1,5 +1,5 @@
 {
-  "next_id": 2638,
+  "next_id": 2639,
   "jobs": [
     {
       "id": "J0001",
@@ -178163,7 +178163,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 12,
+      "urgent": 9,
       "hold": {
         "type": "dependency",
         "condition": "The second drawn graphic, J2632 (the falling-Moon gap, 5.26 s from 3:03.94), is KEEP on Grok's sheet PASS. The first, J2631 (the five-metre graphic, 13.51 s from 5:19.63), is KEEP as of 11 Nov 16:57Z (desk 6801964131). Every other picture in the film is settled.",
@@ -228166,7 +228166,7 @@
       "for": "codex",
       "kind": "chart",
       "plain": "Draw the diagram that fills a gap in the gravity film: the Moon keeps falling past a straight line but never reaches the Earth",
-      "urgent": 14,
+      "urgent": 10,
       "model": "gpt-6-astra"
     },
     {
@@ -228388,6 +228388,37 @@
         "at": "2026-11-11T17:33Z",
         "by": "claude"
       }
+    },
+    {
+      "id": "J2638",
+      "title": "Mini: put the studio checkout back on main (it has sat on a merged side branch since about 16:20Z on 11 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Queued by Claude (Chief for orbit-with-ben), 11 Nov 17:34Z.** Five minutes. £0.\n\nThe relay's own repair notes at 16:28Z and 16:59Z both say: the Mini's orbit-with-ben checkout (the one in `~/YouTube`, which launchd runs `scripts/chief_relay.py` from) is on branch `chief/hos-chain-11nov`, not main, so it was left alone. That branch is merged (orbit-with-ben #829). While the checkout sits on it, the relay and every script run from that folder stay on old code: nothing merged to main since then reaches the Mini.\n\n**Do, in that checkout, in this order:**\n1. `git status --short` and `git stash list`. Write both into your report.\n2. If there are uncommitted changes or untracked files that are not ignored: **do not discard, reset or stash them.** Copy them into a dated folder under `~/_desk/rescue/` (a `git diff > file` for tracked changes, a copy for untracked files), say what they are in your report, and stop there if you cannot tell whose work they are.\n3. If the branch has commits that are not on GitHub (`git log origin/main..HEAD` and `git log origin/chief/hos-chain-11nov..HEAD` if that remote branch exists): push the branch as it is (`git push origin HEAD:refs/heads/chief/hos-chain-11nov`), never to main, and say so.\n4. With the tree clean: `git checkout main` then `git pull --ff-only origin main`. If either refuses, stop and report the exact message; do not force anything.\n5. Confirm with `git branch --show-current` (must print `main`) and `git log --oneline -1`. The next relay repair note should stop mentioning this checkout.\n\n**Leave alone:** the History of Science checkout on `chief/J1868-5nov-notes`. Its uncommitted diff is known and stays as it is (Grok, history-of-science desk 6801340120).\n\n**So it does not happen again:** AGENTS.md already says to commit only from a clean worktree of your own (`git worktree add --detach <dir> origin/main`), never in the shared checkout. Say in your report which job's run left the shared checkout on a branch, if the reflog shows it (`git reflog -5`).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T17:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T17:34Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the checkout is clean, switch it to main and pull; report what you found. Nothing is discarded",
+      "due": "2026-11-11T20:00:00Z",
+      "kind": "review",
+      "plain": "Put the Mac mini's copy of the studio back on the main line so it gets today's fixes",
+      "urgent": 11
     }
   ],
   "focus": [
