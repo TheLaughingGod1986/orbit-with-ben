@@ -224539,9 +224539,14 @@
           "at": "2026-11-11T14:28Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Planned 4 steps: (1) locate J2583 remade takes and half-second sheets, (2) inspect P03:01_really_falling_c1 and P02:08_the_apple_c1, (3) inspect P04:05_minute_second_c1, (4) write evidence/PR or park for Chief and report"
+        },
+        {
+          "at": "2026-11-11T14:30Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 complete: located all three J2583 second takes (P03:01_really_falling_c1 t2 sha cc697162, P02:08_the_apple_c1 t2 sha f95edc7d, P04:05_minute_second_c1 t2 sha 0322f98d) and their whole-clip 0.5s sheets beside START_FRAME in review_J2584_sheets/ (HOS PR #525 / commit 067cb22b)"
         }
       ],
-      "remaining_action": "Locate the three remade clips and whole-clip half-second sheets from J2583, then inspect each clip against its three yes/no questions",
+      "remaining_action": "Visually inspect P03:01_really_falling_c1 and P02:08_the_apple_c1 on whole-clip 0.5s sheets against their three yes/no questions",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
@@ -224556,11 +224561,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T14:28Z",
+        "at": "2026-11-11T14:30Z",
         "by": "gemini",
-        "note": "Planned 4 steps: (1) locate J2583 remade takes and half-second sheets, (2) inspect P03:01_really_falling_c1 and P02:08_t"
+        "note": "Step 1 complete: located all three J2583 second takes (P03:01_really_falling_c1 t2 sha cc697162, P02:08_the_apple_c1 t2 "
       },
       "taskKeys": [
         "HOS:009"
