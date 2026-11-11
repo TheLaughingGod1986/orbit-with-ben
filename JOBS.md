@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2636 | cloud | open (after J2632) | – | – | 009 picture · review · HOS 009: bring the picture tool's pins and tests back in line with the final boards, and retire the unused c2 path |  |
 | J2640 | mini | open | – | – | studio · Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind |  |
-| J2641 | mini | open | – | – | listing · Orbit Studio: set the video language on the four Mars rover Shorts where it was never set (B1z2dv7m7Vk, iyvWYFP_ETA, uhZSRcvngvE, RT-ec4_GcOk) |  |
+| J2641 | mini | claimed | gemini | 2026-11-11T20:24Z | listing · Orbit Studio: set the video language on the four Mars rover Shorts where it was never set (B1z2dv7m7Vk, iyvWYFP_ETA, uhZSRcvngvE, RT-ec4_GcOk) |  |
 
 Recently finished:
 
