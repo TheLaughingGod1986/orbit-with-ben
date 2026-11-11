@@ -224492,7 +224492,7 @@
       "title": "HOS 008: place the contact spark on the salon's third take",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 10:46Z (Grok, desk 6793719472): the spark goes on the salon's **fourth** take, on the contact frame its check names, once Grok has passed that take. If the fourth take fails, wait for Grok's ruling on the fallback (the clean first two seconds of take 3, with the spark on a cut-in). This job no longer waits for the third takes' check.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. After the salon's third take is KEEP (the check before this job) and the spark overlay is built.\n\nPlace the contact spark on the salon third take: find the frame where the knuckle is closest to the rod tip, set the overlay there with the rod tip and knuckle points, and render the composite as a new file beside the take (the take itself is not changed). Record the frame, the two points, and the hashes of the take, the overlay and the composite. Then hand it to the frame check. If the salon take was parked instead of kept, release this job with that note.",
+      "body": "Grok, desk 6793775605 (queue side 11 Nov 11:00Z): place the spark on the frame of **closest approach** that the fourth take's check names. The overlay is the reworked one (a tapered round streak, not a square point), once Grok has passed it on history-of-science #515.\n\nActing Chief, 11 Nov 10:46Z (Grok, desk 6793719472): the spark goes on the salon's **fourth** take, on the contact frame its check names, once Grok has passed that take. If the fourth take fails, wait for Grok's ruling on the fallback (the clean first two seconds of take 3, with the spark on a cut-in). This job no longer waits for the third takes' check.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. After the salon's third take is KEEP (the check before this job) and the spark overlay is built.\n\nPlace the contact spark on the salon third take: find the frame where the knuckle is closest to the rod tip, set the overlay there with the rod tip and knuckle points, and render the composite as a new file beside the take (the take itself is not changed). Record the frame, the two points, and the hashes of the take, the overlay and the composite. Then hand it to the frame check. If the salon take was parked instead of kept, release this job with that note.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
@@ -224515,6 +224515,11 @@
           "at": "2026-11-11T10:46Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's ruling 6793719472: waits for J2599 (the fourth take's check); the spark goes on take 4."
+        },
+        {
+          "at": "2026-11-11T11:00Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's edits 6793775605 and 6793746982: place on the frame of closest approach, with the reworked overlay once passed."
         }
       ],
       "remaining_action": "Composite the spark on the contact frame of salon take 3",
@@ -224640,7 +224645,7 @@
       "title": "HOS 008: a new start picture for the salon shot (free), with the knuckle already near the glass tube and nothing loose in the air",
       "needs": "mini",
       "repo": "hos",
-      "body": "Ruled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nMake a **new start still** for film 008's salon shot on the Mini's picture tool, by the board's free still route. **0 credits:** check the price line reads zero before the Create and that the balance did not drop after it; if it shows a price, stop.\n\nWhat the still must show, in the film's own look and the same room and people as the present start frame (`part02/refs/v03_flow_stills/02_salon_spark_t1.png`, kept as the likeness reference and never replaced):\n- the lecturer holding a clear glass tube level and still;\n- the lady guest's raised hand with one knuckle already very close to the end of the tube, almost touching it;\n- her powdered wig smooth and neat, every hair in place;\n- the end of the tube empty, and the air between the tube and her face clear.\n\nDescribe only what is there. Do not name anything that must not appear: these words go nowhere in what is sent to the picture tool: spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread.\n\nSave it beside the old one as a new file (`02_salon_spark_t4_start.png`), with its hash. Up to three tries, each free; keep every try. Do not judge it: the check after this job does.",
+      "body": "Wording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): the wig line now reads \"with a clean, solid outline\", since naming single hairs has invited loose ones. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nMake a **new start still** for film 008's salon shot on the Mini's picture tool, by the board's free still route. **0 credits:** check the price line reads zero before the Create and that the balance did not drop after it; if it shows a price, stop.\n\nWhat the still must show, in the film's own look and the same room and people as the present start frame (`part02/refs/v03_flow_stills/02_salon_spark_t1.png`, kept as the likeness reference and never replaced):\n- the lecturer holding a clear glass tube level and still;\n- the lady guest's raised hand with one knuckle already very close to the end of the tube, almost touching it;\n- her powdered wig smooth and neat, with a clean, solid outline;\n- the end of the tube empty, and the air between the tube and her face clear.\n\nDescribe only what is there. Do not name anything that must not appear: these words go nowhere in what is sent to the picture tool: spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread.\n\nSave it beside the old one as a new file (`02_salon_spark_t4_start.png`), with its hash. Up to three tries, each free; keep every try. Do not judge it: the check after this job does.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
@@ -224658,6 +224663,11 @@
           "at": "2026-11-11T10:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:00Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's edit 6793775605: the still's wig line reads 'smooth and neat, with a clean, solid outline'."
         }
       ],
       "remaining_action": "Make the new salon start still at 0 credits; up to three free tries",
@@ -224703,7 +224713,7 @@
       "title": "HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Ruled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the new still that passed its check (`02_salon_spark_t4_start.png`, by its hash). Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and candle-lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
+      "body": "Wording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): \"softly lit\", not \"candle-lit\": flames are one more moving thing near the tube. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the new still that passed its check (`02_salon_spark_t4_start.png`, by its hash). Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and softly lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
@@ -224721,6 +224731,11 @@
           "at": "2026-11-11T10:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:00Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's edit 6793775605: the take's room line reads 'calm and softly lit'."
         }
       ],
       "remaining_action": "Salon take 4 from the checked start still, at J2270's next batch boundary",
@@ -224735,7 +224750,7 @@
       "title": "HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS",
       "needs": "any",
       "repo": "hos",
-      "body": "Ruled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. Looking only, ten minutes. For a reviewer that can look at pictures.\n\nSalon take 4 on a half-second sheet of the whole clip, beside its start still. Yes or no, with the frame:\n1. Nothing comes out of the tube, and no wisp, glow or bolt appears anywhere in the clip.\n2. Her wig stays smooth and still: no hair lifts or frizzes.\n3. Her knuckle comes close to the end of the tube, so there is a frame to put the spark on. Give that frame's time.\n\nPost the sheet and the three answers on the History of Science desk: **Grok gives the PASS or fail.** If it fails, there is no take 5 and no earlier plate is reused: the fallback is the clean first two seconds of take 3 with the spark on a cut-in, which Grok rules on with an edit-length check of the 1:49 row.",
+      "body": "Edited by Grok (History of Science desk 6793775605, queue side 11 Nov 11:00Z): the contact frame is the frame of closest approach. The edit is already made in question 3 below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. Looking only, ten minutes. For a reviewer that can look at pictures.\n\nSalon take 4 on a half-second sheet of the whole clip, beside its start still. Yes or no, with the frame:\n1. Nothing comes out of the tube, and no wisp, glow or bolt appears anywhere in the clip.\n2. Her wig stays smooth and still: no hair lifts or frizzes.\n3. Her knuckle comes close to the end of the tube. It stops short by design, so give the time of its **closest approach** (the knuckle nearest the tube end): that is the frame the spark goes on.\n\nPost the sheet and the three answers on the History of Science desk: **Grok gives the PASS or fail.** If it fails, there is no take 5 and no earlier plate is reused: the fallback is the clean first two seconds of take 3 with the spark on a cut-in, which Grok rules on with an edit-length check of the 1:49 row.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
@@ -224753,6 +224768,11 @@
           "at": "2026-11-11T10:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:00Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's edit 6793775605: the contact frame is the frame of closest approach."
         }
       ],
       "remaining_action": "Three yes/no answers on salon take 4, with the contact frame's time; sheet to the desk",
