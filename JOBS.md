@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2644 | mini | open (after J2642) | – | – | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
 | J2646 | mini | blocked | gemini | – | 013 edit · for gemini · review · Review Supermoon dated Short v03 after natural-speed rebuild |  |
 | J2647 | any | blocked | macbook | – | review · Verify condition for J2449 |  |
-| J2648 | any | open | – | – | review · Verify condition for J2452 |  |
+| J2648 | any | claimed | macbook | 2026-11-11T23:11Z | review · Verify condition for J2452 |  |
 
 Recently finished:
 
