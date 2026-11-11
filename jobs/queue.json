@@ -228032,6 +228032,11 @@
           "at": "2026-11-11T20:56Z",
           "by": "claude",
           "what": "step 3 of 4: the History of Science half is up as a held draft, history-of-science 548 (head cb2a5538; 327 tests pass there, all its checks pass). It merges only after Thu 12 Nov 19:13 London, after orbit-with-ben 833, after 542 and 509 (the two open pull requests that edit PIPELINE.json), and with its last commit regenerated from main on the day. Building the board from main and from that branch found one fault on the studio's side: progress since yesterday lost all fifteen films. Fixed on 833 (head 24509bad4): a past commit is read the way the channel's own settings said then. 833's whole suite passes on that head, 1,401 tests. Grok told on the desk, 6806849519"
+        },
+        {
+          "at": "2026-11-11T21:29Z",
+          "by": "claude",
+          "what": "queue side of Grok's rulings on the held draft 548 (desk 6806863832, and 6806904132 which is later and governs where they differ): it stays a held draft. On Thu after 19:13 London, with no picture run going: 833 goes to Grok for his PASS and merges first; then 548's last commit is regenerated from main's PIPELINE.json. 509's status line is stale and stays out (film 010's picture stage is written from 538 afterwards). 542's edit line goes in through the tool if 542 is not on main by then. After the regenerated commit the round trip must hold and the tests check must be green on that head; the board compare against 833's merged head goes in the ready note. His wording corrections are made (548 commit ecc8ea7a, head 55b96878 on main 1c59247b). A second studio fault found on the way is fixed on 833 (4ef9d89b6): 53 studio tests leaned on this channel keeping one file. After 548 merges I refresh the studio's cached copy of the channel's settings at once: the board publisher stops until then"
         }
       ],
       "remaining_action": "After the window: merge 833; push the History of Science half as a pull request for Grok; then refresh channels/hos/channel.json",
