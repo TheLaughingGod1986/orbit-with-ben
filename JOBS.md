@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2631 | mini | blocked | codex | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 |  |
 | J2632 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 |  |
 | J2633 | any | blocked | gemini | – | review · Verify condition for J2586 |  |
+| J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 
 Recently finished:
 

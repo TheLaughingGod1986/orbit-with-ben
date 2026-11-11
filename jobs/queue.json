@@ -1,5 +1,5 @@
 {
-  "next_id": 2634,
+  "next_id": 2635,
   "jobs": [
     {
       "id": "J0001",
@@ -228044,6 +228044,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2634",
+      "title": "Refuse a stale Chief desk reply",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Build the stale-reply refuse in the History of Science desk tool `00_Brand/Channel-Setup/tools/hos_desk.py`, function `post`. This file lives in the History of Science repo. Branch from that repo's main. Do not start from the MacBook checkout `chief/J1868-5nov-notes`: that working copy has an uncommitted role-routing diff (marker `j2324-safe-role-routing`, about 367 lines in the same file). Leave that diff uncommitted. Do not ship it in this change.\n\nRule, from desk note 6797604213 and the 11 Nov decision on 6800767682:\n\n- When the sender is a Chief-chain id (grok, claude, codex, gemini) and `reply_to` is set, refuse the post if a newer Chief-chain post already exists on the same film and stage with an id greater than `reply_to`.\n- Allow the post when the header says `supersedes=` and that value is the newest such newer Chief post. If several newer Chief posts exist, `supersedes` must name the newest.\n- Cursor is not a Chief-chain sender. A post with no `reply_to` is unchanged.\n\nTests for the refuse case and for the `supersedes` override. Open a pull request. Do not restart launchd `com.hos.desk` until that pull request is merged. The live watcher loads this tool only at start, so the restart is a separate step after the merge.\n\nNo spend. No media. Do not edit the relay in this job. The relay change is already merged.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-11-11T16:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T16:29Z",
+          "by": "grok",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Add the stale-reply refuse in the desk post tool, with tests, on a branch from main.",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Stop a Chief desk reply that answers an older note after a newer Chief note on the same film and stage, unless it names the newer note.",
+      "mini_only": true
     }
   ],
   "focus": [
