@@ -214462,10 +214462,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T06:46Z",
+      "eta": "2026-11-11T08:16Z",
       "created_by": "claude",
       "created_at": "2026-11-09T23:52Z",
       "result": "",
@@ -214564,6 +214564,11 @@
           "at": "2026-11-11T06:07Z",
           "by": "claude",
           "what": "reopened: the branch lists are on main (#793, written from the cloud): 136 in orbit-with-ben and 58 in history-of-science, each with its tip sha. The job is now deletion from those lists only, with the exact commands at the top of the brief."
+        },
+        {
+          "at": "2026-11-11T06:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Delete the branches named in the two lists on main, 50 at a time, plus macbook/J2517 by name; report the counts",
@@ -214572,7 +214577,15 @@
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
       "mini_only": true,
       "not_before": "2026-11-10T22:00:00Z",
-      "escalated_at": "2026-11-11T05:35Z"
+      "escalated_at": "2026-11-11T05:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T06:46Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2467",
