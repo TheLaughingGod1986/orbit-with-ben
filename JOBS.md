@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2630 | cloud | blocked | claude | – | 009 picture · review · HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved | https://github.com/TheLaughingGod1986/history-of-science/pull/529 |
 | J2631 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 |  |
 | J2632 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 |  |
-| J2633 | any | claimed | gemini | 2026-11-11T18:01Z | review · Verify condition for J2586 |  |
+| J2633 | any | blocked | gemini | – | review · Verify condition for J2586 |  |
 
 Recently finished:
 
