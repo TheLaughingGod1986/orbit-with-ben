@@ -1,0 +1,1160 @@
+{
+  "verdict": "FAIL",
+  "terminal_loop": null,
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/home_earth_v04/029_picture_home_earth.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 55.33,
+      "at": "0:55",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 15,
+      "row": "10",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 92.39,
+      "at": "1:32",
+      "fail": [
+        "reuse: same stretch as 0:37 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 21,
+      "row": "15",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 135.1,
+      "at": "2:15",
+      "fail": [
+        "reuse: same stretch as 1:32 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 40,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 250.04,
+      "at": "4:10",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)"
+      ],
+      "warn": [
+        "low detail: luma std 16.55 < 18.0"
+      ],
+      "offset": 6.1
+    },
+    {
+      "cut": 54,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 327.43,
+      "at": "5:27",
+      "fail": [
+        "reuse: same stretch as 5:19 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 18.8
+    },
+    {
+      "cut": 59,
+      "row": "32",
+      "source": "sphere_dec.jpg",
+      "title": "SPHERE's view of Betelgeuse in December 2019",
+      "t": 361.38,
+      "at": "6:01",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 65,
+      "row": "34",
+      "source": "orion_over_paranal.mp4",
+      "title": "Orion over Paranal",
+      "t": 401.88,
+      "at": "6:42",
+      "fail": [
+        "reuse: same stretch as 0:08 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 0.45
+    },
+    {
+      "cut": 69,
+      "row": "36",
+      "source": "orion_rise_vlt.mp4",
+      "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+      "t": 435.79,
+      "at": "7:16",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)"
+      ],
+      "warn": [
+        "low detail: luma std 16.59 < 18.0"
+      ],
+      "offset": 0
+    },
+    {
+      "cut": 70,
+      "row": "36",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 442.47,
+      "at": "7:22",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    }
+  ],
+  "warn": [
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 12.01,
+      "at": "0:12",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 43.45,
+      "at": "0:43",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 19,
+      "row": "14",
+      "source": "dust_impression.jpg",
+      "title": "Betelgeuse's Dust Cloud (Artist's Impression)",
+      "t": 125.23,
+      "at": "2:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Betelgeuse's Dust Cloud (Artist's Impression)' (artist), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "14",
+      "source": "dust_impression.jpg",
+      "title": "Betelgeuse's Dust Cloud (Artist's Impression)",
+      "t": 130.13,
+      "at": "2:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Betelgeuse's Dust Cloud (Artist's Impression)' (artist), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 38,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 237.54,
+      "at": "3:58",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.18 < 18.0",
+        "low detail: edge density 0.0028 < film p5 0.0030"
+      ],
+      "offset": 3.25
+    },
+    {
+      "cut": 61,
+      "row": "33",
+      "source": "companion_speckle.jpg",
+      "title": "Betelgeuse and Its Stellar Companion (noirlab2523c clean speckle observation)",
+      "t": 377.3,
+      "at": "6:17",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0027 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "39",
+      "source": "lasilla_mw.mp4",
+      "title": "La Silla Milky Way time-lapse",
+      "t": 491.52,
+      "at": "8:12",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.96 < 18.0"
+      ],
+      "offset": 10.2
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "orion_rise_vlt.mp4",
+      "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+      "t": 3.06,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "orion_over_paranal.mp4",
+      "title": "Orion over Paranal",
+      "t": 8.09,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 0.45
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 12.01,
+      "at": "0:12",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 3,
+      "row": "3",
+      "source": "code_graphic_029_r03_r04_promise_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 17.98,
+      "at": "0:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 4,
+      "row": "4",
+      "source": "alma_orion_set.mp4",
+      "title": "ALMA dish and the setting Orion Nebula",
+      "t": 22.05,
+      "at": "0:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 5,
+      "row": "5",
+      "source": "sphere_dec.jpg",
+      "title": "SPHERE's view of Betelgeuse in December 2019",
+      "t": 24.45,
+      "at": "0:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 6,
+      "row": "5",
+      "source": "code_graphic_029_r05_scale_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 30.14,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 7,
+      "row": "6",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 36.69,
+      "at": "0:37",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 8,
+      "row": "6",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 43.45,
+      "at": "0:43",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0029 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 9,
+      "row": "7",
+      "source": "sdo_hmi_continuum.jpg",
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "t": 49.7,
+      "at": "0:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 10,
+      "row": "7",
+      "source": "sphere_jan.jpg",
+      "title": "SPHERE's view of Betelgeuse in January 2019",
+      "t": 55.33,
+      "at": "0:55",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 11,
+      "row": "8",
+      "source": "westerlund.jpg",
+      "title": "Westerlund 2 \u2014 Hubble's 25th anniversary image",
+      "t": 61.67,
+      "at": "1:02",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 12,
+      "row": "8",
+      "source": "westerlund.jpg",
+      "title": "Westerlund 2 \u2014 Hubble's 25th anniversary image",
+      "t": 67.95,
+      "at": "1:08",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 13,
+      "row": "8",
+      "source": "tarantula.jpg",
+      "title": "Symphony of colours in the Tarantula",
+      "t": 74.32,
+      "at": "1:14",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 14,
+      "row": "9",
+      "source": "code_graphic_029_r09_finder_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 84.1,
+      "at": "1:24",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 15,
+      "row": "10",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 92.39,
+      "at": "1:32",
+      "fail": [
+        "reuse: same stretch as 0:37 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 16,
+      "row": "10",
+      "source": "code_graphic_029_r10_r11_dip_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 101.23,
+      "at": "1:41",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 17,
+      "row": "12",
+      "source": "eso0927e.tif",
+      "title": "Digitized Sky Survey image of Betelgeuse",
+      "t": 111.69,
+      "at": "1:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 18,
+      "row": "13",
+      "source": "code_graphic_029_r13_compare_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 119.01,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 19,
+      "row": "14",
+      "source": "dust_impression.jpg",
+      "title": "Betelgeuse's Dust Cloud (Artist's Impression)",
+      "t": 125.23,
+      "at": "2:05",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Betelgeuse's Dust Cloud (Artist's Impression)' (artist), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 20,
+      "row": "14",
+      "source": "dust_impression.jpg",
+      "title": "Betelgeuse's Dust Cloud (Artist's Impression)",
+      "t": 130.13,
+      "at": "2:10",
+      "fail": [],
+      "warn": [
+        "kind of picture: 'Betelgeuse's Dust Cloud (Artist's Impression)' (artist), look at it full size"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 21,
+      "row": "15",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 135.1,
+      "at": "2:15",
+      "fail": [
+        "reuse: same stretch as 1:32 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 22,
+      "row": "15",
+      "source": "code_graphic_029_r15_dip_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 140.18,
+      "at": "2:20",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 23,
+      "row": "16",
+      "source": "lasilla_startrails.mp4",
+      "title": "Time-lapse over La Silla",
+      "t": 145.5,
+      "at": "2:25",
+      "fail": [],
+      "warn": [],
+      "offset": 22.0
+    },
+    {
+      "cut": 24,
+      "row": "16",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 151.37,
+      "at": "2:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 25,
+      "row": "17",
+      "source": "sdo_hmi_continuum.jpg",
+      "title": "SDO/HMI continuum intensitygram, 2024-06-01 00:00 UTC",
+      "t": 157.35,
+      "at": "2:37",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 26,
+      "row": "17",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 165.53,
+      "at": "2:46",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 27,
+      "row": "18",
+      "source": "sphere_dec.jpg",
+      "title": "SPHERE's view of Betelgeuse in December 2019",
+      "t": 172.39,
+      "at": "2:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 28,
+      "row": "18",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 179.18,
+      "at": "2:59",
+      "fail": [],
+      "warn": [],
+      "offset": 13.72
+    },
+    {
+      "cut": 29,
+      "row": "19",
+      "source": "tarantula.jpg",
+      "title": "Symphony of colours in the Tarantula",
+      "t": 186.8,
+      "at": "3:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 30,
+      "row": "19",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 195.04,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 28.97
+    },
+    {
+      "cut": 31,
+      "row": "20",
+      "source": "casa.jpg",
+      "title": "Cassiopeia A: Death Becomes Her",
+      "t": 201.95,
+      "at": "3:22",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 32,
+      "row": "20",
+      "source": "code_graphic_029_r17_r20_shells_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 206.01,
+      "at": "3:26",
+      "fail": [],
+      "warn": [],
+      "offset": 42.8
+    },
+    {
+      "cut": 33,
+      "row": "20",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 211.38,
+      "at": "3:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 34,
+      "row": "21",
+      "source": "code_graphic_029_r21_hero_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 215.88,
+      "at": "3:36",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "21",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 220.55,
+      "at": "3:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 36,
+      "row": "21",
+      "source": "code_graphic_029_r21_bh_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 225.15,
+      "at": "3:45",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 37,
+      "row": "23",
+      "source": "code_graphic_029_r23_paranal_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 230.7,
+      "at": "3:51",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 38,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 237.54,
+      "at": "3:58",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.18 < 18.0",
+        "low detail: edge density 0.0028 < film p5 0.0030"
+      ],
+      "offset": 3.25
+    },
+    {
+      "cut": 39,
+      "row": "24",
+      "source": "dscovr_epic.jpg",
+      "title": "NASA Captures EPIC Earth Image",
+      "t": 243.62,
+      "at": "4:04",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 40,
+      "row": "24",
+      "source": "chajnantor_mw.m4v",
+      "title": "Milky Way over Chajnantor",
+      "t": 250.04,
+      "at": "4:10",
+      "fail": [
+        "reuse: same stretch as 3:58 (give it a new stretch, or a new render)"
+      ],
+      "warn": [
+        "low detail: luma std 16.55 < 18.0"
+      ],
+      "offset": 6.1
+    },
+    {
+      "cut": 41,
+      "row": "25",
+      "source": "code_graphic_029_r25_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 257.64,
+      "at": "4:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 42,
+      "row": "26",
+      "source": "eso0927e.tif",
+      "title": "Digitized Sky Survey image of Betelgeuse",
+      "t": 263.62,
+      "at": "4:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 43,
+      "row": "26",
+      "source": "half_moon.jpg",
+      "title": "First Quarter Moon",
+      "t": 268.03,
+      "at": "4:28",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 44,
+      "row": "27",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 274.94,
+      "at": "4:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 45,
+      "row": "27",
+      "source": "m42.jpg",
+      "title": "Hubble's sharpest view of the Orion Nebula",
+      "t": 281.11,
+      "at": "4:41",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 46,
+      "row": "27",
+      "source": "code_graphic_029_r27_orion_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 285.89,
+      "at": "4:46",
+      "fail": [],
+      "warn": [],
+      "offset": 12.34
+    },
+    {
+      "cut": 47,
+      "row": "28",
+      "source": "dscovr_epic.jpg",
+      "title": "NASA Captures EPIC Earth Image",
+      "t": 291.97,
+      "at": "4:52",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 48,
+      "row": "28",
+      "source": "lasilla_mw.mp4",
+      "title": "La Silla Milky Way time-lapse",
+      "t": 297.59,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 49,
+      "row": "28",
+      "source": "gemini_earth_sky.jpg",
+      "title": "Caught Between Earth and Sky",
+      "t": 303.13,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 50,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 309.35,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 51,
+      "row": "29",
+      "source": "jwst_pillars.jpg",
+      "title": "Webb Takes a Stunning, Star-Filled Portrait of the Pillars of Creation (Cropped)",
+      "t": 314.52,
+      "at": "5:15",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 52,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 319.22,
+      "at": "5:19",
+      "fail": [],
+      "warn": [],
+      "offset": 10.34
+    },
+    {
+      "cut": 53,
+      "row": "29",
+      "source": "gemini_dome.jpg",
+      "title": "Circumpolar Laser Tests at Gemini North",
+      "t": 323.45,
+      "at": "5:23",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 54,
+      "row": "29",
+      "source": "code_graphic_029_r29_span_astrolabe_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 327.43,
+      "at": "5:27",
+      "fail": [
+        "reuse: same stretch as 5:19 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 18.8
+    },
+    {
+      "cut": 55,
+      "row": "30",
+      "source": "gemini_night.jpg",
+      "title": "A Bright Night over Gemini North",
+      "t": 334.43,
+      "at": "5:34",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 56,
+      "row": "31",
+      "source": "code_graphic_029_r31_shells_twins_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 343.99,
+      "at": "5:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 57,
+      "row": "31",
+      "source": "hl_tau.jpg",
+      "title": "ALMA image of the protoplanetary disc around HL Tauri",
+      "t": 350.31,
+      "at": "5:50",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 58,
+      "row": "31",
+      "source": "code_graphic_029_r31_shells_twins_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 354.65,
+      "at": "5:55",
+      "fail": [],
+      "warn": [],
+      "offset": 12.64
+    },
+    {
+      "cut": 59,
+      "row": "32",
+      "source": "sphere_dec.jpg",
+      "title": "SPHERE's view of Betelgeuse in December 2019",
+      "t": 361.38,
+      "at": "6:01",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 60,
+      "row": "32",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 368.53,
+      "at": "6:09",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 61,
+      "row": "33",
+      "source": "companion_speckle.jpg",
+      "title": "Betelgeuse and Its Stellar Companion (noirlab2523c clean speckle observation)",
+      "t": 377.3,
+      "at": "6:17",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0027 < film p5 0.0030"
+      ],
+      "offset": null
+    },
+    {
+      "cut": 62,
+      "row": "33",
+      "source": "gemini_earth_sky.jpg",
+      "title": "Caught Between Earth and Sky",
+      "t": 384.3,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 63,
+      "row": "33",
+      "source": "companion_speckle.jpg",
+      "title": "Betelgeuse and Its Stellar Companion (noirlab2523c clean speckle observation)",
+      "t": 389.45,
+      "at": "6:29",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 64,
+      "row": "34",
+      "source": "gemini_night.jpg",
+      "title": "A Bright Night over Gemini North",
+      "t": 395.98,
+      "at": "6:36",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 65,
+      "row": "34",
+      "source": "orion_over_paranal.mp4",
+      "title": "Orion over Paranal",
+      "t": 401.88,
+      "at": "6:42",
+      "fail": [
+        "reuse: same stretch as 0:08 (give it a new stretch, or a new render)"
+      ],
+      "warn": [],
+      "offset": 0.45
+    },
+    {
+      "cut": 66,
+      "row": "34",
+      "source": "gemini_dome.jpg",
+      "title": "Circumpolar Laser Tests at Gemini North",
+      "t": 408.36,
+      "at": "6:48",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 67,
+      "row": "35",
+      "source": "code_graphic_029_r35_song_v01.mp4",
+      "title": "our own clip or graphic",
+      "t": 416.75,
+      "at": "6:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 68,
+      "row": "35",
+      "source": "weic2326a.jpg",
+      "title": "The Crab Nebula",
+      "t": 426.95,
+      "at": "7:07",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 69,
+      "row": "36",
+      "source": "orion_rise_vlt.mp4",
+      "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+      "t": 435.79,
+      "at": "7:16",
+      "fail": [
+        "reuse: same stretch as 0:03 (give it a new stretch, or a new render)"
+      ],
+      "warn": [
+        "low detail: luma std 16.59 < 18.0"
+      ],
+      "offset": 0
+    },
+    {
+      "cut": 70,
+      "row": "36",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 442.47,
+      "at": "7:22",
+      "fail": [
+        "reuse: appears 3 times (limit 2)"
+      ],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 71,
+      "row": "37",
+      "source": "casa.jpg",
+      "title": "Cassiopeia A: Death Becomes Her",
+      "t": 450.69,
+      "at": "7:31",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 72,
+      "row": "37",
+      "source": "jwst_pillars.jpg",
+      "title": "Webb Takes a Stunning, Star-Filled Portrait of the Pillars of Creation (Cropped)",
+      "t": 460.03,
+      "at": "7:40",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 73,
+      "row": "38",
+      "source": "m42.jpg",
+      "title": "Hubble's sharpest view of the Orion Nebula",
+      "t": 468.61,
+      "at": "7:49",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 74,
+      "row": "38",
+      "source": "blue_marble.jpg",
+      "title": "View of the Earth as seen by the Apollo 17 crew (AS17-148-22727)",
+      "t": 474.53,
+      "at": "7:55",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 75,
+      "row": "39",
+      "source": "hl_tau.jpg",
+      "title": "ALMA image of the protoplanetary disc around HL Tauri",
+      "t": 480.0,
+      "at": "8:00",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 76,
+      "row": "39",
+      "source": "blue_marble.jpg",
+      "title": "View of the Earth as seen by the Apollo 17 crew (AS17-148-22727)",
+      "t": 486.18,
+      "at": "8:06",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 77,
+      "row": "39",
+      "source": "lasilla_mw.mp4",
+      "title": "La Silla Milky Way time-lapse",
+      "t": 491.52,
+      "at": "8:12",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.96 < 18.0"
+      ],
+      "offset": 10.2
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.003,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

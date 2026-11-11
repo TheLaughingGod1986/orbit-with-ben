@@ -1,0 +1,54 @@
+{
+  "status": "BOUNDED_REPAIR_NOT_FINAL_QA_OR_UAT",
+  "base": "/Users/ben/_desk/J2452-sleep-scratch/crab_reuse_v02/029_picture_crab_repaired.mp4",
+  "base_sha256": "78dc108fc34a242733b8ba65bfe331c110ce9275c2bb3ba51d9bf1d8531bde39",
+  "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/blue_marble.jpg",
+  "source_sha256": "cb4c3d2da98ee72130ebfd2ea472fc84ede6726002c2a8c9cabd86e4deea9f0f",
+  "provenance": {
+    "id": "blue_marble",
+    "title": "View of the Earth as seen by the Apollo 17 crew (AS17-148-22727)",
+    "credit": "NASA (public domain)",
+    "licence": "public domain",
+    "page": "https://images.nasa.gov/details/as17-148-22727",
+    "file": "https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg",
+    "status": "ok",
+    "note": "The Apollo 17 Blue Marble the shot list names. HEAD 200."
+  },
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/home_earth_v04/029_picture_home_earth.mp4",
+  "sha256": "759c3d853b0a5d87fae4ac1471091cf87cb899f41197b6c1f91be2de3682b9cd",
+  "patch": "/Users/ben/_desk/J2452-sleep-scratch/home_earth_v04/earth.mp4",
+  "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/home_earth_v04/earth_dissolved.mp4",
+  "dissolved_sha256": "3c37eb83bb931420e242ce63d6142c27569b20f047712a46c6817d4cf12c979e",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "chapter_replace_frames": [
+    14180,
+    14292
+  ],
+  "master_range_s": [
+    493.36,
+    496.9
+  ],
+  "spoken_line": "The bigger question is closer to home.",
+  "limitations": [
+    "A second appearance of the same real Earth photograph, not a new observation.",
+    "0.5-second dissolves use neighbouring frames; narration and master unchanged.",
+    "Remaining graphics, reuse and full compilation checks remain."
+  ],
+  "source_crop_pixels": [
+    780,
+    790,
+    3826,
+    3870
+  ],
+  "rejected_versions": {
+    "v01": "stale base without Crab repair",
+    "v02": "old-source fade frame; pixel QA failed darkness/gutter/jitter",
+    "v03": "ffmpeg select-expression quoting stopped build"
+  },
+  "actual_master_cover_range_s": [
+    493.16,
+    496.9
+  ],
+  "boundary_evidence": "Exact source frames 14178\u201314187 inspected: M42 through 14179, ALMA begins 14180. Cover starts at 14180 and uses frame 14179 as fade background."
+}

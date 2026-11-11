@@ -1,0 +1,41 @@
+{
+  "status": "CLOCK_AND_REPLACEMENT_READBACK_PASS",
+  "frames": 14829,
+  "replacement_frames": 112,
+  "maximum_replacement_error": 0.8008969907407407,
+  "unchanged_samples": [
+    {
+      "time_s": 5,
+      "mean_error": 0.3508449074074074
+    },
+    {
+      "time_s": 100,
+      "mean_error": 0.07664351851851851
+    },
+    {
+      "time_s": 250,
+      "mean_error": 0.7139467592592592
+    },
+    {
+      "time_s": 400,
+      "mean_error": 0.43484375
+    },
+    {
+      "time_s": 471,
+      "mean_error": 0.5358217592592592
+    },
+    {
+      "time_s": 477,
+      "mean_error": 0.33449074074074076
+    },
+    {
+      "time_s": 490,
+      "mean_error": 0.500005787037037
+    }
+  ],
+  "sha256": "759c3d853b0a5d87fae4ac1471091cf87cb899f41197b6c1f91be2de3682b9cd",
+  "limitations": [
+    "Replacement compared every frame at 320x180; seven sparse samples elsewhere.",
+    "Not listening or moving-picture review; normal QA remains authoritative."
+  ]
+}
