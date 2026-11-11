@@ -219786,9 +219786,14 @@
           "at": "2026-11-11T13:38Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: v08 sha256 verified (cefdf28ffec9...); gate_shorts_open.py check from main PASS (0/27 at 1fps, 0/53 at 2fps padded); bSjWiCbB7pY read back Private, publishAt 2026-11-13T11:30:00Z, Related Js6EQJ8qDi8"
+        },
+        {
+          "at": "2026-11-11T13:44Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: uploaded v08 as Private RT-ec4_GcOk for 2026-11-13T11:30:00Z; set en-GB language/audio, en-GB.srt captions (serving), custom cover, Related Js6EQJ8qDi8 in Studio, and Buffer posts"
         }
       ],
-      "remaining_action": "Upload fri13_ingenuity_72_v08.mp4 as a new Private Short for Fri 13 Nov 11:30Z, set en-GB language/captions and Related video Js6EQJ8qDi8, and read back",
+      "remaining_action": "Unschedule old Short bSjWiCbB7pY (keep Private) and run verify-swap.ts",
       "due": "2026-11-12T18:00:00Z",
       "kind": "listing",
       "plain": "Put the full-screen Mars helicopter Short you approved into its Friday slot",
@@ -219816,11 +219821,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-11T13:38Z",
+        "at": "2026-11-11T13:44Z",
         "by": "gemini",
-        "note": "Step 1 done: v08 sha256 verified (cefdf28ffec9...); gate_shorts_open.py check from main PASS (0/27 at 1fps, 0/53 at 2fps"
+        "note": "Step 2 done: uploaded v08 as Private RT-ec4_GcOk for 2026-11-13T11:30:00Z; set en-GB language/audio, en-GB.srt captions "
       },
       "taskKeys": [
         "OWB:025"
