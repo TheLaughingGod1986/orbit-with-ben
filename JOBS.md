@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2558 | mini | claimed | gemini | 2026-11-11T07:58Z | 013 shots · script · HOS 013 Darwin & Wallace: picture plan v02 with no Fast rows (each of the 23 becomes a free row or a Quality row), the runner refuses Fast, the credit cap re-pinned |  |
 | J2559 | mini | open | – | – | Mac mini housekeeping after the always-on check: three scheduled agents that fail, leftover agents to unload, the browser agent's file into the repo | J2517 |
 | J2561 | any | blocked | macbook | – | review · Verify condition for J2529 |  |
-| J2562 | mini | open | – | – | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
+| J2562 | mini | claimed | macbook | 2026-11-11T08:26Z | Shorts gate, part 5: run the new check (straight-edge evidence) on nine Shorts and report edge and no-edge frames for each | J2560 |
 
 Recently finished:
 
