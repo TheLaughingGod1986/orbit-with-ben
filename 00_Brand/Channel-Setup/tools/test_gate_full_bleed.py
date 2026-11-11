@@ -1,5 +1,5 @@
 """Full-bleed check in gate_shorts_open.py (10 Nov 2026, J2539, LEARNINGS rule 24; real frames and the whole
-Short, 11 Nov 2026, J2546)."""
+Short, 11 Nov 2026, J2546; a straight edge as evidence, 11 Nov 2026, J2560)."""
 import base64
 import json
 import zlib
@@ -423,6 +423,176 @@ class LabelledRealFrames(unittest.TestCase):
         self.assertGreaterEqual(min(full), 0.10)
         self.assertLess(max(padded), g.FB_OUT_MAX)
         self.assertGreater(min(full), g.FB_OUT_MAX)
+
+
+def soft_walled(x: int, y: int) -> int:
+    """A full-frame picture whose own top and bottom are soft: shaded walls, and detail in the middle that begins
+    at a different row in every column. No row is a straight edge."""
+    v = 150 + 28 * math.sin(x / 40.0 + 1.0) + 22 * math.sin(y / 55.0)
+    top = 62 + 14 * math.sin(x / 7.0) + 9 * math.sin(x / 2.9)
+    bottom = 128 + 12 * math.sin(x / 6.0 + 2) + 9 * math.sin(x / 3.3)
+    if top < y < bottom:
+        w = min(1.0, (y - top) / 10.0, (bottom - y) / 10.0)
+        v += w * (45 * math.sin(x / 1.9) * math.sin(y / 2.3) + 25 * math.sin((x + 2 * y) / 1.7))
+    return max(0, min(255, int(v)))
+
+
+class StraightEdgeEvidence(unittest.TestCase):
+    """A frame that looks padded counts in full only when a straight edge is found where the picture meets the
+    fill (J2560). Without one it may be a full-frame shot with soft walls, so it takes more of them to fail."""
+    OK = {"kind": None}
+    EDGED = {"kind": "blur-pad", "edge": True}
+    SOFT = {"kind": "blur-pad", "edge": False}
+
+    def clip(self, n: int, marks: dict) -> list[dict]:
+        return [dict(marks.get(i, self.OK), t=float(i)) for i in range(n)]
+
+    def test_a_padded_frame_with_a_clean_band_has_an_edge(self):
+        for name, fill in (("ramp", lambda x, y: 100 + x // 4), ("flat", lambda x, y: 90), ("black", lambda x, y: 0)):
+            with self.subTest(fill=name):
+                m = g.full_bleed_frame(banded(fill))
+                self.assertIsNotNone(m["kind"], m)
+                self.assertIs(m["edge"], True, m)
+
+    def test_a_mirrored_fill_has_an_edge(self):
+        m = g.full_bleed_frame(frame(lambda x, y: picture(x, y if BAND_Y0 <= y < BAND_Y1 else
+                                                           (2 * BAND_Y0 - 1 - y if y < BAND_Y0 else 2 * BAND_Y1 - 1 - y))))
+        self.assertEqual(m["kind"], "mirror", m)
+        self.assertIs(m["edge"], True)
+
+    def test_a_soft_walled_full_frame_is_said_but_has_no_edge(self):
+        m = g.full_bleed_frame(frame(soft_walled))
+        self.assertEqual((m["sharp_top"], m["sharp_bottom"]), (0.0, 0.0))        # as soft as a blurred fill
+        self.assertGreater(m["sharp_middle"], 0.5)
+        self.assertEqual(m["kind"], "blur-pad", m)                               # one frame cannot tell them apart
+        self.assertIs(m["edge"], False, m)
+        self.assertLess(max(m["edge_share"]), g.FB_EDGE_SHARE - 0.15)
+        self.assertIn("no straight edge", m["why"])
+
+    def test_a_full_frame_has_no_verdict_on_an_edge(self):
+        self.assertIsNone(g.full_bleed_frame(frame(picture))["edge"])
+
+    def test_the_opening_fails_only_on_an_edge(self):
+        soft = dict(g.full_bleed_frame(frame(soft_walled)), t=0.0)
+        self.assertEqual(g.frame0_full_bleed_verdict([soft, dict(soft, t=0.25), dict(soft, t=0.5)]), [])
+        note = g.frame0_full_bleed_note([soft, dict(soft, t=0.25), dict(soft, t=0.5)])
+        self.assertEqual(len(note), 1)
+        self.assertIn("may not be full-bleed", note[0])
+        self.assertIn("not a FAIL", note[0])
+        edged = dict(g.full_bleed_frame(banded(lambda x, y: 100 + x // 4)), t=0.0)
+        self.assertEqual(len(g.frame0_full_bleed_verdict([edged, dict(edged, t=0.25), dict(edged, t=0.5)])), 1)
+        self.assertEqual(g.frame0_full_bleed_note([edged, dict(edged, t=0.25), dict(edged, t=0.5)]), [])   # said once
+        ok = dict(self.OK, t=0.0)
+        self.assertEqual(g.frame0_full_bleed_note([ok, ok, ok]), [])
+
+    def test_a_result_row_without_the_key_counts_as_edged(self):
+        # rows written before J2560 carry no 'edge': they keep the 10% limit
+        frames = [dict({"kind": "blur-pad"} if i in (5, 6, 7) else self.OK, t=float(i)) for i in range(26)]
+        self.assertEqual(len(g.clip_full_bleed_verdict(frames)[0]), 1)
+
+    def test_three_soft_frames_in_twenty_six_warn_and_name_the_seconds(self):
+        # the History of Science Short the first whole-Short rule wrongly failed: 5-8 s of 26
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, {5: self.SOFT, 6: self.SOFT, 7: self.SOFT}))
+        self.assertEqual(fails, [])
+        self.assertEqual(len(warns), 1)
+        self.assertIn("may not fill 9:16 on 3/26", warns[0])
+        self.assertIn("5-8s (blur-pad, no edge)", warns[0])
+        self.assertIn("not a FAIL", warns[0])
+
+    def test_three_edged_frames_in_twenty_six_still_fail(self):
+        fails, _ = g.clip_full_bleed_verdict(self.clip(26, {5: self.EDGED, 6: self.EDGED, 7: self.EDGED}))
+        self.assertEqual(len(fails), 1)
+        self.assertIn("limit 10%", fails[0])
+        self.assertIn("5-8s (blur-pad)", fails[0])
+
+    def test_more_than_fifteen_in_a_hundred_fail_with_no_edge_at_all(self):
+        soft4 = {i: self.SOFT for i in (5, 6, 7, 8)}
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, soft4))          # 15.4%
+        self.assertEqual(len(fails), 1)
+        self.assertIn("15.4%", fails[0])
+        self.assertIn("0 with a straight edge", fails[0])
+        self.assertIn("limit 15%", fails[0])
+        self.assertEqual(warns, [])
+        self.assertEqual(g.clip_full_bleed_verdict(self.clip(27, soft4))[0], [])    # 14.8%: a warning
+
+    def test_edged_and_soft_frames_add_up_to_the_wider_limit(self):
+        marks = {5: self.EDGED, 6: self.EDGED, 12: self.SOFT}
+        fails, warns = g.clip_full_bleed_verdict(self.clip(26, marks))          # 2 edged (7.7%), 3 in all (11.5%)
+        self.assertEqual(fails, [])
+        self.assertIn("5-7s (blur-pad), 12-13s (blur-pad, no edge)", warns[0])
+        marks[13] = self.SOFT                                                   # 4 in all: 15.4%
+        self.assertEqual(len(g.clip_full_bleed_verdict(self.clip(26, marks))[0]), 1)
+
+    def test_a_soft_end_card_named_by_the_meta_is_still_judged_apart(self):
+        marks = {i: self.SOFT for i in (20, 21, 22, 23)}
+        fails, warns = g.clip_full_bleed_verdict(self.clip(24, marks), (20.0, 24.0))
+        self.assertEqual(fails, [])
+        self.assertTrue(any("end card" in w for w in warns))
+
+
+class SoftWalledRealFrames(unittest.TestCase):
+    """Two frames of a History of Science Short (Wvjd8g0CpzE, 5 s and 6 s) that the whole-Short rule read as a
+    blur pad and failed the Short on (J2557). They are full frames: vessels across the middle, soft tissue walls
+    above and below. They still look padded to one frame; they carry no straight edge, so the Short is not failed."""
+    PATH = Path(__file__).resolve().parents[3] / "jobs/reviews/J2560/J2560_labelled_frames.json"
+    BIG = Path(__file__).resolve().parents[3] / "jobs/reviews/J2545/J2545_labelled_frames.json"
+
+    @staticmethod
+    def load(path: Path):
+        doc = json.loads(path.read_text())
+        assert (doc["width"], doc["height"], doc["pix_fmt"]) == (W, H, "gray")
+        out = []
+        for f in doc["frames"]:
+            grey = zlib.decompress(base64.b64decode(f["gray_108x192_zlib_b64"]))
+            assert len(grey) == W * H
+            out.append((f["id"], f["t"], f["label"], g.full_bleed_frame(grey)))
+        return out
+
+    @classmethod
+    def setUpClass(cls):
+        cls.soft = cls.load(cls.PATH)
+        cls.big = cls.load(cls.BIG)
+
+    def test_the_two_frames_are_full_and_carry_no_edge(self):
+        self.assertEqual([(vid, t, label) for vid, t, label, _ in self.soft],
+                         [("Wvjd8g0CpzE", 5.0, "full"), ("Wvjd8g0CpzE", 6.0, "full")])
+        for vid, t, _, m in self.soft:
+            with self.subTest(frame=f"{vid} at {t}s"):
+                self.assertFalse(m["kind"] and m["edge"], m)
+                self.assertLess(max(m["edge_share"]), g.FB_EDGE_SHARE - 0.10)
+
+    def test_that_short_is_no_longer_failed(self):
+        # 26 frames sampled; the shot runs 5.0 to 8.0 s, so three of them carry this reading
+        rows = [dict(self.soft[0][3], t=5.0), dict(self.soft[1][3], t=6.0), dict(self.soft[1][3], t=7.0)]
+        frames = [dict({"kind": None}, t=float(i)) for i in range(26)]
+        for r in rows:
+            frames[int(r["t"])] = r
+        fails, warns = g.clip_full_bleed_verdict(frames)
+        self.assertEqual(fails, [])
+        self.assertIn("5-8s (blur-pad, no edge)", warns[0])
+
+    def test_no_full_frame_of_either_set_has_a_padded_reading_with_an_edge(self):
+        for vid, t, label, m in self.big + self.soft:
+            if label == "full":
+                with self.subTest(frame=f"{vid} at {t}s"):
+                    self.assertFalse(m["kind"] and m["edge"], m)
+
+    def test_the_padded_frames_caught_and_how_many_show_an_edge(self):
+        caught = [(vid, t, m) for vid, t, label, m in self.big if label == "padded" and m["kind"]]
+        self.assertEqual(len(caught), 24)                                        # as before J2560
+        self.assertEqual(sum(1 for _, _, m in caught if m["edge"]), 16)
+        # the eight caught with no edge found: two end cards, feathered or low-contrast bands
+        self.assertEqual(sorted({vid for vid, _, m in caught if not m["edge"]}),
+                         ["C8lPx5N2DwM", "HZGTovJu_TQ", "cwU_0WWeNZ4", "kKN8Ale42sE", "rvug71d7Dqk", "xdurJQcoiGM"])
+
+    def test_the_margin_the_edge_threshold_was_set_on(self):
+        full = [max(m["edge_share"]) for _, _, _, m in self.soft]
+        by_share = [max(m["edge_share"]) for _, _, label, m in self.big
+                    if label == "padded" and m["kind"] and m["edge"] and m.get("edge_share")]
+        self.assertLessEqual(max(full), 0.55)
+        self.assertGreaterEqual(min(by_share), 0.68)
+        self.assertLess(max(full) + 0.10, g.FB_EDGE_SHARE)
+        self.assertGreater(min(by_share), g.FB_EDGE_SHARE)
 
 
 if __name__ == "__main__":
