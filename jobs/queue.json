@@ -225092,13 +225092,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T11:21Z",
-      "eta": "2026-11-11T13:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T11:20Z",
-      "result": "",
+      "result": "parked for Chief: J2597 condition checked 11 Nov 11:25Z from the queue, NOT met, J2597 left blocked. Evidence: J2596 (free start still) done by codex, one try; J2597 looked at it 11:14Z and FAILED question 3 (02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0: different room and different two people). J2597 really waits for free try 2 of 3 of the still with the old frame as likeness reference; no job for try 2 is queued and no newer still is recorded. J2598 (100 credits) stays held behind J2597. The MacBook may not record a condition check, so the Chief queues try 2 and runs: python3 scripts/jobs.py wait J2597 --agent <chief> --condition 'Free try 2 of the salon start still is made (new file and hash) with the old start frame as likeness reference' --check-at '2026-11-11T17:00Z' --type input --recheck J2603",
       "history": [
         {
           "at": "2026-11-11T11:20Z",
@@ -225114,6 +225114,11 @@
           "at": "2026-11-11T11:21Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-11T11:22Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2597 condition checked 11 Nov 11:25Z from the queue, NOT met, J2597 left blocked. Evidence: J2596 (free start still) done by codex, one try; J2597 looked at it 11:14Z and FAILED question 3 (02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0: different room and different two people). J2597 really waits for free try 2 of 3 of the still with the old frame as likeness reference; no job for try 2 is queued and no newer still is recorded. J2598 (100 credits) stays held behind J2597. The MacBook may not record a condition check, so the Chief queues try 2 and runs: python3 scripts/jobs.py wait J2597 --agent <chief> --condition 'Free try 2 of the salon start still is made (new file and hash) with the old start frame as likeness reference' --check-at '2026-11-11T17:00Z' --type input --recheck J2603"
         }
       ],
       "remaining_action": "Condition read: not met (still failed Q3, no second try queued). Left: park for Chief with the wait command, post report",
