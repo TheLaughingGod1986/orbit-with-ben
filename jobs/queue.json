@@ -224365,13 +224365,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T10:38Z",
-      "eta": "2026-11-11T12:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
-      "result": "",
+      "result": "Built parameterised 3/4-frame warm-white contact spark; NAS review pack verified; tests and house checks pass. HOS PR 515 for review; J2592 owns measured placement on KEEP take. No take changed or stage approved.",
       "history": [
         {
           "at": "2026-11-11T10:22Z",
@@ -224402,6 +224402,11 @@
           "at": "2026-11-11T10:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: NAS pack hash-verified; HOS PR 515 submitted with passing checks and explicit demo limits; J2592 owns take placement."
+        },
+        {
+          "at": "2026-11-11T10:44Z",
+          "by": "codex",
+          "what": "done: Built parameterised 3/4-frame warm-white contact spark; NAS review pack verified; tests and house checks pass. HOS PR 515 for review; J2592 owns measured placement on KEEP take. No take changed or stage approved."
         }
       ],
       "remaining_action": "Review the completed spark before measured placement in the next job",
@@ -224418,7 +224423,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/515"
     },
     {
       "id": "J2592",
