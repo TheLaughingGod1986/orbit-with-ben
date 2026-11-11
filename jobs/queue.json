@@ -218060,13 +218060,13 @@
       "stage": "upload",
       "after": "J2512",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T04:32Z",
-      "eta": "2026-11-11T06:32Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:03Z",
-      "result": "",
+      "result": "Swapped 026 Wed 18 Short cwU_0WWeNZ4 -> dH_yCRmzkMo (v07 OK'd by Ben on board tick OWB-J2512.2 at 2026-11-10T23:06Z, sha256 c0e6a13865a6abce, Private 2026-11-18T11:30:00Z, cover & en-GB captions serving, Buffer deferred >7d; old cwU_0WWeNZ4 Private unscheduled; J0861 updated to dH_yCRmzkMo; verify-swap.ts ok=true, a5123d37cc, £0)",
       "history": [
         {
           "at": "2026-11-10T15:03Z",
@@ -218127,6 +218127,11 @@
           "at": "2026-11-11T04:45Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: posted read-back on thread"
+        },
+        {
+          "at": "2026-11-11T04:45Z",
+          "by": "gemini",
+          "what": "done: Swapped 026 Wed 18 Short cwU_0WWeNZ4 -> dH_yCRmzkMo (v07 OK'd by Ben on board tick OWB-J2512.2 at 2026-11-10T23:06Z, sha256 c0e6a13865a6abce, Private 2026-11-18T11:30:00Z, cover & en-GB captions serving, Buffer deferred >7d; old cwU_0WWeNZ4 Private unscheduled; J0861 updated to dH_yCRmzkMo; verify-swap.ts ok=true, a5123d37cc, £0)"
         }
       ],
       "remaining_action": "Completed",
@@ -218157,7 +218162,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "a5123d37cc"
     },
     {
       "id": "J2515",
