@@ -254,7 +254,10 @@ class Films(unittest.TestCase):
             (root / "00_Brand" / "Channel-Setup").mkdir(parents=True)
             (root / "00_Brand" / "Channel-Setup" / "PIPELINE.json").write_text(json.dumps(
                 {"films": [{"id": "011", "title": "Y", "air": "2026-12-10", "stages": {"edit": {"status": "doing"}}}]}))
-            owb, hos = channel_films.films("owb", root), channel_films.films("hos", root)
+            import channel_pins
+            owb = channel_films.films("owb", root)
+            with channel_pins.one_file("hos"):   # the one-file kind, whichever way the real channel keeps its films
+                hos = channel_films.films("hos", root)
         self.assertEqual((owb[0]["key"], owb[0]["air"], owb[0]["stages"]), ("OWB:033", "2026-12-09", {"edit": "done"}))
         self.assertEqual((hos[0]["key"], hos[0]["stages"]), ("HOS:011", {"edit": "doing"}))
 
@@ -460,8 +463,16 @@ class ThirdChannelInTheForecasts(unittest.TestCase):
         return root
 
     def test_the_loader_says_how_a_channel_keeps_its_films(self):
+        import channel_pins
         self.assertEqual(channels.pipeline("owb")["kind"], "film_status")
-        self.assertEqual(channels.pipeline("HOS")["kind"], "pipeline_json")
+        # History of Science kept one pipeline file until J2622 and one status file per film after it. Either is an
+        # answer; a test about one kind pins it (channel_pins) instead of leaning on the real channel.
+        self.assertIn(channels.pipeline("HOS")["kind"], ("pipeline_json", "film_status"))
+        self.assertTrue(channels.pipeline("HOS")["path"])
+        with channel_pins.one_file("hos"):
+            self.assertEqual(channels.pipeline("HOS"), {"kind": "pipeline_json", "path": channel_pins.ONE_FILE})
+            self.assertEqual(channels.stage_defs("hos"), [])
+        self.assertIn(channels.pipeline("HOS")["kind"], ("pipeline_json", "film_status"))   # and the pin comes off
         with self.sky():
             self.assertEqual(channels.pipeline("sky"), {})
 
