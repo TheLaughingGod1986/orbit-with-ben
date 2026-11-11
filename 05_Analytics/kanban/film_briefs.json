@@ -1030,10 +1030,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T15:11Z",
+      "updated": "2026-11-11T16:02Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "Two of the remade shots still cannot go out. In one, the Moon's trail loops back round the Moon, which reads as the Moon going backwards. In the other, an apple rolls, a third apple appears and an apple flies up onto the Moon. The Chief reworded both and each gets one more try (200 credits, none in cash). The picture tool first had to be changed so it can make a third take. That change is written and is with the Chief for review. The credits lapse Thu 12 Nov 19:13, so the takes must be made by then. There is no fourth try: if the Moon shot fails again it is left out for now and the shot before it stays, and the other is solved in the edit. The edit starts once these are settled. Picture was due Sun 15 Nov and is still on course.",
+      "holdup": "The two last tries were made on 11 Nov (200 credits, none in cash) and both failed their check. In the falling-Moon shot a dark ball appeared and the Moon's trail hooked back on itself. In the minute-and-second shot the falling apple bounced back up, turned red and fell a second time. Three AI attempts have now failed on each, so the Chief ruled there is no further try. Both gaps are filled with our own drawn diagrams instead, at no cost. One shows an apple falling five metres in one second beside the Moon falling the same five metres in one minute (13.5 seconds; it replaces two shots). The other shows the Moon dropping below a straight line and never reaching the Earth (5.3 seconds). Codex draws both, and the Chief checks a sheet of each before it goes into the film. The fourth remade shot is not made, so 100 credits stay unspent. The edit starts once both diagrams are passed. Picture was due Sun 15 Nov and is still on course.",
       "steps": [
         {
           "who": "Mac mini",
@@ -1093,53 +1093,57 @@
           "kind": "review",
           "what": "change the picture tool so it can make a third take",
           "job": "J2626",
-          "when": "2026-11-12",
-          "whenText": "written; with the Chief for review"
+          "done": true,
+          "doneText": "merged by the Chief \u00b7 Wed 11 Nov"
         },
         {
           "who": "Reviewer",
           "kind": "qa",
           "what": "correct the written record of which remade shots are kept",
           "job": "J2627",
-          "when": "2026-11-12",
-          "whenText": "by Thu 12 Nov"
+          "done": true,
+          "doneText": "corrected \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
           "kind": "video",
           "what": "last try at two shots (falling Moon, minute-and-second), 200 credits",
           "job": "J2628",
-          "afterJob": "J2626"
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov"
         },
         {
           "who": "Reviewer",
           "kind": "qa",
           "what": "check the two last tries",
           "job": "J2629",
-          "afterJob": "J2628"
+          "done": true,
+          "doneText": "both failed \u00b7 Wed 11 Nov"
         },
         {
           "who": "Mac mini",
-          "what": "remake the fourth shot, only if the minute-and-second shot passes",
-          "job": "J2586",
-          "kind": "video",
-          "afterJob": "J2629"
+          "kind": "chart",
+          "what": "draw the five-metre diagram that replaces the two minute-and-second shots",
+          "job": "J2631",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
         },
         {
-          "who": "Reviewer",
-          "what": "check the fourth remade shot",
-          "job": "J2587",
-          "kind": "qa",
-          "afterJob": "J2586"
+          "who": "Mac mini",
+          "kind": "chart",
+          "what": "draw the falling-Moon diagram that fills the gap at 3:04",
+          "job": "J2632",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
         },
         {
           "who": "Mac mini",
           "what": "put the film together",
           "job": "J2035",
           "kind": "assembly",
-          "afterJob": "J2587",
+          "afterJob": "J2632",
           "when": "2026-11-15",
-          "whenText": "due Sun 15 Nov"
+          "whenText": "after both diagrams pass; due Sun 15 Nov"
         },
         {
           "who": "Ben",
@@ -1156,15 +1160,15 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "First picture tranche accepted, and all twenty of the last plates are made (2,000 Flow credits). Sixteen are kept and four had to be remade. Three second takes were made on 11 Nov (300 credits, none in cash) and checked a frame every half second. The apple shot is kept, cut just before the apple bounces. The falling-Moon shot and the minute-and-second shot failed again, so each gets one last try with new wording from the Chief. The fourth shot follows on from the minute-and-second one, so it waits for that. Next: the last tries, their check, the edit (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
+      "line": "First picture tranche accepted, and all twenty of the last plates are made (2,000 Flow credits). Sixteen are kept and four had to be remade. The apple shot's second take is kept, cut just before the apple bounces. The falling-Moon shot and the minute-and-second shot failed three times each (500 credits in retakes, none in cash), so the Chief replaced them with two drawn diagrams at no cost; the shot that followed the minute-and-second one is covered by the same diagram and is not made. Next: the two diagrams (J2631, J2632), the Chief's check of each, the edit (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
       "youShort": "your final OK Sun 22 Nov",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-11T15:11Z",
+      "updated": "2026-11-11T16:02Z",
       "mood": "fixing",
       "done": "Script, fact check and upload package.",
-      "holdup": "The first five of its twelve plates are made. The second batch is running now on the picture tool (Gemini started it 11 Nov 15:09 UTC, after Codex's own safety check had refused to launch it). The last batch follows. All seven remaining plates must be made inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
+      "holdup": "The first five of its twelve plates are made, and the second batch of five ran on the picture tool on 11 Nov and finished without an error. The last batch of two follows. All of them must be made inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
       "steps": [
         {
           "who": "Mac mini",

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tests for scripts/macbook_worker.py: it only runs on mains power while the MacBook is idle, the `macbook` lane is
 kept apart from the Mini's, and a run never outlives its cap (Ben, 28 Oct 2026)."""
+import contextlib
 import datetime as dt
 import os
 import pathlib
@@ -634,6 +635,197 @@ class TwoSlots(unittest.TestCase):
         self.assertTrue(jobs.is_macbook("macbook-2") and jobs.is_macbook("macbook"))
         self.assertFalse(jobs.is_macbook("macbookish") or jobs.is_macbook("codex"))
         self.assertTrue(jobs.claimable({"jobs": [j]}, j, {"macbook", "any"}, T0, "macbook-2"))
+
+
+class PushedWorkIsParked(unittest.TestCase):
+    """J2624, 11 Nov 2026. A run opened its pull request and ended with the job still open. The worker handed the job
+    back, and two minutes later the other slot began the same work again and opened a second pull request. A clean
+    run that pushed its work branch is now parked for the Chief; every other ending is handled as before. The git
+    calls here are real, against a throwaway "GitHub"; the queue and the agent are stand-ins."""
+    JOB = "J9001"
+
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.t = pathlib.Path(tmp.name)
+        self.g("init", "-q", "--bare", "-b", "main", str(self.t / "origin.git"), cwd=self.t)
+        self.clone = self.cloned("studio")
+        (self.clone / "f").write_text("1")
+        self.g("add", "f", cwd=self.clone); self.g("commit", "-qm", "one", cwd=self.clone)
+        self.g("push", "-q", "origin", "main", cwd=self.clone)
+
+    def g(self, *a, cwd):
+        return subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True).stdout.strip()
+
+    def cloned(self, name, origin="origin.git"):
+        self.g("clone", "-q", str(self.t / origin), str(self.t / name), cwd=self.t)
+        self.g("config", "user.email", "x@y", cwd=self.t / name); self.g("config", "user.name", "x", cwd=self.t / name)
+        return self.t / name
+
+    def push_work(self, clone=None, branch=None, commits=1):
+        """What an agent does: commit on the job's branch (carrying on from it if it exists), push it, back to main."""
+        clone, branch = clone or self.clone, branch or mw.work_branch(self.JOB)
+        exists = subprocess.run(["git", "rev-parse", "-q", "--verify", branch], cwd=clone, capture_output=True).returncode == 0
+        self.g("checkout", "-q", *([] if exists else ["-b"]), branch, cwd=clone)
+        for _ in range(commits):
+            self.g("commit", "-q", "--allow-empty", "-m", "work", cwd=clone)
+        self.g("push", "-q", "origin", branch, cwd=clone)
+        self.g("checkout", "-q", "main", cwd=clone)
+
+    def run_job(self, agent_does=lambda: None, code=0, after="claimed", block_code=0, others=(), quick_s="0", pr=""):
+        """One whole run of the worker. Returns (what it returned, the queue commands it sent, what else happened)."""
+        import routing
+        queue, seen = [], {"paused": [], "beat": [], "log": []}
+        real = mw.sh
+
+        def sh(cmd, **k):
+            if len(cmd) > 2 and cmd[1] == "scripts/jobs.py":
+                queue.append(cmd[2:])
+                if cmd[2] == "next":
+                    return subprocess.CompletedProcess(cmd, 0, f"{self.JOB} [macbook] claimed by {mw.AGENT_ID} until 13:00\n", "")
+                if cmd[2] == "show":
+                    state = f"claimed by {mw.AGENT_ID}" if after == "claimed" else after
+                    return subprocess.CompletedProcess(cmd, 0, f"{self.JOB} [macbook] {state}\n", "")
+                return subprocess.CompletedProcess(cmd, block_code if cmd[2] == "block" else 0, "", "")
+            return real(cmd, **k)
+
+        def agent_runs(cmd, cwd, cap):
+            agent_does()
+            return code
+
+        stand_ins = {
+            "STUDIO": self.clone, "OTHERS": list(others), "WORKER_DIR": self.t, "STATE": self.t, "sh": sh,
+            "run_capped": agent_runs, "cdp_ports_up": lambda: [], "installed": lambda: ["codex"],
+            "usable": lambda have: have, "pick_agent": lambda j, have: ("codex", ""),
+            "agent_cmd": lambda a, prompt, m="": ["true"], "brief": lambda *a: "brief",
+            "busy_cmd": lambda cmd, idle_min=None: cmd, "record_usage": lambda: False,
+            "open_pr": lambda repo, branch: pr,
+            "mark_down": lambda a: seen["paused"].append(a) or "2026-10-28T14:00",
+            "push_heartbeat": lambda state, why, job="": seen["beat"].append((state, " ".join(why))),
+            "log": seen["log"].append,
+        }
+        with contextlib.ExitStack() as stack:
+            for name, value in stand_ins.items():
+                stack.enter_context(mock.patch.object(mw, name, value))
+            stack.enter_context(mock.patch.object(mw.shutil, "which", lambda name: None))
+            stack.enter_context(mock.patch.object(routing, "OUT", set(routing.OUT)))  # the run re-reads the credit flags
+            stack.enter_context(mock.patch.dict(os.environ, {"MACBOOK_QUICK_EXIT_S": quick_s}))  # and sets MACBOOK_CDP
+            return mw.run_ordinary(), queue, seen
+
+    def sent(self, queue, name):
+        return [c for c in queue if c[0] == name]
+
+    def test_a_clean_run_that_pushed_its_branch_and_left_the_job_open_is_parked(self):
+        result, queue, seen = self.run_job(self.push_work)
+        self.assertEqual(result, "ran")
+        (block,) = self.sent(queue, "block")
+        self.assertEqual(block[:3], ["block", self.JOB, "--agent"])
+        self.assertEqual(block[3], mw.AGENT_ID)
+        reason = block[block.index("--reason") + 1]
+        self.assertTrue(reason.startswith("parked for Chief: "), reason)
+        self.assertIn("Branch macbook/J9001 in studio is 1 commit(s) ahead of main", reason)
+        self.assertIn("--git", block)
+        self.assertEqual(self.sent(queue, "release"), [], "handing it back is what let the other slot start it again")
+        self.assertEqual(seen["paused"], [])
+        self.assertIn("parked for the Chief", seen["beat"][-1][1])
+
+    def test_the_parked_job_names_its_pull_request_when_one_can_be_read(self):
+        _, queue, _ = self.run_job(lambda: self.push_work(commits=3), pr="https://github.example/pull/822")
+        reason = self.sent(queue, "block")[0][-2]
+        self.assertIn("3 commit(s) ahead of main; pull request https://github.example/pull/822.", reason)
+        _, queue, _ = self.run_job(lambda: self.push_work(commits=1))
+        self.assertIn("no open pull request was found for it", self.sent(queue, "block")[0][-2])
+
+    def test_a_quick_clean_run_that_pushed_its_work_does_not_pause_the_agent(self):
+        # A clean exit inside two minutes with the job open normally means "out of usage". Pushed work says otherwise.
+        _, queue, seen = self.run_job(self.push_work, quick_s="120")
+        self.assertEqual(len(self.sent(queue, "block")), 1)
+        self.assertEqual(seen["paused"], [])
+
+    def test_a_run_that_pushed_nothing_is_handed_back_as_before(self):
+        _, queue, seen = self.run_job()
+        self.assertEqual(self.sent(queue, "block"), [])
+        (release,) = self.sent(queue, "release")
+        self.assertIn("ended (exit 0) with the job still open; picked up again next run", release[release.index("--note") + 1])
+        self.assertEqual(seen["paused"], [])
+        _, queue, seen = self.run_job(quick_s="120")                # the same, over inside two minutes: out of usage
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        self.assertEqual(seen["paused"], ["codex"])
+
+    def test_a_failed_run_is_handed_back_and_the_agent_paused_even_with_a_branch_pushed(self):
+        _, queue, seen = self.run_job(self.push_work, code=1)
+        self.assertEqual(self.sent(queue, "block"), [])
+        (release,) = self.sent(queue, "release")
+        self.assertIn("ended (exit 1)", release[release.index("--note") + 1])
+        self.assertIn("codex paused on the MacBook until", release[release.index("--note") + 1])
+        self.assertEqual(seen["paused"], ["codex"])
+
+    def test_a_run_killed_at_the_cap_is_handed_back_for_the_next_run_to_carry_on(self):
+        _, queue, seen = self.run_job(self.push_work, code=124)
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        self.assertEqual(seen["paused"], [])
+
+    def test_a_branch_an_earlier_run_left_does_not_park_a_run_that_pushed_nothing(self):
+        # A long job keeps one branch across many runs and hands itself back between them.
+        self.push_work()
+        _, queue, _ = self.run_job()
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+        _, queue, _ = self.run_job(self.push_work)                   # the next run adds to it and stops without closing
+        self.assertIn("2 commit(s) ahead of main", self.sent(queue, "block")[0][-2])
+
+    def test_a_branch_with_nothing_main_lacks_is_not_work_to_park(self):
+        def pushes_main_under_the_branch_name():
+            self.g("push", "-q", "origin", "main:refs/heads/" + mw.work_branch(self.JOB), cwd=self.clone)
+        _, queue, _ = self.run_job(pushes_main_under_the_branch_name)
+        self.assertEqual(self.sent(queue, "block"), [])
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+
+    def test_work_pushed_in_another_channels_clone_is_parked_too(self):
+        self.g("init", "-q", "--bare", "-b", "main", str(self.t / "other.git"), cwd=self.t)
+        other = self.cloned("another-channel", "other.git")
+        self.g("commit", "-q", "--allow-empty", "-m", "one", cwd=other); self.g("push", "-q", "origin", "main", cwd=other)
+        _, queue, _ = self.run_job(lambda: self.push_work(other), others=[other, self.t / "not-cloned-here"])
+        self.assertIn("Branch macbook/J9001 in another-channel is 1 commit(s) ahead of main", self.sent(queue, "block")[0][-2])
+
+    def test_a_job_the_agent_closed_itself_is_left_alone(self):
+        _, queue, seen = self.run_job(self.push_work, after="done by macbook")
+        self.assertEqual(self.sent(queue, "block") + self.sent(queue, "release"), [])
+        self.assertIn("finished", seen["beat"][-1][1])
+
+    def test_if_parking_fails_the_job_is_still_handed_back_never_left_claimed(self):
+        _, queue, _ = self.run_job(self.push_work, block_code=1)
+        self.assertEqual(len(self.sent(queue, "block")), 1)
+        self.assertEqual(len(self.sent(queue, "release")), 1)
+
+    def test_a_parked_job_is_on_the_chiefs_list_and_no_slot_claims_it_again(self):
+        import workflow_state as workflow
+        job = {"id": self.JOB, "title": "t", "needs": "macbook", "status": "claimed", "by": "macbook", "history": []}
+        reason = mw.park_reason("codex", {"repo": "studio", "branch": "macbook/J9001", "ahead": 2, "pr": ""})
+        jobs.do_block(job, "macbook", reason, T0)
+        self.assertEqual(job["status"], "blocked")
+        self.assertTrue(workflow.is_review(job), "it must reach the Chief's review list")
+        self.assertEqual(workflow.external_hold(job, T0), "", "a timed wait would take it off that list")
+        for slot in ("macbook", "macbook-2"):
+            self.assertFalse(jobs.claimable({"jobs": [job]}, job, {"macbook", "any"}, T0, slot))
+
+    def test_the_pull_request_lookup_never_stops_a_run(self):
+        ok = lambda out, code=0: mock.patch.object(mw, "sh", lambda cmd, **k: subprocess.CompletedProcess(cmd, code, out, ""))  # noqa: E731
+        with mock.patch.object(mw.shutil, "which", lambda name: "/usr/bin/gh"):
+            with ok('[{"url": "https://github.example/pull/7"}]'):
+                self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "https://github.example/pull/7")
+            for out, code in (("[]", 0), ("not json", 0), ('{"url": 1}', 0), ("", 1), ('[{"url": "x"}]', 1)):
+                with ok(out, code):
+                    self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "", (out, code))
+        with mock.patch.object(mw.shutil, "which", lambda name: None):
+            self.assertEqual(mw.open_pr(self.clone, "macbook/J9001"), "")
+
+    def test_a_clone_that_cannot_be_asked_reads_as_nothing_pushed(self):
+        with mock.patch.object(mw, "STUDIO", self.clone), mock.patch.object(mw, "OTHERS", [self.t / "missing"]), \
+                mock.patch.object(mw, "sh", lambda cmd, **k: subprocess.CompletedProcess(cmd, 128, "", "no network")):
+            self.assertEqual(mw.branch_heads(self.JOB), {})
+            self.assertEqual(mw.pushed_work(self.JOB, {}), {})
 
 
 class OnePublisher(unittest.TestCase):

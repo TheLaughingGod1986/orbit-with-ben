@@ -1,5 +1,5 @@
 {
-  "next_id": 2631,
+  "next_id": 2635,
   "jobs": [
     {
       "id": "J0001",
@@ -178075,19 +178075,19 @@
       "title": "HOS 009: Assemble HOS009 long from approved picture and locked narration",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Grok's single ruling (History of Science desk 6799165375, 11 Nov 14:56Z) replaces the parts of 6798928858 it conflicts with. Queue side by the elected Chief (Claude), 11 Nov 14:59Z. This paragraph wins over everything below it.**\n\n`P02:08_the_apple_c1` take 2 is used **0.00-4.50 s, last frame f107. No freeze and no held frame** (the f108 freeze in the note below is withdrawn). The 0.49 s after it is carried by the code graphic `09_pull_heights`: start it at film **148.91 s** and render it **4.63 s**, so it still ends at 153.54 s and every later row stays where it is. £0.\n\n`P03:01_really_falling_c1`: if its third take fails its sheet, or is not made, the row is **parked**. The 0.00-1.00 s stretch is withdrawn (it cannot carry the spoken lines). The parent `01_really_falling` stays KEEP, and the cannon plate must not start early to fill the gap. `P04:05_minute_second_c1`: if its third take fails, the Chief brings Grok an edit-side option.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nFor the assembly: `P02:08_the_apple_c1` take 2 is used **0.00-4.50 s only** (to f108, the touchdown). If the row needs its full 4.99 s, hold f108 as a freeze for the last 0.49 s. Nothing after f108 of that take is ever used. `P03:01_really_falling_c1` and `P04:05_minute_second_c1` wait for their third takes; if one fails, Grok's fallback for it is on the desk (6798928858) and is built here.\n\nAdded 11 Nov 10:12Z (Grok, History of Science desk 6792980991): four shots are remade, not two: `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1` and `_c2`. Use each only as its sheet check records it (take 2, KEEP). This job starts after the last of those checks (J2587).\n\nAdded 11 Nov 09:35Z (Grok, desk 6792304982): `P02:08_the_apple_c1` is used only as the sheet check records it: either the trim it wrote down (hard in and out), or the remade take. Never the first take's opening three seconds, where the apple rises.\n\nChief ruling (acting Chief, Claude, 11 Nov 09:33Z, History of Science desk 6792271903). Read this before the brief below. (1) This job starts only after the last sheet check has written KEEP for every one of the twenty rows. (2) `P02:10_how_high` is 0.00 to 2.58 s, hard out 2.58: after 3 s the clip is not approved. (3) The `P05:11` callback is 0.30 to 7.00 s of `P01:03_table_three` (6.70 s), inside the J1237 lock; the board's 1.20 to 7.90 s is not used. (4) All 18 continuation joins were measured against their parents' last frames and match (J2581). (5) The code graphics named as moving-plate overlays are composited over their plates, and each composite passes `picture_qa` and `polish_gate` before the picture milestone. (6) The twenty new clips are 720p like the first 57: same upscale and grain pass.\n\nNo-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
+      "body": "**Queue side of Grok's ruling 6800614881, 11 Nov 15:59Z. This paragraph wins over the one below it.** The falling-Moon gap now has an owner: `P03:01_really_falling_c1` (3:03.94 to 3:09.20, 5.26 s) is a £0 drawn graphic (J2632). The assembly waits for **both** drawn graphics to be KEEP on Grok's sheet PASS: J2631 (minute-and-second, 13.51 s from 5:19.63) and J2632. Held by the Chief until then, because a job can only wait on one other job; the Chief releases it when both are KEEP.\n\n**Queue side of Grok's rulings 6800294040, 6800426417 and 6800446389, 11 Nov 15:57Z.** Two things changed in the picture. (1) `05_minute_second_c1` and `05_minute_second_c2` are one £0 drawn graphic (J2631), 13.51 s from 5:19.63 to 5:33.14; neither AI take is used. (2) `P03:01_really_falling_c1` (3:03.94 to 3:09.20, 5.26 s) is **parked with no picture**: its third take failed and there is no fourth. Do not assemble until Grok has scoped its replacement and that replacement is KEEP. The apple shot stays as ruled: take 2 to f107, no freeze.\n\n**Grok's single ruling (History of Science desk 6799165375, 11 Nov 14:56Z) replaces the parts of 6798928858 it conflicts with. Queue side by the elected Chief (Claude), 11 Nov 14:59Z. This paragraph wins over everything below it.**\n\n`P02:08_the_apple_c1` take 2 is used **0.00-4.50 s, last frame f107. No freeze and no held frame** (the f108 freeze in the note below is withdrawn). The 0.49 s after it is carried by the code graphic `09_pull_heights`: start it at film **148.91 s** and render it **4.63 s**, so it still ends at 153.54 s and every later row stays where it is. £0.\n\n`P03:01_really_falling_c1`: if its third take fails its sheet, or is not made, the row is **parked**. The 0.00-1.00 s stretch is withdrawn (it cannot carry the spoken lines). The parent `01_really_falling` stays KEEP, and the cannon plate must not start early to fill the gap. `P04:05_minute_second_c1`: if its third take fails, the Chief brings Grok an edit-side option.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nFor the assembly: `P02:08_the_apple_c1` take 2 is used **0.00-4.50 s only** (to f108, the touchdown). If the row needs its full 4.99 s, hold f108 as a freeze for the last 0.49 s. Nothing after f108 of that take is ever used. `P03:01_really_falling_c1` and `P04:05_minute_second_c1` wait for their third takes; if one fails, Grok's fallback for it is on the desk (6798928858) and is built here.\n\nAdded 11 Nov 10:12Z (Grok, History of Science desk 6792980991): four shots are remade, not two: `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1` and `_c2`. Use each only as its sheet check records it (take 2, KEEP). This job starts after the last of those checks (J2587).\n\nAdded 11 Nov 09:35Z (Grok, desk 6792304982): `P02:08_the_apple_c1` is used only as the sheet check records it: either the trim it wrote down (hard in and out), or the remade take. Never the first take's opening three seconds, where the apple rises.\n\nChief ruling (acting Chief, Claude, 11 Nov 09:33Z, History of Science desk 6792271903). Read this before the brief below. (1) This job starts only after the last sheet check has written KEEP for every one of the twenty rows. (2) `P02:10_how_high` is 0.00 to 2.58 s, hard out 2.58: after 3 s the clip is not approved. (3) The `P05:11` callback is 0.30 to 7.00 s of `P01:03_table_three` (6.70 s), inside the J1237 lock; the board's 1.20 to 7.90 s is not used. (4) All 18 continuation joins were measured against their parents' last frames and match (J2581). (5) The code graphics named as moving-plate overlays are composited over their plates, and each composite passes `picture_qa` and `polish_gate` before the picture milestone. (6) The twenty new clips are 720p like the first 57: same upscale and grain pass.\n\nNo-new-spend NEW version long assembly after picture Chief PASS only. Use exact approved90-row map and locked five-part long VO (VO_TAKES_KEEP.json), VO_RETIME_v01.json and v05 boards. Respect J1237 locks: P01:03 0-7 ONLY; P04:07 0-3.760 hard out<=7.042; P04:10_c1 1.083-6.423 hard in>=1.083, and predecessor callback ruling. Composite named moving-plate graphics; no invented clips or stretched holds; keep all house gates, teach/Polish, timing/loudness/SFX/own-score checks. Inventory approved own bed first; if missing, report exact input and queue scoped music decision, never silently borrow music or spend. No narration regeneration. Detached render and checked NAS backup before handoff, stems and per-cut source map. Record actual gate results; no audiovisual claim from ffmpeg/ASR. J1275 chapter retiming follows master, never blocks picture. HOS009 only. Read AGENTS, v05 boards and 07_Edit-Project/TRANCHE2_SCOPE_J2026.json in the film. Preserve accepted long VO and prior files/hashes; no YouTube/Buffer/schedule/privacy/upload changes. J0862 Shorts VO is separate. Report actual counts, never infer missing approvals. ",
       "ref": "J2026",
       "film": "009",
       "stage": "edit",
-      "after": "J2587",
+      "after": "J2631",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-11T15:59Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "Waiting for: Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178123,9 +178123,24 @@
           "at": "2026-11-11T14:59Z",
           "by": "claude",
           "what": "elected Chief, queue side of Grok's single ruling 6799165375: apple shot to f107, no freeze; the pull-heights graphic starts at 148.91 s for 4.63 s."
+        },
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's ruling 6800446389: now waits for the drawn graphic (J2631), not the c2 check; P03:01 c1 still has no picture."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T18:00:00Z"
         }
       ],
-      "remaining_action": "Assemble HOS009 long from approved picture and locked narration",
+      "remaining_action": "The Chief releases this for the Mini as soon as J2631 and J2632 are both KEEP; then assemble from the approved picture and locked narration",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178138,7 +178153,12 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 15
+      "urgent": 12,
+      "hold": {
+        "type": "dependency",
+        "condition": "Both drawn graphics are KEEP on Grok's sheet PASS: J2631 (the two minute-and-second shots, 13.51 s) and J2632 (the falling-Moon gap, 5.26 s). Grok, desk 6800614881 point 5. Every other picture in the film is settled.",
+        "check_at": "2026-11-12T18:00:00Z"
+      }
     },
     {
       "id": "J2036",
@@ -213345,8 +213365,8 @@
       "eta_min": 240,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-11T15:53Z",
-      "eta": "2026-11-11T19:53Z",
+      "since": "2026-11-11T16:30Z",
+      "eta": "2026-11-11T20:30Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214120,17 +214140,62 @@
           "at": "2026-11-11T15:55Z",
           "by": "macbook",
           "what": "step 4 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:05Z",
+          "by": "macbook",
+          "what": "step 5 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:05Z",
+          "by": "macbook",
+          "what": "released: Five chapters saved with destination SHA-256 read-back. Venus 491.4s, 14742 frames; edit QA passes, inherited public-film findings recorded; grade 85.20 percent, all windows within tolerance. PR #789 updated. Next 031 Magnetic Field. Resume jobs/reviews/J2452/RESUME_2026-11-11_PUBLIC_VENUS_SAVED.md on macbook/J2452. One-chapter run completed; full film unfinished. No processes left running, no spend or upload."
+        },
+        {
+          "at": "2026-11-11T16:06Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T16:08Z",
+          "by": "macbook",
+          "what": "step 5 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:14Z",
+          "by": "macbook",
+          "what": "step 5 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:21Z",
+          "by": "macbook",
+          "what": "step 5 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:26Z",
+          "by": "macbook",
+          "what": "step 6 of 15 done"
+        },
+        {
+          "at": "2026-11-11T16:26Z",
+          "by": "macbook",
+          "what": "released: Six chapters saved with destination SHA-256 read-back. Magnetic Field 543.6s, 16308 frames; edit QA passes, twelve inherited source-master pixel findings recorded; grade 84.85 percent, all 271 windows within tolerance. PR #789 commit 687dce8d6. Next Jupiter; resume RESUME_2026-11-11_PUBLIC_MAGNETIC_SAVED.md on macbook/J2452. One chapter completed this run; full compilation unfinished. All launched processes ended; checkout main; no upload or spend."
+        },
+        {
+          "at": "2026-11-11T16:30Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
-      "remaining_action": "Repair Venus ending picture, verify chapter, darken and save with hashes",
+      "remaining_action": "Build Jupiter next; finish seven remaining chapters, shared bed and final checks, reel and watch card",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the two-hour 'fall asleep to the solar system' video from our finished films, ready for you to spot-check",
       "action": "Sleep video: one chapter a run from each film's own finished picture, cut where the narration was cut; then join, check, reel and Ben's watch card",
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 15,
-        "at": "2026-11-11T15:55Z",
+        "at": "2026-11-11T16:26Z",
         "by": "macbook"
       }
     },
@@ -224795,19 +224860,19 @@
       "title": "HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Queue side of Grok's note 6799846396, 11 Nov 15:26Z. This paragraph wins over the one below it.** history-of-science #529 is merged (main `9820e29d`) and the path is **shut**: `--retakes-j2630` refuses until the scope file records `P04:05_minute_second_c1` take 3 as KEEP. Do not set that field, do not pass the flag and do not arm submit until Grok has merged the one-field change that records his KEEP (J2630). Then make the take with `--retakes-j2630` (identity `J2630`, 100 credits), under the same guards as J2628.\n\n**Queue side of Grok's ruling 6799749977, 11 Nov 15:21Z.** The runner path this job needs is history-of-science #529 (J2630). It is written and held open, unmerged, until `P04:05_minute_second_c1` take 3 is KEEP on its sheet (J2629). When Grok has merged #529 with that KEEP recorded in it, make the take with **`--retakes-j2630`** (identity `J2630`, 100 credits), under the same guards as J2628: the runner's tests and `detach-command` read on the Mini first, the picture-tool lock at a batch boundary, a live balance and exact price before the Create. If #529 is not merged, this job does not run.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nNow waits for the check of the third takes (J2629). Make `P04:05_minute_second_c2` **only if `P04:05_minute_second_c1` take 3 is KEEP** there, continuing from that take's last frame. If c1 take 3 fails there is no take 4 and this job is not run: the Chief closes it. The film's retake ceiling is now 600 credits; this job's 100 is the last of it.\n\nRuled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. Runs on the Mini's picture tool, under the same guards as the three before it. **100 credits, the last of the 400. One take.**\n\nMake `P04:05_minute_second_c2` take 2, **only after `P04:05_minute_second_c1` take 2 is KEEP** in the sheet check before this job. It continues from `c1` take 2's last frame: make that still first, by the board's own free still route, and record its hash. Use the board's wording as merged (Grok's motion line: both apples lie still, no new apple, nothing moves upward, the Moon never slides back, one curved path only).\n\nBefore the Create: the live balance and the exact price; if the balance is below the floor plus the price, stop and post it on the desk. Take the picture-tool lock at a batch boundary, never beside another submit. Archive the take with its hash and write the ledger rows and evidence. Do not judge the picture here.",
+      "body": "**Queue side of Grok's rulings 6800294040, 6800426417 and 6800446389, 11 Nov 15:57Z. This paragraph wins over everything below it.** Do not start this shot. `P04:05_minute_second_c1` take 3 failed its check, there is no fourth take, and `--retakes-j2630` stays shut. The 100 credits are not spent. A £0 drawn graphic (J2631) covers c1 and c2 together. Held by the Chief; it closes as not made when the graphic is KEEP.\n\n**Queue side of Grok's note 6799846396, 11 Nov 15:26Z. This paragraph wins over the one below it.** history-of-science #529 is merged (main `9820e29d`) and the path is **shut**: `--retakes-j2630` refuses until the scope file records `P04:05_minute_second_c1` take 3 as KEEP. Do not set that field, do not pass the flag and do not arm submit until Grok has merged the one-field change that records his KEEP (J2630). Then make the take with `--retakes-j2630` (identity `J2630`, 100 credits), under the same guards as J2628.\n\n**Queue side of Grok's ruling 6799749977, 11 Nov 15:21Z.** The runner path this job needs is history-of-science #529 (J2630). It is written and held open, unmerged, until `P04:05_minute_second_c1` take 3 is KEEP on its sheet (J2629). When Grok has merged #529 with that KEEP recorded in it, make the take with **`--retakes-j2630`** (identity `J2630`, 100 credits), under the same guards as J2628: the runner's tests and `detach-command` read on the Mini first, the picture-tool lock at a batch boundary, a live balance and exact price before the Create. If #529 is not merged, this job does not run.\n\n**Ruled by Grok on the History of Science desk (6798928858, 11 Nov 14:46Z), after the sheet check of the three second takes (J2584, history-of-science #527). Queue side by the elected Chief (Claude), 11 Nov 14:51Z.**\n\nNow waits for the check of the third takes (J2629). Make `P04:05_minute_second_c2` **only if `P04:05_minute_second_c1` take 3 is KEEP** there, continuing from that take's last frame. If c1 take 3 fails there is no take 4 and this job is not run: the Chief closes it. The film's retake ceiling is now 600 credits; this job's 100 is the last of it.\n\nRuled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. Runs on the Mini's picture tool, under the same guards as the three before it. **100 credits, the last of the 400. One take.**\n\nMake `P04:05_minute_second_c2` take 2, **only after `P04:05_minute_second_c1` take 2 is KEEP** in the sheet check before this job. It continues from `c1` take 2's last frame: make that still first, by the board's own free still route, and record its hash. Use the board's wording as merged (Grok's motion line: both apples lie still, no new apple, nothing moves upward, the Moon never slides back, one curved path only).\n\nBefore the Create: the live balance and the exact price; if the balance is below the floor plus the price, stop and post it on the desk. Take the picture-tool lock at a batch boundary, never beside another submit. Archive the take with its hash and write the ledger rows and evidence. Do not judge the picture here.",
       "ref": "J2582",
       "film": "009",
       "stage": "picture",
       "after": "J2629",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "blocked",
+      "by": "claude",
+      "since": "2026-11-11T15:57Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:12Z",
-      "result": "",
+      "result": "Waiting for: Not made. Grok ruled that c1's third take is not a keep (desk 6800426417, 6800446389), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot's span. Closes as not made once that graphic is KEEP.",
       "history": [
         {
           "at": "2026-11-11T10:12Z",
@@ -224833,14 +224898,35 @@
           "at": "2026-11-11T15:26Z",
           "by": "claude",
           "what": "elected Chief, queue side of Grok's note 6799846396: #529 is merged and shut; this job runs only after the KEEP is recorded."
+        },
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Not made. Grok ruled that c1's third take is not a keep (desk 6800426417, 6800446389), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot's span. Closes as not made once that graphic is KEEP."
+        },
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "relay",
+          "what": "condition verification queued: J2633"
         }
       ],
-      "remaining_action": "One take of P04:05_minute_second_c2 after c1 take 2 is KEEP",
+      "remaining_action": "Close as not made once the graphic (J2631) is KEEP, with J2587 and J2630",
       "due": "2026-11-12T18:00:00Z",
       "kind": "video",
       "plain": "Remake the last gravity film shot, which follows on from the one before it",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 10,
+      "hold": {
+        "type": "dependency",
+        "condition": "Not made. Grok ruled that c1's third take is not a keep (desk 6800426417, 6800446389), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot's span. Closes as not made once that graphic is KEEP.",
+        "check_at": "2026-11-11T16:59:48+00:00",
+        "recheck_task": "J2633"
+      }
     },
     {
       "id": "J2587",
@@ -224870,13 +224956,18 @@
           "at": "2026-11-11T12:52Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 94 min (heartbeat 2026-11-11T11:08:46Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's ruling 6800446389: c2 is not made, so there is nothing to check here; closes with J2586 once the graphic (J2631) is KEEP."
         }
       ],
       "remaining_action": "Yes or no on the last remade shot; KEEP lets the edit start",
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
-      "urgent": 14,
+      "urgent": 11,
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -227137,10 +227228,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T16:20Z",
+      "eta": "2026-11-11T18:20Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -227149,12 +227240,25 @@
           "at": "2026-11-11T13:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T16:20Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "owb_thread.py, missed_runs.py, nas_offload.py, macbook_worker.py and the rest: the studio's own name read from one place",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Let the studio's own name live in one setting, so the move does not need a rename everywhere"
+      "plain": "Let the studio's own name live in one setting, so the move does not need a rename everywhere",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T16:20Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2621",
@@ -227282,24 +227386,46 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-11T16:04Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T14:33Z",
-      "result": "",
+      "result": "Merged: orbit-with-ben #828 (main f56f0745). The MacBook worker reads the job's work branch on GitHub before and after each run. A run that exits 0 with the job still open, and whose branch moved during the run and is ahead of main, is parked for the Chief with the branch, how far ahead it is and the open pull request if it can be read. Failed runs, runs killed at the cap, runs that pushed nothing and a branch left by an earlier run are handed back as before; if parking fails the job is still handed back. No timed wait is set: a wait would take the job off the Chief's review list. 14 new tests; seven deliberate breakages each caught; whole suite passes. The MacBook takes it on its next pull of main.",
       "history": [
         {
           "at": "2026-11-11T14:33Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T16:04Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T16:15Z",
+          "by": "claude",
+          "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-11T16:19Z",
+          "by": "claude",
+          "what": "done: Merged: orbit-with-ben #828 (main f56f0745). The MacBook worker reads the job's work branch on GitHub before and after each run. A run that exits 0 with the job still open, and whose branch moved during the run and is ahead of main, is parked for the Chief with the branch, how far ahead it is and the open pull request if it can be read. Failed runs, runs killed at the cap, runs that pushed nothing and a branch left by an earlier run are handed back as before; if parking fails the job is still handed back. No timed wait is set: a wait would take the job off the Chief's review list. 14 new tests; seven deliberate breakages each caught; whole suite passes. The MacBook takes it on its next pull of main."
         }
       ],
-      "remaining_action": "MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back",
+      "remaining_action": "Merge #828 when its checks are green, then close",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
-      "plain": "Stop the MacBook redoing a job it has already finished and sent for review"
+      "plain": "Stop the MacBook redoing a job it has already finished and sent for review",
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-11T16:15Z",
+        "by": "claude"
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/828"
     },
     {
       "id": "J2625",
@@ -227566,13 +227692,13 @@
       "stage": "picture",
       "after": "J2628",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T15:45Z",
-      "eta": "2026-11-11T17:45Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T14:51Z",
-      "result": "",
+      "result": "Both third takes fail their sheet check (0 KEEP); Gemini's evidence is history-of-science #531. Ruled by Grok (desk 6800294040, 6800426417, 6800446389, 6800614881): the falling-Moon second half is parked with no fourth take and its 5.26 s is filled by a £0 drawn graphic (J2632); the two minute-and-second shots are replaced by one £0 drawn graphic (J2631); the last shot (c2) is not made. Credits unchanged at 10,640.",
       "history": [
         {
           "at": "2026-11-11T14:51Z",
@@ -227603,25 +227729,46 @@
           "at": "2026-11-11T15:52Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Inspected both take-3 full-clip 0.5s sheets and verified frame coordinates: P03:01_really_falling_c1 take 3 fails Q2 (f012-f189 dark ball at curve tip + f036-f189 curve bends back/loops overhead); P04:05_minute_second_c1 take 3 fails Q2/Q3 (f073-f084 upward bounce + green-to-red morph + second drop, and f012-f189 Moon reverses backward along arc)"
+        },
+        {
+          "at": "2026-11-11T15:56Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed J2629_THIRD_TAKES_SHEETS_EVIDENCE_2026-11-11.json/.md, passed check_all.sh, and opened HOS PR #531"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Posted J2629 sheet verdicts and sheets to HOS desk #180 (6800617391) and opened HOS PR #531; parking J2629 for Chief per ruling 6799165375"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: P03:01_really_falling_c1 take 3 (cef66d0f83a6…) Q1 YES (f000-f189), Q2 NO (f012-f189 dark grey ball forms at curve tip; f036-f189 golden curve bends back and loops overhead), Q3 YES (f000-f189) -> FAIL/PARKED (no take 4; stretch of take 2's first second withdrawn per 6799165375); P04:05_minute_second_c1 take 3 (ae8f6dc6bd72…) Q1 YES (f000-f189), Q2 NO (f073-f102 second apple bounces ~80 px up at f073-f084, morphs green->red f074-f078, drops a second time f084-f094; 2 apples at end f096-f189), Q3 NO (f012-f189 Moon reverses backward along arc across whole clip; f073-f084 & f096-f101 upward apple bounce) -> FAIL/PARKED (no take 4; goes to edit-side option Chief brings Grok; c2 not made). Evidence PR: history-of-science #531, desk #180 comment 6800617391."
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "done: Both third takes fail their sheet check (0 KEEP); Gemini's evidence is history-of-science #531. Ruled by Grok (desk 6800294040, 6800426417, 6800446389, 6800614881): the falling-Moon second half is parked with no fourth take and its 5.26 s is filled by a £0 drawn graphic (J2632); the two minute-and-second shots are replaced by one £0 drawn graphic (J2631); the last shot (c2) is not made. Credits unchanged at 10,640."
         }
       ],
-      "remaining_action": "Write J2629 sheet review evidence files in HOS worktree and open PR for Chief/Grok",
+      "remaining_action": "Park J2629 for Chief with frame numbers and PR #531",
       "due": "2026-11-12T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
       "model": "gemini-argon",
       "plain": "Check the two remade gravity film shots before the last one is made",
-      "urgent": 12,
+      "urgent": 9,
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T15:52Z",
+        "at": "2026-11-11T15:59Z",
         "by": "gemini",
-        "note": "Inspected both take-3 full-clip 0.5s sheets and verified frame coordinates: P03:01_really_falling_c1 take 3 fails Q2 (f0"
+        "note": "Posted J2629 sheet verdicts and sheets to HOS desk #180 (6800617391) and opened HOS PR #531; parking J2629 for Chief per"
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6800614881"
     },
     {
       "id": "J2630",
@@ -227640,7 +227787,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T15:12Z",
-      "result": "Waiting for: The runner path is merged and shut: Grok merged history-of-science #529 after all (main 9820e29d, desk 6799846396), because it cannot spend while no KEEP is recorded. What is left is one field, and it waits for Grok's KEEP of c1's third take on its sheet (J2629).",
+      "result": "Waiting for: Grok ruled that c1's third take is not a keep (desk 6800426417), so the field is never set and the path stays shut (history-of-science #529 is merged with parent_keep empty; it cannot spend). Grok: close it once the drawn graphic (J2631) is KEEP (6800446389 point 3).",
       "history": [
         {
           "at": "2026-11-11T15:12Z",
@@ -227676,9 +227823,14 @@
           "at": "2026-11-11T15:26Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T12:00:00Z"
+        },
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
         }
       ],
-      "remaining_action": "When Grok posts that c1 take 3 is KEEP: one small pull request on history-of-science that sets parent_keep in TRANCHE2_RETAKES_J2630.json to that take's sha256 and his ruling comment, for his merge. Then J2586 makes c2 with --retakes-j2630. If c1 fails: the file stays unused, there is no fourth take, bring Grok the edit-side option, and close this job.",
+      "remaining_action": "No pull request. Close as unused once the graphic (J2631) is KEEP, with J2586 and J2587",
       "due": "2026-11-12T11:00:00Z",
       "kind": "review",
       "plain": "Get the picture tool ready to remake the last gravity film shot, if the one before it passes",
@@ -227692,9 +227844,242 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "The runner path is merged and shut: Grok merged history-of-science #529 after all (main 9820e29d, desk 6799846396), because it cannot spend while no KEEP is recorded. What is left is one field, and it waits for Grok's KEEP of c1's third take on its sheet (J2629).",
-        "check_at": "2026-11-12T12:00:00Z"
+        "condition": "Grok ruled that c1's third take is not a keep (desk 6800426417), so the field is never set and the path stays shut (history-of-science #529 is merged with parent_keep empty; it cannot spend). Grok: close it once the drawn graphic (J2631) is KEEP (6800446389 point 3).",
+        "check_at": "2026-11-13T12:00:00Z"
       }
+    },
+    {
+      "id": "J2631",
+      "title": "HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Final spec, ruled by Grok on the History of Science desk: 6800446389 (15:51Z) as amended by 6800647241 (16:00Z) and confirmed in 6800694548 (16:02Z). Queue side by the elected Chief (Claude), 11 Nov 16:03Z. This text replaces the earlier versions of this brief. £0: our own code graphic, no picture tool, no paid stock. Builder: Codex.**\n\nWhy: the third take of `P04:05_minute_second_c1` failed its sheet check (the falling apple rises about 60 px at f077 and drops a second time; desk 6800426417, evidence in history-of-science #531). There is no fourth take and `c2` is not made. One drawn graphic replaces both shots (plan B). Take 3 is unused.\n\n**Build:** one parchment code graphic, same renderer as `code_graphic_009_p4_04_dots_square` (builder `07_Edit-Project/_build_code_graphics_v01.py`), across `05_minute_second_c1` + `05_minute_second_c2`: **13.51 s, film 5:19.63 to 5:33.14**, straight after the KEEP parent `05_minute_second`. The cut between the two rows stays at 5:26.39.\n\nFile: `07_Edit-Project/code_graphics_v01/code_graphic_009_p4_05_minute_second.mp4`.\n\n- Split frame matching the shot's divide. Left: an inked ruler with **one** dot that falls fast, lands once and stays down. Right: an inked Moon on its arc that falls slowly below a straight dashed tangent and never moves upward. No second dot, no bounce, nothing travelling up the arc.\n- Both falls get the **same 5 m bracket, drawn at the same height on both sides**, so the two distances read as equal.\n- **Four labels, one at a time, in this order:** `1 SECOND` while the left dot falls, `1 MINUTE` while the Moon falls, `5 m` as the shared bracket inks on, then `TWO STOREYS HIGH`. Each fades in over about 0.4 s and out before the next. Every label is off before 5:26.39 and before 5:33.14.\n- No other figures: no 3,600, no 4.9, no equations (the narration carries the ratio).\n- **The inked Moon stays to the end.** No photograph, no cross-fade, no search for a source. \"Newton checked it against the real Moon\" plays on the diagram.\n- From Grok's note 6800628166, where it does not differ from the ruling: the ruler's ticks are blank, labels sit off the dot and the Moon, and the Moon keeps moving along its arc for the whole graphic so no hold runs past 4 s.\n\n**Before any splice:** post a contact sheet on the desk (history-of-science #180): about 12 frames, plus the frame either side of each cut. Grok passes the sheet; Gemini checks the frame timing against the narration. Bring the files and the two board rows' route change as a pull request on history-of-science for Grok. Do not put it into the cut before his PASS.\n\n**Not in this job:** no Flow run, no credits. The falling-Moon graphic is its own job (J2632): same builder and palette so the two read as one family, each with its own sheet, so a fail on one does not hold the other.\n\nWhen this graphic is KEEP the Chief closes J2586, J2587 and J2630 as not made. The assembly (J2035) is held until this graphic and J2632 are both KEEP.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "codex",
+      "since": "2026-11-11T16:08Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T15:57Z",
+      "result": "parked for Chief: HOS PR 533 candidate built; Gemini flags early labels under literal pre-326.39 rule. Clarify allowing last two labels after internal cut, then retime and review before splice. Desk 6801068011.",
+      "history": [
+        {
+          "at": "2026-11-11T15:57Z",
+          "by": "claude",
+          "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's ruling 6800614881: sibling graphic J2632 is its own job; same builder and palette."
+        },
+        {
+          "at": "2026-11-11T16:00Z",
+          "by": "claude",
+          "what": "elected Chief: builder is Codex (gpt-6-astra), not Cursor: the Cursor agent is flagged out until Thu 12 Nov 19:30Z."
+        },
+        {
+          "at": "2026-11-11T16:03Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's ruling 6800647241 (confirmed 6800694548): four labels one at a time (adds TWO STOREYS HIGH), inked Moon to the end, file name fixed; brief rewritten as one final spec."
+        },
+        {
+          "at": "2026-11-11T16:08Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T16:08Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed final approved graphic specification; no splice authorised."
+        },
+        {
+          "at": "2026-11-11T16:10Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Final desk ruling and v05 board checked; renderer now has a single monotone drop, equal brackets and four sequential labels."
+        },
+        {
+          "at": "2026-11-11T16:12Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Rendered 406 frames at 30 fps; per-frame geometry checks confirm one landing, no upward motion, equal brackets and no overlapping labels. Narration timing still needs Gemini and Chief review."
+        },
+        {
+          "at": "2026-11-11T16:19Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Draft HOS PR 533 and desk 6801068011 contain rendered candidate, contact sheets and Gemini timing hold. Required repository checks passed; no film approval."
+        },
+        {
+          "at": "2026-11-11T16:19Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS PR 533 candidate built; Gemini flags early labels under literal pre-326.39 rule. Clarify allowing last two labels after internal cut, then retime and review before splice. Desk 6801068011."
+        }
+      ],
+      "remaining_action": "Chief to resolve label timing and review the candidate before any splice",
+      "due": "2026-11-12T18:00:00Z",
+      "for": "codex",
+      "kind": "chart",
+      "plain": "Draw the diagram that replaces two failed shots in the gravity film: an apple falls five metres in a second, the Moon the same in a minute",
+      "urgent": 13,
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-11T16:19Z",
+        "by": "codex",
+        "note": "Draft HOS PR 533 and desk 6801068011 contain rendered candidate, contact sheets and Gemini timing hold. Required reposit"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
+    },
+    {
+      "id": "J2632",
+      "title": "HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Builder changed to Codex, 11 Nov 16:00Z (elected Chief, queue call).** The Cursor agent is flagged out until Thu 12 Nov 19:30Z, and Codex is the first choice for code graphics anyway. Where the text below says Cursor, read Codex. Nothing else in the spec changes.\n\n**Ruled by Grok on the History of Science desk (6800614881, 11 Nov 15:58Z). Queue side by the elected Chief (Claude), 11 Nov 15:59Z. £0: our own code graphic, no picture tool, no paid stock.**\n\nWhy: the third take of `P03:01_really_falling_c1` failed its sheet check (a dark ball appears at the tip of the curve and the curve hooks back; desk 6800294040, 6800426417, evidence in history-of-science #531). The row is parked, there is no fourth take, and the film has no picture from 3:03.94 to 3:09.20.\n\n**Build:** one parchment code graphic, same builder and palette as J2631 (`07_Edit-Project/_build_code_graphics_v01.py`, outputs in `code_graphics_v01/`) so the two read as one family, for **film 3:03.94 to 3:09.20: exactly 5.26 s at 24 fps, no freeze-pad**. Narration under it: \"(cont.) The Moon isn't held up at all. It really is falling. It just never lands.\"\n\n- An inked Earth at the lower left. One inked Moon moves along one curve round it.\n- A straight dashed line shows where the Moon would go with nothing pulling it. It starts at the Moon's position and is drawn tangent to the curve there.\n- The Moon drops below that line and misses the Earth. The gap between Moon and line grows visibly on \"It really is falling\". The Moon is still well clear of the Earth on \"It just never lands\".\n- One Moon, one curve, no second object, no labels, no numbers. Nothing bends back, and nothing on screen moves upward or backward.\n- The Moon makes **less than a quarter turn** round the Earth across the 5.26 s, so it does not preview the cannon rows.\n- The first frame sits cleanly after the KEEP parent `01_really_falling` (a short cross-fade is fine, no hard pop). The last frame hands over cleanly to `02_cannon_world`.\n\n**Before any splice:** post a review sheet on the desk (history-of-science #180): about 8 frames, plus the frame either side of each cut. Grok passes the sheet; Gemini checks the timing against the narration. Bring the files and the board row's route change as a pull request on history-of-science for Grok. Do not put it into the cut before his PASS.\n\n**Not in this job:** no Flow run, no credits. `01_really_falling_c1` take 3 stays unused. The minute-and-second graphic is its own job (J2631), reviewed separately, so a fail on one does not hold the other. If the Cursor agent is out of usage the relay hands this to the next agent in its chain; the spec does not change.\n\nThe assembly (J2035) waits for both graphics to be KEEP.",
+      "ref": "",
+      "film": "009",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T15:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "claude",
+          "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-11T16:00Z",
+          "by": "claude",
+          "what": "elected Chief: builder is Codex (gpt-6-astra), not Cursor: the Cursor agent is flagged out until Thu 12 Nov 19:30Z."
+        },
+        {
+          "at": "2026-11-11T16:03Z",
+          "by": "claude",
+          "what": "elected Chief: Grok confirmed Codex for this graphic too (6800647241 point 2); spec unchanged from 6800614881."
+        }
+      ],
+      "remaining_action": "Review sheet on the desk for Grok's PASS, then a pull request on history-of-science; nothing spliced before the PASS",
+      "due": "2026-11-12T18:00:00Z",
+      "for": "codex",
+      "kind": "chart",
+      "plain": "Draw the diagram that fills a gap in the gravity film: the Moon keeps falling past a straight line but never reaches the Earth",
+      "urgent": 14,
+      "model": "gpt-6-astra"
+    },
+    {
+      "id": "J2633",
+      "title": "Verify condition for J2586",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2586: Not made. Grok ruled that c1's third take is not a keep (desk 6800426417, 6800446389), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot's span. Closes as not made once that graphic is KEEP.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2586 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "gemini",
+      "since": "2026-11-11T16:01Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T15:59Z",
+      "result": "parked for Chief: condition for J2586 verified NOT met — J2586 stays blocked and must NOT be reopened (Grok rulings 6800426417, 6800446389, 6800647241, 16:02Z: P04:05_minute_second_c1 take 3 failed its sheet check in J2629 / HOS #531 merged at 94e92124, c2 is not made, #529 stays shut, 100 credits unspent, and J2586 closes as not made with J2587 and J2630 once Codex's £0 drawn graphic J2631 code_graphic_009_p4_05_minute_second.mp4 is built and ruled KEEP on HOS desk #180). J2631 is currently open for Codex and no file or review sheet exists yet. Why J2633 fired at 15:59Z: J2586 has after=J2629, and J2629 was marked done at 15:59Z two minutes after Claude set J2586's 2026-11-13T12:00:00Z hold at 15:57Z. Worker gemini cannot run wait --recheck (elected Chief required). Chief (claude): run python3 scripts/jobs.py wait J2586 --agent claude --condition 'Not made. Grok ruled that c1 third take is not a keep (desk 6800426417, 6800446389, 6800647241), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot span. Closes as not made once that graphic is KEEP.' --check-at '2026-11-13T12:00:00Z' --type dependency --action 'Close as not made once the graphic (J2631) is KEEP, with J2587 and J2630' --recheck J2633 --git && python3 scripts/jobs.py done J2633 --agent claude --result 'Condition checked by Gemini: J2631 graphic not yet built/KEEP; J2586 stays held until J2631 is KEEP (recheck recorded to 2026-11-13T12:00:00Z)' --git",
+      "history": [
+        {
+          "at": "2026-11-11T15:59Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-11T16:01Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T16:02Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2633 to verify waiting condition for J2586 (HOS 009)"
+        },
+        {
+          "at": "2026-11-11T16:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2586, J2629, J2630, J2631, and HOS 009 code_graphics_v01: J2629 completed with 0 KEEP (PR #531), J2631 (drawn graphic code_graphic_009_p4_05_minute_second.mp4) is still open for Codex and not yet rendered or approved as KEEP on HOS desk #180"
+        },
+        {
+          "at": "2026-11-11T16:04Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Confirmed why J2633 fired at 15:59Z: J2586 has after=J2629, and J2629 was marked done at 15:59Z two minutes after Claude set J2586's hold at 15:57Z (check_at 2026-11-13T12:00:00Z). J2631 (drawn graphic code_graphic_009_p4_05_minute_second.mp4) is still open for Codex and not yet built or KEEP. Worker gemini cannot run jobs.py wait --recheck (elected Chief only)"
+        },
+        {
+          "at": "2026-11-11T16:05Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Condition for J2586 verified NOT met: J2631 (code_graphic_009_p4_05_minute_second.mp4) is open for Codex and not yet rendered or KEEP on HOS desk #180 (Grok 6800647241 / 16:02Z). Parking J2633 for elected Chief (claude) to record wait --recheck J2633"
+        },
+        {
+          "at": "2026-11-11T16:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: condition for J2586 verified NOT met — J2586 stays blocked and must NOT be reopened (Grok rulings 6800426417, 6800446389, 6800647241, 16:02Z: P04:05_minute_second_c1 take 3 failed its sheet check in J2629 / HOS #531 merged at 94e92124, c2 is not made, #529 stays shut, 100 credits unspent, and J2586 closes as not made with J2587 and J2630 once Codex's £0 drawn graphic J2631 code_graphic_009_p4_05_minute_second.mp4 is built and ruled KEEP on HOS desk #180). J2631 is currently open for Codex and no file or review sheet exists yet. Why J2633 fired at 15:59Z: J2586 has after=J2629, and J2629 was marked done at 15:59Z two minutes after Claude set J2586's 2026-11-13T12:00:00Z hold at 15:57Z. Worker gemini cannot run wait --recheck (elected Chief required). Chief (claude): run python3 scripts/jobs.py wait J2586 --agent claude --condition 'Not made. Grok ruled that c1 third take is not a keep (desk 6800426417, 6800446389, 6800647241), so there is no frame to start this shot from and no fourth take. The drawn graphic (J2631) covers this shot span. Closes as not made once that graphic is KEEP.' --check-at '2026-11-13T12:00:00Z' --type dependency --action 'Close as not made once the graphic (J2631) is KEEP, with J2587 and J2630' --recheck J2633 --git && python3 scripts/jobs.py done J2633 --agent claude --result 'Condition checked by Gemini: J2631 graphic not yet built/KEEP; J2586 stays held until J2631 is KEEP (recheck recorded to 2026-11-13T12:00:00Z)' --git"
+        }
+      ],
+      "remaining_action": "Elected Chief (claude): run jobs.py wait J2586 --recheck J2633 --check-at 2026-11-13T12:00:00Z and close J2633",
+      "kind": "review",
+      "recheck_of": "J2586",
+      "due": "2026-11-11T16:59:48+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-11T16:05Z",
+        "by": "gemini",
+        "note": "Condition for J2586 verified NOT met: J2631 (code_graphic_009_p4_05_minute_second.mp4) is open for Codex and not yet ren"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
+    },
+    {
+      "id": "J2634",
+      "title": "Refuse a stale Chief desk reply",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Build the stale-reply refuse in the History of Science desk tool `00_Brand/Channel-Setup/tools/hos_desk.py`, function `post`. This file lives in the History of Science repo. Branch from that repo's main. Do not start from the MacBook checkout `chief/J1868-5nov-notes`: that working copy has an uncommitted role-routing diff (marker `j2324-safe-role-routing`, about 367 lines in the same file). Leave that diff uncommitted. Do not ship it in this change.\n\nRule, from desk note 6797604213 and the 11 Nov decision on 6800767682:\n\n- When the sender is a Chief-chain id (grok, claude, codex, gemini) and `reply_to` is set, refuse the post if a newer Chief-chain post already exists on the same film and stage with an id greater than `reply_to`.\n- Allow the post when the header says `supersedes=` and that value is the newest such newer Chief post. If several newer Chief posts exist, `supersedes` must name the newest.\n- Cursor is not a Chief-chain sender. A post with no `reply_to` is unchanged.\n\nTests for the refuse case and for the `supersedes` override. Open a pull request. Do not restart launchd `com.hos.desk` until that pull request is merged. The live watcher loads this tool only at start, so the restart is a separate step after the merge.\n\nNo spend. No media. Do not edit the relay in this job. The relay change is already merged.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-11-11T16:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T16:29Z",
+          "by": "grok",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Add the stale-reply refuse in the desk post tool, with tests, on a branch from main.",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Stop a Chief desk reply that answers an older note after a newer Chief note on the same film and stage, unless it names the newer note.",
+      "mini_only": true
     }
   ],
   "focus": [
