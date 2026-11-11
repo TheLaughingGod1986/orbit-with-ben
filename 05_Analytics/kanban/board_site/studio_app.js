@@ -2,11 +2,25 @@
   // Studio app, the board's front page (Ben, 28 Oct 2026 mock-up): Overview, Videos, Review, Agents, Schedule.
   // Reads the same board.json as the AI page (/ai). Its only write is Ben's OK / changes tick on the Review tab, sent
   // to /api/checks (the document the old board page sent: same shape, same key, no confirmation).
+  // Data comes through the site's own server (api/data.js, J2532). It reads with the server's token, so this page
+  // works when the data's repo is private, and it answers 401 to a viewer who is not signed in. GitHub's public
+  // addresses below are only the fallback when that server cannot be reached; they work while the repo is public.
   const DATA_REF = "https://api.github.com/repos/TheLaughingGod1986/orbit-with-ben/git/ref/heads/board-data";
-  // One cached read on our own site first (api/ref.js); GitHub directly only if that fails (29 Oct audit: the
-  // unauthenticated GitHub limit, 60 an hour per IP, ran out with three pages open).
-  const refFetch = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
+  const SIGN_IN = "This board is private. Open your board link on this device to sign in, then come back to this page.";
+  // One read from api/data.js. A 401 means "sign in": it is thrown, so the caller stops instead of trying GitHub.
+  async function own(query, cache) {
+    let key = ""; try { key = localStorage.getItem("studio-board-key") || ""; } catch (e) { /* private window */ }
+    const r = await fetch("/api/data?" + query, { cache, credentials: "same-origin", headers: key ? { "x-board-key": key } : {} });
+    if (r.status === 401) throw Object.assign(new Error("sign in"), { signIn: true });
+    return r;
+  }
+  // Our own server first; the old way only if it cannot be reached or says no for another reason.
+  const elsewhere = (p, old) => p.then(r => r.ok ? r : old()).catch(e => { if (e && e.signIn) throw e; return old(); });
+  const oldRef = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
     .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
+  const refFetch = () => elsewhere(own("f=ref", "no-cache"), oldRef);
+  const boardFetch = sha => elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+    () => fetch(sha ? DATA_AT(sha) : DATA + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
@@ -2051,7 +2065,7 @@
 
   async function poll() {
     try {
-      let url = DATA + "?t=" + Date.now(), sha = "";
+      let sha = "";
       try {
         const g = await refFetch();
         if (g.ok) {
@@ -2060,20 +2074,19 @@
             if (!uatKey() || !document.getElementById("uat-notes")) render();
             return;
           }
-          if (sha) url = DATA_AT(sha);
         }
-      } catch (e) {}
-      const r = await fetch(url, { cache: sha ? "force-cache" : "no-store" });
+      } catch (e) { if (e && e.signIn) throw e; }
+      const r = await boardFetch(sha);
       if (!r.ok) throw new Error("Board unavailable");
       const incoming=await r.json();
       if (!incoming || !incoming.tracker || !Array.isArray(incoming.tracker.videos)) throw new Error("Invalid board data");
       board = incoming;
       board.tracker.videos=board.tracker.videos.map(normalizeCut);
       if (sha) lastSha = sha;
-      try { const mb = await fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" }); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
+      try { const mb = await elsewhere(own("f=macbook", "no-store"), () => fetch(MACBOOK + "?t=" + Date.now(), { cache: "no-store" })); macbook = mb.ok ? await mb.json() : null; } catch (e) {}
       if (!uatKey() || !document.getElementById("uat-notes")) render();  // never wipe notes or the player mid-review
     } catch (e) {
-      if (!board) { renderedView=""; document.getElementById("view").innerHTML = '<p class="empty" role="status">Could not load the studio data. Retrying automatically.</p>'; }
+      if (!board) { renderedView=""; document.getElementById("view").innerHTML = '<p class="empty" role="status">' + (e && e.signIn ? SIGN_IN : "Could not load the studio data. Retrying automatically.") + '</p>'; }
     }
   }
 
