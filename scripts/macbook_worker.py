@@ -99,7 +99,9 @@ The job is already claimed for you: {job}
    (git checkout main): a checkout left on a branch stops the MacBook taking any further job, and Ben's own
    History of Science folder must always be left on main.
 4. Finish with  jobs.py done {job} --agent {agent} --result "..." --git  (or block / release with a reason).
-5. Report on the studio thread:  python3 scripts/owb_thread.py post "[MacBook] ..."
+5. Report on the studio thread: write the report to a file, starting "[MacBook] ...", and post it with
+   python3 scripts/owb_thread.py post -f <file>   Never put the report text on the command line: the shell runs
+   any backtick or $(...) in it as a command and posts the output.
 
 This is Ben's own laptop, not the Mini:
 - never spend money or credit beyond the written rules, never sign in to anything, never print secrets;
