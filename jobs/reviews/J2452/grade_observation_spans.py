@@ -23,11 +23,14 @@ assert len(spans) == 5
 # observation windows, retaining chroma and the existing Y=180 highlight cap.
 # The 0.3 s shoulders are INSIDE each shot; adjacent shots remain unchanged.
 weights = []
+enabled = []
 for c in spans:
     lo, hi = round(c['timeline_in'] * 30) / 30, round(c['timeline_out'] * 30) / 30
+    enabled.append(f'between(t,{lo},{hi})')
     weights.append(f'if(between(T,{lo},{hi}),min(1,min((T-{lo})/0.3,({hi}-T)/0.3)),0)')
 expr = 'min(180,lum(X,Y)+6*(' + '+'.join(weights) + '))'
-graph = f"geq=lum='{expr}':cb='cb(X,Y)':cr='cr(X,Y)',format=yuv420p"
+condition = '+'.join(enabled)
+graph = f"geq=lum='{expr}':cb='cb(X,Y)':cr='cr(X,Y)':enable='{condition}',format=yuv420p"
 a.out.mkdir(parents=True, exist_ok=False)
 output = a.out / '029_picture_observation_grade.mp4'
 run(['-i', str(source), '-vf', graph, '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-threads', '6', '-pix_fmt', 'yuv420p', '-colorspace', 'bt709', '-color_trc', 'bt709', '-color_primaries', 'bt709', '-video_track_timescale', '90000', str(output)])
