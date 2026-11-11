@@ -35,7 +35,10 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
 - `desk`: for a channel that runs its own desk (where its Chief and reviewers talk): `{"tool": the desk tool's path
   inside its repo, "number": the number of the desk's thread}`. The relay's brief then sends an agent to that desk's
   inbox before the shared queue, and tells it how to report there. Left out otherwise. Read with `channels.desk(slug)`.
-- `pipeline`: where its film state lives.
+- `pipeline`: where its film state lives. `{"kind": "film_status", "path": "<films folder>/*/status.json"}` for one
+  status file per film, or `{"kind": "pipeline_json", "path": ...}` for one file listing every film. A channel can
+  change from one to the other. The board's "progress since" reads each past commit the way the channel's own
+  settings said at that commit (`video_progress.kept_then`), so the films keep their past across the change.
 - `home`: not read from a channel's file any more (J2621, 11 Nov 2026). Whether a channel's content lives in the
   studio's own root is the registry's to say: `{"slug": ..., "home": true}` in `channels.json`. At most one channel
   can be, and none is once the studio has a repo of its own: then every channel is read through its checkout, and
