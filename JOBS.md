@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2598 | mini | open (after J2605) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2600 | cloud | open | – | – | MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main) | J2526 |
-| J2604 | mini | open | – | – | 008 picture · image · HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same | J2596 |
+| J2604 | mini | claimed | codex | 2026-11-11T13:29Z | 008 picture · image · HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same | J2596 |
 | J2605 | any | open (after J2604) | – | – | 008 picture · qa · HOS 008: check try 2 of the salon start picture before any credit is spent (three yes/no questions) | J2597 |
 
 Recently finished:

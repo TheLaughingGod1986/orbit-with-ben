@@ -225204,10 +225204,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T11:29Z",
+      "eta": "2026-11-11T13:29Z",
       "created_by": "claude",
       "created_at": "2026-11-11T11:27Z",
       "result": "",
@@ -225216,6 +225216,11 @@
           "at": "2026-11-11T11:27Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Free try 2 of the salon start still, as a change to the old frame",
@@ -225223,7 +225228,15 @@
       "kind": "image",
       "plain": "Make the starting picture for the Franklin salon shot again, at no cost, keeping the same room and people",
       "mini_only": true,
-      "urgent": 1
+      "urgent": 1,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2605",
