@@ -226679,13 +226679,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T14:26Z",
-      "eta": "2026-11-11T16:26Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226711,6 +226711,11 @@
           "at": "2026-11-11T14:27Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T14:32Z",
+          "by": "claude",
+          "what": "done: Reviewed and merged by the elected Chief: #822 (main d4dbe402). board_publish.py names no channel (33 lines to 0). CI green; no name left undefined in the functions it split; the publisher still calls the card builder with the same command. The board published after the merge (14:30Z). The MacBook's second run on this job is not needed."
         }
       ],
       "remaining_action": "replace 33 channel-naming lines in board_publish.py, third-channel test, lower ceiling, PR",
@@ -226722,14 +226727,15 @@
         "of": 4,
         "at": "2026-11-11T14:27Z",
         "by": "macbook"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/822"
     },
     {
       "id": "J2616",
       "title": "Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0)",
-      "needs": "macbook",
+      "needs": "cloud",
       "repo": "owb",
-      "body": "Script in this job: `approved_deliver.py` (35 lines that name a channel). It carries a cut Ben approved to its upload or swap, so: no behaviour change, every test that names it passes before and after (`grep -l approved_deliver scripts/test_*.py`), and nothing is uploaded, swapped or posted by this job: tests and dry runs only.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "body": "**Moved to a cloud session, 11 Nov 14:32Z.** The MacBook read it and found it needs a change in both repos (two new fields in each channel's `studio/channel.json`), which a MacBook run cannot do. Its design, the 35 lines and the tests to add are in `jobs/reviews/J2616/HANDOVER.md` on branch `macbook/J2616` (pushed, no pull request): start from that, do not re-read the script. Step 8 of it (rename `kanban_snapshot.attach_hos_uploads`) is already done in #824 (J2617): the count for this script is 34 after that merge. The history-of-science pull request is small (two fields) and goes to Grok for review.\n\nScript in this job: `approved_deliver.py` (35 lines that name a channel). It carries a cut Ben approved to its upload or swap, so: no behaviour change, every test that names it passes before and after (`grep -l approved_deliver scripts/test_*.py`), and nothing is uploaded, swapped or posted by this job: tests and dry runs only.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
       "ref": "docs/MULTI_CHANNEL_PLAN.md",
       "film": "",
       "stage": "",
@@ -226762,6 +226768,11 @@
           "at": "2026-11-11T14:25Z",
           "by": "macbook",
           "what": "released: Unfinished, no code changed. Needs both repos: cadence and social.tiktok fields in each channel's studio/channel.json (history-of-science too, or test_channels cached-copy test fails), plus a rename of kanban_snapshot.attach_hos_uploads. Design, the 35 lines and the tests are in jobs/reviews/J2616/HANDOVER.md on branch macbook/J2616 (pushed, no PR). About 40 min: split it or run it uncapped."
+        },
+        {
+          "at": "2026-11-11T14:32Z",
+          "by": "claude",
+          "what": "elected Chief: moved to a cloud session. The MacBook's hand-back (14:25Z) shows it needs both repos; its handover is on branch macbook/J2616."
         }
       ],
       "remaining_action": "replace the channel names in approved_deliver.py with channels.py calls, test, open the pull request",
