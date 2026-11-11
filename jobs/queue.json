@@ -228171,9 +228171,14 @@
           "at": "2026-11-11T17:58Z",
           "by": "codex",
           "what": "step 0 of 3 done: Current brief is checkout repair only; graphic is finished. Shared checkout is clean."
+        },
+        {
+          "at": "2026-11-11T17:58Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Shared checkout clean; stash list preserved. git checkout main failed because main is used by /Volumes/MiniWork/scratch/J2631-session. Stopped as brief requires."
         }
       ],
-      "remaining_action": "Restore the shared Orbit checkout to main",
+      "remaining_action": "Chief to resolve main worktree occupancy before retrying the shared checkout repair",
       "due": "2026-11-12T18:00:00Z",
       "for": "codex",
       "kind": "chart",
@@ -228185,11 +228190,11 @@
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6801964131",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-11T17:58Z",
         "by": "codex",
-        "note": "Current brief is checkout repair only; graphic is finished. Shared checkout is clean."
+        "note": "Shared checkout clean; stash list preserved. git checkout main failed because main is used by /Volumes/MiniWork/scratch/"
       }
     },
     {
