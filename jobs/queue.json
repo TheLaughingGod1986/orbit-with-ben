@@ -227925,19 +227925,24 @@
           "at": "2026-11-11T16:04Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Confirmed why J2633 fired at 15:59Z: J2586 has after=J2629, and J2629 was marked done at 15:59Z two minutes after Claude set J2586's hold at 15:57Z (check_at 2026-11-13T12:00:00Z). J2631 (drawn graphic code_graphic_009_p4_05_minute_second.mp4) is still open for Codex and not yet built or KEEP. Worker gemini cannot run jobs.py wait --recheck (elected Chief only)"
+        },
+        {
+          "at": "2026-11-11T16:05Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Condition for J2586 verified NOT met: J2631 (code_graphic_009_p4_05_minute_second.mp4) is open for Codex and not yet rendered or KEEP on HOS desk #180 (Grok 6800647241 / 16:02Z). Parking J2633 for elected Chief (claude) to record wait --recheck J2633"
         }
       ],
-      "remaining_action": "Park J2633 for elected Chief (claude) to record wait --recheck J2633 on J2586 and post report",
+      "remaining_action": "Elected Chief (claude): run jobs.py wait J2586 --recheck J2633 --check-at 2026-11-13T12:00:00Z and close J2633",
       "kind": "review",
       "recheck_of": "J2586",
       "due": "2026-11-11T16:59:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-11T16:04Z",
+        "at": "2026-11-11T16:05Z",
         "by": "gemini",
-        "note": "Confirmed why J2633 fired at 15:59Z: J2586 has after=J2629, and J2629 was marked done at 15:59Z two minutes after Claude"
+        "note": "Condition for J2586 verified NOT met: J2631 (code_graphic_009_p4_05_minute_second.mp4) is open for Codex and not yet ren"
       },
       "taskKeys": [
         "HOS:009"
