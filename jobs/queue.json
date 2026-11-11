@@ -77941,8 +77941,7 @@
         ],
         "last_recheck": "J2399",
         "checked_at": "2026-11-10T17:02:53+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2423"
+        "checked_by": "claude"
       },
       "plain": "Cut the next History of Science Short from a finished film"
     },
@@ -168457,7 +168456,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -168489,6 +168488,11 @@
           "at": "2026-11-09T17:47Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J1834 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Resolve J1846 evidence-publication approval, then J1847 preview, J1848 moving review and J1849 exact-input decision",
@@ -170486,7 +170490,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -170508,6 +170512,11 @@
           "at": "2026-11-05T08:33Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J1752 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: J1810 validates native audio input before exact-take listening and VO-only Chief decision",
@@ -170940,7 +170949,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -170962,6 +170971,11 @@
           "at": "2026-11-05T08:33Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J1753 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: J1810 validates native audio input before exact-take listening and VO-only Chief decision",
@@ -176115,7 +176129,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -176147,6 +176161,11 @@
           "at": "2026-11-09T17:47Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J1754 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Validate J1809 safe watcher handoff and actual persisted stage ruling; current runtime identity verified",
@@ -178568,7 +178587,6 @@
         "type": "input",
         "condition": "Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.",
         "check_at": "2026-11-12T18:00:00+00:00",
-        "recheck_task": "J2313",
         "checked_at": "2026-11-10T17:02:53+00:00",
         "checked_by": "claude"
       },
@@ -191310,8 +191328,7 @@
       "hold": {
         "type": "input",
         "condition": "PR #532: /Volumes/shared is not mounted on the MacBook (mount has no smbfs entry for ben-mac-mini; /Volumes mtime Nov 5 10:47 after guest access was turned off on the Mini), so M='' and 'echo ok > $f' failed with 'zsh:1: read-only file system: /.rw_check_1793882706'. Remount smb://ben-mac-mini/shared on the MacBook and re-run.",
-        "check_at": "2026-11-05T19:54:07+00:00",
-        "recheck_task": "J2244"
+        "check_at": "2026-11-05T19:54:07+00:00"
       }
     },
     {
@@ -193457,7 +193474,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -193484,6 +193501,11 @@
           "at": "2026-11-09T17:47Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2215 is cancelled; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Block J2215 with SMB unmount error (PR #532)",
@@ -197046,7 +197068,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -197078,6 +197100,11 @@
           "at": "2026-11-09T17:48Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2220 is open and no longer waiting on anything; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Record the 8 J01 linking VO takes after J01 enters the active WIP list",
@@ -197643,7 +197670,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -197675,6 +197702,11 @@
           "at": "2026-11-09T17:48Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2245 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Park the take for a voice review. Do not record it again.",
@@ -198181,7 +198213,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -198198,6 +198230,11 @@
           "at": "2026-11-06T18:11Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1099 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2246 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Await verified listening evidence from J2288 before Chief VO lock; preserve both takes.",
@@ -199063,7 +199100,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -199095,6 +199132,11 @@
           "at": "2026-11-09T17:48Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2199 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: Park the residual Studio readback for the Chief",
@@ -199206,7 +199248,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -199223,6 +199265,11 @@
           "at": "2026-11-06T22:31Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 1358 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J2230 is open and no longer waiting on anything; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: A capable listener must resolve the Vaccine VO failure before final assembly; Chief decides any source repair.",
@@ -199835,7 +199882,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -199862,6 +199909,11 @@
           "at": "2026-11-09T17:48Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: too early. J2040's look-again time is 2026-11-12T18:00:00+00:00; the relay queues a fresh check then."
         }
       ],
       "remaining_action": "Verify readiness: Have the authorized operator handle approval configuration and acceptance tests",
@@ -202971,7 +203023,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -202998,6 +203050,11 @@
           "at": "2026-11-09T17:48Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: nothing left to verify. J1809 is done; this check was queued while it was held and never retired."
         }
       ],
       "remaining_action": "Verify readiness: J2324 repairs restart safety, historical replay and handback; elected Chief reviews corrected PR450 before refresh",
@@ -210195,7 +210252,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -210227,6 +210284,11 @@
           "at": "2026-11-10T01:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (marked down: Chief inbox delivered but not progressed within the acknowledgement window); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "cancelled: acting Chief: too early. J0912's look-again time is 2026-11-12T08:00:00+00:00; the relay queues a fresh check then."
         }
       ],
       "remaining_action": "Verify HOS 008 Short A v04 assets on Mini/NAS, check J2339 and capabilities, and update J0912 wait",
