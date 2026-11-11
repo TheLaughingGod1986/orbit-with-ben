@@ -217801,18 +217801,23 @@
           "at": "2026-11-11T07:58Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Updated all 140 code files in HOS worktree to read STUDIO_FLOW_ACCOUNT from environment (refusing when unset) and updated unit tests to pass a made-up address"
+        },
+        {
+          "at": "2026-11-11T07:59Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Scrubbed all 238 remaining tracked records, JSON logs, plate boards, and notes in HOS worktree to replace account email addresses with 'the studio Ultra account'; 0 matches remain across tracked files"
         }
       ],
-      "remaining_action": "Replace account email addresses with 'the studio Ultra account' in all 238 tracked records, JSON logs, and notes",
+      "remaining_action": "Add scripts/test_email_ratchet.py and scripts/email_ratchet.json mirroring orbit-with-ben, wire into check_all.sh, and run all checks",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-11T07:58Z",
+        "at": "2026-11-11T07:59Z",
         "by": "gemini",
-        "note": "Updated all 140 code files in HOS worktree to read STUDIO_FLOW_ACCOUNT from environment (refusing when unset) and update"
+        "note": "Scrubbed all 238 remaining tracked records, JSON logs, plate boards, and notes in HOS worktree to replace account email "
       },
       "taskKeys": [
         "HOS:006",
