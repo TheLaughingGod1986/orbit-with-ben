@@ -223623,10 +223623,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T10:05Z",
+      "eta": "2026-11-11T12:05Z",
       "created_by": "claude",
       "created_at": "2026-11-11T09:12Z",
       "result": "",
@@ -223635,11 +223635,24 @@
           "at": "2026-11-11T09:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:05Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sample twice a second for the no-edge count in the Shorts gate; pair of pull requests for Grok",
       "due": "2026-11-13T18:00:00Z",
-      "plain": "Make the Shorts screen-fill check look twice a second, so one stray frame cannot tip a result"
+      "plain": "Make the Shorts screen-fill check look twice a second, so one stray frame cannot tip a result",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T10:05Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2580",
