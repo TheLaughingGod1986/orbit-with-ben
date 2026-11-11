@@ -229265,13 +229265,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T23:02Z",
-      "eta": "2026-11-12T01:02Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T15:59Z",
-      "result": "",
+      "result": "parked for Chief: r4 on HOS PR543 at da7d0c5e; 190 unique frames, NAS hash verified, check_all passed, Gemini timing contradictions resolved. Claude f0/f5/f31/f32 sheet read then Chief KEEP required. splice_authorized=false; do not merge or splice before KEEP.",
       "history": [
         {
           "at": "2026-11-11T15:59Z",
@@ -229437,6 +229437,11 @@
           "at": "2026-11-11T23:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: r4 pushed to HOS PR543 at da7d0c5e; sheets, NAS-verified manifest, Gemini timing advisory and check_all pass submitted."
+        },
+        {
+          "at": "2026-11-11T23:08Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: r4 on HOS PR543 at da7d0c5e; 190 unique frames, NAS hash verified, check_all passed, Gemini timing contradictions resolved. Claude f0/f5/f31/f32 sheet read then Chief KEEP required. splice_authorized=false; do not merge or splice before KEEP."
         }
       ],
       "remaining_action": "Awaiting Claude sheet read and Chief KEEP for the revised falling Moon graphic",
