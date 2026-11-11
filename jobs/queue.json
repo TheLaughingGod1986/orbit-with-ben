@@ -1,5 +1,5 @@
 {
-  "next_id": 2564,
+  "next_id": 2565,
   "jobs": [
     {
       "id": "J0001",
@@ -221838,13 +221838,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T06:52Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T05:54Z",
-      "result": "parked for Chief: PR #795 to review and merge (tracker folder fix, browser agent in scripts/mini, jobs/reviews/J2559/REPORT.md). Three calls: (1) the September Cursor agents were NOT unloaded: four are live, up 5 days 16 h without a restart and serving sessions, two in folders outside the studio; (2) the old 9223 agent's plist is in LaunchAgents/disabled but the agent stays loaded until the next restart, because unloading it quits the running Orbit Studio browser; (3) the credit reading still exits 1: its Codex, Claude and Cursor readings fail and need a look at the two usage pages. Buffer check: one 'fetch failed' on 10 Nov, nothing to fix; read today's 07:05 result.",
+      "result": "Accepted by the acting Chief; #795 merged. Rulings on what was parked: (1) The daily tracker fix is accepted. Its first real proof is the 06:40 run on Thu 12 Nov; today's data was made by hand and is on main. (2) The Buffer check needed nothing; its 11 Nov run is on main. (3) The daily credit reading: the four spend readings work; three usage-page readings fail. That is its own job, queued. (4) The old 9223 browser agent: right to leave it loaded. Its file is out of the way and it goes at the next restart; unloading it now would quit the Studio browser under a running job. (5) The September Cursor agents stay exactly as they are. The brief was wrong about them: they are Cursor's own remote workers, in use, two of them in folders outside the studio. Not the studio's to unload. (6) The browser agent's file and script are in the repo with no account name or address in them.",
       "history": [
         {
           "at": "2026-11-11T05:54Z",
@@ -221875,6 +221875,11 @@
           "at": "2026-11-11T06:58Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: PR #795 to review and merge (tracker folder fix, browser agent in scripts/mini, jobs/reviews/J2559/REPORT.md). Three calls: (1) the September Cursor agents were NOT unloaded: four are live, up 5 days 16 h without a restart and serving sessions, two in folders outside the studio; (2) the old 9223 agent's plist is in LaunchAgents/disabled but the agent stays loaded until the next restart, because unloading it quits the running Orbit Studio browser; (3) the credit reading still exits 1: its Codex, Claude and Cursor readings fail and need a look at the two usage pages. Buffer check: one 'fetch failed' on 10 Nov, nothing to fix; read today's 07:05 result."
+        },
+        {
+          "at": "2026-11-11T07:07Z",
+          "by": "claude",
+          "what": "done: Accepted by the acting Chief; #795 merged. Rulings on what was parked: (1) The daily tracker fix is accepted. Its first real proof is the 06:40 run on Thu 12 Nov; today's data was made by hand and is on main. (2) The Buffer check needed nothing; its 11 Nov run is on main. (3) The daily credit reading: the four spend readings work; three usage-page readings fail. That is its own job, queued. (4) The old 9223 browser agent: right to leave it loaded. Its file is out of the way and it goes at the next restart; unloading it now would quit the Studio browser under a running job. (5) The September Cursor agents stay exactly as they are. The brief was wrong about them: they are Cursor's own remote workers, in use, two of them in folders outside the studio. Not the studio's to unload. (6) The browser agent's file and script are in the repo with no account name or address in them."
         }
       ],
       "remaining_action": "Chief to review and merge the pull request and rule on the Cursor agents, the 9223 unload and the credit reading",
@@ -221887,7 +221892,8 @@
         "at": "2026-11-11T06:58Z",
         "by": "claudecode",
         "note": "Tracker fixed in PR 795 and run by hand (exit 0, today's snapshot on main); browser agent copied into the repo; old 9223"
-      }
+      },
+      "done_ref": "#795"
     },
     {
       "id": "J2560",
@@ -222083,6 +222089,36 @@
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent"
+    },
+    {
+      "id": "J2564",
+      "title": "Daily credit reading on the Mini: exit 1 only when a spend reading fails; name the usage pages that could not be read and why",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Follow-up to J2559 (#795, merged), ruled by the acting Chief, 11 Nov 07:07Z.\n\nThe Mini's daily credit reading (`scripts/ai_spend_daily.py`, launchd `com.owb.ai-spend-daily`) reads seven pools and exits 1 if any one fails. For three days the four that decide spend were read every day (ElevenLabs, Flow, Vertex, Gemini), and the run still ended in an error because three usage-page readings failed: Codex every day, Claude every day, Cursor on 10 Nov. An agent that always exits 1 hides the day a spend reading really fails.\n\n1. Find out, for each of the three, which it is: signed out in the Mini's browser (Ben's sign-in), the page's wording changed (a fix to the reader), or the reading does not belong on the Mini. Known so far: the Claude page waits for Ben's sign-in (J1201). The MacBook records the Codex pool after its own runs; the two machines share one account and one limit. Cursor is flagged out of credit until 9 Dec.\n2. Make the exit code tell the truth: exit 1 when a spend pool (ElevenLabs, Flow, Vertex) fails; a usage page that could not be read is listed by name in the output with its likely cause and does not fail the run. Keep recording every reading that does work. Tests beside the script's own.\n3. If a reader's wording is out of date and the page can be read from the Mini, say exactly what the page shows now (a job for the Mini to paste it), then fix the reader.\n4. Anything that needs Ben's sign-in: one line for the acting Chief with which page, so it reaches him once.\n\nNo spend, no sign-in from here.\n",
+      "ref": "J2559",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T07:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T07:07Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make the daily credit reading's exit code tell the truth and name the usage pages it could not read, with tests",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Fix the daily credit check so it only reports a failure when a real spending figure could not be read",
+      "for": "claude"
     }
   ],
   "focus": [
