@@ -177290,13 +177290,13 @@
       "stage": "picture",
       "after": "J2536",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T02:43Z",
-      "eta": "2026-11-11T04:43Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: batch5 strict preflight refused create_count0 at live13490; zero submits/spend. Shared Halley t1 is CHARGED100 but Chief ruled FAILED_POLICY0; existing resolver cannot reverse CHARGED and tranche parser rejects literal FAILED_POLICY. Evidence commit8314a5fd on HOS codex/J2033-batch5-20261111; tested reconciliation and valid exact-settings preflight needed before generation.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -177767,6 +177767,11 @@
           "at": "2026-11-11T02:46Z",
           "by": "codex",
           "what": "step 1 of 4 done: NAS and both style refs verified; live balance13490; strict preflight refused create_count0. No submissions or spend. CHARGED100 shared entry cannot be zeroed by existing pending-only resolver."
+        },
+        {
+          "at": "2026-11-11T02:47Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: batch5 strict preflight refused create_count0 at live13490; zero submits/spend. Shared Halley t1 is CHARGED100 but Chief ruled FAILED_POLICY0; existing resolver cannot reverse CHARGED and tranche parser rejects literal FAILED_POLICY. Evidence commit8314a5fd on HOS codex/J2033-batch5-20261111; tested reconciliation and valid exact-settings preflight needed before generation."
         }
       ],
       "remaining_action": "Resolve strict preflight Create-state failure and reviewed zero-cost policy-charge reconciliation before batch5",
