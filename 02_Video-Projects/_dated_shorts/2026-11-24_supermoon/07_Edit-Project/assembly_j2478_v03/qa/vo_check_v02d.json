@@ -1,0 +1,36 @@
+{
+  "file": "02_Video-Projects/_dated_shorts/2026-11-24_supermoon/02_Voiceover/supermoon_2026_11_24_vo_v02d.wav",
+  "part": null,
+  "fails": [],
+  "warns": [
+    "replace at ~0:09.06: script 'between us this supermoon passes kilometres up' / heard 'between us this super moon passes kilometers up' — sounds alike (likely the transcriber); listen",
+    "replace at ~0:10.38: script 'this supermoon passes kilometres up look east' / heard 'super moon passes kilometers up look east' — sounds alike (likely the transcriber); listen"
+  ],
+  "duration_s": 17.36,
+  "duration": "0:17.36",
+  "mean_db": -23.9,
+  "peak_db": -5.1,
+  "pauses_over_1s": [],
+  "asr": "faster-whisper small.en",
+  "script_words": 34,
+  "heard_words": 35,
+  "wpm": 145,
+  "word_diffs": [
+    {
+      "at": "0:09.06",
+      "op": "replace",
+      "sounds_alike": true,
+      "script": "between us this supermoon passes kilometres up",
+      "heard": "between us this super moon passes kilometers up"
+    },
+    {
+      "at": "0:10.38",
+      "op": "replace",
+      "sounds_alike": true,
+      "script": "this supermoon passes kilometres up look east",
+      "heard": "super moon passes kilometers up look east"
+    }
+  ],
+  "first_minute": {},
+  "verdict": "PASS"
+}
