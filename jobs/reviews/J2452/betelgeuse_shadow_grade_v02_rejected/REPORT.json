@@ -1,0 +1,61 @@
+{
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/029_picture_checkpoint.mp4",
+  "source_sha256": "69151e31eee05f9bab481fd16893fb50f8c8e3720e0fc39a1379b7e9302095dc",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_shadow_grade_v02/029_picture_shadow_grade_v02.mp4",
+  "sha256": "47066cde3534c5555004dae795b351215257b731754c3a6a16885e9744dc27dd",
+  "spans": [
+    [
+      22.1,
+      26.8
+    ],
+    [
+      170.76,
+      174.02
+    ],
+    [
+      234.3,
+      240.78
+    ],
+    [
+      357.8,
+      364.96
+    ],
+    [
+      372.1,
+      382.5
+    ],
+    [
+      386.1,
+      392.8
+    ]
+  ],
+  "filter": "eq=gamma=1.4:brightness=0.01:enable='gte(t,22.1)*lt(t,26.8)+gte(t,170.76)*lt(t,174.02)+gte(t,234.3)*lt(t,240.78)+gte(t,357.8)*lt(t,364.96)+gte(t,372.1)*lt(t,382.5)+gte(t,386.1)*lt(t,392.8)',limiter=min=16:max=180:planes=1",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "status": "SHADOW_GRADE_CHECKPOINT_NOT_UAT",
+  "limitations": [
+    "Gutter finding retained; no override.",
+    "Code graphics, reuse, finishing, title and compilation assembly remain.",
+    "Normal polish gate must be rerun."
+  ],
+  "covers": [
+    {
+      "cover": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+      "sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+      "chapter_in_s": 108.06,
+      "chapter_out_s": 115.32,
+      "opaque_in_s": 107.72666666666666,
+      "opaque_out_s": 115.65333333333331,
+      "reference_clock_note": "Cover frame zero at nominal chapter_in_s; endpoint clones outside component"
+    },
+    {
+      "cover": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+      "sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+      "chapter_in_s": 261.66,
+      "chapter_out_s": 265.58,
+      "opaque_in_s": 261.3266666666667,
+      "opaque_out_s": 265.9133333333333,
+      "reference_clock_note": "Cover frame zero at nominal chapter_in_s; endpoint clones outside component"
+    }
+  ]
+}
