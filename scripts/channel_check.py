@@ -40,6 +40,8 @@ PICTURE_ROUTES = ("flow_only", "flow_first")
 # The same pattern as scripts/test_email_ratchet.py (a test there keeps the two in step).
 ADDRESS = re.compile(r"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\?\.(com|me|co\.uk)")
 GENERATED_PAGES = ("STATUS.md", "00_Brand/Channel-Setup/kanban/index.html")
+# A publishing slot, "Sun 18:00". The same pattern as scripts/channels.py (a test keeps the two in step).
+SLOT = re.compile(r"(Mon|Tue|Wed|Thu|Fri|Sat|Sun) ([01]\d|2[0-3]):([0-5]\d)")
 
 
 def _text(value) -> bool:
@@ -82,8 +84,9 @@ def settings_problems(c) -> list[str]:
     uat = c.get("uat_dir")
     need(isinstance(uat, dict) and _text(uat.get("icloud")), "uat_dir: needs `icloud`, the watch folder's name")
     need(c.get("picture_route") in PICTURE_ROUTES, f"picture_route: {' or '.join(PICTURE_ROUTES)}")
-    # Three optional settings. Left out, the channel has no YouTube Studio browser yet, its NAS folder is its slug
-    # and the board holds no places for Shorts that are not made yet.
+    # Five optional settings. Left out, the channel has no YouTube Studio browser yet, its NAS folder is its slug,
+    # the board holds no places for Shorts that are not made yet, it has no publishing days of its own and its
+    # TikTok posts are not held to Buffer.
     port = (c.get("youtube") or {}).get("studio_port") if isinstance(c.get("youtube"), dict) else None
     need(port in (None, "") or (isinstance(port, str) and port.isdigit()),
          "youtube.studio_port: the browser port of its YouTube Studio, as digits in a string, e.g. \"9224\"")
@@ -92,6 +95,16 @@ def settings_problems(c) -> list[str]:
     planned = (c.get("shorts") or {}).get("planned_per_long") if isinstance(c.get("shorts", {}), dict) else "bad"
     need(planned is None or (isinstance(planned, int) and not isinstance(planned, bool) and planned >= 0),
          "shorts.planned_per_long: how many Shorts each long video gets a place for on the board (a whole number, 0 or more)")
+    cadence = c.get("cadence")
+    need(cadence is None or (isinstance(cadence, dict) and bool(cadence) and set(cadence) <= {"long", "short"}
+                             and all(isinstance(slots, list) and slots
+                                     and all(isinstance(s, str) and SLOT.fullmatch(s) for s in slots)
+                                     for slots in cadence.values())),
+         "cadence: its publishing slots in London time, in the order they are filled, as "
+         "{\"long\": [\"Sun 18:00\"], \"short\": [\"Mon 11:30\"]}")
+    social = c.get("social")
+    need(social is None or (isinstance(social, dict) and social.get("tiktok") in (None, "buffer")),
+         "social.tiktok: \"buffer\" when its TikTok posts go through Buffer only; leave it out otherwise")
     return out
 
 
@@ -154,6 +167,9 @@ def check(root: pathlib.Path) -> tuple[list[str], list[str]]:
         todo.append("studio-core/: copied studio tools, to retire when the studio has its own repo")
     if not _text(c["repo"]["url"]):
         todo.append("repo.url is empty: put the GitHub address in once the repo exists")
+    if not c.get("cadence"):
+        todo.append("cadence: no publishing days of its own yet (Ben's call). Until it has them, an approved cut "
+                    "is given the default channel's days")
     return [], todo
 
 

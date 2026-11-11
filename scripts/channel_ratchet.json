@@ -1,9 +1,8 @@
 {
   "_about": "Decoupling ratchet (scripts/test_channel_ratchet.py). For each engine script: how many code lines still name a channel. Ceilings only go down; a script not listed must have none. Lower them with `python3 scripts/test_channel_ratchet.py --lower`.",
-  "total": 132,
+  "total": 98,
   "ceilings": {
     "chief_relay.py": 79,
-    "approved_deliver.py": 34,
     "missed_runs.py": 5,
     "owb_thread.py": 5,
     "core_sync.py": 2,

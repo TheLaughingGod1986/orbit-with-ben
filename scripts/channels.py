@@ -187,6 +187,46 @@ def planned_shorts(slug: str) -> int:
     return 0
 
 
+WEEKDAYS = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+SLOT = re.compile(r"(" + "|".join(WEEKDAYS) + r") ([01]\d|2[0-3]):([0-5]\d)")  # "Sun 18:00"
+
+
+def cadence(slug: str) -> dict:
+    """The channel's locked publishing slots (Ben, 7 Nov 2026): {'long': [(weekday, hour, minute), ...], 'short':
+    [...]}, London time, Mon=0 … Sun=6, in the order the channel fills them. From `cadence` in its
+    studio/channel.json, written as "Sun 18:00"; {} when it names none. A checkout that is behind its main branch
+    may not have the field yet; then the studio's cached copy of the file answers. A slot that does not read as a
+    weekday and a time is an error, never a slot quietly dropped: these decide the day a video goes out."""
+    c = get(slug)
+    for doc in (c, _cached(c["slug"])):
+        kept = doc.get("cadence")
+        if not isinstance(kept, dict):
+            continue
+        out = {}
+        for kind in ("long", "short"):
+            slots = kept.get(kind) or []
+            out[kind] = []
+            for slot in slots if isinstance(slots, list) else [slots]:
+                m = SLOT.fullmatch(slot) if isinstance(slot, str) else None
+                if not m:
+                    raise ValueError(f"{c['slug']}: cadence.{kind} slots read like \"Sun 18:00\", not {slot!r}")
+                out[kind].append((WEEKDAYS.index(m.group(1)), int(m.group(2)), int(m.group(3))))
+        if any(out.values()):
+            return out
+    return {}
+
+
+def tiktok_by_buffer(slug: str) -> bool:
+    """True when the channel's TikTok posts go through Buffer only (`social.tiktok` is "buffer" in its
+    studio/channel.json, or in the cached copy when its checkout is behind)."""
+    c = get(slug)
+    for doc in (c, _cached(c["slug"])):
+        social = doc.get("social")
+        if isinstance(social, dict) and "tiktok" in social:
+            return social["tiktok"] == "buffer"
+    return False
+
+
 def _cached(slug: str) -> dict:
     try:
         return json.loads((DIR / slug / "channel.json").read_text())

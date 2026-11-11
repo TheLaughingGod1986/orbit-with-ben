@@ -19,6 +19,11 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
   Vertex fallback (HOS). `flow_first` uses Flow, then Vertex inside the spend rules (OWB).
 - `shorts.planned_per_long`: how many Shorts each long video gets a place for on the board before they are made.
   Left out, or 0, the board shows only the Shorts that exist. A new channel starts at 0.
+- `cadence`: its locked publishing slots in London time, in the order they are filled:
+  `{"long": ["Sun 18:00", "Wed 18:00"], "short": ["Mon 11:30", ...]}`. `scripts/approved_deliver.py` gives each
+  cut Ben has passed the next free one. Changing a channel's days is Ben's call. Left out, an approved cut is
+  given the default channel's days, and `channel_check.py` lists it as still to do.
+- `social.tiktok`: `"buffer"` when the channel's TikTok posts go through Buffer only. Left out otherwise.
 - `pipeline`: where its film state lives.
 - `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
 
