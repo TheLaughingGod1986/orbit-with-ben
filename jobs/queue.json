@@ -227208,10 +227208,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T16:20Z",
+      "eta": "2026-11-11T18:20Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
       "result": "",
@@ -227220,12 +227220,25 @@
           "at": "2026-11-11T13:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T16:20Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "owb_thread.py, missed_runs.py, nas_offload.py, macbook_worker.py and the rest: the studio's own name read from one place",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
-      "plain": "Let the studio's own name live in one setting, so the move does not need a rename everywhere"
+      "plain": "Let the studio's own name live in one setting, so the move does not need a rename everywhere",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T16:20Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2621",
