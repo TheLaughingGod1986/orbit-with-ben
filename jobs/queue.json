@@ -219338,13 +219338,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T06:55Z",
-      "eta": "2026-11-11T08:55Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "Done: #796, merged. macbook_worker.py takes its clone URLs, its checkouts, the agent's brief, the Studio ports and the second slot's environment from the channel files through channels.py. Lines that name a channel: 25 to 2 (the two left are the studio's own names, kept for the move: the thread tool in the brief and the log file name). Ratchet total 245 to 222. For today's two channels the brief, clones, URLs, ports, slot environment and each agent's command line are identical to before, held by tests; a made-up third channel gets its own clone, line and port with no edit. channels.py gains studio_slug(). 62 tests in the worker's file (56 before); the unattended tool list is not widened.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -219355,6 +219355,11 @@
           "at": "2026-11-11T06:55Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T07:06Z",
+          "by": "claude",
+          "what": "done: Done: #796, merged. macbook_worker.py takes its clone URLs, its checkouts, the agent's brief, the Studio ports and the second slot's environment from the channel files through channels.py. Lines that name a channel: 25 to 2 (the two left are the studio's own names, kept for the move: the thread tool in the brief and the log file name). Ratchet total 245 to 222. For today's two channels the brief, clones, URLs, ports, slot environment and each agent's command line are identical to before, held by tests; a made-up third channel gets its own clone, line and port with no edit. channels.py gains studio_slug(). 62 tests in the worker's file (56 before); the unattended tool list is not widened."
         }
       ],
       "remaining_action": "Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0)",
@@ -219368,7 +219373,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#796"
     },
     {
       "id": "J2527",
