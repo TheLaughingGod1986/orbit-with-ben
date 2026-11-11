@@ -446,7 +446,7 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
             return False
     except (OSError, ValueError):
         pass
-    # Same ChatGPT account as the Mini (benoats@gmail.com, one shared weekly limit): one pool, read from either machine.
+    # Same ChatGPT account as the Mini (Ben's personal account, one shared weekly limit): one pool, read from either machine.
     # --strict: this caller asked for one pool, so an unread one must not look like a recorded one (J2564).
     r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex",
             "--by", AGENT_ID, "--git", "--strict"], cwd=STUDIO, timeout=180)

@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import hashlib
 import json
 import os
 import re
@@ -131,12 +132,22 @@ def flow_page_free(lock: Path | None = None):
             fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
-FLOW_ACCOUNT = "benoats@googlemail.com"
+# The studio Ultra account, by fingerprint: no address sits in a tracked file (AGENTS.md Never list, J2537).
+FLOW_ACCOUNT_SHA256 = "81a01c9d841483f444008cd69e98b26019e032ed75b5e33e17409a76c6525ce9"
+FLOW_ACCOUNT_NAME = "the studio Ultra account"
 # The account chip that opens the picker with the credit count, as the HOS Flow minters click it.
 FLOW_PICKER = ('[aria-label*="Account details" i]', '[aria-label*="Google Account" i]',
                'button:has-text("ULTRA")', "text=ULTRA")
 CREDITS_RE = re.compile(r"([\d,]{1,7})\s*(?:Google\s+Flow\s+|AI\s+)?credits", re.I)
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@(?:gmail|googlemail)\.com", re.I)
+
+
+def is_flow_account(address: str) -> bool:
+    return hashlib.sha256(address.strip().lower().encode()).hexdigest() == FLOW_ACCOUNT_SHA256
+
+
+def flow_account_shown(text: str) -> bool:
+    return any(is_flow_account(e) for e in EMAIL_RE.findall(text))
 
 
 def parse_flow(text: str) -> int:
@@ -148,7 +159,7 @@ def parse_flow(text: str) -> int:
 
 def _flow_picker(page, text: str) -> str:
     """Open the account picker so the credit count and signed-in account are on the page."""
-    if CREDITS_RE.search(text) and FLOW_ACCOUNT in text.lower():
+    if CREDITS_RE.search(text) and flow_account_shown(text):
         return text
     for sel in FLOW_PICKER:
         loc = page.locator(sel).first
@@ -173,9 +184,10 @@ def read_flow() -> dict:
     if re.search(r"sign in to continue|you.?re not signed in", text, re.I):
         raise RuntimeError("Flow is signed out in the CDP Chrome")
     emails = {e.lower() for e in EMAIL_RE.findall(text)}
-    if emails and FLOW_ACCOUNT not in emails:
+    ours = flow_account_shown(text)
+    if emails and not ours:
         raise RuntimeError(f"Flow is signed in as another account ({len(emails)} seen, not the Ultra one)")
-    who = FLOW_ACCOUNT if FLOW_ACCOUNT in emails else "account not shown"
+    who = FLOW_ACCOUNT_NAME if ours else "account not shown"
     return {"left": parse_flow(text), "note": f"Flow account picker credits ({who}, CDP :9222)"}
 
 

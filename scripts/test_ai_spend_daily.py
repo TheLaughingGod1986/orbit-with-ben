@@ -378,6 +378,50 @@ class FlowPageBelongsToAPictureRun(unittest.TestCase):
         self.assertIn("left alone for a picture run: flow", out.getvalue())
 
 
+class FlowAccountByFingerprint(unittest.TestCase):
+    """J2537: the script holds the studio Ultra account's sha256, never its address, and the ledger note names the role."""
+    AT = "@"
+
+    def addr(self, name):
+        return f"{name}{self.AT}googlemail.com"
+
+    def patched(self, page_text):
+        import hashlib
+        import tempfile
+        from unittest import mock
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        stack = [mock.patch.object(ai_spend_daily, "FLOW_ACCOUNT_SHA256", hashlib.sha256(self.addr("studio.ultra").encode()).hexdigest()),
+                 mock.patch.object(ai_spend_daily, "FLOW_LOCK", Path(tmp.name) / "none" / "writer.lock"),
+                 mock.patch.object(ai_spend_daily, "_page_text", lambda *a, **k: page_text)]
+        for m in stack:
+            m.start()
+            self.addCleanup(m.stop)
+
+    def test_the_fingerprint_is_a_sha256_and_matches_whatever_the_case(self):
+        self.assertRegex(ai_spend_daily.FLOW_ACCOUNT_SHA256, r"^[0-9a-f]{64}$")
+        self.patched("")
+        self.assertTrue(ai_spend_daily.is_flow_account("  " + self.addr("Studio.Ultra").upper() + " "))
+        self.assertFalse(ai_spend_daily.is_flow_account(self.addr("someone.else")))
+
+    def test_the_note_names_the_role_not_the_address(self):
+        self.patched(f"Flow\n{self.addr('studio.ultra')}\nULTRA\n12,690 credits\n")
+        r = ai_spend_daily.read_flow()
+        self.assertEqual(r["left"], 12690)
+        self.assertEqual(r["note"], "Flow account picker credits (the studio Ultra account, CDP :9222)")
+
+    def test_another_account_is_refused_without_printing_it(self):
+        self.patched(f"Flow\n{self.addr('someone.else')}\n500 credits\n")
+        with self.assertRaises(RuntimeError) as cm:
+            ai_spend_daily.read_flow()
+        self.assertIn("another account", str(cm.exception))
+        self.assertNotIn(self.AT, str(cm.exception))
+
+    def test_no_account_shown_still_reads_the_balance(self):
+        self.patched("Flow\n3,000 credits\n")
+        self.assertEqual(ai_spend_daily.read_flow()["note"], "Flow account picker credits (account not shown, CDP :9222)")
+
+
 class CodexReadsEveryRunInTheWindow(unittest.TestCase):
     def test_a_reading_older_than_the_newest_five_logs_is_found(self):
         import json
