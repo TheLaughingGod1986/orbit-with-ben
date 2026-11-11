@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2592 | mini | open (after J2599) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2594 | mini | open | – | – | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
-| J2595 | mini | open | – | – | Is Cursor out of credit or not? Run its command line once on the Mini and copy what it says | J2580 |
+| J2595 | mini | claimed | claudecode | 2026-11-11T13:02Z | Is Cursor out of credit or not? Run its command line once on the Mini and copy what it says | J2580 |
 | J2596 | mini | open | – | – | 008 picture · image · HOS 008: a new start picture for the salon shot (free), with the knuckle already near the glass tube and nothing loose in the air | J2241 |
 | J2597 | any | open (after J2596) | – | – | 008 picture · qa · HOS 008: check the new salon start picture before any credit is spent (three yes/no questions) | J2241 |
 | J2598 | mini | open (after J2597) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
