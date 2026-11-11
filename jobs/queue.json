@@ -212682,7 +212682,7 @@
       "title": "Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch",
       "needs": "macbook",
       "repo": "owb",
-      "body": "After J2451 (05_Analytics/owb/SLEEP_VIDEO_01_PLAN.md). Build from the finished masters on studio-live (never re-render the source films; cut and join), scratch on $STUDIO_SCRATCH (the MiniWork SSD). Apply the plan's cuts, the single soft bed, no SFX, crossfades, darken and dissolves. Gates: loudness about -20 LUFS integrated with no peak above -6 dBTP, no gap of silence over 3 s, no subscribe/CTA line left (check against the scripts), picture_qa on the joins. Master copied to the NAS film folder the same run with sha256 (master rule). Build the chosen thumbnail. Then set awaits_ben (jobs.py awaits) so it goes to Ben's UAT lane with the file, the running order and a note that he can spot-check (first 5 min, two joins, last 5 min). No upload until Ben OKs. £0.\n\nChief note, 10 Nov 23:20Z (acting Chief, Claude): moved from the Mini to the MacBook. It sat unclaimed for a day behind the Mini's urgent work (007's title, the 009 and 013 pictures, the Shorts sweep), and every input the plan names is on the NAS, where the MacBook wrote the plan from. On the MacBook: (1) first check that every source master, narration stem and cover plate the plan names can be read from the NAS; if one cannot, list which and release the job with that list. (2) Scratch on the MacBook's own disk, not the NAS. Start the long encode detached and pick it up on a later wake; do not sit inside one wake waiting for it. (3) Build the primary 15-film order (it airs no earlier than Sat 12 Dec, after its last film is public). (4) As well as the full master, make a spot-check reel for Ben of about 12 minutes: the first 5 minutes, one minute around each of two joins, the last 5 minutes. (5) Master and reel to the NAS film folder with sha256. If `jobs.py awaits` is refused in the worker session, park for Chief with both paths and the Chief sends Ben's watch card. No upload, nothing in Studio, no real money.\n\nChief correction, 10 Nov 23:25Z (acting Chief, Claude). The note above is wrong on one point and the job's history says why: this build was started on the Mini on 10 Nov at 10:04Z, and step 1 of 6 (the input check) is done. What it found: 11 of 15 source masters are readable (027, 025, 031, 020, 028, 029, 024, 026, 019, 005, 006). Not found at the plan's paths or the upload register's: 013 Moon; 021 Saturn v03f (the archive has v03c, d and e only); 022 Sun v05 (the archive has v01 to v04 only). 023 Venus v05e is in the iCloud watch folder but was not downloaded on the Mini. Most of the plan's narration file names do not exist, so its cut times are unverified. The Mini also left word timings for the 11 masters on its own SSD (`/Volumes/MiniWork/scratch/j2452/asr/`, input list `/Volumes/MiniWork/scratch/j2452/inputs.json`, done file `~/_desk/logs/j2452-asr.done`). The MacBook cannot read those: on the MacBook, make the word timings again, or release the job and say so, and it goes back to the Mini. Ruling so nothing waits on the four missing films: look for each for no more than 15 minutes (NAS archive, the film's own folders, the iCloud watch folder). Use only a film whose finished master is in hand and matches what is on YouTube; never an earlier version in its place. If any of the four is still missing, leave it out and fill with 003 (Alien Worlds) and 004 (JWST), which the plan's November order already uses, keeping calm films first and last and the total between 110 and 130 minutes. Say in the result which films went in. Narration: use each film's real locked voice files (the film's own build script names them), lined up to the master with the word timings. If a film's narration cannot be separated from its music and effects, leave that film out and say so; do not put a film in with its stings and effects.\n\nChief note, 10 Nov 23:58Z: the MacBook's input check (#778) found every source master on the NAS (three were in other folders; the 021 master as picture and sound files). Still only on the Mini: 5 narration stems, 2 music beds, 7 cover-plate sets and the word timings. J2548 copies them to the NAS; this job waits for it and then builds on the MacBook from `05_Analytics/owb/SLEEP_VIDEO_01_NAS_INPUT_CHECK.md` paths. All 15 films of the primary order are in hand, so the fill with 003 and 004 is not needed.",
+      "body": "Chief note, 11 Nov 02:00Z (acting Chief, Claude): the inputs that were only on the Mini are now on studio-live, checked by size and sha256 (J2548, `jobs/reviews/J2548/COPIED.md`): all five narration stems (023 to 027, with `earth_spin_vo_v02order.wav`), both music beds, the 021 master `saturn_first_cut_v03f.mp4`, all 13 word-timing and input files under `02_Video-Projects/_sleep_video_01/j2452/`, and the cover plates that could be found for 019, 025, 026 and 027.\n\nFourteen cover plates the plan names were never downloaded to any studio disk; `COPIED.md` lists them by chapter. For each, in this order: (1) use the alternative the plan or `COPIED.md` already names (005: the film's own clean slices at 172.2 to 179.9 s and 275.2 to 283.0 s; 025: the film's archived pool pictures of the same subject; 026: the pool plates that were copied); (2) otherwise download the named NASA or ESA picture from its own official page at full resolution. These are free and public domain. Record the id, the page title, the credit line, the URL and the sha256 beside the build, and save the file in the film's `03_Footage` folder on studio-live. (3) If a named id cannot be found on the official site, say which and cover that window with the film's own clean footage. No generated picture, no paid picture.\n\nAfter J2451 (05_Analytics/owb/SLEEP_VIDEO_01_PLAN.md). Build from the finished masters on studio-live (never re-render the source films; cut and join), scratch on $STUDIO_SCRATCH (the MiniWork SSD). Apply the plan's cuts, the single soft bed, no SFX, crossfades, darken and dissolves. Gates: loudness about -20 LUFS integrated with no peak above -6 dBTP, no gap of silence over 3 s, no subscribe/CTA line left (check against the scripts), picture_qa on the joins. Master copied to the NAS film folder the same run with sha256 (master rule). Build the chosen thumbnail. Then set awaits_ben (jobs.py awaits) so it goes to Ben's UAT lane with the file, the running order and a note that he can spot-check (first 5 min, two joins, last 5 min). No upload until Ben OKs. £0.\n\nChief note, 10 Nov 23:20Z (acting Chief, Claude): moved from the Mini to the MacBook. It sat unclaimed for a day behind the Mini's urgent work (007's title, the 009 and 013 pictures, the Shorts sweep), and every input the plan names is on the NAS, where the MacBook wrote the plan from. On the MacBook: (1) first check that every source master, narration stem and cover plate the plan names can be read from the NAS; if one cannot, list which and release the job with that list. (2) Scratch on the MacBook's own disk, not the NAS. Start the long encode detached and pick it up on a later wake; do not sit inside one wake waiting for it. (3) Build the primary 15-film order (it airs no earlier than Sat 12 Dec, after its last film is public). (4) As well as the full master, make a spot-check reel for Ben of about 12 minutes: the first 5 minutes, one minute around each of two joins, the last 5 minutes. (5) Master and reel to the NAS film folder with sha256. If `jobs.py awaits` is refused in the worker session, park for Chief with both paths and the Chief sends Ben's watch card. No upload, nothing in Studio, no real money.\n\nChief correction, 10 Nov 23:25Z (acting Chief, Claude). The note above is wrong on one point and the job's history says why: this build was started on the Mini on 10 Nov at 10:04Z, and step 1 of 6 (the input check) is done. What it found: 11 of 15 source masters are readable (027, 025, 031, 020, 028, 029, 024, 026, 019, 005, 006). Not found at the plan's paths or the upload register's: 013 Moon; 021 Saturn v03f (the archive has v03c, d and e only); 022 Sun v05 (the archive has v01 to v04 only). 023 Venus v05e is in the iCloud watch folder but was not downloaded on the Mini. Most of the plan's narration file names do not exist, so its cut times are unverified. The Mini also left word timings for the 11 masters on its own SSD (`/Volumes/MiniWork/scratch/j2452/asr/`, input list `/Volumes/MiniWork/scratch/j2452/inputs.json`, done file `~/_desk/logs/j2452-asr.done`). The MacBook cannot read those: on the MacBook, make the word timings again, or release the job and say so, and it goes back to the Mini. Ruling so nothing waits on the four missing films: look for each for no more than 15 minutes (NAS archive, the film's own folders, the iCloud watch folder). Use only a film whose finished master is in hand and matches what is on YouTube; never an earlier version in its place. If any of the four is still missing, leave it out and fill with 003 (Alien Worlds) and 004 (JWST), which the plan's November order already uses, keeping calm films first and last and the total between 110 and 130 minutes. Say in the result which films went in. Narration: use each film's real locked voice files (the film's own build script names them), lined up to the master with the word timings. If a film's narration cannot be separated from its music and effects, leave that film out and say so; do not put a film in with its stings and effects.\n\nChief note, 10 Nov 23:58Z: the MacBook's input check (#778) found every source master on the NAS (three were in other folders; the 021 master as picture and sound files). Still only on the Mini: 5 narration stems, 2 music beds, 7 cover-plate sets and the word timings. J2548 copies them to the NAS; this job waits for it and then builds on the MacBook from `05_Analytics/owb/SLEEP_VIDEO_01_NAS_INPUT_CHECK.md` paths. All 15 films of the primary order are in hand, so the fill with 003 and 004 is not needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -212775,6 +212775,11 @@
           "at": "2026-11-11T00:05Z",
           "by": "macbook-2",
           "what": "released"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "acting Chief: J2548 is done, so the inputs are on studio-live. Added to the brief: what was copied, and what to do about the 14 cover plates that were never downloaded (the plan's alternative first, else the free official download with its record)."
         }
       ],
       "remaining_action": "Wait for J2548 Mini->NAS word-timings sync + Chief ruling on 005/006 discrete VO stems; Thumbnail Option A PASS staged on NAS (PR #781)",
@@ -217155,13 +217160,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T01:46Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T14:13Z",
-      "result": "Waiting for: Direct first-three-seconds and ending watch/listen requested by brief remains unavailable: session tool inventory has shell output and still image viewing only; ffmpeg and offline ASR were tested but do not demonstrate audio or moving-video perception. Local evidence commit 99fc3f1ed; external evidence push rejected by automatic approval review.",
+      "result": "The uploaded Short fails: the first picture change is at 4.6 s (limit 3 s) and the second sentence is a promise (\"Stay, and I'll show you how far that is.\"). The 17 Oct render on disk fails the same way, so it cannot replace it as it stands. Same length (20.74 s), first cut and words on both; no stray text or raw id on the end card. Decided by the acting Chief without the direct watch the brief asked for: the gate lines, the speech-to-text and the stills agree, and Ben's watch of the re-cut is the watch-and-listen check. The fix rides the Voyager re-cut in J2550: that sentence comes out of the narration, the first cut moves inside 3 s, and the padded shot is made full-frame. Codex's evidence stays on the Mini (commit 99fc3f1ed, worktree J2509-wt).",
       "history": [
         {
           "at": "2026-11-10T14:13Z",
@@ -217202,6 +217207,11 @@
           "at": "2026-11-11T01:52Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-11T08:00:00Z"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "done: The uploaded Short fails: the first picture change is at 4.6 s (limit 3 s) and the second sentence is a promise (\"Stay, and I'll show you how far that is.\"). The 17 Oct render on disk fails the same way, so it cannot replace it as it stands. Same length (20.74 s), first cut and words on both; no stray text or raw id on the end card. Decided by the acting Chief without the direct watch the brief asked for: the gate lines, the speech-to-text and the stills agree, and Ben's watch of the re-cut is the watch-and-listen check. The fix rides the Voyager re-cut in J2550: that sentence comes out of the narration, the first cut moves inside 3 s, and the padded shot is made full-frame. Codex's evidence stays on the Mini (commit 99fc3f1ed, worktree J2509-wt)."
         }
       ],
       "remaining_action": "Have a capable reviewer inspect the opening and ending; obtain Chief decision from local evidence",
@@ -217216,19 +217226,11 @@
         "by": "codex",
         "note": "Both gates FAIL; same 20.74s runtime and 4.60s first cut. Local offline ASR confirms same words and meta-promise. Tail s"
       },
-      "hold": {
-        "type": "capability",
-        "condition": "Direct first-three-seconds and ending watch/listen requested by brief remains unavailable: session tool inventory has shell output and still image viewing only; ffmpeg and offline ASR were tested but do not demonstrate audio or moving-video perception. Local evidence commit 99fc3f1ed; external evidence push rejected by automatic approval review.",
-        "check_at": "2026-11-11T08:00:00Z",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ]
-      },
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
-      ]
+      ],
+      "done_ref": "J2550"
     },
     {
       "id": "J2510",
@@ -218055,6 +218057,11 @@
           "at": "2026-11-10T16:57Z",
           "by": "claude",
           "what": "approved by Ben: Watch the re-cut Fri 13 Mars Helicopter Short. OK to swap it in? v06 (asked in J2510)"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "acting Chief: held until Wed 11 Nov 20:00 London. A full-screen version of this Short (J2549) goes to Ben this morning; if he OKs it before then, this swap carries that cut and the slot is swapped once, not twice. With no OK by then, v06 goes in as approved. The Short airs Fri 13 Nov 11:30 either way."
         }
       ],
       "remaining_action": "Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept",
@@ -218074,7 +218081,8 @@
         "job": "J2510",
         "okAt": "2026-11-10T16:57Z",
         "okRef": "board tick OWB-J2510.2, 10 Nov 16:22Z"
-      }
+      },
+      "not_before": "2026-11-11T20:00Z"
     },
     {
       "id": "J2521",
@@ -219712,21 +219720,21 @@
     {
       "id": "J2546",
       "title": "Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421)",
-      "needs": "macbook",
+      "needs": "cloud",
       "repo": "owb",
-      "body": "Second half of the padded-Short work. J2539 was the first half. J2421 asked for the whole-clip version on 8 Nov and is folded in here. This starts when the by-eye job named in `after` is merged: it gives labelled real frames in its `jobs/reviews/` folder, padded and full-frame.\n\n1. Make `full_bleed_frame()` in `00_Brand/Channel-Setup/tools/gate_shorts_open.py` right on the labelled frames: every frame labelled padded is called padded, every frame labelled full passes. Known cases from J2540 (`jobs/reviews/J2540/REPORT.md`): `ffYKoNVPoqg` (padded, caught); `rvug71d7Dqk` (padded, with a feathered seam and a hook caption in the upper band: missed); `ChbsigHD5_o` (full frame, wrongly failed: the top of a caption and a table edge lined up at one third and two thirds of the height); `cLKDiYP55J8` at 0.50 s (full frame, wrongly called padded).\n   One idea, yours to judge: the fill is a blurred, enlarged copy of the picture band itself, so the outer bands should match a blurred, stretched copy of the band (compare column brightness profiles, or a small downscaled correlation). A real room's wall and table do not match the middle of the picture. Also ask for the soft-outside, sharp-inside jump at both seams, and let a seam be a ramp over several rows.\n2. The whole Short, not only its opening: sample one frame every second. Hard FAIL when the frame at 0.0 s is padded (as now) or more than 10% of the sampled frames are. Report the padded stretches in seconds.\n3. Tests from the labelled frames (the JSON file; no media in the repo), plus the made clips already there. Say how many labelled frames there are and that all are called right. If one cannot be got right without breaking another, leave it wrong, name it and say why.\n4. It is a shared file: sync it to history-of-science as J2539 did (a pair of pull requests).\n\nDo not change AGENTS.md or the rule files: the Chief adds the rule line when this merges. Do not skip or weaken a test. One pull request in each repo, park for Chief. No real money.\n\n\nChief rulings from the by-eye audit (J2545, `jobs/reviews/J2545/REPORT.md`, 11 Nov), which is this job's input. The labelled frames are in `jobs/reviews/J2545/J2545_labelled_frames.json`: 28 padded, 28 full. (1) A blurred copy used as fill on one side only is padding too (the muons Short, 3.0 to 18.2 s, blur below the Earth's limb). (2) A 16:9 graphic over a faint blurred backdrop is padding, whatever its colour. (3) The end card is judged apart from the shots. The frame check still calls an end card that sits on a blurred copy padded, because it is. The whole-Short rule leaves out a stretch that the cut's own meta file names as the end card; with no meta, nothing is left out. Do not use a share of the length as a stand-in for the end card. (4) The audit names seven frames the first-pass check wrongly failed (a map card over clouds, an eclipse corona, a compass over field lines, a Sun limb with text, a parchment on a desk, wooden spheres, a rover shadow). Each is in the labelled set as full and must pass.",
+      "body": "Chief ruling (11 Nov 02:00Z, acting Chief, Claude) on the split the MacBook asked for at 01:33Z: this job moves to the cloud and stays one job. The MacBook's two runs ended on step 1 because the calibration is open-ended work inside a 25-minute run, not because a machine is missing: the 56 labelled frames are on main inside `jobs/reviews/J2545/J2545_labelled_frames.json` (108x192 grey, the size the check reads), so the rule can be worked out with no NAS. Claude in the cloud takes it, starting from the MacBook's findings on branch `macbook/J2546` (`jobs/reviews/J2546/HANDOVER.md`, `HANDOVER_2.md`, the two probes and the feature table): softness outside plus a straight seam cannot split the set, the copy match alone cannot either, and three measures are still untried. Order of work: the frame rule with a test that reads the labelled file and counts how many of 56 it calls right; then one frame a second over the whole Short with the 10% rule and the end-card stretch judged apart; then `core_sync.py lock` and the pair of pull requests. No full frame in the labelled set may be failed by the new rule.\n\nSecond half of the padded-Short work. J2539 was the first half. J2421 asked for the whole-clip version on 8 Nov and is folded in here. This starts when the by-eye job named in `after` is merged: it gives labelled real frames in its `jobs/reviews/` folder, padded and full-frame.\n\n1. Make `full_bleed_frame()` in `00_Brand/Channel-Setup/tools/gate_shorts_open.py` right on the labelled frames: every frame labelled padded is called padded, every frame labelled full passes. Known cases from J2540 (`jobs/reviews/J2540/REPORT.md`): `ffYKoNVPoqg` (padded, caught); `rvug71d7Dqk` (padded, with a feathered seam and a hook caption in the upper band: missed); `ChbsigHD5_o` (full frame, wrongly failed: the top of a caption and a table edge lined up at one third and two thirds of the height); `cLKDiYP55J8` at 0.50 s (full frame, wrongly called padded).\n   One idea, yours to judge: the fill is a blurred, enlarged copy of the picture band itself, so the outer bands should match a blurred, stretched copy of the band (compare column brightness profiles, or a small downscaled correlation). A real room's wall and table do not match the middle of the picture. Also ask for the soft-outside, sharp-inside jump at both seams, and let a seam be a ramp over several rows.\n2. The whole Short, not only its opening: sample one frame every second. Hard FAIL when the frame at 0.0 s is padded (as now) or more than 10% of the sampled frames are. Report the padded stretches in seconds.\n3. Tests from the labelled frames (the JSON file; no media in the repo), plus the made clips already there. Say how many labelled frames there are and that all are called right. If one cannot be got right without breaking another, leave it wrong, name it and say why.\n4. It is a shared file: sync it to history-of-science as J2539 did (a pair of pull requests).\n\nDo not change AGENTS.md or the rule files: the Chief adds the rule line when this merges. Do not skip or weaken a test. One pull request in each repo, park for Chief. No real money.\n\n\nChief rulings from the by-eye audit (J2545, `jobs/reviews/J2545/REPORT.md`, 11 Nov), which is this job's input. The labelled frames are in `jobs/reviews/J2545/J2545_labelled_frames.json`: 28 padded, 28 full. (1) A blurred copy used as fill on one side only is padding too (the muons Short, 3.0 to 18.2 s, blur below the Earth's limb). (2) A 16:9 graphic over a faint blurred backdrop is padding, whatever its colour. (3) The end card is judged apart from the shots. The frame check still calls an end card that sits on a blurred copy padded, because it is. The whole-Short rule leaves out a stretch that the cut's own meta file names as the end card; with no meta, nothing is left out. Do not use a share of the length as a stand-in for the end card. (4) The audit names seven frames the first-pass check wrongly failed (a map card over clouds, an eclipse corona, a compass over field lines, a Sun limb with text, a parchment on a desk, wooden spheres, a rover shadow). Each is in the labelled set as full and must pass.",
       "ref": "J2540",
       "film": "",
       "stage": "",
       "after": "J2545",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-11T01:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T22:59Z",
-      "result": "parked for Chief: too big for one 25-minute run, please split. Two MacBook runs have ended on step 1 alone. Nothing in gate_shorts_open.py is changed; the check on main still calls 32 of the 56 labelled frames right. Branch macbook/J2546 (pushed, no pull request) holds jobs/reviews/J2546: HANDOVER.md, HANDOVER_2.md, two probes and the feature table. Finding: softness outside plus a straight seam cannot split the set (7 full frames look padded on both, 7 padded frames lack one or the other), and the copy match alone cannot either; three untried measures are listed. Suggested split: A the frame rule with a test on the labelled JSON, B the whole-Short 10% rule and tests, C core_sync lock and the pair of pull requests.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T22:59Z",
@@ -219782,24 +219790,17 @@
           "at": "2026-11-11T01:45Z",
           "by": "relay",
           "what": "condition verification queued: J2553"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "reopened: acting Chief ruling on the split asked for at 01:33Z: moved to the cloud as one job. The labelled frames are on main at the size the check reads, so no NAS is needed. Claude takes it from the MacBook's handover on branch macbook/J2546."
         }
       ],
       "remaining_action": "read brief and labelled frames; next: calibrate full_bleed_frame on the 56 frames, whole-Short sampling, tests, HOS sync, PRs",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts",
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-11-11T01:24Z",
-        "by": "macbook"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T02:45:05+00:00",
-        "recheck_task": "J2553"
-      }
+      "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts"
     },
     {
       "id": "J2547",
@@ -219880,13 +219881,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T00:34Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T23:55Z",
-      "result": "parked for Chief: PR #784 (bd96c0f15) adds jobs/reviews/J2548/COPIED.md — 38 sleep-video inputs (all 5 VO stems 023-027 incl. earth_spin_vo_v02order.wav, both beds 026+023, 021 v03f master, all 13 j2452 timing/inputs files, and located cover plates for 019/025/026/027) synced to studio-live with 100% size+sha256 match; 14 NASA plate IDs not found on Mini listed plainly",
+      "result": "PASS (acting Chief): 38 files copied to studio-live and checked by size and sha256: all five narration stems, both music beds, the 021 master, all 13 timing and input files, and the cover plates found for 019, 025, 026 and 027. Nothing moved or deleted. Fourteen named cover plates were never downloaded to any studio disk; the build job (J2452) now says how to cover each. Pull request #784 merged.",
       "history": [
         {
           "at": "2026-11-10T23:55Z",
@@ -219927,6 +219928,11 @@
           "at": "2026-11-11T01:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: PR #784 (bd96c0f15) adds jobs/reviews/J2548/COPIED.md — 38 sleep-video inputs (all 5 VO stems 023-027 incl. earth_spin_vo_v02order.wav, both beds 026+023, 021 v03f master, all 13 j2452 timing/inputs files, and located cover plates for 019/025/026/027) synced to studio-live with 100% size+sha256 match; 14 NASA plate IDs not found on Mini listed plainly"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "done: PASS (acting Chief): 38 files copied to studio-live and checked by size and sha256: all five narration stems, both music beds, the 021 master, all 13 timing and input files, and the cover plates found for 019, 025, 026 and 027. Nothing moved or deleted. Fourteen named cover plates were never downloaded to any studio disk; the build job (J2452) now says how to cover each. Pull request #784 merged."
         }
       ],
       "remaining_action": "Chief review of PR #784 (jobs/reviews/J2548/COPIED.md)",
@@ -219952,26 +219958,27 @@
         "OWB:026",
         "OWB:027",
         "OWB:006"
-      ]
+      ],
+      "done_ref": "#784"
     },
     {
       "id": "J2549",
       "title": "Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. The Mars helicopter Short for Fri 13 Nov (`bSjWiCbB7pY`, cut `fri13_ingenuity_72_v06.mp4`, the one Ben OK'd on 10 Nov) is 12.1 s of 26.4 s a picture band over a blurred copy: 2.8 to 5.9 s and 9.9 to 18.9 s (the Navcam shots). Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\".\n\nTime is short. J2520 still puts v06 in the slot first (the copy scheduled now shows a raw video id on its end card). This job tries for a v07 with those two stretches full-frame. Ben's watch card is due Thu 12 Nov 18:00 London. If v07 is not ready and passed by Thu 12 Nov 12:00 London, stop: v06 airs, and say so.\n\nThe Navcam pictures are small. If they cannot fill the frame inside the upscale limit, use other real footage of the helicopter or of Mars from the film's own pool that can.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "body": "Chief ruling on v07 (acting Chief, Claude, 11 Nov 02:00Z): FIX, one pass, then Ben's watch. v07 does what the brief asked: every shot fills the frame, the five gates pass and the sound is untouched (pull request #785, merged). Two things keep it from Ben's watch as it stands:\n\n(a) 9.93 to 14.40 s, \"Its blades spun more than 2,000 times a minute to lift it\", now plays over empty ground from the Valinor Hills panorama, the same panorama as the shot before it. That is 8.5 s on one picture, with no helicopter and no blades under a line about blades.\n(b) The damaged-blade shadow photograph (PIA26243) is on screen twice: 2.80 to 5.87 s under \"on Mars. It flew seventy-two.\" and again from 14.40 to 20.53 s, where it belongs. Three pictures carry the twenty seconds before the end card; the cut Ben OK'd had six.\n\nMake v08 from v07 with only these two windows changed:\n\n1. 9.93 to 14.40 s: a real NASA/JPL photograph in which the helicopter and its rotor blades are plain to see, filling 1080x1920 at no more than 1.0x enlargement. The film's pool has none big enough, so this one may be downloaded: free and public domain, from NASA's own Photojournal or images.nasa.gov page at full resolution (for example the Perseverance selfie with the helicopter beside it, or a Mastcam-Z close-up of the helicopter on the ground). Check on that page that it is a photograph, not an illustration or a reconstruction. Record the id, the page title, the credit line, the URL and the sha256; add it to the pool list and to the credit line in the meta.\n2. 2.80 to 5.87 s: a different real picture from the damaged-blade shadow, showing the helicopter on Mars. A second downloaded photograph is best; a clearly different crop of the photograph from step 1 will do if it reads as another shot. The change at 2.8 s must still read as a cut (opening gate: first cut at 3 s or sooner).\n3. Everything else as v07: the same sound stream bit for bit, the same captions, title, length and end card. All five gates, not report-only; paste the lines. Look at the still sheet across the whole cut and read every piece of text on screen.\n4. Put Ben's watch card up for v08: `jobs.py awaits <this job> --agent <you> --what \"Watch the Mars helicopter Short with the blurred picture bands replaced by full-screen photos of the helicopter and Mars\" --file <the NAS copy> --version v08 --due \"2026-11-12 18:00\" --airs \"2026-11-13 11:30\" --if-not \"the cut you OK'd airs\" --type short --number 025 --title \"Mars helicopter: full-screen pictures for Friday\" --fixed \"<what changed, plain words>\" --git`. Pull request with the records, then park for the Chief.\n\nOne run. If no fitting photograph can be found and checked in this run, stop and say so: v07 then goes to Ben as it is. The v07 card is withdrawn until then, so Ben is not asked to watch a cut that is about to change. The acting Chief puts a card back before 07:00Z either way: v08 if it is delivered and reviewed, else v07. J2520 (v06 into the slot) is held until Wed 11 Nov 20:00 London, so that one swap can carry whichever cut Ben picks. No real money, nothing uploaded, nothing changed in Studio.\n\nChief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. The Mars helicopter Short for Fri 13 Nov (`bSjWiCbB7pY`, cut `fri13_ingenuity_72_v06.mp4`, the one Ben OK'd on 10 Nov) is 12.1 s of 26.4 s a picture band over a blurred copy: 2.8 to 5.9 s and 9.9 to 18.9 s (the Navcam shots). Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\".\n\nTime is short. J2520 still puts v06 in the slot first (the copy scheduled now shows a raw video id on its end card). This job tries for a v07 with those two stretches full-frame. Ben's watch card is due Thu 12 Nov 18:00 London. If v07 is not ready and passed by Thu 12 Nov 12:00 London, stop: v06 airs, and say so.\n\nThe Navcam pictures are small. If they cannot fill the frame inside the upscale limit, use other real footage of the helicopter or of Mars from the film's own pool that can.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
       "ref": "J2545",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-11T01:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
-      "result": "parked for Chief: v07 built and delivered in PR #785, five tool gates PASS, verified NAS copies SHA 947f5c72; published watch card and Play link verified (board check ok true). Review the retained low-detail warning and less-specific terrain illustration, then Ben final watch. No audio/moving-video perception claimed; UAT supplies it under standing rule. J2520 still owns v06 swap; v07 must be ready/passed by 12 Nov 12:00Z or v06 remains fallback. No YouTube/Buffer changes. iCloud copy rejected by automatic review; authorized NAS alternative delivered.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T00:54Z",
@@ -220022,25 +220029,28 @@
           "at": "2026-11-11T01:44Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v07 built and delivered in PR #785, five tool gates PASS, verified NAS copies SHA 947f5c72; published watch card and Play link verified (board check ok true). Review the retained low-detail warning and less-specific terrain illustration, then Ben final watch. No audio/moving-video perception claimed; UAT supplies it under standing rule. J2520 still owns v06 swap; v07 must be ready/passed by 12 Nov 12:00Z or v06 remains fallback. No YouTube/Buffer changes. iCloud copy rejected by automatic review; authorized NAS alternative delivered."
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "reopened: acting Chief ruling on v07: FIX, one pass (v08). Two picture windows change: 9.93 to 14.40 s gets a real photograph that shows the helicopter and its blades, and 2.80 to 5.87 s gets a different picture from the damaged-blade shadow. The v07 card is withdrawn until then; a card goes back to Ben before 07:00Z either way."
         }
       ],
       "remaining_action": "Chief review of v07 and Ben’s final watch; queue a separate swap only after approval",
-      "due": "2026-11-12T12:00:00Z",
+      "due": "2026-11-11T06:30:00Z",
       "kind": "assembly",
       "plain": "Make the Mars helicopter Short for Friday fill the screen all the way through, then offer you the fixed version",
       "mini_only": true,
       "urgent": 7,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-11T01:42Z",
-        "by": "codex",
-        "note": "PR #785 (67bdcbbd2); verified NAS master and UAT copies, SHA 947f5c72. Watch card recorded, due 12 Nov 18:00, fallback t"
-      },
       "taskKeys": [
         "OWB:025"
       ],
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the Mars helicopter Short with the blurred picture bands replaced by full-screen Mars photos",
         "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2549_mars_helicopter/fri13_ingenuity_72_v07.mp4",
         "version": "v07",
@@ -220060,7 +220070,7 @@
       "title": "Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Three Orbit Shorts airing in the next two weeks have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. Voyager 1, `kKN8Ale42sE`, airs Tue 17 Nov 11:30: one shot, 4.6 to 6.9 s. The file on disk did not match the upload's sha256 (J2494 stopped on it; J2509 is checking the Studio copy). Work only from an export that matches what is on YouTube. If none does, say so and go to the next. Watch card due Sun 15 Nov 18:00 London.\n2. Muons, `rvug71d7Dqk`, airs Sat 21 Nov 11:30: its build script pads every segment. 0.0 to 3.0 s and 18.2 to 22.2 s are padded on both sides; 3.0 to 18.2 s has a blurred copy below the Earth's limb, which also counts. Rebuild the picture full-frame throughout. Watch card due Thu 19 Nov 18:00 London.\n3. ISS, `xdurJQcoiGM`, airs Wed 25 Nov 11:30: the last shot, 14.8 to 18.4 s. Watch card due Mon 23 Nov 18:00 London.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "body": "Chief ruling on J2509 (11 Nov 02:00Z, acting Chief, Claude), added to item 1 (Voyager 1, `kKN8Ale42sE`): the copy on YouTube was downloaded and measured. It fails the opening gate on two counts, and the 17 Oct render on disk fails the same way: the first picture change comes at 4.6 s (the limit is 3 s), and the second sentence is a promise in place of the thing itself (\"Stay, and I'll show you how far that is.\"). The two files have the same length (20.74 s), the same first cut and the same words, so the 17 Oct build is an acceptable base for the re-cut: Ben watches the result. So for Voyager, as well as the padded shot at 4.6 to 6.9 s:\n\na. Take that one sentence out of the narration, cutting the narration stem at the pauses on each side (`vo_s5-s8_v01`, with the build's stems). No new recording. The number (\"Nearly 26 billion kilometres\") then arrives about two seconds sooner. Captions follow the new words; the music bed runs under the join without a jump.\nb. The first picture change at 3.0 s or sooner.\nc. If the narration stem cannot be found (NAS, the Mini's archive), do not cut the mixed sound: fix the pictures only (b and the padded shot) and say that the opening words stay.\nd. This Short names its date (\"On November 18th\") and airs Tue 17 Nov 11:30. It cannot move. Ben's watch card for it is due Sun 15 Nov 18:00 London, and if there is no OK by then the cut he OK'd airs.\n\nChief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Three Orbit Shorts airing in the next two weeks have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. Voyager 1, `kKN8Ale42sE`, airs Tue 17 Nov 11:30: one shot, 4.6 to 6.9 s. The file on disk did not match the upload's sha256 (J2494 stopped on it; J2509 is checking the Studio copy). Work only from an export that matches what is on YouTube. If none does, say so and go to the next. Watch card due Sun 15 Nov 18:00 London.\n2. Muons, `rvug71d7Dqk`, airs Sat 21 Nov 11:30: its build script pads every segment. 0.0 to 3.0 s and 18.2 to 22.2 s are padded on both sides; 3.0 to 18.2 s has a blurred copy below the Earth's limb, which also counts. Rebuild the picture full-frame throughout. Watch card due Thu 19 Nov 18:00 London.\n3. ISS, `xdurJQcoiGM`, airs Wed 25 Nov 11:30: the last shot, 14.8 to 18.4 s. Watch card due Mon 23 Nov 18:00 London.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
       "ref": "J2545",
       "film": "",
       "stage": "",
@@ -220078,6 +220088,11 @@
           "at": "2026-11-11T00:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "acting Chief: J2509's result added to the Voyager item. Besides the padded shot, the promise sentence comes out of the narration (stem cut, no new recording) and the first picture change moves inside 3 s. Watch card due Sun 15 Nov 18:00 London as before."
         }
       ],
       "remaining_action": "Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards",
@@ -220183,13 +220198,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T01:45Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T01:45Z",
-      "result": "parked for Chief: parked for Chief: J2546 stays blocked, not reopened. Checked: its input is ready (J2545 done and merged as #780; jobs/reviews/J2545/J2545_labelled_frames.json with 56 frames is on main), and no Ben approval or spend is involved. What is unmet is the Chief's ruling on the split J2546 asked for at 01:33Z: two MacBook runs ended on step 1 of a job too big for a 25-minute run, and no split or Mini-pinned job exists yet. Reopening as it is would send it to the MacBook a third time. Handover is on origin/macbook/J2546 (head 223aba713, confirmed on the remote). I could not record the check: jobs.py wait --recheck answered 'Only the elected Chief may record a condition check'. Chief to run: jobs.py wait J2546 --agent chief --condition 'Chief splits J2546 into frame rule / whole-Short rule / core sync and pull requests, or pins it to the Mini' --check-at 2026-11-11T07:45Z --type input --recheck J2553 --git (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "Decided by the acting Chief: J2546 is not split. It moves to the cloud, where the calibration can run without a time cap on the labelled frames already on main. Reopened as a cloud job with the MacBook's handover as its starting point.",
       "history": [
         {
           "at": "2026-11-11T01:45Z",
@@ -220205,6 +220220,11 @@
           "at": "2026-11-11T01:46Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: parked for Chief: J2546 stays blocked, not reopened. Checked: its input is ready (J2545 done and merged as #780; jobs/reviews/J2545/J2545_labelled_frames.json with 56 frames is on main), and no Ben approval or spend is involved. What is unmet is the Chief's ruling on the split J2546 asked for at 01:33Z: two MacBook runs ended on step 1 of a job too big for a 25-minute run, and no split or Mini-pinned job exists yet. Reopening as it is would send it to the MacBook a third time. Handover is on origin/macbook/J2546 (head 223aba713, confirmed on the remote). I could not record the check: jobs.py wait --recheck answered 'Only the elected Chief may record a condition check'. Chief to run: jobs.py wait J2546 --agent chief --condition 'Chief splits J2546 into frame rule / whole-Short rule / core sync and pull requests, or pins it to the Mini' --check-at 2026-11-11T07:45Z --type input --recheck J2553 --git (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T02:00Z",
+          "by": "claude",
+          "what": "done: Decided by the acting Chief: J2546 is not split. It moves to the cloud, where the calibration can run without a time cap on the labelled frames already on main. Reopened as a cloud job with the MacBook's handover as its starting point."
         }
       ],
       "remaining_action": "Verify readiness: read brief and labelled frames; next: calibrate full_bleed_frame on the 56 frames, whole-Short sampling, tests, HOS sync, PRs",
@@ -220219,7 +220239,8 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "J2546"
     }
   ],
   "focus": [
