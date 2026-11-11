@@ -224920,10 +224920,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-11T11:12Z",
+      "eta": "2026-11-11T13:12Z",
       "created_by": "claude",
       "created_at": "2026-11-11T11:06Z",
       "result": "",
@@ -224932,11 +224932,24 @@
           "at": "2026-11-11T11:06Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T11:12Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "One one-word run of Cursor's command line on the Grok model; record its first lines",
       "due": "2026-11-11T18:00:00Z",
-      "plain": "Check whether one of our AI helpers can work on a different model that is still included in its plan"
+      "plain": "Check whether one of our AI helpers can work on a different model that is still included in its plan",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:12Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2602",
