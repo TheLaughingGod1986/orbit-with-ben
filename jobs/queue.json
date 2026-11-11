@@ -230867,10 +230867,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T23:34Z",
+      "eta": "2026-11-12T00:19Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:57Z",
       "result": "",
@@ -230879,13 +230879,26 @@
           "at": "2026-11-11T22:57Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-11T23:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Search by SHA-256, copy only; restore into the film's studio-live folder; post path and hash",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it"
+      "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T23:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2654",
