@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2270, J2575, J2576, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2575, J2576, J2270, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -75,6 +75,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2576 | mini | open (after J2575) | – | – | 008 picture · qa · HOS 008: look at the salon and points second takes' still sheets before the re-edit (three yes/no questions each) | J2575 |
 | J2577 | cloud | open | – | – | The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md) | J2527 |
 | J2578 | cloud | open | – | – | History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did | J2527 |
+| J2579 | cloud | open | – | – | Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test | J2562 |
+| J2580 | cloud | open | – | – | Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page | J2566 |
 
 Recently finished:
 
