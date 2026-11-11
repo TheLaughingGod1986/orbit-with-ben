@@ -177892,6 +177892,11 @@
           "at": "2026-11-11T05:55Z",
           "by": "codex",
           "what": "done: 20 scoped clips generated and technically verified; 0 KEEP. HOS PR #501 and desk 6788300062. Net 2000 credits, no pending charges, reservation closed. J2034 owns picture review."
+        },
+        {
+          "at": "2026-11-11T06:06Z",
+          "by": "claude",
+          "what": "acting Chief: Grok reviewed and merged the evidence (history-of-science #501, squash 2792e349, 06:00Z): 21 takes, 20 charged at 100, the refused take at 0, net 2,000; reservation closed; nothing pending. The picture review is J2034."
         }
       ],
       "remaining_action": "Generation evidence ready for Chief and picture review",
@@ -177983,7 +177988,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 1,
+      "urgent": 3,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178169,7 +178174,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 2,
+      "urgent": 4,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178542,7 +178547,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 3,
+      "urgent": 5,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192552,7 +192557,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 4,
+      "urgent": 6,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193260,7 +193265,7 @@
       "title": "HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Bounded HOS 008 Flow Veo 3.1 Quality retake job scoped by J1881 (HOS PR #411 `50620e40` + PR #428 `b78dbe19`). Subscription credit only (GBP0 cash; never top up, buy credits, or enable paid overage).\n\n## Spend Preflight (`b78dbe19`)\n- `ai_spend.py check` is NOT a subcommand (CLI accepts `record`, `spend`, `report`, `doc`).\n- Read the live Flow account balance via `read_account()` in `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_mint_flow_cdp_v01.py` on CDP `ORBIT_FLOW_CDP` (`http://127.0.0.1:9222`, account `the studio Ultra account`) and log via `python3 scripts/ai_spend.py record --pool flow --left N`.\n- Read the live Veo 3.1 Quality credit count on the Flow confirm dialog (`orbit_flow_veo_ui.py` matching `Use N credits`) before any Create, and subtract unposted `ai_spend.py` spends logged since the balance reading.\n- Log each authorized take with `python3 scripts/ai_spend.py spend --pool flow --amount N --film HOS:008 --what \"...\"`. Enforce `<=3` takes and `<=300` subscription credits per plate / `<=900` total, `GBP0`, no top-up, no overage.\n\n## Scope (3 plates, <=3 takes / <=300 subscription credits each, <=900 credits total cap)\n1. **Row 4 (`1:49` / `1:51.33s` end, `P2:02_salon_spark`, candidate keyframe envelope `2506..2665`, `160f` required, `--retake-p2-02`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/refs/v03_flow_stills/02_salon_spark_t1.png` (`sha256: aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); lecturer rubs solid sealed glass rod with silk and draws a crisp spark to a guest's knuckle while fine hair tips lift gently in place; `0` hair/smoke/cotton extruding from or detaching near the glass tube.\n   - **Disposition of Row 3 (`0:51`, `P1:07_hot_night`, candidate keyframe envelope `1129..1231`, clock frame `1220`):** Ben's verbatim note (`\"still have hair flying out the tube, this needs rebuilt\"`) is preserved (`note_resolved: false`). Source-map evidence places `0:51` on `07_hot_night_t1.mp4` (`30da07fe...`), which is left untouched (`splice: false`, `distinct_hot_night_rebuild: false`). Treating `0:51` as this `02_salon_spark` rebuild is an `inference_pending_capable_in_context_confirmation` to be confirmed in context by a worker with demonstrated `moving_video_input`.\n2. **Row 6 (`3:13`, `P3:01_points_desk`, candidate keyframe envelope `4511..4670`, `160f` required, `--retake-p3-01`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part03/refs/v03_flow_stills/01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); Franklin holds a pointed iron needle near the spinning brass electrostatic globe while a single thin linen indicator thread hangs/deflects cleanly; `0` paper strips or receipts unrolling out of the brass globe (clean prefix `4511..4606` = `96f` documented in manifest).\n3. **Row 8 (`7:58` / `7:59`, `P5:13_rods_spread`, candidate keyframe envelope `11358..11492`, `135f` required, `--retake-p5-13`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part05/refs/v03_flow_stills/13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c`).\n   - Requirement: `>=135` decoded frames (`>=5.65s` @ 24fps); straight, rigid, vertical anchored lightning rods on church steeple, brick house roof, and harbor ship mast; `0` kinks, `0` tilting, `0` detaching or falling rods.\n\nVerify all selected takes with fresh demonstrated `moving_video_input` (`chief_relay.py capabilities`), `_build_rough_v13_recipe.py --dry-run --retake-p2-02 ... --retake-p3-01 ... --retake-p5-13 ...`, and SHA-256 hashes before handing off to `J2242`.",
+      "body": "Chief ruling, Grok, 11 Nov 05:56Z (History of Science desk, comment 6788328367), recorded by the acting Chief, 11 Nov 06:06Z. This job is first on the Mini's Flow browser, ahead of 010 (J2269, J2270). It was never blocked; it was passed over. 008 airs Thu 19 Nov and the credits reset on Thu 12 Nov 19:13 London, so run it now.\n\n- Scope as cleared on 10 Nov (6773056300): the rows at 1:49, 3:13 and 7:58; at most 3 takes and 300 credits a plate, 900 in all; subscription credit only, £0; the same live guards and shared-ledger PENDING check as the 009 run.\n- The 1:49 row is the hair-and-tube shot Ben confirmed (6767485087). Where this brief calls the 0:51 mapping `inference_pending_capable_in_context_confirmation`, read it as settled: retake 1:49 (`P2:02_salon_spark`) and leave 0:51 (`07_hot_night_t1`) alone.\n- Where this brief asks for a fresh check that a worker can watch moving video: that line does not hold the job. Grok's ruling of 5 Nov stands. Pick takes on hash, frame count and still sheet; motion is judged at J2243 and at Ben's watch.\n- When done, post the three takes' hashes, frame counts and the ledger lines on the History of Science desk. Then J2242 (splice), J2243 (checks), Ben's watch.\n\nBounded HOS 008 Flow Veo 3.1 Quality retake job scoped by J1881 (HOS PR #411 `50620e40` + PR #428 `b78dbe19`). Subscription credit only (GBP0 cash; never top up, buy credits, or enable paid overage).\n\n## Spend Preflight (`b78dbe19`)\n- `ai_spend.py check` is NOT a subcommand (CLI accepts `record`, `spend`, `report`, `doc`).\n- Read the live Flow account balance via `read_account()` in `02_Video-Projects/006_Trees-Are-Made-Of-Air/07_Edit-Project/_mint_flow_cdp_v01.py` on CDP `ORBIT_FLOW_CDP` (`http://127.0.0.1:9222`, account `the studio Ultra account`) and log via `python3 scripts/ai_spend.py record --pool flow --left N`.\n- Read the live Veo 3.1 Quality credit count on the Flow confirm dialog (`orbit_flow_veo_ui.py` matching `Use N credits`) before any Create, and subtract unposted `ai_spend.py` spends logged since the balance reading.\n- Log each authorized take with `python3 scripts/ai_spend.py spend --pool flow --amount N --film HOS:008 --what \"...\"`. Enforce `<=3` takes and `<=300` subscription credits per plate / `<=900` total, `GBP0`, no top-up, no overage.\n\n## Scope (3 plates, <=3 takes / <=300 subscription credits each, <=900 credits total cap)\n1. **Row 4 (`1:49` / `1:51.33s` end, `P2:02_salon_spark`, candidate keyframe envelope `2506..2665`, `160f` required, `--retake-p2-02`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/refs/v03_flow_stills/02_salon_spark_t1.png` (`sha256: aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); lecturer rubs solid sealed glass rod with silk and draws a crisp spark to a guest's knuckle while fine hair tips lift gently in place; `0` hair/smoke/cotton extruding from or detaching near the glass tube.\n   - **Disposition of Row 3 (`0:51`, `P1:07_hot_night`, candidate keyframe envelope `1129..1231`, clock frame `1220`):** Ben's verbatim note (`\"still have hair flying out the tube, this needs rebuilt\"`) is preserved (`note_resolved: false`). Source-map evidence places `0:51` on `07_hot_night_t1.mp4` (`30da07fe...`), which is left untouched (`splice: false`, `distinct_hot_night_rebuild: false`). Treating `0:51` as this `02_salon_spark` rebuild is an `inference_pending_capable_in_context_confirmation` to be confirmed in context by a worker with demonstrated `moving_video_input`.\n2. **Row 6 (`3:13`, `P3:01_points_desk`, candidate keyframe envelope `4511..4670`, `160f` required, `--retake-p3-01`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part03/refs/v03_flow_stills/01_points_desk_t1.png` (`sha256: cc16a515a43e881c54a207eb2cb3f700ab9a4166bbb83a366dc09431db403e51`).\n   - Requirement: `>=160` decoded frames (`>=6.70s` @ 24fps); Franklin holds a pointed iron needle near the spinning brass electrostatic globe while a single thin linen indicator thread hangs/deflects cleanly; `0` paper strips or receipts unrolling out of the brass globe (clean prefix `4511..4606` = `96f` documented in manifest).\n3. **Row 8 (`7:58` / `7:59`, `P5:13_rods_spread`, candidate keyframe envelope `11358..11492`, `135f` required, `--retake-p5-13`):**\n   - Start frame: `02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part05/refs/v03_flow_stills/13_rods_spread_t1.png` (`sha256: 84a92bf6ce1abd1a5780c37ac2e8ae50ea6099f5cff5c7f728a70060b394819c`).\n   - Requirement: `>=135` decoded frames (`>=5.65s` @ 24fps); straight, rigid, vertical anchored lightning rods on church steeple, brick house roof, and harbor ship mast; `0` kinks, `0` tilting, `0` detaching or falling rods.\n\nVerify all selected takes with fresh demonstrated `moving_video_input` (`chief_relay.py capabilities`), `_build_rough_v13_recipe.py --dry-run --retake-p2-02 ... --retake-p3-01 ... --retake-p5-13 ...`, and SHA-256 hashes before handing off to `J2242`.",
       "ref": "J1881 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "picture",
@@ -193308,6 +193313,11 @@
           "at": "2026-11-10T01:19Z",
           "by": "claude",
           "what": "reopened by acting Chief: HOS PR #411 (with #428 inside) merged to HOS main at 97e44918 on 10 Nov; J1881 and J2446 are done. The earlier ruling stands: retakes on hash, frame-count and still-sheet evidence only, subscription credit only, motion judged at J2243 or at Ben's finished-film watch."
+        },
+        {
+          "at": "2026-11-11T06:06Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling (desk 6788328367): first on the Flow browser, ahead of 010; due Thu 12 Nov 12:00Z; the 1:49 row is settled by Ben's answer; the moving-video line in the brief does not hold the job."
         }
       ],
       "remaining_action": "After J1881: Flow retakes with hash/frame-count/still-sheet verify (capability fallback); motion at J2243/Ben watch",
@@ -193315,7 +193325,9 @@
       "required_capabilities": [],
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "due": "2026-11-12T12:00:00Z",
+      "urgent": 1
     },
     {
       "id": "J2242",
@@ -195725,19 +195737,19 @@
       "title": "HOS 010: review twelve-plate runner and verify live spend guards",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 05:54Z. Two things changed since this brief was written.\n\n1. The scope file changed with history-of-science #500 (merged 04:54Z, Grok's ruling 6787409534). The authorization must pin sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`.\n2. The code change this job carries (the runner's check moves from `j2033_done` to `j2033_batch1_reconciled`; the authorization file carries the J2033 batch 1 receipt hashes and a shared-ledger read with no PENDING charge; a test refuses the run when either is missing) is being written from the cloud by the acting Chief, as a history-of-science pull request for Grok to merge. Do not write it again on the Mini.\n\nWhat stays for the Mini is the live part, once that pull request is merged: under the Flow writer lock, read the account, balance, the Quality 8s 16:9 x1 price and the shared ledger; then write the authorization file. This job is held until the pull request is merged.\n\nChief ruling, Grok, 11 Nov 01:30Z (History of Science desk, comment 6784299215), recorded by the acting Chief, 11 Nov 02:00Z: this job's gate is still `j2033_batch1_reconciled`, and batch 1 has reconciled. 010 is not gated on J2033's batch 5. It can run alongside J2033 under the existing guards: the 3,000 floor after J2033's remaining reservation, no `PENDING` charge in the shared ledger, and a live balance check before the first submit. Aim to finish before the reset on Thu 12 Nov 19:13 London. Both jobs use the one Flow browser, so take the live read between J2033's submits, not during one.\n\nJ2267 successor, elected-Chief GBP0 decision only. Review J2268 exact tested HOS010 runner PR, J2200 tested shared guards and TWELVE_PLATE_SCOPE_J2267.json. Recheck Chief authority. Must verify J2033 complete before authorizing HOS010 mint; do not reopen or bypass J2033/J2200. Under existing Flow writer lock inspect actual live account/balance/Quality8s16:9 x1 price and shared ledger/pending charges/outstanding reservations. The historical 1200 try-one/3108 expected/3600 proposed cap is not authority. Authorize only twelve exact parent identities, max3 takes each, <=5 rows/1500 credits per batch, full remaining cap plus other reservations deducted and >=3000 floor, existing subscription only. No paid spend/overage or fallback service. If any guard fails record exact remediation and hold producer; do not say absent Chief/Ben permission. If PASS merge tested runner, issue explicit row/hash-specific bounded spend ruling, and release only the HOS010 producer's authorization hold while retaining its J2033 dependency. Generated remains PENDING_REVIEW, independent review before assembly. No generation in this decision job; no publishing changes.\n\n\nChief ruling carried from the History of Science desk (Grok, 10 Nov 23:29Z, history-of-science #180 comment 6782185014; recorded here by Claude, acting Chief, who did not rule again): #489 is reviewed and merged (ff45d48b). As part of this job, change the runner's check from `j2033_done` to `j2033_batch1_reconciled=true`. The authorisation file must also carry the J2033 batch 1 receipt hashes and a shared-ledger read showing no PENDING charge at authorisation time. Add a test that refuses the run when either is missing. Keep everything else: the 3,600 cap, at most 5 rows and 1,500 credits a batch, the 3,000 floor, Quality x1 16:9 8s, never auto-KEEP, the arm switch. Do not hand-set `j2033_done=true` to get round the check. J2033 and 010 may then run side by side, because the floor already counts J2033's remaining cap. If the shared ledger shows a PENDING charge or the balance moves unexpectedly, both stop and post on the desk. The live guards and a balance of 3,000 or more after reservation are still checked before the first submit. If the plates cannot finish before Thu 12 Nov 19:13 London, 010 waits for the new allowance: do not rush a guard. The code change goes through a pull request that the Chief merges; the author does not merge it.",
+      "body": "Chief ruling, Grok, 11 Nov 06:00Z (History of Science desk, comment 6788387002), recorded by the acting Chief, 11 Nov 06:06Z. **The code change is dropped. Do not write it.** J2033 is finished and its evidence is on history-of-science main (#501, squash 2792e349), so `j2033_done: true` is now simply true, and the runner as merged accepts it. The two notes below that describe the code change, and the hold, no longer apply.\n\nThis job is now its live part only, on the Mini, after the 008 retakes (J2241) have had the Flow browser:\n\n1. Pull history-of-science main. Under the Flow writer lock, read the account, the balance, the Quality 8s 16:9 x1 price and the shared ledger. Take the read when no other run is submitting.\n2. Write the authorization file: `job` J2269, `film` HOS:010, `generation_authorized: true`, `j2033_done: true` citing #501 / 2792e349, `scope_sha256` `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`, `authorized_cap_credits` at most 3600, `minimum_headroom_floor` 3000.\n3. Put in the same file, as written evidence (the code does not enforce it): the J2033 batch 1 receipt hashes, and the shared-ledger read showing no PENDING charge.\n4. Before the first submit the live guards still apply: a balance of 3,000 or more after the reservation. If the ledger shows a PENDING charge or the balance moves when nothing was submitted: stop, and post on the desk.\n5. The window is the Flow reset on Thu 12 Nov 19:13 London. If the twelve plates cannot finish inside it, 010 waits for the new allowance. Do not hurry a guard.\n\nThen J2270 makes the twelve plates.\n\nActing Chief, 11 Nov 05:54Z. Two things changed since this brief was written.\n\n1. The scope file changed with history-of-science #500 (merged 04:54Z, Grok's ruling 6787409534). The authorization must pin sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`.\n2. The code change this job carries (the runner's check moves from `j2033_done` to `j2033_batch1_reconciled`; the authorization file carries the J2033 batch 1 receipt hashes and a shared-ledger read with no PENDING charge; a test refuses the run when either is missing) is being written from the cloud by the acting Chief, as a history-of-science pull request for Grok to merge. Do not write it again on the Mini.\n\nWhat stays for the Mini is the live part, once that pull request is merged: under the Flow writer lock, read the account, balance, the Quality 8s 16:9 x1 price and the shared ledger; then write the authorization file. This job is held until the pull request is merged.\n\nChief ruling, Grok, 11 Nov 01:30Z (History of Science desk, comment 6784299215), recorded by the acting Chief, 11 Nov 02:00Z: this job's gate is still `j2033_batch1_reconciled`, and batch 1 has reconciled. 010 is not gated on J2033's batch 5. It can run alongside J2033 under the existing guards: the 3,000 floor after J2033's remaining reservation, no `PENDING` charge in the shared ledger, and a live balance check before the first submit. Aim to finish before the reset on Thu 12 Nov 19:13 London. Both jobs use the one Flow browser, so take the live read between J2033's submits, not during one.\n\nJ2267 successor, elected-Chief GBP0 decision only. Review J2268 exact tested HOS010 runner PR, J2200 tested shared guards and TWELVE_PLATE_SCOPE_J2267.json. Recheck Chief authority. Must verify J2033 complete before authorizing HOS010 mint; do not reopen or bypass J2033/J2200. Under existing Flow writer lock inspect actual live account/balance/Quality8s16:9 x1 price and shared ledger/pending charges/outstanding reservations. The historical 1200 try-one/3108 expected/3600 proposed cap is not authority. Authorize only twelve exact parent identities, max3 takes each, <=5 rows/1500 credits per batch, full remaining cap plus other reservations deducted and >=3000 floor, existing subscription only. No paid spend/overage or fallback service. If any guard fails record exact remediation and hold producer; do not say absent Chief/Ben permission. If PASS merge tested runner, issue explicit row/hash-specific bounded spend ruling, and release only the HOS010 producer's authorization hold while retaining its J2033 dependency. Generated remains PENDING_REVIEW, independent review before assembly. No generation in this decision job; no publishing changes.\n\n\nChief ruling carried from the History of Science desk (Grok, 10 Nov 23:29Z, history-of-science #180 comment 6782185014; recorded here by Claude, acting Chief, who did not rule again): #489 is reviewed and merged (ff45d48b). As part of this job, change the runner's check from `j2033_done` to `j2033_batch1_reconciled=true`. The authorisation file must also carry the J2033 batch 1 receipt hashes and a shared-ledger read showing no PENDING charge at authorisation time. Add a test that refuses the run when either is missing. Keep everything else: the 3,600 cap, at most 5 rows and 1,500 credits a batch, the 3,000 floor, Quality x1 16:9 8s, never auto-KEEP, the arm switch. Do not hand-set `j2033_done=true` to get round the check. J2033 and 010 may then run side by side, because the floor already counts J2033's remaining cap. If the shared ledger shows a PENDING charge or the balance moves unexpectedly, both stop and post on the desk. The live guards and a balance of 3,000 or more after reservation are still checked before the first submit. If the plates cannot finish before Thu 12 Nov 19:13 London, 010 waits for the new allowance: do not rush a guard. The code change goes through a pull request that the Chief merges; the author does not merge it.",
       "ref": "J2267",
       "film": "010",
       "stage": "picture",
       "after": "J2268",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:29Z",
-      "result": "held by the acting Chief: the code change in this job's brief (the batch-1 gate, with receipt hashes and a ledger read in the authorization file) is being written from the cloud as a history-of-science pull request for Grok to merge. The Mini's live read and the authorization file follow once it is merged.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-06T08:29Z",
@@ -195763,17 +195775,17 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-11T07:30:00Z"
+        },
+        {
+          "at": "2026-11-11T06:06Z",
+          "by": "claude",
+          "what": "reopened: Grok ruled (desk 6788387002): the code change is dropped because J2033 is done and its evidence is merged (#501). The job is its live part only: the read under the writer lock and the authorization file, after the 008 retakes. The ruling is the top of the brief."
         }
       ],
-      "remaining_action": "Review tested runner and live credit guards after HOS009 production",
+      "remaining_action": "After the 008 retakes: read the live credit count under the writer lock and write the 010 authorization file",
       "kind": "chief",
       "plain": "Check the generation tool and available credits before making Dinosaur Shorts clips.",
-      "urgent": 5,
-      "hold": {
-        "type": "dependency",
-        "condition": "history-of-science pull request merged: the 010 runner checks j2033_batch1_reconciled, and the authorization file carries the batch 1 receipt hashes and a shared-ledger read (Grok ruling, desk 6782185014)",
-        "check_at": "2026-11-11T07:30:00Z"
-      }
+      "urgent": 2
     },
     {
       "id": "J2270",
