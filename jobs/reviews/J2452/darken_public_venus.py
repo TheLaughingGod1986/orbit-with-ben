@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
 import build_public_venus as b
-SRC=b.OUT.with_name('public_venus_v01')
+SRC=b.OUT.with_name('public_venus_v03')
 OUT=b.OUT.with_name('public_venus_dark_v01')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
