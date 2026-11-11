@@ -229365,13 +229365,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T21:09Z",
-      "eta": "2026-11-11T23:09Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T18:14Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #835; stale parent and missing final rollback stranded relay commits, while refill exit zero hid the failure. All 65 script test files pass.",
       "history": [
         {
           "at": "2026-11-11T18:14Z",
@@ -229407,6 +229407,11 @@
           "at": "2026-11-11T21:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR #835 opened; all 65 script test files pass in fresh processes. Failed-origin regression restores clean origin/main and original queue bytes. Historical error logging gap documented."
+        },
+        {
+          "at": "2026-11-11T21:18Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge PR #835; stale parent and missing final rollback stranded relay commits, while refill exit zero hid the failure. All 65 script test files pass."
         }
       ],
       "remaining_action": "Chief review and merge of the tested metadata rollback fix",
