@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2591 | mini | open | – | – | 008 picture · chart · HOS 008: build the salon's contact spark as a code graphic (one warm-white flick, three to four frames) | J2241 |
 | J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
-| J2594 | mini | open | – | – | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
+| J2594 | mini | claimed | macbook | 2026-11-11T12:33Z | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
 
 Recently finished:
 
