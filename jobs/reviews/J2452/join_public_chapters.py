@@ -42,17 +42,17 @@ def main():
      run(['-ss',c['duration_s']-1/30,'-i',c['path'],'-vf','tpad=stop_mode=clone:stop_duration=20,trim=duration=20,setpts=PTS-STARTPTS,fade=t=out:st=0:d=20','-an','-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-r','30','-video_track_timescale','90000',tail])
     assert int(probe(tail)[0]['nb_frames'])==600
     parts.append(tail);continue
-   nxt=chapters[i+1];join=out/f'join_{i+1:02d}.mp4'
+   nxt=chapters[i+1];join=out/f'join_endpoint_v{3 if i==1 else 2:02d}_{i+1:02d}.mp4'
    if not join.exists():
-    graph='[0:v]setpts=PTS-STARTPTS,fps=30,setsar=1[a];[1:v]setpts=PTS-STARTPTS,fps=30,setsar=1[b];[a][b]xfade=transition=fade:duration=2:offset=1,format=yuv420p[v]'
-    run(['-ss',c['duration_s']-3,'-i',c['path'],'-t','3','-i',nxt['path'],'-filter_complex_threads','1','-filter_complex',graph,'-map','[v]','-frames:v','120','-an','-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-r','30','-video_track_timescale','90000',join])
+    graph='[0:v]trim=end_frame=1,setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=3,trim=duration=3,fps=30,setsar=1[a];[1:v]trim=end_frame=1,setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=3,trim=duration=3,fps=30,setsar=1[b];[a][b]xfade=transition=fade:duration=2:offset=1,format=yuv420p[v]'
+    run(['-ss',c['duration_s']-(4 if i==1 else 1/30),'-i',c['path'],'-t','3','-i',nxt['path'],'-filter_complex_threads','1','-filter_complex',graph,'-map','[v]','-frames:v','120','-an','-c:v','libx264','-preset','veryfast','-crf','18','-threads','4','-r','30','-video_track_timescale','90000',join])
    assert int(probe(join)[0]['nb_frames'])==120
    parts.append(join);print('join',i+1,flush=True)
-  listing=out/'picture_concat.txt';listing.write_text(''.join(f"file '{p}'\nduration {int(probe(p)[0]['nb_frames'])/30:.9f}\n" for p in parts))
-  picture=out/'sleep_picture_candidate_v01.mp4'
+  listing=out/'picture_concat_v03.txt';listing.write_text(''.join(f"file '{p}'\nduration {int(probe(p)[0]['nb_frames'])/30:.9f}\n" for p in parts))
+  picture=out/'sleep_picture_candidate_v03.mp4'
   if not picture.exists():run(['-f','concat','-safe','0','-i',listing,'-map','0:v','-an','-c:v','copy',picture])
   v=probe(picture)[0];assert int(v['nb_frames'])==data['expected_frames'],v
-  (out/'PICTURE.json').write_text(json.dumps(dict(status='CANDIDATE_FULL_DECODE_AND_JOIN_GATES_PENDING',path=str(picture),sha256=sha(picture),frames=int(v['nb_frames']),duration_s=v['duration'],parts=[str(p) for p in parts]),indent=2)+'\n');return
+  (out/'PICTURE_V03.json').write_text(json.dumps(dict(status='CANDIDATE_FULL_DECODE_AND_JOIN_GATES_PENDING',path=str(picture),sha256=sha(picture),frames=int(v['nb_frames']),duration_s=v['duration'],parts=[str(p) for p in parts]),indent=2)+'\n');return
  # Decode each chapter's already checked clean narration to the exact picture clock.
  args=[];graph=[];labels=[]
  for i,c in enumerate(chapters):
