@@ -220085,10 +220085,10 @@
       "stage": "",
       "after": "J2545",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T04:05Z",
+      "eta": "2026-11-11T06:35Z",
       "created_by": "claude",
       "created_at": "2026-11-10T22:59Z",
       "result": "",
@@ -220152,12 +220152,25 @@
           "at": "2026-11-11T02:00Z",
           "by": "claude",
           "what": "reopened: acting Chief ruling on the split asked for at 01:33Z: moved to the cloud as one job. The labelled frames are on main at the size the check reads, so no NAS is needed. Claude takes it from the MacBook's handover on branch macbook/J2546."
+        },
+        {
+          "at": "2026-11-11T04:05Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "read brief and labelled frames; next: calibrate full_bleed_frame on the 56 frames, whole-Short sampling, tests, HOS sync, PRs",
       "due": "2026-11-12T18:00:00Z",
       "kind": "review",
-      "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts"
+      "plain": "Teach the Shorts check to spot the blurred-strip look anywhere in a Short, using real examples, without failing good Shorts",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T04:05Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2547",
