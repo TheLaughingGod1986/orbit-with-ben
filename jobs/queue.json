@@ -228426,10 +228426,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T19:33Z",
+      "eta": "2026-11-11T21:33Z",
       "created_by": "claude",
       "created_at": "2026-11-11T15:59Z",
       "result": "",
@@ -228483,6 +228483,11 @@
           "at": "2026-11-11T18:52Z",
           "by": "claude",
           "what": "reopened: queue side of Grok's ruling 6804458227: Codex pushes it, not another worker; that desk comment is the written authorization, now at the top of the brief. Parked 18:46Z as: parked for Chief: candidate built and verified locally; automatic approval review twice rejected required public GitHub branch push, stating payload publication lacks authorization. User approval needed for codex/j2632-falling-moon to TheLaughingGod1986/histor"
+        },
+        {
+          "at": "2026-11-11T19:33Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Push the two finished commits as codex/j2632-falling-moon, open the pull request, post the sheets on the desk, park for the Chief",
@@ -228494,7 +228499,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T19:33Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2633",
