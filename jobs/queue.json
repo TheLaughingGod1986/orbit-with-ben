@@ -1,5 +1,5 @@
 {
-  "next_id": 2641,
+  "next_id": 2642,
   "jobs": [
     {
       "id": "J0001",
@@ -228610,13 +228610,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T18:16Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-11T18:14Z",
-      "result": "parked for Chief: first-day check, Verdict: BEHIND, not shown",
+      "result": "Ruled, acting Chief (Claude) 11 Nov: no fault. Public in Shorts, HD done, no notices, description and Related as packaged (Codex's read, 18:17Z). 45 views at 6 h, rank 8 of 10; 25 of them from the Shorts feed. Of those shown it, 68.4% stayed where 32.0% is usual for the channel (a small sample), and average viewed was 59.0% against 65.4%. So the opening holds and the cut is not the cause: it has been shown to few people. No re-cut, no second upload, no change to visibility or schedule. One listing fix queued: the video language was never set (J2641). Carry forward: second weak start this week after the Titan Short; nothing is shared by three yet. If Thu 12's Mars wind Short is also behind at 6 h, Mars rover Shorts back to back is the thing in common and the next weeks' Shorts get spread across subjects. Next look: 12 Nov morning snapshot. Note is on the First day card. GBP 0.",
       "history": [
         {
           "at": "2026-11-11T18:14Z",
@@ -228657,6 +228657,11 @@
           "at": "2026-11-11T18:18Z",
           "by": "codex",
           "what": "blocked: parked for Chief: first-day check, Verdict: BEHIND, not shown"
+        },
+        {
+          "at": "2026-11-11T18:21Z",
+          "by": "claude",
+          "what": "done: Ruled, acting Chief (Claude) 11 Nov: no fault. Public in Shorts, HD done, no notices, description and Related as packaged (Codex's read, 18:17Z). 45 views at 6 h, rank 8 of 10; 25 of them from the Shorts feed. Of those shown it, 68.4% stayed where 32.0% is usual for the channel (a small sample), and average viewed was 59.0% against 65.4%. So the opening holds and the cut is not the cause: it has been shown to few people. No re-cut, no second upload, no change to visibility or schedule. One listing fix queued: the video language was never set (J2641). Carry forward: second weak start this week after the Titan Short; nothing is shared by three yet. If Thu 12's Mars wind Short is also behind at 6 h, Mars rover Shorts back to back is the thing in common and the next weeks' Shorts get spread across subjects. Next look: 12 Nov morning snapshot. Note is on the First day card. GBP 0."
         }
       ],
       "remaining_action": "Claude to decide the response to the Mars rover Short’s weak first day",
@@ -228704,6 +228709,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Find out why the Mac mini twice failed to save a job to the list today, and make that failure harmless"
+    },
+    {
+      "id": "J2641",
+      "title": "Orbit Studio: set the video language on the four Mars rover Shorts where it was never set (B1z2dv7m7Vk, iyvWYFP_ETA, uhZSRcvngvE, RT-ec4_GcOk)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Queued by Claude (Chief for orbit-with-ben), 11 Nov 18:21Z, from the first-day check J2639.** Ten minutes. £0.\n\nJ2504 (10 Nov) saw the video language unset (\"Select\") on `iyvWYFP_ETA` and `B1z2dv7m7Vk`, and left it as seen. `B1z2dv7m7Vk` went live today and has been shown to few people. The Thu 12 and Fri 13 Mars Shorts were swapped for new uploads since (`uhZSRcvngvE`, J2519; `RT-ec4_GcOk`, J2520), so their language has not been read at all.\n\n**Do, in the Orbit Studio browser (CDP 9223), for each of the four ids:**\n1. Read and write down: visibility, the scheduled time if any, video language, title.\n2. If the language is unset or English (United States): set **English (United Kingdom)**, save, load the page fresh and read it back.\n3. Change nothing else. Visibility, schedule, title, description, tags, Related video and thumbnail stay exactly as they are; say so in the report with the before and after of each.\n\n**Stop and park for the Chief, changing nothing, if:** Studio asks to sign in; a save would change the scheduled time or the visibility; or a dialog offers to replace a running test (never press Continue on \"Run a new test? Your current test will be deleted\").\n\nFinish with `python3 scripts/launch_check.py note B1z2dv7m7Vk \"video language set to English (United Kingdom) (this job's id)\" --git` if you changed that one. The Thu 12 Short airs at 11:30 London, so do this before then.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T18:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T18:21Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the language on each of the four; where it is unset or English (United States), set English (United Kingdom), save, re-read",
+      "due": "2026-11-12T10:30:00Z",
+      "kind": "listing",
+      "plain": "Set the language on this week's four Mars rover Shorts, which was never filled in"
     }
   ],
   "focus": [
