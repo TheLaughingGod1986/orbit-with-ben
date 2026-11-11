@@ -183,7 +183,7 @@ Source-only checks report **PREFLIGHT** (exit 2) if otherwise clean, preserving 
 
 ### Teach on screen (Ben, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
 
-<!-- SYNC: AGENTS.md#Teach on screen (Ben, 11 Oct 2026) -->
+<!-- SYNC: studio/RULES.md#Teach on screen (Ben, 11 Oct 2026) -->
 Ben, 11 Oct 2026 21:45, for every future video on both channels: *"add more graphs and charts when needed, more overlays, more animations, and more interesting facts to explain about dates, explain about the people we're mentioning, and make it more educational and more useful."* This applies to every script locked and every cut started after 11 Oct 2026. It adds to lesson 7 and the edit locks, and it relaxes none of them.
 
 **Script.** Mark these inside the scene's `[VISUAL MUST: …]`, so `review:script` doesn't count them as spoken words and `gate:episode` doesn't change. Chief counts them at script review (`grep -o "DATA:" <script> | wc -l`, and the same for each marker).
@@ -224,7 +224,7 @@ A Short is scored on 5 and 6 only, plus whichever of 1–4 its single overlay is
 
 ### Polish pass (Astrum ref, 11 Oct 2026; generated from AGENTS.md, edit AGENTS.md then run `python3 scripts/sync_rules.py`)
 
-<!-- SYNC: AGENTS.md#Polish pass (Astrum ref, 11 Oct 2026) -->
+<!-- SYNC: studio/RULES.md#Polish pass (Astrum ref, 11 Oct 2026) -->
 Ben, 11 Oct 2026 22:17, sent Astrum's *What Is It Like on the Surface of a Black Hole Planet?* (`PxJSOWyYWkc`, 27 min, 1.1M views) as a style reference: *"let me know what you think we can incorporate into our workflow."* Chief adopted five of its techniques the same night. They apply to every cut started after 11 Oct 2026. They add to lesson 7, the edit locks and *Teach on screen*, and relax none of them.
 
 **Not adopted:** Astrum's long shot holds (6–8 s, some 15 s). That pace suits a 27-minute film, not our 8–9 minute longs and 22–27 s Shorts. The picture still changes every 4–6 s, and nothing holds still for more than 4 s.
@@ -617,6 +617,9 @@ Every sign-off goes to Chief on the thread first (Claude until 9 Oct 2026). This
 **Chief owns `AGENTS.md` and the Never list** (Ben to Claude, 5 Oct 2026; handed to Chief 9 Oct, confirmed 10 Oct). Chief changes them and OKs one-off Never-list exceptions for reversible studio actions (e.g. re-uploading a fixed copy of a broken Short, a video going private), recording each with its date and reason on the thread and in the commit, and telling Ben. Ordinary workers outside the elected Chief role do not relax the Never list themselves. **Real money stays with Ben** (item 1), and no OK covers deleting a video.
 
 **Budget:** Vertex, API and Flow credits already on the account may be spent down to zero. No top-ups, no new paid services or plans, and never AI Studio prepaid credit, without Ben.
+
+- **All subscription credit floors are zero (Ben, 12 Oct 2026 14:46):** ElevenLabs, Flow (AI Ultra) and the Vertex trial are spent down to 0 (Vertex: £0.10, see below). Only subscription or trial credit: never buy credits, top up, upgrade or enable paid overage. At 0 the job fails gracefully: it walks its routing fallback, or the job type parks until the reset.
+- **ElevenLabs has no floor (Ben, 9 Oct: *"No floor on ElevenLabs. Keep going until the credit runs out."*).** One account pays for both channels' voice and music. It's a flat fee, so running out only stops work until the monthly reset; a top-up stays Ben's call. When credits are short, the channel `channel_balance.py` puts first gets them first, then air date within it.
 
 **Credit holds until the 30 Oct ElevenLabs reset (Chief, 9 Oct 2026; Chief owns the studio since 9 Oct).**
 - **ElevenLabs** (one account, both channels): about 18,653 credits left (9 Oct). The HOS voice queue goes first: 007 Shorts B + C (J0109), then the 009 and 010 long VO (J0111, J0113). Every VO job reads the balance first and spends nothing if it is below what the job needs. **No OWB (or HOS) music bed is started without the Chief's OK until 30 Oct.** Laying in a bed that already exists (J0089) is fine.

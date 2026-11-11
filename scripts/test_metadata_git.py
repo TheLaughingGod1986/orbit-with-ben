@@ -167,5 +167,149 @@ class MetadataGit(unittest.TestCase):
         self.assertIn('unpublished/diverged', self.run_metadata('jobs'))
         self.assertEqual(self.git(self.work, 'rev-parse', 'HEAD'), local)
 
+class SpendRowsFromAPictureRun(unittest.TestCase):
+    """11 Nov 2026. A picture run appends its spend rows to the tracked ledger in the shared checkout as it works.
+    Those unsaved rows made every queue write on the Mini refuse for as long as a batch ran. A queue write now saves
+    them first, and never leaves the file missing or half written, because the run reads it while it works."""
+
+    LEDGER = '05_Analytics/ai_spend/ledger.jsonl'
+
+    def setUp(self):
+        self.case = MetadataGit()                     # its repositories and helpers, without its tests
+        self.case.setUp()
+        self.addCleanup(self.case.doCleanups)
+        for name in ('work', 'remote', 'git', 'remote_head', 'run_metadata'):
+            setattr(self, name, getattr(self.case, name))
+        self.ledger = self.work / self.LEDGER
+        self.ledger.parent.mkdir(parents=True)
+        self.ledger.write_text(self.row('flow:read:a', 100) + self.row('flow:spend:a', 100))
+        self.git(self.work, 'add', '.')
+        self.git(self.work, 'commit', '-qm', 'ledger')
+        self.git(self.work, 'push', '-q', 'origin', 'main')
+
+    @staticmethod
+    def row(ident, n):
+        return json.dumps({'id': ident, 'kind': 'spend', 'pool': 'flow', 'amount': n}) + '\n'
+
+    def run_append(self, *rows):
+        with self.ledger.open('a') as handle:
+            handle.write(''.join(rows))
+
+    def other_machine_appends(self, *rows):
+        other = self.work.parent / 'other'
+        subprocess.run(['git', 'clone', '-q', '-b', 'main', str(self.remote), str(other)], check=True)
+        self.git(other, 'config', 'user.email', 'other@example.invalid')
+        self.git(other, 'config', 'user.name', 'Other')
+        with (other / self.LEDGER).open('a') as handle:
+            handle.write(''.join(rows))
+        self.git(other, 'commit', '-qam', 'ai_spend: a reading from another machine')
+        self.git(other, 'push', '-q', 'origin', 'HEAD:main')
+
+    def remote_ledger(self):
+        return self.git(self.remote, 'show', 'main:' + self.LEDGER).splitlines()
+
+    def ids(self, lines):
+        return [json.loads(line)['id'] for line in lines]
+
+    def test_unsaved_rows_are_saved_and_the_queue_write_goes_through(self):
+        self.run_append(self.row('flow:read:b', 90), self.row('flow:spend:b', 100))
+        self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.ids(self.remote_ledger()), ['flow:read:a', 'flow:spend:a', 'flow:read:b', 'flow:spend:b'])
+        self.assertEqual(json.loads(self.git(self.remote, 'show', 'main:jobs/queue.json'))['next_id'], 2)
+        self.assertEqual(self.git(self.work, 'status', '--porcelain'), '')
+        subjects = self.git(self.remote, 'log', '--format=%s', '-2', 'main').splitlines()
+        self.assertEqual(subjects[0], 'metadata')
+        self.assertTrue(subjects[1].startswith('ai_spend: rows a picture run wrote'))
+        # each commit holds only its own file
+        self.assertEqual(self.git(self.remote, 'show', '--format=', '--name-only', 'main~1'), self.LEDGER)
+
+    def test_both_sides_added_rows_none_is_lost_and_none_is_doubled(self):
+        self.run_append(self.row('flow:read:b', 90), self.row('flow:spend:b', 100))
+        self.other_machine_appends(self.row('codex:reading:1', 92), self.row('flow:read:b', 90))   # one row is the same receipt
+        self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.ids(self.remote_ledger()),
+                         ['flow:read:a', 'flow:spend:a', 'codex:reading:1', 'flow:read:b', 'flow:spend:b'])
+        self.assertEqual(self.ledger.read_text().splitlines(), self.remote_ledger())
+        self.assertEqual(self.git(self.work, 'status', '--porcelain'), '')
+
+    def test_the_file_is_never_missing_or_half_written_while_it_is_settled(self):
+        """The run stops on a ledger that is missing rows it wrote in a torn way; every write must be whole."""
+        self.run_append(self.row('flow:read:b', 90))
+        self.other_machine_appends(self.row('codex:reading:1', 92))
+        seen = []
+        real = studio._replace
+
+        def watching(path, lines):
+            real(path, lines)
+            text = path.read_text()
+            seen.append(text.endswith('\n') and all(json.loads(line) for line in text.splitlines()))
+        with patch.object(studio, '_replace', watching):
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertTrue(seen and all(seen))
+        self.assertTrue(self.ledger.exists())
+        self.assertEqual([p.name for p in self.ledger.parent.iterdir()], ['ledger.jsonl'])   # no temporary file left
+
+    def test_a_row_the_run_adds_while_it_is_settled_is_kept(self):
+        self.run_append(self.row('flow:read:b', 90))
+        self.other_machine_appends(self.row('codex:reading:1', 92))
+        real = studio._replace
+        calls = []
+
+        def run_writes_between(path, lines):
+            real(path, lines)
+            if not calls:                                # straight after the file was set to main's rows
+                with path.open('a') as handle:
+                    handle.write(self.row('flow:spend:c', 100))
+            calls.append(1)
+        with patch.object(studio, '_replace', run_writes_between):
+            self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.ids(self.remote_ledger()), ['flow:read:a', 'flow:spend:a', 'codex:reading:1', 'flow:read:b', 'flow:spend:c'])
+
+    def test_an_edited_or_cut_ledger_is_refused_and_left_alone(self):
+        for text in (self.row('flow:read:a', 999) + self.row('flow:spend:a', 100), self.row('flow:read:a', 100)):
+            with self.subTest(text=text[:30]):
+                self.ledger.write_text(text)
+                remote = self.remote_head()
+                self.assertIn('settle it by hand', self.run_metadata('jobs'))
+                self.assertEqual(self.remote_head(), remote)
+                self.assertEqual(self.ledger.read_text(), text)
+
+    def test_an_unfinished_last_line_or_an_unreadable_row_is_refused_and_left_alone(self):
+        for tail, said in (('{"id": "flow:read:b", "le', 'unfinished'), ('not json\n', 'unreadable'), ('[1, 2]\n', 'unreadable')):
+            with self.subTest(tail=tail):
+                before = self.git(self.work, 'show', 'HEAD:' + self.LEDGER) + '\n'
+                self.ledger.write_text(before + tail)
+                remote = self.remote_head()
+                self.assertIn(said, self.run_metadata('jobs'))
+                self.assertEqual(self.remote_head(), remote)
+                self.assertEqual(self.ledger.read_text(), before + tail)
+
+    def test_any_other_unsaved_file_still_stops_the_write(self):
+        self.run_append(self.row('flow:read:b', 90))
+        (self.work / 'JOBS.md').write_text('someone was editing this\n')
+        remote = self.remote_head()
+        self.assertIn('clean working tree', self.run_metadata('jobs'))
+        self.assertEqual(self.remote_head(), remote)
+        self.assertIn('flow:read:b', self.ledger.read_text())
+
+    def test_staged_ledger_changes_still_stop_the_write(self):
+        self.run_append(self.row('flow:read:b', 90))
+        self.git(self.work, 'add', self.LEDGER)
+        self.assertIn('clean working tree', self.run_metadata('jobs'))
+
+    def test_rows_already_on_main_leave_nothing_to_save(self):
+        self.run_append(self.row('flow:read:b', 90))
+        self.other_machine_appends(self.row('flow:read:b', 90))
+        head = self.remote_head()
+        self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.ids(self.remote_ledger()), ['flow:read:a', 'flow:spend:a', 'flow:read:b'])
+        self.assertEqual(self.git(self.remote, 'rev-list', '--count', head + '..main'), '1')   # only the queue write
+
+    def test_a_clean_checkout_behaves_as_before(self):
+        head = self.remote_head()
+        self.assertIsNone(self.run_metadata('jobs'))
+        self.assertEqual(self.git(self.remote, 'rev-list', '--count', head + '..main'), '1')
+
+
 if __name__ == '__main__':
     unittest.main()

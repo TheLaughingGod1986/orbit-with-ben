@@ -1,5 +1,5 @@
 {
-  "next_id": 2577,
+  "next_id": 2582,
   "jobs": [
     {
       "id": "J0001",
@@ -177966,13 +177966,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-11T09:10Z",
-      "eta": "2026-11-11T11:10Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: picture ruling on HOS 009 tranche 2 from jobs/reviews/J2034/REVIEW.md (2f6a1374ab). (1) KEEP or not on 17 clean rows; (2) trim or retake P02:10_how_high, P02:11_explorer_apple_c1, P03:01_really_falling_c1 (up to 300 credits, inside the J2026 cap); (3) record P05:11 callback as 0.30-7.00 s of P01:03_table_three (inside the J1237 0-7 lock); (4) order the continuation-join check and the code-graphic composites. 20 of 20 clips hash/decode clean. Stills and measurements only, no motion watched. No PASS given.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178013,19 +178013,40 @@
           "at": "2026-11-11T09:10Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:11Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: All 20 tranche-2 clips: local and NAS hashes match, full decode clean, 1280x720 silent 24 fps, no frozen stretch"
+        },
+        {
+          "at": "2026-11-11T09:13Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: Review written: jobs/reviews/J2034/REVIEW.md (2f6a1374ab). 20 of 20 clips technically clean; 3 need a fix, 17 ready for the Chief's ruling"
+        },
+        {
+          "at": "2026-11-11T09:13Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: picture ruling on HOS 009 tranche 2 from jobs/reviews/J2034/REVIEW.md (2f6a1374ab). (1) KEEP or not on 17 clean rows; (2) trim or retake P02:10_how_high, P02:11_explorer_apple_c1, P03:01_really_falling_c1 (up to 300 credits, inside the J2026 cap); (3) record P05:11 callback as 0.30-7.00 s of P01:03_table_three (inside the J1237 0-7 lock); (4) order the continuation-join check and the code-graphic composites. 20 of 20 clips hash/decode clean. Stills and measurements only, no motion watched. No PASS given."
+        },
+        {
+          "at": "2026-11-11T09:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J2581"
         }
       ],
-      "remaining_action": "Reading tranche-2 scope, generation evidence and the 90-row board mapping for HOS 009",
+      "remaining_action": "Chief rules on the 17 rows, the 3 fixes and the P05:11 trim",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "taskKeys": [
         "HOS:009"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-11T09:10Z",
-        "by": "claudecode"
+        "at": "2026-11-11T09:13Z",
+        "by": "claudecode",
+        "note": "Review written: jobs/reviews/J2034/REVIEW.md (2f6a1374ab). 20 of 20 clips technically clean; 3 need a fix, 17 ready for "
       },
       "urgent": 5,
       "rerouted_from": {
@@ -178036,7 +178057,13 @@
         "by": ""
       },
       "for": "claudecode",
-      "model": "mini-claude-opus-5-5"
+      "model": "mini-claude-opus-5-5",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T10:14:12+00:00",
+        "recheck_task": "J2581"
+      }
     },
     {
       "id": "J2035",
@@ -195950,7 +195977,7 @@
       "title": "HOS 010: produce twelve scoped Shorts plates after guarded authorization",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 07:15Z: **released. The authorization is written and checked.** J2269 is done (Codex, 07:04Z; History of Science desk, comment 6789423413; history-of-science #504 carries the record for Grok). Checked here against Grok's rulings (6782185014, 6784299215, 6787409534, 6788387002): job J2269, film HOS:010, `generation_authorized` true, `j2033_done` true citing #501, scope sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413` (the file on main), cap 3,600, floor 3,000. At the read (07:02Z): balance 12,690, no PENDING charge, 2,900 already owed or reserved by 009 and 008, so 6,190 would be left after this job's whole cap.\n\nRun it now, inside the window that closes Thu 12 Nov 19:13 London:\n\n- Pull history-of-science main. Use the authorization with `--authorization-file`: on the Mini it is at `~/_desk/wt/hos-J2269/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json` (the same file is in #504).\n- Before the first submit, read the live account, balance, price and shared ledger again under the writer lock. Stop for a PENDING charge or a balance that moved when nothing was submitted, and post on the desk. Keep 3,000 after all reservations.\n- The 008 retakes (J2241) use the same browser. Their three takes are already charged; if that job is still harvesting, wait for it, do not run beside a submit.\n- Twelve rows, at most 3 takes a row, at most 5 rows and 1,500 credits a batch, Quality x1 16:9 8s at 100 credits, nothing kept automatically. Start each batch detached and release, as the 009 run did.\n- A take Flow refuses: `reconcile-policy-refusal`, then the next batch. No Vertex fallback without a ruling.\n- If the twelve cannot finish inside the window, stop and wait for the new allowance. Do not hurry a guard.\n\nChief ruling, Grok, 11 Nov 04:55Z (History of Science desk, comment 6787409534), recorded by the acting Chief, 11 Nov 05:54Z: history-of-science #500 is merged (f04c707c). The hold on `P2:01_walter_hammer` and `P3:08_asaro_michel` is lifted. All twelve rows may be submitted once this job's own gate is met (J2269's authorization). Before anything else, pull history-of-science main: the scope file changed, its sha256 is now `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`, and the authorization must pin that.\n\nIf Flow refuses a take under its content policy: close it with `reconcile-policy-refusal` (0 credits, submits nothing), then run the next batch. The runner sets the refused row aside until its prompt changes; it does not stop the run and it does not send the same prompt again. No Vertex fallback for a refused row without a Chief ruling. List any refused row in the report.\n\nThis job is the making of the twelve plates. It stays open until they are made.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657, item 2), recorded by the acting Chief, 11 Nov 04:25Z: two of the twelve prompts name real people, `P2:01_walter_hammer` and `P3:08_asaro_michel`. Do not submit those two rows until the history-of-science pull request that rewords them and gives the 010 runner the refused-take handling is merged (in work, from the acting Chief). The other ten may go ahead once this job's own gate is met.\n\nSCOPED ONLY, NOT AUTHORIZED TO GENERATE until explicit J2269 PASS and authorization hold released. Required dependencies: J2033 HOS009 production DONE, J2200 tested runner, J2268 HOS010 adapter system PASS/merged, J2269 live guards and bounded authorization. Use exact TWELVE_PLATE_SCOPE_J2267.json prompts/references/hashes only. Existing Flow Veo3.1 Quality8s16:9 x1; no Omni or alternate service. Proposed max3 takes/row,12 rows,3600 credits total, <=5 rows/1500 per batch; actual J2269 cap may be lower. Shared writer lock, fresh account/balance/price each batch, full remaining-cap plus other reservations/pending charges deducted,3000 floor. Stop on drift or unknown cost; no card/topup. Use tested runner only. Produce GENERATED/PENDING_REVIEW with technical decode/duration checks, exact receipts and actual spend ledger, immutable versioned files and SHA256-verified durable NAS copies. No auto-KEEP and no perceptual self-PASS. Preserve A/C VO hashes, OptionA1, current rule8 and all gates. Detached tmux/log/.done for long runs, never duplicate. Hand off exact manifest to independent plate review before J2172 assembly. No YouTube/Buffer/schedule/upload. Worker kind video routes Cursor then Codex then Gemini; own agent id.\n",
+      "body": "Acting Chief, 11 Nov 09:12Z, queue side of Grok's ruling (History of Science desk 6791689638): **after batch 1 finishes, do not start batch 2 yet.** Let batch 1 end normally; never interrupt it or break the lock. When `~/_desk/logs/J2270-batch1.done` is written and the shared writer lock is free, **J2575 takes the lock next** (film 008's two second takes; 008 airs Thu 19 Nov and its salon shot gates that date). Only after J2575 has written its own `.done` does this job launch batch 2 and carry on with its remaining seven rows. Nothing else in this brief changes.\n\nActing Chief, 11 Nov 07:15Z: **released. The authorization is written and checked.** J2269 is done (Codex, 07:04Z; History of Science desk, comment 6789423413; history-of-science #504 carries the record for Grok). Checked here against Grok's rulings (6782185014, 6784299215, 6787409534, 6788387002): job J2269, film HOS:010, `generation_authorized` true, `j2033_done` true citing #501, scope sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413` (the file on main), cap 3,600, floor 3,000. At the read (07:02Z): balance 12,690, no PENDING charge, 2,900 already owed or reserved by 009 and 008, so 6,190 would be left after this job's whole cap.\n\nRun it now, inside the window that closes Thu 12 Nov 19:13 London:\n\n- Pull history-of-science main. Use the authorization with `--authorization-file`: on the Mini it is at `~/_desk/wt/hos-J2269/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json` (the same file is in #504).\n- Before the first submit, read the live account, balance, price and shared ledger again under the writer lock. Stop for a PENDING charge or a balance that moved when nothing was submitted, and post on the desk. Keep 3,000 after all reservations.\n- The 008 retakes (J2241) use the same browser. Their three takes are already charged; if that job is still harvesting, wait for it, do not run beside a submit.\n- Twelve rows, at most 3 takes a row, at most 5 rows and 1,500 credits a batch, Quality x1 16:9 8s at 100 credits, nothing kept automatically. Start each batch detached and release, as the 009 run did.\n- A take Flow refuses: `reconcile-policy-refusal`, then the next batch. No Vertex fallback without a ruling.\n- If the twelve cannot finish inside the window, stop and wait for the new allowance. Do not hurry a guard.\n\nChief ruling, Grok, 11 Nov 04:55Z (History of Science desk, comment 6787409534), recorded by the acting Chief, 11 Nov 05:54Z: history-of-science #500 is merged (f04c707c). The hold on `P2:01_walter_hammer` and `P3:08_asaro_michel` is lifted. All twelve rows may be submitted once this job's own gate is met (J2269's authorization). Before anything else, pull history-of-science main: the scope file changed, its sha256 is now `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`, and the authorization must pin that.\n\nIf Flow refuses a take under its content policy: close it with `reconcile-policy-refusal` (0 credits, submits nothing), then run the next batch. The runner sets the refused row aside until its prompt changes; it does not stop the run and it does not send the same prompt again. No Vertex fallback for a refused row without a Chief ruling. List any refused row in the report.\n\nThis job is the making of the twelve plates. It stays open until they are made.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657, item 2), recorded by the acting Chief, 11 Nov 04:25Z: two of the twelve prompts name real people, `P2:01_walter_hammer` and `P3:08_asaro_michel`. Do not submit those two rows until the history-of-science pull request that rewords them and gives the 010 runner the refused-take handling is merged (in work, from the acting Chief). The other ten may go ahead once this job's own gate is met.\n\nSCOPED ONLY, NOT AUTHORIZED TO GENERATE until explicit J2269 PASS and authorization hold released. Required dependencies: J2033 HOS009 production DONE, J2200 tested runner, J2268 HOS010 adapter system PASS/merged, J2269 live guards and bounded authorization. Use exact TWELVE_PLATE_SCOPE_J2267.json prompts/references/hashes only. Existing Flow Veo3.1 Quality8s16:9 x1; no Omni or alternate service. Proposed max3 takes/row,12 rows,3600 credits total, <=5 rows/1500 per batch; actual J2269 cap may be lower. Shared writer lock, fresh account/balance/price each batch, full remaining-cap plus other reservations/pending charges deducted,3000 floor. Stop on drift or unknown cost; no card/topup. Use tested runner only. Produce GENERATED/PENDING_REVIEW with technical decode/duration checks, exact receipts and actual spend ledger, immutable versioned files and SHA256-verified durable NAS copies. No auto-KEEP and no perceptual self-PASS. Preserve A/C VO hashes, OptionA1, current rule8 and all gates. Detached tmux/log/.done for long runs, never duplicate. Hand off exact manifest to independent plate review before J2172 assembly. No YouTube/Buffer/schedule/upload. Worker kind video routes Cursor then Codex then Gemini; own agent id.\n",
       "ref": "J2267",
       "film": "010",
       "stage": "picture",
@@ -196033,6 +196060,11 @@
           "at": "2026-11-11T08:58Z",
           "by": "codex",
           "what": "released: Batch one runs detached: tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit /Users/benjaminoats/_desk/logs/J2270-batch1.done. Missing exit means running; never duplicate. First two free start stills harvested; no completed video plate claimed. Next run checks exit/log and canonical runner ledger, reconciles any refused take, then starts next bounded batch. HOS records PR #509, 250cf459; check_all ALL CHECKS PASS. Full job remains open; J2271 independent review."
+        },
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling 6791689638: batch 2 waits for J2575 (008's two second takes), which takes the Flow lock as soon as batch 1 has finished. Batch 1 is not interrupted."
         }
       ],
       "remaining_action": "Next worker: check batch-one exit code and receipts, then continue remaining bounded batches",
@@ -196040,7 +196072,7 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 1,
+      "urgent": 3,
       "progress": {
         "step": 2,
         "of": 3,
@@ -213116,7 +213148,7 @@
       "title": "Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch",
       "needs": "macbook",
       "repo": "owb",
-      "body": "Chief ruling (11 Nov 03:08Z, acting Chief, Claude) on the stop of 02:07Z. This is the next action:\n\n1. Scope: the 13 films that have clean narration (013, 021, 027, 025, 023, 031, 020, 022, 028, 029, 024, 026, 019, calm Moon first and Andromeda last), about 107.7 minutes. The 110-minute floor is lifted for this test: clean narration over one soft bed matters more than ten minutes. 005 and 006 are out. No clean narration of either exists on any studio disk, and filtering a mixed master is not separation. 032 is not added: it is not finished or public. If Ben likes the format, it can join a later version.\n2. Cuts. The plan's numbers are a guide. Line each film's laid narration up with its master, then put every cut in a pause between whole sentences. Never cut inside a word. A subscribe or next-week sentence comes out whole. Where an opening trim would clip the first word, keep the whole word and cover the unwanted hook picture instead. For 020, end on the whole sentence that finishes at 572.34 s. Write the final cut list beside the build, with the plan's number and the number used for each.\n3. Cover plates as the brief already says: the plan's own alternative first, else the free official download with its record.\n4. Build each chapter as its own output on the MacBook's own disk, so that no run has to leave an encode going, then join the chapters without encoding them again. The darkening is done in the edit; `picture_qa` has no sleep-darken option, so do not call one, and do not waive a failure.\n5. Then as before: loudness, peak, silence, call-to-action and join checks; master and the 12-minute spot-check reel to the NAS with hashes; Ben's watch card. Earliest air date Sat 12 Dec.\n\nChief note, 11 Nov 02:00Z (acting Chief, Claude): the inputs that were only on the Mini are now on studio-live, checked by size and sha256 (J2548, `jobs/reviews/J2548/COPIED.md`): all five narration stems (023 to 027, with `earth_spin_vo_v02order.wav`), both music beds, the 021 master `saturn_first_cut_v03f.mp4`, all 13 word-timing and input files under `02_Video-Projects/_sleep_video_01/j2452/`, and the cover plates that could be found for 019, 025, 026 and 027.\n\nFourteen cover plates the plan names were never downloaded to any studio disk; `COPIED.md` lists them by chapter. For each, in this order: (1) use the alternative the plan or `COPIED.md` already names (005: the film's own clean slices at 172.2 to 179.9 s and 275.2 to 283.0 s; 025: the film's archived pool pictures of the same subject; 026: the pool plates that were copied); (2) otherwise download the named NASA or ESA picture from its own official page at full resolution. These are free and public domain. Record the id, the page title, the credit line, the URL and the sha256 beside the build, and save the file in the film's `03_Footage` folder on studio-live. (3) If a named id cannot be found on the official site, say which and cover that window with the film's own clean footage. No generated picture, no paid picture.\n\nAfter J2451 (05_Analytics/owb/SLEEP_VIDEO_01_PLAN.md). Build from the finished masters on studio-live (never re-render the source films; cut and join), scratch on $STUDIO_SCRATCH (the MiniWork SSD). Apply the plan's cuts, the single soft bed, no SFX, crossfades, darken and dissolves. Gates: loudness about -20 LUFS integrated with no peak above -6 dBTP, no gap of silence over 3 s, no subscribe/CTA line left (check against the scripts), picture_qa on the joins. Master copied to the NAS film folder the same run with sha256 (master rule). Build the chosen thumbnail. Then set awaits_ben (jobs.py awaits) so it goes to Ben's UAT lane with the file, the running order and a note that he can spot-check (first 5 min, two joins, last 5 min). No upload until Ben OKs. £0.\n\nChief note, 10 Nov 23:20Z (acting Chief, Claude): moved from the Mini to the MacBook. It sat unclaimed for a day behind the Mini's urgent work (007's title, the 009 and 013 pictures, the Shorts sweep), and every input the plan names is on the NAS, where the MacBook wrote the plan from. On the MacBook: (1) first check that every source master, narration stem and cover plate the plan names can be read from the NAS; if one cannot, list which and release the job with that list. (2) Scratch on the MacBook's own disk, not the NAS. Start the long encode detached and pick it up on a later wake; do not sit inside one wake waiting for it. (3) Build the primary 15-film order (it airs no earlier than Sat 12 Dec, after its last film is public). (4) As well as the full master, make a spot-check reel for Ben of about 12 minutes: the first 5 minutes, one minute around each of two joins, the last 5 minutes. (5) Master and reel to the NAS film folder with sha256. If `jobs.py awaits` is refused in the worker session, park for Chief with both paths and the Chief sends Ben's watch card. No upload, nothing in Studio, no real money.\n\nChief correction, 10 Nov 23:25Z (acting Chief, Claude). The note above is wrong on one point and the job's history says why: this build was started on the Mini on 10 Nov at 10:04Z, and step 1 of 6 (the input check) is done. What it found: 11 of 15 source masters are readable (027, 025, 031, 020, 028, 029, 024, 026, 019, 005, 006). Not found at the plan's paths or the upload register's: 013 Moon; 021 Saturn v03f (the archive has v03c, d and e only); 022 Sun v05 (the archive has v01 to v04 only). 023 Venus v05e is in the iCloud watch folder but was not downloaded on the Mini. Most of the plan's narration file names do not exist, so its cut times are unverified. The Mini also left word timings for the 11 masters on its own SSD (`/Volumes/MiniWork/scratch/j2452/asr/`, input list `/Volumes/MiniWork/scratch/j2452/inputs.json`, done file `~/_desk/logs/j2452-asr.done`). The MacBook cannot read those: on the MacBook, make the word timings again, or release the job and say so, and it goes back to the Mini. Ruling so nothing waits on the four missing films: look for each for no more than 15 minutes (NAS archive, the film's own folders, the iCloud watch folder). Use only a film whose finished master is in hand and matches what is on YouTube; never an earlier version in its place. If any of the four is still missing, leave it out and fill with 003 (Alien Worlds) and 004 (JWST), which the plan's November order already uses, keeping calm films first and last and the total between 110 and 130 minutes. Say in the result which films went in. Narration: use each film's real locked voice files (the film's own build script names them), lined up to the master with the word timings. If a film's narration cannot be separated from its music and effects, leave that film out and say so; do not put a film in with its stings and effects.\n\nChief note, 10 Nov 23:58Z: the MacBook's input check (#778) found every source master on the NAS (three were in other folders; the 021 master as picture and sound files). Still only on the Mini: 5 narration stems, 2 music beds, 7 cover-plate sets and the word timings. J2548 copies them to the NAS; this job waits for it and then builds on the MacBook from `05_Analytics/owb/SLEEP_VIDEO_01_NAS_INPUT_CHECK.md` paths. All 15 films of the primary order are in hand, so the fill with 003 and 004 is not needed.",
+      "body": "Chief ruling (acting Chief, Claude, 11 Nov 09:29Z) on the park of 09:15Z. **New approach, and this is the reason recorded for it:** about six hours of runs went into one chapter of thirteen, repairing repeated shots that are in the public Betelgeuse film itself. This is a test of whether people want a two-hour sleep film from us. It does not need better picture than the films it is made of.\n\n1. **Stop rebuilding pictures from shot lists.** Each chapter's picture is that film's own finished master, cut at exactly the points the narration was cut (the cut list already written beside the build), over the narration chapter already built. No replacement footage, no more source searches. The search budget for the seven Betelgeuse windows is closed: under \"Missing footage fallback\" step 4 the decision is the film's own public picture for that line.\n2. **New picture only where this job changes the film:** the hook captions and Orbit, agenda, act-card and subscribe pictures that sit under kept narration (the cover plates the brief and the plan name, in the brief's order, and the two Betelgeuse covers that already passed); the quiet chapter names and the breaths between films; the darkening. If a cover window cannot be filled inside the rule's 20 minutes and three candidates, hold the film's own neighbouring shot over it and say so in the report.\n3. **Dropped from this first version, and written on Ben's watch card:** removing the films' charts, and a dissolve on every cut inside a film. Charts and labels stay as the films have them. Dissolves go only on the cuts this job makes.\n4. **Checks, none waived.** Before the darkening: the pixel check (`polish_gate`) over every saved chapter in full, and `picture_qa` on a cut list of what this job cut (trims, cover plates, joins), which is what the brief always asked for (\"picture_qa on the joins\"). A failure there is fixed, not waived. Repeats and marks inside an untouched stretch of a public master (no cover, no trim within two seconds) are listed in the report as \"in the public film\" and left: they were accepted when the film went public, and this job does not change them. The darkening goes on last. Check it by measurement: same duration and frame count as the undarkened file, brightness at 85% of it within two points from minute 20:30 on. List each chapter's five brightest two-second windows after darkening, with one frame each, so Ben's reel can show the worst one.\n5. **One chapter a run, in running order, Moon first.** A run cuts one master, adds its covers, checks it, darkens it, saves it with its hash in this film's folder on the working-film store, and records the chapter in `jobs.py progress` (step k of 15: thirteen chapters, then the join with the single bed and the final sound and join checks, then the reel, the copies and Ben's watch card). Finish the four narration chapters still owed (013, 021, 022, 023) in the run that needs each. A second chapter in the same run is fine if there is time; never leave an encode running.\n6. **Nothing already made is deleted.** The rebuilt Betelgeuse, Earth and Venus pictures and their reports stay where they are as evidence; none goes into version 1. If Ben watches the reel and wants the charts gone, that is a second version with its own scope.\n\nEarliest air date is still Sat 12 Dec. No upload, nothing in Studio, no spend.\n\nChief ruling (11 Nov 03:08Z, acting Chief, Claude) on the stop of 02:07Z. This is the next action:\n\n1. Scope: the 13 films that have clean narration (013, 021, 027, 025, 023, 031, 020, 022, 028, 029, 024, 026, 019, calm Moon first and Andromeda last), about 107.7 minutes. The 110-minute floor is lifted for this test: clean narration over one soft bed matters more than ten minutes. 005 and 006 are out. No clean narration of either exists on any studio disk, and filtering a mixed master is not separation. 032 is not added: it is not finished or public. If Ben likes the format, it can join a later version.\n2. Cuts. The plan's numbers are a guide. Line each film's laid narration up with its master, then put every cut in a pause between whole sentences. Never cut inside a word. A subscribe or next-week sentence comes out whole. Where an opening trim would clip the first word, keep the whole word and cover the unwanted hook picture instead. For 020, end on the whole sentence that finishes at 572.34 s. Write the final cut list beside the build, with the plan's number and the number used for each.\n3. Cover plates as the brief already says: the plan's own alternative first, else the free official download with its record.\n4. Build each chapter as its own output on the MacBook's own disk, so that no run has to leave an encode going, then join the chapters without encoding them again. The darkening is done in the edit; `picture_qa` has no sleep-darken option, so do not call one, and do not waive a failure.\n5. Then as before: loudness, peak, silence, call-to-action and join checks; master and the 12-minute spot-check reel to the NAS with hashes; Ben's watch card. Earliest air date Sat 12 Dec.\n\nChief note, 11 Nov 02:00Z (acting Chief, Claude): the inputs that were only on the Mini are now on studio-live, checked by size and sha256 (J2548, `jobs/reviews/J2548/COPIED.md`): all five narration stems (023 to 027, with `earth_spin_vo_v02order.wav`), both music beds, the 021 master `saturn_first_cut_v03f.mp4`, all 13 word-timing and input files under `02_Video-Projects/_sleep_video_01/j2452/`, and the cover plates that could be found for 019, 025, 026 and 027.\n\nFourteen cover plates the plan names were never downloaded to any studio disk; `COPIED.md` lists them by chapter. For each, in this order: (1) use the alternative the plan or `COPIED.md` already names (005: the film's own clean slices at 172.2 to 179.9 s and 275.2 to 283.0 s; 025: the film's archived pool pictures of the same subject; 026: the pool plates that were copied); (2) otherwise download the named NASA or ESA picture from its own official page at full resolution. These are free and public domain. Record the id, the page title, the credit line, the URL and the sha256 beside the build, and save the file in the film's `03_Footage` folder on studio-live. (3) If a named id cannot be found on the official site, say which and cover that window with the film's own clean footage. No generated picture, no paid picture.\n\nAfter J2451 (05_Analytics/owb/SLEEP_VIDEO_01_PLAN.md). Build from the finished masters on studio-live (never re-render the source films; cut and join), scratch on $STUDIO_SCRATCH (the MiniWork SSD). Apply the plan's cuts, the single soft bed, no SFX, crossfades, darken and dissolves. Gates: loudness about -20 LUFS integrated with no peak above -6 dBTP, no gap of silence over 3 s, no subscribe/CTA line left (check against the scripts), picture_qa on the joins. Master copied to the NAS film folder the same run with sha256 (master rule). Build the chosen thumbnail. Then set awaits_ben (jobs.py awaits) so it goes to Ben's UAT lane with the file, the running order and a note that he can spot-check (first 5 min, two joins, last 5 min). No upload until Ben OKs. £0.\n\nChief note, 10 Nov 23:20Z (acting Chief, Claude): moved from the Mini to the MacBook. It sat unclaimed for a day behind the Mini's urgent work (007's title, the 009 and 013 pictures, the Shorts sweep), and every input the plan names is on the NAS, where the MacBook wrote the plan from. On the MacBook: (1) first check that every source master, narration stem and cover plate the plan names can be read from the NAS; if one cannot, list which and release the job with that list. (2) Scratch on the MacBook's own disk, not the NAS. Start the long encode detached and pick it up on a later wake; do not sit inside one wake waiting for it. (3) Build the primary 15-film order (it airs no earlier than Sat 12 Dec, after its last film is public). (4) As well as the full master, make a spot-check reel for Ben of about 12 minutes: the first 5 minutes, one minute around each of two joins, the last 5 minutes. (5) Master and reel to the NAS film folder with sha256. If `jobs.py awaits` is refused in the worker session, park for Chief with both paths and the Chief sends Ben's watch card. No upload, nothing in Studio, no real money.\n\nChief correction, 10 Nov 23:25Z (acting Chief, Claude). The note above is wrong on one point and the job's history says why: this build was started on the Mini on 10 Nov at 10:04Z, and step 1 of 6 (the input check) is done. What it found: 11 of 15 source masters are readable (027, 025, 031, 020, 028, 029, 024, 026, 019, 005, 006). Not found at the plan's paths or the upload register's: 013 Moon; 021 Saturn v03f (the archive has v03c, d and e only); 022 Sun v05 (the archive has v01 to v04 only). 023 Venus v05e is in the iCloud watch folder but was not downloaded on the Mini. Most of the plan's narration file names do not exist, so its cut times are unverified. The Mini also left word timings for the 11 masters on its own SSD (`/Volumes/MiniWork/scratch/j2452/asr/`, input list `/Volumes/MiniWork/scratch/j2452/inputs.json`, done file `~/_desk/logs/j2452-asr.done`). The MacBook cannot read those: on the MacBook, make the word timings again, or release the job and say so, and it goes back to the Mini. Ruling so nothing waits on the four missing films: look for each for no more than 15 minutes (NAS archive, the film's own folders, the iCloud watch folder). Use only a film whose finished master is in hand and matches what is on YouTube; never an earlier version in its place. If any of the four is still missing, leave it out and fill with 003 (Alien Worlds) and 004 (JWST), which the plan's November order already uses, keeping calm films first and last and the total between 110 and 130 minutes. Say in the result which films went in. Narration: use each film's real locked voice files (the film's own build script names them), lined up to the master with the word timings. If a film's narration cannot be separated from its music and effects, leave that film out and say so; do not put a film in with its stings and effects.\n\nChief note, 10 Nov 23:58Z: the MacBook's input check (#778) found every source master on the NAS (three were in other folders; the 021 master as picture and sound files). Still only on the Mini: 5 narration stems, 2 music beds, 7 cover-plate sets and the word timings. J2548 copies them to the NAS; this job waits for it and then builds on the MacBook from `05_Analytics/owb/SLEEP_VIDEO_01_NAS_INPUT_CHECK.md` paths. All 15 films of the primary order are in hand, so the fill with 003 and 004 is not needed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -213124,8 +213156,8 @@
       "eta_min": 240,
       "status": "claimed",
       "by": "macbook",
-      "since": "2026-11-11T09:09Z",
-      "eta": "2026-11-11T13:09Z",
+      "since": "2026-11-11T09:29Z",
+      "eta": "2026-11-11T13:29Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -213644,17 +213676,35 @@
           "at": "2026-11-11T09:11Z",
           "by": "macbook",
           "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-11T09:15Z",
+          "by": "macbook",
+          "what": "blocked: Parked for Chief: PR 789 df3d98421 verifies 18 retained component hashes and 13 clocks. Adopted 029 still fails seven reuse rows; repeated replacement investigations have exhausted the bounded-search scope. Name a genuinely new source/approach and bounded per-chapter work before another trial. Exact windows and handoff in RESUME_2026-11-11_REPAIR_SCOPE.md. Twelve other picture chapters plus finishing/final gates/reel/delivery exceed one 25-minute run. No UAT or completed master."
+        },
+        {
+          "at": "2026-11-11T09:29Z",
+          "by": "claude",
+          "what": "reopened: acting Chief ruling: stop rebuilding pictures from shot lists. Each chapter is the film's own finished picture, cut where the narration was cut; new picture only for the covers, chapter names and darkening; checks run on what this job cut, before the darkening; one chapter a run. Charts stay in this first version and Ben's watch card says so."
+        },
+        {
+          "at": "2026-11-11T09:29Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Resume PR 789 diagnostic checkpoint; repair 029 picture reuse before remaining chapters",
       "due": "2026-11-18T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the two-hour 'fall asleep to the solar system' video from our finished films, ready for you to spot-check",
+      "action": "Sleep video: one chapter a run from each film's own finished picture, cut where the narration was cut; then join, check, reel and Ben's watch card",
       "progress": {
-        "step": 2,
-        "of": 6,
-        "at": "2026-11-11T09:11Z",
-        "by": "macbook"
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T09:29Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
@@ -219787,13 +219837,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T08:59Z",
-      "eta": "2026-11-11T10:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "orbit-with-ben #807 and #811 merged. AGENTS.md holds the studio's rules (704 lines to 436); studio/RULES.md holds Orbit With Ben's own (303 lines). No line was cut in two; the move was made by a script and checked against the old file: 231 lines moved, none lost, none changed, 18 new pointers and headers. sync_rules.py reads both files, with tests; every safety line of the Never list stays in AGENTS.md. AGENTS.md says in its first screen to read studio/RULES.md next; CLAUDE.md and the Cursor rule name both. Left as their own jobs: the two live prompts (J2577) and History of Science's own file (J2578). docs/RULES_SPLIT.md records what went where and why.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -219819,6 +219869,11 @@
           "at": "2026-11-11T08:59Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "done: orbit-with-ben #807 and #811 merged. AGENTS.md holds the studio's rules (704 lines to 436); studio/RULES.md holds Orbit With Ben's own (303 lines). No line was cut in two; the move was made by a script and checked against the old file: 231 lines moved, none lost, none changed, 18 new pointers and headers. sync_rules.py reads both files, with tests; every safety line of the Never list stays in AGENTS.md. AGENTS.md says in its first screen to read studio/RULES.md next; CLAUDE.md and the Cursor rule name both. Left as their own jobs: the two live prompts (J2577) and History of Science's own file (J2578). docs/RULES_SPLIT.md records what went where and why."
         }
       ],
       "remaining_action": "Step 2: move Orbit With Ben's own rules to studio/RULES.md word for word, with a check that no line is lost",
@@ -219830,7 +219885,8 @@
         "of": 5,
         "at": "2026-11-11T08:25Z",
         "by": "claude"
-      }
+      },
+      "done_ref": "#811"
     },
     {
       "id": "J2528",
@@ -223061,13 +223117,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-11T08:58Z",
-      "eta": "2026-11-11T10:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
-      "result": "",
+      "result": "Reworked HOS PR #505 (gemini/J2503-email-scrub @ ab2287b) per Grok ruling 6790775957: 010/013 runners+tests back 100% as on main (0 diff), zero STUDIO_FLOW env vars, SHA-256 fingerprint comparisons in 002..007 scripts and placeholder in _archive, all 16 008/009 files restored to main and held in scripts/email_ratchet.json, check_all.sh + unit tests PASS, posted to HOS desk (#180 comment 6792072319). PR #505 held unmerged until Thu 12 Nov 19:13 London and J2270.",
       "history": [
         {
           "at": "2026-11-11T08:24Z",
@@ -223103,17 +223159,37 @@
           "at": "2026-11-11T09:02Z",
           "by": "macbook-2",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "macbook-2",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:21Z",
+          "by": "macbook-2",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:22Z",
+          "by": "macbook-2",
+          "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-11T09:23Z",
+          "by": "macbook-2",
+          "what": "done: Reworked HOS PR #505 (gemini/J2503-email-scrub @ ab2287b) per Grok ruling 6790775957: 010/013 runners+tests back 100% as on main (0 diff), zero STUDIO_FLOW env vars, SHA-256 fingerprint comparisons in 002..007 scripts and placeholder in _archive, all 16 008/009 files restored to main and held in scripts/email_ratchet.json, check_all.sh + unit tests PASS, posted to HOS desk (#180 comment 6792072319). PR #505 held unmerged until Thu 12 Nov 19:13 London and J2270."
         }
       ],
-      "remaining_action": "Reworking #505 on gemini/J2503-email-scrub: revert 008/009/010/013, replace STUDIO_FLOW_ACCOUNT with sha256 fingerprints, update email_ratchet.json",
+      "remaining_action": "Mark J2572 done and post MacBook report on OWB studio thread",
       "due": "2026-11-12T12:00:00Z",
       "for": "gemini",
       "kind": "review",
       "plain": "Redo the History of Science address clean-up the safer way, leaving the live picture tools untouched",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T09:02Z",
+        "at": "2026-11-11T09:22Z",
         "by": "macbook-2"
       }
     },
@@ -223316,7 +223392,7 @@
       "kind": "video",
       "plain": "Remake two shots for the Franklin film that came out wrong (a spark far too big, a stray wire)",
       "mini_only": true,
-      "urgent": 2,
+      "urgent": 1,
       "progress": {
         "step": 1,
         "of": 3,
@@ -223357,7 +223433,194 @@
       "due": "2026-11-12T14:00:00Z",
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before they go into the edit",
-      "urgent": 3
+      "urgent": 2
+    },
+    {
+      "id": "J2577",
+      "title": "The relay's and the MacBook worker's prompts name both rule files (AGENTS.md, then the channel's studio/RULES.md)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Follow-up to J2527 (orbit-with-ben #807 and #811, merged). The rule book is two files now: `AGENTS.md` (the studio's rules) and `studio/RULES.md` (this channel's own). `AGENTS.md` says in its first screen to read the channel file next, so nothing is broken today. Two live prompts still name only `AGENTS.md`:\n\n1. The relay's prompt in `scripts/chief_relay.py` (\"Read AGENTS.md (the rules, the Never list, ...)\" and, for History of Science, \"Read its AGENTS.md\").\n2. The MacBook worker's brief in `scripts/macbook_worker.py` (the same line, and \"follow its AGENTS.md\" for the other channels).\n\nChange each so it names both files for the job's channel: the studio's `AGENTS.md`, then that channel's `studio/RULES.md` when the checkout has one (ask `channels.py`; a channel without the file yet is told only `AGENTS.md`, as now). Keep every other word of both prompts. Tests beside each script's own: today's two channels, a channel with no rules file, and a made-up third channel. One pull request; the whole suite and both ratchets pass.",
+      "ref": "J2527",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make the two live prompts name both rule files for the job's channel",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Tell the Mini's and the MacBook's helpers to read each channel's own rules as well as the studio's"
+    },
+    {
+      "id": "J2578",
+      "title": "History of Science: move its own rules into studio/RULES.md, word for word, the way orbit-with-ben #811 did",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Follow-up to J2527. Orbit With Ben's own rules moved to its `studio/RULES.md` (orbit-with-ben #811) by a script that never cut a line in two and checked that none was lost or changed. Do the same for History of Science, in a pull request there for Grok.\n\n`docs/RULES_SPLIT.md` in orbit-with-ben, section \"What History of Science's own rules file should hold\", says what goes: its *Definition of done*, *Teach on screen*, *Polish pass*, *Reference lessons*, *Packaging* and *Ben's check-in* sections, and from its Never list the lines that are its own (Channels, premiere, the Explorer at frame 0, burned-in subscribe graphics, Made for Kids, Titles, Studio, Picture, Voice, TikTok, Social). Its publish days and times stay where they are for now. Add \"every shot fills the 9:16 frame\" to its Shorts rules: the shared gate already enforces it and the file does not state it.\n\nMethod: copy `jobs/reviews/J2527/move.py` as the pattern. Each line goes whole to one file; a line holding both kinds stays in `AGENTS.md`; the check must print \"lost or changed: 0\". Its `sync_rules.py` reads both files the way orbit-with-ben's does now. Its `AGENTS.md` says in its first screen to read `studio/RULES.md` next. Do not touch a runner, a plan, a scope or any file a live picture job pins. Post on the History of Science desk for Grok when it is up.",
+      "ref": "J2527",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Split History of Science's rule book into studio rules and its own, with the nothing-lost check",
+      "due": "2026-11-14T18:00:00Z",
+      "plain": "Give History of Science its own rules file, separate from the studio's rules"
+    },
+    {
+      "id": "J2579",
+      "title": "Shorts gate: sample twice a second for the padded-looking count (Grok's ruling), with the 56 labelled frames as its test",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ruled by Grok on the History of Science desk (6791598029, 11 Nov 08:58Z): the 15% figure stays, and the padded-looking count is sampled twice a second.\n\nThe Shorts gate (`00_Brand/Channel-Setup/tools/gate_shorts_open.py`, a shared file) samples one frame a second. On thirteen real Shorts (J2562, #809) the 15% figure for padded-looking frames with no straight edge gave the right answer on every file, with one sampled frame of room each way: `Wvjd8g0CpzE` passes with 3 of 26, `kKN8Ale42sE` and `xdurJQcoiGM` fail by one frame and by two.\n\n1. Sample twice a second for the padded-looking (no straight edge) count only. Leave the 10% straight-edge count and both figures as they are.\n2. Tests: the 56 labelled frames (`jobs/reviews/J2560/J2560_labelled_frames.json`) and the existing gate tests still pass.\n3. A Mini job then reruns the same thirteen Shorts read-only from a clean copy of main and puts the new table in the pull request, with the margin each way for `Wvjd8g0CpzE`, `kKN8Ale42sE` and `xdurJQcoiGM`. It passes only if all thirteen come out as the by-eye audit (J2545) has them.\n4. If any file flips, do not move the figure: park it for Grok with the frames that changed.\n5. The file is shared: change it here, lock it (`core_sync.py lock`), push it to History of Science, and open the pair of pull requests. Grok reviews. The gate stays as it is on main until then.",
+      "ref": "J2562",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sample twice a second for the no-edge count in the Shorts gate; pair of pull requests for Grok",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Make the Shorts screen-fill check look twice a second, so one stray frame cannot tip a result"
+    },
+    {
+      "id": "J2580",
+      "title": "Daily credit reading: read the Cursor usage page's new layout, and find out why the Claude reader lands on the new-chat page",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Follow-up to J2564 and J2566. The Mini copied what the two unread usage pages show (`jobs/reviews/J2564/PAGES.md`, orbit-with-ben #810). Neither is a sign-in screen, so nothing is on Ben.\n\n1. **Cursor.** The page is a signed-in usage overview: \"Ultra\", \"30% used\", \"Grok Bot 29%\", \"Cursor 1%\", \"Weekly included usage\", \"Resets 12 Nov\". It has no \"Cursor Models\" or \"Other Models\" line, which is what `parse_cursor` in `scripts/ai_spend_daily.py` looks for first. Make the reader read this layout from the exact lines in the file, keep the two older layouts working, and add the page as a test fixture.\n2. **Claude.** The reader ended on the new-chat page and kept only navigation lines, so no usage text was captured. Work out why from the address in the file (a redirect away from the usage page, or the reused tab): the reader must land on the usage page itself or say plainly that it was sent elsewhere. If the usage page's own words are still needed, add a line to the failure output that makes the next 08:30 log show them, rather than queueing another copy job.\n3. Tests beside the script's own. No spend, no sign-in.",
+      "ref": "J2566",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T09:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix the Cursor and Claude usage readers from the copied page text",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Fix the daily credit check so it can read the Cursor and Claude usage pages again"
+    },
+    {
+      "id": "J2581",
+      "title": "Verify condition for J2034",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2034: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2034 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "gemini",
+      "since": "2026-11-11T09:15Z",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T09:14Z",
+      "result": "parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits.",
+      "history": [
+        {
+          "at": "2026-11-11T09:14Z",
+          "by": "relay",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-11T09:15Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T09:16Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2581; starting verification of J2034 predecessor J2033 and Chief picture ruling status for HOS:009"
+        },
+        {
+          "at": "2026-11-11T09:21Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Confirmed J2033 is done (HOS #501 2792e349) and J2034 was parked for Chief at 09:13Z by claudecode (2f6a1374ab) with 0 Chief rulings since"
+        },
+        {
+          "at": "2026-11-11T09:26Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Measured all 18 continuation joins (still_vs_f0 RGB MAE 1.99-15.39, all coherent) and verified v05 trims/parents for P02:10 (use_s=2.58s clean), P02:11_c1, and P03:01_c1"
+        },
+        {
+          "at": "2026-11-11T09:27Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verified J2034 awaits Chief picture ruling (2f6a1374ab); measured all 18 continuation joins (RGB MAE 1.99-15.39) and v05 trim windows; parking J2581 for Chief"
+        },
+        {
+          "at": "2026-11-11T09:27Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2034 condition verified — do NOT reopen J2034 to worker queue without a Chief picture ruling. Predecessor J2033 is done (HOS PR #501 2792e349, 20/20 clips minted & NAS-archived, 0 KEEP, net 2,000 Flow credits, 0 pending charges, reservation closed), and review-lane worker claudecode completed the J2034 technical/still review at 2026-11-11T09:13Z (jobs/reviews/J2034/REVIEW.md & technical_probe.json, OWB commit 2f6a1374ab) and parked J2034 for the Chief's picture ruling (no Chief ruling since 09:13Z; reconcile_holds queued J2581 at 09:14Z because J2034 has after=J2033=done). Supplementary read-only verification completed in J2581 to answer the open questions in REVIEW.md: (1) All 18 continuation joins verified (start-still vs child frame-0 RGB MAE 1.99-15.39, luma MAE 1.61-15.34; parent last frame vs child frame-0 RGB MAE 2.18-16.88 — all 18 continuations match their parent end frames with 0 wrong attachments); (2) P02:10_how_high_t1 (540cb366...): v05 board requires only use_s=2.58 s (0.00-2.58 s), and frames at 0.00, 0.50, 1.00, 1.50, 2.00, 2.58 s are completely clean (Moon high in sky, ring/descent artifact only starts at >=3.0-5.0 s after the 2.58 s out-point, so 0.00-2.58 s needs 0 retake/0 credits); (3) P02:11_explorer_apple_c1_t1 (628cc70f..., use_s=4.94 s): approved tranche-1 parent 11_explorer_apple_t1 already has the same red apple and round gold-rimmed glasses (still_vs_f0 RGB MAE 3.58), though c1 repeats the pick-up/toss action from the repeated prompt and pushes in at 4.0 s; (4) P03:01_really_falling_c1_t1 (9e6fa8d1..., use_s=5.26 s): approved tranche-1 parent 01_really_falling_t1 last frame already shows the exact same Moon at the join (still_vs_f0 RGB MAE 13.63), while c1 adds a second curved ball path at 1.0-5.26 s as the left Moon fades around 3.5-4.0 s; (5) P05:11_table_three_again reuse window: 0.30-7.00 s (6.70 s) of P01:03_table_three fits inside the J1237 0.00-7.00 s lock. Because gemini is neither holder (claudecode) nor elected Chief, jobs.py wait J2034 --recheck J2581 is refused ('Only the holder or elected Chief may update this hold'). Chief: please issue the J2034 picture ruling (or run jobs.py wait J2034 --agent <chief> ... --recheck J2581) and close J2581. £0 / 0 credits."
+        }
+      ],
+      "remaining_action": "Chief rules on J2034 HOS 009 tranche-2 picture review (2f6a1374ab + J2581 join/trim verification) and closes J2581",
+      "kind": "review",
+      "recheck_of": "J2034",
+      "due": "2026-11-11T10:14:12+00:00",
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-11T09:27Z",
+        "by": "gemini",
+        "note": "Verified J2034 awaits Chief picture ruling (2f6a1374ab); measured all 18 continuation joins (RGB MAE 1.99-15.39) and v05"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
