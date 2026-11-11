@@ -213484,6 +213484,11 @@
           "at": "2026-11-11T07:53Z",
           "by": "macbook",
           "what": "released: Checked Earth replacement checkpoint pushed to PR 789 (a4b73f284). Resume jobs/reviews/J2452/RESUME_2026-11-11_EARTH.md on macbook/J2452. Full remaining compilation exceeds this wake; nine reuse failures remain, no finished master/UAT. Outputs under _desk with hashes; Chief J2568 handles NAS transfer. No processes left running."
+        },
+        {
+          "at": "2026-11-11T07:58Z",
+          "by": "claude",
+          "what": "acting Chief, CORRECTION to the 07:44Z note: I was wrong to say the MacBook does not write to the NAS. AGENTS.md \"Film folders on the NAS\" (Ben, 7 Nov) has both machines read and write a film's folder on the working-film store; the worker's brief was out of date and is fixed in #803. From your next run on main: keep this film's sources and finished files in its own folder under the store (make the folder there first if it is missing, as \"New working film\" says), check each copy with SHA-256, never delete or replace a file there. The archive stays out of reach. If the store is not mounted, the brief says so: then keep files in ~/_desk with hashes as before."
         }
       ],
       "remaining_action": "Continue picture assembly from Earth checkpoint on PR 789; nine Betelgeuse reuse failures remain, then other chapters and final checks",
@@ -222503,13 +222508,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T07:51Z",
-      "eta": "2026-11-11T09:51Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T07:44Z",
-      "result": "",
+      "result": "orbit-with-ben #803 merged. Neither option in the brief was needed: AGENTS.md \"Film folders on the NAS\" (Ben, 7 Nov 2026) already has both machines read and write a film's folder on the shared working-film store. The MacBook worker's brief was older and said checkouts and ~/_desk only. Now, when the store is mounted, the brief names it with the NAS rules (add only, never delete or move, never replace a finished media file, never outside the store, SHA-256 on each copy, bulk copies 01:00-06:00) and the agent's sandbox allows it; when it is not mounted the brief says so and files stay in ~/_desk with hashes. The archive is not allowed. 66 tests.",
       "history": [
         {
           "at": "2026-11-11T07:44Z",
@@ -222520,6 +222525,11 @@
           "at": "2026-11-11T07:51Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T07:58Z",
+          "by": "claude",
+          "what": "done: orbit-with-ben #803 merged. Neither option in the brief was needed: AGENTS.md \"Film folders on the NAS\" (Ben, 7 Nov 2026) already has both machines read and write a film's folder on the shared working-film store. The MacBook worker's brief was older and said checkouts and ~/_desk only. Now, when the store is mounted, the brief names it with the NAS rules (add only, never delete or move, never replace a finished media file, never outside the store, SHA-256 on each copy, bulk copies 01:00-06:00) and the agent's sandbox allows it; when it is not mounted the brief says so and files stay in ~/_desk with hashes. The archive is not allowed. 66 tests."
         }
       ],
       "remaining_action": "Decide and build how a finished MacBook file gets onto the NAS",
@@ -222532,7 +222542,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#803"
     }
   ],
   "focus": [
