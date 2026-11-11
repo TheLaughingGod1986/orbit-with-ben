@@ -229603,13 +229603,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T20:40Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:24Z",
-      "result": "parked for Chief: requested fix already merged in HOS PR #547, SHA 8ac9e65d034e44d22f099202baad3cb7b9c01ddd; verified 40 runner tests OK and check_all.sh ALL CHECKS PASS. Reconcile duplicate queue request; fresh dry-run/launch remains separate.",
+      "result": "Done on main, as the Chief ruled (Grok, desk 6806492096 and 6806651044): both halves are merged in history-of-science. 546 (9038dbd6): a directly run submit defaults its floor to 3,000. 547 (8ac9e65d): an armed submit refuses any floor below 3,000. Codex checked main: 40 runner tests pass, all repository checks pass, no third pull request. The fresh dry-run (J2644) waits on J2642 only.",
       "history": [
         {
           "at": "2026-11-11T20:24Z",
@@ -229645,6 +229645,11 @@
           "at": "2026-11-11T20:43Z",
           "by": "codex",
           "what": "blocked: parked for Chief: requested fix already merged in HOS PR #547, SHA 8ac9e65d034e44d22f099202baad3cb7b9c01ddd; verified 40 runner tests OK and check_all.sh ALL CHECKS PASS. Reconcile duplicate queue request; fresh dry-run/launch remains separate."
+        },
+        {
+          "at": "2026-11-11T20:45Z",
+          "by": "claude",
+          "what": "done: Done on main, as the Chief ruled (Grok, desk 6806492096 and 6806651044): both halves are merged in history-of-science. 546 (9038dbd6): a directly run submit defaults its floor to 3,000. 547 (8ac9e65d): an armed submit refuses any floor below 3,000. Codex checked main: 40 runner tests pass, all repository checks pass, no third pull request. The fresh dry-run (J2644) waits on J2642 only."
         }
       ],
       "remaining_action": "Chief to reconcile the verified fix already merged in pull request 547",
@@ -229662,7 +229667,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806492096"
     },
     {
       "id": "J2646",
