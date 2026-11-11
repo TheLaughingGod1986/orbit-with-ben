@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2241, J2270, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2270, J2550, J2034, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -39,7 +39,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
 | J2230 | mini | open | – | – | for gemini · assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
-| J2241 | mini | claimed | codex | 2026-11-11T10:10Z | 008 picture · video · HOS 008 Franklin: mint bounded Flow Veo 3.1 Quality retakes for 1:49 salon spark, 3:13 points desk & 7:58 church/ship rods (<=3 takes/300 cr each, <=900 cr cap, GBP0) | J1881 / HOS PR #428 51bf99a6 |
 | J2242 | mini | open (after J2241) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2270 | mini | open (after J2269) | – | – | 010 picture · video · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
