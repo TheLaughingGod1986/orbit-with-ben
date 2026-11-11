@@ -170,6 +170,47 @@ class NoHomeChannel(unittest.TestCase):
                              channels.ROOT / "05_Analytics" / "ai_spend" / "ledger.jsonl")
 
 
+class StageList(unittest.TestCase):
+    """J2622: a channel's `stages` can be plain names (each weighs the same) or objects that also carry what the
+    channel knows about a stage: its weight in a film, who it goes to, and the kind of job it is."""
+
+    def channel(self, stages):
+        base = channels._load()
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", home=False, order=3, title_match=r"\bSKY\b", stages=stages)
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_plain_names_weigh_the_same(self):
+        with self.channel(["script", "edit", "upload", "check"]):
+            self.assertEqual(channels.stage_keys("sky"), ["script", "edit", "upload", "check"])
+            self.assertEqual([s["weight"] for s in channels.stage_defs("sky")], [25, 25, 25, 25])
+            self.assertEqual(channels.stage_kinds("sky"), {})
+        self.assertEqual(channels.stage_keys("owb")[:2], ["topic", "script"])           # today's list, read the same way
+        self.assertAlmostEqual(sum(s["weight"] for s in channels.stage_defs("owb")), 100)
+
+    def test_objects_carry_the_weight_the_owner_and_the_kind(self):
+        stages = [{"key": "script", "label": "Script", "weight": 70, "owner": "Grok", "kind": "script"},
+                  {"key": "ben_ok", "label": "Ben's OK", "weight": 30, "owner": "Ben"}]
+        with self.channel(stages):
+            self.assertEqual(channels.stage_keys("sky"), ["script", "ben_ok"])
+            self.assertEqual([s["weight"] for s in channels.stage_defs("sky")], [70, 30])
+            self.assertEqual(channels.stage_defs("sky")[0]["owner"], "Grok")
+            self.assertEqual(channels.stage_kinds("sky"), {"script": "script"})          # only the stages that name one
+            channels.stage_defs("sky")[0]["weight"] = 1                                  # a caller's edit changes nothing
+            self.assertEqual(channels.stage_defs("sky")[0]["weight"], 70)
+
+    def test_a_mix_or_a_missing_weight_falls_back_to_equal_weights(self):
+        with self.channel(["script", {"key": "edit", "weight": 80}]):
+            self.assertEqual([(s["key"], s["weight"]) for s in channels.stage_defs("sky")], [("script", 50), ("edit", 50)])
+
+    def test_a_channel_whose_stages_are_its_pipeline_files_own_gives_none(self):
+        with self.channel("from pipeline"), mock.patch.object(channels, "_cached", lambda slug: {}):
+            self.assertEqual((channels.stage_defs("sky"), channels.stage_keys("sky"), channels.stage_kinds("sky")), ([], [], {}))
+
+    def test_a_checkout_behind_main_takes_the_list_from_the_cached_copy(self):
+        with self.channel("from pipeline"), mock.patch.object(channels, "_cached", lambda slug: {"stages": ["a", "b"]}):
+            self.assertEqual(channels.stage_keys("sky"), ["a", "b"])
+
+
 class OwnRepos(unittest.TestCase):
     """Phase 2: each channel's settings live in its own repo at studio/channel.json."""
 

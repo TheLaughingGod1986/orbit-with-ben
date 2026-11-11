@@ -74,8 +74,8 @@ def historical_stages(repo, channel, since, cache):
             films = {prefix + d["film"]: {"film": d["film"], "stages": stage_record(d.get("stages", {})),
                      "claims": [{k: v for k, v in c.items() if k in ("stage", "by", "at", "eta")} for c in d.get("claims", [])]}
                      for d in docs.values()}
-            stages = channels.get(channel)["stages"]
-            definitions = [{"key": s, "weight": 100 / len(stages)} for s in stages]
+            # The channel's own stage list: plain names weigh the same, or it gives each stage its weight.
+            definitions = [{"key": s["key"], "weight": s["weight"]} for s in channels.stage_defs(channel)]
         out = {"available": True, "commit": revision, "sourceAt": source_at, "films": films, "definitions": definitions}
         cache[key] = out
         return out
