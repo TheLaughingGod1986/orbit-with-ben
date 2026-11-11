@@ -453,5 +453,31 @@
   "progress": {
     "step": 13,
     "of": 15
+  },
+  "limited_audio": {
+    "status": "PASS_PCM_AUDIO_ONLY",
+    "path": "$SCRATCH/final_join_v01/sleep_audio_master_candidate_v02.wav",
+    "sha256": "9eb2e15e41892c62ea3e8d78e941b767b8bb3d32811c56a037771c9285a6f287",
+    "duration_s": 6502.333333,
+    "raw_levels": {
+      "integrated_lufs": -20.6,
+      "lra_lu": 2.9,
+      "true_peak_dbtp": -5.6
+    },
+    "gain_db": 0.6000000000000014,
+    "limiter": {
+      "oversample_hz": 192000,
+      "ceiling_db": -6.5,
+      "attack_ms": 5,
+      "release_ms": 50,
+      "latency_compensated": true
+    },
+    "saved_levels": {
+      "integrated_lufs": -20.1,
+      "lra_lu": 2.9,
+      "true_peak_dbtp": -6.5
+    },
+    "silence_over_3s": [],
+    "limitations": "Final AAC read-back, CTA audit and picture/join gates remain required. No listening claim."
   }
 }
