@@ -1,5 +1,5 @@
 {
-  "next_id": 2637,
+  "next_id": 2638,
   "jobs": [
     {
       "id": "J0001",
@@ -228337,6 +228337,36 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Repair the gravity film's picture tool checks after two shots became drawn diagrams"
+    },
+    {
+      "id": "J2637",
+      "title": "Decoupling: the one filled-in settings file tracked in History of Science becomes an example file",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "**Found by the dry run of the move, 11 Nov 17:31Z.** It has counted this one item since 10 Nov and no job owned it.\n\n`02_Video-Projects/004_Whats-Really-Inside-An-Atom/07_Edit-Project/.env` is tracked in history-of-science, although that repo's `.gitignore` lists `.env`. It holds three Google Cloud project settings (a project id, a location, a Vertex project): **no key, token or password**; I read the names and the shape of the values only. The dry run counts any `.env` that is not an example, whatever it holds, so the move cannot reach zero while it is tracked.\n\nDo the smallest true thing: keep the three names in a tracked `.env.example` beside it (values as placeholders), stop tracking `.env`, and say in the pull request that film 004 is published and its picture scripts (which read that file) have no run left. Check nothing else in the repo reads that exact path before removing it from git. A machine that still wants the file copies the example and fills it in.\n\nChecks: history-of-science's own checks and tests (note the 77 failures already on main from #533, J2636), then `studio_split.py` here should read 0 under \"Keys, tokens or filled-in .env files\". No history rewrite: the values are not secrets. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T17:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T17:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "One small history-of-science pull request for Grok, after #535 is merged (one open pull request there at a time)",
+      "due": "2026-11-15T18:00:00Z",
+      "kind": "review",
+      "plain": "Tidy one leftover settings file in the History of Science repo so the studio can move"
     }
   ],
   "focus": [
