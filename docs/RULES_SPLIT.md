@@ -1,7 +1,9 @@
 # Splitting the rule book: studio rules and channel rules
 
-Step 1 of J2527. Written 11 Nov 2026 against `AGENTS.md` as it stood that morning (704 lines). **Nothing has moved
-yet.** This table is here to be read and corrected first. The move itself is the next pull request.
+J2527. Written 11 Nov 2026 against `AGENTS.md` as it stood that morning (704 lines). The line numbers below are that
+file's. **The move is done** (step 2): the channel rows are in `studio/RULES.md`, word for word. "What changed between
+the table and the move" near the end lists the four places where the move differs from the first version of this
+table, and why.
 
 ## Why
 
@@ -38,7 +40,7 @@ Anything left is a studio rule.
 |---|---|---|---|
 | Opening: "Read this first", the hand-over pointer | 1–5 | Studio | |
 | Opening: "The channel", "The job" | 7–9 | Channel | Who Orbit With Ben is and what its films are for. |
-| Docs in force | 11–23 | Split | The rule "the higher doc wins, `_archive/` is history" is studio. The eight docs listed are all Orbit With Ben's own. |
+| Docs in force | 11–23 | Channel | All eight docs listed are Orbit With Ben's own, so the section went whole. `AGENTS.md` has a new short section saying which file wins. |
 | Where things live | 24–44 | Split | See below. |
 | Commands | 45–78 | Studio | Tools every channel uses. Three rules written as comments inside it stay with it (social copy on every package, the Sources line, a Short's swap also updates its Buffer posts): each says it holds for every channel. |
 | Standing lessons | 79–115 | Split | See below. |
@@ -54,14 +56,14 @@ Anything left is a studio rule.
 | Chief relay | 415–451 | Studio | |
 | Studio board and claims | 452–462 | Studio | |
 | Film folders on the NAS | 463–525 | Studio | |
-| How films get worked on | 526–555 | Split | The production cap, the job picker, the machine split and "Ben only does UAT" are studio. The weekly targets are each channel's own numbers. |
-| Stop and ask Ben | 556–650 | Split | Nearly all studio. The publish days and times are each channel's own. See below. |
+| How films get worked on | 526–555 | Studio | The weekly targets are each channel's own numbers, but one table holds both, so it stays for now. |
+| Stop and ask Ben | 556–650 | Studio | The publish days and times are each channel's own, but each list names both channels, so they stay for now. See below. |
 | Never | 651–686 | Split | See below. |
 | Missing footage fallback | 687–697 | Studio | History of Science carries the same text. |
 | Studio core | 698–701 | Studio | |
 | Changing the rules | 702–704 | Studio | Gains one clause: a channel changes its own rules file the same way. |
 
-By line count: about 240 lines are Orbit With Ben's own and about 460 are the studio's.
+By line count: 231 lines with text went to `studio/RULES.md` and 326 stayed in `AGENTS.md`.
 
 ## Where things live (lines 24–44)
 
@@ -82,7 +84,7 @@ By line count: about 240 lines are Orbit With Ben's own and about 460 are the st
 |---|---|---|
 | 1. Neighbour | Channel | Topic method. History of Science states its own in its "Definition of done". |
 | 2. Edit (v03b) | Channel | |
-| 3. Production | Both | One line holds both kinds. "Orbit = Omni only", "no Orbit on long thumbs", "verify NASA IDs" are channel. "No media in git" and "Chief gives the final OK" are studio. The line is cut at its semicolons; no word changes. |
+| 3. Production | Studio | One line holds both kinds ("Orbit = Omni only" is channel; "no media in git" and "Chief gives the final OK" are studio). It stays whole in `AGENTS.md`. |
 | 4. Thread | Studio | |
 | 5. Shorts feed, all nine points | Channel | The gate that enforces "every shot fills the 9:16 frame" is shared, so History of Science needs that line in its own rules too. |
 | 6. YouTube state changes leave a record | Studio | |
@@ -107,14 +109,14 @@ their words and dates unchanged.
 |---|---|
 | "Chief owns the studio", "Ben only watches finished videos", "Ben's final watch is the watch-and-listen check" | Studio |
 | Continuous flow E, F, G, H | Studio |
-| Weekly publish cadence (Orbit: two longs a week, Sunday and Wednesday 18:00; History of Science: one, Thursday 18:00) | Channel. Each channel states its own days. The studio keeps one line: every channel has a locked cadence in its rules. |
+| Weekly publish cadence (Orbit: two longs a week, Sunday and Wednesday 18:00; History of Science: one, Thursday 18:00) | Studio for now. One line names both channels. |
 | "Standing order: ask Chief first, not Ben" and the four things only Ben decides | Studio |
 | "Chief owns `AGENTS.md` and the Never list" | Studio. Gains: the Chief owns each channel's rules file too. |
 | Budget, the credit holds, the AI spend month | Studio |
 | "Four a month on each channel" | Studio |
 | "One film at a time, then Ben watches it" | Studio |
 | Videos tab, how work moves, dashboard behaviours | Studio |
-| Locked publish slots (the four lines of days and times) | Channel, with the cadence above |
+| Locked publish slots (the four lines of days and times) | Studio for now. One list names both channels. |
 | "The real upload is the only run that passes `PUBLISHING_DRY_RUN=false`" | Studio |
 
 ## Never (lines 651–686)
@@ -124,13 +126,12 @@ their words and dates unchanged.
 | Uploads: swap a file on an id, re-upload a public idea, delete a video, re-render over an uploaded file | Studio | History of Science has the same four. |
 | Publishing: premiere a long | Channel | History of Science's version differs ("until subscribers are in the hundreds"). |
 | Publishing: more than one Short a day | Studio | Same in both. |
-| Publishing: a Short of 40 s or more | Studio | Same number in both. The one 50–60 s length-test exception is Orbit With Ben's and goes with its Packaging section. |
+| Publishing: a Short of 40 s or more | Studio | Same number in both. The line carries Orbit With Ben's one length-test exception and stays whole. |
 | Publishing: a silent or near-silent file | Studio | Same in both. |
 | Publishing: Orbit at frame 0 of a Short or on any thumbnail | Channel | |
 | Subscribe asks | Channel | History of Science words its own. |
 | Titles | Channel | |
-| Studio: a pinned comment on a Short, a `/go/` link | Channel | History of Science words its own. |
-| Studio: pressing Continue on "Run a new test? Your current test will be deleted" | Studio | Same in both; it destroys a running test. |
+| Studio: a pinned comment on a Short, a `/go/` link, and pressing Continue on "Run a new test? Your current test will be deleted" | Studio | One line. The Test & Compare part is the same in both channels and destroys a running test; the line stays whole. |
 | Generation: Kling, Seedance, ElevenLabs Image & Video; Omni for the whole film | Channel | Which picture tools a channel uses. |
 | Generation: anything on the ElevenLabs website | Studio | It bills the credit pool both channels share. |
 | Generation: a video model's speech as voice-over | Studio | Same in both. |
@@ -145,7 +146,7 @@ their words and dates unchanged.
 | Part | Goes to |
 |---|---|
 | "Two layers decide what gets worked on" (the cap of nine, the job picker) | Studio. The split of the nine between channels stays here: it is one number shared between them. |
-| "Locked weekly targets" | Channel. Each channel's own count of longs and Shorts. |
+| "Locked weekly targets" | Studio for now. One table names both channels. |
 | "Never two Shorts on the same day" | Studio (already in Never). |
 | Machine split, Ben vs agents | Studio |
 
@@ -164,12 +165,38 @@ For the job that writes it there. History of Science's `AGENTS.md` already separ
 Its studio rules (the desk, who does what, the status board, uploads, secrets, network details, git) stay in its
 `AGENTS.md` until the studio repo exists, then are read from there.
 
-## What happens next
+## What changed between the table and the move
 
-1. This table is read. A row that is wrong is changed here first.
-2. The move: the channel rows go to `studio/RULES.md` word for word, with every quote of Ben and every date.
-   `AGENTS.md` keeps the studio rows and names the channel file. A check compares the two files with the old
-   `AGENTS.md` and fails if a line was lost or changed.
-3. `scripts/sync_rules.py` reads both files, with tests, so the copies under `.cursor/rules/` and
-   `STUDIO_PLAYBOOK.md` keep working.
-4. Every start-up text that says "read AGENTS.md" also names the channel's rules file for the job's channel.
+One rule decided all four: **a line is never cut in two.** Each line went whole to one file, so no word could change.
+A line that holds both kinds stayed in the studio file, where a studio rule can never be lost.
+
+| Where | First version of this table | What the move did | Why |
+|---|---|---|---|
+| Standing lessons, 3 (Production) | cut at its semicolons | stays whole in `AGENTS.md` | It is the only place that says "no media in git". |
+| Never, "Studio:" (pinned comment, `/go/` link, the Test & Compare line) | channel and studio parts apart | stays whole in `AGENTS.md` | One line; the Test & Compare part is the heavy one. |
+| Never, "a Short of 40 s or more" with its one exception | exception to the channel | stays whole in `AGENTS.md` | One line. |
+| Publish days and times, weekly targets | channel | stay in `AGENTS.md` | Each is one table or list that names both channels. A channel's own rows move to its own file when the studio has its own repo. |
+
+Also: "Docs in force" went to the channel file whole (all eight docs are the channel's), and `AGENTS.md` got a new
+short section saying which file wins. The out-of-date "Credit hold" line stays inside Polish pass, for the Chief to
+retire. The two budget lines filed under "Music" are now under Budget in *Stop and ask Ben*.
+
+## How the move was checked
+
+`jobs/reviews/J2527/move.py` made both files from `AGENTS.md` on main and compared them with it, line by line:
+
+- 557 lines with text before. 231 moved to `studio/RULES.md`. **None lost, none changed.**
+- 18 lines are new: the pointers between the two files, the headings the channel file needs, and four table or
+  list headers that both files need. Each is listed in the script.
+
+## What is left of J2527
+
+1. Done: this table.
+2. Done: the move.
+3. Done: `scripts/sync_rules.py` reads both files, with tests. The copies under `.cursor/rules/` and
+   `STUDIO_PLAYBOOK.md` are filled from the file each marker names.
+4. Start-up texts. `AGENTS.md` now says in its first screen to read `studio/RULES.md` next, so every agent that is
+   told "read AGENTS.md" is led to it. `CLAUDE.md` and the Cursor rule name both files. Two live prompts still name
+   only `AGENTS.md` and are changed in their own job: the relay's (`scripts/chief_relay.py`) and the MacBook
+   worker's (`scripts/macbook_worker.py`).
+5. History of Science's own `studio/RULES.md`: the section above says what it should hold.

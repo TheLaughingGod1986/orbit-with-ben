@@ -1,28 +1,38 @@
 #!/usr/bin/env python3
-"""Keep the rule copies in step with AGENTS.md, and catch rule lines that have gone stale.
+"""Keep the rule copies in step with the two rule files, and catch rule lines that have gone stale.
 
-  python3 scripts/sync_rules.py           # rewrite every SYNC block from AGENTS.md
+  python3 scripts/sync_rules.py           # rewrite every SYNC block from its rule file
   python3 scripts/sync_rules.py --check   # CI: exit 1 if a block is out of date or a stale line is found
 
-AGENTS.md is the source (Chief owns it: Ben to Claude 5 Oct 2026, handed to Chief 9 Oct, confirmed 10 Oct). A copy elsewhere sits between markers:
+There are two sources since 11 Nov 2026 (J2527; Ben, 10 Nov: "this system will read the individual channel's rules
+and guidance"). AGENTS.md holds the studio's rules, the same for every channel. studio/RULES.md holds this channel's
+own. The Chief owns both (Ben to Claude 5 Oct 2026, handed to Chief 9 Oct, confirmed 10 Oct). A copy elsewhere sits
+between markers that name the file and the section:
 
   <!-- SYNC: AGENTS.md#Never -->
   ...generated, do not edit by hand...
   <!-- /SYNC -->
 
-The text after "#" names the AGENTS.md "## " heading; the block holds that section's body verbatim.
+  <!-- SYNC: studio/RULES.md#Teach on screen (Ben, 11 Oct 2026) -->
+  ...
+  <!-- /SYNC -->
+
+The text after "#" names a "## " heading in that file; the block holds that section's body verbatim.
 STALE lists phrases from superseded orders. Add one whenever an order changes, so old wording can't creep back.
 """
 import argparse, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "AGENTS.md"
+CHANNEL_SOURCE = ROOT / "studio" / "RULES.md"
+SOURCES = {"AGENTS.md": SOURCE, "studio/RULES.md": CHANNEL_SOURCE}
 TARGETS = [
     ".cursor/rules/orbit-studio.mdc",
     "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md",
 ]
 SCAN = [
     "AGENTS.md",
+    "studio/RULES.md",
     "docs/ORBIT_PLAYBOOK_LESSONS.md",
     "docs/PRODUCTION_THREAD.md",
     "00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md",
@@ -64,18 +74,28 @@ STALE = [
     (r"invent a Tailscale or SMB share|new Tailscale file share|/Volumes/shared` as the film",
      "Do not invent a third share; studio-live + mac-mini-archive only (7 Nov 2026)"),
 ]
-BLOCK = re.compile(r"(<!-- SYNC: AGENTS\.md#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
+BLOCK = re.compile(r"(<!-- SYNC: (?P<file>AGENTS\.md|studio/RULES\.md)#(?P<head>[^>]+?) -->\n)(?P<body>.*?)(<!-- /SYNC -->)", re.S)
 
 
-def section(text, heading):
+def find_section(text, heading):
     m = re.search(rf"^## {re.escape(heading)}\n(.*?)(?=^## |\Z)", text, re.S | re.M)
-    if not m:
-        sys.exit(f"sync_rules: AGENTS.md has no '## {heading}' section")
-    return m.group(1).strip("\n") + "\n"
+    return m.group(1).strip("\n") + "\n" if m else None
 
 
-def sync(text, source):
-    return BLOCK.sub(lambda m: m.group(1) + section(source, m.group("head").strip()) + m.group(4), text)
+def section(sources, name, heading):
+    """The body of '## heading' in the rule file `name`. `sources` maps each rule file's name to its text."""
+    body = find_section(sources[name], heading)
+    if body is None:
+        elsewhere = [other for other, text in sources.items() if other != name and find_section(text, heading) is not None]
+        hint = f" (it is in {elsewhere[0]}: change the marker to name that file)" if elsewhere else ""
+        sys.exit(f"sync_rules: {name} has no '## {heading}' section{hint}")
+    return body
+
+
+def sync(text, sources):
+    if isinstance(sources, str):  # one text: the studio file alone, as callers passed before there were two
+        sources = {"AGENTS.md": sources, "studio/RULES.md": ""}
+    return BLOCK.sub(lambda m: m.group(1) + section(sources, m.group("file"), m.group("head").strip()) + m.group(5), text)
 
 
 def stale_hits():
@@ -93,7 +113,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
-    source = SOURCE.read_text()
+    source = {name: (path.read_text() if path.exists() else "") for name, path in SOURCES.items()}
     problems = []
     for rel in TARGETS:
         path = ROOT / rel
