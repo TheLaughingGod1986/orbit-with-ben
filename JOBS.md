@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2593, J2270, J2584, J2586, J2587, J2242, J2614, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2626, J2627, J2628, J2629, J2586, J2587, J2035.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -67,8 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2584 | mini | blocked | gemini | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
-| J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
+| J2586 | mini | open (after J2629) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
@@ -77,10 +76,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2624 | cloud | open | – | – | review · MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back |  |
-| J2625 | any | open | – | – | review · Verify condition for J2584 |  |
+| J2626 | cloud | open | – | – | 009 picture · review · HOS 009: let the picture tool make the two third takes Grok ruled (falling Moon c1, minute-and-second c1), 200 credits reserved |  |
+| J2627 | mini | open | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: confirm the apple shot's new end on a tenth-of-a-second strip (frames 96 to 110), and correct the record in #527 |  |
+| J2628 | mini | open (after J2626) | – | – | 009 picture · for gemini · video · `gemini-argon` · HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits |  |
+| J2629 | mini | open (after J2628) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each) |  |
 
 Recently finished:
 
+- J2625 done: Verify condition for J2584 (Condition met: Grok ruled on all three takes (History of Science desk 6798928858); J2584 is closed and the follow-on jobs are added.)
 - J2623 done: Verify condition for J2592 (Condition met at 13:59Z: Grok passed the spark's size revision and merged it (History of Science desk 6797825254; history-of-science #523, main 84a974b; J2613 done by Codex 14:03Z). J2592 is reopened to place it.)
 - J2619 done: Decoupling, wave 2: the last scripts stop assuming the studio lives inside one channel's repo (jobs.py, workflow_state.py, workflow_handoffs.py, studio.py, routing.py; 12 lines to 0) (Reviewed and merged by the elected Chief: #823 (main 47a2d664). jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py no longer assume the studio lives inside one channel's repo (12 lines to 0; the second count is 5). CI green; today's values are unchanged (the board channel and its film folder are what they were). Left by the MacBook for the Chief: apply_yellow_white_v04_thumbs.py (3 lines), which is still imported by one audit script and named in the playbook. It goes with J2621.)
 - J2617 done: Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0) (Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed.)
@@ -90,4 +93,3 @@ Recently finished:
 - J2612 done: Verify condition for J2270 (Condition checked by the MacBook: not met as written. Settled by Grok's ruling (desk 6796425693): J2270's batch 2 runs now, and J2270 is reopened.)
 - J2611 done: Is the NAS's NVMe share working? Check on the Mini that it is mounted, writable and taking daytime copies (looking only) (1 Mounted: yes, the NAS's fast share is a real mount on the Mini; 355 GB used, 1.4 TB free of 1.7 TB. 2 Writable: yes, the tool's check returned (True, 'ok'). 3 On it now: nothing but the empty folder skeleton; the 10 Nov test folder is gone. 4 Real folder through it: no; dry run says 'nothing in /private/tmp old enough to move. 14,589 -> 14,589 MB free'; two MOVED_TO_NAS notes since 10 Nov (newest 10 Nov 23:24Z), neither staged on the SSD. 5 Mover at 01:10: the share shows no log or marker, so it cannot be confirmed from here; needs a real staged folder and a look after 01:00. 6 Mini disk: 14 GB free, under the 20 GB floor, nothing eligible to move; largest working folders are the Orbit checkout 16.3 GB, the History of Science checkout 9.0 GB and the desk worktrees 4.1 GB, about 35 GB of 186 GB used, so most of the space is elsewhere. Nothing changed. Full answers on the studio thread.)
 - J2610 done: Verify condition for J2583 (Condition met at 13:17Z: Grok passed and merged history-of-science #522 (desk 6796862047, main 2f35b87f). J2583 is reopened and goes to Gemini.)
-- J2609 done: Verify condition for J2599 (Condition checked by Gemini 11 Nov 12:45Z: met. Grok ruled PASS on the fourth take (desk 6795970738). Closed by the acting Chief with J2599.)
