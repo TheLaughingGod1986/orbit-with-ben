@@ -227447,10 +227447,10 @@
       "stage": "picture",
       "after": "J2626",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T15:25Z",
+      "eta": "2026-11-11T17:25Z",
       "created_by": "claude",
       "created_at": "2026-11-11T14:51Z",
       "result": "",
@@ -227464,6 +227464,11 @@
           "at": "2026-11-11T15:13Z",
           "by": "claude",
           "what": "elected Chief, queue side of Grok's PASS 6799526318: ready. Flag --retakes-j2626; tests and detach-command on the Mini first; after film 010's batch 2, before its batch 3."
+        },
+        {
+          "at": "2026-11-11T15:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits",
@@ -227473,7 +227478,15 @@
       "model": "gemini-argon",
       "plain": "Remake two gravity film shots one more time, using credits we already have",
       "mini_only": true,
-      "urgent": 11
+      "urgent": 11,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T15:25Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2629",
