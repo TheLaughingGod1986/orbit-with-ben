@@ -849,10 +849,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:008": {
-      "updated": "2026-11-11T08:58Z",
+      "updated": "2026-11-11T09:53Z",
       "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, the 11 code graphics, the picture, and rough cut v01.",
-      "holdup": "Three shots were remade this morning. A check of their stills found two came out wrong: the salon shot shows a lightning bolt across the room where there should be one small spark, and the points shot has a stray wire coming out of the globe. The church and ship rods shot is good. The two are being made again with tighter instructions (J2575, at most 200 credits), then checked again (J2576) before the v04 re-edit. Both must be made before Thu 12 Nov 19:13. It is tight for a Thu 19 Nov air date.",
+      "holdup": "The two shots that came out wrong, the salon spark and the points desk, were made again this morning (200 credits, none in cash). Their stills are checked next (J2576), then the v04 re-edit goes ahead. It is still tight for a Thu 19 Nov air date.",
       "limit": "Eight period details (P1 to P8) need confirming before picture.",
       "steps": [
         {
@@ -875,15 +875,16 @@
           "what": "remake the salon and points shots (second takes, at most 200 credits)",
           "job": "J2575",
           "kind": "video",
-          "when": "2026-11-12",
-          "whenText": "before Thu 12 Nov 19:13"
+          "done": true,
+          "doneText": "made \u00b7 Wed 11 Nov"
         },
         {
           "who": "Reviewer",
           "what": "check the two remade shots' stills",
           "job": "J2576",
           "kind": "qa",
-          "afterJob": "J2575"
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
         },
         {
           "who": "Mac mini",
@@ -928,10 +929,10 @@
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:009": {
-      "updated": "2026-11-11T05:58Z",
-      "mood": "good",
+      "updated": "2026-11-11T09:53Z",
+      "mood": "fixing",
       "done": "Script, fact check, upload package, voiceover, shot boards v04 and picture tranche 1 (passed 30 Oct).",
-      "holdup": "Nothing is stuck. All twenty pictures are made, a day ahead of the credit reset. The picture review is next; picture was due Sun 15 Nov, for your watch on Sun 22 Nov.",
+      "holdup": "The review of the last twenty pictures found two that cannot go out. In one the Moon fades away while the voice says it never lands. In one the fallen apple rises back to the branch, in a film about gravity. Both are being made again, at most 200 credits. A third, the Explorer with the apple, is being looked at frame by frame for a jump. The rest are kept once a closer look, a frame every half second, shows nothing wrong (J2582). The edit starts after that. Picture was due Sun 15 Nov and is still on course.",
       "steps": [
         {
           "who": "Mac mini",
@@ -949,12 +950,43 @@
           "doneText": "all 20 made \u00b7 Wed 11 Nov"
         },
         {
-          "who": "Reviewer",
-          "what": "review the twenty new plates and accept the film's picture",
+          "who": "Chief",
+          "what": "review the twenty new plates",
           "job": "J2034",
           "kind": "review",
+          "done": true,
+          "doneText": "ruled \u00b7 Wed 11 Nov: two to remake"
+        },
+        {
+          "who": "Reviewer",
+          "what": "closer look at the other plates, a frame every half second",
+          "job": "J2582",
+          "kind": "qa",
+          "when": "2026-11-12",
+          "whenText": "by Thu 12 Nov"
+        },
+        {
+          "who": "Mac mini",
+          "what": "remake the falling-Moon and apple shots (at most 200 credits)",
+          "job": "J2583",
+          "kind": "video",
+          "afterJob": "J2582"
+        },
+        {
+          "who": "Reviewer",
+          "what": "check the remade shots' stills",
+          "job": "J2584",
+          "kind": "qa",
+          "afterJob": "J2583"
+        },
+        {
+          "who": "Mac mini",
+          "what": "put the film together",
+          "job": "J2035",
+          "kind": "assembly",
+          "afterJob": "J2584",
           "when": "2026-11-15",
-          "whenText": "by Sun 15 Nov"
+          "whenText": "due Sun 15 Nov"
         },
         {
           "who": "Ben",
@@ -971,15 +1003,15 @@
       "you": "Your final OK on Sun 22 Nov.",
       "youWhen": "2026-11-22",
       "timing": "Airs Thu 26 Nov.",
-      "line": "First picture tranche accepted, and now all twenty of the last plates are made (2,000 Flow credits; each file is checked and nothing is waiting to be charged). One plate, of Halley's visit, was refused once by the picture tool because its prompt named a real person. It cost nothing; the prompt now describes the two men without naming them, and the second try went through. In one plate the apple jumps up into the tree before it falls, which the picture review will look at. Next: the picture review (J2034), then the score (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
+      "line": "First picture tranche accepted, and all twenty of the last plates are made (2,000 Flow credits). The Chief reviewed them on 11 Nov. One is kept for its first two and a half seconds only. Two are remade: the Moon fades out in one, and the apple rises back to the branch in the other. One more is decided by a frame-by-frame look. The others are kept once a closer look shows nothing appearing, vanishing or falling upward (J2582). Then the remakes (J2583), their check (J2584), the edit (J2035) and Shorts A/B (J2171, target 27 and 30 Nov).",
       "youShort": "your final OK Sun 22 Nov",
       "shortsGapPlan": "jobs/reviews/J2023/PLAN.md"
     },
     "HOS:010": {
-      "updated": "2026-11-11T08:58Z",
+      "updated": "2026-11-11T09:53Z",
       "mood": "good",
       "done": "Script, fact check and upload package.",
-      "holdup": "Nothing is stuck. The first five of its twelve plates started on the Mini at 08:57 this morning, with the credit checks before each one. The rest follow in batches inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
+      "holdup": "Nothing is stuck. The first five of its twelve plates are made; the batch finished cleanly at 09:33 this morning. Film 008's two remade shots went next on the picture tool, as the Chief ordered, and the other seven plates follow, inside this allowance window, which closes Thu 12 Nov 19:13. A separate review of the plates comes next (J2271).",
       "steps": [
         {
           "who": "Mac mini",
