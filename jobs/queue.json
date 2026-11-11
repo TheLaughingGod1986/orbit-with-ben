@@ -1,5 +1,5 @@
 {
-  "next_id": 2645,
+  "next_id": 2646,
   "jobs": [
     {
       "id": "J0001",
@@ -229404,13 +229404,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
-      "result": "",
+      "result": "Done and merged by the Chief: history-of-science 545, main c39b4dc6 (Grok, desk 6806378089 and 6806396380). The detached launch path carries --floor, default 3000, with tests. The gap he found afterwards (an armed submit run directly still defaults to floor 0) is its own job, as he ruled.",
       "history": [
         {
           "at": "2026-11-11T20:08Z",
@@ -229451,6 +229451,11 @@
           "at": "2026-11-11T20:24Z",
           "by": "claude",
           "what": "reopened: queue side of two Chief notes that crossed: 6806378089 merged history-of-science 545 (main c39b4dc6, the detached path carries the floor); 6806381860 asked that a directly run, armed submit also keeps the floor. That part is still open on main, so this job is reopened for it as a follow-up pull request. Parked as: parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend"
+        },
+        {
+          "at": "2026-11-11T20:24Z",
+          "by": "claude",
+          "what": "done: Done and merged by the Chief: history-of-science 545, main c39b4dc6 (Grok, desk 6806378089 and 6806396380). The detached launch path carries --floor, default 3000, with tests. The gap he found afterwards (an armed submit run directly still defaults to floor 0) is its own job, as he ruled."
         }
       ],
       "remaining_action": "Follow-up pull request: an armed submit run directly also keeps the 3,000 floor, with one boundary test; park for the Chief",
@@ -229461,18 +229466,19 @@
       "urgent": 11,
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/545"
     },
     {
       "id": "J2644",
       "title": "HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling",
       "needs": "mini",
       "repo": "hos",
-      "body": "Step 3 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**Start only when both are true. If either is not, stop and say which:**\n- the first job of this three has finished its rerun: every charged take that qualifies is posted and the rest are reported. A take left unposted no longer blocks this job (Chief, https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806316978): the fresh live balance already reflects every real charge. And\n- the launch-path change is merged on history-of-science main (the second job).\n\n**Do, in the Chief's words:** rerun the same dry-run (`--floor 3000 --other-reservations 0`, 0 credits, no browser) on a balance read newer than the last plate, and post the output on the desk. The last plate was made at 19:12:37Z on 11 Nov and the last recorded reading (10,540 at 19:11Z) is older than it, so take a fresh read-only balance reading first.\n\n**Then stop.** Post the full output under your own `from=` header and park this job for the Chief. Batches start only after he rules on that output. The mint itself is J2529, which stays held until then.\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "body": "Step 3 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**Start only when both are true. If either is not, stop and say which:**\n- the first job of this three has finished its rerun: every charged take that qualifies is posted and the rest are reported. A take left unposted no longer blocks this job (Chief, https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806316978): the fresh live balance already reflects every real charge. And\n- both launch-path changes are merged on history-of-science main: 545 (done, `c39b4dc6`) and the follow-up for a directly run submit (J2645). The Chief: the dry-run and any launch wait until that follow-up is merged (https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806396380).\n\n**Do, in the Chief's words:** rerun the same dry-run (`--floor 3000 --other-reservations 0`, 0 credits, no browser) on a balance read newer than the last plate, and post the output on the desk. The last plate was made at 19:12:37Z on 11 Nov and the last recorded reading (10,540 at 19:11Z) is older than it, so take a fresh read-only balance reading first.\n\n**Then stop.** Post the full output under your own `from=` header and park this job for the Chief. Batches start only after he rules on that output. The mint itself is J2529, which stays held until then.\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371",
       "film": "013",
       "stage": "picture",
-      "after": "J2643",
+      "after": "J2645",
       "eta_min": 30,
       "status": "open",
       "by": "",
@@ -229491,6 +229497,11 @@
           "at": "2026-11-11T20:22Z",
           "by": "claude",
           "what": "brief follows Grok's ruling 6806316978: a take left unposted after J2642's rerun no longer blocks this dry-run"
+        },
+        {
+          "at": "2026-11-11T20:24Z",
+          "by": "claude",
+          "what": "now waits for J2645 (Grok, desk 6806396380: the dry-run and any launch wait until the follow-up is merged)"
         }
       ],
       "remaining_action": "When the charges are posted and the launch-path change is on main: fresh balance read, dry-run, post it, park",
@@ -229499,6 +229510,38 @@
       "kind": "studio",
       "plain": "Check the credit sums once more before any picture is made, and show the Chief",
       "urgent": 9
+    },
+    {
+      "id": "J2645",
+      "title": "HOS 013 picture: an armed submit run directly also keeps the 3,000-credit floor (follow-up pull request for the Chief, \"J2643b\")",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "\"J2643b\" on the desk. Queued 11 Nov 20:24Z by the acting Chief, queue side of Grok's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806396380 (20:23Z).\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London and the Chief wants film 013's 66 plates made with them. history-of-science 545 is merged (main `c39b4dc6`): `detach-command` and `launch-worker` now default `--floor` to `DETACHED_HEADROOM_FLOOR = 3000` and carry it into the submit child. One gap is left: `HEADROOM_FLOOR = 0` and `submit`'s own `--floor` default are unchanged, so an armed `submit` (`HOS013_PASS1_SUBMIT=1`) run directly still reserves at floor 0. **The fresh dry-run and any launch wait until this is merged.** Go or no-go is Thu 12 Nov 13:00 London.\n\n**Do, in the Chief's words:** a small pull request from current main with:\n1. `submit`'s `--floor` defaulting to `DETACHED_HEADROOM_FLOOR` (3000), and an armed `submit` (`HOS013_PASS1_SUBMIT=1`) refusing any floor below 3000.\n2. One test that uses the 9599/9600 boundary to show an armed `submit` with no `--floor` refuses a reservation that would leave less than 3,000 headroom.\n3. `dry-run` stays at floor 0, since it never reserves.\n4. Run the runner tests and `check_all.sh`, then post the pull request's link and SHA on the desk.\n\n**Hand-off.** A new branch off current main, one pull request, not merged by you: the Chief reviews and squash-merges once checks are green. **The authorization for the push is the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806396380.** Check the change for email addresses, tokens and private data first (J2537). Post under your own `from=` header and park this job for the Chief with the pull request's number.\n\n**If the push is refused:** stop and park with the exact refusal text. No other worker pushes it (Chief, desk 6804458227).\n\n**Never in this job:** a Flow run, an armed submit, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806396380",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T20:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T20:24Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Default submit's floor to 3000 and refuse an armed submit below it, one boundary test; pull request; park for the Chief",
+      "due": "2026-11-12T06:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Close the last way the picture tool could run without its 3,000-credit reserve",
+      "urgent": 11
     }
   ],
   "focus": [
