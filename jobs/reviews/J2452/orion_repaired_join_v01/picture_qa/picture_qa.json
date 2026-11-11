@@ -1,0 +1,114 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/orion_repaired_join_v01/orion_repaired_join.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 1,
+      "row": "36",
+      "source": "orion_rise_vlt.mp4",
+      "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+      "t": 5.29,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.36 < 18.0"
+      ],
+      "offset": 0
+    },
+    {
+      "cut": 2,
+      "row": "36",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 9.59,
+      "at": "0:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0127 < film p5 0.0138"
+      ],
+      "offset": null
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "35",
+      "source": "crab.jpg",
+      "title": "Most detailed image of the Crab Nebula",
+      "t": 1.0,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": null
+    },
+    {
+      "cut": 1,
+      "row": "36",
+      "source": "orion_rise_vlt.mp4",
+      "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+      "t": 5.29,
+      "at": "0:05",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.36 < 18.0"
+      ],
+      "offset": 0
+    },
+    {
+      "cut": 2,
+      "row": "36",
+      "source": "visir_flames.jpg",
+      "title": "The flames of Betelgeuse",
+      "t": 9.59,
+      "at": "0:10",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0127 < film p5 0.0138"
+      ],
+      "offset": null
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0138,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

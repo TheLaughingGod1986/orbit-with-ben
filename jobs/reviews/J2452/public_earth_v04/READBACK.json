@@ -1,0 +1,330 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/027_earth_undarkened_v04.mp4",
+  "sha256": "6eb3c0fb72cd10f1b6ff4afa5fbd9be8a654810b9534d69f1e5ea596e689a819",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 39423000,
+        "duration": "438.033333",
+        "bit_rate": "5815129",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "13141",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 21025584,
+        "duration": "438.033000",
+        "bit_rate": "191538",
+        "nb_frames": "20534",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/027_earth_undarkened_v04.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "438.033333",
+      "size": "329373700",
+      "bit_rate": "6015500",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 13141,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-104",
+      "cut": 52,
+      "t": 105.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 10.52, p95 53.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 105.0
+    },
+    {
+      "row": "pixel-106",
+      "cut": 53,
+      "t": 107.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 11.99, p95 72.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 107.0
+    },
+    {
+      "row": "pixel-108",
+      "cut": 54,
+      "t": 109.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 12.66, p95 63.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 109.0
+    },
+    {
+      "row": "pixel-366",
+      "cut": 183,
+      "t": 367.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 44.06, p95 47.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 372.45
+    },
+    {
+      "row": "pixel-368",
+      "cut": 184,
+      "t": 369.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 44.46, p95 48.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 374.45
+    },
+    {
+      "row": "pixel-370",
+      "cut": 185,
+      "t": 371.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 43.92, p95 47.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 376.45
+    },
+    {
+      "row": "pixel-372",
+      "cut": 186,
+      "t": 373.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 41.5, p95 47.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 378.45
+    },
+    {
+      "row": "pixel-374",
+      "cut": 187,
+      "t": 375.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 41.01, p95 47.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 380.45
+    },
+    {
+      "row": "pixel-404",
+      "cut": 202,
+      "t": 405.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 37.11, p95 46.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 410.45
+    },
+    {
+      "row": "pixel-406",
+      "cut": 203,
+      "t": 407.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 36.91, p95 46.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 412.45
+    },
+    {
+      "row": "pixel-410",
+      "cut": 205,
+      "t": 411.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 7.38, p95 30.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 416.45
+    },
+    {
+      "row": "pixel-412",
+      "cut": 206,
+      "t": 413.0,
+      "source": "027_EarthSpin_rough_v01m.mp4",
+      "why": [
+        "near-black: mean 18.94, p95 68.0"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 418.45
+    }
+  ],
+  "levels": {
+    "input_i": "-20.73",
+    "input_tp": "-6.50",
+    "input_lra": "2.70",
+    "input_thresh": "-31.13",
+    "output_i": "-19.92",
+    "output_tp": "-6.00",
+    "output_lra": "2.60",
+    "output_thresh": "-30.32",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.08"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 386.0,
+      "end_s": 388.0,
+      "mean_luma": 213.97931423611112,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/brightest_01.jpg"
+    },
+    {
+      "start_s": 300.0,
+      "end_s": 302.0,
+      "mean_luma": 201.65116319444445,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/brightest_02.jpg"
+    },
+    {
+      "start_s": 302.0,
+      "end_s": 304.0,
+      "mean_luma": 200.27344618055557,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/brightest_03.jpg"
+    },
+    {
+      "start_s": 384.0,
+      "end_s": 386.0,
+      "mean_luma": 195.46880208333334,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/brightest_04.jpg"
+    },
+    {
+      "start_s": 388.0,
+      "end_s": 390.0,
+      "mean_luma": 189.7509982638889,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_earth_v04/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this undarkened candidate crosses the 19:30-20:30 ramp; final grade and brightness/frame-count measurement still owed.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}

@@ -1,0 +1,70 @@
+{
+  "status": "PICTURE_CHECKPOINT_NOT_FULL_QA_OR_UAT",
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_orion_repaired_v01/029_picture_orion_repaired.mp4",
+  "source_sha256": "8f4e2bde4a3143e09c3b0597eed6bd0f74bc52668716ba610268b557ef4e14e1",
+  "join": {
+    "status": "JOIN_NOT_INTEGRATED_NOT_UAT",
+    "source": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_orion_repaired_v01/029_picture_orion_repaired.mp4",
+    "source_sha256": "8f4e2bde4a3143e09c3b0597eed6bd0f74bc52668716ba610268b557ef4e14e1",
+    "repair": {
+      "status": "ORIGINAL_SOURCE_COMPONENT_NOT_INTEGRATED_NOT_UAT",
+      "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/chajnantor_mw.m4v",
+      "source_sha256": "b3bc5b77bc8ddd752d99086edd272fb069eaec37ad4bf7c5470b85516370e1b0",
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/chajnantor_source_repair_v02/chajnantor_source_repair.mp4",
+      "sha256": "cd0f046f15a04ed326d990aeb173feb9787affc357c9d7a014bcb0e2b4b24b5a",
+      "frames": 194,
+      "duration_s": 6.466666666666667,
+      "master_range_s": [
+        254.8,
+        261.28
+      ],
+      "chapter_range_s": [
+        234.3,
+        240.78
+      ],
+      "source_interval_s": [
+        3.25,
+        9.716666666666667
+      ],
+      "filter": "setpts=PTS-STARTPTS,scale=1920:1080:flags=lanczos,fps=30,colorchannelmixer=rr=.85:gg=.85:bb=.85,limiter=min=16:max=180:planes=1,format=yuv420p",
+      "provenance": {
+        "id": "chajnantor_mw",
+        "title": "Milky Way over Chajnantor",
+        "page": "https://www.eso.org/public/videos/chajnantormilkyway/",
+        "credit": "ESO",
+        "licence": "CC BY 4.0 per film SOURCE_POOL_v03.json"
+      },
+      "limitations": [
+        "Existing footage under pulsation narration is a sky establishing shot, not a resolved pulsation observation.",
+        "Dissolve handles, reuse review and integration remain.",
+        "Run normal picture QA; no failure is waived."
+      ]
+    },
+    "output": "/Users/ben/_desk/J2452-sleep-scratch/chajnantor_join_v01/chajnantor_join.mp4",
+    "sha256": "49e01b8427019ea58b116cbbaaf4de9b4c45328a3c365856d8549e548de9b2f7",
+    "chapter_frames": [
+      6969,
+      7283
+    ],
+    "opaque_frames": [
+      7029,
+      7223
+    ],
+    "frames": 314,
+    "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt709,format=rgb24[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt709,format=rgba,tpad=start_mode=clone:start_duration=2:stop_mode=clone:stop_duration=2,trim=duration=10.466666666666667,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=8.466666666666667:d=2:alpha=1[cover];[base][cover]overlay=eof_action=pass:format=rgb,scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]"
+  },
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chajnantor_repaired_v01/029_picture_chajnantor_repaired.mp4",
+  "sha256": "3b37262c97c2efab7110179baa65ab7b1ca30bb0bbe0bac643b672cd444684fd",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "opaque_readback": {
+    "frames": 194,
+    "join_max_mae": 0.4930613338947296,
+    "chapter_max_mae": 0.4930613338947296,
+    "threshold": 2
+  },
+  "limitations": [
+    "Other dark spans and diagram replacements remain.",
+    "Final compilation, sound and NAS delivery remain."
+  ]
+}

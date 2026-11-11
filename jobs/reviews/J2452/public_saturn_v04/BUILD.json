@@ -1,0 +1,151 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "021",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_saturn_v04/021_saturn_undarkened_v04.mp4",
+  "sha256": "cd4e9dc10e3794e46a94e9ee19f4140c8c31b353dbac795d355b61f52128f593",
+  "source_master": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/021_What-Happens-When-Saturn-Loses-Its-Rings/07_Edit-Project/saturn_film/saturn_first_cut_v03f.mp4",
+  "source_sha256": "aad314931db783a65e82bc1ddeadf87ec2a7886b815445395770686ed11f6d2f",
+  "narration_sha256": "c1fb534e6862ff4cbfe35b2fff81d507ecd612f7f22d846672fa2e2879185b08",
+  "expected_frames": 15567,
+  "duration_s": 518.9,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 9.6,
+      "chapter_in_s": 0,
+      "chapter_out_s": 9.6,
+      "compilation_in_s": 444.29,
+      "compilation_out_s": 453.89
+    },
+    {
+      "master_in_s": 21.0,
+      "master_out_s": 209.65,
+      "chapter_in_s": 9.6,
+      "chapter_out_s": 198.25,
+      "compilation_in_s": 453.89,
+      "compilation_out_s": 642.54
+    },
+    {
+      "master_in_s": 219.55,
+      "master_out_s": 540.2,
+      "chapter_in_s": 198.25,
+      "chapter_out_s": 518.9,
+      "compilation_in_s": 642.54,
+      "compilation_out_s": 963.19
+    }
+  ],
+  "planned_ranges": [
+    [
+      0,
+      8.95
+    ],
+    [
+      21.55,
+      209.65
+    ],
+    [
+      219.55,
+      540.2
+    ]
+  ],
+  "covers": [
+    [
+      21,
+      24.5,
+      24.5,
+      "act-I"
+    ],
+    [
+      99,
+      103,
+      94.5,
+      "Orbit"
+    ],
+    [
+      128.5,
+      133,
+      133,
+      "act-II"
+    ],
+    [
+      219.55,
+      223,
+      223,
+      "act-III"
+    ],
+    [
+      356,
+      360,
+      360,
+      "act-IV"
+    ],
+    [
+      442.5,
+      448,
+      448,
+      "act-V"
+    ]
+  ],
+  "darkening": "Identity: chapter ends before 19:30; no darkening active.",
+  "fallback": "Named local plates absent; PIA08248 direct JPEG redirects to HTML and official record identifies a 1008-pixel ring opposition image rather than the planned backlit ring-plane. Used own adjacent clean moving pictures under Chief ruling. No external picture used. Late Orbit at 472-478 not present in actual master samples; existing public picture retained.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "parent_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_saturn_v03",
+  "repair_patches": [
+    {
+      "chapter_in_s": 8,
+      "chapter_out_s": 18,
+      "master_donor_in_s": 28,
+      "donor_duration_s": 10,
+      "label": "first-act-cover"
+    },
+    {
+      "chapter_in_s": 76,
+      "chapter_out_s": 98,
+      "master_donor_in_s": 103,
+      "donor_duration_s": 22,
+      "label": "Orbit-cover-and-seam"
+    },
+    {
+      "chapter_in_s": 194,
+      "chapter_out_s": 210,
+      "master_donor_in_s": 215,
+      "donor_duration_s": 3,
+      "label": "rain-act-cover"
+    }
+  ],
+  "repair": "New cover neighbourhoods failed near-black and a vertical seam; adjacent master picture replaces them with one-second alpha fades, no grade or gate override. Rain cover slows the adjacent 215-218 second shot to fit; narration untouched.",
+  "second_repair_patches": [
+    {
+      "chapter_in_s": 73,
+      "chapter_out_s": 103,
+      "master_donor_in_s": 28,
+      "donor_duration_s": 10,
+      "label": "Orbit-cover-second-neighbour"
+    },
+    {
+      "chapter_in_s": 208,
+      "chapter_out_s": 224,
+      "master_donor_in_s": 244,
+      "donor_duration_s": 16,
+      "label": "rain-cover-exit"
+    }
+  ],
+  "second_repair": "Orbit neighbour candidate retained dark/seam findings; reuse the same film ring close-up that passed first-act cover, slowed 3x in picture only. Cover rain exit through next usable public picture. Narration untouched. No threshold or review override.",
+  "boundary_repair_patches": [
+    {
+      "chapter_in_s": 6,
+      "chapter_out_s": 20,
+      "master_donor_in_s": 28,
+      "donor_duration_s": 10,
+      "label": "first-dissolve-boundary"
+    },
+    {
+      "chapter_in_s": 70,
+      "chapter_out_s": 109,
+      "master_donor_in_s": 28,
+      "donor_duration_s": 10,
+      "label": "Orbit-cover-outer-boundaries"
+    }
+  ],
+  "boundary_repair": "Extend the existing neighboring ring close-up over the measured first-dissolve and Orbit-cover outer-boundary failures. Picture only slowed; narration clock unchanged. Narration gain reduced 0.5 dB for encoded peak margin. No source search, grading, threshold or review override."
+}

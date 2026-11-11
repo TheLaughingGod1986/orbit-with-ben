@@ -1,0 +1,3 @@
+fps=4,scale=160:90,format=gray [np.float64(20.507239583333334), np.float64(16.325746527777778)] 0.7960967375173232
+fps=4,scale=160:90:in_range=tv:out_range=pc:flags=area+accurate_rnd,format=gray [np.float64(20.51134548611111), np.float64(16.314383680555554)] 0.7953833985002372
+fps=4,extractplanes=y,scale=160:90:flags=area,lut=y=(val-16)*255/219 [np.float64(21.54826388888889), np.float64(18.298194444444444)] 0.8491725615946115

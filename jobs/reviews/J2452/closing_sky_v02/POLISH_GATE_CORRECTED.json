@@ -1,0 +1,105 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/closing_sky_v02/closing_join_and_tail.mp4",
+  "edge_floor": 0.073,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "join",
+      "cut": 0,
+      "t": 1.0,
+      "source": "closing_join.mp4",
+      "why": [
+        "low detail: edge density 0.0728 < film p5 0.0730"
+      ]
+    },
+    {
+      "row": "39",
+      "cut": 1,
+      "t": 4.28,
+      "source": "lasilla_mw.mp4",
+      "why": [
+        "low detail: luma std 16.79 < 18.0"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "join",
+      "source": "closing_join.mp4",
+      "t": 1.0,
+      "std": 21.44,
+      "mean": 46.65,
+      "p95": 84.0,
+      "edge": 0.0728,
+      "hf": 6.39,
+      "lf": 19.71,
+      "std8": 20.0,
+      "edge8": 0.0355,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0728 < film p5 0.0730"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "39",
+      "source": "lasilla_mw.mp4",
+      "t": 4.28,
+      "std": 16.79,
+      "mean": 35.18,
+      "p95": 65.0,
+      "edge": 0.0777,
+      "hf": 7.39,
+      "lf": 14.43,
+      "std8": 14.66,
+      "edge8": 0.0206,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2400 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/public_gliese_v02/028_gliese_undarkened_v01.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 34,
+      "row": "change-2-0",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 43.65,
+      "at": "0:44",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 105,
+      "row": "change-5-0",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 221.32,
+      "at": "3:41",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 15.7s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 106,
+      "row": "change-5-1",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 221.82,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 107,
+      "row": "change-5-2",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 222.32,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 108,
+      "row": "change-5-3",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 222.82,
+      "at": "3:43",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 1.5
+    },
+    {
+      "cut": 109,
+      "row": "change-5-4",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 223.32,
+      "at": "3:43",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.93 < 18.0",
+        "low detail: edge density 0.0023 < film p5 0.0209"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 110,
+      "row": "change-5-5",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 223.82,
+      "at": "3:44",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.58 < 18.0",
+        "low detail: edge density 0.0186 < film p5 0.0209"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 130,
+      "row": "change-5-25",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 233.82,
+      "at": "3:54",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0172 < film p5 0.0209"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 131,
+      "row": "change-5-26",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 234.32,
+      "at": "3:54",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0178 < film p5 0.0209"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 133,
+      "row": "change-5-28",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 235.32,
+      "at": "3:55",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0206 < film p5 0.0209"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 148,
+      "row": "change-6-11",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 266.95,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0174 < film p5 0.0209"
+      ],
+      "offset": 5.5
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "change-0-0",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 0.25,
+      "at": "0:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "change-0-1",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 0.75,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 2,
+      "row": "change-0-2",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 1.25,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 3,
+      "row": "change-0-3",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 1.75,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 4,
+      "row": "change-0-4",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 2.25,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 5,
+      "row": "change-0-5",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 2.75,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 6,
+      "row": "change-0-6",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 7,
+      "row": "change-0-7",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 3.75,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 8,
+      "row": "change-0-8",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 4.25,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 9,
+      "row": "change-0-9",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 4.75,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 10,
+      "row": "change-0-10",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 5.25,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 11,
+      "row": "change-0-11",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 5.75,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 12,
+      "row": "change-0-12",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 6.25,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 13,
+      "row": "change-0-13",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 6.75,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 14,
+      "row": "change-0-14",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 7.25,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 15,
+      "row": "change-0-15",
+      "source": "finished_transition_0",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 16,
+      "row": "change-1-0",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 28.05,
+      "at": "0:28",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 17,
+      "row": "change-1-1",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 28.55,
+      "at": "0:29",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 18,
+      "row": "change-1-2",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 29.05,
+      "at": "0:29",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 19,
+      "row": "change-1-3",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 29.55,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 20,
+      "row": "change-1-4",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 30.05,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 21,
+      "row": "change-1-5",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 30.55,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 22,
+      "row": "change-1-6",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 31.05,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 23,
+      "row": "change-1-7",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 31.55,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 24,
+      "row": "change-1-8",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 32.05,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 25,
+      "row": "change-1-9",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 32.55,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": 4.4999999999999964
+    },
+    {
+      "cut": 26,
+      "row": "change-1-10",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 33.05,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": 4.9999999999999964
+    },
+    {
+      "cut": 27,
+      "row": "change-1-11",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 33.55,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": 5.4999999999999964
+    },
+    {
+      "cut": 28,
+      "row": "change-1-12",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 34.05,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": 5.9999999999999964
+    },
+    {
+      "cut": 29,
+      "row": "change-1-13",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 34.55,
+      "at": "0:35",
+      "fail": [],
+      "warn": [],
+      "offset": 6.4999999999999964
+    },
+    {
+      "cut": 30,
+      "row": "change-1-14",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 35.05,
+      "at": "0:35",
+      "fail": [],
+      "warn": [],
+      "offset": 6.9999999999999964
+    },
+    {
+      "cut": 31,
+      "row": "change-1-15",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 35.55,
+      "at": "0:36",
+      "fail": [],
+      "warn": [],
+      "offset": 7.4999999999999964
+    },
+    {
+      "cut": 32,
+      "row": "change-1-16",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 36.05,
+      "at": "0:36",
+      "fail": [],
+      "warn": [],
+      "offset": 7.9999999999999964
+    },
+    {
+      "cut": 33,
+      "row": "change-1-17",
+      "source": "finished_transition_1",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 36.55,
+      "at": "0:37",
+      "fail": [],
+      "warn": [],
+      "offset": 8.499999999999996
+    },
+    {
+      "cut": 34,
+      "row": "change-2-0",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 43.65,
+      "at": "0:44",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.3s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 35,
+      "row": "change-2-1",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 44.15,
+      "at": "0:44",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 36,
+      "row": "change-2-2",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 44.65,
+      "at": "0:45",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 37,
+      "row": "change-2-3",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 45.15,
+      "at": "0:45",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 38,
+      "row": "change-2-4",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 45.65,
+      "at": "0:46",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 39,
+      "row": "change-2-5",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 46.15,
+      "at": "0:46",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 40,
+      "row": "change-2-6",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 46.65,
+      "at": "0:47",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 41,
+      "row": "change-2-7",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 47.15,
+      "at": "0:47",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 42,
+      "row": "change-2-8",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 47.65,
+      "at": "0:48",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 43,
+      "row": "change-2-9",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 48.15,
+      "at": "0:48",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 44,
+      "row": "change-2-10",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 48.65,
+      "at": "0:49",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 45,
+      "row": "change-2-11",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 49.15,
+      "at": "0:49",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 46,
+      "row": "change-2-12",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 49.65,
+      "at": "0:50",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 47,
+      "row": "change-2-13",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 50.15,
+      "at": "0:50",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 48,
+      "row": "change-2-14",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 50.65,
+      "at": "0:51",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 49,
+      "row": "change-2-15",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 51.15,
+      "at": "0:51",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 50,
+      "row": "change-2-16",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 51.65,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 51,
+      "row": "change-2-17",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 52.15,
+      "at": "0:52",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 52,
+      "row": "change-2-18",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 52.65,
+      "at": "0:53",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 53,
+      "row": "change-2-19",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 53.15,
+      "at": "0:53",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 54,
+      "row": "change-2-20",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 53.65,
+      "at": "0:54",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 55,
+      "row": "change-2-21",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 54.15,
+      "at": "0:54",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 56,
+      "row": "change-2-22",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 54.65,
+      "at": "0:55",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 57,
+      "row": "change-2-23",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 55.15,
+      "at": "0:55",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 58,
+      "row": "change-2-24",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 55.65,
+      "at": "0:56",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 59,
+      "row": "change-2-25",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 56.15,
+      "at": "0:56",
+      "fail": [],
+      "warn": [],
+      "offset": 12.5
+    },
+    {
+      "cut": 60,
+      "row": "change-2-26",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 56.65,
+      "at": "0:57",
+      "fail": [],
+      "warn": [],
+      "offset": 13.0
+    },
+    {
+      "cut": 61,
+      "row": "change-2-27",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 57.15,
+      "at": "0:57",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 62,
+      "row": "change-2-28",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 57.65,
+      "at": "0:58",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 63,
+      "row": "change-2-29",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 58.15,
+      "at": "0:58",
+      "fail": [],
+      "warn": [],
+      "offset": 14.5
+    },
+    {
+      "cut": 64,
+      "row": "change-2-30",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 58.65,
+      "at": "0:59",
+      "fail": [],
+      "warn": [],
+      "offset": 15.0
+    },
+    {
+      "cut": 65,
+      "row": "change-2-31",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 59.15,
+      "at": "0:59",
+      "fail": [],
+      "warn": [],
+      "offset": 15.5
+    },
+    {
+      "cut": 66,
+      "row": "change-2-32",
+      "source": "finished_transition_2",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 59.55,
+      "at": "1:00",
+      "fail": [],
+      "warn": [],
+      "offset": 16.0
+    },
+    {
+      "cut": 67,
+      "row": "change-3-0",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 116.55,
+      "at": "1:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 68,
+      "row": "change-3-1",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 117.05,
+      "at": "1:57",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 69,
+      "row": "change-3-2",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 117.55,
+      "at": "1:58",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 70,
+      "row": "change-3-3",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 118.05,
+      "at": "1:58",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 71,
+      "row": "change-3-4",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 118.55,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 72,
+      "row": "change-3-5",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 119.05,
+      "at": "1:59",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 73,
+      "row": "change-3-6",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 119.55,
+      "at": "2:00",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 74,
+      "row": "change-3-7",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 120.05,
+      "at": "2:00",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 75,
+      "row": "change-3-8",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 120.55,
+      "at": "2:01",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 76,
+      "row": "change-3-9",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 121.05,
+      "at": "2:01",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 77,
+      "row": "change-3-10",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 121.55,
+      "at": "2:02",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 78,
+      "row": "change-3-11",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 122.05,
+      "at": "2:02",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 79,
+      "row": "change-3-12",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 122.55,
+      "at": "2:03",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 80,
+      "row": "change-3-13",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 123.05,
+      "at": "2:03",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 81,
+      "row": "change-3-14",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 123.55,
+      "at": "2:04",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 82,
+      "row": "change-3-15",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 124.05,
+      "at": "2:04",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 83,
+      "row": "change-3-16",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 124.55,
+      "at": "2:05",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 84,
+      "row": "change-3-17",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 125.05,
+      "at": "2:05",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 85,
+      "row": "change-3-18",
+      "source": "finished_transition_3",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 125.35,
+      "at": "2:05",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 86,
+      "row": "change-4-0",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 190.05,
+      "at": "3:10",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 87,
+      "row": "change-4-1",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 190.55,
+      "at": "3:11",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 88,
+      "row": "change-4-2",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 191.05,
+      "at": "3:11",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 89,
+      "row": "change-4-3",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 191.55,
+      "at": "3:12",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 90,
+      "row": "change-4-4",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 192.05,
+      "at": "3:12",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 91,
+      "row": "change-4-5",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 192.55,
+      "at": "3:13",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 92,
+      "row": "change-4-6",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 193.05,
+      "at": "3:13",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 93,
+      "row": "change-4-7",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 193.55,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 94,
+      "row": "change-4-8",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 194.05,
+      "at": "3:14",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 95,
+      "row": "change-4-9",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 194.55,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 96,
+      "row": "change-4-10",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 195.05,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 97,
+      "row": "change-4-11",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 195.55,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 98,
+      "row": "change-4-12",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 196.05,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 99,
+      "row": "change-4-13",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 196.55,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 100,
+      "row": "change-4-14",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 197.05,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 101,
+      "row": "change-4-15",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 197.55,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 102,
+      "row": "change-4-16",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 198.05,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 103,
+      "row": "change-4-17",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 198.55,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 104,
+      "row": "change-4-18",
+      "source": "finished_transition_4",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 198.93,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 105,
+      "row": "change-5-0",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 221.32,
+      "at": "3:41",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 15.7s in a row (look at it: 15s is a lot for one picture)",
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 106,
+      "row": "change-5-1",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 221.82,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 107,
+      "row": "change-5-2",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 222.32,
+      "at": "3:42",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 108,
+      "row": "change-5-3",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 222.82,
+      "at": "3:43",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0021 < film p5 0.0209"
+      ],
+      "offset": 1.5
+    },
+    {
+      "cut": 109,
+      "row": "change-5-4",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 223.32,
+      "at": "3:43",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.93 < 18.0",
+        "low detail: edge density 0.0023 < film p5 0.0209"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 110,
+      "row": "change-5-5",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 223.82,
+      "at": "3:44",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.58 < 18.0",
+        "low detail: edge density 0.0186 < film p5 0.0209"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 111,
+      "row": "change-5-6",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 224.32,
+      "at": "3:44",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 112,
+      "row": "change-5-7",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 224.82,
+      "at": "3:45",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 113,
+      "row": "change-5-8",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 225.32,
+      "at": "3:45",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 114,
+      "row": "change-5-9",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 225.82,
+      "at": "3:46",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 115,
+      "row": "change-5-10",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 226.32,
+      "at": "3:46",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 116,
+      "row": "change-5-11",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 226.82,
+      "at": "3:47",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 117,
+      "row": "change-5-12",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 227.32,
+      "at": "3:47",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 118,
+      "row": "change-5-13",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 227.82,
+      "at": "3:48",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 119,
+      "row": "change-5-14",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 228.32,
+      "at": "3:48",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 120,
+      "row": "change-5-15",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 228.82,
+      "at": "3:49",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 121,
+      "row": "change-5-16",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 229.32,
+      "at": "3:49",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 122,
+      "row": "change-5-17",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 229.82,
+      "at": "3:50",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 123,
+      "row": "change-5-18",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 230.32,
+      "at": "3:50",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 124,
+      "row": "change-5-19",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 230.82,
+      "at": "3:51",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 125,
+      "row": "change-5-20",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 231.32,
+      "at": "3:51",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 126,
+      "row": "change-5-21",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 231.82,
+      "at": "3:52",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 127,
+      "row": "change-5-22",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 232.32,
+      "at": "3:52",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 128,
+      "row": "change-5-23",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 232.82,
+      "at": "3:53",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 129,
+      "row": "change-5-24",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 233.32,
+      "at": "3:53",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 130,
+      "row": "change-5-25",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 233.82,
+      "at": "3:54",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0172 < film p5 0.0209"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 131,
+      "row": "change-5-26",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 234.32,
+      "at": "3:54",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0178 < film p5 0.0209"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 132,
+      "row": "change-5-27",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 234.82,
+      "at": "3:55",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 133,
+      "row": "change-5-28",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 235.32,
+      "at": "3:55",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0206 < film p5 0.0209"
+      ],
+      "offset": 14.0
+    },
+    {
+      "cut": 134,
+      "row": "change-5-29",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 235.82,
+      "at": "3:56",
+      "fail": [],
+      "warn": [],
+      "offset": 14.5
+    },
+    {
+      "cut": 135,
+      "row": "change-5-30",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 236.32,
+      "at": "3:56",
+      "fail": [],
+      "warn": [],
+      "offset": 15.0
+    },
+    {
+      "cut": 136,
+      "row": "change-5-31",
+      "source": "finished_transition_5",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 236.65,
+      "at": "3:57",
+      "fail": [],
+      "warn": [],
+      "offset": 15.5
+    },
+    {
+      "cut": 137,
+      "row": "change-6-0",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 261.45,
+      "at": "4:21",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 138,
+      "row": "change-6-1",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 261.95,
+      "at": "4:22",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 139,
+      "row": "change-6-2",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 262.45,
+      "at": "4:22",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 140,
+      "row": "change-6-3",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 262.95,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 141,
+      "row": "change-6-4",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 263.45,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 142,
+      "row": "change-6-5",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 263.95,
+      "at": "4:24",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 143,
+      "row": "change-6-6",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 264.45,
+      "at": "4:24",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 144,
+      "row": "change-6-7",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 264.95,
+      "at": "4:25",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 145,
+      "row": "change-6-8",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 265.45,
+      "at": "4:25",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 146,
+      "row": "change-6-9",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 265.95,
+      "at": "4:26",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 147,
+      "row": "change-6-10",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 266.45,
+      "at": "4:26",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 148,
+      "row": "change-6-11",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 266.95,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0174 < film p5 0.0209"
+      ],
+      "offset": 5.5
+    },
+    {
+      "cut": 149,
+      "row": "change-6-12",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 267.45,
+      "at": "4:27",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 150,
+      "row": "change-6-13",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 267.95,
+      "at": "4:28",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 151,
+      "row": "change-6-14",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 268.45,
+      "at": "4:28",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 152,
+      "row": "change-6-15",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 268.95,
+      "at": "4:29",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 153,
+      "row": "change-6-16",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 269.45,
+      "at": "4:29",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 154,
+      "row": "change-6-17",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 269.95,
+      "at": "4:30",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 155,
+      "row": "change-6-18",
+      "source": "finished_transition_6",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 270.25,
+      "at": "4:30",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 156,
+      "row": "change-7-0",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 315.72,
+      "at": "5:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 157,
+      "row": "change-7-1",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 316.22,
+      "at": "5:16",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 158,
+      "row": "change-7-2",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 316.72,
+      "at": "5:17",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 159,
+      "row": "change-7-3",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 317.22,
+      "at": "5:17",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 160,
+      "row": "change-7-4",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 317.72,
+      "at": "5:18",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 161,
+      "row": "change-7-5",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 318.22,
+      "at": "5:18",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 162,
+      "row": "change-7-6",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 318.72,
+      "at": "5:19",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 163,
+      "row": "change-7-7",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 319.22,
+      "at": "5:19",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 164,
+      "row": "change-7-8",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 319.72,
+      "at": "5:20",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 165,
+      "row": "change-7-9",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 320.22,
+      "at": "5:20",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 166,
+      "row": "change-7-10",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 320.72,
+      "at": "5:21",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 167,
+      "row": "change-7-11",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 321.22,
+      "at": "5:21",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 168,
+      "row": "change-7-12",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 321.72,
+      "at": "5:22",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 169,
+      "row": "change-7-13",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 322.22,
+      "at": "5:22",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 170,
+      "row": "change-7-14",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 322.72,
+      "at": "5:23",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 171,
+      "row": "change-7-15",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 323.22,
+      "at": "5:23",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 172,
+      "row": "change-7-16",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 323.72,
+      "at": "5:24",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 173,
+      "row": "change-7-17",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 324.22,
+      "at": "5:24",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 174,
+      "row": "change-7-18",
+      "source": "finished_transition_7",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 324.5,
+      "at": "5:24",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 175,
+      "row": "change-8-0",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 358.15,
+      "at": "5:58",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 176,
+      "row": "change-8-1",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 358.65,
+      "at": "5:59",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 177,
+      "row": "change-8-2",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 359.15,
+      "at": "5:59",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 178,
+      "row": "change-8-3",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 359.65,
+      "at": "6:00",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 179,
+      "row": "change-8-4",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 360.15,
+      "at": "6:00",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 180,
+      "row": "change-8-5",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 360.65,
+      "at": "6:01",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 181,
+      "row": "change-8-6",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 361.15,
+      "at": "6:01",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 182,
+      "row": "change-8-7",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 361.65,
+      "at": "6:02",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 183,
+      "row": "change-8-8",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 362.15,
+      "at": "6:02",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 184,
+      "row": "change-8-9",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 362.65,
+      "at": "6:03",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 185,
+      "row": "change-8-10",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 363.15,
+      "at": "6:03",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 186,
+      "row": "change-8-11",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 363.65,
+      "at": "6:04",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 187,
+      "row": "change-8-12",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 364.15,
+      "at": "6:04",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 188,
+      "row": "change-8-13",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 364.65,
+      "at": "6:05",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 189,
+      "row": "change-8-14",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 365.15,
+      "at": "6:05",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 190,
+      "row": "change-8-15",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 365.65,
+      "at": "6:06",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 191,
+      "row": "change-8-16",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 366.15,
+      "at": "6:06",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 192,
+      "row": "change-8-17",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 366.65,
+      "at": "6:07",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 193,
+      "row": "change-8-18",
+      "source": "finished_transition_8",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 366.95,
+      "at": "6:07",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 194,
+      "row": "change-9-0",
+      "source": "finished_transition_9",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 450.95,
+      "at": "7:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 195,
+      "row": "change-9-1",
+      "source": "finished_transition_9",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 451.45,
+      "at": "7:31",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 196,
+      "row": "change-9-2",
+      "source": "finished_transition_9",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 451.95,
+      "at": "7:32",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 197,
+      "row": "change-9-3",
+      "source": "finished_transition_9",
+      "title": "Finished Gliese 710 picture surrounding compilation edits",
+      "t": 452.43,
+      "at": "7:32",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0209,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

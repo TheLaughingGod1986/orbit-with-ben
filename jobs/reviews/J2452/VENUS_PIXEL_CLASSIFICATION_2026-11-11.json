@@ -1,0 +1,106 @@
+{
+  "status": "NOT_PASS_REPAIR_REQUIRED",
+  "note": "Ending trim explicitly included; old readback checker lacked it. Candidate v02 changes only join_02 and must receive fresh gates after ending repair.",
+  "findings": [
+    {
+      "row": "pixel-24",
+      "cut": 12,
+      "t": 25.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "split panel: vertical gutter at 0.043"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-222",
+      "cut": 111,
+      "t": 223.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 5.67 < 13.44 and edge density 0.0 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-300",
+      "cut": 150,
+      "t": 301.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 26.83, p95 147.0"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-308",
+      "cut": 154,
+      "t": 309.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 20.33, p95 157.0"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-310",
+      "cut": 155,
+      "t": 311.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "near-black: mean 22.51, p95 158.0"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-482",
+      "cut": 241,
+      "t": 483.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.05 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-484",
+      "cut": 242,
+      "t": 485.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.06 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-486",
+      "cut": 243,
+      "t": 487.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 12.06 < 13.44 and edge density 0.0022 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-488",
+      "cut": 244,
+      "t": 489.0,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 11.46 < 13.44 and edge density 0.002 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film"
+    },
+    {
+      "row": "pixel-490",
+      "cut": 245,
+      "t": 490.7,
+      "source": "023_Venus_full_rough_v05e.mp4",
+      "why": [
+        "low detail: luma std 11.46 < 13.44 and edge density 0.002 < 0.0259 (absolute floor)"
+      ],
+      "classification": "NEW_EDIT_NEIGHBOURHOOD"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/orion_repaired_join_v01/orion_repaired_join.mp4",
+  "edge_floor": 0.0138,
+  "verdict": "FAIL",
+  "failed": [
+    {
+      "row": "2",
+      "cut": 1,
+      "t": 5.3,
+      "source": "orion_rise_vlt.mp4",
+      "why": [
+        "push jitter: 1.041 px off trend, 0 reversals"
+      ]
+    }
+  ],
+  "warn": [
+    {
+      "row": "3",
+      "cut": 2,
+      "t": 9.6,
+      "source": "join",
+      "why": [
+        "low detail: edge density 0.0127 < film p5 0.0138"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "join",
+      "t": 1.0,
+      "std": 29.19,
+      "mean": 67.61,
+      "p95": 109.0,
+      "edge": 0.0283,
+      "hf": 5.27,
+      "lf": 27.53,
+      "std8": 28.08,
+      "edge8": 0.1109,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 32,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "orion_rise_vlt.mp4",
+      "t": 5.3,
+      "std": 16.36,
+      "mean": 31.07,
+      "p95": 56.0,
+      "edge": 0.0232,
+      "hf": 4.88,
+      "lf": 14.78,
+      "std8": 15.14,
+      "edge8": 0.0297,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.487,
+        "trend_y": -1.015,
+        "max_off_trend_px": 1.041,
+        "reversals": 0,
+        "frames": 170,
+        "fail": true
+      },
+      "fail": [
+        "push jitter: 1.041 px off trend, 0 reversals"
+      ],
+      "warn": [
+        "low detail: luma std 16.36 < 18.0"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "join",
+      "t": 9.6,
+      "std": 34.18,
+      "mean": 44.79,
+      "p95": 113.0,
+      "edge": 0.0127,
+      "hf": 3.32,
+      "lf": 33.64,
+      "std8": 33.87,
+      "edge8": 0.0238,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.0,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 32,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0127 < film p5 0.0138"
+      ]
+    }
+  ]
+}

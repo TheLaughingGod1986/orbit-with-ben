@@ -1,0 +1,161 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "026",
+  "output": "scratch/public_proxima_v05/026_proxima_undarkened_v05.mp4",
+  "sha256": "ae5c675a2414209e2f114f20487a583f0878cbab9c79fdfd65761c8b39b2ba63",
+  "source_master": "archive/youtube-staging/026/026_NearestStar_v06_cfr18.mp4",
+  "source_sha256": "6e587bb5ac33552cef55ac897d89f5516a90acef9473155254dd313fc73e09d3",
+  "narration_sha256": "8742c9250ba503679ee85391906d0bc34248d448d4af7280f0678aa9529fff2a",
+  "expected_frames": 14142,
+  "duration_s": 471.4,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 20.5,
+      "chapter_in_s": 0,
+      "chapter_out_s": 20.5,
+      "compilation_in_s": 5402.11,
+      "compilation_out_s": 5422.61
+    },
+    {
+      "master_in_s": 32.8,
+      "master_out_s": 224.4,
+      "chapter_in_s": 20.5,
+      "chapter_out_s": 212.1,
+      "compilation_in_s": 5422.61,
+      "compilation_out_s": 5614.21
+    },
+    {
+      "master_in_s": 232,
+      "master_out_s": 491.3,
+      "chapter_in_s": 212.1,
+      "chapter_out_s": 471.4,
+      "compilation_in_s": 5614.21,
+      "compilation_out_s": 5873.51
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.08,
+      20.5
+    ],
+    [
+      32.8,
+      224.4
+    ],
+    [
+      232.0,
+      491.3
+    ]
+  ],
+  "covers": [
+    [
+      32.8,
+      36.2,
+      36.3,
+      "chapter-1 cover"
+    ],
+    [
+      122,
+      124.8,
+      138.2,
+      "chapter-2 cover"
+    ],
+    [
+      127.4,
+      138.1,
+      0,
+      "plate:eso1323a.jpg"
+    ],
+    [
+      232,
+      235.7,
+      236,
+      "chapter-3 cover"
+    ],
+    [
+      312.1,
+      324,
+      0,
+      "plate:heic0809a.jpg"
+    ],
+    [
+      378.8,
+      381.7,
+      381.8,
+      "chapter-5 cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "NGC 6752 eso1323a and Hubble starfield heic0809a cover the two Orbit windows. Chapter-2 donor is neighbouring clean starfield at master 138.2s; other chapter cards use neighbouring finished-master picture. Version one local candidate retained; heic1007a nebula was rejected as wrong subject. Charts and teaching labels stay.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "pixel_repair": {
+    "interval": [
+      357,
+      378
+    ],
+    "filter": "eq=brightness='0.10*max(0,min(1,min(t-357,378-t)))':eval=frame",
+    "credits": "Added ESO and ESA/Hubble & NASA corner credits to new starfield covers; credit and licence copied from pool_v03.json",
+    "reason": "Near-black failures in newly changed last-card neighbourhood; no waiver. Smooth one-second ramps, source motion and narration unchanged."
+  },
+  "unwanted_cards_removed_verified": true,
+  "visual_review": {
+    "patch_times_s": [
+      0,
+      1,
+      3,
+      5,
+      6,
+      20.1,
+      20.5,
+      20.9,
+      22.2,
+      23.5,
+      23.9,
+      24.3,
+      109.3,
+      109.7,
+      110.1,
+      111.1,
+      112.1,
+      112.5,
+      112.9,
+      114.7,
+      115.1,
+      115.5,
+      120.45,
+      125.4,
+      125.8,
+      126.2,
+      211.7,
+      212.1,
+      212.5,
+      213.95,
+      215.4,
+      215.8,
+      216.2,
+      291.8,
+      292.2,
+      292.6,
+      298.15,
+      303.7,
+      304.1,
+      304.5,
+      358.5,
+      358.9,
+      359.3,
+      360.35,
+      361.4,
+      361.8,
+      362.2,
+      470.4
+    ],
+    "method": "Saved stills at cover entries, midpoint, exits and surrounding frames; source sheet and saved warning sheet inspected. No playback or listening claim.",
+    "advisory_count": 13,
+    "advisory_review": "Bright-star structure, retained code graphics, archive rocket and distant planet. No remaining Orbit or old chapter lower-third in inspected cover windows.",
+    "sheets": [
+      "COVER_EDGES.jpg",
+      "joins_qa/picture_qa_review.jpg"
+    ]
+  }
+}

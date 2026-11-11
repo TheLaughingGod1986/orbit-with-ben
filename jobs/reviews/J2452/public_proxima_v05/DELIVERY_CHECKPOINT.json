@@ -1,0 +1,13 @@
+{
+  "status": "NAS_DESTINATION_UNVERIFIED_NOT_DELIVERED",
+  "source_bytes": 6774772657,
+  "destination_bytes": 6774772657,
+  "source_sha256": "7eb93f84b40190bb944208e396e5ce9ccc2e77c28c3f00de8aa8b6bc24752ddd",
+  "destination": "_sleep_video_01/j2452/public_chapters_v01/026_proxima_v01/026_proxima_darkened_v01.mp4",
+  "chapter_record_exists": false,
+  "outcome": {
+    "status": "COPY_STOPPED_AT_CLEAN_RUN_BOUNDARY",
+    "note": "Save process stopped; existing partial file retained. Resume helper verifies entire prefix before append; no delivered chapter claim."
+  },
+  "next": "Resume save_public_proxima.py; compare full existing prefix, finish any missing bytes, require full destination SHA-256 and CHAPTER.json before 12/15. No re-render."
+}

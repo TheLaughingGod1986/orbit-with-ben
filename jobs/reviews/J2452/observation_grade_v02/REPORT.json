@@ -1,0 +1,160 @@
+{
+  "status": "PRESENTATION_GRADE_NOT_FULL_PICTURE_QA_OR_UAT",
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chajnantor_repaired_v01/029_picture_chajnantor_repaired.mp4",
+  "source_sha256": "3b37262c97c2efab7110179baa65ab7b1ca30bb0bbe0bac643b672cd444684fd",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/observation_grade_v02/029_picture_observation_grade.mp4",
+  "sha256": "8496226aca2f3f37b62fd2ae0b09f648fc3f0d972ae43212a8fa43c1f1abe979",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "spans": [
+    {
+      "row": "5",
+      "plate_id": "r05_surface",
+      "part": "part01",
+      "chapter": "1 The Star in Orion's Shoulder",
+      "timeline_in": 22.1,
+      "timeline_out": 26.8,
+      "source": "sphere_dec.jpg",
+      "kind": "still",
+      "upscale": 1.39,
+      "framing": {
+        "box": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "pct": 0.05
+      },
+      "overlays": [
+        "chapter_card:The Star in Orion's Shoulder"
+      ],
+      "credit": "ESO/M. Montarg\u00e8s et al. \u00b7 CC BY 4.0",
+      "master_range_s": [
+        37.2,
+        41.9
+      ],
+      "source_row": "5"
+    },
+    {
+      "row": "18",
+      "plate_id": "r18_shells_cut1",
+      "part": "part03",
+      "chapter": "3 How a Giant Star Dies",
+      "timeline_in": 170.76,
+      "timeline_out": 174.02,
+      "source": "sphere_dec.jpg",
+      "kind": "still",
+      "upscale": 1.448,
+      "framing": {
+        "box": [
+          0.0,
+          0.02,
+          1.0,
+          0.98
+        ],
+        "pct": 0.05
+      },
+      "overlays": [],
+      "credit": "ESO/M. Montarg\u00e8s et al. \u00b7 CC BY 4.0",
+      "master_range_s": [
+        185.86,
+        189.12
+      ],
+      "source_row": "18"
+    },
+    {
+      "row": "32",
+      "plate_id": "r32_sphere_dec",
+      "part": "part05",
+      "chapter": "5 So When?",
+      "timeline_in": 357.8,
+      "timeline_out": 364.96,
+      "source": "sphere_dec.jpg",
+      "kind": "still",
+      "upscale": 1.511,
+      "framing": {
+        "box": [
+          0.0,
+          0.04,
+          1.0,
+          0.96
+        ],
+        "pct": 0.05
+      },
+      "overlays": [],
+      "credit": "ESO/M. Montarg\u00e8s et al. \u00b7 CC BY 4.0",
+      "master_range_s": [
+        378.3,
+        385.46
+      ],
+      "source_row": "32"
+    },
+    {
+      "row": "33",
+      "plate_id": "r33_speckle",
+      "part": "part05",
+      "chapter": "5 So When?",
+      "timeline_in": 372.1,
+      "timeline_out": 382.5,
+      "source": "companion_speckle.jpg",
+      "kind": "still",
+      "upscale": 1.986,
+      "framing": {
+        "box": [
+          0.03,
+          0.23,
+          0.97,
+          0.77
+        ],
+        "pct": 0.05
+      },
+      "overlays": [
+        "code_graphic_029_r33_speckle_16.png"
+      ],
+      "credit": "International Gemini Observatory/NOIRLab/NSF/AURA; M. Zamani \u00b7 CC BY 4.0",
+      "master_range_s": [
+        392.6,
+        403.0
+      ],
+      "source_row": "33"
+    },
+    {
+      "row": "33",
+      "plate_id": "r33_pair",
+      "part": "part05",
+      "chapter": "5 So When?",
+      "timeline_in": 386.1,
+      "timeline_out": 392.8,
+      "source": "companion_speckle.jpg",
+      "kind": "still",
+      "upscale": 1.867,
+      "framing": {
+        "box": [
+          0.0,
+          0.18,
+          1.0,
+          0.82
+        ],
+        "pct": 0.05
+      },
+      "overlays": [
+        "code_graphic_029_r33_pair_17.png"
+      ],
+      "credit": "International Gemini Observatory/NOIRLab/NSF/AURA; M. Zamani \u00b7 CC BY 4.0",
+      "master_range_s": [
+        406.6,
+        413.3
+      ],
+      "source_row": "33"
+    }
+  ],
+  "filter": "geq=lum='min(180,lum(X,Y)+6*(if(between(T,22.1,26.8),min(1,min((T-22.1)/0.3,(26.8-T)/0.3)),0)+if(between(T,170.76666666666668,174.03333333333333),min(1,min((T-170.76666666666668)/0.3,(174.03333333333333-T)/0.3)),0)+if(between(T,357.8,364.96666666666664),min(1,min((T-357.8)/0.3,(364.96666666666664-T)/0.3)),0)+if(between(T,372.1,382.5),min(1,min((T-372.1)/0.3,(382.5-T)/0.3)),0)+if(between(T,386.1,392.8),min(1,min((T-386.1)/0.3,(392.8-T)/0.3)),0)))':cb='cb(X,Y)':cr='cr(X,Y)':enable='between(t,22.1,26.8)+between(t,170.76666666666668,174.03333333333333)+between(t,357.8,364.96666666666664)+between(t,372.1,382.5)+between(t,386.1,392.8)',format=yuv420p",
+  "luma_lift_code_values": 6,
+  "shoulder_s": 0.3,
+  "limitations": [
+    "Does not recover source detail or change scientific interpretation.",
+    "Original graphics, repeats, labels, finishing and other chapters remain.",
+    "Normal gates must run without exemptions."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "DARKENING_FAILED_NOT_DELIVERED",
+  "worker": "macbook",
+  "progress": "2 of 15",
+  "source": "public_earth_v04",
+  "attempts": [
+    {
+      "version": "public_earth_dark_v01",
+      "result": "specific slow encoder interrupted; partial preserved; not checked or delivered"
+    },
+    {
+      "version": "public_earth_dark_v02",
+      "result": "full decode frame count matched; brightness assertion failed",
+      "measured_ratio": 0.8283394875783264
+    },
+    {
+      "version": "public_earth_dark_v03",
+      "result": "full decode frame count matched; brightness assertion failed",
+      "measured_ratio": 0.828339590290531
+    }
+  ],
+  "required_ratio": [
+    0.83,
+    0.87
+  ],
+  "nas_write": false,
+  "remaining": "Fix actual time-varying lookup-table grade; rerun all brightness checks. Do not waive threshold or save these failed candidates."
+}

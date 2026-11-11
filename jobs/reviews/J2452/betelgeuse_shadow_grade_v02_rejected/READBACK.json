@@ -1,0 +1,35 @@
+{
+  "status": "SAVED_FULL_CHAPTER_CLOCK_AND_COVER_READBACK",
+  "sha256": "47066cde3534c5555004dae795b351215257b731754c3a6a16885e9744dc27dd",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "constant_frame_clock": true,
+  "geometry": [
+    1920,
+    1080,
+    "yuv420p"
+  ],
+  "hash_match": true,
+  "opaque_checks": [
+    {
+      "cover": 1,
+      "frames_compared": 237,
+      "maximum_mean_absolute_rgb_error": 1.0008159722222223,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "cover": 2,
+      "frames_compared": 136,
+      "maximum_mean_absolute_rgb_error": 1.2355844907407407,
+      "threshold": 2,
+      "pass_check": true
+    }
+  ],
+  "all_opaque_checks_pass": true,
+  "limitations": [
+    "Gutter finding retained; no override.",
+    "Code graphics, reuse, finishing, title and compilation assembly remain.",
+    "Normal polish gate must be rerun."
+  ]
+}

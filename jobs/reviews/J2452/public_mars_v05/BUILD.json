@@ -1,0 +1,151 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "025",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v05/025_mars_undarkened_v05.mp4",
+  "sha256": "96645efc79cfff3bf911f4d4e6b84c2cd281f4dd00b0d8b6025689fbe9fb0336",
+  "source_master": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/09_Final-Export/025_MarsRobot_full_rough_v03f.mp4",
+  "source_sha256": "cce6268cbd571f1f404ee98b86e089bbe3cabed15017113bd9559951ee36e09f",
+  "narration_sha256": "6960a64e7aec8c38553d4f1391a8b2504d2b052e72f1aac82925faf6940b4c4d",
+  "expected_frames": 13875,
+  "duration_s": 462.5,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 28.3,
+      "chapter_in_s": 0,
+      "chapter_out_s": 28.3,
+      "compilation_in_s": 1409.24,
+      "compilation_out_s": 1437.54
+    },
+    {
+      "master_in_s": 40.8,
+      "master_out_s": 224.5,
+      "chapter_in_s": 28.3,
+      "chapter_out_s": 212.0,
+      "compilation_in_s": 1437.54,
+      "compilation_out_s": 1621.24
+    },
+    {
+      "master_in_s": 231,
+      "master_out_s": 451.5,
+      "chapter_in_s": 212.0,
+      "chapter_out_s": 432.5,
+      "compilation_in_s": 1621.24,
+      "compilation_out_s": 1841.74
+    },
+    {
+      "master_in_s": 453.2,
+      "master_out_s": 483.2,
+      "chapter_in_s": 432.5,
+      "chapter_out_s": 462.5,
+      "compilation_in_s": 1841.74,
+      "compilation_out_s": 1871.74
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.12,
+      28.3
+    ],
+    [
+      40.8,
+      224.5
+    ],
+    [
+      231.0,
+      451.5
+    ],
+    [
+      453.2,
+      483.2
+    ]
+  ],
+  "covers": [
+    [
+      40.8,
+      44.5,
+      45,
+      "act-desert"
+    ],
+    [
+      154,
+      166,
+      166,
+      "Orbit-winter"
+    ],
+    [
+      234,
+      239,
+      240,
+      "act-dust"
+    ],
+    [
+      329,
+      335,
+      335,
+      "act-wear"
+    ],
+    [
+      368,
+      375,
+      375,
+      "Orbit-wheel"
+    ],
+    [
+      414,
+      420,
+      420,
+      "act-summary"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Candidate uses own neighbouring finished-master pictures for cards and wheel cover. Winter cover uses the named, copied PIA19400 plate; subject/provenance retained from J2548. Exact cover edges and source picture remain pending QA.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "cover_provenance": {
+    "winter_plate": "PIA19400.tif",
+    "sha256": "2a666f7bbc233be8b0d40a6bd51cdc2ccea5bf5aae516d1eeba04442dd53497e",
+    "existing_record": "jobs/reviews/J2548/COPIED.md",
+    "wheel_fallback": "Named PIA19803 and alternative wheel pool absent at the named NAS and archived edit paths; own neighbouring finished-master rover picture used, no new search or generation."
+  },
+  "parent_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04",
+  "repair_patches": [
+    {
+      "chapter_in_s": 345,
+      "chapter_out_s": 352,
+      "master_donor_in_s": 357,
+      "donor_duration_s": 7,
+      "label": "wheel-Orbit-edge"
+    }
+  ],
+  "repair": "Cover residual Orbit visible at chapter 347\u2013349.5 seconds in the previous cover fade. Use neighbouring finished-master wheel footage 357\u2013364 over chapter 345\u2013352 with one-second edge fades. No narration change; rerun gates.",
+  "quiet_title_repair": "Original source picture restored over the first seven seconds, with quiet name at y=80; source Opportunity label remains at bottom. Inspect frame at three seconds before delivery.",
+  "prior_repair_patches": [
+    {
+      "chapter_in_s": 209,
+      "chapter_out_s": 217,
+      "master_donor_in_s": 250,
+      "donor_duration_s": 8,
+      "label": "subscribe-join-detail"
+    }
+  ],
+  "unwanted_cards_removed_verified": true,
+  "cover_inspection": {
+    "worker": "macbook",
+    "method": "Visual still inspection, not full moving-video/listening approval",
+    "earlier_candidate": "v04",
+    "observations": [
+      "Quiet name at 3 seconds is clear of the source Opportunity label.",
+      "Desert edge samples 27.5\u201333 seconds show Mars terrain and rover, no act card.",
+      "Cold edge samples 120\u2013125 seconds show rover/terrain, no Cold card.",
+      "Winter samples 139\u2013154 seconds show rover shadow, dusk plate and terrain, no Orbit.",
+      "Subscribe/Dust repair samples 207\u2013223 seconds show rover panels and terrain, no Subscribe or Dust card.",
+      "Wear edge samples 310\u2013318 seconds show cleanroom/rover, no act card.",
+      "Summary edge samples 395\u2013403 seconds show rover and Martian terrain, no act card.",
+      "v04 wheel samples showed Orbit at 347\u2013349.5 seconds: candidate rejected for grading.",
+      "v05 wheel interval 344\u2013353 seconds inspected every 0.5 seconds: rover wheels then launch/sunset; no Orbit visible.",
+      "v04 advisory sheet inspected: terrain low contrast, dusk plate and cover dissolves account for advisories; Chief final review remains."
+    ],
+    "evidence_local": "/Users/ben/_desk/J2452-sleep-scratch/mars_inspection_v05",
+    "limitation": "Sampled cover/edge stills only; no claim of full continuous playback, listening or Chief approval."
+  }
+}

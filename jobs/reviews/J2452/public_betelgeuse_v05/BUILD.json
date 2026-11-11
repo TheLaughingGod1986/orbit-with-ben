@@ -1,0 +1,148 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "029",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_betelgeuse_v05/029_betelgeuse_undarkened_v05.mp4",
+  "sha256": "4596e9de4a79d4c42174aa0d9afa4bca1a513c4280f38d917b3e5ceaa1d0f69e",
+  "source_master": "/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v03b.mp4",
+  "source_sha256": "54e04d3bfcb42bcf9066a0613254f10c978435b148d158468711e25908060c93",
+  "narration_sha256": "664b0cc5b64db7ff69a48d53a7345c2d8a092d0a378d6b7fde2213b4858b0d0b",
+  "expected_frames": 14829,
+  "duration_s": 494.3,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 22.1,
+      "chapter_in_s": 0,
+      "chapter_out_s": 22.1,
+      "compilation_in_s": 4436.46,
+      "compilation_out_s": 4458.56
+    },
+    {
+      "master_in_s": 37.2,
+      "master_out_s": 242.2,
+      "chapter_in_s": 22.1,
+      "chapter_out_s": 227.1,
+      "compilation_in_s": 4458.56,
+      "compilation_out_s": 4663.56
+    },
+    {
+      "master_in_s": 247.6,
+      "master_out_s": 514.8,
+      "chapter_in_s": 227.1,
+      "chapter_out_s": 494.3,
+      "compilation_in_s": 4663.56,
+      "compilation_out_s": 4930.76
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.08,
+      22.1
+    ],
+    [
+      37.2,
+      242.2
+    ],
+    [
+      247.6,
+      514.8
+    ]
+  ],
+  "covers": [
+    [
+      37.2,
+      40.5,
+      48.7,
+      "chapter-1 cover"
+    ],
+    [
+      109.4,
+      112.3,
+      105.48,
+      "chapter-2 cover"
+    ],
+    [
+      123.16,
+      130.42,
+      0,
+      "Orbit cover 1"
+    ],
+    [
+      169.8,
+      172.8,
+      163.5,
+      "chapter-3 cover"
+    ],
+    [
+      247.6,
+      250.8,
+      350.6,
+      "chapter-4 cover"
+    ],
+    [
+      282.16,
+      286.08,
+      0,
+      "Orbit cover 2"
+    ],
+    [
+      342.6,
+      345.5,
+      453.2,
+      "chapter-5 cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Two previously passed ESO covers reused exactly; all other picture comes from the finished v03b master. No further source search or source-film reconstruction. Teaching graphics retained as directed. Five original lower-third chapter cards covered using neighbouring finished-master footage; agenda, subscribe and closing narration removed at corrected pause boundaries.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "edge_repair": [
+    [
+      93.1,
+      99.0,
+      453.2,
+      "chapter-2-clean",
+      null
+    ],
+    [
+      106.8,
+      116.6,
+      0,
+      "Orbit-1-lifted",
+      {
+        "master_in_s": 123.16,
+        "master_out_s": 130.42,
+        "chapter_in_s": 108.06,
+        "chapter_out_s": 115.32,
+        "compilation_in_s": 4544.52,
+        "compilation_out_s": 4551.78,
+        "original_source": "sun_orbit_row67_omni_v01.mp4",
+        "status": "COVER_INTEGRATED_AND_PIXEL_CHECKED_NOT_FULL_CHAPTER_QA",
+        "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+        "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+        "candidate_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6"
+      }
+    ],
+    [
+      260.4,
+      266.8,
+      0,
+      "Orbit-2-lifted",
+      {
+        "master_in_s": 282.16,
+        "master_out_s": 286.08,
+        "chapter_in_s": 261.66,
+        "chapter_out_s": 265.58,
+        "compilation_in_s": 4698.12,
+        "compilation_out_s": 4702.04,
+        "original_source": "orbit_thumb_omni_v01.mp4",
+        "status": "COVER_INTEGRATED_AND_PIXEL_CHECKED_NOT_FULL_CHAPTER_QA",
+        "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+        "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+        "candidate_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48"
+      }
+    ]
+  ],
+  "previous_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_betelgeuse_v04",
+  "unwanted_cards_removed_verified": true,
+  "inspection": "EDIT_INSPECTION.jpg: original and expanded cover starts/midpoints/ends plus chapter opening/ending inspected as stills. No Orbit or old act titles visible at sampled points. Teaching labels retained. No watch/listen claim."
+}

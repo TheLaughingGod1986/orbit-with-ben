@@ -1,0 +1,106 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "028",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_gliese_v02/028_gliese_undarkened_v01.mp4",
+  "sha256": "8c42ac05452ae39f085313db9ae81f1b6e938a535bb5d5ec4ea0b11383b79b75",
+  "source_master": "/Volumes/data/mac-mini-archive/youtube-staging/028/028_Gliese710_full_master_v03.mp4",
+  "source_sha256": "a9780e548a2775f4e7a1acecb6ac24308927f0b58ab1d606e67d27741e3db824",
+  "narration_sha256": "81da431947db2f684bdc2b007b81759232cce135c8f24de1021f29d006eb9fba",
+  "expected_frames": 13581,
+  "duration_s": 452.7,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 30.8,
+      "chapter_in_s": 0,
+      "chapter_out_s": 30.8,
+      "compilation_in_s": 3979.75,
+      "compilation_out_s": 4010.55
+    },
+    {
+      "master_in_s": 42.2,
+      "master_out_s": 204.2,
+      "chapter_in_s": 30.8,
+      "chapter_out_s": 192.8,
+      "compilation_in_s": 4010.55,
+      "compilation_out_s": 4172.55
+    },
+    {
+      "master_in_s": 209.89,
+      "master_out_s": 469.8,
+      "chapter_in_s": 192.8,
+      "chapter_out_s": 452.71,
+      "compilation_in_s": 4172.55,
+      "compilation_out_s": 4432.46
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.12,
+      30.8
+    ],
+    [
+      42.2,
+      204.2
+    ],
+    [
+      209.89,
+      469.8
+    ]
+  ],
+  "covers": [
+    [
+      42.2,
+      45.2,
+      45.3,
+      "chapter-1 cover"
+    ],
+    [
+      57.8,
+      68.1,
+      68.2,
+      "binoculars neighbour cover"
+    ],
+    [
+      130.7,
+      133.8,
+      127,
+      "chapter-2 cover"
+    ],
+    [
+      209.89,
+      213.15,
+      214,
+      "chapter-3 cover"
+    ],
+    [
+      241.16,
+      250.81,
+      257,
+      "ice neighbour cover"
+    ],
+    [
+      281.3,
+      284.4,
+      284.5,
+      "chapter-4 cover"
+    ],
+    [
+      335.54,
+      338.64,
+      338.8,
+      "chapter-5 cover"
+    ],
+    [
+      378,
+      381.1,
+      381.2,
+      "chapter-6 cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Plan names generic ESO/Paranal/La Silla and deep-starfield covers without an asset ID; the named 03_Footage folder is absent. Neighbouring finished-master picture used, donor intervals recorded in source_cuts.json. Existing labels and illustration retained.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "unwanted_cards_removed_verified": true,
+  "still_inspection": "Opening, cover starts/midpoints/ends and ending sheet inspected; no Orbit or old chapter card visible. All 11 QA advisory frames inspected: recognisable comet, star/ice illustration and existing source diagrams. No playback/listening claim."
+}

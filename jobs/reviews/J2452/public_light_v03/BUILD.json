@@ -1,0 +1,123 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "024",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v03/024_light_undarkened_v02.mp4",
+  "sha256": "496fa558b0fc0036e042e96c2a06b61911d48acb72f76f2ad54cf6543808720b",
+  "source_master": "/Volumes/data/mac-mini-archive/youtube-staging/024/024_LightSpeed_v06.mp4",
+  "source_sha256": "8d0b131771c1e6bfc8b33f49f5c628e96ae3db3af7a890864f2239960a5bde02",
+  "narration_sha256": "d3ffd1d751d50eae9f93c481c1f3dd68797f8dafb065b86357b90f5f298516c7",
+  "expected_frames": 13900,
+  "duration_s": 463.3333333333333,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 28.3,
+      "chapter_in_s": 0,
+      "chapter_out_s": 28.3,
+      "compilation_in_s": 4934.76,
+      "compilation_out_s": 4963.06
+    },
+    {
+      "master_in_s": 41.6,
+      "master_out_s": 213.1,
+      "chapter_in_s": 28.3,
+      "chapter_out_s": 199.8,
+      "compilation_in_s": 4963.06,
+      "compilation_out_s": 5134.56
+    },
+    {
+      "master_in_s": 219.45,
+      "master_out_s": 483,
+      "chapter_in_s": 199.8,
+      "chapter_out_s": 463.35,
+      "compilation_in_s": 5134.56,
+      "compilation_out_s": 5398.11
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.1,
+      28.3
+    ],
+    [
+      41.6,
+      213.1
+    ],
+    [
+      220.0,
+      483.0
+    ]
+  ],
+  "covers": [
+    [
+      41.6,
+      44.7,
+      44.8,
+      "GPS card cover"
+    ],
+    [
+      110.5,
+      113.4,
+      113.5,
+      "light rule card cover"
+    ],
+    [
+      141.1,
+      145.6,
+      136.7,
+      "light-clock neighbour cover"
+    ],
+    [
+      219.45,
+      220.7,
+      221,
+      "subscribe tail cover"
+    ],
+    [
+      224.2,
+      227.2,
+      227.3,
+      "trip card cover"
+    ],
+    [
+      232.9,
+      236,
+      232.9,
+      "pre-Omni departure cover"
+    ],
+    [
+      279.9,
+      287.1,
+      279.9,
+      "pre-Omni contraction cover"
+    ],
+    [
+      312.4,
+      317.5,
+      307,
+      "Earth neighbour cover"
+    ],
+    [
+      324.2,
+      327.3,
+      327.4,
+      "energy card cover"
+    ],
+    [
+      399,
+      402,
+      402.1,
+      "future card cover"
+    ],
+    [
+      442.2,
+      446.2,
+      442.2,
+      "pre-Omni closing cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Plan-named pre-Omni master retains Orbit in two windows, rejected by sampled stills. Those windows use finished-master neighbouring light-clock and Earth pictures. Remaining three pre-Omni windows contain no Orbit in sampled stills. Cards use neighbouring finished-master pictures. Source charts and labels retained. No source rebuild or generation.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "opening_repair": "New-title neighbourhood failed near-black check. Cover chapter 0-8 seconds with finished-master Earth/ISS 303-311s, dissolve over 8-9 seconds to original picture. Same narration clock and frame count; no source search or generation."
+}

@@ -1,0 +1,148 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v04/join_01_candidate.mp4",
+  "edge_floor": 0.0536,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "5",
+      "cut": 4,
+      "t": 14.43,
+      "source": "join_01_source_and_transition_4",
+      "why": [
+        "low detail: edge density 0.0515 < film p5 0.0536"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "join_01_source_and_transition_0",
+      "t": 0.83,
+      "std": 24.37,
+      "mean": 51.98,
+      "p95": 90.0,
+      "edge": 0.0618,
+      "hf": 7.71,
+      "lf": 21.07,
+      "std8": 21.66,
+      "edge8": 0.0526,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "join_01_source_and_transition_1",
+      "t": 2.67,
+      "std": 25.99,
+      "mean": 40.09,
+      "p95": 98.0,
+      "edge": 0.0694,
+      "hf": 6.66,
+      "lf": 24.32,
+      "std8": 24.6,
+      "edge8": 0.0298,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "eso0927e.tif",
+      "t": 7.63,
+      "std": 33.63,
+      "mean": 29.69,
+      "p95": 106.0,
+      "edge": 0.1056,
+      "hf": 10.3,
+      "lf": 31.48,
+      "std8": 31.75,
+      "edge8": 0.0294,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "join_01_source_and_transition_3",
+      "t": 12.59,
+      "std": 26.09,
+      "mean": 34.31,
+      "p95": 97.0,
+      "edge": 0.0717,
+      "hf": 7.66,
+      "lf": 24.07,
+      "std8": 24.42,
+      "edge8": 0.0532,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "join_01_source_and_transition_4",
+      "t": 14.43,
+      "std": 30.43,
+      "mean": 39.11,
+      "p95": 92.0,
+      "edge": 0.0515,
+      "hf": 11.01,
+      "lf": 25.93,
+      "std8": 26.73,
+      "edge8": 0.0996,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0515 < film p5 0.0536"
+      ]
+    }
+  ]
+}

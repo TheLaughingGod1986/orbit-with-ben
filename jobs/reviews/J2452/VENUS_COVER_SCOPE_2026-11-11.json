@@ -1,0 +1,29 @@
+{
+  "status": "CANDIDATE_PENDING_GATES",
+  "film": "023",
+  "master": "023_Venus_full_rough_v05e.mp4",
+  "authority": "J2452 Chief ruling 11 Nov 09:29Z: finished-master picture, neighbouring-shot fallback, inherited charts retained",
+  "source_sheet": "/Users/ben/_desk/J2452-sleep-scratch/venus_public_sheet.jpg",
+  "sheet_sampling": "Every five seconds over complete master; source cuts_v05e.json also read",
+  "covers": [
+    {
+      "master_range": [
+        209,
+        212.2
+      ],
+      "donor_start": 204,
+      "reason": "Subscribe pill reaches kept narration before spoken CTA cut"
+    },
+    {
+      "master_range": [
+        408.6,
+        414.2
+      ],
+      "donor_start": 414.2,
+      "reason": "Orbit shot at 409.6\u2013413.7 in source cuts, extended handles"
+    }
+  ],
+  "provenance_correction": "Plan calls PIA00271 Mariner 10 UV photography, but verified pool identifies it as a computer simulated global view. Do not label this as Mariner 10.",
+  "title_inspection": "Sample at chapter 3 seconds reads V \u00b7 Beneath the Clouds of Venus, lower left, no collision. Still-only inspection, not playback/listening.",
+  "remaining": "Inspect half-second cover boundaries and warnings after render, run full polish plus changed-neighbourhood picture QA, measure grade, save hashes. No UAT."
+}

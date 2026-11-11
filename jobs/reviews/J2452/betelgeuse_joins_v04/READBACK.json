@@ -1,0 +1,72 @@
+{
+  "status": "SAVED_JOIN_FRAME_READBACK",
+  "opaque_checks": [
+    {
+      "join": 1,
+      "time_s": 4,
+      "reference_cover_time_s": 0,
+      "mean_absolute_pixel_error": 1.3563994984567902,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 1,
+      "time_s": 7.6299999999999955,
+      "reference_cover_time_s": 3.6299999999999955,
+      "mean_absolute_pixel_error": 1.3571818737139918,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 1,
+      "time_s": 11.226666666666658,
+      "reference_cover_time_s": 7.226666666666658,
+      "mean_absolute_pixel_error": 1.336891557355967,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 2,
+      "time_s": 4,
+      "reference_cover_time_s": 0,
+      "mean_absolute_pixel_error": 1.3049977494855967,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 2,
+      "time_s": 5.9599999999999795,
+      "reference_cover_time_s": 1.9599999999999795,
+      "mean_absolute_pixel_error": 1.400252539866255,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 2,
+      "time_s": 7.886666666666626,
+      "reference_cover_time_s": 3.8666666666666667,
+      "mean_absolute_pixel_error": 1.2537860082304526,
+      "threshold": 2,
+      "pass_check": true
+    }
+  ],
+  "every_opaque_frame_checks": [
+    {
+      "join": 1,
+      "frames_compared": 237,
+      "maximum_mean_absolute_pixel_error": 0.7198206018518518,
+      "threshold": 2,
+      "pass_check": true
+    },
+    {
+      "join": 2,
+      "frames_compared": 137,
+      "maximum_mean_absolute_pixel_error": 0.8225231481481482,
+      "threshold": 2,
+      "pass_check": true
+    }
+  ],
+  "all_opaque_checks_pass": true,
+  "hashes_match": true,
+  "limitations": "Every opaque output frame compared at 320x180; sparse full-size endpoint samples; no moving-video perception or final chapter QA."
+}

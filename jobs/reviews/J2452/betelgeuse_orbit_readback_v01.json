@@ -1,0 +1,61 @@
+{
+  "status": "TWO_ORBIT_COVERS_BUILT_NOT_A_PICTURE_CHAPTER",
+  "master": "/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v03b.mp4",
+  "master_sha256": "54e04d3bfcb42bcf9066a0613254f10c978435b148d158468711e25908060c93",
+  "observation": "Orbit is visible in both sampled windows; the plan zero-Orbit assertion was false.",
+  "boundary_basis": "Exact original cut-list coordinates. Before/inside/after still probes are sparse visual evidence, not every-frame boundary certification.",
+  "photo": {
+    "id": "eso0927e",
+    "title": "Digitized Sky Survey image of Betelgeuse",
+    "page": "https://www.eso.org/public/images/eso0927e/",
+    "download": "https://cdn.eso.org/images/original/eso0927e.tif",
+    "credit": "ESO/Digitized Sky Survey 2. Acknowledgment: Davide De Martin.",
+    "licence": "CC BY 4.0, ESO copyright page; no identifiable people",
+    "terms": "https://www.eso.org/public/outreach/copyright/",
+    "dimensions": [
+      7106,
+      5332
+    ],
+    "sha256": "e9e11cc138633828741039a692ea8911ea1a0f5705c9676cd806823d887e6005",
+    "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v01/eso0927e.tif",
+    "modifications": "16:9 crop, slow push, 15 percent darkening, luma cap, visible full credit",
+    "source_upscale_max": 0.4
+  },
+  "covers": [
+    {
+      "row": "12",
+      "original_source": "sun_orbit_row67_omni_v01.mp4",
+      "master_in_s": 123.16,
+      "master_out_s": 130.42,
+      "chapter_in_s": 108.06,
+      "chapter_out_s": 115.32,
+      "compilation_in_s": 4544.52,
+      "compilation_out_s": 4551.78,
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+      "frames": 218,
+      "duration_s": 7.266666666666667,
+      "sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+      "status": "COVER_ONLY_NOT_JOINED_OR_FULL_CHAPTER_QA"
+    },
+    {
+      "row": "26",
+      "original_source": "orbit_thumb_omni_v01.mp4",
+      "master_in_s": 282.16,
+      "master_out_s": 286.08,
+      "chapter_in_s": 261.66,
+      "chapter_out_s": 265.58,
+      "compilation_in_s": 4698.12,
+      "compilation_out_s": 4702.04,
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+      "frames": 117,
+      "duration_s": 3.9,
+      "sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+      "status": "COVER_ONLY_NOT_JOINED_OR_FULL_CHAPTER_QA"
+    }
+  ],
+  "preview": {
+    "path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/ORBIT_AND_COVERS.jpg",
+    "sha256": "d1d27313048a4751394c337214a97c5701a02731b265c064078721060c7d8c91"
+  },
+  "remaining": "Inspect stills; source/pixel QA on covers; exact endpoint joins, bright graphic replacements, full picture chapter and final compilation gates remain."
+}

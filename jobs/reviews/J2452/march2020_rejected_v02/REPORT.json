@@ -1,0 +1,49 @@
+{
+  "status": "BOUNDED_REPAIR_NOT_FINAL_QA_OR_UAT",
+  "base": "/Users/ben/_desk/J2452-sleep-scratch/alma_betelgeuse_v02/029_picture_alma_betelgeuse.mp4",
+  "base_sha256": "85d0090af6bb829b314b7a10dcdb703dce3565eb216c7114802016f8ef29c73b",
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/march2020_source_v01/eso2109c.jpg",
+  "source_sha256": "bc6b5b454a53c4ad6e639a42643d5fe18475f646ebfaa867c262464a947cd288",
+  "provenance": {
+    "id": "eso2109c",
+    "title": "Image of Betelgeuse\u2019s surface taken in March 2020",
+    "credit": "ESO/M. Montarg\u00e8s et al.",
+    "licence": "CC BY 4.0",
+    "page": "https://www.eso.org/public/images/eso2109c/",
+    "file": "https://cdn.eso.org/images/large/eso2109c.jpg",
+    "terms": "https://www.eso.org/public/outreach/copyright/",
+    "status": "ok",
+    "note": "Real SPHERE observation from March 2020, not the December 2019 epoch. Used under general future/lifetime discussion, not a before/after comparison. Cropped, slowly pushed and darkened; visible full credit."
+  },
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/march2020_v02/029_picture_march2020.mp4",
+  "sha256": "dcc35b07f3601544136b5a58c394294090ba35252073dbe47b8aabb72c537b21",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "patches": [
+    {
+      "plate_id": "r32_sphere_dec",
+      "frames": [
+        10719,
+        10949
+      ],
+      "patch": "/Users/ben/_desk/J2452-sleep-scratch/march2020_v02/r32_sphere_dec.mp4",
+      "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/march2020_v02/r32_sphere_dec_dissolved.mp4",
+      "dissolved_sha256": "2f65afcaf4d572110d1bbca67b5b96f430b866abf074c51f8f386a407125e78a"
+    },
+    {
+      "plate_id": "r36_orion_b",
+      "frames": [
+        12960,
+        13158
+      ],
+      "patch": "/Users/ben/_desk/J2452-sleep-scratch/march2020_v02/r36_orion_b.mp4",
+      "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/march2020_v02/r36_orion_b_dissolved.mp4",
+      "dissolved_sha256": "090964e7bd909c49e1d61025ebaeb7629058cd934045c1d4724a70beedd0f720"
+    }
+  ],
+  "limitations": [
+    "Actual March 2020 observation, not a future event or December 2019 dimming comparison.",
+    "Narration and source masters untouched.",
+    "Two appearances of this observation; remaining picture QA failures stay authoritative."
+  ]
+}

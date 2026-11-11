@@ -1,0 +1,82 @@
+{
+  "status": "REPAIRED_CANDIDATE_REQUIRES_NEW_GATES",
+  "film": "023",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v03/023_venus_undarkened_v03.mp4",
+  "sha256": "4b673f159e191b6edcf7671c54e1c9e4843d69fd62cde9d7bcd5f2e5ba870f42",
+  "source_master": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/loose_renders/023_Venus_full_rough_v05e.mp4",
+  "source_sha256": "5d8a8f73454f889a38590661885a21702690a42c8ebfd940868d033f0174e6fc",
+  "narration_sha256": "c15df23b7be81e1327f567770cc4c4339e92bde425c09fa5b43c5a1c1bdc1db3",
+  "expected_frames": 14742,
+  "duration_s": 491.4,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 35.8,
+      "chapter_in_s": 0,
+      "chapter_out_s": 35.8,
+      "compilation_in_s": 1875.74,
+      "compilation_out_s": 1911.54
+    },
+    {
+      "master_in_s": 43.2,
+      "master_out_s": 212.2,
+      "chapter_in_s": 35.8,
+      "chapter_out_s": 204.8,
+      "compilation_in_s": 1911.54,
+      "compilation_out_s": 2080.54
+    },
+    {
+      "master_in_s": 218.2,
+      "master_out_s": 504.8,
+      "chapter_in_s": 204.8,
+      "chapter_out_s": 491.4,
+      "compilation_in_s": 2080.54,
+      "compilation_out_s": 2367.14
+    }
+  ],
+  "planned_ranges": [
+    [
+      0.08,
+      35.8
+    ],
+    [
+      43.2,
+      212.2
+    ],
+    [
+      218.2,
+      504.8
+    ]
+  ],
+  "covers": [
+    [
+      209,
+      212.2,
+      204,
+      "subscribe-edge"
+    ],
+    [
+      408.6,
+      414.2,
+      414.2,
+      "Orbit-cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Own neighbouring finished-master picture covers the subscribe-pill tail and Orbit. Plan PIA00271 is a simulated globe, not Mariner 10 photography; no source search or new generation. Sampled master sheet has no hook or act cards under retained narration. Covers require edge inspection.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "repair": "Only join_02 incoming picture handle advances 1.5s within same master shot to omit lingering Subscribe pill. Narration clock unchanged; inspect edges and rerun full gates.",
+  "parent_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_venus_v02",
+  "ending_repair": {
+    "chapter_in_s": 477.4,
+    "chapter_out_s": 491.4,
+    "master_donor_in_s": 480,
+    "donor_duration_s": 12,
+    "reason": "New ending trim low-detail failure; extend neighbouring finished-master Venus shot with one-second dissolve. Whole narration unchanged."
+  },
+  "unwanted_cards_removed_verified": true,
+  "cover_inspection": {
+    "basis": "v02 half-second subscribe/Orbit sheets inspected; v03 preserves these edits and only changes ending. v03 ending sheet and edit-warning sheet inspected. No visible Orbit or subscribe pill in sampled cover frames. Not continuous playback.",
+    "ending_warning": "Neighbouring master terrain and globe imagery; the 16-second reuse warning groups a transition neighbourhood containing multiple actual shots. Low-detail warnings remain above hard floor; existing Going Back label retained under first-version ruling."
+  }
+}

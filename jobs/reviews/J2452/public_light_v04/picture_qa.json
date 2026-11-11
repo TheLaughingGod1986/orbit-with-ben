@@ -1,0 +1,3137 @@
+{
+  "verdict": "PASS",
+  "terminal_loop": null,
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/public_light_v04/024_light_undarkened_v03.mp4",
+  "rules": {
+    "kind_fail": "computer[- ]?(reconstruction|model|generated|simulation|graphic)|\\bsimulation\\b|\\bdiagram|\\bchart\\b|\\bgraph\\b|\\bschematic|\\bannotated\\b|\\blabell?ed\\b|\\bscreen ?shot|\\bwireframe|\\bcad\\b|\\binfographic",
+    "kind_warn": "\\bartist|\\billustration|\\bconcept\\b|\\brender|\\banimation\\b|\\bmap\\b|\\bmosaic\\b|\\bcomposite\\b",
+    "upscale_fail": 2.35,
+    "upscale_warn": 2.0,
+    "max_reuse": 2,
+    "max_stretches": 5,
+    "same_stretch": 10.0,
+    "pixels": "scripts/polish_gate.py"
+  },
+  "failed": [],
+  "warn": [
+    {
+      "cut": 75,
+      "row": "change-4-0",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 194.25,
+      "at": "3:14",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.0s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 79,
+      "row": "change-4-4",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 196.25,
+      "at": "3:16",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.69 < 18.0"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 99,
+      "row": "change-4-24",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 206.25,
+      "at": "3:26",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0007 < film p5 0.0008"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 100,
+      "row": "change-4-25",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 206.75,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 101,
+      "row": "change-4-26",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 207.25,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0003 < film p5 0.0008"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 106,
+      "row": "change-4-31",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 209.75,
+      "at": "3:30",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 15.5
+    },
+    {
+      "cut": 107,
+      "row": "change-4-32",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 210.02,
+      "at": "3:30",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0004 < film p5 0.0008"
+      ],
+      "offset": 16.0
+    },
+    {
+      "cut": 108,
+      "row": "change-5-0",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 211.02,
+      "at": "3:31",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0003 < film p5 0.0008"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 109,
+      "row": "change-5-1",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 211.52,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0008"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 110,
+      "row": "change-5-2",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 212.02,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0008"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 111,
+      "row": "change-5-3",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 212.52,
+      "at": "3:33",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 1.5
+    },
+    {
+      "cut": 112,
+      "row": "change-5-4",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 213.02,
+      "at": "3:33",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 114,
+      "row": "change-5-6",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 214.02,
+      "at": "3:34",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.7 < 18.0"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 115,
+      "row": "change-5-7",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 214.52,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.86 < 18.0"
+      ],
+      "offset": 3.5
+    },
+    {
+      "cut": 116,
+      "row": "change-5-8",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 215.02,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.97 < 18.0"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 118,
+      "row": "change-5-10",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 216.02,
+      "at": "3:36",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.04 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 130,
+      "row": "change-6-5",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 260.52,
+      "at": "4:21",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.77 < 18.0"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 135,
+      "row": "change-6-10",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 263.02,
+      "at": "4:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 136,
+      "row": "change-6-11",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 263.52,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.85 < 18.0"
+      ],
+      "offset": 5.5
+    },
+    {
+      "cut": 137,
+      "row": "change-6-12",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 264.02,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 138,
+      "row": "change-6-13",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 264.52,
+      "at": "4:25",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.76 < 18.0"
+      ],
+      "offset": 6.5
+    },
+    {
+      "cut": 139,
+      "row": "change-6-14",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 265.02,
+      "at": "4:25",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.7 < 18.0"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 140,
+      "row": "change-6-15",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 265.52,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.61 < 18.0"
+      ],
+      "offset": 7.5
+    },
+    {
+      "cut": 141,
+      "row": "change-6-16",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 266.02,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.5 < 18.0"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 142,
+      "row": "change-6-17",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 266.52,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.41 < 18.0"
+      ],
+      "offset": 8.5
+    },
+    {
+      "cut": 143,
+      "row": "change-6-18",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 267.02,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.18 < 18.0"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 193,
+      "row": "change-9-5",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 379.62,
+      "at": "6:20",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.21 < 18.0"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 198,
+      "row": "change-9-10",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 382.12,
+      "at": "6:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.76 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 199,
+      "row": "change-9-11",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 382.62,
+      "at": "6:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.31 < 18.0"
+      ],
+      "offset": 5.5
+    }
+  ],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "change-0-0",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 0.25,
+      "at": "0:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 1,
+      "row": "change-0-1",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 0.75,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 2,
+      "row": "change-0-2",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 1.25,
+      "at": "0:01",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 3,
+      "row": "change-0-3",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 1.75,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 4,
+      "row": "change-0-4",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 2.25,
+      "at": "0:02",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 5,
+      "row": "change-0-5",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 2.75,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 6,
+      "row": "change-0-6",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 3.25,
+      "at": "0:03",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 7,
+      "row": "change-0-7",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 3.75,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 8,
+      "row": "change-0-8",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 4.25,
+      "at": "0:04",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 9,
+      "row": "change-0-9",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 4.75,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 10,
+      "row": "change-0-10",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 5.25,
+      "at": "0:05",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 11,
+      "row": "change-0-11",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 5.75,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 12,
+      "row": "change-0-12",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 6.25,
+      "at": "0:06",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 13,
+      "row": "change-0-13",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 6.75,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 14,
+      "row": "change-0-14",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 7.25,
+      "at": "0:07",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 15,
+      "row": "change-0-15",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 7.75,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 16,
+      "row": "change-0-16",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 8.25,
+      "at": "0:08",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 17,
+      "row": "change-0-17",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 8.75,
+      "at": "0:09",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 18,
+      "row": "change-0-18",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 9.25,
+      "at": "0:09",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 19,
+      "row": "change-0-19",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 9.75,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 20,
+      "row": "change-0-20",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 10.25,
+      "at": "0:10",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 21,
+      "row": "change-0-21",
+      "source": "finished_transition_0",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 10.75,
+      "at": "0:11",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 22,
+      "row": "change-1-0",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 26.05,
+      "at": "0:26",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 23,
+      "row": "change-1-1",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 26.55,
+      "at": "0:27",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 24,
+      "row": "change-1-2",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 27.05,
+      "at": "0:27",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 25,
+      "row": "change-1-3",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 27.55,
+      "at": "0:28",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 26,
+      "row": "change-1-4",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 28.05,
+      "at": "0:28",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 27,
+      "row": "change-1-5",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 28.55,
+      "at": "0:29",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 28,
+      "row": "change-1-6",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 29.05,
+      "at": "0:29",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 29,
+      "row": "change-1-7",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 29.55,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 30,
+      "row": "change-1-8",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 30.05,
+      "at": "0:30",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 31,
+      "row": "change-1-9",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 30.55,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 32,
+      "row": "change-1-10",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 31.05,
+      "at": "0:31",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 33,
+      "row": "change-1-11",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 31.55,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 34,
+      "row": "change-1-12",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 32.05,
+      "at": "0:32",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 35,
+      "row": "change-1-13",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 32.55,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": 6.4999999999999964
+    },
+    {
+      "cut": 36,
+      "row": "change-1-14",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 33.05,
+      "at": "0:33",
+      "fail": [],
+      "warn": [],
+      "offset": 6.9999999999999964
+    },
+    {
+      "cut": 37,
+      "row": "change-1-15",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 33.55,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": 7.4999999999999964
+    },
+    {
+      "cut": 38,
+      "row": "change-1-16",
+      "source": "finished_transition_1",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 33.85,
+      "at": "0:34",
+      "fail": [],
+      "warn": [],
+      "offset": 7.9999999999999964
+    },
+    {
+      "cut": 39,
+      "row": "change-2-0",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 94.95,
+      "at": "1:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 40,
+      "row": "change-2-1",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 95.45,
+      "at": "1:35",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 41,
+      "row": "change-2-2",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 95.95,
+      "at": "1:36",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 42,
+      "row": "change-2-3",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 96.45,
+      "at": "1:36",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 43,
+      "row": "change-2-4",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 96.95,
+      "at": "1:37",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 44,
+      "row": "change-2-5",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 97.45,
+      "at": "1:37",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 45,
+      "row": "change-2-6",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 97.95,
+      "at": "1:38",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 46,
+      "row": "change-2-7",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 98.45,
+      "at": "1:38",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 47,
+      "row": "change-2-8",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 98.95,
+      "at": "1:39",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 48,
+      "row": "change-2-9",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 99.45,
+      "at": "1:39",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 49,
+      "row": "change-2-10",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 99.95,
+      "at": "1:40",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 50,
+      "row": "change-2-11",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 100.45,
+      "at": "1:40",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 51,
+      "row": "change-2-12",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 100.95,
+      "at": "1:41",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 52,
+      "row": "change-2-13",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 101.45,
+      "at": "1:41",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 53,
+      "row": "change-2-14",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 101.95,
+      "at": "1:42",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 54,
+      "row": "change-2-15",
+      "source": "finished_transition_2",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 102.4,
+      "at": "1:42",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 55,
+      "row": "change-3-0",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 125.55,
+      "at": "2:06",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 56,
+      "row": "change-3-1",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 126.05,
+      "at": "2:06",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 57,
+      "row": "change-3-2",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 126.55,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 58,
+      "row": "change-3-3",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 127.05,
+      "at": "2:07",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 59,
+      "row": "change-3-4",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 127.55,
+      "at": "2:08",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 60,
+      "row": "change-3-5",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 128.05,
+      "at": "2:08",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 61,
+      "row": "change-3-6",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 128.55,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": 3.000000000000014
+    },
+    {
+      "cut": 62,
+      "row": "change-3-7",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 129.05,
+      "at": "2:09",
+      "fail": [],
+      "warn": [],
+      "offset": 3.500000000000014
+    },
+    {
+      "cut": 63,
+      "row": "change-3-8",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 129.55,
+      "at": "2:10",
+      "fail": [],
+      "warn": [],
+      "offset": 4.000000000000014
+    },
+    {
+      "cut": 64,
+      "row": "change-3-9",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 130.05,
+      "at": "2:10",
+      "fail": [],
+      "warn": [],
+      "offset": 4.500000000000014
+    },
+    {
+      "cut": 65,
+      "row": "change-3-10",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 130.55,
+      "at": "2:11",
+      "fail": [],
+      "warn": [],
+      "offset": 5.000000000000014
+    },
+    {
+      "cut": 66,
+      "row": "change-3-11",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 131.05,
+      "at": "2:11",
+      "fail": [],
+      "warn": [],
+      "offset": 5.500000000000014
+    },
+    {
+      "cut": 67,
+      "row": "change-3-12",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 131.55,
+      "at": "2:12",
+      "fail": [],
+      "warn": [],
+      "offset": 6.000000000000014
+    },
+    {
+      "cut": 68,
+      "row": "change-3-13",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 132.05,
+      "at": "2:12",
+      "fail": [],
+      "warn": [],
+      "offset": 6.500000000000014
+    },
+    {
+      "cut": 69,
+      "row": "change-3-14",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 132.55,
+      "at": "2:13",
+      "fail": [],
+      "warn": [],
+      "offset": 7.000000000000014
+    },
+    {
+      "cut": 70,
+      "row": "change-3-15",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 133.05,
+      "at": "2:13",
+      "fail": [],
+      "warn": [],
+      "offset": 7.500000000000014
+    },
+    {
+      "cut": 71,
+      "row": "change-3-16",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 133.55,
+      "at": "2:14",
+      "fail": [],
+      "warn": [],
+      "offset": 8.000000000000014
+    },
+    {
+      "cut": 72,
+      "row": "change-3-17",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 134.05,
+      "at": "2:14",
+      "fail": [],
+      "warn": [],
+      "offset": 8.500000000000014
+    },
+    {
+      "cut": 73,
+      "row": "change-3-18",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 134.55,
+      "at": "2:15",
+      "fail": [],
+      "warn": [],
+      "offset": 9.000000000000014
+    },
+    {
+      "cut": 74,
+      "row": "change-3-19",
+      "source": "finished_transition_3",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 134.8,
+      "at": "2:15",
+      "fail": [],
+      "warn": [],
+      "offset": 9.500000000000014
+    },
+    {
+      "cut": 75,
+      "row": "change-4-0",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 194.25,
+      "at": "3:14",
+      "fail": [],
+      "warn": [
+        "reuse: on screen 16.0s in a row (look at it: 15s is a lot for one picture)"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 76,
+      "row": "change-4-1",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 194.75,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 77,
+      "row": "change-4-2",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 195.25,
+      "at": "3:15",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 78,
+      "row": "change-4-3",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 195.75,
+      "at": "3:16",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 79,
+      "row": "change-4-4",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 196.25,
+      "at": "3:16",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.69 < 18.0"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 80,
+      "row": "change-4-5",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 196.75,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 81,
+      "row": "change-4-6",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 197.25,
+      "at": "3:17",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 82,
+      "row": "change-4-7",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 197.75,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 83,
+      "row": "change-4-8",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 198.25,
+      "at": "3:18",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 84,
+      "row": "change-4-9",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 198.75,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 85,
+      "row": "change-4-10",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 199.25,
+      "at": "3:19",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 86,
+      "row": "change-4-11",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 199.75,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 87,
+      "row": "change-4-12",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 200.25,
+      "at": "3:20",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 88,
+      "row": "change-4-13",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 200.75,
+      "at": "3:21",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 89,
+      "row": "change-4-14",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 201.25,
+      "at": "3:21",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 90,
+      "row": "change-4-15",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 201.75,
+      "at": "3:22",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 91,
+      "row": "change-4-16",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 202.25,
+      "at": "3:22",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 92,
+      "row": "change-4-17",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 202.75,
+      "at": "3:23",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 93,
+      "row": "change-4-18",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 203.25,
+      "at": "3:23",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 94,
+      "row": "change-4-19",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 203.75,
+      "at": "3:24",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 95,
+      "row": "change-4-20",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 204.25,
+      "at": "3:24",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 96,
+      "row": "change-4-21",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 204.75,
+      "at": "3:25",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 97,
+      "row": "change-4-22",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 205.25,
+      "at": "3:25",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 98,
+      "row": "change-4-23",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 205.75,
+      "at": "3:26",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 99,
+      "row": "change-4-24",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 206.25,
+      "at": "3:26",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0007 < film p5 0.0008"
+      ],
+      "offset": 12.0
+    },
+    {
+      "cut": 100,
+      "row": "change-4-25",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 206.75,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 12.5
+    },
+    {
+      "cut": 101,
+      "row": "change-4-26",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 207.25,
+      "at": "3:27",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0003 < film p5 0.0008"
+      ],
+      "offset": 13.0
+    },
+    {
+      "cut": 102,
+      "row": "change-4-27",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 207.75,
+      "at": "3:28",
+      "fail": [],
+      "warn": [],
+      "offset": 13.5
+    },
+    {
+      "cut": 103,
+      "row": "change-4-28",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 208.25,
+      "at": "3:28",
+      "fail": [],
+      "warn": [],
+      "offset": 14.0
+    },
+    {
+      "cut": 104,
+      "row": "change-4-29",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 208.75,
+      "at": "3:29",
+      "fail": [],
+      "warn": [],
+      "offset": 14.5
+    },
+    {
+      "cut": 105,
+      "row": "change-4-30",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 209.25,
+      "at": "3:29",
+      "fail": [],
+      "warn": [],
+      "offset": 15.0
+    },
+    {
+      "cut": 106,
+      "row": "change-4-31",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 209.75,
+      "at": "3:30",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 15.5
+    },
+    {
+      "cut": 107,
+      "row": "change-4-32",
+      "source": "finished_transition_4",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 210.02,
+      "at": "3:30",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0004 < film p5 0.0008"
+      ],
+      "offset": 16.0
+    },
+    {
+      "cut": 108,
+      "row": "change-5-0",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 211.02,
+      "at": "3:31",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0003 < film p5 0.0008"
+      ],
+      "offset": 0.0
+    },
+    {
+      "cut": 109,
+      "row": "change-5-1",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 211.52,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0008"
+      ],
+      "offset": 0.5
+    },
+    {
+      "cut": 110,
+      "row": "change-5-2",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 212.02,
+      "at": "3:32",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0002 < film p5 0.0008"
+      ],
+      "offset": 1.0
+    },
+    {
+      "cut": 111,
+      "row": "change-5-3",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 212.52,
+      "at": "3:33",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 1.5
+    },
+    {
+      "cut": 112,
+      "row": "change-5-4",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 213.02,
+      "at": "3:33",
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0005 < film p5 0.0008"
+      ],
+      "offset": 2.0
+    },
+    {
+      "cut": 113,
+      "row": "change-5-5",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 213.52,
+      "at": "3:34",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 114,
+      "row": "change-5-6",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 214.02,
+      "at": "3:34",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.7 < 18.0"
+      ],
+      "offset": 3.0
+    },
+    {
+      "cut": 115,
+      "row": "change-5-7",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 214.52,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.86 < 18.0"
+      ],
+      "offset": 3.5
+    },
+    {
+      "cut": 116,
+      "row": "change-5-8",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 215.02,
+      "at": "3:35",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.97 < 18.0"
+      ],
+      "offset": 4.0
+    },
+    {
+      "cut": 117,
+      "row": "change-5-9",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 215.52,
+      "at": "3:36",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 118,
+      "row": "change-5-10",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 216.02,
+      "at": "3:36",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.04 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 119,
+      "row": "change-5-11",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 216.52,
+      "at": "3:37",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 120,
+      "row": "change-5-12",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 217.02,
+      "at": "3:37",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 121,
+      "row": "change-5-13",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 217.52,
+      "at": "3:38",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 122,
+      "row": "change-5-14",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 218.02,
+      "at": "3:38",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 123,
+      "row": "change-5-15",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 218.52,
+      "at": "3:39",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 124,
+      "row": "change-5-16",
+      "source": "finished_transition_5",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 218.8,
+      "at": "3:39",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 125,
+      "row": "change-6-0",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 258.02,
+      "at": "4:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 126,
+      "row": "change-6-1",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 258.52,
+      "at": "4:19",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 127,
+      "row": "change-6-2",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 259.02,
+      "at": "4:19",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 128,
+      "row": "change-6-3",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 259.52,
+      "at": "4:20",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 129,
+      "row": "change-6-4",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 260.02,
+      "at": "4:20",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 130,
+      "row": "change-6-5",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 260.52,
+      "at": "4:21",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.77 < 18.0"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 131,
+      "row": "change-6-6",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 261.02,
+      "at": "4:21",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 132,
+      "row": "change-6-7",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 261.52,
+      "at": "4:22",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 133,
+      "row": "change-6-8",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 262.02,
+      "at": "4:22",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 134,
+      "row": "change-6-9",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 262.52,
+      "at": "4:23",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 135,
+      "row": "change-6-10",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 263.02,
+      "at": "4:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 136,
+      "row": "change-6-11",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 263.52,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.85 < 18.0"
+      ],
+      "offset": 5.5
+    },
+    {
+      "cut": 137,
+      "row": "change-6-12",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 264.02,
+      "at": "4:24",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.79 < 18.0"
+      ],
+      "offset": 6.0
+    },
+    {
+      "cut": 138,
+      "row": "change-6-13",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 264.52,
+      "at": "4:25",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.76 < 18.0"
+      ],
+      "offset": 6.5
+    },
+    {
+      "cut": 139,
+      "row": "change-6-14",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 265.02,
+      "at": "4:25",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.7 < 18.0"
+      ],
+      "offset": 7.0
+    },
+    {
+      "cut": 140,
+      "row": "change-6-15",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 265.52,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.61 < 18.0"
+      ],
+      "offset": 7.5
+    },
+    {
+      "cut": 141,
+      "row": "change-6-16",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 266.02,
+      "at": "4:26",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.5 < 18.0"
+      ],
+      "offset": 8.0
+    },
+    {
+      "cut": 142,
+      "row": "change-6-17",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 266.52,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.41 < 18.0"
+      ],
+      "offset": 8.5
+    },
+    {
+      "cut": 143,
+      "row": "change-6-18",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 267.02,
+      "at": "4:27",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 15.18 < 18.0"
+      ],
+      "offset": 9.0
+    },
+    {
+      "cut": 144,
+      "row": "change-6-19",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 267.52,
+      "at": "4:28",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 145,
+      "row": "change-6-20",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 268.02,
+      "at": "4:28",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 146,
+      "row": "change-6-21",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 268.52,
+      "at": "4:29",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 147,
+      "row": "change-6-22",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 269.02,
+      "at": "4:29",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 148,
+      "row": "change-6-23",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 269.52,
+      "at": "4:30",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 149,
+      "row": "change-6-24",
+      "source": "finished_transition_6",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 269.87,
+      "at": "4:30",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 150,
+      "row": "change-7-0",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 290.48,
+      "at": "4:50",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 151,
+      "row": "change-7-1",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 290.98,
+      "at": "4:51",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 152,
+      "row": "change-7-2",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 291.48,
+      "at": "4:51",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 153,
+      "row": "change-7-3",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 291.98,
+      "at": "4:52",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 154,
+      "row": "change-7-4",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 292.48,
+      "at": "4:52",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 155,
+      "row": "change-7-5",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 292.98,
+      "at": "4:53",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 156,
+      "row": "change-7-6",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 293.48,
+      "at": "4:53",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 157,
+      "row": "change-7-7",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 293.98,
+      "at": "4:54",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 158,
+      "row": "change-7-8",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 294.48,
+      "at": "4:54",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 159,
+      "row": "change-7-9",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 294.98,
+      "at": "4:55",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 160,
+      "row": "change-7-10",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 295.48,
+      "at": "4:55",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 161,
+      "row": "change-7-11",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 295.98,
+      "at": "4:56",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 162,
+      "row": "change-7-12",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 296.48,
+      "at": "4:56",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 163,
+      "row": "change-7-13",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 296.98,
+      "at": "4:57",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 164,
+      "row": "change-7-14",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 297.48,
+      "at": "4:57",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 165,
+      "row": "change-7-15",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 297.98,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 166,
+      "row": "change-7-16",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 298.48,
+      "at": "4:58",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 167,
+      "row": "change-7-17",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 298.98,
+      "at": "4:59",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 168,
+      "row": "change-7-18",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 299.48,
+      "at": "4:59",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 169,
+      "row": "change-7-19",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 299.98,
+      "at": "5:00",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 170,
+      "row": "change-7-20",
+      "source": "finished_transition_7",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 300.3,
+      "at": "5:00",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 171,
+      "row": "change-8-0",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 302.28,
+      "at": "5:02",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 172,
+      "row": "change-8-1",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 302.78,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 173,
+      "row": "change-8-2",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 303.28,
+      "at": "5:03",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 174,
+      "row": "change-8-3",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 303.78,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 175,
+      "row": "change-8-4",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 304.28,
+      "at": "5:04",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 176,
+      "row": "change-8-5",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 304.78,
+      "at": "5:05",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 177,
+      "row": "change-8-6",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 305.28,
+      "at": "5:05",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 178,
+      "row": "change-8-7",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 305.78,
+      "at": "5:06",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 179,
+      "row": "change-8-8",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 306.28,
+      "at": "5:06",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 180,
+      "row": "change-8-9",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 306.78,
+      "at": "5:07",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 181,
+      "row": "change-8-10",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 307.28,
+      "at": "5:07",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 182,
+      "row": "change-8-11",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 307.78,
+      "at": "5:08",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 183,
+      "row": "change-8-12",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 308.28,
+      "at": "5:08",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 184,
+      "row": "change-8-13",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 308.78,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 185,
+      "row": "change-8-14",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 309.28,
+      "at": "5:09",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 186,
+      "row": "change-8-15",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 309.78,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 187,
+      "row": "change-8-16",
+      "source": "finished_transition_8",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 310.1,
+      "at": "5:10",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 188,
+      "row": "change-9-0",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 377.12,
+      "at": "6:17",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 189,
+      "row": "change-9-1",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 377.62,
+      "at": "6:18",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 190,
+      "row": "change-9-2",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 378.12,
+      "at": "6:18",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 191,
+      "row": "change-9-3",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 378.62,
+      "at": "6:19",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 192,
+      "row": "change-9-4",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 379.12,
+      "at": "6:19",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 193,
+      "row": "change-9-5",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 379.62,
+      "at": "6:20",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.21 < 18.0"
+      ],
+      "offset": 2.5
+    },
+    {
+      "cut": 194,
+      "row": "change-9-6",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 380.12,
+      "at": "6:20",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 195,
+      "row": "change-9-7",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 380.62,
+      "at": "6:21",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 196,
+      "row": "change-9-8",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 381.12,
+      "at": "6:21",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 197,
+      "row": "change-9-9",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 381.62,
+      "at": "6:22",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 198,
+      "row": "change-9-10",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 382.12,
+      "at": "6:22",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.76 < 18.0"
+      ],
+      "offset": 5.0
+    },
+    {
+      "cut": 199,
+      "row": "change-9-11",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 382.62,
+      "at": "6:23",
+      "fail": [],
+      "warn": [
+        "low detail: luma std 16.31 < 18.0"
+      ],
+      "offset": 5.5
+    },
+    {
+      "cut": 200,
+      "row": "change-9-12",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 383.12,
+      "at": "6:23",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 201,
+      "row": "change-9-13",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 383.62,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 202,
+      "row": "change-9-14",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 384.12,
+      "at": "6:24",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 203,
+      "row": "change-9-15",
+      "source": "finished_transition_9",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 384.6,
+      "at": "6:25",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 204,
+      "row": "change-10-0",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 420.28,
+      "at": "7:00",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 205,
+      "row": "change-10-1",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 420.78,
+      "at": "7:01",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 206,
+      "row": "change-10-2",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 421.28,
+      "at": "7:01",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 207,
+      "row": "change-10-3",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 421.78,
+      "at": "7:02",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 208,
+      "row": "change-10-4",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 422.28,
+      "at": "7:02",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 209,
+      "row": "change-10-5",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 422.78,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 210,
+      "row": "change-10-6",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 423.28,
+      "at": "7:03",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 211,
+      "row": "change-10-7",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 423.78,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 212,
+      "row": "change-10-8",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 424.28,
+      "at": "7:04",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 213,
+      "row": "change-10-9",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 424.78,
+      "at": "7:05",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 214,
+      "row": "change-10-10",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 425.28,
+      "at": "7:05",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 215,
+      "row": "change-10-11",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 425.78,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    },
+    {
+      "cut": 216,
+      "row": "change-10-12",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 426.28,
+      "at": "7:06",
+      "fail": [],
+      "warn": [],
+      "offset": 6.0
+    },
+    {
+      "cut": 217,
+      "row": "change-10-13",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 426.78,
+      "at": "7:07",
+      "fail": [],
+      "warn": [],
+      "offset": 6.5
+    },
+    {
+      "cut": 218,
+      "row": "change-10-14",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 427.28,
+      "at": "7:07",
+      "fail": [],
+      "warn": [],
+      "offset": 7.0
+    },
+    {
+      "cut": 219,
+      "row": "change-10-15",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 427.78,
+      "at": "7:08",
+      "fail": [],
+      "warn": [],
+      "offset": 7.5
+    },
+    {
+      "cut": 220,
+      "row": "change-10-16",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 428.28,
+      "at": "7:08",
+      "fail": [],
+      "warn": [],
+      "offset": 8.0
+    },
+    {
+      "cut": 221,
+      "row": "change-10-17",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 428.78,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": 8.5
+    },
+    {
+      "cut": 222,
+      "row": "change-10-18",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 429.28,
+      "at": "7:09",
+      "fail": [],
+      "warn": [],
+      "offset": 9.0
+    },
+    {
+      "cut": 223,
+      "row": "change-10-19",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 429.78,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 9.5
+    },
+    {
+      "cut": 224,
+      "row": "change-10-20",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 430.28,
+      "at": "7:10",
+      "fail": [],
+      "warn": [],
+      "offset": 10.0
+    },
+    {
+      "cut": 225,
+      "row": "change-10-21",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 430.78,
+      "at": "7:11",
+      "fail": [],
+      "warn": [],
+      "offset": 10.5
+    },
+    {
+      "cut": 226,
+      "row": "change-10-22",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 431.28,
+      "at": "7:11",
+      "fail": [],
+      "warn": [],
+      "offset": 11.0
+    },
+    {
+      "cut": 227,
+      "row": "change-10-23",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 431.78,
+      "at": "7:12",
+      "fail": [],
+      "warn": [],
+      "offset": 11.5
+    },
+    {
+      "cut": 228,
+      "row": "change-10-24",
+      "source": "finished_transition_10",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 432.27,
+      "at": "7:12",
+      "fail": [],
+      "warn": [],
+      "offset": 12.0
+    },
+    {
+      "cut": 229,
+      "row": "change-11-0",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 457.75,
+      "at": "7:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.0
+    },
+    {
+      "cut": 230,
+      "row": "change-11-1",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 458.25,
+      "at": "7:38",
+      "fail": [],
+      "warn": [],
+      "offset": 0.5
+    },
+    {
+      "cut": 231,
+      "row": "change-11-2",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 458.75,
+      "at": "7:39",
+      "fail": [],
+      "warn": [],
+      "offset": 1.0
+    },
+    {
+      "cut": 232,
+      "row": "change-11-3",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 459.25,
+      "at": "7:39",
+      "fail": [],
+      "warn": [],
+      "offset": 1.5
+    },
+    {
+      "cut": 233,
+      "row": "change-11-4",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 459.75,
+      "at": "7:40",
+      "fail": [],
+      "warn": [],
+      "offset": 2.0
+    },
+    {
+      "cut": 234,
+      "row": "change-11-5",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 460.25,
+      "at": "7:40",
+      "fail": [],
+      "warn": [],
+      "offset": 2.5
+    },
+    {
+      "cut": 235,
+      "row": "change-11-6",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 460.75,
+      "at": "7:41",
+      "fail": [],
+      "warn": [],
+      "offset": 3.0
+    },
+    {
+      "cut": 236,
+      "row": "change-11-7",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 461.25,
+      "at": "7:41",
+      "fail": [],
+      "warn": [],
+      "offset": 3.5
+    },
+    {
+      "cut": 237,
+      "row": "change-11-8",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 461.75,
+      "at": "7:42",
+      "fail": [],
+      "warn": [],
+      "offset": 4.0
+    },
+    {
+      "cut": 238,
+      "row": "change-11-9",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 462.25,
+      "at": "7:42",
+      "fail": [],
+      "warn": [],
+      "offset": 4.5
+    },
+    {
+      "cut": 239,
+      "row": "change-11-10",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 462.75,
+      "at": "7:43",
+      "fail": [],
+      "warn": [],
+      "offset": 5.0
+    },
+    {
+      "cut": 240,
+      "row": "change-11-11",
+      "source": "finished_transition_11",
+      "title": "Finished Light Speed picture surrounding compilation edits",
+      "t": 463.15,
+      "at": "7:43",
+      "fail": [],
+      "warn": [],
+      "offset": 5.5
+    }
+  ],
+  "polish": {
+    "edge_floor": 0.0008,
+    "low_detail_floor": {
+      "std": 13.44,
+      "edge": 0.0259,
+      "calibration": {
+        "video": "025_MarsRobot_full_rough_v02d.mp4",
+        "factor": 1.2,
+        "frames": [
+          {
+            "source": "PIA22223.jpg",
+            "t": 201.0,
+            "std": 12.1,
+            "edge": 0.0223
+          },
+          {
+            "source": "PIA22223.jpg",
+            "t": 216.3,
+            "std": 11.2,
+            "edge": 0.0216
+          },
+          {
+            "source": "PIA22929.jpg",
+            "t": 297.4,
+            "std": 26.54,
+            "edge": 0.5735
+          }
+        ]
+      }
+    }
+  }
+}

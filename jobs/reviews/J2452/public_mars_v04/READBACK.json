@@ -1,0 +1,253 @@
+{
+  "status": "READBACK_ONLY_NOT_UAT",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/025_mars_undarkened_v04.mp4",
+  "sha256": "e43a78d1b282ea6c4dd2b5fc8bc5f80f7b33fd81e6a8bbfa4bdc0ee97456e08e",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "16:9",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 41625000,
+        "duration": "462.500000",
+        "bit_rate": "3742918",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "13875",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc62.11.100 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 22200000,
+        "duration": "462.500000",
+        "bit_rate": "189681",
+        "nb_frames": "21681",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/025_mars_undarkened_v04.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "462.500000",
+      "size": "227863887",
+      "bit_rate": "3941429",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    }
+  },
+  "full_decode_exit": 0,
+  "decoded_frames": 13875,
+  "decode_scan": "Full decode with showinfo count before fps reduction; same pass supplies brightness scan.",
+  "gate_exit_codes": [
+    1,
+    0
+  ],
+  "pixel_verdict": "FAIL",
+  "inherited_findings": [
+    {
+      "row": "pixel-372",
+      "cut": 186,
+      "t": 373.0,
+      "source": "025_MarsRobot_full_rough_v03f.mp4",
+      "why": [
+        "low detail: luma std 11.68 < 13.44 and edge density 0.011 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 392.0
+    },
+    {
+      "row": "pixel-374",
+      "cut": 187,
+      "t": 375.0,
+      "source": "025_MarsRobot_full_rough_v03f.mp4",
+      "why": [
+        "low detail: luma std 11.81 < 13.44 and edge density 0.0152 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 394.0
+    },
+    {
+      "row": "pixel-376",
+      "cut": 188,
+      "t": 377.0,
+      "source": "025_MarsRobot_full_rough_v03f.mp4",
+      "why": [
+        "low detail: luma std 10.59 < 13.44 and edge density 0.0081 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 396.0
+    },
+    {
+      "row": "pixel-378",
+      "cut": 189,
+      "t": 379.0,
+      "source": "025_MarsRobot_full_rough_v03f.mp4",
+      "why": [
+        "low detail: luma std 11.46 < 13.44 and edge density 0.0198 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 398.0
+    },
+    {
+      "row": "pixel-380",
+      "cut": 190,
+      "t": 381.0,
+      "source": "025_MarsRobot_full_rough_v03f.mp4",
+      "why": [
+        "low detail: luma std 11.43 < 13.44 and edge density 0.0208 < 0.0259 (absolute floor)"
+      ],
+      "classification": "in the public film",
+      "master_time_s": 400.0
+    }
+  ],
+  "levels": {
+    "input_i": "-20.72",
+    "input_tp": "-6.46",
+    "input_lra": "2.90",
+    "input_thresh": "-31.19",
+    "output_i": "-19.88",
+    "output_tp": "-6.00",
+    "output_lra": "2.90",
+    "output_thresh": "-30.35",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.12"
+  },
+  "brightest_two_second_windows": [
+    {
+      "start_s": 272.0,
+      "end_s": 274.0,
+      "mean_luma": 197.80444444444444,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/brightest_01.jpg"
+    },
+    {
+      "start_s": 270.0,
+      "end_s": 272.0,
+      "mean_luma": 189.99814236111112,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/brightest_02.jpg"
+    },
+    {
+      "start_s": 90.0,
+      "end_s": 92.0,
+      "mean_luma": 181.64592881944444,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/brightest_03.jpg"
+    },
+    {
+      "start_s": 274.0,
+      "end_s": 276.0,
+      "mean_luma": 179.25485243055556,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/brightest_04.jpg"
+    },
+    {
+      "start_s": 92.0,
+      "end_s": 94.0,
+      "mean_luma": 176.9353125,
+      "frame": "/Users/ben/_desk/J2452-sleep-scratch/public_mars_v04/brightest_05.jpg"
+    }
+  ],
+  "darkening": "PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.",
+  "final_bed_and_silence": "Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed."
+}

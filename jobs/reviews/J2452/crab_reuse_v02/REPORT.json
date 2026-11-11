@@ -1,0 +1,44 @@
+{
+  "status": "BOUNDED_CRAB_REPAIR_NOT_FINAL_QA_OR_UAT",
+  "base": "/Users/ben/_desk/J2452-sleep-scratch/late_observatory_v04/029_picture_observatory_repaired_framefixed.mp4",
+  "base_sha256": "4037046cbea93cbc2ad02b468016b5ec90def570122de11fad850e6a13e19760",
+  "source": "/Users/ben/_desk/J2452-sleep-scratch/crab_reuse_v01/weic2326a.jpg",
+  "source_sha256": "40b9ad0c8ece2c1948e274c9e5a38bcf60c5018fb95ab1d92fd918bc8aa1aa05",
+  "provenance": {
+    "id": "weic2326a",
+    "title": "The Crab Nebula",
+    "page": "https://esawebb.org/images/weic2326a/",
+    "download": "https://cdn.esawebb.org/archives/images/large/weic2326a.jpg",
+    "terms": "https://esawebb.org/copyright/",
+    "licence": "CC BY 4.0",
+    "credit": "NASA, ESA, CSA, STScI, T. Temim (Princeton University)",
+    "dimensions": [
+      10509,
+      9151
+    ],
+    "checked": "2026-11-11",
+    "modifications": "16:9 crop, slow push, 15 percent sleep darkening, luma cap; full credit and infrared identification visible"
+  },
+  "patch": "/Users/ben/_desk/J2452-sleep-scratch/crab_reuse_v02/crab.mp4",
+  "patch_sha256": "5671fffe1fcdccc004b1f7850a33d2b5e629bae7e7f4c0b17a20d18f75ee033c",
+  "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/crab_reuse_v02/crab_dissolved.mp4",
+  "dissolved_sha256": "169b1dbb584e68903c416ea633b564e0126fc839b87fb4159a1d6bbae4872ec6",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/crab_reuse_v02/029_picture_crab_repaired.mp4",
+  "sha256": "78dc108fc34a242733b8ba65bfe331c110ce9275c2bb3ba51d9bf1d8531bde39",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "chapter_replace_frames": [
+    12642,
+    12975
+  ],
+  "master_range_s": [
+    441.9,
+    453.0
+  ],
+  "limitations": [
+    "Different real Crab observation, not a renamed or recropped copy of Hubble crab.jpg.",
+    "No claim that this still demonstrates expansion over time.",
+    "Two-second endpoint dissolves use neighbouring frames; their original graphics and labels remain for later repair.",
+    "Normal combined QA, full compilation and final gates remain."
+  ]
+}

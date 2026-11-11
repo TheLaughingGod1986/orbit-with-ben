@@ -1,0 +1,53 @@
+{
+  "status": "MUSIC_INTERMEDIATE_ONLY_NOT_FINAL_MIX",
+  "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav",
+  "source_sha256": "0e98ed6485a24cc3e5906fd604af6cade4f27295bc7ff522a2416455c0eb775c",
+  "source_interval_s": [
+    0,
+    90
+  ],
+  "loop_period_s": 78,
+  "crossfade_s": 12,
+  "crossfade_curve": "qsin equal-power",
+  "filters": [
+    "lowpass 2800 Hz",
+    "highpass 55 Hz"
+  ],
+  "gain_db": -0.11999999999999744,
+  "proposed_timeline": {
+    "narration_s": 6434.36,
+    "breaths_s": 48,
+    "final_fade_s": 20,
+    "duration_s": 6502.36
+  },
+  "saved_duration_s": 6502.36,
+  "saved_levels": {
+    "input_i": "-34.91",
+    "input_tp": "-21.67",
+    "input_lra": "10.20",
+    "input_thresh": "-45.38",
+    "output_i": "-34.92",
+    "output_tp": "-20.72",
+    "output_lra": "7.10",
+    "output_thresh": "-45.21",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.08"
+  },
+  "silence_threshold_db": -60,
+  "silence_gaps_over_3s": [],
+  "outputs": [
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/music_v02/drone_loop_78s_v01.wav",
+      "sha256": "c935ca24147792f7f88a7c07ec3c5523d922fc0698fb1c96438fc041e286b79e"
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/music_v02/drone_loop_78s_minus35_v01.wav",
+      "sha256": "20da1380d275f5a68f18f3519ea5df30fb1f66414795822721f3c5bba1d45c18"
+    },
+    {
+      "path": "/Users/ben/_desk/J2452-sleep-scratch/music_v02/sleep_bed_provisional_timeline_v01.wav",
+      "sha256": "32ae6b23ec1fa1db7a28246ea01fee0881cdbbbb917870afcf67c14ce73dc4ab"
+    }
+  ],
+  "limitations": "No listening claim. Beatless/mood fit remains Ben watch. Picture join timing may change; re-render audio-only bed to final duration. No per-join +2 dB envelope yet; final mix loudness/peak/silence not checked."
+}

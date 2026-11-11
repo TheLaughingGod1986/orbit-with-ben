@@ -1,0 +1,202 @@
+{
+  "status": "FULL_CHAPTER_PICTURE_CHECKPOINT_NOT_FINAL_QA",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/029_picture_checkpoint.mp4",
+  "sha256": "69151e31eee05f9bab481fd16893fb50f8c8e3720e0fc39a1379b7e9302095dc",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "chapter": {
+    "number": 10,
+    "film": "029",
+    "master": "/Volumes/data/mac-mini-archive/youtube-staging/029/029_Betelgeuse_full_rough_v03b.mp4",
+    "narration": "/Users/ben/_desk/J2452-sleep-scratch/narration_v01/chapter_029_narration_v01.wav",
+    "narration_sha256": "664b0cc5b64db7ff69a48d53a7345c2d8a092d0a378d6b7fde2213b4858b0d0b",
+    "report": "jobs/reviews/J2452/narration_v01/chapter_029_narration_v01.json",
+    "planned_ranges": [
+      [
+        0.08,
+        22.1
+      ],
+      [
+        37.2,
+        242.2
+      ],
+      [
+        247.6,
+        514.8
+      ]
+    ],
+    "slices": [
+      {
+        "master_in_s": 0,
+        "master_out_s": 22.1,
+        "chapter_in_s": 0,
+        "chapter_out_s": 22.1,
+        "compilation_in_s": 4436.46,
+        "compilation_out_s": 4458.56
+      },
+      {
+        "master_in_s": 37.2,
+        "master_out_s": 242.2,
+        "chapter_in_s": 22.1,
+        "chapter_out_s": 227.1,
+        "compilation_in_s": 4458.56,
+        "compilation_out_s": 4663.56
+      },
+      {
+        "master_in_s": 247.6,
+        "master_out_s": 514.8,
+        "chapter_in_s": 227.1,
+        "chapter_out_s": 494.3,
+        "compilation_in_s": 4663.56,
+        "compilation_out_s": 4930.76
+      }
+    ],
+    "compilation_start_s": 4436.46,
+    "duration_s": 494.29999999999995,
+    "breath_after_s": 4,
+    "picture_status": "NOT_RENDERED; cover windows and source cut softening still required",
+    "moon_note": null,
+    "required_orbit_covers": [
+      {
+        "master_in_s": 123.16,
+        "master_out_s": 130.42,
+        "chapter_in_s": 108.06,
+        "chapter_out_s": 115.32,
+        "compilation_in_s": 4544.52,
+        "compilation_out_s": 4551.78,
+        "original_source": "sun_orbit_row67_omni_v01.mp4",
+        "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+        "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+        "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+        "candidate_sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6"
+      },
+      {
+        "master_in_s": 282.16,
+        "master_out_s": 286.08,
+        "chapter_in_s": 261.66,
+        "chapter_out_s": 265.58,
+        "compilation_in_s": 4698.12,
+        "compilation_out_s": 4702.04,
+        "original_source": "orbit_thumb_omni_v01.mp4",
+        "status": "COVER_COMPONENT_BUILT_NOT_JOINED_OR_FULL_CHAPTER_QA",
+        "evidence": "jobs/reviews/J2452/betelgeuse_orbit_readback_v01.json",
+        "candidate_path": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+        "candidate_sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48"
+      }
+    ]
+  },
+  "source_master_sha256": "54e04d3bfcb42bcf9066a0613254f10c978435b148d158468711e25908060c93",
+  "slices": [
+    {
+      "source": {
+        "master_in_s": 0,
+        "master_out_s": 22.1,
+        "chapter_in_s": 0,
+        "chapter_out_s": 22.1,
+        "compilation_in_s": 4436.46,
+        "compilation_out_s": 4458.56
+      },
+      "frames": 663,
+      "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1,format=rgb24[base];[base]scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]",
+      "geometry": {
+        "frames_checked": 661,
+        "geometry": [
+          1920,
+          1080,
+          "yuv420p"
+        ],
+        "colour_spaces": [
+          "bt709"
+        ],
+        "pts_strictly_increasing": true
+      },
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/slice_00.mp4",
+      "sha256": "3ab00f26c36400a837ec3f124f84d329bf5c56e263c012d23615a389ed9ebcb5"
+    },
+    {
+      "source": {
+        "master_in_s": 37.2,
+        "master_out_s": 242.2,
+        "chapter_in_s": 22.1,
+        "chapter_out_s": 227.1,
+        "compilation_in_s": 4458.56,
+        "compilation_out_s": 4663.56
+      },
+      "frames": 6150,
+      "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1,format=rgb24[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601,format=rgba,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=11.926666666666648,format=rgba,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=9.926666666666648:d=2:alpha=1,setpts=PTS+83.62666666666667/TB[cover1];[base][cover1]overlay=eof_action=pass:format=rgb[mix1];[mix1]scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]",
+      "geometry": {
+        "frames_checked": 6149,
+        "geometry": [
+          1920,
+          1080,
+          "yuv420p"
+        ],
+        "colour_spaces": [
+          "bt709",
+          "smpte170m"
+        ],
+        "pts_strictly_increasing": true
+      },
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/slice_01.mp4",
+      "sha256": "058f4f77e011644e6c65b868a18d444d542708b72346f75773602bf8f70133c2"
+    },
+    {
+      "source": {
+        "master_in_s": 247.6,
+        "master_out_s": 514.8,
+        "chapter_in_s": 227.1,
+        "chapter_out_s": 494.3,
+        "compilation_in_s": 4663.56,
+        "compilation_out_s": 4930.76
+      },
+      "frames": 8016,
+      "graph": "[0:v]fps=30,setpts=PTS-STARTPTS,scale=1920:1080,setsar=1,colorchannelmixer=rr=.85:gg=.85:bb=.85,format=yuv420p,limiter=min=16:max=180:planes=1,format=rgb24[base];[1:v]fps=30,setpts=PTS-STARTPTS,scale=in_color_matrix=bt601,format=rgba,tpad=start_mode=clone:start_duration=2.3333333333333335:stop_mode=clone:stop_duration=2.3333333333333335,trim=duration=8.58666666666663,format=rgba,fade=t=in:st=0:d=2:alpha=1,fade=t=out:st=6.5866666666666305:d=2:alpha=1,setpts=PTS+32.226666666666695/TB[cover1];[base][cover1]overlay=eof_action=pass:format=rgb[mix1];[mix1]scale=out_color_matrix=bt709:out_range=tv,format=yuv420p[v]",
+      "geometry": {
+        "frames_checked": 8017,
+        "geometry": [
+          1920,
+          1080,
+          "yuv420p"
+        ],
+        "colour_spaces": [
+          "bt709",
+          "smpte170m"
+        ],
+        "pts_strictly_increasing": true
+      },
+      "output": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_chapter_v01/slice_02.mp4",
+      "sha256": "3c9e8a41d8a653231fce202404fd6a45055fcedfdaeaa24ea31d00df69d595e2"
+    }
+  ],
+  "covers": [
+    {
+      "cover": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_01.mp4",
+      "sha256": "18aed5476a8d1ae917708117ed0e5c99d53f14d44ee8f6a05e91dd5377edcfe6",
+      "chapter_in_s": 108.06,
+      "chapter_out_s": 115.32,
+      "opaque_in_s": 107.72666666666666,
+      "opaque_out_s": 115.65333333333331,
+      "reference_clock_note": "Cover frame zero at nominal chapter_in_s; endpoint clones outside component"
+    },
+    {
+      "cover": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_covers_v03/cover_02.mp4",
+      "sha256": "77735b2b19adc074e532d958e16f70dd7523daec59182b21ed22e573b2da5e48",
+      "chapter_in_s": 261.66,
+      "chapter_out_s": 265.58,
+      "opaque_in_s": 261.3266666666667,
+      "opaque_out_s": 265.9133333333333,
+      "reference_clock_note": "Cover frame zero at nominal chapter_in_s; endpoint clones outside component"
+    }
+  ],
+  "removed_block_dissolves_s": [
+    2,
+    2
+  ],
+  "narration_duration_s": 494.3,
+  "limitations": [
+    "Silent checkpoint, not UAT.",
+    "Bright source diagrams and original in-film hard cuts remain unresolved.",
+    "No quiet chapter title or four-second inter-film breath yet.",
+    "No whole-chapter picture_qa, final AV sync, final mux, compilation QA or NAS master/reel claim."
+  ]
+}
