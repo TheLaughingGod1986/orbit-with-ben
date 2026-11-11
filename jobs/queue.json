@@ -227353,13 +227353,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T16:04Z",
-      "eta": "2026-11-11T18:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T14:33Z",
-      "result": "",
+      "result": "Merged: orbit-with-ben #828 (main f56f0745). The MacBook worker reads the job's work branch on GitHub before and after each run. A run that exits 0 with the job still open, and whose branch moved during the run and is ahead of main, is parked for the Chief with the branch, how far ahead it is and the open pull request if it can be read. Failed runs, runs killed at the cap, runs that pushed nothing and a branch left by an earlier run are handed back as before; if parking fails the job is still handed back. No timed wait is set: a wait would take the job off the Chief's review list. 14 new tests; seven deliberate breakages each caught; whole suite passes. The MacBook takes it on its next pull of main.",
       "history": [
         {
           "at": "2026-11-11T14:33Z",
@@ -227375,6 +227375,11 @@
           "at": "2026-11-11T16:15Z",
           "by": "claude",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-11T16:19Z",
+          "by": "claude",
+          "what": "done: Merged: orbit-with-ben #828 (main f56f0745). The MacBook worker reads the job's work branch on GitHub before and after each run. A run that exits 0 with the job still open, and whose branch moved during the run and is ahead of main, is parked for the Chief with the branch, how far ahead it is and the open pull request if it can be read. Failed runs, runs killed at the cap, runs that pushed nothing and a branch left by an earlier run are handed back as before; if parking fails the job is still handed back. No timed wait is set: a wait would take the job off the Chief's review list. 14 new tests; seven deliberate breakages each caught; whole suite passes. The MacBook takes it on its next pull of main."
         }
       ],
       "remaining_action": "Merge #828 when its checks are green, then close",
@@ -227386,7 +227391,8 @@
         "of": 3,
         "at": "2026-11-11T16:15Z",
         "by": "claude"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/828"
     },
     {
       "id": "J2625",
