@@ -226384,10 +226384,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T14:00Z",
+      "eta": "2026-11-11T16:00Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
       "result": "",
@@ -226441,6 +226441,11 @@
           "at": "2026-11-11T13:45Z",
           "by": "grok",
           "what": "rerouted to codex on gpt-6-astra: Desk 6797017939: size revision only, assigned to Codex. Spec stays 6797257524 as confirmed by 6797338529. J2592 stays blocked until a Chief PASS."
+        },
+        {
+          "at": "2026-11-11T14:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Second size pass on PR #523 per 6797257524; post 390px and 4x sheets",
@@ -226461,7 +226466,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T14:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2614",
