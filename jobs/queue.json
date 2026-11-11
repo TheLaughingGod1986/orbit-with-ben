@@ -229908,13 +229908,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T21:11Z",
-      "eta": "2026-11-11T23:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T21:08Z",
-      "result": "",
+      "result": "parked for Chief: J2452's condition is met but the MacBook may not release the hold (reopen refused: Only the elected Chief may release a verified hold). Evidence: the 21:02Z park was only the run ending with the job open; predecessor J2548 is done; no Chief ruling on the thread since; PR 789 open on main at 909ea4d77, not merged; twelve of thirteen chapters saved, Proxima on the working-film store at the recorded 6,774,772,657 bytes with CHAPTER.json; no encode or copy running. Queue progress reads 11 of 15, the branch records 12. Chief: run jobs.py reopen J2452 --agent <chief id> --note 'resume from RESUME_2026-11-11_PUBLIC_PROXIMA_SAVED.md on macbook/J2452: record 12 of 15, then 019 Andromeda, join, checks, reel, watch card' --git. Nothing uploaded, spent or changed; Ben's watch still required before upload.",
       "history": [
         {
           "at": "2026-11-11T21:08Z",
@@ -229930,6 +229930,11 @@
           "at": "2026-11-11T21:11Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T21:13Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2452's condition is met but the MacBook may not release the hold (reopen refused: Only the elected Chief may release a verified hold). Evidence: the 21:02Z park was only the run ending with the job open; predecessor J2548 is done; no Chief ruling on the thread since; PR 789 open on main at 909ea4d77, not merged; twelve of thirteen chapters saved, Proxima on the working-film store at the recorded 6,774,772,657 bytes with CHAPTER.json; no encode or copy running. Queue progress reads 11 of 15, the branch records 12. Chief: run jobs.py reopen J2452 --agent <chief id> --note 'resume from RESUME_2026-11-11_PUBLIC_PROXIMA_SAVED.md on macbook/J2452: record 12 of 15, then 019 Andromeda, join, checks, reel, watch card' --git. Nothing uploaded, spent or changed; Ben's watch still required before upload."
         }
       ],
       "remaining_action": "Read J2452's brief, result and evidence, then verify its waiting condition",
