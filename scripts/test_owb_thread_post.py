@@ -91,6 +91,20 @@ class WhatTheBriefsSay(unittest.TestCase):
                 self.assertRegex(src, r"(?:owb|studio)_thread\.py post -f <file>")
                 self.assertNotRegex(src, r'(?:owb|studio)_thread\.py post "')
 
+    def test_every_name_a_brief_gives_the_tool_is_one_an_unattended_claude_run_may_use(self):
+        # 11 Nov 2026: the MacBook brief began to say studio_thread.py while the project's pre-approved commands
+        # named only owb_thread.py. An unattended Claude run would have stopped to ask, with nobody there to answer.
+        import json
+        import re
+        allowed = json.loads((HERE.parent / ".claude" / "settings.json").read_text())["permissions"]["allow"]
+        named = set()
+        for name in ("chief_relay.py", "macbook_worker.py"):
+            named |= set(re.findall(r"python3 scripts/(\w+_thread\.py) (?:post|read)", (HERE / name).read_text()))
+        self.assertIn("studio_thread.py", named)
+        for tool in sorted(named | {"owb_thread.py", "studio_thread.py"}):
+            with self.subTest(tool=tool):
+                self.assertIn(f"Bash(python3 scripts/{tool}:*)", allowed)
+
     def test_the_rule_book_says_so(self):
         self.assertIn("owb_thread.py post -f <file>", (HERE.parent / "AGENTS.md").read_text())
 
