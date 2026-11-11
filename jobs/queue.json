@@ -218281,13 +218281,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T00:56Z",
-      "eta": "2026-11-11T02:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:41Z",
-      "result": "",
+      "result": "The board tracker names no channel now: 30 lines naming a channel and 7 naming the home layout are 0 and 0. Whole repo: channel names 275 to 245 (13 scripts to 12), home layout 27 to 20 (9 scripts to 8); the ratchet is lowered to match. New setting shorts.planned_per_long in each channel's studio/channel.json (this channel 2, History of Science 4; pair PR history-of-science #490). build_videos takes pipeline documents by slug, so a third channel needs a settings file and no tracker change. Board output on real data identical: 309 cards, 0 changed.",
       "history": [
         {
           "at": "2026-11-10T17:41Z",
@@ -218298,6 +218298,11 @@
           "at": "2026-11-11T00:56Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T01:53Z",
+          "by": "claude",
+          "what": "done: The board tracker names no channel now: 30 lines naming a channel and 7 naming the home layout are 0 and 0. Whole repo: channel names 275 to 245 (13 scripts to 12), home layout 27 to 20 (9 scripts to 8); the ratchet is lowered to match. New setting shorts.planned_per_long in each channel's studio/channel.json (this channel 2, History of Science 4; pair PR history-of-science #490). build_videos takes pipeline documents by slug, so a third channel needs a settings file and no tracker change. Board output on real data identical: 309 cards, 0 changed."
         }
       ],
       "remaining_action": "Decoupling: video_tracker.py asks channels.py instead of naming a channel (30 + 7 lines to 0)",
@@ -218311,7 +218316,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#783"
     },
     {
       "id": "J2526",
