@@ -228575,13 +228575,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T18:16Z",
-      "eta": "2026-11-11T18:36Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-11T18:14Z",
-      "result": "",
+      "result": "parked for Chief: first-day check, Verdict: BEHIND, not shown",
       "history": [
         {
           "at": "2026-11-11T18:14Z",
@@ -228617,6 +228617,11 @@
           "at": "2026-11-11T18:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read-only check complete; all available figures stored and full judge output ready for Chief handoff."
+        },
+        {
+          "at": "2026-11-11T18:18Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: first-day check, Verdict: BEHIND, not shown"
         }
       ],
       "remaining_action": "Claude to decide the response to the Mars rover Short’s weak first day",
