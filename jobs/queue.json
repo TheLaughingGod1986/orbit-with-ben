@@ -219958,10 +219958,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-11T01:27Z",
+      "eta": "2026-11-11T03:27Z",
       "created_by": "relay",
       "created_at": "2026-11-11T01:28Z",
       "result": "",
@@ -219970,13 +219970,26 @@
           "at": "2026-11-11T01:28Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T01:27Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Resolve the failed Halley take and reconcile its refund before generating more scenes",
       "kind": "review",
       "recheck_of": "J2033",
       "due": "2026-11-11T02:28:28+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T01:27Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
