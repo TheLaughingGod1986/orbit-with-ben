@@ -1,5 +1,5 @@
 {
-  "next_id": 2589,
+  "next_id": 2594,
   "jobs": [
     {
       "id": "J0001",
@@ -178123,7 +178123,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 9
+      "urgent": 14
     },
     {
       "id": "J2036",
@@ -178256,7 +178256,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 10,
+      "urgent": 15,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178629,7 +178629,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 11,
+      "urgent": 16,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192639,7 +192639,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 12,
+      "urgent": 17,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193473,11 +193473,11 @@
       "title": "HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Bounded £0 new-version assembly job for HOS 008 Franklin (`hos_008_master_v04.mp4`), dependent on `J1881` and `J2241` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Required Implementation & Preservation Contract (`b78dbe19`)\n1. **Dependency Validation, Packet Copy & Lossless Boundary Splicing:**\n   - Source master: `_precheck/master_v03/hos_008_master_v03.mp4` (`sha256: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, `393,139,693` bytes, `12,923` frames, start `0.125s`, duration `539.500s`, timebase `1/12288`).\n   - Keyframe flags do not by themselves prove closed GOPs (`gop_closure_proven: false`, `dependency_validation: OUTSTANDING` in `b78dbe19`). Validate actual packet/frame decode dependencies before splicing. Never globally re-encode or apply `setpts=N/24`. Copy unchanged GOP packets directly and re-encode only the validated candidate keyframe envelopes matching exact source frame counts and original integer PTS/durations (including all 23 `1024`-tick steps).\n   - Prove and record bitwise-identical per-decoded-frame SHA-256 on every unchanged frame (keyed by original integer PTS and duration) and stream-copy original `h35` master audio packets without timestamp shift (verify compressed audio packet hashes, PTS/DTS/durations, `-14.129 LUFS` / `-1.2 dBTP`, and measured VO sync lag at original checkpoints and each patch).\n2. **Eight Defect Rows + Concrete 32-Card / `SAFE PATH DOWN` Caption Treatment (`b78dbe19`):**\n   - Apply the 7 active splice envelopes from `eight_rows` (`[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`) using verified on-disk inputs and `J2241` retakes (`--retake-p2-02`, `--retake-p3-01`, `--retake-p5-13`). Leave `0:51` (`07_hot_night_t1.mp4`, `[1129,1231]`) untouched (`splice: false`).\n   - Confirm both distinct checks in Row 5: `jar_flip_2_18` (frame `3305`, `138.000s` inside replace `3260..3343` ending at `139.625s`, outside keep `3168..3259`) and `foil_next_spark_2_20` (frame `3353`, `140.000s` beyond replacement end, in candidate envelope `[3344,3404]`).\n   - Render the `32` planned sequential caption cards from `plan_captions()` (`<=4` words, `<=4s` / `<=49,152` ticks static hold, `window_remainder_ticks` left clear of static hold, one label at a time, soft unbordered dark-umber background panel over moving plate, `border: false`, `gold_rule: false`, `pill_chrome: false`, `0.3–0.5s` fade) plus `plan_safe_path()` (`11_safe_path`, `SAFE PATH DOWN`, 3 words, `10/3 s` hold, frame `11038..11118`) and verify bottom-text readability across the `10` code-graphic/overlay rows listed in `reconcile_bottom_text()`.\n   - On `3:31` (`4977..5077`, `04_letter_crosses`), render one animated cream ink letter crossing over moving `07_slow_news_t1.mp4` (upper sky off ship, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`).\n3. **Mandatory Gates (paste all PASS outputs):**\n   - `picture_qa.py`, `polish_gate.py`, `npm run gate:episode`, `npm run lint:package -- --film 008`, `music_gate.py`, `sfx_kit.py level`, `168×94` phone readability contact sheet for all 32 caption cards + `SAFE PATH DOWN` + `3:31` crossing, and `check_all.sh`.\n   - Preserve `master_v01`/`v02`/`v03`, `h22`/`h35`, `J1297`, and `J1755` publication rejection. Do not copy to UAT, upload to R2, or touch YouTube/Studio before `J2243` and Chief review.",
+      "body": "Acting Chief, 11 Nov 10:22Z, queue side of Grok's ruling (History of Science desk 6793185344): the second takes are not used either. This job waits for J2593. It uses salon take 3 **with its placed spark** (the composite that check keeps) and points take 3, each only if KEEP; rods take 2 as before. If either row was parked for Grok instead, do not start: he puts that shot to Ben.\n\nBounded £0 new-version assembly job for HOS 008 Franklin (`hos_008_master_v04.mp4`), dependent on `J1881` and `J2241` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Required Implementation & Preservation Contract (`b78dbe19`)\n1. **Dependency Validation, Packet Copy & Lossless Boundary Splicing:**\n   - Source master: `_precheck/master_v03/hos_008_master_v03.mp4` (`sha256: cf1561c218bace7bc14ed3d625b0790a457027a90f392262f45ca7172723099b`, `393,139,693` bytes, `12,923` frames, start `0.125s`, duration `539.500s`, timebase `1/12288`).\n   - Keyframe flags do not by themselves prove closed GOPs (`gop_closure_proven: false`, `dependency_validation: OUTSTANDING` in `b78dbe19`). Validate actual packet/frame decode dependencies before splicing. Never globally re-encode or apply `setpts=N/24`. Copy unchanged GOP packets directly and re-encode only the validated candidate keyframe envelopes matching exact source frame counts and original integer PTS/durations (including all 23 `1024`-tick steps).\n   - Prove and record bitwise-identical per-decoded-frame SHA-256 on every unchanged frame (keyed by original integer PTS and duration) and stream-copy original `h35` master audio packets without timestamp shift (verify compressed audio packet hashes, PTS/DTS/durations, `-14.129 LUFS` / `-1.2 dBTP`, and measured VO sync lag at original checkpoints and each patch).\n2. **Eight Defect Rows + Concrete 32-Card / `SAFE PATH DOWN` Caption Treatment (`b78dbe19`):**\n   - Apply the 7 active splice envelopes from `eight_rows` (`[423,544]`, `[744,839]`, `[2506,2665]`, `[3168,3343]`, `[4511,4670]`, `[4977,5077]`, `[11358,11492]`) using verified on-disk inputs and `J2241` retakes (`--retake-p2-02`, `--retake-p3-01`, `--retake-p5-13`). Leave `0:51` (`07_hot_night_t1.mp4`, `[1129,1231]`) untouched (`splice: false`).\n   - Confirm both distinct checks in Row 5: `jar_flip_2_18` (frame `3305`, `138.000s` inside replace `3260..3343` ending at `139.625s`, outside keep `3168..3259`) and `foil_next_spark_2_20` (frame `3353`, `140.000s` beyond replacement end, in candidate envelope `[3344,3404]`).\n   - Render the `32` planned sequential caption cards from `plan_captions()` (`<=4` words, `<=4s` / `<=49,152` ticks static hold, `window_remainder_ticks` left clear of static hold, one label at a time, soft unbordered dark-umber background panel over moving plate, `border: false`, `gold_rule: false`, `pill_chrome: false`, `0.3–0.5s` fade) plus `plan_safe_path()` (`11_safe_path`, `SAFE PATH DOWN`, 3 words, `10/3 s` hold, frame `11038..11118`) and verify bottom-text readability across the `10` code-graphic/overlay rows listed in `reconcile_bottom_text()`.\n   - On `3:31` (`4977..5077`, `04_letter_crosses`), render one animated cream ink letter crossing over moving `07_slow_news_t1.mp4` (upper sky off ship, `0` brown boxes, `0` shoreline flash, `0` unsourced `3,600 MILES`).\n3. **Mandatory Gates (paste all PASS outputs):**\n   - `picture_qa.py`, `polish_gate.py`, `npm run gate:episode`, `npm run lint:package -- --film 008`, `music_gate.py`, `sfx_kit.py level`, `168×94` phone readability contact sheet for all 32 caption cards + `SAFE PATH DOWN` + `3:31` crossing, and `check_all.sh`.\n   - Preserve `master_v01`/`v02`/`v03`, `h22`/`h35`, `J1297`, and `J1755` publication rejection. Do not copy to UAT, upload to R2, or touch YouTube/Studio before `J2243` and Chief review.",
       "ref": "J1881 / J2241 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "edit",
-      "after": "J2576",
+      "after": "J2593",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -193506,13 +193506,19 @@
           "at": "2026-11-11T08:57Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's ruling 6791231280: salon take 1 and points take 1 are not used. This job waits for J2576, the still-sheet check of the two second takes (J2575). On PASS it uses salon take 2, points take 2 and rods take 2 (rods t2 sha256 f82abba9...1a3a, desk 6790782423)."
+        },
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling 6793185344: waits for J2593 (the placed spark's check); uses the third takes only if KEEP."
         }
       ],
       "remaining_action": "Implement closed-GOP packet/boundary splicer + 27 unbordered umber bottom-caption panels, render hos_008_master_v04.mp4, and pass all gates",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "urgent": 12
     },
     {
       "id": "J2243",
@@ -195993,7 +195999,7 @@
       "title": "HOS 010: produce twelve scoped Shorts plates after guarded authorization",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 10:12Z, queue side of Grok's ruling (History of Science desk 6792995872), which replaces the note below about waiting: **batches 2 and 3 run now**, seven rows, 700 credits at most, with the usual guards. When Grok's PASS on film 009's board change lands, finish the batch you are on, let go of the lock, and let the 009 retakes (J2583) run; any rows left over resume after them. Before each Create: if the live balance is below the floor plus that row's price, stop and post it on the desk.\n\nActing Chief, 11 Nov 09:12Z, queue side of Grok's ruling (History of Science desk 6791689638): **after batch 1 finishes, do not start batch 2 yet.** Let batch 1 end normally; never interrupt it or break the lock. When `~/_desk/logs/J2270-batch1.done` is written and the shared writer lock is free, **J2575 takes the lock next** (film 008's two second takes; 008 airs Thu 19 Nov and its salon shot gates that date). Only after J2575 has written its own `.done` does this job launch batch 2 and carry on with its remaining seven rows. Nothing else in this brief changes.\n\nActing Chief, 11 Nov 07:15Z: **released. The authorization is written and checked.** J2269 is done (Codex, 07:04Z; History of Science desk, comment 6789423413; history-of-science #504 carries the record for Grok). Checked here against Grok's rulings (6782185014, 6784299215, 6787409534, 6788387002): job J2269, film HOS:010, `generation_authorized` true, `j2033_done` true citing #501, scope sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413` (the file on main), cap 3,600, floor 3,000. At the read (07:02Z): balance 12,690, no PENDING charge, 2,900 already owed or reserved by 009 and 008, so 6,190 would be left after this job's whole cap.\n\nRun it now, inside the window that closes Thu 12 Nov 19:13 London:\n\n- Pull history-of-science main. Use the authorization with `--authorization-file`: on the Mini it is at `~/_desk/wt/hos-J2269/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json` (the same file is in #504).\n- Before the first submit, read the live account, balance, price and shared ledger again under the writer lock. Stop for a PENDING charge or a balance that moved when nothing was submitted, and post on the desk. Keep 3,000 after all reservations.\n- The 008 retakes (J2241) use the same browser. Their three takes are already charged; if that job is still harvesting, wait for it, do not run beside a submit.\n- Twelve rows, at most 3 takes a row, at most 5 rows and 1,500 credits a batch, Quality x1 16:9 8s at 100 credits, nothing kept automatically. Start each batch detached and release, as the 009 run did.\n- A take Flow refuses: `reconcile-policy-refusal`, then the next batch. No Vertex fallback without a ruling.\n- If the twelve cannot finish inside the window, stop and wait for the new allowance. Do not hurry a guard.\n\nChief ruling, Grok, 11 Nov 04:55Z (History of Science desk, comment 6787409534), recorded by the acting Chief, 11 Nov 05:54Z: history-of-science #500 is merged (f04c707c). The hold on `P2:01_walter_hammer` and `P3:08_asaro_michel` is lifted. All twelve rows may be submitted once this job's own gate is met (J2269's authorization). Before anything else, pull history-of-science main: the scope file changed, its sha256 is now `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`, and the authorization must pin that.\n\nIf Flow refuses a take under its content policy: close it with `reconcile-policy-refusal` (0 credits, submits nothing), then run the next batch. The runner sets the refused row aside until its prompt changes; it does not stop the run and it does not send the same prompt again. No Vertex fallback for a refused row without a Chief ruling. List any refused row in the report.\n\nThis job is the making of the twelve plates. It stays open until they are made.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657, item 2), recorded by the acting Chief, 11 Nov 04:25Z: two of the twelve prompts name real people, `P2:01_walter_hammer` and `P3:08_asaro_michel`. Do not submit those two rows until the history-of-science pull request that rewords them and gives the 010 runner the refused-take handling is merged (in work, from the acting Chief). The other ten may go ahead once this job's own gate is met.\n\nSCOPED ONLY, NOT AUTHORIZED TO GENERATE until explicit J2269 PASS and authorization hold released. Required dependencies: J2033 HOS009 production DONE, J2200 tested runner, J2268 HOS010 adapter system PASS/merged, J2269 live guards and bounded authorization. Use exact TWELVE_PLATE_SCOPE_J2267.json prompts/references/hashes only. Existing Flow Veo3.1 Quality8s16:9 x1; no Omni or alternate service. Proposed max3 takes/row,12 rows,3600 credits total, <=5 rows/1500 per batch; actual J2269 cap may be lower. Shared writer lock, fresh account/balance/price each batch, full remaining-cap plus other reservations/pending charges deducted,3000 floor. Stop on drift or unknown cost; no card/topup. Use tested runner only. Produce GENERATED/PENDING_REVIEW with technical decode/duration checks, exact receipts and actual spend ledger, immutable versioned files and SHA256-verified durable NAS copies. No auto-KEEP and no perceptual self-PASS. Preserve A/C VO hashes, OptionA1, current rule8 and all gates. Detached tmux/log/.done for long runs, never duplicate. Hand off exact manifest to independent plate review before J2172 assembly. No YouTube/Buffer/schedule/upload. Worker kind video routes Cursor then Codex then Gemini; own agent id.\n",
+      "body": "Acting Chief, 11 Nov 10:22Z (Grok, desk 6793185344 point 5): at your next batch boundary, film 008's two third takes (J2589) take the lock first. They are tied to Thu 12 Nov 19:13 London. Then film 009's retakes once their board change has Grok's PASS, then your remaining rows.\n\nActing Chief, 11 Nov 10:12Z, queue side of Grok's ruling (History of Science desk 6792995872), which replaces the note below about waiting: **batches 2 and 3 run now**, seven rows, 700 credits at most, with the usual guards. When Grok's PASS on film 009's board change lands, finish the batch you are on, let go of the lock, and let the 009 retakes (J2583) run; any rows left over resume after them. Before each Create: if the live balance is below the floor plus that row's price, stop and post it on the desk.\n\nActing Chief, 11 Nov 09:12Z, queue side of Grok's ruling (History of Science desk 6791689638): **after batch 1 finishes, do not start batch 2 yet.** Let batch 1 end normally; never interrupt it or break the lock. When `~/_desk/logs/J2270-batch1.done` is written and the shared writer lock is free, **J2575 takes the lock next** (film 008's two second takes; 008 airs Thu 19 Nov and its salon shot gates that date). Only after J2575 has written its own `.done` does this job launch batch 2 and carry on with its remaining seven rows. Nothing else in this brief changes.\n\nActing Chief, 11 Nov 07:15Z: **released. The authorization is written and checked.** J2269 is done (Codex, 07:04Z; History of Science desk, comment 6789423413; history-of-science #504 carries the record for Grok). Checked here against Grok's rulings (6782185014, 6784299215, 6787409534, 6788387002): job J2269, film HOS:010, `generation_authorized` true, `j2033_done` true citing #501, scope sha256 `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413` (the file on main), cap 3,600, floor 3,000. At the read (07:02Z): balance 12,690, no PENDING charge, 2,900 already owed or reserved by 009 and 008, so 6,190 would be left after this job's whole cap.\n\nRun it now, inside the window that closes Thu 12 Nov 19:13 London:\n\n- Pull history-of-science main. Use the authorization with `--authorization-file`: on the Mini it is at `~/_desk/wt/hos-J2269/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json` (the same file is in #504).\n- Before the first submit, read the live account, balance, price and shared ledger again under the writer lock. Stop for a PENDING charge or a balance that moved when nothing was submitted, and post on the desk. Keep 3,000 after all reservations.\n- The 008 retakes (J2241) use the same browser. Their three takes are already charged; if that job is still harvesting, wait for it, do not run beside a submit.\n- Twelve rows, at most 3 takes a row, at most 5 rows and 1,500 credits a batch, Quality x1 16:9 8s at 100 credits, nothing kept automatically. Start each batch detached and release, as the 009 run did.\n- A take Flow refuses: `reconcile-policy-refusal`, then the next batch. No Vertex fallback without a ruling.\n- If the twelve cannot finish inside the window, stop and wait for the new allowance. Do not hurry a guard.\n\nChief ruling, Grok, 11 Nov 04:55Z (History of Science desk, comment 6787409534), recorded by the acting Chief, 11 Nov 05:54Z: history-of-science #500 is merged (f04c707c). The hold on `P2:01_walter_hammer` and `P3:08_asaro_michel` is lifted. All twelve rows may be submitted once this job's own gate is met (J2269's authorization). Before anything else, pull history-of-science main: the scope file changed, its sha256 is now `6fa991211a24a8808c20606b83784a925df0024869d86ca51839435ffea2a413`, and the authorization must pin that.\n\nIf Flow refuses a take under its content policy: close it with `reconcile-policy-refusal` (0 credits, submits nothing), then run the next batch. The runner sets the refused row aside until its prompt changes; it does not stop the run and it does not send the same prompt again. No Vertex fallback for a refused row without a Chief ruling. List any refused row in the report.\n\nThis job is the making of the twelve plates. It stays open until they are made.\n\nChief ruling, Grok, 11 Nov 04:06Z (History of Science desk, comment 6786709657, item 2), recorded by the acting Chief, 11 Nov 04:25Z: two of the twelve prompts name real people, `P2:01_walter_hammer` and `P3:08_asaro_michel`. Do not submit those two rows until the history-of-science pull request that rewords them and gives the 010 runner the refused-take handling is merged (in work, from the acting Chief). The other ten may go ahead once this job's own gate is met.\n\nSCOPED ONLY, NOT AUTHORIZED TO GENERATE until explicit J2269 PASS and authorization hold released. Required dependencies: J2033 HOS009 production DONE, J2200 tested runner, J2268 HOS010 adapter system PASS/merged, J2269 live guards and bounded authorization. Use exact TWELVE_PLATE_SCOPE_J2267.json prompts/references/hashes only. Existing Flow Veo3.1 Quality8s16:9 x1; no Omni or alternate service. Proposed max3 takes/row,12 rows,3600 credits total, <=5 rows/1500 per batch; actual J2269 cap may be lower. Shared writer lock, fresh account/balance/price each batch, full remaining-cap plus other reservations/pending charges deducted,3000 floor. Stop on drift or unknown cost; no card/topup. Use tested runner only. Produce GENERATED/PENDING_REVIEW with technical decode/duration checks, exact receipts and actual spend ledger, immutable versioned files and SHA256-verified durable NAS copies. No auto-KEEP and no perceptual self-PASS. Preserve A/C VO hashes, OptionA1, current rule8 and all gates. Detached tmux/log/.done for long runs, never duplicate. Hand off exact manifest to independent plate review before J2172 assembly. No YouTube/Buffer/schedule/upload. Worker kind video routes Cursor then Codex then Gemini; own agent id.\n",
       "ref": "J2267",
       "film": "010",
       "stage": "picture",
@@ -196106,6 +196112,11 @@
           "at": "2026-11-11T10:12Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's ruling 6792995872: batches 2 and 3 run now; the 009 retakes take the lock at a batch boundary once their board change has Grok's PASS."
+        },
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling 6793185344: 008's third takes (J2589) take the lock at the next batch boundary, ahead of the 009 retakes."
         }
       ],
       "remaining_action": "Wait for the Franklin retakes to finish, then continue the Dinosaur scenes",
@@ -196113,7 +196124,7 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 2,
+      "urgent": 3,
       "progress": {
         "step": 2,
         "of": 3,
@@ -221881,7 +221892,7 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 4
+      "urgent": 13
     },
     {
       "id": "J2551",
@@ -223545,13 +223556,13 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T10:10Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T08:57Z",
-      "result": "parked for Chief: FAIL (HOS desk #6793160719) — Salon take 2 (02_salon_spark_j2241_t2): Q1 NO (branching lightning arcs at 00:00–00:01 and 00:04–00:05 + blue glow on hair/forehead at 00:04), Q2 NO (7–8 giant stiff white hair spikes shoot out the top of the frame at 00:02–00:04), Q3 NO (hollow-tube reflection at 00:01–00:04 and arcs erupting off rod at 00:00 & 00:04); Points take 2 (01_points_desk_j2241_t2): Q1 NO (second wispy white streamer under bottom-left of sphere at 00:03–00:05, left-equator filament at 3.5s/4.5s, right thread morphs into feather/strip tail at 00:05–00:06 and detaches/floats at 00:07), Q2 YES (00:00–00:07 top of sphere clean), Q3 YES (00:00–00:07 both hands stay in view)",
+      "result": "Both second takes failed (salon: no, no, no; points: no, yes, yes). Grok ruled (desk 6793185344): third takes with a new approach, gesture only and no electricity words; the spark is added in the edit as a code graphic; a failed third take is parked for him and put to Ben, never an earlier plate reused. Next: J2589, J2590, J2591, J2592, J2593, then J2242.",
       "history": [
         {
           "at": "2026-11-11T08:57Z",
@@ -223592,6 +223603,11 @@
           "at": "2026-11-11T10:17Z",
           "by": "relay",
           "what": "condition verification queued: J2588"
+        },
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "done: Both second takes failed (salon: no, no, no; points: no, yes, yes). Grok ruled (desk 6793185344): third takes with a new approach, gesture only and no electricity words; the spark is added in the edit as a code graphic; a failed third take is parked for him and put to Ben, never an earlier plate reused. Next: J2589, J2590, J2591, J2592, J2593, then J2242."
         }
       ],
       "remaining_action": "Park J2576 for Chief after posting HOS desk report",
@@ -223609,12 +223625,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T11:17:51+00:00",
-        "recheck_task": "J2588"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6793185344"
     },
     {
       "id": "J2577",
@@ -223944,7 +223955,7 @@
       "title": "HOS 009: remake three shots (falling Moon, apple, minute-and-second c1), 300 of the 400 credits, after Grok passes the board change",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Ruled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. This paragraph wins over everything below it.**\n\n1. **Four shots are remade, one take each, 400 credits at most** (was 200): `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1`, and then `P04:05_minute_second_c2`. **This job makes the first three (300 credits).** The fourth continues from the third's last frame, so it has its own job after the third passes its sheet. No second take inside the 400: a take that fails comes back to Grok.\n2. `P02:11_explorer_apple_c1` is **kept** (the sheet shows one continuous camera move). Do not remake it.\n3. **The wording is already written:** the board change is its own job, done first, and it waits for Grok's PASS. Spend no credit before that PASS. Use the board as merged; change no wording here.\n4. **Order on the picture tool:** J2270's batches 2 and 3 run now. Once Grok's PASS is in, this job takes the lock at the next batch boundary: J2270 finishes the batch it is on and lets go. Order: `P03:01`, `P02:08`, `P04:05_c1`.\n5. **Before each Create:** the live balance and the exact price. If the balance is below the floor plus that shot's price, stop and post it on the desk.\n6. Archive each take with its hash and write the ledger rows and evidence as J2033 did. Do not judge the pictures: each take gets a half-second sheet of the whole clip in the check that follows.\n\n**Amended by Grok (History of Science desk 6792364829, queue side 11 Nov 09:46Z). This replaces the apple shot's motion line in point 3 below.** For `P02:08_the_apple_c1`, change only the motion line, to: \"The apple that already fell lies still in the grass for the entire shot and never moves. A second green apple with a red flush drops once from a branch straight down and lands in the grass beside it. Exactly two apples in the shot at the end. Nothing moves upward at any moment, and no apple returns to the branch.\" The row's usual closing lines stay after it. Money and order are unchanged: 200 credits at most, `P03:01` and `P02:08` first, `P02:11` parked if the sheets call for all three.\n\n**Changed by Grok's rulings (History of Science desk 6792282370 and 6792304982, queue side by the acting Chief, 11 Nov 09:35Z). Where this differs from the text below, this wins.**\n\n1. **`P03:01_really_falling_c1`: use Grok's wording**, then the row's usual closing lines: \"Same shot continues from the last frame of 01_really_falling. The camera drifts slowly. The same plain pale Moon stays in the sky above the orchard for the entire shot and glides gently sideways and downward along one smooth curve. A single thin curved line draws itself beneath the Moon, following its path. The Moon never fades, never changes size or colour, and never leaves the frame. No ball, no apple, no second object, no second line, no marks or face on the Moon.\"\n2. **`P02:11_explorer_apple_c1`, if the sheet calls its move a jump:** change only the closing \"No Explorer\" to \"Exactly one Explorer, on model\". Leave the rest of the row's prompt as it is.\n3. **`P02:08_the_apple_c1`, only if the sheet check wrote \"retake\" beside it:** same pull request, changing only the motion line to: \"The apple only falls, once, from the branch straight down to the grass. It never rises, never bounces back up, and never returns to the branch.\" The usual closing lines stay.\n4. **Money is unchanged: 200 credits at most**, one take a row. If the sheets call for three rows, make `P03:01` and `P02:08` and park `P02:11` for the Chief. No credit before Grok's PASS on the pull request.\n\nRuled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Runs on the Mini's Flow browser under J2033's runner and every guard in `TRANCHE2_SCOPE_J2026.json` (three takes a row, 100 credits a take, the 3,000 floor, live balance and price before each take, one output a take). Subscription credits only. **200 credits at most.** Never beside another Flow submit: film 008's second takes (J2575) go first if they have not run, and wait for any J2270 batch that holds the writer lock.\n\n1. **`P03:01_really_falling_c1`, take 2.** In take 1 the Moon fades at about 3.5 s and a ball rides the curve, under the line \"It really is falling. It just never lands.\" Same start frame (the last frame of `P03:01_really_falling`) and settings. Wording, in the board's own style: \"Same shot continues from the last frame of 01_really_falling, camera drifts slowly: the same plain pale Moon stays in the sky above the orchard for the whole shot and slides gently sideways and down along a smooth curve. One thin curved line draws under it. The Moon never fades, never changes and never leaves the frame. No ball, no second object, no second line, no mark on the Moon's face.\" Keep the board's usual closing lines.\n2. **`P02:11_explorer_apple_c1`, take 2, only if the sheet check before this job called its move at 4.0 s a jump.** If it was kept, do not remake it. If it is remade: same start frame and settings; the Explorer keeps holding the apple up beside the pale Moon and looks from one to the other; the camera drifts slowly with no sudden move; and the row's closing line reads \"Exactly one Explorer, on model: round gold glasses, teal long coat, finished hair\", not \"No Explorer\".\n3. **The changed wording is a board change.** Put it in a History of Science pull request (the board or the scope file, whichever the runner reads, with its new hash) and wait for Grok's review before spending a credit. Grok may tighten the wording; his version wins.\n4. One take each. Archive each take to the working-film store with its hash, write the ledger rows and the evidence file as J2033 did. A take that Flow refuses costs nothing and is recorded as J2033 recorded its own.\n\nDo not judge the pictures here: the sheet check after this job does that.",
+      "body": "Acting Chief, 11 Nov 10:22Z (Grok, desk 6793185344 point 5): film 008's two third takes (J2589) go ahead of these on the picture tool.\n\n**Ruled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. This paragraph wins over everything below it.**\n\n1. **Four shots are remade, one take each, 400 credits at most** (was 200): `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1`, and then `P04:05_minute_second_c2`. **This job makes the first three (300 credits).** The fourth continues from the third's last frame, so it has its own job after the third passes its sheet. No second take inside the 400: a take that fails comes back to Grok.\n2. `P02:11_explorer_apple_c1` is **kept** (the sheet shows one continuous camera move). Do not remake it.\n3. **The wording is already written:** the board change is its own job, done first, and it waits for Grok's PASS. Spend no credit before that PASS. Use the board as merged; change no wording here.\n4. **Order on the picture tool:** J2270's batches 2 and 3 run now. Once Grok's PASS is in, this job takes the lock at the next batch boundary: J2270 finishes the batch it is on and lets go. Order: `P03:01`, `P02:08`, `P04:05_c1`.\n5. **Before each Create:** the live balance and the exact price. If the balance is below the floor plus that shot's price, stop and post it on the desk.\n6. Archive each take with its hash and write the ledger rows and evidence as J2033 did. Do not judge the pictures: each take gets a half-second sheet of the whole clip in the check that follows.\n\n**Amended by Grok (History of Science desk 6792364829, queue side 11 Nov 09:46Z). This replaces the apple shot's motion line in point 3 below.** For `P02:08_the_apple_c1`, change only the motion line, to: \"The apple that already fell lies still in the grass for the entire shot and never moves. A second green apple with a red flush drops once from a branch straight down and lands in the grass beside it. Exactly two apples in the shot at the end. Nothing moves upward at any moment, and no apple returns to the branch.\" The row's usual closing lines stay after it. Money and order are unchanged: 200 credits at most, `P03:01` and `P02:08` first, `P02:11` parked if the sheets call for all three.\n\n**Changed by Grok's rulings (History of Science desk 6792282370 and 6792304982, queue side by the acting Chief, 11 Nov 09:35Z). Where this differs from the text below, this wins.**\n\n1. **`P03:01_really_falling_c1`: use Grok's wording**, then the row's usual closing lines: \"Same shot continues from the last frame of 01_really_falling. The camera drifts slowly. The same plain pale Moon stays in the sky above the orchard for the entire shot and glides gently sideways and downward along one smooth curve. A single thin curved line draws itself beneath the Moon, following its path. The Moon never fades, never changes size or colour, and never leaves the frame. No ball, no apple, no second object, no second line, no marks or face on the Moon.\"\n2. **`P02:11_explorer_apple_c1`, if the sheet calls its move a jump:** change only the closing \"No Explorer\" to \"Exactly one Explorer, on model\". Leave the rest of the row's prompt as it is.\n3. **`P02:08_the_apple_c1`, only if the sheet check wrote \"retake\" beside it:** same pull request, changing only the motion line to: \"The apple only falls, once, from the branch straight down to the grass. It never rises, never bounces back up, and never returns to the branch.\" The usual closing lines stay.\n4. **Money is unchanged: 200 credits at most**, one take a row. If the sheets call for three rows, make `P03:01` and `P02:08` and park `P02:11` for the Chief. No credit before Grok's PASS on the pull request.\n\nRuled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Runs on the Mini's Flow browser under J2033's runner and every guard in `TRANCHE2_SCOPE_J2026.json` (three takes a row, 100 credits a take, the 3,000 floor, live balance and price before each take, one output a take). Subscription credits only. **200 credits at most.** Never beside another Flow submit: film 008's second takes (J2575) go first if they have not run, and wait for any J2270 batch that holds the writer lock.\n\n1. **`P03:01_really_falling_c1`, take 2.** In take 1 the Moon fades at about 3.5 s and a ball rides the curve, under the line \"It really is falling. It just never lands.\" Same start frame (the last frame of `P03:01_really_falling`) and settings. Wording, in the board's own style: \"Same shot continues from the last frame of 01_really_falling, camera drifts slowly: the same plain pale Moon stays in the sky above the orchard for the whole shot and slides gently sideways and down along a smooth curve. One thin curved line draws under it. The Moon never fades, never changes and never leaves the frame. No ball, no second object, no second line, no mark on the Moon's face.\" Keep the board's usual closing lines.\n2. **`P02:11_explorer_apple_c1`, take 2, only if the sheet check before this job called its move at 4.0 s a jump.** If it was kept, do not remake it. If it is remade: same start frame and settings; the Explorer keeps holding the apple up beside the pale Moon and looks from one to the other; the camera drifts slowly with no sudden move; and the row's closing line reads \"Exactly one Explorer, on model: round gold glasses, teal long coat, finished hair\", not \"No Explorer\".\n3. **The changed wording is a board change.** Put it in a History of Science pull request (the board or the scope file, whichever the runner reads, with its new hash) and wait for Grok's review before spending a credit. Grok may tighten the wording; his version wins.\n4. One take each. Archive each take to the working-film store with its hash, write the ledger rows and the evidence file as J2033 did. A take that Flow refuses costs nothing and is recorded as J2033 recorded its own.\n\nDo not judge the pictures here: the sheet check after this job does that.",
       "ref": "J2034",
       "film": "009",
       "stage": "picture",
@@ -223984,7 +223995,7 @@
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
       "mini_only": true,
-      "urgent": 5
+      "urgent": 8
     },
     {
       "id": "J2584",
@@ -224030,7 +224041,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
-      "urgent": 6
+      "urgent": 9
     },
     {
       "id": "J2585",
@@ -224066,7 +224077,7 @@
       "due": "2026-11-11T18:00:00Z",
       "kind": "script",
       "plain": "Write down exactly how four gravity film shots are to be remade, for the Chief to approve",
-      "urgent": 3
+      "urgent": 7
     },
     {
       "id": "J2586",
@@ -224098,7 +224109,7 @@
       "kind": "video",
       "plain": "Remake the last gravity film shot, which follows on from the one before it",
       "mini_only": true,
-      "urgent": 7
+      "urgent": 10
     },
     {
       "id": "J2587",
@@ -224129,7 +224140,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
-      "urgent": 8
+      "urgent": 11
     },
     {
       "id": "J2588",
@@ -224181,6 +224192,162 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J2589",
+      "title": "HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Runs on the Mini's picture tool under J2241's limits: each plate has one take left of three (300 credits a plate). **Two takes, 200 credits at most, subscription credits only.** No fourth take without a new ruling.\n\n**Why.** Both second takes failed their still check (J2576, Gemini). The picture tool keeps adding what the prompt names: \"spark\" brought lightning twice, \"thread\" brought streamers. So take 3 changes the approach: describe only the gesture, and add the spark in the edit.\n\n**1. Salon (`02_salon_spark`), take 3.** Same start frame (`part02/refs/v03_flow_stills/02_salon_spark_t1.png`) and settings (Veo 3.1 Quality, x1, 16:9, 8 s). The motion wording, word for word: \"The lecturer lowers the glass rod and holds it still. The guest slowly brings one knuckle close to the tip of the rod. A few loose strands at her temple lift slightly towards the rod; the rest of her powdered wig stays completely still. Calm, quiet, candle-lit room.\" Keep the line that the rod is a solid glass rod, not a tube. **None of these words anywhere in what is sent to the picture tool, prompt or negative prompt, including the runner's own wrapper text: spark, static, charge, electric, crackle, lightning.** Read the whole text back before the Create.\n\n**2. Points (`01_points_desk`), take 3.** Same start frame (`part03/refs/v03_flow_stills/01_points_desk_t1.png`) and settings. The motion wording, word for word: \"The man holds two sewing needles steady near the brass sphere; both hands stay in view; the sphere and everything under it stay exactly as in the first frame.\" **None of these words anywhere: thread, streamer, paper, strip.**\n\n**3. Order.** Salon first, then points, at J2270's next batch boundary: J2270 finishes the batch it is on and lets go of the lock. These go ahead of film 009's four retakes. Before each Create: the live balance and the exact price. Both must be made before Thu 12 Nov 19:13 London.\n\n**4. After.** Decode, frame count, hash and a still sheet for each, as J2575 did. Earlier takes and records are kept. Do not judge the pictures: the check after this job does. Rods take 2 is untouched and still goes to the splice.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Salon take 3 then points take 3 at J2270's next batch boundary, ahead of the 009 retakes",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "video",
+      "plain": "Make two Franklin film shots a third time, describing only the movement, before the credits reset",
+      "mini_only": true,
+      "urgent": 1
+    },
+    {
+      "id": "J2590",
+      "title": "HOS 008: look at the two third takes on half-second sheets (three yes/no questions each)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Looking only, fifteen minutes, the same way as J2576. For a reviewer that can look at pictures.\n\nEach third take on a half-second sheet of the whole clip, beside its start frame. Yes or no, with the frame. KEEP only on yes, yes, yes.\n\n**Salon take 3 (the spark is added in the edit, so the plate must have none):**\n1. No spark, lightning, arc or glow anywhere in the clip.\n2. All hair stays on heads: a few loose strands at the temple lift slightly, and the rest of the wig is still.\n3. The rod is solid glass, not a tube, and is held still as one knuckle comes close to its tip.\n\n**Points take 3:**\n1. The sphere and everything under it stay as in the first frame: nothing comes out of the sphere.\n2. No wire, thread streamers, paper or strips appear.\n3. Both of the man's hands stay in view, holding the two needles.\n\n**If a take fails:** do not reuse the plate from before J2241 or any earlier take. Park it for Grok and name which shot is still open (1:49, 3:13 or 7:58); he puts it to Ben. The re-edit (J2242) waits until both rows are KEEP or parked.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2589",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Yes or no on each third take; a fail is parked for Grok with the shot named",
+      "due": "2026-11-12T16:00:00Z",
+      "kind": "qa",
+      "plain": "Check the two remade Franklin shots before the film is re-edited",
+      "urgent": 4
+    },
+    {
+      "id": "J2591",
+      "title": "HOS 008: build the salon's contact spark as a code graphic (one warm-white flick, three to four frames)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. A new kind of overlay, approved by this ruling. No credit, £0. It is the plan, not a fallback: build it now, while the third takes are made.\n\nBuild the contact spark for film 008's salon shot as a code graphic:\n- one warm-white point flick, **three to four frames long**, at the moment of contact;\n- between the rod tip and the knuckle only: no arc longer than the gap, no branching;\n- no blue, no purple;\n- no glow on hair or face beyond a faint bloom on one frame;\n- paired with the pen-tap/crackle sound the film already has.\n\nMake it placeable: it takes the frame number and the two points (rod tip, knuckle) as inputs, so it can be set on the third take's contact frame once that take is KEEP. Include a test render on a still from the start frame so the size and colour can be judged, and the house checks for a code graphic. Do not place it on a take in this job.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the placeable contact-spark overlay with a test render",
+      "due": "2026-11-12T16:00:00Z",
+      "kind": "chart",
+      "plain": "Draw the tiny spark for the Franklin salon shot, to be added in the edit",
+      "urgent": 2
+    },
+    {
+      "id": "J2592",
+      "title": "HOS 008: place the contact spark on the salon's third take",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. After the salon's third take is KEEP (the check before this job) and the spark overlay is built.\n\nPlace the contact spark on the salon third take: find the frame where the knuckle is closest to the rod tip, set the overlay there with the rod tip and knuckle points, and render the composite as a new file beside the take (the take itself is not changed). Record the frame, the two points, and the hashes of the take, the overlay and the composite. Then hand it to the frame check. If the salon take was parked instead of kept, release this job with that note.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2590",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Composite the spark on the contact frame of salon take 3",
+      "due": "2026-11-13T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Add the tiny spark to the remade Franklin salon shot",
+      "urgent": 5
+    },
+    {
+      "id": "J2593",
+      "title": "HOS 008: check the placed spark on the salon shot, frame by frame",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Looking only, ten minutes. For a reviewer that can look at pictures, and not the agent that placed it.\n\nThe salon composite on a half-second sheet of the whole clip, plus every frame from two before the spark to two after. Yes or no, with the frame:\n1. The spark is one warm-white point, on three or four frames only, between the rod tip and the knuckle.\n2. No branching, no arc longer than the gap, no blue or purple.\n3. No glow on hair or face beyond a faint bloom on one frame.\n\nAll yes: KEEP the composite, with its hash; the re-edit (J2242) uses it. Any no: park it for Grok with the frame.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2592",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T10:22Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Yes or no on the placed spark; KEEP lets the re-edit start",
+      "due": "2026-11-13T16:00:00Z",
+      "kind": "qa",
+      "plain": "Check the added spark on the Franklin salon shot",
+      "urgent": 6
     }
   ],
   "focus": [
