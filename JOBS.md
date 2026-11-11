@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2624 | cloud | open | – | – | review · MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back |  |
 | J2626 | cloud | claimed | claude | 2026-11-11T16:51Z | 009 picture · review · HOS 009: let the picture tool make the two third takes Grok ruled (falling Moon c1, minute-and-second c1), 200 credits reserved |  |
-| J2627 | mini | open | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: correct the record in #527 (apple shot kept 0.00 to 4.50 s, frames 0 to 107; falling Moon reads RETAKE) |  |
+| J2627 | mini | claimed | gemini | 2026-11-11T17:12Z | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: correct the record in #527 (apple shot kept 0.00 to 4.50 s, frames 0 to 107; falling Moon reads RETAKE) |  |
 | J2628 | mini | open (after J2626) | – | – | 009 picture · for gemini · video · `gemini-argon` · HOS 009: third takes of two shots (falling Moon c1, then minute-and-second c1), one try each, 200 credits |  |
 | J2629 | mini | open (after J2628) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the two third takes on half-second sheets of the whole clip (three yes/no questions each) |  |
 
