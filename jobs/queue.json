@@ -215715,10 +215715,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T07:09Z",
-      "eta": "2026-11-11T09:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
       "result": "",
@@ -215897,6 +215897,11 @@
           "at": "2026-11-11T07:11Z",
           "by": "codex",
           "what": "step 1 of 4 done: Natural-speed v02c built from SHA-verified raw take without any tempo filter: closer ends 2.095s, If at 3.565s, answer 9.765s; 17.255s VO plus 1s tail. All source words retained; no new take/spend. Output ASR and picture rebuild remain."
+        },
+        {
+          "at": "2026-11-11T07:13Z",
+          "by": "codex",
+          "what": "released: Step 1/4 checkpoint 23b44f8464 pushed on codex/J2478-natural-speed. Worktree /Volumes/MiniWork/scratch/J2478-natural-speed; read film NATURAL_SPEED_RESUME.md. Natural-speed v02c WAV SHA 894345b024af235f786eb84949f2119aa4362f513566060c15bc36108f677b64, 17.255s VO, closer end 2.095s, If 3.565s, answer 9.765s. Source word PCM preserved; five files hash-checked on NAS natural_speed_v02c_codex_20261111. No render launched. Next rebuild v02 picture/captions/SFX/sidecars on this clock, output ASR and all gates, then queue review. No spend or Studio change."
         }
       ],
       "remaining_action": "Rebuild v02 pictures from natural-speed v02c timing, run output voice and Shorts gates, queue review",
