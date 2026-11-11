@@ -223429,20 +223429,25 @@
           "at": "2026-11-11T09:35Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed the two authorized second takes; inspecting existing runner and ledger."
+        },
+        {
+          "at": "2026-11-11T09:37Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: J2270 batch 1 exited 0. Reference hashes and duplicate guard prepared; detached tmux J2575-retakes launched with a 200-credit reservation cap."
         }
       ],
-      "remaining_action": "Check the two Franklin retake inputs and Flow credit guards",
+      "remaining_action": "Generate the two Franklin retakes through the guarded Flow runner",
       "due": "2026-11-12T12:00:00Z",
       "kind": "video",
       "plain": "Remake two shots for the Franklin film that came out wrong (a spark far too big, a stray wire)",
       "mini_only": true,
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T09:35Z",
+        "at": "2026-11-11T09:37Z",
         "by": "codex",
-        "note": "Claimed the two authorized second takes; inspecting existing runner and ledger."
+        "note": "J2270 batch 1 exited 0. Reference hashes and duplicate guard prepared; detached tmux J2575-retakes launched with a 200-c"
       },
       "taskKeys": [
         "HOS:008"
