@@ -294,6 +294,13 @@ def studio_checkout(home_dir: pathlib.Path | None = None) -> pathlib.Path:
     return repo_path(home(), home_dir)
 
 
+def studio_slug() -> str:
+    """The channel whose repo carries the studio's own code and data (the scripts, the job queue), for code that
+    must clone or pull that repo. Today that is the home channel. When the studio has its own repo this goes, with
+    studio_checkout()."""
+    return home()
+
+
 def studio_github() -> str:
     """`owner/name` on GitHub of the repo that carries the studio's board and threads (today the home channel's)."""
     return re.sub(r"^https://github\.com/|\.git$", "", get(home())["repo"]["url"])
