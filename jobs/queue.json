@@ -196018,13 +196018,13 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T12:53Z",
-      "eta": "2026-11-11T14:53Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:30Z",
-      "result": "",
+      "result": "parked for Chief: existing lock order requires J2583 before the remaining seven HOS010 rows. J2589 and J2598 are done; J2583 is blocked pending the reviewed reservation runner fix required by desk 6796338000 and cap clarification 6796365164. Resume after J2583 completes or Chief explicitly changes the lock order. Batch1 done=0; no generation or spend this run.",
       "history": [
         {
           "at": "2026-11-06T08:30Z",
@@ -196140,6 +196140,11 @@
           "at": "2026-11-11T12:55Z",
           "by": "codex",
           "what": "step 2 of 3 done: Batch1 exit 0; five plates technically verified in canonical ledger with NAS hashes. J2589 and J2598 done. Chief orders J2583 before remaining rows; J2583 blocked for reservation runner PR under desk 6796338000/6796365164. No generation or spend. Offload found no eligible scratch."
+        },
+        {
+          "at": "2026-11-11T12:55Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: existing lock order requires J2583 before the remaining seven HOS010 rows. J2589 and J2598 are done; J2583 is blocked pending the reviewed reservation runner fix required by desk 6796338000 and cap clarification 6796365164. Resume after J2583 completes or Chief explicitly changes the lock order. Batch1 done=0; no generation or spend this run."
         }
       ],
       "remaining_action": "Wait for the gravity film retakes to finish, then make the seven remaining Dinosaur scenes",
