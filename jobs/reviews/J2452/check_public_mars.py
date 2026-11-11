@@ -89,7 +89,7 @@ def main():
                 probe=probe,full_decode_exit=scan.returncode,decoded_frames=max(decoded)+1,decode_scan='Full decode with showinfo count before fps reduction; same pass supplies brightness scan.',
                 gate_exit_codes=codes,pixel_verdict=pixel['verdict'],inherited_findings=inherited,
                 levels=levels,brightest_two_second_windows=bright,
-                darkening='PENDING: this undarkened candidate crosses the 19:30-20:30 ramp; final grade and brightness/frame-count measurement still owed.',
+                darkening='PENDING: this chapter follows the darkening ramp; apply and measure the constant 85 percent grade after undarkened gates.',
                 final_bed_and_silence='Final assembly step: this chapter contains only the clean narration; single bed and full-film silence gate still owed.')
     (OUT/'READBACK.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report[k] for k in ['sha256','gate_exit_codes','pixel_verdict','inherited_findings','levels']},indent=2),flush=True)

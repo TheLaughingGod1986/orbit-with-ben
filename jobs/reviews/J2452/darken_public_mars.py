@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
 import build_public_mars as b
-SRC=b.OUT.with_name('public_mars_v02')
+SRC=b.OUT.with_name('public_mars_v04')
 OUT=b.OUT.with_name('public_mars_dark_v01')
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -16,6 +16,7 @@ def scan(p):
 
 def main(verify_existing=False):
  build=json.loads((SRC/'BUILD.json').read_text());read=json.loads((SRC/'READBACK.json').read_text())
+ assert build.get('unwanted_cards_removed_verified') is True, 'Inspect all cover edges and record unwanted_cards_removed_verified before grading; v03 had a residual Dust card'
  assert read['gate_exit_codes'] in ([0,0],[1,0])
  assert all(x['classification']=='in the public film' for x in read['inherited_findings'])
  assert float(read['levels']['input_tp'])<=-6
