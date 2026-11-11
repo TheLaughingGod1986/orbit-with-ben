@@ -217900,13 +217900,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T02:50Z",
-      "eta": "2026-11-11T04:50Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T16:25Z",
-      "result": "",
+      "result": "parked for Chief: complete read-only always-on report for ben-mac-mini and bens-macbook-pro in jobs/reviews/J2517/REPORT.md (PR #750, commit ac438cb87). Mini already comes back unattended after a power cut (sleep=0, disksleep=0, displaysleep=0, womp=1, autorestart=1, FileVault Off, autoLoginUser=benjaminoats, sshd enabled on port 22, Tailscale + NAS daemons + chief-relay/board-publish/cdp-browsers RunAtLoad=true). Chief to review PR #750 and decide whether anything needs asking Ben.",
       "history": [
         {
           "at": "2026-11-10T16:25Z",
@@ -217962,6 +217962,11 @@
           "at": "2026-11-11T02:58Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All 9 always-on checks on Mac mini and MacBook Pro recorded in PR #750"
+        },
+        {
+          "at": "2026-11-11T02:58Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: complete read-only always-on report for ben-mac-mini and bens-macbook-pro in jobs/reviews/J2517/REPORT.md (PR #750, commit ac438cb87). Mini already comes back unattended after a power cut (sleep=0, disksleep=0, displaysleep=0, womp=1, autorestart=1, FileVault Off, autoLoginUser=benjaminoats, sshd enabled on port 22, Tailscale + NAS daemons + chief-relay/board-publish/cdp-browsers RunAtLoad=true). Chief to review PR #750 and decide whether anything needs asking Ben."
         }
       ],
       "remaining_action": "Chief review of jobs/reviews/J2517/REPORT.md (PR #750)",

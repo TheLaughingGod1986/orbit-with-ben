@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2503 | mini | open (after J2033) | – | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
 | J2513 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Mon 16 Short HZGTovJu_TQ to v06, the cut Ben OK'd on 10 Nov 23:05Z |  |
 | J2514 | mini | open (after J2512) | – | – | 026 upload · listing · Swap the 026 Wed 18 Short cwU_0WWeNZ4 to v07, the cut Ben OK'd on 10 Nov 23:06Z |  |
-| J2517 | mini | claimed | gemini | 2026-11-11T04:50Z | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
+| J2517 | mini | blocked | gemini | – | review · Mac mini always-on check: sleep, automatic login, disk encryption, restart after a power cut (read-only report) |  |
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2526 | cloud | open | – | – | review · Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0) |  |
 | J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
