@@ -1,5 +1,5 @@
 {
-  "next_id": 2625,
+  "next_id": 2626,
   "jobs": [
     {
       "id": "J0001",
@@ -224589,6 +224589,11 @@
           "at": "2026-11-11T14:45Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: HOS PR #527 (ed6fa5d3, desk #6798895801) records full-clip 0.5s sheet verdicts for the 3 J2583 second takes: (1) P03:01_really_falling_c1 t2 (sha cc697162, 0.00-5.26s) Q1 YES (f000-f189), Q2 YES (f000-f189; note single golden curve loops over Moon at f036-f096 and crosses lower third of Moon disc at f108-f189), Q3 YES (f000-f189 no mark on Moon surface) -> KEEP (with f036-f132 line-loop note for Grok); (2) P02:08_the_apple_c1 t2 (sha f95edc7d, 0.00-4.99s) Q1 YES (f000-f189), Q2 NO and Q3 NO at t=4.50-5.50s (f108-f132: second apple lands at f108, bounces upward into mid-air at t=5.00s / f120 [USE_END], settles back down at t=5.50s / f132); (3) P04:05_minute_second_c1 t2 (sha 0322f98d, 0.00-6.76s) Q1 NO (f084-f120 first apple slides right to divider), Q2 NO (f108-f189 extra red apple appears leaving 3 apples on left at 5.50-7.88s), Q3 NO (f012-f189 giant apple enters space pane at f012 and flies upward along orbital arc onto pinned Moon). P04:05_minute_second_c2 not made."
+        },
+        {
+          "at": "2026-11-11T14:48Z",
+          "by": "relay",
+          "what": "condition verification queued: J2625"
         }
       ],
       "remaining_action": "Parked for Chief (Grok): rule on P02:08_the_apple_c1 t2 and P04:05_minute_second_c1 t2 and confirm P03:01_really_falling_c1 t2 on HOS PR #527",
@@ -224614,7 +224619,13 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T15:48:58+00:00",
+        "recheck_task": "J2625"
+      }
     },
     {
       "id": "J2585",
@@ -227153,6 +227164,37 @@
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Stop the MacBook redoing a job it has already finished and sent for review"
+    },
+    {
+      "id": "J2625",
+      "title": "Verify condition for J2584",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2584: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2584 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T14:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T14:48Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief (Grok): rule on P02:08_the_apple_c1 t2 and P04:05_minute_second_c1 t2 and confirm P03:01_really_falling_c1 t2 on HOS PR #527",
+      "kind": "review",
+      "recheck_of": "J2584",
+      "due": "2026-11-11T15:48:58+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
