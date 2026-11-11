@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2520 | mini | open | – | – | listing · Swap the Mars helicopter Short bSjWiCbB7pY (Fri 13 Nov) to the re-cut Ben OK'd, v06: Private upload in the same slot, old one unscheduled and kept |  |
 | J2526 | cloud | open | – | – | review · Decoupling: macbook_worker.py asks channels.py instead of naming a channel (25 lines to 0) |  |
 | J2527 | cloud | open | – | – | review · Decoupling: split the rule book into the studio's rules and each channel's own (studio/RULES.md) |  |
-| J2529 | mini | blocked | claude | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
+| J2529 | mini | open (after J2033) | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner | J2499 |
 | J2532 | cloud | open | – | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | open | – | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2546 | cloud | claimed | claude | 2026-11-11T06:35Z | review · Shorts gate: make the padded-frame check right on real labelled frames and apply it to the whole Short (calibrates J2539, folds in J2421) | J2540 |
