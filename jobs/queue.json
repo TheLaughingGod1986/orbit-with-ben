@@ -226808,10 +226808,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T14:04Z",
+      "eta": "2026-11-11T16:04Z",
       "created_by": "relay",
       "created_at": "2026-11-11T14:03Z",
       "result": "",
@@ -226820,13 +226820,26 @@
           "at": "2026-11-11T14:03Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T14:04Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Place the spark on take 4 at f030 once Grok has passed the size revision",
       "kind": "review",
       "recheck_of": "J2592",
       "due": "2026-11-11T15:03:38+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T14:04Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

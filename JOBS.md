@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2620 | cloud | open | – | – | review · Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines) | docs/MULTI_CHANNEL_PLAN.md |
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
-| J2623 | any | open | – | – | review · Verify condition for J2592 |  |
+| J2623 | any | claimed | claude | 2026-11-11T16:04Z | review · Verify condition for J2592 |  |
 
 Recently finished:
 
