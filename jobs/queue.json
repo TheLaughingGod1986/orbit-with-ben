@@ -225000,9 +225000,14 @@
           "at": "2026-11-11T12:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T12:18Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Try 3 check J2608 is complete; verify exact hash and generation guards before spending."
         }
       ],
-      "remaining_action": "Salon take 4 from the checked start still, at J2270's next batch boundary",
+      "remaining_action": "Check the approved starting picture and prepare one salon take",
       "due": "2026-11-12T12:00:00Z",
       "kind": "video",
       "plain": "Make the Franklin salon shot one last time, with almost no movement, before the credits reset",
@@ -225013,9 +225018,11 @@
         "of": 3,
         "at": "2026-11-11T12:18Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Try 3 check J2608 is complete; verify exact hash and generation guards before spending."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2599",
