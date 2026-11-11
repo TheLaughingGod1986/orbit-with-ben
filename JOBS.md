@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2600 | cloud | open | – | – | MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main) | J2526 |
 | J2602 | any | blocked | macbook | – | review · Verify condition for J2171 |  |
-| J2603 | any | open | – | – | review · Verify condition for J2597 |  |
+| J2603 | any | claimed | macbook | 2026-11-11T13:21Z | review · Verify condition for J2597 |  |
 
 Recently finished:
 
