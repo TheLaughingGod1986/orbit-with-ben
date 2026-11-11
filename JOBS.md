@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2604, J2605, J2598, J2594, J2270, J2599, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2605, J2598, J2594, J2270, J2599, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -81,11 +81,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2598 | mini | open (after J2605) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
 | J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 | J2600 | cloud | open | – | – | MacBook worker: refuse merges and pushes to main outright, and say so in its brief (the two parts of #666 that never reached main) | J2526 |
-| J2604 | mini | claimed | codex | 2026-11-11T13:29Z | 008 picture · image · HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same | J2596 |
 | J2605 | any | open (after J2604) | – | – | 008 picture · qa · HOS 008: check try 2 of the salon start picture before any credit is spent (three yes/no questions) | J2597 |
 
 Recently finished:
 
+- J2604 done: HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same (One zero-credit image edit delivered using revised Chief wording. Both PNG copies hash-verified, SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2. Evidence: history-of-science PR 518. J2605 performs the separate image check; no visual approval claimed.)
 - J2603 done: Verify condition for J2597 (Condition checked by the MacBook: not met (try 1 failed question 3). Settled by the acting Chief: J2597 is closed with its FAIL recorded, free try 2 is J2604 and its check is J2605; J2598 waits on that check.)
 - J2602 done: Verify condition for J2171 (Condition checked by the MacBook 11 Nov 11:16Z: not met (four shots of film 009 are being remade; J2035 has not started). Recorded on J2171 by the acting Chief; next look Thu 12 Nov 08:00Z.)
 - J2601 done: Does Cursor work on its Grok model? Run its command line once with that model on the Mini and copy what it says (Cursor command line 2026.11.05-86047df, run once on the Mini 11 Nov 11:13Z, same way as J2595's second run (--trust, empty temp folder, one-word task, -p, text output) but with --model grok-4.7. Exit 0 after 9 s. It printed exactly one line: "ok". That is its answer, not a refusal: no purchase, upgrade or sign-in offered, no error. So Cursor works on its Grok model; only its default model (Claude Opus 5.5) is refused, per J2595. One run, no retry. Flag in scripts/credit_flags.json and the routing untouched. Log: ~/_desk/logs/J2601-cursor.log.)
@@ -95,4 +95,3 @@ Recently finished:
 - J2591 done: HOS 008: build the salon's contact spark as a code graphic (one warm-white flick, three to four frames) (Built parameterised 3/4-frame warm-white contact spark; NAS review pack verified; tests and house checks pass. HOS PR 515 for review; J2592 owns measured placement on KEEP take. No take changed or stage approved.)
 - J2590 done: HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) (Points take 3 (01_points_desk_j2241_t3.mp4, 950a2b34...): YES, YES, YES -> KEEP (sphere/thread unchanged f000-f189; no wire/streamers/paper/strips; both hands and both needles stay in view across 0.00s-7.88s including 1:1 check at 6.50s-7.50s f156-f180). Salon take 3 (02_salon_spark_j2241_t3.mp4, b9b9d588...): NO, NO, NO -> FAIL logged formally with frames (arc at 3.00s f072, wisp stream 3.50s-7.88s f084-f189, wig frizz at 4.00s f096, hollow tube and no knuckle contact; already ruled by Chief in 6793606102/6793719472 with J2596-J2599 queued). HOS desk #6794025150.)
 - J2589 done: HOS 008 Franklin: third takes for the salon and the points desk, gesture only (200 credits at most, the last take each plate has) (Two authorized third takes generated for 200 Flow subscription credits, GBP 0. Both fully decode: 190 frames, 1280x720, 24fps; hashes and half-second sheets recorded. HOS PR #514 (4f879b79), ALL CHECKS PASS; desk 6793564894. Pending J2590 visual acceptance; no KEEP.)
-- J2588 done: Verify condition for J2576 (No action needed on J2576: Chief Grok ruled on the two take-2 FAILs (HOS desk #6793185344 & #6793202900) and acting Chief Claude closed J2576 at 10:22Z, opened J2589-J2593 (gesture-only take 3s, Codex spark overlay, placement and frame check), and updated J2242 to wait for J2593. Left J2576 and J2242 untouched.)

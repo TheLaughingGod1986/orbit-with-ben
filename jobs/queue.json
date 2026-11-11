@@ -225204,13 +225204,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-11T11:29Z",
-      "eta": "2026-11-11T13:29Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T11:27Z",
-      "result": "",
+      "result": "One zero-credit image edit delivered using revised Chief wording. Both PNG copies hash-verified, SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2. Evidence: history-of-science PR 518. J2605 performs the separate image check; no visual approval claimed.",
       "history": [
         {
           "at": "2026-11-11T11:27Z",
@@ -225246,6 +225246,11 @@
           "at": "2026-11-11T11:35Z",
           "by": "codex",
           "what": "step 3 of 3 done: Both copies hash-verified; PNG decode and exact pixel equality with download checked; evidence PR history-of-science#518. J2605 reviews the image."
+        },
+        {
+          "at": "2026-11-11T11:36Z",
+          "by": "codex",
+          "what": "done: One zero-credit image edit delivered using revised Chief wording. Both PNG copies hash-verified, SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2. Evidence: history-of-science PR 518. J2605 performs the separate image check; no visual approval claimed."
         }
       ],
       "remaining_action": "Handing the saved salon picture to its separate review",
@@ -225263,7 +225268,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/518"
     },
     {
       "id": "J2605",
