@@ -1,5 +1,5 @@
 {
-  "next_id": 2624,
+  "next_id": 2625,
   "jobs": [
     {
       "id": "J0001",
@@ -226797,13 +226797,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T14:04Z",
-      "eta": "2026-11-11T16:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "",
+      "result": "Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -226814,6 +226814,11 @@
           "at": "2026-11-11T14:04Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:33Z",
+          "by": "claude",
+          "what": "done: Merged: #824 (main b82a4af1). kanban_snapshot.py names no channel (56 lines to 0) and no longer assumes it lives in one channel's repo (3 to 0). Counts after this and #822: 222 to 132, and 20 to 17. Old code against new on the same checkout, file by file: the same, except one correction (Mini work per film was filed under the first channel's label; no page reads it; totals unchanged). Two made-up channels go through the whole builder in a test. The old claude.ai page mode is removed. Three test files skipped their later classes when run as scripts (CI always ran them): fixed."
         }
       ],
       "remaining_action": "Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0)",
@@ -226827,7 +226832,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/824"
     },
     {
       "id": "J2618",
@@ -227046,6 +227052,36 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6797825254"
+    },
+    {
+      "id": "J2624",
+      "title": "MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "**Seen 11 Nov 2026, J2615.** The MacBook finished the job and opened #822 (\"parked for the Chief\" in its text), but the run ended with the job still open in the queue. `scripts/macbook_worker.py` then released it (\"ended (exit 0) with the job still open; picked up again next run\"), and two minutes later the other slot claimed it and started the same work again. The Chief closed it by hand.\n\n**Wanted.** When a run ends with exit 0, the job still open, and a branch `macbook/<job>` on the remote that is ahead of main, the worker parks the job for the Chief (blocked, with a typed wait naming the branch and the pull request if it can be read) instead of releasing it. A run that ends with no branch pushed, or a non-zero exit, is released as now. The brief already tells the agent to park; this is the net under it.\n\n**Check.** `scripts/test_macbook_worker.py`: a run that pushed its branch is parked once and not claimed again; a run that pushed nothing is released; a failed run is released and the agent paused, as now. No channel named (the ratchet holds this script at 0). Whole suite, then a pull request.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T14:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T14:33Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MacBook worker: a run that ends with its pull request open parks the job for the Chief instead of handing it back",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Stop the MacBook redoing a job it has already finished and sent for review"
     }
   ],
   "focus": [
