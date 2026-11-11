@@ -219,6 +219,12 @@ FB_MIRROR_DIFF = 4.0
 FB_MIRROR_VERT = 8.0           # the picture must change this much over FB_MIRROR_ROWS rows for a mirror to count
 FB_CLIP_STEP_S = 1.0           # the whole Short: one frame a second
 FB_CLIP_MAX_SHARE = 0.10
+# A frame can look padded with no straight edge where the picture meets the fill: a blurred copy with feathered
+# edges, or a full-frame shot whose own top and bottom are soft (tissue walls round vessels, a smooth nebula
+# behind hook text). One frame cannot always tell the two apart (J2557, J2560), so such frames count for less.
+FB_EDGE_RATIO = 2.5            # an edge: the step across one row is this many times the change just outside it
+FB_EDGE_SHARE = 0.65           # labelled frames: a soft full frame 0.54 at most; a padded frame with a clear edge 0.69 at least
+FB_CLIP_SOFT_SHARE = 0.15      # padded-looking frames, with or without an edge: this share of the Short before it fails
 # Cuts Ben OK'd by watching before the whole-Short rule existed. Their padded stretches are measured and said, as a
 # warning: the cut he OK'd must still be able to go up as the fallback while its full-frame version waits for his
 # watch. Matched by the file's sha256, so a re-cut is never covered. The opening rule has no such list.
@@ -668,6 +674,31 @@ def _fb_edges(g: bytes) -> tuple[int, int, float] | None:
     return best
 
 
+def _fb_edge_share(g: bytes) -> tuple[float, float]:
+    """The clearest straight edge above the picture, and below it: the share of columns where the brightness steps
+    across one row by FB_SEAM_STEP or more and by far more than it changes just outside that row. A blurred fill
+    changes slowly right up to the picture and then steps, all along one row. A soft part of a real picture has no
+    such row: where its detail begins differs from column to column."""
+    W, H = FB_W, FB_H
+
+    def share(y: int, d: int) -> float:              # d = -1: the fill is above row y; +1: it is below
+        far0, far1 = (y + 5 * d) * W, (y + 4 * d) * W
+        near0, near1 = (y + 2 * d) * W, (y + d) * W
+        in0, in1 = (y - d) * W, (y - 2 * d) * W
+        n = 0
+        for x in range(W):
+            near = g[near0 + x] + g[near1 + x]
+            step = abs(g[in0 + x] + g[in1 + x] - near)
+            drift = abs(near - g[far0 + x] - g[far1 + x])
+            if step >= 2 * FB_SEAM_STEP and step >= FB_EDGE_RATIO * drift + 2:
+                n += 1
+        return n / W
+
+    lo, hi = FB_SEAM_ROWS
+    return (max(share(y, -1) for y in range(lo, hi)),
+            max(share(y, 1) for y in range(H - 1 - hi, H - 1 - lo)))
+
+
 def _fb_mirror_diff(g: bytes, y: int) -> tuple[float, float]:
     """(mirror difference, vertical change) at row y. Mirror difference = mean absolute difference of the
     FB_MIRROR_ROWS rows above row y against the rows from y down, reflected. Vertical change = the same measure
@@ -708,7 +739,9 @@ def _fb_mirror(g: bytes) -> tuple[int, int, float, float] | None:
 
 def full_bleed_frame(g: bytes) -> dict:
     """Measure one FB_W x FB_H grey frame. 'kind' is None (the picture fills the frame), 'bars', 'blur-pad' or
-    'mirror'; 'why' says which evidence decided it. The other keys are the numbers behind it, for the report."""
+    'mirror'; 'why' says which evidence decided it. 'edge' is True when a straight edge was found where the picture
+    meets the fill, False when the frame only looks padded (soft above and below a detailed middle). The other keys
+    are the numbers behind it, for the report."""
     H = FB_H
     det = _fb_row_detail(g)
     fifth = H // 5
@@ -721,13 +754,14 @@ def full_bleed_frame(g: bytes) -> dict:
         "std_top": round(_fb_std(g, 0, fifth), 2),
         "std_bottom": round(_fb_std(g, H - fifth, H), 2),
         "seam_rows": None,
+        "edge": None,
         "sharp_top": None,
         "sharp_middle": None,
         "sharp_bottom": None,
     }
     mirror = _fb_mirror(g)
     if mirror:
-        out.update(kind="mirror", why="the picture's rows are reflected outward above and below it",
+        out.update(kind="mirror", why="the picture's rows are reflected outward above and below it", edge=True,
                    seam_rows=[mirror[0], mirror[1]], mirror_diff=[round(mirror[2], 2), round(mirror[3], 2)])
         return out
     sharp = _fb_sharpness(g)
@@ -754,7 +788,7 @@ def full_bleed_frame(g: bytes) -> dict:
                and abs(top["mean"] - bottom["mean"]) <= FB_UNIFORM_MEAN)
     if uniform:
         if edges:
-            out.update(kind="bars", why="one flat shade above and below, with a straight edge at the picture")
+            out.update(kind="bars", why="one flat shade above and below, with a straight edge at the picture", edge=True)
         return out                                   # no straight edges: a subject on its own plain backdrop
     if max(top["smooth_std"], bottom["smooth_std"]) >= FB_PICTURE_STD:
         out.update(kind="blur-pad", why="no fine detail above or below, yet a picture's brightness is there")
@@ -762,6 +796,14 @@ def full_bleed_frame(g: bytes) -> dict:
         out.update(kind="blur-pad", why="no fine detail above or below, and the two differ in brightness")
     elif edges:
         out.update(kind="blur-pad", why="plain above and below, with a straight edge at the picture")
+    if out["kind"]:
+        if edges:
+            out["edge"] = True
+        else:
+            share = _fb_edge_share(g)
+            out.update(edge_share=[round(share[0], 3), round(share[1], 3)], edge=max(share) >= FB_EDGE_SHARE)
+            if not out["edge"]:
+                out["why"] += "; no straight edge where a picture would meet its fill"
     return out
 
 
@@ -786,17 +828,31 @@ def _fb_numbers(f: dict) -> str:
 
 
 def frame0_full_bleed_verdict(frames: list[dict]) -> list[str]:
-    """(i) FAIL when the frame at 0.0 s, or most of the frames to 0.5 s, show a picture band with fill above and below."""
-    bad = [f for f in frames if f.get("kind")]
+    """(i) FAIL when the frame at 0.0 s, or most of the frames to 0.5 s, show a picture band with fill above and
+    below it and a straight edge between them. A frame that only looks padded is for frame0_full_bleed_note()."""
+    bad = [f for f in frames if f.get("kind") and f.get("edge", True)]
     if not bad:
         return []
-    if not (frames[0].get("kind") or len(bad) * 2 > len(frames)):
+    if not ((frames[0].get("kind") and frames[0].get("edge", True)) or len(bad) * 2 > len(frames)):
         return []
     f = bad[0]
     kinds = " / ".join(sorted({b["kind"] for b in bad}))
     return [
         f"frame 0 is not full-bleed 9:16: {kinds} above and below a picture band on {len(bad)}/{len(frames)} frames "
         f"from 0.0 to 0.5 s (at {f['t']:.2f}s, {_fb_numbers(f)}) — reframe the opening shot to fill 1080x1920"
+    ]
+
+
+def frame0_full_bleed_note(frames: list[dict]) -> list[str]:
+    """A warning when the opening only looks padded: soft above and below a detailed middle, no straight edge."""
+    soft = [f for f in frames if f.get("kind") and not f.get("edge", True)]
+    if not soft or frame0_full_bleed_verdict(frames):
+        return []
+    f = soft[0]
+    return [
+        f"the opening may not be full-bleed 9:16: soft above and below a detailed middle on {len(soft)}/{len(frames)} "
+        f"frames from 0.0 to 0.5 s (at {f['t']:.2f}s, {_fb_numbers(f)}). No straight edge was found, so this is "
+        "not a FAIL: look at frame 0 and say which it is"
     ]
 
 
@@ -853,7 +909,8 @@ def clip_full_bleed(path: Path, dur: float | None = None) -> list[dict]:
 
 
 def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
-    """Runs of padded sampled frames as (first second, last second + one step, kinds)."""
+    """Runs of padded sampled frames as (first second, last second + one step, kinds). A kind found without a
+    straight edge is named so: 'blur-pad, no edge'."""
     out: list[tuple[float, float, str]] = []
     run_start = None
     kinds: set[str] = set()
@@ -862,7 +919,7 @@ def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
         if f.get("kind"):
             if run_start is None:
                 run_start, kinds = f["t"], set()
-            kinds.add(f["kind"])
+            kinds.add(f["kind"] if f.get("edge", True) else f["kind"] + ", no edge")
             last = f["t"]
         elif run_start is not None:
             out.append((run_start, last + FB_CLIP_STEP_S, " / ".join(sorted(kinds))))
@@ -873,8 +930,10 @@ def padded_stretches(frames: list[dict]) -> list[tuple[float, float, str]]:
 
 
 def clip_full_bleed_verdict(frames: list[dict], end_card: tuple[float, float] | None = None) -> tuple[list[str], list[str]]:
-    """(fails, warns) for the whole Short. FAIL when more than FB_CLIP_MAX_SHARE of the frames sampled outside
-    the end card are padded. A padded end card is said, not failed: it is judged apart from the shots."""
+    """(fails, warns) for the whole Short, on the frames sampled outside the end card. FAIL when more than
+    FB_CLIP_MAX_SHARE of them are padded with a straight edge at the picture, or more than FB_CLIP_SOFT_SHARE look
+    padded, edge or no edge. Fewer is a warning that names the seconds. A padded end card is said, not failed: it
+    is judged apart from the shots."""
     def in_card(f: dict) -> bool:
         return end_card is not None and end_card[0] <= f["t"] < end_card[1]
 
@@ -882,16 +941,27 @@ def clip_full_bleed_verdict(frames: list[dict], end_card: tuple[float, float] | 
     card = [f for f in frames if in_card(f)]
     fails, warns = [], []
     bad = [f for f in body if f.get("kind")]
-    if body and len(bad) > FB_CLIP_MAX_SHARE * len(body):
-        runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
+    edged = [f for f in bad if f.get("edge", True)]
+    runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
+    if body and (len(edged) > FB_CLIP_MAX_SHARE * len(body) or len(bad) > FB_CLIP_SOFT_SHARE * len(body)):
         left_out = f", end card {end_card[0]:.1f}-{end_card[1]:.1f}s left out" if end_card else ""
+        if len(edged) > FB_CLIP_MAX_SHARE * len(body):
+            share = f"{len(bad) / len(body):.0%}, limit {FB_CLIP_MAX_SHARE:.0%}"
+        else:
+            share = (f"{len(bad) / len(body):.1%}; {len(edged)} with a straight edge at the picture; "
+                     f"limit {FB_CLIP_SOFT_SHARE:.0%} when no edge is found")
         fails.append(
             f"the picture does not fill 9:16 on {len(bad)}/{len(body)} frames sampled once a second "
-            f"({len(bad) / len(body):.0%}, limit {FB_CLIP_MAX_SHARE:.0%}{left_out}): {runs} — make every shot fill "
+            f"({share}{left_out}): {runs} — make every shot fill "
             "1080x1920 (crop and scale, or other picture; no blurred, mirrored or flat band)"
         )
+    elif bad and not edged:
+        warns.append(
+            f"the picture may not fill 9:16 on {len(bad)}/{len(body)} sampled frames: {runs}. They are soft above "
+            "and below a detailed middle, with no straight edge found, so this is not a FAIL: look at those "
+            "seconds and say which it is"
+        )
     elif bad:
-        runs = ", ".join(f"{a:.0f}-{b:.0f}s ({k})" for a, b, k in padded_stretches(body))
         warns.append(f"the picture does not fill 9:16 on {len(bad)}/{len(body)} sampled frames: {runs}")
     if any(f.get("kind") for f in card):
         warns.append(
@@ -1316,6 +1386,7 @@ def check(path: Path, air: date, days: int, lib: dict, sheet_dir: Path | None, s
     res["frame0_full_bleed"] = frame0_full_bleed(path, dur)
     opening = frame0_full_bleed_verdict(res["frame0_full_bleed"])
     res["fails"] += opening
+    res["warns"] += frame0_full_bleed_note(res["frame0_full_bleed"])
     # The whole Short, one frame a second. The end card is judged apart, only where the cut's meta names it.
     card = end_card_window(meta, dur)
     res["end_card_window_s"] = list(card) if card else None
