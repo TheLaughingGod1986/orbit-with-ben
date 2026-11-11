@@ -221588,18 +221588,23 @@
           "at": "2026-11-11T06:12Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Built _build_picture_plan_v02.py, parts/part-01..06_plates_v02.json, PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, and FAST_ROW_CHANGE_v02.json beside v01 (66 Quality rows, 0 Fast rows, 28 free rows; #496 and #498 prompt wording preserved word for word)"
+        },
+        {
+          "at": "2026-11-11T06:16Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Re-pinned PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to PICTURE_PLAN_v02 (66 Quality rows, 0 Fast rows, cap 6600, 14 batches) and updated _mint_flow_v01_pass1.py to refuse Veo 3.1 - Fast"
         }
       ],
-      "remaining_action": "Re-pin PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to v02 and update _mint_flow_v01_pass1.py to refuse Veo 3.1 - Fast",
+      "remaining_action": "Update tests/test_hos013_pass1_runner.py, add Fast refusal tests, and run full test suite and check_all.sh",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-11T06:12Z",
+        "at": "2026-11-11T06:16Z",
         "by": "gemini",
-        "note": "Built _build_picture_plan_v02.py, parts/part-01..06_plates_v02.json, PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SH"
+        "note": "Re-pinned PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to PICTURE_PLAN_v02 (66 Quality rows, 0 Fast rows, cap 6"
       },
       "taskKeys": [
         "HOS:013"
