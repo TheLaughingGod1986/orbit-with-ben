@@ -1,0 +1,35 @@
+{
+  "status": "SOURCE_REPAIR_CANDIDATE_NOT_INTEGRATED_NOT_UAT",
+  "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/orion_rise_vlt.mp4",
+  "source_sha256": "380d73c2de9542211fe05f346dfe0c2cce8b2d3188854e6abb01d40e253a0dbd",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/orion_source_repair_v05/orion_source_repair.mp4",
+  "sha256": "047d6d5de728c2a7376db5b200fa9b0a1379b18530a7842c84c66f107ac2e755",
+  "frames": 198,
+  "duration_s": 6.6,
+  "master_range_s": [
+    453,
+    459.59
+  ],
+  "chapter_range_s": [
+    432.5,
+    439.09
+  ],
+  "used_chapter_frames": [
+    12975,
+    13173
+  ],
+  "filter": "setpts=PTS-STARTPTS,scale=1920:1080:flags=lanczos,fps=30,colorchannelmixer=rr=1.2:gg=1.2:bb=1.2,colorchannelmixer=rr=.85:gg=.85:bb=.85,limiter=min=16:max=180:planes=1,format=yuv420p[plate];[plate][1:v]overlay=0:0,format=yuv420p[v]",
+  "provenance": {
+    "id": "vlttimelapseorion",
+    "title": "VLT Auxiliary Telescopes time-lapse (Orion rising)",
+    "page": "https://www.eso.org/public/videos/vlttimelapseorion/",
+    "credit": "ESO/B. Tafreshi (twanight.org)",
+    "licence": "CC BY 4.0 per film SOURCE_POOL_v03.json; existing asset, no download"
+  },
+  "limitations": [
+    "Not Betelgeuse resolved surface or companion imagery. Orion sky establishing shot under closing question.",
+    "Source still requires full-frame framing review and normal gates.",
+    "No source-master or narration modification.",
+    "Six dark spans, graphics, reuse and full compilation work remain."
+  ]
+}

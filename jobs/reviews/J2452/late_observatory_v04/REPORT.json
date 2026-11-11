@@ -1,0 +1,43 @@
+{
+  "status": "BOUNDED_OBSERVATORY_REPAIR_NOT_FINAL_QA_OR_UAT",
+  "base": "/Users/ben/_desk/J2452-sleep-scratch/closing_integrated_v01/029_picture_closing_repaired.mp4",
+  "base_sha256": "e98ee41b19755d7b42e0b96e28d9bcf1d83b4b43e4e1d33bc91a958dd0c3d8d8",
+  "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/gemini_night.jpg",
+  "source_sha256": "7424c6ebed5d51003dead0d4b10fa09e924cf85dd8fe2cf08a1724d8f2b0b5a7",
+  "provenance": {
+    "id": "gemini_night",
+    "title": "A Bright Night over Gemini North",
+    "credit": "International Gemini Observatory/NOIRLab/NSF/AURA/P. Hor\u00e1lek",
+    "licence": "CC BY 4.0",
+    "page": "https://noirlab.edu/public/images/iotw2227a/",
+    "file": "https://noirlab.edu/public/media/archives/images/large/iotw2227a.jpg",
+    "status": "ok",
+    "note": "Type Photographic. HEAD 200 on the large JPEG."
+  },
+  "patch": "/Users/ben/_desk/J2452-sleep-scratch/late_observatory_v04/observatory.mp4",
+  "patch_sha256": "3482960c7e11e3f70b6e05a906165014f878c11980a882d8741b633257044174",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/late_observatory_v04/029_picture_observatory_repaired_framefixed.mp4",
+  "sha256": "4037046cbea93cbc2ad02b468016b5ec90def570122de11fad850e6a13e19760",
+  "frames": 14829,
+  "duration_s": 494.3,
+  "chapter_replace_frames": [
+    9900,
+    10166
+  ],
+  "master_range_s": [
+    350.5,
+    359.36
+  ],
+  "limitations": [
+    "Two two-second endpoint dissolves use neighbouring shot holds; the repeated La Silla shot is fully removed.",
+    "Not VLT; no location is named in this spoken window.",
+    "Normal combined source/pixel QA and saved-frame readback remain.",
+    "Other reuse, graphics, twelve picture chapters and final assembly remain."
+  ],
+  "dissolved": "/Users/ben/_desk/J2452-sleep-scratch/late_observatory_v04/observatory_dissolved.mp4",
+  "dissolved_sha256": "65229bda35c7cdb3d1704e3a41c6c0a8e0b5a78728716acb305a06a3cb7954b2",
+  "superseded_output": "/Users/ben/_desk/J2452-sleep-scratch/late_observatory_v04/029_picture_observatory_repaired.mp4",
+  "superseded_sha256": "9b26c7e7ab38657460776e84b66dbbad1018a3b48dd646bc6913ac6f46b67c6b",
+  "integration_enable_end_s": 338.85,
+  "integration_boundary_correction": "One-frame old-source leak caught by full replacement-window check; use the midpoint between the final included and first excluded frame."
+}

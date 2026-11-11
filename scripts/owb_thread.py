@@ -2,8 +2,9 @@
 """Message channel between the Chief of Staff (via the Mini) and Claude: the studio thread named in scripts/thread.json
 (issue #264 since 24 Oct 2026; #99 hit the 2,500-comment limit).
 
-  python3 scripts/owb_thread.py post "message text"        # posts as [Chief]
-  python3 scripts/owb_thread.py post -f report.md           # post a file
+  python3 scripts/owb_thread.py post -f report.md           # post a file: the way to post a report
+  python3 scripts/owb_thread.py post "one short line"       # posts as [Chief]; the shell runs any backtick or $(...)
+                                                            # in the text first, so reports go in a file
   python3 scripts/owb_thread.py post --re 5963045774 -f r.md # claim one Claude message before acting; refused if a [Chief]
                                                             # reply to it exists. Act ONLY if it exits 0. Post results after with plain `post`.
   python3 scripts/owb_thread.py read                        # comments since the last read
@@ -19,7 +20,7 @@ The last-read comment id is kept in ~/.owb_thread_state (outside the repo).
 Rules: never merge, close or push a studio thread; never paste secrets into a message.
 OWB_THREAD_PR overrides the thread number for one run.
 """
-import argparse, json, os, subprocess, sys, time, urllib.request
+import argparse, json, os, re, subprocess, sys, time, urllib.request
 
 REPO = "TheLaughingGod1986/orbit-with-ben"
 THREAD_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "thread.json")
@@ -111,6 +112,26 @@ def show(c):
     print(f"--- #{c['id']} {who} {c['created_at']}\n{c['body'].strip()}\n")
 
 
+INLINE_LIMIT = 4000    # a report longer than this goes in a file
+POST_LIMIT = 60000     # GitHub refuses a comment over 65,536 characters
+ENV_LINES = 12         # this many NAME=value lines is a shell environment, not a report
+
+
+def unsafe_post(text: str, *, from_file: bool) -> str | None:
+    """Why this text must not be posted, or None. 11 Nov 2026: a report passed on the command line with
+    backticks in it ran as shell commands, and 35 KB of the Mini's environment, with a local session
+    token, went onto the public thread. Reports go in a file; a dump is refused either way."""
+    if sum(1 for line in text.splitlines() if re.match(r"[A-Z_][A-Z0-9_]*=", line)) >= ENV_LINES:
+        return ("this looks like a shell environment, not a report. Nothing was posted. Write the report to a "
+                "file and post it with: post -f <file>")
+    if len(text) > POST_LIMIT:
+        return f"too long for one comment ({len(text):,} characters; the limit here is {POST_LIMIT:,}). Nothing was posted."
+    if not from_file and len(text) > INLINE_LIMIT:
+        return (f"a report this long ({len(text):,} characters) goes in a file: post -f <file>. "
+                "Nothing was posted.")
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -125,6 +146,9 @@ def main():
         text = open(a.file, encoding="utf-8").read() if a.file else a.text
         if not text or not text.strip():
             sys.exit("Nothing to post.")
+        refused = unsafe_post(text, from_file=bool(a.file))
+        if refused:
+            sys.exit("Refused: " + refused)
         if a.re:
             done = [c for c in comments() if c["id"] > a.re and c["body"].lstrip().startswith(CHIEF_TAG)
                     and f"Re {a.re}" in c["body"]]

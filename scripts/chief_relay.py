@@ -729,8 +729,10 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by, hos_desk
    A job that needs `gemini` is a facts-and-numbers check: run it through Gemini with the `agy` CLI (AGENTS.md "Who does
    what"), claim it as {agent}/gemini, and commit Gemini's findings as the job says. You check Gemini's output is complete;
    you don't rewrite its findings or any spoken line.
-5. Report: OWB with  python3 scripts/owb_thread.py post "..."  (start with "{name} covering"); HOS with
-   hos_desk.py post --from {agent} --to claude ...  Say what you did, what's next, and what blocks you.
+5. Report: OWB by writing the report to a file and posting it with  python3 scripts/owb_thread.py post -f <file>
+   (start with "{name} covering"); HOS with  hos_desk.py post --from {agent} --to claude ...  Say what you did,
+   what's next, and what blocks you. Never put the report text on the command line: the shell runs any backtick
+   or $(...) in it as a command and posts the output.
 {authority}
 {priority}
    Each job's kind selects its specialist worker. Acting-Chief authority is a separate role; a worker fallback does

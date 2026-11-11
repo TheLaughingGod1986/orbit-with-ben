@@ -1,0 +1,130 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/chajnantor_join_v01/chajnantor_join.mp4",
+  "edge_floor": 0.0036,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "1",
+      "cut": 1,
+      "t": 5.23,
+      "source": "chajnantor_mw.m4v",
+      "why": [
+        "low detail: luma std 17.82 < 18.0",
+        "low detail: edge density 0.0029 < film p5 0.0036"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "0",
+      "source": "adjacent_picture",
+      "t": 1.0,
+      "std": 27.26,
+      "mean": 80.17,
+      "p95": 120.0,
+      "edge": 0.0095,
+      "hf": 2.68,
+      "lf": 26.79,
+      "std8": 26.7,
+      "edge8": 0.0214,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.075,
+        "reversals": 0,
+        "frames": 32,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "1",
+      "source": "chajnantor_mw.m4v",
+      "t": 5.23,
+      "std": 17.82,
+      "mean": 39.68,
+      "p95": 72.0,
+      "edge": 0.0029,
+      "hf": 1.8,
+      "lf": 17.13,
+      "std8": 17.46,
+      "edge8": 0.0138,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 17.82 < 18.0",
+        "low detail: edge density 0.0029 < film p5 0.0036"
+      ]
+    },
+    {
+      "cut": 2,
+      "row": "2",
+      "source": "adjacent_picture",
+      "t": 9.47,
+      "std": 31.3,
+      "mean": 74.2,
+      "p95": 123.0,
+      "edge": 0.0254,
+      "hf": 4.87,
+      "lf": 29.61,
+      "std8": 30.17,
+      "edge8": 0.1623,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 33,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

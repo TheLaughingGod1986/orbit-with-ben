@@ -1,0 +1,175 @@
+{
+  "status": "NARRATION_INTERMEDIATE_ONLY",
+  "film": "021",
+  "plan_master_ranges": [
+    [
+      0,
+      8.95
+    ],
+    [
+      21.55,
+      209.65
+    ],
+    [
+      219.55,
+      540.2
+    ]
+  ],
+  "source_recipes": [
+    {
+      "source": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav",
+      "source_in_s": 0,
+      "source_out_s": 9.6,
+      "master_in_s": 0,
+      "master_out_s": 9.6
+    },
+    {
+      "source": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav",
+      "source_in_s": 21.0,
+      "source_out_s": 209.65,
+      "master_in_s": 21.0,
+      "master_out_s": 209.65
+    },
+    {
+      "source": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav",
+      "source_in_s": 219.55,
+      "source_out_s": 540.2,
+      "master_in_s": 219.55,
+      "master_out_s": 540.2
+    }
+  ],
+  "evidence": [
+    {
+      "source": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-021/work_first_cut_v03f/vo_timeline.wav",
+      "sha256": "ff316ec34dbacc1475f0a590cd548b663b1aed4d9037c6c3b64fe611a13293cb",
+      "duration_s": 559.07,
+      "asr_file": "/Users/ben/_desk/J2452-sleep-scratch/asr_remaining_v01/021_1_asr.json",
+      "asr_sha256": "9b5100ba4c93ed83fe5287cf27124eb3f6d1a69daf0bdee0bff1885a4e3e8ed9",
+      "boundaries": [
+        {
+          "time_s": 9.6,
+          "pauses": [
+            [
+              9.45771,
+              9.867098
+            ]
+          ],
+          "previous": {
+            "w": " left?",
+            "s": 8.9,
+            "e": 9.14,
+            "p": 0.9990836381912231
+          },
+          "next": {
+            "w": " Stay",
+            "s": 9.74,
+            "e": 9.98,
+            "p": 0.9907263517379761
+          }
+        },
+        {
+          "time_s": 21.0,
+          "pauses": [
+            [
+              17.259184,
+              21.63
+            ]
+          ],
+          "previous": {
+            "w": " all.",
+            "s": 16.84,
+            "e": 17.04,
+            "p": 0.9983636736869812
+          },
+          "next": {
+            "w": " Look",
+            "s": 21.18,
+            "e": 21.68,
+            "p": 0.8878451585769653
+          }
+        },
+        {
+          "time_s": 209.65,
+          "pauses": [
+            [
+              209.38,
+              209.984082
+            ]
+          ],
+          "previous": {
+            "w": " away.",
+            "s": 208.54,
+            "e": 209.1,
+            "p": 0.9994040727615356
+          },
+          "next": {
+            "w": " We",
+            "s": 209.98,
+            "e": 210.04,
+            "p": 0.9798580408096313
+          }
+        },
+        {
+          "time_s": 219.55,
+          "pauses": [
+            [
+              215.227596,
+              220.371134
+            ]
+          ],
+          "previous": {
+            "w": " you.",
+            "s": 214.64,
+            "e": 215.06,
+            "p": 0.9991862177848816
+          },
+          "next": {
+            "w": " Here",
+            "s": 219.8,
+            "e": 220.48,
+            "p": 0.9298675656318665
+          }
+        },
+        {
+          "time_s": 540.2,
+          "pauses": [
+            [
+              539.89,
+              540.491383
+            ]
+          ],
+          "previous": {
+            "w": " temporary.",
+            "s": 539.22,
+            "e": 539.58,
+            "p": 0.9736818671226501
+          },
+          "next": {
+            "w": " Next,",
+            "s": 540.7,
+            "e": 540.7,
+            "p": 0.9493156671524048
+          }
+        }
+      ]
+    }
+  ],
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/narration_021_v01/chapter_021_narration_v01.wav",
+  "output_sha256": "c1fb534e6862ff4cbfe35b2fff81d507ecd612f7f22d846672fa2e2879185b08",
+  "duration_s": 518.9,
+  "levels": {
+    "input_i": "-20.21",
+    "input_tp": "-6.20",
+    "input_lra": "2.40",
+    "input_thresh": "-30.62",
+    "output_i": "-20.03",
+    "output_tp": "-6.20",
+    "output_lra": "2.40",
+    "output_thresh": "-30.45",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.17"
+  },
+  "kept_transcript": "Every half hour, Saturn's rings lose enough ice to fill an olympics swimming pool. It's raining into the planet right now. So how long do the rings have left? Look along the sheet. It is not a solid disc. It is a crowd. Chunks of ice, from grains to boulders, each on its own path, packed so tightly that they read as one bright blade. The blade is enormous sideways, tens of thousands of kilometres, and absurdly thin the other way. In places the main rings are only about 10 metres thick. A playing field stood on edge, stretched around a world. Why does something that wide look so finished and so fragile? Because you are seeing sunlight on ice, not a wall. Photons bounce off clean water ice and come back almost white. A little dust stains the older lanes of warmer colour. The mass under that shine is small for the area it covers. Cassini weighed the rings on its last orbits and found less than many maps had assumed. On the order of two -fifth of the little moon mimus, a lot of scenery, not a lot of stuff. The mystery starts as a fall, not as a monument, but the picture that brought you here is already the danger. Does the fall ever stop? It does not stop while you are watching. Gravity keeps every chunk moving. The smallest grains are already leaking inward. What would you see if you waited? Not a collapse in the news. A slow thinning. Then a planet that has spent the jewellery. How long that takes is the question we are saving for the rain? Now the question changes. What is that jewellery made of? Come in close enough that the blade breaks into pieces. Ice, not rock. Water ice. The same bright mineral as a comet, dirty in places and clean in others. Most of the mass sits in chunks you could hold, or in boulders the size of a house. Rocky dust rides with the ice and slowly stains it, cream to tan. Why call it a ring if it is only a crowd of snowball? Because the crowd is flat, Saturn's gravity and the moons that shepherd the edges pack the paths into a plane. The gaps that empty a road, the ice that remains still circles. It does not sit. There is no roof. Drop through those 10 metres and you are in open space again. The atmosphere sits far below the inner edge, banded and pale. The unknown is not the recipe. The unknown is the leak. However bright the ice looks. Brightness is not a promise that it stays. That is the first answer. The famous sheet is only ice and it is already slipping away. Here is one way they go. The smallest grains get a charge. Sunlight and the plasma around Saturn knock electrons about and a tiny piece of ice stops being neutral. Saturn's magnetic field already threads the ring plane. A charged grain feels that field. It is lifted off its calm circle and guided down along the magnetic path into the upper atmosphere. There the ice becomes vapour. Water arriving from above. Ring rain. We did not need a spacecraft inside that rain to know it was there. Astronomers on Earth, using the Keck telescope, watched the glow of that water in Saturn's upper air and measured how fast the ice was leaving. At that magnetic rain rate alone, the sheet would last about 300 million years. But that is only one path down. Cassini went closer. In 2017, the orbiter flew 22 times through the gap between the innermost ring and the cloud tops. It was not sampling the magnetic rain from mid -latitudes. It was flying through something bigger. Material pouring off the innermost ring, the D -ring, straight into Saturn's equator. That equatorial inflow is a heavier leak than the magnetic rain alone. Add it to the books and the shoots remaining life drops to around 100 million years. So how long does the bright sheet have? Put both measurements together and the honest answer is a rain, somewhere between about 100 and 300 million years. A blink next to Saturn's 4 .5 billion years. You would not see either leak as weather from a window. The grains are too fine and the fall is too spread out. What you would see, if you could watch for an age, is the sheet growing thinner, while Saturn's bands stay put. Now look backward. The rain implies a beginning. Wines the clock back along that same scale and the sheet changes. More mass, cleaner ice, a harder white, because the dust had not had time to dirty it. Saturn would still have been the ringed one, only more so. A broader blade, a brighter one. The planet underneath was already the planet. The rings look like a late arrival. Why knew when Saturn itself is about 4 .5 billion years old? Because a heavy, ancient ring would still be heavy, unless most of its mass has already gone in. Most researchers read Cassini's low mass as young, a few hundred million years at most. A few argue the rings could still be old and hide their age another way. The debate is open. The honest line is narrower than a slogan. The rings you see are ice. They are already leaving, and their birthday is not settled. What if a moon came too close and came apart? That idea fits a young mass, and it is still an idea. Inside the Roche limit, Saturn's gravity can pull a moon into rubble, and rubble in a plane becomes a ring. Whatever their birthday, the rings you know are ice, and they are already leaving. Then the sheet you call famous is a phase, not a permanent face. Take the ice away, and stay with the planet. Saturn is still there. Pale gold band. A fast day, a little over ten hours, written as soft stripes in a deep atmosphere. The curve of the planet runs clean. The shadow the rings used to cast on the clouds is gone. The famous thing was never the body. It was the ice in orbit around the body. What would you see, standing in that later sky? A giant, banded and bright. Ordinary, once you stop using the rings as the definition, you would feel the oddness in the absence. The planet does not notice. The rain simply finishes, and the paths that carried it have nothing left to carry. So the whole story fits in one breath. You would see a thin sheet of water ice, vast and bright, already raining into Saturn. Magnetic rain measured from Earth, and a heavier equatorial leak Cassini flew through on its last dive. The mass is too small for a forever disk, so the clock sits somewhere between about 100 and 300 million years. The rings are a phase. Saturn is the thing that remains. What else in the sky are you treating as permanent, only because it is bright? The rings are the clearest case. The mystery is how much of that sky is temporary.",
+  "removed_transcript": "Stay with me and you'll see where the ice goes, what the rings look like when they were new, and Saturn with nothing around it at all. We make one of these every week. Subscribing is how the next one finds you. Next, what happens when the last star dies?",
+  "remaining": "Picture covers, music bed, transitions, final master/reel and gates; no listening claim"
+}

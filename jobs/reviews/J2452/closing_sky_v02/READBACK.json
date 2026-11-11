@@ -1,0 +1,30 @@
+{
+  "status": "SPARSE_SOURCE_INTERVAL_READBACK_PASS",
+  "samples": [
+    {
+      "replacement_s": 1.2,
+      "source_s": 11.399999999999999,
+      "mean_absolute_error": 1.80656462585034,
+      "correlation": 0.9982338285333031
+    },
+    {
+      "replacement_s": 3,
+      "source_s": 13.2,
+      "mean_absolute_error": 2.024906462585034,
+      "correlation": 0.9982803038417702
+    },
+    {
+      "replacement_s": 5,
+      "source_s": 15.2,
+      "mean_absolute_error": 1.9162159863945578,
+      "correlation": 0.9982674856194635
+    }
+  ],
+  "source_sha256": "41a034531e9bf5f94cb6fd8151fe97ee9c705e758028bc23a3918cba7f744bb9",
+  "replacement_sha256": "34afe43a6aeaf7cda196949dd991ee4a2ff9554e4e974c2a1d1a91aa3580da2b",
+  "output_sha256": "fe0cca58c87a5b861ed29eaa80cb480a331785777d2202523e101cc8ca8a42ac",
+  "limitations": [
+    "Three spatial samples, not an every-frame or moving-video review.",
+    "Credit strip excluded from source comparison; credit checked against SOURCE_POOL_v03."
+  ]
+}

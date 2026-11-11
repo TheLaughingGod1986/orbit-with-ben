@@ -1,0 +1,148 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/ben/_desk/J2452-sleep-scratch/betelgeuse_join_candidates_v04/join_02_candidate.mp4",
+  "edge_floor": 0.0259,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "1",
+      "cut": 0,
+      "t": 0.83,
+      "source": "join_02_source_and_transition_0",
+      "why": [
+        "low detail: edge density 0.0204 < film p5 0.0259"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "1",
+      "source": "join_02_source_and_transition_0",
+      "t": 0.83,
+      "std": 24.55,
+      "mean": 51.91,
+      "p95": 88.0,
+      "edge": 0.0204,
+      "hf": 6.67,
+      "lf": 22.72,
+      "std8": 22.94,
+      "edge8": 0.0357,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0204 < film p5 0.0259"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "2",
+      "source": "join_02_source_and_transition_1",
+      "t": 2.67,
+      "std": 25.84,
+      "mean": 39.92,
+      "p95": 95.0,
+      "edge": 0.0528,
+      "hf": 5.99,
+      "lf": 24.83,
+      "std8": 24.97,
+      "edge8": 0.0149,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "3",
+      "source": "eso0927e.tif",
+      "t": 5.96,
+      "std": 33.54,
+      "mean": 30.06,
+      "p95": 106.0,
+      "edge": 0.1047,
+      "hf": 10.22,
+      "lf": 31.41,
+      "std8": 31.68,
+      "edge8": 0.0297,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "4",
+      "source": "join_02_source_and_transition_3",
+      "t": 9.25,
+      "std": 31.11,
+      "mean": 43.15,
+      "p95": 97.0,
+      "edge": 0.0613,
+      "hf": 6.36,
+      "lf": 29.86,
+      "std8": 30.09,
+      "edge8": 0.0271,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "5",
+      "source": "join_02_source_and_transition_4",
+      "t": 11.09,
+      "std": 59.24,
+      "mean": 57.75,
+      "p95": 176.0,
+      "edge": 0.048,
+      "hf": 6.83,
+      "lf": 57.89,
+      "std8": 58.22,
+      "edge8": 0.0663,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

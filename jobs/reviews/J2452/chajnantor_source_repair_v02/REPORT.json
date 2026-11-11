@@ -1,0 +1,34 @@
+{
+  "status": "ORIGINAL_SOURCE_COMPONENT_NOT_INTEGRATED_NOT_UAT",
+  "source": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/07_Edit-Project/harvest_v01/chajnantor_mw.m4v",
+  "source_sha256": "b3bc5b77bc8ddd752d99086edd272fb069eaec37ad4bf7c5470b85516370e1b0",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/chajnantor_source_repair_v02/chajnantor_source_repair.mp4",
+  "sha256": "cd0f046f15a04ed326d990aeb173feb9787affc357c9d7a014bcb0e2b4b24b5a",
+  "frames": 194,
+  "duration_s": 6.466666666666667,
+  "master_range_s": [
+    254.8,
+    261.28
+  ],
+  "chapter_range_s": [
+    234.3,
+    240.78
+  ],
+  "source_interval_s": [
+    3.25,
+    9.716666666666667
+  ],
+  "filter": "setpts=PTS-STARTPTS,scale=1920:1080:flags=lanczos,fps=30,colorchannelmixer=rr=.85:gg=.85:bb=.85,limiter=min=16:max=180:planes=1,format=yuv420p",
+  "provenance": {
+    "id": "chajnantor_mw",
+    "title": "Milky Way over Chajnantor",
+    "page": "https://www.eso.org/public/videos/chajnantormilkyway/",
+    "credit": "ESO",
+    "licence": "CC BY 4.0 per film SOURCE_POOL_v03.json"
+  },
+  "limitations": [
+    "Existing footage under pulsation narration is a sky establishing shot, not a resolved pulsation observation.",
+    "Dissolve handles, reuse review and integration remain.",
+    "Run normal picture QA; no failure is waived."
+  ]
+}
