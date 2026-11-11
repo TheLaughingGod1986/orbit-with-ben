@@ -436,6 +436,64 @@ class NoHomeChannelInTheScripts(unittest.TestCase):
             self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
 
 
+class StudioRootHoldsNoChannelContent(unittest.TestCase):
+    """J2619: jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py take a film's folder and a
+    job's channel from the loader, so they still work when the studio's own root holds no channel content."""
+
+    def test_today_nothing_moves(self):
+        import studio
+        root = HERE.parent
+        self.assertEqual(channels.board_channel(), "owb")
+        self.assertEqual(channels.films_dir("owb"), root / "02_Video-Projects")
+        self.assertEqual(studio.FILMS, root / "02_Video-Projects")
+        self.assertEqual(studio._board_name(), channels.name("owb"))
+
+    def test_the_board_reads_films_from_the_channels_checkout_not_the_studios_root(self):
+        import datetime as dt
+        import jobs
+        import studio
+        import workflow_handoffs as handoffs
+        with tempfile.TemporaryDirectory() as t:
+            engine = pathlib.Path(t) / "studio-engine"          # the studio's own repo: scripts and jobs, no films
+            (engine / "scripts").mkdir(parents=True)
+            (engine / "jobs").mkdir()
+            channel = pathlib.Path(t) / "channel-checkout"      # the channel's repo, somewhere else
+            film = channel / "02_Video-Projects" / "033_Uranus"
+            film.mkdir(parents=True)
+            (film / "status.json").write_text(json.dumps(
+                {"film": "033", "title": "Uranus", "air": "", "stages": {}, "claims": [], "next": ""}))
+            self.assertFalse(any((engine / d).exists() for d in ("00_Brand", "02_Video-Projects", "05_Analytics")))
+            with mock.patch.object(channels, "ROOT", engine), \
+                    mock.patch.object(channels, "checkout", lambda slug: channel if slug == "owb" else None):
+                films = studio._films()
+                self.assertEqual(films, channel / "02_Video-Projects")
+                with mock.patch.object(studio, "FILMS", films):
+                    at = dt.datetime(2026, 11, 11, 15, 0, tzinfo=dt.timezone.utc)
+                    job = {"id": "J1", "film": "033", "stage": "edit", "repo": "owb", "eta": "2026-11-11T16:00Z",
+                           "title": "edit"}
+                    self.assertTrue(jobs.on_board(job))
+                    self.assertEqual(jobs.film_status_path(job), film / "status.json")
+                    self.assertIsNone(jobs.board_claim(job, "cursor", at))
+                    claims = json.loads((film / "status.json").read_text())["claims"]
+                    self.assertEqual([(c["stage"], c["by"]) for c in claims], [("edit", "cursor")])
+                    self.assertEqual([f for f, _ in handoffs.records(studio.FILMS)], ["033"])
+                    self.assertIn("033", studio.render_md(studio.FILMS))
+
+    def test_a_job_that_names_no_channel_is_still_the_default_channels(self):
+        import jobs
+        import routing
+        import workflow_handoffs as handoffs
+        self.assertTrue(jobs.on_board({"film": "033"}))                      # an old row with no repo
+        self.assertFalse(jobs.on_board({"film": "013", "repo": "hos"}))      # keeps its films another way
+        self.assertFalse(jobs.on_board({"film": "", "repo": "owb"}))
+        self.assertEqual(routing._picture_route({}), routing._picture_route({"repo": channels.default()}))
+        with tempfile.TemporaryDirectory() as t:
+            wip = pathlib.Path(t) / "WIP.json"
+            line = channels.wip_line(channels.board_channel())
+            wip.write_text(json.dumps({line: ["OWB:041", "HOS:020"]}))
+            self.assertEqual(handoffs.waiting_films(wip), {"041"})
+
+
 class RuleFiles(unittest.TestCase):
     """J2577: the rule book is two files since J2527. Prompts ask here what to call them for a checkout."""
 

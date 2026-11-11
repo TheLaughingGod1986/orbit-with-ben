@@ -244,7 +244,7 @@ def order(j, due, focus=(), at=None, nearest=(), air=None):
     if isinstance(film, str) and film.strip():
         production_keys.add(film)
         if re.fullmatch(r"\d{3}", film):
-            production_keys.add(channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home()) + ":" + film)
+            production_keys.add(channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.default()) + ":" + film)
     urgent = j.get("urgent")
     rank = urgent if isinstance(urgent, int) and not isinstance(urgent, bool) else 0
     created = timestamp(j.get("created_at") or j.get("addedAt") or next((h.get("at") for h in j.get("history", []) if h.get("at")), None))
@@ -284,10 +284,10 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
     if reserved(j) and not ((j.get("dispatch_reservation") or {}).get("phase") == "serial"
             and j["dispatch_reservation"].get("claimant") == agent):
         return False
-    stage = (j.get("repo") or channels.home(), j.get("film"), j.get("stage"))
+    stage = (j.get("repo") or channels.default(), j.get("film"), j.get("stage"))
     if stage[1] and stage[2] and any(
             r.get("id") != j.get("id") and reserved(r)
-            and (r.get("repo") or channels.home(), r.get("film"), r.get("stage")) == stage for r in rows):
+            and (r.get("repo") or channels.default(), r.get("film"), r.get("stage")) == stage for r in rows):
         return False
     by_id = {r["id"]: r for r in rows}
     if external_hold(j, at) or dependency_problem(j, by_id) or capability_problem(j, agent, at, capabilities):

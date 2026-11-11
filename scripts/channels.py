@@ -258,6 +258,20 @@ def pipeline(slug: str) -> dict:
     return dict(get(slug).get("pipeline") or {})
 
 
+def board_channel() -> str:
+    """The channel whose films the stage board tracks (studio.py: one status.json per film, claims, STATUS.md): the
+    first channel that keeps its film state that way (pipeline kind film_status), else the default channel."""
+    return next((c["slug"] for c in _load() if (c.get("pipeline") or {}).get("kind") == "film_status"), default())
+
+
+def films_dir(slug: str) -> pathlib.Path:
+    """The folder that holds the channel's film folders, in the channel's own checkout (where that checkout would be
+    when it is not on this machine): the part of its pipeline path before the first wildcard."""
+    kept = str(pipeline(slug).get("path") or "")
+    head = kept.split("*", 1)[0].strip("/") if "*" in kept else "02_Video-Projects"
+    return (checkout(slug) or repo_path(slug)) / head
+
+
 def checkout(slug: str) -> pathlib.Path | None:
     """Where the channel is checked out on this machine, or None. The home channel's checkout is this repo."""
     if get(slug).get("home"):
