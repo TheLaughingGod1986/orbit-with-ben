@@ -230994,19 +230994,24 @@
           "at": "2026-11-11T23:46Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2654; starting step 1 (inspecting HOS 011 archive rows and J2563_PREFLIGHT.json)"
+        },
+        {
+          "at": "2026-11-11T23:47Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: extracted all 13 archive rows from PICTURE_PLAN_v02.json and J2563_PREFLIGHT.json (commit e61d5c76) and reviewed Chief ruling #6808400290"
         }
       ],
-      "remaining_action": "Inspect J2563_PREFLIGHT.json (commit e61d5c76 / PR 550), HOS 011 archive rows, and Chief ruling #6808400290",
+      "remaining_action": "Search and verify resolving source URLs and stated licences for archive rows 1-7",
       "due": "2026-11-14T18:00:00Z",
       "for": "gemini",
       "kind": "facts",
       "plain": "Find real, free sources for the 13 old pictures the Anaesthesia film wants to use",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T23:46Z",
+        "at": "2026-11-11T23:47Z",
         "by": "gemini",
-        "note": "Claimed J2654; starting step 1 (inspecting HOS 011 archive rows and J2563_PREFLIGHT.json)"
+        "note": "Step 1 done: extracted all 13 archive rows from PICTURE_PLAN_v02.json and J2563_PREFLIGHT.json (commit e61d5c76) and rev"
       },
       "taskKeys": [
         "HOS:011"
