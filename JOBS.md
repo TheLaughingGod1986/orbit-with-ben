@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2640 | mini | open | – | – | studio · Mini relay: find why its own queue commit could not be pushed twice on 11 Nov (07:05Z and 18:01Z), and make a failed push leave nothing behind |  |
 | J2642 | mini | open | – | – | 013 picture · for codex · studio · HOS 013 picture: post the 34 charged takes of films 008 and 009 in the shared Flow ledger, through the runner's reconcile, so the tool's 3,000-credit reserve check can pass | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806316978 |
 | J2644 | mini | open (after J2642) | – | – | 013 picture · for gemini · studio · HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 |
-| J2646 | mini | claimed | gemini | 2026-11-11T22:45Z | 013 edit · for gemini · review · Review Supermoon dated Short v03 after natural-speed rebuild |  |
+| J2646 | mini | blocked | gemini | – | 013 edit · for gemini · review · Review Supermoon dated Short v03 after natural-speed rebuild |  |
 
 Recently finished:
 

@@ -229735,13 +229735,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-11T20:45Z",
-      "eta": "2026-11-11T22:45Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-11T20:37Z",
-      "result": "",
+      "result": "parked for Chief: Perceptual moving-video + audio review of Supermoon dated Short v03 complete (advisory KEEP, 0 fails, jobs/reviews/J2646/REVIEW.md at 8191da45af). Watched v03 moving video and full-size 1080x1920 frames across all 9 cuts, cover v03, and QA sheets, and heard final mix + isolated VO v02d, SFX, and bed stems: natural 1.0x speed throughout (closer ends 2.095s under Chief waiver, cut1 2.10s, s01_date punch-in, Earth cut 3.667s, title 6.5-9.5s clearing answer at 9.87s by 0.37s, restored 105ms date reads 'on November twenty-fourth' clearly by ear and ASR, full-bleed 0/19 and 0/37 padded frames, all 33 NAS files SHA-256 verified). Ready for Chief KEEP ruling on J2646 + parent J2478, merge of draft PR #834 (codex/J2478-natural-speed f5c5821bc6), and on KEEP staging v03 + cover to OWB UAT watch folders with jobs.py awaits for Ben (deadline Wed 18 Nov 18:00 London for Thu 19 Nov 11:30 London, Related 2fsQcea-voM).",
       "history": [
         {
           "at": "2026-11-11T20:37Z",
@@ -229782,6 +229782,11 @@
           "at": "2026-11-11T21:00Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Perceptual video+audio review complete (advisory KEEP, jobs/reviews/J2646/REVIEW.md, 8191da45af)"
+        },
+        {
+          "at": "2026-11-11T21:00Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Perceptual moving-video + audio review of Supermoon dated Short v03 complete (advisory KEEP, 0 fails, jobs/reviews/J2646/REVIEW.md at 8191da45af). Watched v03 moving video and full-size 1080x1920 frames across all 9 cuts, cover v03, and QA sheets, and heard final mix + isolated VO v02d, SFX, and bed stems: natural 1.0x speed throughout (closer ends 2.095s under Chief waiver, cut1 2.10s, s01_date punch-in, Earth cut 3.667s, title 6.5-9.5s clearing answer at 9.87s by 0.37s, restored 105ms date reads 'on November twenty-fourth' clearly by ear and ASR, full-bleed 0/19 and 0/37 padded frames, all 33 NAS files SHA-256 verified). Ready for Chief KEEP ruling on J2646 + parent J2478, merge of draft PR #834 (codex/J2478-natural-speed f5c5821bc6), and on KEEP staging v03 + cover to OWB UAT watch folders with jobs.py awaits for Ben (deadline Wed 18 Nov 18:00 London for Thu 19 Nov 11:30 London, Related 2fsQcea-voM)."
         }
       ],
       "remaining_action": "Chief rules KEEP or FIX on J2646/J2478, merges PR #834, and on KEEP copies v03 + cover to OWB UAT watch folders and calls jobs.py awaits",
