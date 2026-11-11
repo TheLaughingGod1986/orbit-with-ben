@@ -223530,10 +223530,10 @@
       "stage": "picture",
       "after": "J2575",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T10:10Z",
+      "eta": "2026-11-11T12:10Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:57Z",
       "result": "",
@@ -223542,13 +223542,26 @@
           "at": "2026-11-11T08:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Look at two still sheets and answer three yes/no questions for each",
       "due": "2026-11-12T14:00:00Z",
       "kind": "qa",
       "plain": "Check the two remade Franklin shots before they go into the edit",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T10:10Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2577",
