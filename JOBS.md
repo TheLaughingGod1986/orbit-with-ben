@@ -50,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2449 | mini | blocked | macbook-2 | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
-| J2452 | macbook | claimed | macbook | 2026-11-11T20:30Z | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
+| J2452 | macbook | open (after J2548) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 | J2453 | mini | open (after J2567) | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2454 | mini | open (after J2567) | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2455 | mini | open (after J2567) | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2618 | cloud | open | – | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | docs/MULTI_CHANNEL_PLAN.md |
-| J2620 | cloud | claimed | claude | 2026-11-11T18:20Z | review · Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines) | docs/MULTI_CHANNEL_PLAN.md |
+| J2620 | cloud | **stalled** | claude | 2026-11-11T18:20Z | review · Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines) | docs/MULTI_CHANNEL_PLAN.md |
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2630 | cloud | blocked | claude | – | 009 picture · review · HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved | https://github.com/TheLaughingGod1986/history-of-science/pull/529 |
