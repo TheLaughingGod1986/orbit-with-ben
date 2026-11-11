@@ -2,15 +2,20 @@
 """Read back the saved Moon candidate, normal gates and brightest windows."""
 import hashlib
 import json
+import re
 import subprocess as sp
 import sys
 from pathlib import Path
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[3]
-OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_moon_v02')
+OUT=Path('/Users/ben/_desk/J2452-sleep-scratch/public_moon_v03')
 def main():
     build=json.loads((OUT/'BUILD.json').read_text()); video=build['output']
+    full=json.loads((OUT/'full_pixel_cuts.json').read_text())
+    if full[-1]['timeline_out'] < build['duration_s']:
+        full.append(dict(row='pixel-tail',timeline_in=full[-1]['timeline_out'],timeline_out=build['duration_s'],source=build['source_master'],framing=dict(offset=full[-1]['timeline_out']),src_w=1920,upscale=1))
+        (OUT/'full_pixel_cuts.json').write_text(json.dumps(full,indent=2)+'\n')
     changed=json.loads((OUT/'changed_cuts.json').read_text())
     # Inspect half-second neighbourhoods on both sides of every new trim/join.
     # Each transition groups contiguous sampling rows under one identity;
@@ -31,12 +36,14 @@ def main():
         with (OUT/f'gate_{i}.log').open('w') as log:
             codes.append(sp.run(cmd,stdout=log,stderr=sp.STDOUT,timeout=300).returncode)
         print('gate finished',i,codes[-1],flush=True)
-    probe=json.loads(sp.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',video]))
-    dec=sp.run(['ffmpeg','-v','error','-i',video,'-f','null','-'],capture_output=True,text=True,timeout=180)
+    probe=json.loads(sp.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',video]))
     levels=sp.run(['ffmpeg','-v','info','-i',video,'-vn','-af','loudnorm=I=-20:TP=-6:LRA=7:print_format=json','-f','null','-'],capture_output=True,text=True,timeout=180)
     text=levels.stderr; levels=json.loads(text[text.rfind('{'):text.rfind('}')+1])
     # Whole-video luminance scan at 4 fps; rank non-overlapping 2 s windows.
-    raw=sp.check_output(['ffmpeg','-v','error','-i',video,'-an','-vf','fps=4,scale=160:90,format=gray','-f','rawvideo','-'],timeout=180)
+    scan=sp.run(['ffmpeg','-v','info','-i',video,'-an','-vf','showinfo,fps=4,scale=160:90,format=gray','-f','rawvideo','-'],capture_output=True,check=True,timeout=300)
+    raw=scan.stdout
+    decoded=[int(x) for x in re.findall(r'\bn:\s*(\d+)\s+pts:',scan.stderr.decode(errors='replace'))]
+    if not decoded or max(decoded)+1 != build['expected_frames']: raise ValueError(('decoded frame count',max(decoded)+1 if decoded else None,build['expected_frames']))
     frames=np.frombuffer(raw,np.uint8).reshape(-1,90,160)
     candidates=[]
     for k in range(0,len(frames)-7,8):
@@ -55,7 +62,7 @@ def main():
     inherited=pixel['failed']
     report=dict(status='READBACK_ONLY_NOT_UAT',output=video,
                 sha256=hashlib.file_digest(open(video,'rb'),'sha256').hexdigest(),
-                probe=probe,full_decode_exit=dec.returncode,decode_stderr=dec.stderr,
+                probe=probe,full_decode_exit=scan.returncode,decoded_frames=max(decoded)+1,decode_scan='Full decode with showinfo count before fps reduction; same pass supplies brightness scan.',
                 gate_exit_codes=codes,pixel_verdict=pixel['verdict'],inherited_findings=inherited,
                 levels=levels,brightest_two_second_windows=bright,
                 darkening='Not active in chapter 1; the undarkened saved file is the delivered file. No brightness change or frame-count change.',

@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import shutil
 import json
+import math
 import subprocess as sp
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -101,7 +102,7 @@ def main():
          '-pix_fmt','yuv420p','-r','30','-video_track_timescale','90000','-c:a','aac','-b:a','192k','-ar','48000',str(final)])
     # Full-duration pixel sampling every two seconds, including endpoints.
     full=[dict(row=f'pixel-{k}',timeline_in=k,timeline_out=min(k+2,cumulative/30),
-               source=MASTER.name,framing=dict(offset=k),src_w=1920,upscale=1) for k in range(0,int(cumulative/30),2)]
+               source=MASTER.name,framing=dict(offset=k),src_w=1920,upscale=1) for k in range(0,math.ceil(cumulative/30),2)]
     changed=[*joins,dict(row='quiet-title',timeline_in=0,timeline_out=6,source='quiet-title',framing=dict(offset=0),src_w=1920,upscale=1)]
     for i,h in enumerate(holds):
         if h['hold_s']>0:
