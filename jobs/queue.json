@@ -219771,9 +219771,14 @@
           "at": "2026-11-11T13:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T13:25Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Starting J2520: inspecting v08 records, running gate_shorts_open.py check from main, and reading back bSjWiCbB7pY"
         }
       ],
-      "remaining_action": "Gate v08 from main, upload it Private in the Fri 13 Nov 11:30 slot, read back, then unschedule the old one",
+      "remaining_action": "Gate v08 from main, verify sha256, and read back old Short bSjWiCbB7pY",
       "due": "2026-11-12T18:00:00Z",
       "kind": "listing",
       "plain": "Put the full-screen Mars helicopter Short you approved into its Friday slot",
@@ -219802,12 +219807,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-11T13:24Z",
+        "of": 5,
+        "at": "2026-11-11T13:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2520: inspecting v08 records, running gate_shorts_open.py check from main, and reading back bSjWiCbB7pY"
+      },
+      "taskKeys": [
+        "OWB:025"
+      ]
     },
     {
       "id": "J2521",
