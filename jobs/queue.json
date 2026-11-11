@@ -193742,9 +193742,14 @@
           "at": "2026-11-11T22:57Z",
           "by": "codex",
           "what": "step 1 of 3 done: Existing source/salon checkpoint retained. Added output preservation verifier; corruption tests pass, full-source self-check running. No v04 master yet."
+        },
+        {
+          "at": "2026-11-11T23:00Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: 36e255f1 on HOS PR542: preservation verifier, 35 tests OK, check_all PASS, real v03 self-check matches 12923 frames/video packets and 25296 audio packets. v04 assembly remains incomplete."
         }
       ],
-      "remaining_action": "Building and verifying the Franklin splice and caption reconstruction",
+      "remaining_action": "Implementing the Franklin packet splice and caption reconstruction",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -193753,9 +193758,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-11T22:57Z",
+        "at": "2026-11-11T23:00Z",
         "by": "codex",
-        "note": "Existing source/salon checkpoint retained. Added output preservation verifier; corruption tests pass, full-source self-c"
+        "note": "36e255f1 on HOS PR542: preservation verifier, 35 tests OK, check_all PASS, real v03 self-check matches 12923 frames/vide"
       }
     },
     {
