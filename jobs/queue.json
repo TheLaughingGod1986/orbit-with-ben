@@ -222994,10 +222994,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-11T08:58Z",
+      "eta": "2026-11-11T10:58Z",
       "created_by": "claude",
       "created_at": "2026-11-11T08:24Z",
       "result": "",
@@ -223026,6 +223026,11 @@
           "at": "2026-11-11T08:55Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-11T08:58Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reworking PR #505 scripts to SHA-256 fingerprints, restoring 010/013 and holding back 008/009",
