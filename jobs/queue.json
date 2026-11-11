@@ -226067,13 +226067,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-11T12:59Z",
-      "eta": "2026-11-11T14:59Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T12:56Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2270 NOT met, J2270 left blocked. Real condition is Codex's 12:55Z park: lock order puts J2583 (009 retakes) before J2270's remaining seven rows. J2575, J2589, J2598 done; J2583 blocked 12:51Z (merged runner refuses the closed J2033 reservation; needs reviewed fix, desk 6796338000/6796365164; its own check J2610 is open). MacBook cannot record the hold (refused: only holder or elected Chief). Chief: either run jobs.py wait J2270 --agent <chief id> --condition 'J2583 is done, or the Chief changes the lock order' --check-at '2026-11-11T15:00Z' --type dependency --recheck J2612 --git, or change the lock order and reopen J2270 (deadline 12 Nov 18:00Z). Nothing reopened, generated or spent; no branch or PR.",
       "history": [
         {
           "at": "2026-11-11T12:56Z",
@@ -226089,6 +226089,11 @@
           "at": "2026-11-11T13:00Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-11T13:01Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J2270 NOT met, J2270 left blocked. Real condition is Codex's 12:55Z park: lock order puts J2583 (009 retakes) before J2270's remaining seven rows. J2575, J2589, J2598 done; J2583 blocked 12:51Z (merged runner refuses the closed J2033 reservation; needs reviewed fix, desk 6796338000/6796365164; its own check J2610 is open). MacBook cannot record the hold (refused: only holder or elected Chief). Chief: either run jobs.py wait J2270 --agent <chief id> --condition 'J2583 is done, or the Chief changes the lock order' --check-at '2026-11-11T15:00Z' --type dependency --recheck J2612 --git, or change the lock order and reopen J2270 (deadline 12 Nov 18:00Z). Nothing reopened, generated or spent; no branch or PR."
         }
       ],
       "remaining_action": "Read J2270's hold and evidence, then record the verdict",
