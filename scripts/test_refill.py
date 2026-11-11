@@ -175,9 +175,6 @@ class NoArbitraryHolds(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.do_add(d, title="x", needs="mini", body="", by="chief", at=T0, not_before="2026-10-12 15:00", reset="x")
 
-if __name__ == "__main__":
-    unittest.main()
-
 class MonthlyReviews(unittest.TestCase):
     def item(self):
         return {"key":"monthly-test", "title":"Review", "needs":"mini", "body":"Read data", "monthly_on":1,"monthly_at":"09:00","start_month":"2026-11"}
@@ -200,3 +197,7 @@ class MonthlyReviews(unittest.TestCase):
         d=empty();it=self.item();at=dt.datetime(2027,6,1,7,59,tzinfo=dt.timezone.utc)
         self.assertEqual(refill.do_refill(d,[it],at),[])
         self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
+
+
+if __name__ == "__main__":
+    unittest.main()

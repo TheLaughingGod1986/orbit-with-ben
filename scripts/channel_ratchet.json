@@ -1,10 +1,9 @@
 {
   "_about": "Decoupling ratchet (scripts/test_channel_ratchet.py). For each engine script: how many code lines still name a channel. Ceilings only go down; a script not listed must have none. Lower them with `python3 scripts/test_channel_ratchet.py --lower`.",
-  "total": 189,
+  "total": 132,
   "ceilings": {
     "chief_relay.py": 79,
-    "kanban_snapshot.py": 56,
-    "approved_deliver.py": 35,
+    "approved_deliver.py": 34,
     "missed_runs.py": 5,
     "owb_thread.py": 5,
     "core_sync.py": 2,
@@ -15,11 +14,10 @@
     "uat_outlook.py": 1
   },
   "_about_home": "Second ratchet, same rules: code lines that assume the engine lives inside one channel's repo (channels.home(), or a path from the engine's root into channel content).",
-  "home_total": 20,
+  "home_total": 17,
   "home": {
     "jobs.py": 4,
     "apply_yellow_white_v04_thumbs.py": 3,
-    "kanban_snapshot.py": 3,
     "workflow_state.py": 3,
     "chief_relay.py": 2,
     "studio.py": 2,

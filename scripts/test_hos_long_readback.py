@@ -48,7 +48,7 @@ class HosLongReadBack(unittest.TestCase):
                 "OLDv1xxxxxx": {"kind": "long", "film": "005", "retired": True},
             }}))
             hos = {"films": [film(), {"id": "011"}]}
-            ks.attach_hos_uploads(Path(d), hos)
+            ks.attach_pipeline_uploads(Path(d), hos)
         self.assertEqual(hos["films"][0]["upload"]["videoId"], "wwcjcFfC-5M")
         self.assertNotIn("upload", hos["films"][1])
 

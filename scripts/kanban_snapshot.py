@@ -1,24 +1,26 @@
 #!/usr/bin/env python3
-"""Refresh the snapshots built into the Studio Kanban page (https://claude.ai/artifact/Hhk519dkbHMzeaZfp3efhc).
+"""Build the board's store documents from every channel's film state and the studio's job queue.
 
-The page reads both repos live through the viewer's GitHub connector. When that link isn't available, it shows the
-snapshot built into the page, so Claude rebuilds that snapshot a few times a day from:
-  - HOS: 00_Brand/Channel-Setup/PIPELINE.json in history-of-science (main)
-  - OWB: every 02_Video-Projects/*/status.json in this repo (main)
+  python3 scripts/kanban_snapshot.py --<slug> <that channel's checkout on main> ... --db-out <dir>
 
-  python3 scripts/kanban_snapshot.py <page.html> --hos <history-of-science checkout> [--out <page.html>]
-  python3 scripts/kanban_snapshot.py --hos <checkout> --db-out <dir>    # board/hos, board/owb, board/credits, board/briefs
+One `--<slug>` per channel in the registry (scripts/channels.py). The channel this checkout belongs to needs none.
+Each channel is read the way it keeps its film state (channels.pipeline), never by which channel it is:
+  - film_status:   every 02_Video-Projects/*/status.json in its checkout
+  - pipeline_json: 00_Brand/Channel-Setup/PIPELINE.json in its checkout
 
-Since 7 Oct the page also reads `board/hos` ({updatedAt, pipeline}) and `board/owb` ({updatedAt, films}) from its own
-store, which Claude writes on a schedule with ArtifactData (file_path = the JSON files --db-out writes). That keeps
-the board current without the viewer's GitHub connector.
+It writes, into --db-out, for scripts/board_publish.py to publish:
+  - <slug>.json      one per channel: {updatedAt, pipeline} or {updatedAt, films}. The channel named by
+                     channels.queue_key() also carries the studio's job queue (jobs, lanes, focus, done and so on).
+  - briefs.json      Claude's plain note per film from 05_Analytics/kanban/film_briefs.json, the watch links and
+                     what waits on Ben (Ben, 8 Oct: "what's the holdup, what is it waiting for, and when does that
+                     happen?"). Every stage in hand gets a `since` (when it took its current state, from the file's
+                     git history) so the page can say "in this stage 2 days".
+  - credits.json     the AI spend month, the credit checks and the Mini's work
+  - tracker.json     the per-video tracker
 
-Since 8 Oct (Ben: "what's the holdup, what is it waiting for, and when does that happen?") it also writes `board/briefs`:
-Claude's plain note per film from 05_Analytics/kanban/film_briefs.json, and every stage in hand gets a `since` (when it
-took its current state, from the file's git history) so the page can say "in this stage 2 days".
-
-It replaces only the two `const SNAPSHOT = …;` / `const OWB_SNAPSHOT = …;` lines, fails if either is missing, and
-prints "unchanged" when the data is the same (so nothing needs republishing).
+Until 11 Nov 2026 this script could also rewrite two `const … = …;` snapshot lines inside the old claude.ai board
+page. That page is retired (the board is the site under 05_Analytics/kanban/board_site), nothing called that mode,
+and it is gone.
 """
 from __future__ import annotations
 
@@ -35,17 +37,31 @@ import channels  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def js(obj) -> str:
-    # `</` escaped so no value can close the page's script tag.
-    return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+# How a channel keeps its film state decides how it is read here, never which channel it is (channels.pipeline):
+#   film_status    one status file per film folder; the document is a list of them
+#   pipeline_json  one pipeline file for the whole channel; the document is that file ({"films": [...]})
+# Where those files are inside the channel's checkout is the channel's own setting too (`path`).
+def one_file(slug: str) -> bool:
+    """True for a channel that keeps every film's state in one pipeline file."""
+    return channels.pipeline(slug).get("kind") == "pipeline_json"
 
 
-def rebuild(html: str, hos: dict, owb: list[dict]) -> str:
-    for name in ("SNAPSHOT", "OWB_SNAPSHOT"):
-        if len(re.findall(rf"^const {name} = .*;$", html, flags=re.M)) != 1:
-            raise SystemExit(f"page has no single `const {name} = …;` line; not touching it")
-    html = re.sub(r"^const SNAPSHOT = .*;$", lambda m: "const SNAPSHOT = " + js(hos) + ";", html, flags=re.M)
-    return re.sub(r"^const OWB_SNAPSHOT = .*;$", lambda m: "const OWB_SNAPSHOT = " + js(owb) + ";", html, flags=re.M)
+def kept_at(slug: str) -> str:
+    """Where the channel keeps its film state, inside its checkout: one file, or a pattern with one `*` for the film
+    folder ('' when the channel has not said)."""
+    return channels.pipeline(slug).get("path") or ""
+
+
+def slug_of(label: str) -> str:
+    """The channel a film key's label belongs to ('' if none)."""
+    return next((c for c in channels.slugs() if channels.label(c) == label), "")
+
+
+def film_rows(slug: str, doc) -> list[tuple[str, dict]]:
+    """(film number, the film's own record) for every film in a channel's document."""
+    if one_file(slug):
+        return [(str(f.get("id", "")), f) for f in (doc or {}).get("films", [])]
+    return [(str(f.get("film", "")), f) for f in doc or []]
 
 
 # ---- "At a glance" (Ben, 8 Oct): how long each queued job takes, and when the Mini last did anything ----
@@ -318,7 +334,8 @@ def mini_work(alljobs: list[dict], since: str) -> dict:
                     m = min(8 * 60, max(0.0, (at - start[0]).total_seconds() / 60))
                     jobs.add(j["id"])
                     minutes += m
-                    key = f"OWB:{j['film']}" if j.get("film") else "admin"
+                    film = str(j.get("film") or "")  # a bare number, or already a whole key ("<LABEL>:…")
+                    key = "admin" if not film else film if slug_of(film.split(":", 1)[0]) else f"{channels.label_of_job(j)}:{film}"
                     by_film[key] = by_film.get(key, 0) + m
                     who = start[1] or "?"
                     by_agent[who] = by_agent.get(who, 0) + m
@@ -385,22 +402,25 @@ def file_history(repo: Path, rel: str, states, limit: int = 80) -> dict:
 LIVE = ("doing", "review", "blocked")  # only stages in hand get a "since"; done and to-do stages don't need one
 
 
-def add_since_owb(films: list[dict]) -> None:
+def add_since_status(films: list[dict], root: Path, pattern: str) -> None:
+    """One status file per film: when each stage in hand took its state, from that file's own history. `pattern` is
+    the channel's own (channels.pipeline 'path'): its `*` is the film folder, which opens with the film number."""
     for f in films:
-        d = next(iter(sorted((ROOT / "02_Video-Projects").glob(f"{f.get('film')}_*/status.json"))), None)
+        d = next(iter(sorted(root.glob(pattern.replace("*", f"{f.get('film')}_*", 1)))), None)
         if not d:
             continue
-        since = file_history(ROOT, str(d.relative_to(ROOT)),
+        since = file_history(root, str(d.relative_to(root)),
                              lambda doc: {k: v.get("state") for k, v in (doc.get("stages") or {}).items()})
         for k, st in (f.get("stages") or {}).items():
             if st.get("state") in LIVE and since.get(k) and not st.get("since"):
                 st["since"] = since[k]
 
 
-def add_since_hos(repo: Path, hos: dict) -> None:
-    since = file_history(repo, "00_Brand/Channel-Setup/PIPELINE.json",
+def add_since_pipeline(repo: Path, pipeline: dict, path: str) -> None:
+    """One pipeline file for the channel: the same, from that one file's history."""
+    since = file_history(repo, path,
                          lambda doc: {f"{f['id']}/{k}": v.get("status") for f in doc["films"] for k, v in f["stages"].items()})
-    for f in hos.get("films", []):
+    for f in pipeline.get("films", []):
         for k, st in (f.get("stages") or {}).items():
             if st.get("status") in LIVE and since.get(f"{f['id']}/{k}") and not st.get("since"):
                 st["since"] = since[f"{f['id']}/{k}"]
@@ -415,7 +435,7 @@ def load_briefs() -> dict:
     if any(not u.startswith("https://www.icloud.com/") for u in urls):
         raise SystemExit("film_briefs.json: UAT links must be https://www.icloud.com/ share links")
     if bad:
-        raise SystemExit(f"film_briefs.json: keys must be HOS:NNN or OWB:NNN, not {bad}")
+        raise SystemExit(f"film_briefs.json: keys must be {' or '.join(f'{c}:NNN' for c in sorted(channels.labels()))}, not {bad}")
     return films
 
 
@@ -557,12 +577,17 @@ def chief_text(s):
 # From 11 Oct, scripts/routing.py decides who does each kind of job (AGENTS.md "Who does what"). Past steps keep their
 # true doer (a done stage's owner, or the agent that claimed/finished the job). A step still to do shows the routed
 # worker for its kind: a film-note step with `kind`, or with a `job` whose queue entry has a kind. A job that is claimed
-# shows whoever holds it. HOS queue jobs ("HOS 006 ...") the note doesn't name are added to the note, as the page does
-# for OWB jobs, so an HOS card moves with the queue too.
-HOS_STAGE_KIND = {"topic": "review", "script": "script", "facts": "facts", "package": "listing", "vo": "vo",
-                  "shorts_scripts": "script", "shorts_vo": "vo", "picture": "video", "edit": "assembly",
-                  "thumbnails": "chart", "scheduled": "studio"}
-HOS_JOB = re.compile(r"^HOS\s+(\d{3})\b")
+# shows whoever holds it. Queue jobs titled with a channel's label and a film number ("<LABEL> 006 ...") that the
+# note doesn't name are added to the note, as the page itself does for the channel whose document carries the queue,
+# so every channel's card moves with the queue.
+PIPELINE_STAGE_KIND = {"topic": "review", "script": "script", "facts": "facts", "package": "listing", "vo": "vo",
+                       "shorts_scripts": "script", "shorts_vo": "vo", "picture": "video", "edit": "assembly",
+                       "thumbnails": "chart", "scheduled": "studio"}
+
+
+def titled(label: str) -> re.Pattern:
+    """A queue job's title that opens with this channel's label and a film number."""
+    return re.compile(rf"^{re.escape(label)}\s+(\d{{3}})\b")
 # A step with no kind still routes when its words say plainly what it is: a facts check (Gemini) or code graphics (Codex).
 KIND_WORDS = [("facts", re.compile(r"\bfact[- ]?checks?\b|\bsources\b|\bcheck (?:every|the|all) (?:numbers?|dates?|claims?|facts?)", re.I)),
               ("chart", re.compile(r"\bcharts?\b|\bgraphs?\b|people cards?|code graphics|\boverlays?\b|date stamps?|\bWHO cards?", re.I))]
@@ -632,21 +657,25 @@ def job_who(j: dict) -> str:
     return routed_who(j.get("kind") or "", j.get("model") or "")
 
 
-def hos_job_steps(briefs: dict, alljobs: list[dict]) -> dict:
-    """Add live HOS queue jobs a note doesn't name yet (before Ben's own steps), each with its job id and kind."""
+def queue_job_steps(briefs: dict, alljobs: list[dict]) -> dict:
+    """Add live queue jobs a note doesn't name yet (before Ben's own steps), each with its job id and kind. For every
+    channel but the one whose document carries the queue: the page adds that one's jobs itself."""
     out = {}
     live = [j for j in alljobs if j.get("status") in ("open", "claimed", "blocked")]
+    own = channels.label(channels.queue_key())
     for k, b in briefs.items():
-        if not k.startswith("HOS:"):
+        label = k.split(":", 1)[0]
+        if label == own or not slug_of(label):
             out[k] = b
             continue
+        title = titled(label)
         steps = list(b.get("steps") or [])
         named = {x for st in steps for x in (st.get("job"), st.get("afterJob")) if x}
         extra = []
         for j in live:
-            m = HOS_JOB.match(j.get("title") or "")
-            if (j.get("film") == k or (m and "HOS:" + m.group(1) == k)) and j["id"] not in named:
-                what = re.sub(r"\s*\([^)]*\)", "", HOS_JOB.sub("", j.get("title") or "")).strip(" :·")
+            m = title.match(j.get("title") or "")
+            if (j.get("film") == k or (m and f"{label}:" + m.group(1) == k)) and j["id"] not in named:
+                what = re.sub(r"\s*\([^)]*\)", "", title.sub("", j.get("title") or "")).strip(" :·")
                 extra.append({"who": job_who(j), "what": what[:90], "job": j["id"], **({"kind": j["kind"]} if j.get("kind") else {})})
         if extra:
             at = next((i for i, st in enumerate(steps) if st.get("who") == "Ben" and not st.get("done")), len(steps))
@@ -675,12 +704,13 @@ def route_steps(briefs: dict, alljobs: list[dict]) -> dict:
     return out
 
 
-def route_hos_stages(hos: dict) -> None:
-    """HOS stages still to do with no owner: the routed worker for the stage's kind (done stages keep their doer)."""
-    for f in hos.get("films", []):
+def route_pipeline_stages(pipeline: dict) -> None:
+    """A PIPELINE.json's stages still to do with no owner: the routed worker for the stage's kind (done stages keep
+    their doer)."""
+    for f in pipeline.get("films", []):
         for key, st in (f.get("stages") or {}).items():
-            if st.get("status") == "todo" and not st.get("owner") and key in HOS_STAGE_KIND:
-                st["owner"] = routed_who(HOS_STAGE_KIND[key])
+            if st.get("status") == "todo" and not st.get("owner") and key in PIPELINE_STAGE_KIND:
+                st["owner"] = routed_who(PIPELINE_STAGE_KIND[key])
 
 
 # ---- Ben's handoffs (Ben, 10 Oct: the card said "Waiting for you" while the For-you box said nothing to check) ----
@@ -724,10 +754,21 @@ def chief_reviews(briefs: dict) -> dict:
 #   3. the newest cut in iCloud Drive (OWB UAT/NNN_*.mp4; HOS UAT/NNN_*/... ), the *_PHONE.mp4 copy when there is one,
 #      as a Files-app link (shareddocuments://...): the file is already in Ben's iCloud Drive, nothing is shared.
 # Read where the files are (the Mini); elsewhere step 3 finds nothing and the board falls back to the folder note.
-UPLOADS = ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
+UPLOADS: dict = {}  # {slug: a register to read instead of the channel's own}; tests set it
 ICLOUD = Path.home() / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
-UAT_DIRS = {"OWB": Path(os.environ.get("OWB_UAT_DIR", str(ICLOUD / "OWB UAT"))),
-            "HOS": Path(os.environ.get("HOS_UAT_DIR", str(ICLOUD / "HOS UAT")))}
+UAT_DIRS: dict = {}  # {label: a watch folder to read instead of the channel's own}; tests set it
+
+
+def uat_dir(label: str) -> Path:
+    """The channel's watch folder (channel.json `uat_dir`): what its env var names, else its folder in iCloud Drive."""
+    if label in UAT_DIRS:
+        return UAT_DIRS[label]
+    kept = (channels.get(slug_of(label)).get("uat_dir") or {}) if slug_of(label) else {}
+    return Path(os.environ.get(kept.get("env") or "", "") or ICLOUD / (kept.get("icloud") or f"{label} UAT"))
+
+
+def uploads_path(slug: str) -> Path | None:
+    return UPLOADS.get(slug) or channels.uploads_file(slug)
 PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
 WATCH_OK = ("https://studio-kanban.vercel.app/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
 VIDEO_EXT = (".mp4", ".mov", ".m4v")
@@ -752,10 +793,10 @@ def explicit_watch(w) -> dict | None:
 
 
 def newest_uat(ch: str, film: str) -> dict | None:
-    root = UAT_DIRS[ch]
+    root = uat_dir(ch)
     if not root.is_dir():
         return None
-    pat = re.compile(rf"^(hos_)?{film}[_\-]", re.I)
+    pat = re.compile(rf"^({re.escape(slug_of(ch))}_)?{film}[_\-]", re.I)  # a cut's name may open with its channel
     files = []
     try:
         for p in root.iterdir():
@@ -829,7 +870,7 @@ def env_files() -> list[Path]:
     (J0888, 23 Oct 2026), so the main checkout's is tried too: $ORBIT_REPO, then ~/YouTube/orbit-with-ben.
     scripts/watch_upload.mjs looks in the same places, in the same order."""
     roots = [ROOT, Path(os.environ["ORBIT_REPO"]) if os.environ.get("ORBIT_REPO") else None,
-             Path.home() / "YouTube" / "orbit-with-ben"]
+             channels.studio_checkout()]
     return [r / "07_Content-Ops" / ".env" for r in roots if r]
 
 
@@ -946,10 +987,10 @@ def release_record(film: str, root: Path | None = None) -> dict | None:
     return records[-1] if records else None
 
 
-def uploaded_long(film: str) -> dict | None:
+def uploaded_long(film: str, slug: str) -> dict | None:
     try:
-        vids = json.loads(UPLOADS.read_text()).get("videos", {})
-    except (OSError, ValueError):
+        vids = json.loads(uploads_path(slug).read_text()).get("videos", {})
+    except (OSError, ValueError, AttributeError):
         return None
     hits = [(vid, v) for vid, v in vids.items() if v.get("kind") == "long"
             and re.match(rf"02_Video-Projects/{film}_", str(v.get("packageDir") or v.get("file") or ""))]
@@ -1004,18 +1045,20 @@ def sign_watch_url(url: str, now: float | None = None, secret: str | None = None
     return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(q), ""))
 
 
-def watch_links(hos: dict, owb: list[dict], briefs: dict) -> dict:
-    """{"OWB:026": {url, version, label, kind, source[, alt, file]}} for every film with something to watch."""
+def watch_links(documents: dict, briefs: dict) -> dict:
+    """{"<LABEL>:026": {url, version, label, kind, source[, alt, file]}} for every film with something to watch.
+    `documents` is {slug: that channel's film document}; channels are taken in the registry's order."""
     out = {}
-    films = [("OWB", str(f.get("film", "")), f.get("watch")) for f in owb] + \
-            [("HOS", str(f.get("id", "")), f.get("watch")) for f in hos.get("films", [])]
-    for ch, film, own in films:
+    films = [(slug, channels.label(slug), film, f.get("watch"))
+             for slug in channels.slugs() if slug in documents for film, f in film_rows(slug, documents[slug])]
+    for slug, ch, film, own in films:
         if not re.fullmatch(r"\d{3}", film):
             continue
         key = f"{ch}:{film}"
         w = explicit_watch(own) or explicit_watch((briefs.get(key) or {}).get("watch"))
         if not w:
-            yt = uploaded_long(film) if ch == "OWB" else None
+            # A one-file channel's long is read back onto its film by attach_pipeline_uploads, not from here.
+            yt = None if one_file(slug) else uploaded_long(film, slug)
             uat = newest_uat(ch, film)
             if yt and uat and version_key(uat["version"]) > version_key(yt["version"]):
                 yt = None  # a newer cut than the upload is waiting: that's the one to watch
@@ -1039,14 +1082,14 @@ def ask_watch(e: dict) -> dict | None:
     f = (e.get("file") or "").strip()
     if not f:
         return None
-    cands = [Path(f)] if f.startswith("/") else [ICLOUD / f, ROOT / f, Path.home() / "YouTube" / "orbit-with-ben" / f]
+    cands = [Path(f)] if f.startswith("/") else [ICLOUD / f, ROOT / f, channels.studio_checkout() / f]
     pick = next((c for c in cands if c.is_file()), None)
     if pick is None:
         return None
     rel = pick.relative_to(ICLOUD).as_posix() if ICLOUD in pick.parents else str(pick)
     wid = watch_register().get(rel)
     if not wid:
-        wid = watch_id(e.get("channel", "owb"), e["id"], e.get("version") or version_of(pick.name), pick.name)
+        wid = watch_id(e.get("channel", channels.default()), e["id"], e.get("version") or version_of(pick.name), pick.name)
         if not auto_upload(wid, pick, rel):
             return None
     return {"url": sign_watch_url(f"{SITE_URL}/api/watch?v={wid}"), "version": e.get("version") or version_of(pick.name),
@@ -1082,12 +1125,12 @@ def approved_doc(alljobs: list[dict]) -> list[dict]:
     return out
 
 
-def attach_hos_uploads(hos_root: Path, hos: dict) -> None:
-    """Give each HOS film its long's YouTube read-back from HOS UPLOADS.json (Ben, 25 Oct 2026 22:54: "Why is it in
-    progress on the board"). Without it a Private + scheduled HOS long had no YouTube state on the board, so a job that
-    only waits for the film to go public kept the card in In progress."""
+def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
+    """Give each film of a one-file channel its long's YouTube read-back from that channel's own UPLOADS.json (Ben,
+    25 Oct 2026 22:54: "Why is it in progress on the board"). Without it a Private + scheduled long had no YouTube
+    state on the board, so a job that only waits for the film to go public kept the card in In progress."""
     try:
-        vids = json.loads((hos_root / "00_Brand/Channel-Setup/social/UPLOADS.json").read_text()).get("videos", {})
+        vids = json.loads((root / "00_Brand/Channel-Setup/social/UPLOADS.json").read_text()).get("videos", {})
     except (OSError, ValueError, AttributeError):
         return
     best: dict[str, dict] = {}
@@ -1102,115 +1145,132 @@ def attach_hos_uploads(hos_root: Path, hos: dict) -> None:
         cur = best.get(film)
         if not cur or (bool(row["publishAt"]), row["registeredAt"]) > (bool(cur["publishAt"]), cur["registeredAt"]):
             best[film] = row
-    for f in hos.get("films") or []:
+    for f in pipeline.get("films") or []:
         row = best.get(str(f.get("id") or ""))
         if row:
             f["upload"] = row
 
 
+def read_documents(roots: dict) -> dict:
+    """{slug: that channel's film document}, each read from its checkout the way the channel keeps it."""
+    documents = {}
+    for slug, root in roots.items():
+        if one_file(slug):
+            doc = json.loads((root / kept_at(slug)).read_text())
+            if not isinstance(doc.get("films"), list):
+                raise SystemExit(f"{root / kept_at(slug)} has no films list; nothing written")
+            attach_pipeline_uploads(root, doc)
+        else:
+            doc = [json.loads(p.read_text()) for p in sorted(root.glob(kept_at(slug)))] if kept_at(slug) else []
+            for film in doc:
+                receipt = release_record(str(film.get("film", "")), root)
+                if receipt:
+                    film["release"] = receipt
+        documents[slug] = doc
+    return documents
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("page", type=Path, nargs="?")
-    ap.add_argument("--hos", type=Path, required=True, help="history-of-science checkout on main")
-    ap.add_argument("--out", type=Path, default=None)
-    ap.add_argument("--db-out", type=Path, default=None, help="write hos.json and owb.json store documents here")
-    ap.add_argument("--chief", default="", help="acting Chief from the relay's last thread line, e.g. Cursor (into owb.json)")
+    for slug in channels.slugs():
+        here = channels.checkout(slug) == ROOT  # the channel this checkout belongs to is read from it
+        ap.add_argument(f"--{slug}", dest=slug, type=Path, required=not here, default=ROOT if here else None,
+                        help=f"{channels.name(slug)}: its checkout on main" + (" (default: this one)" if here else ""))
+    ap.add_argument("--db-out", type=Path, required=True, help="write the store documents here, one <slug>.json per channel")
+    ap.add_argument("--chief", default="", help="acting Chief from the relay's last thread line, e.g. Cursor (into the queue's document)")
     ap.add_argument("--chief-since", default="", help="ISO time that agent became Chief")
     ap.add_argument("--chief-next", default="", help="comma list: next in line")
     ap.add_argument("--chief-note", default="", help="one short line, e.g. Grok Bot out of credit")
     a = ap.parse_args(argv)
-    hos = json.loads((a.hos / "00_Brand/Channel-Setup/PIPELINE.json").read_text())
-    if not isinstance(hos.get("films"), list):
-        raise SystemExit("PIPELINE.json has no films list; not touching the page")
-    attach_hos_uploads(a.hos, hos)
-    owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
-    for film in owb:
-        receipt = release_record(str(film.get("film", "")))
-        if receipt:
-            film["release"] = receipt
-    if a.db_out:
-        from datetime import datetime, timezone
-        now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-        a.db_out.mkdir(parents=True, exist_ok=True)
-        add_since_hos(a.hos, hos)
-        route_hos_stages(hos)
-        add_since_owb(owb)
-        (a.db_out / "hos.json").write_text(json.dumps({"updatedAt": now, "pipeline": hos}, ensure_ascii=False))
-        q = ROOT / "jobs" / "queue.json"
-        alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
-        learn_estimates(alljobs)
-        focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
-        ro = run_order(alljobs, focus)
-        gate = gates(alljobs)
-        typ = typical_minutes(alljobs)
-        live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model", "due", "created_at", "backlog", "awaits_ben", "approved_from", "dependency_problem", "hold", "remaining_action", "recheck_of")},
-                     taskKeys=j.get("taskKeys", []),
-                     line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
-                     waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
-                     gateOnly=bool(re.search(r"\bdate gate\b", j.get("title", ""), re.I)),
-                     last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
-                     claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
-                     addedAt=(j.get("history") or [{}])[0].get("at", ""),
-                     workStart=work_start(j), progress=job_progress(j),
-                     estMin=est_minutes(j), typMin=typ.get(kind_key(j), typ["_default"]), kindKey=kind_key(j),
-                     watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""),
-                     plain=_plain(j))
-                for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
-        lanes = lanes_info(alljobs)
-        hb = mini_heartbeat()
-        if hb:
-            lanes.setdefault("mini", {})["heartbeat"] = hb
-        for f in owb:
+    roots = {slug: vars(a)[slug] for slug in channels.slugs()}  # {slug: that channel's checkout}
+    documents = read_documents(roots)
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    a.db_out.mkdir(parents=True, exist_ok=True)
+    store = {}  # {slug: the document written as <slug>.json}
+    for slug, doc in documents.items():
+        if one_file(slug):
+            add_since_pipeline(roots[slug], doc, kept_at(slug))
+            route_pipeline_stages(doc)
+            store[slug] = {"updatedAt": now, "pipeline": doc}
+        else:
+            add_since_status(doc, roots[slug], kept_at(slug))
+            store[slug] = {"updatedAt": now, "films": doc}
+    queue_slug = channels.queue_key()  # the document that also carries the studio's queue
+    for slug in store:
+        if slug != queue_slug:
+            (a.db_out / f"{slug}.json").write_text(json.dumps(store[slug], ensure_ascii=False))
+    q = ROOT / "jobs" / "queue.json"
+    alljobs = json.loads(q.read_text())["jobs"] if q.exists() else []
+    learn_estimates(alljobs)
+    focus = json.loads(q.read_text()).get("focus", []) if q.exists() else []
+    ro = run_order(alljobs, focus)
+    gate = gates(alljobs)
+    typ = typical_minutes(alljobs)
+    live = [dict({k: j.get(k, "") for k in ("id", "title", "needs", "status", "by", "eta", "eta_min", "repo", "film", "stage", "after", "ref", "result", "urgent", "for", "kind", "model", "due", "created_at", "backlog", "awaits_ben", "approved_from", "dependency_problem", "hold", "remaining_action", "recheck_of")},
+                 taskKeys=j.get("taskKeys", []),
+                 line=ro["pos"].get(j["id"], {}).get("line", line_of(j)), pos=ro["pos"].get(j["id"], {}).get("pos"),
+                 waitsFor=ro["pos"].get(j["id"], {}).get("waitsFor", ""), notBefore=gate.get(j["id"], ""),
+                 gateOnly=bool(re.search(r"\bdate gate\b", j.get("title", ""), re.I)),
+                 last=(j.get("history") or [{}])[-1],  # who touched it last, when, and their note (the board shows it)
+                 claimedAt=next((h["at"] for h in reversed(j.get("history") or []) if h["what"].startswith("claimed")), ""),
+                 addedAt=(j.get("history") or [{}])[0].get("at", ""),
+                 workStart=work_start(j), progress=job_progress(j),
+                 estMin=est_minutes(j), typMin=typ.get(kind_key(j), typ["_default"]), kindKey=kind_key(j),
+                 watch=makes_video(j), routedTo=routed_who(j.get("kind") or "", j.get("model") or ""),
+                 plain=_plain(j))
+            for j in alljobs if j["status"] in ("open", "claimed", "blocked")]
+    lanes = lanes_info(alljobs)
+    hb = mini_heartbeat()
+    if hb:
+        lanes.setdefault("mini", {})["heartbeat"] = hb
+    for slug, films in documents.items():
+        for f in ([] if one_file(slug) else films):
             if isinstance(f.get("next"), str):
                 f["next"] = chief_text(f["next"])
-        recent = sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
-                          "at": next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")}
-                         for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
-        doc = {"updatedAt": now, "films": owb, "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
-               "jobStates": {j["id"]: {"status": j.get("status", ""), "by": j.get("by", ""),
-                                      "at": (j.get("history") or [{}])[-1].get("at", "")} for j in alljobs},
-               "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
-               "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
-               "done": completed_jobs(alljobs)}
-        from video_progress import progress_document
-        doc["videoProgress"] = progress_document(ROOT, a.hos, alljobs, a.db_out)
-        if a.chief:
-            doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
-                            "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
-        (a.db_out / "owb.json").write_text(json.dumps(doc, ensure_ascii=False))
-        # board/credits (Ben, 8 Oct): the AI spend month from scripts/ai_spend.py, plus HOS's own credit checks
-        sys.path.insert(0, str(ROOT / "scripts"))
-        import ai_spend
-        credits = ai_spend.build_doc(ai_spend.load())
-        credits["hosChecks"] = hos.get("credits", [])
-        credits["miniWork"] = mini_work(alljobs, (credits.get("pools", {}).get("cursor", {}) or {}).get("since")
-                                        or json.loads(ai_spend.PLANS.read_text()).get("poolStarts", {}).get("cursor", "2026-10-08"))
-        (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
-        briefs = load_briefs()
-        links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k in ("uatFolderUrl", "extraWatch")} if BRIEFS.exists() else {}
-        watch = watch_links(hos, owb, briefs)
-        briefs = ben_handoffs(chief_reviews(route_steps(hos_job_steps(briefs, alljobs), alljobs)), watch)
-        asks = asks_doc(alljobs)  # jobs waiting on Ben (awaits_ben), with their Play links
-        approved = approved_doc(alljobs)  # cuts Ben OK'd, on their way (approved_from), with their Play links
-        (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, "asks": asks,
-                                                          "approved": approved, **links},
-                                                         ensure_ascii=False))
-        # Per-video five-lane tracker (Ben, 24 Oct 2026). Checks are empty here; board_publish re-derives with live ticks.
-        from video_tracker import build_videos
-        tracker = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=alljobs, checks={}, watch=watch, asks=asks,
-                               approved=approved, alljobs=alljobs)
-        (a.db_out / "tracker.json").write_text(json.dumps(tracker, ensure_ascii=False))
-        print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {a.db_out}/hos.json ({len(hos['films'])} HOS films), {a.db_out}/owb.json ({len(owb)} OWB films), "
-              f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "
-              f"{a.db_out}/tracker.json ({len(tracker.get('videos') or [])} videos)")
-        if not a.page:
-            return 0
-    if not a.page:
-        raise SystemExit("give a page file, --db-out, or both")
-    old = a.page.read_text()
-    new = rebuild(old, hos, owb)
-    (a.out or a.page).write_text(new)
-    print("unchanged" if new == old else f"updated: HOS {hos.get('updated')} ({len(hos['films'])} films), OWB {len(owb)} films")
+    recent = sorted(({"id": j["id"], "title": j.get("title", ""), "film": j.get("film", ""), "by": j.get("by", ""),
+                      "at": next((h["at"] for h in reversed(j.get("history") or []) if str(h.get("what", "")).startswith("done")), "")}
+                     for j in alljobs if j.get("status") == "done"), key=lambda r: r["at"], reverse=True)[:5]
+    doc = {**store[queue_slug], "jobs": live, "lanes": lanes, "focus": focus, "runOrder": ro["lines"], "recent": recent,
+           "jobStates": {j["id"]: {"status": j.get("status", ""), "by": j.get("by", ""),
+                                  "at": (j.get("history") or [{}])[-1].get("at", "")} for j in alljobs},
+           "estimates": {(", ".join(EST[k][0][:2]) if k >= 0 else "other"): m for k, m in sorted(LEARNED.items())},
+           "routing": routing_doc(), "typical": typ, "day": day_numbers(alljobs), "week": week_numbers(alljobs),
+           "done": completed_jobs(alljobs)}
+    from video_progress import progress_document_all
+    doc["videoProgress"] = progress_document_all(roots, alljobs, a.db_out)
+    if a.chief:
+        doc["chief"] = {"name": a.chief, "since": a.chief_since, "note": a.chief_note,
+                        "next": [x.strip() for x in a.chief_next.split(",") if x.strip()]}
+    (a.db_out / f"{queue_slug}.json").write_text(json.dumps(doc, ensure_ascii=False))
+    # board/credits (Ben, 8 Oct): the AI spend month from scripts/ai_spend.py, plus the credit checks a one-file
+    # channel keeps in its PIPELINE.json (the page reads them under the key it has always had)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import ai_spend
+    credits = ai_spend.build_doc(ai_spend.load())
+    credits["hosChecks"] = [c for slug, d in documents.items() if one_file(slug) for c in d.get("credits", [])]
+    credits["miniWork"] = mini_work(alljobs, (credits.get("pools", {}).get("cursor", {}) or {}).get("since")
+                                    or json.loads(ai_spend.PLANS.read_text()).get("poolStarts", {}).get("cursor", "2026-10-08"))
+    (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
+    briefs = load_briefs()
+    links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k in ("uatFolderUrl", "extraWatch")} if BRIEFS.exists() else {}
+    watch = watch_links(documents, briefs)
+    briefs = ben_handoffs(chief_reviews(route_steps(queue_job_steps(briefs, alljobs), alljobs)), watch)
+    asks = asks_doc(alljobs)  # jobs waiting on Ben (awaits_ben), with their Play links
+    approved = approved_doc(alljobs)  # cuts Ben OK'd, on their way (approved_from), with their Play links
+    (a.db_out / "briefs.json").write_text(json.dumps({"updatedAt": now, "films": briefs, "watch": watch, "asks": asks,
+                                                      "approved": approved, **links},
+                                                     ensure_ascii=False))
+    # Per-video five-lane tracker (Ben, 24 Oct 2026). Checks are empty here; board_publish re-derives with live ticks.
+    from video_tracker import build_videos
+    tracker = build_videos(documents=documents, briefs=briefs, jobs=alljobs, checks={}, watch=watch, asks=asks,
+                           approved=approved, alljobs=alljobs)
+    (a.db_out / "tracker.json").write_text(json.dumps(tracker, ensure_ascii=False))
+    per_channel = ", ".join(f"{a.db_out}/{slug}.json ({len(film_rows(slug, d))} {channels.label(slug)} films)"
+                            for slug, d in documents.items())
+    print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {per_channel}, "
+          f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "
+          f"{a.db_out}/tracker.json ({len(tracker.get('videos') or [])} videos)")
     return 0
 
 
