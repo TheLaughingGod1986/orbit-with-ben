@@ -227489,10 +227489,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T15:14Z",
+      "eta": "2026-11-11T17:14Z",
       "created_by": "claude",
       "created_at": "2026-11-11T15:12Z",
       "result": "",
@@ -227501,12 +227501,25 @@
           "at": "2026-11-11T15:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T15:14Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved",
       "due": "2026-11-12T11:00:00Z",
       "kind": "review",
-      "plain": "Get the picture tool ready to remake the last gravity film shot, if the one before it passes"
+      "plain": "Get the picture tool ready to remake the last gravity film shot, if the one before it passes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T15:14Z",
+        "by": "claude",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
