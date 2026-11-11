@@ -221423,10 +221423,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-11T23:10Z",
-      "eta": "2026-11-12T04:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -221555,6 +221555,11 @@
           "at": "2026-11-11T23:30Z",
           "by": "gemini",
           "what": "step 0 of 14 done: Batch 1 launched detached (tmux hos013-pass1, --floor 3000); all 5 start stills verified at 0 credits (balance 10440); Take 1 P01_01_study_beaks_t1.mp4 watched end-to-end (price=100, sha256 37a68217...35c3 archived on NAS, balance 10440->10340 posted in account.jsonl); Row 2 underway"
+        },
+        {
+          "at": "2026-11-11T23:30Z",
+          "by": "gemini",
+          "what": "released: batch 1 running detached (tmux hos013-pass1): /Users/benjaminoats/_desk/logs/J2529-batch01-20261111T2320Z.log, /Users/benjaminoats/_desk/logs/J2529-batch01-20261111T2320Z.done"
         }
       ],
       "remaining_action": "Read Batch 1 done file and receipt, record step 1 of 14, build 0.5s contact sheets, and launch Batch 2 of 14 under --floor 3000",
