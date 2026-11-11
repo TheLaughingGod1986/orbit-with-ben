@@ -217099,20 +217099,25 @@
           "at": "2026-11-11T20:30Z",
           "by": "codex",
           "what": "step 3 of 4 done: Automated opening/whole-Short gate PASS: cut1 2.10s, onset .08s, 0/19 and 0/37 padded frames. Voice, SFX, music, picture, polish and loop checks pass; warnings retained for Chief."
+        },
+        {
+          "at": "2026-11-11T20:34Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Output ASR found a clipped date in inherited v02c splice. Restored 105ms from existing raw take; isolated ASR now reads November 24th. Preserving v02; rendering v03 on v02d voice, no new take/spend."
         }
       ],
-      "remaining_action": "Saving the verified Supermoon Short and handing it to Chief for review",
+      "remaining_action": "Rechecking the Supermoon Short after restoring the full date pronunciation",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
         "OWB:013"
       ],
       "progress": {
-        "step": 3,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T20:30Z",
+        "at": "2026-11-11T20:34Z",
         "by": "codex",
-        "note": "Automated opening/whole-Short gate PASS: cut1 2.10s, onset .08s, 0/19 and 0/37 padded frames. Voice, SFX, music, picture"
+        "note": "Output ASR found a clipped date in inherited v02c splice. Restored 105ms from existing raw take; isolated ASR now reads "
       }
     },
     {
