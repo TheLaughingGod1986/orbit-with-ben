@@ -53,7 +53,7 @@ Mini heartbeat (Ben, 8 Oct): every `run` also pushes one small file, heartbeat.j
 branch `mini-heartbeat` as a single parentless commit (force-pushed, so main's history stays clean). The Kanban reads
 it to tell "the Mini is busy on a long job" from "the Mini is asleep". CHIEF_HEARTBEAT=0 turns it off.
 Log: stdout (launchd sends it to ~/Library/Logs/chief-relay.log).
-Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (default "claude,chief,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
+Env (the defaults find the CLIs and the HOS checkout on Ben's Mini; set these only to override): CHIEF_CHAIN (orbit-with-ben, default "claude,chief,codex,gemini"), CHIEF_CHAIN_HOS (History of Science, default "chief,claude,codex,gemini"), CHIEF_HOURS (0-24: round the clock), CHIEF_CAP_S (1500), CHIEF_GROK_FRESH_MIN (180),
 CHIEF_RETRY_H (1), CHIEF_CLAUDE_OUT_H (5), CURSOR_CLAUDE_MODEL (routing.py), CURSOR_AGENT_BIN / CURSOR_AGENT_FLAGS ("-p --force"), CODEX_BIN (Codex's flags are fixed in cli_spec; CODEX_FLAGS is ignored), AGY_BIN,
 OWB_REPO, HOS_REPO, DESK_STATE, CHIEF_NOTIFY (command that posts a line; default owb_thread.py post).
 """
@@ -172,8 +172,11 @@ HOS = channels.repo_path("hos", HOME)
 # Ben, 21 Oct 2026: "build in a method where we identify dynamically if the acting chief is out and delegate a chief
 # until the main one or next in command is back". Claude is a standing link (up while its hourly heartbeat is fresh),
 # not only a dated override. Ben, 26 Oct 2026: Grok -> Claude -> Codex -> Gemini; Ben, 9 Nov 2026 (Claude now the
-# bigger plan): Claude -> Grok -> Codex -> Gemini. Cursor stays a worker.
+# bigger plan): Claude -> Grok -> Codex -> Gemini for orbit-with-ben. Cursor stays a worker.
+# Ben, 11 Nov 2026, desk #180: History of Science keeps the 26 Oct chain (Grok first). The 9 Nov chain stays
+# orbit-with-ben's. A status that names Claude on a repo:hos job means Grok is down.
 DEFAULT_CHAIN = "claude,chief,codex,gemini"
+HOS_CHAIN = "chief,claude,codex,gemini"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude",
          "claudecode": "Claude Code"}
 
@@ -218,8 +221,24 @@ def parse(s: str) -> dt.datetime:
     return t if t.tzinfo else t.astimezone()  # a bare local time from Ben's --until
 
 
-def chain() -> list:
-    return [a.strip() for a in os.environ.get("CHIEF_CHAIN", DEFAULT_CHAIN).split(",") if a.strip()]
+def chain(repo: str | None = None) -> list:
+    """orbit-with-ben uses CHIEF_CHAIN. A History of Science job (`repo: hos`) uses CHIEF_CHAIN_HOS."""
+    if repo == "hos":
+        raw = os.environ.get("CHIEF_CHAIN_HOS", HOS_CHAIN)
+    else:
+        raw = os.environ.get("CHIEF_CHAIN", DEFAULT_CHAIN)
+    return [a.strip() for a in raw.split(",") if a.strip()]
+
+
+def job_chain(job: dict | None) -> str | None:
+    """The chain a job elects on. None keeps orbit-with-ben's chain."""
+    if not job:
+        return None
+    try:
+        slug = channels.of_job(job)
+    except (OSError, ValueError, KeyError):
+        slug = str(job.get("repo") or "")
+    return "hos" if slug == "hos" else None
 
 
 def d(*parts) -> pathlib.Path:
@@ -498,13 +517,15 @@ def override(at: dt.datetime):
     return o if o.get("agent") and at < until else None
 
 
-def acting(at: dt.datetime):
+def acting(at: dt.datetime, repo: str | None = None):
     """The chain with each agent's state, and the first one that's up (or None). Ben's override (a Chief such as
-    Claude, who isn't woken on the Mini) comes after Grok and ahead of the Mini CLIs."""
-    rows = [(a,) + state_of(a, at) for a in chain()]
+    Claude, who isn't woken on the Mini) comes after Grok and ahead of the Mini CLIs. `repo="hos"` walks the
+    History of Science chain (Grok first)."""
+    order = chain(repo)
+    rows = [(a,) + state_of(a, at) for a in order]
     first = next((a for a, up, _ in rows if up), None)
     o = override(at)
-    if o and o.get("agent") in chain():
+    if o and o.get("agent") in order:
         return rows, first   # already a link in the chain: its own up/down state decides
     if o and o.get("agent") == "claude" and first != "chief":
         out, why = claude_out(at, read_json(OWB / "jobs" / "queue.json") or {})
@@ -517,9 +538,15 @@ def acting(at: dt.datetime):
     return rows, first
 
 
-def is_elected_chief(agent: str, at: dt.datetime) -> bool:
-    """Authority belongs to the elected role, never to a worker merely running a Chief's model."""
-    return bool(agent and acting(at)[1] == agent)
+def is_elected_chief(agent: str, at: dt.datetime, repo: str | None = None) -> bool:
+    """Authority belongs to the elected role, never to a worker merely running a Chief's model.
+    `repo="hos"` asks who is Chief for History of Science, which can differ from orbit-with-ben."""
+    return bool(agent and acting(at, repo)[1] == agent)
+
+
+def elected_for(agent: str, at: dt.datetime, job: dict | None) -> bool:
+    """True when `agent` is the Chief for this job's channel."""
+    return is_elected_chief(agent, at, job_chain(job))
 
 
 def chief_fingerprint(job: dict) -> str:
@@ -548,13 +575,15 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     by_id = {j["id"]: j for j in data.get("jobs", [])}
     due = workflow.deadlines(data.get("jobs", []))
     capabilities = worker_capabilities()
-    leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
+    owb_leader = acting(at)[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
+    hos_leader = acting(at, "hos")[1] if any(j.get("required_capabilities") for j in data.get("jobs", [])) else ""
     from workflow_board import load_tracker
     tracker = load_tracker()
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
-                   and not workflow.capability_problem(j, leader, at, capabilities)
+                   and not workflow.capability_problem(
+                       j, hos_leader if job_chain(j) == "hos" else owb_leader, at, capabilities)
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
                   key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
@@ -583,7 +612,9 @@ def record_chief_attempt(job: dict, agent: str, at: dt.datetime) -> None:
 
 def review_progress(agent: str, job: str, step: int, note: str, at: dt.datetime) -> None:
     active = read_json(d("active.json")) or {}
-    if not is_elected_chief(agent, at) or active.get("agent") != agent or active.get("job") != job or not active.get("expiresAt") or parse(active["expiresAt"]) <= at:
+    data = read_json(OWB / "jobs" / "queue.json") or {}
+    row = next((j for j in data.get("jobs", []) if j.get("id") == job), None)
+    if not elected_for(agent, at, row) or active.get("agent") != agent or active.get("job") != job or not active.get("expiresAt") or parse(active["expiresAt"]) <= at:
         raise ValueError("Only the elected Chief may update its active review")
     if not 0 <= step <= 3:
         raise ValueError("Review steps are 0-3: inputs checked, evidence reviewed, ruling recorded")
@@ -593,9 +624,11 @@ def review_progress(agent: str, job: str, step: int, note: str, at: dt.datetime)
     write_json(d("active.json"), active)
 
 
-def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> None:
-    """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery."""
-    previous = read_json(d("inbox.json")) or {}
+def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> None:
+    """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery.
+    History of Science duties use a separate file when its Chief is not orbit-with-ben's."""
+    dest = dest or d("inbox.json")
+    previous = read_json(dest) or {}
     rows = [{"id": j["id"], "title": j.get("title", ""), "fingerprint": chief_fingerprint(j)} for j in items]
     same = previous.get("agent") == leader and previous.get("jobs") == rows
     since = previous.get("since") if same else iso(at)
@@ -619,15 +652,15 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime) -> Non
                           "; ".join(j["id"] + " " + j.get("title", "")[:120] for j in items) +
                           ". Resolve or delegate these before ordinary work; record each decision on its job."):
             sent = iso(at)
-    write_json(d("inbox.json"), {"at": iso(at), "agent": leader, "since": since, "progress_at": progress,
-                                 "notified_at": sent, "jobs": rows, "waiting": waiting})
+    write_json(dest, {"at": iso(at), "agent": leader, "since": since, "progress_at": progress,
+                      "notified_at": sent, "jobs": rows, "waiting": waiting})
 
 
-def chief_delivery_overdue(agent: str | None, at: dt.datetime) -> bool:
+def chief_delivery_overdue(agent: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> bool:
     """An app/cloud Chief that leaves delivered duties untouched yields to the next Chief."""
     if not cloud_chief(agent):
         return False
-    inbox = read_json(d("inbox.json")) or {}
+    inbox = read_json(dest or d("inbox.json")) or {}
     if inbox.get("agent") != agent or not inbox.get("notified_at"):
         return False
     data = read_json(OWB / "jobs" / "queue.json") or {}
@@ -659,7 +692,7 @@ WORKER_AUTHORITY = """You are a WORKER, not the elected Chief. No final OK or PA
 or the Never list. Park protected calls with jobs.py block <id> --agent {agent} --reason "parked for Chief: ..." --git.
 A model or task fallback does not grant Chief authority. Real money and Ben's watch of a finished cut stay with Ben; everything
 else you can't decide goes to the Chief, never to Ben (AGENTS.md, 5 Nov 2026)."""
-CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's order (26 Oct 2026, reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini.
+CHIEF_AUTHORITY = """You are the ELECTED ACTING CHIEF under Ben's order ({order}).
 You may make the ordinary Chief decisions (reviews, PASS, merges and final OKs) within the existing channel rules.
 Do not park a decision merely because Grok or Claude is unavailable. Check chief_relay.py status again before a
 protected call; if a higher-priority Chief has returned, hand the decision back. Use your own agent id, never chief.
@@ -669,8 +702,10 @@ private or internal copies (iCloud UAT, the board's watch store, checksum-verifi
 Never park a job for Ben's OK on anything else."""
 
 
-def authority_prompt(agent: str, leader: str | None) -> str:
-    return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent)
+def authority_prompt(agent: str, leader: str | None, repo: str | None = None) -> str:
+    order = ("11 Nov 2026: Grok -> Claude -> Codex -> Gemini" if repo == "hos"
+             else "26 Oct 2026, reordered 9 Nov 2026: Claude -> Grok -> Codex -> Gemini")
+    return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent, order=order)
 
 
 def cloud_chief(who) -> bool:
@@ -1032,7 +1067,7 @@ def addressed_to(agent: str) -> list:
     return [j["id"] for j in q.get("jobs", []) if j.get("for") == agent and j.get("status") == "open"
             and not workflow.external_hold(j, at)
             and (not j.get("after") or by_id.get(j["after"], {}).get("status") == "done")
-            and (j.get("kind") != "chief" or is_elected_chief(agent, at))]
+            and (j.get("kind") != "chief" or elected_for(agent, at, j))]
 
 
 def next_job(agent: str):
@@ -1690,11 +1725,18 @@ def run_locked(at: dt.datetime) -> int:
         fetch_claude_beat(now())
         rows, who = acting(at)
         leader = who
+        hos_rows, hos_who = acting(at, "hos")
         handover(who, rows, at)
         alert_no_chief(who, rows, at)
         # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
-        write_json(d("chain.json"), {"at": iso(at), "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows]})
+        # `rows` stays the orbit-with-ben chain. History of Science is `hos`, so a board that reads `rows` is unchanged.
+        write_json(d("chain.json"), {"at": iso(at),
+                                     "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows],
+                                     "hos": {"chief": hos_who,
+                                             "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in hos_rows]}})
         log("chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in rows))
+        log("hos chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in hos_rows)
+            + f" chief={hos_who}")
         up = workers_up(at)
         worker_only = False
         if who is None:
@@ -1709,7 +1751,16 @@ def run_locked(at: dt.datetime) -> int:
         rerouted = reroute_work(at)
         # One deadline-first selector ranks Chief duties and production together; named workers retain eligibility.
         chief_inbox = pending_chief_reviews(at)
+        if hos_who != leader:
+            hos_inbox = [j for j in chief_inbox if job_chain(j) == "hos"]
+            chief_inbox = [j for j in chief_inbox if job_chain(j) != "hos"]
+            publish_chief_inbox(hos_inbox, hos_who, at, dest=d("inbox-hos.json"))
         publish_chief_inbox(chief_inbox, leader, at)
+        if hos_who != leader and chief_delivery_overdue(hos_who, at, dest=d("inbox-hos.json")):
+            mark_down(hos_who, "HOS Chief inbox delivered but not progressed within the acknowledgement window",
+                      at + stall_window(hos_who, at), at, kind="stalled")
+            log(f"HOS Chief duties: {hos_who} did not progress its inbox; electing the next History of Science Chief")
+            continue
         if chief_delivery_overdue(leader, at):
             mark_down(leader, "Chief inbox delivered but not progressed within the acknowledgement window",
                       at + stall_window(leader, at), at, kind="stalled")
@@ -1815,9 +1866,24 @@ def run_locked(at: dt.datetime) -> int:
             priority = (f"DISPATCH PRIORITY: claim only {job['id']} with python3 scripts/jobs.py next --id {job['id']} --agent {who} --can mini,gemini,any --git. "
                         "This is the shared deadline-first selection. Do not substitute an inbox, audit or ordinary jobs.py next choice. "
                         "If it is no longer claimable, stop; the relay will replan from the current queue.")
+        hos_job = bool(job and job_chain(job) == "hos")
+        if hos_job:
+            named = NAMES.get(hos_who, hos_who) or "No agent"
+            if who == hos_who:
+                why = (f"{named} is Chief for History of Science "
+                       "(Grok -> Claude -> Codex -> Gemini). "
+                       "A relay line that names someone else on a hos job means Grok is down.")
+            else:
+                why = (f"{named} is Chief for History of Science "
+                       "(Grok -> Claude -> Codex -> Gemini). You are its WORKER for this hos queue job. "
+                       "If this line names anyone but Grok Bot, Grok is down. "
+                       "In step 3 skip the channel check and the HOS desk inbox: do only the job "
+                       "`jobs.py next` gives you. If it exits 10, stop without posting")
+        auth_leader = hos_who if hos_job else leader
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
-                               owb=OWB, hos=HOS, authority=authority_prompt(who, leader), priority=priority,
-                               role="the elected acting Chief" if who == leader else "a specialist worker",
+                               owb=OWB, hos=HOS, authority=authority_prompt(who, auth_leader, "hos" if hos_job else None),
+                               priority=priority,
+                               role="the elected acting Chief" if who == auth_leader else "a specialist worker",
                                **rule_names())
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
@@ -1957,6 +2023,10 @@ def cmd_status(at: dt.datetime) -> int:
     for a, up, why in rows:
         print(f"{'>' if a == who else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     print(f"Chief: {NAMES.get(who, who) if who else 'nobody'}")
+    hrows, hwho = acting(at, "hos")
+    print(f"HOS Chief: {NAMES.get(hwho, hwho) if hwho else 'nobody'} (Grok -> Claude -> Codex -> Gemini)")
+    for a, up, why in hrows:
+        print(f"  hos {'>' if a == hwho else ' '} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
     runner = read_json(d("runner.json")) or {}
     print(f"Runner: {runner.get('version', 'not reported')} / installed {code_version()} ({runner.get('state', 'unknown')})")
     duties = pending_chief_reviews(at)
