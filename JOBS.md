@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2594, J2270, J2590, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2596, J2597, J2598, J2594, J2590, J2270, J2599, J2592, J2593, J2583, J2584, J2586, J2587, J2242, J2595, J2550, J2035, J2037, J2040, J2230.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -76,10 +76,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2590 | any | claimed | gemini | 2026-11-11T12:46Z | 008 picture · qa · HOS 008: look at the two third takes on half-second sheets (three yes/no questions each) | J2241 |
-| J2592 | mini | open (after J2590) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
+| J2592 | mini | open (after J2599) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
 | J2593 | any | open (after J2592) | – | – | 008 picture · qa · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2594 | mini | open | – | – | Shorts gate: rerun the thirteen real Shorts with the twice-a-second count (the branch of #817) and post the table | J2579 |
 | J2595 | mini | open | – | – | Is Cursor out of credit or not? Run its command line once on the Mini and copy what it says | J2580 |
+| J2596 | mini | open | – | – | 008 picture · image · HOS 008: a new start picture for the salon shot (free), with the knuckle already near the glass tube and nothing loose in the air | J2241 |
+| J2597 | any | open (after J2596) | – | – | 008 picture · qa · HOS 008: check the new salon start picture before any credit is spent (three yes/no questions) | J2241 |
+| J2598 | mini | open (after J2597) | – | – | 008 picture · video · HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits) | J2241 |
+| J2599 | any | open (after J2598) | – | – | 008 picture · qa · HOS 008: look at the salon's fourth take on a half-second sheet and post it for Grok's PASS | J2241 |
 
 Recently finished:
 
