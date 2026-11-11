@@ -5,15 +5,15 @@
 - **Edited by the acting Chief, 11 Nov 2026:** the private-network addresses, the device list and a second person's account name were taken out before this report went on main. Nothing else was changed. The original is in pull request #750, which was closed without merging.
 - **Mode:** Read-only (`£0`, no system settings, accounts, FileVault, or Tailscale settings modified)
 - **Progress:**
-  - **MacBook Pro (`bens-macbook-pro`) checks (Item 6, Item 9, and repo LaunchAgent plist audit):** Completed by `macbook-2` at `2026-11-10T16:35Z`.
-  - **Mac mini (`ben-mac-mini`) local host checks (Items 1–8):** Completed by `gemini` on `ben-mac-mini` at `2026-11-11T02:55Z`.
+  - **MacBook Pro (`<macbook>`) checks (Item 6, Item 9, and repo LaunchAgent plist audit):** Completed by `macbook-2` at `2026-11-10T16:35Z`.
+  - **Mac mini (`<mini>`) local host checks (Items 1–8):** Completed by `gemini` on `<mini>` at `2026-11-11T02:55Z`.
 
 ---
 
-## 1. Sleep (Mac mini — `ben-mac-mini`)
+## 1. Sleep (Mac mini — `<mini>`)
 
 - **Command:** `pmset -g`
-- **Live output on `ben-mac-mini`:**
+- **Live output on `<mini>`:**
 
 ```text
 System-wide power settings:
@@ -40,7 +40,7 @@ Currently in use:
 
 ---
 
-## 2. Login & Post-Restart Recovery (`ben-mac-mini`)
+## 2. Login & Post-Restart Recovery (`<mini>`)
 
 - **Automatic login (`defaults read /Library/Preferences/com.apple.loginwindow autoLoginUser`):**
   - **Enabled** for account: `benjaminoats`
@@ -54,10 +54,10 @@ Currently in use:
 
 ---
 
-## 3. Disk Encryption (`ben-mac-mini`)
+## 3. Disk Encryption (`<mini>`)
 
 - **Command:** `fdesetup status`
-- **Live output on `ben-mac-mini`:**
+- **Live output on `<mini>`:**
 
 ```text
 FileVault is Off.
@@ -71,14 +71,14 @@ FileVault is Off.
 
 ## 4. Accounts
 
-- **One-line summary (account names only):** On `ben-mac-mini`, all agents run as `benjaminoats`, which is the same account Ben uses himself (the Mini has one other non-system local account, which no agent uses); on `bens-macbook-pro`, all agents run as `ben`, which is also the same account Ben uses himself.
+- **One-line summary (account names only):** On `<mini>`, all agents run as `benjaminoats`, which is the same account Ben uses himself (the Mini has one other non-system local account, which no agent uses); on `<macbook>`, all agents run as `ben`, which is also the same account Ben uses himself.
 
 ---
 
-## 5. Remote Login (`ben-mac-mini`)
+## 5. Remote Login (`<mini>`)
 
 - **Commands:** `systemsetup -getremotelogin` and `launchctl print system/com.openssh.sshd`
-- **Live output on `ben-mac-mini`:**
+- **Live output on `<mini>`:**
   - `systemsetup -getremotelogin` requires administrator (`sudo`) privileges (`You need administrator access to run this tool... exiting!`).
   - `launchctl print-disabled system | grep ssh` and `launchctl print system/com.openssh.sshd` confirm Remote Login (`sshd`) is **On (enabled and listening on TCP port 22 via launchd socket activation)**:
 
@@ -112,7 +112,7 @@ Checked live on the Mini at `2026-11-11T02:52Z`. The addresses and the list of d
 
 ---
 
-## 7. Last Restart and Why (`ben-mac-mini`)
+## 7. Last Restart and Why (`<mini>`)
 
 - **`uptime`:**
 
@@ -138,9 +138,9 @@ shutdown ~                         Thu Sep  3 16:19
 
 ## 8. `launchd` Agents
 
-### 8a. Live `launchctl list` and `~/Library/LaunchAgents` on `ben-mac-mini`
+### 8a. Live `launchctl list` and `~/Library/LaunchAgents` on `<mini>`
 
-Live output of `launchctl list | grep -i owb` on `ben-mac-mini`:
+Live output of `launchctl list | grep -i owb` on `<mini>`:
 
 ```text
 -       0   com.owb.missed-runs
@@ -152,7 +152,7 @@ Live output of `launchctl list | grep -i owb` on `ben-mac-mini`:
 -       0   com.owb.tab-janitor
 ```
 
-Additional studio LaunchAgents loaded in `gui/501` on `ben-mac-mini`:
+Additional studio LaunchAgents loaded in `gui/501` on `<mini>`:
 
 ```text
 -       0   com.hos.cdp-browsers
@@ -180,7 +180,7 @@ Additional studio LaunchAgents loaded in `gui/501` on `ben-mac-mini`:
 
 *(Note: legacy September Cursor GUI worker plists `com.cursor.mac-mini-*.plist` also still sit in `~/Library/LaunchAgents` with `RunAtLoad = true`, `KeepAlive = true` and exit code `1`.)*
 
-### 8b. Live `launchctl list | grep -i owb` on MacBook Pro (`bens-macbook-pro`)
+### 8b. Live `launchctl list | grep -i owb` on MacBook Pro (`<macbook>`)
 
 ```text
 30599   0   com.owb.macbook-worker
@@ -195,9 +195,9 @@ Additional studio LaunchAgents loaded in `gui/501` on `ben-mac-mini`:
 
 ---
 
-## 9. The MacBook Pro (`bens-macbook-pro`) — `pmset -g` and Lid-Closed Behaviour
+## 9. The MacBook Pro (`<macbook>`) — `pmset -g` and Lid-Closed Behaviour
 
-### 9a. `pmset -g` and `pmset -g custom` on `bens-macbook-pro`
+### 9a. `pmset -g` and `pmset -g custom` on `<macbook>`
 
 ```text
 System-wide power settings:
@@ -239,7 +239,7 @@ Profile breakdown (`pmset -g custom` & `pmset -g sched`):
 
 ## Summary Table: Current vs. Target Settings for an Unattended Machine
 
-| Setting | What it is now (`ben-mac-mini` / `bens-macbook-pro`) | What it should be for a machine nobody sits at | Who can change it |
+| Setting | What it is now (`<mini>` / `<macbook>`) | What it should be for a machine nobody sits at | Who can change it |
 |---|---|---|---|
 | **Mini: System sleep (`sleep`)** | **`0`** (never sleeps; also held awake by `caffeinate`) | `0` (already right) | No change needed (**Ben** via `sudo pmset -a sleep 0`) |
 | **Mini: Disk sleep (`disksleep`)** | **`0`** (never sleeps) | `0` (already right) | No change needed (**Ben** via `sudo pmset -a disksleep 0`) |
@@ -251,5 +251,5 @@ Profile breakdown (`pmset -g custom` & `pmset -g sched`):
 | **Mini: Studio `launchd` agents (`RunAtLoad` / `KeepAlive`)** | `chief-relay` (`60s`), `board-publish` (`60s`), `missed-runs` (`1800s`), `tab-janitor` (`300s`), and `com.hos.cdp-browsers` (`300s`, ports `9222`/`9223`/`9460`) all have **`RunAtLoad = true`** and self-heal on interval. Legacy `com.orbit.studio-chrome-9223` (`/tmp` script) and old `com.cursor.mac-mini-*` plists are redundant | Already self-healing after reboot; optionally unload legacy `com.orbit.studio-chrome-9223` and old Sep `com.cursor.mac-mini-*` plists, and check `com.hos.cdp-browsers.plist` into git under `scripts/mini/` | **Agents** (user `~/Library/LaunchAgents`, no `sudo` needed) |
 | **Mini & MacBook: Account separation** | Agents run as `benjaminoats` on Mini and `ben` on MacBook (same account Ben uses himself) | Keep as-is (shares signed-in Chrome Studio profiles, Keychain, and agent CLIs without duplicate logins) | No change needed (**Ben** if a separate OS account is ever wanted) |
 | **Mini: Remote Login (`sshd`)** | **On** (`system/com.openssh.sshd` enabled, listening on TCP port 22) | On (already right: reachable over the private network) | No change needed (**Ben** via System Settings → Sharing) |
-| **Private network (`tailscale status`)** | Both `ben-mac-mini` and `bens-macbook-pro` online (`sh.brew.tailscale.plist` in `/Library/LaunchDaemons` on Mini) | Keep both online (already right) | No change needed |
+| **Private network (`tailscale status`)** | Both `<mini>` and `<macbook>` online (`sh.brew.tailscale.plist` in `/Library/LaunchDaemons` on Mini) | Keep both online (already right) | No change needed |
 | **MacBook: AC sleep & lid-closed behaviour** | AC `sleep = 0`, `womp = 1`; `AppleClamshellCausesSleep = Yes`; `sshd` off (`port 22 Connection refused`). Stays awake with lid closed **while docked to AC + external 5K display**; sleeps if lid is closed undocked | Keep clamshell sleep as-is (docked to AC + external display keeps worker running with lid closed; undocked lid-close sleeps safely before going in a bag). Optionally set `RunAtLoad = true` on `com.owb.macbook-worker.plist` | **Agents** (for `RunAtLoad = true` in `com.owb.macbook-worker.plist`); **Ben** if `disablesleep` or MacBook Remote Login is ever wanted |

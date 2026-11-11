@@ -28,7 +28,7 @@ Standing rules (not dated): `AGENTS.md` → **Film folders on the NAS**, **How f
 
 ## studio-live media (verified COMPLETE ~13:36 London 7 Nov 2026)
 
-Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` (Mini + MacBook). Live working films: `/Volumes/data/studio-live/`. Shipped archive: `/Volumes/data/mac-mini-archive/`. File Sharing `shared` is **not** the film library. Standing rules: `AGENTS.md` → **Film folders on the NAS**.
+Share: the NAS's NFS export at `/Volumes/data` (Mini + MacBook). Live working films: `/Volumes/data/studio-live/`. Shipped archive: `/Volumes/data/mac-mini-archive/`. File Sharing `shared` is **not** the film library. Standing rules: `AGENTS.md` → **Film folders on the NAS**.
 
 **Leftover working/upcoming copy → studio-live: COMPLETE** (all final copy exits **0**). Mini originals left in place; no deletes. Original nine were **not** blindly resynced (MacBook may have written newer files). Editorial copies do **not** authorise starting production.
 

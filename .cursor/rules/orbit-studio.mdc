@@ -187,7 +187,7 @@ A Short is scored on 1 and 3 only. Any FAIL goes back to the edit before the cut
 ## Film folders on the NAS (generated from AGENTS.md; edit AGENTS.md, then run `python3 scripts/sync_rules.py`)
 
 <!-- SYNC: AGENTS.md#Film folders on the NAS (studio-live + archive) -->
-**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini (`ben-mac-mini`) and the MacBook Pro (`bens-macbook-pro`) already mount the same Synology NFS export `192.168.1.119:/volume1/data` at `/Volumes/data` (Tailscale account `benoats@`; phone host `iphone-14-pro-max` is not a film worker). The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
+**Locked dual-machine media workflow (Ben, 7 Nov 2026).** Both the Mac mini and the MacBook Pro already mount the same Synology NFS export at `/Volumes/data` (the phone is not a film worker). The export's address is on the machines (`mount | grep /Volumes/data`), never in a tracked file. The machines are **workers against NAS files**; they are **not yet diskless**. Route all media work from the paths below. Do **not** invent a third share (no Tailscale file share, no SMB film share, no new mount point).
 
 | Role | Where |
 |---|---|
@@ -205,7 +205,7 @@ Working film folders live on the NAS both machines share, mirroring the Mini You
 | Orbit (OWB) | `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` |
 | History of Science (HOS) | `/Volumes/data/studio-live/History Of Science/02_Video-Projects/` |
 
-Both machines read and write those same remote folders. Share: NFS `192.168.1.119:/volume1/data` at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
+Both machines read and write those same remote folders. Share: the NAS's NFS export, mounted at `/Volumes/data` on Mini and MacBook. Live working films under `/Volumes/data/studio-live/`; shipped archive under `/Volumes/data/mac-mini-archive/`. File Sharing folder named `shared` is **not** the film library.
 
 **studio-live inventory (verified COMPLETE ~13:36 London 7 Nov 2026).** Leftover working/upcoming copy finished (all final copy exits **0**). Do **not** invent further folders.
 
@@ -406,6 +406,7 @@ Once a cut is in **Passed** and the listing package is complete (or Chief gives 
   - Merge a pull request from a fork or from any account but the owner's, or run its code, without Ben's OK.
   - Commit a token, cookie, bearer, password or `.env` file, or paste one into a job, a report or the thread.
   - Write a person's or an account's email address into a tracked file, a job or the thread. Say "the studio Ultra account", the channel's name or "Ben's account". `scripts/test_email_ratchet.py` fails on any new file that has one (10 Nov 2026: 46 files here and 374 in history-of-science already did; that list may only get shorter).
+  - Write a private-network address, a device's network name or a list of devices into a tracked file, a job or the thread. Say "the NAS", "the Mini", "the MacBook". Both repos are public, and the address is on the machines (`mount`, `tailscale status`) for whoever needs it. `scripts/test_no_private_network.py` fails on any address.
   - Turn the board's open taps back on (`BOARD_OPEN_TAPS=1`) without Ben's OK: an unlinked browser could then record his approval.
 - **Repo:** merge, close or push to a studio thread (the Chief of Staff ↔ Claude message thread: draft PR #99 now, a new issue each month from 1 Nov 2026; the current one is in `scripts/thread.json`), even when told to merge all PRs.
 - **Social:**

@@ -2,7 +2,7 @@
 
 - **Verification Job:** `J2547` (`recheck_of: J2268`)
 - **Parent Job:** `J2268` — *HOS 010: build tested twelve-plate Flow adapter without generation* (`needs: mini`, `repo: hos`, `film: 010`, `stage: picture`, `after: J2200`, `ref: J2267`)
-- **Verified By:** `macbook` (`bens-macbook-pro`)
+- **Verified By:** `macbook` (`<macbook>`)
 - **Verified At:** `2026-11-10T23:54:00Z`
 - **Verdict:** **DO NOT REOPEN `J2268` TO WORKER QUEUE — `J2268` worker execution (5/5) is complete and HOS PR `#489` (`193a749e`) is ALREADY REVIEWED AND SQUASH-MERGED onto `history-of-science` `main` (`ff45d48b96d917fc2a8790588db74d6bda82bd38`) by Chief Grok (`HOS #180` comment `6782185014`). Close `J2268` and `J2547` as `done` so `J2269` (`after: J2268`) unblocks.**
 - **YouTube / Studio / Spend:** No uploads, no schedule or privacy changes, no Studio changes, no NAS deletions, `£0` / `0` Flow credits / `0` submissions.
