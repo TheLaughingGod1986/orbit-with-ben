@@ -225326,19 +225326,24 @@
           "at": "2026-11-11T11:42Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2605; checking J2597 result and locating start frames for visual inspection"
+        },
+        {
+          "at": "2026-11-11T11:44Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Located both copies of 02_salon_spark_t4_start_try2.png (SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2) and original 02_salon_spark_t1.png (SHA256 aefd6338aded1037c11306a99fc580d1a62a66d9367409f01e0edd993cc8cc58)"
         }
       ],
-      "remaining_action": "Locate and inspect 02_salon_spark_t4_start_try2.png beside the old start frame 02_salon_spark_t1.png",
+      "remaining_action": "Visually inspect 02_salon_spark_t4_start_try2.png beside 02_salon_spark_t1.png against all three yes/no questions",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the second try at the starting picture for the Franklin salon shot",
       "urgent": 2,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T11:42Z",
+        "at": "2026-11-11T11:44Z",
         "by": "gemini",
-        "note": "Claimed J2605; checking J2597 result and locating start frames for visual inspection"
+        "note": "Located both copies of 02_salon_spark_t4_start_try2.png (SHA256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869"
       },
       "taskKeys": [
         "HOS:008"
