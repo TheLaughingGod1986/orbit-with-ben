@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2563 | mini | open | – | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
 | J2583 | mini | blocked | codex | – | 009 picture · video · HOS 009: remake three shots (falling Moon, apple, minute-and-second c1), 300 of the 400 credits, after Grok passes the board change | J2034 |
-| J2584 | any | open (after J2583) | – | – | 009 picture · qa · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
+| J2584 | mini | open (after J2583) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the three remade shots on half-second sheets of the whole clip (three yes/no questions each) | J2034 |
 | J2586 | mini | open (after J2584) | – | – | 009 picture · video · HOS 009: remake the last shot (minute-and-second c2) from c1's new last frame, 100 credits | J2582 |
 | J2587 | any | open (after J2586) | – | – | 009 picture · qa · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2592 | mini | open (after J2599) | – | – | 008 picture · assembly · HOS 008: place the contact spark on the salon's third take | J2241 |
