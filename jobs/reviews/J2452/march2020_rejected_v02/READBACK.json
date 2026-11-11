@@ -1,0 +1,51 @@
+{
+  "status": "CLOCK_AND_REPLACEMENT_READBACK_PASS",
+  "frames": 14829,
+  "replacements": [
+    {
+      "plate_id": "r32_sphere_dec",
+      "frames": 230,
+      "maximum_frame_error": 0.5391724537037037
+    },
+    {
+      "plate_id": "r36_orion_b",
+      "frames": 198,
+      "maximum_frame_error": 0.5591608796296297
+    }
+  ],
+  "unchanged_samples": [
+    {
+      "time_s": 5,
+      "mean_error": 0.3255439814814815
+    },
+    {
+      "time_s": 100,
+      "mean_error": 0.061516203703703705
+    },
+    {
+      "time_s": 250,
+      "mean_error": 0.5439351851851851
+    },
+    {
+      "time_s": 400,
+      "mean_error": 0.3316956018518519
+    },
+    {
+      "time_s": 471,
+      "mean_error": 0.5042650462962963
+    },
+    {
+      "time_s": 477,
+      "mean_error": 0.24241319444444445
+    },
+    {
+      "time_s": 490,
+      "mean_error": 0.3827314814814815
+    }
+  ],
+  "sha256": "dcc35b07f3601544136b5a58c394294090ba35252073dbe47b8aabb72c537b21",
+  "limitations": [
+    "Replacement compared every frame at 320x180; seven sparse samples elsewhere.",
+    "Not listening or moving-picture review; normal QA remains authoritative."
+  ]
+}
