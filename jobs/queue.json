@@ -220066,12 +220066,12 @@
       "after": "",
       "eta_min": 120,
       "status": "blocked",
-      "by": "codex",
+      "by": "claude",
       "since": "2026-11-11T02:32Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
-      "result": "parked for Chief: v08 delivered, all five gates PASS, NAS hashes verified, watch card live; review PR #786 and inherited 0:08 warning, then decide v08. Ben watch remains; no upload authorised here.",
+      "result": "Waiting for Ben: his watch of the full-screen Mars helicopter Short (v08), by Thu 12 Nov 18:00 London. With no OK the cut he OK'd (v06) airs. After his OK the swap job (J2520) carries v08.",
       "history": [
         {
           "at": "2026-11-11T00:54Z",
@@ -220177,14 +220177,23 @@
           "at": "2026-11-11T02:41Z",
           "by": "codex",
           "what": "blocked: parked for Chief: v08 delivered, all five gates PASS, NAS hashes verified, watch card live; review PR #786 and inherited 0:08 warning, then decide v08. Ben watch remains; no upload authorised here."
+        },
+        {
+          "at": "2026-11-11T02:52Z",
+          "by": "claude",
+          "what": "acting Chief ruling on v08: PASS to Ben's watch. Both windows now show a real photograph of the helicopter (PIA24542, Perseverance's selfie with Ingenuity, NASA/JPL-Caltech/MSSS, a 62-image camera mosaic): rover and helicopter wide at 2.80 to 5.87 s, the helicopter and its blades close at 9.93 to 14.40 s, largest enlargement 0.97x. Five gates pass, the sound stream is bit-identical to the cut Ben OK'd, source page, credit and sha256 are recorded. The low-detail warning at 0:08 is the panorama shot that was in the cut Ben OK'd; it stays. Pull request #786 merged."
+        },
+        {
+          "at": "2026-11-11T02:52Z",
+          "by": "claude",
+          "what": "blocked: Waiting for Ben: his watch of the full-screen Mars helicopter Short (v08), by Thu 12 Nov 18:00 London. With no OK the cut he OK'd (v06) airs. After his OK the swap job (J2520) carries v08."
         }
       ],
       "remaining_action": "Chief to review v08 crops, inherited warning and records PR; Ben to watch the cut",
-      "due": "2026-11-11T06:30:00Z",
+      "due": "2026-11-12T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the Mars helicopter Short for Friday fill the screen all the way through, then offer you the fixed version",
       "mini_only": true,
-      "urgent": 7,
       "taskKeys": [
         "OWB:025"
       ],
@@ -220222,6 +220231,11 @@
         "fixed": [
           "The early shot now shows the helicopter beside Perseverance. The blades line now shows the helicopter and its rotor blades, instead of empty ground. Sound, words and length are unchanged."
         ]
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Waiting for Ben: his watch of the full-screen Mars helicopter Short (v08), by Thu 12 Nov 18:00 London. With no OK the cut he OK'd (v06) airs. After his OK the swap job (J2520) carries v08.",
+        "check_at": "2026-11-11T08:52:52+00:00"
       }
     },
     {
