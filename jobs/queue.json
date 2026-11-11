@@ -228054,13 +228054,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 10,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-11T17:57Z",
-      "eta": "2026-11-11T18:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T15:57Z",
-      "result": "",
+      "result": "parked for Chief: Mini checkout repair stopped: fatal: 'main' is already used by worktree at '/Volumes/MiniWork/scratch/J2631-session'",
       "history": [
         {
           "at": "2026-11-11T15:57Z",
@@ -228176,6 +228176,11 @@
           "at": "2026-11-11T17:58Z",
           "by": "codex",
           "what": "step 1 of 3 done: Shared checkout clean; stash list preserved. git checkout main failed because main is used by /Volumes/MiniWork/scratch/J2631-session. Stopped as brief requires."
+        },
+        {
+          "at": "2026-11-11T17:58Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: Mini checkout repair stopped: fatal: 'main' is already used by worktree at '/Volumes/MiniWork/scratch/J2631-session'"
         }
       ],
       "remaining_action": "Chief to resolve main worktree occupancy before retrying the shared checkout repair",
