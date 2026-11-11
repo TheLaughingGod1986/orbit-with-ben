@@ -1681,12 +1681,11 @@ if __name__ == "__main__":
             documents[slug] = json.loads((base / kept["path"]).read_text())
             continue
         films = [json.loads(path.read_text()) for path in sorted(base.glob(kept["path"]))]
-        if base == ROOT:   # upload receipts are read from this checkout
-            from kanban_snapshot import release_record
-            for film in films:
-                rec = release_record(str(film.get("film", "")))
-                if rec:
-                    film["release"] = rec
+        from kanban_snapshot import release_record
+        for film in films:          # upload receipts are read from the channel's own checkout, as the snapshot does
+            rec = release_record(str(film.get("film", "")), base)
+            if rec:
+                film["release"] = rec
         documents[slug] = films
     briefs = json.loads(channels.studio_records("kanban", "film_briefs.json").read_text())["films"]
     jobs = json.loads((ROOT / "jobs" / "queue.json").read_text())["jobs"]
