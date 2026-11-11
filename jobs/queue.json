@@ -1,5 +1,5 @@
 {
-  "next_id": 2581,
+  "next_id": 2582,
   "jobs": [
     {
       "id": "J0001",
@@ -178028,6 +178028,11 @@
           "at": "2026-11-11T09:13Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: picture ruling on HOS 009 tranche 2 from jobs/reviews/J2034/REVIEW.md (2f6a1374ab). (1) KEEP or not on 17 clean rows; (2) trim or retake P02:10_how_high, P02:11_explorer_apple_c1, P03:01_really_falling_c1 (up to 300 credits, inside the J2026 cap); (3) record P05:11 callback as 0.30-7.00 s of P01:03_table_three (inside the J1237 0-7 lock); (4) order the continuation-join check and the code-graphic composites. 20 of 20 clips hash/decode clean. Stills and measurements only, no motion watched. No PASS given."
+        },
+        {
+          "at": "2026-11-11T09:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J2581"
         }
       ],
       "remaining_action": "Chief rules on the 17 rows, the 3 fixes and the P05:11 trim",
@@ -178052,7 +178057,13 @@
         "by": ""
       },
       "for": "claudecode",
-      "model": "mini-claude-opus-5-5"
+      "model": "mini-claude-opus-5-5",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T10:14:12+00:00",
+        "recheck_task": "J2581"
+      }
     },
     {
       "id": "J2035",
@@ -223506,6 +223517,37 @@
       "remaining_action": "Fix the Cursor and Claude usage readers from the copied page text",
       "due": "2026-11-13T18:00:00Z",
       "plain": "Fix the daily credit check so it can read the Cursor and Claude usage pages again"
+    },
+    {
+      "id": "J2581",
+      "title": "Verify condition for J2034",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2034: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2034 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T09:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T09:14Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief rules on the 17 rows, the 3 fixes and the P05:11 trim",
+      "kind": "review",
+      "recheck_of": "J2034",
+      "due": "2026-11-11T10:14:12+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
