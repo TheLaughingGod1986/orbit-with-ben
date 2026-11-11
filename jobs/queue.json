@@ -225299,10 +225299,10 @@
       "stage": "picture",
       "after": "J2604",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-11T11:42Z",
+      "eta": "2026-11-11T13:42Z",
       "created_by": "claude",
       "created_at": "2026-11-11T11:27Z",
       "result": "",
@@ -225316,13 +225316,26 @@
           "at": "2026-11-11T11:30Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's edit (desk 6794588620): question 3 also asks that the tube is at the old frame's angle; try 3's wording goes back to Grok; a third fail means option 2, no take 4."
+        },
+        {
+          "at": "2026-11-11T11:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Yes or no on try 2 of the start still; PASS lets the fourth take go",
       "due": "2026-11-11T22:00:00Z",
       "kind": "qa",
       "plain": "Check the second try at the starting picture for the Franklin salon shot",
-      "urgent": 2
+      "urgent": 2,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T11:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
