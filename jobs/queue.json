@@ -1,5 +1,5 @@
 {
-  "next_id": 2561,
+  "next_id": 2562,
   "jobs": [
     {
       "id": "J0001",
@@ -219366,6 +219366,11 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "the plan change this job waits for is J2558"
+        },
+        {
+          "at": "2026-11-11T06:21Z",
+          "by": "relay",
+          "what": "condition verification queued: J2561"
         }
       ],
       "remaining_action": "HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
@@ -219376,7 +219381,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (no Fast rows, runner refuses Fast, cap re-pinned) merged by Grok; J2033 done",
-        "check_at": "2026-11-12T19:30:00Z"
+        "check_at": "2026-11-11T07:21:05+00:00",
+        "recheck_task": "J2561"
       }
     },
     {
@@ -221687,6 +221693,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2561",
+      "title": "Verify condition for J2529",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: Flow credits reset (Thu 12 Nov 19:13 London) AND the 013 plan v02 pull request (no Fast rows, runner refuses Fast, cap re-pinned) merged by Grok; J2033 done. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T06:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T06:21Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: HOS 013 Darwin & Wallace: mint pass 1, the 71 rows of picture plan v01 (at most 5,030 Flow credits), with the reviewed runner",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "due": "2026-11-11T07:21:05+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
