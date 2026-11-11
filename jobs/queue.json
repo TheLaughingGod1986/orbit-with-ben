@@ -222414,13 +222414,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-11T08:45Z",
-      "eta": "2026-11-11T10:45Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:24Z",
-      "result": "",
+      "result": "parked for Chief: report in PR #809 (jobs/reviews/J2562/REPORT.md). All 13 Shorts as expected: 4 full-frame pass with warnings, all 9 padded still fail (bSjWiCbB7pY passes only via the OK'd-before-rule list). Two padded Shorts fail on the 15% figure alone and Wvjd8g0CpzE sits exactly at its limit. HOS desk post NOT made (hos_desk.py has no claudecode sender); text ready in jobs/reviews/J2562/DESK_POST.md for the Chief to post.",
       "history": [
         {
           "at": "2026-11-11T06:24Z",
@@ -222476,6 +222476,11 @@
           "at": "2026-11-11T08:50Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: report and desk text in pull request 809; thread report posted; desk post not made because the desk tool has no id for this worker"
+        },
+        {
+          "at": "2026-11-11T08:50Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: report in PR #809 (jobs/reviews/J2562/REPORT.md). All 13 Shorts as expected: 4 full-frame pass with warnings, all 9 padded still fail (bSjWiCbB7pY passes only via the OK'd-before-rule list). Two padded Shorts fail on the 15% figure alone and Wvjd8g0CpzE sits exactly at its limit. HOS desk post NOT made (hos_desk.py has no claudecode sender); text ready in jobs/reviews/J2562/DESK_POST.md for the Chief to post."
         }
       ],
       "remaining_action": "Chief reviews the report, posts the ready text on the History of Science desk and rules on the 15% figure",
