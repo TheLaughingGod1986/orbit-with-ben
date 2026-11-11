@@ -189,6 +189,68 @@ class ThirdChannelOnTheBoard(unittest.TestCase):
         self.assertEqual([(c["channel"], c["title"], c["type"]) for c in cards], [("SKY", "Orion", "long")])
 
 
+class TrackerAsksTheLoader(unittest.TestCase):
+    """J2525: video_tracker.py names no channel. What it used to know by name it asks here."""
+
+    def sky(self, **extra):
+        base = channels._load()
+        sky = dict(json.loads(_file("owb").read_text()), slug="sky", label="SKY", name="Night Sky", short="Sky",
+                   home=False, order=3, title_match=r"\bSKY\b", repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
+                   pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
+        sky.pop("shorts", None)
+        sky.update(extra)
+        return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
+
+    def test_the_label_for_a_repo_field(self):
+        self.assertEqual(channels.label_of_repo("hos"), channels.label("hos"))
+        self.assertEqual(channels.label_of_repo("HOS"), channels.label("hos"))
+        for nothing in (None, "", "nowhere"):
+            self.assertEqual(channels.label_of_repo(nothing), channels.home_label())
+        # unlike of_job, a title is never read: a home-channel job that mentions the other channel stays the home's
+        self.assertEqual(channels.label_of_repo(channels.home()), channels.home_label())
+
+    def test_planned_shorts_is_each_channels_own_setting(self):
+        self.assertEqual((channels.planned_shorts("owb"), channels.planned_shorts("hos")), (2, 4))   # Ben, 7 Nov 2026
+        with self.sky(shorts={"planned_per_long": 3}):
+            self.assertEqual(channels.planned_shorts("sky"), 3)
+            self.assertEqual(channels.planned_shorts("SKY"), 3)
+        with self.sky():
+            self.assertEqual(channels.planned_shorts("sky"), 0)       # names none, and has no cached copy
+
+    def test_a_checkout_behind_main_takes_the_setting_from_the_cached_copy(self):
+        # The Mini's checkout of a channel can sit on an old branch whose channel.json has no `shorts` yet. The board
+        # must not lose that channel's planned Shorts for it.
+        stale = tuple({k: v for k, v in c.items() if k != "shorts"} if c["slug"] == "hos" else c for c in channels._load())
+        with mock.patch.object(channels, "_load", lambda directory=None: stale):
+            self.assertEqual(channels.planned_shorts("hos"), 4)
+
+    def test_a_third_channel_plans_its_own_shorts_from_its_own_document(self):
+        import datetime as dt
+        import video_tracker as vt
+        doc = {"films": [{"id": "001", "title": "Orion", "air": "2027-01-10"}]}
+        with self.sky(shorts={"planned_per_long": 3}):
+            channels.key_re.cache_clear()
+            try:
+                out = vt.build_videos(briefs={}, jobs=[], checks={}, public={}, uploads={}, titles={}, overrides={},
+                                      now=dt.datetime(2026, 11, 11, tzinfo=dt.timezone.utc), documents={"sky": doc})
+                by_name = vt.build_videos(briefs={}, jobs=[], checks={}, public={}, uploads={}, titles={}, overrides={},
+                                          now=dt.datetime(2026, 11, 11, tzinfo=dt.timezone.utc), sky=doc)
+                with self.assertRaises(TypeError):
+                    vt.build_videos(briefs={}, jobs=[], checks={}, nowhere=doc)
+            finally:
+                channels.key_re.cache_clear()
+        cards = {v["key"]: v for v in out["videos"] if v["channel"] == "SKY"}
+        self.assertEqual(sorted(cards), ["SKY:001", "SKY:001:S:planned-1", "SKY:001:S:planned-2", "SKY:001:S:planned-3"])
+        self.assertEqual((cards["SKY:001"]["type"], cards["SKY:001"]["title"], cards["SKY:001"]["lane"]),
+                         ("long", "Orion", "upcoming"))
+        self.assertEqual([v["key"] for v in by_name["videos"]], [v["key"] for v in out["videos"]])
+
+    def test_the_tracker_names_no_channel(self):
+        import test_channel_ratchet as ratchet
+        source = (pathlib.Path(channels.__file__).parent / "video_tracker.py").read_text()
+        self.assertEqual((len(ratchet.channel_lines(source)), len(ratchet.home_lines(source))), (0, 0))
+
+
 class ThirdChannelInTheForecasts(unittest.TestCase):
     """J2521: uat_outlook, video_progress and channel_balance take a made-up third channel from the registry."""
 

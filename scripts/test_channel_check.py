@@ -37,6 +37,7 @@ class Settings(unittest.TestCase):
             "wip": {"wip": {"limit": 0, "line": "next_x"}}, "stages": {"stages": []},
             "pipeline": {"pipeline": {"kind": "spreadsheet", "path": "x"}}, "uat_dir": {"uat_dir": {}},
             "picture_route": {"picture_route": "anything"},
+            "shorts.planned_per_long": {"shorts": {"planned_per_long": -1}},
         }
         for field, change in cases.items():
             found = cc.settings_problems(good(**change))
@@ -157,6 +158,7 @@ class NewChannel(unittest.TestCase):
         self.assertEqual(c["wip"], {"limit": 3, "line": "next_deep_sea"})
         self.assertEqual(c["youtube"], {"handle": "@DeepSea"})
         self.assertEqual(c["picture_route"], "flow_only")  # a new channel starts on the route that cannot bill
+        self.assertEqual(c["shorts"], {"planned_per_long": 0})  # and with no places held for Shorts
         self.assertEqual(c["repo"], {"url": "", "env": "SEA_REPO", "checkouts": ["deep-sea"]})
         self.assertEqual(c["nas_folder"], "deep-sea")  # its NAS folder is its slug
 

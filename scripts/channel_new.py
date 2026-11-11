@@ -47,6 +47,7 @@ def settings(slug: str, label: str, name: str, handle: str = "", wip: int = 2, o
         "pipeline": {"kind": "film_status", "path": "02_Video-Projects/*/status.json"},
         "uat_dir": {"env": f"{label}_UAT_DIR", "icloud": f"{label} UAT"},
         "picture_route": "flow_only",
+        "shorts": {"planned_per_long": 0},
     }
 
 

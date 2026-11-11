@@ -17,6 +17,8 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
 - `stages`: the production stages, in order.
 - `picture_route`: where video and image jobs are minted. `flow_only` uses Flow on the AI Ultra credits, with no priced
   Vertex fallback (HOS). `flow_first` uses Flow, then Vertex inside the spend rules (OWB).
+- `shorts.planned_per_long`: how many Shorts each long video gets a place for on the board before they are made.
+  Left out, or 0, the board shows only the Shorts that exist. A new channel starts at 0.
 - `pipeline`: where its film state lives.
 - `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
 
