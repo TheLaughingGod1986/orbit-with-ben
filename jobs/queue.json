@@ -214579,9 +214579,14 @@
           "at": "2026-11-11T06:49Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: deleted all 136 branches in jobs/reviews/J2466/BRANCHES_owb.txt (in 3 batches: 50, 50, 36) plus macbook/J2517 (sha ac438cb8700e631d1df671d98159b4e2b384c497) in orbit-with-ben; 0 skipped, 0 errors"
+        },
+        {
+          "at": "2026-11-11T06:49Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: deleted all 58 branches in jobs/reviews/J2466/BRANCHES_hos.txt in History Of Science (in 2 batches: 50, 8); 0 skipped, 0 errors"
         }
       ],
-      "remaining_action": "Delete the branches named in BRANCHES_hos.txt in History Of Science (in batches of 50), verify counts, and report",
+      "remaining_action": "Verify remote branch counts after deletion in both repos and report results",
       "due": "2026-11-13T18:00:00Z",
       "kind": "review",
       "plain": "Remove hundreds of old, already-merged working branches from GitHub, after writing down how to bring any of them back.",
@@ -214589,11 +214594,11 @@
       "not_before": "2026-11-10T22:00:00Z",
       "escalated_at": "2026-11-11T05:35Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-11T06:49Z",
         "by": "gemini",
-        "note": "Step 1 complete: deleted all 136 branches in jobs/reviews/J2466/BRANCHES_owb.txt (in 3 batches: 50, 50, 36) plus macbook"
+        "note": "Step 2 complete: deleted all 58 branches in jobs/reviews/J2466/BRANCHES_hos.txt in History Of Science (in 2 batches: 50,"
       }
     },
     {
