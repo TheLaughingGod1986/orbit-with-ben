@@ -230904,19 +230904,24 @@
           "at": "2026-11-11T23:42Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Restored 011_Surgery-Before-Anaesthesia and hos_011_vo_v01.wav (plus MP3 and ch00-ch04 stems) into studio-live via rsync --partial --update; re-verified SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2 on studio-live; nothing moved or deleted"
+        },
+        {
+          "at": "2026-11-11T23:43Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Posted studio-live path, verified SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2, and full search log on HOS desk #180 (#issuecomment-6809930596)"
         }
       ],
-      "remaining_action": "Post restored studio-live path and SHA-256 on HOS desk #180 and close J2653",
+      "remaining_action": "Close J2653",
       "due": "2026-11-13T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Find the missing voice-over file for the Anaesthesia film and put a copy back where the edit needs it",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-11T23:42Z",
+        "at": "2026-11-11T23:43Z",
         "by": "gemini",
-        "note": "Restored 011_Surgery-Before-Anaesthesia and hos_011_vo_v01.wav (plus MP3 and ch00-ch04 stems) into studio-live via rsync"
+        "note": "Posted studio-live path, verified SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2, and full sea"
       },
       "taskKeys": [
         "HOS:011"
