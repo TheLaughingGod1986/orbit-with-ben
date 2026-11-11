@@ -1,5 +1,5 @@
 {
-  "next_id": 2604,
+  "next_id": 2606,
   "jobs": [
     {
       "id": "J0001",
@@ -178123,7 +178123,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 17
+      "urgent": 15
     },
     {
       "id": "J2036",
@@ -178256,7 +178256,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 18,
+      "urgent": 16,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178629,7 +178629,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 19,
+      "urgent": 17,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -187952,6 +187952,11 @@
           "at": "2026-11-11T11:12Z",
           "by": "relay",
           "what": "condition verification queued: J2602"
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T08:00:00Z"
         }
       ],
       "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -187968,10 +187973,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed",
-        "check_at": "2026-11-11T12:12:03+00:00",
-        "recheck_task": "J2602"
+        "type": "input",
+        "condition": "Film 009's picture is settled and its long is assembled: J2583 (three retakes), J2584 (their sheet check, KEEP), the fourth retake (J2586) and its check (J2587, KEEP), then J2035 (long assembly, score bed) done",
+        "check_at": "2026-11-12T08:00:00Z",
+        "last_recheck": "J2602",
+        "checked_at": "2026-11-11T11:27:00+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -192645,7 +192652,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 20,
+      "urgent": 18,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193524,7 +193531,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "urgent": 14
+      "urgent": 13
     },
     {
       "id": "J2243",
@@ -196130,7 +196137,7 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 6,
+      "urgent": 5,
       "progress": {
         "step": 2,
         "of": 3,
@@ -221948,7 +221955,7 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 16
+      "urgent": 14
     },
     {
       "id": "J2551",
@@ -224020,19 +224027,19 @@
       "title": "HOS 009: remake three shots (falling Moon, apple, minute-and-second c1), 300 of the 400 credits, after Grok passes the board change",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 10:22Z (Grok, desk 6793185344 point 5): film 008's two third takes (J2589) go ahead of these on the picture tool.\n\n**Ruled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. This paragraph wins over everything below it.**\n\n1. **Four shots are remade, one take each, 400 credits at most** (was 200): `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1`, and then `P04:05_minute_second_c2`. **This job makes the first three (300 credits).** The fourth continues from the third's last frame, so it has its own job after the third passes its sheet. No second take inside the 400: a take that fails comes back to Grok.\n2. `P02:11_explorer_apple_c1` is **kept** (the sheet shows one continuous camera move). Do not remake it.\n3. **The wording is already written:** the board change is its own job, done first, and it waits for Grok's PASS. Spend no credit before that PASS. Use the board as merged; change no wording here.\n4. **Order on the picture tool:** J2270's batches 2 and 3 run now. Once Grok's PASS is in, this job takes the lock at the next batch boundary: J2270 finishes the batch it is on and lets go. Order: `P03:01`, `P02:08`, `P04:05_c1`.\n5. **Before each Create:** the live balance and the exact price. If the balance is below the floor plus that shot's price, stop and post it on the desk.\n6. Archive each take with its hash and write the ledger rows and evidence as J2033 did. Do not judge the pictures: each take gets a half-second sheet of the whole clip in the check that follows.\n\n**Amended by Grok (History of Science desk 6792364829, queue side 11 Nov 09:46Z). This replaces the apple shot's motion line in point 3 below.** For `P02:08_the_apple_c1`, change only the motion line, to: \"The apple that already fell lies still in the grass for the entire shot and never moves. A second green apple with a red flush drops once from a branch straight down and lands in the grass beside it. Exactly two apples in the shot at the end. Nothing moves upward at any moment, and no apple returns to the branch.\" The row's usual closing lines stay after it. Money and order are unchanged: 200 credits at most, `P03:01` and `P02:08` first, `P02:11` parked if the sheets call for all three.\n\n**Changed by Grok's rulings (History of Science desk 6792282370 and 6792304982, queue side by the acting Chief, 11 Nov 09:35Z). Where this differs from the text below, this wins.**\n\n1. **`P03:01_really_falling_c1`: use Grok's wording**, then the row's usual closing lines: \"Same shot continues from the last frame of 01_really_falling. The camera drifts slowly. The same plain pale Moon stays in the sky above the orchard for the entire shot and glides gently sideways and downward along one smooth curve. A single thin curved line draws itself beneath the Moon, following its path. The Moon never fades, never changes size or colour, and never leaves the frame. No ball, no apple, no second object, no second line, no marks or face on the Moon.\"\n2. **`P02:11_explorer_apple_c1`, if the sheet calls its move a jump:** change only the closing \"No Explorer\" to \"Exactly one Explorer, on model\". Leave the rest of the row's prompt as it is.\n3. **`P02:08_the_apple_c1`, only if the sheet check wrote \"retake\" beside it:** same pull request, changing only the motion line to: \"The apple only falls, once, from the branch straight down to the grass. It never rises, never bounces back up, and never returns to the branch.\" The usual closing lines stay.\n4. **Money is unchanged: 200 credits at most**, one take a row. If the sheets call for three rows, make `P03:01` and `P02:08` and park `P02:11` for the Chief. No credit before Grok's PASS on the pull request.\n\nRuled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Runs on the Mini's Flow browser under J2033's runner and every guard in `TRANCHE2_SCOPE_J2026.json` (three takes a row, 100 credits a take, the 3,000 floor, live balance and price before each take, one output a take). Subscription credits only. **200 credits at most.** Never beside another Flow submit: film 008's second takes (J2575) go first if they have not run, and wait for any J2270 batch that holds the writer lock.\n\n1. **`P03:01_really_falling_c1`, take 2.** In take 1 the Moon fades at about 3.5 s and a ball rides the curve, under the line \"It really is falling. It just never lands.\" Same start frame (the last frame of `P03:01_really_falling`) and settings. Wording, in the board's own style: \"Same shot continues from the last frame of 01_really_falling, camera drifts slowly: the same plain pale Moon stays in the sky above the orchard for the whole shot and slides gently sideways and down along a smooth curve. One thin curved line draws under it. The Moon never fades, never changes and never leaves the frame. No ball, no second object, no second line, no mark on the Moon's face.\" Keep the board's usual closing lines.\n2. **`P02:11_explorer_apple_c1`, take 2, only if the sheet check before this job called its move at 4.0 s a jump.** If it was kept, do not remake it. If it is remade: same start frame and settings; the Explorer keeps holding the apple up beside the pale Moon and looks from one to the other; the camera drifts slowly with no sudden move; and the row's closing line reads \"Exactly one Explorer, on model: round gold glasses, teal long coat, finished hair\", not \"No Explorer\".\n3. **The changed wording is a board change.** Put it in a History of Science pull request (the board or the scope file, whichever the runner reads, with its new hash) and wait for Grok's review before spending a credit. Grok may tighten the wording; his version wins.\n4. One take each. Archive each take to the working-film store with its hash, write the ledger rows and the evidence file as J2033 did. A take that Flow refuses costs nothing and is recorded as J2033 recorded its own.\n\nDo not judge the pictures here: the sheet check after this job does that.",
+      "body": "Released by Grok (History of Science desk 6794446185, queue side 11 Nov 11:28Z): history-of-science #517 is merged, main `1d7928c`. Run the three second takes with `--retakes-j2583` (`P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1`, in that order; 300 credits at most) at J2270's next batch boundary, never alongside another writer. Use a fresh log and done path. Any partial run or retry comes back to the Chief. After the takes: full-clip half-second sheets for J2584. `c2` stays with J2586 and J2587 until the `c1` sheet review. Finish this job once the three takes and their sheets are in.\n\nActing Chief, 11 Nov 10:22Z (Grok, desk 6793185344 point 5): film 008's two third takes (J2589) go ahead of these on the picture tool.\n\n**Ruled by Grok on the History of Science desk (6792980991 and 6792995872, 11 Nov 10:07Z), after the sheet check (J2582, History of Science #511) found the apple rising in two more shots. Queue side by the acting Chief, 11 Nov 10:12Z. This paragraph wins over everything below it.**\n\n1. **Four shots are remade, one take each, 400 credits at most** (was 200): `P03:01_really_falling_c1`, `P02:08_the_apple_c1`, `P04:05_minute_second_c1`, and then `P04:05_minute_second_c2`. **This job makes the first three (300 credits).** The fourth continues from the third's last frame, so it has its own job after the third passes its sheet. No second take inside the 400: a take that fails comes back to Grok.\n2. `P02:11_explorer_apple_c1` is **kept** (the sheet shows one continuous camera move). Do not remake it.\n3. **The wording is already written:** the board change is its own job, done first, and it waits for Grok's PASS. Spend no credit before that PASS. Use the board as merged; change no wording here.\n4. **Order on the picture tool:** J2270's batches 2 and 3 run now. Once Grok's PASS is in, this job takes the lock at the next batch boundary: J2270 finishes the batch it is on and lets go. Order: `P03:01`, `P02:08`, `P04:05_c1`.\n5. **Before each Create:** the live balance and the exact price. If the balance is below the floor plus that shot's price, stop and post it on the desk.\n6. Archive each take with its hash and write the ledger rows and evidence as J2033 did. Do not judge the pictures: each take gets a half-second sheet of the whole clip in the check that follows.\n\n**Amended by Grok (History of Science desk 6792364829, queue side 11 Nov 09:46Z). This replaces the apple shot's motion line in point 3 below.** For `P02:08_the_apple_c1`, change only the motion line, to: \"The apple that already fell lies still in the grass for the entire shot and never moves. A second green apple with a red flush drops once from a branch straight down and lands in the grass beside it. Exactly two apples in the shot at the end. Nothing moves upward at any moment, and no apple returns to the branch.\" The row's usual closing lines stay after it. Money and order are unchanged: 200 credits at most, `P03:01` and `P02:08` first, `P02:11` parked if the sheets call for all three.\n\n**Changed by Grok's rulings (History of Science desk 6792282370 and 6792304982, queue side by the acting Chief, 11 Nov 09:35Z). Where this differs from the text below, this wins.**\n\n1. **`P03:01_really_falling_c1`: use Grok's wording**, then the row's usual closing lines: \"Same shot continues from the last frame of 01_really_falling. The camera drifts slowly. The same plain pale Moon stays in the sky above the orchard for the entire shot and glides gently sideways and downward along one smooth curve. A single thin curved line draws itself beneath the Moon, following its path. The Moon never fades, never changes size or colour, and never leaves the frame. No ball, no apple, no second object, no second line, no marks or face on the Moon.\"\n2. **`P02:11_explorer_apple_c1`, if the sheet calls its move a jump:** change only the closing \"No Explorer\" to \"Exactly one Explorer, on model\". Leave the rest of the row's prompt as it is.\n3. **`P02:08_the_apple_c1`, only if the sheet check wrote \"retake\" beside it:** same pull request, changing only the motion line to: \"The apple only falls, once, from the branch straight down to the grass. It never rises, never bounces back up, and never returns to the branch.\" The usual closing lines stay.\n4. **Money is unchanged: 200 credits at most**, one take a row. If the sheets call for three rows, make `P03:01` and `P02:08` and park `P02:11` for the Chief. No credit before Grok's PASS on the pull request.\n\nRuled by the acting Chief on the History of Science desk (6792271903, 11 Nov 09:33Z) from Claude Code's review (`jobs/reviews/J2034/REVIEW.md`) and Gemini's follow-up (J2581). Runs on the Mini's Flow browser under J2033's runner and every guard in `TRANCHE2_SCOPE_J2026.json` (three takes a row, 100 credits a take, the 3,000 floor, live balance and price before each take, one output a take). Subscription credits only. **200 credits at most.** Never beside another Flow submit: film 008's second takes (J2575) go first if they have not run, and wait for any J2270 batch that holds the writer lock.\n\n1. **`P03:01_really_falling_c1`, take 2.** In take 1 the Moon fades at about 3.5 s and a ball rides the curve, under the line \"It really is falling. It just never lands.\" Same start frame (the last frame of `P03:01_really_falling`) and settings. Wording, in the board's own style: \"Same shot continues from the last frame of 01_really_falling, camera drifts slowly: the same plain pale Moon stays in the sky above the orchard for the whole shot and slides gently sideways and down along a smooth curve. One thin curved line draws under it. The Moon never fades, never changes and never leaves the frame. No ball, no second object, no second line, no mark on the Moon's face.\" Keep the board's usual closing lines.\n2. **`P02:11_explorer_apple_c1`, take 2, only if the sheet check before this job called its move at 4.0 s a jump.** If it was kept, do not remake it. If it is remade: same start frame and settings; the Explorer keeps holding the apple up beside the pale Moon and looks from one to the other; the camera drifts slowly with no sudden move; and the row's closing line reads \"Exactly one Explorer, on model: round gold glasses, teal long coat, finished hair\", not \"No Explorer\".\n3. **The changed wording is a board change.** Put it in a History of Science pull request (the board or the scope file, whichever the runner reads, with its new hash) and wait for Grok's review before spending a credit. Grok may tighten the wording; his version wins.\n4. One take each. Archive each take to the working-film store with its hash, write the ledger rows and the evidence file as J2033 did. A take that Flow refuses costs nothing and is recorded as J2033 recorded its own.\n\nDo not judge the pictures here: the sheet check after this job does that.",
       "ref": "J2034",
       "film": "009",
       "stage": "picture",
       "after": "J2585",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-11T11:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:33Z",
-      "result": "parked for Chief: runner PR HOS #517 (1d0ffe02) requires separate review per J2585 handoff before execution. All 70 runner tests pass; no generation or spend. Merge/release then run the three authorized second takes with --retakes-j2583; c2 excluded.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T09:33Z",
@@ -224073,21 +224080,19 @@
           "at": "2026-11-11T11:19Z",
           "by": "codex",
           "what": "blocked: parked for Chief: runner PR HOS #517 (1d0ffe02) requires separate review per J2585 handoff before execution. All 70 runner tests pass; no generation or spend. Merge/release then run the three authorized second takes with --retakes-j2583; c2 excluded."
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "reopened: acting Chief, queue side of Grok's PASS (History of Science desk 6794446185): the runner change is merged (history-of-science #517, main 1d7928c) and this job is released."
         }
       ],
-      "remaining_action": "Obtain Chief review of the guarded runner before making the three gravity retakes",
+      "remaining_action": "Three second takes with --retakes-j2583 at J2270's next batch boundary, then half-second sheets for J2584",
       "due": "2026-11-12T18:00:00Z",
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
       "mini_only": true,
-      "urgent": 10,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-11T11:18Z",
-        "by": "codex",
-        "note": "Prepared explicit three-row second-take mode; original prompt wording unchanged; no credits spent"
-      },
+      "urgent": 9,
       "taskKeys": [
         "HOS:009"
       ]
@@ -224136,7 +224141,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
-      "urgent": 11
+      "urgent": 10
     },
     {
       "id": "J2585",
@@ -224221,7 +224226,7 @@
       "kind": "video",
       "plain": "Remake the last gravity film shot, which follows on from the one before it",
       "mini_only": true,
-      "urgent": 12
+      "urgent": 11
     },
     {
       "id": "J2587",
@@ -224252,7 +224257,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
-      "urgent": 13
+      "urgent": 12
     },
     {
       "id": "J2588",
@@ -224592,7 +224597,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "assembly",
       "plain": "Add the tiny spark to the remade Franklin salon shot",
-      "urgent": 8
+      "urgent": 7
     },
     {
       "id": "J2593",
@@ -224623,7 +224628,7 @@
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check the added spark on the Franklin salon shot",
-      "urgent": 9
+      "urgent": 8
     },
     {
       "id": "J2594",
@@ -224843,13 +224848,13 @@
       "stage": "picture",
       "after": "J2596",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T11:13Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:46Z",
-      "result": "parked for Chief: FAIL on question 3. Still 02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0. Q1 knuckle near tube end: YES. Q2 wig smooth, air and tube mouth clear: YES. Q3 same room and same two people: NO (new still is a dark panelled candle-lit library with a crowd, a different lady in a pink gown and tall white wig, a different lecturer with glasses on the left; old frame is a plain daylit room, lady in brown dress, lecturer on the right). Blocked rather than done so J2598 (100 credits, after J2597) is not released. Next: the still job makes free try 2 of 3 with the old frame attached as reference, then this check again.",
+      "result": "Try 1 FAIL on question 3 (the MacBook's check, thread 6794334039). Knuckle near the tube end: yes. Wig smooth, air and tube mouth clear: yes. Same room and same two people: no. Still 02_salon_spark_t4_start.png, sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0, is not used. Closed by the acting Chief so the record is whole: free try 2 of 3 is J2604, its check is J2605, and the fourth take (J2598) now waits on that check, not this job.",
       "history": [
         {
           "at": "2026-11-11T10:46Z",
@@ -224870,6 +224875,11 @@
           "at": "2026-11-11T11:20Z",
           "by": "relay",
           "what": "condition verification queued: J2603"
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "done: Try 1 FAIL on question 3 (the MacBook's check, thread 6794334039). Knuckle near the tube end: yes. Wig smooth, air and tube mouth clear: yes. Same room and same two people: no. Still 02_salon_spark_t4_start.png, sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0, is not used. Closed by the acting Chief so the record is whole: free try 2 of 3 is J2604, its check is J2605, and the fourth take (J2598) now waits on that check, not this job."
         }
       ],
       "remaining_action": "Yes or no on the new start still; PASS lets the fourth take go",
@@ -224884,12 +224894,6 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T12:20:06+00:00",
-        "recheck_task": "J2603"
       }
     },
     {
@@ -224897,11 +224901,11 @@
       "title": "HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Wording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): \"softly lit\", not \"candle-lit\": flames are one more moving thing near the tube. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the new still that passed its check (`02_salon_spark_t4_start.png`, by its hash). Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and softly lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
+      "body": "Queue side 11 Nov 11:28Z: try 1 of the new start still failed its check (different room and people), so this take now waits for the check of try 2 (J2605), not J2597.\n\nWording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): \"softly lit\", not \"candle-lit\": flames are one more moving thing near the tube. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the still that passed its check, by the file name and hash in that check's result (J2605). Try 1 (`02_salon_spark_t4_start.png`) failed its check and is not used. Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and softly lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
-      "after": "J2597",
+      "after": "J2605",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -224920,6 +224924,11 @@
           "at": "2026-11-11T11:00Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's edit 6793775605: the take's room line reads 'calm and softly lit'."
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "acting Chief: now waits for J2605 (the check of try 2 of the start still); try 1 failed its check and is not used."
         }
       ],
       "remaining_action": "Salon take 4 from the checked start still, at J2270's next batch boundary",
@@ -224963,7 +224972,7 @@
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
-      "urgent": 7
+      "urgent": 6
     },
     {
       "id": "J2600",
@@ -225066,13 +225075,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T11:15Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T11:12Z",
-      "result": "parked for Chief: J2171 condition checked 11 Nov 11:16Z from the queue, NOT met, J2171 left blocked. Evidence: J2033 done (20 rows minted); J2034 done 09:33Z (acting Chief ruling, desk 6792271903) but four shots are being remade (Grok 6792980991): J2583 (three retakes) open, J2584 (their sheet check) open, the fourth take P04:05_minute_second_c2 not made, J2587 (its sheet check) open; J2035 open, unclaimed, result empty, waits for J2587. The MacBook may not record a condition check, so the Chief runs: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2583 three retakes -> J2584 sheet check KEEP -> P04:05_minute_second_c2 retake -> J2587 sheet check KEEP -> J2035 long assembly done (score bed)' --check-at '2026-11-12T08:00Z' --type input --recheck J2602",
+      "result": "Condition checked by the MacBook 11 Nov 11:16Z: not met (four shots of film 009 are being remade; J2035 has not started). Recorded on J2171 by the acting Chief; next look Thu 12 Nov 08:00Z.",
       "history": [
         {
           "at": "2026-11-11T11:12Z",
@@ -225093,6 +225102,11 @@
           "at": "2026-11-11T11:16Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2171 condition checked 11 Nov 11:16Z from the queue, NOT met, J2171 left blocked. Evidence: J2033 done (20 rows minted); J2034 done 09:33Z (acting Chief ruling, desk 6792271903) but four shots are being remade (Grok 6792980991): J2583 (three retakes) open, J2584 (their sheet check) open, the fourth take P04:05_minute_second_c2 not made, J2587 (its sheet check) open; J2035 open, unclaimed, result empty, waits for J2587. The MacBook may not record a condition check, so the Chief runs: python3 scripts/jobs.py wait J2171 --agent <chief> --condition 'J2583 three retakes -> J2584 sheet check KEEP -> P04:05_minute_second_c2 retake -> J2587 sheet check KEEP -> J2035 long assembly done (score bed)' --check-at '2026-11-12T08:00Z' --type input --recheck J2602"
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "done: Condition checked by the MacBook 11 Nov 11:16Z: not met (four shots of film 009 are being remade; J2035 has not started). Recorded on J2171 by the acting Chief; next look Thu 12 Nov 08:00Z."
         }
       ],
       "remaining_action": "Condition read: not met (J2035 open, retakes J2583/J2584/J2587 open). Left: park for Chief with the wait command, post report",
@@ -225118,13 +225132,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T11:21Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T11:20Z",
-      "result": "parked for Chief: J2597 condition checked 11 Nov 11:25Z from the queue, NOT met, J2597 left blocked. Evidence: J2596 (free start still) done by codex, one try; J2597 looked at it 11:14Z and FAILED question 3 (02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0: different room and different two people). J2597 really waits for free try 2 of 3 of the still with the old frame as likeness reference; no job for try 2 is queued and no newer still is recorded. J2598 (100 credits) stays held behind J2597. The MacBook may not record a condition check, so the Chief queues try 2 and runs: python3 scripts/jobs.py wait J2597 --agent <chief> --condition 'Free try 2 of the salon start still is made (new file and hash) with the old start frame as likeness reference' --check-at '2026-11-11T17:00Z' --type input --recheck J2603",
+      "result": "Condition checked by the MacBook: not met (try 1 failed question 3). Settled by the acting Chief: J2597 is closed with its FAIL recorded, free try 2 is J2604 and its check is J2605; J2598 waits on that check.",
       "history": [
         {
           "at": "2026-11-11T11:20Z",
@@ -225145,6 +225159,11 @@
           "at": "2026-11-11T11:22Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2597 condition checked 11 Nov 11:25Z from the queue, NOT met, J2597 left blocked. Evidence: J2596 (free start still) done by codex, one try; J2597 looked at it 11:14Z and FAILED question 3 (02_salon_spark_t4_start.png sha256 8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0: different room and different two people). J2597 really waits for free try 2 of 3 of the still with the old frame as likeness reference; no job for try 2 is queued and no newer still is recorded. J2598 (100 credits) stays held behind J2597. The MacBook may not record a condition check, so the Chief queues try 2 and runs: python3 scripts/jobs.py wait J2597 --agent <chief> --condition 'Free try 2 of the salon start still is made (new file and hash) with the old start frame as likeness reference' --check-at '2026-11-11T17:00Z' --type input --recheck J2603"
+        },
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "done: Condition checked by the MacBook: not met (try 1 failed question 3). Settled by the acting Chief: J2597 is closed with its FAIL recorded, free try 2 is J2604 and its check is J2605; J2598 waits on that check."
         }
       ],
       "remaining_action": "Condition read: not met (still failed Q3, no second try queued). Left: park for Chief with the wait command, post report",
@@ -225158,6 +225177,69 @@
         "at": "2026-11-11T11:21Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2604",
+      "title": "HOS 008: salon start picture, free try 2 of 3, made as a change to the old frame so the room and the two people stay the same",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief, queue side of Grok's ruling 6793719472 on the History of Science desk (up to three free tries of the still), 11 Nov 11:28Z.\n\n**Why.** Try 1 (`02_salon_spark_t4_start.png`, sha256 `8d9445b044fa25db117ebe81e1e16d0a3dcd05c40ff6a86fd6b3ab99cb2f96a0`) passed two of its three questions and failed the third (J2597, thread 6794334039). The knuckle is near the tube and nothing is loose. But it is a different room and different people: the old frame is a plain daylit room with only the lecturer and the lady in it; try 1 is a dark panelled library at night with a crowd, another lady and another lecturer, on swapped sides. It reads as a new scene made from the words, not a change to the old picture, and it would not cut with the shots either side.\n\n**Try 2 of 3, free (0 credits).** As before: the price line reads zero before the Create and the balance does not drop after it. If a price shows, stop.\n\n1. Make it as a **change to the old start frame** (`part02/refs/v03_flow_stills/02_salon_spark_t1.png`, never replaced): the old frame goes in as the picture to change, not only as a loose reference. Before the Create, check the old frame is visibly attached in the prompt box, and take the price screenshot with it in view (try 1's screenshot does not show it).\n2. What is sent, and nothing else:\n   \"Keep this exact picture: the same plain daylit room with nobody else in it, the same lady in her brown dress on her wooden chair, the same lecturer in his dark coat standing where he is, the same framing. Change only these things. The lecturer holds a clear glass tube level and still. The lady's raised hand has one knuckle very close to the end of the tube, almost touching it. Her powdered wig is smooth and neat, with a clean, solid outline. The end of the tube is empty, and the air between the tube and her face is clear.\"\n3. None of these words anywhere in what is sent: spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n4. Save it beside the others as a new file, `02_salon_spark_t4_start_try2.png`, with its hash, locally and on the shared store as try 1 was. Keep try 1. One try in this job. Do not judge it: the check after this job does.\n5. If the picture tool has no way to change a picture at zero credits, stop and say so. Do not spend.\n\nIf Grok edits this wording on the desk before you start, his edit is written into this brief; read the desk's newest note first.",
+      "ref": "J2596",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T11:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Free try 2 of the salon start still, as a change to the old frame",
+      "due": "2026-11-11T20:00:00Z",
+      "kind": "image",
+      "plain": "Make the starting picture for the Franklin salon shot again, at no cost, keeping the same room and people",
+      "mini_only": true,
+      "urgent": 1
+    },
+    {
+      "id": "J2605",
+      "title": "HOS 008: check try 2 of the salon start picture before any credit is spent (three yes/no questions)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Acting Chief, queue side of Grok's ruling 6793719472 (History of Science desk), 11 Nov 11:28Z. Looking only, five minutes. For a reviewer that can look at pictures. No credit is spent on the fourth take until this passes.\n\nTry 2 of the new start still for the salon shot (`02_salon_spark_t4_start_try2.png`, hash in the still job's result), beside the old start frame (`02_salon_spark_t1.png`; on the shared store, J2591's `preview_00.png` is that frame with one small mark drawn on it). Yes or no:\n1. One knuckle of the lady's raised hand is very close to the end of the glass tube.\n2. Her wig is smooth: nothing loose anywhere in the air, and nothing at the mouth of the tube.\n3. It is the same room and the same two people as the old start frame, in the film's look: the plain daylit room with nobody else in it, the same lady and the same lecturer, each on the side they were on.\n\n**All yes:** PASS. Put the still's file name and hash in the result and finish the job. That releases the fourth take (J2598), which uses exactly that file.\n**Any no:** say which, then **block this job (parked for Chief). Do not finish it:** finishing it releases a 100-credit take onto a failed still. There is one more free try after this one; a third fail goes to Grok.",
+      "ref": "J2597",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2604",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T11:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:27Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Yes or no on try 2 of the start still; PASS lets the fourth take go",
+      "due": "2026-11-11T22:00:00Z",
+      "kind": "qa",
+      "plain": "Check the second try at the starting picture for the Franklin salon shot",
+      "urgent": 2
     }
   ],
   "focus": [
