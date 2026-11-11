@@ -218077,9 +218077,14 @@
           "at": "2026-11-11T04:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T04:32Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Starting 5-step swap of 026 Wed 18 Short cwU_0WWeNZ4 to v07 (OK'd by Ben on board tick OWB-J2512.2 at 2026-11-10T23:06Z)"
         }
       ],
-      "remaining_action": "Swap the 026 Wed 18 Short cwU_0WWeNZ4 to the newest cut Ben has OK'd (on Mon 16 Nov after 18:00 London)",
+      "remaining_action": "Read back cwU_0WWeNZ4 in API and Studio, verify Ben's board tick OWB-J2512.2 and v07 sha256",
       "due": "2026-11-17T12:00:00Z",
       "kind": "listing",
       "plain": "Put the fixed Nearest Star Short you OK'd in its Wednesday 18 Nov slot",
@@ -218100,12 +218105,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-11T04:32Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting 5-step swap of 026 Wed 18 Short cwU_0WWeNZ4 to v07 (OK'd by Ben on board tick OWB-J2512.2 at 2026-11-10T23:06Z)"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     },
     {
       "id": "J2515",
