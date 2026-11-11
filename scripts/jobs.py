@@ -473,7 +473,7 @@ def is_macbook(agent: str) -> bool:
 
 
 def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str = "") -> bool:
-    chief = agent if workflow.role_job(job) and chief_relay.is_elected_chief(agent, at) else ""
+    chief = agent if workflow.role_job(job) and chief_relay.elected_for(agent, at, job) else ""
     if is_macbook(agent) and "macbook" in can and macbook_portable(job, data):
         # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
         job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
@@ -514,7 +514,7 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
         _mine(job,agent)
     if job.get("status") not in ("claimed", "blocked"):
         raise ValueError("A hold can only be recorded on a claimed or blocked job")
-    if agent != "relay" and job.get("by") != agent and not chief_relay.is_elected_chief(agent,at):
+    if agent != "relay" and job.get("by") != agent and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the holder or elected Chief may update this hold")
     condition = str(hold.get("condition") or "").strip()
     check = workflow.normalize_due(hold.get("check_at"))
@@ -526,7 +526,7 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
-        if not chief_relay.is_elected_chief(agent,at):
+        if not chief_relay.elected_for(agent, at, job):
             raise ValueError("Only the elected Chief may record a condition check")
         value.update(last_recheck=recheck,checked_at=at.isoformat(),checked_by=agent)
     if job.get("status") == "claimed":
@@ -681,7 +681,7 @@ MINI_NEEDS = {"mini", "gemini", "any"}
 
 
 def can_any_mini_claim(data, job, at):
-    chief = chief_relay.acting(at)[1] if workflow.role_job(job) else ""
+    chief = chief_relay.acting(at, chief_relay.job_chain(job))[1] if workflow.role_job(job) else ""
     actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
     return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at),chief_relay.worker_capabilities()) for actor in actors)
 
@@ -747,7 +747,7 @@ def order(job: dict, focus=()) -> tuple:
 def require_chief(job, agent, at):
     if not str(agent or "").strip():
         raise ValueError("A non-empty --agent is required")
-    if workflow.role_job(job) and not chief_relay.is_elected_chief(agent, at):
+    if workflow.role_job(job) and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Chief authority changed: only the currently elected Chief may resume or complete this job; release or park it")
 
 
@@ -945,7 +945,7 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     require_chief(job,agent,at)
     if job["status"] not in ("blocked", "done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; only blocked, done or cancelled jobs reopen")
-    if job.get("hold") and not chief_relay.is_elected_chief(agent, at):
+    if job.get("hold") and not chief_relay.elected_for(agent, at, job):
         raise ValueError("Only the elected Chief may release a verified hold")
     if job.get("hold") and not str(note or "").strip():
         raise ValueError("Reopening a hold requires current verification evidence in --note")
@@ -965,7 +965,7 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
     if model and routing.RUNS_ON.get(model) != to:
         raise ValueError(f"{model} doesn't run on {to}")
-    if job.get("kind") == "chief" and not chief_relay.is_elected_chief(to, at):
+    if job.get("kind") == "chief" and not chief_relay.elected_for(to, at, job):
         raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
