@@ -77,6 +77,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2610 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2583 |  |
 | J2613 | mini | open | – | – | 008 picture · for codex · chart · `gpt-6-astra` · HOS 008: rework the salon's contact spark into a tapered round streak and post its new review sheet for Grok (history-of-science #515) | J2591 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
+| J2615 | macbook | open | – | – | review · Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2616 | macbook | open | – | – | review · Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2617 | cloud | open | – | – | review · Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2618 | cloud | open | – | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2619 | macbook | open | – | – | review · Decoupling, wave 2: the last scripts stop assuming the studio lives inside one channel's repo (jobs.py, workflow_state.py, workflow_handoffs.py, studio.py, routing.py; 12 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2620 | cloud | open | – | – | review · Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines) | docs/MULTI_CHANNEL_PLAN.md |
+| J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
+| J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 
 Recently finished:
 

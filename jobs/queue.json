@@ -1,5 +1,5 @@
 {
-  "next_id": 2615,
+  "next_id": 2623,
   "jobs": [
     {
       "id": "J0001",
@@ -226440,6 +226440,246 @@
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
       "urgent": 10
+    },
+    {
+      "id": "J2615",
+      "title": "Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Script in this job: `board_publish.py` (33 lines that name a channel). It publishes the board's data about once a minute, so: no behaviour change, the whole of `scripts/test_board_publish.py` and the other `scripts/test_board_*.py` pass before and after, and a made-up third channel shows up in `board.channels` with its own section.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling, wave 2: board_publish.py asks channels.py instead of naming a channel (33 lines to 0)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the tool that publishes the board work for any channel, not only our two"
+    },
+    {
+      "id": "J2616",
+      "title": "Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Script in this job: `approved_deliver.py` (35 lines that name a channel). It carries a cut Ben approved to its upload or swap, so: no behaviour change, every test that names it passes before and after (`grep -l approved_deliver scripts/test_*.py`), and nothing is uploaded, swapped or posted by this job: tests and dry runs only.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0)",
+      "due": "2026-11-13T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the tool that delivers the cuts you approve work for any channel"
+    },
+    {
+      "id": "J2617",
+      "title": "Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Script in this job: `kanban_snapshot.py` (56 lines that name a channel, 3 that assume the studio lives inside one channel's repo). It builds every card on the board, so: no behaviour change, `scripts/test_kanban_snapshot.py` and `scripts/test_board_*.py` pass before and after, and a made-up third channel gets its cards.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling, wave 2: kanban_snapshot.py asks channels.py instead of naming a channel (56 lines, and 3 that assume a home repo, to 0)",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the tool that builds the board's cards work for any channel"
+    },
+    {
+      "id": "J2618",
+      "title": "Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Script in this job: `chief_relay.py` (79 lines that name a channel, 2 that assume the studio lives inside one channel's repo). It is the relay that wakes every agent on the Mini, so: no behaviour change, the whole of `scripts/test_chief_relay.py` passes before and after, the prompts it builds are byte-identical for today's two channels (a test pins them), and a made-up third channel is woken for its jobs. After merge, watch one full relay cycle on the Mini's heartbeat before closing the job.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0)",
+      "due": "2026-11-15T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the relay that wakes the agents work for any channel"
+    },
+    {
+      "id": "J2619",
+      "title": "Decoupling, wave 2: the last scripts stop assuming the studio lives inside one channel's repo (jobs.py, workflow_state.py, workflow_handoffs.py, studio.py, routing.py; 12 lines to 0)",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Scripts in this job (the second count, \"assumes the studio lives inside one channel's repo\"): `jobs.py` (4 lines), `workflow_state.py` (3), `workflow_handoffs.py` (2), `studio.py` (2), `routing.py` (1). Also `apply_yellow_white_v04_thumbs.py` (3): it is an old one-off; if nothing calls it, move it to `_archive/scripts/` with its test, as J2523 did for others. `kanban_snapshot.py` (3) and `chief_relay.py` (2) have their own jobs: leave them.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it: `python3 scripts/test_channel_ratchet.py -v` lists the lines under \"home\". Each is a call to `channels.home()` or a path from the studio's own root into channel content (such as `ROOT / \"02_Video-Projects\"`). Replace each with the loader asked for the channel the work belongs to: `channels.of_job(job)`, `channels.checkout(slug)`, `channels.repo_path(slug)`. These five run on every queue write, so behaviour must not change: every `scripts/test_*.py` passes before and after, and add a test where the studio's root holds no channel content at all. Lower the `home` ceilings in `scripts/channel_ratchet.json`.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Five engine scripts read channel content through channels.py; one old one-off script is archived",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Make the job queue's own tools stop assuming the studio lives inside the Orbit repo"
+    },
+    {
+      "id": "J2620",
+      "title": "Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "The 19 counted lines outside the four big scripts are not a channel's name: they are the studio's own (`owb_thread.py` 5, `missed_runs.py` 5, `nas_offload.py` 2, `macbook_worker.py` 2, and the rest `test_channel_ratchet.py -v` lists). The plan said \"renamed at the move\", but the dry run counts them, so it could never reach zero before the move. Decide and do the smallest thing that is true: read the studio's own name (thread helper, launchd label prefix, agent variable) from one place (`channels/channels.json` or a small `studio` section of it), with today's values as they are, so nothing on the Mini or the MacBook is renamed by this job. A file that is only named after Orbit (`owb_thread.py`) keeps working under its old name through a one-line stand-in.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nChecks: every `scripts/test_*.py` and the three repo checks. One pull request. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "owb_thread.py, missed_runs.py, nas_offload.py, macbook_worker.py and the rest: the studio's own name read from one place",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Let the studio's own name live in one setting, so the move does not need a rename everywhere"
+    },
+    {
+      "id": "J2621",
+      "title": "Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Two of the dry run's groups, after the second count is at zero. (1) \"The list of channels still needs one of them to be the studio's home\": `scripts/channels.py` insists exactly one channel is `home` (plan decision 1: no home channel). Make it optional: with none, the studio's root holds no channel content and every channel is read through its checkout. Today's layout, with Orbit as home, must keep working unchanged until the move. (2) \"Tests that fail once the studio and the channels are apart\": 14 tests in `test_channel_cards.py`, `test_channel_check.py`, `test_channels.py`, `test_email_ratchet.py`, `test_no_private_network.py`, `test_studio.py` and `test_studio_split.py`. `HOS_REPO=<checkout> python3 scripts/studio_split.py --json out.json` builds the new layout and names each; make them pass there and here.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nChecks: every `scripts/test_*.py`, the three repo checks, and the dry run's `registry` and `tests` groups at 0. One pull request. No real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "J2619",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "channels.py stops requiring a home channel; the dry run's failing tests pass with the studio on its own",
+      "due": "2026-11-16T18:00:00Z",
+      "kind": "review",
+      "plain": "Let the studio run with no channel as its home, and make its checks pass that way"
+    },
+    {
+      "id": "J2622",
+      "title": "Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2)",
+      "needs": "cloud",
+      "repo": "hos",
+      "body": "Plan decision 2 (docs/MULTI_CHANNEL_PLAN.md): the standard for every channel is one status file per film, and no generated page is committed to a channel repo. History of Science keeps one `PIPELINE.json` plus a generated `STATUS.md` and board page, all committed; on 10 Nov 24 of its 69 open pull requests conflicted on those three files.\n\n1. A converter: `PIPELINE.json` to one `status.json` per film folder, in Orbit's shape (`scripts/studio.py`), losing nothing: a round-trip test proves it.\n2. History of Science's tools read the per-film files (`status_board.py` and what calls it); `STATUS.md` and the board page are no longer committed there.\n3. The studio's readers (`channels/`, `video_tracker.py`, `board_publish.py`) read the new files; `pipeline` in its `studio/channel.json` changes from `pipeline_json` to `film_status`.\n4. **Not while a History of Science picture run is working, and not before Thu 12 Nov 19:13 London.** It changes files every History of Science job touches, so it goes in one planned pull request on history-of-science, reviewed and merged by Grok, announced on the desk first.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nNo real money.",
+      "ref": "docs/MULTI_CHANNEL_PLAN.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T13:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "A converter and a pull request on history-of-science for Grok: one status file per film; the board is built by the studio",
+      "due": "2026-11-17T18:00:00Z",
+      "kind": "review",
+      "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes"
     }
   ],
   "focus": [
