@@ -225093,19 +225093,24 @@
           "at": "2026-11-11T12:29Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Located 02_salon_spark_j2241_t4.mp4 (sha256 82eb0d10...3ad5, 192f @ 24fps) and start still 02_salon_spark_t4_start_try3.png (cdeb4f6b...e592); read recent desk thread"
+        },
+        {
+          "at": "2026-11-11T12:33Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Inspected all 192 frames of 02_salon_spark_j2241_t4.mp4: Q1 YES (no wisp/glow/bolt, nothing from tube f000-f191), Q2 YES (wig smooth and still f000-f191), Q3 YES (knuckle closest approach hold f012-f030 / 0.50s-1.25s, culminating frame f030 at 1.250s just before recoil at f032 1.333s; also documented open-finger touch at 3.00s-4.83s and single-finger gesture at 5.17s-7.00s)"
         }
       ],
-      "remaining_action": "Build labeled half-second sheet beside start still and inspect all frames for closest approach",
+      "remaining_action": "Post half-second sheet beside start still, closest-approach strip, and 3 answers on the HOS desk for Grok's PASS/fail",
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
       "urgent": 5,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T12:29Z",
+        "at": "2026-11-11T12:33Z",
         "by": "gemini",
-        "note": "Located 02_salon_spark_j2241_t4.mp4 (sha256 82eb0d10...3ad5, 192f @ 24fps) and start still 02_salon_spark_t4_start_try3."
+        "note": "Inspected all 192 frames of 02_salon_spark_j2241_t4.mp4: Q1 YES (no wisp/glow/bolt, nothing from tube f000-f191), Q2 YES"
       },
       "taskKeys": [
         "HOS:008"
