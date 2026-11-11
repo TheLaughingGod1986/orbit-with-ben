@@ -215710,10 +215710,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T07:09Z",
+      "eta": "2026-11-11T09:09Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
       "result": "",
@@ -215877,6 +215877,11 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "reopened: acting Chief ruled on the timing question: the opening plays at its natural recorded speed (Ben turned down a sped-up opening before), pauses are trimmed instead, the 1.5 s spoken bar is waived for this Short, cut 1 lands on the end of \"closer\" with a punch-in for the date, and the title banner moves forward in proportion to the shorter length. The ruling is the top of the brief."
+        },
+        {
+          "at": "2026-11-11T07:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rebuild the supermoon Short as v02 to the Chief's timing ruling and the review's fix list, run every gate, queue the review",
@@ -215884,7 +215889,15 @@
       "kind": "assembly",
       "taskKeys": [
         "OWB:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T07:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2479",
