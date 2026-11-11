@@ -1,5 +1,5 @@
 {
-  "next_id": 2601,
+  "next_id": 2602,
   "jobs": [
     {
       "id": "J0001",
@@ -224865,6 +224865,35 @@
       "remaining_action": "Add a deny list and one brief line to the MacBook worker, with tests",
       "due": "2026-11-14T18:00:00Z",
       "plain": "Make sure the MacBook helper can never merge code or push to the main branch by itself"
+    },
+    {
+      "id": "J2601",
+      "title": "Does Cursor work on its Grok model? Run its command line once with that model on the Mini and copy what it says",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2595. Five minutes on the Mini. No purchase, no upgrade, no sign-in.\n\nJ2595 found that Cursor's command line is signed in and refuses only its default model: \"Claude Opus 5.5 is not included in your weekly usage. Buy credits or switch to a Grok model to continue.\" The usage page shows 30% of the weekly included usage used. So Cursor may be able to work on its Grok model while the flag in `scripts/credit_flags.json` keeps every Cursor lane off.\n\n1. Run Cursor's command line once more, the same way as J2595's second run (`--trust`, an empty temp folder, a one-word task), but with the Grok model the routing names for it (`CURSOR_GROK_MODEL` in `scripts/routing.py`, \"grok-4.7\"). One run, a short timeout, no retry.\n2. Copy its first lines exactly into this job's result: its answer, or its refusal.\n3. If it offers a purchase, an upgrade or a sign-in, stop and say so. Do not change the flag or the routing.\n\nThe acting Chief then narrows the flag to the lanes that really are out, or leaves it.",
+      "ref": "J2595",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T11:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:06Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "One one-word run of Cursor's command line on the Grok model; record its first lines",
+      "due": "2026-11-11T18:00:00Z",
+      "plain": "Check whether one of our AI helpers can work on a different model that is still included in its plan"
     }
   ],
   "focus": [
