@@ -221790,17 +221790,23 @@
           "at": "2026-11-11T06:52Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-11T06:54Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: Causes found: tracker cannot read its worktree on the removable SSD under launchd; Buffer check hit one 'fetch failed' on 10 Nov; spend reader fails on the Codex, Claude and Cursor readings"
         }
       ],
-      "remaining_action": "Find why three scheduled Mini agents fail, fix them, unload leftover agents, copy the browser agent into the repo, write the report",
+      "remaining_action": "Fix the tracker script, run the tracker by hand, park the leftover agents, copy the browser agent into the repo, write the report",
       "due": "2026-11-13T18:00:00Z",
       "plain": "Tidy the Mac mini's background helpers: fix three that are failing and switch off the old ones nobody uses",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-11T06:52Z",
-        "by": "claudecode"
+        "at": "2026-11-11T06:54Z",
+        "by": "claudecode",
+        "note": "Causes found: tracker cannot read its worktree on the removable SSD under launchd; Buffer check hit one 'fetch failed' o"
       }
     },
     {
