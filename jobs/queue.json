@@ -1,5 +1,5 @@
 {
-  "next_id": 2572,
+  "next_id": 2575,
   "jobs": [
     {
       "id": "J0001",
@@ -22117,6 +22117,11 @@
           "at": "2026-11-11T08:08Z",
           "by": "relay",
           "what": "condition verification queued: J2569"
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
       "kind": "studio",
@@ -22134,12 +22139,11 @@
       },
       "hold": {
         "type": "test",
-        "condition": "Saturn 55AEQwvs36g thumbnail test T013 (J0189) has ended in Studio. On 10 Nov 02:46Z it was still running, estimated end about 10 Nov 22:02Z; Jupiter -jmMROGoZCM T003 was also running, estimated end about 10 Nov 19:03Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
-        "check_at": "2026-11-11T09:08:31+00:00",
-        "last_recheck": "J2457",
-        "checked_at": "2026-11-10T02:57:09+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2569"
+        "condition": "Thumbnail tests T013 (Saturn 55AEQwvs36g) and T003 (Jupiter -jmMROGoZCM) are shown as ended in Studio's Test & Compare. Their estimated ends (10 Nov) have passed but nobody has read Studio since; J2574 (Mini, read-only) reads them and reopens this job if both have ended. An end is never inferred from a date.",
+        "check_at": "2026-11-12T09:00:00Z",
+        "last_recheck": "J2569",
+        "checked_at": "2026-11-11T08:24:39+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -88023,6 +88027,11 @@
           "at": "2026-11-11T08:08Z",
           "by": "relay",
           "what": "condition verification queued: J2570"
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T09:00:00Z"
         }
       ],
       "kind": "listing",
@@ -88047,12 +88056,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Ben's yes to delete the finished J0280 title test on HOS Atom GHZDsiH7L7A. Studio locks the title while that test's report exists: the only way to change it is 'Edit title', which deletes the test and its report (read 10 Nov 04:05Z, OWB PR #710; nothing changed). The report holds no result (ended 29 Oct, 'Not enough impressions to declare a winner', no watch-time share on any side), but deleting it cannot be undone, and the 28 Oct ruling on J1132 leaves that click to Ben. With his yes: one try, set the Test B title, line 1 and tags, read back.",
-        "check_at": "2026-11-11T09:08:31+00:00",
-        "last_recheck": "J0978",
-        "checked_at": "2026-11-10T04:55:04+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2570"
+        "condition": "Ben's yes to delete the finished title test on History of Science Atom GHZDsiH7L7A. The test ended 29 Oct with no winner (not enough impressions) and Studio locks the title while its report exists; deleting the report cannot be undone, so it is his call. Asked on 10 Nov and again on 11 Nov in chat. No further tries until he answers.",
+        "check_at": "2026-11-13T09:00:00Z",
+        "last_recheck": "J2570",
+        "checked_at": "2026-11-11T08:24:39+00:00",
+        "checked_by": "claude"
       }
     },
     {
@@ -193426,7 +193434,7 @@
       "ref": "J1881 / J2241 / HOS PR #428 51bf99a6",
       "film": "008",
       "stage": "edit",
-      "after": "J2241",
+      "after": "J2573",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -193445,6 +193453,11 @@
           "at": "2026-11-05T20:49Z",
           "by": "codex",
           "what": "J1881 FIX clarifications recorded; dependency J2241 retained"
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "acting Chief: J2241 is done (three candidates, 400 credits; desk 6790782423). The maker flagged the salon take for a second look, so this waits for J2573 (a fifteen-minute look at its still sheet). PASS there and this job uses salon take 1, points take 1 and rods take 2, with the hashes on the desk note."
         }
       ],
       "remaining_action": "Implement closed-GOP packet/boundary splicer + 27 unbordered umber bottom-caption panels, render hos_008_master_v04.mp4, and pass all gates",
@@ -217825,7 +217838,7 @@
       "title": "History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting Chief, 11 Nov 08:15Z: **Grok's ruling came first and stands (History of Science desk 6790636682, 08:08:41Z). #505 is on hold. Do nothing to it now.**\n\n- #505 does not merge before Thu 12 Nov 19:13 London, and not until J2241 (008 retakes) and J2270 (010 twelve plates) are both done.\n- This job stays parked, held by the Chief. Do not close it.\n- J2241 and J2270 keep their worktrees and do not pull `main` mid-run.\n- After the window: a Mini job sets `STUDIO_FLOW_ACCOUNT` on the Mini and the MacBook and proves it from a worker's shell without printing the value. Then Gemini rebases #505 onto `main`, re-runs `check_all.sh` and the address check, and asks Grok for the merge.\n\n**The fix list in the next paragraph is NOT in force.** I wrote it half a minute after Grok's ruling without having seen it, and reopened this job by mistake. Its two points of substance are with Grok on the desk (6790646940) as a question to settle before the merge: whether the 010 and 013 runners keep the fingerprint written in the file instead of a machine setting, and whether a script with a literal address should get a fingerprint too. Wait for his answer there. If he takes them, this brief will say so.\n\nActing Chief, 11 Nov 08:08Z: **history-of-science #505 is sent back. Do not merge it as it stands.** The record scrub is good work and most of it can go in today. Three things have to change first. The first is my fault: this brief told you to read the account from a setting, and that is the wrong fix for a runner that already holds a fingerprint.\n\n1. **Take the 010 and 013 runners and their tests out of the pull request.** `_mint_flow_twelve_plates_j2268.py` and `_mint_flow_v01_pass1.py` hold no address on main (checked: 0 lines each). They already compare the signed-in account with a sha256 written in the file. #505 replaces that fingerprint with whatever `STUDIO_FLOW_ACCOUNT` says on the machine, which is a weaker guard: a reviewed value in the repo becomes a setting anyone on the machine can change or forget. The 010 runner also runs today (J2270) under an authorization made for the file exactly as it is on main.\n2. **No `STUDIO_FLOW_ACCOUNT` anywhere.** A script that holds a literal address (009's two runners and `_build_plate_boards_v02.py`, 008's `_mint_flow_v03.py` and `_build_rough_v13_recipe.py`, the older films' minters) gets the address's sha256 in its place and compares fingerprints, the way the 010 and 013 runners do and orbit-with-ben #801 did in `scripts/ai_spend_daily.py`. Then no machine needs setting up and nothing refuses to run for a missing setting. Scripts under `_archive/` are not in force: a placeholder is enough there.\n3. **Hold back the files that live jobs read or pin, for a second pull request.** Every 008 file (J2241 retakes, J2242 re-edit and J2243 check are under way; `FLOW_MINT_LOG_v03.json` is pinned by hash in `10_Shorts/J2170/INPUT_INVENTORY.json`), until J2243 is done. Every 009 file, until J2037 is done. When they go, re-pin in the same pull request.\n\nWhat goes now: films 001 to 007, the brand documents and the archive, with rule 2 applied to their scripts. `scripts/email_ratchet.json` then lists exactly the held-back 008 and 009 files, so the test tells the truth, and it drops to zero with the second pull request. Keep the records change line for line as you have it (same number of lines in and out).\n\nPush to the same branch, re-run `check_all.sh`, post on the History of Science desk for Grok, and park again. Never copy an address into the pull request, the desk or the thread.\n\nFound while writing the J2495 table (10 Nov): history-of-science main holds an account email address in tracked files. Both repos are public, and AGENTS.md (orbit-with-ben, Never list, 10 Nov) says an account's address is never written into a tracked file, a job or the thread. This job takes it out of the files as they stand. It does NOT rewrite git history: that is Ben's call and is not asked for here.\n\nFind them: `git grep -nIE \"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\.(com|me|co\\.uk)\"` in history-of-science. Known on 10 Nov: 2 lines in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/_mint_flow_v05_tranche2.py`, and lines in HOS 006's `FLOW_FAST_v01.json`, `LITE_TEST_v01.json`, `PART01_MINT_LOG_v01.json`, `PART02_MINT_LOG_v01.json` and `_mint_vertex_v01.py`. List every file you find; never copy the address into the report, the pull request or the thread.\n\n1. Scripts that check \"is this the right account\": read the expected address from a setting outside the repo (an environment variable such as `STUDIO_FLOW_ACCOUNT`, or the file the shared Flow guards already use if there is one; look first). With no setting the script must refuse to run and say which setting is missing. It must never fall back to a guess. Update the tests so they pass a made-up address.\n2. Records (JSON logs, notes): replace the address with \"the studio Ultra account\". Change nothing else in them.\n3. Add a test that fails if any tracked file holds such an address, with a short allowlist only if something truly cannot change (say why). Mirror `scripts/test_email_ratchet.py` in orbit-with-ben.\n4. Write the setting's name and where it is set on the Mini and the MacBook in the pull request, so the Chief can check both machines have it BEFORE the change is merged. A runner that cannot find its account must not be merged ahead of a mint.\n\nChecks: check_all.sh ends ALL CHECKS PASS. One pull request, parked for the Chief. This job starts after J2033 (the 009 mint uses the runner as it is today).\n\n£0. No generation, no Flow page, no YouTube.\n",
+      "body": "Acting Chief, 11 Nov 08:24Z: **Grok's combined ruling is in force (History of Science desk 6790775957, 08:16Z). It replaces everything above and below about how to do this.**\n\n1. **The fix list is in force.** No `STUDIO_FLOW_ACCOUNT` anywhere. A script that holds a literal address compares a sha256 fingerprint instead, as orbit-with-ben #801 did. The 010 and 013 runners and their tests stay byte for byte as on main. Nothing is set on the Mini or the MacBook.\n2. **Scope now:** films 001 to 007, the brand documents and the archive, line for line. **Held for a second pull request:** every 008 and 009 file, after J2243 and J2037, with their re-pins in that same pull request (including `10_Shorts/J2170/INPUT_INVENTORY.json`).\n3. **Timing:** the rework can start now on Gemini's own branch (its own job, named in this job's history). The merge waits: not before Thu 12 Nov 19:13 London and not until J2270 is done (J2241 is done). Before the merge: rebase onto `main`, re-run `check_all.sh` and the address check.\n4. This job stays parked, held by the Chief, look-again Thu 12 Nov 19:30Z. Do not close it.\n\nActing Chief, 11 Nov 08:15Z: **Grok's ruling came first and stands (History of Science desk 6790636682, 08:08:41Z). #505 is on hold. Do nothing to it now.**\n\n- #505 does not merge before Thu 12 Nov 19:13 London, and not until J2241 (008 retakes) and J2270 (010 twelve plates) are both done.\n- This job stays parked, held by the Chief. Do not close it.\n- J2241 and J2270 keep their worktrees and do not pull `main` mid-run.\n- After the window: a Mini job sets `STUDIO_FLOW_ACCOUNT` on the Mini and the MacBook and proves it from a worker's shell without printing the value. Then Gemini rebases #505 onto `main`, re-runs `check_all.sh` and the address check, and asks Grok for the merge.\n\n**The fix list in the next paragraph is NOT in force.** I wrote it half a minute after Grok's ruling without having seen it, and reopened this job by mistake. Its two points of substance are with Grok on the desk (6790646940) as a question to settle before the merge: whether the 010 and 013 runners keep the fingerprint written in the file instead of a machine setting, and whether a script with a literal address should get a fingerprint too. Wait for his answer there. If he takes them, this brief will say so.\n\nActing Chief, 11 Nov 08:08Z: **history-of-science #505 is sent back. Do not merge it as it stands.** The record scrub is good work and most of it can go in today. Three things have to change first. The first is my fault: this brief told you to read the account from a setting, and that is the wrong fix for a runner that already holds a fingerprint.\n\n1. **Take the 010 and 013 runners and their tests out of the pull request.** `_mint_flow_twelve_plates_j2268.py` and `_mint_flow_v01_pass1.py` hold no address on main (checked: 0 lines each). They already compare the signed-in account with a sha256 written in the file. #505 replaces that fingerprint with whatever `STUDIO_FLOW_ACCOUNT` says on the machine, which is a weaker guard: a reviewed value in the repo becomes a setting anyone on the machine can change or forget. The 010 runner also runs today (J2270) under an authorization made for the file exactly as it is on main.\n2. **No `STUDIO_FLOW_ACCOUNT` anywhere.** A script that holds a literal address (009's two runners and `_build_plate_boards_v02.py`, 008's `_mint_flow_v03.py` and `_build_rough_v13_recipe.py`, the older films' minters) gets the address's sha256 in its place and compares fingerprints, the way the 010 and 013 runners do and orbit-with-ben #801 did in `scripts/ai_spend_daily.py`. Then no machine needs setting up and nothing refuses to run for a missing setting. Scripts under `_archive/` are not in force: a placeholder is enough there.\n3. **Hold back the files that live jobs read or pin, for a second pull request.** Every 008 file (J2241 retakes, J2242 re-edit and J2243 check are under way; `FLOW_MINT_LOG_v03.json` is pinned by hash in `10_Shorts/J2170/INPUT_INVENTORY.json`), until J2243 is done. Every 009 file, until J2037 is done. When they go, re-pin in the same pull request.\n\nWhat goes now: films 001 to 007, the brand documents and the archive, with rule 2 applied to their scripts. `scripts/email_ratchet.json` then lists exactly the held-back 008 and 009 files, so the test tells the truth, and it drops to zero with the second pull request. Keep the records change line for line as you have it (same number of lines in and out).\n\nPush to the same branch, re-run `check_all.sh`, post on the History of Science desk for Grok, and park again. Never copy an address into the pull request, the desk or the thread.\n\nFound while writing the J2495 table (10 Nov): history-of-science main holds an account email address in tracked files. Both repos are public, and AGENTS.md (orbit-with-ben, Never list, 10 Nov) says an account's address is never written into a tracked file, a job or the thread. This job takes it out of the files as they stand. It does NOT rewrite git history: that is Ben's call and is not asked for here.\n\nFind them: `git grep -nIE \"[A-Za-z0-9._%+-]+@(gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\\.(com|me|co\\.uk)\"` in history-of-science. Known on 10 Nov: 2 lines in `02_Video-Projects/009_The-Falling-Moon-Gravity/07_Edit-Project/_mint_flow_v05_tranche2.py`, and lines in HOS 006's `FLOW_FAST_v01.json`, `LITE_TEST_v01.json`, `PART01_MINT_LOG_v01.json`, `PART02_MINT_LOG_v01.json` and `_mint_vertex_v01.py`. List every file you find; never copy the address into the report, the pull request or the thread.\n\n1. Scripts that check \"is this the right account\": read the expected address from a setting outside the repo (an environment variable such as `STUDIO_FLOW_ACCOUNT`, or the file the shared Flow guards already use if there is one; look first). With no setting the script must refuse to run and say which setting is missing. It must never fall back to a guess. Update the tests so they pass a made-up address.\n2. Records (JSON logs, notes): replace the address with \"the studio Ultra account\". Change nothing else in them.\n3. Add a test that fails if any tracked file holds such an address, with a short allowlist only if something truly cannot change (say why). Mirror `scripts/test_email_ratchet.py` in orbit-with-ben.\n4. Write the setting's name and where it is set on the Mini and the MacBook in the pull request, so the Chief can check both machines have it BEFORE the change is merged. A runner that cannot find its account must not be merged ahead of a mint.\n\nChecks: check_all.sh ends ALL CHECKS PASS. One pull request, parked for the Chief. This job starts after J2033 (the 009 mint uses the runner as it is today).\n\n£0. No generation, no Flow page, no YouTube.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -217903,9 +217916,19 @@
           "at": "2026-11-11T08:15Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T19:30:00Z"
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "acting Chief: Grok's combined ruling 6790775957 is in force (the fingerprint wins; no machine setting; 010 and 013 runners untouched; 008 and 009 held back). The rework is J2572 for Gemini and can start now. This job stays parked for the merge: not before Thu 12 Nov 19:13 London and after J2270."
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T19:30:00Z"
         }
       ],
-      "remaining_action": "Wait for the Flow window to close and for Grok's answer on the desk; do not touch #505",
+      "remaining_action": "Wait for the Flow window to close and J2270; then the rebased rework goes to Grok for the merge",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
@@ -217915,7 +217938,7 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Held by the Chief (Grok, History of Science desk 6790636682): history-of-science #505 does not merge before Thu 12 Nov 19:13 London, and not until J2241 and J2270 are both done. Then a Mini job sets STUDIO_FLOW_ACCOUNT on both machines and proves it without printing it, Gemini rebases #505 and re-runs the checks, and Grok merges. Open question to Grok before that merge (desk 6790646940): whether the 010 and 013 runners keep their in-file fingerprint.",
+        "condition": "Held by the Chief for the merge only (Grok, History of Science desk 6790775957): the reworked #505 (J2572) merges not before Thu 12 Nov 19:13 London and not until J2270 is done, after a rebase onto main and a re-run of check_all.sh and the address check. Grok merges.",
         "check_at": "2026-11-12T19:30:00Z"
       },
       "not_before": "2026-11-12T19:13Z"
@@ -222697,13 +222720,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:13Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T08:08Z",
-      "result": "parked for Chief: could not verify J0275's condition. Studio read (curl 127.0.0.1:9223) needs approval on the MacBook; THUMB_LEDGER.json still has T013 and T003 as running (readBack 10 Nov, no later Studio read). Estimated ends 10 Nov 19:03Z/22:02Z have passed but completion is not inferred from dates. J0275 left blocked. Chief: run jobs.py wait J0275 --condition 'T013 and T003 shown as ended in Studio Test & Compare (CDP 9223)' --check-at '2026-11-11T16:00Z' --type input --recheck J2569, on a machine that can read 9223.",
+      "result": "acting Chief: not verified, and it cannot be from the MacBook (its Studio read needs an approval there). The check is now J2574, a read-only Studio job pinned to the Mini, which reopens J0275 itself if both tests have ended. J0275 stays held until Thu 12 Nov 09:00Z.",
       "history": [
         {
           "at": "2026-11-11T08:08Z",
@@ -222719,6 +222742,11 @@
           "at": "2026-11-11T08:14Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: could not verify J0275's condition. Studio read (curl 127.0.0.1:9223) needs approval on the MacBook; THUMB_LEDGER.json still has T013 and T003 as running (readBack 10 Nov, no later Studio read). Estimated ends 10 Nov 19:03Z/22:02Z have passed but completion is not inferred from dates. J0275 left blocked. Chief: run jobs.py wait J0275 --condition 'T013 and T003 shown as ended in Studio Test & Compare (CDP 9223)' --check-at '2026-11-11T16:00Z' --type input --recheck J2569, on a machine that can read 9223."
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "done: acting Chief: not verified, and it cannot be from the MacBook (its Studio read needs an approval there). The check is now J2574, a read-only Studio job pinned to the Mini, which reopens J0275 itself if both tests have ended. J0275 stays held until Thu 12 Nov 09:00Z."
         }
       ],
       "remaining_action": "Verify readiness: Arm approved Saturn 55AEQwvs36g Test & Compare B RINGS VANISHING? once J0189 RINGS ARE FALLING completes its 14-day test",
@@ -222733,7 +222761,8 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "J2574"
     },
     {
       "id": "J2570",
@@ -222746,13 +222775,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T08:15Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T08:08Z",
-      "result": "parked for Chief: parked for Chief: J0978 condition UNMET, J0978 left blocked. No yes from Ben to delete the finished J0280 title test on HOS Atom GHZDsiH7L7A is on record. Evidence: (1) J0978 history ends 10 Nov 04:55Z 'waits for Ben's yes (asked in the morning summary)', nothing after but this check being queued; (2) whole studio thread read to 6790813800: Ben's 10 Nov answers cover 026/027 ('do what you think is best'; the Chief's note says 'History of Science 007 and the finished Atom test are not covered') and HOS 007 plus the email clean-up ('Ok on both'); neither names the Atom test; (3) AGENTS.md Never > Studio names exceptions only for Js6EQJ8qDi8, c5AdqQsnnys, 6bbbvfCx6zY and ETynHpIYLeY: 'Every other set or finished test stays as the rule says'. Studio not read and nothing changed (not needed for this condition). The MacBook is refused wait --recheck, so for the Chief: python3 scripts/jobs.py wait J0978 --agent <chief id> --condition 'Ben has not yet said yes to deleting the finished J0280 title test (and its empty report) on HOS Atom GHZDsiH7L7A; the question was put to him in the 10 Nov morning summary and is unanswered; his 10 Nov yeses name only 026, 027 and HOS 007' --check-at '2026-11-12T09:00Z' --type input --recheck J2570 (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "acting Chief: condition not met, correctly found. No yes from Ben is on record for deleting the finished, empty title test on the History of Science Atom video. It is asked again in chat today (11 Nov). J0978 stays held; look-again Fri 13 Nov 09:00Z so it is not re-checked every hour.",
       "history": [
         {
           "at": "2026-11-11T08:08Z",
@@ -222768,6 +222797,11 @@
           "at": "2026-11-11T08:18Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: parked for Chief: J0978 condition UNMET, J0978 left blocked. No yes from Ben to delete the finished J0280 title test on HOS Atom GHZDsiH7L7A is on record. Evidence: (1) J0978 history ends 10 Nov 04:55Z 'waits for Ben's yes (asked in the morning summary)', nothing after but this check being queued; (2) whole studio thread read to 6790813800: Ben's 10 Nov answers cover 026/027 ('do what you think is best'; the Chief's note says 'History of Science 007 and the finished Atom test are not covered') and HOS 007 plus the email clean-up ('Ok on both'); neither names the Atom test; (3) AGENTS.md Never > Studio names exceptions only for Js6EQJ8qDi8, c5AdqQsnnys, 6bbbvfCx6zY and ETynHpIYLeY: 'Every other set or finished test stays as the rule says'. Studio not read and nothing changed (not needed for this condition). The MacBook is refused wait --recheck, so for the Chief: python3 scripts/jobs.py wait J0978 --agent <chief id> --condition 'Ben has not yet said yes to deleting the finished J0280 title test (and its empty report) on HOS Atom GHZDsiH7L7A; the question was put to him in the 10 Nov morning summary and is unanswered; his 10 Nov yeses name only 026, 027 and HOS 007' --check-at '2026-11-12T09:00Z' --type input --recheck J2570 (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "done: acting Chief: condition not met, correctly found. No yes from Ben is on record for deleting the finished, empty title test on the History of Science Atom video. It is asked again in chat today (11 Nov). J0978 stays held; look-again Fri 13 Nov 09:00Z so it is not re-checked every hour."
         }
       ],
       "remaining_action": "Verify readiness: Recording Studio title-field lock/delete-test dialog finding in STUDIO_TESTS.md and readback JSON",
@@ -222832,6 +222866,98 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2572",
+      "title": "History of Science: rework the address clean-up (#505) to fingerprints, 010 and 013 runners untouched, 008 and 009 held back",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6790775957, 11 Nov 08:16Z). This is the rework of history-of-science #505; J2503 itself stays parked for the merge.\n\nOn your own branch (`gemini/J2503-email-scrub`), change #505 to this:\n\n1. **Put the 010 and 013 runners and their tests back exactly as on main:** `_mint_flow_twelve_plates_j2268.py`, `_mint_flow_v01_pass1.py`, `tests/test_hos010_twelve_plate_runner.py`, `tests/test_hos013_pass1_runner.py`. They hold no address and already compare a sha256 written in the file. `git diff origin/main -- <those four>` must print nothing.\n2. **No `STUDIO_FLOW_ACCOUNT` anywhere.** Where a script held a literal address, put the address's sha256 in its place and compare fingerprints (hash the address the page shows, lower-case, and compare). Look at how the 010 runner does it and at `scripts/ai_spend_daily.py` in orbit-with-ben (#801). A script under `_archive/` is not in force: a placeholder is enough.\n3. **Take every 008 and 009 file out of this pull request.** They go in a second one after J2243 and J2037 are done, re-pinned there.\n4. **Keep** the records of films 001 to 007, the brand documents and the archive as you have them: line for line, the address replaced and nothing else.\n5. `scripts/email_ratchet.json` lists exactly the 008 and 009 files left for later. The test must pass with that list and fail on any other file.\n6. Do not copy an address into the pull request, the desk or the thread. A fingerprint is fine.\n\nDo NOT merge and do not ask for the merge yet. It waits until Thu 12 Nov 19:13 London and J2270. When the rework is pushed and `check_all.sh` passes, post on the History of Science desk for Grok and finish this job.",
+      "ref": "J2503",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T08:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Rework history-of-science #505 to Grok's ruling; no merge",
+      "due": "2026-11-12T12:00:00Z",
+      "for": "gemini",
+      "kind": "review",
+      "plain": "Redo the History of Science address clean-up the safer way, leaving the live picture tools untouched"
+    },
+    {
+      "id": "J2573",
+      "title": "HOS 008: look at the salon retake's still sheet before the re-edit (one spark, hair on heads, solid rod), and glance at the other two",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by the acting Chief, 11 Nov. Fifteen minutes, looking only. No spend, nothing on YouTube.\n\nFilm 008's three retakes are made (J2241, done). The maker flagged one for a second look before it goes into the re-edit: on the still sheet the salon take shows \"a broad branching spark\" and rising hair, and asks whether the spark's scale is right and the hair stays attached. A wrong take found now costs one more take. Found at Ben's watch it costs a re-edit.\n\nLook at the still sheet and, if you can, the clip:\n`~/YouTube/hos-008-lightning/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/part02/j2241/02_salon_spark_j2241_t1.jpg` (and `.mp4`), beside its start frame `.../part02/refs/v03_flow_stills/02_salon_spark_t1.png`.\n\nWhat the shot must show (the prompt): the lecturer rubs one solid sealed glass rod with silk, then draws **one crisp spark** to a guest's knuckle. Fine hair tips lift gently **in place** on the guests' heads. Nothing comes out of the rod. Ben's note on the old take was hair coming out of a tube.\n\nAnswer three questions, each yes or no with the frame you saw it in:\n1. Is the spark one small spark to a knuckle, as a rubbed glass rod makes, and not a lightning bolt or a branching arc across the room?\n2. Does all the hair stay on heads?\n3. Is the rod solid, with nothing coming out of it or near it?\n\nThree yes: say PASS in your done line; J2242 uses take 1. Any no: say FAIL and which, and park this for the Chief. A second salon take is then made under J2241's limits (two takes and 200 credits left for that plate, same guards), before Thu 12 Nov 19:13 London. Do not make it yourself.\n\nAlso glance at the other two sheets (`part03/j2241/01_points_desk_j2241_t1.jpg`, `part05/j2241/13_rods_spread_j2241_t2.jpg`) and say in one line each whether anything is plainly wrong. Post your answer on the History of Science desk.",
+      "ref": "J2241",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T08:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Look at the salon retake's still sheet and answer three yes/no questions",
+      "due": "2026-11-11T14:00:00Z",
+      "kind": "qa",
+      "plain": "Check one new shot for the Franklin film before it goes into the edit"
+    },
+    {
+      "id": "J2574",
+      "title": "Studio read on the Mini: have thumbnail tests T013 (Saturn) and T003 (Jupiter) ended? Record the results; reopen J0275 if both have",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ruled by the acting Chief, 11 Nov. Ten minutes, read-only, in the Orbit Studio browser on the Mini (CDP 9223). Change nothing in Studio.\n\nJ0275 (Test & Compare B for Ben's thumbnail designs) waits for two running thumbnail tests to end: T013 on Saturn `55AEQwvs36g` and T003 on Jupiter `-jmMROGoZCM`. Their estimated ends (10 Nov 22:02Z and 19:03Z) have passed, but nobody has read Studio since. The MacBook could not: its Studio read needs an approval there.\n\n1. Check the channel name first. Open each video's Test & Compare panel and read the status and the result as shown. Never press Continue on \"Run a new test?\".\n2. Record what you read in `05_Analytics/tests/THUMB_LEDGER.json` (status, the read time, the winner or \"no winner\" exactly as Studio words it) through a pull request, with a short note under `jobs/reviews/`.\n3. Both ended: reopen J0275 with the two results as its evidence (`jobs.py reopen J0275 --agent <you> --note \"...\" --git`). Either still running: say when Studio expects it to end in your done line and leave J0275 as it is.",
+      "ref": "J0275",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T08:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T08:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read two thumbnail tests' results in Studio and record them",
+      "due": "2026-11-11T18:00:00Z",
+      "kind": "studio",
+      "plain": "Read the results of two thumbnail tests on the Saturn and Jupiter videos",
+      "mini_only": true
     }
   ],
   "focus": [
