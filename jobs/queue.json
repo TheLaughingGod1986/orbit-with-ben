@@ -177300,10 +177300,10 @@
       "stage": "picture",
       "after": "J2536",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T05:07Z",
+      "eta": "2026-11-11T07:07Z",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -177847,6 +177847,11 @@
           "at": "2026-11-11T05:07Z",
           "by": "codex",
           "what": "released: Final remaining row P05:06_iss_apple_c1 running detached in tmux hos009-tranche2 from clean /Users/benjaminoats/_desk/wt/J2033-codex-20261111 (origin/main f04c707c). Log /Users/benjaminoats/_desk/logs/J2033-final-row-codex.log; done /Users/benjaminoats/_desk/logs/J2033-final-row-codex.done. Missing done means still running: do not duplicate. Next run read exit/log, verify all 20 outputs and accounting, commit sanitized evidence and hand off J2034. Prior 19 generated and NAS-hash-verified, 0 KEEP; preflight balance12990, Quality x1 100 credits, no pending shared charge; refusal reversal already present once."
+        },
+        {
+          "at": "2026-11-11T05:07Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check detached final-row result, verify 20 outputs and NAS hashes, then hand off to J2034",
