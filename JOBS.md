@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2621 | cloud | open (after J2619) | – | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | docs/MULTI_CHANNEL_PLAN.md |
 | J2622 | cloud | open | – | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
 | J2630 | cloud | blocked | claude | – | 009 picture · review · HOS 009: let the picture tool make the last shot (minute-and-second c2) from c1's third take, 100 credits reserved | https://github.com/TheLaughingGod1986/history-of-science/pull/529 |
-| J2631 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 |  |
+| J2631 | mini | claimed | codex | 2026-11-11T18:48Z | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the five-metre graphic that replaces the two minute-and-second shots (5:19.63 to 5:33.14, 13.51 s), £0 |  |
 | J2632 | mini | open | – | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 |  |
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 

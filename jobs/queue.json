@@ -227890,10 +227890,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T16:48Z",
+      "eta": "2026-11-11T18:48Z",
       "created_by": "claude",
       "created_at": "2026-11-11T15:57Z",
       "result": "",
@@ -227957,6 +227957,11 @@
           "at": "2026-11-11T16:47Z",
           "by": "claude",
           "what": "reopened: queue side of Grok's rulings on the candidate (desk 6801092656, 6801180887, 6801512032): the timing question is answered (no label crosses a cut; windows in the brief) and the same render takes the 1.4x size and thicker strokes, with no Earth limb. Codex revises onto history-of-science #533 and brings the new sheet to the desk."
+        },
+        {
+          "at": "2026-11-11T16:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief to resolve label timing and review the candidate before any splice",
@@ -227968,7 +227973,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T16:48Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2632",
