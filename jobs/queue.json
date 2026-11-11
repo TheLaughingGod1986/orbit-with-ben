@@ -226456,9 +226456,14 @@
           "at": "2026-11-11T14:00Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-11T14:01Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Current PR head 4b74aebc already implements the second size pass; checking that work instead of duplicating it."
         }
       ],
-      "remaining_action": "Adjusting the salon spark and preparing new review images",
+      "remaining_action": "Verifying the revised spark images already on the review branch",
       "due": "2026-11-12T10:00:00Z",
       "kind": "chart",
       "plain": "Redraw the tiny spark for the Franklin salon shot so it looks like a soft streak",
@@ -226478,10 +226483,11 @@
       "for": "codex",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T14:00Z",
-        "by": "codex"
+        "at": "2026-11-11T14:01Z",
+        "by": "codex",
+        "note": "Current PR head 4b74aebc already implements the second size pass; checking that work instead of duplicating it."
       }
     },
     {
