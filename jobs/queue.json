@@ -1,5 +1,5 @@
 {
-  "next_id": 2555,
+  "next_id": 2556,
   "jobs": [
     {
       "id": "J0001",
@@ -187725,6 +187725,11 @@
           "at": "2026-11-10T21:03Z",
           "by": "claude",
           "what": "acting Chief: condition checked by J2542 (#770): not met, 7 of 20 pictures made, J2034 and J2035 not started. Next look 11 Nov 02:45Z."
+        },
+        {
+          "at": "2026-11-11T02:48Z",
+          "by": "relay",
+          "what": "condition verification queued: J2555"
         }
       ],
       "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
@@ -187743,10 +187748,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed",
-        "check_at": "2026-11-11T02:45:00Z",
+        "check_at": "2026-11-11T03:48:18+00:00",
         "last_recheck": "J2542",
         "checked_at": "2026-11-10T21:03:50+00:00",
-        "checked_by": "claude"
+        "checked_by": "claude",
+        "recheck_task": "J2555"
       }
     },
     {
@@ -220434,6 +220440,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2555",
+      "title": "Verify condition for J2171",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2033 20 rows minted -> J2034 picture acceptance -> J2035 score bed. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T02:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T02:48Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-11T03:48:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
