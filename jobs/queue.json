@@ -193697,20 +193697,25 @@
           "at": "2026-11-11T22:54Z",
           "by": "codex",
           "what": "step 0 of 3 done: Reading approved retakes, packet splice tooling and prior run state before rendering."
+        },
+        {
+          "at": "2026-11-11T22:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Existing source/salon checkpoint retained. Added output preservation verifier; corruption tests pass, full-source self-check running. No v04 master yet."
         }
       ],
-      "remaining_action": "Checking the Franklin splice inputs and existing assembly work",
+      "remaining_action": "Building and verifying the Franklin splice and caption reconstruction",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-11T22:54Z",
+        "at": "2026-11-11T22:57Z",
         "by": "codex",
-        "note": "Reading approved retakes, packet splice tooling and prior run state before rendering."
+        "note": "Existing source/salon checkpoint retained. Added output preservation verifier; corruption tests pass, full-source self-c"
       }
     },
     {
