@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Keeps the Mini's three CDP Chrome browsers (9222 Flow, 9223 Orbit Studio, 9460 HOS Studio) running.
+  Every 5 minutes it starts any that isn't answering. It never touches one that is up.
+  Install once (copies the script to ~/_desk/bin so a git pull can't change it mid-run):
+    mkdir -p ~/_desk/bin && cp "00_Brand/Channel-Setup/tools/cdp_browsers.sh" ~/_desk/bin/ && chmod +x ~/_desk/bin/cdp_browsers.sh
+    cp "00_Brand/Channel-Setup/tools/com.hos.cdp-browsers.plist" ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.hos.cdp-browsers.plist
+  Check:   ~/_desk/bin/cdp_browsers.sh status
+  Remove:  launchctl bootout gui/$(id -u)/com.hos.cdp-browsers
+  Log: ~/Library/Logs/cdp-browsers.log
+-->
+<!--
+  The Mini's signed-in Chrome browsers that agents drive (9222 Flow, 9223 Orbit Studio, 9460 History of Science
+  Studio). Runs `cdp_browsers.sh start` at login and every 5 minutes: it starts any browser that is not answering
+  and never touches one that is up. Copy kept here so a rebuilt Mini can get it back (J2559, 11 Nov 2026).
+  Install once:
+    mkdir -p ~/_desk/bin && cp scripts/mini/cdp_browsers.sh ~/_desk/bin/ && chmod +x ~/_desk/bin/cdp_browsers.sh
+    echo 'CDP_PROFILE_9222="$HOME/<the Flow browser profile folder>"' > ~/_desk/bin/cdp_browsers.env
+    cp scripts/mini/com.hos.cdp-browsers.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.hos.cdp-browsers.plist
+  Check:  ~/_desk/bin/cdp_browsers.sh status
+  Remove: launchctl bootout gui/$(id -u)/com.hos.cdp-browsers
+  Log: ~/Library/Logs/cdp-browsers.log
+  A browser that lands on a Google sign-in page was signed out: Ben signs in once in that window.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.hos.cdp-browsers</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/benjaminoats/_desk/bin/cdp_browsers.sh</string>
+    <string>start</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartInterval</key>
+  <integer>300</integer>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>StandardOutPath</key>
+  <string>/Users/benjaminoats/Library/Logs/cdp-browsers.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/benjaminoats/Library/Logs/cdp-browsers.log</string>
+</dict>
+</plist>
