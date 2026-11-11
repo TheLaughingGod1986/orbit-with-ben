@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2593, J2270, J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2593, J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -40,7 +40,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2230 | mini | open | – | – | for gemini · assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2242 | mini | open (after J2593) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
-| J2270 | mini | claimed | gemini | 2026-11-11T20:49Z | 010 picture · for gemini · video · `gemini-argon` · HOS 010: produce twelve scoped Shorts plates after guarded authorization | J2267 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2339 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
 | J2366 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
