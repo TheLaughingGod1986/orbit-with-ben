@@ -14,6 +14,13 @@ Copies run only in the NAS's 01:00-06:00 window (Ben, 4 Nov 2026): the NAS hard 
 all-day offloads kept them awake. Outside the window --apply waits, unless the Mini is under NAS_OFFLOAD_DAY_MIN_GB
 (default 20; Ben, 9 Nov 2026: was 8, and the disk reached 3 GB) free. One offload at a time (a lock file); a second one waits.
 
+A daytime copy never touches the hard drives (Ben, 10 Nov 2026: "Stage on the NVMe"): with the 20 GB floor the day
+exception was on most of the time and the drives stopped sleeping again. Outside the window the copy goes to the
+NAS's SSD share (NAS_STAGE_MOUNT, /Volumes/nas-staging, same folder layout) and the NAS moves it into the archive
+itself after 01:00, re-checking every sha256 (mini-staging-mover.py on the NAS). If that share is not mounted a
+daytime copy waits for the window, unless the Mini is under NAS_OFFLOAD_DAY_HDD_MIN_GB (default 8) free: then it
+goes straight to the archive as before.
+
 A retry updates its own earlier copy: a folder whose copy failed its check goes back into that same unverified NAS
 folder instead of a new <name>__N (one folder had reached 13 copies). rsync runs --inplace and is retried (its temp
 file renames kept failing on the share). The check ignores the ._ AppleDouble files the share adds and the files
@@ -50,6 +57,9 @@ SUMS = "SHA256SUMS.txt"
 # The NAS's disk window (local time, [start, end) hours): its hard drives sleep outside it (Ben, 4 Nov 2026).
 WINDOW = (1, 6)
 DAY_MIN_GB = float(os.environ.get("NAS_OFFLOAD_DAY_MIN_GB", "20"))  # under this free, a copy may run in the day too
+# In the day a copy lands on the NAS's SSD share, not its hard drives; the NAS moves it at 01:00 (Ben, 10 Nov 2026).
+STAGE_MOUNT = pathlib.Path(os.environ.get("NAS_STAGE_MOUNT", "/Volumes/nas-staging"))
+DAY_HDD_MIN_GB = float(os.environ.get("NAS_OFFLOAD_DAY_HDD_MIN_GB", "8"))  # no SSD share: under this, the drives after all
 LOCK = pathlib.Path(os.environ.get("NAS_OFFLOAD_LOCK", str(HOME / ".nas_offload.lock")))
 RSYNC_TRIES = 3
 # System and tool folders in /private/tmp that are never render scratch.
@@ -234,17 +244,23 @@ def copy_tree(src: pathlib.Path, dst: pathlib.Path) -> None:
             shutil.copy2(p, q)
 
 
-def empty_local(src: pathlib.Path, dst: pathlib.Path, mb: int, at: str) -> None:
+def empty_local(src: pathlib.Path, dst: pathlib.Path, mb: int, at: str, final: pathlib.Path | None = None) -> None:
+    """`final` is where a copy staged on the NAS's SSD ends up once the NAS has moved it into the archive."""
     for c in src.iterdir():
         if c.is_dir() and not c.is_symlink():
             shutil.rmtree(c)
         else:
             c.unlink()
-    (src / MARKER).write_text(f"Moved to the NAS {at} by scripts/nas_offload.py ({mb:,} MB, sha256 checked).\n{dst}\n"
-                              f"SHA256SUMS.txt in that folder lists every file.\n")
+    staged = (f"Staged on the NAS's SSD at {dst}: the NAS moves it to the path above after 01:00 "
+              f"(as <name>__N if that name is already taken there).\n") if final else ""
+    (src / MARKER).write_text(f"Moved to the NAS {at} by scripts/nas_offload.py ({mb:,} MB, sha256 checked).\n{final or dst}\n"
+                              f"SHA256SUMS.txt in that folder lists every file.\n{staged}")
 
 
-def offload_one(src: pathlib.Path, nas: pathlib.Path, today: str, at: str) -> dict:
+def offload_one(src: pathlib.Path, nas: pathlib.Path, today: str, at: str,
+                final_root: pathlib.Path | None = None) -> dict:
+    """`nas` is the share written to. For a daytime copy that is the SSD staging share and `final_root` is the archive
+    share the NAS moves it into later, at the same path below the share."""
     size, _ = scan(src)
     before = manifest(src)
     if not before:
@@ -264,8 +280,10 @@ def offload_one(src: pathlib.Path, nas: pathlib.Path, today: str, at: str) -> di
     if manifest(src) != before:
         return {"path": str(src), "nas": str(dst), "ok": False, "why": "folder changed while copying: kept the Mini copy"}
     (dst / SUMS).write_text("".join(f"{h}  {k}\n" for k, (_, h) in sorted(after.items())))
-    empty_local(src, dst, size // (1024 * 1024), at)
-    return {"path": str(src), "nas": str(dst), "ok": True, "mb": size // (1024 * 1024), "files": len(after)}
+    final = final_root / dst.relative_to(nas) if final_root else None
+    empty_local(src, dst, size // (1024 * 1024), at, final)
+    return {"path": str(src), "nas": str(dst), "ok": True, "mb": size // (1024 * 1024), "files": len(after),
+            **({"staged": True, "final": str(final)} if final else {})}
 
 
 def in_window(t: dt.datetime) -> bool:
@@ -274,7 +292,8 @@ def in_window(t: dt.datetime) -> bool:
 
 def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: float = 24, min_mb: int = 200,
             root: pathlib.Path = SCRATCH_ROOT, nas: pathlib.Path = NAS_MOUNT, check_mount: bool = True,
-            free=free_mb, clock=dt.datetime.now, lock: pathlib.Path = LOCK) -> dict:
+            free=free_mb, clock=dt.datetime.now, lock: pathlib.Path = LOCK,
+            stage: pathlib.Path | None = STAGE_MOUNT) -> dict:
     now = dt.datetime.now(dt.timezone.utc)
     rep = {"before_mb": free(), "target_mb": int(target_gb * 1024), "moved": [], "kept": [], "would": [], "nas": "ok"}
     rep["after_mb"] = rep["before_mb"]
@@ -288,7 +307,7 @@ def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: f
             rep["would"] = candidates(root, min_age_h, min_mb, now.timestamp())
         return rep
     if not apply:
-        return _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now)
+        return _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now, clock, stage)
     lock.parent.mkdir(parents=True, exist_ok=True)
     with open(lock, "a") as fh:
         try:
@@ -296,27 +315,47 @@ def offload(apply: bool, target_gb: float = 20, max_gb: float = 60, min_age_h: f
         except OSError:
             rep["wait"] = "waits: another offload is already running"
             return rep
-        return _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now)
+        return _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now, clock, stage)
 
 
-def _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now) -> dict:
+def _offload(rep, apply, max_gb, min_age_h, min_mb, root, nas, check_mount, free, day_ok, now,
+             clock=dt.datetime.now, stage=None) -> dict:
     todo = candidates(root, min_age_h, min_mb, now.timestamp())
     if not todo:
         return rep  # nothing to move: leave the NAS (and its drives) alone
-    ok, why = nas_ready(nas, check_mount)
-    if not ok:
-        rep["nas"] = why
-        return rep
+    ready: dict = {}
+
+    def usable(where: pathlib.Path) -> tuple[bool, str]:  # one check (it writes a probe file) per share per run
+        if where not in ready:
+            ready[where] = nas_ready(where, check_mount)
+        return ready[where]
+
     budget = int(max_gb * 1024)
     for c in todo:
         if free() >= rep["target_mb"] or budget <= 0 or not day_ok():  # the window closed mid-run: the rest waits
+            break
+        # Outside the window the copy goes to the NAS's SSD share, so its hard drives stay asleep; the archive on
+        # the drives is not even checked. Chosen per folder: a run can cross 01:00 or 06:00.
+        where = stage if (stage is not None and not in_window(clock())) else nas
+        ok, why = usable(where)
+        if not ok and where is not nas:
+            if free() >= DAY_HDD_MIN_GB * 1024:
+                if not rep["moved"]:
+                    rep["wait"] = (f"waits for the NAS's {WINDOW[0]:02d}:00-{WINDOW[1]:02d}:00 window "
+                                   f"(its SSD staging share is not usable: {why})")
+                break
+            where = nas  # nearly full and no SSD share: the hard drives after all
+            ok, why = usable(where)
+        if not ok:
+            rep["nas"] = why
             break
         if not apply:
             rep["would"].append(c)
             budget -= c["mb"]
             continue
         try:
-            r = offload_one(pathlib.Path(c["path"]), nas, now.date().isoformat(), now.strftime("%Y-%m-%d %H:%MZ"))
+            r = offload_one(pathlib.Path(c["path"]), where, now.date().isoformat(), now.strftime("%Y-%m-%d %H:%MZ"),
+                            final_root=nas if where is not nas else None)
         except Exception as e:  # one bad folder never stops the rest; the Mini copy stays
             r = {"path": c["path"], "ok": False, "why": f"{e.__class__.__name__}: {str(e)[:200]}"}
         (rep["moved"] if r["ok"] else rep["kept"]).append(r)
@@ -336,7 +375,9 @@ def summary(rep: dict) -> str:
         return (f"NAS offload {rep['wait']} (the relay runs it then; nothing to do now). "
                 f"{rep['before_mb']:,} MB free.{would}")
     mv = sum(r["mb"] for r in rep["moved"])
-    parts = [f"moved {len(rep['moved'])} scratch folder(s), {mv:,} MB, to the NAS (sha256 checked)"] if rep["moved"] else []
+    st = sum(1 for r in rep["moved"] if r.get("staged"))
+    to = "to the NAS" + (f" ({st} on its SSD until 01:00, so the drives stay asleep)" if st else "")
+    parts = [f"moved {len(rep['moved'])} scratch folder(s), {mv:,} MB, {to} (sha256 checked)"] if rep["moved"] else []
     if rep["would"]:
         parts.append(f"would move {len(rep['would'])} folder(s), {sum(r['mb'] for r in rep['would']):,} MB")
     if rep["kept"]:
