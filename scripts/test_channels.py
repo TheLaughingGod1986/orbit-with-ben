@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tests for scripts/channels.py, and the phase 1 rule: engine code asks channels.py instead of naming a channel
 (docs/MULTI_CHANNEL_PLAN.md; Ben, 5 Nov 2026: "so we just plug in new channels")."""
+import contextlib
 import json
 import pathlib
 import re
@@ -20,10 +21,18 @@ def _file(slug):
     return pathlib.Path(channels.get(slug)["_source"])
 
 
+def _here(slug):
+    """Where a channel's content is on this machine: the studio's root while that channel is its home (today), its
+    own checkout beside the studio once it is not (the layout the dry run of the move builds). The tests below that
+    read real files ask here, so they hold in both."""
+    return channels.checkout(slug)
+
+
 class Loader(unittest.TestCase):
     def test_the_two_channels_in_order(self):
         self.assertEqual(channels.slugs(), ["owb", "hos"])
-        self.assertEqual(channels.home(), "owb")
+        self.assertIn(channels.home(), ("owb", None))       # None once the studio has a repo of its own
+        self.assertEqual(channels.default(), "owb")         # ... and a job that names no channel is still Orbit's
         self.assertEqual((channels.label("hos"), channels.name("owb")), ("HOS", "Orbit With Ben"))
 
     def test_a_jobs_channel_comes_from_repo_then_title_then_home(self):
@@ -67,11 +76,107 @@ class Loader(unittest.TestCase):
             self.assertEqual(str(channels.repo_path("hos")), "/x/hos")
 
 
+class NoHomeChannel(unittest.TestCase):
+    """J2621, 11 Nov 2026 (plan decision 1). Until now exactly one channel had to be the studio's home: its content
+    lives in the studio's own root. That is optional now. With none, the studio's root holds no channel's content,
+    every channel is read through its checkout, and the questions the engine asks still have an answer. These build
+    that layout from made-up files, so they run the same today and after the move."""
+
+    def apart(self, **section):
+        """Today's channels with none of them home, and the registry's `studio` section as given."""
+        base = tuple(dict(c, home=False) for c in channels._load())
+        kept = {"prefix": "owb", "github": "someone/studio", "default_channel": "owb", **section}
+        stack = contextlib.ExitStack()
+        stack.enter_context(mock.patch.object(channels, "_load", lambda directory=None: base))
+        stack.enter_context(mock.patch.object(channels, "_studio_section", lambda: kept))
+        return stack
+
+    def folder(self, tmp, homes):
+        for slug in ("owb", "hos"):
+            (pathlib.Path(tmp) / slug).mkdir()
+            c = dict(json.loads(_file(slug).read_text()), home=slug in homes)
+            (pathlib.Path(tmp) / slug / "channel.json").write_text(json.dumps(c))
+
+    def test_no_channel_has_to_be_home_and_two_cannot_be(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.folder(t, homes=())
+            self.assertEqual([(c["slug"], bool(c.get("home"))) for c in channels._load(t)], [("owb", False), ("hos", False)])
+        with tempfile.TemporaryDirectory() as t:
+            self.folder(t, homes=("owb", "hos"))
+            with self.assertRaisesRegex(ValueError, "at most one channel can be home"):
+                channels._load(t)
+
+    def test_the_registry_says_which_channel_is_home_not_the_channels_own_file(self):
+        # A channel's settings file reads the same whichever studio it is plugged into. Here both files claim `home`
+        # and the registry marks neither: neither is.
+        with tempfile.TemporaryDirectory() as t:
+            self.folder(t, homes=("owb", "hos"))
+            (pathlib.Path(t) / "channels.json").write_text(json.dumps({"channels": [{"slug": "owb"}, {"slug": "hos"}]}))
+            self.assertEqual([c["home"] for c in channels._load(t)], [False, False])
+
+    def test_what_the_engine_asks_still_has_an_answer(self):
+        with self.apart():
+            self.assertIsNone(channels.home())
+            self.assertIsNone(channels.studio_slug())
+            self.assertEqual((channels.default(), channels.queue_key(), channels.home_label()), ("owb", "owb", "OWB"))
+            self.assertEqual(channels.board_channel(), "owb")
+            # a job's channel: its repo, then its title, then the default one, exactly as with a home channel
+            self.assertEqual(channels.of_job({"repo": "hos", "title": "x"}), "hos")
+            self.assertEqual(channels.of_job({"repo": "owb", "title": "HOS 013: Darwin"}), "hos")
+            self.assertEqual(channels.of_job({"title": "033 shot list"}), "owb")
+            self.assertEqual(channels.label_of_repo(None), "OWB")
+            self.assertEqual((channels.studio_key(), channels.studio_name(), channels.studio_short()),
+                             ("studio", "the studio", "studio"))
+            self.assertEqual(channels.studio_github(), "someone/studio")
+            self.assertEqual(channels.studio_repo(), {"url": "https://github.com/someone/studio.git", "env": "",
+                                                      "checkouts": ["studio"]})
+        with self.apart(name="Ben's studio", label="STUDIO", checkouts=["Studio"], env="STUDIO_REPO"):
+            self.assertEqual((channels.studio_name(), channels.studio_short()), ("Ben's studio", "STUDIO"))
+            with tempfile.TemporaryDirectory() as home, mock.patch.dict("os.environ", {"STUDIO_REPO": ""}):
+                self.assertEqual(channels.studio_checkout(pathlib.Path(home)), pathlib.Path(home) / "YouTube" / "Studio")
+            with mock.patch.dict("os.environ", {"STUDIO_REPO": "/elsewhere/s"}):
+                self.assertEqual(channels.studio_checkout(), pathlib.Path("/elsewhere/s"))
+
+    def test_the_default_channel_is_the_registrys_field_then_home_then_the_first(self):
+        with self.apart(default_channel="hos"):
+            self.assertEqual(channels.default(), "hos")
+            self.assertEqual(channels.of_job({"title": "a job that names nothing"}), "hos")
+        for missing in ({"default_channel": ""}, {"default_channel": "not-plugged-in"}):
+            with self.apart(**missing):
+                self.assertEqual(channels.default(), "owb")              # no home either: the first channel in order
+        registry = json.loads((channels.DIR / "channels.json").read_text())
+        self.assertEqual(registry["studio"]["default_channel"], "owb")   # the real registry names it
+        if channels.home():
+            self.assertEqual(channels.default(), channels.home())        # and until the move the two agree
+
+    def test_every_channel_is_read_through_its_own_checkout(self):
+        with tempfile.TemporaryDirectory() as t:
+            where = {}
+            for slug in ("owb", "hos"):
+                where[slug] = pathlib.Path(t) / slug
+                (where[slug] / "studio").mkdir(parents=True)
+                (where[slug] / "studio" / "channel.json").write_text("{}")
+            with self.apart(), mock.patch.object(channels, "repo_path", lambda slug, home_dir=None: where[slug]):
+                for slug in ("owb", "hos"):
+                    self.assertEqual(channels.checkout(slug), where[slug])            # never the studio's root
+                    self.assertEqual(channels.analytics_dir(slug), where[slug] / "05_Analytics" / slug)
+                    self.assertEqual(channels.uploads_file(slug),
+                                     where[slug] / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
+                self.assertEqual(channels.films_dir("owb"), where["owb"] / "02_Video-Projects")
+                self.assertEqual(channels.of_path(where["hos"] / "anything"), "hos")
+                self.assertEqual(channels.of_path(channels.ROOT / "scripts"), "owb")  # the studio's own files: the default
+            # the studio's own records stay in the studio's root
+            self.assertEqual(channels.studio_records("ai_spend", "ledger.jsonl"),
+                             channels.ROOT / "05_Analytics" / "ai_spend" / "ledger.jsonl")
+
+
 class OwnRepos(unittest.TestCase):
     """Phase 2: each channel's settings live in its own repo at studio/channel.json."""
 
-    def test_home_channel_reads_its_own_studio_folder(self):
-        self.assertEqual(_file("owb"), channels.ROOT / "studio" / "channel.json")
+    def test_a_channel_on_this_machine_is_read_from_its_own_studio_folder(self):
+        self.assertEqual(_file("owb"), _here("owb") / "studio" / "channel.json")
+        if channels.home():
+            self.assertEqual(_here(channels.home()), channels.ROOT)   # the home channel's checkout is the studio's root
 
     def test_a_channels_checkout_wins_over_the_cached_copy(self):
         with tempfile.TemporaryDirectory() as t:
@@ -150,13 +255,15 @@ class Films(unittest.TestCase):
 
     def test_each_channels_numbers_and_uploads_register_are_asked_for_by_slug(self):
         # New engine code (the first-day check) asks here instead of writing a channel's folder into a path.
+        # With a home channel every channel's numbers are a folder each in the studio's root; with none, each
+        # channel keeps its own in its checkout.
         for slug in channels.slugs():
-            self.assertEqual(channels.analytics_dir(slug), channels.ROOT / "05_Analytics" / slug)
+            base = channels.ROOT if channels.home() else _here(slug)
+            self.assertEqual(channels.analytics_dir(slug), base / "05_Analytics" / slug)
             self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
-        home = channels.home()
-        self.assertEqual(channels.uploads_file(home),
-                         channels.ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
-        self.assertTrue(channels.uploads_file(home).is_file())
+        own = channels.default()
+        self.assertEqual(channels.uploads_file(own), _here(own) / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
+        self.assertTrue(channels.uploads_file(own).is_file())
 
     def test_a_channel_whose_checkout_is_not_here_has_no_uploads_register(self):
         with mock.patch.object(channels, "checkout", return_value=None):
@@ -210,10 +317,12 @@ class TrackerAsksTheLoader(unittest.TestCase):
         self.assertEqual(channels.label_of_repo(channels.home()), channels.home_label())
 
     def test_the_studio_slug_is_the_channel_whose_repo_carries_the_studio(self):
-        # for code that must clone or pull the studio's repo (the MacBook worker): today the home channel's
+        # for code that must clone or pull the studio's repo (the MacBook worker): the home channel's while there is
+        # one, the studio's own once there is not. Either way the loader gives its address.
         self.assertEqual(channels.studio_slug(), channels.home())
-        self.assertEqual(channels.get(channels.studio_slug())["repo"]["url"],
-                         "https://github.com/" + channels.studio_github() + ".git")
+        self.assertEqual(channels.studio_repo()["url"], "https://github.com/" + channels.studio_github() + ".git")
+        if channels.home():
+            self.assertEqual(channels.studio_repo(), channels.get(channels.home())["repo"])
         with self.sky():
             self.assertEqual(channels.studio_slug(), channels.home())     # a third channel does not move it
 
@@ -349,9 +458,11 @@ class StudioOwnRepo(unittest.TestCase):
     def test_the_board_repo_and_its_github_name_come_from_the_home_channel(self):
         self.assertEqual(channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
         self.assertEqual(channels.home_label(), "OWB")
-        with mock.patch.dict("os.environ", {"OWB_REPO": "/somewhere/else"}):
-            self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
-        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {"OWB_REPO": ""}):
+        repo = channels.studio_repo()             # the home channel's repo today, the studio's own after the move
+        if repo["env"]:
+            with mock.patch.dict("os.environ", {repo["env"]: "/somewhere/else"}):
+                self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {repo["env"] or "NO_SUCH_VARIABLE": ""}):
             self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / "orbit-with-ben")
 
 
@@ -431,18 +542,26 @@ class NoHomeChannelInTheScripts(unittest.TestCase):
 
     def test_the_voice_tools_are_found_in_a_channels_checkout(self):
         import ai_spend_daily
-        self.assertEqual(ai_spend_daily.voice_tools(), HERE.parent / "04_Audio" / "tools")
-        with mock.patch.object(channels, "checkout", lambda slug: None):
-            self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
+        self.assertEqual(ai_spend_daily.voice_tools(), HERE.parent / "04_Audio" / "tools")   # the studio's own copy
+        with tempfile.TemporaryDirectory() as t:
+            elsewhere = pathlib.Path(t) / "04_Audio" / "tools"
+            elsewhere.mkdir(parents=True)
+            (elsewhere / "el_auth.py").write_text("")
+            with mock.patch.object(channels, "ROOT", pathlib.Path(t) / "bare-studio"), \
+                    mock.patch.object(channels, "checkout", lambda slug: pathlib.Path(t)):
+                self.assertEqual(ai_spend_daily.voice_tools(), elsewhere)     # ... else a channel's checkout
+            with mock.patch.object(channels, "ROOT", pathlib.Path(t) / "bare-studio"), \
+                    mock.patch.object(channels, "checkout", lambda slug: None):
+                self.assertRaises(RuntimeError, ai_spend_daily.voice_tools)
 
 
 class StudioRootHoldsNoChannelContent(unittest.TestCase):
     """J2619: jobs.py, workflow_state.py, workflow_handoffs.py, studio.py and routing.py take a film's folder and a
     job's channel from the loader, so they still work when the studio's own root holds no channel content."""
 
-    def test_today_nothing_moves(self):
+    def test_the_films_are_where_the_channel_is_checked_out(self):
         import studio
-        root = HERE.parent
+        root = _here("owb")           # the studio's root today; Orbit's own checkout once the two are apart
         self.assertEqual(channels.board_channel(), "owb")
         self.assertEqual(channels.films_dir("owb"), root / "02_Video-Projects")
         self.assertEqual(studio.FILMS, root / "02_Video-Projects")
@@ -509,7 +628,8 @@ class RuleFiles(unittest.TestCase):
         self.assertEqual(channels.rule_files("/no/such/checkout"), ["AGENTS.md"])  # not on this machine
 
     def test_this_repo_has_both(self):
-        self.assertEqual(channels.rule_files(HERE.parent), ["AGENTS.md", "studio/RULES.md"])
+        self.assertTrue((channels.ROOT / "AGENTS.md").is_file())                # the studio's rules
+        self.assertEqual(channels.rule_files(_here(channels.default())), ["AGENTS.md", "studio/RULES.md"])
 
 
 class NoNewChannelNames(unittest.TestCase):
@@ -591,7 +711,7 @@ class DeliveryAsksTheLoader(unittest.TestCase):
 
     def test_the_film_folder_can_be_asked_for_inside_another_copy_of_the_repo(self):
         self.assertEqual(channels.films_dir("owb", pathlib.Path("/elsewhere/o")), pathlib.Path("/elsewhere/o/02_Video-Projects"))
-        self.assertEqual(channels.films_dir("owb"), channels.ROOT / "02_Video-Projects")       # asked plainly: as before
+        self.assertEqual(channels.films_dir("owb"), _here("owb") / "02_Video-Projects")        # asked plainly: as before
 
     def test_the_delivery_tool_names_no_channel(self):
         import test_channel_ratchet as ratchet
@@ -633,7 +753,8 @@ class TheStudiosOwnName(unittest.TestCase):
     def test_the_studios_repo_is_a_registry_field_and_agrees_with_the_home_channel_until_the_move(self):
         reg = json.loads((channels.DIR / "channels.json").read_text())["studio"]
         self.assertEqual(channels.studio_github(), reg["github"])
-        self.assertEqual("https://github.com/" + reg["github"] + ".git", channels.get(channels.home())["repo"]["url"])
+        if channels.home():
+            self.assertEqual("https://github.com/" + reg["github"] + ".git", channels.get(channels.home())["repo"]["url"])
 
     def test_asking_for_the_studios_repo_needs_no_home_channel(self):
         with tempfile.TemporaryDirectory() as t:

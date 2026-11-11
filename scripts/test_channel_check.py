@@ -166,7 +166,8 @@ class Checkout(unittest.TestCase):
         self.assertTrue(todo[3].startswith("cadence:"))
 
     def test_this_repo_can_be_driven(self):
-        self.assertEqual(cc.check(HERE.parent)[0], [])
+        # Orbit's own checkout: the studio's root today, a folder beside it once the two are apart.
+        self.assertEqual(cc.check(channels.checkout(channels.default()))[0], [])
 
     def test_the_report_says_which(self):
         self.assertIn("cannot drive it yet", cc.report("x", ["a"], []))
@@ -249,13 +250,17 @@ class NewChannel(unittest.TestCase):
 
 class HomeCheckout(unittest.TestCase):
     def test_the_home_channels_checkout_is_this_repo(self):
-        home = next(c["slug"] for c in channels.all_channels() if c.get("home"))
-        self.assertEqual(channels.checkout(home), HERE.parent)
+        home = channels.home()
+        for slug in channels.slugs():
+            if slug == home:
+                self.assertEqual(channels.checkout(slug), HERE.parent)
+            else:                     # every other channel, and every channel once none is home, is somewhere else
+                self.assertNotEqual(channels.checkout(slug), HERE.parent)
 
     def test_a_channel_whose_repo_is_not_here_has_none(self):
         with tempfile.TemporaryDirectory() as d:
             import os
-            other = next(c for c in channels.all_channels() if not c.get("home"))
+            other = next(c for c in channels.all_channels() if not c.get("home") and c["repo"].get("env"))
             old = os.environ.get(other["repo"]["env"])
             os.environ[other["repo"]["env"]] = d
             try:

@@ -572,10 +572,11 @@ class MacBookTakesTextJobs(unittest.TestCase):
         self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
         self.assertRegex(jobs.keys_example(), r"^[A-Z]+:006 or [A-Z]+:028,[A-Z]+:029$")
 
-    def test_a_job_added_with_no_channel_goes_to_the_home_channel(self):
+    def test_a_job_added_with_no_channel_goes_to_the_default_channel(self):
         import channels
         d = queue(("mini", "tidy the cache", {}))
-        self.assertEqual(d["jobs"][0]["repo"], channels.home())
+        self.assertEqual(d["jobs"][0]["repo"], channels.default())
+        self.assertEqual(channels.default(), "owb")       # with or without a home channel (J2621)
 
     def test_harvest_assembly_watch_allowed_when_studio_live_media_exists(self):
         # Ben, 7 Nov 2026: MacBook takes shared-media jobs when /Volumes/data/studio-live has the film.

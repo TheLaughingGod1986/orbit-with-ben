@@ -23,8 +23,14 @@ STALE lists phrases from superseded orders. Add one whenever an order changes, s
 import argparse, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+import channels  # noqa: E402
+
 SOURCE = ROOT / "AGENTS.md"
-CHANNEL_SOURCE = ROOT / "studio" / "RULES.md"
+# The channel whose own rules the copies quote: the one a record that names no channel belongs to. Its rules file is
+# in its checkout, which is this repo while that channel is the studio's home, and a folder beside it once it is not
+# (J2621). With that checkout not on this machine the path is this repo's, and the file is then simply missing.
+CHANNEL_SOURCE = (channels.checkout(channels.default()) or ROOT) / channels.CHANNEL_RULES
 SOURCES = {"AGENTS.md": SOURCE, "studio/RULES.md": CHANNEL_SOURCE}
 TARGETS = [
     ".cursor/rules/orbit-studio.mdc",

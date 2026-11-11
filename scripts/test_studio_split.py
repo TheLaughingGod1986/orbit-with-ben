@@ -48,6 +48,13 @@ class Routes(unittest.TestCase):
         files, in_studio = set(split.tracked(ROOT)), set(split.plan(split.tracked(ROOT), channels.slugs(), split.resident(ROOT))[split.STUDIO])
         self.assertEqual([f for f in split.shared_tools(ROOT) if f in files and f not in in_studio], [])
 
+    def test_with_no_home_channel_a_channels_file_has_no_place_in_the_studio(self):
+        # The studio already in a repo of its own: channel content found there is listed, not filed under a channel.
+        placed = split.plan([".gitignore", "scripts/a.py", "02_Video-Projects/001_X/s.json", "05_Analytics/aaa/x.json"], ["aaa"], None)
+        self.assertEqual(placed[split.STUDIO], [".gitignore", "scripts/a.py"])
+        self.assertEqual(placed["unrouted"], ["02_Video-Projects/001_X/s.json"])
+        self.assertEqual(placed["aaa"], ["05_Analytics/aaa/x.json"])
+
     def test_the_script_names_no_channel_and_asks_for_no_home(self):
         import test_channel_ratchet as ratchet
         self.assertEqual(ratchet.counts().get("studio_split.py", 0), 0)
@@ -158,6 +165,12 @@ class History(unittest.TestCase):
 class WholeRun(unittest.TestCase):
     def test_it_agrees_with_the_ratchet_and_changes_nothing_real(self):
         import test_channel_ratchet as ratchet
+        if split.resident(ROOT) is None:
+            # Run inside the layout the dry run builds: no channel's content is here, so there is nothing to rehearse.
+            with self.assertRaises(SystemExit) as stop:
+                split.check(ROOT, tests=False)
+            self.assertIn("already moved", str(stop.exception))
+            return
         before = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"], capture_output=True, text=True).stdout
         res = split.check(ROOT, tests=False)
         after = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"], capture_output=True, text=True).stdout
@@ -170,6 +183,9 @@ class WholeRun(unittest.TestCase):
         self.assertEqual(res["counts"]["keys"], 0, [g for g in res["groups"] if g["key"] == "keys"])
         text = split.report(res)
         self.assertIn(f"{res['left']} thing", text)
+        one = split.report(dict(res, left=1))
+        self.assertIn("1 thing still stops the move.", one)                 # one thing stops; two things stop
+        self.assertIn("2 things still stop the move.", split.report(dict(res, left=2)))
         self.assertNotRegex(text, r"[A-Za-z0-9._%+-]+@(gmail|googlemail)\.com")
 
     def test_a_pass_says_so(self):

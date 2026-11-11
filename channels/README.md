@@ -30,7 +30,11 @@ One folder per channel plugged into the studio (docs/MULTI_CHANNEL_PLAN.md, phas
   inside its repo, "number": the number of the desk's thread}`. The relay's brief then sends an agent to that desk's
   inbox before the shared queue, and tells it how to report there. Left out otherwise. Read with `channels.desk(slug)`.
 - `pipeline`: where its film state lives.
-- `home`: true for the channel whose repo holds the engine today. In phase 3 that moves to its own repo.
+- `home`: not read from a channel's file any more (J2621, 11 Nov 2026). Whether a channel's content lives in the
+  studio's own root is the registry's to say: `{"slug": ..., "home": true}` in `channels.json`. At most one channel
+  can be, and none is once the studio has a repo of its own: then every channel is read through its checkout, and
+  the registry's `studio` section answers what the home channel used to (`default_channel` for a job that names
+  none, `github` and `checkouts` for the studio's own repo). The field in a channel's file is left as it is.
 
 To add a channel (10 Nov 2026): `python3 scripts/channel_new.py <slug> --label ABC --name "Channel Name"` makes its
 folder from `channels/_template/` with a filled-in `studio/channel.json`, and runs `scripts/channel_check.py` on it.

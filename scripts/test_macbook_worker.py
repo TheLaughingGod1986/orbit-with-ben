@@ -872,10 +872,20 @@ class AsksTheChannelLoader(unittest.TestCase):
     """J2526: the worker names no channel. Its clones, its brief and its Studio ports come from the channel files,
     so today's two channels behave exactly as before and a third needs no edit here."""
 
+    def setUp(self):
+        # These tests hold the worker to what it does today, with one channel's repo carrying the studio. They pin
+        # that layout, so they read the same when run in the layout the dry run of the move builds.
+        import channels
+        own = channels.default()
+        base = tuple(dict(c, home=c["slug"] == own) for c in channels._load())
+        pinned = mock.patch.object(channels, "_load", lambda directory=None: base)
+        pinned.start()
+        self.addCleanup(pinned.stop)
+
     def sky(self):
         import channels
         base = channels._load()
-        home = next(c for c in base if c.get("home"))
+        home = next(c for c in base if c["slug"] == channels.default())
         sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
                    title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
                    repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
@@ -901,8 +911,9 @@ class AsksTheChannelLoader(unittest.TestCase):
     def test_clones_urls_and_ports_come_from_the_channel_files(self):
         self.assertEqual(mw.URLS, {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
                                    "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git"})
-        self.assertEqual(mw.STUDIO.name, "orbit-with-ben")
-        self.assertEqual([p.name for p in mw.OTHERS], ["history-of-science"])
+        self.assertEqual(mw.studio_clone().name, "orbit-with-ben")
+        self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["history-of-science"])
+        self.assertEqual(mw.STUDIO, mw.studio_clone().parent / mw.STUDIO.name)       # the constants are built the same way
         self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
         # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
         self.assertEqual(mw.clone_name("hos"), "history-of-science")
@@ -957,13 +968,37 @@ class AsksTheChannelLoader(unittest.TestCase):
     def test_a_channel_with_no_repo_url_yet_does_not_stop_the_worker(self):
         import channels
         base = channels._load()
-        bare = dict(next(c for c in base if c.get("home")), slug="new", label="NEW", name="New One", home=False,
+        bare = dict(next(c for c in base if c["slug"] == channels.default()), slug="new", label="NEW", name="New One", home=False,
                     order=9, title_match=r"\bNEW\b", youtube={}, repo={"env": "NEW_REPO", "checkouts": ["new-one"]})
         with mock.patch.object(channels, "_load", lambda directory=None: base + (bare,)):
             self.assertEqual(mw.clone_name("new"), "new")
             self.assertEqual(mw.channel_clone("new"), mw.slot_dir(mw.SLOT) / "new")
             with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/n"]):
                 self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science), check", mw.brief("J1", "m", 25))
+
+    def test_once_the_studio_has_its_own_repo_every_channel_is_one_of_the_others(self):
+        # J2621 (plan decision 1: no home channel). The registry marks no channel `home`; the studio's own repo is its
+        # `studio.github`. The worker then keeps a clone of the studio and one of every channel, Orbit included.
+        import channels
+        apart = tuple(dict(c, home=False) for c in channels._load())
+        kept = dict(channels._studio_section(), github="someone/studio")
+        with mock.patch.object(channels, "_load", lambda directory=None: apart), \
+                mock.patch.object(channels, "_studio_section", lambda: kept):
+            self.assertIsNone(channels.studio_slug())
+            self.assertEqual(mw.other_slugs(), ["owb", "hos"])
+            self.assertEqual(mw.studio_clone(), mw.slot_dir(mw.SLOT) / "studio")
+            self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["orbit-with-ben", "history-of-science"])
+            with mock.patch.object(mw, "STUDIO", "/s"), mock.patch.object(mw, "OTHERS", ["/o", "/h"]):
+                p = mw.brief("J1", "m", 25)
+        self.assertIn('1. the studio (/s) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then\n', p)
+        self.assertIn("   For a OWB job, work in the OWB checkout (/o) and follow its AGENTS.md.\n"
+                      "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n", p)
+        self.assertIn("Orbit With Ben and History of Science folders must always be left on main", p)
+        self.assertIn("inside the three checkouts", p)
+        self.assertNotIn("{", p)
+        # The constants are set when the module loads, so the line that sets them is held here; the dry run of the
+        # move loads the module with no home channel every day.
+        self.assertIn("\nSTUDIO = studio_clone()\n", pathlib.Path(mw.__file__).read_text())
 
     def test_the_unattended_tool_list_is_not_widened(self):
         # the list an unattended Claude may use without asking, as it stood before this change

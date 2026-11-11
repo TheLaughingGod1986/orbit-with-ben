@@ -743,12 +743,15 @@ def brief_channels(agent: str, checkouts: dict | None = None) -> dict:
     channel itself (J2618, 11 Nov 2026). `checkouts` is {channel: its checkout} for every channel; by default the
     studio's own and the others', as the channel files give them.
 
-    The studio's channel is step 1. Every other channel gets a step-2 line (2, 2b, 2c ...), its flag for the balance
-    check and a note on its queue jobs. A channel with a desk (`desk` in its channel file: the desk tool's path and
-    the desk's number) also gets the desk inbox, the desk-first rule and its way of reporting. For today's two
-    channels the result reads exactly as the hand-written brief did (a test holds the old text against it)."""
-    studio = channels.studio_slug()
-    paths = dict(checkouts or {studio: STUDIO, **OTHERS})
+    The checkout that carries the studio is step 1: the home channel's while a channel's repo carries the studio, the
+    studio's own once it has one (then every channel is one of the others). Every other channel gets a step-2 line
+    (2, 2b, 2c ...), its flag for the balance check and a note on its queue jobs. A channel with a desk (`desk` in
+    its channel file: the desk tool's path and the desk's number) also gets the desk inbox, the desk-first rule and
+    its way of reporting. For today's two channels the result reads exactly as the hand-written brief did (a test
+    holds the old text against it)."""
+    studio = channels.studio_slug()          # None once the studio has a repo of its own
+    paths = dict(checkouts or {**({studio: STUDIO} if studio else {}), **OTHERS})
+    studio_path = paths.get(studio, STUDIO)
     rules = {slug: channels.rules_phrase(path) for slug, path in paths.items()}
     others = [slug for slug in paths if slug != studio]
     desks = {slug: channels.desk(slug) for slug in others if channels.desk(slug)}
@@ -760,7 +763,7 @@ def brief_channels(agent: str, checkouts: dict | None = None) -> dict:
             steps.append(line + f' ("The desk"). Run its desk inbox:\n     python3 {desks[slug]["tool"]} inbox --as {agent}   '
                                 f"(run in the {label(slug)} checkout; there is no scripts/{tool(slug)})")
             first.append(f"   If it says {channels.name(slug)} first: take the single oldest {label(slug)} desk task you can do "
-                         f"now, and go to step 4. Only if\n   there is none, fall through to the {label(studio)} queue below.\n")
+                         f"now, and go to step 4. Only if\n   there is none, fall through to the {channels.studio_short()} queue below.\n")
             notes.append(f'   Queue jobs marked `{slug}` (repo: {slug}, e.g. "{label(slug)} 007 Shorts VO") are NOT {label(slug)} '
                          f"desk tasks: they are normal queue jobs\n   that `jobs.py next` hands out like any other. Do them in "
                          f'the {label(slug)} checkout, following its {rules[slug]}. "{label(slug)} desk tasks"\n   means only '
@@ -771,13 +774,13 @@ def brief_channels(agent: str, checkouts: dict | None = None) -> dict:
                          f"any other.\n   Do them in the {label(slug)} checkout, following its {rules[slug]}.\n")
     desk_labels = " or ".join(label(slug) for slug in desks)
     return {
-        "studio_name": channels.name(studio), "studio": paths[studio], "studio_rules": rules[studio],
-        "studio_label": label(studio),
+        "studio_name": channels.studio_name(), "studio": studio_path,
+        "studio_rules": channels.rules_phrase(studio_path), "studio_label": channels.studio_short(),
         "desk_ids": "".join(f", {tool(slug)} --as/--from" for slug in desks),
         "channel_steps": "\n".join(steps) or "2. No other channel is plugged in.",
         "balance_flags": " ".join(f'--{slug} "{paths[slug]}"' for slug in others),
         "desk_first": "".join(first), "queue_notes": "".join(notes),
-        "film_example": f"{label(others[0] if others else studio)}:006",
+        "film_example": f"{label(others[0] if others else channels.default())}:006",
         "desk_or": f"on the {desk_labels}\n   desk, or " if desks else "",
         "desk_claim": f", or the {desk_labels}\n   desk's own rule" if desks else "",
         "desk_reports": "".join(f"; {label(slug)} with  {tool(slug)} post --from {agent} --to claude ..." for slug in desks),
