@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2034, J2037, J2040, J2230, J2033, J2269.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2034, J2037, J2040, J2230, J2269, J2033.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2015 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J1754 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2033 | mini | blocked | codex | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
+| J2033 | mini | open (after J2536) | – | – | 009 picture · video · HOS 009: Mint the remaining 20 approved HOS009 Quality rows | J2026 |
 | J2034 | mini | open (after J2033) | – | – | 009 picture · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review tranche2 evidence and approve complete HOS009 picture | J2026 |
 | J2035 | mini | open (after J2034) | – | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2449 | mini | blocked | macbook-2 | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
-| J2452 | macbook | blocked | macbook-2 | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
+| J2452 | macbook | open (after J2548) | – | – | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
 | J2453 | mini | open | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2454 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2455 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
@@ -93,12 +93,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2549 | mini | blocked | claude | – | assembly · Mars helicopter Short for Fri 13 Nov (bSjWiCbB7pY): make the two padded stretches full-frame (v07), gates, watch, Ben's watch card by Thu 12 Nov 18:00; v06 airs if it is not ready | J2545 |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2554 | any | blocked | macbook | – | review · Verify condition for J2452 |  |
-| J2555 | any | blocked | macbook-2 | – | review · Verify condition for J2171 |  |
 | J2556 | any | claimed | gemini | 2026-11-11T05:06Z | review · Review the supermoon dated Short v01 (J2478): KEEP or FIX, then send to Ben's watch |  |
 
 Recently finished:
 
+- J2555 done: Verify condition for J2171 (Condition not met, J2171 stays blocked: 14 of 20 pictures made, J2034 and J2035 not started. Next look Thu 12 Nov 08:00Z. Record merged as #787.)
+- J2554 done: Verify condition for J2452 (Decided by the acting Chief: J2452 reopens with a ruling. Scope is the 13 films with clean narration (about 107.7 minutes, floor lifted for this test), cuts on whole-sentence pauses, chapters built one by one.)
 - J2553 done: Verify condition for J2546 (Decided by the acting Chief: J2546 is not split. It moves to the cloud, where the calibration can run without a time cap on the labelled frames already on main. Reopened as a cloud job with the MacBook's handover as its starting point.)
 - J2552 done: Verify condition for J2033 (Decided by the Chief: Grok ruled on the Halley stop at 01:30Z (History of Science desk, comment 6784299215). J2033 is reopened for batch 5 with that ruling as its next action.)
 - J2548 done: Sleep video: copy the inputs that are only on the Mini (5 narration stems, 2 music beds, 7 cover-plate sets, this morning's word timings) to the NAS, checked by sha256 (PASS (acting Chief): 38 files copied to studio-live and checked by size and sha256: all five narration stems, both music beds, the 021 master, all 13 timing and input files, and the cover plates found for 019, 025, 026 and 027. Nothing moved or deleted. Fourteen named cover plates were never downloaded to any studio disk; the build job (J2452) now says how to cover each. Pull request #784 merged.)
@@ -107,5 +107,3 @@ Recently finished:
 - J2544 done: Verify condition for J2540 (Accepted (acting Chief, 10 Nov 23:15Z): J2540 had finished and only waited for review, which is done (#774 merged, follow-ups J2545 and J2546). Record merged as #775.)
 - J2543 done: Verify condition for J2536 (Accepted (acting Chief, 10 Nov 22:52Z): not met at 21:35Z, as found. Met since 21:46Z, when the picture run stopped itself and parked; J2536 reopened on that evidence. Record merged as #773.)
 - J2542 done: Verify condition for J2171 (Accepted (acting Chief, 10 Nov 21:05Z): condition NOT met, J2171 stays blocked. 7 of 20 pictures made, the two later jobs not started. Hold recorded on J2171, next look 11 Nov 02:45Z. Record merged as #770.)
-- J2541 done: One publisher for the board: check whether the MacBook also publishes board.json (jobs.py hook), and stop it in the worker if so (PASS and merged (acting Chief, 10 Nov 21:07Z), #768. The MacBook was publishing the board too: 203 pushes on 10 Nov beside the Mini's, some carrying a tracker eight hours old, 8 lost to push races. The worker now turns its own publish off for everything it starts, so the Mini is the only publisher. Look once the MacBook has pulled main: its publish log should stop growing.)
-- J2540 done: Opening gate, part 2: run the new frame-0 check on every scheduled Short of both channels and table the results (Accepted (acting Chief, 10 Nov 23:15Z), #774. 36 Shorts measured. The new check caught the Short that aired on 10 Nov, wrongly failed one History of Science Short (a full-frame cartoon shot) and passed the muons Short for 21 Nov, which is padded with a feathered seam. All three re-cuts Ben OK'd today pass. Nothing re-cut, nothing changed in Studio. Next: J2545 looks at every scheduled Short by eye for its whole length; J2546 then calibrates the check on those real frames. Re-cuts are decided from J2545's table.)
