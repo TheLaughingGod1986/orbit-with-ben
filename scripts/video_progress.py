@@ -47,6 +47,32 @@ def documents_at(repo, revision, paths):
     return docs
 
 
+SETTINGS = "studio/channel.json"  # a channel's own settings, inside its repo
+
+
+def settings_at(repo, revision):
+    """The channel's own settings as they were at that commit ({} if it had none then, or they cannot be read)."""
+    try:
+        doc = documents_at(repo, revision, [SETTINGS])[SETTINGS]
+    except (OSError, subprocess.SubprocessError, ValueError):
+        return {}
+    return doc if isinstance(doc, dict) else {}
+
+
+def kept_then(repo, revision, channel):
+    """How the channel kept its film state at that commit: what its own settings said at the time (J2622).
+
+    A channel can change the way it keeps its films (one pipeline file, then one status file per film). A commit from
+    before the change has to be read the old way, or every film reads as having no past. From before the channel had
+    settings at all, its first settings say how: they described what was already there. A repo that has never had
+    them is read by today's."""
+    then = settings_at(repo, revision).get("pipeline")
+    if not (isinstance(then, dict) and then.get("kind")):
+        added = git(repo, "log", "--diff-filter=A", "--format=%H", "--", SETTINGS).decode().split()
+        then = settings_at(repo, added[-1]).get("pipeline") if added else None
+    return dict(then) if isinstance(then, dict) and then.get("kind") else channels.pipeline(channel)
+
+
 def historical_stages(repo, channel, since, cache):
     """A missing/shallow history is unknown, never a zero baseline or proof the video is new."""
     try:
@@ -59,9 +85,9 @@ def historical_stages(repo, channel, since, cache):
         key = channel + ":" + revision
         if key in cache:
             return cache[key]
-        # How the channel keeps its film state decides how its past is read (channel.json: pipeline.kind).
+        # How the channel kept its film state at that commit decides how its past is read (channel.json: pipeline.kind).
         prefix = channels.label(channel) + ":"
-        kept = channels.pipeline(channel)
+        kept = kept_then(repo, revision, channel)
         if kept["kind"] == "pipeline_json":
             pipeline = documents_at(repo, revision, [kept["path"]])[kept["path"]]
             films = {prefix + f["id"]: {"stages": stage_record(f["stages"])} for f in pipeline["films"]}
