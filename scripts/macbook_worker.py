@@ -447,8 +447,9 @@ def record_usage(now: dt.datetime | None = None, every_h: float = 3.0) -> bool:
     except (OSError, ValueError):
         pass
     # Same ChatGPT account as the Mini (benoats@gmail.com, one shared weekly limit): one pool, read from either machine.
+    # --strict: this caller asked for one pool, so an unread one must not look like a recorded one (J2564).
     r = sh([sys.executable, "scripts/ai_spend_daily.py", "--pools", "codex", "--codex-pool", "codex",
-            "--by", AGENT_ID, "--git"], cwd=STUDIO, timeout=180)
+            "--by", AGENT_ID, "--git", "--strict"], cwd=STUDIO, timeout=180)
     log(f"usage reading: {(r.stdout or r.stderr).strip()[-200:]}")
     if r.returncode == 0:
         stamp.write_text(str(now.timestamp()))

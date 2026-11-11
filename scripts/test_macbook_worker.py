@@ -102,6 +102,7 @@ class Guards(unittest.TestCase):
         self.addCleanup(setattr, mw, "sh", real)
         self.assertTrue(mw.record_usage(now=WED_NIGHT))
         self.assertEqual(calls[0][calls[0].index("--codex-pool") + 1], "codex")  # one account on both machines
+        self.assertIn("--strict", calls[0])  # exit 0 must mean "recorded": an unread log gets no stamp (J2564)
         self.assertFalse(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=1)))
         self.assertTrue(mw.record_usage(now=WED_NIGHT + dt.timedelta(hours=4)))
         self.assertEqual(len(calls), 2)
