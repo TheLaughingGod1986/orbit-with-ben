@@ -1,0 +1,110 @@
+{
+  "status": "CANDIDATE_GATES_PENDING",
+  "film": "022",
+  "output": "/Users/ben/_desk/J2452-sleep-scratch/public_sun_v03/022_sun_undarkened_v03.mp4",
+  "sha256": "ddb0bbca361b227904545341f24e57ce1ca0e67382221d3a1c4d30cc8995019f",
+  "source_master": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-21/OWB-022/sun_first_cut_v05.mp4",
+  "source_sha256": "91bb1ccb7222ed07c10d75c26a5ad07b041719b899fe2a89483b89e3d5ad417f",
+  "narration_sha256": "de9cfa333fb835c54259fc4538f4f7abe7b6d823d762cb7f0fde81b25df7e433",
+  "expected_frames": 14410,
+  "duration_s": 480.3333333333333,
+  "slices": [
+    {
+      "master_in_s": 0,
+      "master_out_s": 21.2,
+      "chapter_in_s": 0,
+      "chapter_out_s": 21.2,
+      "compilation_in_s": 3495.43,
+      "compilation_out_s": 3516.63
+    },
+    {
+      "master_in_s": 30.5,
+      "master_out_s": 236.5,
+      "chapter_in_s": 21.2,
+      "chapter_out_s": 227.2,
+      "compilation_in_s": 3516.63,
+      "compilation_out_s": 3722.63
+    },
+    {
+      "master_in_s": 242.38,
+      "master_out_s": 495.5,
+      "chapter_in_s": 227.2,
+      "chapter_out_s": 480.32,
+      "compilation_in_s": 3722.63,
+      "compilation_out_s": 3975.75
+    }
+  ],
+  "planned_ranges": [
+    [
+      0,
+      21.2
+    ],
+    [
+      30.82,
+      236.5
+    ],
+    [
+      242.6,
+      495.5
+    ]
+  ],
+  "covers": [
+    [
+      30.5,
+      35.5,
+      36,
+      "chapter-card cover"
+    ],
+    [
+      242.38,
+      245.5,
+      246,
+      "subscribe-tail cover"
+    ],
+    [
+      384,
+      392,
+      366,
+      "Orbit cover"
+    ]
+  ],
+  "darkening": "Pending: whole chapter is after 20:30, apply measured 85 percent grade after undarkened gates.",
+  "fallback": "Plan plates unavailable in working footage folder. Current finished v05 differs from old plan: neighbouring finished-master picture covers retained chapter card, subscribe tail and Orbit. No source search or generation. Donor ranges are recorded in source_cuts.json; inspect every edge before grading.",
+  "inherited": "Charts/labels and untouched public-master stretches retained under 09:29Z ruling; no gate waiver.",
+  "parent_candidate": "/Users/ben/_desk/J2452-sleep-scratch/public_sun_v02",
+  "repair_patches": [
+    {
+      "chapter_in_s": 16,
+      "chapter_out_s": 24,
+      "master_donor_in_s": 146,
+      "donor_duration_s": 6,
+      "label": "first-trim-solar-detail"
+    }
+  ],
+  "repair": "First donor crossed a dark horizon internally; use continuous master solar prominence 146-152s instead, stretched over 16-24s. Preserve previous subscribe and Orbit repairs. Timing/narration unchanged; fresh gates required.",
+  "prior_repair_patches": [
+    {
+      "chapter_in_s": 16,
+      "chapter_out_s": 24,
+      "master_donor_in_s": 113,
+      "donor_duration_s": 7,
+      "label": "first-trim-detail"
+    },
+    {
+      "chapter_in_s": 222,
+      "chapter_out_s": 239,
+      "master_donor_in_s": 266,
+      "donor_duration_s": 12,
+      "label": "subscribe-join-detail"
+    },
+    {
+      "chapter_in_s": 361,
+      "chapter_out_s": 382,
+      "master_donor_in_s": 365,
+      "donor_duration_s": 9,
+      "label": "Orbit-cover-detail"
+    }
+  ],
+  "unwanted_cards_removed_verified": true,
+  "still_review": "Inspected v02 EDGES.jpg plus v03 FIRST_TRIM.jpg and fresh picture_qa_review.jpg. Opening title and solar prominence recognisable; cloud cover edges have no Orbit or subscribe pill; first repair is continuous solar picture. Source diagrams/charts/labels retained. No moving-playback or listening claim."
+}
