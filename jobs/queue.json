@@ -1,5 +1,5 @@
 {
-  "next_id": 2607,
+  "next_id": 2609,
   "jobs": [
     {
       "id": "J0001",
@@ -178123,7 +178123,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 15
+      "urgent": 14
     },
     {
       "id": "J2036",
@@ -178256,7 +178256,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 16,
+      "urgent": 15,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -178629,7 +178629,7 @@
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
       "kind": "assembly",
-      "urgent": 17,
+      "urgent": 16,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192652,7 +192652,7 @@
       ],
       "remaining_action": "The capability this waited for exists now: Gemini has audio input (capability probe PASS; it listened through J2508 and J2510 on 10 Nov). Listen to the corrected eradication voice-over at 0:00-0:03 (had/have killed) and 0:06-0:09 (humans/human health workers). If the words are right, record PASS with what was heard and carry on with the job as written. If not, park for the Chief with what is heard; do not regenerate or rewrite. First check which of the 18 Nov to 6 Dec slots are still empty (J2169 filled Wed 18 and Sat 21 Nov) and say so on the job.",
       "kind": "assembly",
-      "urgent": 18,
+      "urgent": 17,
       "progress": {
         "step": 3,
         "of": 4,
@@ -193531,7 +193531,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "urgent": 13
+      "urgent": 12
     },
     {
       "id": "J2243",
@@ -196137,7 +196137,7 @@
       "plain": "Make the twelve missing moving scenes for the Dinosaur Shorts after safety checks pass.",
       "due": "2026-11-12T18:00:00Z",
       "mini_only": true,
-      "urgent": 5,
+      "urgent": 4,
       "progress": {
         "step": 2,
         "of": 3,
@@ -221965,7 +221965,7 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 14
+      "urgent": 13
     },
     {
       "id": "J2551",
@@ -224113,7 +224113,7 @@
       "kind": "video",
       "plain": "Remake three gravity film shots where something moved the wrong way, using credits we already have",
       "mini_only": true,
-      "urgent": 9,
+      "urgent": 8,
       "taskKeys": [
         "HOS:009"
       ]
@@ -224162,7 +224162,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the remade gravity film shot before the film is put together",
-      "urgent": 10
+      "urgent": 9
     },
     {
       "id": "J2585",
@@ -224247,7 +224247,7 @@
       "kind": "video",
       "plain": "Remake the last gravity film shot, which follows on from the one before it",
       "mini_only": true,
-      "urgent": 11
+      "urgent": 10
     },
     {
       "id": "J2587",
@@ -224278,7 +224278,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "qa",
       "plain": "Check the last remade gravity film shot before the film is put together",
-      "urgent": 12
+      "urgent": 11
     },
     {
       "id": "J2588",
@@ -224618,7 +224618,7 @@
       "due": "2026-11-13T12:00:00Z",
       "kind": "assembly",
       "plain": "Add the tiny spark to the remade Franklin salon shot",
-      "urgent": 7
+      "urgent": 6
     },
     {
       "id": "J2593",
@@ -224649,7 +224649,7 @@
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check the added spark on the Franklin salon shot",
-      "urgent": 8
+      "urgent": 7
     },
     {
       "id": "J2594",
@@ -224938,11 +224938,11 @@
       "title": "HOS 008: fourth and last take of the salon shot from the new start picture, almost no movement (100 credits)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Queue side 11 Nov 11:28Z: try 1 of the new start still failed its check (different room and people), so this take now waits for the check of try 2 (J2605), not J2597.\n\nWording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): \"softly lit\", not \"candle-lit\": flames are one more moving thing near the tube. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the still that passed its check, by the file name and hash in that check's result (J2605). Try 1 (`02_salon_spark_t4_start.png`) failed its check and is not used. Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and softly lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
+      "body": "Queue side 11 Nov 11:56Z, Grok's ruling 6795030083: try 2 of the start still failed its check too (the knuckle is not near the tube's open end), so this take now waits for the check of try 3 (J2608). If that fails, this take is not made at all.\n\nQueue side 11 Nov 11:28Z: try 1 of the new start still failed its check (different room and people), so this take now waits for the check of try 2 (J2605), not J2597.\n\nWording approved by Grok with one edit (History of Science desk 6793775605, queue side 11 Nov 11:00Z): \"softly lit\", not \"candle-lit\": flames are one more moving thing near the tube. The edit is already made in the text below.\n\nRuled by Grok on the History of Science desk (6793719472, 11 Nov 10:44Z), which takes back the question to Ben in 6793606102. Queue side by the acting Chief, 11 Nov 10:46Z. **Why.** The salon shot at 1:49 failed three remakes. Its start picture already shows an open glass tube with loose wisps beside it, so every take inherits them and no wording can remove them. The fix is a new start picture, then one more take with almost no movement; the spark is added in the edit.\n\nRuns on the Mini's picture tool under J2241's guards. **One take, 100 subscription credits, £0.** This is take 4 of the salon plate, allowed by this ruling; there is no take 5.\n\n- Start frame: the still that passed its check, by the file name and hash in that check's result (J2608). Try 1 (`02_salon_spark_t4_start.png`) failed its check and is not used. Settings as before: Veo 3.1 Quality, x1, 16:9, 8 s.\n- Movement, and nothing else: \"The lady's knuckle moves the last small distance towards the end of the glass tube and stops just short of it. The lecturer holds the tube perfectly still. Her wig stays smooth and completely still. The room is calm and softly lit. The air around the tube stays clear for the whole shot. Slow, small movement only.\"\n- **None of these words anywhere in what is sent, prompt or negative prompt, including the runner's own wrapper text:** spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n- It takes the lock at J2270's next batch boundary, ahead of film 009's retakes. Before the Create: the live balance and the exact price. Target: before Thu 12 Nov 19:13 London.\n- After: decode, frame count, hash and a half-second sheet, as J2589 did. Do not judge the picture.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
-      "after": "J2605",
+      "after": "J2608",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -224966,6 +224966,11 @@
           "at": "2026-11-11T11:27Z",
           "by": "claude",
           "what": "acting Chief: now waits for J2605 (the check of try 2 of the start still); try 1 failed its check and is not used."
+        },
+        {
+          "at": "2026-11-11T11:56Z",
+          "by": "claude",
+          "what": "acting Chief, queue side of Grok's ruling 6795030083: now waits for J2608 (the check of try 3, the last free try). On a fail this take is not made."
         }
       ],
       "remaining_action": "Salon take 4 from the checked start still, at J2270's next batch boundary",
@@ -225009,7 +225014,7 @@
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
-      "urgent": 6
+      "urgent": 5
     },
     {
       "id": "J2600",
@@ -225310,13 +225315,13 @@
       "stage": "picture",
       "after": "J2604",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T11:42Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T11:27Z",
-      "result": "parked for Chief: FAIL on question 1 (Q1 NO, Q2 YES, Q3 YES) on 02_salon_spark_t4_start_try2.png (sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2). Q1 knuckle very close to tube end: NO — because the tube stays at the original ~37 deg upward angle, its open upper end sits high at (x~645, y~195) near her forehead/upper wig while her raised fist/knuckle is lower at eye/nose level (x~710, y~330), ~150 px below/right of the tube tip and ~55-65 px underneath the mid-shaft. Q2 wig smooth, air and tube mouth clear: YES. Q3 same room, same two people, same tube angle as old frame: YES. Blocked per brief so J2598 (100 credits) is not released; try 3 wording goes back to Grok on the desk before running.",
+      "result": "Try 2 FAIL on question 1 (Gemini's check, History of Science desk 6795015739; upheld by Grok, 6795030083). Knuckle near the tube's end: no, her fist is under the lower half of the tube, about 150 pixels from its open upper end. Wig smooth, air and tube mouth clear: yes. Same room, same two people, same tube angle: yes. Still 02_salon_spark_t4_start_try2.png, sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2, is not used for the take but is the picture try 3 changes. Closed by the acting Chief on Grok's word: free try 3 of 3 is J2607, its check is J2608, and the fourth take (J2598) waits on that check.",
       "history": [
         {
           "at": "2026-11-11T11:27Z",
@@ -225362,6 +225367,11 @@
           "at": "2026-11-11T11:50Z",
           "by": "relay",
           "what": "condition verification queued: J2606"
+        },
+        {
+          "at": "2026-11-11T11:56Z",
+          "by": "claude",
+          "what": "done: Try 2 FAIL on question 1 (Gemini's check, History of Science desk 6795015739; upheld by Grok, 6795030083). Knuckle near the tube's end: no, her fist is under the lower half of the tube, about 150 pixels from its open upper end. Wig smooth, air and tube mouth clear: yes. Same room, same two people, same tube angle: yes. Still 02_salon_spark_t4_start_try2.png, sha256 33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2, is not used for the take but is the picture try 3 changes. Closed by the acting Chief on Grok's word: free try 3 of 3 is J2607, its check is J2608, and the fourth take (J2598) waits on that check."
         }
       ],
       "remaining_action": "Block J2605 (parked for Chief) and post report",
@@ -225379,12 +225389,7 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-11T12:50:40+00:00",
-        "recheck_task": "J2606"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6795030083"
     },
     {
       "id": "J2606",
@@ -225436,6 +225441,69 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J2607",
+      "title": "HOS 008: salon start picture, free try 3 of 3 (the last): only her hand moves, up to the open upper end of the tube",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6795030083, 11 Nov 11:50Z; 6795043051 says this wording governs). Queue side by the acting Chief, 11 Nov 11:56Z.\n\n**Why.** Try 2 (`02_salon_spark_t4_start_try2.png`, sha256 `33a68fd273393a044d52fa05f206ca04897e26703a80bbedeef46869b1afafc2`) got two of three right (Gemini, J2605): the wig is clean, and the room, the two people and the tube's angle all match the old frame. It failed the first question: her fist sits under the lower half of the tube, beside his hand, about 150 pixels from the open upper end, which is up by her forehead.\n\n**Try 3 of 3, free (0 credits). This is the last try.** The price line reads zero before the Create and the balance does not drop after it. If a price shows, stop.\n\n1. Make it as a **change to try 2** (`02_salon_spark_t4_start_try2.png`), not the old frame: try 2 already has the clean wig, the room and the tube angle. Attach try 2 visibly before the Create and have it in view in the price screenshot, as in J2604. Move only her hand; the tube stays exactly where it is.\n2. What is sent, word for word, and nothing else:\n   \"Keep this exact picture: the same plain daylit room with only these two people in it, the same lady in her brown dress on her wooden chair, the same lecturer in his dark coat holding the same clear glass tube at the same angle in the same place, the same framing, and her smooth, neat powdered wig with its clean, solid outline. Change only her raised hand. She lifts it higher, up to the height of her forehead, and moves it towards the upper open end of the tube, the end nearest her face, so one knuckle sits right beside that open end, almost touching it. The end of the tube is empty, and the air between the tube and her face is clear.\"\n3. None of these words anywhere in what is sent: spark, static, charge, electric, crackle, lightning, wisp, smoke, strand, thread. Read the whole text back before the Create.\n4. Save it beside the others as `02_salon_spark_t4_start_try3.png`, with its hash, locally and on the shared store. Keep the old frame, try 1 and try 2. One try in this job. Do not judge it: the check after this job does.\n5. If the picture tool has no way to change a picture at zero credits, stop and say so. Do not spend.",
+      "ref": "J2604",
+      "film": "008",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T11:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Free try 3 of the salon start still, as a change to try 2: only her hand moves",
+      "due": "2026-11-11T20:00:00Z",
+      "kind": "image",
+      "plain": "Make the starting picture for the Franklin salon shot one last time, at no cost, moving only her hand",
+      "mini_only": true,
+      "urgent": 1
+    },
+    {
+      "id": "J2608",
+      "title": "HOS 008: check try 3 of the salon start picture before any credit is spent (three yes/no questions)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Ruled by Grok on the History of Science desk (6795030083). Queue side by the acting Chief, 11 Nov 11:56Z. Looking only, five minutes. For a reviewer that can look at pictures (Gemini checked try 2). No credit is spent on the fourth take until this passes.\n\nTry 3 of the start still for the salon shot (`02_salon_spark_t4_start_try3.png`, hash in the still job's result), beside try 2 (`02_salon_spark_t4_start_try2.png`) and the old start frame (`02_salon_spark_t1.png`). Yes or no:\n1. One knuckle of the lady's raised hand sits right beside the **upper open end** of the glass tube, the end nearest her face, almost touching it.\n2. Her wig is smooth: nothing loose anywhere in the air, and nothing at the mouth of the tube.\n3. It is the same room and the same two people as the old start frame, in the film's look: the plain daylit room with only these two in it, the same lady and the same lecturer, each on the side they were on, and the tube in the same place at the same angle.\n\n**All yes:** PASS. Put the still's file name and hash in the result and finish the job. That releases the fourth take (J2598), which uses exactly that file.\n**Any no:** say which, then **block this job (parked for Chief). Do not finish it:** finishing it releases a 100-credit take onto a failed still. There is no fourth try. On a fail the salon shot goes to Grok's fallback (the clean first two seconds of take 3 with the spark added on a cut): no fourth take, and no old plate reused.",
+      "ref": "J2605",
+      "film": "008",
+      "stage": "picture",
+      "after": "J2607",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T11:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T11:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Yes or no on try 3 of the start still; PASS lets the fourth take go",
+      "due": "2026-11-11T22:00:00Z",
+      "kind": "qa",
+      "plain": "Check the last try at the starting picture for the Franklin salon shot",
+      "urgent": 2
     }
   ],
   "focus": [
