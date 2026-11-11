@@ -27,9 +27,11 @@ def main():
             dense.append(dict(row=f'change-{i}-{k}',timeline_in=float(t),timeline_out=float(min(t+.5,hi)),
                               source=f'finished_transition_{i}',framing=dict(offset=float(t-lo)),src_w=1920,upscale=1))
     (OUT/'changed_dense_cuts.json').write_text(json.dumps(dense,indent=2)+'\n')
+    pool=[dict(source=f'finished_transition_{i}',title='Finished Moon picture surrounding a new compilation edit') for i in range(len(changed))]
+    (OUT/'changed_pool.json').write_text(json.dumps(pool,indent=2)+'\n')
     commands=[
         [sys.executable,str(ROOT/'scripts/polish_gate.py'),video,'--cuts',str(OUT/'full_pixel_cuts.json'),'--out',str(OUT/'POLISH_GATE.json')],
-        [sys.executable,str(ROOT/'scripts/picture_qa.py'),video,'--cuts',str(OUT/'changed_dense_cuts.json'),'--out-dir',str(OUT/'joins_qa')],
+        [sys.executable,str(ROOT/'scripts/picture_qa.py'),video,'--cuts',str(OUT/'changed_dense_cuts.json'),'--pool',str(OUT/'changed_pool.json'),'--out-dir',str(OUT/'joins_qa')],
     ]
     codes=[]
     for i,cmd in enumerate(commands):
