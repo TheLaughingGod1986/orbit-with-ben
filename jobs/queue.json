@@ -21850,10 +21850,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T22:30Z",
+      "eta": "2026-11-11T23:10Z",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
       "result": "",
@@ -22132,6 +22132,11 @@
           "at": "2026-11-11T08:57Z",
           "by": "claude",
           "what": "reopened: condition met and checked by the acting Chief: Studio shows T013 (Saturn) and T003 (Jupiter) finished, both \"Not enough impressions to declare a winner\" (Codex read 11 Nov 08:43Z, #808). Jupiter's part of this job was T003 itself and is done. What is left is Ben's RINGS VANISHING? on Saturn; the top of the brief says what to do if Studio asks to delete the finished test."
+        },
+        {
+          "at": "2026-11-11T22:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -22140,7 +22145,15 @@
         "OWB:020",
         "OWB:021"
       ],
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T22:30Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0276",
