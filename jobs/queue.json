@@ -1,5 +1,5 @@
 {
-  "next_id": 2568,
+  "next_id": 2569,
   "jobs": [
     {
       "id": "J0001",
@@ -195919,6 +195919,11 @@
           "at": "2026-11-11T07:15Z",
           "by": "claude",
           "what": "reopened: condition met and checked by the acting Chief: J2269 is done and its authorization file matches Grok's bounds (scope sha256 6fa99121...a413, cap 3,600, floor 3,000, j2033_done citing #501; balance 12,690, no PENDING charge, 6,190 left after the whole cap; desk 6789423413). The twelve plates may be made now; the brief's top says how."
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "Grok reviewed and merged history-of-science #504 as 18c4de99 (desk 6789665383): the authorization file is on main at 02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/GENERATION_AUTHORIZATION_J2269.json. No hold. Pull main and use that copy."
         }
       ],
       "remaining_action": "Make the twelve 010 plates with the J2269 authorization file, in guarded batches, inside the window to Thu 12 Nov 19:13 London",
@@ -213400,6 +213405,11 @@
           "at": "2026-11-11T07:43Z",
           "by": "macbook",
           "what": "step 1 of 6 done"
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "acting Chief: the refused NAS copy at 07:21Z was right; the MacBook does not write to the NAS. Keep finished files and sources in ~/_desk with their SHA-256 in the report and carry on. How they reach the NAS is J2568 (mine, due Fri 13 Nov)."
         }
       ],
       "remaining_action": "Align and render chapters; assemble master, run checks and prepare watch reel",
@@ -220196,6 +220206,11 @@
           "at": "2026-11-11T05:54Z",
           "by": "claude",
           "what": "acting Chief: decision recorded for the relay's duty list. This job stays with Claude in the cloud, in the stages its brief sets, due 18 Nov. It is not delegated: rewriting history is done once, by one hand, in a planned window."
+        },
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "stage 1, Orbit scripts: orbit-with-ben #801 merged. scripts/ai_spend_daily.py holds the Flow account's sha256 instead of its address and no longer writes the address into each daily ledger note; one comment in scripts/macbook_worker.py names the role. Address ratchet 45 files to 43. Next in stage 1: Orbit's film folders and _archive, then History of Science's files that no working job pins."
         }
       ],
       "remaining_action": "HOS: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in five stages with one planned window",
@@ -222397,6 +222412,35 @@
         "at": "2026-11-11T07:40Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2568",
+      "title": "A way for files finished on the MacBook to reach the NAS (the sleep video will need it)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Ruled by the acting Chief, 11 Nov 07:44Z.\n\nThe MacBook's unattended runs may write only inside their checkouts and `~/_desk` (Ben, 28 Oct 2026: the NAS rules live on the Mini). The sleep video (J2452) is being built there. On 11 Nov at 07:21Z its run was refused a copy of one source image to the NAS, correctly. When the film is finished it has to reach the NAS with its hash checked, and today there is no allowed way.\n\nDecide and build one of these:\n\n1. **A drop folder.** One named folder on the NAS that the MacBook worker may copy finished files into, and nowhere else on the NAS. Copy only. The Mini checks each file's SHA-256 and moves it to its place. Needs: the folder made by the Mini, its path in the studio's config (not written into the worker), one line in the worker's brief, a test that no other NAS path is allowed.\n2. **The Mini fetches.** A Mini job copies the named files from the MacBook over its file share and checks the hashes. Needs the MacBook awake and sharing that one folder.\n\nPick the one that changes least what the MacBook may touch. Neither ever deletes anything on the NAS. No private-network address and no device name goes into a tracked file.\n\nUntil this is done, the MacBook keeps finished files in `~/_desk`, writes their SHA-256 in the job's report, and does not try the NAS.",
+      "ref": "J2452",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T07:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T07:44Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide and build how a finished MacBook file gets onto the NAS",
+      "due": "2026-11-13T18:00:00Z",
+      "plain": "Work out how a video finished on the MacBook gets onto the shared drive"
     }
   ],
   "focus": [
