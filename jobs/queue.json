@@ -1,5 +1,5 @@
 {
-  "next_id": 2651,
+  "next_id": 2652,
   "jobs": [
     {
       "id": "J0001",
@@ -229781,6 +229781,11 @@
           "at": "2026-11-11T21:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: floor-3000 dry-run passed on post-plate balance 10440 (20:08:51Z, unposted_charges=800, projected_headroom=3040, would_allow_reserve_at_recorded_balance=true, 40 runner tests OK on main 1c59247b, 0 credits/no browser); full output posted on HOS desk #180 (6807584517) for Chief's second ruling before releasing J2529"
+        },
+        {
+          "at": "2026-11-11T21:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J2651"
         }
       ],
       "remaining_action": "Chief makes second ruling on HOS 013 pass-1 floor-3000 dry-run (desk 6807584517) before releasing J2529",
@@ -229798,7 +229803,13 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T22:41:38+00:00",
+        "recheck_task": "J2651"
+      }
     },
     {
       "id": "J2645",
@@ -230157,6 +230168,37 @@
       "model": "gpt-6.1-sol",
       "plain": "Let a Chief desk reply with status ruling, pass or ruled close the note it answers, so the same decision is not posted twice.",
       "mini_only": true
+    },
+    {
+      "id": "J2651",
+      "title": "Verify condition for J2644",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2644: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2644 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T21:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T21:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief makes second ruling on HOS 013 pass-1 floor-3000 dry-run (desk 6807584517) before releasing J2529",
+      "kind": "review",
+      "recheck_of": "J2644",
+      "due": "2026-11-11T22:41:38+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
