@@ -193384,9 +193384,14 @@
           "at": "2026-11-11T08:11Z",
           "by": "codex",
           "what": "step 1 of 4 done: Existing run exit 1: salon and points saved at 190f each; rods t1 explicitly Failed/refund promised in Flow. Shared pending false, liability 2900; no refund or posted-charge reconciliation inferred. Resuming only rods t2 under original guards; gross spend max now 400."
+        },
+        {
+          "at": "2026-11-11T08:12Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Fresh hashes, full decode and 190 decoded frames verified for salon t1 and points t1. Still sheets inspected; salon broad spark flagged, no motion approval. Rods t2 setup ongoing in tmux J2241-rods-t2."
         }
       ],
-      "remaining_action": "Generate bounded rods take 2, then verify outputs and report",
+      "remaining_action": "Wait for guarded rods take 2; verify and document review handoff",
       "kind": "video",
       "required_capabilities": [],
       "taskKeys": [
@@ -193395,11 +193400,11 @@
       "due": "2026-11-12T12:00:00Z",
       "urgent": 1,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-11T08:11Z",
+        "at": "2026-11-11T08:12Z",
         "by": "codex",
-        "note": "Existing run exit 1: salon and points saved at 190f each; rods t1 explicitly Failed/refund promised in Flow. Shared pend"
+        "note": "Fresh hashes, full decode and 190 decoded frames verified for salon t1 and points t1. Still sheets inspected; salon broa"
       }
     },
     {
