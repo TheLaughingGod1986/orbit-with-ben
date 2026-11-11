@@ -214659,13 +214659,13 @@
       "stage": "",
       "after": "J2567",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claude",
       "since": "2026-11-11T20:45Z",
-      "eta": "2026-11-11T21:15Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-09T23:04Z",
-      "result": "",
+      "result": "Waiting for: Thu 12 Nov 07:40Z, 24 hours after the three drafts reached the repo (J2567). Then decide with whatever critiques are in",
       "history": [
         {
           "at": "2026-11-09T23:04Z",
@@ -214711,9 +214711,24 @@
           "at": "2026-11-11T20:45Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T20:46Z",
+          "by": "claude",
+          "what": "not time yet: the drafts reached the repo at 07:40Z today (J2567), and the brief says to decide 24 hours after that with whatever critiques are in. None is in yet (J2453 Codex and J2454 Gemini are open; Cursor is out of credit until 9 Dec)"
+        },
+        {
+          "at": "2026-11-11T20:46Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Thu 12 Nov 07:40Z, 24 hours after the three drafts reached the repo (J2567). Then decide with whatever critiques are in"
+        },
+        {
+          "at": "2026-11-11T20:46Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T07:45:00Z"
         }
       ],
-      "remaining_action": "Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN",
+      "remaining_action": "Read the critiques that are in, look at the three drafts, write DECISION.md",
       "kind": "review",
       "progress": {
         "step": 0,
@@ -214722,6 +214737,12 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "plain": "Decide which of three new thumbnail drafts are worth testing",
+      "hold": {
+        "type": "date",
+        "condition": "Thu 12 Nov 07:40Z, 24 hours after the three drafts reached the repo (J2567). Then decide with whatever critiques are in",
+        "check_at": "2026-11-12T07:45:00Z"
       }
     },
     {
