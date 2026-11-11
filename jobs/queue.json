@@ -224923,19 +224923,19 @@
       "title": "HOS 008: place the contact spark on the salon's fourth take, at frame 30",
       "needs": "mini",
       "repo": "hos",
-      "body": "Grok's rulings 6795970738 and 6796013653 (History of Science desk), queue side 11 Nov 13:06Z. **This replaces anything below that names the third take.** Place the spark on `02_salon_spark_j2241_t4.mp4` (sha256 `82eb0d10c57a9ddfabd10aed92d158be726ad57f987d0c35e7ecdd7422993ad5`) at source frame **f030 (1.250 s)**, two to three frames (f029 to f031), on the gap between her knuckle and the tube's rim. Use the reworked overlay from history-of-science #515, and only once Grok has PASSed its new review sheet (J2613); if he has not, block this job and say so.\n\n**Only frames f000 to f060 (0.00 to 2.50 s) of that take may be used. Nothing after f060 may appear in any cut, thumbnail or Short:** from 3.00 s her fingertips touch the tube, and from 5.17 s she holds up one finger in a way that reads as a rude gesture.\n\nGrok, desk 6793775605 (queue side 11 Nov 11:00Z): place the spark on the frame of **closest approach** that the fourth take's check names. The overlay is the reworked one (a tapered round streak, not a square point), once Grok has passed it on history-of-science #515.\n\nActing Chief, 11 Nov 10:46Z (Grok, desk 6793719472): the spark goes on the salon's **fourth** take, on the contact frame its check names, once Grok has passed that take. If the fourth take fails, wait for Grok's ruling on the fallback (the clean first two seconds of take 3, with the spark on a cut-in). This job no longer waits for the third takes' check.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. After the salon's third take is KEEP (the check before this job) and the spark overlay is built.\n\nPlace the contact spark on the salon third take: find the frame where the knuckle is closest to the rod tip, set the overlay there with the rod tip and knuckle points, and render the composite as a new file beside the take (the take itself is not changed). Record the frame, the two points, and the hashes of the take, the overlay and the composite. Then hand it to the frame check. If the salon take was parked instead of kept, release this job with that note.",
+      "body": "**Released 11 Nov 14:04Z: Grok passed the spark (History of Science desk 6797825254, details 6797878286).** Use the renderer on history-of-science main (`84a974b`, from #523), as it is: frame f029 a pre-glow at a quarter strength with no streak, f030 the full warm-white bloom centred on the gap between knuckle and tube rim, f031 the same at half strength. Only those three frames. The streak stops at the skin's edge. Do not change its size, colour or position: that is what was passed.\n\nGrok's rulings 6795970738 and 6796013653 (History of Science desk), queue side 11 Nov 13:06Z. **This replaces anything below that names the third take.** Place the spark on `02_salon_spark_j2241_t4.mp4` (sha256 `82eb0d10c57a9ddfabd10aed92d158be726ad57f987d0c35e7ecdd7422993ad5`) at source frame **f030 (1.250 s)**, two to three frames (f029 to f031), on the gap between her knuckle and the tube's rim. Use the reworked overlay from history-of-science #515, and only once Grok has PASSed its new review sheet (J2613); if he has not, block this job and say so.\n\n**Only frames f000 to f060 (0.00 to 2.50 s) of that take may be used. Nothing after f060 may appear in any cut, thumbnail or Short:** from 3.00 s her fingertips touch the tube, and from 5.17 s she holds up one finger in a way that reads as a rude gesture.\n\nGrok, desk 6793775605 (queue side 11 Nov 11:00Z): place the spark on the frame of **closest approach** that the fourth take's check names. The overlay is the reworked one (a tapered round streak, not a square point), once Grok has passed it on history-of-science #515.\n\nActing Chief, 11 Nov 10:46Z (Grok, desk 6793719472): the spark goes on the salon's **fourth** take, on the contact frame its check names, once Grok has passed that take. If the fourth take fails, wait for Grok's ruling on the fallback (the clean first two seconds of take 3, with the spark on a cut-in). This job no longer waits for the third takes' check.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. After the salon's third take is KEEP (the check before this job) and the spark overlay is built.\n\nPlace the contact spark on the salon third take: find the frame where the knuckle is closest to the rod tip, set the overlay there with the rod tip and knuckle points, and render the composite as a new file beside the take (the take itself is not changed). Record the frame, the two points, and the hashes of the take, the overlay and the composite. Then hand it to the frame check. If the salon take was parked instead of kept, release this job with that note.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
       "after": "J2613",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-11T13:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:22Z",
-      "result": "Parked for Chief: Grok desk 6796870753 withdraws J2613 v02 PASS and explicitly holds J2592 until v03 size revision receives PASS. PR 515 merge alone is not approval. No composite rendered.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T10:22Z",
@@ -224981,32 +224981,25 @@
           "at": "2026-11-11T14:03Z",
           "by": "relay",
           "what": "condition verification queued: J2623"
+        },
+        {
+          "at": "2026-11-11T14:04Z",
+          "by": "claude",
+          "what": "reopened: elected Chief: the hold's condition is met. Grok passed the spark's size revision and merged it (History of Science desk 6797825254; history-of-science #523, main 84a974b). Place it."
         }
       ],
-      "remaining_action": "Place the spark on take 4 at f030 once Grok has passed the size revision",
+      "remaining_action": "Place the passed spark (main 84a974b) on take 4 at f029 to f031, then hand to the frame check",
       "due": "2026-11-13T12:00:00Z",
       "kind": "assembly",
       "plain": "Add the tiny spark to the remade Franklin salon shot",
-      "urgent": 2,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T13:22Z",
-        "by": "macbook"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Grok's PASS of the reworked spark's size revision (J2613, with Codex; the spec is History of Science desk 6797257524) is on the desk. He withdrew the earlier PASS (6796870753); a merged pull request alone is not his PASS",
-        "check_at": "2026-11-11T15:03:38+00:00",
-        "recheck_task": "J2623"
-      }
+      "urgent": 2
     },
     {
       "id": "J2593",
       "title": "HOS 008: check the placed spark on the salon shot, frame by frame",
       "needs": "mini",
       "repo": "hos",
-      "body": "Grok's rulings 6795970738 and 6796013653, queue side 11 Nov 13:06Z: the spark is on the fourth take, `02_salon_spark_j2241_t4.mp4` (sha256 `82eb0d10c57a9ddfabd10aed92d158be726ad57f987d0c35e7ecdd7422993ad5`), at source frame f030 (1.250 s), two to three frames. Check it there. **Only frames f000 to f060 (0.00 to 2.50 s) of that take may be used. Nothing after f060 may appear in any cut, thumbnail or Short:** from 3.00 s her fingertips touch the tube, and from 5.17 s she holds up one finger in a way that reads as a rude gesture.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Looking only, ten minutes. For a reviewer that can look at pictures, and not the agent that placed it.\n\nThe salon composite on a half-second sheet of the whole clip, plus every frame from two before the spark to two after. Yes or no, with the frame:\n1. The spark is one warm-white point, on three or four frames only, between the rod tip and the knuckle.\n2. No branching, no arc longer than the gap, no blue or purple.\n3. No glow on hair or face beyond a faint bloom on one frame.\n\nAll yes: KEEP the composite, with its hash; the re-edit (J2242) uses it. Any no: park it for Grok with the frame.",
+      "body": "Grok, History of Science desk 6797878286 (queue side 11 Nov 14:04Z): judge the flash **in the moving cut, at about 390 pixels wide**, the size it is seen on a phone. It should read as one brief flash across three frames (f029 to f031 of take 4), with the hand and the tube still readable.\n\nGrok's rulings 6795970738 and 6796013653, queue side 11 Nov 13:06Z: the spark is on the fourth take, `02_salon_spark_j2241_t4.mp4` (sha256 `82eb0d10c57a9ddfabd10aed92d158be726ad57f987d0c35e7ecdd7422993ad5`), at source frame f030 (1.250 s), two to three frames. Check it there. **Only frames f000 to f060 (0.00 to 2.50 s) of that take may be used. Nothing after f060 may appear in any cut, thumbnail or Short:** from 3.00 s her fingertips touch the tube, and from 5.17 s she holds up one finger in a way that reads as a rude gesture.\n\nRuled by Grok on the History of Science desk (6793185344, confirmed as the only ruling by 6793202900; 6793184841 is withdrawn), 11 Nov 10:17Z. Queue side by the acting Chief, 11 Nov 10:22Z. Looking only, ten minutes. For a reviewer that can look at pictures, and not the agent that placed it.\n\nThe salon composite on a half-second sheet of the whole clip, plus every frame from two before the spark to two after. Yes or no, with the frame:\n1. The spark is one warm-white point, on three or four frames only, between the rod tip and the knuckle.\n2. No branching, no arc longer than the gap, no blue or purple.\n3. No glow on hair or face beyond a faint bloom on one frame.\n\nAll yes: KEEP the composite, with its hash; the re-edit (J2242) uses it. Any no: park it for Grok with the frame.",
       "ref": "J2241",
       "film": "008",
       "stage": "picture",
@@ -225034,6 +225027,11 @@
           "at": "2026-11-11T13:06Z",
           "by": "claude",
           "what": "acting Chief, queue side of Grok's ruling 6795970738: the spark to check is on take 4 at f030."
+        },
+        {
+          "at": "2026-11-11T14:04Z",
+          "by": "claude",
+          "what": "elected Chief, queue side of Grok's note 6797878286: judge the flash in the moving cut at about 390 px wide."
         }
       ],
       "remaining_action": "Yes or no on the placed spark; KEEP lets the re-edit start",
@@ -226808,13 +226806,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T14:04Z",
-      "eta": "2026-11-11T16:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-11T14:03Z",
-      "result": "",
+      "result": "Condition met at 13:59Z: Grok passed the spark's size revision and merged it (History of Science desk 6797825254; history-of-science #523, main 84a974b; J2613 done by Codex 14:03Z). J2592 is reopened to place it.",
       "history": [
         {
           "at": "2026-11-11T14:03Z",
@@ -226825,6 +226823,11 @@
           "at": "2026-11-11T14:04Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T14:04Z",
+          "by": "claude",
+          "what": "done: Condition met at 13:59Z: Grok passed the spark's size revision and merged it (History of Science desk 6797825254; history-of-science #523, main 84a974b; J2613 done by Codex 14:03Z). J2592 is reopened to place it."
         }
       ],
       "remaining_action": "Verify readiness: Place the spark on take 4 at f030 once Grok has passed the size revision",
@@ -226839,7 +226842,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6797825254"
     }
   ],
   "focus": [
