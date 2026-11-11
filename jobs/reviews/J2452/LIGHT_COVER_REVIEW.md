@@ -11,3 +11,5 @@ One-second cloned-handle dissolves preserve the narration clock, including the 1
 These are still inspections, not moving playback or listening. Final edit-gate and grade results are recorded separately.
 
 Opening preflight measured seven near-black failures in the new title neighbourhood (chapter 0.25–6.25 seconds). This is a compilation edit, not an inherited exemption. The repair takes finished-master 303–312 seconds, Earth from the ISS, across chapter 0–9 seconds, with the quiet title and a one-second dissolve back at 8–9 seconds. Original opening and rejected versions stay local. Full gates must be rerun on v03.
+
+v03 full decode confirms 13,900 frames; narration measures -20.73 LUFS / -6.56 dBTP. Full pixel gate FAIL: 26 findings. Three are inside compilation edit neighbourhoods (199.0, 427.0 and 462.67 seconds); edit QA FAIL has 14 samples in those same three stretches. They are not inherited exemptions. v04 covers those stretches with the finished master's blue starfield and daylight Earth, preserving all narration. It requires fresh full gates before any grade or delivery.
