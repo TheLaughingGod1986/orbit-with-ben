@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Vectorized exact spatial grade, avoiding per-pixel expression interpretation.
-No gate bypass: verify saved output with darken_public_light.py afterwards.
+No gate bypass: verify saved output with darken_public_proxima.py afterwards.
 """
 import argparse,hashlib,json,subprocess as sp,time
 from pathlib import Path
 import numpy as np
-SRC=Path('/Users/ben/_desk/J2452-sleep-scratch/public_proxima_v03/026_proxima_undarkened_v03.mp4')
+SRC=Path('/Users/ben/_desk/J2452-sleep-scratch/public_proxima_v05/026_proxima_undarkened_v05.mp4')
 OUT=SRC.parent.with_name('public_proxima_dark_v01')
 W,H=1920,1080
 

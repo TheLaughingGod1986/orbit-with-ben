@@ -13,7 +13,7 @@ def main():
  plate=Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/07_Edit-Project/pool_v01/heic0809a.jpg');assert b.sha(plate)=='10d4c8ef7b9cf7c0faf79b84ddaf74fa55aafd3bf185ffb431fea9327cbf9f5e'
  with Image.open(plate) as im:
   im=im.convert('RGB');w,h=im.size;cw=min(w,h*16/9);ch=cw*9/16;im=im.crop(((w-cw)/2,(h-ch)/2,(w+cw)/2,(h+ch)/2));im.resize((2112,1188),Image.Resampling.LANCZOS).save(OUT/'hubble.png')
- dur=rows[9]['timeline_out']-rows[9]['timeline_in'];frames=round(dur*30);p=OUT/'piece_09.mp4';b.run(['-loop','1','-framerate','30','-i',str(OUT/'hubble.png'),'-vf',f"zoompan=z='1+0.025*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:s=1920x1080:fps=30,format=yuv420p",'-frames:v',str(frames),*b.enc(),str(p)]);pieces[9]=p;rows[9]['label']='plate:heic0809a.jpg'
+ dur=rows[9]['timeline_out']-rows[9]['timeline_in'];frames=round(dur*30);p=OUT/'piece_09.mp4';b.run(['-loop','1','-framerate','30','-i',str(OUT/'hubble.png'),'-vf',f"zoompan=z='1+0.025*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d=1:s=1920x1080:fps=30,format=yuv420p",'-frames:v',str(frames),*b.enc(),str(p)]);pieces[9]=p;rows[9]['label']='plate:heic0809a.jpg';rows[9].update(source='heic0809a.jpg',src_w=11936,upscale=1920/11936);rows[5].update(source='eso1323a.jpg',src_w=8221,upscale=1920/8221)
  joined=[]
  for i,(p,row) in enumerate(zip(pieces,rows)):
   dur=row['timeline_out']-row['timeline_in'];a=1 if i else 0;z=dur-(1 if i<len(rows)-1 else 0)
