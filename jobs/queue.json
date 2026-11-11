@@ -223720,23 +223720,29 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "done",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T09:12Z",
-      "result": "",
+      "result": "Both readers changed (orbit-with-ben #816, merged). Cursor: the new layout with the split lines is read; left is the percent of the week left. Claude: the reader asks for the usage page once more, and if it is still sent elsewhere it says so and the log lists that page's settings and usage links. The Mini's copy of the page lines is on main with the one name line replaced; #810 closed. First live test: the 08:30Z run on 12 Nov.",
       "history": [
         {
           "at": "2026-11-11T09:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:13Z",
+          "by": "claude",
+          "what": "done: Both readers changed (orbit-with-ben #816, merged). Cursor: the new layout with the split lines is read; left is the percent of the week left. Claude: the reader asks for the usage page once more, and if it is still sent elsewhere it says so and the log lists that page's settings and usage links. The Mini's copy of the page lines is on main with the one name line replaced; #810 closed. First live test: the 08:30Z run on 12 Nov."
         }
       ],
       "remaining_action": "Fix the Cursor and Claude usage readers from the copied page text",
       "due": "2026-11-13T18:00:00Z",
-      "plain": "Fix the daily credit check so it can read the Cursor and Claude usage pages again"
+      "plain": "Fix the daily credit check so it can read the Cursor and Claude usage pages again",
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/816"
     },
     {
       "id": "J2581",
@@ -224011,9 +224017,9 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "claimed",
+      "by": "claude",
+      "since": "2026-11-11T10:13Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T10:12Z",
@@ -224023,6 +224029,11 @@
           "at": "2026-11-11T10:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-11T10:13Z",
+          "by": "claude",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Board wording for the four retakes, word for word from the desk; pull request for Grok",
