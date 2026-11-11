@@ -403,6 +403,34 @@ class TrackerAsksTheLoader(unittest.TestCase):
                          ("long", "Orion", "upcoming"))
         self.assertEqual([v["key"] for v in by_name["videos"]], [v["key"] for v in out["videos"]])
 
+    def test_one_pipeline_file_or_one_status_file_per_film_gives_the_same_cards(self):
+        # J2622: a channel can keep its films either way. The same two films, written each way, are the same cards,
+        # so a channel can change how it keeps them and its part of the board does not move.
+        import datetime as dt
+        import video_tracker as vt
+        films = [("001", "Orion", "2027-01-10", {"script": "done", "edit": "doing"}),
+                 ("002", "Vega", "", {"script": "todo", "edit": "todo"})]
+        one_file = {"films": [{"id": n, "title": t, "air": a, "stages": {k: {"status": v} for k, v in st.items()}}
+                              for n, t, a, st in films]}
+        per_film = [{"film": n, "title": t, "air": a, "stages": {k: {"state": v} for k, v in st.items()}, "claims": [], "next": ""}
+                    for n, t, a, st in films]
+
+        def cards(pipeline, doc):
+            with self.sky(pipeline=pipeline, stages=["script", "edit"]):
+                channels.key_re.cache_clear()
+                try:
+                    out = vt.build_videos(briefs={}, jobs=[], checks={}, public={}, uploads={}, titles={}, overrides={},
+                                          now=dt.datetime(2026, 11, 11, tzinfo=dt.timezone.utc), documents={"sky": doc})
+                finally:
+                    channels.key_re.cache_clear()
+            return json.loads(re.sub(r'"asOf": "[^"]*"', '"asOf": ""',
+                                     json.dumps([v for v in out["videos"] if v["channel"] == "SKY"], sort_keys=True)))
+
+        a = cards({"kind": "pipeline_json", "path": "PIPELINE.json"}, one_file)
+        b = cards({"kind": "film_status", "path": "02_Video-Projects/*/status.json"}, per_film)
+        self.assertEqual([v["key"] for v in a if v["type"] == "long"], ["SKY:001", "SKY:002"])
+        self.assertEqual(a, b)
+
     def test_the_tracker_names_no_channel(self):
         import test_channel_ratchet as ratchet
         source = (pathlib.Path(channels.__file__).parent / "video_tracker.py").read_text()
