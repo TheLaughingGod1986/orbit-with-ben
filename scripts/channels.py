@@ -288,6 +288,21 @@ def uploads_file(slug: str) -> pathlib.Path | None:
     return base / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json" if base else None
 
 
+CHANNEL_RULES = "studio/RULES.md"
+
+
+def rule_files(checkout) -> list[str]:
+    """The rule files an agent reads in a channel's checkout, in order: the studio's AGENTS.md, then the channel's own
+    studio/RULES.md when the checkout has one (J2527, 11 Nov 2026: the rule book is two files). A channel that has
+    not split its rules yet, or a checkout that is not on this machine, is told only AGENTS.md."""
+    return ["AGENTS.md"] + ([CHANNEL_RULES] if (pathlib.Path(checkout) / CHANNEL_RULES).is_file() else [])
+
+
+def rules_phrase(checkout) -> str:
+    """How a prompt names those files: "AGENTS.md", or "AGENTS.md and then studio/RULES.md"."""
+    return " and then ".join(rule_files(checkout))
+
+
 def studio_checkout(home_dir: pathlib.Path | None = None) -> pathlib.Path:
     """The checkout that carries the studio's own data (the board branch, the job queue). Today that is the home
     channel's repo. When the studio has its own repo this is the one line that moves."""

@@ -110,7 +110,7 @@ away from it. Your agent id is `{agent}` everywhere (jobs.py --agent {agent}). D
 Another MacBook slot may be working on a different job at the same time, in its own checkouts: stay in yours.
 
 The job is already claimed for you: {job}
-1. {studio_name} ({studio}) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then
+1. {studio_name} ({studio}) is pulled. Read {studio_rules} (the rules, the Never list, "Stop and ask Ben") and then
      python3 scripts/jobs.py show {job}
 {other_checkouts}
 2. Do the job exactly as its brief says. Report progress as you go:
@@ -178,8 +178,10 @@ def prompt_channels() -> dict:
         "studio_name": channels.name(channels.studio_slug()),
         "studio": STUDIO,
         "other_checkouts": "\n".join(
-            f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its AGENTS.md."
+            f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its "
+            f"{channels.rules_phrase(path)}."
             for s, path in others),
+        "studio_rules": channels.rules_phrase(STUDIO),
         "bens_folders": " and ".join(names) + (" folder" if len(names) < 2 else " folders"),
         "studio_ports": " or ".join(f"{port} ({name})" for port, name in ports),
         "checkout_count": {1: "one", 2: "two", 3: "three", 4: "four"}.get(count, str(count)),

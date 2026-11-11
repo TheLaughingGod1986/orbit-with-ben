@@ -699,6 +699,25 @@ class AsksTheChannelLoader(unittest.TestCase):
             self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
             self.assertIn("inside the three checkouts", p)
 
+    def test_the_brief_names_each_checkouts_rule_files(self):
+        # J2577: the rule book is two files since J2527. A checkout with studio/RULES.md is told both, in order; one
+        # that has not split its rules yet is told AGENTS.md alone, as before; a made-up third channel needs no edit.
+        with tempfile.TemporaryDirectory() as d:
+            root = pathlib.Path(d)
+            for name, split in (("o", True), ("h", False), ("s", True)):
+                (root / name / "studio").mkdir(parents=True)
+                if split:
+                    (root / name / "studio" / "RULES.md").write_text("# rules\n")
+            o, h, sk = str(root / "o"), str(root / "h"), str(root / "s")
+            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, sk]):
+                p = mw.brief("J1", "m", 25)
+            self.assertIn(f'1. Orbit With Ben ({o}) is pulled. Read AGENTS.md and then studio/RULES.md '
+                          '(the rules, the Never list, "Stop and ask Ben") and then\n', p)
+            self.assertIn(f"   For a HOS job, work in the HOS checkout ({h}) and follow its AGENTS.md.\n"
+                          f"   For a SKY job, work in the SKY checkout ({sk}) and follow its AGENTS.md and then "
+                          "studio/RULES.md.\n", p)
+            self.assertNotIn("{", p)
+
     def test_a_third_channel_reaches_the_agent_and_the_second_slot(self):
         with self.sky():
             with mock.patch.object(mw, "OTHERS", [pathlib.Path("/h"), pathlib.Path("/s")]), \
