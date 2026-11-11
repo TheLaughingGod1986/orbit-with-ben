@@ -217611,13 +217611,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T00:00Z",
-      "eta": "2026-11-11T01:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T15:57Z",
-      "result": "",
+      "result": "Done and merged, #782. A Short that belongs to no film (a standalone or dated-event Short) now has its own card on the Videos tab before it airs, built from the uploads register and keyed by its video id, the same key it keeps once public. On today's data that is six new cards: Pluto (Sat 14 Nov), Voyager (Tue 17 Nov), the three Shorts for 25, 27 and 28 Nov, and the Titan Short. No other card changed and no video is on two cards. Six new tests; the whole suite passes (1,110).",
       "history": [
         {
           "at": "2026-11-10T15:57Z",
@@ -217628,6 +217628,11 @@
           "at": "2026-11-11T00:00Z",
           "by": "claude",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T00:53Z",
+          "by": "claude",
+          "what": "done: Done and merged, #782. A Short that belongs to no film (a standalone or dated-event Short) now has its own card on the Videos tab before it airs, built from the uploads register and keyed by its video id, the same key it keeps once public. On today's data that is six new cards: Pluto (Sat 14 Nov), Voyager (Tue 17 Nov), the three Shorts for 25, 27 and 28 Nov, and the Titan Short. No other card changed and no video is on two cards. Six new tests; the whole suite passes (1,110)."
         }
       ],
       "remaining_action": "Board: a standalone Short has no card on the Videos tab (today's Titan Short): give each one a card",
@@ -217641,7 +217646,8 @@
         "by": "claude",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "#782"
     },
     {
       "id": "J2516",
