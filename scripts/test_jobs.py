@@ -623,5 +623,63 @@ class MacBookTakesTextJobs(unittest.TestCase):
         self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
         self.assertFalse(jobs.mini_only_hit(d["jobs"][0]["title"] + " " + d["jobs"][0]["body"]))
 
+
+class QueueHoldsNoPrivateDetail(unittest.TestCase):
+    """11 Nov 2026. The queue is public and is pushed to main with no review. Two tests fail on a personal email
+    address or a private-network address anywhere in the repo, so one pasted `mount` line in a worker's result would
+    turn every pull request red. The queue replaces such a detail as it is written."""
+    AT = "@"   # test details are put together at run time, so none sits in this file
+
+    @staticmethod
+    def address(*parts):
+        return ".".join(str(p) for p in parts)
+
+    def saved(self, what):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "queue.json"
+            jobs.save({"next_id": 2, "jobs": [{"id": "J0001", "title": "t", "status": "done",
+                                              "history": [{"at": "x", "by": "codex", "what": what}]}]}, path)
+            return path.read_text(), jobs.load(path)["jobs"][0]["history"][0]["what"]
+
+    def test_a_result_line_with_an_address_and_an_email_is_replaced_as_it_is_written(self):
+        a, e = self.address(192, 168, 1, 20), "someone" + self.AT + "gmail.com"
+        text, what = self.saved(f"done: mounted from {a}:/volume1/data, signed in as {e}.")
+        self.assertNotIn(a, text)
+        self.assertNotIn(e, text)
+        self.assertEqual(what, "done: mounted from <network address>:/volume1/data, signed in as <email address>.")
+
+    def test_every_private_range_and_an_address_at_the_end_of_a_sentence(self):
+        for parts in ((192, 168, 0, 9), (10, 0, 0, 5), (172, 16, 4, 1), (172, 31, 255, 9), (100, 64, 0, 1), (100, 127, 3, 3)):
+            a = self.address(*parts)
+            for line in (f"{a}", f"it answers at {a}.", f"ssh x{self.AT}{a}", f"({a})", f'"{a}"'):
+                self.assertNotIn(a, self.saved(line)[1], line.replace(a, "<address>"))
+
+    def test_what_is_not_private_is_left_exactly_as_written(self):
+        for line in ("Co-Authored-By: Claude <noreply" + self.AT + "anthropic.com>", "press" + self.AT + "nasa.gov",
+                     "the browser answers on " + self.address(127, 0, 0, 1) + ":9222", "Python 3.10.12, macOS 10.15, v10.2.3",
+                     "10.5 s of 100.0% at 172.5 fps", "a public resolver at " + self.address(8, 8, 8, 8),
+                     self.address(172, 32, 0, 1) + " and " + self.address(100, 128, 0, 1) + " are public"):
+            self.assertEqual(self.saved(line)[1], line)
+
+    def test_a_clean_queue_is_written_byte_for_byte_as_before(self):
+        data = queue(("mini", "Sun 022 first cut", {}), ("cloud", "Review 022", {}))
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "queue.json"
+            jobs.save(data, path)
+            self.assertEqual(path.read_text(), json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+
+    def test_the_guard_replaces_everything_the_two_repo_tests_would_fail_on(self):
+        import test_email_ratchet
+        import test_no_private_network
+        a, e = self.address, "someone" + self.AT
+        lines = [a(192, 168, 1, 20), f"at {a(10, 1, 2, 3)}.", f"NFS `{a(172, 20, 0, 4)}:/volume1/data`", a(100, 100, 100, 100),
+                 e + "gmail.com", e + "googlemail.com", e + "icloud.com", e + "proton.me", e + "yahoo.co.uk",
+                 a(127, 0, 0, 1), a(8, 8, 8, 8), "noreply" + self.AT + "anthropic.com", "Python 3.10.12", "nothing here"]
+        for line in lines:
+            flagged = bool(test_email_ratchet.ADDRESS.search(line) or test_no_private_network.ADDRESS.search(line))
+            self.assertEqual(jobs.scrub(line) != line, flagged, line[:6])
+            self.assertFalse(test_email_ratchet.ADDRESS.search(jobs.scrub(line)) or test_no_private_network.ADDRESS.search(jobs.scrub(line)))
+
+
 if __name__ == "__main__":
     unittest.main()
