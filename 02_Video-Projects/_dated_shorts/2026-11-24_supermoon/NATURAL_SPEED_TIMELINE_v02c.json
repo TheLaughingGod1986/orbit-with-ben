@@ -1,0 +1,65 @@
+{
+  "voice_stem": "supermoon_2026_11_24_vo_v02c",
+  "voice_seconds": 17.255,
+  "cut_seconds": 18.255,
+  "fps": 30,
+  "title_window": [
+    6.5,
+    9.5
+  ],
+  "answer_start_s": 9.765,
+  "cut1_closer_end_s": 2.095,
+  "cut2_earth_start_s": 3.565,
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 2.095,
+      "picture": "Native 3840x2160 SVS 5587 Moon, full-bleed crop; no pre-decode downscale"
+    },
+    {
+      "id": "s01_date",
+      "start": 2.095,
+      "end": 3.565,
+      "picture": "Tighter crop of same native Moon footage, full bleed"
+    },
+    {
+      "id": "s02",
+      "start": 3.565,
+      "end": 4.905,
+      "picture": "Full Blue Marble Earth disc on seamless space to all four edges"
+    },
+    {
+      "id": "s03",
+      "start": 4.905,
+      "end": 7.055,
+      "picture": "Earth and LRO Moon pair at 1:3.67 on seamless space; no lunar backdrop"
+    },
+    {
+      "id": "s04",
+      "start": 7.055,
+      "end": 9.765,
+      "picture": "Clean unlabelled lunar plate; no Apollo 14 instrument/crosshair"
+    },
+    {
+      "id": "s06",
+      "start": 9.765,
+      "end": 15.275,
+      "picture": "Moon plate and animated scale bar; change picture within 4 seconds"
+    },
+    {
+      "id": "s07",
+      "start": 15.275,
+      "end": 17.255,
+      "picture": "Existing approved sunset scene"
+    },
+    {
+      "id": "loop",
+      "start": 17.255,
+      "end": 18.255,
+      "picture": "One-second forward preroll to opening"
+    }
+  ],
+  "status": "Recipe only; no picture rebuilt or gate approval",
+  "rounding": "Round cuts to nearest 30fps frame; derive all captions, graphics and SFX from output words. Handle 18.255s audio/frame rounding explicitly."
+}
