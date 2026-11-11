@@ -195817,9 +195817,14 @@
           "at": "2026-11-11T07:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T07:00Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "After the 008 retakes: read the live credit count under the writer lock and write the 010 authorization file",
+      "remaining_action": "Check the live Flow balance and shared spending records before writing the twelve-plate authorization",
       "kind": "video",
       "plain": "Check the generation tool and available credits before making Dinosaur Shorts clips.",
       "urgent": 2,
@@ -195828,10 +195833,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-11T07:00Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J2270",
