@@ -221578,18 +221578,23 @@
           "at": "2026-11-11T06:02Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 become Veo 3.1 - Quality (66 Quality, 0 Fast, 28 Free = 94 rows, 6600 try-1 credits)"
+        },
+        {
+          "at": "2026-11-11T06:12Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built _build_picture_plan_v02.py, parts/part-01..06_plates_v02.json, PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SHOT_LIST_v02.md, and FAST_ROW_CHANGE_v02.json beside v01 (66 Quality rows, 0 Fast rows, 28 free rows; #496 and #498 prompt wording preserved word for word)"
         }
       ],
-      "remaining_action": "Build _build_picture_plan_v02.py, part-01..06_plates_v02.json, PICTURE_PLAN_v02, PRICE_REVIEW_v02, SHOT_LIST_v02, and FAST_ROW_CHANGE_v02.json",
+      "remaining_action": "Re-pin PASS1_SCOPE_J2499.json and PASS1_MINT_PLAN_J2499.json to v02 and update _mint_flow_v01_pass1.py to refuse Veo 3.1 - Fast",
       "due": "2026-11-12T12:00:00Z",
       "kind": "script",
       "plain": "Rework the picture plan for the Darwin and Wallace film so no scene uses the cheaper, lower-quality picture setting",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-11T06:02Z",
+        "at": "2026-11-11T06:12Z",
         "by": "gemini",
-        "note": "Evaluated all 23 Fast rows: 5 between moving plates become free rows (3 verified PD archive + 2 code graphics) and 18 be"
+        "note": "Built _build_picture_plan_v02.py, parts/part-01..06_plates_v02.json, PICTURE_PLAN_v02.{json,md}, PRICE_REVIEW_v02.md, SH"
       },
       "taskKeys": [
         "HOS:013"
