@@ -225088,19 +225088,24 @@
           "at": "2026-11-11T12:27Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2599; starting inspection of HOS 008 salon take 4 and desk messages 6793719472/6793775605"
+        },
+        {
+          "at": "2026-11-11T12:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Located 02_salon_spark_j2241_t4.mp4 (sha256 82eb0d10...3ad5, 192f @ 24fps) and start still 02_salon_spark_t4_start_try3.png (cdeb4f6b...e592); read recent desk thread"
         }
       ],
-      "remaining_action": "Locate HOS 008 salon take 4 clip, start still, and half-second sheet",
+      "remaining_action": "Build labeled half-second sheet beside start still and inspect all frames for closest approach",
       "due": "2026-11-12T16:00:00Z",
       "kind": "qa",
       "plain": "Check the last Franklin salon shot before the spark is added",
       "urgent": 5,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-11T12:27Z",
+        "at": "2026-11-11T12:29Z",
         "by": "gemini",
-        "note": "Claimed J2599; starting inspection of HOS 008 salon take 4 and desk messages 6793719472/6793775605"
+        "note": "Located 02_salon_spark_j2241_t4.mp4 (sha256 82eb0d10...3ad5, 192f @ 24fps) and start still 02_salon_spark_t4_start_try3."
       },
       "taskKeys": [
         "HOS:008"
