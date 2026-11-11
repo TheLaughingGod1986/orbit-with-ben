@@ -195947,10 +195947,10 @@
       "stage": "picture",
       "after": "J2269",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-11T08:52Z",
-      "eta": "2026-11-11T10:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:30Z",
       "result": "",
@@ -196019,6 +196019,11 @@
           "at": "2026-11-11T08:57Z",
           "by": "codex",
           "what": "step 2 of 3 done: First five-row batch launched detached in tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit file /Users/benjaminoats/_desk/logs/J2270-batch1.done. No duplicate when exit file absent. Runner state /Users/benjaminoats/_desk/state/flow/hos010-twelve-plates. First reference still generation underway; no completed plate or KEEP claimed."
+        },
+        {
+          "at": "2026-11-11T08:58Z",
+          "by": "codex",
+          "what": "released: Batch one runs detached: tmux J2270-batch1; log /Users/benjaminoats/_desk/logs/J2270-batch1.log; exit /Users/benjaminoats/_desk/logs/J2270-batch1.done. Missing exit means running; never duplicate. First two free start stills harvested; no completed video plate claimed. Next run checks exit/log and canonical runner ledger, reconciles any refused take, then starts next bounded batch. HOS records PR #509, 250cf459; check_all ALL CHECKS PASS. Full job remains open; J2271 independent review."
         }
       ],
       "remaining_action": "Next worker: check batch-one exit code and receipts, then continue remaining bounded batches",
