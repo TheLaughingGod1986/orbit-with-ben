@@ -27,7 +27,7 @@ ROOT = HERE.parent
 PART = "[0-9]{1,3}"
 # One pattern for git grep (extended regex) and for Python. The dots are escaped, so this file does not match itself.
 RANGES = rf"(192\.168|10\.{PART}|172\.(1[6-9]|2[0-9]|3[01])|100\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7]))"
-PATTERN = rf"(^|[^0-9.]){RANGES}\.{PART}\.{PART}([^0-9.]|$)"
+PATTERN = rf"(^|[^0-9.]){RANGES}\.{PART}\.{PART}([^0-9]|$)"   # a full stop may follow: "... at <address>."
 ADDRESS = re.compile(PATTERN, re.M)
 
 
@@ -48,7 +48,8 @@ class WhatCounts(unittest.TestCase):
     def test_each_private_range_counts(self):
         for parts in ((192, 168, 1, 20), (10, 0, 0, 5), (172, 16, 4, 1), (172, 31, 255, 9), (100, 64, 0, 1), (100, 127, 3, 3)):
             a = address(*parts)
-            for text in (a, f"NFS `{a}:/volume1/data` at", f"ssh someone@{a}", f"({a})", f"smb://{a}/shared"):
+            for text in (a, f"NFS `{a}:/volume1/data` at", f"ssh someone@{a}", f"({a})", f"smb://{a}/shared",
+                         f"it answers at {a}."):
                 self.assertTrue(ADDRESS.search(text), text.replace(a, "<address>"))
 
     def test_loopback_public_addresses_and_version_numbers_do_not(self):

@@ -83,9 +83,41 @@ def load(path: pathlib.Path = QUEUE) -> dict:
     return {"next_id": 1, "jobs": []}
 
 
+# The queue is public and every write goes straight to main with no review, so a worker's result line is the one
+# place a private detail can reach a tracked file unseen. Two tests fail on such a detail anywhere in the repo
+# (test_email_ratchet.py, test_no_private_network.py); one pasted `mount` line here would turn every pull request red
+# until someone cleaned it. So the queue cannot hold one: it is replaced as the file is written.
+EMAIL_TEXT = re.compile(r"[A-Za-z0-9._%+-]+@(?:gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\.(?:com|me|co\.uk)")
+EMAIL_HINT = re.compile(r"@(?:gmail|googlemail|outlook|hotmail|live|icloud|yahoo|protonmail|proton)\.")
+NETWORK_AT = re.compile(r"(?:192\.168|10\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])|100\.(?:6[4-9]|[7-9]\d|1[01]\d|12[0-7]))"
+                        r"\.\d{1,3}\.\d{1,3}(?!\d)")
+NETWORK_TEXT = re.compile(r"(?<![0-9.])" + NETWORK_AT.pattern)
+NETWORK_STARTS = ("192.168.", "10.", "172.", "100.")
+
+
+def has_network_address(text: str) -> bool:
+    """A quick look before the slow replace: the queue is over 12 MB and is written many times an hour."""
+    for start in NETWORK_STARTS:
+        at = text.find(start)
+        while at != -1:
+            if (at == 0 or text[at - 1] not in "0123456789.") and NETWORK_AT.match(text, at):
+                return True
+            at = text.find(start, at + 1)
+    return False
+
+
+def scrub(text: str) -> str:
+    """`text` with any personal email address or private-network address replaced by a placeholder."""
+    if EMAIL_HINT.search(text):
+        text = EMAIL_TEXT.sub("<email address>", text)
+    if has_network_address(text):
+        text = NETWORK_TEXT.sub("<network address>", text)
+    return text
+
+
 def save(data: dict, path: pathlib.Path = QUEUE) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    path.write_text(scrub(json.dumps(data, indent=2, ensure_ascii=False)) + "\n")
 
 
 def find(data: dict, jid: str) -> dict | None:
