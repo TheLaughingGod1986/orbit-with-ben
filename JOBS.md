@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2587 | mini | open (after J2586) | – | – | 009 picture · for gemini · qa · `gemini-argon` · HOS 009: look at the last remade shot (minute-and-second c2) on a half-second sheet | J2582 |
 | J2593 | mini | open (after J2592) | – | – | 008 picture · for gemini · qa · `gemini-argon` · HOS 008: check the placed spark on the salon shot, frame by frame | J2241 |
 | J2614 | any | open (after J2242) | – | – | 008 edit · qa · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
-| J2616 | cloud | open | – | – | review · Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
+| J2616 | cloud | claimed | claude | 2026-11-11T16:34Z | review · Decoupling, wave 2: approved_deliver.py asks channels.py instead of naming a channel (35 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
 | J2618 | cloud | open | – | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | docs/MULTI_CHANNEL_PLAN.md |
 | J2619 | macbook | open | – | – | review · Decoupling, wave 2: the last scripts stop assuming the studio lives inside one channel's repo (jobs.py, workflow_state.py, workflow_handoffs.py, studio.py, routing.py; 12 lines to 0) | docs/MULTI_CHANNEL_PLAN.md |
 | J2620 | cloud | open | – | – | review · Decoupling: the studio's own name in five small scripts comes from a setting, so the count can reach zero (19 lines) | docs/MULTI_CHANNEL_PLAN.md |
