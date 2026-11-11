@@ -407,9 +407,14 @@ class AsksTheLoader(unittest.TestCase):
             "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/00_Brand/Channel-Setup/social/UPLOADS.json", "/05_Analytics/dashboard/data.json", *shared]))
-        self.assertEqual(sorted(bp.sparse("hos")), sorted([
-            "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
-            *shared]))
+        import channel_pins
+        with channel_pins.one_file("hos"):       # a channel that keeps every film in one file
+            self.assertEqual(sorted(bp.sparse("hos")), sorted([
+                "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
+                *shared]))
+        # and whichever way the real one keeps them this week, the copy holds its film state and its settings
+        self.assertIn("/" + channels.pipeline("hos")["path"], bp.sparse("hos"))
+        self.assertIn("/studio/", bp.sparse("hos"))
 
     def test_the_snapshot_is_called_as_before(self):
         out = Path("/tmp/out")
