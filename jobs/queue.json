@@ -1,5 +1,5 @@
 {
-  "next_id": 2552,
+  "next_id": 2553,
   "jobs": [
     {
       "id": "J0001",
@@ -177742,6 +177742,11 @@
           "at": "2026-11-11T01:28Z",
           "by": "codex",
           "what": "blocked: parked for Chief: prior P04:08_halley_visit_c1:t1 remains SUBMITTING after batch4 exit 1; live Flow says prominent-people failure with refund pending. Balance 13490. Strict live reader refused. 14 generated NAS hashes verified, 0 KEEP; no new submissions. Reconcile charge/refund and decide next action before retry. Evidence HOS commit a361d267."
+        },
+        {
+          "at": "2026-11-11T01:28Z",
+          "by": "relay",
+          "what": "condition verification queued: J2552"
         }
       ],
       "remaining_action": "Resolve the failed Halley take and reconcile its refund before generating more scenes",
@@ -177767,6 +177772,12 @@
         "at": "2026-11-11T01:27Z",
         "by": "codex",
         "note": "NAS and reference hashes verified. Prior ledger: 14 generated, 0 KEEP, 1400 recorded credits plus Halley 100-credit SUBM"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-11T02:28:28+00:00",
+        "recheck_task": "J2552"
       }
     },
     {
@@ -219935,6 +219946,37 @@
       "kind": "assembly",
       "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
       "mini_only": true
+    },
+    {
+      "id": "J2552",
+      "title": "Verify condition for J2033",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2033: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2033 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-11T01:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T01:28Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve the failed Halley take and reconcile its refund before generating more scenes",
+      "kind": "review",
+      "recheck_of": "J2033",
+      "due": "2026-11-11T02:28:28+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
