@@ -229375,13 +229375,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-11T21:09Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T18:14Z",
-      "result": "parked for Chief: review and merge PR #835; stale parent and missing final rollback stranded relay commits, while refill exit zero hid the failure. All 65 script test files pass.",
+      "result": "Chief ruling: PASS, merged as orbit-with-ben 835 (main f511c2b56). Cause, found by Codex: another writer could move main after a queue write had read its parent; the write then failed its own check and left its unpushed commit on the Mini's main, and the refill step exited zero, so the relay never logged it. Now a failed write always takes its own commit back, never anyone else's, and refill reports the failure. Read by the acting Chief; its tests and the queue tests pass on the branch, CI green. To watch: the Mini's relay through tonight and tomorrow's picture window.",
       "history": [
         {
           "at": "2026-11-11T18:14Z",
@@ -229422,6 +229422,11 @@
           "at": "2026-11-11T21:18Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review and merge PR #835; stale parent and missing final rollback stranded relay commits, while refill exit zero hid the failure. All 65 script test files pass."
+        },
+        {
+          "at": "2026-11-11T21:27Z",
+          "by": "claude",
+          "what": "done: Chief ruling: PASS, merged as orbit-with-ben 835 (main f511c2b56). Cause, found by Codex: another writer could move main after a queue write had read its parent; the write then failed its own check and left its unpushed commit on the Mini's main, and the refill step exited zero, so the relay never logged it. Now a failed write always takes its own commit back, never anyone else's, and refill reports the failure. Read by the acting Chief; its tests and the queue tests pass on the branch, CI green. To watch: the Mini's relay through tonight and tomorrow's picture window."
         }
       ],
       "remaining_action": "Chief review and merge of the tested metadata rollback fix",
@@ -229434,7 +229439,8 @@
         "at": "2026-11-11T21:18Z",
         "by": "codex",
         "note": "PR #835 opened; all 65 script test files pass in fresh processes. Failed-origin regression restores clean origin/main an"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/835"
     },
     {
       "id": "J2641",
