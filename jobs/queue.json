@@ -228294,10 +228294,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-11T18:38Z",
+      "eta": "2026-11-11T20:38Z",
       "created_by": "claude",
       "created_at": "2026-11-11T15:59Z",
       "result": "",
@@ -228321,6 +228321,11 @@
           "at": "2026-11-11T16:46Z",
           "by": "claude",
           "what": "queue side of Grok's correction 6800776453: the file is 1920x1080 at 30 fps, not 24; nothing else in the spec changes."
+        },
+        {
+          "at": "2026-11-11T18:38Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review sheet on the desk for Grok's PASS, then a pull request on history-of-science; nothing spliced before the PASS",
@@ -228329,7 +228334,15 @@
       "kind": "chart",
       "plain": "Draw the diagram that fills a gap in the gravity film: the Moon keeps falling past a straight line but never reaches the Earth",
       "urgent": 10,
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-11T18:38Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2633",
