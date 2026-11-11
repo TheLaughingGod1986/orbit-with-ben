@@ -229386,7 +229386,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Settle 34 earlier picture takes in the credit ledger so it stops counting them twice",
-      "urgent": 11,
+      "urgent": 10,
       "taskKeys": [
         "HOS:013",
         "HOS:008",
@@ -229398,19 +229398,19 @@
       "title": "HOS 013 picture: the launch path carries --floor 3000 (runner change with tests, as a pull request for the Chief)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Step 2 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**What is wrong.** In `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py` the reviewed launch path passes no floor. `detached_command()` builds the `launch-worker` arguments without `--floor`, the `detach-command` and `launch-worker` parsers do not take one, and `submit` defaults to `HEADROOM_FLOOR = 0`. So a detached run reserves at floor 0, whatever the dry-run was given.\n\n**Do, in the Chief's words:** thread `--floor 3000` into `detached_command`, with tests showing the detached command carries the floor and refuses a reservation that would leave less than 3,000. Send it as a pull request for his review. A balance check alone is not enough, because the default floor of 0 is the path that would let the spend through.\n\n**Hand-off.** `tests/test_hos013_pass1_runner.py` has 34 tests and all pass on main `5655c9c9`; they must still pass, with the new ones. **The authorization for the push is the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371** (\"Send it as a PR for my review\"). A new branch off current main, one pull request, not merged by you. Before the push, check the change holds no email address, token or other private data (J2537). Post the pull request on the desk under your own `from=` header and park this job for the Chief with its number.\n\n**If the push is refused:** stop and park with the exact refusal text. No other worker pushes it (Chief, desk 6804458227).\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
-      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371",
+      "body": "**Reopened 11 Nov 20:24Z. One gap is left, as a follow-up pull request.** Two Chief notes crossed 14 seconds apart: https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806378089 passed and squash-merged history-of-science 545 (main `c39b4dc6`), and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806381860 asked for a change before any merge. The merge has happened, so the change cannot go on 545. It goes in a new pull request off current main.\n\n**What is on main now (545):** `detach-command` and `launch-worker` default `--floor` to `DETACHED_HEADROOM_FLOOR = 3000` and carry it into the submit child, with tests.\n\n**What is still open, in the Chief's words (https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806381860):** `HEADROOM_FLOOR = 0` and `submit`'s own `--floor` default are unchanged, so an armed `submit` (`HOS013_PASS1_SUBMIT=1`) run directly still reserves at floor 0.\n1. Default `submit`'s `--floor` to `DETACHED_HEADROOM_FLOOR` (3000), and refuse an armed `submit` whose floor is below 3000. Both together is preferred; at least one is required.\n2. Add one test showing that an armed `submit` with no `--floor` refuses a reservation that would leave less than 3,000 headroom, using the existing 9599/9600 boundary style.\n3. `dry-run` can keep floor 0, since it never reserves.\n4. Re-run the runner tests and `check_all.sh`, push, and post the new SHA on the desk.\n\n**Hand-off.** A new branch off current main and one new pull request, not merged by you. The authorization for the push is the Chief's note https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806381860. Check the change for email addresses, tokens and private data first (J2537). Post it on the desk under your own `from=` header and park this job for the Chief with the pull request's number.\n\n---\n\n**The first brief follows. Its launch-path change is done and merged.**\n\nStep 2 of 3 in the Chief's order. Queued 11 Nov 20:08Z by the acting Chief, queue side of Grok's ruling.\n\n**Why.** About 10,400 subscription credits expire unused on Thu 12 Nov 19:13 London. The Chief wants film 013's 66 plates made with them, but the tool's own check refuses: a dry-run at a 3,000 floor fails. Chief rulings (Grok): https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806011279 (what was found) and https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371 (the order of work, which this job follows). Go or no-go is Thu 12 Nov 13:00 London; if these steps are not done by then, nothing is spent.\n\n**What is wrong.** In `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py` the reviewed launch path passes no floor. `detached_command()` builds the `launch-worker` arguments without `--floor`, the `detach-command` and `launch-worker` parsers do not take one, and `submit` defaults to `HEADROOM_FLOOR = 0`. So a detached run reserves at floor 0, whatever the dry-run was given.\n\n**Do, in the Chief's words:** thread `--floor 3000` into `detached_command`, with tests showing the detached command carries the floor and refuses a reservation that would leave less than 3,000. Send it as a pull request for his review. A balance check alone is not enough, because the default floor of 0 is the path that would let the spend through.\n\n**Hand-off.** `tests/test_hos013_pass1_runner.py` has 34 tests and all pass on main `5655c9c9`; they must still pass, with the new ones. **The authorization for the push is the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806064371** (\"Send it as a PR for my review\"). A new branch off current main, one pull request, not merged by you. Before the push, check the change holds no email address, token or other private data (J2537). Post the pull request on the desk under your own `from=` header and park this job for the Chief with its number.\n\n**If the push is refused:** stop and park with the exact refusal text. No other worker pushes it (Chief, desk 6804458227).\n\n**Never in this job:** a Flow run, a submit, `HOS013_PASS1_SUBMIT`, a browser, any spend, any approval or sandbox change, any bypass flag. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806381860",
       "film": "013",
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-11T20:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T20:08Z",
-      "result": "parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T20:08Z",
@@ -229446,21 +229446,19 @@
           "at": "2026-11-11T20:21Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend"
+        },
+        {
+          "at": "2026-11-11T20:24Z",
+          "by": "claude",
+          "what": "reopened: queue side of two Chief notes that crossed: 6806378089 merged history-of-science 545 (main c39b4dc6, the detached path carries the floor); 6806381860 asked that a directly run, armed submit also keeps the floor. That part is still open on main, so this job is reopened for it as a follow-up pull request. Parked as: parked for Chief: review and merge decision for HOS PR #545; 37 runner tests and check_all.sh pass; no spend"
         }
       ],
-      "remaining_action": "Chief reviews the credit-floor fix in HOS pull request 545",
+      "remaining_action": "Follow-up pull request: an armed submit run directly also keeps the 3,000 floor, with one boundary test; park for the Chief",
       "due": "2026-11-12T06:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Make the picture tool keep its 3,000-credit reserve when it is launched in the background",
-      "urgent": 9,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-11T20:21Z",
-        "by": "codex",
-        "note": "PR 545 opened; 37 runner tests and all repository checks pass; no spend"
-      },
+      "urgent": 11,
       "taskKeys": [
         "HOS:013"
       ]
@@ -229500,7 +229498,7 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Check the credit sums once more before any picture is made, and show the Chief",
-      "urgent": 10
+      "urgent": 9
     }
   ],
   "focus": [
