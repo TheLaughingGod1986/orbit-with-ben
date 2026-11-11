@@ -51,6 +51,24 @@ class HistoricalStages(unittest.TestCase):
             self.assertEqual(d['films']['HOS:006']['stages']['picture']['progress'],0.4)
             self.assertEqual(d['definitions'],[{'key':'picture','weight':35}])
 
+    def test_a_channel_with_one_status_file_per_film_can_give_each_stage_its_weight(self):
+        # J2622: plain stage names weigh the same; a channel that lists its stages with weights keeps them, so its
+        # films' progress reads the same when it moves from one pipeline file to one status file per film.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); self.run_git(root, 'init', '-q')
+            p = root / '02_Video-Projects/006_Trees/status.json'; p.parent.mkdir(parents=True)
+            p.write_text(json.dumps({'film': '006', 'stages': {'picture': {'state': 'doing', 'steps': [2, 5], 'progress': 0.4}}}))
+            self.commit(root, '2026-10-17T10:00:00Z')
+            cutoff = dt.datetime(2026, 10, 18, tzinfo=UTC)
+            weighed = [{'key': 'picture', 'weight': 35, 'owner': 'Codex', 'kind': 'video'}, {'key': 'edit', 'weight': 65}]
+            with patch.object(vp.channels, 'stage_defs', lambda slug: weighed):
+                d = vp.historical_stages(root, 'OWB', cutoff, {})
+            self.assertEqual(d['definitions'], [{'key': 'picture', 'weight': 35}, {'key': 'edit', 'weight': 65}])
+            self.assertEqual(d['films']['OWB:006']['stages']['picture'], {'state': 'doing', 'steps': [2, 5], 'progress': 0.4})
+            even = vp.historical_stages(root, 'OWB', cutoff, {})                # today's list of plain names
+            self.assertEqual(len({s['weight'] for s in even['definitions']}), 1)
+            self.assertAlmostEqual(sum(s['weight'] for s in even['definitions']), 100)
+
     def test_missing_history_and_invalid_json_are_unknown(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertFalse(vp.historical_stages(Path(tmp),'HOS',dt.datetime.now(UTC),{})['available'])

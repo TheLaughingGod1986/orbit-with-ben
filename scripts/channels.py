@@ -314,6 +314,35 @@ def nas_folder(slug: str) -> str:
     return get(slug).get("nas_folder") or get(slug)["slug"]
 
 
+def stage_defs(slug: str) -> list[dict]:
+    """The channel's production stages in order, as it lists them in `stages` in its studio/channel.json. Each is
+    {'key', 'weight'} and, where the channel gives them, 'label', 'owner' (who a stage goes to when nobody has it)
+    and 'kind' (the kind of job the stage is, which says which worker a stage still to do is routed to).
+
+    A channel can list plain names: each stage then weighs the same. Or objects with a `key`: a `weight` on each
+    says how much of a film that stage is. A channel that still keeps every film in one pipeline file says
+    "from pipeline": its stages are that file's own, and this gives none. A checkout that is behind its main branch
+    may not have the list yet; then the studio's cached copy of the file answers."""
+    c = get(slug)
+    for doc in (c, _cached(c["slug"])):
+        kept = doc.get("stages")
+        if isinstance(kept, list) and kept:
+            rows = [dict(s) if isinstance(s, dict) else {"key": str(s)} for s in kept]
+            weighed = all(isinstance(r.get("weight"), (int, float)) and not isinstance(r.get("weight"), bool) for r in rows)
+            return [dict(r, weight=r["weight"] if weighed else 100 / len(rows)) for r in rows]
+    return []
+
+
+def stage_keys(slug: str) -> list[str]:
+    """The names of the channel's stages, in order ([] for a channel whose stages are its pipeline file's own)."""
+    return [s["key"] for s in stage_defs(slug)]
+
+
+def stage_kinds(slug: str) -> dict:
+    """{stage: the kind of job it is} for the stages whose kind the channel names."""
+    return {s["key"]: str(s["kind"]) for s in stage_defs(slug) if s.get("kind")}
+
+
 def pipeline(slug: str) -> dict:
     """How the channel keeps its film state: {'kind': 'film_status' | 'pipeline_json', 'path': ...} ({} if unset).
     Code that reads a channel's films or their history branches on the kind, never on which channel it is."""

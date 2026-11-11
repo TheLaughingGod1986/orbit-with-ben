@@ -76,8 +76,20 @@ def settings_problems(c) -> list[str]:
          and wip.get("limit", 0) >= 1 and _text(wip.get("line")),
          "wip: needs `limit` (a whole number, 1 or more) and `line` (the name of its waiting line)")
     stages = c.get("stages")
-    need(stages == "from pipeline" or (isinstance(stages, list) and stages and all(_text(s) for s in stages)),
-         "stages: the production stages in order, or \"from pipeline\"")
+    listed = isinstance(stages, list) and bool(stages)
+    named = listed and all(_text(s) or (isinstance(s, dict) and _text(s.get("key"))) for s in stages)
+    need(stages == "from pipeline" or named,
+         "stages: the production stages in order (names, or objects with a `key`), or \"from pipeline\"")
+    if named:
+        keys = [s["key"] if isinstance(s, dict) else s for s in stages]
+        need(len(set(keys)) == len(keys), "stages: two stages have the same name")
+        weights = [s.get("weight") for s in stages if isinstance(s, dict) and "weight" in s]
+        if weights:
+            numbers = all(isinstance(w, (int, float)) and not isinstance(w, bool) and w > 0 for w in weights)
+            need(len(weights) == len(stages) and numbers and abs(sum(weights) - 100) < 1e-6 if numbers else False,
+                 "stages: when stages carry a `weight`, every stage has one and they add up to 100")
+        need(all(_text(s.get("kind")) for s in stages if isinstance(s, dict) and "kind" in s),
+             "stages: a stage's `kind` is the kind of job it is (script, vo, video, assembly ...)")
     pipe = c.get("pipeline")
     need(isinstance(pipe, dict) and pipe.get("kind") in PIPELINE_KINDS and _text(pipe.get("path")),
          f"pipeline: needs `kind` ({' or '.join(PIPELINE_KINDS)}) and `path`")
