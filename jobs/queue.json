@@ -214933,17 +214933,22 @@
           "at": "2026-11-11T03:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-11T03:47Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J2475: inspecting HOS 011 VO files (PR #443 / main / studio-live) and HOS 013 VO lock + shot list templates"
         }
       ],
-      "remaining_action": "Record the 011 long VO lock, then write shot list v01 on the locked timings",
+      "remaining_action": "Inspect HOS 011 VO records and 013 lock/shot-list templates, then record VO lock and build shot list v01",
       "due": "2026-11-17T00:00:00Z",
       "kind": "script",
       "progress": {
         "step": 0,
-        "of": 5,
-        "at": "2026-11-10T09:59Z",
-        "by": "claudecode",
-        "note": "Inputs read: VO records on HOS main (#467), script v02, 193 timing cues, 013 lock pattern, Gemini's 16 Oct pre-VO board "
+        "of": 4,
+        "at": "2026-11-11T03:47Z",
+        "by": "gemini",
+        "note": "Started J2475: inspecting HOS 011 VO files (PR #443 / main / studio-live) and HOS 013 VO lock + shot list templates"
       },
       "taskKeys": [
         "HOS:011"
