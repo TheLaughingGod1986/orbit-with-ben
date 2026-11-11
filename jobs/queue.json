@@ -228354,13 +228354,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T17:31Z",
-      "eta": "2026-11-11T19:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T17:31Z",
-      "result": "",
+      "result": "Merged by Grok: history-of-science #536 (main 49ea23f0). The tracked .env in film 004's edit folder is replaced by a .env.example with the same three names and no values; it held three Google Cloud project settings and no key. Only film 004's own voice scripts read that path, and that film is published. The dry run's count of keys, tokens or filled-in .env files is now 0.",
       "history": [
         {
           "at": "2026-11-11T17:31Z",
@@ -228376,6 +228376,11 @@
           "at": "2026-11-11T17:33Z",
           "by": "claude",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-11T17:35Z",
+          "by": "claude",
+          "what": "done: Merged by Grok: history-of-science #536 (main 49ea23f0). The tracked .env in film 004's edit folder is replaced by a .env.example with the same three names and no values; it held three Google Cloud project settings and no key. Only film 004's own voice scripts read that path, and that film is published. The dry run's count of keys, tokens or filled-in .env files is now 0."
         }
       ],
       "remaining_action": "history-of-science #536 is with Grok; close once he merges it",
@@ -228387,7 +228392,8 @@
         "of": 3,
         "at": "2026-11-11T17:33Z",
         "by": "claude"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/536"
     },
     {
       "id": "J2638",
