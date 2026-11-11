@@ -229978,24 +229978,44 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T21:18Z",
-      "result": "",
+      "result": "Waiting for: Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it",
       "history": [
         {
           "at": "2026-11-11T21:18Z",
           "by": "claude",
           "what": "added for claude"
+        },
+        {
+          "at": "2026-11-11T21:20Z",
+          "by": "claude",
+          "what": "not before the picture window closes: the relay wakes every worker on the Mini, and 833 already rewrites much of chief_relay.py and is held until then. This change is built on top of 833 once it is merged"
+        },
+        {
+          "at": "2026-11-11T21:20Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it"
+        },
+        {
+          "at": "2026-11-11T21:20Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-12T19:30:00Z"
         }
       ],
-      "remaining_action": "Condition checks take `needs` from the job they check; tests; pull request",
+      "remaining_action": "After 833 merges: condition checks take `needs` from the job they check; tests; pull request",
       "for": "claude",
       "kind": "studio",
-      "plain": "Stop sending Studio checks to the MacBook, which cannot read Studio"
+      "plain": "Stop sending Studio checks to the MacBook, which cannot read Studio",
+      "hold": {
+        "type": "date",
+        "condition": "Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it",
+        "check_at": "2026-11-12T19:30:00Z"
+      }
     }
   ],
   "focus": [
