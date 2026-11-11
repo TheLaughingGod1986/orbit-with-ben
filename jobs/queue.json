@@ -1,5 +1,5 @@
 {
-  "next_id": 2557,
+  "next_id": 2558,
   "jobs": [
     {
       "id": "J0001",
@@ -221043,6 +221043,37 @@
         "OWB:013"
       ],
       "done_ref": "313978bcf"
+    },
+    {
+      "id": "J2557",
+      "title": "Shorts gate, part 3: run the whole-Short check on every scheduled Short of both channels and compare it with the by-eye audit",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief follow-up to J2546 (acting Chief, Claude, 11 Nov). The Shorts gate now checks the whole Short for picture bands over fill, one frame a second (orbit-with-ben #790, merged; the history-of-science copy is its pull request #499). The rule was set on 56 labelled frames. This job runs it on the real files and compares it with what an agent saw by eye, so we know its FAILs can be trusted. Read-only, £0.\n\n1. Pull both repos' main. On the Mini, a time-limited `ls /Volumes/data/studio-live` first (10 s). If the NAS does not answer, stop and say so.\n2. For every scheduled Short of both channels whose export is on the Mini or the NAS, run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <its date> --id <its id> --report-only --json` from that channel's repo. Start it detached with a log and a `.done` file; do not sit inside one wake waiting for it. Use the export that matches what is on YouTube (the upload register's sha256), as the audit did.\n3. One table, one row per Short: video id, channel, air date, the padded stretches the gate reports in seconds (`padded_stretches_s`), the end-card stretch it left out (`end_card_window_s`), whether the whole-Short rule fails it, and beside that what the by-eye audit says for the same Short (`jobs/reviews/J2545/REPORT.md`, section 2: its padded stretches, or \"full frame throughout\").\n4. Then three short lists:\n   - Shorts the audit calls full frame throughout that the gate fails. For each, save the 108x192 grey frame of two of the seconds it calls padded as a small PNG beside the table, and say what is in the picture. These matter most: a wrong FAIL blocks an upload.\n   - Shorts the audit calls padded that the gate passes, with the stretch it missed.\n   - Shorts whose end card sits on fill and whose meta does not name the end card (the gate counts those seconds as shots).\n5. Put the table and the lists in `jobs/reviews/<this job id>/REPORT.md` with the small PNGs, open a pull request, and park for the Chief.\n\nDo not re-cut anything, do not change anything in Studio, and do not change the gate or its thresholds: the Chief decides from the table. Three known limits are already named in the gate's test (`rvug71d7Dqk` at 0 and 2 s; `C8lPx5N2DwM` at 6 s; `k2kEaA7ICjc` at 10 s). No real money.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-11T04:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-11T04:36Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Shorts gate, part 3: run the whole-Short check on every scheduled Short of both channels and compare it with the by-eye audit",
+      "due": "2026-11-12T12:00:00Z",
+      "kind": "review",
+      "plain": "Run the new fill-the-screen check over every scheduled Short and compare it with what was seen by eye",
+      "mini_only": true
     }
   ],
   "focus": [
