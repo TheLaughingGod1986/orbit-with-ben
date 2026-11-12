@@ -235230,13 +235230,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T12:18Z",
-      "eta": "2026-11-12T14:18Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T11:04Z",
-      "result": "",
+      "result": "KEEP: Verified all 3 J2676 rebuilt thumbnail Bs on Mini at 1280x720 and 168x94 (PHONE_SHEET_v02.jpg f050aa68a9, THUMB_PREVIEW_SCORE_SHEET.jpg 1637000de1) against J2456 & house rules (jobs/reviews/J2695/REVIEW.md, commit 26e28c5142): (1) Moon 2fsQcea-voM_B_v02.jpg (537f8c0b81, sat 152.4, nb 6%): TOTALITY ENDS (yellow ENDS), grey LRO Moon, larger Earth, 1 outward arrow, clear top band; (2) Neutron star Yk1tLh23rko_B_v02.jpg (730de8b8e5, sat 133.6, nb 4%): CRUSHED TO ATOMS (yellow ATOMS), clean t=465s master plate, no Earth, top band only; (3) Alien worlds b8-X_FyJnHM_B_v02.jpg (1febb2e40f, sat 205.7, nb 3%): GLASS RAIN? (yellow GLASS), HD 189733 b with 7 thick diagonal streaks clearly visible at 168x94. Referred PR #848 (48fd0ea27c), parent J2676 resolution, and fresh-read Studio test job to elected Chief.",
       "history": [
         {
           "at": "2026-11-12T11:04Z",
@@ -235277,6 +235277,11 @@
           "at": "2026-11-12T12:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: KEEP recorded in 26e28c5142 (jobs/reviews/J2695/REVIEW.md); referred PR #848, parent J2676 and fresh-read Studio job decision to elected Chief"
+        },
+        {
+          "at": "2026-11-12T12:26Z",
+          "by": "gemini",
+          "what": "done: KEEP: Verified all 3 J2676 rebuilt thumbnail Bs on Mini at 1280x720 and 168x94 (PHONE_SHEET_v02.jpg f050aa68a9, THUMB_PREVIEW_SCORE_SHEET.jpg 1637000de1) against J2456 & house rules (jobs/reviews/J2695/REVIEW.md, commit 26e28c5142): (1) Moon 2fsQcea-voM_B_v02.jpg (537f8c0b81, sat 152.4, nb 6%): TOTALITY ENDS (yellow ENDS), grey LRO Moon, larger Earth, 1 outward arrow, clear top band; (2) Neutron star Yk1tLh23rko_B_v02.jpg (730de8b8e5, sat 133.6, nb 4%): CRUSHED TO ATOMS (yellow ATOMS), clean t=465s master plate, no Earth, top band only; (3) Alien worlds b8-X_FyJnHM_B_v02.jpg (1febb2e40f, sat 205.7, nb 3%): GLASS RAIN? (yellow GLASS), HD 189733 b with 7 thick diagonal streaks clearly visible at 168x94. Referred PR #848 (48fd0ea27c), parent J2676 resolution, and fresh-read Studio test job to elected Chief."
         }
       ],
       "remaining_action": "Complete J2695",
@@ -235303,7 +235308,8 @@
         "at": "2026-11-12T12:26Z",
         "by": "gemini",
         "note": "KEEP recorded in 26e28c5142 (jobs/reviews/J2695/REVIEW.md); referred PR #848, parent J2676 and fresh-read Studio job dec"
-      }
+      },
+      "done_ref": "26e28c5142"
     },
     {
       "id": "J2696",
