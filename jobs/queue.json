@@ -238035,10 +238035,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T21:16Z",
+      "eta": "2026-11-12T23:16Z",
       "created_by": "relay",
       "created_at": "2026-11-12T19:19Z",
       "result": "",
@@ -238087,6 +238087,11 @@
           "at": "2026-11-12T21:16Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Worker verification is finished; direct instruction assigns this protected condition-release ruling to elected Chief Codex. Remove the stale Gemini-only claim restriction."
+        },
+        {
+          "at": "2026-11-12T21:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py reopen J2618 and jobs.py done J2724 (evidence on OWB PR #859)",
@@ -238102,7 +238107,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T21:16Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2725",
