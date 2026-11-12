@@ -238657,7 +238657,7 @@
     {
       "id": "J2736",
       "title": "Packaging panel decision: Andromeda whole-galaxy revision",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: Andromeda whole-galaxy revision.** Read the three critiques in `05_Analytics/tests/panels/owb-019-andromeda-j2729-v02/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nEvidence is also on branch codex/j2729-andromeda-v02 (commit d82edd601d); review and merge its PR through the normal Chief process. Read shared NAS text evidence until merged. J2692/J2729 scope: title Milky Way Andromeda Collision (What Happens to Our Sun?) (56 characters), cover STARS RARELY HIT. No Studio work or description/script edits. Package B excluded. J2449 stays held until separate elected-Chief exact-file PASS. Review exact hashes in META_v02.json. Baseline unchanged; intended two arms only on ojk-dfOpAmw. Never touch Black Hole T002 or Jupiter T030. No measured search demand claimed.\nRead all three independent critiques before synthesis. If any is unfinished, wait for its actual completion; do not treat absence as approval. Record all critic job ids: J2733, J2734, J2735. Do not reopen J2449 or queue a duplicate Studio job: the dependent Chief release job owns that decision.",
       "ref": "J2729",
@@ -238677,11 +238677,25 @@
           "at": "2026-11-12T20:48Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T20:50Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Packaging panel decision: Andromeda whole-galaxy revision",
       "kind": "review",
-      "plain": "Checking the new Andromeda title and whole-galaxy thumbnail"
+      "plain": "Checking the new Andromeda title and whole-galaxy thumbnail",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2737",
