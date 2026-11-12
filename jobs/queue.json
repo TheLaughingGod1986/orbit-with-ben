@@ -239186,9 +239186,14 @@
           "at": "2026-11-12T22:39Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T22:39Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed isolated checker review; no film approval or media changes."
         }
       ],
-      "remaining_action": "Review the separate timing-check correction and return the film plan for completion",
+      "remaining_action": "Review the timing checker correction and its regression tests",
       "due": "2026-11-16T18:00:00Z",
       "kind": "chief",
       "plain": "Review a timing-check fix needed for the Darwin and Wallace film",
@@ -239197,9 +239202,11 @@
         "of": 3,
         "at": "2026-11-12T22:39Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed isolated checker review; no film approval or media changes."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
