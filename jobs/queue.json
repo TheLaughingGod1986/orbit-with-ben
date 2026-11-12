@@ -212615,10 +212615,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T00:51Z",
-      "eta": "2026-11-12T02:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
       "result": "",
@@ -212682,6 +212682,11 @@
           "at": "2026-11-12T00:56Z",
           "by": "codex",
           "what": "step 1 of 3 done: Full decode proves 15106 source frames and 14178 tail frames with filter reinitialization disabled. PR #840; corrected render detached in tmux J2437-resume2-render."
+        },
+        {
+          "at": "2026-11-12T00:56Z",
+          "by": "codex",
+          "what": "released: PR #840 commit 31802fb500. Corrected render running detached: tmux J2437-resume2-render; log /Users/benjaminoats/_desk/logs/J2437-resume2-render.log; exit /Users/benjaminoats/_desk/logs/J2437-resume2-render.done. SSD worktree /Volumes/MiniWork/scratch/J2437-worktree; scratch J2437_work. Missing done means still running: never duplicate. Full decode verified 15106 source and 14178 tail frames with -reinit_filter 0. Next check exit/gates, PHONE and UAT hashes; preserve NAS metadata before syncing new lists. No approval or finished-cut claim."
         }
       ],
       "remaining_action": "Render the corrected Uranus master and run the five automated checks",
