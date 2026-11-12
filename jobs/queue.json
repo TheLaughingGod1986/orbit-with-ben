@@ -220499,10 +220499,10 @@
       "stage": "",
       "after": "J2033",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T22:25Z",
+      "eta": "2026-11-13T00:25Z",
       "created_by": "claude",
       "created_at": "2026-11-10T13:26Z",
       "result": "",
@@ -220601,6 +220601,11 @@
           "at": "2026-11-12T22:23Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T00:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T22:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sync the cleanup branch, rerun its checks and submit the pushed commit to the elected Chief for merge review",
