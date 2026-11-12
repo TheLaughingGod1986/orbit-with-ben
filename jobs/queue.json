@@ -193795,10 +193795,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T03:27Z",
-      "eta": "2026-11-12T05:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -193952,6 +193952,11 @@
           "at": "2026-11-12T03:34Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR542 commit 91206ef4: compatible salon experiment preserves all 12763 unchanged frames/video packets and 25296 audio packets; 20 tests OK and check_all PASS. No v04 master; final edit and gates remain."
+        },
+        {
+          "at": "2026-11-12T03:35Z",
+          "by": "codex",
+          "what": "released: Checkpoint 91206ef4 pushed to HOS PR542: compatible salon-only mux preserves all 12763 unchanged frames/video packets and 25296 audio packets under default decode. 20 tests OK; check_all PASS. Resume /Volumes/MiniWork/scratch/J2242-hos/jobs/reviews/J2242/RESUME.md. No v04; other corrections/captions/gates outstanding. All processes finished; no detached work."
         }
       ],
       "remaining_action": "Complete the remaining Franklin corrections, caption cards and final gates using the verified salon-splice checkpoint",
