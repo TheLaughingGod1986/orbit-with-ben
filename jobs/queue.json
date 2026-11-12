@@ -212677,17 +212677,22 @@
           "at": "2026-11-12T00:52Z",
           "by": "codex",
           "what": "step 1 of 3 done: Recovered prior 147-cut edit and 13 opening renders; previous run exited before delivery at tail frame-count assertion."
+        },
+        {
+          "at": "2026-11-12T00:56Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Full decode proves 15106 source frames and 14178 tail frames with filter reinitialization disabled. PR #840; corrected render detached in tmux J2437-resume2-render."
         }
       ],
-      "remaining_action": "Diagnose the prior tail frame-count failure and resume the Uranus render",
+      "remaining_action": "Render the corrected Uranus master and run the five automated checks",
       "kind": "assembly",
       "plain": "Re-cut the first 30 seconds of 033 Uranus so every cut is <=4 s (FIRST30_PLAN.md) and assemble master v02",
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T00:52Z",
+        "at": "2026-11-12T00:56Z",
         "by": "codex",
-        "note": "Recovered prior 147-cut edit and 13 opening renders; previous run exited before delivery at tail frame-count assertion."
+        "note": "Full decode proves 15106 source frames and 14178 tail frames with filter reinitialization disabled. PR #840; corrected r"
       },
       "taskKeys": [
         "OWB:033"
