@@ -139,3 +139,20 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P3:05a_chicks_deep_beaks` | `P03_05a_chicks_deep_beaks_t1.mp4` | `4425168f215dbb043e98fc8cacf793efd9464a98fdcad3938ec6f436de78424c` | `e654718106e025c1855f5dfe39f9b6d49f12576c6e63485fa699a6869511b400` | `8b051ce8dd6fb10e44cf22a33e58e82f87c9dacfa37e15fe037017bb2df4b39e` | `7,740 → 7,640` | `PENDING_REVIEW` (`keep: false`) |
 | `P3:05b_finches_next_generation` | `P03_05b_finches_next_generation_t1.mp4` | `0a62a9536568604611f05d2537c0e9f3aeba242f04c04abc5fb1835a7895dff4` | `c6e5ff090e1957005f761ab063d8aff53c326b9fc7efcf74a28c5b817a7cdf13` | `2c635dc3a8aae0b7bb8ce57c9517c9889c478d475e8f0ed6c92ebfac1da091c5` | `7,640 → 7,540` | `PENDING_REVIEW` (`keep: false`) |
 | `P3:07a_darwin_afraid_window` | `P03_07a_darwin_afraid_window_t1.mp4` | `95a93ef7c184718db5ec595478cd8cd002e3d1915848d82bdcff6b4fff60d779` | `3665b4590720e6c0dbeebb3099dd9d1597b775d8428a58a7d326aecb5ad71062` | `815affb389b3b07606b4d6b5cc185acb2a097de840e04e49ff3593f5c17b06bd` | `7,540 → 7,440` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 07 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T12:56Z` – `13:13Z`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch07-20261112T1256Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch07-20261112T1256Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_07_RECEIPT.json` (`archive_v01_pass1/batch-fb7c5a6fd68c.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_07_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `3,500 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `6,940` re-verified live on CDP `:9222`):** `7,440 → 7,340 → 7,240 → 7,140 → 7,040 → 6,940` (`0` pending charges; remaining `HOS013_PASS1` reservation `3,100`; headroom `6,940 - 3,100 - 800 = 3,040 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P3:07b_confessing_murder_letter` | `P03_07b_confessing_murder_letter_t1.mp4` | `8b7e15d52cab8480be9a6d3ceb37e845cb4d6be84ee5cc832522f7dc79c5bdb3` | `7c80d3d7456fc5e32062a47b5aed3a5371bfa8b788ec2fcb5432a331630fa98f` | `e17fdd3bf5d72e437ef797a8ffefe1bb3c2ebff1b79ca00d021580602eefc932` | `7,440 → 7,340` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:08_emma_study` | `P03_08_emma_study_t1.mp4` | `cd6bf7c794a47c81efea3f1a72d56113720400ad1e10a514f4fd178d28f4c16c` | `852a4ac006c014377431a91196a3ea6c0f19da4ce94e8aca6f72d4af1ecfcb3f` | `8dd18222d5f6a7ea651ac7fcbf5c35c3832eb3b070e21b7b41b39cb6de0b768f` | `7,340 → 7,240` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:09b_emma_letter_cupboard` | `P03_09b_emma_letter_cupboard_t1.mp4` | `6187e461f0e9b151ca26fa4dfaea7fc368811b04c917bde035c82e16511e33e1` | `ad28026bdd31ac0a570269fbf890b8c6c55deb2b95c28d9021612a7364e4bb4c` | `10940a719563649fab7bb912238ec8183081d72625e6b6b2dc030d9f96490655` | `7,240 → 7,140` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:10b_vestiges_torn_apart` | `P03_10b_vestiges_torn_apart_t1.mp4` | `cf820f0e63a0dc92b824cf96cc59bfeedb17ec22c418ae556d99dec5156ae383` | `4b296eaaba07fe52b632460d8df3fe38b633d2f103010188c550c3720d5cf9fd` | `a4ade93784c9d20ac8d8207d39b8e38f63a2528f6baa147eaa810f454b02c1d9` | `7,140 → 7,040` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:11_barnacles_microscope` | `P03_11_barnacles_microscope_t1.mp4` | `a9311278fb722a3c5effc619b66ba9e7ecd86bfa72c13bf16c90afad425a79f3` | `0a5444723b567efc2ab82811a4addbbe3f28df8f5d486894500265461f1e563e` | `4ac4a83bc0f9d2c0ea1d7bd703664dd92b7e4853a098862fcd323eaf49b3da8b` | `7,040 → 6,940` | `PENDING_REVIEW` (`keep: false`) |
