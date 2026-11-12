@@ -1,5 +1,5 @@
 {
-  "next_id": 2717,
+  "next_id": 2721,
   "jobs": [
     {
       "id": "J0001",
@@ -74289,6 +74289,11 @@
           "at": "2026-10-30T00:59:44Z",
           "agent": "cursor",
           "what": "J1222: retarget Related from 4WUs0beKn0A to xgx2lYHhYZM (v05 swap; old Private+unscheduled)"
+        },
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "condition verification queued: J2717"
         }
       ],
       "kind": "listing",
@@ -74315,7 +74320,8 @@
       "hold": {
         "type": "public",
         "condition": "Vaccine long ETynHpIYLeY must read back Public",
-        "check_at": "2026-11-12T18:05:00Z"
+        "check_at": "2026-11-12T19:05:57+00:00",
+        "recheck_task": "J2717"
       }
     },
     {
@@ -84979,6 +84985,11 @@
           "at": "2026-10-27T00:44Z",
           "by": "relay",
           "what": "condition recorded; next verification 2026-11-12T18:05:00Z"
+        },
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "condition verification queued: J2718"
         }
       ],
       "kind": "studio",
@@ -84986,7 +84997,8 @@
       "hold": {
         "type": "public",
         "condition": "Vaccine long ETynHpIYLeY must read back Public before posting its pinned comment",
-        "check_at": "2026-11-12T18:05:00Z"
+        "check_at": "2026-11-12T19:05:57+00:00",
+        "recheck_task": "J2718"
       }
     },
     {
@@ -178971,6 +178983,11 @@
           "at": "2026-11-10T17:02Z",
           "by": "claude",
           "what": "still waiting (acting Chief, 10 Nov 17:10Z): Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490."
+        },
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "condition verification queued: J2719"
         }
       ],
       "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
@@ -178995,9 +179012,10 @@
       "hold": {
         "type": "input",
         "condition": "Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.",
-        "check_at": "2026-11-12T18:00:00+00:00",
+        "check_at": "2026-11-12T19:05:57+00:00",
         "checked_at": "2026-11-10T17:02:53+00:00",
-        "checked_by": "claude"
+        "checked_by": "claude",
+        "recheck_task": "J2719"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -222873,6 +222891,11 @@
           "at": "2026-11-12T18:05Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Batch 12 stopped on row 56 (P5:08a_wallace_opens_origin) after Flow failed Create with 'We noticed some unusual activity' banner (TimeoutError exit 1; live balance verified unchanged 4,990 -> 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED left untouched per stop rules; Batch 11 rulings 6831422974/6831444565/6831536663 recorded in OWB 7ceb9685b2; 55/66 generated [48 KEEP, 7 RETAKE @ 700]; desk #180 6831803895)"
+        },
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "condition verification queued: J2720"
         }
       ],
       "remaining_action": "Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
@@ -222892,6 +222915,12 @@
         "at": "2026-11-12T17:59Z",
         "by": "gemini",
         "note": "Batch 12 exited 1: Flow failed row 56 P5:08a_wallace_opens_origin with unusual-activity banner (live balance verified un"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-12T19:05:57+00:00",
+        "recheck_task": "J2720"
       }
     },
     {
@@ -237077,6 +237106,130 @@
         "at": "2026-11-12T18:04Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2717",
+      "title": "Verify condition for J0875",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0875: Vaccine long ETynHpIYLeY must read back Public. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0875 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T18:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Add the Related links to the Vaccine long video",
+      "kind": "review",
+      "recheck_of": "J0875",
+      "due": "2026-11-12T19:05:57+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2718",
+      "title": "Verify condition for J0960",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0960: Vaccine long ETynHpIYLeY must read back Public before posting its pinned comment. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0960 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T18:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Post and pin the Vaccine comment",
+      "kind": "review",
+      "recheck_of": "J0960",
+      "due": "2026-11-12T19:05:57+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2719",
+      "title": "Verify condition for J2040",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T18:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Have the authorized operator handle approval configuration and acceptance tests",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-12T19:05:57+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2720",
+      "title": "Verify condition for J2529",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T18:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "due": "2026-11-12T18:45:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

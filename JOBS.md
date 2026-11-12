@@ -82,6 +82,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2714 | mini | open | – | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
 | J2715 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC |  |
 | J2716 | mini | claimed | macbook-2 | 2026-11-12T18:13Z | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
+| J2717 | any | open | – | – | review · Verify condition for J0875 |  |
+| J2718 | any | open | – | – | review · Verify condition for J0960 |  |
+| J2719 | any | open | – | – | review · Verify condition for J2040 |  |
+| J2720 | any | open | – | – | review · Verify condition for J2529 |  |
 
 Recently finished:
 
