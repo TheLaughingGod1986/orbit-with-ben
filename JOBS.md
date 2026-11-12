@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2706 | mini | claimed | codex | 2026-11-12T16:32Z | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
 | J2707 | any | blocked | macbook | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
-| J2709 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
+| J2709 | mini | claimed | macbook-2 | 2026-11-12T16:32Z | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 
 Recently finished:
 
