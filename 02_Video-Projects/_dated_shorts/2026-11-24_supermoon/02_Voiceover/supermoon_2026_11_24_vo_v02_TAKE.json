@@ -1,0 +1,122 @@
+{
+  "stem": "supermoon_2026_11_24_vo_v02",
+  "voice": "Ben Orbit Narrator",
+  "voice_id": "kDch6ACCIpqgQ0NsU9kk",
+  "model_id": "eleven_v3",
+  "settings": {
+    "stability": 0.34,
+    "similarity_boost": 0.78,
+    "style": 0.42,
+    "speed": 1.04,
+    "use_speaker_boost": true
+  },
+  "orders": [
+    "J2478",
+    "J2369"
+  ],
+  "retake_of": null,
+  "chapters": [
+    {
+      "title": "take",
+      "chars": 245,
+      "duration_s": 20.0
+    }
+  ],
+  "gap_s": 0.7,
+  "spoken_chars": 245,
+  "words": 41,
+  "duration_s": 18.6,
+  "loudness": {
+    "lufs_integrated": -21.5,
+    "mean_volume_db": -24.1,
+    "max_volume_db": -5.1
+  },
+  "sha256_mp3": "02410ae0de97296342e65ba8895a99526f63b588b0023a0e000cd4143c118083",
+  "scribe": {
+    "transcript": "The moon swings two Earths closer on November 24th. If Earth were a nickel, the moon is a coffee bean. Normally, 30 Earths fit between us. This supermoon passes 360,000 kilometers up. Look east at sunset as",
+    "script_words": 42,
+    "scribe_words": 38,
+    "match_rate_pct": 78.57,
+    "exact_match": false,
+    "mismatches": [
+      {
+        "op": "replace",
+        "script": [
+          "twenty",
+          "fourth"
+        ],
+        "scribe": [
+          "24th"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "thirty"
+        ],
+        "scribe": [
+          "30"
+        ]
+      },
+      {
+        "op": "replace",
+        "script": [
+          "three",
+          "hundred",
+          "and",
+          "sixty",
+          "thousand",
+          "kilometres"
+        ],
+        "scribe": [
+          "360",
+          "000",
+          "kilometers"
+        ]
+      }
+    ]
+  },
+  "vo_check": "REVIEW",
+  "credits": {
+    "before": {
+      "used": 32146,
+      "limit": 121114,
+      "remaining": 88968
+    },
+    "after": {
+      "used": 32146,
+      "limit": 121114,
+      "remaining": 88968
+    },
+    "counter_delta": 0
+  },
+  "text": "The Moon swings two Earths closer on November twenty-fourth. If Earth were a nickel, the Moon is a coffee bean. Normally thirty Earths fit between us. This Supermoon passes three hundred and sixty thousand kilometres up. Look east at sunset, as…",
+  "made_at": "2026-11-10T08:38:17+0000",
+  "splice_of": "supermoon_2026_11_24_c7_trim1_vo_v01",
+  "splice_source_sha256_wav": "95a24bc9c4b1352f333c121e96d88483afd7688229e037ba9a51958feeb9f385",
+  "splice_spans_s": [
+    [
+      0.03,
+      4.45
+    ],
+    [
+      4.95,
+      8.65
+    ],
+    [
+      8.9,
+      11.7
+    ],
+    [
+      11.85,
+      17.3
+    ],
+    [
+      17.77,
+      20.0
+    ]
+  ],
+  "sha256_wav": "4869c7235fdd4ed70140009409bb22ad71bec0eabe08a78f70726dc5c73dccf6",
+  "tail_peak_last20ms_dbfs": -54.5,
+  "tail_peak_last10ms_dbfs": -57.1
+}

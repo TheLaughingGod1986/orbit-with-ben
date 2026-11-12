@@ -1,0 +1,39 @@
+{
+  "file": "02_Video-Projects/_dated_shorts/2026-11-24_supermoon/06_Final-Exports/owb_dated_2026_11_24_supermoon_v02.mp4",
+  "part": null,
+  "fails": [
+    "speech mean -16.8 dB outside -28.0 to -19.0 dB"
+  ],
+  "warns": [
+    "pace 138 wpm (< 145); expect a long film — see STUDIO_PLAYBOOK.md §4 speed",
+    "replace at ~0:08.96: script 'between us this supermoon passes kilometres up' / heard 'between us this super moon passes kilometers up' — sounds alike (likely the transcriber); listen",
+    "replace at ~0:10.28: script 'this supermoon passes kilometres up look east' / heard 'super moon passes kilometers up look east' — sounds alike (likely the transcriber); listen"
+  ],
+  "duration_s": 18.27,
+  "duration": "0:18.27",
+  "mean_db": -16.8,
+  "peak_db": -2.0,
+  "pauses_over_1s": [],
+  "asr": "faster-whisper small.en",
+  "script_words": 34,
+  "heard_words": 35,
+  "wpm": 138,
+  "word_diffs": [
+    {
+      "at": "0:08.96",
+      "op": "replace",
+      "sounds_alike": true,
+      "script": "between us this supermoon passes kilometres up",
+      "heard": "between us this super moon passes kilometers up"
+    },
+    {
+      "at": "0:10.28",
+      "op": "replace",
+      "sounds_alike": true,
+      "script": "this supermoon passes kilometres up look east",
+      "heard": "super moon passes kilometers up look east"
+    }
+  ],
+  "first_minute": {},
+  "verdict": "FAIL"
+}
