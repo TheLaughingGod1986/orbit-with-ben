@@ -52,15 +52,15 @@ In `J2447` (`05_Analytics/owb/REPACKAGE_2026-11.md`), row `019 Andromeda` (`ojk-
    - `andromeda_collision_script_master_v03.md` **line 82** (`vo_v03_full.txt` line 61):
      > *"Orbit witnesses two disks slide through each other — and almost nothing hits."*
    - `andromeda_collision_script_master_v03.md` **line 86** (`vo_v03_full.txt` line 65):
-     > *"Because a star is a bright speck in an ocean of empty. The average gaps are so large that two galaxies can pass through one another while most suns miss by light-years. Imagine two swarms of fireflies crossing a dark field: the clouds overlap completely, yet almost no two insects touch. Suddenly the drama is not billiard-ball smash — it’s a gravity dance through empty gaps. Star-on-star crashes stay rare — a footnote, not the fireworks."*
+     > *"Because a star is a bright speck in an ocean of empty. The average gaps are so large that two galaxies can pass through one another while most suns miss by light-years. Gravity rearranges the orbits. Gas clouds can slam, spark, and light new stars under radiation and shock. Suddenly the drama is not billiard-ball smash — it’s a gravity dance through empty gaps. Star-on-star crashes stay rare — a footnote, not the fireworks."*
    - `andromeda_collision_script_master_v03.md` **line 105** (`vo_v03_full.txt` line 79):
      > *"Honest answer: probably not by a star ploughing into the Sun. Stars rarely collide."*
 
 3. **Thumbnail Top-Band Hook: `*NO* CRASH` (`NO` in yellow, `CRASH` in white)**
    - `andromeda_collision_script_master_v03.md` **line 17** (`vo_v03_full.txt` line 11):
-     > *"Not as a crash. As a quiet smudge — the Andromeda Galaxy, M31 — a trillion stars’ worth of neighbour."*
+     > *"Not as a crash. As a quiet smudge — the Andromeda Galaxy — a whole island of stars, close enough that its photons reach your eyes after a journey of about two and a half million light-years."*
    - `andromeda_collision_script_master_v03.md` **line 40** (`vo_v03_full.txt` line 29):
-     > *"In two thousand twenty-five, updated simulations combining Hubble and Gaia data widened the range of possible paths and suggested that once you include the rest of the Local Group — especially the Large Magellanic Cloud — a merger within the next ten billion years is no longer treated as automatic, and some orbits may never deliver a hard smash."*
+     > *"Then the paradox lands: approach is real; the exact merger date is still being sharpened. We measure the inbound speed — yet the exact future orbit still hides in measurement error. A merger still sits in many futures — but the timing may stretch later, and some orbits may never deliver a hard smash."*
    - `andromeda_collision_script_master_v03.md` **line 50** (`vo_v03_full.txt` line 39):
      > *"Then we need to stop thinking “crash”… and start thinking “rewrite.”"*
    - `andromeda_collision_script_master_v03.md` **line 86** (`vo_v03_full.txt` line 65):
