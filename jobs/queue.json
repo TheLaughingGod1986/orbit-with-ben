@@ -238984,9 +238984,14 @@
           "at": "2026-11-12T23:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T23:17Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2731 condition verification for J2172 (HOS 010 Shorts A and C)"
         }
       ],
-      "remaining_action": "Verify readiness: Await runner repair and tested adapter, bounded authorization after HOS009 production, twelve plates and independent J2271 acceptance before assembling A/C",
+      "remaining_action": "Inspect J2172 and its upstream chain (J2270, J2271, HOS 010 long/Shorts state)",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-12T21:07:58+00:00",
@@ -239003,11 +239008,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T23:16Z",
+        "at": "2026-11-12T23:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2731 condition verification for J2172 (HOS 010 Shorts A and C)"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J2732",
