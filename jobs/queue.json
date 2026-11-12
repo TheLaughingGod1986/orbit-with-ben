@@ -234258,7 +234258,7 @@
     {
       "id": "J2687",
       "title": "Verify condition for J2662",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2662: Missing raw media on studio-live: all eight v03 source clips absent. Resume on Mini originals or restore sources with SHA-256 checks before dispatching to MacBook again. Existing HOS PR #556 refreshed at 262ea41; v04 not rendered. Recipe recovered from open PR #555.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2662 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -234278,13 +234278,27 @@
           "at": "2026-11-12T08:21Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T08:22Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Restore the eight raw clips to the shared film folder or resume the re-cut on the Mini; render and verification remain",
       "kind": "review",
       "recheck_of": "J2662",
       "due": "2026-11-12T09:21:42+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
