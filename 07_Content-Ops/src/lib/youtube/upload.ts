@@ -324,7 +324,7 @@ function safeTags(hashtags?: string | null): string[] {
   if (!hashtags) return [];
   try {
     const parsed = JSON.parse(hashtags);
-    if (Array.isArray(parsed)) return parsed.map(String).slice(0, 15);
+    if (Array.isArray(parsed)) return parsed.map(String);
   } catch {
     /* ignore */
   }
