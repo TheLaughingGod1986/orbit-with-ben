@@ -234643,9 +234643,14 @@
           "at": "2026-11-12T13:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2683; starting step 1 (Shorts retention curves)"
+        },
+        {
+          "at": "2026-11-12T14:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Pulled 100-point YTA retention curves for 9/10 Shorts (ffYKoNVPoqg unsettled), 28d search terms, and SEA channel UCG9ShGbASoiwHwFcLcAh9EA uploads via yt-dlp"
         }
       ],
-      "remaining_action": "Pull Shorts retention curves from YouTube Analytics API and map drop seconds to cut metas",
+      "remaining_action": "Map Shorts retention curves to cut metas and summarize 28-day search terms and SEA uploads",
       "kind": "review",
       "plain": "Measuring where viewers leave our Orbit Shorts, what people search to find us, and what the reference channel SEA posted this month",
       "mini_only": true,
@@ -234659,12 +234664,19 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-12T13:59Z",
+        "at": "2026-11-12T14:04Z",
         "by": "gemini",
-        "note": "Claimed J2683; starting step 1 (Shorts retention curves)"
-      }
+        "note": "Pulled 100-point YTA retention curves for 9/10 Shorts (ffYKoNVPoqg unsettled), 28d search terms, and SEA channel UCG9ShG"
+      },
+      "taskKeys": [
+        "OWB:021",
+        "OWB:023",
+        "OWB:025",
+        "OWB:030",
+        "OWB:032"
+      ]
     },
     {
       "id": "J2684",
