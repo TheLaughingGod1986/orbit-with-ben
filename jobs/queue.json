@@ -235696,6 +235696,11 @@
           "at": "2026-11-12T13:17Z",
           "by": "codex",
           "what": "reopened: Elected Chief taking the requested final condition ruling; evidence reviewed and J2035 retained on hold with --recheck J2700. Claim this verification only."
+        },
+        {
+          "at": "2026-11-12T13:17Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: User explicitly assigned J2700 Chief review to elected codex; remove prior specialist-only routing for final disposition."
         }
       ],
       "remaining_action": "Chief (codex) to record --recheck J2700 wait on J2035 and close J2700",
@@ -235710,8 +235715,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
       ]
