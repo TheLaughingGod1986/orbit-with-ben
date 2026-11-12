@@ -220499,13 +220499,13 @@
       "stage": "",
       "after": "J2033",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-12T22:25Z",
-      "eta": "2026-11-13T00:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T13:26Z",
-      "result": "",
+      "result": "parked for Chief: History of Science PR #505 (branch gemini/J2503-email-scrub) synced with origin/main (74cc4027) via merge-main without force-push at exact head 27c2988a31aa4a9b4ac9316cc80a34fbe72f9b9d; scripts/email_ratchet.json lowered to the 15 actual held 008/009 paths (009/production-status.md removed after #543); 0 diff on 008/009/010/013 and protected runner tests, 0 STUDIO_FLOW lines, 0 non-ratchet email matches; 7/7 test_email_ratchet.py, 303/303 unit tests, and check_all.sh ALL CHECKS PASS. Submitted on HOS desk #180 for Chief merge review.",
       "history": [
         {
           "at": "2026-11-10T13:26Z",
@@ -220626,6 +220626,11 @@
           "at": "2026-11-12T22:29Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Synced HOS origin/main (74cc4027) into gemini/J2503-email-scrub at 27c2988a without force-push, lowered email_ratchet.json to 15 held 008/009 paths, verified 7/7 ratchet tests + 303/303 unit tests + check_all.sh ALL CHECKS PASS, pushed to PR #505, and posted on HOS desk #180"
+        },
+        {
+          "at": "2026-11-12T22:29Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: History of Science PR #505 (branch gemini/J2503-email-scrub) synced with origin/main (74cc4027) via merge-main without force-push at exact head 27c2988a31aa4a9b4ac9316cc80a34fbe72f9b9d; scripts/email_ratchet.json lowered to the 15 actual held 008/009 paths (009/production-status.md removed after #543); 0 diff on 008/009/010/013 and protected runner tests, 0 STUDIO_FLOW lines, 0 non-ratchet email matches; 7/7 test_email_ratchet.py, 303/303 unit tests, and check_all.sh ALL CHECKS PASS. Submitted on HOS desk #180 for Chief merge review."
         }
       ],
       "remaining_action": "Chief review and merge of History of Science PR #505 at exact head 27c2988a",
