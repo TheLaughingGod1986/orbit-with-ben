@@ -178441,9 +178441,14 @@
           "at": "2026-11-12T12:07Z",
           "by": "relay",
           "what": "condition verification queued: J2700"
+        },
+        {
+          "at": "2026-11-12T13:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T18:15:00Z"
         }
       ],
-      "remaining_action": "Obtain the gravity film’s own approved score via the queued music decision",
+      "remaining_action": "Finish the gravity film music through J2664 after J2666 checks the recorded staged-generation ruling; then verify score files and gates before assembly.",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178459,9 +178464,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid.",
-        "check_at": "2026-11-12T13:07:03+00:00",
-        "recheck_task": "J2700"
+        "condition": "J2700 Chief review: condition unmet. Mini 05_Music has only J2663_CHECKS.txt, SCORE_DECISION_J2663.md and SCORE_SCOPE_J2663.json; NAS 05_Music absent. J2664 must deliver own score, stems, provenance and passing music gates before assembly. Both diagram KEEP approvals retained. Follow-up J2666 must apply later Chief desk ruling 6813193837 (staged measured-meter preflight), which supersedes the earlier unresolved-tariff report; verify its live safeguards before releasing J2664. No credit or approval holds bypassed.",
+        "check_at": "2026-11-12T18:15:00Z",
+        "last_recheck": "J2700",
+        "checked_at": "2026-11-12T13:16:38+00:00",
+        "checked_by": "codex"
       }
     },
     {
