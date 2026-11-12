@@ -231818,19 +231818,24 @@
           "at": "2026-11-12T02:40Z",
           "by": "codex",
           "what": "step 2 of 3 done: J2478 remains held with recheck J2660 and original 04:00Z retry; no delivery or approval claimed"
+        },
+        {
+          "at": "2026-11-12T02:40Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Verified saved parent hold and linked recheck; J2658 still open without a verdict"
         }
       ],
-      "remaining_action": "Verify the recorded hold and close this condition check",
+      "remaining_action": "Condition check complete; Gemini ending review remains outstanding",
       "kind": "review",
       "recheck_of": "J2478",
       "due": "2026-11-12T02:03:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-12T02:40Z",
         "by": "codex",
-        "note": "J2478 remains held with recheck J2660 and original 04:00Z retry; no delivery or approval claimed"
+        "note": "Verified saved parent hold and linked recheck; J2658 still open without a verdict"
       },
       "taskKeys": [
         "OWB:013"
