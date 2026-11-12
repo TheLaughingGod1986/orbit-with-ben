@@ -232340,10 +232340,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T13:19Z",
+      "eta": "2026-11-12T15:19Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
       "result": "",
@@ -232377,13 +232377,26 @@
           "at": "2026-11-12T12:54Z",
           "by": "claude",
           "what": "reopened: Checked 12:53Z: hold date reached; fresh Claude session available but PR constraint on this branch; inputs verified; rerouted to Codex (see body)."
+        },
+        {
+          "at": "2026-11-12T13:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build picture plan v03 from PR 551's branch (cuts to word gaps, overlays capped at 8 s, WAV hash, callback 4.20 s, word onsets), open PR, park for Chief",
       "due": "2026-11-16T18:00:00Z",
       "for": "codex",
       "kind": "chart",
-      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word"
+      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T13:19Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2653",
