@@ -233640,9 +233640,14 @@
           "at": "2026-11-12T07:51Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Read J2529 & Chief rulings (6805739027, 6805898066, 6807600765, 6815870258, 6817606389); verified HOS013_PASS1 active (cap 6600, 1500 spent/posted, 5100 remaining, 51 rows in 11 batches starting P2:05_tortoise_overboard, 0 pending charges, 800 prior PR #549 unposted)"
+        },
+        {
+          "at": "2026-11-12T07:54Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Live Flow check on CDP :9222 clean (studio Ultra verified, balance 8940 -> 8940 delta 0, Veo 3.1 - Quality 8s 16:9 x1 = 100 credits); recorded fresh 8940 reading in ai_spend and captured canonical dry-run --floor 3000 JSON"
         }
       ],
-      "remaining_action": "Run fresh read-only Flow account/balance/price check on CDP :9222 and runner dry-run --floor 3000",
+      "remaining_action": "Commit preflight evidence in an isolated HOS PR, post desk report to Chief/Claude, and hand off J2675",
       "due": "2026-11-12T13:00:00Z",
       "for": "gemini",
       "kind": "review",
@@ -233650,11 +233655,11 @@
       "plain": "Check that the Darwin and Wallace pictures can safely continue after the repair",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-12T07:51Z",
+        "at": "2026-11-12T07:54Z",
         "by": "gemini",
-        "note": "Read J2529 & Chief rulings (6805739027, 6805898066, 6807600765, 6815870258, 6817606389); verified HOS013_PASS1 active (c"
+        "note": "Live Flow check on CDP :9222 clean (studio Ultra verified, balance 8940 -> 8940 delta 0, Veo 3.1 - Quality 8s 16:9 x1 = "
       },
       "taskKeys": [
         "HOS:013"
