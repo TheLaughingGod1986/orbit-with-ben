@@ -220591,9 +220591,14 @@
           "at": "2026-11-12T22:22Z",
           "by": "codex",
           "what": "reopened: J2727 acting-Chief ruling, 12 Nov 22:22Z: release the elapsed timing/production hold for completion work only. Independently read OWNER desk rulings 6790775957, 6792082611 and handoff 6836022095; J2033/J2241/J2270/J2572 are done and the 19:13Z window has passed. Gemini evidence is OWB PR867 at 25211db064: local sync trial on HOS main 74cc4027 passed 7 ratchet tests, 303 unit tests and check_all.sh. Live PR505 remains ab2287b8, so this is NOT merge approval. Next worker must sync current main into the existing branch without force-push (merge-main approved as equivalent integration), lower the ratchet to the actual held 008/009 paths, rerun check_all.sh/address/unit checks on the resulting tree, push, and submit the exact head to the elected HOS Chief. Keep 008/009/010/013 and protected tests unchanged against current main; no STUDIO_FLOW_ACCOUNT, machine settings or history rewrite. No external wait remains; J2503 stays unfinished until exact-head Chief merge review."
+        },
+        {
+          "at": "2026-11-12T22:22Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: J2727 released timing hold only; PR505 merge remains unapproved pending the actual pushed sync and fresh checks."
         }
       ],
-      "remaining_action": "Wait for the Flow window to close and J2270; then the rebased rework goes to Grok for the merge",
+      "remaining_action": "Sync the cleanup branch, rerun its checks and submit the pushed commit to the elected Chief for merge review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
@@ -220601,7 +220606,14 @@
         "HOS:006",
         "HOS:009"
       ],
-      "not_before": "2026-11-12T19:13Z"
+      "not_before": "2026-11-12T19:13Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T22:22Z",
+        "by": "codex",
+        "note": "J2727 released timing hold only; PR505 merge remains unapproved pending the actual pushed sync and fresh checks."
+      }
     },
     {
       "id": "J2504",
