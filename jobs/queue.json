@@ -231813,19 +231813,24 @@
           "at": "2026-11-12T02:39Z",
           "by": "codex",
           "what": "step 1 of 3 done: Approval history checked: v04 conditional KEEP requires J2658; review remains open with no result or committed review"
+        },
+        {
+          "at": "2026-11-12T02:40Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J2478 remains held with recheck J2660 and original 04:00Z retry; no delivery or approval claimed"
         }
       ],
-      "remaining_action": "Record the missing Gemini ending review on the original job",
+      "remaining_action": "Verify the recorded hold and close this condition check",
       "kind": "review",
       "recheck_of": "J2478",
       "due": "2026-11-12T02:03:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T02:39Z",
+        "at": "2026-11-12T02:40Z",
         "by": "codex",
-        "note": "Approval history checked: v04 conditional KEEP requires J2658; review remains open with no result or committed review"
+        "note": "J2478 remains held with recheck J2660 and original 04:00Z retry; no delivery or approval claimed"
       },
       "taskKeys": [
         "OWB:013"
