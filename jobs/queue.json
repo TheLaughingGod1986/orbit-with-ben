@@ -231638,13 +231638,13 @@
       "stage": "",
       "after": "J2634",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T06:04Z",
-      "eta": "2026-11-12T07:04Z",
+      "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-11T21:31Z",
-      "result": "",
+      "result": "Prerequisite not met: J2634 HOS PR #562 is OPEN and not on main. Job brief requires its merge before branching. Chief merge is required; no code changed and watcher not restarted.",
       "history": [
         {
           "at": "2026-11-11T21:31Z",
@@ -231660,6 +231660,11 @@
           "at": "2026-11-12T06:05Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checked prerequisite: J2634 is done but HOS PR #562 remains OPEN with no merge commit; brief forbids starting before merge."
+        },
+        {
+          "at": "2026-11-12T06:05Z",
+          "by": "codex",
+          "what": "blocked: Prerequisite not met: J2634 HOS PR #562 is OPEN and not on main. Job brief requires its merge before branching. Chief merge is required; no code changed and watcher not restarted."
         }
       ],
       "remaining_action": "Wait for the earlier desk protection change to merge, then update outcome statuses and test them",
@@ -231674,6 +231679,11 @@
         "at": "2026-11-12T06:05Z",
         "by": "codex",
         "note": "Checked prerequisite: J2634 is done but HOS PR #562 remains OPEN with no merge commit; brief forbids starting before mer"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Prerequisite not met: J2634 HOS PR #562 is OPEN and not on main. Job brief requires its merge before branching. Chief merge is required; no code changed and watcher not restarted.",
+        "check_at": "2026-11-12T12:05:45+00:00"
       }
     },
     {
