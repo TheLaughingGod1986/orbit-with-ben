@@ -232615,9 +232615,14 @@
           "at": "2026-11-12T05:03Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 complete: read J2438 REVIEW.md, INPUT_CONFLICT.md, FIRST30_PLAN.md, shot_list_v01.csv, and stt_raw/stt_timeline_offset_v01 word bounds for 0-75s"
+        },
+        {
+          "at": "2026-11-12T05:09Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 complete: verified R01-R08 raw/edited word bounds, sample indices, 30 fps frame math, and picture_qa asset reuse across all 74 rows"
         }
       ],
-      "remaining_action": "Audit locked v03 raw transcript, sample/frame math, harvest pool, and graphics_v03 assets for R01-R08",
+      "remaining_action": "Probe audio_input capability on spliced Pluto v03 opening WAV in scratch and verify splice/insertions by ear",
       "kind": "review",
       "plain": "Correct the Pluto opening plan so the edit follows the recorded words",
       "rerouted_from": {
@@ -232630,11 +232635,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-12T05:03Z",
+        "at": "2026-11-12T05:09Z",
         "by": "gemini",
-        "note": "Step 1 complete: read J2438 REVIEW.md, INPUT_CONFLICT.md, FIRST30_PLAN.md, shot_list_v01.csv, and stt_raw/stt_timeline_o"
+        "note": "Step 2 complete: verified R01-R08 raw/edited word bounds, sample indices, 30 fps frame math, and picture_qa asset reuse "
       },
       "taskKeys": [
         "OWB:034"
