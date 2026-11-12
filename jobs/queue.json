@@ -234208,13 +234208,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T10:52Z",
-      "eta": "2026-11-12T12:52Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T08:06Z",
-      "result": "",
+      "result": "Fixed active-reservation dry-run double count in HOS PR 566 (d408462d); 46 runner tests OK, check_all ALL CHECKS PASS. No generation, arming or ledger changes. CI/review pending; does not gate J2529.",
       "history": [
         {
           "at": "2026-11-12T08:06Z",
@@ -234240,6 +234240,11 @@
           "at": "2026-11-12T10:56Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 566 at d408462d: 46 runner tests OK; check_all.sh ALL CHECKS PASS; no generation or ledger changes"
+        },
+        {
+          "at": "2026-11-12T10:56Z",
+          "by": "codex",
+          "what": "done: Fixed active-reservation dry-run double count in HOS PR 566 (d408462d); 46 runner tests OK, check_all ALL CHECKS PASS. No generation, arming or ledger changes. CI/review pending; does not gate J2529."
         }
       ],
       "remaining_action": "Implementation and verification complete; HOS pull request 566 is ready for review",
@@ -234255,7 +234260,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/566"
     },
     {
       "id": "J2683",
