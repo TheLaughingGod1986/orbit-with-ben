@@ -193891,10 +193891,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T09:23Z",
-      "eta": "2026-11-12T11:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -194138,6 +194138,11 @@
           "at": "2026-11-12T09:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Rendered 33 caption layers (2738 frames) with original PTS and decoded alpha checks; 101-frame letter crossing preserves source background pixels. 42 tests and repository checks pass; no v04 master yet"
+        },
+        {
+          "at": "2026-11-12T09:34Z",
+          "by": "codex",
+          "what": "released: Checkpoint d241a93d pushed to HOS PR542: 33 transparent animated caption layers (2738 frames) and 101-frame letter crossing rendered; original PTS/alpha verified and background hashes match. 42 tests and check_all pass. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Remaining clean caption plate reconstruction, table/foil corrections, packet mux with original duration restoration and all final film gates exceed this run; no v04, approval, spend or publication. No process remains running."
         }
       ],
       "remaining_action": "Reconstruct clean Franklin caption plates, composite the rendered layers, then finish packet assembly and final film gates",
