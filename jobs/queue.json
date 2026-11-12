@@ -218820,13 +218820,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-12T03:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T04:00Z",
-      "result": "parked for Chief: review and merge orbit-with-ben PR #841 (minimatch override, audit 7 moderate to 0) and history-of-science PR #558 (next 16.4.6, audit 11 to 3 high, all checks pass on the Mini). HOS app is live on Vercel (auto-deploy off), so deploying needs a Chief OK. Prisma 6 to 7 not done: needs driver adapter, new generator and prisma.config.ts; queue as its own job",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T04:00Z",
@@ -218867,18 +218867,16 @@
           "at": "2026-11-12T06:44Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-12T13:56Z",
+          "by": "codex",
+          "what": "reopened: Existing Chief ruling 6813294950 recorded: both PRs already PASS and merged. Reopen only for administrative close-out; no production authorization. Follow-ups J2704 preview, J2705 React warnings, J2706 Prisma migration queued."
         }
       ],
       "remaining_action": "Chief to review and merge the two pull requests; the Prisma database library upgrade still needs its own job",
       "plain": "Finishes the library clean-up: the remaining known weaknesses need bigger upgrades that must be tested on the Mini.",
       "mini_only": true,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-12T03:12Z",
-        "by": "claudecode",
-        "note": "PRs open: orbit-with-ben #841 (audit 7 to 0) and history-of-science #558 (audit 11 to 3 high, all prisma); check_all.sh "
-      },
       "escalated_at": "2026-11-12T06:44Z"
     },
     {
