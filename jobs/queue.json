@@ -223765,10 +223765,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-12T01:58Z",
-      "eta": "2026-11-12T03:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
       "result": "",
@@ -223842,6 +223842,11 @@
           "at": "2026-11-12T02:21Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Detached final Voyager v02 render+gates in tmux J2550-s8-render (~/_desk/logs/J2550-s8-render.done) before 25m cap"
+        },
+        {
+          "at": "2026-11-12T02:21Z",
+          "by": "gemini",
+          "what": "released: Voyager v02 render+5-gates running detached in tmux session J2550-s8-render, log ~/_desk/logs/J2550-s8-render.log, done file ~/_desk/logs/J2550-s8-render.done; worktree /Volumes/MiniWork/scratch/J2550-wt, scratch /Volumes/MiniWork/scratch/J2550. Check .done on next run, arm card 1, then Muons and ISS."
         }
       ],
       "remaining_action": "Check J2550-s8-render.done for Voyager v02 5-gate PASS, inspect still sheet, copy to UAT/NAS and arm card 1, then Muons and ISS",
