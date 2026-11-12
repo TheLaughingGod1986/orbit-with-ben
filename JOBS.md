@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2665 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2666 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2664 |  |
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
-| J2668 | mini | open | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: correct opening plan against locked narration before J2438 | c75c73a417 |
+| J2668 | mini | claimed | gemini | 2026-11-12T06:33Z | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: correct opening plan against locked narration before J2438 | c75c73a417 |
 
 Recently finished:
 
