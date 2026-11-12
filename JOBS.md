@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2683 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
 | J2684 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0912 |  |
 | J2685 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J2686 | any | open | – | – | review · Verify condition for J2449 |  |
+| J2686 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | any | open | – | – | review · Verify condition for J2662 |  |
 
 Recently finished:
