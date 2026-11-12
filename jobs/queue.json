@@ -234268,10 +234268,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T13:49Z",
+      "eta": "2026-11-12T14:09Z",
       "created_by": "claude",
       "created_at": "2026-11-12T07:53Z",
       "result": "",
@@ -234280,11 +234280,24 @@
           "at": "2026-11-12T07:53Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T13:49Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Install pytest and run the two test sets",
       "kind": "assembly",
-      "plain": "Add a missing test tool on the Mac mini so two safety checks can run"
+      "plain": "Add a missing test tool on the Mac mini so two safety checks can run",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T13:49Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2679",

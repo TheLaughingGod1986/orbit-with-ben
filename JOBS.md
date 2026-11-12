@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2666 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2664 |  |
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2670 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
-| J2678 | mini | open | – | – | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
+| J2678 | mini | claimed | codex | 2026-11-12T14:09Z | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
 | J2683 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
