@@ -193856,9 +193856,14 @@
           "at": "2026-11-12T01:30Z",
           "by": "codex",
           "what": "step 1 of 3 done: First packet-splice candidate rejected: audio and copied video packets match, but 266 unchanged decoded frames differ. Testing distinct replacement SPS ID against the same full preservation verifier."
+        },
+        {
+          "at": "2026-11-12T01:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checkpoint 8e16b876 on HOS PR542: 19 tests OK and check_all PASS. Both salon splice experiments rejected on 266 unchanged decoded frames. Identity-remux control running in tmux J2242-remux-control; no v04 master."
         }
       ],
-      "remaining_action": "Checking a codec-state fix for the salon splice",
+      "remaining_action": "Check the detached remux control, then fix unchanged-frame preservation before completing the Franklin edit",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -193867,9 +193872,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T01:30Z",
+        "at": "2026-11-12T01:33Z",
         "by": "codex",
-        "note": "First packet-splice candidate rejected: audio and copied video packets match, but 266 unchanged decoded frames differ. T"
+        "note": "Checkpoint 8e16b876 on HOS PR542: 19 tests OK and check_all PASS. Both salon splice experiments rejected on 266 unchange"
       }
     },
     {
