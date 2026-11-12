@@ -224998,10 +224998,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T04:04Z",
-      "eta": "2026-11-12T06:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
       "result": "",
@@ -225080,6 +225080,11 @@
           "at": "2026-11-12T04:12Z",
           "by": "codex",
           "what": "step 1 of 4 done: Checkpoint PR HOS #560 at 8f74e02b; 4 files and 12 metadata records preserved on NAS. Wikimedia 429; 19 cues held. No rows or rough rendered; no media QA or stage approval."
+        },
+        {
+          "at": "2026-11-12T04:12Z",
+          "by": "codex",
+          "what": "released: Reviewable partial checkpoint 8f74e02b, HOS PR #560. NAS: film 011/07_Edit-Project/J2563_checkpoint_v01. Source/cue scripts and precise resume notes in PR; no detached render running. Four verified downloaded originals, 12 metadata records, 28 anchored candidates and 19 holds. Wikimedia HTTP 429: no further fetch this run; independent graphics/cue reconciliation can proceed. Remaining 26-row build and rough exceed this run; original J2563 remains unfinished. No spend, generation, stage PASS or UAT."
         }
       ],
       "remaining_action": "Finish free visuals, archive checks and overlay timing, then render the internal rough",
