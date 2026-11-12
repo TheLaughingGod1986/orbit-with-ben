@@ -236053,10 +236053,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-12T14:05Z",
+      "eta": "2026-11-12T15:35Z",
       "created_by": "refill",
       "created_at": "2026-11-12T13:52Z",
       "result": "",
@@ -236075,6 +236075,11 @@
           "at": "2026-11-12T14:01Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 0) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-12T14:05Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line",
