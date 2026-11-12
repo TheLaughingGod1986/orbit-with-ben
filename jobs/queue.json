@@ -234389,9 +234389,14 @@
           "at": "2026-11-12T10:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T10:42Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2685 condition verification for J2171 (HOS:009)"
         }
       ],
-      "remaining_action": "Verify readiness: Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
+      "remaining_action": "Inspect J2171 and prerequisite HOS:009 retake/review/assembly jobs (J2583, J2584, J2586, J2587, J2035)",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T09:21:42+00:00",
@@ -234408,11 +234413,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T10:41Z",
+        "at": "2026-11-12T10:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2685 condition verification for J2171 (HOS:009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2686",
