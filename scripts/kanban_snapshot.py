@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from board_site import site_url
 import os
 import re
 import sys
@@ -770,7 +771,7 @@ def uat_dir(label: str) -> Path:
 def uploads_path(slug: str) -> Path | None:
     return UPLOADS.get(slug) or channels.uploads_file(slug)
 PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
-WATCH_OK = ("https://studio-kanban.vercel.app/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
+WATCH_OK = (site_url() + "/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
 VIDEO_EXT = (".mp4", ".mov", ".m4v")
 
 
@@ -831,7 +832,7 @@ def newest_uat(ch: str, film: str) -> dict | None:
 # by the auto-upload below). Auto-upload runs only when the four R2 keys are set (r2_ready) and the file is at most
 # WATCH_AUTO_MAX bytes (bigger cuts need a phone proxy first, e.g. 720p
 # ~1.3 Mbit/s, uploaded with scripts/watch_upload.mjs and added to the register). Otherwise the Files link stays.
-SITE_URL = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE_URL = site_url()
 WATCH_REGISTER = ROOT / "05_Analytics" / "kanban" / "watch_uploads.json"
 WATCH_LOCAL_REGISTER = Path(os.environ.get("WATCH_LOCAL_REGISTER", str(Path.home() / ".config" / "studio-kanban" / "watch_uploads.json")))
 WATCH_AUTO_MAX = int(os.environ.get("WATCH_AUTO_MAX", str(120 * 1024 * 1024)))

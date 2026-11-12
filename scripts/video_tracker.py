@@ -20,6 +20,7 @@ uploads or jobs. Parents that already have uploaded/live Shorts do not get extra
 from __future__ import annotations
 
 import json
+from board_site import site_url
 import re
 import sys
 from datetime import datetime, timedelta, timezone
@@ -1659,7 +1660,7 @@ if __name__ == "__main__":
     checks = {}
     try:
         import urllib.request
-        with urllib.request.urlopen("https://studio-kanban.vercel.app/api/checks", timeout=15) as r:
+        with urllib.request.urlopen(site_url() + "/api/checks", timeout=15) as r:
             checks = json.loads(r.read().decode()).get("checks") or {}
     except Exception as e:
         print(f"checks not read: {e}", file=sys.stderr)

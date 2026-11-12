@@ -8,6 +8,7 @@ from __future__ import annotations
 import datetime as dt
 import sys
 import unittest
+from board_site import site_url
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -17,7 +18,7 @@ import jobs as J  # noqa: E402
 import video_tracker as vt  # noqa: E402
 
 NOW = dt.datetime(2026, 10, 25, 14, 30, tzinfo=dt.timezone.utc)
-URL = "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y"
+URL = site_url() + "/api/watch?v=x&e=1&s=y"
 
 
 def job(jid, status="open", **kw):
