@@ -237587,9 +237587,14 @@
           "at": "2026-11-12T19:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T19:22Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2721; starting condition verification for J2035 (HOS:009)"
         }
       ],
-      "remaining_action": "Verify readiness: Finish the gravity film music through J2664 after J2666 checks the recorded staged-generation ruling; then verify score files and gates before assembly.",
+      "remaining_action": "Inspect J2035, J2700, J2663, J2664, J2666 and live HOS 009 05_Music state",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-12T19:22:13+00:00",
@@ -237606,11 +237611,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T19:21Z",
+        "at": "2026-11-12T19:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2721; starting condition verification for J2035 (HOS:009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2722",
