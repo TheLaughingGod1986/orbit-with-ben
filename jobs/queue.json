@@ -1,5 +1,5 @@
 {
-  "next_id": 2675,
+  "next_id": 2676,
   "jobs": [
     {
       "id": "J0001",
@@ -233539,6 +233539,39 @@
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Checking the Andromeda title and thumbnail before testing them against the current version"
+    },
+    {
+      "id": "J2675",
+      "title": "HOS 013: Gemini preflight on merged runner before J2529 restart",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Carry out the no-spend handoff required by Grok desk ruling 6817606389 (PR 564 PASS and merged) and J2673. J2529 remains blocked at 3/14; do not generate, Create, arm submit, change receipts/KEEP, or spend credits in this job.\nPull canonical HOS main and verify merge e2b7f5fe610880041603aea577176f20e859609c is present. Run the 44 runner tests, confirm NAS accessibility and Explorer sha256 24659dc1d761e9371de9411ca8b56cd5ad3e2587674a8cbdf66a3b84e451476d. Read J2529 and its original approvals. Perform fresh read-only account/balance/price and dry-run checks with --floor 3000, existing HOS013_PASS1 reservation, no pending/unexplained charges, remaining 51 rows and 5100 credits within the original 6600 total. Verify next batch begins P2:05_tortoise_overboard and no existing runner is active. Preserve all stop rules. Do not create a second reservation or reinterpret any refusal; report it to Chief.\nRecord exact canonical main SHA and preflight evidence in an isolated PR/desk report. On clean preflight request elected Chief to record J2529 reopening under existing conditional approval; otherwise preserve its hold with the exact failure. Keep 3/14 until a real batch completes. Deadline 12 Nov 13:00 London; no new Create after 18:45. If the checkpoint is missed or preflight fails, no-go for this window: let unused credits lapse and leave remaining batches held for a fresh post-reset balance/reservation and Chief decision, with no automatic extension. Sheet/KEEP rulings remain separate under 6815870258.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6817606389",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T07:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:35Z",
+          "by": "codex",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Run fresh checks on the repaired runner without generating pictures",
+      "due": "2026-11-12T13:00:00Z",
+      "for": "gemini",
+      "kind": "review",
+      "model": "gemini-agy",
+      "plain": "Check that the Darwin and Wallace pictures can safely continue after the repair",
+      "mini_only": true
     }
   ],
   "focus": [
