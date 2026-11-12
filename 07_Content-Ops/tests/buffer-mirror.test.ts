@@ -365,3 +365,19 @@ describe("buffer mirror: worker guard", () => {
     expect(isBufferOnlyPlatform("youtube_shorts")).toBe(false);
   });
 });
+
+describe("missing hashtag regression (J2711)", () => {
+  it("refuses new posts when YouTube supplies no usable tags", () => {
+    for (const tags of [[], ["!!!", "123"]]) {
+      const plan = planBufferMirror({video: video({tags}), channelIds: CHANNELS, ledger: EMPTY, now: NOW, mediaUrl: MEDIA, parentLong: LONG_PUBLIC});
+      expect(plan.errors.join(" ")).toContain("No usable video tags");
+    }
+  });
+  it("ends each network caption with the required hashtag allowance", () => {
+    const tags = ["opportunity rover", "mars rover", "opportunity 14 years", "mars dust storm 2018", "could a robot survive on mars", "nasa mars"];
+    for (const [network, n] of [["instagram",5],["facebook",3],["threads",1],["tiktok",5]] as const) {
+      const text = buildText(video({tags}), network, "short");
+      expect(text.split("\n\n").at(-1)?.match(/#/g)).toHaveLength(n);
+    }
+  });
+});

@@ -6,6 +6,7 @@
  */
 import fs from "fs";
 import path from "path";
+import { parseTagsFile } from "@/lib/publishing/youtube-package";
 import { type ChannelIds } from "@/lib/publishing/buffer-mirror";
 import { createBufferApiClient } from "@/lib/publishing/buffer-api";
 import { checkChannelsFile, getProfile, ownedByOtherProfile, profileFiles, refuseChannel, type BufferProfile } from "@/lib/publishing/buffer-profile";
@@ -54,7 +55,16 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
   const r2Host = r2 ? createR2Host(r2) : null;
   return {
     youtubeToken: profile.id === "owb" ? getYouTubeAccessToken : () => getChannelAccessToken(profile.youtubeTokenEnv, profile.youtubeChannelId),
-    fetchVideos: fetchYouTubeVideos,
+    fetchVideos: async (token, ids) => {
+      const videos = await fetchYouTubeVideos(token, ids);
+      const registry = loadRegistry(files.uploads);
+      for (const [id, video] of videos) {
+        // Immediately after upload, the live read can be missing tags. Only use
+        // this video's registered package; never borrow its parent's metadata.
+        if (profile.id === "owb" && !video.tags.length) video.tags = registeredPackageTags(REPO_ROOT, registry.videos[id]?.packageDir);
+      }
+      return videos;
+    },
     listScheduled: (token, now) => scheduledWithRegistry(token, now, Object.keys(loadRegistry(files.uploads).videos)),
     listRecentlyPublic: (token, now) => listRecentlyPublic(token, now),
     client: key ? createBufferApiClient(key) : null,
@@ -79,4 +89,20 @@ export function createMirrorDeps(opts: { channelIds?: ChannelIds; ledgerFile?: s
         registryFile: files.uploads,
       }),
   };
+}
+
+/** Tags from the exact registered package, used only when the live record has none. */
+export function registeredPackageTags(root: string, packageDir: unknown): string[] {
+  if (typeof packageDir !== "string") return [];
+  const dir = path.resolve(root, packageDir);
+  if (!dir.startsWith(path.resolve(root) + path.sep)) return [];
+  const manifest = path.join(dir, "PACKAGE_MANIFEST.json");
+  if (!fs.existsSync(manifest)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(manifest, "utf8"));
+    if (Array.isArray(data.tags)) return data.tags.filter((t: unknown): t is string => typeof t === "string" && Boolean(t.trim()));
+    const tagsFile = typeof data.tagsFile === "string" ? path.resolve(dir, data.tagsFile) :
+      fs.existsSync(path.join(dir, "Tags")) ? fs.readdirSync(path.join(dir, "Tags")).filter(n => n.endsWith(".txt")).sort().map(n => path.join(dir, "Tags", n)).at(-1) : undefined;
+    return tagsFile && tagsFile.startsWith(dir + path.sep) && fs.existsSync(tagsFile) ? parseTagsFile(fs.readFileSync(tagsFile, "utf8")) : [];
+  } catch { return []; }
 }

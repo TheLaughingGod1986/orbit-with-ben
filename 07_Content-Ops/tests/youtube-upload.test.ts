@@ -59,7 +59,7 @@ describe("thumbnails.set retry", () => {
 describe("channel settings reach the upload request", () => {
   afterEach(() => vi.restoreAllMocks());
 
-  async function snippetFor(channel: { categoryId: string; defaultLanguage?: string }) {
+  async function snippetFor(channel: { categoryId: string; defaultLanguage?: string }, tags: string[] = []) {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), "yt-up-"));
     const video = path.join(dir, "v.mp4");
     fs.writeFileSync(video, "x");
@@ -73,7 +73,7 @@ describe("channel settings reach the upload request", () => {
     });
     const res = await uploadToYouTube(
       {
-        id: "x", platform: "youtube_shorts", title: "T", caption: "D", uploadStatus: "ready",
+        id: "x", platform: "youtube_shorts", title: "T", caption: "D", hashtags: JSON.stringify(tags), uploadStatus: "ready",
         privacyStatus: "private", madeForKids: false, mediaFilePath: video,
       },
       { accessToken: "tok", dryRun: false, channel },
@@ -81,6 +81,11 @@ describe("channel settings reach the upload request", () => {
     expect(res.success).toBe(true);
     return JSON.parse(bodies[0]).snippet;
   }
+
+  it("keeps every package tag instead of silently truncating at fifteen", async () => {
+    const tags = Array.from({length:20}, (_, i) => `science ${i}`);
+    expect((await snippetFor({categoryId:"28"}, tags)).tags).toEqual(tags);
+  });
 
   it("Orbit With Ben: Science & Technology, no language set", async () => {
     const snippet = await snippetFor({ categoryId: "28" });
