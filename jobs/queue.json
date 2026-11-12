@@ -231655,9 +231655,14 @@
           "at": "2026-11-12T06:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T06:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checked prerequisite: J2634 is done but HOS PR #562 remains OPEN with no merge commit; brief forbids starting before merge."
         }
       ],
-      "remaining_action": "After J2634 is on main, teach desk ack to close on ruling, pass and ruled.",
+      "remaining_action": "Wait for the earlier desk protection change to merge, then update outcome statuses and test them",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -231666,10 +231671,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T06:04Z",
+        "at": "2026-11-12T06:05Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Checked prerequisite: J2634 is done but HOS PR #562 remains OPEN with no merge commit; brief forbids starting before mer"
       }
     },
     {
