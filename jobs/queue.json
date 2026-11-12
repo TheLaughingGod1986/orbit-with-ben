@@ -237040,10 +237040,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T18:28Z",
+      "eta": "2026-11-12T18:48Z",
       "created_by": "claude",
       "created_at": "2026-11-12T16:54Z",
       "result": "",
@@ -237057,6 +237057,11 @@
           "at": "2026-11-12T16:59Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T18:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap the publish times of RT-ec4_GcOk and z5V6gIXXYs8 (status only), move their Buffer posts, read both back",
@@ -237072,7 +237077,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T18:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2716",

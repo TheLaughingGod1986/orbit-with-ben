@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 | J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
 | J2714 | mini | open | – | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
-| J2715 | mini | open | – | – | for gemini · listing · `gemini-argon` · OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC |  |
+| J2715 | mini | claimed | gemini | 2026-11-12T18:48Z | for gemini · listing · `gemini-argon` · OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC |  |
 | J2716 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
 | J2717 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0875 |  |
 | J2718 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0960 |  |
