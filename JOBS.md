@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2738 | any | blocked | macbook-2 | – | assembly · Fix split dry-run writes through destination symlinks before J2618 merge | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/868 |
 | J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
 | J2742 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2618 |  |
-| J2743 | mini | claimed | macbook-2 | 2026-11-13T01:47Z | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
+| J2743 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
 | J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 
 Recently finished:
