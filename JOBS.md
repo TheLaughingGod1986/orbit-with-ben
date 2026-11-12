@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2670 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
 | J2674 | mini | open (after J2657) | – | – | 019 thumbs · review · 019 Andromeda: verify package A and complete panel before J2449 two-arm test | J2657 |
-| J2675 | mini | open | – | – | 013 picture · for gemini · review · `gemini-agy` · HOS 013: Gemini preflight on merged runner before J2529 restart | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6817606389 |
+| J2675 | mini | claimed | gemini | 2026-11-12T09:47Z | 013 picture · for gemini · review · `gemini-agy` · HOS 013: Gemini preflight on merged runner before J2529 restart | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6817606389 |
 
 Recently finished:
 

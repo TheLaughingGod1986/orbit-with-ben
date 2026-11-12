@@ -233589,10 +233589,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T07:47Z",
+      "eta": "2026-11-12T09:47Z",
       "created_by": "codex",
       "created_at": "2026-11-12T07:35Z",
       "result": "",
@@ -233601,6 +233601,11 @@
           "at": "2026-11-12T07:35Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-12T07:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run fresh checks on the repaired runner without generating pictures",
@@ -233609,7 +233614,15 @@
       "kind": "review",
       "model": "gemini-agy",
       "plain": "Check that the Darwin and Wallace pictures can safely continue after the repair",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T07:47Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
