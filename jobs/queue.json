@@ -233115,10 +233115,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T07:19Z",
+      "eta": "2026-11-12T09:19Z",
       "created_by": "relay",
       "created_at": "2026-11-12T05:36Z",
       "result": "",
@@ -233172,6 +233172,11 @@
           "at": "2026-11-12T07:19Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief takes the completed worker verification for its required ruling and closure; parent remains blocked"
+        },
+        {
+          "at": "2026-11-12T07:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2529 --recheck J2669, close J2669, and queue Chief #180 rulings 6815648894 & 6815659132",
@@ -233190,7 +233195,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T07:19Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2670",
