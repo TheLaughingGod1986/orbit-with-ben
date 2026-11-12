@@ -234428,10 +234428,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T11:36Z",
+      "eta": "2026-11-12T13:36Z",
       "created_by": "relay",
       "created_at": "2026-11-12T08:21Z",
       "result": "parked for Chief: Verified J0912 waiting condition (commit 22ebcd0d11, jobs/reviews/J2684/REVIEW.md). Condition NOT yet satisfied — keep J0912 blocked: (1) J2339 remains open since 2026-11-10T17:02Z because required_capabilities in QUEUE.json includes moving_video_input while capability_probe.py gemini --record passes audio_input (0.89) and fails moving_video_input; (2) In this session we opened hos_008_short_A_v04.mp4 (sha256 76d801a34714ba90f286330dfab1c9e38b3025502340f20c8e414a8907a3192d, verified on Mini & NAS) via default_api:read_file across 00:00-00:22 (full audio stream + 23 1-Hz frames, as in J2508/J2510) and recorded a full timestamped KEEP recommendation (zero audio/text/continuity/loop defects; 5/5 gates PASS; v03 f88315e0 preserved); (3) Elected Chief Short PASS on HOS 008 Short A v04 is still pending, and J0912 assembly is already 4/4 complete so it must not be reopened for worker re-assembly. Because J0912 is held by cursor and gemini is a specialist worker, jobs.py requires the elected Chief (codex) to run: python3 scripts/jobs.py wait J0912 --agent codex --condition 'the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov; KEEP recommendation with 00:00-00:22 timestamps recorded in J2684) and the Chief'\\''s PASS on it' --check-at '2026-11-12T16:30:00Z' --type input --recheck J2684 --action 'Elected Chief resolves J2339 and decides Short PASS on HOS 008 Short A v04 (76d801a3)' --git && python3 scripts/jobs.py done J2684 --agent codex --result 'Verified J0912 condition (22ebcd0d11, jobs/reviews/J2684/REVIEW.md): J2339 open and Chief Short PASS still pending; recorded 00:00-00:22 watch-and-listen KEEP review and kept J0912 blocked' --git (or accept the J2339/J2684 KEEP review and grant Short PASS directly). £0.",
@@ -234480,6 +234480,11 @@
           "at": "2026-11-12T11:35Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief taking this exact completed verification for recording its ruling; specialist work unchanged"
+        },
+        {
+          "at": "2026-11-12T11:36Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief codex records wait --recheck J2684 on J0912 (or resolves J2339/J0912 Short PASS) and closes J2684",
