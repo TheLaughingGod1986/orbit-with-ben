@@ -232760,13 +232760,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T22:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -232897,6 +232897,11 @@
           "at": "2026-11-12T22:37Z",
           "by": "codex",
           "what": "blocked: Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker."
+        },
+        {
+          "at": "2026-11-12T22:42Z",
+          "by": "codex",
+          "what": "reopened: Verified now: OWB PR 871 MERGED as 13f73ae679; canonical checkout pulled and clip_check on unchanged v03c 106 rows prints PASS, zero errors, same Linnean warning. Resume existing 2/3 checkpoint for editorial sentence preference and three brief beats, source mapping, free renders, new rough and 390 px sheets. HOS PR 551 diagnostic/unmerged; film FIX. Review https://github.com/TheLaughingGod1986/orbit-with-ben/pull/871#issuecomment-6837944972"
         }
       ],
       "remaining_action": "Review the chapter timing-check fix, then finish the picture plan and new rough",
@@ -232904,21 +232909,9 @@
       "for": "codex",
       "kind": "chart",
       "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-12T22:36Z",
-        "by": "codex",
-        "note": "Separate OWB PR 871 (231a20e7fd), six regression tests PASS; unchanged v03c CSV clears false errors under proposed check"
-      },
       "taskKeys": [
         "HOS:013"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker.",
-        "check_at": "2026-11-13T04:37:20+00:00"
-      }
+      ]
     },
     {
       "id": "J2653",
