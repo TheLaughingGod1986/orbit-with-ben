@@ -1,5 +1,5 @@
 {
-  "next_id": 2711,
+  "next_id": 2712,
   "jobs": [
     {
       "id": "J0001",
@@ -236584,6 +236584,37 @@
         "by": "gemini",
         "note": "Claimed J2710; recorded session capabilities; starting 5-step plan for OWB 064 and 065 topic/facts evidence repair"
       }
+    },
+    {
+      "id": "J2711",
+      "title": "Buffer: the Mars wind Short went to Facebook with no hashtags; find why and fix it for the posts to come",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Queued 12 Nov 15:20Z from Ben's question in chat. He sent a screenshot of the Facebook post for the Mars wind Short (`uhZSRcvngvE`, live Thu 12 Nov 11:30 London) and asked whether we need hashtags to get views.\n\n**What is wrong.** The playbook (section 12, \"Social: Buffer mirrors YouTube\") says every post ends with the video's tags as hashtags: 5 on Instagram, 3 on Facebook, 1 on Threads. The Facebook post has none. Its text ends at \"Full film: https://youtu.be/Js6EQJ8qDi8\".\n\n**What is known.**\n- The Short's package has six tags: `02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/11_Upload-Package/PACKAGE_MANIFEST.json`.\n- The mirror builds the hashtags from the live YouTube record's tags: `07_Content-Ops/src/lib/publishing/buffer-mirror.ts`, `hashtags(video.tags, ...)`.\n- This video is a replacement upload from 10 Nov (J2519). So the likely cause is that the live video carries no tags. That is not checked.\n\n**Do.**\n1. Read the live record of `uhZSRcvngvE`. Does it carry the package's tags?\n2. If it does not: set the package's six tags on the video. Then check every scheduled and recently live Short and long on both channels the same way, list the ones whose live tags differ from their package, and fix those too. A replacement upload that drops its tags is a fault in the upload step: find it and fix it with a test.\n3. If the live record does carry them: find why the mirror dropped the hashtag line, and fix that with a test.\n4. Read the Instagram and Threads posts for the same Short and say whether they have their hashtags.\n5. Do not edit, delete or repost the posts that are already published. Fix it for the posts still to come.\n\n**One more thing to report, not to change.** The Facebook post puts a YouTube link in its text, because Buffer's free plan has no first comment. It is widely reported that Facebook shows posts with outside links to fewer people. We have not measured that on this page. Say in the report what the last ten Facebook posts reached, split by long (link to itself) and Short (link to its long), so the Chief can decide whether a small test without the link is worth running.\n\nPull request for any code change; the Chief merges. £0. No paid plan, no spend.\n",
+      "ref": "",
+      "film": "025",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T15:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T15:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Read the live video's tags; fix the tags or the mirror; check the other scheduled videos; report Facebook reach",
+      "due": "2026-11-13T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Find out why the Mars rover Short went to Facebook without hashtags, and fix it for the next posts"
     }
   ],
   "focus": [
