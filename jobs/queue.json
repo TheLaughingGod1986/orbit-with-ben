@@ -220596,6 +220596,11 @@
           "at": "2026-11-12T22:22Z",
           "by": "codex",
           "what": "step 0 of 3 done: J2727 released timing hold only; PR505 merge remains unapproved pending the actual pushed sync and fresh checks."
+        },
+        {
+          "at": "2026-11-12T22:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T00:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Sync the cleanup branch, rerun its checks and submit the pushed commit to the elected Chief for merge review",
@@ -220613,7 +220618,16 @@
         "at": "2026-11-12T22:22Z",
         "by": "codex",
         "note": "J2727 released timing hold only; PR505 merge remains unapproved pending the actual pushed sync and fresh checks."
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2504",
