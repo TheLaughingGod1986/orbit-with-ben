@@ -192113,6 +192113,11 @@
           "at": "2026-11-12T03:03Z",
           "by": "relay",
           "what": "condition verification queued: J2665"
+        },
+        {
+          "at": "2026-11-12T06:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Chief to resolve voice pace and wording checks before assembly",
@@ -192130,7 +192135,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-12T04:03:56+00:00",
         "recheck_task": "J2665"
-      }
+      },
+      "escalated_at": "2026-11-12T06:44Z"
     },
     {
       "id": "J2221",
@@ -193011,6 +193017,11 @@
           "at": "2026-11-12T03:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Listened directly to corrected Vaccine eradication VO (388ae394 / 19ee3ced) and raw Part05 (18b72532): both flags are real defects — 0:00-0:03 genuinely speaks 'A disease that have killed...' (42.16s in raw Part05, not 'had killed') and 0:06-0:09 trims 'humans.' early at 49.10s with zero pause into 'human— Health workers'. Variolation v01 (cdf6e027) and Harvey s07_v02 (51a4b10d, no extra 'it circulates') & s06_v02 (8ac9a291) speech/music pace PASS by ear. 18 Nov-6 Dec slots: Wed 18 Nov (ChbsigHD5_o) & Sat 21 Nov (Bks_JLId1ew) filled; 10 of 11 Sat/Fri/Sun/Tue pattern slots still empty (Fri 20, Sun 22, Tue 24, Fri 27, Sat 28, Sun 29 Nov; Tue 1, Fri 4, Sat 5, Sun 6 Dec). Evidence: HOS PR #559 (cc9c5bef), desk #6813817189. Chief to choose Option A (£0 Part05 61w re-selection) or Option B (1-sentence pickup) + confirm Variolation opening."
+        },
+        {
+          "at": "2026-11-12T06:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief to rule on HOS PR #559 / desk #6813817189: choose £0 Part 05 re-selection or 1-sentence VO pickup for Vaccine Eradication, confirm Variolation opening and Nov slots",
@@ -193032,7 +193043,8 @@
         "audio_input"
       ],
       "plain": "Make the History of Science Shorts for late November from the finished Harvey, Willow and Vaccine films",
-      "for": "gemini"
+      "for": "gemini",
+      "escalated_at": "2026-11-12T06:44Z"
     },
     {
       "id": "J2231",
@@ -218653,6 +218665,11 @@
           "at": "2026-11-12T03:12Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: review and merge orbit-with-ben PR #841 (minimatch override, audit 7 moderate to 0) and history-of-science PR #558 (next 16.4.6, audit 11 to 3 high, all checks pass on the Mini). HOS app is live on Vercel (auto-deploy off), so deploying needs a Chief OK. Prisma 6 to 7 not done: needs driver adapter, new generator and prisma.config.ts; queue as its own job"
+        },
+        {
+          "at": "2026-11-12T06:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Chief to review and merge the two pull requests; the Prisma database library upgrade still needs its own job",
@@ -218664,7 +218681,8 @@
         "at": "2026-11-12T03:12Z",
         "by": "claudecode",
         "note": "PRs open: orbit-with-ben #841 (audit 7 to 0) and history-of-science #558 (audit 11 to 3 high, all prisma); check_all.sh "
-      }
+      },
+      "escalated_at": "2026-11-12T06:44Z"
     },
     {
       "id": "J2484",
@@ -232677,6 +232695,11 @@
           "at": "2026-11-12T03:07Z",
           "by": "relay",
           "what": "condition verification queued: J2666"
+        },
+        {
+          "at": "2026-11-12T06:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Chief to resolve account-specific duration billing and pending charges before score generation",
@@ -232698,7 +232721,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-12T04:07:10+00:00",
         "recheck_task": "J2666"
-      }
+      },
+      "escalated_at": "2026-11-12T06:44Z"
     },
     {
       "id": "J2665",
@@ -232885,6 +232909,11 @@
           "at": "2026-11-12T04:26Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2658 remains open/unclaimed because J2658 requires moving_video_input (not granted by capability_probe.py; read_file on video/mp4 fails in agy). In J2667, gemini directly listened via read_file (audio/wav) to the v04 ending mix (14.00-18.37s) and isolated VO stem (14.00-16.81s), inspected the 15.0-18.0s rendered frames and waveform (image/png), verified all 35 NAS SHA-256 hashes and 6 automated gates (0 failures; 'sunset' ends cleanly on natural /t/ release with 0 'as' bleed and 0 click; final caption 'LOOK EAST AT SUNSET.'), and committed jobs/reviews/J2667/REVIEW.md (98d37b23f4). jobs.py wait/reopen on J2478 is restricted to the holder/elected Chief (codex): Chief can either (A) accept J2667/REVIEW.md (98d37b23f4) as satisfying the v04 ending check, close J2658/J2667, reopen J2478, copy v04 + cover to OWB UAT/WATCH_FULL and call jobs.py awaits J2478, or (B) drop moving_video_input from J2658.required_capabilities and run jobs.py wait J2478 --recheck J2667."
+        },
+        {
+          "at": "2026-11-12T06:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (codex) to accept J2667 audio review (98d37b23f4) and reopen J2478, or update J2478 hold / J2658 capabilities",
@@ -232910,7 +232939,8 @@
       },
       "taskKeys": [
         "OWB:013"
-      ]
+      ],
+      "escalated_at": "2026-11-12T06:44Z"
     },
     {
       "id": "J2668",
