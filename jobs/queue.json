@@ -236853,21 +236853,28 @@
           "at": "2026-11-12T18:57Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-12T19:01Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Audited 117 distinct Orbit and 42 HOS public/scheduled videos; one Orbit video has no tags. Mars wind has tags live but all three sent posts lack hashtags."
         }
       ],
-      "remaining_action": "Checking live video tags on both channels and tracing missing social hashtags",
+      "remaining_action": "Repairing missing tags and preventing hashtag-free Buffer posts",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Find out why our social posts have no hashtags, and fix it for the next posts",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-12T18:57Z",
-        "by": "codex"
+        "at": "2026-11-12T19:01Z",
+        "by": "codex",
+        "note": "Audited 117 distinct Orbit and 42 HOS public/scheduled videos; one Orbit video has no tags. Mars wind has tags live but "
       },
       "taskKeys": [
-        "OWB:025"
+        "OWB:025",
+        "OWB:026"
       ]
     },
     {
