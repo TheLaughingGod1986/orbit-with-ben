@@ -233264,18 +233264,23 @@
           "at": "2026-11-12T07:09Z",
           "by": "codex",
           "what": "step 0 of 3 done: HOS 34 videos collected; Orbit collection underway. Read-only requests; retention percentages read directly and millisecond durations converted."
+        },
+        {
+          "at": "2026-11-12T07:10Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Collected 99 Orbit videos and 34 HOS videos without request errors. Checking one absent percentage-viewed field before rebuilding."
         }
       ],
-      "remaining_action": "Finish reading lifetime Studio figures for both channels",
+      "remaining_action": "Validate metrics and rebuild both channel reports",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T07:09Z",
+        "at": "2026-11-12T07:10Z",
         "by": "codex",
-        "note": "HOS 34 videos collected; Orbit collection underway. Read-only requests; retention percentages read directly and millisec"
+        "note": "Collected 99 Orbit videos and 34 HOS videos without request errors. Checking one absent percentage-viewed field before r"
       },
       "taskKeys": [
         "OWB:025",
