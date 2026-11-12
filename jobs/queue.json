@@ -236276,13 +236276,13 @@
       "stage": "",
       "after": "J2483",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T14:32Z",
-      "eta": "2026-11-12T16:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T13:56Z",
-      "result": "",
+      "result": "Completed separate HOS Prisma 7.10.1 upgrade PR570 (head 725ca25c); 203 tests, full build on guarded disposable PostgreSQL, check_all and core check pass. Audit: 3 high to 0. No deployment or live database migration. PR review/CI precedes any later release decision.",
       "history": [
         {
           "at": "2026-11-12T13:56Z",
@@ -236313,6 +236313,11 @@
           "at": "2026-11-12T14:39Z",
           "by": "codex",
           "what": "step 3 of 3 done: HOS PR570 opened; 203 tests and full disposable-DB build pass; audit 3 high to 0. CI core ignore-file issue corrected, core OK (56 shared files). No deployment."
+        },
+        {
+          "at": "2026-11-12T14:39Z",
+          "by": "codex",
+          "what": "done: Completed separate HOS Prisma 7.10.1 upgrade PR570 (head 725ca25c); 203 tests, full build on guarded disposable PostgreSQL, check_all and core check pass. Audit: 3 high to 0. No deployment or live database migration. PR review/CI precedes any later release decision."
         }
       ],
       "remaining_action": "Review the separate Prisma upgrade pull request before any release",
@@ -236325,7 +236330,8 @@
         "at": "2026-11-12T14:39Z",
         "by": "codex",
         "note": "HOS PR570 opened; 203 tests and full disposable-DB build pass; audit 3 high to 0. CI core ignore-file issue corrected, c"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/570"
     },
     {
       "id": "J2707",
