@@ -1,5 +1,5 @@
 {
-  "next_id": 2664,
+  "next_id": 2665,
   "jobs": [
     {
       "id": "J0001",
@@ -232052,6 +232052,36 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2664",
+      "title": "HOS 009: produce own wonder and teach score within Chief cap",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Produce HOS 009 original score under 05_Music/SCORE_SCOPE_J2663.json and SCORE_DECISION_J2663.md (J2663 Chief scope). Read the merged HOS decision first; do not start on an unmerged scope. Mini only, existing 04_Audio/tools/generate_music_bed.py music_v2 through el_client/el_guard. Exactly one 180-second wonder cue and one 360-second teach cue, one take each, maximum two POST attempts, 540 generated seconds, aggregate <=30000 subscription credits AND live remaining less pending, £0 cash. No retries, purchase, overage, borrowed bed or new service. Verify live duration-based music price, pending charge and overage-off evidence under recorder lock BEFORE POST: current guard counts prompt characters and is insufficient for music-duration billing. Unknown cost means no POST; report specific blocker to elected Chief, do not request money. Use the two prompts and timing plan; 3-second equal-power crossfade 175.28-178.28 centered on cannon card176.78. Cover actual final master runtime, baseline518.40 including cards; no loops/silence or narration change. Deliver versioned raw cues, joined WAV and per-part stems in film working NAS05_Music; generator and joined plans with Pace/NOT, request/song ids, hashes, source windows, balance deltas and provenance, no secrets/media in git. Run music_gate with complete earlier HOS/OWB local, NAS/archive and UAT bed comparisons; inaccessible comparisons unresolved. Queue demonstrated audio_input reviewer immediately for full bed, transition and narration mix; a gate metric is not ear review. Chief accepts after capable review; only then verify files/provenance/gates and reopen J2035 using its existing music hold. Preserve separate stems for assembly bed-parity/SFX-level gates. If long-running detach and release with log/done paths. No YouTube, Buffer, locked VO or picture changes. Report on HOS desk. Production executor: Mini audio worker through assembly chain (Cursor then Codex then Gemini), no direct generation in J2663 itself.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/557",
+      "film": "009",
+      "stage": "edit",
+      "after": "J2663",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T02:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T02:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Generate and join the two approved music cues, then arrange a listening review",
+      "kind": "assembly",
+      "plain": "Creating original music for the Moon and gravity film",
+      "mini_only": true
     }
   ],
   "focus": [
