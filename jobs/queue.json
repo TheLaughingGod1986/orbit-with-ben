@@ -1,5 +1,5 @@
 {
-  "next_id": 2692,
+  "next_id": 2693,
   "jobs": [
     {
       "id": "J0001",
@@ -234347,7 +234347,7 @@
       "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657** (Ben, 14 Oct 2026: other models critique titles, thumbnails and packaging before the Chief passes them).\n\nYou are one of three independent critics. Don't read the other critics' files in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/`.\n\nLook at:\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/thumb_packaging_v01_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_two_arm_comparison_168x94.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/META.json`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/GATE.txt`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/01_Script/andromeda_collision_script_master_v03.md`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/11_Upload-Package/description.txt`\n- `05_Analytics/owb/REPACKAGE_2026-11.md`\n- `jobs/reviews/J2674/REVIEW.md`\n\nScore each 1–10 and give **one concrete rewrite** for anything under 8:\n1. **Title:** curiosity gap, clarity, would someone type it (search), under about 60 characters, no clickbait we can't pay off.\n2. **Thumbnail at phone size** (look at it at 168×94): one subject, a clear emotion or danger, 2–3 words at most, strong contrast,\n   readable, and nothing important under the bottom-right duration badge.\n3. **Title + thumbnail together:** do they add to each other, or repeat the same words?\n4. **First 30 seconds / Short hook** (when a script or cut is given): does it answer or sharpen the promise at once?\n5. **Description first line and chapters:** do they work for search without spoiling the payoff?\nThen: **\"Which would you click, and why?\"** (one line) and **\"The single change that would most raise CTR.\"**\nBe blunt and specific; no praise padding. Don't change any files except your own critique.\n\nWrite your critique to `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/codex.md` (start it with the date and your name), commit only that file to main from a clean worktree, and mark this job done with your one-line 'single change'. No spend, no YouTube changes.",
-      "ref": "",
+      "ref": "J2674",
       "film": "",
       "stage": "",
       "after": "",
@@ -234368,7 +234368,11 @@
       ],
       "remaining_action": "Packaging panel (codex): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) ",
       "for": "codex",
-      "kind": "review"
+      "kind": "review",
+      "due": "2026-11-14T18:00:00Z",
+      "taskKeys": [
+        "OWB:019"
+      ]
     },
     {
       "id": "J2689",
@@ -234376,28 +234380,38 @@
       "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657** (Ben, 14 Oct 2026: other models critique titles, thumbnails and packaging before the Chief passes them).\n\nYou are one of three independent critics. Don't read the other critics' files in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/`.\n\nLook at:\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/thumb_packaging_v01_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_two_arm_comparison_168x94.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/META.json`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/GATE.txt`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/01_Script/andromeda_collision_script_master_v03.md`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/11_Upload-Package/description.txt`\n- `05_Analytics/owb/REPACKAGE_2026-11.md`\n- `jobs/reviews/J2674/REVIEW.md`\n\nScore each 1–10 and give **one concrete rewrite** for anything under 8:\n1. **Title:** curiosity gap, clarity, would someone type it (search), under about 60 characters, no clickbait we can't pay off.\n2. **Thumbnail at phone size** (look at it at 168×94): one subject, a clear emotion or danger, 2–3 words at most, strong contrast,\n   readable, and nothing important under the bottom-right duration badge.\n3. **Title + thumbnail together:** do they add to each other, or repeat the same words?\n4. **First 30 seconds / Short hook** (when a script or cut is given): does it answer or sharpen the promise at once?\n5. **Description first line and chapters:** do they work for search without spoiling the payoff?\nThen: **\"Which would you click, and why?\"** (one line) and **\"The single change that would most raise CTR.\"**\nBe blunt and specific; no praise padding. Don't change any files except your own critique.\n\nWrite your critique to `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/gemini.md` (start it with the date and your name), commit only that file to main from a clean worktree, and mark this job done with your one-line 'single change'. No spend, no YouTube changes.",
-      "ref": "",
+      "ref": "J2674",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-12T09:04Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-12T09:02Z",
-      "result": "",
+      "result": "Committed 05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/gemini.md (bb596308a6): Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0...) scores 9/10 vs Arm 1 baseline 7/10; single change to raise CTR: arm two-arm Test & Compare on ojk-dfOpAmw with canonical Mini Package A dbd52af0... as Slot 2 against current baseline Slot 1.",
       "history": [
         {
           "at": "2026-11-12T09:02Z",
           "by": "gemini",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-12T09:04Z",
+          "by": "gemini",
+          "what": "done: Committed 05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/gemini.md (bb596308a6): Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0...) scores 9/10 vs Arm 1 baseline 7/10; single change to raise CTR: arm two-arm Test & Compare on ojk-dfOpAmw with canonical Mini Package A dbd52af0... as Slot 2 against current baseline Slot 1."
         }
       ],
       "remaining_action": "Packaging panel (gemini): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980)",
       "for": "gemini",
-      "kind": "review"
+      "kind": "review",
+      "due": "2026-11-14T18:00:00Z",
+      "taskKeys": [
+        "OWB:019"
+      ],
+      "done_ref": "bb596308a6"
     },
     {
       "id": "J2690",
@@ -234405,7 +234419,7 @@
       "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657** (Ben, 14 Oct 2026: other models critique titles, thumbnails and packaging before the Chief passes them).\n\nYou are one of three independent critics. Don't read the other critics' files in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/`.\n\nLook at:\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/thumb_packaging_v01_ojk-dfOpAmw.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_two_arm_comparison_168x94.jpg`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/META.json`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/GATE.txt`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/01_Script/andromeda_collision_script_master_v03.md`\n- `02_Video-Projects/019_Andromeda-Milky-Way-Collision/11_Upload-Package/description.txt`\n- `05_Analytics/owb/REPACKAGE_2026-11.md`\n- `jobs/reviews/J2674/REVIEW.md`\n\nScore each 1–10 and give **one concrete rewrite** for anything under 8:\n1. **Title:** curiosity gap, clarity, would someone type it (search), under about 60 characters, no clickbait we can't pay off.\n2. **Thumbnail at phone size** (look at it at 168×94): one subject, a clear emotion or danger, 2–3 words at most, strong contrast,\n   readable, and nothing important under the bottom-right duration badge.\n3. **Title + thumbnail together:** do they add to each other, or repeat the same words?\n4. **First 30 seconds / Short hook** (when a script or cut is given): does it answer or sharpen the promise at once?\n5. **Description first line and chapters:** do they work for search without spoiling the payoff?\nThen: **\"Which would you click, and why?\"** (one line) and **\"The single change that would most raise CTR.\"**\nBe blunt and specific; no praise padding. Don't change any files except your own critique.\n\nWrite your critique to `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/cursor.md` (start it with the date and your name), commit only that file to main from a clean worktree, and mark this job done with your one-line 'single change'. No spend, no YouTube changes.",
-      "ref": "",
+      "ref": "J2674",
       "film": "",
       "stage": "",
       "after": "",
@@ -234426,15 +234440,19 @@
       ],
       "remaining_action": "Packaging panel (cursor): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980)",
       "for": "cursor",
-      "kind": "review"
+      "kind": "review",
+      "due": "2026-11-14T18:00:00Z",
+      "taskKeys": [
+        "OWB:019"
+      ]
     },
     {
       "id": "J2691",
       "title": "Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657",
       "needs": "cloud",
       "repo": "owb",
-      "body": "**Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657.** Read the three critiques in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
-      "ref": "",
+      "body": "**Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657.** Read the three critiques in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nIMPORTANT (J2674): Verify both `codex.md` (J2688) and `cursor.md` (J2690) exist alongside `gemini.md` (J2689, commit bb596308a6) in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/` before writing `DECISION.md` (if J2688 is still open and < 24 h old, set `after` to `J2688` and release). Scope is strictly J2657 two-arm test on `ojk-dfOpAmw` (Slot 1 current baseline `250c9980...` vs Slot 2 canonical Mini Package A `dbd52af0...`; Package B and description edits excluded).",
+      "ref": "J2674",
       "film": "",
       "stage": "",
       "after": "J2690",
@@ -234454,7 +234472,43 @@
         }
       ],
       "remaining_action": "Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980)",
-      "kind": "review"
+      "kind": "review",
+      "due": "2026-11-14T18:00:00Z",
+      "taskKeys": [
+        "OWB:019"
+      ]
+    },
+    {
+      "id": "J2692",
+      "title": "019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2674 review handoff (ref J2657, J2447, J2448, J2449): exact-file Chief ruling for OWB:019 Andromeda (`ojk-dfOpAmw`) two-arm repackage test.\n\n1. Read `jobs/reviews/J2674/REVIEW.md`, `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/META.json`, and the packaging panel critiques + `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/DECISION.md` (J2688 codex, J2689 gemini, J2690 cursor, J2691 decision).\n2. Inspect the exact files on the Mini in `/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/` (mirrored in `08_Thumbnail/repackage_2026-11/` and `/Users/benjaminoats/_desk/jobs/J2448/out/`):\n   - Slot 1 (unchanged current baseline): `What Happens During the Milky Way Andromeda Collision?` (54 chars) + `thumb_packaging_v01_ojk-dfOpAmw.jpg` (`THIS IS *ANDROMEDA*`, `sha256=250c9980986f2b5e3faca5399e7a8ce19e6711ca5de7d6f05bf78140b2bb2515`)\n   - Slot 2 (canonical Mini J2448 Package A): `Andromeda Is Already Coming (And Almost No Stars Will Collide)` (62 chars) + `019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg` (`*NO* CRASH`, `sha256=dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7`, Hubble PHAT `heic1502a`, 1280x720, 1.15 MB, sat 128.0, nb 3%)\n   - Two-arm 168x94 comparison sheet: `019_two_arm_comparison_168x94.jpg` (`sha256=a53d418e47e3a94d1b55e721805bd26ced3231a702e05e547f0fd6508bece883`)\n   - Superseded MacBook fallback `ad9f3eb4ae847c9ee8f4d76b312d94f17afc2d46f17469f9f71b3efb09a0c59e` is excluded.\n3. Merge verified open PR `#836` (`codex/J2449-tests` @ `6967deb9f31d26e6c24acbf672d75ac0ebab63f9`), which records `T017` (`ojk-dfOpAmw`, finished 11 Nov 22:32 draw) and `T003`/`T030` (`-jmMROGoZCM`) in `05_Analytics/tests/THUMB_LEDGER.json` and `05_Analytics/tests/J2449/{EVIDENCE.json,REPORT.md}` with verified screenshots in `/Users/benjaminoats/_desk/jobs/J2449/`.\n4. Recheck `chief_relay.py status` immediately before making the protected Chief call. Record the Chief ruling on `019` `thumbs` (`status.json`), and only after PASS reopen `J2449` narrowed strictly to the two-arm `ojk-dfOpAmw` test (Package B excluded, no description edit, fresh Studio read required at execution, never replace a running or newly set test, do not touch `002 Black Hole` `T002` or `020 Jupiter` `T030`).",
+      "ref": "J2674",
+      "film": "019",
+      "stage": "thumbs",
+      "after": "J2691",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-12T09:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T09:04Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief reviews J2688-J2691 panel DECISION.md and J2674 REVIEW.md, merges PR #836, rules on 019 thumbs, and reopens J2449 for two-arm test",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "chief",
+      "taskKeys": [
+        "OWB:019"
+      ]
     }
   ],
   "focus": [
