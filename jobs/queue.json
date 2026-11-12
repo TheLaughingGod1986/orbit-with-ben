@@ -234300,17 +234300,22 @@
           "at": "2026-11-12T13:51Z",
           "by": "codex",
           "what": "step 2 of 3 done: Installed pytest 9.2.0 in Python 3.14 user site; python3 -m pytest works without changing PATH"
+        },
+        {
+          "at": "2026-11-12T13:51Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PASS: python3 -m pytest -q scripts/test_email_ratchet.py scripts/test_no_private_network.py; 13 passed in 3.86s"
         }
       ],
-      "remaining_action": "Running the email and private-network tests and recording results",
+      "remaining_action": "Recording the completed pytest installation and passing security tests",
       "kind": "assembly",
       "plain": "Add a missing test tool on the Mac mini so two safety checks can run",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-12T13:51Z",
         "by": "codex",
-        "note": "Installed pytest 9.2.0 in Python 3.14 user site; python3 -m pytest works without changing PATH"
+        "note": "PASS: python3 -m pytest -q scripts/test_email_ratchet.py scripts/test_no_private_network.py; 13 passed in 3.86s"
       }
     },
     {
