@@ -238958,13 +238958,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-12T21:45Z",
-      "eta": "2026-11-12T23:45Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T21:43Z",
-      "result": "",
+      "result": "parked for Chief: PR 869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 fixes destination symlink writes on top of PR 868. scripts tests 1291 OK (skipped 12), tools 95 OK, audio 21 OK (skipped 1), sync_rules rules OK, core_sync core OK (56 shared files), studio status OK. J2618 stays held for review, merge, one Mini relay cycle, and a board publish. Not merged.",
       "history": [
         {
           "at": "2026-11-12T21:43Z",
@@ -238995,6 +238995,11 @@
           "at": "2026-11-12T21:57Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-12T21:57Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: PR 869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 fixes destination symlink writes on top of PR 868. scripts tests 1291 OK (skipped 12), tools 95 OK, audio 21 OK (skipped 1), sync_rules rules OK, core_sync core OK (56 shared files), studio status OK. J2618 stays held for review, merge, one Mini relay cycle, and a board publish. Not merged."
         }
       ],
       "remaining_action": "PR 869 is open; park it for the elected Chief and post the result",
