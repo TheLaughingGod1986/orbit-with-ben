@@ -188295,9 +188295,14 @@
           "at": "2026-11-12T08:21Z",
           "by": "relay",
           "what": "condition verification queued: J2685"
+        },
+        {
+          "at": "2026-11-12T11:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T16:45:00Z"
         }
       ],
-      "remaining_action": "Assemble 9:16 HOS 009 Shorts A and B masters from SHORTS_PICTURE_PLAN_v03.json and run gate_shorts_open.py once J2033, J2034, and J2035 complete",
+      "remaining_action": "Build the two gravity Shorts after the approved score and long assembly are complete; then run checks and submit for review",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188311,13 +188316,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "input",
-        "condition": "Film 009's picture is settled and its long is assembled: J2583 (three retakes), J2584 (their sheet check, KEEP), the fourth retake (J2586) and its check (J2587, KEEP), then J2035 (long assembly, score bed) done",
-        "check_at": "2026-11-12T09:21:42+00:00",
-        "last_recheck": "J2602",
-        "checked_at": "2026-11-11T11:27:00+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2685"
+        "type": "dependency",
+        "condition": "J2035 long assembly must finish with the approved HOS 009 own score and gates. Picture dispositions are settled through J2631 and J2632 KEEP; J2586/J2587 closed not-made, not retake KEEP. J2664 still owns score production and its duration-tariff/pending-charge preflight; local 05_Music contains scope files only. Existing VO, picture windows, GBP0 preparation scope and final-watch requirements remain in force.",
+        "check_at": "2026-11-12T16:45:00Z",
+        "last_recheck": "J2685",
+        "checked_at": "2026-11-12T11:59:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
