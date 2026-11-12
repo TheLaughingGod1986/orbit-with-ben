@@ -235636,10 +235636,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T12:29Z",
+      "eta": "2026-11-12T14:29Z",
       "created_by": "gemini",
       "created_at": "2026-11-12T12:26Z",
       "result": "",
@@ -235648,11 +235648,24 @@
           "at": "2026-11-12T12:26Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Merge PR #848, close J2676, rule on 013/007/003 thumbs and queue fresh-read Studio test job",
       "kind": "chief",
-      "plain": "Final Chief approval for the three rebuilt thumbnails and queuing the YouTube Studio test"
+      "plain": "Final Chief approval for the three rebuilt thumbnails and queuing the YouTube Studio test",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T12:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
