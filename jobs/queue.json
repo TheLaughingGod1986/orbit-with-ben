@@ -231803,19 +231803,24 @@
           "at": "2026-11-12T02:39Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking parent approval history and the ending-review result"
+        },
+        {
+          "at": "2026-11-12T02:39Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Approval history checked: v04 conditional KEEP requires J2658; review remains open with no result or committed review"
         }
       ],
-      "remaining_action": "Verify whether Gemini has reviewed the revised Supermoon ending",
+      "remaining_action": "Record the missing Gemini ending review on the original job",
       "kind": "review",
       "recheck_of": "J2478",
       "due": "2026-11-12T02:03:48+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-12T02:39Z",
         "by": "codex",
-        "note": "Checking parent approval history and the ending-review result"
+        "note": "Approval history checked: v04 conditional KEEP requires J2658; review remains open with no result or committed review"
       },
       "taskKeys": [
         "OWB:013"
