@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2720 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J2722 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2702 |  |
 | J2723 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
-| J2726 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
+| J2726 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2728 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2649 |  |
 | J2730 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2731 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
