@@ -230942,13 +230942,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-11T23:46Z",
-      "eta": "2026-11-12T01:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:57Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-11T22:57Z",
@@ -230984,6 +230984,11 @@
           "at": "2026-11-12T00:01Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 done: opened PR #553 (commit 03fbbb14) with ARCHIVE_SOURCES_BRIEF_v01.md/.json and posted report on HOS desk #180 (#issuecomment-6810227849)"
+        },
+        {
+          "at": "2026-11-12T00:01Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Close J2654",
@@ -231000,7 +231005,8 @@
       },
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/553"
     },
     {
       "id": "J2655",
