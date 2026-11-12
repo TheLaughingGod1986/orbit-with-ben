@@ -1,5 +1,5 @@
 {
-  "next_id": 2674,
+  "next_id": 2675,
   "jobs": [
     {
       "id": "J0001",
@@ -233417,6 +233417,36 @@
       "due": "2026-11-12T13:00:00Z",
       "kind": "chief",
       "plain": "Check the Darwin and Wallace picture repair and decide when generation can continue"
+    },
+    {
+      "id": "J2674",
+      "title": "019 Andromeda: verify package A and complete panel before J2449 two-arm test",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2657 acting-Chief ruling, Codex, 12 November 2026: narrow only the Andromeda portion of J2449 to TWO arms: unchanged current title/thumbnail versus J2447 package A. Exclude package B and its enlarged-galaxy illustration. No description edit is authorized or needed for this scope. This supersedes the three-arm requirement for Andromeda only; Jupiter T030 and Black Hole T002 remain untouched. This is a scope decision, NOT a packaging PASS or permission to bypass review.\n\nComplete the missing review for OWB:019 ojk-dfOpAmw before reopening J2449:\n1. Read J2447/J2448/J2449 and 05_Analytics/owb/REPACKAGE_2026-11.md. Resolve the CHECK against the actual locked script or aired transcript, recording exact supporting lines for Andromeda Is Already Coming (And Almost No Stars Will Collide) and NO CRASH. If unsupported or misleading, return an exact FIX; no silent title rewrite or release.\n2. Identify the exact package A bytes on the Mini, inspect full size and at 168 px, check 1280x720, under 2 MB, duration-safe text and source heic1502a. The J2448 result records SHA-256 dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7, but REPACKAGE_2026-11.md records ad9f3eb4ae847c9ee8f4d76b312d94f17afc2d46f17469f9f71b3efb09a0c59e. Reconcile provenance and name ONE reviewed path/hash; do not infer approval from either record. Local inputs are under the main Mini checkout 02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/, its singular 08_Thumbnail mirror, and ~/_desk/jobs/J2448/.\n3. Run the required packaging panel for the exact proposed pair (scripts/packaging_panel.py; independent Codex, Gemini, Cursor critiques and decision). Reuse a demonstrably matching existing panel if found. Queue its dependencies and a final decision/release handoff; never mark this stage approved merely because panel jobs were created. Required panel/Chief gates remain.\n4. Review PR #836 evidence, ledger and saved finished-test screenshot before release; it was still OPEN when J2657 inspected it. J2449 records T017 finished 11 Nov 22:32 with insufficient impressions/draw, but main ledger still says running. Preserve/merge verified evidence through the proper review lane; don't infer fresh Studio status from that historical record.\n5. When all checks pass, write jobs/reviews/<this job>/REVIEW.md with exact files/hash, panel decision and supporting script lines, then route the final publishing decision to the elected Chief. Only then reopen J2449 with this two-arm scope. At execution, J2449 must freshly read Studio; never replace a running or newly set test. Ben's recorded finished-test exception applies only after its result AND read time are recorded and its finished-report screenshot preserved. Do not touch Jupiter or Black Hole again.\n\nJ1762 and J1118 approved an older STARS DONT CRASH cover, not this new NO CRASH package; that approval does not transfer. Keep film 019 thumbs in review/blocked until the above resolves. No generation, spend, upload, visibility, schedule, description change or Studio write in this review job. Link any successor to J2449 and OWB:019/thumbs. Target before J2449 deadline 14 Nov 18:00 London.\n",
+      "ref": "J2657",
+      "film": "019",
+      "stage": "thumbs",
+      "after": "J2657",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T07:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the Andromeda script claims and exact thumbnail, then complete packaging review",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "plain": "Checking the Andromeda title and thumbnail before testing them against the current version"
     }
   ],
   "focus": [
