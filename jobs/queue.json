@@ -193815,10 +193815,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T05:46Z",
-      "eta": "2026-11-12T07:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -193997,6 +193997,11 @@
           "at": "2026-11-12T05:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR542 20af7ce7: approved rods 135-frame lossless intermediate matches source pixels and exact original PTS/durations; 23 tests OK and check_all PASS. Full master remains incomplete."
+        },
+        {
+          "at": "2026-11-12T05:50Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint 20af7ce7 pushed to HOS PR542. Rods intermediate /Volumes/MiniWork/scratch/J2242-rods-patch-v01/rods_patch.nut verified 135 exact source pixels and original timestamps/durations. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Points window includes 1024-tick durations among 512-tick PTS steps; preserve explicitly. Remaining corrections/captions/mux/final gates exceed this run. No v04, no detached process, no spend or publication."
         }
       ],
       "remaining_action": "Finish Franklin remaining splices, captions, packet mux and output gates",
