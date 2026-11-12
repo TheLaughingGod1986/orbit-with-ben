@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
-| J2711 | mini | claimed | codex | 2026-11-12T19:56Z | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
+| J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
 | J2714 | mini | open | – | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
 | J2716 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
 | J2717 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0875 |  |
