@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 | J2704 | mini | open (after J2483) | – | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2706 | mini | open (after J2483) | – | – | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
-| J2707 | any | open | – | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
+| J2707 | any | claimed | macbook | 2026-11-12T16:10Z | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
 
 Recently finished:
 
