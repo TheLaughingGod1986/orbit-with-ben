@@ -234430,10 +234430,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T09:36Z",
+      "eta": "2026-11-12T10:06Z",
       "created_by": "gemini",
       "created_at": "2026-11-12T09:02Z",
       "result": "",
@@ -234442,6 +234442,11 @@
           "at": "2026-11-12T09:02Z",
           "by": "gemini",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-12T09:36Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel (codex): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) ",
@@ -234450,7 +234455,15 @@
       "due": "2026-11-14T18:00:00Z",
       "taskKeys": [
         "OWB:019"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T09:36Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2689",
