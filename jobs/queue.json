@@ -239191,18 +239191,23 @@
           "at": "2026-11-12T22:39Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed isolated checker review; no film approval or media changes."
+        },
+        {
+          "at": "2026-11-12T22:41Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Exact PR diff reviewed; six CLI regressions, thirteen privacy checks and 56-file core integrity pass. Scope preserves all thresholds and narration matching."
         }
       ],
-      "remaining_action": "Review the timing checker correction and its regression tests",
+      "remaining_action": "Verify the unchanged film cut list against the old and corrected checker",
       "due": "2026-11-16T18:00:00Z",
       "kind": "chief",
       "plain": "Review a timing-check fix needed for the Darwin and Wallace film",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T22:39Z",
+        "at": "2026-11-12T22:41Z",
         "by": "codex",
-        "note": "Claimed isolated checker review; no film approval or media changes."
+        "note": "Exact PR diff reviewed; six CLI regressions, thirteen privacy checks and 56-file core integrity pass. Scope preserves al"
       },
       "taskKeys": [
         "HOS:013"
