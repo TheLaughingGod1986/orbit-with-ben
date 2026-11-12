@@ -238082,6 +238082,11 @@
           "at": "2026-11-12T21:16Z",
           "by": "codex",
           "what": "reopened: Taking the parked condition verification for the elected-Chief ruling; worker evidence reviewed in PR859. Parent J2618 remains held until ruling is recorded."
+        },
+        {
+          "at": "2026-11-12T21:16Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Worker verification is finished; direct instruction assigns this protected condition-release ruling to elected Chief Codex. Remove the stale Gemini-only claim restriction."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py reopen J2618 and jobs.py done J2724 (evidence on OWB PR #859)",
@@ -238096,8 +238101,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J2725",
