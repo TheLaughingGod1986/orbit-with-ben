@@ -194153,20 +194153,25 @@
           "at": "2026-11-12T11:21Z",
           "by": "codex",
           "what": "step 0 of 3 done: Reading the splice contract and existing implementation before rendering."
+        },
+        {
+          "at": "2026-11-12T11:22Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Existing PR542 checkpoint recovered; jar renderer incorrectly selects source 0–3.5s instead of approved 4–7.5s. Prior jar intermediate will be superseded."
         }
       ],
-      "remaining_action": "Checking the Franklin edit inputs and approved replacement shots",
+      "remaining_action": "Correcting and verifying the approved jar replacement interval",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T11:21Z",
+        "at": "2026-11-12T11:22Z",
         "by": "codex",
-        "note": "Reading the splice contract and existing implementation before rendering."
+        "note": "Existing PR542 checkpoint recovered; jar renderer incorrectly selects source 0–3.5s instead of approved 4–7.5s. Prior ja"
       }
     },
     {
