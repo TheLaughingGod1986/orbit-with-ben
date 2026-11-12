@@ -235649,13 +235649,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T12:29Z",
-      "eta": "2026-11-12T14:29Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-12T12:26Z",
-      "result": "",
+      "result": "PASS all three exact B_v02 thumbnails; PR 848 merged 178d82bce3. J2676/J2696/J2697 resolved, 013/007/003 thumbs done. Separate Mini Studio successor J2702 requires fresh test reads, preserves existing tests and titles, and logs only actual arms. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-12T12:26Z",
@@ -235686,6 +235686,11 @@
           "at": "2026-11-12T12:34Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified merge, exact-file PASS, three done stages, resolved J2676/J2696/J2697 and J2702 linked to all films; no Studio mutation."
+        },
+        {
+          "at": "2026-11-12T12:34Z",
+          "by": "codex",
+          "what": "done: PASS all three exact B_v02 thumbnails; PR 848 merged 178d82bce3. J2676/J2696/J2697 resolved, 013/007/003 thumbs done. Separate Mini Studio successor J2702 requires fresh test reads, preserves existing tests and titles, and logs only actual arms. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Report the completed Chief review and queued Studio comparison work",
@@ -235702,7 +235707,8 @@
         "OWB:013",
         "OWB:007",
         "OWB:003"
-      ]
+      ],
+      "done_ref": "ce8f9cac38"
     },
     {
       "id": "J2702",
