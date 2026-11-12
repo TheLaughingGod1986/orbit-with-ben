@@ -233415,20 +233415,25 @@
           "at": "2026-11-12T07:28Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed scoped runner fix; no generation or credit changes."
+        },
+        {
+          "at": "2026-11-12T07:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Confirmed next_batch revalidates the filtered remainder as a full Part 01 plan."
         }
       ],
-      "remaining_action": "Check the batching validation and add a guarded repair",
+      "remaining_action": "Implement the batching repair and run regression checks",
       "due": "2026-11-12T13:00:00Z",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the error stopping the Darwin and Wallace pictures after the first part",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-12T07:28Z",
         "by": "codex",
-        "note": "Claimed scoped runner fix; no generation or credit changes."
+        "note": "Confirmed next_batch revalidates the filtered remainder as a full Part 01 plan."
       },
       "taskKeys": [
         "HOS:013"
