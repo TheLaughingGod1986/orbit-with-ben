@@ -225497,10 +225497,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T11:49Z",
+      "eta": "2026-11-12T13:49Z",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
       "result": "",
@@ -225664,6 +225664,11 @@
           "at": "2026-11-12T10:39Z",
           "by": "codex",
           "what": "released: Partial v05 checkpoint pushed to HOS PR 560 at 9c5bc9e7: recovered two approved originals, identified three Davy/Long PDF pages, verified all 27 delivered file hashes; required checks pass. Resume from remote PR head; source retry stopped on HTTP 429. All archive composites, full cues, 67 slates and rough remain. No stage approval. Existing four-step plan remains 1/4; remaining assembly exceeds short run."
+        },
+        {
+          "at": "2026-11-12T11:49Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build the archive composites, reconcile all overlay cues and assemble the internal rough",
