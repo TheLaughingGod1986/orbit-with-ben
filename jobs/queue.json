@@ -218373,9 +218373,14 @@
           "at": "2026-11-12T01:36Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2485; starting step 1 (evidence PR on cursor/J2255-short-c)"
+        },
+        {
+          "at": "2026-11-12T01:39Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Merged origin/main into cursor/J2255-short-c, check_all.sh PASS, opened HOS PR #555"
         }
       ],
-      "remaining_action": "Merge origin/main into cursor/J2255-short-c, run check_all.sh, and open evidence PR",
+      "remaining_action": "Run gate_shorts_open.py with first-second checks on hos_008_short_C_v03.mp4 and its voice timings",
       "due": "2026-11-20T00:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -218391,11 +218396,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-12T01:36Z",
+        "at": "2026-11-12T01:39Z",
         "by": "gemini",
-        "note": "Claimed J2485; starting step 1 (evidence PR on cursor/J2255-short-c)"
+        "note": "Merged origin/main into cursor/J2255-short-c, check_all.sh PASS, opened HOS PR #555"
       },
       "taskKeys": [
         "HOS:008"
