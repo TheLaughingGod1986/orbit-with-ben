@@ -1,5 +1,5 @@
 {
-  "next_id": 2742,
+  "next_id": 2744,
   "jobs": [
     {
       "id": "J0001",
@@ -230119,6 +230119,11 @@
           "at": "2026-11-12T23:38Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-12T23:39Z",
+          "by": "relay",
+          "what": "condition verification queued: J2742"
         }
       ],
       "remaining_action": "Wait for the file-copy isolation repair in J2738, then review, merge and verify the relay and board",
@@ -230143,7 +230148,8 @@
       "hold": {
         "type": "dependency",
         "condition": "CHANGES REQUIRED on PR868 head 16b8cc514: split dry-run placement follows destination file symlinks and overwrites original channel files; reproduced using temporary fixtures. J2738 must fix isolation and add source-preservation regression coverage, then elected Chief reviews the new head and full checks before merge. After merge observe one full Mini relay cycle and board publish before closing J2618. No merge approval; J2621/J2622 holds unchanged.",
-        "check_at": "2026-11-12T23:30:00Z"
+        "check_at": "2026-11-13T00:39:27+00:00",
+        "recheck_task": "J2742"
       },
       "escalated_at": "2026-11-12T23:38Z"
     },
@@ -230331,6 +230337,11 @@
           "at": "2026-11-12T21:39Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T23:30:00Z"
+        },
+        {
+          "at": "2026-11-12T23:39Z",
+          "by": "relay",
+          "what": "condition verification queued: J2743"
         }
       ],
       "remaining_action": "After the running relay update finishes, verify the no-home-channel checks and live board cycle, then close this work",
@@ -230347,10 +230358,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2725 Chief ruling: the 12 Nov 19:13Z picture-window restriction is satisfied. PR860 a5436cee0 evidence accepted for that condition; PR833 unchanged head 4ef9d89b6 remains draft/open, Rules SUCCESS and core workflow SKIPPED; HOS535 merged 688046d4 and J2619 done. Historical focused tests and temporary rebase do not prove current full-suite readiness. J2618 is already claimed by macbook and owns the same PR833 rebase/full checks: wait for its tested current head, elected-Chief merge, and one observed Mini relay cycle and board publish. Then verify J2621 registry/tests/home groups are zero and close it against those artifacts; do not start a duplicate rebase. No merge or system PASS granted here. Original approvals and unrelated holds unchanged.",
-        "check_at": "2026-11-12T23:30:00Z",
+        "check_at": "2026-11-13T00:39:27+00:00",
         "last_recheck": "J2725",
         "checked_at": "2026-11-12T21:39:03+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2743"
       }
     },
     {
@@ -239523,6 +239535,68 @@
         "condition": "Titan ffYKoNVPoqg had zero audience-retention rows through 2026-11-10 in J2683. Administrative hold only: on 14 Nov 07:00Z verify settlement and retrieve sanitized evidence; keep absent or fewer-than-100-view data unscored. No worker analysis performed in this claim.",
         "check_at": "2026-11-14T07:00:00Z"
       }
+    },
+    {
+      "id": "J2742",
+      "title": "Verify condition for J2618",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2618: CHANGES REQUIRED on PR868 head 16b8cc514: split dry-run placement follows destination file symlinks and overwrites original channel files; reproduced using temporary fixtures. J2738 must fix isolation and add source-preservation regression coverage, then elected Chief reviews the new head and full checks before merge. After merge observe one full Mini relay cycle and board publish before closing J2618. No merge approval; J2621/J2622 holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2618 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T23:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T23:39Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for the file-copy isolation repair in J2738, then review, merge and verify the relay and board",
+      "kind": "review",
+      "recheck_of": "J2618",
+      "due": "2026-11-13T00:39:27+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2743",
+      "title": "Verify condition for J2621",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2621: J2725 Chief ruling: the 12 Nov 19:13Z picture-window restriction is satisfied. PR860 a5436cee0 evidence accepted for that condition; PR833 unchanged head 4ef9d89b6 remains draft/open, Rules SUCCESS and core workflow SKIPPED; HOS535 merged 688046d4 and J2619 done. Historical focused tests and temporary rebase do not prove current full-suite readiness. J2618 is already claimed by macbook and owns the same PR833 rebase/full checks: wait for its tested current head, elected-Chief merge, and one observed Mini relay cycle and board publish. Then verify J2621 registry/tests/home groups are zero and close it against those artifacts; do not start a duplicate rebase. No merge or system PASS granted here. Original approvals and unrelated holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2621 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T23:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T23:39Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After the running relay update finishes, verify the no-home-channel checks and live board cycle, then close this work",
+      "kind": "review",
+      "recheck_of": "J2621",
+      "due": "2026-11-13T00:39:27+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
