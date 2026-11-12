@@ -235316,13 +235316,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T11:38Z",
-      "eta": "2026-11-12T13:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T11:34Z",
-      "result": "",
+      "result": "Private v04 watch handoff complete: matching source/iCloud/stream SHA256 76d801a3; board card ready for Ben with Play302; all local and CI checks PASS, HOS PR567 merged. J0912 handoff complete at assembly4/4, final watch only remains. Actual Ben approval before separate publishing job; long Public first. No spend or YouTube/Buffer change.",
       "history": [
         {
           "at": "2026-11-12T11:34Z",
@@ -235358,6 +235358,11 @@
           "at": "2026-11-12T11:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Board card verified ready for Ben with working Play; streamed exact hash; HOS checks ALL PASS; PR567 holds handoff and original gate output; J0912 retains 4/4 with final-watch-only hold"
+        },
+        {
+          "at": "2026-11-12T11:47Z",
+          "by": "codex",
+          "what": "done: Private v04 watch handoff complete: matching source/iCloud/stream SHA256 76d801a3; board card ready for Ben with Play302; all local and CI checks PASS, HOS PR567 merged. J0912 handoff complete at assembly4/4, final watch only remains. Actual Ben approval before separate publishing job; long Public first. No spend or YouTube/Buffer change."
         }
       ],
       "remaining_action": "Finish the handoff report and retain the Franklin Short for your final watch",
@@ -235383,7 +235388,8 @@
         "title": "Why Was Franklin's Kite Experiment So Dangerous?",
         "number": "008 Short A",
         "type": "short"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/567"
     }
   ],
   "focus": [
