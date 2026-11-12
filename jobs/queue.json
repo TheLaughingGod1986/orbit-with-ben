@@ -238260,7 +238260,7 @@
     {
       "id": "J2730",
       "title": "Verify condition for J2171",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2171: J2035 long assembly must finish with the approved HOS 009 own score and gates. Picture dispositions are settled through J2631 and J2632 KEEP; J2586/J2587 closed not-made, not retake KEEP. J2664 still owns score production and its duration-tariff/pending-charge preflight; local 05_Music contains scope files only. Existing VO, picture windows, GBP0 preparation scope and final-watch requirements remain in force.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -238280,13 +238280,27 @@
           "at": "2026-11-12T20:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T20:08Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Build the two gravity Shorts after the approved score and long assembly are complete; then run checks and submit for review",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T21:07:58+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2731",
