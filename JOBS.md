@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2669 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J2670 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
-| J2671 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2671 | mini | claimed | codex | 2026-11-12T07:47Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
