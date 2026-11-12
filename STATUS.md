@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 019 | thumbs | codex | 2026-11-12T20:41Z | 2026-11-12T22:40Z | J2729 019 Andromeda: rebuild recognisable whole-galaxy challenger and hand off packaging review |
+| 019 | thumbs | codex | 2026-11-12T20:42Z | 2026-11-12T21:02Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
