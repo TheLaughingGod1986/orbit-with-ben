@@ -1,5 +1,5 @@
 {
-  "next_id": 2744,
+  "next_id": 2745,
   "jobs": [
     {
       "id": "J0001",
@@ -239625,6 +239625,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2744",
+      "title": "Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Readout for the J2683 Chief ruling (thread comment 6829905842), planned in `jobs/reviews/J2740/PLAN.md`. Read-only, £0. No Studio, schedule, visibility, cut, voice or generation change, and nothing here authorises one.\n\n**The three Shorts (none is live or uploaded as of 12 Nov 2026):**\n\n1. Supermoon dated Short, film key `_dated_shorts/2026-11-24_supermoon-two-earths-closer`, cut v04 (owner J2478, ending review J2658). Labelled change: loop tail (1.0 s tail kept; no run-on last line, by Ben's note). Planned slot Thu 19 Nov 11:30 London, only if Ben OKs by Wed 18 Nov 18:00 London.\n2. 032 Titan Short 1 `wed25_strike_match`, film key `032`, planned file `032_short_wed25_strike_match_v01.mp4` (owner J0979, held behind J2477 and Ben's watch of the long). Labelled change: a visibly different second shot. Planned slot Wed 25 Nov 11:30Z.\n3. 033 Uranus Short 2 `033_short02_ice_giant_surface_v01.mp4`, film key `033`, SHA-256 `c2404d5a...6d08dbc2` (built J2318, review J2400). Labelled change: count/scale answer after sentence one (first number at about 12 s). Planned slot Sat 19 Dec 11:30Z.\n\n**When to run.** The dates above are planned slots, not publish dates. No upload job exists yet for any of the three. Whoever queues or runs the publishing job for the last of the three to go public must set this job's first condition check to that Short's actual go-public time plus 4 days (Analytics curves settle about 2 to 3 days late; J2741 used the same margin). Until then this job waits on J2400. If a Short never airs (the Supermoon one misses its window, say), record that and read the ones that did; do not swap in another Short without a Chief line.\n\n**What to measure, for each Short that aired:**\n- The retention curve (`audienceWatchRatio` by `elapsedVideoTimeRatio`): the change across 4.0 to 6.0 s in seconds, not buckets, plus the steepest 5-bucket drop and where it falls.\n- Stayed-to-watch and average percentage viewed, from Studio and from Analytics.\n- The same observation window for all three, counted from each Short's own go-public time (first 7 full days, or the longest window all three have).\n- The cut's meta at the drop: what is on screen and said, the second shot, where the first number is spoken, the tail length.\n\n**Rules for the read:**\n- Keep the J2683 table (nine settled curves, steepest drop inside 4.0 to 5.9 s) as the historical baseline; add rows, do not rewrite it.\n- A Short with fewer than 100 views is descriptive only and is not scored.\n- Three Shorts differ in topic, length, slot and format as well as in the labelled change. Report the numbers with their uncertainty and say plainly that n=3 cannot show cause.\n- Keep the sanitised raw rows, exact query windows, retrieval time, cut meta paths and hashes, and the calculation method, as J2683's decision asks.\n- End parked for the Chief with one recommendation: keep, drop or re-test each change.\n",
+      "ref": "6829905842",
+      "film": "",
+      "stage": "",
+      "after": "J2400",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-12T23:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T23:39Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for the three Shorts to air, then read their retention curves against the earlier nine",
+      "kind": "review",
+      "plain": "Checking whether three new Shorts held viewers better through seconds four to six after small changes to the second shot, the number and the ending"
     }
   ],
   "focus": [
