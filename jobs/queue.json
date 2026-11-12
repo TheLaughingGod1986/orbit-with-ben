@@ -235346,13 +235346,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T12:02Z",
-      "eta": "2026-11-12T14:02Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T11:07Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-12T11:07Z",
@@ -235383,6 +235383,11 @@
           "at": "2026-11-12T12:06Z",
           "by": "codex",
           "what": "step 3 of 3 done: Live queue and stage verified; completion guard passes without temporary claim; parent remains held"
+        },
+        {
+          "at": "2026-11-12T12:06Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Handoff corrected; J2695 owns the pending thumbnail review",
@@ -235402,7 +235407,8 @@
       },
       "taskKeys": [
         "OWB:013"
-      ]
+      ],
+      "done_ref": "6d54c94b72"
     },
     {
       "id": "J2699",
