@@ -220616,9 +220616,14 @@
           "at": "2026-11-12T22:27Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Merged HOS origin/main (74cc4027) into gemini/J2503-email-scrub (commit 27c2988a) and lowered email_ratchet.json from 16 to 15 held 008/009 paths; 7/7 ratchet tests PASS and 0 diff on 008/009/010/013"
+        },
+        {
+          "at": "2026-11-12T22:28Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 0 non-ratchet email matches (15 held 008/009 paths), 7/7 ratchet tests, 303/303 unit tests, and check_all.sh ALL CHECKS PASS on 27c2988a; pushed gemini/J2503-email-scrub to origin"
         }
       ],
-      "remaining_action": "Rerun check_all.sh, address check, and unit tests on 27c2988a, then push and submit exact head to Chief",
+      "remaining_action": "Post synced PR #505 head 27c2988a on the HOS desk and park J2503 for Chief merge review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
@@ -220628,11 +220633,11 @@
       ],
       "not_before": "2026-11-12T19:13Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T22:27Z",
+        "at": "2026-11-12T22:28Z",
         "by": "gemini",
-        "note": "Merged HOS origin/main (74cc4027) into gemini/J2503-email-scrub (commit 27c2988a) and lowered email_ratchet.json from 16"
+        "note": "Verified 0 non-ratchet email matches (15 held 008/009 paths), 7/7 ratchet tests, 303/303 unit tests, and check_all.sh AL"
       },
       "rerouted_from": {
         "needs": "mini",
