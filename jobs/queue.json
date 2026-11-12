@@ -212714,10 +212714,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T00:59Z",
+      "eta": "2026-11-12T02:59Z",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
       "result": "",
@@ -212726,11 +212726,24 @@
           "at": "2026-11-09T10:36Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T00:59Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Apply 034 FIRST30_PLAN.md (PR #667): splice 2.00-4.80s from Sentence 1 (<8s), BICUBIC push from Frame 0, R01-R04 in 11 cuts <=3.57s; render master_v02.mp4 + gates",
       "kind": "assembly",
-      "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02"
+      "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T00:59Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2439",
