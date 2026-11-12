@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2695 | mini | open | – | – | 013 thumbs · for gemini · review · `gemini-argon` · Review rebuilt Moon, neutron star and alien worlds thumbnail Bs (J2676) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/848 |
 | J2696 | mini | open | – | – | chief · Chief: resolve 003 thumbs orphan-review |  |
 | J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
-| J2700 | mini | claimed | gemini | 2026-11-12T14:08Z | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J2700 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 
 Recently finished:
 
