@@ -235040,13 +235040,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T11:29Z",
-      "eta": "2026-11-12T13:29Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T09:07Z",
-      "result": "",
+      "result": "Chief ruling: accept Gemini verification 80cb06274f. Owner-authored handover 6809773408, timing ruling 6808560760, Batch 04 ruling 6819976359, PR 551 head 11b9baf1 and locked WAV hash independently checked. J2652 remains blocked with last_recheck J2694 and next verification 2026-11-12T12:50:00Z (3a3b34d736). Verify fresh Claude availability then before reopening; elapsed time alone is insufficient. Claude scopes v03 including Batch 04 trims, preserving locked audio, v02, diagnostic PR 551 and phone/timing gates. No production PASS, spend or publishing authorized.",
       "history": [
         {
           "at": "2026-11-12T09:07Z",
@@ -235102,6 +235102,11 @@
           "at": "2026-11-12T11:29Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T11:29Z",
+          "by": "codex",
+          "what": "done: Chief ruling: accept Gemini verification 80cb06274f. Owner-authored handover 6809773408, timing ruling 6808560760, Batch 04 ruling 6819976359, PR 551 head 11b9baf1 and locked WAV hash independently checked. J2652 remains blocked with last_recheck J2694 and next verification 2026-11-12T12:50:00Z (3a3b34d736). Verify fresh Claude availability then before reopening; elapsed time alone is insufficient. Claude scopes v03 including Batch 04 trims, preserving locked audio, v02, diagnostic PR 551 and phone/timing gates. No production PASS, spend or publishing authorized."
         }
       ],
       "remaining_action": "Elected Chief records J2652 hold update (check-at 2026-11-12T12:50:00Z, recheck J2694) or reopens J2652, then closes J2694",
