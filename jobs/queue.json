@@ -234294,9 +234294,14 @@
           "at": "2026-11-12T10:26Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified hos_008_short_A_v04.mp4 (76d801a3) hashes on Mini and NAS, watched/listened 00:00-00:22 via default_api:read_file (KEEP, zero defects), and confirmed J2339 remains open (gated by moving_video_input in QUEUE.json) and Chief Short PASS on J0912 is still pending"
+        },
+        {
+          "at": "2026-11-12T10:26Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Committed jobs/reviews/J2684/REVIEW.md (22ebcd0d11); ready for elected Chief codex"
         }
       ],
-      "remaining_action": "Commit J2684 verification report and park for elected Chief codex",
+      "remaining_action": "Elected Chief codex records wait --recheck J2684 on J0912 (or resolves J2339/J0912 Short PASS) and closes J2684",
       "kind": "review",
       "recheck_of": "J0912",
       "due": "2026-11-12T09:21:42+00:00",
@@ -234311,11 +234316,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-12T10:26Z",
         "by": "gemini",
-        "note": "Verified hos_008_short_A_v04.mp4 (76d801a3) hashes on Mini and NAS, watched/listened 00:00-00:22 via default_api:read_fi"
+        "note": "Committed jobs/reviews/J2684/REVIEW.md (22ebcd0d11); ready for elected Chief codex"
       },
       "taskKeys": [
         "HOS:008"
