@@ -61,3 +61,20 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P1:05b_museum_plaques` | `P01_05b_museum_plaques_t1.mp4` | `e1b4148a8fdb466ea7ed74b214d9b417a4d352ca5358e3541919660276bd73e2` | `9ff6b8f946b973c90d34c6e3d44263bc0b46cc9442b8c51c7062670ce6aefe7c` | `eba80f457b8fe9bb1b3f3da78dca1dceb04cfdffc47291847915344f277a744d` | `9,740 → 9,640` | `PENDING_REVIEW` (`keep: false`) |
 | `P1:06_padlock_shut` | `P01_06_padlock_shut_t1.mp4` | `c4d2efca6ce54ea72f2610869d00d5a08c794adc601ab9a8e735564ce5fa93ad` | `82cf3af45e6f4bcc3032a7f49d2aa50c01d5d528b4700d5b2537eac92595d390` | `4967e6d869cbdb1efc1cb9481986cab55401705174ea57b53e58b92779902292` | `9,640 → 9,540` | `PENDING_REVIEW` (`keep: false`) |
 | `P1:07_darwin_1837_desk` | `P01_07_darwin_1837_desk_t1.mp4` | `944902b89eaa7e78bd45a79307bfe337729d55e8cff9cf45cc25b5f24bdbb863` | `87e61f0eea8705a30bb520f9fe98e44f95e706555de617859151e18b309dde63` | `59f59941661973ba184a8e079a0a2e97bc0bcdfdb5a968ab04eee34128092c34` | `9,540 → 9,440` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 03 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T03:25Z` – `03:40Z`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch03-20261112T0325Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch03-20261112T0325Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_03_RECEIPT.json` (`archive_v01_pass1/batch-23252f982f89.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_03_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `1,500 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`):** `9,440 → 9,340 → 9,240 → 9,140 → 9,040 → 8,940` (`0` pending charges; remaining `HOS013_PASS1` reservation `5,100`; headroom `8,940 - 5,100 - 800 = 3,040 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P1:09_wallace_hut_split` | `P01_09_wallace_hut_split_t1.mp4` | `64ae099145dfa1c34279a8f1933dcce5cd870e7fc002bc9e1b144343d54882f0` | `c3035db5455ae55ff211a5d2f7758d49188e1c354cce911898b0d69dad377af5` | `5ef47179c1723133770090bdf76d0ec7b06949123838b93c6729b3ab3778f414` | `9,440 → 9,340` | `PENDING_REVIEW` (`keep: false`) |
+| `P1:11_beagle_cabin_explorer` | `P01_11_beagle_cabin_explorer_t1.mp4` | `923bed9d7cd90e2529405d0ed87b4a769f1037efaa531d45d95f4da3f69b9f10` | `9aaa712167f9ecd77ce71eaedd2aec07be45c13750d69cca96040f8a5d7eb8de` | `e317cabeb06f8b6229ff278804c464ffef2d30cbd6d165222e14900f1d324c9f` | `9,340 → 9,240` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:02_galapagos_beach_myth` | `P02_02_galapagos_beach_myth_t1.mp4` | `d3b2c39de4cc1a47140d353d33185993cada504d5a353a5d38669672b1a2aab7` | `0f751ebbf6edc54cc8f8fee6fb90641d194b392d26bbb93e28be749251dc340f` | `589e53755ae051e606fb328df8004657a0f22f7fbe6ebc669e15efe66e7c63e6` | `9,240 → 9,140` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:03_unlabelled_bagging` | `P02_03_unlabelled_bagging_t1.mp4` | `8813d267291dff799d545a15cb32c684d8b0545e4be06511d077a951e9fe52ca` | `703c03faae35428a273a1643bd5a19f1639b6ffa64021a0c4c0f714e4ed858bf` | `026f621f6c2ba6db24e5d7e2760228f3c750bc39321bf13194948ddc2d8ac5ab` | `9,140 → 9,040` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:04_blank_tags_row` | `P02_04_blank_tags_row_t1.mp4` | `fb29ad16a297f8bb32eb06eb17099f64b6927a6d38c20a8dc734686b90005fd6` | `db1949f444947d14e9a7bd4e95c76f6940dcb041ce3e608e6ca546955304defe` | `5855af33696939da05ba23c662004c883f511fd5e0a4c19977b199b25e44fb94` | `9,040 → 8,940` | `PENDING_REVIEW` (`keep: false`) |
