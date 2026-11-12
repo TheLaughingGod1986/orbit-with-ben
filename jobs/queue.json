@@ -234230,17 +234230,23 @@
           "at": "2026-11-12T10:53Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-12T10:54Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Fixed dry-run reservation accounting; 46 offline runner tests pass, including 8940 minus 5900 equals 3040 and new-reservation boundaries"
         }
       ],
-      "remaining_action": "Check reservation accounting, fix the dry-run report and verify regression tests",
+      "remaining_action": "Run repository checks and open the focused HOS pull request",
       "for": "codex",
       "kind": "assembly",
       "plain": "Correct the credit estimate shown when Darwin and Wallace picture work resumes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T10:53Z",
-        "by": "codex"
+        "at": "2026-11-12T10:54Z",
+        "by": "codex",
+        "note": "Fixed dry-run reservation accounting; 46 offline runner tests pass, including 8940 minus 5900 equals 3040 and new-reserv"
       },
       "taskKeys": [
         "HOS:013"
