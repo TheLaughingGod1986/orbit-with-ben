@@ -238199,13 +238199,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-12T20:05Z",
-      "eta": "2026-11-12T22:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T19:40Z",
-      "result": "",
+      "result": "parked for Chief: J2649 waiting condition NOT YET MET (1 of 2 satisfied) at 2026-11-12T20:13Z (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md). (1) SATISFIED: Thu 12 Nov 19:13 London picture window is closed with no active pre-window Flow run; (2) UNMET: orbit-with-ben #833 (head 4ef9d89b6, J2618/J2621/J2622) is still OPEN (mergedAt: null) awaiting Chief merge after J2724/J2725/J2726 (PRs #859/#860/#861). Because J2649 explicitly builds on top of #833 once merged, and jobs.py restricts wait --recheck and reopen to the elected Chief, Chief (codex/claude) please either: (A) if #833 is not yet merged, run: python3 scripts/jobs.py wait J2649 --agent codex --condition 'orbit-with-ben #833 (head 4ef9d89b6, J2618/J2621/J2622) merged into main. The Thu 12 Nov 19:13 London picture window is closed and J2724/J2725/J2726 (PRs #859/#860/#861) verified #833 ready to merge; J2649 builds on top of #833 once merged' --check-at '2026-11-12T22:00:00Z' --type input --action 'After 833 merges: condition checks take needs from the job they check; tests; pull request' --recheck J2728 --git && python3 scripts/jobs.py done J2728 --agent codex --result 'Verified J2649 condition at 2026-11-12T20:13Z (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md): 19:13 London window closed, but OWB #833 (4ef9d89b6) still OPEN awaiting merge after J2724/J2725/J2726; updated J2649 hold (--recheck J2728, check 2026-11-12T22:00:00Z). £0.' --git; OR (B) if #833 is merged first in the same duty pass, run: python3 scripts/jobs.py reopen J2649 --agent codex --note 'J2728 verified 19:13 London window closed (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md) and OWB #833 is now merged on main; ready to build J2649 on top of #833.' --git && python3 scripts/jobs.py done J2728 --agent codex --result 'Verified J2649 waiting condition met (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md) after 19:13 London window close and OWB #833 merge; J2649 reopened. £0.' --git. £0.",
       "history": [
         {
           "at": "2026-11-12T19:40Z",
@@ -238236,6 +238236,11 @@
           "at": "2026-11-12T20:14Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-12T20:14Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J2649 waiting condition NOT YET MET (1 of 2 satisfied) at 2026-11-12T20:13Z (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md). (1) SATISFIED: Thu 12 Nov 19:13 London picture window is closed with no active pre-window Flow run; (2) UNMET: orbit-with-ben #833 (head 4ef9d89b6, J2618/J2621/J2622) is still OPEN (mergedAt: null) awaiting Chief merge after J2724/J2725/J2726 (PRs #859/#860/#861). Because J2649 explicitly builds on top of #833 once merged, and jobs.py restricts wait --recheck and reopen to the elected Chief, Chief (codex/claude) please either: (A) if #833 is not yet merged, run: python3 scripts/jobs.py wait J2649 --agent codex --condition 'orbit-with-ben #833 (head 4ef9d89b6, J2618/J2621/J2622) merged into main. The Thu 12 Nov 19:13 London picture window is closed and J2724/J2725/J2726 (PRs #859/#860/#861) verified #833 ready to merge; J2649 builds on top of #833 once merged' --check-at '2026-11-12T22:00:00Z' --type input --action 'After 833 merges: condition checks take needs from the job they check; tests; pull request' --recheck J2728 --git && python3 scripts/jobs.py done J2728 --agent codex --result 'Verified J2649 condition at 2026-11-12T20:13Z (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md): 19:13 London window closed, but OWB #833 (4ef9d89b6) still OPEN awaiting merge after J2724/J2725/J2726; updated J2649 hold (--recheck J2728, check 2026-11-12T22:00:00Z). £0.' --git; OR (B) if #833 is merged first in the same duty pass, run: python3 scripts/jobs.py reopen J2649 --agent codex --note 'J2728 verified 19:13 London window closed (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md) and OWB #833 is now merged on main; ready to build J2649 on top of #833.' --git && python3 scripts/jobs.py done J2728 --agent codex --result 'Verified J2649 waiting condition met (OWB PR #864 1c1965a50, jobs/reviews/J2728/REVIEW.md) after 19:13 London window close and OWB #833 merge; J2649 reopened. £0.' --git. £0."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py wait J2649 --recheck J2728 (or reopen J2649 after #833 merges) and jobs.py done J2728 (evidence on OWB PR #864)",
