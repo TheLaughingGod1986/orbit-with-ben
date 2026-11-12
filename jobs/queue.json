@@ -232270,21 +232270,21 @@
     {
       "id": "J2652",
       "title": "HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s)",
-      "needs": "cloud",
+      "needs": "any",
       "repo": "hos",
-      "body": "Queued 11 Nov 22:56Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 (Grok, 11 Nov 22:26Z) on the timing rough (history-of-science 551, `11b9baf1`; read its TIMING_REPORT_v01.md and COST_OPTIONS_v01.md).\n\n**Scope v03 of the picture plan, in his words:**\n1. Never a picture cut inside a word. All 14 in-word cuts move.\n2. Prefer a sentence boundary when one falls inside the 4 to 6 s window, or within 1.0 s of it. When none fits, a cut may land inside a sentence, but only at a word gap of at least 120 ms, a comma or clause break, or a breath: snap to the nearest one to the cadence target. A shot may run to 7.0 s to reach one, but no further.\n3. Graphic and overlay rows are capped at 8 s. The five rows over that are split, or the graphic is re-timed.\n4. The J1310-locked WAV is the source of truth: update the plan's VO hash to match it. Do not change the audio.\n5. The callback gets 4.20 s, the real unused tail. Trim it to fit. Do not stretch or loop it.\n6. Add word-level onset fields to the plan from the J1310 transcript timings, so the onset audit can finish.\n7. Review the three own-code replacements in COST_OPTIONS_v01.md. Each is adopted only if it still passes the 390 px phone sheet.\n\nJ2558's v02 is not overwritten. Codex then builds the v03 rough; its pass bar is in the ruling. The five missing v02 free renders may go at 0 credits under the existing guards. £0.\n",
+      "body": "Queued 11 Nov 22:56Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 (Grok, 11 Nov 22:26Z) on the timing rough (history-of-science 551, `11b9baf1`; read its TIMING_REPORT_v01.md and COST_OPTIONS_v01.md).\n\n**Scope v03 of the picture plan, in his words:**\n1. Never a picture cut inside a word. All 14 in-word cuts move.\n2. Prefer a sentence boundary when one falls inside the 4 to 6 s window, or within 1.0 s of it. When none fits, a cut may land inside a sentence, but only at a word gap of at least 120 ms, a comma or clause break, or a breath: snap to the nearest one to the cadence target. A shot may run to 7.0 s to reach one, but no further.\n3. Graphic and overlay rows are capped at 8 s. The five rows over that are split, or the graphic is re-timed.\n4. The J1310-locked WAV is the source of truth: update the plan's VO hash to match it. Do not change the audio.\n5. The callback gets 4.20 s, the real unused tail. Trim it to fit. Do not stretch or loop it.\n6. Add word-level onset fields to the plan from the J1310 transcript timings, so the onset audit can finish.\n7. Review the three own-code replacements in COST_OPTIONS_v01.md. Each is adopted only if it still passes the 390 px phone sheet.\n\nJ2558's v02 is not overwritten. Codex then builds the v03 rough; its pass bar is in the ruling. The five missing v02 free renders may go at 0 credits under the existing guards. £0.\n\n\nClaude, 12 Nov 12:55Z (fresh cloud session): inputs verified on the PR 551 head 11b9baf: PICTURE_PLAN_v02.json, timing_rough_J2498/ (TIMING_REPORT, COST_OPTIONS, timing_issues, overlay_audit, cuts_v01.csv) and 02_Voiceover/stt/hos_013_vo_v03a/words_fw_small_en.json. Handed to Codex instead of done in the cloud: this is a code build (a v03 plan builder that moves 100+ cuts to word gaps) and the natural place is PR 551's own branch, which Codex made. The cloud agent is limited to its one designated branch, which carries PR 548 (Grok's conditions), and must not mix this in. Open or update the PR from that branch. Keep J2558's v02 untouched. Park for Chief with the seven checks from the ruling listed PASS/FAIL. £0, no audio change.",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760",
       "film": "013",
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "Waiting for: Thu 12 Nov, once the fresh Claude session has taken over the hourly run: this is two hours of careful work and belongs there",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -232310,21 +232310,18 @@
           "at": "2026-11-12T11:28Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T12:50:00Z"
+        },
+        {
+          "at": "2026-11-12T12:54Z",
+          "by": "claude",
+          "what": "reopened: Checked 12:53Z: hold date reached; fresh Claude session available but PR constraint on this branch; inputs verified; rerouted to Codex (see body)."
         }
       ],
-      "remaining_action": "At 12:50 UTC verify Claude availability, then revise the Darwin and Wallace picture timing plan under the recorded Chief rulings and open its pull request",
+      "remaining_action": "Build picture plan v03 from PR 551's branch (cuts to word gaps, overlays capped at 8 s, WAV hash, callback 4.20 s, word onsets), open PR, park for Chief",
       "due": "2026-11-16T18:00:00Z",
-      "for": "claude",
-      "kind": "script",
-      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
-      "hold": {
-        "type": "date",
-        "condition": "Chief ruling on J2694: fresh-session handover verified in owner comment 6809773408; Gemini evidence 80cb06274f accepted and locked WAV hash independently matched. Retain named Claude cloud assignment until the recorded 12:50Z usage window (heartbeat d8889e6009). At retry verify a fresh available Claude session before reopening; the clock alone does not prove availability. Preserve original timing and Batch 04 rulings 6808560760 and 6819976359 and all gates.",
-        "check_at": "2026-11-12T12:50:00Z",
-        "last_recheck": "J2694",
-        "checked_at": "2026-11-12T11:28:19+00:00",
-        "checked_by": "codex"
-      }
+      "for": "codex",
+      "kind": "chart",
+      "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word"
     },
     {
       "id": "J2653",
