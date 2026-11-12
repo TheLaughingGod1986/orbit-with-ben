@@ -218378,9 +218378,14 @@
           "at": "2026-11-12T01:39Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Merged origin/main into cursor/J2255-short-c, check_all.sh PASS, opened HOS PR #555"
+        },
+        {
+          "at": "2026-11-12T01:45Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Ran gate_shorts_open.py (CLI PASS) and measured voice timings + inspected audio and 1fps frames of hos_008_short_C_v03.mp4"
         }
       ],
-      "remaining_action": "Run gate_shorts_open.py with first-second checks on hos_008_short_C_v03.mp4 and its voice timings",
+      "remaining_action": "Complete listening and frame-by-frame review of hos_008_short_C_v03.mp4, write jobs/reviews/J2485/REVIEW.md, and queue re-cut job",
       "due": "2026-11-20T00:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -218396,11 +218401,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-12T01:39Z",
+        "at": "2026-11-12T01:45Z",
         "by": "gemini",
-        "note": "Merged origin/main into cursor/J2255-short-c, check_all.sh PASS, opened HOS PR #555"
+        "note": "Ran gate_shorts_open.py (CLI PASS) and measured voice timings + inspected audio and 1fps frames of hos_008_short_C_v03.m"
       },
       "taskKeys": [
         "HOS:008"
