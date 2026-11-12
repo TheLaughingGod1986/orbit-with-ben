@@ -236133,13 +236133,13 @@
       "stage": "",
       "after": "J2483",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T14:24Z",
-      "eta": "2026-11-12T16:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T13:55Z",
-      "result": "",
+      "result": "Dependency J2708: establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Evidence HOS PR569. Production remains HELD.",
       "history": [
         {
           "at": "2026-11-12T13:55Z",
@@ -236170,6 +236170,11 @@
           "at": "2026-11-12T14:30Z",
           "by": "codex",
           "what": "step 2 of 3 done: Evidence PR HOS #569, head 7420a24b. Local build/migration and all checks pass; J2708 owns missing hosted Preview database/configuration. Production held; no Preview deployed."
+        },
+        {
+          "at": "2026-11-12T14:30Z",
+          "by": "codex",
+          "what": "blocked: Dependency J2708: establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Evidence HOS PR569. Production remains HELD."
         }
       ],
       "remaining_action": "Complete hosted Preview validation after the isolated database setup",
@@ -236182,6 +236187,11 @@
         "at": "2026-11-12T14:30Z",
         "by": "codex",
         "note": "Evidence PR HOS #569, head 7420a24b. Local build/migration and all checks pass; J2708 owns missing hosted Preview databa"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Dependency J2708: establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Evidence HOS PR569. Production remains HELD.",
+        "check_at": "2026-11-12T20:30:30+00:00"
       }
     },
     {
