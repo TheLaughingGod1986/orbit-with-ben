@@ -16,7 +16,7 @@ Four weeks: 24 October–20 November 2026 (UK). Readout from 21 November. Compar
 | This Planet Has 21-Year Winters | ZpEA8stoSPA | 2026-11-03T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
 | Shooting Stars Aren't Stars | T9fVlG3CCzU | 2026-11-07T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
 | Standing on Titan Feels Like Diving 15 Metres Down | RLSJm59OSzI | 2026-11-10T11:30:00.000Z | Set in Studio | IG/FB/Threads scheduled |
-| Why Does Pluto's Giant Ice Heart Have Zero Craters? (`s7_pluto_heart` v02) | z5V6gIXXYs8 | 2026-11-14T11:30:00Z | Set via API + Studio (FROZEN / NITROGEN) | IG/FB/Threads scheduled (`6af3cd92d9a6812579c51e2a` / `6af3cd936a689e197d1a223d` / `6af3cd94ffe2872794e863f4`). v01 `gmzaCfJF1gA` is private and unscheduled |
+| Why Does Pluto's Giant Ice Heart Have Zero Craters? (`s7_pluto_heart` v02) | z5V6gIXXYs8 | 2026-11-13T11:30:00Z (swapped from 14 Nov, J2715) | Set via API + Studio (FROZEN / NITROGEN) | IG/FB/Threads scheduled for 2026-11-13T11:30:00Z (`6af3cd92d9a6812579c51e2a` / `6af3cd936a689e197d1a223d` / `6af3cd94ffe2872794e863f4`). v01 `gmzaCfJF1gA` is private and unscheduled |
 | Voyager 1 Is About to Be One Light-Day Away | kKN8Ale42sE | 2026-11-17T11:30:00.000Z | Set in Studio | Blocked: 10/10 free-plan slots |
 
 ## Next check
