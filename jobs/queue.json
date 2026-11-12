@@ -237663,10 +237663,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T23:55Z",
+      "eta": "2026-11-13T03:55Z",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
       "result": "",
@@ -237750,6 +237750,11 @@
           "at": "2026-11-12T23:50Z",
           "by": "claude",
           "what": "reopened: Ben, in chat: \"approved\" (copy BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY from Vercel to Cloudflare). Part A is live: the new address answered 200 for the pages and the board data at 23:50Z; the ref read answered GitHub 429 and ticks 500 for want of the token. Part B at the top of the brief"
+        },
+        {
+          "at": "2026-11-12T23:55Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for approval to transfer the three remaining board settings, then verify phone linking and ticks",
@@ -237757,7 +237762,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Finish the board's move: bring three settings over so ticks and phone linking work at the new address",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T23:55Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2715",
