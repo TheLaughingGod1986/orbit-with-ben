@@ -62,7 +62,8 @@ def main():
                 length = min(8 * 1024 * 1024, remaining)
                 assert left.read(length) == right.read(length), 'NAS prefix mismatch; preserve and investigate'
                 remaining -= length
-    print('Existing prefix verified', size, flush=True)
+    print('Existing prefix provenance checkpoint matched' if known_prefix
+          else 'Existing prefix verified', size, flush=True)
     try:
         with source.open('rb') as left, destination.open('ab' if size else 'xb') as right:
             left.seek(size)

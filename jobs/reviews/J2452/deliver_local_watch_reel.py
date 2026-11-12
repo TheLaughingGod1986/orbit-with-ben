@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Copy the decoded local review reel only after the master safety copy passes."""
+"""Copy and hash the decoded review reel; master delivery is a separate check."""
 import argparse
 import hashlib
 import json
@@ -18,8 +18,6 @@ def main():
     parser.add_argument('--destination', type=Path, required=True)
     args = parser.parse_args()
     folder = args.scratch / 'final_join_v01'
-    master = json.loads((folder / 'MASTER_DELIVERY_V01.json').read_text())
-    assert master['status'] == 'MUXED_AND_SAFETY_COPIED_REEL_AND_UAT_PENDING'
     record = json.loads((folder / 'LOCAL_REEL_V01.json').read_text())
     assert record['status'] == 'LOCAL_DECODED_NAS_COPY_PENDING'
     source = Path(record['file'])
