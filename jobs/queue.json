@@ -235272,7 +235272,7 @@
     {
       "id": "J2691",
       "title": "Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "**Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657.** Read the three critiques in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nIMPORTANT (J2674): Verify both `codex.md` (J2688) and `cursor.md` (J2690) exist alongside `gemini.md` (J2689, commit bb596308a6) in `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/` before writing `DECISION.md` (if J2688 is still open and < 24 h old, set `after` to `J2688` and release). Scope is strictly J2657 two-arm test on `ojk-dfOpAmw` (Slot 1 current baseline `250c9980...` vs Slot 2 canonical Mini Package A `dbd52af0...`; Package B and description edits excluded).",
       "ref": "J2674",
@@ -235297,6 +235297,11 @@
           "at": "2026-11-12T09:07Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T17:51Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980)",
@@ -235304,16 +235309,7 @@
       "due": "2026-11-14T18:00:00Z",
       "taskKeys": [
         "OWB:019"
-      ],
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      ]
     },
     {
       "id": "J2692",
