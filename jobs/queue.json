@@ -237309,10 +237309,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T20:34Z",
+      "eta": "2026-11-13T00:34Z",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
       "result": "",
@@ -237361,6 +237361,11 @@
           "at": "2026-11-12T20:23Z",
           "by": "claude",
           "what": "reopened: Vercel paused the team (board answers 402 since about 19:20Z; Ben's screenshot 20:18 London). Ruling at the top: go live tonight at the new address with the settings the Mini holds (pages, data, Play); the three settings and ticks follow on Ben's approval"
+        },
+        {
+          "at": "2026-11-12T20:34Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Deploy and verify the board after production settings recovery is approved",
@@ -237368,7 +237373,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Get the Studio board back up tonight at a new Cloudflare address; ticks follow once Ben approves three settings",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T20:34Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2715",
