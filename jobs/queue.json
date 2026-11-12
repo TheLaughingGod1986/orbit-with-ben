@@ -237299,9 +237299,14 @@
           "at": "2026-11-12T18:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T18:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2720; inspecting J2529 state and Chief ruling 6831826573 on Batch 12 stop"
         }
       ],
-      "remaining_action": "Verify readiness: Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
+      "remaining_action": "Read J2529 status, HOS #180 ruling 6831826573, and ledger files",
       "kind": "review",
       "recheck_of": "J2529",
       "due": "2026-11-12T18:45:00+00:00",
@@ -237317,12 +237322,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-12T18:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2720; inspecting J2529 state and Chief ruling 6831826573 on Batch 12 stop"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
