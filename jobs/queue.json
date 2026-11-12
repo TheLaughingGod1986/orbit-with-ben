@@ -238953,15 +238953,20 @@
           "at": "2026-11-12T21:46Z",
           "by": "macbook-2",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-12T21:50Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Read the split dry-run code and PR 868, then fix destination symlinks so scratch owns the file before copy",
+      "remaining_action": "Fix destination symlink writes in studio_split and add the regression test",
       "kind": "assembly",
       "plain": "Keep the studio move rehearsal from changing original channel files",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-12T21:46Z",
+        "at": "2026-11-12T21:50Z",
         "by": "macbook-2"
       }
     }
