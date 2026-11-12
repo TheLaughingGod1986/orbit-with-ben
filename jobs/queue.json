@@ -237155,10 +237155,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T21:59Z",
-      "eta": "2026-11-12T22:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T15:20Z",
       "result": "",
@@ -237267,6 +237267,11 @@
           "at": "2026-11-12T22:18Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR870 passed CI, merged and pulled. Seven total tag repairs and three scheduled-caption fixes verified; all 27 future posts have hashtags. Remaining 84 original baselines and exact Mars trigger are unproven."
+        },
+        {
+          "at": "2026-11-12T22:18Z",
+          "by": "codex",
+          "what": "released: Safe stopping point at original 3/4. PR865 and PR870 merged and pulled. Seven total tag repairs verified; new c5AdqQsnnys repair confirmed by independent batch read. Three dH_yCRmzkMo scheduled captions repaired and ledger IDs saved; all 27 scheduled Buffer posts have hashtags. Do not repeat repairs. Current 162-video comparison: 78 baselines matched, 84 originals unavailable. Deleted git search found only foreign Orbit scaffold in HOS; preserve intentional retags. Exact original Mars trigger lacks upload-time snippet. Next work is original evidence recovery, not another generic live sweep. Full report docs/audits/J2711/REPORT.md and jobs/reviews/J2711/current_comparison.json. No Ben action."
         }
       ],
       "remaining_action": "Recover original package evidence for the remaining historical comparisons",
