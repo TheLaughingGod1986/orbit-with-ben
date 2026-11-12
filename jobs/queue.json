@@ -222899,9 +222899,14 @@
           "at": "2026-11-12T09:07Z",
           "by": "relay",
           "what": "condition verification queued: J2693"
+        },
+        {
+          "at": "2026-11-12T09:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T15:15:00Z"
         }
       ],
-      "remaining_action": "Redeploy the board site from main and check its live pages as soon as Ben says \"deploy\"; he is asked again in the 12 Nov morning summary",
+      "remaining_action": "Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 09:54Z on 12 Nov",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the board work when the studio repo is private",
@@ -222915,8 +222920,10 @@
       "hold": {
         "type": "input",
         "condition": "The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile",
-        "check_at": "2026-11-12T10:07:38+00:00",
-        "recheck_task": "J2693"
+        "check_at": "2026-11-12T15:15:00Z",
+        "last_recheck": "J2693",
+        "checked_at": "2026-11-12T09:54:36+00:00",
+        "checked_by": "codex"
       }
     },
     {
