@@ -194158,9 +194158,14 @@
           "at": "2026-11-12T11:22Z",
           "by": "codex",
           "what": "step 1 of 3 done: Existing PR542 checkpoint recovered; jar renderer incorrectly selects source 0–3.5s instead of approved 4–7.5s. Prior jar intermediate will be superseded."
+        },
+        {
+          "at": "2026-11-12T11:24Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR542 bad6c558 corrects jar source to 4–7.5s; 84 frames verified with original PTS/durations, 43 tests and check_all PASS. Assembly incomplete; no process running."
         }
       ],
-      "remaining_action": "Correcting and verifying the approved jar replacement interval",
+      "remaining_action": "Completing Franklin caption composites and the final verified master",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194169,9 +194174,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T11:22Z",
+        "at": "2026-11-12T11:24Z",
         "by": "codex",
-        "note": "Existing PR542 checkpoint recovered; jar renderer incorrectly selects source 0–3.5s instead of approved 4–7.5s. Prior ja"
+        "note": "PR542 bad6c558 corrects jar source to 4–7.5s; 84 frames verified with original PTS/durations, 43 tests and check_all PAS"
       }
     },
     {
