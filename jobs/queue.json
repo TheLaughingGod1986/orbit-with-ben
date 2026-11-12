@@ -234279,9 +234279,14 @@
           "at": "2026-11-12T10:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T10:12Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J2684 verification: replacing default_plan with 3-step verification plan (1: check J0912/J2339 and HOS desk state; 2: verify whether J2339 watch-and-listen check and Chief PASS are complete; 3: update J0912 wait/recheck and finish J2684)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J2339 continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3), then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "Check J0912 and J2339 history, HOS desk #180, and HOS 008 Short A v04 QA status",
       "kind": "review",
       "recheck_of": "J0912",
       "due": "2026-11-12T09:21:42+00:00",
@@ -234298,11 +234303,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T10:11Z",
+        "at": "2026-11-12T10:12Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2684 verification: replacing default_plan with 3-step verification plan (1: check J0912/J2339 and HOS desk sta"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2685",
