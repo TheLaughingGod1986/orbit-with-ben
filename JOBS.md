@@ -84,6 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2696 | mini | open | – | – | chief · Chief: resolve 003 thumbs orphan-review |  |
 | J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
 | J2698 | mini | open | – | – | chief · Chief: resolve 013 thumbs orphan-review |  |
+| J2699 | mini | open | – | – | 008 edit · assembly · HOS 008 Short A v04: private final-watch handoff after J2684 |  |
 
 Recently finished:
 
