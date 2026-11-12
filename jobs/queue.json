@@ -237117,9 +237117,14 @@
           "at": "2026-11-12T19:16Z",
           "by": "codex",
           "what": "step 1 of 5 done: Adapter contract tests pass; 111 board tests passed with 4 skips; Wrangler login confirmed. Production secret recovery rejected by automatic review."
+        },
+        {
+          "at": "2026-11-12T19:18Z",
+          "by": "codex",
+          "what": "step 1 of 5 done: Implementation committed as 4c9e273669, PR #858. Local runtime and security checks pass; address unchanged. Recovery of three missing production settings rejected by automatic review."
         }
       ],
-      "remaining_action": "Finish the migration PR; deployment awaits approval to recover three missing settings",
+      "remaining_action": "Deploy and verify the board after production settings recovery is approved",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -237128,9 +237133,9 @@
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-12T19:16Z",
+        "at": "2026-11-12T19:18Z",
         "by": "codex",
-        "note": "Adapter contract tests pass; 111 board tests passed with 4 skips; Wrangler login confirmed. Production secret recovery r"
+        "note": "Implementation committed as 4c9e273669, PR #858. Local runtime and security checks pass; address unchanged. Recovery of "
       }
     },
     {
