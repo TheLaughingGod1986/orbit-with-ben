@@ -232128,9 +232128,14 @@
           "at": "2026-11-12T03:05Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T03:05Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Generate and join the two approved music cues, then arrange a listening review",
+      "remaining_action": "Verify approved score scope and live music billing before generation",
       "kind": "assembly",
       "plain": "Creating original music for the Moon and gravity film",
       "mini_only": true,
@@ -232138,10 +232143,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-12T03:05Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2665",
