@@ -17,6 +17,7 @@ def main():
     p.add_argument('--scratch', type=Path, required=True)
     p.add_argument('--destination', type=Path, required=True)
     p.add_argument('--seconds-budget', type=int, default=900)
+    p.add_argument('--copy-only', action='store_true', help='Checkpoint the complete copy; full NAS hash remains required')
     a = p.parse_args()
     s = a.scratch / 'final_join_v01'
     record = json.loads((s / 'LOCAL_MASTER_CANDIDATE_V01.json').read_text())
@@ -26,6 +27,12 @@ def main():
     store = Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01')
     assert destination.resolve().is_relative_to(store.resolve())
     assert source.stat().st_size == record['bytes']
+    checkpoint = s / 'MASTER_COPY_PREFIX_CHECKPOINT_V01.json'
+    def remember_prefix():
+        stat = destination.stat()
+        checkpoint.write_text(json.dumps(dict(source_sha256=record['sha256'],
+            destination=str(destination), bytes=stat.st_size, mtime_ns=stat.st_mtime_ns,
+            status='COPY_PROVENANCE_ONLY_FULL_DESTINATION_HASH_REQUIRED'), indent=2) + '\n')
     deadline = time.monotonic() + a.seconds_budget
     def check_time():
         if time.monotonic() >= deadline:
@@ -40,7 +47,14 @@ def main():
     assert digest(source) == record['sha256']
     size = destination.stat().st_size if destination.exists() else 0
     assert size <= record['bytes']
-    if size:
+    known = json.loads(checkpoint.read_text()) if checkpoint.exists() else {}
+    stat = destination.stat() if destination.exists() else None
+    known_prefix = bool(stat and known.get('source_sha256') == record['sha256']
+                        and known.get('destination') == str(destination)
+                        and known.get('bytes') == size and known.get('mtime_ns') == stat.st_mtime_ns)
+    # A complete destination is checked by its full SHA-256 below. Re-reading it
+    # once for a byte comparison and again for hashing wastes an entire NAS pass.
+    if size and size < record['bytes'] and not known_prefix:
         with source.open('rb') as left, destination.open('rb') as right:
             remaining = size
             while remaining:
@@ -49,11 +63,19 @@ def main():
                 assert left.read(length) == right.read(length), 'NAS prefix mismatch; preserve and investigate'
                 remaining -= length
     print('Existing prefix verified', size, flush=True)
-    with source.open('rb') as left, destination.open('ab' if size else 'xb') as right:
-        left.seek(size)
-        while chunk := left.read(8 * 1024 * 1024):
-            check_time()
-            right.write(chunk)
+    try:
+        with source.open('rb') as left, destination.open('ab' if size else 'xb') as right:
+            left.seek(size)
+            while chunk := left.read(8 * 1024 * 1024):
+                check_time()
+                right.write(chunk)
+    except TimeoutError:
+        remember_prefix()
+        raise
+    remember_prefix()
+    if a.copy_only:
+        print('Copy complete; full destination hash and delivery record still required', flush=True)
+        return
     assert digest(destination) == record['sha256']
     # Verify the mux retained exactly the already checked encoded packet data.
     import mux_verified_master as mux
