@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2692 | mini | open (after J2691) | – | – | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
-| J2707 | any | open (after J2710) | – | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
+| J2707 | any | claimed | macbook | 2026-11-12T19:53Z | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 | J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
