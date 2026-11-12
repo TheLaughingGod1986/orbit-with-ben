@@ -217281,13 +217281,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T00:12Z",
-      "eta": "2026-11-12T02:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
-      "result": "",
+      "result": "Waiting for: J2658 Gemini ending-only audio and moving-video review must report no failures before the conditional Chief KEEP permits v04 watch-folder delivery and awaits. Candidate and waveform are SHA-verified in studio-live ending_v04_delivery_20261112; PR 834 remains Chief-owned.",
       "history": [
         {
           "at": "2026-11-10T03:09Z",
@@ -217598,9 +217598,19 @@
           "at": "2026-11-12T00:19Z",
           "by": "codex",
           "what": "step 2 of 3 done: v04 built, voice and all six automated gates pass; 35 files SHA-verified on NAS. Ending review queued as J2658. PR 834 updated without force push; no upload."
+        },
+        {
+          "at": "2026-11-12T00:19Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J2658 Gemini ending-only audio and moving-video review must report no failures before the conditional Chief KEEP permits v04 watch-folder delivery and awaits. Candidate and waveform are SHA-verified in studio-live ending_v04_delivery_20261112; PR 834 remains Chief-owned."
+        },
+        {
+          "at": "2026-11-12T00:19Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T01:00:00Z"
         }
       ],
-      "remaining_action": "Wait for Gemini to check the ending, then deliver the corrected Supermoon cut for Ben’s watch",
+      "remaining_action": "Gemini checks the Supermoon ending before it goes back to Ben",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -217625,6 +217635,11 @@
         "at": "2026-11-12T00:19Z",
         "by": "codex",
         "note": "v04 built, voice and all six automated gates pass; 35 files SHA-verified on NAS. Ending review queued as J2658. PR 834 u"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J2658 Gemini ending-only audio and moving-video review must report no failures before the conditional Chief KEEP permits v04 watch-folder delivery and awaits. Candidate and waveform are SHA-verified in studio-live ending_v04_delivery_20261112; PR 834 remains Chief-owned.",
+        "check_at": "2026-11-12T01:00:00Z"
       }
     },
     {
