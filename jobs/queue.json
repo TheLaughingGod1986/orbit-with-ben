@@ -222321,10 +222321,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-12T08:12Z",
-      "eta": "2026-11-12T13:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -222563,6 +222563,11 @@
           "at": "2026-11-12T08:19Z",
           "by": "gemini",
           "what": "step 3 of 14 done: Progress restored to 3/14 (15/66 rows); pre-Batch-04 live balance 8,940 verified (headroom 3,040 >= 3,000, 0 pending); Batch 04 (P2:05..P2:08b) launched detached in tmux hos013-pass1 (PID 18406, P02_05_tortoise_overboard_t1.png 0-credit still saved)"
+        },
+        {
+          "at": "2026-11-12T08:19Z",
+          "by": "gemini",
+          "what": "released: batch 4 running detached (tmux hos013-pass1): /Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.log, /Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.done"
         }
       ],
       "remaining_action": "Read Batch 04 completion (.done + receipt), verify post-batch balance (8940->8440) and 0.5s sheets, then launch Batch 05 under --floor 3000 --other-reservations 0",
