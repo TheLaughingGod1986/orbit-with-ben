@@ -230454,10 +230454,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T06:00Z",
+      "eta": "2026-11-12T07:30Z",
       "created_by": "grok",
       "created_at": "2026-11-11T16:29Z",
       "result": "",
@@ -230466,13 +230466,26 @@
           "at": "2026-11-11T16:29Z",
           "by": "grok",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-12T06:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add the stale-reply refuse in the desk post tool, with tests, on a branch from main.",
       "for": "codex",
       "kind": "assembly",
       "plain": "Stop a Chief desk reply that answers an older note after a newer Chief note on the same film and stage, unless it names the newer note.",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T06:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2635",
