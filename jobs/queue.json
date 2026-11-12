@@ -234001,13 +234001,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T10:58Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T07:52Z",
-      "result": "Build and verification complete; explicit J2456/J2676 review handover is J2695. PR #848 contains builder and hashes; exact images and phone sheet are on the Mini at /Users/benjaminoats/_desk/j2676/designs/. No release or Studio test before review.",
+      "result": "Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes.",
       "history": [
         {
           "at": "2026-11-12T07:52Z",
@@ -234043,9 +234043,14 @@
           "at": "2026-11-12T11:05Z",
           "by": "codex",
           "what": "blocked: Build and verification complete; explicit J2456/J2676 review handover is J2695. PR #848 contains builder and hashes; exact images and phone sheet are on the Mini at /Users/benjaminoats/_desk/j2676/designs/. No release or Studio test before review."
+        },
+        {
+          "at": "2026-11-12T12:34Z",
+          "by": "codex",
+          "what": "done under J2701 explicit parent/stage-resolution scope: Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes."
         }
       ],
-      "remaining_action": "Review the rebuilt Moon, neutron star and alien worlds thumbnail alternatives before a separate Studio test job",
+      "remaining_action": "",
       "for": "codex",
       "kind": "thumb",
       "plain": "Redraw three new thumbnail ideas so they say the right thing, then check they read at phone size",
@@ -234061,11 +234066,7 @@
         "OWB:007",
         "OWB:003"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Build and verification complete; explicit J2456/J2676 review handover is J2695. PR #848 contains builder and hashes; exact images and phone sheet are on the Mini at /Users/benjaminoats/_desk/j2676/designs/. No release or Studio test before review.",
-        "check_at": "2026-11-12T17:05:20+00:00"
-      }
+      "done_ref": "ce8f9cac38"
     },
     {
       "id": "J2677",
@@ -235322,28 +235323,34 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "done",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T11:07Z",
-      "result": "",
+      "result": "Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes.",
       "history": [
         {
           "at": "2026-11-12T11:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:34Z",
+          "by": "codex",
+          "what": "done under J2701 explicit parent/stage-resolution scope: Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes."
         }
       ],
-      "remaining_action": "Chief resolves 003 thumbs handoff and records the next owner/action",
+      "remaining_action": "",
       "kind": "chief",
       "handoff": {
         "film": "003",
         "stage": "thumbs",
         "kind": "orphan-review",
         "signature": "bfb23cbba21d0de12864"
-      }
+      },
+      "done_ref": "ce8f9cac38"
     },
     {
       "id": "J2697",
@@ -235356,28 +235363,34 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "done",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T11:07Z",
-      "result": "",
+      "result": "Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes.",
       "history": [
         {
           "at": "2026-11-12T11:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:34Z",
+          "by": "codex",
+          "what": "done under J2701 explicit parent/stage-resolution scope: Resolved within assigned Chief job J2701: J2695 KEEP accepted; exact B_v02 approved in ce8f9cac38; PR 848 merged 178d82bce3; thumbnail stages done; separate fresh-read Studio successor J2702. No Studio changes."
         }
       ],
-      "remaining_action": "Chief resolves 007 thumbs handoff and records the next owner/action",
+      "remaining_action": "",
       "kind": "chief",
       "handoff": {
         "film": "007",
         "stage": "thumbs",
         "kind": "orphan-review",
         "signature": "b1927e5afdeb8793794a"
-      }
+      },
+      "done_ref": "ce8f9cac38"
     },
     {
       "id": "J2698",
@@ -235709,12 +235722,22 @@
           "at": "2026-11-12T12:32Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:34Z",
+          "by": "codex",
+          "what": "J2701 handoff links all three approved thumbnail films"
         }
       ],
       "remaining_action": "Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks",
       "kind": "studio",
       "plain": "Test the approved Moon, neutron star and alien worlds thumbnails where no test is already set",
-      "mini_only": true
+      "mini_only": true,
+      "taskKeys": [
+        "OWB:013",
+        "OWB:007",
+        "OWB:003"
+      ]
     }
   ],
   "focus": [
