@@ -232760,13 +232760,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T22:32Z",
-      "eta": "2026-11-13T00:32Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "",
+      "result": "Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker.",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -232892,6 +232892,11 @@
           "at": "2026-11-12T22:36Z",
           "by": "codex",
           "what": "step 2 of 3 done: Separate OWB PR 871 (231a20e7fd), six regression tests PASS; unchanged v03c CSV clears false errors under proposed checker only. J2739 owns adoption review. Film remains FIX."
+        },
+        {
+          "at": "2026-11-12T22:37Z",
+          "by": "codex",
+          "what": "blocked: Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker."
         }
       ],
       "remaining_action": "Review the chapter timing-check fix, then finish the picture plan and new rough",
@@ -232908,7 +232913,12 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Parked for separate checker review J2739: OWB PR 871 at 231a20e7fd fixes demonstrated current-card breath defect. HOS PR 551 at 8872452a records unchanged v03c readback and seven checks. Production gate remains FAIL until reviewed correction is adopted; then editorial fixes, zero-credit renders, new rough and phone sheets remain. No Ben watch or credit blocker.",
+        "check_at": "2026-11-13T04:37:20+00:00"
+      }
     },
     {
       "id": "J2653",
