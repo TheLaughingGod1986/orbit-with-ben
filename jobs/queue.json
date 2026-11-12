@@ -222407,10 +222407,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T12:47Z",
+      "eta": "2026-11-12T17:47Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -222704,6 +222704,11 @@
           "at": "2026-11-12T11:19Z",
           "by": "gemini",
           "what": "released: batch 6 running detached (tmux hos013-pass1): /Users/benjaminoats/_desk/logs/J2529-batch06-20261112T1118Z.log, /Users/benjaminoats/_desk/logs/J2529-batch06-20261112T1118Z.done"
+        },
+        {
+          "at": "2026-11-12T12:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read Batch 06 completion (.done + receipt), verify post-batch balance (7940->7440) and 0.5s sheets, then launch Batch 07 under --floor 3000 --other-reservations 0",
