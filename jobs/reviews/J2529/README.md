@@ -190,3 +190,29 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P4:07a_wallace_writes_hut` | `P04_07a_wallace_writes_hut_t1.mp4` | `cf336394e0f48cc9f1ccabd747cd98acdf42eedf7cd34e8929dfa073f1d01a59` | `c015c7bb4420201415866769f6ba054ed0dd73d93a4fce1600e1cc24c70b95dc` | `f9e05430b0c934ba724fd1ca171bfb92d46fd234492beb21eb73f99f6a50b6f2` | `6,290 → 6,190` | `PENDING_REVIEW` (`keep: false`) |
 | `P4:08_midpoint_twist_packet` | `P04_08_midpoint_twist_packet_t1.mp4` | `bad6741aececb51d2d77db09c7a633925375537c9cc2428a9fcb6bc4dcda57df` | `4739310cda94d99f196c4c621caec76ab40102fcecce3e163a24bf6039036f7b` | `800d0ed382023612534812eeafd2bd8f39873b02cc3f863478728d5a92718c5a` | `6,190 → 6,090` | `PENDING_REVIEW` (`keep: false`) |
 | `P4:09a_darwin_reads_wallace` | `P04_09a_darwin_reads_wallace_t1.mp4` | `d167fdaa96d52e661a861052daea49d84a59ce17bfb03ded0a6591c861598fc2` | `ed4dcee94c18822da008d8226161701358b35fc8171d44521c64ea5e97f38a50` | `86971ea385e1a8137469d1b56788ec175916f531cbb28340f0ec20df07d1ab0c` | `6,090 → 5,990` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 10 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T16:51Z` – `17:07Z`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch10-20261112T1651Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch10-20261112T1651Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_10_RECEIPT.json` (`archive_v01_pass1/batch-8df42d99e77f.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_10_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`, review branch `review/013-pass1-sheets` `2704fc98`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `5,000 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `5,490` re-verified live on CDP `:9222`):** `5,990 → 5,890 → 5,790 → 5,690 → 5,590 → 5,490` (`0` pending charges; remaining `HOS013_PASS1` reservation `1,600`; headroom `5,490 - 1,600 - 800 = 3,090 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P4:09b_smashed_letter_pen` | `P04_09b_smashed_letter_pen_t1.mp4` | `dacb60bd68a5c892d5f9fd5e0e2e36f9e2a4866d7bbe933bfbcf8ae92ed8b89a` | `4fcc6595578042967e61b469d4b5ffe611a096c56c318c6acdde359da7b76a2e` | `2794962ba9b0d9d524d1830ed7c521aceafabdc8602c0e8fd17d3108b62b154a` | `5,990 → 5,890` | `PENDING_REVIEW` (`keep: false`) |
+| `P4:10_fairness_25_june` | `P04_10_fairness_25_june_t1.mp4` | `a3008b0a20514a8a273fb7492c55409ec5d9a0eb145f2d5400e828d7b1d6f841` | `b088c6ee972abfb385ffbbe21d36df6c2fe5dacbe146817c56c83faf4d17f39f` | `d7d42f5e5bd5ff75726c7d8560472cd37747ba0a72fcddbee69383b755afafc0` | `5,890 → 5,790` | `PENDING_REVIEW` (`keep: false`) |
+| `P4:11_down_house_grief` | `P04_11_down_house_grief_t1.mp4` | `797eaadce55c54113c0c56ada50473b85e49c9fbe810ef8d3e7ebf8dbea058dc` | `56f808e833a6a1295402c92f092a917de26e0d8aedcf02a7774825eae4b4046c` | `3c4e284649863daf31548ea965855d1007fbc805a5dd09754b67f58da486a6d3` | `5,790 → 5,690` | `PENDING_REVIEW` (`keep: false`) |
+| `P4:12_lyell_hooker_bundle` | `P04_12_lyell_hooker_bundle_t1.mp4` | `820c1433ca609245b150409f709c287d6c25a58770ad962b6ea22768ff3a492a` | `696d7eb39e0f083c174125456ed882bcab881ce7a0082be26f8c88f53a6661b1` | `80fefc8d6f78a40dded9055bec3504b7c1170f2b726afb308df1627483db8d24` | `5,690 → 5,590` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:02a_linnean_reading` | `P05_02a_linnean_reading_t1.mp4` | `dc7de232f76b5bde854dd1cb512cf2a868349fa81f9126e6d0ccfda39b9911ea` | `91d742b73943ef1cfe144f418b4a5b737600201025e6e103eaac2441bf0a6b6f` | `840c96180b6d274814670bbc18632e1ab5fb65f837a3001c1669b80e4eadb58a` | `5,590 → 5,490` | `PENDING_REVIEW` (`keep: false`) |
+
+## Chief Review State (`REVIEW_STATE.json`)
+
+- **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
+- **Rows 16–20 (`6819995428` / `6819976359`):** `keep: true` on `16, 17, 18, 19, 20` (row `19` trimmed `0.00–4.50 s`; row `20` used `0.00–6.00 s`).
+- **Rows 21–25 (`6822411223` / `6822483718`):** `keep: true` on `21, 22, 23, 25` (row `22` retime `7.917→8.00 s`, no freeze; row `25` clip `4.00–7.90 s`); `RETAKE` on `24`.
+- **Rows 26–40 (`6829662956`):** `keep: true` on `26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40` as cut; `RETAKE` on `28` (`P3:05a_chicks_deep_beaks`).
+- **Rows 41–45 (`6830257530`, closing `6830137619`):** `keep: true` on `41, 42, 43, 44, 45` as cut (`2.25–3.75 s` strip skipped; row `45` off retake batch).
+- **Held retake batch after pass 1:** rows `3, 10, 24, 28`, reservation `400` Flow credits under `--floor 3000` (`£0` cash).

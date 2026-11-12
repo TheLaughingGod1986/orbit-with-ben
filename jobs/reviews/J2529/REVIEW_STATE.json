@@ -1,0 +1,1097 @@
+{
+  "job_id": "J2529",
+  "film": "HOS:013",
+  "reservation": "HOS013_PASS1",
+  "updated_at": "2026-11-12T17:17:00Z",
+  "runner_ledger_note": "Raw pass-1 runner ledger (~/_desk/state/flow/hos013-pass1/ledger.jsonl) and raw BATCH_NN_RECEIPT.json stay PENDING_REVIEW / keep:false per runner guard contract; Chief rulings are recorded here.",
+  "summary": {
+    "minted_rows": 50,
+    "ruled_rows": 45,
+    "keep_count": 41,
+    "keep_rows": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "retake_count": 4,
+    "retake_rows": [
+      3,
+      10,
+      24,
+      28
+    ],
+    "retake_row_ids": [
+      "P1:03a_unlabelled_birds",
+      "P1:07_darwin_1837_desk",
+      "P3:02a_malthus_lamplight",
+      "P3:05a_chicks_deep_beaks"
+    ],
+    "retake_reservation_credits": 400,
+    "retake_timing": "Held until after pass 1 (Batches 01-14) under runner guards and >=3,000 Flow credit headroom floor; \u00a30 cash.",
+    "pending_review_rows": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ]
+  },
+  "rulings": [
+    {
+      "comment_id": 6815870258,
+      "batches": [
+        1,
+        2,
+        3
+      ],
+      "rows": "1-15",
+      "keep": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "retake": [
+        3,
+        10
+      ]
+    },
+    {
+      "comment_id": 6819995428,
+      "batches": [
+        4
+      ],
+      "rows": "16-20",
+      "keep": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "retake": [],
+      "note": "6819976359 in force: row 19 trimmed 0.00-4.50 s, row 20 used 0.00-6.00 s"
+    },
+    {
+      "comment_id": 6822411223,
+      "batches": [
+        5
+      ],
+      "rows": "21-25",
+      "keep": [
+        21,
+        22,
+        23,
+        25
+      ],
+      "retake": [
+        24
+      ],
+      "note": "Confirmed by 6822483718: row 22 retime 7.917->8.00 s (x1.0105), no freeze; row 25 clip 4.00-7.90 s"
+    },
+    {
+      "comment_id": 6829662956,
+      "batches": [
+        6,
+        7,
+        8
+      ],
+      "rows": "26-40",
+      "keep": [
+        26,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "retake": [
+        28
+      ],
+      "note": "Retake batch raised 300 -> 400 credits (rows 3, 10, 24, 28)"
+    },
+    {
+      "comment_id": 6830257530,
+      "batches": [
+        9
+      ],
+      "rows": "41-45",
+      "keep": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "retake": [],
+      "note": "Closes 6830137619 hold on row 45; 2.25-3.75 s strip skipped; retake reservation stays 400"
+    }
+  ],
+  "rows": [
+    {
+      "n": 1,
+      "batch": 1,
+      "row_id": "P1:01_study_beaks",
+      "take": 1,
+      "clip_sha256": "37a68217244b397eef0cdcbdfb0dfbb07fe7750f200134c5c400790e724c35c3",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        3.8
+      ],
+      "film_window_s": [
+        0.0,
+        3.8
+      ]
+    },
+    {
+      "n": 2,
+      "batch": 1,
+      "row_id": "P1:02_drawer_lock",
+      "take": 1,
+      "clip_sha256": "60dc3d6c432cc801205c785a4a7654d32327bdedfd3c6d84cf0d93bc0a90c12d",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        4.1
+      ],
+      "film_window_s": [
+        3.8,
+        7.9
+      ]
+    },
+    {
+      "n": 3,
+      "batch": 1,
+      "row_id": "P1:03a_unlabelled_birds",
+      "take": 1,
+      "clip_sha256": "ab1982700cf5c959348716060fa63037fe76d7e93b29db5483c46a0a7b1112e9",
+      "keep": false,
+      "status": "RETAKE",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        4.0
+      ],
+      "film_window_s": [
+        7.9,
+        11.9
+      ],
+      "note": "Retake in held pass-1 retake batch after Batches 01-14 under >=3,000 floor."
+    },
+    {
+      "n": 4,
+      "batch": 1,
+      "row_id": "P1:03b_malay_packet",
+      "take": 1,
+      "clip_sha256": "3545dfee7de7653831c33da0c0e57d92cac57da78cdc62151d1c4a841398756b",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        4.12
+      ],
+      "film_window_s": [
+        11.9,
+        16.02
+      ]
+    },
+    {
+      "n": 5,
+      "batch": 1,
+      "row_id": "P1:04a_packet_seal",
+      "take": 1,
+      "clip_sha256": "594d1e30140c7d3f9a6d60a565af38ba327521659bc8d7de2ec6a050e510d07f",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        2.98
+      ],
+      "film_window_s": [
+        16.02,
+        19.0
+      ]
+    },
+    {
+      "n": 6,
+      "batch": 2,
+      "row_id": "P1:04b_drawer_unlock",
+      "take": 1,
+      "clip_sha256": "90963509575e23d5cc0f5ca6ea8541b75e5c21fb8ca7fbb06d4ee6772f4064b6",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        2.64
+      ],
+      "film_window_s": [
+        19.0,
+        21.64
+      ]
+    },
+    {
+      "n": 7,
+      "batch": 2,
+      "row_id": "P1:05a_museum_cases",
+      "take": 1,
+      "clip_sha256": "36dc0c611c7ffa4dc1b36f093fca8f8d42ef88bc5101b238d1364ef2bca690e9",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        4.0
+      ],
+      "film_window_s": [
+        21.64,
+        25.64
+      ]
+    },
+    {
+      "n": 8,
+      "batch": 2,
+      "row_id": "P1:05b_museum_plaques",
+      "take": 1,
+      "clip_sha256": "e1b4148a8fdb466ea7ed74b214d9b417a4d352ca5358e3541919660276bd73e2",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        3.58
+      ],
+      "film_window_s": [
+        25.64,
+        29.22
+      ]
+    },
+    {
+      "n": 9,
+      "batch": 2,
+      "row_id": "P1:06_padlock_shut",
+      "take": 1,
+      "clip_sha256": "c4d2efca6ce54ea72f2610869d00d5a08c794adc601ab9a8e735564ce5fa93ad",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        4.22
+      ],
+      "film_window_s": [
+        29.22,
+        33.44
+      ]
+    },
+    {
+      "n": 10,
+      "batch": 2,
+      "row_id": "P1:07_darwin_1837_desk",
+      "take": 1,
+      "clip_sha256": "944902b89eaa7e78bd45a79307bfe337729d55e8cff9cf45cc25b5f24bdbb863",
+      "keep": false,
+      "status": "RETAKE",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        5.96
+      ],
+      "film_window_s": [
+        33.44,
+        39.4
+      ],
+      "note": "Retake in held pass-1 retake batch after Batches 01-14 under >=3,000 floor."
+    },
+    {
+      "n": 11,
+      "batch": 3,
+      "row_id": "P1:09_wallace_hut_split",
+      "take": 1,
+      "clip_sha256": "64ae099145dfa1c34279a8f1933dcce5cd870e7fc002bc9e1b144343d54882f0",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        7.78
+      ],
+      "film_window_s": [
+        54.3,
+        62.08
+      ]
+    },
+    {
+      "n": 12,
+      "batch": 3,
+      "row_id": "P1:11_beagle_cabin_explorer",
+      "take": 1,
+      "clip_sha256": "923bed9d7cd90e2529405d0ed87b4a769f1037efaa531d45d95f4da3f69b9f10",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        7.82
+      ],
+      "film_window_s": [
+        67.68,
+        75.5
+      ]
+    },
+    {
+      "n": 13,
+      "batch": 3,
+      "row_id": "P2:02_galapagos_beach_myth",
+      "take": 1,
+      "clip_sha256": "d3b2c39de4cc1a47140d353d33185993cada504d5a353a5d38669672b1a2aab7",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        7.22
+      ],
+      "film_window_s": [
+        77.0,
+        84.22
+      ]
+    },
+    {
+      "n": 14,
+      "batch": 3,
+      "row_id": "P2:03_unlabelled_bagging",
+      "take": 1,
+      "clip_sha256": "8813d267291dff799d545a15cb32c684d8b0545e4be06511d077a951e9fe52ca",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        7.96
+      ],
+      "film_window_s": [
+        84.22,
+        92.18
+      ]
+    },
+    {
+      "n": 15,
+      "batch": 3,
+      "row_id": "P2:04_blank_tags_row",
+      "take": 1,
+      "clip_sha256": "fb29ad16a297f8bb32eb06eb17099f64b6927a6d38c20a8dc734686b90005fd6",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6815870258,
+      "clip_window_s": [
+        0.0,
+        5.22
+      ],
+      "film_window_s": [
+        92.18,
+        97.4
+      ]
+    },
+    {
+      "n": 16,
+      "batch": 4,
+      "row_id": "P2:05_tortoise_overboard",
+      "take": 1,
+      "clip_sha256": "15dec197839c6d4314a7b0bdd8abfc5dee3316891c5fc95b1f3a164202be0b6a",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6819995428,
+      "clip_window_s": [
+        0.0,
+        7.16
+      ],
+      "film_window_s": [
+        97.4,
+        104.56
+      ]
+    },
+    {
+      "n": 17,
+      "batch": 4,
+      "row_id": "P2:06a_lawson_jetty",
+      "take": 1,
+      "clip_sha256": "3ad6f3b95a57e1804a58d8b5f3f5d47731283c98776ad905bb5e7e1b513989d9",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6819995428,
+      "clip_window_s": [
+        0.0,
+        5.44
+      ],
+      "film_window_s": [
+        104.56,
+        110.0
+      ]
+    },
+    {
+      "n": 18,
+      "batch": 4,
+      "row_id": "P2:07_darwin_notebook_wait",
+      "take": 1,
+      "clip_sha256": "a897c9984f49800a59bb991d6461f3883df6a62a7f1bf11249f5c441a8a89ecd",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6819995428,
+      "clip_window_s": [
+        0.0,
+        6.02
+      ],
+      "film_window_s": [
+        114.86,
+        120.88
+      ]
+    },
+    {
+      "n": 19,
+      "batch": 4,
+      "row_id": "P2:08a_gould_sorting",
+      "take": 1,
+      "clip_sha256": "fa5f78e0cd1a9cbe4da35aa388868ec416ee320d27eaed5c06ea68d130117cd5",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6819995428,
+      "clip_window_s": [
+        0.0,
+        4.5
+      ],
+      "film_window_s": [
+        120.88,
+        127.1
+      ],
+      "note": "Trimmed to 0.00-4.50 s per 6819976359 / 6819995428; no retake."
+    },
+    {
+      "n": 20,
+      "batch": 4,
+      "row_id": "P2:08b_gould_skins_closeup",
+      "take": 1,
+      "clip_sha256": "47fc7ca5445b772b4e1f2201fd5fb5956e1de86bc3d02e4a4f4802473e011318",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6819995428,
+      "clip_window_s": [
+        0.0,
+        6.0
+      ],
+      "film_window_s": [
+        127.1,
+        131.4
+      ],
+      "note": "Used window 0.00-6.00 s starting from row 19 cut at 4.50 s per 6819976359 / 6819995428."
+    },
+    {
+      "n": 21,
+      "batch": 5,
+      "row_id": "P2:10a_explorer_shipmates",
+      "take": 1,
+      "clip_sha256": "4c72bdc24dd89a9cfedbc91caa2224b63a3d8231691aea6d597e1adfb4001fce",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6822411223,
+      "clip_window_s": [
+        0.0,
+        6.18
+      ],
+      "film_window_s": [
+        143.72,
+        149.9
+      ]
+    },
+    {
+      "n": 22,
+      "batch": 5,
+      "row_id": "P2:11_island_split_vision",
+      "take": 1,
+      "clip_sha256": "4d0ae5f4484b699038efe4f864fc3314a1b55a0d28b7ad12d28da7e463c7444f",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6822483718,
+      "clip_window_s": [
+        0.0,
+        7.917
+      ],
+      "film_window_s": [
+        153.2,
+        161.2
+      ],
+      "note": "retime 7.917->8.00 s (x1.0105), no freeze"
+    },
+    {
+      "n": 23,
+      "batch": 5,
+      "row_id": "P2:12b_tree_question",
+      "take": 1,
+      "clip_sha256": "7958d7a6ccde9113b76eb7228f616915f41544a3474c37b80de6893a08809269",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6822411223,
+      "clip_window_s": [
+        0.0,
+        4.48
+      ],
+      "film_window_s": [
+        166.6,
+        171.08
+      ]
+    },
+    {
+      "n": 24,
+      "batch": 5,
+      "row_id": "P3:02a_malthus_lamplight",
+      "take": 1,
+      "clip_sha256": "20f4cb58fab0fdca4e01fee5a530ad924263713bacf1bcaaa523df3d1657a486",
+      "keep": false,
+      "status": "RETAKE",
+      "ruling_comment": 6822411223,
+      "clip_window_s": [
+        0.0,
+        6.22
+      ],
+      "film_window_s": [
+        172.58,
+        178.8
+      ],
+      "note": "Flame climbs clear of top of chimney glass at 4.5-5.0 s inside 6.22 s slot; same locked prompt, one Quality take."
+    },
+    {
+      "n": 25,
+      "batch": 5,
+      "row_id": "P3:02b_notebook_d_open",
+      "take": 1,
+      "clip_sha256": "5ede492e92cdbbf2e5b434ac6994033b60cbce42db14e5563905162b7d17a3d7",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6822305911,
+      "clip_window_s": [
+        4.0,
+        7.9
+      ],
+      "film_window_s": [
+        178.8,
+        182.7
+      ],
+      "note": "Move clip in-point to 4.00 s and use clip 4.00-7.90 s; film window unchanged [178.80, 182.70]."
+    },
+    {
+      "n": 26,
+      "batch": 6,
+      "row_id": "P3:04a_drought_island_seeds",
+      "take": 1,
+      "clip_sha256": "a943ffaaa083d456c32097713f2a58106a69d149df94e89fe9db92f2fb96e56b",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.2
+      ],
+      "film_window_s": [
+        192.1,
+        197.3
+      ]
+    },
+    {
+      "n": 27,
+      "batch": 6,
+      "row_id": "P3:04b_finch_cracks_seed",
+      "take": 1,
+      "clip_sha256": "575014b1213eeac34e99e88eb33b06243208fc25934a8b5d54f4d87494599336",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        4.66
+      ],
+      "film_window_s": [
+        197.3,
+        201.96
+      ]
+    },
+    {
+      "n": 28,
+      "batch": 6,
+      "row_id": "P3:05a_chicks_deep_beaks",
+      "take": 1,
+      "clip_sha256": "4425168f215dbb043e98fc8cacf793efd9464a98fdcad3938ec6f436de78424c",
+      "keep": false,
+      "status": "RETAKE",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        4.54
+      ],
+      "film_window_s": [
+        201.96,
+        206.5
+      ],
+      "note": "Parent finch beak shifts dark grey (0.0-2.0 s) to bright orange (3.0-4.5 s) with head/body morph inside 0-4.54 s window. Retake brief: same locked prompt and start still, parent finch beak dark/black for whole clip, no change in size or colour."
+    },
+    {
+      "n": 29,
+      "batch": 6,
+      "row_id": "P3:05b_finches_next_generation",
+      "take": 1,
+      "clip_sha256": "0a62a9536568604611f05d2537c0e9f3aeba242f04c04abc5fb1835a7895dff4",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.26
+      ],
+      "film_window_s": [
+        206.5,
+        211.76
+      ]
+    },
+    {
+      "n": 30,
+      "batch": 6,
+      "row_id": "P3:07a_darwin_afraid_window",
+      "take": 1,
+      "clip_sha256": "95a93ef7c184718db5ec595478cd8cd002e3d1915848d82bdcff6b4fff60d779",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        4.58
+      ],
+      "film_window_s": [
+        219.32,
+        223.9
+      ]
+    },
+    {
+      "n": 31,
+      "batch": 7,
+      "row_id": "P3:07b_confessing_murder_letter",
+      "take": 1,
+      "clip_sha256": "8b7e15d52cab8480be9a6d3ceb37e845cb4d6be84ee5cc832522f7dc79c5bdb3",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.44
+      ],
+      "film_window_s": [
+        223.9,
+        229.34
+      ]
+    },
+    {
+      "n": 32,
+      "batch": 7,
+      "row_id": "P3:08_emma_study",
+      "take": 1,
+      "clip_sha256": "cd6bf7c794a47c81efea3f1a72d56113720400ad1e10a514f4fd178d28f4c16c",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        4.86
+      ],
+      "film_window_s": [
+        229.34,
+        234.2
+      ]
+    },
+    {
+      "n": 33,
+      "batch": 7,
+      "row_id": "P3:09b_emma_letter_cupboard",
+      "take": 1,
+      "clip_sha256": "6187e461f0e9b151ca26fa4dfaea7fc368811b04c917bde035c82e16511e33e1",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.36
+      ],
+      "film_window_s": [
+        240.64,
+        246.0
+      ]
+    },
+    {
+      "n": 34,
+      "batch": 7,
+      "row_id": "P3:10b_vestiges_torn_apart",
+      "take": 1,
+      "clip_sha256": "cf820f0e63a0dc92b824cf96cc59bfeedb17ec22c418ae556d99dec5156ae383",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        4.56
+      ],
+      "film_window_s": [
+        250.2,
+        254.76
+      ],
+      "note": "KEEP as cut; watch 2.0-4.0 s at rough-cut review only."
+    },
+    {
+      "n": 35,
+      "batch": 7,
+      "row_id": "P3:11_barnacles_microscope",
+      "take": 1,
+      "clip_sha256": "a9311278fb722a3c5effc619b66ba9e7ecd86bfa72c13bf16c90afad425a79f3",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        6.74
+      ],
+      "film_window_s": [
+        254.76,
+        261.5
+      ]
+    },
+    {
+      "n": 36,
+      "batch": 8,
+      "row_id": "P3:13a_lyell_warning",
+      "take": 1,
+      "clip_sha256": "2c8b14f9967d62f26f8b56368617ac0fa25cc32c5a29aa8b231c4b60127e9aa4",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.62
+      ],
+      "film_window_s": [
+        267.48,
+        273.1
+      ]
+    },
+    {
+      "n": 37,
+      "batch": 8,
+      "row_id": "P3:13b_brass_globe_turn",
+      "take": 1,
+      "clip_sha256": "780f0ddcea03ef5157e3388536e920fb36aaece0bf4abe2dc1aa3940c441a548",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        3.16
+      ],
+      "film_window_s": [
+        273.1,
+        276.26
+      ]
+    },
+    {
+      "n": 38,
+      "batch": 8,
+      "row_id": "P4:02_wallace_collector",
+      "take": 1,
+      "clip_sha256": "6a41beae9fc9cc9f894ecfc2758ce82b41b0ac700546a04ebafd48cb4186aa14",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        5.94
+      ],
+      "film_window_s": [
+        277.76,
+        283.7
+      ]
+    },
+    {
+      "n": 39,
+      "batch": 8,
+      "row_id": "P4:03a_helen_burning",
+      "take": 1,
+      "clip_sha256": "e14296654ffc8da956cd6db5d767eaab056a82f343ce44e564427432eb149928",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        6.2
+      ],
+      "film_window_s": [
+        283.7,
+        289.9
+      ]
+    },
+    {
+      "n": 40,
+      "batch": 8,
+      "row_id": "P4:03b_crates_sinking",
+      "take": 1,
+      "clip_sha256": "ab90ba926e16f9e3d4319c1836a6d5701b90e9a55a90ac5e46ebfccfa20e61ed",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6829662956,
+      "clip_window_s": [
+        0.0,
+        2.98
+      ],
+      "film_window_s": [
+        289.9,
+        292.88
+      ]
+    },
+    {
+      "n": 41,
+      "batch": 9,
+      "row_id": "P4:04_open_boat_ten_days",
+      "take": 1,
+      "clip_sha256": "66781e8f6ed37db653f445c58d7b4aac60fa915f9a00c6f00377e1ccb6569390",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830257530,
+      "clip_window_s": [
+        0.0,
+        5.24
+      ],
+      "film_window_s": [
+        292.88,
+        298.12
+      ]
+    },
+    {
+      "n": 42,
+      "batch": 9,
+      "row_id": "P4:06a_wallace_fever",
+      "take": 1,
+      "clip_sha256": "9009bd468846095522ca1b7814c8bb22a036d192745b3a3f230c6394cc77211c",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830257530,
+      "clip_window_s": [
+        0.0,
+        6.68
+      ],
+      "film_window_s": [
+        308.62,
+        315.3
+      ]
+    },
+    {
+      "n": 43,
+      "batch": 9,
+      "row_id": "P4:07a_wallace_writes_hut",
+      "take": 1,
+      "clip_sha256": "cf336394e0f48cc9f1ccabd747cd98acdf42eedf7cd34e8929dfa073f1d01a59",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830257530,
+      "clip_window_s": [
+        0.0,
+        4.64
+      ],
+      "film_window_s": [
+        321.36,
+        326.0
+      ]
+    },
+    {
+      "n": 44,
+      "batch": 9,
+      "row_id": "P4:08_midpoint_twist_packet",
+      "take": 1,
+      "clip_sha256": "bad6741aececb51d2d77db09c7a633925375537c9cc2428a9fcb6bc4dcda57df",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830257530,
+      "clip_window_s": [
+        0.0,
+        6.62
+      ],
+      "film_window_s": [
+        330.68,
+        337.3
+      ]
+    },
+    {
+      "n": 45,
+      "batch": 9,
+      "row_id": "P4:09a_darwin_reads_wallace",
+      "take": 1,
+      "clip_sha256": "d167fdaa96d52e661a861052daea49d84a59ce17bfb03ded0a6591c861598fc2",
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830257530,
+      "clip_window_s": [
+        0.0,
+        6.9
+      ],
+      "film_window_s": [
+        337.3,
+        344.2
+      ],
+      "note": "KEEP as cut after Chief archive motion inspection (closes hold in 6830137619; 2.25-3.75 s strip skipped; off retake batch)."
+    },
+    {
+      "n": 46,
+      "batch": 10,
+      "row_id": "P4:09b_smashed_letter_pen",
+      "take": 1,
+      "clip_sha256": "dacb60bd68a5c892d5f9fd5e0e2e36f9e2a4866d7bbe933bfbcf8ae92ed8b89a",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        5.3
+      ],
+      "film_window_s": [
+        344.2,
+        349.5
+      ]
+    },
+    {
+      "n": 47,
+      "batch": 10,
+      "row_id": "P4:10_fairness_25_june",
+      "take": 1,
+      "clip_sha256": "a3008b0a20514a8a273fb7492c55409ec5d9a0eb145f2d5400e828d7b1d6f841",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        6.08
+      ],
+      "film_window_s": [
+        349.5,
+        355.58
+      ]
+    },
+    {
+      "n": 48,
+      "batch": 10,
+      "row_id": "P4:11_down_house_grief",
+      "take": 1,
+      "clip_sha256": "797eaadce55c54113c0c56ada50473b85e49c9fbe810ef8d3e7ebf8dbea058dc",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        5.4
+      ],
+      "film_window_s": [
+        355.58,
+        360.98
+      ]
+    },
+    {
+      "n": 49,
+      "batch": 10,
+      "row_id": "P4:12_lyell_hooker_bundle",
+      "take": 1,
+      "clip_sha256": "820c1433ca609245b150409f709c287d6c25a58770ad962b6ea22768ff3a492a",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        5.36
+      ],
+      "film_window_s": [
+        360.98,
+        366.34
+      ]
+    },
+    {
+      "n": 50,
+      "batch": 10,
+      "row_id": "P5:02a_linnean_reading",
+      "take": 1,
+      "clip_sha256": "dc7de232f76b5bde854dd1cb512cf2a868349fa81f9126e6d0ccfda39b9911ea",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        8.0
+      ],
+      "film_window_s": [
+        368.56,
+        376.56
+      ]
+    }
+  ]
+}
