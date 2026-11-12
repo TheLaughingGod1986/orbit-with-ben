@@ -220611,9 +220611,14 @@
           "at": "2026-11-12T22:25Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2503; inspecting OWB commit 25211db064 and HOS PR #505 branch gemini/J2503-email-scrub"
+        },
+        {
+          "at": "2026-11-12T22:27Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Merged HOS origin/main (74cc4027) into gemini/J2503-email-scrub (commit 27c2988a) and lowered email_ratchet.json from 16 to 15 held 008/009 paths; 7/7 ratchet tests PASS and 0 diff on 008/009/010/013"
         }
       ],
-      "remaining_action": "Sync current main into gemini/J2503-email-scrub without force-push, lower email_ratchet.json to actual held 008/009 paths, rerun checks, push, and submit exact head to Chief",
+      "remaining_action": "Rerun check_all.sh, address check, and unit tests on 27c2988a, then push and submit exact head to Chief",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Remove an account email address from files in the public History of Science repo",
@@ -220623,11 +220628,11 @@
       ],
       "not_before": "2026-11-12T19:13Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T22:25Z",
+        "at": "2026-11-12T22:27Z",
         "by": "gemini",
-        "note": "Claimed J2503; inspecting OWB commit 25211db064 and HOS PR #505 branch gemini/J2503-email-scrub"
+        "note": "Merged HOS origin/main (74cc4027) into gemini/J2503-email-scrub (commit 27c2988a) and lowered email_ratchet.json from 16"
       },
       "rerouted_from": {
         "needs": "mini",
