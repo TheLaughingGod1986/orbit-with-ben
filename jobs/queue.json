@@ -238354,13 +238354,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T20:41Z",
-      "eta": "2026-11-12T22:41Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T20:02Z",
-      "result": "",
+      "result": "Built whole-galaxy v02, gate PASS158.3/7%, exact168 review and NAS hashes verified. Evidence PR866; independent critics J2733-J2735, synthesis J2736, Chief release J2737 queued. J2449 stays held; zero spend or Studio changes.",
       "history": [
         {
           "at": "2026-11-12T20:02Z",
@@ -238391,6 +238391,11 @@
           "at": "2026-11-12T20:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence PR866 opened; shared review files verified; critics J2733/J2734/J2735, synthesis J2736 and elected-Chief release J2737 queued. J2449 remains held."
+        },
+        {
+          "at": "2026-11-12T20:49Z",
+          "by": "codex",
+          "what": "done: Built whole-galaxy v02, gate PASS158.3/7%, exact168 review and NAS hashes verified. Evidence PR866; independent critics J2733-J2735, synthesis J2736, Chief release J2737 queued. J2449 stays held; zero spend or Studio changes."
         }
       ],
       "remaining_action": "Independent packaging panel and Chief release decision are queued",
@@ -238406,7 +238411,8 @@
       },
       "taskKeys": [
         "OWB:019"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/866"
     },
     {
       "id": "J2730",
