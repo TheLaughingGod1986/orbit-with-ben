@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2677 | any | open | – | – | review · Weekly OWB audit follow-up: the parts J2366 did not measure |  |
 | J2678 | mini | open | – | – | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
 | J2679 | mini | claimed | macbook-2 | 2026-11-12T08:26Z | studio · Nearest Star long: check the long is the Related video on all four Shorts (airing 16-20 Nov) |  |
-| J2680 | mini | open | – | – | studio · Light Speed rVqgtkBV3jc: queue a thumbnail test only if none is set |  |
+| J2680 | mini | claimed | macbook | 2026-11-12T08:26Z | studio · Light Speed rVqgtkBV3jc: queue a thumbnail test only if none is set |  |
 
 Recently finished:
 
