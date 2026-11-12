@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2736 | mini | open (after J2735) | – | – | 019 thumbs · for gemini · review · `gemini-argon` · Packaging panel decision: Andromeda whole-galaxy revision | J2729 |
 | J2737 | any | open (after J2736) | – | – | 019 thumbs · chief · 019 Andromeda: elected-Chief exact-file release after revised packaging panel | J2729; J2692; J2449 |
 | J2738 | any | blocked | macbook-2 | – | assembly · Fix split dry-run writes through destination symlinks before J2618 merge | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/868 |
+| J2740 | any | open (after J2683) | – | – | review · Apply J2683 Chief ruling to the next three Shorts and Titan handoffs | 6829905842 |
 
 Recently finished:
 

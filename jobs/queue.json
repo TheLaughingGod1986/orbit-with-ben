@@ -1,5 +1,5 @@
 {
-  "next_id": 2740,
+  "next_id": 2741,
   "jobs": [
     {
       "id": "J0001",
@@ -239392,6 +239392,35 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J2740",
+      "title": "Apply J2683 Chief ruling to the next three Shorts and Titan handoffs",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Implement the existing Chief ruling #6829905842 on J2683 through text-only planning and handoffs. Read jobs/reviews/J2683/DECISION.md and the original ruling; PASS stands, no second ruling. £0, no Studio, schedule, visibility, cut, VO or generation change.\n\nWithin one bounded 20-minute pass: identify the next three eligible newly built Shorts (exclude already live cuts, preserve Test A/E1/length exceptions), attach their film keys, and record which single accepted change each will test. Record existing job IDs and exact cut/meta versions; hand off the accepted second-shot, count/scale-answer and loop-tail changes without duplicating production. Preserve current hard rules and record conflicts for a concrete Chief decision before any change. Read 032 J2477 and J0979: map the Huygens first-30-second/description/companion-Short recommendation to their locked assets, draft only feasible text and show any locked-VO conflict; do not release their holds or authorize recuts. Only call a phrase exact searched when a dated query row supports it; Huygens, Cassini and Spirit examples in Gemini's recommendation lack such rows.\n\nQueue an explicit readout job for the three named Shorts, linked to the actual production/publishing dependencies. Set its first condition check from their actual publish dates plus settlement time, not an invented production date; if no dates exist, depend on the publishing job and require it to set the check. Compare fixed 4–6-second changes, stayed-to-watch and APV over matched observation windows; keep fewer than 100 views descriptive, preserve the historical baseline, report uncertainty and do not infer causation from n=3. Save the text plan and queue handoffs, then report completion. This is planning only; existing owners execute authorized production through existing gates.\n",
+      "ref": "6829905842",
+      "film": "",
+      "stage": "",
+      "after": "J2683",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T23:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T23:34Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Identify eligible Shorts and map accepted changes to existing production jobs",
+      "kind": "review",
+      "plain": "Planning the next three Orbit Shorts improvements and checking the Titan handoff"
     }
   ],
   "focus": [
