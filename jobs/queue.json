@@ -217276,10 +217276,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T00:12Z",
+      "eta": "2026-11-12T02:12Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:09Z",
       "result": "",
@@ -217568,6 +217568,11 @@
           "at": "2026-11-11T22:57Z",
           "by": "claude",
           "what": "reopened: Ben watched v03 (tick 11 Nov 22:37Z) and asked for a change: \"0:18 ends on as …\". Acting Chief: v04 ends the voice on \"Look east at sunset.\", with the word \"as\" cut from the existing take, no new take, the picture and tail kept. Gemini checks the ending by ear; a clean result is the KEEP and v04 goes back to Ben's watch. Pull request 834 stays open until then"
+        },
+        {
+          "at": "2026-11-12T00:12Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief merges the ready pull request; Ben watches the approved Supermoon Short",
@@ -217588,6 +217593,14 @@
         "ifNot": "Do not upload this dated Short if approval misses the deadline",
         "title": "Supermoon: two Earths closer on November 24",
         "type": "short"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T00:12Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
