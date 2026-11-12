@@ -217938,6 +217938,11 @@
           "at": "2026-11-12T02:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T04:00:00Z"
+        },
+        {
+          "at": "2026-11-12T02:40Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T04:00:00Z"
         }
       ],
       "remaining_action": "Gemini checks the revised Supermoon ending before returning it to Ben",
@@ -217967,11 +217972,11 @@
         "note": "v04 built, voice and all six automated gates pass; 35 files SHA-verified on NAS. Ending review queued as J2658. PR 834 u"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J2658 must commit a Gemini review of the SHA-verified v04 ending with no failures. At J2660 review it remains open/unclaimed with no result or REVIEW.md; Gemini media-capability evidence expired at 02:03Z. Next: fresh demonstrated audio and moving-video inputs, then review the final three seconds; a failed capability probe must be recorded as a typed capability hold on J2658. No watch-folder delivery or awaits until the clean review.",
+        "type": "input",
+        "condition": "J2658 remains open and unclaimed with no result or committed review. Conditional v04 KEEP requires Gemini to hear the actual soundtrack and watch the continuous final three seconds, with no failures; no watch-folder delivery or awaits until that review is committed.",
         "check_at": "2026-11-12T04:00:00Z",
         "last_recheck": "J2660",
-        "checked_at": "2026-11-12T02:37:22+00:00",
+        "checked_at": "2026-11-12T02:40:03+00:00",
         "checked_by": "codex"
       }
     },
