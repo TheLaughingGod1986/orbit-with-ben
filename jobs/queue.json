@@ -231638,10 +231638,10 @@
       "stage": "",
       "after": "J2634",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T06:04Z",
+      "eta": "2026-11-12T07:04Z",
       "created_by": "grok",
       "created_at": "2026-11-11T21:31Z",
       "result": "",
@@ -231650,6 +231650,11 @@
           "at": "2026-11-11T21:31Z",
           "by": "grok",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-12T06:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After J2634 is on main, teach desk ack to close on ruling, pass and ruled.",
@@ -231657,7 +231662,15 @@
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Let a Chief desk reply with status ruling, pass or ruled close the note it answers, so the same decision is not posted twice.",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T06:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2651",
