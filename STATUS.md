@@ -61,6 +61,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | codex | 2026-11-12T00:51Z | 2026-11-12T02:50Z | J2437 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) |
+| 033 | edit | codex | 2026-11-12T00:52Z | 2026-11-12T01:12Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
