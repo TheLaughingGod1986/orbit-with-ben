@@ -224989,22 +224989,22 @@
     },
     {
       "id": "J2563",
-      "title": "HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting)",
+      "title": "HOS 011 Anaesthesia: build 26 free rows and v03 timing rough with 67 dependency slates",
       "needs": "mini",
       "repo": "hos",
-      "body": "Queued by the acting Chief, 11 Nov 06:28Z, so film 011 has a next step (AGENTS.md: no film without a next job). The Chief (Grok) accepted picture plan v02 on 11 Nov (History of Science desk, comment 6788673826; history-of-science #495, merged e2a10ae6). That approves the plan only. No plate is made in this job: £0, 0 credits.\n\n011 Anaesthesia airs Thu 10 Dec. This is the free work that can go ahead while the picture tool is busy with 008, 010 and 013.\n\n1. Build the 27 free rows of `02_Video-Projects/011_Surgery-Before-Anaesthesia/07_Edit-Project/PICTURE_PLAN_v02.json`: 13 code graphics, 13 public-domain archive composites (the source and licence of each is in the plan; check each one again at its source before using it and record the check), and the one reuse. House look, every gate that applies to a graphic or an archive picture.\n2. Lay a timing rough on the locked voice-over `hos_011_vo_v01.wav`: the free rows at their planned times, and for each of the 66 rows still to be made a plain labelled slate (row id, the one-line shot description) for its planned length. No generated picture, no stock stand-ins.\n3. Check the cut list against the word timings: no sentence cut by a picture change, every overlay on its spoken word, no row over 8 s. List every row where the timing does not hold and fix the plan for those rows only (as v03, taking the Chief's one note: P4:08a says \"Victorian\" for an 1840s Boston park; \"mid-1840s\" reads better). If nothing had to move, say v02 holds.\n4. Say which of the 66 rows could become an archive picture or a code graphic without hurting the film, with the credits each move saves. A list with reasons; change nothing. `Veo 3.1 - Fast` is not an option (Chief ruling 6786715647).\n\nDeliver the rough as a file on studio-live (a working cut with slates, not for Ben), the built free rows, and the two lists, in one pull request on history-of-science. Park for the Chief. Do not mint, do not set `generation_authorized`, send nothing to Ben.\n",
-      "ref": "",
+      "body": "J2659 Chief-approved assembly brief, superseding the original v02 / 27-free-row instructions. Decision and timing merged in HOS PR #554. J2653, J2654 and J2655 completed; actual NAS WAV hash/duration rechecked by J2659.\n\n# J2659 — Chief timing decision and J2563 assembly handoff\n\nCodex covering, 12 Nov 2026. HOS Chief election checked: Codex; Grok and Claude down. Decision: KEEP the mechanical retime at PR #554, source commit 0b1d1c82. This approves timing data for an internal rough, not the picture/edit stage or UAT. No listening or motion review performed. GBP 0 / 0 credits. Generation remains unauthorized at plan and row level.\n\nReviewed all 92 audit boundaries against tracked Scribe words and all eleven long-sentence splits. The 37 moves remove 18 word crossings. Each long sentence has one split at the nearest suitable clause/list join; named people and tight noun phrases remain together. v02, narration, row identities and budgets are unchanged. All six applicable PR checks passed at 0b1d1c82.\n\nThe 139.52 s and / not cut is accepted for this mechanical rough: the tracked gap is 139.48–139.54. The next sentence ends at 147.50, so starting this row before 139.50 would exceed eight seconds. It keeps “not feel a thing” together. This is a constrained word boundary, not a claim of audible silence. The 125.76 / 133.30 / 139.52 / 147.50 propagation is accepted. So are the 202.74 / 210.70 / 218.70 / 226.68 propagation and the Snow archive interval 429.63–437.60 (7.97 s). The rendered review must still assess picture fit and the tight cuts.\n\n```text\nPASS: mechanical retime validation — 93 contiguous rows, 92 word-safe boundaries; 18 word crossings removed; all 11 long sentences split; maximum 8.00 s; v02 source, VO lock, row identities, budgets and generation locks preserved.\nThis is a data validation result, not film-stage approval or listening/motion QA.\n```\n\n## Inputs and source precedence\n\nJ2653 restored the narration to `/Volumes/data/studio-live/History Of Science/02_Video-Projects/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav`. Rechecked in J2659: SHA-256 `d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2`, duration 532.720 s. No regeneration or narration changes.\n\nUse PICTURE_PLAN_v03 for row timing, not old part boards. Its inherited archive fields are NOT download authority. Use ARCHIVE_SOURCES_BRIEF_v01.json from merged #553, overridden by Grok’s later source ruling [6810336587](https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6810336587). Carry those corrections into a versioned assembly source manifest before downloading; preserve v02/v03 timing provenance. Recheck each actual file and licence and record URL, credit and hash.\n\nMandatory source overrides from that ruling:\n\n- P1:09b: Wellcome L0041135, Paré instruments; CC BY 4.0, not low-resolution Pare_instruments.jpg. UVA remains bibliographic only.\n- P2:02a Davy: Wellcome V0006497, Walker 1830 after Jackson, CC BY 4.0; not the NPG file with copyright claims.\n- P2:07a Long: Wellcome M0003193, CC BY 4.0; not Crawford_Long.jpg with the rights-managed provenance.\n- P3:05b: Wellcome L0018234, Morton inhaler replica c.1945, CC BY 4.0, plus own-drawn airflow arrows. Never describe it as a nineteenth-century engraving or credit Wood Library-Museum.\n- P3:09a: public-domain Google Art Project scan of Southworth & Hawes, 4147×3280; not the small Getty JPEG.\n- P5:03a: Wellcome L0057829 photograph of a Squire-type copy; not an 1846 engraving.\n- P5:07a: follow the JSON alternate (Snow inhaler L0058154), not the differing Markdown alternate.\n- Carry every required Wellcome CC BY 4.0 credit both on screen and into description credits, including Liston operating M0005603, Lister spray M0003436, and Liston portrait L0012831. Add the portrait corner credit: “Portrait: C. Turner (1840), Wellcome / CC BY 4.0”. Use the exact remaining credit strings in Grok’s ruling and the approved source brief.\n- Ether Monument DSC04197 CC0 and P2:05a own-drawn 1844 broadside remain approved. Savings proposals remain held; P3:10a is still a generation slate.\n\n## J2563 resumed scope\n\n1. Build the 26 available free rows (13 code graphics + 13 archive/own-drawn composites) using v03 timing and the source precedence above. No minting, stock substitutes, new spoken lines or permission changes.\n2. Make the 535.30 s internal timing rough against the locked 532.720 s WAV, with labelled slates for all 66 unmade generation rows AND P5:16b. It is not a finished film or Ben’s watch copy.\n3. P5:16b stays a dependency slate until P1:07b exists and its interval is verified. The inherited claim that 3.48–8.00 s is “unused” is not approved: P1:07b now occupies 6.61 s, so at native speed an eight-second clip cannot provide both that use and a disjoint 4.52 s tail. A start-at-zero use would overlap by 3.13 s. Record actual source duration/in/out and overlap; do not invent an unused tail, stretch, freeze or spend to solve it. Return the concrete reuse finding to Chief before replacing the slate.\n4. Generate a word-accurate overlay cue schedule from stt_raw.json (WHO/WHEN/DATA/FACT and archive credits), with source word indices, absolute cue times, one-label-at-a-time checks, and no premature reveals. Timing-sensitive visual prose needs reconciliation to the retimed row, without changing narration. The 008–010 opening experiment is not approved for 011.\n5. Verify hashes, durations, continuous row coverage, word boundaries, <=8 s rows and overlay timing. Deliver the built rows, manifest, cue schedule, verification output and rough to studio-live with a PR. Keep original media and plan versions. Request a reviewer with demonstrated moving-video input; audio assessment needs demonstrated audio input. No film-stage PASS or UAT until applicable gates and reviews pass.\n\nThe three input blockers are resolved for this bounded free build. J2563 may resume after this decision merges; the unavailable generated picture is represented by slates and remains unapproved. No further decision from Ben is needed for this internal work.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/554",
       "film": "011",
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-11T22:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
-      "result": "Waiting for: J2653 (the voice-over file found), J2654 (the source brief, approved by the Chief) and J2655 (the v03 retime). Then Codex builds the 26 free rows and the rough",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T06:28Z",
@@ -225045,27 +225045,25 @@
           "at": "2026-11-11T22:57Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T18:00:00Z"
+        },
+        {
+          "at": "2026-11-12T04:01Z",
+          "by": "codex",
+          "what": "reopened: J2659 accepted and merged v03 timing; J2653 restored WAV reverified, J2654 sources approved with ruling 6810336587 overrides. Resume 26 free rows and 67 slates under J2659_CHIEF_DECISION.md; no generation."
+        },
+        {
+          "at": "2026-11-12T04:01Z",
+          "by": "codex",
+          "what": "brief reconciled to approved v03, archive overrides, restored WAV, reuse verification and overlay cue schedule"
         }
       ],
-      "remaining_action": "When all three are done: reopen for Codex to build the free rows and the rough on v03",
+      "remaining_action": "Build the 26 free pictures and internal timing rough for Anaesthesia, with corrected sources, overlay cues and dependency slates",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-11T22:15Z",
-        "by": "codex",
-        "note": "Preflight found 13 archive URLs returning 404, missing WAV, reuse awaiting a new plate, and 11 sentences longer than the"
-      },
       "taskKeys": [
         "HOS:011"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2653 (the voice-over file found), J2654 (the source brief, approved by the Chief) and J2655 (the v03 retime). Then Codex builds the 26 free rows and the rough",
-        "check_at": "2026-11-14T18:00:00Z"
-      }
+      ]
     },
     {
       "id": "J2564",
