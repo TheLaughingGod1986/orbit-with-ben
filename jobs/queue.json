@@ -218373,17 +218373,22 @@
           "at": "2026-11-12T03:08Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: brief read; starting with where the HOS Next app runs"
+        },
+        {
+          "at": "2026-11-12T03:09Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: HOS Next app IS on the internet: Vercel project history-of-science-content-ops answers at its public vercel.app address (/login 200, served by Next.js); git auto-deploy off, shipped by hand with vercel --prod"
         }
       ],
-      "remaining_action": "Say where the History of Science web app runs, then update the remaining risky libraries in both repos and open two pull requests for the Chief",
+      "remaining_action": "Update the remaining risky libraries in both repos, test them, and open two pull requests for the Chief",
       "plain": "Finishes the library clean-up: the remaining known weaknesses need bigger upgrades that must be tested on the Mini.",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-12T03:08Z",
+        "at": "2026-11-12T03:09Z",
         "by": "claudecode",
-        "note": "brief read; starting with where the HOS Next app runs"
+        "note": "HOS Next app IS on the internet: Vercel project history-of-science-content-ops answers at its public vercel.app address "
       }
     },
     {
