@@ -222249,9 +222249,14 @@
           "at": "2026-11-12T05:36Z",
           "by": "relay",
           "what": "condition verification queued: J2669"
+        },
+        {
+          "at": "2026-11-12T05:43Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-12T06:36:59Z"
         }
       ],
-      "remaining_action": "Chief/Codex fix _mint_flow_v01_pass1.py next_batch/batch_rows Part-01 remainder guard, merge on HOS main, and reopen J2529 for Batches 4-14 (51 rows, 5,100 credits)",
+      "remaining_action": "Wait for Codex PR fixing _mint_flow_v01_pass1.py Part-01 remainder guard (#180 6815648894) to merge on HOS main, then re-run preflight on new main SHA and resume Batches 04-14 (51 rows, 5,100 credits, --floor 3000) before 18:45Z",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222270,10 +222275,9 @@
         "note": "Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 68"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-12T06:36:59+00:00",
-        "recheck_task": "J2669"
+        "type": "input",
+        "condition": "Codex PR fixing _mint_flow_v01_pass1.py Part-01 remainder guard (order_rows/batch_rows in next_batch) merged on history-of-science main per Chief ruling #180 comment 6815648894",
+        "check_at": "2026-11-12T06:36:59Z"
       }
     },
     {
