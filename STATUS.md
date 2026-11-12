@@ -61,6 +61,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 034 | edit | gemini | 2026-11-12T04:33Z | 2026-11-12T06:32Z | J2668 034 Pluto: correct opening plan against locked narration before J2438 |
+| 034 | edit | gemini | 2026-11-12T04:34Z | 2026-11-12T05:34Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
