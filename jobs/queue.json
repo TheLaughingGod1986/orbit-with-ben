@@ -235505,7 +235505,7 @@
     {
       "id": "J2700",
       "title": "Verify condition for J2035",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2035: HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2035 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -235525,13 +235525,27 @@
           "at": "2026-11-12T12:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Obtain the gravity film’s own approved score via the queued music decision",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-12T13:07:03+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
