@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2669 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J2670 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
+| J2672 | any | open | – | – | 013 picture · for codex · assembly · `gpt-6.1-sol` · HOS 013: fix pass-1 batching after Part 01 completes | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6815648894 |
 
 Recently finished:
 

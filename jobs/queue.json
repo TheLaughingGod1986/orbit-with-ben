@@ -1,5 +1,5 @@
 {
-  "next_id": 2672,
+  "next_id": 2673,
   "jobs": [
     {
       "id": "J0001",
@@ -233301,6 +233301,38 @@
         "OWB:025",
         "HOS:006"
       ]
+    },
+    {
+      "id": "J2672",
+      "title": "HOS 013: fix pass-1 batching after Part 01 completes",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Implement Grok ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6815648894 for J2529. The full plan passes order_rows, but next_batch filters completed Part 01 and batch_rows calls order_rows again, refusing Part 02. Fix only the distinction between full-plan validation and validated remainder batching. Keep duplicates/order, batch size/cost, max_takes, arming, reservation, headroom and every other guard. No scope, plan, ledger or credit changes; no generation.\n\nOpen a HOS PR with base main from an isolated checkout. Tests: with the first 15 completed rows (all 12 Part 01 plus first 3 Part 02), next batch starts P2:05_tortoise_overboard; a full plan missing Part 01 raises; an out-of-order remainder raises; all runner tests pass. Note that all Part 01 alone completed would start P2:02, so make the test fixture explicit. Run required repository checks. Provide PR, exact SHA and tests for elected Chief review/merge; do not resume J2529 yourself. Urgent before 12 Nov 13:00 London checkpoint; no new Create after 18:45. The original 6600-credit cap, HOS013_PASS1 and floor 3000 remain.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6815648894",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T07:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:18Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Repair remainder batching and submit the tested change for Chief review",
+      "due": "2026-11-12T13:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Fix the error stopping the Darwin and Wallace pictures after the first part"
     }
   ],
   "focus": [
