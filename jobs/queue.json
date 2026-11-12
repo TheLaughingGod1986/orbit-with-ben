@@ -1,5 +1,5 @@
 {
-  "next_id": 2732,
+  "next_id": 2733,
   "jobs": [
     {
       "id": "J0001",
@@ -237434,13 +237434,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-12T17:53Z",
+      "status": "done",
+      "by": "codex",
+      "since": "2026-11-12T20:11Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-12T17:49Z",
-      "result": "parked for Chief: first-day check, Verdict: BEHIND, not shown",
+      "result": "Existing Chief ruling 6831935790 recorded: check accepted, no changes to the Short; evidence PR856 merged. J2732 owns next-morning snapshot read, date hold until 2026-11-13T06:45:00Z, after J2716. Preserve full-week length test. No spend or Studio mutations.",
       "history": [
         {
           "at": "2026-11-12T17:49Z",
@@ -237481,20 +237481,39 @@
           "at": "2026-11-12T20:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-12T20:11Z",
+          "by": "codex",
+          "what": "reopened: Record existing owner Chief ruling 6831935790; PR856 already merged. Local reconciliation only until reviewed commit lands."
+        },
+        {
+          "at": "2026-11-12T20:11Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T20:12Z",
+          "by": "codex",
+          "what": "done: Existing Chief ruling 6831935790 recorded: check accepted, no changes to the Short; evidence PR856 merged. J2732 owns next-morning snapshot read, date hold until 2026-11-13T06:45:00Z, after J2716. Preserve full-week length test. No spend or Studio mutations."
         }
       ],
-      "remaining_action": "Parking J2716 for Chief and posting studio thread report (PR #856)",
+      "remaining_action": "Review complete; next-morning follow-up is J2732",
       "due": "2026-11-12T19:49:00Z",
       "kind": "studio",
       "launch": "uhZSRcvngvE@6",
       "plain": "Check how \"How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?\" is doing 6 hours after it went live",
+      "escalated_at": "2026-11-12T20:07Z",
       "progress": {
         "step": 4,
         "of": 4,
         "at": "2026-11-12T18:07Z",
         "by": "macbook-2"
       },
-      "escalated_at": "2026-11-12T20:07Z"
+      "done_ref": "6831935790",
+      "films": [
+        "OWB:025"
+      ]
     },
     {
       "id": "J2717",
@@ -238346,6 +238365,66 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2732",
+      "title": "Mars wind Short: read next-morning snapshot after J2716",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Follow up existing Chief ruling 6831935790 and J2716 on OWB:025 Short uhZSRcvngvE. Read-only, no spend or Studio changes. After the 13 Nov 2026 06:40 UTC tracker run, read the new snapshot and compare with the channel first-day baseline at comparable ages. If missing, record that and set a new observable wait. Record findings in the length-test log and launch note; if still under one tenth of the usual first day, carry the subject/title hypothesis into topic review as requested by the existing ruling. Small samples and the different duration do not establish causality. Shown-in-feed was not observed in the six-hour check; do not treat the calculated estimate as a Studio measurement. Preserve the full-week length experiment and its 48-hour/seven-day reads. No title, edit, upload, test, privacy or schedule changes. Close this follow-up after the morning read is recorded.\n",
+      "ref": "6831935790",
+      "film": "",
+      "stage": "",
+      "after": "J2716",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "codex",
+      "since": "2026-11-12T20:12Z",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T20:11Z",
+      "result": "Waiting for: The 13 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+      "history": [
+        {
+          "at": "2026-11-12T20:11Z",
+          "by": "codex",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-12T20:12Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T20:12Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: The 13 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run"
+        },
+        {
+          "at": "2026-11-12T20:12Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T06:45:00Z"
+        }
+      ],
+      "remaining_action": "Read the morning snapshot for the Mars wind Short",
+      "kind": "review",
+      "plain": "Check the Mars wind video after its first night",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T20:12Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "The 13 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+        "check_at": "2026-11-13T06:45:00Z"
+      },
+      "films": [
+        "OWB:025"
+      ]
     }
   ],
   "focus": [
