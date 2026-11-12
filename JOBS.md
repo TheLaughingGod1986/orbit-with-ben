@@ -39,7 +39,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2339 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
-| J2366 | mini | claimed | claudecode | 2026-11-12T08:21Z | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2366 | mini | blocked | claudecode | – | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
