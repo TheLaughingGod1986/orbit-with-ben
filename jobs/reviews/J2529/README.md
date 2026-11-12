@@ -105,3 +105,20 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P2:07_darwin_notebook_wait` | `P02_07_darwin_notebook_wait_t1.mp4` | `a897c9984f49800a59bb991d6461f3883df6a62a7f1bf11249f5c441a8a89ecd` | `353e387d2c21616a40758ad1b1fcec4bb466376468c138c12bf0f61f11559448` | `9915ab0f8787bc2febe26eb4ddeeb518c1f1a77bc9ae0fadb4f092a8d2849f81` | `8,740 → 8,640` | `PENDING_REVIEW` (`keep: false`) |
 | `P2:08a_gould_sorting` | `P02_08a_gould_sorting_t1.mp4` | `fa5f78e0cd1a9cbe4da35aa388868ec416ee320d27eaed5c06ea68d130117cd5` | `2ccbd9d13161af8a2e780634bd17fd7c40e4998f8445c66373ead6dcad4b2eda` | `5c01df6668d24a1f02fdbda183ba740b93ef2850b5924e52dce077537b0c668a` | `8,640 → 8,540` | `PENDING_REVIEW` (`keep: false`) |
 | `P2:08b_gould_skins_closeup` | `P02_08b_gould_skins_closeup_t1.mp4` | `47fc7ca5445b772b4e1f2201fd5fb5956e1de86bc3d02e4a4f4802473e011318` | `8f52b44f487808c61e9f3b1a3c95636da4a37d82376cc93d04e13aea3f3e18fa` | `d9e0b66054818d4711d31b290032f7253d6677d80fce3b92f6a6e19e88c24249` | `8,540 → 8,440` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 05 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T09:18Z` – `09:35Z`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch05-20261112T0918Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch05-20261112T0918Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_05_RECEIPT.json` (`archive_v01_pass1/batch-e08781d724a5.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_05_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `2,500 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `7,940` re-verified live on CDP `:9222`):** `8,440 → 8,340 → 8,240 → 8,140 → 8,040 → 7,940` (`0` pending charges; remaining `HOS013_PASS1` reservation `4,100`; headroom `7,940 - 4,100 - 800 = 3,040 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P2:10a_explorer_shipmates` | `P02_10a_explorer_shipmates_t1.mp4` | `4c72bdc24dd89a9cfedbc91caa2224b63a3d8231691aea6d597e1adfb4001fce` | `422123ef6d8082dc2fc96919ccbb406ae7648f6bb3f4e3d07603ac6e3febb9f5` | `181bb413f79954c4e45fc7e43b0c61e6e0edb2a1205050f9a8e5d25528499a4a` | `8,440 → 8,340` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:11_island_split_vision` | `P02_11_island_split_vision_t1.mp4` | `4d0ae5f4484b699038efe4f864fc3314a1b55a0d28b7ad12d28da7e463c7444f` | `6d6ed4e85753cf4ccdaf1be596600d9b30ce6b9784306fd5cd92125ed52dcd4d` | `e1c37362e6903883a0de0a9d5417f734df43e47de5f2a9fad139ee9645c51038` | `8,340 → 8,240` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:12b_tree_question` | `P02_12b_tree_question_t1.mp4` | `7958d7a6ccde9113b76eb7228f616915f41544a3474c37b80de6893a08809269` | `6ba0c1ce058dde5cd5895d38590ba07826750a85b6b40859461d67d6979bf092` | `0568f6da96cda6b793dce5d0cfcad7d23766825369c995f47adec4cae5478367` | `8,240 → 8,140` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:02a_malthus_lamplight` | `P03_02a_malthus_lamplight_t1.mp4` | `20f4cb58fab0fdca4e01fee5a530ad924263713bacf1bcaaa523df3d1657a486` | `5564f50e5b760b9e5177fea02e0272b4913c1544b347dd032ec0b1358d2defd9` | `adcf660493e9db3dadb47e961d9a7ebae8a894cb9713d6c3f06b40c21580a6f5` | `8,140 → 8,040` | `PENDING_REVIEW` (`keep: false`) |
+| `P3:02b_notebook_d_open` | `P03_02b_notebook_d_open_t1.mp4` | `5ede492e92cdbbf2e5b434ac6994033b60cbce42db14e5563905162b7d17a3d7` | `7e30c700ae4957a5f5342fe1aeee5c4d837d78bae84570536314078847d76a8d` | `8edfcaafd4fdb94d09d9fc370d91df81119289dace71bcbb5d818e5065f1e22a` | `8,040 → 7,940` | `PENDING_REVIEW` (`keep: false`) |
