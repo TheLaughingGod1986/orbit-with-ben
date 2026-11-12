@@ -218368,9 +218368,14 @@
           "at": "2026-11-12T01:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T01:36Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2485; starting step 1 (evidence PR on cursor/J2255-short-c)"
         }
       ],
-      "remaining_action": "HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch",
+      "remaining_action": "Merge origin/main into cursor/J2255-short-c, run check_all.sh, and open evidence PR",
       "due": "2026-11-20T00:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -218387,12 +218392,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-12T01:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2485; starting step 1 (evidence PR on cursor/J2255-short-c)"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2486",
