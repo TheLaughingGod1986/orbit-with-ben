@@ -217593,9 +217593,14 @@
           "at": "2026-11-12T00:17Z",
           "by": "codex",
           "what": "step 1 of 3 done: Refined waveform-based trim now passes independent voice transcription with no failures. Rendering and gates rerun; no new take or spend. Same PR merge preserves all 746 distinct ledger rows."
+        },
+        {
+          "at": "2026-11-12T00:19Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: v04 built, voice and all six automated gates pass; 35 files SHA-verified on NAS. Ending review queued as J2658. PR 834 updated without force push; no upload."
         }
       ],
-      "remaining_action": "Verify the corrected Supermoon cut and prepare Gemini’s ending review",
+      "remaining_action": "Wait for Gemini to check the ending, then deliver the corrected Supermoon cut for Ben’s watch",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -217615,11 +217620,11 @@
         "type": "short"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T00:17Z",
+        "at": "2026-11-12T00:19Z",
         "by": "codex",
-        "note": "Refined waveform-based trim now passes independent voice transcription with no failures. Rendering and gates rerun; no n"
+        "note": "v04 built, voice and all six automated gates pass; 35 files SHA-verified on NAS. Ending review queued as J2658. PR 834 u"
       }
     },
     {
