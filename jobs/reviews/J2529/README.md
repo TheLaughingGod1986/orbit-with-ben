@@ -225,6 +225,35 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P5:05a_darwin_writes_origin` | `P05_05a_darwin_writes_origin_t1.mp4` | `5b7a829f49a556d76247358d894cde276fb17031137a14cac197582bd1187905` | `07deb98f62cf8790a5f4116eaabe2a621e74abfffa775c49fdb4b71c6233da81` | `2d15c0b9cfc46576b0e5aa985e19905ea2f230302ba9c61cb68412ae4646a6c2` | `5,190 → 5,090` | `PENDING_REVIEW` (`keep: false`) |
 | `P5:06_murray_bookshop` | `P05_06_murray_bookshop_t1.mp4` | `87e35853e7c047bf5ed9e970498bcd0d67cfd16a02a4143535faadd3f7411ef5` | `a43d7a8732e1d8f55ae531e0ed997aa2b484a5c95ae4adc39c9e6697768b666f` | `d23f02873440c62d8cdbf22f55e7a4b26b8562f8356665544938abfc18fd9ec3` | `5,090 → 4,990` | `PENDING_REVIEW` (`keep: false`) |
 
+### Batch 12 of 14 — Flow Unusual-Activity Failure / `TimeoutError` Stop (`2026-11-12T17:36Z` – `17:53Z`, `0` Live Credits Deducted)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch12-20261112T1736Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch12-20261112T1736Z.done` (`exit 1`)
+- **Exact runner exception (`04_Audio/tools/orbit_flow_veo_ui.py` line `2702` `wait_and_download_passive`):** `TimeoutError: Guarded Flow output unavailable; no automatic retry or confirmation`
+- **Live Flow failure banner (`project/2d5c6f15-c48f-4a55-bf3a-89d4b5c5d49b`):** `Failed — We noticed some unusual activity. Note that browser extensions that modify the page may cause issues. Please visit the Help Centre for more information.`
+- **Start stills minted at `0` credits (`Nano Banana 2.1`, all 5 saved `1376×768` on NAS):**
+  - `P5:08a_wallace_opens_origin` (`P05_08a_wallace_opens_origin_t1.png`): `b9e9a40a4d70553e5ef4cdf5d38ee9c86fbc291f7304fec5b3060d3b44563c2b`
+  - `P5:08b_wallace_reads_origin` (`P05_08b_wallace_reads_origin_t1.png`): `3c043cb33b84fba37c69b549b11ca40e38ff93847ff8ef8ba02fe557e158604a`
+  - `P5:10_darwin_worried_shelf` (`P05_10_darwin_worried_shelf_t1.png`): `5b07893a3c6475089120d1e6abc4ec238ab7a26a5ce3cbbaaf9bd46ec333ed0a`
+  - `P6:02a_jenkin_study` (`P06_02a_jenkin_study_t1.png`): `a507c30430af964de394864e0b0bbcdae09e466178ec453440e7d9f7871bbc83`
+  - `P6:02b_paint_pots_mix` (`P06_02b_paint_pots_mix_t1.png`): `eaabf948be98fe879a42808138cebf74b629286eccba8c3913fec92e07bd8971`
+- **Row 56 (`P5:08a_wallace_opens_origin`, `shared_charge: HOS:013:P05:08a_wallace_opens_origin:t1`) state & balance reconciliation:**
+  - **Pre-Create evidence (`archive_v01_pass1/P05_08a_wallace_opens_origin_t1.mp4.create.json`, `2026-11-12T17:41:27Z`):** live balance `[4990]`, `Veo 3.1 - Quality`, `16:9`, `8s`, `x1`, `Generating will use 100 credits`, studio Ultra account verified (`81a01c9d…`).
+  - **Post-stop live Flow balance (`17:56Z` & `18:01Z`):** **`4,990` credits** (`4,990 → 4,990`, **`0` credits actually deducted**; `0` output videos on the Flow page; neither `raw/v01_pass1/P05_08a_wallace_opens_origin_t1.mp4` nor `archive_v01_pass1/P05_08a_wallace_opens_origin_t1.mp4` exists).
+  - **Ledgers left untouched per stop rules** (`reconcile-policy-refusal` not run because Flow's `"We noticed some unusual activity"` error is not a content-policy prompt refusal; runner, scope, plan, and ledgers unedited):
+    - Pass-1 ledger (`~/_desk/state/flow/hos013-pass1/ledger.jsonl`): `P5:08a_wallace_opens_origin` (`take: 1`) remains at `status: "SUBMITTING"` (`generated: false`).
+    - Shared Flow ledger (`~/_desk/state/flow/shared/account.jsonl`): `HOS:013:P05:08a_wallace_opens_origin:t1` remains `CHARGED` (`amount: 100`, `posted: false`), so `DRY_RUN_2026-11-12T1801Z_BATCH12_STOP.json` reports `unposted_charges: 900`, `remaining_reservations: 1000`, `total_liability: 1900`, `has_pending_charge: false`, projected headroom `4,990 - 1,900 = 3,090 >= 3,000`.
+    - Shared `05_Analytics/ai_spend/ledger.jsonl`: `export_ai_spend` exported `flow:spend:HOS:013:P05:08a_wallace_opens_origin:t1` (`amount: 100`) in `finally`, followed by post-stop `record` `left: 4990.0` at `2026-11-12T18:01:16Z`.
+- **Cumulative stop summary (parked for Chief):**
+  - **Takes per part (`55 / 66` Quality takes `GENERATED` across Batches 01–11; `1` `SUBMITTING` failed at `0` live credits; `10` unstarted):**
+    - `part_01`: `12 / 12`
+    - `part_02`: `11 / 11`
+    - `part_03`: `14 / 14`
+    - `part_04`: `12 / 12`
+    - `part_05`: `6 / 9` (`P5:08a_wallace_opens_origin` `SUBMITTING`; `P5:08b_wallace_reads_origin`, `P5:10_darwin_worried_shelf` unstarted)
+    - `part_06`: `0 / 8` (`P6:02a_jenkin_study`, `P6:02b_paint_pots_mix`, `P6:04a_mendel_pea_garden`, `P6:05_beads_not_paint`, `P6:06a_origin_fifth_edition`, `P6:06b_spencer_coined`, `P6:07_key_in_lock`, `P6:08b_darwin_mendel_synthesis` unstarted)
+  - **Credits spent:** `5,500` Flow credits actually deducted across 55 generated Quality clips (`55 × 100` Quality; `60 × 0` start stills; `£0` cash; plus `1 × 100` unposted ledger `CHARGED` entry on `HOS:013:P05:08a_wallace_opens_origin:t1` with `0` live credits deducted)
+  - **Balance before → after:** `10,440` (`+50` account grant before Batch 08) `→ 4,990` live (`1,000` remaining on `HOS013_PASS1`, `900` unposted in shared ledger including the `0`-deducted row 56 `CHARGED` entry, live headroom `3,090 >= 3,000`)
+
 ## Chief Review State (`REVIEW_STATE.json`)
 
 - **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
@@ -233,4 +262,5 @@ Any spend row in this window that reads a different reservation, or no reservati
 - **Rows 26–40 (`6829662956`):** `keep: true` on `26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40` as cut; `RETAKE` on `28` (`P3:05a_chicks_deep_beaks`).
 - **Rows 41–45 (`6830257530`, closing `6830137619`):** `keep: true` on `41, 42, 43, 44, 45` as cut (`2.25–3.75 s` strip skipped; row `45` off retake batch).
 - **Rows 46–50 (`6830884885` / `6830918005`, withdrawing `6830830084` on rows `49–50`):** `keep: true` on `46, 48, 50` as cut; `RETAKE` on `47` (`P4:10_fairness_25_june`) and `49` (`P4:12_lyell_hooker_bundle`).
-- **Held retake batch after pass 1:** rows `3, 10, 24, 28, 47, 49`, reservation `600` Flow credits under `--floor 3000` (`£0` cash).
+- **Rows 51–55 (`6831422974` / `6831444565` / `6831536663`, withdrawing `6831390300` on row `54`):** `keep: true` on `51, 52, 53, 55` as cut; `RETAKE` on `54` (`P5:05a_darwin_writes_origin`).
+- **Held retake batch after pass 1 (`48 KEEP` / `7 RETAKE` across rows `1–55`):** rows `3, 10, 24, 28, 47, 49, 54`, reservation `700` Flow credits under `--floor 3000` (`£0` cash).
