@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2683 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
-| J2692 | mini | open (after J2691) | – | – | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
+| J2692 | mini | claimed | codex | 2026-11-12T20:45Z | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
