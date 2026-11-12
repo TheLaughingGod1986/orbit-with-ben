@@ -236650,7 +236650,7 @@
     {
       "id": "J2712",
       "title": "Verify condition for J2532",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2532: The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2532 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -236670,13 +236670,27 @@
           "at": "2026-11-12T15:41Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T15:41Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 09",
       "kind": "review",
       "recheck_of": "J2532",
       "due": "2026-11-12T16:41:08+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
