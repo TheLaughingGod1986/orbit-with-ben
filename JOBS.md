@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2725 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
 | J2726 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2727 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2503 |  |
-| J2728 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2649 |  |
+| J2728 | mini | claimed | macbook-2 | 2026-11-12T22:05Z | for gemini · review · `gemini-argon` · Verify condition for J2649 |  |
 | J2729 | mini | open | – | – | 019 thumbs · thumb · 019 Andromeda: rebuild recognisable whole-galaxy challenger and hand off packaging review | J2692 |
 
 Recently finished:
