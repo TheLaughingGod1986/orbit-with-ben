@@ -222466,13 +222466,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-12T16:00Z",
-      "eta": "2026-11-12T21:00Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "",
+      "result": "parked for Chief: Batch 12 stopped on row 56 (P5:08a_wallace_opens_origin) after Flow failed Create with 'We noticed some unusual activity' banner (TimeoutError exit 1; live balance verified unchanged 4,990 -> 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED left untouched per stop rules; Batch 11 rulings 6831422974/6831444565/6831536663 recorded in OWB 7ceb9685b2; 55/66 generated [48 KEEP, 7 RETAKE @ 700]; desk #180 6831803895)",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -222868,6 +222868,11 @@
           "at": "2026-11-12T17:59Z",
           "by": "gemini",
           "what": "step 11 of 14 done: Batch 12 exited 1: Flow failed row 56 P5:08a_wallace_opens_origin with unusual-activity banner (live balance verified unchanged at 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED untouched)"
+        },
+        {
+          "at": "2026-11-12T18:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Batch 12 stopped on row 56 (P5:08a_wallace_opens_origin) after Flow failed Create with 'We noticed some unusual activity' banner (TimeoutError exit 1; live balance verified unchanged 4,990 -> 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED left untouched per stop rules; Batch 11 rulings 6831422974/6831444565/6831536663 recorded in OWB 7ceb9685b2; 55/66 generated [48 KEEP, 7 RETAKE @ 700]; desk #180 6831803895)"
         }
       ],
       "remaining_action": "Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
