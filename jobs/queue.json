@@ -232563,13 +232563,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T04:33Z",
-      "eta": "2026-11-12T06:33Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T04:31Z",
-      "result": "",
+      "result": "KEEP: corrected FIRST30_PLAN.md (§1-§4) against locked v03 narration, stt_raw.json, stt_timeline_offset_v01.json, and shot_list_v01.csv; verified -2.800s splice (2.000..4.800s raw) and +2.800s inter-sentence insertions (39.300s, 54.000s, 60.550s raw) via direct audio_input ear-check, 1,973f cumulative 30fps math, <=2x upscale & <=2 reuse pool checks, clip_check (74 rows PASS), picture_qa (138 cuts PASS), and 36.500s Test A Short endpoint; mirrored to studio-live; PR #843 (commit feb5523d40) ready for Chief merge and J2438 reopen",
       "history": [
         {
           "at": "2026-11-12T04:31Z",
@@ -232630,6 +232630,11 @@
           "at": "2026-11-12T05:17Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 complete: pushed gemini/j2668-pluto-first30-plan (commit feb5523d40), mirrored FIRST30_PLAN.md to studio-live, opened PR #843"
+        },
+        {
+          "at": "2026-11-12T05:19Z",
+          "by": "gemini",
+          "what": "done: KEEP: corrected FIRST30_PLAN.md (§1-§4) against locked v03 narration, stt_raw.json, stt_timeline_offset_v01.json, and shot_list_v01.csv; verified -2.800s splice (2.000..4.800s raw) and +2.800s inter-sentence insertions (39.300s, 54.000s, 60.550s raw) via direct audio_input ear-check, 1,973f cumulative 30fps math, <=2x upscale & <=2 reuse pool checks, clip_check (74 rows PASS), picture_qa (138 cuts PASS), and 36.500s Test A Short endpoint; mirrored to studio-live; PR #843 (commit feb5523d40) ready for Chief merge and J2438 reopen"
         }
       ],
       "remaining_action": "Complete J2668 specialist review with KEEP in jobs/reviews/J2668/REVIEW.md (PR #843, commit feb5523d40)",
@@ -232653,7 +232658,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "feb5523d40"
     }
   ],
   "focus": [
