@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2692 | mini | open (after J2691) | – | – | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
-| J2706 | mini | open (after J2483) | – | – | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
+| J2706 | mini | claimed | codex | 2026-11-12T16:32Z | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
 | J2707 | any | blocked | macbook | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2709 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
