@@ -1,5 +1,5 @@
 {
-  "next_id": 2681,
+  "next_id": 2682,
   "jobs": [
     {
       "id": "J0001",
@@ -233842,6 +233842,36 @@
         "at": "2026-11-12T07:59Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2681",
+      "title": "HOS 013: review J2675 preflight and decide J2529 reopening before 13:00",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review Gemini's J2675 no-spend preflight evidence in HOS PR #565 (head 2cfed99764d0327d285fc6129a0da4903e5fb095 on main e2b7f5fe610880041603aea577176f20e859609c) and HOS desk #180 comment 6818125475 per Grok ruling 6817606389 and J2673.\nCheck HOS desk #180 and chief_relay.py status first: if Grok has already ruled on 6818125475 / PR #565, record his ruling without issuing a second ruling. Otherwise, as elected Chief, review:\n- Canonical HOS main e2b7f5fe610880041603aea577176f20e859609c (PR #564 merged), 44/44 runner tests OK, NAS studio-live + archive_v01_pass1 accessible, Explorer sha256 24659dc1d761e9371de9411ca8b56cd5ad3e2587674a8cbdf66a3b84e451476d, no active runner, unarmed submit refused.\n- Fresh read-only Flow check (2026-11-12T07:52:20Z): studio Ultra account sha256 81a01c9d... verified, ULTRA true, live balance 8,940 -> 8,940 (delta 0), Veo 3.1 - Quality 16:9 8s x1 = 100 credits.\n- Shared & pass-1 accounting: existing HOS013_PASS1 active (cap 6600, 1500 spent/posted across 15 rows in Batches 01-03, 5100 remaining across 51 rows in 11 batches starting P2:05_tortoise_overboard, 0 pending charges, 800 prior PR #549 unposted cleared by 6807600765). Existing-reservation headroom is 8940 - 5900 = 3040 >= 3000; note dry-run --floor 3000 pre-reservation field reports -3560 / false only because build_dry_run_report() subtracts a second 6600 cap on top of total_liability 5900.\nIf satisfied before the 12 Nov 13:00 London checkpoint, record J2529 reopening under existing conditional approvals (6805739027, 6805898066, 6807600765, 6817606389) for Gemini to resume Batches 04-14 from step 3/14 with --floor 3000 --other-reservations 0 and the 18:45 London Create cutoff. Otherwise preserve J2529 hold (or record no-go if past 13:00 London). Sheet/KEEP rulings remain separate under 6815870258. No generation or spend in this review.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475",
+      "film": "013",
+      "stage": "picture",
+      "after": "J2675",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-12T08:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T08:00Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review HOS PR #565 / desk 6818125475 preflight and record J2529 reopening (or hold) before 13:00",
+      "due": "2026-11-12T13:00:00Z",
+      "kind": "chief",
+      "plain": "Confirm the Darwin and Wallace picture checks and reopen generation before the 1pm deadline"
     }
   ],
   "focus": [
