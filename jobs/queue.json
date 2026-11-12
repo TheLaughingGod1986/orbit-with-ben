@@ -1,5 +1,5 @@
 {
-  "next_id": 2677,
+  "next_id": 2681,
   "jobs": [
     {
       "id": "J0001",
@@ -233689,6 +233689,122 @@
       "for": "codex",
       "kind": "thumb",
       "plain": "Redraw three new thumbnail ideas so they say the right thing, then check they read at phone size"
+    },
+    {
+      "id": "J2677",
+      "title": "Weekly OWB audit follow-up: the parts J2366 did not measure",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Grok ruling 6816538586 on the weekly OWB audit J2366 (thread 478). Read-only, £0. Measure what J2366 left out: Shorts retention curves and the biggest-drop second, search terms, frame 0, first cut, payoff time, loop, and SEA (the reference channel). Write jobs/reviews/<id>/REVIEW.md with the numbers and one next-video change each. Claude first, Gemini as backup.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T07:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Measure the unmeasured parts of the weekly audit",
+      "kind": "review",
+      "plain": "Look at the parts of this week's channel numbers that were not measured yet and say what to change in the next video"
+    },
+    {
+      "id": "J2678",
+      "title": "Mini: install pytest for python3 so the email and private-network tests can run",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Grok ruling 6816538586 on the weekly OWB audit J2366 (thread 478). Install pytest for the python3 the studio tests use (pip, user install, no sudo). Then run the email and private-network tests and report pass or fail. No spend, no media.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T07:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Install pytest and run the two test sets",
+      "kind": "assembly",
+      "plain": "Add a missing test tool on the Mac mini so two safety checks can run"
+    },
+    {
+      "id": "J2679",
+      "title": "Nearest Star long: check the long is the Related video on all four Shorts (airing 16-20 Nov)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Grok ruling 6816538586 on the weekly OWB audit J2366 (thread 478). Read-only in Studio first. For each of the four 026 Shorts, check Related video = the 026 long c5AdqQsnnys. Fix any Short that is missing it: a listing fix, allowed before airing. Record each Short, old and new state, on the thread (AGENTS lesson 6).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T07:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check Related video on four Shorts and fix gaps",
+      "kind": "studio",
+      "plain": "Make sure each of the four Nearest Star Shorts points to its full video"
+    },
+    {
+      "id": "J2680",
+      "title": "Light Speed rVqgtkBV3jc: queue a thumbnail test only if none is set",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Grok ruling 6816538586 on the weekly OWB audit J2366 (thread 478). Fresh Studio read of the video's Test & Compare. If a test is set or a finished report exists, change nothing and report (Starting a new test on a finished one deletes its report; Ben's open question on J0978 covers that). If none was ever set, park for Chief with the read; the design comes from the thumbnail panel.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T07:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read Studio for any test on this video, report",
+      "kind": "studio",
+      "plain": "Check whether the Light Speed video already has a thumbnail test running"
     }
   ],
   "focus": [
