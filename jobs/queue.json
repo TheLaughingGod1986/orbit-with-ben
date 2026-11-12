@@ -1,5 +1,5 @@
 {
-  "next_id": 2723,
+  "next_id": 2727,
   "jobs": [
     {
       "id": "J0001",
@@ -223591,6 +223591,11 @@
           "at": "2026-11-11T14:44Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
+        },
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2723"
         }
       ],
       "remaining_action": "Orbit: the AI spend ledger's notes, in a quiet window after Thu 12 Nov 19:13 London. Then History of Science's files and the history stages",
@@ -223600,7 +223605,8 @@
       "hold": {
         "type": "date",
         "condition": "The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).",
-        "check_at": "2026-11-12T19:15:00Z"
+        "check_at": "2026-11-12T20:19:17+00:00",
+        "recheck_task": "J2723"
       }
     },
     {
@@ -229907,6 +229913,11 @@
           "at": "2026-11-11T18:34Z",
           "by": "claude",
           "what": "both conditions named in this wait are met (history-of-science #535 merged 17:28Z; the Mini's checkout is on main, Gemini 18:10Z, J2638). #833 now also carries J2621 as its third commit. Only the window is left."
+        },
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2724"
         }
       ],
       "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
@@ -229924,7 +229935,8 @@
       "hold": {
         "type": "date",
         "condition": "Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.",
-        "check_at": "2026-11-12T19:15:00Z"
+        "check_at": "2026-11-12T20:19:17+00:00",
+        "recheck_task": "J2724"
       }
     },
     {
@@ -230101,6 +230113,11 @@
           "at": "2026-11-11T18:34Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-12T19:15:00Z"
+        },
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2725"
         }
       ],
       "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite and the dry run, merge, then watch one relay cycle and one board publish on the Mini before closing",
@@ -230117,7 +230134,8 @@
       "hold": {
         "type": "date",
         "condition": "Built and green: the third commit of orbit-with-ben #833 (draft), with J2618. It changes the loader, the relay, the MacBook worker and the board publisher, so it is not merged inside the picture window, which closes Thu 12 Nov 19:13 London.",
-        "check_at": "2026-11-12T19:15:00Z"
+        "check_at": "2026-11-12T20:19:17+00:00",
+        "recheck_task": "J2725"
       }
     },
     {
@@ -230183,6 +230201,11 @@
           "at": "2026-11-11T21:29Z",
           "by": "claude",
           "what": "queue side of Grok's rulings on the held draft 548 (desk 6806863832, and 6806904132 which is later and governs where they differ): it stays a held draft. On Thu after 19:13 London, with no picture run going: 833 goes to Grok for his PASS and merges first; then 548's last commit is regenerated from main's PIPELINE.json. 509's status line is stale and stays out (film 010's picture stage is written from 538 afterwards). 542's edit line goes in through the tool if 542 is not on main by then. After the regenerated commit the round trip must hold and the tests check must be green on that head; the board compare against 833's merged head goes in the ready note. His wording corrections are made (548 commit ecc8ea7a, head 55b96878 on main 1c59247b). A second studio fault found on the way is fixed on 833 (4ef9d89b6): 53 studio tests leaned on this channel keeping one file. After 548 merges I refresh the studio's cached copy of the channel's settings at once: the board publisher stops until then"
+        },
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2726"
         }
       ],
       "remaining_action": "After the window: merge 833; push the History of Science half as a pull request for Grok; then refresh channels/hos/channel.json",
@@ -230199,7 +230222,8 @@
       "hold": {
         "type": "date",
         "condition": "Thu 12 Nov 19:13 London, when the picture window closes: 833 merges then (studio half), and the History of Science half goes to Grok as its own pull request, announced on the desk, not during a picture run.",
-        "check_at": "2026-11-12T19:15:00Z"
+        "check_at": "2026-11-12T20:19:17+00:00",
+        "recheck_task": "J2726"
       }
     },
     {
@@ -237619,6 +237643,130 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2723",
+      "title": "Verify condition for J2537",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2537: The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T19:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Orbit: the AI spend ledger's notes, in a quiet window after Thu 12 Nov 19:13 London. Then History of Science's files and the history stages",
+      "kind": "review",
+      "recheck_of": "J2537",
+      "due": "2026-11-12T20:19:17+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2724",
+      "title": "Verify condition for J2618",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2618: Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2618 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T19:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
+      "kind": "review",
+      "recheck_of": "J2618",
+      "due": "2026-11-12T20:19:17+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2725",
+      "title": "Verify condition for J2621",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2621: Built and green: the third commit of orbit-with-ben #833 (draft), with J2618. It changes the loader, the relay, the MacBook worker and the board publisher, so it is not merged inside the picture window, which closes Thu 12 Nov 19:13 London.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2621 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T19:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite and the dry run, merge, then watch one relay cycle and one board publish on the Mini be",
+      "kind": "review",
+      "recheck_of": "J2621",
+      "due": "2026-11-12T20:19:17+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2726",
+      "title": "Verify condition for J2622",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2622: Thu 12 Nov 19:13 London, when the picture window closes: 833 merges then (studio half), and the History of Science half goes to Grok as its own pull request, announced on the desk, not during a picture run.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2622 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T19:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T19:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After the window: merge 833; push the History of Science half as a pull request for Grok; then refresh channels/hos/channel.json",
+      "kind": "review",
+      "recheck_of": "J2622",
+      "due": "2026-11-12T20:19:17+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
