@@ -222833,9 +222833,14 @@
           "at": "2026-11-12T16:43Z",
           "by": "gemini",
           "what": "step 8 of 14 done: Resumed J2529 under PACE at 16:43Z: Batch 09 PID 6344 active (submitted Create on P04_08_midpoint_twist_packet); waiting for .done"
+        },
+        {
+          "at": "2026-11-12T16:53Z",
+          "by": "gemini",
+          "what": "step 9 of 14 done: Batch 09 (45/66 Quality rows, P4:04..P4:09a) complete: exit 0, 500 credits posted (6490->5990, live verified), 0 pending, all 5 clips + stills + 0.5s sheets verified on NAS (c7bf625364), pushed to review/013-pass1-sheets (72d21fc1), and posted on HOS desk #180; Batch 10 (P4:09b..P5:02a) running detached in tmux hos013-pass1 (PID 41832, --floor 3000)"
         }
       ],
-      "remaining_action": "Stay claimed (PACE). Wait for Batch 09 .done, verify receipt/sheets/balance, post sheets, and launch Batch 10 under --floor 3000 before 18:45 London",
+      "remaining_action": "Stay claimed (PACE). When Batch 10 .done lands, verify receipt/sheets and launch Batch 11 under --floor 3000 before 18:45 London",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222847,11 +222852,11 @@
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
       "urgent": 8,
       "progress": {
-        "step": 8,
+        "step": 9,
         "of": 14,
-        "at": "2026-11-12T16:43Z",
+        "at": "2026-11-12T16:53Z",
         "by": "gemini",
-        "note": "Resumed J2529 under PACE at 16:43Z: Batch 09 PID 6344 active (submitted Create on P04_08_midpoint_twist_packet); waiting"
+        "note": "Batch 09 (45/66 Quality rows, P4:04..P4:09a) complete: exit 0, 500 credits posted (6490->5990, live verified), 0 pending"
       }
     },
     {
