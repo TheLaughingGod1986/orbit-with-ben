@@ -237839,10 +237839,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T21:11Z",
+      "eta": "2026-11-12T23:11Z",
       "created_by": "relay",
       "created_at": "2026-11-12T18:22Z",
       "result": "",
@@ -237896,6 +237896,11 @@
           "at": "2026-11-12T21:11Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Gemini verification complete; explicitly assigned elected-Chief review to Codex for ruling and closure, not a new specialist check."
+        },
+        {
+          "at": "2026-11-12T21:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief (codex) to record --recheck J2721 wait on J2035 and close J2721",
@@ -237914,7 +237919,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T21:11Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2722",
