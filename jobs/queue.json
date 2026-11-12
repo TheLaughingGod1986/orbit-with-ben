@@ -233608,13 +233608,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T07:47Z",
-      "eta": "2026-11-12T09:47Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T07:35Z",
-      "result": "",
+      "result": "No-spend preflight complete on canonical HOS main e2b7f5fe610880041603aea577176f20e859609c: 44/44 runner tests OK, NAS & Explorer sha256 24659dc1... verified, no active runner, live Ultra Flow balance 8940->8940 (delta 0) & Quality 100 credits verified, HOS013_PASS1 active with 51 remaining rows / 5100 credits starting P2:05_tortoise_overboard, 0 pending charges, existing-reservation headroom 3040 >= 3000 (dry-run new-6600 field -3560 reported verbatim). Evidence in HOS PR #565 (2cfed997) & desk #180 6818125475; J2681 queued for Chief to record J2529 reopening; J2529 kept at 3/14. 0 credits, £0.",
       "history": [
         {
           "at": "2026-11-12T07:35Z",
@@ -233650,6 +233650,11 @@
           "at": "2026-11-12T08:00Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Opened isolated HOS PR #565 (2cfed997 on main e2b7f5fe), posted desk report 6818125475, and queued J2681 for Chief reopening decision; J2529 stays at 3/14"
+        },
+        {
+          "at": "2026-11-12T08:00Z",
+          "by": "gemini",
+          "what": "done: No-spend preflight complete on canonical HOS main e2b7f5fe610880041603aea577176f20e859609c: 44/44 runner tests OK, NAS & Explorer sha256 24659dc1... verified, no active runner, live Ultra Flow balance 8940->8940 (delta 0) & Quality 100 credits verified, HOS013_PASS1 active with 51 remaining rows / 5100 credits starting P2:05_tortoise_overboard, 0 pending charges, existing-reservation headroom 3040 >= 3000 (dry-run new-6600 field -3560 reported verbatim). Evidence in HOS PR #565 (2cfed997) & desk #180 6818125475; J2681 queued for Chief to record J2529 reopening; J2529 kept at 3/14. 0 credits, £0."
         }
       ],
       "remaining_action": "Preflight complete; J2681 queued for elected Chief to record J2529 reopening",
@@ -233668,7 +233673,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475"
     },
     {
       "id": "J2676",
