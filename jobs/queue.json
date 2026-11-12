@@ -234817,9 +234817,14 @@
           "at": "2026-11-12T09:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T09:58Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2694 to verify J2652 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Write PICTURE_PLAN v03 per the Chief's points; pull request on history-of-science",
+      "remaining_action": "Check Claude session status, Chief ruling #6808560760, and HOS 013 picture plan v02/rough state",
       "kind": "review",
       "recheck_of": "J2652",
       "due": "2026-11-12T10:07:38+00:00",
@@ -234836,11 +234841,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T09:57Z",
+        "at": "2026-11-12T09:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2694 to verify J2652 waiting condition"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
