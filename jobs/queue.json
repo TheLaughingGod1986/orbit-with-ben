@@ -233654,9 +233654,14 @@
           "at": "2026-11-12T08:24Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2674; starting 5-step review of OWB:019 package A, script claims, hash provenance, packaging panel, and PR #836 evidence"
+        },
+        {
+          "at": "2026-11-12T08:27Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1/5 complete: verified locked script v03 and VO v03 on NAS; recorded exact supporting lines for title and NO CRASH hook"
         }
       ],
-      "remaining_action": "1/5 Check locked script/transcript lines for Andromeda title and NO CRASH hook",
+      "remaining_action": "2/5 Reconcile package A SHA-256 provenance and inspect full-size and 168px images",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Checking the Andromeda title and thumbnail before testing them against the current version",
@@ -233670,11 +233675,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-12T08:24Z",
+        "at": "2026-11-12T08:27Z",
         "by": "gemini",
-        "note": "Claimed J2674; starting 5-step review of OWB:019 package A, script claims, hash provenance, packaging panel, and PR #836"
+        "note": "Step 1/5 complete: verified locked script v03 and VO v03 on NAS; recorded exact supporting lines for title and NO CRASH "
       },
       "taskKeys": [
         "OWB:019"
