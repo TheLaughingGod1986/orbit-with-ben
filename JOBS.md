@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2726 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2727 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2503 |  |
 | J2728 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2649 |  |
-| J2729 | mini | open | – | – | 019 thumbs · thumb · 019 Andromeda: rebuild recognisable whole-galaxy challenger and hand off packaging review | J2692 |
+| J2729 | mini | claimed | codex | 2026-11-12T22:41Z | 019 thumbs · thumb · 019 Andromeda: rebuild recognisable whole-galaxy challenger and hand off packaging review | J2692 |
 | J2730 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2731 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
