@@ -212714,13 +212714,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T00:59Z",
-      "eta": "2026-11-12T02:59Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
-      "result": "",
+      "result": "parked for Chief: FIRST30_PLAN conflicts with locked v03 narration and actual row timings; requested silence insertions 38.68/48.80/56.20 split mystery/city-sized/one-fifth. Correct plan before assembly; evidence ff99358894 on codex/j2438-pluto-v02.",
       "history": [
         {
           "at": "2026-11-09T10:36Z",
@@ -212741,6 +212741,11 @@
           "at": "2026-11-12T01:01Z",
           "by": "codex",
           "what": "step 1 of 3 done: Input verification found all three planned silence insertions inside spoken words; evidence committed as ff99358894 on codex/j2438-pluto-v02. No render started."
+        },
+        {
+          "at": "2026-11-12T01:01Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: FIRST30_PLAN conflicts with locked v03 narration and actual row timings; requested silence insertions 38.68/48.80/56.20 split mystery/city-sized/one-fifth. Correct plan before assembly; evidence ff99358894 on codex/j2438-pluto-v02."
         }
       ],
       "remaining_action": "Correct the Pluto opening plan against the locked narration before assembly",
