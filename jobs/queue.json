@@ -236523,13 +236523,13 @@
       "stage": "topic",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T14:51Z",
-      "eta": "2026-11-12T16:21Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T14:44Z",
-      "result": "",
+      "result": "PR #853 (branch gemini/J2710, commit e23049fde7): repaired OWB:064 and OWB:065 topic evidence for parent J2707 (0 spend, 0 vidIQ credits; 11 template files untouched). OWB:064: 8 >=1M-view neighbours, #1 autocomplete phrase \"where do shooting stars come from\" (ranks IxDR-dASDNw 2.55M & TuDfZ2Md5x8 1.10M, 0 title collisions), 11 NASA primary-source claims checked (rejected universal sand-grain comet-dust claim; verified 3200 Phaethon Geminids, Halley dual showers, 11-72 km/s, 50-100 km, 48.5 tons/day); RECOMMEND GO (94/100) in WIP.json next. OWB:065: 8 >=1M-view neighbours, Rule 26 autocomplete \"what will happen to the iss\" / \"what will happen to the international space station\" (ranks cohVHaVMBl8 2.76M & plJVUFErhf8 1.65M, 0 title collisions), documented scheduled 25 Nov Short AR2 xdurJQcoiGM overlap, 11 NASA/NOAA/GAO claims checked (enforced 2030/2031 baseline plan + 2027 GAO check vs guaranteed date, and South Pacific SPOUA vs single Point Nemo coordinate); RECOMMEND GO (92/100) in WIP.json next. Consolidated review: jobs/reviews/J2710/REVIEW.md on PR #853.",
       "history": [
         {
           "at": "2026-11-12T14:44Z",
@@ -236595,9 +236595,14 @@
           "at": "2026-11-12T15:50Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Verified PR #853 (e23049fde7) evidence repair and 11 template files for OWB:064 and OWB:065; closing J2710"
+        },
+        {
+          "at": "2026-11-12T15:55Z",
+          "by": "gemini",
+          "what": "done: PR #853 (branch gemini/J2710, commit e23049fde7): repaired OWB:064 and OWB:065 topic evidence for parent J2707 (0 spend, 0 vidIQ credits; 11 template files untouched). OWB:064: 8 >=1M-view neighbours, #1 autocomplete phrase \"where do shooting stars come from\" (ranks IxDR-dASDNw 2.55M & TuDfZ2Md5x8 1.10M, 0 title collisions), 11 NASA primary-source claims checked (rejected universal sand-grain comet-dust claim; verified 3200 Phaethon Geminids, Halley dual showers, 11-72 km/s, 50-100 km, 48.5 tons/day); RECOMMEND GO (94/100) in WIP.json next. OWB:065: 8 >=1M-view neighbours, Rule 26 autocomplete \"what will happen to the iss\" / \"what will happen to the international space station\" (ranks cohVHaVMBl8 2.76M & plJVUFErhf8 1.65M, 0 title collisions), documented scheduled 25 Nov Short AR2 xdurJQcoiGM overlap, 11 NASA/NOAA/GAO claims checked (enforced 2030/2031 baseline plan + 2027 GAO check vs guaranteed date, and South Pacific SPOUA vs single Point Nemo coordinate); RECOMMEND GO (92/100) in WIP.json next. Consolidated review: jobs/reviews/J2710/REVIEW.md on PR #853."
         }
       ],
-      "remaining_action": "Mark J2710 done and post thread report for parent J2707",
+      "remaining_action": "Done",
       "due": "2026-11-13T14:40:00Z",
       "for": "gemini",
       "kind": "review",
@@ -236614,7 +236619,8 @@
         "at": "2026-11-12T15:50Z",
         "by": "gemini",
         "note": "Verified PR #853 (e23049fde7) evidence repair and 11 template files for OWB:064 and OWB:065; closing J2710"
-      }
+      },
+      "done_ref": "e23049fde7"
     },
     {
       "id": "J2711",
