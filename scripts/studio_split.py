@@ -157,11 +157,23 @@ def shared_tools(root: pathlib.Path) -> list[str]:
     return sorted(files if isinstance(files, dict) else [f.get("path") for f in files if f.get("path")])
 
 
+def _release_dest(dest: pathlib.Path) -> None:
+    """Make `dest` a name in this folder before a write. A file link left when a directory link is turned into a
+    real folder still points at the channel checkout. copy2 follows that link, and a dangling one is followed too:
+    the write creates the missing target. unlink removes the link itself and does not modify or remove the target."""
+    if dest.is_symlink():
+        dest.unlink()
+
+
 def _place(src: pathlib.Path, dest: pathlib.Path) -> None:
-    """A copy, never a link: the tests run inside the scratch folder, and a test that rewrites a file in place must
-    not reach the real one."""
+    """A copy, never a link into a real checkout: the tests run inside the scratch folder, and a test that rewrites
+    a file in place must not reach the real one. The destination is a real name in the scratch folder first, so an
+    existing or dangling file link cannot be followed."""
     dest.parent.mkdir(parents=True, exist_ok=True)
+    _release_dest(dest)
     if src.is_symlink():              # a tracked link (some point at folders that only exist on the Mini): keep it a link
+        if dest.is_file():            # a scratch file from an earlier place; the link above is already gone
+            dest.unlink()
         os.symlink(os.readlink(src), dest)
     elif src.is_file():
         shutil.copy2(src, dest)
