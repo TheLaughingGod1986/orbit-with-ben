@@ -222709,9 +222709,14 @@
           "at": "2026-11-12T12:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T12:49Z",
+          "by": "gemini",
+          "what": "step 5 of 14 done: Claimed J2529; Batch 06 .done exited 0 (7940->7440 posted); running runner tests, NAS check, and Batch 06 receipt/sheet verification"
         }
       ],
-      "remaining_action": "Read Batch 06 completion (.done + receipt), verify post-batch balance (7940->7440) and 0.5s sheets, then launch Batch 07 under --floor 3000 --other-reservations 0",
+      "remaining_action": "Verify Batch 06 completion (.done + receipt + ledger + 0.5s sheets), post Batch 06 sheets on HOS desk #180, then launch Batch 07",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222725,9 +222730,9 @@
       "progress": {
         "step": 5,
         "of": 14,
-        "at": "2026-11-12T11:19Z",
+        "at": "2026-11-12T12:49Z",
         "by": "gemini",
-        "note": "Batch 05 (25/66) complete & 5 full-clip 0.5s sheets posted on HOS desk #180 (6822148054); Batch 06 (P3:04a..P3:07a) laun"
+        "note": "Claimed J2529; Batch 06 .done exited 0 (7940->7440 posted); running runner tests, NAS check, and Batch 06 receipt/sheet "
       }
     },
     {
