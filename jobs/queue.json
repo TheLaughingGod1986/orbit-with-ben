@@ -233659,9 +233659,14 @@
           "at": "2026-11-12T08:27Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1/5 complete: verified locked script v03 and VO v03 on NAS; recorded exact supporting lines for title and NO CRASH hook"
+        },
+        {
+          "at": "2026-11-12T08:28Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2/5 complete: reconciled SHA-256 provenance (Mini J2448 dbd52af0 vs MacBook NAS ad9f3eb4); inspected full-size and 168px; selected canonical Mini build dbd52af0 (1280x720, 1.15 MB, sat 128.0, nb 3%, heic1502a)"
         }
       ],
-      "remaining_action": "2/5 Reconcile package A SHA-256 provenance and inspect full-size and 168px images",
+      "remaining_action": "3/5 Check/run packaging panel for OWB:019 package A and queue panel critiques + decision",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Checking the Andromeda title and thumbnail before testing them against the current version",
@@ -233675,11 +233680,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-12T08:27Z",
+        "at": "2026-11-12T08:28Z",
         "by": "gemini",
-        "note": "Step 1/5 complete: verified locked script v03 and VO v03 on NAS; recorded exact supporting lines for title and NO CRASH "
+        "note": "Step 2/5 complete: reconciled SHA-256 provenance (Mini J2448 dbd52af0 vs MacBook NAS ad9f3eb4); inspected full-size and "
       },
       "taskKeys": [
         "OWB:019"
