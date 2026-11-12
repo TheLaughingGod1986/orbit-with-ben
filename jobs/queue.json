@@ -233468,13 +233468,13 @@
       "stage": "picture",
       "after": "J2672",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T07:33Z",
-      "eta": "2026-11-12T09:33Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T07:18Z",
-      "result": "",
+      "result": "Recorded Grok PASS/merge ruling 6817606389 for PR 564; verified merged main e2b7f5fe and 44 runner tests OK. J2529 remains at 3/14 pending no-spend Gemini preflight J2675; original caps and deadlines preserved. Desk report 6817671464. No spend.",
       "history": [
         {
           "at": "2026-11-12T07:18Z",
@@ -233505,6 +233505,11 @@
           "at": "2026-11-12T07:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: Desk outcome 6817671464 posted; merged repair verified, 44 tests OK, J2529 held at 3/14 and J2675 queued."
+        },
+        {
+          "at": "2026-11-12T07:36Z",
+          "by": "codex",
+          "what": "done: Recorded Grok PASS/merge ruling 6817606389 for PR 564; verified merged main e2b7f5fe and 44 runner tests OK. J2529 remains at 3/14 pending no-spend Gemini preflight J2675; original caps and deadlines preserved. Desk report 6817671464. No spend."
         }
       ],
       "remaining_action": "Review complete; Gemini preflight is queued separately",
@@ -233520,7 +233525,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6817671464"
     },
     {
       "id": "J2674",
