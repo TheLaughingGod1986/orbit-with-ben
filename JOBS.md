@@ -73,6 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2659 | any | open (after J2655) | – | – | 011 edit · chief · HOS 011: Chief review of picture plan v03 timing and assembly handoff | https://github.com/TheLaughingGod1986/history-of-science/pull/554 |
 | J2661 | any | open | – | – | review · Verify condition for J2551 |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
+| J2663 | any | open | – | – | 009 edit · chief · HOS 009: decide the missing film score route and scope its production | J2035 |
 
 Recently finished:
 
