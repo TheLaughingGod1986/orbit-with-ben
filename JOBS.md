@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2683 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
 | J2684 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0912 |  |
 | J2685 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J2686 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
+| J2686 | mini | claimed | gemini | 2026-11-12T11:43Z | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
 | J2690 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657 | J2674 |
 | J2691 | mini | open (after J2690) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657 | J2674 |
