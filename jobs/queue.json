@@ -232711,13 +232711,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-12T06:30Z",
-      "eta": "2026-11-12T08:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T03:03Z",
-      "result": "",
+      "result": "parked for Chief: Verified J2220 prerequisites (J2219 done, OWB:J01 in WIP active), published Codex's unpushed J2220 evidence and ElevenLabs spend ledger rows (6fd3a85d7d -> dd5fa067a3), and completed direct multimodal ear-listening + technical review of all 8 J01 linking VO takes on studio-live (jobs/reviews/J2665/REVIEW.md). Verdict: KEEP all 8 takes (0 retakes, £0): Take 1 'forged the' and Take 2 'locked safely' are clean British English connected speech with 0 stumbles; all 8 takes meet -19 to -28 dB mean (-22.3 to -24.0 dB), and aggregate pace is 142.6 wpm raw / 137.7 wpm with 0.8s card breaths (inside 130-145 wpm). Do NOT reopen J2220 to re-record. Chief (chief): run studio.py set J01 vo done --by chief --ref dd5fa067a3 --git, close J2220 and J2665 done, unlocking J2221 assembly.",
       "history": [
         {
           "at": "2026-11-12T03:03Z",
@@ -232753,6 +232753,11 @@
           "at": "2026-11-12T06:42Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete (dd5fa067a3): all 8 J01 VO takes PASS ear & technical checks; parking for Chief to close J2220+J2665"
+        },
+        {
+          "at": "2026-11-12T06:42Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified J2220 prerequisites (J2219 done, OWB:J01 in WIP active), published Codex's unpushed J2220 evidence and ElevenLabs spend ledger rows (6fd3a85d7d -> dd5fa067a3), and completed direct multimodal ear-listening + technical review of all 8 J01 linking VO takes on studio-live (jobs/reviews/J2665/REVIEW.md). Verdict: KEEP all 8 takes (0 retakes, £0): Take 1 'forged the' and Take 2 'locked safely' are clean British English connected speech with 0 stumbles; all 8 takes meet -19 to -28 dB mean (-22.3 to -24.0 dB), and aggregate pace is 142.6 wpm raw / 137.7 wpm with 0.8s card breaths (inside 130-145 wpm). Do NOT reopen J2220 to re-record. Chief (chief): run studio.py set J01 vo done --by chief --ref dd5fa067a3 --git, close J2220 and J2665 done, unlocking J2221 assembly."
         }
       ],
       "remaining_action": "Chief (chief) to close J2220 and J2665 done (KEEP all 8 J01 VO takes) and set J01 vo done to unlock J2221",
