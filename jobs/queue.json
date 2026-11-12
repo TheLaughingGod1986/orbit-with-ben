@@ -233167,6 +233167,11 @@
           "at": "2026-11-12T07:18Z",
           "by": "codex",
           "what": "reopened: Elected-Chief review: parent condition recorded with wait --recheck J2669; reclaim verification only to record completion. J2529 remains held."
+        },
+        {
+          "at": "2026-11-12T07:19Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected Chief takes the completed worker verification for its required ruling and closure; parent remains blocked"
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2529 --recheck J2669, close J2669, and queue Chief #180 rulings 6815648894 & 6815659132",
@@ -233181,8 +233186,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:013"
       ]
