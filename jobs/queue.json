@@ -214223,9 +214223,14 @@
           "at": "2026-11-12T08:21Z",
           "by": "relay",
           "what": "condition verification queued: J2686"
+        },
+        {
+          "at": "2026-11-12T20:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T09:00:00Z"
         }
       ],
-      "remaining_action": "Await the Andromeda package A review before testing it against the current title and thumbnail",
+      "remaining_action": "Wait for the revised Andromeda thumbnail and its final review before starting the two-arm test",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -214244,9 +214249,8 @@
       "escalated_at": "2026-11-12T03:14Z",
       "hold": {
         "type": "dependency",
-        "condition": "J2674 verifies exact Andromeda package A and script support, completes required packaging panel and evidence reconciliation, and obtains final Chief release under J2657 two-arm scope; no new test before these checks",
-        "check_at": "2026-11-12T09:21:42+00:00",
-        "recheck_task": "J2686"
+        "condition": "J2692 ruled FIX on canonical Andromeda Package A. PR #836 merged; J2729 must rebuild the whole-galaxy challenger, complete a new exact-file panel and obtain elected-Chief PASS before this job reopens for only the two-arm Andromeda test. No other videos or description changes.",
+        "check_at": "2026-11-14T09:00:00Z"
       }
     },
     {
