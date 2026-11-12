@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2716 | mini | claimed | macbook-2 | 2026-11-12T18:13Z | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
 | J2717 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0875 |  |
 | J2718 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0960 |  |
-| J2719 | any | open | – | – | review · Verify condition for J2040 |  |
+| J2719 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2720 | any | open | – | – | review · Verify condition for J2529 |  |
 
 Recently finished:
