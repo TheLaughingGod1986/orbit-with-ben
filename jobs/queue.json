@@ -238899,9 +238899,14 @@
           "at": "2026-11-12T23:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T23:08Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2730; starting verification of J2171 waiting condition for HOS 009"
         }
       ],
-      "remaining_action": "Verify readiness: Build the two gravity Shorts after the approved score and long assembly are complete; then run checks and submit for review",
+      "remaining_action": "Inspect J2171, J2035, J2664 and HOS 009 05_Music / assembly state",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T21:07:58+00:00",
@@ -238920,9 +238925,11 @@
         "of": 3,
         "at": "2026-11-12T23:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2730; starting verification of J2171 waiting condition for HOS 009"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2731",
