@@ -1,5 +1,5 @@
 {
-  "next_id": 2713,
+  "next_id": 2714,
   "jobs": [
     {
       "id": "J0001",
@@ -236387,6 +236387,11 @@
           "at": "2026-11-12T14:47Z",
           "by": "codex",
           "what": "Chief FIX recorded; evidence repair dependency J2710; original worker progress preserved"
+        },
+        {
+          "at": "2026-11-12T15:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J2713"
         }
       ],
       "remaining_action": "Review J2710 evidence for shooting stars and the space station; neither topic is approved",
@@ -236400,7 +236405,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief FIX: review incomplete; wait for J2710 Mini Gemini evidence on OWB:064 and OWB:065. Templates match, but neighbours, search phrase/ranks, collision and NASA checks are missing. No topic GO or production. Decide on evidence, or NO-GO if insufficient at the deadline.",
-        "check_at": "2026-11-13T14:40:00Z"
+        "check_at": "2026-11-12T16:55:56+00:00",
+        "recheck_task": "J2713"
       },
       "taskKeys": [
         "OWB:064",
@@ -236733,6 +236739,37 @@
         "at": "2026-11-12T15:51Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2713",
+      "title": "Verify condition for J2707",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2707: Chief FIX: review incomplete; wait for J2710 Mini Gemini evidence on OWB:064 and OWB:065. Templates match, but neighbours, search phrase/ranks, collision and NASA checks are missing. No topic GO or production. Decide on evidence, or NO-GO if insufficient at the deadline.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2707 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T15:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T15:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review J2710 evidence for shooting stars and the space station; neither topic is approved",
+      "kind": "review",
+      "recheck_of": "J2707",
+      "due": "2026-11-12T16:55:56+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
