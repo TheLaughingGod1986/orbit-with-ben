@@ -214004,9 +214004,14 @@
           "at": "2026-11-12T03:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-12T07:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T09:00:00Z"
         }
       ],
-      "remaining_action": "Resolve Andromeda illustration disclosure with Chief before starting its test",
+      "remaining_action": "Await the Andromeda package A review before testing it against the current title and thumbnail",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -214022,7 +214027,12 @@
         "by": "codex",
         "note": "Jupiter three-arm test running, saved about 12 Nov 00:08Z; finished T003 and T017 reports preserved. Andromeda package B"
       },
-      "escalated_at": "2026-11-12T03:14Z"
+      "escalated_at": "2026-11-12T03:14Z",
+      "hold": {
+        "type": "dependency",
+        "condition": "J2674 verifies exact Andromeda package A and script support, completes required packaging panel and evidence reconciliation, and obtains final Chief release under J2657 two-arm scope; no new test before these checks",
+        "check_at": "2026-11-13T09:00:00Z"
+      }
     },
     {
       "id": "J2450",
