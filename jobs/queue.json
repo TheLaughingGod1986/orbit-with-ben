@@ -222896,9 +222896,14 @@
           "at": "2026-11-12T18:05Z",
           "by": "relay",
           "what": "condition verification queued: J2720"
+        },
+        {
+          "at": "2026-11-12T18:19Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-12T20:15:00Z"
         }
       ],
-      "remaining_action": "Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
+      "remaining_action": "Run reconcile-session-block after Codex PR merges, then verify post-19:13Z Flow allowance, banner cleared, and dry-run --floor 3000 before resuming Batch 12 (row 56 t2 + rows 57-66)",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222917,10 +222922,9 @@
         "note": "Batch 12 exited 1: Flow failed row 56 P5:08a_wallace_opens_origin with unusual-activity banner (live balance verified un"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-12T19:05:57+00:00",
-        "recheck_task": "J2720"
+        "type": "input",
+        "condition": "Codex merges reconcile-session-block PR on history-of-science (reviewed by Claude), Gemini runs reconcile-session-block once to close HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, the new Flow allowance is live after 19:13Z with the unusual-activity banner gone, and dry-run --floor 3000 passes with 0 pending charges (Chief rulings 6831924778 & 6831945212)",
+        "check_at": "2026-11-12T20:15:00Z"
       }
     },
     {
