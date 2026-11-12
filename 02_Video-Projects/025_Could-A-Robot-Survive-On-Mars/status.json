@@ -31,11 +31,19 @@
       "ref": "upload done"
     },
     "upload": {
-      "state": "done",
+      "state": "doing",
       "note": "ref Js6EQJ8qDi8 (Private, publishAt 2026-11-08T18:00:00Z)",
       "ref": "f7c832a7d5"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "upload",
+      "by": "codex",
+      "at": "2026-11-12T23:49Z",
+      "eta": "2026-11-13T00:09Z",
+      "note": "J2711 remaining tag evidence recovery; no upload or schedule changes"
+    }
+  ],
   "next": "Uploaded Private; goes public Sun 8 Nov 18:00 London (J0123 date gate, then J0124)."
 }
