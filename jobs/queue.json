@@ -237077,9 +237077,14 @@
           "at": "2026-11-12T18:37Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Swapped status.publishAt only on YouTube (part=status): RT-ec4_GcOk -> 2026-11-14T11:30:00Z (private, 6 tags preserved) and z5V6gIXXYs8 -> 2026-11-13T11:30:00Z (private, 3 tags preserved); read back live"
+        },
+        {
+          "at": "2026-11-12T18:41Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Moved all 6 Buffer posts (IG/FB/Threads) in-place via Buffer GraphQL editPost: RT-ec4_GcOk -> 2026-11-14T11:30:00.000Z and z5V6gIXXYs8 -> 2026-11-13T11:30:00.000Z; verified scheduled status and recorded in BUFFER_POSTS.json"
         }
       ],
-      "remaining_action": "Move Buffer social posts for RT-ec4_GcOk and z5V6gIXXYs8 to their new publish dates and verify",
+      "remaining_action": "Update studio schedule records (UPLOADS.json, library.json, test logs, film_briefs.json) and verify board Schedule tab",
       "due": "2026-11-13T09:00:00Z",
       "kind": "listing",
       "plain": "Swap Friday's and Saturday's Shorts, so a Pluto Short goes out next instead of a fourth Mars one",
@@ -237094,11 +237099,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-12T18:37Z",
+        "at": "2026-11-12T18:41Z",
         "by": "gemini",
-        "note": "Swapped status.publishAt only on YouTube (part=status): RT-ec4_GcOk -> 2026-11-14T11:30:00Z (private, 6 tags preserved) "
+        "note": "Moved all 6 Buffer posts (IG/FB/Threads) in-place via Buffer GraphQL editPost: RT-ec4_GcOk -> 2026-11-14T11:30:00.000Z a"
       },
       "taskKeys": [
         "OWB:025"
