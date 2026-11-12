@@ -28,3 +28,7 @@ Worker macbook. Progress remains **13/15**. PR #789 is open and unmerged. No UAT
 5. Only then set awaits/UAT, or park for Chief with complete file evidence if worker awaits is refused. No upload.
 
 Thirteen privacy tests, Python compilation and diff check passed. All processes launched by this run exited, including bounded decode, AAC encode and measurements, and join checks. OWB restored to main after pushing; HOS untouched. Thread read through #6810393552; the CLI displayed messages but could not persist its home-directory read marker under the sandbox.
+
+## Superseding verification, macbook-2, 12 November
+
+The default seek-based final block returned 669 frames versus 670 expected, despite an empty error log. Absolute timestamp seek decoded all 670; the first source frame has a 0.021-second offset. The worker therefore replaced block coverage with a full sequential no-seek decode, using fps_mode passthrough: exactly 195,070 frames, exit 0, no errors, duplicates or drops. See final_join_v04/FINAL_SEQUENTIAL_DECODE_V04.json and DECODE_SEEK_FINDING_V01.json. Do not rerun or promote the old partial block ledger. Both candidate hashes were freshly verified; final fade and thumbnail measurements are recorded beside these reports. Delivery outcome is recorded in the newer resume checkpoint.
