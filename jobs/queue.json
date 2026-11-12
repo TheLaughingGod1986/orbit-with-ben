@@ -213867,13 +213867,13 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-12T01:18Z",
-      "eta": "2026-11-12T05:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
-      "result": "",
+      "result": "Completed 15/15. Master 108:22.333 and 12:26 reel NAS SHA256 verified; master 195070 frames, mux payload identities PASS. Existing audio -20.1 LUFS/-6.4 dBTP, silence/CTA/twelve joins/full decode PASS. Watch card and delivery evidence in open PR #789 commit 62c95efcf; awaits_ben recorded for finished master. No upload until Ben OKs, earliest air 12 Dec. Checkout main; all launched processes exited.",
       "history": [
         {
           "at": "2026-11-09T21:38Z",
@@ -215164,6 +215164,11 @@
           "at": "2026-11-12T01:36Z",
           "by": "macbook-2",
           "what": "waits on Ben: Watch the finished 108-minute calm space compilation; spot-check first five minutes, two joins, last five minutes and brightest windows in the reel"
+        },
+        {
+          "at": "2026-11-12T01:36Z",
+          "by": "macbook-2",
+          "what": "done: Completed 15/15. Master 108:22.333 and 12:26 reel NAS SHA256 verified; master 195070 frames, mux payload identities PASS. Existing audio -20.1 LUFS/-6.4 dBTP, silence/CTA/twelve joins/full decode PASS. Watch card and delivery evidence in open PR #789 commit 62c95efcf; awaits_ben recorded for finished master. No upload until Ben OKs, earliest air 12 Dec. Checkout main; all launched processes exited."
         }
       ],
       "remaining_action": "Verified master and reel delivered; submit finished cut for Ben watch",
