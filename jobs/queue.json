@@ -236160,18 +236160,23 @@
           "at": "2026-11-12T14:26Z",
           "by": "codex",
           "what": "step 1 of 3 done: Baseline confirmed: login 200, home 500; Vercel runtime log proves missing DATABASE_URL. Fresh loopback PostgreSQL created, both URLs verified isolated."
+        },
+        {
+          "at": "2026-11-12T14:28Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Full build and fresh PostgreSQL migration PASS; typecheck/lint PASS; 19 test files, 199 tests PASS; check_all ALL CHECKS PASS; six local auth/home checks PASS. No HOS Preview env vars configured."
         }
       ],
-      "remaining_action": "Build and smoke-test the app with a disposable database; establish safe hosted preview prerequisites",
+      "remaining_action": "Record validation evidence and queue the missing isolated hosted database setup",
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T14:26Z",
+        "at": "2026-11-12T14:28Z",
         "by": "codex",
-        "note": "Baseline confirmed: login 200, home 500; Vercel runtime log proves missing DATABASE_URL. Fresh loopback PostgreSQL creat"
+        "note": "Full build and fresh PostgreSQL migration PASS; typecheck/lint PASS; 19 test files, 199 tests PASS; check_all ALL CHECKS"
       }
     },
     {
