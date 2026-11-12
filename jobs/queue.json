@@ -236658,10 +236658,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-12T15:43Z",
+      "eta": "2026-11-12T17:43Z",
       "created_by": "relay",
       "created_at": "2026-11-12T15:41Z",
       "result": "",
@@ -236675,6 +236675,11 @@
           "at": "2026-11-12T15:41Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T15:43Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 09",
@@ -236690,7 +236695,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T15:43Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

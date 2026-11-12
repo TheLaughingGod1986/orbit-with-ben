@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 | J2710 | mini | claimed | gemini | 2026-11-12T16:21Z | 064 topic · for gemini · review · `gemini-argon` · OWB 064 and 065: repair missing topic evidence for J2707 |  |
 | J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
-| J2712 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
+| J2712 | mini | claimed | macbook | 2026-11-12T17:43Z | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 
 Recently finished:
 
