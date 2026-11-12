@@ -88,3 +88,20 @@ Any spend row in this window that reads a different reservation, or no reservati
   - **Takes per part (`15 / 66` Quality takes, `GENERATED` / `PENDING_REVIEW`, `keep: false`):** `part_01` `12/12`, `part_02` `3/11`, `part_03` `0/14`, `part_04` `0/12`, `part_05` `0/9`, `part_06` `0/8`
   - **Credits spent:** `1,500` Flow credits (`15 × 100` Quality; `15 × 0` start stills; £0 cash; `0` pending charges; `0` refused takes)
   - **Balance before → after:** `10,440 → 8,940` (`5,100` remaining on `HOS013_PASS1`; `800` historical unposted liability; headroom `3,040 >= 3,000`)
+
+### Batch 04 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T08:18Z` – `08:33Z`, after PR `#564` & Ruling `6818142702`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_04_RECEIPT.json` (`archive_v01_pass1/batch-b0ff484ec9ae.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_04_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `2,000 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `8,440` re-verified live on CDP `:9222`):** `8,940 → 8,840 → 8,740 → 8,640 → 8,540 → 8,440` (`0` pending charges; remaining `HOS013_PASS1` reservation `4,600`; headroom `8,440 - 4,600 - 800 = 3,040 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P2:05_tortoise_overboard` | `P02_05_tortoise_overboard_t1.mp4` | `15dec197839c6d4314a7b0bdd8abfc5dee3316891c5fc95b1f3a164202be0b6a` | `023bc315d49c12987fad300647530bc75858221014b7bada3b4a00e66360f978` | `839c023d553dc8bcb45bcca613f8aff41902b98d80e912af7e62964fd4efef29` | `8,940 → 8,840` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:06a_lawson_jetty` | `P02_06a_lawson_jetty_t1.mp4` | `3ad6f3b95a57e1804a58d8b5f3f5d47731283c98776ad905bb5e7e1b513989d9` | `fd4f0f379dad19c0e4844ac85084a2565e78fc5a8e35b27e3b4bfa583566c8e3` | `27e89c744c12d4a1737a1596e8316c4ee01439d6d42e8f92a7e8b24bea12dcbf` | `8,840 → 8,740` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:07_darwin_notebook_wait` | `P02_07_darwin_notebook_wait_t1.mp4` | `a897c9984f49800a59bb991d6461f3883df6a62a7f1bf11249f5c441a8a89ecd` | `353e387d2c21616a40758ad1b1fcec4bb466376468c138c12bf0f61f11559448` | `9915ab0f8787bc2febe26eb4ddeeb518c1f1a77bc9ae0fadb4f092a8d2849f81` | `8,740 → 8,640` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:08a_gould_sorting` | `P02_08a_gould_sorting_t1.mp4` | `fa5f78e0cd1a9cbe4da35aa388868ec416ee320d27eaed5c06ea68d130117cd5` | `2ccbd9d13161af8a2e780634bd17fd7c40e4998f8445c66373ead6dcad4b2eda` | `5c01df6668d24a1f02fdbda183ba740b93ef2850b5924e52dce077537b0c668a` | `8,640 → 8,540` | `PENDING_REVIEW` (`keep: false`) |
+| `P2:08b_gould_skins_closeup` | `P02_08b_gould_skins_closeup_t1.mp4` | `47fc7ca5445b772b4e1f2201fd5fb5956e1de86bc3d02e4a4f4802473e011318` | `8f52b44f487808c61e9f3b1a3c95636da4a37d82376cc93d04e13aea3f3e18fa` | `d9e0b66054818d4711d31b290032f7253d6677d80fce3b92f6a6e19e88c24249` | `8,540 → 8,440` | `PENDING_REVIEW` (`keep: false`) |
