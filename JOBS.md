@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2678 | mini | open | – | – | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
 | J2679 | mini | claimed | macbook-2 | 2026-11-12T08:26Z | studio · Nearest Star long: check the long is the Related video on all four Shorts (airing 16-20 Nov) |  |
 | J2680 | mini | claimed | macbook | 2026-11-12T08:26Z | studio · Light Speed rVqgtkBV3jc: queue a thumbnail test only if none is set |  |
-| J2681 | any | claimed | codex | 2026-11-12T10:04Z | 013 picture · chief · HOS 013: review J2675 preflight and decide J2529 reopening before 13:00 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475 |
+| J2681 | any | open (after J2675) | – | – | 013 picture · chief · HOS 013: review J2675 preflight and decide J2529 reopening before 13:00 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475 |
 | J2682 | any | open | – | – | 013 picture · for codex · assembly · HOS 013: fix dry-run double counting of active reservation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818150970 |
 
 Recently finished:
