@@ -235644,10 +235644,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T13:17Z",
+      "eta": "2026-11-12T15:17Z",
       "created_by": "relay",
       "created_at": "2026-11-12T12:07Z",
       "result": "",
@@ -235701,6 +235701,11 @@
           "at": "2026-11-12T13:17Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: User explicitly assigned J2700 Chief review to elected codex; remove prior specialist-only routing for final disposition."
+        },
+        {
+          "at": "2026-11-12T13:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief (codex) to record --recheck J2700 wait on J2035 and close J2700",
@@ -235719,7 +235724,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T13:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2701",
