@@ -2,12 +2,12 @@
   "job_id": "J2529",
   "film": "HOS:013",
   "reservation": "HOS013_PASS1",
-  "updated_at": "2026-11-12T17:17:00Z",
+  "updated_at": "2026-11-12T17:38:00Z",
   "runner_ledger_note": "Raw pass-1 runner ledger (~/_desk/state/flow/hos013-pass1/ledger.jsonl) and raw BATCH_NN_RECEIPT.json stay PENDING_REVIEW / keep:false per runner guard contract; Chief rulings are recorded here.",
   "summary": {
-    "minted_rows": 50,
-    "ruled_rows": 45,
-    "keep_count": 41,
+    "minted_rows": 55,
+    "ruled_rows": 50,
+    "keep_count": 44,
     "keep_rows": [
       1,
       2,
@@ -49,29 +49,36 @@
       42,
       43,
       44,
-      45
+      45,
+      46,
+      48,
+      50
     ],
-    "retake_count": 4,
+    "retake_count": 6,
     "retake_rows": [
       3,
       10,
       24,
-      28
+      28,
+      47,
+      49
     ],
     "retake_row_ids": [
       "P1:03a_unlabelled_birds",
       "P1:07_darwin_1837_desk",
       "P3:02a_malthus_lamplight",
-      "P3:05a_chicks_deep_beaks"
+      "P3:05a_chicks_deep_beaks",
+      "P4:10_fairness_25_june",
+      "P4:12_lyell_hooker_bundle"
     ],
-    "retake_reservation_credits": 400,
+    "retake_reservation_credits": 600,
     "retake_timing": "Held until after pass 1 (Batches 01-14) under runner guards and >=3,000 Flow credit headroom floor; \u00a30 cash.",
     "pending_review_rows": [
-      46,
-      47,
-      48,
-      49,
-      50
+      51,
+      52,
+      53,
+      54,
+      55
     ]
   },
   "rulings": [
@@ -180,6 +187,23 @@
       ],
       "retake": [],
       "note": "Closes 6830137619 hold on row 45; 2.25-3.75 s strip skipped; retake reservation stays 400"
+    },
+    {
+      "comment_id": 6830918005,
+      "batches": [
+        10
+      ],
+      "rows": "46-50",
+      "keep": [
+        46,
+        48,
+        50
+      ],
+      "retake": [
+        47,
+        49
+      ],
+      "note": "Confirms 6830884885 and withdraws 6830830084 on rows 49-50; retake reservation raised 400 -> 600 credits (rows 3, 10, 24, 28, 47, 49)"
     }
   ],
   "rows": [
@@ -1009,9 +1033,9 @@
       "row_id": "P4:09b_smashed_letter_pen",
       "take": 1,
       "clip_sha256": "dacb60bd68a5c892d5f9fd5e0e2e36f9e2a4866d7bbe933bfbcf8ae92ed8b89a",
-      "keep": false,
-      "status": "PENDING_REVIEW",
-      "ruling_comment": null,
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830918005,
       "clip_window_s": [
         0.0,
         5.3
@@ -1019,7 +1043,8 @@
       "film_window_s": [
         344.2,
         349.5
-      ]
+      ],
+      "note": "KEEP as cut (6830884885 / 6830918005): pen keeps steady length through dip; second pen revealed as arm lifts."
     },
     {
       "n": 47,
@@ -1028,8 +1053,8 @@
       "take": 1,
       "clip_sha256": "a3008b0a20514a8a273fb7492c55409ec5d9a0eb145f2d5400e828d7b1d6f841",
       "keep": false,
-      "status": "PENDING_REVIEW",
-      "ruling_comment": null,
+      "status": "RETAKE",
+      "ruling_comment": 6830918005,
       "clip_window_s": [
         0.0,
         6.08
@@ -1037,7 +1062,8 @@
       "film_window_s": [
         349.5,
         355.58
-      ]
+      ],
+      "note": "RETAKE (6830884885 / 6830918005): tied bundle rises off book ~2.5s without hand and vanishes by ~3.0s inside 0-6.08s window; retake with same locked prompt & start still."
     },
     {
       "n": 48,
@@ -1045,9 +1071,9 @@
       "row_id": "P4:11_down_house_grief",
       "take": 1,
       "clip_sha256": "797eaadce55c54113c0c56ada50473b85e49c9fbe810ef8d3e7ebf8dbea058dc",
-      "keep": false,
-      "status": "PENDING_REVIEW",
-      "ruling_comment": null,
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830918005,
       "clip_window_s": [
         0.0,
         5.4
@@ -1055,7 +1081,8 @@
       "film_window_s": [
         355.58,
         360.98
-      ]
+      ],
+      "note": "KEEP as cut (6830884885 / 6830918005): clean, slow push-in on Down House."
     },
     {
       "n": 49,
@@ -1064,8 +1091,8 @@
       "take": 1,
       "clip_sha256": "820c1433ca609245b150409f709c287d6c25a58770ad962b6ea22768ff3a492a",
       "keep": false,
-      "status": "PENDING_REVIEW",
-      "ruling_comment": null,
+      "status": "RETAKE",
+      "ruling_comment": 6830918005,
       "clip_window_s": [
         0.0,
         5.36
@@ -1073,7 +1100,8 @@
       "film_window_s": [
         360.98,
         366.34
-      ]
+      ],
+      "note": "RETAKE (6830884885, confirmed by 6830918005 withdrawing 6830830084): carried parcel under Hooker's arm smears at 0.85s and dissolves by 1.00s without raising step stack; retake with same locked prompt & start still."
     },
     {
       "n": 50,
@@ -1081,9 +1109,9 @@
       "row_id": "P5:02a_linnean_reading",
       "take": 1,
       "clip_sha256": "dc7de232f76b5bde854dd1cb512cf2a868349fa81f9126e6d0ccfda39b9911ea",
-      "keep": false,
-      "status": "PENDING_REVIEW",
-      "ruling_comment": null,
+      "keep": true,
+      "status": "KEEP",
+      "ruling_comment": 6830918005,
       "clip_window_s": [
         0.0,
         8.0
@@ -1091,6 +1119,97 @@
       "film_window_s": [
         368.56,
         376.56
+      ],
+      "note": "KEEP as cut (6830884885, confirmed by 6830918005 withdrawing 6830830084): sitter behind lectern already present at 0.0s and solid; pews behind seated men stay empty."
+    },
+    {
+      "n": 51,
+      "batch": 11,
+      "row_id": "P5:03a_two_empty_chairs",
+      "take": 1,
+      "clip_sha256": "c9bb651faf9d6d17266df305bbeca5308f73ff9f45134506eb0305dc66b15a4e",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        5.86
+      ],
+      "film_window_s": [
+        382.34,
+        388.2
+      ]
+    },
+    {
+      "n": 52,
+      "batch": 11,
+      "row_id": "P5:03b_wallace_jungle_clearing",
+      "take": 1,
+      "clip_sha256": "470715a0d13e5aeae43c97251b61d04d715d1d74a2d091efe47ab5e7794893f8",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        5.86
+      ],
+      "film_window_s": [
+        388.2,
+        394.06
+      ]
+    },
+    {
+      "n": 53,
+      "batch": 11,
+      "row_id": "P5:04a_empty_linnean_hall",
+      "take": 1,
+      "clip_sha256": "c9d642728dcddba3f0ee4896ec85e3dc450124c947abc11a95547780c897a439",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        3.94
+      ],
+      "film_window_s": [
+        394.06,
+        398.0
+      ]
+    },
+    {
+      "n": 54,
+      "batch": 11,
+      "row_id": "P5:05a_darwin_writes_origin",
+      "take": 1,
+      "clip_sha256": "5b7a829f49a556d76247358d894cde276fb17031137a14cac197582bd1187905",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        6.9
+      ],
+      "film_window_s": [
+        404.66,
+        411.56
+      ]
+    },
+    {
+      "n": 55,
+      "batch": 11,
+      "row_id": "P5:06_murray_bookshop",
+      "take": 1,
+      "clip_sha256": "87e35853e7c047bf5ed9e970498bcd0d67cfd16a02a4143535faadd3f7411ef5",
+      "keep": false,
+      "status": "PENDING_REVIEW",
+      "ruling_comment": null,
+      "clip_window_s": [
+        0.0,
+        4.56
+      ],
+      "film_window_s": [
+        414.44,
+        419.0
       ]
     }
   ]

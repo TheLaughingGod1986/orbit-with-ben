@@ -208,6 +208,23 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P4:12_lyell_hooker_bundle` | `P04_12_lyell_hooker_bundle_t1.mp4` | `820c1433ca609245b150409f709c287d6c25a58770ad962b6ea22768ff3a492a` | `696d7eb39e0f083c174125456ed882bcab881ce7a0082be26f8c88f53a6661b1` | `80fefc8d6f78a40dded9055bec3504b7c1170f2b726afb308df1627483db8d24` | `5,690 → 5,590` | `PENDING_REVIEW` (`keep: false`) |
 | `P5:02a_linnean_reading` | `P05_02a_linnean_reading_t1.mp4` | `dc7de232f76b5bde854dd1cb512cf2a868349fa81f9126e6d0ccfda39b9911ea` | `91d742b73943ef1cfe144f418b4a5b737600201025e6e103eaac2441bf0a6b6f` | `840c96180b6d274814670bbc18632e1ab5fb65f837a3001c1669b80e4eadb58a` | `5,590 → 5,490` | `PENDING_REVIEW` (`keep: false`) |
 
+### Batch 11 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-12T17:13Z` – `17:29Z`)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch11-20261112T1713Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch11-20261112T1713Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_11_RECEIPT.json` (`archive_v01_pass1/batch-0a0cabea0bc1.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_11_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`, review branch `review/013-pass1-sheets` `3a47bd83`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills at `0` credits via `Nano Banana 2.1`; cumulative `5,500 / 6,600`)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `4,990` re-verified live on CDP `:9222`):** `5,490 → 5,390 → 5,290 → 5,190 → 5,090 → 4,990` (`0` pending charges; remaining `HOS013_PASS1` reservation `1,100`; headroom `4,990 - 1,100 - 800 = 3,090 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P5:03a_two_empty_chairs` | `P05_03a_two_empty_chairs_t1.mp4` | `c9bb651faf9d6d17266df305bbeca5308f73ff9f45134506eb0305dc66b15a4e` | `567ba05fd4fad03414087b7da1be55fe29eb8646e7e0141f2c3aefe316ef5852` | `a2b108e611ba12f7e4111b9c7d85e22dcdec997af6c2d0ba22fb0502b2d3ffc5` | `5,490 → 5,390` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:03b_wallace_jungle_clearing` | `P05_03b_wallace_jungle_clearing_t1.mp4` | `470715a0d13e5aeae43c97251b61d04d715d1d74a2d091efe47ab5e7794893f8` | `5c8d6d0a1c772a48ca6f618e57fae88a228c5863d260166c8e4bc4f9834e9e89` | `ec5f26b435944f1edccb0cbbd98b491d910dbb18c3d3527566a956f2d88092c5` | `5,390 → 5,290` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:04a_empty_linnean_hall` | `P05_04a_empty_linnean_hall_t1.mp4` | `c9d642728dcddba3f0ee4896ec85e3dc450124c947abc11a95547780c897a439` | `eb773a5f25d2de7106a7d461b6c58e1e0a2b50f434abb9334e735b9ee3ddba6f` | `454ec6a5e7a28aa2ddd39c9f0d3de71bc0d7100de5137a45868d850452536910` | `5,290 → 5,190` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:05a_darwin_writes_origin` | `P05_05a_darwin_writes_origin_t1.mp4` | `5b7a829f49a556d76247358d894cde276fb17031137a14cac197582bd1187905` | `07deb98f62cf8790a5f4116eaabe2a621e74abfffa775c49fdb4b71c6233da81` | `2d15c0b9cfc46576b0e5aa985e19905ea2f230302ba9c61cb68412ae4646a6c2` | `5,190 → 5,090` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:06_murray_bookshop` | `P05_06_murray_bookshop_t1.mp4` | `87e35853e7c047bf5ed9e970498bcd0d67cfd16a02a4143535faadd3f7411ef5` | `a43d7a8732e1d8f55ae531e0ed997aa2b484a5c95ae4adc39c9e6697768b666f` | `d23f02873440c62d8cdbf22f55e7a4b26b8562f8356665544938abfc18fd9ec3` | `5,090 → 4,990` | `PENDING_REVIEW` (`keep: false`) |
+
 ## Chief Review State (`REVIEW_STATE.json`)
 
 - **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
@@ -215,4 +232,5 @@ Any spend row in this window that reads a different reservation, or no reservati
 - **Rows 21–25 (`6822411223` / `6822483718`):** `keep: true` on `21, 22, 23, 25` (row `22` retime `7.917→8.00 s`, no freeze; row `25` clip `4.00–7.90 s`); `RETAKE` on `24`.
 - **Rows 26–40 (`6829662956`):** `keep: true` on `26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40` as cut; `RETAKE` on `28` (`P3:05a_chicks_deep_beaks`).
 - **Rows 41–45 (`6830257530`, closing `6830137619`):** `keep: true` on `41, 42, 43, 44, 45` as cut (`2.25–3.75 s` strip skipped; row `45` off retake batch).
-- **Held retake batch after pass 1:** rows `3, 10, 24, 28`, reservation `400` Flow credits under `--floor 3000` (`£0` cash).
+- **Rows 46–50 (`6830884885` / `6830918005`, withdrawing `6830830084` on rows `49–50`):** `keep: true` on `46, 48, 50` as cut; `RETAKE` on `47` (`P4:10_fairness_25_june`) and `49` (`P4:12_lyell_hooker_bundle`).
+- **Held retake batch after pass 1:** rows `3, 10, 24, 28, 47, 49`, reservation `600` Flow credits under `--floor 3000` (`£0` cash).
