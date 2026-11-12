@@ -3,11 +3,16 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
+
+# The Google account is not written here (AGENTS.md Never list, J2537): set ORBIT_SETUP_ACCOUNT to run this.
+ACCOUNT = os.environ.get("ORBIT_SETUP_ACCOUNT", "")
+ACCOUNT_RE = re.compile(re.escape(ACCOUNT) if ACCOUNT else r"(?!)", re.I)
 
 # Fresh profile — mobile UA; don't reuse desktop youtube profile cookies that may force app wall
 PROFILE = "/Users/ben/code/youtube/.playwright-tiktok-mobile-profile"
@@ -276,7 +281,7 @@ def main() -> None:
                 pop.wait_for_load_state("domcontentloaded")
                 page.wait_for_timeout(1500)
                 shot(pop, "m_00_google")
-                acc = pop.get_by_text(re.compile(r"benoats86@gmail\.com", re.I))
+                acc = pop.get_by_text(ACCOUNT_RE)
                 if acc.count():
                     acc.first.click()
                     pop.wait_for_timeout(4000)
@@ -302,7 +307,7 @@ def main() -> None:
                 if click_re(page, r"email|Email", role=None) or True:
                     email_inp = page.locator('input[type="email"], input[name*="email" i]')
                     if email_inp.count():
-                        email_inp.first.fill("benoats86@gmail.com")
+                        email_inp.first.fill(ACCOUNT)
                         result["steps"].append("email_filled")
                         shot(page, "m_05_email")
                         print(
@@ -353,7 +358,7 @@ def main() -> None:
             result["status"] = "incomplete"
             result["notes"] = (
                 "Could not finish on mobile web. Use phone: install TikTok → "
-                "sign up with Google (benoats86@gmail.com) → username OrbitWithBen → "
+                "sign up with Google (the personal account) → username OrbitWithBen → "
                 "upload avatar from Channel-Setup/TikTok/avatar_800x800.png → paste bio.txt"
             )
         else:

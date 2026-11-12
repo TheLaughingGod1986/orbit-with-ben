@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -30,10 +31,8 @@ import channels
 import channel_films
 
 ROOT = Path(__file__).resolve().parents[1]
-OVERRIDES = ROOT / "05_Analytics" / "kanban" / "video_overrides.json"
-UPLOADS = ROOT / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json"
-PUBLIC_DATA = ROOT / "05_Analytics" / "dashboard" / "data.json"  # Channel Tracker: real public YouTube videos
-PROJECTS = ROOT / "02_Video-Projects"
+OVERRIDES = channels.studio_records("kanban", "video_overrides.json")
+PUBLIC_DATA = channels.studio_records("dashboard", "data.json")  # Channel Tracker: real public YouTube videos
 LONDON = ZoneInfo("Europe/London")
 
 LANES = ("upcoming", "progress", "changes", "ready", "approved", "done")
@@ -47,10 +46,9 @@ LANE_LABELS = {
 }
 LIVE_STATUSES = frozenset({"open", "claimed", "blocked"})
 DONE_PUBLIC_DAYS = 14
-# Planned Shorts on Videos → Backlog for upcoming longs with no uploads yet
-# (Ben, 7 Nov 2026 cadence: Orbit 2 per new long; HOS 4 per long/week). Never invent YouTube ids
+# Planned Shorts on Videos → Backlog for upcoming longs with no uploads yet (Ben, 7 Nov 2026 cadence). How many per
+# long is each channel's own setting (`shorts.planned_per_long` in its studio/channel.json). Never invent YouTube ids
 # or air dates — undated parents keep empty air on their planned Shorts.
-PLANNED_SHORTS_PER_LONG = {"HOS": 4, "OWB": 2}
 PLANNED_SHORT_TOKEN = "planned"
 
 BEN_CHANGES_RE = re.compile(
@@ -69,6 +67,11 @@ def _parse_iso(s: str | None) -> datetime | None:
         return datetime.fromisoformat(str(s).replace("Z", "+00:00")).astimezone(timezone.utc)
     except (ValueError, TypeError):
         return None
+
+
+def _labels_re() -> str:
+    """Every channel's label as a regex alternation, for text that starts with one."""
+    return "|".join(re.escape(label) for label in channels.labels())
 
 
 def check_id(key: str) -> str:
@@ -96,7 +99,7 @@ def parse_change_notes(text: str) -> list[dict]:
         body = re.sub(r"\s+", " ", body)
         if len(body) < 8:
             continue
-        if re.match(r"^(Chief ruling|URGENT|HOS|OWB|Studio Kanban|After |Follow )\b", body, re.I):
+        if re.match(rf"^(Chief ruling|URGENT|{_labels_re()}|Studio Kanban|After |Follow )\b", body, re.I):
             continue
         key = (t, body[:80].lower())
         if key in seen:
@@ -256,16 +259,22 @@ def uploads_index(root: Path | None = None) -> dict:
     except (OSError, ValueError):
         return {}
     by_film: dict[str, list] = {}
+    label = channels.label(channels.of_path(root))   # the channel whose register this is
     for vid, meta in vids.items():
         if meta.get("retired"):
             continue  # replaced/retired upload (e.g. black-dwarf v02/v04 → canonical 1NeQFVnzO2Q)
         kind = meta.get("kind") or "long"
-        pkg = str(meta.get("packageDir") or meta.get("file") or "")
-        m = (re.search(r"02_Video-Projects/(\d{3})_", pkg)
-             or re.search(r"02_Video-Projects/(\d{3})_", str(meta.get("thumb") or "")))
-        if not m:
+        # The film number is in whichever path sits under the film's folder. A swap delivered from a read-back folder
+        # has packageDir "jobs/readbacks/J1059/package", and only its file names the film: B1z2dv7m7Vk (025's Short for
+        # Wed 11 Nov) had no card until 10 Nov 2026, while the copy it replaced still showed as scheduled.
+        m = next((hit for hit in (re.search(r"02_Video-Projects/(\d{3})_", str(meta.get(k) or ""))
+                                  for k in ("packageDir", "file", "thumb")) if hit), None)
+        # A Short that belongs to no film (a standalone test Short, a dated-event Short) has no film folder in any of
+        # its paths. It still gets a row, keyed by its video id: until 10 Nov 2026 such a Short had no card at all
+        # until the day after it aired (J2515, the Titan Short of 10 Nov).
+        if not m and kind != "short":
             continue
-        film = m.group(1)
+        film = m.group(1) if m else ""
         privacy = meta.get("privacyStatus") or meta.get("privacy") or ""
         publish_at = meta.get("publishAt") or ""
         # A swap's old copy is recorded with publishAt null (unscheduled) and supersededBy the new id. That null is a
@@ -281,7 +290,7 @@ def uploads_index(root: Path | None = None) -> dict:
             "videoId": vid,
             "kind": kind,
             "film": film,
-            "channel": "OWB",
+            "channel": label,
             "long": meta.get("long") or "",
             "file": meta.get("file") or "",
             "packageDir": meta.get("packageDir") or "",
@@ -290,13 +299,65 @@ def uploads_index(root: Path | None = None) -> dict:
             "title": meta.get("title") or _receipt_title(root, meta.get("packageDir") or ""),
             "supersededBy": superseded,
         }
-        key = f"OWB:{film}" if kind == "long" else f"OWB:{film}:S:{vid}"
+        if not film:
+            key = lone_short_key(label, vid)
+        else:
+            key = f"{label}:{film}" if kind == "long" else f"{label}:{film}:S:{vid}"
         by_film.setdefault(key, []).append(row)
     return by_film
 
 
+def lone_short_key(channel: str, vid: str) -> str:
+    """The card key of a Short that belongs to no film. It is the key the same video gets once it is public and read
+    from YouTube (`<channel>:YT:<id>`), so the card keeps its key, and anything hung on it, when the Short airs."""
+    return f"{channel}:YT:{vid}"
+
+
 def _norm_title(t: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", (t or "").lower().replace("’", "'").replace("'", ""))
+
+
+def _newest_snapshot_rows():
+    """(channel label, video row) for every video in each channel's newest readable daily snapshot."""
+    for slug in channels.slugs():
+        files = sorted((channels.analytics_dir(slug) / "snapshots").glob("*.json"))
+        for path in reversed(files):
+            try:
+                rows = json.loads(path.read_text()).get("videos") or []
+            except (OSError, ValueError, AttributeError):
+                continue
+            for v in rows:
+                if isinstance(v, dict) and v.get("id") and v.get("title"):
+                    yield channels.label(slug).upper(), v
+            break
+
+
+def snapshot_titles() -> dict:
+    """videoId -> its title on YouTube, from each channel's newest daily snapshot. The snapshot lists every video,
+    scheduled ones included, so a Short that is uploaded but not yet public still has its real title here. The
+    public read below only knows public videos, and the board showed such a Short as "Scale" or "028 short mon30
+    comets", the name of its folder (10 Nov 2026)."""
+    return {v["id"]: v["title"] for _, v in _newest_snapshot_rows()}
+
+
+def snapshot_slots() -> dict:
+    """(channel label, "YYYY-MM-DDTHH:MM", "short"|"long") -> the titles of the videos YouTube has scheduled then.
+    A card made from Ben's OK on a swap knows its slot but not its video id, and carried the working name of the
+    cut ("Jenner smallpox test HC v04"). One video in that slot means that is the one."""
+    out: dict = {}
+    for label, v in _newest_snapshot_rows():
+        if v.get("privacy") != "public" and v.get("publishAt") and v.get("format") in ("short", "long"):
+            out.setdefault((label, str(v["publishAt"])[:16], v["format"]), []).append(v["title"])
+    return out
+
+
+def title_from_slot(card: dict, slots: dict) -> str:
+    """The YouTube title for a card with a scheduled slot and no video id, when exactly one video holds that slot."""
+    yt = card.get("youtube") or {}
+    if yt.get("videoId") or not yt.get("publishAt"):
+        return ""
+    hits = slots.get((card.get("channel"), str(yt["publishAt"])[:16], card.get("type"))) or []
+    return hits[0] if len(hits) == 1 else ""
 
 
 def public_index(root: Path | None = None) -> tuple[dict, str]:
@@ -308,7 +369,7 @@ def public_index(root: Path | None = None) -> tuple[dict, str]:
         return {}, ""
     out = {}
     for ch in doc.get("channels") or []:
-        channel = "HOS" if str(ch.get("channel") or "").lower() == "hos" else "OWB"
+        channel = channels.label_of_repo(ch.get("channel"))
         for v in ch.get("videos") or []:
             if v.get("id"):
                 out[v["id"]] = {"channel": channel, "title": v.get("title") or "",
@@ -317,8 +378,11 @@ def public_index(root: Path | None = None) -> tuple[dict, str]:
 
 
 def folder_titles(root: Path | None = None) -> dict:
-    """'004' → 'JWST Discoveries That Change Everything' from 02_Video-Projects/<NNN>_<Slug>."""
-    base = (root / "02_Video-Projects") if root else PROJECTS
+    """'004' → 'JWST Discoveries That Change Everything' from the film folders (<NNN>_<Slug>) of the channel whose
+    checkout `root` is. Where they sit is that channel's own setting: the first folder of its `pipeline.path`."""
+    root = root or ROOT
+    kept = Path(channels.pipeline(channels.of_path(root)).get("path") or "")
+    base = root / kept.parts[0] if kept.parts else root
     out = {}
     try:
         for d in base.iterdir():
@@ -462,7 +526,7 @@ def active_jobs(jobs: list[dict], held: frozenset | set = frozenset()) -> list[d
 def job_what(j: dict) -> str:
     """'023 Venus VBaYRPp85Sw: arm thumbnail-only Test & Compare A (live ...) vs B, read back' → the work in a few words."""
     t = str(j.get("title") or "")
-    t = re.sub(r"^\s*(?:(?:HOS|OWB)\s*[:·-]?\s*)?\d{3}\b\s*", "", t)
+    t = re.sub(rf"^\s*(?:(?:{_labels_re()})\s*[:·-]?\s*)?\d{{3}}\b\s*", "", t)
     t = re.sub(r"^[^:]{0,40}?(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}\s*:\s*", "", t)  # "Venus VBaYRPp85Sw: "
     t = re.sub(r"\s*\([^)]*\)", "", t)
     t = re.split(r",\s", t)[0]
@@ -577,7 +641,7 @@ def ask_entries(alljobs: list[dict]) -> list[dict]:
             e["id"] = j["id"] + (f".{n}" if len(items) > 1 else "")
             e["job"] = j["id"]
             e["jobStatus"] = j.get("status") or ""
-            e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
+            e["channel"] = (e["channel"] or channels.label_of_repo(j.get("repo"))).upper()
             e["number"] = e["number"] or str(j.get("film") or "")
             e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
             e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
@@ -771,7 +835,7 @@ def approved_entries(alljobs: list[dict]) -> list[dict]:
         e["askJob"] = e.pop("job") or j["id"]
         e["id"] = e["job"] = j["id"]
         e["jobStatus"] = j.get("status") or ""
-        e["channel"] = (e["channel"] or channels.label(j.get("repo") if j.get("repo") in channels.slugs() else channels.home())).upper()
+        e["channel"] = (e["channel"] or channels.label_of_repo(j.get("repo"))).upper()
         e["number"] = e["number"] or str(j.get("film") or "")
         e["type"] = e["type"] if e["type"] in ("long", "short") else ("long" if e["card"] and ":S:" not in e["card"] else "short")
         e["version"] = e["version"] or version_of(Path(e["file"]).name.replace("_v", " v").replace("_", " "))
@@ -999,7 +1063,10 @@ def watch_format(watch):
 
 def planned_shorts_count(channel: str) -> int:
     """How many planned Short cards an upcoming long gets on Videos → Backlog."""
-    return int(PLANNED_SHORTS_PER_LONG.get(str(channel or "").upper(), 0))
+    try:
+        return channels.planned_shorts(str(channel or ""))
+    except KeyError:
+        return 0   # not a channel in the registry
 
 
 def planned_short_key(parent_key: str, index: int) -> str:
@@ -1098,10 +1165,21 @@ def add_planned_shorts(
             have.add(skey)
 
 
+def film_rows(slug: str, doc) -> list[dict]:
+    """One channel's film document as rows {num, title, air, release, upload}, whichever way the channel keeps it:
+    one pipeline document (`{"films": [{id, title, air, upload}]}`) or a list of per-film status documents
+    (`[{film, title, air, release}]`). The kind is the channel's own setting, never which channel it is."""
+    if channels.pipeline(slug).get("kind") == "pipeline_json":
+        rows = (doc or {}).get("films") or [] if isinstance(doc, dict) else []
+        return [{"num": str(f.get("id") or ""), "title": f.get("title") or "", "air": f.get("air") or "", "release": None,
+                 "upload": f.get("upload") if isinstance(f.get("upload"), dict) and f["upload"].get("videoId") else None,
+                 "status_files": False} for f in rows]
+    return [{"num": str(f.get("film") or ""), "title": f.get("title") or "", "air": f.get("air") or "",
+             "release": f.get("release"), "upload": None, "status_files": True} for f in (doc or [])]
+
+
 def build_videos(
     *,
-    hos: dict,
-    owb: list[dict],
     briefs: dict,
     jobs: list[dict],
     checks: dict,
@@ -1115,8 +1193,21 @@ def build_videos(
     approved: list[dict] | None = None,
     alljobs: list[dict] | None = None,
     files: dict | None = None,
+    scheduled_titles: dict | None = None,
+    scheduled_slots: dict | None = None,
+    documents: dict | None = None,
+    **by_slug,
 ) -> dict:
-    """Return {updatedAt, lanes, videos} for board/tracker."""
+    """Return {updatedAt, lanes, videos} for board/tracker.
+
+    `documents` is {slug: that channel's film document} (see `film_rows`). A caller may also pass each one as a
+    keyword named by the channel's slug, as every caller did when there were two channels. A channel given no
+    document is read from its own checkout through channel_films."""
+    documents = dict(documents or {})
+    for slug, doc in by_slug.items():
+        if slug not in channels.slugs():
+            raise TypeError(f"build_videos() got an unexpected keyword argument {slug!r}")
+        documents[slug] = doc
     now = now or datetime.now(timezone.utc)
     overrides = overrides if overrides is not None else load_overrides()
     watch = watch or {}
@@ -1128,19 +1219,20 @@ def build_videos(
         for r in rows:
             if r.get("videoId"):
                 vid_keys[r["videoId"]] = key.split(":S:")[0]
-    for f in owb:
-        rel = f.get("release") or {}
-        if rel.get("videoId") and re.fullmatch(r"\d{3}", str(f.get("film") or "")):
-            vid_keys.setdefault(rel["videoId"], f"OWB:{f['film']}")
-    for f in hos.get("films") or []:
-        up = f.get("upload") if isinstance(f.get("upload"), dict) else {}
-        if up.get("videoId") and re.fullmatch(r"\d{3}", str(f.get("id") or "")):
-            vid_keys.setdefault(up["videoId"], f"HOS:{f['id']}")
+    for slug, doc in documents.items():
+        for f in film_rows(slug, doc):
+            vid = (f["release"] or f["upload"] or {}).get("videoId")
+            if vid and re.fullmatch(r"\d{3}", f["num"]):
+                vid_keys.setdefault(vid, f"{channels.label(slug)}:{f['num']}")
     for key, vid in ((overrides.get("youtube") or {}) if overrides else {}).items():
         vid_keys.setdefault(vid, key)
     by_jobs = job_index(jobs, overrides, vid_keys)
     held = frozenset(j.get("id") for j in (alljobs or jobs) if j.get("status") == "blocked")
     film_lanes = (overrides.get("lanes") or {}) if overrides else {}
+    if scheduled_titles is None:   # tests that pass their own `public` get no live snapshot titles either
+        scheduled_titles = snapshot_titles() if public is None else {}
+    if scheduled_slots is None:
+        scheduled_slots = snapshot_slots() if public is None else {}
     if public is None:
         public, public_at = public_index()
     else:
@@ -1168,21 +1260,20 @@ def build_videos(
     videos = []
 
     # --- Longs: every channel in channels/*/channel.json (docs/MULTI_CHANNEL_PLAN.md phase 1) ---
-    # OWB and HOS come from the board docs as before; any other channel is read from its own checkout through
-    # channel_films, so a channel added by its folder gets cards with no change here.
+    # A channel whose film document the caller passed comes from that document; any other channel is read from its
+    # own checkout through channel_films, so a channel added by its folder gets cards with no change here.
     def long_rows(slug: str):
         """(num, title, air, release, upload_rows, use_public_title) per long film of one channel."""
         label = channels.label(slug)
-        if slug == "hos":
-            for f in hos.get("films") or []:
-                num = str(f.get("id") or "")
-                # HOS UPLOADS.json read-back, attached by kanban_snapshot.attach_hos_uploads.
-                up = f.get("upload") if isinstance(f.get("upload"), dict) and (f.get("upload") or {}).get("videoId") else None
-                yield num, f.get("title") or "", f.get("air") or "", None, uploads.get(f"{label}:{num}") or ([{"file": "", **up}] if up else []), False
-        elif slug == channels.home():
-            for f in owb:
-                num = str(f.get("film") or "")
-                yield num, f.get("title") or titles.get(num) or "", f.get("air") or "", f.get("release"), uploads.get(f"{label}:{num}") or [], True
+        if slug in documents:
+            own = titles if channels.checkout(slug) == ROOT else {}   # folder titles are this checkout's films
+            for f in film_rows(slug, documents[slug]):
+                num, rows = f["num"], uploads.get(f"{label}:{f['num']}")
+                if f["status_files"]:
+                    yield num, f["title"] or own.get(num) or "", f["air"], f["release"], rows or [], True
+                else:
+                    # The pipeline document's own upload read-back, attached by kanban_snapshot.attach_pipeline_uploads.
+                    yield num, f["title"], f["air"], None, rows or ([{"file": "", **f["upload"]}] if f["upload"] else []), False
         else:
             try:
                 rows = channel_films.films(slug)
@@ -1218,11 +1309,12 @@ def build_videos(
             continue  # a swap's old copy (Private, unscheduled): only the new copy holds the slot on the board
         num = meta["film"]
         vid = meta["videoId"]
-        parent = f"OWB:{num}"
+        label = key.split(":", 1)[0]
+        parent = f"{label}:{num}"
         parent_title = next((v["title"] for v in videos if v["key"] == parent), f"{num}")
-        title = ((public.get(vid) or {}).get("title") or short_title_from_path(meta)
+        title = ((public.get(vid) or {}).get("title") or scheduled_titles.get(vid) or short_title_from_path(meta)
                  or (f"Short · {parent_title}" if parent_title != num else "Short"))
-        skey = f"OWB:{num}:S:{vid}"
+        skey = f"{label}:{num}:S:{vid}"
         # Attach jobs that mention this Short id or the parent film's Shorts work
         sjobs = list(by_jobs.get(skey) or [])
         for j in by_jobs.get(parent) or []:
@@ -1230,12 +1322,31 @@ def build_videos(
             if re.search(r"\bShorts?\b", blob, re.I) and vid in blob:
                 sjobs.append(j)
         videos.append(_card(
-            key=skey, channel="OWB", number=num, title=title,
+            key=skey, channel=label, number=num, title=title,
             vtype="short", air="", brief={},
             release=None, upload_rows=[meta],
             jobs=sjobs, check=None,  # Ben's OK/changes attach to the long, not each Short
             watch=None, override_lane=film_lanes.get(skey), now=now,
             short_id=vid, parent=parent, public=public, public_at=public_at, held=held,
+        ))
+
+    # --- Shorts that belong to no film (standalone and dated-event Shorts): one card each, from the register ---
+    for key, rows in uploads.items():
+        meta = rows[0]
+        vid = meta.get("videoId") or ""
+        if meta.get("film") or not vid or key != lone_short_key(meta.get("channel") or "", vid):
+            continue
+        if meta.get("supersededBy"):
+            continue  # a swap's old copy: only the new copy holds the slot on the board
+        seen = public.get(vid) or {}
+        videos.append(_card(
+            key=key, channel=meta["channel"], number="",
+            title=seen.get("title") or scheduled_titles.get(vid) or short_title_from_path(meta) or "Short",
+            vtype="short", air=str(seen.get("publishedAt") or "")[:10], brief={},
+            release=None, upload_rows=[meta],
+            jobs=list(by_jobs.get(key) or []), check=None,
+            watch=None, override_lane=film_lanes.get(key), now=now,
+            short_id=vid, public=public, public_at=public_at, held=held,
         ))
 
     # --- Planned Shorts for upcoming longs (Videos → Backlog; Ben, 7 Nov 2026) ---
@@ -1289,6 +1400,10 @@ def build_videos(
     # Cuts Ben OK'd, still on their way (approved_from on the delivering job), then nothing but Ben's asks stays in Ready.
     add_approved(videos, approved or [], {j.get("id"): j for j in (alljobs or jobs)}, now, files)
     settle_ready(videos, now)
+    for video in videos:   # a swap's card takes the real title of the video in its slot (see snapshot_slots)
+        real = title_from_slot(video, scheduled_slots) if ":OK:" in str(video.get("key") or "") else ""
+        if real:
+            video["workingTitle"], video["title"] = video.get("title") or "", real
 
     # Approval/ask overlays may carry an old project format too. Resolve the
     # recorded watch asset again without changing IDs, checks or workflow state.
@@ -1297,8 +1412,8 @@ def build_videos(
         if recorded_format and recorded_format != video.get('type') and not (video.get('youtube') or {}).get('videoId'):
             video.update(type=recorded_format, cutFormatCorrected=True)
 
-    from uat_outlook import attach
-    attach(videos, hos, owb, alljobs or jobs, now)
+    from uat_outlook import attach_all
+    attach_all(videos, documents, alljobs or jobs, now)
 
     # Listing package status for Passed / Scheduled cards (Ben, 7 Nov 2026): what's missing, Ready to upload,
     # or a real Scheduled-for line — never invent a publishAt or YouTube id.
@@ -1468,17 +1583,24 @@ def _card(
 
 
 def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | None = None) -> dict:
-    """Build tracker from board section docs (hos/owb/briefs) + checks."""
-    hos = (docs.get("hos") or {}).get("pipeline") or docs.get("hos") or {}
-    owb_doc = docs.get("owb") or {}
-    owb = owb_doc.get("films") or []
+    """Build tracker from board section docs (one section per channel, keyed by its slug, plus briefs) + checks."""
+    documents = {}
+    for slug in channels.slugs():
+        section = docs.get(slug)
+        if section is None:
+            continue   # no section on the board for this channel: build_videos reads its checkout
+        if channels.pipeline(slug).get("kind") == "pipeline_json":
+            doc = (section or {}).get("pipeline") or section or {}
+            documents[slug] = doc if "films" in doc else {"films": []}
+        else:
+            documents[slug] = (section or {}).get("films") or []
     briefs_doc = docs.get("briefs") or {}
     films = briefs_doc.get("films") or briefs_doc
     # Attach extraWatch for Shorts cards if present
     if isinstance(briefs_doc, dict) and briefs_doc.get("extraWatch"):
         films = dict(films)
         films["_extraWatch"] = briefs_doc["extraWatch"]
-    live_jobs = owb_doc.get("jobs") or []
+    live_jobs = (docs.get(channels.queue_key()) or {}).get("jobs") or []   # the studio's queue, as the board carries it
     all_jobs = list(live_jobs)
     # Prefer full queue when available (live jobs only lack done ones; enough for lanes)
     qpath = ROOT / "jobs" / "queue.json"
@@ -1502,9 +1624,8 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
     approved = approved_entries(all_jobs)
     for e in approved:
         e["watch"] = links.get(e["id"])
-    return build_videos(
-        hos=hos if "films" in hos else {"films": []},
-        owb=owb,
+    doc = build_videos(
+        documents=documents,
         briefs=films,
         jobs=live_jobs,
         checks=checks or {},
@@ -1514,9 +1635,26 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         approved=approved,
         alljobs=all_jobs,
     )
+    doc["firstDay"] = first_day(all_jobs)
+    return doc
+
+
+def first_day(all_jobs: list[dict], now: datetime | None = None) -> list[dict]:
+    """The board's First day panel: how each video that has just gone live started, from `launch_check.panel` (Ben,
+    10 Nov 2026: "learn from our failures"). The verdicts were only on the thread and in the record files; this
+    puts them where Ben looks. A failure here must never cost the board its videos, so it yields an empty panel."""
+    try:
+        import launch_check
+        return launch_check.panel(now or datetime.now(timezone.utc), {"jobs": all_jobs})
+    except Exception as e:  # noqa: BLE001
+        print(f"first-day panel not built: {e}", file=sys.stderr)
+        return []
 
 
 if __name__ == "__main__":
+    # A look at what the board would show, built from each channel's checkout on this machine.
+    #   python3 scripts/video_tracker.py            lane counts
+    #   python3 scripts/video_tracker.py 028 029    also the cards of those film numbers
     import sys
     checks = {}
     try:
@@ -1525,16 +1663,26 @@ if __name__ == "__main__":
             checks = json.loads(r.read().decode()).get("checks") or {}
     except Exception as e:
         print(f"checks not read: {e}", file=sys.stderr)
-    hos = json.loads(Path("/tmp/hos-sparse/00_Brand/Channel-Setup/PIPELINE.json").read_text())
-    owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
-    for film in owb:
-        from kanban_snapshot import release_record
-        rec = release_record(str(film.get("film", "")))
-        if rec:
-            film["release"] = rec
-    briefs = json.loads((ROOT / "05_Analytics" / "kanban" / "film_briefs.json").read_text())["films"]
+    documents = {}
+    for slug in channels.slugs():
+        base, kept = channels.checkout(slug), channels.pipeline(slug)
+        if not base or not kept.get("path"):
+            continue   # not checked out here: build_videos asks channel_films, which shows nothing for it
+        if kept["kind"] == "pipeline_json":
+            documents[slug] = json.loads((base / kept["path"]).read_text())
+            continue
+        films = [json.loads(path.read_text()) for path in sorted(base.glob(kept["path"]))]
+        if base == ROOT:   # upload receipts are read from this checkout
+            from kanban_snapshot import release_record
+            for film in films:
+                rec = release_record(str(film.get("film", "")))
+                if rec:
+                    film["release"] = rec
+        documents[slug] = films
+    briefs = json.loads(channels.studio_records("kanban", "film_briefs.json").read_text())["films"]
     jobs = json.loads((ROOT / "jobs" / "queue.json").read_text())["jobs"]
-    doc = build_videos(hos=hos, owb=owb, briefs=briefs, jobs=jobs, checks=checks)
+    doc = build_videos(documents=documents, briefs=briefs, jobs=jobs, checks=checks)
+    print(", ".join(f"{lane['label']} {lane['count']}" for lane in doc["lanes"]))
     for v in doc["videos"]:
-        if v["key"] in ("HOS:006", "HOS:007", "OWB:028", "OWB:029") or v["number"] in ("006", "007", "028", "029"):
+        if v["number"] and v["number"] in sys.argv[1:]:
             print(f"{v['key']:20} lane={v['lane']:10} wait={v['waitingOn']:8} flags={[f['text'] for f in v['flags']]} notes={len(v['notes'])} · {v['line'][:70]}")

@@ -32,8 +32,11 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import channels  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
-DIR = ROOT / "05_Analytics" / "ai_spend"
+DIR = channels.studio_records("ai_spend")
 LEDGER = DIR / "ledger.jsonl"
 PLANS = DIR / "plans.json"
 POOLS = {"cursor": "%", "flow": "credits", "vertex": "GBP", "elevenlabs": "credits", "claude": "%",

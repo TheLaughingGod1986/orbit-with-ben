@@ -40,3 +40,7 @@ Payoff check: both are paid off in the film (planet: chapter "Is Anyone There?";
   - **Saved & Read Back (YouTube Data API v3):** `title: "The Nearest Star Is One You Can't See (And It Has a Planet)"`, `privacyStatus: "private"`, `publishAt: "2026-11-15T18:00:00Z"`, `madeForKids: false`, `defaultLanguage: "en-GB"`, `defaultAudioLanguage: "en-GB"`, Studio `saveDisabled: true` (`All changes saved.`).
 
 Deadline (Ben): before Sun 15 Nov 17:00 London.
+
+## Title changed and test armed again (J2497, 2026-11-10T12:05Z)
+
+Ben, 10 Nov: "do what you think is best". The unstarted test T022 was deleted by Studio when the title was edited. Title now: **How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)**. New test T027: side A is that title with the same thumbnail (11-DAY YEAR); side B is unchanged. Records: `jobs/reviews/J2497/`.

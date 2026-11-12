@@ -48,6 +48,39 @@ class Panel(unittest.TestCase):
         self.assertEqual(js[3]["after"], js[2]["id"])
         self.assertIn("DECISION.md", js[3]["body"])
 
+    def test_a_file_only_one_machine_can_open_is_refused_and_nothing_is_queued(self):
+        """9 Nov 2026: the weekly panel named drafts in the MacBook's home folder; the critics run on the Mini and in
+        the cloud, and it sat for 32 hours without a critique."""
+        for bad in ("/Users/someone/_desk/j2374/designs/B_v01.jpg", "~/_desk/B_v01.jpg", "/home/someone/B.jpg", "/tmp/B.jpg"):
+            data = {"next_id": 1, "jobs": []}
+            with self.assertRaises(ValueError) as cm:
+                packaging_panel.queue(data, "weekly drafts", ["a.json", bad], "owb-weekly", at=T0)
+            self.assertIn(bad, str(cm.exception))
+            self.assertNotIn("a.json", str(cm.exception))
+            self.assertEqual(data, {"next_id": 1, "jobs": []})
+
+    def test_repo_paths_and_the_shared_drive_are_fine(self):
+        files = ["05_Analytics/weekly_thumb_audit/x/B_v01.jpg", "/Volumes/data/studio-live/UAT/B_v01.jpg"]
+        self.assertEqual(packaging_panel.unreachable(files), [])
+        data = {"next_id": 1, "jobs": []}
+        js = packaging_panel.queue(data, "weekly drafts", files, "owb-weekly", at=T0)
+        self.assertEqual(len(js), 4)
+        self.assertIn("/Volumes/data/studio-live/UAT/B_v01.jpg", js[0]["body"])
+
+    def test_the_command_says_so_and_exits_1_before_touching_the_queue(self):
+        import contextlib
+        import io
+        from unittest import mock
+        out = io.StringIO()
+        with mock.patch.object(packaging_panel.jobs, "with_git", side_effect=AssertionError("queue touched")), \
+                mock.patch.object(packaging_panel.jobs, "load", side_effect=AssertionError("queue read")), \
+                contextlib.redirect_stdout(out):
+            rc = packaging_panel.main(["--slug", "owb-weekly", "--what", "weekly drafts", "--git",
+                                       "--files", "/Users/someone/_desk/B_v01.jpg"])
+        self.assertEqual(rc, 1)
+        self.assertIn("not queued", out.getvalue())
+        self.assertIn("/Users/someone/_desk/B_v01.jpg", out.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()

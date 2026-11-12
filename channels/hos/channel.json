@@ -7,8 +7,11 @@
   "order": 2,
   "youtube": {
     "handle": "@HistoryOfScienceYT",
-    "id": "UCXp7HkBIl1LgaznXuZHJyRg"
+    "id": "UCXp7HkBIl1LgaznXuZHJyRg",
+    "studio_port": "9222",
+    "reach_port": "9460"
   },
+  "sound_kit": "ink",
   "repo": {
     "url": "https://github.com/TheLaughingGod1986/history-of-science.git",
     "env": "HOS_REPO",
@@ -17,10 +20,14 @@
       "history-of-science"
     ]
   },
+  "nas_folder": "History Of Science",
   "title_match": "\\bHOS\\b|history of science",
   "wip": {
     "limit": 4,
     "line": "next_hos"
+  },
+  "shorts": {
+    "planned_per_long": 4
   },
   "stages": "from pipeline",
   "pipeline": {
@@ -31,5 +38,19 @@
     "env": "HOS_UAT_DIR",
     "icloud": "HOS UAT"
   },
-  "picture_route": "flow_only"
+  "picture_route": "flow_only",
+  "cadence": {
+    "long": [
+      "Thu 18:00"
+    ],
+    "short": [
+      "Sat 11:30",
+      "Fri 11:30",
+      "Sun 11:30",
+      "Tue 11:30"
+    ]
+  },
+  "social": {
+    "tiktok": "buffer"
+  }
 }

@@ -219,7 +219,7 @@ DENIED(Interrupted system call)	/System/Volumes/Data/.TemporaryItems
     1.32 GiB	~/.hos-chrome-youtube-studio
     1.80 GiB	~/.venvs
     1.86 GiB	~/.orbit-chrome-youtube-studio
-    2.15 GiB	~/.hos-chrome-flow-benoats-googlemail-cdp
+    2.15 GiB	~/.hos-chrome-flow-ACCOUNT-cdp
     2.79 GiB	~/code
     3.02 GiB	~/.local
     3.84 GiB	~/.cursor-server
@@ -334,10 +334,94 @@ $ launchctl list | grep com.owb      (PID / last exit / label)
 -      0  com.owb.tab-janitor
 ```
 
-- NAS: no SMB mount. The NAS is mounted over NFS: `192.168.1.119:/volume1/data on /Volumes/data (nfs)`.
+- NAS: no SMB mount. The NAS is mounted over NFS: `<NAS>:/volume1/data on /Volumes/data (nfs)`.
 - SSD: `/dev/disk6s1 on /Volumes/MiniWork (apfs, local)`, 26 GiB used of 233 GiB, 12%. `df` on it answered at once.
 - Ports: 9223 yes, 9222 yes, 9460 yes (each answers `/json/version` as Chrome/156). Nothing opened or closed.
 - Internal disk free: 38 GiB at 23:40, 36 GiB at 00:22 (82% used).
+
+## Follow-up, 10 Nov (09:17–09:40 Mini time)
+
+**Result: cleared. A forced restart of sandboxd fixed the permission fault. Nothing needs Ben, except an optional look at the Trash (section 5).**
+
+### 1. Fault confirmed (09:17)
+
+- `ls /Volumes/MiniWork/desk` under a 10-second limit was killed (exit 142).
+- The kernel log showed `(Sandbox) watchdog expired for approval entry …` lines for `kTCCServiceSystemPolicyRemovableVolumes` and `kTCCServiceReminders`.
+- Uptime 37 days. sandboxd was pid 11247, running 15 h 26 min.
+
+### 2. Restart of sandboxd
+
+- **First try did not take.** `sudo -n killall sandboxd` (the approved command) returned 0, but sandboxd stayed up as pid 11247, logging twice a second `Remaining transactions after SIGTERM: 1`. It was waiting for one stuck request that never finished. The SSD still hung. Claude stopped there and asked Ben.
+- **Second try worked.** Ben ran `sudo killall -9 sandboxd` himself at about 09:28. launchd started a new sandboxd (pid 1943).
+- After it: `ls /Volumes/MiniWork/desk` lists at once (rc 0); `~/Desktop`, `~/Documents`, `~/Downloads`, `~/Movies` and the other user's home folder all answer; no "watchdog expired" lines in the next minute. No reboot, no other daemon touched.
+- **Lesson for next time:** a polite kill is not enough when sandboxd is stuck; it needs `-9`.
+
+### 3. Relay
+
+- The relay was mid-job twice (J2460, then J2033), so it was left alone until J2033 ended at 09:35:38.
+- Restarted at about 09:35 with `launchctl kickstart -k`. New pid 11636.
+- Its first run, J2493 (Claude Code, 09:36:46), started **without** "SSD check got no answer". The relay is back on the SSD.
+- Also in the log, not part of this fault: Gemini returned `INVALID_ARGUMENT (code 400)` on J2478 (rerouted); Codex is flagged out of weekly credit until Tue 10 Nov 23:17Z; about ten jobs wait with no worker up in their chain.
+
+### 4. Worktrees
+
+**18 of 19 removed** with plain `git worktree remove` (no `--force`), after each showed a clean `git status` and at least one remote branch containing its HEAD. `git worktree prune` run in both checkouts. The SSD now shows 18 GiB used, 215 GiB free.
+
+- OWB (13): `J2381-master-v01`, `J2141-fossil`, `J2141-hand-sample`, `J2141-lava`, `J2141-lava-edge`, `J2141-sediment`, `J2141-commons`, `J2141-dynamo`, `J2141-sky`, `J2141-timeline`, `J2141-field`, `J2141-opening`, `J2141-saa`.
+- HOS (5): `J2275-hos`, `j0862-v04`, `J2254`, `j1809-hos`, `j2169`.
+- **Skipped (1): `J2206-owb-reach`.** It is clean, but no remote branch contains its HEAD (`71672183b9`); `origin/cursor/J2206-owb-reach` named in CLEANUP.md is no longer on the remote. Left in place (about 530 MB) until someone confirms that commit is merged or not needed.
+
+Eleven other worktrees on the SSD were not on the list and were not touched.
+
+### 5. Disk space (read-only; nothing cleared)
+
+Data volume: **171 GiB used, 29 GiB free (86%)**. `sudo du -xhd 3 /System/Volumes/Data` finished well inside 15 minutes and adds up to **130 GiB**. So about **41 GiB is used but is not in any folder that `sudo du` can read.** That is the missing 40 GiB.
+
+Where the 130 GiB is:
+
+| Folder | GiB |
+|---|---:|
+| `~` (whole home folder) | 94 |
+| – `~/YouTube` | 26 |
+| – `~/Library` (of which `Application Support` 15, `Containers` 1.5) | 18 |
+| – `~/_desk` | 9.5 |
+| – `~/.gemini` | 7.2 |
+| – `~/.cursor` + `~/.cursor-server` | 8.1 |
+| – `~/.codex` | 4.1 |
+| – three Chrome profile folders (size only, not opened) | 5.9 |
+| – `~/Downloads` 1.2, `~/Desktop` 0.9, `~/Music` 0.1, `~/Movies` and `~/Documents` empty | 2.2 |
+| `/private` (of which `/private/tmp` 6.5: about twelve old job worktrees of ~530 MB each; `/private/var/db` 3.0; `/private/var/folders` 3.0) | 13 |
+| `/Library` | 7.2 |
+| `/System` (Data side) | 5.2 |
+| `/Applications` | 4.9 |
+| `/opt` (Homebrew) | 3.3 |
+| other user's home folder | 2.4 |
+
+What the missing 41 GiB is and is not:
+
+- **Not snapshots:** there are no local APFS or Time Machine snapshots on the Data volume.
+- **3.2 GiB** is files already deleted but still held open by running programs (largest: `FPCKService` 1.6 GiB). A reboot returns it.
+- **The other ~38 GiB is in places macOS will not let this session read, even with sudo,** because Terminal and Claude do not have Full Disk Access: `~/.Trash` (du: not permitted), the Spotlight index (`.Spotlight-V100`), document versions (`.DocumentRevisions-V100`) and the protected parts of `~/Library` (Mail, Messages, Photos, iCloud Drive).
+- **Not the Trash, Photos, Mail or Messages (checked by Ben, 10 Nov).** The Trash is empty. System Settings → Storage shows Photos 1.78 GB, Mail 0.35 GB, Messages 2.6 GB, Other Users 6.67 GB (du could read 2.6 GB of it), and **System Data 113 GB**.
+- **So about 9 GB of the gap is explained** (Photos, Mail, Messages, the other user's app data) plus the 3.2 GiB of deleted-but-open files. **About 30 GB is still unplaced.** It sits inside what macOS calls System Data, in places this session is refused: the Spotlight index, document versions, and the system's temporary and cache folders under `/private/var/folders`. After 37 days without a restart, much of it is probably stale temporary data that a restart releases.
+- **Settled (10 Nov, after Ben gave the Claude app Full Disk Access).** The rerun reads 164 GiB of the 173 GiB now in use. The space that was "missing" is ordinary system and app data that the first scan was refused:
+
+| Was hidden | GiB |
+|---|---:|
+| `~/Library/Messages` (attachments) | 9.2 |
+| Spotlight index (`/.Spotlight-V100`) | 6.1 |
+| other user's app data (now 6.2 in all, was 2.4) | 3.8 |
+| `~/Library/Metadata` | 3.3 |
+| `~/Library/Application Support`, protected parts (now 16.9, was 14.5) | 2.4 |
+| `~/Library/Group Containers` (now 2.4, was 0.2) | 2.2 |
+| `~/Pictures` (Photos library) | 1.8 |
+| `~/Library/Mobile Documents`, `Photos`, `Biome`, Mail and smaller | about 3 |
+| `/private/var/folders` (now 3.7, was 3.0) | 0.7 |
+
+  The last 9 GiB that `du` still cannot count is the 3.2 GiB of deleted-but-open files plus Apple's own protected model and asset folders (87 paths refused, mostly under `/System/Library/AssetsV2`). Nothing is lost or leaking; there is no single large stray folder. The Trash is 0.
+- **Biggest things that could be trimmed, if space is ever needed (nothing was cleared):** Messages attachments 9.2; `/private/tmp` 6.5 (old job worktrees); `~/.gemini/antigravity-cli` 7.2; `~/.cursor` + `~/.cursor-server` 8.1; `~/.codex` 4.1.
+
+The stale `sudo du -xhd 3 /System/Volumes/Data` from 9 Nov was no longer running. No `du` from this session was left behind.
 
 ## Appendix: diskutil apfs list
 
@@ -429,3 +513,61 @@ APFS Containers (4 found)
         FileVault:                 No
 
 ```
+
+## Follow-up, 10 Nov (about 10:10 to 10:40 UTC)
+
+### The real cause, and its state now
+
+The hang was not a missing permission. From about 9 Nov evening until about 09:36 UTC on 10 Nov, macOS's file-permission approvals were stuck system-wide. The kernel log showed many lines per second like:
+
+```
+kernel (Sandbox) watchdog expired for approval entry 6421842 (kTCCServiceSystemPolicyRemovableVolumes, pid 63981)
+```
+
+for many programs and services at once (removable volumes, network volumes, Full Disk Access, Downloads, Movies). Nothing answered the kernel's approval requests, so every read of a guarded folder hung, with or without sudo, and no dialog ever appeared. That explains the relay hang, the frozen `du` scans and the fact that switching on Full Disk Access for Python.app changed nothing at first.
+
+**It has cleared.** At 10:11 UTC: no "watchdog expired" lines in the last minute; `ls /Volumes/MiniWork/desk`, `~/Desktop`, `~/Movies` and `~/.Trash` all answer at once. `/usr/libexec/sandboxd` is a new process started at about 09:36 UTC. **I did not restart it in this session** (Step 2 was skipped because the fault was already gone); I do not know what restarted it. Python.app has Full Disk Access (Ben switched it on at about 08:50 UTC).
+
+### Relay
+
+Healthy, not restarted. Last "SSD check got no answer" line: 09:27:21. The run that started J2033 at 10:09:46 logged no SSD line, and J2452 before it ended with exit 0. Codex is flagged out of credit (weekly limit 99% used).
+
+### Worktrees
+
+Of the 19 in the J2445 table:
+
+- **18 were already gone** from `~/_desk/worktrees` when I checked, removed by something other than this session. The SSD went from 26 GiB to 17 GiB used.
+- **1 skipped: `J2206-owb-reach`.** It is clean, but its HEAD (`71672183b`) is on no remote branch: `origin/cursor/J2206-owb-reach` no longer exists and the commit is not an ancestor of `origin/main`. The commit is still on the local branch `cursor/J2206-owb-reach`. Left in place.
+- **0 removed by me.** `git worktree prune` run in both checkouts.
+
+12 other entries remain in `~/_desk/worktrees`; they were not on the list and were not touched.
+
+### Where the missing space is
+
+`sudo du -xhd 3 /System/Volumes/Data` now completes. It totals **163 GiB**, matching what `df` said last night, so the space is located:
+
+| Where | GiB | Earlier reports said |
+|---|---:|---|
+| `~/Library` | 39 | 17 |
+| of which `~/Library/Messages` | 9.2 | not measured |
+| of which `~/Library/Application Support` | 17 | 14 |
+| of which `~/Library/Metadata` | 3.3 | not measured |
+| of which `~/Library/Group Containers` | 2.4 | 0.2 |
+| `/Users/michelleoats` (5.8 of it in her Library) | 6.2 | not measured |
+| `/.Spotlight-V100` (search index) | 5.8 | not measured |
+| `~/Pictures` | 1.8 | not measured |
+| `/private/var` (db 3.1, folders 3.7) | 7.3 | about 6 |
+
+`~/Movies`, `~/Documents` and `~/.Trash` are effectively empty. Top-level totals: `~` 116, `/Users` 122, `/private` 14, `/Library` 7.2, `/System` 5.2, `/Applications` 4.9, `/opt` 3.3.
+
+Added to the "looks safe to clear" list (nothing cleared):
+
+| What | Frees | Note |
+|---|---:|---|
+| `~/Library/Messages` (attachments) | up to 9 GiB | Personal data; Ben's call. Can be trimmed from the Messages settings. |
+| `/private/tmp` worktrees (`codex-*`, `*-wt`, about 0.5 GiB each) | up to 6 GiB | Check each is clean and pushed first. |
+| `/Users/michelleoats` | 6.2 GiB | Only if the account is no longer needed. |
+
+### Open: 9 GiB newer than the scan
+
+`df` now reports **172 GiB used, 27 GiB free (87%)**, against 163 GiB used and 38 GiB free last night. The `du` total is 163 GiB, so about 9 GiB is in use that `du` does not see. I have not found where. Known growth overnight: `~/_desk` went from 5.5 to 10 GiB (new `wt-J2478` 1.2, `worker` 1.4, `J2470` 0.8) and `/private/tmp` from 5.9 to 6.5 GiB. Free space fell 11 GiB in about 10 hours, so this needs watching.

@@ -8,7 +8,7 @@ Related Shorts funnel rules: [`.cursor/rules/orbit-shorts-related-video.mdc`](..
 
 ## Locks (standing)
 
-- Channel `UC_esArsDKd3GJvOkeO0DUog` · Studio Google `benoats86@gmail.com`.
+- Channel `UC_esArsDKd3GJvOkeO0DUog` · Studio Google account: the personal account.
 - One Thursday long Premiere **18:00 Europe/London**.
 - That week’s Shorts: **7 punches** from that film only, **Fri–Thu 11:30 Europe/London** (`publishAt` = 10:30Z while BST).
 - Short CTA: **Related video = that Thursday long only**. Zero `/go/` on Shorts. No Orbit on Short thumbs. Exact long listing title on Short last card.

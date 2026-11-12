@@ -79,6 +79,28 @@ def learn_documents(snapshots, channel):
     return samples
 
 
+def film_records(channel, doc, strict=False):
+    """[(video key, film record)] from one of a channel's film-state documents.
+
+    The shape follows how the channel keeps its films (channel.json pipeline.kind):
+    one file listing every film, or one status file per film.
+    """
+    import channels
+    prefix = channels.label(channel) + ':'
+    if channels.pipeline(channel).get('kind') == 'pipeline_json':
+        return [(prefix + str(f['id'] if strict else f.get('id')), f) for f in doc.get('films') or []]
+    return [(prefix + str(f.get('film')), f) for f in (doc if isinstance(doc, list) else [doc])]
+
+
+def history_repo(slug, root):
+    """The checkout whose Git history holds this channel's film state, with the sibling-folder fallbacks."""
+    import channels
+    marker = channels.pipeline(slug)['path'].split('*')[0]
+    candidates = [channels.checkout(slug), channels.repo_path(slug)]
+    candidates += [root.parent / name for name in (slug, *channels.get(slug)['repo'].get('checkouts', []))]
+    return next((p for p in candidates if p and (p / marker).exists()), root.parent / slug)
+
+
 def history_samples(repo, relative, channel):
     """Bounded Git observation; shallow/missing history cannot fabricate starts."""
     import json
@@ -99,11 +121,7 @@ def history_samples(repo, relative, channel):
                 continue
             doc = json.loads(stream.read(int(header[2])))
             stream.read(1)
-            if channel == 'HOS':
-                films = {'HOS:' + str(f['id']): f.get('stages') or {} for f in doc.get('films') or []}
-            else:
-                films = {'OWB:' + str(doc.get('film')): doc.get('stages') or {}}
-            snapshots.append((date(at), films))
+            snapshots.append((date(at), {key: f.get('stages') or {} for key, f in film_records(channel, doc, strict=True)}))
         return learn_documents(snapshots, channel)
     except (OSError, ValueError, KeyError, subprocess.SubprocessError):
         return {}
@@ -183,7 +201,7 @@ def dependency_chain(key, rows):
 
 def forecast(video, stages, jobs, samples, now):
     rows = milestone_rows(stages, jobs)
-    result = dict(asOf=now.isoformat(), milestoneSchema='studio-nine-stages-hos-aliases-v2', milestones=rows,
+    result = dict(asOf=now.isoformat(), milestoneSchema='studio-nine-stages-aliases-v2', milestones=rows,
                   completed=sum(r['displayState'] in DONE for r in rows), total=len(rows),
                   activeStages=select_current(rows), partialEstimates=[],
                   eta=dict(state='unavailable', confidence='unavailable', reasons=[], criticalPath=[]))
@@ -279,22 +297,31 @@ def forecast(video, stages, jobs, samples, now):
     return result
 
 
-def attach(videos, hos, owb, alljobs, now):
-    scope_records = {'HOS:' + str(f.get('id')): f.get('milestoneScope') or {} for f in hos.get('films') or []}
-    scope_records.update({'OWB:' + str(f.get('film')): f.get('milestoneScope') or {} for f in owb})
-    sources = {'HOS:' + str(f.get('id')): f.get('stages') or {} for f in hos.get('films') or []}
-    sources.update({'OWB:' + str(f.get('film')): f.get('stages') or {} for f in owb})
+def attach(videos, second, first, alljobs, now):
+    """The two-channel form video_tracker.py calls: the film documents of the second channel in the registry, then
+    the first's (the order its caller has always passed them in)."""
+    import channels
+    return attach_all(videos, dict(zip(channels.slugs(), (first, second))), alljobs, now)
+
+
+def attach_all(videos, documents, alljobs, now):
+    """documents: {slug: that channel's film state} (its one pipeline document, or its list of status documents)."""
+    import channels
     from pathlib import Path
     root = Path(__file__).resolve().parents[1]
-    samples = {}
-    for status in (root / '02_Video-Projects').glob('*/status.json'):
-        for bucket, values in history_samples(root, str(status.relative_to(root)), 'OWB').items():
-            samples.setdefault(bucket, []).extend(values)
-    import channels
-    candidates = [channels.repo_path('hos')]
-    candidates += [root.parent / name for name in ('hos', *channels.get('hos')['repo'].get('checkouts', []))]
-    hos_repo = next((p for p in candidates if (p / '00_Brand/Channel-Setup/PIPELINE.json').exists()), root.parent / 'hos')
-    samples.update(history_samples(hos_repo, '00_Brand/Channel-Setup/PIPELINE.json', 'HOS'))
+    scope_records, sources, samples = {}, {}, {}
+    for slug, doc in documents.items():
+        for key, film in film_records(slug, doc):
+            scope_records[key] = film.get('milestoneScope') or {}
+            sources[key] = film.get('stages') or {}
+        label, kept = channels.label(slug), channels.pipeline(slug)
+        repo = history_repo(slug, root)
+        if kept['kind'] == 'pipeline_json':
+            samples.update(history_samples(repo, kept['path'], label))
+            continue
+        for status in repo.glob(kept['path']):
+            for bucket, values in history_samples(repo, str(status.relative_to(repo)), label).items():
+                samples.setdefault(bucket, []).extend(values)
     for video in videos:
         # Parent-film stages cannot certify a Short or a synthetic approval card.
         project_stages = sources.get(video['key'], {})

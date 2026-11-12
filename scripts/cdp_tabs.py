@@ -20,7 +20,7 @@ Two parts:
    site), then caps the browser at MAX_TABS by closing the oldest. A tab is only closed once it has been seen for
    MIN_AGE_MIN minutes (3 h while a `studio` job is claimed, so a long upload's tab is never pulled away). Sign-in pages
    (accounts.google.com) and the last remaining tab are never closed. First-seen times live in
-   ~/.cache/owb-cdp-tabs.json.
+   ~/.cache/<studio prefix>-cdp-tabs.json (state_file()).
 """
 import argparse, json, os, sys, time, urllib.parse, urllib.request
 
@@ -31,7 +31,15 @@ MIN_AGE_MIN = 20
 BUSY_MIN_AGE_MIN = 180   # while a Studio job is claimed
 NEVER_CLOSE = ("accounts.google.com",)
 BLANK = "(blank)"
-STATE = os.path.expanduser("~/.cache/owb-cdp-tabs.json")
+
+
+def state_file():
+    """Where the janitor keeps its first-seen times. The file carries the studio's own short name, which
+    scripts/channels.py holds. It is asked for here and not when this module loads, because the picture tools
+    import this module only for reuse_page() and must not come to depend on anything else."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import channels
+    return os.path.expanduser(f"~/.cache/{channels.studio_prefix()}-cdp-tabs.json")
 
 
 def site(url):
@@ -99,14 +107,14 @@ def page_tabs(port):
 
 def load_state():
     try:
-        return json.load(open(STATE))
+        return json.load(open(state_file()))
     except Exception:
         return {}
 
 
 def save_state(s):
-    os.makedirs(os.path.dirname(STATE), exist_ok=True)
-    json.dump(s, open(STATE, "w"))
+    os.makedirs(os.path.dirname(state_file()), exist_ok=True)
+    json.dump(s, open(state_file(), "w"))
 
 
 def studio_job_running(queue=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "jobs", "queue.json")):

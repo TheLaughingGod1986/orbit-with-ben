@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -41,7 +41,7 @@ assert.equal(quiet.health[0], 'red');
 const board = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'ai_board.json'), 'utf8'));
 board.tracker = {videos: [v({key: 'OWB:019', title: 'Andromeda <script>', lane: 'ready', readyFor: 'Ben',
   watch: {url: 'https://example.com/w', version: 'v06'}})]};
-board.owb = {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'Credit readings'}], day: {doneToday: 4}};
+board.owb = {jobs: [{id: 'J1', status: 'claimed', by: 'gemini', title: 'Credit readings', plain: 'Reading how many credits are left'}], day: {doneToday: 4}};
 for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
   const html = t.renderTab(tab, board, NOW);
   assert(!html.includes('<script>'), `${tab} escapes text`);
@@ -52,7 +52,7 @@ assert(review.includes('#uat=OWB%3A019') && review.includes('Watch &amp; review 
 assert(review.includes('class="seg two"') && review.includes('<span>Needs your review</span>') && review.includes('<span>Reviewed</span>'), 'Review shows two matching count chips');
 assert(/seg two[\s\S]*Needs your review[\s\S]*Reviewed[\s\S]*<section>[\s\S]*Needs your review[\s\S]*reviewed-fold[\s\S]*open/.test(review), 'Review chips sit above both list sections; reviewed history stays accessible');
 assert(!review.includes('data-seg='), 'Review chips are not lane filters');
-assert(t.renderTab('agents', board, NOW).includes('Working on J1: Credit readings'));
+assert(t.renderTab('agents', board, NOW).includes('Working on: reading how many credits are left'), 'an agent row says what the agent is doing, not a job number and title');
 assert(t.renderTab('overview', null, NOW).includes('Loading'));
 // Ben's tick from the hub is the same document /board sends (tracker_app.js approve / openChangesModal).
 const ok = t.tickDoc(v({key: 'OWB:029:S:abc', version: 'v04', ask: {job: 'J0961', what: 'swap'}}), 'ok');
@@ -268,6 +268,23 @@ assert.equal(t.readiness(v({youtube: {videoId: 'abcdefghijk', state: 'scheduled'
 assert.equal(t.readiness(v({}), NOW + 2 * 864e5, NOW), 'Not uploaded to YouTube yet');
 assert.equal(t.readiness(v({youtube: {state: 'scheduled', publishAt: 'x'}}), NOW + 864e5, NOW), '', 'a swap YouTube already has scheduled is not flagged');
 assert.equal(t.readiness(v({flags: [{kind: 'approved', text: 'no read-back'}]}), NOW + 864e5, NOW), 'no read-back');
+// 10 Nov 2026: a flag written for the Chief is housekeeping, not something Ben is asked. It showed on his Schedule.
+{
+  const sched = {videoId: 'abcdefghijk', state: 'scheduled', publishAt: '2026-10-29T18:00:00Z', publishAtLondon: 'Thu 29 Oct 18:00'};
+  const chief = {kind: 'chief', audience: 'chief', text: 'Chief: brief text still asks Ben for an OK he already gave'};
+  assert.equal(t.readiness(v({youtube: sched, flags: [chief]}), NOW + 864e5, NOW), '', 'a Chief-only flag is not a Schedule warning');
+  assert.equal(t.readiness(v({youtube: sched, flags: [chief, {kind: 'stuck', text: 'No job queued'}]}), NOW + 864e5, NOW), 'No job queued',
+    'a flag for Ben still shows');
+  const b = {tracker: {videos: [v({key: 'HOS:007', channel: 'HOS', number: '007', title: 'Why Vaccines Are Named After a Cow', lane: 'approved',
+    version: 'v04', youtube: sched, flags: [chief]})]}};
+  const page = t.renderTab('schedule', b, NOW);
+  assert(page.includes('Why Vaccines Are Named After a Cow') && !page.includes('still asks Ben'), 'the Schedule tab hides the Chief-only flag');
+  // The day heading and the time line say when; the row no longer repeats "Scheduled for Thu 29 Oct 18:00 London".
+  assert(page.includes('class="meta when">18:00') && !page.includes('Scheduled for Thu 29 Oct 18:00 London'), 'a Schedule row says the time once');
+  assert(page.includes('· v04</span>'), 'and keeps channel, kind and version');
+  assert(!t.detail(b, 'HOS:007').includes('still asks Ben'), "a video's own page hides the Chief-only flag too");
+  console.log('Schedule rows and Chief-only flags OK');
+}
 assert(t.renderTab('schedule', board, NOW).length > 100);
 // One meaning of working: the video flag alone is not an agent working (11 / 1 / 0 no longer disagree).
 const flagOnly = t.summary({tracker: {videos: [v({key: 'f', working: true})]}, models: {checkedAt: new Date(NOW).toISOString(), models: []}, owb: {jobs: []}}, NOW);
@@ -1255,6 +1272,214 @@ console.log('Jobs running count checks OK');
   assert(page.includes('What the agents changed') && page.includes('no blurred bands'), 'and what the agents changed');
   const fresh = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: [], fixedNotes: []})]}}, 'OWB:ASK:J2418');
   assert(!fresh.includes('What you flagged last time'), 'a first-time cut has no past-problems box');
+  // 10 Nov 2026 (phone): the box sits under the player and above the notes box and buttons, not a screen below them.
+  assert(page.indexOf('class="past-problems"') > page.indexOf('class="player"'), 'the box is under the player');
+  assert(page.indexOf('class="past-problems"') < page.indexOf('id="uat-notes"'), 'and above the notes box');
+  // A re-cut Ben has not seen yet says what changed, without claiming he flagged anything.
+  const recut = t.uat({tracker: {videos: [Object.assign({}, b.tracker.videos[0], {pastNotes: []})]}}, 'OWB:ASK:J2418');
+  assert(recut.includes('What changed in this cut') && recut.includes('no blurred bands') && !recut.includes('What you flagged last time'),
+    'a first-time re-cut is headed "What changed in this cut"');
   console.log('UAT past problems OK');
 }
 
+
+// Ben, 10 Nov 2026: "learn from our failures". The first-day check's verdict shows on the Overview and the video's page.
+{
+  const row = o => Object.assign({id: 'aaaaaaaaaaa', channel: 'OWB', format: 'short', title: 'Titan <b>Short</b>', wentLive: '2026-10-28T11:30Z',
+    level: 'behind', word: 'Slow start', stage: 'not shown', stageText: 'YouTube has shown it to very few people so far', hours: 6,
+    summary: '4 views at 6 h; Studio says the usual for us at this age is 40.', figures: 'views 4 · shown in feed 8',
+    why: ['4 views at 6 h; Studio says the usual for us at this age is 40.', 'Studio ranks it 7 of 10 against our latest videos at the same age.'],
+    differences: ['"Saturn" was in the title of 4 earlier Shorts.'], now: ['Read it again tomorrow.'], carry: ['Take the subject off the schedule.'],
+    done: [{at: '2026-10-28T14:06Z', by: 'claudecode', text: 'tags set to search phrases'}], next: null}, o);
+  const waiting = row({id: 'bbbbbbbbbbb', title: 'Mars long', format: 'long', wentLive: '2026-10-28T18:00Z', level: '', word: 'Not checked yet',
+    stage: '', stageText: '', hours: null, summary: '', figures: '', why: [], differences: [], now: [], carry: [], done: [],
+    next: {hours: 6, at: '2026-10-29T00:00Z', due: false, job: ''}});
+  const old = row({id: 'ccccccccccc', title: 'Old Short', wentLive: '2026-10-20T11:30Z', level: 'ahead', word: 'Strong start', stage: '', stageText: '', done: []});
+  const fb = {tracker: {videos: [v({key: 'OWB:032:S:x', type: 'short', youtube: {videoId: 'aaaaaaaaaaa', state: 'live', privacy: 'public', url: 'https://youtu.be/aaaaaaaaaaa'}})],
+    firstDay: [waiting, row({}), old]}};
+  const home = t.overview(fb, NOW);
+  assert(home.includes('aria-label="First day"') && home.includes('Slow start') && home.includes('Not checked yet'), 'the Overview shows the recent checks');
+  assert(!home.includes('Old Short') && home.includes('href="#firstday"') && home.includes('All 3'), 'an older check is one tap away, not on the Overview');
+  assert(home.indexOf('aria-label="First day"') < home.indexOf('aria-label="Machines"'), 'First day sits above Machines');
+  assert(!home.includes('<b>Short</b>') && home.includes('Titan &lt;b&gt;Short&lt;/b&gt;'), 'the title is escaped');
+  assert(home.includes('tag amber') && home.includes('4 views at 6 h; Studio says the usual for us at this age is 40.'), 'a slow start is amber, with its numbers in one line');
+  assert(home.includes('What is different about this one') && home.includes('What we did') && home.includes('Claude Code') && home.includes('tags set to search phrases'),
+    'opened, the card says what is different and what was done');
+  assert(home.includes('Next check Thu 29 Oct 00:00'), 'a video not read yet says when its check comes');
+  assert(home.includes('#v=OWB%3A032%3AS%3Ax') && home.includes('https://youtu.be/aaaaaaaaaaa'), 'the card links to the video page and to YouTube');
+  assert.equal(t.firstDayNext({next: {hours: 48, at: '2026-10-30T18:00Z', due: true}}), 'The 2-day check is due now');
+  assert.equal(t.firstDayNext({next: {hours: 6, at: '2026-10-28T17:30Z', due: true}}), 'The 6-hour check is due now');
+  assert.equal(t.firstDayNext({next: null}), '');
+  // A weak start nobody has acted on says so; a good one does not ask for anything.
+  assert(t.firstDayCard(row({done: []}), fb).includes('Nothing has been done about it yet.'));
+  assert(t.firstDayCard(row({level: 'usual', word: 'As usual', done: [], stage: '', stageText: ''}), fb).includes('Nothing needed doing.'));
+  assert(t.firstDayCard(row({level: 'fault', word: 'Fault'}), fb).includes('tag red'), 'a fault is red');
+  // No recent check: the Overview has no First day section at all.
+  assert(!t.overview({tracker: {videos: [], firstDay: [old]}}, NOW).includes('aria-label="First day"'), 'nothing recent, no section');
+  assert(!t.overview({tracker: {videos: []}}, NOW).includes('aria-label="First day"'), 'a board without the panel still renders');
+  // The full list and the video's own page.
+  const all = t.firstDayPage(fb);
+  assert(all.includes('Old Short') && all.includes('Strong start') && all.includes('tag green') && all.includes('Back to Overview'), 'the list page shows every check');
+  assert(t.firstDayPage({tracker: {videos: []}}).includes('No video has been checked yet.'));
+  const page = t.detail(fb, 'OWB:032:S:x');
+  assert(page.includes('aria-label="First day"') && page.includes('data-disclosure="first-aaaaaaaaaaa-page" open') && !page.includes("Open the video's page"),
+    'the video page shows its own check, open, without a link to itself');
+  assert(!t.detail({tracker: {videos: fb.tracker.videos}}, 'OWB:032:S:x').includes('aria-label="First day"'), 'a video with no check has no block');
+  console.log('First day panel OK');
+}
+
+// Channels (Ben, 10 Nov 2026: "is there a small part on the dashboard we can show what repos are plugged in ... and
+// the ability that we can just add another repo"). Facts from board.channels (scripts/channel_cards.py).
+{
+  const ch = (o) => Object.assign({slug: 'owb', label: 'OWB', name: 'Orbit With Ben', short: 'Orbit', home: true, handle: '@OrbitWithBen',
+    repo: 'someone/orbit-with-ben', wip: 5, here: true, ready: true, must: [], todo: [], rules: true}, o);
+  const sky = ch({slug: 'night-sky', label: 'SKY', name: 'Night <b>Sky</b>', short: 'Sky', home: false, handle: '@NightSky', repo: '', wip: 2,
+    todo: ['repo.url is empty: put the GitHub address in once the repo exists', 'studio/RULES.md: <i>its own rules</i>'], rules: false});
+  const broken = ch({slug: 'deep', label: 'SEA', name: 'Deep Sea', short: 'Sea', home: false, handle: 'javascript:alert(1)', repo: 'not a repo',
+    ready: false, must: ['studio/channel.json: picture_route must be one of flow_only, flow_first'], rules: null});
+  const away = ch({slug: 'far', label: 'FAR', name: 'Far Away', short: 'Far', home: false, here: false, ready: null, rules: null, wip: null});
+  const cb = {channels: [ch({todo: ['one thing']}), sky, broken, away], channelRoom: {left: 302, from: 367},
+    tracker: {videos: [v({key: 'OWB:031', channel: 'OWB', lane: 'progress'}), v({key: 'OWB:032', channel: 'OWB', lane: 'progress'}),
+      v({key: 'OWB:020', channel: 'OWB', lane: 'done', title: 'Older film', youtube: {state: 'live', privacy: 'public', videoId: 'o', publishAt: '2026-10-01T18:00:00Z'}}),
+      v({key: 'OWB:025', channel: 'OWB', lane: 'done', title: 'Newest film', youtube: {state: 'live', privacy: 'public', videoId: 'n', publishAt: '2026-10-25T18:00:00Z'}}),
+      v({key: 'SKY:001', channel: 'SKY', lane: 'progress', title: 'Orion'})]}};
+  assert.deepEqual([...t.channelLight(ch({}))], ['green', 'running']);
+  assert.deepEqual([...t.channelLight(ch({todo: ['a']}))], ['green', 'running'], 'housekeeping left is not a fault in the channel');
+  assert.deepEqual([...t.channelLight(sky)], ['amber', 'being set up'], 'a channel with no repo yet is still being set up');
+  assert.deepEqual([...t.channelLight(broken)], ['red', 'not ready']);
+  assert.deepEqual([...t.channelLight(away)], ['', 'not checked here']);
+  assert.deepEqual([...t.channelLight({slug: 'old', label: 'OLD', name: 'Old'})], ['', 'plugged in'], 'an older board.json carries only the names');
+
+  const home = t.overview(cb, NOW);
+  assert(home.includes('aria-label="Channels"') && home.includes('href="#channels"'), 'the Overview has a Channels section that opens the page');
+  assert(home.indexOf('aria-label="Channels"') > home.indexOf('aria-label="Machines"'), 'it sits at the foot, under the work');
+  assert(home.includes('<b>Orbit With Ben</b><span class="tag green">running</span>') && home.includes('<span class="tag red">not ready</span>'), 'one chip per channel with its light');
+  assert(home.includes('Night &lt;b&gt;Sky&lt;/b&gt;') && !home.includes('Night <b>Sky</b>'), 'a channel name is escaped');
+  assert(t.overview({tracker: {videos: []}}, NOW).includes('aria-label="Channels"'), 'a board with no channels field still names the channels it knows');
+
+  const page = t.channelsPage(cb);
+  assert(page.includes('<h1>Channels</h1>') && page.includes('href="#overview"'), 'the page has a title and a way back');
+  assert.equal((page.match(/class="ov-card ch-card"/g) || []).length, 4, 'one card per channel');
+  assert(page.includes('The studio can run this channel.') && page.includes('The studio cannot run this channel yet.'), 'each card says whether the studio can run it');
+  assert(page.includes('does not hold this channel&#39;s files, so it was not checked'), 'a channel that is not on the publishing machine says so, without a fault');
+  assert(page.includes('<a href="https://www.youtube.com/@OrbitWithBen" target="_blank" rel="noopener">@OrbitWithBen</a>'), 'a real handle links to YouTube');
+  assert(!page.includes('href="https://www.youtube.com/javascript') && page.includes('javascript:alert(1)') && !page.includes('href="javascript'), 'anything else is shown as text, never as a link');
+  assert(page.includes('<a href="https://github.com/someone/orbit-with-ben"') && !page.includes('github.com/not a repo'), 'only an owner/name repo is linked');
+  assert(page.includes('It has no GitHub repo yet.'), 'a channel with no repo yet says so');
+  const own = t.channelCard(cb, cb.channels[0]);
+  assert(own.includes('2 films now') && own.includes('<dt>Workload</dt><dd>Up to 5 films in work at a time</dd>'), 'films in production come from the same list as the Producing number');
+  assert(own.includes('Newest film') && !own.includes('Older film'), 'the last video live is the newest public one');
+  assert(t.channelCard(cb, sky).includes('1 film now') && !t.channelCard(cb, sky).includes('Last live'), 'a channel with nothing live has no last-live row');
+  assert.equal(t.channelFacts(cb, away).producing, 0);
+  assert(page.includes('What stops the studio running it') && page.includes('picture_route must be one of'), 'what stops a channel is in the open');
+  assert(page.includes('data-disclosure="channel-night-sky-todo"') && page.includes('Housekeeping left · 2') && page.includes('&lt;i&gt;its own rules&lt;/i&gt;'), 'what is left is listed, closed, and escaped');
+  assert(page.includes('Its own rules, on top of the studio&#39;s.') && page.includes('Its own rules file is still to write.'), 'whether it has its own rules');
+  assert(page.includes('<h2>Add a channel</h2>') && (page.match(/<li><b>(You|Claude)<\/b>/g) || []).length === 5, 'the steps to add one, each marked with who does it');
+  assert(page.includes('Create its GitHub repo, sign in to its YouTube Studio') && page.includes('Nothing on this page changes anything'), 'creating the repo and the sign-in are Ben\'s; the page writes nothing');
+  assert(!/<button|<form|<input/.test(page), 'no control on the page can change anything');
+  assert(page.includes('Not yet. 302 places') && page.includes('(down from 367)'), 'it says how far the studio is from running another channel');
+  assert(t.channelsPage(Object.assign({}, cb, {channelRoom: {left: 0, from: 367}})).includes('Yes. The studio&#39;s own code no longer assumes'), 'and when it is ready');
+  assert(!t.channelsPage({channels: cb.channels}).includes('Is the studio ready for another one?'), 'no figure, no claim');
+  assert(t.channelsPage({}).includes('<h1>Channels</h1>'), 'the page renders with no channels field at all');
+  console.log('Channels section OK');
+}
+
+// Ben, 10 Nov 2026: "when I click into the job, it's completely jargon ... I just want to see what it's doing".
+{
+  const video = v({key: 'OWB:025', number: '025', title: 'Could a Robot Survive on Mars?', jobs: [{id: 'J2510', status: 'claimed'}]});
+  const working = {id: 'J2510', status: 'claimed', by: 'gemini', kind: 'assembly', title: 'Two Mars Shorts still show a raw video id on the end card: re-cut from disk, gate, watch',
+    plain: 'Remove the stray letters from the end of two Mars Shorts before they air', remaining_action: 'Build and gate thu12_length_test_dust_v05.mp4 (N42gKBbD7tE)',
+    claimedAt: new Date(NOW - 20 * 6e4).toISOString(), progress: {step: 1, of: 6, note: 'Diagnosed v01 and v02 gate failures'}, due: '2026-10-29T12:00:00Z', taskKeys: ['OWB:025']};
+  const queued = {id: 'J2499', status: 'open', kind: 'assembly', title: 'HOS 013: build and test the Flow mint runner for the 71 rows',
+    plain: "Build and test the tool that will make the Darwin film's pictures, without making any yet"};
+  const noAgent = {id: 'J2455', status: 'open', title: 'Panel critique', plain: 'Checking the thumbnails with a panel'};
+  const earlier = {id: 'J2512', status: 'open', title: 'Fix faults', plain: 'Fix a repeated shot and a frozen picture in two Shorts.'};
+  const held = {id: 'J2513', status: 'blocked', title: 'Swap HZGTovJu_TQ', plain: 'Put the Monday Short you approved into its slot', after: 'J2512',
+    hold: {type: 'dependency', condition: 'J2512 done', check_at: '2026-10-31T18:05:00Z'}, result: 'Waiting for: J2512'};
+  const jb = {tracker: {videos: [video]}, models: freshModels, owb: {jobs: [working, queued, noAgent, earlier, held]},
+    queueForecast: {jobs: {J2499: {agent: 'gemini', pos: 3, startAt: '2026-10-28T21:52Z'}}, noAgent: {J2455: 'waiting for cursor: out of credit until 2026-12-09'}}};
+
+  // The job page: plain name first, then for, who, how far and due. No job number or raw title above the fold.
+  const page = t.jobPage(jb, 'J2510', NOW), top = page.slice(0, page.indexOf('<details'));  // what Ben sees before opening anything
+  assert(top.includes('<h1 class="uat-title">Remove the stray letters from the end of two Mars Shorts before they air</h1>'), 'the page is headed by what the job is doing');
+  assert(top.includes('Working now') && top.includes('Gemini is working on it now') && top.includes('Step 1 of 6'), 'who has it and how far');
+  assert(top.includes('#v=OWB%3A025') && top.includes('Could a Robot Survive on Mars?'), 'the video it is for, as a link');
+  assert(top.includes('Due by') && top.includes('Thu 29 Oct 12:00'), 'when it is due, in London time');
+  assert(!top.includes('J2510') && !top.includes('raw video id') && !top.includes('thu12_length_test') && !top.includes('claimed'), 'no job number, title or file name up top');
+  assert(page.includes('J2510 · Two Mars Shorts still show a raw video id') && page.includes('thu12_length_test_dust_v05.mp4') && page.includes('Diagnosed v01 and v02 gate failures'),
+    'the record as the agents wrote it is under Technical details');
+  assert(page.includes('Back to Agents'));
+  // A queued job says where it is in line; one whose agent is out says which.
+  const q = t.jobPage(jb, 'J2499', NOW);
+  assert(q.includes('In the queue') && /Number 3 in line for Gemini · starts about (?:\w+ )?21:52/.test(q) && q.includes('The studio itself, not one video'));
+  assert.equal(t.jobQueueLine(jb, noAgent), 'Waiting for Cursor, which is out of credit right now');
+  assert.equal(t.jobQueueLine({queueForecast: {noAgent: {x: 'waiting for claudecode'}}}, {id: 'x'}), 'Waiting for Claude Code to be free');
+  assert.equal(t.jobQueueLine({}, {id: 'x'}), 'In the queue');
+  // A waiting job says why in a sentence, naming the earlier job by what it does.
+  const w = t.jobPage(jb, 'J2513', NOW);
+  assert(w.includes('It is waiting for an earlier job to finish: fix a repeated shot and a frozen picture in two Shorts.') && w.includes('We look again') && w.includes('Sat 31 Oct 18:05'));
+  assert(!t.jobPage(jb, 'J2513', Date.parse('2026-11-05T00:00:00Z')).includes('We look again'), 'a look-again date already past is not shown');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'public'}}), 'It starts once the video is public on YouTube.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'test'}}), 'It is waiting for a YouTube test of two thumbnails or titles to finish.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', awaits_ben: [{what: 'watch'}]}), 'It is waiting for you to watch it or say yes.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'input', condition: "Ben's yes to delete the finished title test"}}), 'It is waiting for you to watch it or say yes.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', hold: {type: 'date'}}), 'It is waiting for a set date.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', awaits_ben: [], hold: {type: 'date'}}), 'It is waiting for a set date.', 'an empty list of questions is not a question for Ben');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked', result: 'parked for Chief: needs a ruling'}), 'It is waiting for the Chief to decide.');
+  assert.equal(t.jobWaiting(jb, {status: 'blocked'}), 'It is waiting for something it needs before it can go on.');
+  // A job that has gone, and text that needs escaping.
+  assert(t.jobPage(jb, 'J9999', NOW).includes('That job has finished, or is no longer in the queue.'));
+  assert(!t.jobPage({tracker: {videos: []}, owb: {jobs: [{id: 'Jx', status: 'open', plain: 'Fix <script>'}]}}, 'Jx', NOW).includes('<script>'), 'the page escapes its text');
+  // Without a plain line the kind says what it is; never an empty name.
+  assert.equal(t.jobPlain(null, {id: 'Jv', kind: 'vo', title: 'VO pass 2'}), 'Recording or checking the voice-over');
+  assert.equal(t.jobPlain(null, {id: 'Jn'}), 'A studio task');
+  assert.equal(t.jobPlain(jb, {id: 'J2510', title: 'short row from a video card'}), 'Remove the stray letters from the end of two Mars Shorts before they air', "a video's job row borrows the plain line from the queue");
+
+  // The Agents tab lists work in three plain groups; rows open the job page.
+  const tab = t.agents(jb, NOW);
+  assert(/Working on now[\s\S]*Up next[\s\S]*Waiting for something first · 1/.test(tab), 'working, next, waiting');
+  assert(!tab.includes('Job queue ·') && !tab.includes('Recorded status') && !tab.includes('Recorded job metadata'), 'the old jargon list is gone');
+  assert(tab.includes('href="#agents&job=J2510"') && tab.includes('Gemini is working on it · step 1 of 6'), 'a working row says who and how far');
+  assert(tab.includes('Number 3 in line for Gemini') && tab.includes('Waiting for an earlier job'), 'a queued row says its place; a waiting row says what for');
+  assert(tab.indexOf("Build and test the tool that will make the Darwin film") < tab.indexOf('Checking the thumbnails with a panel'), 'the job starting soonest is first in Up next');
+  assert(tab.includes('Working on: remove the stray letters from the end of two Mars Shorts before they air'), 'the agent team says what Gemini is doing');
+  const many = {...jb, owb: {jobs: Array.from({length: 8}, (_, i) => ({id: 'Jq' + i, status: 'open', plain: 'Queued job ' + i}))}};
+  assert(t.agentQueue(many, NOW).includes('3 more in the queue'), 'a long queue shows five, the rest one tap away');
+  assert(t.agentQueue({tracker: {videos: []}, owb: {jobs: []}}, NOW).includes('Nothing is being worked on right now.'));
+
+  // The Overview's running-job card says what the job is doing; the Videos tab's studio job card too.
+  const card = t.activityCard(jb, NOW);
+  assert(card.includes('Gemini is working') && card.includes('Remove the stray letters from the end of two Mars Shorts before they air') && card.includes('OWB 025 · Could a Robot Survive on Mars?'));
+  assert(!/>J2510 ·/.test(card), 'no job number in the card text');
+  const sj = t.jobCard({id: 'J77', status: 'claimed', by: 'claude', title: 'kanban deploy', plain: 'Keeping the studio running smoothly'});
+  assert(sj.includes('Keeping the studio running smoothly') && sj.includes('href="#agents&job=J77"') && !sj.includes('>J77<') && !sj.includes('kanban deploy'));
+  // A published video's linked work reads as what is being done.
+  const live = v({key: 'OWB:025', number: '025', title: 'Mars', lane: 'done', youtube: {state: 'live', privacy: 'public', videoId: 'abc'}, jobs: [{id: 'J2510', status: 'claimed', title: 'raw title', remaining_action: 'Build and gate'}]});
+  t.setBoard(jb);
+  const vp = t.detail({...jb, tracker: {videos: [live]}}, 'OWB:025');
+  assert(vp.includes('Remove the stray letters from the end of two Mars Shorts before they air · Working'), 'linked work is in plain words');
+  t.setBoard(null);
+  console.log('Jobs in plain words OK');
+}
+
+// Ben, 10 Nov 2026: the old board page (/board) is retired. The Studio app now keeps the old /#k= key itself.
+{
+  const store = {}, replaced = [];
+  const ctx = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {},
+    location: {hash: '#k=AbCdEfGh_1234-xyz', pathname: '/', search: ''},
+    localStorage: {setItem: (k, v2) => { store[k] = v2; }, getItem: k => store[k] || null},
+    history: {replaceState: (a, b, url) => replaced.push(url)}};
+  vm.createContext(ctx);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', ctx);
+  assert.equal(store['studio-board-key'], 'AbCdEfGh_1234-xyz', 'the key from an old link is kept for the buttons');
+  assert.deepEqual(replaced, ['/'], 'and taken out of the address bar');
+  assert(!source.includes('location.replace("/board"'), 'nothing is handed to the retired page');
+  // A link without a key, or a private window with no storage, changes nothing and does not throw.
+  const plain = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {}, location: {hash: '#videos'}};
+  vm.createContext(plain);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', plain);
+  const noStore = {Date, Intl, URLSearchParams, console, document: {getElementById: () => ({})}, window: {}, location: {hash: '#k=AbCdEfGh_1234'}};
+  vm.createContext(noStore);
+  vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', noStore);
+  console.log('Old board key hand-off OK');
+}

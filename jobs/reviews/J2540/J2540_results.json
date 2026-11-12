@@ -1,0 +1,3056 @@
+[
+  {
+    "channel": "OWB",
+    "id": "ffYKoNVPoqg",
+    "air_date": "2026-11-10",
+    "publish_at": "2026-11-10T11:30:00Z",
+    "title": "What Would Standing on Saturn's Moon Titan Feel Like?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v11.mp4",
+    "note": "Aired 10 Nov 11:30Z (reference trigger for J2505/J2539)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 5.48,
+    "returncode": 1,
+    "fb_verdict": "FAIL",
+    "fb_fail_messages": [
+      "frame 0 is not full-bleed 9:16: blur-pad above and below a picture band on 2/3 frames from 0.0 to 0.5 s (band from 38% to 61% of the height at 0.00s, row detail outside 2.84 vs picture 7.3) \u2014 reframe the opening shot to fill 1080x1920"
+    ],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s6_titan_v11.mp4",
+      "air_date": "2026-11-10",
+      "fails": [
+        "frame 0 is not full-bleed 9:16: blur-pad above and below a picture band on 2/3 frames from 0.0 to 0.5 s (band from 38% to 61% of the height at 0.00s, row detail outside 2.84 vs picture 7.3) \u2014 reframe the opening shot to fill 1080x1920"
+      ],
+      "warns": [
+        "duration 18.0s outside 22\u201327s band",
+        "gap from last word to end is 1.87s > 1.5s (last word 16.13s, duration 18.00s)",
+        "possible Orbit at 0 s (visor 0.0021) \u2014 eyeball the sheet"
+      ],
+      "stayed_fails": [],
+      "duration_s": 18.0,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.0,
+        "open_mean_db": -15.1
+      },
+      "vo_src": "/Volumes/data/mac-mini-archive/scratch/J1199/s6_v02/vo_v02.wav",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 16.13,
+      "tail_gap_s": 1.87,
+      "motion_0_1s": 17.16,
+      "frame0_diff_0_1_5s": 4.72,
+      "frame0_luma_0s": 103.45,
+      "frame0_luma_0_5s": 101.2,
+      "frame0_kick_0_0_5s": 4.74,
+      "frame0_hook_edge_0s": 0.0607,
+      "frame0_full_bleed": [
+        {
+          "kind": "blur-pad",
+          "detail_top": 20.21,
+          "detail_centre": 7.57,
+          "detail_bottom": 2.64,
+          "std_top": 54.71,
+          "std_bottom": 28.57,
+          "seam_rows": [
+            72,
+            117
+          ],
+          "seam_step_share": [
+            0.926,
+            0.778
+          ],
+          "seam_detail_ratio": [
+            0.381,
+            0.859
+          ],
+          "picture_share_of_height": 0.234,
+          "std_outside": 27.53,
+          "std_picture": 39.58,
+          "detail_outside": 2.84,
+          "detail_picture": 7.3,
+          "t": 0.0
+        },
+        {
+          "kind": "blur-pad",
+          "detail_top": 20.2,
+          "detail_centre": 7.39,
+          "detail_bottom": 10.46,
+          "std_top": 54.42,
+          "std_bottom": 36.55,
+          "seam_rows": [
+            72,
+            122
+          ],
+          "seam_step_share": [
+            0.907,
+            0.741
+          ],
+          "seam_detail_ratio": [
+            0.337,
+            0.311
+          ],
+          "picture_share_of_height": 0.26,
+          "std_outside": 28.43,
+          "std_picture": 39.45,
+          "detail_outside": 3.03,
+          "detail_picture": 7.64,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 20.22,
+          "detail_centre": 7.22,
+          "detail_bottom": 10.79,
+          "std_top": 54.34,
+          "std_bottom": 36.68,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.67,
+      "dhash": "fcafede2a72fbdf5",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.2365,
+        "dark_frac": 0.0324,
+        "visor_frac": 0.0021
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s6_titan_v11_open_sheet.jpg",
+      "verdict": "FAIL"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "B1z2dv7m7Vk",
+    "air_date": "2026-11-11",
+    "publish_at": "2026-11-11T11:30:00Z",
+    "title": "Why Did a 90-Day Mars Rover Last 14 Years?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 3.99,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07.mp4",
+      "air_date": "2026-11-11",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 26.03,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.1,
+        "open_mean_db": -14.2
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 25.194,
+      "tail_gap_s": 0.84,
+      "motion_0_1s": 13.78,
+      "frame0_diff_0_1_5s": 2.5,
+      "frame0_luma_0s": 101.75,
+      "frame0_luma_0_5s": 102.73,
+      "frame0_kick_0_0_5s": 2.5,
+      "frame0_hook_edge_0s": 0.0614,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 9.87,
+          "detail_centre": 5.99,
+          "detail_bottom": 11.15,
+          "std_top": 44.25,
+          "std_bottom": 29.06,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 9.95,
+          "detail_centre": 6.03,
+          "detail_bottom": 15.38,
+          "std_top": 44.1,
+          "std_bottom": 33.82,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 9.97,
+          "detail_centre": 6.31,
+          "detail_bottom": 15.45,
+          "std_top": 44.07,
+          "std_bottom": 32.99,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.5,
+      "dhash": "2c0680aff0d213e3",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.0028,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/wed11_opening_testA_v07_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "uhZSRcvngvE",
+    "air_date": "2026-11-12",
+    "publish_at": "2026-11-12T11:30:00Z",
+    "title": "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?",
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v05.mp4",
+    "note": "Scheduled upload (swapped in today by J2519 from J2510 v05; supersedes N42gKBbD7tE which had knownNoFile)",
+    "recut": "J2510 re-cut (v05, swapped in by J2519)",
+    "length_test": true,
+    "exists": true,
+    "elapsed_s": 6.22,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v05.mp4",
+      "air_date": "2026-11-12",
+      "fails": [],
+      "warns": [
+        "gap from last word to end is 2.51s > 1.5s (last word 52.12s, duration 54.63s)",
+        "possible Orbit at 0 s (visor 0.0015) \u2014 eyeball the sheet"
+      ],
+      "stayed_fails": [],
+      "duration_s": 54.63,
+      "length_test": true,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.3,
+        "open_mean_db": -17.1
+      },
+      "vo_src": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/thu12_length_test_dust/06_Final-Exports/thu12_length_test_dust_v05_stem_vo.wav",
+      "vo_onset_s": 0.096,
+      "last_word_end_s": 52.12,
+      "tail_gap_s": 2.51,
+      "motion_0_1s": 29.47,
+      "frame0_diff_0_1_5s": 4.63,
+      "frame0_luma_0s": 111.08,
+      "frame0_luma_0_5s": 111.97,
+      "frame0_kick_0_0_5s": 10.3,
+      "frame0_hook_edge_0s": 0.116,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 23.55,
+          "detail_centre": 15.17,
+          "detail_bottom": 16.21,
+          "std_top": 53.17,
+          "std_bottom": 26.19,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 23.63,
+          "detail_centre": 14.62,
+          "detail_bottom": 16.72,
+          "std_top": 52.89,
+          "std_bottom": 26.36,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 23.83,
+          "detail_centre": 14.29,
+          "detail_bottom": 16.27,
+          "std_top": 52.81,
+          "std_bottom": 26.13,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "2353880d59b10637",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.2988,
+        "dark_frac": 0.0226,
+        "visor_frac": 0.0015
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/thu12_length_test_dust_v05_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "bSjWiCbB7pY",
+    "air_date": "2026-11-13",
+    "publish_at": "2026-11-13T11:30:00Z",
+    "title": "How Did a Helicopter Fly 72 Times on Mars?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v02.mp4",
+    "note": "Scheduled upload (v02 knownNoFile per J1320; J2520 queued to swap to v06 below)",
+    "recut": "",
+    "length_test": false,
+    "known_no_file": true,
+    "exists": false,
+    "gate": null
+  },
+  {
+    "channel": "OWB",
+    "id": "bSjWiCbB7pY (J2510 v06)",
+    "raw_id": "bSjWiCbB7pY",
+    "air_date": "2026-11-13",
+    "publish_at": "2026-11-13T11:30:00Z",
+    "title": "How Did a Helicopter Fly 72 Times on Mars? (v06 re-cut for J2520 swap)",
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v06.mp4",
+    "note": "Ben-approved v06 re-cut queued for swap in J2520",
+    "recut": "J2510 re-cut (v06, swap queued in J2520)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 7.1,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v06.mp4",
+      "air_date": "2026-11-13",
+      "fails": [],
+      "warns": [
+        "gap from last word to end is 2.56s > 1.5s (last word 23.84s, duration 26.40s)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 26.4,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.3,
+        "open_mean_db": -14.9
+      },
+      "vo_src": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/fri13_ingenuity_72/06_Final-Exports/fri13_ingenuity_72_v06_stem_vo.wav",
+      "vo_onset_s": 0.092,
+      "last_word_end_s": 23.836,
+      "tail_gap_s": 2.56,
+      "motion_0_1s": 11.87,
+      "frame0_diff_0_1_5s": 2.55,
+      "frame0_luma_0s": 121.41,
+      "frame0_luma_0_5s": 125.05,
+      "frame0_kick_0_0_5s": 3.96,
+      "frame0_hook_edge_0s": 0.0762,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 7.98,
+          "detail_centre": 4.18,
+          "detail_bottom": 3.85,
+          "std_top": 32.97,
+          "std_bottom": 15.13,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 7.78,
+          "detail_centre": 4.01,
+          "detail_bottom": 7.59,
+          "std_top": 32.8,
+          "std_bottom": 22.08,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 7.86,
+          "detail_centre": 4.1,
+          "detail_bottom": 7.23,
+          "std_top": 32.77,
+          "std_bottom": 20.75,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.8,
+      "dhash": "ce179fcf3e1fdf5d",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.9038,
+        "dark_frac": 0.0004,
+        "visor_frac": 0.0002
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/fri13_ingenuity_72_v06_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "gmzaCfJF1gA",
+    "air_date": "2026-11-14",
+    "publish_at": "2026-11-14T11:30:00Z",
+    "title": "Why Does Pluto's Giant Ice Heart Have Zero Craters? (v01 scheduled)",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4",
+    "note": "Currently scheduled upload (v01); J2494 re-cut #1 (v02) below, swap queued in J2511",
+    "recut": "J2494 target #1 (original v01)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 7.11,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v01.mp4",
+      "air_date": "2026-11-14",
+      "fails": [],
+      "warns": [
+        "gap from last word to end is 3.01s > 1.5s (last word 19.42s, duration 22.43s)",
+        "[report-only] pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.64 < 1.50) \u2014 use moving footage",
+        "[report-only] first cut at 5.90s > 3.0s (scene-change detect)",
+        "[report-only] spoken text contains meta-promise (\"stay, and i'll show you\")"
+      ],
+      "stayed_fails": [
+        "pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.64 < 1.50) \u2014 use moving footage",
+        "first cut at 5.90s > 3.0s (scene-change detect)",
+        "spoken text contains meta-promise (\"stay, and i'll show you\")"
+      ],
+      "duration_s": 22.43,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -18.2,
+        "open_mean_db": -15.4
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.072,
+      "last_word_end_s": 19.42,
+      "tail_gap_s": 3.01,
+      "motion_0_1s": 15.51,
+      "frame0_diff_0_1_5s": 0.64,
+      "frame0_luma_0s": 92.99,
+      "frame0_luma_0_5s": 104.22,
+      "frame0_kick_0_0_5s": 4.31,
+      "frame0_hook_edge_0s": 0.0458,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 14.6,
+          "detail_centre": 7.42,
+          "detail_bottom": 2.52,
+          "std_top": 91.08,
+          "std_bottom": 24.26,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 16.47,
+          "detail_centre": 7.0,
+          "detail_bottom": 12.44,
+          "std_top": 80.9,
+          "std_bottom": 51.94,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 16.85,
+          "detail_centre": 6.72,
+          "detail_bottom": 12.29,
+          "std_top": 70.89,
+          "std_bottom": 51.84,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 5.9,
+      "dhash": "ffff3f3f1f0f1f70",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.2459,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s7_pluto_heart_v01_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "gmzaCfJF1gA (J2494 v02)",
+    "raw_id": "gmzaCfJF1gA",
+    "air_date": "2026-11-14",
+    "publish_at": "2026-11-14T11:30:00Z",
+    "title": "Why Does Pluto's Giant Ice Heart Have Zero Craters? (v02 J2494 re-cut)",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v02.mp4",
+    "note": "J2494 re-cut #1 of 3 (Ben OK'd, swap queued in J2511)",
+    "recut": "YES \u2014 J2494 re-cut #1 (v02)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 6.66,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s7_pluto_heart_v02.mp4",
+      "air_date": "2026-11-14",
+      "fails": [],
+      "warns": [
+        "duration 17.6s outside 22\u201327s band"
+      ],
+      "stayed_fails": [],
+      "duration_s": 17.6,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.2,
+        "open_mean_db": -15.1
+      },
+      "vo_src": "/Volumes/MiniWork/scratch/J2494/s7_v02/stem_vo.wav",
+      "vo_onset_s": 0.075,
+      "last_word_end_s": 16.31,
+      "tail_gap_s": 1.29,
+      "motion_0_1s": 18.77,
+      "frame0_diff_0_1_5s": 4.48,
+      "frame0_luma_0s": 137.23,
+      "frame0_luma_0_5s": 145.18,
+      "frame0_kick_0_0_5s": 4.48,
+      "frame0_hook_edge_0s": 0.0549,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 16.08,
+          "detail_centre": 7.87,
+          "detail_bottom": 5.35,
+          "std_top": 87.84,
+          "std_bottom": 26.14,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 17.0,
+          "detail_centre": 7.58,
+          "detail_bottom": 9.38,
+          "std_top": 79.75,
+          "std_bottom": 34.24,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 17.99,
+          "detail_centre": 7.47,
+          "detail_bottom": 9.37,
+          "std_top": 65.97,
+          "std_bottom": 33.97,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.7,
+      "dhash": "0f7fff6347431183",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.0396,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s7_pluto_heart_v02_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "HZGTovJu_TQ",
+    "air_date": "2026-11-16",
+    "publish_at": "2026-11-16T11:30:00Z",
+    "title": "If You Can't See the Nearest Star, How Far Away Is It? (v01 scheduled)",
+    "file": "/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4",
+    "note": "Currently scheduled upload (v01); J2494 re-cut #2 (v05) and J2512 (v06) below",
+    "recut": "J2494 target #2 (original v01)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.42,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/mon16_cant_see_nearest_star_v01.mp4",
+      "air_date": "2026-11-16",
+      "fails": [],
+      "warns": [
+        "[report-only] first cut at 4.80s > 3.0s (scene-change detect)"
+      ],
+      "stayed_fails": [
+        "first cut at 4.80s > 3.0s (scene-change detect)"
+      ],
+      "duration_s": 26.5,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -19.0,
+        "open_mean_db": -15.0
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.045,
+      "last_word_end_s": 25.01,
+      "tail_gap_s": 1.49,
+      "motion_0_1s": 26.34,
+      "frame0_diff_0_1_5s": 2.08,
+      "frame0_luma_0s": 104.19,
+      "frame0_luma_0_5s": 57.62,
+      "frame0_kick_0_0_5s": 14.01,
+      "frame0_hook_edge_0s": 0.0811,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 13.87,
+          "detail_centre": 10.21,
+          "detail_bottom": 12.23,
+          "std_top": 34.34,
+          "std_bottom": 19.68,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.16,
+          "std_top": 35.81,
+          "std_bottom": 25.08,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.53,
+          "std_top": 35.81,
+          "std_bottom": 26.57,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 4.8,
+      "dhash": "400e0616020c3978",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.232,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/mon16_cant_see_nearest_star_v01_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "HZGTovJu_TQ (J2494 v05)",
+    "raw_id": "HZGTovJu_TQ",
+    "air_date": "2026-11-16",
+    "publish_at": "2026-11-16T11:30:00Z",
+    "title": "If You Can't See the Nearest Star, How Far Away Is It? (v05 J2494 re-cut)",
+    "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v05.mp4",
+    "note": "J2494 re-cut #2 of 3 (Ben OK'd; swap in J2513)",
+    "recut": "YES \u2014 J2494 re-cut #2 (v05)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 5.91,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/026_shorts_first_second_recut_J2494/mon16_cant_see_nearest_star_v05.mp4",
+      "air_date": "2026-11-16",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 26.5,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.9,
+        "open_mean_db": -14.3
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.032,
+      "last_word_end_s": 25.101,
+      "tail_gap_s": 1.4,
+      "motion_0_1s": 26.34,
+      "frame0_diff_0_1_5s": 2.08,
+      "frame0_luma_0s": 104.19,
+      "frame0_luma_0_5s": 57.62,
+      "frame0_kick_0_0_5s": 14.01,
+      "frame0_hook_edge_0s": 0.0811,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 13.87,
+          "detail_centre": 10.21,
+          "detail_bottom": 12.23,
+          "std_top": 34.34,
+          "std_bottom": 19.68,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.16,
+          "std_top": 35.81,
+          "std_bottom": 25.08,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.53,
+          "std_top": 35.81,
+          "std_bottom": 26.57,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "400e0616020c3978",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.232,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/mon16_cant_see_nearest_star_v05_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "HZGTovJu_TQ (J2512 v06)",
+    "raw_id": "HZGTovJu_TQ",
+    "air_date": "2026-11-16",
+    "publish_at": "2026-11-16T11:30:00Z",
+    "title": "If You Can't See the Nearest Star, How Far Away Is It? (v06 J2512 re-cut)",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v06.mp4",
+    "note": "J2512 follow-up to J2494 re-cut #2 (repeated Paranal shot replaced)",
+    "recut": "YES \u2014 J2494/J2512 re-cut #2 (v06)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 3.75,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/mon16_cant_see_nearest_star/06_Final-Exports/mon16_cant_see_nearest_star_v06.mp4",
+      "air_date": "2026-11-16",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 26.5,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.9,
+        "open_mean_db": -14.3
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.032,
+      "last_word_end_s": 25.101,
+      "tail_gap_s": 1.4,
+      "motion_0_1s": 26.34,
+      "frame0_diff_0_1_5s": 2.08,
+      "frame0_luma_0s": 104.19,
+      "frame0_luma_0_5s": 57.62,
+      "frame0_kick_0_0_5s": 14.01,
+      "frame0_hook_edge_0s": 0.0811,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 13.87,
+          "detail_centre": 10.21,
+          "detail_bottom": 12.23,
+          "std_top": 34.34,
+          "std_bottom": 19.68,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.16,
+          "std_top": 35.81,
+          "std_bottom": 25.08,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 7.71,
+          "detail_centre": 8.08,
+          "detail_bottom": 4.53,
+          "std_top": 35.81,
+          "std_bottom": 26.57,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "400e0616020c3978",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.232,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/mon16_cant_see_nearest_star_v06_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "kKN8Ale42sE",
+    "air_date": "2026-11-17",
+    "publish_at": "2026-11-17T11:30:00Z",
+    "title": "How Far From Earth Is Voyager 1 Right Now?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4",
+    "note": "Scheduled upload (local file sha256 differs from uploaded sha256 per J2493/J2494; J2494 stopped on this one)",
+    "recut": "No (J2494 stopped: uploaded sha not on disk)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 6.07,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v01.mp4",
+      "air_date": "2026-11-17",
+      "fails": [],
+      "warns": [
+        "duration 20.7s outside 22\u201327s band",
+        "gap from last word to end is 3.00s > 1.5s (last word 17.74s, duration 20.74s)",
+        "[report-only] pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.33 < 1.50) \u2014 use moving footage",
+        "[report-only] first cut at 4.60s > 3.0s (scene-change detect)",
+        "[report-only] spoken text contains meta-promise (\"stay, and i'll show you\")"
+      ],
+      "stayed_fails": [
+        "pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.33 < 1.50) \u2014 use moving footage",
+        "first cut at 4.60s > 3.0s (scene-change detect)",
+        "spoken text contains meta-promise (\"stay, and i'll show you\")"
+      ],
+      "duration_s": 20.74,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -18.9,
+        "open_mean_db": -15.5
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.066,
+      "last_word_end_s": 17.74,
+      "tail_gap_s": 3.0,
+      "motion_0_1s": 16.19,
+      "frame0_diff_0_1_5s": 0.33,
+      "frame0_luma_0s": 49.45,
+      "frame0_luma_0_5s": 54.95,
+      "frame0_kick_0_0_5s": 7.64,
+      "frame0_hook_edge_0s": 0.0462,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 18.46,
+          "detail_centre": 4.49,
+          "detail_bottom": 1.65,
+          "std_top": 56.63,
+          "std_bottom": 7.06,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 18.62,
+          "detail_centre": 5.65,
+          "detail_bottom": 12.0,
+          "std_top": 56.62,
+          "std_bottom": 41.02,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 18.5,
+          "detail_centre": 5.85,
+          "detail_bottom": 12.09,
+          "std_top": 56.98,
+          "std_bottom": 41.72,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 4.6,
+      "dhash": "63c7cf89332769e0",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.2109,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_sa_s8_voyager1_v01_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "cwU_0WWeNZ4",
+    "air_date": "2026-11-18",
+    "publish_at": "2026-11-18T11:30:00Z",
+    "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star? (v01 scheduled)",
+    "file": "/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/wed18_robot_reach_nearest_star_v01.mp4",
+    "note": "Currently scheduled upload (v01); J2494 re-cut #3 (v06) and J2512 (v07) below",
+    "recut": "J2494 target #3 (original v01)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.71,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/youtube-staging/026/shorts_j0141/wed18_robot_reach_nearest_star_v01.mp4",
+      "air_date": "2026-11-18",
+      "fails": [],
+      "warns": [
+        "[report-only] pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.46 < 1.50) \u2014 use moving footage"
+      ],
+      "stayed_fails": [
+        "pushed still at frame 0 (mean 0\u20131.5 s frame diff 0.46 < 1.50) \u2014 use moving footage"
+      ],
+      "duration_s": 23.6,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -18.1,
+        "open_mean_db": -16.0
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 23.098,
+      "tail_gap_s": 0.5,
+      "motion_0_1s": 17.32,
+      "frame0_diff_0_1_5s": 0.46,
+      "frame0_luma_0s": 40.29,
+      "frame0_luma_0_5s": 45.24,
+      "frame0_kick_0_0_5s": 6.87,
+      "frame0_hook_edge_0s": 0.1356,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 4.98,
+          "detail_centre": 14.32,
+          "detail_bottom": 1.87,
+          "std_top": 54.52,
+          "std_bottom": 9.37,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 4.86,
+          "detail_centre": 14.81,
+          "detail_bottom": 1.9,
+          "std_top": 54.2,
+          "std_bottom": 8.79,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 5.02,
+          "detail_centre": 15.06,
+          "detail_bottom": 1.77,
+          "std_top": 54.2,
+          "std_bottom": 8.23,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.87,
+      "dhash": "30330f3f3f1f4a23",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.7219,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/wed18_robot_reach_nearest_star_v01_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "cwU_0WWeNZ4 (J2494 v06)",
+    "raw_id": "cwU_0WWeNZ4",
+    "air_date": "2026-11-18",
+    "publish_at": "2026-11-18T11:30:00Z",
+    "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star? (v06 J2494 re-cut)",
+    "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v06.mp4",
+    "note": "J2494 re-cut #3 of 3 (Ben OK'd; swap in J2514)",
+    "recut": "YES \u2014 J2494 re-cut #3 (v06)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 3.31,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/026_shorts_first_second_recut_J2494/wed18_robot_reach_nearest_star_v06.mp4",
+      "air_date": "2026-11-18",
+      "fails": [],
+      "warns": [
+        "picture barely changes in the first second (motion 9.0 < 10) \u2014 trim the clip's ease-in so frame 0 is already mid-action",
+        "open plate 13 bits from bSjWiCbB7pY (2026-11-13)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 23.6,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.4,
+        "open_mean_db": -15.6
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 23.144,
+      "tail_gap_s": 0.46,
+      "motion_0_1s": 9.01,
+      "frame0_diff_0_1_5s": 1.89,
+      "frame0_luma_0s": 63.56,
+      "frame0_luma_0_5s": 69.52,
+      "frame0_kick_0_0_5s": 2.92,
+      "frame0_hook_edge_0s": 0.1342,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 8.29,
+          "detail_centre": 6.91,
+          "detail_bottom": 0.53,
+          "std_top": 37.66,
+          "std_bottom": 2.76,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 8.42,
+          "detail_centre": 7.1,
+          "detail_bottom": 0.54,
+          "std_top": 37.65,
+          "std_bottom": 3.31,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 8.63,
+          "detail_centre": 7.13,
+          "detail_bottom": 0.41,
+          "std_top": 37.72,
+          "std_bottom": 3.22,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.6,
+      "dhash": "0b2303090c0b0802",
+      "near_opens": [
+        {
+          "id": "bSjWiCbB7pY",
+          "date": "2026-11-13",
+          "title": "How Did a Helicopter Fly 72 Times on Mars?",
+          "bits": 13,
+          "ssim": 0.028,
+          "source": "local_export"
+        }
+      ],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.2822,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/wed18_robot_reach_nearest_star_v06_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "cwU_0WWeNZ4 (J2512 v07)",
+    "raw_id": "cwU_0WWeNZ4",
+    "air_date": "2026-11-18",
+    "publish_at": "2026-11-18T11:30:00Z",
+    "title": "If Voyager Needs 75,000 Years, How Far Is the Nearest Star? (v07 J2512 re-cut)",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v07.mp4",
+    "note": "J2512 follow-up to J2494 re-cut #3 (3.1s still given motion)",
+    "recut": "YES \u2014 J2494/J2512 re-cut #3 (v07)",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.9,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/wed18_robot_reach_nearest_star/06_Final-Exports/wed18_robot_reach_nearest_star_v07.mp4",
+      "air_date": "2026-11-18",
+      "fails": [],
+      "warns": [
+        "picture barely changes in the first second (motion 9.0 < 10) \u2014 trim the clip's ease-in so frame 0 is already mid-action",
+        "open plate 13 bits from bSjWiCbB7pY (2026-11-13)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 23.6,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.4,
+        "open_mean_db": -15.6
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 23.144,
+      "tail_gap_s": 0.46,
+      "motion_0_1s": 9.01,
+      "frame0_diff_0_1_5s": 1.89,
+      "frame0_luma_0s": 63.56,
+      "frame0_luma_0_5s": 69.52,
+      "frame0_kick_0_0_5s": 2.92,
+      "frame0_hook_edge_0s": 0.1342,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 8.29,
+          "detail_centre": 6.91,
+          "detail_bottom": 0.53,
+          "std_top": 37.66,
+          "std_bottom": 2.76,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 8.42,
+          "detail_centre": 7.1,
+          "detail_bottom": 0.54,
+          "std_top": 37.65,
+          "std_bottom": 3.31,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 8.63,
+          "detail_centre": 7.13,
+          "detail_bottom": 0.41,
+          "std_top": 37.72,
+          "std_bottom": 3.22,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.6,
+      "dhash": "0b2303090c0b0802",
+      "near_opens": [
+        {
+          "id": "bSjWiCbB7pY",
+          "date": "2026-11-13",
+          "title": "How Did a Helicopter Fly 72 Times on Mars?",
+          "bits": 13,
+          "ssim": 0.028,
+          "source": "local_export"
+        }
+      ],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.2822,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/wed18_robot_reach_nearest_star_v07_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "aAUgIGEuPwQ",
+    "air_date": "2026-11-20",
+    "publish_at": "2026-11-20T11:30:00Z",
+    "title": "The Nearest Star Is a Cherry Past Cairo. How Do We Know?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.4,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/10_Shorts/fri20_grapefruit_cherry/06_Final-Exports/fri20_grapefruit_cherry_v04.mp4",
+      "air_date": "2026-11-20",
+      "fails": [],
+      "warns": [
+        "possible Orbit at 0 s (visor 0.0018) \u2014 eyeball the sheet"
+      ],
+      "stayed_fails": [],
+      "duration_s": 23.4,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -14.4
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 22.41,
+      "tail_gap_s": 0.99,
+      "motion_0_1s": 12.93,
+      "frame0_diff_0_1_5s": 3.58,
+      "frame0_luma_0s": 53.11,
+      "frame0_luma_0_5s": 53.54,
+      "frame0_kick_0_0_5s": 3.58,
+      "frame0_hook_edge_0s": 0.0672,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 22.76,
+          "detail_centre": 5.82,
+          "detail_bottom": 9.2,
+          "std_top": 60.49,
+          "std_bottom": 35.33,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 22.77,
+          "detail_centre": 5.98,
+          "detail_bottom": 9.21,
+          "std_top": 60.53,
+          "std_bottom": 35.32,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 22.82,
+          "detail_centre": 5.99,
+          "detail_bottom": 9.19,
+          "std_top": 60.55,
+          "std_bottom": 35.37,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.37,
+      "dhash": "174f3a5a99181679",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.1162,
+        "dark_frac": 0.2426,
+        "visor_frac": 0.0018
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/fri20_grapefruit_cherry_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "rvug71d7Dqk",
+    "air_date": "2026-11-21",
+    "publish_at": "2026-11-21T11:30:00Z",
+    "title": "Muons Shouldn't Reach the Ground. They Do.",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.79,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v04.mp4",
+      "air_date": "2026-11-21",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 22.2,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.8,
+        "open_mean_db": -16.5
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.1,
+      "last_word_end_s": 21.17,
+      "tail_gap_s": 1.03,
+      "motion_0_1s": 17.25,
+      "frame0_diff_0_1_5s": 3.94,
+      "frame0_luma_0s": 129.74,
+      "frame0_luma_0_5s": 130.51,
+      "frame0_kick_0_0_5s": 4.04,
+      "frame0_hook_edge_0s": 0.0574,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 12.17,
+          "detail_centre": 11.83,
+          "detail_bottom": 2.89,
+          "std_top": 43.73,
+          "std_bottom": 34.22,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 12.3,
+          "detail_centre": 11.8,
+          "detail_bottom": 3.14,
+          "std_top": 43.59,
+          "std_bottom": 34.17,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 12.26,
+          "detail_centre": 11.71,
+          "detail_bottom": 3.2,
+          "std_top": 43.46,
+          "std_bottom": 34.06,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 3.0,
+      "dhash": "dc7360b603214413",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.0009,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/fri06_muons_ground_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "Dm4xsF1Ateg",
+    "air_date": "2026-11-23",
+    "publish_at": "2026-11-23T11:30:00Z",
+    "title": "Why Do You Weigh Less at Earth's Equator?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v07.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 9.61,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_equator_weight/06_Final-Exports/earth_equator_weight_v07.mp4",
+      "air_date": "2026-11-23",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 22.97,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.2,
+        "open_mean_db": -15.7
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.033,
+      "last_word_end_s": 21.97,
+      "tail_gap_s": 1.0,
+      "motion_0_1s": 21.08,
+      "frame0_diff_0_1_5s": 6.1,
+      "frame0_luma_0s": 130.13,
+      "frame0_luma_0_5s": 134.37,
+      "frame0_kick_0_0_5s": 6.1,
+      "frame0_hook_edge_0s": 0.0505,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 22.61,
+          "detail_centre": 6.08,
+          "detail_bottom": 1.5,
+          "std_top": 86.12,
+          "std_bottom": 5.28,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 22.59,
+          "detail_centre": 5.68,
+          "detail_bottom": 2.01,
+          "std_top": 86.43,
+          "std_bottom": 7.13,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 22.63,
+          "detail_centre": 6.57,
+          "detail_bottom": 4.56,
+          "std_top": 87.12,
+          "std_bottom": 16.0,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.3,
+      "dhash": "2100072b6e521c38",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.1115,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/earth_equator_weight_v07_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "xdurJQcoiGM",
+    "air_date": "2026-11-25",
+    "publish_at": "2026-11-25T11:30:00Z",
+    "title": "Where Will the International Space Station Crash?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar2_iss_2030_deorbit_v13.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 5.42,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar2_iss_2030_deorbit_v13.mp4",
+      "air_date": "2026-11-25",
+      "fails": [],
+      "warns": [
+        "duration 18.4s outside 22\u201327s band"
+      ],
+      "stayed_fails": [],
+      "duration_s": 18.4,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.5,
+        "open_mean_db": -16.5
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.038,
+      "last_word_end_s": 18.257,
+      "tail_gap_s": 0.14,
+      "motion_0_1s": 31.03,
+      "frame0_diff_0_1_5s": 7.53,
+      "frame0_luma_0s": 94.57,
+      "frame0_luma_0_5s": 96.27,
+      "frame0_kick_0_0_5s": 7.66,
+      "frame0_hook_edge_0s": 0.0164,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 27.35,
+          "detail_centre": 18.29,
+          "detail_bottom": 16.72,
+          "std_top": 60.83,
+          "std_bottom": 45.53,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 27.03,
+          "detail_centre": 18.52,
+          "detail_bottom": 20.14,
+          "std_top": 61.09,
+          "std_bottom": 46.34,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 26.65,
+          "detail_centre": 18.93,
+          "detail_bottom": 20.37,
+          "std_top": 61.73,
+          "std_bottom": 46.2,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "351dc3cb919ee9ce",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.0103,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_ar2_iss_2030_deorbit_v13_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "93JL_IK57EM",
+    "air_date": "2026-11-27",
+    "publish_at": "2026-11-27T11:30:00Z",
+    "title": "Will Asteroid 2024 YR4 Hit the Moon in 2032?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar1_2024_yr4_moon_v06.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.28,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar1_2024_yr4_moon_v06.mp4",
+      "air_date": "2026-11-27",
+      "fails": [],
+      "warns": [
+        "duration 19.4s outside 22\u201327s band"
+      ],
+      "stayed_fails": [],
+      "duration_s": 19.37,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.3,
+        "open_mean_db": -16.6
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.038,
+      "last_word_end_s": 19.367,
+      "tail_gap_s": 0.0,
+      "motion_0_1s": 16.34,
+      "frame0_diff_0_1_5s": 4.95,
+      "frame0_luma_0s": 164.51,
+      "frame0_luma_0_5s": 163.75,
+      "frame0_kick_0_0_5s": 4.98,
+      "frame0_hook_edge_0s": 0.0467,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 24.7,
+          "detail_centre": 9.47,
+          "detail_bottom": 13.03,
+          "std_top": 57.69,
+          "std_bottom": 30.81,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 24.53,
+          "detail_centre": 9.52,
+          "detail_bottom": 13.05,
+          "std_top": 57.96,
+          "std_bottom": 31.0,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 24.71,
+          "detail_centre": 9.38,
+          "detail_bottom": 12.95,
+          "std_top": 58.12,
+          "std_bottom": 31.14,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "ffbe746476d6d9f0",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.003,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_ar1_2024_yr4_moon_v06_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "MScK2CK2ZFg",
+    "air_date": "2026-11-28",
+    "publish_at": "2026-11-28T11:30:00Z",
+    "title": "Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar3_2027_eclipse_v14.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.39,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar3_2027_eclipse_v14.mp4",
+      "air_date": "2026-11-28",
+      "fails": [],
+      "warns": [
+        "duration 17.1s outside 22\u201327s band"
+      ],
+      "stayed_fails": [],
+      "duration_s": 17.07,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.5,
+        "open_mean_db": -16.5
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.043,
+      "last_word_end_s": 16.964,
+      "tail_gap_s": 0.1,
+      "motion_0_1s": 12.56,
+      "frame0_diff_0_1_5s": 3.04,
+      "frame0_luma_0s": 100.59,
+      "frame0_luma_0_5s": 91.01,
+      "frame0_kick_0_0_5s": 3.04,
+      "frame0_hook_edge_0s": 0.0445,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 29.31,
+          "detail_centre": 16.01,
+          "detail_bottom": 24.02,
+          "std_top": 86.31,
+          "std_bottom": 60.19,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 29.3,
+          "detail_centre": 15.99,
+          "detail_bottom": 23.76,
+          "std_top": 83.93,
+          "std_bottom": 62.59,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 29.05,
+          "detail_centre": 15.49,
+          "detail_bottom": 23.44,
+          "std_top": 81.27,
+          "std_bottom": 64.92,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.4,
+      "dhash": "3d4f1393c70b367e",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.1981,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/owb_ar3_2027_eclipse_v14_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "xvarZP2aYyE",
+    "air_date": "2026-11-30",
+    "publish_at": "2026-11-30T11:30:00Z",
+    "title": "Why Will Gliese 710's Comets Arrive After It Has Gone?",
+    "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_mon30_comets_v04/028_short_mon30_comets_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 6.49,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_mon30_comets_v04/028_short_mon30_comets_v04.mp4",
+      "air_date": "2026-11-30",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 22.23,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -14.3
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 21.24,
+      "tail_gap_s": 0.99,
+      "motion_0_1s": 10.73,
+      "frame0_diff_0_1_5s": 3.26,
+      "frame0_luma_0s": 72.07,
+      "frame0_luma_0_5s": 72.85,
+      "frame0_kick_0_0_5s": 3.32,
+      "frame0_hook_edge_0s": 0.0492,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 22.32,
+          "detail_centre": 12.17,
+          "detail_bottom": 9.52,
+          "std_top": 48.65,
+          "std_bottom": 26.25,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 22.39,
+          "detail_centre": 9.65,
+          "detail_bottom": 6.71,
+          "std_top": 48.61,
+          "std_bottom": 26.17,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 22.62,
+          "detail_centre": 12.87,
+          "detail_bottom": 8.94,
+          "std_top": 48.59,
+          "std_bottom": 27.68,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.53,
+      "dhash": "0706080441f01c16",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.356,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/028_short_mon30_comets_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "v6euXX2omz4",
+    "air_date": "2026-12-02",
+    "publish_at": "2026-12-02T11:30:00Z",
+    "title": "Is a Star Really Coming Towards Us?",
+    "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_wed02_opening_testA_v04/028_short_wed02_opening_testA_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 6.74,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/028_short_wed02_opening_testA_v04/028_short_wed02_opening_testA_v04.mp4",
+      "air_date": "2026-12-02",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 24.5,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -14.5
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 23.436,
+      "tail_gap_s": 1.06,
+      "motion_0_1s": 15.26,
+      "frame0_diff_0_1_5s": 3.19,
+      "frame0_luma_0s": 75.66,
+      "frame0_luma_0_5s": 77.66,
+      "frame0_kick_0_0_5s": 4.0,
+      "frame0_hook_edge_0s": 0.0428,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 19.19,
+          "detail_centre": 5.88,
+          "detail_bottom": 5.79,
+          "std_top": 49.75,
+          "std_bottom": 36.88,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 19.33,
+          "detail_centre": 5.58,
+          "detail_bottom": 6.03,
+          "std_top": 50.31,
+          "std_bottom": 36.68,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 19.39,
+          "detail_centre": 5.58,
+          "detail_bottom": 6.08,
+          "std_top": 50.59,
+          "std_bottom": 36.28,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.2,
+      "dhash": "80818d2f1747df01",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.2671,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/028_short_wed02_opening_testA_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "BTuL_QBbEgY",
+    "air_date": "2026-12-04",
+    "publish_at": "2026-12-04T11:30:00Z",
+    "title": "How Close Will Gliese 710 Come to the Sun?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v07.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 9.36,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/fri04_scale/06_Final-Exports/028_short_fri04_scale_v07.mp4",
+      "air_date": "2026-12-04",
+      "fails": [],
+      "warns": [
+        "possible Orbit at 0 s (visor 0.0015) \u2014 eyeball the sheet"
+      ],
+      "stayed_fails": [],
+      "duration_s": 23.1,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.1,
+        "open_mean_db": -16.2
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.028,
+      "last_word_end_s": 22.1,
+      "tail_gap_s": 1.0,
+      "motion_0_1s": 15.41,
+      "frame0_diff_0_1_5s": 5.32,
+      "frame0_luma_0s": 70.72,
+      "frame0_luma_0_5s": 73.59,
+      "frame0_kick_0_0_5s": 5.32,
+      "frame0_hook_edge_0s": 0.0704,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 23.51,
+          "detail_centre": 8.63,
+          "detail_bottom": 3.81,
+          "std_top": 70.82,
+          "std_bottom": 16.93,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 23.44,
+          "detail_centre": 8.94,
+          "detail_bottom": 4.2,
+          "std_top": 70.96,
+          "std_bottom": 17.93,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 23.33,
+          "detail_centre": 8.94,
+          "detail_bottom": 4.31,
+          "std_top": 71.21,
+          "std_bottom": 18.6,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.43,
+      "dhash": "1f03809a87839e74",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0356,
+        "dark_frac": 0.1363,
+        "visor_frac": 0.0015
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/028_short_fri04_scale_v07_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "C8lPx5N2DwM",
+    "air_date": "2026-12-05",
+    "publish_at": "2026-12-05T11:30:00Z",
+    "title": "What Happens When Earth's Magnetic Field Flips?",
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.96,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01.mp4",
+      "air_date": "2026-12-05",
+      "fails": [],
+      "warns": [
+        "duration 33.0s outside 22\u201327s band"
+      ],
+      "stayed_fails": [],
+      "duration_s": 33.0,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.7,
+        "open_mean_db": -15.6
+      },
+      "vo_src": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v01_vo.wav",
+      "vo_onset_s": 0.08,
+      "last_word_end_s": 31.54,
+      "tail_gap_s": 1.46,
+      "motion_0_1s": 27.25,
+      "frame0_diff_0_1_5s": 9.28,
+      "frame0_luma_0s": 63.57,
+      "frame0_luma_0_5s": 65.99,
+      "frame0_kick_0_0_5s": 9.81,
+      "frame0_hook_edge_0s": 0.0793,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 11.64,
+          "detail_centre": 16.73,
+          "detail_bottom": 4.48,
+          "std_top": 61.09,
+          "std_bottom": 16.4,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 11.9,
+          "detail_centre": 17.32,
+          "detail_bottom": 5.45,
+          "std_top": 61.09,
+          "std_bottom": 17.41,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 12.04,
+          "detail_centre": 18.02,
+          "detail_bottom": 5.91,
+          "std_top": 61.05,
+          "std_bottom": 17.88,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.32,
+      "dhash": "982b074783078b06",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0007,
+        "dark_frac": 0.0044,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/031_short_testA_opening_flip_v01_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "lsOCcIYCud0",
+    "air_date": "2026-12-07",
+    "publish_at": "2026-12-07T11:30:00Z",
+    "title": "What Will the Night Sky Look Like When Gliese 710 Arrives?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v07.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 10.3,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_night_sky_35yr/06_Final-Exports/028_short_lift_night_sky_35yr_v07.mp4",
+      "air_date": "2026-12-07",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 23.1,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.1,
+        "open_mean_db": -15.8
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 22.115,
+      "tail_gap_s": 0.99,
+      "motion_0_1s": 10.95,
+      "frame0_diff_0_1_5s": 2.98,
+      "frame0_luma_0s": 57.95,
+      "frame0_luma_0_5s": 55.71,
+      "frame0_kick_0_0_5s": 3.04,
+      "frame0_hook_edge_0s": 0.0769,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 26.36,
+          "detail_centre": 5.59,
+          "detail_bottom": 3.27,
+          "std_top": 66.5,
+          "std_bottom": 27.23,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 26.29,
+          "detail_centre": 5.92,
+          "detail_bottom": 3.27,
+          "std_top": 66.9,
+          "std_bottom": 25.6,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 26.56,
+          "detail_centre": 6.18,
+          "detail_bottom": 3.19,
+          "std_top": 66.65,
+          "std_bottom": 25.03,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.47,
+      "dhash": "5915004440615900",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0,
+        "dark_frac": 0.3187,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/028_short_lift_night_sky_35yr_v07_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "SWDCZfWZVao",
+    "air_date": "2026-12-09",
+    "publish_at": "2026-12-09T11:30:00Z",
+    "title": "Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 5.11,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v04.mp4",
+      "air_date": "2026-12-09",
+      "fails": [],
+      "warns": [
+        "gap from last word to end is 2.29s > 1.5s (last word 20.41s, duration 22.70s)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 22.7,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -15.3
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.05,
+      "last_word_end_s": 20.41,
+      "tail_gap_s": 2.29,
+      "motion_0_1s": 15.95,
+      "frame0_diff_0_1_5s": 4.62,
+      "frame0_luma_0s": 147.51,
+      "frame0_luma_0_5s": 148.75,
+      "frame0_kick_0_0_5s": 4.62,
+      "frame0_hook_edge_0s": 0.0527,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 16.68,
+          "detail_centre": 8.98,
+          "detail_bottom": 2.3,
+          "std_top": 47.95,
+          "std_bottom": 20.03,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 16.6,
+          "detail_centre": 8.96,
+          "detail_bottom": 2.48,
+          "std_top": 47.74,
+          "std_bottom": 23.66,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 16.64,
+          "detail_centre": 8.9,
+          "detail_bottom": 2.54,
+          "std_top": 47.62,
+          "std_bottom": 27.27,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.7,
+      "dhash": "80310209297020f4",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0195,
+        "dark_frac": 0.0001,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/029_short_wed09_great_dimming_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "k2kEaA7ICjc",
+    "air_date": "2026-12-11",
+    "publish_at": "2026-12-11T11:30:00Z",
+    "title": "Is Betelgeuse Really About to Explode?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.86,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v04.mp4",
+      "air_date": "2026-12-11",
+      "fails": [],
+      "warns": [
+        "duration 33.9s outside 22\u201327s band",
+        "gap from last word to end is 2.32s > 1.5s (last word 31.58s, duration 33.90s)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 33.9,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.0,
+        "open_mean_db": -15.3
+      },
+      "vo_src": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v05_stem_vo.wav",
+      "vo_onset_s": 0.08,
+      "last_word_end_s": 31.58,
+      "tail_gap_s": 2.32,
+      "motion_0_1s": 13.21,
+      "frame0_diff_0_1_5s": 5.94,
+      "frame0_luma_0s": 80.4,
+      "frame0_luma_0_5s": 83.49,
+      "frame0_kick_0_0_5s": 6.85,
+      "frame0_hook_edge_0s": 0.0629,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 11.77,
+          "detail_centre": 6.65,
+          "detail_bottom": 0.7,
+          "std_top": 57.51,
+          "std_bottom": 11.67,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 11.8,
+          "detail_centre": 6.35,
+          "detail_bottom": 0.82,
+          "std_top": 57.5,
+          "std_bottom": 13.29,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 11.86,
+          "detail_centre": 6.83,
+          "detail_bottom": 0.9,
+          "std_top": 57.49,
+          "std_bottom": 14.75,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.23,
+      "dhash": "001d1d27131f1a08",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0928,
+        "dark_frac": 0.0035,
+        "visor_frac": 0.0008
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/029_short_fri11_opening_testA_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "QEoYKIVvKBA",
+    "air_date": "2026-12-12",
+    "publish_at": "2026-12-12T11:30:00Z",
+    "title": "What If the Solar Wind Blew Earth's Atmosphere Into Space?",
+    "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 6.24,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03.mp4",
+      "air_date": "2026-12-12",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 24.48,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -14.1
+      },
+      "vo_src": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/sat12_solar_wind_air/06_Final-Exports/031_short_sat12_solar_wind_air_v03_vo.wav",
+      "vo_onset_s": 0.091,
+      "last_word_end_s": 23.02,
+      "tail_gap_s": 1.46,
+      "motion_0_1s": 22.13,
+      "frame0_diff_0_1_5s": 5.01,
+      "frame0_luma_0s": 135.43,
+      "frame0_luma_0_5s": 124.0,
+      "frame0_kick_0_0_5s": 5.82,
+      "frame0_hook_edge_0s": 0.0257,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 11.3,
+          "detail_centre": 3.04,
+          "detail_bottom": 1.94,
+          "std_top": 44.54,
+          "std_bottom": 30.73,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 11.31,
+          "detail_centre": 2.56,
+          "detail_bottom": 1.83,
+          "std_top": 43.7,
+          "std_bottom": 24.12,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 11.36,
+          "detail_centre": 3.49,
+          "detail_bottom": 1.85,
+          "std_top": 43.39,
+          "std_bottom": 15.01,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.36,
+      "dhash": "fff7ffff7effffff",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.634,
+        "dark_frac": 0.0,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/031_short_sat12_solar_wind_air_v03_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "heiGCnGKTkE",
+    "air_date": "2026-12-14",
+    "publish_at": "2026-12-14T11:30:00Z",
+    "title": "How Bright Will Betelgeuse Get When It Explodes?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 4.22,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v04.mp4",
+      "air_date": "2026-12-14",
+      "fails": [],
+      "warns": [
+        "gap from last word to end is 2.29s > 1.5s (last word 21.64s, duration 23.93s)"
+      ],
+      "stayed_fails": [],
+      "duration_s": 23.93,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.8,
+        "open_mean_db": -15.7
+      },
+      "vo_src": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/mon14_half_moon_daylight/06_Final-Exports/029_short_mon14_half_moon_daylight_v05_stem_vo.wav",
+      "vo_onset_s": 0.06,
+      "last_word_end_s": 21.64,
+      "tail_gap_s": 2.29,
+      "motion_0_1s": 30.7,
+      "frame0_diff_0_1_5s": 7.57,
+      "frame0_luma_0s": 92.97,
+      "frame0_luma_0_5s": 98.25,
+      "frame0_kick_0_0_5s": 10.76,
+      "frame0_hook_edge_0s": 0.0681,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 17.21,
+          "detail_centre": 11.53,
+          "detail_bottom": 5.75,
+          "std_top": 62.68,
+          "std_bottom": 22.39,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 17.49,
+          "detail_centre": 12.3,
+          "detail_bottom": 6.11,
+          "std_top": 63.47,
+          "std_bottom": 25.92,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 17.85,
+          "detail_centre": 12.25,
+          "detail_bottom": 6.27,
+          "std_top": 64.05,
+          "std_bottom": 28.99,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 3.0,
+      "dhash": "870b4ee7f26c09d1",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0202,
+        "dark_frac": 0.0004,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/029_short_mon14_half_moon_daylight_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "OWB",
+    "id": "f17XCtUmN-g",
+    "air_date": "2026-12-16",
+    "publish_at": "2026-12-16T11:30:00Z",
+    "title": "What Happens When Gliese 710 Passes Through the Oort Cloud?",
+    "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03.mp4",
+    "note": "Scheduled upload",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 3.23,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/10_Shorts/lift_oort_marbles/06_Final-Exports/028_short_lift_oort_marbles_v03.mp4",
+      "air_date": "2026-12-16",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 22.37,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.1,
+        "open_mean_db": -15.2
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 22.213,
+      "tail_gap_s": 0.15,
+      "motion_0_1s": 30.66,
+      "frame0_diff_0_1_5s": 1.91,
+      "frame0_luma_0s": 62.6,
+      "frame0_luma_0_5s": 70.06,
+      "frame0_kick_0_0_5s": 10.03,
+      "frame0_hook_edge_0s": 0.0903,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 11.23,
+          "detail_centre": 6.64,
+          "detail_bottom": 1.47,
+          "std_top": 47.41,
+          "std_bottom": 5.43,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 10.86,
+          "detail_centre": 8.0,
+          "detail_bottom": 1.41,
+          "std_top": 47.92,
+          "std_bottom": 5.04,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 10.67,
+          "detail_centre": 9.51,
+          "detail_bottom": 1.43,
+          "std_top": 48.55,
+          "std_bottom": 5.42,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.97,
+      "dhash": "0e450b4bc3118cba",
+      "near_opens": [],
+      "orbit": {
+        "orange_frac": 0.0281,
+        "dark_frac": 0.0042,
+        "visor_frac": 0.0
+      },
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/orbit_shorts_gate/028_short_lift_oort_marbles_v03_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "cLKDiYP55J8",
+    "air_date": "2026-11-13",
+    "publish_at": "2026-11-13T11:30:00Z",
+    "title": "What Was the Edward Jenner Experiment?",
+    "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v04.mp4",
+    "note": "Scheduled upload (HOS 007)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.73,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s04_smallpox_test_v04.mp4",
+      "air_date": "2026-11-13",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 22.4,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.8,
+        "open_mean_db": -19.0
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.096,
+      "last_word_end_s": 21.979,
+      "tail_gap_s": 0.42,
+      "motion_0_1s": 19.24,
+      "frame0_diff_0_1_5s": 3.51,
+      "frame0_luma_0s": 108.64,
+      "frame0_luma_0_5s": 113.19,
+      "frame0_kick_0_0_5s": 4.21,
+      "frame0_hook_edge_0s": 0.0103,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 3.67,
+          "detail_centre": 20.86,
+          "detail_bottom": 2.66,
+          "std_top": 50.73,
+          "std_bottom": 53.13,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 3.64,
+          "detail_centre": 21.05,
+          "detail_bottom": 3.41,
+          "std_top": 51.22,
+          "std_bottom": 52.37,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": "blur-pad",
+          "detail_top": 3.71,
+          "detail_centre": 21.18,
+          "detail_bottom": 3.69,
+          "std_top": 51.48,
+          "std_bottom": 56.15,
+          "seam_rows": [
+            38,
+            151
+          ],
+          "seam_step_share": [
+            0.713,
+            0.833
+          ],
+          "seam_detail_ratio": [
+            0.6,
+            1.51
+          ],
+          "picture_share_of_height": 0.589,
+          "std_outside": 49.4,
+          "std_picture": 66.3,
+          "detail_outside": 3.5,
+          "detail_picture": 14.84,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 1.2,
+      "dhash": "6178665d98e079ff",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos_007_s04_smallpox_test_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "Wvjd8g0CpzE",
+    "air_date": "2026-11-15",
+    "publish_at": "2026-11-15T11:30:00Z",
+    "title": "The Blood Vessels Finer Than a Hair",
+    "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s03_never_saw_v04.mp4",
+    "note": "Scheduled upload (HOS 005)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.72,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s03_never_saw_v04.mp4",
+      "air_date": "2026-11-15",
+      "fails": [],
+      "warns": [
+        "[report-only] missing on-screen hook text at frame 0 (hook_edge 0.0000 < 0.005) \u2014 stamp 2\u20134 word hook caption at 0.0s"
+      ],
+      "stayed_fails": [
+        "missing on-screen hook text at frame 0 (hook_edge 0.0000 < 0.005) \u2014 stamp 2\u20134 word hook caption at 0.0s"
+      ],
+      "duration_s": 25.26,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -16.9,
+        "open_mean_db": -13.9
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.063,
+      "last_word_end_s": 24.259,
+      "tail_gap_s": 1.0,
+      "motion_0_1s": 14.43,
+      "frame0_diff_0_1_5s": 1.75,
+      "frame0_luma_0s": 175.51,
+      "frame0_luma_0_5s": 180.54,
+      "frame0_kick_0_0_5s": 1.75,
+      "frame0_hook_edge_0s": 0.0,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 5.95,
+          "detail_centre": 25.49,
+          "detail_bottom": 7.01,
+          "std_top": 67.36,
+          "std_bottom": 64.62,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 6.0,
+          "detail_centre": 25.85,
+          "detail_bottom": 7.17,
+          "std_top": 69.25,
+          "std_bottom": 67.0,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 6.16,
+          "detail_centre": 25.83,
+          "detail_bottom": 7.35,
+          "std_top": 69.92,
+          "std_bottom": 67.9,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.03,
+      "dhash": "0f0d3bdcc8654d0f",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos_005_s03_never_saw_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "xzKoHg0E0_U",
+    "air_date": "2026-11-16",
+    "publish_at": "2026-11-16T11:30:00Z",
+    "title": "What Is Dalton's Atomic Theory?",
+    "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_s05_dalton_v04.mp4",
+    "note": "Scheduled upload (HOS 004)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.81,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/004_Whats-Really-Inside-An-Atom/10_Shorts/hos_004_s05_dalton_v04.mp4",
+      "air_date": "2026-11-16",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 24.53,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.7,
+        "open_mean_db": -15.6
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.088,
+      "last_word_end_s": 23.892,
+      "tail_gap_s": 0.64,
+      "motion_0_1s": 27.67,
+      "frame0_diff_0_1_5s": 2.92,
+      "frame0_luma_0s": 99.96,
+      "frame0_luma_0_5s": 91.41,
+      "frame0_kick_0_0_5s": 11.28,
+      "frame0_hook_edge_0s": 0.0126,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 7.87,
+          "detail_centre": 29.36,
+          "detail_bottom": 7.58,
+          "std_top": 62.5,
+          "std_bottom": 42.65,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 7.21,
+          "detail_centre": 27.92,
+          "detail_bottom": 7.54,
+          "std_top": 59.1,
+          "std_bottom": 43.13,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 7.46,
+          "detail_centre": 26.86,
+          "detail_bottom": 7.05,
+          "std_top": 59.73,
+          "std_bottom": 42.52,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.57,
+      "dhash": "662ca64b5303161d",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos_004_s05_dalton_v04_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "xgx2lYHhYZM",
+    "air_date": "2026-11-17",
+    "publish_at": "2026-11-17T11:30:00Z",
+    "title": "Why Is It Called a Vaccine?",
+    "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v05.mp4",
+    "note": "Scheduled upload (HOS 007)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 3.02,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/hos_007_s05_vacca_jesty_v05.mp4",
+      "air_date": "2026-11-17",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 24.53,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.2,
+        "open_mean_db": -13.1
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.069,
+      "last_word_end_s": 24.111,
+      "tail_gap_s": 0.42,
+      "motion_0_1s": 17.85,
+      "frame0_diff_0_1_5s": 3.89,
+      "frame0_luma_0s": 120.0,
+      "frame0_luma_0_5s": 121.55,
+      "frame0_kick_0_0_5s": 3.89,
+      "frame0_hook_edge_0s": 0.0131,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 0.91,
+          "detail_centre": 20.27,
+          "detail_bottom": 18.1,
+          "std_top": 32.75,
+          "std_bottom": 31.27,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 0.93,
+          "detail_centre": 20.92,
+          "detail_bottom": 17.69,
+          "std_top": 32.89,
+          "std_bottom": 30.9,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 0.92,
+          "detail_centre": 21.39,
+          "detail_bottom": 18.83,
+          "std_top": 32.96,
+          "std_bottom": 31.2,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.3,
+      "dhash": "723f2cdef6db4785",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos_007_s05_vacca_jesty_v05_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "ChbsigHD5_o",
+    "air_date": "2026-11-18",
+    "publish_at": "2026-11-18T11:30:00Z",
+    "title": "How Do Plants Clean the Air?",
+    "file": "/Users/benjaminoats/_desk/renders/J2169/Short_B_v02/hos006_short_b_v02.mp4",
+    "note": "Scheduled upload (HOS 006)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.25,
+    "returncode": 1,
+    "fb_verdict": "FAIL",
+    "fb_fail_messages": [
+      "frame 0 is not full-bleed 9:16: blur-pad above and below a picture band on 3/3 frames from 0.0 to 0.5 s (band from 33% to 66% of the height at 0.00s, row detail outside 1.35 vs picture 15.25) \u2014 reframe the opening shot to fill 1080x1920"
+    ],
+    "gate": {
+      "file": "/Volumes/MiniWork/desk/renders/J2169/Short_B_v02/hos006_short_b_v02.mp4",
+      "air_date": "2026-11-18",
+      "fails": [
+        "frame 0 is not full-bleed 9:16: blur-pad above and below a picture band on 3/3 frames from 0.0 to 0.5 s (band from 33% to 66% of the height at 0.00s, row detail outside 1.35 vs picture 15.25) \u2014 reframe the opening shot to fill 1080x1920"
+      ],
+      "warns": [
+        "[report-only] missing on-screen hook text at frame 0 (hook_edge 0.0000 < 0.005) \u2014 stamp 2\u20134 word hook caption at 0.0s"
+      ],
+      "stayed_fails": [
+        "missing on-screen hook text at frame 0 (hook_edge 0.0000 < 0.005) \u2014 stamp 2\u20134 word hook caption at 0.0s"
+      ],
+      "duration_s": 24.25,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.3,
+        "open_mean_db": -16.3
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.046,
+      "last_word_end_s": 24.25,
+      "tail_gap_s": 0.0,
+      "motion_0_1s": 10.36,
+      "frame0_diff_0_1_5s": 2.15,
+      "frame0_luma_0s": 108.55,
+      "frame0_luma_0_5s": 110.62,
+      "frame0_kick_0_0_5s": 2.15,
+      "frame0_hook_edge_0s": 0.0,
+      "frame0_full_bleed": [
+        {
+          "kind": "blur-pad",
+          "detail_top": 1.59,
+          "detail_centre": 15.99,
+          "detail_bottom": 1.07,
+          "std_top": 16.47,
+          "std_bottom": 12.49,
+          "seam_rows": [
+            63,
+            127
+          ],
+          "seam_step_share": [
+            0.269,
+            0.741
+          ],
+          "seam_detail_ratio": [
+            0.053,
+            1.223
+          ],
+          "picture_share_of_height": 0.333,
+          "std_outside": 14.17,
+          "std_picture": 43.1,
+          "detail_outside": 1.35,
+          "detail_picture": 15.25,
+          "t": 0.0
+        },
+        {
+          "kind": "blur-pad",
+          "detail_top": 1.1,
+          "detail_centre": 15.94,
+          "detail_bottom": 1.05,
+          "std_top": 14.94,
+          "std_bottom": 16.23,
+          "seam_rows": [
+            64,
+            128
+          ],
+          "seam_step_share": [
+            0.389,
+            0.769
+          ],
+          "seam_detail_ratio": [
+            0.037,
+            1.242
+          ],
+          "picture_share_of_height": 0.333,
+          "std_outside": 16.62,
+          "std_picture": 42.93,
+          "detail_outside": 1.16,
+          "detail_picture": 15.32,
+          "t": 0.25
+        },
+        {
+          "kind": "blur-pad",
+          "detail_top": 1.09,
+          "detail_centre": 15.75,
+          "detail_bottom": 1.09,
+          "std_top": 15.01,
+          "std_bottom": 26.18,
+          "seam_rows": [
+            64,
+            129
+          ],
+          "seam_step_share": [
+            0.398,
+            0.806
+          ],
+          "seam_detail_ratio": [
+            0.034,
+            1.196
+          ],
+          "picture_share_of_height": 0.339,
+          "std_outside": 18.08,
+          "std_picture": 42.59,
+          "detail_outside": 1.1,
+          "detail_picture": 15.13,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.25,
+      "dhash": "20000a978eb30393",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos006_short_b_v02_open_sheet.jpg",
+      "verdict": "FAIL"
+    }
+  },
+  {
+    "channel": "HOS",
+    "id": "Bks_JLId1ew",
+    "air_date": "2026-11-21",
+    "publish_at": "2026-11-21T11:30:00Z",
+    "title": "How Do Plants Make Oxygen?",
+    "file": "/Users/benjaminoats/_desk/renders/J2169/Short_C_v03/hos006_short_c_v03.mp4",
+    "note": "Scheduled upload (HOS 006)",
+    "recut": "",
+    "length_test": false,
+    "exists": true,
+    "elapsed_s": 2.73,
+    "returncode": 0,
+    "fb_verdict": "PASS",
+    "fb_fail_messages": [],
+    "gate": {
+      "file": "/Volumes/MiniWork/desk/renders/J2169/Short_C_v03/hos006_short_c_v03.mp4",
+      "air_date": "2026-11-21",
+      "fails": [],
+      "warns": [],
+      "stayed_fails": [],
+      "duration_s": 25.17,
+      "report_only": true,
+      "audio": {
+        "stream": true,
+        "mean_db": -17.2,
+        "open_mean_db": -14.9
+      },
+      "vo_src": "mix",
+      "vo_onset_s": 0.0,
+      "last_word_end_s": 25.167,
+      "tail_gap_s": 0.0,
+      "motion_0_1s": 28.85,
+      "frame0_diff_0_1_5s": 5.44,
+      "frame0_luma_0s": 109.46,
+      "frame0_luma_0_5s": 108.55,
+      "frame0_kick_0_0_5s": 5.92,
+      "frame0_hook_edge_0s": 0.0096,
+      "frame0_full_bleed": [
+        {
+          "kind": null,
+          "detail_top": 9.25,
+          "detail_centre": 17.78,
+          "detail_bottom": 9.16,
+          "std_top": 47.08,
+          "std_bottom": 57.61,
+          "seam_rows": null,
+          "t": 0.0
+        },
+        {
+          "kind": null,
+          "detail_top": 10.31,
+          "detail_centre": 16.57,
+          "detail_bottom": 9.02,
+          "std_top": 45.98,
+          "std_bottom": 56.17,
+          "seam_rows": null,
+          "t": 0.25
+        },
+        {
+          "kind": null,
+          "detail_top": 10.78,
+          "detail_centre": 17.57,
+          "detail_bottom": 9.65,
+          "std_top": 49.6,
+          "std_bottom": 55.97,
+          "seam_rows": null,
+          "t": 0.5
+        }
+      ],
+      "first_cut_s": 2.58,
+      "dhash": "cc8ea78c065483ba",
+      "near_opens": [],
+      "contact_sheet": "/var/folders/1z/ymtxygjd7cnfrxjv7sqgmww40000gn/T/hos_shorts_gate/hos006_short_c_v03_open_sheet.jpg",
+      "verdict": "PASS"
+    }
+  }
+]

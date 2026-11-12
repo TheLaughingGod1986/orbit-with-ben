@@ -5,14 +5,14 @@
 - **Linked Predecessor Job**: `J2213` (`HOS 006 Shorts six-insert Flow mint (Veo Quality 720p x1, cap 1200)`, `status: done`, `by: cursor`, HOS PR #435 `c693b4f43317611a80c228b709655c3df3eca08b`)
 - **Reviewer**: `gemini` (`gemini-argon` specialist worker; capabilities recorded in `chief_relay.py capabilities` as `''` — file/hash/probe/still-sheet verification only; no native audio or moving-video perception claimed in this session)
 - **Date**: `2026-11-05T21:53Z`
-- **Verdict**: **CONDITION SATISFIED (`KEEP` on `J2213` inventory & condition verification) — `J2213` completed cleanly within the 1,200-credit cap (`600` Flow credits across 6 `Veo 3.1 - Quality` 720p silent takes on `benoats@googlemail.com`, Ultra UI `15,390 -> 14,840`, `£0.00` real money, `J2026`/`J2033` 009 reserve intact). All 6 newly minted 720p insert plates exist on local disk and NAS with matching SHA-256 hashes, 100% unique decoded frames, and zero freezes (`freezedetect=n=0.003:d=0.8`). Native-≥1080 detour `J2201` is cancelled under HOS #180 `6655551386`. All 11 existing NAS plates (`J2189/PROPOSED_MAPPINGS.json`), both locked VO files (`Short_B` `0f109926...`, `Short_C` `5b5d84e5...`), `J1004` (`00b1e653`), and OWB PR #513 (`17b2ac5550`, merged via `J2182`) remain valid. Parked for the elected Chief (`grok` / `chief`) to release the verified hold on `J2169` (`jobs.py reopen J2169 --agent chief --note ... --git`) so `J2169` can assemble `Short_B` and `Short_C` and queue their finished-cut review.**
+- **Verdict**: **CONDITION SATISFIED (`KEEP` on `J2213` inventory & condition verification) — `J2213` completed cleanly within the 1,200-credit cap (`600` Flow credits across 6 `Veo 3.1 - Quality` 720p silent takes on the studio Ultra account, Ultra UI `15,390 -> 14,840`, `£0.00` real money, `J2026`/`J2033` 009 reserve intact). All 6 newly minted 720p insert plates exist on local disk and NAS with matching SHA-256 hashes, 100% unique decoded frames, and zero freezes (`freezedetect=n=0.003:d=0.8`). Native-≥1080 detour `J2201` is cancelled under HOS #180 `6655551386`. All 11 existing NAS plates (`J2189/PROPOSED_MAPPINGS.json`), both locked VO files (`Short_B` `0f109926...`, `Short_C` `5b5d84e5...`), `J1004` (`00b1e653`), and OWB PR #513 (`17b2ac5550`, merged via `J2182`) remain valid. Parked for the elected Chief (`grok` / `chief`) to release the verified hold on `J2169` (`jobs.py reopen J2169 --agent chief --note ... --git`) so `J2169` can assemble `Short_B` and `Short_C` and queue their finished-cut review.**
 
 ---
 
 ## 1. Waiting Condition on `J2169`
 
 `J2169` was placed on a dependency hold at `2026-11-05T10:54Z` following Chief decision HOS #180 comment `6655551386`:
-> `Await J2213 HOS 006 six-insert Flow mint (Veo Quality 720p x1, cap ≤1200, Ultra benoats@googlemail.com). Native≥1080 inventory detour J2201 cancelled under HOS #180 6655551386; 720p Flow plates are the authorised path. Keep other J2169 holds (VO hashes B/C, J1004, long VbPubYd6Fbs, no upload).`
+> `Await J2213 HOS 006 six-insert Flow mint (Veo Quality 720p x1, cap ≤1200, the studio Ultra account). Native≥1080 inventory detour J2201 cancelled under HOS #180 6655551386; 720p Flow plates are the authorised path. Keep other J2169 holds (VO hashes B/C, J1004, long VbPubYd6Fbs, no upload).`
 
 ---
 
@@ -22,7 +22,7 @@
    - `J2213` is marked `status: "done"` (`2026-11-05T20:11Z` by `cursor`).
    - Detached runner `/Users/benjaminoats/_desk/logs/J2213-mint.done` reads `0`, `/Users/benjaminoats/_desk/logs/J2213-mint.log` ends with `MINT_SCRIPT_DONE 600`, and `/Users/benjaminoats/_desk/logs/J2213-receipt.json` matches HOS PR #435 (`c693b4f43317611a80c228b709655c3df3eca08b`, branch `cursor/J2213-insert-inventory`, `02_Video-Projects/006_Trees-Are-Made-Of-Air/04_Generated-Clips/j2213_shorts_inserts/J2213_INVENTORY.json`).
 2. **Account, Model, Cap, and Reserve (`PASS`)**:
-   - **Account**: `benoats@googlemail.com` (Gemini Ultra subscription; never `benoats86@gmail.com`).
+   - **Account**: the studio Ultra account (Gemini Ultra subscription; never the personal account).
    - **Settings**: `Veo 3.1 - Quality`, `Frames`, `16:9`, `720p` (`1280×720`), `x1`, silent (`0` audio streams), no contradictory start frames attached.
    - **Spend & Reserve (`05_Analytics/ai_spend/ledger.jsonl`)**:
      - Pre-mint record (`2026-11-05T14:56:03Z`): `15,390.0` Flow credits.

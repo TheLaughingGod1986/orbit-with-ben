@@ -65,6 +65,23 @@ class Helpers(unittest.TestCase):
             self.assertEqual(r.stdout.strip(), f"{t}/worktrees/analytics")
             self.assertEqual(r.stderr.strip(), "")
 
+    def test_the_worktree_moves_when_the_one_already_there_cannot_be_read(self):
+        """11 Nov 2026: the folder on the removable SSD could be made and looked writable, but launchd could not
+        open the worktree's files. The run chose it, could not read it, and stopped at 'already exists'."""
+        with tempfile.TemporaryDirectory() as t:
+            t = pathlib.Path(t)
+            wt = t / "worktrees" / "analytics"
+            wt.mkdir(parents=True)                      # a worktree folder with no .git pointer that opens
+            env = {"ANALYTICS_WORKTREE": str(wt), "ANALYTICS_SAFE_DIR": f"{t}/safe"}
+            self.assertEqual(sh("pick_worktree", env=env).stdout.strip(), f"{t}/safe/worktree")
+            (wt / ".git").write_text("gitdir: elsewhere\n")
+            self.assertEqual(sh("pick_worktree", env=env).stdout.strip(), str(wt))
+
+    def test_usable_leaves_no_file_behind(self):
+        with tempfile.TemporaryDirectory() as t:
+            self.assertEqual(sh(f'usable "{t}"; echo rc=$?').stdout.strip(), "rc=0")
+            self.assertEqual(list(pathlib.Path(t).iterdir()), [])
+
     def test_the_worktree_moves_to_the_internal_disk_when_its_folder_cannot_be_used(self):
         with tempfile.TemporaryDirectory() as t:
             t = pathlib.Path(t)

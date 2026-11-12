@@ -7,7 +7,7 @@
 ## 1. SMB Mount & Directory Listing
 ```text
 mount: /Volumes/shared
-//com.apple.idms.appleid.prd.001177-10-2515c37c-d88f-4716-8e99-b49cf6713116@ben-mac-mini/shared on /Volumes/shared (smbfs, nodev, nosuid, mounted by ben)
+//<account>@<mini>/shared on /Volumes/shared (smbfs, nodev, nosuid, mounted by ben)
 total 1048592
 -rw-r--r--  1 ben  staff  268435456 Nov  5 09:35 from_macbook_20261105T0935Z.bin
 -rw-r--r--  1 ben  staff         65 Nov  5 09:35 from_macbook_20261105T0935Z.bin.sha256

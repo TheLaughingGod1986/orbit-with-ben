@@ -107,7 +107,7 @@ def probe(agent, runner=None, rng=None):
     runner = runner or RUNNERS[agent]
     rng = rng or random.Random()
     available, notes = [], []
-    with tempfile.TemporaryDirectory(prefix="owb-probe-") as tmp:
+    with tempfile.TemporaryDirectory(prefix="studio-probe-") as tmp:
         clip, phrase = make_audio(tmp, rng)
         ans, tools = runner(f"Open {clip.name} and transcribe the speech exactly. {RULES}", AUDIO_SCHEMA, tmp)
         extra = sorted(tools - FILE_TOOLS)

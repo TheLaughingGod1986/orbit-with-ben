@@ -39,8 +39,7 @@ BANDS = 24
 SIM_FAIL = 0.8
 GAP_DB, GAP_S = 15.0, 6.0  # "the music stopped": more than 15 dB under the bed's median level for over 6 s
 MAX_SECONDS = 300  # compare the first 5 minutes; a reused bed matches long before that
-REPO = Path(__file__).resolve().parent.parent
-UAT = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs" / channels.get(channels.home())["uat_dir"]["icloud"]
+ICLOUD = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs"
 AUDIO = (".mp3", ".wav", ".m4a", ".aac", ".flac")
 
 
@@ -117,10 +116,14 @@ def tempo(x: np.ndarray) -> float | None:
 
 
 def others_default(film_dir: Path) -> list[Path]:
-    out = [p for p in (REPO / "02_Video-Projects").glob("*/05_Music/*") if p.suffix.lower() in AUDIO
-           and film_dir.resolve() not in p.resolve().parents]
-    if UAT.is_dir():
-        out += [p for p in UAT.glob("*") if p.suffix.lower() in AUDIO]
+    """The beds to compare against: the other films of this film's own channel, plus that channel's UAT folder."""
+    slug = channels.of_path(film_dir)
+    base = channels.checkout(slug)
+    out = [p for p in base.joinpath("02_Video-Projects").glob("*/05_Music/*") if p.suffix.lower() in AUDIO
+           and film_dir.resolve() not in p.resolve().parents] if base else []
+    uat = ICLOUD / ((channels.get(slug).get("uat_dir") or {}).get("icloud") or "")
+    if uat != ICLOUD and uat.is_dir():
+        out += [p for p in uat.glob("*") if p.suffix.lower() in AUDIO]
     return out
 
 

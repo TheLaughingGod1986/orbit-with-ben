@@ -16,8 +16,10 @@ Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
   {"at", "ok": true|false, "expected": n, "problems": [...], "cards": [...]}
 plus ~/_desk/state/board/BOARD_CHECK_FLAG, one line: "OK <time>" or "FAIL <time>: <first problem>".
 Nothing is ever deleted. When the same problems are seen on two runs in a row (a fresh `awaits` needs one publish to
-show), it posts one short "[Chief] board-check" note on orbit-with-ben #264 with `gh` (at most once per problem set,
-and again after 6 h if it's still broken). That note never starts with "[Ben]".
+show), it posts one short "[Chief] board-check" note on the studio thread with `gh` (at most once per problem set,
+and again after 6 h if it's still broken). That note never starts with "[Ben]". The thread is the one scripts/thread.json
+names, the file owb_thread.py posts by: until 10 Nov 2026 the number was written here and the notes went on the October
+thread for six days after the November one opened.
 
   python3 scripts/board_check.py            # check, write the result, post if needed
   python3 scripts/board_check.py --no-post  # check and write only
@@ -38,15 +40,17 @@ import urllib.request
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+import channels  # noqa: E402
 import video_tracker as vt  # noqa: E402
 
 HOME = pathlib.Path.home()
 ROOT = HERE.parent
-OWB = pathlib.Path(os.environ.get("OWB_REPO", str(HOME / "YouTube" / "orbit-with-ben")))
+STUDIO = channels.studio_checkout()
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
-THREAD = ("TheLaughingGod1986/orbit-with-ben", 264)
+_THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
+THREAD = (_THREAD["repo"], int(_THREAD["number"]))
 ICLOUD = HOME / "Library" / "Mobile Documents" / "com~apple~CloudDocs"
 CHECK_EVERY_S = 5 * 60
 REPOST_S = 6 * 3600
@@ -64,8 +68,8 @@ def iso(t: dt.datetime) -> str:
 
 def published_board() -> dict:
     """board.json as it is on the board-data branch now (what the site reads), not the Mini's local copy."""
-    subprocess.run(["git", "-C", str(OWB), "fetch", "-q", "origin", BRANCH], capture_output=True, timeout=120, check=True)
-    out = subprocess.run(["git", "-C", str(OWB), "show", f"FETCH_HEAD:board.json"], capture_output=True, text=True,
+    subprocess.run(["git", "-C", str(STUDIO), "fetch", "-q", "origin", BRANCH], capture_output=True, timeout=120, check=True)
+    out = subprocess.run(["git", "-C", str(STUDIO), "show", f"FETCH_HEAD:board.json"], capture_output=True, text=True,
                          timeout=60, check=True).stdout
     return json.loads(out)
 
@@ -91,7 +95,7 @@ def file_on_mini(rel: str) -> bool:
     if not rel:
         return False
     p = pathlib.Path(rel)
-    for c in ([p] if p.is_absolute() else [ICLOUD / rel, ROOT / rel, OWB / rel]):
+    for c in ([p] if p.is_absolute() else [ICLOUD / rel, ROOT / rel, STUDIO / rel]):
         if c.is_file():
             return True
     return False
@@ -123,7 +127,7 @@ def cut_on_youtube(e: dict, vids: list[dict], files: dict | None = None, card: d
     row = vt.matched_upload(e, files, e.get("result") or "")
     if row:
         return True
-    ch = (e.get("channel") or "OWB").upper()
+    ch = (e.get("channel") or channels.home_label()).upper()
     want_keys = {k for k in (e.get("card") or "", f"{ch}:ASK:{e.get('id')}", f"{ch}:OK:{e.get('job')}",
                              f"{ch}:OK:{e.get('id')}") if k}
     want_vid = ((card or {}).get("youtube") or {}).get("videoId") or ""
@@ -151,7 +155,7 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of, files: dic
     files = files if files is not None else vt.upload_files()
     problems, cards = [], []
     for e in expected:
-        ch = (e.get("channel") or "OWB").upper()
+        ch = (e.get("channel") or channels.home_label()).upper()
         v = by_ask.get(e["id"]) or by_key.get(e.get("card") or "") or by_key.get(f"{ch}:ASK:{e['id']}")
         row = {"id": e["id"], "job": e["job"], "what": e["what"], "due": e.get("due", ""), "file": e.get("file", "")}
         if cut_on_youtube(e, vids, files, v):
@@ -194,15 +198,20 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of, files: dic
         cards.append(row)
     # A long its pipeline calls scheduled must read back from YouTube (Done), never sit in In progress because a job
     # only waits for it to go public (HOS 005, Ben 25 Oct 2026 22:54: "Why is it in progress on the board").
-    hos = (board.get("hos") or {}).get("pipeline") or board.get("hos") or {}
-    for f in hos.get("films") or []:
-        st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
-        key = f"HOS:{f.get('id')}"
-        v = by_key.get(key)
-        working = v and v.get("lane") == "progress" and (v.get("youtube") or {}).get("videoId") and any(j.get("status") in vt.ACTIVE_STATUSES for j in v.get("jobs") or [])
-        if st == "done" and v and v.get("lane") not in ("done", "approved") and not working:
-            problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
-                            "no YouTube read-back (add the long to HOS UPLOADS.json)")
+    # Asked of every channel that keeps its films in a PIPELINE.json (its board entry carries the pipeline).
+    for slug in channels.slugs():
+        if (channels.get(slug).get("pipeline") or {}).get("kind") != "pipeline_json":
+            continue
+        lab = channels.label(slug)
+        pipe = (board.get(slug) or {}).get("pipeline") or board.get(slug) or {}
+        for f in pipe.get("films") or []:
+            st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
+            key = f"{lab}:{f.get('id')}"
+            v = by_key.get(key)
+            working = v and v.get("lane") == "progress" and (v.get("youtube") or {}).get("videoId") and any(j.get("status") in vt.ACTIVE_STATUSES for j in v.get("jobs") or [])
+            if st == "done" and v and v.get("lane") not in ("done", "approved") and not working:
+                problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
+                                f"no YouTube read-back (add the long to {lab} UPLOADS.json)")
     # A film on YouTube with a job claimed or open shows in In progress, not Done (Ben, 26 Oct 2026 00:15: "Can't see
     # these jobs in the in progress lane"); blocked jobs don't count.
     for v in vids:

@@ -6,8 +6,12 @@
   "home": true,
   "order": 1,
   "youtube": {
-    "handle": "@OrbitWithBen"
+    "handle": "@OrbitWithBen",
+    "id": "UC_esArsDKd3GJvOkeO0DUog",
+    "studio_port": "9223",
+    "reach_port": "9223"
   },
+  "sound_kit": "ui",
   "repo": {
     "url": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
     "env": "OWB_REPO",
@@ -15,10 +19,14 @@
       "orbit-with-ben"
     ]
   },
+  "nas_folder": "orbit-with-ben",
   "title_match": "\\bOWB\\b|orbit with ben",
   "wip": {
     "limit": 5,
     "line": "next"
+  },
+  "shorts": {
+    "planned_per_long": 2
   },
   "stages": [
     "topic",
@@ -39,5 +47,17 @@
     "env": "OWB_UAT_DIR",
     "icloud": "OWB UAT"
   },
-  "picture_route": "flow_first"
+  "picture_route": "flow_first",
+  "cadence": {
+    "long": [
+      "Sun 18:00",
+      "Wed 18:00"
+    ],
+    "short": [
+      "Mon 11:30",
+      "Wed 11:30",
+      "Fri 11:30",
+      "Sat 11:30"
+    ]
+  }
 }

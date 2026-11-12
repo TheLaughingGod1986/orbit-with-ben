@@ -113,6 +113,6 @@ Read-only snapshot. Nothing was merged, pushed, posted or changed. All times are
 ## OpptiAI Internal Linking 0.1.3 (from Gmail, report only)
 - **Already done on 6 Oct:**
   - WordPress.org auto-confirmed "File updated by beepbeepv2, version 0.1.3" on **Tue 6 Oct 11:21** (thread 1a07b0435dda40e2).
-  - **The reply to the Plugins Team was already SENT** from benoats@googlemail.com on **6 Oct 14:37**: "Fixed — 0.1.3 is uploaded. /opportunities now requires the Editor role (edit_others_posts) and a per-post edit_post check…"
+  - **The reply to the Plugins Team was already SENT** from the studio Ultra account on **6 Oct 14:37**: "Fixed — 0.1.3 is uploaded. /opportunities now requires the Editor role (edit_others_posts) and a per-post edit_post check…"
 - **Nothing since:** there's no newer WordPress.org email and no confirmation of tonight's upload.
 - **So tonight's upload probably duplicates the 6 Oct one.** Check before drafting another reply to the 3 Oct email.

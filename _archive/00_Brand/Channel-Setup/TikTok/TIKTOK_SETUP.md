@@ -38,4 +38,4 @@ TikTok is discovery only. Captions: “Watch the full story on Orbit with Ben”
 /usr/bin/python3 00_Brand/Channel-Setup/TikTok/_create_orbit_tiktok.py
 ```
 
-Uses Google session from `/Users/ben/code/youtube/.playwright-youtube-profile` (`benoats86@gmail.com`).
+Uses Google session from `/Users/ben/code/youtube/.playwright-youtube-profile` (the personal account).

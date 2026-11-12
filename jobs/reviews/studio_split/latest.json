@@ -1,0 +1,120 @@
+{
+  "at": "2026-11-11T05:57Z",
+  "commit": "f48810bce",
+  "clean": true,
+  "left": 288,
+  "counts": {
+    "names": 245,
+    "home": 20,
+    "unrouted": 0,
+    "shared": 0,
+    "registry": 1,
+    "keys": 1,
+    "addresses": 15,
+    "tests": 6
+  },
+  "groups": [
+    {
+      "key": "unrouted",
+      "title": "Files the table above does not place",
+      "count": 0,
+      "items": []
+    },
+    {
+      "key": "shared",
+      "title": "Shared tools the table would split between the studio and a channel",
+      "count": 0,
+      "items": []
+    },
+    {
+      "key": "names",
+      "title": "Studio code that still names a channel",
+      "count": 245,
+      "items": [
+        "chief_relay.py: 79 lines",
+        "kanban_snapshot.py: 56 lines",
+        "approved_deliver.py: 35 lines",
+        "board_publish.py: 33 lines",
+        "macbook_worker.py: 25 lines",
+        "missed_runs.py: 5 lines",
+        "owb_thread.py: 5 lines",
+        "core_sync.py: 2 lines",
+        "nas_offload.py: 2 lines",
+        "cdp_tabs.py: 1 line",
+        "routing.py: 1 line",
+        "uat_outlook.py: 1 line"
+      ]
+    },
+    {
+      "key": "home",
+      "title": "Studio code that still reaches into a channel's folder from its own root",
+      "count": 20,
+      "items": [
+        "jobs.py: 4 lines",
+        "apply_yellow_white_v04_thumbs.py: 3 lines",
+        "kanban_snapshot.py: 3 lines",
+        "workflow_state.py: 3 lines",
+        "chief_relay.py: 2 lines",
+        "studio.py: 2 lines",
+        "workflow_handoffs.py: 2 lines",
+        "routing.py: 1 line"
+      ]
+    },
+    {
+      "key": "registry",
+      "title": "The list of channels still needs one of them to be the studio's home",
+      "count": 1,
+      "items": [
+        "the loader says: exactly one channel must be home"
+      ]
+    },
+    {
+      "key": "keys",
+      "title": "Keys, tokens or filled-in .env files in what would move",
+      "count": 1,
+      "items": [
+        "History of Science: 02_Video-Projects/004_Whats-Really-Inside-An-Atom/07_Edit-Project/.env: a .env file that is not an example"
+      ]
+    },
+    {
+      "key": "addresses",
+      "title": "Email addresses in what would become the studio repo",
+      "count": 15,
+      "items": [
+        "05_Analytics/ai_spend/ledger.jsonl: 38 places",
+        "HANDOVER.md: 1 place",
+        "docs/handover/STUDIO_HANDOVER_2026-10-09.md: 1 place",
+        "jobs/readbacks/J0976.json: 2 places",
+        "jobs/reviews/J1881/REVIEW.md: 1 place",
+        "jobs/reviews/J2252/REVIEW.md: 4 places",
+        "jobs/reviews/J2253/REVIEW.md: 1 place",
+        "jobs/reviews/J2333/REVIEW.md: 1 place",
+        "jobs/reviews/J2334/CHIEF_RULING.md: 1 place",
+        "jobs/reviews/J2349/REVIEW.md: 1 place",
+        "jobs/reviews/J2365/REVIEW.md: 1 place",
+        "jobs/reviews/J2380/REVIEW.md: 1 place"
+      ]
+    },
+    {
+      "key": "tests",
+      "title": "Tests that fail once the studio and the channels are apart",
+      "count": 6,
+      "items": [
+        "test_channel_cards.py: 1 test",
+        "test_channel_check.py: 1 test",
+        "test_channels.py: 2 tests",
+        "test_email_ratchet.py: 1 test",
+        "test_studio.py: 1 test",
+        "test_studio_split.py: 3 tests"
+      ]
+    }
+  ],
+  "tests": "run",
+  "layout": {
+    "studio": 1611,
+    "Orbit With Ben": 12100,
+    "History of Science": 44,
+    "built": 1,
+    "not on this machine": []
+  }
+}

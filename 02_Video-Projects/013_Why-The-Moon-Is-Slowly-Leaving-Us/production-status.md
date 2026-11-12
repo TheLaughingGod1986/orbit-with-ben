@@ -8,11 +8,11 @@
 | Part 02 | **LOCKED v01** — QC remint queue (diagram numerals + ocean bulge) — do not overwrite LOCKED |
 | Part 03 | **LOCKED v04** Ben PASS 2026-09-11 — keep LOCKED; **NOT tidal-cleared** |
 | Part 03 provisional | **ROUGH v05** FAIL→KEEP swap ready in OWB UAT (do not LOCK) |
-| Part 03 remint A/B/C | **BLOCKED** — Google SMS rate limit on `benoats@googlemail.com` |
+| Part 03 remint A/B/C | **BLOCKED** — Google SMS rate limit on the studio Ultra account |
 | Part 04 | **IN PREP** — VO ready · 12 Flow prompts staged · mint after P03 remint |
 | Part 04 VO | `02_Voiceover/parts/moon_leaving_part-04_vo_v01.wav` (~116.2s) |
 | Part 04 prompts | `07_Edit-Project/parts/part-04_flow_prompts_v01.json` (12 plates) |
-| Flow credits | **CLEARED** (~25,050 on benoats@googlemail.com) — login is the blocker, not credits |
+| Flow credits | **CLEARED** (~25,050 on the studio Ultra account) — login is the blocker, not credits |
 
 ## Part 03 lock + QC
 
@@ -36,7 +36,7 @@ Swaps (unused KEEP-class plates, no freeze-pad, no LOCKED overwrite):
 
 ## Next
 
-1. Ben: when Google SMS cools down, verify Flow as `benoats@googlemail.com` (never `benoats86@gmail.com`).
+1. Ben: when Google SMS cools down, verify Flow as the studio Ultra account (never the personal account).
 2. Run `04_Generated-Clips/part03/_remint_2026-09-12/_run_remint_abc_when_ready.py --mint`
 3. Quarantine FAIL plates → rebuild rough → new UAT id → Ben re-pass before LOCK
 4. Then P02 remint queue, then Part 04 mint (Veo 3.1 Fast)
@@ -44,6 +44,6 @@ Swaps (unused KEEP-class plates, no freeze-pad, no LOCKED overwrite):
 ## Do not
 
 - Remint / overwrite Part 01 / 02 / 03 LOCKED files
-- Mint on wrong Google account (`benoats86@gmail.com` @ ~50 credits)
+- Mint on the wrong Google account (the personal account @ ~50 credits)
 - Ship knockoff Orbit
 - Put OWB files in HOS UAT

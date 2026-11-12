@@ -199,3 +199,27 @@ Nothing has been modified in YouTube Studio. Once Ben OKs:
    - [ ] `PLOw2VKzGCOWU`: Rename `What Would Happen If…` → `What Happens If You Fall Into Black Holes, Neutron Stars & Extreme Space?`, add `Js6EQJ8qDi8` (*Mars*), and reorder with `REXYxuLOBoI` (*The Last Star*, 46 views) and `Yk1tLh23rko` (*Neutron Star*, 15 views) at #1 and #2, keeping the 47-min compilation `m09jUdwC5hk` last.
 3. **History of Science — Keep, rename, add Willow Tree (`VbPubYd6Fbs`), and reorder the 1 long-form playlist:**
    - [ ] `PLEbpfUzWzcXU`: Rename `How Did We Discover…? | History of Science` → `How We Discovered Atoms, the Periodic Table, Germs & X-Rays | History of Science`, add `VbPubYd6Fbs` (*The Willow Tree That Was Made of Air*), and reorder with `AL_-qlWko_g` (*Periodic Table*, 161 views) at #1 and `GHZDsiH7L7A` (*Inside an Atom*, 31 views) at #2, keeping the 49-min compilation `uAomPaOBrM8` last.
+
+---
+
+## 4. Applied (10 Nov 2026, J2460)
+
+Ben's yes, 9 Nov 2026. Full record, with every read-back and the contents of the six removed playlists for rebuilding: `jobs/reviews/J2460/PLAYLIST_REFS.md`.
+
+**Orbit With Ben, done 06:10 to 06:15 UTC:**
+
+- Four things pointed at the six and were repointed first: Saturn `55AEQwvs36g` end screen (the *Start Here* element removed; it already carried *Real Worlds*), the Europa `NbW5G1BpPY0` description link (now *Real Worlds*), and Home sections 0 and 8 (now *What Would Happen If…* and *Real Worlds*).
+- All six removed: `PLQLwG0axcZis`, `PLbTzVnzsyGm4`, `PLOgdBQBnJE2o`, `PLH6Vkm2g0-q0`, `PLEs4-0r_LBVQ`, `PLI1AApUz3qz8`. No video was touched: 179 before, 179 after, same titles, privacy and schedule.
+- `PLdoEpeiktw_Y` is now **Real Worlds: Solar System, Moons and Alien Planets Explained**, 8 films, in the order of section 1 above (Mars and Jupiter added).
+- `PLOw2VKzGCOWU` is now **What Would Happen If…: Black Holes, Neutron Stars and Extreme Space**, 10 films, in the order of section 1 above (Mars added, compilation last).
+- The names are the Chief's (series name kept, search phrase after it, LEARNINGS rule 20), not the renames proposed in sections 1 and 3.
+- Playlist list read back: those two and nothing else.
+
+**History of Science, done 10 Nov 2026 (rename earlier in the day, add and reorder about 09:55 UTC):**
+
+- `PLEbpfUzWzcXU` is now **How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science** (public, description unchanged).
+- Its default video order was "Date published (oldest)", which is why rows could not be moved. It is now "Manually sorted in YouTube" (Studio, Details, read back after a reload).
+- `VbPubYd6Fbs` (*The Willow Tree That Was Made of Air*) added before the compilation. 7 films, in the order of section 2: `AL_-qlWko_g`, `GHZDsiH7L7A`, `frP_YrNShsU`, `_C92tIJCk8A`, `wwcjcFfC-5M`, `VbPubYd6Fbs`, `uAomPaOBrM8` (compilation last, still private until it airs).
+- No video was edited. The compilation's title now reads *Experiments That Changed the World (Blood, Germs and Atoms)*, not the title section 2 lists; this job did not change it.
+
+**Final read-back, both channels, 10 Nov 2026 about 09:55 UTC (Data API):** Orbit With Ben has two playlists and nothing else, both in order, with Home sections 0 and 8 on `PLOw2VKzGCOWU` and `PLdoEpeiktw_Y`. History of Science has one playlist, as above.

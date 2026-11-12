@@ -10,6 +10,10 @@ go to 05_Analytics/tests/panels/<slug>/<agent>.md; the decision to .../DECISION.
       --files 02_Video-Projects/024_.../11_Upload-Package/PACKAGE_MANIFEST.json 00_Brand/.../thumb_A.jpg --git
 
 A critic sees only the brief and the files, never another critic's notes, so the three opinions stay independent.
+
+The critics run on the Mini and in the cloud, so every file must be one they can open: a path inside the repo, or on
+the shared drive (/Volumes/...). A path in one machine's home folder is refused. The 9 Nov 2026 weekly panel named
+three drafts under /Users/ben/_desk on the MacBook and sat for 32 hours with no critique, because nobody could see them.
 """
 import argparse, datetime as dt, pathlib, sys
 
@@ -18,6 +22,12 @@ import jobs  # noqa: E402
 
 CRITICS = ("codex", "gemini", "cursor")
 PANELS = "05_Analytics/tests/panels"
+SHARED = ("/Volumes/",)  # the shared drive, mounted on every studio machine
+
+
+def unreachable(files: list) -> list:
+    """The files a critic on another machine cannot open: an absolute or home path that is not on the shared drive."""
+    return [f for f in files if str(f).startswith(("/", "~")) and not str(f).startswith(SHARED)]
 
 RUBRIC = """Score each 1–10 and give **one concrete rewrite** for anything under 8:
 1. **Title:** curiosity gap, clarity, would someone type it (search), under about 60 characters, no clickbait we can't pay off.
@@ -49,6 +59,10 @@ def decision(what: str, slug: str) -> str:
 
 
 def queue(data: dict, what: str, files: list, slug: str, by: str = "claude", at=None) -> list:
+    bad = unreachable(files)
+    if bad:
+        raise ValueError("the critics run on other machines and cannot open: " + ", ".join(str(f) for f in bad)
+                         + ". Put each file in the repo (a pull request, merged first) or on the shared drive, and name that path.")
     at = at or jobs.now()
     out = []
     for agent in CRITICS:
@@ -61,12 +75,17 @@ def queue(data: dict, what: str, files: list, slug: str, by: str = "claude", at=
 
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--slug", required=True, help="folder name under 05_Analytics/tests/panels, e.g. owb-024-lightspeed")
+    p.add_argument("--slug", required=True, help="folder name under 05_Analytics/tests/panels, e.g. <channel>-024-lightspeed")
     p.add_argument("--what", required=True, help="what is being judged, e.g. '024 Light Speed upload package'")
     p.add_argument("--files", nargs="*", default=[])
     p.add_argument("--by", default="claude")
     p.add_argument("--git", action="store_true")
     o = p.parse_args(argv)
+    bad = unreachable(o.files)
+    if bad:  # said before anything is queued or pulled
+        print("not queued: the critics run on other machines and cannot open: " + ", ".join(bad)
+              + ". Put each file in the repo (a pull request, merged first) or on the shared drive, and name that path.")
+        return 1
     if o.git:
         out, err = jobs.with_git(lambda d: (", ".join(j["id"] for j in queue(d, o.what, o.files, o.slug, o.by)), None, []),
                                  f"jobs: packaging panel {o.slug} by {o.by}")

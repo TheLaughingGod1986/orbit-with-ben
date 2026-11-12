@@ -11,6 +11,33 @@ T0 = dt.datetime(2026, 10, 7, 12, 0, tzinfo=dt.timezone.utc)
 MIN = dt.timedelta(minutes=1)
 
 
+_OWN_WORLD = []
+
+
+def setUpModule():
+    """These tests state the queue's rules, not the state of the machine they run on. On 11 Nov 2026 two of them failed
+    on the Mini and passed everywhere else: its film store was mounted and held film 032, so a harvest job read as
+    reachable from the MacBook; and its live board gave film 025 an air date, which ranks a film's job ahead of an
+    urgent one (Ben, 8 Nov: oldest film first). So nothing here reads the live board, the film store, the relay's
+    state folder or the MacBook's browser list. A test that needs one of them sets it itself."""
+    tmp = tempfile.TemporaryDirectory()
+    _OWN_WORLD.append(tmp)
+    nowhere = pathlib.Path(tmp.name)
+    for p in (patch("workflow_board.load_tracker", return_value={}),
+              patch.object(jobs, "STUDIO_LIVE_ROOT", nowhere / "no-film-store"),
+              patch.object(jobs.chief_relay, "STATE", nowhere / "no-state"),
+              mock.patch.dict(os.environ, {"MACBOOK_CDP": ""})):
+        p.start()
+        _OWN_WORLD.append(p)
+
+
+def tearDownModule():
+    for p in reversed(_OWN_WORLD[1:]):
+        p.stop()
+    _OWN_WORLD[0].cleanup()
+    _OWN_WORLD.clear()
+
+
 def queue(*specs):
     d = {"next_id": 1, "jobs": []}
     for needs, title, kw in specs:
@@ -166,6 +193,45 @@ class Lifecycle(unittest.TestCase):
         md = jobs.render(d, T0 + 56 * MIN)
         self.assertIn("| J0001 | mini | **stalled** | cursor |", md)
         self.assertNotIn("| J0002 |", md)
+
+
+class Stuck(unittest.TestCase):
+    """The relay parks a job whose runs keep hitting the time cap on one step (10 Nov 2026, J2466)."""
+
+    def test_it_goes_to_the_chief_and_keeps_its_progress(self):
+        j = {"id": "J0400", "status": "claimed", "by": "codex", "since": "2026-10-07T11:00Z", "eta": "2026-10-07T13:00Z",
+             "progress": {"step": 2, "of": 5}, "history": []}
+        jobs.do_stuck(j, "relay", 3, T0)
+        self.assertEqual((j["status"], j["eta"]), ("blocked", ""))
+        self.assertTrue(j["result"].startswith("parked for Chief: 3 runs in a row hit the time cap at step 2 of 5"))
+        self.assertEqual(j["progress"], {"step": 2, "of": 5})
+        self.assertTrue(j["history"][-1]["what"].startswith("blocked: parked for Chief"))
+        self.assertEqual(j["history"][-1]["by"], "relay")
+
+    def test_a_job_with_no_steps_yet_says_its_first_step(self):
+        j = {"id": "J0401", "status": "open", "history": []}
+        jobs.do_stuck(j, "relay", 4, T0)
+        self.assertIn("4 runs in a row hit the time cap at its first step", j["result"])
+
+    def test_a_finished_job_is_left_alone(self):
+        with self.assertRaises(ValueError):
+            jobs.do_stuck({"id": "J0402", "status": "done", "history": []}, "relay", 3, T0)
+
+    def test_cli_stuck(self):
+        d = queue(("mini", "clean up old branches", {}))
+        jobs.do_next(d, "cursor", {"mini"}, T0)
+        saved = []
+        with tempfile.TemporaryDirectory() as tmp:
+            old = (jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat)
+            jobs.load, jobs.save = (lambda *a: d), (lambda data, *a: saved.append(data))
+            jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = pathlib.Path(tmp) / "JOBS.md", (lambda: None), (lambda a: None)
+            try:
+                rc = jobs.main(["stuck", "J0001", "--agent", "relay", "--runs", "3"])
+            finally:
+                jobs.load, jobs.save, jobs.JOBS_MD, jobs.publish_board, jobs.heartbeat = old
+        self.assertEqual(rc, 0)
+        self.assertEqual(saved[0]["jobs"][0]["status"], "blocked")
+        self.assertIn("parked for Chief: 3 runs in a row", saved[0]["jobs"][0]["result"])
 
 
 class BoardLink(unittest.TestCase):
@@ -367,9 +433,6 @@ class MiniOnlyPin(unittest.TestCase):
             self.assertFalse(jobs.macbook_portable(pinned))
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 class OnlyBensCalls(unittest.TestCase):
     """Ben, 5 Nov 2026: "Nothing should need me apart from watching the video." J1755 had parked a private watch-copy
@@ -497,13 +560,28 @@ class MacBookTakesTextJobs(unittest.TestCase):
             (owb / name).mkdir(parents=True)
         for name in hos_films:
             (hos / name).mkdir(parents=True)
-        return {"owb": owb, "hos": hos}
+        return pathlib.Path(tmp)
+
+    def test_each_channels_nas_folder_and_studio_port_come_from_its_settings(self):
+        import channels
+        for slug in channels.slugs():
+            self.assertEqual(jobs.studio_live_projects(slug),
+                             jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
+            self.assertTrue(channels.studio_port(slug).isdigit(), slug)
+        ports = [channels.studio_port(s) for s in channels.slugs()]
+        self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
+        self.assertRegex(jobs.keys_example(), r"^[A-Z]+:006 or [A-Z]+:028,[A-Z]+:029$")
+
+    def test_a_job_added_with_no_channel_goes_to_the_home_channel(self):
+        import channels
+        d = queue(("mini", "tidy the cache", {}))
+        self.assertEqual(d["jobs"][0]["repo"], channels.home())
 
     def test_harvest_assembly_watch_allowed_when_studio_live_media_exists(self):
         # Ben, 7 Nov 2026: MacBook takes shared-media jobs when /Volumes/data/studio-live has the film.
         with tempfile.TemporaryDirectory() as tmp:
             roots = self._studio_live(tmp, owb_films=("032_Titan",), hos_films=("008_Lightning-Franklin",))
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", roots):
                 cases = [
                     ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"},
                      "Write pool JSON under the studio-live 032 folder; ffmpeg ok."),
@@ -522,9 +600,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
                     self.assertTrue(jobs.claimable(d, d["jobs"][0], {"macbook", "any"}, T0, "macbook"), title)
 
     def test_harvest_assembly_watch_stay_mini_when_media_absent(self):
-        missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
-                   "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
-        with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+        with patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path("/no/such/studio-live")):
             for title, kw in (
                 ("032 picture: harvest stills", {"kind": "assembly", "film": "032", "stage": "picture"}),
                 ("032 assemble full rough v01", {"kind": "assembly", "film": "032", "stage": "edit"}),
@@ -537,7 +613,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
     def test_studio_buffer_playlist_package_stay_mini_hard_even_with_studio_live(self):
         with tempfile.TemporaryDirectory() as tmp:
             roots = self._studio_live(tmp, owb_films=("032_Titan",))
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, roots):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", roots):
                 cases = [
                     ("032 Studio finish before air", {"kind": "review", "film": "032", "stage": "upload"},
                      "Open YouTube Studio and set the end screen plus Related video."),
@@ -557,9 +633,7 @@ class MacBookTakesTextJobs(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             cut = pathlib.Path(tmp) / "032_Titan_v01.mp4"
             cut.write_bytes(b"x")
-            missing = {"owb": pathlib.Path("/no/such/studio-live/owb/02_Video-Projects"),
-                       "hos": pathlib.Path("/no/such/studio-live/hos/02_Video-Projects")}
-            with patch.dict(jobs.STUDIO_LIVE_PROJECTS, missing):
+            with patch.object(jobs, "STUDIO_LIVE_ROOT", pathlib.Path("/no/such/studio-live")):
                 d = queue(("mini", "Watch and listen review of the master",
                            {"kind": "review", "film": "032", "stage": "edit"}))
                 d["jobs"][0]["body"] = f"Full watch and listen of {cut} before Ben's card."
@@ -575,3 +649,64 @@ class MacBookTakesTextJobs(unittest.TestCase):
             "Do not change Buffer or playlists. Text review only.")
         self.assertTrue(jobs.macbook_portable(d["jobs"][0], d))
         self.assertFalse(jobs.mini_only_hit(d["jobs"][0]["title"] + " " + d["jobs"][0]["body"]))
+
+
+class QueueHoldsNoPrivateDetail(unittest.TestCase):
+    """11 Nov 2026. The queue is public and is pushed to main with no review. Two tests fail on a personal email
+    address or a private-network address anywhere in the repo, so one pasted `mount` line in a worker's result would
+    turn every pull request red. The queue replaces such a detail as it is written."""
+    AT = "@"   # test details are put together at run time, so none sits in this file
+
+    @staticmethod
+    def address(*parts):
+        return ".".join(str(p) for p in parts)
+
+    def saved(self, what):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "queue.json"
+            jobs.save({"next_id": 2, "jobs": [{"id": "J0001", "title": "t", "status": "done",
+                                              "history": [{"at": "x", "by": "codex", "what": what}]}]}, path)
+            return path.read_text(), jobs.load(path)["jobs"][0]["history"][0]["what"]
+
+    def test_a_result_line_with_an_address_and_an_email_is_replaced_as_it_is_written(self):
+        a, e = self.address(192, 168, 1, 20), "someone" + self.AT + "gmail.com"
+        text, what = self.saved(f"done: mounted from {a}:/volume1/data, signed in as {e}.")
+        self.assertNotIn(a, text)
+        self.assertNotIn(e, text)
+        self.assertEqual(what, "done: mounted from <network address>:/volume1/data, signed in as <email address>.")
+
+    def test_every_private_range_and_an_address_at_the_end_of_a_sentence(self):
+        for parts in ((192, 168, 0, 9), (10, 0, 0, 5), (172, 16, 4, 1), (172, 31, 255, 9), (100, 64, 0, 1), (100, 127, 3, 3)):
+            a = self.address(*parts)
+            for line in (f"{a}", f"it answers at {a}.", f"ssh x{self.AT}{a}", f"({a})", f'"{a}"'):
+                self.assertNotIn(a, self.saved(line)[1], line.replace(a, "<address>"))
+
+    def test_what_is_not_private_is_left_exactly_as_written(self):
+        for line in ("Co-Authored-By: Claude <noreply" + self.AT + "anthropic.com>", "press" + self.AT + "nasa.gov",
+                     "the browser answers on " + self.address(127, 0, 0, 1) + ":9222", "Python 3.10.12, macOS 10.15, v10.2.3",
+                     "10.5 s of 100.0% at 172.5 fps", "a public resolver at " + self.address(8, 8, 8, 8),
+                     self.address(172, 32, 0, 1) + " and " + self.address(100, 128, 0, 1) + " are public"):
+            self.assertEqual(self.saved(line)[1], line)
+
+    def test_a_clean_queue_is_written_byte_for_byte_as_before(self):
+        data = queue(("mini", "Sun 022 first cut", {}), ("cloud", "Review 022", {}))
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "queue.json"
+            jobs.save(data, path)
+            self.assertEqual(path.read_text(), json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+
+    def test_the_guard_replaces_everything_the_two_repo_tests_would_fail_on(self):
+        import test_email_ratchet
+        import test_no_private_network
+        a, e = self.address, "someone" + self.AT
+        lines = [a(192, 168, 1, 20), f"at {a(10, 1, 2, 3)}.", f"NFS `{a(172, 20, 0, 4)}:/volume1/data`", a(100, 100, 100, 100),
+                 e + "gmail.com", e + "googlemail.com", e + "icloud.com", e + "proton.me", e + "yahoo.co.uk",
+                 a(127, 0, 0, 1), a(8, 8, 8, 8), "noreply" + self.AT + "anthropic.com", "Python 3.10.12", "nothing here"]
+        for line in lines:
+            flagged = bool(test_email_ratchet.ADDRESS.search(line) or test_no_private_network.ADDRESS.search(line))
+            self.assertEqual(jobs.scrub(line) != line, flagged, line[:6])
+            self.assertFalse(test_email_ratchet.ADDRESS.search(jobs.scrub(line)) or test_no_private_network.ADDRESS.search(jobs.scrub(line)))
+
+
+if __name__ == "__main__":
+    unittest.main()
