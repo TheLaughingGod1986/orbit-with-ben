@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2676 | any | open | – | – | for codex · thumb · Rebuild three OWB thumbnail Bs per Chief decision J2456 (Moon, Neutron star, Alien worlds) |  |
 | J2678 | mini | open | – | – | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
 | J2679 | mini | claimed | macbook-2 | 2026-11-12T08:26Z | studio · Nearest Star long: check the long is the Related video on all four Shorts (airing 16-20 Nov) |  |
-| J2681 | any | open (after J2675) | – | – | 013 picture · chief · HOS 013: review J2675 preflight and decide J2529 reopening before 13:00 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475 |
+| J2681 | any | claimed | chief | 2026-11-12T10:13Z | 013 picture · chief · HOS 013: review J2675 preflight and decide J2529 reopening before 13:00 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818125475 |
 | J2682 | any | open | – | – | 013 picture · for codex · assembly · HOS 013: fix dry-run double counting of active reservation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818150970 |
 | J2683 | mini | open | – | – | review · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
 
