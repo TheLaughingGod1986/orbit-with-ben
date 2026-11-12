@@ -17,9 +17,17 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--scratch', type=Path, required=True)
     p.add_argument('--destination', type=Path, required=True)
+    p.add_argument('--local-only', action='store_true',
+                   help='Render and decode locally while the master safety copy is verified')
     a = p.parse_args()
     s = a.scratch / 'final_join_v01'
-    delivery = json.loads((s / 'MASTER_DELIVERY_V01.json').read_text())
+    delivery = json.loads((s / ('LOCAL_MASTER_CANDIDATE_V01.json' if a.local_only
+                               else 'MASTER_DELIVERY_V01.json')).read_text())
+    if a.local_only:
+        coverage = json.loads((s / 'FINAL_SEQUENTIAL_DECODE_V04.json').read_text())
+        assert coverage['status'] == 'PASS' and coverage['decoded_frames'] == 195070
+        payload = json.loads(Path('jobs/reviews/J2452/final_join_v04/LOCAL_MUX_PAYLOAD_READBACK_V01.json').read_text())
+        assert all(payload[k]['status'] == 'PASS' for k in ('v', 'a'))
     master = s / delivery['file']
     assert sha(master) == delivery['sha256']
     recipe = json.loads(Path('jobs/reviews/J2452/final_join_v04/REEL_RECIPE_V01.json').read_text())
@@ -54,6 +62,13 @@ def main():
             '-i', str(listing), '-c', 'copy', '-movflags', '+faststart', str(reel)], check=True, timeout=60)
     sp.run(['ffmpeg', '-v', 'error', '-xerror', '-nostdin', '-threads', '4', '-i', str(reel),
             '-f', 'null', '-'], check=True, timeout=180)
+    if a.local_only:
+        result = dict(status='LOCAL_DECODED_NAS_COPY_PENDING', file=str(reel),
+                      sha256=sha(reel), bytes=reel.stat().st_size,
+                      planned_duration_s=clock, segments=segments)
+        (s / 'LOCAL_REEL_V01.json').write_text(json.dumps(result, indent=2) + '\n')
+        print('Local reel decoded; NAS delivery pending', flush=True)
+        return
     assert Path('/Volumes/data').is_mount()
     store = Path('/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01')
     assert a.destination.resolve().is_relative_to(store.resolve())
