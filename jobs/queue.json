@@ -229933,13 +229933,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-11T16:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -229970,26 +229970,17 @@
           "at": "2026-11-12T19:19Z",
           "by": "relay",
           "what": "condition verification queued: J2724"
+        },
+        {
+          "at": "2026-11-12T21:17Z",
+          "by": "codex",
+          "what": "reopened: J2724 Chief ruling KEEP at 2026-11-12T21:17Z. Read original body/result/history and thread through 6836079855; no superseding ruling. Direct checks: past 12 Nov 19:13Z; HOS535 merged into main 11 Nov 17:28:34Z at 688046d4; current HOS studio/channel.json byte-matches PR833 cached settings; Mini clean on main. PR833 unchanged head 4ef9d89b6 remains draft/open against main, Rules check SUCCESS, core workflow SKIPPED. Accept worker evidence PR859 ed6be227c for condition release only: its focused tests and temporary rebase are historical, not a current whole-suite or merge PASS. Concrete follow-up under J2618: rebase PR833 on latest main in an isolated worktree, run the whole requested suite and checks, elected-Chief code review/merge, then observe one full Mini relay cycle and board publish before completion. J2621/J2622 holds unchanged. PR859 evidence stays open because automatic approval rejected its merge as outside this verification scope; evidence is accessible and merging it is not a prerequisite to release this hold. No public action or spend."
         }
       ],
       "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
-      "plain": "Make the relay that wakes the agents work for any channel",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-11T16:51Z",
-        "by": "claude",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Built and green: orbit-with-ben #833 (draft). It is not merged inside the picture window, which closes Thu 12 Nov 19:13 London: the relay wakes every agent on the Mini. Before the merge, history-of-science #535 must be merged (the desk field in that channel's own settings file) and the Mini's orbit-with-ben checkout must be on main.",
-        "check_at": "2026-11-12T20:19:17+00:00",
-        "recheck_task": "J2724"
-      }
+      "plain": "Make the relay that wakes the agents work for any channel"
     },
     {
       "id": "J2619",
