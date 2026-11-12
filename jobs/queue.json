@@ -238265,9 +238265,14 @@
           "at": "2026-11-12T22:50Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J2537 history and current dependency hold set by Claude at 21:56Z"
+        },
+        {
+          "at": "2026-11-12T22:54Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 19:13Z window closed and ledger quiet (last write 18:01Z, 1 file in ratchet), but PRs #868/#869 and HOS #548 remain OPEN"
         }
       ],
-      "remaining_action": "Verify picture-window status, spend ledger activity, and status of PR #868 / J2738 and HOS PR #548",
+      "remaining_action": "Write jobs/reviews/J2723/REVIEW.md in an isolated worktree, open evidence PR, and park J2723 for Chief",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-12T20:19:17+00:00",
@@ -238282,11 +238287,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T22:50Z",
+        "at": "2026-11-12T22:54Z",
         "by": "gemini",
-        "note": "Read J2537 history and current dependency hold set by Claude at 21:56Z"
+        "note": "Verified 19:13Z window closed and ledger quiet (last write 18:01Z, 1 file in ratchet), but PRs #868/#869 and HOS #548 re"
       }
     },
     {
