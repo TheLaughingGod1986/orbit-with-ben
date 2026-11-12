@@ -237318,9 +237318,14 @@
           "at": "2026-11-12T18:16Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified J2033 done, runner PID 19965 dead, NAS raw/archive untouched, ledgers untouched (SUBMITTING / unposted CHARGED 100), and Chief rulings 6831924778 + 6831945212 withdrawing 6831826573 and holding J2529 for Codex reconcile-session-block PR + post-19:13Z Flow reset"
+        },
+        {
+          "at": "2026-11-12T18:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed jobs/reviews/J2720/REVIEW.md (62fcad36ea) and updated J2529 wait condition & remaining_action to match Chief rulings 6831924778 and 6831945212 (check-at 2026-11-12T20:15:00Z)"
         }
       ],
-      "remaining_action": "Write and commit jobs/reviews/J2720/REVIEW.md in an isolated worktree, then park J2720 for Chief to record --recheck J2720 on J2529",
+      "remaining_action": "Park J2720 for elected Chief (codex) to record --recheck J2720 on J2529 and close J2720, then post HOS #180 and OWB #99 reports",
       "kind": "review",
       "recheck_of": "J2529",
       "due": "2026-11-12T18:45:00+00:00",
@@ -237335,11 +237340,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-12T18:16Z",
+        "at": "2026-11-12T18:19Z",
         "by": "gemini",
-        "note": "Verified J2033 done, runner PID 19965 dead, NAS raw/archive untouched, ledgers untouched (SUBMITTING / unposted CHARGED "
+        "note": "Committed jobs/reviews/J2720/REVIEW.md (62fcad36ea) and updated J2529 wait condition & remaining_action to match Chief r"
       },
       "taskKeys": [
         "HOS:013"
