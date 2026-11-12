@@ -238461,10 +238461,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T22:46Z",
+      "eta": "2026-11-13T00:46Z",
       "created_by": "relay",
       "created_at": "2026-11-12T19:19Z",
       "result": "",
@@ -238513,6 +238513,11 @@
           "at": "2026-11-12T22:46Z",
           "by": "codex",
           "what": "rerouted to codex: Explicit J2726 Chief-review assignment in this run; remove stale Gemini worker targeting so elected Codex can record the ruling."
+        },
+        {
+          "at": "2026-11-12T22:46Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py reopen J2622 and jobs.py done J2726 (evidence on OWB PR #861)",
@@ -238528,7 +238533,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T22:46Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2727",
