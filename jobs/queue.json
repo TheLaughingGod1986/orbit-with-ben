@@ -1,5 +1,5 @@
 {
-  "next_id": 2706,
+  "next_id": 2707,
   "jobs": [
     {
       "id": "J0001",
@@ -236096,6 +236096,36 @@
       "remaining_action": "Fix the six React warnings and restore both rules as errors",
       "kind": "assembly",
       "plain": "Fixes six website component warnings and restores the stricter code checks."
+    },
+    {
+      "id": "J2706",
+      "title": "HOS tooling: migrate Prisma separately using a non-live database",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up to J2483. Existing Chief ruling stands: https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6813294950 . OWB PR841 and HOS PR558 already merged; no repeat merge. Work in an isolated HOS worktree, follow its rules, use your own identity. No spend, secrets, live database migrations, production deployment or publishing side effects. \nUpgrade Prisma 6 to fixed Prisma 7 in its own branch/commit, separate from Next. First read the current official migration guide and map changes in this repository: generator/client location and imports, database driver adapter for every PrismaClient, prisma.config.ts, schema datasource configuration, and scripts/with-direct-url.mjs used by build and postinstall. Preserve application schema/data semantics; no destructive migration. Use only a disposable non-live database for migrations and full build. Verify both database URL variables are non-live without disclosing values. Run typecheck, lint, all tests including database tests, check_all.sh, client generation and full build against that test database. Report audit counts and dependency paths before/after, changes and rollback plan, and open a separate PR. Do not run npm audit fix --force. Any deployment needs a later explicit elected-Chief decision. Missing safe test infrastructure requires a concrete follow-up and dated verification if externally blocked.\n",
+      "ref": "6813294950",
+      "film": "",
+      "stage": "",
+      "after": "J2483",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T13:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T13:56Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare and test the separate Prisma migration without touching the live database",
+      "kind": "assembly",
+      "plain": "Updates the History of Science database library and tests it safely on a separate database.",
+      "mini_only": true
     }
   ],
   "focus": [

@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2703 | any | claimed | macbook-2 | 2026-11-12T15:23Z | script · OWB: learn from our data, add two new films to the backlog |  |
 | J2704 | mini | open (after J2483) | – | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2705 | any | open (after J2483) | – | – | assembly · HOS tooling: fix React lint warnings and restore strict rules | 6813294950 |
+| J2706 | mini | open (after J2483) | – | – | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
 
 Recently finished:
 
