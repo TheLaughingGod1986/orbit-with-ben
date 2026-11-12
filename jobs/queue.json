@@ -234235,18 +234235,23 @@
           "at": "2026-11-12T10:54Z",
           "by": "codex",
           "what": "step 2 of 3 done: Fixed dry-run reservation accounting; 46 offline runner tests pass, including 8940 minus 5900 equals 3040 and new-reservation boundaries"
+        },
+        {
+          "at": "2026-11-12T10:56Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR 566 at d408462d: 46 runner tests OK; check_all.sh ALL CHECKS PASS; no generation or ledger changes"
         }
       ],
-      "remaining_action": "Run repository checks and open the focused HOS pull request",
+      "remaining_action": "Implementation and verification complete; HOS pull request 566 is ready for review",
       "for": "codex",
       "kind": "assembly",
       "plain": "Correct the credit estimate shown when Darwin and Wallace picture work resumes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-12T10:54Z",
+        "at": "2026-11-12T10:56Z",
         "by": "codex",
-        "note": "Fixed dry-run reservation accounting; 46 offline runner tests pass, including 8940 minus 5900 equals 3040 and new-reserv"
+        "note": "PR 566 at d408462d: 46 runner tests OK; check_all.sh ALL CHECKS PASS; no generation or ledger changes"
       },
       "taskKeys": [
         "HOS:013"
