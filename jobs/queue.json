@@ -224998,10 +224998,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T04:04Z",
+      "eta": "2026-11-12T06:04Z",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
       "result": "",
@@ -225055,6 +225055,11 @@
           "at": "2026-11-12T04:01Z",
           "by": "codex",
           "what": "brief reconciled to approved v03, archive overrides, restored WAV, reuse verification and overlay cue schedule"
+        },
+        {
+          "at": "2026-11-12T04:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build the 26 free pictures and internal timing rough for Anaesthesia, with corrected sources, overlay cues and dependency slates",
@@ -225063,7 +225068,15 @@
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent",
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T04:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2564",
