@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2649 | cloud | blocked | claude | – | for claude · studio · Relay: a condition check for a job pinned to the Mini goes to the Mini, not the MacBook |  |
 | J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
 | J2652 | cloud | blocked | claude | – | 013 edit · for claude · script · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
-| J2655 | mini | open (after J2653) | – | – | 011 edit · for codex · assembly · HOS 011 Anaesthesia: picture plan v03, the cuts re-timed to word gaps (mechanical, from the word timings) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 |
+| J2655 | mini | claimed | codex | 2026-11-12T01:51Z | 011 edit · for codex · assembly · HOS 011 Anaesthesia: picture plan v03, the cuts re-timed to word gaps (mechanical, from the word timings) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2657 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-blocked |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
