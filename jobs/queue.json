@@ -222601,9 +222601,14 @@
           "at": "2026-11-12T09:18Z",
           "by": "gemini",
           "what": "step 4 of 14 done: Batch 04 (20/66 Quality rows, P2:05..P2:08b) complete: exit 0, 500 credits posted (8940->8440, live verified), 0 pending charges, all 5 clips + stills + 0.5s sheets sha256-verified on NAS (a1cfcf3bb2)"
+        },
+        {
+          "at": "2026-11-12T09:21Z",
+          "by": "gemini",
+          "what": "step 4 of 14 done: Batch 04 (20/66) complete & 5 full-clip 0.5s sheets posted on HOS desk #180 (6819716868); Batch 05 (P2:10a..P3:02b) launched detached in tmux hos013-pass1 (PID 17613, --floor 3000)"
         }
       ],
-      "remaining_action": "Launch Batch 05 (P2:10a..P3:02b) detached under --floor 3000 --other-reservations 0 and post Batch 04 0.5s sheets on HOS desk #180",
+      "remaining_action": "Read Batch 05 completion (.done + receipt), verify post-batch balance (8440->7940) and 0.5s sheets, then launch Batch 06 under --floor 3000 --other-reservations 0",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222617,9 +222622,9 @@
       "progress": {
         "step": 4,
         "of": 14,
-        "at": "2026-11-12T09:18Z",
+        "at": "2026-11-12T09:21Z",
         "by": "gemini",
-        "note": "Batch 04 (20/66 Quality rows, P2:05..P2:08b) complete: exit 0, 500 credits posted (8940->8440, live verified), 0 pending"
+        "note": "Batch 04 (20/66) complete & 5 full-clip 0.5s sheets posted on HOS desk #180 (6819716868); Batch 05 (P2:10a..P3:02b) laun"
       }
     },
     {
