@@ -1,5 +1,5 @@
 {
-  "next_id": 2715,
+  "next_id": 2716,
   "jobs": [
     {
       "id": "J0001",
@@ -236903,6 +236903,37 @@
       "kind": "studio",
       "plain": "Move the Studio board off Vercel onto Cloudflare's free plan, so other projects can't take it down",
       "urgent": 9
+    },
+    {
+      "id": "J2715",
+      "title": "OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (12 Nov 16:54Z): \"Swap\".** Two scheduled Shorts on Orbit with Ben trade publish days. It must be done before Fri 13 Nov 11:30 UTC.\n\n| Short | Video | Now | After |\n|---|---|---|---|\n| How Did a Helicopter Fly 72 Times on Mars? | `RT-ec4_GcOk` | Fri 13 Nov 11:30 UTC | Sat 14 Nov 11:30 UTC |\n| Why Does Pluto's Giant Ice Heart Have Zero Craters? | `z5V6gIXXYs8` | Sat 14 Nov 11:30 UTC | Fri 13 Nov 11:30 UTC |\n\nThe ids and times are from the 12 Nov 06:40 UTC snapshot. Read both videos live first. If either is not private with that publish time, or a different upload now holds the slot, stop and report: do not guess.\n\n**Why.** The last three Shorts (10, 11 and 12 Nov) got 86, 77 and 16 views, where 11 of the 14 before them got a first-day batch of 460 to 1,280 from the Shorts feed. The 10 Nov one opened on a padded frame (already fixed for the rest). The 11 and 12 Nov ones pass that check; both are Mars Shorts from the same film, after the 9 Nov Mars Short, and the feed has barely shown them (12 Nov: about 13 people in five hours, 8 stayed). The guess is repetition. Putting a different subject out on Friday tests it: a normal batch for Pluto points at the Mars run; almost nothing points at the whole channel.\n\n**Do.**\n1. Change the publish time only: `status.publishAt`, with the status part alone, privacy left private. Send no snippet. A listing update that sends a snippet without the tags deletes them (J2711).\n2. Read both back and put the readback in the report: publish time, privacy, title, tags still there.\n3. Buffer: each video's social posts move to its new day, at the times the mirror gives a Short on that day. If the mirror already moves them when a date changes, say so and check it did.\n4. The studio's own schedule records and the board's Schedule tab show the new days.\n5. If either Short is one arm of a planned test (opening, length), say so in the report. The swap still goes ahead.\n\n**Guards.** £0. Nothing deleted, nothing made public early, no other field of either listing touched. No other Short's date changes.\n\n**After.** Friday's first-day check on the Pluto Short answers one question in its first line: did the Shorts feed give it a batch (460 or more on day one has been normal) or under 100 like the last three? Give the feed views and, if Studio shows it, stayed against swiped away.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-12T16:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T16:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap the publish times of RT-ec4_GcOk and z5V6gIXXYs8 (status only), move their Buffer posts, read both back",
+      "due": "2026-11-13T09:00:00Z",
+      "kind": "listing",
+      "plain": "Swap Friday's and Saturday's Shorts, so a Pluto Short goes out next instead of a fourth Mars one",
+      "urgent": 10
     }
   ],
   "focus": [

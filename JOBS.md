@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2715.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -83,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2712 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2713 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2707 |  |
 | J2714 | mini | open | – | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
+| J2715 | mini | open | – | – | listing · OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC |  |
 
 Recently finished:
 
