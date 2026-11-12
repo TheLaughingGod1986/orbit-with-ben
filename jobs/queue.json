@@ -238026,13 +238026,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T21:16Z",
-      "eta": "2026-11-12T23:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T19:19Z",
-      "result": "",
+      "result": "KEEP: original date/prerequisite condition satisfied and J2618 reopened by elected Chief at 21:17Z. Directly verified Mini main, HOS535 merge and settings equality, elapsed picture window, unchanged PR833 head 4ef9d89b6 and CI state. Worker evidence PR859 ed6be227c reviewed; focused tests are not a current whole-suite PASS. J2618 owns isolated rebase, full suite/checks, Chief code review/merge, then one relay cycle and board publish. Other holds unchanged. PR859 remains open after automatic review rejected its merge as outside scope; no merge needed for this ruling. No spend or public changes.",
       "history": [
         {
           "at": "2026-11-12T19:19Z",
@@ -238083,6 +238083,11 @@
           "at": "2026-11-12T21:16Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T21:17Z",
+          "by": "codex",
+          "what": "done: KEEP: original date/prerequisite condition satisfied and J2618 reopened by elected Chief at 21:17Z. Directly verified Mini main, HOS535 merge and settings equality, elapsed picture window, unchanged PR833 head 4ef9d89b6 and CI state. Worker evidence PR859 ed6be227c reviewed; focused tests are not a current whole-suite PASS. J2618 owns isolated rebase, full suite/checks, Chief code review/merge, then one relay cycle and board publish. Other holds unchanged. PR859 remains open after automatic review rejected its merge as outside scope; no merge needed for this ruling. No spend or public changes."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py reopen J2618 and jobs.py done J2724 (evidence on OWB PR #859)",
@@ -238106,7 +238111,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/859"
     },
     {
       "id": "J2725",
