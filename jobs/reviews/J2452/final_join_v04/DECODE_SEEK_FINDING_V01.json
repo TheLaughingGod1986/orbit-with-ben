@@ -1,0 +1,12 @@
+{
+  "status": "SEEK_ENDPOINT_MISMATCH_NOT_MEDIA_DECODE_ERROR",
+  "old_block_coverage_status": "PARTIAL_NOT_FULL_PASS",
+  "old_decoded_frames": 194400,
+  "last_block_expected": 670,
+  "last_block_default_seek_observed": 669,
+  "last_block_absolute_timestamp_seek_observed": 670,
+  "source_first_frame_pts_s": 0.021,
+  "ending_frame_pts_s": 6502.32,
+  "error_log_bytes": 0,
+  "remediation": "Sequential full-file decode with no seek and fps_mode passthrough; do not promote prior block coverage to full pass"
+}

@@ -27,7 +27,7 @@ def main():
     segments = recipe['segments'][:]
     for chapter in timeline['chapters']:
         reports = [json.loads(f.read_text()) for f in Path(chapter['path']).parent.glob('*.json')]
-        report = next(r for r in reports if r.get('brightest_two_second_windows'))
+        report = next(r for r in reports if isinstance(r, dict) and r.get('brightest_two_second_windows'))
         window = report['brightest_two_second_windows'][0]
         segments.append(dict(label=f"Brightest window: {chapter['film']}",
                              start_s=chapter['start_s'] + window['start_s'], duration_s=2))

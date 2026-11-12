@@ -26,14 +26,10 @@ def main():
     folder = args.scratch / 'final_join_v01'
     picture = folder / 'sleep_picture_candidate_v04.mp4'
     audio = folder / 'sleep_audio_encoded_v05.m4a'
-    coverage = json.loads((folder / 'FINAL_DECODE_BLOCKS_V04.json').read_text())
+    coverage = json.loads((folder / 'FINAL_SEQUENTIAL_DECODE_V04.json').read_text())
     assert coverage['status'] == 'PASS'
-    cursor = 0
-    for block in sorted(coverage['blocks'], key=lambda b: b['first_frame']):
-        assert block['first_frame'] == cursor and block['exit_code'] == 0
-        assert block['frames'] == min(1800, 195070 - cursor)
-        cursor += block['frames']
-    assert cursor == 195070
+    assert coverage['decoded_frames'] == 195070 and coverage['exit_code'] == 0
+    assert coverage['method'] == 'Sequential full-file decode; no input seek; fps_mode passthrough'
     assert sha(picture) == coverage['picture_sha256']
     assert sha(audio) == '2ed0fc501d49a91f2987632b3931124e0c15f017883959396c8fe5e2dbd6bb01'
     destination = args.destination
