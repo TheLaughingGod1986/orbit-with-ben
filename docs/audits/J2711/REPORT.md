@@ -40,3 +40,18 @@ A link-free test would need a separately scoped comparison; these observations a
 ## Validation and remaining work
 
 Six relevant Vitest files: 99 tests pass. TypeScript check passes. Studio core hash check and email/private-network ratchets pass. Code goes through pull requests. Historical package mapping and the exact original Mars trigger remain unresolved; no unsupported causal claim is made.
+
+## Follow-up run, 20:29 UTC
+
+A fresh authenticated read of the same 117 Orbit and 42 HOS IDs finds **zero empty tag lists on either channel**. The six earlier repairs remain in place; this run made no YouTube or Buffer changes.
+
+`HISTORICAL_COMPARISON.json` now compares every inventoried ID with all safely identified original packages and release indexes: **51 Orbit and 22 HOS baselines** (73 total). This adds seven package baselines and six release records to the earlier 60 package matches. Exact missing/extra tag sets are listed per ID. All those baselines' tags remain present except the two HOS longs described below. Extra live tags are preserved.
+
+- HOS Germs `_C92tIJCk8A` and Periodic Table `AL_-qlWko_g` have shorter live sets than their old packages. The local `07_Content-Ops/tmp_ben_1447_retag.json` and its result identify a later Ben-ordered retag. Their current live sets contain that later requested set, with an additional subject tag on Germs. Reverting to the old package would undo that deliberate change. Preserve the live tags.
+- `HISTORICAL_RECORDS.json` separately records older listing recommendations and API snapshots. They are evidence of changes, not proof that a proposed listing was applied. They are not used to overwrite live tags.
+- Read-only inspection also checked package/upload/release JSON under the two channels' NAS archive project roots. Eleven candidate records were found; no additional unambiguous tag baseline was established beyond the current checkout records. The NAS was not modified.
+- **86 original tag baselines remain unavailable or unproven**: 66 Orbit and 20 HOS. These are explicit per-ID limitations, not missing live tags. Further recovery would require a separate bounded search of deleted historical git paths or older upload artifacts; do not repeat the six repairs or restore old proposed listings.
+
+The snippet-writing inspection also covered HOS's retag, language-repair and one-off description/title scripts. The inspected non-tag edits send existing tags back; explicit retag calls send their requested tags. No inspected writer proves the Mars Short's original empty read. Its upload result records six package tags and successful creation of all three Buffer posts, but does not retain the live snippet used to build those captions. The exact trigger therefore remains unknown; accepting an empty tag list was the demonstrated prevention fault and is already fixed.
+
+**Stopping point:** operational prevention is merged and the live empty-tag fault is resolved. J2711 remains incomplete only for the requested exhaustive historical package comparison and exact original Mars-trigger attribution. Further artifact recovery is longer than a short unattended handover; release with these exact gaps rather than assert completion. No Ben action is needed.
