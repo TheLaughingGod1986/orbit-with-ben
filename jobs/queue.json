@@ -236165,18 +236165,23 @@
           "at": "2026-11-12T14:28Z",
           "by": "codex",
           "what": "step 2 of 3 done: Full build and fresh PostgreSQL migration PASS; typecheck/lint PASS; 19 test files, 199 tests PASS; check_all ALL CHECKS PASS; six local auth/home checks PASS. No HOS Preview env vars configured."
+        },
+        {
+          "at": "2026-11-12T14:30Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Evidence PR HOS #569, head 7420a24b. Local build/migration and all checks pass; J2708 owns missing hosted Preview database/configuration. Production held; no Preview deployed."
         }
       ],
-      "remaining_action": "Record validation evidence and queue the missing isolated hosted database setup",
+      "remaining_action": "Complete hosted Preview validation after the isolated database setup",
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true,
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-12T14:28Z",
+        "at": "2026-11-12T14:30Z",
         "by": "codex",
-        "note": "Full build and fresh PostgreSQL migration PASS; typecheck/lint PASS; 19 test files, 199 tests PASS; check_all ALL CHECKS"
+        "note": "Evidence PR HOS #569, head 7420a24b. Local build/migration and all checks pass; J2708 owns missing hosted Preview databa"
       }
     },
     {
