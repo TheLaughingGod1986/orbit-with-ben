@@ -312,8 +312,8 @@
         "wt_b": "not shown",
         "ran_from": "2026-10-26 00:12",
         "ran_to": "2026-11-09 01:10",
-        "read": "2026-11-10",
-        "note": "J2457 / J1198 read-back (10 Nov 2026 02:46Z, jobs/reviews/J2457/REVIEW.md, OWB PR #701): Test finished. Ran from 26 October 2026 at 00:12 to 9 November 2026 at 01:10 (229 views during test period). Studio modal: 'Not enough impressions to declare a winner'; watch-time share not shown (em-dash) on both Option A (MELTS LEAD) and Option B (EARTH'S TWIN). Option A (MELTS LEAD) is 'Now visible to all viewers'. Video Reach (25 Oct–8 Nov): ~1.3k (1,291) impressions, 2.0% CTR, 230 views, 26 engaged views, 1:40 AVD, 0.73h watch time."
+        "read": "2026-11-12T00:44:22.526445+00:00",
+        "note": "J2457 / J1198 read-back (10 Nov 2026 02:46Z, jobs/reviews/J2457/REVIEW.md, OWB PR #701): Test finished. Ran from 26 October 2026 at 00:12 to 9 November 2026 at 01:10 (229 views during test period). Studio modal: 'Not enough impressions to declare a winner'; watch-time share not shown (em-dash) on both Option A (MELTS LEAD) and Option B (EARTH'S TWIN). Option A (MELTS LEAD) is 'Now visible to all viewers'. Video Reach (25 Oct–8 Nov): ~1.3k (1,291) impressions, 2.0% CTR, 230 views, 26 engaged views, 1:40 AVD, 0.73h watch time. J1198 direct Studio reread 12 Nov 2026: same finished dates, no winner, both shares unavailable; screenshot /Users/benjaminoats/_desk/j1198/finished_report.png preserved before new test."
       },
       "note": "Armed 26 Oct 2026 (J0962, Chief PASS on J0908). Thumbnail only. A house live MELTS LEAD. B gemini EARTH'S TWIN, sha256 505c1cc49f221959. Ended 9 Nov 2026 01:10 as a draw ('Not enough impressions to declare a winner'; watch-time share not shown on either arm; A MELTS LEAD visible to all viewers; J2457 / J1198). Per Chief 29 Oct / 10 Nov draw branch on J1198, title-only test is held and new thumbnail-only concept B ('465°C', Venus surface with lander glowing red) is queued as J2484."
     },
@@ -786,6 +786,26 @@
       "film": "007",
       "readBack": "2026-11-10",
       "note": "Armed 10 Nov 2026 (J2536; Ben 10 Nov 'Ok on both', third exception in AGENTS.md Never, Studio): replaces the J0959 title-and-thumbnail test on History of Science 007 ETynHpIYLeY, which had not started (Studio: Ineligible) and had no ledger row. 'Edit title' confirmed, Studio showed 'Experiment deleted'; title set; new Title and thumbnail Test & Compare set and saved. Slot 1: How Was the First Vaccine Made? (And Why It's Named After a Cow) + the video's own thumbnail (THE MILKMAID'S SECRET, thumbnail A, kept by Studio, not uploaded again); Slot 2: Why Vaccines Are Named After a Cow + hos_007_thumb_B_immune_v01.jpg (uploaded from the Mini). The J0959 pairing was A title + A thumbnail, 'How Was the First Vaccine Made?' + B thumbnail; thumbnail B now sits with the old side A title, as the brief says. Private, scheduled 2026-11-12T18:00:00Z. Studio state at read-back: Ineligible until public. Makers of the two thumbnails are not recorded in this repo, so both are 'unknown'."
+    },
+    {
+      "id": "T032",
+      "status": "running",
+      "started": "2026-11-12",
+      "channel": "owb",
+      "video": "VBaYRPp85Sw",
+      "title": "What Happened to Venus?",
+      "job": "J1198",
+      "a": {
+        "maker": "house",
+        "file": "live MELTS LEAD"
+      },
+      "b": {
+        "maker": "gemini",
+        "file": "02_Video-Projects/023_What-Happened-To-Venus/08_Thumbnail/tc_B_465c/venus_tc_B_465c_VBaYRPp85Sw.jpg",
+        "sha256": "c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b"
+      },
+      "result": null,
+      "note": "J1198: thumbnail-only A live MELTS LEAD vs reviewed B 465°C (J2487/J2488). Studio saved, reloaded and visually verified Test running, estimated 13 days 23 hours remaining on 12 Nov 2026. Title What Happened to Venus? and Public visibility unchanged. Prior finished T011 report preserved before Continue under Ben approval recorded 11 Nov 23:59Z in job. T030 reserved for Saturn J0275 PR #837."
     }
   ]
 }
