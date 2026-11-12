@@ -46,7 +46,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2449 | mini | blocked | codex | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
 | J2455 | mini | open (after J2567) | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2456 | cloud | blocked | claude | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
 | J2477 | mini | open | – | – | 032 edit · review · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | blocked | codex | – | for codex · assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2483 | mini | blocked | claudecode | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
@@ -75,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2670 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
 | J2674 | mini | open (after J2657) | – | – | 019 thumbs · review · 019 Andromeda: verify package A and complete panel before J2449 two-arm test | J2657 |
 | J2675 | mini | claimed | gemini | 2026-11-12T09:47Z | 013 picture · for gemini · review · `gemini-agy` · HOS 013: Gemini preflight on merged runner before J2529 restart | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6817606389 |
+| J2676 | any | open | – | – | for codex · thumb · Rebuild three OWB thumbnail Bs per Chief decision J2456 (Moon, Neutron star, Alien worlds) |  |
 
 Recently finished:
 
