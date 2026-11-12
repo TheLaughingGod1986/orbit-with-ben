@@ -236155,17 +236155,23 @@
           "at": "2026-11-12T14:24Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-12T14:26Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Baseline confirmed: login 200, home 500; Vercel runtime log proves missing DATABASE_URL. Fresh loopback PostgreSQL created, both URLs verified isolated."
         }
       ],
-      "remaining_action": "Check safe database and preview configuration for the History of Science app",
+      "remaining_action": "Build and smoke-test the app with a disposable database; establish safe hosted preview prerequisites",
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T14:24Z",
-        "by": "codex"
+        "at": "2026-11-12T14:26Z",
+        "by": "codex",
+        "note": "Baseline confirmed: login 200, home 500; Vercel runtime log proves missing DATABASE_URL. Fresh loopback PostgreSQL creat"
       }
     },
     {
