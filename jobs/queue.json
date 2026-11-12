@@ -223612,7 +223612,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).",
+      "result": "Waiting for: The window has closed and no picture run is going (21:55Z), but this waits its turn behind the relay rewrite (PR 868, blocked on J2738) and the History of Science settings change (PR 548), so two pull requests do not run at once.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -223663,17 +223663,21 @@
           "at": "2026-11-12T19:19Z",
           "by": "relay",
           "what": "condition verification queued: J2723"
+        },
+        {
+          "at": "2026-11-12T21:56Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T00:45:00Z"
         }
       ],
-      "remaining_action": "Orbit: the AI spend ledger's notes, in a quiet window after Thu 12 Nov 19:13 London. Then History of Science's files and the history stages",
+      "remaining_action": "After 868 and 548 merge, take the addresses out of the spend ledger",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
-        "type": "date",
-        "condition": "The next step writes to the AI spend ledger, which the picture runs also write to. It runs in a quiet window after the picture window closes, Thu 12 Nov 19:13 London. Nothing is owed before then: stage 1 for Orbit's scripts, film folders, records and archive is on main (#801, #820).",
-        "check_at": "2026-11-12T20:19:17+00:00",
-        "recheck_task": "J2723"
+        "type": "dependency",
+        "condition": "The window has closed and no picture run is going (21:55Z), but this waits its turn behind the relay rewrite (PR 868, blocked on J2738) and the History of Science settings change (PR 548), so two pull requests do not run at once.",
+        "check_at": "2026-11-13T00:45:00Z"
       }
     },
     {
@@ -230270,7 +230274,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: Thu 12 Nov 19:13 London, when the picture window closes: 833 merges then (studio half), and the History of Science half goes to Grok as its own pull request, announced on the desk, not during a picture run.",
+      "result": "Waiting for: The 19:13 London picture window has closed (checked 12 Nov 21:55Z; the film 013 picture run is stopped, not running). Still unmet: the studio half merges only after PR 868 is fixed (J2738: the split dry run can overwrite a channel file through a symlink; Codex ruling on J2618) and reviewed again. The History of Science half goes to Grok after that.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -230321,9 +230325,14 @@
           "at": "2026-11-12T19:19Z",
           "by": "relay",
           "what": "condition verification queued: J2726"
+        },
+        {
+          "at": "2026-11-12T21:56Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T00:45:00Z"
         }
       ],
-      "remaining_action": "After the window: merge 833; push the History of Science half as a pull request for Grok; then refresh channels/hos/channel.json",
+      "remaining_action": "Check J2738 and J2618, then merge the studio half",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -230335,10 +230344,9 @@
         "note": "studio half pushed onto orbit-with-ben 833 as four more commits (head 9455ca294), so it is not only in one session's scr"
       },
       "hold": {
-        "type": "date",
-        "condition": "Thu 12 Nov 19:13 London, when the picture window closes: 833 merges then (studio half), and the History of Science half goes to Grok as its own pull request, announced on the desk, not during a picture run.",
-        "check_at": "2026-11-12T20:19:17+00:00",
-        "recheck_task": "J2726"
+        "type": "dependency",
+        "condition": "The 19:13 London picture window has closed (checked 12 Nov 21:55Z; the film 013 picture run is stopped, not running). Still unmet: the studio half merges only after PR 868 is fixed (J2738: the split dry run can overwrite a channel file through a symlink; Codex ruling on J2618) and reviewed again. The History of Science half goes to Grok after that.",
+        "check_at": "2026-11-13T00:45:00Z"
       }
     },
     {
@@ -232511,7 +232519,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T21:18Z",
-      "result": "Waiting for: Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it",
+      "result": "Waiting for: The window has closed. Still unmet: it goes on top of the relay rewrite (PR 868), which is not merged yet: blocked on J2738.",
       "history": [
         {
           "at": "2026-11-11T21:18Z",
@@ -232537,17 +232545,21 @@
           "at": "2026-11-12T19:40Z",
           "by": "relay",
           "what": "condition verification queued: J2728"
+        },
+        {
+          "at": "2026-11-12T21:56Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T00:45:00Z"
         }
       ],
-      "remaining_action": "After 833 merges: condition checks take `needs` from the job they check; tests; pull request",
+      "remaining_action": "After the relay rewrite merges, give a condition check the same needs as its job",
       "for": "claude",
       "kind": "studio",
       "plain": "Stop sending Studio checks to the MacBook, which cannot read Studio",
       "hold": {
-        "type": "date",
-        "condition": "Thu 12 Nov 19:13 London, when the picture window closes and 833 (which rewrites much of the relay) merges. This change goes on top of it",
-        "check_at": "2026-11-12T20:40:59+00:00",
-        "recheck_task": "J2728"
+        "type": "dependency",
+        "condition": "The window has closed. Still unmet: it goes on top of the relay rewrite (PR 868), which is not merged yet: blocked on J2738.",
+        "check_at": "2026-11-13T00:45:00Z"
       }
     },
     {
