@@ -1,5 +1,5 @@
 {
-  "next_id": 2682,
+  "next_id": 2683,
   "jobs": [
     {
       "id": "J0001",
@@ -233906,6 +233906,36 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J2682",
+      "title": "HOS 013: fix dry-run double counting of active reservation",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Implement Grok HOS desk rulings 6818142702 and 6818150970: correct build_dry_run_report() in the HOS 013 pass-1 runner so an active HOS013_PASS1 reservation is not counted twice. Subtract only the unreserved cap when computing projected headroom; preserve live submit guards, floor and ledger semantics. Add a regression test for 15/66 rows complete: balance 8940, liability 5900 including remaining reservation 5100, headroom 3040 against floor 3000. Preserve new-reservation checks too. No generation, arming, ledger edits, credit or money spend. Isolated HOS PR with focused tests. This reporting fix does not gate J2529 resume.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6818150970",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T08:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T08:06Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Fix the dry-run estimate and test an existing reservation",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Correct the credit estimate shown when Darwin and Wallace picture work resumes"
     }
   ],
   "focus": [
