@@ -213675,10 +213675,10 @@
       "stage": "",
       "after": "J2548",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-12T00:11Z",
-      "eta": "2026-11-12T04:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
       "result": "",
@@ -214887,6 +214887,11 @@
           "at": "2026-11-12T00:26Z",
           "by": "macbook",
           "what": "step 13 of 15 done"
+        },
+        {
+          "at": "2026-11-12T00:27Z",
+          "by": "macbook",
+          "what": "released: Clean checkpoint PR #789 commit 9a513a6d4: Saturn exit repaired; all 12 join neighborhoods PASS; saved AAC PASS -20.1 LUFS/-6.4 dBTP, no silence over 3s; kept-transcript CTA audit PASS. Final picture 195070 frames, 108:22.333; first 41400 frames (23 min) decoded, remaining blocks resumable. Continue RESUME_2026-11-12_FINAL_CHECKS.md on macbook/J2452. Final mux/reel/NAS hashes/watch card remain; not UAT. All launched processes exited; checkout main."
         }
       ],
       "remaining_action": "Finish remaining final-picture decode blocks, then mux master, reel, NAS hashes and Ben watch card",
