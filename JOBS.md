@@ -81,6 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
 | J2700 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2701 | mini | claimed | codex | 2026-11-12T14:29Z | 013 thumbs · chief · Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP) | 26e28c5142 |
+| J2702 | mini | open (after J2701) | – | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 
 Recently finished:
 
