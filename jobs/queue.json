@@ -212645,13 +212645,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T02:22Z",
-      "eta": "2026-11-12T04:22Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
-      "result": "",
+      "result": "Assembly complete: master v02 and PHONE, six verified NAS/archive/iCloud hashes; five automated gates exited 0. PR 840 commit 65a5ea0a17. Exact v02 metadata in full_master_v02_pack. Chief must retarget J2404 to v02 for watch/listen and seven warning frames; no editorial approval.",
       "history": [
         {
           "at": "2026-11-09T10:36Z",
@@ -212737,6 +212737,11 @@
           "at": "2026-11-12T02:25Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified all six delivery hashes and five gate exit codes; exact build inputs preserved in v02 pack; delivery evidence committed as 65a5ea0a17 on PR 840."
+        },
+        {
+          "at": "2026-11-12T02:25Z",
+          "by": "codex",
+          "what": "done: Assembly complete: master v02 and PHONE, six verified NAS/archive/iCloud hashes; five automated gates exited 0. PR 840 commit 65a5ea0a17. Exact v02 metadata in full_master_v02_pack. Chief must retarget J2404 to v02 for watch/listen and seven warning frames; no editorial approval."
         }
       ],
       "remaining_action": "Chief to review the delivered Uranus cut and merge the edit",
@@ -212751,7 +212756,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/840"
     },
     {
       "id": "J2438",
