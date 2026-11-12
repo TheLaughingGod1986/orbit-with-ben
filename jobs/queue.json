@@ -232252,18 +232252,25 @@
           "at": "2026-11-12T09:07Z",
           "by": "relay",
           "what": "condition verification queued: J2694"
+        },
+        {
+          "at": "2026-11-12T11:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T12:50:00Z"
         }
       ],
-      "remaining_action": "Write PICTURE_PLAN v03 per the Chief's points; pull request on history-of-science",
+      "remaining_action": "At 12:50 UTC verify Claude availability, then revise the Darwin and Wallace picture timing plan under the recorded Chief rulings and open its pull request",
       "due": "2026-11-16T18:00:00Z",
       "for": "claude",
       "kind": "script",
       "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
       "hold": {
         "type": "date",
-        "condition": "Thu 12 Nov, once the fresh Claude session has taken over the hourly run: this is two hours of careful work and belongs there",
-        "check_at": "2026-11-12T10:07:38+00:00",
-        "recheck_task": "J2694"
+        "condition": "Chief ruling on J2694: fresh-session handover verified in owner comment 6809773408; Gemini evidence 80cb06274f accepted and locked WAV hash independently matched. Retain named Claude cloud assignment until the recorded 12:50Z usage window (heartbeat d8889e6009). At retry verify a fresh available Claude session before reopening; the clock alone does not prove availability. Preserve original timing and Batch 04 rulings 6808560760 and 6819976359 and all gates.",
+        "check_at": "2026-11-12T12:50:00Z",
+        "last_recheck": "J2694",
+        "checked_at": "2026-11-12T11:28:19+00:00",
+        "checked_by": "codex"
       }
     },
     {
