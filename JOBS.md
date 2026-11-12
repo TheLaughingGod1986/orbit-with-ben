@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2691 | mini | open (after J2690) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657 | J2674 |
 | J2692 | mini | open (after J2691) | – | – | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
 | J2694 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2652 |  |
-| J2695 | mini | open | – | – | review · Review rebuilt Moon, neutron star and alien worlds thumbnail Bs (J2676) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/848 |
+| J2695 | mini | open | – | – | for gemini · review · `gemini-argon` · Review rebuilt Moon, neutron star and alien worlds thumbnail Bs (J2676) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/848 |
 | J2696 | mini | open | – | – | chief · Chief: resolve 003 thumbs orphan-review |  |
 | J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
 | J2698 | mini | open | – | – | chief · Chief: resolve 013 thumbs orphan-review |  |
