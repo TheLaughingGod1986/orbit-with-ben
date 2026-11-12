@@ -238469,13 +238469,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T22:46Z",
-      "eta": "2026-11-13T00:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T19:19Z",
-      "result": "",
+      "result": "Chief ruling HOLD recorded on J2622 with wait --recheck J2726; retry preserved at 2026-11-13T00:45:00Z. PR861 415fe8a19 is historical evidence, superseded by the safety rejection and newer parent dependency. Direct GitHub check: repair PR869 2312a8af2 remains open (Rules success, core skipped), PR868 16b8cc514 open, HOS548 55b968787 held draft. Follow-up already owned by J2738 then J2618: review/merge corrected studio code, observe relay cycle and board publish; only then resume J2622 migration preparation, regenerate HOS switch from current main with open-PR audit, run round trip and board comparison, recheck no picture run, obtain exact-head Chief review, and refresh cached settings after merge. No code merge or migration approved here; no spend or public changes. Verification complete; original work remains held.",
       "history": [
         {
           "at": "2026-11-12T19:19Z",
@@ -238526,6 +238526,11 @@
           "at": "2026-11-12T22:46Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T22:47Z",
+          "by": "codex",
+          "what": "done: Chief ruling HOLD recorded on J2622 with wait --recheck J2726; retry preserved at 2026-11-13T00:45:00Z. PR861 415fe8a19 is historical evidence, superseded by the safety rejection and newer parent dependency. Direct GitHub check: repair PR869 2312a8af2 remains open (Rules success, core skipped), PR868 16b8cc514 open, HOS548 55b968787 held draft. Follow-up already owned by J2738 then J2618: review/merge corrected studio code, observe relay cycle and board publish; only then resume J2622 migration preparation, regenerate HOS switch from current main with open-PR audit, run round trip and board comparison, recheck no picture run, obtain exact-head Chief review, and refresh cached settings after merge. No code merge or migration approved here; no spend or public changes. Verification complete; original work remains held."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py reopen J2622 and jobs.py done J2726 (evidence on OWB PR #861)",
