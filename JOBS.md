@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2650 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
 | J2652 | cloud | blocked | claude | – | 013 edit · for claude · script · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
-| J2657 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-blocked |  |
+| J2657 | mini | claimed | codex | 2026-11-12T09:22Z | chief · Chief: resolve 019 thumbs orphan-blocked |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
 | J2661 | any | open | – | – | review · Verify condition for J2551 |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
