@@ -222863,9 +222863,14 @@
           "at": "2026-11-12T17:48Z",
           "by": "gemini",
           "what": "step 11 of 14 done: Heartbeat: Batch 12 PID 19965 running in wait_and_download_passive on row 56 (P5:08a_wallace_opens_origin charged at 17:41:27Z); 11/14 batches verified (55/66 rows)"
+        },
+        {
+          "at": "2026-11-12T17:59Z",
+          "by": "gemini",
+          "what": "step 11 of 14 done: Batch 12 exited 1: Flow failed row 56 P5:08a_wallace_opens_origin with unusual-activity banner (live balance verified unchanged at 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED untouched)"
         }
       ],
-      "remaining_action": "Waiting on detached Batch 12 runner (PID 19965, rows 56-60), then verify receipt/sheets and launch Batch 13 before 18:45Z",
+      "remaining_action": "Record Batch 11 Chief ruling (KEEP 51,52,53,55; RETAKE 54) and Batch 12 stop evidence (4,990->4,990, 0 deducted), post HOS #180 report, and park for Chief",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222879,9 +222884,9 @@
       "progress": {
         "step": 11,
         "of": 14,
-        "at": "2026-11-12T17:48Z",
+        "at": "2026-11-12T17:59Z",
         "by": "gemini",
-        "note": "Heartbeat: Batch 12 PID 19965 running in wait_and_download_passive on row 56 (P5:08a_wallace_opens_origin charged at 17:"
+        "note": "Batch 12 exited 1: Flow failed row 56 P5:08a_wallace_opens_origin with unusual-activity banner (live balance verified un"
       }
     },
     {
