@@ -77,7 +77,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 | J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
 | J2714 | mini | blocked | codex | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
-| J2716 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
 | J2717 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0875 |  |
 | J2718 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0960 |  |
 | J2719 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
@@ -93,9 +92,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2729 | mini | open | – | – | 019 thumbs · thumb · 019 Andromeda: rebuild recognisable whole-galaxy challenger and hand off packaging review | J2692 |
 | J2730 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2731 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
 
 Recently finished:
 
+- J2716 done: First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) (Existing Chief ruling 6831935790 recorded: check accepted, no changes to the Short; evidence PR856 merged. J2732 owns next-morning snapshot read, date hold until 2026-11-13T06:45:00Z, after J2716. Preserve full-week length test. No spend or Studio mutations.)
 - J2715 done: OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC (done)
 - J2713 done: Verify condition for J2707 (J2710 done with the evidence; J2707 reopened for the topic review.)
 - J2712 done: Verify condition for J2532 (Checked 12 Nov 17:55Z: live board version 2eff5ff506654388, main 2551c4887f478f7e, so not redeployed. J2532 stays held to 13 Nov 07:40Z; it is in the morning note for Ben.)
@@ -105,4 +106,3 @@ Recently finished:
 - J2705 done: HOS tooling: fix React lint warnings and restore strict rules (HOS PR #568 open: https://github.com/TheLaughingGod1986/history-of-science/pull/568 . Six lint warnings fixed; both React rules restored to errors, lint 0/0. Typecheck passed; 199 tests passed on disposable local PostgreSQL (stopped); check_all ALL CHECKS PASS; diff check passed. Six regression tests added. No deploy or live DB changes. HOS original and isolated worktree, and OWB checkout, left on main. Chief review/merge remains.)
 - J2703 done: OWB: learn from our data, add two new films to the backlog (PR #849 (branch macbook/J2703, not merged; spend nothing). Two topics: OWB:064 Where Do Shooting Stars Come From? (data: Shooting Stars Short T9fVlG3CCzU 1,284 views, 256.8/day, 66.3% viewed, 49.8% stayed; rule 31) and OWB:065 How Will the Space Station Fall to Earth? (data: 16 Sunrises Short VfDm3E2bUgU 1,090 views, 90.8/day, 66.7% viewed; rule 31). 3 best / 3 worst with numbers in 064 TOPIC.md; both appended to WIP next on the branch; rule-E review queued as J2707. NOT DONE: neighbour pass for both (web search, fetch and curl refused in this run; no view counts invented; J2707 carries it); template sub-folders not copied (cp refused); TOPIC facts are from memory, unverified; no tests run.)
 - J2701 done: Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP) (PASS all three exact B_v02 thumbnails; PR 848 merged 178d82bce3. J2676/J2696/J2697 resolved, 013/007/003 thumbs done. Separate Mini Studio successor J2702 requires fresh test reads, preserves existing tests and titles, and logs only actual arms. No spend or YouTube changes.)
-- J2700 done: Verify condition for J2035 (Chief review complete. Verified Gemini report and current Mini/NAS inventory: only three scope files on Mini, no NAS 05_Music, no generated score or music PASS. J2035 stays held with last_recheck J2700 and retry 2026-11-12T18:15:00Z; diagram KEEP approvals retained. Found later Chief desk ruling 6813193837 for staged measured-meter generation. Existing J2666 now explicitly owns checking its live safeguards and resolving the stale tariff hold before J2664 production. No spend or public changes; no listening claimed.)
