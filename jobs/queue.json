@@ -235220,8 +235220,8 @@
       "repo": "owb",
       "body": "Review the three completed J2676 thumbnail Bs against Chief decision J2456. PR #848, commit 48fd0ea27c; review notes and exact hashes in 05_Analytics/weekly_thumb_audit/OWB/2026-11-12_J2676/ on the PR branch. Local files on the Mini: /Users/benjaminoats/_desk/j2676/designs/2fsQcea-voM_B_v02.jpg, Yk1tLh23rko_B_v02.jpg, b8-X_FyJnHM_B_v02.jpg and PHONE_SHEET_v02.jpg. Use the actual images at 168x94, not just the numeric scores. All three thumb_preview scores pass. Check the grey Moon/larger Earth/outward arrow, the clean 465-second neutron-star plate with no Earth, and visible glass-rain streaks. Record KEEP or precise FIX and resolve parent J2676. If KEEP, refer the PR and release decision to the elected Chief; only then queue a separate Studio job for videos with no existing test on a fresh read. No title changes; preserve all set tests; log any later armed test in THUMB_LEDGER. No spend and no Studio change in this review. This is the explicit review handover required by J2676, not a hold for an unavailable Chief.\n",
       "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/848",
-      "film": "",
-      "stage": "",
+      "film": "013",
+      "stage": "thumbs",
       "after": "",
       "eta_min": 120,
       "status": "open",
@@ -235241,6 +235241,11 @@
           "at": "2026-11-12T11:07Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T12:05Z",
+          "by": "codex",
+          "what": "J2698: link existing review to OWB 013 thumbs and shared film keys; parent J2676 remains blocked pending this review. No approval or dependency bypass."
         }
       ],
       "remaining_action": "Review the three rebuilt thumbnail alternatives and record KEEP or exact fixes",
@@ -235255,7 +235260,12 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "OWB:013",
+        "OWB:007",
+        "OWB:003"
+      ]
     },
     {
       "id": "J2696",
