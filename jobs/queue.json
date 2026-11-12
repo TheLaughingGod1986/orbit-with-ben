@@ -222234,9 +222234,14 @@
           "at": "2026-11-12T05:29Z",
           "by": "gemini",
           "what": "step 3 of 14 done: Batch 3 (15/66 Quality rows, P1:09..P2:04) complete: exit 0, 500 credits posted (9440->8940), 0 pending charges, all 5 clips + stills + 0.5s sheets sha256-verified on NAS"
+        },
+        {
+          "at": "2026-11-12T05:36Z",
+          "by": "gemini",
+          "what": "step 3 of 14 done: Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 6815637474); Batch 4 hit 'STOP first pass must start with Part 01' at 0 credits"
         }
       ],
-      "remaining_action": "Commit Batch 3 receipts/sheets, post Batch 3 0.5s sheets on HOS desk #180, launch Batch 4 detached under --floor 3000, and release J2529",
+      "remaining_action": "Chief/Codex fix _mint_flow_v01_pass1.py next_batch/batch_rows Part-01 remainder guard, merge on HOS main, and reopen J2529 for Batches 4-14 (51 rows, 5,100 credits)",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222250,9 +222255,9 @@
       "progress": {
         "step": 3,
         "of": 14,
-        "at": "2026-11-12T05:29Z",
+        "at": "2026-11-12T05:36Z",
         "by": "gemini",
-        "note": "Batch 3 (15/66 Quality rows, P1:09..P2:04) complete: exit 0, 500 credits posted (9440->8940), 0 pending charges, all 5 c"
+        "note": "Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 68"
       }
     },
     {
