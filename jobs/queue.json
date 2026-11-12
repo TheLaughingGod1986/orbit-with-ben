@@ -229985,9 +229985,14 @@
           "at": "2026-11-12T21:20Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T21:22Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
+      "remaining_action": "Rebasing PR #833 on latest main and running the full test and check suite",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "plain": "Make the relay that wakes the agents work for any channel",
@@ -230001,12 +230006,10 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T21:20Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-12T21:22Z",
+        "by": "macbook"
       }
     },
     {
