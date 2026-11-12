@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -63,7 +63,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2618 | cloud | blocked | claude | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
 | J2621 | cloud | blocked | claude | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
 | J2622 | cloud | blocked | claude | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
-| J2632 | mini | claimed | codex | 2026-11-12T04:30Z | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806341672 |
 | J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
 | J2649 | cloud | blocked | claude | – | for claude · studio · Relay: a condition check for a job pinned to the Mini goes to the Mini, not the MacBook |  |
 | J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
