@@ -233420,20 +233420,25 @@
           "at": "2026-11-12T07:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Confirmed next_batch revalidates the filtered remainder as a full Part 01 plan."
+        },
+        {
+          "at": "2026-11-12T07:29Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: 44 runner tests PASS; full repository suite and check_all PASS; core and rules checks PASS."
         }
       ],
-      "remaining_action": "Implement the batching repair and run regression checks",
+      "remaining_action": "Submit the tested batching fix for Chief review",
       "due": "2026-11-12T13:00:00Z",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the error stopping the Darwin and Wallace pictures after the first part",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T07:28Z",
+        "at": "2026-11-12T07:29Z",
         "by": "codex",
-        "note": "Confirmed next_batch revalidates the filtered remainder as a full Part 01 plan."
+        "note": "44 runner tests PASS; full repository suite and check_all PASS; core and rules checks PASS."
       },
       "taskKeys": [
         "HOS:013"
