@@ -78,6 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2657 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-blocked |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
+| J2659 | any | open (after J2655) | – | – | 011 edit · chief · HOS 011: Chief review of picture plan v03 timing and assembly handoff | https://github.com/TheLaughingGod1986/history-of-science/pull/554 |
 
 Recently finished:
 
