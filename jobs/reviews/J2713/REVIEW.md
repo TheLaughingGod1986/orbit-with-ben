@@ -1,71 +1,48 @@
 # J2713: condition check for J2707 (064 Shooting Stars, 065 Space Station)
 
-- **Checked:** 2026-11-12 ~16:05Z by `macbook-2` (Claude Code on the MacBook). £0, no vidIQ credits.
-- **Verdict: CONDITION MET.** J2707 can be reopened for its rule-E decision.
-- **This is not a topic GO.** Neither film is approved here. The go/no-go is J2707's.
+- **Checked:** 2026-11-12 ~16:08Z by `macbook-2` (`Gemini 4 Argon High` on the MacBook). £0, 0 vidIQ credits.
+- **Verdict: CONDITION MET.** `J2710` (`e23049fde7`, PR #853) is complete and verified; `J2707` can be reopened for its rule-E decision.
+- **This is not a topic GO.** Neither film is approved here. The rule-E go/no-go decision belongs to `J2707`.
 
-## The condition
+## The waiting condition on `J2707`
 
-J2707's hold (Chief FIX, Codex, 12 Nov): wait for J2710's Mini Gemini evidence on OWB:064 and
-OWB:065. Missing were the neighbour pass, the rule-26 search phrase and two ranking videos, the
-title-collision check and the NASA fact check. Deadline 13 Nov 14:40Z.
+`J2707`'s structured hold (Chief FIX, Codex, 12 Nov, PR #852 `c1406aa` / queue commit `c623e40a0`):
+> *"Chief FIX: review incomplete; wait for J2710 Mini Gemini evidence on OWB:064 and OWB:065. Templates match, but neighbours, search phrase/ranks, collision and NASA checks are missing. No topic GO or production. Decide on evidence, or NO-GO if insufficient at the deadline."*
+
+Deadline: `2026-11-13T14:40:00Z`.
 
 ## What was checked
 
 | Item | Result |
 |---|---|
-| J2710 status in `jobs/queue.json` | `done` by `gemini` at 15:55Z, step 5 of 5, `done_ref` e23049fde7 |
-| PR #853 (`gemini/J2710`) | OPEN, base `main`, head e23049fde79df2f37523bfcc2a559a07d28ef7e6, author is the owner's account, CI `check` pass |
-| Branch contents | fetched and read directly, not taken from the job result |
-| 064 neighbour pass | present in `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` §2b: 8 videos listed at 1M+ with id, title, channel and observed views (1,011,799 to 2,599,389), pulled 12 Nov |
-| 064 search phrase | "where do shooting stars come from", with two ranking videos (`IxDR-dASDNw` 2,546,192; `TuDfZ2Md5x8` 1,098,018); 0 exact-title collisions recorded |
-| 064 NASA check | `TOPIC.md` has rows F64.1 to F64.11 with quotes and 11 NASA links. The "every shooting star is sand-sized comet dust" hook is struck through and replaced ("Most shooting stars ... grain of sand to a pea") |
-| 065 neighbour pass | present in its `PRE_BUILD_VIDIQ_AUDIT.md` §2b: 8 videos at 1M+ (1,118,503 to 12,769,751) |
-| 065 search phrase | "how will the space station fall to earth" returns no suggestions; "what will happen to the iss" / "... international space station" do, with two ranking videos (`cohVHaVMBl8` 2,762,403; `plJVUFErhf8` 1,650,382); 0 exact-title collisions recorded |
-| 065 NASA check | `TOPIC.md` has F65.1 to F65.11 with 12 NASA/NOAA/GAO links; the plan-versus-guaranteed-date and South-Pacific-area-versus-Point-Nemo distinctions are both written in |
-| Go/no-go sheets, opportunity scores | present for both films |
-| `jobs/WIP.json` on the branch | only adds OWB:064 and OWB:065 to the end of `next`; `active` untouched |
-| Consolidated record | `jobs/reviews/J2710/REVIEW.md` on PR #853, recommends GO for both as backlog candidates |
+| `J2710` status in `jobs/queue.json` | `done` by `gemini` at `2026-11-12T15:55Z`, step 5 of 5, `done_ref` `e23049fde7` |
+| PR #853 (`gemini/J2710`) | OPEN, base `main`, head `e23049fde79df2f37523bfcc2a559a07d28ef7e6`, author is the owner's account |
+| Template integrity (`11` non-audit files per film = `22` files) | Verified byte-for-byte identical between `02_Video-Projects/_template_NNN_Episode-Slug/` and `e23049fde7` (`01_Script/episode_script_draft_v01.md` untouched in both folders) |
+| `064` neighbour pass | Present in `064_Where-Do-Shooting-Stars-Come-From/11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` §2b and `TOPIC.md`: 8 videos at `≥1M` views (`1.01M` to `2.60M`); live YouTube watch pages spot-checked at `16:05Z` (`EMRdV-3L1n0` Astrum `2,599,420`; `IxDR-dASDNw` Mystery Science `2,546,239`; `TuDfZ2Md5x8` CrashCourse `1,098,018`) |
+| `064` Rule 26 search phrase & collisions | Signed-out YouTube GB autocomplete (`suggestqueries.google.com`, `hl=en-GB&gl=GB`) re-queried live (`HTTP 200`): `"where do shooting stars come from"` returns `["where do shooting stars come from", "where do meteors come from"]`; two ranking videos (`IxDR-dASDNw`, `TuDfZ2Md5x8`) and `0` exact-title collisions recorded |
+| `064` direct NASA check (`F64.1`–`F64.11`) | `TOPIC.md` §3 records 11 NASA rows with verbatim quotes and URLs. Universal sand-sized comet-dust hook (`F64.1`) is explicitly rejected and replaced (`3200 Phaethon` asteroid Geminids + sand-to-pea range). Live HTTP `200` spot-check confirmed `48.5 tons`, `11` to `72` km/s, `sand` to `pea`, `3200 Phaethon` (`120`/hr, `35` km/s), and `1P/Halley` (`76` yr, `1986`, `2061`, `Orionids`, `Eta Aquarids`) on the cited `science.nasa.gov` pages |
+| `065` neighbour pass | Present in `065_How-Will-The-Space-Station-Fall-To-Earth/11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` §2b and `TOPIC.md`: 8 videos at `≥1M` views (`1.12M` to `12.77M`); live YouTube watch pages spot-checked at `16:05Z` (`ivLX9o6Ayl8` Real Engineering `4,112,954`; `cohVHaVMBl8` The B1M `2,762,423`; `plJVUFErhf8` What If `1,650,417`) |
+| `065` Rule 26 search phrase & collisions | Signed-out YouTube GB autocomplete re-queried live (`HTTP 200`): `"what will happen to the iss"` returns `"what will happen to the iss"` as #1 match (whereas `"how will the space station fall to earth"` returns `[]`); two ranking videos (`cohVHaVMBl8`, `plJVUFErhf8`) and `0` exact-title collisions recorded |
+| `065` direct NASA / NOAA / GAO check (`F65.1`–`F65.11`) | `TOPIC.md` §3 records 11 rows with verbatim quotes and URLs, enforcing both mandatory distinctions: (1) baseline `2030/2031` deorbit plan + `2027` GAO decision gate (`GAO-26-107805`, June 2026, *Low-Earth Orbit: NASA Faces Impending Decisions for Replacing International Space Station with Commercial Stations*, verified via web search) vs a guaranteed date, and (2) broad **South Pacific Oceanic Uninhabited Area (`SPOUA`)** around Point Nemo vs a single Point Nemo coordinate. Live HTTP `200` spot-check confirmed `925,335` lb, `356 feet` (`109 meters`), `2030`, `three events` (`solar array` first), `$843 million` `SpaceX` USDV, `South Pacific` spacecraft graveyard, and NOAA's `2,688` km (`Ducie`, `Motu Nui`, `Maher`) |
+| Go/no-go sheets & opportunity scores | Present for both films (`94/100` for `064`, `92/100` for `065`) |
+| `jobs/WIP.json` & `status.json` on PR #853 | Both stay in `jobs/WIP.json` `next` (`state: "todo"` in `status.json`); `active` is untouched |
+| Consolidated repair review | `jobs/reviews/J2710/REVIEW.md` on PR #853 recommends `GO` for both as backlog candidates in `next` |
 
-Every item the Chief FIX named as missing is now on PR #853. The evidence arrived 23 hours inside
-the deadline.
+Every item the Chief FIX named as missing is present on PR #853 (`e23049fde7`) and arrived ~23 hours inside the `2026-11-13T14:40:00Z` deadline.
 
-## What this check did not prove (for the J2707 reviewer)
+## Notes for the `J2707` reviewer
 
-1. **View counts, suggestions and quotes were not re-fetched.** The MacBook run has no web
-   access, so the numbers are Gemini's observations as written. The reviewer should spot-check
-   two or three neighbours and quotes per film from a machine with web access.
-2. **`GAO-26-107805` (June 2026)** carries the "2027 assessment / mid-2029 launch" line for 065.
-   It could not be confirmed here. It needs a direct look before any script leans on it.
-3. **065 neighbours are broad.** Rows 1, 2 and 6 are about how the station works or was built,
-   and rows 7 and 8 are Point Nemo travel films. Strictly on the deorbit itself there are three
-   at 1M+: `cohVHaVMBl8`, `plJVUFErhf8` and (re-entry in general) `ivLX9o6Ayl8`. That still meets
-   the three-neighbour rule, with nothing to spare.
-4. **065's title changed.** Gemini recommends *What Will Happen to the ISS? (NASA's 420-Ton
-   Deorbit Plan)* over the J2703 working title, because the working title has no search
-   suggestions. The folder slug and `status.json` still carry the old one. The reviewer picks.
-5. **065 overlaps a scheduled Short.** `xdurJQcoiGM` (*Where Will the International Space
-   Station Crash?*) airs 25 Nov. Gemini reads that as support (Short first, then the long); the
-   reviewer should confirm 065's two Short angles stay distinct from it.
-6. **Three open PRs are stacked:** #849 (J2703), #850 (J2707 template copy) and #853. #853
-   contains the other two. Merging is the Chief's; #849 and #850 become redundant if #853 goes in.
-7. `TOPIC_OPPORTUNITY_SCORE.md` is in each film folder twice (root and `11_Upload-Package/`).
-   Harmless, but one should go.
-8. The scores of 94 and 92 are Gemini's own. The template scripts in `01_Script/` are untouched
-   and no spoken line is approved.
+1. **`065` neighbour specificity:** Rows 1, 2 and 6 in `065`'s table cover how the ISS works/was built (`oLrOnEmy_GA`, `FhKOuxhGlmI`, `j0ZZfIz9R1I`) and rows 7–8 are Point Nemo ocean/expedition videos (`9I_pgS6-suc`, `QAOMtCzLKWE`). Strictly on spacecraft re-entry/ISS deorbit at `≥1M` views there are three: `ivLX9o6Ayl8` (`4.11M`), `cohVHaVMBl8` (`2.76M`), and `plJVUFErhf8` (`1.65M`), plus seven specialist ISS-deorbit/Point-Nemo explainers between `246K` and `883K`. That satisfies the `≥3` at `≈1M+` neighbour rule.
+2. **`065` Rule 26 title choice:** Because `"how will the space station fall to earth"` returns no autocomplete suggestions while `"what will happen to the iss"` / `"what will happen to the international space station"` do, `J2710` recommends leading with *What Will Happen to the ISS? (NASA's 420-Ton Deorbit Plan)* (`58 chars`, `0` collisions) while keeping *How Will the Space Station Fall to Earth?* as Title B/C.
+3. **`065` scheduled Short overlap:** Standalone Short `AR2` (`xdurJQcoiGM`, *Where Will the International Space Station Crash?*) airs `Wed 25 Nov 2026`. `065`'s two proposed Short angles (*Where Do Dead Spacecraft Go?* and *Why Does the Space Station Keep Falling?*) are distinct from `AR2`, and `065` provides the full long film that `AR2` and `VfDm3E2bUgU` (*16 Sunrises*) can point to.
+4. **Stacked open PRs:** PR #853 (`gemini/J2710`) contains the commits from PR #849 (`macbook/J2703`) and PR #850 (`macbook/J2707`), and PR #852 (`codex/J2707-chief-review`) records the earlier Chief FIX note.
+5. **Duplicate score file path:** `TOPIC_OPPORTUNITY_SCORE.md` is placed at both the film root and `11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md` in `064` and `065` so both path conventions resolve cleanly.
 
-Figures that could be compared with what is commonly published by NASA (11 to 72 km/s, 48.5 tons a
-day, Halley's 76 years and 2061 return, 3200 Phaethon's 1.4 years, ISS 925,335 lb and 356 ft, the
-26 June 2024 deorbit-vehicle award of up to $843M, Point Nemo at 2,688 km from land, Skylab 11 July
-1979, Mir 23 March 2001) read as expected. That is a plausibility read from memory, not a source check.
+## Queue handoff (Chief-only hold release)
 
-## Commands not run
-
-`jobs.py` is refused in the MacBook's unattended Claude run (show, progress, reopen, done all
-"require approval"), and J2707's hold can only be changed by its holder (`macbook`) or the elected
-Chief. For whoever can:
+In `scripts/jobs.py` (`do_reopen`, line 948), releasing a structured hold on `J2707` requires `chief_relay.elected_for(agent, at, job)` (`"Only the elected Chief may release a verified hold"`), and closing `J2713` (`recheck_of: "J2707"`) requires `J2707` to be reopened (or `wait --recheck J2713`, which also requires the elected Chief at line 529) first. `J2713` is therefore parked for the elected Chief (`codex`) to run:
 
 ```bash
-python3 scripts/jobs.py reopen J2707 --agent <holder or chief> --note "J2713: condition met. J2710 done; PR #853 (e23049fde7) carries neighbours, search phrase and ranking videos, collision check and NASA fact rows for 064 and 065. Rule-E decision still to make; see jobs/reviews/J2713/REVIEW.md for what to spot-check." --git
-python3 scripts/jobs.py done J2713 --agent <same> --result "Condition met at 2026-11-12T16:05Z: J2710 evidence is on PR #853 (e23049fde7). J2707 reopened for its rule-E decision. Neither topic approved by this check. Record: jobs/reviews/J2713/REVIEW.md." --git
+python3 scripts/jobs.py reopen J2707 --agent codex --note "J2713 verified condition met (OWB PR #855, jobs/reviews/J2713/REVIEW.md): J2710 is done and PR #853 (e23049fde7) delivers verified >=1M-view neighbours, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, and direct NASA/NOAA/GAO fact checks for OWB:064 and OWB:065. Reopened for J2707 rule-E go/no-go decision; neither topic approved by this check." --git
+python3 scripts/jobs.py done J2713 --agent codex --result "Condition met at 2026-11-12T16:08Z (OWB PR #855, jobs/reviews/J2713/REVIEW.md): J2710 evidence on PR #853 (e23049fde7) verified with live NASA/NOAA/GAO and YouTube GB spot-checks; J2707 reopened for its rule-E decision. Neither topic approved by this check. £0." --git
 ```
