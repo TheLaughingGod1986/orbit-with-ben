@@ -111307,13 +111307,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T00:41Z",
-      "eta": "2026-11-12T02:41Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-29T09:36Z",
-      "result": "",
+      "result": "Armed thumbnail-only T031 on VBaYRPp85Sw: A live MELTS LEAD vs reviewed B 465°C (SHA256 c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b). Preserved finished T011 report/result before Continue under Ben approval in brief. Saved, reloaded and visually verified Test running, 13 days 23 hours remaining. Title and Public visibility unchanged. PR #838 awaits review/merge; no PASS claimed. Readback around 19 Nov, finish expected around 26 Nov; confirm in Studio. No spend or blocker.",
       "history": [
         {
           "at": "2026-10-29T09:36Z",
@@ -111464,6 +111464,11 @@
           "at": "2026-11-12T00:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Reloaded Studio and visually verified running thumbnail-only comparison; evidence hashes and ledger T031 committed."
+        },
+        {
+          "at": "2026-11-12T00:48Z",
+          "by": "codex",
+          "what": "done: Armed thumbnail-only T031 on VBaYRPp85Sw: A live MELTS LEAD vs reviewed B 465°C (SHA256 c1c80951ab2c84826c7d103284aa006384a79f372223d8b03386ad2b4848477b). Preserved finished T011 report/result before Continue under Ben approval in brief. Saved, reloaded and visually verified Test running, 13 days 23 hours remaining. Title and Public visibility unchanged. PR #838 awaits review/merge; no PASS claimed. Readback around 19 Nov, finish expected around 26 Nov; confirm in Studio. No spend or blocker."
         }
       ],
       "remaining_action": "Review the Venus test records and read results when Studio finishes",
@@ -111477,7 +111482,8 @@
         "at": "2026-11-12T00:48Z",
         "by": "codex",
         "note": "Reloaded Studio and visually verified running thumbnail-only comparison; evidence hashes and ledger T031 committed."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/838"
     },
     {
       "id": "J1199",
