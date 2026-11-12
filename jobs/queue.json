@@ -239684,9 +239684,14 @@
           "at": "2026-11-12T23:47Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T23:49Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: After the running relay update finishes, verify the no-home-channel checks and live board cycle, then close this work",
+      "remaining_action": "Inspect J2621, J2618, PR #833 state and write verification review",
       "kind": "review",
       "recheck_of": "J2621",
       "due": "2026-11-13T00:39:27+00:00",
@@ -239701,12 +239706,10 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T23:47Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-12T23:49Z",
+        "by": "macbook-2"
       }
     },
     {
