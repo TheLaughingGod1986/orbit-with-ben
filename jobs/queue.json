@@ -233393,13 +233393,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T07:28Z",
-      "eta": "2026-11-12T09:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T07:18Z",
-      "result": "",
+      "result": "Fixed and tested batching; HOS PR #564 base main, SHA e6193fb0d7a29748cbb6035ca44cc1c66b70b77b. 44 runner and 301 repo tests OK; check_all/core/rules PASS. J2673 owns Chief review/merge; J2529 remains parked. Desk outcome 6817576030.",
       "history": [
         {
           "at": "2026-11-12T07:18Z",
@@ -233430,6 +233430,11 @@
           "at": "2026-11-12T07:31Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR HOS #564 targets main at e6193fb0d7a29748cbb6035ca44cc1c66b70b77b; J2673 owns review/merge; J2529 not resumed."
+        },
+        {
+          "at": "2026-11-12T07:31Z",
+          "by": "codex",
+          "what": "done: Fixed and tested batching; HOS PR #564 base main, SHA e6193fb0d7a29748cbb6035ca44cc1c66b70b77b. 44 runner and 301 repo tests OK; check_all/core/rules PASS. J2673 owns Chief review/merge; J2529 remains parked. Desk outcome 6817576030."
         }
       ],
       "remaining_action": "Chief review of the submitted fix is handled by the linked review job",
@@ -233447,7 +233452,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/564"
     },
     {
       "id": "J2673",
