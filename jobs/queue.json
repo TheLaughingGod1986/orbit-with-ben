@@ -235341,6 +235341,11 @@
           "at": "2026-11-12T11:40Z",
           "by": "codex",
           "what": "step 1 of 3 done: Source and iCloud UAT destination both match SHA256 76d801a3, 16447510 bytes; checks API has long-only notes and no Short A tick"
+        },
+        {
+          "at": "2026-11-12T11:41Z",
+          "by": "codex",
+          "what": "waits on Ben: Watch the Franklin kite Short: Why Was Franklin's Kite Experiment So Dangerous? (by 2026-11-13 12:00 London)"
         }
       ],
       "remaining_action": "Register the private watch link and create the Franklin Short review card",
@@ -235356,7 +235361,17 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch the Franklin kite Short: Why Was Franklin's Kite Experiment So Dangerous?",
+        "file": "HOS UAT/008_Lightning-Franklin/10_Shorts/hos_008_short_A_v04.mp4",
+        "version": "v04",
+        "due": "2026-11-13T12:00Z",
+        "ifNot": "Keep this Short unpublished until you approve it; the long must be public first",
+        "title": "Why Was Franklin's Kite Experiment So Dangerous?",
+        "number": "008 Short A",
+        "type": "short"
+      }
     }
   ],
   "focus": [
