@@ -40,7 +40,7 @@ def main():
     paths = a.render_all_cuts(tasks[:13])
     tail = a.WORK / 'v01_tail_from_frame928.mp4'
     if not a.frames_ok(tail, a.TOTAL_FRAMES - 928):
-        a.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(OLD),
+        a.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-reinit_filter', '0', '-i', str(OLD),
                '-vf', 'trim=start_frame=928,setpts=N/(24*TB)', *a.ENC,
                '-frames:v', str(a.TOTAL_FRAMES - 928), str(tail)])
     if not a.frames_ok(tail, a.TOTAL_FRAMES - 928):
@@ -71,7 +71,7 @@ def main():
     (a.PACK / 'preservation.json').write_text(json.dumps({
         'original_sha256': EXPECTED, 'audio_packet_hash': audio_hashes[0],
         'preserved_picture_from_frame': 928, 'preserved_picture_from_s': 928 / 24,
-        'tail_method': 'trim decoded frames from 928; regenerate CFR timestamps from frame index; no source substitutions',
+        'tail_method': 'disable filter reinit on color metadata changes, trim decoded frames from 928, regenerate CFR timestamps from frame index; no source substitutions',
         'sfx_check': 'unchanged existing stem; bed reconstructed at documented -30 dB gain',
         'perception': 'automated checks only; no claim of watching motion or hearing audio'
     }, indent=2) + '\n')
