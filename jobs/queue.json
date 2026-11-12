@@ -222047,13 +222047,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-12T05:22Z",
-      "eta": "2026-11-12T10:22Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "",
+      "result": "parked for Chief: Batch 3/14 (15/66 takes: P1 12/12, P2 3/11, P3-P6 0; 1,500 credits spent, balance 10,440->8,940, 0 pending, receipts in jobs/reviews/J2529/) complete & 0.5s sheets posted (#180 6815637474); Batch 4 hit runner 'STOP first pass must start with Part 01' (0 credits spent) because next_batch() calls batch_rows(remaining)->order_rows(remaining) after Part 01 finished. Needs Codex runner fix + Chief merge/reopen before 18:45Z.",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -222239,6 +222239,11 @@
           "at": "2026-11-12T05:36Z",
           "by": "gemini",
           "what": "step 3 of 14 done: Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 6815637474); Batch 4 hit 'STOP first pass must start with Part 01' at 0 credits"
+        },
+        {
+          "at": "2026-11-12T05:36Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Batch 3/14 (15/66 takes: P1 12/12, P2 3/11, P3-P6 0; 1,500 credits spent, balance 10,440->8,940, 0 pending, receipts in jobs/reviews/J2529/) complete & 0.5s sheets posted (#180 6815637474); Batch 4 hit runner 'STOP first pass must start with Part 01' (0 credits spent) because next_batch() calls batch_rows(remaining)->order_rows(remaining) after Part 01 finished. Needs Codex runner fix + Chief merge/reopen before 18:45Z."
         }
       ],
       "remaining_action": "Chief/Codex fix _mint_flow_v01_pass1.py next_batch/batch_rows Part-01 remainder guard, merge on HOS main, and reopen J2529 for Batches 4-14 (51 rows, 5,100 credits)",
