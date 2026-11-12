@@ -1,5 +1,5 @@
 {
-  "next_id": 2739,
+  "next_id": 2740,
   "jobs": [
     {
       "id": "J0001",
@@ -239142,6 +239142,36 @@
         "at": "2026-11-12T21:57Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2739",
+      "title": "Review narrated-card breath checker correction for HOS 013",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Supporting dependency for J2652 (HOS 013 timing plan). Review OWB PR #871 at 231a20e7fd, the isolated clip_check.py correction. Production checker currently overwrites last_spoken_word_end with current CARD narration before measuring pre-card breath. Patch captures the preceding value without suppressing card words, changing thresholds, or weakening final hold checks.\n\nEvidence: scripts/test_clip_check.py has six passing CLI regressions; the narrated-card case fails on origin/main with -2.40 seconds, passes on the proposed fix. Unchanged HOS PR #551 v03c CSV changes from five false negative-breath errors to passed=true, with one pre-existing warning retained. Email/network tests and core check pass.\n\nReview as a code/checker correction in its own PR, as required by the HOS contract. Resolve adoption authority under the current session order; do not waive the gate or claim film PASS. If accepted and merged, reopen J2652 for the remaining editorial review, free renders, new rough and 390 px sheets. If rejected, record the exact correction needed and reopen J2652 accordingly. HOS PR #551 remains diagnostic and unmerged. No audio, paid generation, YouTube or production media changes. £0.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/871",
+      "film": "013",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T22:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T22:36Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the separate timing-check correction and return the film plan for completion",
+      "due": "2026-11-16T18:00:00Z",
+      "kind": "chief",
+      "plain": "Review a timing-check fix needed for the Darwin and Wallace film"
     }
   ],
   "focus": [
