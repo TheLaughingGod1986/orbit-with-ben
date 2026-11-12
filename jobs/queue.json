@@ -233633,13 +233633,13 @@
       "stage": "thumbs",
       "after": "J2657",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T08:23Z",
-      "eta": "2026-11-12T10:23Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T07:24Z",
-      "result": "",
+      "result": "Verified 019 Andromeda (ojk-dfOpAmw) Package A & PR #836 (commits 3a8f4a01ff, bb596308a6, c638947847; jobs/reviews/J2674/REVIEW.md): (1) Synced locked script v03 (sha256=145d2134...) & verified VO v03 (sha256=3b9019f3...), recording exact lines paying off 'Andromeda Is Already Coming (And Almost No Stars Will Collide)' and 'NO CRASH'; (2) Reconciled SHA-256 provenance: selected canonical Mini J2448 build 019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg (sha256=dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7, 1280x720, 1.15 MB, sat 128.0, nb 3%, heic1502a, zero corner triangles) vs Slot 1 baseline thumb_packaging_v01_ojk-dfOpAmw.jpg (sha256=250c9980...); superseded MacBook fallback ad9f3eb4... excluded; (3) Verified PR #836 (6967deb9f3) and all 5 saved Studio screenshots in _desk/jobs/J2449/ (T017 finished 11 Nov 22:32 draw); (4) Queued packaging panel J2688 (codex), J2689 (gemini, done in bb596308a6), J2690 (cursor), J2691 (decision) and dependent Chief release handoff J2692. 019 thumbs stays in review until J2691/J2692.",
       "history": [
         {
           "at": "2026-11-12T07:24Z",
@@ -233685,6 +233685,11 @@
           "at": "2026-11-12T09:06Z",
           "by": "gemini",
           "what": "step 5 of 5 done: All 5 steps complete: REVIEW.md committed at c638947847, panel J2688-J2691 and Chief release handoff J2692 queued"
+        },
+        {
+          "at": "2026-11-12T09:06Z",
+          "by": "gemini",
+          "what": "done: Verified 019 Andromeda (ojk-dfOpAmw) Package A & PR #836 (commits 3a8f4a01ff, bb596308a6, c638947847; jobs/reviews/J2674/REVIEW.md): (1) Synced locked script v03 (sha256=145d2134...) & verified VO v03 (sha256=3b9019f3...), recording exact lines paying off 'Andromeda Is Already Coming (And Almost No Stars Will Collide)' and 'NO CRASH'; (2) Reconciled SHA-256 provenance: selected canonical Mini J2448 build 019_andromeda_package_A_no-crash_ojk-dfOpAmw.jpg (sha256=dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7, 1280x720, 1.15 MB, sat 128.0, nb 3%, heic1502a, zero corner triangles) vs Slot 1 baseline thumb_packaging_v01_ojk-dfOpAmw.jpg (sha256=250c9980...); superseded MacBook fallback ad9f3eb4... excluded; (3) Verified PR #836 (6967deb9f3) and all 5 saved Studio screenshots in _desk/jobs/J2449/ (T017 finished 11 Nov 22:32 draw); (4) Queued packaging panel J2688 (codex), J2689 (gemini, done in bb596308a6), J2690 (cursor), J2691 (decision) and dependent Chief release handoff J2692. 019 thumbs stays in review until J2691/J2692."
         }
       ],
       "remaining_action": "Complete J2674",
@@ -233709,7 +233714,8 @@
       },
       "taskKeys": [
         "OWB:019"
-      ]
+      ],
+      "done_ref": "c638947847"
     },
     {
       "id": "J2675",
