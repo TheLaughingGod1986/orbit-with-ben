@@ -193942,9 +193942,14 @@
           "at": "2026-11-12T03:28Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resuming PR542 checkpoint and detached identity-remux control; preserving existing three-step plan."
+        },
+        {
+          "at": "2026-11-12T03:30Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Identity remux preserves all frames and packets; single-thread decode of rejected salon candidate preserves all 12763 unchanged frames, unlike default decode. Profile-transition diagnostic in progress; no acceptance criteria relaxed."
         }
       ],
-      "remaining_action": "Check the remux control and repair unchanged-frame preservation before completing the Franklin edit",
+      "remaining_action": "Test a compatible H.264 profile before completing the Franklin edit and captions",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -193953,9 +193958,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T03:28Z",
+        "at": "2026-11-12T03:30Z",
         "by": "codex",
-        "note": "Resuming PR542 checkpoint and detached identity-remux control; preserving existing three-step plan."
+        "note": "Identity remux preserves all frames and packets; single-thread decode of rejected salon candidate preserves all 12763 un"
       }
     },
     {
