@@ -231917,13 +231917,13 @@
       "stage": "edit",
       "after": "J2655",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T03:51Z",
-      "eta": "2026-11-12T05:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T00:28Z",
-      "result": "",
+      "result": "Accepted HOS 011 mechanical v03 retime; PR 554 merged to main as 6aac5589 after full local and GitHub checks. Reverified restored WAV hash and 532.720 s. Reconciled and reopened J2563 for 26 free rows plus 67 slates with approved archive overrides, reuse interval check and overlay cue schedule. Generation remains unauthorized; no media QA, film-stage PASS or UAT. Desk report 6814099670.",
       "history": [
         {
           "at": "2026-11-12T00:28Z",
@@ -231954,6 +231954,11 @@
           "at": "2026-11-12T04:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 554 merged as 6aac5589 after all checks; J2563 reopened with v03, approved source overrides, restored WAV, reuse slate and overlay requirements."
+        },
+        {
+          "at": "2026-11-12T04:02Z",
+          "by": "codex",
+          "what": "done: Accepted HOS 011 mechanical v03 retime; PR 554 merged to main as 6aac5589 after full local and GitHub checks. Reverified restored WAV hash and 532.720 s. Reconciled and reopened J2563 for 26 free rows plus 67 slates with approved archive overrides, reuse interval check and overlay cue schedule. Generation remains unauthorized; no media QA, film-stage PASS or UAT. Desk report 6814099670."
         }
       ],
       "remaining_action": "Close the completed Anaesthesia timing review",
@@ -231968,7 +231973,8 @@
       },
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6814099670"
     },
     {
       "id": "J2660",
