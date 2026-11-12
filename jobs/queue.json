@@ -222558,9 +222558,14 @@
           "at": "2026-11-12T08:12Z",
           "by": "gemini",
           "what": "step 3 of 14 done: Claimed J2529 at 3/14; reading Grok rulings 6818142702 & 6818150970 and running preflight checks"
+        },
+        {
+          "at": "2026-11-12T08:19Z",
+          "by": "gemini",
+          "what": "step 3 of 14 done: Progress restored to 3/14 (15/66 rows); pre-Batch-04 live balance 8,940 verified (headroom 3,040 >= 3,000, 0 pending); Batch 04 (P2:05..P2:08b) launched detached in tmux hos013-pass1 (PID 18406, P02_05_tortoise_overboard_t1.png 0-credit still saved)"
         }
       ],
-      "remaining_action": "Run preflight on HOS main and launch Batch 04 at P2:05_tortoise_overboard under Grok ruling 6818142702",
+      "remaining_action": "Read Batch 04 completion (.done + receipt), verify post-batch balance (8940->8440) and 0.5s sheets, then launch Batch 05 under --floor 3000 --other-reservations 0",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222574,9 +222579,9 @@
       "progress": {
         "step": 3,
         "of": 14,
-        "at": "2026-11-12T08:12Z",
+        "at": "2026-11-12T08:19Z",
         "by": "gemini",
-        "note": "Claimed J2529 at 3/14; reading Grok rulings 6818142702 & 6818150970 and running preflight checks"
+        "note": "Progress restored to 3/14 (15/66 rows); pre-Batch-04 live balance 8,940 verified (headroom 3,040 >= 3,000, 0 pending); B"
       }
     },
     {
