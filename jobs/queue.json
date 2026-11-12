@@ -1,5 +1,5 @@
 {
-  "next_id": 2666,
+  "next_id": 2667,
   "jobs": [
     {
       "id": "J0001",
@@ -232143,6 +232143,11 @@
           "at": "2026-11-12T03:06Z",
           "by": "codex",
           "what": "blocked: parked for Chief: music_v2 account-specific duration credit tariff and pending generation charges unverified; locked GET confirms 87416 remaining and overage disabled, but existing guard counts prompt characters. Zero POST attempts; scope requires no POST until cost is known."
+        },
+        {
+          "at": "2026-11-12T03:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J2666"
         }
       ],
       "remaining_action": "Chief to resolve account-specific duration billing and pending charges before score generation",
@@ -232158,7 +232163,13 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-12T04:07:10+00:00",
+        "recheck_task": "J2666"
+      }
     },
     {
       "id": "J2665",
@@ -232204,6 +232215,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2666",
+      "title": "Verify condition for J2664",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2664: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2664 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T03:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T03:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief to resolve account-specific duration billing and pending charges before score generation",
+      "kind": "review",
+      "recheck_of": "J2664",
+      "due": "2026-11-12T04:07:10+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

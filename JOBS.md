@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
 | J2664 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: produce own wonder and teach score within Chief cap | https://github.com/TheLaughingGod1986/history-of-science/pull/557 |
 | J2665 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
+| J2666 | any | open | – | – | review · Verify condition for J2664 |  |
 
 Recently finished:
 
