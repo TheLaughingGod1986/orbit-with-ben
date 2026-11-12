@@ -238989,9 +238989,14 @@
           "at": "2026-11-12T23:17Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J2731 condition verification for J2172 (HOS 010 Shorts A and C)"
+        },
+        {
+          "at": "2026-11-12T23:23Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2270 is done (12/12 HOS 010 plates generated and archived on studio-live + archive_v01_twelve_plates, HOS PR #538 2f0a227f OPEN, 1,200 credits, reservation released), 7/7 board/plan hashes and 63/63 INVENTORY.json hashes verified, 0 duplicates in 12 Nov HOS snapshot; J2271 independent non-producer plate review remains open (0/12 KEEP)"
         }
       ],
-      "remaining_action": "Inspect J2172 and its upstream chain (J2270, J2271, HOS 010 long/Shorts state)",
+      "remaining_action": "Write and commit jobs/reviews/J2731/REVIEW.md from a clean worktree with exact hash-verified evidence",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-12T21:07:58+00:00",
@@ -239006,11 +239011,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T23:17Z",
+        "at": "2026-11-12T23:23Z",
         "by": "gemini",
-        "note": "Started J2731 condition verification for J2172 (HOS 010 Shorts A and C)"
+        "note": "Verified J2270 is done (12/12 HOS 010 plates generated and archived on studio-live + archive_v01_twelve_plates, HOS PR #"
       },
       "taskKeys": [
         "HOS:010"
