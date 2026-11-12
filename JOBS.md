@@ -81,6 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2696 | mini | open | – | – | chief · Chief: resolve 003 thumbs orphan-review |  |
 | J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
 | J2700 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J2701 | mini | open | – | – | 013 thumbs · chief · Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP) | 26e28c5142 |
 
 Recently finished:
 

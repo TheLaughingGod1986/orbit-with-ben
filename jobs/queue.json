@@ -1,5 +1,5 @@
 {
-  "next_id": 2701,
+  "next_id": 2702,
   "jobs": [
     {
       "id": "J0001",
@@ -235613,6 +235613,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2701",
+      "title": "Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J2695 review handoff (ref `26e28c5142`, `jobs/reviews/J2695/REVIEW.md`; parent `J2676`, PR `#848` @ `48fd0ea27cd2a9c079ca29f485b475bb05dc32e0`; Chief panel decision `J2456` in `05_Analytics/tests/panels/owb-j2374-weekly-2026-11-09/DECISION.md`):\n\nAll three rebuilt `J2676` thumbnail Bs on the Mac mini in `/Users/benjaminoats/_desk/j2676/designs/` passed visual inspection at `1280x720` and `168x94` (`PHONE_SHEET_v02.jpg`, `f050aa68a907008b7d3780641bd37883bc21204938bc4a4a354a91bde5e5a368`) and official `thumb_preview.py long ... --score` (`THUMB_PREVIEW_SCORE_SHEET.jpg`, `1637000de17e093e7934e5ffed8d715d52141f9c051fcc50feaf58eea526dc63`) with recommendation **KEEP**:\n1. **`2fsQcea-voM` (`OWB:013` Moon):** `/Users/benjaminoats/_desk/j2676/designs/2fsQcea-voM_B_v02.jpg` (`sha256=537f8c0b81259f4ec98370c514b2e175a46272d56ac6153df4c0a2cbd5ae8548`, `1280x720`, `334,204 B`, `saturation=152.4`, `near_black=6%`). Hook `TOTALITY ENDS` (yellow `ENDS`), grey LRO Moon (`GSFC_20171208_Archive_e000868`, `d=260 px`), larger Blue Marble Earth (`as17-148-22727`, `d=480 px`), one outward arrow, top band clear of both bodies.\n2. **`Yk1tLh23rko` (`OWB:007` Neutron Star):** `/Users/benjaminoats/_desk/j2676/designs/Yk1tLh23rko_B_v02.jpg` (`sha256=730de8b8e5be45281582979ff92307f4fbe83f677a909f297ca0f2dd14803115`, `1280x720`, `235,627 B`, `saturation=133.6`, `near_black=4%`). Hook `CRUSHED TO ATOMS` (yellow `ATOMS`), clean archived master frame at `t=465.00 s` (`neutron_star_t465.png`), no Earth scale reference, nothing over the star, top band only.\n3. **`b8-X_FyJnHM` (`OWB:003` Alien Worlds):** `/Users/benjaminoats/_desk/j2676/designs/b8-X_FyJnHM_B_v02.jpg` (`sha256=1febb2e40f5fa58054a829e5e8b5e6b3c4dac4b82573ea8c2e9f1ea7124e535f`, `1280x720`, `251,556 B`, `saturation=205.7`, `near_black=3%`). Hook `GLASS RAIN?` (yellow `GLASS`), NASA/ESA/M. Kornmesser `HD 189733 b` (`GSFC_20171208_Archive_e001427`), no Earth beside it, 7 thick tapered diagonal streaks with dark cobalt backing clearly visible at `168x94`.\n\nElected Chief actions:\n1. Recheck `chief_relay.py status` immediately before making the protected Chief call.\n2. Merge PR `#848` (`codex/j2676-thumbnail-rebuild` @ `48fd0ea27cd2a9c079ca29f485b475bb05dc32e0`), which commits the builder and manifest without media in git.\n3. Issue the Chief ruling (`PASS`), resolve/close held parent `J2676`, and update `013`, `007`, and `003` `thumbs` stage records (resolving `J2696` and `J2697`).\n4. Queue the separate Studio Test & Compare job (`--needs mini --kind studio --mini-only`) to run a **fresh Studio read** on `2fsQcea-voM`, `Yk1tLh23rko`, and `b8-X_FyJnHM` first, arming thumbnail-only Test & Compare (`live A` vs `rebuilt B_v02`) ONLY where no test is currently running/set, making **no title changes**, preserving all set tests, and updating `05_Analytics/tests/THUMB_LEDGER.json` (`T024`, `T025`, `T026` / `thumb_ledger.py start`) for each armed test.\n",
+      "ref": "26e28c5142",
+      "film": "013",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-12T12:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T12:26Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Merge PR #848, close J2676, rule on 013/007/003 thumbs and queue fresh-read Studio test job",
+      "kind": "chief",
+      "plain": "Final Chief approval for the three rebuilt thumbnails and queuing the YouTube Studio test"
     }
   ],
   "focus": [
