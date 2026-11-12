@@ -222942,6 +222942,11 @@
           "at": "2026-11-12T18:19Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-12T20:15:00Z"
+        },
+        {
+          "at": "2026-11-12T20:07Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Run reconcile-session-block after Codex PR merges, then verify post-19:13Z Flow allowance, banner cleared, and dry-run --floor 3000 before resuming Batch 12 (row 56 t2 + rows 57-66)",
@@ -222966,7 +222971,8 @@
         "type": "input",
         "condition": "Codex merges reconcile-session-block PR on history-of-science (reviewed by Claude), Gemini runs reconcile-session-block once to close HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, the new Flow allowance is live after 19:13Z with the unusual-activity banner gone, and dry-run --floor 3000 passes with 0 pending charges (Chief rulings 6831924778 & 6831945212)",
         "check_at": "2026-11-12T20:15:00Z"
-      }
+      },
+      "escalated_at": "2026-11-12T20:07Z"
     },
     {
       "id": "J2530",
@@ -237458,6 +237464,11 @@
           "at": "2026-11-12T18:07Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: first-day check, Verdict: BEHIND, not shown"
+        },
+        {
+          "at": "2026-11-12T20:07Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parking J2716 for Chief and posting studio thread report (PR #856)",
@@ -237470,7 +237481,8 @@
         "of": 4,
         "at": "2026-11-12T18:07Z",
         "by": "macbook-2"
-      }
+      },
+      "escalated_at": "2026-11-12T20:07Z"
     },
     {
       "id": "J2717",
