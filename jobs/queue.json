@@ -178268,13 +178268,13 @@
       "stage": "edit",
       "after": "J2632",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T02:42Z",
-      "eta": "2026-11-12T04:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "Waiting for: HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178365,9 +178365,19 @@
           "at": "2026-11-12T02:44Z",
           "by": "codex",
           "what": "step 1 of 3 done: Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verified on NAS. Neither film root has 05_Music."
+        },
+        {
+          "at": "2026-11-12T02:45Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid."
+        },
+        {
+          "at": "2026-11-12T02:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T12:00:00Z"
         }
       ],
-      "remaining_action": "Obtain the gravity film’s own approved score before assembly",
+      "remaining_action": "Obtain the gravity film’s own approved score via the queued music decision",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178380,6 +178390,11 @@
         "at": "2026-11-12T02:44Z",
         "by": "codex",
         "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid.",
+        "check_at": "2026-11-12T12:00:00Z"
       }
     },
     {
