@@ -221866,9 +221866,14 @@
           "at": "2026-11-12T01:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T01:14Z",
+          "by": "gemini",
+          "what": "step 1 of 14 done: Batch 1 (5/66 Quality rows, P1:01..P1:04a) complete: exit 0, 500 credits posted (10440->9940), 0 pending charges, all 5 clips + stills sha256-verified on NAS"
         }
       ],
-      "remaining_action": "Read Batch 1 done file and receipt, record step 1 of 14, build 0.5s contact sheets, and launch Batch 2 of 14 under --floor 3000",
+      "remaining_action": "Build and post Batch 1 full-clip 0.5s contact sheets, then launch Batch 2 of 14 detached under --floor 3000",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -221880,11 +221885,11 @@
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
       "urgent": 9,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 14,
-        "at": "2026-11-11T23:30Z",
+        "at": "2026-11-12T01:14Z",
         "by": "gemini",
-        "note": "Batch 1 launched detached (tmux hos013-pass1, --floor 3000); all 5 start stills verified at 0 credits (balance 10440); T"
+        "note": "Batch 1 (5/66 Quality rows, P1:01..P1:04a) complete: exit 0, 500 credits posted (10440->9940), 0 pending charges, all 5 "
       }
     },
     {
