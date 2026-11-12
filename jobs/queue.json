@@ -212736,17 +212736,22 @@
           "at": "2026-11-12T00:59Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed the assigned opening recut; checking existing render state before starting anything."
+        },
+        {
+          "at": "2026-11-12T01:01Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Input verification found all three planned silence insertions inside spoken words; evidence committed as ff99358894 on codex/j2438-pluto-v02. No render started."
         }
       ],
-      "remaining_action": "Check the Pluto opening plan and existing assembly files",
+      "remaining_action": "Correct the Pluto opening plan against the locked narration before assembly",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T00:59Z",
+        "at": "2026-11-12T01:01Z",
         "by": "codex",
-        "note": "Claimed the assigned opening recut; checking existing render state before starting anything."
+        "note": "Input verification found all three planned silence insertions inside spoken words; evidence committed as ff99358894 on c"
       },
       "taskKeys": [
         "OWB:034"
