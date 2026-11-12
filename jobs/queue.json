@@ -194262,9 +194262,14 @@
           "at": "2026-11-12T18:52Z",
           "by": "codex",
           "what": "step 1 of 3 done: Resumed clean PR542 at a259caec; 18 rows already verified. Extending compositor for confidently mapped duplicate frames; ambiguous rows remain excluded."
+        },
+        {
+          "at": "2026-11-12T18:54Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: HOS PR542 f0760052: two further caption rows, 254 frames, exact source repeat schedules and original PTS verified. Total 20 rows / 22 cards. 55 tests and check_all PASS; full master incomplete."
         }
       ],
-      "remaining_action": "Reconstructing remaining Franklin caption rows from their measured source frames",
+      "remaining_action": "Finishing remaining captions and packet assembly before final film checks",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194273,9 +194278,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T18:52Z",
+        "at": "2026-11-12T18:54Z",
         "by": "codex",
-        "note": "Resumed clean PR542 at a259caec; 18 rows already verified. Extending compositor for confidently mapped duplicate frames;"
+        "note": "HOS PR542 f0760052: two further caption rows, 254 frames, exact source repeat schedules and original PTS verified. Total"
       }
     },
     {
