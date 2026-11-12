@@ -229925,7 +229925,7 @@
     {
       "id": "J2618",
       "title": "Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "Script in this job: `chief_relay.py` (79 lines that name a channel, 2 that assume the studio lives inside one channel's repo). It is the relay that wakes every agent on the Mini, so: no behaviour change, the whole of `scripts/test_chief_relay.py` passes before and after, the prompts it builds are byte-identical for today's two channels (a test pins them), and a made-up third channel is woken for its jobs. After merge, watch one full relay cycle on the Mini's heartbeat before closing the job.\n\nBen, 11 Nov 2026: \"How is the decuple project\". Where it stands: the dry run of the move counts 252 things still in the way (325 on 10 Nov). 203 of them are the four scripts that run the live studio, and none of that work was in the queue. This job is one piece of it. The plan is docs/MULTI_CHANNEL_PLAN.md (phase 1, wave 2): the studio's own code must ask `scripts/channels.py` about channels and never name one, so the studio can move to its own repo and a third channel can plug in.\n\nHow to do it\n1. `python3 scripts/test_channel_ratchet.py -v` shows the counted lines; `scripts/channel_ratchet.json` holds the ceiling for each script.\n2. Replace every counted line with a call to the loader: `channels.slugs()`, `label(slug)`, `name(slug)`, `get(slug)[field]`, `of_job(job)`, `label_of_job(job)`, `film_keys(text)`, `repo_path(slug)`, `checkout(slug)`, `analytics_dir(slug)`, `uploads_file(slug)`, `nas_folder(slug)`, `studio_port(slug)`, `rule_files(checkout)`.\n3. If the script needs something the loader does not give, add one small function to `scripts/channels.py` with a test in `scripts/test_channels.py`, or one field to `studio/channel.json` (and the cached copy under `channels/`). Say in the pull request which field the other channel's own file needs.\n4. **Behaviour must not change.** This script runs the live studio. Run its own tests before and after, and add a test with a made-up third channel (see `ThirdChannelOnTheBoard` in `scripts/test_channels.py`).\n5. Lower the ceilings in `scripts/channel_ratchet.json` to the new counts. A ceiling only ever goes down.\n\nLeave alone anything that is the studio's own name rather than a channel (`owb_thread.py`, the `com.owb.*` labels, `OWB_AGENT`): that has its own job.\n\nChecks before the pull request: every `scripts/test_*.py`, `python3 scripts/sync_rules.py --check`, `python3 scripts/core_sync.py check`, `python3 scripts/studio.py status --check`. One pull request, base `main`. **Do not merge it:** park the job for the Chief with the pull request's number. No real money.",
       "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833",
@@ -229975,12 +229975,26 @@
           "at": "2026-11-12T21:17Z",
           "by": "codex",
           "what": "reopened: J2724 Chief ruling KEEP at 2026-11-12T21:17Z. Read original body/result/history and thread through 6836079855; no superseding ruling. Direct checks: past 12 Nov 19:13Z; HOS535 merged into main 11 Nov 17:28:34Z at 688046d4; current HOS studio/channel.json byte-matches PR833 cached settings; Mini clean on main. PR833 unchanged head 4ef9d89b6 remains draft/open against main, Rules check SUCCESS, core workflow SKIPPED. Accept worker evidence PR859 ed6be227c for condition release only: its focused tests and temporary rebase are historical, not a current whole-suite or merge PASS. Concrete follow-up under J2618: rebase PR833 on latest main in an isolated worktree, run the whole requested suite and checks, elected-Chief code review/merge, then observe one full Mini relay cycle and board publish before completion. J2621/J2622 holds unchanged. PR859 evidence stays open because automatic approval rejected its merge as outside this verification scope; evidence is accessible and merging it is not a prerequisite to release this hold. No public action or spend."
+        },
+        {
+          "at": "2026-11-12T21:18Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite, merge, then watch one relay cycle on the Mini's heartbeat before closing",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
-      "plain": "Make the relay that wakes the agents work for any channel"
+      "plain": "Make the relay that wakes the agents work for any channel",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2619",
