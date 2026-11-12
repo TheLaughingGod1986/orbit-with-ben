@@ -1,5 +1,5 @@
 {
-  "next_id": 2660,
+  "next_id": 2662,
   "jobs": [
     {
       "id": "J0001",
@@ -217825,6 +217825,11 @@
           "at": "2026-11-12T00:19Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T01:00:00Z"
+        },
+        {
+          "at": "2026-11-12T01:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J2660"
         }
       ],
       "remaining_action": "Gemini checks the Supermoon ending before it goes back to Ben",
@@ -217856,7 +217861,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J2658 Gemini ending-only audio and moving-video review must report no failures before the conditional Chief KEEP permits v04 watch-folder delivery and awaits. Candidate and waveform are SHA-verified in studio-live ending_v04_delivery_20261112; PR 834 remains Chief-owned.",
-        "check_at": "2026-11-12T01:00:00Z"
+        "check_at": "2026-11-12T02:03:48+00:00",
+        "recheck_task": "J2660"
       }
     },
     {
@@ -223737,6 +223743,11 @@
           "at": "2026-11-11T22:28Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T01:00:00Z"
+        },
+        {
+          "at": "2026-11-12T01:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J2661"
         }
       ],
       "remaining_action": "Rebuild and review four December Shorts on a worker that can watch and hear the complete cuts",
@@ -223758,11 +223769,12 @@
       "hold": {
         "type": "capability",
         "condition": "Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.",
-        "check_at": "2026-11-12T01:00:00Z",
+        "check_at": "2026-11-12T02:03:48+00:00",
         "requires": [
           "audio_input",
           "moving_video_input"
-        ]
+        ],
+        "recheck_task": "J2661"
       },
       "required_capabilities": [
         "audio_input",
@@ -231513,6 +231525,72 @@
       "remaining_action": "Review the new picture timings and update the existing assembly brief",
       "kind": "chief",
       "plain": "Review the revised picture timings for the Anaesthesia film and hand the plan to the editor"
+    },
+    {
+      "id": "J2660",
+      "title": "Verify condition for J2478",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2478: J2658 Gemini ending-only audio and moving-video review must report no failures before the conditional Chief KEEP permits v04 watch-folder delivery and awaits. Candidate and waveform are SHA-verified in studio-live ending_v04_delivery_20261112; PR 834 remains Chief-owned.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2478 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T01:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T01:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Gemini checks the Supermoon ending before it goes back to Ben",
+      "kind": "review",
+      "recheck_of": "J2478",
+      "due": "2026-11-12T02:03:48+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2661",
+      "title": "Verify condition for J2551",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2551: Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2551 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-12T01:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T01:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Rebuild and review four December Shorts on a worker that can watch and hear the complete cuts",
+      "kind": "review",
+      "recheck_of": "J2551",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "due": "2026-11-12T02:03:48+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
