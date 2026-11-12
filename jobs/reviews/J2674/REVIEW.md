@@ -98,10 +98,10 @@ Per `AGENTS.md` (*"The packaging panel"*) and `J2674`:
 - Panel slug: `owb-019-andromeda-j2674-package-a`
 - Panel directory: `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/`
 - Queued via `scripts/packaging_panel.py`:
-  - **`J2688`** (`Packaging panel (codex)`): independent Codex critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/codex.md`).
+  - **`J2688`** (`Packaging panel (codex)`): independent Codex critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/codex.md`), **completed in `d8f75a6f33`**.
   - **`J2689`** (`Packaging panel (gemini)`): independent Gemini critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/gemini.md`), **completed and committed in `bb596308a6`** (Arm 2 Package A scores `9/10` vs Arm 1 baseline `7/10`; recommends arming two-arm Test & Compare with canonical Mini Package A `dbd52af0...` as Slot 2 against current baseline Slot 1).
-  - **`J2690`** (`Packaging panel (cursor)`): independent Cursor critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/cursor.md`).
-  - **`J2691`** (`Packaging panel decision`, `after: J2690`): dependent Claude panel synthesis job writing `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/DECISION.md` after all three critiques finish.
+  - **`J2690`** (`Packaging panel (cursor)`): independent Cursor critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/cursor.md`), **completed in `7464132eae`**.
+  - **`J2691`** (`Packaging panel decision`, `after: J2690`): panel synthesis job writing `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/DECISION.md` after all three critiques finished (2 of 3 click preference for Arm 2 Package A; 2 of 3 flag semantic echo between parenthetical title tail and `NO CRASH` plus zoomed-in PHAT crop losing whole-spiral silhouette at `168×94`; records exact title rewrites and Path A keep vs Path B `thumb` rebuild options for `J2692`).
   - **`J2692`** (`019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test`, `kind: chief`, `film: 019`, `stage: thumbs`, `after: J2691`, `ref: J2674`, `due: 2026-11-14T18:00:00Z`): dependent elected-Chief final publishing decision & release handoff job.
 - **Stage Gate Enforced:** Film `019` `thumbs` remains in `review` (`?` on the board, held by `J2692`) and `J2449` remains held until the packaging panel writes `DECISION.md` (`J2691`) and the elected Chief issues the final PASS / release in `J2692`.
 
