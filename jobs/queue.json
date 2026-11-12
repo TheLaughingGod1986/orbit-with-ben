@@ -222407,10 +222407,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-12T12:47Z",
-      "eta": "2026-11-12T17:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -222724,6 +222724,11 @@
           "at": "2026-11-12T12:58Z",
           "by": "gemini",
           "what": "step 6 of 14 done: Batch 06 (30/66) complete & 5 full-clip 0.5s sheets posted on HOS desk #180 (6824247413); Batch 07 (P3:07b..P3:11) launched detached in tmux hos013-pass1 (PID 45142, --floor 3000)"
+        },
+        {
+          "at": "2026-11-12T12:58Z",
+          "by": "gemini",
+          "what": "released: batch 7 running detached (tmux hos013-pass1): /Users/benjaminoats/_desk/logs/J2529-batch07-20261112T1256Z.log, /Users/benjaminoats/_desk/logs/J2529-batch07-20261112T1256Z.done"
         }
       ],
       "remaining_action": "Read Batch 07 completion (.done + receipt), verify post-batch balance (7440->6940) and 0.5s sheets, then launch Batch 08 under --floor 3000 --other-reservations 0",
