@@ -232555,7 +232555,7 @@
     {
       "id": "J2668",
       "title": "034 Pluto: correct opening plan against locked narration before J2438",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Correct the Pluto opening edit plan following jobs/reviews/J2438/REVIEW.md (acting-Chief FIX, 12 November 2026). Read worker evidence ff99358894:jobs/reviews/J2438/INPUT_CONFLICT.md and independently use the locked v03 raw transcript and offset record on studio-live, actual shot_list_v01.csv and v01 assembler. Replace only the erroneous Pluto sections in FIRST30_PLAN.md. No render, generation, new VO, credit spend or public/Buffer changes. Verify actual spoken lines, safe inter-sentence insertions totalling 2.80 s, raw-to-edit timestamp/sample mapping, frame-rounded cuts <=4 s in opening, correct picture/overlay alignment and real Test A sentence endpoint. Preserve R08 onward original frame/sample timing and total frames. Record KEEP/FIX, land corrected plan through normal review, then reopen J2438 only with that landed reference and evidence. If listening is needed to approve the splice, queue a demonstrated audio-capable check; text timing is not listening. Existing J2438 assembly and all delivery gates remain separate and unfinished. This is immediately ready specialist review work; do not re-park it merely for absent Chief approval.\n",
       "ref": "c75c73a417",
@@ -232575,11 +232575,25 @@
           "at": "2026-11-12T04:31Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T04:32Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 215 min (heartbeat 2026-11-11T23:33:42Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Correct and verify the Pluto opening plan before assembly resumes",
       "kind": "review",
-      "plain": "Correct the Pluto opening plan so the edit follows the recorded words"
+      "plain": "Correct the Pluto opening plan so the edit follows the recorded words",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
