@@ -218378,17 +218378,22 @@
           "at": "2026-11-12T03:09Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: HOS Next app IS on the internet: Vercel project history-of-science-content-ops answers at its public vercel.app address (/login 200, served by Next.js); git auto-deploy off, shipped by hand with vercel --prod"
+        },
+        {
+          "at": "2026-11-12T03:11Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Orbit: minimatch override pushed, audit 7 moderate to 0, typecheck/lint/197 tests pass. HOS: next 16.4.6 pushed on j2483-next16, audit 11 (4 high) to 3 high (all prisma), typecheck/lint/193 tests pass with the Mini database"
         }
       ],
-      "remaining_action": "Update the remaining risky libraries in both repos, test them, and open two pull requests for the Chief",
+      "remaining_action": "Run the full History of Science check, open both pull requests and park them for the Chief; the database library (Prisma) upgrade is still to do",
       "plain": "Finishes the library clean-up: the remaining known weaknesses need bigger upgrades that must be tested on the Mini.",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-12T03:09Z",
+        "at": "2026-11-12T03:11Z",
         "by": "claudecode",
-        "note": "HOS Next app IS on the internet: Vercel project history-of-science-content-ops answers at its public vercel.app address "
+        "note": "Orbit: minimatch override pushed, audit 7 moderate to 0, typecheck/lint/197 tests pass. HOS: next 16.4.6 pushed on j2483"
       }
     },
     {
