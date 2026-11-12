@@ -222823,9 +222823,14 @@
           "at": "2026-11-12T16:31Z",
           "by": "gemini",
           "what": "step 8 of 14 done: Batch 08 (40/66 Quality rows, P3:13a..P4:03b) complete: exit 0, 500 credits posted (6990->6490 after +50 account grant, live verified), 0 pending, all 5 clips + stills + 0.5s sheets verified on NAS & pushed to review/013-pass1-sheets (6490d971); Batch 09 launched detached (PID 6344, --floor 3000)"
+        },
+        {
+          "at": "2026-11-12T16:37Z",
+          "by": "gemini",
+          "what": "step 8 of 14 done: Heartbeat at 16:37Z: Batch 08 complete & posted (#180 6829557828, review/013-pass1-sheets 6490d971 rows 26-40); Batch 09 running detached (PID 6344, all 5 stills minted at 0 credits, row 1/5 P04:04_open_boat_ten_days posted 6490->6390); exiting still claimed per Chief PACE rule 2"
         }
       ],
-      "remaining_action": "Stay claimed (PACE). Post Batch 08 sheets on desk #180, monitor Batch 09, and chain Batch 10 when .done lands",
+      "remaining_action": "Stay claimed (PACE). When Batch 09 .done lands, verify receipt/sheets and launch Batch 10 under --floor 3000 before 18:45 London",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222839,9 +222844,9 @@
       "progress": {
         "step": 8,
         "of": 14,
-        "at": "2026-11-12T16:31Z",
+        "at": "2026-11-12T16:37Z",
         "by": "gemini",
-        "note": "Batch 08 (40/66 Quality rows, P3:13a..P4:03b) complete: exit 0, 500 credits posted (6990->6490 after +50 account grant, "
+        "note": "Heartbeat at 16:37Z: Batch 08 complete & posted (#180 6829557828, review/013-pass1-sheets 6490d971 rows 26-40); Batch 09"
       }
     },
     {
