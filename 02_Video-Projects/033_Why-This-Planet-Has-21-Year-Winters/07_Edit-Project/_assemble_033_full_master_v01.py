@@ -144,7 +144,7 @@ CREDITS_BY_FILE = {
     "weic2332a_hires.jpg": "NASA / ESA / CSA / STScI",
 }
 
-# Per-cut Teach-on-Screen overlays keyed by cut index (0..143) in cuts_033_j2299_v01.json:
+# Per-cut Teach-on-Screen overlays keyed by cut index (0..146) in cuts_033_j2299_v01.json:
 # Each entry is (kind, line1, line2_or_None, rel_start_s, rel_end_s)
 # Kinds: "LABEL", "FACT", "DATA", "SCALE", "WHEN", "WHO", "SUB"
 # All overlays sit in lower third (y >= 835, outside the 512x512 centre patch y:284..796)
