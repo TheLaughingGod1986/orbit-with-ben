@@ -21850,10 +21850,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T00:30Z",
+      "eta": "2026-11-12T01:10Z",
       "created_by": "claude",
       "created_at": "2026-10-15T07:51Z",
       "result": "",
@@ -22177,6 +22177,11 @@
           "at": "2026-11-11T23:59Z",
           "by": "claude",
           "what": "reopened: Ben answered in chat on 11 Nov: OK to press Continue when the old test has finished and its result is recorded. The four steps are at the top of the brief. A test that is still running is not replaced"
+        },
+        {
+          "at": "2026-11-12T00:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -22184,7 +22189,15 @@
       "taskKeys": [
         "OWB:021"
       ],
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T00:30Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0276",
