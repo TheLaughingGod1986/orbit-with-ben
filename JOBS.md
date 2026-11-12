@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2740 | any | claimed | macbook | 2026-11-13T01:37Z | review · Apply J2683 Chief ruling to the next three Shorts and Titan handoffs | 6829905842 |
 | J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
 | J2742 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2618 |  |
-| J2743 | any | open | – | – | review · Verify condition for J2621 |  |
+| J2743 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
 
 Recently finished:
 
