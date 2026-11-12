@@ -222339,10 +222339,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T09:10Z",
+      "eta": "2026-11-12T14:10Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -222586,6 +222586,11 @@
           "at": "2026-11-12T08:19Z",
           "by": "gemini",
           "what": "released: batch 4 running detached (tmux hos013-pass1): /Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.log, /Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0818Z.done"
+        },
+        {
+          "at": "2026-11-12T09:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read Batch 04 completion (.done + receipt), verify post-batch balance (8940->8440) and 0.5s sheets, then launch Batch 05 under --floor 3000 --other-reservations 0",
