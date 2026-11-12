@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2664 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: produce own wonder and teach score within Chief cap | https://github.com/TheLaughingGod1986/history-of-science/pull/557 |
 | J2665 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
 | J2666 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2664 |  |
-| J2667 | any | open | – | – | review · Verify condition for J2478 |  |
+| J2667 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 
 Recently finished:
 

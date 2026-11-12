@@ -232460,7 +232460,7 @@
     {
       "id": "J2667",
       "title": "Verify condition for J2478",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2478: J2658 remains open and unclaimed with no result or committed review. Conditional v04 KEEP requires Gemini to hear the actual soundtrack and watch the continuous final three seconds, with no failures; no watch-folder delivery or awaits until that review is committed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2478 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -232480,13 +232480,27 @@
           "at": "2026-11-12T04:13Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T04:13Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 198 min (heartbeat 2026-11-11T23:33:42Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Gemini checks the revised Supermoon ending before returning it to Ben",
       "kind": "review",
       "recheck_of": "J2478",
       "due": "2026-11-12T05:13:23+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
