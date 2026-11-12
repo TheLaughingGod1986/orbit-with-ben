@@ -233488,17 +233488,23 @@
           "at": "2026-11-12T07:34Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-12T07:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR 564 already merged into main e2b7f5fe; exact diff limited to remainder batching and tests; 44 runner tests OK."
         }
       ],
-      "remaining_action": "Review the Darwin and Wallace runner repair and its safeguards",
+      "remaining_action": "Record the tested repair decision and conditional Gemini handoff",
       "due": "2026-11-12T13:00:00Z",
       "kind": "chief",
       "plain": "Check the Darwin and Wallace picture repair and decide when generation can continue",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-12T07:34Z",
-        "by": "codex"
+        "by": "codex",
+        "note": "PR 564 already merged into main e2b7f5fe; exact diff limited to remainder batching and tests; 44 runner tests OK."
       },
       "taskKeys": [
         "HOS:013"
