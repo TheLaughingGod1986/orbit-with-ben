@@ -193947,10 +193947,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-12T20:16Z",
-      "eta": "2026-11-12T22:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -194299,6 +194299,11 @@
           "at": "2026-11-12T20:22Z",
           "by": "cursor",
           "what": "step 1 of 3 done: HOS PR542 77993cc0: table body f427-f544, 118 frames, original PTS and upper-band hashes match. f423-f426 and six ambiguous rows stay out. 57 tests and check_all PASS. No v04."
+        },
+        {
+          "at": "2026-11-12T20:22Z",
+          "by": "cursor",
+          "what": "released: Checkpoint 77993cc0 pushed to HOS PR 542. Table body f427-f544 verified (118 frames, original PTS, upper-band hashes). f423-f426 and six ambiguous rows stay unrendered. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. 57 tests and check_all PASS. No v04, no detached process, no spend or publication. Remaining captions, mux and gates exceed this run."
         }
       ],
       "remaining_action": "Building the remaining Franklin caption rows, then the packet assembly and film checks",
