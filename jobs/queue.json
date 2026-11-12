@@ -232111,13 +232111,13 @@
       "stage": "edit",
       "after": "J2663",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T03:05Z",
-      "eta": "2026-11-12T05:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T02:52Z",
-      "result": "",
+      "result": "parked for Chief: music_v2 account-specific duration credit tariff and pending generation charges unverified; locked GET confirms 87416 remaining and overage disabled, but existing guard counts prompt characters. Zero POST attempts; scope requires no POST until cost is known.",
       "history": [
         {
           "at": "2026-11-12T02:52Z",
@@ -232138,6 +232138,11 @@
           "at": "2026-11-12T03:06Z",
           "by": "codex",
           "what": "step 1 of 3 done: Merged scope verified; locked subscription GET shows 87416 credits remaining and overage disabled. Music tariff and pending generation charges remain unverified; zero POST attempts."
+        },
+        {
+          "at": "2026-11-12T03:06Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: music_v2 account-specific duration credit tariff and pending generation charges unverified; locked GET confirms 87416 remaining and overage disabled, but existing guard counts prompt characters. Zero POST attempts; scope requires no POST until cost is known."
         }
       ],
       "remaining_action": "Chief to resolve account-specific duration billing and pending charges before score generation",
