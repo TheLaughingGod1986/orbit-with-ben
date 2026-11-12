@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2676 | any | blocked | codex | – | for codex · thumb · Rebuild three OWB thumbnail Bs per Chief decision J2456 (Moon, Neutron star, Alien worlds) |  |
 | J2678 | mini | open | – | – | assembly · Mini: install pytest for python3 so the email and private-network tests can run |  |
 | J2683 | mini | open | – | – | for gemini · review · `gemini-argon` · OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini) | 6816538586 |
-| J2685 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2171 |  |
+| J2685 | mini | claimed | codex | 2026-11-12T14:00Z | for codex · review · `gpt-6-astra` · Verify condition for J2171 |  |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
 | J2690 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J2674 Andromeda (ojk-dfOpAmw) two-arm repackage test: Arm 1 baseline (What Happens During the Milky Way Andromeda Collision? + THIS IS ANDROMEDA 250c9980) vs Arm 2 Package A (Andromeda Is Already Coming (And Almost No Stars Will Collide) + NO CRASH dbd52af0); Package B and description edits excluded per J2657 | J2674 |

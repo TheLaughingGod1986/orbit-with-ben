@@ -234560,10 +234560,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T12:00Z",
+      "eta": "2026-11-12T14:00Z",
       "created_by": "relay",
       "created_at": "2026-11-12T08:21Z",
       "result": "",
@@ -234617,6 +234617,11 @@
           "at": "2026-11-12T12:00Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Designated elected-Chief closeout of Gemini verification; parent wait already recorded, no new specialist work."
+        },
+        {
+          "at": "2026-11-12T12:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex) to record wait --recheck J2685 on J2171 and close J2685",
@@ -234635,7 +234640,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T12:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2686",
