@@ -223765,10 +223765,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T01:58Z",
+      "eta": "2026-11-12T03:58Z",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
       "result": "",
@@ -223817,6 +223817,11 @@
           "at": "2026-11-11T07:14Z",
           "by": "claude",
           "what": "acting Chief: the morning gate check fails two of its Shorts as scheduled (Voyager, Tue 17 Nov; Muons, Sat 21 Nov). Voyager first; due moved to Sat 14 Nov 18:00 London so Ben can watch before its slot; placed third in the urgent order, after the 008 retakes and the 010 check."
+        },
+        {
+          "at": "2026-11-12T01:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair the three Shorts and review their full sound and motion before watch cards",
@@ -223832,7 +223837,15 @@
         "audio_input",
         "moving_video_input"
       ],
-      "urgent": 3
+      "urgent": 3,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T01:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2551",
