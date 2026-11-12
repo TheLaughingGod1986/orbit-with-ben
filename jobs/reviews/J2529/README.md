@@ -78,3 +78,13 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P2:02_galapagos_beach_myth` | `P02_02_galapagos_beach_myth_t1.mp4` | `d3b2c39de4cc1a47140d353d33185993cada504d5a353a5d38669672b1a2aab7` | `0f751ebbf6edc54cc8f8fee6fb90641d194b392d26bbb93e28be749251dc340f` | `589e53755ae051e606fb328df8004657a0f22f7fbe6ebc669e15efe66e7c63e6` | `9,240 → 9,140` | `PENDING_REVIEW` (`keep: false`) |
 | `P2:03_unlabelled_bagging` | `P02_03_unlabelled_bagging_t1.mp4` | `8813d267291dff799d545a15cb32c684d8b0545e4be06511d077a951e9fe52ca` | `703c03faae35428a273a1643bd5a19f1639b6ffa64021a0c4c0f714e4ed858bf` | `026f621f6c2ba6db24e5d7e2760228f3c750bc39321bf13194948ddc2d8ac5ab` | `9,140 → 9,040` | `PENDING_REVIEW` (`keep: false`) |
 | `P2:04_blank_tags_row` | `P02_04_blank_tags_row_t1.mp4` | `fb29ad16a297f8bb32eb06eb17099f64b6927a6d38c20a8dc734686b90005fd6` | `db1949f444947d14e9a7bd4e95c76f6940dcb041ce3e608e6ca546955304defe` | `5855af33696939da05ba23c662004c883f511fd5e0a4c19977b199b25e44fb94` | `9,040 → 8,940` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 04 of 14 — Runner `STOP` Before Browser/Create (`2026-11-12T05:31Z`, `0` Credits Spent)
+
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0531Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch04-20261112T0531Z.done` (`exit 2`)
+- **Exact runner output:** `STOP first pass must start with Part 01`
+- **Root cause (read-only; runner, scope, plan, and ledgers untouched):** Batch 03 completed the final 2 rows of Part 01 (`12/12`), so `remaining[0]` for Batch 04 is `P2:05_tortoise_overboard` (`part == 2`). In `_mint_flow_v01_pass1.py`, `next_batch()` (line `1638`) calls `batch_rows(remaining)[0]`, and `batch_rows()` (line `449`) calls `order_rows(remaining)`, which raises `GuardError("first pass must start with Part 01")` at line `403`.
+- **Cumulative stop summary (parked for Chief):**
+  - **Takes per part (`15 / 66` Quality takes, `GENERATED` / `PENDING_REVIEW`, `keep: false`):** `part_01` `12/12`, `part_02` `3/11`, `part_03` `0/14`, `part_04` `0/12`, `part_05` `0/9`, `part_06` `0/8`
+  - **Credits spent:** `1,500` Flow credits (`15 × 100` Quality; `15 × 0` start stills; £0 cash; `0` pending charges; `0` refused takes)
+  - **Balance before → after:** `10,440 → 8,940` (`5,100` remaining on `HOS013_PASS1`; `800` historical unposted liability; headroom `3,040 >= 3,000`)
