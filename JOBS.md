@@ -82,6 +82,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2692 | mini | open (after J2691) | – | – | 019 thumbs · chief · 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test | J2674 |
 | J2694 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2652 |  |
 | J2695 | mini | open | – | – | review · Review rebuilt Moon, neutron star and alien worlds thumbnail Bs (J2676) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/848 |
+| J2696 | mini | open | – | – | chief · Chief: resolve 003 thumbs orphan-review |  |
+| J2697 | mini | open | – | – | chief · Chief: resolve 007 thumbs orphan-review |  |
+| J2698 | mini | open | – | – | chief · Chief: resolve 013 thumbs orphan-review |  |
 
 Recently finished:
 
