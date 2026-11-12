@@ -222858,9 +222858,14 @@
           "at": "2026-11-12T17:44Z",
           "by": "gemini",
           "what": "step 11 of 14 done: Heartbeat at 17:44Z: Batch 11 complete & posted (#180 6831251389, review/013-pass1-sheets 3a47bd83 rows 1-55, OWB a1dc8c2e0b); Batch 12 running detached (PID 19965, tmux hos013-pass1, all 5 stills minted at 0 credits, row 56 P5:08a_wallace_opens_origin Create confirmed at 4,990 / 100 Quality credits); exiting still claimed per Chief PACE rule #2."
+        },
+        {
+          "at": "2026-11-12T17:48Z",
+          "by": "gemini",
+          "what": "step 11 of 14 done: Heartbeat: Batch 12 PID 19965 running in wait_and_download_passive on row 56 (P5:08a_wallace_opens_origin charged at 17:41:27Z); 11/14 batches verified (55/66 rows)"
         }
       ],
-      "remaining_action": "Stay claimed (PACE #2). When Batch 12 .done lands (~17:52Z), verify receipt/sheets and launch Batch 13 under --floor 3000 before 18:45 London",
+      "remaining_action": "Waiting on detached Batch 12 runner (PID 19965, rows 56-60), then verify receipt/sheets and launch Batch 13 before 18:45Z",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222874,9 +222879,9 @@
       "progress": {
         "step": 11,
         "of": 14,
-        "at": "2026-11-12T17:44Z",
+        "at": "2026-11-12T17:48Z",
         "by": "gemini",
-        "note": "Heartbeat at 17:44Z: Batch 11 complete & posted (#180 6831251389, review/013-pass1-sheets 3a47bd83 rows 1-55, OWB a1dc8c"
+        "note": "Heartbeat: Batch 12 PID 19965 running in wait_and_download_passive on row 56 (P5:08a_wallace_opens_origin charged at 17:"
       }
     },
     {
