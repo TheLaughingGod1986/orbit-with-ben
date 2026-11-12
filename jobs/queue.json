@@ -237080,13 +237080,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T19:12Z",
-      "eta": "2026-11-12T23:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
-      "result": "",
+      "result": "Automatic approval review rejected authorized Vercel production settings export; explicit user approval required to recover BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY. PR #858 ready; live address unchanged.",
       "history": [
         {
           "at": "2026-11-12T16:42Z",
@@ -237122,6 +237122,11 @@
           "at": "2026-11-12T19:18Z",
           "by": "codex",
           "what": "step 1 of 5 done: Implementation committed as 4c9e273669, PR #858. Local runtime and security checks pass; address unchanged. Recovery of three missing production settings rejected by automatic review."
+        },
+        {
+          "at": "2026-11-12T19:18Z",
+          "by": "codex",
+          "what": "blocked: Automatic approval review rejected authorized Vercel production settings export; explicit user approval required to recover BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY. PR #858 ready; live address unchanged."
         }
       ],
       "remaining_action": "Deploy and verify the board after production settings recovery is approved",
@@ -237136,6 +237141,11 @@
         "at": "2026-11-12T19:18Z",
         "by": "codex",
         "note": "Implementation committed as 4c9e273669, PR #858. Local runtime and security checks pass; address unchanged. Recovery of "
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Automatic approval review rejected authorized Vercel production settings export; explicit user approval required to recover BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY. PR #858 ready; live address unchanged.",
+        "check_at": "2026-11-13T01:18:48+00:00"
       }
     },
     {
