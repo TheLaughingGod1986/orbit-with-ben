@@ -235545,9 +235545,14 @@
           "at": "2026-11-12T12:11Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1/3: Confirmed J2663 is done (HOS PR #557 merged @ 98aa6d61), scoping two Music v2 cues (wonder 180s + teach 360s), while J2664 score production is blocked for Chief on music_v2 duration tariff; Mini 05_Music has scope files only and studio-live has no 05_Music yet"
+        },
+        {
+          "at": "2026-11-12T12:12Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2/3: Verified both diagram KEEP approvals remain valid (J2631 sha e35f9a98... on Mini+NAS; J2632 r4 sha 23c832b0... on NAS + MANIFEST.json on Mini), J2663 is done (98aa6d61), Mini 05_Music has scope files only, studio-live has no 05_Music, and J2664 is blocked for Chief on music_v2 duration tariff"
         }
       ],
-      "remaining_action": "Verify diagram KEEP hashes on Mini and NAS and check HOS 009 05_Music contents",
+      "remaining_action": "Write and commit jobs/reviews/J2700/REVIEW.md from a clean worktree, then park J2700 for elected Chief (codex) to record --recheck J2700 on J2035",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-12T13:07:03+00:00",
@@ -235562,11 +235567,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T12:11Z",
+        "at": "2026-11-12T12:12Z",
         "by": "gemini",
-        "note": "Step 1/3: Confirmed J2663 is done (HOS PR #557 merged @ 98aa6d61), scoping two Music v2 cues (wonder 180s + teach 360s),"
+        "note": "Step 2/3: Verified both diagram KEEP approvals remain valid (J2631 sha e35f9a98... on Mini+NAS; J2632 r4 sha 23c832b0..."
       },
       "taskKeys": [
         "HOS:009"
