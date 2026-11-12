@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 013 | thumbs | codex | 2026-11-12T12:29Z | 2026-11-12T14:28Z | J2701 Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP) |
+| 013 | thumbs | codex | 2026-11-12T12:30Z | 2026-11-12T12:50Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
