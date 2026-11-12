@@ -238942,18 +238942,21 @@
           "at": "2026-11-12T21:45Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T21:46Z",
+          "by": "macbook-2",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Fix the file-copy isolation bug and prove original channel files stay unchanged",
+      "remaining_action": "Read the split dry-run code and PR 868, then fix destination symlinks so scratch owns the file before copy",
       "kind": "assembly",
       "plain": "Keep the studio move rehearsal from changing original channel files",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-12T21:45Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "of": 4,
+        "at": "2026-11-12T21:46Z",
+        "by": "macbook-2"
       }
     }
   ],
