@@ -233870,10 +233870,10 @@
       "stage": "picture",
       "after": "J2675",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T08:04Z",
+      "eta": "2026-11-12T10:04Z",
       "created_by": "gemini",
       "created_at": "2026-11-12T08:00Z",
       "result": "",
@@ -233882,12 +233882,25 @@
           "at": "2026-11-12T08:00Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T08:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS PR #565 / desk 6818125475 preflight and record J2529 reopening (or hold) before 13:00",
       "due": "2026-11-12T13:00:00Z",
       "kind": "chief",
-      "plain": "Confirm the Darwin and Wallace picture checks and reopen generation before the 1pm deadline"
+      "plain": "Confirm the Darwin and Wallace picture checks and reopen generation before the 1pm deadline",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T08:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
