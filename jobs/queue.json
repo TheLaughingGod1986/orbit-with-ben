@@ -238914,9 +238914,14 @@
           "at": "2026-11-12T23:11Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3: Verified all HOS 009 picture and Shorts VO hashes remain intact across Mini and NAS (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0..., Short A S03 P03:07_ball_to_moon sha fba484bb..., Short A v02 sha c2fd407d..., Short B v04 sha 0c9c4c6f...), while J2035 long assembly remains blocked on J2666->J2664 score delivery (held to 2026-11-13T01:30:00Z by J2721)"
+        },
+        {
+          "at": "2026-11-12T23:14Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3: Committed jobs/reviews/J2730/REVIEW.md (1dd9e09176); J2171 awaits J2666->J2664 score delivery and J2035 long assembly"
         }
       ],
-      "remaining_action": "Write and commit jobs/reviews/J2730/REVIEW.md and park J2730 for Chief to record --recheck J2730 wait on J2171",
+      "remaining_action": "Chief (codex) to record --recheck J2730 wait on J2171 and close J2730",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T21:07:58+00:00",
@@ -238931,11 +238936,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-12T23:11Z",
+        "at": "2026-11-12T23:14Z",
         "by": "gemini",
-        "note": "Step 2/3: Verified all HOS 009 picture and Shorts VO hashes remain intact across Mini and NAS (J2631 sha e35f9a98..., J2"
+        "note": "Step 3/3: Committed jobs/reviews/J2730/REVIEW.md (1dd9e09176); J2171 awaits J2666->J2664 score delivery and J2035 long a"
       },
       "taskKeys": [
         "HOS:009"
