@@ -6,6 +6,6 @@ Black Hole (3xrxdmaOwJI): existing three-arm test T002 verified still running, e
 
 Andromeda (ojk-dfOpAmw): T017 finished 11 November at 22:32, insufficient impressions to declare a winner; both watch-time shares are dashes. Saved its report screenshot and recorded its result. No new test started and no Continue pressed. The package B concept in REPACKAGE_2026-11.md explicitly requires an illustration label in the description for the enlarged galaxy, or package A only. The live description has no illustration disclosure, and J2449 forbids description edits. Parked for Chief to authorise the disclosure, provide a suitable B, or choose a narrower test. Its completed old test remains intact.
 
-Evidence: the adjacent PNG screenshots. No spend. No final approval claimed.
+Evidence: EVIDENCE.json lists the local screenshot paths and SHA-256 hashes; screenshots are stored outside Git. No spend. No final approval claimed.
 
 Thread read to #6810237519.
