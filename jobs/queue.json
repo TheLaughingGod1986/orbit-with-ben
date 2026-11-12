@@ -231766,13 +231766,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T02:36Z",
-      "eta": "2026-11-12T04:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T01:03Z",
-      "result": "",
+      "result": "Condition NOT satisfied: J2658 is open/unclaimed with no result or committed review. Read parent approval history; conditional v04 KEEP still requires actual Gemini audio and continuous-motion ending review with no failures. J2478 remains blocked; wait updated with --recheck J2660 and original retry 2026-11-12T04:00:00Z. No delivery, awaits, merge, spend or YouTube change.",
       "history": [
         {
           "at": "2026-11-12T01:03Z",
@@ -231823,6 +231823,11 @@
           "at": "2026-11-12T02:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified saved parent hold and linked recheck; J2658 still open without a verdict"
+        },
+        {
+          "at": "2026-11-12T02:40Z",
+          "by": "codex",
+          "what": "done: Condition NOT satisfied: J2658 is open/unclaimed with no result or committed review. Read parent approval history; conditional v04 KEEP still requires actual Gemini audio and continuous-motion ending review with no failures. J2478 remains blocked; wait updated with --recheck J2660 and original retry 2026-11-12T04:00:00Z. No delivery, awaits, merge, spend or YouTube change."
         }
       ],
       "remaining_action": "Condition check complete; Gemini ending review remains outstanding",
