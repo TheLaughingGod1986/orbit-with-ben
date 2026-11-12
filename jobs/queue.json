@@ -235336,10 +235336,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T12:02Z",
+      "eta": "2026-11-12T14:02Z",
       "created_by": "relay",
       "created_at": "2026-11-12T11:07Z",
       "result": "",
@@ -235348,6 +235348,11 @@
           "at": "2026-11-12T11:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-12T12:02Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 013 thumbs handoff and records the next owner/action",
@@ -235357,6 +235362,14 @@
         "stage": "thumbs",
         "kind": "orphan-review",
         "signature": "4a0e4fbd63689afbfc1b"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T12:02Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
