@@ -193729,10 +193729,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T01:23Z",
-      "eta": "2026-11-12T03:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -193861,6 +193861,11 @@
           "at": "2026-11-12T01:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checkpoint 8e16b876 on HOS PR542: 19 tests OK and check_all PASS. Both salon splice experiments rejected on 266 unchanged decoded frames. Identity-remux control running in tmux J2242-remux-control; no v04 master."
+        },
+        {
+          "at": "2026-11-12T01:34Z",
+          "by": "codex",
+          "what": "released: Checkpoint 8e16b876 pushed to HOS PR542. Both salon packet-splice experiments rejected (266 unchanged decoded mismatches); no v04. Detached identity-remux control running: tmux J2242-remux-control; log /Users/benjaminoats/_desk/logs/J2242-remux-control.log; exit marker /Users/benjaminoats/_desk/logs/J2242-remux-control.done. Missing marker means running: do not duplicate. Read /Volumes/MiniWork/scratch/J2242-hos/jobs/reviews/J2242/RESUME.md first. Source master unchanged; all remaining corrections/captions/final gates outstanding."
         }
       ],
       "remaining_action": "Check the detached remux control, then fix unchanged-frame preservation before completing the Franklin edit",
