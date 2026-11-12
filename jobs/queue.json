@@ -236761,13 +236761,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-12T16:00Z",
-      "eta": "2026-11-12T18:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T15:55Z",
-      "result": "",
+      "result": "parked for Chief: J2707 waiting condition MET at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md). J2710 is done (e23049fde7, PR #853) and delivers all required evidence for OWB:064 and OWB:065 (8 >=1M-view neighbours each, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, 11 direct NASA/NOAA/GAO fact checks each with hook fix F64.1 and mandatory 2030/2031 + SPOUA distinctions F65.6/F65.8, and 22/22 byte-identical template files), verified with live HTTP 200 spot-checks of YouTube GB and NASA/NOAA plus GAO-26-107805 search. Neither topic is approved by this check (J2707 owns Rule-E go/no-go). Because jobs.py do_reopen requires chief_relay.elected_for ('Only the elected Chief may release a verified hold'), Chief (codex) please run: python3 scripts/jobs.py reopen J2707 --agent codex --note 'J2713 verified condition met (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 is done and PR #853 (e23049fde7) delivers verified >=1M-view neighbours, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, and direct NASA/NOAA/GAO fact checks for OWB:064 and OWB:065. Reopened for J2707 rule-E go/no-go decision; neither topic approved by this check.' --git && python3 scripts/jobs.py done J2713 --agent codex --result 'Condition met at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 evidence on PR #853 (e23049fde7) verified with live NASA/NOAA/GAO and YouTube GB spot-checks; J2707 reopened for its rule-E decision. Neither topic approved by this check. £0.' --git. £0.",
       "history": [
         {
           "at": "2026-11-12T15:55Z",
@@ -236803,6 +236803,11 @@
           "at": "2026-11-12T16:10Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-12T16:10Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J2707 waiting condition MET at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md). J2710 is done (e23049fde7, PR #853) and delivers all required evidence for OWB:064 and OWB:065 (8 >=1M-view neighbours each, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, 11 direct NASA/NOAA/GAO fact checks each with hook fix F64.1 and mandatory 2030/2031 + SPOUA distinctions F65.6/F65.8, and 22/22 byte-identical template files), verified with live HTTP 200 spot-checks of YouTube GB and NASA/NOAA plus GAO-26-107805 search. Neither topic is approved by this check (J2707 owns Rule-E go/no-go). Because jobs.py do_reopen requires chief_relay.elected_for ('Only the elected Chief may release a verified hold'), Chief (codex) please run: python3 scripts/jobs.py reopen J2707 --agent codex --note 'J2713 verified condition met (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 is done and PR #853 (e23049fde7) delivers verified >=1M-view neighbours, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, and direct NASA/NOAA/GAO fact checks for OWB:064 and OWB:065. Reopened for J2707 rule-E go/no-go decision; neither topic approved by this check.' --git && python3 scripts/jobs.py done J2713 --agent codex --result 'Condition met at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 evidence on PR #853 (e23049fde7) verified with live NASA/NOAA/GAO and YouTube GB spot-checks; J2707 reopened for its rule-E decision. Neither topic approved by this check. £0.' --git. £0."
         }
       ],
       "remaining_action": "Condition met verified on PR #855 (f13ab303f); parking J2713 for elected Chief (codex) to reopen J2707 and close J2713",
