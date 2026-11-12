@@ -1,5 +1,5 @@
 {
-  "next_id": 2673,
+  "next_id": 2674,
   "jobs": [
     {
       "id": "J0001",
@@ -233333,6 +233333,36 @@
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the error stopping the Darwin and Wallace pictures after the first part"
+    },
+    {
+      "id": "J2673",
+      "title": "HOS 013: review runner fix and decide resumption of J2529",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review the preceding Codex repair PR for Grok ruling 6815648894 and parent J2529. Check base main, exact diff, full-plan Part-01 enforcement, rejection of bad remainder order, and every existing spend/arming guard; run runner tests. Recheck elected Chief status before PASS/merge. If sound, merge then verify new main SHA. Record disposition on J2529: reopen only after merged repair with all original approvals valid, for Gemini to perform fresh canonical-main preflight and resume batches 04-14 under the original guards. Keep step 3/14 until actual batch completion. No generation in this review. If repair/preflight cannot meet the 13:00 checkpoint or 18:45 Create cutoff, record a no-go and explicit next credit-window decision; do not silently extend approvals. No cash or credit spend. Existing sheet/KEEP rulings remain separate, latest controlling desk clarification 6815870258.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6815648894",
+      "film": "013",
+      "stage": "picture",
+      "after": "J2672",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T07:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T07:18Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review and merge the runner repair, then record the parent job resumption decision",
+      "due": "2026-11-12T13:00:00Z",
+      "kind": "chief",
+      "plain": "Check the Darwin and Wallace picture repair and decide when generation can continue"
     }
   ],
   "focus": [
