@@ -218327,10 +218327,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T01:36Z",
+      "eta": "2026-11-12T03:36Z",
       "created_by": "claude",
       "created_at": "2026-11-10T04:55Z",
       "result": "",
@@ -218344,6 +218344,11 @@
           "at": "2026-11-11T23:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T00:50:00Z: runs three-hourly overnight to save usage); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T01:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch",
@@ -218360,7 +218365,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T01:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2486",
