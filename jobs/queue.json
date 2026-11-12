@@ -1,5 +1,5 @@
 {
-  "next_id": 2683,
+  "next_id": 2684,
   "jobs": [
     {
       "id": "J0001",
@@ -233990,6 +233990,36 @@
       "for": "codex",
       "kind": "assembly",
       "plain": "Correct the credit estimate shown when Darwin and Wallace picture work resumes"
+    },
+    {
+      "id": "J2683",
+      "title": "OWB audit follow-up: Shorts retention curves, search terms and SEA (needs the Mini)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2677 (Grok ruling 6816538586 on the weekly OWB audit J2366). Read-only, £0. No Studio, YouTube, schedule or cut change.\n\nJ2677 ran on the MacBook, which has no Analytics sign-in and no yt-dlp. It measured frame 0, first cut, payoff time and loop from the cut metas (jobs/reviews/J2677/REVIEW.md). Three parts are still unmeasured and need the Mini:\n\n1. Shorts retention curves: for each Short in the J2677 table, pull audienceWatchRatio by elapsedVideoTimeRatio with the read-only tracker sign-in, and give the second where the curve falls most, with what is on screen and said at that second (from the cut's meta).\n2. Search terms: the 28-day YouTube search terms for the channel and for the top Shorts and longs.\n3. SEA: last 30 days of the reference channel's uploads from public pages or yt-dlp metadata (titles, lengths, views). J2366's handle resolved to another channel; SEA's Higgs film is 7oR0Pmd-WIk, so take the channel from that video.\n\nAdd the numbers to jobs/reviews/J2677/REVIEW.md (or a REVIEW.md of this job's own) with one next-video change for each part, and fill the \"not measured\" curve cells in the Shorts lab table of 05_Analytics/LEARNINGS.md. End parked for the Chief.\n",
+      "ref": "6816538586",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-12T08:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T08:12Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Pull Shorts retention curves and search terms from Analytics, read SEA's public page, add the numbers to the review",
+      "kind": "review",
+      "plain": "Measuring where viewers leave our Orbit Shorts, what people search to find us, and what the reference channel SEA posted this month",
+      "mini_only": true
     }
   ],
   "focus": [
