@@ -236517,10 +236517,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T14:51Z",
+      "eta": "2026-11-12T16:21Z",
       "created_by": "codex",
       "created_at": "2026-11-12T14:44Z",
       "result": "",
@@ -236534,6 +236534,11 @@
           "at": "2026-11-12T14:47Z",
           "by": "codex",
           "what": "Linked OWB:064 and OWB:065; assessment deadline 13 Nov 14:40Z"
+        },
+        {
+          "at": "2026-11-12T14:51Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Gather free search and NASA evidence for both topics, then return a topic recommendation",
@@ -236546,7 +236551,15 @@
       "taskKeys": [
         "OWB:064",
         "OWB:065"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T14:51Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

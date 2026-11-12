@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2707 | any | blocked | macbook | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
 | J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
-| J2710 | mini | open | – | – | 064 topic · for gemini · review · `gemini-argon` · OWB 064 and 065: repair missing topic evidence for J2707 |  |
+| J2710 | mini | claimed | gemini | 2026-11-12T16:21Z | 064 topic · for gemini · review · `gemini-argon` · OWB 064 and 065: repair missing topic evidence for J2707 |  |
 
 Recently finished:
 
