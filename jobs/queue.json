@@ -233425,20 +233425,25 @@
           "at": "2026-11-12T07:29Z",
           "by": "codex",
           "what": "step 2 of 3 done: 44 runner tests PASS; full repository suite and check_all PASS; core and rules checks PASS."
+        },
+        {
+          "at": "2026-11-12T07:31Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR HOS #564 targets main at e6193fb0d7a29748cbb6035ca44cc1c66b70b77b; J2673 owns review/merge; J2529 not resumed."
         }
       ],
-      "remaining_action": "Submit the tested batching fix for Chief review",
+      "remaining_action": "Chief review of the submitted fix is handled by the linked review job",
       "due": "2026-11-12T13:00:00Z",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the error stopping the Darwin and Wallace pictures after the first part",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-12T07:29Z",
+        "at": "2026-11-12T07:31Z",
         "by": "codex",
-        "note": "44 runner tests PASS; full repository suite and check_all PASS; core and rules checks PASS."
+        "note": "PR HOS #564 targets main at e6193fb0d7a29748cbb6035ca44cc1c66b70b77b; J2673 owns review/merge; J2529 not resumed."
       },
       "taskKeys": [
         "HOS:013"
