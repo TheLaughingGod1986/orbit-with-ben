@@ -201,9 +201,9 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 43 h (early) | 48 | 39.6% | too few to judge | 48.8% | too few to judge |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 44 h (early) | 46 | 39.6% | too few to judge | 48.8% | too few to judge |
 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 2 d | 1060 | 38.8% | MISS | 62.6% | WATCH |
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 4 d | 1282 | 49.8% | WATCH | 66.4% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 4 d | 1282 | 49.8% | WATCH | 66.3% | WATCH |
 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 8 d | 481 | 26.9% | MISS | 306.8% | LOOP |
 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 9 d | 566 | 31.6% | MISS | 66.2% | WATCH |
 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 11 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
