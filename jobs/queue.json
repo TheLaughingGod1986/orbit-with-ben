@@ -223070,7 +223070,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T18:54Z",
-      "result": "Waiting for: The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile",
+      "result": "Waiting for: The board site is redeployed from main and its live pages are checked. Live /version.json read 2eff5ff506654388 at 17:55Z, main builds 2551c4887f478f7e: not redeployed. The deploy needs Ben's approval tap in the app. The old build keeps working meanwhile.",
       "history": [
         {
           "at": "2026-11-10T18:54Z",
@@ -223136,9 +223136,14 @@
           "at": "2026-11-12T15:41Z",
           "by": "relay",
           "what": "condition verification queued: J2712"
+        },
+        {
+          "at": "2026-11-12T17:53Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T07:40:00Z"
         }
       ],
-      "remaining_action": "Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 09:54Z on 12 Nov",
+      "remaining_action": "Wait for the redeploy, then check the live pages",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the board work when the studio repo is private",
@@ -223151,12 +223156,8 @@
       },
       "hold": {
         "type": "input",
-        "condition": "The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile",
-        "check_at": "2026-11-12T16:41:08+00:00",
-        "last_recheck": "J2693",
-        "checked_at": "2026-11-12T09:54:36+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2712"
+        "condition": "The board site is redeployed from main and its live pages are checked. Live /version.json read 2eff5ff506654388 at 17:55Z, main builds 2551c4887f478f7e: not redeployed. The deploy needs Ben's approval tap in the app. The old build keeps working meanwhile.",
+        "check_at": "2026-11-13T07:40:00Z"
       }
     },
     {
@@ -236422,13 +236423,13 @@
       "stage": "",
       "after": "J2710",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-12T14:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-12T14:09Z",
-      "result": "Chief FIX (Codex, 12 Nov): review incomplete. Template copy verified (12 identical files per film), but neighbour/search/collision/NASA evidence is missing. J2710 owns Mini-only Gemini evidence repair. Neither topic approved; no production. Reassess by 13 Nov 14:40Z; insufficient evidence means NO-GO, no rolling defer. Ruling: jobs/reviews/J2707/REVIEW.md at ade76f75d7.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T14:09Z",
@@ -236464,22 +236465,15 @@
           "at": "2026-11-12T15:55Z",
           "by": "relay",
           "what": "condition verification queued: J2713"
+        },
+        {
+          "at": "2026-11-12T17:53Z",
+          "by": "claude",
+          "what": "reopened: Condition met: J2710 is done (PR #853, commit e23049fde7) with neighbours, search phrase and ranks, collision and NASA checks for OWB 064 and 065. Review it for the topic go/no-go now."
         }
       ],
       "remaining_action": "Review J2710 evidence for shooting stars and the space station; neither topic is approved",
       "kind": "review",
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-12T14:10Z",
-        "by": "macbook"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief FIX: review incomplete; wait for J2710 Mini Gemini evidence on OWB:064 and OWB:065. Templates match, but neighbours, search phrase/ranks, collision and NASA checks are missing. No topic GO or production. Decide on evidence, or NO-GO if insufficient at the deadline.",
-        "check_at": "2026-11-12T16:55:56+00:00",
-        "recheck_task": "J2713"
-      },
       "taskKeys": [
         "OWB:064",
         "OWB:065"
@@ -236753,13 +236747,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-12T15:43Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T15:41Z",
-      "result": "parked for Chief: J2532 condition NOT met at 2026-11-12T15:48Z, keep J2532 blocked at step 3 of 4 (OWB PR #854, jobs/reviews/J2712/REVIEW.md). Direct live board + thread verification: (1) GET https://studio-kanban.vercel.app/api/data?f=ref returns HTTP 404 NOT_FOUND; (2) live version.json is still 2eff5ff506654388 (pre-#821 build), whereas build.py app_version() on main (ccacdf1a) is 2551c4887f478f7e, and live /, /ai, and /tracker inlined scripts contain 0 references to /api/data; (3) /, /ai, /tracker, and /api/ref all return HTTP 200 on the existing build; (4) no deploy reply from Ben on the studio thread through #6828202652 (2026-11-12T15:41:18Z); (5) scripts/test_board_data_api.py passes on main (21/21, 4 Playwright skipped). Because macbook is not the holder (claude) or elected Chief, 'jobs.py wait J2532 --agent macbook ... --recheck J2712' is restricted ('Only the holder or elected Chief may update this hold'). Chief or Claude please run: python3 scripts/jobs.py wait J2532 --agent <chief> --condition 'The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile' --check-at '2026-11-12T21:45:00Z' --type input --recheck J2712 --action 'Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 15:48Z on 12 Nov' --git and close J2712. £0.",
+      "result": "Checked 12 Nov 17:55Z: live board version 2eff5ff506654388, main 2551c4887f478f7e, so not redeployed. J2532 stays held to 13 Nov 07:40Z; it is in the morning note for Ben.",
       "history": [
         {
           "at": "2026-11-12T15:41Z",
@@ -236795,6 +236789,11 @@
           "at": "2026-11-12T15:52Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2532 condition NOT met at 2026-11-12T15:48Z, keep J2532 blocked at step 3 of 4 (OWB PR #854, jobs/reviews/J2712/REVIEW.md). Direct live board + thread verification: (1) GET https://studio-kanban.vercel.app/api/data?f=ref returns HTTP 404 NOT_FOUND; (2) live version.json is still 2eff5ff506654388 (pre-#821 build), whereas build.py app_version() on main (ccacdf1a) is 2551c4887f478f7e, and live /, /ai, and /tracker inlined scripts contain 0 references to /api/data; (3) /, /ai, /tracker, and /api/ref all return HTTP 200 on the existing build; (4) no deploy reply from Ben on the studio thread through #6828202652 (2026-11-12T15:41:18Z); (5) scripts/test_board_data_api.py passes on main (21/21, 4 Playwright skipped). Because macbook is not the holder (claude) or elected Chief, 'jobs.py wait J2532 --agent macbook ... --recheck J2712' is restricted ('Only the holder or elected Chief may update this hold'). Chief or Claude please run: python3 scripts/jobs.py wait J2532 --agent <chief> --condition 'The board site is redeployed from main (ccacdf1a) and its live pages are checked. The deploy step needs an approval tap from Ben in the app: it went unanswered twice on 11 Nov and he has been asked. The code is merged (orbit-with-ben #821); the live board keeps working on the old build meanwhile' --check-at '2026-11-12T21:45:00Z' --type input --recheck J2712 --action 'Redeploy the board site from main and check its live pages as soon as Ben says deploy; existing Chief ruling 6819829427 retained, live condition still unmet at 15:48Z on 12 Nov' --git and close J2712. £0."
+        },
+        {
+          "at": "2026-11-12T17:53Z",
+          "by": "claude",
+          "what": "done: Checked 12 Nov 17:55Z: live board version 2eff5ff506654388, main 2551c4887f478f7e, so not redeployed. J2532 stays held to 13 Nov 07:40Z; it is in the morning note for Ben."
         }
       ],
       "remaining_action": "Parking J2712 for holder/elected Chief to record wait --recheck J2712 on J2532 and close J2712",
@@ -236829,13 +236828,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-12T16:00Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T15:55Z",
-      "result": "parked for Chief: J2707 waiting condition MET at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md). J2710 is done (e23049fde7, PR #853) and delivers all required evidence for OWB:064 and OWB:065 (8 >=1M-view neighbours each, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, 11 direct NASA/NOAA/GAO fact checks each with hook fix F64.1 and mandatory 2030/2031 + SPOUA distinctions F65.6/F65.8, and 22/22 byte-identical template files), verified with live HTTP 200 spot-checks of YouTube GB and NASA/NOAA plus GAO-26-107805 search. Neither topic is approved by this check (J2707 owns Rule-E go/no-go). Because jobs.py do_reopen requires chief_relay.elected_for ('Only the elected Chief may release a verified hold'), Chief (codex) please run: python3 scripts/jobs.py reopen J2707 --agent codex --note 'J2713 verified condition met (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 is done and PR #853 (e23049fde7) delivers verified >=1M-view neighbours, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, and direct NASA/NOAA/GAO fact checks for OWB:064 and OWB:065. Reopened for J2707 rule-E go/no-go decision; neither topic approved by this check.' --git && python3 scripts/jobs.py done J2713 --agent codex --result 'Condition met at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 evidence on PR #853 (e23049fde7) verified with live NASA/NOAA/GAO and YouTube GB spot-checks; J2707 reopened for its rule-E decision. Neither topic approved by this check. £0.' --git. £0.",
+      "result": "J2710 done with the evidence; J2707 reopened for the topic review.",
       "history": [
         {
           "at": "2026-11-12T15:55Z",
@@ -236876,6 +236875,11 @@
           "at": "2026-11-12T16:10Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J2707 waiting condition MET at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md). J2710 is done (e23049fde7, PR #853) and delivers all required evidence for OWB:064 and OWB:065 (8 >=1M-view neighbours each, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, 11 direct NASA/NOAA/GAO fact checks each with hook fix F64.1 and mandatory 2030/2031 + SPOUA distinctions F65.6/F65.8, and 22/22 byte-identical template files), verified with live HTTP 200 spot-checks of YouTube GB and NASA/NOAA plus GAO-26-107805 search. Neither topic is approved by this check (J2707 owns Rule-E go/no-go). Because jobs.py do_reopen requires chief_relay.elected_for ('Only the elected Chief may release a verified hold'), Chief (codex) please run: python3 scripts/jobs.py reopen J2707 --agent codex --note 'J2713 verified condition met (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 is done and PR #853 (e23049fde7) delivers verified >=1M-view neighbours, Rule 26 YouTube GB autocomplete phrases and ranking videos, 0 title collisions, and direct NASA/NOAA/GAO fact checks for OWB:064 and OWB:065. Reopened for J2707 rule-E go/no-go decision; neither topic approved by this check.' --git && python3 scripts/jobs.py done J2713 --agent codex --result 'Condition met at 2026-11-12T16:08Z (OWB PR #855 f13ab303f, jobs/reviews/J2713/REVIEW.md): J2710 evidence on PR #853 (e23049fde7) verified with live NASA/NOAA/GAO and YouTube GB spot-checks; J2707 reopened for its rule-E decision. Neither topic approved by this check. £0.' --git. £0."
+        },
+        {
+          "at": "2026-11-12T17:53Z",
+          "by": "claude",
+          "what": "done: J2710 done with the evidence; J2707 reopened for the topic review."
         }
       ],
       "remaining_action": "Condition met verified on PR #855 (f13ab303f); parking J2713 for elected Chief (codex) to reopen J2707 and close J2713",
