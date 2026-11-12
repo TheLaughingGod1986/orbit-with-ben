@@ -236342,7 +236342,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J2710",
       "eta_min": 120,
       "status": "blocked",
       "by": "macbook",
@@ -236350,7 +236350,7 @@
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-12T14:09Z",
-      "result": "parked for Chief: review NOT done. Neighbour pass, rule-26 phrase, title-collision and NASA fact check all need the web; on the MacBook web search, web fetch and curl are refused (same wall as J2703) and vidIQ search costs 5 credits a call (brief: spend nothing). Done: template copied into 064 and 065, PR #850 (branch macbook/J2707, stacked on open PR #849). Route to the Mini or cloud Claude from that branch, or OK about 30 vidIQ credits; do not send back to the MacBook.",
+      "result": "Chief FIX (Codex, 12 Nov): review incomplete. Template copy verified (12 identical files per film), but neighbour/search/collision/NASA evidence is missing. J2710 owns Mini-only Gemini evidence repair. Neither topic approved; no production. Reassess by 13 Nov 14:40Z; insufficient evidence means NO-GO, no rolling defer. Ruling: jobs/reviews/J2707/REVIEW.md at ade76f75d7.",
       "history": [
         {
           "at": "2026-11-12T14:09Z",
@@ -236376,6 +236376,11 @@
           "at": "2026-11-12T14:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T14:40:00Z"
+        },
+        {
+          "at": "2026-11-12T14:47Z",
+          "by": "codex",
+          "what": "Chief FIX recorded; evidence repair dependency J2710; original worker progress preserved"
         }
       ],
       "remaining_action": "Review J2710 evidence for shooting stars and the space station; neither topic is approved",
@@ -236390,7 +236395,11 @@
         "type": "dependency",
         "condition": "Chief FIX: review incomplete; wait for J2710 Mini Gemini evidence on OWB:064 and OWB:065. Templates match, but neighbours, search phrase/ranks, collision and NASA checks are missing. No topic GO or production. Decide on evidence, or NO-GO if insufficient at the deadline.",
         "check_at": "2026-11-13T14:40:00Z"
-      }
+      },
+      "taskKeys": [
+        "OWB:064",
+        "OWB:065"
+      ]
     },
     {
       "id": "J2708",
@@ -236502,7 +236511,7 @@
       "title": "OWB 064 and 065: repair missing topic evidence for J2707",
       "needs": "mini",
       "repo": "owb",
-      "body": "J2707 Chief ruling: FIX, review incomplete. Collect evidence for OWB:064 Shooting Stars and OWB:065 Space Station. This is evidence repair, not production approval. Spend no money or metered vidIQ credits. Mini only: the MacBook web route was refused. Use the Gemini review/facts lane on the Mini, free public search and direct NASA pages. Free web search returned NASA sources in the Chief session on 12 Nov; do not assume that proves every CLI has the same tool. Probe your own access before work and record results.\n\nStart from macbook/J2707 at a12f996f990fd6dec36e73389bcb158e0606e1ee (PR 850, includes PR 849 at 7e168910da9f62f87525876c8eb7a3d761f0c5de). Both are OPEN; neither is approval. Use a clean worktree. The 12 template files per film have been compared byte for byte and match; do not redo the copy or execute the template generator.\n\nFor each film: collect three same-subject education/space neighbours of approximately one million views or more, with actual URLs/IDs, titles, channels, observed views, access date and subject words. Fill TOPIC_OPPORTUNITY_SCORE.md and 11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md. Capture YouTube suggestions for the exact phrase and two ranking videos, plus signed-out exact-title/top-five competition and channel overlap checks. Keep missing view counts UNKNOWN; do not invent or relax the threshold. Local Short success does not prove search demand or three neighbours. Rule 31 remains an experiment, not proven cause.\n\nGemini checks every number/date and substantive claim in both TOPIC.md files against direct NASA sources, with exact short quotes and URLs, leaving findings intact. In particular reject 064's universal claim that every shooting star is a sand-sized grain of comet dust (the same outline includes asteroid-derived Geminids). Check shower dates, Halley, height and speed ranges. For 065 distinguish current ISS operations/deorbit plan from a guaranteed date, and a remote South Pacific disposal area from a guaranteed Point Nemo impact coordinate; verify mass, size, speed, altitude and historical examples. No spoken script exists to lock; do not turn template text into approved script.\n\nDeliver evidence and an explicit rule-E recommendation for each film, covering STUDIO_PLAYBOOK section 2 and LEARNINGS 1-31, plus current main overlap/WIP checks. Keep both as backlog candidates only; no active WIP promotion, VO, generation, scheduling or spend. Submit updated PR evidence and a precise result for parent J2707 to decide. Bound this repair to 24 hours from the Chief ruling (due 13 Nov 2026 15:00Z); if still insufficient, recommend NO-GO back to ideas, not another rolling defer. This deadline is not a delayed start: work is ready now. Preserve all unrelated holds and tests.\n",
+      "body": "J2707 Chief ruling: FIX, review incomplete. Collect evidence for OWB:064 Shooting Stars and OWB:065 Space Station. This is evidence repair, not production approval. Spend no money or metered vidIQ credits. Mini only: the MacBook web route was refused. Use the Gemini review/facts lane on the Mini, free public search and direct NASA pages. Free web search returned NASA sources in the Chief session on 12 Nov; do not assume that proves every CLI has the same tool. Probe your own access before work and record results.\n\nStart from macbook/J2707 at a12f996f990fd6dec36e73389bcb158e0606e1ee (PR 850, includes PR 849 at 7e168910da9f62f87525876c8eb7a3d761f0c5de). Both are OPEN; neither is approval. Use a clean worktree. The 12 template files per film have been compared byte for byte and match; do not redo the copy or execute the template generator.\n\nFor each film: collect three same-subject education/space neighbours of approximately one million views or more, with actual URLs/IDs, titles, channels, observed views, access date and subject words. Fill TOPIC_OPPORTUNITY_SCORE.md and 11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md. Capture YouTube suggestions for the exact phrase and two ranking videos, plus signed-out exact-title/top-five competition and channel overlap checks. Keep missing view counts UNKNOWN; do not invent or relax the threshold. Local Short success does not prove search demand or three neighbours. Rule 31 remains an experiment, not proven cause.\n\nGemini checks every number/date and substantive claim in both TOPIC.md files against direct NASA sources, with exact short quotes and URLs, leaving findings intact. In particular reject 064's universal claim that every shooting star is a sand-sized grain of comet dust (the same outline includes asteroid-derived Geminids). Check shower dates, Halley, height and speed ranges. For 065 distinguish current ISS operations/deorbit plan from a guaranteed date, and a remote South Pacific disposal area from a guaranteed Point Nemo impact coordinate; verify mass, size, speed, altitude and historical examples. No spoken script exists to lock; do not turn template text into approved script.\n\nDeliver evidence and an explicit rule-E recommendation for each film, covering STUDIO_PLAYBOOK section 2 and LEARNINGS 1-31, plus current main overlap/WIP checks. Keep both as backlog candidates only; no active WIP promotion, VO, generation, scheduling or spend. Submit updated PR evidence and a precise result for parent J2707 to decide. Bound this repair to 24 hours from the Chief ruling (due 13 Nov 2026 14:40Z); if still insufficient, recommend NO-GO back to ideas, not another rolling defer. This deadline is not a delayed start: work is ready now. Preserve all unrelated holds and tests.\n",
       "ref": "",
       "film": "064",
       "stage": "topic",
@@ -236520,15 +236529,24 @@
           "at": "2026-11-12T14:44Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-12T14:47Z",
+          "by": "codex",
+          "what": "Linked OWB:064 and OWB:065; assessment deadline 13 Nov 14:40Z"
         }
       ],
       "remaining_action": "Gather free search and NASA evidence for both topics, then return a topic recommendation",
-      "due": "2026-11-13T15:00:00Z",
+      "due": "2026-11-13T14:40:00Z",
       "for": "gemini",
       "kind": "review",
       "model": "gemini-argon",
       "plain": "Checking the evidence for films about shooting stars and the space station",
-      "mini_only": true
+      "mini_only": true,
+      "taskKeys": [
+        "OWB:064",
+        "OWB:065"
+      ]
     }
   ],
   "focus": [
