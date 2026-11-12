@@ -235353,9 +235353,14 @@
           "at": "2026-11-12T12:02Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T12:03Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking stage history, original jobs and approval evidence"
         }
       ],
-      "remaining_action": "Chief resolves 013 thumbs handoff and records the next owner/action",
+      "remaining_action": "Check the Moon thumbnail evidence and resolve its missing review handoff",
       "kind": "chief",
       "handoff": {
         "film": "013",
@@ -235366,11 +235371,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-12T12:02Z",
+        "at": "2026-11-12T12:03Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Checking stage history, original jobs and approval evidence"
+      },
+      "taskKeys": [
+        "OWB:013"
+      ]
     },
     {
       "id": "J2699",
