@@ -232703,10 +232703,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T05:39Z",
+      "eta": "2026-11-12T07:39Z",
       "created_by": "relay",
       "created_at": "2026-11-12T05:36Z",
       "result": "",
@@ -232720,6 +232720,11 @@
           "at": "2026-11-12T05:37Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 284 min (heartbeat 2026-11-11T23:33:42Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-12T05:39Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief/Codex fix _mint_flow_v01_pass1.py next_batch/batch_rows Part-01 remainder guard, merge on HOS main, and reopen J2529 for Batches 4-14 (51 rows, 5,100 credit",
@@ -232735,7 +232740,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T05:39Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
