@@ -234295,17 +234295,22 @@
           "at": "2026-11-12T13:50Z",
           "by": "codex",
           "what": "step 1 of 3 done: Located both security tests; python3 is Homebrew Python 3.14 and pytest is absent; pip requires an explicit user-site override"
+        },
+        {
+          "at": "2026-11-12T13:51Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Installed pytest 9.2.0 in Python 3.14 user site; python3 -m pytest works without changing PATH"
         }
       ],
-      "remaining_action": "Installing pytest in the studio Python user site",
+      "remaining_action": "Running the email and private-network tests and recording results",
       "kind": "assembly",
       "plain": "Add a missing test tool on the Mac mini so two safety checks can run",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T13:50Z",
+        "at": "2026-11-12T13:51Z",
         "by": "codex",
-        "note": "Located both security tests; python3 is Homebrew Python 3.14 and pytest is absent; pip requires an explicit user-site ov"
+        "note": "Installed pytest 9.2.0 in Python 3.14 user site; python3 -m pytest works without changing PATH"
       }
     },
     {
