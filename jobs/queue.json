@@ -237031,10 +237031,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T20:24Z",
-      "eta": "2026-11-12T21:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T15:20Z",
       "result": "",
@@ -237108,6 +237108,11 @@
           "at": "2026-11-12T20:32Z",
           "by": "codex",
           "what": "step 3 of 4 done: Fresh 159-video read: zero empty tag lists. Baselines expanded to 73; later Ben-ordered HOS retags preserved. Evidence PR 865; no platform changes."
+        },
+        {
+          "at": "2026-11-12T20:32Z",
+          "by": "codex",
+          "what": "released: PR 865 records fresh zero-empty-tag read across 159 videos and extends baseline comparison to 73. Remaining 86 IDs explicit in HISTORICAL_COMPARISON.json; next bounded work is original artifact recovery from deleted git paths/older upload records. Exact Mars trigger lacks original snippet evidence. Preserve later Ben-ordered HOS retags and all prior repairs; no repeated platform mutations. PR CI pending at handover."
         }
       ],
       "remaining_action": "Recover original tag baselines for 86 older videos and finish the historical comparison",
