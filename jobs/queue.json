@@ -230476,18 +230476,24 @@
           "at": "2026-11-12T06:00Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-12T06:01Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Added trusted same-film/stage check and supersedes header option in isolated HOS branch"
         }
       ],
-      "remaining_action": "Checking the desk reply rules before adding stale-reply protection",
+      "remaining_action": "Testing stale-reply refusal and the explicit newest-post override",
       "for": "codex",
       "kind": "assembly",
       "plain": "Stop a Chief desk reply that answers an older note after a newer Chief note on the same film and stage, unless it names the newer note.",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T06:00Z",
-        "by": "codex"
+        "at": "2026-11-12T06:01Z",
+        "by": "codex",
+        "note": "Added trusted same-film/stage check and supersedes header option in isolated HOS branch"
       }
     },
     {
