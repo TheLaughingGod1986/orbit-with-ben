@@ -1,5 +1,5 @@
 {
-  "next_id": 2704,
+  "next_id": 2705,
   "jobs": [
     {
       "id": "J0001",
@@ -236037,6 +236037,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2704",
+      "title": "HOS tooling: validate Next upgrade in preview and diagnose home page error",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up to J2483. Existing Chief ruling stands: https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6813294950 . OWB PR841 and HOS PR558 already merged; no repeat merge. Work in an isolated HOS worktree, follow its rules, use your own identity. No spend, secrets, live database migrations, production deployment or publishing side effects. \nValidate the merged Next 16 change in HOS 07_Content-Ops. The worker observed the public Vercel login page returning 200 and home page 500 before this change. Establish the current baseline without exposing credentials. Run the full npm run build against a disposable NON-LIVE database: the script runs prisma migrate deploy. Verify DATABASE_URL and DIRECT_URL both refer to the disposable database without printing them. Do not use the production database. Then make a Vercel PREVIEW only using an isolated non-live database and safe preview configuration; never --prod, never alter production environment settings. If a safe preview database/configuration cannot be established under existing permissions, record the exact missing prerequisite and queue its resolution, with a dated recheck for an actual external wait.\nCheck login, unauthenticated denial/redirect and authenticated access on an operator-gated route without triggering publishing, and investigate the pre-existing home-page 500. Record exact commit, full build/test results, preview URL and smoke checks, root cause and any repair PR. Run typecheck, lint, tests and check_all.sh for code changes. Stop at a reviewable result and pass evidence to the elected Chief. Production deployment remains HELD until full build plus preview checks pass and Chief explicitly authorizes it. If work exceeds the run cap, use detached execution with log and done file and release cleanly.\n",
+      "ref": "6813294950",
+      "film": "",
+      "stage": "",
+      "after": "J2483",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T13:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T13:55Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run a full build and preview checks using a non-live database",
+      "kind": "assembly",
+      "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
+      "mini_only": true
     }
   ],
   "focus": [
