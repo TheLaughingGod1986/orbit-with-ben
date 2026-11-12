@@ -237309,13 +237309,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T20:34Z",
-      "eta": "2026-11-13T00:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
-      "result": "",
+      "result": "Part A deployed at https://studio-kanban.pages.dev. Part B requires the explicit approval named in the brief before transferring BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY; approval not yet recorded. PR 858 next-run review/merge, phone pairing/tick checks and 24-hour usage read remain.",
       "history": [
         {
           "at": "2026-11-12T16:42Z",
@@ -237386,6 +237386,11 @@
           "at": "2026-11-12T20:39Z",
           "by": "codex",
           "what": "step 2 of 3 done: Part A complete: Cloudflare deployed, live pages/data checked, publisher switched, published Play 302 verified; evidence committed 911a5c1120 on PR 858"
+        },
+        {
+          "at": "2026-11-12T20:40Z",
+          "by": "codex",
+          "what": "blocked: Part A deployed at https://studio-kanban.pages.dev. Part B requires the explicit approval named in the brief before transferring BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY; approval not yet recorded. PR 858 next-run review/merge, phone pairing/tick checks and 24-hour usage read remain."
         }
       ],
       "remaining_action": "Waiting for approval to transfer the three remaining board settings, then verify phone linking and ticks",
@@ -237400,6 +237405,11 @@
         "at": "2026-11-12T20:39Z",
         "by": "codex",
         "note": "Part A complete: Cloudflare deployed, live pages/data checked, publisher switched, published Play 302 verified; evidence"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Part A deployed at https://studio-kanban.pages.dev. Part B requires the explicit approval named in the brief before transferring BOARD_GH_TOKEN, BOARD_KEY and WATCH_UPLOAD_KEY; approval not yet recorded. PR 858 next-run review/merge, phone pairing/tick checks and 24-hour usage read remain.",
+        "check_at": "2026-11-13T02:40:03+00:00"
       }
     },
     {
