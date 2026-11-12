@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 019 | thumbs | codex | 2026-11-12T20:00Z | 2026-11-12T20:44Z | J2692 019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test |
+| 019 | thumbs | codex | 2026-11-12T20:00Z | 2026-11-12T20:20Z | J2692 exact-file packaging and panel decision |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
