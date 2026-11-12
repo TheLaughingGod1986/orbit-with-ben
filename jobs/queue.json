@@ -78009,6 +78009,11 @@
           "at": "2026-11-12T11:35Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
+        },
+        {
+          "at": "2026-11-12T11:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -78017,7 +78022,7 @@
         "HOS:008"
       ],
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6701818953",
-      "remaining_action": "J2699 prepares the verified Franklin kite Short for final watch; preserve completed assembly",
+      "remaining_action": "Ben watches the finished Franklin kite Short on its separate review card; assembly and private handoff are complete",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
         "step": 4,
@@ -78031,12 +78036,9 @@
         "moving_video_input"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "J2699 creates the hash-verified private watch copy and working watch card for HOS 008 Short A v04 (76d801a3); technical/audio/sampled-frame KEEP accepted in 8bcb89f546, continuous motion assigned to Ben final watch. Assembly remains 4/4; no publishing approval.",
-        "check_at": "2026-11-13T12:00:00Z",
-        "last_recheck": "J2684",
-        "checked_at": "2026-11-12T11:35:01+00:00",
-        "checked_by": "codex"
+        "type": "ben",
+        "condition": "J2699 handoff COMPLETE: exact v04 watch copy 76d801a3, published HOS:ASK:J2699 card readyFor Ben, Play 302 and streamed bytes HTTP200/hash match; board check PASS. Assembly remains 4/4. Only actual Ben final watch/approval of this Short remains before a separate publishing job; long must be public first. Evidence HOS PR567 and J2684 ruling.",
+        "check_at": "2026-11-13T12:00:00Z"
       },
       "plain": "Cut the next History of Science Short from a finished film"
     },
