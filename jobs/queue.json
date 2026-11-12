@@ -222479,9 +222479,14 @@
           "at": "2026-11-12T05:43Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-12T06:36:59Z"
+        },
+        {
+          "at": "2026-11-12T07:18Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-12T09:00:00Z"
         }
       ],
-      "remaining_action": "Wait for Codex PR fixing _mint_flow_v01_pass1.py Part-01 remainder guard (#180 6815648894) to merge on HOS main, then re-run preflight on new main SHA and resume Batches 04-14 (51 rows, 5,100 credits, --floor 3000) before 18:45Z",
+      "remaining_action": "Await the tested runner repair and Chief merge review, then rerun preflight and resume the remaining picture batches",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222500,9 +222505,12 @@
         "note": "Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 68"
       },
       "hold": {
-        "type": "input",
-        "condition": "Codex PR fixing _mint_flow_v01_pass1.py Part-01 remainder guard (order_rows/batch_rows in next_batch) merged on history-of-science main per Chief ruling #180 comment 6815648894",
-        "check_at": "2026-11-12T06:36:59Z"
+        "type": "dependency",
+        "condition": "J2672 runner repair merged and J2673 elected-Chief resumption decision recorded under desk ruling 6815648894; fresh canonical-main preflight required before Gemini resumes. Current main still has the Part-01 remainder defect.",
+        "check_at": "2026-11-12T09:00:00Z",
+        "last_recheck": "J2669",
+        "checked_at": "2026-11-12T07:18:30+00:00",
+        "checked_by": "codex"
       }
     },
     {
