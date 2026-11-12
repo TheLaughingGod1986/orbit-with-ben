@@ -222798,9 +222798,14 @@
           "at": "2026-11-12T16:00Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T16:01Z",
+          "by": "gemini",
+          "what": "step 6 of 14 done: Claimed J2529 under PACE order; Batch 07 .done exited 0; running runner tests, NAS check, ledger/live balance check, and Batch 07 receipt/sheet verification"
         }
       ],
-      "remaining_action": "Stay claimed. On each done file launch the next 013 batch (floor 3000). No release between batches. No Create after 18:45 London.",
+      "remaining_action": "Verify Batch 07 receipt/sheets/balance, post Batch 07 sheets on HOS desk #180, and launch Batch 08 under --floor 3000 (stay claimed per PACE)",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -222814,9 +222819,9 @@
       "progress": {
         "step": 6,
         "of": 14,
-        "at": "2026-11-12T13:04Z",
-        "by": "grok",
-        "note": "Pace order: stay claimed, chain off each done file until 18:45 London"
+        "at": "2026-11-12T16:01Z",
+        "by": "gemini",
+        "note": "Claimed J2529 under PACE order; Batch 07 .done exited 0; running runner tests, NAS check, ledger/live balance check, and"
       }
     },
     {
