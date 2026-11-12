@@ -98,10 +98,12 @@ Per `AGENTS.md` (*"The packaging panel"*) and `J2674`:
 - Panel slug: `owb-019-andromeda-j2674-package-a`
 - Panel directory: `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/`
 - Queued via `scripts/packaging_panel.py`:
-  - Three independent critiques (`codex`, `gemini`, `cursor`) scoring the exact two-arm test (Arm 1 current baseline vs Arm 2 Package A `dbd52af0fc3d7ba37b74fd4402f01bc46185ea90efd081e2b452b8826ac5e8c7`, at `168 px`, title+thumbnail pair, hook, and existing description with zero description edits).
-  - One dependent Claude panel synthesis job (`DECISION.md`) after all three critiques finish.
-  - One dependent elected-Chief final publishing decision & release handoff job (`kind: chief`, `film: 019`, `stage: thumbs`) after `DECISION.md`.
-- **Stage Gate Enforced:** Film `019` `thumbs` remains in `review` / `blocked` and `J2449` remains held until the packaging panel writes `DECISION.md` and the elected Chief issues the final PASS / release.
+  - **`J2688`** (`Packaging panel (codex)`): independent Codex critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/codex.md`).
+  - **`J2689`** (`Packaging panel (gemini)`): independent Gemini critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/gemini.md`), **completed and committed in `bb596308a6`** (Arm 2 Package A scores `9/10` vs Arm 1 baseline `7/10`; recommends arming two-arm Test & Compare with canonical Mini Package A `dbd52af0...` as Slot 2 against current baseline Slot 1).
+  - **`J2690`** (`Packaging panel (cursor)`): independent Cursor critique (`05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/cursor.md`).
+  - **`J2691`** (`Packaging panel decision`, `after: J2690`): dependent Claude panel synthesis job writing `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/DECISION.md` after all three critiques finish.
+  - **`J2692`** (`019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test`, `kind: chief`, `film: 019`, `stage: thumbs`, `after: J2691`, `ref: J2674`, `due: 2026-11-14T18:00:00Z`): dependent elected-Chief final publishing decision & release handoff job.
+- **Stage Gate Enforced:** Film `019` `thumbs` remains in `review` (`?` on the board, held by `J2692`) and `J2449` remains held until the packaging panel writes `DECISION.md` (`J2691`) and the elected Chief issues the final PASS / release in `J2692`.
 
 ---
 
@@ -134,7 +136,7 @@ All 5 evidence screenshots referenced in PR `#836`'s `05_Analytics/tests/J2449/E
 
 ## 5. Final Publishing Decision & Release Handoff to Elected Chief
 
-Once the `owb-019-andromeda-j2674-package-a` packaging panel critiques (`codex`, `gemini`, `cursor`) and `DECISION.md` complete, the dependent `chief` job (`019 Andromeda: Chief final decision on J2674 panel, merge PR #836 & release J2449 two-arm test`) is ready for the elected Chief to:
+Once the `owb-019-andromeda-j2674-package-a` packaging panel critiques (`J2688` `codex`, `J2689` `gemini` [done in `bb596308a6`], `J2690` `cursor`) and `DECISION.md` (`J2691`) complete, the dependent `chief` job **`J2692`** (`019 Andromeda: Chief exact-file ruling on J2674 panel, merge PR #836 & release J2449 two-arm test`) is ready for the elected Chief to:
 1. Review `05_Analytics/tests/panels/owb-019-andromeda-j2674-package-a/DECISION.md` alongside this `jobs/reviews/J2674/REVIEW.md` and the comparison sheet `02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/019_two_arm_comparison_168x94.jpg` (`a53d418e...`).
 2. Merge verified PR `#836` (`codex/J2449-tests`, `6967deb9f31d26e6c24acbf672d75ac0ebab63f9`) so `05_Analytics/tests/THUMB_LEDGER.json` records `T017` (`ojk-dfOpAmw`) and `T003` (`-jmMROGoZCM`) as `done` (`winner: draw`) and `T030` (`-jmMROGoZCM`) as `running`.
 3. Issue the Chief ruling on arming `019 Andromeda` (`ojk-dfOpAmw`) as a **two-arm** `Title and thumbnail` Test & Compare (`J2657` scope):
