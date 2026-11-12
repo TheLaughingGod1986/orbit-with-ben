@@ -178268,13 +178268,13 @@
       "stage": "edit",
       "after": "J2632",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-11T15:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "Waiting for: The second drawn graphic, J2632 (the falling-Moon gap, 5.26 s from 3:03.94), is KEEP on Grok's sheet PASS. The first, J2631 (the five-metre graphic, 13.51 s from 5:19.63), is KEEP as of 11 Nov 16:57Z (desk 6801964131). Every other picture in the film is settled.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178345,6 +178345,11 @@
           "at": "2026-11-12T02:29Z",
           "by": "codex",
           "what": "remaining action: Assemble the gravity film using both approved diagrams; apply the exact falling-Moon joins in desk ruling 6809363448 and check both joins"
+        },
+        {
+          "at": "2026-11-12T02:30Z",
+          "by": "codex",
+          "what": "reopened: Verified dependency now satisfied: J2632 done, r4 KEEP desk6809363448, PR543 merged90711687, Mini/NAS SHA25623c832b09e70f78d8eeece657dac11d6148e2a5f5c701f2ad88b868845b5f3b3 matched. J2631 already KEEP/done. Follow desk6809363448: set P03:01 splice_authorized true only for that hash; fade0.200s,parent104 last visible,exclude105+,cannon f0 hard cut189.20; no freeze/later-row shift. Check both graphic joins and preserve five-metre right bracket. No other holds changed."
         }
       ],
       "remaining_action": "Assemble the gravity film using both approved diagrams; apply the exact falling-Moon joins in desk ruling 6809363448 and check both joins",
@@ -178353,19 +178358,7 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-04T16:56Z",
-        "by": "codex",
-        "note": "Queued successor under J2026; not claimed or started"
-      },
-      "urgent": 7,
-      "hold": {
-        "type": "dependency",
-        "condition": "The second drawn graphic, J2632 (the falling-Moon gap, 5.26 s from 3:03.94), is KEEP on Grok's sheet PASS. The first, J2631 (the five-metre graphic, 13.51 s from 5:19.63), is KEEP as of 11 Nov 16:57Z (desk 6801964131). Every other picture in the film is settled.",
-        "check_at": "2026-11-12T18:00:00Z"
-      }
+      "urgent": 7
     },
     {
       "id": "J2036",
