@@ -1,5 +1,5 @@
 {
-  "next_id": 2741,
+  "next_id": 2742,
   "jobs": [
     {
       "id": "J0001",
@@ -239421,6 +239421,36 @@
       "remaining_action": "Identify eligible Shorts and map accepted changes to existing production jobs",
       "kind": "review",
       "plain": "Planning the next three Orbit Shorts improvements and checking the Titan handoff"
+    },
+    {
+      "id": "J2741",
+      "title": "J2683: recheck settled Titan curve and retain reproducible audit rows",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Read-only £0 follow-up to J2683 and existing Chief PASS #6829905842. After 14 Nov 2026 07:00 UTC, use the Mini read-only Analytics sign-in to check whether Titan ffYKoNVPoqg has an audienceWatchRatio curve. Save sanitized response rows, request dimensions/metrics/filters/date range, retrieval time, exact aired-cut metadata path/hash and actual runtime. Compute maximal single-bucket and five-bucket drops with actual seconds and a fixed 4–6-second comparison. Fewer than 100 views is descriptive only. If absent, mark unmeasured and retain a typed input hold with a sensible dated recheck; no fabricated curve.\n\nRetain reproducible supporting data for the nine historical curves using the original 2026-01-01 through 2026-11-10 window, and the reported search totals/queries for 2026-10-14 through 2026-11-10. Compare results explicitly with J2683 rather than silently replacing them (Analytics may revise). Report any unavailable historical evidence. Include paths/hashes and query coverage limitations. Preserve Gemini findings and the prior Chief PASS. No production/Studio/schedule/privacy/title changes and no secrets in output. Split if the bounded 20-minute pass cannot finish. Return factual evidence and any discrepancies for review.\n",
+      "ref": "6829905842",
+      "film": "",
+      "stage": "",
+      "after": "J2683",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T23:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T23:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After settlement, retrieve Titan curve and reproducible audit evidence",
+      "kind": "review",
+      "plain": "Checking Titan viewer retention and saving the data behind the Orbit audit",
+      "mini_only": true
     }
   ],
   "focus": [
