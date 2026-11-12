@@ -233611,9 +233611,14 @@
           "at": "2026-11-12T07:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2675; starting 4-step no-spend preflight on HOS 013 merged runner"
+        },
+        {
+          "at": "2026-11-12T07:49Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified canonical HOS main e2b7f5fe610880041603aea577176f20e859609c, 44/44 runner tests OK, NAS studio-live & archive_v01_pass1 mounted/accessible, Explorer sha256 24659dc1..., and no active runner (PID 72539 exited, no hos013 tmux)"
         }
       ],
-      "remaining_action": "Verify canonical HOS main, 44 runner tests, NAS, Explorer hash, and no active runner",
+      "remaining_action": "Read J2529 approvals and verify HOS013_PASS1 reservation, charges, 51 remaining rows (5100 credits), and next batch P2:05_tortoise_overboard",
       "due": "2026-11-12T13:00:00Z",
       "for": "gemini",
       "kind": "review",
@@ -233621,11 +233626,11 @@
       "plain": "Check that the Darwin and Wallace pictures can safely continue after the repair",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-12T07:48Z",
+        "at": "2026-11-12T07:49Z",
         "by": "gemini",
-        "note": "Claimed J2675; starting 4-step no-spend preflight on HOS 013 merged runner"
+        "note": "Verified canonical HOS main e2b7f5fe610880041603aea577176f20e859609c, 44/44 runner tests OK, NAS studio-live & archive_v"
       },
       "taskKeys": [
         "HOS:013"
