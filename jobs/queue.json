@@ -235721,13 +235721,13 @@
       "stage": "thumbs",
       "after": "J2701",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T12:36Z",
-      "eta": "2026-11-12T14:36Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T12:32Z",
-      "result": "",
+      "result": "Studio complete: T025 running; T024/T026 skipped, finished tests preserved. Local evidence commit c438d1ad65 on codex/j2702-thumbnail-tests at /Volumes/MiniWork/scratch/j2702-wt. Automatic approval review rejected pushing internal ledger and Studio evidence to GitHub as sensitive egress without exact-payload approval. Do not re-arm tests. Only evidence publication remains; read T025 on 26 Nov.",
       "history": [
         {
           "at": "2026-11-12T12:32Z",
@@ -235763,6 +235763,11 @@
           "at": "2026-11-12T12:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Studio complete; T025 running, T024/T026 skipped to preserve finished tests. Ledger validation passed; automatic review rejected evidence push, local commit retained."
+        },
+        {
+          "at": "2026-11-12T12:43Z",
+          "by": "codex",
+          "what": "blocked: Studio complete: T025 running; T024/T026 skipped, finished tests preserved. Local evidence commit c438d1ad65 on codex/j2702-thumbnail-tests at /Volumes/MiniWork/scratch/j2702-wt. Automatic approval review rejected pushing internal ledger and Studio evidence to GitHub as sensitive egress without exact-payload approval. Do not re-arm tests. Only evidence publication remains; read T025 on 26 Nov."
         }
       ],
       "remaining_action": "Publish the verified ledger and evidence once the blocked push is approved",
@@ -235780,6 +235785,11 @@
         "at": "2026-11-12T12:43Z",
         "by": "codex",
         "note": "Studio complete; T025 running, T024/T026 skipped to preserve finished tests. Ledger validation passed; automatic review "
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Studio complete: T025 running; T024/T026 skipped, finished tests preserved. Local evidence commit c438d1ad65 on codex/j2702-thumbnail-tests at /Volumes/MiniWork/scratch/j2702-wt. Automatic approval review rejected pushing internal ledger and Studio evidence to GitHub as sensitive egress without exact-payload approval. Do not re-arm tests. Only evidence publication remains; read T025 on 26 Nov.",
+        "check_at": "2026-11-12T18:43:43+00:00"
       }
     }
   ],
