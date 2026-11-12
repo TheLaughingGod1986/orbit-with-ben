@@ -237848,9 +237848,14 @@
           "at": "2026-11-12T19:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T19:31Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: After Thu 12 Nov 19:13 London: rebase #833 on main, re-run the whole suite and the dry run, merge, then watch one relay cycle and one board publish on the Mini be",
+      "remaining_action": "Read J2621, PR #833, and verify J2621 commits, tests, and studio_split dry run against current main",
       "kind": "review",
       "recheck_of": "J2621",
       "due": "2026-11-12T20:19:17+00:00",
@@ -237865,12 +237870,10 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T19:30Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-12T19:31Z",
+        "by": "macbook"
       }
     },
     {
