@@ -237112,19 +237112,25 @@
           "at": "2026-11-12T19:12Z",
           "by": "codex",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-12T19:16Z",
+          "by": "codex",
+          "what": "step 1 of 5 done: Adapter contract tests pass; 111 board tests passed with 4 skips; Wrangler login confirmed. Production secret recovery rejected by automatic review."
         }
       ],
-      "remaining_action": "Build and test the Cloudflare board adapter and shared address setting",
+      "remaining_action": "Finish the migration PR; deployment awaits approval to recover three missing settings",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Move the Studio board off Vercel onto Cloudflare's free plan, so other projects can't take it down",
       "urgent": 9,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-12T19:12Z",
-        "by": "codex"
+        "at": "2026-11-12T19:16Z",
+        "by": "codex",
+        "note": "Adapter contract tests pass; 111 board tests passed with 4 skips; Wrangler login confirmed. Production secret recovery r"
       }
     },
     {
