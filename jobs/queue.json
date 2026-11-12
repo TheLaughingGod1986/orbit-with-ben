@@ -222321,10 +222321,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-12T08:12Z",
+      "eta": "2026-11-12T13:12Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -222548,6 +222548,11 @@
           "at": "2026-11-12T08:06Z",
           "by": "codex",
           "what": "remaining action: Gemini resume Batch 04 under Grok ruling 6818142702; floor 3000, other-reservations 0, live guards; no Create after 12 Nov 18:45 London"
+        },
+        {
+          "at": "2026-11-12T08:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Gemini resume Batch 04 under Grok ruling 6818142702; floor 3000, other-reservations 0, live guards; no Create after 12 Nov 18:45 London",
@@ -222560,7 +222565,15 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T08:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2530",
