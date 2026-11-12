@@ -238909,9 +238909,14 @@
           "at": "2026-11-12T23:10Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1/3: Confirmed J2035 remains blocked (checked by Chief in J2721 at 21:10Z, next check 2026-11-13T01:30:00Z); Mini 05_Music has only 3 J2663 scope files, NAS 05_Music is absent, J2666 is open and J2664 is blocked"
+        },
+        {
+          "at": "2026-11-12T23:11Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2/3: Verified all HOS 009 picture and Shorts VO hashes remain intact across Mini and NAS (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0..., Short A S03 P03:07_ball_to_moon sha fba484bb..., Short A v02 sha c2fd407d..., Short B v04 sha 0c9c4c6f...), while J2035 long assembly remains blocked on J2666->J2664 score delivery (held to 2026-11-13T01:30:00Z by J2721)"
         }
       ],
-      "remaining_action": "Verify HOS 009 Shorts A/B VO/picture hashes and write jobs/reviews/J2730/REVIEW.md",
+      "remaining_action": "Write and commit jobs/reviews/J2730/REVIEW.md and park J2730 for Chief to record --recheck J2730 wait on J2171",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T21:07:58+00:00",
@@ -238926,11 +238931,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T23:10Z",
+        "at": "2026-11-12T23:11Z",
         "by": "gemini",
-        "note": "Step 1/3: Confirmed J2035 remains blocked (checked by Chief in J2721 at 21:10Z, next check 2026-11-13T01:30:00Z); Mini 0"
+        "note": "Step 2/3: Verified all HOS 009 picture and Shorts VO hashes remain intact across Mini and NAS (J2631 sha e35f9a98..., J2"
       },
       "taskKeys": [
         "HOS:009"
