@@ -78,6 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2704 | mini | claimed | codex | 2026-11-12T16:24Z | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2706 | mini | open (after J2483) | – | – | assembly · HOS tooling: migrate Prisma separately using a non-live database | 6813294950 |
 | J2707 | any | blocked | macbook | – | review · OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first) |  |
+| J2708 | mini | open | – | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 2708,
+  "next_id": 2709,
   "jobs": [
     {
       "id": "J0001",
@@ -236322,6 +236322,35 @@
         "at": "2026-11-12T14:10Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2708",
+      "title": "HOS app: establish isolated hosted PostgreSQL for Preview validation",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Resolve J2704 hosted Preview prerequisite for HOS, then resume J2704 validation. Local full build/migration, typecheck/lint, 199 tests, check_all and safe local auth checks passed at source 2f8835325b5c634f9b421456e6b6f12bf90fec33. Public home 500 is proven missing DATABASE_URL by Vercel runtime logs; do not change production.\n\nExisting HOS project history-of-science-content-ops, team team_UPErYpfb3ww71LYTIWUoKvcH, has no Preview environment variables (CLI metadata confirmed 12 Nov). Identify an existing approved zero-cost disposable hosted PostgreSQL endpoint or establish one within existing authorization. Verify DATABASE_URL and DIRECT_URL both isolated; never use live data, publicly expose local Postgres, buy anything, change accounts/logins, or alter Production settings. Set safe deployment-scoped Preview configuration with new disposable auth/encryption secrets, PUBLISHING_DRY_RUN=true, no live publishing/OAuth credentials. Never print/commit secrets. If new money/login is required, record exact prerequisite under existing rules. No fake dated retry for unfinished setup; date a recheck only for an actual external wait.\n\nDeliver secure configuration availability and hand back to J2704 for full build plus hosted login/denial/authenticated no-write smoke checks. Production remains HELD. Evidence is docs/validation/J2704 in the J2704 HOS evidence PR.\n",
+      "ref": "J2704",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T14:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T14:29Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Establish an approved disposable hosted database and safe Preview-only configuration",
+      "kind": "assembly",
+      "plain": "Set up a safe test database for the History of Science app preview"
     }
   ],
   "focus": [
