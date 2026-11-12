@@ -193937,9 +193937,14 @@
           "at": "2026-11-12T03:27Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T03:28Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resuming PR542 checkpoint and detached identity-remux control; preserving existing three-step plan."
         }
       ],
-      "remaining_action": "Check the detached remux control, then fix unchanged-frame preservation before completing the Franklin edit",
+      "remaining_action": "Check the remux control and repair unchanged-frame preservation before completing the Franklin edit",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -193948,9 +193953,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T01:33Z",
+        "at": "2026-11-12T03:28Z",
         "by": "codex",
-        "note": "Checkpoint 8e16b876 on HOS PR542: 19 tests OK and check_all PASS. Both salon splice experiments rejected on 266 unchange"
+        "note": "Resuming PR542 checkpoint and detached identity-remux control; preserving existing three-step plan."
       }
     },
     {
