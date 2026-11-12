@@ -217588,9 +217588,14 @@
           "at": "2026-11-12T00:13Z",
           "by": "codex",
           "what": "step 1 of 3 done: Existing word map places sunset at 16.14–16.82s and as at 16.94–17.22s; candidate cuts at 16.88s with a 60ms fade, no new take. Gemini must judge the sound."
+        },
+        {
+          "at": "2026-11-12T00:17Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Refined waveform-based trim now passes independent voice transcription with no failures. Rendering and gates rerun; no new take or spend. Same PR merge preserves all 746 distinct ledger rows."
         }
       ],
-      "remaining_action": "Render the corrected Supermoon ending and run all automated checks",
+      "remaining_action": "Verify the corrected Supermoon cut and prepare Gemini’s ending review",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -217612,9 +217617,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-12T00:13Z",
+        "at": "2026-11-12T00:17Z",
         "by": "codex",
-        "note": "Existing word map places sunset at 16.14–16.82s and as at 16.94–17.22s; candidate cuts at 16.88s with a 60ms fade, no ne"
+        "note": "Refined waveform-based trim now passes independent voice transcription with no failures. Rendering and gates rerun; no n"
       }
     },
     {
