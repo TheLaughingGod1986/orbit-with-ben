@@ -239449,13 +239449,13 @@
       "stage": "",
       "after": "J2683",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-12T23:36Z",
-      "eta": "2026-11-13T01:36Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T23:35Z",
-      "result": "",
+      "result": "Waiting for: Titan ffYKoNVPoqg had zero audience-retention rows through 2026-11-10 in J2683. Administrative hold only: on 14 Nov 07:00Z verify settlement and retrieve sanitized evidence; keep absent or fewer-than-100-view data unscored. No worker analysis performed in this claim.",
       "history": [
         {
           "at": "2026-11-12T23:35Z",
@@ -239466,9 +239466,19 @@
           "at": "2026-11-12T23:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-12T23:36Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Titan ffYKoNVPoqg had zero audience-retention rows through 2026-11-10 in J2683. Administrative hold only: on 14 Nov 07:00Z verify settlement and retrieve sanitized evidence; keep absent or fewer-than-100-view data unscored. No worker analysis performed in this claim."
+        },
+        {
+          "at": "2026-11-12T23:36Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T07:00:00Z"
         }
       ],
-      "remaining_action": "After settlement, retrieve Titan curve and reproducible audit evidence",
+      "remaining_action": "Check whether Titan retention data has settled and save reproducible audit rows",
       "kind": "review",
       "plain": "Checking Titan viewer retention and saving the data behind the Orbit audit",
       "mini_only": true,
@@ -239479,6 +239489,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Titan ffYKoNVPoqg had zero audience-retention rows through 2026-11-10 in J2683. Administrative hold only: on 14 Nov 07:00Z verify settlement and retrieve sanitized evidence; keep absent or fewer-than-100-view data unscored. No worker analysis performed in this claim.",
+        "check_at": "2026-11-14T07:00:00Z"
       }
     }
   ],
