@@ -234399,9 +234399,14 @@
           "at": "2026-11-12T10:43Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1/3: Confirmed J2583, J2584, J2586, J2587, J2631, J2632, and J2663 are done; J2035 is blocked waiting on J2664 (HOS 009 music bed production, currently parked for Chief on music_v2 duration tariff)"
+        },
+        {
+          "at": "2026-11-12T10:44Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2/3: Verified HOS 009 picture is settled (J2033, J2034, J2583, J2584, J2586, J2587, J2631 KEEP, J2632 KEEP all done), but 05_Music contains only J2663 scope files (no audio bed yet); J2664 is blocked on music_v2 duration tariff and J2035 long assembly remains blocked on the score bed"
         }
       ],
-      "remaining_action": "Inspect HOS 009 10_Shorts plan, picture settlement (J2583/J2584/J2586/J2587/J2631/J2632), and J2035/J2664 score-bed status",
+      "remaining_action": "Record updated hold on J2171 with --recheck J2685 and close J2685",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-12T09:21:42+00:00",
@@ -234416,11 +234421,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-12T10:43Z",
+        "at": "2026-11-12T10:44Z",
         "by": "gemini",
-        "note": "Step 1/3: Confirmed J2583, J2584, J2586, J2587, J2631, J2632, and J2663 are done; J2035 is blocked waiting on J2664 (HOS"
+        "note": "Step 2/3: Verified HOS 009 picture is settled (J2033, J2034, J2583, J2584, J2586, J2587, J2631 KEEP, J2632 KEEP all done"
       },
       "taskKeys": [
         "HOS:009"
