@@ -78004,6 +78004,11 @@
           "at": "2026-11-12T08:21Z",
           "by": "relay",
           "what": "condition verification queued: J2684"
+        },
+        {
+          "at": "2026-11-12T11:35Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
         }
       ],
       "kind": "assembly",
@@ -78012,7 +78017,7 @@
         "HOS:008"
       ],
       "review_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6701818953",
-      "remaining_action": "Complete J2339 continuous 30fps moving-video QA on HOS 008 Short A v04 (76d801a3), then elected Chief decides Short PASS and private watch handoff",
+      "remaining_action": "J2699 prepares the verified Franklin kite Short for final watch; preserve completed assembly",
       "due": "2026-11-18T18:00:00Z",
       "progress": {
         "step": 4,
@@ -78027,15 +78032,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov) and the Chief's PASS on it",
-        "check_at": "2026-11-12T09:21:42+00:00",
-        "requires": [
-          "moving_video_input"
-        ],
-        "last_recheck": "J2399",
-        "checked_at": "2026-11-10T17:02:53+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2684"
+        "condition": "J2699 creates the hash-verified private watch copy and working watch card for HOS 008 Short A v04 (76d801a3); technical/audio/sampled-frame KEEP accepted in 8bcb89f546, continuous motion assigned to Ben final watch. Assembly remains 4/4; no publishing approval.",
+        "check_at": "2026-11-13T12:00:00Z",
+        "last_recheck": "J2684",
+        "checked_at": "2026-11-12T11:35:01+00:00",
+        "checked_by": "codex"
       },
       "plain": "Cut the next History of Science Short from a finished film"
     },
