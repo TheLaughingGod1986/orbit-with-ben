@@ -222321,13 +222321,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-12T05:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "parked for Chief: Batch 3/14 (15/66 takes: P1 12/12, P2 3/11, P3-P6 0; 1,500 credits spent, balance 10,440->8,940, 0 pending, receipts in jobs/reviews/J2529/) complete & 0.5s sheets posted (#180 6815637474); Batch 4 hit runner 'STOP first pass must start with Part 01' (0 credits spent) because next_batch() calls batch_rows(remaining)->order_rows(remaining) after Part 01 finished. Needs Codex runner fix + Chief merge/reopen before 18:45Z.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -222538,6 +222538,11 @@
           "at": "2026-11-12T07:36Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-12T12:00:00Z"
+        },
+        {
+          "at": "2026-11-12T08:05Z",
+          "by": "codex",
+          "what": "reopened: Recording existing Grok PASS 6818142702 and clarification 6818150970, not a new ruling. Gemini resume Batch 04 at P2:05_tortoise_overboard; keep 3/14, HOS013_PASS1 cap 6600, floor 3000, other-reservations 0, live before/after checks and all STOP rules. Preflight passed before 13:00; no Create after 18:45 London. Dry-run double-count fields do not override live guard. No KEEP changes. PR 565 merged 277db78f; J2675 already done."
         }
       ],
       "remaining_action": "Await Gemini checks on the merged repair before continuing picture generation",
@@ -222550,19 +222555,7 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 9,
-      "progress": {
-        "step": 3,
-        "of": 14,
-        "at": "2026-11-12T05:36Z",
-        "by": "gemini",
-        "note": "Batch 3 (15/66: P1 12/12, P2 3/11; 1,500 credits, balance 10440->8940, 0 pending) receipts + 0.5s sheets posted (#180 68"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Grok ruling 6817606389: PR 564 merged e2b7f5fe; 44 runner tests OK. J2675 Gemini fresh canonical-main preflight must pass before reopening. Keep 3/14, original 6600 cap, HOS013_PASS1, floor 3000 and stop rules. Preflight due 12 Nov 13:00; no Create after 18:45; missed checkpoint means no-go and fresh post-reset Chief decision.",
-        "check_at": "2026-11-12T12:00:00Z"
-      }
+      "urgent": 9
     },
     {
       "id": "J2530",
