@@ -237309,9 +237309,14 @@
           "at": "2026-11-12T18:13Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J2529 state, Chief rulings 6831826573 and 6831924778, and Claude 6831935812: J2529 stays blocked until Codex merges reconcile-session-block PR, Gemini runs reconcile-session-block, and new Flow allowance resets after 19:13Z"
+        },
+        {
+          "at": "2026-11-12T18:16Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified J2033 done, runner PID 19965 dead, NAS raw/archive untouched, ledgers untouched (SUBMITTING / unposted CHARGED 100), and Chief rulings 6831924778 + 6831945212 withdrawing 6831826573 and holding J2529 for Codex reconcile-session-block PR + post-19:13Z Flow reset"
         }
       ],
-      "remaining_action": "Verify unmet condition on J2529 per Chief ruling 6831924778 and Claude 6831935812, record jobs.py wait J2529 --recheck J2720, and complete J2720",
+      "remaining_action": "Write and commit jobs/reviews/J2720/REVIEW.md in an isolated worktree, then park J2720 for Chief to record --recheck J2720 on J2529",
       "kind": "review",
       "recheck_of": "J2529",
       "due": "2026-11-12T18:45:00+00:00",
@@ -237326,11 +237331,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-12T18:13Z",
+        "at": "2026-11-12T18:16Z",
         "by": "gemini",
-        "note": "Read J2529 state, Chief rulings 6831826573 and 6831924778, and Claude 6831935812: J2529 stays blocked until Codex merges"
+        "note": "Verified J2033 done, runner PID 19965 dead, NAS raw/archive untouched, ledgers untouched (SUBMITTING / unposted CHARGED "
       },
       "taskKeys": [
         "HOS:013"
