@@ -236826,10 +236826,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-12T18:56Z",
+      "eta": "2026-11-12T19:56Z",
       "created_by": "claude",
       "created_at": "2026-11-12T15:20Z",
       "result": "",
@@ -236843,13 +236843,26 @@
           "at": "2026-11-12T15:21Z",
           "by": "claude",
           "what": "Ben, in chat: the other social posts have no hashtags either. Widened from one Short to every post: check whether the live videos lost their tags to a listing update that did not send them back"
+        },
+        {
+          "at": "2026-11-12T18:56Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the live video's tags; fix the tags or the mirror; check the other scheduled videos; report Facebook reach",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
-      "plain": "Find out why our social posts have no hashtags, and fix it for the next posts"
+      "plain": "Find out why our social posts have no hashtags, and fix it for the next posts",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-12T18:56Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2712",
