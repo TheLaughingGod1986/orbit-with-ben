@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2715.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -80,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
 | J2711 | mini | open | – | – | 025 upload · for codex · studio · Buffer: social posts are going out with no hashtags; find why (live videos may have lost their tags) and fix it |  |
 | J2714 | mini | open | – | – | for codex · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
-| J2715 | mini | claimed | gemini | 2026-11-12T18:48Z | for gemini · listing · `gemini-argon` · OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC |  |
 | J2716 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?" (uhZSRcvngvE) |  |
 | J2717 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0875 |  |
 | J2718 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0960 |  |
@@ -90,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2715 done: OWB Shorts: swap Friday 13 Nov (Mars helicopter) and Saturday 14 Nov (Pluto's ice heart) publish days, before Fri 11:30 UTC (done)
 - J2713 done: Verify condition for J2707 (J2710 done with the evidence; J2707 reopened for the topic review.)
 - J2712 done: Verify condition for J2532 (Checked 12 Nov 17:55Z: live board version 2eff5ff506654388, main 2551c4887f478f7e, so not redeployed. J2532 stays held to 13 Nov 07:40Z; it is in the morning note for Ben.)
 - J2710 done: OWB 064 and 065: repair missing topic evidence for J2707 (PR #853 (branch gemini/J2710, commit e23049fde7): repaired OWB:064 and OWB:065 topic evidence for parent J2707 (0 spend, 0 vidIQ credits; 11 template files untouched). OWB:064: 8 >=1M-view neighbours, #1 autocomplete phrase "where do shooting stars come from" (ranks IxDR-dASDNw 2.55M & TuDfZ2Md5x8 1.10M, 0 title collisions), 11 NASA primary-source claims checked (rejected universal sand-grain comet-dust claim; verified 3200 Phaethon Geminids, Halley dual showers, 11-72 km/s, 50-100 km, 48.5 tons/day); RECOMMEND GO (94/100) in WIP.json next. OWB:065: 8 >=1M-view neighbours, Rule 26 autocomplete "what will happen to the iss" / "what will happen to the international space station" (ranks cohVHaVMBl8 2.76M & plJVUFErhf8 1.65M, 0 title collisions), documented scheduled 25 Nov Short AR2 xdurJQcoiGM overlap, 11 NASA/NOAA/GAO claims checked (enforced 2030/2031 baseline plan + 2027 GAO check vs guaranteed date, and South Pacific SPOUA vs single Point Nemo coordinate); RECOMMEND GO (92/100) in WIP.json next. Consolidated review: jobs/reviews/J2710/REVIEW.md on PR #853.)
@@ -99,4 +99,3 @@ Recently finished:
 - J2703 done: OWB: learn from our data, add two new films to the backlog (PR #849 (branch macbook/J2703, not merged; spend nothing). Two topics: OWB:064 Where Do Shooting Stars Come From? (data: Shooting Stars Short T9fVlG3CCzU 1,284 views, 256.8/day, 66.3% viewed, 49.8% stayed; rule 31) and OWB:065 How Will the Space Station Fall to Earth? (data: 16 Sunrises Short VfDm3E2bUgU 1,090 views, 90.8/day, 66.7% viewed; rule 31). 3 best / 3 worst with numbers in 064 TOPIC.md; both appended to WIP next on the branch; rule-E review queued as J2707. NOT DONE: neighbour pass for both (web search, fetch and curl refused in this run; no view counts invented; J2707 carries it); template sub-folders not copied (cp refused); TOPIC facts are from memory, unverified; no tests run.)
 - J2701 done: Chief: merge PR #848, resolve J2676 & rule on 013/007/003 thumbnail Bs (J2695 KEEP) (PASS all three exact B_v02 thumbnails; PR 848 merged 178d82bce3. J2676/J2696/J2697 resolved, 013/007/003 thumbs done. Separate Mini Studio successor J2702 requires fresh test reads, preserves existing tests and titles, and logs only actual arms. No spend or YouTube changes.)
 - J2700 done: Verify condition for J2035 (Chief review complete. Verified Gemini report and current Mini/NAS inventory: only three scope files on Mini, no NAS 05_Music, no generated score or music PASS. J2035 stays held with last_recheck J2700 and retry 2026-11-12T18:15:00Z; diagram KEEP approvals retained. Found later Chief desk ruling 6813193837 for staged measured-meter generation. Existing J2666 now explicitly owns checking its live safeguards and resolving the stale tariff hold before J2664 production. No spend or public changes; no listening claimed.)
-- J2699 done: HOS 008 Short A v04: private final-watch handoff after J2684 (Private v04 watch handoff complete: matching source/iCloud/stream SHA256 76d801a3; board card ready for Ben with Play302; all local and CI checks PASS, HOS PR567 merged. J0912 handoff complete at assembly4/4, final watch only remains. Actual Ben approval before separate publishing job; long Public first. No spend or YouTube/Buffer change.)
