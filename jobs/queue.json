@@ -235100,9 +235100,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-12T13:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-12T08:12Z",
@@ -235157,6 +235157,11 @@
           "at": "2026-11-12T16:39Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-12T23:35Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Administrative reconciliation only: existing Chief PASS 6829905842 recorded in 26f4e83dab; claim to close missed queue handoff, retain worker progress/history. Follow-ups J2740/J2741 queued."
         }
       ],
       "remaining_action": "Parked for Chief review",
@@ -235170,8 +235175,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "progress": {
         "step": 4,
         "of": 4,
