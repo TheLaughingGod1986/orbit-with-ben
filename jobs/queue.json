@@ -1,5 +1,5 @@
 {
-  "next_id": 2707,
+  "next_id": 2708,
   "jobs": [
     {
       "id": "J0001",
@@ -236221,6 +236221,34 @@
       "kind": "assembly",
       "plain": "Updates the History of Science database library and tests it safely on a separate database.",
       "mini_only": true
+    },
+    {
+      "id": "J2707",
+      "title": "OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films from J2703 (PR #849, branch macbook/J2703):\n1. OWB:064 (02_Video-Projects/064_Where-Do-Shooting-Stars-Come-From/TOPIC.md): Where Do Shooting Stars Come From?\n2. OWB:065 (02_Video-Projects/065_How-Will-The-Space-Station-Fall-To-Earth/TOPIC.md): How Will the Space Station Fall to Earth?\nTHE NEIGHBOUR PASS WAS NOT DONE in J2703 (the MacBook run had no web access). Do it here first, for both: at least three videos of about 1M+ views on the subject, with views, logged in TOPIC_OPPORTUNITY_SCORE.md and PRE_BUILD_VIDIQ_AUDIT.md; the rule-26 search phrase from YouTube's own suggestions with two videos that rank for it; a title-collision check. The facts in both TOPIC.md files are from memory: check each number and date against NASA sources. The folders hold only TOPIC.md and status.json (cp of the template was refused on the MacBook): copy the rest of 02_Video-Projects/_template_NNN_Episode-Slug in. Then check against AGENTS.md rule E, STUDIO_PLAYBOOK.md section 2 and LEARNINGS.md rules 1-31. Both stay in jobs/WIP.json next under rule G. Spend nothing.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-12T14:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T14:09Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "OWB: rule-E topic review for 064 Shooting Stars and 065 Space Station (neighbour pass first)",
+      "kind": "review"
     }
   ],
   "focus": [
