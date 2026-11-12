@@ -236308,18 +236308,23 @@
           "at": "2026-11-12T14:36Z",
           "by": "codex",
           "what": "step 2 of 3 done: Prisma 7.10.1: generation, disposable database migration, typecheck, lint, tests, full build and check_all all exit 0; audit now zero vulnerabilities."
+        },
+        {
+          "at": "2026-11-12T14:39Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: HOS PR570 opened; 203 tests and full disposable-DB build pass; audit 3 high to 0. CI core ignore-file issue corrected, core OK (56 shared files). No deployment."
         }
       ],
-      "remaining_action": "Record verification evidence and open the separate Prisma upgrade pull request",
+      "remaining_action": "Review the separate Prisma upgrade pull request before any release",
       "kind": "assembly",
       "plain": "Updates the History of Science database library and tests it safely on a separate database.",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-12T14:36Z",
+        "at": "2026-11-12T14:39Z",
         "by": "codex",
-        "note": "Prisma 7.10.1: generation, disposable database migration, typecheck, lint, tests, full build and check_all all exit 0; a"
+        "note": "HOS PR570 opened; 203 tests and full disposable-DB build pass; audit 3 high to 0. CI core ignore-file issue corrected, c"
       }
     },
     {
