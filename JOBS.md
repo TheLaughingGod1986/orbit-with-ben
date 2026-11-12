@@ -93,6 +93,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2730 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2731 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
+| J2733 | mini | open | – | – | 019 thumbs · for codex · review · Packaging panel (codex): Andromeda whole-galaxy revision | J2729 |
+| J2734 | mini | open | – | – | 019 thumbs · for gemini · review · Packaging panel (gemini): Andromeda whole-galaxy revision | J2729 |
+| J2735 | mini | open | – | – | 019 thumbs · for cursor · review · Packaging panel (cursor): Andromeda whole-galaxy revision | J2729 |
+| J2736 | cloud | open (after J2735) | – | – | 019 thumbs · review · Packaging panel decision: Andromeda whole-galaxy revision | J2729 |
+| J2737 | any | open (after J2736) | – | – | 019 thumbs · chief · 019 Andromeda: elected-Chief exact-file release after revised packaging panel | J2729; J2692; J2449 |
 
 Recently finished:
 
