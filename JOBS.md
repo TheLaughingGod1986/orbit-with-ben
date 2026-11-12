@@ -22,7 +22,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J1932 | mini | claimed | claudecode | 2026-11-12T08:26Z | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
+| J1932 | mini | blocked | claudecode | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2035 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |

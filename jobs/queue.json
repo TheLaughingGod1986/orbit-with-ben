@@ -171641,13 +171641,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-12T06:26Z",
-      "eta": "2026-11-12T08:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-04T02:07Z",
-      "result": "",
+      "result": "parked for Chief: verdict is ready (jobs/reviews/J1932/REVIEW.md, f1605098fc) but a worker cannot record it. J0979 must stay held: 032 voice, picture and score bed are ready, the approved long master is not (master v02 waits on review J2477, open, due 14 Nov 18:00Z, then Ben's watch). jobs.py wait J0979 --recheck J1932 is refused for claudecode (only the holder codex or the elected Chief), and done J1932 is refused until that is recorded. Chief: run jobs.py wait J0979 --agent chief --type dependency --recheck J1932 --check-at 2026-11-14T18:30Z with that condition, point J0979 at J2477, then close J1932. No spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-11-04T02:07Z",
@@ -171698,6 +171698,11 @@
           "at": "2026-11-12T06:28Z",
           "by": "claudecode",
           "what": "step 3 of 3 done: Verdict recorded; the Short job keeps its existing hold"
+        },
+        {
+          "at": "2026-11-12T06:28Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: verdict is ready (jobs/reviews/J1932/REVIEW.md, f1605098fc) but a worker cannot record it. J0979 must stay held: 032 voice, picture and score bed are ready, the approved long master is not (master v02 waits on review J2477, open, due 14 Nov 18:00Z, then Ben's watch). jobs.py wait J0979 --recheck J1932 is refused for claudecode (only the holder codex or the elected Chief), and done J1932 is refused until that is recorded. Chief: run jobs.py wait J0979 --agent chief --type dependency --recheck J1932 --check-at 2026-11-14T18:30Z with that condition, point J0979 at J2477, then close J1932. No spend, upload or schedule change."
         }
       ],
       "remaining_action": "Record the hold on the Short job and close this check",
