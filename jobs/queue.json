@@ -194257,20 +194257,25 @@
           "at": "2026-11-12T18:51Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed exact dispatch; checking existing work before starting any render."
+        },
+        {
+          "at": "2026-11-12T18:52Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Resumed clean PR542 at a259caec; 18 rows already verified. Extending compositor for confidently mapped duplicate frames; ambiguous rows remain excluded."
         }
       ],
-      "remaining_action": "Checking the Franklin patch builder and its saved render state",
+      "remaining_action": "Reconstructing remaining Franklin caption rows from their measured source frames",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T18:51Z",
+        "at": "2026-11-12T18:52Z",
         "by": "codex",
-        "note": "Claimed exact dispatch; checking existing work before starting any render."
+        "note": "Resumed clean PR542 at a259caec; 18 rows already verified. Extending compositor for confidently mapped duplicate frames;"
       }
     },
     {
