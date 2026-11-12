@@ -237760,20 +237760,25 @@
           "at": "2026-11-12T23:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Part A deployed; Part B approval confirmed; checking approved secret export"
+        },
+        {
+          "at": "2026-11-12T23:57Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Vercel refuses protected secret export; fallback board and upload keys saved locally and set on Cloudflare; GitHub token needs Ben"
         }
       ],
-      "remaining_action": "Restore board access and verify phone linking at the new address",
+      "remaining_action": "Add the missing GitHub token, then verify board ticks and phone linking",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Finish the board's move: bring three settings over so ticks and phone linking work at the new address",
       "urgent": 9,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T23:56Z",
+        "at": "2026-11-12T23:57Z",
         "by": "codex",
-        "note": "Part A deployed; Part B approval confirmed; checking approved secret export"
+        "note": "Vercel refuses protected secret export; fallback board and upload keys saved locally and set on Cloudflare; GitHub token"
       }
     },
     {
