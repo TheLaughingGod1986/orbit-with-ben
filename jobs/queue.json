@@ -1,5 +1,5 @@
 {
-  "next_id": 2705,
+  "next_id": 2706,
   "jobs": [
     {
       "id": "J0001",
@@ -236067,6 +236067,35 @@
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true
+    },
+    {
+      "id": "J2705",
+      "title": "HOS tooling: fix React lint warnings and restore strict rules",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Follow-up to J2483. Existing Chief ruling stands: https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6813294950 . OWB PR841 and HOS PR558 already merged; no repeat merge. Work in an isolated HOS worktree, follow its rules, use your own identity. No spend, secrets, live database migrations, production deployment or publishing side effects. \nFix the six existing component warnings introduced by eslint-config-next 16: react-hooks/purity and react-hooks/set-state-in-effect. Read current lint output to find the actual components; preserve UI behavior. Restore both rules to errors after fixing the causes; no blanket suppressions or weakened checks. Run lint, typecheck, relevant tests and check_all.sh. Open a narrowly scoped PR with before/after warning counts and test evidence for review. No deploy.\n",
+      "ref": "6813294950",
+      "film": "",
+      "stage": "",
+      "after": "J2483",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-12T13:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-12T13:56Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix the six React warnings and restore both rules as errors",
+      "kind": "assembly",
+      "plain": "Fixes six website component warnings and restores the stricter code checks."
     }
   ],
   "focus": [
