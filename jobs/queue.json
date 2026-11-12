@@ -236298,18 +236298,23 @@
           "at": "2026-11-12T14:32Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed the separate HOS Prisma upgrade; no live database or deployment authorized."
+        },
+        {
+          "at": "2026-11-12T14:34Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Mapped both client constructors, CLI wrapper and config; disposable PostgreSQL cluster created. Baseline audit: three high findings through Prisma config and deepmerge-ts."
         }
       ],
-      "remaining_action": "Inspect the Prisma upgrade and prepare a disposable test database",
+      "remaining_action": "Upgrade Prisma and verify it against the isolated PostgreSQL database",
       "kind": "assembly",
       "plain": "Updates the History of Science database library and tests it safely on a separate database.",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-12T14:32Z",
+        "at": "2026-11-12T14:34Z",
         "by": "codex",
-        "note": "Claimed the separate HOS Prisma upgrade; no live database or deployment authorized."
+        "note": "Mapped both client constructors, CLI wrapper and config; disposable PostgreSQL cluster created. Baseline audit: three hi"
       }
     },
     {
