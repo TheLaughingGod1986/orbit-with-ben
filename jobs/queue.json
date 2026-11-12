@@ -225497,10 +225497,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-12T11:49Z",
-      "eta": "2026-11-12T13:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
       "result": "",
@@ -225684,6 +225684,11 @@
           "at": "2026-11-12T11:54Z",
           "by": "codex",
           "what": "step 1 of 4 done: Four preliminary archive composites delivered to NAS; four hashes/full decodes/frame counts and local word cues verified. 17 preliminary free rows now available; full build milestone incomplete."
+        },
+        {
+          "at": "2026-11-12T11:55Z",
+          "by": "codex",
+          "what": "released: Partial v06 checkpoint 08be1707 pushed to HOS PR 560. Four archive composites delivered to studio-live/J2563_archive_composites_v06 and all ten copied files hash-verified; full decodes, timing/cue assertions and check_all PASS. 17 preliminary free-row identities now have review files. Nine archives, full cue schedule, 67 slates and rough remain; source HTTP 429 hold preserved without retry. Existing plan 1/4. No background render, spend, stage approval or UAT. Resume from PR head; see J2563_CHECKPOINT_v06.md."
         }
       ],
       "remaining_action": "Finish nine archive scenes and all labels, then assemble the timing preview",
