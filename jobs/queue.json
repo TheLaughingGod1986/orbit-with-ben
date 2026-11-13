@@ -1,5 +1,5 @@
 {
-  "next_id": 2780,
+  "next_id": 2781,
   "jobs": [
     {
       "id": "J0001",
@@ -244477,6 +244477,38 @@
       "kind": "studio",
       "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
       "urgent": 10
+    },
+    {
+      "id": "J2780",
+      "title": "oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (13 Nov 14:49Z): \"I thought we're moving over to Cloudflare. Can we not get it live on Cloudflare?\"** He wants oppti.dev live on Cloudflare and has not done the dashboard steps himself. The site has answered \"payment required\" since 12 Nov. This job does the domain steps from the Mini, where his browser is signed in to Cloudflare. It runs after J2779, so the address serves the faster build.\n\n**Read first:** `docs/cloudflare-move/README.md` and `docs/cloudflare-move/oppti.dev.zone.txt` on branch `claude/cloudflare-move` of `TheLaughingGod1986/oppti.dev`. The zone file holds the 16 records to carry over; each was checked against public DNS on 13 Nov. The domain has no DNSSEC record at the registry (checked 13 Nov), so a nameserver change is safe on that count.\n\n**Needs an agent that can drive the Mini's signed-in browser**, as for YouTube Studio. If a page asks for a password, a code or a card, stop and park for Ben with one line: logins and money are his.\n\n**Do, in this order.**\n1. Cloudflare dashboard: Add a domain, `oppti.dev`, Free plan. Import the zone file with \"Proxy imported DNS records\" off. If Cloudflare's own scan added address records for the bare domain, `www` or `*` that point at Vercel, remove those: the Worker's custom domains replace them. Note the two nameservers Cloudflare assigns.\n2. Before touching the nameservers, ask each of those two nameservers directly for all 16 records (`dig @<ns>`) and compare with the file. All 16 must match. Mail depends on this: do not go on with fewer.\n3. Vercel dashboard (the domain was bought there): Domains, `oppti.dev`, Nameservers, custom, the two from step 1. Change nothing else on Vercel. Delete nothing there: its DNS zone and the project stay, so this can be switched back.\n4. Wait until Cloudflare shows the domain as active (check every few minutes, up to an hour; if it is not active by then, set a wait on this job and come back).\n5. Attach the domain to the Worker `oppti-dev`: `npx opennextjs-cloudflare deploy -- --domain oppti.dev --domain www.oppti.dev` from the J2779 clone at the same commit J2779 deployed, or add both as custom domains in the dashboard.\n6. Check and report: `https://oppti.dev/` answers 200 from Cloudflare (`server: cloudflare`); `www` redirects to the bare domain; `/pricing` shows pound prices from the Mini; `/blog` lists posts; `/rss.xml` has its items; the bare domain's responses carry no `X-Robots-Tag`; and public DNS (not Cloudflare's own servers) still answers the MX, SPF, DKIM and DMARC records from the file.\n\n**Not in this job.** The keys (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `RESEND_AUDIENCE_ID`, `LOOPS_API_KEY`, `ADMIN_KEY`) are Ben's to enter in the Worker's settings; until then checkout and the contact and sign-up forms answer an error. Say so in the result. The analytics IDs are not in the build either.\n\n**Guards.** £0, Free plan only. No secret, account address or email printed or written anywhere. Nothing deleted on Vercel. No pull request merged. The visual refresh (J2779's preview) does not go live in this job.\n\n**Result.** What is live, the checks with what each returned, and the one line for Ben about the keys.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2779",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T14:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T14:49Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Add oppti.dev to Cloudflare with its 16 records, check them, switch nameservers in Vercel, attach the domain to the Worker, verify the site and mail records",
+      "due": "2026-11-13T20:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
+      "urgent": 11
     }
   ],
   "focus": [

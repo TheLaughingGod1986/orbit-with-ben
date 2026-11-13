@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2779.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2779, J2780.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2777 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2778 | mini | claimed | macbook | 2026-11-13T15:48Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J2779 | mini | open | – | – | for codex · studio · oppti.dev: put the faster build on the Cloudflare test address and the visual refresh on a preview address |  |
+| J2780 | mini | open (after J2779) | – | – | for codex · studio · oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) |  |
 
 Recently finished:
 
