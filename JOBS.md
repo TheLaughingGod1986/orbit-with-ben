@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2746 | any | blocked | macbook-2 | – | review · Verify condition for J2622 |  |
 | J2748 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2750 | any | blocked | gemini | – | review · Verify condition for J2618 |  |
-| J2751 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
+| J2751 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2621 |  |
 | J2753 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
