@@ -244864,13 +244864,13 @@
       "stage": "",
       "after": "J2779",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T17:16Z",
-      "eta": "2026-11-13T18:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T14:49Z",
-      "result": "",
+      "result": "Cloudflare Free zone active; nameservers switched via signed-in Vercel CLI current registrar API. Both domains attached to unchanged performance Worker. Current public DNS HTTPS: home/pricing/blog/rss 200, www 308, pounds, 50 RSS items, no X-Robots-Tag. All 16 records match on both public resolvers. Local DNS cache may briefly retain Vercel. Service keys remain for Ben.",
       "history": [
         {
           "at": "2026-11-13T14:49Z",
@@ -244931,6 +244931,11 @@
           "at": "2026-11-13T17:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: HTTPS checks PASS at current public DNS addresses: home/pricing/blog/rss 200, www 308, pounds present, RSS 50 items, no X-Robots-Tag; all 16 DNS records match on 1.1.1.1 and 8.8.8.8. Local resolver cache caveat recorded."
+        },
+        {
+          "at": "2026-11-13T17:26Z",
+          "by": "codex",
+          "what": "done: Cloudflare Free zone active; nameservers switched via signed-in Vercel CLI current registrar API. Both domains attached to unchanged performance Worker. Current public DNS HTTPS: home/pricing/blog/rss 200, www 308, pounds, 50 RSS items, no X-Robots-Tag. All 16 records match on both public resolvers. Local DNS cache may briefly retain Vercel. Service keys remain for Ben."
         }
       ],
       "remaining_action": "Record the completed Cloudflare domain migration",
@@ -244945,7 +244950,8 @@
         "at": "2026-11-13T17:26Z",
         "by": "codex",
         "note": "HTTPS checks PASS at current public DNS addresses: home/pricing/blog/rss 200, www 308, pounds present, RSS 50 items, no "
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6860123628"
     },
     {
       "id": "J2781",
