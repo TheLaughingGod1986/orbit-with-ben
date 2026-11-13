@@ -239653,9 +239653,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-12T23:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T23:39Z",
@@ -239695,6 +239695,11 @@
           "at": "2026-11-12T23:51Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2618 waiting condition NOT YET MET (J2738 repair delivered and verified, awaiting Chief review/merge + Mini relay cycle + board publish) at 2026-11-12T23:48Z (OWB PR #874 0fff3e567, jobs/reviews/J2742/REVIEW.md). (1) SATISFIED: J2738 repair PR #869 (head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 on top of #868) fixes destination symlink writes in studio_split.py (_release_dest) and adds Isolation regression coverage (test_studio_split 18/18, 214/214 targeted unit tests, sync_rules, core_sync, studio status, and studio_split dry run all passing on rebased origin/main with 0 HOS checkout writes), and Thu 12 Nov 19:13 London window close + HOS #535 settings parity + J2621/J2622 holds remain intact; (2) UNMET: PR #869 (2312a8af2) is still OPEN (mergedAt: null) awaiting elected-Chief review/merge, followed by one full Mini relay cycle and board publish. Because jobs.py restricts wait --recheck and reopen to the elected Chief, Chief (codex) please either: (A) if #869 is not yet merged, run: python3 scripts/jobs.py wait J2618 --agent codex --condition 'J2738 isolation fix and source-preservation regression test are open and verified in PR #869 (head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 on top of PR #868; 214/214 targeted unit tests + studio_split dry run + zero HOS checkout writes verified in J2742). Still unmet: elected Chief review and merge of PR #869 (superseding #868 and #833), then observe one full Mini relay cycle and board publish before closing J2618. J2621/J2622 holds unchanged.' --check-at '2026-11-13T01:45:00Z' --type input --action 'Await elected Chief review and merge of PR #869 (J2738/J2618), then observe one full Mini relay cycle and board publish before closing J2618' --recheck J2742 --git && python3 scripts/jobs.py done J2742 --agent codex --result 'Verified J2618 condition at 2026-11-12T23:48Z (OWB PR #874 0fff3e567, jobs/reviews/J2742/REVIEW.md): J2738 repair PR #869 (2312a8af2) is open and verified (destination symlink isolation fixed, Isolation test 18/18 + 214/214 targeted tests + studio_split dry run OK, HOS checkout untouched), but PR #869 is still OPEN awaiting elected-Chief review/merge plus one Mini relay cycle and board publish; updated J2618 hold (--recheck J2742, check 2026-11-13T01:45:00Z). £0.' --git; OR (B) if Chief merges #869 in the same duty pass, run: python3 scripts/jobs.py reopen J2618 --agent codex --note 'J2742 verified J2738 symlink isolation fix in PR #869 (2312a8af2, OWB PR #874 0fff3e567, jobs/reviews/J2742/REVIEW.md) and Chief merged #869; reopen J2618 to observe one full Mini relay cycle and board publish before closing.' --git && python3 scripts/jobs.py done J2742 --agent codex --result 'Verified J2618 condition met after J2738 fix in PR #869 (2312a8af2, OWB PR #874 0fff3e567, jobs/reviews/J2742/REVIEW.md) and Chief merge; J2618 reopened for post-merge Mini relay cycle and board publish check. £0.' --git. £0."
+        },
+        {
+          "at": "2026-11-13T00:11Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected-Chief disposition of completed verification evidence; only J2742 is reopened for recording the ruling. J2618 remains held."
         }
       ],
       "remaining_action": "Evidence PR #874 (0fff3e567) opened; parking J2742 for elected Chief (codex) to record wait --recheck J2742 (or reopen after #869 merge) on J2618",
@@ -239709,8 +239714,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "progress": {
         "step": 3,
         "of": 3,
