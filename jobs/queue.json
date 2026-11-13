@@ -240097,13 +240097,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T03:40Z",
-      "eta": "2026-11-13T05:40Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T21:43Z",
-      "result": "",
+      "result": "Chief repair PASS: PR869 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; ruling https://github.com/TheLaughingGod1986/orbit-with-ben/pull/869#issuecomment-6843098327 . Reviewed destination unlink and build-level preservation coverage; regression fails when fix disabled. Fresh exact-head validation: 1291 scripts OK (12 skipped), 95 tools OK, 21 audio OK (1 skipped), split 18 OK, sync_rules/core_sync/studio status OK. J2618 reopened for current-main integration, whole-stack approval/merge by elected Chief, one Mini relay cycle and board publish. No merge performed; old PR868/833 must not merge. J2621/J2622 unchanged.",
       "history": [
         {
           "at": "2026-11-12T21:43Z",
@@ -240164,6 +240164,11 @@
           "at": "2026-11-13T03:41Z",
           "by": "codex",
           "what": "step 1 of 1 done: Repair PASS posted on PR869; J2618 reopened with current-main integration and relay/board verification required."
+        },
+        {
+          "at": "2026-11-13T03:41Z",
+          "by": "codex",
+          "what": "done: Chief repair PASS: PR869 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; ruling https://github.com/TheLaughingGod1986/orbit-with-ben/pull/869#issuecomment-6843098327 . Reviewed destination unlink and build-level preservation coverage; regression fails when fix disabled. Fresh exact-head validation: 1291 scripts OK (12 skipped), 95 tools OK, 21 audio OK (1 skipped), split 18 OK, sync_rules/core_sync/studio status OK. J2618 reopened for current-main integration, whole-stack approval/merge by elected Chief, one Mini relay cycle and board publish. No merge performed; old PR868/833 must not merge. J2621/J2622 unchanged."
         }
       ],
       "remaining_action": "Repair review complete; integration continues under J2618",
@@ -240176,7 +240181,8 @@
         "at": "2026-11-13T03:41Z",
         "by": "codex",
         "note": "Repair PASS posted on PR869; J2618 reopened with current-main integration and relay/board verification required."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/869#issuecomment-6843098327"
     },
     {
       "id": "J2739",
