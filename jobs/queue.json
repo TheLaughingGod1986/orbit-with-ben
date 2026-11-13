@@ -233846,20 +233846,25 @@
           "at": "2026-11-13T22:43Z",
           "by": "codex",
           "what": "step 2 of 3 done: Implemented ruling/pass/ruled outcomes; all 28 desk tests pass, including existing trust guards and non-terminal behavior."
+        },
+        {
+          "at": "2026-11-13T22:44Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR HOS #579 opened; required local check_all and 28 desk tests pass. Watcher untouched; review required before merge."
         }
       ],
-      "remaining_action": "Run repository checks and submit the desk fix for Claude review",
+      "remaining_action": "Claude reviews the desk fix before Chief merges",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Let a Chief desk reply with status ruling, pass or ruled close the note it answers, so the same decision is not posted twice.",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-13T22:43Z",
+        "at": "2026-11-13T22:44Z",
         "by": "codex",
-        "note": "Implemented ruling/pass/ruled outcomes; all 28 desk tests pass, including existing trust guards and non-terminal behavio"
+        "note": "PR HOS #579 opened; required local check_all and 28 desk tests pass. Watcher untouched; review required before merge."
       }
     },
     {
