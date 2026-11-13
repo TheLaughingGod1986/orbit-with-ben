@@ -194496,20 +194496,25 @@
           "at": "2026-11-13T07:18Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T07:20Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. Disk 14 GB; offload would free 541 MB and still miss 20 GB. Resume is the outside-hold checkpoint 2709a664."
         }
       ],
-      "remaining_action": "Rebuild the Franklin tail, the table lead-in, SAFE PATH DOWN and the foil check, then mux and run the film gates",
+      "remaining_action": "Rebuild the Franklin tail where a forward hold stays monotonic",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-13T06:01Z",
+        "at": "2026-11-13T07:20Z",
         "by": "cursor",
-        "note": "Sentry sha c18af4d1, knuckle sha fe3486e5, tower opening sha db3aec3f. HOS PR 542 commit 2709a664. 86 tests OK. check_al"
+        "note": "Claimed. Disk 14 GB; offload would free 541 MB and still miss 20 GB. Resume is the outside-hold checkpoint 2709a664."
       }
     },
     {
