@@ -244302,10 +244302,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-13T14:18Z",
+      "eta": "2026-11-13T15:48Z",
       "created_by": "refill",
       "created_at": "2026-11-13T13:55Z",
       "result": "",
@@ -244319,6 +244319,11 @@
           "at": "2026-11-13T14:00Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-13T14:18Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line",
@@ -244332,7 +244337,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T14:18Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
