@@ -244472,10 +244472,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T14:53Z",
+      "eta": "2026-11-13T15:33Z",
       "created_by": "claude",
       "created_at": "2026-11-13T14:46Z",
       "result": "",
@@ -244484,6 +244484,11 @@
           "at": "2026-11-13T14:46Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-13T14:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Deploy oppti.dev's faster build to the test address, upload the refresh as a preview version, report the preview address and the checks",
@@ -244491,7 +244496,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T14:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2780",
