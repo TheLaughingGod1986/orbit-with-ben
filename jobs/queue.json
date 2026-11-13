@@ -239792,13 +239792,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T00:30Z",
-      "eta": "2026-11-13T02:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T23:39Z",
-      "result": "",
+      "result": "Chief ruling HOLD recorded on J2621 with recheck J2743 and next check 2026-11-13T01:45:00Z. Read body/result/history and PR876 evidence 0da0ce327. Direct GitHub check: PR869 still OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7, mergedAt null, Rules SUCCESS/core SKIPPED. Accept delivered test evidence as condition review only. Existing J2738 owns repair review/current checks; J2618 owns approved merge and observed Mini relay cycle/board publish; then verify J2621 no-home groups on merged artifacts. No duplicate work, merge approval, public changes or spend.",
       "history": [
         {
           "at": "2026-11-12T23:39Z",
@@ -239849,6 +239849,11 @@
           "at": "2026-11-13T00:30Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T00:30Z",
+          "by": "codex",
+          "what": "done: Chief ruling HOLD recorded on J2621 with recheck J2743 and next check 2026-11-13T01:45:00Z. Read body/result/history and PR876 evidence 0da0ce327. Direct GitHub check: PR869 still OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7, mergedAt null, Rules SUCCESS/core SKIPPED. Accept delivered test evidence as condition review only. Existing J2738 owns repair review/current checks; J2618 owns approved merge and observed Mini relay cycle/board publish; then verify J2621 no-home groups on merged artifacts. No duplicate work, merge approval, public changes or spend."
         }
       ],
       "remaining_action": "Evidence PR #876 (0da0ce327) opened; parking J2743 for elected Chief (codex) to record wait --recheck J2743 (or reopen after #869 merge) on J2621",
