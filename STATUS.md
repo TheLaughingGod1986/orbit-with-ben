@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 019 | thumbs | codex | 2026-11-13T01:34Z | 2026-11-13T02:03Z | J2733 Packaging panel (codex): Andromeda whole-galaxy revision |
+| 019 | thumbs | codex | 2026-11-13T01:34Z | 2026-11-13T01:49Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
