@@ -245491,20 +245491,25 @@
           "at": "2026-11-13T17:53Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read deployment brief; explicit Ben approval recorded; no film links apply"
+        },
+        {
+          "at": "2026-11-13T17:54Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Exact approved commit selected; rollback version 7d172ed2-756f-47b0-be35-0366cf8ff1e3 recorded"
         }
       ],
-      "remaining_action": "Record the current site version, deploy the approved refresh, and verify it",
+      "remaining_action": "Deploy the approved refresh and verify the live pages and Worker CPU",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the new look live on Ben's product site, and put the old one back if anything breaks",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T17:53Z",
+        "at": "2026-11-13T17:54Z",
         "by": "codex",
-        "note": "Read deployment brief; explicit Ben approval recorded; no film links apply"
+        "note": "Exact approved commit selected; rollback version 7d172ed2-756f-47b0-be35-0366cf8ff1e3 recorded"
       }
     }
   ],
