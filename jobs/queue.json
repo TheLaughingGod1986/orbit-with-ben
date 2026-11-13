@@ -234550,10 +234550,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-13T08:28Z",
+      "eta": "2026-11-13T10:28Z",
       "created_by": "relay",
       "created_at": "2026-11-12T03:07Z",
       "result": "",
@@ -234577,6 +234577,11 @@
           "at": "2026-11-12T21:10Z",
           "by": "codex",
           "what": "remaining action: Apply desk 6813193837 now: refresh lock, meter and overage checks, then release J2664 for staged music. J2721 keeps assembly held pending delivered, reviewed score."
+        },
+        {
+          "at": "2026-11-13T08:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Apply desk 6813193837 now: refresh lock, meter and overage checks, then release J2664 for staged music. J2721 keeps assembly held pending delivered, reviewed score.",
@@ -234592,7 +234597,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T08:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2667",
