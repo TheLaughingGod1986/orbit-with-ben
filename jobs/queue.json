@@ -245701,9 +245701,14 @@
           "at": "2026-11-13T20:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2790; planned 4 steps: (1) trace lookup in video_tracker.py across one-file vs per-file film_status, (2) determine which side is wrong and verify Buffer mirror safety, (3) fix/test and rebuild boards from HOS main and PR 548 branch to verify HOS:004 matches, (4) commit from clean worktree and park for Chief with compare."
+        },
+        {
+          "at": "2026-11-13T20:27Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Identified exact gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads when one_file(slug) is True, and video_tracker.py film_rows/long_rows ignore f['upload'] when status_files is True; HOS 004 was retitled on YouTube ('What\\'s Inside an Atom? Mostly Empty Space' vs 'What\\'s Really Inside an Atom?') so match_public_long prefix matching also misses it without upload.videoId."
         }
       ],
-      "remaining_action": "Inspect scripts/video_tracker.py and HOS PR 548 (1ced1448) vs main (aa3c6c4) for HOS:004 lookup difference",
+      "remaining_action": "Fix film_status upload lookup in kanban_snapshot.py and video_tracker.py and add unit tests",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245716,11 +245721,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-13T20:07Z",
+        "at": "2026-11-13T20:27Z",
         "by": "gemini",
-        "note": "Claimed J2790; planned 4 steps: (1) trace lookup in video_tracker.py across one-file vs per-file film_status, (2) determ"
+        "note": "Identified exact gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads when one_file(slug) is True, and "
       },
       "taskKeys": [
         "HOS:004"
