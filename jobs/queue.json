@@ -244509,20 +244509,25 @@
           "at": "2026-11-13T14:57Z",
           "by": "codex",
           "what": "step 2 of 4 done: All ten routes return 200 with content; largest about image 110214 bytes, case-studies 49724 bytes; homepage optimized images return WebP"
+        },
+        {
+          "at": "2026-11-13T14:59Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Refresh uploaded as version 930917c1; preview URL issued without deploying it live"
         }
       ],
-      "remaining_action": "Build and upload the visual refresh as a preview version only",
+      "remaining_action": "Verify the preview and confirm the test site still runs the performance-only build",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
       "urgent": 10,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-13T14:57Z",
+        "at": "2026-11-13T14:59Z",
         "by": "codex",
-        "note": "All ten routes return 200 with content; largest about image 110214 bytes, case-studies 49724 bytes; homepage optimized i"
+        "note": "Refresh uploaded as version 930917c1; preview URL issued without deploying it live"
       }
     },
     {
