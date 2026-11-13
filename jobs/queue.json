@@ -233376,7 +233376,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T21:18Z",
-      "result": "Waiting for: Relay rewrite is merged (PR 886). Ready to start: a condition check gets the same needs as the job it checks. It changes chief_relay.py, so the strong-model review comes before the merge. Starts at the 12:50 run after 548.",
+      "result": "Waiting for: Built: PR 897 (draft) gives a condition check the needs of the job it checks, plus a guard so a check on a Studio job is not MacBook-portable. 1,299 tests OK. Strong-model review found one gap (fixed in 050e0e1a); a follow-up review and CI are running. Merges when both are green; then this job is done.",
       "history": [
         {
           "at": "2026-11-11T21:18Z",
@@ -233412,16 +233412,21 @@
           "at": "2026-11-13T08:51Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T12:40:00Z"
+        },
+        {
+          "at": "2026-11-13T13:04Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T17:40:00Z"
         }
       ],
-      "remaining_action": "Write the relay change and review it",
+      "remaining_action": "Merge PR 897 when review and CI are green, then close this job",
       "for": "claude",
       "kind": "studio",
       "plain": "Stop sending Studio checks to the MacBook, which cannot read Studio",
       "hold": {
         "type": "dependency",
-        "condition": "Relay rewrite is merged (PR 886). Ready to start: a condition check gets the same needs as the job it checks. It changes chief_relay.py, so the strong-model review comes before the merge. Starts at the 12:50 run after 548.",
-        "check_at": "2026-11-13T12:40:00Z"
+        "condition": "Built: PR 897 (draft) gives a condition check the needs of the job it checks, plus a guard so a check on a Studio job is not MacBook-portable. 1,299 tests OK. Strong-model review found one gap (fixed in 050e0e1a); a follow-up review and CI are running. Merges when both are green; then this job is done.",
+        "check_at": "2026-11-13T17:40:00Z"
       }
     },
     {
