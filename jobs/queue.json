@@ -1,5 +1,5 @@
 {
-  "next_id": 2775,
+  "next_id": 2776,
   "jobs": [
     {
       "id": "J0001",
@@ -244024,6 +244024,35 @@
         "by": "gemini",
         "note": "Step 3 done: Opened OWB PR #898 (4f3cf0d255) with jobs/reviews/J2774/REVIEW.md"
       }
+    },
+    {
+      "id": "J2775",
+      "title": "HOS 102 Ozone Hole: rule-E topic go/no-go review",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Rule-E topic go/no-go review for History of Science proposal `HOS:102` (*How Did We Find the Hole in the Ozone Layer?*), submitted in `J2748` (HOS PR `#572` https://github.com/TheLaughingGod1986/history-of-science/pull/572 branch `macbook/J2748`, OWB PR `#881` https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881 branch `macbook/J2748`).\n\nExplicit dependency: `--after J2748` (requires completion of `J2748`). No production work, spend, script lock, VO, or Studio change starts from this review job; active HOS WIP capacity (Rule G) and `facts`-lane gates stay unchanged.\n\n### Evidence Paths to Inspect (HOS PR `#572`, branch `macbook/J2748`)\n1. `02_Video-Projects/102_Molina-Rowland-Farman-Ozone-Hole/TOPIC.md` — full corrected `2026-11-12` & `2026-11-13` snapshot + `2026-11-12` lifetime Studio analytics comparison, candidate 4-act outline (`Midgley c. 1930 -> Molina & Rowland 1974 -> Farman, Gardiner & Shanklin 1985 Halley Bay Dobson spectrophotometer -> Montreal Protocol 1987`), 3-way thumbnail concept plan, overlap check, and two candidate Short angles (`S01`: *Is the Hole in the Ozone Layer Still There?*, `S02`: *Why Did a Satellite Miss the Ozone Hole?*).\n2. `02_Video-Projects/102_Molina-Rowland-Farman-Ozone-Hole/11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` — pre-build keyword, neighbour, title ABC, and retention plan.\n3. `02_Video-Projects/102_Molina-Rowland-Farman-Ozone-Hole/11_Upload-Package/evidence_2026-11-13_neighbours.json` — `neighbours.py` output (`PASS`: `7` education videos `≥1,000,000` views, `TED-Ed/TED = yes`, led by `Veritasium` `IV3dnLzthDA` `43,564,438` views, `Kurzgesagt` `JGXi_9A__Vc` `14,084,839` views, `TED-Ed` `dO2xx-aeZ4w` `2,795,894` views, plus `TED-Ed` `5wVJeq4mLL0` *Whatever happened to the hole in the ozone layer?* `670,049` views; transparent disclosure of narrow vs broad query scope included in `TOPIC.md` §2.3.B).\n4. `02_Video-Projects/102_Molina-Rowland-Farman-Ozone-Hole/11_Upload-Package/evidence_2026-11-13_public_search.json` — `public_search.py` output (`2026-11-13`) verifying plain search phrases `\"hole in the ozone layer\"` (`autocomplete = yes`), `\"ozone layer\"` (`autocomplete = yes`), `\"ozone hole\"` (`autocomplete = yes`), ranking videos (`Vox` `CaLOiGEDPJQ` `10,161,545` views, `Cleo Abram` `yWgHx0HE8m8` `8,528,291` views, `Peekaboo Kidz` `ckULkfv3Hb0` `4,284,034` views, `Seeker` `0ZfBgjUnXIs` `2,494,747` views, `Astrum Earth` `EmaQVbdd6Ko` `1,673,345` views), and `0` exact title collisions.\n5. `02_Video-Projects/102_Molina-Rowland-Farman-Ozone-Hole/production-status.md` and OWB PR `#881` `jobs/WIP.json` (`next_hos`) & `jobs/reviews/J2748/NOTE.md`.\n\n### Review Scope (Rule E)\n1. Score `HOS:102` against the Rule-E Topic Opportunity & Go/No-Go checklist (`TOPIC_OPPORTUNITY_SCORE.md` / `TOPIC_GO_NO_GO_SHEET.md` in `11_Upload-Package/`): search demand (`Rule 26`), neighbour pool (`≥3` education videos `≥1M` views), non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, proof-first `0:05–0:15` apparatus fit (`Dobson spectrophotometer`), and 2 candidate search-led Shorts.\n2. Keep all historical and scientific claims (especially the remembered NASA Nimbus-7 satellite data-processing story and Halley Bay Dobson values) explicitly marked **unverified** until `SOURCES.md` primary quotes and the `facts` lane run when `HOS:102` enters an active HOS WIP slot under Rule G.\n3. Record the Rule-E verdict (`GO` / `HOLD` / `NO-GO`) for Chief review. Do not start script lock, VO, or picture generation.\n",
+      "ref": "",
+      "film": "102",
+      "stage": "topic",
+      "after": "J2748",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-13T13:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T13:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review HOS 102 topic brief, neighbour/search evidence, and Rule-E scorecard on HOS PR #572",
+      "kind": "review",
+      "plain": "Rule-E topic go/no-go review for HOS 102 (How Did We Find the Hole in the Ozone Layer?) on HOS PR #572 and OWB PR #881"
     }
   ],
   "focus": [
