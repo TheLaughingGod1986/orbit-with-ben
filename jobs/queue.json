@@ -179105,9 +179105,14 @@
           "at": "2026-11-12T18:05Z",
           "by": "relay",
           "what": "condition verification queued: J2719"
+        },
+        {
+          "at": "2026-11-13T22:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T04:50:00Z"
         }
       ],
-      "remaining_action": "Have the authorized operator handle approval configuration and acceptance tests",
+      "remaining_action": "Verify operator configuration and acceptance evidence before resuming remaining allow-list work",
       "kind": "assembly",
       "urgent": 5,
       "rerouted_from": {
@@ -179128,11 +179133,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Ben at the Mini, in one sitting with the findings of the always-on check (J2517): only he can change an agent's approval settings there. Until then Codex's jobs fall to the next agent in line, so nothing is stuck. The rules Codex asked for are in draft PR 490.",
-        "check_at": "2026-11-12T19:05:57+00:00",
-        "checked_at": "2026-11-10T17:02:53+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2719"
+        "condition": "Chief review J2719: NOT MET. J2517 and J2559 complete; no always-on work remains a prerequisite. Fresh hashes match the 4-6 Nov approval-settings checkpoint; PR490 remains draft at f521bcd3f1. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence. Existing rules or merging PR490 alone do not prove completion. Keep fallback routing active; recheck for operator evidence at the stated time. No autonomous approval-control changes.",
+        "check_at": "2026-11-14T04:50:00Z",
+        "last_recheck": "J2719",
+        "checked_at": "2026-11-13T22:49:00+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
