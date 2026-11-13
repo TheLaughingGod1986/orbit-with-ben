@@ -194481,20 +194481,25 @@
           "at": "2026-11-13T05:59Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Outside-hold tests passed. Near-tie frames repeat a neighbour that is neither candidate. Rendering three rows."
+        },
+        {
+          "at": "2026-11-13T06:01Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Sentry sha c18af4d1, knuckle sha fe3486e5, tower opening sha db3aec3f. HOS PR 542 commit 2709a664. 86 tests OK. check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Render the sentry, knuckle and tower-opening caption intermediates",
+      "remaining_action": "Rebuild the Franklin tail, the table lead-in, SAFE PATH DOWN and the foil check, then mux and run the film gates",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T05:59Z",
+        "at": "2026-11-13T06:01Z",
         "by": "cursor",
-        "note": "Outside-hold tests passed. Near-tie frames repeat a neighbour that is neither candidate. Rendering three rows."
+        "note": "Sentry sha c18af4d1, knuckle sha fe3486e5, tower opening sha db3aec3f. HOS PR 542 commit 2709a664. 86 tests OK. check_al"
       }
     },
     {
