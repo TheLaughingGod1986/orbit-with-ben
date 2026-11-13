@@ -244916,20 +244916,25 @@
           "at": "2026-11-13T17:17Z",
           "by": "codex",
           "what": "step 0 of 3 done: Reading the authorised domain-move brief and verifying safe access."
+        },
+        {
+          "at": "2026-11-13T17:19Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Both Cloudflare nameservers rechecked 16/16 records; Vercel signed-in CLI accepted the nameserver-only PATCH on its current registrar endpoint."
         }
       ],
-      "remaining_action": "Check domain records and signed-in deployment tools for oppti.dev",
+      "remaining_action": "Wait for Cloudflare activation, then attach the existing site to its domain",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T17:17Z",
+        "at": "2026-11-13T17:19Z",
         "by": "codex",
-        "note": "Reading the authorised domain-move brief and verifying safe access."
+        "note": "Both Cloudflare nameservers rechecked 16/16 records; Vercel signed-in CLI accepted the nameserver-only PATCH on its curr"
       }
     },
     {
