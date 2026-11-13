@@ -194444,9 +194444,14 @@
           "at": "2026-11-13T05:09Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Unit tests passed. Centre window confirms both Royal Society near-ties. The other near-ties stay out. Rendering that one row."
+        },
+        {
+          "at": "2026-11-13T05:11Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Royal Society row verified: 127 frames, sha 4774997f245ae2fa25c42d67b879fad305af82ebd3dda3fc11610a66f941a056. HOS PR 542 commit 7215b8f4. 80 tests OK. check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Render the Royal Society caption row from the confirmed centre-window schedule",
+      "remaining_action": "Rebuild the sentry, knuckle and tower-opening captions without choosing between different source frames",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194455,9 +194460,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-13T05:09Z",
+        "at": "2026-11-13T05:11Z",
         "by": "cursor",
-        "note": "Unit tests passed. Centre window confirms both Royal Society near-ties. The other near-ties stay out. Rendering that one"
+        "note": "Royal Society row verified: 127 frames, sha 4774997f245ae2fa25c42d67b879fad305af82ebd3dda3fc11610a66f941a056. HOS PR 542"
       }
     },
     {
