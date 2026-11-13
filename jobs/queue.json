@@ -239415,6 +239415,11 @@
           "at": "2026-11-13T16:21Z",
           "by": "codex",
           "what": "reopened: Taking the assigned acting-Chief review to record KEEP and completion. J0960 has been reopened with fresh API evidence; no worker steps are reused."
+        },
+        {
+          "at": "2026-11-13T16:21Z",
+          "by": "codex",
+          "what": "rerouted to codex: Ben explicitly assigned this single acting-Chief review to codex; Gemini verification is already complete. Remove stale worker restriction for Chief ruling completion."
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J0960 with evidence and mark J2718 done",
@@ -239429,7 +239434,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon",
       "taskKeys": [
         "HOS:007"
