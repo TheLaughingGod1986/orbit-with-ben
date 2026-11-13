@@ -64,6 +64,18 @@ class FinalAudit(unittest.TestCase):
                 self.assertEqual(check['kind'],'review')
                 self.assertEqual(bool(check.get('mini_only')),bool(extra.get('mini_only')))
 
+    def test_check_on_a_studio_job_is_not_portable_to_a_macbook_without_studio(self):
+        # J2649, reviewer's gap: needs=mini alone did not keep the MacBook off a check on a Studio job.
+        for title, portable in (('Studio: set Related video on the 026 Shorts', False), ('Review the docs wording', True)):
+            with self.subTest(title=title):
+                j={**row('H'),'title':title,'status':'blocked','result':'waiting'}
+                data={'jobs':[j],'next_id':1}
+                jobs.set_wait(j,'relay',AT,{'type':'test','condition':'c','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'next')
+                jobs.reconcile_holds(data,AT)
+                check=next(x for x in data['jobs'] if x.get('recheck_of'))
+                with patch.dict('os.environ',{'MACBOOK_CDP':''}):
+                    self.assertEqual(jobs.macbook_portable(check,data),portable)
+
     def test_due_hold_creates_one_review_check_and_keeps_work_blocked(self):
         j={**row('H'),'status':'blocked','result':'date gate; original approval retained'}
         data={'jobs':[j],'next_id':1};jobs.set_wait(j,'relay',AT,{'type':'test','condition':'Current title test has ended','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'Start the next title test')

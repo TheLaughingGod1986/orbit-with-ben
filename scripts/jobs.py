@@ -404,6 +404,8 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
         return True
     if job.get("kind") in NOT_PORTABLE_KINDS:
         return False
+    if job.get("recheck_of") and parent and parent.get("needs") == "mini" and STUDIO_WORK.search(str(parent.get("title") or "")):
+        return False   # J2649: a check on a Studio job reads Studio, and macbook_studio_ok has just said this MacBook cannot
     if shared_media_job(job):
         # Studio login / Buffer / Flow stay Mini even when the film folder is on studio-live.
         return (not publish_mini_hit(text)) and media_reachable(job)
