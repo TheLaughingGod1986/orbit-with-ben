@@ -194551,9 +194551,14 @@
           "at": "2026-11-13T09:53Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Frame 2868 winner is source 148 and the centre window confirms it. Frame 2869 stays out: its winner is 150 and the window does not confirm."
+        },
+        {
+          "at": "2026-11-13T09:55Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Frame 2868 is source 148, sha bb674f3108d3affd0b37e91d230da30f1e662eadcd5fbbd0b827dd72a4ee90f4. Frame 2869 stays out. PR 542 commit e9cc52fb. 94 tests OK. check_all PASS."
         }
       ],
-      "remaining_action": "Bridge Franklin frame 2868 from the confirmed neighbour, leave 2869 out, then the table lead-in, SAFE PATH DOWN and the foil check",
+      "remaining_action": "Leave frame 2869 out, then rebuild the table lead-in, SAFE PATH DOWN and the foil check before the mux and film gates",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194562,9 +194567,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-13T09:53Z",
+        "at": "2026-11-13T09:55Z",
         "by": "cursor",
-        "note": "Frame 2868 winner is source 148 and the centre window confirms it. Frame 2869 stays out: its winner is 150 and the windo"
+        "note": "Frame 2868 is source 148, sha bb674f3108d3affd0b37e91d230da30f1e662eadcd5fbbd0b827dd72a4ee90f4. Frame 2869 stays out. PR"
       }
     },
     {
