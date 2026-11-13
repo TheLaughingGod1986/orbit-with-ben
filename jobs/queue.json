@@ -243210,9 +243210,14 @@
           "at": "2026-11-13T10:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T10:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2771 and read J2770/J2758 job briefs"
         }
       ],
-      "remaining_action": "Verify readiness: Hand off completed dinosaur scene evidence after publication approval",
+      "remaining_action": "Inspect J2770 queue record, local worktree /Volumes/MiniWork/scratch/J2770-hos, and approval history",
       "kind": "review",
       "recheck_of": "J2770",
       "due": "2026-11-13T11:06:14+00:00",
@@ -243229,11 +243234,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T10:14Z",
+        "at": "2026-11-13T10:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2771 and read J2770/J2758 job briefs"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     }
   ],
   "focus": [
