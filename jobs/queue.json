@@ -197161,13 +197161,13 @@
       "stage": "picture",
       "after": "J2270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-13T00:51Z",
-      "eta": "2026-11-13T02:51Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:31Z",
-      "result": "",
+      "result": "Waiting for: This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.",
       "history": [
         {
           "at": "2026-11-06T08:31Z",
@@ -197208,12 +197208,24 @@
           "at": "2026-11-13T00:53Z",
           "by": "codex",
           "what": "step 1 of 3 done: Scope identities match; 12 unique hashes; 24/24 working/archive copies match. Fresh ffprobe: all 1280x720, 7.916667s, zero audio streams. No perceptual review or KEEP. Claude is now elected Chief."
+        },
+        {
+          "at": "2026-11-13T00:54Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release."
+        },
+        {
+          "at": "2026-11-13T00:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T05:30:00Z"
         }
       ],
-      "remaining_action": "Review the twelve Dinosaur scenes with demonstrated moving-video input before accepting them for editing.",
+      "remaining_action": "Have an independent reviewer with moving-video input finish the Dinosaur scene checks.",
       "kind": "qa",
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
-      "required_capabilities": [],
+      "required_capabilities": [
+        "moving_video_input"
+      ],
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -197232,7 +197244,15 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.",
+        "check_at": "2026-11-13T05:30:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      }
     },
     {
       "id": "J2272",
