@@ -241643,9 +241643,14 @@
           "at": "2026-11-13T06:03Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T06:04Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2757 condition verification for J2172 (HOS 010 Shorts A and C)"
         }
       ],
-      "remaining_action": "Verify readiness: Await independent acceptance of the twelve Dinosaur scenes in J2271, then assemble Shorts A and C under Option A1.",
+      "remaining_action": "Verify J2172 waiting condition (J2271 independent plate acceptance, hashes, VO/board/snapshot checks)",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-13T06:36:50+00:00",
@@ -241662,11 +241667,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T06:03Z",
+        "at": "2026-11-13T06:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2757 condition verification for J2172 (HOS 010 Shorts A and C)"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J2758",
