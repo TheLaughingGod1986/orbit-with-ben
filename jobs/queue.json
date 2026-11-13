@@ -1,5 +1,5 @@
 {
-  "next_id": 2760,
+  "next_id": 2761,
   "jobs": [
     {
       "id": "J0001",
@@ -238380,6 +238380,11 @@
           "at": "2026-11-12T23:58Z",
           "by": "codex",
           "what": "blocked: Vercel refuses protected secret export. Ben must create the board GitHub token and set BOARD_GH_TOKEN in Cloudflare Pages studio-kanban production secrets. Fallback board/upload keys are set; report at thread comment 6839530655."
+        },
+        {
+          "at": "2026-11-13T06:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J2760"
         }
       ],
       "remaining_action": "Add the missing GitHub token, then verify board ticks and phone linking",
@@ -238398,7 +238403,8 @@
       "hold": {
         "type": "input",
         "condition": "Vercel refuses protected secret export. Ben must create the board GitHub token and set BOARD_GH_TOKEN in Cloudflare Pages studio-kanban production secrets. Fallback board/upload keys are set; report at thread comment 6839530655.",
-        "check_at": "2026-11-13T05:58:59+00:00"
+        "check_at": "2026-11-13T07:11:23+00:00",
+        "recheck_task": "J2760"
       }
     },
     {
@@ -241813,6 +241819,37 @@
       "taskKeys": [
         "HOS:011"
       ]
+    },
+    {
+      "id": "J2760",
+      "title": "Verify condition for J2714",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2714: Vercel refuses protected secret export. Ben must create the board GitHub token and set BOARD_GH_TOKEN in Cloudflare Pages studio-kanban production secrets. Fallback board/upload keys are set; report at thread comment 6839530655.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2714 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T06:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T06:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Add the missing GitHub token, then verify board ticks and phone linking",
+      "kind": "review",
+      "recheck_of": "J2714",
+      "due": "2026-11-13T07:11:23+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
