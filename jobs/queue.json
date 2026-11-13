@@ -239159,9 +239159,14 @@
           "at": "2026-11-13T11:06Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J2719: reading J2040, J2517, PR 490 and local Codex rules on the Mini"
+        },
+        {
+          "at": "2026-11-13T11:08Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2040 history, J2517 completion (#793), PR 490 state, and ~/.codex/rules and ~/.codex/bin timestamps"
         }
       ],
-      "remaining_action": "Checking whether Ben has applied the Codex approval settings on the Mini for J2040",
+      "remaining_action": "Verifying whether operator approval configuration or PR 490 rules have been applied on the Mini",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-12T19:05:57+00:00",
@@ -239176,11 +239181,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T11:06Z",
+        "at": "2026-11-13T11:08Z",
         "by": "gemini",
-        "note": "Started J2719: reading J2040, J2517, PR 490 and local Codex rules on the Mini"
+        "note": "Read J2040 history, J2517 completion (#793), PR 490 state, and ~/.codex/rules and ~/.codex/bin timestamps"
       }
     },
     {
