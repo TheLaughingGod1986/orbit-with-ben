@@ -239693,9 +239693,14 @@
           "at": "2026-11-13T01:50Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T01:50Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. Reading NAS evidence only."
         }
       ],
-      "remaining_action": "Packaging panel (cursor): Andromeda whole-galaxy revision",
+      "remaining_action": "Reading the Andromeda title and whole-galaxy thumbnail",
       "for": "cursor",
       "kind": "review",
       "plain": "Checking the new Andromeda title and whole-galaxy thumbnail",
@@ -239704,9 +239709,11 @@
         "of": 3,
         "at": "2026-11-13T01:50Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Reading NAS evidence only."
+      },
+      "taskKeys": [
+        "OWB:019"
+      ]
     },
     {
       "id": "J2736",
