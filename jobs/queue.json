@@ -240699,19 +240699,24 @@
           "at": "2026-11-13T02:23Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Inspected J2618, J2738, J2742, J2621, J2622, and PRs #869/#868/#833/#874: PR #869 (2312a8af2) remains OPEN (mergedAt: null) and J2738 remains parked for Chief"
+        },
+        {
+          "at": "2026-11-13T02:29Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Rebased PR #869 (2312a8af2) onto origin/main (5f85a2089f): 214/214 unit tests, 13/13 watch_links, sync_rules, core_sync (56), studio status, and studio_split dry run (names=0 home=0 registry=0 tests=0, HOS clean) all PASS; PR #869 still OPEN"
         }
       ],
-      "remaining_action": "Run rebased verification of PR #869 on current origin/main and prepare J2750 verification report",
+      "remaining_action": "Record J2750 verification result and park for elected Chief to record wait --recheck J2750 (or reopen J2618 after #869 merge)",
       "kind": "review",
       "recheck_of": "J2618",
       "due": "2026-11-13T03:18:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-13T02:23Z",
+        "at": "2026-11-13T02:29Z",
         "by": "gemini",
-        "note": "Inspected J2618, J2738, J2742, J2621, J2622, and PRs #869/#868/#833/#874: PR #869 (2312a8af2) remains OPEN (mergedAt: nu"
+        "note": "Rebased PR #869 (2312a8af2) onto origin/main (5f85a2089f): 214/214 unit tests, 13/13 watch_links, sync_rules, core_sync "
       }
     }
   ],
