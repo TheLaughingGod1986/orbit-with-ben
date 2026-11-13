@@ -239358,13 +239358,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-13T10:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T18:05Z",
-      "result": "parked for Chief: parked for Chief: condition for J0960 verified SATISFIED in jobs/reviews/J2718/REVIEW.md (abf4e2245e): HOS 007 Vaccine long ETynHpIYLeY reads back public since 2026-11-12T18:00:36Z in both live YouTube Data API (channel:audit: 64 videos, 0 errors; videos.list privacyStatus=public) and 05_Analytics/hos/snapshots/2026-11-13.json; commentThreads.list returns HTTP 200 (0 comments), PINNED_COMMENTS.json has 0 entries for ETynHpIYLeY, update-pinned-comment.ts --create --dry-run builds the exact approved comment text, and all original gates/Ben approvals (J0946, J0959, J2536) remain valid. Only the elected Chief (chief) may run jobs.py reopen J0960 and jobs.py done J2718 (exact commands in jobs/reviews/J2718/REVIEW.md). (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T18:05Z",
@@ -239410,6 +239410,11 @@
           "at": "2026-11-13T13:33Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-13T16:21Z",
+          "by": "codex",
+          "what": "reopened: Taking the assigned acting-Chief review to record KEEP and completion. J0960 has been reopened with fresh API evidence; no worker steps are reused."
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J0960 with evidence and mark J2718 done",
@@ -239426,13 +239431,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-13T11:02Z",
-        "by": "gemini",
-        "note": "Condition verification complete (SATISFIED in jobs/reviews/J2718/REVIEW.md, abf4e2245e); parking at protected reopen J09"
-      },
       "taskKeys": [
         "HOS:007"
       ],
