@@ -1,5 +1,5 @@
 {
-  "next_id": 2771,
+  "next_id": 2772,
   "jobs": [
     {
       "id": "J0001",
@@ -243100,6 +243100,11 @@
           "at": "2026-11-13T10:06Z",
           "by": "codex",
           "what": "blocked: Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release."
+        },
+        {
+          "at": "2026-11-13T10:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J2771"
         }
       ],
       "remaining_action": "Hand off completed dinosaur scene evidence after publication approval",
@@ -243121,8 +243126,40 @@
       "hold": {
         "type": "dependency",
         "condition": "Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release.",
-        "check_at": "2026-11-13T16:06:01+00:00"
+        "check_at": "2026-11-13T11:06:14+00:00",
+        "recheck_task": "J2771"
       }
+    },
+    {
+      "id": "J2771",
+      "title": "Verify condition for J2770",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2770: Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2770 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T10:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T10:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Hand off completed dinosaur scene evidence after publication approval",
+      "kind": "review",
+      "recheck_of": "J2770",
+      "due": "2026-11-13T11:06:14+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
