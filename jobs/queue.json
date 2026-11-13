@@ -178489,9 +178489,14 @@
           "at": "2026-11-13T08:13Z",
           "by": "relay",
           "what": "condition verification queued: J2769"
+        },
+        {
+          "at": "2026-11-13T10:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T14:21:00Z"
         }
       ],
-      "remaining_action": "Complete the existing music preflight and score jobs, then verify the delivered score before assembling the gravity film",
+      "remaining_action": "Finish the existing music approval and production work, then check the delivered score before assembling the gravity film",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178507,12 +178512,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2747 Chief ruling: NOT MET. Independent Mini inventory has only three J2663 scope files; NAS 05_Music absent. PR880 evidence accepted. Existing J2666 must apply desk6813193837 with fresh recorder-lock, pause, meter, overage and pending-work checks; then J2664 delivers own cues, stems, provenance, music gates and required review/Chief acceptance. Existing diagram KEEP, narration locks and specific desk listening ruling retained; no spending or release from this verification.",
-        "check_at": "2026-11-13T09:13:33+00:00",
-        "last_recheck": "J2747",
-        "checked_at": "2026-11-13T02:55:14+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2769"
+        "condition": "J2769 Chief ruling: NOT MET. Fresh Mini inventory matches the three J2663 scope hashes in jobs/reviews/J2769/REVIEW.md; NAS 05_Music absent. No score, stems, provenance or music gate evidence delivered. J2666 specialist verification is now complete and parked for its separate elected-Chief ruling, superseding the report that it was open. J2664 retains the staged measured-meter protocol of desk6813193837, fresh recorder-lock/pause/meter/overage/pending-work checks, cue delivery, comparisons and required review/Chief acceptance. Prior diagram KEEP and narration locks remain; no spend or assembly release authorized here. J2664 now carries assembly deadline 2026-11-15T18:00Z so its prerequisite review inherits priority.",
+        "check_at": "2026-11-13T14:21:00Z",
+        "last_recheck": "J2769",
+        "checked_at": "2026-11-13T10:27:21+00:00",
+        "checked_by": "codex"
       }
     },
     {
