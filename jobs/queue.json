@@ -245809,9 +245809,14 @@
           "at": "2026-11-13T21:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T21:37Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J2791 condition verification for J2035 (HOS:009)"
         }
       ],
-      "remaining_action": "Verify readiness: Finish the existing music approval and production work, then check the delivered score before assembling the gravity film",
+      "remaining_action": "Inspect J2035, J2769, J2664, J2666 and HOS 009 music/picture/narration state on Mini and NAS",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-13T19:40:50+00:00",
@@ -245828,11 +245833,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T21:36Z",
+        "at": "2026-11-13T21:37Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2791 condition verification for J2035 (HOS:009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2792",
