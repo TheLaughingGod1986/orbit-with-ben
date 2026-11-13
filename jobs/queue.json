@@ -235548,13 +235548,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:37Z",
-      "eta": "2026-11-14T00:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T06:06Z",
-      "result": "",
+      "result": "Chief ruling: condition MET. Reviewed and PASSed HOS PR 562 exact head 316f50c4 (24 desk tests OK; four CI checks successful); review https://github.com/TheLaughingGod1986/history-of-science/pull/562#issuecomment-6866635164. Merged 2026-11-13T22:35:59Z as 6469a4ba9fd2e3fe1b2baa82aa0d3bc1c15e5c78 and verified on origin/main. J2650 reopened with evidence: implement outcome statuses from merged main, test, obtain required review and merge, then guarded watcher refresh. No restart or media changes performed; no spend.",
       "history": [
         {
           "at": "2026-11-12T06:06Z",
@@ -235615,6 +235615,11 @@
           "at": "2026-11-13T22:37Z",
           "by": "codex",
           "what": "remaining action: Record the verified prerequisite merge and completed Chief ruling"
+        },
+        {
+          "at": "2026-11-13T22:38Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition MET. Reviewed and PASSed HOS PR 562 exact head 316f50c4 (24 desk tests OK; four CI checks successful); review https://github.com/TheLaughingGod1986/history-of-science/pull/562#issuecomment-6866635164. Merged 2026-11-13T22:35:59Z as 6469a4ba9fd2e3fe1b2baa82aa0d3bc1c15e5c78 and verified on origin/main. J2650 reopened with evidence: implement outcome statuses from merged main, test, obtain required review and merge, then guarded watcher refresh. No restart or media changes performed; no spend."
         }
       ],
       "remaining_action": "Record the verified prerequisite merge and completed Chief ruling",
@@ -235639,7 +235644,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/562"
     },
     {
       "id": "J2671",
