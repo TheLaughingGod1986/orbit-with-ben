@@ -194501,9 +194501,14 @@
           "at": "2026-11-13T07:20Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. Disk 14 GB; offload would free 541 MB and still miss 20 GB. Resume is the outside-hold checkpoint 2709a664."
+        },
+        {
+          "at": "2026-11-13T07:22Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Forward-hold tests passed. Two spans, 21 frames. Master frames 2868 and 2869 stay out. Rendering those plates."
         }
       ],
-      "remaining_action": "Rebuild the Franklin tail where a forward hold stays monotonic",
+      "remaining_action": "Render the Franklin clear-tail plates",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194512,9 +194517,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T07:20Z",
+        "at": "2026-11-13T07:22Z",
         "by": "cursor",
-        "note": "Claimed. Disk 14 GB; offload would free 541 MB and still miss 20 GB. Resume is the outside-hold checkpoint 2709a664."
+        "note": "Forward-hold tests passed. Two spans, 21 frames. Master frames 2868 and 2869 stay out. Rendering those plates."
       }
     },
     {
