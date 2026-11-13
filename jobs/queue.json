@@ -1,5 +1,5 @@
 {
-  "next_id": 2784,
+  "next_id": 2785,
   "jobs": [
     {
       "id": "J0001",
@@ -245133,6 +245133,35 @@
         "HOS:009"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6859388328"
+    },
+    {
+      "id": "J2784",
+      "title": "J01: repair pace of five linking voice takes without new recording",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Codex ruling on J2665, 13 Nov 2026: FIX pace before Journey Film 01 assembly. J2220 remains held; do not re-record or spend credits.\n\nRead jobs/reviews/J2665/DECISION.md, the original REVIEW.md, and 02_Video-Projects/J01_Journey-To-Every-World/02_Voiceover/J2220_VERIFICATION.json. Work against studio-live originals, verify hashes, preserve every original MP3/WAV/TAKE.json. Claim this job only, not J2220. No film-stage PASS.\n\nCreate versioned pitch-preserving slowdown derivatives for takes 1,3,5,6,7 only. Use the WAV originals and ffmpeg atempo, targeting 140 wpm from the same submitted-script whitespace counts as the J2220 verification: 117,49,42,48,47. Compute each factor as 140/(60*words/original_duration), approximately 0.8823,0.9029,0.9511,0.9217,0.9294. No silence padding, sentence deletions, script changes, or generation-setting changes. Do not overwrite originals. Takes 2,4,8 remain their original bytes. Preserve locked voice identity and pitch. Output a versioned manifest binding all eight selected paths to SHA-256, exact filter, input/output duration, words, WPM, mean level and ASR evidence. Measure the actual output: each selected take must be 130-145 wpm and -19 to -28 dB mean, decode cleanly and retain full words with no repeated phrases. Target durations are not proof of a pass.\n\nStore derivatives on studio-live with verified hashes; only evidence goes in git. Report any quality or wording uncertainty for the dependent audio reviewer. No retakes, ElevenLabs/Flow/Vertex spend, YouTube changes, or assembly release. If slowdown damages delivery, keep originals and send the specific defect to the reviewer; do not iterate blindly. This is a bounded no-credit repair, not a waiver of any check.\n",
+      "ref": "J2665",
+      "film": "J01",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-13T17:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:01Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make and verify five versioned voice edits without spending credits",
+      "kind": "assembly",
+      "plain": "Slow down five fast linking passages in the Journey film"
     }
   ],
   "focus": [
