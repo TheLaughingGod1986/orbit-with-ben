@@ -239084,9 +239084,14 @@
           "at": "2026-11-13T11:00Z",
           "by": "gemini",
           "what": "step 2 of 3 done: commentThreads API returns HTTP 200 (0 comments), PINNED_COMMENTS.json has 0 entries for ETynHpIYLeY, and update-pinned-comment.ts --create --dry-run builds the exact approved comment text"
+        },
+        {
+          "at": "2026-11-13T11:02Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Condition verification complete (SATISFIED in jobs/reviews/J2718/REVIEW.md, abf4e2245e); parking at protected reopen J0960 call"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2718/REVIEW.md and park for elected Chief to reopen J0960",
+      "remaining_action": "Elected Chief (chief): reopen J0960 with evidence and mark J2718 done",
       "kind": "review",
       "recheck_of": "J0960",
       "due": "2026-11-12T19:05:57+00:00",
@@ -239101,11 +239106,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-13T11:00Z",
+        "at": "2026-11-13T11:02Z",
         "by": "gemini",
-        "note": "commentThreads API returns HTTP 200 (0 comments), PINNED_COMMENTS.json has 0 entries for ETynHpIYLeY, and update-pinned-"
+        "note": "Condition verification complete (SATISFIED in jobs/reviews/J2718/REVIEW.md, abf4e2245e); parking at protected reopen J09"
       },
       "taskKeys": [
         "HOS:007"
