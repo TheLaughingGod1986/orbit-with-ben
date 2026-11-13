@@ -246205,20 +246205,25 @@
           "at": "2026-11-13T23:00Z",
           "by": "codex",
           "what": "step 1 of 3 done: Recorded rollback f858ae31; exact requested commit checked out cleanly on SSD; npm ci completed"
+        },
+        {
+          "at": "2026-11-13T23:03Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Exact requested growth commit built and deployed successfully; checking production responses"
         }
       ],
-      "remaining_action": "Build and deploy the approved website growth pass",
+      "remaining_action": "Verify the live website pages, search markup, pricing and CPU usage",
       "due": "2026-11-14T08:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the latest improvements live on Ben's product site, and put the old version back if anything breaks",
       "urgent": 10,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-13T23:00Z",
+        "at": "2026-11-13T23:03Z",
         "by": "codex",
-        "note": "Recorded rollback f858ae31; exact requested commit checked out cleanly on SSD; npm ci completed"
+        "note": "Exact requested growth commit built and deployed successfully; checking production responses"
       }
     }
   ],
