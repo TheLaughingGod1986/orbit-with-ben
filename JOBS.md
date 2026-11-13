@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2748 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2753 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2754 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2438 |  |
-| J2755 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J2755 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2756 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J2753 FIX: reconcile gate warnings and cut counts across both channels | J2753 |
 | J2757 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2758 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
