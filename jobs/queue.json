@@ -241584,10 +241584,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-13T06:24Z",
+      "eta": "2026-11-13T08:24Z",
       "created_by": "codex",
       "created_at": "2026-11-13T05:35Z",
       "result": "",
@@ -241601,6 +241601,11 @@
           "at": "2026-11-13T05:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 283 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-13T06:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reconcile the quality report with the original check results and return it for review",
@@ -241614,7 +241619,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T06:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2757",
