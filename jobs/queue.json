@@ -246069,13 +246069,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "chief",
       "since": "2026-11-13T23:43Z",
-      "eta": "2026-11-14T01:43Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T18:40Z",
-      "result": "",
+      "result": "Chief close of the condition check. Ruling NOT MET, as recorded in PR 907 (merge 3a02f4d952). music_gate still FAILs reused at 0.804, 0.811 and 0.821 on the complete 77-file comparison. J2663 forbids a waiver. This is not a music PASS and not a film PASS. J2035 stays on its dependency hold, next check 2026-11-14T06:00:00Z. J2795 remains the bounded no-spend diagnosis. No assembly release, waiver, generation, upload or spend.",
       "history": [
         {
           "at": "2026-11-13T18:40Z",
@@ -246131,6 +246131,11 @@
           "at": "2026-11-13T23:43Z",
           "by": "chief",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T23:43Z",
+          "by": "chief",
+          "what": "done: Chief close of the condition check. Ruling NOT MET, as recorded in PR 907 (merge 3a02f4d952). music_gate still FAILs reused at 0.804, 0.811 and 0.821 on the complete 77-file comparison. J2663 forbids a waiver. This is not a music PASS and not a film PASS. J2035 stays on its dependency hold, next check 2026-11-14T06:00:00Z. J2795 remains the bounded no-spend diagnosis. No assembly release, waiver, generation, upload or spend."
         }
       ],
       "remaining_action": "Elected Chief to rule on J2664/J2783 score acceptance and reopen J2035 (or record --recheck J2791 wait) and close J2791",
@@ -246148,7 +246153,8 @@
         "by": "chief",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "3a02f4d952"
     },
     {
       "id": "J2792",
