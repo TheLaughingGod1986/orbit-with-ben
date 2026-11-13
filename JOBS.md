@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2753 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2754 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2438 |  |
 | J2755 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J2756 | mini | claimed | gemini | 2026-11-13T08:24Z | for gemini · qa · `gemini-argon` · J2753 FIX: reconcile gate warnings and cut counts across both channels | J2753 |
+| J2756 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J2753 FIX: reconcile gate warnings and cut counts across both channels | J2753 |
 | J2757 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2758 | any | open | – | – | review · Verify condition for J2271 |  |
 | J2759 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2563 |  |
