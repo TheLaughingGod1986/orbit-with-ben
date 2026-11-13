@@ -1,5 +1,5 @@
 {
-  "next_id": 2762,
+  "next_id": 2766,
   "jobs": [
     {
       "id": "J0001",
@@ -230814,6 +230814,11 @@
           "at": "2026-11-13T02:59Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T06:45:00Z"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2762"
         }
       ],
       "remaining_action": "After the repair review and merge, check the live relay, board refresh and separated-channel tests",
@@ -230830,10 +230835,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2751 Chief ruling HOLD: accepted condition evidence PR883 at a3c7a9f53f2e718f0af83d6236b1ab990c268515 (293 targeted tests and temporary split home=0 registry=0 tests=0 names=0; not a current merge or system PASS). Direct GitHub read confirms PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS, core workflow SKIPPED. Picture window, HOS535 and J2619 prerequisites remain satisfied. Existing J2738 owns exact-head repair review and full current checks; J2618 owns approved merge then one observed Mini relay cycle and board publish. Only after those artifacts exist verify J2621 registry/tests/home zero on merged code before closing. No duplicate repair or rebase; original approvals and unrelated holds unchanged.",
-        "check_at": "2026-11-13T06:45:00Z",
+        "check_at": "2026-11-13T08:16:33+00:00",
         "last_recheck": "J2751",
         "checked_at": "2026-11-13T02:59:24+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2762"
       }
     },
     {
@@ -230924,6 +230930,11 @@
           "at": "2026-11-13T03:04Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T07:00:00Z"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2763"
         }
       ],
       "remaining_action": "Complete J2738 repair review and J2618 relay verification before resuming the History of Science migration",
@@ -230940,10 +230951,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2746 Chief ruling: condition NOT MET. Repair PR869 remains OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; HOS548 remains held draft at 55b968787b773c3ae26e0f111f96a32e2e4a0bf8. J2738 owns exact-head repair review; J2618 then owns approved studio merge, one observed Mini relay cycle and board publish. After J2618 completes, J2622 may regenerate HOS548 from current main, prove round trip, compare current board, obtain Chief review and refresh settings after merge. Recheck no active HOS picture run immediately before migration. PR878 accepts verification evidence only, not repair or migration approval. Dependency J2618; fallback check 13 Nov 07:00Z.",
-        "check_at": "2026-11-13T07:00:00Z",
+        "check_at": "2026-11-13T08:16:33+00:00",
         "last_recheck": "J2746",
         "checked_at": "2026-11-13T03:04:11+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2763"
       }
     },
     {
@@ -238076,6 +238088,11 @@
           "at": "2026-11-13T04:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2764"
         }
       ],
       "remaining_action": "Verify hashtags on the next posts built automatically by Buffer",
@@ -238096,7 +238113,8 @@
       "hold": {
         "type": "input",
         "condition": "Chief KEEP: PR879 merged; ruling 412dc1b281 jobs/reviews/J2711/CHIEF_REVIEW.md. Seven tag repairs and three caption fixes accepted; 49 tests pass. Historical recovery exhausted: 84/162 baselines, 78 unknown and Mars trigger unproven. Verify first actual fixed-mirror automatic post group after normal 07:05 run: source tags, build time, Buffer IDs and 5/3/1/5 endings (up to available tags). Never repeat repairs or edit sent posts. If none built, name next eligible registered video and derive next check from its eligibility; if run fails, queue specific repair. Close with historical limitations after successful readback.",
-        "check_at": "2026-11-13T07:15:00Z"
+        "check_at": "2026-11-13T08:16:33+00:00",
+        "recheck_task": "J2764"
       },
       "escalated_at": "2026-11-13T04:10Z"
     },
@@ -241416,6 +241434,11 @@
           "at": "2026-11-13T05:36Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T07:00:00Z"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2765"
         }
       ],
       "remaining_action": "Await J2756 correction of the quality report, then verify the corrected evidence",
@@ -241451,7 +241474,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief FIX recorded in local commit 8f1ca3e73a. J2756 must reconcile omitted warnings and cut counts, then the corrected sweep needs review. Evidence branch push was rejected by automatic approval review; local evidence is in /Volumes/MiniWork/scratch/J2753-chief-review/jobs/reviews/J2753. No film approval or gate waiver.",
-        "check_at": "2026-11-13T07:00:00Z"
+        "check_at": "2026-11-13T08:16:33+00:00",
+        "recheck_task": "J2765"
       }
     },
     {
@@ -242046,6 +242070,130 @@
         "at": "2026-11-13T06:58Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2762",
+      "title": "Verify condition for J2621",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2621: J2751 Chief ruling HOLD: accepted condition evidence PR883 at a3c7a9f53f2e718f0af83d6236b1ab990c268515 (293 targeted tests and temporary split home=0 registry=0 tests=0 names=0; not a current merge or system PASS). Direct GitHub read confirms PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS, core workflow SKIPPED. Picture window, HOS535 and J2619 prerequisites remain satisfied. Existing J2738 owns exact-head repair review and full current checks; J2618 owns approved merge then one observed Mini relay cycle and board publish. Only after those artifacts exist verify J2621 registry/tests/home zero on merged code before closing. No duplicate repair or rebase; original approvals and unrelated holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2621 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T07:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After the repair review and merge, check the live relay, board refresh and separated-channel tests",
+      "kind": "review",
+      "recheck_of": "J2621",
+      "due": "2026-11-13T08:16:33+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2763",
+      "title": "Verify condition for J2622",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2622: J2746 Chief ruling: condition NOT MET. Repair PR869 remains OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; HOS548 remains held draft at 55b968787b773c3ae26e0f111f96a32e2e4a0bf8. J2738 owns exact-head repair review; J2618 then owns approved studio merge, one observed Mini relay cycle and board publish. After J2618 completes, J2622 may regenerate HOS548 from current main, prove round trip, compare current board, obtain Chief review and refresh settings after merge. Recheck no active HOS picture run immediately before migration. PR878 accepts verification evidence only, not repair or migration approval. Dependency J2618; fallback check 13 Nov 07:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2622 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T07:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete J2738 repair review and J2618 relay verification before resuming the History of Science migration",
+      "kind": "review",
+      "recheck_of": "J2622",
+      "due": "2026-11-13T08:16:33+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2764",
+      "title": "Verify condition for J2711",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2711: Chief KEEP: PR879 merged; ruling 412dc1b281 jobs/reviews/J2711/CHIEF_REVIEW.md. Seven tag repairs and three caption fixes accepted; 49 tests pass. Historical recovery exhausted: 84/162 baselines, 78 unknown and Mars trigger unproven. Verify first actual fixed-mirror automatic post group after normal 07:05 run: source tags, build time, Buffer IDs and 5/3/1/5 endings (up to available tags). Never repeat repairs or edit sent posts. If none built, name next eligible registered video and derive next check from its eligibility; if run fails, queue specific repair. Close with historical limitations after successful readback.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2711 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T07:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify hashtags on the next posts built automatically by Buffer",
+      "kind": "review",
+      "recheck_of": "J2711",
+      "due": "2026-11-13T08:16:33+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2765",
+      "title": "Verify condition for J2753",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2753: Chief FIX recorded in local commit 8f1ca3e73a. J2756 must reconcile omitted warnings and cut counts, then the corrected sweep needs review. Evidence branch push was rejected by automatic approval review; local evidence is in /Volumes/MiniWork/scratch/J2753-chief-review/jobs/reviews/J2753. No film approval or gate waiver.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2753 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T07:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await J2756 correction of the quality report, then verify the corrected evidence",
+      "kind": "review",
+      "recheck_of": "J2753",
+      "due": "2026-11-13T08:16:33+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
