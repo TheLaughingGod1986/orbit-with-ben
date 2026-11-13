@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2746 | any | blocked | macbook-2 | – | review · Verify condition for J2622 |  |
 | J2747 | any | blocked | macbook-2 | – | review · Verify condition for J2035 |  |
 | J2748 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
-| J2750 | any | claimed | gemini | 2026-11-13T04:19Z | review · Verify condition for J2618 |  |
+| J2750 | any | blocked | gemini | – | review · Verify condition for J2618 |  |
 
 Recently finished:
 
