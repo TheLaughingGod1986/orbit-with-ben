@@ -74314,6 +74314,11 @@
           "at": "2026-11-13T16:05Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: HOS lint:package --film 007 PASS; verified cLKDiYP55J8 and xgx2lYHhYZM registered in social/hos/UPLOADS.json with long=ETynHpIYLeY"
+        },
+        {
+          "at": "2026-11-13T16:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: Set Studio Related -> ETynHpIYLeY on cLKDiYP55J8 (Public) and xgx2lYHhYZM (Scheduled 17 Nov 11:30Z) via CDP 9460; reloaded and verified Related, notKids=true, alteredYes=true, saveDisabled=true"
         }
       ],
       "kind": "listing",
@@ -74329,13 +74334,13 @@
       "taskKeys": [
         "HOS:007"
       ],
-      "remaining_action": "Set and read back Studio Related -> ETynHpIYLeY on cLKDiYP55J8 and xgx2lYHhYZM, run channel:audit, and update HOS 007 records",
+      "remaining_action": "Run HOS channel:audit, update HOS 007 records, run check_all.sh, and commit/push",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-13T16:05Z",
+        "at": "2026-11-13T16:08Z",
         "by": "gemini",
-        "note": "Step 1 done: HOS lint:package --film 007 PASS; verified cLKDiYP55J8 and xgx2lYHhYZM registered in social/hos/UPLOADS.jso"
+        "note": "Step 2 done: Set Studio Related -> ETynHpIYLeY on cLKDiYP55J8 (Public) and xgx2lYHhYZM (Scheduled 17 Nov 11:30Z) via CDP"
       }
     },
     {
