@@ -244926,20 +244926,25 @@
           "at": "2026-11-13T17:24Z",
           "by": "codex",
           "what": "step 2 of 3 done: Cloudflare zone active; registry and public resolvers delegate to Cloudflare. Both oppti.dev and www.oppti.dev attached to existing production Worker; performance version unchanged."
+        },
+        {
+          "at": "2026-11-13T17:26Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: HTTPS checks PASS at current public DNS addresses: home/pricing/blog/rss 200, www 308, pounds present, RSS 50 items, no X-Robots-Tag; all 16 DNS records match on 1.1.1.1 and 8.8.8.8. Local resolver cache caveat recorded."
         }
       ],
-      "remaining_action": "Verify the live site, redirects, prices, feed and mail DNS",
+      "remaining_action": "Record the completed Cloudflare domain migration",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
       "urgent": 10,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-13T17:24Z",
+        "at": "2026-11-13T17:26Z",
         "by": "codex",
-        "note": "Cloudflare zone active; registry and public resolvers delegate to Cloudflare. Both oppti.dev and www.oppti.dev attached "
+        "note": "HTTPS checks PASS at current public DNS addresses: home/pricing/blog/rss 200, www 308, pounds present, RSS 50 items, no "
       }
     },
     {
