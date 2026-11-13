@@ -239169,9 +239169,14 @@
           "at": "2026-11-13T11:14Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed and pushed jobs/reviews/J2719/REVIEW.md (1df818e534) from clean worktree"
+        },
+        {
+          "at": "2026-11-13T11:14Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verified J2040 waiting condition NOT YET MET (J2517/J2559 done, but ~/.codex settings/rules unchanged since 6 Nov and PR #490 still draft)"
         }
       ],
-      "remaining_action": "Recording verification review in jobs/reviews/J2719/REVIEW.md and parking for elected Chief to run wait --recheck J2719",
+      "remaining_action": "Elected Chief (chief) to run jobs.py wait J2040 --recheck J2719 (to 2026-11-13T17:15:00Z) and jobs.py done J2719",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-12T19:05:57+00:00",
@@ -239186,11 +239191,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-13T11:14Z",
         "by": "gemini",
-        "note": "Committed and pushed jobs/reviews/J2719/REVIEW.md (1df818e534) from clean worktree"
+        "note": "Verified J2040 waiting condition NOT YET MET (J2517/J2559 done, but ~/.codex settings/rules unchanged since 6 Nov and PR"
       }
     },
     {
