@@ -239263,6 +239263,11 @@
           "at": "2026-11-13T00:49Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in a829e86fbc; reopening only this completed verification to claim and close it. Parent J2172 remains held."
+        },
+        {
+          "at": "2026-11-13T00:49Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected Chief taking exact requested review to record its completed ruling; parent stays held."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2172 --recheck J2731 and jobs.py done J2731",
@@ -239277,8 +239282,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:010"
       ]
