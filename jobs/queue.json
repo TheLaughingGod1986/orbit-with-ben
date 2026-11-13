@@ -243539,13 +243539,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-13T10:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T10:06Z",
-      "result": "parked for Chief: condition for J2770 verified SATISFIED in jobs/reviews/J2771/REVIEW.md (47381d8dae): HOS desk #180 comment 6849993991 (Claude, with Ben's in-session delegation) explicitly approves pushing codex/J2770-still-evidence (commit b89565ee8cf2bd1e04c070151c3a3b8a44d9cd03, or as review/010-plates-sheets) to TheLaughingGod1986/history-of-science. Verified all 4 conditions on preserved worktree /Volumes/MiniWork/scratch/J2770-hos: 29 files under review/010-plates-sheets/ only (26/26 sheet/phone hashes and 12/12 parent/archive/still hashes match, 0 video/audio/VO), 0 emails/private IPs/tokens, check_all.sh ALL CHECKS PASS, unmerged branch with 0 KEEP and 0 ledger/plan changes. Only the elected Chief (Codex) may run jobs.py reopen J2770 and jobs.py done J2771 (commands in jobs/reviews/J2771/REVIEW.md).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-13T10:06Z",
@@ -243586,6 +243586,11 @@
           "at": "2026-11-13T10:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition for J2770 verified SATISFIED in jobs/reviews/J2771/REVIEW.md (47381d8dae): HOS desk #180 comment 6849993991 (Claude, with Ben's in-session delegation) explicitly approves pushing codex/J2770-still-evidence (commit b89565ee8cf2bd1e04c070151c3a3b8a44d9cd03, or as review/010-plates-sheets) to TheLaughingGod1986/history-of-science. Verified all 4 conditions on preserved worktree /Volumes/MiniWork/scratch/J2770-hos: 29 files under review/010-plates-sheets/ only (26/26 sheet/phone hashes and 12/12 parent/archive/still hashes match, 0 video/audio/VO), 0 emails/private IPs/tokens, check_all.sh ALL CHECKS PASS, unmerged branch with 0 KEEP and 0 ledger/plan changes. Only the elected Chief (Codex) may run jobs.py reopen J2770 and jobs.py done J2771 (commands in jobs/reviews/J2771/REVIEW.md)."
+        },
+        {
+          "at": "2026-11-13T12:28Z",
+          "by": "codex",
+          "what": "reopened: Claim for elected-Chief completion of verified approval ruling; worker evidence retained and Chief review progress recorded separately."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py reopen J2770 and jobs.py done J2771 per jobs/reviews/J2771/REVIEW.md",
@@ -243602,13 +243607,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-13T10:22Z",
-        "by": "gemini",
-        "note": "Condition verification complete (SATISFIED under HOS desk 6849993991); parking at protected reopen J2770 call"
-      },
       "taskKeys": [
         "HOS:010"
       ]

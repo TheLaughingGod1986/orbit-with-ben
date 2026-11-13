@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
 | J2770 | mini | open (after J2270) | – | – | 010 picture · for codex · qa · `gpt-6-astra` · HOS 010: complete independent still and tool evidence for twelve Shorts scenes | J2757 |
-| J2771 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2770 |  |
+| J2771 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2770 |  |
 | J2772 | mini | blocked | codex | – | for codex · studio · oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) |  |
 | J2773 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
