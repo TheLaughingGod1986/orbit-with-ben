@@ -1,5 +1,5 @@
 {
-  "next_id": 2774,
+  "next_id": 2775,
   "jobs": [
     {
       "id": "J0001",
@@ -231181,6 +231181,11 @@
           "at": "2026-11-13T08:51Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T12:40:00Z"
+        },
+        {
+          "at": "2026-11-13T12:51Z",
+          "by": "relay",
+          "what": "condition verification queued: J2774"
         }
       ],
       "remaining_action": "Rebase and regenerate History of Science PR 548",
@@ -231197,7 +231202,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Studio half is merged. Left: the History of Science half (PR 548, draft, head 55b96878): rebase its nine hand-written commits onto that repo's current main (3 commits touched PIPELINE.json since: 543, 557, 554), regenerate the generated commit, run the checks, build the board both ways and compare, then Grok merges. Starts at the 12:50 run.",
-        "check_at": "2026-11-13T12:40:00Z"
+        "check_at": "2026-11-13T13:51:34+00:00",
+        "recheck_task": "J2774"
       }
     },
     {
@@ -243853,6 +243859,37 @@
       "taskKeys": [
         "HOS:010"
       ]
+    },
+    {
+      "id": "J2774",
+      "title": "Verify condition for J2622",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2622: Studio half is merged. Left: the History of Science half (PR 548, draft, head 55b96878): rebase its nine hand-written commits onto that repo's current main (3 commits touched PIPELINE.json since: 543, 557, 554), regenerate the generated commit, run the checks, build the board both ways and compare, then Grok merges. Starts at the 12:50 run.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2622 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T12:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T12:51Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Rebase and regenerate History of Science PR 548",
+      "kind": "review",
+      "recheck_of": "J2622",
+      "due": "2026-11-13T13:51:34+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
