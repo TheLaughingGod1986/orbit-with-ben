@@ -234681,9 +234681,14 @@
           "at": "2026-11-13T15:49Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Scope is merged. Locked film ends at 518.40s, inside the 535.28s teach cover. Detached score run started in tmux j2664-score."
+        },
+        {
+          "at": "2026-11-13T15:49Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Preflight under the recorder lock: 87,416 credits left, overage 0, extension 0. Wonder request is in flight. Teach is not requested yet."
         }
       ],
-      "remaining_action": "Hold the recorder lock, read the live credit meter, then generate the wonder cue",
+      "remaining_action": "Wait for the wonder cue, then read the credit meter before any teach request",
       "kind": "assembly",
       "plain": "Creating original music for the Moon and gravity film",
       "mini_only": true,
@@ -234693,11 +234698,11 @@
       "escalated_at": "2026-11-12T06:44Z",
       "due": "2026-11-15T18:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-13T15:49Z",
         "by": "cursor",
-        "note": "Scope is merged. Locked film ends at 518.40s, inside the 535.28s teach cover. Detached score run started in tmux j2664-s"
+        "note": "Preflight under the recorder lock: 87,416 credits left, overage 0, extension 0. Wonder request is in flight. Teach is no"
       }
     },
     {
