@@ -42,7 +42,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2477 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | blocked | codex | – | for codex · assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2532 | cloud | blocked | claude | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
+| J2532 | mini | open | – | – | for gemini · review · `gemini-argon` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | blocked | claude | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2551 | mini | blocked | codex | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |

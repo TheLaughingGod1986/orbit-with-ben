@@ -223914,7 +223914,7 @@
     {
       "id": "J2532",
       "title": "Private-ready 2: the board reads its data through its own server, for signed-in viewers only",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "Ben chose private for the new `studio` repo (10 Nov). Today the board's pages read `board.json`, the heartbeats and other data straight from GitHub's public file addresses. From a private repo those addresses answer nothing. Plan: `docs/MULTI_CHANNEL_PLAN.md`, decision 8.\n\n1. List every read the three pages make from a public GitHub address (`studio_app.js`, `tracker_loader.js`, `ai_app.js`, `updater.js`), with what it reads and how often.\n2. Make each one go through the site's own server (one function, like `api/ref.js`), which reads with the server's token.\n3. Private data needs a known viewer. The function gives data only to a signed-in viewer (Ben's cookie or his board key) and the pages show the sign-in prompt otherwise. Without this the site would publish what the repo hides.\n4. Keep the cost low: answer \"not changed\" when the data has not changed, and hold a copy for 30 to 60 seconds so one open page does not mean one GitHub read a minute per viewer. Stay inside the free plan of the host; give the numbers.\n5. It must work unchanged while the repo is still public, so it can ship before the move.\n6. The server's token today can comment on two repos. Reading a private repo needs read access to its files. That is Ben's step at the move: write down exactly what he ticks, and never print the token.\n\nDone when: in a browser test with GitHub's public file addresses blocked, every page loads its data when signed in and shows the sign-in prompt when not; the release check passes; the tests name the function. One pull request. No real money.\n",
       "ref": "",
@@ -223922,13 +223922,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
-      "since": "2026-11-11T13:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T18:54Z",
-      "result": "Waiting for: The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T18:54Z",
@@ -224009,6 +224009,11 @@
           "at": "2026-11-13T18:01Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
+        },
+        {
+          "at": "2026-11-13T18:01Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (J2532 blocked by Claude: Waiting for: The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "After Ben clears the Vercel block, redeploy main and check the live pages",
@@ -224026,7 +224031,16 @@
         "type": "input",
         "condition": "The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
         "check_at": "2026-11-14T07:40:00Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "blocked",
+        "by": "claude"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2533",
