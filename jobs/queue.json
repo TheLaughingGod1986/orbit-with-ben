@@ -241467,9 +241467,14 @@
           "at": "2026-11-13T05:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2755 for HOS:009; inspecting J2171, J2730, J2666, J2664, J2035 and HOS 009 file state on Mini and NAS"
+        },
+        {
+          "at": "2026-11-13T05:24Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1/3: Confirmed J2035 remains blocked (checked by J2747 at 02:55Z, held to 2026-11-13T08:00:00Z); Mini 05_Music still has only the 3 J2663 scope files, NAS 05_Music and 09_Final-Render are absent, J2666 remains open and J2664 remains blocked"
         }
       ],
-      "remaining_action": "Inspect J2171 prerequisites (J2666, J2664, J2035) and HOS 009 Mini/NAS files to verify if J2171 waiting condition is met",
+      "remaining_action": "Verify HOS 009 picture, VO, and Shorts plan SHA-256 hashes on Mini and NAS, then write jobs/reviews/J2755/REVIEW.md",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-13T06:20:27+00:00",
@@ -241484,11 +241489,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T05:22Z",
+        "at": "2026-11-13T05:24Z",
         "by": "gemini",
-        "note": "Claimed J2755 for HOS:009; inspecting J2171, J2730, J2666, J2664, J2035 and HOS 009 file state on Mini and NAS"
+        "note": "Step 1/3: Confirmed J2035 remains blocked (checked by J2747 at 02:55Z, held to 2026-11-13T08:00:00Z); Mini 05_Music stil"
       },
       "taskKeys": [
         "HOS:009"
