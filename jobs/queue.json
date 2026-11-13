@@ -1,5 +1,5 @@
 {
-  "next_id": 2746,
+  "next_id": 2747,
   "jobs": [
     {
       "id": "J0001",
@@ -230590,6 +230590,11 @@
           "at": "2026-11-12T22:46Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T00:45:00Z"
+        },
+        {
+          "at": "2026-11-13T00:56Z",
+          "by": "relay",
+          "what": "condition verification queued: J2746"
         }
       ],
       "remaining_action": "Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
@@ -230606,10 +230611,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2726 Chief ruling HOLD: PR861 evidence at 19:52Z predates the safety rejection of PR868 and the 21:56Z parent hold. J2738 repair PR869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 remains OPEN and unapproved; J2618 remains blocked. First review and merge the corrected studio half and verify one Mini relay cycle plus board publish under J2618. Then J2622 may resume the HOS548 regeneration, round-trip tests, current board comparison, Chief review and settings refresh after merge. HOS548 remains a held draft at 55b968787. Recheck no active HOS picture run immediately before any migration. Preserve the original retry time; no merge approval from this verification.",
-        "check_at": "2026-11-13T00:45:00Z",
+        "check_at": "2026-11-13T01:56:21+00:00",
         "last_recheck": "J2726",
         "checked_at": "2026-11-12T22:46:44+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2746"
       }
     },
     {
@@ -240121,6 +240127,37 @@
         "at": "2026-11-13T00:19Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2746",
+      "title": "Verify condition for J2622",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2622: J2726 Chief ruling HOLD: PR861 evidence at 19:52Z predates the safety rejection of PR868 and the 21:56Z parent hold. J2738 repair PR869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 remains OPEN and unapproved; J2618 remains blocked. First review and merge the corrected studio half and verify one Mini relay cycle plus board publish under J2618. Then J2622 may resume the HOS548 regeneration, round-trip tests, current board comparison, Chief review and settings refresh after merge. HOS548 remains a held draft at 55b968787. Recheck no active HOS picture run immediately before any migration. Preserve the original retry time; no merge approval from this verification.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2622 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T00:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T00:56Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
+      "kind": "review",
+      "recheck_of": "J2622",
+      "due": "2026-11-13T01:56:21+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
