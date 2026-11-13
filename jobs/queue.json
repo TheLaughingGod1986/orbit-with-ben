@@ -241595,13 +241595,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T13:08Z",
-      "eta": "2026-11-13T14:38Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-13T02:01Z",
-      "result": "",
+      "result": "Completed 5-part FIX on existing PRs (HOS PR #572 https://github.com/TheLaughingGod1986/history-of-science/pull/572 at 34324bee; OWB PR #881 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881 at 24cea34c05) and queued dependent Rule-E review jobs J2775 (HOS:102) and J2776 (HOS:103). Proposals (not approved, claims unverified pending SOURCES.md + facts lane): (1) HOS:102 How Did We Find the Hole in the Ozone Layer? — data hypothesis: pairs autocomplete phrases ('hole in the ozone layer' / 'ozone layer', Vox 10.16M CaLOiGEDPJQ & Astrum Earth 1.67M EmaQVbdd6Ko, neighbours.py PASS with 7 >=1M videos led by Veritasium 43.56M IV3dnLzthDA & TED-Ed 2.80M dO2xx-aeZ4w + 670k 5wVJeq4mLL0) with our highest-impression long pattern (002 Periodic Table 2.9/d, 1,141 impr, 3.42% CTR, 70-71% at 0:15; 004 Atom 1.1/d, 816 impr) and 0:05-0:15 physical apparatus proof; (2) HOS:103 Why Is the Sky Blue? (And Why It Isn't Violet) — data hypothesis: pairs 'why is the sky blue' autocomplete (StarTalk 3.39M UvmWxm3nR6E & Netflix Jr. 1.05M Ldm_9LsKblU, neighbours.py PASS with 8 >=1M videos including Veritasium 1.54M ro2MmmdARrs & minutephysics 1.38M R5P6O0pDyMU / 1.36M NafbGOQBlQs) with Tyndall's 1869 bench tube for 0:05-0:15 proof and optics sibling c2q7w0pgcn8 (138v, 43.52% stayed, 105.30% avg viewed).",
       "history": [
         {
           "at": "2026-11-13T02:01Z",
@@ -241687,6 +241687,11 @@
           "at": "2026-11-13T13:54Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Queued substantive Rule-E review jobs J2775 (HOS:102) and J2776 (HOS:103) with --after J2748 and recorded them in OWB PR #881 (24cea34c05)"
+        },
+        {
+          "at": "2026-11-13T13:54Z",
+          "by": "gemini",
+          "what": "done: Completed 5-part FIX on existing PRs (HOS PR #572 https://github.com/TheLaughingGod1986/history-of-science/pull/572 at 34324bee; OWB PR #881 https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881 at 24cea34c05) and queued dependent Rule-E review jobs J2775 (HOS:102) and J2776 (HOS:103). Proposals (not approved, claims unverified pending SOURCES.md + facts lane): (1) HOS:102 How Did We Find the Hole in the Ozone Layer? — data hypothesis: pairs autocomplete phrases ('hole in the ozone layer' / 'ozone layer', Vox 10.16M CaLOiGEDPJQ & Astrum Earth 1.67M EmaQVbdd6Ko, neighbours.py PASS with 7 >=1M videos led by Veritasium 43.56M IV3dnLzthDA & TED-Ed 2.80M dO2xx-aeZ4w + 670k 5wVJeq4mLL0) with our highest-impression long pattern (002 Periodic Table 2.9/d, 1,141 impr, 3.42% CTR, 70-71% at 0:15; 004 Atom 1.1/d, 816 impr) and 0:05-0:15 physical apparatus proof; (2) HOS:103 Why Is the Sky Blue? (And Why It Isn't Violet) — data hypothesis: pairs 'why is the sky blue' autocomplete (StarTalk 3.39M UvmWxm3nR6E & Netflix Jr. 1.05M Ldm_9LsKblU, neighbours.py PASS with 8 >=1M videos including Veritasium 1.54M ro2MmmdARrs & minutephysics 1.38M R5P6O0pDyMU / 1.36M NafbGOQBlQs) with Tyndall's 1869 bench tube for 0:05-0:15 proof and optics sibling c2q7w0pgcn8 (138v, 43.52% stayed, 105.30% avg viewed)."
         }
       ],
       "remaining_action": "Complete J2748 handoff with both PR URLs and review job IDs J2775 and J2776",
@@ -241712,7 +241717,8 @@
       "taskKeys": [
         "HOS:102",
         "HOS:103"
-      ]
+      ],
+      "done_ref": "34324bee"
     },
     {
       "id": "J2749",
