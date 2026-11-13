@@ -1,5 +1,5 @@
 {
-  "next_id": 2756,
+  "next_id": 2757,
   "jobs": [
     {
       "id": "J0001",
@@ -241513,6 +241513,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2756",
+      "title": "J2753 FIX: reconcile gate warnings and cut counts across both channels",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Reconcile J2753 QA inventory and report against the raw gate sidecars. Chief ruling: FIX; see jobs/reviews/J2753/REVIEW.md and SIDECAR_RECONCILIATION.json. This is no-spend audit-data repair, not permission to alter media, gates, approvals, YouTube or Buffer.\n\n1. Correct all 38 warning-count discrepancies (234 omitted warning instances) and 28 polish cuts_total discrepancies in the evidence list. Read polish_gate rows/warn/failed and music_gate warn/fail from actual JSON, preserve full warning details, and recompute every derived count and report table. Check all 228 entries, not only the delta. Preserve historical supersession and all existing independent holds.\n2. Distinguish warnings about unreadable comparison inputs from demonstrated music uniqueness; preserve any unresolved coverage limits explicitly. Do not fabricate a PASS or waive warnings. No media re-render is requested. Re-run a gate only if actual evidence is missing/stale or misbound, using the existing tool unchanged.\n3. Validate every JSON count against raw sidecars, every applicable text gate against its output, and keep byte-identical corrected inventory/report in both repos. Commit from isolated worktrees; HOS via PR. Do not rewrite the worker findings silently: add an explicit correction section with the Chief review reference.\n4. Return for review with exact hashes, reproducible validation output, and zero unexplained reconciliation mismatches. Link completion to parent J2753 so it can be reviewed and closed. Ready now; no external wait, no spend, no film-stage approval.\n",
+      "ref": "J2753",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-13T05:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T05:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reconcile the quality report with the original check results and return it for review",
+      "kind": "qa",
+      "plain": "Correcting missing warnings in the video quality reports for both channels"
     }
   ],
   "focus": [
