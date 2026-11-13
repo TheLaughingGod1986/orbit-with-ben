@@ -240858,13 +240858,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T03:00Z",
-      "eta": "2026-11-13T05:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T02:34Z",
-      "result": "",
+      "result": "Chief ruling HOLD recorded on J2621 with recheck J2751; next verification 2026-11-13T06:45:00Z. Accepted PR883 a3c7a9f53 condition evidence; directly confirmed PR869 OPEN at 2312a8af2, mergedAt null. J2738 owns exact-head repair review and current full checks; J2618 owns approved merge and observed Mini relay cycle plus board publish; then J2621 verifies registry/tests/home zero on merged code. No duplicate repair/rebase, merge PASS, public changes or spend.",
       "history": [
         {
           "at": "2026-11-13T02:34Z",
@@ -240915,6 +240915,11 @@
           "at": "2026-11-13T03:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T03:00Z",
+          "by": "codex",
+          "what": "done: Chief ruling HOLD recorded on J2621 with recheck J2751; next verification 2026-11-13T06:45:00Z. Accepted PR883 a3c7a9f53 condition evidence; directly confirmed PR869 OPEN at 2312a8af2, mergedAt null. J2738 owns exact-head repair review and current full checks; J2618 owns approved merge and observed Mini relay cycle plus board publish; then J2621 verifies registry/tests/home zero on merged code. No duplicate repair/rebase, merge PASS, public changes or spend."
         }
       ],
       "remaining_action": "Evidence PR #883 (a3c7a9f53) opened; parking J2751 for elected Chief (codex) to record wait --recheck J2751 (or reopen after #869 merge) on J2621",
