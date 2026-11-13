@@ -242679,10 +242679,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T10:11Z",
+      "eta": "2026-11-13T12:11Z",
       "created_by": "relay",
       "created_at": "2026-11-13T07:16Z",
       "result": "",
@@ -242736,6 +242736,11 @@
           "at": "2026-11-13T10:11Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected-Chief acceptance ruling on completed Gemini verification; no repeat specialist work."
+        },
+        {
+          "at": "2026-11-13T10:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex): merge PR #890 and close J2711/J2764 with historical limitations retained (or set J2711 wait --recheck J2764 to 2026-11-14T07:15:00Z for Orbit aAUgIGEuPwQ)",
@@ -242755,7 +242760,15 @@
       "taskKeys": [
         "OWB:025",
         "HOS:006"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T10:11Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2765",
