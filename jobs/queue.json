@@ -178473,9 +178473,14 @@
           "at": "2026-11-13T01:38Z",
           "by": "relay",
           "what": "condition verification queued: J2747"
+        },
+        {
+          "at": "2026-11-13T02:55Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T08:00:00Z"
         }
       ],
-      "remaining_action": "Create and approve the gravity film music through J2666 then J2664; verify score files, music checks and listening review before assembling.",
+      "remaining_action": "Complete the existing music preflight and score jobs, then verify the delivered score before assembling the gravity film",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178490,13 +178495,12 @@
         "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
       },
       "hold": {
-        "type": "input",
-        "condition": "J2721 Chief ruling: condition unmet. Independent Mini inventory has only three J2663 scope files; NAS 05_Music absent. J2666 must apply desk 6813193837 staged-meter approval with fresh recorder-lock, pause, overage and pending-work checks, then release J2664. J2664 must deliver own score, stems, provenance, passing music gates and demonstrated audio-input listening review with Chief acceptance before assembly. Gemini 19:25Z balance evidence is historical, not current spend authorization. Both diagram KEEP approvals and locked narration retained.",
-        "check_at": "2026-11-13T02:38:20+00:00",
-        "last_recheck": "J2721",
-        "checked_at": "2026-11-12T21:10:08+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2747"
+        "type": "dependency",
+        "condition": "J2747 Chief ruling: NOT MET. Independent Mini inventory has only three J2663 scope files; NAS 05_Music absent. PR880 evidence accepted. Existing J2666 must apply desk6813193837 with fresh recorder-lock, pause, meter, overage and pending-work checks; then J2664 delivers own cues, stems, provenance, music gates and required review/Chief acceptance. Existing diagram KEEP, narration locks and specific desk listening ruling retained; no spending or release from this verification.",
+        "check_at": "2026-11-13T08:00:00Z",
+        "last_recheck": "J2747",
+        "checked_at": "2026-11-13T02:55:14+00:00",
+        "checked_by": "codex"
       }
     },
     {
