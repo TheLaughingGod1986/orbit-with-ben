@@ -194941,9 +194941,14 @@
           "at": "2026-11-13T23:23Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Packet plan stands. Starting the stitch of frames 2718-2887, 3168-3343 and 11038-11245. Frame 2869 stays the master picture. No v04 yet."
+        },
+        {
+          "at": "2026-11-13T23:27Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Planner tests passed. Rendering the three lossless groups. Frame 2869, frames 3168-3259 and frames 11118-11245 come from the master. No v04 yet."
         }
       ],
-      "remaining_action": "Stitch the three partial Franklin picture groups from the master, then encode and mux them",
+      "remaining_action": "Stitch master pixels into the three partial Franklin picture groups",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194952,9 +194957,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-13T23:23Z",
+        "at": "2026-11-13T23:27Z",
         "by": "cursor",
-        "note": "Packet plan stands. Starting the stitch of frames 2718-2887, 3168-3343 and 11038-11245. Frame 2869 stays the master pict"
+        "note": "Planner tests passed. Rendering the three lossless groups. Frame 2869, frames 3168-3259 and frames 11118-11245 come from"
       }
     },
     {
