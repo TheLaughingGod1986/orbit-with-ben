@@ -188559,9 +188559,14 @@
           "at": "2026-11-13T12:16Z",
           "by": "relay",
           "what": "condition verification queued: J2773"
+        },
+        {
+          "at": "2026-11-13T15:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T18:30:00Z"
         }
       ],
-      "remaining_action": "Await independent acceptance of the Dinosaur scenes; still and tool evidence is assigned to J2770 before final review.",
+      "remaining_action": "Await repaired and independently accepted Dinosaur scenes; existing review task applies the recorded crop and mapping decisions.",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188576,12 +188581,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2757 Chief ruling: condition UNMET. J2270 production complete; Gemini evidence REVIEW.md records 24/24 moving and 24/24 still hashes and preserved VO. Fresh ledger read still has zero KEEP; J2271 blocked 1/3 on moving_video_input. J2770 now owns bounded independent still/tool checks, due 13 Nov 18:00Z, followed by existing J2758 capability disposition. Preserve after J2271, assembly progress 1/3, accepted A/C VO, J1004 Option A1 and all rule-8 gates. No assembly release, perception claim or failed-gate waiver.",
-        "check_at": "2026-11-13T13:16:02+00:00",
-        "last_recheck": "J2757",
-        "checked_at": "2026-11-13T09:43:57+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2773"
+        "condition": "J2773 Chief ruling: UNMET. J2770 complete: two still-subject PASS, ten FIX; fresh ledger zero KEEP. J2271 remains blocked at 1/3. Existing Grok ruling 6853110063 stands: 936x1664 at 2.311x, no padding; crop-first tests, retire detached-skeleton opening, scope mapping fixes before spend. J2758 owns immediate text/still repair disposition with no perception prerequisite; J2271 capability hold unchanged. J2172 remains after J2271 at 1/3; accepted A/C VO, J1004 Option A1 and all rule-8 gates preserved. No assembly release or failed-gate waiver.",
+        "check_at": "2026-11-13T18:30:00Z",
+        "last_recheck": "J2773",
+        "checked_at": "2026-11-13T15:29:33+00:00",
+        "checked_by": "codex"
       }
     },
     {
