@@ -230365,13 +230365,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-12T21:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "parked for Chief: rebased PR #833 onto latest main (56f65d32d) as PR #868 (macbook/J2618, head 16b8cc514, 9 commits range-diff identical). Whole suite passes across all 3 test folders with HOS_REPO (1,406 tests: 1,290 scripts + 95 tools + 21 audio, 0 failures), test_channel_ratchet 0/0 (13/13), sync_rules OK, core_sync OK (56 files), studio status OK, studio_split dry run names=0 home=0 registry=0 tests=0 (left=1 for ledger addresses J2537), and channels/hos/channel.json byte-matches HOS main. Ready for elected Chief review/merge of #868 (or #833) and watching one Mini relay cycle + board publish.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -230457,6 +230457,11 @@
           "at": "2026-11-13T02:18Z",
           "by": "relay",
           "what": "condition verification queued: J2750"
+        },
+        {
+          "at": "2026-11-13T03:41Z",
+          "by": "codex",
+          "what": "reopened: J2738 Chief repair PASS recorded on PR869 comment 6843098327, exact head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7. Fresh Mini checks: 1291 scripts OK (12 skipped), 95 tools OK, 21 audio OK (1 skipped), split 18 OK, negative control fails correctly, sync_rules/core_sync/status OK. Repair dependency released for integration work only. Next: bring replacement PR869 onto current main in an isolated worktree, check integration changes and current checks, obtain elected-Chief whole-stack merge approval, merge replacement only (never old PR868/833), observe one full Mini relay cycle and publish/verify the board before completing J2618. No claim of merge or operational completion. J2621/J2622 and unrelated holds unchanged."
         }
       ],
       "remaining_action": "Review the repaired file-copy code under J2738, then merge and verify the Mini relay and board under J2618",
@@ -230472,21 +230477,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-12T21:37Z",
-        "by": "macbook"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J2742 Chief ruling HOLD: repair PR869 remains OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 against main. PR874 evidence 0fff3e567 reports 214 focused tests and dry-run isolation checks; J2738 reports full-suite checks. These establish delivered repair evidence, not merge approval. Existing J2738 owns elected-Chief review of the exact repair head and current full checks, then J2618 owns approved merge and one observed Mini relay cycle plus board publish. No duplicate repair job. J2621/J2622 and unrelated holds unchanged.",
-        "check_at": "2026-11-13T03:18:17+00:00",
-        "last_recheck": "J2742",
-        "checked_at": "2026-11-13T00:11:57+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2750"
-      },
       "escalated_at": "2026-11-12T23:38Z"
     },
     {
