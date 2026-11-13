@@ -15,7 +15,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0960 | mini | claimed | cursor | 2026-11-13T16:45Z | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
 | J0979 | mini | blocked | codex | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
