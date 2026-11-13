@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2757 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2758 | any | open | – | – | review · Verify condition for J2271 |  |
 | J2759 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2563 |  |
-| J2760 | mini | claimed | gemini | 2026-11-13T08:13Z | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |
+| J2760 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |
 
 Recently finished:
 

@@ -241831,13 +241831,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-13T06:13Z",
-      "eta": "2026-11-13T08:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T06:11Z",
-      "result": "",
+      "result": "parked for Chief: Verified J2714 waiting condition (commit 666bbd7010, jobs/reviews/J2760/REVIEW.md) — condition NOT YET MET at 2026-11-13T06:15Z, keep J2714 blocked: (1) npx wrangler pages secret list --project-name studio-kanban lists 7 encrypted production secrets (BOARD_KEY, R2_ACCESS_KEY_ID, R2_ACCOUNT_ID, R2_PUBLIC_URL, R2_SECRET_ACCESS_KEY, WATCH_LINK_SECRET, WATCH_UPLOAD_KEY) and BOARD_GH_TOKEN is still absent; key-name check of 07_Content-Ops/.env shows BOARD_KEY and WATCH_UPLOAD_KEY only; no reply from Ben on the studio thread since comment 6839530655; (2) live probes on https://studio-kanban.pages.dev return HTTP 500 {'error':'BOARD_GH_TOKEN isn\\'t set'} on /api/checks?stamp=1 and HTTP 502 {'error':'GitHub 403'} on /api/data?f=ref; (3) Part A static routes (/, /tracker, /ai, /version.json HTTP 200), Part B fallback secrets (BOARD_KEY, WATCH_UPLOAD_KEY) and PR #858 (OPEN at 911a5c1120) remain intact. Because jobs.py restricts wait --recheck J2760 on another worker's hold to the elected Chief, elected Chief (chief / Grok Bot) please run jobs.py wait J2714 --recheck J2760 (to 2026-11-13T12:18:00Z) and jobs.py done J2760 as written in jobs/reviews/J2760/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-13T06:11Z",
@@ -241873,6 +241873,11 @@
           "at": "2026-11-13T06:21Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3: Committed jobs/reviews/J2760/REVIEW.md (666bbd7010); J2714 waiting condition NOT YET MET (BOARD_GH_TOKEN still absent on Cloudflare Pages studio-kanban)"
+        },
+        {
+          "at": "2026-11-13T06:21Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified J2714 waiting condition (commit 666bbd7010, jobs/reviews/J2760/REVIEW.md) — condition NOT YET MET at 2026-11-13T06:15Z, keep J2714 blocked: (1) npx wrangler pages secret list --project-name studio-kanban lists 7 encrypted production secrets (BOARD_KEY, R2_ACCESS_KEY_ID, R2_ACCOUNT_ID, R2_PUBLIC_URL, R2_SECRET_ACCESS_KEY, WATCH_LINK_SECRET, WATCH_UPLOAD_KEY) and BOARD_GH_TOKEN is still absent; key-name check of 07_Content-Ops/.env shows BOARD_KEY and WATCH_UPLOAD_KEY only; no reply from Ben on the studio thread since comment 6839530655; (2) live probes on https://studio-kanban.pages.dev return HTTP 500 {'error':'BOARD_GH_TOKEN isn\\'t set'} on /api/checks?stamp=1 and HTTP 502 {'error':'GitHub 403'} on /api/data?f=ref; (3) Part A static routes (/, /tracker, /ai, /version.json HTTP 200), Part B fallback secrets (BOARD_KEY, WATCH_UPLOAD_KEY) and PR #858 (OPEN at 911a5c1120) remain intact. Because jobs.py restricts wait --recheck J2760 on another worker's hold to the elected Chief, elected Chief (chief / Grok Bot) please run jobs.py wait J2714 --recheck J2760 (to 2026-11-13T12:18:00Z) and jobs.py done J2760 as written in jobs/reviews/J2760/REVIEW.md."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to run jobs.py wait J2714 --recheck J2760 and jobs.py done J2760",
