@@ -224411,7 +224411,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Waits only for History of Science PR 548 to merge (rebased 13 Nov, head 1ced1448; held for the film 004 board fix, J2790), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
+      "result": "Waiting for: Waits only for History of Science PR 548 to merge (ready, awaiting Grok), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -224477,6 +224477,11 @@
           "at": "2026-11-13T18:01Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T21:40:00Z"
+        },
+        {
+          "at": "2026-11-13T22:07Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
         }
       ],
       "remaining_action": "After 548 merges, clean the spend ledger addresses",
@@ -224485,8 +224490,8 @@
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Waits only for History of Science PR 548 to merge (rebased 13 Nov, head 1ced1448; held for the film 004 board fix, J2790), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
-        "check_at": "2026-11-13T21:40:00Z"
+        "condition": "Waits only for History of Science PR 548 to merge (ready, awaiting Grok), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
+        "check_at": "2026-11-14T07:40:00Z"
       }
     },
     {
@@ -231367,7 +231372,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: PR 548 is rebased and regenerated (head 1ced1448 on HOS main aa3c6c4, all checks pass, 542's film 008 line applied, 509 left out). Not marked ready: the board compare shows one difference, film 004 (Atom) loses its live video on the per-film path. Follow-up J2790 finds and fixes it. Then repeat the compare, mark ready, Grok merges, then refresh channels/hos/channel.json.",
+      "result": "Waiting for: PR 548 is READY (13 Nov 22:20Z, head 1ced1448, all checks pass, board compare clean after 905). Waiting for Grok's review and merge on the desk. After it merges: refresh channels/hos/channel.json (channels.py sync, small PR, merge when green), watch one clean board publish, write film 010's picture stage from PR 538 into its status.json.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -231458,9 +231463,14 @@
           "at": "2026-11-13T18:00Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T21:40:00Z"
+        },
+        {
+          "at": "2026-11-13T22:07Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
         }
       ],
-      "remaining_action": "Wait for the 004 fix, repeat the compare, mark PR 548 ready",
+      "remaining_action": "After 548 merges: sync the studio's copy of the channel settings and watch a publish",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -231473,8 +231483,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "PR 548 is rebased and regenerated (head 1ced1448 on HOS main aa3c6c4, all checks pass, 542's film 008 line applied, 509 left out). Not marked ready: the board compare shows one difference, film 004 (Atom) loses its live video on the per-film path. Follow-up J2790 finds and fixes it. Then repeat the compare, mark ready, Grok merges, then refresh channels/hos/channel.json.",
-        "check_at": "2026-11-13T21:40:00Z"
+        "condition": "PR 548 is READY (13 Nov 22:20Z, head 1ced1448, all checks pass, board compare clean after 905). Waiting for Grok's review and merge on the desk. After it merges: refresh channels/hos/channel.json (channels.py sync, small PR, merge when green), watch one clean board publish, write film 010's picture stage from PR 538 into its status.json.",
+        "check_at": "2026-11-14T07:40:00Z"
       }
     },
     {
@@ -245645,13 +245655,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-13T18:16Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T18:00Z",
-      "result": "parked for Chief: 3 runs in a row hit the time cap at step 1 of 4 without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released.",
+      "result": "Done by Claude: cause found and fixed in orbit-with-ben PR 905 (merged 7730379d, 13 Nov 22:15Z). The per-film shape read only upload receipts; it now falls back to the channel's UPLOADS.json long, as the one-file shape does. Board built from HOS main and the PR 548 branch: 313 cards each, none differ; Orbit unchanged. Strong-model review: MERGE. Minor follow-up: video_tracker's CLI and approved_deliver.py still read receipts only.",
       "history": [
         {
           "at": "2026-11-13T18:00Z",
@@ -245747,6 +245757,11 @@
           "at": "2026-11-13T21:25Z",
           "by": "relay",
           "what": "blocked: parked for Chief: 3 runs in a row hit the time cap at step 1 of 4 without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released."
+        },
+        {
+          "at": "2026-11-13T22:07Z",
+          "by": "claude",
+          "what": "done: Done by Claude: cause found and fixed in orbit-with-ben PR 905 (merged 7730379d, 13 Nov 22:15Z). The per-film shape read only upload receipts; it now falls back to the channel's UPLOADS.json long, as the one-file shape does. Board built from HOS main and the PR 548 branch: 313 cards each, none differ; Orbit unchanged. Strong-model review: MERGE. Minor follow-up: video_tracker's CLI and approved_deliver.py still read receipts only."
         }
       ],
       "remaining_action": "Compare kanban_snapshot tracker output between HOS main and PR 548 and verify the exact fix",
@@ -245770,7 +245785,8 @@
       },
       "taskKeys": [
         "HOS:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/905"
     },
     {
       "id": "J2791",
