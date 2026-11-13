@@ -80,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2786 | mini | open (after J2785) | – | – | J01 vo · chief · J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785) | b1b25626c9 |
-| J2787 | mini | claimed | macbook-2 | 2026-11-13T18:05Z | studio · First-day check at 6 h: "What Was the Edward Jenner Experiment?" (cLKDiYP55J8) |  |
 
 Recently finished:
 
@@ -105,6 +104,22 @@ Do now
 
 Carry forward
   - A strong start is a lesson too: note what is different about this one.)
+- J2787 done: First-day check at 6 h: "What Was the Edward Jenner Experiment?" (cLKDiYP55J8) ("What Was the Edward Jenner Experiment?" (cLKDiYP55J8) · History of Science · Short · went live Fri 13 Nov 11:30 London
+At 6 h: views 9 · Studio rank 9 of 10 · shown in feed about 14 (from 3 feed views) · stayed to watch 22.2% · average viewed 57.2%
+Usual for this channel: stayed to watch 29.6%, average viewed 74.5%
+
+Verdict: USUAL
+  - 9 views at 6 h; Studio says the usual for us at this age is 20.
+  - Studio ranks it 9 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - The title starts with "What", like 3 earlier Shorts: they had 37 views by the next morning (median), against 81 for all Shorts.
+  - It is a second upload of the same video (it replaced -I_GHK-GcFs).
+
+Do now
+  - Nothing to fix.
+
+PR #904 (`macbook/J2787` -> `main`): `05_Analytics/hos/launch/cLKDiYP55J8.json` + `jobs/reviews/J2787/REVIEW.md` (0 faults in Studio; left open for Chief merge).)
 - J2785 done: J01: review pace-corrected linking voice takes before Chief acceptance (8/8 KEEP (jobs/reviews/J2785/REVIEW.md, commit b1b25626c9): verified all 8 selected WAV hashes and preserved originals from J2784_PACE_v01.json on studio-live; independently confirmed per-take submitted-script whitespace WPM (140.03, 135.80, 140.08, 131.84, 140.12, 140.02, 140.08, 143.68 wpm, all within 130-145 wpm excluding card silence), mean volume (-22.2 to -24.0 dB, within -19 to -28 dB), clean 48 kHz s16le decode, and direct start-to-end multimodal audio/wav listening (0 slowdown artifacts, clean starts/ends, 0 stumbles, intro 'forged the atoms' at 44.70-45.82s and Venus 'carbon locked safely' at 3.00-4.32s confirmed natural by ear). Routed to elected Chief to resolve J2220.)
 - J2784 done: J01: repair pace of five linking voice takes without new recording (Pace repair pace_v01 is on the shared film store. Takes 1, 3, 5, 6 and 7 were slowed with ffmpeg atempo only, to 140.03, 140.08, 140.12, 140.02 and 140.08 wpm, means -22.4, -22.2, -23.3, -23.4 and -23.7 dB, 48 kHz stereo kept, decode clean. Takes 2, 4 and 8 are the original bytes at 135.80, 131.84 and 143.68 wpm. All eight MP3 hashes still match the J2665 review. Local speech-to-text found no repeated phrases. Take 1 text differs from the earlier whisper at world's/worlds and forged/forge; take 3 only loses a full stop after flips. This worker did not listen. Evidence 41c1e352c9. No spend, no film-stage pass, J2220 still held. J2785 can listen next.)
 - J2783 done: HOS 009: listen to the new score before it is accepted (PASS by ear; music_gate similarity hits (0.821 OWB 013 electronic synth pad, 0.804/0.811 HOS 002 solo flute waltz) are spectral false positives, not musical reuse; 15 iCloud UAT files remain unresolved for Chief decision)
@@ -112,4 +127,3 @@ Carry forward
 - J2780 done: oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) (Cloudflare Free zone active; nameservers switched via signed-in Vercel CLI current registrar API. Both domains attached to unchanged performance Worker. Current public DNS HTTPS: home/pricing/blog/rss 200, www 308, pounds, 50 RSS items, no X-Robots-Tag. All 16 records match on both public resolvers. Local DNS cache may briefly retain Vercel. Service keys remain for Ben.)
 - J2779 done: oppti.dev: put the faster build on the Cloudflare test address and the visual refresh on a preview address (Performance-only f6ff450 deployed on test address; refresh preview https://930917c1-oppti-dev.opptiai.workers.dev uploaded without going live. Ten routes 200; images max 107.6 KiB about and 48.6 KiB case-studies. Twenty-page CPU median 9 ms/max 111 ms, all ok; separate canceled GET / recorded. Active performance version remains 100%. Full report linked.)
 - J2778 done: OWB: learn from our data, add two new films to the backlog (PR #901 (branch macbook/J2778; Rule-E review queued as J2781; £0 spend): Ranked all 16 public OWB longs and 84 public Shorts across views/day, CTR, avg % viewed, and Shorts stayed (2026-11-13 snapshot, studio_ctr.json, channel_daily.json, REPORT.md, LEARNINGS.md rules 1-31 + OWB-2026-11-E1) and added two non-overlapping backlog films to 02_Video-Projects/ and jobs/WIP.json next: (1) OWB:066 Why Do We Only See One Side of the Moon? (The Hidden Far Side) (TOPIC.md) — data line: pairs Rule 31 seen-from-the-ground winners T9fVlG3CCzU Shooting Stars (1,285v, 214.17 vpd, 49.79% stayed #1 >=200v, 84 YT_SEARCH) & VfDm3E2bUgU 16 Sunrises (1,090v, 83.85 vpd, 66.73% AVD) + spin-orbit winners OVLv9dxTcpE Earth Stopped Spinning (892v, 49.56 vpd, 75.86% AVD) & vlkj8RQKmH8 Mercury 2-Year Day (851v, 42.55 vpd, 76.07% AVD) + #1 long VBaYRPp85Sw Venus (230v, 12.11 vpd, 1,324 impr, 84% 0:15 retention), backed by MinuteEarth 4.21M, NASA Goddard 3.76M, Science Channel 3.32M, Conceptual Academy 2.07M, Cosmicus 1.88M; (2) OWB:067 What Would Happen If You Fell Into Neptune? (2,000 km/h Winds) (TOPIC.md) — data line: converts #3 highest-stayed Short 1OCNzhkiBuc Neptune Supersonic Winds (495v, 29.12 vpd, 42.64% stayed #3 >=100v, 74.98% AVD, 94% d1 feed) + #1 CTR long -jmMROGoZCM Why You Can't Stand On Jupiter (5.17% CTR) + #1 loop Short ZpEA8stoSPA Uranus 21-Year Winters (481v, 48.10 vpd, 306.81% loop AVD), backed by V101 SPACE 4.58M, Astrum 3.49M & 2.89M & 2.23M, What If 3.11M & 1.49M, BBC Earth Science 2.94M.)
-- J2777 done: Verify condition for J2171 (Chief ruling: NOT MET. Accepted Gemini verification b157efa416 after independently confirming scope documents only in Mini music, NAS music absent, and no long renders in either store. Recorded J2171 dependency hold with --recheck J2777; next verification 2026-11-13T20:25Z. Concrete follow-up: J2666 marked urgent for elected-Chief score-release decision under desk 6813193837 and concurrence 6848151890, with fresh safeguards; then J2664 delivers accepted score and J2035 completes long/composite/gates. Picture KEEP, narration locks, zero-spend Shorts scope and final watch retained. No production release or spend.)
