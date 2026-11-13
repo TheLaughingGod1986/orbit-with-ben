@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 | J2746 | any | blocked | macbook-2 | – | review · Verify condition for J2622 |  |
 | J2747 | any | blocked | macbook-2 | – | review · Verify condition for J2035 |  |
-| J2748 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J2748 | any | claimed | macbook-2 | 2026-11-13T03:36Z | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
