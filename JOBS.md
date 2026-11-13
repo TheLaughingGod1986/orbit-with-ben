@@ -87,7 +87,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
 | J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 | J2746 | any | blocked | macbook-2 | – | review · Verify condition for J2622 |  |
-| J2747 | any | claimed | codex | 2026-11-13T04:54Z | review · Verify condition for J2035 |  |
 | J2748 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2750 | any | blocked | gemini | – | review · Verify condition for J2618 |  |
 | J2751 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
@@ -97,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J2749 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public OWB videos (uhZSRcvngvE through VfDm3E2bUgU, plus #11-#14) pass chapters, sources, end screens and Related checks against 2026-11-12.json snapshot, cuts, manifests and live YouTube watch/Shorts pages; wrote 05_Analytics/live_fixes/2026-11-13.md (6fc255f18c); 0 fixes needed)
+- J2747 done: Verify condition for J2035 (Chief review complete: NOT MET. PR880 merged; independent Mini inventory confirms only three scope documents and NAS music absent. J2035 remains dependency-held with last_recheck J2747 and 2026-11-13T08:00:00Z verification. Follow-up: existing Gemini J2666 applies desk6813193837 live safeguards, then J2664 delivers score/stems/provenance/gates and required review for Chief acceptance. Existing approvals preserved; no spend or public changes.)
 - J2745 done: First-day check at 6 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) ("How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) · History of Science · long · went live Thu 12 Nov 18:00 London
 At 6 h: views 0 · Studio rank 3 of 7 · impressions 4 · click rate 0.0% · average viewed no figure yet
 
@@ -114,4 +114,3 @@ PR #877 (macbook/J2745, left open for Chief merge): 05_Analytics/hos/launch/ETyn
 - J2736 done: Packaging panel decision: Andromeda whole-galaxy revision (Synthesized J2733 (codex.md), J2734 (gemini.md), and J2735 (cursor.md) into 05_Analytics/tests/panels/owb-019-andromeda-j2729-v02/DECISION.md (PR #882 on macbook/J2736; shared NAS copy sha256=5675b95648b1ecd89889bedb96ebaf52285633b2465ebd3e41b0b20dc0565e53). 2-of-3 panel consensus (and 3-of-3 click preference over Baseline) recommends KEEP on 019_andromeda_package_A_v02_ojk-dfOpAmw.jpg (STARS RARELY HIT, sha256=8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c) + Milky Way Andromeda Collision (What Happens to Our Sun?) (56 chars), with zero-spend text alternatives and section 2.A.5 note documented for dependent Chief release job J2737 (and PR #866 d82edd601d verified). J2449 stays held until J2737 PASS; no duplicate jobs queued.)
 - J2735 done: Packaging panel (cursor): Andromeda whole-galaxy revision (Replace the title with Our Sun in the Milky Way Andromeda Collision? and leave the STARS RARELY HIT file as the challenger.)
 - J2734 done: Packaging panel (gemini): Andromeda whole-galaxy revision (done)
-- J2733 done: Packaging panel (codex): Andromeda whole-galaxy revision (Single CTR change: tighten the title tail to (Will Our Sun Survive?), retaining STARS RARELY HIT; advisory test hypothesis for Chief selection.)
