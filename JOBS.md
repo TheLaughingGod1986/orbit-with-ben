@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2763 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2764 | mini | claimed | gemini | 2026-11-13T09:25Z | for gemini · review · `gemini-argon` · Verify condition for J2711 |  |
 | J2765 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2753 |  |
-| J2766 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2766 | mini | claimed | macbook-2 | 2026-11-13T08:30Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
