@@ -241588,7 +241588,7 @@
     {
       "id": "J2757",
       "title": "Verify condition for J2172",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2172: J2731 Chief ruling: J2270 production is complete; fresh check matches all 12 moving-plate hashes in working and archive copies (24/24). J2271 independent acceptance is still unmet, zero KEEP. Review rerouted from producer Gemini to Codex, with tool/still review now and actual watch/listen at Ben final watch under 4 Nov order. Preserve after J2271, progress 1/3, accepted A/C VO hashes, J1004 Option A1 and every rule-8/media gate. No assembly release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2172 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -241608,13 +241608,27 @@
           "at": "2026-11-13T05:36Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 283 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await independent acceptance of the twelve Dinosaur scenes in J2271, then assemble Shorts A and C under Option A1.",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-13T06:36:50+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2758",
