@@ -246322,13 +246322,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-13T23:50Z",
-      "eta": "2026-11-14T01:50Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T23:32Z",
-      "result": "",
+      "result": "parked for Chief: Verified J2171 waiting condition (commit 7761a00ee0, jobs/reviews/J2794/REVIEW.md) — condition NOT yet satisfied, keep J2171 blocked: (1) J2666 (15:41Z), J2664 (15:52Z, 535.33s joined bed sha d7f5bf3d... + 5 stems + provenance byte-identical in Mini and studio-live NAS 05_Music, 7,425 credits, £0 overage), J2783 audio_input ear review (16:55Z, HOS aa3c6c4d, PASS by ear), and J2791 complete 77/77 music_gate comparison (0 unreadable warnings, jupiter-music.mp3 sim 0.567) have all completed, superseding J2777's scope-only diagnosis; (2) However, J2791 Chief ruling (23:43Z, PR #907 @ 3a02f4d952) held J2035 because music_gate still fails reused at 0.804/0.811/0.821 and J2663 forbids a waiver, J2795 completed its bounded diagnosis in draft PR #908 (838773d2d4, parked for Chief at 23:48Z), and J2035 long assembly remains blocked (check_at 2026-11-14T06:00:00Z) with 09_Final-Render absent on Mini and NAS; (3) All picture KEEP dispositions (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0..., Short A S03 sha fba484bb...), locked 5-part and Shorts A/B narration (VO_TAKES_KEEP sha 530743c5..., VO_RETIME sha 75a2e7af..., Short A v02 sha c2fd407d..., Short B v04 sha 0c9c4c6f...), and SHORTS_PICTURE_PLAN_v03.json (sha 6a0fb1df...) remain verified intact across Mini and NAS. Because jobs.py restricts wait --recheck J2794 to the elected Chief, Chief please run the wait J2171 --recheck J2794 (to 2026-11-14T06:15:00Z) and done J2794 commands in jobs/reviews/J2794/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-13T23:32Z",
@@ -246364,6 +246364,11 @@
           "at": "2026-11-13T23:59Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3: Committed jobs/reviews/J2794/REVIEW.md (7761a00ee0); J2666, J2664, J2783, and J2791 77/77 comparison complete, but J2035 remains held on J2795 (draft PR #908) and score acceptance"
+        },
+        {
+          "at": "2026-11-13T23:59Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified J2171 waiting condition (commit 7761a00ee0, jobs/reviews/J2794/REVIEW.md) — condition NOT yet satisfied, keep J2171 blocked: (1) J2666 (15:41Z), J2664 (15:52Z, 535.33s joined bed sha d7f5bf3d... + 5 stems + provenance byte-identical in Mini and studio-live NAS 05_Music, 7,425 credits, £0 overage), J2783 audio_input ear review (16:55Z, HOS aa3c6c4d, PASS by ear), and J2791 complete 77/77 music_gate comparison (0 unreadable warnings, jupiter-music.mp3 sim 0.567) have all completed, superseding J2777's scope-only diagnosis; (2) However, J2791 Chief ruling (23:43Z, PR #907 @ 3a02f4d952) held J2035 because music_gate still fails reused at 0.804/0.811/0.821 and J2663 forbids a waiver, J2795 completed its bounded diagnosis in draft PR #908 (838773d2d4, parked for Chief at 23:48Z), and J2035 long assembly remains blocked (check_at 2026-11-14T06:00:00Z) with 09_Final-Render absent on Mini and NAS; (3) All picture KEEP dispositions (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0..., Short A S03 sha fba484bb...), locked 5-part and Shorts A/B narration (VO_TAKES_KEEP sha 530743c5..., VO_RETIME sha 75a2e7af..., Short A v02 sha c2fd407d..., Short B v04 sha 0c9c4c6f...), and SHORTS_PICTURE_PLAN_v03.json (sha 6a0fb1df...) remain verified intact across Mini and NAS. Because jobs.py restricts wait --recheck J2794 to the elected Chief, Chief please run the wait J2171 --recheck J2794 (to 2026-11-14T06:15:00Z) and done J2794 commands in jobs/reviews/J2794/REVIEW.md."
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2794 on J2171 (check-at 2026-11-14T06:15:00Z) and close J2794",
