@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2772.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -84,7 +84,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
-| J2772 | mini | claimed | codex | 2026-11-13T14:46Z | for codex · studio · oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) |  |
 | J2773 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2775 | mini | claimed | macbook-2 | 2026-11-13T15:56Z | 102 topic · for gemini · review · `gemini-argon` · HOS 102 Ozone Hole: rule-E topic go/no-go review |  |
@@ -94,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2772 done: oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) (Test deployed at https://oppti-dev.opptiai.workers.dev. All 10 required routes 200, RSS 50, GBP only, Content-Encoding absent. Twenty-page CPU median 9.5 ms/max 159 ms; OG 837/310/213 ms; health 456 ms, all ok. API noindex headers absent. Full measurements and follow-up findings: studio thread comment 6855318697. No domains, secrets, paid plan activation, Vercel, Stripe or PR merge changed.)
 - J2771 done: Verify condition for J2770 (Chief ruling: CONDITION SATISFIED. OWNER desk 6849993991 explicitly approves b89565ee evidence branch to the named HOS repo. Independently checked 29 review-only additions, 26 matching sheet hashes, clean text/commit scan and check_all ALL CHECKS PASS. J2770 reopened at 2/3 for Codex: push approved branch only, post commit replying to desk 6849993991, hand off to existing J2758. Respect any fresh session approval rejection. Ten FIX findings, J2271 capability hold, J2172 after J2271 at 1/3 and accepted VO remain. No KEEP, merge, generation, spend or assembly release. This review ends here.)
 - J2770 done: HOS 010: complete independent still and tool evidence for twelve Shorts scenes (Completed approved evidence-branch push: codex/J2770-still-evidence b89565ee8cf2bd1e04c070151c3a3b8a44d9cd03, remote verified. 29 review-only files, 26/26 sheet hashes and fresh sensitive-pattern scan clean. Existing two still-subject PASS and ten FIX retained; no motion PASS or KEEP. Desk handoff 6853042202 and existing J2758 action updated. J2271 capability hold and J2172 after J2271 at 1/3 preserved; accepted A/C VO and Option A1 unchanged. No PR, merge, generation, spend or publishing change. GBP0.)
 - J2769 done: Verify condition for J2035 (Chief ruling NOT MET: independent Mini inventory matches three scope hashes; NAS 05_Music absent. J2035 remains blocked, last_recheck J2769, next verification 2026-11-13T14:21Z. J2664 now carries inherited assembly deadline 2026-11-15T18:00Z, prioritizing existing J2666 Chief review then score delivery. J2666 specialist verification has since finished; its separate ruling remains the next dependency. Preserve desk6813193837 safeguards, prior KEEP/narration locks and all score gates/review. No spend, assembly release or second task.)
@@ -103,4 +103,3 @@ Recently finished:
 - J2763 done: Verify condition for J2622 (J2622 re-held for the History of Science half; Studio half merged 13 Nov 05:17Z (PR 886, d23f286d, same tree as PR 869, Codex elected-Chief KEEP 6844853263). Post-merge: Mini relay cycles and board-data publishes observed (MacBook J2762 review); my dry run 07:58Z reads registry 0, tests 0, home 0, names 0, unrouted 0, 1 left (ledger addresses, J2537).)
 - J2762 done: Verify condition for J2621 (J2621 closed with the evidence in J2762; Studio half merged 13 Nov 05:17Z (PR 886, d23f286d, same tree as PR 869, Codex elected-Chief KEEP 6844853263). Post-merge: Mini relay cycles and board-data publishes observed (MacBook J2762 review); my dry run 07:58Z reads registry 0, tests 0, home 0, names 0, unrouted 0, 1 left (ledger addresses, J2537).)
 - J2759 done: Verify condition for J2563 (Chief KEEP: 36ac022bfe, jobs/reviews/J2759/CHIEF_RULING.md and CHIEF_PROBES.json. Fresh API/HEAD checks all five approved sources HTTP 200, sizes match; NAS WAV/rough hashes match. J2563 reopened for its existing no-spend assembly scope at 1/4, HOS:011; download five files, build composites, reconcile cues and rebuild rough. Snow alternate L0058154 required; 67 dependency slates and all gates retained. Stop on 429 and record Retry-After or six-hour input hold. No film approval or UAT.)
-- J2757 done: Verify condition for J2172 (Chief ruling: CONDITION UNMET. J2172 remains blocked after J2271 at 1/3, last_recheck J2757, next check 2026-11-13T12:15:00Z. Read Gemini hash/inventory evidence and fresh ledger: zero KEEP. Delegated independent still/tool evidence to J2770 (Codex, due 13 Nov 18:00Z); existing J2758 owns capability disposition. J2271 motion-input hold retained; no fabricated perception, no gate waiver, no assembly release. Accepted A/C VO, Option A1 and Ben final cut watch preserved. GBP0; no public changes.)
