@@ -233370,13 +233370,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
+      "status": "done",
       "by": "claude",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T21:18Z",
-      "result": "Waiting for: Built: PR 897 (draft) gives a condition check the needs of the job it checks, plus a guard so a check on a Studio job is not MacBook-portable. 1,299 tests OK. Strong-model review found one gap (fixed in 050e0e1a); a follow-up review and CI are running. Merges when both are green; then this job is done.",
+      "result": "Merged: PR 897 squash e0bd4a7b (13 Nov 13:08Z). A condition check takes its needs from the job it checks; a check on a Studio job is not MacBook-portable without a Studio browser. Strong-model review: MERGE after one gap fixed (050e0e1a). Full scripts suite 1,299 OK, CI green on the head. Next condition check the relay queues should show the pinned needs.",
       "history": [
         {
           "at": "2026-11-11T21:18Z",
@@ -233417,17 +233417,18 @@
           "at": "2026-11-13T13:04Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T17:40:00Z"
+        },
+        {
+          "at": "2026-11-13T13:07Z",
+          "by": "claude",
+          "what": "done: Merged: PR 897 squash e0bd4a7b (13 Nov 13:08Z). A condition check takes its needs from the job it checks; a check on a Studio job is not MacBook-portable without a Studio browser. Strong-model review: MERGE after one gap fixed (050e0e1a). Full scripts suite 1,299 OK, CI green on the head. Next condition check the relay queues should show the pinned needs."
         }
       ],
       "remaining_action": "Merge PR 897 when review and CI are green, then close this job",
       "for": "claude",
       "kind": "studio",
       "plain": "Stop sending Studio checks to the MacBook, which cannot read Studio",
-      "hold": {
-        "type": "dependency",
-        "condition": "Built: PR 897 (draft) gives a condition check the needs of the job it checks, plus a guard so a check on a Studio job is not MacBook-portable. 1,299 tests OK. Strong-model review found one gap (fixed in 050e0e1a); a follow-up review and CI are running. Merges when both are green; then this job is done.",
-        "check_at": "2026-11-13T17:40:00Z"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/897"
     },
     {
       "id": "J2650",
