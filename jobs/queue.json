@@ -245644,9 +245644,14 @@
           "at": "2026-11-13T18:17Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2790; starting step 1 trace of video_tracker.py and kanban_snapshot.py against HOS main and PR 548"
+        },
+        {
+          "at": "2026-11-13T18:23Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Traced exact lookup gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads (reading HOS UPLOADS.json) for pipeline_json, while film_status only checks PACKAGE_UPLOAD_RESULT*.json via release_record and video_tracker.film_rows/long_rows drops f['upload']; HOS:004 has GHZDsiH7L7A in HOS UPLOADS.json but no PACKAGE_UPLOAD_RESULT and a retitled YouTube title"
         }
       ],
-      "remaining_action": "Trace how video_tracker.py and kanban_snapshot.py link HOS:004 to GHZDsiH7L7A on one-file vs per-file paths",
+      "remaining_action": "Decide which side is wrong, verify Buffer mirror safety, and implement/test the fix in a clean worktree",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245659,11 +245664,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T18:17Z",
+        "at": "2026-11-13T18:23Z",
         "by": "gemini",
-        "note": "Claimed J2790; starting step 1 trace of video_tracker.py and kanban_snapshot.py against HOS main and PR 548"
+        "note": "Traced exact lookup gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads (reading HOS UPLOADS.json) for"
       },
       "taskKeys": [
         "HOS:004"
