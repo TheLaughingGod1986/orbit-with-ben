@@ -226327,13 +226327,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-13T03:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
-      "result": "Waiting for: Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T06:28Z",
@@ -226654,6 +226654,11 @@
           "at": "2026-11-13T05:36Z",
           "by": "relay",
           "what": "condition verification queued: J2759"
+        },
+        {
+          "at": "2026-11-13T09:04Z",
+          "by": "codex",
+          "what": "reopened: J2759 Chief KEEP recorded at 36ac022bfe, jobs/reviews/J2759/CHIEF_RULING.md. Fresh five-source API/HEAD probes all HTTP 200 with matching sizes; locked WAV and rough hashes independently match. Resume existing PR 560, prior plan 1/4: download approved five files, verify rights/credits/hashes, render composites and rebuild internal rough. Snow uses L0058154. All 67 dependency slates, J2659 scope and all film gates retained; GBP 0 / zero credits. HTTP 429 stops requests and sets input hold until Retry-After or six hours."
         }
       ],
       "remaining_action": "After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
@@ -226662,20 +226667,7 @@
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent",
       "taskKeys": [
         "HOS:011"
-      ],
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-13T03:09Z",
-        "by": "cursor",
-        "note": "Rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches. Five pictures are metadata onl"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.",
-        "check_at": "2026-11-13T06:36:50+00:00",
-        "recheck_task": "J2759"
-      }
+      ]
     },
     {
       "id": "J2564",
