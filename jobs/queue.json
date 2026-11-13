@@ -244864,10 +244864,10 @@
       "stage": "",
       "after": "J2779",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T17:16Z",
+      "eta": "2026-11-13T18:46Z",
       "created_by": "claude",
       "created_at": "2026-11-13T14:49Z",
       "result": "",
@@ -244906,6 +244906,11 @@
           "at": "2026-11-13T17:11Z",
           "by": "claude",
           "what": "reopened: Checked 17:09Z: oppti.dev still answers 402 on Vercel's nameservers; Cloudflare zone ready (16 of 16 records, Codex 15:06Z). Ruling at the top: change the nameservers with the Mini's signed-in Vercel command line (one API call), then finish steps 4 to 6"
+        },
+        {
+          "at": "2026-11-13T17:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sign in to Vercel, then change nameservers and verify the live domain",
@@ -244913,7 +244918,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T17:16Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2781",

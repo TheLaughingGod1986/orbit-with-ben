@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
-| J2780 | mini | open (after J2779) | – | – | for codex · studio · oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) |  |
+| J2780 | mini | claimed | codex | 2026-11-13T18:46Z | for codex · studio · oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2785 | mini | open (after J2784) | – | – | J01 vo · for gemini · qa · `gemini-argon` · J01: review pace-corrected linking voice takes before Chief acceptance | J2665 |
 
