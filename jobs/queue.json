@@ -241667,7 +241667,7 @@
     {
       "id": "J2759",
       "title": "Verify condition for J2563",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2563: Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2563 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -241687,13 +241687,27 @@
           "at": "2026-11-13T05:36Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T05:37Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 283 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
       "kind": "review",
       "recheck_of": "J2563",
       "due": "2026-11-13T06:36:50+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
