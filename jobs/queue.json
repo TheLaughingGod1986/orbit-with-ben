@@ -244514,20 +244514,25 @@
           "at": "2026-11-13T14:59Z",
           "by": "codex",
           "what": "step 3 of 4 done: Refresh uploaded as version 930917c1; preview URL issued without deploying it live"
+        },
+        {
+          "at": "2026-11-13T15:00Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Preview returns 200 with green dot; test returns 200 without it; active performance version remains 100%; report ready"
         }
       ],
-      "remaining_action": "Verify the preview and confirm the test site still runs the performance-only build",
+      "remaining_action": "Record the verified preview address and performance measurements",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
       "urgent": 10,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-13T14:59Z",
+        "at": "2026-11-13T15:00Z",
         "by": "codex",
-        "note": "Refresh uploaded as version 930917c1; preview URL issued without deploying it live"
+        "note": "Preview returns 200 with green dot; test returns 200 without it; active performance version remains 100%; report ready"
       }
     },
     {
