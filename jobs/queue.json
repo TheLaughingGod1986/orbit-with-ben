@@ -192410,10 +192410,10 @@
       "stage": "edit",
       "after": "J2220",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-13T22:20Z",
-      "eta": "2026-11-14T00:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
       "result": "",
@@ -192447,6 +192447,11 @@
           "at": "2026-11-13T22:32Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Hashes match the plan and the pace manifest."
+        },
+        {
+          "at": "2026-11-13T22:32Z",
+          "by": "cursor",
+          "what": "released: Detached stitch: tmux J2221-render. Log ~/_desk/logs/J2221-render.log. Exit file ~/_desk/logs/J2221-render.done. Missing .done means still running; do not start a second copy. Exit 0 means J01_Journey_v01.mp4 was written on studio-live. Exit 3 means a second start found the first still alive. Scratch is MiniWork/scratch/J2221."
         }
       ],
       "remaining_action": "Render the maps, cards and the stitched Journey film",
