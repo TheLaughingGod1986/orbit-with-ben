@@ -214453,9 +214453,14 @@
           "at": "2026-11-13T03:22Z",
           "by": "cursor",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-13T03:24Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Fresh Studio read 2026-11-13T03:23:54Z: thumbnail-only test finished 28 Oct 21:33 to 11 Nov 22:32, not enough impressions, baseline title still set. No running test."
         }
       ],
-      "remaining_action": "Check the two thumbnail files and whether a test is already running",
+      "remaining_action": "Record the finished test, then start the two-arm title and thumbnail test",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -214465,10 +214470,11 @@
       "escalated_at": "2026-11-12T03:14Z",
       "plain": "Testing the new Andromeda title and thumbnail against the current version",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T03:22Z",
-        "by": "cursor"
+        "at": "2026-11-13T03:24Z",
+        "by": "cursor",
+        "note": "Fresh Studio read 2026-11-13T03:23:54Z: thumbnail-only test finished 28 Oct 21:33 to 11 Nov 22:32, not enough impression"
       }
     },
     {
