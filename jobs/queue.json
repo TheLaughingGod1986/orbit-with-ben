@@ -240607,19 +240607,28 @@
           "at": "2026-11-13T02:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T02:11Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Replaced default_plan: Step 1 fetch live watch/Shorts metadata for the last 10 public OWB videos; Step 2 verify chapters against cut, sources, end screens and Related pills; Step 3 write 05_Analytics/live_fixes/2026-11-13.md and commit"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Fetch live YouTube metadata for the last 10 public OWB videos and compare chapters, sources, end screens and Related pills",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T02:09Z",
+        "at": "2026-11-13T02:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Replaced default_plan: Step 1 fetch live watch/Shorts metadata for the last 10 public OWB videos; Step 2 verify chapters"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024",
+        "OWB:025"
+      ]
     }
   ],
   "focus": [
