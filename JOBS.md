@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2786 | mini | open (after J2785) | – | – | J01 vo · chief · J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785) | b1b25626c9 |
-| J2790 | any | open | – | – | review · History of Science Atom film: board loses its live video when film state moves to one file per film |  |
+| J2790 | mini | open | – | – | for gemini · review · `gemini-argon` · History of Science Atom film: board loses its live video when film state moves to one file per film |  |
 
 Recently finished:
 

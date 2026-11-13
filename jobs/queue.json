@@ -245579,7 +245579,7 @@
     {
       "id": "J2790",
       "title": "History of Science Atom film: board loses its live video when film state moves to one file per film",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Found by the board compare on History of Science PR 548 (head 1ced1448, comment 6860851115 on that PR). Built the board twice with studio main's kanban_snapshot.py: from HOS main aa3c6c4 and from the branch. Only the Atom film (key HOS:004) differs. Main: one card, done, 'Public on YouTube since Thu 15 Oct 2026', linked to video GHZDsiH7L7A. Branch (one status.json per film): 'upcoming, Planned; no work started yet', no link, four 'Short n planned' placeholders and a separate card for the live video. PIPELINE.json has no upload entry for it, so the studio adds one at build time; on the one-file path it finds the live long, on the per-file path it does not. The board-check alarm of 12 Nov named the same gap ('no YouTube read-back, add the long to HOS UPLOADS.json').\n\nDo: (1) find the exact lookup in scripts/video_tracker.py (uploads_index, matched_upload, settle_uploaded and the film_status path) that links a film to its live video for the one-file shape but not the per-file shape; (2) decide which side is wrong. If the studio lookup is wrong for the per-file shape, fix it in orbit-with-ben with a test (rebuild both boards and show HOS:004 identical); if the film's own record is missing the upload, say exactly what, and check it cannot make the Buffer mirror post anything (the daily check mirrors scheduled uploads that are registered); do not register a video in a Buffer registry without that check. (3) Rebuild the board from the branch (git fetch origin pull/548/head) and show film 004 reads the same as on HOS main. Read-only on YouTube, no spend, no schedule change, no upload. Park for the Chief with the compare.",
       "ref": "",
@@ -245599,11 +245599,25 @@
           "at": "2026-11-13T18:00Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T18:01Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (J2532 blocked by Claude: Waiting for: The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Find why the Atom film card loses its live video on the per-film path and fix it",
       "kind": "review",
-      "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film"
+      "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
