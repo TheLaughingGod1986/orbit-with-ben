@@ -223928,7 +223928,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T18:54Z",
-      "result": "Waiting for: The board site is redeployed from main and its live pages are checked. Live /version.json read 2eff5ff506654388 at 17:55Z, main builds 2551c4887f478f7e: not redeployed. The deploy needs Ben's approval tap in the app. The old build keeps working meanwhile.",
+      "result": "Waiting for: The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
       "history": [
         {
           "at": "2026-11-10T18:54Z",
@@ -224004,9 +224004,14 @@
           "at": "2026-11-13T07:47Z",
           "by": "relay",
           "what": "condition verification queued: J2767"
+        },
+        {
+          "at": "2026-11-13T18:01Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
         }
       ],
-      "remaining_action": "Wait for the redeploy, then check the live pages",
+      "remaining_action": "After Ben clears the Vercel block, redeploy main and check the live pages",
       "due": "2026-11-14T18:00:00Z",
       "kind": "review",
       "plain": "Make the board work when the studio repo is private",
@@ -224019,9 +224024,8 @@
       },
       "hold": {
         "type": "input",
-        "condition": "The board site is redeployed from main and its live pages are checked. Live /version.json read 2eff5ff506654388 at 17:55Z, main builds 2551c4887f478f7e: not redeployed. The deploy needs Ben's approval tap in the app. The old build keeps working meanwhile.",
-        "check_at": "2026-11-13T08:47:46+00:00",
-        "recheck_task": "J2767"
+        "condition": "The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
+        "check_at": "2026-11-14T07:40:00Z"
       }
     },
     {
@@ -224335,7 +224339,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Relay rewrite merged; waits only for History of Science PR 548 to merge, so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
+      "result": "Waiting for: Waits only for History of Science PR 548 to merge (rebased 13 Nov, head 1ced1448; held for the film 004 board fix, J2790), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -224396,6 +224400,11 @@
           "at": "2026-11-13T08:51Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-13T12:40:00Z"
+        },
+        {
+          "at": "2026-11-13T18:01Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T21:40:00Z"
         }
       ],
       "remaining_action": "After 548 merges, clean the spend ledger addresses",
@@ -224404,8 +224413,8 @@
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Relay rewrite merged; waits only for History of Science PR 548 to merge, so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
-        "check_at": "2026-11-13T12:40:00Z"
+        "condition": "Waits only for History of Science PR 548 to merge (rebased 13 Nov, head 1ced1448; held for the film 004 board fix, J2790), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
+        "check_at": "2026-11-13T21:40:00Z"
       }
     },
     {
