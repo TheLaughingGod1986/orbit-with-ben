@@ -74309,6 +74309,11 @@
           "at": "2026-11-13T16:03Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J0875: inspect J2717 review, HOS 007 records, and run lint:package"
+        },
+        {
+          "at": "2026-11-13T16:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: HOS lint:package --film 007 PASS; verified cLKDiYP55J8 and xgx2lYHhYZM registered in social/hos/UPLOADS.json with long=ETynHpIYLeY"
         }
       ],
       "kind": "listing",
@@ -74324,13 +74329,13 @@
       "taskKeys": [
         "HOS:007"
       ],
-      "remaining_action": "Run HOS lint:package, set and verify Related -> ETynHpIYLeY on cLKDiYP55J8 and xgx2lYHhYZM in Studio, run channel:audit, and update HOS 007 records",
+      "remaining_action": "Set and read back Studio Related -> ETynHpIYLeY on cLKDiYP55J8 and xgx2lYHhYZM, run channel:audit, and update HOS 007 records",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T16:03Z",
+        "at": "2026-11-13T16:05Z",
         "by": "gemini",
-        "note": "Starting J0875: inspect J2717 review, HOS 007 records, and run lint:package"
+        "note": "Step 1 done: HOS lint:package --film 007 PASS; verified cLKDiYP55J8 and xgx2lYHhYZM registered in social/hos/UPLOADS.jso"
       }
     },
     {
