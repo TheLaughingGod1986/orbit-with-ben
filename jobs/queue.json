@@ -240704,19 +240704,24 @@
           "at": "2026-11-13T02:29Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Rebased PR #869 (2312a8af2) onto origin/main (5f85a2089f): 214/214 unit tests, 13/13 watch_links, sync_rules, core_sync (56), studio status, and studio_split dry run (names=0 home=0 registry=0 tests=0, HOS clean) all PASS; PR #869 still OPEN"
+        },
+        {
+          "at": "2026-11-13T02:31Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verification complete: PR #869 (2312a8af2) remains OPEN awaiting elected-Chief review/merge + Mini relay cycle + board publish; rebased suite & dry-run PASS"
         }
       ],
-      "remaining_action": "Record J2750 verification result and park for elected Chief to record wait --recheck J2750 (or reopen J2618 after #869 merge)",
+      "remaining_action": "Parked J2750 for elected Chief to record wait --recheck J2750 (or reopen J2618 after #869 review/merge)",
       "kind": "review",
       "recheck_of": "J2618",
       "due": "2026-11-13T03:18:17+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-13T02:29Z",
+        "at": "2026-11-13T02:31Z",
         "by": "gemini",
-        "note": "Rebased PR #869 (2312a8af2) onto origin/main (5f85a2089f): 214/214 unit tests, 13/13 watch_links, sync_rules, core_sync "
+        "note": "Verification complete: PR #869 (2312a8af2) remains OPEN awaiting elected-Chief review/merge + Mini relay cycle + board p"
       }
     }
   ],
