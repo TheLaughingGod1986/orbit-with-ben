@@ -124,8 +124,8 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 4 d | 218 | 15.2% | MISS | 61.1% | WATCH |
-| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 7 d | 39 | 18.2% | too few to judge | 51.5% | too few to judge |
+| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 4 d | 219 | 15.6% | MISS | 61.9% | WATCH |
+| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 7 d | 41 | 20.6% | too few to judge | 61.5% | too few to judge |
 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 9 d | 34 | 57.7% | too few to judge | 192.6% | too few to judge |
 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 11 d | 137 | 37.2% | MISS | 112.4% | LOOP |
 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | 12 d | 89 | 32.9% | too few to judge | 81.7% | too few to judge |
