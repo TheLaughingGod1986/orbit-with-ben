@@ -241432,7 +241432,7 @@
     {
       "id": "J2755",
       "title": "Verify condition for J2171",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2171: J2730 Chief review: unmet. Independent Mini/NAS inventory confirms no long master; Mini 05_Music has only three scope files and NAS 05_Music is absent. J2666 must apply existing desk ruling 6813193837 with fresh live safeguards, then J2664 delivers own score, stems, provenance, music gates and capable listening review with Chief acceptance; J2035 must complete long assembly and gates before J2171. Retain picture KEEP dispositions, locked VO and picture windows, GBP0 Shorts scope and final-watch requirements. Verification date is not automatic release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -241452,13 +241452,27 @@
           "at": "2026-11-13T05:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T05:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 269 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Build the two gravity Shorts after the approved score and long assembly are complete, then check the cuts and submit for review",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-13T06:20:27+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
