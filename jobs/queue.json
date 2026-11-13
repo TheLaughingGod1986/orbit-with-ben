@@ -239090,10 +239090,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T00:43Z",
+      "eta": "2026-11-13T02:43Z",
       "created_by": "relay",
       "created_at": "2026-11-12T20:07Z",
       "result": "",
@@ -239147,6 +239147,11 @@
           "at": "2026-11-13T00:43Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-13T00:43Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief (codex) to record --recheck J2730 wait on J2171 and close J2730",
@@ -239165,7 +239170,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T00:43Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2731",
