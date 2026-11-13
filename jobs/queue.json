@@ -1,5 +1,5 @@
 {
-  "next_id": 2779,
+  "next_id": 2780,
   "jobs": [
     {
       "id": "J0001",
@@ -244445,6 +244445,38 @@
         "at": "2026-11-13T14:33Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2779",
+      "title": "oppti.dev: put the faster build on the Cloudflare test address and the visual refresh on a preview address",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (13 Nov): refactor the oppti.dev code base, report the savings, and refresh the look.** The work is on branch `claude/site-refresh` of `TheLaughingGod1986/oppti.dev` (draft pull request 63, on top of pull request 61). This job puts the safe part on the test address and the new look on a preview address for Ben to see (queued 13 Nov 14:46Z). Follow-up to J2772; reuse its clone.\n\n**Two commits, two different treatments.**\n- `f6ff450b2d6ff3796ef6605bcba471e4bb6fa5e1`: pictures sent at the size the page shows them, unused code removed, search fixes. Looks the same as now. This goes on the test address `oppti-dev.opptiai.workers.dev`, which is what the domain will point at.\n- `9d4a1e0489ba8f5ee100de0a775d6071f1e3ac02`: the same plus the visual refresh. Ben has not seen it. It must NOT go on the test address.\n\n**Do.**\n1. `git fetch origin claude/site-refresh`, check out `f6ff450b2d6ff3796ef6605bcba471e4bb6fa5e1`, `npm ci`, `npm run cf:deploy`. The build now runs `scripts/optimize-images.mjs` first (about a minute the first time).\n2. Check on the test address: the ten routes from J2772 still answer 200 with content; the home page's HTML names `/_optimized/` pictures and they answer 200 as `image/webp`; `/about` and `/case-studies` load with no picture over 200 KiB (J2772's build sent pictures of 0.8 to 1.5 MB there). Repeat the CPU reading for the same twenty pages (median and highest) and list any outcome that is not `ok`.\n3. Check out `9d4a1e0489ba8f5ee100de0a775d6071f1e3ac02`, `npm run cf:build`, then `npx opennextjs-cloudflare upload`. That uploads a version without making it live and prints a preview address. Report that address. If the command is missing, or preview addresses are off for the account, stop and say so: do not deploy this commit to the test address by any other route.\n4. Confirm the test address still serves `f6ff450b2d6ff3796ef6605bcba471e4bb6fa5e1` afterwards (the home page headline section has no green dot label above it; the refresh adds one).\n\n**Guards.** £0, free plan only. No custom domain, no DNS, no secrets, nothing on Vercel or Stripe. No pull request merged. No secret, account address or email printed.\n\n**Result.** The preview address for the refresh, the checks above with their numbers, and anything that failed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T14:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T14:46Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Deploy oppti.dev's faster build to the test address, upload the refresh as a preview version, report the preview address and the checks",
+      "due": "2026-11-13T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
+      "urgent": 10
     }
   ],
   "focus": [
