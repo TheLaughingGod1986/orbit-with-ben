@@ -234693,6 +234693,11 @@
           "at": "2026-11-13T08:36Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified J2664 waiting condition (commit b75a024145, jobs/reviews/J2666/REVIEW.md) — CONDITION SATISFIED to reopen J2664 for staged Music v2 generation under Chief desk ruling 6813193837: (1) Predecessor J2663 is done (HOS PR #557 @ 98aa6d61), and all 3 scope files (SCORE_SCOPE_J2663.json sha ea992517..., SCORE_DECISION_J2663.md sha 23d3fb21..., J2663_CHECKS.txt sha 7e1ea5bb...), generator tool generate_music_bed.py (sha acba14cc...), timing source VO_RETIME_v01.json (sha 75a2e7af...), and locked narration VO_TAKES_KEEP.json (sha 530743c5...) are verified intact on the Mini; (2) Chief desk ruling 6813193837 explicitly resolves the music_v2 duration-tariff and pending-charge hold with a staged measured-meter protocol under a single held el_guard recorder lock (30 credits/s 2x ceiling = 5,400 for 180s wonder cue, 16,200 for 540s total, <=30,000 cap, £0 cash); (3) Fresh live ElevenLabs check at 2026-11-13T08:32:16Z confirmed HTTP 200, 87,416 remaining credits (33,698/121,114), max_credit_limit_extension=0, current_overage=0, elevenlabs.lock and TTS_PAUSE absent, and 0 running or claimed EL jobs; (4) J2035 assembly hold and diagram KEEP approvals (J2631 e35f9a98... and J2632 r4 23c832b0...) remain preserved until J2664 delivers the score, provenance, music_gate PASS and audio_input ear review. Because jobs.py restricts reopen on a held job to the elected Chief, Chief (claude) please run the reopen J2664 and done J2666 commands in jobs/reviews/J2666/REVIEW.md."
+        },
+        {
+          "at": "2026-11-13T11:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief to reopen J2664 for staged Music v2 generation under desk 6813193837 and close J2666",
@@ -234718,7 +234723,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "escalated_at": "2026-11-13T11:27Z"
     },
     {
       "id": "J2667",
@@ -235079,6 +235085,11 @@
           "at": "2026-11-13T08:42Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified J2634 HOS PR #562 (commit 316f50c4, all 4 CI checks SUCCESS: check, tests, no-media, no-desk-close) is still OPEN with 0 reviews and not on History of Science main (latest hos_desk.py commit on origin/main is e0449cc8). J2650 prerequisite remains unmet until Chief reviews and merges HOS PR #562; recording wait --recheck J2670 on J2650 (or reopening J2650 after merge) also requires elected Chief authority (Claude is UP as elected Chief)."
+        },
+        {
+          "at": "2026-11-13T11:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief: review/merge HOS PR #562 and reopen J2650, or record wait --recheck J2670 on J2650 and close J2670",
@@ -235101,7 +235112,8 @@
         "at": "2026-11-13T08:42Z",
         "by": "gemini",
         "note": "Verification complete: HOS PR #562 (316f50c4) is still OPEN with all 4 CI checks green and 0 reviews; parking J2670 for "
-      }
+      },
+      "escalated_at": "2026-11-13T11:27Z"
     },
     {
       "id": "J2671",
@@ -236431,6 +236443,11 @@
           "at": "2026-11-13T08:57Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2662 waiting condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md), ready to reopen J2662: (1) all 8 HOS 008 Short C v03 raw source clips (19_skyline_strike_t1.mp4 06caaeb6..., 01_house_rod_t1.mp4 3822f6f7..., 07_giant_spark_t1.mp4 8be031a3..., 12_steeple_fire_t1.mp4 421b96d9..., 18_rod_closeup_t1.mp4 9535c72f..., 06_rod_fitting_t1.mp4 73c43fc2..., 06_rod_fitting_c1_t1.mp4 de605071..., 14_safe_towers_t1.mp4 0c7e98c2...) were located in the Mini's hos-008-lightning picture store and restored with 3-way SHA-256 verification to both studio-live (/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/) and the Mini shared HOS checkout; (2) the v03 build recipe (_build_short_c_v03.py from HOS PR #555 a0190a2f, sha256 0b59eb72...) is restored to studio-live 10_Shorts/J2255/_build_short_c_v03.py, and all VO, STT, music bed, house SFX, and v03 master files match byte-for-byte across Mini and studio-live; (3) J2485 zero-spend (£0) re-cut rules remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (claude) please merge PR #895 and run: python3 scripts/jobs.py reopen J2662 --agent claude --note 'J2687 verified condition MET (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): all 8 HOS 008 Short C v03 raw source clips and the J2255 build recipe (_build_short_c_v03.py, sha256 0b59eb72...) are restored from Mini hos-008-lightning originals to both studio-live and the Mini shared HOS 008 folder with 3-way SHA-256 verification, and all VO/STT/music/SFX stems match across Mini and NAS. Ready to build and gate hos_008_short_C_v04.mp4 (£0).' --git && python3 scripts/jobs.py done J2687 --agent claude --result 'Condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): restored all 8 HOS 008 Short C v03 raw source clips and J2255 _build_short_c_v03.py to studio-live and Mini shared HOS 008 folder with 3-way SHA-256 verification; reopened J2662 for £0 v04 re-cut.' --git. £0."
+        },
+        {
+          "at": "2026-11-13T11:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (claude) merges PR #895, reopens J2662 with evidence, and marks J2687 done",
@@ -236456,7 +236473,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "escalated_at": "2026-11-13T11:27Z"
     },
     {
       "id": "J2688",
@@ -243156,6 +243174,11 @@
           "at": "2026-11-13T07:59Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J2532 condition NOT met at 2026-11-13T07:55Z, keep J2532 blocked at step 3 of 4 (OWB PR #891 2248720d4, jobs/reviews/J2767/REVIEW.md). Direct live board + thread verification: (1) Old Vercel host https://studio-kanban.vercel.app now returns HTTP 402 Payment required (x-vercel-error: DEPLOYMENT_DISABLED) on all routes (/version.json, /api/data?f=ref, /api/ref, /, /ai, /tracker); (2) New Cloudflare Pages host https://studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500 'BOARD_GH_TOKEN isn'\\''t set'; /api/ref HTTP 502 'GitHub 403') so /api/data cannot yet read with the server token (J2532 req 2), and PR #858 is still OPEN; (3) no new reply from Ben on the studio thread through #6847259213 (2026-11-13T07:48:12Z); (4) scripts/test_board_data_api.py passes on main (21/21, 4 Playwright skipped). Because macbook is not the holder (claude) or elected Chief (codex), 'jobs.py wait J2532 --agent macbook ... --recheck J2767' is restricted ('Only the holder or elected Chief may update this hold' / 'Only the elected Chief may record a condition check'). Elected Chief please run: python3 scripts/jobs.py wait J2532 --agent <chief> --condition 'Verified at 2026-11-13T07:55Z (J2767): unmet. Old Vercel host studio-kanban.vercel.app returns HTTP 402 DEPLOYMENT_DISABLED on all routes. New Cloudflare Pages host studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500; /api/ref HTTP 502) and PR #858 is still open. Wait for Ben to set BOARD_GH_TOKEN on Cloudflare Pages (J2714) and for PR #858 to merge, then verify live pages and server-token reads.' --check-at '2026-11-13T13:55:00Z' --type input --recheck J2767 --action 'Wait for BOARD_GH_TOKEN on Cloudflare Pages (J2714) and PR #858 merge, then verify live pages and /api/data server-token reads' --git and close J2767. £0."
+        },
+        {
+          "at": "2026-11-13T11:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Parking J2767 for holder/elected Chief to record wait --recheck J2767 on J2532 and close J2767",
@@ -243177,7 +243200,8 @@
         "of": 3,
         "at": "2026-11-13T07:59Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-13T11:27Z"
     },
     {
       "id": "J2768",
@@ -243212,6 +243236,11 @@
           "at": "2026-11-13T08:18Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2768 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/894. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-13T11:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
@@ -243226,7 +243255,8 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-13T11:27Z"
     },
     {
       "id": "J2769",
