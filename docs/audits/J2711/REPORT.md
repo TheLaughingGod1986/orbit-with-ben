@@ -83,3 +83,28 @@ Recovered one additional explicit video-ID/tag baseline, Orbit `n2WbOfJhOwc` (St
 Coverage is now **79 of the 162 videos inventoried at 22:02Z**: 57 Orbit and 22 HOS. **83 original baselines remain unavailable** (63 Orbit, 20 HOS); the recovery file lists their exact IDs. This is not a new complete live-channel sweep. The precise Mars creation-time input remains unavailable because that upload result did not retain the live snippet used for the Buffer captions. Do not infer causation from the current snippet.
 
 The operational fixes remain merged in OWB #857/#870 and HOS #571: seven confirmed tag repairs, three future caption repairs, uploader truncation prevention, exact registered-package fallback and refusal to create hashtag-free posts. The earlier published Mars posts remain untouched. The next useful recovery needs an **original upload artifact with a video ID and tags for one of those 83 IDs, or the actual Mars creation-time snippet/log**. Repeating the same inventories cannot reconstruct either. J2711 remains unfinished only for those requested historical evidence gaps, with no Ben action or payment needed. Scratch offload was requested under the existing under-20-GB policy; it reported an already-running offload, so no second copy was started.
+
+
+## Worker follow-up, 13 November 2026, 01:09–01:12 UTC
+
+Codex covering as a specialist worker; Claude is Chief. Preserved the resumed four-step plan at 3/4. No platform listing or social-post changes in this run.
+
+A bounded search of all-ref historical **upload-result revisions and their same-revision package manifests** read 139 Orbit and 80 HOS result versions. It recovered five previously unavailable original package baselines:
+
+| Channel | Video | Package tags | Fresh live comparison |
+|---|---|---:|---|
+| Orbit | `1NeQFVnzO2Q` | 6 | Exact set match |
+| Orbit | `Cka7_TVVOUQ` | 6 | Exact set match |
+| HOS | `Bks_JLId1ew` | 6 | Exact set match |
+| HOS | `ChbsigHD5_o` | 6 | Exact set match |
+| HOS | `LCZRHUyTiq0` | 6 | Exact set match |
+
+Each match has an explicit upload-result video ID, a manifest from that exact git revision, and an authenticated fresh snippet/status read. No title-based inference, guessed tags or repairs. Evidence: `historical_upload_result_recovery.json` and `historical_upload_result_readback.json` under `jobs/reviews/J2711/`. The recovery script is read-only against git and writes only its evidence file.
+
+Coverage of the existing 162-video inventory is now **84 baselines: 59 Orbit and 25 HOS**. **78 originals remain unidentified: 61 Orbit and 17 HOS.** This was a targeted five-video live read, not another complete live-channel sweep. Updated `current_comparison.json` preserves all prior decisions and intentional retags.
+
+The historical Mars result has package, upload and Buffer outcome fields, but does not retain the snippet used for caption creation. A bounded inspection of local worker log files under 20 MB found seven files mentioning the video; all were later gate/review artifacts without a tags field. Neither search supplies the original creation-time input, so the exact trigger remains unproven. No private log contents were copied into this public report.
+
+The operational prevention and seven listing/three future-caption repairs from earlier runs remain complete; published posts stay untouched. Chief review remains required for this evidence PR. Exhaustive historical comparison remains incomplete; further work needs original artifacts for one of the 78 listed IDs or the actual Mars creation-time snippet. Do not repeat the repaired listings/captions. No Ben action or spend.
+
+Disk maintenance: the required detached scratch offload completed with exit 0; no eligible old scratch existed. Thread read to #6840721900.
