@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2742 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2618 |  |
 | J2743 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
 | J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
+| J2745 | mini | open | – | – | studio · First-day check at 6 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) |  |
 
 Recently finished:
 
