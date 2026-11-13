@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
 | J2773 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
-| J2777 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J2777 | mini | claimed | gemini | 2026-11-13T16:21Z | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2778 | mini | claimed | macbook | 2026-11-13T15:48Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
