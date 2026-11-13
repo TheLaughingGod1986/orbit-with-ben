@@ -244921,20 +244921,25 @@
           "at": "2026-11-13T17:19Z",
           "by": "codex",
           "what": "step 1 of 3 done: Both Cloudflare nameservers rechecked 16/16 records; Vercel signed-in CLI accepted the nameserver-only PATCH on its current registrar endpoint."
+        },
+        {
+          "at": "2026-11-13T17:24Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Cloudflare zone active; registry and public resolvers delegate to Cloudflare. Both oppti.dev and www.oppti.dev attached to existing production Worker; performance version unchanged."
         }
       ],
-      "remaining_action": "Wait for Cloudflare activation, then attach the existing site to its domain",
+      "remaining_action": "Verify the live site, redirects, prices, feed and mail DNS",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
       "urgent": 10,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-13T17:19Z",
+        "at": "2026-11-13T17:24Z",
         "by": "codex",
-        "note": "Both Cloudflare nameservers rechecked 16/16 records; Vercel signed-in CLI accepted the nameserver-only PATCH on its curr"
+        "note": "Cloudflare zone active; registry and public resolvers delegate to Cloudflare. Both oppti.dev and www.oppti.dev attached "
       }
     },
     {
