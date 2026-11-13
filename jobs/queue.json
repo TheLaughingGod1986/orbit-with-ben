@@ -239438,9 +239438,14 @@
           "at": "2026-11-13T11:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T11:18Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2722 to verify waiting condition for J2702 (OWB:013, OWB:007, OWB:003)"
         }
       ],
-      "remaining_action": "Verify readiness: Publish the verified ledger and evidence once the blocked push is approved",
+      "remaining_action": "Inspect J2702 local evidence commit c438d1ad65, THUMB_LEDGER.json, and git/approval status",
       "kind": "review",
       "recheck_of": "J2702",
       "due": "2026-11-12T19:49:21+00:00",
@@ -239459,9 +239464,13 @@
         "of": 3,
         "at": "2026-11-13T11:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2722 to verify waiting condition for J2702 (OWB:013, OWB:007, OWB:003)"
+      },
+      "taskKeys": [
+        "OWB:013",
+        "OWB:007",
+        "OWB:003"
+      ]
     },
     {
       "id": "J2723",
