@@ -240672,10 +240672,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-13T02:19Z",
+      "eta": "2026-11-13T04:19Z",
       "created_by": "relay",
       "created_at": "2026-11-13T02:18Z",
       "result": "",
@@ -240684,13 +240684,26 @@
           "at": "2026-11-13T02:18Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T02:19Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Review the repaired file-copy code under J2738, then merge and verify the Mini relay and board under J2618",
       "kind": "review",
       "recheck_of": "J2618",
       "due": "2026-11-13T03:18:17+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T02:19Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
