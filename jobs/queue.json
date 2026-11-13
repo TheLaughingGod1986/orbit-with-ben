@@ -245319,10 +245319,10 @@
       "stage": "vo",
       "after": "J2785",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T17:47Z",
+      "eta": "2026-11-13T19:47Z",
       "created_by": "gemini",
       "created_at": "2026-11-13T17:42Z",
       "result": "",
@@ -245331,11 +245331,24 @@
           "at": "2026-11-13T17:42Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T17:47Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review J2784_PACE_v01.json and jobs/reviews/J2785/REVIEW.md, mark J01 vo and J2220 done, and unlock J2221 assembly",
       "kind": "chief",
-      "plain": "Accept the pace-repaired Journey narration and unlock full assembly"
+      "plain": "Accept the pace-repaired Journey narration and unlock full assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T17:47Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2787",
