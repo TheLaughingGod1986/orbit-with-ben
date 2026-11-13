@@ -234839,10 +234839,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T17:00Z",
+      "eta": "2026-11-13T19:00Z",
       "created_by": "relay",
       "created_at": "2026-11-12T03:03Z",
       "result": "",
@@ -234901,6 +234901,11 @@
           "at": "2026-11-13T17:00Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief takes this review disposition; specialist evidence is already complete."
+        },
+        {
+          "at": "2026-11-13T17:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief (chief) to close J2220 and J2665 done (KEEP all 8 J01 VO takes) and set J01 vo done to unlock J2221",
@@ -234917,7 +234922,15 @@
       },
       "for": "codex",
       "model": "gpt-6-astra",
-      "escalated_at": "2026-11-12T08:49Z"
+      "escalated_at": "2026-11-12T08:49Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T17:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2666",
