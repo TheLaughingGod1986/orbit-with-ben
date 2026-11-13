@@ -40,5 +40,7 @@ $ python3 00_Brand/Channel-Setup/tools/public_search.py "why is the sky blue"
 4. **Explicit Unverified Status of History & Science Claims:**
    - Prominent notices in both `TOPIC.md`, `PRE_BUILD_VIDIQ_AUDIT.md`, and `production-status.md` files state that all historical and scientific claims (including the NASA satellite-processing story and the violet sky explanation) are unverified and not cleared for narration or Short opens until sourced in `SOURCES.md` and checked via the `facts` lane.
 5. **Both Existing PRs Updated & Two Substantive Rule-E Review Jobs Queued:**
-   - HOS PR `#572`: https://github.com/TheLaughingGod1986/history-of-science/pull/572
+   - HOS PR `#572`: https://github.com/TheLaughingGod1986/history-of-science/pull/572 (`34324bee`)
    - OWB PR `#881`: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881
+   - Rule-E Review Job for `HOS:102`: **`J2775`** (`--repo hos --film 102 --stage topic --kind review --after J2748`)
+   - Rule-E Review Job for `HOS:103`: **`J2776`** (`--repo hos --film 103 --stage topic --kind review --after J2748`)
