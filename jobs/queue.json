@@ -237863,9 +237863,14 @@
           "at": "2026-11-13T01:12Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review evidence PR #879 (727171b76f) and decide further original-artifact recovery scope. Five new exact live/package matches; coverage 84/162, with 78 original baselines and the Mars creation-time snippet unavailable. Existing seven tag repairs and three caption repairs must not be repeated. Plan remains 3/4; no Ben action."
+        },
+        {
+          "at": "2026-11-13T02:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T07:15:00Z"
         }
       ],
-      "remaining_action": "Review recovered tag evidence and resolve the remaining 78 historical package gaps and Mars creation-time input",
+      "remaining_action": "Verify hashtags on the next posts built automatically by Buffer",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -237879,7 +237884,12 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Chief KEEP: PR879 merged; ruling 412dc1b281 jobs/reviews/J2711/CHIEF_REVIEW.md. Seven tag repairs and three caption fixes accepted; 49 tests pass. Historical recovery exhausted: 84/162 baselines, 78 unknown and Mars trigger unproven. Verify first actual fixed-mirror automatic post group after normal 07:05 run: source tags, build time, Buffer IDs and 5/3/1/5 endings (up to available tags). Never repeat repairs or edit sent posts. If none built, name next eligible registered video and derive next check from its eligibility; if run fails, queue specific repair. Close with historical limitations after successful readback.",
+        "check_at": "2026-11-13T07:15:00Z"
+      }
     },
     {
       "id": "J2712",
