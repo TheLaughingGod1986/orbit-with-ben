@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
 | J2762 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2621 |  |
 | J2763 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
-| J2764 | any | open | – | – | review · Verify condition for J2711 |  |
+| J2764 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2711 |  |
 | J2765 | any | open | – | – | review · Verify condition for J2753 |  |
 
 Recently finished:
