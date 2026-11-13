@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2670 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2650 |  |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
-| J2687 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
+| J2687 | mini | claimed | gemini | 2026-11-13T10:46Z | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
