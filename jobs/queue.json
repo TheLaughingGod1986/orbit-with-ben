@@ -194004,10 +194004,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-13T09:49Z",
-      "eta": "2026-11-13T11:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -194556,6 +194556,11 @@
           "at": "2026-11-13T09:55Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Frame 2868 is source 148, sha bb674f3108d3affd0b37e91d230da30f1e662eadcd5fbbd0b827dd72a4ee90f4. Frame 2869 stays out. PR 542 commit e9cc52fb. 94 tests OK. check_all PASS."
+        },
+        {
+          "at": "2026-11-13T09:55Z",
+          "by": "cursor",
+          "what": "released: Frame 2868 clean plate sha bb674f31, PR 542 e9cc52fb. Frame 2869 stays out. 94 tests and check_all PASS. Next: table lead-in, SAFE PATH DOWN, foil check, then mux."
         }
       ],
       "remaining_action": "Leave frame 2869 out, then rebuild the table lead-in, SAFE PATH DOWN and the foil check before the mux and film gates",
