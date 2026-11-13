@@ -234686,9 +234686,14 @@
           "at": "2026-11-13T15:49Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Preflight under the recorder lock: 87,416 credits left, overage 0, extension 0. Wonder request is in flight. Teach is not requested yet."
+        },
+        {
+          "at": "2026-11-13T15:52Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Wonder is 180.04s. Its credit meter was still unchanged at 8 seconds, then posted 2,475 credits, under the 5,400 ceiling. Teach request is the second and last POST."
         }
       ],
-      "remaining_action": "Wait for the wonder cue, then read the credit meter before any teach request",
+      "remaining_action": "Generate the teach cue now that the wonder meter has posted, then join the bed",
       "kind": "assembly",
       "plain": "Creating original music for the Moon and gravity film",
       "mini_only": true,
@@ -234698,11 +234703,11 @@
       "escalated_at": "2026-11-12T06:44Z",
       "due": "2026-11-15T18:00:00Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-13T15:49Z",
+        "at": "2026-11-13T15:52Z",
         "by": "cursor",
-        "note": "Preflight under the recorder lock: 87,416 credits left, overage 0, extension 0. Wonder request is in flight. Teach is no"
+        "note": "Wonder is 180.04s. Its credit meter was still unchanged at 8 seconds, then posted 2,475 credits, under the 5,400 ceiling"
       }
     },
     {
