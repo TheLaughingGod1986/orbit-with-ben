@@ -194605,9 +194605,14 @@
           "at": "2026-11-13T12:05Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Measuring master frames 11038-11117 against the safe-path plates. Frame 2869 stays out. No v04."
+        },
+        {
+          "at": "2026-11-13T12:10Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: SAFE PATH composite sha e0899746 on the v12 card. PR 542 commit 820ab376. The plate title and the bottom card both read SAFE PATH DOWN. 101 tests and check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Measure which plate sits under the SAFE PATH DOWN card",
+      "remaining_action": "Resolve the duplicate SAFE PATH title, then check frame 3353",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194616,9 +194621,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-13T12:05Z",
+        "at": "2026-11-13T12:10Z",
         "by": "cursor",
-        "note": "Measuring master frames 11038-11117 against the safe-path plates. Frame 2869 stays out. No v04."
+        "note": "SAFE PATH composite sha e0899746 on the v12 card. PR 542 commit 820ab376. The plate title and the bottom card both read "
       }
     },
     {
