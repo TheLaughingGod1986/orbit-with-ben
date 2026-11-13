@@ -1,5 +1,5 @@
 {
-  "next_id": 2790,
+  "next_id": 2791,
   "jobs": [
     {
       "id": "J0001",
@@ -231286,7 +231286,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: Studio half is merged. Left: the History of Science half (PR 548, draft, head 55b96878): rebase its nine hand-written commits onto that repo's current main (3 commits touched PIPELINE.json since: 543, 557, 554), regenerate the generated commit, run the checks, build the board both ways and compare, then Grok merges. Starts at the 12:50 run.",
+      "result": "Waiting for: PR 548 is rebased and regenerated (head 1ced1448 on HOS main aa3c6c4, all checks pass, 542's film 008 line applied, 509 left out). Not marked ready: the board compare shows one difference, film 004 (Atom) loses its live video on the per-film path. Follow-up J2790 finds and fixes it. Then repeat the compare, mark ready, Grok merges, then refresh channels/hos/channel.json.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -231372,9 +231372,14 @@
           "at": "2026-11-13T12:51Z",
           "by": "relay",
           "what": "condition verification queued: J2774"
+        },
+        {
+          "at": "2026-11-13T18:00Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-13T21:40:00Z"
         }
       ],
-      "remaining_action": "Rebase and regenerate History of Science PR 548",
+      "remaining_action": "Wait for the 004 fix, repeat the compare, mark PR 548 ready",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -231387,9 +231392,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Studio half is merged. Left: the History of Science half (PR 548, draft, head 55b96878): rebase its nine hand-written commits onto that repo's current main (3 commits touched PIPELINE.json since: 543, 557, 554), regenerate the generated commit, run the checks, build the board both ways and compare, then Grok merges. Starts at the 12:50 run.",
-        "check_at": "2026-11-13T13:51:34+00:00",
-        "recheck_task": "J2774"
+        "condition": "PR 548 is rebased and regenerated (head 1ced1448 on HOS main aa3c6c4, all checks pass, 542's film 008 line applied, 509 left out). Not marked ready: the board compare shows one difference, film 004 (Atom) loses its live video on the per-film path. Follow-up J2790 finds and fixes it. Then repeat the compare, mark ready, Grok merges, then refresh channels/hos/channel.json.",
+        "check_at": "2026-11-13T21:40:00Z"
       }
     },
     {
@@ -245548,6 +245552,35 @@
         "by": "codex",
         "note": "Refresh live; 22 routes 200; pounds, green dot, domains, www redirect and indexing headers verified; CPU median 10 ms/ma"
       }
+    },
+    {
+      "id": "J2790",
+      "title": "History of Science Atom film: board loses its live video when film state moves to one file per film",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Found by the board compare on History of Science PR 548 (head 1ced1448, comment 6860851115 on that PR). Built the board twice with studio main's kanban_snapshot.py: from HOS main aa3c6c4 and from the branch. Only the Atom film (key HOS:004) differs. Main: one card, done, 'Public on YouTube since Thu 15 Oct 2026', linked to video GHZDsiH7L7A. Branch (one status.json per film): 'upcoming, Planned; no work started yet', no link, four 'Short n planned' placeholders and a separate card for the live video. PIPELINE.json has no upload entry for it, so the studio adds one at build time; on the one-file path it finds the live long, on the per-file path it does not. The board-check alarm of 12 Nov named the same gap ('no YouTube read-back, add the long to HOS UPLOADS.json').\n\nDo: (1) find the exact lookup in scripts/video_tracker.py (uploads_index, matched_upload, settle_uploaded and the film_status path) that links a film to its live video for the one-file shape but not the per-file shape; (2) decide which side is wrong. If the studio lookup is wrong for the per-file shape, fix it in orbit-with-ben with a test (rebuild both boards and show HOS:004 identical); if the film's own record is missing the upload, say exactly what, and check it cannot make the Buffer mirror post anything (the daily check mirrors scheduled uploads that are registered); do not register a video in a Buffer registry without that check. (3) Rebuild the board from the branch (git fetch origin pull/548/head) and show film 004 reads the same as on HOS main. Read-only on YouTube, no spend, no schedule change, no upload. Park for the Chief with the compare.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T18:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T18:00Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find why the Atom film card loses its live video on the per-film path and fix it",
+      "kind": "review",
+      "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film"
     }
   ],
   "focus": [
