@@ -245706,9 +245706,14 @@
           "at": "2026-11-13T20:27Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Identified exact gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads when one_file(slug) is True, and video_tracker.py film_rows/long_rows ignore f['upload'] when status_files is True; HOS 004 was retitled on YouTube ('What\\'s Inside an Atom? Mostly Empty Space' vs 'What\\'s Really Inside an Atom?') so match_public_long prefix matching also misses it without upload.videoId."
+        },
+        {
+          "at": "2026-11-13T20:35Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2790; starting code and PR 548 inspection"
         }
       ],
-      "remaining_action": "Fix film_status upload lookup in kanban_snapshot.py and video_tracker.py and add unit tests",
+      "remaining_action": "Trace HOS:004 upload linkage in scripts/video_tracker.py across PIPELINE.json vs per-film status.json (HOS PR 548)",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245721,11 +245726,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-11-13T20:27Z",
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T20:35Z",
         "by": "gemini",
-        "note": "Identified exact gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads when one_file(slug) is True, and "
+        "note": "Claimed J2790; starting code and PR 548 inspection"
       },
       "taskKeys": [
         "HOS:004"
