@@ -242680,9 +242680,14 @@
           "at": "2026-11-13T08:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T08:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting verification of J2035 waiting condition for HOS 009: inspect queue history, Mini/NAS 05_Music inventory, and update wait/reopen state"
         }
       ],
-      "remaining_action": "Verify readiness: Complete the existing music preflight and score jobs, then verify the delivered score before assembling the gravity film",
+      "remaining_action": "Inspect J2035, J2666, J2664 status and Mini/NAS HOS 009 music files",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-13T09:13:33+00:00",
@@ -242692,9 +242697,11 @@
         "of": 3,
         "at": "2026-11-13T08:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting verification of J2035 waiting condition for HOS 009: inspect queue history, Mini/NAS 05_Music inventory, and up"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
