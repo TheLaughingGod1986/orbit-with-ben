@@ -245250,13 +245250,13 @@
       "stage": "vo",
       "after": "J2784",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T17:28Z",
-      "eta": "2026-11-13T19:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-13T17:02Z",
-      "result": "",
+      "result": "8/8 KEEP (jobs/reviews/J2785/REVIEW.md, commit b1b25626c9): verified all 8 selected WAV hashes and preserved originals from J2784_PACE_v01.json on studio-live; independently confirmed per-take submitted-script whitespace WPM (140.03, 135.80, 140.08, 131.84, 140.12, 140.02, 140.08, 143.68 wpm, all within 130-145 wpm excluding card silence), mean volume (-22.2 to -24.0 dB, within -19 to -28 dB), clean 48 kHz s16le decode, and direct start-to-end multimodal audio/wav listening (0 slowdown artifacts, clean starts/ends, 0 stumbles, intro 'forged the atoms' at 44.70-45.82s and Venus 'carbon locked safely' at 3.00-4.32s confirmed natural by ear). Routed to elected Chief to resolve J2220.",
       "history": [
         {
           "at": "2026-11-13T17:02Z",
@@ -245277,6 +245277,11 @@
           "at": "2026-11-13T17:29Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2785 and J01 vo; inspecting J2784 pace_v01 evidence and audio files"
+        },
+        {
+          "at": "2026-11-13T17:41Z",
+          "by": "gemini",
+          "what": "done: 8/8 KEEP (jobs/reviews/J2785/REVIEW.md, commit b1b25626c9): verified all 8 selected WAV hashes and preserved originals from J2784_PACE_v01.json on studio-live; independently confirmed per-take submitted-script whitespace WPM (140.03, 135.80, 140.08, 131.84, 140.12, 140.02, 140.08, 143.68 wpm, all within 130-145 wpm excluding card silence), mean volume (-22.2 to -24.0 dB, within -19 to -28 dB), clean 48 kHz s16le decode, and direct start-to-end multimodal audio/wav listening (0 slowdown artifacts, clean starts/ends, 0 stumbles, intro 'forged the atoms' at 44.70-45.82s and Venus 'carbon locked safely' at 3.00-4.32s confirmed natural by ear). Routed to elected Chief to resolve J2220."
         }
       ],
       "remaining_action": "Inspect J2784 commit 41c1e352c9 and repair manifest, verify hashes and audio metrics, and listen to all 8 linking VO takes",
@@ -245300,7 +245305,8 @@
         "at": "2026-11-13T17:29Z",
         "by": "gemini",
         "note": "Claimed J2785 and J01 vo; inspecting J2784 pace_v01 evidence and audio files"
-      }
+      },
+      "done_ref": "b1b25626c9"
     }
   ],
   "focus": [
