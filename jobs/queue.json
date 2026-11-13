@@ -245696,9 +245696,14 @@
           "at": "2026-11-13T20:00Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3: fixed attach_pipeline_uploads, film_rows, long_rows, and load_status_films for film_status channels and added unit test in test_hos_long_readback.py"
+        },
+        {
+          "at": "2026-11-13T20:07Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2790; planned 4 steps: (1) trace lookup in video_tracker.py across one-file vs per-file film_status, (2) determine which side is wrong and verify Buffer mirror safety, (3) fix/test and rebuild boards from HOS main and PR 548 branch to verify HOS:004 matches, (4) commit from clean worktree and park for Chief with compare."
         }
       ],
-      "remaining_action": "Verify rebuilt boards from HOS main and PR #548, open OWB PR, and park J2790 for Chief",
+      "remaining_action": "Inspect scripts/video_tracker.py and HOS PR 548 (1ced1448) vs main (aa3c6c4) for HOS:004 lookup difference",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245711,11 +245716,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-13T20:00Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-13T20:07Z",
         "by": "gemini",
-        "note": "Step 2/3: fixed attach_pipeline_uploads, film_rows, long_rows, and load_status_films for film_status channels and added "
+        "note": "Claimed J2790; planned 4 steps: (1) trace lookup in video_tracker.py across one-file vs per-file film_status, (2) determ"
       },
       "taskKeys": [
         "HOS:004"
