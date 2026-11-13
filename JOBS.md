@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2791 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2793 | mini | open | – | – | for codex · studio · oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page) |  |
+| J2793 | mini | claimed | codex | 2026-11-13T23:27Z | for codex · studio · oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page) |  |
 
 Recently finished:
 
