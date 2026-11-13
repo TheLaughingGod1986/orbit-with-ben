@@ -1,5 +1,5 @@
 {
-  "next_id": 2782,
+  "next_id": 2783,
   "jobs": [
     {
       "id": "J0001",
@@ -244584,6 +244584,11 @@
           "at": "2026-11-13T15:07Z",
           "by": "codex",
           "what": "blocked: Ben sign-in required: Vercel domain dashboard on the Mini opens at Log in to Vercel. Cloudflare Free zone prepared and 16/16 records matched on each assigned nameserver; no nameserver change made."
+        },
+        {
+          "at": "2026-11-13T15:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J2782"
         }
       ],
       "remaining_action": "Sign in to Vercel, then change nameservers and verify the live domain",
@@ -244602,7 +244607,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Ben sign-in required: Vercel domain dashboard on the Mini opens at Log in to Vercel. Cloudflare Free zone prepared and 16/16 records matched on each assigned nameserver; no nameserver change made.",
-        "check_at": "2026-11-13T21:07:26+00:00"
+        "check_at": "2026-11-13T16:07:41+00:00",
+        "recheck_task": "J2782"
       }
     },
     {
@@ -244659,6 +244665,37 @@
         "at": "2026-11-13T14:58Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2782",
+      "title": "Verify condition for J2780",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2780: Ben sign-in required: Vercel domain dashboard on the Mini opens at Log in to Vercel. Cloudflare Free zone prepared and 16/16 records matched on each assigned nameserver; no nameserver change made.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2780 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T15:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T15:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Sign in to Vercel, then change nameservers and verify the live domain",
+      "kind": "review",
+      "recheck_of": "J2780",
+      "due": "2026-11-13T16:07:41+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
