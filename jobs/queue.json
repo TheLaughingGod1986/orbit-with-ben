@@ -1,5 +1,5 @@
 {
-  "next_id": 2789,
+  "next_id": 2790,
   "jobs": [
     {
       "id": "J0001",
@@ -245447,6 +245447,38 @@
         "at": "2026-11-13T17:47Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2789",
+      "title": "oppti.dev: put the visual refresh live (Ben: \"ship the refresh\")",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (13 Nov 17:50Z): \"ship the refresh\".** He has seen the before and after screenshots and the preview address from J2779. Put the refreshed look live on oppti.dev. Follow-up to J2779 and J2780; reuse that clone.\n\n**What to deploy.** Branch `claude/site-refresh` of `TheLaughingGod1986/oppti.dev` at `227b8bd4f26357a00bf35e7788711eef9c073b50`. That is the refresh Ben saw (`9d4a1e0`) plus one commit that writes the two live addresses into `wrangler.jsonc` as custom domains, so this and every later deploy leaves `oppti.dev` and `www.oppti.dev` attached.\n\n**Do.**\n1. Note the version that is live now (`npx wrangler deployments list --name oppti-dev`), so it can be put back.\n2. `git fetch origin claude/site-refresh`, check out `227b8bd4f26357a00bf35e7788711eef9c073b50`, `npm ci`, `npm run cf:deploy`. Do not pass `--domain`: the addresses are in the config now.\n3. Check on `https://oppti.dev` (ask Cloudflare's address directly if the Mini's DNS still holds the old one): the home page shows the small \"OpptiAI for WordPress\" label with a green dot above the headline; `/`, `/pricing`, `/blog`, one blog post, `/plugins/alt-text`, `/login`, `/rss.xml` and `/sitemap.xml` answer 200 with content; `/pricing` shows pound prices from the Mini; `www` redirects to the bare domain; both addresses are still listed as custom domains on the Worker; no `X-Robots-Tag` on the bare domain. Read the CPU for the same twenty pages once more (median, highest, any outcome not `ok`).\n4. If any check fails and is not fixed in a few minutes, put the earlier version back (`npx wrangler rollback --name oppti-dev`) and report what failed. A broken live site is worse than the old look.\n\n**Guards.** £0, Free plan only. No DNS change, no secrets, nothing on Vercel or Stripe. No pull request merged. No secret, account address or email printed.\n\n**Result.** Whether the refresh is live, the checks with what each returned, the version that was live before, and anything that failed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T17:50Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:50Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Deploy oppti.dev's refresh branch to the live Worker, check the pages, prices and addresses, roll back if a check fails",
+      "due": "2026-11-13T20:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put the new look live on Ben's product site, and put the old one back if anything breaks",
+      "urgent": 10
     }
   ],
   "focus": [

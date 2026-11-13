@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2789.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -82,6 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2786 | mini | claimed | codex | 2026-11-13T19:47Z | J01 vo · chief · J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785) | b1b25626c9 |
 | J2787 | mini | claimed | macbook-2 | 2026-11-13T18:05Z | studio · First-day check at 6 h: "What Was the Edward Jenner Experiment?" (cLKDiYP55J8) |  |
 | J2788 | mini | claimed | macbook | 2026-11-13T18:05Z | studio · First-day check at 6 h: "Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) |  |
+| J2789 | mini | open | – | – | for codex · studio · oppti.dev: put the visual refresh live (Ben: "ship the refresh") |  |
 
 Recently finished:
 
