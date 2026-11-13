@@ -239211,10 +239211,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T00:49Z",
+      "eta": "2026-11-13T02:49Z",
       "created_by": "relay",
       "created_at": "2026-11-12T20:07Z",
       "result": "",
@@ -239268,6 +239268,11 @@
           "at": "2026-11-13T00:49Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief taking exact requested review to record its completed ruling; parent stays held."
+        },
+        {
+          "at": "2026-11-13T00:49Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2172 --recheck J2731 and jobs.py done J2731",
@@ -239286,7 +239291,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T00:49Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2732",
