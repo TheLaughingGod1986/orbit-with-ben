@@ -245066,6 +245066,11 @@
           "at": "2026-11-13T15:18Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified J2780 waiting condition at 2026-11-13T15:17Z (commit bdbea70365, jobs/reviews/J2782/REVIEW.md) — condition NOT yet satisfied, keep J2780 blocked at step 1 of 3: (1) Reusing the open vercel.com tab on Mini CDP 9223 via cdp_tabs.reuse_page and navigating to https://vercel.com/account/domains still redirects to https://vercel.com/login?next=%2Faccount%2Fdomains (Title: Login – Vercel, H1: Log in to Vercel), and Mini CDP 9222 has 0 vercel.com cookies; (2) Public NS for oppti.dev remains ns1.vercel-dns.com / ns2.vercel-dns.com, and https://oppti.dev/ still answers HTTP/2 402 (x-vercel-error: DEPLOYMENT_DISABLED) from Vercel; (3) Cloudflare Free zone on autumn.ns.cloudflare.com and dean.ns.cloudflare.com (SOA serial 2420068155, 32/32 record comparisons matched in /private/tmp/j2780-dns-check.json sha d136fd09...) and prerequisite J2779 performance Worker https://oppti-dev.opptiai.workers.dev/ (HTTP/2 200) remain intact. Because jobs.py restricts wait J2780 --recheck J2782 to the holder/elected Chief (codex), Chief please run the wait J2780 --recheck J2782 (to 2026-11-13T21:15:00Z) and done J2782 commands in jobs/reviews/J2782/REVIEW.md."
+        },
+        {
+          "at": "2026-11-13T18:00Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief records wait J2780 --recheck J2782 and closes J2782",
@@ -245088,7 +245093,8 @@
         "at": "2026-11-13T15:18Z",
         "by": "gemini",
         "note": "Committed jobs/reviews/J2782/REVIEW.md (bdbea70365); J2780 remains blocked awaiting Ben sign-in to Vercel on Mini"
-      }
+      },
+      "escalated_at": "2026-11-13T18:00Z"
     },
     {
       "id": "J2783",
