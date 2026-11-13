@@ -1,5 +1,5 @@
 {
-  "next_id": 2794,
+  "next_id": 2795,
   "jobs": [
     {
       "id": "J0001",
@@ -188487,6 +188487,11 @@
           "at": "2026-11-13T15:23Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T20:25:00Z"
+        },
+        {
+          "at": "2026-11-13T23:32Z",
+          "by": "relay",
+          "what": "condition verification queued: J2794"
         }
       ],
       "remaining_action": "Build the two gravity Shorts after the score is delivered and accepted and the long assembly is complete, then check both cuts for review",
@@ -188505,10 +188510,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2777 Chief ruling: NOT MET. Gemini evidence b157efa416 and independent current Mini/NAS inventory confirm only the three score scope files exist, no NAS score and no long render on either store. Existing J2666 is the immediate elected-Chief release decision under desk 6813193837 and Claude concurrence 6848151890; prioritize it now, with fresh lock, meter, overage and pending-work checks before releasing bounded J2664 production. J2664 must deliver accepted score/stems/provenance and required music checks/review; J2035 must complete long assembly and composite/gates before J2171. Preserve picture KEEP, narration locks, zero-spend Shorts scope and final watch. Retry is verification only, not automatic release.",
-        "check_at": "2026-11-13T20:25:00Z",
+        "check_at": "2026-11-14T00:32:29+00:00",
         "last_recheck": "J2777",
         "checked_at": "2026-11-13T15:23:38+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2794"
       }
     },
     {
@@ -246287,6 +246293,37 @@
         "note": "All 22 routes 200; guide links, Blog, JSON-LD, GBP, www 308 and domains verified; first CPU 29/179 ms, warm 7.5/13 ms, a"
       },
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6867174443"
+    },
+    {
+      "id": "J2794",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2777 Chief ruling: NOT MET. Gemini evidence b157efa416 and independent current Mini/NAS inventory confirm only the three score scope files exist, no NAS score and no long render on either store. Existing J2666 is the immediate elected-Chief release decision under desk 6813193837 and Claude concurrence 6848151890; prioritize it now, with fresh lock, meter, overage and pending-work checks before releasing bounded J2664 production. J2664 must deliver accepted score/stems/provenance and required music checks/review; J2035 must complete long assembly and composite/gates before J2171. Preserve picture KEEP, narration locks, zero-spend Shorts scope and final watch. Retry is verification only, not automatic release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T23:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T23:32Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Build the two gravity Shorts after the score is delivered and accepted and the long assembly is complete, then check both cuts for review",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-14T00:32:29+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
