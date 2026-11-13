@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2773 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2775 | mini | open (after J2748) | – | – | 102 topic · for gemini · review · `gemini-argon` · HOS 102 Ozone Hole: rule-E topic go/no-go review |  |
-| J2776 | any | open (after J2748) | – | – | 103 topic · review · HOS 103 Why Is the Sky Blue: rule-E topic go/no-go review |  |
+| J2776 | mini | open (after J2748) | – | – | 103 topic · for gemini · review · `gemini-argon` · HOS 103 Why Is the Sky Blue: rule-E topic go/no-go review |  |
 | J2777 | mini | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:

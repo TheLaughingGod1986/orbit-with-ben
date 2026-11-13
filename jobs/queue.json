@@ -244088,7 +244088,7 @@
     {
       "id": "J2776",
       "title": "HOS 103 Why Is the Sky Blue: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for History of Science proposal `HOS:103` (*Why Is the Sky Blue? (And Why It Isn't Violet)*), submitted in `J2748` (HOS PR `#572` https://github.com/TheLaughingGod1986/history-of-science/pull/572 branch `macbook/J2748`, OWB PR `#881` https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881 branch `macbook/J2748`).\n\nExplicit dependency: `--after J2748` (requires completion of `J2748`). No production work, spend, script lock, VO, or Studio change starts from this review job; active HOS WIP capacity (Rule G) and `facts`-lane gates stay unchanged.\n\n### Evidence Paths to Inspect (HOS PR `#572`, branch `macbook/J2748`)\n1. `02_Video-Projects/103_Tyndall-Rayleigh-Why-Is-The-Sky-Blue/TOPIC.md` — full corrected `2026-11-12` & `2026-11-13` snapshot + `2026-11-12` lifetime Studio analytics comparison, candidate 4-act outline (`Saussure c. 1789 cyanometer -> Tyndall 1869 Royal Institution scattering tube -> Lord Rayleigh 1871/1899 λ⁻⁴ scattering law -> The Violet Puzzle`), 3-way thumbnail concept plan, overlap check (`034` greenhouse effect is infrared $CO_2$/water-vapour heat absorption, distinct from `1869` visible scattering), and two collision-free candidate Short angles (`S01`: *Why Isn't the Sky Violet? (Rayleigh's Puzzle)*, `S02`: *Why Are Sunsets Red? (Tyndall's 1869 Glass Tube)*).\n2. `02_Video-Projects/103_Tyndall-Rayleigh-Why-Is-The-Sky-Blue/11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md` — pre-build keyword, neighbour, title ABC, and retention plan.\n3. `02_Video-Projects/103_Tyndall-Rayleigh-Why-Is-The-Sky-Blue/11_Upload-Package/evidence_2026-11-13_neighbours.json` — `neighbours.py` output (`PASS`: `8` education videos `≥1,000,000` views, `TED-Ed/TED = yes`, including direct blue/purple-sky explainers on `Veritasium` `ro2MmmdARrs` `1,536,981` views *Why the Sky ISN'T Blue*, `minutephysics` `R5P6O0pDyMU` `1,382,559` views *Why Isn't The Sky Purple?*, and `minutephysics` `NafbGOQBlQs` `1,363,672` views *Why is the Sun Yellow and the Sky Blue?*, plus `Be Smart` `3g246c6Bv58` `26,613,295` views, `Kurzgesagt` `IXxZRZxafEQ` `9,990,176` views, `3Blue1Brown` `aXRTczANuIs` `1,900,703` views, `TED-Ed` `J1yIApZtLos` `1,816,004` views, and `TED-Ed` `O0PawPSdk28` `1,275,823` views).\n4. `02_Video-Projects/103_Tyndall-Rayleigh-Why-Is-The-Sky-Blue/11_Upload-Package/evidence_2026-11-13_public_search.json` — `public_search.py` output (`2026-11-13`) verifying plain search phrases `\"why is the sky blue\"` (`autocomplete = yes`), `\"rayleigh scattering\"` (`autocomplete = yes`), `\"why are sunsets red\"` (`autocomplete = yes`), ranking videos (`StarTalk` `UvmWxm3nR6E` `3,394,689` views, `Netflix Jr.` `Ldm_9LsKblU` `1,050,550` views, `NASA Space Place` `ehUIlhKhzDA` `937,900` views), and `0` exact collisions on all disambiguated long and Short candidate titles.\n5. `02_Video-Projects/103_Tyndall-Rayleigh-Why-Is-The-Sky-Blue/production-status.md` and OWB PR `#881` `jobs/WIP.json` (`next_hos`) & `jobs/reviews/J2748/NOTE.md`.\n\n### Review Scope (Rule E)\n1. Score `HOS:103` against the Rule-E Topic Opportunity & Go/No-Go checklist (`TOPIC_OPPORTUNITY_SCORE.md` / `TOPIC_GO_NO_GO_SHEET.md` in `11_Upload-Package/`): search demand (`Rule 26`), neighbour pool (`≥3` education videos `≥1M` views), non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, proof-first `0:05–0:15` apparatus fit (`Tyndall's 1869 glowing glass tube`), and 2 candidate search-led Shorts.\n2. Keep all historical and scientific claims (especially Saussure's cyanometer details, Tyndall's 1869 vapour reagents, and the solar-spectrum / human-cone explanation for why the sky is not violet) explicitly marked **unverified** until `SOURCES.md` primary quotes and the `facts` lane run when `HOS:103` enters an active HOS WIP slot under Rule G.\n3. Record the Rule-E verdict (`GO` / `HOLD` / `NO-GO`) for Chief review. Do not start script lock, VO, or picture generation.\n",
       "ref": "",
@@ -244108,11 +244108,25 @@
           "at": "2026-11-13T13:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T13:55Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review HOS 103 topic brief, neighbour/search evidence, and Rule-E scorecard on HOS PR #572",
       "kind": "review",
-      "plain": "Rule-E topic go/no-go review for HOS 103 (Why Is the Sky Blue? And Why It Isn't Violet) on HOS PR #572 and OWB PR #881"
+      "plain": "Rule-E topic go/no-go review for HOS 103 (Why Is the Sky Blue? And Why It Isn't Violet) on HOS PR #572 and OWB PR #881",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2777",
