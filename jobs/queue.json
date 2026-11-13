@@ -245506,20 +245506,25 @@
           "at": "2026-11-13T17:57Z",
           "by": "codex",
           "what": "step 2 of 3 done: Approved refresh deployed successfully; compressed Worker 2809.40 KiB, within Free limit; checking production now"
+        },
+        {
+          "at": "2026-11-13T17:58Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Refresh live; 22 routes 200; pounds, green dot, domains, www redirect and indexing headers verified; CPU median 10 ms/max 145 ms, all 20 ok"
         }
       ],
-      "remaining_action": "Verify the live refresh, custom domains, pound prices, indexing headers and CPU timings",
+      "remaining_action": "Deployment and verification complete",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the new look live on Ben's product site, and put the old one back if anything breaks",
       "urgent": 10,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-13T17:57Z",
+        "at": "2026-11-13T17:58Z",
         "by": "codex",
-        "note": "Approved refresh deployed successfully; compressed Worker 2809.40 KiB, within Free limit; checking production now"
+        "note": "Refresh live; 22 routes 200; pounds, green dot, domains, www redirect and indexing headers verified; CPU median 10 ms/ma"
       }
     }
   ],
