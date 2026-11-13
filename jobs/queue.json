@@ -242092,6 +242092,11 @@
           "at": "2026-11-13T09:42Z",
           "by": "codex",
           "what": "reopened: Taking the requested elected-Chief condition ruling; original J2172 remains blocked. Worker evidence complete; review progress tracked separately."
+        },
+        {
+          "at": "2026-11-13T09:42Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected-Chief J2757 ruling requested this run; verification only, parent held."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J2172 --recheck J2757 and jobs.py done J2757",
@@ -242106,8 +242111,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:010"
       ]
