@@ -237382,17 +237382,22 @@
           "at": "2026-11-13T01:58Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Neon Free plan already installed on the team (no card). Preview and Production env lists are empty. No marketplace resources on this project yet."
+        },
+        {
+          "at": "2026-11-13T02:01Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Neon free provision returned 402. Team paused until 2026-12-12 18:13 UTC. Production env still empty."
         }
       ],
-      "remaining_action": "Create a free isolated Neon database for Preview only",
+      "remaining_action": "Create the isolated Preview database once the fair-use pause lifts",
       "kind": "assembly",
       "plain": "Set up a safe test database for the History of Science app preview",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T01:58Z",
+        "at": "2026-11-13T02:01Z",
         "by": "cursor",
-        "note": "Neon Free plan already installed on the team (no card). Preview and Production env lists are empty. No marketplace resou"
+        "note": "Neon free provision returned 402. Team paused until 2026-12-12 18:13 UTC. Production env still empty."
       },
       "taskKeys": [
         "HOS:006"
