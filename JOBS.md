@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2765 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2753 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
-| J2769 | any | claimed | gemini | 2026-11-13T10:15Z | review · Verify condition for J2035 |  |
+| J2769 | any | blocked | gemini | – | review · Verify condition for J2035 |  |
 
 Recently finished:
 

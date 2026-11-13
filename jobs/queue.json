@@ -242681,13 +242681,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-13T08:15Z",
-      "eta": "2026-11-13T10:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T08:13Z",
-      "result": "",
+      "result": "parked for Chief: Verified J2035 waiting condition (commit e6f5ed37e2, jobs/reviews/J2769/REVIEW.md) — condition NOT yet satisfied, keep J2035 blocked: (1) Mini 05_Music still has only the 3 J2663 scope files (J2663_CHECKS.txt, SCORE_DECISION_J2663.md, SCORE_SCOPE_J2663.json) and studio-live NAS 05_Music is still absent; (2) J2666 (open) has not yet executed to apply Chief desk ruling 6813193837 and release J2664 (blocked) — note that J2666 gets background=1 in workflow.order because J2664 has no due field and J2035 has after=J2632 instead of J2664, so setting due=2026-11-15T18:00:00Z on J2664 will let J2666 dispatch first; (3) Read-only check of live ElevenLabs safeguards for 6813193837 at 08:21Z confirmed ready (GET /v1/user/subscription=200, 87,416 remaining, character_count=33,698/121,114, max_credit_limit_extension=0, current_overage=0, elevenlabs.lock and TTS_PAUSE absent, 0 running EL processes); (4) Both diagram KEEP approvals (J2631 sha e35f9a98... on Mini+NAS; J2632 r4 sha 23c832b0... on NAS + MANIFEST.json on Mini) and locked narration (VO_TAKES_KEEP.json sha 530743c5...) remain valid. Because jobs.py restricts wait --recheck J2769 to the elected Chief, Chief please run the wait J2035 --recheck J2769 and done J2769 commands in jobs/reviews/J2769/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-13T08:13Z",
@@ -242718,6 +242718,11 @@
           "at": "2026-11-13T08:24Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3: Committed jobs/reviews/J2769/REVIEW.md (e6f5ed37e2); J2035 condition remains NOT MET awaiting J2666->J2664 score delivery (live EL safeguards for desk 6813193837 verified ready)"
+        },
+        {
+          "at": "2026-11-13T08:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified J2035 waiting condition (commit e6f5ed37e2, jobs/reviews/J2769/REVIEW.md) — condition NOT yet satisfied, keep J2035 blocked: (1) Mini 05_Music still has only the 3 J2663 scope files (J2663_CHECKS.txt, SCORE_DECISION_J2663.md, SCORE_SCOPE_J2663.json) and studio-live NAS 05_Music is still absent; (2) J2666 (open) has not yet executed to apply Chief desk ruling 6813193837 and release J2664 (blocked) — note that J2666 gets background=1 in workflow.order because J2664 has no due field and J2035 has after=J2632 instead of J2664, so setting due=2026-11-15T18:00:00Z on J2664 will let J2666 dispatch first; (3) Read-only check of live ElevenLabs safeguards for 6813193837 at 08:21Z confirmed ready (GET /v1/user/subscription=200, 87,416 remaining, character_count=33,698/121,114, max_credit_limit_extension=0, current_overage=0, elevenlabs.lock and TTS_PAUSE absent, 0 running EL processes); (4) Both diagram KEEP approvals (J2631 sha e35f9a98... on Mini+NAS; J2632 r4 sha 23c832b0... on NAS + MANIFEST.json on Mini) and locked narration (VO_TAKES_KEEP.json sha 530743c5...) remain valid. Because jobs.py restricts wait --recheck J2769 to the elected Chief, Chief please run the wait J2035 --recheck J2769 and done J2769 commands in jobs/reviews/J2769/REVIEW.md."
         }
       ],
       "remaining_action": "Elected Chief to record --recheck J2769 wait on J2035 and close J2769",
