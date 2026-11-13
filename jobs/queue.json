@@ -226659,15 +226659,27 @@
           "at": "2026-11-13T09:04Z",
           "by": "codex",
           "what": "reopened: J2759 Chief KEEP recorded at 36ac022bfe, jobs/reviews/J2759/CHIEF_RULING.md. Fresh five-source API/HEAD probes all HTTP 200 with matching sizes; locked WAV and rough hashes independently match. Resume existing PR 560, prior plan 1/4: download approved five files, verify rights/credits/hashes, render composites and rebuild internal rough. Snow uses L0058154. All 67 dependency slates, J2659 scope and all film gates retained; GBP 0 / zero credits. HTTP 429 stops requests and sets input hold until Retry-After or six hours."
+        },
+        {
+          "at": "2026-11-13T09:04Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Restored original 1/4 worker checkpoint after verified-hold reopen; no new assembly milestone claimed."
         }
       ],
-      "remaining_action": "After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
+      "remaining_action": "Download the five approved Anaesthesia pictures, build their scenes, reconcile captions and rebuild the internal timing rough.",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the free pictures for the Anaesthesia film and lay the film out on its voice-over, to prove the timing before any credits are spent",
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-13T09:04Z",
+        "by": "codex",
+        "note": "Restored original 1/4 worker checkpoint after verified-hold reopen; no new assembly milestone claimed."
+      }
     },
     {
       "id": "J2564",
