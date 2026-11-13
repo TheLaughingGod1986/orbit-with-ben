@@ -194506,20 +194506,25 @@
           "at": "2026-11-13T07:22Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Forward-hold tests passed. Two spans, 21 frames. Master frames 2868 and 2869 stay out. Rendering those plates."
+        },
+        {
+          "at": "2026-11-13T07:23Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Franklin tail sha b34d2e62 and 0bc4fc2b. Frames 2868-2869 stay out. HOS PR 542 commit 7781ccd3. 90 tests OK. check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Render the Franklin clear-tail plates",
+      "remaining_action": "Rebuild frames 2868-2869, the table lead-in, SAFE PATH DOWN and the foil check, then mux and run the film gates",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T07:22Z",
+        "at": "2026-11-13T07:23Z",
         "by": "cursor",
-        "note": "Forward-hold tests passed. Two spans, 21 frames. Master frames 2868 and 2869 stay out. Rendering those plates."
+        "note": "Franklin tail sha b34d2e62 and 0bc4fc2b. Frames 2868-2869 stay out. HOS PR 542 commit 7781ccd3. 90 tests OK. check_all P"
       }
     },
     {
