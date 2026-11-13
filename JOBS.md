@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2551 | mini | blocked | codex | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2614 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2622 | cloud | blocked | claude | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
-| J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
+| J2650 | mini | claimed | codex | 2026-11-13T23:41Z | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
 | J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
