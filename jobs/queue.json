@@ -1,5 +1,5 @@
 {
-  "next_id": 2757,
+  "next_id": 2760,
   "jobs": [
     {
       "id": "J0001",
@@ -188514,6 +188514,11 @@
           "at": "2026-11-13T00:48Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T05:30:00Z"
+        },
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J2757"
         }
       ],
       "remaining_action": "Await independent acceptance of the twelve Dinosaur scenes in J2271, then assemble Shorts A and C under Option A1.",
@@ -188532,10 +188537,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2731 Chief ruling: J2270 production is complete; fresh check matches all 12 moving-plate hashes in working and archive copies (24/24). J2271 independent acceptance is still unmet, zero KEEP. Review rerouted from producer Gemini to Codex, with tool/still review now and actual watch/listen at Ben final watch under 4 Nov order. Preserve after J2271, progress 1/3, accepted A/C VO hashes, J1004 Option A1 and every rule-8/media gate. No assembly release.",
-        "check_at": "2026-11-13T05:30:00Z",
+        "check_at": "2026-11-13T06:36:50+00:00",
         "last_recheck": "J2731",
         "checked_at": "2026-11-13T00:48:20+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2757"
       }
     },
     {
@@ -197309,6 +197315,11 @@
           "at": "2026-11-13T00:54Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T05:30:00Z"
+        },
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J2758"
         }
       ],
       "remaining_action": "Have an independent reviewer with moving-video input finish the Dinosaur scene checks.",
@@ -197339,10 +197350,11 @@
       "hold": {
         "type": "capability",
         "condition": "This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.",
-        "check_at": "2026-11-13T05:30:00Z",
+        "check_at": "2026-11-13T06:36:50+00:00",
         "requires": [
           "moving_video_input"
-        ]
+        ],
+        "recheck_task": "J2758"
       }
     },
     {
@@ -226496,6 +226508,11 @@
           "at": "2026-11-13T03:09Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-13T05:30:00Z"
+        },
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J2759"
         }
       ],
       "remaining_action": "After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
@@ -226515,7 +226532,8 @@
       "hold": {
         "type": "date",
         "condition": "Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.",
-        "check_at": "2026-11-13T05:30:00Z"
+        "check_at": "2026-11-13T06:36:50+00:00",
+        "recheck_task": "J2759"
       }
     },
     {
@@ -241552,6 +241570,102 @@
       "remaining_action": "Reconcile the quality report with the original check results and return it for review",
       "kind": "qa",
       "plain": "Correcting missing warnings in the video quality reports for both channels"
+    },
+    {
+      "id": "J2757",
+      "title": "Verify condition for J2172",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2172: J2731 Chief ruling: J2270 production is complete; fresh check matches all 12 moving-plate hashes in working and archive copies (24/24). J2271 independent acceptance is still unmet, zero KEEP. Review rerouted from producer Gemini to Codex, with tool/still review now and actual watch/listen at Ben final watch under 4 Nov order. Preserve after J2271, progress 1/3, accepted A/C VO hashes, J1004 Option A1 and every rule-8/media gate. No assembly release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2172 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T05:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await independent acceptance of the twelve Dinosaur scenes in J2271, then assemble Shorts A and C under Option A1.",
+      "kind": "review",
+      "recheck_of": "J2172",
+      "due": "2026-11-13T06:36:50+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2758",
+      "title": "Verify condition for J2271",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2271: This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2271 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T05:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Have an independent reviewer with moving-video input finish the Dinosaur scene checks.",
+      "kind": "review",
+      "recheck_of": "J2271",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-13T06:36:50+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2759",
+      "title": "Verify condition for J2563",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2563: Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2563 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T05:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
+      "kind": "review",
+      "recheck_of": "J2563",
+      "due": "2026-11-13T06:36:50+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
