@@ -245639,9 +245639,14 @@
           "at": "2026-11-13T18:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T18:17Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2790; starting step 1 trace of video_tracker.py and kanban_snapshot.py against HOS main and PR 548"
         }
       ],
-      "remaining_action": "Find why the Atom film card loses its live video on the per-film path and fix it",
+      "remaining_action": "Trace how video_tracker.py and kanban_snapshot.py link HOS:004 to GHZDsiH7L7A on one-file vs per-file paths",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245656,11 +245661,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T18:16Z",
+        "at": "2026-11-13T18:17Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2790; starting step 1 trace of video_tracker.py and kanban_snapshot.py against HOS main and PR 548"
+      },
+      "taskKeys": [
+        "HOS:004"
+      ]
     }
   ],
   "focus": [
