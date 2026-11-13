@@ -14,7 +14,7 @@
       "state": "done"
     },
     "vo": {
-      "state": "done",
+      "state": "doing",
       "ref": "shots done"
     },
     "shots": {
@@ -33,6 +33,14 @@
       "state": "todo"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "vo",
+      "by": "gemini",
+      "at": "2026-11-13T17:29Z",
+      "eta": "2026-11-13T17:54Z",
+      "note": ""
+    }
+  ],
   "next": "KEEP (J2219, PR #553 fab7cf9b61): plan & linking script locked; takes next WIP slot when 031 or 032 reaches Ben's watch, then J2220 (VO), J2221 (assembly), J2222 (review)"
 }
