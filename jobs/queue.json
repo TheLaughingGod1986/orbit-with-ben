@@ -192294,13 +192294,13 @@
       "stage": "vo",
       "after": "J2219",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-12T02:56Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "parked for Chief: eight takes recorded on studio-live; resolve five pace exceptions (1,3,5,6,7), intro forged/forge and Venus locked/locks ASR uncertainty. Local commit 6fd3a85d7d and NAS VO_STATUS.md hold evidence. Automatic review rejected evidence push. No retakes or assembly release.",
+      "result": "J2786 Chief acceptance: eight selected WAVs in J2784_PACE_v01.json PASS. Selected and original hashes independently verified; all takes 131.84-143.68 wpm; J2785 Gemini direct audio QA 8/8 KEEP. J2221 assembly may proceed using selected WAVs. Decision merged in PR 906.",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -192371,9 +192371,14 @@
           "at": "2026-11-13T17:02Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T17:00:00Z"
+        },
+        {
+          "at": "2026-11-13T22:16Z",
+          "by": "codex",
+          "what": "J2786 acceptance resolves held parent without a second production claim; J2786 Chief acceptance: eight selected WAVs in J2784_PACE_v01.json PASS. Selected and original hashes independently verified; all takes 131.84-143.68 wpm; J2785 Gemini direct audio QA 8/8 KEEP. J2221 assembly may proceed using selected WAVs. Decision merged in PR 906."
         }
       ],
-      "remaining_action": "Complete the five pace repairs and dependent audio review before voice acceptance",
+      "remaining_action": "None: accepted narration handed to J2221 assembly",
       "kind": "vo",
       "progress": {
         "step": 3,
@@ -192383,15 +192388,16 @@
         "note": "All eight takes recorded and tool-verified on studio-live. Local evidence commit 6fd3a85d7d. Five pace exceptions and tw"
       },
       "plain": "Record the linking voice-over for the first Journey film",
-      "hold": {
+      "escalated_at": "2026-11-12T06:44Z",
+      "resolved_hold": {
         "type": "dependency",
         "condition": "J2665 Chief ruling FIX: J2784 must produce versioned pace repairs for takes 1,3,5,6,7; dependent audio QA and elected-Chief acceptance must pass before J2220 closes and J2221 assembly unlocks. Original takes preserved; no new recording or spend.",
         "check_at": "2026-11-14T17:00:00Z",
-        "last_recheck": "J2665",
-        "checked_at": "2026-11-13T17:02:21+00:00",
+        "last_recheck": "J2786",
+        "checked_at": "2026-11-13T22:16:12+00:00",
         "checked_by": "codex"
       },
-      "escalated_at": "2026-11-12T06:44Z"
+      "done_ref": "2cc9e660e4"
     },
     {
       "id": "J2221",
