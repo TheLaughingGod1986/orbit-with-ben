@@ -99,6 +99,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2764 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2711 |  |
 | J2765 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2753 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
+| J2768 | any | open | – | – | review · Verify condition for J1130 |  |
+| J2769 | any | open | – | – | review · Verify condition for J2035 |  |
 
 Recently finished:
 
