@@ -245629,13 +245629,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-13T18:16Z",
-      "eta": "2026-11-13T19:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T18:00Z",
-      "result": "",
+      "result": "parked for Chief: 3 runs in a row hit the time cap at step 1 of 4 without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released.",
       "history": [
         {
           "at": "2026-11-13T18:00Z",
@@ -245726,6 +245726,11 @@
           "at": "2026-11-13T21:08Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Traced lookup in video_tracker.py and kanban_snapshot.py: attach_pipeline_uploads only runs on one_file(slug), while film_status relies on release_record (PACKAGE_UPLOAD_RESULT*.json, absent for 004) and uploads_index (which only reads ROOT/OWB UPLOADS.json)"
+        },
+        {
+          "at": "2026-11-13T21:25Z",
+          "by": "relay",
+          "what": "blocked: parked for Chief: 3 runs in a row hit the time cap at step 1 of 4 without finishing a step. Split the job, narrow its next step, or have the long part started detached (tmux) and released."
         }
       ],
       "remaining_action": "Compare kanban_snapshot tracker output between HOS main and PR 548 and verify the exact fix",
