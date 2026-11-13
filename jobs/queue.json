@@ -188346,9 +188346,14 @@
           "at": "2026-11-12T20:07Z",
           "by": "relay",
           "what": "condition verification queued: J2730"
+        },
+        {
+          "at": "2026-11-13T00:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T05:15:00Z"
         }
       ],
-      "remaining_action": "Build the two gravity Shorts after the approved score and long assembly are complete; then run checks and submit for review",
+      "remaining_action": "Build the two gravity Shorts after the approved score and long assembly are complete, then check the cuts and submit for review",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188363,12 +188368,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2035 long assembly must finish with the approved HOS 009 own score and gates. Picture dispositions are settled through J2631 and J2632 KEEP; J2586/J2587 closed not-made, not retake KEEP. J2664 still owns score production and its duration-tariff/pending-charge preflight; local 05_Music contains scope files only. Existing VO, picture windows, GBP0 preparation scope and final-watch requirements remain in force.",
-        "check_at": "2026-11-12T21:07:58+00:00",
-        "last_recheck": "J2685",
-        "checked_at": "2026-11-12T11:59:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2730"
+        "condition": "J2730 Chief review: unmet. Independent Mini/NAS inventory confirms no long master; Mini 05_Music has only three scope files and NAS 05_Music is absent. J2666 must apply existing desk ruling 6813193837 with fresh live safeguards, then J2664 delivers own score, stems, provenance, music gates and capable listening review with Chief acceptance; J2035 must complete long assembly and gates before J2171. Retain picture KEEP dispositions, locked VO and picture windows, GBP0 Shorts scope and final-watch requirements. Verification date is not automatic release.",
+        "check_at": "2026-11-13T05:15:00Z",
+        "last_recheck": "J2730",
+        "checked_at": "2026-11-13T00:42:49+00:00",
+        "checked_by": "codex"
       }
     },
     {
