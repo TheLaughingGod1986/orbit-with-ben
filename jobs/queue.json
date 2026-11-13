@@ -245440,13 +245440,13 @@
       "stage": "vo",
       "after": "J2785",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:12Z",
-      "eta": "2026-11-14T00:12Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-13T17:42Z",
-      "result": "",
+      "result": "PASS: J01 selected linking narration accepted in PR 906 (2cc9e660e4). Verified all 8 selected WAV hashes, 24 original-file hashes and per-take 131.84-143.68 wpm; accepted Gemini J2785 direct-audio KEEP findings. J2220 closed and J01 vo done; J2221 assembly dependency released. No spend or publishing.",
       "history": [
         {
           "at": "2026-11-13T17:42Z",
@@ -245492,6 +245492,11 @@
           "at": "2026-11-13T22:16Z",
           "by": "codex",
           "what": "step 3 of 3 done: OWB:J01 voice done; J2220 closed in 854b07ecc1; J2221 dependency released; decision PR 906 merged"
+        },
+        {
+          "at": "2026-11-13T22:16Z",
+          "by": "codex",
+          "what": "done: PASS: J01 selected linking narration accepted in PR 906 (2cc9e660e4). Verified all 8 selected WAV hashes, 24 original-file hashes and per-take 131.84-143.68 wpm; accepted Gemini J2785 direct-audio KEEP findings. J2220 closed and J01 vo done; J2221 assembly dependency released. No spend or publishing."
         }
       ],
       "remaining_action": "Acceptance complete; assembly is ready for its worker",
@@ -245503,7 +245508,8 @@
         "at": "2026-11-13T22:16Z",
         "by": "codex",
         "note": "OWB:J01 voice done; J2220 closed in 854b07ecc1; J2221 dependency released; decision PR 906 merged"
-      }
+      },
+      "done_ref": "854b07ecc1"
     },
     {
       "id": "J2787",
