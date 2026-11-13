@@ -243879,20 +243879,25 @@
           "at": "2026-11-13T14:02Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed the single dispatched test-deployment job"
+        },
+        {
+          "at": "2026-11-13T14:03Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Exact commit cloned; npm ci complete; owner ruling verified; no eligible old scratch for offload"
         }
       ],
-      "remaining_action": "Read the migration guide and verify the free Cloudflare account",
+      "remaining_action": "Deploy the test Worker on the free Cloudflare plan",
       "due": "2026-11-13T14:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site up on a Cloudflare test address and measure it, before its domain moves",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T14:02Z",
+        "at": "2026-11-13T14:03Z",
         "by": "codex",
-        "note": "Claimed the single dispatched test-deployment job"
+        "note": "Exact commit cloned; npm ci complete; owner ruling verified; no eligible old scratch for offload"
       }
     },
     {
