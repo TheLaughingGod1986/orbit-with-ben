@@ -243884,20 +243884,25 @@
           "at": "2026-11-13T14:03Z",
           "by": "codex",
           "what": "step 1 of 3 done: Exact commit cloned; npm ci complete; owner ruling verified; no eligible old scratch for offload"
+        },
+        {
+          "at": "2026-11-13T14:05Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Test deploy completed; compressed Worker 2809.74 KiB, below 3 MiB; no secrets or domain changes"
         }
       ],
-      "remaining_action": "Deploy the test Worker on the free Cloudflare plan",
+      "remaining_action": "Measure routes, UK prices, indexing headers and Worker CPU",
       "due": "2026-11-13T14:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site up on a Cloudflare test address and measure it, before its domain moves",
       "urgent": 10,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-13T14:03Z",
+        "at": "2026-11-13T14:05Z",
         "by": "codex",
-        "note": "Exact commit cloned; npm ci complete; owner ruling verified; no eligible old scratch for offload"
+        "note": "Test deploy completed; compressed Worker 2809.74 KiB, below 3 MiB; no secrets or domain changes"
       }
     },
     {
