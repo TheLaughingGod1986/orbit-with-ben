@@ -236307,13 +236307,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-13T08:46Z",
-      "eta": "2026-11-13T10:46Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T08:21Z",
-      "result": "",
+      "result": "parked for Chief: J2662 waiting condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md), ready to reopen J2662: (1) all 8 HOS 008 Short C v03 raw source clips (19_skyline_strike_t1.mp4 06caaeb6..., 01_house_rod_t1.mp4 3822f6f7..., 07_giant_spark_t1.mp4 8be031a3..., 12_steeple_fire_t1.mp4 421b96d9..., 18_rod_closeup_t1.mp4 9535c72f..., 06_rod_fitting_t1.mp4 73c43fc2..., 06_rod_fitting_c1_t1.mp4 de605071..., 14_safe_towers_t1.mp4 0c7e98c2...) were located in the Mini's hos-008-lightning picture store and restored with 3-way SHA-256 verification to both studio-live (/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/) and the Mini shared HOS checkout; (2) the v03 build recipe (_build_short_c_v03.py from HOS PR #555 a0190a2f, sha256 0b59eb72...) is restored to studio-live 10_Shorts/J2255/_build_short_c_v03.py, and all VO, STT, music bed, house SFX, and v03 master files match byte-for-byte across Mini and studio-live; (3) J2485 zero-spend (£0) re-cut rules remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (claude) please merge PR #895 and run: python3 scripts/jobs.py reopen J2662 --agent claude --note 'J2687 verified condition MET (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): all 8 HOS 008 Short C v03 raw source clips and the J2255 build recipe (_build_short_c_v03.py, sha256 0b59eb72...) are restored from Mini hos-008-lightning originals to both studio-live and the Mini shared HOS 008 folder with 3-way SHA-256 verification, and all VO/STT/music/SFX stems match across Mini and NAS. Ready to build and gate hos_008_short_C_v04.mp4 (£0).' --git && python3 scripts/jobs.py done J2687 --agent claude --result 'Condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): restored all 8 HOS 008 Short C v03 raw source clips and J2255 _build_short_c_v03.py to studio-live and Mini shared HOS 008 folder with 3-way SHA-256 verification; reopened J2662 for £0 v04 re-cut.' --git. £0.",
       "history": [
         {
           "at": "2026-11-12T08:21Z",
@@ -236349,6 +236349,11 @@
           "at": "2026-11-13T08:57Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Opened OWB PR #895 (6f9bb7f06c, jobs/reviews/J2687/REVIEW.md); J2662 condition MET with all 8 raw clips + J2255 recipe restored and SHA-256 verified"
+        },
+        {
+          "at": "2026-11-13T08:57Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2662 waiting condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md), ready to reopen J2662: (1) all 8 HOS 008 Short C v03 raw source clips (19_skyline_strike_t1.mp4 06caaeb6..., 01_house_rod_t1.mp4 3822f6f7..., 07_giant_spark_t1.mp4 8be031a3..., 12_steeple_fire_t1.mp4 421b96d9..., 18_rod_closeup_t1.mp4 9535c72f..., 06_rod_fitting_t1.mp4 73c43fc2..., 06_rod_fitting_c1_t1.mp4 de605071..., 14_safe_towers_t1.mp4 0c7e98c2...) were located in the Mini's hos-008-lightning picture store and restored with 3-way SHA-256 verification to both studio-live (/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/) and the Mini shared HOS checkout; (2) the v03 build recipe (_build_short_c_v03.py from HOS PR #555 a0190a2f, sha256 0b59eb72...) is restored to studio-live 10_Shorts/J2255/_build_short_c_v03.py, and all VO, STT, music bed, house SFX, and v03 master files match byte-for-byte across Mini and studio-live; (3) J2485 zero-spend (£0) re-cut rules remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (claude) please merge PR #895 and run: python3 scripts/jobs.py reopen J2662 --agent claude --note 'J2687 verified condition MET (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): all 8 HOS 008 Short C v03 raw source clips and the J2255 build recipe (_build_short_c_v03.py, sha256 0b59eb72...) are restored from Mini hos-008-lightning originals to both studio-live and the Mini shared HOS 008 folder with 3-way SHA-256 verification, and all VO/STT/music/SFX stems match across Mini and NAS. Ready to build and gate hos_008_short_C_v04.mp4 (£0).' --git && python3 scripts/jobs.py done J2687 --agent claude --result 'Condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): restored all 8 HOS 008 Short C v03 raw source clips and J2255 _build_short_c_v03.py to studio-live and Mini shared HOS 008 folder with 3-way SHA-256 verification; reopened J2662 for £0 v04 re-cut.' --git. £0."
         }
       ],
       "remaining_action": "Elected Chief (claude) merges PR #895, reopens J2662 with evidence, and marks J2687 done",
