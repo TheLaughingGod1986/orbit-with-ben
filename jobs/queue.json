@@ -226327,13 +226327,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-13T09:07Z",
-      "eta": "2026-11-13T11:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
-      "result": "",
+      "result": "Built the five remaining Anaesthesia archive rows and internal timing rough v11. SHA-256 0903b729ef9de8bfbb8952e5791a9bc4f6d1401f18e10d9601eda051179a9cf7, 535.300 s, 16059 frames, on studio-live. 26 free rows and 67 dependency slates, including P5:16b. Snow uses L0058154. No generated P1:07b, so the reuse slate stays: disjoint use would need 11.13 s and an 8 s clip would overlap by 3.13 s. HOS PR 560 at 47f45f15. Desk note 6848944910. No motion or listening review, no film-stage pass, no UAT. GBP 0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-11T06:28Z",
@@ -226689,6 +226689,11 @@
           "at": "2026-11-13T09:15Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Rough v11 is on studio-live, 535.300 s, sha 0903b729ef9de8bfbb8952e5791a9bc4f6d1401f18e10d9601eda051179a9cf7. PR 560 at 47f45f15. Five archive holds replaced. P5:16b stays a slate."
+        },
+        {
+          "at": "2026-11-13T09:16Z",
+          "by": "cursor",
+          "what": "done: Built the five remaining Anaesthesia archive rows and internal timing rough v11. SHA-256 0903b729ef9de8bfbb8952e5791a9bc4f6d1401f18e10d9601eda051179a9cf7, 535.300 s, 16059 frames, on studio-live. 26 free rows and 67 dependency slates, including P5:16b. Snow uses L0058154. No generated P1:07b, so the reuse slate stays: disjoint use would need 11.13 s and an 8 s clip would overlap by 3.13 s. HOS PR 560 at 47f45f15. Desk note 6848944910. No motion or listening review, no film-stage pass, no UAT. GBP 0 / 0 credits."
         }
       ],
       "remaining_action": "Ask a moving-picture reviewer to look at the internal rough",
