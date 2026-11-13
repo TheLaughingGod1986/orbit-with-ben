@@ -243620,10 +243620,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T12:17Z",
+      "eta": "2026-11-13T13:02Z",
       "created_by": "claude",
       "created_at": "2026-11-13T11:19Z",
       "result": "",
@@ -243667,6 +243667,11 @@
           "at": "2026-11-13T12:15Z",
           "by": "codex",
           "what": "remaining action: Register the approved opptiai test subdomain, deploy the prepared site and measure its pages and CPU use; Chief ruling 6851696170."
+        },
+        {
+          "at": "2026-11-13T12:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Register the approved opptiai test subdomain, deploy the prepared site and measure its pages and CPU use; Chief ruling 6851696170.",
@@ -243674,7 +243679,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site up on a Cloudflare test address and measure it, before its domain moves",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T12:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2773",
