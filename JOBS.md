@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2786 | mini | open (after J2785) | – | – | J01 vo · chief · J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785) | b1b25626c9 |
 | J2787 | mini | claimed | macbook-2 | 2026-11-13T18:05Z | studio · First-day check at 6 h: "What Was the Edward Jenner Experiment?" (cLKDiYP55J8) |  |
-| J2788 | mini | open | – | – | studio · First-day check at 6 h: "Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) |  |
+| J2788 | mini | claimed | macbook | 2026-11-13T18:05Z | studio · First-day check at 6 h: "Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) |  |
 
 Recently finished:
 
