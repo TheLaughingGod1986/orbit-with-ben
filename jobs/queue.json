@@ -244289,9 +244289,14 @@
           "at": "2026-11-13T14:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T14:21Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2777; replaced default plan with 3-step verification of J2171 waiting condition on HOS 009"
         }
       ],
-      "remaining_action": "Verify readiness: Build the two gravity Shorts after the score is approved and the long assembly is complete, then check the cuts and submit for review",
+      "remaining_action": "Inspect J2171 prerequisites (J2666, J2664, J2035) and HOS 009 music/long-render directories on Mini and NAS",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-13T14:54:51+00:00",
@@ -244310,9 +244315,11 @@
         "of": 3,
         "at": "2026-11-13T14:21Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2777; replaced default plan with 3-step verification of J2171 waiting condition on HOS 009"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2778",
