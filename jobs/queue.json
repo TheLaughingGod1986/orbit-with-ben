@@ -178578,9 +178578,14 @@
           "at": "2026-11-13T18:40Z",
           "by": "relay",
           "what": "condition verification queued: J2791"
+        },
+        {
+          "at": "2026-11-13T23:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T06:00:00Z"
         }
       ],
-      "remaining_action": "Finish the existing music approval and production work, then check the delivered score before assembling the gravity film",
+      "remaining_action": "Resolve the music reuse check through the queued investigation, then verify the score before assembling the gravity film",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178596,12 +178601,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2769 Chief ruling: NOT MET. Fresh Mini inventory matches the three J2663 scope hashes in jobs/reviews/J2769/REVIEW.md; NAS 05_Music absent. No score, stems, provenance or music gate evidence delivered. J2666 specialist verification is now complete and parked for its separate elected-Chief ruling, superseding the report that it was open. J2664 retains the staged measured-meter protocol of desk6813193837, fresh recorder-lock/pause/meter/overage/pending-work checks, cue delivery, comparisons and required review/Chief acceptance. Prior diagram KEEP and narration locks remain; no spend or assembly release authorized here. J2664 now carries assembly deadline 2026-11-15T18:00Z so its prerequisite review inherits priority.",
-        "check_at": "2026-11-13T19:40:50+00:00",
-        "last_recheck": "J2769",
-        "checked_at": "2026-11-13T10:27:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2791"
+        "condition": "J2791 Chief ruling NOT MET: music delivered and all 77 comparisons readable, but reused gate still FAILs at 0.804/0.811/0.821. J2663 explicitly forbids waivers. J2795 owns bounded no-spend code diagnosis and proposed correction PR or revised score scope; no deployment or generation. Require valid passing gate and final score acceptance before assembly; preserve VO and diagram KEEP locks.",
+        "check_at": "2026-11-14T06:00:00Z",
+        "last_recheck": "J2791",
+        "checked_at": "2026-11-13T23:38:30+00:00",
+        "checked_by": "codex"
       }
     },
     {
