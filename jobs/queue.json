@@ -244323,10 +244323,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T15:24Z",
+      "eta": "2026-11-13T17:24Z",
       "created_by": "relay",
       "created_at": "2026-11-13T13:54Z",
       "result": "parked for Chief: Verified J2171 waiting condition (commit b157efa416, jobs/reviews/J2777/REVIEW.md) — condition NOT yet satisfied, keep J2171 blocked: (1) J2666 completed its 08:36Z specialist preflight (b75a024145, jobs/reviews/J2666/REVIEW.md) and remains blocked (parked for Chief, escalated 11:27Z) awaiting the elected Chief's decision to reopen J2664 under Chief desk ruling 6813193837 (fresh 14:24Z live ElevenLabs safeguards verified: HTTP 200, 87,416 remaining credits, max_credit_limit_extension=0, current_overage=0, elevenlabs.lock and TTS_PAUSE absent, 0 running EL jobs); (2) J2664 (blocked, due 2026-11-15T18:00:00Z) has not yet delivered the HOS 009 own wonder/teach score, stems, provenance, music_gate PASS or audio_input listening review, and J2035 long assembly remains blocked (last_recheck J2769 at 10:27Z) with Mini 05_Music containing only the 3 J2663 scope files (ea992517..., 23d3fb21..., 7e1ea5bb...) and NAS 05_Music and both 09_Final-Render folders absent; (3) All picture KEEP dispositions (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0..., J2586/J2587 closed not-made, Short A S03 P03:07_ball_to_moon sha fba484bb...), locked 5-part and Shorts A/B narration (VO_TAKES_KEEP sha 530743c5..., Short A v02 sha c2fd407d..., Short B v04 sha 0c9c4c6f...), and SHORTS_PICTURE_PLAN_v03.json (sha 6a0fb1df...) remain verified intact across Mini and NAS. Because jobs.py restricts wait --recheck J2777 to the elected Chief, Chief please run the wait J2171 --recheck J2777 (to 2026-11-13T20:25:00Z) and done J2777 commands in jobs/reviews/J2777/REVIEW.md alongside deciding J2666.",
@@ -244375,6 +244375,11 @@
           "at": "2026-11-13T15:24Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief taking ownership solely to close the completed review; J2171 remains held with recorded ruling and J2666 follow-up."
+        },
+        {
+          "at": "2026-11-13T15:24Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2777 on J2171 (check-at 2026-11-13T20:25:00Z), close J2777, and decide J2666 to reopen J2664",

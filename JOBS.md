@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
 | J2773 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
-| J2777 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2171 |  |
+| J2777 | mini | claimed | codex | 2026-11-13T17:24Z | for codex · review · `gpt-6-astra` · Verify condition for J2171 |  |
 | J2780 | mini | blocked | codex | – | for codex · studio · oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 
