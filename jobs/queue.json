@@ -239130,10 +239130,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T15:35Z",
+      "eta": "2026-11-13T17:35Z",
       "created_by": "relay",
       "created_at": "2026-11-12T18:05Z",
       "result": "",
@@ -239192,6 +239192,11 @@
           "at": "2026-11-13T15:35Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected-Chief ownership of this completed condition review; Gemini worker review accepted, parent already released with evidence."
+        },
+        {
+          "at": "2026-11-13T15:35Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J0875 with evidence and mark J2717 done",
@@ -239211,7 +239216,15 @@
       "taskKeys": [
         "HOS:007"
       ],
-      "escalated_at": "2026-11-13T13:33Z"
+      "escalated_at": "2026-11-13T13:33Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T15:35Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2718",
