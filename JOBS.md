@@ -12,7 +12,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0124 | mini | blocked | claudecode | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
-| J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
+| J0875 | mini | open | – | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
