@@ -233784,13 +233784,13 @@
       "stage": "",
       "after": "J2634",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:41Z",
-      "eta": "2026-11-13T23:41Z",
+      "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-11T21:31Z",
-      "result": "",
+      "result": "Implemented in HOS PR #579 (852fc8b6). All required local checks and 28 desk tests pass. Claude review then Chief merge; live watcher not restarted.",
       "history": [
         {
           "at": "2026-11-11T21:31Z",
@@ -233851,6 +233851,11 @@
           "at": "2026-11-13T22:44Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR HOS #579 opened; required local check_all and 28 desk tests pass. Watcher untouched; review required before merge."
+        },
+        {
+          "at": "2026-11-13T22:45Z",
+          "by": "codex",
+          "what": "done: Implemented in HOS PR #579 (852fc8b6). All required local checks and 28 desk tests pass. Claude review then Chief merge; live watcher not restarted."
         }
       ],
       "remaining_action": "Claude reviews the desk fix before Chief merges",
@@ -233865,7 +233870,8 @@
         "at": "2026-11-13T22:44Z",
         "by": "codex",
         "note": "PR HOS #579 opened; required local check_all and 28 desk tests pass. Watcher untouched; review required before merge."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/579"
     },
     {
       "id": "J2651",
