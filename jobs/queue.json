@@ -241221,9 +241221,14 @@
           "at": "2026-11-13T03:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2753; replacing default_plan with 4-step QA sweep plan (1: scan OWB/HOS packs for new renders since J2415, 2: run OWB gates, 3: run HOS gates, 4: commit gate outputs/report and queue any fix jobs)"
+        },
+        {
+          "at": "2026-11-13T03:57Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: Verified all 209 J2415 baseline entries intact with 0 stale sidecars; identified 19 post-J2415 OWB exports (024 v04, 025 dust v05 & ingenuity v06-v08, 026 mon16 v05-v06 & wed18 v06-v07, 031 short2 v03, 032 master v02, 033 master v02, SA s7 v02 & s8 v02, dated supermoon v01-v04) and 2 HOS visual packs (009_code_graphics_v01 updated with J2631/J2632, new 013_code_graphics_v01 from J2476)"
         }
       ],
-      "remaining_action": "Scan OWB and HOS video packs for renders missing fresh picture_qa, polish_gate, or music_gate outputs",
+      "remaining_action": "Run missing or stale picture_qa, polish_gate, and music_gate checks on new OWB renders since J2415",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "rerouted_from": {
@@ -241236,12 +241241,22 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T03:45Z",
+        "at": "2026-11-13T03:57Z",
         "by": "gemini",
-        "note": "Claimed J2753; replacing default_plan with 4-step QA sweep plan (1: scan OWB/HOS packs for new renders since J2415, 2: r"
-      }
+        "note": "Step 1/4 done: Verified all 209 J2415 baseline entries intact with 0 stale sidecars; identified 19 post-J2415 OWB export"
+      },
+      "taskKeys": [
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:031",
+        "OWB:032",
+        "OWB:033",
+        "HOS:009",
+        "HOS:013"
+      ]
     },
     {
       "id": "J2754",
