@@ -194580,9 +194580,14 @@
           "at": "2026-11-13T11:39Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Frame 2869 stays out. Measuring master frames 423-426 against the tower and table plates."
+        },
+        {
+          "at": "2026-11-13T11:42Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Table lead-in is tower frames 170-173, sha bf087a98. PR 542 commit 29838281. Frame 2869 stays out. 98 tests and check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Rebuild the four table lead-in frames from the tower plate",
+      "remaining_action": "Build SAFE PATH DOWN, then the foil check at frame 3353, before the mux",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194591,9 +194596,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-13T11:39Z",
+        "at": "2026-11-13T11:42Z",
         "by": "cursor",
-        "note": "Frame 2869 stays out. Measuring master frames 423-426 against the tower and table plates."
+        "note": "Table lead-in is tower frames 170-173, sha bf087a98. PR 542 commit 29838281. Frame 2869 stays out. 98 tests and check_al"
       }
     },
     {
