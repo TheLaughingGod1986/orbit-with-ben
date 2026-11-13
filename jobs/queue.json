@@ -1,5 +1,5 @@
 {
-  "next_id": 2795,
+  "next_id": 2796,
   "jobs": [
     {
       "id": "J0001",
@@ -246338,6 +246338,38 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2795",
+      "title": "Music gate: diagnose reuse false positives without waivers",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J2791 acting-Chief ruling: diagnose the HOS009 music reuse failure without spending or weakening a gate.\n\nRead HOS AGENTS.md, studio/RULES.md, SCORE_SCOPE_J2663.json and SCORE_DECISION_J2663.md, OWB jobs/reviews/J2791/REVIEW.md and CHIEF_DECISION.md, and HOS EAR_REVIEW_J2783.md. The complete comparison report is /Volumes/MiniWork/scratch/j2664/music_gate_j2791_complete77.json; candidate joined bed SHA256 d7f5bf3d7553d7c611a913e93602b8ec83419821059294ddeaee32269a4f9572. All 77 files were readable; the three reuse hits remain 0.804, 0.811 and 0.821. Listening evidence is Gemini testimony, not a replacement numeric PASS. Scope explicitly says No gate waivers.\n\nBound this investigation to one worker run (20 minutes). Reproduce the three matches from the actual complete inventory and inspect the algorithm. Establish whether it confuses timbral similarity with reuse using positive controls (identical audio and genuine reused audio with gain/trim changes) and distinct independently sourced compositions; do not tune thresholds to this film or hide comparisons. Record reproducible results, hashes, limits and a concrete recommendation. If a general defect is demonstrated, prepare a separate draft PR with focused meaningful regressions; do not merge or deploy it or change the production gate. HOS rules require Ben approval for a correction to a failed check: first make the proposal concrete for Chief review and that required final approval. If no defect is proven, recommend a bounded revised music scope for Chief, with no generation in this job. Preserve all cues, stems, VO, diagram KEEP locks and prior gate output. No waiver, new spend, gate PASS, assembly release, YouTube or Buffer change. No audio-perception claims from measurements. Report for elected-Chief decision; J2035 remains held pending a valid passing gate and final score acceptance. Assembly deadline 2026-11-15T18:00Z.\n",
+      "ref": "J2791",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-13T23:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T23:38Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Reproduce music similarity failures and propose a tested correction or revised score scope",
+      "due": "2026-11-15T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Check why the gravity film music is being flagged as reused"
     }
   ],
   "focus": [
