@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714, J2793.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2714.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -76,10 +76,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2791 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2793 | mini | claimed | codex | 2026-11-13T23:27Z | for codex · studio · oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page) |  |
 
 Recently finished:
 
+- J2793 done: oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page) (Growth pass 08cf657 live as 3dcd2eef-215a-42a1-9b23-bab0b5b357df; rollback f858ae31 retained. All 22 routes 200, guides/Blog/JSON-LD/GBP/www/domains verified. CPU first median 29 ms max 179; warm median 7.5 max 13; all ok. Zero spend; report posted to thread 6867174443.)
 - J2790 done: History of Science Atom film: board loses its live video when film state moves to one file per film (Done by Claude: cause found and fixed in orbit-with-ben PR 905 (merged 7730379d, 13 Nov 22:15Z). The per-film shape read only upload receipts; it now falls back to the channel's UPLOADS.json long, as the one-file shape does. Board built from HOS main and the PR 548 branch: 313 cards each, none differ; Orbit unchanged. Strong-model review: MERGE. Minor follow-up: video_tracker's CLI and approved_deliver.py still read receipts only.)
 - J2789 done: oppti.dev: put the visual refresh live (Ben: "ship the refresh") (Approved refresh 227b8bd deployed live as f858ae31-bf88-4b2b-8ef4-d5060155564d; prior rollback 7d172ed2-756f-47b0-be35-0366cf8ff1e3. All 22 checked routes 200; pound prices, green-dot label, both custom domains, www 308 and no X-Robots-Tag verified. Twenty-page CPU median 10 ms/max 145 ms, all ok. No rollback needed; zero spend. Full local report: _desk/reports/J2789/REPORT.md.)
 - J2788 done: First-day check at 6 h: "Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) (PR #903 (macbook/J2788 -> main, commit 74c5cbd9f; 0 faults in Studio).
@@ -123,4 +123,3 @@ PR #904 (`macbook/J2787` -> `main`): `05_Analytics/hos/launch/cLKDiYP55J8.json` 
 - J2784 done: J01: repair pace of five linking voice takes without new recording (Pace repair pace_v01 is on the shared film store. Takes 1, 3, 5, 6 and 7 were slowed with ffmpeg atempo only, to 140.03, 140.08, 140.12, 140.02 and 140.08 wpm, means -22.4, -22.2, -23.3, -23.4 and -23.7 dB, 48 kHz stereo kept, decode clean. Takes 2, 4 and 8 are the original bytes at 135.80, 131.84 and 143.68 wpm. All eight MP3 hashes still match the J2665 review. Local speech-to-text found no repeated phrases. Take 1 text differs from the earlier whisper at world's/worlds and forged/forge; take 3 only loses a full stop after flips. This worker did not listen. Evidence 41c1e352c9. No spend, no film-stage pass, J2220 still held. J2785 can listen next.)
 - J2783 done: HOS 009: listen to the new score before it is accepted (PASS by ear; music_gate similarity hits (0.821 OWB 013 electronic synth pad, 0.804/0.811 HOS 002 solo flute waltz) are spectral false positives, not musical reuse; 15 iCloud UAT files remain unresolved for Chief decision)
 - J2781 done: Rule-E topic go/no-go review: two new Orbit backlog films from J2778 (PR #901) (PR #902 (jobs/reviews/J2781/VERDICT.md). OWB:066 Moon one side: GO, 6 fixes for the script job (first line too long, Luna 3/Apollo 8/GRAIL unsourced, crust explanation stated as settled, Shorts under the 22 s floor). OWB:067 Fall into Neptune: GO, 10 fixes; main one is diamond rain has no source in the brief and needs one before script lock or is cut; title B and Short 1 repeat the live Neptune winds Short; Mach 1.7 unsourced; 9x vs 2,000/400 km/h contradiction. Neighbour views, title collisions and NASA quotes not re-checked (no web access here). Nothing queued; both stay in WIP next. PR #901 and #902 are the Chief's to merge.)
-- J2780 done: oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) (Cloudflare Free zone active; nameservers switched via signed-in Vercel CLI current registrar API. Both domains attached to unchanged performance Worker. Current public DNS HTTPS: home/pricing/blog/rss 200, www 308, pounds, 50 RSS items, no X-Robots-Tag. All 16 records match on both public resolvers. Local DNS cache may briefly retain Vercel. Service keys remain for Ben.)

@@ -246178,13 +246178,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:57Z",
-      "eta": "2026-11-13T23:27Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T22:52Z",
-      "result": "",
+      "result": "Growth pass 08cf657 live as 3dcd2eef-215a-42a1-9b23-bab0b5b357df; rollback f858ae31 retained. All 22 routes 200, guides/Blog/JSON-LD/GBP/www/domains verified. CPU first median 29 ms max 179; warm median 7.5 max 13; all ok. Zero spend; report posted to thread 6867174443.",
       "history": [
         {
           "at": "2026-11-13T22:52Z",
@@ -246215,6 +246215,11 @@
           "at": "2026-11-13T23:06Z",
           "by": "codex",
           "what": "step 3 of 3 done: All 22 routes 200; guide links, Blog, JSON-LD, GBP, www 308 and domains verified; first CPU 29/179 ms, warm 7.5/13 ms, all ok"
+        },
+        {
+          "at": "2026-11-13T23:07Z",
+          "by": "codex",
+          "what": "done: Growth pass 08cf657 live as 3dcd2eef-215a-42a1-9b23-bab0b5b357df; rollback f858ae31 retained. All 22 routes 200, guides/Blog/JSON-LD/GBP/www/domains verified. CPU first median 29 ms max 179; warm median 7.5 max 13; all ok. Zero spend; report posted to thread 6867174443."
         }
       ],
       "remaining_action": "Release verified live and report recorded",
@@ -246229,7 +246234,8 @@
         "at": "2026-11-13T23:06Z",
         "by": "codex",
         "note": "All 22 routes 200; guide links, Blog, JSON-LD, GBP, www 308 and domains verified; first CPU 29/179 ms, warm 7.5/13 ms, a"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6867174443"
     }
   ],
   "focus": [
