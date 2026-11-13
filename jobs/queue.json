@@ -242109,13 +242109,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T09:03Z",
-      "eta": "2026-11-13T11:03Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T05:36Z",
-      "result": "parked for Chief: Verified J2563 waiting condition (commit f35465649c, jobs/reviews/J2759/REVIEW.md) — condition MET at 2026-11-13T05:49Z: (1) 05:30 UTC Wikimedia download hold has elapsed (>6h 45m since 23:01Z rate limit) and live spaced Commons API + upload.wikimedia.org HEAD probes returned HTTP 200 for all 5 remaining archive targets (P5:03a L0057829, P5:04a M0005603, P5:06a Simpson PDF, P5:07a JSON alternate Snow inhaler L0058154, P5:14a M0003436); (2) NAS timing rough v10 (sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48), locked WAV (sha d873f1d0...), cue schedule (sha 0bff2f8e...), all 88 delivered row hashes (verify_checkpoint_v08 PASS), validate_retime_v03 PASS, and 9/9 unit tests on HOS PR #560 (5dde86f6) remain intact; (3) J2659 Chief timing/source ruling (6810336587) and GBP 0 / 0-credit locks remain valid. Because jobs.py reopen requires chief_relay.elected_for, elected Chief (codex) please run: jobs.py reopen J2563 --agent codex --note '...' --git and jobs.py done J2759 --agent codex --result '...' --git (exact commands in jobs/reviews/J2759/REVIEW.md).",
+      "result": "Chief KEEP: 36ac022bfe, jobs/reviews/J2759/CHIEF_RULING.md and CHIEF_PROBES.json. Fresh API/HEAD checks all five approved sources HTTP 200, sizes match; NAS WAV/rough hashes match. J2563 reopened for its existing no-spend assembly scope at 1/4, HOS:011; download five files, build composites, reconcile cues and rebuild rough. Snow alternate L0058154 required; 67 dependency slates and all gates retained. Stop on 429 and record Retry-After or six-hour input hold. No film approval or UAT.",
       "history": [
         {
           "at": "2026-11-13T05:36Z",
@@ -242166,6 +242166,11 @@
           "at": "2026-11-13T09:03Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T09:05Z",
+          "by": "codex",
+          "what": "done: Chief KEEP: 36ac022bfe, jobs/reviews/J2759/CHIEF_RULING.md and CHIEF_PROBES.json. Fresh API/HEAD checks all five approved sources HTTP 200, sizes match; NAS WAV/rough hashes match. J2563 reopened for its existing no-spend assembly scope at 1/4, HOS:011; download five files, build composites, reconcile cues and rebuild rough. Snow alternate L0058154 required; 67 dependency slates and all gates retained. Stop on 429 and record Retry-After or six-hour input hold. No film approval or UAT."
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py reopen J2563 and jobs.py done J2759",
