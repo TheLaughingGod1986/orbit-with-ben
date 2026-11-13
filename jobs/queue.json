@@ -218550,6 +218550,11 @@
           "at": "2026-11-10T03:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T07:47Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 414 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
@@ -218558,7 +218563,16 @@
       "required_capabilities": [
         "audio_input",
         "moving_video_input"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2478",
