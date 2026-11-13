@@ -214277,14 +214277,14 @@
     },
     {
       "id": "J2449",
-      "title": "Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda",
+      "title": "Andromeda: start approved baseline versus v02 title and thumbnail test",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben's answer (11 Nov, in chat; recorded 11 Nov 23:59Z).** He was asked: \"Is it OK to press Continue when the old test has finished and its result is recorded?\" He said: \"ok\". So, for this job:\n\n1. Read the old test in Studio. It must show as finished, not running.\n2. Make sure its result is in the studio's ledger (`05_Analytics/tests/THUMB_LEDGER.json`, or the title ledger) with the time you read it in Studio, and save a screenshot of the finished report.\n3. Only then press Continue on \"Start a new experiment? This deletes your current experiment\" and start the new test.\n4. If the old test is still running, or its result cannot be recorded, do not press Continue. Park the job and say why.\n\nThis covers a finished test only. Replacing a test that is still running stays on the Never list.\n\n---\n\nAfter J2448. In Orbit Studio (CDP 9223, check the channel first), for each of 3xrxdmaOwJI, -jmMROGoZCM, ojk-dfOpAmw: if a Test & Compare is already running, do NOT replace it: release with a note. Otherwise start a 3-arm title + thumbnail test: current title/thumb, package A, package B (J2447 text, J2448 images). Read back that the test shows Running with 3 arms. Never change privacy, schedule, description or the video. Record the test start time per video in jobs.py done --result. £0.",
+      "body": "J2737 exact-file PASS (jobs/reviews/J2737/REVIEW.md) supersedes the original three-video, three-arm brief. This is only ojk-dfOpAmw, exactly TWO title-and-thumbnail arms.\n\nArm 1, unchanged baseline: What Happens During the Milky Way Andromeda Collision? / thumb_packaging_v01_ojk-dfOpAmw.jpg / SHA256 250c9980986f2b5e3faca5399e7a8ce19e6711ca5de7d6f05bf78140b2bb2515.\nArm 2, approved challenger: Milky Way Andromeda Collision (What Happens to Our Sun?) / STARS RARELY HIT / 019_andromeda_package_A_v02_ojk-dfOpAmw.jpg / SHA256 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c.\nBoth files and META_v02.json are under /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/019_Andromeda-Milky-Way-Collision/08_Thumbnails/repackage_2026-11/J2729_v02/.\n\nUse Orbit Studio CDP 9223, reuse the existing tab, verify channel and fresh test state. Never replace a running or newly set test. If the current baseline differs, stop for reconciliation. Ben permission (11 Nov, recorded 23:59Z): he answered ok to pressing Continue only when the old test has finished and its result is recorded. Preserve finished result, Studio-read time and screenshot in the ledger before Continue; if unavailable, hold. The historical T017 finish is not a substitute for a fresh Studio read.\n\nExclude Package B and all older candidates. Do not touch Black Hole T002 or Jupiter T030. No description, script, video, privacy or schedule changes. Record exact arms, image hashes, test start and Running/two-arm readback in existing test ledger and job result. No spend. Do not start before J2737 is complete; no substitution of panel alternative wording.",
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "J2448",
+      "after": "J2737",
       "eta_min": 60,
       "status": "blocked",
       "by": "codex",
@@ -214433,16 +214433,19 @@
           "at": "2026-11-12T20:03Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T09:00:00Z"
+        },
+        {
+          "at": "2026-11-13T03:17Z",
+          "by": "codex",
+          "what": "J2737 PASS narrows remaining execution to exact baseline versus v02 on Andromeda only; hold retained until decision is merged"
         }
       ],
-      "remaining_action": "Wait for the revised Andromeda thumbnail and its final review before starting the two-arm test",
+      "remaining_action": "Start the approved two-arm Andromeda test after a fresh Studio check",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "taskKeys": [
-        "OWB:002",
-        "OWB:019",
-        "OWB:020"
+        "OWB:019"
       ],
       "progress": {
         "step": 2,
@@ -214456,7 +214459,8 @@
         "type": "dependency",
         "condition": "J2692 ruled FIX on canonical Andromeda Package A. PR #836 merged; J2729 must rebuild the whole-galaxy challenger, complete a new exact-file panel and obtain elected-Chief PASS before this job reopens for only the two-arm Andromeda test. No other videos or description changes.",
         "check_at": "2026-11-14T09:00:00Z"
-      }
+      },
+      "plain": "Testing the new Andromeda title and thumbnail against the current version"
     },
     {
       "id": "J2450",
