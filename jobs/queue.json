@@ -246371,9 +246371,14 @@
           "at": "2026-11-13T23:41Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T23:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Reproduce music similarity failures and propose a tested correction or revised score scope",
+      "remaining_action": "Testing whether the music comparison mistakes different compositions for reused audio",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -246383,10 +246388,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-13T23:41Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
