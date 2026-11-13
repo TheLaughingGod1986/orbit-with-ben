@@ -1,5 +1,5 @@
 {
-  "next_id": 2793,
+  "next_id": 2794,
   "jobs": [
     {
       "id": "J0001",
@@ -246138,6 +246138,38 @@
       "taskKeys": [
         "HOS:010"
       ]
+    },
+    {
+      "id": "J2793",
+      "title": "oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (13 Nov, after the refresh went live): \"go through the whole website, try to optimize the SEO, speed, the UX, the UI, try to really build a website to encourage users to get to blogs, to download the plugins and to grow organically. Maybe internal linking, anything you can do.\"** Queued 13 Nov 22:52Z. Follow-up to J2789; reuse that clone.\n\n**What to deploy.** Branch `claude/growth-pass` of `TheLaughingGod1986/oppti.dev` at `08cf6577921448740e75e06f0d10ed81822fb521`. It is the live code (`227b8bd`) plus two commits:\n- `75821f5`: a \"Latest guides\" row of three post cards on the home page and each plugin page, \"Blog\" as a top-level menu link, and on phones a contents list and the plugin prompt inside each blog post.\n- `08cf657`: the search markup (article, breadcrumb, FAQ) is written into the page's HTML. Before, a script added it after the page loaded, so a crawler that runs no scripts never saw it.\n\nBuilt and checked in the cloud session: type check and lint pass, 226 tests pass and 1 fails as on main, the Cloudflare build succeeds, the Worker is 2,810 KiB compressed.\n\n**Do.**\n1. Note the version that is live now (`npx wrangler deployments list --name oppti-dev`), so it can be put back.\n2. `git fetch origin claude/growth-pass`, check out `08cf6577921448740e75e06f0d10ed81822fb521`, `npm ci`, `npm run cf:deploy`. Do not pass `--domain`: the addresses are in `wrangler.jsonc`.\n3. Check on `https://oppti.dev`:\n   - the home page has a \"Latest guides\" heading with three links to `/blog/...` posts under it;\n   - the top menu has a \"Blog\" link;\n   - with plain `curl` (no browser), one blog post's HTML holds `\"@type\":\"Article\"` and `\"@type\":\"BreadcrumbList\"` inside `<script type=\"application/ld+json\">` tags, and `/plugins/alt-text` holds `\"@type\":\"SoftwareApplication\"`;\n   - `/`, `/pricing`, `/blog`, that blog post, `/plugins`, `/plugins/alt-text`, `/plugins/titles`, `/plugins/internal-linking`, `/rss.xml` and `/sitemap.xml` answer 200 with content;\n   - `/pricing` shows pound prices from the Mini; `www` redirects to the bare domain; both addresses are still custom domains on the Worker; no `X-Robots-Tag` on the bare domain.\n   - Read the CPU for the same twenty pages as J2789 (median, highest, any outcome not `ok`). The home and plugin pages are prebuilt, so it should not have moved; say if it has.\n4. If any check fails and is not fixed in a few minutes, put the earlier version back (`npx wrangler rollback --name oppti-dev`) and report what failed. A broken live site is worse than the old one.\n\n**Guards.** £0, Free plan only. No DNS change, no secrets, nothing on Vercel or Stripe. No pull request merged. No secret, account address or email printed.\n\n**Result.** Whether it is live, each check with what it returned, the version that was live before, the CPU figures, and anything that failed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T22:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T22:52Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Deploy oppti.dev's growth-pass branch to the live Worker, check the pages, markup, prices and addresses, roll back if a check fails",
+      "due": "2026-11-14T08:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put the latest improvements live on Ben's product site, and put the old version back if anything breaks",
+      "urgent": 10
     }
   ],
   "focus": [
