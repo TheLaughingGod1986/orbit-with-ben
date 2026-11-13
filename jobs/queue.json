@@ -241340,19 +241340,19 @@
       "title": "HOS: learn from our data, add two new films to the backlog",
       "needs": "any",
       "repo": "hos",
-      "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
+      "body": "CHIEF FIX, 13 Nov 2026. This reopen is the correction of the submitted work. It is not a new pair of topics and it approves nothing.\n\nRuling: jobs/reviews/J2748/RULING.md (adopts Codex review d1e1e26ed0). OWB PR #881 and HOS PR #572 stay open and unmerged. HOS:102 (ozone hole) and HOS:103 (blue sky) stay proposals on those branches. Do not open a third copy of the same topic work.\n\nDo these corrections, then stop:\n1. Complete the neighbour and public-search evidence for each proposal. Save three actual on-topic education video URLs, view counts and retrieval dates, plus each tool output. A remembered title is not evidence. Verify the plain search phrase, two ranking videos and title collisions. If a topic cannot meet the gate, replace it with a non-duplicate candidate that can. Do not waive the gate or leave the missing research to an empty review job.\n2. Correct the analytics comparison. State the snapshot time, numerator and elapsed-day convention. Rank all eligible public longs and Shorts consistently by views/day. Show the top and bottom three with CTR, average viewed and stayed where available, and UNKNOWN or not applicable otherwise. Keep lifetime Studio metrics separate from rolling Analytics windows. The submitted long table puts Willow third by views/day, but its prose replaces Willow with Germs and calls Willow a loser. Separate rankings by metric if useful. The Short line says 215 views in three days and 53.8/day: disclose the actual denominator (53.8 implies four days).\n3. Treat the title and retention patterns as hypotheses. Seven Germs views cannot establish a robust winning format. 105% average viewed is consistent with replay, not proof of an intentional seamless loop. Remove unsupported absolutes such as \"only shown when the title is a plain question\" and \"most-typed science question\". The same brief lists X-rays, a plain question, among weak results. Label opening, thumbnail and length observations with evidence or UNKNOWN. Do not infer them from the title alone.\n4. Keep the history and science claims explicitly unverified. The remembered satellite-processing story and the violet explanation are not cleared for narration or Short opens. No spoken draft is approved. Source and check them through the facts lane before any later script lock.\n5. Update both existing PRs rather than opening duplicate topic work. Recheck project folders, ideas and WIP for overlap. Add the films to next_hos only after the evidence is complete. Active capacity and rule-E gates stay unchanged. After the evidence is in those PRs, create two substantive kind:review HOS rule-E jobs with the evidence paths and an explicit dependency on completion of J2748, and list their ids in the handoff. No production work starts from those jobs.\n\nSpend nothing. No Studio or publish change. Finish with jobs.py done and a result that names the two topics, the data line behind each, both PR urls, and the two review-job ids.\n\nORIGINAL BRIEF (still the standard this correction has to meet):\nHistory of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-13T02:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-13T02:01Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2748 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-13T02:01Z",
@@ -241373,20 +241373,21 @@
           "at": "2026-11-13T04:38Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-13T10:45Z",
+          "by": "chief",
+          "what": "reopened: FIX recorded by Chief (Grok Bot), 13 Nov 2026, adopting Codex review d1e1e26ed0. Neither HOS:102 nor HOS:103 is approved. OWB PR #881 and HOS PR #572 stay open and unmerged. The script lane does the corrections in jobs/reviews/J2748/RULING.md now: neighbour and public-search evidence, consistent views/day rankings with small-sample caveats, science claims stay unverified, update those two PRs, then create two rule-E review jobs that depend on this job finishing. No production, spend, or Studio change. Nothing for Ben."
+        },
+        {
+          "at": "2026-11-13T10:45Z",
+          "by": "chief",
+          "what": "remaining action: Correct the two open topic proposals, then queue their reviews"
         }
       ],
-      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
+      "remaining_action": "Correct the two open topic proposals, then queue their reviews",
       "kind": "script",
-      "backlog": "hos-ideas",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-13T02:06Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "escalated_at": "2026-11-13T04:38Z"
+      "backlog": "hos-ideas"
     },
     {
       "id": "J2749",
