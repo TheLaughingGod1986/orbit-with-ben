@@ -242074,7 +242074,7 @@
     {
       "id": "J2762",
       "title": "Verify condition for J2621",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2621: J2751 Chief ruling HOLD: accepted condition evidence PR883 at a3c7a9f53f2e718f0af83d6236b1ab990c268515 (293 targeted tests and temporary split home=0 registry=0 tests=0 names=0; not a current merge or system PASS). Direct GitHub read confirms PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS, core workflow SKIPPED. Picture window, HOS535 and J2619 prerequisites remain satisfied. Existing J2738 owns exact-head repair review and full current checks; J2618 owns approved merge then one observed Mini relay cycle and board publish. Only after those artifacts exist verify J2621 registry/tests/home zero on merged code before closing. No duplicate repair or rebase; original approvals and unrelated holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2621 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -242094,13 +242094,27 @@
           "at": "2026-11-13T07:16Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 384 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: After the repair review and merge, check the live relay, board refresh and separated-channel tests",
       "kind": "review",
       "recheck_of": "J2621",
       "due": "2026-11-13T08:16:33+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2763",
