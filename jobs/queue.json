@@ -240689,9 +240689,14 @@
           "at": "2026-11-13T02:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T02:20Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Review the repaired file-copy code under J2738, then merge and verify the Mini relay and board under J2618",
+      "remaining_action": "Inspect J2618, J2738, J2742, and PR #869 status to verify whether J2618 waiting condition is satisfied",
       "kind": "review",
       "recheck_of": "J2618",
       "due": "2026-11-13T03:18:17+00:00",
@@ -240699,10 +240704,8 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T02:19Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-13T02:20Z",
+        "by": "gemini"
       }
     }
   ],
