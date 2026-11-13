@@ -245464,10 +245464,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T17:52Z",
+      "eta": "2026-11-13T18:22Z",
       "created_by": "claude",
       "created_at": "2026-11-13T17:50Z",
       "result": "",
@@ -245476,6 +245476,11 @@
           "at": "2026-11-13T17:50Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-13T17:52Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Deploy oppti.dev's refresh branch to the live Worker, check the pages, prices and addresses, roll back if a check fails",
@@ -245483,7 +245488,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put the new look live on Ben's product site, and put the old one back if anything breaks",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T17:52Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
