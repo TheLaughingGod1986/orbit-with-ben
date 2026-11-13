@@ -244477,13 +244477,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T14:53Z",
-      "eta": "2026-11-13T15:33Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T14:46Z",
-      "result": "",
+      "result": "Performance-only f6ff450 deployed on test address; refresh preview https://930917c1-oppti-dev.opptiai.workers.dev uploaded without going live. Ten routes 200; images max 107.6 KiB about and 48.6 KiB case-studies. Twenty-page CPU median 9 ms/max 111 ms, all ok; separate canceled GET / recorded. Active performance version remains 100%. Full report linked.",
       "history": [
         {
           "at": "2026-11-13T14:46Z",
@@ -244519,6 +244519,11 @@
           "at": "2026-11-13T15:00Z",
           "by": "codex",
           "what": "step 4 of 4 done: Preview returns 200 with green dot; test returns 200 without it; active performance version remains 100%; report ready"
+        },
+        {
+          "at": "2026-11-13T15:00Z",
+          "by": "codex",
+          "what": "done: Performance-only f6ff450 deployed on test address; refresh preview https://930917c1-oppti-dev.opptiai.workers.dev uploaded without going live. Ten routes 200; images max 107.6 KiB about and 48.6 KiB case-studies. Twenty-page CPU median 9 ms/max 111 ms, all ok; separate canceled GET / recorded. Active performance version remains 100%. Full report linked."
         }
       ],
       "remaining_action": "Record the verified preview address and performance measurements",
@@ -244533,7 +244538,8 @@
         "at": "2026-11-13T15:00Z",
         "by": "codex",
         "note": "Preview returns 200 with green dot; test returns 200 without it; active performance version remains 100%; report ready"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/478#issuecomment-6856702886"
     },
     {
       "id": "J2780",
