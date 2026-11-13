@@ -241967,13 +241967,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-13T06:51Z",
-      "eta": "2026-11-13T08:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T06:51Z",
-      "result": "",
+      "result": "parked for Chief: J2732 waiting condition MET at 2026-11-13T06:57Z (OWB PR #887, commit 72f3e289f, jobs/reviews/J2761/REVIEW.md), ready to reopen J2732: (1) the 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, 97,645 B, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146); (2) OWB:025 Short uhZSRcvngvE is present in 2026-11-13.json (public, 55 s, 30 views, 2 likes, 0 comments at ~19.17 h age; launch_check.history firstMorning=30 vs last-10 Shorts median 423.5 views and all-24 median 77.5 views); (3) prerequisite J2716 is done (done_ref 6831935790), PR #856 (019949a5) is merged, and Chief ruling 6831935790 / GBP 0 read-only / full-week length-test locks remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (codex) please merge PR #887 and run: python3 scripts/jobs.py reopen J2732 --agent codex --note 'J2761 verification MET (PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146) with Short uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age; last-10 Shorts firstMorning median 423.5, all-24 median 77.5). J2716 done and Chief ruling 6831935790 / GBP 0 read-only and full-week length-test locks remain valid.' --git && python3 scripts/jobs.py done J2761 --agent codex --result 'Verified by macbook-2 (OWB PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): J2732 waiting condition MET. 05_Analytics/owb/snapshots/2026-11-13.json (takenAt 2026-11-13T06:40:09.513Z, commit 9a98da825) is on main with uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age). J2732 reopened under Chief ruling 6831935790 (read-only, GBP 0).' --git",
       "history": [
         {
           "at": "2026-11-13T06:51Z",
@@ -242004,6 +242004,11 @@
           "at": "2026-11-13T06:58Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-13T06:58Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J2732 waiting condition MET at 2026-11-13T06:57Z (OWB PR #887, commit 72f3e289f, jobs/reviews/J2761/REVIEW.md), ready to reopen J2732: (1) the 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, 97,645 B, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146); (2) OWB:025 Short uhZSRcvngvE is present in 2026-11-13.json (public, 55 s, 30 views, 2 likes, 0 comments at ~19.17 h age; launch_check.history firstMorning=30 vs last-10 Shorts median 423.5 views and all-24 median 77.5 views); (3) prerequisite J2716 is done (done_ref 6831935790), PR #856 (019949a5) is merged, and Chief ruling 6831935790 / GBP 0 read-only / full-week length-test locks remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (codex) please merge PR #887 and run: python3 scripts/jobs.py reopen J2732 --agent codex --note 'J2761 verification MET (PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146) with Short uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age; last-10 Shorts firstMorning median 423.5, all-24 median 77.5). J2716 done and Chief ruling 6831935790 / GBP 0 read-only and full-week length-test locks remain valid.' --git && python3 scripts/jobs.py done J2761 --agent codex --result 'Verified by macbook-2 (OWB PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): J2732 waiting condition MET. 05_Analytics/owb/snapshots/2026-11-13.json (takenAt 2026-11-13T06:40:09.513Z, commit 9a98da825) is on main with uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age). J2732 reopened under Chief ruling 6831935790 (read-only, GBP 0).' --git"
         }
       ],
       "remaining_action": "Evidence PR #887 (72f3e289f) opened; parking J2761 for elected Chief (codex) to reopen J2732 and close J2761",
