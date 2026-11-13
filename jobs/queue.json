@@ -241733,6 +241733,11 @@
           "at": "2026-11-13T07:16Z",
           "by": "relay",
           "what": "condition verification queued: J2765"
+        },
+        {
+          "at": "2026-11-13T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 4 h"
         }
       ],
       "remaining_action": "Await J2756 correction of the quality report, then verify the corrected evidence",
@@ -241770,7 +241775,8 @@
         "condition": "Chief FIX recorded in local commit 8f1ca3e73a. J2756 must reconcile omitted warnings and cut counts, then the corrected sweep needs review. Evidence branch push was rejected by automatic approval review; local evidence is in /Volumes/MiniWork/scratch/J2753-chief-review/jobs/reviews/J2753. No film approval or gate waiver.",
         "check_at": "2026-11-13T08:16:33+00:00",
         "recheck_task": "J2765"
-      }
+      },
+      "escalated_at": "2026-11-13T09:46Z"
     },
     {
       "id": "J2754",
@@ -242000,6 +242006,11 @@
           "at": "2026-11-13T07:14Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2756 reconciliation complete for parent J2753 (Chief review ref 8f1ca3e73a) across OWB commit 91bc39789e and HOS PR #575 (33b6f534). Byte-identical J2753_QA_SWEEP_INVENTORY_2026-11-13.json (sha256 269ea8fc3dd5a0df5b021d9dc087a8a1b579636661a3b35266926d02c5caaedb) and J2753_QA_SWEEP_REPORT_2026-11-13.md (sha256 4e27c46a78ce11618710bb43f72c48506319f07d0dc205756d533ac0dd8c5d16) verified by jobs/reviews/J2756/validate_j2756.py (jobs/reviews/J2756/VALIDATION.json: 0 missing sidecars, 0 sha256 mismatches, 0 verdict mismatches, 0 field mismatches, 0 item-list mismatches, 0 derived entry mismatches, 0 remaining Chief-66 discrepancies across all 228 entries / 663 sidecars). Reconciled totals: 2,794 gate warnings (picture_qa=620, polish_gate=343 [+34], music_gate=1,831 [+200]) and 3,761/3,761 cut rows (picture_qa +49 on 8 J1467 entries; polish_gate +425 on 28 entries). Music uniqueness vs unreadable inputs explicitly separated: 1,771 OSError unreadable comparison warnings across 128 partial_unreadable_comparisons entries (67 current_newest + 61 historical_superseded), 60 pace warnings across 60 entries, and 79/207 full_readable_comparisons entries (76 PASS + 3 historical Apophis FAIL). Explicit Section 1A correction note added; all independent holds preserved. Ready for Chief review to close J2756 and parent J2753. Spend: £0."
+        },
+        {
+          "at": "2026-11-13T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for Chief review alongside parent J2753",
@@ -242031,7 +242042,8 @@
         "HOS:009",
         "HOS:011",
         "HOS:013"
-      ]
+      ],
+      "escalated_at": "2026-11-13T09:46Z"
     },
     {
       "id": "J2757",
@@ -242355,6 +242367,11 @@
           "at": "2026-11-13T06:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified J2714 waiting condition (commit 666bbd7010, jobs/reviews/J2760/REVIEW.md) — condition NOT YET MET at 2026-11-13T06:15Z, keep J2714 blocked: (1) npx wrangler pages secret list --project-name studio-kanban lists 7 encrypted production secrets (BOARD_KEY, R2_ACCESS_KEY_ID, R2_ACCOUNT_ID, R2_PUBLIC_URL, R2_SECRET_ACCESS_KEY, WATCH_LINK_SECRET, WATCH_UPLOAD_KEY) and BOARD_GH_TOKEN is still absent; key-name check of 07_Content-Ops/.env shows BOARD_KEY and WATCH_UPLOAD_KEY only; no reply from Ben on the studio thread since comment 6839530655; (2) live probes on https://studio-kanban.pages.dev return HTTP 500 {'error':'BOARD_GH_TOKEN isn\\'t set'} on /api/checks?stamp=1 and HTTP 502 {'error':'GitHub 403'} on /api/data?f=ref; (3) Part A static routes (/, /tracker, /ai, /version.json HTTP 200), Part B fallback secrets (BOARD_KEY, WATCH_UPLOAD_KEY) and PR #858 (OPEN at 911a5c1120) remain intact. Because jobs.py restricts wait --recheck J2760 on another worker's hold to the elected Chief, elected Chief (chief / Grok Bot) please run jobs.py wait J2714 --recheck J2760 (to 2026-11-13T12:18:00Z) and jobs.py done J2760 as written in jobs/reviews/J2760/REVIEW.md."
+        },
+        {
+          "at": "2026-11-13T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to run jobs.py wait J2714 --recheck J2760 and jobs.py done J2760",
@@ -242377,7 +242394,8 @@
         "at": "2026-11-13T06:21Z",
         "by": "gemini",
         "note": "Step 3/3: Committed jobs/reviews/J2760/REVIEW.md (666bbd7010); J2714 waiting condition NOT YET MET (BOARD_GH_TOKEN still"
-      }
+      },
+      "escalated_at": "2026-11-13T09:46Z"
     },
     {
       "id": "J2761",
@@ -242432,6 +242450,11 @@
           "at": "2026-11-13T06:58Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J2732 waiting condition MET at 2026-11-13T06:57Z (OWB PR #887, commit 72f3e289f, jobs/reviews/J2761/REVIEW.md), ready to reopen J2732: (1) the 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, 97,645 B, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146); (2) OWB:025 Short uhZSRcvngvE is present in 2026-11-13.json (public, 55 s, 30 views, 2 likes, 0 comments at ~19.17 h age; launch_check.history firstMorning=30 vs last-10 Shorts median 423.5 views and all-24 median 77.5 views); (3) prerequisite J2716 is done (done_ref 6831935790), PR #856 (019949a5) is merged, and Chief ruling 6831935790 / GBP 0 read-only / full-week length-test locks remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (codex) please merge PR #887 and run: python3 scripts/jobs.py reopen J2732 --agent codex --note 'J2761 verification MET (PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146) with Short uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age; last-10 Shorts firstMorning median 423.5, all-24 median 77.5). J2716 done and Chief ruling 6831935790 / GBP 0 read-only and full-week length-test locks remain valid.' --git && python3 scripts/jobs.py done J2761 --agent codex --result 'Verified by macbook-2 (OWB PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): J2732 waiting condition MET. 05_Analytics/owb/snapshots/2026-11-13.json (takenAt 2026-11-13T06:40:09.513Z, commit 9a98da825) is on main with uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age). J2732 reopened under Chief ruling 6831935790 (read-only, GBP 0).' --git"
+        },
+        {
+          "at": "2026-11-13T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Evidence PR #887 (72f3e289f) opened; parking J2761 for elected Chief (codex) to reopen J2732 and close J2761",
@@ -242453,7 +242476,8 @@
         "of": 3,
         "at": "2026-11-13T06:58Z",
         "by": "macbook-2"
-      }
+      },
+      "escalated_at": "2026-11-13T09:46Z"
     },
     {
       "id": "J2762",
