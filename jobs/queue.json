@@ -245716,9 +245716,14 @@
           "at": "2026-11-13T20:49Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Traced exact lookup gap: one-file path attaches HOS UPLOADS.json longs via attach_pipeline_uploads -> f['upload'], while film_status path only checks PACKAGE_UPLOAD_RESULT via release_record and uploads_index(ROOT)"
+        },
+        {
+          "at": "2026-11-13T21:01Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2790; starting inspection of video_tracker.py and HOS PR 548"
         }
       ],
-      "remaining_action": "Fix per-file upload lookup in orbit-with-ben and add regression test",
+      "remaining_action": "Trace HOS:004 upload lookup in scripts/video_tracker.py across one-file PIPELINE.json vs per-file status.json on HOS PR 548",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245731,11 +245736,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-13T20:49Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-13T21:01Z",
         "by": "gemini",
-        "note": "Traced exact lookup gap: one-file path attaches HOS UPLOADS.json longs via attach_pipeline_uploads -> f['upload'], while"
+        "note": "Claimed J2790; starting inspection of video_tracker.py and HOS PR 548"
       },
       "taskKeys": [
         "HOS:004"
