@@ -105265,9 +105265,14 @@
           "at": "2026-11-13T08:13Z",
           "by": "relay",
           "what": "condition verification queued: J2768"
+        },
+        {
+          "at": "2026-11-13T23:12Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T05:15:00Z"
         }
       ],
-      "remaining_action": "Verify T020 completion and next London calendar day before arming approved title-only test",
+      "remaining_action": "Read the Periodic Table thumbnail test finish time in Studio; verify the next London day before the approved title-only test",
       "kind": "studio",
       "progress": {
         "step": 1,
@@ -105280,13 +105285,12 @@
         "HOS:002"
       ],
       "hold": {
-        "type": "input",
-        "condition": "HOS AL_-qlWko_g MISSING ELEMENT v02 thumbnail test has ended in Studio and the London date is at least the day after. On 10 Nov 02:46Z it was still running, 1 day 21 hours left, so about 12 Nov 00:00Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
-        "check_at": "2026-11-13T09:13:33+00:00",
-        "last_recheck": "J2457",
-        "checked_at": "2026-11-10T02:57:09+00:00",
-        "checked_by": "claude",
-        "recheck_task": "J2768"
+        "type": "test",
+        "condition": "T023 on HOS AL_-qlWko_g has an actual Studio finish timestamp and the London date is at least the next day. Mini read 13 Nov about 23:08Z showed Results ready and 11 views during test period, but report access and subsequent bounded CDP reads timed out; no finish timestamp verified. See PR 894 CHIEF_REVIEW.md. Next check requires a Studio-capable Mini worker or MacBook Gemini/Cursor/Codex.",
+        "check_at": "2026-11-14T05:15:00Z",
+        "last_recheck": "J2768",
+        "checked_at": "2026-11-13T23:12:49+00:00",
+        "checked_by": "codex"
       }
     },
     {
