@@ -243802,9 +243802,14 @@
           "at": "2026-11-13T12:37Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T12:37Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2773; starting verification of J2172 waiting condition for HOS 010 Shorts"
         }
       ],
-      "remaining_action": "Verify readiness: Await independent acceptance of the Dinosaur scenes; still and tool evidence is assigned to J2770 before final review.",
+      "remaining_action": "Inspect J2172, J2757, J2770, J2758, J2271, and HOS 010 plate ledger to verify if J2172 waiting condition is met",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-13T13:16:02+00:00",
@@ -243823,9 +243828,11 @@
         "of": 3,
         "at": "2026-11-13T12:37Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2773; starting verification of J2172 waiting condition for HOS 010 Shorts"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     }
   ],
   "focus": [
