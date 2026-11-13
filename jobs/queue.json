@@ -194184,10 +194184,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-13T23:21Z",
-      "eta": "2026-11-14T01:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -194951,6 +194951,11 @@
           "at": "2026-11-13T23:32Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Three groups stitched. 2718-2887 includes master frame 2869. 3168-3259 are master pixels ahead of the jar. 11118-11245 are master pixels after the one-title safe path. Commit d1680779. 136 tests and check_all PASS. No v04."
+        },
+        {
+          "at": "2026-11-13T23:32Z",
+          "by": "cursor",
+          "what": "released: 2/3. Stitched the three partial groups from master pixels. Frame 2869 is the master picture in 2718-2887. Jar keep 3168-3259 and safe-path tail 11118-11245 are master pixels. One-title safe path only. HOS commit d1680779 on codex/J2242-source-preflight, one ahead of the remote. 136 tests OK, check_all PASS. Scratch J2242-stitch-v03. No v04, no mux, no spend, no publication. Next: place the three title rows, then encode and mux."
         }
       ],
       "remaining_action": "Encode the closed Franklin groups and mux them with the original audio",
