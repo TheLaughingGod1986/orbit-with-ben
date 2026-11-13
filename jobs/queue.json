@@ -244008,10 +244008,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T15:28Z",
+      "eta": "2026-11-13T17:28Z",
       "created_by": "relay",
       "created_at": "2026-11-13T12:16Z",
       "result": "",
@@ -244065,6 +244065,11 @@
           "at": "2026-11-13T15:28Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-13T15:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J2172 --recheck J2773 (check-at 2026-11-13T18:30:00Z) and close J2773",
@@ -244083,7 +244088,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T15:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2774",
