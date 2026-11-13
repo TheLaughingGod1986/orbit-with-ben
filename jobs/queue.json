@@ -1,5 +1,5 @@
 {
-  "next_id": 2751,
+  "next_id": 2752,
   "jobs": [
     {
       "id": "J0001",
@@ -230595,6 +230595,11 @@
           "at": "2026-11-13T00:29Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T01:45:00Z"
+        },
+        {
+          "at": "2026-11-13T02:34Z",
+          "by": "relay",
+          "what": "condition verification queued: J2751"
         }
       ],
       "remaining_action": "After the file-copy repair is reviewed and merged, verify the live relay and board and the no-home-channel checks",
@@ -230611,10 +230616,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2743 Chief ruling HOLD: accepted PR876 evidence at 0da0ce3271ef611863bd61ad837acc63e058defc. Direct GitHub check confirms replacement PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS and core workflow SKIPPED. Worker evidence reports 1407 tests and split home=0 registry=0 tests=0 names=0, but this is not merge approval or post-merge verification. Picture window and HOS535/J2619 prerequisites remain satisfied. J2738 owns exact-head repair code review and full current checks; J2618 then owns approved merge and observed Mini relay cycle plus board publish. After those artifacts exist, verify J2621 registry/tests/home zero on merged code before closing. No duplicate rebase or repair job. Original approvals and unrelated holds unchanged.",
-        "check_at": "2026-11-13T01:45:00Z",
+        "check_at": "2026-11-13T03:34:40+00:00",
         "last_recheck": "J2743",
         "checked_at": "2026-11-13T00:29:14+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2751"
       }
     },
     {
@@ -240734,6 +240740,37 @@
         "by": "gemini",
         "note": "Verification complete: PR #869 (2312a8af2) remains OPEN awaiting elected-Chief review/merge + Mini relay cycle + board p"
       }
+    },
+    {
+      "id": "J2751",
+      "title": "Verify condition for J2621",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2621: J2743 Chief ruling HOLD: accepted PR876 evidence at 0da0ce3271ef611863bd61ad837acc63e058defc. Direct GitHub check confirms replacement PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS and core workflow SKIPPED. Worker evidence reports 1407 tests and split home=0 registry=0 tests=0 names=0, but this is not merge approval or post-merge verification. Picture window and HOS535/J2619 prerequisites remain satisfied. J2738 owns exact-head repair code review and full current checks; J2618 then owns approved merge and observed Mini relay cycle plus board publish. After those artifacts exist, verify J2621 registry/tests/home zero on merged code before closing. No duplicate rebase or repair job. Original approvals and unrelated holds unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2621 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T02:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T02:34Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: After the file-copy repair is reviewed and merged, verify the live relay and board and the no-home-channel checks",
+      "kind": "review",
+      "recheck_of": "J2621",
+      "due": "2026-11-13T03:34:40+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
