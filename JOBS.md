@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2756 | mini | open | – | – | for gemini · qa · `gemini-argon` · J2753 FIX: reconcile gate warnings and cut counts across both channels | J2753 |
 | J2757 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2758 | any | open | – | – | review · Verify condition for J2271 |  |
-| J2759 | mini | claimed | gemini | 2026-11-13T07:38Z | for gemini · review · `gemini-argon` · Verify condition for J2563 |  |
+| J2759 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2563 |  |
 
 Recently finished:
 
