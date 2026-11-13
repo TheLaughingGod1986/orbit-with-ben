@@ -240676,10 +240676,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T22:54Z",
+      "eta": "2026-11-14T00:54Z",
       "created_by": "relay",
       "created_at": "2026-11-12T19:40Z",
       "result": "",
@@ -240733,6 +240733,11 @@
           "at": "2026-11-13T22:54Z",
           "by": "codex",
           "what": "rerouted to codex: Explicit J2728 Chief-review assignment; Gemini worker has finished and parent J2649 is done. Elected Chief codex records stale-check closure."
+        },
+        {
+          "at": "2026-11-13T22:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py wait J2649 --recheck J2728 (or reopen J2649 after #833 merges) and jobs.py done J2728 (evidence on OWB PR #864)",
@@ -240749,7 +240754,15 @@
       },
       "for": "codex",
       "model": "gemini-argon",
-      "escalated_at": "2026-11-12T23:38Z"
+      "escalated_at": "2026-11-12T23:38Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T22:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2729",
