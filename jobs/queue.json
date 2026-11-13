@@ -245199,6 +245199,11 @@
           "at": "2026-11-13T17:02Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T17:04Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Listen to and measure the repaired narration before the Chief accepts it",
@@ -245206,7 +245211,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Check the corrected Journey narration sounds natural and matches the script"
+      "plain": "Check the corrected Journey narration sounds natural and matches the script",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
