@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2770 | mini | blocked | codex | – | 010 picture · for codex · qa · `gpt-6-astra` · HOS 010: complete independent still and tool evidence for twelve Shorts scenes | J2757 |
 | J2771 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2770 |  |
 | J2772 | mini | open | – | – | for codex · studio · oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) |  |
-| J2773 | any | open | – | – | review · Verify condition for J2172 |  |
+| J2773 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 
 Recently finished:
 
