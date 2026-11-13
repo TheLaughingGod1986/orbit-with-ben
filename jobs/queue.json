@@ -243058,10 +243058,10 @@
       "stage": "picture",
       "after": "J2270",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T09:57Z",
+      "eta": "2026-11-13T11:57Z",
       "created_by": "codex",
       "created_at": "2026-11-13T09:43Z",
       "result": "",
@@ -243070,6 +243070,11 @@
           "at": "2026-11-13T09:43Z",
           "by": "codex",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-13T09:57Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete still-image and measurable checks for the twelve Dinosaur scenes; hand evidence to the independent review.",
@@ -243077,7 +243082,15 @@
       "for": "codex",
       "kind": "qa",
       "model": "gpt-6-astra",
-      "plain": "Check the Dinosaur scenes against their scripts and phone framing."
+      "plain": "Check the Dinosaur scenes against their scripts and phone framing.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T09:57Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
