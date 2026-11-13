@@ -246200,19 +246200,25 @@
           "at": "2026-11-13T22:58Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-13T23:00Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Recorded rollback f858ae31; exact requested commit checked out cleanly on SSD; npm ci completed"
         }
       ],
-      "remaining_action": "Check the prepared website release and record the rollback version",
+      "remaining_action": "Build and deploy the approved website growth pass",
       "due": "2026-11-14T08:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the latest improvements live on Ben's product site, and put the old version back if anything breaks",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T22:58Z",
-        "by": "codex"
+        "at": "2026-11-13T23:00Z",
+        "by": "codex",
+        "note": "Recorded rollback f858ae31; exact requested commit checked out cleanly on SSD; npm ci completed"
       }
     }
   ],
