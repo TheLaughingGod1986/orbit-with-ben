@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2794 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J2794 | mini | claimed | gemini | 2026-11-14T01:50Z | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2795 | mini | blocked | codex | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · Music gate: diagnose reuse false positives without waivers | J2791 |
 
 Recently finished:

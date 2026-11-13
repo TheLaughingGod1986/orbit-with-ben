@@ -246322,10 +246322,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-13T23:50Z",
+      "eta": "2026-11-14T01:50Z",
       "created_by": "relay",
       "created_at": "2026-11-13T23:32Z",
       "result": "",
@@ -246339,6 +246339,11 @@
           "at": "2026-11-13T23:32Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T00:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-13T23:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Build the two gravity Shorts after the score is delivered and accepted and the long assembly is complete, then check both cuts for review",
@@ -246354,7 +246359,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T23:50Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2795",
