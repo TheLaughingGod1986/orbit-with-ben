@@ -244053,10 +244053,10 @@
       "stage": "topic",
       "after": "J2748",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-13T13:56Z",
+      "eta": "2026-11-13T15:56Z",
       "created_by": "gemini",
       "created_at": "2026-11-13T13:52Z",
       "result": "",
@@ -244070,6 +244070,11 @@
           "at": "2026-11-13T13:54Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-13T13:56Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS 102 topic brief, neighbour/search evidence, and Rule-E scorecard on HOS PR #572",
@@ -244083,7 +244088,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T13:56Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2776",
