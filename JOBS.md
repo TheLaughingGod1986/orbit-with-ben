@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2775 | mini | open (after J2748) | – | – | 102 topic · for gemini · review · `gemini-argon` · HOS 102 Ozone Hole: rule-E topic go/no-go review |  |
 | J2776 | mini | open (after J2748) | – | – | 103 topic · for gemini · review · `gemini-argon` · HOS 103 Why Is the Sky Blue: rule-E topic go/no-go review |  |
 | J2777 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J2778 | any | open | – | – | script · OWB: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
