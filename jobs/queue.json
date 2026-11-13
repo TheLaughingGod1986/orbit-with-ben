@@ -242473,7 +242473,7 @@
     {
       "id": "J2767",
       "title": "Verify condition for J2532",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2532: The board site is redeployed from main and its live pages are checked. Live /version.json read 2eff5ff506654388 at 17:55Z, main builds 2551c4887f478f7e: not redeployed. The deploy needs Ben's approval tap in the app. The old build keeps working meanwhile.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2532 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -242493,13 +242493,27 @@
           "at": "2026-11-13T07:47Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T07:48Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 414 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for the redeploy, then check the live pages",
       "kind": "review",
       "recheck_of": "J2532",
       "due": "2026-11-13T08:47:46+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
