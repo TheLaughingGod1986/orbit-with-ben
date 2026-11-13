@@ -194434,9 +194434,14 @@
           "at": "2026-11-13T05:05Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed J2242. Disk 13 GB free, under the 20 GB line, so scratch moves first."
+        },
+        {
+          "at": "2026-11-13T05:09Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Disk stays at 13 GB. Scratch offload had nothing old enough to move. Resume is the near-tie checkpoint ec8caaa7. Next is a pre-declared centre-window check, not a new guess."
         }
       ],
-      "remaining_action": "Free disk, then validate the v03 master and splice inputs",
+      "remaining_action": "Confirm the royal-society caption from a fixed centre window, then render that row only",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -194444,10 +194449,10 @@
       "urgent": 1,
       "progress": {
         "step": 0,
-        "of": 6,
-        "at": "2026-11-13T05:05Z",
+        "of": 3,
+        "at": "2026-11-13T05:09Z",
         "by": "cursor",
-        "note": "Claimed J2242. Disk 13 GB free, under the 20 GB line, so scratch moves first."
+        "note": "Disk stays at 13 GB. Scratch offload had nothing old enough to move. Resume is the near-tie checkpoint ec8caaa7. Next is"
       }
     },
     {
