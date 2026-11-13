@@ -241565,11 +241565,25 @@
           "at": "2026-11-13T05:35Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T05:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 283 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Reconcile the quality report with the original check results and return it for review",
       "kind": "qa",
-      "plain": "Correcting missing warnings in the video quality reports for both channels"
+      "plain": "Correcting missing warnings in the video quality reports for both channels",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2757",
