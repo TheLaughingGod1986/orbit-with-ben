@@ -244574,20 +244574,25 @@
           "at": "2026-11-13T15:02Z",
           "by": "codex",
           "what": "step 0 of 3 done: Claimed domain migration; validate all existing DNS before any nameserver change."
+        },
+        {
+          "at": "2026-11-13T15:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Cloudflare Free zone created; all 16 records imported DNS-only and matched directly on both autumn.ns.cloudflare.com and dean.ns.cloudflare.com. Vercel shows login; no nameserver change or Worker domain attachment."
         }
       ],
-      "remaining_action": "Checking the Cloudflare migration instructions and signed-in dashboards",
+      "remaining_action": "Sign in to Vercel, then change nameservers and verify the live domain",
       "due": "2026-11-13T20:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site live on Cloudflare: carry its records over, switch the nameservers, attach the domain",
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T15:02Z",
+        "at": "2026-11-13T15:06Z",
         "by": "codex",
-        "note": "Claimed domain migration; validate all existing DNS before any nameserver change."
+        "note": "Cloudflare Free zone created; all 16 records imported DNS-only and matched directly on both autumn.ns.cloudflare.com and"
       }
     },
     {
