@@ -1,5 +1,5 @@
 {
-  "next_id": 2787,
+  "next_id": 2789,
   "jobs": [
     {
       "id": "J0001",
@@ -245336,6 +245336,68 @@
       "remaining_action": "Review J2784_PACE_v01.json and jobs/reviews/J2785/REVIEW.md, mark J01 vo and J2220 done, and unlock J2221 assembly",
       "kind": "chief",
       "plain": "Accept the pace-repaired Journey narration and unlock full assembly"
+    },
+    {
+      "id": "J2787",
+      "title": "First-day check at 6 h: \"What Was the Edward Jenner Experiment?\" (cLKDiYP55J8)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "First-day check, 6 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"What Was the Edward Jenner Experiment?\" (`cLKDiYP55J8`), History of Science, a Short. It went live Fri 13 Nov 11:30 London. Use its signed-in Studio browser (CDP 9222).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. It is listed under the Shorts tab. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it may only be on the channel dashboard's latest-Short card). Reach: the views that came from the Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs swiped away (the % who stayed), Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record cLKDiYP55J8 --hours 6 --views <n> --rank <N> --of 10 --typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) ` --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge cLKDiYP55J8` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-13T17:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:44Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "due": "2026-11-13T19:44:00Z",
+      "kind": "studio",
+      "launch": "cLKDiYP55J8@6",
+      "plain": "Check how \"What Was the Edward Jenner Experiment?\" is doing 6 hours after it went live"
+    },
+    {
+      "id": "J2788",
+      "title": "First-day check at 6 h: \"Why Does Pluto's Giant Ice Heart Have Zero Craters?\" (z5V6gIXXYs8)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "First-day check, 6 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"Why Does Pluto's Giant Ice Heart Have Zero Craters?\" (`z5V6gIXXYs8`), Orbit With Ben, a Short. It went live Fri 13 Nov 11:30 London. Use its signed-in Studio browser (CDP 9223).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. It is listed under the Shorts tab. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it may only be on the channel dashboard's latest-Short card). Reach: the views that came from the Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs swiped away (the % who stayed), Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record z5V6gIXXYs8 --hours 6 --views <n> --rank <N> --of 10 --typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) ` --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge z5V6gIXXYs8` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-13T17:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:44Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "due": "2026-11-13T19:44:00Z",
+      "kind": "studio",
+      "launch": "z5V6gIXXYs8@6",
+      "plain": "Check how \"Why Does Pluto's Giant Ice Heart Have Zero Craters?\" is doing 6 hours after it went live"
     }
   ],
   "focus": [
