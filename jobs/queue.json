@@ -242499,13 +242499,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-13T07:49Z",
-      "eta": "2026-11-13T09:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T07:47Z",
-      "result": "",
+      "result": "parked for Chief: J2532 condition NOT met at 2026-11-13T07:55Z, keep J2532 blocked at step 3 of 4 (OWB PR #891 2248720d4, jobs/reviews/J2767/REVIEW.md). Direct live board + thread verification: (1) Old Vercel host https://studio-kanban.vercel.app now returns HTTP 402 Payment required (x-vercel-error: DEPLOYMENT_DISABLED) on all routes (/version.json, /api/data?f=ref, /api/ref, /, /ai, /tracker); (2) New Cloudflare Pages host https://studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500 'BOARD_GH_TOKEN isn'\\''t set'; /api/ref HTTP 502 'GitHub 403') so /api/data cannot yet read with the server token (J2532 req 2), and PR #858 is still OPEN; (3) no new reply from Ben on the studio thread through #6847259213 (2026-11-13T07:48:12Z); (4) scripts/test_board_data_api.py passes on main (21/21, 4 Playwright skipped). Because macbook is not the holder (claude) or elected Chief (codex), 'jobs.py wait J2532 --agent macbook ... --recheck J2767' is restricted ('Only the holder or elected Chief may update this hold' / 'Only the elected Chief may record a condition check'). Elected Chief please run: python3 scripts/jobs.py wait J2532 --agent <chief> --condition 'Verified at 2026-11-13T07:55Z (J2767): unmet. Old Vercel host studio-kanban.vercel.app returns HTTP 402 DEPLOYMENT_DISABLED on all routes. New Cloudflare Pages host studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500; /api/ref HTTP 502) and PR #858 is still open. Wait for Ben to set BOARD_GH_TOKEN on Cloudflare Pages (J2714) and for PR #858 to merge, then verify live pages and server-token reads.' --check-at '2026-11-13T13:55:00Z' --type input --recheck J2767 --action 'Wait for BOARD_GH_TOKEN on Cloudflare Pages (J2714) and PR #858 merge, then verify live pages and /api/data server-token reads' --git and close J2767. £0.",
       "history": [
         {
           "at": "2026-11-13T07:47Z",
@@ -242536,6 +242536,11 @@
           "at": "2026-11-13T07:59Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-13T07:59Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: J2532 condition NOT met at 2026-11-13T07:55Z, keep J2532 blocked at step 3 of 4 (OWB PR #891 2248720d4, jobs/reviews/J2767/REVIEW.md). Direct live board + thread verification: (1) Old Vercel host https://studio-kanban.vercel.app now returns HTTP 402 Payment required (x-vercel-error: DEPLOYMENT_DISABLED) on all routes (/version.json, /api/data?f=ref, /api/ref, /, /ai, /tracker); (2) New Cloudflare Pages host https://studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500 'BOARD_GH_TOKEN isn'\\''t set'; /api/ref HTTP 502 'GitHub 403') so /api/data cannot yet read with the server token (J2532 req 2), and PR #858 is still OPEN; (3) no new reply from Ben on the studio thread through #6847259213 (2026-11-13T07:48:12Z); (4) scripts/test_board_data_api.py passes on main (21/21, 4 Playwright skipped). Because macbook is not the holder (claude) or elected Chief (codex), 'jobs.py wait J2532 --agent macbook ... --recheck J2767' is restricted ('Only the holder or elected Chief may update this hold' / 'Only the elected Chief may record a condition check'). Elected Chief please run: python3 scripts/jobs.py wait J2532 --agent <chief> --condition 'Verified at 2026-11-13T07:55Z (J2767): unmet. Old Vercel host studio-kanban.vercel.app returns HTTP 402 DEPLOYMENT_DISABLED on all routes. New Cloudflare Pages host studio-kanban.pages.dev (J2714 / PR #858 head 911a5c1120) serves /, /ai, /tracker, and /version.json (2d5e4a4accb4ed3c) with /api/data wired in, and /api/data?f=ref & /api/data?f=board answer HTTP 200 via unauthenticated fallback while public, but BOARD_GH_TOKEN is still not set (/api/checks?stamp=1 HTTP 500; /api/ref HTTP 502) and PR #858 is still open. Wait for Ben to set BOARD_GH_TOKEN on Cloudflare Pages (J2714) and for PR #858 to merge, then verify live pages and server-token reads.' --check-at '2026-11-13T13:55:00Z' --type input --recheck J2767 --action 'Wait for BOARD_GH_TOKEN on Cloudflare Pages (J2714) and PR #858 merge, then verify live pages and /api/data server-token reads' --git and close J2767. £0."
         }
       ],
       "remaining_action": "Parking J2767 for holder/elected Chief to record wait --recheck J2767 on J2532 and close J2767",
