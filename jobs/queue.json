@@ -188392,9 +188392,14 @@
           "at": "2026-11-13T13:54Z",
           "by": "relay",
           "what": "condition verification queued: J2777"
+        },
+        {
+          "at": "2026-11-13T15:23Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T20:25:00Z"
         }
       ],
-      "remaining_action": "Build the two gravity Shorts after the score is approved and the long assembly is complete, then check the cuts and submit for review",
+      "remaining_action": "Build the two gravity Shorts after the score is delivered and accepted and the long assembly is complete, then check both cuts for review",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188409,12 +188414,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2755 Chief ruling: NOT MET. Independent 13 Nov 09:34Z Mini/NAS inventory confirms Mini music contains only the three J2663 scope files; NAS music and both long-render folders are absent. J2666 completed preflight at 08:36Z and awaits its elected-Chief decision, superseding the old not-started diagnosis. Next: elected Chief decides existing J2666 under desk 6813193837 with fresh safeguards; J2664 then delivers versioned score/stems/provenance and required music checks/listening review with Chief acceptance; J2035 completes long assembly and required composite/gates before J2171. Keep picture KEEP dispositions, narration locks, GBP0 Shorts scope and final watch. Retry is verification only, never automatic release.",
-        "check_at": "2026-11-13T14:54:51+00:00",
-        "last_recheck": "J2755",
-        "checked_at": "2026-11-13T09:37:06+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2777"
+        "condition": "J2777 Chief ruling: NOT MET. Gemini evidence b157efa416 and independent current Mini/NAS inventory confirm only the three score scope files exist, no NAS score and no long render on either store. Existing J2666 is the immediate elected-Chief release decision under desk 6813193837 and Claude concurrence 6848151890; prioritize it now, with fresh lock, meter, overage and pending-work checks before releasing bounded J2664 production. J2664 must deliver accepted score/stems/provenance and required music checks/review; J2035 must complete long assembly and composite/gates before J2171. Preserve picture KEEP, narration locks, zero-spend Shorts scope and final watch. Retry is verification only, not automatic release.",
+        "check_at": "2026-11-13T20:25:00Z",
+        "last_recheck": "J2777",
+        "checked_at": "2026-11-13T15:23:38+00:00",
+        "checked_by": "codex"
       }
     },
     {
