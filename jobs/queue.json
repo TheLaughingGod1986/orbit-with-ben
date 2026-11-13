@@ -230523,9 +230523,14 @@
           "at": "2026-11-13T04:03Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: current-main integration of replacement PR #869 (exact head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7, MERGEABLE/CLEAN) verified in isolated worktree and pushed as macbook/J2618-v02 (PR #886, head 02bf57f3b, identical git tree 78ed693455c2d864c69642870f4102a7a7087f3e, 0 overlapping files with main). All checks PASS: test_channel_ratchet 13/13 (total=0, home=0), test_chief_relay 113/113, test_channels 70/70, test_studio_split 18/18, scripts unittest 1297 OK (skipped=12), 00_Brand tools 95 OK, 04_Audio tools 21 OK (skipped=1), sync_rules OK, core_sync OK (56 files), studio.py status --check OK, studio_split.py dry run clean=true left=1 (names=0, home=0, registry=0, tests=0). Ready for elected-Chief whole-stack merge approval, merge of replacement PR #869 (or #886), observation of one full Mini relay cycle, and board publish/verification before completing J2618. J2621/J2622 and unrelated holds unchanged."
+        },
+        {
+          "at": "2026-11-13T05:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T05:50:00Z"
         }
       ],
-      "remaining_action": "Clean up isolated worktree, park J2618 for elected Chief whole-stack merge and Mini relay/board verification, and post thread report",
+      "remaining_action": "Verify the restarted Mini relay completes a cycle, then publish and check the board",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "plain": "Make the relay that wakes the agents work for any channel",
@@ -230544,6 +230549,11 @@
         "of": 3,
         "at": "2026-11-13T04:01Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief KEEP on PR886 comment 6844853263; replacement PR886 merged as d23f286d428ca40bb2e4c515c71bed151e202579 after exact-head review. 214 local focused tests OK; worker whole-suite evidence accepted; rules/core/status OK. Mini checkout updated. Next verify fresh Mini relay process loaded installed version 9d4727c9262cfc7e and completed one full cycle, then publish and verify board. Current runner remains 9f6384d23c94618e during this review, so restart cannot yet be witnessed. Complete J2618 only after those artifacts; J2621/J2622 unchanged. Never merge superseded PR833/868.",
+        "check_at": "2026-11-13T05:50:00Z"
       }
     },
     {
