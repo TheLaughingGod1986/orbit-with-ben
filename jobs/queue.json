@@ -234582,9 +234582,14 @@
           "at": "2026-11-13T08:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T08:28Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2666 and linked HOS:009; starting verification of J2664 waiting condition"
         }
       ],
-      "remaining_action": "Apply desk 6813193837 now: refresh lock, meter and overage checks, then release J2664 for staged music. J2721 keeps assembly held pending delivered, reviewed score.",
+      "remaining_action": "Inspect J2664, J2663, HOS PR #557, and live ElevenLabs music pricing/guard state",
       "kind": "review",
       "recheck_of": "J2664",
       "due": "2026-11-12T04:07:10+00:00",
@@ -234603,9 +234608,11 @@
         "of": 3,
         "at": "2026-11-13T08:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2666 and linked HOS:009; starting verification of J2664 waiting condition"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2667",
