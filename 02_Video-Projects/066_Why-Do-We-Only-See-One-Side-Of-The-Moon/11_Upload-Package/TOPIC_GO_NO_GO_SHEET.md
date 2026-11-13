@@ -1,0 +1,22 @@
+# Topic Go/No-Go Sheet — `OWB:066` Why Do We Only See One Side of the Moon? (The Hidden Far Side)
+
+- **Film:** `OWB:066` (`02_Video-Projects/066_Why-Do-We-Only-See-One-Side-Of-The-Moon`)
+- **Source Brief Job:** `J2778` (`macbook`, `2026-11-13`)
+- **Opportunity Score:** **`95 / 100` (`9.5 / 10` — Pre-Build Audit Ready for Rule-E Review)**
+
+---
+
+## 1. Rule-E & `LEARNINGS.md` Gate Checklist
+
+| Gate | Requirement | Result | Evidence |
+|---|---|---|---|
+| **1. Data-First Ranking (`STUDIO_PLAYBOOK.md` §2 Step 1)** | Ranks all 16 public OWB longs + 84 Shorts (`views/day`, `CTR`, `AVD`, `Stayed to watch`), 3 best vs 3 worst | **PASS** | `TOPIC.md` §1.1–§1.3 verified against `05_Analytics/owb/snapshots/2026-11-13.json`, `studio_ctr.json`, `channel_daily.json`, and `REPORT.md` |
+| **2. Non-Overlap (`STUDIO_PLAYBOOK.md` §2 Step 2)** | Zero overlap with existing/planned `02_Video-Projects/`, `ideas/`, `VIDEO_BACKLOG.json`, `jobs/WIP.json` | **PASS** | `0` existing films or idea briefs on lunar tidal locking / the hidden far side of the Moon (`013` was strictly future lunar recession at `3.8 cm/yr` and solar eclipses) |
+| **3. Neighbour Gate (`AGENTS.md` Standing Lesson 1)** | `≥3` education/space videos `≥1M` views on topic; subject words only, never channel names | **PASS** | **5 verified `≥1.8M`-view neighbours:** `6jUpX7J7ySo` (`4.21M`), `jdkMHkF7BaA` (`3.76M`), `kJkVegBsNyE` (`3.32M`), `j91XTV_p9pc` (`2.07M`), `kfAm6unVOX4` (`1.88M`) |
+| **4. Exact-Title Collision Check (`STUDIO_PLAYBOOK.md` §2)** | Zero exact-title collisions on YouTube (`gl=GB`) | **PASS** | **0 exact collisions** across all 4 Long title candidates and both Short title candidates (`Why Does the Moon Always Show Earth the Same Face?` & `Why Does the Far Side of the Moon Have Almost No Dark Plains?`) |
+| **5. Title Rules (`LEARNINGS.md` Rules 1, 15, 18, 23, 26)** | Rule 26 search-led phrase first + bracketed tail `≤70 chars`, plus Rule 15 `≤50 chars`, Rule 18 real-imagery variant, Rule 23 Story+Stakes variant | **PASS** | Primary (`62 chars`): *Why Do We Only See One Side of the Moon? (The Hidden Far Side)*; Rule 15 (`40 chars`): *Why Does the Moon Only Show Us One Side?*; Rule 18 (`50 chars`): *What NASA Photographed on the Far Side of the Moon*; Rule 23 (`57 chars`): *Why the Far Side of the Moon Looks Like a Different World* |
+| **6. Thumbnail Rules (`LEARNINGS.md` Rules 11, 12, 14, 18, 19)** | 3-way Test & Compare (Consequence + Rule 14 bright background + Rule 18/19 real NASA frame; no Orbit; `≤3` words) | **PASS** | Thumb A (`HIDDEN HALF` split LRO globe), Thumb B (`NEVER TURNS` bright sunlit far side), Thumb C (`60 KM CRUST` graded LRO elevation map) |
+| **7. Long Hook (`LEARNINGS.md` Rule 10 + `J2428`)** | Frame 0 real moving image, stakes by `0:08`, payoff hint by `0:20`, zero Orbit/title/fade before `0:30`, zero chapter card before `0:45` | **PASS** | Locked in `TOPIC.md` §2.3 & `PRE_BUILD_VIDIQ_AUDIT.md` §6 |
+| **8. Short Angles (`LEARNINGS.md` Rules 2–8, 22, 24, 31 + `E1`)** | 2 positive-question Shorts (`19–22 s`), full-bleed `mode: "cover"` (`0%` blur bars `J2421`), `t = 0.0 s` hook text (`#FFE000` keyword), Sentence 1 surprise `≤1.5 s` (`Rule 24`), single overlay at `5.5–8.5 s` (`≤4 words`), payoff `≥70%`, `<1.2 s` loop tail | **PASS** | `S01` (*Why Does the Moon Always Show Earth the Same Face?*, `6-word` Sentence 1 `"The Moon DOES spin in space."`, overlay `27-DAY SPIN LOCK`) & `S02` (*Why Does the Far Side of the Moon Have Almost No Dark Plains?*, `6-word` Sentence 1 `"The Moon's back looks completely wrong."`, overlay `60 KM THICK CRUST`) |
+| **9. Primary-Source Fact Audit (`CHANNEL_AUTHORITY.md`)** | All numbers verified against NASA primary sources before Script stage | **PASS** | Verified verbatim against NASA Science (`science.nasa.gov/moon/facts/`, `science.nasa.gov/moon/tidal-locking/`) & NASA NSSDCA (`nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html`): `27 Earth days` (`27.3217 d`) spin & orbit, `29 days` (`29.53 d`) synodic phase cycle, `25 miles (40 km)` near-side crust vs up to `37 miles (60 km)` far-side crust, `4.2–1.2 billion years ago` lava-filled maria, `1959` Soviet Luna 3 flyby, `238,855 miles (384,400 km)` distance, `1,080 miles (1,740 km)` radius, `95 K to 390 K (-290 °F to +240 °F)` temperature range |
+| **10. Rule G WIP Limit (`AGENTS.md` Rule G)** | Active OWB WIP capped at `5` films; new topics stay in `jobs/WIP.json` `next` | **PASS** | Appended `"OWB:066"` to `jobs/WIP.json` `next` |
