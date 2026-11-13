@@ -240145,13 +240145,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-13T00:57Z",
-      "eta": "2026-11-13T02:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T00:56Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2746 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/878. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-13T00:56Z",
@@ -240162,6 +240162,11 @@
           "at": "2026-11-13T00:57Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T00:58Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2746 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/878. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Verify readiness: Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
