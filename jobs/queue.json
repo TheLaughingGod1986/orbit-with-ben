@@ -230734,9 +230734,14 @@
           "at": "2026-11-13T00:56Z",
           "by": "relay",
           "what": "condition verification queued: J2746"
+        },
+        {
+          "at": "2026-11-13T03:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T07:00:00Z"
         }
       ],
-      "remaining_action": "Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
+      "remaining_action": "Complete J2738 repair review and J2618 relay verification before resuming the History of Science migration",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -230749,12 +230754,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2726 Chief ruling HOLD: PR861 evidence at 19:52Z predates the safety rejection of PR868 and the 21:56Z parent hold. J2738 repair PR869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7 remains OPEN and unapproved; J2618 remains blocked. First review and merge the corrected studio half and verify one Mini relay cycle plus board publish under J2618. Then J2622 may resume the HOS548 regeneration, round-trip tests, current board comparison, Chief review and settings refresh after merge. HOS548 remains a held draft at 55b968787. Recheck no active HOS picture run immediately before any migration. Preserve the original retry time; no merge approval from this verification.",
-        "check_at": "2026-11-13T01:56:21+00:00",
-        "last_recheck": "J2726",
-        "checked_at": "2026-11-12T22:46:44+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2746"
+        "condition": "J2746 Chief ruling: condition NOT MET. Repair PR869 remains OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; HOS548 remains held draft at 55b968787b773c3ae26e0f111f96a32e2e4a0bf8. J2738 owns exact-head repair review; J2618 then owns approved studio merge, one observed Mini relay cycle and board publish. After J2618 completes, J2622 may regenerate HOS548 from current main, prove round trip, compare current board, obtain Chief review and refresh settings after merge. Recheck no active HOS picture run immediately before migration. PR878 accepts verification evidence only, not repair or migration approval. Dependency J2618; fallback check 13 Nov 07:00Z.",
+        "check_at": "2026-11-13T07:00:00Z",
+        "last_recheck": "J2746",
+        "checked_at": "2026-11-13T03:04:11+00:00",
+        "checked_by": "codex"
       }
     },
     {
