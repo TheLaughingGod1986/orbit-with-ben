@@ -242516,9 +242516,14 @@
           "at": "2026-11-13T07:49Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T07:51Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for the redeploy, then check the live pages",
+      "remaining_action": "Check live studio-kanban.vercel.app version.json, /api/data?f=ref, live pages, studio thread, and local test suite",
       "kind": "review",
       "recheck_of": "J2532",
       "due": "2026-11-13T08:47:46+00:00",
@@ -242533,12 +242538,10 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T07:49Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-13T07:51Z",
+        "by": "macbook"
       }
     }
   ],
