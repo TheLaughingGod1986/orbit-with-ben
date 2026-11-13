@@ -1,17 +1,17 @@
 {
-  "at": "2026-11-12T07:56Z",
-  "commit": "e25dd925",
+  "at": "2026-11-13T07:58Z",
+  "commit": "40eb0ee4",
   "clean": true,
-  "left": 93,
+  "left": 1,
   "counts": {
-    "names": 79,
-    "home": 5,
+    "names": 0,
+    "home": 0,
     "unrouted": 0,
     "shared": 0,
-    "registry": 1,
+    "registry": 0,
     "keys": 0,
     "addresses": 1,
-    "tests": 7
+    "tests": 0
   },
   "groups": [
     {
@@ -29,27 +29,20 @@
     {
       "key": "names",
       "title": "Studio code that still names a channel",
-      "count": 79,
-      "items": [
-        "chief_relay.py: 79 lines"
-      ]
+      "count": 0,
+      "items": []
     },
     {
       "key": "home",
       "title": "Studio code that still reaches into a channel's folder from its own root",
-      "count": 5,
-      "items": [
-        "apply_yellow_white_v04_thumbs.py: 3 lines",
-        "chief_relay.py: 2 lines"
-      ]
+      "count": 0,
+      "items": []
     },
     {
       "key": "registry",
       "title": "The list of channels still needs one of them to be the studio's home",
-      "count": 1,
-      "items": [
-        "the loader says: exactly one channel must be home"
-      ]
+      "count": 0,
+      "items": []
     },
     {
       "key": "keys",
@@ -68,23 +61,15 @@
     {
       "key": "tests",
       "title": "Tests that fail once the studio and the channels are apart",
-      "count": 7,
-      "items": [
-        "test_channel_cards.py: 1 test",
-        "test_channel_check.py: 1 test",
-        "test_channels.py: 4 tests",
-        "test_email_ratchet.py: 1 test",
-        "test_no_private_network.py: 1 test",
-        "test_studio.py: 4 tests",
-        "test_studio_split.py: 3 tests"
-      ]
+      "count": 0,
+      "items": []
     }
   ],
   "tests": "run",
   "layout": {
-    "studio": 1685,
-    "Orbit With Ben": 12109,
-    "History of Science": 46,
+    "studio": 1805,
+    "Orbit With Ben": 12122,
+    "History of Science": 47,
     "built": 1,
     "not on this machine": []
   }
