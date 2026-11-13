@@ -239799,13 +239799,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:49Z",
-      "eta": "2026-11-14T00:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T18:05Z",
-      "result": "parked for Chief: J2040 waiting condition verified NOT YET MET at 2026-11-13T11:12Z in jobs/reviews/J2719/REVIEW.md (commit 1df818e534), keep J2040 blocked: (1) J2517 (#793) and J2559 (#795) are done and needed no action from Ben at the Mini; (2) ~/.codex/config.toml (435 B, mtime 4 Nov, sha256 efa1987b3c...) and ~/.codex/rules/default.rules (2,589 B, mtime 4 Nov, sha256 b6d57758e2...) have no operator approval-policy changes; (3) ~/.codex/rules/studio.rules (3,307 B, mtime 6 Nov 15:12, sha256 e3b8c84f19...) and the 5 gateway scripts in ~/.codex/bin/ remain at the 6 Nov 3/4 checkpoint (codex execpolicy check returns decision=allow on studio-scoped-push.py and matchedRules=[] on curl); (4) draft PR #490 (codex/j2040-allowlist, head f521bcd3f1) remains OPEN/draft and docs/CODEX_ALLOWLIST.md is not on main. Because jobs.py restricts wait --recheck on another worker's hold to the elected Chief, elected Chief (chief / Grok Bot) please run jobs.py wait J2040 --recheck J2719 (to 2026-11-13T17:15:00Z) and jobs.py done J2719 as written in jobs/reviews/J2719/REVIEW.md. GBP0.",
+      "result": "Acting-Chief ruling: condition NOT MET. Independently matched all three approval-settings hashes and confirmed PR490 remains draft at f521bcd3f1. J2517/J2559 are complete but do not prove operator configuration or fresh-session acceptance. J2040 remains held with last_recheck J2719; next verification 2026-11-14T04:50:00Z. Follow-up: check operator confirmation and scoped acceptance evidence before resuming remaining implementation; merging PR490 alone is insufficient. Fallback routing continues. No approval controls changed, no spend or service writes. This verification is complete; parent implementation is not.",
       "history": [
         {
           "at": "2026-11-12T18:05Z",
@@ -239861,6 +239861,11 @@
           "at": "2026-11-13T22:49Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T22:49Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling: condition NOT MET. Independently matched all three approval-settings hashes and confirmed PR490 remains draft at f521bcd3f1. J2517/J2559 are complete but do not prove operator configuration or fresh-session acceptance. J2040 remains held with last_recheck J2719; next verification 2026-11-14T04:50:00Z. Follow-up: check operator confirmation and scoped acceptance evidence before resuming remaining implementation; merging PR490 alone is insufficient. Fallback routing continues. No approval controls changed, no spend or service writes. This verification is complete; parent implementation is not."
         }
       ],
       "remaining_action": "Elected Chief (chief) to run jobs.py wait J2040 --recheck J2719 (to 2026-11-13T17:15:00Z) and jobs.py done J2719",
@@ -239884,7 +239889,8 @@
         "by": "gemini",
         "note": "Verified J2040 waiting condition NOT YET MET (J2517/J2559 done, but ~/.codex settings/rules unchanged since 6 Nov and PR"
       },
-      "escalated_at": "2026-11-13T13:33Z"
+      "escalated_at": "2026-11-13T13:33Z",
+      "done_ref": "jobs/reviews/J2719/REVIEW.md"
     },
     {
       "id": "J2720",
