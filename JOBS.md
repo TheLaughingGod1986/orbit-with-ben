@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2778 | mini | claimed | macbook | 2026-11-13T15:48Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J2779 | mini | claimed | codex | 2026-11-13T15:33Z | for codex · studio · oppti.dev: put the faster build on the Cloudflare test address and the visual refresh on a preview address |  |
 | J2780 | mini | open (after J2779) | – | – | for codex · studio · oppti.dev: move the domain to Cloudflare and put the site live there (records, nameservers, custom domain) |  |
+| J2781 | any | open | – | – | review · Rule-E topic go/no-go review: two new Orbit backlog films from J2778 (PR #901) |  |
 
 Recently finished:
 
