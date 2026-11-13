@@ -1,12 +1,11 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-12 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-13 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-12 11:30 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) `uhZSRcvngvE` | yes | PASS |
-| 2026-11-13 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) `RT-ec4_GcOk` | yes | PASS |
-| 2026-11-14 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) `z5V6gIXXYs8` | yes | PASS |
+| 2026-11-13 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) `z5V6gIXXYs8` | yes | PASS |
+| 2026-11-14 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) `RT-ec4_GcOk` | yes | PASS |
 | 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) `aEfdxex__Bo` | yes | PASS |
 | 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | **FAIL** |
 | 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) `dH_yCRmzkMo` | yes | PASS |
