@@ -194008,10 +194008,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-13T11:36Z",
-      "eta": "2026-11-13T13:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -194585,6 +194585,11 @@
           "at": "2026-11-13T11:42Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Table lead-in is tower frames 170-173, sha bf087a98. PR 542 commit 29838281. Frame 2869 stays out. 98 tests and check_all PASS. No v04."
+        },
+        {
+          "at": "2026-11-13T11:42Z",
+          "by": "cursor",
+          "what": "released: Table lead-in verified: master frames 423-426 are tower source 170-173, sha bf087a9865c270d3fa6e29b304b9c31276878f107cbf6f5bd3305bf6184859d3. Table plate unused, MSE about 3554. Frame 2869 stays out. HOS PR 542 commit 29838281. 98 tests OK. check_all PASS. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Still 1/3. Next: SAFE PATH DOWN, foil check at frame 3353, then mux and gates. No v04, no detached process, no spend."
         }
       ],
       "remaining_action": "Build SAFE PATH DOWN, then the foil check at frame 3353, before the mux",
