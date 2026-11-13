@@ -188378,9 +188378,14 @@
           "at": "2026-11-13T05:20Z",
           "by": "relay",
           "what": "condition verification queued: J2755"
+        },
+        {
+          "at": "2026-11-13T09:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T11:30:00Z"
         }
       ],
-      "remaining_action": "Build the two gravity Shorts after the approved score and long assembly are complete, then check the cuts and submit for review",
+      "remaining_action": "Build the two gravity Shorts after the score is approved and the long assembly is complete, then check the cuts and submit for review",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188395,12 +188400,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2730 Chief review: unmet. Independent Mini/NAS inventory confirms no long master; Mini 05_Music has only three scope files and NAS 05_Music is absent. J2666 must apply existing desk ruling 6813193837 with fresh live safeguards, then J2664 delivers own score, stems, provenance, music gates and capable listening review with Chief acceptance; J2035 must complete long assembly and gates before J2171. Retain picture KEEP dispositions, locked VO and picture windows, GBP0 Shorts scope and final-watch requirements. Verification date is not automatic release.",
-        "check_at": "2026-11-13T06:20:27+00:00",
-        "last_recheck": "J2730",
-        "checked_at": "2026-11-13T00:42:49+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2755"
+        "condition": "J2755 Chief ruling: NOT MET. Independent 13 Nov 09:34Z Mini/NAS inventory confirms Mini music contains only the three J2663 scope files; NAS music and both long-render folders are absent. J2666 completed preflight at 08:36Z and awaits its elected-Chief decision, superseding the old not-started diagnosis. Next: elected Chief decides existing J2666 under desk 6813193837 with fresh safeguards; J2664 then delivers versioned score/stems/provenance and required music checks/listening review with Chief acceptance; J2035 completes long assembly and required composite/gates before J2171. Keep picture KEEP dispositions, narration locks, GBP0 Shorts scope and final watch. Retry is verification only, never automatic release.",
+        "check_at": "2026-11-13T11:30:00Z",
+        "last_recheck": "J2755",
+        "checked_at": "2026-11-13T09:37:06+00:00",
+        "checked_by": "codex"
       }
     },
     {
