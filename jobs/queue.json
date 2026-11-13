@@ -214286,13 +214286,13 @@
       "stage": "",
       "after": "J2737",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-13T03:22Z",
-      "eta": "2026-11-13T04:22Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
-      "result": "",
+      "result": "Cursor covering\n\nJ2449 is done. The Andromeda film (ojk-dfOpAmw) now has a running two-arm title and thumbnail test.\n\nFresh Studio read at 13 Nov 2026 03:23Z, before any change: the old thumbnail-only test had finished. It ran from 28 Oct 21:33 to 11 Nov 22:32, and Studio said there were not enough impressions to declare a winner. That read, the time, and the screenshot are on ledger row T017. Ben's 11 Nov permission covered Continue only for a finished test, so Continue was used on \"Start a new experiment? This deletes your current experiment.\"\n\nThe new test was saved at 03:27Z. Studio read-back at 03:30Z: Title and thumbnail, Test running, exactly two arms, about 13 days 23 hours left.\n\nArm 1, unchanged: What Happens During the Milky Way Andromeda Collision? / THIS IS ANDROMEDA / SHA256 250c9980986f2b5e3faca5399e7a8ce19e6711ca5de7d6f05bf78140b2bb2515.\nArm 2, approved: Milky Way Andromeda Collision (What Happens to Our Sun?) / STARS RARELY HIT / SHA256 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c.\n\nThe third slot was left empty. The description, privacy, schedule and video file were not changed. The Black Hole test and the Jupiter test were not opened. No spend. Ledger row T031 is the running test.\n\nNext: leave this test running until Studio finishes it. Do not replace it.\n\nThread read at session start: no new messages.\n",
       "history": [
         {
           "at": "2026-11-09T21:12Z",
@@ -214468,6 +214468,11 @@
           "at": "2026-11-13T03:31Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Studio read-back 03:30Z: title and thumbnail test running, two arms, about 13 days 23 hours left. Ledger T031."
+        },
+        {
+          "at": "2026-11-13T03:31Z",
+          "by": "cursor",
+          "what": "done: Cursor covering\n\nJ2449 is done. The Andromeda film (ojk-dfOpAmw) now has a running two-arm title and thumbnail test.\n\nFresh Studio read at 13 Nov 2026 03:23Z, before any change: the old thumbnail-only test had finished. It ran from 28 Oct 21:33 to 11 Nov 22:32, and Studio said there were not enough impressions to declare a winner. That read, the time, and the screenshot are on ledger row T017. Ben's 11 Nov permission covered Continue only for a finished test, so Continue was used on \"Start a new experiment? This deletes your current experiment.\"\n\nThe new test was saved at 03:27Z. Studio read-back at 03:30Z: Title and thumbnail, Test running, exactly two arms, about 13 days 23 hours left.\n\nArm 1, unchanged: What Happens During the Milky Way Andromeda Collision? / THIS IS ANDROMEDA / SHA256 250c9980986f2b5e3faca5399e7a8ce19e6711ca5de7d6f05bf78140b2bb2515.\nArm 2, approved: Milky Way Andromeda Collision (What Happens to Our Sun?) / STARS RARELY HIT / SHA256 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c.\n\nThe third slot was left empty. The description, privacy, schedule and video file were not changed. The Black Hole test and the Jupiter test were not opened. No spend. Ledger row T031 is the running test.\n\nNext: leave this test running until Studio finishes it. Do not replace it.\n\nThread read at session start: no new messages.\n"
         }
       ],
       "remaining_action": "Record the running test and close the job",
