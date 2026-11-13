@@ -240000,13 +240000,13 @@
       "stage": "thumbs",
       "after": "J2736",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T03:12Z",
-      "eta": "2026-11-13T05:12Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T20:48Z",
-      "result": "",
+      "result": "Exact title and STARS RARELY HIT v02 PASS, hash 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c. Evidence PRs866/882 and ruling PR885 merged; CI PASS. J2449 reopened strictly for baseline versus v02 on Andromeda only, after fresh Studio read. One-file scale-reference exception documented. No spend or live changes.",
       "history": [
         {
           "at": "2026-11-12T20:48Z",
@@ -240037,6 +240037,11 @@
           "at": "2026-11-13T03:20Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR885 merged with CI PASS; J2449 reopened with exact two-arm scope and current-state protections"
+        },
+        {
+          "at": "2026-11-13T03:20Z",
+          "by": "codex",
+          "what": "done: Exact title and STARS RARELY HIT v02 PASS, hash 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c. Evidence PRs866/882 and ruling PR885 merged; CI PASS. J2449 reopened strictly for baseline versus v02 on Andromeda only, after fresh Studio read. One-file scale-reference exception documented. No spend or live changes."
         }
       ],
       "remaining_action": "Decision complete; Andromeda test is ready for the Studio worker",
@@ -240051,7 +240056,8 @@
       },
       "taskKeys": [
         "OWB:019"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/885"
     },
     {
       "id": "J2738",
