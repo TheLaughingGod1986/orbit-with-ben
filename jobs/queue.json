@@ -1,5 +1,5 @@
 {
-  "next_id": 2786,
+  "next_id": 2787,
   "jobs": [
     {
       "id": "J0001",
@@ -245307,6 +245307,35 @@
         "note": "Claimed J2785 and J01 vo; inspecting J2784 pace_v01 evidence and audio files"
       },
       "done_ref": "b1b25626c9"
+    },
+    {
+      "id": "J2786",
+      "title": "J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Following jobs/reviews/J2665/DECISION.md (37c14542b5): J2784 (41c1e352c9, 02_Video-Projects/J01_Journey-To-Every-World/02_Voiceover/J2784_PACE_v01.json) produced pitch-preserving ffmpeg atempo pace repairs for Takes 1, 3, 5, 6, and 7 (leaving Takes 2, 4, and 8 untouched), and J2785 (b1b25626c9, jobs/reviews/J2785/REVIEW.md) completed demonstrated audio_input QA across all 8 selected takes with 8/8 KEEP (131.84-143.68 wpm using submitted-script whitespace counts over actual audio duration, -22.2 to -24.0 dB mean, clean decode, 0 slowdown artifacts, and natural delivery on Take 1 'forged the atoms' and Take 2 'carbon locked safely'). Elected Chief: review the completed J2784 + J2785 evidence, record final stage acceptance on J01 vo, close held parent J2220 done, and allow J2221 assembly to proceed.",
+      "ref": "b1b25626c9",
+      "film": "J01",
+      "stage": "vo",
+      "after": "J2785",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-13T17:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:42Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J2784_PACE_v01.json and jobs/reviews/J2785/REVIEW.md, mark J01 vo and J2220 done, and unlock J2221 assembly",
+      "kind": "chief",
+      "plain": "Accept the pace-repaired Journey narration and unlock full assembly"
     }
   ],
   "focus": [

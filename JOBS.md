@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
+| J2786 | mini | open (after J2785) | – | – | J01 vo · chief · J01: Chief acceptance of pace-repaired linking VO (resolve J2220 after J2784 & J2785) | b1b25626c9 |
 
 Recently finished:
 
