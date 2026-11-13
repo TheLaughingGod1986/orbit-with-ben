@@ -226098,13 +226098,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-13T03:07Z",
-      "eta": "2026-11-13T05:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T06:28Z",
-      "result": "",
+      "result": "Waiting for: Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.",
       "history": [
         {
           "at": "2026-11-11T06:28Z",
@@ -226410,6 +226410,16 @@
           "at": "2026-11-13T03:09Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches. Five pictures are metadata only. No download before 05:30 UTC."
+        },
+        {
+          "at": "2026-11-13T03:09Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches."
+        },
+        {
+          "at": "2026-11-13T03:09Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-13T05:30:00Z"
         }
       ],
       "remaining_action": "After 05:30 UTC, download the five Anaesthesia pictures and rebuild the timing rough so the hold cards come out.",
@@ -226425,6 +226435,11 @@
         "at": "2026-11-13T03:09Z",
         "by": "cursor",
         "note": "Rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches. Five pictures are metadata onl"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Wikimedia download hold until 05:30 UTC. Five Anaesthesia pictures are still metadata only: Squire inhaler, Liston operating, Simpson pamphlet, Snow book, Lister spray. Timing rough sha 20c813c341f42e07211b95d23b38aac7eefe40dce83d23f66c72cb3335eb5a48 still matches.",
+        "check_at": "2026-11-13T05:30:00Z"
       }
     },
     {
