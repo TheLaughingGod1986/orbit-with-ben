@@ -234839,13 +234839,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-12T06:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T03:03Z",
-      "result": "parked for Chief: Verified J2220 prerequisites (J2219 done, OWB:J01 in WIP active), published Codex's unpushed J2220 evidence and ElevenLabs spend ledger rows (6fd3a85d7d -> dd5fa067a3), and completed direct multimodal ear-listening + technical review of all 8 J01 linking VO takes on studio-live (jobs/reviews/J2665/REVIEW.md). Verdict: KEEP all 8 takes (0 retakes, £0): Take 1 'forged the' and Take 2 'locked safely' are clean British English connected speech with 0 stumbles; all 8 takes meet -19 to -28 dB mean (-22.3 to -24.0 dB), and aggregate pace is 142.6 wpm raw / 137.7 wpm with 0.8s card breaths (inside 130-145 wpm). Do NOT reopen J2220 to re-record. Chief (chief): run studio.py set J01 vo done --by chief --ref dd5fa067a3 --git, close J2220 and J2665 done, unlocking J2221 assembly.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T03:03Z",
@@ -234891,6 +234891,11 @@
           "at": "2026-11-12T08:49Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-13T17:00Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief disposition of completed verification evidence; J2220 stays held. Separate Chief progress recorded at steps 1 and 2."
         }
       ],
       "remaining_action": "Chief (chief) to close J2220 and J2665 done (KEEP all 8 J01 VO takes) and set J01 vo done to unlock J2221",
@@ -234907,13 +234912,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-12T06:42Z",
-        "by": "gemini",
-        "note": "Verification complete (dd5fa067a3): all 8 J01 VO takes PASS ear & technical checks; parking for Chief to close J2220+J26"
-      },
       "escalated_at": "2026-11-12T08:49Z"
     },
     {
