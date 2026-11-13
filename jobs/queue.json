@@ -245660,9 +245660,14 @@
           "at": "2026-11-13T18:43Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2790; starting step 1 of 3 (trace lookup in video_tracker.py and HOS PR 548)."
+        },
+        {
+          "at": "2026-11-13T18:48Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Traced exact lookup gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads for one_file(slug), and video_tracker.py film_rows/long_rows/uploads_index do not attach non-home UPLOADS.json long entries on the film_status path."
         }
       ],
-      "remaining_action": "Inspect video_tracker.py and HOS PR 548 to trace why HOS:004 loses its live video link",
+      "remaining_action": "Fix studio lookup for film_status uploads and verify with unit test and PR 548 board compare",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245675,11 +245680,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T18:43Z",
+        "at": "2026-11-13T18:48Z",
         "by": "gemini",
-        "note": "Claimed J2790; starting step 1 of 3 (trace lookup in video_tracker.py and HOS PR 548)."
+        "note": "Traced exact lookup gap: kanban_snapshot.read_documents only runs attach_pipeline_uploads for one_file(slug), and video_"
       },
       "taskKeys": [
         "HOS:004"
