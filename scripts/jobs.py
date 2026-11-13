@@ -404,6 +404,8 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
         return True
     if job.get("kind") in NOT_PORTABLE_KINDS:
         return False
+    if job.get("recheck_of") and parent and parent.get("needs") == "mini" and STUDIO_WORK.search(str(parent.get("title") or "")):
+        return False   # J2649: a check on a Studio job reads Studio, and macbook_studio_ok has just said this MacBook cannot
     if shared_media_job(job):
         # Studio login / Buffer / Flow stay Mini even when the film folder is on studio-live.
         return (not publish_mini_hit(text)) and media_reachable(job)
@@ -603,6 +605,14 @@ def recheck_moot(parent: dict) -> str:
     return ""
 
 
+def check_needs(parent: dict) -> str:
+    """The `needs` of a condition check (J2649): a check for a job pinned to the Mini is pinned to the Mini, and one for a
+    job pinned to the MacBook stays there. A job with no pin (any, cloud, gemini, ben) gets a check that stays `any`.
+    Evidence: J2535, J2569 and J2647 went to the MacBook, which could not read Orbit Studio, and the held job waited a round."""
+    needs = parent.get("needs")
+    return needs if needs in ("mini", "macbook") else "any"
+
+
 def reconcile_holds(data, at):
     by_id = {j["id"]:j for j in data["jobs"]}
     due = workflow.deadlines(data["jobs"])
@@ -631,7 +641,8 @@ def reconcile_holds(data, at):
             continue
         condition = (parent.get("hold") or {}).get("condition") or "Required predecessor is complete; verify remaining gates and approvals"
         # Rule H (Ben, 5 Nov 2026): a condition check is a review-lane call, not a Chief call.
-        task = do_add(data,title="Verify condition for " + parent["id"],needs="any",kind="review",by="relay",at=at,
+        # J2649: it takes its `needs` from the job it checks, so a Mini-only read is not sent to the MacBook.
+        task = do_add(data,title="Verify condition for " + parent["id"],needs=check_needs(parent),kind="review",by="relay",at=at,
             body="Verify the waiting condition for " + parent["id"] + ": " + condition +
             ". Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. "
             "If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. "
@@ -639,6 +650,8 @@ def reconcile_holds(data, at):
             "Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. "
             "If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.")
         task["recheck_of"] = parent["id"]
+        if parent.get("mini_only"):
+            task["mini_only"] = True
         if requirements:
             task["required_capabilities"] = list(requirements)
         task["remaining_action"] = ("Verify readiness: " + (parent.get("remaining_action") or parent["title"]))[:180]

@@ -49,6 +49,33 @@ class FinalAudit(unittest.TestCase):
         with patch.object(cr,'read_json',return_value={'pid':123,'job':'H','expiresAt':(AT+dt.timedelta(minutes=2)).isoformat()}),patch.object(cr.os,'kill',side_effect=ProcessLookupError):
             self.assertIsNone(cr.current_execution(AT))
 
+    def test_condition_check_takes_its_needs_from_the_job_it_checks(self):
+        # J2649: a check for a Mini-pinned job is Mini-pinned, a MacBook-pinned job's check stays on the MacBook,
+        # and an unpinned job's check stays `any`. The pin from `--mini-only` is carried too. A job waiting on Ben gets no check at all.
+        for needs, extra, want in (('mini',{}, 'mini'), ('macbook',{}, 'macbook'), ('any',{}, 'any'),
+                                   ('cloud',{}, 'any'), ('gemini',{}, 'any'), ('mini',{'mini_only':True}, 'mini')):
+            with self.subTest(needs=needs, extra=extra):
+                j={**row('H'),'needs':needs,'status':'blocked','result':'waiting',**extra}
+                data={'jobs':[j],'next_id':1}
+                jobs.set_wait(j,'relay',AT,{'type':'test','condition':'c','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'next')
+                jobs.reconcile_holds(data,AT)
+                check=next(x for x in data['jobs'] if x.get('recheck_of'))
+                self.assertEqual(check['needs'],want)
+                self.assertEqual(check['kind'],'review')
+                self.assertEqual(bool(check.get('mini_only')),bool(extra.get('mini_only')))
+
+    def test_check_on_a_studio_job_is_not_portable_to_a_macbook_without_studio(self):
+        # J2649, reviewer's gap: needs=mini alone did not keep the MacBook off a check on a Studio job.
+        for title, portable in (('Studio: set Related video on the 026 Shorts', False), ('Review the docs wording', True)):
+            with self.subTest(title=title):
+                j={**row('H'),'title':title,'status':'blocked','result':'waiting'}
+                data={'jobs':[j],'next_id':1}
+                jobs.set_wait(j,'relay',AT,{'type':'test','condition':'c','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'next')
+                jobs.reconcile_holds(data,AT)
+                check=next(x for x in data['jobs'] if x.get('recheck_of'))
+                with patch.dict('os.environ',{'MACBOOK_CDP':''}):
+                    self.assertEqual(jobs.macbook_portable(check,data),portable)
+
     def test_due_hold_creates_one_review_check_and_keeps_work_blocked(self):
         j={**row('H'),'status':'blocked','result':'date gate; original approval retained'}
         data={'jobs':[j],'next_id':1};jobs.set_wait(j,'relay',AT,{'type':'test','condition':'Current title test has ended','check_at':(AT-dt.timedelta(hours=1)).isoformat()},'Start the next title test')
