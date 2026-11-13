@@ -240865,7 +240865,7 @@
     {
       "id": "J2752",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -240885,11 +240885,25 @@
           "at": "2026-11-13T02:34Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T02:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on HOS videos",
       "kind": "listing",
-      "backlog": "hos-live-listing-fixes"
+      "backlog": "hos-live-listing-fixes",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
