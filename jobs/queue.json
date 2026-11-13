@@ -234609,13 +234609,13 @@
       "stage": "edit",
       "after": "J2663",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T03:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T02:52Z",
-      "result": "parked for Chief: music_v2 account-specific duration credit tariff and pending generation charges unverified; locked GET confirms 87416 remaining and overage disabled, but existing guard counts prompt characters. Zero POST attempts; scope requires no POST until cost is known.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T02:52Z",
@@ -234656,28 +234656,20 @@
           "at": "2026-11-13T10:27Z",
           "by": "codex",
           "what": "deadline: 2026-11-15T18:00:00Z"
+        },
+        {
+          "at": "2026-11-13T15:40Z",
+          "by": "codex",
+          "what": "reopened: J2666 Chief ruling: implement existing owner-authored HOS desk decisions 6813193837 and 6857374556, not a new scope. Independent locked GET 2026-11-13T15:39:12Z: HTTP200, 33698/121114 used, 87416 remaining; extension flags false, both extension limits 0, overage 0; lock and pause absent before successful acquisition/release. No active recorder scripts or open/claimed other audio jobs. Scope, timing and locked VO hashes match Gemini b75a024145; J2663 done at 98aa6d61. RELEASE for Mini assembly-chain staged music only: repeat live preflight under one recorder lock across both requests; wonder180s then measured c1<=5400 and duration match, teach360s only if c1+2*c1*1.25 fits min(30000, live remaining). Unknown or unposted meter delta stops before request2; no blind retries. At most two requests, 540s, 30000 subscription credits, GBP0, no overage. Deliver versioned cues/stems/provenance and all original music comparisons/gates, then required capable review and Chief acceptance. J2035 and J2171 remain held. Deadline 15 Nov18:00Z retained; existing J2664 is immediate follow-up, no external retry needed."
         }
       ],
       "remaining_action": "Chief to resolve account-specific duration billing and pending charges before score generation",
       "kind": "assembly",
       "plain": "Creating original music for the Moon and gravity film",
       "mini_only": true,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-12T03:06Z",
-        "by": "codex",
-        "note": "Merged scope verified; locked subscription GET shows 87416 credits remaining and overage disabled. Music tariff and pend"
-      },
       "taskKeys": [
         "HOS:009"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-12T04:07:10+00:00",
-        "recheck_task": "J2666"
-      },
       "escalated_at": "2026-11-12T06:44Z",
       "due": "2026-11-15T18:00:00Z"
     },
