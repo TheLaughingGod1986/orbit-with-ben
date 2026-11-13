@@ -245150,13 +245150,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-13T17:06Z",
-      "eta": "2026-11-13T19:06Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-13T17:01Z",
-      "result": "",
+      "result": "Pace repair pace_v01 is on the shared film store. Takes 1, 3, 5, 6 and 7 were slowed with ffmpeg atempo only, to 140.03, 140.08, 140.12, 140.02 and 140.08 wpm, means -22.4, -22.2, -23.3, -23.4 and -23.7 dB, 48 kHz stereo kept, decode clean. Takes 2, 4 and 8 are the original bytes at 135.80, 131.84 and 143.68 wpm. All eight MP3 hashes still match the J2665 review. Local speech-to-text found no repeated phrases. Take 1 text differs from the earlier whisper at world's/worlds and forged/forge; take 3 only loses a full stop after flips. This worker did not listen. Evidence 41c1e352c9. No spend, no film-stage pass, J2220 still held. J2785 can listen next.",
       "history": [
         {
           "at": "2026-11-13T17:01Z",
@@ -245182,6 +245182,11 @@
           "at": "2026-11-13T17:14Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Five takes are at about 140 words per minute. Original files are unchanged. Evidence is on main."
+        },
+        {
+          "at": "2026-11-13T17:14Z",
+          "by": "cursor",
+          "what": "done: Pace repair pace_v01 is on the shared film store. Takes 1, 3, 5, 6 and 7 were slowed with ffmpeg atempo only, to 140.03, 140.08, 140.12, 140.02 and 140.08 wpm, means -22.4, -22.2, -23.3, -23.4 and -23.7 dB, 48 kHz stereo kept, decode clean. Takes 2, 4 and 8 are the original bytes at 135.80, 131.84 and 143.68 wpm. All eight MP3 hashes still match the J2665 review. Local speech-to-text found no repeated phrases. Take 1 text differs from the earlier whisper at world's/worlds and forged/forge; take 3 only loses a full stop after flips. This worker did not listen. Evidence 41c1e352c9. No spend, no film-stage pass, J2220 still held. J2785 can listen next."
         }
       ],
       "remaining_action": "Hand the eight selected takes to the audio review.",
@@ -245193,7 +245198,8 @@
         "at": "2026-11-13T17:14Z",
         "by": "cursor",
         "note": "Five takes are at about 140 words per minute. Original files are unchanged. Evidence is on main."
-      }
+      },
+      "done_ref": "41c1e352c9"
     },
     {
       "id": "J2785",
