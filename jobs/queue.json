@@ -234846,13 +234846,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T17:00Z",
-      "eta": "2026-11-13T19:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T03:03Z",
-      "result": "",
+      "result": "Chief FIX recorded in jobs/reviews/J2665/DECISION.md (37c14542b5). All eight NAS hashes match; prerequisite lock/WIP satisfied. Reject blanket pace PASS: five per-take rates exceed 145 and silence/changed counts do not cure it. J2784 repairs versioned audio without recording credits; J2785 depends on J2784 and requires audio_input for QA. J2220 remains held via recheck J2665 until repairs, QA and Chief acceptance; status backstop 2026-11-14T17:00Z. J2221 assembly remains blocked. No retakes, spend or public changes.",
       "history": [
         {
           "at": "2026-11-12T03:03Z",
@@ -234913,6 +234913,11 @@
           "at": "2026-11-13T17:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T17:03Z",
+          "by": "codex",
+          "what": "done: Chief FIX recorded in jobs/reviews/J2665/DECISION.md (37c14542b5). All eight NAS hashes match; prerequisite lock/WIP satisfied. Reject blanket pace PASS: five per-take rates exceed 145 and silence/changed counts do not cure it. J2784 repairs versioned audio without recording credits; J2785 depends on J2784 and requires audio_input for QA. J2220 remains held via recheck J2665 until repairs, QA and Chief acceptance; status backstop 2026-11-14T17:00Z. J2221 assembly remains blocked. No retakes, spend or public changes."
         }
       ],
       "remaining_action": "Chief (chief) to close J2220 and J2665 done (KEEP all 8 J01 VO takes) and set J01 vo done to unlock J2221",
@@ -234937,7 +234942,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "37c14542b5"
     },
     {
       "id": "J2666",
