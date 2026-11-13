@@ -214286,10 +214286,10 @@
       "stage": "",
       "after": "J2737",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-13T03:22Z",
+      "eta": "2026-11-13T04:22Z",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
       "result": "",
@@ -214443,6 +214443,11 @@
           "at": "2026-11-13T03:19Z",
           "by": "codex",
           "what": "reopened: J2737 exact-file PASS recorded and merged in PR885 after independent panel J2733-J2736; candidate 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c and unchanged baseline hashes independently verified. Two-arm Andromeda-only brief now in queue; fresh Studio and finished-test evidence guards retained. Execution waits for J2737 completion."
+        },
+        {
+          "at": "2026-11-13T03:22Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Start the approved two-arm Andromeda test after a fresh Studio check",
@@ -214453,7 +214458,15 @@
         "OWB:019"
       ],
       "escalated_at": "2026-11-12T03:14Z",
-      "plain": "Testing the new Andromeda title and thumbnail against the current version"
+      "plain": "Testing the new Andromeda title and thumbnail against the current version",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T03:22Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2450",
