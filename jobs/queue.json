@@ -233821,9 +233821,14 @@
           "at": "2026-11-13T22:36Z",
           "by": "codex",
           "what": "reopened: J2670 Chief ruling: prerequisite satisfied. Exact HOS PR 562 head 316f50c4 reviewed; 24 desk tests OK and four CI checks successful. PASS: issuecomment-6866635164. Merged 2026-11-13T22:35:59Z as 6469a4ba9fd2e3fe1b2baa82aa0d3bc1c15e5c78, verified ancestor of origin/main. Resume from current HOS main; original review and no-restart-before-merge gates remain. Guarded watcher refresh follows your status-change PR merge; no restart here."
+        },
+        {
+          "at": "2026-11-13T22:37Z",
+          "by": "codex",
+          "what": "remaining action: Update desk reply statuses from merged HOS main, test them, obtain review and merge, then refresh the watcher safely"
         }
       ],
-      "remaining_action": "Wait for the earlier desk protection change to merge, then update outcome statuses and test them",
+      "remaining_action": "Update desk reply statuses from merged HOS main, test them, obtain review and merge, then refresh the watcher safely",
       "for": "codex",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
@@ -235605,9 +235610,14 @@
           "at": "2026-11-13T22:37Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T22:37Z",
+          "by": "codex",
+          "what": "remaining action: Record the verified prerequisite merge and completed Chief ruling"
         }
       ],
-      "remaining_action": "Chief: review/merge HOS PR #562 and reopen J2650, or record wait --recheck J2670 on J2650 and close J2670",
+      "remaining_action": "Record the verified prerequisite merge and completed Chief ruling",
       "kind": "review",
       "recheck_of": "J2650",
       "due": "2026-11-12T07:06:13+00:00",
