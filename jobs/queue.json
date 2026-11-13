@@ -242632,10 +242632,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-13T08:15Z",
+      "eta": "2026-11-13T10:15Z",
       "created_by": "relay",
       "created_at": "2026-11-13T08:13Z",
       "result": "",
@@ -242644,13 +242644,26 @@
           "at": "2026-11-13T08:13Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T08:15Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Verify T020 completion and next London calendar day before arming approved title-only test",
       "kind": "review",
       "recheck_of": "J1130",
       "due": "2026-11-13T09:13:33+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T08:15Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2769",
