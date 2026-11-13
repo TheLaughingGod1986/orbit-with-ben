@@ -240550,13 +240550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T03:04Z",
-      "eta": "2026-11-13T05:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T00:56Z",
-      "result": "",
+      "result": "Chief review complete: accepted NOT MET verdict; evidence PR878 merged. J2622 remains held with recheck J2746 and retry 2026-11-13T07:00:00Z. J2738 owns exact-head repair review; J2618 owns approved studio merge and observed relay cycle plus board publish. Only then may HOS548 migration preparation resume. No unrelated holds changed.",
       "history": [
         {
           "at": "2026-11-13T00:56Z",
@@ -240582,6 +240582,11 @@
           "at": "2026-11-13T03:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T03:04Z",
+          "by": "codex",
+          "what": "done: Chief review complete: accepted NOT MET verdict; evidence PR878 merged. J2622 remains held with recheck J2746 and retry 2026-11-13T07:00:00Z. J2738 owns exact-head repair review; J2618 owns approved studio merge and observed relay cycle plus board publish. Only then may HOS548 migration preparation resume. No unrelated holds changed."
         }
       ],
       "remaining_action": "Verify readiness: Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
@@ -240596,7 +240601,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/878"
     },
     {
       "id": "J2747",
