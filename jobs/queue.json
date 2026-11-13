@@ -230624,9 +230624,14 @@
           "at": "2026-11-13T02:34Z",
           "by": "relay",
           "what": "condition verification queued: J2751"
+        },
+        {
+          "at": "2026-11-13T02:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-13T06:45:00Z"
         }
       ],
-      "remaining_action": "After the file-copy repair is reviewed and merged, verify the live relay and board and the no-home-channel checks",
+      "remaining_action": "After the repair review and merge, check the live relay, board refresh and separated-channel tests",
       "due": "2026-11-16T18:00:00Z",
       "kind": "review",
       "plain": "Let the studio run with no channel as its home, and make its checks pass that way",
@@ -230639,12 +230644,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2743 Chief ruling HOLD: accepted PR876 evidence at 0da0ce3271ef611863bd61ad837acc63e058defc. Direct GitHub check confirms replacement PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS and core workflow SKIPPED. Worker evidence reports 1407 tests and split home=0 registry=0 tests=0 names=0, but this is not merge approval or post-merge verification. Picture window and HOS535/J2619 prerequisites remain satisfied. J2738 owns exact-head repair code review and full current checks; J2618 then owns approved merge and observed Mini relay cycle plus board publish. After those artifacts exist, verify J2621 registry/tests/home zero on merged code before closing. No duplicate rebase or repair job. Original approvals and unrelated holds unchanged.",
-        "check_at": "2026-11-13T03:34:40+00:00",
-        "last_recheck": "J2743",
-        "checked_at": "2026-11-13T00:29:14+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2751"
+        "condition": "J2751 Chief ruling HOLD: accepted condition evidence PR883 at a3c7a9f53f2e718f0af83d6236b1ab990c268515 (293 targeted tests and temporary split home=0 registry=0 tests=0 names=0; not a current merge or system PASS). Direct GitHub read confirms PR869 remains OPEN, mergedAt null, at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; Rules SUCCESS, core workflow SKIPPED. Picture window, HOS535 and J2619 prerequisites remain satisfied. Existing J2738 owns exact-head repair review and full current checks; J2618 owns approved merge then one observed Mini relay cycle and board publish. Only after those artifacts exist verify J2621 registry/tests/home zero on merged code before closing. No duplicate repair or rebase; original approvals and unrelated holds unchanged.",
+        "check_at": "2026-11-13T06:45:00Z",
+        "last_recheck": "J2751",
+        "checked_at": "2026-11-13T02:59:24+00:00",
+        "checked_by": "codex"
       }
     },
     {
