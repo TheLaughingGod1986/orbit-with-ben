@@ -237515,13 +237515,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-13T01:09Z",
-      "eta": "2026-11-13T02:09Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T15:20Z",
-      "result": "",
+      "result": "parked for Chief: review evidence PR #879 (727171b76f) and decide further original-artifact recovery scope. Five new exact live/package matches; coverage 84/162, with 78 original baselines and the Mars creation-time snippet unavailable. Existing seven tag repairs and three caption repairs must not be repeated. Plan remains 3/4; no Ben action.",
       "history": [
         {
           "at": "2026-11-12T15:20Z",
@@ -237677,6 +237677,11 @@
           "at": "2026-11-13T01:12Z",
           "by": "codex",
           "what": "step 3 of 4 done: Recovered five original tag sets from 219 upload-result revisions; fresh API reads match all five exactly. Coverage 84/162. No platform changes; exact Mars trigger still unproven."
+        },
+        {
+          "at": "2026-11-13T01:12Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review evidence PR #879 (727171b76f) and decide further original-artifact recovery scope. Five new exact live/package matches; coverage 84/162, with 78 original baselines and the Mars creation-time snippet unavailable. Existing seven tag repairs and three caption repairs must not be repeated. Plan remains 3/4; no Ben action."
         }
       ],
       "remaining_action": "Review recovered tag evidence and resolve the remaining 78 historical package gaps and Mars creation-time input",
