@@ -194439,20 +194439,25 @@
           "at": "2026-11-13T05:09Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Disk stays at 13 GB. Scratch offload had nothing old enough to move. Resume is the near-tie checkpoint ec8caaa7. Next is a pre-declared centre-window check, not a new guess."
+        },
+        {
+          "at": "2026-11-13T05:09Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Unit tests passed. Centre window confirms both Royal Society near-ties. The other near-ties stay out. Rendering that one row."
         }
       ],
-      "remaining_action": "Confirm the royal-society caption from a fixed centre window, then render that row only",
+      "remaining_action": "Render the Royal Society caption row from the confirmed centre-window schedule",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-13T05:09Z",
         "by": "cursor",
-        "note": "Disk stays at 13 GB. Scratch offload had nothing old enough to move. Resume is the near-tie checkpoint ec8caaa7. Next is"
+        "note": "Unit tests passed. Centre window confirms both Royal Society near-ties. The other near-ties stay out. Rendering that one"
       }
     },
     {
