@@ -242119,7 +242119,7 @@
     {
       "id": "J2763",
       "title": "Verify condition for J2622",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2622: J2746 Chief ruling: condition NOT MET. Repair PR869 remains OPEN at 2312a8af2e2645d0b1a8984ee240d25b9c684ab7; HOS548 remains held draft at 55b968787b773c3ae26e0f111f96a32e2e4a0bf8. J2738 owns exact-head repair review; J2618 then owns approved studio merge, one observed Mini relay cycle and board publish. After J2618 completes, J2622 may regenerate HOS548 from current main, prove round trip, compare current board, obtain Chief review and refresh settings after merge. Recheck no active HOS picture run immediately before migration. PR878 accepts verification evidence only, not repair or migration approval. Dependency J2618; fallback check 13 Nov 07:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2622 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -242139,13 +242139,27 @@
           "at": "2026-11-13T07:16Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T07:16Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 384 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Complete J2738 repair review and J2618 relay verification before resuming the History of Science migration",
       "kind": "review",
       "recheck_of": "J2622",
       "due": "2026-11-13T08:16:33+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2764",
