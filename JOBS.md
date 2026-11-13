@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2723 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J2728 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2649 |  |
 | J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
-| J2736 | mini | open (after J2735) | – | – | 019 thumbs · for gemini · review · `gemini-argon` · Packaging panel decision: Andromeda whole-galaxy revision | J2729 |
+| J2736 | mini | claimed | macbook | 2026-11-13T03:07Z | 019 thumbs · for gemini · review · `gemini-argon` · Packaging panel decision: Andromeda whole-galaxy revision | J2729 |
 | J2737 | any | open (after J2736) | – | – | 019 thumbs · chief · 019 Andromeda: elected-Chief exact-file release after revised packaging panel | J2729; J2692; J2449 |
 | J2738 | any | blocked | macbook-2 | – | assembly · Fix split dry-run writes through destination symlinks before J2618 merge | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/868 |
 | J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |

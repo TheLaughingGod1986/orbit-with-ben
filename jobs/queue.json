@@ -239852,10 +239852,10 @@
       "stage": "thumbs",
       "after": "J2735",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-13T02:37Z",
+      "eta": "2026-11-13T03:07Z",
       "created_by": "codex",
       "created_at": "2026-11-12T20:48Z",
       "result": "",
@@ -239879,6 +239879,11 @@
           "at": "2026-11-13T02:34Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 103 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-13T02:37Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel decision: Andromeda whole-galaxy revision",
@@ -239892,7 +239897,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T02:37Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2737",
