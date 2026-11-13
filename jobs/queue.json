@@ -241571,10 +241571,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-13T13:08Z",
+      "eta": "2026-11-13T14:38Z",
       "created_by": "refill",
       "created_at": "2026-11-13T02:01Z",
       "result": "",
@@ -241628,6 +241628,11 @@
           "at": "2026-11-13T12:57Z",
           "by": "grok",
           "what": "rerouted to gemini on gemini-argon: Desk 6853484674: Gemini Argon does the five-part FIX on the existing PRs. Public-search probe first. Codex (gpt-6-astra) is the fallback if search fails. MacBook Claude lane excluded (mini_only)."
+        },
+        {
+          "at": "2026-11-13T13:08Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Probe public search, then correct the two open topic proposals",
@@ -241642,7 +241647,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T13:08Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2749",
