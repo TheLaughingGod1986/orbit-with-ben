@@ -237355,13 +237355,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-13T01:55Z",
-      "eta": "2026-11-13T03:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T14:29Z",
-      "result": "",
+      "result": "Waiting for: Vercel Hobby team soft block FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) lifts at 2026-12-12 18:13 UTC. Then create one new Neon free_v3 database connected to history-of-science-content-ops Preview only. Do not reuse channelscout or orbit-content-ops stores. Do not change Production.",
       "history": [
         {
           "at": "2026-11-12T14:29Z",
@@ -237387,6 +237387,16 @@
           "at": "2026-11-13T02:01Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Neon free provision returned 402. Team paused until 2026-12-12 18:13 UTC. Production env still empty."
+        },
+        {
+          "at": "2026-11-13T02:01Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: Vercel Hobby team soft block FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) lifts at 2026-12-12 18:13 UTC. Then create one new Neon free_v3 database connected to history-of-science-content-ops Preview only. Do not reuse channelscout or orbit-content-ops stores. Do not change Production."
+        },
+        {
+          "at": "2026-11-13T02:01Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-12-12T18:30:00Z"
         }
       ],
       "remaining_action": "Create the isolated Preview database once the fair-use pause lifts",
@@ -237401,7 +237411,12 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "Vercel Hobby team soft block FAIR_USE_LIMITS_EXCEEDED (fluidCpuDuration) lifts at 2026-12-12 18:13 UTC. Then create one new Neon free_v3 database connected to history-of-science-content-ops Preview only. Do not reuse channelscout or orbit-content-ops stores. Do not change Production.",
+        "check_at": "2026-12-12T18:30:00Z"
+      }
     },
     {
       "id": "J2709",
