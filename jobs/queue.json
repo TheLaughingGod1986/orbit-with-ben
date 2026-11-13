@@ -241346,13 +241346,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-13T10:47Z",
-      "eta": "2026-11-13T12:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-13T02:01Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2748 in orbit-with-ben is 4 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-13T02:01Z",
@@ -241388,6 +241388,11 @@
           "at": "2026-11-13T10:47Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T10:48Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2748 in orbit-with-ben is 4 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/881. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Correct the two open topic proposals, then queue their reviews",
