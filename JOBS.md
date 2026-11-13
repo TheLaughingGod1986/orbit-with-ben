@@ -84,7 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
-| J2772 | mini | blocked | codex | – | for codex · studio · oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) |  |
+| J2772 | mini | open | – | – | for codex · studio · oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change) |  |
 | J2773 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2775 | mini | claimed | macbook-2 | 2026-11-13T15:56Z | 102 topic · for gemini · review · `gemini-argon` · HOS 102 Ozone Hole: rule-E topic go/no-go review |  |

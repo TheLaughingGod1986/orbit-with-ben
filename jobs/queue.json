@@ -243787,13 +243787,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-13T12:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-13T11:19Z",
-      "result": "parked for Chief: Needs Ben: account setup choice explicitly reserved by job brief; choose the workers.dev subdomain name. No subdomain exists; automatic nextjs name is unavailable. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-13T11:19Z",
@@ -243864,6 +243864,11 @@
           "at": "2026-11-13T13:58Z",
           "by": "codex",
           "what": "Chief review: corrected superseded naming instruction in job body under ruling 6851696170. Latest evidence shows nextjs onboarding failure, no opptiai attempt and no live measurements. Original work remains held until this correction is recorded; reopen for same Codex worker next, no external wait."
+        },
+        {
+          "at": "2026-11-13T13:59Z",
+          "by": "codex",
+          "what": "reopened: Existing Chief ruling 6851696170 stands: register ONLY opptiai, then deploy and collect all requested measurements. Corrected the contradictory body in 11a432511d so the original Ben-naming guard cannot cause another loop. Reviewed latest report and build log: 387 pages built, nextjs onboarding failed, no opptiai registration attempted, no live checks passed. Follow-up is this same assigned Codex job, ready now; no external wait or new approval is required. Reuse verified d4083d2 clone at /Users/benjaminoats/_desk/J2772-oppti. Read back actual deployed Worker URL. Exact-name unavailability goes to Chief with sanitized evidence; login/payment requirements stop work. All zero-spend and no domain/DNS/secrets/Vercel/Stripe/PR-merge guards remain. Review only completed; deployment remains unfinished."
         }
       ],
       "remaining_action": "Register the approved opptiai test subdomain, deploy the prepared site and measure its pages and CPU use",
@@ -243871,14 +243876,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put Ben's product site up on a Cloudflare test address and measure it, before its domain moves",
-      "urgent": 10,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-13T12:21Z",
-        "by": "codex",
-        "note": "Build completed: 387 static pages and OpenNext Worker bundle. Deployment stopped because no workers.dev subdomain exists"
-      }
+      "urgent": 10
     },
     {
       "id": "J2773",
