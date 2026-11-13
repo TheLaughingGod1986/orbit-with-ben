@@ -240107,10 +240107,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-13T03:40Z",
+      "eta": "2026-11-13T05:40Z",
       "created_by": "codex",
       "created_at": "2026-11-12T21:43Z",
       "result": "",
@@ -240159,12 +240159,25 @@
           "at": "2026-11-13T03:40Z",
           "by": "codex",
           "what": "reopened: Chief repair PASS on PR869 head 2312a8af2e2645d0b1a8984ee240d25b9c684ab7: destination symlinks unlinked safely, build regression and failing negative control verified, 1291 scripts plus 95 tools plus 21 audio tests pass; rules/core/status checks pass. Reopen solely to record completion of this Chief review; J2618 owns integration and operational verification."
+        },
+        {
+          "at": "2026-11-13T03:40Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "PR 869 is open; park it for the elected Chief and post the result",
       "kind": "assembly",
       "plain": "Keep the studio move rehearsal from changing original channel files",
-      "escalated_at": "2026-11-13T00:55Z"
+      "escalated_at": "2026-11-13T00:55Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-13T03:40Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2739",
