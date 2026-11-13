@@ -245895,9 +245895,14 @@
           "at": "2026-11-13T21:55Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2792; starting verification of J2172 waiting condition for HOS 010 Shorts"
+        },
+        {
+          "at": "2026-11-13T22:03Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2172 condition UNMET: 24/24 moving & 24/24 still ledger hashes, 63/63 INVENTORY hashes, 7/7 board/plan hashes, and 13 Nov HOS snapshot (0 duplicates) verified; J2770 has 2 PASS / 10 FIX and 0/12 KEEP; J2271 blocked at 1/3; J2758 still open because reconcile_holds (jobs.py:634-635) re-attaches moving_video_input from J2271 capability hold"
         }
       ],
-      "remaining_action": "Verify J2172 waiting condition, J2271/J2758/J2770/desk state, and write review artifact",
+      "remaining_action": "Write and commit jobs/reviews/J2792/REVIEW.md from a clean worktree, then hand off protected wait --recheck J2792 call to Chief",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-13T20:37:17+00:00",
@@ -245912,11 +245917,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T21:55Z",
+        "at": "2026-11-13T22:03Z",
         "by": "gemini",
-        "note": "Claimed J2792; starting verification of J2172 waiting condition for HOS 010 Shorts"
+        "note": "Verified J2172 condition UNMET: 24/24 moving & 24/24 still ledger hashes, 63/63 INVENTORY hashes, 7/7 board/plan hashes,"
       },
       "taskKeys": [
         "HOS:010"
