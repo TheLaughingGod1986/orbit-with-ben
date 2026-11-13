@@ -84993,13 +84993,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-25T21:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "cursor",
       "created_at": "2026-10-25T21:16Z",
-      "result": "waits for input: HOS 007 long ETynHpIYLeY public (publishAt Thu 12 Nov 2026 18:00 London). Reopen on/after Thu 12 Nov 18:05 London, post the pinned comment, pin it, and read it back. Do not change the schedule.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-25T21:16Z",
@@ -85025,16 +85025,15 @@
           "at": "2026-11-12T18:05Z",
           "by": "relay",
           "what": "condition verification queued: J2718"
+        },
+        {
+          "at": "2026-11-13T16:21Z",
+          "by": "codex",
+          "what": "reopened: J2718 acting-Chief ruling KEEP: reviewed Gemini evidence in jobs/reviews/J2718/REVIEW.md and parent history; fresh HOS channel:audit on 13 Nov confirms PASS long ETynHpIYLeY public (64 videos, 0 errors). J0946/J0959/J2536 approvals and desk 6403160575 permit the comment. Public-status hold is satisfied. Immediate follow-up is J0960 in the studio lane: re-read Public, check for an existing comment to avoid duplicates, post only the exact approved text if absent, pin in HOS Studio and read back. Preserve title tests, visibility and schedule; Buffer deferred; GBP0."
         }
       ],
       "kind": "studio",
-      "remaining_action": "Post and pin the Vaccine comment",
-      "hold": {
-        "type": "public",
-        "condition": "Vaccine long ETynHpIYLeY must read back Public before posting its pinned comment",
-        "check_at": "2026-11-12T19:05:57+00:00",
-        "recheck_task": "J2718"
-      }
+      "remaining_action": "Post and pin the Vaccine comment"
     },
     {
       "id": "J0961",
