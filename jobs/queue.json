@@ -1,5 +1,5 @@
 {
-  "next_id": 2777,
+  "next_id": 2778,
   "jobs": [
     {
       "id": "J0001",
@@ -188387,6 +188387,11 @@
           "at": "2026-11-13T09:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T11:30:00Z"
+        },
+        {
+          "at": "2026-11-13T13:54Z",
+          "by": "relay",
+          "what": "condition verification queued: J2777"
         }
       ],
       "remaining_action": "Build the two gravity Shorts after the score is approved and the long assembly is complete, then check the cuts and submit for review",
@@ -188405,10 +188410,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2755 Chief ruling: NOT MET. Independent 13 Nov 09:34Z Mini/NAS inventory confirms Mini music contains only the three J2663 scope files; NAS music and both long-render folders are absent. J2666 completed preflight at 08:36Z and awaits its elected-Chief decision, superseding the old not-started diagnosis. Next: elected Chief decides existing J2666 under desk 6813193837 with fresh safeguards; J2664 then delivers versioned score/stems/provenance and required music checks/listening review with Chief acceptance; J2035 completes long assembly and required composite/gates before J2171. Keep picture KEEP dispositions, narration locks, GBP0 Shorts scope and final watch. Retry is verification only, never automatic release.",
-        "check_at": "2026-11-13T11:30:00Z",
+        "check_at": "2026-11-13T14:54:51+00:00",
         "last_recheck": "J2755",
         "checked_at": "2026-11-13T09:37:06+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2777"
       }
     },
     {
@@ -244093,6 +244099,37 @@
       "remaining_action": "Review HOS 103 topic brief, neighbour/search evidence, and Rule-E scorecard on HOS PR #572",
       "kind": "review",
       "plain": "Rule-E topic go/no-go review for HOS 103 (Why Is the Sky Blue? And Why It Isn't Violet) on HOS PR #572 and OWB PR #881"
+    },
+    {
+      "id": "J2777",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2755 Chief ruling: NOT MET. Independent 13 Nov 09:34Z Mini/NAS inventory confirms Mini music contains only the three J2663 scope files; NAS music and both long-render folders are absent. J2666 completed preflight at 08:36Z and awaits its elected-Chief decision, superseding the old not-started diagnosis. Next: elected Chief decides existing J2666 under desk 6813193837 with fresh safeguards; J2664 then delivers versioned score/stems/provenance and required music checks/listening review with Chief acceptance; J2035 completes long assembly and required composite/gates before J2171. Keep picture KEEP dispositions, narration locks, GBP0 Shorts scope and final watch. Retry is verification only, never automatic release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-13T13:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T13:54Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Build the two gravity Shorts after the score is approved and the long assembly is complete, then check the cuts and submit for review",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-13T14:54:51+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
