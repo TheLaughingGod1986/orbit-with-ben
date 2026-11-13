@@ -246344,9 +246344,14 @@
           "at": "2026-11-13T23:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T23:52Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2794 condition verification for J2171 (HOS 009 Shorts A/B assembly)"
         }
       ],
-      "remaining_action": "Verify readiness: Build the two gravity Shorts after the score is delivered and accepted and the long assembly is complete, then check both cuts for review",
+      "remaining_action": "Read J2171, J2777, J2666, J2664, J2035 and approval history",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-14T00:32:29+00:00",
@@ -246363,11 +246368,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-13T23:50Z",
+        "at": "2026-11-13T23:52Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2794 condition verification for J2171 (HOS 009 Shorts A/B assembly)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2795",
