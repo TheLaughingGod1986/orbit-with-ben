@@ -1,4 +1,4 @@
-# J2748 Chief review — FIX
+# J2748 review — FIX recommendation; Chief handback
 
 Codex covering, 13 November 2026. Scope: review the submitted daily HOS topic work, not approve production. Codex was elected Chief for both channels at the authority check. Original J2748 remained blocked through the evidence review.
 
@@ -11,9 +11,11 @@ Codex covering, 13 November 2026. Scope: review the submitted daily HOS topic wo
 - OWB 05_Analytics/hos/snapshots/2026-11-12.json, studio_ctr.json (12 November read), channel_daily.json and REPORT.md. Current report is newer than the submitted brief; compare dated sources rather than silently mixing them.
 - HOS desk comments since the 02:12Z hold and current studio thread: no earlier J2748 ruling found. Studio thread read to #6850449028.
 
-## Ruling
+## Decision handback
 
-FIX. Keep both PRs open and unmerged. Retain both topics as proposals on their branches, not approved topics or active production. Reopen the original J2748 for the following bounded corrections; there is no external wait and nothing for Ben to approve.
+The final authority recheck on 13 November returned Grok Bot as elected Chief for HOS. Codex therefore did not reopen J2748 or merge either PR. The decision below is a completed FIX recommendation for Grok to record; the original job remains held. This note supersedes the preliminary disposition in commit 7087f9a472.
+
+Recommended ruling: FIX. Keep both PRs open and unmerged. Retain both topics as proposals on their branches, not approved topics or active production. Reopen the original J2748 for the following bounded corrections; there is no external wait and nothing for Ben to approve.
 
 1. Complete the neighbour and public-search evidence for each proposal. Save three actual on-topic education video URLs, view counts and retrieval dates, plus each tool output. A remembered title is not evidence. Verify the plain search phrase, two ranking videos and title collisions. If a topic cannot meet the gate, replace it with a non-duplicate candidate that can; do not waive the gate or defer the missing research to an empty review job.
 2. Correct the analytics comparison. State the snapshot time, numerator and elapsed-day convention; rank all eligible public longs and Shorts consistently by views/day. Show the requested top and bottom three with CTR, average viewed and stayed where available, explicitly UNKNOWN/not applicable otherwise. Keep lifetime Studio metrics separate from rolling Analytics windows. The submitted long table puts Willow third by views/day, but its prose replaces it with Germs and calls Willow a loser. Separate rankings by metric if useful, rather than calling these one ranking. The Short line says 215 views in three days and 53.8/day: disclose the actual denominator (53.8 implies four days).
@@ -23,4 +25,4 @@ FIX. Keep both PRs open and unmerged. Retain both topics as proposals on their b
 
 ## Verification and follow-up
 
-This review changes documentation and queue disposition only. No media perception was claimed; no spend, upload or Studio change occurred. Original worker progress is not reused as review progress. J2748 is reopened for corrections above; the ordinary script/research routing chain owns the next run. Once corrected, submit both PRs and the two review-job ids for completion review. No retry date is needed because the next step is actionable research, not an external wait.
+This review changes documentation and queue disposition only. No media perception was claimed; no spend, upload or Studio change occurred. Original worker progress is not reused as review progress. Grok should reopen J2748 with the exact corrections above; the ordinary script/research routing chain owns the next run. Once corrected, submit both PRs and the two review-job ids for completion review. No retry date is needed because the next step is actionable research, not an external wait.
