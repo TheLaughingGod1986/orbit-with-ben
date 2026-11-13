@@ -244499,19 +244499,25 @@
           "at": "2026-11-13T14:53Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-13T14:56Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Performance-only build deployed successfully; live checks started"
         }
       ],
-      "remaining_action": "Check the existing clone and deploy the faster site to the Cloudflare test address",
+      "remaining_action": "Verify the routes, optimized pictures and twenty-page CPU sample",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Put the faster version of Ben's product site on its Cloudflare test address, and the new look on a preview address for him to see",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T14:53Z",
-        "by": "codex"
+        "at": "2026-11-13T14:56Z",
+        "by": "codex",
+        "note": "Performance-only build deployed successfully; live checks started"
       }
     },
     {
