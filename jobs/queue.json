@@ -1,5 +1,5 @@
 {
-  "next_id": 2785,
+  "next_id": 2786,
   "jobs": [
     {
       "id": "J0001",
@@ -245162,6 +245162,38 @@
       "remaining_action": "Make and verify five versioned voice edits without spending credits",
       "kind": "assembly",
       "plain": "Slow down five fast linking passages in the Journey film"
+    },
+    {
+      "id": "J2785",
+      "title": "J01: review pace-corrected linking voice takes before Chief acceptance",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review the versioned Journey Film 01 pace repair required by jobs/reviews/J2665/DECISION.md. Requires demonstrated audio_input. Use Gemini agy (configured gemini-argon) or another genuinely capable routed reviewer; record actual input evidence, never infer listening from ASR. Read the repair job result and its manifest; verify every selected file hash. Listen to all 8 selected takes, checking slowdown artifacts, natural pace, full starts/ends, repeated/stumbled phrases, and the locked script wording, especially intro forged the atoms and Venus carbon locked safely. Preserve original REVIEW.md as historical evidence.\n\nIndependently confirm every take is 130-145 wpm using submitted-script whitespace counts and its actual audio duration, excluding added card silence. Confirm -19 to -28 dB mean and complete decode/ASR evidence. No switching count methods between takes or accepting aggregate pace instead of per-take checks. Deliver exact hash-bound KEEP/FIX findings with timestamps. No spend, no retakes, no script changes, no assembly release. Route completed findings to the elected Chief to resolve held parent J2220; only after acceptance can J2221 assembly proceed. Ben's final watch remains UAT, not an excuse to waive a failing tool gate.\n",
+      "ref": "J2665",
+      "film": "J01",
+      "stage": "vo",
+      "after": "J2784",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-13T17:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T17:02Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Listen to and measure the repaired narration before the Chief accepts it",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Check the corrected Journey narration sounds natural and matches the script"
     }
   ],
   "focus": [
