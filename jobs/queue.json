@@ -241658,9 +241658,14 @@
           "at": "2026-11-13T06:09Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Committed and pushed jobs/reviews/J2757/REVIEW.md (3cf44c8cde) from clean worktree"
+        },
+        {
+          "at": "2026-11-13T06:09Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verification complete in jobs/reviews/J2757/REVIEW.md (3cf44c8cde); parking at protected elected-Chief wait --recheck J2757 call"
         }
       ],
-      "remaining_action": "Park J2757 for elected Chief to record wait --recheck J2757 on J2172 and close J2757",
+      "remaining_action": "Elected Chief: run jobs.py wait J2172 --recheck J2757 and jobs.py done J2757",
       "kind": "review",
       "recheck_of": "J2172",
       "due": "2026-11-13T06:36:50+00:00",
@@ -241675,11 +241680,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-13T06:09Z",
         "by": "gemini",
-        "note": "Committed and pushed jobs/reviews/J2757/REVIEW.md (3cf44c8cde) from clean worktree"
+        "note": "Verification complete in jobs/reviews/J2757/REVIEW.md (3cf44c8cde); parking at protected elected-Chief wait --recheck J2"
       },
       "taskKeys": [
         "HOS:010"
