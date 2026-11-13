@@ -1133,14 +1133,13 @@ def approved_doc(alljobs: list[dict]) -> list[dict]:
     return out
 
 
-def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
-    """Give each film of a one-file channel its long's YouTube read-back from that channel's own UPLOADS.json (Ben,
-    25 Oct 2026 22:54: "Why is it in progress on the board"). Without it a Private + scheduled long had no YouTube
-    state on the board, so a job that only waits for the film to go public kept the card in In progress."""
+def long_uploads(root: Path) -> dict[str, dict]:
+    """{film number: its long's row} from a channel's own UPLOADS.json: the newest registered, scheduled one, never a
+    retired copy or a Short. Both ways a channel can keep its films read a film's long from here (J2790)."""
     try:
         vids = json.loads((root / "00_Brand/Channel-Setup/social/UPLOADS.json").read_text()).get("videos", {})
     except (OSError, ValueError, AttributeError):
-        return
+        return {}
     best: dict[str, dict] = {}
     for vid, meta in vids.items():
         if not isinstance(meta, dict) or meta.get("retired") or (meta.get("kind") or "long") != "long":
@@ -1153,6 +1152,21 @@ def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
         cur = best.get(film)
         if not cur or (bool(row["publishAt"]), row["registeredAt"]) > (bool(cur["publishAt"]), cur["registeredAt"]):
             best[film] = row
+    return best
+
+
+def release_from_upload(row: dict) -> dict:
+    """An UPLOADS.json long row in the shape of a receipt's release record, for a film that has no receipt."""
+    state = "live" if row.get("privacyStatus") == "public" else "scheduled" if row.get("publishAt") else "uploaded"
+    return {"state": state, "videoId": row["videoId"], "publishAt": row.get("publishAt") or "",
+            "source": "00_Brand/Channel-Setup/social/UPLOADS.json"}
+
+
+def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
+    """Give each film of a one-file channel its long's YouTube read-back from that channel's own UPLOADS.json (Ben,
+    25 Oct 2026 22:54: "Why is it in progress on the board"). Without it a Private + scheduled long had no YouTube
+    state on the board, so a job that only waits for the film to go public kept the card in In progress."""
+    best = long_uploads(root)
     for f in pipeline.get("films") or []:
         row = best.get(str(f.get("id") or ""))
         if row:
@@ -1170,8 +1184,13 @@ def read_documents(roots: dict) -> dict:
             attach_pipeline_uploads(root, doc)
         else:
             doc = [json.loads(p.read_text()) for p in sorted(root.glob(kept_at(slug)))] if kept_at(slug) else []
+            longs = long_uploads(root)
             for film in doc:
+                # A receipt in the film's own folder first; else the channel's UPLOADS.json, the same long the one-file
+                # shape reads, so a channel's file shape never changes what the board shows (J2790: HOS 004).
                 receipt = release_record(str(film.get("film", "")), root)
+                if not receipt and longs.get(str(film.get("film", ""))):
+                    receipt = release_from_upload(longs[str(film.get("film", ""))])
                 if receipt:
                     film["release"] = receipt
         documents[slug] = doc
