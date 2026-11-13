@@ -71,7 +71,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2760 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |
 | J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
-| J2768 | any | claimed | codex | 2026-11-14T01:13Z | review · Verify condition for J1130 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2791 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
