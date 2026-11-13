@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
-| J2661 | any | open | – | – | review · Verify condition for J2551 |  |
+| J2661 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2551 |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
 | J2664 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: produce own wonder and teach score within Chief cap | https://github.com/TheLaughingGod1986/history-of-science/pull/557 |
 | J2665 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2220 |  |
