@@ -243058,13 +243058,13 @@
       "stage": "picture",
       "after": "J2270",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-13T09:57Z",
-      "eta": "2026-11-13T11:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-13T09:43Z",
-      "result": "",
+      "result": "Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release.",
       "history": [
         {
           "at": "2026-11-13T09:43Z",
@@ -243095,6 +243095,11 @@
           "at": "2026-11-13T10:05Z",
           "by": "codex",
           "what": "step 2 of 3 done: Review and all repository checks complete. Automatic approval review rejected evidence-branch push twice, including after verifying owner remote and scanning payload. Evidence retained locally; no bypass attempted."
+        },
+        {
+          "at": "2026-11-13T10:06Z",
+          "by": "codex",
+          "what": "blocked: Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release."
         }
       ],
       "remaining_action": "Hand off completed dinosaur scene evidence after publication approval",
@@ -243112,7 +243117,12 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Automatic approval review rejected publishing the review evidence branch twice. Completed local evidence: /Volumes/MiniWork/scratch/J2770-hos/review/010-plates-sheets/INDEX.md; branch codex/J2770-still-evidence commit b89565ee. All checks pass. Explicit payload/destination approval is required before pushing to TheLaughingGod1986/history-of-science and handing off to existing J2758. Preserve local worktree; no bypass, no assembly release.",
+        "check_at": "2026-11-13T16:06:01+00:00"
+      }
     }
   ],
   "focus": [
