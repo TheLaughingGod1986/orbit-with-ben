@@ -90,10 +90,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2746 | any | blocked | macbook-2 | – | review · Verify condition for J2622 |  |
 | J2747 | any | blocked | macbook-2 | – | review · Verify condition for J2035 |  |
 | J2748 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
-| J2749 | any | claimed | gemini | 2026-11-13T03:09Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J2749 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public OWB videos (uhZSRcvngvE through VfDm3E2bUgU, plus #11-#14) pass chapters, sources, end screens and Related checks against 2026-11-12.json snapshot, cuts, manifests and live YouTube watch/Shorts pages; wrote 05_Analytics/live_fixes/2026-11-13.md (6fc255f18c); 0 fixes needed)
 - J2745 done: First-day check at 6 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) ("How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) · History of Science · long · went live Thu 12 Nov 18:00 London
 At 6 h: views 0 · Studio rank 3 of 7 · impressions 4 · click rate 0.0% · average viewed no figure yet
 
@@ -112,4 +112,3 @@ PR #877 (macbook/J2745, left open for Chief merge): 05_Analytics/hos/launch/ETyn
 - J2734 done: Packaging panel (gemini): Andromeda whole-galaxy revision (done)
 - J2733 done: Packaging panel (codex): Andromeda whole-galaxy revision (Single CTR change: tighten the title tail to (Will Our Sun Survive?), retaining STARS RARELY HIT; advisory test hypothesis for Chief selection.)
 - J2731 done: Verify condition for J2172 (HOLD ruling a829e86fbc recorded. J2172 blocked 1/3 after J2271; recheck J2731, next check 2026-11-13T05:30:00Z. 24/24 moving-plate working/archive hashes matched, zero KEEP. Independent J2271 rerouted from producer Gemini to Codex; Ben final-watch order applied to dispatch, quality gates intact. No assembly release or spend.)
-- J2730 done: Verify condition for J2171 (Chief ruling: condition unmet; J2171 remains blocked with dependency hold, last_recheck J2730, next verification 2026-11-13T05:15:00Z. Accepted Gemini REVIEW.md at 1dd9e09176 after independent Mini/NAS inventory: Mini music has only three scope files, NAS music absent, both final-render folders absent; VO_TAKES_KEEP and Shorts-plan hashes match on both stores. Read owner-authored desk 6813193837; existing staged approval stands. Concrete follow-up remains assigned J2666 live safeguard check -> J2664 score delivery, gates, capable listening review and Chief acceptance -> J2035 long assembly -> J2171 Shorts. No additional job or duplicated production; picture/VO approvals, GBP0 Shorts scope and final-watch gates retained. No spend, generation or public changes.)
