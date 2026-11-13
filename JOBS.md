@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2765 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2753 |  |
 | J2767 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Verify condition for J2532 |  |
 | J2768 | any | blocked | macbook-2 | – | review · Verify condition for J1130 |  |
-| J2769 | any | open | – | – | review · Verify condition for J2035 |  |
+| J2769 | any | claimed | codex | 2026-11-13T12:28Z | review · Verify condition for J2035 |  |
 | J2770 | mini | blocked | codex | – | 010 picture · for codex · qa · `gpt-6-astra` · HOS 010: complete independent still and tool evidence for twelve Shorts scenes | J2757 |
 | J2771 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2770 |  |
 
