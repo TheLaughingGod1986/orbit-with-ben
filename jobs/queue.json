@@ -240676,13 +240676,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-13T22:54Z",
-      "eta": "2026-11-14T00:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T19:40Z",
-      "result": "",
+      "result": "Chief ruling: close superseded verification; retain J2649 done under Claude completion. Reviewed worker evidence PR 864 (1c1965a50), parent history, and thread since 12 Nov 19:40Z. PR 833 was CLOSED unmerged, superseded by PR 886 merged to main 13 Nov 05:17Z (d23f286d). J2649 fix PR 897 merged to main 13 Nov 13:06:30Z (e0bd4a7b), confirmed ancestor of main; Rules check SUCCESS. Claude thread 6853795246 records strong-model MERGE review and 1299 tests; 6860871307 confirms live routing, independently checked J2777/J2782 both needs mini for mini parents. Concrete follow-up: none required; implementation and live verification already complete. No new hold, retry, duplicate job or parent reopen. Historical PR 864 remains evidence only, not current instructions. Zero spend; no film or YouTube changes.",
       "history": [
         {
           "at": "2026-11-12T19:40Z",
@@ -240743,6 +240743,11 @@
           "at": "2026-11-13T22:54Z",
           "by": "codex",
           "what": "remaining action: Record closure of the superseded condition check; the relay routing fix is already merged and verified live."
+        },
+        {
+          "at": "2026-11-13T22:55Z",
+          "by": "codex",
+          "what": "done: Chief ruling: close superseded verification; retain J2649 done under Claude completion. Reviewed worker evidence PR 864 (1c1965a50), parent history, and thread since 12 Nov 19:40Z. PR 833 was CLOSED unmerged, superseded by PR 886 merged to main 13 Nov 05:17Z (d23f286d). J2649 fix PR 897 merged to main 13 Nov 13:06:30Z (e0bd4a7b), confirmed ancestor of main; Rules check SUCCESS. Claude thread 6853795246 records strong-model MERGE review and 1299 tests; 6860871307 confirms live routing, independently checked J2777/J2782 both needs mini for mini parents. Concrete follow-up: none required; implementation and live verification already complete. No new hold, retry, duplicate job or parent reopen. Historical PR 864 remains evidence only, not current instructions. Zero spend; no film or YouTube changes."
         }
       ],
       "remaining_action": "Record closure of the superseded condition check; the relay routing fix is already merged and verified live.",
@@ -240767,7 +240772,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/897"
     },
     {
       "id": "J2729",
