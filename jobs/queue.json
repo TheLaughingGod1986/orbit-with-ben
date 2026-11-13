@@ -194946,20 +194946,25 @@
           "at": "2026-11-13T23:27Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Planner tests passed. Rendering the three lossless groups. Frame 2869, frames 3168-3259 and frames 11118-11245 come from the master. No v04 yet."
+        },
+        {
+          "at": "2026-11-13T23:32Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Three groups stitched. 2718-2887 includes master frame 2869. 3168-3259 are master pixels ahead of the jar. 11118-11245 are master pixels after the one-title safe path. Commit d1680779. 136 tests and check_all PASS. No v04."
         }
       ],
-      "remaining_action": "Stitch master pixels into the three partial Franklin picture groups",
+      "remaining_action": "Encode the closed Franklin groups and mux them with the original audio",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-13T23:27Z",
+        "at": "2026-11-13T23:32Z",
         "by": "cursor",
-        "note": "Planner tests passed. Rendering the three lossless groups. Frame 2869, frames 3168-3259 and frames 11118-11245 come from"
+        "note": "Three groups stitched. 2718-2887 includes master frame 2869. 3168-3259 are master pixels ahead of the jar. 11118-11245 a"
       }
     },
     {
