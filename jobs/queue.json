@@ -245721,9 +245721,14 @@
           "at": "2026-11-13T21:01Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2790; starting inspection of video_tracker.py and HOS PR 548"
+        },
+        {
+          "at": "2026-11-13T21:08Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Traced lookup in video_tracker.py and kanban_snapshot.py: attach_pipeline_uploads only runs on one_file(slug), while film_status relies on release_record (PACKAGE_UPLOAD_RESULT*.json, absent for 004) and uploads_index (which only reads ROOT/OWB UPLOADS.json)"
         }
       ],
-      "remaining_action": "Trace HOS:004 upload lookup in scripts/video_tracker.py across one-file PIPELINE.json vs per-file status.json on HOS PR 548",
+      "remaining_action": "Compare kanban_snapshot tracker output between HOS main and PR 548 and verify the exact fix",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245736,11 +245741,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-13T21:01Z",
+        "at": "2026-11-13T21:08Z",
         "by": "gemini",
-        "note": "Claimed J2790; starting inspection of video_tracker.py and HOS PR 548"
+        "note": "Traced lookup in video_tracker.py and kanban_snapshot.py: attach_pipeline_uploads only runs on one_file(slug), while fil"
       },
       "taskKeys": [
         "HOS:004"
