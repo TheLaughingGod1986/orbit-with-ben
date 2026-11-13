@@ -1237,7 +1237,16 @@ def build_videos(
         public, public_at = public_index()
     else:
         public_at = ""
-    titles = titles if titles is not None else folder_titles()
+    given = titles           # a caller's own folder titles (tests) are the films of the channel that names none
+
+    def folder_names(slug: str) -> dict:
+        """A film's title from its folder's name, for a channel whose films are on this machine: read in that
+        channel's own checkout, which is the studio's root only while that channel is its home."""
+        if given is not None:
+            return given if slug == channels.default() else {}
+        base = channels.checkout(slug)
+        return folder_titles(base) if base else {}
+
     yt_force = dict((overrides.get("youtube") or {}) if overrides else {})
     used: set = set()  # public video ids already on a card
     for rows in uploads.values():
@@ -1266,7 +1275,7 @@ def build_videos(
         """(num, title, air, release, upload_rows, use_public_title) per long film of one channel."""
         label = channels.label(slug)
         if slug in documents:
-            own = titles if channels.checkout(slug) == ROOT else {}   # folder titles are this checkout's films
+            own = folder_names(slug)
             for f in film_rows(slug, documents[slug]):
                 num, rows = f["num"], uploads.get(f"{label}:{f['num']}")
                 if f["status_files"]:
@@ -1672,12 +1681,11 @@ if __name__ == "__main__":
             documents[slug] = json.loads((base / kept["path"]).read_text())
             continue
         films = [json.loads(path.read_text()) for path in sorted(base.glob(kept["path"]))]
-        if base == ROOT:   # upload receipts are read from this checkout
-            from kanban_snapshot import release_record
-            for film in films:
-                rec = release_record(str(film.get("film", "")))
-                if rec:
-                    film["release"] = rec
+        from kanban_snapshot import release_record
+        for film in films:          # upload receipts are read from the channel's own checkout, as the snapshot does
+            rec = release_record(str(film.get("film", "")), base)
+            if rec:
+                film["release"] = rec
         documents[slug] = films
     briefs = json.loads(channels.studio_records("kanban", "film_briefs.json").read_text())["films"]
     jobs = json.loads((ROOT / "jobs" / "queue.json").read_text())["jobs"]

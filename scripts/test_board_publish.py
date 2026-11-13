@@ -180,7 +180,7 @@ class Tracker(unittest.TestCase):
             old_state, old_wt = bp.STATE, bp.WT
             bp.STATE, bp.WT = Path(d) / "state", Path(d) / "wt"
             bp.STATE.mkdir()
-            src = bp.WT / "owb" / bp.TRACKER_SRC
+            src = bp.wt() / bp.TRACKER_SRC            # the studio's own copy, whichever repo carries the studio
             src.parent.mkdir(parents=True)
             try:
                 self.assertIsNone(bp.tracker_text())
@@ -372,6 +372,17 @@ class AsksTheLoader(unittest.TestCase):
     """J2615: board_publish.py names no channel. These pin what it did by name on 11 Nov 2026, and show a made-up
     third channel plugging in."""
 
+    def setUp(self):
+        # Pin the layout these tests are about, whichever one they run in: one channel's repo carries the studio.
+        import channels
+        own = channels.default()
+        base = tuple(dict(c, home=c["slug"] == own) for c in channels._load())
+        for patch in (unittest.mock.patch.object(channels, "_load", lambda directory=None: base),
+                      unittest.mock.patch.object(bp, "STUDIO", own),
+                      unittest.mock.patch.object(bp, "STUDIO_REPO", bp.REPOS[own])):
+            patch.start()
+            self.addCleanup(patch.stop)
+
     def sky(self):
         import channels
         base = channels._load()
@@ -396,9 +407,14 @@ class AsksTheLoader(unittest.TestCase):
             "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/00_Brand/Channel-Setup/social/UPLOADS.json", "/05_Analytics/dashboard/data.json", *shared]))
-        self.assertEqual(sorted(bp.sparse("hos")), sorted([
-            "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
-            *shared]))
+        import channel_pins
+        with channel_pins.one_file("hos"):       # a channel that keeps every film in one file
+            self.assertEqual(sorted(bp.sparse("hos")), sorted([
+                "/studio/", "/00_Brand/Channel-Setup/PIPELINE.json", "/00_Brand/Channel-Setup/social/UPLOADS.json",
+                *shared]))
+        # and whichever way the real one keeps them this week, the copy holds its film state and its settings
+        self.assertIn("/" + channels.pipeline("hos")["path"], bp.sparse("hos"))
+        self.assertIn("/studio/", bp.sparse("hos"))
 
     def test_the_snapshot_is_called_as_before(self):
         out = Path("/tmp/out")
@@ -417,6 +433,36 @@ class AsksTheLoader(unittest.TestCase):
             (bp.STUDIO_REPO, ("refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat",
                               "refs/heads/macbook-heartbeat-2")),
             (bp.REPOS["hos"], ("refs/heads/main",))])
+
+    def test_once_the_studio_has_its_own_repo_it_gets_its_own_copy_and_every_channel_is_beside_it(self):
+        # J2621 (plan decision 1: no home channel). No channel's repo carries the studio: its files are read from a
+        # copy of the studio's own repo, and each channel's copy holds only that channel's files.
+        import channels
+        apart = tuple(dict(c, home=False) for c in channels._load())
+        studio_repo = Path("/Users/x/YouTube/studio")
+        made, asked = [], []
+        with unittest.mock.patch.object(channels, "_load", lambda directory=None: apart), \
+                unittest.mock.patch.object(bp, "STUDIO", None), unittest.mock.patch.object(bp, "STUDIO_REPO", studio_repo), \
+                unittest.mock.patch.object(bp, "chief_args", lambda: []):
+            self.assertEqual(bp.wt(), bp.WT / "studio")
+            self.assertEqual((bp.wt("owb"), bp.wt("hos")), (bp.WT / "owb", bp.WT / "hos"))
+            self.assertFalse(set(bp.STUDIO_SPARSE) & set(bp.sparse("owb")))          # no studio file in a channel's copy
+            self.assertIn("/02_Video-Projects/*/status.json", bp.sparse("owb"))
+            self.assertEqual(bp.snapshot_command(Path("/tmp/out")),
+                             [sys.executable, str(bp.WT / "studio" / "scripts" / "kanban_snapshot.py"),
+                              "--owb", str(bp.WT / "owb"), "--hos", str(bp.WT / "hos"), "--db-out", "/tmp/out"])
+            bp.quick_key(lambda repo, *refs: asked.append((repo, refs)) or "x")
+            with tempfile.TemporaryDirectory() as d, \
+                    unittest.mock.patch.object(bp, "worktree", lambda repo, path, sparse: made.append((repo, path, sparse))), \
+                    unittest.mock.patch.object(bp.subprocess, "run", lambda *a, **k: None):
+                bp.build(Path(d) / "out")
+        self.assertEqual(asked[0][0], studio_repo)
+        # Set when the module loads, so the line is held here; the dry run of the move loads it with no home channel.
+        self.assertIn("\nSTUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)\n", Path(bp.__file__).read_text())
+        self.assertEqual([repo for repo, _ in asked[1:]], [bp.REPOS["owb"], bp.REPOS["hos"]])
+        self.assertEqual([(repo, path) for repo, path, _ in made],
+                         [(bp.REPOS["owb"], bp.WT / "owb"), (bp.REPOS["hos"], bp.WT / "hos"), (studio_repo, bp.WT / "studio")])
+        self.assertEqual(made[-1][2], bp.STUDIO_SPARSE)
 
     def test_the_heartbeat_is_left_out_of_the_queue_sections_change_check_only(self):
         d = docs()

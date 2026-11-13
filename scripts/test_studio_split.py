@@ -4,7 +4,10 @@ finished?"). It must place every file, count what the ratchet counts, never prin
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
+import os
+import stat
 import subprocess
 import sys
 import tempfile
@@ -47,6 +50,13 @@ class Routes(unittest.TestCase):
         self.assertIn(".gitignore", placed["aaa"])
         files, in_studio = set(split.tracked(ROOT)), set(split.plan(split.tracked(ROOT), channels.slugs(), split.resident(ROOT))[split.STUDIO])
         self.assertEqual([f for f in split.shared_tools(ROOT) if f in files and f not in in_studio], [])
+
+    def test_with_no_home_channel_a_channels_file_has_no_place_in_the_studio(self):
+        # The studio already in a repo of its own: channel content found there is listed, not filed under a channel.
+        placed = split.plan([".gitignore", "scripts/a.py", "02_Video-Projects/001_X/s.json", "05_Analytics/aaa/x.json"], ["aaa"], None)
+        self.assertEqual(placed[split.STUDIO], [".gitignore", "scripts/a.py"])
+        self.assertEqual(placed["unrouted"], ["02_Video-Projects/001_X/s.json"])
+        self.assertEqual(placed["aaa"], ["05_Analytics/aaa/x.json"])
 
     def test_the_script_names_no_channel_and_asks_for_no_home(self):
         import test_channel_ratchet as ratchet
@@ -158,6 +168,12 @@ class History(unittest.TestCase):
 class WholeRun(unittest.TestCase):
     def test_it_agrees_with_the_ratchet_and_changes_nothing_real(self):
         import test_channel_ratchet as ratchet
+        if split.resident(ROOT) is None:
+            # Run inside the layout the dry run builds: no channel's content is here, so there is nothing to rehearse.
+            with self.assertRaises(SystemExit) as stop:
+                split.check(ROOT, tests=False)
+            self.assertIn("already moved", str(stop.exception))
+            return
         before = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"], capture_output=True, text=True).stdout
         res = split.check(ROOT, tests=False)
         after = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain"], capture_output=True, text=True).stdout
@@ -170,6 +186,9 @@ class WholeRun(unittest.TestCase):
         self.assertEqual(res["counts"]["keys"], 0, [g for g in res["groups"] if g["key"] == "keys"])
         text = split.report(res)
         self.assertIn(f"{res['left']} thing", text)
+        one = split.report(dict(res, left=1))
+        self.assertIn("1 thing still stops the move.", one)                 # one thing stops; two things stop
+        self.assertIn("2 things still stop the move.", split.report(dict(res, left=2)))
         self.assertNotRegex(text, r"[A-Za-z0-9._%+-]+@(gmail|googlemail)\.com")
 
     def test_a_pass_says_so(self):
@@ -207,6 +226,132 @@ class WholeRun(unittest.TestCase):
     def test_nothing_to_rehearse_once_no_channel_lives_here(self):
         with mock.patch.object(split, "resident", lambda root: None):
             self.assertRaises(SystemExit, split.check, ROOT, None, False)
+
+
+class Isolation(unittest.TestCase):
+    """Placing a channel's numbers into a linked checkout must write the scratch copy only (J2738)."""
+
+    def test_placing_a_channels_numbers_does_not_write_through_to_its_checkout(self):
+        home, slug = "owb", "hos"
+        rels = {
+            "file": "05_Analytics/hos/sample.json",
+            "nested": "05_Analytics/hos/nested/inner.json",
+            "dangling": "05_Analytics/hos/dangling.json",
+            "source_link": "05_Analytics/hos/via_link.json",
+            "same_target": "05_Analytics/hos/same_target.json",
+        }
+        original = b"ORIGINAL CHANNEL DATA\n"
+        studio = b"STUDIO COPY\n"
+        nested_original = b"ORIGINAL NESTED\n"
+        nested_studio = b"STUDIO NESTED\n"
+        link_body = b"LINK BODY\n"
+        same_original = b"ORIGINAL SAME TARGET\n"
+
+        def seal(path: Path) -> None:
+            if path.is_symlink():
+                return
+            if path.is_dir():
+                for child in list(path.iterdir()):
+                    seal(child)
+                path.chmod(0o555)
+            else:
+                path.chmod(0o444)
+
+        def unseal(path: Path) -> None:
+            if path.is_symlink() or not path.exists():
+                return
+            if path.is_dir():
+                path.chmod(0o755)
+                for child in list(path.iterdir()):
+                    unseal(child)
+            else:
+                path.chmod(0o644)
+
+        def digest(path: Path) -> str:
+            return hashlib.sha256(path.read_bytes()).hexdigest()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            real, source, scratch = root / "real", root / "source", root / "scratch"
+            nested_store = root / "nested_store"
+            body = root / "link_body"
+            missing = root / "missing" / "dangling.json"
+            nested_store.mkdir()
+            (nested_store / "inner.json").write_bytes(nested_original)
+            body.write_bytes(link_body)
+            for rel, data in (("file", original), ("source_link", original), ("same_target", same_original)):
+                path = real / rels[rel]
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(data)
+            (real / "05_Analytics/hos/nested").symlink_to(nested_store, target_is_directory=True)
+            (real / rels["dangling"]).symlink_to(missing)
+            (real / "05_Analytics/hos/untouched.json").write_bytes(b"LEAVE THIS\n")
+            for rel, data in (("file", studio), ("nested", nested_studio), ("dangling", b"STUDIO DANGLING\n")):
+                path = source / rels[rel]
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(data)
+            (source / rels["source_link"]).symlink_to(body)
+            (source / rels["same_target"]).symlink_to(real / rels["same_target"])
+            before = {name: digest(real / rels[name]) for name in ("file", "source_link", "same_target")}
+            before["nested"] = digest(nested_store / "inner.json")
+            before["link_body"] = digest(body)
+            sealed = [real, nested_store, body]
+            for path in sealed:
+                seal(path)
+            try:
+                placed = {split.STUDIO: [], home: [], slug: list(rels.values())}
+                folder = split.build(scratch, source, placed, home, {slug: real})[slug]
+                scratch_file = folder / rels["file"]
+                scratch_nested = folder / rels["nested"]
+                scratch_dangling = folder / rels["dangling"]
+                scratch_link = folder / rels["source_link"]
+                scratch_same = folder / rels["same_target"]
+                self.assertFalse(scratch_file.is_symlink())
+                self.assertFalse(scratch_nested.is_symlink())
+                self.assertFalse(scratch_dangling.is_symlink())
+                self.assertEqual(scratch_file.read_bytes(), studio)
+                self.assertEqual(scratch_nested.read_bytes(), nested_studio)
+                self.assertEqual(scratch_dangling.read_bytes(), b"STUDIO DANGLING\n")
+                self.assertNotEqual(scratch_file.resolve(), (real / rels["file"]).resolve())
+                self.assertNotEqual(scratch_nested.resolve(), (nested_store / "inner.json").resolve())
+                self.assertTrue(scratch_file.resolve().is_relative_to(scratch.resolve()))
+                self.assertTrue(scratch_nested.resolve().is_relative_to(scratch.resolve()))
+                self.assertTrue(scratch_dangling.resolve().is_relative_to(scratch.resolve()))
+                self.assertFalse(missing.exists())
+                self.assertTrue(scratch_link.is_symlink())
+                self.assertEqual(os.readlink(scratch_link), os.readlink(source / rels["source_link"]))
+                self.assertNotEqual(scratch_link.resolve(), (real / rels["source_link"]).resolve())
+                self.assertTrue(scratch_same.is_symlink())
+                self.assertEqual(scratch_same.resolve(), (real / rels["same_target"]).resolve())
+                self.assertTrue((folder / "05_Analytics/hos/untouched.json").is_symlink())
+                self.assertEqual(stat.S_IMODE((real / rels["file"]).stat().st_mode), 0o444)
+                self.assertEqual(stat.S_IMODE((nested_store / "inner.json").stat().st_mode), 0o444)
+                # A second place, after the scratch file is real, still writes the scratch copy.
+                (source / rels["file"]).write_bytes(b"STUDIO COPY 2\n")
+                (source / rels["nested"]).write_bytes(b"STUDIO NESTED 2\n")
+                for rel in (rels["file"], rels["nested"], rels["dangling"], rels["source_link"], rels["same_target"]):
+                    split._own_folder((folder / rel).parent, folder)
+                    split._place(source / rel, folder / rel)
+                self.assertEqual((folder / rels["file"]).read_bytes(), b"STUDIO COPY 2\n")
+                self.assertEqual((folder / rels["nested"]).read_bytes(), b"STUDIO NESTED 2\n")
+                self.assertFalse((folder / rels["file"]).is_symlink())
+                self.assertFalse((folder / rels["nested"]).is_symlink())
+                self.assertFalse(missing.exists())
+                self.assertEqual(os.readlink(folder / rels["source_link"]), os.readlink(source / rels["source_link"]))
+            finally:
+                for path in sealed:
+                    unseal(path)
+            self.assertEqual(digest(real / rels["file"]), before["file"])
+            self.assertEqual((real / rels["file"]).read_bytes(), original)
+            self.assertEqual(digest(real / rels["source_link"]), before["source_link"])
+            self.assertEqual((real / rels["source_link"]).read_bytes(), original)
+            self.assertEqual(digest(real / rels["same_target"]), before["same_target"])
+            self.assertEqual((real / rels["same_target"]).read_bytes(), same_original)
+            self.assertEqual(digest(nested_store / "inner.json"), before["nested"])
+            self.assertEqual((nested_store / "inner.json").read_bytes(), nested_original)
+            self.assertEqual(digest(body), before["link_body"])
+            self.assertEqual((real / "05_Analytics/hos/untouched.json").read_bytes(), b"LEAVE THIS\n")
+            self.assertFalse(missing.exists())
 
 
 if __name__ == "__main__":

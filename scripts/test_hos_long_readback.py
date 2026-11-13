@@ -16,6 +16,19 @@ sys.path.insert(0, str(HERE))
 import board_check  # noqa: E402
 import kanban_snapshot as ks  # noqa: E402
 import video_tracker as vt  # noqa: E402
+import channel_pins  # noqa: E402
+
+# These tests hand the board History of Science's films as one pipeline document. They are about that shape, so
+# they say so, whatever the real channel does this week (J2622).
+PIN = channel_pins.one_file("hos")
+
+
+def setUpModule():
+    PIN.start()
+
+
+def tearDownModule():
+    PIN.stop()
 
 NOW = dt.datetime(2026, 10, 25, 23, 0, tzinfo=dt.timezone.utc)
 GATED = {"id": "J0241", "status": "blocked", "title": "HOS 005 s04: Related once the long is public", "body": "",

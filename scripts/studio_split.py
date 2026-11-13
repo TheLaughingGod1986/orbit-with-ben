@@ -127,8 +127,11 @@ def route(path: str, slugs: list[str]) -> tuple[str, str] | None:
     return None
 
 
-def plan(files: list[str], slugs: list[str], home: str) -> dict:
-    """{'studio': [...], <slug>: [...], 'built': [...], 'unrouted': [...]}. A file both need is in each list."""
+def plan(files: list[str], slugs: list[str], home: str | None) -> dict:
+    """{'studio': [...], <slug>: [...], 'built': [...], 'unrouted': [...]}. A file both need is in each list.
+
+    `home` is the channel whose content is in this repo today, or None when none is (the studio already in a repo of
+    its own). Then a file the table gives to the home channel has no place here, and is listed as unrouted."""
     out: dict = {STUDIO: [], BUILT: [], "unrouted": [], **{s: [] for s in slugs}}
     for f in files:
         r = route(f, slugs)
@@ -136,9 +139,10 @@ def plan(files: list[str], slugs: list[str], home: str) -> dict:
             out["unrouted"].append(f)
         elif r[0] == BOTH:
             out[STUDIO].append(f)
-            out[home].append(f)
+            if home:
+                out[home].append(f)
         elif r[0] == HOME_CHANNEL:
-            out[home].append(f)
+            out[home if home else "unrouted"].append(f)
         else:
             out[r[0]].append(f)
     return out
@@ -153,21 +157,62 @@ def shared_tools(root: pathlib.Path) -> list[str]:
     return sorted(files if isinstance(files, dict) else [f.get("path") for f in files if f.get("path")])
 
 
+def _release_dest(dest: pathlib.Path) -> None:
+    """Make `dest` a name in this folder before a write. A file link left when a directory link is turned into a
+    real folder still points at the channel checkout. copy2 follows that link, and a dangling one is followed too:
+    the write creates the missing target. unlink removes the link itself and does not modify or remove the target."""
+    if dest.is_symlink():
+        dest.unlink()
+
+
 def _place(src: pathlib.Path, dest: pathlib.Path) -> None:
-    """A copy, never a link: the tests run inside the scratch folder, and a test that rewrites a file in place must
-    not reach the real one."""
+    """A copy, never a link into a real checkout: the tests run inside the scratch folder, and a test that rewrites
+    a file in place must not reach the real one. The destination is a real name in the scratch folder first, so an
+    existing or dangling file link cannot be followed."""
     dest.parent.mkdir(parents=True, exist_ok=True)
+    _release_dest(dest)
     if src.is_symlink():              # a tracked link (some point at folders that only exist on the Mini): keep it a link
+        if dest.is_file():            # a scratch file from an earlier place; the link above is already gone
+            dest.unlink()
         os.symlink(os.readlink(src), dest)
     elif src.is_file():
         shutil.copy2(src, dest)
 
 
+def _link_in(checkout: pathlib.Path, folder: pathlib.Path) -> None:
+    """A folder that reads as a channel's checkout without being it: one link for each thing at its top. What the
+    move adds to that channel (its numbers) can then be placed beside the links and never lands in the real checkout.
+    Its `.git` is left out: nothing run in the scratch layout may reach the real repo's history or index."""
+    folder.mkdir(parents=True)
+    for entry in sorted(checkout.iterdir()):
+        if entry.name != ".git":
+            (folder / entry.name).symlink_to(entry.resolve(), target_is_directory=entry.is_dir())
+
+
+def _own_folder(path: pathlib.Path, top: pathlib.Path) -> None:
+    """Make every folder from `top` down to `path` a real one in the scratch layout. A link on the way (a folder the
+    real checkout already has) becomes a folder of links to what it held, so a file placed under it stays in the
+    scratch layout."""
+    here = top
+    for part in path.relative_to(top).parts:
+        here = here / part
+        if here.is_symlink():
+            real = here.resolve()
+            here.unlink()                 # the link, never what it points at
+            here.mkdir()
+            for entry in sorted(real.iterdir()):
+                (here / entry.name).symlink_to(entry, target_is_directory=entry.is_dir())
+        else:
+            here.mkdir(exist_ok=True)
+
+
 def build(scratch: pathlib.Path, root: pathlib.Path, placed: dict, home: str, others: dict) -> dict:
     """Make scratch/studio and one folder beside it for each channel. Returns {slug: folder} for the channels.
 
-    `others`: {slug: its checkout or None}. A channel whose files are on this machine is linked in whole; one that is
-    not gets a folder holding only its settings (the cached copy), which is all the studio needs to list it."""
+    `others`: {slug: its checkout or None}. A channel whose files are on this machine gets a folder of links to them;
+    one that is not gets a folder holding only its settings (the cached copy), which is all the studio needs to list
+    it. Either way its numbers, kept in the home repo today, are placed in its folder: that is where the move puts
+    them."""
     studio = scratch / STUDIO
     for f in placed[STUDIO]:
         _place(root / f, studio / f)
@@ -177,30 +222,45 @@ def build(scratch: pathlib.Path, root: pathlib.Path, placed: dict, home: str, ot
     for slug, checkout in others.items():
         folder = scratch / (channels.get(slug)["repo"].get("checkouts") or [slug])[-1]
         if checkout:
-            folder.symlink_to(pathlib.Path(checkout).resolve(), target_is_directory=True)
+            _link_in(pathlib.Path(checkout).resolve(), folder)
         else:
             cached = root / "channels" / slug / "channel.json"
             if cached.is_file():
                 _place(cached, folder / "studio" / "channel.json")
-        for f in placed.get(slug, []):   # its numbers, kept in the home repo today
-            if not checkout:
-                _place(root / f, folder / f)
+        for f in placed.get(slug, []):
+            _own_folder((folder / f).parent, folder)
+            _place(root / f, folder / f)
         folders[slug] = folder
     return folders
 
 
-def _rewrite(path: pathlib.Path, doc: dict) -> None:
+def _rewrite(path: pathlib.Path, doc: dict, inside: pathlib.Path) -> None:
+    """Write a settings file again, only if it is one of the dry run's own copies under `inside`: never a file
+    reached through a link into a real checkout."""
+    if path.is_symlink() or not path.resolve().is_relative_to(inside.resolve()):
+        raise RuntimeError(f"{path} is not one of the dry run's own copies: left alone")
     path.unlink()                     # a new file, whatever the old one was
     path.write_text(json.dumps(doc, indent=2) + "\n")
 
 
-def plug_in(studio: pathlib.Path, folders: dict, strict: bool = False) -> tuple[str, dict]:
+def _as_a_repo(studio: pathlib.Path) -> None:
+    """The scratch studio as the git repo it will be: its files tracked, in one first commit (plan decision 3: the
+    studio repo starts clean). Checks that ask git which files are tracked then run there as they do here."""
+    def git(*args: str) -> None:
+        subprocess.run(["git", "-C", str(studio), "-c", "user.name=dry run", "-c", "user.email=dry-run",
+                        "-c", "commit.gpgsign=false", *args], capture_output=True, check=True, timeout=300)
+    git("init", "-q", "-b", "main")
+    git("add", "-A")
+    git("commit", "-q", "--no-verify", "-m", "The studio, as the move would leave it")
+
+
+def plug_in(studio: pathlib.Path, folders: dict) -> tuple[str, dict]:
     """Point the scratch studio's registry at the folders beside it. Returns (why it cannot list its channels or '',
     the environment to run it in).
 
-    After the move every channel is a folder beside the studio, found the same way. Today the registry marks one
-    channel as the studio's own repo; that mark is taken off here. `strict` also takes it off the channel's own
-    settings file, which is how things stand once no channel is the studio's home."""
+    After the move every channel is a folder beside the studio, found the same way: by the variable its own settings
+    file names, as History of Science is today. Today the registry marks one channel as the studio's own repo; that
+    mark is taken off here, and the registry is the only place that says it (a channel's settings file does not)."""
     reg_file = studio / "channels" / "channels.json"
     if not reg_file.is_file():
         return "channels/channels.json is not in the studio folder", dict(os.environ)
@@ -208,14 +268,11 @@ def plug_in(studio: pathlib.Path, folders: dict, strict: bool = False) -> tuple[
     env = dict(os.environ)
     for entry in reg["channels"]:
         entry.pop("home", None)
-        entry.setdefault("env", "STUDIO_SPLIT_" + re.sub(r"\W", "_", entry["slug"]).upper())
-        env[entry["env"]] = str(folders[entry["slug"]])
         own = folders[entry["slug"]] / "studio" / "channel.json"
-        if strict and own.is_file() and not folders[entry["slug"]].is_symlink():
-            doc = json.loads(own.read_text())
-            if doc.pop("home", None) is not None:
-                _rewrite(own, doc)
-    _rewrite(reg_file, reg)
+        named = (json.loads(own.read_text()).get("repo") or {}).get("env") if own.is_file() else ""
+        entry.setdefault("env", named or "STUDIO_SPLIT_" + re.sub(r"\W", "_", entry["slug"]).upper())
+        env[entry["env"]] = str(folders[entry["slug"]])
+    _rewrite(reg_file, reg, studio)
     probe = "import channels; print(len(channels.slugs()))"
     r = subprocess.run([sys.executable, "-c", probe], cwd=str(studio / "scripts"), env=env, capture_output=True,
                        text=True, timeout=120)
@@ -329,15 +386,11 @@ def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests:
         if why:
             groups["registry"] = [why]
             tests_state = "not run: the studio cannot list its channels in the new layout yet"
-        else:
-            if tests:
-                failed = run_tests(scratch / STUDIO, env)
-                groups["tests"] = [f"{name}: {len(which)} test{'s' if len(which) != 1 else ''}" for name, which in sorted(failed.items())]
-                tests_state = "run"
-            # Last, because it rewrites the scratch settings: can the studio list its channels with none as its home?
-            strict, _env = plug_in(scratch / STUDIO, folders, strict=True)
-            if strict:
-                groups["registry"] = [strict]
+        elif tests:
+            _as_a_repo(scratch / STUDIO)
+            failed = run_tests(scratch / STUDIO, env)
+            groups["tests"] = [f"{name}: {len(which)} test{'s' if len(which) != 1 else ''}" for name, which in sorted(failed.items())]
+            tests_state = "run"
     finally:
         if made:
             shutil.rmtree(scratch, ignore_errors=True)
@@ -368,7 +421,7 @@ def report(res: dict) -> str:
     if not res["left"]:
         lines.append("PASS. Nothing stops the move.")
         return "\n".join(lines)
-    lines.append(f"{res['left']} thing{'s' if res['left'] != 1 else ''} still stop the move.")
+    lines.append(f"{res['left']} thing{'s' if res['left'] != 1 else ''} still stop{'' if res['left'] != 1 else 's'} the move.")
     for g in res["groups"]:
         if not g["count"]:
             continue
