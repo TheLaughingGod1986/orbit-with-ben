@@ -233784,13 +233784,13 @@
       "stage": "",
       "after": "J2634",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T06:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-11T21:31Z",
-      "result": "Prerequisite not met: J2634 HOS PR #562 is OPEN and not on main. Job brief requires its merge before branching. Chief merge is required; no code changed and watcher not restarted.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T21:31Z",
@@ -233816,6 +233816,11 @@
           "at": "2026-11-12T06:06Z",
           "by": "relay",
           "what": "condition verification queued: J2670"
+        },
+        {
+          "at": "2026-11-13T22:36Z",
+          "by": "codex",
+          "what": "reopened: J2670 Chief ruling: prerequisite satisfied. Exact HOS PR 562 head 316f50c4 reviewed; 24 desk tests OK and four CI checks successful. PASS: issuecomment-6866635164. Merged 2026-11-13T22:35:59Z as 6469a4ba9fd2e3fe1b2baa82aa0d3bc1c15e5c78, verified ancestor of origin/main. Resume from current HOS main; original review and no-restart-before-merge gates remain. Guarded watcher refresh follows your status-change PR merge; no restart here."
         }
       ],
       "remaining_action": "Wait for the earlier desk protection change to merge, then update outcome statuses and test them",
@@ -233823,20 +233828,7 @@
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Let a Chief desk reply with status ruling, pass or ruled close the note it answers, so the same decision is not posted twice.",
-      "mini_only": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-12T06:05Z",
-        "by": "codex",
-        "note": "Checked prerequisite: J2634 is done but HOS PR #562 remains OPEN with no merge commit; brief forbids starting before mer"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Prerequisite not met: J2634 HOS PR #562 is OPEN and not on main. Job brief requires its merge before branching. Chief merge is required; no code changed and watcher not restarted.",
-        "check_at": "2026-11-12T07:06:13+00:00",
-        "recheck_task": "J2670"
-      }
+      "mini_only": true
     },
     {
       "id": "J2651",
