@@ -1,5 +1,5 @@
 {
-  "next_id": 2772,
+  "next_id": 2773,
   "jobs": [
     {
       "id": "J0001",
@@ -243462,6 +243462,38 @@
       "taskKeys": [
         "HOS:010"
       ]
+    },
+    {
+      "id": "J2772",
+      "title": "oppti.dev: test deploy to Cloudflare on its workers.dev address and measure it (no domain change)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (13 Nov): \"Move oppti.dev to Cloudflare at £0.\"** His product site has answered \"payment required\" since Vercel paused the team on 12 Nov. This is not studio work, but it is his instruction and the Mini is the one machine signed in to his Cloudflare account. This job is the test deploy only (queued 13 Nov 11:19Z).\n\n**What is ready.** Repo `TheLaughingGod1986/oppti.dev` (private), branch `claude/cloudflare-move`, commit `d4083d2e1522739f8dfa564708f8ca26276a9499`, draft pull request 61. Read `docs/cloudflare-move/README.md` on that branch first.\n\n**Do.**\n1. Clone that branch into a folder outside every studio checkout. `npm ci`. Check `npx wrangler whoami` shows signed in (print no account address).\n2. `npm run cf:deploy`. It builds and creates a Worker named `oppti-dev` on the account's `workers.dev` address. Free plan only: stop at anything that asks for a card or a paid plan. If the account has no `workers.dev` subdomain yet and wrangler asks for a name, stop and park for Ben with that one line: the name is his. If the deploy is refused on size (3 MiB compressed allowed; the build measured 2.81 MiB), report the exact message. Set no secrets and no `NEXT_PUBLIC_*` values in this job; the test does not need them.\n3. Measure on the `workers.dev` address and put the numbers in the result:\n   - Status, and that the content is there, for `/`, `/pricing`, `/blog`, `/blog/page/2`, one blog post, `/rss.xml` (count the `<item>`s), `/plugins/alt-text`, `/docs/titles`, `/login`, `/sitemap.xml`.\n   - `/pricing` from the Mini shows pound prices and no dollar prices. (The dollar copy is for US addresses; the cloud session checks that from its side once it has the address.)\n   - CPU. Run `npx wrangler tail oppti-dev --format json` while you request 20 different pages, three share images (`/api/og?title=Test&category=Guide`, each with a different title) and `/api/backend/health`. Report `cpuTime` in ms: median and highest for the pages, each share image, the health call, and every outcome that is not `ok` (for example `exceededCpu`).\n   - `curl -sI` on `/pricing` with no `Accept-Encoding`: is there a `content-encoding` header?\n   - The header `X-Robots-Tag: noindex, nofollow` is on the `workers.dev` responses. It must be.\n4. Change nothing else. No custom domain, no DNS, no secrets, nothing on Vercel or Stripe. Do not merge pull request 61. Leave the Worker up afterwards.\n\n**Guards.** £0. No secret, account address or email printed. The clone stays outside the studio's checkouts.\n\n**Result.** The `workers.dev` address, the measurements as a small table, and anything that failed, in the job result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-13T11:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-13T11:19Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Deploy oppti.dev's Cloudflare branch to workers.dev from the Mini and report status, prices, CPU per request and headers",
+      "due": "2026-11-13T14:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put Ben's product site up on a Cloudflare test address and measure it, before its domain moves",
+      "urgent": 10
     }
   ],
   "focus": [
