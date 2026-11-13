@@ -214286,13 +214286,13 @@
       "stage": "",
       "after": "J2737",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T00:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:12Z",
-      "result": "parked for Chief: Andromeda package B in REPACKAGE_2026-11.md requires illustration disclosure in its description or A only, but J2449 forbids description edits and requires 3 arms. Approve disclosure, provide suitable B, or narrow the test. Old T017 remains intact; finished 11 Nov 22:32, draw, screenshot saved. Jupiter new 3-arm title-and-thumbnail test T030 running since about 12 Nov 00:08Z; Black Hole existing T002 still running. Evidence and ledger PR #836; no spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T21:12Z",
@@ -214438,6 +214438,11 @@
           "at": "2026-11-13T03:17Z",
           "by": "codex",
           "what": "J2737 PASS narrows remaining execution to exact baseline versus v02 on Andromeda only; hold retained until decision is merged"
+        },
+        {
+          "at": "2026-11-13T03:19Z",
+          "by": "codex",
+          "what": "reopened: J2737 exact-file PASS recorded and merged in PR885 after independent panel J2733-J2736; candidate 8371a323ea5bc3b856c9409d10115d7d8fb1bd5d095ba534bcd95f472df1935c and unchanged baseline hashes independently verified. Two-arm Andromeda-only brief now in queue; fresh Studio and finished-test evidence guards retained. Execution waits for J2737 completion."
         }
       ],
       "remaining_action": "Start the approved two-arm Andromeda test after a fresh Studio check",
@@ -214447,19 +214452,7 @@
       "taskKeys": [
         "OWB:019"
       ],
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-12T00:08Z",
-        "by": "codex",
-        "note": "Jupiter three-arm test running, saved about 12 Nov 00:08Z; finished T003 and T017 reports preserved. Andromeda package B"
-      },
       "escalated_at": "2026-11-12T03:14Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "J2692 ruled FIX on canonical Andromeda Package A. PR #836 merged; J2729 must rebuild the whole-galaxy challenger, complete a new exact-file panel and obtain elected-Chief PASS before this job reopens for only the two-arm Andromeda test. No other videos or description changes.",
-        "check_at": "2026-11-14T09:00:00Z"
-      },
       "plain": "Testing the new Andromeda title and thumbnail against the current version"
     },
     {
