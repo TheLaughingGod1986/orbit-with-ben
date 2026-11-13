@@ -237372,19 +237372,26 @@
           "at": "2026-11-13T01:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-13T01:55Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J2708. Disk 17.5 GB free; checking scratch before Preview database setup."
         }
       ],
-      "remaining_action": "Establish an approved disposable hosted database and safe Preview-only configuration",
+      "remaining_action": "Find a zero-cost isolated Preview database and set safe Preview config",
       "kind": "assembly",
       "plain": "Set up a safe test database for the History of Science app preview",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-13T01:55Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2708. Disk 17.5 GB free; checking scratch before Preview database setup."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     },
     {
       "id": "J2709",
