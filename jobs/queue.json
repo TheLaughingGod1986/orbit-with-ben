@@ -245686,9 +245686,14 @@
           "at": "2026-11-13T19:41Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2790; starting session at step 0 of 3"
+        },
+        {
+          "at": "2026-11-13T19:43Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Traced exact lookup gap across kanban_snapshot.py (read_documents/attach_pipeline_uploads/watch_links) and video_tracker.py (uploads_index/film_rows/long_rows)"
         }
       ],
-      "remaining_action": "Inspect existing J2790 worktrees/branches and trace lookup in video_tracker.py and kanban_snapshot.py",
+      "remaining_action": "Decide which side is wrong, check Buffer mirror safety, and fix/test the per-file upload lookup in orbit-with-ben",
       "kind": "review",
       "plain": "Make sure the board still shows the Atom video as live after History of Science changes how it stores each film",
       "rerouted_from": {
@@ -245701,11 +245706,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-13T19:41Z",
+        "at": "2026-11-13T19:43Z",
         "by": "gemini",
-        "note": "Claimed J2790; starting session at step 0 of 3"
+        "note": "Traced exact lookup gap across kanban_snapshot.py (read_documents/attach_pipeline_uploads/watch_links) and video_tracker"
       },
       "taskKeys": [
         "HOS:004"
