@@ -245034,7 +245034,7 @@
     {
       "id": "J2783",
       "title": "HOS 009: listen to the new score before it is accepted",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Listen to the History of Science 009 Falling Moon score before anyone accepts it.\n\nThe cues are already generated. Do not generate another take, do not change the locked narration, and do not reopen the long assembly. That assembly stays held until the elected Chief accepts the score after a real listen.\n\nWhat to hear:\n- The joined bed, the full length.\n- The crossfade from 175.28 to 178.28 seconds, centred on the cannon chapter card at 176.78.\n- The bed under the locked narration, for level, a distracting melody, and whether the wonder opening actually changes into the teach section.\n- Part 5 should thin into a warm finish and stay audible.\n\nFiles, on the film working folder 05_Music, Mini and the shared store:\n- hos_009_wonder_v01.mp3, 180.04 seconds\n- hos_009_teach_v01.mp3, 360.05 seconds\n- hos_009_score_joined_v01.wav, 535.33 seconds\n- five part stems and J2664_PROVENANCE.json\n\nMeasured credits, not a listen: wonder 2,475, teach 4,950, total 7,425 subscription credits. Overage stayed 0. No cash.\n\nMusic gate on the second comparison: FAIL. The bed scores 0.821 against moon-leaving-part02_score_bed_v01.mp3, 0.804 against hos_002_part01_curious_workshop_v01_norm.wav, and 0.811 against hos_002_part01_curious_workshop_v02_norm.wav. The fail line is 0.80. Own, brief, and gap did not fail. Fifteen earlier files could not be read, including jupiter-music.mp3, so the library is unresolved, not a pass.\n\nIf this session cannot hear audio, stop and record a capability hold. A meter, a transcript, or a gate number is not listening.\n",
       "ref": "",
@@ -245054,6 +245054,11 @@
           "at": "2026-11-13T16:00Z",
           "by": "cursor",
           "what": "added"
+        },
+        {
+          "at": "2026-11-13T16:44Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-13T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Listen to the full score, the cannon-card crossfade, and the narration mix",
@@ -245061,7 +245066,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Listen to the Falling Moon score, the chapter change, and how it sits under the narration"
+      "plain": "Listen to the Falling Moon score, the chapter change, and how it sits under the narration",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
