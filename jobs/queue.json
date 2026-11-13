@@ -240728,6 +240728,11 @@
           "at": "2026-11-13T22:54Z",
           "by": "codex",
           "what": "reopened: Chief review: historical verification superseded. J2649 completed by Claude; #833 replaced by merged #886, and fix #897 merged 13 Nov 13:06:30Z. Reopen only this stale verification to record final disposition; parent remains done."
+        },
+        {
+          "at": "2026-11-13T22:54Z",
+          "by": "codex",
+          "what": "rerouted to codex: Explicit J2728 Chief-review assignment; Gemini worker has finished and parent J2649 is done. Elected Chief codex records stale-check closure."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to run jobs.py wait J2649 --recheck J2728 (or reopen J2649 after #833 merges) and jobs.py done J2728 (evidence on OWB PR #864)",
@@ -240742,7 +240747,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon",
       "escalated_at": "2026-11-12T23:38Z"
     },
