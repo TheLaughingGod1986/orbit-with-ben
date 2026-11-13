@@ -240550,13 +240550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-13T00:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T00:56Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2746 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/878. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-13T00:56Z",
@@ -240572,21 +240572,18 @@
           "at": "2026-11-13T00:58Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2746 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/878. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-13T03:04Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief review accepted PR878 evidence and recorded parent hold via --recheck J2746; reopen this verification only to claim and finish it."
         }
       ],
       "remaining_action": "Verify readiness: Wait for the studio safety repair and relay checks, then prepare the History of Science progress-file migration",
       "kind": "review",
       "recheck_of": "J2622",
       "due": "2026-11-13T01:56:21+00:00",
-      "due_kind": "condition-verification",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-13T00:57Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "due_kind": "condition-verification"
     },
     {
       "id": "J2747",
