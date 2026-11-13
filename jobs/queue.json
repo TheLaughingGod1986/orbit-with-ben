@@ -238224,13 +238224,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-13T01:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T15:20Z",
-      "result": "parked for Chief: review evidence PR #879 (727171b76f) and decide further original-artifact recovery scope. Five new exact live/package matches; coverage 84/162, with 78 original baselines and the Mars creation-time snippet unavailable. Existing seven tag repairs and three caption repairs must not be repeated. Plan remains 3/4; no Ben action.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T15:20Z",
@@ -238406,6 +238406,11 @@
           "at": "2026-11-13T07:16Z",
           "by": "relay",
           "what": "condition verification queued: J2764"
+        },
+        {
+          "at": "2026-11-13T10:11Z",
+          "by": "codex",
+          "what": "reopened: J2764 Chief KEEP: acceptance satisfied by new automatic HOS ChbsigHD5_o group at 07:05 on 13 Nov. PR890 merged e5b3530d3a; log and ledger 87f3a769cf agree with authenticated 5 Instagram/3 Facebook/5 TikTok caption readbacks; HOS Threads disabled. Close per 412dc1b281. Retain 84/162 baselines, 78 unknown, Mars trigger unproven. Separate Voyager source hold remains J2550; no additional generic wait."
         }
       ],
       "remaining_action": "Verify hashtags on the next posts built automatically by Buffer",
@@ -238413,22 +238418,9 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Find out why our social posts have no hashtags, and fix it for the next posts",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-13T01:12Z",
-        "by": "codex",
-        "note": "Recovered five original tag sets from 219 upload-result revisions; fresh API reads match all five exactly. Coverage 84/1"
-      },
       "taskKeys": [
         "OWB:025"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief KEEP: PR879 merged; ruling 412dc1b281 jobs/reviews/J2711/CHIEF_REVIEW.md. Seven tag repairs and three caption fixes accepted; 49 tests pass. Historical recovery exhausted: 84/162 baselines, 78 unknown and Mars trigger unproven. Verify first actual fixed-mirror automatic post group after normal 07:05 run: source tags, build time, Buffer IDs and 5/3/1/5 endings (up to available tags). Never repeat repairs or edit sent posts. If none built, name next eligible registered video and derive next check from its eligibility; if run fails, queue specific repair. Close with historical limitations after successful readback.",
-        "check_at": "2026-11-13T08:16:33+00:00",
-        "recheck_task": "J2764"
-      },
       "escalated_at": "2026-11-13T04:10Z"
     },
     {
