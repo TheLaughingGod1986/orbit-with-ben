@@ -1,5 +1,5 @@
 {
-  "next_id": 2868,
+  "next_id": 2869,
   "jobs": [
     {
       "id": "J0001",
@@ -253277,6 +253277,38 @@
       "remaining_action": "Wait for J2438, then rebuild Shorts 1 & 2 v02 full-bleed 1080x1920 9:16 and verify J2383 §5.1 fixes on long v02",
       "kind": "assembly",
       "plain": "Rebuild 034 Pluto Shorts 1 & 2 v02 full-bleed 9:16 and apply J2383 finishing fixes on long master v02"
+    },
+    {
+      "id": "J2868",
+      "title": "034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Re-review 034 Pluto long master v02 (09_Final-Export/034_pluto_frozen_heart_master_v02.mp4), Short 1 Test A opening v02 (10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v02.mp4), and Short 2 Keeper water-ice mountains v02 (10_Shorts/short02_water_ice_mountains/06_Final-Exports/034_short02_water_ice_mountains_v02.mp4) on /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/ after J2438 and J2867 under the 5-part multimodal review standard (jobs/reviews/J2829/RULING.md) and verify all J2383 FIX items (jobs/reviews/J2383/REVIEW.md @ 79c7174350) are resolved. £0.\n",
+      "ref": "J2383,J2438,J2867",
+      "film": "034",
+      "stage": "edit",
+      "after": "J2867",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-14T23:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T23:03Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for J2867, then run 5-part multimodal review on 034 long v02 and Shorts 1 & 2 v02",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Review 034 Pluto long master v02 and Shorts 1 & 2 v02 after J2438 and J2867"
     }
   ],
   "focus": [
