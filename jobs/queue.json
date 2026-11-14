@@ -246575,20 +246575,25 @@
           "at": "2026-11-14T00:46Z",
           "by": "codex",
           "what": "step 2 of 4 done: Shared setting and docs updated; stale-address guard passes; static and API search headers implemented. Migration branch retained without changing tokens, store, R2 or open taps."
+        },
+        {
+          "at": "2026-11-14T00:50Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 909 ready. Live board_check passes, and both real Python client paths now return expected missing-token 500. Address, headers, auth, adapter, stage-sync and UI checks pass; no token or store changes."
         }
       ],
-      "remaining_action": "Verifying the board fix and preparing its release",
+      "remaining_action": "Merging and deploying the verified board fix",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-14T00:46Z",
+        "at": "2026-11-14T00:50Z",
         "by": "codex",
-        "note": "Shared setting and docs updated; stale-address guard passes; static and API search headers implemented. Migration branch"
+        "note": "PR 909 ready. Live board_check passes, and both real Python client paths now return expected missing-token 500. Address,"
       }
     },
     {
