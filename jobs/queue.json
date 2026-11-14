@@ -247970,13 +247970,27 @@
           "at": "2026-11-14T05:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 260 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Verify operator configuration and acceptance evidence before resuming remaining allow-list work",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-14T06:15:31+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
