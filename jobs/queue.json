@@ -252752,10 +252752,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-14T21:54Z",
-      "eta": "2026-11-14T23:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T21:53Z",
       "result": "",
@@ -252779,6 +252779,11 @@
           "at": "2026-11-14T22:09Z",
           "by": "macbook",
           "what": "step 1 of 5 done: Root cause found: High 4:4:4 Predictive lossless profile in ch11-13 stream-copied after High profile corrupts decode at 97:38 and ch12-13; frame sheets built"
+        },
+        {
+          "at": "2026-11-14T22:18Z",
+          "by": "macbook",
+          "what": "released: 25-min wake cap checkpoint (step 3/5 complete): diagnosed H.264 High vs lossless High 4:4:4 Predictive stream-concat encode fault across chapters 11-13 (024, 026 Proxima around 97:38, 019) and rebuilt High-profile sleep_video_01_master_v02.mp4 locally in ~/_desk/J2860-sleep-v02/ (195,070 frames, 6502.333333s, sha256 e6f1064dc83b2c48bb05898f90139a4a250da2b316d3d3086699518379481ec0; see HANDOFF_NEXT_WAKE.md). Next wake: run polish_gate/picture_qa/join-audio/darkening checks, render before/after sheets, copy v02 + sheets to the NAS with SHA-256 check, update SLEEP01 board card + listing package, open PR macbook/J2860, and post report."
         }
       ],
       "remaining_action": "Run full-master pixel check, re-encode ch11-13 in High profile crf18, rebuild master v02 and verify",
