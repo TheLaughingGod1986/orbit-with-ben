@@ -51,6 +51,21 @@ class Updates(unittest.TestCase):
         self.assertEqual(history['edits'], [])
         self.assertEqual(history['revision'], bp.digest(new))
 
+    def test_live_sized_per_film_stamps_do_not_evict_history(self):
+        old = {'tracker': {'videos': [{'key': str(i), 'production': {'asOf': 'old'}} for i in range(312)]}}
+        new = copy.deepcopy(old)
+        for film in new['tracker']['videos']:
+            film['production']['asOf'] = 'new'
+        history = bp.updates_payload(new, old, None, '')
+        self.assertTrue(history['edits'])
+        self.assertLess(len(json.dumps(history).encode()), 3000)
+        self.assertEqual(browser_apply(old, history['edits'][0]['ops']), new)
+
+    def test_compaction_preserves_order_around_splices(self):
+        old = {'rows': [{'id': str(i), 'stamp': 'old'} for i in range(12)]}
+        new = {'rows': [{'id': str(i), 'stamp': 'new'} for i in [0, 1, 8, 9, 2, 3, 7]]}
+        self.assertEqual(browser_apply(old, bp.compact_edits(bp.board_diff(old, new))), new)
+
     def test_tree_keeps_legacy_files_and_adds_updates(self):
         tree = bp.tree_listing('board', 'no-deploy', 'sub', 'tracker', 'updates')
         self.assertIn('board\tboard.json', tree)
