@@ -246733,20 +246733,25 @@
           "at": "2026-11-14T02:45Z",
           "by": "codex",
           "what": "step 0 of 1 done: Chief ruling already recorded; final completion record only. No film applies to this system job."
+        },
+        {
+          "at": "2026-11-14T02:45Z",
+          "by": "codex",
+          "what": "step 1 of 1 done: PR 910 merged as 7060b03eb5; both CI checks pass. Live board-data 61a9dfac has zero retired-host mentions; board_check passes with 6 expected and HTTP 200."
         }
       ],
-      "remaining_action": "Record the merged review and verified live board data",
+      "remaining_action": "Complete the review record",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 1,
         "at": "2026-11-14T02:45Z",
         "by": "codex",
-        "note": "Chief ruling already recorded; final completion record only. No film applies to this system job."
+        "note": "PR 910 merged as 7060b03eb5; both CI checks pass. Live board-data 61a9dfac has zero retired-host mentions; board_check p"
       }
     },
     {
