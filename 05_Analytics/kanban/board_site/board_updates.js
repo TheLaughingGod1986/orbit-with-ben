@@ -33,10 +33,10 @@
     busy = (async () => {
       let update = null, commit = sha;
       try {
-        const response = await own("f=updates" + (sha ? "&sha=" + sha : ""), "no-cache");
+        const response = await own("f=updates", "no-cache");
         if (response.ok) {
           update = await response.json();
-          commit = response.headers.get("X-Board-Sha") || sha;
+          commit = ""; // Branch reads avoid the rate-limited GitHub commit lookup.
           if (update.schema !== 1 || !Array.isArray(update.edits)) update = null;
         }
       } catch (e) { if (e && e.signIn) throw e; }
@@ -51,7 +51,8 @@
       if (!response.ok) return response;
       raw = await response.json();
       const served = response.headers.get("X-Board-Sha");
-      revision = update && served === commit ? update.revision : "";
+      const etag = (response.headers.get("ETag") || "").replace(/^W\//, "").replaceAll('"', "");
+      revision = update && ((update.snapshotEtag && etag === update.snapshotEtag) || (served && served === commit)) ? update.revision : "";
       return new Response(JSON.stringify(raw));
     })();
     try { return (await busy).clone(); } finally { busy = null; }
