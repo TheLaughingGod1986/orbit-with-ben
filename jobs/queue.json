@@ -253346,6 +253346,11 @@
           "at": "2026-11-14T23:03Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T23:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Wait for J2867, then run 5-part multimodal review on 034 long v02 and Shorts 1 & 2 v02",
@@ -253353,7 +253358,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Review 034 Pluto long master v02 and Shorts 1 & 2 v02 after J2438 and J2867"
+      "plain": "Review 034 Pluto long master v02 and Shorts 1 & 2 v02 after J2438 and J2867",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
