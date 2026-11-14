@@ -265,6 +265,7 @@ STUDIO_WORK = re.compile(r"youtube studio|\bstudio\b|\bend screens?\b|\bpinned c
 STUDIO_BLOCK = re.compile(r"\bupload(?:ing)?\s+(?:it|the|a|an|to)\b|\bre-?upload|youtube:package|\bbuffer\b|"
                           r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?)\b|\bmint\b|\bffmpeg\b|\brender(?:s|ed|ing)?\b|"
                           r"/Users/|_desk/|/Volumes/|\.(?:mp4|mov|wav|m4a|mp3)\b|\bhos desk\b|\bicloud\b|"
+                          r"\bwrangler\b|\bcloudflare pages\b|\bpages (?:deploy|secret)\b|\bvercel env\b|"
                           r"\b(?:change|set|move|make)\b[^.\n]{0,24}\b(?:privacy|schedule|publishAt|public)\b|\bgo public\b", re.I)
 # "Do not change privacy", "never the 9222 Flow browser", "No retitle, upload …": warnings, not work (as MINI_PROHIBITION).
 STUDIO_PROHIBITION = re.compile(r"(?is)\b(?:do\s+not|don't|never|no)\b[^.!\n]{0,240}")
