@@ -249515,10 +249515,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T12:55Z",
+      "eta": "2026-11-14T14:55Z",
       "created_by": "gemini",
       "created_at": "2026-11-14T12:52Z",
       "result": "",
@@ -249527,11 +249527,24 @@
           "at": "2026-11-14T12:52Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T12:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build 11_Upload-Package/PACKAGE_MANIFEST.json, 7 chapter timestamps, en-GB SRT, vertical trailer, and run youtube:package --dry-run",
       "kind": "listing",
-      "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch"
+      "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T12:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
