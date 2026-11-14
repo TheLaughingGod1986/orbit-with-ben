@@ -252472,9 +252472,14 @@
           "at": "2026-11-14T22:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T22:02Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2855; starting 4-step verification of HOS 008 v05 salon sheets and frame/audio checks"
         }
       ],
-      "remaining_action": "Read the v05 salon sheets and park the five checks for Chief",
+      "remaining_action": "Locate v05 master, v04 master, lossless intermediate and v05 salon sheets; verify bitwise outside 2506-2665 and audio",
       "due": "2026-11-15T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -252484,12 +252489,14 @@
       "urgent": 15,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-14T22:02Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2855; starting 4-step verification of HOS 008 v05 salon sheets and frame/audio checks"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2856",
