@@ -248492,9 +248492,14 @@
           "at": "2026-11-14T07:44Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J2815 condition verification for J2221 (J01 Journey Film 01 v03 audio & score coverage across OWB 023-029)"
+        },
+        {
+          "at": "2026-11-14T07:55Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Restored full 446.3s 027 earth-spin_score_take2_straight_v01j.wav (f6300524...) & v02_fit.wav from owbextra.tar to studio-live"
         }
       ],
-      "remaining_action": "Inspect J2221 v03 assembly state, NAS Earth-spin score stems, and music_gate requirements",
+      "remaining_action": "Build j01_journey_laid_score_v02.wav + manifest from restored 027 and 023-029 stems and run music_gate/QA on v03",
       "kind": "review",
       "recheck_of": "J2221",
       "due": "2026-11-14T08:11:17+00:00",
@@ -248509,11 +248514,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T07:44Z",
+        "at": "2026-11-14T07:55Z",
         "by": "gemini",
-        "note": "Started J2815 condition verification for J2221 (J01 Journey Film 01 v03 audio & score coverage across OWB 023-029)"
+        "note": "Restored full 446.3s 027 earth-spin_score_take2_straight_v01j.wav (f6300524...) & v02_fit.wav from owbextra.tar to studi"
       },
       "taskKeys": [
         "OWB:023",
