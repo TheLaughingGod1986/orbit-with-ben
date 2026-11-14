@@ -81,6 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
 | J2809 | mini | claimed | gemini | 2026-11-14T06:51Z | for gemini · script · `gemini-argon` · HOS: complete the two data-backed topic briefs handed back in J2800 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911 |
+| J2810 | any | open (after J2809) | – | – | HOS:104 topic · review · HOS 104 Speed of Light: rule-E topic go/no-go review |  |
 
 Recently finished:
 
