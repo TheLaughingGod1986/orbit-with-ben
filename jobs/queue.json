@@ -252019,9 +252019,14 @@
           "at": "2026-11-14T20:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T20:31Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked J2614/J2853 inputs, HOS #180 Chief ruling 6882919446, and open v05 jobs J2854/J2855"
         }
       ],
-      "remaining_action": "Elected Chief close-out: close J2614 as FIX per 6882919446, queue v05 salon re-splice + frame check, hold J2243 behind v05 sheet, and close J2853",
+      "remaining_action": "Update jobs/reviews/J2853/REVIEW.md and record J2854/J2855 dependency hold on J2614 via wait --recheck J2853",
       "kind": "review",
       "recheck_of": "J2614",
       "due": "2026-11-13T16:00:00+00:00",
@@ -252039,12 +252044,11 @@
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-14T20:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Checked J2614/J2853 inputs, HOS #180 Chief ruling 6882919446, and open v05 jobs J2854/J2855"
       }
     },
     {
