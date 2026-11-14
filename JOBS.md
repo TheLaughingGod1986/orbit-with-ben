@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2797 | mini | open (after J2796) | – | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
-| J2800 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J2800 | any | claimed | macbook-2 | 2026-11-14T03:42Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2801 | any | claimed | gemini | 2026-11-14T03:12Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
