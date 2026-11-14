@@ -34,6 +34,19 @@ def capability_problem(j, agent, at, capabilities=None):
     missing = sorted(set(required) - set(available))
     return "Waiting for verified capability: " + ", ".join(missing) if missing else ""
 
+def capability_last_shown(cap, capabilities=None):
+    """Latest timestamp at which any worker actually demonstrated `cap`, or None."""
+    stamps = []
+    for rep in (capabilities or {}).values():
+        if not isinstance(rep, dict):
+            continue
+        shown = timestamp((rep.get("last_shown") or {}).get(cap))
+        if shown:
+            stamps.append(shown)
+        if cap in (rep.get("available") or []) and rep.get("evidence") and timestamp(rep.get("at")):
+            stamps.append(timestamp(rep.get("at")))
+    return max(stamps) if stamps else None
+
 def timestamp(value):
     if not value:
         return None
@@ -370,7 +383,7 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
             if chief not in actors or chief in occupied or (review_ids is not None and j["id"] not in review_ids):
                 continue
             worker = chief
-            if capability_problem(j, worker, at, capabilities):
+            if not j.get("capability_escalated") and capability_problem(j, worker, at, capabilities):
                 continue
         else:
             if role_job(j):

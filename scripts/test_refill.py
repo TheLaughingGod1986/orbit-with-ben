@@ -206,5 +206,86 @@ class FailedTransaction(unittest.TestCase):
             self.assertEqual(refill.main(['refill', '--git']), 1)
 
 
+class CapabilityTrap(unittest.TestCase):
+    def test_unshown_capability_parks_for_chief_after_24h_and_reaches_chief(self):
+        import json as _json, shutil, tempfile
+        from unittest.mock import patch
+        import chief_relay as cr, workflow_state as w
+        d = empty()
+        j = jobs.do_add(d, title="moving video review", needs="mini", body="", by="chief", at=T0,
+                        kind="review", requires=["audio_input", "moving_video_input"])
+        caps = {"gemini": {"at": jobs.studio.iso(T0 + 23 * H), "expiresAt": jobs.studio.iso(T0 + 24 * H),
+                           "available": ["audio_input"], "last_shown": {"audio_input": jobs.studio.iso(T0 + 23 * H)},
+                           "evidence": "probe"}}
+        self.assertEqual(refill.do_escalate(d, T0 + 23 * H, capabilities=caps), [])
+        self.assertEqual(j["status"], "open")
+
+        escalated = refill.do_escalate(d, T0 + 24 * H, capabilities=caps)
+        self.assertEqual([x["id"] for x in escalated], [j["id"]])
+        self.assertEqual(j["status"], "blocked")
+        self.assertIn("parked for Chief: no worker has shown moving_video_input in 24 h", j["result"])
+        self.assertNotIn("audio_input", j["capability_escalated"]["missing"])
+        # Idempotent: does not re-post on the next relay sweep.
+        self.assertEqual(refill.do_escalate(d, T0 + 27 * H, capabilities=caps), [])
+
+        # Reaches Chief dispatch and pending_chief_reviews even though Chief also lacks moving_video_input.
+        pick = w.select_dispatch(d, T0 + 24 * H, "codex", {"codex", "gemini"}, lambda _, up: "gemini", capabilities=caps)
+        self.assertEqual((pick["job"]["id"], pick["worker"], pick["mode"]), (j["id"], "codex", "review"))
+        tmp = pathlib.Path(tempfile.mkdtemp())
+        try:
+            (tmp / "jobs").mkdir()
+            (tmp / "jobs" / "queue.json").write_text(_json.dumps(d))
+            with patch.object(cr, "STUDIO", tmp), patch.object(cr, "worker_capabilities", return_value=caps), \
+                 patch.object(cr, "acting", return_value=([], "codex")):
+                self.assertEqual([x["id"] for x in cr.pending_chief_reviews(T0 + 24 * H)], [j["id"]])
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+        # Reopening clears the escalation marker and gives a fresh 24 h window.
+        with patch.object(cr, "elected_for", return_value=True):
+            jobs.do_reopen(j, "codex", "re-scoped", T0 + 25 * H)
+        self.assertNotIn("capability_escalated", j)
+        self.assertEqual(refill.do_escalate(d, T0 + 40 * H, capabilities=caps), [])
+
+    def test_capability_shown_within_24h_stays_open_even_after_lease_expiry(self):
+        d = empty()
+        j = jobs.do_add(d, title="listen", needs="mini", body="", by="chief", at=T0, requires=["audio_input"])
+        caps = {"gemini": {"at": jobs.studio.iso(T0 + 25 * H), "expiresAt": jobs.studio.iso(T0 + 25 * H),
+                           "available": [], "last_shown": {"audio_input": jobs.studio.iso(T0 + 20 * H)},
+                           "evidence": "session"}}
+        self.assertEqual(refill.do_escalate(d, T0 + 30 * H, capabilities=caps), [])
+        self.assertEqual(j["status"], "open")
+
+    def test_capability_hold_collapses_recheck_stub_and_escalates_parent(self):
+        from unittest.mock import patch
+        import chief_relay as cr
+        d = empty()
+        parent = jobs.do_add(d, title="held recut", needs="mini", body="", by="chief", at=T0,
+                             requires=["moving_video_input"])
+        parent["status"] = "claimed"
+        parent["by"] = "codex"
+        with patch.object(cr, "is_elected_chief", return_value=True):
+            jobs.set_wait(parent, "codex", T0, {"type": "capability", "condition": "No video viewer",
+                                                "requires": ["moving_video_input"], "check_at": jobs.studio.iso(T0)})
+        jobs.reconcile_holds(d, T0)
+        stub = d["jobs"][1]
+        self.assertEqual(stub["recheck_of"], parent["id"])
+        escalated = refill.do_escalate(d, T0 + 25 * H, capabilities={})
+        self.assertEqual([x["id"] for x in escalated], [parent["id"]])
+        self.assertNotIn("hold", parent)
+        self.assertEqual(stub["status"], "cancelled")
+
+    def test_prerequisite_completion_starts_the_24h_clock(self):
+        d = empty()
+        pre = jobs.do_add(d, title="render", needs="mini", body="", by="chief", at=T0)
+        rev = jobs.do_add(d, title="review", needs="mini", body="", by="chief", at=T0,
+                          after=pre["id"], requires=["moving_video_input"])
+        self.assertEqual(refill.do_escalate(d, T0 + 30 * H, capabilities={}), [])
+        pre["status"] = "done"
+        jobs.log(pre, T0 + 20 * H, "cursor", "done: rendered")
+        self.assertEqual(refill.do_escalate(d, T0 + 35 * H, capabilities={}), [])
+        self.assertEqual([x["id"] for x in refill.do_escalate(d, T0 + 45 * H, capabilities={})], [rev["id"]])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -126,13 +126,18 @@ def record_capabilities(agent, available, evidence, minutes, at, source="self"):
     if any(not re.fullmatch(r"[a-z][a-z0-9_]{0,63}", x) for x in names):
         raise ValueError("Use capability identifiers such as audio_input, not prose")
     reports = worker_capabilities()
+    old = reports.get(agent) or {}
+    shown = dict(old.get("last_shown") or {})
     row = {"at":iso(at), "expiresAt":iso(at+dt.timedelta(minutes=minutes)),
            "available":sorted(set(names)), "evidence":str(evidence).strip(), "source":source}
-    old = reports.get(agent) or {}
     if source != "probe" and old.get("source") == "probe" and not workflow.capability_problem(
             {"required_capabilities": old.get("available") or ["_"]}, agent, at, reports):
         row = dict(old, available=sorted(set(old.get("available") or []) | set(names)),
                    evidence=f"{old.get('evidence')} | session: {str(evidence).strip()}"[:2000])
+    for cap in set(names):
+        shown[cap] = iso(at)
+    if shown:
+        row["last_shown"] = shown
     reports[agent] = row
     write_json(d("capabilities.json"), reports)
 
@@ -604,8 +609,8 @@ def pending_chief_reviews(at: dt.datetime) -> list:
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
     return sorted((j for j in data.get("jobs", [])
                    if not workflow.external_hold(j, at) and not workflow.dependency_problem(j, by_id)
-                   and not workflow.capability_problem(
-                       j, guest_leader if job_chain(j) else home_leader, at, capabilities)
+                   and (j.get("capability_escalated") or not workflow.capability_problem(
+                       j, guest_leader if job_chain(j) else home_leader, at, capabilities))
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
                   key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
 
@@ -1764,9 +1769,9 @@ def run_locked(at: dt.datetime) -> int:
     if not healthy:
         log("disk still too full to run a worker: waiting for the next repair")
         return 0
+    refresh_probes(at)
     if (STUDIO / "scripts" / "refill.py").exists():
         escalate_stale()
-    refresh_probes(at)
     cap = int(os.environ.get("CHIEF_CAP_S", "1500"))
     # A worker that says it's out of credit is retried after 1 h, not 3 (Ben, 14 Oct 2026: "no worker has credit. I
     # don't believe this"; a 429, or one model's pool read as the whole agent out for 3 h, left the Mini idle). A real
