@@ -251752,13 +251752,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T19:48Z",
-      "eta": "2026-11-14T21:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T18:31Z",
-      "result": "",
+      "result": "parked for Chief: Verified at 2026-11-14T19:50Z (jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe): J2831 waiting condition is PROVEN SATISFIED. In-memory check (no link or secret printed) confirmed GitHub issue #219 pairs[0] (recorded 2026-11-14T19:13:08.165Z, e=1795269633) matches the 24-character nonce in ~/.config/studio-kanban/ben_pair_link (mode 0600, host https://board.oppti.dev/api/pair), and Ben's newly linked iPhone used the Approve button at 19:13:14Z/19:14:16Z to record OWB-J2222 (verdict: ok) and post [Ben] OK J2222 v03 on #478 (#6882810716, #6882823558). Temporary iCloud Drive file '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (872 bytes, mode 0600) remains intact for J2831 step 4/4 cleanup. Because scripts/jobs.py (do_reopen line 963) restricts releasing a verified hold (jobs.py reopen J2831) to the elected Chief, codex should run the exact reopen J2831 and done J2851 commands in jobs/reviews/J2851/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-14T18:31Z",
@@ -251794,6 +251794,11 @@
           "at": "2026-11-14T19:55Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete at fc9d8134fe; parking J2851 for elected Chief codex"
+        },
+        {
+          "at": "2026-11-14T19:55Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified at 2026-11-14T19:50Z (jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe): J2831 waiting condition is PROVEN SATISFIED. In-memory check (no link or secret printed) confirmed GitHub issue #219 pairs[0] (recorded 2026-11-14T19:13:08.165Z, e=1795269633) matches the 24-character nonce in ~/.config/studio-kanban/ben_pair_link (mode 0600, host https://board.oppti.dev/api/pair), and Ben's newly linked iPhone used the Approve button at 19:13:14Z/19:14:16Z to record OWB-J2222 (verdict: ok) and post [Ben] OK J2222 v03 on #478 (#6882810716, #6882823558). Temporary iCloud Drive file '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (872 bytes, mode 0600) remains intact for J2831 step 4/4 cleanup. Because scripts/jobs.py (do_reopen line 963) restricts releasing a verified hold (jobs.py reopen J2831) to the elected Chief, codex should run the exact reopen J2831 and done J2851 commands in jobs/reviews/J2851/REVIEW.md."
         }
       ],
       "remaining_action": "Elected Chief (codex) reopens J2831 with verification evidence and closes J2851",
