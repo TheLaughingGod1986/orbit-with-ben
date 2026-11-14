@@ -195252,9 +195252,14 @@
           "at": "2026-11-14T08:25Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. Jar keep 3168-3258 can stay original packets. Four blocked runs still look at a replaced picture. No v04."
+        },
+        {
+          "at": "2026-11-14T08:28Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Unit tests passed. Copying frames 3168-3258 from the master. Frame 3259 stays out. No v04."
         }
       ],
-      "remaining_action": "Copy the exact jar packets, then keep the blocked frames exact",
+      "remaining_action": "Copy the exact jar packets and check they still match the master",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195263,9 +195268,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T08:25Z",
+        "at": "2026-11-14T08:28Z",
         "by": "cursor",
-        "note": "Claimed. Jar keep 3168-3258 can stay original packets. Four blocked runs still look at a replaced picture. No v04."
+        "note": "Unit tests passed. Copying frames 3168-3258 from the master. Frame 3259 stays out. No v04."
       }
     },
     {
