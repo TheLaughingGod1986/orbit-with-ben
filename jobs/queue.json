@@ -252477,9 +252477,14 @@
           "at": "2026-11-14T22:02Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2855; starting 4-step verification of HOS 008 v05 salon sheets and frame/audio checks"
+        },
+        {
+          "at": "2026-11-14T22:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Opened and hashed both NAS/scratch sheets (174c37bd... / 5ea529ea...) and hos-desk e8e7d0d4 sheets (62090f3b... / 15a70310...), plus v05 (d1ffb78d...) and v04 (735ac816...6460c0)"
         }
       ],
-      "remaining_action": "Locate v05 master, v04 master, lossless intermediate and v05 salon sheets; verify bitwise outside 2506-2665 and audio",
+      "remaining_action": "Decode v05 and v04 frames 2504-2666 and verify all 5 checks (scale, freeze, ghosting, spark, bound) plus bitwise outside 2506-2665 and audio",
       "due": "2026-11-15T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -252488,11 +252493,11 @@
       "mini_only": true,
       "urgent": 15,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-14T22:02Z",
+        "at": "2026-11-14T22:04Z",
         "by": "gemini",
-        "note": "Claimed J2855; starting 4-step verification of HOS 008 v05 salon sheets and frame/audio checks"
+        "note": "Opened and hashed both NAS/scratch sheets (174c37bd... / 5ea529ea...) and hos-desk e8e7d0d4 sheets (62090f3b... / 15a703"
       },
       "taskKeys": [
         "HOS:008"
