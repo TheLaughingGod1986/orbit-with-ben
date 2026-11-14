@@ -246580,9 +246580,14 @@
           "at": "2026-11-14T00:50Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 909 ready. Live board_check passes, and both real Python client paths now return expected missing-token 500. Address, headers, auth, adapter, stage-sync and UI checks pass; no token or store changes."
+        },
+        {
+          "at": "2026-11-14T00:52Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 909 head 90479e3089: both CI checks pass. Board check passes; both real client requests reach expected missing-token 500. Claude returned as elected Chief before merge; handoff posted at thread comment 6868841465. No deploy performed."
         }
       ],
-      "remaining_action": "Merging and deploying the verified board fix",
+      "remaining_action": "Review and merge the board fix, deploy it once, and verify live search headers",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -246591,9 +246596,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T00:50Z",
+        "at": "2026-11-14T00:52Z",
         "by": "codex",
-        "note": "PR 909 ready. Live board_check passes, and both real Python client paths now return expected missing-token 500. Address,"
+        "note": "PR 909 head 90479e3089: both CI checks pass. Board check passes; both real client requests reach expected missing-token "
       }
     },
     {
