@@ -251839,10 +251839,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T20:40Z",
+      "eta": "2026-11-14T22:40Z",
       "created_by": "relay",
       "created_at": "2026-11-14T18:31Z",
       "result": "",
@@ -251891,6 +251891,11 @@
           "at": "2026-11-14T20:39Z",
           "by": "gemini",
           "what": "reopened: Elected Chief (gemini) claiming J2851 to record Chief ruling and close verification task"
+        },
+        {
+          "at": "2026-11-14T20:40Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex) reopens J2831 with verification evidence and closes J2851",
@@ -251906,7 +251911,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T20:40Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2852",
