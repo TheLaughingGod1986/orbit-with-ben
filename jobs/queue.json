@@ -249715,9 +249715,14 @@
           "at": "2026-11-14T14:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T14:06Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2824; starting 3-step verification of J2035 waiting condition on HOS 009"
         }
       ],
-      "remaining_action": "Verify readiness: Await the revised score production, complete gate and final acceptance before assembling the gravity film",
+      "remaining_action": "Inspect J2035 waiting condition, J2805/J2806/J2807 score chain and HOS 009 score artifacts",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-14T14:19:42+00:00",
@@ -249734,11 +249739,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T14:05Z",
+        "at": "2026-11-14T14:06Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2824; starting 3-step verification of J2035 waiting condition on HOS 009"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2825",
