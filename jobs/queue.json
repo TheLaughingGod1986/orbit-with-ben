@@ -250279,6 +250279,11 @@
           "at": "2026-11-14T15:38Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: all 4 worker CLIs probed (gemini passes audio_input; none passes moving_video_input; codex out of quota until 2026-11-17T23:22Z). PR #928 adds runners for all 4 workers, closes the 24h unshown-capability trap in refill.py (do_escalate), and puts ONE ruling proposal at jobs/reviews/J2829/PROPOSAL.md to re-scope J2658, J2477, J2383, J2400, J2404 (plus J2243, J2550, J2551/J2661) to gates + 0.5s grid + cut/last-3s frames + gemini audio_input"
+        },
+        {
+          "at": "2026-11-14T17:52Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief ruling + merge of PR #928 to re-scope the waiting reviews and ship the 24h capability-trap check",
@@ -250292,7 +250297,8 @@
         "of": 4,
         "at": "2026-11-14T15:38Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-14T17:52Z"
     },
     {
       "id": "J2830",
@@ -250342,6 +250348,11 @@
           "at": "2026-11-14T15:45Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: needs a worker with web. WebSearch still refused on the MacBook slot (tested 14 Nov 15:46Z; second time here today), so no NASA/ESA/IAU source with a UTC time can be read and no script was written. Nothing changed, no branch or PR. Window 24 Nov-5 Dec; 24 Nov supermoon already taken (J2369/J2478). Route to the Mini or a slot with web, or allow WebSearch/WebFetch here."
+        },
+        {
+          "at": "2026-11-14T17:52Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "pick event, verify sources, write script and record, open PR",
@@ -250352,7 +250363,8 @@
         "of": 4,
         "at": "2026-11-14T15:42Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-14T17:52Z"
     },
     {
       "id": "J2831",
