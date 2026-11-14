@@ -2068,8 +2068,8 @@
     try {
       let sha = "";
       try {
-        const g = await refFetch();
-        if (g.ok) {
+        const g = window.__boardUpdates ? null : await refFetch();
+        if (g && g.ok) {
           sha = ((await g.json()).object || {}).sha || "";
           if (sha && sha === lastSha && board) {
             if (!uatKey() || !document.getElementById("uat-notes")) render();

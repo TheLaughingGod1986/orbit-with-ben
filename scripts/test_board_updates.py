@@ -66,6 +66,13 @@ class Updates(unittest.TestCase):
         new = {'rows': [{'id': str(i), 'stamp': 'new'} for i in [0, 1, 8, 9, 2, 3, 7]]}
         self.assertEqual(browser_apply(old, bp.compact_edits(bp.board_diff(old, new))), new)
 
+    def test_snapshot_etag_matches_exact_published_bytes(self):
+        import hashlib
+        board = {'title': 'Titan — moon', 'jobs': []}
+        payload = bp.updates_payload(board, None, None, '')
+        published = json.dumps(board, ensure_ascii=False, separators=(',', ':')) + '\n'
+        self.assertEqual(payload['snapshotEtag'], hashlib.sha256(published.encode()).hexdigest())
+
     def test_tree_keeps_legacy_files_and_adds_updates(self):
         tree = bp.tree_listing('board', 'no-deploy', 'sub', 'tracker', 'updates')
         self.assertIn('board\tboard.json', tree)

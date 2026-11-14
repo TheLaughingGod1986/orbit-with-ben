@@ -65,3 +65,14 @@ Chief review: KEEP. The bounded edit-history design meets the small-update objec
 The first production rollout did not meet acceptance: the live board carries 312 per-film production timestamps. Updating those repeated fields made a normal edit payload 31,257 bytes, over the history cap, so history was discarded and clients fell back to a full snapshot. The small local fixture missed this. J2798 remains incomplete until a new production capture passes.
 
 A correction groups consecutive identical updates to the same field across list entries, preserving exact indices and operation ordering. On the captured live delta this reduces 31,257 bytes to 3,373 bytes. A new 312-film regression verifies history stays within budget and reconstructs the full snapshot exactly; an additional splice-order test verifies compaction does not reorder edits. Seven parity/publisher tests and the JS client suite pass. Older clients safely fall back to the full snapshot for the new operation, then receive the usual version reload. No film data is omitted or made stale.
+
+
+## Third-run production diagnosis
+
+The corrected production capture exited 0 but failed acceptance: / transferred 1,744,298 bytes in ten minutes (174,429.8/min), while /tracker transferred 25,610 (2,561/min). Phone first render was 624/451 ms, with no JavaScript errors. These figures include normal live publishing and are not a frozen-film experiment.
+
+A fresh real Chrome probe showed the cause: /api/data?f=ref and pinned updates/board requests intermittently return 502 with GitHub 403. Branch-file reads still return 200. The commit lookup exhausts the unauthenticated GitHub API budget, triggering public full-snapshot fallback. No token was added or changed.
+
+The correction reads the bounded updates file directly from the branch, avoiding the commit lookup on the board refresh path. The publisher adds the SHA-256 of the exact published snapshot bytes; the browser assigns a revision only when the full response ETag matches that hash. A publication race therefore retries a full snapshot safely rather than applying edits to mismatched data. Existing raw-file caching and authentication remain in place, without parsing files in the Function. The old reference path remains for clients without the update transport.
+
+Regression checks cover the exact published byte hash, branch reads without a commit lookup, and mismatched-snapshot recovery, alongside existing parity, API, publisher and client tests. Final production traffic acceptance remains required after deployment.

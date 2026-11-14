@@ -516,7 +516,8 @@ def updates_payload(board, previous, history, tracker):
     edits = list((history or {}).get("edits") or [])
     if previous is not None and digest(previous) != revision:
         edits.append({"from": digest(previous), "to": revision, "ops": compact_edits(board_diff(previous, board))})
-    result = {"schema": 1, "revision": revision, "tracker": tracker_hash, "edits": edits[-12:]}
+    snapshot = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
+    result = {"schema": 1, "revision": revision, "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-12:]}
     while result["edits"] and len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode()) > 16000:
         result["edits"].pop(0)
     return result
