@@ -250523,13 +250523,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-14T20:42Z",
-      "eta": "2026-11-14T21:02Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T15:33Z",
-      "result": "",
+      "result": "Waiting for: The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.",
       "history": [
         {
           "at": "2026-11-14T15:33Z",
@@ -250595,6 +250595,16 @@
           "at": "2026-11-14T20:46Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Thread posted. Link file is in his own iCloud Drive. Notes needed a permission prompt."
+        },
+        {
+          "at": "2026-11-14T20:46Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link."
+        },
+        {
+          "at": "2026-11-14T20:46Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-15T02:00:00Z"
         }
       ],
       "remaining_action": "Delete the private iPhone link file once it is used or 24 hours have passed",
@@ -250609,6 +250619,11 @@
         "at": "2026-11-14T20:46Z",
         "by": "cursor",
         "note": "Thread posted. Link file is in his own iCloud Drive. Notes needed a permission prompt."
+      },
+      "hold": {
+        "type": "date",
+        "condition": "The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.",
+        "check_at": "2026-11-15T02:00:00Z"
       }
     },
     {
