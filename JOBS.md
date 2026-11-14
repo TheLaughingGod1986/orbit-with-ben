@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
 | J2832 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2833 | any | claimed | claudecode | 2026-11-14T18:18Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J2834 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
+| J2834 | mini | claimed | macbook-2 | 2026-11-14T19:21Z | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
 
