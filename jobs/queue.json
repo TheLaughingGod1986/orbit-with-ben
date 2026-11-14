@@ -247034,9 +247034,14 @@
           "at": "2026-11-14T04:38Z",
           "by": "codex",
           "what": "step 3 of 4 done: KEEP review recorded. Publisher/parity/API/client regressions pass; explicit Chrome auth scenarios pass with no direct GitHub requests. Preview compiles and deploys on existing Pages plan."
+        },
+        {
+          "at": "2026-11-14T04:45Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Initial production acceptance failed: repeated timestamps across 312 films made a 31257-byte delta, clearing history. Correction reduces the captured delta to 3373 bytes; seven parity tests pass. Corrective PR 915 awaits CI; no final completion claimed."
         }
       ],
-      "remaining_action": "Waiting for final PR checks, then deploying and measuring the live board",
+      "remaining_action": "Correcting the live timestamp overflow and repeating production traffic measurement",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247044,9 +247049,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T04:38Z",
+        "at": "2026-11-14T04:45Z",
         "by": "codex",
-        "note": "KEEP review recorded. Publisher/parity/API/client regressions pass; explicit Chrome auth scenarios pass with no direct G"
+        "note": "Initial production acceptance failed: repeated timestamps across 312 films made a 31257-byte delta, clearing history. Co"
       }
     },
     {
