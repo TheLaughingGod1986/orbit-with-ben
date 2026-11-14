@@ -220141,6 +220141,11 @@
           "at": "2026-11-14T21:12Z",
           "by": "gemini",
           "what": "reopened: J2658 ending review PASS/KEEP (jobs/reviews/J2658/REVIEW.md @ 1ac512c0d5): Gemini heard v04 ending & full soundtrack via audio_input and watched 360p ending/full proxy clips + 90-frame final-3s strip. 'sunset' ends cleanly on natural /t/ release with 0 remnant 'as' and 0 click; final caption 'LOOK EAST AT SUNSET.' complete; 1.61s tail and 1.0s loop bridge verified. Conditional Chief KEEP for v04 satisfied: deliver v04 (sha256: 85eba873...) and cover (sha256: dd0cd9f6...) to OWB UAT watch folders and run jobs.py awaits J2478."
+        },
+        {
+          "at": "2026-11-14T21:12Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Codex out of quota until 2026-11-17T23:22Z; rerouting reopened J2478 v04 watch-folder delivery to Cursor (cursor-grok-4-7)"
         }
       ],
       "remaining_action": "Gemini checks the revised Supermoon ending before returning it to Ben",
@@ -220150,7 +220155,7 @@
         "OWB:013"
       ],
       "plain": "Build the Supermoon Short that goes out Thu 19 Nov",
-      "for": "codex",
+      "for": "cursor",
       "action": "v04: end the voice on \"Look east at sunset.\" (cut \"as\"), re-run the gates, Gemini checks the ending, back to Ben's watch",
       "awaits_was": {
         "what": "Watch the Supermoon Short and its cover",
@@ -220161,7 +220166,15 @@
         "ifNot": "Do not upload this dated Short if approval misses the deadline",
         "title": "Supermoon: two Earths closer on November 24",
         "type": "short"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2479",
