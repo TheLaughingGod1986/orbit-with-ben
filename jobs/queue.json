@@ -208547,10 +208547,10 @@
       "stage": "edit",
       "after": "J2320",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T22:44Z",
+      "eta": "2026-11-15T00:44Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T04:17Z",
       "result": "",
@@ -208569,6 +208569,11 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
+        },
+        {
+          "at": "2026-11-14T22:44Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320)",
@@ -208587,7 +208592,15 @@
       "for": "gemini",
       "model": "gemini-argon",
       "urgent": 7,
-      "due": "2026-11-15T20:00:00Z"
+      "due": "2026-11-15T20:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T22:44Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2384",
