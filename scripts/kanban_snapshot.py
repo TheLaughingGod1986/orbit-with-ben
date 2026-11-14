@@ -779,6 +779,7 @@ def uat_dir(label: str) -> Path:
 def uploads_path(slug: str) -> Path | None:
     return UPLOADS.get(slug) or channels.uploads_file(slug)
 PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
+# Explicit hand-set watch links only: stream_link builds registered Play links separately.
 WATCH_OK = (site_url() + "/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
 VIDEO_EXT = (".mp4", ".mov", ".m4v")
 

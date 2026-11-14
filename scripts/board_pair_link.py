@@ -23,6 +23,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from board_site import site_url
 from kanban_snapshot import watch_link_secret  # noqa: E402
 
 SITE = site_url()

@@ -10,7 +10,7 @@ with the cards actually published on the board-data branch, and checks the live 
   - after J2427, an ask/approved entry whose cut is already Private+scheduled or live on YouTube
     (`matched_upload` / `read_back`, or a Done card with the same key or video id) is satisfied even when
     `settle_uploaded` moved the card to Done and dropped its ask/approved keys (or removed the job-keyed card)
-  - the live site (studio-kanban.vercel.app) answers 200
+  - the live site answers 200
 
 Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
   {"at", "ok": true|false, "expected": n, "problems": [...], "cards": [...]}

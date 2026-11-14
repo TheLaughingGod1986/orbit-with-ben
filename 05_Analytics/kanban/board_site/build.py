@@ -129,7 +129,7 @@ def build_host_config(out: pathlib.Path) -> None:
         if rule["destination"] != rule["source"].rstrip("/") + ".html":
             redirects.append(f"{rule['source']} {rule['destination']} 200")
     (out / "_redirects").write_text("\n".join(redirects) + "\n")
-    headers = []
+    headers = ["/*", "  X-Robots-Tag: noindex, nofollow"]
     for rule in config["headers"]:
         headers.append(rule["source"])
         headers.extend(f"  {h['key']}: {h['value']}" for h in rule["headers"])

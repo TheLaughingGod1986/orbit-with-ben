@@ -2,7 +2,7 @@
 """Publish the Studio Kanban's data so the board updates itself (Ben, 9 Oct: "the board should just update whenever a
 task is done or something progressed").
 
-The board page (05_Analytics/kanban/board_site, hosted on Vercel) reads one file at runtime and re-reads it every 60 s:
+The board page (05_Analytics/kanban/board_site, hosted on Cloudflare Pages) reads one file at runtime and re-reads it every 60 s:
   board.json on the branch `board-data` of this repo (a single parentless commit, force-pushed, like mini-heartbeat).
 
 It also carries the Channel Tracker's data (Ben, 10 Oct: the tracker as a phone web app at /tracker on the same site):

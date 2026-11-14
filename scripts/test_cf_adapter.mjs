@@ -36,3 +36,10 @@ assert.equal(linked.status,200);assert.match(linked.headers.get('set-cookie'),/H
 const post=await adapt(checks,new Request('https://board.example/api/checks',{method:'POST',headers:{cookie,'content-type':'application/json'},body:JSON.stringify({id:'migration-test',dryRun:true})}));
 assert.equal((await post.json()).auth,'cookie');
 console.log('PASS: five route contracts, watch 302, cookie renewal/readback and POST body');
+
+const worker = (await import('../05_Analytics/kanban/board_site/cf_worker.js')).default;
+for (const route of ['checks?stamp=1', 'missing']) {
+  const response = await worker.fetch(new Request('https://board.example/api/' + route), {});
+  assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, nofollow');
+}
+console.log('PASS: API responses and errors excluded from search');
