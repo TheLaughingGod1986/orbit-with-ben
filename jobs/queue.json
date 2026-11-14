@@ -193405,13 +193405,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-12T03:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
-      "result": "parked for Chief: Listened directly to corrected Vaccine eradication VO (388ae394 / 19ee3ced) and raw Part05 (18b72532): both flags are real defects — 0:00-0:03 genuinely speaks 'A disease that have killed...' (42.16s in raw Part05, not 'had killed') and 0:06-0:09 trims 'humans.' early at 49.10s with zero pause into 'human— Health workers'. Variolation v01 (cdf6e027) and Harvey s07_v02 (51a4b10d, no extra 'it circulates') & s06_v02 (8ac9a291) speech/music pace PASS by ear. 18 Nov-6 Dec slots: Wed 18 Nov (ChbsigHD5_o) & Sat 21 Nov (Bks_JLId1ew) filled; 10 of 11 Sat/Fri/Sun/Tue pattern slots still empty (Fri 20, Sun 22, Tue 24, Fri 27, Sat 28, Sun 29 Nov; Tue 1, Fri 4, Sat 5, Sun 6 Dec). Evidence: HOS PR #559 (cc9c5bef), desk #6813817189. Chief to choose Option A (£0 Part05 61w re-selection) or Option B (1-sentence pickup) + confirm Variolation opening.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T17:12Z",
@@ -193587,18 +193587,16 @@
           "at": "2026-11-12T06:44Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-14T11:56Z",
+          "by": "gemini",
+          "what": "reopened: Elected Acting Chief (gemini) ruling recorded in OWB jobs/reviews/J2230/REVIEW.md (4993d6b9e5) & HOS PR #584 (fe243a5b): (1) Willow 006 pair ChbsigHD5_o (18 Nov) & Bks_JLId1ew (21 Nov) counts as the two Willow Shorts; (2) Vaccine 007 long ETynHpIYLeY is now PUBLIC (12 Nov 18:00Z, live title 'How Was the First Vaccine Made? (And Why It''s Named After a Cow)'); (3) Eradication Short: choose Option A (£0 locked Part 05 61-word clean re-selection: [35.16, 40.72] with 0.20s post-1980 pause + [25.36, 34.50] + [70.06, 75.70], dropping defective 'that have killed' span); (4) Variolation Short: approve clean 61-word Part 01 stem ([67.66, 92.16], £0) with tightened inter-sentence pauses; (5) Harvey 005 s06_v02 & s07_v02 audio PASS by ear, rebuild as s06_v03 & s07_v03 (£0) with top-band 0.0s hook text (hook_edge >= 0.005) and full-bleed 9:16 cover crops (0 padded frames) to pass current gate_shorts_open.py; (6) target pattern slots Fri 20 Nov, Sun 22 Nov, Sat 28 Nov, Sun 29 Nov 11:30Z after Ben''s watch."
         }
       ],
       "remaining_action": "Chief to rule on HOS PR #559 / desk #6813817189: choose £0 Part 05 re-selection or 1-sentence VO pickup for Vaccine Eradication, confirm Variolation opening and Nov slots",
       "kind": "assembly",
       "urgent": 6,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-12T03:48Z",
-        "by": "gemini",
-        "note": "Committed Gemini audio listening adjudication & 18 Nov-6 Dec slot check on HOS PR #559 (cc9c5bef; check_all.sh ALL CHECK"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:006",
