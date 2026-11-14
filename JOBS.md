@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2862 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2855 |  |
-| J2863 | mini | open | – | – | review · Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes |  |
+| J2863 | mini | claimed | macbook-2 | 2026-11-14T23:51Z | review · Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes |  |
 
 Recently finished:
 
