@@ -248603,13 +248603,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T10:16Z",
-      "eta": "2026-11-14T12:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T07:11Z",
-      "result": "",
+      "result": "Recorded and executed existing Chief PASS Option A from 6874618419 and 6874993329. J2221 reopened with current hash/gate evidence and closed. J2222 follows for v03 cut review, exact final-file checks and Ben watch per jobs/reviews/J2815/CHIEF_CLOSEOUT.md. No external wait or publishing change.",
       "history": [
         {
           "at": "2026-11-14T07:11Z",
@@ -248670,6 +248670,11 @@
           "at": "2026-11-14T10:16Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T10:16Z",
+          "by": "codex",
+          "what": "done: Recorded and executed existing Chief PASS Option A from 6874618419 and 6874993329. J2221 reopened with current hash/gate evidence and closed. J2222 follows for v03 cut review, exact final-file checks and Ben watch per jobs/reviews/J2815/CHIEF_CLOSEOUT.md. No external wait or publishing change."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude): close J2221 + J2815 done (unblocking J2222) or reopen J2221 per jobs/reviews/J2815/REVIEW.md",
@@ -248702,7 +248707,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "9ebb517772"
     },
     {
       "id": "J2816",
