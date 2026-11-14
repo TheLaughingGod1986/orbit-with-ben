@@ -1,5 +1,5 @@
 {
-  "next_id": 2869,
+  "next_id": 2870,
   "jobs": [
     {
       "id": "J0001",
@@ -253413,6 +253413,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2869",
+      "title": "033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rebuild 033 Uranus Active Short #1 (`033_short01_testA_opening_v02.mp4`, slot Fri 18 Dec 11:30Z) and Active Short #2 (`033_short02_ice_giant_surface_v02.mp4`, slot Sat 19 Dec 11:30Z) per the 5-part multimodal review in `jobs/reviews/J2400/REVIEW.md` (§7):\n\n1. **Full-bleed `9:16` (`1080x1920`) on every shot (`J2545`/`J2546`/`J2560`, `studio/RULES.md` Lesson 5):**\n   - Remove `composite_band_on_natural_blur()` (`1080x608` horizontal band at `y=656..1264`) from both `_assemble_033_short1_v02.py` and `_assemble_033_short2_v02.py`.\n   - Reframe all Veo clips (`608x1080` vertical crop from `1920x1080`, `1.78x` upscale `<= 2.35x` cap) and high-res NASA/ESA/JWST stills (`harvest_J2299_v01`) to fill the entire `1080x1920` canvas (`0%` blur-pad failures on `gate_shorts_open.py` at 2 fps).\n   - Render the code diagrams natively on a `1080x1920` (`9:16`) vertical canvas:\n     - Short #1 `R05a` (`18.20-22.20s` Axial Tilt Gauge): stack `EARTH 23.4°` (`y=260..880`) and `URANUS 97.77° — SIDEWAYS` (`y=960..1580`) vertically at full `1080x1920` resolution.\n     - Short #2 `R52` (`14.84-18.76s` Interior Cutaway): draw the 3-layer cutaway globe (`820 px` diameter) + header + legend natively on `1080x1920`.\n   - Include `\"end_card\": {\"start_s\": 35.44}` (Short #1) and `\"end_card\": {\"start_s\": 25.28}` (Short #2) in `_meta.json`.\n\n2. **Fix clipped VO word onsets caught via `audio_input` (`jobs/reviews/J2400/REVIEW.md` §5 & §7.2-7.3):**\n   - **Short #1 (`_assemble_033_short1_v02.py`):** Update `VO_SEGMENTS = [(0.080, 31.040), (49.220, 53.880)]` and `VO_GAPS = [0.20]` so the aspirate `\"H-\"` of `\"How\"` (`49.250s` in `uranus_vo_v01.wav`; digital silence `49.180..49.230s`) and the tail of `\"darkness.\"` (`31.040s`) are 100% unclipped while keeping `TOTAL_S = 36.48s`.\n   - **Short #2 (`_assemble_033_short2_v02.py`):** Fix `VO_SEGMENTS` so `\"80%\"` (`466.280s` onset, clipped to `\"-ty percent\"` by `466.480s` start in `v01`) and `\"9,000\"` (`\"nine\"` at `480.220..480.600s`, deleted by `480.140..480.580s` cut in `v01` -> `\"-n thousand\"`) are 100% intact. Slice only inside verified digital silence (`pk < 0.001`) and keep `\"is a crushing, superheated ocean of water, methane, and ammonia\"` (`468.980..474.400s`) and `\"Uranus heats up to 9,000 degrees Fahrenheit.\"` (`478.900..482.550s`) unbroken; preserve `\"80%\"` landing at `~12 s` for the `J2683`/`J2744` test readout.\n\n3. **Replace unrecognisable narrow Voyager 2 ring plates in Short #2 (`PIA00142.jpg`, `PIA01977.jpg`, `PIA01985.jpg`):**\n   - Drop the `32%` `PIA00142.jpg` diagonal ring-line overlay from `R49a` (`0.00-1.88s`), `frame0.jpg`, `cover.jpg`, and `R49_loop` (`25.28-26.28s`), and ensure `R49_loop` maps smoothly without a static `0.24s` tail freeze.\n   - Replace `PIA01977.jpg` (`R51a`, `5.60-7.80s`) and `PIA01985.jpg` (`R53a`, `18.76-21.04s`, `picture_qa` low-detail warning) with full-bleed `1080x1920` crops of high-res Uranus plates (`PIA18182.jpg`, `PIA01488.jpg`, `weic2310a_unannotated.png`, or `PIA02963_borderless.jpg`, `<= 2.35x` upscale, `0` repeated stills).\n\n4. **Gates & Staging:**\n   - Pass all 7 gates (`gate_shorts_open.py`, `picture_qa.py`, `polish_gate.py`, `sfx_kit.py level`, `music_gate.py`, `thumb_preview.py short` Frame 0 & Cover) with zero errors/warnings.\n   - Stage both `v02` `.mp4` files + Frame 0 / Cover JPEGs + build reports to `/Volumes/data/mac-mini-archive/OWB UAT/033_shorts_v02/` and `~/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/033_shorts_v02/` (verify non-zero byte sizes and matching SHA-256 on both NAS and iCloud Drive). No YouTube upload; £0 spend.\n",
+      "ref": "J2400",
+      "film": "033",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-14T23:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T23:37Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 033_short01_testA_opening_v02.mp4 and 033_short02_ice_giant_surface_v02.mp4 per jobs/reviews/J2400/REVIEW.md",
+      "kind": "assembly",
+      "plain": "Rebuild 033 Uranus Shorts 1 and 2 as full-bleed 9:16 v02 cuts and fix clipped word onsets in Short 2 VO"
     }
   ],
   "focus": [
