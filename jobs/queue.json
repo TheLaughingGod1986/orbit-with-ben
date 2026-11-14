@@ -217348,6 +217348,11 @@
           "at": "2026-11-12T01:36Z",
           "by": "macbook-2",
           "what": "done: Completed 15/15. Master 108:22.333 and 12:26 reel NAS SHA256 verified; master 195070 frames, mux payload identities PASS. Existing audio -20.1 LUFS/-6.4 dBTP, silence/CTA/twelve joins/full decode PASS. Watch card and delivery evidence in open PR #789 commit 62c95efcf; awaits_ben recorded for finished master. No upload until Ben OKs, earliest air 12 Dec. Checkout main; all launched processes exited."
+        },
+        {
+          "at": "2026-11-14T23:46Z",
+          "by": "macbook",
+          "what": "waits on Ben: Check the 73s before-and-after at 97:20 (opens at 97:20 of v02, then side-by-side 97:32-97:44 + screenshot sheets); no need to re-watch the full 108m film"
         }
       ],
       "remaining_action": "Verified master and reel delivered; submit finished cut for Ben watch",
@@ -217362,13 +217367,22 @@
         "by": "macbook-2"
       },
       "awaits_ben": {
-        "what": "Watch the finished 108-minute calm space compilation; spot-check first five minutes, two joins, last five minutes and brightest windows in the reel",
-        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v01.mp4",
-        "version": "sleep_video_01_master_v01",
-        "ifNot": "No upload until Ben OKs; earliest air date 12 December",
-        "title": "Fall asleep to space — finished compilation",
+        "what": "Check the 73s before-and-after at 97:20 (opens at 97:20 of v02, then side-by-side 97:32-97:44 + screenshot sheets); no need to re-watch the full 108m film",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/j2860_v02/sleep_video_01_97m20_before_after_v02.mp4",
+        "version": "sleep_video_01_master_v02",
+        "airs": "2026-12-12T21:00Z",
+        "ifNot": "No public release before Sat 12 Dec 21:00 London; J2861 prepares Private upload",
+        "title": "Space Documentary for Sleep — 97:38 repair (before & after)",
         "number": "SLEEP01",
-        "type": "long"
+        "type": "long",
+        "prev": [
+          "OWB-J2452"
+        ],
+        "fixed": [
+          "One-line root cause: MP4 mixed-profile stream-concat encode fault in Chapter XII (026 Nearest Star master 026_NearestStar_v06_cfr18.mp4 @ 07:55.8) — Chapters XI-XIII were darkened with lossless High 4:4:4 Predictive (-crf 0) and stream-copied behind Chapter I's High-profile avc1 header, corrupting hardware decode & the Watch stream at 97:36-97:39 (97:38).",
+          "Whole-master check: Chapters I-X (00:00-82:14.7) had 0 faults; Chapters XI (024), XII (026) and XIII (019) shared the same profile-mismatch fault and all three + joins 10-12 were re-encoded to High profile in sleep_video_01_master_v02.mp4 (195,070 frames, 6502.333s, 0 decode faults anywhere in v02).",
+          "Play opens directly at 97:20 of v02 (0:00-0:45), followed by 97:32-97:44 side-by-side Before/After (0:45-0:57) and the requested 97:20-98:00 (1 fps) & 97:36-97:40 (30 fps) screenshot sheets (0:57-1:13)."
+        ]
       }
     },
     {
