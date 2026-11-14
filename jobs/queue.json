@@ -249398,9 +249398,14 @@
           "at": "2026-11-14T12:27Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2/3: Committed jobs/reviews/J2822/REVIEW.md (3314460080) with complete Mini/NAS SHA-256 verification and exact Chief wait/done commands"
+        },
+        {
+          "at": "2026-11-14T12:27Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3/3: Re-checked chief_relay.py status; Codex returned UP after 12:21:32Z as elected Chief, so handing back protected wait --recheck J2822 call to elected Chief"
         }
       ],
-      "remaining_action": "Re-check Chief relay status and record final disposition for J2822 and J2171",
+      "remaining_action": "Elected Chief to record wait --recheck J2822 on J2171 (check-at 2026-11-14T20:30:00Z) and close J2822",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-14T13:16:37+00:00",
@@ -249415,11 +249420,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-14T12:27Z",
         "by": "gemini",
-        "note": "Step 2/3: Committed jobs/reviews/J2822/REVIEW.md (3314460080) with complete Mini/NAS SHA-256 verification and exact Chie"
+        "note": "Step 3/3: Re-checked chief_relay.py status; Codex returned UP after 12:21:32Z as elected Chief, so handing back protecte"
       },
       "taskKeys": [
         "HOS:009"
