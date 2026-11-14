@@ -1,5 +1,5 @@
 {
-  "next_id": 2800,
+  "next_id": 2802,
   "jobs": [
     {
       "id": "J0001",
@@ -246831,6 +246831,64 @@
         "OWB:028",
         "OWB:029"
       ]
+    },
+    {
+      "id": "J2800",
+      "title": "HOS: learn from our data, add two new films to the backlog",
+      "needs": "any",
+      "repo": "hos",
+      "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-14T02:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T02:10Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
+      "kind": "script",
+      "backlog": "hos-ideas"
+    },
+    {
+      "id": "J2801",
+      "title": "Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Read-only audit: chapter timestamps against the cut, source links in descriptions, end screen present, Shorts' Related pill set to their long. Write the fix list to 05_Analytics/live_fixes/<date>.md with exact proposed text. Block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-14T02:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T02:10Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "kind": "listing",
+      "backlog": "owb-live-listing-fixes"
     }
   ],
   "focus": [
@@ -246847,11 +246905,11 @@
     "owb-thumb-b": "2026-10-21T09:38Z",
     "hos-thumb-b": "2026-10-21T12:32Z",
     "owb-teach-overlays": "2026-10-21T12:35Z",
-    "owb-live-listing-fixes": "2026-11-13T02:07Z",
+    "owb-live-listing-fixes": "2026-11-14T02:10Z",
     "owb-weekly-audit": "2026-11-07T13:36Z",
     "hos-weekly-audit": "2026-11-07T16:04Z",
     "owb-ideas": "2026-11-13T13:55Z",
-    "hos-ideas": "2026-11-13T02:01Z",
+    "hos-ideas": "2026-11-14T02:10Z",
     "hos-live-listing-fixes": "2026-11-13T02:34Z",
     "owb-next-script": "2026-10-21T12:53Z",
     "hos-next-script": "2026-10-21T13:08Z",
