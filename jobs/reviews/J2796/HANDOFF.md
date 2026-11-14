@@ -10,7 +10,7 @@ The existing Cloudflare migration PR #858 remains OPEN. Its adapter, build confi
 
 - Live `board_check.py --no-post`: ok=true, expected=6, problems=[], site=200.
 - Tracker and stage-sync URLs: production `/api/checks`, HTTP 500 with `BOARD_GH_TOKEN isn't set` (expected J2714 token hold).
-- Watch links: 13 tests pass; stage sync: 10 pass.
+- Watch links: 13 tests pass; stage sync: 10 pass; video tracker: 40 tests run, one skipped, no failures.
 - Board suite: 116 run, four skipped, one failure: the new retired-address guard correctly flags ONLY protected AGENTS.md.
 - Targeted corrected fixtures: benauth 13 pass; approved 17 pass; uploaded 15 pass; awaits 5 pass. Studio JS regression checks pass.
 - Cloudflare route contracts, watch redirect, cookie round-trip and API noindex checks pass.
