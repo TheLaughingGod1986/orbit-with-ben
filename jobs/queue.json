@@ -210171,9 +210171,14 @@
           "at": "2026-11-14T23:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T23:23Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2400; starting 5-part review under J2829 ruling"
         }
       ],
-      "remaining_action": "033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS)",
+      "remaining_action": "Verify automated gates and SHA-256 hashes on 033 Shorts 1 & 2",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -210192,12 +210197,14 @@
       "due": "2026-11-15T22:00:00Z",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-14T23:22Z",
+        "of": 5,
+        "at": "2026-11-14T23:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2400; starting 5-part review under J2829 ruling"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2401",
