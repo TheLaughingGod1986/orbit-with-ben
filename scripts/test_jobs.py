@@ -491,6 +491,17 @@ class MacBookTakesTextJobs(unittest.TestCase):
         with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):  # uploads stay on the Mini
             self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [True, False, True])
 
+    def test_cloudflare_pages_and_wrangler_jobs_stay_on_the_mini_even_when_studio_cdp_is_up(self):
+        # J2714 (14 Nov 2026): Cloudflare Pages / wrangler deploy jobs use kind=studio for the Studio board,
+        # but wrangler login and studio-kanban keys live on the Mini only, never in the MacBook's Studio Chrome.
+        d = queue(("mini", "Move the Studio board from Vercel to Cloudflare Pages on the free plan",
+                   {"kind": "studio", "for_agent": "cursor"}),
+                  ("mini", "Nearest Star long: add end screen in Studio (do not run wrangler pages deploy)",
+                   {"kind": "studio", "for_agent": "cursor"}))
+        d["jobs"][0]["body"] = "Run build.py, then wrangler pages deploy dist --project-name studio-kanban."
+        with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9223,9222"}):
+            self.assertEqual([jobs.macbook_portable(j, d) for j in d["jobs"]], [False, True])
+
     def test_the_macbook_claims_a_portable_mini_job_and_the_mini_still_can(self):
         d = queue(("mini", "Journey film 01: plan and linking script", {"kind": "script", "for_agent": "gemini"}))
         j = d["jobs"][0]
