@@ -248040,9 +248040,14 @@
           "at": "2026-11-14T09:47Z",
           "by": "relay",
           "what": "condition verification queued: J2820"
+        },
+        {
+          "at": "2026-11-14T11:31Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-14T16:00:00Z"
         }
       ],
-      "remaining_action": "Commit and verify the music decision and linked production review handoff",
+      "remaining_action": "Obtain explicit approval to push codex/j2805-revised-music (4b92c042), open/merge the HOS decision PR, and complete J2805",
       "due": "2026-11-14T06:00:00Z",
       "kind": "chief",
       "plain": "Decide how to revise the gravity film music so it passes the required checks",
@@ -248058,9 +248063,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Automatic approval review rejected publishing the decision branch to the public HOS remote, citing missing explicit authorization to export this payload. Completed local commit 4b92c042 on codex/j2805-revised-music at /Volumes/MiniWork/scratch/j2805-hos; all repository checks passed. Explicit approval to push that branch is required before PR/merge and completion. J2806 depends on J2805 and a merged decision PR, so production cannot proceed. No generation or spend occurred.",
-        "check_at": "2026-11-14T10:47:14+00:00",
-        "recheck_task": "J2820"
+        "condition": "Chief ruling (J2820, 2026-11-14T11:31Z, jobs/reviews/J2820/REVIEW.md @ f74a257b81): NOT MET. No explicit authorization to publish codex/j2805-revised-music (local commit 4b92c0423185007b5ef68fb4c3b9682288778b89 in /Volumes/MiniWork/scratch/j2805-hos) has arrived on HOS desk #180 (through #6876498592) or OWB #478 (through #6876530884), and no remote branch or HOS PR exists. Local commit 4b92c042 remains intact, conflict-free against HOS origin/main (f57aed7c), and passes check_all.sh + status_board.py --check; retained hos_009_teach_v01.mp3 hash 4c1f0a17... verified; zero spend/generation. J2806-J2808 and J2035/J2171 remain held until 4b92c042 is authorized, pushed, and merged.",
+        "check_at": "2026-11-14T16:00:00Z",
+        "last_recheck": "J2820",
+        "checked_at": "2026-11-14T11:31:56+00:00",
+        "checked_by": "gemini"
       }
     },
     {
