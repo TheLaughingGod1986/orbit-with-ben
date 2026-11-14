@@ -252701,13 +252701,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-14T21:54Z",
-      "eta": "2026-11-14T22:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T21:53Z",
-      "result": "",
+      "result": "PR #937 (macbook/J2859, commit 3b460ab6f): (1) Journey film (02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package/) updated with v02 files beside v01 — Titles/j01_titles_v02.txt (Side A 'Space Documentary: A Calm 600-Light-Year Journey From Earth' 59c; Held B 'Relaxing Space Documentary: From Earth to Betelgeuse in 58 Minutes' 66c; Held C 'A Calm Journey From Venus to a Dying Star' 41c; no 'for sleep'), Descriptions/j01_description_v02.txt (4568c / 4650B with search-led opening 2 lines, opening paragraph, 9 chapters, 7 film links, Sources, Image credits, Pictures/Facts, and #spacedocumentary #spacejourney #astronomy), Tags/j01_tags_v02.txt (17 tags, 296c < 500c), PACKAGE_MANIFEST.json pointed at v02, and youtube:package --dry-run PASS (ok:true, PACKAGE_UPLOAD_RESULT_2026-11-14T22-10-41-877Z.json). Handoff to J2857: upload with v02 listing, set Side A first, hold B/C for a later title test, keep 3-way thumbnail Test & Compare unchanged. (2) Sleep film (02_Video-Projects/_sleep_video_01/, 108m Moon to Andromeda) drafted in git and copied with verified SHA-256 beside /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v01.mp4 (sleep_video_01_listing_v01.md + 11_Upload-Package/): Side A 'Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda' (70c), Held B/C (64c/57c), description verified against J2452 build reports (108m22s, 60s ramp at 19:30-20:30 to 85% brightness, -20.1 LUFS / zero SFX / single soft bed, 13 quiet chapters 0:00-1:37:58, 13 film links, Sources, Image credits, Pictures/Facts, #spaceforsleep #sleepdocumentary #spacedocumentary), and 18 tags (373c < 500c). All 6 titles <=70c, start with plain phrase, no hashtag, 0 exact matches on public YouTube search (evidence_2026-11-14_public_search.json); no 'no ads' or 'no AI'; £0 spend.",
       "history": [
         {
           "at": "2026-11-14T21:53Z",
@@ -252738,6 +252738,11 @@
           "at": "2026-11-14T22:07Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-14T22:18Z",
+          "by": "macbook-2",
+          "what": "done: PR #937 (macbook/J2859, commit 3b460ab6f): (1) Journey film (02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package/) updated with v02 files beside v01 — Titles/j01_titles_v02.txt (Side A 'Space Documentary: A Calm 600-Light-Year Journey From Earth' 59c; Held B 'Relaxing Space Documentary: From Earth to Betelgeuse in 58 Minutes' 66c; Held C 'A Calm Journey From Venus to a Dying Star' 41c; no 'for sleep'), Descriptions/j01_description_v02.txt (4568c / 4650B with search-led opening 2 lines, opening paragraph, 9 chapters, 7 film links, Sources, Image credits, Pictures/Facts, and #spacedocumentary #spacejourney #astronomy), Tags/j01_tags_v02.txt (17 tags, 296c < 500c), PACKAGE_MANIFEST.json pointed at v02, and youtube:package --dry-run PASS (ok:true, PACKAGE_UPLOAD_RESULT_2026-11-14T22-10-41-877Z.json). Handoff to J2857: upload with v02 listing, set Side A first, hold B/C for a later title test, keep 3-way thumbnail Test & Compare unchanged. (2) Sleep film (02_Video-Projects/_sleep_video_01/, 108m Moon to Andromeda) drafted in git and copied with verified SHA-256 beside /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v01.mp4 (sleep_video_01_listing_v01.md + 11_Upload-Package/): Side A 'Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda' (70c), Held B/C (64c/57c), description verified against J2452 build reports (108m22s, 60s ramp at 19:30-20:30 to 85% brightness, -20.1 LUFS / zero SFX / single soft bed, 13 quiet chapters 0:00-1:37:58, 13 film links, Sources, Image credits, Pictures/Facts, #spaceforsleep #sleepdocumentary #spacedocumentary), and 18 tags (373c < 500c). All 6 titles <=70c, start with plain phrase, no hashtag, 0 exact matches on public YouTube search (evidence_2026-11-14_public_search.json); no 'no ads' or 'no AI'; £0 spend."
         }
       ],
       "remaining_action": "Write Journey v02 and Sleep v01 listing packages, run Journey dry-run, and open PR",
