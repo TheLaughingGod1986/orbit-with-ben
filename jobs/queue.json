@@ -249327,10 +249327,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T12:33Z",
+      "eta": "2026-11-14T14:33Z",
       "created_by": "relay",
       "created_at": "2026-11-14T11:08Z",
       "result": "",
@@ -249344,6 +249344,11 @@
           "at": "2026-11-14T12:31Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-14T12:33Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves J01 edit handoff and records the next owner/action",
@@ -249362,7 +249367,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T12:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2822",
