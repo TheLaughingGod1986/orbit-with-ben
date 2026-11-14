@@ -219794,6 +219794,11 @@
           "at": "2026-11-14T22:40Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5/5 complete: jobs/reviews/J2477/REVIEW.md committed (5dbd6f396e), R2 stream owb-032-v02 uploaded, WIP.json advanced (OWB:062 promoted to active and script job queued)"
+        },
+        {
+          "at": "2026-11-14T22:40Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B (by 2026-11-16 18:00 London)"
         }
       ],
       "remaining_action": "Completed 032 master v02 review (KEEP) and staged for Ben UAT watch",
@@ -219821,7 +219826,19 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B",
+        "file": "OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02_PHONE.mp4",
+        "version": "v02",
+        "due": "2026-11-16T18:00Z",
+        "airs": "2026-11-25T18:00Z",
+        "ifNot": "Chief's final OK and private upload go ahead",
+        "card": "OWB:032",
+        "title": "What Would Happen If You Landed on Titan?",
+        "number": "032",
+        "type": "long"
+      }
     },
     {
       "id": "J2478",
