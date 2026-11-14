@@ -226482,10 +226482,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-14T15:18Z",
-      "eta": "2026-11-14T17:18Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:54Z",
       "result": "",
@@ -226629,6 +226629,11 @@
           "at": "2026-11-14T15:33Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified 4K cut-free crops; launching _build_shorts_2_and_3.py for Muons v05"
+        },
+        {
+          "at": "2026-11-14T18:36Z",
+          "by": "gemini",
+          "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
         }
       ],
       "remaining_action": "Render and 5-gate Muons v05 and ISS v14, verify moving video + audio, push PR #893, and arm 3 Ben Watch Cards",
@@ -231626,10 +231631,10 @@
       "stage": "edit",
       "after": "J2242",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T18:36Z",
+      "eta": "2026-11-14T20:36Z",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
       "result": "",
@@ -231643,6 +231648,11 @@
           "at": "2026-11-11T23:44Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-12T00:50:00Z: runs three-hourly overnight to save usage); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T18:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Three yes/no questions on the salon splice in v04; any no parks for Grok",
@@ -231658,7 +231668,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T18:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2615",
