@@ -246910,14 +246910,26 @@
           "at": "2026-11-14T04:22Z",
           "by": "codex",
           "what": "reopened: J2804 Chief ruling at 2026-11-14T04:22Z: DNS hold satisfied. Normal socket resolver succeeds; env -u BOARD_SITE_URL board_check --no-post returns ok=true, expected=6, site=200, no problems at 04:21:05Z. Three consecutive ref and board reads return 200 valid JSON with noindex; ref 6a48f3aef3819c096b86d98b75fada5931268b3d. Parent is NOT complete: live board still has 80 old-host Play links and actual launchd BOARD_SITE_URL remains https://studio-kanban.pages.dev (sandbox launchctl falsely appeared unset). Resume immediately: clear only that stale launchd override, publish through configured board.oppti.dev, verify all Play-link hosts, one 302/media range, normal board check and repeated data reads. No DNS duplication or new deployment required; PR 912 already merged. Existing J2714/J2532 tick-token work stays separate. Existing approval and 18:00Z deadline retained; no external DNS retry is needed."
+        },
+        {
+          "at": "2026-11-14T04:23Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: J2804 releases verified DNS hold; restores existing 2/3 plan. Follow-up is immediately ready, assigned codex, due 18:00Z. All 80 live Play links still use old host."
         }
       ],
-      "remaining_action": "Recheck the board address after DNS propagation and finish its live check",
+      "remaining_action": "Clear the old board address override, republish Play links on the new address and verify them",
       "due": "2026-11-14T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 11
+      "urgent": 11,
+      "progress": {
+        "step": 2,
+        "of": 3,
+        "at": "2026-11-14T04:23Z",
+        "by": "codex",
+        "note": "J2804 releases verified DNS hold; restores existing 2/3 plan. Follow-up is immediately ready, assigned codex, due 18:00Z"
+      }
     },
     {
       "id": "J2798",
