@@ -249543,17 +249543,22 @@
           "at": "2026-11-14T13:07Z",
           "by": "gemini",
           "what": "step 1 of 4 done: OWB:J01: wrote Chapters/j01_chapters_v01.txt, updated Descriptions/j01_description_v01.txt with exact timeline.json timestamps/sources/credits, and wrote Titles, Tags, and Pinned-Comments"
+        },
+        {
+          "at": "2026-11-14T13:11Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: OWB:J01: built and verified Captions/J01_Journey_v03_en-GB.srt (988 cues, 0.00-3484.44s, <=42 chars x 2 lines, 0 overlaps)"
         }
       ],
-      "remaining_action": "Build 11_Upload-Package/Captions/J01_Journey_v03_en-GB.srt across 8 linking VO takes and 7 parent film SRTs",
+      "remaining_action": "Build vertical trailer 11_Upload-Package/Trailer/j01_trailer_v01.mp4 and write PACKAGE_MANIFEST.json",
       "kind": "listing",
       "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T13:07Z",
+        "at": "2026-11-14T13:11Z",
         "by": "gemini",
-        "note": "OWB:J01: wrote Chapters/j01_chapters_v01.txt, updated Descriptions/j01_description_v01.txt with exact timeline.json time"
+        "note": "OWB:J01: built and verified Captions/J01_Journey_v03_en-GB.srt (988 cues, 0.00-3484.44s, <=42 chars x 2 lines, 0 overlap"
       },
       "taskKeys": [
         "OWB:023",
