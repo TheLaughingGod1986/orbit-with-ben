@@ -195718,10 +195718,10 @@
     },
     {
       "id": "J2243",
-      "title": "HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0)",
+      "title": "HOS 008 Franklin: multimodal QA and Chief review of hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04. GBP0",
       "needs": "mini",
       "repo": "hos",
-      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Mandatory Requirements\n1. **Fresh Demonstrated Multimodal Capability:** Verify a fresh successful probe for both `audio_input` and `moving_video_input` in `chief_relay.py capabilities` before assignment/review. Never claim moving-video or audio PASS from stills, ASR, model name, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 tracked windows (`00:20`, `0:30`, `0:51` night street vs `1:49`/`1:51` salon spark in-context confirmation, `2:18` jar flip in `3260..3343` AND distinct `2:20` foil/next-spark boundary at `140.000s` / frame `3353` in `3344..3404`, `3:13` points desk, `3:31` letter crossing, `7:58`/`7:59` rods) with their preceding/following cut transitions, all `32` planned `side_label` caption cards (`<=4` words, `<=4s` hold) + `11_safe_path` (`SAFE PATH DOWN`) + bottom-text rows from `reconcile_bottom_text()`, and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and measured VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (never silently mark `0:51` or `2:20` resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason \"parked for Chief: ...\"`) for UAT staging authorization and Ben's final watch.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
+      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Mandatory Requirements\n1. **Fresh Demonstrated Multimodal Capability:** Verify a fresh successful probe for both `audio_input` and `moving_video_input` in `chief_relay.py capabilities` before assignment/review. Never claim moving-video or audio PASS from stills, ASR, model name, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 tracked windows (`00:20`, `0:30`, `0:51` night street vs `1:49`/`1:51` salon spark in-context confirmation, `2:18` jar flip in `3260..3343` AND distinct `2:20` foil/next-spark boundary at `140.000s` / frame `3353` in `3344..3404`, `3:13` points desk, `3:31` letter crossing, `7:58`/`7:59` rods) with their preceding/following cut transitions, all `32` planned `side_label` caption cards (`<=4` words, `<=4s` hold) + `11_safe_path` (`SAFE PATH DOWN`) + bottom-text rows from `reconcile_bottom_text()`, and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and measured VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (never silently mark `0:51` or `2:20` resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason \"parked for Chief: ...\"`) for UAT staging authorization and Ben's final watch.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.\n\n---\n**Queue retarget (14 Nov 2026, desk 6885137818 PASS, Claude 6885141620).** Review `hos_008_master_v05.mp4` only.\nsha256 `d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b`\nPath: `/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/hos_008_master_v05.mp4`\nDo not review `hos_008_master_v04.mp4`. v04 stays the untouched previous master. J2614's v04 freeze is closed by the v05 salon-window PASS. Ben's watch stays after this review. £0.\n",
       "ref": "J1881 / J2241 / J2242",
       "film": "008",
       "stage": "edit",
@@ -195759,9 +195759,14 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input]"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "retargeted: review hos_008_master_v05.mp4 only (d1ffb78d…841b); v04 is not the review file; left open"
         }
       ],
-      "remaining_action": "Verify live audio_input + moving_video_input capability, review all 8 defect windows + 27 captions + full master_v04 in motion/audio, and park for Chief",
+      "remaining_action": "Review hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04.",
       "kind": "qa",
       "required_capabilities": [
         "audio_input"
@@ -231852,13 +231857,13 @@
       "stage": "edit",
       "after": "J2242",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-14T18:36Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-14T22:35Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
-      "result": "parked for Chief: Q1 at 2585->2586 is YES (clean cut-in; note 2505->2506 still has 1.12x crop jump withdrawn in 6796274013); Q2 is NO (2586..2605 is 20 identical frames = 0.833s static freeze of f000, mean_abs_diff=0.0 across 2588..2605); Q3 is YES (spark peaks on 2635 src f030 with approved f029/f031 glow, nowhere else); Q4 confirmed (no frame past f060 appears in v04). Sheet: /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v04/J2614/J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe2199282d200ae6f7316a96a4ba50db88dc892e5d42ff8d93826fab), review: jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63)",
+      "result": "Closed on the v05 salon PASS (desk 6885137818). v04 stays unlocked: 2586-2605 was a 20-frame freeze. J2243 reviews hos_008_master_v05.mp4 d1ffb78d…841b only.",
       "history": [
         {
           "at": "2026-11-11T13:06Z",
@@ -231919,6 +231924,26 @@
           "at": "2026-11-14T21:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "reopened: v04 does not lock. The 2586-2605 freeze is superseded by the v05 salon PASS (desk 6885137818, sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b). Claude 6885141620 asked for this close so J2243 can leave v04. £0."
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "address cleared: for was gemini, who holds J2477, so this finished check can close without taking that claim"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "done: Closed on the v05 salon PASS (desk 6885137818). v04 stays unlocked: 2586-2605 was a 20-frame freeze. J2243 reviews hos_008_master_v05.mp4 d1ffb78d…841b only."
         }
       ],
       "remaining_action": "Await J2854 (v05 salon splice) and J2855 (v05 salon sheet check) + Chief PASS per 6882919446 before closing J2614 and releasing J2243",
@@ -231933,27 +231958,20 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-14T19:14Z",
-        "by": "gemini",
-        "note": "Saved J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21) and jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63"
-      },
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief ruling 6882919446 (FIX on v04 salon splice): await J2854 (write hos_008_master_v05.mp4 salon window 2506..2665) and J2855 (read v05 salon sheets) completion and Chief PASS before closing J2614 and releasing J2243 on v05",
-        "check_at": "2026-11-15T06:00:00Z",
-        "last_recheck": "J2853",
-        "checked_at": "2026-11-14T20:33:48+00:00",
-        "checked_by": "gemini"
+      "escalated_at": "2026-11-14T21:50Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T22:35Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       },
-      "escalated_at": "2026-11-14T21:50Z"
+      "done_ref": "6885137818"
     },
     {
       "id": "J2615",
@@ -252490,13 +252508,13 @@
       "stage": "edit",
       "after": "J2854",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-14T22:02Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-14T22:35Z",
       "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-14T19:28Z",
-      "result": "parked for Chief: all 5 checks YES (1 scale 2505->2506 one scale, no crop; 2 freeze 0 runs of 3 in 2586-2665, f000-f029 longest run 2, repeated MAD <=0.0025 vs step >=0.0602; 3 ghosting 0 mismatches on 160-frame lossless intermediate 270c8c1b.../00171d64..., no blended faces/hands; 4 spark pre-glow 2634 f029, peak 2635 f030, half 2636 f031, clean outside; 5 bound last composite f060 on 2665, 2666 audience cut) + outside 12763 video packets (14946851...) & 25296 audio packets (1a4b5954...) + boundary frames 0/2504/2505/2666/2667/12922 match v04 735ac816e00b84b1e9e17d8e59a18223171953cf3441c67e1375a3ce8f6460c0 (v05 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b). Sheets read: NAS /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/J2854_salon_half_second_2504_2666.jpg (174c37bd3cc1ee5a7bcc5103a7a8ec508e817c979f1d494edfaa6e5326c85ac8) & J2854_salon_strip_2586_2636.jpg (5ea529ea50d9a38acbcb9704e3e90562ad7f19a405c16abfb3e2b18ab8548009); hos-desk e8e7d0d4 _desk/008/20261114-2159_edit/ half (62090f3b1e4486fa28914630a31080ba53068e86ac6b676490f34669befc5863) & strip (15a703101b3c21e40edde82d48dcfc5a5e99a7d5e7bd6b73348ef20ebeaae36b). No pass called; J2243 not started.",
+      "result": "v05 salon PASS (desk 6885137818, Claude 6885141620). All 5 checks YES. hos_008_master_v05.mp4 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. v04 untouched (mtime 14 Nov 13:49). J2243 reviews v05 only.",
       "history": [
         {
           "at": "2026-11-14T19:28Z",
@@ -252542,32 +252560,47 @@
           "at": "2026-11-14T22:18Z",
           "by": "relay",
           "what": "condition verification queued: J2862"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "reopened: v05 salon PASS stands (HOS desk 6885137818; Claude 6885141620 asked for the queue close). All five checks YES. NAS file /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/hos_008_master_v05.mp4 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. Hold released to close the job. J2243 reviews v05 only. £0."
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "address cleared: for was gemini, who holds J2477, so this finished check can close without taking that claim"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "chief",
+          "what": "done: v05 salon PASS (desk 6885137818, Claude 6885141620). All 5 checks YES. hos_008_master_v05.mp4 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. v04 untouched (mtime 14 Nov 13:49). J2243 reviews v05 only."
         }
       ],
       "remaining_action": "Park J2855 for Chief with all 5 checks YES and sheet paths/hashes",
       "due": "2026-11-15T18:00:00Z",
-      "for": "gemini",
       "kind": "qa",
       "model": "gemini-argon",
       "plain": "Look at the new Franklin salon frames and say whether the jump, the freeze and the spark are fixed",
       "mini_only": true,
       "urgent": 14,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-14T22:17Z",
-        "by": "gemini",
-        "note": "Posted J2855 verification to HOS desk; parking J2855 for Chief per brief"
-      },
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-14T23:18:27+00:00",
-        "recheck_task": "J2862"
-      }
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T22:35Z",
+        "by": "chief",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "done_ref": "6885137818"
     },
     {
       "id": "J2856",
@@ -252910,7 +252943,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -252927,6 +252960,11 @@
           "at": "2026-11-14T22:18Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "relay",
+          "what": "cancelled: nothing left to verify, J2855 is done on the v05 salon PASS (desk 6885137818)"
         }
       ],
       "remaining_action": "Verify readiness: Park J2855 for Chief with all 5 checks YES and sheet paths/hashes",
