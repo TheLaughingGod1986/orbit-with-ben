@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2658, J2831, J2854, J2855.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2854, J2855.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -45,7 +45,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2614 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
-| J2658 | mini | claimed | gemini | 2026-11-14T23:05Z | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |

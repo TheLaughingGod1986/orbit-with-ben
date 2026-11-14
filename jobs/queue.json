@@ -235539,13 +235539,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T21:05Z",
-      "eta": "2026-11-14T23:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T00:19Z",
-      "result": "",
+      "result": "PASS / KEEP (jobs/reviews/J2658/REVIEW.md @ 1ac512c0d5): demonstrated audio_input and moving_video_input on Supermoon v04 (sha256: 85eba87339b45a3ec4df6e0396fcbec435c8f0482d84c9e2c39eb665bccc0e68) + 90-frame final-3s strip + +/-3-frame cut strip + 2fps full sheet + 35 NAS hashes. 'sunset' ends cleanly with natural /t/ release, zero remnant 'as', zero click, complete 'LOOK EAST AT SUNSET.' caption, and clean 1.0s loop tail. Reopened J2478 under conditional Chief KEEP and rerouted to cursor (cursor-grok-4-7) while Codex is out of quota.",
       "history": [
         {
           "at": "2026-11-12T00:19Z",
@@ -235591,6 +235591,11 @@
           "at": "2026-11-14T21:13Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: committed jobs/reviews/J2658/REVIEW.md (1ac512c0d5), reopened J2478, and cancelled moot recheck J2667"
+        },
+        {
+          "at": "2026-11-14T21:13Z",
+          "by": "gemini",
+          "what": "done: PASS / KEEP (jobs/reviews/J2658/REVIEW.md @ 1ac512c0d5): demonstrated audio_input and moving_video_input on Supermoon v04 (sha256: 85eba87339b45a3ec4df6e0396fcbec435c8f0482d84c9e2c39eb665bccc0e68) + 90-frame final-3s strip + +/-3-frame cut strip + 2fps full sheet + 35 NAS hashes. 'sunset' ends cleanly with natural /t/ release, zero remnant 'as', zero click, complete 'LOOK EAST AT SUNSET.' caption, and clean 1.0s loop tail. Reopened J2478 under conditional Chief KEEP and rerouted to cursor (cursor-grok-4-7) while Codex is out of quota."
         }
       ],
       "remaining_action": "Finished J2658 review and reopened J2478",
@@ -235611,7 +235616,8 @@
       },
       "taskKeys": [
         "OWB:013"
-      ]
+      ],
+      "done_ref": "1ac512c0d5"
     },
     {
       "id": "J2659",
