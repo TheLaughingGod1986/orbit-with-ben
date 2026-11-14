@@ -231668,9 +231668,14 @@
           "at": "2026-11-14T19:05Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Resumed J2614 at step 1/3; locating J2614_salon_splice_half_second_sheet.jpg and extracted frames to inspect"
+        },
+        {
+          "at": "2026-11-14T19:10Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Completed visual and frame-metric inspection of J2614_salon_splice_half_second_sheet.jpg and v04_salon_2560_2665.mp4"
         }
       ],
-      "remaining_action": "Visually inspect the half-second sheet across frames 2560..2665 and answer the three QA questions",
+      "remaining_action": "Record visual QA findings on J2614 and park for Chief",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
@@ -231685,11 +231690,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-14T19:05Z",
+        "at": "2026-11-14T19:10Z",
         "by": "gemini",
-        "note": "Resumed J2614 at step 1/3; locating J2614_salon_splice_half_second_sheet.jpg and extracted frames to inspect"
+        "note": "Completed visual and frame-metric inspection of J2614_salon_splice_half_second_sheet.jpg and v04_salon_2560_2665.mp4"
       },
       "taskKeys": [
         "HOS:008"
