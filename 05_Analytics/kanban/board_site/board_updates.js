@@ -58,6 +58,12 @@
       const served = response.headers.get("X-Board-Sha");
       const etag = (response.headers.get("ETag") || "").replace(/^W\//, "").replaceAll('"', "");
       revision = update && ((update.snapshotEtag && etag === update.snapshotEtag) || (served && served === commit)) ? update.revision : "";
+      // Independent branch caches can return a slightly older snapshot. Identify it exactly
+      // from the retained history, then let the next poll replay forward instead of downloading again.
+      if (!revision && update && Array.isArray(update.edits)) {
+        const match = update.edits.find(edit => edit.fromEtag && edit.fromEtag === etag);
+        if (match) revision = match.from;
+      }
       return new Response(JSON.stringify(raw));
     })();
     try { return (await busy).clone(); } finally { busy = null; }

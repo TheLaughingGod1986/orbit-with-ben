@@ -30,6 +30,12 @@ async function run() {
   const recovered=await (await window.__boardUpdates('',own,full)).json();
   assert.equal(reads,2,'mismatched snapshot requires a fresh full read');
   assert.equal(recovered.heartbeat,3,'never apply edits to a different snapshot');
+  // A snapshot one branch-cache revision behind can be identified from history.
+  eval(source); reads=0;
+  update={schema:1,revision:'ahead',snapshotEtag:'ahead-etag',edits:[{from:'cached',fromEtag:'snapshot-one',to:'ahead',ops:[['set',['heartbeat'],7]]}]};
+  await window.__boardUpdates('',own,full);
+  assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,7);
+  assert.equal(reads,1,'independently cached branch files recover through exact snapshot hash');
   // Actual gzip envelope, including recovery if decompression fails.
   eval(source); reads=0;
   const {gzipSync} = require('node:zlib');
