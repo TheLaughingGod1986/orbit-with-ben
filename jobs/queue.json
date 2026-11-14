@@ -1,5 +1,5 @@
 {
-  "next_id": 2866,
+  "next_id": 2867,
   "jobs": [
     {
       "id": "J0001",
@@ -250924,7 +250924,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 12,
+      "urgent": 11,
       "progress": {
         "step": 3,
         "of": 4,
@@ -252932,7 +252932,7 @@
       "due": "2026-11-16T18:00:00Z",
       "kind": "studio",
       "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
-      "urgent": 13,
+      "urgent": 12,
       "progress": {
         "step": 1,
         "of": 5,
@@ -253121,6 +253121,11 @@
           "at": "2026-11-14T22:44Z",
           "by": "claude",
           "what": "J2865 (a new Orbit script, the Phobos film) was queued at 22:40Z, after Ben's go and before this rule exists. It now waits on this job. When the rule is written, close it or recast the topic, and check the queue for any other new Orbit single-question script, shot list or narration job added since."
+        },
+        {
+          "at": "2026-11-14T22:46Z",
+          "by": "claude",
+          "what": "also: the plan Ben agreed tonight will be shown on the board from one file, studio/plan.json (J2866). When you write the pause rule, say that the Chief keeps that file's dates and decisions current."
         }
       ],
       "remaining_action": "Add the dated rule (what stays, what pauses, the two tests and how each is read), plan the Shorts supply through January, tell the thread",
@@ -253128,7 +253133,7 @@
       "for": "claude",
       "kind": "studio",
       "plain": "Record Ben's decision to pause the kind of long video that isn't getting views, until a new kind has been tested",
-      "urgent": 15
+      "urgent": 13
     },
     {
       "id": "J2865",
@@ -253177,6 +253182,38 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2866",
+      "title": "Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 22:46Z):** \"This new plan, can we include the plan, what we're doing and when including how it's doing somewhere on the dashboard\".\n\n**What he should see.** The plan agreed tonight for Orbit's long videos (why: J2863; the pause: J2864; the dates: J2857 and J2861), in plain words, on his phone, kept up to date by the publish and not by hand.\n\n**1. One card on Overview**, above the first-day panel: \"Plan: getting our long videos seen\". Three short lines: the next date (\"Next: Journey film, Tue 8 Dec\"), what needs him (\"1 thing needs you: lock the every-planet film\", or nothing), and the score so far (\"No test film is public yet. Best long so far: 230 views\"). A tap opens the plan page. The five tabs at the bottom stay as they are.\n\n**2. The plan page** (`#plan`), in this order:\n- **Why.** The four lines in the plan file.\n- **What we're doing and when.** One row for each step: its name, the one-line \"what\", the date in London time, and where it stands now in plain words worked out from its jobs and the video tracker: for example \"Being repaired, step 1 of 5\", \"Listing ready\", \"Waiting for your lock\", \"Uploaded, private\", \"Scheduled\", \"Live, day 6 of 14\". A step that needs Ben says so and links to its card.\n- **How it's doing.** A row for each test film once it is public: days live, views, showings, click rate, average share watched, and at day 14 a verdict against the step's own numbers: Keep (500 views or more), One more (230 to 499), Drop or change (under 230). Before day 14: \"reading on\" and the date. Always a baseline row: best long so far 230 views; all 16 longs about 4,050 showings (read 12 Nov). A figure we do not have shows \"no figure yet\", never 0.\n- **Decisions.** The dated lines in the plan file, newest first.\n- **Last updated**, from the publish.\n\n**3. Where the plan lives.** One tracked file, `studio/plan.json`, holding the words and dates. A list of plans, so a second plan can be added later without new code. Start it with this one, exactly:\n\n```json\n[\n {\n  \"id\": \"longs-2026-11\",\n  \"channel\": \"owb\",\n  \"title\": \"Getting our long videos seen\",\n  \"agreed\": \"2026-11-14\",\n  \"goal\": \"Long videos to thousands of views each.\",\n  \"why\": [\n   \"All 16 long videos together were shown about 4,050 times in three and a half months.\",\n   \"About 2% of the people who saw one clicked it.\",\n   \"Viewers watched 15% to 25% of a film on average.\",\n   \"The Shorts feed hands every Short its viewers. A long gets no such start on a channel with 19 subscribers.\"\n  ],\n  \"baseline\": {\n   \"bestLongViews\": 230,\n   \"longShowingsTotal\": 4050,\n   \"longs\": 16,\n   \"readAt\": \"2026-11-12\"\n  },\n  \"steps\": [\n   {\n    \"id\": \"journey\",\n    \"name\": \"Journey film (58 minutes)\",\n    \"what\": \"A calm documentary from Earth to the dying star Betelgeuse, made from seven finished films.\",\n    \"when\": \"2026-12-08T18:00Z\",\n    \"film\": \"J01\",\n    \"jobs\": [\n     \"J2859\",\n     \"J2857\"\n    ],\n    \"test\": {\n     \"days\": 14,\n     \"keep\": 500,\n     \"drop\": 230\n    }\n   },\n   {\n    \"id\": \"sleep\",\n    \"name\": \"Sleep film (1 hour 48 minutes)\",\n    \"what\": \"A slow space documentary to fall asleep to, from the Moon to Andromeda, titled and tagged from research on channels that do this.\",\n    \"when\": \"2026-12-12T21:00Z\",\n    \"jobs\": [\n     \"J2860\",\n     \"J2859\",\n     \"J2861\"\n    ],\n    \"test\": {\n     \"days\": 14,\n     \"keep\": 500,\n     \"drop\": 230\n    }\n   },\n   {\n    \"id\": \"planets\",\n    \"name\": \"Every planet explained in 10 minutes\",\n    \"what\": \"A new kind of long video: a complete tour with a number in the title, the kind that gets views for channels our size.\",\n    \"when\": \"\",\n    \"needsBen\": \"Lock or decline this film on its card\",\n    \"jobs\": [\n     \"J2863\"\n    ],\n    \"test\": {\n     \"days\": 14,\n     \"keep\": 500,\n     \"drop\": 230\n    }\n   },\n   {\n    \"id\": \"pause\",\n    \"name\": \"Pause on single-question long videos\",\n    \"what\": \"After the Pluto film on Sun 13 Dec, no new \\\"What happens if\\\" long is made until one of the tests has its result.\",\n    \"when\": \"2026-12-13\",\n    \"jobs\": [\n     \"J2864\"\n    ]\n   }\n  ],\n  \"decisions\": [\n   {\n    \"at\": \"2026-11-14\",\n    \"by\": \"Ben\",\n    \"text\": \"Titles, descriptions and tags come from research on channels that offer this.\"\n   },\n   {\n    \"at\": \"2026-11-14\",\n    \"by\": \"Ben\",\n    \"text\": \"Journey film on Tue 8 Dec at 18:00, sleep film on Sat 12 Dec at 21:00.\"\n   },\n   {\n    \"at\": \"2026-11-14\",\n    \"by\": \"Ben\",\n    \"text\": \"Pause new single-question long videos after the Pluto film until a new format has been tested.\"\n   }\n  ]\n }\n]\n```\n\nThe publish adds a `plan` block to the board data: the file, plus each step's job states from the queue, its video's state and dates from the tracker, and its numbers from the channel reads the publish already has. The page reads only that block. The Chief changes `studio/plan.json` when a date or decision changes; say so in the rules where J2864 writes the pause.\n\n**4. Tests.** Every job id in the plan file exists in the queue and every date parses. The page shows the card, the four sections, a step that needs Ben, a film before and after day 14 with each verdict, and \"no figure yet\". The plan block does not change when nothing behind it changed, so quiet publishes stay quiet.\n\n**5. Ship it.** One pull request. Build and deploy the board to Cloudflare Pages the usual way, and bump the version so open pages reload. Put two phone screenshots on the thread: the Overview card and the plan page.\n\n**Guards.** £0. No secret, address or device name. Plain words Ben can read without the job numbers (numbers may sit in small print). Nothing else on the board moves.\n\n**Done when** Ben opens the board on his phone and sees the card and the page with tonight's plan, the dates and where each step stands.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T22:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T22:46Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Add studio/plan.json, a plan block in the publish, an Overview card and a #plan page with status and results, tests, deploy, two phone screenshots",
+      "due": "2026-11-16T18:00:00Z",
+      "for": "cursor",
+      "kind": "studio",
+      "plain": "Put the new plan for long videos on the board: what we're doing, when, and how it's going",
+      "urgent": 14
     }
   ],
   "focus": [

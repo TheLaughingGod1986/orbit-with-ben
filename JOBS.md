@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2831, J2860, J2864.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2831, J2860, J2864, J2866.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
+| J2866 | mini | open | – | – | for cursor · studio · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
 
 Recently finished:
 
