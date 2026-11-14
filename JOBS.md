@@ -92,6 +92,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2837 | mini | open (after J2835) | – | – | HOS:107 topic · for gemini · review · `gemini-argon` · HOS 107 Autumn Leaves: rule-E topic go/no-go review |  |
 | J2838 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J2839 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J2840 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
+| J2841 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
+| J2842 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
+| J2843 | cloud | open (after J2842) | – | – | review · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 
 Recently finished:
 
