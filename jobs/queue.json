@@ -250626,7 +250626,7 @@
     {
       "id": "J2836",
       "title": "HOS 106 Eels: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review (AGENTS.md \"Continuous flow\" E) for two History of Science proposals from J2835.\nRead history-of-science PR #588 (branch claudecode/J2835-hos-topics-106-107): 02_Video-Projects/106_Aristotle-Freud-Schmidt-Eels-Sargasso/TOPIC.md and 02_Video-Projects/107_Tswett-Willstatter-Autumn-Leaves-Chlorophyll/TOPIC.md, each with 11_Upload-Package/evidence_2026-11-14_neighbours.json. The waiting-line change is the orbit-with-ben PR named in the J2835 result.\nFor each film give Go, No-go or one Defer: (1) no near-duplicate of a live, scheduled or proposed HOS film (001-105, ideas folder); (2) audience evidence: the neighbour gate, and the rule-26 search phrase. public_search.py failed on 14 Nov (YouTube page layout changed), so autocomplete and title-collision evidence is missing and must be gathered another free way or the tool fixed; (3) every name, date and number in TOPIC.md section 2 is unverified and needs a source before any script lock.\nOpen points to rule on: 106, whether Thoughty2 counts as the third education neighbour; 107, the seasonal search peak and the lack of an on-subject TED-Ed film over 1M.\nWrite jobs/reviews/<this job id>/REVIEW.md. Spend nothing. No script, voice, picture or Studio work.\n",
       "ref": "",
@@ -250646,11 +250646,25 @@
           "at": "2026-11-14T16:50Z",
           "by": "claudecode",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T16:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review the topic brief and write go or no-go",
       "kind": "review",
-      "plain": "Checking whether a History of Science film about where eels come from is worth making"
+      "plain": "Checking whether a History of Science film about where eels come from is worth making",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2837",
