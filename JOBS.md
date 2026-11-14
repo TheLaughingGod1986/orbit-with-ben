@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2809 | mini | claimed | gemini | 2026-11-14T06:51Z | for gemini · script · `gemini-argon` · HOS: complete the two data-backed topic briefs handed back in J2800 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911 |
 | J2810 | mini | open (after J2809) | – | – | HOS:104 topic · for gemini · review · `gemini-argon` · HOS 104 Speed of Light: rule-E topic go/no-go review |  |
 | J2811 | mini | open (after J2809) | – | – | HOS:105 topic · for gemini · review · `gemini-argon` · HOS 105 Venus Flytrap: rule-E topic go/no-go review |  |
-| J2812 | mini | open | – | – | review · Verify condition for J1130 |  |
+| J2812 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
 | J2813 | mini | open | – | – | review · Verify condition for J2040 |  |
 
 Recently finished:
