@@ -1549,15 +1549,62 @@
           <p class="ch-note">A new channel starts small: two films in work at most, and its pictures are made only with credits already paid for.</p>
           ${roomLine ? `<h3>Is the studio ready for another one?</h3><p>${esc(roomLine)}</p>` : ""}</article></div></div>`;
   }
+  // The plan (Ben, 14 Nov 2026): one card above First day, and the page at #plan. The publish
+  // writes board.plan; this only reads that block.
+  function planList(b) {
+    const block = (b || {}).plan || {};
+    return Array.isArray(block.plans) ? block.plans.filter(Boolean) : [];
+  }
+  function planCard(plan) {
+    const card = plan.card || {};
+    const lines = [card.next, card.needs, card.score].filter(Boolean).map(line => `<span>${esc(line)}</span>`).join("");
+    return `<a class="ov-card plan-card" href="#plan"><b>${esc(card.title || plan.title || "Plan")}</b>${lines}</a>`;
+  }
+  function planSection(b) {
+    const cards = planList(b).map(planCard).join("");
+    if (!cards) return "";
+    return `<section class="overview-plan" aria-label="Plan"><div class="ov-stack">${cards}</div></section>`;
+  }
+  function planPage(b) {
+    const plans = planList(b);
+    const back = `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>`;
+    if (!plans.length) return back + empty("The plan is not on the board yet.");
+    const updated = londonWhen(((b || {}).plan || {}).updatedAt);
+    const tone = {Keep: "green", "One more": "amber", "Drop or change": "red"};
+    const fact = (label, value) => `<div><dt>${esc(label)}</dt><dd>${esc(value || "no figure yet")}</dd></div>`;
+    const one = plan => {
+      const why = (plan.why || []).map(line => `<li>${esc(line)}</li>`).join("");
+      const steps = (plan.steps || []).map(step => {
+        const href = step.videoKey ? `#v=${encodeURIComponent(step.videoKey)}` : "";
+        const stand = step.needsYou && href ? `<a href="${href}">${esc(step.stand)}</a>` : esc(step.stand || "");
+        const jobs = (step.jobs || []).length ? `<p class="meta">${esc((step.jobs || []).join(" · "))}</p>` : "";
+        return `<article class="ov-card plan-step"><b>${esc(step.name)}</b><p>${esc(step.what || "")}</p><p class="plan-when">${esc(step.when || "No date yet")}</p><p class="plan-stand">${stand}</p>${jobs}</article>`;
+      }).join("");
+      const results = (plan.results || []).map(row => {
+        const until = row.verdict === "reading on" && row.until ? ` · ${esc(row.until)}` : "";
+        return `<article class="ov-card plan-result"><b>${esc(row.name)}</b><p>${esc(row.daysText || "")}</p><p class="plan-verdict"><span class="tag ${tone[row.verdict] || ""}">${esc(row.verdict || "")}</span>${until}</p><dl class="plan-facts">${fact("Views", row.views)}${fact("Showings", row.showings)}${fact("Click rate", row.clickRate)}${fact("Average share watched", row.share)}</dl></article>`;
+      }).join("");
+      const base = plan.baseline || {};
+      const decisions = (plan.decisions || []).map(row => `<li><b>${esc(row.at || "")}${row.by ? " · " + esc(row.by) : ""}</b> ${esc(row.text || "")}</li>`).join("");
+      return `<article class="plan-block"><header class="overview-header"><div><h1>${esc(plan.title || "Plan")}</h1><p>${esc(plan.goal || "")}</p></div></header>
+        <section aria-label="Why"><h2>Why</h2><ul>${why}</ul></section>
+        <section aria-label="What we're doing and when"><h2>What we're doing and when</h2><div class="ov-stack">${steps}</div></section>
+        <section aria-label="How it's doing"><h2>How it's doing</h2><div class="ov-stack">${results}<article class="ov-card plan-base"><p>${esc(base.best || "")}</p><p>${esc(base.showings || "")}</p></article></div></section>
+        <section aria-label="Decisions"><h2>Decisions</h2><ul class="plan-decisions">${decisions}</ul></section></article>`;
+    };
+    return `${back}<div class="overview-home">${plans.map(one).join("")}${updated ? `<p class="meta">Last updated ${esc(updated)}</p>` : ""}</div>`;
+  }
   // Cleaner dashboard (Ben, 6 Nov ~23:05): Header → stats → Needs attention → Machines →
   // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
   // First day sits under Needs attention (10 Nov): it is the one card about how the videos themselves are doing.
+  // The plan card sits above First day (14 Nov).
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${checksStaleBanner(b)}
       ${needsAttentionBanner(b)}
+      ${planSection(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
@@ -2001,7 +2048,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#plan' && ready ? planPage(board) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;

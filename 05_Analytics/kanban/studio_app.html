@@ -338,6 +338,19 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-attention .att-chev { color:var(--amber); font-size:18px; line-height:1; }
 .overview-attention .att-list { margin:0; padding:0 14px 12px; border-top:1px solid color-mix(in srgb, var(--amber) 25%, var(--line)); }
 .overview-home section { margin:0; }
+.overview-home a.plan-card { text-decoration:none; color:inherit; display:flex; flex-direction:column; align-items:stretch; gap:6px; overflow-wrap:anywhere; }
+.overview-home a.plan-card b { display:block; font-size:16px; line-height:1.3; }
+.overview-home a.plan-card span { display:block; color:var(--muted); font-size:13px; line-height:1.45; }
+.plan-step b, .plan-result b { display:block; font-size:16px; line-height:1.3; }
+.plan-step p, .plan-result p, .plan-base p { margin:6px 0 0; font-size:14px; line-height:1.45; overflow-wrap:anywhere; }
+.plan-facts { margin:10px 0 0; }
+.plan-facts>div { display:flex; justify-content:space-between; gap:12px; margin:6px 0; }
+.plan-facts dt { color:var(--muted); }
+.plan-facts dd { margin:0; font-weight:650; text-align:right; }
+.plan-decisions { padding-left:18px; }
+.plan-decisions li { margin:8px 0; }
+.overview-home .plan-block { display:flex; flex-direction:column; gap:18px; }
+.overview-home .plan-block h2 { margin-top:4px; }
 .overview-home h2 { font-size:15px; font-weight:700; line-height:1.3; margin:0 0 10px; color:var(--ink); text-transform:none; letter-spacing:-.01em; }
 .featured-video { /* uses .ov-card look via shared panel styles; keep class for tests */ background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
 .overview-home .featured-video { display:block; }

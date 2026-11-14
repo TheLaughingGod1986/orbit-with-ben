@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1326,6 +1326,60 @@ console.log('Jobs running count checks OK');
     'the video page shows its own check, open, without a link to itself');
   assert(!t.detail({tracker: {videos: fb.tracker.videos}}, 'OWB:032:S:x').includes('aria-label="First day"'), 'a video with no check has no block');
   console.log('First day panel OK');
+}
+
+// The plan (Ben, 14 Nov 2026): a card above First day, and #plan with the four sections.
+{
+  const plan = {
+    id: 'longs-2026-11', title: 'Getting our long videos seen', goal: 'Long videos to thousands of views each.',
+    why: ['Shown about 4,050 times.', 'About 2% clicked.', 'Watched 15% to 25%.', 'A long gets no such start.'],
+    card: {
+      title: 'Plan: getting our long videos seen',
+      next: 'Next: Journey film, Tue 8 Dec',
+      needs: '1 thing needs you: lock the every-planet film',
+      score: 'No test film is public yet. Best long so far: 230 views',
+    },
+    steps: [
+      {id: 'journey', name: 'Journey film (58 minutes)', what: 'A calm documentary.', when: 'Tue 8 Dec, 18:00', stand: 'Listing ready', needsYou: false, videoKey: '', jobs: ['J2859']},
+      {id: 'planets', name: 'Every planet explained in 10 minutes', what: 'A complete tour.', when: 'No date yet', stand: 'Waiting for your lock', needsYou: true, videoKey: 'OWB:064', jobs: ['J2863']},
+    ],
+    results: [
+      {id: 'early', name: 'Journey film', daysText: 'Day 6 of 14', views: '120', showings: 'no figure yet', clickRate: 'no figure yet', share: 'no figure yet', verdict: 'reading on', until: 'Mon 21 Dec'},
+      {id: 'keep', name: 'Keep film', daysText: 'Day 14 of 14', views: '500', showings: '2,000', clickRate: '3%', share: '20%', verdict: 'Keep', until: ''},
+      {id: 'more', name: 'Middle film', daysText: 'Day 14 of 14', views: '300', showings: '1,000', clickRate: '2%', share: '18%', verdict: 'One more', until: ''},
+      {id: 'drop', name: 'Quiet film', daysText: 'Day 14 of 14', views: '40', showings: '400', clickRate: '1%', share: '10%', verdict: 'Drop or change', until: ''},
+    ],
+    baseline: {best: 'Best long so far: 230 views', showings: 'All 16 longs: about 4,050 showings (read 12 Nov)'},
+    decisions: [
+      {at: '14 Nov 2026', by: 'Ben', text: 'Pause new single-question long videos after the Pluto film.'},
+      {at: '14 Nov 2026', by: 'Ben', text: 'Titles, descriptions and tags come from research.'},
+    ],
+  };
+  const board = {plan: {updatedAt: '2026-11-14T23:08:00Z', plans: [plan]}, tracker: {videos: [], firstDay: [
+    {id: 'aaaaaaaaaaa', channel: 'OWB', format: 'short', title: 'Recent', wentLive: '2026-10-28T11:30Z', level: 'ahead', word: 'Strong start', summary: 'Fine.', next: null},
+  ]}};
+  const home = t.overview(board, NOW);
+  assert(home.includes('Plan: getting our long videos seen'), 'the card names the plan');
+  assert(home.includes('Next: Journey film, Tue 8 Dec'), 'the card names the next date');
+  assert(home.includes('1 thing needs you: lock the every-planet film'), 'the card says what needs Ben');
+  assert(home.includes('No test film is public yet. Best long so far: 230 views'), 'the card gives the score so far');
+  assert(home.includes('href="#plan"'), 'a tap opens the plan page');
+  assert(home.indexOf('aria-label="Plan"') < home.indexOf('aria-label="First day"'), 'the plan card sits above First day');
+  assert(!home.includes('J2859') && !home.includes('J2863'), 'the overview card has no job numbers');
+  const page = t.planPage(board);
+  for (const heading of ['Why', "What we're doing and when", "How it's doing", 'Decisions']) {
+    assert(page.includes(`<h2>${heading}</h2>`), 'the page has ' + heading);
+  }
+  assert(page.includes('Waiting for your lock') && page.includes('#v=OWB%3A064'), 'a step that needs Ben says so and links to its card');
+  assert(page.includes('reading on') && page.includes('Mon 21 Dec'), 'before day 14 the row is still reading on, with the date');
+  assert(page.includes('Keep') && page.includes('One more') && page.includes('Drop or change'), 'day 14 shows each verdict');
+  assert(page.includes('no figure yet'), 'a missing figure says so');
+  assert(!page.includes('>0<'), 'a missing figure is never shown as 0');
+  assert(page.includes('Best long so far: 230 views') && page.includes('about 4,050 showings'), 'the baseline row is always there');
+  assert(page.includes('Last updated'), 'the page says when the publish last wrote it');
+  assert(page.indexOf('Pause new') < page.indexOf('Titles, descriptions'), 'decisions are newest first');
+  assert(t.planPage({tracker: {videos: []}}).includes("The plan is not on the board yet."));
+  console.log('Plan page OK');
 }
 
 // Channels (Ben, 10 Nov 2026: "is there a small part on the dashboard we can show what repos are plugged in ... and

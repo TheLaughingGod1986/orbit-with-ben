@@ -1,0 +1,73 @@
+[
+  {
+    "id": "longs-2026-11",
+    "channel": "owb",
+    "title": "Getting our long videos seen",
+    "agreed": "2026-11-14",
+    "goal": "Long videos to thousands of views each.",
+    "why": [
+      "All 16 long videos together were shown about 4,050 times in three and a half months.",
+      "About 2% of the people who saw one clicked it.",
+      "Viewers watched 15% to 25% of a film on average.",
+      "The Shorts feed hands every Short its viewers. A long gets no such start on a channel with 19 subscribers."
+    ],
+    "baseline": {
+      "bestLongViews": 230,
+      "longShowingsTotal": 4050,
+      "longs": 16,
+      "readAt": "2026-11-12"
+    },
+    "steps": [
+      {
+        "id": "journey",
+        "name": "Journey film (58 minutes)",
+        "what": "A calm documentary from Earth to the dying star Betelgeuse, made from seven finished films.",
+        "when": "2026-12-08T18:00Z",
+        "film": "J01",
+        "jobs": ["J2859", "J2857"],
+        "test": {"days": 14, "keep": 500, "drop": 230}
+      },
+      {
+        "id": "sleep",
+        "name": "Sleep film (1 hour 48 minutes)",
+        "what": "A slow space documentary to fall asleep to, from the Moon to Andromeda, titled and tagged from research on channels that do this.",
+        "when": "2026-12-12T21:00Z",
+        "jobs": ["J2860", "J2859", "J2861"],
+        "test": {"days": 14, "keep": 500, "drop": 230}
+      },
+      {
+        "id": "planets",
+        "name": "Every planet explained in 10 minutes",
+        "what": "A new kind of long video: a complete tour with a number in the title, the kind that gets views for channels our size.",
+        "when": "",
+        "needsBen": "Lock or decline this film on its card",
+        "jobs": ["J2863"],
+        "test": {"days": 14, "keep": 500, "drop": 230}
+      },
+      {
+        "id": "pause",
+        "name": "Pause on single-question long videos",
+        "what": "After the Pluto film on Sun 13 Dec, no new \"What happens if\" long is made until one of the tests has its result.",
+        "when": "2026-12-13",
+        "jobs": ["J2864"]
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-14",
+        "by": "Ben",
+        "text": "Titles, descriptions and tags come from research on channels that offer this."
+      },
+      {
+        "at": "2026-11-14",
+        "by": "Ben",
+        "text": "Journey film on Tue 8 Dec at 18:00, sleep film on Sat 12 Dec at 21:00."
+      },
+      {
+        "at": "2026-11-14",
+        "by": "Ben",
+        "text": "Pause new single-question long videos after the Pluto film until a new format has been tested."
+      }
+    ]
+  }
+]

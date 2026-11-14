@@ -32,6 +32,7 @@ When two docs disagree, the one higher in this list wins. Anything not listed he
 | `02_Video-Projects/NNN_Slug/` | One folder per film in the git checkout (template + status). **Working media** for live films lives on the NAS under `studio-live` (see **Film folders on the NAS** below), not in git. |
 | `04_Audio/tools/` | `orbit_voice.py` (VO settings), `orbit_gemini_veo.py` |
 | `docs/ORBIT_PLAYBOOK_LESSONS.md` | Tonight's standing rules (neighbour, edit, production locks, thread protocol) |
+| `studio/plan.json` | The plan for this channel's long videos: the words, the dates and the decisions. The Chief keeps it current. The board shows it. |
 
 ## Standing lessons (this channel's)
 
@@ -66,6 +67,10 @@ Lessons 3, 4 and 6 are the studio's and stay in `AGENTS.md`.
      - **Standalone Shorts test + compilation film (Ben, 12 Oct 2026 14:50):** 8 self-contained ~20 s Shorts (2 a week for 4 weeks, not cut from longs; a one-off exception to the 22–27 s lock. **Test-only exception (Ben, 26 Oct 2026):** the J0216 test Shorts keep their ~20 s cuts until the test ends on 20 Nov 2026. Every new Short after that uses the 22 s floor) and one 45–60 min compilation from finished films. Decision and measurement: `00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/`.
      - `python3 scripts/music_gate.py <film dir> --bed <bed> --video <cut>` must PASS: the bed is in the film's own 05_Music with its plan; the brief has Pace and NOT; it doesn't sound like another film's bed, even trimmed or re-encoded; and it runs the whole cut.
      - Fit is judged by ear: Claude's review, then Ben's watch.
+
+## The plan on the board (Ben, 14 Nov 2026)
+
+Ben, 14 Nov 2026: the plan for Orbit's long videos sits on the studio board, as a card on Overview and a page at `#plan`. The words and the dates live in one file, `studio/plan.json`. The Chief changes that file when a date or a decision changes. The pause on new single-question longs (J2864) stays in step with that file: do not keep a second copy of those dates.
 
 ## Teach on screen (Ben, 11 Oct 2026)
 

@@ -825,7 +825,41 @@ def run_once(a) -> int:
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
+    add_plan(board, at)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
+
+
+def add_plan(board: dict, at: dt.datetime) -> None:
+    """board.plan from studio/plan.json, plus each step's jobs, its video and the channel read.
+
+    The page reads only this block. updatedAt stays put when nothing behind the plan changed,
+    so a quiet publish stays quiet. Never blocks the board push.
+    """
+    try:
+        import plan_board
+        path = wt() / "studio" / "plan.json"
+        if not path.is_file():
+            return
+        plans = json.loads(path.read_text())
+        queue = _read_json(wt() / "jobs" / "queue.json") or {}
+        videos = ((board.get("tracker") or {}).get("videos")) or []
+        analytics = None
+        text = tracker_text()
+        if text:
+            try:
+                analytics = json.loads(text)
+            except ValueError:
+                analytics = None
+        try:
+            previous = json.loads((STATE / "board.json").read_text()).get("plan") or {}
+        except (OSError, ValueError):
+            previous = {}
+        if not isinstance(previous, dict):
+            previous = {}
+        board["plan"] = plan_board.section(
+            plans, queue.get("jobs") or [], videos, analytics, iso(at), previous, now=at)
+    except Exception as e:  # noqa: BLE001
+        log(f"plan not built: {e}")
 
 
 def add_channels(board: dict) -> None:

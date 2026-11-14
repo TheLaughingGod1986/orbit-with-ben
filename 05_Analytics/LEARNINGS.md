@@ -8,6 +8,8 @@ The weekly audits (`owb-weekly-audit`, `hos-weekly-audit` in `jobs/backlog.json`
 
 **Goals (Ben, 4 Nov 2026):** Shorts to **tens of thousands** of views each and longs to **thousands** each. The monthly report scores every test below against these, and keeps, changes or drops it.
 
+**The plan on the board (Ben, 14 Nov 2026).** The plan for Orbit's long videos, its dates and how each test is read, lives in `studio/plan.json` and on the board. The Chief changes that file when a date or a decision changes. The pause on new single-question longs, once it is written here, stays in step with that file.
+
 **What YouTube rewards on a Short** (targets, kept distinct):
 - **Stayed to watch** (Studio: *Viewed vs. swiped away*), decided in the first 1-2 s: **60% floor** (Ben, 24 Oct 2026; **70% stretch**).
 - **Average % viewed**: **70% or more**; over 100% means people rewatch. (Note: average view duration / % viewed is a mean across views and does not locate a specific viewer exit second.)
