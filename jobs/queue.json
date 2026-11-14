@@ -252482,9 +252482,14 @@
           "at": "2026-11-14T22:04Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Opened and hashed both NAS/scratch sheets (174c37bd... / 5ea529ea...) and hos-desk e8e7d0d4 sheets (62090f3b... / 15a70310...), plus v05 (d1ffb78d...) and v04 (735ac816...6460c0)"
+        },
+        {
+          "at": "2026-11-14T22:10Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified lossless intermediate (160 frames, 0 mismatches, longest run 2) and decoded v05 2586-2665 (repeated pair max MAD 0.0025 vs step min MAD 0.0602; 0 three-frame holds)"
         }
       ],
-      "remaining_action": "Decode v05 and v04 frames 2504-2666 and verify all 5 checks (scale, freeze, ghosting, spark, bound) plus bitwise outside 2506-2665 and audio",
+      "remaining_action": "Run packet-level bitwise check on v04 vs v05 and inspect full-resolution visual sheets for scale, freeze, ghosting, spark and bound",
       "due": "2026-11-15T18:00:00Z",
       "for": "gemini",
       "kind": "qa",
@@ -252493,11 +252498,11 @@
       "mini_only": true,
       "urgent": 15,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T22:04Z",
+        "at": "2026-11-14T22:10Z",
         "by": "gemini",
-        "note": "Opened and hashed both NAS/scratch sheets (174c37bd... / 5ea529ea...) and hos-desk e8e7d0d4 sheets (62090f3b... / 15a703"
+        "note": "Verified lossless intermediate (160 frames, 0 mismatches, longest run 2) and decoded v05 2586-2665 (repeated pair max MA"
       },
       "taskKeys": [
         "HOS:008"
