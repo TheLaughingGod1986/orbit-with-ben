@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
 | J2807 | mini | open (after J2806) | – | – | 009 edit · review · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
-| J2809 | mini | open | – | – | script · HOS: complete the two data-backed topic briefs handed back in J2800 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911 |
+| J2809 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS: complete the two data-backed topic briefs handed back in J2800 | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911 |
 
 Recently finished:
 

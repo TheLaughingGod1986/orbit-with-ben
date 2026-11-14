@@ -247614,12 +247614,26 @@
           "at": "2026-11-14T04:04Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T04:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 196 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Research two new topics, save the evidence and queue their reviews",
       "kind": "script",
       "plain": "Choose two new History of Science films using our audience data and comparable videos",
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
