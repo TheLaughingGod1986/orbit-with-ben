@@ -125,3 +125,7 @@ startup because its child output exceeded Node's default buffer; v2 fixes that. 
 for the timestamp correction requires Chief review/merge/deployment and a new ten-minute measurement.
 
 Required low-disk offload ran; nothing was old enough to move. No NAS content was deleted.
+
+Real Chrome authentication rechecked against the corrected build: private signed-in and public pages
+rendered; private signed-out pages requested sign-in. Zero direct browser GitHub requests in all three
+scenarios. Correction submitted as PR #924, commit 5dfaf25d3a. Chief review/merge/deployment required.
