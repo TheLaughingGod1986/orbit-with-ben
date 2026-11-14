@@ -208547,13 +208547,13 @@
       "stage": "edit",
       "after": "J2320",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T22:44Z",
-      "eta": "2026-11-15T00:44Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-08T04:17Z",
-      "result": "",
+      "result": "FIX (jobs/reviews/J2383/REVIEW.md @ 79c7174350, mirrored to studio-live 07_Edit-Project/J2383_REVIEW.md): completed 5-part J2829 multimodal review of 034 Pluto long master v01 (J2376), Short 1 v01 (J2319), and Short 2 v01 (J2320). All three v01 cuts require v02 rebuilds before Ben UAT: (1) Long v01 (10ff897944): static stills throughout, Sentence 1 ends at 8.70s >8.00s & R01-R07 cuts 4.53-10.43s >4.00s (covered by FIRST30_PLAN.md / J2438), plus 4 of 6 chapter-card silences have audible pre-onset phoneme blips (Ch1 1:05.8, Ch2 2:41.1, Ch4 6:14.8, Ch6 9:05.2; fixed by inserting at prev_word_raw_end + 0.600s), top-left 48x48 px alpha corner glitch on starfield-framed stills (R06,R23,R30,R37,R40,R41,R66,R67,R72,R74 from 1D geq filter; replace with 2D PIL feather), black fade-in frames at 0.0-0.5s of KSC videos on R34/R36/R40 + R34 substring ID collision dropping KSC-06pd0099, and missing person names on R10/R11/R58 WHO cards + duplicate Credit pills on R10/R13/R21; (2) Short 1 v01 (d70031ea19): gate_shorts_open FAIL (21/37 frames = 57% blur-padded 16:9-in-9:16) + needs FIRST30_PLAN.md -2.80s splice to 36.50s; (3) Short 2 v01 (f9798f17e5): gate_shorts_open FAIL (26/26 frames = 100% blur-padded + R01 black left/right edge bar; audio stems KEEP). Queued J2867 (assembly after J2438) and J2868 (v02 review after J2867). GBP 0.",
       "history": [
         {
           "at": "2026-11-08T04:17Z",
@@ -208604,6 +208604,11 @@
           "at": "2026-11-14T23:04Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Landed jobs/reviews/J2383/REVIEW.md (79c7174350) and queued J2867 (v02 assembly/Shorts rebuild) + J2868 (v02 review)"
+        },
+        {
+          "at": "2026-11-14T23:04Z",
+          "by": "gemini",
+          "what": "done: FIX (jobs/reviews/J2383/REVIEW.md @ 79c7174350, mirrored to studio-live 07_Edit-Project/J2383_REVIEW.md): completed 5-part J2829 multimodal review of 034 Pluto long master v01 (J2376), Short 1 v01 (J2319), and Short 2 v01 (J2320). All three v01 cuts require v02 rebuilds before Ben UAT: (1) Long v01 (10ff897944): static stills throughout, Sentence 1 ends at 8.70s >8.00s & R01-R07 cuts 4.53-10.43s >4.00s (covered by FIRST30_PLAN.md / J2438), plus 4 of 6 chapter-card silences have audible pre-onset phoneme blips (Ch1 1:05.8, Ch2 2:41.1, Ch4 6:14.8, Ch6 9:05.2; fixed by inserting at prev_word_raw_end + 0.600s), top-left 48x48 px alpha corner glitch on starfield-framed stills (R06,R23,R30,R37,R40,R41,R66,R67,R72,R74 from 1D geq filter; replace with 2D PIL feather), black fade-in frames at 0.0-0.5s of KSC videos on R34/R36/R40 + R34 substring ID collision dropping KSC-06pd0099, and missing person names on R10/R11/R58 WHO cards + duplicate Credit pills on R10/R13/R21; (2) Short 1 v01 (d70031ea19): gate_shorts_open FAIL (21/37 frames = 57% blur-padded 16:9-in-9:16) + needs FIRST30_PLAN.md -2.80s splice to 36.50s; (3) Short 2 v01 (f9798f17e5): gate_shorts_open FAIL (26/26 frames = 100% blur-padded + R01 black left/right edge bar; audio stems KEEP). Queued J2867 (assembly after J2438) and J2868 (v02 review after J2867). GBP 0."
         }
       ],
       "remaining_action": "Close J2383 done and post thread report",
