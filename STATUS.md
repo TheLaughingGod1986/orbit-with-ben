@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | gemini | 2026-11-14T23:22Z | 2026-11-15T01:21Z | J2400 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) |
+| 033 | edit | gemini | 2026-11-14T23:23Z | 2026-11-15T00:23Z | J2400 033 Uranus Shorts 1 & 2 5-part review |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
