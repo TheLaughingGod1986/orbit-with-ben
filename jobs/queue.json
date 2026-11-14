@@ -252355,10 +252355,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T21:21Z",
+      "eta": "2026-11-14T23:21Z",
       "created_by": "grok",
       "created_at": "2026-11-14T19:28Z",
       "result": "",
@@ -252367,6 +252367,11 @@
           "at": "2026-11-14T19:28Z",
           "by": "grok",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T21:21Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write v05 beside v04, change only frames 2506-2665, and post the salon sheets",
@@ -252374,7 +252379,15 @@
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
       "mini_only": true,
-      "urgent": 11
+      "urgent": 11,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T21:21Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2855",
