@@ -247402,6 +247402,11 @@
           "at": "2026-11-14T08:39Z",
           "by": "relay",
           "what": "condition verification queued: J2818"
+        },
+        {
+          "at": "2026-11-14T10:45Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief review and deploy PR 924, then measure ten minutes of corrected production traffic",
@@ -247421,7 +247426,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-14T09:39:35+00:00",
         "recheck_task": "J2818"
-      }
+      },
+      "escalated_at": "2026-11-14T10:45Z"
     },
     {
       "id": "J2799",
