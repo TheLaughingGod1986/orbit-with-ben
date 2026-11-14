@@ -193717,9 +193717,14 @@
           "at": "2026-11-14T16:52Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T16:54Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Harvey v04 already passes. Willow stays on the two scheduled Shorts. Variolation v03 is 22.93s and fails the moving-open check at frame diff 0.93. Eradication v02 passes the open gate at 21.23s with a duration warning."
         }
       ],
-      "remaining_action": "Give Variolation a moving opening, then run the remaining checks on both Vaccine Shorts",
+      "remaining_action": "Fix the Variolation opening so the first 1.5 seconds actually move, then recheck both Vaccine Shorts",
       "kind": "assembly",
       "urgent": 6,
       "taskKeys": [
@@ -193742,9 +193747,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T16:16Z",
+        "at": "2026-11-14T16:54Z",
         "by": "cursor",
-        "note": "Eradication v02 open gate PASS at 21.23s with a duration warning. Variolation v03 is 22.93s and still fails the moving-o"
+        "note": "Harvey v04 already passes. Willow stays on the two scheduled Shorts. Variolation v03 is 22.93s and fails the moving-open"
       }
     },
     {
