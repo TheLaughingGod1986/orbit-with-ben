@@ -179136,9 +179136,14 @@
           "at": "2026-11-14T05:15Z",
           "by": "relay",
           "what": "condition verification queued: J2813"
+        },
+        {
+          "at": "2026-11-14T07:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T12:55:00Z"
         }
       ],
-      "remaining_action": "Verify operator configuration and acceptance evidence before resuming remaining allow-list work",
+      "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
       "kind": "assembly",
       "urgent": 5,
       "rerouted_from": {
@@ -179159,12 +179164,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief review J2719: NOT MET. J2517 and J2559 complete; no always-on work remains a prerequisite. Fresh hashes match the 4-6 Nov approval-settings checkpoint; PR490 remains draft at f521bcd3f1. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence. Existing rules or merging PR490 alone do not prove completion. Keep fallback routing active; recheck for operator evidence at the stated time. No autonomous approval-control changes.",
-        "check_at": "2026-11-14T06:15:31+00:00",
-        "last_recheck": "J2719",
-        "checked_at": "2026-11-13T22:49:00+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2813"
+        "condition": "Chief ruling on J2813: NOT MET. Fresh review confirms all eight local approval-settings and gateway hashes match jobs/reviews/J2813/REVIEW.md; PR490 remains OPEN/draft at f521bcd3f1 with no comments. J2517 and J2559 remain complete. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; unchanged files and a draft alone cannot establish that evidence. Keep fallback routing active. No autonomous approval-control changes. Recheck operator evidence at 2026-11-14T12:55:00Z.",
+        "check_at": "2026-11-14T12:55:00Z",
+        "last_recheck": "J2813",
+        "checked_at": "2026-11-14T07:38:06+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
