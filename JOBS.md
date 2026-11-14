@@ -94,10 +94,18 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
 | J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
 | J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
-| J2849 | mini | claimed | cursor | 2026-11-14T18:28Z | studio · First-day check at 48 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) |  |
 
 Recently finished:
 
+- J2849 done: First-day check at 48 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) ("How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) · History of Science · long · went live Thu 12 Nov 18:00 London
+At 48 h: views 3 · impressions 13 · click rate 15.4% · average viewed 5.0%
+
+Verdict: UNKNOWN
+  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
+  - By the next morning it had 0 views; the 3 before it had 1 (median).
+
+Do now
+  - Read it again from tomorrow morning's snapshot.)
 - J2848 done: First-day check at 6 h: "How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) ("How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) · Orbit With Ben · Short · went live Sat 14 Nov 11:30 London
 At 6 h: views 1033 · Studio rank 2 of 10 · shown in feed no figure yet · stayed to watch 50.7% · average viewed 106.8%
 Usual for this channel: stayed to watch 32.0%, average viewed 65.4%
@@ -124,4 +132,3 @@ Carry forward
 - J2835 done: HOS: learn from our data, add two new films to the backlog (HOS PR #588 and OWB PR #930 (both open, not merged; spend £0). Rule-E reviews queued as J2836 (106) and J2837 (107). Ranked 7 public HOS longs and 30 Shorts from the 14 Nov snapshot (best longs: 002 Periodic Table 161 views, 2.80/day, 3.4% CTR; 004 Atom 33 views; 007 Vaccine 1.95/day at day 2. Worst: 003 X-rays and 001 Germs 0.10/day, 005 Tied Arm 9.2% viewed; tables in each TOPIC.md). Two proposals, claims unverified until SOURCES.md: (1) HOS:106 Where Do Eels Come From? (The 2,000-Year Mystery): data line: question titles naming an everyday thing or famous person win (gold Short 1,227 views, 42.5/day; Curie notebooks 274 views, 16.3/day); neighbours TED-Ed 2.75M and 1.16M, Thoughty2 3.32M, gate PASS. (2) HOS:107 Why Do Leaves Change Colour in Autumn? (The Yellow Was Always There): data line: search-led question on something seen from the ground, 22% of Shorts views come from search, 002's search title got 1,141 impressions against 22 for 006's story title; neighbours SciShow Kids 1.85M and 1.92M, MinuteEarth 1.56M, gate PASS. Gap: public_search.py failed (YouTube page layout changed), so no autocomplete or title-collision evidence; flagged for the reviewers.)
 - J2834 done: Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest (PR #933 (branch macbook/J2834, open for Chief merge; £0 spend): Completed 2026-11-14 OWB weekly thumbnail audit across all 126 videos (21 longs: 7 PASS / 14 FAIL; 105 Shorts), 28d Reach CTR (channel 2.00%, long median 2.00% up from 0.97%; 5 finished draw modals T005/T006/T007/T016/T018 recorded + active T032-T034 back-filled in THUMB_LEDGER.json), 90d competitor study (2026-11-14_COMPETITORS.md + PATTERNS.md), and 3 real-NASA-plate challenger Bs (T035 m09jUdwC5hk ALL STARS FADE sat=202.5/blk=5%, T036 Mo93x0fxB1Q ZERO SIGNALS sat=167.3/blk=6%, T037 ziKBPJ6FY0U 300 MILLION YEARS sat=142.1/blk=6%) staged on studio-live NAS and queued via Packaging Panel J2840-J2843 -> Chief gate J2844 -> conditional Studio jobs J2845-J2847.)
 - J2826 done: Chief: resolve J01 upload orphan-review (PASS (777790aa7a, jobs/reviews/J2826/REVIEW.md): Resolved J01 upload orphan-review (2c6d36d22d89b2dd4443). Audited J01 11_Upload-Package, synced MEDIA_MANIFEST.json & CHIEF_REVIEW.md to approved on-disk v01 thumbnail SHA-256s/hooks (464°C TO -60°C, 764× OUR SUN, EARTH TO ORION) and master byte size (1,984,936,766 B), added inline description/titleAbc and studio-live trailer path to PACKAGE_MANIFEST.json so listing_package.inspect returns complete=true and youtube:package dry-run passes from clean worktrees, and set stages.upload to todo (with Chief PASS on pre-upload package) pending Ben's UAT watch on J2222 (awaits_ben). workflow_handoffs.py returns count=0.)
-- J2823 done: J01 Journey Film 01: build 11_Upload-Package (PACKAGE_MANIFEST, 7 chapters, credits, en-GB SRT, trailer) + dry-run (done)
