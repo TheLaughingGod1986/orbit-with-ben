@@ -210644,9 +210644,14 @@
           "at": "2026-11-14T23:52Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Inspected all 6 full-film 2fps contact sheets (1259 frames) for v02 plus v01 opening 2fps sheet"
+        },
+        {
+          "at": "2026-11-14T23:55Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Inspected all 146 +/-3 frame cut-boundary strips (cuts_pm3_01..03.jpg) and final 3.0s 72-frame strip (final_3s_72f.jpg)"
         }
       ],
-      "remaining_action": "Render and inspect +/-3 frame cut strips and final 3.0s 72-frame strip, plus verify automated gates",
+      "remaining_action": "Run and verify all 5 automated gates and VO/audio boundary checks",
       "due": "2026-11-15T23:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -210663,11 +210668,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-14T23:52Z",
+        "at": "2026-11-14T23:55Z",
         "by": "gemini",
-        "note": "Inspected all 6 full-film 2fps contact sheets (1259 frames) for v02 plus v01 opening 2fps sheet"
+        "note": "Inspected all 146 +/-3 frame cut-boundary strips (cuts_pm3_01..03.jpg) and final 3.0s 72-frame strip (final_3s_72f.jpg)"
       },
       "taskKeys": [
         "OWB:033"
