@@ -36,6 +36,11 @@
         const response = await own("f=updates", "no-cache");
         if (response.ok) {
           update = await response.json();
+          if (update.schema === 2 && update.encoding === "gzip-base64") {
+            const bytes = Uint8Array.from(atob(update.payload), c => c.charCodeAt(0));
+            const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+            update = await new Response(stream).json();
+          }
           commit = ""; // Branch reads avoid the rate-limited GitHub commit lookup.
           if (update.schema !== 1 || !Array.isArray(update.edits)) update = null;
         }
@@ -53,6 +58,12 @@
       const served = response.headers.get("X-Board-Sha");
       const etag = (response.headers.get("ETag") || "").replace(/^W\//, "").replaceAll('"', "");
       revision = update && ((update.snapshotEtag && etag === update.snapshotEtag) || (served && served === commit)) ? update.revision : "";
+      // Independent branch caches can return a slightly older snapshot. Identify it exactly
+      // from the retained history, then let the next poll replay forward instead of downloading again.
+      if (!revision && update && Array.isArray(update.edits)) {
+        const match = update.edits.find(edit => edit.fromEtag && edit.fromEtag === etag);
+        if (match) revision = match.from;
+      }
       return new Response(JSON.stringify(raw));
     })();
     try { return (await busy).clone(); } finally { busy = null; }

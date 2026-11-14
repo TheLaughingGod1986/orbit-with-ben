@@ -30,7 +30,7 @@ Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` 
 includes a `tracker` section). Page deploys are separate (Chief after review).
 
 **Small minute updates (J2798).** The publisher keeps `board.json` and `tracker.json` for existing tabs, and also
-publishes `updates.json`: at most twelve recent edits, capped at 16,000 UTF-8 bytes. New Studio and AI tabs fetch the
+publishes `updates.json`: up to 120 recent edits, gzip-compressed by the publisher into a base64 JSON envelope capped at 14,000 UTF-8 bytes. Compression runs on the Mini; the request function passes the envelope through and the browser decodes it with DecompressionStream. Older tabs fall back safely and receive the normal version reload. New Studio and AI tabs fetch the
 complete board once, then replay these edits against a separate untouched transport copy. A missed history window,
 large change or incompatible update fetches the complete file again. This preserves all cards, counts and job text
 without manually maintaining static/live field lists. The API passes files through without JSON parsing and uses
