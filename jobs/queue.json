@@ -194250,10 +194250,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T02:26Z",
+      "eta": "2026-11-14T04:26Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195072,6 +195072,11 @@
           "at": "2026-11-14T01:44Z",
           "by": "cursor",
           "what": "released: 2/3. Stitched master frames 4130-4138 onto the fire title, group 4016-4138. The other three groups match the earlier hashes, including frame 2869 as the master picture. HOS commit b3ca0b8a on codex/J2242-source-preflight, PR 542. 140 tests OK, check_all PASS. Scratch J2242-stitch-v04. No v04, no mux, no spend, no publication. Next: encode the closed groups and mux the original audio. The packet planner still only writes the plan."
+        },
+        {
+          "at": "2026-11-14T02:26Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Encode the closed Franklin groups and mux the original audio",
