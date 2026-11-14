@@ -219737,10 +219737,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T22:20Z",
+      "eta": "2026-11-15T00:20Z",
       "created_by": "claude",
       "created_at": "2026-11-10T03:03Z",
       "result": "",
@@ -219759,6 +219759,11 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
+        },
+        {
+          "at": "2026-11-14T22:20Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
@@ -219776,7 +219781,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 12
+      "urgent": 12,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T22:20Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2478",
