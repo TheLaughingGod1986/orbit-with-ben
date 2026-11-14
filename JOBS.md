@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
 | J2812 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
-| J2813 | mini | claimed | gemini | 2026-11-14T08:50Z | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2813 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2814 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 
 Recently finished:

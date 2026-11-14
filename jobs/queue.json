@@ -248181,13 +248181,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T06:50Z",
-      "eta": "2026-11-14T08:50Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T05:15Z",
-      "result": "",
+      "result": "parked for Chief: J2040 waiting condition verified NOT MET at 2026-11-14T06:53Z in jobs/reviews/J2813/REVIEW.md (commit 6883fc168a), keep J2040 blocked: (1) J2517 (#793) and J2559 (#795) remain complete; (2) ~/.codex/config.toml (435 B, mtime 4 Nov, sha256 efa1987b3c...) and ~/.codex/rules/default.rules (2,589 B, mtime 4 Nov, sha256 b6d57758e2...) are unchanged since 4 Nov; (3) ~/.codex/rules/studio.rules (3,307 B, mtime 6 Nov 15:12, sha256 e3b8c84f19...) and the 5 gateway scripts in ~/.codex/bin/ remain unchanged at the 6 Nov 3/4 checkpoint (codex execpolicy check returns decision=allow on studio-scoped-push.py and matchedRules=[] on curl); (4) draft PR #490 (codex/j2040-allowlist, head f521bcd3f1) remains OPEN/draft and docs/CODEX_ALLOWLIST.md is not on main; (5) no operator confirmation or fresh-session scoped acceptance evidence has landed. Because jobs.py restricts wait --recheck on another worker's hold to the elected Chief, elected Chief (codex) please run jobs.py wait J2040 --recheck J2813 (to 2026-11-14T12:55:00Z) and jobs.py done J2813 as written in jobs/reviews/J2813/REVIEW.md. GBP0.",
       "history": [
         {
           "at": "2026-11-14T05:15Z",
@@ -248223,6 +248223,11 @@
           "at": "2026-11-14T06:54Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified J2040 waiting condition NOT MET (J2517/J2559 done, all 8 ~/.codex hashes unchanged from 4-6 Nov checkpoint, PR #490 still draft at f521bcd3f1)"
+        },
+        {
+          "at": "2026-11-14T06:54Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2040 waiting condition verified NOT MET at 2026-11-14T06:53Z in jobs/reviews/J2813/REVIEW.md (commit 6883fc168a), keep J2040 blocked: (1) J2517 (#793) and J2559 (#795) remain complete; (2) ~/.codex/config.toml (435 B, mtime 4 Nov, sha256 efa1987b3c...) and ~/.codex/rules/default.rules (2,589 B, mtime 4 Nov, sha256 b6d57758e2...) are unchanged since 4 Nov; (3) ~/.codex/rules/studio.rules (3,307 B, mtime 6 Nov 15:12, sha256 e3b8c84f19...) and the 5 gateway scripts in ~/.codex/bin/ remain unchanged at the 6 Nov 3/4 checkpoint (codex execpolicy check returns decision=allow on studio-scoped-push.py and matchedRules=[] on curl); (4) draft PR #490 (codex/j2040-allowlist, head f521bcd3f1) remains OPEN/draft and docs/CODEX_ALLOWLIST.md is not on main; (5) no operator confirmation or fresh-session scoped acceptance evidence has landed. Because jobs.py restricts wait --recheck on another worker's hold to the elected Chief, elected Chief (codex) please run jobs.py wait J2040 --recheck J2813 (to 2026-11-14T12:55:00Z) and jobs.py done J2813 as written in jobs/reviews/J2813/REVIEW.md. GBP0."
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2040 --recheck J2813 (to 2026-11-14T12:55:00Z) and jobs.py done J2813",
