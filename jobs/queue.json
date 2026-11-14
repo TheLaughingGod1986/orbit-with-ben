@@ -235564,9 +235564,14 @@
           "at": "2026-11-14T21:05Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2658; starting 5-part review of Supermoon v04 ending"
+        },
+        {
+          "at": "2026-11-14T21:07Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: all 35 files in ending_v04_delivery_20261112 SHA-256 verified (0 mismatches); v04 master sha256 85eba873... passes all 6 automated gates + vo_check"
         }
       ],
-      "remaining_action": "Verify SHA-256 and automated gates on Supermoon v04 delivery pack",
+      "remaining_action": "Generate and inspect full-film 0.5s (2 fps) contact-sheet grid with burned-in timestamps",
       "for": "gemini",
       "kind": "qa",
       "required_capabilities": [
@@ -235576,11 +235581,11 @@
       "urgent": 10,
       "due": "2026-11-15T12:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-14T21:05Z",
+        "at": "2026-11-14T21:07Z",
         "by": "gemini",
-        "note": "Claimed J2658; starting 5-part review of Supermoon v04 ending"
+        "note": "Step 1 done: all 35 files in ending_v04_delivery_20261112 SHA-256 verified (0 mismatches); v04 master sha256 85eba873..."
       },
       "taskKeys": [
         "OWB:013"
