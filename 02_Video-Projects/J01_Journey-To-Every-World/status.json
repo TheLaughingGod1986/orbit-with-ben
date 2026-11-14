@@ -1,39 +1,52 @@
 {
   "film": "J01",
-  "title": "From Earth to Orion: A 600-Light-Year Space Journey",
+  "slug": "J01_Journey-To-Every-World",
+  "title": "A Calm Journey From Venus to a Dying Star",
   "air": "",
   "stages": {
     "topic": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "script": {
       "state": "done",
-      "ref": "fab7cf9b61"
+      "ref": "57f5785df9"
     },
     "sources": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "vo": {
       "state": "done",
-      "ref": "854b07ecc1"
+      "ref": "3a3eb0019b",
+      "ruling": "PASS (J2786 accepted all eight selected linking takes)",
+      "note": "J2786 accepted all eight selected linking takes; J2784_PACE_v01.json (mean 2.382 w/s, 0/8 fails)"
     },
     "shots": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "picture": {
-      "state": "todo"
+      "state": "done",
+      "ref": "fd789925ca",
+      "note": "7 outward distance maps (code_graphic_J01_map_00..06) + 7 chapter cards + 7 locked 023-029 master slices passed picture_qa.py (0 fails) in J2815/J2222"
     },
     "edit": {
-      "state": "review",
-      "ref": "fd789925ca"
+      "state": "done",
+      "ref": "fd789925ca",
+      "ruling": "PASS (technical/gate KEEP for Ben UAT watch; J2815 9ebb517772 + J2222 fd789925ca)",
+      "note": "J01_Journey_v03.mp4 (3502.30s, -14.0 LUFS, -0.75 dBTP, SHA-256 bb93ea1343) passed sfx_level, music_gate, and picture_qa; in Ready for OK (J2222 awaits_ben)"
     },
     "thumbs": {
-      "state": "todo"
+      "state": "done",
+      "ref": "fd789925ca",
+      "ruling": "PASS (thumb_A, thumb_B, thumb_C passed thumb_preview.py long --score and 168x94 review in J2222)",
+      "note": "08_Thumbnail/j01_v01/thumb_{A,B,C}*.jpg ready for Ben UAT watch (J2222)"
     },
     "upload": {
       "state": "todo"
     }
   },
   "claims": [],
-  "next": "J2786 accepted all eight selected linking takes; J2221 can assemble the Journey film using J2784_PACE_v01.json"
+  "next": "J01_Journey_v03.mp4 and 3 thumbnails in Ready for OK (J2222 awaits_ben); build 11_Upload-Package + dry-run and hold Private upload for Ben UAT watch OK"
 }
