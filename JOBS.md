@@ -84,6 +84,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2814 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2815 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2221 |  |
 | J2816 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
+| J2817 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
