@@ -249532,19 +249532,32 @@
           "at": "2026-11-14T12:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T12:56Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: OWB:J01: claimed J2823 and J01 upload stage; starting 4-step upload package build (chapters/description/sources, SRT/trailer/copy, PACKAGE_MANIFEST + dry-run, commit & status reconciliation)"
         }
       ],
-      "remaining_action": "Build 11_Upload-Package/PACKAGE_MANIFEST.json, 7 chapter timestamps, en-GB SRT, vertical trailer, and run youtube:package --dry-run",
+      "remaining_action": "Inspect J01 project files, timeline, and existing upload package templates",
       "kind": "listing",
       "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-14T12:55Z",
+        "of": 4,
+        "at": "2026-11-14T12:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "OWB:J01: claimed J2823 and J01 upload stage; starting 4-step upload package build (chapters/description/sources, SRT/tra"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029"
+      ]
     }
   ],
   "focus": [
