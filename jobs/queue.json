@@ -248771,9 +248771,14 @@
           "at": "2026-11-14T08:57Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Step 2 done: J2798-fixture-exact-v2 finished (done=0: / idle 15338 B, 1-change 25450 B; /tracker idle 18035 B, 1-change 8020 B); 47 Python + JS tests PASS"
+        },
+        {
+          "at": "2026-11-14T09:04Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Step 3 done: Committed jobs/reviews/J2818/REVIEW.md (ab3331011f); parking J2818 for elected Chief"
         }
       ],
-      "remaining_action": "Write and commit jobs/reviews/J2818/REVIEW.md, then park J2818 for elected Chief to record wait/reopen on J2798",
+      "remaining_action": "Elected Chief to run reopen J2798 (or wait --recheck J2818) and done J2818 per jobs/reviews/J2818/REVIEW.md",
       "kind": "review",
       "recheck_of": "J2798",
       "due": "2026-11-14T09:39:35+00:00",
@@ -248788,11 +248793,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-14T08:57Z",
+        "at": "2026-11-14T09:04Z",
         "by": "gemini",
-        "note": "Step 2 done: J2798-fixture-exact-v2 finished (done=0: / idle 15338 B, 1-change 25450 B; /tracker idle 18035 B, 1-change "
+        "note": "Step 3 done: Committed jobs/reviews/J2818/REVIEW.md (ab3331011f); parking J2818 for elected Chief"
       }
     }
   ],
