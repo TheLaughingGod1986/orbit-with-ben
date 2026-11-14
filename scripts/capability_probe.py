@@ -66,10 +66,17 @@ def make_video(dirpath, rng):
     order = rng.sample(list(COLOURS), 3)
     x = "20+t*90" if direction == "left_to_right" else "540-t*90"
     spans = ("lt(t,2)", "between(t,2,4)", "gt(t,4)")
-    boxes = ",".join(f"drawbox=x='{x}':y=140:w=80:h=80:color={COLOURS[c]}:t=fill:enable='{s}'" for c, s in zip(order, spans))
+    inputs = ["-f", "lavfi", "-i", "color=c=black:s=640x360:d=6:r=24"]
+    chains, prev = [], "[0:v]"
+    for idx, (c, s) in enumerate(zip(order, spans), 1):
+        inputs += ["-f", "lavfi", "-i", f"color=c={COLOURS[c]}:s=80x80:d=6:r=24"]
+        nxt = f"[v{idx}]"
+        chains.append(f"{prev}[{idx}:v]overlay=x='{x}':y=140:enable='{s}'{nxt}")
+        prev = nxt
     path = pathlib.Path(dirpath) / "clip_v.mp4"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "color=c=black:s=640x360:d=6:r=24",
-                    "-vf", boxes, "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", str(path)], check=True, capture_output=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *inputs, "-filter_complex", ";".join(chains),
+                    "-map", prev, "-an", "-c:v", "libx264", "-pix_fmt", "yuv420p", str(path)],
+                   check=True, capture_output=True)
     return path, direction, order
 
 

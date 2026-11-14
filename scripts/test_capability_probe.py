@@ -70,6 +70,13 @@ class Probe(unittest.TestCase):
         available, _ = cp.probe("gemini", oracle(self.truth, deaf=True), random.Random(3))
         self.assertNotIn("audio_input", available)
 
+    def test_make_video_draws_visible_coloured_square(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            clip, _, _ = self.mk_v(tmp, random.Random(4))
+            out = cp.subprocess.run(["ffmpeg", "-i", str(clip), "-vf", "signalstats,metadata=mode=print",
+                                     "-frames:v", "1", "-f", "null", "-"], capture_output=True, text=True)
+            self.assertRegex(out.stderr + out.stdout, r"lavfi\.signalstats\.SATMAX=[1-9]\d*")
+
 
 class Grading(unittest.TestCase):
     def test_audio_match_ignores_case_and_punctuation(self):
