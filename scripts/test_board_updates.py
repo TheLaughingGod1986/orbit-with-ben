@@ -66,6 +66,11 @@ class Updates(unittest.TestCase):
         new = {'rows': [{'id': str(i), 'stamp': 'new'} for i in [0, 1, 8, 9, 2, 3, 7]]}
         self.assertEqual(browser_apply(old, bp.compact_edits(bp.board_diff(old, new))), new)
 
+    def test_update_publication_time_matches_snapshot(self):
+        board = {'publishedAt': '2026-11-14T08:02:00Z', 'jobs': []}
+        history = bp.unpack_updates(bp.updates_payload(board, None, None, ''))
+        self.assertEqual(history['publishedAt'], board['publishedAt'])
+
     def test_snapshot_etag_matches_exact_published_bytes(self):
         import hashlib
         board = {'title': 'Titan — moon', 'jobs': []}
