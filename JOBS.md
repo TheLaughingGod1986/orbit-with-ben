@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2832 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2833 | any | blocked | claudecode | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2834 | mini | claimed | macbook-2 | 2026-11-14T19:21Z | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
-| J2835 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J2835 | any | claimed | claudecode | 2026-11-14T18:15Z | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
