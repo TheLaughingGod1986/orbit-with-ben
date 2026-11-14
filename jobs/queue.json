@@ -1,5 +1,5 @@
 {
-  "next_id": 2828,
+  "next_id": 2829,
   "jobs": [
     {
       "id": "J0001",
@@ -249852,6 +249852,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2828",
+      "title": "OWB: learn from our data, add two new films to the backlog",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Orbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-14T14:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T14:03Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line",
+      "kind": "script",
+      "backlog": "owb-ideas"
     }
   ],
   "focus": [
@@ -249871,7 +249900,7 @@
     "owb-live-listing-fixes": "2026-11-14T02:10Z",
     "owb-weekly-audit": "2026-11-14T13:52Z",
     "hos-weekly-audit": "2026-11-07T16:04Z",
-    "owb-ideas": "2026-11-13T13:55Z",
+    "owb-ideas": "2026-11-14T14:03Z",
     "hos-ideas": "2026-11-14T02:10Z",
     "hos-live-listing-fixes": "2026-11-14T02:34Z",
     "owb-next-script": "2026-10-21T12:53Z",
