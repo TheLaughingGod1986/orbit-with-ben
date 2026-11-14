@@ -248118,9 +248118,14 @@
           "at": "2026-11-14T05:36Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2814; starting 3-step verification of J2797 waiting condition"
+        },
+        {
+          "at": "2026-11-14T05:38Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Live probes complete: BOARD_GH_TOKEN still absent (7 secrets on studio-kanban; /api/checks?stamp=1 HTTP 500), /api/data?f=ref still intermittent 502 (2/5 probes HTTP 502, 3/5 HTTP 200 sha a9b90d09a2), pinned board reads 3/3 HTTP 200 (80 board.oppti.dev Play links), board_check ok=true"
         }
       ],
-      "remaining_action": "Read J2797, J2714, and J2532 status and probe live board reference/commit-pinned data endpoints",
+      "remaining_action": "Check jobs.py wait/recheck rules and write verification review for J2797",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T06:24:58+00:00",
@@ -248135,11 +248140,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T05:36Z",
+        "at": "2026-11-14T05:38Z",
         "by": "gemini",
-        "note": "Claimed J2814; starting 3-step verification of J2797 waiting condition"
+        "note": "Live probes complete: BOARD_GH_TOKEN still absent (7 secrets on studio-kanban; /api/checks?stamp=1 HTTP 500), /api/data?"
       }
     }
   ],
