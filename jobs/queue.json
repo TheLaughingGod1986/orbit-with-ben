@@ -1,5 +1,5 @@
 {
-  "next_id": 2845,
+  "next_id": 2846,
   "jobs": [
     {
       "id": "J0001",
@@ -250999,6 +250999,35 @@
       "remaining_action": "Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel",
       "kind": "chief",
       "plain": "Chief reviews the 14 Nov weekly audit PR and J2843 panel decision and approves or revises the 3 new B thumbnails before Studio arming"
+    },
+    {
+      "id": "J2845",
+      "title": "Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Conditional Studio Test & Compare arming for `m09jUdwC5hk` (*How Long Will Anything in Space Last?*, ledger `T035`), gated on Chief PASS in `J2844`:\n\n1. **Check Chief decision first (`J2844` & `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`):** Act ONLY if Chief gave an explicit exact-file **PASS** for `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/m09jUdwC5hk_B_v04.jpg` (`sha256=647a2b6f6704d7a1c0f3c02b7a855f7a90e33246871973b426806eee5585dc18`). If Chief requested a revision instead, block or close per Chief's ruling without touching Studio.\n2. **Verify Orbit With Ben Studio browser (`CDP 9223`, `from cdp_tabs import reuse_page`):** Confirm channel name is `Orbit With Ben` before opening `https://studio.youtube.com/video/m09jUdwC5hk/edit`.\n3. **Fresh read-only check of current Test & Compare state:**\n   - If any test is currently **Running**, STOP and do NOT replace or edit it (Never list).\n   - Prior finished test `T018` (`Not enough impressions to declare a winner`) was already read back and recorded in `05_Analytics/tests/THUMB_LEDGER.json` on `2026-11-14`. Press `New test` -> `Continue` ONLY if Chief's PASS in `J2844` explicitly authorized starting the successor test over `T018` (otherwise record skipped per `J2702`).\n4. **Arm Thumbnail-Only Test & Compare (one variable only — keep baseline title `How Long Will Anything in Space Last?`, description, and Public privacy unchanged):**\n   - Option 1 (A): current live thumbnail (kept in place — never straight-replace live A).\n   - Option 2 (B): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/m09jUdwC5hk_B_v04.jpg` (`ALL STARS FADE`, verify `sha256=647a2b6f6704d7a1c0f3c02b7a855f7a90e33246871973b426806eee5585dc18` before upload).\n5. **Save, reload, verify `Test running`, and record in `05_Analytics/tests/THUMB_LEDGER.json` (`python3 scripts/thumb_ledger.py start T035`).**\n",
+      "ref": "J2834",
+      "film": "",
+      "stage": "",
+      "after": "J2844",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-14T17:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T17:10Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035)",
+      "kind": "studio",
+      "plain": "Arm thumbnail-only Test & Compare on How Long Will Anything in Space Last? (m09jUdwC5hk) after Chief PASS in J2844"
     }
   ],
   "focus": [
