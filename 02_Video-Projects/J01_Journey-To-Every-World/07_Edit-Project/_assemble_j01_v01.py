@@ -907,9 +907,23 @@ def finish() -> int:
     loudnorm(final_local, norm)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     dest = OUT_DIR / FINAL_NAME
-    log(f"copy {dest}")
-    run(["rsync", "-a", "--partial", str(norm), str(dest)])
-    digest = sha256(dest)
+    src_digest = sha256(norm)
+    if dest.exists():
+        try:
+            recorded = (OUT_DIR / "J01_Journey_v01.sha256").read_text().split()[0]
+        except OSError:
+            recorded = ""
+        if recorded == src_digest:
+            log(f"keep {dest.name}")
+            digest = src_digest
+        else:
+            log(f"copy {dest}")
+            run(["rsync", "-a", "--partial", str(norm), str(dest)])
+            digest = sha256(dest)
+    else:
+        log(f"copy {dest}")
+        run(["rsync", "-a", "--partial", str(norm), str(dest)])
+        digest = sha256(dest)
     (OUT_DIR / "J01_Journey_v01.sha256").write_text(f"{digest}  {FINAL_NAME}\n")
     placed = write_timeline(dest, digest, segs)
     build_thumbs()
@@ -917,8 +931,8 @@ def finish() -> int:
     report(4, "Journey cut is on the shared film folder for review",
            f"File {probe(dest):.0f}s. picture_qa {qa_code}, music_gate {music_code}.")
     (SCRATCH / "RUNNING").unlink(missing_ok=True)
-    log("done")
-    return 0
+    log(f"done gates picture_qa={qa_code} music_gate={music_code}")
+    return 0 if qa_code == 0 and music_code == 0 else 2
 
 
 def main() -> int:
