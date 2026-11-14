@@ -248632,13 +248632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T09:07Z",
-      "eta": "2026-11-14T11:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T07:11Z",
-      "result": "",
+      "result": "parked for Chief: J2816/J2741 condition verified (2ec1be0b2c) — Titan ffYKoNVPoqg has 100 settled YTA retention rows through 2026-11-12 (71 YTA / 98 public views, <100 descriptive unscored; max 1-bucket drop -9.09 pp tied at 4.50-4.68s, 4.68-4.86s, 8.82-9.00s; max 5-bucket drop -30.30 pp at 3.96-4.86s; fixed 4-6s drop -39.39 pp). Full sanitized raw curves, 28d search queries, SHA-256s, and J2683 comparison committed at jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md} and jobs/reviews/J2816/REVIEW.md; ready for Chief to release/close J2741 and J2816.",
       "history": [
         {
           "at": "2026-11-14T07:11Z",
@@ -248679,6 +248679,11 @@
           "at": "2026-11-14T09:30Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4: All J2816/J2741 verification and reproducible audit deliverables committed (2ec1be0b2c)."
+        },
+        {
+          "at": "2026-11-14T09:30Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2816/J2741 condition verified (2ec1be0b2c) — Titan ffYKoNVPoqg has 100 settled YTA retention rows through 2026-11-12 (71 YTA / 98 public views, <100 descriptive unscored; max 1-bucket drop -9.09 pp tied at 4.50-4.68s, 4.68-4.86s, 8.82-9.00s; max 5-bucket drop -30.30 pp at 3.96-4.86s; fixed 4-6s drop -39.39 pp). Full sanitized raw curves, 28d search queries, SHA-256s, and J2683 comparison committed at jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md} and jobs/reviews/J2816/REVIEW.md; ready for Chief to release/close J2741 and J2816."
         }
       ],
       "remaining_action": "Parked for Chief: reopen/close J2741 and J2816 with verified evidence (2ec1be0b2c)",
