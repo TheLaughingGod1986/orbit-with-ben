@@ -240020,9 +240020,14 @@
           "at": "2026-11-14T13:58Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Production deploy is up. studio-kanban.pages.dev answers 200 for checks, the stamp and the data ref. Next is a test tick and 30 reads on both addresses."
+        },
+        {
+          "at": "2026-11-14T14:03Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Both addresses answered 200. Test tick saved and was removed. Thirty data reads over two minutes all succeeded. Phone steps posted."
         }
       ],
-      "remaining_action": "Prove a tick saves and that both board addresses can read the data",
+      "remaining_action": "Tell Ben how to open the board and link his phone",
       "due": "2026-11-13T18:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -240036,11 +240041,11 @@
         "by": ""
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-14T13:58Z",
+        "at": "2026-11-14T14:03Z",
         "by": "cursor",
-        "note": "Production deploy is up. studio-kanban.pages.dev answers 200 for checks, the stamp and the data ref. Next is a test tick"
+        "note": "Both addresses answered 200. Test tick saved and was removed. Thirty data reads over two minutes all succeeded. Phone st"
       }
     },
     {
