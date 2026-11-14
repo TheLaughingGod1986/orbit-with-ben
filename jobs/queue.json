@@ -247757,9 +247757,14 @@
           "at": "2026-11-14T04:51Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Started J2809: set 5-step plan (1: data+ID audit, 2: search+neighbours evidence, 3: HOS folders+TOPIC.md+status.json, 4: OWB WIP.json+review jobs, 5: verify+close)"
+        },
+        {
+          "at": "2026-11-14T04:56Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 complete: audited HOS 2026-11-12/13 snapshots, studio_ctr.json, REPORT.md, LEARNINGS.md, and existing IDs (000-101 on main, 011-097 in ideas, 102-103 in open J2748 PRs #572/#881); selected HOS:104 and HOS:105"
         }
       ],
-      "remaining_action": "Read HOS performance data and check existing HOS film IDs, open PRs, ideas, and WIP before selecting two new topics",
+      "remaining_action": "Run public_search.py and neighbours.py on non-duplicate candidate topics for HOS:104 and HOS:105",
       "kind": "script",
       "plain": "Choose two new History of Science films using our audience data and comparable videos",
       "mini_only": true,
@@ -247773,12 +247778,16 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-14T04:51Z",
+        "at": "2026-11-14T04:56Z",
         "by": "gemini",
-        "note": "Started J2809: set 5-step plan (1: data+ID audit, 2: search+neighbours evidence, 3: HOS folders+TOPIC.md+status.json, 4:"
-      }
+        "note": "Step 1 complete: audited HOS 2026-11-12/13 snapshots, studio_ctr.json, REPORT.md, LEARNINGS.md, and existing IDs (000-10"
+      },
+      "taskKeys": [
+        "HOS:104",
+        "HOS:105"
+      ]
     }
   ],
   "focus": [
