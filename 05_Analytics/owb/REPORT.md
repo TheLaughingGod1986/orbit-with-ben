@@ -198,9 +198,11 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 2 d | 46 | 39.6% | too few to judge | 48.8% | too few to judge |
-| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 3 d | 1060 | 38.8% | MISS | 62.6% | WATCH |
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 5 d | 1282 | 49.8% | WATCH | 66.3% | WATCH |
+| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 21 h (early) | 35 | 50.0% | too few to judge | 74.8% | too few to judge |
+| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 45 h (early) | 92 | 57.1% | too few to judge | 64.9% | too few to judge |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 2 d | 94 | 46.0% | too few to judge | 55.3% | too few to judge |
+| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 3 d | 1073 | 38.8% | MISS | 62.7% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 5 d | 1288 | 49.9% | WATCH | 66.2% | WATCH |
 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 9 d | 481 | 26.9% | MISS | 306.8% | LOOP |
 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 10 d | 566 | 31.6% | MISS | 66.2% | WATCH |
 | [Why Do Astronauts See 16 Sunrises a Day?](https://youtu.be/VfDm3E2bUgU) | 12 d | 1090 | 31.6% | MISS | 66.7% | WATCH |
