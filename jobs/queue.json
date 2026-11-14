@@ -210191,9 +210191,14 @@
           "at": "2026-11-14T23:33Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Completed Parts 4 & 5: heard short1_audio.mp3 and short2_audio.mp3 via audio_input (caught clipped '80%' -> '-ty percent' at 11.8s and '9,000' -> '-n thousand' at 23.8s in Short 2, plus 'How' onset at 31.2s in Short 1) and watched 360p proxies via moving_video_input"
+        },
+        {
+          "at": "2026-11-14T23:36Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Committed jobs/reviews/J2400/REVIEW.md (FIX on both v01 cuts)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2400/REVIEW.md with 5-part review findings and v02 fix spec",
+      "remaining_action": "Queue 033 Shorts 1 & 2 v02 rebuild + review jobs and complete J2400",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -210211,11 +210216,11 @@
       "urgent": 8,
       "due": "2026-11-15T22:00:00Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-14T23:33Z",
+        "at": "2026-11-14T23:36Z",
         "by": "gemini",
-        "note": "Completed Parts 4 & 5: heard short1_audio.mp3 and short2_audio.mp3 via audio_input (caught clipped '80%' -> '-ty percent"
+        "note": "Committed jobs/reviews/J2400/REVIEW.md (FIX on both v01 cuts)"
       },
       "taskKeys": [
         "OWB:033"
