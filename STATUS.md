@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| J01 | edit | cursor | 2026-11-14T06:03Z | 2026-11-14T08:02Z | J2221 J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) |
+| J01 | edit | cursor | 2026-11-14T06:08Z | 2026-11-14T06:33Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
