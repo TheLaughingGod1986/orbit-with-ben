@@ -250523,10 +250523,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T20:42Z",
+      "eta": "2026-11-14T21:02Z",
       "created_by": "claude",
       "created_at": "2026-11-14T15:33Z",
       "result": "",
@@ -250575,6 +250575,11 @@
           "at": "2026-11-14T20:39Z",
           "by": "gemini",
           "what": "reopened: Condition satisfied (J2851, jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe): issue #219 pairs[0] (at 2026-11-14T19:13:08.165Z, e=1795269633) matches the nonce in ~/.config/studio-kanban/ben_pair_link, and Ben's linked iPhone posted [Ben] OK J2222 v03 on #478 (#6882810716 at 19:13:16Z). Reopened for step 4/4 cleanup: delete only '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' and say so on #478."
+        },
+        {
+          "at": "2026-11-14T20:42Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Remove the iCloud phone-link file after Ben uses it or 24 hours have passed",
@@ -250582,7 +250587,15 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T20:42Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2832",
