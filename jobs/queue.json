@@ -192429,10 +192429,10 @@
       "stage": "edit",
       "after": "J2220",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T00:04Z",
-      "eta": "2026-11-14T02:04Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
       "result": "",
@@ -192501,6 +192501,11 @@
           "at": "2026-11-14T00:20Z",
           "by": "cursor",
           "what": "step 4 of 5 done: Master 3503s copied and the hash matches. Thumbs pass. One near-black frame at 53:37. Linking bed is 180s."
+        },
+        {
+          "at": "2026-11-14T00:21Z",
+          "by": "cursor",
+          "what": "released: Master is in the Journey edit folder, 3503s, sha256 matches the loudness file. Do not re-stitch. Thumbs pass. picture_qa fails one near-black frame at 53:37 in the Betelgeuse slice; other notes are long holds. music_gate fails because the linking bed is 180s and the films keep their own scores. Sound-effects level was not run. Join measured -14.3 LUFS. Branch j2221-loudnorm is not merged. tmux J2221-render has ended. Exit file is 1 from the earlier thumb score."
         }
       ],
       "remaining_action": "Settle the Betelgeuse near-black frame and the music-gate length check",
