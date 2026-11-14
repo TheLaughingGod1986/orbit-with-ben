@@ -249902,10 +249902,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T14:54Z",
+      "eta": "2026-11-14T16:54Z",
       "created_by": "relay",
       "created_at": "2026-11-14T13:19Z",
       "result": "",
@@ -249914,6 +249914,11 @@
           "at": "2026-11-14T13:19Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T14:54Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves J01 upload handoff and records the next owner/action",
@@ -249923,6 +249928,14 @@
         "stage": "upload",
         "kind": "orphan-review",
         "signature": "2c6d36d22d89b2dd4443"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T14:54Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {

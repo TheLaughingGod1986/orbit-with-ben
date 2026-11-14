@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2824 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2825 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J2826 | mini | open | – | – | chief · Chief: resolve J01 upload orphan-review |  |
+| J2826 | mini | claimed | gemini | 2026-11-14T16:54Z | chief · Chief: resolve J01 upload orphan-review |  |
 | J2827 | any | blocked | macbook-2 | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2828 | any | blocked | macbook-2 | – | script · OWB: learn from our data, add two new films to the backlog |  |
 
