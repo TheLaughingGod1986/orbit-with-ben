@@ -247143,13 +247143,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-14T01:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T01:18Z",
-      "result": "parked for Chief: Verified J2221 condition in jobs/reviews/J2799/REVIEW.md (96d0f7b728) — predecessor J2220/J2786 is DONE (854b07ecc1, PR #906 @ 2cc9e660e4, all 8 selected linking WAVs 8/8 KEEP), all 7 source masters (023-029) match plan SHA-256s, J01_Journey_v02.mp4 (3502.40s, sha256 78f7f8b3...) is byte-identical on MiniWork and studio-live with picture_qa PASS (22 cuts, 0 fail, 53:37 lifted to mean luma 44.55), and all 3 thumbnails in 08_Thumbnail/j01_v01 PASS thumb_preview.py --score (sat 120.1, 120.5, 155.6; near_black 10%, 2%, 4%). However, J2221 cannot be reopened without a Chief ruling because cursor parked J2221 on Step 5 audio gates at 01:09Z (eba79b493f; reconcile_holds queued J2799 at 01:18Z only because J2221 kept after=J2220 with no hold): (1) music_gate fails reused (0.948 vs 026 nearest-star_score_bed_v01_full.wav, expected under J2146 Option A 0-credit plan and waivable only by Chief via 05_Music/music_gate_J01_chief_waiver.json) and length (180.0s bed vs 3502.4s cut, which cannot be waived and requires extending j01_journey_linking_bed_v01.wav to 3503.0s from the owned 026/023/024 stems); (2) sfx_kit.py level passes SFX (-44.1 LUFS, 27.4 LU under -16.7 LUFS VO, 9 hits) but fails bed on 63 speech windows because _assemble_j01_v01.py:411 applied flat -30 LUFS without dynamic ducking on the 8 linking VO segments; (3) 06_Sound-Effects/kit_v01 needs copying to studio-live. Because jobs.py restricts wait --recheck J2799 and reopen J2221 to the elected Chief, Chief please run Option 1 (write Option A waiver + reopen J2221 for the £0 linking-audio/bed-length fix + done J2799) or Option 2 (wait J2221 --recheck J2799 + done J2799) in jobs/reviews/J2799/REVIEW.md.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T01:18Z",
@@ -247190,6 +247190,11 @@
           "at": "2026-11-14T04:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-14T05:56Z",
+          "by": "codex",
+          "what": "reopened: Taking assigned elected-Chief review; parent J2221 stays held until the recorded audio-repair ruling."
         }
       ],
       "remaining_action": "Elected Chief: run wait J2221 --recheck J2799 or reopen J2221 with Option A waiver and close J2799 (96d0f7b728)",
@@ -247197,13 +247202,6 @@
       "recheck_of": "J2221",
       "due": "2026-11-14T02:18:50+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-14T01:30Z",
-        "by": "gemini",
-        "note": "Step 3/3: Verification complete in jobs/reviews/J2799/REVIEW.md (96d0f7b728); parking at protected Chief call"
-      },
       "taskKeys": [
         "OWB:023",
         "OWB:024",
