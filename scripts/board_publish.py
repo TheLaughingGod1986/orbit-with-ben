@@ -38,6 +38,8 @@ repos at origin/main: ~/_desk/scratch/chief/board-wt/{owb,hos} (small; they shar
 """
 from __future__ import annotations
 
+from board_site import site_url
+
 import argparse
 import datetime as dt
 import fcntl
@@ -62,7 +64,7 @@ STUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
-SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE = site_url()
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")

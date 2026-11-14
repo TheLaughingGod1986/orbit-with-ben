@@ -19,6 +19,8 @@ uploads or jobs. Parents that already have uploaded/live Shorts do not get extra
 """
 from __future__ import annotations
 
+from board_site import site_url
+
 import json
 import re
 import sys
@@ -1668,7 +1670,8 @@ if __name__ == "__main__":
     checks = {}
     try:
         import urllib.request
-        with urllib.request.urlopen("https://studio-kanban.vercel.app/api/checks", timeout=15) as r:
+        request = urllib.request.Request(site_url() + "/api/checks", headers={"User-Agent": "studio-kanban video_tracker"})
+        with urllib.request.urlopen(request, timeout=15) as r:
             checks = json.loads(r.read().decode()).get("checks") or {}
     except Exception as e:
         print(f"checks not read: {e}", file=sys.stderr)
