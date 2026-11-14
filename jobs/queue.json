@@ -195560,9 +195560,14 @@
           "at": "2026-11-14T15:44Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T15:44Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Preservation verifier exit 0. 8225 unchanged frames, 7995 copied packets, 25296 audio packets. Loudness and sync still unmeasured. Not v04."
         }
       ],
-      "remaining_action": "Read the preservation verifier, then measure loudness and sync.",
+      "remaining_action": "Measure loudness and voice sync on the Franklin assembly candidate.",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195571,9 +195576,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T13:52Z",
+        "at": "2026-11-14T15:44Z",
         "by": "cursor",
-        "note": "Candidate keeps the source clock and all 25296 audio packets. SHA-256 735ac816e00b. Not a pixel check and not v04. Verif"
+        "note": "Preservation verifier exit 0. 8225 unchanged frames, 7995 copied packets, 25296 audio packets. Loudness and sync still u"
       }
     },
     {
