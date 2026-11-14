@@ -194501,10 +194501,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T13:34Z",
-      "eta": "2026-11-14T15:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195518,6 +195518,11 @@
           "at": "2026-11-14T13:52Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Candidate keeps the source clock and all 25296 audio packets. SHA-256 735ac816e00b. Not a pixel check and not v04. Verifier is in tmux J2242-verify."
+        },
+        {
+          "at": "2026-11-14T13:52Z",
+          "by": "cursor",
+          "what": "released: 2/3. Clock-correct candidate at /Volumes/MiniWork/scratch/J2242-assemble-v02/franklin_assembly.mp4 SHA-256 735ac816e00b84b1e9e17d8e59a18223171953cf3441c67e1375a3ce8f6460c0, 2847983180 bytes. 12923 frames match the source PTS and durations, including 23 steps of 1024 ticks. 25296 audio packets match the master. Not v04, no pixel preservation, no loudness, sync or film gates. HOS commit 32dc13c7. Preservation verifier running: tmux J2242-verify; log /Users/benjaminoats/_desk/logs/J2242-verify.log; marker /Users/benjaminoats/_desk/logs/J2242-verify.done. Missing marker means still running: do not start a second copy. No spend or publication."
         }
       ],
       "remaining_action": "Read the preservation verifier, then measure loudness and sync.",
