@@ -78055,6 +78055,11 @@
           "at": "2026-11-12T11:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-13T12:00:00Z"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "J2829 Chief ruling: required_capabilities=[audio_input] for future backlog runs; existing Ben hold preserved"
         }
       ],
       "kind": "assembly",
@@ -78073,8 +78078,7 @@
         "note": "v04 sha 76d801a3. All five gates PASS. Desk 6700907911. Branch cursor/j0912-short-a-v04 commit fd440eb4. No upload."
       },
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "hold": {
         "type": "ben",
@@ -195707,7 +195711,7 @@
       "title": "HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0)",
       "needs": "mini",
       "repo": "hos",
-      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Mandatory Requirements\n1. **Fresh Demonstrated Multimodal Capability:** Verify a fresh successful probe for both `audio_input` and `moving_video_input` in `chief_relay.py capabilities` before assignment/review. Never claim moving-video or audio PASS from stills, ASR, model name, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 tracked windows (`00:20`, `0:30`, `0:51` night street vs `1:49`/`1:51` salon spark in-context confirmation, `2:18` jar flip in `3260..3343` AND distinct `2:20` foil/next-spark boundary at `140.000s` / frame `3353` in `3344..3404`, `3:13` points desk, `3:31` letter crossing, `7:58`/`7:59` rods) with their preceding/following cut transitions, all `32` planned `side_label` caption cards (`<=4` words, `<=4s` hold) + `11_safe_path` (`SAFE PATH DOWN`) + bottom-text rows from `reconcile_bottom_text()`, and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and measured VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (never silently mark `0:51` or `2:20` resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason \"parked for Chief: ...\"`) for UAT staging authorization and Ben's final watch.",
+      "body": "Dependent media-capable QA and Chief review for `hos_008_master_v04.mp4` after `J2242` (HOS PR #411 `50620e40` + PR #428 `b78dbe19`).\n\n## Mandatory Requirements\n1. **Fresh Demonstrated Multimodal Capability:** Verify a fresh successful probe for both `audio_input` and `moving_video_input` in `chief_relay.py capabilities` before assignment/review. Never claim moving-video or audio PASS from stills, ASR, model name, or ffprobe metrics alone.\n2. **In-Context Moving-Video + Audio Review:** Watch and listen to all 8 tracked windows (`00:20`, `0:30`, `0:51` night street vs `1:49`/`1:51` salon spark in-context confirmation, `2:18` jar flip in `3260..3343` AND distinct `2:20` foil/next-spark boundary at `140.000s` / frame `3353` in `3344..3404`, `3:13` points desk, `3:31` letter crossing, `7:58`/`7:59` rods) with their preceding/following cut transitions, all `32` planned `side_label` caption cards (`<=4` words, `<=4s` hold) + `11_safe_path` (`SAFE PATH DOWN`) + bottom-text rows from `reconcile_bottom_text()`, and the full `539.500s` cut.\n3. **Verification Checklist:**\n   - Confirm all `picture_qa`, `polish_gate`, `gate:episode`, `lint:package`, `music_gate`, `sfx_kit level`, `168×94` phone readability, bitwise unchanged-frame SHA-256 identity, audio packet identity, and measured VO sync checks PASS.\n   - Keep all 8 Ben notes tracked (never silently mark `0:51` or `2:20` resolved) until elected Chief media decision and Ben's final finished-film watch.\n   - Park for elected Chief (`jobs.py block --reason \"parked for Chief: ...\"`) for UAT staging authorization and Ben's final watch.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J1881 / J2241 / J2242",
       "film": "008",
       "stage": "edit",
@@ -195740,13 +195744,17 @@
           "at": "2026-11-11T13:06Z",
           "by": "claude",
           "what": "acting Chief: now waits for J2614 (Grok's splice check, desk 6796013653), which follows the v04 build."
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input]"
         }
       ],
       "remaining_action": "Verify live audio_input + moving_video_input capability, review all 8 defect windows + 27 captions + full master_v04 in motion/audio, and park for Chief",
       "kind": "qa",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "taskKeys": [
         "HOS:008"
@@ -198472,19 +198480,19 @@
       "title": "HOS 010: independently review twelve generated Shorts plates",
       "needs": "mini",
       "repo": "hos",
-      "body": "Independent exact-manifest review of J2270 twelve HOS010 moving parents before J2172 assembly. Read TWELVE_PLATE_SCOPE_J2267.json, exact source boards, J2269 ruling, receipts/actual spend and GENERATED/PENDING_REVIEW files. Reviewer must not be the producer; no self-KEEP. Verify twelve unique identities, immutable hashes and durable copies; exact named birds/subject/line match, HOS house look and Explorer reference, native motion and all current rule8/crop/upscale/loop-preroll/phone-readability checks, no baked text/no source audio. Document demonstrated media-input capabilities; stills/ffprobe are not evidence of watching motion. Do not waive failure or fabricate perception. Ben final watching/listening remains required under current order. Record exact KEEP/FIX list and repair scope; release J2172 only when every required input has accepted evidence and rule8/media gates remain intact. Preserve accepted A/C VO, J1004 OptionA1, J2172 progress1/3. After assembly, separate cut review/awaits with working Play links before Ben final watch and later scheduling. No publishing or generation in this review job.\n",
+      "body": "Independent exact-manifest review of J2270 twelve HOS010 moving parents before J2172 assembly. Read TWELVE_PLATE_SCOPE_J2267.json, exact source boards, J2269 ruling, receipts/actual spend and GENERATED/PENDING_REVIEW files. Reviewer must not be the producer; no self-KEEP. Verify twelve unique identities, immutable hashes and durable copies; exact named birds/subject/line match, HOS house look and Explorer reference, native motion and all current rule8/crop/upscale/loop-preroll/phone-readability checks, no baked text/no source audio. Document demonstrated media-input capabilities; stills/ffprobe are not evidence of watching motion. Do not waive failure or fabricate perception. Ben final watching/listening remains required under current order. Record exact KEEP/FIX list and repair scope; release J2172 only when every required input has accepted evidence and rule8/media gates remain intact. Preserve accepted A/C VO, J1004 OptionA1, J2172 progress1/3. After assembly, separate cut review/awaits with working Play links before Ben final watch and later scheduling. No publishing or generation in this review job.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting HOS Chief `gemini`):**\nReopened and rerouted from `codex` (out of quota until `2026-11-17T23:22Z`) to `gemini`. Because these 12 raw Veo plates are silent (`0` audio streams), verify each plate with dense `4 fps` frame strips plus compact `640x360` (`<= 5 MB`) `.mp4` proxy clips opened via `read_file` on `gemini`. See `jobs/reviews/J2829/RULING.md`.",
       "ref": "J2267",
       "film": "010",
       "stage": "picture",
       "after": "J2270",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-13T00:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:31Z",
-      "result": "Waiting for: This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-06T08:31Z",
@@ -198540,14 +198548,17 @@
           "at": "2026-11-13T05:36Z",
           "by": "relay",
           "what": "condition verification queued: J2758"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "reopened & rerouted to gemini under J2829 Chief ruling (codex out of quota until 2026-11-17T23:22Z)"
         }
       ],
       "remaining_action": "Have an independent reviewer with moving-video input finish the Dinosaur scene checks.",
       "kind": "qa",
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
-      "required_capabilities": [
-        "moving_video_input"
-      ],
+      "required_capabilities": [],
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -198555,7 +198566,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "codex",
+      "for": "gemini",
       "model": "gpt-6-astra",
       "progress": {
         "step": 1,
@@ -198566,16 +198577,7 @@
       },
       "taskKeys": [
         "HOS:010"
-      ],
-      "hold": {
-        "type": "capability",
-        "condition": "This session inspected its actual callable tools: text execution and still-image input only; no demonstrated moving-video perception. Required continuous native-motion review cannot be completed from ffprobe or stills. Technical inventory verified twelve exact scope identities, twelve unique hashes and 24/24 durable copies; zero audio streams. J2731 tool/still ruling noted, but current dispatch explicitly requires a typed capability hold when required input is unavailable. Claude now elected Chief may resolve the review handoff; no KEEP and no J2172 release.",
-        "check_at": "2026-11-13T06:36:50+00:00",
-        "requires": [
-          "moving_video_input"
-        ],
-        "recheck_task": "J2758"
-      }
+      ]
     },
     {
       "id": "J2272",
@@ -208524,7 +208526,7 @@
       "title": "034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Review 034 Pluto long master v01 (J2376, PR #646), Short 1 Test A cold open v01 (J2319, PR #647), and Short 2 Keeper water-ice mountains v01 (J2320, PR #648) on /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/.",
+      "body": "Review 034 Pluto long master v01 (J2376, PR #646), Short 1 Test A cold open v01 (J2319, PR #647), and Short 2 Keeper water-ice mountains v01 (J2320, PR #648) on /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J2376,J2319,J2320",
       "film": "034",
       "stage": "edit",
@@ -208547,13 +208549,17 @@
           "at": "2026-11-08T04:18Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3145 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
         }
       ],
       "remaining_action": "034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320)",
       "kind": "review",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "plain": "Review 034 Pluto long master v01 and Shorts 1 and 2 on studio-live NAS before Ben watch.",
       "rerouted_from": {
@@ -208564,7 +208570,9 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 8,
+      "due": "2026-11-15T20:00:00Z"
     },
     {
       "id": "J2384",
@@ -210065,7 +210073,7 @@
       "title": "033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS)",
       "needs": "mini",
       "repo": "owb",
-      "body": "Review 033 Uranus Active Short #1 (`033_short01_testA_opening_v01.mp4`, SHA-256 `7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7`, 36.48s Test A opening cut, slot Fri 18 Dec 11:30Z; report: `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/SHORT01_TESTA_BUILD_REPORT_v01.md`) and Active Short #2 (`033_short02_ice_giant_surface_v01.mp4`, SHA-256 `c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2`, 26.28s Keeper question cut, slot Sat 19 Dec 11:30Z; report: `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/SHORT02_KEEPER_BUILD_REPORT_v01.md`). Both cuts passed all 7 tool gates (`gate_shorts_open`, `picture_qa`, `polish_gate`, `sfx_kit level`, `music_gate`, `thumb_preview` frame 0 & cover) and are staged in `OWB UAT/033_shorts_v01/` on NAS and iCloud Drive. Watch & listen with `moving_video_input` + `audio_input`, verify Teach-on-screen / Polish-pass / Keeper gates, and call `jobs.py awaits` for Ben's phone watch. No YouTube upload until Ben approves.",
+      "body": "Review 033 Uranus Active Short #1 (`033_short01_testA_opening_v01.mp4`, SHA-256 `7eca95258582b93f6b822e182bf64db8d6e31d95f3710b4479182df4f5182ca7`, 36.48s Test A opening cut, slot Fri 18 Dec 11:30Z; report: `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/SHORT01_TESTA_BUILD_REPORT_v01.md`) and Active Short #2 (`033_short02_ice_giant_surface_v01.mp4`, SHA-256 `c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2`, 26.28s Keeper question cut, slot Sat 19 Dec 11:30Z; report: `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/10_Shorts/SHORT02_KEEPER_BUILD_REPORT_v01.md`). Both cuts passed all 7 tool gates (`gate_shorts_open`, `picture_qa`, `polish_gate`, `sfx_kit level`, `music_gate`, `thumb_preview` frame 0 & cover) and are staged in `OWB UAT/033_shorts_v01/` on NAS and iCloud Drive. Watch & listen with `moving_video_input` + `audio_input`, verify Teach-on-screen / Polish-pass / Keeper gates, and call `jobs.py awaits` for Ben's phone watch. No YouTube upload until Ben approves.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J2318",
       "film": "033",
       "stage": "edit",
@@ -210088,13 +210096,17 @@
           "at": "2026-11-08T16:23Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 3872 min (heartbeat 2026-11-05T23:51:17Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
         }
       ],
       "remaining_action": "033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS)",
       "kind": "review",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "plain": "Review 033 Active Shorts 1 & 2 (Test A opening + Keeper ice-giant surface) and hand to Ben's phone watch",
       "rerouted_from": {
@@ -210105,7 +210117,9 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 8,
+      "due": "2026-11-15T22:00:00Z"
     },
     {
       "id": "J2401",
@@ -210447,7 +210461,7 @@
       "title": "033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch",
       "needs": "mini",
       "repo": "owb",
-      "body": "Review 033 Uranus long master v01 (`033_why_this_planet_has_21_year_winters_master_v01.mp4`, `629.40 s`, `1920x1080` `24 fps` CFR) assembled in `J2403` on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/`: (1) watch & listen with `moving_video_input` and `audio_input`, verify Teach-on-screen & Polish-pass gates, and inspect `picture_qa_review.jpg` and contact sheets; (2) verify all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`, plus `~-14 LUFS` / `<= -1.0 dBTP` / `0` black frames) PASS; (3) write `jobs/reviews/<this-job-id>/REVIEW.md` (`KEEP` or `FIX`), verify SHA-256 in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's UAT watch (`Wed 09 Dec 2026 18:00 London` slot), and advance `WIP.json` per `AGENTS.md` §How films get worked on.",
+      "body": "Review 033 Uranus long master v01 (`033_why_this_planet_has_21_year_winters_master_v01.mp4`, `629.40 s`, `1920x1080` `24 fps` CFR) assembled in `J2403` on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/`: (1) watch & listen with `moving_video_input` and `audio_input`, verify Teach-on-screen & Polish-pass gates, and inspect `picture_qa_review.jpg` and contact sheets; (2) verify all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`, plus `~-14 LUFS` / `<= -1.0 dBTP` / `0` black frames) PASS; (3) write `jobs/reviews/<this-job-id>/REVIEW.md` (`KEEP` or `FIX`), verify SHA-256 in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's UAT watch (`Wed 09 Dec 2026 18:00 London` slot), and advance `WIP.json` per `AGENTS.md` §How films get worked on.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J2403; J2398 f8c59c0344",
       "film": "033",
       "stage": "edit",
@@ -210490,14 +210504,18 @@
           "at": "2026-11-08T20:31Z",
           "by": "gemini",
           "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
         }
       ],
       "remaining_action": "Build 720p UAT watch proxy, verify SHA-256 across NAS and iCloud OWB UAT, write jobs/reviews/J2404/REVIEW.md, and stage for Ben UAT watch",
-      "due": "2026-12-09T18:00:00Z",
+      "due": "2026-11-15T23:00:00Z",
       "kind": "review",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "plain": "Review 033 Uranus long master v01 (629.40 s) after J2403 assembly and hand to Ben's UAT watch",
       "rerouted_from": {
@@ -210518,7 +210536,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "urgent": 8
     },
     {
       "id": "J2405",
@@ -219702,7 +219721,7 @@
       "title": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
       "needs": "mini",
       "repo": "owb",
-      "body": "Review 032 Titan long master v02 (`032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`, SHA-256 `519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, 585.44 s, 1920x1080 30 fps CFR), assembled in J2436 with the re-cut first 30 seconds (FIRST30_PLAN.md, J2435). It is on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_*/` and already copied to NAS `OWB UAT` and iCloud `OWB UAT`.\n\n1. Watch and listen with `moving_video_input` and `audio_input`. Check the first 30 seconds against the first-30s rule (AGENTS.md, PR #665), the Teach-on-screen and Polish-pass gates, and the contact sheets.\n2. Verify the five automated gates J2436 reported (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level; about -14 LUFS, at most -1.0 dBTP, 0 black frames) still PASS on this exact file.\n3. Write `jobs/reviews/<this-job-id>/REVIEW.md` with KEEP or a FIX list (timecodes). On FIX, queue the fix job for the film.\n4. On KEEP: verify the SHA-256 of the copies in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's watch (target Sun 16 Nov; the film airs Wed 25 Nov 18:00 London), and advance `WIP.json` per AGENTS.md \"How films get worked on\".\n\nNo upload, no spend. £0.\n",
+      "body": "Review 032 Titan long master v02 (`032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`, SHA-256 `519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, 585.44 s, 1920x1080 30 fps CFR), assembled in J2436 with the re-cut first 30 seconds (FIRST30_PLAN.md, J2435). It is on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_*/` and already copied to NAS `OWB UAT` and iCloud `OWB UAT`.\n\n1. Watch and listen with `moving_video_input` and `audio_input`. Check the first 30 seconds against the first-30s rule (AGENTS.md, PR #665), the Teach-on-screen and Polish-pass gates, and the contact sheets.\n2. Verify the five automated gates J2436 reported (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level; about -14 LUFS, at most -1.0 dBTP, 0 black frames) still PASS on this exact file.\n3. Write `jobs/reviews/<this-job-id>/REVIEW.md` with KEEP or a FIX list (timecodes). On FIX, queue the fix job for the film.\n4. On KEEP: verify the SHA-256 of the copies in NAS `OWB UAT` and iCloud `OWB UAT`, call `jobs.py awaits` for Ben's watch (target Sun 16 Nov; the film airs Wed 25 Nov 18:00 London), and advance `WIP.json` per AGENTS.md \"How films get worked on\".\n\nNo upload, no spend. £0.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "",
       "film": "032",
       "stage": "edit",
@@ -219725,14 +219744,18 @@
           "at": "2026-11-13T07:47Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 414 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
         }
       ],
       "remaining_action": "032 Titan: review long master v02 (J2436) + stage for Ben UAT watch",
-      "due": "2026-11-14T18:00:00Z",
+      "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "rerouted_from": {
         "needs": "mini",
@@ -219742,7 +219765,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "urgent": 9
     },
     {
       "id": "J2478",
@@ -224918,6 +224942,11 @@
           "at": "2026-11-14T02:40Z",
           "by": "codex",
           "what": "J2796 Chief review: corrected stale inactive deployment condition; J2532 remains open for its existing worker, token dependency and 07:40 UTC check retained. No history rewritten."
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "rerouted from codex (out of quota until 2026-11-17T23:22Z) to cursor on cursor-grok-4-7 per J2829"
         }
       ],
       "remaining_action": "Verify the merged Cloudflare release, signed-out access, and signed-in data after J2714 token setup; review at 07:40 UTC",
@@ -224936,8 +224965,8 @@
         "condition": "Verify the merged-main board release on Cloudflare Pages and signed-in data access after the existing J2714 token setup. The retired host billing is no longer a dependency. Historical deployment records remain unchanged.",
         "check_at": "2026-11-14T07:40:00Z"
       },
-      "for": "codex",
-      "model": "gemini-argon"
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2533",
@@ -226476,7 +226505,7 @@
       "title": "Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards",
       "needs": "mini",
       "repo": "owb",
-      "body": "Acting Chief, 11 Nov 07:14Z, from the morning's check of the Shorts due in the next 14 days. Two of this job's three Shorts now fail the gate as scheduled: Voyager (`kKN8Ale42sE`, airs Tue 17 Nov 11:30: 4 of 21 frames padded, 5 to 9 s) and Muons (`rvug71d7Dqk`, airs Sat 21 Nov 11:30: 13 of 23, 3 to 4 s and 11 to 23 s). Do them in air-date order: **Voyager first**. Ben must be able to watch the Voyager re-cut by Mon 16 Nov 18:00 London, so its cut, gates and still sheet are due **Sat 14 Nov 18:00 London**; the other two follow. The gate now prints which seconds are padded and whether each has a straight edge: use that list as the shots to fix, and run it without report-only on each re-cut.\n\nChief ruling (11 Nov 03:52Z, acting Chief, Claude) on the stop of 03:44Z: this job is not held for lack of a worker that can watch or listen. AGENTS.md, \"Ben's final watch is the watch-and-listen check\": a job is never held only because its worker cannot watch or listen. Step 3's \"watch and listen to the whole cut yourself\" is replaced by this, for every Short in this job: do every check a tool can prove (all Shorts gates not report-only, full decode, loudness, captions against the narration timings, hashes, a still sheet across the whole cut with every piece of on-screen text read), say plainly in the report that no watching or listening is claimed, and send Ben's watch card. The Chief rules on that evidence and Ben's watch is the watch-and-listen check. J2549 (the Mars helicopter Short, v08) was delivered this way on 11 Nov and passed.\n\nChief ruling on J2509 (11 Nov 02:00Z, acting Chief, Claude), added to item 1 (Voyager 1, `kKN8Ale42sE`): the copy on YouTube was downloaded and measured. It fails the opening gate on two counts, and the 17 Oct render on disk fails the same way: the first picture change comes at 4.6 s (the limit is 3 s), and the second sentence is a promise in place of the thing itself (\"Stay, and I'll show you how far that is.\"). The two files have the same length (20.74 s), the same first cut and the same words, so the 17 Oct build is an acceptable base for the re-cut: Ben watches the result. So for Voyager, as well as the padded shot at 4.6 to 6.9 s:\n\na. Take that one sentence out of the narration, cutting the narration stem at the pauses on each side (`vo_s5-s8_v01`, with the build's stems). No new recording. The number (\"Nearly 26 billion kilometres\") then arrives about two seconds sooner. Captions follow the new words; the music bed runs under the join without a jump.\nb. The first picture change at 3.0 s or sooner.\nc. If the narration stem cannot be found (NAS, the Mini's archive), do not cut the mixed sound: fix the pictures only (b and the padded shot) and say that the opening words stay.\nd. This Short names its date (\"On November 18th\") and airs Tue 17 Nov 11:30. It cannot move. Ben's watch card for it is due Sun 15 Nov 18:00 London, and if there is no OK by then the cut he OK'd airs.\n\nChief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Three Orbit Shorts airing in the next two weeks have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. Voyager 1, `kKN8Ale42sE`, airs Tue 17 Nov 11:30: one shot, 4.6 to 6.9 s. The file on disk did not match the upload's sha256 (J2494 stopped on it; J2509 is checking the Studio copy). Work only from an export that matches what is on YouTube. If none does, say so and go to the next. Watch card due Sun 15 Nov 18:00 London.\n2. Muons, `rvug71d7Dqk`, airs Sat 21 Nov 11:30: its build script pads every segment. 0.0 to 3.0 s and 18.2 to 22.2 s are padded on both sides; 3.0 to 18.2 s has a blurred copy below the Earth's limb, which also counts. Rebuild the picture full-frame throughout. Watch card due Thu 19 Nov 18:00 London.\n3. ISS, `xdurJQcoiGM`, airs Wed 25 Nov 11:30: the last shot, 14.8 to 18.4 s. Watch card due Mon 23 Nov 18:00 London.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "body": "Acting Chief, 11 Nov 07:14Z, from the morning's check of the Shorts due in the next 14 days. Two of this job's three Shorts now fail the gate as scheduled: Voyager (`kKN8Ale42sE`, airs Tue 17 Nov 11:30: 4 of 21 frames padded, 5 to 9 s) and Muons (`rvug71d7Dqk`, airs Sat 21 Nov 11:30: 13 of 23, 3 to 4 s and 11 to 23 s). Do them in air-date order: **Voyager first**. Ben must be able to watch the Voyager re-cut by Mon 16 Nov 18:00 London, so its cut, gates and still sheet are due **Sat 14 Nov 18:00 London**; the other two follow. The gate now prints which seconds are padded and whether each has a straight edge: use that list as the shots to fix, and run it without report-only on each re-cut.\n\nChief ruling (11 Nov 03:52Z, acting Chief, Claude) on the stop of 03:44Z: this job is not held for lack of a worker that can watch or listen. AGENTS.md, \"Ben's final watch is the watch-and-listen check\": a job is never held only because its worker cannot watch or listen. Step 3's \"watch and listen to the whole cut yourself\" is replaced by this, for every Short in this job: do every check a tool can prove (all Shorts gates not report-only, full decode, loudness, captions against the narration timings, hashes, a still sheet across the whole cut with every piece of on-screen text read), say plainly in the report that no watching or listening is claimed, and send Ben's watch card. The Chief rules on that evidence and Ben's watch is the watch-and-listen check. J2549 (the Mars helicopter Short, v08) was delivered this way on 11 Nov and passed.\n\nChief ruling on J2509 (11 Nov 02:00Z, acting Chief, Claude), added to item 1 (Voyager 1, `kKN8Ale42sE`): the copy on YouTube was downloaded and measured. It fails the opening gate on two counts, and the 17 Oct render on disk fails the same way: the first picture change comes at 4.6 s (the limit is 3 s), and the second sentence is a promise in place of the thing itself (\"Stay, and I'll show you how far that is.\"). The two files have the same length (20.74 s), the same first cut and the same words, so the 17 Oct build is an acceptable base for the re-cut: Ben watches the result. So for Voyager, as well as the padded shot at 4.6 to 6.9 s:\n\na. Take that one sentence out of the narration, cutting the narration stem at the pauses on each side (`vo_s5-s8_v01`, with the build's stems). No new recording. The number (\"Nearly 26 billion kilometres\") then arrives about two seconds sooner. Captions follow the new words; the music bed runs under the join without a jump.\nb. The first picture change at 3.0 s or sooner.\nc. If the narration stem cannot be found (NAS, the Mini's archive), do not cut the mixed sound: fix the pictures only (b and the padded shot) and say that the opening words stay.\nd. This Short names its date (\"On November 18th\") and airs Tue 17 Nov 11:30. It cannot move. Ben's watch card for it is due Sun 15 Nov 18:00 London, and if there is no OK by then the cut he OK'd airs.\n\nChief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Three Orbit Shorts airing in the next two weeks have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. Voyager 1, `kKN8Ale42sE`, airs Tue 17 Nov 11:30: one shot, 4.6 to 6.9 s. The file on disk did not match the upload's sha256 (J2494 stopped on it; J2509 is checking the Studio copy). Work only from an export that matches what is on YouTube. If none does, say so and go to the next. Watch card due Sun 15 Nov 18:00 London.\n2. Muons, `rvug71d7Dqk`, airs Sat 21 Nov 11:30: its build script pads every segment. 0.0 to 3.0 s and 18.2 to 22.2 s are padded on both sides; 3.0 to 18.2 s has a blurred copy below the Earth's limb, which also counts. Rebuild the picture full-frame throughout. Watch card due Thu 19 Nov 18:00 London.\n3. ISS, `xdurJQcoiGM`, airs Wed 25 Nov 11:30: the last shot, 14.8 to 18.4 s. Watch card due Mon 23 Nov 18:00 London.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J2545",
       "film": "",
       "stage": "",
@@ -226634,6 +226663,11 @@
           "at": "2026-11-14T18:36Z",
           "by": "gemini",
           "what": "released: gemini can't resume it (Waiting for verified capability: moving_video_input); progress kept"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input]"
         }
       ],
       "remaining_action": "Render and 5-gate Muons v05 and ISS v14, verify moving video + audio, push PR #893, and arm 3 Ben Watch Cards",
@@ -226646,8 +226680,7 @@
         "OWB:030"
       ],
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
       "urgent": 2,
       "progress": {
@@ -226677,19 +226710,19 @@
       "title": "Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards",
       "needs": "mini",
       "repo": "owb",
-      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Four Orbit Shorts airing in December have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. 031 opening Short, `C8lPx5N2DwM`, airs Sat 5 Dec: 8.4 to 11.4 s and 14.1 to 31.7 s, and the dark-blue graphic at 4.7 to 8.4 s, which also counts. Watch card due Wed 2 Dec 18:00 London.\n2. 029 Great Dimming Short, `SWDCZfWZVao`, airs Wed 9 Dec: 2.7 to 5.1 s and 12.4 to 15.2 s. Watch card due Sun 6 Dec 18:00 London.\n3. 029 opening Short, `k2kEaA7ICjc`, airs Fri 11 Dec: 12.2 to 19.2 s and 21.5 to 27.0 s, and the dark-blue card at 8.6 to 12.2 s, which also counts. Watch card due Tue 8 Dec 18:00 London.\n4. 029 half-Moon Short, `heiGCnGKTkE`, airs Mon 14 Dec: 5.8 to 8.9 s, 12.4 to 16.2 s and 19.8 to 22.0 s. Watch card due Fri 11 Dec 18:00 London.\n\nThe diagrams and graphics in these were built 16:9. Rebuild each upright from its own build script where there is one; a crop that cuts off labels is not a fix.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n",
+      "body": "Chief ruling on J2545 (11 Nov 00:58Z). The audit looked at every scheduled Short by eye. Four Orbit Shorts airing in December have shots that sit as a picture band over a blurred copy. Ben, 8 Nov, on this look: \"like a rectangle and blurry above and below\". Fix them in this order:\n\n1. 031 opening Short, `C8lPx5N2DwM`, airs Sat 5 Dec: 8.4 to 11.4 s and 14.1 to 31.7 s, and the dark-blue graphic at 4.7 to 8.4 s, which also counts. Watch card due Wed 2 Dec 18:00 London.\n2. 029 Great Dimming Short, `SWDCZfWZVao`, airs Wed 9 Dec: 2.7 to 5.1 s and 12.4 to 15.2 s. Watch card due Sun 6 Dec 18:00 London.\n3. 029 opening Short, `k2kEaA7ICjc`, airs Fri 11 Dec: 12.2 to 19.2 s and 21.5 to 27.0 s, and the dark-blue card at 8.6 to 12.2 s, which also counts. Watch card due Tue 8 Dec 18:00 London.\n4. 029 half-Moon Short, `heiGCnGKTkE`, airs Mon 14 Dec: 5.8 to 8.9 s, 12.4 to 16.2 s and 19.8 to 22.0 s. Watch card due Fri 11 Dec 18:00 London.\n\nThe diagrams and graphics in these were built 16:9. Rebuild each upright from its own build script where there is one; a crop that cuts off labels is not a fix.\n\nFor each Short, in the order given:\n1. Work from the cut named in the audit (`jobs/reviews/J2545/REPORT.md`, section 2), which is the cut Ben OK'd. Check its sha256 against the upload register first.\n2. Change only the padded stretches the audit lists. Every one of them must fill the 9:16 frame: reframe the shot (crop and scale, inside the usual upscale limit) or put in other real footage or the film's own graphics rebuilt upright. No blurred copy, no mirrored copy, no flat band, on one side or two. Same voice, same words, same length, same captions.\n3. Save as the next version beside the original; never overwrite. Same level as the original. Every Shorts gate, not report-only, and paste the lines. Then watch and listen to the whole cut yourself with sound and read every piece of text on screen.\n4. If a stretch cannot be made full-frame with what is on hand, say which and why, and leave that Short as it is. Do not make or buy new picture.\n5. Send Ben's watch card with `jobs.py awaits <this job id> ... --add`: what changed in plain words, and `--if-not \"the cut you OK'd airs\"`. One card per Short, in air-date order.\n\nNothing is uploaded and nothing changes in Studio in this job. The swap is a separate job the Chief queues after Ben's OK. If a run hits its time cap, record which Short is finished (`jobs.py progress`) and release; the next run takes the next one. No real money.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "J2545",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-11T22:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:55Z",
-      "result": "Waiting for: Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T00:55Z",
@@ -226720,6 +226753,11 @@
           "at": "2026-11-12T01:03Z",
           "by": "relay",
           "what": "condition verification queued: J2661"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "reopened under J2829 Chief ruling: required_capabilities=[audio_input]"
         }
       ],
       "remaining_action": "Rebuild and review four December Shorts on a worker that can watch and hear the complete cuts",
@@ -226738,19 +226776,8 @@
         "OWB:031",
         "OWB:029"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "Chief brief requires watching and listening to each complete recut. Session tool inspection demonstrated still-image viewing and shell text only; no audio or moving-video perception was demonstrated. No cuts modified or watch cards issued. Resume on a worker with demonstrated audio_input and moving_video_input.",
-        "check_at": "2026-11-12T02:03:48+00:00",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ],
-        "recheck_task": "J2661"
-      },
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ]
     },
     {
@@ -235398,7 +235425,7 @@
       "title": "Supermoon v04: Gemini listens to ending and watches tail",
       "needs": "mini",
       "repo": "owb",
-      "body": "# J2478 v04 ending review handoff\n\nCodex covering. Ben requested a complete ending: “Look east at sunset.” No new take, picture generation or credit spend. No upload, Studio, schedule or Buffer change. Chief retains merge authority over PR 834.\n\nThe existing take is cut at 16.810s with a 40ms fade from 16.770s. The source word map placed “as” too late: an initial 16.88s candidate produced an extra “at” in independent ASR. The original waveform shows a quiet gap at 16.76–16.81s before the next voiced onset near 16.82s. The refined cut passes the pinned faster-whisper voice check with zero failures. This is measurement and transcription evidence, not listening evidence. See the waveform and edit JSON in 02_Voiceover.\n\nFinal caption: LOOK EAST AT SUNSET. The existing v03 picture timeline, 551 frames / 18.366667s total, and 1.0s visual/music forward-loop tail remain. The primary plan is 45 words after deleting “as”; the existing approved C7 trim-1 narration is 40 whitespace words. No words were added to reach the untrimmed count.\n\nThe automated gates run on v04: SFX levels, music with the existing waiver, picture, polish, opening/full-Short framing, finish/visual loop scan, cover preview, and independent voice check. Existing low-detail Earth and music pace warnings remain for the earlier Chief ruling. A 1.61s last-word-to-end warning reflects the requested retained picture timing after removing the final word; Gemini should assess that ending. The grammatical run-on loop requirement alone is waived by Ben’s instruction.\n\nReview only the last three seconds of the actual v04 MP4, listening to its soundtrack and watching continuous motion. Check “sunset” has its natural final sound, no remnant “as”, no click, no clipped consonant, a complete final caption, and the retained visual/music tail. Explicitly state demonstrated audio and moving-video input; do not infer a listening verdict from ASR or stills. No clean verdict from Codex is claimed.\n\nPer the Chief instruction in J2478: if Gemini finds the ending clean with no failures, that is the conditional Chief KEEP for v04. Then the parent delivers v04 and its cover to the existing Orbit watch folders and calls jobs.py awaits J2478 for v04. Otherwise park for Chief with the waveform. Never generate another take. No upload; Ben’s board OK remains due 18 Nov 18:00 London.\n\nThe v04 delivery is under the film’s studio-live folder in ending_v04_delivery_20261112; DELIVERY_v04_SHA256.json records the files. Earlier versions are preserved.\n\nReview media: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/ending_v04_delivery_20261112/06_Final-Exports/owb_dated_2026_11_24_supermoon_v04.mp4\nSHA-256: 85eba87339b45a3ec4df6e0396fcbec435c8f0482d84c9e2c39eb665bccc0e68.\n\nCommit your independent review. Do not make the parent delivery or merge call in this review job; reopen J2478 with the finding so its delivery can proceed under the stated conditional Chief authority.\n",
+      "body": "# J2478 v04 ending review handoff\n\nCodex covering. Ben requested a complete ending: “Look east at sunset.” No new take, picture generation or credit spend. No upload, Studio, schedule or Buffer change. Chief retains merge authority over PR 834.\n\nThe existing take is cut at 16.810s with a 40ms fade from 16.770s. The source word map placed “as” too late: an initial 16.88s candidate produced an extra “at” in independent ASR. The original waveform shows a quiet gap at 16.76–16.81s before the next voiced onset near 16.82s. The refined cut passes the pinned faster-whisper voice check with zero failures. This is measurement and transcription evidence, not listening evidence. See the waveform and edit JSON in 02_Voiceover.\n\nFinal caption: LOOK EAST AT SUNSET. The existing v03 picture timeline, 551 frames / 18.366667s total, and 1.0s visual/music forward-loop tail remain. The primary plan is 45 words after deleting “as”; the existing approved C7 trim-1 narration is 40 whitespace words. No words were added to reach the untrimmed count.\n\nThe automated gates run on v04: SFX levels, music with the existing waiver, picture, polish, opening/full-Short framing, finish/visual loop scan, cover preview, and independent voice check. Existing low-detail Earth and music pace warnings remain for the earlier Chief ruling. A 1.61s last-word-to-end warning reflects the requested retained picture timing after removing the final word; Gemini should assess that ending. The grammatical run-on loop requirement alone is waived by Ben’s instruction.\n\nReview only the last three seconds of the actual v04 MP4, listening to its soundtrack and watching continuous motion. Check “sunset” has its natural final sound, no remnant “as”, no click, no clipped consonant, a complete final caption, and the retained visual/music tail. Explicitly state demonstrated audio and moving-video input; do not infer a listening verdict from ASR or stills. No clean verdict from Codex is claimed.\n\nPer the Chief instruction in J2478: if Gemini finds the ending clean with no failures, that is the conditional Chief KEEP for v04. Then the parent delivers v04 and its cover to the existing Orbit watch folders and calls jobs.py awaits J2478 for v04. Otherwise park for Chief with the waveform. Never generate another take. No upload; Ben’s board OK remains due 18 Nov 18:00 London.\n\nThe v04 delivery is under the film’s studio-live folder in ending_v04_delivery_20261112; DELIVERY_v04_SHA256.json records the files. Earlier versions are preserved.\n\nReview media: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/ending_v04_delivery_20261112/06_Final-Exports/owb_dated_2026_11_24_supermoon_v04.mp4\nSHA-256: 85eba87339b45a3ec4df6e0396fcbec435c8f0482d84c9e2c39eb665bccc0e68.\n\nCommit your independent review. Do not make the parent delivery or merge call in this review job; reopen J2478 with the finding so its delivery can proceed under the stated conditional Chief authority.\n\n---\n**Chief Ruling (J2829, 2026-11-14, Acting Chief `gemini`):**\nRe-scoped to `required_capabilities: [\"audio_input\"]` under the 5-part review standard (`jobs/reviews/J2829/RULING.md`):\n1. Automated gates PASS on the exact master file(s).\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps.\n3. Every frame at each cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` (`gemini`, using extracted `.wav`/`.mp3` when the `.mp4` exceeds 10 MB).\n5. Compact `640x360` `.mp4` review proxy clips (`<= 5 MB` per clip, e.g. the 3-second ending clip for `J2658`) opened via `read_file` when running on `gemini` — never pass a raw `>10 MB` master `.mp4` directly to `read_file`. Ben's UAT watch remains the final check.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -235416,16 +235443,22 @@
           "at": "2026-11-12T00:19Z",
           "by": "codex",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
         }
       ],
       "remaining_action": "Listen to the final three seconds and watch the Supermoon ending",
       "for": "gemini",
       "kind": "qa",
       "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
+        "audio_input"
       ],
-      "plain": "Checking that the Supermoon video ends cleanly on sunset"
+      "plain": "Checking that the Supermoon video ends cleanly on sunset",
+      "urgent": 10,
+      "due": "2026-11-15T12:00:00Z"
     },
     {
       "id": "J2659",
@@ -235599,13 +235632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T01:03Z",
-      "result": "",
+      "result": "superseded: parent J2551 reopened under J2829 Chief ruling (jobs/reviews/J2829/RULING.md)",
       "history": [
         {
           "at": "2026-11-12T01:03Z",
@@ -235616,6 +235649,11 @@
           "at": "2026-11-13T07:47Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 414 min (heartbeat 2026-11-12T21:56:58Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "cancelled: parent J2551 reopened under J2829 Chief ruling"
         }
       ],
       "remaining_action": "Verify readiness: Rebuild and review four December Shorts on a worker that can watch and hear the complete cuts",
@@ -244203,13 +244241,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T05:36Z",
-      "result": "",
+      "result": "superseded: parent J2271 reopened and rerouted to gemini under J2829 Chief ruling",
       "history": [
         {
           "at": "2026-11-13T05:36Z",
@@ -244230,6 +244268,11 @@
           "at": "2026-11-13T15:29Z",
           "by": "codex",
           "what": "remaining action: Apply desk 6853110063: 936x1664; scope six crop tests and four mapping repairs, retire skeleton opening; preserve ten FIX and J2271 hold. No spend or KEEP."
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "cancelled: parent J2271 reopened under J2829 Chief ruling"
         }
       ],
       "remaining_action": "Apply desk 6853110063: 936x1664; scope six crop tests and four mapping repairs, retire skeleton opening; preserve ten FIX and J2271 hold. No spend or KEEP.",
@@ -250324,13 +250367,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-14T15:15Z",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-14T20:20Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T15:13Z",
-      "result": "parked for Chief: all 4 worker CLIs probed (gemini passes audio_input; none passes moving_video_input; codex out of quota until 2026-11-17T23:22Z). PR #928 adds runners for all 4 workers, closes the 24h unshown-capability trap in refill.py (do_escalate), and puts ONE ruling proposal at jobs/reviews/J2829/PROPOSAL.md to re-scope J2658, J2477, J2383, J2400, J2404 (plus J2243, J2550, J2551/J2661) to gates + 0.5s grid + cut/last-3s frames + gemini audio_input",
+      "result": "PASS (Acting Chief Gemini): merged PR #928 (4-worker capability_probe runners + make_video overlay fix for drawbox thickness bug + 24h unshown-capability escalation in refill.py); live probe on gemini (agy 1.5.9) PASSes both audio_input (0.95) and moving_video_input (6s 360p clip) and is recorded via --record; ruled in jobs/reviews/J2829/RULING.md to re-scope J2658, J2477, J2383, J2400, J2404, J2243, J2550, and J2551 (cancelling J2661) to required_capabilities=[\"audio_input\"] under the 5-part review standard (gates + 0.5s grid + cut/last-3s frames + audio_input soundtrack + <=5MB 360p proxy clips) with J2658 first (urgent 10); reopened/rerouted J2271 to gemini (cancelling J2758); marked codex down until 2026-11-17T23:22:00Z and rerouted J2532 to cursor.",
       "history": [
         {
           "at": "2026-11-14T15:13Z",
@@ -250361,21 +250404,30 @@
           "at": "2026-11-14T17:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: PR #928 merged with make_video fix; Chief ruling recorded in jobs/reviews/J2829/RULING.md and applied to waiting reviews"
+        },
+        {
+          "at": "2026-11-14T20:20Z",
+          "by": "gemini",
+          "what": "done: PASS (Acting Chief Gemini): merged PR #928 (4-worker capability_probe runners + make_video overlay fix for drawbox thickness bug + 24h unshown-capability escalation in refill.py); live probe on gemini (agy 1.5.9) PASSes both audio_input (0.95) and moving_video_input (6s 360p clip) and is recorded via --record; ruled in jobs/reviews/J2829/RULING.md to re-scope J2658, J2477, J2383, J2400, J2404, J2243, J2550, and J2551 (cancelling J2661) to required_capabilities=[\"audio_input\"] under the 5-part review standard (gates + 0.5s grid + cut/last-3s frames + audio_input soundtrack + <=5MB 360p proxy clips) with J2658 first (urgent 10); reopened/rerouted J2271 to gemini (cancelling J2758); marked codex down until 2026-11-17T23:22:00Z and rerouted J2532 to cursor."
         }
       ],
-      "remaining_action": "Chief ruling + merge of PR #928 to re-scope the waiting reviews and ship the 24h capability-trap check",
+      "remaining_action": "",
       "due": "2026-11-15T12:00:00Z",
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the stalled film reviews moving, so the Pluto, Uranus and Titan films and the Supermoon Short reach Ben",
       "urgent": 9,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-14T15:38Z",
-        "by": "macbook"
-      },
-      "escalated_at": "2026-11-14T17:52Z"
+        "at": "2026-11-14T20:20Z",
+        "by": "gemini"
+      }
     },
     {
       "id": "J2830",

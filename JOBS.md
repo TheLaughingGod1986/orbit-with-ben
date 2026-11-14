@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2797, J2829, J2831, J2854, J2855, J2856.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2658, J2831, J2854, J2855, J2856.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -30,7 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2230 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
-| J2271 | mini | blocked | codex | – | 010 picture · for codex · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
+| J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
@@ -38,15 +38,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2477 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
 | J2478 | mini | blocked | codex | – | for codex · assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2532 | mini | open | – | – | for codex · studio · `gemini-argon` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
+| J2532 | mini | open | – | – | for cursor · studio · `cursor-grok-4-7` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | blocked | claude | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2551 | mini | blocked | codex | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
+| J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
 | J2614 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
 | J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2658 | mini | open | – | – | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
-| J2661 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2551 |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
 | J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
@@ -62,7 +61,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
 | J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 | J2754 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2438 |  |
-| J2758 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2760 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |
 | J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
@@ -82,7 +80,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2825 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2827 | any | blocked | macbook-2 | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2828 | any | blocked | macbook-2 | – | script · OWB: learn from our data, add two new films to the backlog |  |
-| J2829 | mini | blocked | macbook | – | for cursor · studio · Film reviews stuck for up to six days because no worker can show it watches video: probe every worker, then route or re-scope the waiting reviews |  |
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
 | J2832 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
