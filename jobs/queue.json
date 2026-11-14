@@ -248269,13 +248269,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T07:39Z",
-      "eta": "2026-11-14T09:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T05:15Z",
-      "result": "",
+      "result": "Chief review complete: CONDITION NOT MET. Fresh checks confirm all eight file hashes and PR490 draft head f521bcd3f1; no new operator confirmation or fresh-session acceptance evidence. J2040 remains held with last_recheck J2813 and retry 2026-11-14T12:55:00Z; verifier checks operator evidence then. J2517/J2559 complete and fallback routing retained. No approval-control changes or spend. Review-progress step 3 was emitted before closure initially failed on ownership; this successful closure corrects that reporting error.",
       "history": [
         {
           "at": "2026-11-14T05:15Z",
@@ -248331,6 +248331,11 @@
           "at": "2026-11-14T07:39Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T07:39Z",
+          "by": "codex",
+          "what": "done: Chief review complete: CONDITION NOT MET. Fresh checks confirm all eight file hashes and PR490 draft head f521bcd3f1; no new operator confirmation or fresh-session acceptance evidence. J2040 remains held with last_recheck J2813 and retry 2026-11-14T12:55:00Z; verifier checks operator evidence then. J2517/J2559 complete and fallback routing retained. No approval-control changes or spend. Review-progress step 3 was emitted before closure initially failed on ownership; this successful closure corrects that reporting error."
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2040 --recheck J2813 (to 2026-11-14T12:55:00Z) and jobs.py done J2813",
@@ -248354,7 +248359,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2813/REVIEW.md"
     },
     {
       "id": "J2814",
