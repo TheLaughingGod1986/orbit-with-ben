@@ -1,10 +1,10 @@
-# J2822 Condition Verification Report — Parent Job `J2171` (`HOS:009`)
+# J2822 Condition Verification Report & Chief Ruling — Parent Job `J2171` (`HOS:009`)
 
 - **Verification Job:** `J2822` (`Verify condition for J2171`)
 - **Parent Job:** `J2171` (`HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov`, `status: blocked`, `by: gemini`, `needs: mini`, `kind: assembly`, `repo: hos`, `film: 009`, `stage: edit`, `due: 2026-11-22T18:00:00Z`)
-- **Verifier:** `gemini` (`Gemini 4 Argon (High)`, Mini specialist worker; `codex` returned `UP` at `2026-11-14T12:21:32Z` and is currently the elected Chief for both OWB and HOS per `python3 scripts/chief_relay.py status` at `2026-11-14T12:24:54Z`)
-- **Checked At:** `2026-11-14T12:23:00Z`
-- **Verdict:** **CONDITION NOT MET — KEEP `J2171` BLOCKED (`J2805` received explicit Chief publication approval from Grok on HOS desk `#180` comment `#6876651082` at `2026-11-14T11:33:39Z`, but `codex/j2805-revised-music` (`4b92c042`) has not yet been pushed, opened as a HOS PR, or merged; downstream `J2806` revised wonder-cue production, `J2807` `audio_input` ear review, `J2808` Chief score acceptance, and `J2035` HOS 009 long assembly + composite/final gates have not yet run; `09_Final-Render` remains absent on both Mini and `studio-live` NAS; `J2803` failed and draft PR `#908` remains undeployed; all Shorts A/B and 5-part narration locks, `SHORTS_PICTURE_PLAN_v03.json`, and picture `KEEP` dispositions remain verified byte-identical across Mini and NAS).**
+- **Worker Verification By:** `gemini` (`Gemini 4 Argon (High)`, Mini specialist worker at `2026-11-14T12:23:00Z`, commit `3314460080`)
+- **Elected Acting Chief Ruling By:** `gemini` (`Gemini 4 Argon (High)`, elected acting Chief for both OWB and HOS at `2026-11-14T14:19:00Z`)
+- **Verdict:** **CONDITION NOT MET — KEEP `J2171` BLOCKED (`J2805` received explicit Chief publication approval from Grok on HOS desk `#180` comment `#6876651082` at `2026-11-14T11:33:39Z`, but `codex/j2805-revised-music` (`4b92c042`) has not yet been pushed, opened as a HOS PR, or merged; downstream `J2806` revised wonder-cue production, `J2807` `audio_input` ear review, `J2808` Chief score acceptance, and `J2035` HOS 009 long assembly + composite/final gates have not yet run; `09_Final-Render` remains absent on both Mini and `studio-live` NAS; `J2803` failed and draft PR `#908` remains undeployed; all Shorts A/B and 5-part narration locks, `SHORTS_PICTURE_PLAN_v03.json`, and picture `KEEP` dispositions remain verified byte-identical across Mini and NAS; recorded `wait --recheck J2822` on `J2171` with `--check-at 2026-11-14T20:30:00Z`).**
 
 ---
 
@@ -16,7 +16,7 @@ J2805 revised music route: J2806 production, J2807 capable ear review, final Chi
 
 ---
 
-## 2. Element-by-Element Verification Results (`2026-11-14T12:21Z–12:24Z`)
+## 2. Element-by-Element Verification Results (`2026-11-14T12:21Z–12:24Z`, re-verified `14:19Z`)
 
 | Condition Element | Status | Reproducible Evidence |
 |---|---|---|
@@ -28,20 +28,17 @@ J2805 revised music route: J2806 production, J2807 capable ear review, final Chi
 
 ---
 
-## 3. Handback to Elected Chief (`codex`, or next elected Chief on failover)
+## 3. Elected Acting Chief Ruling (`2026-11-14T14:19:00Z`)
 
-Before executing the protected `jobs.py wait J2171 --recheck J2822` call, `python3 scripts/chief_relay.py status` was re-checked at `2026-11-14T12:24:54Z` as required by `AGENTS.md`: `codex` returned `UP` after `2026-11-14T12:21:32Z` and is now the elected Chief (`Chief: Codex`, `History of Science Chief: Codex`). Because `scripts/jobs.py` (`set_wait`, lines 531–532) restricts `--recheck` updates to the currently elected Chief (`Only the elected Chief may record a condition check`), `gemini` hands the decision back and parks `J2822` for the elected Chief to run:
-
-```bash
-python3 scripts/jobs.py wait J2171 --agent <chief_agent_id> \
-  --condition "J2822 Chief ruling: NOT MET. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), but J2805 is still blocked pending push/PR/merge; J2806 revised wonder-cue production, J2807 capable ear review, J2808 Chief score acceptance, and J2035 long assembly + required composite/final gates (09_Final-Render absent on Mini and NAS) have not yet completed. J2803 failed and PR #908 remains undeployed. Shorts A/B and 5-part narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP locks (J2631, J2632 r4, Short A S03) verified intact across Mini and NAS. No Shorts assembly release before accepted revised score and checked J2035 long." \
-  --check-at "2026-11-14T20:30:00Z" \
-  --type input \
-  --recheck J2822 \
-  --action "Await accepted revised music (J2805-J2808) and the checked gravity long (J2035) before assembling its Shorts" \
-  --git
-
-python3 scripts/jobs.py done J2822 --agent <chief_agent_id> \
-  --result "Condition checked by Gemini (jobs/reviews/J2822/REVIEW.md): NOT MET. Grok approved publishing J2805 (4b92c042) in HOS #180 #6876651082 (11:33:39Z), but J2805 has not yet been pushed/merged, J2806-J2808 are open/unstarted (no v02 music), and J2035 remains blocked with 09_Final-Render absent on Mini and NAS. All v01 music, narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP assets verified intact on Mini and NAS. Recorded wait --recheck J2822 on J2171 (next check 2026-11-14T20:30:00Z, after J2808 due 20:00Z and J2035 check 20:15Z)." \
-  --git
-```
+- **Authority:** `gemini` is the currently elected acting Chief for both OWB (`Claude -> Grok -> Codex -> Gemini`) and HOS (`Grok -> Claude -> Codex -> Gemini`), verified via `python3 scripts/chief_relay.py status` at `2026-11-14T14:19:00Z`.
+- **Ruling:** **CONDITION NOT MET — KEEP `J2171` BLOCKED.** Under `J2822`'s verification scope (`This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 ... --recheck J2822`), `J2171` remains held because:
+  1. While Grok (Chief) approved publishing `codex/j2805-revised-music` (`4b92c042` in `/Volumes/MiniWork/scratch/j2805-hos`) on HOS desk `#180` (`#6876651082` at `2026-11-14T11:33:39Z`), `J2805` remains `blocked` (pending its `16:00:00Z` check or holder push/PR/merge) and no remote branch or HOS PR exists yet.
+  2. Downstream `J2806` (revised wonder-cue production, due `16:00:00Z`), `J2807` (`audio_input` ear review, due `18:00:00Z`), and `J2808` (Chief score acceptance, due `20:00:00Z`) remain `open` and unstarted, with no `v02` music files on Mini or `studio-live` NAS.
+  3. `J2035` (HOS 009 long assembly and required composite/final gates, check `20:15:00Z`, due `2026-11-15T18:00:00Z`) remains `blocked` at step `1/3`, and `09_Final-Render` is absent on both Mini and `studio-live` NAS.
+  4. `J2803` failed known reuse positives (`0.693`/`0.633`) and draft PR `#908` remains undeployed.
+  5. All Shorts A/B and 5-part narration locks (`VO_TAKES_KEEP.json` `530743c5...`, `VO_RETIME_v01.json` `75a2e7af...`, Short A `v02` `c2fd407d...`, Short B `v04` `0c9c4c6f...`), `SHORTS_PICTURE_PLAN_v03.json` (`6a0fb1df...`), and picture `KEEP` assets (`J2631` `e35f9a98...`, `J2632` r4 `23c832b0...`, Short A S03 `fba484bb...`) remain intact and byte-identical across Mini and `studio-live` NAS.
+- **Recorded Queue Actions:**
+  1. Recorded `jobs.py wait J2171 --agent gemini --type input --recheck J2822 --check-at 2026-11-14T20:30:00Z` (aligning the next check after `J2808` due `20:00:00Z` and `J2035` check `20:15:00Z`).
+  2. Reopened, claimed, and closed `J2822` as `done` (`jobs.py done J2822 --agent gemini`).
+  3. Recorded `chief_relay.py review-progress --agent gemini --job J2822 --step 3`.
+  4. Unrelated date, credit, and Ben-approval holds (`J2805` check `16:00:00Z`, `J2035` check `20:15:00Z`) were left untouched per Chief review instructions. Zero spend or media changes occurred.
