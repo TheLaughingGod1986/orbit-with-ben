@@ -248603,13 +248603,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-14T07:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T07:11Z",
-      "result": "parked for Chief: Verified J2221 condition and completed laid-score v02 + j01_v03_pack verification in jobs/reviews/J2815/REVIEW.md (980e348bae). Restored the missing full-length 027 score earth-spin_score_take2_straight_v01j.wav (446.3 s, 85,689,644 B, sha256 f63005243f5e140859e438305c1ec2365662d1e4511391fd9f04d7b53155c0b6) from /Volumes/data/mac-mini-archive/owbextra.tar to studio-live; built 05_Music/j01_journey_laid_score_v02.wav (3502.378 s, sha256 0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4, -34.25 LUFS, longest gap 3.9 s <= 6.0 s) across all 22 segments with j01_journey_laid_score_v02_manifest.json and _plan.json; and verified J01_Journey_v03.mp4 (3502.304 s, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32, -14.33 LUFS / -0.44 dBTP) passes music_gate.py (PASS, fail: [], waiver: music_gate_J01_chief_waiver.json), sfx_kit.py level (PASS, 0 fails, -16.7 LUFS VO / -44.1 LUFS SFX), picture_qa.py (PASS, 0 fails, 53:37 mean luma 44.55), and 3 thumbnails in 07_Edit-Project/j01_v03_pack. Because jobs.py restricts reopen/done on held jobs to the elected Chief, Chief please run Option A (reopen + done J2221 + done J2815 to unblock J2222 review) or Option B (reopen J2221 + done J2815) in jobs/reviews/J2815/REVIEW.md.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T07:11Z",
@@ -248655,6 +248655,11 @@
           "at": "2026-11-14T08:22Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified J2221 condition and completed laid-score v02 + j01_v03_pack verification in jobs/reviews/J2815/REVIEW.md (980e348bae). Restored the missing full-length 027 score earth-spin_score_take2_straight_v01j.wav (446.3 s, 85,689,644 B, sha256 f63005243f5e140859e438305c1ec2365662d1e4511391fd9f04d7b53155c0b6) from /Volumes/data/mac-mini-archive/owbextra.tar to studio-live; built 05_Music/j01_journey_laid_score_v02.wav (3502.378 s, sha256 0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4, -34.25 LUFS, longest gap 3.9 s <= 6.0 s) across all 22 segments with j01_journey_laid_score_v02_manifest.json and _plan.json; and verified J01_Journey_v03.mp4 (3502.304 s, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32, -14.33 LUFS / -0.44 dBTP) passes music_gate.py (PASS, fail: [], waiver: music_gate_J01_chief_waiver.json), sfx_kit.py level (PASS, 0 fails, -16.7 LUFS VO / -44.1 LUFS SFX), picture_qa.py (PASS, 0 fails, 53:37 mean luma 44.55), and 3 thumbnails in 07_Edit-Project/j01_v03_pack. Because jobs.py restricts reopen/done on held jobs to the elected Chief, Chief please run Option A (reopen + done J2221 + done J2815 to unblock J2222 review) or Option B (reopen J2221 + done J2815) in jobs/reviews/J2815/REVIEW.md."
+        },
+        {
+          "at": "2026-11-14T10:15Z",
+          "by": "codex",
+          "what": "reopened: Existing Grok Option A ruling executed on J2221; reopen this verification only for required administrative claim and close-out, per 9ebb517772."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude): close J2221 + J2815 done (unblocking J2222) or reopen J2221 per jobs/reviews/J2815/REVIEW.md",
@@ -248671,13 +248676,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-14T08:21Z",
-        "by": "gemini",
-        "note": "Step 3/3 done: Committed jobs/reviews/J2815/REVIEW.md + laid_score_v02 manifest/plan/gate (980e348bae); parking for Chie"
-      },
       "taskKeys": [
         "OWB:023",
         "OWB:024",
