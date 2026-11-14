@@ -249339,6 +249339,11 @@
           "at": "2026-11-14T11:08Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T12:31Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Chief resolves J01 edit handoff and records the next owner/action",
@@ -249348,7 +249353,16 @@
         "stage": "edit",
         "kind": "orphan-review",
         "signature": "5024233ca100308aecdc"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2822",
