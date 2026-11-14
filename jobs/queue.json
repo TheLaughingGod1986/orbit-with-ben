@@ -252377,20 +252377,25 @@
           "at": "2026-11-14T21:21Z",
           "by": "cursor",
           "what": "step 0 of 5 done: Claimed J2854. v04 is 2.7 GB on studio-live. Looking up tube, composite, and J2242 packet method."
+        },
+        {
+          "at": "2026-11-14T21:28Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Source hashes match. Tube is 1280x720 so it will be Lanczos-scaled. Composite is already 1920x1080. Salon sits across IDRs at 2413 and 2512; 2672 is the next IDR and already carries SPS/PPS. No B-frames from 2413 through 2671."
         }
       ],
-      "remaining_action": "Check source hashes and the old packet method before writing any frames",
+      "remaining_action": "Build the lossless 160-frame salon intermediate and prove each frame matches one source frame",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-14T21:21Z",
+        "at": "2026-11-14T21:28Z",
         "by": "cursor",
-        "note": "Claimed J2854. v04 is 2.7 GB on studio-live. Looking up tube, composite, and J2242 packet method."
+        "note": "Source hashes match. Tube is 1280x720 so it will be Lanczos-scaled. Composite is already 1920x1080. Salon sits across ID"
       },
       "taskKeys": [
         "HOS:008"
