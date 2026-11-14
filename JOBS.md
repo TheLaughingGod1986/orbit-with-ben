@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 | J2859 | mini | claimed | macbook-2 | 2026-11-14T22:39Z | listing · Listings for the two long films from research on channels that do this: search-led titles, first lines and tags |  |
-| J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
+| J2860 | mini | claimed | macbook | 2026-11-14T23:54Z | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 
 Recently finished:
 
