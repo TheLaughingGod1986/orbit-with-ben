@@ -192650,10 +192650,10 @@
     },
     {
       "id": "J2222",
-      "title": "J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146)",
+      "title": "J01 Journey Film 01: review v03 cut and three thumbnails before Ben watch",
       "needs": "mini",
       "repo": "owb",
-      "body": "Full watch and listen review of `02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v01.mp4` and the 3 thumbnails from `J2221` (`jobs/reviews/J2146/JOURNEY_01_PLAN.md`). Verify all 7 part joins, single subscribe beat in Part 1, chapter cards, distance map overlays, audio levels (`sfx_kit.py level`, no music gaps), and 3 thumbnails at 168x94 before queuing Ben's watch (`awaits_ben`).",
+      "body": "Review J01_Journey_v03.mp4 and j01_v03_pack from the existing Journey studio-live project; this supersedes the old v01 reference. Follow jobs/reviews/J2815/CHIEF_CLOSEOUT.md (9ebb517772) and prior Grok PASS Option A (6874618419). Verify seven joins, the single subscribe beat in Part 1, chapter cards, distance maps, audio levels, score provenance and three thumbnails at 168x94. Review all 15 picture warnings and applicable polish checks. Measure loudness/true peak on the FINAL encoded v03; earlier quoted input_i/input_tp values were pre-normalization measurements. Verify decode, frame timing and 18-second end hold. Document unreadable music-comparison warnings and the 80 BPM estimate versus brief 66-70; existing waiver covers reused only. Record tool checks honestly: no claimed hearing or motion perception without demonstrated capability. Under AGENTS.md, Ben final UAT supplies actual watch/listen; absent worker perception alone must not hold this job. Failed tool checks remain blocking. After agent QA, queue Ben watch; no upload or scheduling authorization.",
       "ref": "1e9ba89b33",
       "film": "J01",
       "stage": "edit",
@@ -192676,14 +192676,15 @@
           "at": "2026-11-05T15:43Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 111 min (heartbeat 2026-11-05T13:51:00Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T10:16Z",
+          "by": "codex",
+          "what": "J2815 close-out follow-up: current v03 target, final-file evidence checks and standing Ben-watch rule; dependency J2221 retained."
         }
       ],
-      "remaining_action": "Watch and listen to J01_Journey_v01.mp4 (~56m) and inspect all 3 thumbnails before Ben's watch",
+      "remaining_action": "Check the assembled Journey film and its three thumbnails before Ben watches it",
       "kind": "review",
-      "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
-      ],
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -192692,7 +192693,8 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "plain": "Check the finished Journey film and its three thumbnails before Ben watches it"
     },
     {
       "id": "J2223",
