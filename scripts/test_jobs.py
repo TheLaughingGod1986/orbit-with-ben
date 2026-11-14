@@ -431,6 +431,11 @@ class MiniOnlyPin(unittest.TestCase):
             pinned = dict(job, mini_only=True)
             self.assertFalse(jobs.macbook_studio_ok(pinned, job["title"] + " " + job["body"]))
             self.assertFalse(jobs.macbook_portable(pinned))
+            board_job = {"id": "J10", "needs": "mini", "kind": "studio", "repo": "owb",
+                         "title": "Board: the Mini cannot read Ben's ticks",
+                         "body": "board_publish.py reads /api/checks and studio-kanban.pages.dev."}
+            self.assertFalse(jobs.macbook_studio_ok(board_job, board_job["title"] + " " + board_job["body"]))
+            self.assertFalse(jobs.macbook_portable(board_job))
 
 
 

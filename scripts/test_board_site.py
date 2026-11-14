@@ -4,18 +4,29 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
-from board_site import site_url
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from board_site import read_url, site_url
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / '05_Analytics/kanban/board_site'
 class BoardSite(unittest.TestCase):
     def test_setting_and_override(self):
+        cfg = json.loads((ROOT / 'studio/board_site.json').read_text())
         with patch.dict(os.environ, {}, clear=True):
-            self.assertEqual(site_url(), json.loads((ROOT / 'studio/board_site.json').read_text())['url'])
-        with patch.dict(os.environ, {'BOARD_SITE_URL': 'https://board.example/'}):
+            self.assertEqual(site_url(), cfg['url'])
+            self.assertEqual(read_url(), cfg.get('readUrl') or cfg['url'])
+        with patch('board_site._config', return_value={'url': 'https://board.oppti.dev'}):
+            with patch.dict(os.environ, {}, clear=True):
+                self.assertEqual(read_url(), 'https://board.oppti.dev')
+        with patch.dict(os.environ, {'BOARD_SITE_URL': 'https://board.example/'}, clear=True):
             self.assertEqual(site_url(), 'https://board.example')
+            self.assertEqual(read_url(), 'https://board.example')
+        with patch.dict(os.environ, {'BOARD_READ_URL': 'https://read.example/', 'BOARD_SITE_URL': 'https://board.example/'}, clear=True):
+            self.assertEqual(site_url(), 'https://board.example')
+            self.assertEqual(read_url(), 'https://read.example')
     def test_host_rules(self):
         spec = importlib.util.spec_from_file_location('site_build', SITE / 'build.py')
         mod = importlib.util.module_from_spec(spec)

@@ -27,7 +27,7 @@ board_publish.py starts it in the background after a run, at most every CHECK_EV
 """
 from __future__ import annotations
 
-from board_site import site_url
+from board_site import read_url, site_url
 
 import argparse
 import datetime as dt
@@ -50,6 +50,7 @@ ROOT = HERE.parent
 STUDIO = channels.studio_checkout()
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 SITE = site_url()
+READ_SITE = read_url()
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 _THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
 THREAD = (_THREAD["repo"], int(_THREAD["number"]))
@@ -82,6 +83,8 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def status_of(url: str, follow: bool = True) -> int:
+    if READ_SITE != SITE and url.startswith(SITE + "/"):
+        url = READ_SITE + url[len(SITE):]
     opener = urllib.request.build_opener() if follow else urllib.request.build_opener(NoRedirect)
     req = urllib.request.Request(url, method="GET", headers={"user-agent": "studio-kanban board_check"})
     try:
@@ -227,6 +230,8 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of, files: dic
     # One scheduled copy per Short slot: a swap's old copy must read back unscheduled (26 Oct 2026: Earth
     # dM1OgGPAYvw and its swap OVLv9dxTcpE both showed "Private, scheduled Mon 26 Oct 11:30").
     problems.extend(duplicate_slots(vids))
+    if (board.get("checksStatus") or {}).get("stale"):
+        problems.append((board.get("checksStatus") or {}).get("message") or "ticks not read")
     code = site_status(SITE + "/", follow=True)
     if code != 200:
         problems.append(f"live site {SITE}/ answers {code or 'no response'}, not 200")

@@ -806,11 +806,12 @@
       return Number.isFinite(at) && now>=at && now-at<=QUIET_MIN*MIN;
     });
     const activeRunning=fresh?running:freshRunning, operationalFresh=fresh || freshRunning.length>0;
-    const degraded=!fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
+    const checksStale=!!((b.checksStatus)||{}).stale;
+    const degraded=checksStale || !fresh || (models.models||[]).some(m=>['red','amber'].includes(m.status));
     const agents=(models.models||[]).filter(m=>AGENTS[m.id] && !String(m.id).startsWith('macbook'));
     const noCapacity=queued.length>0 && agents.length>0 && agents.every(m=>m.status==='red');
     const startupUnconfirmed=all.some(j=>j.phase==='starting'&&jobState(j)==='stalled');
-    const status=!operationalFresh || startupUnconfirmed ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:activeRunning.every(j=>j.phase==='starting')?'Starting':degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
+    const status=!operationalFresh || startupUnconfirmed || (checksStale && !activeRunning.length) ? {text:'Attention needed',tone:'red'} : activeRunning.length ? {text:activeRunning.every(j=>j.phase==='starting')?'Starting':degraded?'Running · Limited':'Running',tone:degraded?'amber':'green'}
       : {text:noCapacity || held.length && !queued.length?'Attention needed':'Waiting',tone:noCapacity || held.length && !queued.length?'red':'amber'};
     return {vs,ready,producing,jobs:all,week:scheduledThisWeek(vs,now),fresh:operationalFresh,running:activeRunning,queued,held,status,startupUnconfirmed};
   }
@@ -1316,6 +1317,14 @@
       <div class="p24-glance-stats"><div><b>${doneToday}</b><span>Done today</span></div><div><b>${left}</b><span>Left to go live</span></div><div><b>${blocked}</b><span>Can't run yet</span></div></div>
     </div>`;
   }
+  function checksStaleBanner(b) {
+    const cs=(b&&b.checksStatus)||{};
+    if(!cs.stale) return '';
+    const raw=cs.lastReadAt||cs.failedSince||'';
+    const hm=cs.sinceHm||(Date.parse(raw)?new Date(Date.parse(raw)).toLocaleTimeString('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit'}):'');
+    const msg=cs.message||(hm?`ticks not read since ${hm}`:'ticks not read');
+    return `<p class="ov-card checks-stale" role="status"><span class="tag amber">⚠ ${esc(msg)}</span> Your approvals stay saved in the store and will show once the Mini reads them again.</p>`;
+  }
   function needsAttentionBanner(b) {
     const p=b&&b.progress24h; if(!p) return '';
     const films=p24WorkingFilms(b);
@@ -1547,6 +1556,7 @@
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
+      ${checksStaleBanner(b)}
       ${needsAttentionBanner(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
@@ -1627,6 +1637,7 @@
     };
     return `<header class="top"><h1>Videos</h1></header>
       <p class="meta">Only UAT needs you. Pass a cut → Passed (ready to schedule). Leave notes → In progress for the agents.</p>
+      ${checksStaleBanner(b)}
       ${routeView()==='producing'?`<p class="list-scope">Producing · ${vs.length} unique videos <a href="#videos">Show all</a></p>`:''}
       <div class="seg">${segs}</div><div class="chips">${chips}</div>
       <label class="sort-control">Sort videos<select id="video-sort"><option value="uat" ${videoSort==='uat'?'selected':''}>Nearest credible UAT</option><option value="updated" ${videoSort==='updated'?'selected':''}>Recently updated</option><option value="stage" ${videoSort==='stage'?'selected':''}>Production stage</option><option value="blocked" ${videoSort==='blocked'?'selected':''}>Waiting first</option></select></label>
@@ -1688,6 +1699,7 @@
     // Two equal summary chips. Not filters — pending stays above; reviewed can collapse but starts open.
     const chips = `<div class="seg two" aria-label="Review counts"><div><b>${needList.length}</b><span>Needs your review</span></div><div><b>${reviewed.length}</b><span>Reviewed</span></div></div>`;
     return `<header class="top"><h1>Review</h1></header><p class="meta">Finished videos only. Everything else is the agents' job.</p>
+      ${checksStaleBanner(b)}
       ${chips}
       ${section("Needs your review", needList.length, need || empty("Nothing to watch right now. You'll get a message when there is."))}
       <details class="reviewed-fold" open><summary>Reviewed <span class="n">${reviewed.length}</span></summary>${done || empty("No reviews yet.")}</details>`;

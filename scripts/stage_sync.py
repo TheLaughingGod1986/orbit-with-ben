@@ -17,7 +17,7 @@ Only todo/doing/review/blocked stages move, never skip. Dry run by default; --ap
 """
 from __future__ import annotations
 
-from board_site import site_url
+from board_site import read_url
 
 import argparse
 import json
@@ -27,7 +27,7 @@ import urllib.request
 import studio
 import channels
 
-CHECKS_URL = site_url() + "/api/checks"
+CHECKS_URL = read_url() + "/api/checks"
 OPEN = ("todo", "doing", "review", "blocked")
 # Stages a later finished stage proves. Thumbnails are made alongside the edit, so only upload proves them.
 PARALLEL = {"thumbs"}

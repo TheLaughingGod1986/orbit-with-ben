@@ -38,7 +38,7 @@ repos at origin/main: ~/_desk/scratch/chief/board-wt/{owb,hos} (small; they shar
 """
 from __future__ import annotations
 
-from board_site import site_url
+from board_site import read_url
 
 import argparse
 import datetime as dt
@@ -53,6 +53,7 @@ import pathlib
 import subprocess
 import sys
 import urllib.request
+from zoneinfo import ZoneInfo
 
 HOME = pathlib.Path.home()
 # No channel is named here (J2615): the registry says which channels are plugged in and where each is checked out.
@@ -64,9 +65,12 @@ STUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
-SITE = site_url()
+SITE = read_url()
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
+CHECKS_STALE_S = 10 * 60  # J2856: flag on the board and alert once when /api/checks reads fail for 10 min
+UA_HEADERS = {"User-Agent": "studio-kanban board_publish"}
+LONDON = ZoneInfo("Europe/London")
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
 FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref moved (local-only inputs, date gates)
 
@@ -370,10 +374,11 @@ def tracker_text() -> str | None:
 
 
 def stamp_version(url: str) -> str | None:
-    """The checks store's change stamp (board/checks/stamp.json, a public Blob URL served from the CDN, so no Blob
-    operation on a cache hit). None when it can't be read; the caller then keeps the hourly re-read."""
+    """The checks store's change stamp (board/checks/stamp.json or /api/checks?stamp=1). None when it can't be read;
+    the caller then keeps the hourly re-read (or starts the J2856 10-minute failure guard)."""
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        req = urllib.request.Request(url, headers=UA_HEADERS)
+        with urllib.request.urlopen(req, timeout=10) as r:
             v = json.loads(r.read().decode()).get("version")
         return v if isinstance(v, str) else None
     except Exception as e:  # noqa: BLE001
@@ -412,6 +417,20 @@ def checks_due(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) ->
     return True
 
 
+def _read_checks_api(at: dt.datetime) -> tuple[dict, str | None, str] | None:
+    try:
+        req = urllib.request.Request(f"{SITE}/api/checks?t={int(at.timestamp())}", headers=UA_HEADERS)
+        with urllib.request.urlopen(req, timeout=15) as r:
+            body = json.loads(r.read().decode())
+        checks = body.get("checks") if isinstance(body, dict) else None
+        if isinstance(checks, dict):
+            v, u = body.get("version"), body.get("stampUrl")
+            return checks, (v if isinstance(v, str) else None), (u if isinstance(u, str) else "")
+    except Exception as e:  # noqa: BLE001 - the site being down must never stop the data
+        log(f"checks not read: {e}")
+    return None
+
+
 def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version, due: bool | None = None) -> tuple[dict, str, dict]:
     """(checks, checksAt, {checksVersion, stampUrl}). Keeps the previous copy when nothing changed or the site is down.
     `due` is checks_due's answer when the caller already asked (so the stamp is read once per run)."""
@@ -419,17 +438,116 @@ def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version, 
             {k: prev[k] for k in ("checksVersion", "stampUrl") if k in prev})
     if not (checks_due(prev, at, force, stamp) if due is None else due):
         return keep
+    got = _read_checks_api(at)
+    if got is None:
+        return keep
+    checks, v, u = got
+    return checks, iso(at), {"checksVersion": v, "stampUrl": u}
+
+
+def london_hm(ts: str) -> str:
+    parsed = _when(ts)
+    return parsed.astimezone(LONDON).strftime("%H:%M") if parsed else ""
+
+
+def checks_status_doc(health: dict, checks_at: str = "") -> dict:
+    """Health block published on board.json (constant when healthy so quiet runs never force a push)."""
+    if not health.get("checksStale"):
+        return {"ok": True, "stale": False}
+    last_ok = health.get("checksOkAt") or checks_at or ""
+    failed_since = health.get("checksFailedSince") or ""
+    hm = london_hm(last_ok or failed_since)
+    msg = f"ticks not read since {hm}" if hm else "ticks not read"
+    return {"ok": False, "stale": True, "lastReadAt": last_ok, "failedSince": failed_since,
+            "sinceHm": hm, "message": msg}
+
+
+def poll_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version) -> tuple[dict, str, dict, dict, bool]:
+    """Every-minute /api/checks poll with J2856 10-minute failure tracking.
+    Returns (checks, checksAt, meta, health, changed)."""
+    prev_failed = prev.get("checksFailedSince") or ""
+    prev_attempt = prev.get("checksAttemptAt") or ""
+    prev_ok = prev.get("checksOkAt") or prev.get("checksAt") or ""
+    prev_stale = bool(prev.get("checksStale"))
+    alerted_for = prev.get("checksAlertedFor") or ""
+    stamp_url = prev.get("stampUrl") or ""
+    host_changed = stamp_url.endswith("/api/checks?stamp=1") and not stamp_url.startswith(SITE + "/")
+    retry_due = bool(prev_failed) and (force or _age(prev_attempt, at) >= CHECKS_MIN_GAP_S)
+    stamp_called = False
+    stamp_ok = False
+
+    def tracked_stamp(url: str) -> str | None:
+        nonlocal stamp_called, stamp_ok
+        stamp_called = True
+        v = stamp(url)
+        stamp_ok = v is not None
+        return v
+
+    if force or retry_due or host_changed:
+        due = True
+    elif prev_failed:
+        due = False
+    else:
+        due = checks_due(prev, at, False, tracked_stamp)
+        if not due and stamp_called and not stamp_ok:
+            due = True
+
+    keep_checks = prev.get("checks") or {}
+    keep_at = prev.get("checksAt") or ""
+    keep_meta = {k: prev[k] for k in ("checksVersion", "stampUrl") if k in prev}
+
+    if not due:
+        if stamp_called and stamp_ok:
+            health = {"checksOkAt": iso(at), "checksFailedSince": "", "checksAttemptAt": "",
+                      "checksStale": False, "checksAlertedFor": ""}
+        else:
+            stale = bool(prev_failed and _age(prev_failed, at) >= CHECKS_STALE_S)
+            health = {"checksOkAt": prev_ok, "checksFailedSince": prev_failed, "checksAttemptAt": prev_attempt,
+                      "checksStale": stale, "checksAlertedFor": alerted_for}
+        changed = bool(health["checksStale"]) != prev_stale or (
+            bool(health["checksStale"]) and alerted_for != health["checksFailedSince"]
+        )
+        return keep_checks, keep_at, keep_meta, health, changed
+
+    got = _read_checks_api(at)
+    if got is not None:
+        checks, v, u = got
+        now_iso = iso(at)
+        meta = {"checksVersion": v, "stampUrl": u}
+        health = {"checksOkAt": now_iso, "checksFailedSince": "", "checksAttemptAt": "",
+                  "checksStale": False, "checksAlertedFor": ""}
+        changed = checks != keep_checks or prev_stale or meta != keep_meta
+        return checks, now_iso, meta, health, changed
+
+    failed_since = prev_failed or iso(at)
+    stale = _age(failed_since, at) >= CHECKS_STALE_S
+    health = {"checksOkAt": prev_ok, "checksFailedSince": failed_since, "checksAttemptAt": iso(at),
+              "checksStale": stale, "checksAlertedFor": alerted_for}
+    changed = stale != prev_stale or (stale and alerted_for != failed_since)
+    return keep_checks, keep_at, keep_meta, health, changed
+
+
+def alert_checks_stale(status_doc: dict) -> bool:
+    """Post one [Chief] alert to the studio thread when /api/checks has failed for >=10 min. Never starts with [Ben]."""
+    msg = status_doc.get("message") or "ticks not read"
+    failed = status_doc.get("failedSince") or "unknown"
+    text = (f"[Chief] board-publish: {msg} (/api/checks reads from {SITE} have failed for 10+ minutes, "
+            f"since {failed}; Ben's ticks stay saved in the store until reads recover).\n")
+    assert not text.lstrip().startswith("[Ben]")
+    alert_file = STATE / "checks_alert.md"
     try:
-        with urllib.request.urlopen(f"{SITE}/api/checks?t={int(at.timestamp())}", timeout=15) as r:
-            body = json.loads(r.read().decode())
-        checks = body.get("checks") if isinstance(body, dict) else None
-        if isinstance(checks, dict):
-            v, u = body.get("version"), body.get("stampUrl")
-            return checks, iso(at), {"checksVersion": v if isinstance(v, str) else None,
-                                     "stampUrl": u if isinstance(u, str) else ""}
-    except Exception as e:  # noqa: BLE001 - the site being down must never stop the data
-        log(f"checks not read: {e}")
-    return keep
+        STATE.mkdir(parents=True, exist_ok=True)
+        alert_file.write_text(text)
+        script = pathlib.Path(__file__).resolve().parent / "studio_thread.py"
+        r = subprocess.run([sys.executable, str(script), "post", "-f", str(alert_file)],
+                           capture_output=True, text=True, timeout=60)
+        if r.returncode == 0:
+            log(f"alerted studio thread: {msg}")
+            return True
+        log(f"checks alert not posted: {(r.stderr or r.stdout).strip()[:160]}")
+    except Exception as e:  # noqa: BLE001
+        log(f"checks alert failed: {e}")
+    return False
 
 
 def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dict, dict]:
@@ -671,15 +789,17 @@ def run_once(a) -> int:
     except (OSError, ValueError):
         prev = {}
     key = None if a.force else quick_key()
-    due = checks_due(prev, at, a.force)
-    if not a.force and not a.dry_run and skip_quick(prev, key, at, due):
+    checks, checks_at, checks_meta, health, checks_changed = poll_checks(prev, at, a.force)
+    if not a.force and not a.dry_run and skip_quick(prev, key, at, checks_changed):
+        if any(prev.get(k) != v for k, v in health.items()):
+            prev_path.write_text(json.dumps({**prev, **checks_meta, **health}, indent=1))
         if not a.quiet:
             print("unchanged (quick check)")
         return 0
     docs = build(STATE / "out")
-    checks, checks_at, checks_meta = fetch_checks(prev, at, a.force, due=due)
     docs = refresh_tracker(docs, checks)
     board, hashes = assemble(docs, prev, checks, at)
+    board["checksStatus"] = checks_status_doc(health, checks_at)
     try:  # Models row + acting Chief (Ben, 24 Oct 23:40); never blocks the board push
         board["models"] = models_status(at, (docs.get(QUEUE) or {}).get("jobs") or [])
     except Exception as e:  # noqa: BLE001
@@ -705,7 +825,7 @@ def run_once(a) -> int:
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
-    return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, checks_meta)
+    return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
 
 
 def add_channels(board: dict) -> None:
@@ -748,6 +868,9 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
     if a.dry_run:
         print(f"dry run: {summary}; would {'push' if whole != prev.get('whole') or a.force else 'skip (unchanged)'}")
         return 0
+    if checks_meta.get("checksStale") and checks_meta.get("checksAlertedFor") != checks_meta.get("checksFailedSince"):
+        if alert_checks_stale(board.get("checksStatus") or {}):
+            checks_meta = {**checks_meta, "checksAlertedFor": checks_meta.get("checksFailedSince") or ""}
     built = {"key": key, "built": iso(at)} if key else {"built": iso(at)}
     if whole == prev.get("whole") and not a.force:
         seen = {"checks": checks, "checksAt": checks_at, **checks_meta}
