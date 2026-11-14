@@ -247039,9 +247039,14 @@
           "at": "2026-11-14T04:45Z",
           "by": "codex",
           "what": "step 3 of 4 done: Initial production acceptance failed: repeated timestamps across 312 films made a 31257-byte delta, clearing history. Correction reduces the captured delta to 3373 bytes; seven parity tests pass. Corrective PR 915 awaits CI; no final completion claimed."
+        },
+        {
+          "at": "2026-11-14T04:49Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PRs 914 and corrective 915 merged and Pages deployed. Tests/CI pass; production 304 verified. Live routine 312-film timestamp delta compacted from 31257 to 3373 bytes. Meaningful workflow/job-history replacements can still exceed the bounded window and safely fetch a full snapshot, so actual clean ten-minute traffic remains mandatory. Detached tmux J2798-corrected-traffic waits for preceding capture and compacted history; result/log/done in local desk logs/J2798-live-corrected.*."
         }
       ],
-      "remaining_action": "Correcting the live timestamp overflow and repeating production traffic measurement",
+      "remaining_action": "Waiting for the corrected ten-minute live traffic capture, then checking acceptance",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247049,9 +247054,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T04:45Z",
+        "at": "2026-11-14T04:49Z",
         "by": "codex",
-        "note": "Initial production acceptance failed: repeated timestamps across 312 films made a 31257-byte delta, clearing history. Co"
+        "note": "PRs 914 and corrective 915 merged and Pages deployed. Tests/CI pass; production 304 verified. Live routine 312-film time"
       }
     },
     {
