@@ -225244,7 +225244,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Not started, on purpose (14 Nov 12:55Z). The only thing keeping the dry run of the move at 1 is Orbit's spend ledger (38 places, 05_Analytics/ai_spend/ledger.jsonl). That file is appended to by the Mini's picture runner, and a rewrite while the runner holds uncommitted rows could block the Mini's queue writes (AGENTS.md, 5 Nov). So it needs a verified quiet window: no picture run going and the Mini's ledger rows committed. Also one History of Science pull request at a time, and PR 585 is open there. Plan: first check the Mini heartbeat and the flow lock for a quiet spell, then replace each address in the ledger notes with its role through a script that keeps every other byte, check ai_spend.py reads it, and merge. Next look 17:50.",
+      "result": "Waiting for: Orbit's spend ledger step is built: orbit-with-ben PR 935 (14 Nov 17:55Z), 38 addresses replaced by 'the studio Ultra account', every other byte unchanged, dry run built from it reads 0. The Mini was idle. Waiting for CI, then I merge and record the day's dry run (the seven-day count starts then). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, through ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal and the planned history-rewrite window, which Ben is told about the day before.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -225325,16 +225325,21 @@
           "at": "2026-11-14T12:54Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T17:40:00Z"
+        },
+        {
+          "at": "2026-11-14T17:56Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T21:40:00Z"
         }
       ],
-      "remaining_action": "At a quiet window, take the addresses out of the spend ledger and check ai_spend.py still reads it",
+      "remaining_action": "Merge PR 935, record the dry run at zero, then start History of Science's own files",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Not started, on purpose (14 Nov 12:55Z). The only thing keeping the dry run of the move at 1 is Orbit's spend ledger (38 places, 05_Analytics/ai_spend/ledger.jsonl). That file is appended to by the Mini's picture runner, and a rewrite while the runner holds uncommitted rows could block the Mini's queue writes (AGENTS.md, 5 Nov). So it needs a verified quiet window: no picture run going and the Mini's ledger rows committed. Also one History of Science pull request at a time, and PR 585 is open there. Plan: first check the Mini heartbeat and the flow lock for a quiet spell, then replace each address in the ledger notes with its role through a script that keeps every other byte, check ai_spend.py reads it, and merge. Next look 17:50.",
-        "check_at": "2026-11-14T17:40:00Z"
+        "condition": "Orbit's spend ledger step is built: orbit-with-ben PR 935 (14 Nov 17:55Z), 38 addresses replaced by 'the studio Ultra account', every other byte unchanged, dry run built from it reads 0. The Mini was idle. Waiting for CI, then I merge and record the day's dry run (the seven-day count starts then). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, through ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal and the planned history-rewrite window, which Ben is told about the day before.",
+        "check_at": "2026-11-14T21:40:00Z"
       }
     },
     {
