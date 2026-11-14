@@ -192659,13 +192659,13 @@
       "stage": "edit",
       "after": "J2221",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T10:18Z",
-      "eta": "2026-11-14T12:18Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "",
+      "result": "Completed v03 review in jobs/reviews/J2222/REVIEW.md (fd789925ca) and j01_v03_pack/REVIEW.md. Final encoded J01_Journey_v03.mp4 (3502.30s, 84055 frames, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32) measured at -14.0 LUFS (-14.02 LUFS input_i) and -0.75 dBTP (LRA 4.1 LU); decode exit 0, 17.86s (~18s) end hold after last word at 3484.44s. Verified all 7 joins, single subscribe beat in Part 1 (03:37.56) with 0 in Parts 2-7, 7 chapter cards, 7 outward distance maps, sfx_kit level PASS (-16.7 LUFS VO / -44.1 LUFS SFX, linking music ducked -15.5 dB), reconstructed score provenance (j01_journey_laid_score_v02.wav, 3502.38s, 0fd2c87674..., longest gap 3.9s, music_gate PASS), 13 iCloud-evicted UAT comparison warnings, 80.0 BPM first-120s readout vs brief 66-70 BPM (waiver covers reused only), all 15 picture_qa macro-row warnings + 22-row polish metrics (53:37 mean luma 44.55, 0 seams), and 3 thumbnails PASS at 1920x1080 and 168x94. No worker audio/motion perception claimed; uploaded 720p R2 watch proxy owb-j01-v03 and queued Ben watch (awaits_ben); no upload or scheduling.",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -192731,6 +192731,11 @@
           "at": "2026-11-14T11:05Z",
           "by": "gemini",
           "what": "waits on Ben: Watch the finished 58-minute Journey Film 01 (J01_Journey_v03.mp4) and approve the 3 thumbnails (thumb_A, thumb_B, thumb_C)"
+        },
+        {
+          "at": "2026-11-14T11:05Z",
+          "by": "gemini",
+          "what": "done: Completed v03 review in jobs/reviews/J2222/REVIEW.md (fd789925ca) and j01_v03_pack/REVIEW.md. Final encoded J01_Journey_v03.mp4 (3502.30s, 84055 frames, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32) measured at -14.0 LUFS (-14.02 LUFS input_i) and -0.75 dBTP (LRA 4.1 LU); decode exit 0, 17.86s (~18s) end hold after last word at 3484.44s. Verified all 7 joins, single subscribe beat in Part 1 (03:37.56) with 0 in Parts 2-7, 7 chapter cards, 7 outward distance maps, sfx_kit level PASS (-16.7 LUFS VO / -44.1 LUFS SFX, linking music ducked -15.5 dB), reconstructed score provenance (j01_journey_laid_score_v02.wav, 3502.38s, 0fd2c87674..., longest gap 3.9s, music_gate PASS), 13 iCloud-evicted UAT comparison warnings, 80.0 BPM first-120s readout vs brief 66-70 BPM (waiver covers reused only), all 15 picture_qa macro-row warnings + 22-row polish metrics (53:37 mean luma 44.55, 0 seams), and 3 thumbnails PASS at 1920x1080 and 168x94. No worker audio/motion perception claimed; uploaded 720p R2 watch proxy owb-j01-v03 and queued Ben watch (awaits_ben); no upload or scheduling."
         }
       ],
       "remaining_action": "Queue Ben watch (awaits_ben) and close J2222 review",
@@ -192769,7 +192774,8 @@
         "title": "From Earth to Orion: A 600-Light-Year Space Journey",
         "number": "J01",
         "type": "long"
-      }
+      },
+      "done_ref": "fd789925ca"
     },
     {
       "id": "J2223",
