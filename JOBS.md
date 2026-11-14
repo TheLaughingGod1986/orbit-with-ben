@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2404, J2797, J2831, J2860, J2864, J2866.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2404, J2797, J2831, J2864, J2866.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -87,7 +87,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
 | J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
-| J2860 | mini | claimed | macbook | 2026-11-15T01:19Z | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
@@ -101,6 +100,7 @@ Recently finished:
 
 - J2863 done: Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes (PR #938 open: prepared 'Every Planet Explained in 10 Minutes (Mercury to Neptune)' (OWB:064) format test go/no-go (25/25; 'every planet explained' 20,191 searches/mo at 45/100 comp; 172.8K/68K/35K/10.8K small-channel breakouts; NatGeo 12.4M, Astrum 9.28M, NASA JPL 5.81M, Secrets of the Universe 3.85M neighbours), per-planet shelf audit (6 of 8 planets already have finished OWB long masters on disk: Venus 023, Earth 027/031, Mars 025, Jupiter 020, Saturn 021, Uranus 033; all 8 have verified SOURCES.md tables including Mercury 036/044 and Neptune 035; 80-85% shelf reuse, £0 cash, 0 Flow/Vertex credits, ~8k ElevenLabs chars, ~5h build after lock), 3 search-led titles <=70 chars, 3 thumbnail concepts (ALL 8 WORLDS, 464°C TO -224°C, REAL NASA PHOTOS), proposed Wed 16 Dec or Sun 20 Dec 18:00 slot (moves zero dated films), and OWB:064 card on Ben's board.)
 - J2862 cancelled: Verify condition for J2855 ()
+- J2860 done: Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on (PR #940 open against main. Diagnosed mixed-profile avc1 stream-concat encode fault at 97:38 (Ch XII 026 Nearest Star @ 07:55.8, plus same -crf 0 High 4:4:4 Predictive profile mismatch in Ch XI 024 & Ch XIII 019; Ch I-X had 0 faults). Rebuilt Ch XI-XIII + joins 10-12 in High profile -> sleep_video_01_master_v02.mp4 on NAS (4,216,695,410 B, 195,070 frames, 6502.333333s, sha256 e6f1064dc83b2c48bb05898f90139a4a250da2b316d3d3086699518379481ec0; v01 untouched). Whole-master VideoToolbox vs SW MAD=0.0, polish_gate/picture_qa PASS, join sound & single bed PASS, darkening 0.852/0.867/0.852 PASS. Updated SLEEP01 card (J2452 awaits_ben -> 73s 97:20 before/after reel + screenshot sheets in j2860_v02/) and wrote 11_Upload-Package/PACKAGE_MANIFEST_v02.json for J2861.)
 - J2859 done: Listings for the two long films from research on channels that do this: search-led titles, first lines and tags (PR #937 (macbook/J2859, commit 3b460ab6f): (1) Journey film (02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package/) updated with v02 files beside v01 — Titles/j01_titles_v02.txt (Side A 'Space Documentary: A Calm 600-Light-Year Journey From Earth' 59c; Held B 'Relaxing Space Documentary: From Earth to Betelgeuse in 58 Minutes' 66c; Held C 'A Calm Journey From Venus to a Dying Star' 41c; no 'for sleep'), Descriptions/j01_description_v02.txt (4568c / 4650B with search-led opening 2 lines, opening paragraph, 9 chapters, 7 film links, Sources, Image credits, Pictures/Facts, and #spacedocumentary #spacejourney #astronomy), Tags/j01_tags_v02.txt (17 tags, 296c < 500c), PACKAGE_MANIFEST.json pointed at v02, and youtube:package --dry-run PASS (ok:true, PACKAGE_UPLOAD_RESULT_2026-11-14T22-10-41-877Z.json). Handoff to J2857: upload with v02 listing, set Side A first, hold B/C for a later title test, keep 3-way thumbnail Test & Compare unchanged. (2) Sleep film (02_Video-Projects/_sleep_video_01/, 108m Moon to Andromeda) drafted in git and copied with verified SHA-256 beside /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v01.mp4 (sleep_video_01_listing_v01.md + 11_Upload-Package/): Side A 'Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda' (70c), Held B/C (64c/57c), description verified against J2452 build reports (108m22s, 60s ramp at 19:30-20:30 to 85% brightness, -20.1 LUFS / zero SFX / single soft bed, 13 quiet chapters 0:00-1:37:58, 13 film links, Sources, Image credits, Pictures/Facts, #spaceforsleep #sleepdocumentary #spacedocumentary), and 18 tags (373c < 500c). All 6 titles <=70c, start with plain phrase, no hashtag, 0 exact matches on public YouTube search (evidence_2026-11-14_public_search.json); no 'no ads' or 'no AI'; £0 spend.)
 - J2856 done: Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on (PR #936 (CI green, 04bafbd78; left open for Chief merge per worker rules): fixed Cloudflare 403 error 1010 on /api/checks with User-Agent header, added readUrl (studio-kanban.pages.dev for server reads while keeping board.oppti.dev for Ben's links), added tested 10-min 'ticks not read since HH:MM' guard + one-time [Chief] alert, recorded Ben's J2222 v03 OK (all 3 thumbs A/B/C) + queued J01 Private upload J2857 (verified live on board-data e41acb8dc in Passed), queued Mini lookup check J2858, and reported sleep-film J2452 v01 status on thread.)
 - J2855 done: HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) (v05 salon PASS (desk 6885137818, Claude 6885141620). All 5 checks YES. hos_008_master_v05.mp4 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. v04 untouched (mtime 14 Nov 13:49). J2243 reviews v05 only.)
@@ -116,21 +116,3 @@ Verdict: UNKNOWN
 
 Do now
   - Read it again from tomorrow morning's snapshot.)
-- J2848 done: First-day check at 6 h: "How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) ("How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) · Orbit With Ben · Short · went live Sat 14 Nov 11:30 London
-At 6 h: views 1033 · Studio rank 2 of 10 · shown in feed no figure yet · stayed to watch 50.7% · average viewed 106.8%
-Usual for this channel: stayed to watch 32.0%, average viewed 65.4%
-
-Verdict: AHEAD
-  - 1033 views at 6 h; the last 3 checked at the same age had 19 (median).
-  - 1033 views at 6 h; Studio says the usual for us at this age is 810.
-  - Studio ranks it 2 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - The title starts with "How", like 4 earlier Shorts: they had 215 views by the next morning (median), against 78 for all Shorts.
-  - It is a second upload of the same video (it replaced bSjWiCbB7pY).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
