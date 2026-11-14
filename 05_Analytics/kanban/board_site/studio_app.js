@@ -19,8 +19,9 @@
   const oldRef = () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(DATA_REF, { cache: "no-cache" }))
     .catch(() => fetch(DATA_REF, { cache: "no-cache" }));
   const refFetch = () => elsewhere(own("f=ref", "no-cache"), oldRef);
-  const boardFetch = sha => elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+  const fullBoardFetch = sha => elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
     () => fetch(sha ? DATA_AT(sha) : DATA + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
+  const boardFetch = sha => window.__boardUpdates ? window.__boardUpdates(sha, own, fullBoardFetch) : fullBoardFetch(sha);
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
   const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];

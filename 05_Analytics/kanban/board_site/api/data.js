@@ -23,12 +23,14 @@
 // commit gets the current one, marked not to be kept. So nobody can spend the token's allowance by inventing commits.
 //
 // The repo is env BOARD_DATA_REPO (owner/name); until the move it is orbit-with-ben.
+import { createHash } from "node:crypto";
 import { benAuth } from "../benauth.js";
 
 export const DEFAULT_REPO = "TheLaughingGod1986/orbit-with-ben";
 export const FILES = {
   ref: { branch: "board-data" },
   board: { branch: "board-data", path: "board.json", pinned: true },
+  updates: { branch: "board-data", path: "updates.json", pinned: true },
   tracker: { branch: "board-data", path: "tracker.json", pinned: true },
   macbook: { branch: "macbook-heartbeat", path: "heartbeat.json" },
 };
@@ -91,7 +93,7 @@ async function readFile(repo, path, ref, env, open) {
   const body = await r.text();
   // Reject obvious error pages without parsing the large board file on the free Function CPU budget.
   if (!/^\s*[\[{]/.test(body)) throw new Error("GitHub answered with something that is not the file");
-  return { body, etag: `"${SHA.test(ref) ? ref : "b"}-${path}-${body.length}"`, type: "application/json; charset=utf-8" };
+  return { body, etag: `"${createHash("sha256").update(body).digest("hex")}"`, type: "application/json; charset=utf-8" };
 }
 
 async function holdFor(key, seconds, now, load) {
@@ -142,7 +144,7 @@ export default async function handler(req, res) {
     res.setHeader("Cache-Control", kind === "moved" ? "no-store" : cacheHeader(open, kind));
     if (!open) res.setHeader("Vary", "Cookie, x-board-key");
     res.setHeader("ETag", got.etag);
-    if (String((req.headers || {})["if-none-match"] || "") === got.etag) return res.status(304).end();
+    if (String((req.headers || {})["if-none-match"] || "").split(",").some(tag => tag.trim().replace(/^W\//, "") === got.etag || tag.trim() === "*")) return res.status(304).end();
     res.setHeader("Content-Type", got.type);
     return res.status(200).send(req.method === "HEAD" ? "" : got.body);
   } catch (e) {
