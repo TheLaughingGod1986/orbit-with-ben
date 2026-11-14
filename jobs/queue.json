@@ -252367,13 +252367,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-14T21:21Z",
-      "eta": "2026-11-14T23:21Z",
+      "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-14T19:28Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-14T19:28Z",
@@ -252419,6 +252419,11 @@
           "at": "2026-11-14T21:59Z",
           "by": "cursor",
           "what": "step 5 of 5 done: v05 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. Sheets posted on the HOS desk as 6884841356. No pass."
+        },
+        {
+          "at": "2026-11-14T21:59Z",
+          "by": "cursor",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Post the salon stills for the next look",
@@ -252436,7 +252441,8 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "done_ref": "6884841356"
     },
     {
       "id": "J2855",

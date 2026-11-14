@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2854, J2855, J2859, J2860.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2855, J2859, J2860.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -89,7 +89,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
 | J2850 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
 | J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
-| J2854 | mini | claimed | cursor | 2026-11-14T23:21Z | 008 edit · assembly · HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) | 6882919446 |
 | J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 | J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
@@ -99,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J2856 done: Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on (PR #936 (CI green, 04bafbd78; left open for Chief merge per worker rules): fixed Cloudflare 403 error 1010 on /api/checks with User-Agent header, added readUrl (studio-kanban.pages.dev for server reads while keeping board.oppti.dev for Ben's links), added tested 10-min 'ticks not read since HH:MM' guard + one-time [Chief] alert, recorded Ben's J2222 v03 OK (all 3 thumbs A/B/C) + queued J01 Private upload J2857 (verified live on board-data e41acb8dc in Passed), queued Mini lookup check J2858, and reported sleep-film J2452 v01 status on thread.)
+- J2854 done: HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) (done)
 - J2853 done: Verify condition for J2614 (Verified J2614 review evidence and Chief ruling 6882919446 (jobs/reviews/J2853/REVIEW.md @ 921043ba87): J2854 (v05 salon re-splice 2506..2665) and J2855 (v05 salon sheet check) are queued; recorded dependency hold on J2614 (--recheck J2853, check_at 2026-11-15T06:00:00Z) awaiting J2854/J2855 completion and Chief PASS so J2243 stays held off v04.)
 - J2851 done: Verify condition for J2831 (Chief ruling (gemini, elected acting Chief): CONDITION PROVEN SATISFIED for J2831 (jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe). In-memory check confirmed GitHub issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) contains the exact 24-character nonce from ~/.config/studio-kanban/ben_pair_link, and Ben's linked iPhone Approve button recorded OWB-J2222 (verdict: ok) and posted [Ben] OK J2222 v03 on #478 (#6882810716, #6882823558). Reopened J2831 for Cursor step 4/4 cleanup: delete only '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' and confirm on #478.)
 - J2849 done: First-day check at 48 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) ("How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) · History of Science · long · went live Thu 12 Nov 18:00 London
@@ -132,4 +132,3 @@ Carry forward
 - J2841 done: Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) (done)
 - J2840 done: Packaging panel (codex): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) (Single change: rebuild the m09jUdwC5hk thumbnail on a real Cassini Saturn photo with RINGS: GONE instead of the cyan Helix smudge and ALL STARS FADE. Also: JWST B loupe shows a lensed arc that is not a 300-million-year galaxy (fix before arming); Fermi ZERO SIGNALS B is ready after seam clean-up.)
 - J2839 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (64 videos, 0 errors (36 public [7 longs + 29 Shorts, incl. newly public cLKDiYP55J8 & ETynHpIYLeY] + 6 scheduled [1 long + 5 Shorts] + 22 private); 7/7 public longs end screens and 29/29 public Shorts Related PASS; 0 fixes needed (HOS PR #592, c8fdd7bf, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-14.md))
-- J2838 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass on the last 10 live public OWB videos at 2026-11-14T17:48Z (following RT-ec4_GcOk 11:30Z release; Related=Js6EQJ8qDi8, chapters, Sources, end screens and Related links all verified; 0 fixes needed; nothing changed in Studio). Updated 05_Analytics/live_fixes/2026-11-14.md in PR #934.)
