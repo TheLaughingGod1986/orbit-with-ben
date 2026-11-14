@@ -246565,20 +246565,30 @@
           "at": "2026-11-14T00:42Z",
           "by": "codex",
           "what": "step 0 of 4 done: Plan: inspect references, centralise settings and update docs, test and deploy, merge and report."
+        },
+        {
+          "at": "2026-11-14T00:45Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Found deployed migration in PR 858, reused it; stale live-data mentions originate in queue notes, not watch URLs. WATCH_OK gates only explicit hand-set links."
+        },
+        {
+          "at": "2026-11-14T00:46Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Shared setting and docs updated; stale-address guard passes; static and API search headers implemented. Migration branch retained without changing tokens, store, R2 or open taps."
         }
       ],
-      "remaining_action": "Checking every place that uses the Studio board address",
+      "remaining_action": "Verifying the board fix and preparing its release",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T00:42Z",
+        "at": "2026-11-14T00:46Z",
         "by": "codex",
-        "note": "Plan: inspect references, centralise settings and update docs, test and deploy, merge and report."
+        "note": "Shared setting and docs updated; stale-address guard passes; static and API search headers implemented. Migration branch"
       }
     },
     {
