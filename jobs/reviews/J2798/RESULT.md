@@ -84,3 +84,48 @@ The branch-read capture exited 0 but still failed: / used 1,134,292 bytes in ten
 Compress the edit history on the publisher using deterministic gzip, in a schema-2 base64 JSON envelope capped at 14,000 bytes, retaining up to 120 revisions. Browser DecompressionStream decodes it before the existing exact replay. The function still performs no JSON parsing or compression. Missing browser support or corrupt/missed updates falls back to the full snapshot; older tabs also fall back and receive the normal version reload. Exact snapshots, cards, counts, authentication and approval writes remain unchanged. The smaller wire cap leaves room for heartbeat/version headers within the 20 KB/min goal.
 
 Validation: 9 publisher/browser parity tests (including 30 frequent live-sized publishes), 37 publisher/build tests, 19 API tests passed (4 dependency-probe browser skips), JS client gzip/recovery and Studio regression suites passed; site build and whitespace checks passed. Production acceptance remains pending; no claim of completion. Chief review KEEP for this correction, subject to CI and real-browser rollout measurement.
+
+
+## Worker follow-up: stale CDN responses, 14 November 08:35 UTC
+
+Acceptance remains unmet. The completed packed production capture exited 0: `/` transferred
+1,464,280 bytes in ten minutes (146,428/min), `/tracker` 15,081 (1,508.1/min).
+Phone-profile first render: 800 ms and 612 ms respectively. Neither page reported a JavaScript error.
+The board downloaded six full snapshots including its initial load; tracker reference reads intermittently
+returned 502, although tracker transfer stayed within budget.
+
+The completed packed fixture also exited 0, but its board totals were invalid acceptance evidence:
+21,370,656 idle bytes and 21,380,958 one-film-change bytes, versus tracker 7,902/8,020.
+The harness serialized snapshots with JavaScript and omitted the publisher's trailing newline, so
+its ETag could never match the publisher snapshot hash. The correction uses the exact Python serializer
+and raises the child output buffer for the full-sized snapshot.
+
+A fresh instrumented production Chrome session demonstrated a separate failure. The update revision
+advanced, then the next response supplied an older revision already seen by that session. Its full-snapshot
+fallback returned a newer board than the stale update hash; revision assignment was therefore cleared.
+This is consistent with independent CDN stale-while-revalidate responses, rather than a broken edit chain:
+the captured histories had no chain breaks and browser gzip decoding succeeded.
+
+Correction for Chief review: include the snapshot publication timestamp in the small update envelope.
+When an update predates the browser's current snapshot, retain the current snapshot and retry the usual
+minute poll. A newer update still replays normally. Missing timestamps retain the existing fallback, so
+older publisher payloads remain compatible. The Function still passes raw bytes without parsing JSON,
+and authentication, approval storage, R2 and open taps are untouched.
+
+Validation: 10 publisher/browser parity tests, 37 publisher tests and 19 API tests passed; four existing
+API browser-probe tests skipped. JavaScript transport regressions passed, including a stale response
+followed by a fresh edit without another snapshot download. Site build and whitespace check passed.
+No new deployment, merge, final OK or acceptance PASS was made by this worker.
+
+Two fresh captures run detached: `J2798-live-current` measures the existing deployed version for ten
+minutes; `J2798-fixture-exact-v2` measures ten idle plus ten one-film-change minutes using exact publisher
+bytes. Their local desk log basenames match the tmux names (with `.log`, `.json`, `.done`); missing done
+means still running and must not be duplicated. The first exact-fixture attempt exited before browser
+startup because its child output exceeded Node's default buffer; v2 fixes that. Production acceptance
+for the timestamp correction requires Chief review/merge/deployment and a new ten-minute measurement.
+
+Required low-disk offload ran; nothing was old enough to move. No NAS content was deleted.
+
+Real Chrome authentication rechecked against the corrected build: private signed-in and public pages
+rendered; private signed-out pages requested sign-in. Zero direct browser GitHub requests in all three
+scenarios. Correction submitted as PR #924, commit 5dfaf25d3a. Chief review/merge/deployment required.

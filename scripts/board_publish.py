@@ -537,7 +537,7 @@ def updates_payload(board, previous, history, tracker):
                       "fromEtag": hashlib.sha256(previous_bytes.encode()).hexdigest(),
                       "ops": compact_edits(board_diff(previous, board))})
     snapshot = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
-    result = {"schema": 1, "revision": revision, "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-120:]}
+    result = {"schema": 1, "revision": revision, "publishedAt": board.get("publishedAt", ""), "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-120:]}
     packed = pack_updates(result)
     while result["edits"] and len(json.dumps(packed, separators=(",", ":")).encode()) > 14000:
         result["edits"].pop(0)

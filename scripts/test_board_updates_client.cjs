@@ -36,7 +36,19 @@ async function run() {
   await window.__boardUpdates('',own,full);
   assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,7);
   assert.equal(reads,1,'independently cached branch files recover through exact snapshot hash');
+  // A stale CDN update must neither rewind a newer snapshot nor trigger a full read.
+  eval(source); reads=0;
+  snapshot={heartbeat:5,publishedAt:'2026-11-14T08:02:00Z'};
+  update={schema:1,revision:'fresh',snapshotEtag:'snapshot-one',publishedAt:snapshot.publishedAt,edits:[]};
+  await window.__boardUpdates('',own,full);
+  update={schema:1,revision:'older',publishedAt:'2026-11-14T08:01:00Z',edits:[]};
+  assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,5);
+  assert.equal(reads,1,'stale CDN history must not download a full snapshot');
+  update={schema:1,revision:'newer',publishedAt:'2026-11-14T08:03:00Z',edits:[{from:'fresh',to:'newer',ops:[['set',['heartbeat'],6],['set',['publishedAt'],'2026-11-14T08:03:00Z']]}]};
+  assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,6);
+  assert.equal(reads,1,'fresh updates still replay after a stale response');
   // Actual gzip envelope, including recovery if decompression fails.
+  snapshot={heartbeat:3};
   eval(source); reads=0;
   const {gzipSync} = require('node:zlib');
   const packed = value => ({schema:2,encoding:'gzip-base64',payload:gzipSync(JSON.stringify(value)).toString('base64')});
