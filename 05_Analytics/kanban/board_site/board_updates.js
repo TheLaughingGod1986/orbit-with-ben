@@ -36,6 +36,11 @@
         const response = await own("f=updates", "no-cache");
         if (response.ok) {
           update = await response.json();
+          if (update.schema === 2 && update.encoding === "gzip-base64") {
+            const bytes = Uint8Array.from(atob(update.payload), c => c.charCodeAt(0));
+            const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+            update = await new Response(stream).json();
+          }
           commit = ""; // Branch reads avoid the rate-limited GitHub commit lookup.
           if (update.schema !== 1 || !Array.isArray(update.edits)) update = null;
         }

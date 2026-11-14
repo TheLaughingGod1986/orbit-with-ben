@@ -30,6 +30,18 @@ async function run() {
   const recovered=await (await window.__boardUpdates('',own,full)).json();
   assert.equal(reads,2,'mismatched snapshot requires a fresh full read');
   assert.equal(recovered.heartbeat,3,'never apply edits to a different snapshot');
+  // Actual gzip envelope, including recovery if decompression fails.
+  eval(source); reads=0;
+  const {gzipSync} = require('node:zlib');
+  const packed = value => ({schema:2,encoding:'gzip-base64',payload:gzipSync(JSON.stringify(value)).toString('base64')});
+  update=packed({schema:1,revision:'packed1',snapshotEtag:'snapshot-one',edits:[]});
+  await window.__boardUpdates('',own,full);
+  update=packed({schema:1,revision:'packed2',edits:[{from:'packed1',to:'packed2',ops:[['set',['heartbeat'],4]]}]});
+  assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,4);
+  assert.equal(reads,1,'gzip updates replay without a full download');
+  update={schema:2,encoding:'gzip-base64',payload:'corrupt'};
+  assert.equal((await (await window.__boardUpdates('',own,full)).json()).heartbeat,3);
+  assert.equal(reads,2,'invalid gzip falls back safely');
   assert.throws(()=>window.__applyBoardEdits({},[['set',['__proto__','polluted'],true]]),/Unsafe/);
   console.log('Board update chain, UI isolation, missed-window fallback and sign-in checks OK');
 }

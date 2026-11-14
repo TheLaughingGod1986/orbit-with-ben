@@ -509,18 +509,37 @@ def compact_edits(ops):
     return compact
 
 
+def unpack_updates(history):
+    """Publisher-side decoding; the request function still only passes bytes through."""
+    if (history or {}).get("schema") == 2:
+        import base64
+        import gzip
+        return json.loads(gzip.decompress(base64.b64decode(history["payload"])))
+    return history or {}
+
+
+def pack_updates(payload):
+    import base64
+    import gzip
+    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
+    return {"schema": 2, "encoding": "gzip-base64",
+            "payload": base64.b64encode(gzip.compress(body, mtime=0)).decode()}
+
+
 def updates_payload(board, previous, history, tracker):
-    """Keep at most 16 KB of recent edits. A tab outside this window gets the full board."""
+    """Keep recent edits within 14 KB on the wire, including during frequent publishes."""
     revision = digest(board)
     tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
-    edits = list((history or {}).get("edits") or [])
+    edits = list(unpack_updates(history).get("edits") or [])
     if previous is not None and digest(previous) != revision:
         edits.append({"from": digest(previous), "to": revision, "ops": compact_edits(board_diff(previous, board))})
     snapshot = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
-    result = {"schema": 1, "revision": revision, "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-12:]}
-    while result["edits"] and len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode()) > 16000:
+    result = {"schema": 1, "revision": revision, "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-120:]}
+    packed = pack_updates(result)
+    while result["edits"] and len(json.dumps(packed, separators=(",", ":")).encode()) > 14000:
         result["edits"].pop(0)
-    return result
+        packed = pack_updates(result)
+    return packed
 
 
 def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None, updates_blob: str | None = None) -> str:

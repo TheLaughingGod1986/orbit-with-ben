@@ -41,15 +41,15 @@ class Updates(unittest.TestCase):
             history = bp.updates_payload(new, old, history, 'tracker unchanged')
             old = new
         self.assertLessEqual(len(json.dumps(history, ensure_ascii=False, separators=(',', ':')).encode()), 16000)
-        ops = [op for edit in history['edits'] for op in edit['ops']]
+        ops = [op for edit in bp.unpack_updates(history)['edits'] for op in edit['ops']]
         self.assertEqual(browser_apply(original, ops), new)
 
     def test_oversized_change_evicts_history_for_safe_full_reload(self):
         old = {'films': []}
-        new = {'films': [{'id': '032', 'text': 'x' * 20000}]}
+        new = {'films': [{'id': '032', 'text': ''.join(random.Random(2798 + i).choices('abcdefghijklmnopqrstuvwxyz0123456789', k=30)[0] for i in range(40000))}]}
         history = bp.updates_payload(new, old, None, '')
-        self.assertEqual(history['edits'], [])
-        self.assertEqual(history['revision'], bp.digest(new))
+        self.assertEqual(bp.unpack_updates(history)['edits'], [])
+        self.assertEqual(bp.unpack_updates(history)['revision'], bp.digest(new))
 
     def test_live_sized_per_film_stamps_do_not_evict_history(self):
         old = {'tracker': {'videos': [{'key': str(i), 'production': {'asOf': 'old'}} for i in range(312)]}}
@@ -57,9 +57,9 @@ class Updates(unittest.TestCase):
         for film in new['tracker']['videos']:
             film['production']['asOf'] = 'new'
         history = bp.updates_payload(new, old, None, '')
-        self.assertTrue(history['edits'])
+        self.assertTrue(bp.unpack_updates(history)['edits'])
         self.assertLess(len(json.dumps(history).encode()), 3000)
-        self.assertEqual(browser_apply(old, history['edits'][0]['ops']), new)
+        self.assertEqual(browser_apply(old, bp.unpack_updates(history)['edits'][0]['ops']), new)
 
     def test_compaction_preserves_order_around_splices(self):
         old = {'rows': [{'id': str(i), 'stamp': 'old'} for i in range(12)]}
@@ -71,7 +71,23 @@ class Updates(unittest.TestCase):
         board = {'title': 'Titan — moon', 'jobs': []}
         payload = bp.updates_payload(board, None, None, '')
         published = json.dumps(board, ensure_ascii=False, separators=(',', ':')) + '\n'
-        self.assertEqual(payload['snapshotEtag'], hashlib.sha256(published.encode()).hexdigest())
+        self.assertEqual(bp.unpack_updates(payload)['snapshotEtag'], hashlib.sha256(published.encode()).hexdigest())
+
+    def test_frequent_publishes_keep_a_minute_of_live_sized_edits(self):
+        old = {'tracker': {'videos': [{'key': str(i), 'production': {'asOf': 'old'}} for i in range(312)]},
+               'jobs': [{'id': str(i), 'note': 'Recorded work ' * 30} for i in range(80)]}
+        original, history = copy.deepcopy(old), None
+        for revision in range(30):
+            new = copy.deepcopy(old)
+            for film in new['tracker']['videos']:
+                film['production']['asOf'] = str(revision)
+            new['jobs'][revision]['note'] += str(revision)
+            history = bp.updates_payload(new, old, history, '')
+            old = new
+        self.assertLessEqual(len(json.dumps(history, separators=(',', ':')).encode()), 14000)
+        edits = bp.unpack_updates(history)['edits']
+        self.assertEqual(len(edits), 30)
+        self.assertEqual(browser_apply(original, [o for e in edits for o in e['ops']]), new)
 
     def test_tree_keeps_legacy_files_and_adds_updates(self):
         tree = bp.tree_listing('board', 'no-deploy', 'sub', 'tracker', 'updates')
