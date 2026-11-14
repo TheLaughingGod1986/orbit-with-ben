@@ -251738,13 +251738,27 @@
           "at": "2026-11-14T19:02Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T19:02Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for J2840 (codex.md) and J2841 (gemini.md) to land (or 24 h timeout), then weigh all critiques and write DECISION.md",
       "kind": "review",
       "recheck_of": "J2843",
       "due": "2026-11-14T20:02:27+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
