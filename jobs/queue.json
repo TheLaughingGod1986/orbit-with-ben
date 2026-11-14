@@ -194501,10 +194501,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T13:34Z",
+      "eta": "2026-11-14T15:34Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195493,6 +195493,11 @@
           "at": "2026-11-14T11:19Z",
           "by": "cursor",
           "what": "released: 2/3. Assembly order covers all 12923 Franklin frames in 73 runs: 8086 original packets, 4698 High encodes, 139 exact pictures. Jar keep 3168-3258 stays packets. Frame 3259 is exact. Clock keeps 23 steps of 1024 ticks and 40 gaps. HOS commit e750b97e on PR 542. 163 tests OK, check_all PASS. No v04, no detached process, no spend or publication. Next is the mux with the original audio."
+        },
+        {
+          "at": "2026-11-14T13:34Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Mux the 73 Franklin runs with the original audio on the source clock. No master yet.",
