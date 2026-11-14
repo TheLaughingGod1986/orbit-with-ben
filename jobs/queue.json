@@ -1,5 +1,5 @@
 {
-  "next_id": 2854,
+  "next_id": 2855,
   "jobs": [
     {
       "id": "J0001",
@@ -251865,6 +251865,37 @@
       "taskKeys": [
         "HOS:008"
       ]
+    },
+    {
+      "id": "J2854",
+      "title": "HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Desk 6882919446, confirmed by Claude on 6882926175. £0. No new generation. No take 5. Do not lock v04. Do not start J2243. Do not copy to UAT, upload, or change YouTube.\n\nWrite `hos_008_master_v05.mp4` beside v04. Change only timeline frames 2506–2665. Every other decoded frame, and the audio, stay bitwise identical to v04.\n\nv04, leave the file untouched: `/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v04/hos_008_master_v04.mp4`\nsha256 `735ac816e00ba4a2690494bfeb9fddecfdeaa2f60417c5192f48155a9333db31`\n\nSources, hash before use:\n- Tube `01_salon_tube_t1.mp4` sha256 `d3a0b24c996c9d388baaf4e764b7561f9144e50a6fe21d94e8a3d2f9f2c45170`\n- Placed composite `02_salon_spark_j2241_t4_J2592_v01.mp4` sha256 `1dd1c555e26658cfe019f68502be7949866a1913b6ad012bc0659ee202d6e704` (f000–f060 only; the spark is already in f029–f031)\n\nThe old recipe is `_j2242_salon_patch.py` on `codex/J2242-source-preflight` (`7dc4b4e0`). Do not reuse its crop or its `tpad=start=19`.\n\n1. Frames 2506–2585 (80): tube source f099–f178 (`trim=start_frame=99:end_frame=179`). Full frame. No crop. Scale to 1920×1080 Lanczos only if the source is not already that size. This removes the 1.12× jump at 2505→2506.\n\n2. Frames 2586–2634 (49): composite f000–f029, each source frame once or twice, in order. No frame blend, no optical flow, no minterpolate, no dissolve. Longest identical run is 2. Schedule, `sched[i] = int(i * 30 / 49)`:\n`0,0,1,1,2,3,3,4,4,5,6,6,7,7,8,9,9,10,11,11,12,12,13,14,14,15,15,16,17,17,18,18,19,20,20,21,22,22,23,23,24,25,25,26,26,27,28,28,29`\nIndex 48 (timeline 2634) is f029.\n\n3. Frames 2635–2665 (31): composite f030–f060 at 1:1. Spark stays pre-glow on 2634 (f029), peak on 2635 (f030), half on 2636 (f031), nowhere else. No frame after f060.\n\nProve a lossless intermediate first: each of the 160 frames hashes equal to that one source frame after the same scale, not to a mix of two frames. Then mux with the J2242 packet method (copy unchanged GOP packets; re-encode only the salon envelope; keep original PTS/durations and the audio packets). v05 lands beside v04 under `_precheck/master_v05/`. Record both sha256 values.\n\nSheets, stills only, for the next job: a half-second sheet of timeline 2504–2666, and a strip of every frame 2586–2636. Post both on the HOS desk to Claude. Do not call a pass.\n",
+      "ref": "6882919446",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-11-14T19:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T19:28Z",
+          "by": "grok",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write v05 beside v04, change only frames 2506-2665, and post the salon sheets",
+      "due": "2026-11-15T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
+      "mini_only": true
     }
   ],
   "focus": [
