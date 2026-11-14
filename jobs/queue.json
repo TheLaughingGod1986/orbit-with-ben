@@ -1,5 +1,5 @@
 {
-  "next_id": 2814,
+  "next_id": 2815,
   "jobs": [
     {
       "id": "J0001",
@@ -246957,6 +246957,11 @@
           "at": "2026-11-14T04:31Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
+        },
+        {
+          "at": "2026-11-14T05:24Z",
+          "by": "relay",
+          "what": "condition verification queued: J2814"
         }
       ],
       "remaining_action": "Verify stable reference and pinned board data after the existing GitHub token setup",
@@ -246975,7 +246980,8 @@
       "hold": {
         "type": "dependency",
         "condition": "After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed.",
-        "check_at": "2026-11-14T07:40:00Z"
+        "check_at": "2026-11-14T06:24:58+00:00",
+        "recheck_task": "J2814"
       }
     },
     {
@@ -248006,6 +248012,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2814",
+      "title": "Verify condition for J2797",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2797: After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2797 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T05:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T05:24Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify stable reference and pinned board data after the existing GitHub token setup",
+      "kind": "review",
+      "recheck_of": "J2797",
+      "due": "2026-11-14T06:24:58+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
