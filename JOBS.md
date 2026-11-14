@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2797 | mini | blocked | codex | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
-| J2804 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2797 |  |
+| J2804 | mini | claimed | codex | 2026-11-14T06:22Z | for codex · review · `gpt-6-astra` · Verify condition for J2797 |  |
 | J2805 | mini | blocked | codex | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
