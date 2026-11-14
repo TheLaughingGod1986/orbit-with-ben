@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2796 | mini | open | – | – | for codex · studio · Board: every script reads the board's address from one setting, the docs name the live address, and the board is kept out of search |  |
 | J2797 | mini | open (after J2796) | – | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
-| J2799 | mini | open | – | – | review · Verify condition for J2221 |  |
+| J2799 | mini | claimed | gemini | 2026-11-14T03:20Z | review · Verify condition for J2221 |  |
 
 Recently finished:
 
