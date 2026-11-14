@@ -235537,10 +235537,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T21:05Z",
+      "eta": "2026-11-14T23:05Z",
       "created_by": "codex",
       "created_at": "2026-11-12T00:19Z",
       "result": "",
@@ -235554,6 +235554,11 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
+        },
+        {
+          "at": "2026-11-14T21:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Listen to the final three seconds and watch the Supermoon ending",
@@ -235564,7 +235569,15 @@
       ],
       "plain": "Checking that the Supermoon video ends cleanly on sunset",
       "urgent": 10,
-      "due": "2026-11-15T12:00:00Z"
+      "due": "2026-11-15T12:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T21:05Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2659",
