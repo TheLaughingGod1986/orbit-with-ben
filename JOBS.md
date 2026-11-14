@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
-| J2866 | mini | claimed | cursor | 2026-11-15T02:09Z | for cursor · studio · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
+| J2866 | mini | blocked | cursor | – | for cursor · studio · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
 | J2867 | mini | open (after J2438) | – | – | 034 edit · assembly · 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 | J2383,J2438 |
 | J2868 | mini | open (after J2867) | – | – | 034 edit · review · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
 
