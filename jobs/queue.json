@@ -235559,9 +235559,14 @@
           "at": "2026-11-14T21:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T21:05Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2658; starting 5-part review of Supermoon v04 ending"
         }
       ],
-      "remaining_action": "Listen to the final three seconds and watch the Supermoon ending",
+      "remaining_action": "Verify SHA-256 and automated gates on Supermoon v04 delivery pack",
       "for": "gemini",
       "kind": "qa",
       "required_capabilities": [
@@ -235572,12 +235577,14 @@
       "due": "2026-11-15T12:00:00Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-14T21:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2658; starting 5-part review of Supermoon v04 ending"
+      },
+      "taskKeys": [
+        "OWB:013"
+      ]
     },
     {
       "id": "J2659",
