@@ -252873,9 +252873,14 @@
           "at": "2026-11-14T22:21Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T22:35Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done: Extracted 97:20-98:00 1fps and 97:36-97:40 30fps sheets; identified root cause: mixed-profile avc1 stream-copy encode fault (chapters 024, 026, 019 darkened with -crf 0 High 4:4:4 Predictive inside High avc1 container, corrupting hardware decode and the R2 watch proxy)"
         }
       ],
-      "remaining_action": "Run full-master pixel check, re-encode ch11-13 in High profile crf18, rebuild master v02 and verify",
+      "remaining_action": "Finish full-master fault scan and re-encode High 4:4:4 chapters to High profile",
       "due": "2026-11-16T18:00:00Z",
       "kind": "studio",
       "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
@@ -252883,9 +252888,9 @@
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-14T22:09Z",
+        "at": "2026-11-14T22:35Z",
         "by": "macbook",
-        "note": "Root cause found: High 4:4:4 Predictive lossless profile in ch11-13 stream-copied after High profile corrupts decode at "
+        "note": "Extracted 97:20-98:00 1fps and 97:36-97:40 30fps sheets; identified root cause: mixed-profile avc1 stream-copy encode fa"
       }
     },
     {
