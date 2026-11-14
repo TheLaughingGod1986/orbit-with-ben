@@ -193430,10 +193430,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T15:58Z",
-      "eta": "2026-11-14T17:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -193707,6 +193707,11 @@
           "at": "2026-11-14T16:16Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Eradication v02 open gate PASS at 21.23s with a duration warning. Variolation v03 is 22.93s and still fails the moving-open check. No awaits. No upload."
+        },
+        {
+          "at": "2026-11-14T16:16Z",
+          "by": "cursor",
+          "what": "released: Eradication v02 open gate PASS, 21.23s, duration warning, sha 122d7f515aad. Variolation v03 22.93s still fails moving open (frame diff 0.93), sha 7775821c42f5. Harvey v04 and the scheduled Willow pair unchanged. No awaits, no upload, no render running. Builder on HOS branch cursor/J2230-vaccine-v01. Next: moving Variolation open, then voice music picture and polish checks. Eradication length needs a Chief look before a watch."
         }
       ],
       "remaining_action": "Give Variolation a moving opening, then run the remaining checks on both Vaccine Shorts",
