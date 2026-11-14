@@ -231673,9 +231673,14 @@
           "at": "2026-11-14T19:10Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Completed visual and frame-metric inspection of J2614_salon_splice_half_second_sheet.jpg and v04_salon_2560_2665.mp4"
+        },
+        {
+          "at": "2026-11-14T19:14Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Saved J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21) and jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63); Q2 is NO (20-frame 0.833s static freeze at 2586..2605)"
         }
       ],
-      "remaining_action": "Record visual QA findings on J2614 and park for Chief",
+      "remaining_action": "Chief ruling on HOS 008 v04 salon splice (20-frame f000 freeze at 2586..2605 and 1.12x crop jump at 2505->2506)",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
@@ -231690,11 +231695,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-14T19:10Z",
+        "at": "2026-11-14T19:14Z",
         "by": "gemini",
-        "note": "Completed visual and frame-metric inspection of J2614_salon_splice_half_second_sheet.jpg and v04_salon_2560_2665.mp4"
+        "note": "Saved J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21) and jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63"
       },
       "taskKeys": [
         "HOS:008"
