@@ -226483,9 +226483,14 @@
           "at": "2026-11-14T15:27Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Scanned 4K ISS timelapse for cut-free full-bleed 9:16 spans; writing assembly scripts for Muons v05 and ISS v14"
+        },
+        {
+          "at": "2026-11-14T15:33Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 4K cut-free crops; launching _build_shorts_2_and_3.py for Muons v05"
         }
       ],
-      "remaining_action": "Rebuild Short 2 Muons (rvug71d7Dqk v05) and Short 3 ISS (xdurJQcoiGM v14) full-frame 9:16, pass all 5 gates, verify moving video + audio, and arm all 3 Ben Watch Cards",
+      "remaining_action": "Render and 5-gate Muons v05 and ISS v14, verify moving video + audio, push PR #893, and arm 3 Ben Watch Cards",
       "due": "2026-11-14T18:00:00Z",
       "kind": "assembly",
       "plain": "Make the Voyager, Muons and Space Station Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -226502,9 +226507,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-14T15:27Z",
+        "at": "2026-11-14T15:33Z",
         "by": "gemini",
-        "note": "Scanned 4K ISS timelapse for cut-free full-bleed 9:16 spans; writing assembly scripts for Muons v05 and ISS v14"
+        "note": "Verified 4K cut-free crops; launching _build_shorts_2_and_3.py for Muons v05"
       },
       "awaits_was": {
         "what": "Watch the Voyager 1 Short for Tue 17 Nov (v02) with every shot full-screen and the filler promise sentence trimmed out. OK to swap it in?",
