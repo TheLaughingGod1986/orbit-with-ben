@@ -239805,10 +239805,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-14T12:25Z",
+      "eta": "2026-11-14T16:25Z",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
       "result": "",
@@ -239927,6 +239927,11 @@
           "at": "2026-11-14T12:22Z",
           "by": "claude",
           "what": "rerouted to cursor: Codex has logged nothing on the queue since 10:15Z (over two hours) and this urgent job has sat unclaimed for 47 minutes, with Ben waiting on it to tick the Journey film and link his phone. Cursor is working on the same Mini, where wrangler is signed in. The steps are in the reopening note of 11:34Z: confirm the secret by name, deploy the board, prove a tick saves, check the data reads, tell Ben how to link his phone. Never print the token."
+        },
+        {
+          "at": "2026-11-14T12:25Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirm BOARD_GH_TOKEN is set, deploy the board, prove a tick saves and reads are reliable, tell Ben how to link his phone",
@@ -239941,6 +239946,14 @@
         "model": "",
         "status": "open",
         "by": ""
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T12:25Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
