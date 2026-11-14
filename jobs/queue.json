@@ -249661,13 +249661,27 @@
           "at": "2026-11-14T13:19Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-14T14:19:42+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2826",
