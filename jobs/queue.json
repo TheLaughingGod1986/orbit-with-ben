@@ -224806,7 +224806,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Waits only for History of Science PR 548 to merge (ready, awaiting Grok), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
+      "result": "Waiting for: Nothing blocks it now: History of Science PR 548 is merged (13 Nov 22:18Z) and no picture run is going. Next: take the email addresses out of the spend ledger and the other files that hold them, in ordinary pull requests, HOS first then Orbit, one at a time. Starts at the 12:50 run, after the split-routing fix (orbit-with-ben PR 923).",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -224877,16 +224877,21 @@
           "at": "2026-11-13T22:07Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
+        },
+        {
+          "at": "2026-11-14T08:03Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T12:40:00Z"
         }
       ],
-      "remaining_action": "After 548 merges, clean the spend ledger addresses",
+      "remaining_action": "Clean the spend ledger addresses, History of Science first",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Waits only for History of Science PR 548 to merge (ready, awaiting Grok), so two pull requests do not run at once. Then take the addresses out of the spend ledger, in a quiet window.",
-        "check_at": "2026-11-14T07:40:00Z"
+        "condition": "Nothing blocks it now: History of Science PR 548 is merged (13 Nov 22:18Z) and no picture run is going. Next: take the email addresses out of the spend ledger and the other files that hold them, in ordinary pull requests, HOS first then Orbit, one at a time. Starts at the 12:50 run, after the split-routing fix (orbit-with-ben PR 923).",
+        "check_at": "2026-11-14T12:40:00Z"
       }
     },
     {
@@ -231767,7 +231772,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: PR 548 is READY (13 Nov 22:20Z, head 1ced1448, all checks pass, board compare clean after 905). Waiting for Grok's review and merge on the desk. After it merges: refresh channels/hos/channel.json (channels.py sync, small PR, merge when green), watch one clean board publish, write film 010's picture stage from PR 538 into its status.json.",
+      "result": "Waiting for: Done: History of Science PR 548 merged 13 Nov 22:18Z; the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922, merged 14 Nov 07:55Z); a board built from the merged main reads film 004 as done. Left: film 010's picture stage, written from HOS PR 538 into that film's status.json (Grok, desk 6806904132), and one clean board publish observed on the new host. Starts at the 12:50 run.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -231863,9 +231868,14 @@
           "at": "2026-11-13T22:07Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
+        },
+        {
+          "at": "2026-11-14T08:03Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T12:40:00Z"
         }
       ],
-      "remaining_action": "After 548 merges: sync the studio's copy of the channel settings and watch a publish",
+      "remaining_action": "Write film 010's picture stage from PR 538 into its status.json",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -231878,8 +231888,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "PR 548 is READY (13 Nov 22:20Z, head 1ced1448, all checks pass, board compare clean after 905). Waiting for Grok's review and merge on the desk. After it merges: refresh channels/hos/channel.json (channels.py sync, small PR, merge when green), watch one clean board publish, write film 010's picture stage from PR 538 into its status.json.",
-        "check_at": "2026-11-14T07:40:00Z"
+        "condition": "Done: History of Science PR 548 merged 13 Nov 22:18Z; the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922, merged 14 Nov 07:55Z); a board built from the merged main reads film 004 as done. Left: film 010's picture stage, written from HOS PR 538 into that film's status.json (Grok, desk 6806904132), and one clean board publish observed on the new host. Starts at the 12:50 run.",
+        "check_at": "2026-11-14T12:40:00Z"
       }
     },
     {
