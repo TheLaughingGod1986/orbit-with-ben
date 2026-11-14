@@ -1,5 +1,5 @@
 {
-  "next_id": 2824,
+  "next_id": 2827,
   "jobs": [
     {
       "id": "J0001",
@@ -178599,6 +178599,11 @@
           "at": "2026-11-14T03:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T20:15:00Z"
+        },
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2824"
         }
       ],
       "remaining_action": "Await the revised score production, complete gate and final acceptance before assembling the gravity film",
@@ -178618,7 +178623,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J2803 validation failed; PR908 stays draft and undeployed. J2805 scopes one guarded opening-cue replacement via J2806, capable audio review J2807, then explicit elected-Chief score acceptance. Require full current library production music gate PASS, own-score provenance and endpoint coverage. Existing narration and diagram KEEP locks retained. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
-        "check_at": "2026-11-14T20:15:00Z"
+        "check_at": "2026-11-14T14:19:42+00:00",
+        "recheck_task": "J2824"
       }
     },
     {
@@ -179141,6 +179147,11 @@
           "at": "2026-11-14T07:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T12:55:00Z"
+        },
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "condition verification queued: J2825"
         }
       ],
       "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
@@ -179165,10 +179176,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling on J2813: NOT MET. Fresh review confirms all eight local approval-settings and gateway hashes match jobs/reviews/J2813/REVIEW.md; PR490 remains OPEN/draft at f521bcd3f1 with no comments. J2517 and J2559 remain complete. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; unchanged files and a draft alone cannot establish that evidence. Keep fallback routing active. No autonomous approval-control changes. Recheck operator evidence at 2026-11-14T12:55:00Z.",
-        "check_at": "2026-11-14T12:55:00Z",
+        "check_at": "2026-11-14T14:19:42+00:00",
         "last_recheck": "J2813",
         "checked_at": "2026-11-14T07:38:06+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2825"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -249580,6 +249592,102 @@
         "OWB:029"
       ],
       "done_ref": "6c9b001b0e"
+    },
+    {
+      "id": "J2824",
+      "title": "Verify condition for J2035",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2035: J2803 validation failed; PR908 stays draft and undeployed. J2805 scopes one guarded opening-cue replacement via J2806, capable audio review J2807, then explicit elected-Chief score acceptance. Require full current library production music gate PASS, own-score provenance and endpoint coverage. Existing narration and diagram KEEP locks retained. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2035 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T13:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await the revised score production, complete gate and final acceptance before assembling the gravity film",
+      "kind": "review",
+      "recheck_of": "J2035",
+      "due": "2026-11-14T14:19:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2825",
+      "title": "Verify condition for J2040",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Chief ruling on J2813: NOT MET. Fresh review confirms all eight local approval-settings and gateway hashes match jobs/reviews/J2813/REVIEW.md; PR490 remains OPEN/draft at f521bcd3f1 with no comments. J2517 and J2559 remain complete. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; unchanged files and a draft alone cannot establish that evidence. Keep fallback routing active. No autonomous approval-control changes. Recheck operator evidence at 2026-11-14T12:55:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T13:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-14T14:19:42+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2826",
+      "title": "Chief: resolve J01 upload orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"J01\", \"stage\": \"upload\", \"kind\": \"orphan-review\", \"signature\": \"2c6d36d22d89b2dd4443\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T13:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T13:19Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves J01 upload handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "J01",
+        "stage": "upload",
+        "kind": "orphan-review",
+        "signature": "2c6d36d22d89b2dd4443"
+      }
     }
   ],
   "focus": [
