@@ -247217,16 +247217,22 @@
           "at": "2026-11-14T03:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T03:54Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1: linked HOS:001..007,099; starting lint:package, channel:audit, and live YouTube verification"
         }
       ],
-      "remaining_action": "Gemini: audit live HOS listings and propose exact fixes in a dated report; return changes for review before any Studio edits.",
+      "remaining_action": "Run lint:package, channel:audit, and live YouTube watch/Shorts checks for all public and scheduled HOS videos",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-14T02:37Z",
-        "by": "macbook"
+        "at": "2026-11-14T03:54Z",
+        "by": "gemini",
+        "note": "Step 1: linked HOS:001..007,099; starting lint:package, channel:audit, and live YouTube verification"
       },
       "rerouted_from": {
         "needs": "any",
@@ -247236,7 +247242,17 @@
         "by": "macbook"
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     },
     {
       "id": "J2803",
