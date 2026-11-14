@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2859 | mini | claimed | macbook-2 | 2026-11-14T22:39Z | listing · Listings for the two long films from research on channels that do this: search-led titles, first lines and tags |  |
 | J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 | J2861 | mini | open (after J2860) | – | – | listing · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
+| J2862 | mini | open | – | – | review · Verify condition for J2855 |  |
 
 Recently finished:
 
