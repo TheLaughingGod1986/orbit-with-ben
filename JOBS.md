@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
 | J2812 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
 | J2813 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J2814 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2797 |  |
+| J2814 | mini | claimed | codex | 2026-11-14T09:15Z | for codex · review · `gpt-6-astra` · Verify condition for J2797 |  |
 | J2815 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2221 |  |
 | J2816 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
 | J2817 | mini | claimed | macbook-2 | 2026-11-14T07:57Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
