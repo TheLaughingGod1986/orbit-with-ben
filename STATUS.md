@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | gemini | 2026-11-14T23:40Z | 2026-11-15T01:39Z | J2404 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch |
+| 033 | edit | gemini | 2026-11-14T23:43Z | 2026-11-15T00:43Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
