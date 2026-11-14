@@ -4,11 +4,13 @@ import json
 import pathlib
 import random
 import shutil
+import sys
 import tempfile
 import unittest
 
-import capability_probe as cp
-import chief_relay as cr
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import capability_probe as cp  # noqa: E402
+import chief_relay as cr  # noqa: E402
 
 T0 = dt.datetime(2026, 11, 5, 10, 0, tzinfo=dt.timezone.utc)
 MEDIA = shutil.which("say") and shutil.which("ffmpeg")
@@ -98,10 +100,51 @@ class RelayKeepsAFreshProbe(unittest.TestCase):
         self.assertEqual(rep["source"], "probe")
         self.assertIn("session start", rep["evidence"])
 
-    def test_after_the_probe_expires_a_session_report_stands(self):
+    def test_after_the_probe_expires_a_session_report_stands_and_keeps_last_shown(self):
         cr.record_capabilities("gemini", "audio_input", "probe: heard the clip", 60, T0, source="probe")
         cr.record_capabilities("gemini", "", "session start: none", 30, T0 + dt.timedelta(minutes=61))
-        self.assertEqual(json.loads(cr.d("capabilities.json").read_text())["gemini"]["available"], [])
+        rep = json.loads(cr.d("capabilities.json").read_text())["gemini"]
+        self.assertEqual(rep["available"], [])
+        self.assertEqual(rep["last_shown"]["audio_input"], cr.iso(T0))
+
+
+class RunnersCoverEveryMiniWorker(unittest.TestCase):
+    def test_every_mini_worker_has_a_runner(self):
+        import routing
+        self.assertEqual(set(cp.RUNNERS), set(routing.MINI_WORKERS))
+
+    def test_cursor_codex_and_claude_runners_parse_structured_replies_and_flag_shell_tools(self):
+        from unittest.mock import MagicMock, patch
+        cur_lines = "\n".join([
+            json.dumps({"type": "tool_call", "tool_call": {"readToolCall": {}, "shellToolCall": {}, "toolCallId": "1"}}),
+            json.dumps({"type": "result", "is_error": False, "result": '{"heard": true, "transcript": "hello"}'}),
+        ])
+        with patch.object(cp.subprocess, "run", return_value=MagicMock(returncode=0, stdout=cur_lines, stderr="")):
+            ans, tools = cp.cursor_runner("p", cp.AUDIO_SCHEMA, "/tmp")
+        self.assertEqual(ans, {"heard": True, "transcript": "hello"})
+        self.assertEqual(tools, {"readToolCall", "shellToolCall"})
+        self.assertEqual(set(tools) - cp.FILE_TOOLS, {"shellToolCall"})
+
+        cl_lines = "\n".join([
+            json.dumps({"type": "assistant", "message": {"content": [
+                {"type": "tool_use", "name": "Read", "input": {}},
+                {"type": "tool_use", "name": "StructuredOutput", "input": {"watched": False, "direction": "none", "colours_in_order": []}},
+            ]}}),
+            json.dumps({"type": "result", "is_error": False, "structured_output": {"watched": False, "direction": "none", "colours_in_order": []}}),
+        ])
+        with patch.object(cp.subprocess, "run", return_value=MagicMock(returncode=0, stdout=cl_lines, stderr="")):
+            ans, tools = cp.claude_runner("p", cp.VIDEO_SCHEMA, "/tmp")
+        self.assertEqual(ans["watched"], False)
+        self.assertEqual(set(tools) - cp.FILE_TOOLS, set())
+
+        cx_lines = "\n".join([
+            json.dumps({"type": "item.completed", "item": {"type": "command_execution"}}),
+            json.dumps({"type": "error", "message": "You hit your usage limit"}),
+        ])
+        with patch.object(cp.subprocess, "run", return_value=MagicMock(returncode=1, stdout=cx_lines, stderr="")):
+            ans, tools = cp.codex_runner("p", cp.AUDIO_SCHEMA, "/tmp")
+        self.assertIn("usage limit", ans["_error"])
+        self.assertEqual(set(tools) - cp.FILE_TOOLS, {"command_execution"})
 
 
 if __name__ == "__main__":

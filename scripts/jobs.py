@@ -964,6 +964,7 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     if job.get("hold") and not str(note or "").strip():
         raise ValueError("Reopening a hold requires current verification evidence in --note")
     job.pop("hold", None)
+    job.pop("capability_escalated", None)
     job.update(status="open", by="", since="", eta="", result="")
     job.pop("progress", None)
     log(job, at, agent, "reopened" + (": " + note if note else ""))
