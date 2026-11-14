@@ -1,5 +1,5 @@
 {
-  "next_id": 2856,
+  "next_id": 2857,
   "jobs": [
     {
       "id": "J0001",
@@ -251998,6 +251998,38 @@
       "plain": "Look at the new Franklin salon frames and say whether the jump, the freeze and the spark are fixed",
       "mini_only": true,
       "urgent": 12
+    },
+    {
+      "id": "J2856",
+      "title": "Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 19:48Z): \"The two sleep films I just approved I can't see them in passed\".**\n\n**Measured from the cloud at 19:46Z.**\n- The live store (`/api/checks` on `board.oppti.dev`) holds `OWB-J2222`, v03, `ok`, saved 19:14:16Z from Ben's phone, which was linked at 19:13:08Z.\n- The board data published at 19:45:06Z does not have it. Its newest tick is from 12 Nov, 14:45Z. So for half an hour the Mini's publish has not read the store, and the Journey film still shows as needing his review.\n- `board_publish.py` reads `{SITE}/api/checks` on every run. J2714's note of 14:03Z said the Mini's own name lookup returned the old Vercel addresses for `board.oppti.dev` (a 404), while public DNS and the router returned Cloudflare. That stale record was due to expire at 15:13Z. The evidence says the Mini still cannot reach the board by that name.\n\n**Do, in this order.**\n1. Confirm, one line each: what the publish gets from `{SITE}/api/checks` now (the status, and whether it reached Vercel or Cloudflare), and what kind of resolver the Mini's system lookup uses (router, provider, Tailscale, other). No address and no device name in the report.\n2. Get the reads working within minutes, least invasive first:\n   - flush the Mini's own lookup cache, if that needs no password;\n   - otherwise point the Mini's READS at `https://studio-kanban.pages.dev`, which resolves correctly from the Mini (J2714 showed 200 there). Prefer a separate setting for where the Mini reads the board, falling back to the site address, so the links made for Ben (Play links, the phone link) keep `board.oppti.dev`, where his phone is linked. If that is more than a small change, switch the one address setting to `pages.dev` for now and say so.\n   Do not change the machine's DNS settings, Tailscale or the hosts file: those are Ben's.\n3. Run a publish and show: the published data holds `OWB-J2222` v03 `ok`; the Journey film has left \"Needs your review\"; the approval is recorded against J2222 the usual way and that film's next job is released. His OK carries no A, B or C. The request asked him to approve the three thumbnails, so take it as all three approved unless he says otherwise; he has been told this.\n4. A guard, so this cannot hide again: if the Mini's read of `/api/checks` has failed for ten minutes, the board says so (\"ticks not read since HH:MM\") and the every-minute check alerts once. With a test.\n5. Leave a dated check to move the reads back to `board.oppti.dev` once the Mini's lookup is right.\n\n**Also.** Ben says he approved two films. Only J2222 is in the store today. `OWB-J2452`, the sleep compilation, still holds his change request of 12 Nov on v01. Say on the thread, in plain words, whether a new version of the sleep film is waiting for him or is still being fixed, so he knows there was nothing to approve.\n\n**Guards.** £0. No secret printed. Nothing deleted. No private-network address or device name on the thread or in a tracked file. Board open taps stay off.\n\n**Done when** the published board shows Ben's OK on the Journey film, the approval is recorded and its next job released, and the ten-minute guard is merged.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T19:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T19:49Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Make the Mini's reads of the board work (flush, or read via pages.dev), publish, record the OK on J2222, add a ten-minute guard",
+      "due": "2026-11-14T21:00:00Z",
+      "for": "cursor",
+      "kind": "studio",
+      "plain": "Ben's approval is saved but the studio can't see it: fix how the Mini reaches the board",
+      "urgent": 13
     }
   ],
   "focus": [
