@@ -248734,13 +248734,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T08:41Z",
-      "eta": "2026-11-14T10:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T08:39Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: Verified J2798 waiting condition at 2026-11-14T09:03Z (commit ab3331011f, jobs/reviews/J2818/REVIEW.md): (1) SATISFIED: predecessor J2796 is done (7060b03eb5); Ben approval (14 Nov 00:35Z) is valid; both detached captures finished with exit 0 — J2798-fixture-exact-v2 PASSES (/ idle 15,338 B = 1,533.8 B/min < 20,000 B/min, 1-change 25,450 B, firstRender 340 ms; /tracker idle 18,035 B = 1,803.5 B/min, 1-change 8,020 B, firstRender 244 ms; 0 post-initial f=board reads) and J2798-live-current completed pre-deploy baseline (/ 201,892.3 B/min with 7 post-initial f=board reads, /tracker 2,089.8 B/min); 47 Python + JS tests pass on PR #924 (680ed3ace1). (2) PENDING CHIEF ACTION: PR #924 awaits Chief review/merge/deploy and a fresh post-deploy 10-minute production capture <20,000 B/min (see also the rawEtag/<= forward-skew guard and board_publish.py state-write order in jobs/reviews/J2818/REVIEW.md §2). Because jobs.py restricts reopen and wait --recheck on held jobs to the elected Chief, please run Option A (reopen J2798 to clear the synthetic dependency hold that hides J2798 in waiting state + done J2818) or Option B (wait J2798 --recheck J2818 + done J2818) in jobs/reviews/J2818/REVIEW.md §3. GBP 0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-14T08:39Z",
@@ -248776,6 +248776,11 @@
           "at": "2026-11-14T09:04Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: Committed jobs/reviews/J2818/REVIEW.md (ab3331011f); parking J2818 for elected Chief"
+        },
+        {
+          "at": "2026-11-14T09:04Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: parked for Chief: Verified J2798 waiting condition at 2026-11-14T09:03Z (commit ab3331011f, jobs/reviews/J2818/REVIEW.md): (1) SATISFIED: predecessor J2796 is done (7060b03eb5); Ben approval (14 Nov 00:35Z) is valid; both detached captures finished with exit 0 — J2798-fixture-exact-v2 PASSES (/ idle 15,338 B = 1,533.8 B/min < 20,000 B/min, 1-change 25,450 B, firstRender 340 ms; /tracker idle 18,035 B = 1,803.5 B/min, 1-change 8,020 B, firstRender 244 ms; 0 post-initial f=board reads) and J2798-live-current completed pre-deploy baseline (/ 201,892.3 B/min with 7 post-initial f=board reads, /tracker 2,089.8 B/min); 47 Python + JS tests pass on PR #924 (680ed3ace1). (2) PENDING CHIEF ACTION: PR #924 awaits Chief review/merge/deploy and a fresh post-deploy 10-minute production capture <20,000 B/min (see also the rawEtag/<= forward-skew guard and board_publish.py state-write order in jobs/reviews/J2818/REVIEW.md §2). Because jobs.py restricts reopen and wait --recheck on held jobs to the elected Chief, please run Option A (reopen J2798 to clear the synthetic dependency hold that hides J2798 in waiting state + done J2818) or Option B (wait J2798 --recheck J2818 + done J2818) in jobs/reviews/J2818/REVIEW.md §3. GBP 0. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Elected Chief to run reopen J2798 (or wait --recheck J2818) and done J2818 per jobs/reviews/J2818/REVIEW.md",

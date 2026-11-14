@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2812 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
 | J2815 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2221 |  |
 | J2816 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
-| J2818 | mini | claimed | gemini | 2026-11-14T10:41Z | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
+| J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
 
 Recently finished:
 
