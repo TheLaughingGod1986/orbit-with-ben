@@ -1,5 +1,5 @@
 {
-  "next_id": 2867,
+  "next_id": 2868,
   "jobs": [
     {
       "id": "J0001",
@@ -253248,6 +253248,35 @@
       "kind": "studio",
       "plain": "Put the new plan for long videos on the board: what we're doing, when, and how it's going",
       "urgent": 14
+    },
+    {
+      "id": "J2867",
+      "title": "034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up to J2383 5-part multimodal review (jobs/reviews/J2383/REVIEW.md @ 79c7174350, also mirrored at /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/J2383_REVIEW.md):\n\n1. Rebuild 034 Short 1 v02 (10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v02.mp4, 36.500 s = 1,095 frames at 30/1 CFR, aligned to FIRST30_PLAN.md -2.800 s Sentence 1 splice) and 034 Short 2 v02 (10_Shorts/short02_water_ice_mountains/06_Final-Exports/034_short02_water_ice_mountains_v02.mp4, 25.800 s = 774 frames at 30/1 CFR, reusing locked v01 audio stems) with 100% full-bleed 1080x1920 9:16 framing across every cut (<=2.00x upscale, 0% blur-pad or starfield letterbox, upright 1080x1920 R02 scale beats in Short 1, no black left/right edge bar on R01 in Short 2, no end loop cross-fade). Both must PASS gate_shorts_open.py check (--air-date 2026-12-21 and 2026-12-23), picture_qa.py, polish_gate.py, and music_gate.py.\n\n2. Verify on 09_Final-Export/034_pluto_frozen_heart_master_v02.mp4 (and apply in _assemble_034_full_master_v02.py if J2438 did not already include them) all J2383 §5.1 finishing fixes:\n   - All 6 chapter-card silences (R08, R20, R33, R45, R54, R64) inserted at prev_word_raw_end + 0.600 s (raw = 65.760 s, 159.220 s, 261.140 s, 368.220 s, 451.660 s, 534.260 s) so Ch 1/2/4/6 have zero pre-onset phoneme blips;\n   - Sub-pixel PIL BICUBIC zoom (1.000->1.045) + 2D separable edge feather (min(fx, fy) over 48 px in PIL/NumPy, replacing the broken ffmpeg geq filter that caused a 48x48 top-left corner glitch on starfield-framed stills R06, R23, R30, R37, R40, R41, R66, R67, R72, R74);\n   - Word-boundary asset ID matching in row_assets() so R34 matches ksc_011906_nh_launchchange -> KSC-06pd0099, and start ksc_011906_*.mp4 clips at offset >= 2.0 s so R34 (272.77 s), R36 (292.57 s), and R40 (326.43 s) skip the 0.0-0.5 s fade-from-black;\n   - Full person names on WHO cards (R10: 'Clyde Tombaugh (1906–1997) — American astronomer', R11: 'Venetia Burney (1919–2009) — Oxford schoolgirl', R58: 'Alan Stern (b. 1957) — New Horizons PI') and strip 'Credit:' markers (R10, R13, R21) from center-bottom callout pills. £0.\n",
+      "ref": "J2383,J2438",
+      "film": "034",
+      "stage": "edit",
+      "after": "J2438",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-14T23:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T23:03Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for J2438, then rebuild Shorts 1 & 2 v02 full-bleed 1080x1920 9:16 and verify J2383 §5.1 fixes on long v02",
+      "kind": "assembly",
+      "plain": "Rebuild 034 Pluto Shorts 1 & 2 v02 full-bleed 9:16 and apply J2383 finishing fixes on long master v02"
     }
   ],
   "focus": [
