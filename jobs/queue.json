@@ -1,5 +1,5 @@
 {
-  "next_id": 2870,
+  "next_id": 2871,
   "jobs": [
     {
       "id": "J0001",
@@ -253442,6 +253442,38 @@
       "remaining_action": "Build 033_short01_testA_opening_v02.mp4 and 033_short02_ice_giant_surface_v02.mp4 per jobs/reviews/J2400/REVIEW.md",
       "kind": "assembly",
       "plain": "Rebuild 033 Uranus Shorts 1 and 2 as full-bleed 9:16 v02 cuts and fix clipped word onsets in Short 2 VO"
+    },
+    {
+      "id": "J2870",
+      "title": "033 Uranus Shorts 1 & 2: 5-part review of v02 cuts (after J2869) + stage for Ben phone watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Run the 5-part multimodal review (`jobs/reviews/J2829/RULING.md`) on 033 Uranus Active Short #1 `v02` (`033_short01_testA_opening_v02.mp4`, slot Fri 18 Dec 11:30Z) and Active Short #2 `v02` (`033_short02_ice_giant_surface_v02.mp4`, slot Sat 19 Dec 11:30Z) built in `J2869` (fixing the `J2400` review items in `jobs/reviews/J2400/REVIEW.md`):\n\n1. Automated gates PASS on the exact `v02` master files (`gate_shorts_open.py` `0%` blur-pad fail at 2 fps + end card in `_meta.json`, `picture_qa.py` `0` issues / `0` low-detail warnings, `polish_gate.py`, `sfx_kit.py level`, `music_gate.py`, `thumb_preview.py short` Frame 0 & Cover), plus non-zero byte sizes and matching SHA-256 across `studio-live`, `/Volumes/data/mac-mini-archive/OWB UAT/033_shorts_v02/`, and `~/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/033_shorts_v02/`.\n2. Full-film `0.5 s` (`2 fps`) contact-sheet grid with burned-in timestamps confirming full-bleed `9:16` (`1080x1920`) on every shot, vertical `9:16` `R05a` axial-tilt gauge (Short #1) and `R52` interior cutaway (Short #2), and high-res Uranus plates replacing `PIA00142`/`PIA01977`/`PIA01985` in Short #2.\n3. Every frame at each internal cut (`±3` frames) and every frame of the final `3.0 s` (`J2614` splice-strip standard).\n4. Complete soundtrack heard via verified `audio_input` confirming `\"How\"` (`31.20s` in Short #1), `\"80%\"` (`~11.8s` in Short #2), and `\"9,000\"` (`~23.8s` in Short #2) are 100% unclipped.\n5. Compact `360x640` `.mp4` review proxy clips (`<= 5 MB`) opened via `read_file`.\n\nWhen all 5 parts PASS (`KEEP`), commit `jobs/reviews/<id>/REVIEW.md` and call `jobs.py awaits <id>` for Ben's phone watch of both `v02` Shorts. No YouTube upload until Ben approves.\n",
+      "ref": "J2869",
+      "film": "033",
+      "stage": "edit",
+      "after": "J2869",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-14T23:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T23:37Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run 5-part review on 033 Shorts 1 and 2 v02 and call jobs.py awaits for Ben phone watch",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Review 033 Uranus Shorts 1 and 2 v02 cuts and stage for Ben phone watch"
     }
   ],
   "focus": [
