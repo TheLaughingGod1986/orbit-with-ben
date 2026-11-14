@@ -450,23 +450,68 @@ def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dic
 NO_DEPLOY = json.dumps({"git": {"deploymentEnabled": False}}) + "\n"
 
 
-def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None) -> str:
+def board_diff(old, new, path=()):
+    """Small, deterministic edits; list edits preserve matching job/video identities."""
+    import difflib
+    if old == new:
+        return []
+    if isinstance(old, dict) and isinstance(new, dict):
+        ops = [["delete", list(path + (k,))] for k in sorted(old.keys() - new.keys())]
+        for k, value in new.items():
+            ops.extend(board_diff(old[k], value, path + (k,)) if k in old else [["set", list(path + (k,)), value]])
+        return ops
+    if isinstance(old, list) and isinstance(new, list):
+        def identity(v):
+            if isinstance(v, dict):
+                for key in ("id", "key"):
+                    if key in v:
+                        return (key, str(v[key]))
+            return json.dumps(v, sort_keys=True, separators=(",", ":"))
+        ops, offset = [], 0
+        for tag, a, b, c, d in difflib.SequenceMatcher(None, list(map(identity, old)), list(map(identity, new)), autojunk=False).get_opcodes():
+            if tag == "equal":
+                for i, j in zip(range(a, b), range(c, d)):
+                    ops.extend(board_diff(old[i], new[j], path + (j,)))
+            else:
+                ops.append(["splice", list(path), a + offset, b - a, new[c:d]])
+                offset += (d - c) - (b - a)
+        return ops
+    return [["set", list(path), new]]
+
+
+def updates_payload(board, previous, history, tracker):
+    """Keep at most 16 KB of recent edits. A tab outside this window gets the full board."""
+    revision = digest(board)
+    tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
+    edits = list((history or {}).get("edits") or [])
+    if previous is not None and digest(previous) != revision:
+        edits.append({"from": digest(previous), "to": revision, "ops": board_diff(previous, board)})
+    result = {"schema": 1, "revision": revision, "tracker": tracker_hash, "edits": edits[-12:]}
+    while result["edits"] and len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode()) > 16000:
+        result["edits"].pop(0)
+    return result
+
+
+def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None, updates_blob: str | None = None) -> str:
     """git mktree input for the board-data commit (entries sorted by name, as git wants)."""
     rows = [f"040000 tree {sub_tree}\t07_Content-Ops", f"100644 blob {board_blob}\tboard.json"]
     if tracker_blob:
         rows.append(f"100644 blob {tracker_blob}\ttracker.json")
+    if updates_blob:
+        rows.append(f"100644 blob {updates_blob}\tupdates.json")
     rows.append(f"100644 blob {nd_blob}\tvercel.json")
     return "\n".join(rows) + "\n"
 
 
-def push(board: dict, at: dt.datetime, tracker: str | None = None) -> str:
+def push(board: dict, at: dt.datetime, tracker: str | None = None, updates: dict | None = None) -> str:
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     repo = STUDIO_REPO
     blob = git(repo, "hash-object", "-w", "--stdin", inp=body)
     nd = git(repo, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
     sub = git(repo, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
     tb = git(repo, "hash-object", "-w", "--stdin", inp=tracker) if tracker else None
-    tree = git(repo, "mktree", inp=tree_listing(blob, nd, sub, tb))
+    ub = git(repo, "hash-object", "-w", "--stdin", inp=json.dumps(updates, ensure_ascii=False, separators=(",", ":"))) if updates else None
+    tree = git(repo, "mktree", inp=tree_listing(blob, nd, sub, tb, ub))
     commit = git(repo, "commit-tree", tree, "-m", f"board data {iso(at)}")
     git(repo, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
     return commit
@@ -636,6 +681,13 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
     board["publishedAt"] = iso(at)  # the page's small "Updated HH:MM"; after the digest, so it never forces a push
+    try:
+        previous = json.loads((STATE / "board.json").read_text())
+        history = json.loads((STATE / "updates.json").read_text())
+    except (OSError, ValueError):
+        previous, history = None, None
+    updates = updates_payload(board, previous, history, tracker)
+    (STATE / "updates.json").write_text(json.dumps(updates, ensure_ascii=False, separators=(",", ":")))
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
     summary = (f"{films_summary(docs)}, "
                f"{len(docs[QUEUE].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
@@ -651,7 +703,7 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
         if not a.quiet:
             print("unchanged")
         return 0
-    commit = push(board, at, tracker)
+    commit = push(board, at, tracker, updates)
     prev_path.write_text(json.dumps({"hashes": hashes, "changedAt": board["changedAt"], "whole": whole,
                                      "checks": checks, "checksAt": checks_at, **checks_meta, "pushed": iso(at),
                                      "commit": commit, **built}, indent=1))

@@ -65,7 +65,7 @@ TRACKER_PATCHES = [
 def app_version() -> str:
     files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
              HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js",
-             HERE / "api" / "data.js"]
+             HERE / "api" / "data.js", HERE / "board_updates.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
@@ -79,7 +79,7 @@ def build_studio(out: pathlib.Path) -> None:
     marker = "<script>\n/* STUDIO_APP_BOOT */\n</script>"
     if html.count(marker) != 1:
         sys.exit("build: expected one STUDIO_APP_BOOT script block in studio_app.html")
-    html = html.replace(marker, "<script>\n" + (HERE / "studio_app.js").read_text() + "\n</script>")
+    html = html.replace(marker, "<script>\n" + (HERE / "board_updates.js").read_text() + "\n" + (HERE / "studio_app.js").read_text() + "\n</script>")
     (out / "index.html").write_text(versioned_page(html))
     print(f"built {out / 'index.html'} ({len(html):,} bytes)")
 
@@ -89,7 +89,7 @@ def build_ai(out: pathlib.Path) -> None:
     marker = "<script>\n/* AI_APP_BOOT */\n</script>"
     if html.count(marker) != 1:
         sys.exit("build: expected one AI_APP_BOOT script block in ai_credits.html")
-    html = html.replace(marker, "<script>\n" + (HERE / "ai_app.js").read_text() + "\n</script>")
+    html = html.replace(marker, "<script>\n" + (HERE / "board_updates.js").read_text() + "\n" + (HERE / "ai_app.js").read_text() + "\n</script>")
     (out / "ai.html").write_text(versioned_page(html))
     print(f"built {out / 'ai.html'} ({len(html):,} bytes)")
 

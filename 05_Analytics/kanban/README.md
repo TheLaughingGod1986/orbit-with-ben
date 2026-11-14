@@ -29,6 +29,15 @@ concrete `--note` after each step.
 Live data: `scripts/kanban_snapshot.py --db-out` → `scripts/board_publish.py` → `board-data` branch (`board.json` now
 includes a `tracker` section). Page deploys are separate (Chief after review).
 
+**Small minute updates (J2798).** The publisher keeps `board.json` and `tracker.json` for existing tabs, and also
+publishes `updates.json`: at most twelve recent edits, capped at 16,000 UTF-8 bytes. New Studio and AI tabs fetch the
+complete board once, then replay these edits against a separate untouched transport copy. A missed history window,
+large change or incompatible update fetches the complete file again. This preserves all cards, counts and job text
+without manually maintaining static/live field lists. The API passes files through without JSON parsing and uses
+content hashes for ETags, so unchanged tracker data returns 304 even when the board commit changes. Authentication,
+version-based page refresh, approval writes and R2 are unchanged. The publisher must roll out along with the page;
+until the updates file exists, the page uses the complete file.
+
 ## UAT = jobs waiting on Ben (25 Oct 2026; lane name live 7 Nov 2026)
 
 A card sits in Videos → **UAT** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
