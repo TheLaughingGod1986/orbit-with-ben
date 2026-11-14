@@ -195121,9 +195121,14 @@
           "at": "2026-11-14T04:09Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T04:10Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Claimed. Resume at High-profile encode. 28 groups already encoded. Next is the skipped fully changed groups. Mixed groups that still hold master frames stay unencoded."
         }
       ],
-      "remaining_action": "Encode the remaining Franklin groups, then mux the original audio",
+      "remaining_action": "Encode the Franklin groups that are fully changed but were skipped",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195132,9 +195137,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T02:33Z",
+        "at": "2026-11-14T04:10Z",
         "by": "cursor",
-        "note": "28 High-profile groups, 3540 frames, lowest PSNR 62.59 dB. Commit dd81c210. Four groups with master frames stay unencode"
+        "note": "Claimed. Resume at High-profile encode. 28 groups already encoded. Next is the skipped fully changed groups. Mixed group"
       }
     },
     {
