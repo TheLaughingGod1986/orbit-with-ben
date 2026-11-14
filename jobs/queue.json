@@ -231653,9 +231653,14 @@
           "at": "2026-11-14T18:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T18:36Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2614; starting step 1: locate hos_008_master_v04.mp4, build the half-second contact sheet (2560..2665) and check take-4 f060 boundary"
         }
       ],
-      "remaining_action": "Three yes/no questions on the salon splice in v04; any no parks for Grok",
+      "remaining_action": "Build the half-second sheet across frames 2560 to 2665 of hos_008_master_v04.mp4 and verify no take-4 frame after f060 appears in v04",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
@@ -231674,9 +231679,11 @@
         "of": 3,
         "at": "2026-11-14T18:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2614; starting step 1: locate hos_008_master_v04.mp4, build the half-second contact sheet (2560..2665) and chec"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2615",
