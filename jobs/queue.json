@@ -249480,13 +249480,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T14:42Z",
-      "eta": "2026-11-14T16:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T11:08Z",
-      "result": "",
+      "result": "PASS (2ff9f5ccd5, 996f897f3d, jobs/reviews/J2821/REVIEW.md): Resolved J01 edit orphan-review (5024233ca100308aecdc). Verified J01_Journey_v03.mp4 (3502.30s, -14.02 LUFS, -0.75 dBTP, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32), laid score v02 (0fd2c87674..., music_gate PASS), sfx_level PASS, picture_qa PASS, and 3 thumbnails PASS (15788500..., 8683d734..., d9434ff3...). Reconciled J01 status.json (picture, edit, thumbs set to done with ref fd789925ca; J2222 awaits_ben active with R2 watch stream owb-j01-v03 and iCloud Drive OWB UAT copy). Linked stage:upload package job J2823 queued and completed at 6c9b001b0e; J2826 tracks stage:upload review and held Private upload after Ben UAT watch OK.",
       "history": [
         {
           "at": "2026-11-14T11:08Z",
@@ -249542,6 +249542,11 @@
           "at": "2026-11-14T14:50Z",
           "by": "gemini",
           "what": "step 3 of 3 done: OWB:J01: J01 edit/picture/thumbs done (fd789925ca), J2222 awaits_ben active, J2823 package done (6c9b001b0e); closing J2821"
+        },
+        {
+          "at": "2026-11-14T14:50Z",
+          "by": "gemini",
+          "what": "done: PASS (2ff9f5ccd5, 996f897f3d, jobs/reviews/J2821/REVIEW.md): Resolved J01 edit orphan-review (5024233ca100308aecdc). Verified J01_Journey_v03.mp4 (3502.30s, -14.02 LUFS, -0.75 dBTP, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32), laid score v02 (0fd2c87674..., music_gate PASS), sfx_level PASS, picture_qa PASS, and 3 thumbnails PASS (15788500..., 8683d734..., d9434ff3...). Reconciled J01 status.json (picture, edit, thumbs set to done with ref fd789925ca; J2222 awaits_ben active with R2 watch stream owb-j01-v03 and iCloud Drive OWB UAT copy). Linked stage:upload package job J2823 queued and completed at 6c9b001b0e; J2826 tracks stage:upload review and held Private upload after Ben UAT watch OK."
         }
       ],
       "remaining_action": "Close J2821 done and post report on studio thread",
@@ -249576,7 +249581,8 @@
         "OWB:027",
         "OWB:028",
         "OWB:029"
-      ]
+      ],
+      "done_ref": "996f897f3d"
     },
     {
       "id": "J2822",
