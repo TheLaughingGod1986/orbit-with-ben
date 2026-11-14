@@ -1,5 +1,5 @@
 {
-  "next_id": 2805,
+  "next_id": 2806,
   "jobs": [
     {
       "id": "J0001",
@@ -247314,6 +247314,36 @@
         "by": "gemini",
         "note": "Verification complete: Mini normal system resolver still fails (cached NS TTL ~42560s -> ~15:14Z; board_check ok=false);"
       }
+    },
+    {
+      "id": "J2805",
+      "title": "HOS 009: scope revised music after failed reuse-check validation",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow-up to J2794 condition ruling, implementing existing HOS Chief desk 6867889512. J2803 validation is complete in OWB PR913 e3b04e94a3accc4614ed8b2435e9b77ddccfadc5 and failed: candidate misses known 0.37s-trim and combined reuse positives (0.693/0.633). Production music_gate remains unchanged and reused FAIL still holds; PR908 prototype is not ready for approval or deployment.\n\nElected Chief: read J2803 results with J2795 diagnosis and the existing ruling; scope the separately bounded revised-music fallback now, not another generic verification loop. Specify cue/direction changes, take count, subscription-credit cap and required live balance/overage-off guard checks before a separately queued production job. Preserve existing score/stems/provenance and narration/diagram KEEP locks. Record acceptance checks including complete library music gate, own-score provenance, chapter crossfade and coverage, then final score acceptance before J2035 assembly and its composites/gates, then J2171 Shorts. Any failed gate still fails. No generation or spend is authorized by this decision job; no new service, top-up, paid overage, YouTube or Buffer action.\n\nDecision due 2026-11-14T06:00Z, available immediately; retain long assembly deadline 2026-11-15T18:00Z. If the fallback cannot meet current gates, record the exact blocker and a concrete bounded successor, not implied approval or a repeated parked-for-Chief note. J2035 and J2171 stay held. Do not deploy the prototype or waive failed checks.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512",
+      "film": "009",
+      "stage": "edit",
+      "after": "J2803",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-14T03:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T03:38Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the failed validation and scope a bounded music revision with acceptance checks",
+      "due": "2026-11-14T06:00:00Z",
+      "kind": "chief",
+      "plain": "Decide how to revise the gravity film music so it passes the required checks"
     }
   ],
   "focus": [
