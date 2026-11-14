@@ -195131,9 +195131,14 @@
           "at": "2026-11-14T04:14Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Plan is 272-422, 423-544, salon 2506-2665, electricity 8189-8268 and 8269-8348, path 10777-10852, metal 10996-11037. Groups that still hold master frames stay unencoded."
+        },
+        {
+          "at": "2026-11-14T04:17Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Seven skipped groups encoded at High qp 1. Commit 2b5160bd. Lowest frame 62.70 dB. Four groups with master frames stay unencoded. No v04."
         }
       ],
-      "remaining_action": "Build yuv420p nuts for the seven skipped Franklin groups and encode them",
+      "remaining_action": "Encode the four Franklin groups that still hold master frames, then mux the original audio",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195142,9 +195147,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T04:14Z",
+        "at": "2026-11-14T04:17Z",
         "by": "cursor",
-        "note": "Plan is 272-422, 423-544, salon 2506-2665, electricity 8189-8268 and 8269-8348, path 10777-10852, metal 10996-11037. Gro"
+        "note": "Seven skipped groups encoded at High qp 1. Commit 2b5160bd. Lowest frame 62.70 dB. Four groups with master frames stay u"
       }
     },
     {
