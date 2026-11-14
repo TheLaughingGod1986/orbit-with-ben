@@ -249548,17 +249548,22 @@
           "at": "2026-11-14T13:11Z",
           "by": "gemini",
           "what": "step 2 of 4 done: OWB:J01: built and verified Captions/J01_Journey_v03_en-GB.srt (988 cues, 0.00-3484.44s, <=42 chars x 2 lines, 0 overlaps)"
+        },
+        {
+          "at": "2026-11-14T13:18Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: OWB:J01: committed 11_Upload-Package (6c9b001b0e) with PACKAGE_MANIFEST.json, 988-cue en-GB SRT, 51.00s vertical trailer, and PASS dry-run result"
         }
       ],
-      "remaining_action": "Build vertical trailer 11_Upload-Package/Trailer/j01_trailer_v01.mp4 and write PACKAGE_MANIFEST.json",
+      "remaining_action": "Close J2823 and report on #99",
       "kind": "listing",
       "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-14T13:11Z",
+        "at": "2026-11-14T13:18Z",
         "by": "gemini",
-        "note": "OWB:J01: built and verified Captions/J01_Journey_v03_en-GB.srt (988 cues, 0.00-3484.44s, <=42 chars x 2 lines, 0 overlap"
+        "note": "OWB:J01: committed 11_Upload-Package (6c9b001b0e) with PACKAGE_MANIFEST.json, 988-cue en-GB SRT, 51.00s vertical trailer"
       },
       "taskKeys": [
         "OWB:023",
