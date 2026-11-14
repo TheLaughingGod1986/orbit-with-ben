@@ -1,5 +1,5 @@
 {
-  "next_id": 2853,
+  "next_id": 2854,
   "jobs": [
     {
       "id": "J0001",
@@ -231683,6 +231683,11 @@
           "at": "2026-11-14T19:14Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Q1 at 2585->2586 is YES (clean cut-in; note 2505->2506 still has 1.12x crop jump withdrawn in 6796274013); Q2 is NO (2586..2605 is 20 identical frames = 0.833s static freeze of f000, mean_abs_diff=0.0 across 2588..2605); Q3 is YES (spark peaks on 2635 src f030 with approved f029/f031 glow, nowhere else); Q4 confirmed (no frame past f060 appears in v04). Sheet: /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v04/J2614/J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe2199282d200ae6f7316a96a4ba50db88dc892e5d42ff8d93826fab), review: jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63)"
+        },
+        {
+          "at": "2026-11-14T19:17Z",
+          "by": "relay",
+          "what": "condition verification queued: J2853"
         }
       ],
       "remaining_action": "Chief ruling on HOS 008 v04 salon splice (20-frame f000 freeze at 2586..2605 and 1.12x crop jump at 2505->2506)",
@@ -231708,7 +231713,13 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-14T20:17:32+00:00",
+        "recheck_task": "J2853"
+      }
     },
     {
       "id": "J2615",
@@ -251779,6 +251790,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2853",
+      "title": "Verify condition for J2614",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2614: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2614 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T19:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T19:17Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief ruling on HOS 008 v04 salon splice (20-frame f000 freeze at 2586..2605 and 1.12x crop jump at 2505->2506)",
+      "kind": "review",
+      "recheck_of": "J2614",
+      "due": "2026-11-13T16:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
