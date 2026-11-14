@@ -247093,10 +247093,10 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T07:19Z",
+      "eta": "2026-11-14T10:19Z",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
       "result": "",
@@ -247190,6 +247190,11 @@
           "at": "2026-11-14T05:52Z",
           "by": "codex",
           "what": "released: Step 3/4. PR 919 merged (4c90240a21), Pages deployment 41cd92b9 live. Live failure diagnosed as GitHub 403 on commit lookup; branch updates now use snapshot ETag validation. Tests and explicit Chrome auth PASS. Detached tmux J2798-branch-traffic waits for snapshotEtag in live API then captures ten minutes. Read /Users/benjaminoats/_desk/logs/J2798-live-branch.done, .log, .json. Missing done means still running: do not duplicate. Verify both bytesPerMinute below 20000 and inspect full-snapshot fallback/statuses before completing. Existing RESULT.md contains prior failed measured totals and correction rationale. No acceptance PASS yet."
+        },
+        {
+          "at": "2026-11-14T07:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for the new ten-minute live traffic capture, then checking the data budget",
