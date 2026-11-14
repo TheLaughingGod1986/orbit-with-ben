@@ -1,5 +1,5 @@
 {
-  "next_id": 2846,
+  "next_id": 2847,
   "jobs": [
     {
       "id": "J0001",
@@ -251028,6 +251028,35 @@
       "remaining_action": "Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035)",
       "kind": "studio",
       "plain": "Arm thumbnail-only Test & Compare on How Long Will Anything in Space Last? (m09jUdwC5hk) after Chief PASS in J2844"
+    },
+    {
+      "id": "J2846",
+      "title": "Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Conditional Studio Test & Compare arming for `Mo93x0fxB1Q` (*Why Haven't We Found Aliens Yet? The Fermi Paradox Explained*, ledger `T036`), gated on Chief PASS in `J2844`:\n\n1. **Check Chief decision first (`J2844` & `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`):** Act ONLY if Chief gave an explicit exact-file **PASS** for `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/001_Will-We-Ever-Meet-Aliens/08_Thumbnails/repackage_2026-11/J2834_v02/Mo93x0fxB1Q_B_v04.jpg` (`sha256=d4f7b6d242175ef4d7df2769f34c26c9cfc04de6787d7ee8f10ccf77d068bf41`). If Chief requested a revision instead, block or close per Chief's ruling without touching Studio.\n2. **Verify Orbit With Ben Studio browser (`CDP 9223`, `from cdp_tabs import reuse_page`):** Confirm channel name is `Orbit With Ben` before opening `https://studio.youtube.com/video/Mo93x0fxB1Q/edit`.\n3. **Fresh read-only check of current Test & Compare state:**\n   - If any test is currently **Running**, STOP and do NOT replace or edit it (Never list).\n   - Prior finished test `T005` (`Not enough impressions to declare a winner`) was already read back and recorded in `05_Analytics/tests/THUMB_LEDGER.json` on `2026-11-14`. Press `New test` -> `Continue` ONLY if Chief's PASS in `J2844` explicitly authorized starting the successor test over `T005` (otherwise record skipped per `J2702`).\n4. **Arm Thumbnail-Only Test & Compare (one variable only — keep baseline title `Why Haven't We Found Aliens Yet? The Fermi Paradox Explained`, description, and Public privacy unchanged):**\n   - Option 1 (A): current live thumbnail (kept in place — never straight-replace live A).\n   - Option 2 (B): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/001_Will-We-Ever-Meet-Aliens/08_Thumbnails/repackage_2026-11/J2834_v02/Mo93x0fxB1Q_B_v04.jpg` (`ZERO SIGNALS`, verify `sha256=d4f7b6d242175ef4d7df2769f34c26c9cfc04de6787d7ee8f10ccf77d068bf41` before upload).\n5. **Save, reload, verify `Test running`, and record in `05_Analytics/tests/THUMB_LEDGER.json` (`python3 scripts/thumb_ledger.py start T036`).**\n",
+      "ref": "J2834",
+      "film": "",
+      "stage": "",
+      "after": "J2844",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-14T17:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T17:11Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036)",
+      "kind": "studio",
+      "plain": "Arm thumbnail-only Test & Compare on Why Haven't We Found Aliens Yet? (Mo93x0fxB1Q) after Chief PASS in J2844"
     }
   ],
   "focus": [
