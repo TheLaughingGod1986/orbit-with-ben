@@ -192600,11 +192600,16 @@
           "at": "2026-11-14T07:11Z",
           "by": "relay",
           "what": "condition verification queued: J2815"
+        },
+        {
+          "at": "2026-11-14T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Restore the full Earth-spin score before the Journey music gate can pass",
       "kind": "assembly",
-      "escalated_at": "2026-11-14T04:06Z",
+      "escalated_at": "2026-11-14T09:46Z",
       "progress": {
         "step": 4,
         "of": 5,
@@ -248308,6 +248313,11 @@
           "at": "2026-11-14T06:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J1130 condition PROVEN SATISFIED in HOS Studio (CDP 9222, 14 Nov 06:41Z): T023 on AL_-qlWko_g finished 12 Nov 2026 at 01:34 (ran 29 Oct 00:45 to 12 Nov 01:34, 11 views, no winner, Option A visible to all) and London date is 14 Nov 2026. T023 recorded in THUMB_LEDGER.json and full report committed at c890865242 (jobs/reviews/J2812/REVIEW.md). Because jobs.py reopen on a held job requires the elected Chief, run: jobs.py reopen J1130 --agent codex --note 'J2812 verified T023 finished 12 Nov 2026 01:34 and London date is 14 Nov (c890865242)' --git && jobs.py done J2812 --agent codex --result 'Verified T023 finished 12 Nov 2026 01:34, recorded in THUMB_LEDGER.json (c890865242), and reopened J1130' --git"
+        },
+        {
+          "at": "2026-11-14T09:46Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Elected Chief (codex) to reopen J1130 and close J2812",
@@ -248333,7 +248343,8 @@
       },
       "taskKeys": [
         "HOS:002"
-      ]
+      ],
+      "escalated_at": "2026-11-14T09:46Z"
     },
     {
       "id": "J2813",
