@@ -248439,6 +248439,11 @@
           "at": "2026-11-14T07:11Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T07:11Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 379 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Check whether Titan retention data has settled and save reproducible audit rows",
@@ -248446,7 +248451,16 @@
       "recheck_of": "J2741",
       "mini_only": true,
       "due": "2026-11-14T08:11:17+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
