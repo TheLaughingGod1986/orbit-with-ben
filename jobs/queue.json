@@ -247165,13 +247165,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T03:52Z",
-      "eta": "2026-11-14T04:52Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T02:34Z",
-      "result": "",
+      "result": "64 videos, 0 errors (36 public [7 longs + 29 Shorts, incl. newly public cLKDiYP55J8 & ETynHpIYLeY] + 6 scheduled [1 long + 5 Shorts] + 22 private); 7/7 public longs end screens and 29/29 public Shorts Related PASS (J0875 & J0960 done); 0 fixes needed (HOS PR #580, 13e66e56, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-14.md)",
       "history": [
         {
           "at": "2026-11-14T02:34Z",
@@ -247237,6 +247237,11 @@
           "at": "2026-11-14T04:00Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 done: verified 64 videos, 0 errors (36 public [7 longs + 29 Shorts] + 6 scheduled [1 long + 5 Shorts] + 22 private); 0 fixes needed (HOS PR #580, 13e66e56)"
+        },
+        {
+          "at": "2026-11-14T04:00Z",
+          "by": "gemini",
+          "what": "done: 64 videos, 0 errors (36 public [7 longs + 29 Shorts, incl. newly public cLKDiYP55J8 & ETynHpIYLeY] + 6 scheduled [1 long + 5 Shorts] + 22 private); 7/7 public longs end screens and 29/29 public Shorts Related PASS (J0875 & J0960 done); 0 fixes needed (HOS PR #580, 13e66e56, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-14.md)"
         }
       ],
       "remaining_action": "None (audit complete, 0 fixes needed)",
@@ -247267,7 +247272,8 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "done_ref": "13e66e56"
     },
     {
       "id": "J2803",

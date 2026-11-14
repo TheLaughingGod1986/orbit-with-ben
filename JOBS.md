@@ -77,7 +77,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
 | J2800 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
-| J2802 | mini | claimed | gemini | 2026-11-14T04:52Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J2804 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2805 | mini | blocked | codex | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
@@ -87,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 Recently finished:
 
 - J2803 done: J2795-V: Validate music reuse correction on owned recordings (Validation bar not met. PR 913 (macbook/J2803, e3b04e94a). Candidate misses HOS 009 wonder 0.37s trim at 0.693 and the combined copy at 0.633 (production 0.736 and 0.685), both lag 0 over 179s. Other positives pass, and all 20 independent negatives stay under 0.8 (candidate max 0.294). Whole-second trims of that cue score 0.987 to 1.000 with the correct lag. music_gate.py unchanged. PR 908 stays draft. Not a gate PASS, no deploy, no generation. J2035 stays held. Correction is not ready for the approval the ruling requires.)
+- J2802 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (64 videos, 0 errors (36 public [7 longs + 29 Shorts, incl. newly public cLKDiYP55J8 & ETynHpIYLeY] + 6 scheduled [1 long + 5 Shorts] + 22 private); 7/7 public longs end screens and 29/29 public Shorts Related PASS (J0875 & J0960 done); 0 fixes needed (HOS PR #580, 13e66e56, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-14.md))
 - J2801 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public OWB videos (z5V6gIXXYs8 through rVqgtkBV3jc, plus #11-#15) pass chapters, sources, end screens and Related checks against 2026-11-13.json snapshot, cuts, manifests and live YouTube watch/Shorts pages; wrote 05_Analytics/live_fixes/2026-11-14.md (16e1e6231d); 0 fixes needed)
 - J2796 done: Board: every script reads the board's address from one setting, the docs name the live address, and the board is kept out of search (Chief KEEP completed: PR 910 merged 7060b03eb5, both CI checks pass; protected docs and address guard fixed. Live / and /tracker have noindex/nofollow; board_check passes, both client endpoints reach expected missing-token 500. Published board-data 61a9dfac has zero retired-host mentions. J2532 follow-up corrected with J2714 token dependency and 07:40 UTC retry retained; history preserved. PRs 858/909 closed as superseded. Evidence jobs/reviews/J2796/CHIEF_REVIEW.md.)
 - J2795 done: Music gate: diagnose reuse false positives without waivers (Recorded existing Chief ruling HOS desk 6867889512 (OWNER verified): diagnosis accepted as grounds for a general correction, NOT gate PASS. PR908 at 838773d2d4 remains draft/unmerged; prototype not deployed. Follow-up J2803 (J2795-V), Codex/Sol with routing fallback, tests owned ambient/chamber/drone recordings, reuse transformations and matched-window reporting; due 2026-11-14T16:00Z. J2035 dependency hold now names J2803, retains 2026-11-14T06:00Z recheck and 15 Nov 18:00Z assembly deadline. Failed/late validation goes to Chief for separately bounded revised-music scope. No waiver, generation, spend or assembly release; required approval and full production gate rerun remain before score acceptance. Review steps recorded separately with chief_relay review-progress.)
@@ -95,23 +95,3 @@ Recently finished:
 - J2791 done: Verify condition for J2035 (Chief close of the condition check. Ruling NOT MET, as recorded in PR 907 (merge 3a02f4d952). music_gate still FAILs reused at 0.804, 0.811 and 0.821 on the complete 77-file comparison. J2663 forbids a waiver. This is not a music PASS and not a film PASS. J2035 stays on its dependency hold, next check 2026-11-14T06:00:00Z. J2795 remains the bounded no-spend diagnosis. No assembly release, waiver, generation, upload or spend.)
 - J2790 done: History of Science Atom film: board loses its live video when film state moves to one file per film (Done by Claude: cause found and fixed in orbit-with-ben PR 905 (merged 7730379d, 13 Nov 22:15Z). The per-film shape read only upload receipts; it now falls back to the channel's UPLOADS.json long, as the one-file shape does. Board built from HOS main and the PR 548 branch: 313 cards each, none differ; Orbit unchanged. Strong-model review: MERGE. Minor follow-up: video_tracker's CLI and approved_deliver.py still read receipts only.)
 - J2789 done: oppti.dev: put the visual refresh live (Ben: "ship the refresh") (Approved refresh 227b8bd deployed live as f858ae31-bf88-4b2b-8ef4-d5060155564d; prior rollback 7d172ed2-756f-47b0-be35-0366cf8ff1e3. All 22 checked routes 200; pound prices, green-dot label, both custom domains, www 308 and no X-Robots-Tag verified. Twenty-page CPU median 10 ms/max 145 ms, all ok. No rollback needed; zero spend. Full local report: _desk/reports/J2789/REPORT.md.)
-- J2788 done: First-day check at 6 h: "Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) (PR #903 (macbook/J2788 -> main, commit 74c5cbd9f; 0 faults in Studio).
-
-"Why Does Pluto's Giant Ice Heart Have Zero Craters?" (z5V6gIXXYs8) · Orbit With Ben · Short · went live Fri 13 Nov 11:30 London
-At 6 h: views 147 · Studio rank 6 of 10 · shown in feed about 539 (from 131 feed views) · stayed to watch 24.3% · average viewed 88.0%
-Usual for this channel: stayed to watch 32.0%, average viewed 65.4%
-
-Verdict: AHEAD
-  - 147 views at 6 h; the last 3 checked at the same age had 19 (median).
-  - 147 views at 6 h; Studio says the usual for us at this age is 240.
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - The title starts with "Why", like 9 earlier Shorts: they had 207 views by the next morning (median), against 72 for all Shorts.
-  - It is a second upload of the same video (it replaced gmzaCfJF1gA).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
