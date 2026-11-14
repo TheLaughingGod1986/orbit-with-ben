@@ -194533,10 +194533,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T15:44Z",
-      "eta": "2026-11-14T17:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195570,6 +195570,11 @@
           "at": "2026-11-14T15:48Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Verifier exit 0. Audio matches the v03 master: 25902071 samples, lag 0.000 ms, ebur128 -14.1 LUFS and -1.2 dBTP. HOS commit 41869e66. Not v04."
+        },
+        {
+          "at": "2026-11-14T15:48Z",
+          "by": "cursor",
+          "what": "released: 2/3. Verifier exit 0. Candidate audio matches the v03 master: 25902071 samples, lag 0.000 ms at the four checkpoints and each patch, ebur128 -14.1 LUFS and -1.2 dBTP. HOS commit 41869e66 on PR 542. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Not v04. No detached process, no spend or publication. Next: film gates, then name the master."
         }
       ],
       "remaining_action": "Run the Franklin film gates on the assembly candidate without naming it a master.",
