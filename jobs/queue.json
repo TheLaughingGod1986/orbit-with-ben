@@ -253476,6 +253476,11 @@
           "at": "2026-11-14T23:37Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T23:39Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Run 5-part review on 033 Shorts 1 and 2 v02 and call jobs.py awaits for Ben phone watch",
@@ -253483,7 +253488,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Review 033 Uranus Shorts 1 and 2 v02 cuts and stage for Ben phone watch"
+      "plain": "Review 033 Uranus Shorts 1 and 2 v02 cuts and stage for Ben phone watch",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
