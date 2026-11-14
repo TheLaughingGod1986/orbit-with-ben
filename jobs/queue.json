@@ -225244,7 +225244,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Orbit's spend ledger step is built: orbit-with-ben PR 935 (14 Nov 17:55Z), 38 addresses replaced by 'the studio Ultra account', every other byte unchanged, dry run built from it reads 0. The Mini was idle. Waiting for CI, then I merge and record the day's dry run (the seven-day count starts then). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, through ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal and the planned history-rewrite window, which Ben is told about the day before.",
+      "result": "Waiting for: Ledger step done: orbit-with-ben PR 935 merged 14 Nov 18:00Z (227dd360); the dry run of the move read 0 that day, the first zero (streak 1). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move itself is a separate decision: seven zero days in a row, Ben told at day six.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -225330,16 +225330,21 @@
           "at": "2026-11-14T17:56Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T21:40:00Z"
+        },
+        {
+          "at": "2026-11-14T18:01Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-15T07:40:00Z"
         }
       ],
-      "remaining_action": "Merge PR 935, record the dry run at zero, then start History of Science's own files",
+      "remaining_action": "Start History of Science's own files: count them and plan the first small pull requests",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Orbit's spend ledger step is built: orbit-with-ben PR 935 (14 Nov 17:55Z), 38 addresses replaced by 'the studio Ultra account', every other byte unchanged, dry run built from it reads 0. The Mini was idle. Waiting for CI, then I merge and record the day's dry run (the seven-day count starts then). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, through ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal and the planned history-rewrite window, which Ben is told about the day before.",
-        "check_at": "2026-11-14T21:40:00Z"
+        "condition": "Ledger step done: orbit-with-ben PR 935 merged 14 Nov 18:00Z (227dd360); the dry run of the move read 0 that day, the first zero (streak 1). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move itself is a separate decision: seven zero days in a row, Ben told at day six.",
+        "check_at": "2026-11-15T07:40:00Z"
       }
     },
     {
