@@ -1,5 +1,5 @@
 {
-  "next_id": 2812,
+  "next_id": 2814,
   "jobs": [
     {
       "id": "J0001",
@@ -105270,6 +105270,11 @@
           "at": "2026-11-13T23:12Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T05:15:00Z"
+        },
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J2812"
         }
       ],
       "remaining_action": "Read the Periodic Table thumbnail test finish time in Studio; verify the next London day before the approved title-only test",
@@ -105287,10 +105292,11 @@
       "hold": {
         "type": "test",
         "condition": "T023 on HOS AL_-qlWko_g has an actual Studio finish timestamp and the London date is at least the next day. Mini read 13 Nov about 23:08Z showed Results ready and 11 views during test period, but report access and subsequent bounded CDP reads timed out; no finish timestamp verified. See PR 894 CHIEF_REVIEW.md. Next check requires a Studio-capable Mini worker or MacBook Gemini/Cursor/Codex.",
-        "check_at": "2026-11-14T05:15:00Z",
+        "check_at": "2026-11-14T06:15:31+00:00",
         "last_recheck": "J2768",
         "checked_at": "2026-11-13T23:12:49+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2812"
       }
     },
     {
@@ -179125,6 +179131,11 @@
           "at": "2026-11-13T22:49Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T04:50:00Z"
+        },
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J2813"
         }
       ],
       "remaining_action": "Verify operator configuration and acceptance evidence before resuming remaining allow-list work",
@@ -179149,10 +179160,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief review J2719: NOT MET. J2517 and J2559 complete; no always-on work remains a prerequisite. Fresh hashes match the 4-6 Nov approval-settings checkpoint; PR490 remains draft at f521bcd3f1. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence. Existing rules or merging PR490 alone do not prove completion. Keep fallback routing active; recheck for operator evidence at the stated time. No autonomous approval-control changes.",
-        "check_at": "2026-11-14T04:50:00Z",
+        "check_at": "2026-11-14T06:15:31+00:00",
         "last_recheck": "J2719",
         "checked_at": "2026-11-13T22:49:00+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2813"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -247861,6 +247873,68 @@
       "remaining_action": "Review HOS:105 topic brief and neighbour/search evidence on HOS PR #581, score Rule-E rubric, and write go/no-go verdict",
       "kind": "review",
       "plain": "Checking whether the carnivorous plants history film is worth making: similar big videos, search demand, and non-duplication"
+    },
+    {
+      "id": "J2812",
+      "title": "Verify condition for J1130",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1130: T023 on HOS AL_-qlWko_g has an actual Studio finish timestamp and the London date is at least the next day. Mini read 13 Nov about 23:08Z showed Results ready and 11 views during test period, but report access and subsequent bounded CDP reads timed out; no finish timestamp verified. See PR 894 CHIEF_REVIEW.md. Next check requires a Studio-capable Mini worker or MacBook Gemini/Cursor/Codex.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1130 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T05:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read the Periodic Table thumbnail test finish time in Studio; verify the next London day before the approved title-only test",
+      "kind": "review",
+      "recheck_of": "J1130",
+      "due": "2026-11-14T06:15:31+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2813",
+      "title": "Verify condition for J2040",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Chief review J2719: NOT MET. J2517 and J2559 complete; no always-on work remains a prerequisite. Fresh hashes match the 4-6 Nov approval-settings checkpoint; PR490 remains draft at f521bcd3f1. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence. Existing rules or merging PR490 alone do not prove completion. Keep fallback routing active; recheck for operator evidence at the stated time. No autonomous approval-control changes.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T05:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify operator configuration and acceptance evidence before resuming remaining allow-list work",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-14T06:15:31+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
