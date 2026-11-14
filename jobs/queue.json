@@ -247195,19 +247195,24 @@
           "at": "2026-11-14T07:19Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T07:20Z",
+          "by": "codex",
+          "what": "step 0 of 4 done: Isolated SSD worktree created; required scratch offload started in tmux j2798-offload."
         }
       ],
-      "remaining_action": "Waiting for the new ten-minute live traffic capture, then checking the data budget",
+      "remaining_action": "Inspect the board data feed, then reduce polling traffic and verify it in the browser",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Make the board use far less data on Ben's phone, by fetching only what changed",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-14T05:51Z",
+        "at": "2026-11-14T07:20Z",
         "by": "codex",
-        "note": "PR 919 CI PASS, merged 4c90240a21 and deployed Pages 41cd92b9. Publisher snapshot hashes confirmed. Detached J2798-branc"
+        "note": "Isolated SSD worktree created; required scratch offload started in tmux j2798-offload."
       }
     },
     {
