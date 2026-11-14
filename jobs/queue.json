@@ -252455,13 +252455,13 @@
       "stage": "edit",
       "after": "J2854",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T22:02Z",
-      "eta": "2026-11-15T00:02Z",
+      "eta": "",
       "created_by": "grok",
       "created_at": "2026-11-14T19:28Z",
-      "result": "",
+      "result": "parked for Chief: all 5 checks YES (1 scale 2505->2506 one scale, no crop; 2 freeze 0 runs of 3 in 2586-2665, f000-f029 longest run 2, repeated MAD <=0.0025 vs step >=0.0602; 3 ghosting 0 mismatches on 160-frame lossless intermediate 270c8c1b.../00171d64..., no blended faces/hands; 4 spark pre-glow 2634 f029, peak 2635 f030, half 2636 f031, clean outside; 5 bound last composite f060 on 2665, 2666 audience cut) + outside 12763 video packets (14946851...) & 25296 audio packets (1a4b5954...) + boundary frames 0/2504/2505/2666/2667/12922 match v04 735ac816e00b84b1e9e17d8e59a18223171953cf3441c67e1375a3ce8f6460c0 (v05 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b). Sheets read: NAS /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/J2854_salon_half_second_2504_2666.jpg (174c37bd3cc1ee5a7bcc5103a7a8ec508e817c979f1d494edfaa6e5326c85ac8) & J2854_salon_strip_2586_2636.jpg (5ea529ea50d9a38acbcb9704e3e90562ad7f19a405c16abfb3e2b18ab8548009); hos-desk e8e7d0d4 _desk/008/20261114-2159_edit/ half (62090f3b1e4486fa28914630a31080ba53068e86ac6b676490f34669befc5863) & strip (15a703101b3c21e40edde82d48dcfc5a5e99a7d5e7bd6b73348ef20ebeaae36b). No pass called; J2243 not started.",
       "history": [
         {
           "at": "2026-11-14T19:28Z",
@@ -252497,6 +252497,11 @@
           "at": "2026-11-14T22:17Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted J2855 verification to HOS desk; parking J2855 for Chief per brief"
+        },
+        {
+          "at": "2026-11-14T22:17Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: all 5 checks YES (1 scale 2505->2506 one scale, no crop; 2 freeze 0 runs of 3 in 2586-2665, f000-f029 longest run 2, repeated MAD <=0.0025 vs step >=0.0602; 3 ghosting 0 mismatches on 160-frame lossless intermediate 270c8c1b.../00171d64..., no blended faces/hands; 4 spark pre-glow 2634 f029, peak 2635 f030, half 2636 f031, clean outside; 5 bound last composite f060 on 2665, 2666 audience cut) + outside 12763 video packets (14946851...) & 25296 audio packets (1a4b5954...) + boundary frames 0/2504/2505/2666/2667/12922 match v04 735ac816e00b84b1e9e17d8e59a18223171953cf3441c67e1375a3ce8f6460c0 (v05 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b). Sheets read: NAS /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v05/J2854_salon_half_second_2504_2666.jpg (174c37bd3cc1ee5a7bcc5103a7a8ec508e817c979f1d494edfaa6e5326c85ac8) & J2854_salon_strip_2586_2636.jpg (5ea529ea50d9a38acbcb9704e3e90562ad7f19a405c16abfb3e2b18ab8548009); hos-desk e8e7d0d4 _desk/008/20261114-2159_edit/ half (62090f3b1e4486fa28914630a31080ba53068e86ac6b676490f34669befc5863) & strip (15a703101b3c21e40edde82d48dcfc5a5e99a7d5e7bd6b73348ef20ebeaae36b). No pass called; J2243 not started."
         }
       ],
       "remaining_action": "Park J2855 for Chief with all 5 checks YES and sheet paths/hashes",

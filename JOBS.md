@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
 | J2850 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
 | J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
-| J2855 | mini | claimed | gemini | 2026-11-15T00:02Z | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
+| J2855 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 | J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 | J2859 | mini | claimed | macbook-2 | 2026-11-14T22:39Z | listing · Listings for the two long films from research on channels that do this: search-led titles, first lines and tags |  |
