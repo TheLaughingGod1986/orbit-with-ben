@@ -247177,13 +247177,13 @@
       "stage": "edit",
       "after": "J2795",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-14T03:07Z",
-      "eta": "2026-11-14T03:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:04Z",
-      "result": "",
+      "result": "Validation bar not met. PR 913 (macbook/J2803, e3b04e94a). Candidate misses HOS 009 wonder 0.37s trim at 0.693 and the combined copy at 0.633 (production 0.736 and 0.685), both lag 0 over 179s. Other positives pass, and all 20 independent negatives stay under 0.8 (candidate max 0.294). Whole-second trims of that cue score 0.987 to 1.000 with the correct lag. music_gate.py unchanged. PR 908 stays draft. Not a gate PASS, no deploy, no generation. J2035 stays held. Correction is not ready for the approval the ruling requires.",
       "history": [
         {
           "at": "2026-11-14T03:04Z",
@@ -247199,6 +247199,11 @@
           "at": "2026-11-14T03:09Z",
           "by": "macbook-2",
           "what": "step 0 of 4 done: Read J2795 proposal and music_gate; inventory owned beds next"
+        },
+        {
+          "at": "2026-11-14T03:18Z",
+          "by": "macbook-2",
+          "what": "done: Validation bar not met. PR 913 (macbook/J2803, e3b04e94a). Candidate misses HOS 009 wonder 0.37s trim at 0.693 and the combined copy at 0.633 (production 0.736 and 0.685), both lag 0 over 179s. Other positives pass, and all 20 independent negatives stay under 0.8 (candidate max 0.294). Whole-second trims of that cue score 0.987 to 1.000 with the correct lag. music_gate.py unchanged. PR 908 stays draft. Not a gate PASS, no deploy, no generation. J2035 stays held. Correction is not ready for the approval the ruling requires."
         }
       ],
       "remaining_action": "Record owned-bed corpus, hashes and labels before any score",
