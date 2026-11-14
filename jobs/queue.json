@@ -195087,9 +195087,14 @@
           "at": "2026-11-14T02:29Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Encoding the 57-frame Copley group at High profile qp 1. Groups that still contain master frames stay unencoded. No v04."
+        },
+        {
+          "at": "2026-11-14T02:33Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: 28 High-profile groups, 3540 frames, lowest PSNR 62.59 dB. Commit dd81c210. Four groups with master frames stay unencoded. No v04."
         }
       ],
-      "remaining_action": "Encode the closed Franklin groups and mux the original audio",
+      "remaining_action": "Encode the remaining Franklin groups, then mux the original audio",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195098,9 +195103,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T02:29Z",
+        "at": "2026-11-14T02:33Z",
         "by": "cursor",
-        "note": "Encoding the 57-frame Copley group at High profile qp 1. Groups that still contain master frames stay unencoded. No v04."
+        "note": "28 High-profile groups, 3540 frames, lowest PSNR 62.59 dB. Commit dd81c210. Four groups with master frames stay unencode"
       }
     },
     {
