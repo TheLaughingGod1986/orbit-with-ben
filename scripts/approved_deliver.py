@@ -555,7 +555,23 @@ def load_briefs(root: Path) -> dict:
     return doc if isinstance(doc, dict) else {}
 
 
-def load_delivery_videos(root: Path, alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+def _saved_checks() -> dict:
+    import os
+    state = Path(os.environ.get("BOARD_STATE", str(Path.home() / "_desk" / "state" / "board")))
+    for name in ("last.json", "board.json"):
+        p = state / name
+        if p.is_file():
+            try:
+                checks = json.loads(p.read_text()).get("checks")
+                if isinstance(checks, dict):
+                    return checks
+            except (OSError, ValueError):
+                continue
+    return {}
+
+
+def load_delivery_videos(root: Path, alljobs: list[dict], *, now: dt.datetime,
+                         checks: dict | None = None) -> list[dict]:
     """Rebuild tracker videos the way the live board does — real PIPELINE, status.json, UPLOADS, briefs.
 
     Passing uploads={} (the old path) stripped youtube metadata so a Passed card that was already
@@ -566,13 +582,15 @@ def load_delivery_videos(root: Path, alljobs: list[dict], *, now: dt.datetime) -
     documents = load_documents(root)
     briefs = load_briefs(root)
     live = [j for j in alljobs if j.get("status") in vt.LIVE_STATUSES]
+    saved = _saved_checks() if checks is None else checks
     doc = vt.build_videos(
         documents=documents,
         briefs=briefs,
         jobs=live,
-        checks={},
+        checks=saved,
         uploads=uploads,
         now=now,
+        asks=vt.ask_entries(alljobs),
         approved=vt.approved_entries(alljobs),
         alljobs=alljobs,
     )

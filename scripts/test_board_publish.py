@@ -485,5 +485,120 @@ class AsksTheLoader(unittest.TestCase):
         self.assertEqual(board["channels"][-1]["name"], "Night Sky")
 
 
+class TenMinuteChecksGuard(unittest.TestCase):
+    """J2856: Cloudflare needs a non-default User-Agent, and 10 min of failed /api/checks reads flags the board and alerts once."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self._state = bp.STATE
+        bp.STATE = Path(self._tmp.name)
+
+    def tearDown(self):
+        bp.STATE = self._state
+        self._tmp.cleanup()
+
+    def test_requests_carry_user_agent_header(self):
+        seen = []
+
+        class R:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                return json.dumps({"checks": {"OWB-J2222": {"verdict": "ok"}}, "version": "v2",
+                                   "stampUrl": f"{bp.SITE}/api/checks?stamp=1"}).encode()
+
+        def fake_open(req, *a, **k):
+            seen.append(req)
+            return R()
+
+        with unittest.mock.patch.object(bp.urllib.request, "urlopen", side_effect=fake_open):
+            self.assertEqual(bp.stamp_version(f"{bp.SITE}/api/checks?stamp=1"), "v2")
+            checks, _, _ = bp.fetch_checks({}, T0, True)
+        self.assertEqual(checks["OWB-J2222"]["verdict"], "ok")
+        self.assertEqual(len(seen), 2)
+        for req in seen:
+            self.assertIsInstance(req, bp.urllib.request.Request)
+            self.assertEqual(req.get_header("User-agent"), "studio-kanban board_publish")
+
+    def test_ten_minute_outage_flags_board_and_alerts_once_then_recovers(self):
+        import board_check
+        prev = {
+            "checks": {"HOS-J2699": {"verdict": "ok"}},
+            "checksAt": "2026-11-14T19:00:00Z",
+            "checksOkAt": "2026-11-14T19:13:00Z",
+            "checksVersion": "v1",
+            "stampUrl": f"{bp.SITE}/api/checks?stamp=1",
+        }
+        start = dt.datetime(2026-0, 11, 14, 19, 14, tzinfo=dt.timezone.utc)
+
+        def fail_open(*a, **k):
+            raise OSError("HTTP Error 403: Forbidden")
+
+        alerts = []
+        with unittest.mock.patch.object(bp.urllib.request, "urlopen", side_effect=fail_open), \
+                unittest.mock.patch.object(bp, "alert_checks_stale", side_effect=lambda doc: alerts.append(doc) or True):
+            # Minute 0..9: tracked as failing, but under 10 min so board stays healthy and no alert fires.
+            for m in range(10):
+                now_m = start + dt.timedelta(minutes=m)
+                _, checks_at, meta, health, changed = bp.poll_checks(prev, now_m, False)
+                doc = bp.checks_status_doc(health, checks_at)
+                self.assertFalse(doc["stale"], f"minute {m} must not mark stale yet")
+                self.assertFalse(changed, f"minute {m} must not force a stale push")
+                prev = {**prev, **meta, **health}
+            self.assertEqual(alerts, [])
+
+            # Minute 10: crosses the 10-minute mark -> board says "ticks not read since 19:13" and alerts once.
+            at_10 = start + dt.timedelta(minutes=10)
+            _, checks_at, meta, health, changed = bp.poll_checks(prev, at_10, False)
+            doc = bp.checks_status_doc(health, checks_at)
+            self.assertTrue(changed)
+            self.assertTrue(doc["stale"])
+            self.assertEqual(doc["message"], "ticks not read since 19:13")
+            if health["checksStale"] and health["checksAlertedFor"] != health["checksFailedSince"]:
+                if bp.alert_checks_stale(doc):
+                    health["checksAlertedFor"] = health["checksFailedSince"]
+            prev = {**prev, **meta, **health}
+            self.assertEqual(len(alerts), 1)
+            self.assertEqual(alerts[0]["message"], "ticks not read since 19:13")
+            res = board_check.check([], {"checks": {}, "checksStatus": doc, "tracker": {"videos": []}},
+                                    site_status=lambda url, follow=True: 200)
+            self.assertIn("ticks not read since 19:13", res["problems"])
+
+            # Minute 11: still failing, does NOT alert a second time or force another push.
+            at_11 = start + dt.timedelta(minutes=11)
+            _, checks_at, meta, health, changed = bp.poll_checks(prev, at_11, False)
+            self.assertFalse(changed)
+            self.assertEqual(bp.checks_status_doc(health, checks_at)["message"], "ticks not read since 19:13")
+            if health["checksStale"] and health["checksAlertedFor"] != health["checksFailedSince"]:
+                bp.alert_checks_stale(bp.checks_status_doc(health, checks_at))
+            self.assertEqual(len(alerts), 1)
+            prev = {**prev, **meta, **health}
+
+        # Minute 12: store recovers with Ben's OK -> stale clears and board updates immediately.
+        recovered = {"checks": {"OWB-J2222": {"verdict": "ok", "version": "v03"}}, "version": "v2",
+                     "stampUrl": f"{bp.SITE}/api/checks?stamp=1"}
+
+        class OkResp:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+            def read(self):
+                return json.dumps(recovered).encode()
+
+        with unittest.mock.patch.object(bp.urllib.request, "urlopen", side_effect=lambda *a, **k: OkResp()):
+            checks, checks_at, meta, health, changed = bp.poll_checks(prev, start + dt.timedelta(minutes=12), False)
+        self.assertTrue(changed)
+        self.assertEqual(checks["OWB-J2222"]["verdict"], "ok")
+        self.assertEqual(bp.checks_status_doc(health, checks_at), {"ok": True, "stale": False})
+        self.assertEqual(health["checksAlertedFor"], "")
+
+
 if __name__ == "__main__":
     unittest.main()

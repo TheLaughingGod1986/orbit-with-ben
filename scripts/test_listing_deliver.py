@@ -464,6 +464,19 @@ class AnyChannel(unittest.TestCase):
                 self.assertEqual([f["film"] for f in docs["sky"]], ["007"])
                 self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])   # the default channel's, from `root`
 
+    def test_letter_prefixed_film_id_finds_its_manifest(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            pkg = root / "02_Video-Projects" / "J01_Journey-To-Every-World" / "11_Upload-Package"
+            pkg.mkdir(parents=True)
+            manifest = pkg / "PACKAGE_MANIFEST.json"
+            manifest.write_text(json.dumps({
+                "title": "A Calm Journey", "description": "desc", "tags": ["space"],
+                "thumbnail": "/Volumes/data/thumb_A.jpg",
+            }))
+            self.assertEqual(ad.lp.find_manifest(root, number="J01", vtype="long"), manifest)
+            self.assertTrue(ad.lp.for_video({"number": "J01", "type": "long"}, root)["complete"])
+
 
 if __name__ == "__main__":
     unittest.main()

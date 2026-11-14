@@ -1483,3 +1483,23 @@ console.log('Jobs running count checks OK');
   vm.runInContext(source.slice(0, source.indexOf(hook)) + '\n})();', noStore);
   console.log('Old board key hand-off OK');
 }
+
+// J2856: 10-minute /api/checks failure guard shows "ticks not read since HH:MM" on Overview, Review and Videos.
+{
+  const staleBoard = {
+    tracker: {videos: []},
+    owb: {jobs: []},
+    models: {checkedAt: '2026-10-28T19:55:00Z', fresh: true, models: []},
+    checksStatus: {ok: false, stale: true, lastReadAt: '2026-10-28T19:13:00Z', sinceHm: '19:13', message: 'ticks not read since 19:13'},
+  };
+  const ov = t.overview(staleBoard, NOW);
+  const rv = t.renderTab('review', staleBoard, NOW);
+  const vd = t.renderTab('videos', staleBoard, NOW);
+  assert(ov.includes('ticks not read since 19:13'), 'Overview shows ticks not read since HH:MM');
+  assert(rv.includes('ticks not read since 19:13'), 'Review shows ticks not read since HH:MM');
+  assert(vd.includes('ticks not read since 19:13'), 'Videos shows ticks not read since HH:MM');
+  assert.equal(t.overviewModel(staleBoard, NOW).status.text, 'Attention needed', 'stale ticks mark Overview status as Attention needed');
+  const healthyBoard = {...staleBoard, checksStatus: {ok: true, stale: false}};
+  assert(!t.overview(healthyBoard, NOW).includes('ticks not read since'), 'healthy board hides the stale ticks banner');
+  console.log('Ticks-not-read guard OK');
+}

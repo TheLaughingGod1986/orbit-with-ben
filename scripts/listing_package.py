@@ -45,11 +45,12 @@ def find_manifest(root: Path, *, number: str = "", vtype: str = "", package_dir:
             hit = folder / name
             if hit.is_file():
                 return hit
-    num = re.sub(r"\D", "", str(number or ""))[:3]
+    raw = re.sub(r"[^A-Za-z0-9_-]", "", str(number or "").strip())
+    num = re.sub(r"\D", "", raw)[:3]
     projects = root / "02_Video-Projects"
-    if not num or not projects.is_dir():
+    if not projects.is_dir():
         return None
-    folders = sorted(projects.glob(f"{num}_*"))
+    folders = (sorted(projects.glob(f"{raw}_*")) if raw else []) or (sorted(projects.glob(f"{num}_*")) if num else [])
     if not folders:
         return None
     film = folders[0]

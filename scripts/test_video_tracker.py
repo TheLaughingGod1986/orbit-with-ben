@@ -46,7 +46,9 @@ def live_fixture():
     briefs = json.loads((ROOT / "05_Analytics" / "kanban" / "film_briefs.json").read_text())["films"]
     jobs = json.loads((ROOT / "jobs" / "queue.json").read_text())["jobs"]
     try:
-        with urllib.request.urlopen((site_url() + '/api/checks'), timeout=15) as r:
+        from board_site import read_url
+        req = urllib.request.Request((read_url() + '/api/checks'), headers={"User-Agent": "studio-kanban test_video_tracker"})
+        with urllib.request.urlopen(req, timeout=15) as r:
             checks = json.loads(r.read().decode()).get("checks") or {}
     except Exception as e:
         raise unittest.SkipTest(f"checks API unavailable: {e}")
