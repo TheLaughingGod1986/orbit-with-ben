@@ -246977,10 +246977,10 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T04:32Z",
+      "eta": "2026-11-14T07:32Z",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
       "result": "",
@@ -247014,6 +247014,11 @@
           "at": "2026-11-14T03:19Z",
           "by": "codex",
           "what": "released: Implementation commit 9e40c813ff; draft PR #914. Resume worktree /Volumes/MiniWork/scratch/J2798-wt. Progress 2/4. Detached tmux J2798-before-pages (live baseline) and J2798-updates-measure (20-minute real Chrome fixture capture) are running. Logs/results/done markers: /Users/benjaminoats/_desk/logs/J2798-before.{log,json,done} and J2798-after.{log,json,done}. Check markers and logs; do not duplicate captures. Tests and auth browser pass; measured totals, review, merge and deployment remain. See jobs/reviews/J2798/RESULT.md."
+        },
+        {
+          "at": "2026-11-14T04:32Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Collect traffic captures, review the change, then merge and deploy the board",
