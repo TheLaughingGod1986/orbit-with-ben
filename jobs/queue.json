@@ -239922,14 +239922,26 @@
           "at": "2026-11-14T11:34Z",
           "by": "claude",
           "what": "reopened: Ben, in chat (14 Nov 11:34Z): \"token's in\". He made a fine-grained GitHub token for orbit-with-ben and history-of-science (Issues read and write, Contents read-only) and added it to the Pages project studio-kanban as a production secret. His screenshot of the project's settings at 11:32Z shows a secret whose name begins BOARD_G; the check of 13 Nov 06:15Z listed none. The live route still answered \"BOARD_GH_TOKEN isn't set\" at 11:33Z on both addresses, because a Pages secret applies from the next deployment. DO: (1) list the project's production secrets, names only, and confirm BOARD_GH_TOKEN is there; if it is not, park for Ben with the exact name he should check. (2) Deploy the board from main (build.py, then wrangler pages deploy), production. (3) On studio-kanban.pages.dev and board.oppti.dev: /api/checks answers 200; one tick written with the board key on a test id and then removed; /api/data?f=ref asked 30 times over two minutes answers 200 every time (the GitHub 403 and 502 seen in J2797 should be gone now reads are signed). (4) If GitHub refuses a read or a write, say which repository and which permission is missing. Never print the token. (5) Then tell Ben on the thread, in plain words, how to open board.oppti.dev, link his phone and add it to his home screen. No key or code on the thread. (6) Say in the result that J2797 and J2532 can now be checked. Guards: £0, no secret printed, nothing deleted, board open taps stay off."
+        },
+        {
+          "at": "2026-11-14T12:22Z",
+          "by": "claude",
+          "what": "rerouted to cursor: Codex has logged nothing on the queue since 10:15Z (over two hours) and this urgent job has sat unclaimed for 47 minutes, with Ben waiting on it to tick the Journey film and link his phone. Cursor is working on the same Mini, where wrangler is signed in. The steps are in the reopening note of 11:34Z: confirm the secret by name, deploy the board, prove a tick saves, check the data reads, tell Ben how to link his phone. Never print the token."
         }
       ],
       "remaining_action": "Confirm BOARD_GH_TOKEN is set, deploy the board, prove a tick saves and reads are reliable, tell Ben how to link his phone",
       "due": "2026-11-13T18:00:00Z",
-      "for": "codex",
+      "for": "cursor",
       "kind": "studio",
       "plain": "Ben has added the board's token: redeploy the board, prove ticks save again, and tell him how to link his phone",
-      "urgent": 10
+      "urgent": 10,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      }
     },
     {
       "id": "J2715",
