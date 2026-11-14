@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
 | J2832 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
-| J2833 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2833 | any | claimed | claudecode | 2026-11-14T18:18Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2834 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
