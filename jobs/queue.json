@@ -247789,9 +247789,14 @@
           "at": "2026-11-14T05:14Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Step 4 complete: OWB PR opened for jobs/WIP.json next_hos and two Rule-E review jobs queued"
+        },
+        {
+          "at": "2026-11-14T05:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2809; starting data analysis and ID/topic check"
         }
       ],
-      "remaining_action": "Finish J2809, clean up temporary worktrees, and post report",
+      "remaining_action": "Analyse HOS analytics and check existing HOS film IDs, PRs, and WIP to select two new non-overlapping discovery topics",
       "kind": "script",
       "plain": "Choose two new History of Science films using our audience data and comparable videos",
       "mini_only": true,
@@ -247805,11 +247810,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 4,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-14T05:14Z",
+        "at": "2026-11-14T05:20Z",
         "by": "gemini",
-        "note": "Step 4 complete: OWB PR opened for jobs/WIP.json next_hos and two Rule-E review jobs queued"
+        "note": "Claimed J2809; starting data analysis and ID/topic check"
       },
       "taskKeys": [
         "HOS:104",
