@@ -194305,10 +194305,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T06:59Z",
-      "eta": "2026-11-14T08:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195222,6 +195222,11 @@
           "at": "2026-11-14T07:10Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Reference check done. Frames 3168-3258 can stay original packets. Frame 2869 refs 2866, frame 3259 refs 3260, fire tail 4130-4138 and safe-path tail 11118-11245 look into a replaced picture. HOS 49574eef, PR 542. 153 tests OK. No v04."
+        },
+        {
+          "at": "2026-11-14T07:10Z",
+          "by": "cursor",
+          "what": "released: Reference check checkpoint 49574eef on HOS PR 542. Frames 3168-3258 are exact packet copies. Frame 2869, frame 3259, frames 4130-4138 and frames 11118-11245 reference a replaced picture. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. 153 tests OK, check_all PASS. No v04, no detached process, no spend or publication. Desk comment 6873605002."
         }
       ],
       "remaining_action": "Copy the exact jar packets, then keep the blocked frames exact and mux the master",
