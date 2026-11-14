@@ -243409,13 +243409,13 @@
       "stage": "",
       "after": "J2400",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-14T23:50Z",
-      "eta": "2026-11-15T01:50Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-12T23:39Z",
-      "result": "",
+      "result": "Waiting for: None of the three J2683 cohort Shorts has aired or been uploaded (Supermoon v04 J2478 awaits Ben watch for Thu 19 Nov 11:30Z; 032 strike-match J0979 waits behind 032 long J2477 Ben watch for Wed 25 Nov 11:30Z; 033 Short 2 v01 had FIX in J2400 and is in v02 rebuild J2869 -> J2870 for Sat 19 Dec 11:30Z). Pre-airing baseline and cut-meta provenance recorded in PR #941 (5171aeb71, jobs/reviews/J2744/PRE_AIR_BASELINE.md). Run on the Mini (needs read-only YTA sign-in + CDP 9223) 4 days after the last of the three Shorts goes public; the publishing job for the last Short updates check_at to actual publishAt + 4d.",
       "history": [
         {
           "at": "2026-11-12T23:39Z",
@@ -243441,9 +243441,19 @@
           "at": "2026-11-14T23:58Z",
           "by": "macbook",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-14T23:58Z",
+          "by": "macbook",
+          "what": "blocked: Waiting for: None of the three J2683 cohort Shorts has aired or been uploaded (Supermoon v04 J2478 awaits Ben watch for Thu 19 Nov 11:30Z; 032 strike-match J0979 waits behind 032 long J2477 Ben watch for Wed 25 Nov 11:30Z; 033 Short 2 v01 had FIX in J2400 and is in v02 rebuild J2869 -> J2870 for Sat 19 Dec 11:30Z). Pre-airing baseline and cut-meta provenance recorded in PR #941 (5171aeb71, jobs/reviews/J2744/PRE_AIR_BASELINE.md). Run on the Mini (needs read-only YTA sign-in + CDP 9223) 4 days after the last of the three Shorts goes public; the publishing job for the last Short updates check_at to actual publishAt + 4d."
+        },
+        {
+          "at": "2026-11-14T23:58Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-12-23T12:00:00Z"
         }
       ],
-      "remaining_action": "Place J2744 in structured public wait until all three Shorts air + 4 days settlement",
+      "remaining_action": "Wait for the 3 J2683 Shorts (J2478, J0979, J2869/J2870) to go public + 4d YTA settlement, then run Mini retention readout (PR #941 baseline ready)",
       "kind": "review",
       "plain": "Checking whether three new Shorts held viewers better through seconds four to six after small changes to the second shot, the number and the ending",
       "rerouted_from": {
@@ -243460,6 +243470,11 @@
         "of": 3,
         "at": "2026-11-14T23:58Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "None of the three J2683 cohort Shorts has aired or been uploaded (Supermoon v04 J2478 awaits Ben watch for Thu 19 Nov 11:30Z; 032 strike-match J0979 waits behind 032 long J2477 Ben watch for Wed 25 Nov 11:30Z; 033 Short 2 v01 had FIX in J2400 and is in v02 rebuild J2869 -> J2870 for Sat 19 Dec 11:30Z). Pre-airing baseline and cut-meta provenance recorded in PR #941 (5171aeb71, jobs/reviews/J2744/PRE_AIR_BASELINE.md). Run on the Mini (needs read-only YTA sign-in + CDP 9223) 4 days after the last of the three Shorts goes public; the publishing job for the last Short updates check_at to actual publishAt + 4d.",
+        "check_at": "2026-12-23T12:00:00Z"
       }
     },
     {
