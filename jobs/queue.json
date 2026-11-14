@@ -249902,13 +249902,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T14:54Z",
-      "eta": "2026-11-14T16:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T13:19Z",
-      "result": "",
+      "result": "PASS (777790aa7a, jobs/reviews/J2826/REVIEW.md): Resolved J01 upload orphan-review (2c6d36d22d89b2dd4443). Audited J01 11_Upload-Package, synced MEDIA_MANIFEST.json & CHIEF_REVIEW.md to approved on-disk v01 thumbnail SHA-256s/hooks (464°C TO -60°C, 764× OUR SUN, EARTH TO ORION) and master byte size (1,984,936,766 B), added inline description/titleAbc and studio-live trailer path to PACKAGE_MANIFEST.json so listing_package.inspect returns complete=true and youtube:package dry-run passes from clean worktrees, and set stages.upload to todo (with Chief PASS on pre-upload package) pending Ben's UAT watch on J2222 (awaits_ben). workflow_handoffs.py returns count=0.",
       "history": [
         {
           "at": "2026-11-14T13:19Z",
@@ -249944,6 +249944,11 @@
           "at": "2026-11-14T15:13Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4 done: verified workflow_handoffs count=0, listing_package complete=true, youtube:package dry-run ok=true, and all repo checks PASS."
+        },
+        {
+          "at": "2026-11-14T15:13Z",
+          "by": "gemini",
+          "what": "done: PASS (777790aa7a, jobs/reviews/J2826/REVIEW.md): Resolved J01 upload orphan-review (2c6d36d22d89b2dd4443). Audited J01 11_Upload-Package, synced MEDIA_MANIFEST.json & CHIEF_REVIEW.md to approved on-disk v01 thumbnail SHA-256s/hooks (464°C TO -60°C, 764× OUR SUN, EARTH TO ORION) and master byte size (1,984,936,766 B), added inline description/titleAbc and studio-live trailer path to PACKAGE_MANIFEST.json so listing_package.inspect returns complete=true and youtube:package dry-run passes from clean worktrees, and set stages.upload to todo (with Chief PASS on pre-upload package) pending Ben's UAT watch on J2222 (awaits_ben). workflow_handoffs.py returns count=0."
         }
       ],
       "remaining_action": "Close J2826 done and post Chief report on #99",
@@ -249960,7 +249965,8 @@
         "at": "2026-11-14T15:13Z",
         "by": "gemini",
         "note": "Step 4 done: verified workflow_handoffs count=0, listing_package complete=true, youtube:package dry-run ok=true, and all"
-      }
+      },
+      "done_ref": "777790aa7a"
     },
     {
       "id": "J2827",
