@@ -1,5 +1,5 @@
 {
-  "next_id": 2858,
+  "next_id": 2859,
   "jobs": [
     {
       "id": "J0001",
@@ -252254,6 +252254,36 @@
         "okAt": "2026-11-14T20:37Z",
         "okRef": "6882810716"
       }
+    },
+    {
+      "id": "J2858",
+      "title": "Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up dated check from `J2856` (`PR #936`), which added `readUrl: \"https://studio-kanban.pages.dev\"` in `studio/board_site.json` (plus an explicit `User-Agent` header so Cloudflare does not block Python `urllib` with HTTP 403 error 1010) while keeping Ben's Play and phone-pairing links on `https://board.oppti.dev`.\n\n**Run on the Mini (`--mini-only`, £0):**\n1. Check on the Mini (without printing or committing any IP address or device name!) what kind of system DNS resolver the Mini uses (router, provider, Tailscale, other) and whether `https://board.oppti.dev/api/checks?stamp=1` with header `User-Agent: studio-kanban board_publish` now reaches Cloudflare (`server: cloudflare`) with HTTP 200 instead of stale Vercel records. Do not change machine DNS, Tailscale, or `/etc/hosts`.\n2. If `https://board.oppti.dev/api/checks` answers HTTP 200 on Cloudflare from the Mini's system lookup across two checks, open a small PR removing `\"readUrl\"` from `studio/board_site.json` so Mini reads return to `https://board.oppti.dev` alongside Ben's links, and verify `board_publish.py` and `board_check.py --no-post` stay `OK`.\n3. If the Mini's system lookup still returns stale non-Cloudflare answers for `board.oppti.dev`, keep `\"readUrl\": \"https://studio-kanban.pages.dev\"` in place and push this dated check forward by 24 hours with a one-line note (no IP address or device name).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-14T20:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T20:37Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev",
+      "kind": "studio",
+      "plain": "Checking whether the Mac mini can read Ben's board domain directly again",
+      "mini_only": true
     }
   ],
   "focus": [

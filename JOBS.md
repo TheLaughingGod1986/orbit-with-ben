@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 | J2856 | mini | claimed | macbook | 2026-11-14T21:03Z | for cursor · studio · Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on |  |
 | J2857 | mini | open | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
+| J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 
 Recently finished:
 
