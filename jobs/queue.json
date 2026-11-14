@@ -195163,9 +195163,14 @@
           "at": "2026-11-14T05:27Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Claimed. Four groups still hold master frames: 2718-2887, 3168-3343, 4016-4138, 11038-11245. No v04."
+        },
+        {
+          "at": "2026-11-14T05:32Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Source has B-frames, so master frames stay unencoded. Next is High qp 1 on the five changed runs only. No v04."
         }
       ],
-      "remaining_action": "Encode the four Franklin groups that still hold master frames",
+      "remaining_action": "Encode the changed stretches inside the four mixed Franklin groups",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195174,9 +195179,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T05:27Z",
+        "at": "2026-11-14T05:32Z",
         "by": "cursor",
-        "note": "Claimed. Four groups still hold master frames: 2718-2887, 3168-3343, 4016-4138, 11038-11245. No v04."
+        "note": "Source has B-frames, so master frames stay unencoded. Next is High qp 1 on the five changed runs only. No v04."
       }
     },
     {
