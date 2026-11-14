@@ -247215,9 +247215,14 @@
           "at": "2026-11-14T07:27Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 920 CI PASS and merged fa909c9529; Pages deployment 40f6ec3f complete. Publisher rollout started. Detached J2798-packed-live waits for schema-2 history, then captures ten minutes on / and /tracker; fixture capture also running. Acceptance remains open."
+        },
+        {
+          "at": "2026-11-14T07:33Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 920 merged fa909c9529 and Pages 40f6ec3f deployed; publisher schema 2 verified. Real Chrome board/tracker/updates validators return empty 304; public/private auth passes. Production capture J2798-packed-live-v2 rendered both pages and started its ten-minute window. Fixture capture J2798-packed-fixture runs ten idle minutes then ten with one fixture film change. Acceptance remains open until actual totals are inspected."
         }
       ],
-      "remaining_action": "Verify production transfer totals after the deployed polling correction",
+      "remaining_action": "Read the detached browser measurements and confirm both pages stay below 20 KB per minute",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247225,9 +247230,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T07:27Z",
+        "at": "2026-11-14T07:33Z",
         "by": "codex",
-        "note": "PR 920 CI PASS and merged fa909c9529; Pages deployment 40f6ec3f complete. Publisher rollout started. Detached J2798-pack"
+        "note": "PR 920 merged fa909c9529 and Pages 40f6ec3f deployed; publisher schema 2 verified. Real Chrome board/tracker/updates val"
       }
     },
     {
