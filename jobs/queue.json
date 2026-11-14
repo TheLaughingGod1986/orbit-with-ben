@@ -1,5 +1,5 @@
 {
-  "next_id": 2823,
+  "next_id": 2824,
   "jobs": [
     {
       "id": "J0001",
@@ -249488,6 +249488,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2823",
+      "title": "J01 Journey Film 01: build 11_Upload-Package (PACKAGE_MANIFEST, 7 chapters, credits, en-GB SRT, trailer) + dry-run",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build and verify the release upload package (`11_Upload-Package/`) for `J01_Journey-To-Every-World` (`A Calm Journey From Venus to a Dying Star`, stitched ~58m 22s Journey long master `v03`, `07_Edit-Project/J01_Journey_v03.mp4`, `SHA-256: bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32`, reviewed in `J2815` `9ebb517772`, `J2222` `fd789925ca`, and `J2821` `2ff9f5ccd5`). £0 spend, no YouTube upload, no visibility change (Ben's UAT watch on `J2222` gates actual YouTube upload/scheduling).\n\n### Deliverables\n1. **Chapters, Description, Sources & Agency Credits (`11_Upload-Package/`):**\n   - Write `11_Upload-Package/Chapters/j01_chapters_v01.txt` and update `11_Upload-Package/Descriptions/j01_description_v01.txt` with exact timestamps from `07_Edit-Project/J01_Journey_v01_timeline.json` (`0:00` Part 1 Venus, `9:33` Part 2 Earth's Rotation, `16:40` Part 3 Mars, `25:14` Part 4 Jupiter, `32:30` Part 5 Saturn's Rings, `40:42` Part 6 Speed of Light, `49:38` Part 7 Betelgeuse).\n   - Ensure the `Sources:` block (from `01_Script/SOURCES.md` and parent films `023–029`), agency/archive image credits (`cuts.json`), and truthful making-of note are complete and never name AI checkers.\n2. **Captions (`en-GB`), Pinned Comment, Titles, Tags & Vertical Trailer:**\n   - Build `11_Upload-Package/Captions/J01_Journey_v03_en-GB.srt` (`en-GB`, `<= 42` chars x `2` lines, zero overlaps) covering the full `3502.30 s` timeline (`8` linking VO segments + `7` parent film VO transcripts).\n   - Write `11_Upload-Package/Pinned-Comments/j01_pinned_v01.txt`, `Tags/j01_tags_v01.txt`, and `Titles/j01_titles_v01.txt`.\n   - Build `11_Upload-Package/Trailer/j01_trailer_v01.mp4` (`608x1080`, `24 fps` CFR, `~-14 LUFS`) from the `J01_Journey_v03.mp4` opening per `STUDIO_PLAYBOOK.md` §12.\n3. **Manifest & Dry-Run Verification (No Upload):**\n   - Write `11_Upload-Package/PACKAGE_MANIFEST.json` referencing `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4` (`SHA-256: bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32`) and the three approved `J2222` thumbnails in `08_Thumbnail/j01_v01/` (`thumb_A_real_venera_mars.jpg`, `thumb_B_bright_supergiant_scale.jpg`, `thumb_C_outward_worlds_lineup.jpg`).\n   - Run and record PASS outputs for `cd 07_Content-Ops && npm run youtube:package -- --package ../02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package --video /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4 --dry-run`. Do NOT upload to YouTube until Ben's UAT watch (`J2222`) passes.\n",
+      "ref": "2ff9f5ccd5",
+      "film": "J01",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-14T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T12:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 11_Upload-Package/PACKAGE_MANIFEST.json, 7 chapter timestamps, en-GB SRT, vertical trailer, and run youtube:package --dry-run",
+      "kind": "listing",
+      "plain": "Build the J01 Journey Film 01 upload package, captions, vertical trailer and dry-run check while v03 awaits Ben's UAT watch"
     }
   ],
   "focus": [
