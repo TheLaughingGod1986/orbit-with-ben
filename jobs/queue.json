@@ -210181,9 +210181,14 @@
           "at": "2026-11-14T23:26Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1/5 done: SHA-256 verified (iCloud UAT copies are 0B placeholders); picture_qa, polish_gate, music_gate, sfx_kit level, thumb_preview PASS; gate_shorts_open FAIL on both (Short 1 14/37=38% blur-pad, Short 2 24/27=89% blur-pad)"
+        },
+        {
+          "at": "2026-11-14T23:29Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Steps 2-3/5 done: inspected 2fps sheets, +-3f cut strips, final 3s strips, and picture_qa WARNs for Shorts 1 & 2; confirmed 16:9 band-over-blur in Short 1 (R01b-R09b) and Short 2 (R49b-R53c) plus ruled-line plates PIA00142/PIA01977/PIA01985 in Short 2"
         }
       ],
-      "remaining_action": "Generate and inspect 2 fps contact sheets, +-3 frame cut strips, and final 3.0s strips for 033 Shorts 1 & 2",
+      "remaining_action": "Inspect audio soundtracks (Part 4) and 360p moving-video proxies (Part 5) via read_file",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -210201,11 +210206,11 @@
       "urgent": 8,
       "due": "2026-11-15T22:00:00Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-14T23:26Z",
+        "at": "2026-11-14T23:29Z",
         "by": "gemini",
-        "note": "Step 1/5 done: SHA-256 verified (iCloud UAT copies are 0B placeholders); picture_qa, polish_gate, music_gate, sfx_kit le"
+        "note": "Steps 2-3/5 done: inspected 2fps sheets, +-3f cut strips, final 3s strips, and picture_qa WARNs for Shorts 1 & 2; confir"
       },
       "taskKeys": [
         "OWB:033"
