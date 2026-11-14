@@ -239932,9 +239932,14 @@
           "at": "2026-11-14T12:25Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T12:36Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done: Preflight verified build.py; Wrangler login and BOARD_KEY live on the Mini only; fixing MacBook Studio filter"
         }
       ],
-      "remaining_action": "Confirm BOARD_GH_TOKEN is set, deploy the board, prove a tick saves and reads are reliable, tell Ben how to link his phone",
+      "remaining_action": "On the Mini: confirm BOARD_GH_TOKEN in wrangler, deploy studio-kanban, prove /api/checks tick and 30x ref reads, post phone link steps",
       "due": "2026-11-13T18:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -239948,12 +239953,11 @@
         "by": ""
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T12:25Z",
+        "at": "2026-11-14T12:36Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Preflight verified build.py; Wrangler login and BOARD_KEY live on the Mini only; fixing MacBook Studio filter"
       }
     },
     {
