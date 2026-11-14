@@ -246651,20 +246651,24 @@
           "at": "2026-11-14T02:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T02:01Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Review and merge the board fix, deploy it once, and verify live search headers",
+      "remaining_action": "Checking where the board address is used before updating and testing it",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-14T00:52Z",
-        "by": "codex",
-        "note": "PR 909 head 90479e3089: both CI checks pass. Board check passes; both real client requests reach expected missing-token "
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T02:01Z",
+        "by": "codex"
       }
     },
     {
