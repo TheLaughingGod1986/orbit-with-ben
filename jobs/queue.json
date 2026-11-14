@@ -193405,10 +193405,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T12:01Z",
+      "eta": "2026-11-14T14:01Z",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -193602,6 +193602,11 @@
           "at": "2026-11-14T11:56Z",
           "by": "gemini",
           "what": "rerouted to cursor on cursor-grok-4-7: Handing reopened assembly job J2230 to primary assembly worker cursor on cursor-grok-4-7 after Gemini audio verification & Acting-Chief ruling (4993d6b9e5 / HOS PR #584)"
+        },
+        {
+          "at": "2026-11-14T12:01Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build Harvey s06_v03/s07_v03 (fix 0.0s top-band hook_edge & full-bleed) + Vaccine Variolation & Option A Eradication Shorts (£0); pass all gates before awaits",
@@ -193623,7 +193628,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "cursor-grok-4-7"
+      "model": "cursor-grok-4-7",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T12:01Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2231",
