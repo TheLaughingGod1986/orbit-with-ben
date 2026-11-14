@@ -38,3 +38,11 @@ The single studio/board_site.json setting supplies Python clients and the Node w
 The minute publisher and board check consume it through scripts/board_site.py. Existing address/header tests
 and signed-watch tests pass (4 and 13 tests respectively). No billing, tick-store, R2, open-tap, YouTube or Buffer
 settings were changed.
+
+## Repeat-check limitation
+
+A repeated /api/data?f=ref check after the initial 200 responses exposed the existing GitHub
+access/rate-limit problem: the original Pages address returned a GitHub 403 JSON error, and the
+new address also briefly returned a Cloudflare 502. A one-time 200 is therefore insufficient to
+claim sustained data access. The tick-token/private-data follow-up remains separate (J2714/J2532).
+Do not call the entire job complete until repeat data reads and the normal publisher/check pass.
