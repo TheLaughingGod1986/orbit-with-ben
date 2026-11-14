@@ -250758,10 +250758,10 @@
       "stage": "topic",
       "after": "J2835",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-14T17:20Z",
+      "eta": "2026-11-14T19:20Z",
       "created_by": "claudecode",
       "created_at": "2026-11-14T16:50Z",
       "result": "",
@@ -250775,6 +250775,11 @@
           "at": "2026-11-14T16:51Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T17:20Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review the topic brief and write go or no-go",
@@ -250788,7 +250793,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T17:20Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2838",
