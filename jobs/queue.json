@@ -250166,13 +250166,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-14T15:43Z",
-      "eta": "2026-11-14T17:43Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T15:14Z",
-      "result": "",
+      "result": "parked for Chief: needs a worker with web. WebSearch still refused on the MacBook slot (tested 14 Nov 15:46Z; second time here today), so no NASA/ESA/IAU source with a UTC time can be read and no script was written. Nothing changed, no branch or PR. Window 24 Nov-5 Dec; 24 Nov supermoon already taken (J2369/J2478). Route to the Mini or a slot with web, or allow WebSearch/WebFetch here.",
       "history": [
         {
           "at": "2026-11-14T15:14Z",
@@ -250198,6 +250198,11 @@
           "at": "2026-11-14T15:43Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T15:45Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: needs a worker with web. WebSearch still refused on the MacBook slot (tested 14 Nov 15:46Z; second time here today), so no NASA/ESA/IAU source with a UTC time can be read and no script was written. Nothing changed, no branch or PR. Window 24 Nov-5 Dec; 24 Nov supermoon already taken (J2369/J2478). Route to the Mini or a slot with web, or allow WebSearch/WebFetch here."
         }
       ],
       "remaining_action": "pick event, verify sources, write script and record, open PR",
