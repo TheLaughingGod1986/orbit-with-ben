@@ -247143,10 +247143,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T05:56Z",
+      "eta": "2026-11-14T07:56Z",
       "created_by": "relay",
       "created_at": "2026-11-14T01:18Z",
       "result": "",
@@ -247195,6 +247195,11 @@
           "at": "2026-11-14T05:56Z",
           "by": "codex",
           "what": "reopened: Taking assigned elected-Chief review; parent J2221 stays held until the recorded audio-repair ruling."
+        },
+        {
+          "at": "2026-11-14T05:56Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief: run wait J2221 --recheck J2799 or reopen J2221 with Option A waiver and close J2799 (96d0f7b728)",
@@ -247211,7 +247216,15 @@
         "OWB:028",
         "OWB:029"
       ],
-      "escalated_at": "2026-11-14T04:06Z"
+      "escalated_at": "2026-11-14T04:06Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T05:56Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2800",
