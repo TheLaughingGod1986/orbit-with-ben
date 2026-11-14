@@ -89,8 +89,8 @@ async function readFile(repo, path, ref, env, open) {
   if (!r.ok && open) r = await fetch(`https://raw.githubusercontent.com/${repo}/${ref}/${path}`, { headers: { "user-agent": "studio-kanban" } });
   if (!r.ok) throw new Error(`GitHub ${r.status}`);
   const body = await r.text();
-  // Every file served here is JSON. Anything else is an error page: it is not passed on, and neither are its words.
-  try { JSON.parse(body); } catch (e) { throw new Error("GitHub answered with something that is not the file"); }
+  // Reject obvious error pages without parsing the large board file on the free Function CPU budget.
+  if (!/^\s*[\[{]/.test(body)) throw new Error("GitHub answered with something that is not the file");
   return { body, etag: `"${SHA.test(ref) ? ref : "b"}-${path}-${body.length}"`, type: "application/json; charset=utf-8" };
 }
 

@@ -11,6 +11,7 @@ from __future__ import annotations
 import datetime as dt
 import sys
 import unittest
+from board_site import site_url
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -33,7 +34,7 @@ def tearDownModule():
     PIN.stop()
 
 NOW = dt.datetime(2026, 11, 9, 9, 0, tzinfo=dt.timezone.utc)
-URL = "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y"
+URL = site_url() + "/api/watch?v=x&e=1&s=y"
 
 FILES = {
     "file": {

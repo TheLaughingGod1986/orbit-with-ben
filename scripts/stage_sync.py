@@ -19,13 +19,14 @@ from __future__ import annotations
 
 import argparse
 import json
+from board_site import site_url
 import sys
 import urllib.request
 
 import studio
 import channels
 
-CHECKS_URL = "https://studio-kanban.vercel.app/api/checks"
+CHECKS_URL = site_url() + "/api/checks"
 OPEN = ("todo", "doing", "review", "blocked")
 # Stages a later finished stage proves. Thumbnails are made alongside the edit, so only upload proves them.
 PARALLEL = {"thumbs"}

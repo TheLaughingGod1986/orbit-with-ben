@@ -31,6 +31,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+from board_site import site_url
 import os
 import pathlib
 import subprocess
@@ -47,7 +48,7 @@ HOME = pathlib.Path.home()
 ROOT = HERE.parent
 STUDIO = channels.studio_checkout()
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
-SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE = site_url()
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 _THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
 THREAD = (_THREAD["repo"], int(_THREAD["number"]))

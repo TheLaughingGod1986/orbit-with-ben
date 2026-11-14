@@ -25,7 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kanban_snapshot import watch_link_secret  # noqa: E402
 
-SITE = "https://studio-kanban.vercel.app"
+SITE = site_url()
 DEFAULT_OUT = Path.home() / ".config" / "studio-kanban" / "ben_pair_link"
 
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Tests for the Studio Kanban watch links (kanban_snapshot.watch_links): Ben's cut opens on his phone."""
 import json
+from board_site import site_url
 import os
 import sys
 import tempfile
@@ -93,7 +94,7 @@ class WatchLinks(unittest.TestCase):
     def test_uploaded_cut_streams_instead_of_files(self):
         ks.WATCH_REGISTER.write_text(json.dumps({"files": {"OWB UAT/026_NearestStar_v04_PHONE.mp4": "owb-026-v04"}}))
         w = self.links()["OWB:026"]
-        self.assertEqual((w["kind"], w["url"], w["label"]), ("stream", "https://studio-kanban.vercel.app/api/watch?v=owb-026-v04", "Watch v04"))
+        self.assertEqual((w["kind"], w["url"], w["label"]), ("stream", site_url() + "/api/watch?v=owb-026-v04", "Watch v04"))
 
     def test_stream_link_is_signed_and_expires(self):
         # Ben, 25 Oct: Play opens the cut with no board code. Same HMAC as api/watch.js signWatch().
@@ -107,13 +108,13 @@ class WatchLinks(unittest.TestCase):
         self.assertNotIn("k=", w["url"])
         want = base64.urlsafe_b64encode(hmac.new(b"test-secret", f"owb-026-v04.{q['e']}".encode(), hashlib.sha256).digest()).decode().rstrip("=")
         self.assertEqual(q["s"], want)
-        url = ks.sign_watch_url("https://studio-kanban.vercel.app/api/watch?v=x", now=1_000_000_000, secret="k")
+        url = ks.sign_watch_url(site_url() + "/api/watch?v=x", now=1_000_000_000, secret="k")
         e = int(parse_qs(urlsplit(url).query)["e"][0])
         self.assertTrue(12 * 3600 < e - 1_000_000_000 <= 15 * 3600)
         self.assertEqual(ks.sign_watch_url("https://youtu.be/abc", secret="k"), "https://youtu.be/abc")
 
     def test_explicit_stream_link_is_accepted(self):
-        w = self.links(briefs={"OWB:026": {"watch": {"url": "https://studio-kanban.vercel.app/api/watch?v=x", "version": "v05"}}})["OWB:026"]
+        w = self.links(briefs={"OWB:026": {"watch": {"url": site_url() + "/api/watch?v=x", "version": "v05"}}})["OWB:026"]
         self.assertEqual(w["kind"], "stream")
 
     def test_newer_version_beats_older_phone_copy(self):

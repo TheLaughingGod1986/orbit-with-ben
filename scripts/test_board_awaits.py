@@ -6,6 +6,7 @@ from __future__ import annotations
 import datetime as dt
 import sys
 import unittest
+from board_site import site_url
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -53,7 +54,7 @@ class Awaits(unittest.TestCase):
 
     def test_unuploaded_short_gets_a_ready_card(self):
         asks = vt.ask_entries([held_short()])
-        asks[0]["watch"] = {"url": "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y", "version": "v05"}
+        asks[0]["watch"] = {"url": site_url() + "/api/watch?v=x&e=1&s=y", "version": "v05"}
         doc = vt.build_videos(hos={"films": []}, owb=[], briefs={}, jobs=[], checks={}, uploads={}, overrides={},
                               now=NOW, public={}, titles={}, asks=asks)
         card = next(v for v in doc["videos"] if v.get("ask"))
@@ -83,7 +84,7 @@ class Awaits(unittest.TestCase):
     def test_board_check_passes_with_card(self):
         e = vt.ask_entries([held_short()])[0]
         card = {"key": "OWB:ASK:J0940", "lane": "ready", "readyFor": "Ben", "ask": {"id": "J0940"},
-                "watch": {"url": "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y"}}
+                "watch": {"url": site_url() + "/api/watch?v=x&e=1&s=y"}}
         orig = board_check.file_on_mini
         board_check.file_on_mini = lambda rel: True
         try:
