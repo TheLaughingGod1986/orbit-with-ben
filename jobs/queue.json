@@ -1,5 +1,5 @@
 {
-  "next_id": 2857,
+  "next_id": 2858,
   "jobs": [
     {
       "id": "J0001",
@@ -192771,6 +192771,11 @@
           "at": "2026-11-14T11:05Z",
           "by": "gemini",
           "what": "done: Completed v03 review in jobs/reviews/J2222/REVIEW.md (fd789925ca) and j01_v03_pack/REVIEW.md. Final encoded J01_Journey_v03.mp4 (3502.30s, 84055 frames, sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32) measured at -14.0 LUFS (-14.02 LUFS input_i) and -0.75 dBTP (LRA 4.1 LU); decode exit 0, 17.86s (~18s) end hold after last word at 3484.44s. Verified all 7 joins, single subscribe beat in Part 1 (03:37.56) with 0 in Parts 2-7, 7 chapter cards, 7 outward distance maps, sfx_kit level PASS (-16.7 LUFS VO / -44.1 LUFS SFX, linking music ducked -15.5 dB), reconstructed score provenance (j01_journey_laid_score_v02.wav, 3502.38s, 0fd2c87674..., longest gap 3.9s, music_gate PASS), 13 iCloud-evicted UAT comparison warnings, 80.0 BPM first-120s readout vs brief 66-70 BPM (waiver covers reused only), all 15 picture_qa macro-row warnings + 22-row polish metrics (53:37 mean luma 44.55, 0 seams), and 3 thumbnails PASS at 1920x1080 and 168x94. No worker audio/motion perception claimed; uploaded 720p R2 watch proxy owb-j01-v03 and queued Ben watch (awaits_ben); no upload or scheduling."
+        },
+        {
+          "at": "2026-11-14T20:37Z",
+          "by": "macbook",
+          "what": "no longer waits on Ben: OK'd, delivered by J2857"
         }
       ],
       "remaining_action": "Queue Ben watch (awaits_ben) and close J2222 review",
@@ -192801,7 +192806,8 @@
         "OWB:028",
         "OWB:029"
       ],
-      "awaits_ben": {
+      "done_ref": "fd789925ca",
+      "awaits_was": {
         "what": "Watch the finished 58-minute Journey Film 01 (J01_Journey_v03.mp4) and approve the 3 thumbnails (thumb_A, thumb_B, thumb_C)",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4",
         "version": "v03",
@@ -192809,8 +192815,7 @@
         "title": "From Earth to Orion: A 600-Light-Year Space Journey",
         "number": "J01",
         "type": "long"
-      },
-      "done_ref": "fd789925ca"
+      }
     },
     {
       "id": "J2223",
@@ -252201,6 +252206,53 @@
         "of": 5,
         "at": "2026-11-14T20:32Z",
         "by": "macbook"
+      }
+    },
+    {
+      "id": "J2857",
+      "title": "Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Ben approved Journey Film 01 (`J01_Journey_v03.mp4`, v03) and all three thumbnails (`thumb_A_real_venera_mars.jpg`, `thumb_B_bright_supergiant_scale.jpg`, `thumb_C_outward_worlds_lineup.jpg`) on Studio Kanban (`OWB-J2222`, studio thread comment `#6882810716`, 14 Nov 2026 19:13Z).\n\n**Deliver on the Mini (`--mini-only`, £0):**\n1. Verify `02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package/PACKAGE_MANIFEST.json` and master `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4` (`sha256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32`), Chief-passed in `J2826`.\n2. Upload as **Private** to Orbit With Ben via `cd 07_Content-Ops && npm run youtube:package -- --package ../02_Video-Projects/J01_Journey-To-Every-World/11_Upload-Package` on the Mini. Never reuse `TtgHNLXfDSs` or `k9pXeeJvLpc` as destinations.\n3. Set `publishAt` in the locked OWB long cadence **after** its 7th linked parent film `029` Betelgeuse (`vP1BbqZ_dnM`, Sun 6 Dec 2026 18:00Z) is public (or leave Private unscheduled if Chief assigns a specific December Journey slot — check with Chief before locking an earlier date, as `J01`'s description links all 7 parent films `023–029`).\n4. In Orbit Studio (CDP 9223, `reuse_page`), arm 3-way Thumbnail Test & Compare (A = `thumb_A_real_venera_mars.jpg`, B = `thumb_B_bright_supergiant_scale.jpg`, C = `thumb_C_outward_worlds_lineup.jpg` — all three approved by Ben) + record in `thumb_ledger.py`, add end screen, playlist, and pinned comment, and record the new `videoId` and state in `J01_Journey-To-Every-World/status.json` (`upload` -> `done`) and on the studio thread.\n",
+      "ref": "6882810716",
+      "film": "J01",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-14T20:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T20:37Z",
+          "by": "macbook",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-14T20:37Z",
+          "by": "macbook",
+          "what": "approved by Ben: Watch the finished 58-minute Journey Film 01 (J01_Journey_v03.mp4) and approve the 3 thumbnails (thumb_A, thumb_B, thumb_C) v03 (asked in J2222)"
+        }
+      ],
+      "remaining_action": "Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare",
+      "kind": "studio",
+      "plain": "Uploading Journey Film 01 as Private on YouTube and starting its 3-thumbnail test",
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch the finished 58-minute Journey Film 01 (J01_Journey_v03.mp4) and approve the 3 thumbnails (thumb_A, thumb_B, thumb_C)",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4",
+        "version": "v03",
+        "title": "From Earth to Orion: A 600-Light-Year Space Journey",
+        "number": "J01",
+        "type": "long",
+        "channel": "OWB",
+        "job": "J2222",
+        "okAt": "2026-11-14T20:37Z",
+        "okRef": "6882810716"
       }
     }
   ],

@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2854 | mini | open | – | – | 008 edit · assembly · HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) | 6882919446 |
 | J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 | J2856 | mini | claimed | macbook | 2026-11-14T21:03Z | for cursor · studio · Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on |  |
+| J2857 | mini | open | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 
 Recently finished:
 
