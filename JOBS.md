@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2829 | mini | blocked | macbook | – | for cursor · studio · Film reviews stuck for up to six days because no worker can show it watches video: probe every worker, then route or re-scope the waiting reviews |  |
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
-| J2832 | mini | claimed | gemini | 2026-11-14T21:33Z | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
+| J2832 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2833 | any | blocked | claudecode | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2841 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2843 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
