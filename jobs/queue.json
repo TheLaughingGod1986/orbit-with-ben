@@ -251044,10 +251044,15 @@
           "at": "2026-11-14T18:05Z",
           "by": "macbook-2",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-14T18:15Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Codex out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Write independent Codex packaging critique to 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/codex.md",
-      "for": "codex",
+      "for": "claudecode",
       "kind": "review",
       "due": "2026-11-14T18:45:00Z",
       "taskKeys": [
@@ -251060,7 +251065,15 @@
         "of": 3,
         "at": "2026-11-14T18:05Z",
         "by": "macbook-2"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2841",
