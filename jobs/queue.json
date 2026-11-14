@@ -231631,13 +231631,13 @@
       "stage": "edit",
       "after": "J2242",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T18:36Z",
-      "eta": "2026-11-14T20:36Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:06Z",
-      "result": "",
+      "result": "parked for Chief: Q1 at 2585->2586 is YES (clean cut-in; note 2505->2506 still has 1.12x crop jump withdrawn in 6796274013); Q2 is NO (2586..2605 is 20 identical frames = 0.833s static freeze of f000, mean_abs_diff=0.0 across 2588..2605); Q3 is YES (spark peaks on 2635 src f030 with approved f029/f031 glow, nowhere else); Q4 confirmed (no frame past f060 appears in v04). Sheet: /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v04/J2614/J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe2199282d200ae6f7316a96a4ba50db88dc892e5d42ff8d93826fab), review: jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63)",
       "history": [
         {
           "at": "2026-11-11T13:06Z",
@@ -231678,6 +231678,11 @@
           "at": "2026-11-14T19:14Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Saved J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21) and jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63); Q2 is NO (20-frame 0.833s static freeze at 2586..2605)"
+        },
+        {
+          "at": "2026-11-14T19:14Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Q1 at 2585->2586 is YES (clean cut-in; note 2505->2506 still has 1.12x crop jump withdrawn in 6796274013); Q2 is NO (2586..2605 is 20 identical frames = 0.833s static freeze of f000, mean_abs_diff=0.0 across 2588..2605); Q3 is YES (spark peaks on 2635 src f030 with approved f029/f031 glow, nowhere else); Q4 confirmed (no frame past f060 appears in v04). Sheet: /Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/07_Edit-Project/_precheck/master_v04/J2614/J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe2199282d200ae6f7316a96a4ba50db88dc892e5d42ff8d93826fab), review: jobs/reviews/J2614/REVIEW.md (commit 8876cf3e63)"
         }
       ],
       "remaining_action": "Chief ruling on HOS 008 v04 salon splice (20-frame f000 freeze at 2586..2605 and 1.12x crop jump at 2505->2506)",
