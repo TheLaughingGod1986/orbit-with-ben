@@ -195212,9 +195212,14 @@
           "at": "2026-11-14T06:59Z",
           "by": "cursor",
           "what": "step 0 of 6 done: Claimed J2242. Disk 4.2 GB free; checking scratch and HOS 008 inputs before any encode."
+        },
+        {
+          "at": "2026-11-14T07:08Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Reference parser is in the HOS worktree. Running it on the v03 master."
         }
       ],
-      "remaining_action": "Free disk, then locate the Franklin splice inputs and existing v04 work",
+      "remaining_action": "Check which kept Franklin frames reference a replaced picture",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195222,10 +195227,10 @@
       "urgent": 1,
       "progress": {
         "step": 0,
-        "of": 6,
-        "at": "2026-11-14T06:59Z",
+        "of": 3,
+        "at": "2026-11-14T07:08Z",
         "by": "cursor",
-        "note": "Claimed J2242. Disk 4.2 GB free; checking scratch and HOS 008 inputs before any encode."
+        "note": "Reference parser is in the HOS worktree. Running it on the v03 master."
       }
     },
     {
