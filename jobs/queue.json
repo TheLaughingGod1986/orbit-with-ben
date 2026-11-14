@@ -249358,9 +249358,14 @@
           "at": "2026-11-14T12:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T12:20Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2822; starting verification of J2171 waiting condition (J2805 -> J2806 -> J2807 -> J2808 -> J2035)"
         }
       ],
-      "remaining_action": "Verify readiness: Await accepted revised music and the checked gravity long before assembling its Shorts",
+      "remaining_action": "Verify J2805-J2808 and J2035 status, HOS desk #180/OWB #478 authorization, and HOS 009 media/locks for J2171",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-14T13:16:37+00:00",
@@ -249377,11 +249382,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T12:19Z",
+        "at": "2026-11-14T12:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2822; starting verification of J2171 waiting condition (J2805 -> J2806 -> J2807 -> J2808 -> J2035)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
