@@ -246853,13 +246853,13 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-14T02:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
-      "result": "Waiting for: board.oppti.dev resolves through the Mini normal system resolver and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returns ok=true; verify live data ref/board again. Cloudflare domain/TLS active, public resolvers correct, 80 published custom-domain Play links verified. Do not duplicate domain or DNS record; PR 912 already merged. Existing tick-token work remains J2714/J2532.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T00:35Z",
@@ -246905,6 +246905,11 @@
           "at": "2026-11-14T03:20Z",
           "by": "relay",
           "what": "condition verification queued: J2804"
+        },
+        {
+          "at": "2026-11-14T04:22Z",
+          "by": "codex",
+          "what": "reopened: J2804 Chief ruling at 2026-11-14T04:22Z: DNS hold satisfied. Normal socket resolver succeeds; env -u BOARD_SITE_URL board_check --no-post returns ok=true, expected=6, site=200, no problems at 04:21:05Z. Three consecutive ref and board reads return 200 valid JSON with noindex; ref 6a48f3aef3819c096b86d98b75fada5931268b3d. Parent is NOT complete: live board still has 80 old-host Play links and actual launchd BOARD_SITE_URL remains https://studio-kanban.pages.dev (sandbox launchctl falsely appeared unset). Resume immediately: clear only that stale launchd override, publish through configured board.oppti.dev, verify all Play-link hosts, one 302/media range, normal board check and repeated data reads. No DNS duplication or new deployment required; PR 912 already merged. Existing J2714/J2532 tick-token work stays separate. Existing approval and 18:00Z deadline retained; no external DNS retry is needed."
         }
       ],
       "remaining_action": "Recheck the board address after DNS propagation and finish its live check",
@@ -246912,20 +246917,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 11,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-14T02:59Z",
-        "by": "codex",
-        "note": "PR 912 merged as 0154925616. Removed stale local publisher override; board-data c3c7e343 contains 80 new-domain Play lin"
-      },
-      "hold": {
-        "type": "public",
-        "condition": "board.oppti.dev resolves through the Mini normal system resolver and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returns ok=true; verify live data ref/board again. Cloudflare domain/TLS active, public resolvers correct, 80 published custom-domain Play links verified. Do not duplicate domain or DNS record; PR 912 already merged. Existing tick-token work remains J2714/J2532.",
-        "check_at": "2026-11-14T04:20:10+00:00",
-        "recheck_task": "J2804"
-      }
+      "urgent": 11
     },
     {
       "id": "J2798",
