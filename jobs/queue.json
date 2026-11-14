@@ -246798,20 +246798,25 @@
           "at": "2026-11-14T02:52Z",
           "by": "codex",
           "what": "step 1 of 3 done: Added board custom domain and one CNAME; all 18 original DNS records match the baseline exactly. Certificate validation pending."
+        },
+        {
+          "at": "2026-11-14T02:54Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Domain active; required routes and R2 MP4 delivery pass; product unchanged. Daily Functions requests 114 and 124, zero errors. PR 912 awaiting checks."
         }
       ],
-      "remaining_action": "Verify the new board address, publish its setting, and report request counts",
+      "remaining_action": "Merge the board address setting, publish fresh Play links, and verify the live check",
       "due": "2026-11-14T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
       "urgent": 11,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-14T02:52Z",
+        "at": "2026-11-14T02:54Z",
         "by": "codex",
-        "note": "Added board custom domain and one CNAME; all 18 original DNS records match the baseline exactly. Certificate validation "
+        "note": "Domain active; required routes and R2 MP4 delivery pass; product unchanged. Daily Functions requests 114 and 124, zero e"
       }
     },
     {
