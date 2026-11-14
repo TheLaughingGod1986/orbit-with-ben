@@ -1,5 +1,5 @@
 {
-  "next_id": 2861,
+  "next_id": 2862,
   "jobs": [
     {
       "id": "J0001",
@@ -252605,9 +252605,14 @@
           "at": "2026-11-14T21:53Z",
           "by": "claude",
           "what": "now waits for J2859: Ben asked (14 Nov 21:53Z) for the title, description and tags to come from research on channels that offer this, and a title must be set before any test is armed. Upload with the v02 listing from J2859; the three-thumbnail test is unchanged."
+        },
+        {
+          "at": "2026-11-14T22:10Z",
+          "by": "claude",
+          "what": "Ben, in chat (14 Nov 22:10Z): \"book those\", to the two dates the cloud session proposed after reading the board's schedule: the Journey film Tue 8 Dec 2026 at 18:00 London, the sleep film Sat 12 Dec 2026 in the evening. So: upload Private with the v02 listing from J2859, then set publishAt Tue 8 Dec 2026 18:00Z. That is two days after its seventh part, the Betelgeuse film, goes public (Sun 6 Dec 18:00Z) and a day before the Uranus film. If the Betelgeuse film is not public by then, hold the Journey film and say so. The schedule records and the board's Schedule tab show the date; social posts follow the usual mirror. The three-thumbnail test is unchanged."
         }
       ],
-      "remaining_action": "Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare",
+      "remaining_action": "Upload Private with the v02 listing (J2859), schedule public Tue 8 Dec 18:00 London, start the 3-thumbnail test",
       "kind": "studio",
       "plain": "Uploading Journey Film 01 as Private on YouTube and starting its 3-thumbnail test",
       "mini_only": true,
@@ -252768,6 +252773,36 @@
         "by": "macbook",
         "note": "Root cause found: High 4:4:4 Predictive lossless profile in ch11-13 stream-copied after High profile corrupts decode at "
       }
+    },
+    {
+      "id": "J2861",
+      "title": "Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 22:10Z): \"book those\", to the two dates the cloud session proposed after reading the board's schedule: the Journey film Tue 8 Dec 2026 at 18:00 London, the sleep film Sat 12 Dec 2026 in the evening.**\n\n**The date.** Sat 12 Dec 2026, 21:00 London (21:00Z). That is the film's earliest air date in its brief. The hour is from the research in J2859: six of the eight comparable films that broke out on small channels were published between 20:00 and 23:00 UTC, when people look for something to fall asleep to.\n\n**Do, once J2860 has saved the repaired master (v02) and its checks pass.**\n1. Build the upload package for v02 with the listing J2859 drafted: the title `Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda`, its description and its tags. Check again that every claim in the first two description lines is true of the v02 file.\n2. A thumbnail to the channel's thumbnail rules: one clean real image, dark and calm, cover text that does not repeat the title. If the film has none yet, make it as part of this job and put it on Ben's board card with the before-and-after from J2860. One card, not two.\n3. Chapters from the film's quiet chapter names, with times from the v02 file.\n4. Upload as Private with `publishAt` Sat 12 Dec 2026 21:00Z. The altered-content disclosure stays on. Read the listing back and put the readback in the result: title, privacy, publish time, tags present, chapters showing.\n5. The studio's schedule records and the board's Schedule tab show the date. Social posts follow the usual mirror for a long on that day.\n6. End screen and pinned comment as the rules give for a long; the links to the films it is made from go only to films that are public by 12 Dec.\n\n**Stop and say so** if J2860 found other faults and Ben has been asked about them, or if the repaired master is not ready by Wed 9 Dec: the date then moves, and that is Ben's call.\n\n**Guards.** £0. Nothing public before the date. No other video's listing touched. Nothing deleted.\n\n**Done when** the sleep film is Private on the channel, scheduled for Sat 12 Dec 21:00 London, with the readback in the result and the date on the board.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2860",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T22:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T22:10Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Package v02 with the J2859 listing and a thumbnail, upload Private with publishAt Sat 12 Dec 21:00Z, read it back, show the date on the board",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "listing",
+      "plain": "Upload the two-hour sleep film privately and schedule it for Saturday 12 December at 9pm"
     }
   ],
   "focus": [
