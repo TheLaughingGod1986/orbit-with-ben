@@ -193592,9 +193592,14 @@
           "at": "2026-11-14T11:56Z",
           "by": "gemini",
           "what": "reopened: Elected Acting Chief (gemini) ruling recorded in OWB jobs/reviews/J2230/REVIEW.md (4993d6b9e5) & HOS PR #584 (fe243a5b): (1) Willow 006 pair ChbsigHD5_o (18 Nov) & Bks_JLId1ew (21 Nov) counts as the two Willow Shorts; (2) Vaccine 007 long ETynHpIYLeY is now PUBLIC (12 Nov 18:00Z, live title 'How Was the First Vaccine Made? (And Why It''s Named After a Cow)'); (3) Eradication Short: choose Option A (£0 locked Part 05 61-word clean re-selection: [35.16, 40.72] with 0.20s post-1980 pause + [25.36, 34.50] + [70.06, 75.70], dropping defective 'that have killed' span); (4) Variolation Short: approve clean 61-word Part 01 stem ([67.66, 92.16], £0) with tightened inter-sentence pauses; (5) Harvey 005 s06_v02 & s07_v02 audio PASS by ear, rebuild as s06_v03 & s07_v03 (£0) with top-band 0.0s hook text (hook_edge >= 0.005) and full-bleed 9:16 cover crops (0 padded frames) to pass current gate_shorts_open.py; (6) target pattern slots Fri 20 Nov, Sun 22 Nov, Sat 28 Nov, Sun 29 Nov 11:30Z after Ben''s watch."
+        },
+        {
+          "at": "2026-11-14T11:56Z",
+          "by": "gemini",
+          "what": "remaining action: Build Harvey s06_v03/s07_v03 (fix 0.0s top-band hook_edge & full-bleed) + Vaccine Variolation & Option A Eradication Shorts (£0); pass all gates before awaits"
         }
       ],
-      "remaining_action": "Chief to rule on HOS PR #559 / desk #6813817189: choose £0 Part 05 re-selection or 1-sentence VO pickup for Vaccine Eradication, confirm Variolation opening and Nov slots",
+      "remaining_action": "Build Harvey s06_v03/s07_v03 (fix 0.0s top-band hook_edge & full-bleed) + Vaccine Variolation & Option A Eradication Shorts (£0); pass all gates before awaits",
       "kind": "assembly",
       "urgent": 6,
       "taskKeys": [
@@ -193602,9 +193607,7 @@
         "HOS:006",
         "HOS:007"
       ],
-      "required_capabilities": [
-        "audio_input"
-      ],
+      "required_capabilities": [],
       "plain": "Make the History of Science Shorts for late November from the finished Harvey, Willow and Vaccine films",
       "for": "gemini",
       "escalated_at": "2026-11-12T06:44Z"
