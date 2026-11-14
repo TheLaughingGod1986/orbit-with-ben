@@ -1,5 +1,5 @@
 {
-  "next_id": 2844,
+  "next_id": 2845,
   "jobs": [
     {
       "id": "J0001",
@@ -250970,6 +250970,35 @@
       ],
       "remaining_action": "Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS)",
       "kind": "review"
+    },
+    {
+      "id": "J2844",
+      "title": "Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief gate for the 14 Nov 2026 OWB weekly thumbnail audit (`J2834`):\n\n1. Read the Packaging Panel synthesis in `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md` (`J2843`) and inspect the 168x94 comparison sheet + full-size JPEGs on the shared NAS:\n   - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/PHONE_SHEET_v02.jpg` (`sha256=98b44bf69eae5b7850981e5a282a96335363ad1b2aac41c8fa73762f85accea1`)\n   - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/m09jUdwC5hk_B_v04.jpg` (`ALL STARS FADE`, `sha256=647a2b6f6704d7a1c0f3c02b7a855f7a90e33246871973b426806eee5585dc18`, `T035`)\n   - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/001_Will-We-Ever-Meet-Aliens/08_Thumbnails/repackage_2026-11/J2834_v02/Mo93x0fxB1Q_B_v04.jpg` (`ZERO SIGNALS`, `sha256=d4f7b6d242175ef4d7df2769f34c26c9cfc04de6787d7ee8f10ccf77d068bf41`, `T036`)\n   - `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J2834_v02/ziKBPJ6FY0U_B_v05.jpg` (`300 MILLION YEARS`, `sha256=bb8d3132b7a556ce2ec2208825c79a3d4ca2fc7643951f05d7459e014036ea51`, `T037`)\n2. Review and merge the `macbook/J2834` audit PR (verify base is `main`, rules checks pass, no media binaries).\n3. For each candidate (`T035` `m09jUdwC5hk`, `T036` `Mo93x0fxB1Q`, `T037` `ziKBPJ6FY0U`), either:\n   - Issue an explicit exact-file **PASS** (stating whether starting a new thumbnail-only Test & Compare via `New test -> Continue` over the already-recorded finished inconclusive `draw` report `T018`/`T005`/`T007` is authorized, as in `J2449`/`J2737`), OR\n   - Queue a `thumb` revision job and block/cancel the corresponding Studio arming job until the revised file passes.\n",
+      "ref": "J2834",
+      "film": "",
+      "stage": "",
+      "after": "J2843",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-14T17:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T17:09Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel",
+      "kind": "chief",
+      "plain": "Chief reviews the 14 Nov weekly audit PR and J2843 panel decision and approves or revises the 3 new B thumbnails before Studio arming"
     }
   ],
   "focus": [
