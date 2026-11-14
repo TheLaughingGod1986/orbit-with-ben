@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2855, J2860.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2855, J2860, J2863.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2862 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2855 |  |
+| J2863 | mini | open | – | – | review · Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes |  |
 
 Recently finished:
 

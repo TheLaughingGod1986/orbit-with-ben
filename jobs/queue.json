@@ -1,5 +1,5 @@
 {
-  "next_id": 2863,
+  "next_id": 2864,
   "jobs": [
     {
       "id": "J0001",
@@ -252516,7 +252516,7 @@
       "model": "gemini-argon",
       "plain": "Look at the new Franklin salon frames and say whether the jump, the freeze and the spark are fixed",
       "mini_only": true,
-      "urgent": 15,
+      "urgent": 14,
       "progress": {
         "step": 4,
         "of": 4,
@@ -252806,7 +252806,7 @@
       "due": "2026-11-16T18:00:00Z",
       "kind": "studio",
       "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
-      "urgent": 17,
+      "urgent": 15,
       "progress": {
         "step": 1,
         "of": 5,
@@ -252904,6 +252904,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2863",
+      "title": "Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 22:20Z):** \"We need to find out why our long videos are failing and fix it, we seem to be able to get 1000 views on shorts but most 200 on long. We ideally need to raise the views.\"\n\n**What the channel's own numbers say (studio_ctr.json, lifetime, read 12 Nov; REPORT.md of 14 Nov).**\n- All 16 longs together have been shown about 4,050 times in three and a half months. Two were shown over 1,000 times (Venus 1,324, Saturn's rings 1,269). The other fourteen: 40 to 263 each.\n- When shown, about 2% click. Fourteen of sixteen are between 0% and 2.7%.\n- Those who click leave early: 26% to 66% are still there at 0:30, and the average viewer sees 15% to 25% of the film. Studio rates every long with data \"lower\" than similar videos.\n- The Shorts audience does not cross over: 9,304 Shorts views in 28 days, 91% from the Shorts feed, against 280 views on longs. The channel has 19 subscribers.\n- So: single-question films of about ten minutes on the biggest topics, where large channels own search, with no audience of our own to seed them. Thumbnail and title tests cannot decide on 50 impressions.\n\n**What does win for channels our size (vidIQ, 14 Nov, last six months, under 5,000 subscribers).**\n- A completeness promise with a number. \"Every Type Of Solar System Explained in 9 Minutes\": 172,800 views on a channel with 1,700 subscribers; its \"Every Star System Closest To Earth Explained in 10 Minutes\": 68,000. \"Every major Solar System object in 5 minutes\": 35,000 (1,100 subscribers). \"What the Sun Looks Like From Every Planet\": 10,800 views on a channel with 93 subscribers.\n- Sleep films of two to eight hours (see J2859).\n- `every planet explained` has an estimated 20,191 searches a month at competition 45 of 100; `space explained` 129,513 at 46.\n\n**This job: prepare one test of the first format, for Ben to lock with one tap. Nothing is built yet.**\n1. The film: every planet, about ten minutes, one section of 60 to 75 seconds each. Each section opens on one striking real image and one concrete fact, so the picture and the subject change before a viewer's attention does. The first planet is on screen by 0:05. No agenda line. This is a new film with its own script and narration, not a compilation of Shorts (LEARNINGS rule 9 stands).\n2. The go/no-go the rules ask for: the exact phrase people type and two videos that rank for it now; the neighbour pass (three or more big videos on the subject); and why a 19-subscriber channel can be found for it.\n3. What we already own. List, per planet, the real images, moving footage and checked facts in our finished films that this film can use, and what is missing. The aim is a film made mostly from what is on the shelf.\n4. Three titles that start with the search phrase, 70 characters or fewer (for example `Every Planet Explained in 10 Minutes (Mercury to Neptune)`), and three different thumbnail ideas to the thumbnail rules.\n5. An honest estimate of the work, and where it would sit in the schedule without moving a film that already has a date.\n6. Put it on Ben's board as one card he can lock or decline, and say on the thread that it is there.\n\n**Guards.** £0. No script, narration or picture work before Ben locks it. No dated film moves.\n\n**Done when** the go/no-go is written with its evidence and the card is on Ben's board.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T22:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T22:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write the topic go/no-go for an every-planet explainer (search phrase, neighbours, what we already own, titles, thumbnails, effort) and put it on Ben's board to lock",
+      "due": "2026-11-16T18:00:00Z",
+      "kind": "review",
+      "plain": "Work out a new kind of long video that small channels get views with, and put it to Ben to approve",
+      "urgent": 16
     }
   ],
   "focus": [
