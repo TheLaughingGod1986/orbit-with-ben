@@ -1,0 +1,533 @@
+{
+  "film": "J01_Journey-To-Every-World",
+  "cut": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/J01_Journey_v03.mp4",
+  "cut_sha256": "bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32",
+  "cut_duration_s": 3502.3,
+  "laid_score_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_laid_score_v02.wav",
+  "laid_score_sha256": "0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4",
+  "laid_score_duration_s": 3502.378,
+  "laid_score_integrated_lufs": -33.4,
+  "longest_gap_s": 3.9,
+  "longest_gap_at_s": 1228.6,
+  "crossfade_s": 0.5,
+  "restored_027_source": {
+    "archive": "/Volumes/data/mac-mini-archive/owbextra.tar",
+    "restored_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_take2_straight_v01j.wav",
+    "sha256": "f63005243f5e140859e438305c1ec2365662d1e4511391fd9f04d7b53155c0b6",
+    "duration_s": 446.3,
+    "bytes": 85689644,
+    "stub_backup": "/Volumes/MiniWork/scratch/J2221/restored_027_music/earth-spin_score_take2_straight_v01j_stub26s_backup.wav"
+  },
+  "segments": [
+    {
+      "index": 1,
+      "segment": "cold",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/cold_bed.wav",
+      "source_sha256": "12fa905ff7afc437fd83d3b604ac502c247316c637684c7654f080fc47142923",
+      "source_windows_s": [
+        [
+          0.0,
+          50.662
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Cold Open ducked Option A bed (stems/ducked/cold_bed.wav)",
+      "segment_duration_s": 50.662,
+      "timeline_in_s": 0.0,
+      "timeline_out_s": 50.162,
+      "integrated_lufs": -38.6
+    },
+    {
+      "index": 2,
+      "segment": "card1",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card1_bed.wav",
+      "source_sha256": "ae5a1cdc3e38e9229d4176f44db8f97d6fc11bfa7aac4410fc46c50d652b6994",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 1 ducked Option A bed (stems/ducked/card1_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 50.162,
+      "timeline_out_s": 52.662,
+      "integrated_lufs": -42.9
+    },
+    {
+      "index": 3,
+      "segment": "part1_027",
+      "kind": "inherited_part_score",
+      "film": "027",
+      "source_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/05_Music/earth-spin_score_take2_straight_v01j.wav",
+      "source_sha256": "f63005243f5e140859e438305c1ec2365662d1e4511391fd9f04d7b53155c0b6",
+      "source_windows_s": [
+        [
+          0.0,
+          443.5
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "_mix_earth_spin_v01m.py (already ducked laid stem at -31.9 LUFS)",
+      "segment_duration_s": 443.472,
+      "timeline_in_s": 52.662,
+      "timeline_out_s": 495.634,
+      "integrated_lufs": -31.9
+    },
+    {
+      "index": 4,
+      "segment": "bridge1",
+      "kind": "linking_score_cue",
+      "film": "023",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge1_bed.wav",
+      "source_sha256": "f87ef0061da393bb13b7f947f53bb66eb78834b72fed324ec520772c58bfd06c",
+      "source_windows_s": [
+        [
+          0.0,
+          20.48
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 1 ducked Option A bed (stems/ducked/bridge1_bed.wav)",
+      "segment_duration_s": 20.48,
+      "timeline_in_s": 495.634,
+      "timeline_out_s": 515.614,
+      "integrated_lufs": -39.8
+    },
+    {
+      "index": 5,
+      "segment": "card2",
+      "kind": "linking_score_cue",
+      "film": "023",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card2_bed.wav",
+      "source_sha256": "ae71599a47174534d9be013b25037ded96bd2aacbf699cbbc1ae1288d3e5e708",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 2 ducked Option A bed (stems/ducked/card2_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 515.614,
+      "timeline_out_s": 518.114,
+      "integrated_lufs": -42.3
+    },
+    {
+      "index": 6,
+      "segment": "part2_023",
+      "kind": "inherited_part_score",
+      "film": "023",
+      "source_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full.mp3",
+      "source_sha256": "e2f7204e8cd1dc9d337e5ad34ebc6ecc87bea7e0aa259d034bb6970ab1bc3d35",
+      "source_windows_s": [
+        [
+          0.0,
+          35.8
+        ],
+        [
+          43.2,
+          212.2
+        ],
+        [
+          218.2,
+          504.8
+        ]
+      ],
+      "applied_gain_linear": 0.134,
+      "applied_gain_db": -17.46,
+      "gain_basis": "_assemble_venus_full_v05e.py line 311 (volume=0.134)",
+      "segment_duration_s": 490.4,
+      "timeline_in_s": 518.114,
+      "timeline_out_s": 1008.014,
+      "integrated_lufs": -31.8
+    },
+    {
+      "index": 7,
+      "segment": "bridge2",
+      "kind": "linking_score_cue",
+      "film": "023",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge2_bed.wav",
+      "source_sha256": "d474c68692c08ba9e62a4b1c82ed01948d1ba253390343d8cb0d0ba066f53552",
+      "source_windows_s": [
+        [
+          0.0,
+          22.076
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 2 ducked Option A bed (stems/ducked/bridge2_bed.wav)",
+      "segment_duration_s": 22.076,
+      "timeline_in_s": 1008.014,
+      "timeline_out_s": 1029.59,
+      "integrated_lufs": -39.6
+    },
+    {
+      "index": 8,
+      "segment": "card3",
+      "kind": "linking_score_cue",
+      "film": "023",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card3_bed.wav",
+      "source_sha256": "ae71599a47174534d9be013b25037ded96bd2aacbf699cbbc1ae1288d3e5e708",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 3 ducked Option A bed (stems/ducked/card3_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 1029.59,
+      "timeline_out_s": 1032.09,
+      "integrated_lufs": -42.3
+    },
+    {
+      "index": 9,
+      "segment": "part3_025",
+      "kind": "inherited_part_score",
+      "film": "025",
+      "source_file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v02_full.mp3",
+      "source_sha256": "12bb9a2fc53fb4397af74ace10c2f10a3d2fb656d7058965457865980f5148e5",
+      "source_windows_s": [
+        [
+          0.0,
+          29.8
+        ],
+        [
+          40.8,
+          224.5
+        ],
+        [
+          231.0,
+          483.2
+        ]
+      ],
+      "applied_gain_linear": 0.134,
+      "applied_gain_db": -17.46,
+      "gain_basis": "_assemble_mars_robot_full_v03f.py line 323 (volume=0.134)",
+      "segment_duration_s": 464.7,
+      "timeline_in_s": 1032.09,
+      "timeline_out_s": 1496.29,
+      "integrated_lufs": -34.3
+    },
+    {
+      "index": 10,
+      "segment": "bridge3",
+      "kind": "linking_score_cue",
+      "film": "024",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge3_bed.wav",
+      "source_sha256": "aba15c16363a2c6e44ca377f0e4c674d8831404ae72f6d1adcc8db81a0d928d0",
+      "source_windows_s": [
+        [
+          0.0,
+          21.56
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 3 ducked Option A bed (stems/ducked/bridge3_bed.wav)",
+      "segment_duration_s": 21.56,
+      "timeline_in_s": 1496.29,
+      "timeline_out_s": 1517.35,
+      "integrated_lufs": -40.9
+    },
+    {
+      "index": 11,
+      "segment": "card4",
+      "kind": "linking_score_cue",
+      "film": "024",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card4_bed.wav",
+      "source_sha256": "5479a977a1494b72de6c6348ed86bc43ba1b5edd728d0159a8413dfb61aa6726",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 4 ducked Option A bed (stems/ducked/card4_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 1517.35,
+      "timeline_out_s": 1519.85,
+      "integrated_lufs": -42.9
+    },
+    {
+      "index": 12,
+      "segment": "part4_028",
+      "kind": "inherited_part_score",
+      "film": "028",
+      "source_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3",
+      "source_sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+      "source_windows_s": [
+        [
+          0.0,
+          30.8
+        ],
+        [
+          42.2,
+          204.2
+        ],
+        [
+          209.8,
+          469.8
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "_build_gliese_audio_v03.py (already ducked laid stem at -35.4 LUFS)",
+      "segment_duration_s": 451.8,
+      "timeline_in_s": 1519.85,
+      "timeline_out_s": 1971.15,
+      "integrated_lufs": -35.4
+    },
+    {
+      "index": 13,
+      "segment": "bridge4",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge4_bed.wav",
+      "source_sha256": "f5c4969a956c2decc144f09abf2389503b06334a5b48d27e198d66ac6d9204e9",
+      "source_windows_s": [
+        [
+          0.0,
+          19.07
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 4 ducked Option A bed (stems/ducked/bridge4_bed.wav)",
+      "segment_duration_s": 19.07,
+      "timeline_in_s": 1971.15,
+      "timeline_out_s": 1989.72,
+      "integrated_lufs": -38.8
+    },
+    {
+      "index": 14,
+      "segment": "card5",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card5_bed.wav",
+      "source_sha256": "ae5a1cdc3e38e9229d4176f44db8f97d6fc11bfa7aac4410fc46c50d652b6994",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 5 ducked Option A bed (stems/ducked/card5_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 1989.72,
+      "timeline_out_s": 1992.22,
+      "integrated_lufs": -42.9
+    },
+    {
+      "index": 15,
+      "segment": "part5_026",
+      "kind": "inherited_part_score",
+      "film": "026",
+      "source_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.wav",
+      "source_sha256": "0e98ed6485a24cc3e5906fd604af6cade4f27295bc7ff522a2416455c0eb775c",
+      "source_windows_s": [
+        [
+          0.0,
+          20.5
+        ],
+        [
+          32.8,
+          224.4
+        ],
+        [
+          232.0,
+          491.3
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "_assemble_nearest_star_rough_v06.py (already ducked laid stem at -34.0 LUFS)",
+      "segment_duration_s": 470.4,
+      "timeline_in_s": 1992.22,
+      "timeline_out_s": 2462.12,
+      "integrated_lufs": -33.9
+    },
+    {
+      "index": 16,
+      "segment": "bridge5",
+      "kind": "linking_score_cue",
+      "film": "024",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge5_bed.wav",
+      "source_sha256": "1cab46565097de70c115b4d8976273c73149c12ce93675431509b65e493443ea",
+      "source_windows_s": [
+        [
+          0.0,
+          21.636
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 5 ducked Option A bed (stems/ducked/bridge5_bed.wav)",
+      "segment_duration_s": 21.636,
+      "timeline_in_s": 2462.12,
+      "timeline_out_s": 2483.256,
+      "integrated_lufs": -39.4
+    },
+    {
+      "index": 17,
+      "segment": "card6",
+      "kind": "linking_score_cue",
+      "film": "024",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card6_bed.wav",
+      "source_sha256": "5479a977a1494b72de6c6348ed86bc43ba1b5edd728d0159a8413dfb61aa6726",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 6 ducked Option A bed (stems/ducked/card6_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 2483.256,
+      "timeline_out_s": 2485.756,
+      "integrated_lufs": -42.9
+    },
+    {
+      "index": 18,
+      "segment": "part6_024",
+      "kind": "inherited_part_score",
+      "film": "024",
+      "source_file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music/light-speed_score_bed_v01_full.mp3",
+      "source_sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+      "source_windows_s": [
+        [
+          0.0,
+          28.3
+        ],
+        [
+          41.6,
+          213.1
+        ],
+        [
+          220.0,
+          483.0
+        ]
+      ],
+      "applied_gain_linear": 0.134,
+      "applied_gain_db": -17.46,
+      "gain_basis": "_assemble_light_speed_full_v05.py line 261 (volume=0.134)",
+      "segment_duration_s": 461.8,
+      "timeline_in_s": 2485.756,
+      "timeline_out_s": 2947.056,
+      "integrated_lufs": -32.8
+    },
+    {
+      "index": 19,
+      "segment": "bridge6",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/bridge6_bed.wav",
+      "source_sha256": "fcd7464854e72f57b6f04bf0d8fee9a1879389d68b44e749e5bfa7b506296daa",
+      "source_windows_s": [
+        [
+          0.0,
+          21.162
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Bridge 6 ducked Option A bed (stems/ducked/bridge6_bed.wav)",
+      "segment_duration_s": 21.162,
+      "timeline_in_s": 2947.056,
+      "timeline_out_s": 2967.718,
+      "integrated_lufs": -39.5
+    },
+    {
+      "index": 20,
+      "segment": "card7",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/card7_bed.wav",
+      "source_sha256": "ae5a1cdc3e38e9229d4176f44db8f97d6fc11bfa7aac4410fc46c50d652b6994",
+      "source_windows_s": [
+        [
+          0.0,
+          3.0
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Chapter Card 7 ducked Option A bed (stems/ducked/card7_bed.wav, -20 dB)",
+      "segment_duration_s": 3.0,
+      "timeline_in_s": 2967.718,
+      "timeline_out_s": 2970.218,
+      "integrated_lufs": -42.9
+    },
+    {
+      "index": 21,
+      "segment": "part7_029",
+      "kind": "inherited_part_score",
+      "film": "029",
+      "source_file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/05_Music/betelgeuse_score_bed_v01.mp3",
+      "source_sha256": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+      "source_windows_s": [
+        [
+          0.0,
+          22.1
+        ],
+        [
+          37.2,
+          242.2
+        ],
+        [
+          247.6,
+          514.8
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "_build_betelgeuse_audio_v01.py (already ducked laid stem at -34.2 LUFS)",
+      "segment_duration_s": 493.3,
+      "timeline_in_s": 2970.218,
+      "timeline_out_s": 3463.018,
+      "integrated_lufs": -34.2
+    },
+    {
+      "index": 22,
+      "segment": "close",
+      "kind": "linking_score_cue",
+      "film": "026",
+      "source_file": "/Volumes/MiniWork/scratch/J2221/stems/ducked/close_bed.wav",
+      "source_sha256": "329036a26b9ad7b459ce6c9b2be7282a5aa68d200b2d29764145e39d5ab1a224",
+      "source_windows_s": [
+        [
+          0.0,
+          39.36
+        ]
+      ],
+      "applied_gain_linear": 1.0,
+      "applied_gain_db": 0.0,
+      "gain_basis": "Closing + 18s End Hold ducked Option A bed (stems/ducked/close_bed.wav)",
+      "segment_duration_s": 39.36,
+      "timeline_in_s": 3463.018,
+      "timeline_out_s": 3502.378,
+      "integrated_lufs": -31.1
+    }
+  ]
+}
