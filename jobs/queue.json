@@ -247157,7 +247157,7 @@
     {
       "id": "J2802",
       "title": "Backlog HOS: listing check on live videos (chapters, sources, end screens, Related)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Read-only audit of HOS live and scheduled videos, as the OWB item. Fix list with exact text in the HOS repo; block 'parked for Chief: live fixes' if anything needs a change. Change nothing in Studio.",
       "ref": "",
@@ -247165,13 +247165,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-14T02:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T02:34Z",
-      "result": "parked for Chief: cannot run on the MacBook Claude Code slot (second time in a row: released 02:38Z, re-claimed the same minute). npm and curl to youtube.com need approval here and the HOS worker checkout has no 07_Content-Ops/.env, so live listings cannot be read; the daily snapshot has no chapters, sources, end screens or Related. No audit run, no fix list written, nothing changed, no branch or PR. Reopen for the Mini or the MacBook Gemini slot.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T02:34Z",
@@ -247202,6 +247202,11 @@
           "at": "2026-11-14T02:40Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: cannot run on the MacBook Claude Code slot (second time in a row: released 02:38Z, re-claimed the same minute). npm and curl to youtube.com need approval here and the HOS worker checkout has no 07_Content-Ops/.env, so live listings cannot be read; the daily snapshot has no chapters, sources, end screens or Related. No audit run, no fix list written, nothing changed, no branch or PR. Reopen for the Mini or the MacBook Gemini slot."
+        },
+        {
+          "at": "2026-11-14T03:50Z",
+          "by": "codex",
+          "what": "rerouted to gemini on gemini-argon: Chief review: INCOMPLETE, no audit evidence or fixes to approve. Original worker reports no audit, no fix list, no PR. Mini HOS .env exists and CDP 9222 answers with one Studio tab. Reopen the original read-only audit for Gemini Argon; preserve worker plan 1/4. Read live/scheduled chapters, sources, end screens and Related; write exact proposed fixes and dated evidence in a HOS PR, then return for review. No Studio writes, title/test changes, spend or publishing authorised. Use the Mini credentials/browser or a permitted Gemini Studio lane; never return to the MacBook Claude permission loop. No external wait or Ben approval is required."
         }
       ],
       "remaining_action": "Run the HOS audit, write the dated fix list, open the HOS PR",
@@ -247212,7 +247217,16 @@
         "of": 4,
         "at": "2026-11-14T02:37Z",
         "by": "macbook"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "blocked",
+        "by": "macbook"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2803",

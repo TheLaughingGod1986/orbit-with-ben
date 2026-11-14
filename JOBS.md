@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
 | J2800 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
-| J2802 | any | blocked | macbook | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J2802 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J2804 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2805 | mini | blocked | codex | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
