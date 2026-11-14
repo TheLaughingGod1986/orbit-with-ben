@@ -231663,6 +231663,11 @@
           "at": "2026-11-14T18:57Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Extracted frames 2560..2666 from hos_008_master_v04.mp4, verified no take-4 frame after f060 appears in v04 (max source frame = f060), and built J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21)"
+        },
+        {
+          "at": "2026-11-14T19:05Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Resumed J2614 at step 1/3; locating J2614_salon_splice_half_second_sheet.jpg and extracted frames to inspect"
         }
       ],
       "remaining_action": "Visually inspect the half-second sheet across frames 2560..2665 and answer the three QA questions",
@@ -231682,9 +231687,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-14T18:57Z",
+        "at": "2026-11-14T19:05Z",
         "by": "gemini",
-        "note": "Extracted frames 2560..2666 from hos_008_master_v04.mp4, verified no take-4 frame after f060 appears in v04 (max source "
+        "note": "Resumed J2614 at step 1/3; locating J2614_salon_splice_half_second_sheet.jpg and extracted frames to inspect"
       },
       "taskKeys": [
         "HOS:008"
