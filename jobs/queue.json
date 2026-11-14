@@ -1,5 +1,5 @@
 {
-  "next_id": 2864,
+  "next_id": 2865,
   "jobs": [
     {
       "id": "J0001",
@@ -178622,7 +178622,7 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "urgent": 6,
+      "urgent": 5,
       "progress": {
         "step": 1,
         "of": 3,
@@ -178768,7 +178768,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 3,
+      "urgent": 2,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -179166,7 +179166,7 @@
       ],
       "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
       "kind": "assembly",
-      "urgent": 4,
+      "urgent": 3,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -193786,7 +193786,7 @@
       ],
       "remaining_action": "Chief ruling on the Eradication length and the lancet visor check",
       "kind": "assembly",
-      "urgent": 5,
+      "urgent": 4,
       "taskKeys": [
         "HOS:005",
         "HOS:006",
@@ -208586,7 +208586,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 8,
+      "urgent": 7,
       "due": "2026-11-15T20:00:00Z"
     },
     {
@@ -210133,7 +210133,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 9,
+      "urgent": 8,
       "due": "2026-11-15T22:00:00Z"
     },
     {
@@ -210552,7 +210552,7 @@
       "taskKeys": [
         "OWB:033"
       ],
-      "urgent": 10
+      "urgent": 9
     },
     {
       "id": "J2405",
@@ -219806,7 +219806,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 12,
+      "urgent": 11,
       "progress": {
         "step": 4,
         "of": 5,
@@ -224740,7 +224740,7 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 11,
         "of": 14,
@@ -226832,7 +226832,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "urgent": 2,
+      "urgent": 1,
       "progress": {
         "step": 3,
         "of": 3,
@@ -248026,7 +248026,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 11,
+      "urgent": 10,
       "progress": {
         "step": 2,
         "of": 3,
@@ -250876,7 +250876,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 13,
+      "urgent": 12,
       "progress": {
         "step": 3,
         "of": 4,
@@ -252884,7 +252884,7 @@
       "due": "2026-11-16T18:00:00Z",
       "kind": "studio",
       "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
-      "urgent": 15,
+      "urgent": 13,
       "progress": {
         "step": 1,
         "of": 5,
@@ -253032,13 +253032,45 @@
       "due": "2026-11-16T18:00:00Z",
       "kind": "review",
       "plain": "Work out a new kind of long video that small channels get views with, and put it to Ben to approve",
-      "urgent": 16,
+      "urgent": 14,
       "progress": {
         "step": 1,
         "of": 4,
         "at": "2026-11-14T22:35Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2864",
+      "title": "Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 22:38Z): \"Sounds good\"**, to this proposal from the cloud session: once the films that already have dates are out (the last is the Pluto film on Sun 13 Dec), pause new single-question longs on Orbit With Ben until one of two test formats has a result. The evidence is in J2863 (why the longs get almost no showings) and J2859 (the sleep-film research).\n\n**Write this into the studio's rules (LEARNINGS.md as a dated rule, and wherever topic locks are decided), in the house wording:**\n1. **What stays.** Every film that has a date keeps it: the longs up to the Pluto film on 13 Dec, the Journey film on Tue 8 Dec and the sleep film on Sat 12 Dec. Their Shorts go out as planned.\n2. **What pauses.** No new single-question long (one subject, about ten minutes, \"What happens if\" or \"Why\") is locked, scripted or built for Orbit after the Pluto film, until a test below has its result. No Orbit film beyond the Pluto film has an unfinished job today, so nothing in hand stops.\n3. **The two tests.** (a) The every-planet explainer, if Ben locks the card from J2863. (b) The sleep film. Each is read 14 days after it goes public.\n4. **How a test is read.** Our best long has 230 views in its lifetime. Keep the format if the film passes 500 views in 14 days. Drop or change it if it is under 230. In between, one more film in that format before deciding. Report showings and click rate beside the views, since showings are what the longs have lacked (about 4,050 in total across 16 films).\n5. **Shorts must not run dry.** Shorts are cut from longs. Say where Orbit's Shorts come from through January with no new single-question long: the finished films still have material, and the test films will give more. If the supply runs short before a test is read, say so to Ben with the date it runs out; do not restart single-question longs to feed it.\n6. **The two backlog topics added on 13 Nov** stay in the backlog, unlocked. If either can be recast in a format that passes, say so.\n7. **History of Science is not covered.** Its numbers were not part of this read. If the same pattern shows there, put the same question to Ben; do not apply this rule to it on your own.\n8. The monthly report scores the tests against the goal already in LEARNINGS (longs to thousands of views).\n\n**Guards.** No dated film moves. Nothing deleted. £0.\n\n**Done when** the rule is in the studio's rules with its date and Ben's words, the Shorts supply through January is written down, and the thread says in two lines what changed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T22:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T22:38Z",
+          "by": "claude",
+          "what": "added for claude"
+        }
+      ],
+      "remaining_action": "Add the dated rule (what stays, what pauses, the two tests and how each is read), plan the Shorts supply through January, tell the thread",
+      "due": "2026-11-16T12:00:00Z",
+      "for": "claude",
+      "kind": "studio",
+      "plain": "Record Ben's decision to pause the kind of long video that isn't getting views, until a new kind has been tested",
+      "urgent": 15
     }
   ],
   "focus": [
