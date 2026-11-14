@@ -246853,13 +246853,13 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-14T04:25Z",
-      "eta": "2026-11-14T05:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
-      "result": "",
+      "result": "Waiting for: After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed.",
       "history": [
         {
           "at": "2026-11-14T00:35Z",
@@ -246935,9 +246935,19 @@
           "at": "2026-11-14T04:31Z",
           "by": "codex",
           "what": "step 2 of 3 done: Removed real launchd BOARD_SITE_URL override; publisher 724db11e and routine b8f2a59d now generate 80 board.oppti.dev Play links. New-host Play 302 and R2 206 video/mp4 ftyp pass; board_check ok=true expected=6 site=200. Repeated ref reads still intermittently 502; original Pages host reports GitHub 403."
+        },
+        {
+          "at": "2026-11-14T04:31Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed."
+        },
+        {
+          "at": "2026-11-14T04:31Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
         }
       ],
-      "remaining_action": "Verify stable board reference reads after the existing GitHub token setup",
+      "remaining_action": "Verify stable reference and pinned board data after the existing GitHub token setup",
       "due": "2026-11-14T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -246949,6 +246959,11 @@
         "at": "2026-11-14T04:31Z",
         "by": "codex",
         "note": "Removed real launchd BOARD_SITE_URL override; publisher 724db11e and routine b8f2a59d now generate 80 board.oppti.dev Pl"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed.",
+        "check_at": "2026-11-14T07:40:00Z"
       }
     },
     {
