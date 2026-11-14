@@ -1,5 +1,5 @@
 {
-  "next_id": 2819,
+  "next_id": 2820,
   "jobs": [
     {
       "id": "J0001",
@@ -247097,6 +247097,11 @@
           "at": "2026-11-14T07:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
+        },
+        {
+          "at": "2026-11-14T09:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J2819"
         }
       ],
       "remaining_action": "Verify normal board routing and reliable data after the existing token setup and data checks",
@@ -247115,10 +247120,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J2814 Chief ruling 2026-11-14T07:15Z: NOT MET. Existing J2714 token setup and J2532 data verification remain prerequisites. Current Cloudflare-directed ref probes: 3/5 HTTP 200, 2/5 HTTP 502; pinned board at bf5b56743122b92d450361171ee39b44dbe5168a: 3/3 HTTP 200, each 80 canonical Play links. Pages checks endpoint returns 500 BOARD_GH_TOKEN missing. Normal Mini resolver now reaches retired Vercel (5/5 ref 404 DEPLOYMENT_NOT_FOUND), while public DNS reaches Cloudflare; no matching hosts-file entry. At 07:40Z verify normal resolver versus authoritative/public DNS, token availability through existing J2714, repeated normal-path reference and pinned reads, then board_check. If resolver remains wrong, scope its repair immediately; do not duplicate DNS, redeploy, or change unrelated records. Keep parent at 2/3 and existing approval/deadline intact.",
-        "check_at": "2026-11-14T07:40:00Z",
+        "check_at": "2026-11-14T10:31:21+00:00",
         "last_recheck": "J2814",
         "checked_at": "2026-11-14T07:16:10+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J2819"
       }
     },
     {
@@ -248853,6 +248859,37 @@
         "by": "gemini",
         "note": "Step 3 done: Committed jobs/reviews/J2818/REVIEW.md (ab3331011f); parking J2818 for elected Chief"
       }
+    },
+    {
+      "id": "J2819",
+      "title": "Verify condition for J2797",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2797: J2814 Chief ruling 2026-11-14T07:15Z: NOT MET. Existing J2714 token setup and J2532 data verification remain prerequisites. Current Cloudflare-directed ref probes: 3/5 HTTP 200, 2/5 HTTP 502; pinned board at bf5b56743122b92d450361171ee39b44dbe5168a: 3/3 HTTP 200, each 80 canonical Play links. Pages checks endpoint returns 500 BOARD_GH_TOKEN missing. Normal Mini resolver now reaches retired Vercel (5/5 ref 404 DEPLOYMENT_NOT_FOUND), while public DNS reaches Cloudflare; no matching hosts-file entry. At 07:40Z verify normal resolver versus authoritative/public DNS, token availability through existing J2714, repeated normal-path reference and pinned reads, then board_check. If resolver remains wrong, scope its repair immediately; do not duplicate DNS, redeploy, or change unrelated records. Keep parent at 2/3 and existing approval/deadline intact.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2797 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T09:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T09:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify normal board routing and reliable data after the existing token setup and data checks",
+      "kind": "review",
+      "recheck_of": "J2797",
+      "due": "2026-11-14T10:31:21+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
