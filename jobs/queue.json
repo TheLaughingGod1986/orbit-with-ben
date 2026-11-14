@@ -247020,10 +247020,10 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T05:44Z",
+      "eta": "2026-11-14T08:44Z",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
       "result": "",
@@ -247092,6 +247092,11 @@
           "at": "2026-11-14T04:49Z",
           "by": "codex",
           "what": "released: Corrected implementation merged/deployed (PRs 914,915). Acceptance NOT complete. Detached tmux J2798-corrected-traffic waits for J2798-live-measure to exit, then records ten corrected production minutes on / and /tracker. Read /Users/benjaminoats/_desk/logs/J2798-live-corrected.done, .log, .json; absent done means still running, do not duplicate. Require each bytesPerMinute <20000, inspect full snapshot repeats/errors, and record measured figures before done. Existing /api/checks missing-token 500 predates this change. Clean worktree /Volumes/MiniWork/scratch/J2798-wt; result notes in jobs/reviews/J2798/RESULT.md."
+        },
+        {
+          "at": "2026-11-14T05:44Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for the corrected ten-minute live traffic capture, then checking acceptance",
