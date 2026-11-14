@@ -246599,13 +246599,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-14T02:01Z",
-      "eta": "2026-11-14T03:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
-      "result": "",
+      "result": "parked for Chief: implementation deployed and review branch pushed; apply supplied AGENTS.md URL patch, reconcile J2532 obsolete hold/history projections, rerun strict address guard and review/merge the PR after PR 858. Evidence jobs/reviews/J2796/HANDOFF.md; live board_check passes and noindex headers verified.",
       "history": [
         {
           "at": "2026-11-14T00:35Z",
@@ -246671,6 +246671,11 @@
           "at": "2026-11-14T02:09Z",
           "by": "codex",
           "what": "step 3 of 3 done: Worker implementation, deployment and verification complete. Strict guard intentionally flags only AGENTS.md; patch and stale-data source fields are in the handoff. Final review and merge remain protected."
+        },
+        {
+          "at": "2026-11-14T02:09Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: implementation deployed and review branch pushed; apply supplied AGENTS.md URL patch, reconcile J2532 obsolete hold/history projections, rerun strict address guard and review/merge the PR after PR 858. Evidence jobs/reviews/J2796/HANDOFF.md; live board_check passes and noindex headers verified."
         }
       ],
       "remaining_action": "Claude to correct the protected rules link, reconcile the old hold and review the pull request",
