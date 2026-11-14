@@ -178583,9 +178583,14 @@
           "at": "2026-11-13T23:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T06:00:00Z"
+        },
+        {
+          "at": "2026-11-14T03:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T06:00:00Z"
         }
       ],
-      "remaining_action": "Resolve the music reuse check through the queued investigation, then verify the score before assembling the gravity film",
+      "remaining_action": "Await J2803 music-checker validation and authorized passing gate before gravity film assembly",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178601,11 +178606,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2791 Chief ruling NOT MET: music delivered and all 77 comparisons readable, but reused gate still FAILs at 0.804/0.811/0.821. J2663 explicitly forbids waivers. J2795 owns bounded no-spend code diagnosis and proposed correction PR or revised score scope; no deployment or generation. Require valid passing gate and final score acceptance before assembly; preserve VO and diagram KEEP locks.",
-        "check_at": "2026-11-14T06:00:00Z",
-        "last_recheck": "J2791",
-        "checked_at": "2026-11-13T23:38:30+00:00",
-        "checked_by": "codex"
+        "condition": "Existing Chief ruling HOS desk 6867889512 stands. J2795 diagnosis accepted only; J2803 owns bounded owned-music validation and matched-window proposal due 2026-11-14T16:00Z. PR908 stays draft/unmerged; production reused FAIL remains. Require authorized correction, complete passing production gate and final score acceptance before assembly. No waiver, generation or release. Preserve narration and diagram KEEP locks; failed or late validation returns to Chief for separately scoped fallback.",
+        "check_at": "2026-11-14T06:00:00Z"
       }
     },
     {
