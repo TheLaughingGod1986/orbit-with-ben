@@ -1,0 +1,44 @@
+# Only the installed, reviewed gateway is allowed. No general git/node/npm/curl rule.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-scoped-push.py"],
+    decision = "allow",
+    justification = "Ben approved non-force branch pushes to the two studio repositories, J2040, 4 Nov 2026; gateway validates arguments.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-scoped-push.py --repo owb --worktree /private/tmp/j2040-wt --branch codex/j2040-permission-probe --dry-run"],
+    not_match = ["git push origin main", "curl https://example.com", "/opt/homebrew/bin/python3 -c print(1)"]
+)
+
+# This separate gateway accepts only registered media IDs and fixed asset roles.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-r2-upload.py"],
+    decision = "allow",
+    justification = "Ben approved social uploads to existing R2 bucket owb-media, J2040; gateway pins destination, reads registered media and refuses overwrite/delete.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-r2-upload.py --channel owb --video buaOI3QGm7U --role media --dry-run"],
+    not_match = ["python3 07_Content-Ops/scripts/codex_r2_upload.py", "curl https://example.com", "aws s3 rm s3://owb-media/social/example.mp4"]
+)
+
+# Read-only operations; no arbitrary URL, query, method, payload or post ID.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-service-read.py"],
+    decision = "allow",
+    justification = "J2040: existing read-only YouTube sign-ins and registered Buffer status reads for the two studio profiles only.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation channel"],
+    not_match = ["curl https://example.com", "npm run youtube:auth", "python3 07_Content-Ops/scripts/codex_service_read.py"]
+)
+
+# Schedule-only reconciliation: registered existing posts, live YouTube time.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py"],
+    decision = "allow",
+    justification = "J2040: reconcile registered scheduled Buffer posts only to their owned video's existing future YouTube publishAt; no create/delete/content/URL/caller time.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py --channel owb --video Js6EQJ8qDi8"],
+    not_match = ["python3 07_Content-Ops/scripts/codex_buffer_reschedule.py", "curl https://example.com", "npm run buffer:check"]
+)
+
+# Fixed house flags only; live registered private schedule is preserved.
+prefix_rule(
+    pattern = ["/opt/homebrew/bin/python3", "-I", "/Users/benjaminoats/.codex/bin/studio-youtube-defaults.py"],
+    decision = "allow",
+    justification = "J2040: restore house audience/disclosure flags only on registered processed private schedules; no title, upload, delete, schedule change or public transition.",
+    match = ["/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-youtube-defaults.py --channel owb --video Js6EQJ8qDi8"],
+    not_match = ["npm run youtube:auth", "npm run youtube:package", "curl https://example.com"]
+)

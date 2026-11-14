@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-11-04T23:43:59.740794+00:00",
+  "tests": {
+    "service": 11,
+    "r2": 10,
+    "git": 3
+  },
+  "liveReads": {
+    "owbChannel": "success",
+    "hosChannel": "success",
+    "owbDailyAnalytics": "2026-10-01 through 2026-10-02 success",
+    "hosBuffer": {
+      "video": "AMSriTQ-lcQ",
+      "network": "instagram",
+      "status": "sent"
+    }
+  },
+  "policy": {
+    "gateway": "allow",
+    "outsideCurl": "unmatched, not a refusal",
+    "sessionReload": "not demonstrated"
+  },
+  "serviceMutations": false,
+  "remaining": [
+    "Buffer create/update",
+    "YouTube writes preserving package gates",
+    "fresh-session policy/review evidence"
+  ],
+  "files": {
+    "07_Content-Ops/scripts/codex_service_read.py": "6635f535eeebe047dee175acbe81d26eb99abb985ad9e4860276ed838f260335",
+    "docs/codex/studio.rules": "f126e780225a7e33a6d2a18a5d74e6ee3d4c1fa2a909ae20e6db036417720583"
+  }
+}
