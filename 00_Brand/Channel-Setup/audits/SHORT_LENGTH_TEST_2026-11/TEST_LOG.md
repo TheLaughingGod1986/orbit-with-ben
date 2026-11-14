@@ -8,7 +8,7 @@ One 50–60 s Orbit Short, lifted from the locked 025 long `Js6EQJ8qDi8`, agains
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Mon (usual) | `iyvWYFP_ETA` | Mon 9 Nov 11:30 | | | | | | | | | |
 | Wed (usual) | `TtgHNLXfDSs` | Wed 11 Nov 11:30 | | | | | | | | | |
-| **Thu (length test)** | `N42gKBbD7tE` | Thu 12 Nov 11:30 | 50–60 s | | | | | | | | |
-| Fri (usual) | `bSjWiCbB7pY` | Fri 13 Nov 11:30 | | | | | | | | | |
+| **Thu (length test)** | `uhZSRcvngvE` (was `N42gKBbD7tE`) | Thu 12 Nov 11:30 | 50–60 s | | | | | | | | |
+| Sat (usual; swapped from Fri 13 Nov, J2715) | `RT-ec4_GcOk` (was `bSjWiCbB7pY`) | Sat 14 Nov 11:30 | | | | | | | | | |
 
 **Read (Auditor):** compare the test Short with the median of the three usual ones on views, stayed-to-watch and subs gained. Note the obvious confounders: topic, frame 0, and the Thursday slot. Chief makes the call in AGENTS.md.

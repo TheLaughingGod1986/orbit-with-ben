@@ -38,9 +38,12 @@ class Cards(unittest.TestCase):
             self.assertTrue(c["handle"].startswith("@"))
             self.assertRegex(c["repo"], r"^[\w.-]+/[\w.-]+$")
             self.assertIsInstance(c["wip"], int)
-        home = next(c for c in cards if c["home"])
-        self.assertEqual((home["here"], home["ready"], home["must"]), (True, True, []))
-        self.assertEqual(home["todo"], channel_check.check(channels.ROOT)[1][:channel_cards.MAX_LINES])
+        # A channel whose files are on this machine: in the studio's root while it is the home channel, in its own
+        # checkout once the studio and the channels are apart.
+        own = next(c for c in cards if c["slug"] == channels.default())
+        self.assertEqual((own["here"], own["ready"], own["must"]), (True, True, []))
+        self.assertEqual(own["todo"], channel_check.check(channels.checkout(own["slug"]))[1][:channel_cards.MAX_LINES])
+        self.assertEqual([c["slug"] for c in cards if c["home"]], [channels.home()] if channels.home() else [])
 
     def test_a_third_channel_made_by_folder_shows_up_ready_with_what_is_left(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -75,16 +78,18 @@ class Cards(unittest.TestCase):
     def test_one_channel_that_cannot_be_read_does_not_take_the_others_off_the_board(self):
         real = channel_check.check
 
+        gone = channels.default()
+
         def check(root):
-            if Path(root) == channels.ROOT:
+            if Path(root) == channels.checkout(gone):
                 raise OSError("disk gone")
             return real(root)
         with mock.patch.object(channel_check, "check", check):
             cards = channel_cards.cards()
         self.assertEqual([c["slug"] for c in cards], channels.slugs())
-        home = next(c for c in cards if c["home"])
-        self.assertEqual((home["ready"], home["error"]), (None, "disk gone"))
-        self.assertEqual(home["name"], channels.get(channels.home())["name"])
+        card = next(c for c in cards if c["slug"] == gone)
+        self.assertEqual((card["ready"], card["error"]), (None, "disk gone"))
+        self.assertEqual(card["name"], channels.get(gone)["name"])
 
     def test_the_repo_name_is_read_from_a_github_address(self):
         self.assertEqual(channel_cards.repo_name("https://github.com/someone/night-sky.git"), "someone/night-sky")

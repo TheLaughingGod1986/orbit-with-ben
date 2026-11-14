@@ -8,7 +8,7 @@
 #      dashboard, commits only 05_Analytics/ and library.json, and pushes to main.
 #      launchd can't read the NAS (macOS privacy): a Short whose files are there is checked from the copy an agent
 #      staged with `gate_upcoming.py --stage` (~/_desk/cache/gate-media), else it reads NOT CHECKED (26 Oct 2026). A failed channel still lets the other one through, then notifies.
-#   4. Runs scripts/board_publish.py once, so the tracker web app (studio-kanban.vercel.app/tracker) shows the new data.
+#   4. Runs scripts/board_publish.py once, so the tracker web app (studio-kanban.pages.dev/tracker) shows the new data.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 
 # Run a command with a time limit in seconds (macOS has no `timeout`). The alarm survives the exec, so a command that
@@ -125,7 +125,7 @@ main() {
       sleep $((i * 5))
       git pull -q --rebase origin main || { git rebase --abort 2>/dev/null; break; }
     done
-    # Put the new data on the board-data branch now: studio-kanban.vercel.app/tracker reads tracker.json from there.
+    # Put the new data on the board-data branch now: studio-kanban.pages.dev/tracker reads tracker.json from there.
     # board_publish.py never fails and is a no-op when nothing changed; its 5-minute launchd run would catch it anyway.
     if [[ ${BOARD_PUBLISH:-1} != 0 && -f $repo/scripts/board_publish.py ]]; then
       HOS_REPO="${HOS_REPO:-$HOME/YouTube/History Of Science}" python3 "$repo/scripts/board_publish.py" --quiet

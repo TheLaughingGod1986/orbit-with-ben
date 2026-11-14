@@ -10,7 +10,7 @@ with the cards actually published on the board-data branch, and checks the live 
   - after J2427, an ask/approved entry whose cut is already Private+scheduled or live on YouTube
     (`matched_upload` / `read_back`, or a Done card with the same key or video id) is satisfied even when
     `settle_uploaded` moved the card to Done and dropped its ask/approved keys (or removed the job-keyed card)
-  - the live site (studio-kanban.vercel.app) answers 200
+  - the configured live site answers 200
 
 Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
   {"at", "ok": true|false, "expected": n, "problems": [...], "cards": [...]}
@@ -26,6 +26,8 @@ thread for six days after the November one opened.
 board_publish.py starts it in the background after a run, at most every CHECK_EVERY_S.
 """
 from __future__ import annotations
+
+from board_site import site_url
 
 import argparse
 import datetime as dt
@@ -47,7 +49,7 @@ HOME = pathlib.Path.home()
 ROOT = HERE.parent
 STUDIO = channels.studio_checkout()
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
-SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE = site_url()
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 _THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
 THREAD = (_THREAD["repo"], int(_THREAD["number"]))
@@ -198,19 +200,23 @@ def check(queue_jobs: list[dict], board: dict, site_status=status_of, files: dic
         cards.append(row)
     # A long its pipeline calls scheduled must read back from YouTube (Done), never sit in In progress because a job
     # only waits for it to go public (HOS 005, Ben 25 Oct 2026 22:54: "Why is it in progress on the board").
-    # Asked of every channel that keeps its films in a PIPELINE.json (its board entry carries the pipeline).
+    # Asked of every channel whose films have a stage called `scheduled`: one that keeps its films in a PIPELINE.json
+    # (its board entry carries the pipeline), or one with a status file per film that lists that stage (J2622).
     for slug in channels.slugs():
-        if (channels.get(slug).get("pipeline") or {}).get("kind") != "pipeline_json":
+        one_file = (channels.get(slug).get("pipeline") or {}).get("kind") == "pipeline_json"
+        if not one_file and "scheduled" not in channels.stage_keys(slug):
             continue
         lab = channels.label(slug)
         pipe = (board.get(slug) or {}).get("pipeline") or board.get(slug) or {}
         for f in pipe.get("films") or []:
-            st = ((f.get("stages") or {}).get("scheduled") or {}).get("status")
-            key = f"{lab}:{f.get('id')}"
+            stage = (f.get("stages") or {}).get("scheduled") or {}
+            st = stage.get("status") or stage.get("state")
+            key = f"{lab}:{f.get('id') or f.get('film')}"
             v = by_key.get(key)
             working = v and v.get("lane") == "progress" and (v.get("youtube") or {}).get("videoId") and any(j.get("status") in vt.ACTIVE_STATUSES for j in v.get("jobs") or [])
             if st == "done" and v and v.get("lane") not in ("done", "approved") and not working:
-                problems.append(f"{key}: scheduled in PIPELINE but the card is in {v.get('lane')}; "
+                where = "PIPELINE" if one_file else "its status file"
+                problems.append(f"{key}: scheduled in {where} but the card is in {v.get('lane')}; "
                                 f"no YouTube read-back (add the long to {lab} UPLOADS.json)")
     # A film on YouTube with a job claimed or open shows in In progress, not Done (Ben, 26 Oct 2026 00:15: "Can't see
     # these jobs in the in progress lane"); blocked jobs don't count.

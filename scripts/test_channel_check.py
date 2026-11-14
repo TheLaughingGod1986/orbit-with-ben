@@ -30,6 +30,27 @@ class Settings(unittest.TestCase):
         for c in channels.all_channels():
             self.assertEqual(cc.settings_problems(c), [], c["slug"])
 
+    def test_stages_can_be_names_or_objects_with_weights_owners_and_kinds(self):
+        # J2622: a channel that gives each stage its weight, who it goes to and the kind of job it is.
+        full = [{"key": "script", "label": "Script", "weight": 60, "owner": "Grok", "kind": "script"},
+                {"key": "ben_ok", "label": "Ben's OK", "weight": 40, "owner": "Ben"}]
+        for stages in (["script", "edit"], full, [{"key": "script"}, {"key": "edit"}], ["script", {"key": "edit", "kind": "assembly"}]):
+            self.assertEqual(cc.settings_problems(good(stages=stages)), [], stages)
+        self.assertEqual(cc.settings_problems(good(stages="from pipeline")), [])
+
+    def test_a_stage_list_that_cannot_be_read_is_named(self):
+        bad = {
+            "two stages have the same name": ["script", {"key": "script"}],
+            "every stage has one and they add up to 100": [{"key": "a", "weight": 60}, {"key": "b"}],
+            "they add up to 100": [{"key": "a", "weight": 60}, {"key": "b", "weight": 30}],
+            "add up to 100 ": [{"key": "a", "weight": 100}, {"key": "b", "weight": 0}],
+            "a stage's `kind` is the kind of job it is": [{"key": "a", "kind": ""}, {"key": "b"}],
+            "names, or objects with a `key`": [{"label": "No key"}, "edit"],
+        }
+        for says, stages in bad.items():
+            problems = cc.settings_problems(good(stages=stages))
+            self.assertTrue(any(says.strip() in line for line in problems), (says, problems))
+
     def test_each_bad_field_is_named(self):
         cases = {
             "slug": {"slug": "Deep Sea"}, "label": {"label": "sea"}, "name": {"name": " "},
@@ -70,6 +91,18 @@ class Settings(unittest.TestCase):
         found = cc.settings_problems(good(social={"tiktok": "browser"}))
         self.assertEqual(len(found), 1)
         self.assertTrue(found[0].startswith("social.tiktok:"))
+
+    def test_a_desk_is_checked_when_given(self):
+        # J2618: the relay's brief is built from this, so a wrong shape would reach every agent on the Mini.
+        self.assertEqual(cc.settings_problems(good(desk={"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 180})), [])
+        self.assertEqual(cc.settings_problems(good()), [])                      # most channels have none
+        for bad in ({}, {"tool": "tools/desk.py"}, {"number": 180}, {"tool": "tools/desk.sh", "number": 1},
+                    {"tool": "/abs/desk.py", "number": 1}, {"tool": "~/desk.py", "number": 1}, {"tool": "../desk.py", "number": 1},
+                    {"tool": "tools/desk.py", "number": 0}, {"tool": "tools/desk.py", "number": "180"},
+                    {"tool": "tools/desk.py", "number": True}, "tools/desk.py", ["tools/desk.py", 180]):
+            found = cc.settings_problems(good(desk=bad))
+            self.assertEqual(len(found), 1, bad)
+            self.assertTrue(found[0].startswith("desk:"), found[0])
 
     def test_the_slot_pattern_is_the_loaders(self):
         self.assertEqual(cc.SLOT.pattern, channels.SLOT.pattern)
@@ -154,7 +187,8 @@ class Checkout(unittest.TestCase):
         self.assertTrue(todo[3].startswith("cadence:"))
 
     def test_this_repo_can_be_driven(self):
-        self.assertEqual(cc.check(HERE.parent)[0], [])
+        # Orbit's own checkout: the studio's root today, a folder beside it once the two are apart.
+        self.assertEqual(cc.check(channels.checkout(channels.default()))[0], [])
 
     def test_the_report_says_which(self):
         self.assertIn("cannot drive it yet", cc.report("x", ["a"], []))
@@ -237,13 +271,17 @@ class NewChannel(unittest.TestCase):
 
 class HomeCheckout(unittest.TestCase):
     def test_the_home_channels_checkout_is_this_repo(self):
-        home = next(c["slug"] for c in channels.all_channels() if c.get("home"))
-        self.assertEqual(channels.checkout(home), HERE.parent)
+        home = channels.home()
+        for slug in channels.slugs():
+            if slug == home:
+                self.assertEqual(channels.checkout(slug), HERE.parent)
+            else:                     # every other channel, and every channel once none is home, is somewhere else
+                self.assertNotEqual(channels.checkout(slug), HERE.parent)
 
     def test_a_channel_whose_repo_is_not_here_has_none(self):
         with tempfile.TemporaryDirectory() as d:
             import os
-            other = next(c for c in channels.all_channels() if not c.get("home"))
+            other = next(c for c in channels.all_channels() if not c.get("home") and c["repo"].get("env"))
             old = os.environ.get(other["repo"]["env"])
             os.environ[other["repo"]["env"]] = d
             try:

@@ -15,7 +15,8 @@ import { putWatchFile, r2Config } from "../05_Analytics/kanban/board_site/r2sign
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const [id, file] = process.argv.slice(2);
-const SITE = process.env.BOARD_SITE || "https://studio-kanban.vercel.app";
+const boardConfig = JSON.parse(readFileSync(new URL("../studio/board_site.json", import.meta.url), "utf8"));
+const SITE = (process.env.BOARD_SITE_URL || boardConfig.url).replace(/\/+$/, "");
 if (!/^[a-z0-9][a-z0-9_-]{0,63}$/.test(id || "") || !file) { console.error("usage: watch_upload.mjs <id> <file.mp4>"); process.exit(2); }
 
 /** R2_* values from 07_Content-Ops/.env, without overriding the environment. Values are never printed. */

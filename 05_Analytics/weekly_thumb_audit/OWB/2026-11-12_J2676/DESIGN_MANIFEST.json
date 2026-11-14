@@ -1,0 +1,121 @@
+{
+  "job": "J2676",
+  "date": "2026-11-12",
+  "status": "rebuilt; awaiting review; no tests armed",
+  "decision": "05_Analytics/tests/panels/owb-j2374-weekly-2026-11-09/DECISION.md",
+  "inputs": [
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/GSFC_20171208_Archive_e000868.jpg",
+      "sha256": "d377d9f55ad9877ae2f7e67489ed19aa97251147897e4fface5664eceb00cdb5"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/GSFC_20171208_Archive_e000868.json",
+      "sha256": "aa3b0741b7438aabafad802a45dc5df0bd9022a47b669f591fd88ba413b9020b"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/GSFC_20171208_Archive_e001427.jpg",
+      "sha256": "aada19167093783cc27e43b171a44f16a84b3cceced4f32b7bfe3b0e8d6f422c"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/GSFC_20171208_Archive_e001427.json",
+      "sha256": "69a1da983b2573d0e272cd61fda5b735f3fa8141901e5b52909daad56983fef9"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/as17-148-22727.jpg",
+      "sha256": "cb4c3d2da98ee72130ebfd2ea472fc84ede6726002c2a8c9cabd86e4deea9f0f"
+    },
+    {
+      "path": "/Users/benjaminoats/_desk/j2676/plates/neutron_star_t465.png",
+      "sha256": "7be87966418951aa7ca23586ba4649977c49f19ee5ef6e3cb8900845a0311c5b"
+    }
+  ],
+  "source_notes": {
+    "moon": "NASA API ID verified 2026-11-12; LRO terrain visualization, grey. Earth/Moon distance and diameters are diagrammatic, not a calibrated scale.",
+    "alien": "NASA API ID verified 2026-11-12; artist illustration credited NASA, ESA, M. Kornmesser. Added rain marks are illustrative, not observed resolved weather.",
+    "neutron": "Frame extracted with ffmpeg -ss 465 -frames:v 1 from the archived neutron_star_STUDIO_OWNER.mp4; no Earth added."
+  },
+  "builder": "00_Brand/Channel-Setup/tools/build_weekly_thumbs_j2676.py",
+  "phone_sheet": "/Users/benjaminoats/_desk/j2676/designs/PHONE_SHEET_v02.jpg",
+  "phone_sheet_sha256": "f050aa68a907008b7d3780641bd37883bc21204938bc4a4a354a91bde5e5a368",
+  "preview_score_sheet": "/Users/benjaminoats/_desk/j2676/designs/THUMB_PREVIEW_SCORE_SHEET.jpg",
+  "preview_score_sheet_sha256": "1637000de17e093e7934e5ffed8d715d52141f9c051fcc50feaf58eea526dc63",
+  "gate_stdout": "/Users/benjaminoats/_desk/j2676/designs/THUMB_PREVIEW_SCORE_SHEET.jpg\nPASS  2fsQcea-voM_B_v02.jpg  saturation=152.4  near_black=6%\nPASS  Yk1tLh23rko_B_v02.jpg  saturation=133.6  near_black=4%\nPASS  b8-X_FyJnHM_B_v02.jpg  saturation=205.7  near_black=3%",
+  "designs": [
+    {
+      "video": "2fsQcea-voM",
+      "film": "013_Why-The-Moon-Is-Slowly-Leaving-Us",
+      "live_title": "Why the Moon Is Slowly Leaving Us \u2014 and What Happens When It's Gone",
+      "hook": "TOTALITY ENDS",
+      "yellow": "ENDS",
+      "file": "/Users/benjaminoats/_desk/j2676/designs/2fsQcea-voM_B_v02.jpg",
+      "bytes": 334204,
+      "sha256": "537f8c0b81259f4ec98370c514b2e175a46272d56ac6153df4c0a2cbd5ae8548",
+      "sources": [
+        "NASA GSFC_20171208_Archive_e000868 (Full Moon, public domain)",
+        "NASA Apollo 17 as17-148-22727 (Blue Marble Earth, public domain)"
+      ],
+      "hook_box": [
+        129,
+        30,
+        1144,
+        126
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/_desk/j2676/designs/2fsQcea-voM_B_v02.jpg",
+        "saturation": 152.4,
+        "near_black": 0.055,
+        "fails": []
+      }
+    },
+    {
+      "video": "Yk1tLh23rko",
+      "film": "007_What-Happens-To-Your-Body-Near-A-Neutron-Star",
+      "live_title": "What Happens If You Get Near a Neutron Star or Pulsar?",
+      "hook": "CRUSHED TO ATOMS",
+      "yellow": "ATOMS",
+      "file": "/Users/benjaminoats/_desk/j2676/designs/Yk1tLh23rko_B_v02.jpg",
+      "bytes": 235627,
+      "sha256": "730de8b8e5be45281582979ff92307f4fbe83f677a909f297ca0f2dd14803115",
+      "sources": [
+        "007 master frame at t=465.00s (neutron_star_STUDIO_OWNER.mp4, clean un-inpainted hero plate)"
+      ],
+      "hook_box": [
+        64,
+        35,
+        1208,
+        120
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/_desk/j2676/designs/Yk1tLh23rko_B_v02.jpg",
+        "saturation": 133.6,
+        "near_black": 0.042,
+        "fails": []
+      }
+    },
+    {
+      "video": "b8-X_FyJnHM",
+      "film": "003_Exoplanets-Strangest-Alien-Worlds",
+      "live_title": "Alien Worlds: The Strangest Planets We've Ever Found",
+      "hook": "GLASS RAIN?",
+      "yellow": "GLASS",
+      "file": "/Users/benjaminoats/_desk/j2676/designs/b8-X_FyJnHM_B_v02.jpg",
+      "bytes": 251556,
+      "sha256": "1febb2e40f5fa58054a829e5e8b5e6b3c4dac4b82573ea8c2e9f1ea7124e535f",
+      "sources": [
+        "NASA/ESA/M. Kornmesser, GSFC_20171208_Archive_e001427 (HD 189733 b artist illustration)"
+      ],
+      "hook_box": [
+        209,
+        30,
+        1064,
+        126
+      ],
+      "score": {
+        "file": "/Users/benjaminoats/_desk/j2676/designs/b8-X_FyJnHM_B_v02.jpg",
+        "saturation": 205.7,
+        "near_black": 0.031,
+        "fails": []
+      }
+    }
+  ]
+}

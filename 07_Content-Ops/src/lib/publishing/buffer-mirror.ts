@@ -413,6 +413,7 @@ export function planBufferMirror(opts: PlanOptions): Plan {
     if (needsCreate && typeof value === "string" && /\bREPLACE\b/.test(value)) errors.push(`social.${field} is still the template placeholder`);
   }
   if (needsCreate) {
+    if (!hashtags(video.tags, 1).length) errors.push("No usable video tags: restore the package tags before creating Buffer posts");
     if (!opts.social?.hook?.trim()) warnings.push("no social hook: the posts open with the YouTube title (set social.hook)");
     if (!opts.social?.question?.trim()) warnings.push("no social question: the posts use the default question (set social.question)");
     if (kind === "long" && !opts.trailerUrl) warnings.push("no trailer: Instagram and Facebook get the thumbnail and link card, not a Reel (add Trailer/*.mp4)");

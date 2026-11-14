@@ -230,6 +230,31 @@ class RoutedSteps(unittest.TestCase):
         self.assertEqual(st["thumbnails"]["owner"], "Codex")
         self.assertEqual(st["edit"]["owner"], "Cursor")
 
+    def test_a_channel_with_one_status_file_per_film_is_routed_from_its_own_stage_kinds(self):
+        # J2622: the same rule for the other shape of stage record (`state`), with the kinds the channel itself names.
+        films = [{"film": "006", "stages": {"facts": {"state": "done"}, "thumbnails": {"state": "todo"},
+                                            "edit": {"state": "todo", "owner": "Cursor"}, "ben_ok": {"state": "todo"}}}]
+        ks.route_stages(films, {"facts": "facts", "thumbnails": "chart", "edit": "assembly"})
+        st = films[0]["stages"]
+        self.assertNotIn("owner", st["facts"])                       # done: keeps its doer, gets no owner
+        self.assertEqual(st["thumbnails"]["owner"], "Codex")         # to do, nobody has it: the routed worker
+        self.assertEqual(st["edit"]["owner"], "Cursor")              # someone has it: left alone
+        self.assertNotIn("owner", st["ben_ok"])                      # a stage whose kind the channel does not name
+
+    def test_a_channel_that_names_no_kinds_keeps_its_cards_as_they_are(self):
+        films = [{"film": "033", "stages": {"script": {"state": "todo"}, "edit": {"state": "todo"}}}]
+        before = json.dumps(films)
+        ks.route_stages(films, {})
+        self.assertEqual(json.dumps(films), before)
+        ks.route_stages(None, {"script": "script"})                  # a channel with no films yet
+
+    def test_the_one_file_channel_takes_its_kinds_from_its_settings_once_it_names_them(self):
+        hos = {"films": [{"id": "006", "stages": {"thumbnails": {"status": "todo"}, "edit": {"status": "todo"}}}]}
+        ks.route_pipeline_stages(hos, {"edit": "assembly"})          # its own kinds: only `edit` is named
+        st = hos["films"][0]["stages"]
+        self.assertIn("owner", st["edit"])
+        self.assertNotIn("owner", st["thumbnails"])
+
 
 class WeekNumbers(unittest.TestCase):
     """Ben, 14 Oct: the board's tiles show seven days of jobs done and Mini idle, today last."""
@@ -339,6 +364,29 @@ class AnyChannel(unittest.TestCase):
             self.assertEqual(ks.film_rows("sky", got["sky"])[0][0], "001")
             self.assertEqual(ks.film_rows("deep-sea", got["deep-sea"])[0][0], "007")
 
+    def test_a_film_with_no_receipt_reads_its_long_from_uploads_json_like_a_one_file_channel(self):
+        # J2790: HOS 004's long is registered in UPLOADS.json but has no receipt in its folder. The one-file shape
+        # showed it live; the per-film shape lost it. A receipt still wins; a retired copy or a Short never counts.
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY):
+            root = checkout_of("sky", Path(tmp), ["001", "002", "003"])
+            social = root / "00_Brand/Channel-Setup/social"
+            social.mkdir(parents=True, exist_ok=True)
+            (social / "UPLOADS.json").write_text(json.dumps({"videos": {
+                "LIVEone1111": {"kind": "long", "film": "001", "privacyStatus": "public", "publishAt": "2026-10-15T17:00:24Z"},
+                "SCHEDtwo222": {"kind": "long", "film": "002", "privacyStatus": "private", "publishAt": "2026-12-01T18:00:00Z"},
+                "OLDthree333": {"kind": "long", "film": "003", "retired": True},
+                "SHORTone111": {"kind": "short", "film": "003", "publishAt": "2026-12-02T11:30:00Z"}}}))
+            got = {f["film"]: f for f in ks.read_documents({"sky": root})["sky"]}
+            self.assertEqual((got["001"]["release"]["state"], got["001"]["release"]["videoId"]), ("live", "LIVEone1111"))
+            self.assertEqual((got["002"]["release"]["state"], got["002"]["release"]["publishAt"]), ("scheduled", "2026-12-01T18:00:00Z"))
+            self.assertNotIn("release", got["003"])
+            pkg = root / "02_Video-Projects" / "001_Made-Up" / "11_Upload-Package"
+            pkg.mkdir(parents=True, exist_ok=True)
+            (pkg / "PACKAGE_UPLOAD_RESULT.json").write_text(json.dumps({"ok": True, "dryRun": False, "upload": {
+                "platformPostId": "RECEIPTone11", "responseSummary": {"privacyStatus": "public"}}}))
+            got = {f["film"]: f for f in ks.read_documents({"sky": root})["sky"]}
+            self.assertEqual(got["001"]["release"]["videoId"], "RECEIPTone11")
+
     def test_a_pipeline_file_with_no_films_list_stops_the_run(self):
         with tempfile.TemporaryDirectory() as tmp, plugged(self.SEA):
             root = checkout_of("deep-sea", Path(tmp))
@@ -389,6 +437,7 @@ class AnyChannel(unittest.TestCase):
                 self.assertEqual(ks.main([*args, "--db-out", str(out)]), 0)
             docs = {p.stem: json.loads(p.read_text()) for p in out.glob("*.json")}
             slugs = channels.slugs()
+            one_file = {slug: ks.one_file(slug) for slug in slugs}   # each channel's own way, whatever it is this week
         # what the publisher reads is all there, and every channel has its own file in its own shape
         self.assertLessEqual(set(board_publish.SECTIONS), set(docs))
         for slug in slugs:
@@ -398,7 +447,7 @@ class AnyChannel(unittest.TestCase):
             self.assertIn(key, queue)
         for slug in slugs:   # only the queue's document carries the queue
             if slug != channels.queue_key():
-                self.assertEqual(set(docs[slug]), {"updatedAt", "pipeline" if slug != "sky" else "films"}, slug)
+                self.assertEqual(set(docs[slug]), {"updatedAt", "pipeline" if one_file[slug] else "films"}, slug)
         # the made-up channels came through like any other
         self.assertEqual([f["film"] for f in docs["sky"]["films"]], ["001"])
         self.assertEqual([f["id"] for f in docs["deep-sea"]["pipeline"]["films"]], ["007"])

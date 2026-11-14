@@ -1,0 +1,190 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/06_Final-Exports/owb_ar2_iss_2030_deorbit_v14.mp4",
+  "edge_floor": 0.019,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "ar2_05_Gerst_ISS_arm_s5",
+      "cut": 5,
+      "t": 16.58,
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Gerst_Earth_timelapses_2017.webm",
+      "why": [
+        "low detail: edge density 0.0157 < film p5 0.0190"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "ar2_J1849_opening",
+      "source": "/Users/benjaminoats/_desk/cache/J1847/delivery/opening_1080x1920.mp4",
+      "t": 1.2,
+      "std": 58.56,
+      "mean": 96.22,
+      "p95": 195.0,
+      "edge": 0.3972,
+      "hf": 22.61,
+      "lf": 42.64,
+      "std8": 47.91,
+      "edge8": 0.6592,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "ar2_01_GSFC_20171208_Archive_e002130_s1",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/earth/GSFC_20171208_Archive_e002130.jpg",
+      "t": 3.8,
+      "std": 55.53,
+      "mean": 111.24,
+      "p95": 202.0,
+      "edge": 0.2609,
+      "hf": 16.99,
+      "lf": 46.44,
+      "std8": 49.36,
+      "edge8": 0.5556,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.005,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.081,
+        "reversals": 0,
+        "frames": 56,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "ar2_02_GSFC_20171208_Archive_e002130_s2",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/earth/GSFC_20171208_Archive_e002130.jpg",
+      "t": 6.68,
+      "std": 53.19,
+      "mean": 84.06,
+      "p95": 201.0,
+      "edge": 0.1725,
+      "hf": 18.17,
+      "lf": 42.75,
+      "std8": 45.74,
+      "edge8": 0.4225,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.023,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.026,
+        "reversals": 0,
+        "frames": 62,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "ar2_03_GSFC_20171208_Archive_e002130_s3",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/earth/GSFC_20171208_Archive_e002130.jpg",
+      "t": 9.57,
+      "std": 56.05,
+      "mean": 112.11,
+      "p95": 202.0,
+      "edge": 0.3185,
+      "hf": 21.81,
+      "lf": 43.82,
+      "std8": 46.97,
+      "edge8": 0.6012,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -3.044,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.068,
+        "reversals": 0,
+        "frames": 57,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "ar2_04_Gerst_Earth_timelapses_2017_s4",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Gerst_Earth_timelapses_2017.webm",
+      "t": 12.87,
+      "std": 59.63,
+      "mean": 171.43,
+      "p95": 235.0,
+      "edge": 0.0289,
+      "hf": 12.27,
+      "lf": 55.19,
+      "std8": 56.69,
+      "edge8": 0.1958,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "ar2_05_Gerst_ISS_arm_s5",
+      "source": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/iss/Gerst_Earth_timelapses_2017.webm",
+      "t": 16.58,
+      "std": 33.37,
+      "mean": 213.95,
+      "p95": 238.0,
+      "edge": 0.0157,
+      "hf": 7.37,
+      "lf": 29.85,
+      "std8": 31.22,
+      "edge8": 0.1064,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0157 < film p5 0.0190"
+      ]
+    }
+  ]
+}

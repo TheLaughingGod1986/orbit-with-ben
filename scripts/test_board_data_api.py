@@ -67,6 +67,33 @@ def run(body: str) -> dict:
 
 
 @unittest.skipUnless(NODE, "node not installed")
+class ContentEtags(unittest.TestCase):
+    def test_same_length_different_content_is_not_304(self):
+        r = run("""
+let body = '{"value":1}';
+const original = globalThis.fetch;
+globalThis.fetch = async (url, init) => /contents/.test(url) ? answer(200, body) : original(url, init);
+const first = await get({f:'updates'});
+forget(); body = '{"value":2}';
+results.changed = await get({f:'updates'}, {'if-none-match': first.headers.etag});
+results.same = await get({f:'updates'}, {'if-none-match': 'W/' + results.changed.headers.etag + ', "other"'});
+results.calls = world.calls;
+""")
+        self.assertEqual(r['changed']['status'], 200)
+        self.assertEqual(r['same']['status'], 304)
+
+    def test_tracker_content_etag_survives_new_board_commit(self):
+        r = run("""
+const original = globalThis.fetch;
+globalThis.fetch = async (url, init) => /contents/.test(url) ? answer(200, '{"channels":[]}') : original(url, init);
+const first = await get({f:'tracker', sha:'__A__'});
+forget(); world.head = 'b'.repeat(40);
+results.same = await get({f:'tracker', sha: world.head}, {'if-none-match': first.headers.etag});
+""")
+        self.assertEqual(r['same']['status'], 304)
+
+
+@unittest.skipUnless(NODE, "node not installed")
 class WhoMayRead(unittest.TestCase):
     def test_while_the_repo_is_public_anyone_reads_as_before(self):
         r = run(f"""

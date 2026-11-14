@@ -22,6 +22,7 @@
     { "source": "/ai.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }]},
     { "source": "/tracker.webmanifest", "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }, { "key": "Cache-Control", "value": "no-cache" }]},
     { "source": "/version.json", "headers": [{ "key": "Cache-Control", "value": "no-store" }]},
-    { "source": "/updater.js", "headers": [{ "key": "Cache-Control", "value": "no-store" }]}
+    { "source": "/updater.js", "headers": [{ "key": "Cache-Control", "value": "no-store" }]},
+    { "source": "/*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]}
   ]
 }

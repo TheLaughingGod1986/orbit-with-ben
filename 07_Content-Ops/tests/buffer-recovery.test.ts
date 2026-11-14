@@ -55,7 +55,7 @@ describe('Buffer recovery regressions',()=>{
   expect(hint?.sourceError).toMatch(/mismatch/i);
  });
  it.each([true,false])('rejects a source before any hosting or create (dryRun=%s)',async(dryRun)=>{
-  const {file}=source(),v=video('titan000001');
+  const {file}=source(),v={...video('titan000001'),tags:['titan']};
   const host=vi.fn(),create=vi.fn();
   const deps:MirrorDeps={youtubeToken:async()=> 'test',fetchVideos:async()=>new Map([[v.id,v]]),listScheduled:async()=>[],now:()=>now,
    store:{load:async()=>({version:1,videos:{}}),record:vi.fn(),setMedia:vi.fn()},host,checkUrl:async()=>null,

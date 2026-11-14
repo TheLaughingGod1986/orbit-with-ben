@@ -143,7 +143,7 @@ class RelayContinuation(unittest.TestCase):
             root=pathlib.Path(tmp);(root/'jobs').mkdir();q=root/'jobs/queue.json'
             data={'jobs':[row('RETRY',kind='assembly',due='2026-10-01T00:00Z'),row('WORK',kind='assembly')]}
             q.write_text(json.dumps(data));ran=[]
-            for name,value in [('OWB',root),('STATE',root/'state')]:stack.enter_context(patch.object(cr,name,value))
+            for name,value in [('STUDIO',root),('STATE',root/'state')]:stack.enter_context(patch.object(cr,name,value))
             for name in ['note_grok_posts','fetch_claude_beat','handover','alert_no_chief','publish_chief_inbox','push_heartbeat','notify','offload_scratch']:
                 stack.enter_context(patch.object(cr,name))
             for name,value in [('load_out',{}),('self_heal',True),('reroute_work',[]),('pending_chief_reviews',[]),
@@ -202,7 +202,7 @@ class RelayContinuation(unittest.TestCase):
         self.assertEqual(data['jobs'][0]['progress']['step'],1)
 
     def test_old_or_different_owner_hold_cannot_hide_current_worker_failure(self):
-        with tempfile.TemporaryDirectory() as tmp,patch.object(cr,'OWB',pathlib.Path(tmp)):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(cr,'STUDIO',pathlib.Path(tmp)):
             q=pathlib.Path(tmp)/'jobs/queue.json';q.parent.mkdir()
             for by,stamp in [('gemini',AT),('codex',AT-dt.timedelta(hours=1)),('codex',AT+dt.timedelta(hours=1))]:
                 j={**row('R'),'status':'blocked','by':by,'history':[{'by':by,'at':stamp.isoformat(),'what':'blocked: old hold'}]}

@@ -69,12 +69,12 @@ CODEX_MAX_LOGS = 60
 
 
 def voice_tools() -> Path:
-    """The ElevenLabs helpers (el_auth, vo_take) live in a channel's repo: the first checkout that has them."""
-    for slug in channels.slugs():
-        base = channels.checkout(slug)
+    """The ElevenLabs helpers (el_auth, vo_take): the studio's own copy when its root has one (the voice tools are
+    shared and move with the studio), else the first channel checkout that has them."""
+    for base in (channels.ROOT, *(channels.checkout(slug) for slug in channels.slugs())):
         if base and base.joinpath("04_Audio", "tools", "el_auth.py").is_file():
             return base.joinpath("04_Audio", "tools")
-    raise RuntimeError("no channel checkout on this machine has 04_Audio/tools/el_auth.py")
+    raise RuntimeError("neither the studio nor a channel checkout on this machine has 04_Audio/tools/el_auth.py")
 
 
 def read_elevenlabs() -> dict:

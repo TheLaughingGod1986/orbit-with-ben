@@ -139,6 +139,9 @@ def main() -> None:
         if toks and not text.startswith("["):
             prev_tokens = toks
 
+        # A narrated card must measure its lead-in against the preceding row,
+        # while still advancing the transcript for following rows/end hold.
+        preceding_spoken_word_end = last_spoken_word_end
         if words is not None and toks and not text.startswith("["):
             end, wcursor = match_row_word_end(words, text, wcursor)
             if end is not None:
@@ -165,8 +168,8 @@ def main() -> None:
                     f"row {r.get('row', k)}: CARD before VO sentence finishes "
                     f"(previous row ends: {prev_text[-48:]!r})"
                 )
-            if words is not None and last_spoken_word_end is not None:
-                breath = vo_in - last_spoken_word_end
+            if words is not None and preceding_spoken_word_end is not None:
+                breath = vo_in - preceding_spoken_word_end
                 if breath < BREATH_MIN - 0.05:
                     errs.append(
                         f"row {r.get('row', k)}: breath before card {breath:.2f}s < {BREATH_MIN}s "

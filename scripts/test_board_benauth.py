@@ -55,7 +55,7 @@ globalThis.fetch = async (url, init = {}) => {
 };
 process.env.BOARD_KEY = "k1"; process.env.BOARD_GH_TOKEN = "t";
 __ENV__
-const headers = Object.assign({ host: "studio-kanban.vercel.app", origin: "https://studio-kanban.vercel.app",
+const headers = Object.assign({ host: "board.example", origin: "https://board.example",
   "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
   "x-forwarded-for": "203.0.113.7" }, __HDR__);
 const out = { headers: {} };

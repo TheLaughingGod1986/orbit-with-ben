@@ -5,88 +5,129 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2632, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2854, J2855.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0124 | mini | blocked | claudecode | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
-| J0275 | mini | open | – | – | studio · Studio: thumbnail Test & Compare B for Ben's designs (J0244 picks), only where no test is running |  |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
-| J0875 | mini | blocked | gemini | – | 007 upload · for gemini · listing · `gemini-argon` · HOS 007 Shorts cLKDiYP55J8 & 4WUs0beKn0A: set Related -> the 007 long once it is uploaded (before Fri 13 Nov 11:30Z) + HOS Buffer register |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0960 | mini | blocked | cursor | – | studio · HOS 007 ETynHpIYLeY pinned comment once public |  |
-| J0978 | mini | open | – | – | for gemini · listing · `gemini-argon` · Studio Test B start: HOS Atom GHZDsiH7L7A title/line 1/tags (Fri 30 Oct, day after J0280 T&C ends) | PR #289 |
 | J0979 | mini | blocked | codex | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1130 | mini | blocked | codex | – | studio · HOS 002: later title-only test after current thumbnail test ends (AL_-qlWko_g) |  |
-| J1198 | mini | open | – | – | studio · 023 Venus VBaYRPp85Sw: title-only Test & Compare after thumbnail test T011 ends |  |
 | J1272 | mini | blocked | cursor | – | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
-| J1932 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · verify condition for J0979 |  |
 | J2020 | cloud | blocked | claude | – | review · Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22 |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
-| J2035 | mini | blocked | claude | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
+| J2035 | mini | blocked | codex | – | 009 edit · assembly · HOS 009: Assemble HOS009 long from approved picture and locked narration | J2026 |
 | J2036 | mini | open (after J2035) | – | – | 009 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 009: Verify HOS009 master gates and prepare package | J2026 |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
-| J2220 | mini | open (after J2219) | – | – | J01 vo · vo · J01 Journey Film 01: record 8 linking VO takes (~392 words, J2146) | 1e9ba89b33 |
-| J2221 | mini | open (after J2220) | – | – | J01 edit · assembly · J01 Journey Film 01: assemble ~56m journey long from 023-029 masters + 3 thumbnails (J2146) | 1e9ba89b33 |
-| J2222 | mini | open (after J2221) | – | – | J01 edit · for gemini · review · `gemini-argon` · J01 Journey Film 01: full watch/listen review of J01_Journey_v01.mp4 and 3 thumbnails (J2146) | 1e9ba89b33 |
-| J2230 | mini | open | – | – | for gemini · assembly · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
-| J2242 | mini | open (after J2593) | – | – | 008 edit · assembly · HOS 008 Franklin: packet/boundary splice + 32 caption cards (+ SAFE PATH DOWN) -> hos_008_master_v04.mp4 & gates (GBP0) | J1881 / J2241 / HOS PR #428 51bf99a6 |
+| J2230 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
-| J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gemini-argon` · HOS 010: independently review twelve generated Shorts plates | J2267 |
-| J2339 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short A v04: complete perceptual QA after J0912 technical repair review |  |
-| J2366 | mini | open | – | – | for claudecode · review · `mini-claude-opus-5-5` · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2271 | mini | open (after J2270) | – | – | 010 picture · for gemini · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
 | J2400 | mini | open (after J2318) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: moving-video review + stage for Ben phone watch (after J2317/J2318 PASS) | J2318 |
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
-| J2437 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
-| J2438 | mini | open | – | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
-| J2449 | mini | blocked | codex | – | studio · Old Orbit longs repackage batch 1: start title + thumbnail Test & Compare on Black Hole, Jupiter, Andromeda |  |
-| J2452 | macbook | claimed | macbook | 2026-11-12T04:11Z | assembly · Sleep video test: build the ~2-hour compilation from the plan, gates, then Ben's watch |  |
-| J2453 | mini | open (after J2567) | – | – | for codex · review · Packaging panel (codex): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2454 | mini | open (after J2567) | – | – | for gemini · review · Packaging panel (gemini): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2455 | mini | open (after J2567) | – | – | for cursor · review · Packaging panel (cursor): J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2456 | cloud | blocked | claude | – | review · Packaging panel decision: J2374 OWB weekly thumbnail audit 3 draft Bs (2fsQcea-voM Moon NO MORE ECLIPSES, Yk1tLh23rko Neutron Star 20 KM WIDE, b8-X_FyJnHM Alien Worlds RAINS MOLTEN GLASS; PR #676) |  |
-| J2477 | mini | open | – | – | 032 edit · review · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
-| J2478 | mini | claimed | codex | 2026-11-12T02:12Z | for codex · assembly · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
-| J2483 | mini | open | – | – | Security, part 2: the library updates that need a major version (Next and Prisma in the History of Science tooling; one dev-only override in Orbit) |  |
-| J2485 | mini | open | – | – | 008 edit · for gemini · review · `gemini-argon` · HOS 008 Short C v03: file its evidence, run the first-second gate (rule 24), then a listening review and stage for Ben's watch |  |
-| J2503 | mini | blocked | gemini | – | review · History of Science: take the account email address out of tracked files (runner reads it from a setting; records say 'the studio Ultra account'), with a test that keeps it out |  |
-| J2529 | mini | open (after J2033) | – | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2532 | cloud | blocked | claude | – | review · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
+| J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
+| J2477 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
+| J2478 | mini | claimed | cursor | 2026-11-14T23:15Z | for cursor · assembly · `cursor-grok-4-7` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
+| J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
+| J2532 | mini | open | – | – | for cursor · studio · `cursor-grok-4-7` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | blocked | claude | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
-| J2550 | mini | open | – | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2551 | mini | blocked | codex | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
-| J2563 | mini | blocked | claude | – | 011 edit · assembly · HOS 011 Anaesthesia: build the 27 free rows of picture plan v02 and a timing rough on the locked voice-over, with labelled slates for the 66 plates (no minting) |  |
-| J2614 | mini | open (after J2242) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
-| J2618 | cloud | blocked | claude | – | review · Decoupling, wave 2: chief_relay.py asks channels.py instead of naming a channel (79 lines, and 2 that assume a home repo, to 0) | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
-| J2621 | cloud | blocked | claude | – | review · Decoupling: no home channel in the loader, and the 14 tests that fail once the studio and the channels are apart pass in the new layout | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/833 |
-| J2622 | cloud | blocked | claude | – | review · Decoupling: History of Science to one status file per film, with a converter from PIPELINE.json (plan decision 2) | docs/MULTI_CHANNEL_PLAN.md |
-| J2632 | mini | blocked | codex | – | 009 picture · for codex · chart · `gpt-6-astra` · HOS 009: draw the falling-Moon graphic that fills the parked shot's 5.26 s (3:03.94 to 3:09.20), £0 | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6806341672 |
-| J2634 | mini | open | – | – | for codex · assembly · Refuse a stale Chief desk reply |  |
-| J2649 | cloud | blocked | claude | – | for claude · studio · Relay: a condition check for a job pinned to the Mini goes to the Mini, not the MacBook |  |
-| J2650 | mini | open (after J2634) | – | – | for codex · assembly · `gpt-6.1-sol` · Desk ack accepts ruling, pass and ruled | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6807430109 |
-| J2652 | cloud | blocked | claude | – | 013 edit · for claude · script · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
-| J2655 | mini | open (after J2653) | – | – | 011 edit · for codex · assembly · HOS 011 Anaesthesia: picture plan v03, the cuts re-timed to word gaps (mechanical, from the word timings) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808400290 |
+| J2550 | mini | blocked | gemini | – | assembly · Three Orbit Shorts with padded shots (Voyager 17 Nov, Muons 21 Nov, ISS 25 Nov): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
+| J2551 | mini | open | – | – | assembly · Four December Orbit Shorts with padded shots (031 opening 5 Dec; 029 on 9, 11 and 14 Dec): make every shot full-frame, gates, watch, Ben's watch cards | J2545 |
+| J2614 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: look at v04's salon splice on a half-second sheet (frames 2560 to 2665) before v04 locks | J2242 |
+| J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
-| J2657 | mini | open | – | – | chief · Chief: resolve 019 thumbs orphan-blocked |  |
+| J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
+| J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
+| J2687 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
+| J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
+| J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
+| J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
+| J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
+| J2720 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J2722 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2702 |  |
+| J2723 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
+| J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
+| J2741 | mini | blocked | codex | – | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
+| J2744 | mini | open (after J2400) | – | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
+| J2754 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2438 |  |
+| J2760 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |
+| J2761 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2732 |  |
+| J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
+| J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
+| J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
+| J2797 | mini | blocked | codex | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
+| J2798 | mini | blocked | codex | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
+| J2805 | mini | blocked | codex | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
+| J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
+| J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
+| J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
+| J2812 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
+| J2816 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
+| J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
+| J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
+| J2824 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J2825 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2827 | any | blocked | macbook-2 | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2828 | any | blocked | macbook-2 | – | script · OWB: learn from our data, add two new films to the backlog |  |
+| J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
+| J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
+| J2832 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
+| J2833 | any | blocked | claudecode | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J2843 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
+| J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
+| J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
+| J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
+| J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
+| J2850 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
+| J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
+| J2854 | mini | open | – | – | 008 edit · assembly · HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) | 6882919446 |
+| J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
+| J2857 | mini | open | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
+| J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 
 Recently finished:
 
-- J2654 done: HOS 011 Anaesthesia: a real source page and licence for each of the 13 archive pictures (corrected source brief) (done)
-- J2653 done: HOS 011 Anaesthesia: find the locked voice-over file by its hash and restore a copy (read-only search) (Found hos_011_vo_v01.wav on the Mini (_desk/media/HOS/011_Surgery-Before-Anaesthesia/02_Voiceover/ and /Volumes/MiniWork/desk/worktrees/J2245-011-vo/) matching SHA-256 d873f1d0c9158087fd61ce0b9f53de985055d778cd58b8df70c67c0701300ae2; copied clean 011 project folder and VO stems into /Volumes/data/studio-live/History Of Science/02_Video-Projects/011_Surgery-Before-Anaesthesia/02_Voiceover/hos_011_vo_v01.wav and re-verified SHA-256 on studio-live (532.720 s, 102,282,318 bytes). Copy only, nothing deleted or moved, GBP 0. Unblocks J2655.)
-- J2651 done: Verify condition for J2644 (Checked by the MacBook: the dry-run was finished and the Chief had ruled on it, so J2644 is closed, not rerun. Queue side done by the acting Chief.)
-- J2648 done: Verify condition for J2452 (Verified by the MacBook: J2452's condition is met. Its 21:02Z park was only the run ending with the job still open; the job before it (J2548) is done; twelve chapters are saved. The acting Chief has released the hold.)
-- J2647 done: Verify condition for J2449 (Half verified by the MacBook from the thumbnail ledger: Jupiter's test T003 ended 10 Nov 19:49Z, a draw. Andromeda's T017 could not be read: Orbit Studio is on the Mini. The acting Chief has reopened J2449 for the Mini, which reads T017 first.)
-- J2646 done: Review Supermoon dated Short v03 after natural-speed rebuild (Chief ruling: KEEP v03, on Gemini's review by watching and listening (advisory KEEP, no fails). Record: jobs/reviews/J2646/REVIEW.md on main at 8191da45af. The parent J2478 goes back to Codex for the merge conflict on 834 and the copy to Ben's watch folders.)
-- J2645 done: HOS 013 picture: an armed submit run directly also keeps the 3,000-credit floor (follow-up pull request for the Chief, "J2643b") (Done on main, as the Chief ruled (Grok, desk 6806492096 and 6806651044): both halves are merged in history-of-science. 546 (9038dbd6): a directly run submit defaults its floor to 3,000. 547 (8ac9e65d): an armed submit refuses any floor below 3,000. Codex checked main: 40 runner tests pass, all repository checks pass, no third pull request. The fresh dry-run (J2644) waits on J2642 only.)
-- J2644 done: HOS 013 picture: rerun the dry-run at floor 3000 on a fresh balance, once both fixes are in, and post it for the Chief's second ruling (Dry-run passed and ruled: the Chief's second ruling, desk 6807600765 (Grok, 21:36Z). Balance 10,440 read 20:08:51Z, 800 unposted, headroom 3,040 after the 6,600 cap, 0 credits spent, no browser. The mint (J2529) is released under his guards.)
-- J2643 done: HOS 013 picture: the launch path carries --floor 3000 (runner change with tests, as a pull request for the Chief) (Done and merged by the Chief: history-of-science 545, main c39b4dc6 (Grok, desk 6806378089 and 6806396380). The detached launch path carries --floor, default 3000, with tests. The gap he found afterwards (an armed submit run directly still defaults to floor 0) is its own job, as he ruled.)
-- J2642 done: HOS 013 picture: post the 34 charged takes of films 008 and 009 in the shared Flow ledger, through the runner's reconcile, so the tool's 3,000-credit reserve check can pass (Posted all 26 qualifying takes through runner reconcile; liability 3400 to 800. Seven test-2 exceptions and failed rods take remain unposted per brief. Evidence HOS PR549; desk 6807400124. No spend; J2644 may proceed under brief.)
+- J2856 done: Board: the Mini cannot read Ben's ticks, so his OK on the Journey film is saved but not shown or acted on (PR #936 (CI green, 04bafbd78; left open for Chief merge per worker rules): fixed Cloudflare 403 error 1010 on /api/checks with User-Agent header, added readUrl (studio-kanban.pages.dev for server reads while keeping board.oppti.dev for Ben's links), added tested 10-min 'ticks not read since HH:MM' guard + one-time [Chief] alert, recorded Ben's J2222 v03 OK (all 3 thumbs A/B/C) + queued J01 Private upload J2857 (verified live on board-data e41acb8dc in Passed), queued Mini lookup check J2858, and reported sleep-film J2452 v01 status on thread.)
+- J2853 done: Verify condition for J2614 (Verified J2614 review evidence and Chief ruling 6882919446 (jobs/reviews/J2853/REVIEW.md @ 921043ba87): J2854 (v05 salon re-splice 2506..2665) and J2855 (v05 salon sheet check) are queued; recorded dependency hold on J2614 (--recheck J2853, check_at 2026-11-15T06:00:00Z) awaiting J2854/J2855 completion and Chief PASS so J2243 stays held off v04.)
+- J2851 done: Verify condition for J2831 (Chief ruling (gemini, elected acting Chief): CONDITION PROVEN SATISFIED for J2831 (jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe). In-memory check confirmed GitHub issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) contains the exact 24-character nonce from ~/.config/studio-kanban/ben_pair_link, and Ben's linked iPhone Approve button recorded OWB-J2222 (verdict: ok) and posted [Ben] OK J2222 v03 on #478 (#6882810716, #6882823558). Reopened J2831 for Cursor step 4/4 cleanup: delete only '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' and confirm on #478.)
+- J2849 done: First-day check at 48 h: "How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) ("How Was the First Vaccine Made? (And Why It's Named After a Cow)" (ETynHpIYLeY) · History of Science · long · went live Thu 12 Nov 18:00 London
+At 48 h: views 3 · impressions 13 · click rate 15.4% · average viewed 5.0%
+
+Verdict: UNKNOWN
+  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
+  - By the next morning it had 0 views; the 3 before it had 1 (median).
+
+Do now
+  - Read it again from tomorrow morning's snapshot.)
+- J2848 done: First-day check at 6 h: "How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) ("How Did a Helicopter Fly 72 Times on Mars?" (RT-ec4_GcOk) · Orbit With Ben · Short · went live Sat 14 Nov 11:30 London
+At 6 h: views 1033 · Studio rank 2 of 10 · shown in feed no figure yet · stayed to watch 50.7% · average viewed 106.8%
+Usual for this channel: stayed to watch 32.0%, average viewed 65.4%
+
+Verdict: AHEAD
+  - 1033 views at 6 h; the last 3 checked at the same age had 19 (median).
+  - 1033 views at 6 h; Studio says the usual for us at this age is 810.
+  - Studio ranks it 2 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - The title starts with "How", like 4 earlier Shorts: they had 215 views by the next morning (median), against 78 for all Shorts.
+  - It is a second upload of the same video (it replaced bSjWiCbB7pY).
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.)
+- J2842 done: Packaging panel (cursor): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) (Single change: rebuild the countdown thumb as RINGS ARE LEAVING on Saturn's rings; move the Fermi reticle onto empty sky; do not arm either JWST title B.)
+- J2841 done: Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) (done)
+- J2840 done: Packaging panel (codex): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) (Single change: rebuild the m09jUdwC5hk thumbnail on a real Cassini Saturn photo with RINGS: GONE instead of the cyan Helix smudge and ALL STARS FADE. Also: JWST B loupe shows a lensed arc that is not a 300-million-year galaxy (fix before arming); Fermi ZERO SIGNALS B is ready after seam clean-up.)
+- J2839 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (64 videos, 0 errors (36 public [7 longs + 29 Shorts, incl. newly public cLKDiYP55J8 & ETynHpIYLeY] + 6 scheduled [1 long + 5 Shorts] + 22 private); 7/7 public longs end screens and 29/29 public Shorts Related PASS; 0 fixes needed (HOS PR #592, c8fdd7bf, 00_Brand/Channel-Setup/audits/live_fixes/2026-11-14.md))
+- J2838 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 pass on the last 10 live public OWB videos at 2026-11-14T17:48Z (following RT-ec4_GcOk 11:30Z release; Related=Js6EQJ8qDi8, chapters, Sources, end screens and Related links all verified; 0 fixes needed; nothing changed in Studio). Updated 05_Analytics/live_fixes/2026-11-14.md in PR #934.)

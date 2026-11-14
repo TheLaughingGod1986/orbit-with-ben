@@ -60,11 +60,14 @@ SLOT = max(1, int(os.environ.get("MACBOOK_SLOT", "1") or 1))
 SLOTS = max(1, int(os.environ.get("MACBOOK_SLOTS", "2") or 1))
 
 
+def _repo_name(url: str) -> str:
+    return str(url or "").rstrip("/").rsplit("/", 1)[-1].removesuffix(".git")
+
+
 def clone_name(slug: str) -> str:
     """The folder name of the worker's own clone of a channel's repo: the repo's name on GitHub. A channel whose
     file gives no URL yet gets its slug, and is never cloned from here."""
-    url = str(channels.get(slug)["repo"].get("url") or "")
-    return url.rstrip("/").rsplit("/", 1)[-1].removesuffix(".git") or channels.get(slug)["slug"]
+    return _repo_name(channels.get(slug)["repo"].get("url")) or channels.get(slug)["slug"]
 
 
 def other_slugs() -> list[str]:
@@ -98,11 +101,20 @@ def channel_clone(slug: str) -> pathlib.Path:
     return own_checkout(channels.get(slug)["repo"].get("env") or "", clone_name(slug))
 
 
+def studio_clone() -> pathlib.Path:
+    """The worker's own clone of the repo that carries the studio: a channel's repo while one does, the studio's own
+    once it has one. The loader says which (`channels.studio_repo()`); the folder is named after the repo."""
+    repo = channels.studio_repo()
+    return own_checkout(repo.get("env") or "", _repo_name(repo.get("url")) or channels.studio_key())
+
+
 # The clone that carries the studio (the queue, these scripts), and the clone of every other channel. Which repos
 # those are comes from the channel files; nothing here names one.
-STUDIO = channel_clone(channels.studio_slug())
+STUDIO = studio_clone()
 OTHERS = [channel_clone(s) for s in other_slugs()]
 URLS = {clone_name(s): channels.get(s)["repo"]["url"] for s in channels.slugs() if channels.get(s)["repo"].get("url")}
+if channels.studio_repo().get("url"):    # the studio's own repo, once it is not also a channel's
+    URLS.setdefault(_repo_name(channels.studio_repo()["url"]), channels.studio_repo()["url"])
 STATE = HOME / "_desk" / "state"
 AGENT_ID = slot_name(SLOT, "macbook")
 HEARTBEAT_REF = slot_name(SLOT, "macbook-heartbeat")
@@ -178,7 +190,7 @@ def prompt_channels() -> dict:
     ports = [(channels.studio_port(s), channels.name(s)) for s in channels.slugs() if channels.studio_port(s)]
     count = 1 + len(others)
     return {
-        "studio_name": channels.name(channels.studio_slug()),
+        "studio_name": channels.studio_name(),
         "studio": STUDIO,
         "other_checkouts": "\n".join(
             f"   For a {channels.label(s)} job, work in the {channels.label(s)} checkout ({path}) and follow its "

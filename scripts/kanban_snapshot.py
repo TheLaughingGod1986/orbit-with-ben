@@ -24,6 +24,8 @@ and it is gone.
 """
 from __future__ import annotations
 
+from board_site import site_url
+
 import argparse
 import json
 import os
@@ -704,13 +706,21 @@ def route_steps(briefs: dict, alljobs: list[dict]) -> dict:
     return out
 
 
-def route_pipeline_stages(pipeline: dict) -> None:
-    """A PIPELINE.json's stages still to do with no owner: the routed worker for the stage's kind (done stages keep
-    their doer)."""
-    for f in pipeline.get("films", []):
+def route_stages(films: list, kinds: dict) -> None:
+    """A film's stages still to do with no owner: the routed worker for the stage's kind (done stages keep their
+    doer). `kinds` is {stage: the kind of job it is}, the channel's own (channels.stage_kinds); a stage whose kind
+    is not named is left alone. It reads either shape of stage record: `status` (one pipeline file for the channel)
+    or `state` (one status file per film)."""
+    for f in films or []:
         for key, st in (f.get("stages") or {}).items():
-            if st.get("status") == "todo" and not st.get("owner") and key in PIPELINE_STAGE_KIND:
-                st["owner"] = routed_who(PIPELINE_STAGE_KIND[key])
+            if isinstance(st, dict) and (st.get("status") or st.get("state")) == "todo" and not st.get("owner") and key in kinds:
+                st["owner"] = routed_who(kinds[key])
+
+
+def route_pipeline_stages(pipeline: dict, kinds: dict | None = None) -> None:
+    """The same for a channel's one pipeline file. Until that channel names its stages' kinds in its own settings,
+    the kinds are the ones this file has always used for it (PIPELINE_STAGE_KIND)."""
+    route_stages(pipeline.get("films", []), kinds or PIPELINE_STAGE_KIND)
 
 
 # ---- Ben's handoffs (Ben, 10 Oct: the card said "Waiting for you" while the For-you box said nothing to check) ----
@@ -770,7 +780,8 @@ def uat_dir(label: str) -> Path:
 def uploads_path(slug: str) -> Path | None:
     return UPLOADS.get(slug) or channels.uploads_file(slug)
 PHONE_ROOT = "/private/var/mobile/Library/Mobile Documents/com~apple~CloudDocs"
-WATCH_OK = ("https://studio-kanban.vercel.app/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
+# Only explicit hand-set watch links pass this allowlist; generated stream links use SITE_URL below.
+WATCH_OK = (site_url() + "/api/watch?", "https://youtu.be/", "https://www.youtube.com/", "https://studio.youtube.com/", "https://www.icloud.com/")
 VIDEO_EXT = (".mp4", ".mov", ".m4v")
 
 
@@ -831,7 +842,7 @@ def newest_uat(ch: str, film: str) -> dict | None:
 # by the auto-upload below). Auto-upload runs only when the four R2 keys are set (r2_ready) and the file is at most
 # WATCH_AUTO_MAX bytes (bigger cuts need a phone proxy first, e.g. 720p
 # ~1.3 Mbit/s, uploaded with scripts/watch_upload.mjs and added to the register). Otherwise the Files link stays.
-SITE_URL = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE_URL = site_url()
 WATCH_REGISTER = ROOT / "05_Analytics" / "kanban" / "watch_uploads.json"
 WATCH_LOCAL_REGISTER = Path(os.environ.get("WATCH_LOCAL_REGISTER", str(Path.home() / ".config" / "studio-kanban" / "watch_uploads.json")))
 WATCH_AUTO_MAX = int(os.environ.get("WATCH_AUTO_MAX", str(120 * 1024 * 1024)))
@@ -1125,14 +1136,13 @@ def approved_doc(alljobs: list[dict]) -> list[dict]:
     return out
 
 
-def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
-    """Give each film of a one-file channel its long's YouTube read-back from that channel's own UPLOADS.json (Ben,
-    25 Oct 2026 22:54: "Why is it in progress on the board"). Without it a Private + scheduled long had no YouTube
-    state on the board, so a job that only waits for the film to go public kept the card in In progress."""
+def long_uploads(root: Path) -> dict[str, dict]:
+    """{film number: its long's row} from a channel's own UPLOADS.json: the newest registered, scheduled one, never a
+    retired copy or a Short. Both ways a channel can keep its films read a film's long from here (J2790)."""
     try:
         vids = json.loads((root / "00_Brand/Channel-Setup/social/UPLOADS.json").read_text()).get("videos", {})
     except (OSError, ValueError, AttributeError):
-        return
+        return {}
     best: dict[str, dict] = {}
     for vid, meta in vids.items():
         if not isinstance(meta, dict) or meta.get("retired") or (meta.get("kind") or "long") != "long":
@@ -1145,6 +1155,21 @@ def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
         cur = best.get(film)
         if not cur or (bool(row["publishAt"]), row["registeredAt"]) > (bool(cur["publishAt"]), cur["registeredAt"]):
             best[film] = row
+    return best
+
+
+def release_from_upload(row: dict) -> dict:
+    """An UPLOADS.json long row in the shape of a receipt's release record, for a film that has no receipt."""
+    state = "live" if row.get("privacyStatus") == "public" else "scheduled" if row.get("publishAt") else "uploaded"
+    return {"state": state, "videoId": row["videoId"], "publishAt": row.get("publishAt") or "",
+            "source": "00_Brand/Channel-Setup/social/UPLOADS.json"}
+
+
+def attach_pipeline_uploads(root: Path, pipeline: dict) -> None:
+    """Give each film of a one-file channel its long's YouTube read-back from that channel's own UPLOADS.json (Ben,
+    25 Oct 2026 22:54: "Why is it in progress on the board"). Without it a Private + scheduled long had no YouTube
+    state on the board, so a job that only waits for the film to go public kept the card in In progress."""
+    best = long_uploads(root)
     for f in pipeline.get("films") or []:
         row = best.get(str(f.get("id") or ""))
         if row:
@@ -1162,8 +1187,13 @@ def read_documents(roots: dict) -> dict:
             attach_pipeline_uploads(root, doc)
         else:
             doc = [json.loads(p.read_text()) for p in sorted(root.glob(kept_at(slug)))] if kept_at(slug) else []
+            longs = long_uploads(root)
             for film in doc:
+                # A receipt in the film's own folder first; else the channel's UPLOADS.json, the same long the one-file
+                # shape reads, so a channel's file shape never changes what the board shows (J2790: HOS 004).
                 receipt = release_record(str(film.get("film", "")), root)
+                if not receipt and longs.get(str(film.get("film", ""))):
+                    receipt = release_from_upload(longs[str(film.get("film", ""))])
                 if receipt:
                     film["release"] = receipt
         documents[slug] = doc
@@ -1191,10 +1221,11 @@ def main(argv: list[str] | None = None) -> int:
     for slug, doc in documents.items():
         if one_file(slug):
             add_since_pipeline(roots[slug], doc, kept_at(slug))
-            route_pipeline_stages(doc)
+            route_pipeline_stages(doc, channels.stage_kinds(slug))
             store[slug] = {"updatedAt": now, "pipeline": doc}
         else:
             add_since_status(doc, roots[slug], kept_at(slug))
+            route_stages(doc, channels.stage_kinds(slug))     # a channel that names no kinds keeps its cards as they are
             store[slug] = {"updatedAt": now, "films": doc}
     queue_slug = channels.queue_key()  # the document that also carries the studio's queue
     for slug in store:

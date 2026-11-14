@@ -526,16 +526,19 @@ def load_pipeline(slug: str) -> dict:
 
 
 def load_documents(root: Path) -> dict:
-    """{slug: that channel's film document}, each read the way the channel keeps its films: the default channel's
-    status files from `root`, a one-file channel's pipeline from its own checkout. A channel of any other shape is
-    given no document; video_tracker.build_videos then reads it from its own checkout."""
+    """{slug: that channel's film document}, each read the way the channel keeps its films: a one-file channel's
+    pipeline from its own checkout; a channel with one status file per film from its checkout too (the default
+    channel's from `root`), with each film's upload receipt, exactly as the board's snapshot reads it. A channel
+    whose checkout is not on this machine is given no document; video_tracker.build_videos then shows nothing for it."""
     documents = {}
     for slug in channels.slugs():
         kept = channels.pipeline(slug)
         if kept.get("kind") == "pipeline_json":
             documents[slug] = load_pipeline(slug)
-        elif kept.get("kind") == "film_status" and slug == channels.default():
-            documents[slug] = load_status_films(root, kept["path"])
+        elif kept.get("kind") == "film_status":
+            base = root if slug == channels.default() else channels.checkout(slug)
+            if base:
+                documents[slug] = load_status_films(Path(base), kept["path"])
     return documents
 
 
