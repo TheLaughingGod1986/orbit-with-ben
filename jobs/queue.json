@@ -225045,7 +225045,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Nothing blocks it now: History of Science PR 548 is merged (13 Nov 22:18Z) and no picture run is going. Next: take the email addresses out of the spend ledger and the other files that hold them, in ordinary pull requests, HOS first then Orbit, one at a time. Starts at the 12:50 run, after the split-routing fix (orbit-with-ben PR 923).",
+      "result": "Waiting for: Not started, on purpose (14 Nov 12:55Z). The only thing keeping the dry run of the move at 1 is Orbit's spend ledger (38 places, 05_Analytics/ai_spend/ledger.jsonl). That file is appended to by the Mini's picture runner, and a rewrite while the runner holds uncommitted rows could block the Mini's queue writes (AGENTS.md, 5 Nov). So it needs a verified quiet window: no picture run going and the Mini's ledger rows committed. Also one History of Science pull request at a time, and PR 585 is open there. Plan: first check the Mini heartbeat and the flow lock for a quiet spell, then replace each address in the ledger notes with its role through a script that keeps every other byte, check ai_spend.py reads it, and merge. Next look 17:50.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -225121,16 +225121,21 @@
           "at": "2026-11-14T08:03Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T12:40:00Z"
+        },
+        {
+          "at": "2026-11-14T12:54Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T17:40:00Z"
         }
       ],
-      "remaining_action": "Clean the spend ledger addresses, History of Science first",
+      "remaining_action": "At a quiet window, take the addresses out of the spend ledger and check ai_spend.py still reads it",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Nothing blocks it now: History of Science PR 548 is merged (13 Nov 22:18Z) and no picture run is going. Next: take the email addresses out of the spend ledger and the other files that hold them, in ordinary pull requests, HOS first then Orbit, one at a time. Starts at the 12:50 run, after the split-routing fix (orbit-with-ben PR 923).",
-        "check_at": "2026-11-14T12:40:00Z"
+        "condition": "Not started, on purpose (14 Nov 12:55Z). The only thing keeping the dry run of the move at 1 is Orbit's spend ledger (38 places, 05_Analytics/ai_spend/ledger.jsonl). That file is appended to by the Mini's picture runner, and a rewrite while the runner holds uncommitted rows could block the Mini's queue writes (AGENTS.md, 5 Nov). So it needs a verified quiet window: no picture run going and the Mini's ledger rows committed. Also one History of Science pull request at a time, and PR 585 is open there. Plan: first check the Mini heartbeat and the flow lock for a quiet spell, then replace each address in the ledger notes with its role through a script that keeps every other byte, check ai_spend.py reads it, and merge. Next look 17:50.",
+        "check_at": "2026-11-14T17:40:00Z"
       }
     },
     {
@@ -232011,7 +232016,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: Done: History of Science PR 548 merged 13 Nov 22:18Z; the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922, merged 14 Nov 07:55Z); a board built from the merged main reads film 004 as done. Left: film 010's picture stage, written from HOS PR 538 into that film's status.json (Grok, desk 6806904132), and one clean board publish observed on the new host. Starts at the 12:50 run.",
+      "result": "Waiting for: Last piece: History of Science PR 585 writes film 010's picture stage into its status.json (from PR 538, as Grok ruled on the desk). Opened 14 Nov 12:55Z, all checks green except `tests`, which was still running; I mark it ready when it is green and Grok merges. Then this job is done: the settings copy is refreshed (PR 922), film 004 reads right (PR 905), and the board publishes on the new host.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -232112,9 +232117,14 @@
           "at": "2026-11-14T08:03Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T12:40:00Z"
+        },
+        {
+          "at": "2026-11-14T12:54Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-14T17:40:00Z"
         }
       ],
-      "remaining_action": "Write film 010's picture stage from PR 538 into its status.json",
+      "remaining_action": "Mark PR 585 ready when green; close this job after Grok merges it",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "plain": "Give History of Science one progress file per film, like Orbit, so its board stops causing merge clashes",
@@ -232127,8 +232137,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Done: History of Science PR 548 merged 13 Nov 22:18Z; the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922, merged 14 Nov 07:55Z); a board built from the merged main reads film 004 as done. Left: film 010's picture stage, written from HOS PR 538 into that film's status.json (Grok, desk 6806904132), and one clean board publish observed on the new host. Starts at the 12:50 run.",
-        "check_at": "2026-11-14T12:40:00Z"
+        "condition": "Last piece: History of Science PR 585 writes film 010's picture stage into its status.json (from PR 538, as Grok ruled on the desk). Opened 14 Nov 12:55Z, all checks green except `tests`, which was still running; I mark it ready when it is green and Grok merges. Then this job is done: the settings copy is refreshed (PR 922), film 004 reads right (PR 905), and the board publishes on the new host.",
+        "check_at": "2026-11-14T17:40:00Z"
       }
     },
     {
