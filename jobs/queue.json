@@ -248123,9 +248123,14 @@
           "at": "2026-11-14T05:38Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Live probes complete: BOARD_GH_TOKEN still absent (7 secrets on studio-kanban; /api/checks?stamp=1 HTTP 500), /api/data?f=ref still intermittent 502 (2/5 probes HTTP 502, 3/5 HTTP 200 sha a9b90d09a2), pinned board reads 3/3 HTTP 200 (80 board.oppti.dev Play links), board_check ok=true"
+        },
+        {
+          "at": "2026-11-14T05:41Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Committed jobs/reviews/J2814/REVIEW.md at 72b7996eb8; J2797 condition not yet met (BOARD_GH_TOKEN absent, ref reads 2/5 HTTP 502); parking J2814 for elected Chief (codex) to run wait --recheck J2814 on J2797 and close J2814"
         }
       ],
-      "remaining_action": "Check jobs.py wait/recheck rules and write verification review for J2797",
+      "remaining_action": "Hand off J2797 wait --recheck J2814 update to elected Chief (codex)",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T06:24:58+00:00",
@@ -248140,11 +248145,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-14T05:38Z",
+        "at": "2026-11-14T05:41Z",
         "by": "gemini",
-        "note": "Live probes complete: BOARD_GH_TOKEN still absent (7 secrets on studio-kanban; /api/checks?stamp=1 HTTP 500), /api/data?"
+        "note": "Committed jobs/reviews/J2814/REVIEW.md at 72b7996eb8; J2797 condition not yet met (BOARD_GH_TOKEN absent, ref reads 2/5 "
       }
     }
   ],
