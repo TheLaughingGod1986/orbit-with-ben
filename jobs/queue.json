@@ -247283,9 +247283,14 @@
           "at": "2026-11-14T03:29Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Probed system resolver (still failing due to cached NS TTL ~42560s -> ~15:14Z; board_check ok=false), verified public DNS/TLS 200 across all routes and 3x repeat /api/data?f=ref & f=board, and identified launchctl BOARD_SITE_URL override"
+        },
+        {
+          "at": "2026-11-14T03:32Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verification complete: Mini normal system resolver still fails (cached NS TTL ~42560s -> ~15:14Z; board_check ok=false); public DNS/TLS 200 and 3x repeat /api/data?f=ref & f=board verified; parking for elected Chief (Codex) as jobs.py requires elected Chief for wait --recheck and done"
         }
       ],
-      "remaining_action": "Update J2797 wait condition with --recheck J2804, mark J2804 done, and post report",
+      "remaining_action": "Elected Chief (Codex) to record wait J2797 --recheck J2804 and close J2804",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T04:20:10+00:00",
@@ -247300,11 +247305,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-14T03:29Z",
+        "at": "2026-11-14T03:32Z",
         "by": "gemini",
-        "note": "Probed system resolver (still failing due to cached NS TTL ~42560s -> ~15:14Z; board_check ok=false), verified public DN"
+        "note": "Verification complete: Mini normal system resolver still fails (cached NS TTL ~42560s -> ~15:14Z; board_check ok=false);"
       }
     }
   ],
