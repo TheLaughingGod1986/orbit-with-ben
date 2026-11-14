@@ -1,5 +1,5 @@
 {
-  "next_id": 2832,
+  "next_id": 2833,
   "jobs": [
     {
       "id": "J0001",
@@ -248329,6 +248329,11 @@
           "at": "2026-11-14T11:31Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-14T16:00:00Z"
+        },
+        {
+          "at": "2026-11-14T16:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2832"
         }
       ],
       "remaining_action": "Obtain explicit approval to push codex/j2805-revised-music (4b92c042), open/merge the HOS decision PR, and complete J2805",
@@ -248348,10 +248353,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling (J2820, 2026-11-14T11:31Z, jobs/reviews/J2820/REVIEW.md @ f74a257b81): NOT MET. No explicit authorization to publish codex/j2805-revised-music (local commit 4b92c0423185007b5ef68fb4c3b9682288778b89 in /Volumes/MiniWork/scratch/j2805-hos) has arrived on HOS desk #180 (through #6876498592) or OWB #478 (through #6876530884), and no remote branch or HOS PR exists. Local commit 4b92c042 remains intact, conflict-free against HOS origin/main (f57aed7c), and passes check_all.sh + status_board.py --check; retained hos_009_teach_v01.mp3 hash 4c1f0a17... verified; zero spend/generation. J2806-J2808 and J2035/J2171 remain held until 4b92c042 is authorized, pushed, and merged.",
-        "check_at": "2026-11-14T16:00:00Z",
+        "check_at": "2026-11-14T17:16:44+00:00",
         "last_recheck": "J2820",
         "checked_at": "2026-11-14T11:31:56+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2832"
       }
     },
     {
@@ -250328,6 +250334,37 @@
         "condition": "Link is already in iCloud Drive, not Notes: file 'Link this phone to the board.html' at the iCloud Drive root (not a shared folder). Thread 6880145196 tells Ben where. Delete only that file and say so on the thread once issue 219 pairs contains the nonce from the private pair-link file, or once the time is at or after 2026-11-15T16:00Z. If neither is true, leave the file and set the next check. Do not print the link. Do not delete anything else.",
         "check_at": "2026-11-14T18:30:00Z"
       }
+    },
+    {
+      "id": "J2832",
+      "title": "Verify condition for J2805",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2805: Chief ruling (J2820, 2026-11-14T11:31Z, jobs/reviews/J2820/REVIEW.md @ f74a257b81): NOT MET. No explicit authorization to publish codex/j2805-revised-music (local commit 4b92c0423185007b5ef68fb4c3b9682288778b89 in /Volumes/MiniWork/scratch/j2805-hos) has arrived on HOS desk #180 (through #6876498592) or OWB #478 (through #6876530884), and no remote branch or HOS PR exists. Local commit 4b92c042 remains intact, conflict-free against HOS origin/main (f57aed7c), and passes check_all.sh + status_board.py --check; retained hos_009_teach_v01.mp3 hash 4c1f0a17... verified; zero spend/generation. J2806-J2808 and J2035/J2171 remain held until 4b92c042 is authorized, pushed, and merged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2805 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T16:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T16:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit approval to push codex/j2805-revised-music (4b92c042), open/merge the HOS decision PR, and complete J2805",
+      "kind": "review",
+      "recheck_of": "J2805",
+      "due": "2026-11-14T06:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [

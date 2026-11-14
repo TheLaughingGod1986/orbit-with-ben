@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2829 | mini | blocked | macbook | – | for cursor · studio · Film reviews stuck for up to six days because no worker can show it watches video: probe every worker, then route or re-scope the waiting reviews |  |
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
+| J2832 | mini | open | – | – | review · Verify condition for J2805 |  |
 
 Recently finished:
 
