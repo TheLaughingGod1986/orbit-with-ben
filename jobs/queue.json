@@ -195565,9 +195565,14 @@
           "at": "2026-11-14T15:44Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Preservation verifier exit 0. 8225 unchanged frames, 7995 copied packets, 25296 audio packets. Loudness and sync still unmeasured. Not v04."
+        },
+        {
+          "at": "2026-11-14T15:48Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Verifier exit 0. Audio matches the v03 master: 25902071 samples, lag 0.000 ms, ebur128 -14.1 LUFS and -1.2 dBTP. HOS commit 41869e66. Not v04."
         }
       ],
-      "remaining_action": "Measure loudness and voice sync on the Franklin assembly candidate.",
+      "remaining_action": "Run the Franklin film gates on the assembly candidate without naming it a master.",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195576,9 +195581,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T15:44Z",
+        "at": "2026-11-14T15:48Z",
         "by": "cursor",
-        "note": "Preservation verifier exit 0. 8225 unchanged frames, 7995 copied packets, 25296 audio packets. Loudness and sync still u"
+        "note": "Verifier exit 0. Audio matches the v03 master: 25902071 samples, lag 0.000 ms, ebur128 -14.1 LUFS and -1.2 dBTP. HOS com"
       }
     },
     {
